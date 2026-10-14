@@ -500,7 +500,7 @@ export function ResourcePicker({
           }}
           placeholder="Buscar o agregar recurso..."
         />
-        <button
+        <button data-ui-size="icon"
           type="button"
           aria-label="Mostrar recursos"
           className="absolute right-2 top-1/2 grid size-8 -translate-y-1/2 place-items-center text-primary"
@@ -636,7 +636,7 @@ export function ResourcePicker({
                 {allCatalogResources.length} recursos disponibles
               </p>
             </div>
-            <button
+            <button data-ui-action="close" data-ui-size="icon"
               type="button"
               aria-label="Cerrar banco de recursos"
               className="grid size-8 place-items-center rounded-lg text-primary hover:bg-primary/10"
@@ -703,7 +703,7 @@ export function ResourcePicker({
           <Button type="button" size="sm" className="h-9" onClick={addCustomResource}>
             Agregar
           </Button>
-          <Button
+          <Button data-ui-action="cancel"
             type="button"
             size="sm"
             variant="ghost"

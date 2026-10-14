@@ -241,7 +241,7 @@ export function TeacherAssignmentForm({
             {matchesCurricularSubject ? (
               <FeedbackBanner tone="warning">Esta asignatura forma parte del currículo de este grado. Selecciónala en la lista superior.</FeedbackBanner>
             ) : null}
-            <Button
+            <Button data-ui-action="cancel"
               type="button"
               variant="ghost"
               size="sm"
@@ -257,7 +257,7 @@ export function TeacherAssignmentForm({
         ) : null}
 
         <div className="flex justify-end gap-3 border-t border-border pt-4">
-          <Button variant="outline" type="button" onClick={onClose}>Cancelar</Button>
+          <Button data-ui-action="cancel" variant="outline" type="button" onClick={onClose}>Cancelar</Button>
           <Button type="submit" loading={submitting} disabled={!canSubmit}>Crear curso</Button>
         </div>
       </form>

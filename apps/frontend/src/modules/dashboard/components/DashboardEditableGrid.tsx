@@ -409,7 +409,7 @@ export function DashboardEditableGrid({ widgets, storageKey }: DashboardEditable
                   </div>
 
                   {editing ? (
-                    <button
+                    <button data-ui-size="icon"
                       type="button"
                       onPointerDown={(event) => beginInteraction(event, widget.id, 'resize')}
                       className="dashboard-widget-resize-handle absolute bottom-2 right-2 z-30 flex size-8 touch-none items-center justify-center rounded-xl border border-primary/25 bg-card/95 text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20"

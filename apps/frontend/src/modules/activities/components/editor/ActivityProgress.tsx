@@ -182,7 +182,7 @@ export function ActivityProgressCard({
       </div>
       {onCancel ? (
         <div className="space-y-2.5 border-t border-border bg-card p-4">
-          <Button type="button" variant="outline" className="w-full" onClick={onCancel}>
+          <Button data-ui-action="cancel" type="button" variant="outline" className="w-full" onClick={onCancel}>
             <X className="size-4" />
             Cancelar
           </Button>
@@ -246,7 +246,7 @@ export function ActivityCompletionModal({
               </p>
             </div>
           </div>
-          <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}>
+          <Button data-ui-action="close" variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}>
             <X className="size-5" />
           </Button>
         </div>

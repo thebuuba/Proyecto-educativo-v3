@@ -73,7 +73,7 @@ export function PlanningPage() {
   }
 
   return (
-    <section className="mx-auto w-full min-w-0 max-w-[1440px] space-y-5">
+    <section className="w-full min-w-0 space-y-5">
       <PageHero
         title="Planificación"
         description="Organiza tus planificaciones y consulta el currículo dominicano desde un mismo espacio."
@@ -527,7 +527,7 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
         <div className="space-y-3">
           <div className="flex justify-start">
             <div className="inline-flex rounded-xl bg-card p-1 shadow-sm" aria-label="Vista de planificaciones">
-              <button
+              <button data-ui-size="icon"
                 type="button"
                 aria-label="Ver en cuadros"
                 aria-pressed={viewMode === 'grid'}
@@ -540,7 +540,7 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
               >
                 <Grid2X2 className="size-4" />
               </button>
-              <button
+              <button data-ui-size="icon"
                 type="button"
                 aria-label="Ver como lista"
                 aria-pressed={viewMode === 'list'}

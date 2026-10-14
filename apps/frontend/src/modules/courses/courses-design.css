@@ -23,12 +23,13 @@ main[data-module='cursos'] .course-subject-card {
     box-shadow: 0 7px 16px -7px color-mix(in srgb, var(--foreground) 20%, transparent);
   }
 }
+/* Variante azul de las cabeceras de Cursos solicitada por el usuario. */
 main[data-module='cursos'] .course-blue-hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: var(--card);
-  color: var(--foreground);
+  background: var(--primary);
+  color: var(--primary-foreground);
   box-shadow: 0 12px 24px -14px color-mix(in srgb, var(--foreground) 35%, transparent);
 }
 
@@ -40,7 +41,7 @@ main[data-module='cursos'] .course-blue-hero::after {
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--primary) 7%, transparent);
+  background: color-mix(in srgb, var(--primary-foreground) 10%, transparent);
   pointer-events: none;
 }
 
@@ -50,7 +51,12 @@ main[data-module='cursos'] .course-blue-hero::after { left: 38%; bottom: -185px;
 main[data-module='cursos'] .course-blue-hero > * { position: relative; }
 
 main[data-module='cursos'] .course-blue-hero .text-primary-foreground\/80 {
-  color: var(--muted-foreground);
+  color: color-mix(in srgb, var(--primary-foreground) 80%, transparent);
+}
+
+main[data-module='cursos'] .course-blue-hero .course-hero-status {
+  background: var(--card);
+  color: var(--foreground);
 }
 
 main[data-module='cursos'] .course-list-filters input[role='switch'] {

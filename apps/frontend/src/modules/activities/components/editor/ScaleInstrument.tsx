@@ -400,7 +400,7 @@ export function ScaleSettingsDrawer({
                   className="grid grid-cols-[1.75rem_1.5rem_minmax(0,1fr)_5rem_2rem] items-center gap-2 rounded-xl border bg-card px-2.5 py-2 shadow-sm"
                   style={{ borderColor: visual.border }}
                 >
-                  <button
+                  <button data-ui-size="icon"
                     type="button"
                     aria-label={`Arrastrar nivel ${level.name}`}
                     className={cn(
@@ -461,7 +461,7 @@ export function ScaleSettingsDrawer({
                       rel.
                     </span>
                   </label>
-                  <button
+                  <button data-ui-size="icon"
                     type="button"
                     aria-label={`Eliminar nivel ${level.name}`}
                     disabled={levelDrafts.length <= 2}

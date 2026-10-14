@@ -352,7 +352,7 @@ export function RubricLevelSettingsDrawer({
                   className="relative grid grid-cols-[1.75rem_1.75rem_minmax(0,1fr)_5.5rem_2rem] items-center gap-2 rounded-xl border bg-card px-2.5 py-2 shadow-sm transition-colors duration-150"
                   style={{ borderColor: visual.border }}
                 >
-                  <button
+                  <button data-ui-size="icon"
                     type="button"
                     aria-label={`Arrastrar nivel ${level.name}. Usa flecha arriba o abajo para reordenar con el teclado.`}
                     className="grid size-7 touch-none cursor-grab place-items-center rounded-md text-muted-foreground hover:bg-muted hover:text-muted-foreground active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success"
@@ -410,7 +410,7 @@ export function RubricLevelSettingsDrawer({
                       }
                     />
                   </label>
-                  <button
+                  <button data-ui-size="icon"
                     type="button"
                     aria-label={`Eliminar nivel ${level.name}`}
                     disabled={drafts.length <= 2}
@@ -800,7 +800,7 @@ export function RubricInstrument({
                   <span className="mt-0.5 block pr-4 normal-case font-bold opacity-80">
                     Valor relativo: {formatInstrumentNumber(level.points)}
                   </span>
-                  <button
+                  <button data-ui-size="icon"
                     type="button"
                     aria-label={`Eliminar nivel ${level.name}`}
                     title={levelCount <= 2 ? 'Debe haber al menos 2 niveles' : 'Eliminar nivel'}

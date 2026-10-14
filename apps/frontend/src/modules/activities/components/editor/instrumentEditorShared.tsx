@@ -1,5 +1,7 @@
 import { Button } from '@/components/ui/Button'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import { blockAccents } from '@/modules/activities/components/editor/editorPresentation'
 import { cn } from '@/utils/cn'
 import { distributeScoreUnits, validateInstrumentDefinition } from '@aula/shared'
@@ -209,7 +211,7 @@ export function InstrumentTypographyControls({
         </button>
       ))}
       <span className="mx-0.5 h-5 w-px bg-border" />
-      <button
+      <button data-ui-size="icon"
         type="button"
         title="Alternar negrita"
         aria-label="Alternar negrita"
@@ -224,7 +226,7 @@ export function InstrumentTypographyControls({
       </button>
       <span className="mx-0.5 h-5 w-px bg-border" />
       {alignments.map((item) => (
-        <button
+        <button data-ui-size="icon"
           key={item.value}
           type="button"
           title={item.label}
@@ -327,6 +329,7 @@ export function InstrumentSettingsDrawer({
 }) {
   const panelRef = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref: panelRef, active: true, onEscape: onClose })
+  useOutsideClick({ ref: panelRef, onClose })
   return (
     <div
       className="fixed inset-0 z-50 bg-foreground/40 motion-safe:animate-[fadeIn_200ms_ease-out]"
@@ -350,7 +353,7 @@ export function InstrumentSettingsDrawer({
             </h3>
             <p className="mt-1 text-sm leading-5 text-muted-foreground">{description}</p>
           </div>
-          <Button
+          <Button data-ui-action="close"
             type="button"
             variant="ghost"
             size="icon"
@@ -362,7 +365,7 @@ export function InstrumentSettingsDrawer({
         </header>
         <div className="min-h-0 flex-1 overflow-y-auto p-5">{children}</div>
         <footer className="flex shrink-0 justify-end gap-3 border-t border-border bg-card px-5 py-4">
-          <Button type="button" variant="outline" onClick={onClose}>
+          <Button data-ui-action="cancel" type="button" variant="outline" onClick={onClose}>
             Cancelar
           </Button>
           <Button
@@ -516,7 +519,7 @@ export function InstrumentRowMenu({
   ) : null
   return (
     <div className="instrument-row-actions mx-auto w-fit">
-      <button
+      <button data-ui-size="icon"
         ref={buttonRef}
         type="button"
         aria-label={completing ? 'Completando criterio…' : 'Acciones de la fila'}
@@ -547,7 +550,7 @@ export function focusNewInstrumentRow(
       `[data-instrument-row="${type}-${index}"]`,
     )
     field?.scrollIntoView({
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      behavior: isMotionReduced() ? 'auto' : 'smooth',
       block: 'center',
     })
     field?.focus()

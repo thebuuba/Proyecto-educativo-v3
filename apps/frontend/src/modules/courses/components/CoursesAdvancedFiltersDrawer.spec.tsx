@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
 import {
@@ -19,6 +19,16 @@ const filters: CourseAdvancedFilters = {
 }
 
 describe('CoursesAdvancedFiltersDrawer', () => {
+  it('cierra al pulsar fuera incluso con filtros modificados sin aplicar', () => {
+    const onClose = vi.fn()
+    const onApply = vi.fn()
+    render(<CoursesAdvancedFiltersDrawer open filters={{ ...filters, onlyWithTeams: true }} initialFilters={filters}
+      levelOptions={[]} cycleOptions={[]} subjectOptions={[]} gradeOptions={[]} sectionOptions={[]}
+      resultCount={2} onChange={vi.fn()} onApply={onApply} onReset={vi.fn()} onClose={onClose} />)
+    fireEvent.click(screen.getByRole('dialog').parentElement!)
+    expect(onClose).toHaveBeenCalledTimes(1)
+    expect(onApply).not.toHaveBeenCalled()
+  })
   it('shows only the teacher-facing filters', () => {
     render(
       <CoursesAdvancedFiltersDrawer

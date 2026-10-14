@@ -36,14 +36,10 @@ export function useFocusTrap({ ref, active, onEscape }: UseFocusTrapOptions) {
     if (!el) return
 
     const focusableSelector =
-      'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
-    const focusable = el.querySelectorAll<HTMLElement>(focusableSelector)
-    const first = focusable[0]
-    const last = focusable[focusable.length - 1]
+      ':is(button, [href], input, select, textarea, [tabindex]):not(:disabled):not([tabindex="-1"])'
+    el.querySelector<HTMLElement>(focusableSelector)?.focus()
 
-    first?.focus()
-
-    function handleKeyDown(e: KeyboardEvent) {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         e.stopPropagation()
         onEscapeRef.current?.()
@@ -52,12 +48,21 @@ export function useFocusTrap({ ref, active, onEscape }: UseFocusTrapOptions) {
 
       if (e.key !== 'Tab') return
 
+      // Los campos y acciones pueden cambiar al seleccionar otra pestaña.
+      const focusable = el.querySelectorAll<HTMLElement>(focusableSelector)
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (!first) {
+        e.preventDefault()
+        return
+      }
       const isTabForward = !e.shiftKey
+      const fromContainer = document.activeElement === el
 
-      if (isTabForward && document.activeElement === last) {
+      if (isTabForward && (fromContainer || document.activeElement === last)) {
         e.preventDefault()
         first?.focus()
-      } else if (!isTabForward && document.activeElement === first) {
+      } else if (!isTabForward && (fromContainer || document.activeElement === first)) {
         e.preventDefault()
         last?.focus()
       }

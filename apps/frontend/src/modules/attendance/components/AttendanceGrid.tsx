@@ -123,7 +123,7 @@ export function AttendanceGrid({
                   const mark = cell?.mark === 'R' ? 'T' : cell?.mark ?? null
                   return (
                     <td key={workedDay.date} className="border-b border-border/60 px-1 py-2.5 text-center">
-                      <button
+                      <button data-ui-size="icon"
                         type="button"
                         disabled={saving}
                         title={`${formatShortDate(workedDay.date)} · ${mark ? markLabels[mark] : 'Sin registrar'}`}

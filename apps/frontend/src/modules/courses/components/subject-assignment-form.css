@@ -1,0 +1,71 @@
+.subject-assignment-dialog {
+  max-width: 760px;
+  max-height: calc(100dvh - 48px);
+  border-radius: 24px;
+}
+
+.subject-assignment-dialog > div:first-child {
+  padding: 24px;
+}
+
+.subject-assignment-dialog > div:first-child h3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.subject-assignment-dialog > div:first-child button {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+}
+
+.subject-assignment-content {
+  min-height: 0;
+}
+
+.subject-assignment-body {
+  padding: 24px;
+}
+
+.subject-assignment-dialog input {
+  border-radius: 9999px;
+}
+
+.subject-assignment-body aside button {
+  padding-inline: 12px;
+}
+
+.subject-assignment-list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.subject-assignment-footer {
+  position: sticky;
+  bottom: 0;
+  background: var(--card);
+  padding: 20px 24px;
+}
+
+.subject-assignment-footer button {
+  font-weight: 600;
+}
+
+@media (max-width: 639px) {
+  .subject-assignment-dialog > div:first-child,
+  .subject-assignment-body {
+    padding: 20px;
+  }
+  .subject-assignment-dialog > div:first-child h3 {
+    font-size: 18px;
+  }
+  .subject-assignment-footer {
+    padding: 16px 20px;
+  }
+  .subject-assignment-footer button {
+    flex: 1;
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+}

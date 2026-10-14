@@ -111,6 +111,11 @@ describe('GradingBook', () => {
   })
   afterEach(() => { vi.restoreAllMocks() })
 
+  it('abre las opciones de cálculo cuando se solicita desde configuración', () => {
+    renderBook({ initialConfigOpen: true })
+    expect(screen.getByRole('dialog', { name: 'Configurar cálculo' })).toBeInTheDocument()
+  })
+
   it('muestra cinco tarjetas y el instrumento completo sin fecha ni momento de clase', async () => {
     const user = userEvent.setup()
     renderBook({ initialActivityAction: 'create', initialActivityBlockId: 'b1' })

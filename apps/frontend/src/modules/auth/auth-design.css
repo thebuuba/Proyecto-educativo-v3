@@ -112,7 +112,7 @@
 .login-card h1 span { color: var(--primary); }
 .login-subtitle { margin: 4px 0 32px; color: var(--muted-foreground); font-size: 14px; line-height: 1.5; }
 .login-remembered-label { margin-bottom: 12px; color: var(--muted-foreground); font-size: 12px; font-weight: 500; }
-.login-account { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 81px; border: 1px solid var(--border); border-radius: 16px; padding: 12px; background: var(--card); text-align: left; box-shadow: 0 2px 2px color-mix(in srgb, var(--palette-text) 8%, transparent); transition: border-color .18s, transform .18s, box-shadow .18s; }
+.login-account { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 81px; border: 1px solid var(--border); border-radius: 9999px; padding: 12px; background: var(--card); text-align: left; box-shadow: 0 2px 2px color-mix(in srgb, var(--palette-text) 8%, transparent); transition: border-color .18s, transform .18s, box-shadow .18s; }
 .login-account:hover { transform: translateY(-2px); border-color: var(--primary); box-shadow: 0 8px 18px -12px var(--primary); }
 .login-avatar { display: grid; width: 48px; height: 48px; flex: none; place-items: center; border-radius: 50%; object-fit: cover; }
 .login-avatar-fallback { background: var(--primary-container); color: var(--primary); font-size: 12px; font-weight: 600; }
@@ -166,8 +166,7 @@
 .login-social button,
 .login-primary,
 .login-card .auth-input,
-.login-account,
-.login-magic { border-radius: var(--login-control-radius); }
+.login-magic { border-radius: var(--login-control-radius, 20px); }
 .login-shell :is(button, a):focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
 .login-social button { white-space: nowrap; }
 .login-social button,

@@ -62,6 +62,7 @@ export function Button({
   return (
     <button
       {...props}
+      data-ui-size={size}
       type={type}
       className={cn(
         'inline-flex shrink-0 items-center justify-center font-bold transition-[color,background-color,border-color,box-shadow,opacity] duration-150 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-4 disabled:cursor-not-allowed disabled:opacity-60',

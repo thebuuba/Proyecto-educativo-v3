@@ -23,7 +23,7 @@ export function ActivityInfoModal({activity,onClose,onEdit,onEvaluate}: {activit
       <section><h3 className="mb-2 font-semibold text-foreground">Recursos necesarios</h3><p className="text-sm text-muted-foreground">{activity.resources?.join(', ') || 'No se registraron recursos.'}</p></section>
       <section><h3 className="mb-2 font-semibold text-foreground">Instrumento de evaluación · Solo lectura</h3><ReadOnlyInstrument type={activity.instrumentType} fields={activity.instrumentCriteria ?? {}} maxScore={activity.maxScore} /></section>
       {activity.observations ? <section><h3 className="font-semibold">Observaciones</h3><p className="text-sm">{activity.observations}</p></section> : null}
-      <footer className="flex flex-wrap justify-end gap-2 border-t border-border pt-4"><Button variant="ghost" onClick={onClose}>Cerrar</Button>{onEdit ? <Button variant="outline" onClick={onEdit}>Editar actividad</Button> : null}{onEvaluate ? <Button onClick={onEvaluate}>Calificar</Button> : null}</footer>
+      <footer className="flex flex-wrap justify-end gap-2 border-t border-border pt-4"><Button data-ui-action="close" variant="ghost" onClick={onClose}>Cerrar</Button>{onEdit ? <Button variant="outline" onClick={onEdit}>Editar actividad</Button> : null}{onEvaluate ? <Button onClick={onEvaluate}>Calificar</Button> : null}</footer>
     </div>
   </Modal>
 }

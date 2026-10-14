@@ -13,7 +13,7 @@
     "seed:school-coords": "dotenv -e ../../apps/backend/.env -- tsx src/seed-school-coords.ts",
     "curriculum:import": "tsx src/import-curriculum.ts",
     "studio": "dotenv -e ../../apps/backend/.env -- prisma studio",
-    "build": "tsc"
+    "build": "prisma generate --schema prisma/schema.prisma && tsc"
   },
   "main": "./dist/index.js",
   "types": "./src/index.ts",

@@ -1,12 +1,13 @@
 /**
  * Layout principal de la aplicación con barra lateral y encabezado.
  */
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 
 import { Header } from '@/components/navigation/Header'
 import { Sidebar } from '@/components/navigation/Sidebar'
 import { GuidedTourProvider } from '@/modules/onboarding/GuidedTourProvider'
+import { setSidebarExpanded, useInterfacePreferences, useReducedMotion } from '@/hooks/useInterfacePreferences'
 import { cn } from '@/utils/cn'
 
 /**
@@ -16,15 +17,18 @@ import { cn } from '@/utils/cn'
 export function AppLayout() {
   const location = useLocation()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [isSidebarExpanded, setIsSidebarExpanded] = useState(
-    () => localStorage.getItem('aulabase:sidebar-expanded') !== 'false',
-  )
-  const isGradingPage = location.pathname.startsWith('/calificaciones')
+  const { sidebarExpanded: isSidebarExpanded } = useInterfacePreferences()
+  const reducedMotion = useReducedMotion()
   const activeModule = location.pathname.split('/').filter(Boolean)[0] ?? 'inicio'
 
-  useEffect(() => {
-    localStorage.setItem('aulabase:sidebar-expanded', String(isSidebarExpanded))
-  }, [isSidebarExpanded])
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [location.pathname])
+
+  useLayoutEffect(() => {
+    document.documentElement.dataset.reducedMotion = String(reducedMotion)
+    if (reducedMotion) document.getAnimations?.().forEach((animation) => animation.cancel())
+  }, [reducedMotion])
 
   return (
     <GuidedTourProvider>
@@ -34,28 +38,24 @@ export function AppLayout() {
             isOpen={isSidebarOpen}
             isExpanded={isSidebarExpanded}
             onClose={() => setIsSidebarOpen(false)}
-            onToggleExpanded={() => setIsSidebarExpanded((current) => !current)}
           />
 
           <div
             className={cn(
               'sidebar-workspace min-w-0 flex-1',
-              isSidebarExpanded ? 'lg:pl-[256px]' : 'lg:pl-[76px]',
+              isSidebarExpanded ? 'lg:pl-[256px]' : 'lg:pl-20',
             )}
           >
-            <Header onOpenSidebar={() => setIsSidebarOpen(true)} />
+            <Header
+              onOpenSidebar={() => setIsSidebarOpen(true)}
+              isSidebarExpanded={isSidebarExpanded}
+              onToggleSidebar={() => setSidebarExpanded(!isSidebarExpanded)}
+            />
 
             <main
               data-module={activeModule}
               data-route={location.pathname}
-              className={cn(
-                'content-density-compact min-w-0 px-4 sm:px-6 lg:px-8',
-                isGradingPage
-                  ? 'py-3 lg:py-3'
-                  : activeModule === 'inicio'
-                    ? 'pb-8 pt-0'
-                    : 'py-5 lg:py-8',
-              )}
+              className="app-main content-density-compact min-w-0 px-4 sm:px-6 lg:px-8"
             >
               <Outlet />
             </main>

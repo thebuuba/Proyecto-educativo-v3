@@ -45,7 +45,7 @@ export function useSchoolAdministration() {
         getSchoolProfile(schoolId),
         getSchoolYears(),
       ])
-      const currentYear = yearsData.find((year) => year.isCurrent) ?? yearsData[0] ?? null
+      const currentYear = yearsData.find((year) => year.isCurrent) ?? null
       const periodsData = currentYear ? await getAcademicPeriods(currentYear.id) : []
       setProfile(profileData)
       setSchoolYears(yearsData)

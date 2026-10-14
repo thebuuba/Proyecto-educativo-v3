@@ -1,3 +1,4 @@
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -894,9 +895,7 @@ export function ActivityCreationView(props: {
       const field = requiredField(issue.target)
       field?.scrollIntoView?.({
         block: 'center',
-        behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-          ? 'auto'
-          : 'smooth',
+        behavior: isMotionReduced() ? 'auto' : 'smooth',
       })
       field?.focus()
     }, 0)
@@ -1000,9 +999,7 @@ export function ActivityCreationView(props: {
       const field = requiredField(issue.target)
       field?.scrollIntoView?.({
         block: 'center',
-        behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-          ? 'auto'
-          : 'smooth',
+        behavior: isMotionReduced() ? 'auto' : 'smooth',
       })
       field?.focus()
     }, 0)
@@ -1079,7 +1076,7 @@ export function ActivityCreationView(props: {
       {fallbackNotice ? (
         <FeedbackBanner role="status" tone="warning" className="flex items-center justify-between gap-3">
           <span>{fallbackNotice}</span>
-          <Button type="button" variant="ghost" size="icon" aria-label="Cerrar aviso" onClick={() => setFallbackNotice('')}>
+          <Button data-ui-action="close" type="button" variant="ghost" size="icon" aria-label="Cerrar aviso" onClick={() => setFallbackNotice('')}>
             <X className="size-4" />
           </Button>
         </FeedbackBanner>
@@ -1551,7 +1548,7 @@ export function ActivityCreationView(props: {
           <div className="space-y-4 p-5 sm:px-6">
             {activityAdaptationError ? <p role="alert" className="text-sm text-destructive">{activityAdaptationError}</p> : null}
             <div className="flex flex-wrap justify-end gap-3">
-              <Button variant="ghost" onClick={() => {
+              <Button data-ui-action="cancel" variant="ghost" onClick={() => {
                 preparationSequence.current += 1
                 preparingRequest.current = false
                 setPreparing(false)

@@ -1,7 +1,5 @@
 .home-dashboard {
   width: 100%;
-  max-width: 1700px;
-  margin-inline: auto;
 }
 
 .home-dashboard :is(a, button, summary, input):focus-visible {

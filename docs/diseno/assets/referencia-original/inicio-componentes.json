@@ -1,0 +1,543 @@
+{
+  "classParts": [
+    {
+      "bg": "rgba(255, 255, 255, 0.1)",
+      "class": "pointer-events-none absolute -right-10 -top-12 h-40 w-40 rounded-full bg-white/10",
+      "height": 160,
+      "line": "24px",
+      "radius": "9999px",
+      "size": "16px",
+      "text": "",
+      "tracking": "normal",
+      "weight": "400",
+      "width": 160
+    },
+    {
+      "bg": "rgba(255, 255, 255, 0.1)",
+      "class": "pointer-events-none absolute -bottom-16 right-16 h-32 w-32 rounded-full bg-white/10",
+      "height": 128,
+      "line": "24px",
+      "radius": "9999px",
+      "size": "16px",
+      "text": "",
+      "tracking": "normal",
+      "weight": "400",
+      "width": 128
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "lucide lucide-flask-conical h-5 w-5",
+      "height": 20,
+      "line": "24px",
+      "radius": "0px",
+      "size": "16px",
+      "text": "",
+      "tracking": "normal",
+      "weight": "400",
+      "width": 20
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "-rotate-90",
+      "height": 64,
+      "line": "24px",
+      "radius": "0px",
+      "size": "16px",
+      "text": "",
+      "tracking": "normal",
+      "weight": "400",
+      "width": 64
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "absolute inset-0 flex flex-col items-center justify-center",
+      "height": 64,
+      "line": "24px",
+      "radius": "0px",
+      "size": "16px",
+      "text": "Termina5:10",
+      "tracking": "normal",
+      "weight": "400",
+      "width": 64
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "text-[9px] uppercase tracking-wider opacity-80",
+      "height": 13.5,
+      "line": "13.5px",
+      "radius": "0px",
+      "size": "9px",
+      "text": "Termina",
+      "tracking": "0.45px",
+      "weight": "400",
+      "width": 40.46875
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "text-sm font-semibold leading-none",
+      "height": 14,
+      "line": "14px",
+      "radius": "0px",
+      "size": "14px",
+      "text": "5:10",
+      "tracking": "normal",
+      "weight": "600",
+      "width": 26.8125
+    },
+    {
+      "bg": "rgb(255, 255, 255)",
+      "class": "h-1.5 w-1.5 animate-pulse rounded-full bg-white",
+      "height": 6,
+      "line": "15px",
+      "radius": "9999px",
+      "size": "10px",
+      "text": "",
+      "tracking": "1.8px",
+      "weight": "600",
+      "width": 6
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "flex items-center gap-1.5",
+      "height": 16,
+      "line": "16px",
+      "radius": "0px",
+      "size": "12px",
+      "text": "10:00 – 10:40",
+      "tracking": "normal",
+      "weight": "400",
+      "width": 92.5625
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "lucide lucide-clock h-3.5 w-3.5",
+      "height": 14,
+      "line": "16px",
+      "radius": "0px",
+      "size": "12px",
+      "text": "",
+      "tracking": "normal",
+      "weight": "400",
+      "width": 14
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "flex items-center gap-1.5",
+      "height": 16,
+      "line": "16px",
+      "radius": "0px",
+      "size": "12px",
+      "text": "Aula sin asignar",
+      "tracking": "normal",
+      "weight": "400",
+      "width": 115.859375
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "lucide lucide-map-pin h-3.5 w-3.5",
+      "height": 14,
+      "line": "16px",
+      "radius": "0px",
+      "size": "12px",
+      "text": "",
+      "tracking": "normal",
+      "weight": "400",
+      "width": 14
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "flex items-center gap-1.5",
+      "height": 16,
+      "line": "16px",
+      "radius": "0px",
+      "size": "12px",
+      "text": "5 est.",
+      "tracking": "normal",
+      "weight": "400",
+      "width": 51.34375
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "lucide lucide-users h-3.5 w-3.5",
+      "height": 14,
+      "line": "16px",
+      "radius": "0px",
+      "size": "12px",
+      "text": "",
+      "tracking": "normal",
+      "weight": "400",
+      "width": 14
+    },
+    {
+      "bg": "rgba(0, 0, 0, 0)",
+      "class": "lucide lucide-play h-3.5 w-3.5 fill-current",
+      "height": 14,
+      "line": "16px",
+      "radius": "0px",
+      "size": "12px",
+      "text": "",
+      "tracking": "normal",
+      "weight": "600",
+      "width": 14
+    }
+  ],
+  "shortcuts": [
+    {
+      "parts": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "class": "flex h-16 w-16 items-center justify-center rounded-2xl bg-card shadow-sm transition group-hover:-translate-y-0.5 group-hover:shadow-md",
+          "height": 64,
+          "line": "24px",
+          "radius": "24px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 64
+        },
+        {
+          "bg": "rgb(14, 165, 233)",
+          "class": "flex h-9 w-9 items-center justify-center rounded-xl bg-sky-500 text-white",
+          "height": 36,
+          "line": "24px",
+          "radius": "20px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 36
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "class": "text-xs text-muted-foreground group-hover:text-foreground",
+          "height": 16,
+          "line": "16px",
+          "radius": "0px",
+          "size": "12px",
+          "text": "Cursos",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 41.640625
+        }
+      ],
+      "text": "Cursos"
+    },
+    {
+      "parts": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "class": "flex h-16 w-16 items-center justify-center rounded-2xl bg-card shadow-sm transition group-hover:-translate-y-0.5 group-hover:shadow-md",
+          "height": 64,
+          "line": "24px",
+          "radius": "24px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 64
+        },
+        {
+          "bg": "rgb(139, 92, 246)",
+          "class": "flex h-9 w-9 items-center justify-center rounded-xl bg-violet-500 text-white",
+          "height": 36,
+          "line": "24px",
+          "radius": "20px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 36
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "class": "text-xs text-muted-foreground group-hover:text-foreground",
+          "height": 16,
+          "line": "16px",
+          "radius": "0px",
+          "size": "12px",
+          "text": "Horario",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 43.6875
+        }
+      ],
+      "text": "Horario"
+    },
+    {
+      "parts": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "class": "flex h-16 w-16 items-center justify-center rounded-2xl bg-card shadow-sm transition group-hover:-translate-y-0.5 group-hover:shadow-md",
+          "height": 64,
+          "line": "24px",
+          "radius": "24px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 64
+        },
+        {
+          "bg": "rgb(16, 185, 129)",
+          "class": "flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500 text-white",
+          "height": 36,
+          "line": "24px",
+          "radius": "20px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 36
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "class": "text-xs text-muted-foreground group-hover:text-foreground",
+          "height": 16,
+          "line": "16px",
+          "radius": "0px",
+          "size": "12px",
+          "text": "Asistencia",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 61.40625
+        }
+      ],
+      "text": "Asistencia"
+    },
+    {
+      "parts": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "class": "flex h-16 w-16 items-center justify-center rounded-2xl bg-card shadow-sm transition group-hover:-translate-y-0.5 group-hover:shadow-md",
+          "height": 64,
+          "line": "24px",
+          "radius": "24px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 64
+        },
+        {
+          "bg": "rgb(20, 184, 166)",
+          "class": "flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500 text-white",
+          "height": 36,
+          "line": "24px",
+          "radius": "20px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 36
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "class": "text-xs text-muted-foreground group-hover:text-foreground",
+          "height": 16,
+          "line": "16px",
+          "radius": "0px",
+          "size": "12px",
+          "text": "Evaluación",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 65.34375
+        }
+      ],
+      "text": "Evaluación"
+    },
+    {
+      "parts": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "class": "flex h-16 w-16 items-center justify-center rounded-2xl bg-card shadow-sm transition group-hover:-translate-y-0.5 group-hover:shadow-md",
+          "height": 64,
+          "line": "24px",
+          "radius": "24px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 64
+        },
+        {
+          "bg": "rgb(251, 191, 36)",
+          "class": "flex h-9 w-9 items-center justify-center rounded-xl bg-amber-400 text-white",
+          "height": 36,
+          "line": "24px",
+          "radius": "20px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 36
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "class": "text-xs text-muted-foreground group-hover:text-foreground",
+          "height": 16,
+          "line": "16px",
+          "radius": "0px",
+          "size": "12px",
+          "text": "Actividades",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 70.421875
+        }
+      ],
+      "text": "Actividades"
+    },
+    {
+      "parts": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "class": "flex h-16 w-16 items-center justify-center rounded-2xl bg-card shadow-sm transition group-hover:-translate-y-0.5 group-hover:shadow-md",
+          "height": 64,
+          "line": "24px",
+          "radius": "24px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 64
+        },
+        {
+          "bg": "rgb(249, 115, 22)",
+          "class": "flex h-9 w-9 items-center justify-center rounded-xl bg-orange-500 text-white",
+          "height": 36,
+          "line": "24px",
+          "radius": "20px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 36
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "class": "text-xs text-muted-foreground group-hover:text-foreground",
+          "height": 16,
+          "line": "16px",
+          "radius": "0px",
+          "size": "12px",
+          "text": "Planificación",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 76.546875
+        }
+      ],
+      "text": "Planificación"
+    },
+    {
+      "parts": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "class": "flex h-16 w-16 items-center justify-center rounded-2xl bg-card shadow-sm transition group-hover:-translate-y-0.5 group-hover:shadow-md",
+          "height": 64,
+          "line": "24px",
+          "radius": "24px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 64
+        },
+        {
+          "bg": "rgb(244, 63, 94)",
+          "class": "flex h-9 w-9 items-center justify-center rounded-xl bg-rose-500 text-white",
+          "height": 36,
+          "line": "24px",
+          "radius": "20px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 36
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "class": "text-xs text-muted-foreground group-hover:text-foreground",
+          "height": 16,
+          "line": "16px",
+          "radius": "0px",
+          "size": "12px",
+          "text": "Bitácora",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 50.34375
+        }
+      ],
+      "text": "Bitácora"
+    },
+    {
+      "parts": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "class": "flex h-16 w-16 items-center justify-center rounded-2xl bg-card shadow-sm transition group-hover:-translate-y-0.5 group-hover:shadow-md",
+          "height": 64,
+          "line": "24px",
+          "radius": "24px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 64
+        },
+        {
+          "bg": "rgb(100, 116, 139)",
+          "class": "flex h-9 w-9 items-center justify-center rounded-xl bg-slate-500 text-white",
+          "height": 36,
+          "line": "24px",
+          "radius": "20px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 36
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "class": "text-xs text-muted-foreground group-hover:text-foreground",
+          "height": 16,
+          "line": "16px",
+          "radius": "0px",
+          "size": "12px",
+          "text": "Reportes",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 53.078125
+        }
+      ],
+      "text": "Reportes"
+    },
+    {
+      "parts": [
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "class": "flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-dashed border-muted-foreground/25 text-muted-foreground transition group-hover:border-primary group-hover:text-primary",
+          "height": 64,
+          "line": "24px",
+          "radius": "24px",
+          "size": "16px",
+          "text": "",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 64
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "class": "text-xs text-muted-foreground",
+          "height": 16,
+          "line": "16px",
+          "radius": "0px",
+          "size": "12px",
+          "text": "Agregar",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 48.828125
+        }
+      ],
+      "text": "Agregar"
+    }
+  ]
+}

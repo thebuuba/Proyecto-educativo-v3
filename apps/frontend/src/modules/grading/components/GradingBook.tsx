@@ -1,3 +1,4 @@
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import { ActivityEditorWorkspace } from '@/modules/activities/components/ActivityEditorWorkspace'
 import { activityToDraft,buildActivityDraftMetas,emptyActivityDraft,formatDraftDate,newActivityDraft,sortDraftMetas,type ActivityDraftMeta,type ActivityDraftsByBlock } from '@/modules/activities/components/editor/editorModel'
 import { ActivityDescriptionContent,activityDescriptionText,activityMomentTitle,blockAccents,blockShortNames,formatActivityDate,getBlockAccent,instrumentTitle,ProgressBar } from '@/modules/activities/components/editor/editorPresentation'
@@ -102,6 +103,7 @@ import { secondaryEvaluationProfile,type EvaluationProfile, type InstrumentAcade
 type GradingBookProps = {
   instrumentAcademicContext?: InstrumentAcademicContext | null
   activityDraftContext?: ActivityDraftContext
+  initialConfigOpen?: boolean
   firstSecondaryLanguage?: boolean
   secondSecondaryLanguage?: boolean
   evaluationProfile?: EvaluationProfile
@@ -167,6 +169,7 @@ type ActivitySaveCompletion =
 export function GradingBook({
   instrumentAcademicContext,
   activityDraftContext,
+  initialConfigOpen = false,
   firstSecondaryLanguage = false,
   secondSecondaryLanguage = false,
   evaluationProfile,
@@ -214,7 +217,7 @@ export function GradingBook({
       ? { type: 'activity', activityId: initialActivityId, initialTab: initialActivityMode === 'evaluate' ? 'evaluation' : initialActivityMode === 'results' ? 'results' : 'details' }
       : null)
   const [activityCreateReturnView, setActivityCreateReturnView] = useState<DetailView | null>(() => initialActivityBlockId ? { type: 'activity-hub' } : null)
-  const [showConfig, setShowConfig] = useState(false)
+  const [showConfig, setShowConfig] = useState(initialConfigOpen)
   const [infoActivity, setInfoActivity] = useState<GradingActivity | null>(null)
   const [editingActivityId, setEditingActivityId] = useState<string | null>(null)
   const [activityDraft, setActivityDraft] = useState(() => initialActivityBlockId ? newActivityDraft(initialActivityBlockId) : emptyActivityDraft)
@@ -793,7 +796,7 @@ export function ActivitySavedDialog({ completion, returnLabel, onClose, onCreate
               <p className="mt-1 text-sm text-muted-foreground">{created ? 'La actividad y su instrumento ya están disponibles en Evaluación.' : 'Tu progreso se conservó y podrás completar la actividad más adelante.'}</p>
             </div>
           </div>
-          <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button>
+          <Button data-ui-action="close" variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}><X className="size-5" /></Button>
         </div>
 
         <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
@@ -2040,7 +2043,7 @@ function ActivityEvaluationPanel({
           if (!await saveCurrentScore()) return
           setStudentIndex((current) => Math.min(students.length - 1, current + 1))
           window.requestAnimationFrame(() => {
-            if (typeof workspaceRef.current?.scrollIntoView === 'function') workspaceRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            if (typeof workspaceRef.current?.scrollIntoView === 'function') workspaceRef.current.scrollIntoView({ behavior: isMotionReduced() ? 'auto' : 'smooth', block: 'start' })
           })
         }}>
           {saveStatus === 'saving' ? 'Guardando…' : saveStatus === 'saved' ? 'Guardado ✓' : 'Guardar y siguiente →'}
@@ -2704,7 +2707,7 @@ export function DraftCenter({
                       {meta.block.shortName}
                     </span>
                     <div className="flex items-center gap-1">
-                      <button
+                      <button data-ui-size="icon"
                         type="button"
                         className="inline-flex size-7 items-center justify-center rounded-md text-destructive transition hover:bg-destructive/10"
                         aria-label={`Eliminar borrador ${draftName}`}
@@ -3035,7 +3038,7 @@ function CalculationConfigModal({
               </p>
             </div>
           </div>
-          <Button variant="ghost" size="icon" aria-label="Cerrar configuración" onClick={onClose}>
+          <Button data-ui-action="close" variant="ghost" size="icon" aria-label="Cerrar configuración" onClick={onClose}>
             <X className="size-5" />
           </Button>
         </header>

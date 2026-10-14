@@ -1,3 +1,4 @@
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import {
   AlertCircle,
   Archive,
@@ -97,7 +98,7 @@ import { SectionForm } from '@/modules/courses/components/SectionForm'
 import { SubjectAssignmentForm } from '@/modules/courses/components/SubjectAssignmentForm'
 import { TeacherAssignmentForm } from '@/modules/courses/components/TeacherAssignmentForm'
 import { CourseTeamsPanel } from '@/modules/courses/components/CourseTeamsPanel'
-import { CourseStudentsPanel } from '@/modules/courses/components/CourseStudentsPanel'
+import { AddStudentsModal, CourseStudentsPanel } from '@/modules/courses/components/CourseStudentsPanel'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import type { CourseAdvancedFilters } from '@/modules/courses/components/CoursesAdvancedFiltersDrawer'
 import { getClassAttendanceHistory, getStudentsBySection, type ClassAttendanceHistoryRecord } from '@/modules/attendance/services/attendanceService'
@@ -595,10 +596,10 @@ export function CoursesPage() {
               {canManage && !showArchived ? (
                 <div className="flex flex-wrap items-center gap-2">
                   <details className="group relative shrink-0">
-                    <summary data-tour="create-course" className="flex h-11 cursor-pointer list-none items-center gap-2 rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+                    <summary data-tour="create-course" className="flex h-11 cursor-pointer list-none items-center gap-2 rounded-full border border-primary-foreground/60 bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-foreground/50 [&::-webkit-details-marker]:hidden">
                       Acciones <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
                     </summary>
-                    <div className="absolute right-0 z-30 mt-2 w-52 rounded-2xl border border-border bg-card p-1.5 shadow-xl">
+                    <div className="absolute right-0 z-30 mt-2 w-52 rounded-2xl border border-border bg-card p-1.5 text-foreground shadow-xl">
                       <button type="button" onClick={openCreateAssignmentFlow} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Agregar curso</button>
                       <button type="button" onClick={openCreateSectionFromActions} className="flex min-h-10 w-full items-center gap-2 rounded-xl px-3 text-left text-sm font-bold hover:bg-muted"><Plus className="size-4 text-primary" /> Nueva sección</button>
                     </div>
@@ -614,8 +615,8 @@ export function CoursesPage() {
                 [BookOpen, totalAssignments, 'Asignaturas'],
                 [UsersRound, totalTeams, 'Equipos'],
               ] as const).map(([Icon, value, label]) => (
-                <div key={label} className="flex items-center gap-3 rounded-2xl bg-primary/5 px-3 py-2.5">
-                  <span className="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><Icon className="size-4" /></span>
+                <div key={label} className="flex items-center gap-3 rounded-2xl bg-primary-foreground/15 px-3 py-2.5">
+                  <span className="grid size-9 shrink-0 place-items-center rounded-full bg-primary-foreground/20 text-primary-foreground"><Icon className="size-4" /></span>
                   <div><strong className="block text-lg font-extrabold leading-5 tabular-nums">{value}</strong><span className="text-xs text-primary-foreground/80">{label}</span></div>
                 </div>
               ))}
@@ -632,7 +633,7 @@ export function CoursesPage() {
               <label><span className="sr-only">Ciclo</span><Select value={cycleFilter} onChange={(event) => { setCycleFilter(event.target.value); setSubjectFilter('all') }}><option value="all">Todos los ciclos</option>{cycleFilters.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</Select></label>
               <label><span className="sr-only">Asignatura</span><Select value={subjectFilter} onChange={(event) => setSubjectFilter(event.target.value)}><option value="all">Todas las asignaturas</option>{subjectFilters.map((name) => <option key={name} value={name}>{name}</option>)}</Select></label>
             </div></details>
-            {levelFilter !== 'all' || cycleFilter !== 'all' || subjectFilter !== 'all' || searchQuery ? <button type="button" onClick={() => { setSearchQuery(''); setLevelFilter('all'); setCycleFilter('all'); setSubjectFilter('all') }} className="inline-flex min-h-10 items-center gap-2 text-sm text-primary"><X className="size-4" />Limpiar filtros</button> : null}
+            {levelFilter !== 'all' || cycleFilter !== 'all' || subjectFilter !== 'all' || searchQuery ? <button data-ui-action="close" type="button" onClick={() => { setSearchQuery(''); setLevelFilter('all'); setCycleFilter('all'); setSubjectFilter('all') }} className="inline-flex min-h-10 items-center gap-2 text-sm text-primary"><X className="size-4" />Limpiar filtros</button> : null}
           </div>
 
           {!loading && !error && !currentSchoolYear ? (
@@ -873,6 +874,8 @@ function CourseWorkspace({
   const [subjectInitialTab, setSubjectInitialTab] = useState('resumen')
   const [workspaceView, setWorkspaceView] = useState<'subjects' | 'archived' | 'students'>(initialStudentView ? 'students' : 'subjects')
   const [studentAction, setStudentAction] = useState<'new' | 'import' | undefined>(initialStudentAction)
+  const [enrollmentOpen, setEnrollmentOpen] = useState(false)
+  const [studentsRevision, setStudentsRevision] = useState(0)
   const [appearanceTarget, setAppearanceTarget] = useState<SectionSubjectAssignment | null>(null)
   const selectedAssignment = item.assignments.find((assignment) => assignment.id === selectedAssignmentId) ?? null
   const archivedAssignments = item.section.assignments.filter((assignment) => assignment.status === 'inactive')
@@ -887,6 +890,7 @@ function CourseWorkspace({
   useEffect(() => {
     setWorkspaceView(initialStudentView ? 'students' : 'subjects')
     setStudentAction(initialStudentAction)
+    setEnrollmentOpen(false)
     setSubjectInitialTab('resumen')
   }, [item.section.id, schoolYearId, initialStudentView, initialStudentAction])
 
@@ -924,7 +928,7 @@ function CourseWorkspace({
   }
 
   if (workspaceView === 'students') {
-    return <CourseStudentsPanel courseId={item.section.id} courseName={`${item.grade.name} ${item.section.name}`} canEnroll={canEnroll} canManage={canManage} initialAction={studentAction} onBack={() => { setStudentAction(undefined); setWorkspaceView('subjects'); onStudentsBack() }} />
+    return <CourseStudentsPanel courseId={item.section.id} courseName={`${item.grade.name} ${item.section.name}`} canEnroll={canEnroll} canManage={canManage} initialAction={studentAction} onBack={() => { setWorkspaceView('subjects'); onStudentsBack() }} />
   }
 
   return (
@@ -938,13 +942,13 @@ function CourseWorkspace({
           <div className="flex min-w-0 items-center gap-5">
             <span className="grid size-20 shrink-0 place-items-center rounded-3xl bg-card text-2xl font-extrabold text-primary shadow-sm">{getCourseCompactLabel(item.grade.name, item.section.name)}</span>
             <div className="min-w-0">
-              <div className="flex items-center gap-3"><h1 className="text-3xl font-extrabold">{item.grade.name} {item.section.name}</h1><StatusBadge tone={item.archived ? 'neutral' : 'success'}>{item.archived ? 'Archivado' : 'Activo'}</StatusBadge></div>
+              <div className="flex items-center gap-3"><h1 className="text-3xl font-extrabold">{item.grade.name} {item.section.name}</h1><StatusBadge tone={item.archived ? 'neutral' : 'success'} className="course-hero-status">{item.archived ? 'Archivado' : 'Activo'}</StatusBadge></div>
               <p className="mt-1 text-sm text-primary-foreground/80">{cleanLevelName(item.levelName)} · {item.cycleName}{schoolYearName ? ` · Año escolar ${schoolYearName}` : ''}</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-2">
-            {canManage ? <button type="button" onClick={() => onEditSection(item.grade, item.section.id)} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-primary/10 px-4 text-sm font-semibold text-primary hover:bg-primary/15"><Edit3 className="size-4" /> Editar</button> : null}
-            {canEnroll ? <button type="button" onClick={() => { setStudentAction('new'); setWorkspaceView('students') }} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-card px-4 text-sm font-semibold text-primary hover:bg-primary-container"><Plus className="size-4" /> Agregar estudiantes</button> : null}
+            {canManage ? <button type="button" onClick={() => onEditSection(item.grade, item.section.id)} className="inline-flex min-h-10 items-center gap-2 rounded-full bg-primary-foreground/15 px-4 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/25"><Edit3 className="size-4" /> Editar</button> : null}
+            {canEnroll ? <button type="button" onClick={() => setEnrollmentOpen(true)} className="inline-flex min-h-10 items-center gap-2 rounded-full border border-primary-foreground/60 bg-primary px-4 text-sm font-semibold text-primary-foreground hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-foreground/50"><Plus className="size-4" /> Agregar estudiantes</button> : null}
           </div>
         </div>
         <div className="mt-6 grid grid-cols-2 gap-2 xl:grid-cols-4">
@@ -954,8 +958,8 @@ function CourseWorkspace({
             [CalendarCheck2, '—', 'Asistencia', ''],
             [ChartColumn, courseAverage ?? '—', 'Promedio', ''],
           ] as const).map(([Icon, value, label, detail]) => (
-            <div key={label} className="flex min-w-0 items-center gap-3 rounded-2xl bg-primary/5 px-3 py-3">
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><Icon className="size-4" /></span>
+            <div key={label} className="flex min-w-0 items-center gap-3 rounded-2xl bg-primary-foreground/15 px-3 py-3">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary-foreground/20 text-primary-foreground"><Icon className="size-4" /></span>
               <div><strong className="block text-lg font-extrabold leading-5 tabular-nums">{value}</strong><span className="text-xs text-primary-foreground/80">{label}{detail}</span></div>
             </div>
           ))}
@@ -1016,7 +1020,7 @@ function CourseWorkspace({
         </div>
 
         <aside className="space-y-4">
-          <CourseStudentsSidebar courseId={item.section.id} courseName={`${item.grade.name} ${item.section.name}`} onView={() => { setStudentAction(undefined); setWorkspaceView('students') }} onAdd={() => { setStudentAction('new'); setWorkspaceView('students') }} canEnroll={canEnroll} />
+          <CourseStudentsSidebar courseId={item.section.id} courseName={`${item.grade.name} ${item.section.name}`} revision={studentsRevision} onView={() => setWorkspaceView('students')} onAdd={() => setEnrollmentOpen(true)} canEnroll={canEnroll} />
           <section className="rounded-3xl border border-border bg-card p-5 shadow-sm">
             <h2 className="text-sm font-semibold text-foreground">Acciones rápidas</h2>
             <div className="mt-4 space-y-1">
@@ -1035,29 +1039,46 @@ function CourseWorkspace({
         </aside>
       </div>
 
+      {enrollmentOpen ? <AddStudentsModal courseId={item.section.id} courseName={`${item.grade.name} ${item.section.name}`} initialTab="single" onClose={() => { setEnrollmentOpen(false); setStudentsRevision((current) => current + 1); onStudentsBack() }} /> : null}
       {appearanceTarget ? <SubjectAppearanceDialog assignment={appearanceTarget} onSave={(input) => onCustomizeSubject(appearanceTarget.id, input)} onClose={() => setAppearanceTarget(null)} /> : null}
     </div>
   )
 }
 
-function CourseStudentsSidebar({ courseId, courseName, canEnroll, onView, onAdd }: { courseId: string; courseName: string; canEnroll: boolean; onView: () => void; onAdd: () => void }) {
-  const [students, setStudents] = useState<CourseStudent[]>([])
+// Última lista visible; siempre se revalida al montar o cambiar la matrícula.
+const courseStudentsSidebarCache = new Map<string, CourseStudent[]>()
+
+export function CourseStudentsSidebar({ courseId, courseName, revision, canEnroll, onView, onAdd }: { courseId: string; courseName: string; revision: number; canEnroll: boolean; onView: () => void; onAdd: () => void }) {
+  const { appUser } = useAuth()
+  const dataKey = JSON.stringify([appUser?.id, appUser?.schoolId, courseId])
+  const cacheKey = appUser ? dataKey : null
+  const [snapshot, setSnapshot] = useState<{ key: string; rows: CourseStudent[] | null }>(() => ({
+    key: dataKey,
+    rows: cacheKey ? courseStudentsSidebarCache.get(cacheKey) ?? null : null,
+  }))
+  const rows = snapshot.key === dataKey ? snapshot.rows : cacheKey ? courseStudentsSidebarCache.get(cacheKey) ?? null : null
+  const students = rows ?? []
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
+  const initialLoading = loading && rows === null
 
   useEffect(() => {
     let active = true
     setLoading(true)
     setError(false)
-    getStudentsByCourse(courseId).then((rows) => { if (active) setStudents(rows) }).catch(() => { if (active) { setStudents([]); setError(true) } }).finally(() => { if (active) setLoading(false) })
+    getStudentsByCourse(courseId).then((freshRows) => {
+      if (!active) return
+      if (cacheKey) courseStudentsSidebarCache.set(cacheKey, freshRows)
+      setSnapshot({ key: dataKey, rows: freshRows })
+    }).catch(() => { if (active) setError(true) }).finally(() => { if (active) setLoading(false) })
     return () => { active = false }
-  }, [courseId])
+  }, [courseId, revision, dataKey, cacheKey])
 
   return <section className="rounded-3xl border border-border bg-card p-5 shadow-sm">
-    <div className="flex items-center gap-3"><span className="grid size-10 shrink-0 place-items-center rounded-full bg-success/15 text-success"><UsersRound className="size-5" /></span><div className="min-w-0"><h2 className="text-base font-semibold text-foreground">Estudiantes</h2><p className="text-xs leading-4 text-muted-foreground">{loading || error ? '—' : students.length} comparten todas las asignaturas de {courseName}</p></div></div>
-    <div className="mt-3 space-y-1">{loading ? <p className="py-6 text-center text-xs text-muted-foreground">Cargando estudiantes...</p> : students.slice(0, 5).map((student, index) => <button key={student.id} type="button" onClick={onView} className="flex min-h-14 w-full items-center gap-3 rounded-xl px-1.5 py-1 text-left hover:bg-muted"><span className={cn('grid size-9 shrink-0 place-items-center rounded-full text-[11px] font-semibold', index % 3 === 0 ? 'bg-primary/10 text-primary' : index % 3 === 1 ? 'bg-success/15 text-success' : 'bg-warning/20 text-warning-foreground')}>{student.firstName[0]}{student.lastName[0]}</span><span className="min-w-0 flex-1"><strong className="block truncate text-sm font-medium text-foreground">{student.fullName}</strong></span><ChevronRight className="size-4 shrink-0 text-muted-foreground" /></button>)}</div>
+    <div className="flex items-center gap-3"><span className="grid size-10 shrink-0 place-items-center rounded-full bg-success/15 text-success"><UsersRound className="size-5" /></span><div className="min-w-0"><h2 className="text-base font-semibold text-foreground">Estudiantes</h2><p className="text-xs leading-4 text-muted-foreground">{rows === null ? '—' : students.length} comparten todas las asignaturas de {courseName}</p></div></div>
+    <div className="mt-3 space-y-1">{initialLoading ? <p className="py-6 text-center text-xs text-muted-foreground">Cargando estudiantes...</p> : students.slice(0, 5).map((student, index) => <button key={student.id} type="button" onClick={onView} className="flex min-h-14 w-full items-center gap-3 rounded-xl px-1.5 py-1 text-left hover:bg-muted"><span className={cn('grid size-9 shrink-0 place-items-center rounded-full text-[11px] font-semibold', index % 3 === 0 ? 'bg-primary/10 text-primary' : index % 3 === 1 ? 'bg-success/15 text-success' : 'bg-warning/20 text-warning-foreground')}>{student.firstName[0]}{student.lastName[0]}</span><span className="min-w-0 flex-1"><strong className="block truncate text-sm font-medium text-foreground">{student.fullName}</strong></span><ChevronRight className="size-4 shrink-0 text-muted-foreground" /></button>)}</div>
     {error ? <p role="alert" className="py-5 text-sm text-destructive">No se pudo cargar la lista. Abre «Ver todos» para intentarlo de nuevo.</p> : null}
-    {!loading && !error && !students.length ? <p className="py-5 text-center text-xs text-muted-foreground">Todavía no hay estudiantes.</p> : null}
+    {rows !== null && !students.length ? <p className="py-5 text-center text-xs text-muted-foreground">Todavía no hay estudiantes.</p> : null}
     <div className="mt-4 flex gap-2 border-t border-border pt-4">{canEnroll ? <button type="button" onClick={onAdd} className="min-h-9 flex-1 rounded-full bg-muted/70 px-3 text-xs font-medium text-foreground hover:bg-muted"><Plus className="mr-1 inline size-3.5 text-muted-foreground" />Agregar</button> : null}<button type="button" onClick={onView} className="min-h-9 flex-1 rounded-full bg-primary/10 px-3 text-xs font-medium text-primary hover:bg-primary/15">Ver todos <ArrowRight className="ml-1 inline size-3.5" /></button></div>
   </section>
 }
@@ -1109,7 +1130,7 @@ export function CourseSubjectCard({ assignment, studentCount, canManage, onOpen,
       <div className="mt-auto flex items-center gap-3 pt-4">
         <span className="grid size-11 shrink-0 place-items-center rounded-full p-1 text-xs font-bold text-foreground" style={{ background: `conic-gradient(${color} ${average ?? 0}%, var(--muted) 0)` }}><span className="grid size-full place-items-center rounded-full bg-card">{average === null ? '—' : Math.round(average)}</span></span>
         <span className="min-w-0 flex-1"><strong className="block text-xs text-foreground">{average === null ? 'Sin calificaciones' : average >= 85 ? 'Excelente' : average >= 70 ? 'En progreso' : 'Requiere atención'}</strong><span className="text-[11px] text-muted-foreground">{assignment.lastAttendanceDate ? `Asistencia: ${formatRelativeAttendance(assignment.lastAttendanceDate)}` : 'Sin registro de asistencia'}</span></span>
-        <button type="button" onClick={(event) => { event.stopPropagation(); onOpen('resumen') }} aria-label={`Abrir ${assignment.subjectName}`} className="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary hover:bg-primary/15"><ChevronRight className="size-4" /></button>
+        <button data-ui-size="icon" type="button" onClick={(event) => { event.stopPropagation(); onOpen('resumen') }} aria-label={`Abrir ${assignment.subjectName}`} className="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary hover:bg-primary/15"><ChevronRight className="size-4" /></button>
       </div>
     </article>
   )
@@ -1191,7 +1212,7 @@ function AssignmentActionsMenu({ label, items }: { label: string; items: Assignm
 
   return (
     <div ref={rootRef} className="relative" onClick={(event) => event.stopPropagation()}>
-      <button ref={triggerRef} type="button" aria-label={`Más opciones de ${label}`} aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen((value) => !value)} className="flex size-8 items-center justify-center rounded-lg text-slate-500 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"><MoreHorizontal className="size-4" /></button>
+      <button data-ui-size="icon" ref={triggerRef} type="button" aria-label={`Más opciones de ${label}`} aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen((value) => !value)} className="flex size-8 items-center justify-center rounded-lg text-slate-500 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"><MoreHorizontal className="size-4" /></button>
       {open ? (
         <div role="menu" aria-label={`Opciones de ${label}`} className="absolute right-0 top-9 z-30 w-56 rounded-xl border border-slate-200 bg-white p-1.5 shadow-xl">
           {items.map((item, index) => (
@@ -1420,7 +1441,7 @@ export function SubjectAppearanceDialog({ assignment, onSave, onClose }: { assig
         <div className="flex min-w-0 flex-col-reverse gap-3 border-t border-slate-100 pt-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
           <Button type="button" variant="ghost" className="w-full justify-center sm:w-auto" onClick={() => { setColor(null); setHexColor(defaultColor); setIcon(null) }} disabled={saving}><RotateCcw className="size-4" /> Restablecer predeterminada</Button>
           <div className="flex min-w-0 flex-col-reverse gap-2 sm:flex-row sm:justify-end">
-            <Button type="button" variant="outline" className="w-full sm:w-auto" onClick={onClose} disabled={saving}>Cancelar</Button>
+            <Button data-ui-action="cancel" type="button" variant="outline" className="w-full sm:w-auto" onClick={onClose} disabled={saving}>Cancelar</Button>
             <Button type="button" className="w-full sm:w-auto" onClick={() => void save()} loading={saving}>Guardar apariencia</Button>
           </div>
         </div>
@@ -1485,7 +1506,7 @@ function ArchiveSubjectDialog({ subjectName, onConfirm, onClose }: { subjectName
         <p className="mt-4 text-xs leading-5 text-muted-foreground">Mientras esté archivada no podrás trabajar dentro de ella. Al restaurarla, volverá exactamente con su información y configuración actuales.</p>
 
         <div className="mt-5 flex flex-col-reverse gap-2 border-t border-slate-100 pt-4 sm:flex-row sm:justify-end">
-          <Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button>
+          <Button data-ui-action="cancel" type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button>
           <Button type="button" onClick={() => void confirm()} loading={loading} className="border-amber-600 bg-amber-600 text-white shadow-sm hover:bg-amber-700"><Archive className="size-4" /> Archivar asignatura</Button>
         </div>
       </div>
@@ -1523,7 +1544,7 @@ export function PermanentSubjectDeleteDialog({ subjectName, onConfirm, onClose }
         <label className="block text-sm font-bold text-foreground">Escribe <span className="text-destructive">ELIMINAR</span> para confirmar.</label>
         <Input autoFocus value={confirmation} onChange={(event) => setConfirmation(event.target.value)} disabled={loading} />
         {error ? <p role="alert" className="text-sm font-semibold text-destructive">{error}</p> : null}
-        <div className="flex justify-end gap-2 border-t border-border pt-4"><Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button><Button type="button" variant="destructive" onClick={() => void confirm()} disabled={!matches || loading} loading={loading}>Eliminar permanentemente</Button></div>
+        <div className="flex justify-end gap-2 border-t border-border pt-4"><Button data-ui-action="cancel" type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button><Button type="button" variant="destructive" onClick={() => void confirm()} disabled={!matches || loading} loading={loading}>Eliminar permanentemente</Button></div>
       </div>
     </Modal>
   )
@@ -1557,7 +1578,7 @@ export function PermanentGradeDeleteDialog({ gradeName, onConfirm, onClose }: { 
         <label className="block text-sm font-bold text-foreground">Escribe <span className="text-destructive">CONFIRMAR</span> para continuar.</label>
         <Input autoFocus value={confirmation} onChange={(event) => setConfirmation(event.target.value)} disabled={loading} />
         {error ? <p role="alert" className="text-sm font-semibold text-destructive">{error}</p> : null}
-        <div className="flex justify-end gap-2 border-t border-border pt-4"><Button type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button><Button type="button" variant="destructive" onClick={() => void confirm()} disabled={!matches || loading} loading={loading}><Trash2 className="size-4" /> Eliminar grado</Button></div>
+        <div className="flex justify-end gap-2 border-t border-border pt-4"><Button data-ui-action="cancel" type="button" variant="outline" onClick={onClose} disabled={loading}>Cancelar</Button><Button type="button" variant="destructive" onClick={() => void confirm()} disabled={!matches || loading} loading={loading}><Trash2 className="size-4" /> Eliminar grado</Button></div>
       </div>
     </Modal>
   )
@@ -1723,7 +1744,7 @@ function SubjectDetailView({
   return (
     <div className="course-workspace-shell subject-workspace w-full min-w-0 max-w-full space-y-3">
       <header className="subject-workspace-header flex flex-wrap items-center gap-4 rounded-3xl border border-border bg-card px-5 py-5 shadow-sm lg:min-h-[124px] lg:flex-nowrap lg:px-6">
-        <button type="button" className="grid size-11 shrink-0 place-items-center rounded-full border border-border text-primary shadow-sm hover:bg-primary/5" onClick={onBack} aria-label={backLabel} title={backLabel}><BackIcon /></button>
+        <button data-ui-size="icon" type="button" className="grid size-11 shrink-0 place-items-center rounded-full border border-border text-primary shadow-sm hover:bg-primary/5" onClick={onBack} aria-label={backLabel} title={backLabel}><BackIcon /></button>
         <span className="hidden h-12 w-px bg-border sm:block" />
         <span className="grid size-14 shrink-0 place-items-center rounded-2xl text-white shadow-sm [&>svg]:size-7" style={{ backgroundColor: palette.color }}>{getSubjectIcon(item.subjectName, item.assignment?.appearanceIcon)}</span>
         <div className="min-w-0 flex-1">
@@ -1917,7 +1938,7 @@ export function ActivityBlockPickerDialog({ assignmentId, courseId, courseName, 
         </div>
 
         <div className="mt-5 flex justify-end border-t border-slate-100 pt-4">
-          <Button type="button" variant="outline" onClick={onClose}>Cancelar</Button>
+          <Button data-ui-action="cancel" type="button" variant="outline" onClick={onClose}>Cancelar</Button>
         </div>
       </div>
     </Modal>
@@ -2081,7 +2102,7 @@ export function SubjectActivitiesTab({ activities, activityId, academicPeriods, 
       <label className="subject-search"><Search /><input aria-label="Buscar actividad" placeholder="Buscar por nombre o descripción..." value={query} onChange={event => setQuery(event.target.value)} /></label>
       <select aria-label="Ordenar actividades" value={sort} onChange={event => setSort(event.target.value as typeof sort)}><option value="recent">Ordenar por fecha</option><option value="oldest">Más antiguas</option><option value="name">Nombre A-Z</option></select>
     </div>
-    {!activities.length ? <div className="flex min-h-72 flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card px-6 text-center"><span className="flex size-14 items-center justify-center rounded-2xl bg-primary/8 text-primary"><CheckSquare className="size-6" /></span><h3 className="mt-4 text-lg font-extrabold">Aún no hay actividades</h3><p className="mt-2 max-w-md text-sm text-muted-foreground">Crea la primera actividad de esta asignatura para comenzar a evaluarla.</p><Button className="mt-5" onClick={onCreate}><Plus className="size-4" /> Crear primera actividad</Button></div> : !visible.length ? <EmptyState title="Sin coincidencias" description="Prueba con otro texto o estado." /> : <div className="subject-table-panel overflow-x-auto"><table className="subject-data-table min-w-[70rem] w-full text-left text-sm"><thead className="bg-muted/40 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground"><tr><th className="px-4 py-3">Actividad</th><th className="px-4 py-3">Bloque</th><th className="px-4 py-3">Período</th><th className="px-4 py-3">Fecha</th><th className="px-4 py-3">Valor</th><th className="px-4 py-3">Instrumento</th><th className="px-4 py-3">Modalidad</th><th className="px-4 py-3">Estado</th><th className="px-4 py-3">Calificados</th><th className="px-4 py-3 text-right">Acciones</th></tr></thead><tbody className="divide-y divide-border">{visible.map((activity) => { const meta = activityMeta(activity); const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId); return <tr key={activity.id} tabIndex={0} aria-label={`Abrir actividad ${activity.name}`} onClick={() => onActivityChange(activity.id)} onKeyDown={(event) => { if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); onActivityChange(activity.id) } }} className="cursor-pointer outline-none transition hover:bg-primary/[0.035] focus-visible:bg-primary/[0.05] focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"><td className="px-4 py-3"><span className="block max-w-72 truncate text-left font-semibold text-foreground">{activity.name}</span><span className="block max-w-72 truncate text-xs text-muted-foreground">{activity.description}</span></td><td className="px-4 py-3 text-xs"><strong className="block">{block?.shortName ?? 'Bloque'}</strong></td><td className="px-4 py-3 text-xs font-bold">{period?.name?.split('—')[0]?.trim() ?? 'Actual'}</td><td className="px-4 py-3 text-xs text-muted-foreground">{formatShortDate(activity.date)}</td><td className="px-4 py-3 text-xs font-bold">{activity.maxScore} pts</td><td className="px-4 py-3 text-xs text-muted-foreground">{activityInstrumentLabel(activity.instrumentType)}</td><td className="px-4 py-3 text-xs">{activity.activityType === 'group' ? 'Grupal' : 'Individual'}</td><td className="px-4 py-3"><ActivityStatusBadge status={meta.state} /></td><td className="px-4 py-3"><div className="min-w-24"><span className="text-[10px] font-bold text-muted-foreground">{meta.graded} / {students.length}</span><div className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: `${students.length ? (meta.graded / students.length) * 100 : 0}%` }} /></div></div></td><td className="px-4 py-3"><details className="subject-row-menu" onClick={event => event.stopPropagation()}><summary aria-label={`Acciones de ${activity.name}`}>···</summary><div><button type="button" onClick={(event) => { event.stopPropagation(); onActivityChange(activity.id) }} aria-label={`Ver ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-primary hover:bg-primary/8"><Eye className="size-4" /> Ver detalle</button><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'edit')} aria-label={`Editar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><Edit3 className="size-4" /> Editar</Link><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'evaluate')} aria-label={`Evaluar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><ChartColumn className="size-4" /> Calificar</Link></div></details></td></tr> })}</tbody></table><footer className="border-t border-border px-4 py-3 text-xs text-muted-foreground">Mostrando {visible.length} de {activities.length} actividades</footer></div>}
+    {!activities.length ? <div className="flex min-h-72 flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card px-6 text-center"><span className="flex size-14 items-center justify-center rounded-2xl bg-primary/8 text-primary"><CheckSquare className="size-6" /></span><h3 className="mt-4 text-lg font-extrabold">Aún no hay actividades</h3><p className="mt-2 max-w-md text-sm text-muted-foreground">Crea la primera actividad de esta asignatura para comenzar a evaluarla.</p><Button className="mt-5" onClick={onCreate}><Plus className="size-4" /> Crear primera actividad</Button></div> : !visible.length ? <EmptyState title="Sin coincidencias" description="Prueba con otro texto o estado." /> : <div className="subject-table-panel overflow-x-auto"><table className="subject-data-table min-w-[70rem] w-full text-left text-sm"><thead className="bg-muted/40 text-[10px] font-extrabold uppercase tracking-wide text-muted-foreground"><tr><th className="px-4 py-3">Actividad</th><th className="px-4 py-3">Bloque</th><th className="px-4 py-3">Período</th><th className="px-4 py-3">Fecha</th><th className="px-4 py-3">Valor</th><th className="px-4 py-3">Instrumento</th><th className="px-4 py-3">Modalidad</th><th className="px-4 py-3">Estado</th><th className="px-4 py-3">Calificados</th><th className="px-4 py-3 text-right">Acciones</th></tr></thead><tbody className="divide-y divide-border">{visible.map((activity) => { const meta = activityMeta(activity); const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId); return <tr key={activity.id} tabIndex={0} aria-label={`Abrir actividad ${activity.name}`} onClick={() => onActivityChange(activity.id)} onKeyDown={(event) => { if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); onActivityChange(activity.id) } }} className="cursor-pointer outline-none transition hover:bg-primary/[0.035] focus-visible:bg-primary/[0.05] focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"><td className="px-4 py-3"><span className="block max-w-72 truncate text-left font-semibold text-foreground">{activity.name}</span><span className="block max-w-72 truncate text-xs text-muted-foreground">{activity.description}</span></td><td className="px-4 py-3 text-xs"><strong className="block">{block?.shortName ?? 'Bloque'}</strong></td><td className="px-4 py-3 text-xs font-bold">{period?.name?.split('—')[0]?.trim() ?? 'Actual'}</td><td className="px-4 py-3 text-xs text-muted-foreground">{formatShortDate(activity.date)}</td><td className="px-4 py-3 text-xs font-bold">{activity.maxScore} pts</td><td className="px-4 py-3 text-xs text-muted-foreground">{activityInstrumentLabel(activity.instrumentType)}</td><td className="px-4 py-3 text-xs">{activity.activityType === 'group' ? 'Grupal' : 'Individual'}</td><td className="px-4 py-3"><ActivityStatusBadge status={meta.state} /></td><td className="px-4 py-3"><div className="min-w-24"><span className="text-[10px] font-bold text-muted-foreground">{meta.graded} / {students.length}</span><div className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: `${students.length ? (meta.graded / students.length) * 100 : 0}%` }} /></div></div></td><td className="px-4 py-3"><details className="subject-row-menu" onClick={event => event.stopPropagation()}><summary aria-label={`Acciones de ${activity.name}`}>···</summary><div><button data-ui-size="icon" type="button" onClick={(event) => { event.stopPropagation(); onActivityChange(activity.id) }} aria-label={`Ver ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-primary hover:bg-primary/8"><Eye className="size-4" /> Ver detalle</button><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'edit')} aria-label={`Editar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><Edit3 className="size-4" /> Editar</Link><Link onClick={(event) => event.stopPropagation()} to={buildActivityGradingHref(assignmentId, courseId, activity.id, 'evaluate')} aria-label={`Evaluar ${activity.name}`} className="grid size-9 place-items-center rounded-lg text-muted-foreground hover:bg-muted"><ChartColumn className="size-4" /> Calificar</Link></div></details></td></tr> })}</tbody></table><footer className="border-t border-border px-4 py-3 text-xs text-muted-foreground">Mostrando {visible.length} de {activities.length} actividades</footer></div>}
   </section>
 }
 
@@ -2151,7 +2172,7 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
     if (!selectedEnrollmentId) return
     const frame = window.requestAnimationFrame(() => {
       detailRef.current?.scrollIntoView({
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        behavior: isMotionReduced() ? 'auto' : 'smooth',
         block: 'nearest',
       })
     })
@@ -2390,7 +2411,7 @@ function StudentDetailPanel({ student, activities, journalEntries, journalLoadin
   })
   return (
     <aside className="rounded-xl border border-border bg-background p-4 shadow-sm" aria-label={`Detalle de ${student.firstName} ${student.lastName}`}>
-      <div className="flex items-start justify-between gap-3"><div><h3 className="font-extrabold text-foreground">{student.firstName} {student.lastName}</h3><p className="mt-1 text-xs text-muted-foreground">{student.team?.name ?? 'Sin equipo'}</p></div><button type="button" onClick={onClose} className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground" aria-label="Cerrar detalle"><X className="size-4" /></button></div>
+      <div className="flex items-start justify-between gap-3"><div><h3 className="font-extrabold text-foreground">{student.firstName} {student.lastName}</h3><p className="mt-1 text-xs text-muted-foreground">{student.team?.name ?? 'Sin equipo'}</p></div><button data-ui-action="close" type="button" onClick={onClose} className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground" aria-label="Cerrar detalle"><X className="size-4" /></button></div>
       <div className="mt-4 grid grid-cols-3 gap-2"><DetailMetric value={`${student.completed}/${activities.length}`} label="Actividades" /><DetailMetric value={student.average === null ? '—' : `${student.average}%`} label="Promedio" /><DetailMetric value={student.attendance === null ? '—' : `${student.attendance}%`} label="Asistencia" /></div>
       <h4 className="mt-5 text-xs font-extrabold text-foreground">Promedio por bloque</h4>
       <div className="mt-2 grid grid-cols-2 gap-2">{blockAverages.map((block) => <div key={block.id} title={block.name} className="rounded-lg border border-border p-2 text-center"><strong className="block text-sm text-primary">{block.average === null ? '—' : `${block.average}%`}</strong><span className="mt-0.5 block text-[10px] text-muted-foreground">{block.shortName}</span></div>)}</div>
@@ -2593,14 +2614,14 @@ function GradeSummaryTile({ label, value, emphasized }: { label: string; value: 
 function StudentActivityDetail({ activity, record, studentName, showInstrument, onInstrument, onBack }: { activity: GradingActivity; record: GradeRecordRow | null; studentName: string; showInstrument: boolean; onInstrument: () => void; onBack: () => void }) {
   const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId) ?? competencyBlocks[0]
   if (showInstrument) return <EvaluatedInstrument activity={activity} record={record} studentName={studentName} onBack={onBack} />
-  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-start gap-3 border-b border-border p-4"><button type="button" onClick={onBack} aria-label="Volver a las actividades" className="grid size-11 shrink-0 place-items-center rounded-xl border border-border text-primary hover:bg-muted"><BackIcon /></button><div className="min-w-0 flex-1"><p className="text-[10px] font-black uppercase tracking-wider text-primary">Detalle de la actividad</p><h3 className="mt-1 text-lg font-extrabold">{activity.name}</h3><p className="mt-1 text-xs text-muted-foreground">{block.shortName} · {block.name}</p></div><ActivityStatusBadge status={record ? 'graded' : 'pending'} /></header><div className="grid gap-4 p-4 lg:grid-cols-[minmax(0,1fr)_18rem]"><div><h4 className="text-xs font-extrabold uppercase text-muted-foreground">Descripción</h4><p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-foreground">{activity.description || 'Sin descripción registrada.'}</p></div><dl className="space-y-3 rounded-xl bg-muted/25 p-4 text-xs"><ActivityDefinition label="Fecha" value={formatShortDate(activity.date)} /><ActivityDefinition label="Valor total" value={`${activity.maxScore} puntos`} /><ActivityDefinition label="Obtenido" value={record ? `${record.score} puntos` : 'Sin evaluar'} /><ActivityDefinition label="Estado" value={activityGradeState(record, activity)} /><ActivityDefinition label="Instrumento" value={activityInstrumentLabel(activity.instrumentType)} /></dl></div><footer className="flex justify-end border-t border-border p-4"><Button variant="outline" disabled={!record || !activity.instrumentType} onClick={onInstrument}><ClipboardList className="size-4" /> Ver instrumento evaluado</Button></footer></section>
+  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-start gap-3 border-b border-border p-4"><button data-ui-size="icon" type="button" onClick={onBack} aria-label="Volver a las actividades" className="grid size-11 shrink-0 place-items-center rounded-xl border border-border text-primary hover:bg-muted"><BackIcon /></button><div className="min-w-0 flex-1"><p className="text-[10px] font-black uppercase tracking-wider text-primary">Detalle de la actividad</p><h3 className="mt-1 text-lg font-extrabold">{activity.name}</h3><p className="mt-1 text-xs text-muted-foreground">{block.shortName} · {block.name}</p></div><ActivityStatusBadge status={record ? 'graded' : 'pending'} /></header><div className="grid gap-4 p-4 lg:grid-cols-[minmax(0,1fr)_18rem]"><div><h4 className="text-xs font-extrabold uppercase text-muted-foreground">Descripción</h4><p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-foreground">{activity.description || 'Sin descripción registrada.'}</p></div><dl className="space-y-3 rounded-xl bg-muted/25 p-4 text-xs"><ActivityDefinition label="Fecha" value={formatShortDate(activity.date)} /><ActivityDefinition label="Valor total" value={`${activity.maxScore} puntos`} /><ActivityDefinition label="Obtenido" value={record ? `${record.score} puntos` : 'Sin evaluar'} /><ActivityDefinition label="Estado" value={activityGradeState(record, activity)} /><ActivityDefinition label="Instrumento" value={activityInstrumentLabel(activity.instrumentType)} /></dl></div><footer className="flex justify-end border-t border-border p-4"><Button variant="outline" disabled={!record || !activity.instrumentType} onClick={onInstrument}><ClipboardList className="size-4" /> Ver instrumento evaluado</Button></footer></section>
 }
 
 function EvaluatedInstrument({ activity, record, studentName, onBack }: { activity: GradingActivity; record: GradeRecordRow | null; studentName: string; onBack: () => void }) {
   const configuration = activityRubricConfiguration(activity)
   const result = record?.instrumentResult
   const complete = Boolean(result && result.selections.length === configuration.criteria.length)
-  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-start gap-3 border-b border-border p-4"><button type="button" onClick={onBack} aria-label="Volver al detalle de la actividad" className="grid size-11 shrink-0 place-items-center rounded-xl border border-border text-primary hover:bg-muted"><BackIcon /></button><div className="min-w-0 flex-1"><p className="text-[10px] font-black uppercase tracking-wider text-primary">Instrumento evaluado</p><h3 className="mt-1 text-lg font-extrabold">{activityInstrumentLabel(activity.instrumentType)}</h3><p className="mt-1 text-xs text-muted-foreground">{activity.name} · {studentName}</p></div><span className={cn('rounded-full px-3 py-1 text-[10px] font-extrabold', complete ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-800')}>{complete ? 'Evaluado' : 'Sin desglose'}</span></header>{!record ? <p className="m-4 rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">Pendiente de evaluación.</p> : !result ? <div className="m-4 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900"><strong className="block">No existe evidencia por criterio para esta calificación histórica.</strong>El sistema conserva el total real de {record.score} / {record.maxScore}, pero no inventará niveles ni selecciones que no fueron registrados.</div> : <div className="p-4"><div className="overflow-x-auto"><table className="w-full min-w-[36rem] text-sm"><thead className="bg-muted/30 text-[10px] font-black uppercase tracking-wide text-muted-foreground"><tr><th className="px-4 py-3 text-left">Criterio</th><th className="px-4 py-3 text-left">Nivel seleccionado</th><th className="px-4 py-3 text-right">Puntuación</th></tr></thead><tbody className="divide-y divide-border">{configuration.criteria.map((criterion, index) => { const selection = result.selections[index]; const level = Number.isInteger(selection) ? configuration.levels[selection] : null; const points = result.criterionScores[index]; return <tr key={`${criterion.title}-${index}`}><td className="px-4 py-4"><strong>{criterion.title}</strong><span className="mt-1 block text-xs text-muted-foreground">Máximo: {criterion.maximum} pts</span></td><td className="px-4 py-4"><span className={cn('inline-flex rounded-full px-3 py-1 text-xs font-bold', level ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-600')}>{level?.label ?? 'Sin seleccionar'}</span></td><td className="px-4 py-4 text-right font-extrabold text-primary">{Number.isFinite(points) ? `${points} / ${criterion.maximum}` : '—'}</td></tr> })}</tbody></table></div><div className="mt-4 flex items-center justify-between rounded-xl bg-primary/[0.045] px-4 py-3"><strong>Total</strong><strong className="text-xl text-primary">{record.score} / {record.maxScore}</strong></div></div>}</section>
+  return <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><header className="flex items-start gap-3 border-b border-border p-4"><button data-ui-size="icon" type="button" onClick={onBack} aria-label="Volver al detalle de la actividad" className="grid size-11 shrink-0 place-items-center rounded-xl border border-border text-primary hover:bg-muted"><BackIcon /></button><div className="min-w-0 flex-1"><p className="text-[10px] font-black uppercase tracking-wider text-primary">Instrumento evaluado</p><h3 className="mt-1 text-lg font-extrabold">{activityInstrumentLabel(activity.instrumentType)}</h3><p className="mt-1 text-xs text-muted-foreground">{activity.name} · {studentName}</p></div><span className={cn('rounded-full px-3 py-1 text-[10px] font-extrabold', complete ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-800')}>{complete ? 'Evaluado' : 'Sin desglose'}</span></header>{!record ? <p className="m-4 rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">Pendiente de evaluación.</p> : !result ? <div className="m-4 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900"><strong className="block">No existe evidencia por criterio para esta calificación histórica.</strong>El sistema conserva el total real de {record.score} / {record.maxScore}, pero no inventará niveles ni selecciones que no fueron registrados.</div> : <div className="p-4"><div className="overflow-x-auto"><table className="w-full min-w-[36rem] text-sm"><thead className="bg-muted/30 text-[10px] font-black uppercase tracking-wide text-muted-foreground"><tr><th className="px-4 py-3 text-left">Criterio</th><th className="px-4 py-3 text-left">Nivel seleccionado</th><th className="px-4 py-3 text-right">Puntuación</th></tr></thead><tbody className="divide-y divide-border">{configuration.criteria.map((criterion, index) => { const selection = result.selections[index]; const level = Number.isInteger(selection) ? configuration.levels[selection] : null; const points = result.criterionScores[index]; return <tr key={`${criterion.title}-${index}`}><td className="px-4 py-4"><strong>{criterion.title}</strong><span className="mt-1 block text-xs text-muted-foreground">Máximo: {criterion.maximum} pts</span></td><td className="px-4 py-4"><span className={cn('inline-flex rounded-full px-3 py-1 text-xs font-bold', level ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-600')}>{level?.label ?? 'Sin seleccionar'}</span></td><td className="px-4 py-4 text-right font-extrabold text-primary">{Number.isFinite(points) ? `${points} / ${criterion.maximum}` : '—'}</td></tr> })}</tbody></table></div><div className="mt-4 flex items-center justify-between rounded-xl bg-primary/[0.045] px-4 py-3"><strong>Total</strong><strong className="text-xl text-primary">{record.score} / {record.maxScore}</strong></div></div>}</section>
 }
 
 function activityGradeState(record: GradeRecordRow | null, activity: GradingActivity) { if (!record) return 'Pendiente de evaluación'; const expected = activityRubricConfiguration(activity).criteria.length; if (record.instrumentResult && record.instrumentResult.selections.length < expected) return 'Parcialmente evaluada'; return 'Evaluada' }
@@ -2717,10 +2738,10 @@ const CourseCard = memo(function CourseCard({
       <div className="mt-5 flex items-center gap-2">
         {archivedGrade && canManage ? (
           <Button type="button" variant="destructive" className="flex-1 rounded-full" onClick={() => onDeleteArchivedGrade(item.grade)}><Trash2 className="size-4" /> Eliminar grado</Button>
-        ) : <button type="button" onClick={() => onOpen(item.id)} className="flex min-h-10 flex-1 items-center justify-center gap-2 rounded-full bg-primary/10 px-4 text-sm font-semibold text-primary transition hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">Entrar al curso <ChevronRight className="size-4" /></button>}
+        ) : <button type="button" onClick={() => onOpen(item.id)} className="flex min-h-10 flex-1 items-center justify-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">Entrar al curso <ChevronRight className="size-4" /></button>}
         {canManage && !archivedGrade ? (
           <div className="relative" ref={menuRef}>
-            <button type="button" title="Más acciones" className="inline-flex size-10 items-center justify-center rounded-full bg-muted text-muted-foreground transition hover:bg-primary/10 hover:text-primary" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
+            <button data-ui-size="icon" type="button" title="Más acciones" className="inline-flex size-10 items-center justify-center rounded-full bg-muted text-muted-foreground transition hover:bg-primary/10 hover:text-primary" aria-label="Más acciones" aria-haspopup="menu" aria-expanded={menuOpen} onClick={(event) => { event.stopPropagation(); setMenuOpen((open) => !open) }}>
               <MoreHorizontal className="size-4" />
             </button>
             {menuOpen ? (

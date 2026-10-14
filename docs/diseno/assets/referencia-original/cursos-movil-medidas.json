@@ -1,0 +1,36 @@
+{
+  "card": {
+    "bottom": 986.5,
+    "height": 277.5,
+    "left": 20,
+    "right": 440.125,
+    "top": 709,
+    "width": 420.125,
+    "x": 20,
+    "y": 709
+  },
+  "grid": [
+    {
+      "class": "relative mt-6 grid grid-cols-2 gap-3 md:grid-cols-4",
+      "columns": "130px 130px",
+      "width": 272
+    },
+    {
+      "class": "grid gap-4 md:grid-cols-2 xl:grid-cols-3",
+      "columns": "420.125px",
+      "width": 320
+    }
+  ],
+  "scrollAreas": [
+    {
+      "class": "flex-1 overflow-y-auto px-5 py-5 sm:px-8",
+      "client": 360,
+      "overflow": "auto",
+      "scroll": 455
+    }
+  ],
+  "viewport": {
+    "height": 812,
+    "width": 375
+  }
+}

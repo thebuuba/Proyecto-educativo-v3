@@ -6,7 +6,7 @@ import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { createAulaSession, requestMagicLink, requestPasswordReset } from '@/modules/auth/services/authService'
 import { isRememberSessionEnabled, setRememberSessionEnabled, supabase } from '@/modules/auth/services/supabaseClient'
 import { ApiError } from '@/services/apiClient'
-import { PromoLayout } from '@/modules/promo/components/PromoLayout'
+import { AccessLayout } from '@/modules/auth/components/AccessLayout'
 
 type LocationState = { from?: { pathname?: string }; registered?: boolean }
 type RememberedAccount = {
@@ -154,7 +154,7 @@ export function LoginPage() {
   }
 
   return (
-    <PromoLayout>
+    <AccessLayout>
       <div className="mx-auto max-w-xl px-4 py-8 sm:px-6 sm:py-14">
         <section className="rounded-[28px] bg-card p-6 shadow-sm sm:p-10">
           <div className="mb-8 grid size-11 place-items-center rounded-xl bg-primary text-primary-foreground">
@@ -353,7 +353,7 @@ export function LoginPage() {
           </p>
         </section>
       </div>
-    </PromoLayout>
+    </AccessLayout>
   )
 }
 

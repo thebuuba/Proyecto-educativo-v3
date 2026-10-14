@@ -1,11 +1,14 @@
-import { ArrowDown, ArrowUp, CheckCircle2, MoreHorizontal, Plus, RotateCcw, Search, Trash2, TriangleAlert, UserMinus, UsersRound } from 'lucide-react'
-import { useEffect, useLayoutEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from 'react'
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
+import { ArrowDown, ArrowUp, CheckCircle2, ClipboardList, MoreHorizontal, Plus, RotateCcw, Search, Trash2, TriangleAlert, UserMinus, UsersRound } from 'lucide-react'
+import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState, type FormEvent, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { BackIcon } from '@/components/ui/BackIcon'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
+import { Select } from '@/components/ui/Select'
+import { Textarea } from '@/components/ui/Textarea'
 import { StatusBadge } from '@/components/ui/SemanticUI'
 import {
   createStudentInCourse,
@@ -22,6 +25,7 @@ import {
 import type { CourseImportPreview, CourseStudent } from '@/modules/students/types'
 import { parsePastedStudents } from '@/modules/students/utils/pasteImport'
 import { cn } from '@/utils/cn'
+import './student-enrollment-modal.css'
 
 type Props = {
   courseId: string
@@ -41,6 +45,7 @@ export function CourseStudentsPanel({ courseId, courseName, canEnroll, canManage
   const [error, setError] = useState('')
   const [notice, setNotice] = useState('')
   const [addTab, setAddTab] = useState<'single' | 'bulk' | null>(initialAction === 'import' ? 'bulk' : initialAction === 'new' ? 'single' : null)
+  const panelRef = useRef<HTMLDivElement>(null)
   const [editing, setEditing] = useState<CourseStudent | null>(null)
   const [viewing, setViewing] = useState<CourseStudent | null>(null)
   const [withdrawing, setWithdrawing] = useState<CourseStudent | null>(null)
@@ -82,7 +87,12 @@ export function CourseStudentsPanel({ courseId, courseName, canEnroll, canManage
     setNotice(message)
   }
 
-  return <div className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-5">
+  function closeAddModal() {
+    setAddTab(null)
+    panelRef.current?.querySelector<HTMLButtonElement>('[data-enrollment-trigger]')?.focus()
+  }
+
+  return <div ref={panelRef} className="course-workspace-shell w-full min-w-0 max-w-full overflow-x-clip space-y-5">
     <button type="button" onClick={onBack} className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-lg px-2 text-sm font-extrabold text-primary hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20">
       <BackIcon /> Volver al curso
     </button>
@@ -93,7 +103,7 @@ export function CourseStudentsPanel({ courseId, courseName, canEnroll, canManage
           <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><UsersRound className="size-5" aria-hidden="true" /></span>
           <div><h1 className="text-xl font-extrabold text-foreground">Estudiantes de {courseName}</h1><p className="mt-1 text-sm text-muted-foreground">{students.length} estudiante{students.length === 1 ? '' : 's'} activo{students.length === 1 ? '' : 's'} en todas las asignaturas de esta sección.</p></div>
         </div>
-        {canEnroll ? <Button className="h-11" onClick={() => setAddTab('single')}><Plus className="size-4" aria-hidden="true" /> Agregar estudiantes</Button> : null}
+        {canEnroll ? <Button data-enrollment-trigger className="h-11" onClick={() => setAddTab('single')}><Plus className="size-4" aria-hidden="true" /> Agregar estudiantes</Button> : null}
       </header>
 
       <div className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center">
@@ -111,7 +121,7 @@ export function CourseStudentsPanel({ courseId, courseName, canEnroll, canManage
       {loading ? <p className="p-10 text-center text-sm text-muted-foreground">Cargando estudiantes...</p> : visible.length ? <StudentList rows={visible.map((student) => ({ ...student, canDeletePermanently: canManage && student.canDeletePermanently }))} view={view} canManage={canEnroll} onView={setViewing} onEdit={setEditing} onWithdraw={setWithdrawing} onRestore={(student) => void restoreStudentToCourse(courseId, student.id).then(() => refreshWith(`${student.fullName} volvió al curso.`)).catch((caught) => setError(messageFrom(caught, 'No se pudo restaurar.')))} onDelete={setDeleting} /> : <EmptyStudents courseName={courseName} view={view} canManage={canEnroll} hasQuery={Boolean(query)} onAdd={() => setAddTab('single')} />}
     </section>
 
-    {addTab ? <AddStudentsModal courseId={courseId} initialTab={addTab} onClose={() => setAddTab(null)} onStudentCreated={(student) => setStudents((current) => current.some(({ id }) => id === student.id) ? current : [...current, student])} onSaved={(message) => { setAddTab(null); void refreshWith(message) }} /> : null}
+    {addTab ? <AddStudentsModal courseId={courseId} courseName={courseName} initialTab={addTab} onClose={closeAddModal} onStudentCreated={(student) => setStudents((current) => current.some(({ id }) => id === student.id) ? current : [...current, student])} onSaved={(message) => { void refreshWith(message) }} /> : null}
     {viewing ? <StudentDetailsModal student={viewing} courseName={courseName} view={view} canEdit={canEnroll && view === 'active'} onClose={() => setViewing(null)} onEdit={() => { setViewing(null); setEditing(viewing) }} /> : null}
     {editing ? <EditStudentModal student={editing} students={students} courseId={courseId} onClose={() => setEditing(null)} onSaved={() => { setEditing(null); void refreshWith('Cambios guardados.') }} /> : null}
     {reordering ? <ReorderModal students={students} courseId={courseId} onClose={() => setReordering(false)} onSaved={() => { setReordering(false); void refreshWith('Lista reordenada y numerada.') }} /> : null}
@@ -167,29 +177,60 @@ function StudentMenu({ student, view, onEdit, onWithdraw, onRestore, onDelete }:
   return <details ref={menuRef} className="relative inline-block text-left" onClick={(event) => event.stopPropagation()} onToggle={(event) => setOpen(event.currentTarget.open)}><summary className="flex size-10 cursor-pointer list-none items-center justify-center rounded-lg text-muted-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20" aria-label={`Acciones para ${student.fullName}`}><MoreHorizontal className="size-5" aria-hidden="true" /></summary><div role="menu" className={cn('absolute right-0 z-20 w-56 rounded-xl border border-border bg-popover p-1.5 text-left opacity-100 shadow-lg', placement === 'up' ? 'bottom-full mb-1' : 'mt-1')}>{view === 'active' ? <><button type="button" className="flex min-h-10 w-full cursor-pointer items-center rounded-lg px-3 text-sm font-semibold hover:bg-muted" onClick={() => onEdit(student)}>Editar información y número</button><div className="my-1 border-t border-border" /><button type="button" className="flex min-h-10 w-full cursor-pointer items-center gap-2 rounded-lg px-3 text-sm font-semibold text-destructive hover:bg-destructive/10" onClick={() => onWithdraw(student)}><UserMinus className="size-4" aria-hidden="true" /> Retirar del curso</button></> : <><button type="button" className="flex min-h-10 w-full cursor-pointer items-center gap-2 rounded-lg px-3 text-sm font-semibold hover:bg-muted" onClick={() => onRestore(student)}><RotateCcw className="size-4" aria-hidden="true" /> Restaurar al curso</button>{student.canDeletePermanently ? <button type="button" className="flex min-h-10 w-full cursor-pointer items-center gap-2 rounded-lg px-3 text-sm font-semibold text-destructive hover:bg-destructive/10" onClick={() => onDelete(student)}><Trash2 className="size-4" aria-hidden="true" /> Eliminar permanentemente</button> : null}</>}</div></details>
 }
 
-function AddStudentsModal({ courseId, initialTab, onClose, onStudentCreated, onSaved }: { courseId: string; initialTab: 'single' | 'bulk'; onClose: () => void; onStudentCreated: (student: CourseStudent) => void; onSaved: (message: string) => void }) {
+export function AddStudentsModal({ courseId, courseName, initialTab, onClose, onStudentCreated, onSaved }: { courseId: string; courseName: string; initialTab: 'single' | 'bulk'; onClose: () => void; onStudentCreated?: (student: CourseStudent) => void; onSaved?: (message: string) => void }) {
+  const [closing, setClosing] = useState(false)
+  const closeTimer = useRef<number | null>(null)
+  const opener = useRef(document.activeElement as HTMLElement | null)
+  useEffect(() => () => {
+    if (closeTimer.current !== null) window.clearTimeout(closeTimer.current)
+  }, [])
+
+  function closeModal() {
+    if (closeTimer.current !== null) return
+    const finish = () => {
+      closeTimer.current = null
+      onClose()
+      if (opener.current?.isConnected) opener.current.focus()
+    }
+    if (isMotionReduced()) {
+      finish()
+      return
+    }
+    setClosing(true)
+    closeTimer.current = window.setTimeout(finish, 160)
+  }
+
+  function finishSave(message: string) {
+    closeModal()
+    onSaved?.(message)
+  }
+  const tabsId = useId()
   const [tab, setTab] = useState(initialTab)
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [studentCode, setStudentCode] = useState('')
   const [gender, setGender] = useState('')
-  const [keepOpen, setKeepOpen] = useState(false)
+  const singleFormRef = useRef<HTMLFormElement>(null)
   const [text, setText] = useState('')
   const [preview, setPreview] = useState<CourseImportPreview | null>(null)
   const [omittedRows, setOmittedRows] = useState<Set<number>>(new Set())
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
   const [savedInline, setSavedInline] = useState('')
+  useEffect(() => {
+    if (!submitting && savedInline) singleFormRef.current?.querySelector<HTMLInputElement>('input')?.focus()
+  }, [submitting, savedInline])
 
-  async function saveOne(event: FormEvent) {
+  async function saveOne(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    const keepOpen = (event.nativeEvent as SubmitEvent).submitter?.getAttribute('value') === 'add-another'
     if (!firstName.trim() || !lastName.trim()) return setError('Completa nombre y apellido.')
     setSubmitting(true); setError('')
     try {
       const student = await createStudentInCourse(courseId, { fullName: `${firstName.trim()} ${lastName.trim()}`, studentCode: studentCode.trim() || undefined, gender: gender || undefined })
-      onStudentCreated(student)
+      onStudentCreated?.(student)
       if (keepOpen) { setFirstName(''); setLastName(''); setStudentCode(''); setGender(''); setSavedInline('Estudiante agregado. Puedes agregar el siguiente.'); setSubmitting(false); return }
-      onSaved('Estudiante agregado al curso.')
+      finishSave('Estudiante agregado al curso.')
     } catch (caught) { setError(messageFrom(caught, 'No se pudo agregar el estudiante.')); setSubmitting(false) }
   }
 
@@ -203,17 +244,84 @@ function AddStudentsModal({ courseId, initialTab, onClose, onStudentCreated, onS
   async function importRows() {
     if (!preview) return
     setSubmitting(true); setError('')
-    try { const result = await importStudentsInCourse(courseId, preview.rows.filter((row) => !omittedRows.has(row.rowNumber)).map(({ studentCode: code, fullName }) => ({ studentCode: code, fullName }))); onSaved(`${result.imported} estudiante${result.imported === 1 ? '' : 's'} agregado${result.imported === 1 ? '' : 's'}.`) } catch (caught) { setError(messageFrom(caught, 'No se pudo agregar la lista.')); setSubmitting(false) }
+    try { const result = await importStudentsInCourse(courseId, preview.rows.filter((row) => !omittedRows.has(row.rowNumber)).map(({ studentCode: code, fullName }) => ({ studentCode: code, fullName }))); finishSave(`${result.imported} estudiante${result.imported === 1 ? '' : 's'} agregado${result.imported === 1 ? '' : 's'}.`) } catch (caught) { setError(messageFrom(caught, 'No se pudo agregar la lista.')); setSubmitting(false) }
   }
 
   const blocked = Boolean(preview?.rows.some((row) => !omittedRows.has(row.rowNumber) && (row.duplicate || row.errors.length)))
   const readyCount = preview?.rows.filter((row) => !omittedRows.has(row.rowNumber)).length ?? 0
-  return <Modal title="Agregar estudiantes" description="Agrégalos a la sección; estarán disponibles en todas sus asignaturas." onClose={onClose} className="max-w-3xl max-sm:max-h-[calc(100dvh-1rem)] max-sm:rounded-xl">
-    <div className="grid grid-cols-2 border-b border-border" role="tablist"><button type="button" role="tab" aria-selected={tab === 'single'} className={cn('min-h-12 cursor-pointer border-b-2 px-4 text-sm font-bold hover:bg-muted/40', tab === 'single' ? 'border-primary bg-primary/5 text-primary' : 'border-transparent text-muted-foreground')} onClick={() => setTab('single')}>Uno por uno</button><button type="button" role="tab" aria-selected={tab === 'bulk'} className={cn('min-h-12 cursor-pointer border-b-2 px-4 text-sm font-bold hover:bg-muted/40', tab === 'bulk' ? 'border-primary bg-primary/5 text-primary' : 'border-transparent text-muted-foreground')} onClick={() => setTab('bulk')}>Agregar varios</button></div>
-    {error ? <p role="alert" className="mx-5 mt-4 rounded-xl border border-destructive/20 bg-destructive/10 p-3 text-sm text-destructive">{error}</p> : null}
-    {savedInline ? <p role="status" className="mx-5 mt-4 rounded-xl border border-success/20 bg-success/10 p-3 text-sm font-semibold text-success">{savedInline}</p> : null}
-    {tab === 'single' ? <form className="space-y-4 p-5" onSubmit={saveOne}><div className="grid gap-4 sm:grid-cols-2"><Field label="Nombre(s) *"><Input value={firstName} onChange={(event) => { setFirstName(event.target.value); setSavedInline('') }} autoFocus /></Field><Field label="Apellido(s) *"><Input value={lastName} onChange={(event) => setLastName(event.target.value)} /></Field><Field label="Matrícula (opcional)"><Input value={studentCode} onChange={(event) => setStudentCode(event.target.value)} placeholder="Se genera internamente si se omite" /></Field><Field label="Sexo (opcional)"><select value={gender} onChange={(event) => setGender(event.target.value)} className="h-11 w-full rounded-lg border border-input bg-card px-3 text-sm"><option value="">No especificado</option><option value="female">Femenino</option><option value="male">Masculino</option></select></Field></div><label className="flex min-h-11 cursor-pointer items-center gap-2 text-sm text-muted-foreground"><input type="checkbox" checked={keepOpen} onChange={(event) => setKeepOpen(event.target.checked)} /> Agregar otro después de guardar</label><div className="flex justify-end gap-3 border-t border-border pt-4"><Button type="button" variant="outline" onClick={onClose}>Cancelar</Button><Button type="submit" loading={submitting}>Agregar estudiante</Button></div></form> : <div className="space-y-4 p-5"><Field label="Pega una lista (un estudiante por línea)"><textarea value={text} onChange={(event) => { setText(event.target.value); setPreview(null) }} className="min-h-40 w-full resize-y rounded-lg border border-input bg-card p-3 text-sm outline-none focus:border-ring focus:ring-4 focus:ring-ring/20" placeholder={'Ana Cruz\nLuis Pérez\nA003 - María Solano'} /></Field><p className="text-xs text-muted-foreground">Puedes usar solo nombres o “matrícula - nombre”. Revisaremos posibles duplicados antes de guardar.</p><div className="flex justify-end"><Button onClick={() => void generatePreview()} loading={submitting}>Generar vista previa</Button></div>{preview ? <PreviewTable preview={preview} omittedRows={omittedRows} onToggleOmit={(rowNumber) => setOmittedRows((current) => { const next = new Set(current); if (next.has(rowNumber)) next.delete(rowNumber); else next.add(rowNumber); return next })} /> : null}{preview ? <div className="flex justify-end gap-3 border-t border-border pt-4"><Button variant="outline" onClick={onClose}>Cancelar</Button><Button onClick={() => void importRows()} loading={submitting} disabled={blocked || readyCount === 0}>Agregar {readyCount} estudiantes</Button></div> : null}</div>}
-  </Modal>
+
+  function moveTab(event: ReactKeyboardEvent<HTMLButtonElement>) {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return
+    event.preventDefault()
+    const next = event.key === 'Home' ? 'single' : event.key === 'End' ? 'bulk' : tab === 'single' ? 'bulk' : 'single'
+    setTab(next)
+    document.getElementById(`${tabsId}-${next}`)?.focus()
+  }
+
+  return (
+    <Modal title="Agregar estudiantes" description="Estarán disponibles en todas las asignaturas de esta sección."
+      icon={UsersRound} eyebrow={`Matrícula · ${courseName}`} onClose={closeModal} closeDisabled={submitting || closing}
+      className={cn('student-enrollment-dialog', closing && 'is-closing')}
+      overlayClassName={cn('student-enrollment-overlay', closing && 'is-closing')}>
+      <div className="student-enrollment-tabs" role="tablist" aria-label="Forma de agregar estudiantes">
+        {(['single', 'bulk'] as const).map((mode) => (
+          <button key={mode} id={`${tabsId}-${mode}`} type="button" role="tab"
+            aria-selected={tab === mode} aria-controls={`${tabsId}-panel`} tabIndex={tab === mode ? 0 : -1}
+            disabled={submitting || closing} onClick={() => setTab(mode)} onKeyDown={moveTab}>
+            {mode === 'single' ? <Plus className="size-4" aria-hidden="true" /> : <UsersRound className="size-4" aria-hidden="true" />}
+            {mode === 'single' ? 'Uno por uno' : 'Agregar varios'}
+          </button>
+        ))}
+      </div>
+      {error ? <p role="alert" className="mx-6 mb-4 rounded-2xl border border-destructive/20 bg-destructive/10 p-3 text-sm text-foreground">{error}</p> : null}
+      {savedInline ? <p role="status" className="mx-6 mb-4 rounded-2xl border border-success/20 bg-success/10 p-3 text-sm font-medium text-foreground">{savedInline}</p> : null}
+      <div id={`${tabsId}-panel`} role="tabpanel" aria-labelledby={`${tabsId}-${tab}`}>
+        {tab === 'single' ? (
+          <form ref={singleFormRef} onSubmit={saveOne}>
+            <fieldset disabled={submitting || closing} className="student-enrollment-body">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Field label="Nombre(s) *"><Input value={firstName} aria-required="true" placeholder="Ej. Ana"
+                  onChange={(event) => { setFirstName(event.target.value); setSavedInline('') }} /></Field>
+                <Field label="Apellido(s) *"><Input value={lastName} aria-required="true" placeholder="Ej. Pérez"
+                  onChange={(event) => setLastName(event.target.value)} /></Field>
+                <Field label="Matrícula (opcional)"><Input value={studentCode} onChange={(event) => setStudentCode(event.target.value)} placeholder="Código del estudiante" /></Field>
+                <Field label="Sexo (opcional)"><Select value={gender} onChange={(event) => setGender(event.target.value)}>
+                  <option value="">No especificado</option><option value="female">Femenino</option><option value="male">Masculino</option>
+                </Select></Field>
+              </div>
+              <p className="text-xs leading-5 text-muted-foreground">Si omites la matrícula, AulaBase generará un código interno.</p>
+            </fieldset>
+            <div className="student-enrollment-footer student-enrollment-footer-single">
+              <Button data-ui-action="cancel" type="button" variant="outline" disabled={submitting || closing} onClick={closeModal}>Cancelar</Button>
+              <div className="student-enrollment-actions">
+                <Button type="submit" loading={submitting} disabled={closing}>Agregar estudiante</Button>
+                <Button type="submit" name="intent" value="add-another" variant="outline" disabled={submitting || closing}>Agregar y añadir otro</Button>
+              </div>
+            </div>
+          </form>
+        ) : (
+          <>
+            <fieldset disabled={submitting || closing} className="student-enrollment-body">
+              <div className="student-enrollment-section-heading">
+                <h4 className="flex items-center gap-2"><ClipboardList className="size-4 text-primary" aria-hidden="true" /> Lista de estudiantes</h4>
+                <p>Pega los nombres y revisa la lista antes de agregarlos al curso.</p>
+              </div>
+              <Field label="Pega una lista (un estudiante por línea)"><Textarea value={text}
+                onChange={(event) => { setText(event.target.value); setPreview(null) }}
+                className="min-h-40 resize-y" placeholder={'Ana Cruz\nLuis Pérez\nA003 - María Solano'} /></Field>
+              <p className="text-xs leading-5 text-muted-foreground">Puedes usar solo nombres o “matrícula - nombre”. Revisaremos posibles duplicados antes de guardar.</p>
+              {preview ? <PreviewTable preview={preview} omittedRows={omittedRows} onToggleOmit={(rowNumber) => setOmittedRows((current) => { const next = new Set(current); if (next.has(rowNumber)) next.delete(rowNumber); else next.add(rowNumber); return next })} /> : null}
+            </fieldset>
+            <div className="student-enrollment-footer">
+              <Button data-ui-action="cancel" type="button" variant="outline" disabled={submitting || closing} onClick={closeModal}>Cancelar</Button>
+              {preview ? <Button onClick={() => void importRows()} loading={submitting} disabled={closing || blocked || readyCount === 0}>Agregar {readyCount} estudiante{readyCount === 1 ? '' : 's'}</Button>
+                : <Button onClick={() => void generatePreview()} loading={submitting} disabled={closing}>Generar vista previa</Button>}
+            </div>
+          </>
+        )}
+      </div>
+    </Modal>
+  )
 }
 
 function PreviewTable({ preview, omittedRows, onToggleOmit }: { preview: CourseImportPreview; omittedRows: Set<number>; onToggleOmit: (rowNumber: number) => void }) {
@@ -266,14 +374,14 @@ function EditStudentModal({ student, students, courseId, onClose, onSaved }: { s
 
   const replacement = student.listNumber === null ? 'quedará sin número de lista' : `pasará al N.º ${formatNumber(student.listNumber)}`
 
-  return <Modal title="Editar estudiante" description="Modifica solo los datos que utiliza AulaBase." onClose={onClose}><form className="space-y-4 p-5" onSubmit={submit}>{error ? <p role="alert" className="rounded-xl bg-destructive/10 p-3 text-sm text-destructive">{error}</p> : null}<div className="grid gap-4 sm:grid-cols-2"><Field label="Nombre(s) *"><Input value={firstName} onChange={(event) => setFirstName(event.target.value)} /></Field><Field label="Apellido(s) *"><Input value={lastName} onChange={(event) => setLastName(event.target.value)} /></Field><Field label="Matrícula"><Input value={studentCode} onChange={(event) => setStudentCode(event.target.value)} /></Field><Field label="Número de lista *"><Input type="number" min="1" value={listNumber} onChange={(event) => { setListNumber(event.target.value); setSwapWith(null); setConflictPulse(0) }} /></Field><Field label="Sexo"><select value={gender} onChange={(event) => setGender(event.target.value)} className="h-11 w-full rounded-lg border border-input bg-card px-3 text-sm"><option value="">No especificado</option><option value="female">Femenino</option><option value="male">Masculino</option></select></Field></div>{swapWith ? <div key={conflictPulse} role="alert" className={cn('rounded-xl border border-warning/40 bg-warning/25 p-4', conflictPulse > 0 && 'attention-conflict-pulse')}><div className="flex items-start gap-3"><TriangleAlert className="mt-0.5 size-5 shrink-0 text-warning-foreground" aria-hidden="true" /><div className="min-w-0"><p className="font-bold text-foreground">El N.º {formatNumber(swapWith.listNumber)} ya pertenece a {swapWith.fullName}.</p><p className="mt-1 text-sm text-muted-foreground">Si continúas, {firstName.trim()} {lastName.trim()} ocupará ese número y {swapWith.fullName} {replacement}.</p><p className="mt-2 text-sm font-semibold text-foreground">Elige una de las dos opciones para continuar.</p></div></div><div className="mt-4 flex flex-wrap justify-end gap-2"><Button type="button" size="sm" variant="outline" onClick={() => setSwapWith(null)}>Elegir otro número</Button><Button type="button" size="sm" variant="warning" loading={submitting} onClick={() => void save(Number(listNumber))}>Intercambiar números</Button></div></div> : null}<div className="flex justify-end gap-3 border-t border-border pt-4"><Button type="button" variant="outline" onClick={onClose}>Cancelar</Button><Button type="submit" loading={submitting}>Guardar cambios</Button></div></form></Modal>
+  return <Modal title="Editar estudiante" description="Modifica solo los datos que utiliza AulaBase." onClose={onClose}><form className="space-y-4 p-5" onSubmit={submit}>{error ? <p role="alert" className="rounded-xl bg-destructive/10 p-3 text-sm text-destructive">{error}</p> : null}<div className="grid gap-4 sm:grid-cols-2"><Field label="Nombre(s) *"><Input value={firstName} onChange={(event) => setFirstName(event.target.value)} /></Field><Field label="Apellido(s) *"><Input value={lastName} onChange={(event) => setLastName(event.target.value)} /></Field><Field label="Matrícula"><Input value={studentCode} onChange={(event) => setStudentCode(event.target.value)} /></Field><Field label="Número de lista *"><Input type="number" min="1" value={listNumber} onChange={(event) => { setListNumber(event.target.value); setSwapWith(null); setConflictPulse(0) }} /></Field><Field label="Sexo"><select value={gender} onChange={(event) => setGender(event.target.value)} className="h-11 w-full rounded-lg border border-input bg-card px-3 text-sm"><option value="">No especificado</option><option value="female">Femenino</option><option value="male">Masculino</option></select></Field></div>{swapWith ? <div key={conflictPulse} role="alert" className={cn('rounded-xl border border-warning/40 bg-warning/25 p-4', conflictPulse > 0 && 'attention-conflict-pulse')}><div className="flex items-start gap-3"><TriangleAlert className="mt-0.5 size-5 shrink-0 text-warning-foreground" aria-hidden="true" /><div className="min-w-0"><p className="font-bold text-foreground">El N.º {formatNumber(swapWith.listNumber)} ya pertenece a {swapWith.fullName}.</p><p className="mt-1 text-sm text-muted-foreground">Si continúas, {firstName.trim()} {lastName.trim()} ocupará ese número y {swapWith.fullName} {replacement}.</p><p className="mt-2 text-sm font-semibold text-foreground">Elige una de las dos opciones para continuar.</p></div></div><div className="mt-4 flex flex-wrap justify-end gap-2"><Button type="button" size="sm" variant="outline" onClick={() => setSwapWith(null)}>Elegir otro número</Button><Button type="button" size="sm" variant="warning" loading={submitting} onClick={() => void save(Number(listNumber))}>Intercambiar números</Button></div></div> : null}<div className="flex justify-end gap-3 border-t border-border pt-4"><Button data-ui-action="cancel" type="button" variant="outline" onClick={onClose}>Cancelar</Button><Button type="submit" loading={submitting}>Guardar cambios</Button></div></form></Modal>
 }
 
 function ReorderModal({ students, courseId, onClose, onSaved }: { students: CourseStudent[]; courseId: string; onClose: () => void; onSaved: () => void }) {
   const [ordered, setOrdered] = useState(students)
   const [saving, setSaving] = useState(false)
   const move = (index: number, direction: -1 | 1) => setOrdered((current) => { const target = index + direction; if (target < 0 || target >= current.length) return current; const next = [...current]; [next[index], next[target]] = [next[target], next[index]]; return next })
-  return <Modal title="Reordenar lista" description="Ordena y regenera los números del 1 en adelante." onClose={onClose}><div className="space-y-4 p-5"><div className="flex flex-wrap gap-2"><Button variant="outline" onClick={() => setOrdered([...ordered].sort((a, b) => a.fullName.localeCompare(b.fullName, 'es')))}>Alfabético A–Z</Button><Button variant="outline" onClick={() => setOrdered([...ordered].sort((a, b) => b.fullName.localeCompare(a.fullName, 'es')))}>Alfabético Z–A</Button></div><ol className="max-h-80 divide-y divide-border overflow-y-auto rounded-xl border border-border">{ordered.map((student, index) => <li key={student.id} className="flex items-center gap-3 p-3"><span className="w-8 text-center font-extrabold tabular-nums text-primary">{formatNumber(index + 1)}</span><span className="min-w-0 flex-1 font-semibold">{student.fullName}</span><Button size="icon" variant="ghost" aria-label={`Subir a ${student.fullName}`} disabled={index === 0} onClick={() => move(index, -1)}><ArrowUp className="size-4" /></Button><Button size="icon" variant="ghost" aria-label={`Bajar a ${student.fullName}`} disabled={index === ordered.length - 1} onClick={() => move(index, 1)}><ArrowDown className="size-4" /></Button></li>)}</ol><div className="flex justify-end gap-3"><Button variant="outline" onClick={onClose}>Cancelar</Button><Button loading={saving} onClick={async () => { setSaving(true); await reorderCourseStudents(courseId, ordered.map((student) => student.id)); onSaved() }}>Guardar orden</Button></div></div></Modal>
+  return <Modal title="Reordenar lista" description="Ordena y regenera los números del 1 en adelante." onClose={onClose}><div className="space-y-4 p-5"><div className="flex flex-wrap gap-2"><Button variant="outline" onClick={() => setOrdered([...ordered].sort((a, b) => a.fullName.localeCompare(b.fullName, 'es')))}>Alfabético A–Z</Button><Button variant="outline" onClick={() => setOrdered([...ordered].sort((a, b) => b.fullName.localeCompare(a.fullName, 'es')))}>Alfabético Z–A</Button></div><ol className="max-h-80 divide-y divide-border overflow-y-auto rounded-xl border border-border">{ordered.map((student, index) => <li key={student.id} className="flex items-center gap-3 p-3"><span className="w-8 text-center font-extrabold tabular-nums text-primary">{formatNumber(index + 1)}</span><span className="min-w-0 flex-1 font-semibold">{student.fullName}</span><Button size="icon" variant="ghost" aria-label={`Subir a ${student.fullName}`} disabled={index === 0} onClick={() => move(index, -1)}><ArrowUp className="size-4" /></Button><Button size="icon" variant="ghost" aria-label={`Bajar a ${student.fullName}`} disabled={index === ordered.length - 1} onClick={() => move(index, 1)}><ArrowDown className="size-4" /></Button></li>)}</ol><div className="flex justify-end gap-3"><Button data-ui-action="cancel" variant="outline" onClick={onClose}>Cancelar</Button><Button loading={saving} onClick={async () => { setSaving(true); await reorderCourseStudents(courseId, ordered.map((student) => student.id)); onSaved() }}>Guardar orden</Button></div></div></Modal>
 }
 
 function EmptyStudents({ courseName, view, canManage, hasQuery, onAdd }: { courseName: string; view: 'active' | 'withdrawn'; canManage: boolean; hasQuery: boolean; onAdd: () => void }) {

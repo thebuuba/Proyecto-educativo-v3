@@ -161,7 +161,7 @@ export function SectionForm({
         </div>
 
         <footer className="flex justify-end gap-3 border-t border-border px-5 py-4 sm:px-6">
-          <Button variant="outline" type="button" onClick={onClose}>
+          <Button data-ui-action="cancel" variant="outline" type="button" onClick={onClose}>
             Cancelar
           </Button>
           <Button type="submit" loading={submitting} disabled={!name.trim()}>

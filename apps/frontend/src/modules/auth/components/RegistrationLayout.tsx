@@ -1,7 +1,7 @@
 ﻿import { Check, GraduationCap, ShieldCheck } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { PromoLayout } from '@/modules/promo/components/PromoLayout'
+import { AccessLayout } from '@/modules/auth/components/AccessLayout'
 
 export function AccessFooter() {
   return (
@@ -32,7 +32,7 @@ export function RegistrationLayout({
 }) {
   const currentStep = confirmation ? 1 : 0
   return (
-    <PromoLayout>
+    <AccessLayout>
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:px-6 sm:py-14 lg:grid-cols-[1fr_400px] lg:gap-10 lg:px-8">
         <section
           className={`${confirmation ? 'confirm-email-card ' : ''}rounded-[28px] bg-card p-6 shadow-sm sm:p-10`}
@@ -71,6 +71,6 @@ export function RegistrationLayout({
           </ol>
         </aside>
       </div>
-    </PromoLayout>
+    </AccessLayout>
   )
 }

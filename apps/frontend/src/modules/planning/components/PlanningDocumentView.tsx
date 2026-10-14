@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { Button } from '@/components/ui/Button'
 import { SemanticIcon, StatusBadge } from '@/components/ui/SemanticUI'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 import type { PlanningDay, PlanningEntryWithDetails } from '@/modules/planning/types'
 import {
   exportPlanningToPdf,
@@ -54,10 +55,11 @@ export function PlanningDocumentView({ entry, onClose }: PlanningDocumentViewPro
   const rows = planningRows(entry)
 
   useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
+  useOutsideClick({ ref: dialogRef, onClose })
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/35 px-3 py-4 backdrop-blur-[2px] sm:px-4 sm:py-6">
-      <div ref={dialogRef} className="flex max-h-[94vh] w-full max-w-7xl flex-col overflow-hidden rounded-3xl bg-background shadow-2xl">
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-label={entry.title} className="flex max-h-[94vh] w-full max-w-7xl flex-col overflow-hidden rounded-3xl bg-background shadow-2xl">
         <div className="flex shrink-0 flex-col gap-3 border-b border-border bg-card px-4 py-3 lg:flex-row lg:items-center lg:justify-between lg:px-5">
           <div className="flex min-w-0 items-center gap-3">
             <SemanticIcon icon={FileText} tone="warning" className="size-10 rounded-xl" iconClassName="size-4" />
@@ -70,7 +72,7 @@ export function PlanningDocumentView({ entry, onClose }: PlanningDocumentViewPro
             <StatusBadge tone="warning">{planningTypeLabels[entry.planningType ?? 'DAILY']}</StatusBadge>
             <Button variant="outline" size="sm" onClick={() => exportPlanningToPdf(entry)}><Printer className="size-4" />PDF</Button>
             <Button variant="outline" size="sm" onClick={() => exportPlanningToWord(entry)}><Download className="size-4" />Word</Button>
-            <Button variant="ghost" size="icon" aria-label="Cerrar vista documento" onClick={onClose}><X className="size-5" /></Button>
+            <Button data-ui-action="close" variant="ghost" size="icon" aria-label="Cerrar vista documento" onClick={onClose}><X className="size-5" /></Button>
           </div>
         </div>
 

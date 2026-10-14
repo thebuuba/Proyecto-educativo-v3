@@ -257,7 +257,7 @@ export function ScheduleWeekGrid({
                                 >
                                   {assigned.subjectName}
                                 </span>
-                                <button
+                                <button data-ui-action="close"
                                   type="button"
                                   onClick={(e) => {
                                     e.stopPropagation()
@@ -282,7 +282,7 @@ export function ScheduleWeekGrid({
                                 <span className="line-clamp-2 text-xs font-extrabold leading-tight text-foreground">
                                   {pedagogical.label}
                                 </span>
-                                <button
+                                <button data-ui-action="close"
                                   type="button"
                                   onClick={(e) => {
                                     e.stopPropagation()

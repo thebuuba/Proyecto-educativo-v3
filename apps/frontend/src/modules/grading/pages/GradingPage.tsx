@@ -165,6 +165,7 @@ export function GradingPage() {
             activityDraftContext={{schoolId:schoolId ?? '', userId:appUser?.id ?? '', schoolYearId:schoolYearId ?? '', sectionSubjectId:selectedSsId,academicPeriodId:academicPeriodId ?? ''}}
             firstSecondaryLanguage={isFirstSecondaryLanguage(selectedSs)}
             instrumentAcademicContext={instrumentAcademicContext(selectedSs)}
+            initialConfigOpen={searchParams.get('ajustes') === 'calculo'}
             evaluationProfile={selectedSs?.evaluationProfile}
             sectionSubjectId={selectedSsId}
             students={students}

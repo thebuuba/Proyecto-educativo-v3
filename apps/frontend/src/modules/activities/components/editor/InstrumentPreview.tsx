@@ -1,3 +1,4 @@
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
@@ -224,7 +225,7 @@ export function InstrumentPreview({
         editorRef.current?.querySelectorAll<HTMLTextAreaElement>('textarea') ?? [],
       ).find((field) => !field.value.trim())
       emptyField?.scrollIntoView({
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        behavior: isMotionReduced() ? 'auto' : 'smooth',
         block: 'center',
       })
       emptyField?.focus()
@@ -514,7 +515,7 @@ export function InstrumentPreviewModal({
               {levelCount ? ` · ${levelCount} niveles` : ''}
             </p>
           </div>
-          <Button
+          <Button data-ui-action="close"
             type="button"
             variant="ghost"
             size="icon"

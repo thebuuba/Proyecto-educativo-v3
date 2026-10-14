@@ -11,10 +11,14 @@ import type { UpdateProfileInput } from '@/modules/profile/types'
 
 /** Actualiza los datos del perfil del usuario autenticado */
 export async function updateOwnProfile(
-  appUserId: string,
+  _appUserId: string,
   input: UpdateProfileInput,
 ): Promise<AppUser> {
-  return api.patch<AppUser>(`/users/${appUserId}`, input)
+  return api.patch<AppUser>('/profile', {
+    fullName: input.fullName.trim(),
+    phone: input.phone?.trim() || null,
+    avatarUrl: input.avatarUrl?.trim() || null,
+  })
 }
 
 export async function sendPasswordReset(email: string): Promise<void> {
