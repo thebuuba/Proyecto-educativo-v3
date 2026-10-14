@@ -4,7 +4,7 @@ import {localClient,fingerprint} from './language-local-client.mjs'
 
 const grade=Number(process.argv[2]||1)
 const run=process.argv[3]||'base'
-assert(['base','procedimientos','cierre'].includes(run))
+assert(['base','procedimientos','cierre','final'].includes(run))
 const prefix=`lengua-${grade}${run==='base'?'':'-'+run}`
 const root='docs/curriculum/cobertura-secundaria/evidencias/'
 const ui=JSON.parse(readFileSync(`${root}${prefix}-flujo-navegador.json`,'utf8'))

@@ -1,6 +1,7 @@
-import { normalizedTask, topicTaskMode } from './secondary-language-topics'
+import { topicTaskMode } from './secondary-language-topics'
 import type { SecondaryLanguageTopic } from './secondary-topic-types'
 import {completeSecondGradeLanguageCriteria} from './secondary-language-grade-two-complete'
+import {affirmativeLanguageTask} from './language-feature-criteria'
 
 export type ContextualTopicCriterion = {
   templateId: string; title: string; observable: string; weight: number
@@ -18,7 +19,7 @@ const focusPatterns: Record<string, Record<string, string>> = {
 
 function baseSecondaryTopicCriteria(topic: SecondaryLanguageTopic, activityType: string, description: string): ContextualTopicCriterion[] {
   const mode = topicTaskMode(activityType)
-  const task = normalizedTask(description)
+  const task = affirmativeLanguageTask(description)
   const producing = mode === 'PRODUCTION' || (mode === 'REPORT' && topic.id === 'informe-de-lectura')
     || mode==='ORAL'&&(/\b(?:produc|elabor|cre|compon)\w*/.test(task)||topic.id==='informe-de-lectura'&&/expon|exposicion/.test(task))
   if (mode === 'ORAL' && topic.id === 'cuento-amor-amistad' && /\bnarr\w*\s+oralmente\b/.test(task)) {

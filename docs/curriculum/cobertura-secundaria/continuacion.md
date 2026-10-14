@@ -1,5 +1,11 @@
 # Continuación del encargo completo
 
+## Bloque vigente: 1.º y 2.º verificados; continuar 3.º (.25)
+
+Segundo cierra seis temas, 51 subtemas y 24 bloques, con 31 contratos finales adicionales, 132 solicitudes HTTP y cuatro guardados/reabiertos finales. Backend 2.051 / frontend 2.905; builds e inventario aprobados. Conservados 48 snapshots. [Cierre, familias y límites](lengua-2-cierre.md).
+
+**Siguiente: 3.º (PDF 82–88)**: auditar sus siete temas, completar requisitos y familias con cuatro formatos, servicio y persistencia real; después 4.º→6.º. Sin bloqueo, sin subagentes, sin producción ni cambios históricos. Los pendientes anteriores de 2.º se cerraron en .25.
+
 ## Bloque vigente: 2.º ampliado, cierre aún pendiente (.24)
 
 Se verifican 100 contratos, 596 solicitudes normales y cuatro formatos guardados/reabiertos; 44 snapshots preservados. Backend 1.919, frontend 2.533; builds aprobados. [Informe y límites](lengua-2-acciones-y-procedimientos.md).

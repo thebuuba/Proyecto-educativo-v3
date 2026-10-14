@@ -18,16 +18,18 @@ import { evaluationCatalogV21 } from './catalog-v21'
 import { evaluationCatalogV22 } from './catalog-v22'
 import { secondGradeLanguageFeatures } from '@aula/shared'
 import { evaluationCatalogV23 } from './catalog-v23'
+import { evaluationCatalogV24 } from './catalog-v24'
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV23,
-  version: 'evaluation-2026.24',
+  ...evaluationCatalogV24,
+  version: 'evaluation-2026.25',
   secondGradeLanguageFeatures,
-  secondGradeLanguagePolicy:'ACTION_PRODUCT_PROCEDURES_AND_EXPLICIT_FEATURES_V1',
+  secondGradeLanguagePolicy:'PROCEDURAL_DETAILS_COMPREHENSION_PRODUCTS_AND_FAMILIES_V2',
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV24.version)return evaluationCatalogV24
   if(version===evaluationCatalogV23.version)return evaluationCatalogV23
   if(version===evaluationCatalogV21.version) return evaluationCatalogV21
   if(version===evaluationCatalogV22.version) return evaluationCatalogV22

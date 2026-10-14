@@ -2,6 +2,7 @@ import { secondaryLanguageGradeTwoTopics } from './secondary-topics/language/gra
 import type { SecondaryLanguageTopic, TopicTaskMode } from './secondary-topic-types'
 import {resolveEvaluationTask} from './evaluation-task-contract'
 import {withoutResources} from './evaluation-task-text'
+import {affirmativeLanguageTask} from './language-feature-criteria'
 export {withoutResources,normalizedTask} from './evaluation-task-text'
 export { secondaryLanguageGradeTwoTopics } from './secondary-topics/language/grade-2'
 export type { SecondaryLanguageTopic, TopicDimension, TopicTaskMode } from './secondary-topic-types'
@@ -27,9 +28,11 @@ export function topicTaskMode(activity: string): TopicTaskMode {
 }
 
 export function detectTopicActivity(title: string, description: string, topic: SecondaryLanguageTopic) {
-  const contract=resolveEvaluationTask(title,description)
+  const task = affirmativeLanguageTask(withoutResources(description) || title)
+  const contract=resolveEvaluationTask(title,task)
   if(contract.product==='ANALYTICAL_TEXT'&&!contract.oral) return topic.id==='guia-turistica'?'TOURIST_GUIDE_ANALYSIS':topic.id==='informe-de-lectura'?'READING_REPORT_ANALYSIS':'ANALYSIS'
-  const task = normalized(withoutResources(description) || title)
+  const comprehensionProduct=/\b(?:leer\w*|leeran|comprend\w*)\b.*\b(?:elabor\w*|constru\w*)\b.*\b(?:organizador grafico|cuadro sinoptico|esquema)\b/.test(task)&&!/planific|borrador|redact/.test(task)
+  if(comprehensionProduct)return topic.id==='guia-turistica'?'TOURIST_GUIDE_ANALYSIS':topic.id==='informe-de-lectura'?'READING_REPORT_ANALYSIS':'ANALYSIS'
   const purpose = task.match(/(?:para|a fin de)\s+((?:present\w*|expon\w*|exposicion)\b.*)/)?.[1]
   const actionText = purpose ?? task
   if(contract.product==='REPORT'&&topic.id!=='informe-de-lectura')return 'REPORT'
@@ -41,7 +44,7 @@ export function detectTopicActivity(title: string, description: string, topic: S
   const analysis=actionText.search(/\b(?:analiz\w*|interpret\w*|identific\w*)\b/)
   const compare=comparison>=0&&(analysis<0||comparison<analysis||/\b(?:dos|ambos|varios|diferentes)\b/.test(actionText))
   const oral=contract.oral||/\b(?:recit\w*|declam\w*|exposicion|narr\w*\s+oralmente)\b/.test(actionText)
-  const mode=comprehension?'ANALYSIS':compare?'COMPARISON':oral?'ORAL':writing?'PRODUCTION':'ANALYSIS'
+  const mode=compare?'COMPARISON':comprehension?'ANALYSIS':oral?'ORAL':writing?'PRODUCTION':'ANALYSIS'
   if (topic.id === 'guia-turistica') return `TOURIST_GUIDE_${mode === 'PRODUCTION' ? 'CREATION' : mode === 'ORAL' ? 'PRESENTATION' : mode}`
   if (topic.id === 'informe-de-lectura') return mode === 'PRODUCTION' ? 'REPORT' : `READING_REPORT_${mode === 'ORAL' ? 'PRESENTATION' : mode}`
   if (mode === 'ORAL') return 'ORAL_PRESENTATION'

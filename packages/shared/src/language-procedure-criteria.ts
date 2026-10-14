@@ -101,8 +101,8 @@ export function languageReadingProcedures(description:string,scope:string,genre:
 
 export function languageWritingProcedures(description:string,scope:string,genre:string,plan=outline[genre]):ContextualTopicCriterion[] {
   const task=affirmativeLanguageTask(description),rows:ContextualTopicCriterion[]=[]
-  if(/esquema|guion|planific|mapa conceptual|cuadro sinoptico|organizador grafico/.test(task)) {
-    const product=/mapa conceptual/.test(task)?'mapa conceptual':/cuadro sinoptico/.test(task)?'cuadro sinóptico':/organizador grafico/.test(task)?'organizador gráfico':/esquema/.test(task)?'esquema':/guion/.test(task)?'guion':'plan'
+  if(/esquema|guion|planific|mapa (?:conceptual|semantico)|cuadro sinoptico|organizador grafico/.test(task)) {
+    const product=/esquema o guion|guion o esquema/.test(task)?'esquema o guion':/mapa conceptual o (?:mapa )?semantico|mapa semantico o (?:mapa )?conceptual/.test(task)?'mapa conceptual o mapa semántico':/mapa semantico/.test(task)?'mapa semántico':/mapa conceptual/.test(task)?'mapa conceptual':/cuadro sinoptico/.test(task)?'cuadro sinóptico':/organizador grafico/.test(task)?'organizador gráfico':/esquema/.test(task)?'esquema':/guion/.test(task)?'guion':'plan'
     rows.push({
     templateId:`${scope}-procedure-outline`,title:'Planificación del texto',weight:3,
     observable:`Organiza un ${product} que permite reconocer ${plan} antes de desarrollar el texto.`,

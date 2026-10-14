@@ -303,7 +303,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const spanishLanguage = area === 'language' && context?.subjectCode.toUpperCase() === 'LEN'
   const firstGenre = context?.level === 'SECONDARY' && context.grade === 1 && spanishLanguage ? firstSecondaryLanguageGenre(input.activityTitle, input.description ?? '') : null
   const newsModule = !contextualTopic && context?.level === 'SECONDARY' && (context.grade === 1 && firstGenre === 'NEWS' && isFirstGradeNewsActivity(activity.id) || context.grade === 2
-    && ['NEWSCAST', 'NEWS_ANALYSIS', 'NEWS_COMPARISON', 'NEWS_WRITING', 'REPORT', 'DEBATE'].includes(activity.id))
+    && ['NEWSCAST', 'NEWS_ANALYSIS', 'NEWS_COMPARISON', 'NEWS_WRITING', 'REPORT', 'DEBATE', 'RESEARCH'].includes(activity.id))
     && spanishLanguage && /\bnotici(?:a|as|ero)\b/.test(text)
   const touristGuideModule = firstGenre === 'TOURIST_GUIDE' && isFirstGradeGuideActivity(activity.id)
   const posterModule = firstGenre === 'POSTER' && isFirstGradePosterActivity(activity.id)

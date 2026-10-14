@@ -1,0 +1,146 @@
+[
+  {
+    "id": "summary-operations",
+    "description": "Redactarán un informe de lectura resumido aplicando omisión, selección, generalización y reconstrucción de las ideas principales.",
+    "type": "REPORT",
+    "criterion": "len-2-informe-de-lectura-feature-summary",
+    "contains": "generalización",
+    "absent": "publicación"
+  },
+  {
+    "id": "guide-register",
+    "description": "Elaborarán una guía turística para visitantes utilizando un registro formal y un vocabulario comprensible.",
+    "type": "TOURIST_GUIDE_CREATION",
+    "criterion": "len-2-guia-turistica-feature-register",
+    "contains": "formal",
+    "absent": "mapas y fotografías"
+  },
+  {
+    "id": "guide-support",
+    "description": "Elaborarán una guía turística en soporte digital para facilitar la consulta de sus lugares.",
+    "type": "TOURIST_GUIDE_CREATION",
+    "criterion": "len-2-guia-turistica-procedure-medium",
+    "contains": "digital",
+    "absent": "publicación"
+  },
+  {
+    "id": "article-thematic-vocabulary",
+    "description": "Analizarán únicamente el vocabulario temático y el léxico apropiado de un artículo expositivo.",
+    "type": "ANALYSIS",
+    "criterion": "len-2-articulo-expositivo-feature-vocabulary",
+    "contains": "problema",
+    "absent": "hecho noticioso"
+  },
+  {
+    "id": "article-nonverbal",
+    "description": "Producirán oralmente un artículo expositivo utilizando gestos y postura corporal para apoyar la explicación del problema y su solución.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "len-2-articulo-expositivo-feature-nonverbal",
+    "contains": "gestos",
+    "absent": "contacto visual obligatorio"
+  },
+  {
+    "id": "story-classification",
+    "description": "Clasificarán únicamente los personajes principales y secundarios de un cuento de amor y amistad sustentando sus funciones con acciones del relato.",
+    "type": "ANALYSIS",
+    "criterion": "len-2-cuento-amor-amistad-feature-character-roles",
+    "contains": "secundarios",
+    "absent": "redacta un cuento"
+  },
+  {
+    "id": "story-coordination-subordination",
+    "description": "Escribirán un cuento de amor y amistad empleando conectores coordinantes y subordinantes para enlazar las acciones.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "len-2-cuento-amor-amistad-feature-connectors",
+    "contains": "subordinantes",
+    "absent": "conectores de consecuencia"
+  },
+  {
+    "id": "news-serious-tone",
+    "description": "Presentarán un noticiero relatando la noticia con tono serio e informativo y vocabulario temático.",
+    "type": "NEWSCAST",
+    "criterion": "news-feature-informative-register",
+    "contains": "serio",
+    "absent": "publicación"
+  },
+  {
+    "id": "guide-organizer-not-planning",
+    "description": "Leerán una guía turística y elaborarán un organizador gráfico para reconstruir el sentido de sus indicaciones.",
+    "type": "TOURIST_GUIDE_ANALYSIS",
+    "criterion": "len-2-guia-turistica-procedure-reconstruction",
+    "contains": "representación",
+    "absent": "antes de desarrollar el texto"
+  },
+  {
+    "id": "article-organizer-not-writing",
+    "description": "Leerán un artículo expositivo y elaborarán un cuadro sinóptico para explicar las relaciones entre el problema y sus soluciones.",
+    "type": "ANALYSIS",
+    "criterion": "len-2-articulo-expositivo-procedure-organizer",
+    "contains": "cuadro sinóptico",
+    "absent": "antes de desarrollar el texto"
+  },
+  {
+    "id": "story-planning-alternative",
+    "description": "Planificarán un cuento de amor y amistad mediante un esquema o guion que ordene el conflicto y sus acciones.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "len-2-cuento-amor-amistad-procedure-outline",
+    "contains": "esquema o guion",
+    "absent": "publicación"
+  },
+  {
+    "id": "guide-oral-only-map",
+    "description": "Producirán oralmente una guía turística usando un mapa para localizar los lugares descritos.",
+    "type": "TOURIST_GUIDE_PRESENTATION",
+    "criterion": "len-2-guia-turistica-graphics",
+    "contains": "mapa",
+    "absent": "fotografías"
+  },
+  {
+    "id": "article-semantic-map",
+    "description": "Planificarán un artículo expositivo mediante un mapa semántico que organice el problema y sus soluciones.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "len-2-articulo-expositivo-procedure-outline",
+    "contains": "mapa semántico",
+    "absent": "mapa conceptual"
+  },
+  {
+    "id": "article-alternative-map",
+    "description": "Planificarán un artículo expositivo mediante un mapa conceptual o mapa semántico.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "len-2-articulo-expositivo-procedure-outline",
+    "contains": "mapa conceptual o mapa semántico",
+    "absent": "publicación"
+  },
+  {
+    "id": "guide-both-media",
+    "description": "Elaborarán una guía turística en soporte físico y digital.",
+    "type": "TOURIST_GUIDE_CREATION",
+    "criterion": "len-2-guia-turistica-procedure-medium",
+    "contains": "físico y digital",
+    "absent": "físico o digital"
+  },
+  {
+    "id": "guide-alternative-graphics",
+    "description": "Producirán oralmente una guía turística usando mapas, gráficos o collage de fotografías para situar los lugares.",
+    "type": "TOURIST_GUIDE_PRESENTATION",
+    "criterion": "len-2-guia-turistica-graphics",
+    "contains": "mapas, gráficos o collage de fotografías",
+    "absent": "mapas y fotografías"
+  },
+  {
+    "id": "story-psychological-setting",
+    "description": "Analizarán únicamente el ambiente psicológico de un cuento de amor y amistad y su influencia en los personajes.",
+    "type": "ANALYSIS",
+    "criterion": "len-2-cuento-amor-amistad-feature-setting",
+    "contains": "ambiente psicológico",
+    "absent": "ambiente físico"
+  },
+  {
+    "id": "decima-gesture",
+    "description": "Recitarán una décima espinela empleando lenguaje gestual para comunicar el sentido de los versos.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "len-2-decima-espinela-recitation-expression",
+    "contains": "gestos",
+    "absent": "contacto visual obligatorio"
+  }
+]

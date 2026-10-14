@@ -8,8 +8,8 @@
     80,
     81
   ],
-  "status": "PARTIAL",
-  "pending": "Completar requisitos finos de procedimientos: registro/soporte y destinatario; operaciones de omisión, selección, generalización y reconstrucción del resumen; vocabulario temático y recursos no verbales; clasificación de personajes y conectores subordinantes. Contrastar familias complementarias y requisitos compuestos antes de cerrar 2.º; después continuar 3.º–6.º.",
+  "status": "VERIFIED_DEFINED_FAMILIES",
+  "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 2.º. No garantiza interpretar toda descripción. Continuar 3.º–6.º en orden.",
   "topics": [
     {
       "topicId": "76d1d9e3-52af-58b4-a886-50daf7b4ed98",
@@ -488,5 +488,253 @@
       ],
       "notes": ""
     }
+  ],
+  "catalogVersion": "evaluation-2026.25",
+  "definedFamilies": [
+    [
+      "Noticia",
+      "comprensión/análisis",
+      "redacción",
+      "noticiero",
+      "comparación",
+      "informe",
+      "debate",
+      "investigación de hechos"
+    ],
+    [
+      "Guía turística",
+      "comprensión/análisis",
+      "elaboración/planificación",
+      "presentación oral",
+      "comparación",
+      "informe",
+      "investigación de lugares"
+    ],
+    [
+      "Artículo expositivo",
+      "comprensión/análisis y organizadores",
+      "producción/planificación escrita",
+      "producción oral",
+      "comparación",
+      "informe",
+      "investigación de información"
+    ],
+    [
+      "Informe de lectura",
+      "comprensión/análisis",
+      "producción escrita",
+      "producción oral",
+      "comparación"
+    ],
+    [
+      "Cuento de amor y amistad",
+      "comprensión/análisis de texto o fragmento",
+      "escritura/planificación",
+      "narración oral",
+      "comparación",
+      "informe"
+    ],
+    [
+      "Décima espinela",
+      "comprensión/análisis",
+      "escritura",
+      "recitación",
+      "comparación",
+      "informe"
+    ]
+  ],
+  "additionalContracts": [
+    {
+      "case": "summary-operations",
+      "description": "Redactarán un informe de lectura resumido aplicando omisión, selección, generalización y reconstrucción de las ideas principales.",
+      "activityType": "REPORT",
+      "criterion": "len-2-informe-de-lectura-feature-summary"
+    },
+    {
+      "case": "guide-register",
+      "description": "Elaborarán una guía turística para visitantes utilizando un registro formal y un vocabulario comprensible.",
+      "activityType": "TOURIST_GUIDE_CREATION",
+      "criterion": "len-2-guia-turistica-feature-register"
+    },
+    {
+      "case": "guide-support",
+      "description": "Elaborarán una guía turística en soporte digital para facilitar la consulta de sus lugares.",
+      "activityType": "TOURIST_GUIDE_CREATION",
+      "criterion": "len-2-guia-turistica-procedure-medium"
+    },
+    {
+      "case": "article-thematic-vocabulary",
+      "description": "Analizarán únicamente el vocabulario temático y el léxico apropiado de un artículo expositivo.",
+      "activityType": "ANALYSIS",
+      "criterion": "len-2-articulo-expositivo-feature-vocabulary"
+    },
+    {
+      "case": "article-nonverbal",
+      "description": "Producirán oralmente un artículo expositivo utilizando gestos y postura corporal para apoyar la explicación del problema y su solución.",
+      "activityType": "ORAL_PRESENTATION",
+      "criterion": "len-2-articulo-expositivo-feature-nonverbal"
+    },
+    {
+      "case": "story-classification",
+      "description": "Clasificarán únicamente los personajes principales y secundarios de un cuento de amor y amistad sustentando sus funciones con acciones del relato.",
+      "activityType": "ANALYSIS",
+      "criterion": "len-2-cuento-amor-amistad-feature-character-roles"
+    },
+    {
+      "case": "story-coordination-subordination",
+      "description": "Escribirán un cuento de amor y amistad empleando conectores coordinantes y subordinantes para enlazar las acciones.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "criterion": "len-2-cuento-amor-amistad-feature-connectors"
+    },
+    {
+      "case": "news-serious-tone",
+      "description": "Presentarán un noticiero relatando la noticia con tono serio e informativo y vocabulario temático.",
+      "activityType": "NEWSCAST",
+      "criterion": "news-feature-informative-register"
+    },
+    {
+      "case": "guide-organizer-not-planning",
+      "description": "Leerán una guía turística y elaborarán un organizador gráfico para reconstruir el sentido de sus indicaciones.",
+      "activityType": "TOURIST_GUIDE_ANALYSIS",
+      "criterion": "len-2-guia-turistica-procedure-reconstruction"
+    },
+    {
+      "case": "article-organizer-not-writing",
+      "description": "Leerán un artículo expositivo y elaborarán un cuadro sinóptico para explicar las relaciones entre el problema y sus soluciones.",
+      "activityType": "ANALYSIS",
+      "criterion": "len-2-articulo-expositivo-procedure-organizer"
+    },
+    {
+      "case": "story-planning-alternative",
+      "description": "Planificarán un cuento de amor y amistad mediante un esquema o guion que ordene el conflicto y sus acciones.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "criterion": "len-2-cuento-amor-amistad-procedure-outline"
+    },
+    {
+      "case": "guide-oral-only-map",
+      "description": "Producirán oralmente una guía turística usando un mapa para localizar los lugares descritos.",
+      "activityType": "TOURIST_GUIDE_PRESENTATION",
+      "criterion": "len-2-guia-turistica-graphics"
+    },
+    {
+      "case": "article-semantic-map",
+      "description": "Planificarán un artículo expositivo mediante un mapa semántico que organice el problema y sus soluciones.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "criterion": "len-2-articulo-expositivo-procedure-outline"
+    },
+    {
+      "case": "article-alternative-map",
+      "description": "Planificarán un artículo expositivo mediante un mapa conceptual o mapa semántico.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "criterion": "len-2-articulo-expositivo-procedure-outline"
+    },
+    {
+      "case": "guide-both-media",
+      "description": "Elaborarán una guía turística en soporte físico y digital.",
+      "activityType": "TOURIST_GUIDE_CREATION",
+      "criterion": "len-2-guia-turistica-procedure-medium"
+    },
+    {
+      "case": "guide-alternative-graphics",
+      "description": "Producirán oralmente una guía turística usando mapas, gráficos o collage de fotografías para situar los lugares.",
+      "activityType": "TOURIST_GUIDE_PRESENTATION",
+      "criterion": "len-2-guia-turistica-graphics"
+    },
+    {
+      "case": "story-psychological-setting",
+      "description": "Analizarán únicamente el ambiente psicológico de un cuento de amor y amistad y su influencia en los personajes.",
+      "activityType": "ANALYSIS",
+      "criterion": "len-2-cuento-amor-amistad-feature-setting"
+    },
+    {
+      "case": "decima-gesture",
+      "description": "Recitarán una décima espinela empleando lenguaje gestual para comunicar el sentido de los versos.",
+      "activityType": "ORAL_PRESENTATION",
+      "criterion": "len-2-decima-espinela-recitation-expression"
+    },
+    {
+      "case": "compare-news",
+      "description": "Compararán los datos y enfoques de dos noticias usando evidencias de ambas.",
+      "activityType": "NEWS_COMPARISON",
+      "criterion": "news-comparison-data"
+    },
+    {
+      "case": "compare-guide",
+      "description": "Compararán las características y la clasificación de lugares en dos guías turísticas.",
+      "activityType": "TOURIST_GUIDE_COMPARISON",
+      "criterion": "len-2-guia-turistica-places"
+    },
+    {
+      "case": "compare-article",
+      "description": "Compararán los problemas y soluciones de dos artículos expositivos.",
+      "activityType": "COMPARISON",
+      "criterion": "len-2-articulo-expositivo-problem-solution"
+    },
+    {
+      "case": "compare-report",
+      "description": "Compararán los resúmenes de dos informes de lectura y su fidelidad al texto leído.",
+      "activityType": "READING_REPORT_COMPARISON",
+      "criterion": "len-2-informe-de-lectura-summary"
+    },
+    {
+      "case": "compare-story",
+      "description": "Compararán los conflictos de dos cuentos de amor y amistad con sus resoluciones.",
+      "activityType": "COMPARISON",
+      "criterion": "len-2-cuento-amor-amistad-conflict"
+    },
+    {
+      "case": "compare-decima",
+      "description": "Compararán la rima y el ritmo de dos décimas espinelas.",
+      "activityType": "COMPARISON",
+      "criterion": "len-2-decima-espinela-rhyme"
+    },
+    {
+      "case": "research-news",
+      "description": "Investigarán el hecho de una noticia y registrarán los datos y sus fuentes.",
+      "activityType": "RESEARCH",
+      "criterion": "news-research-sources"
+    },
+    {
+      "case": "research-guide",
+      "description": "Investigarán los lugares para una guía turística y comprobarán sus datos y fuentes.",
+      "activityType": "RESEARCH",
+      "criterion": "len-2-guia-turistica-research-sources"
+    },
+    {
+      "case": "debate-news",
+      "description": "Debatirán sobre el hecho de una noticia sosteniendo posturas y respondiendo con evidencias.",
+      "activityType": "DEBATE",
+      "criterion": "news-debate-arguments"
+    },
+    {
+      "case": "report-guide",
+      "description": "Redactarán un informe sobre la guía turística y su organización.",
+      "activityType": "REPORT",
+      "criterion": "len-2-guia-turistica-report-organization"
+    },
+    {
+      "case": "report-article",
+      "description": "Redactarán un informe sobre un artículo expositivo y analizarán su problema y solución.",
+      "activityType": "REPORT",
+      "criterion": "len-2-articulo-expositivo-report-organization"
+    },
+    {
+      "case": "report-story",
+      "description": "Redactarán un informe sobre un fragmento de cuento de amor y amistad y sus personajes.",
+      "activityType": "REPORT",
+      "criterion": "len-2-cuento-amor-amistad-conflict"
+    },
+    {
+      "case": "report-decima",
+      "description": "Redactarán un informe sobre el tema de una décima espinela con evidencias de sus versos.",
+      "activityType": "REPORT",
+      "criterion": "len-2-decima-espinela-report-organization"
+    }
+  ],
+  "notes": [
+    "Las modalidades de lectura, escucha y selección de texto son condiciones didácticas; se comprueban mediante comprensión observable, sin calificarlas como productos adicionales.",
+    "Los medios físicos/digitales y los recursos gráficos se exigen solo si figuran en la consigna; se conserva la relación y/o solicitada.",
+    "La expresión oficial «conectores especiales» se conserva en el texto extraído; el proveedor evalúa conectores espaciales o temporales cuando se solicitan explícitamente.",
+    "Las familias de comparación, informe, debate e investigación se identifican como adaptaciones didácticas del motor; no se inventan párrafos oficiales adicionales."
   ]
 }

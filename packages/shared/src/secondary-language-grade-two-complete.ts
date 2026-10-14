@@ -51,17 +51,40 @@ export function completeSecondGradeLanguageCriteria(id:string,activity:string,de
     if(mode==='ANALYSIS'&&!/estructura|recursos/.test(task))rows=rows.filter(r=>r.templateId.includes('-feature-')||r.templateId.includes('-procedure-'))
     rows.push(...languagePlaceClassification(description).map(r=>({...r,templateId:r.templateId.replace(/^guide-/,scope+'-')})))
   }
-  if(id==='guia-turistica'&&/mapas/.test(task)&&/fotografias/.test(task)) {
-    const resources=/mapas\s+o\s+fotografias|fotografias\s+o\s+mapas/.test(task)?'mapas o fotografías':'mapas y fotografías'
+  if(id==='guia-turistica'&&/mapas?|fotografias?|graficos?|dibujos?/.test(task)) {
+    const requested=[[/mapas?/,'mapas'],[/graficos?/,'gráficos'],[/dibujos?/,'dibujos'],[/collage de fotografias?|fotografias?/,/collage de fotografias?/.test(task)?'collage de fotografías':'fotografías']] as const
+    const matches=requested.flatMap(([pattern,name])=>{const match=pattern.exec(task);return match?[{name,index:match.index,end:match.index+match[0].length}]:[]}).sort((a,b)=>a.index-b.index)
+    const span=task.slice(matches[0].index,matches.at(-1)!.end)
+    const names=matches.map(m=>m.name),conjunction=/\bo\b/.test(span)?' o ':' y '
+    const resources=names.length===1?names[0]:names.slice(0,-1).join(', ')+conjunction+names.at(-1)
     rows=rows.map(row=>row.templateId.endsWith('-graphics')?{...row,
       observable:`${producing?'Incorpora':'Interpreta'} ${resources} relacionándolos con los lugares y las indicaciones de la guía turística.`,
-      progressionLevels:[`Los ${resources} permiten reconocer los lugares y sus relaciones con las indicaciones de la guía.`,
+      progressionLevels:[`Los recursos solicitados (${resources}) permiten reconocer los lugares y sus relaciones con las indicaciones de la guía.`,
         'Los recursos corresponden a los lugares; una referencia necesita explicarse.',
         'Muestra recursos pertinentes sin establecer su relación con las indicaciones de la guía.',
         'Los recursos sitúan un lugar o una indicación de manera incompatible con la guía.',
         'No aporta evidencia de la relación de los recursos solicitados con los lugares de la guía.'],
     }:row)
   }
+  if(id==='guia-turistica'&&producing&&/soporte (?:fisico|digital)|formato (?:fisico|digital)/.test(task)) {
+    const medium=/fisico\s+y\s+digital|digital\s+y\s+fisico/.test(task)?'físico y digital':/fisico.*\bo\b.*digital|digital.*\bo\b.*fisico/.test(task)?'físico o digital':/digital/.test(task)?'digital':'físico'
+    rows.push({templateId:`${scope}-procedure-medium`,title:'Consulta de la guía en el soporte elegido',weight:2,
+      observable:`Presenta la guía en soporte ${medium} con una organización legible que permite localizar y consultar la información de los lugares.`,
+      progressionLevels:[`La guía en soporte ${medium} permite localizar las secciones y leer las indicaciones de los lugares sin obstáculos de organización.`,
+        'La información se puede consultar; una sección necesita una referencia o distribución más clara.',
+        'La información está disponible, pero su distribución dificulta localizar varias indicaciones.',
+        'La disposición corta o mezcla indicaciones y cambia su relación con los lugares.',
+        'No presenta la guía de forma consultable en el soporte solicitado.'],
+    })
+  }
+  if(id==='decima-espinela'&&reciting&&/gestual|gestos/.test(task))rows=rows.map(row=>row.templateId.endsWith('-recitation-expression')?{...row,
+    observable:'Comunica el sentido de los versos de la décima mediante gestos pertinentes, o los apoyos de acceso acordados, vinculándolos con las emociones e ideas del poema.',
+    progressionLevels:['Los gestos o apoyos acordados permiten reconocer las emociones e ideas expresadas por los versos.',
+      'Los gestos o apoyos se relacionan con el sentido; una expresión necesita vincularse con el verso.',
+      'Utiliza gestos aislados sin relacionarlos con las emociones o ideas de los versos.',
+      'El gesto o apoyo expresa una emoción incompatible con el sentido del verso.',
+      'No aporta evidencia gestual ni mediante el apoyo acordado de las emociones e ideas del poema.'],
+  }:row)
   if(id==='articulo-expositivo'&&/cuadro sinoptico|organizador grafico|esquema/.test(task)&&!producing&&mode!=='ORAL')rows.push({
     templateId:`${scope}-procedure-organizer`,title:'Representación de la comprensión',weight:4,
     observable:`Organiza ${/cuadro sinoptico/.test(task)?'un cuadro sinóptico':'la representación solicitada'} que muestra el problema del artículo y la relación entre sus causas, explicaciones y soluciones disponibles.`,
@@ -82,10 +105,11 @@ export function completeSecondGradeLanguageCriteria(id:string,activity:string,de
         'No relaciona los apoyos solicitados con afirmaciones del artículo.'],
     })
   }
+  const researchTarget=id==='guia-turistica'?'las características y la ubicación de los lugares de la guía':profile.reading
   if(activity==='RESEARCH') rows=[{
     templateId:`${scope}-research-information`,title:'Información pertinente para la investigación',weight:5,
-    observable:`Selecciona información que permite desarrollar ${profile.plan}, distinguiendo datos documentados de interpretaciones propias.`,
-    progressionLevels:[`La información seleccionada permite desarrollar ${profile.plan} y diferencia datos documentados de interpretaciones.`,
+    observable:`Selecciona información que permite fundamentar ${researchTarget}, distinguiendo datos documentados de interpretaciones propias.`,
+    progressionLevels:[`La información seleccionada permite fundamentar ${researchTarget} y diferencia datos documentados de interpretaciones.`,
       'La información responde al propósito; una afirmación necesita distinguirse como dato o interpretación.',
       'Recopila información relacionada con el asunto, pero no muestra cómo responde al propósito.',
       'Atribuye al asunto datos de otro caso o presenta opiniones como hechos comprobados.',
