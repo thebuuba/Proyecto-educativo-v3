@@ -162,6 +162,7 @@ export function Header({ onOpenSidebar, isSidebarExpanded, onToggleSidebar }: He
         >
           <Search className="size-4 shrink-0" aria-hidden="true" />
           <input
+            key={location.pathname}
             ref={searchRef}
             id="global-header-search"
             type="search"

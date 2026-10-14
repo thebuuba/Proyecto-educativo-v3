@@ -133,7 +133,7 @@ export function GroupedSubjectActivitiesPage() {
   const levelName = context?.grade.academicLevelName ?? context?.grade.level ?? ''
   const evaluationProfile = resolveEvaluationProfile(context?.grade.academicLevelCode)
   const cycleName = context?.grade.academicCycleName ?? ''
-  const subjectPalette = assignment?.appearanceColor ? { color: assignment.appearanceColor, soft: `${assignment.appearanceColor}14` } : getSubjectPalette(subjectName)
+  const subjectPalette = getSubjectPalette(subjectName, assignment?.appearanceColor)
   const period = workspace.academicPeriods.find((item) => item.id === workspace.selectedAcademicPeriodId) ?? workspace.academicPeriods[0]
   const selectedActivity = workspace.activities.find((activity) => activity.id === activityId) ?? null
   const savedActivity = workspace.activities.find((activity) => activity.id === savedActivityId) ?? null

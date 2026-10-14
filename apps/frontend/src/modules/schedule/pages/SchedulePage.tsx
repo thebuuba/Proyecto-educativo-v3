@@ -28,6 +28,7 @@ import {
   scheduleDays,
 } from '@/modules/schedule/utils/scheduleStructure'
 import { cn } from '@/utils/cn'
+import { getSubjectPalette } from '@/utils/subjectPalette'
 import { ApiError } from '@/services/apiClient'
 
 type SubjectOption = { id: string; sectionId: string; label: string }
@@ -607,6 +608,7 @@ function ScheduleCell({
             {duration(slot.startTime, slot.endTime)} min
           </p>
           <p className="mt-1 text-sm font-extrabold text-foreground">
+            {entry ? <span aria-hidden="true" className="mr-2 inline-block size-2 rounded-full" style={{ backgroundColor: getSubjectPalette(entry.subjectName, entry.appearanceColor).color }} /> : null}
             {entry ? entry.subjectName : slot.name}
           </p>
           {entry ? (

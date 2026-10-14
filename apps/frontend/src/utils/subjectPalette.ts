@@ -67,7 +67,12 @@ function stableSubjectPalette(subjectName: string) {
   return fallbackPalettes[hash % fallbackPalettes.length]
 }
 
-export function getSubjectPalette(subjectName: string) {
+export function getSubjectPalette(subjectName: string, appearanceColor?: string | null): SubjectPalette {
+  const color = appearanceColor?.trim().toUpperCase()
+  if (color && (Object.values(subjectPalettes).some((palette) => palette.color.toUpperCase() === color)
+    || ['#2B96EE', '#10B981', '#EB5247', '#FBBF24'].includes(color))) {
+    return { color, soft: `color-mix(in srgb, ${color} 15%, var(--card))`, foreground: 'var(--foreground)' }
+  }
   const normalized = normalizeSubjectName(subjectName)
   const match = subjectColorRules.find(({ terms }) => terms.some((term) => normalized.includes(term)))
   return match?.palette ?? stableSubjectPalette(subjectName)

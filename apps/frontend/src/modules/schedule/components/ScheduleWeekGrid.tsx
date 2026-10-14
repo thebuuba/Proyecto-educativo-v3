@@ -10,6 +10,7 @@ import { getSubjectPalette } from '@/utils/subjectPalette'
 type AssignedEntry = {
   scheduleEntryId: string
   subjectName: string
+  appearanceColor?: string | null
   gradeName: string
   academicLevelName: string
   sectionName: string
@@ -23,6 +24,7 @@ type SectionSubjectOption = {
   sectionId: string
   label: string
   subjectName: string
+  appearanceColor?: string | null
   gradeName: string
   academicLevelName: string
   sectionName: string
@@ -77,6 +79,7 @@ export function ScheduleWeekGrid({
       map.set(key, {
         scheduleEntryId: e.id,
         subjectName: e.subjectName,
+        appearanceColor: e.appearanceColor,
         gradeName: e.gradeName,
         academicLevelName: e.academicLevelName,
         sectionName: e.sectionName,
@@ -241,7 +244,7 @@ export function ScheduleWeekGrid({
                       const entryKey = getCellKey(day.dayOfWeek, block)
                       const assigned = entriesByCell.get(entryKey)
                       const pedagogical = pedagogicalBlocksByCell.get(entryKey)
-                      const assignedPalette = assigned ? getSubjectPalette(assigned.subjectName) : null
+                      const assignedPalette = assigned ? getSubjectPalette(assigned.subjectName, assigned.appearanceColor) : null
 
                       return (
                         <div key={block.id} className="relative">
@@ -344,7 +347,7 @@ export function ScheduleWeekGrid({
                                   </div>
                                 ) : (
                                   sectionSubjects.map((ss) => {
-                                    const palette = getSubjectPalette(ss.subjectName)
+                                    const palette = getSubjectPalette(ss.subjectName, ss.appearanceColor)
                                     return (
                                       <button
                                         key={ss.id}
