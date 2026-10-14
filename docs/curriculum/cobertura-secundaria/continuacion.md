@@ -1,5 +1,11 @@
 # Continuación del encargo completo
 
+## Bloque vigente: 1.º verificado; continuar 2.º (.23)
+
+Se cerraron las familias definidas de los seis temas de 1.º, con cotejo de 55 subtemas y 30 bloques de procedimientos. Últimos once contratos: 220 propuestas HTTP, cuatro guardados/reabiertos finales y preservación de 40 snapshots locales (28 de línea base y 12 instrumentos completos). Backend 1.514 / frontend 1.333; builds obligatorios e inventario aprobados. [Informe, alcance y evidencias](lengua-1-cierre.md).
+
+**Siguiente: 2.º, PDF 76–81.** Reauditar noticia y los cinco módulos previos; completar subtemas, procedimientos y cuatro formatos con persistencia real antes de 3.º. Después continuar 3.º→6.º. No hay bloqueo ni autorización nueva necesaria. Sin subagentes, producción ni cambios históricos. Las secciones siguientes son historial y sus pendientes de 1.º fueron cerrados por este bloque.
+
 ## Bloque vigente: procedimientos y escalas (.22)
 
 Bloque .21/.22: 19 procedimientos explícitos conectados, 600 comprobaciones HTTP, 114 controles adicionales de escala por regularidad/grado y cuatro formatos guardados/reabiertos con persistencia real. Descripción unificada a 10.000 caracteres. Backend 1.470 / frontend 1.201; builds obligatorios aprobados. 28 snapshots históricos y cuatro instrumentos completos de .20 conservados (36 actuales). [Informe y evidencias](lengua-1-procedimientos-y-escala.md).

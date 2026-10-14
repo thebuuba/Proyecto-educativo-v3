@@ -7,6 +7,7 @@ import {firstGradeCalligramCriteria as calligram} from './secondary-calligram-gr
 import {normalizedTask} from './evaluation-task-text'
 import {explicitWritingProcess, languageFeatureCriterion, requestedLanguageFeatures, type LanguageFeature} from './language-feature-criteria'
 import {firstGradeLanguageProcedureFeatures,firstGradeLanguageFeatureTerms,languageReadingProcedures,languageWritingProcedures,languagePlaceClassification} from './language-procedure-criteria'
+import {firstGradeLanguageCompletionFeatures,specializePunctuation} from './language-procedure-completion'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import {isFirstGradeNewsActivity as supportsNews} from './secondary-news-grade-one'
 import {isFirstGradeGuideActivity as supportsGuide} from './secondary-guide-grade-one'
@@ -108,7 +109,12 @@ function complete(genre:string,activity:string,description:string,base:Contextua
   const analyze=activity.includes('ANALYSIS') || ['ANALYSIS','OBSERVATION','REPORT'].includes(activity) && genre!=='informe de lectura'
   const recitation=activity.includes('RECITATION')
   const production=/WRITING|CREATION|WRITTEN_PRODUCTION/.test(activity) || activity==='REPORT' && genre==='informe de lectura'
-  const features=requestedLanguageFeatures([...firstGradeLanguageFeatures[genre].map(feature=>({...feature,terms:firstGradeLanguageFeatureTerms[genre]?.[feature.id]??feature.terms})),...firstGradeLanguageProcedureFeatures[genre]],description)
+  const oral=['NEWSCAST','DETECTIVE_STORY_NARRATION','TOURIST_GUIDE_PRESENTATION','READING_REPORT_PRESENTATION','ORAL_PRESENTATION','EXPOSITION'].includes(activity)
+  const oralProduction=oral && (['NEWSCAST','DETECTIVE_STORY_NARRATION'].includes(activity)||/emple|utiliz|us(?:ar|aran|ando)/.test(task))
+  let features=requestedLanguageFeatures([...firstGradeLanguageFeatures[genre].map(feature=>({...feature,terms:firstGradeLanguageFeatureTerms[genre]?.[feature.id]??feature.terms})),...firstGradeLanguageProcedureFeatures[genre],...firstGradeLanguageCompletionFeatures[genre]??[]],description)
+  if(features.some(f=>f.id==='adjective-degree'))features=features.filter(f=>f.id!=='adjectives')
+  if(features.some(f=>f.id==='punctuation'))features=features.filter(f=>f.id!=='signs')
+  features=features.map(feature=>specializePunctuation(feature,description))
   let rows=base
   if(compare) {
     const focused=requestedLanguageFeatures(comparisonFocus[genre],description)
@@ -131,10 +137,12 @@ function complete(genre:string,activity:string,description:string,base:Contextua
     if(!broad) rows=[]
     else rows=rows.filter(row=>!/-resources$|-language$|-revision$/.test(row.templateId))
   }
-  if(features.length && production) rows=rows.filter(row=>!/-resources$|-language$/.test(row.templateId))
-  rows=[...rows,...features.map(feature=>languageFeatureCriterion(feature,scope,genre,compare?'comparison':production?'production':recitation?'recitation':'analysis'))]
+  if(features.length && (production||oralProduction)) rows=rows.filter(row=>!/-resources$|-language$/.test(row.templateId))
+  if(features.length && production && /solo|unicamente|exclusivamente/.test(task) && /revis|correg/.test(task))rows=[]
+  rows=[...rows,...features.map(feature=>languageFeatureCriterion(feature,scope,genre,compare?'comparison':production?'production':oralProduction?'oral-production':recitation?'recitation':'analysis'))]
   if(production) {
-    const process=explicitWritingProcess(description,scope,genre)
+    const focusedCorrection=features.length && /solo|unicamente|exclusivamente/.test(task) && /revis|correg/.test(task) && !/borrador|versiones|cambios|public/.test(task)
+    const process=focusedCorrection?[]:explicitWritingProcess(description,scope,genre)
     if(process.length) rows=rows.filter(row=>!/-revision$/.test(row.templateId))
     rows.push(...process)
     if(genre==='guía turística') rows=rows.map(row=>row.templateId==='guide-revision'?{
@@ -193,6 +201,7 @@ function complete(genre:string,activity:string,description:string,base:Contextua
       'No presenta la conclusión solicitada del informe.',
     ],
   })
+  if(genre==='guía turística' && oral && /mapas?|fotografias?|imagenes?|dibujos?|grafic[oa]s?/.test(task)) rows.push(...guide('TOURIST_GUIDE_CREATION',description).filter(row=>row.templateId==='guide-visual'))
   if(genre==='guía turística' && /mapas/.test(task) && /fotografias/.test(task)) {
     const resources=/mapas\s+o\s+fotografias|fotografias\s+o\s+mapas/.test(task)?'mapas o fotografías':'mapas y fotografías'
     rows=rows.map(row=>row.templateId==='guide-visual'?{...row,observable:`Incorpora ${resources} que permiten localizar o reconocer los lugares descritos en la guía.`,progressionLevels:[`Los ${resources} corresponden a los lugares y permiten localizarlos o reconocerlos.`,`Los recursos corresponden a los lugares; una referencia visual queda sin identificar.`,`Se incluyen recursos, pero no se establece su relación con los lugares descritos.`,`Los recursos representan lugares distintos de los descritos.`,`No se aportan los recursos visuales solicitados.`]}:row)

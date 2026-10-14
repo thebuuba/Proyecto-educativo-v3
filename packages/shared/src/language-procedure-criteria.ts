@@ -44,6 +44,17 @@ const outline:Record<string,string>={
 
 export function languageReadingProcedures(description:string,scope:string,genre:string):ContextualTopicCriterion[] {
   const task=affirmativeLanguageTask(description), target=content[genre], rows:ContextualTopicCriterion[]=[]
+  if(genre==='guía turística'&&/reconstru/.test(task)&&/grafic|tecnologic/.test(task)) rows.push({
+    templateId:'guide-procedure-reconstruction',title:'Reconstrucción del sentido de la guía',weight:4,
+    observable:'Reconstruye mediante la representación solicitada las relaciones entre los lugares y las indicaciones de la guía leída, conservando su sentido.',
+    progressionLevels:[
+      'La representación permite reconocer los lugares y sus relaciones con las indicaciones, sin añadir datos ajenos a la guía leída.',
+      'Los lugares y las indicaciones corresponden a la guía; una relación necesita identificarse con mayor claridad.',
+      'Representa lugares o datos aislados sin establecer las relaciones que permiten comprender la guía.',
+      'La representación atribuye a un lugar indicaciones de otro o cambia una relación descrita en la guía.',
+      'No presenta una reconstrucción reconocible de la información de la guía.',
+    ],
+  })
   if(/parafras|resum(?:iran|ir|e)\b|propias palabras/.test(task)) rows.push({
     templateId:`${scope}-procedure-paraphrase`,title:'Paráfrasis del contenido disponible',weight:5,
     observable:`Reconstruye con sus propias palabras ${target}, conservando su sentido sin añadir información ajena al texto disponible.`,
@@ -58,7 +69,7 @@ export function languageReadingProcedures(description:string,scope:string,genre:
   if(/anticip|predicci/.test(task)) {
     const verify=/comprob|contrast|verific|evalu\w*.*predicci/.test(task)
     rows.push({
-    templateId:`${scope}-procedure-prediction`,title:'Anticipación y comprobación del contenido',weight:3,
+    templateId:`${scope}-procedure-prediction`,title:verify?'Anticipación y comprobación del contenido':'Anticipación del contenido',weight:3,
     observable:verify?`Formula una predicción sobre ${target} a partir de indicios textuales o paratextuales y la contrasta con la lectura posterior.`:`Formula una predicción sobre ${target} y explica qué indicios textuales o paratextuales permiten anticiparla.`,
     progressionLevels:verify?[
       'Relaciona su predicción con un indicio identificable y explica qué información de la lectura la confirma o modifica.',
@@ -90,17 +101,19 @@ export function languageReadingProcedures(description:string,scope:string,genre:
 
 export function languageWritingProcedures(description:string,scope:string,genre:string):ContextualTopicCriterion[] {
   const task=affirmativeLanguageTask(description),rows:ContextualTopicCriterion[]=[]
-  if(/esquema|guion|planific/.test(task)) rows.push({
+  if(/esquema|guion|planific/.test(task)) {
+    const product=/esquema/.test(task)?'esquema':/guion/.test(task)?'guion':'plan'
+    rows.push({
     templateId:`${scope}-procedure-outline`,title:'Planificación del texto',weight:3,
-    observable:`Organiza un esquema que permite reconocer ${outline[genre]} antes de desarrollar el texto.`,
+    observable:`Organiza un ${product} que permite reconocer ${outline[genre]} antes de desarrollar el texto.`,
     progressionLevels:[
-      `El esquema hace explícita ${outline[genre]} y permite seguir cómo se desarrollará el texto.`,
-      'El esquema permite seguir el desarrollo previsto; una conexión entre sus componentes necesita aclararse.',
-      'Enumera componentes pertinentes, pero no organiza sus relaciones en el esquema.',
-      'El orden o las relaciones del esquema contradicen el propósito o el contenido que se pretende desarrollar.',
-      'No aporta el esquema de planificación solicitado.',
+      `El ${product} hace explícita ${outline[genre]} y permite seguir cómo se desarrollará el texto.`,
+      `El ${product} permite seguir el desarrollo previsto; una conexión entre sus componentes necesita aclararse.`,
+      `Enumera componentes pertinentes, pero no organiza sus relaciones en el ${product}.`,
+      `El orden o las relaciones del ${product} contradicen el propósito o el contenido que se pretende desarrollar.`,
+      'No aporta evidencia de la planificación solicitada.',
     ],
-  })
+  })}
   if(genre==='cuento policíaco'&&/ilustr/.test(task)) rows.push({
     templateId:`${scope}-procedure-illustration`,title:'Ilustración vinculada al relato',weight:2,
     observable:'Relaciona la ilustración con la escena o los elementos del cuento que representa, facilitando su comprensión sin contradecir los hechos narrados.',

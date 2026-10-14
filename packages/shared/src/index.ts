@@ -50,13 +50,13 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
     const contract=resolveEvaluationTask('',value)
     if(contract.product==='ANALYTICAL_TEXT'&&!contract.oral) return `${module}_ANALYSIS`
     if (module !== 'READING_REPORT' && contract.product === 'REPORT') return 'REPORT'
-    if (/parafras|propias palabras|\bresum(?:iran|ir|e)\b|predicci|anticip|inferir|inferiran/.test(value)
+    if (/parafras|propias palabras|\bresum(?:iran|ir|e)\b|predicci|anticip|inferir|inferiran|reconstru(?:ir|iran|yan|yen|ye|ccion)/.test(value)
       && !/\b(?:redact\w*|escrib\w*|elabor\w*|crearan)\s+(?:(?:un|una|el|la)\s+)?(?:noticia|guia|afiche|cuento|caligrama|informe)\b/.test(value)) return `${module}_ANALYSIS`
     if (module === 'NEWS') {
       if (/\binformes?\b/.test(value) && /\b(?:redact\w*|escrib\w*|elabor\w*|prepar\w*|produc\w*)\b/.test(value)) return 'REPORT'
       if (/\b(?:debat\w*|debates?)\b/.test(value)) return 'DEBATE'
     }
-    const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|planific\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon\w*)\b/.test(value)
+    const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|planific\w*|revis(?:ar|aran|a|en)|correg\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon\w*)\b/.test(value)
     const comparing = /\b(?:compar(?:ar\w*|an|a|en|ando)|contrast\w*|comparacion entre)\b/.test(value)
     const oralAction = contract.oral || /\bexposicion\b/.test(value)
     const presenting = oralAction
@@ -199,6 +199,7 @@ export { completeFirstGradeNewsCriteria as firstGradeNewsCriteria, completeFirst
   firstGradeLanguageFeatures, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity } from './secondary-language-grade-one-complete'
 export { findSecondaryMathTopic, secondaryMathCriteria, secondaryMathModules } from './secondary-math'
 export {adaptLanguageScale} from './language-scale'
+export {firstGradeLanguageCompletionFeatures} from './language-procedure-completion'
 export type EntityStatus = 'active' | 'inactive'
 
 export function splitFullName(fullName: string, lastNameFallback = 'Sin apellido') {

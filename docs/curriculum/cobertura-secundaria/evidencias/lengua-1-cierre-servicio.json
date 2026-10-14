@@ -1,0 +1,1555 @@
+{
+  "verifiedAt": "2026-10-14T01:01:24.852Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "8350fe887c0672652676174db749f2f3d31bebdb",
+      "dirty": true,
+      "startedAt": "2026-10-14T00:58:10.975Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.23"
+    }
+  },
+  "results": [
+    {
+      "case": "guide-degree-analysis",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "23bdc30cc00e019829bbb0c006d85a4f16e636fc84a8bd7b9f81036c7934ad2f"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "23bdc30cc00e019829bbb0c006d85a4f16e636fc84a8bd7b9f81036c7934ad2f"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "23bdc30cc00e019829bbb0c006d85a4f16e636fc84a8bd7b9f81036c7934ad2f"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "150e88266580f8e0a0352fc4cc00df55fe201fe2650351df6e8c8220c2b567c0"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "512138abda3fd8354df1c090221bb30f93be241e152b4b3c75e47c96a9bb4243"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "00b0b830cc677762b72b18141f1a1ddc450384ab5f72dd4dd6bcaf7ad2a11312"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "00b0b830cc677762b72b18141f1a1ddc450384ab5f72dd4dd6bcaf7ad2a11312"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "00b0b830cc677762b72b18141f1a1ddc450384ab5f72dd4dd6bcaf7ad2a11312"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "3289ebcae766bf1acd1684a66430e77452ff8c6dd8dc3d49e5215884f99f090c"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "711f1ec57dd9f77c0ae723d94f80df01c43a3f7f17817173e2f0a58d3f518390"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "d464a16bd28269e4efdf114fe5b09d261e4cbcb74ecb3e4389f6c6455b7cf542"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "d464a16bd28269e4efdf114fe5b09d261e4cbcb74ecb3e4389f6c6455b7cf542"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "d464a16bd28269e4efdf114fe5b09d261e4cbcb74ecb3e4389f6c6455b7cf542"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "c1426ff225a6649b58e13ed2aab836a729776f0908ce9ce45fe45d4b931a9380"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "c7a1502144aa15f39df62631347347584de0c8aef1365a6aa5a45e273e8a4e24"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "c29bfe47f5478506deea747bff2c8965a7caf74d2fa8df45c52de55c1aa27037"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "c29bfe47f5478506deea747bff2c8965a7caf74d2fa8df45c52de55c1aa27037"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "c29bfe47f5478506deea747bff2c8965a7caf74d2fa8df45c52de55c1aa27037"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b08abd53274034a90eddb84df158145639d41e9696bb7033282a870261cd2dec"
+    },
+    {
+      "case": "guide-degree-analysis",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "a7828e34763ddfb751d610c4747482ebbc938f355f343e67309b14a799f923cf"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "a1e4cbaab859d18050aca0d7369c682183605c754e6a3243d64ec8c2ef7f7a1e"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a1e4cbaab859d18050aca0d7369c682183605c754e6a3243d64ec8c2ef7f7a1e"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "a1e4cbaab859d18050aca0d7369c682183605c754e6a3243d64ec8c2ef7f7a1e"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "e873e6d70a6ce0ade4fd9122b14b74771737725e3680d31be828fcf7fb046948"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "30cb99f1929a8dd5d4208d879f2b05b97eaca1e01b1924c3018ab20ce4f262ab"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "826e6bf685ef82c9b0e4652eb572c1c06ac9be5a53f7fade4cfa25f08c93fbcc"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "826e6bf685ef82c9b0e4652eb572c1c06ac9be5a53f7fade4cfa25f08c93fbcc"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "826e6bf685ef82c9b0e4652eb572c1c06ac9be5a53f7fade4cfa25f08c93fbcc"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8edb7b168367cd01ea885189bda7cd19be58713f6b91d4f730047a6b23e93d71"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "f365d84c030f973f3e4f9a20f000bf94c2dbc028a11a7a5db99ce89d6536100c"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "bdf5db04f5df3b04d1e75096596c51c784d3258232c217980155098b21386d4c"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "bdf5db04f5df3b04d1e75096596c51c784d3258232c217980155098b21386d4c"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "bdf5db04f5df3b04d1e75096596c51c784d3258232c217980155098b21386d4c"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "5409ad6f74262d5e38c0476bcaa2758cc788423d3a4767f6b21dfa2bfa579f80"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "4ad9012773881767ee65c0d1f5219ce6de6d2f097a262fa8f608c739d571e2e3"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "8ce8fdec944e238e79876e7f43faa36020b2e4aa1fe58db3fe2c0bdc3145e119"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "8ce8fdec944e238e79876e7f43faa36020b2e4aa1fe58db3fe2c0bdc3145e119"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8ce8fdec944e238e79876e7f43faa36020b2e4aa1fe58db3fe2c0bdc3145e119"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "e97fed7fe677b80e9fcd3ed343400d1294bee7b4c7b6612a3894e6ddd91f6c04"
+    },
+    {
+      "case": "guide-degree-oral",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ca44982930c5ee3af922d91738e70828b1fc8b48e4411f26d13bb2b37cdcef28"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "b7494ffef45527b00dfa3c4763fc7f82a1e62780981800866bddd14a1b6e2044"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "b7494ffef45527b00dfa3c4763fc7f82a1e62780981800866bddd14a1b6e2044"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "b7494ffef45527b00dfa3c4763fc7f82a1e62780981800866bddd14a1b6e2044"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "daf263d63410845ce83e06f713507992e1d1bf3c5c6e0bab106945bfb0c644e0"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b02c781b9c3561e33c12491c28fac47595aaf9a362e15ac25718444c5757e96d"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "0b56dceb0cb8e6512f2720c9138c63b64ffd22673c6f92cfbaac72977aa41865"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "0b56dceb0cb8e6512f2720c9138c63b64ffd22673c6f92cfbaac72977aa41865"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "0b56dceb0cb8e6512f2720c9138c63b64ffd22673c6f92cfbaac72977aa41865"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "2f9b979d64ad1ca8d421afcda3e967f44f2788cb5f58bb868c31f2fe32b877c7"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "cd0f0ec8b76c53508c8492ce4cafe3bfb01287f66c2f215a9abcb25d5b789568"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "9973b52d830da228e2b15dcfbb3269fb5f33395f1f2f597b7d3acb3941e1a58f"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "9973b52d830da228e2b15dcfbb3269fb5f33395f1f2f597b7d3acb3941e1a58f"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "9973b52d830da228e2b15dcfbb3269fb5f33395f1f2f597b7d3acb3941e1a58f"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "a2c82b50649a2570140ecb8b91d2db941686abee7c4bf28919e609447ff428c4"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "10dd4526fcdf809319a769dde0f3eff632756e87907c16065db0c43f95a4b188"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "2e78e22a28fdf43e5689990f5f71afe3fa5e64e58c2cec2e24da229efd9a60c4"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "2e78e22a28fdf43e5689990f5f71afe3fa5e64e58c2cec2e24da229efd9a60c4"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "2e78e22a28fdf43e5689990f5f71afe3fa5e64e58c2cec2e24da229efd9a60c4"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b3e6de9c46e383c58f4024f10d55b2264aa8602bcd6a640f220b0a549dff0d9c"
+    },
+    {
+      "case": "guide-punctuation",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "44096cc6c0cf80f61c37e2d95df70eeaabac03ce2b615a0391a34f2e856478cb"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El informe de lectura",
+      "hash": "5c86632a0f093154e1984167d58d53368353393fc7a4ff3518014872a90f7afa"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "5c86632a0f093154e1984167d58d53368353393fc7a4ff3518014872a90f7afa"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "5c86632a0f093154e1984167d58d53368353393fc7a4ff3518014872a90f7afa"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "90e5f3eb59e51d168e2b03b94a5fbe9445fcc01bd701f15a4498e71875441a38"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "3501f0ff34f87672a2d644e0444031560c72a908d3a4be4f07be751535c772a9"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El informe de lectura",
+      "hash": "659fbb87ce18d0da188a74a3f0e17021b0236372ae991160506bf53993173da5"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "659fbb87ce18d0da188a74a3f0e17021b0236372ae991160506bf53993173da5"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "659fbb87ce18d0da188a74a3f0e17021b0236372ae991160506bf53993173da5"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "944c97d1fbf42648a41449297b3533b4ac2a8d6620adbb4197ab135b3e8a7408"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "44229f311bdcada9d212fc4e5b8ae06537a2cb830db97d3f6eeb6180fe850116"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El informe de lectura",
+      "hash": "3fa4c685ebfe375ddbfe4894175788334318926667e4ca98749807775b3821c4"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "3fa4c685ebfe375ddbfe4894175788334318926667e4ca98749807775b3821c4"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "3fa4c685ebfe375ddbfe4894175788334318926667e4ca98749807775b3821c4"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b5503cc0ad551ef2bea3c01aae42541337222778b8432cfc06b7b6a89cd85b86"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "413c3e58632082417b1f1583e45d46d0aab40b06d0b195afe87a9285b46773a8"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El informe de lectura",
+      "hash": "817b36e71e4b33a4b514ff91523e6704887e1d9ed85ae43767918210c6a02a41"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "817b36e71e4b33a4b514ff91523e6704887e1d9ed85ae43767918210c6a02a41"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "817b36e71e4b33a4b514ff91523e6704887e1d9ed85ae43767918210c6a02a41"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "0fe4807b411a16e22f4b77b94e46740255d3570f64d5903ba7a43775767112c5"
+    },
+    {
+      "case": "report-punctuation",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "cb078f5fb874970576d5ad1e99e1c20fdcbaed43b5105d3872702b5fa37d5e97"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El afiche",
+      "hash": "7345824fde45e7b62e1cbce7eace6441fa3d5853cbd0dc37d2a0ebd2779f538a"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "7345824fde45e7b62e1cbce7eace6441fa3d5853cbd0dc37d2a0ebd2779f538a"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "7345824fde45e7b62e1cbce7eace6441fa3d5853cbd0dc37d2a0ebd2779f538a"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8b79ee3f563deb35a32b069a5dfbdb15446fb197bacd3b78ebd3e9ffd396ffa9"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "74e774dc944ab4ebed08292461ad1f30a7c71a76275df861d52ab0554282ba2d"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El afiche",
+      "hash": "f00e803e78ae2d510b1642c8bd7d61beb7a9f6d5883422b20f8df8443715ba56"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "f00e803e78ae2d510b1642c8bd7d61beb7a9f6d5883422b20f8df8443715ba56"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f00e803e78ae2d510b1642c8bd7d61beb7a9f6d5883422b20f8df8443715ba56"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "2d251de31010099e3982b0fa40ffcbd095e53bbb33276e2f54272061d7aa04b9"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ea540a13e43483ea9b215ad83290cd90dd2c844ecfcce29c788972c6944b69a4"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El afiche",
+      "hash": "07ea034480163be0b46bea9897feb72dac2c046f4d68cfe75a90f82873fe9224"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "07ea034480163be0b46bea9897feb72dac2c046f4d68cfe75a90f82873fe9224"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "07ea034480163be0b46bea9897feb72dac2c046f4d68cfe75a90f82873fe9224"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "963c75aa741660a1ab59afac6322a1896e84c78d8040ebfceb6754a6b44262b2"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "3855f8b7d36c4f9e8958a4c62e896361682b83cdc59b128e6d693ffa21c04a5d"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El afiche",
+      "hash": "9a438063592e51c601979a7e3d623eeadf86bc703a3eed86e886373adc8755a1"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "9a438063592e51c601979a7e3d623eeadf86bc703a3eed86e886373adc8755a1"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "9a438063592e51c601979a7e3d623eeadf86bc703a3eed86e886373adc8755a1"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "9c65ad3aea3c772c23f529cdf585c27cd42311252ecc9cebb1370cde6a36ebc0"
+    },
+    {
+      "case": "poster-planning-no-schema",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e769c80943a2e40ef65b026cb7ee48e91e02b35f46981d40fdb854c2dfe3df2a"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "63318583fd9c0d0adadba2c78ebb4c12325f6f381716bd84f7f16c1de3fd8425"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "63318583fd9c0d0adadba2c78ebb4c12325f6f381716bd84f7f16c1de3fd8425"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "63318583fd9c0d0adadba2c78ebb4c12325f6f381716bd84f7f16c1de3fd8425"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "454654b25e4996968d02562895f7a8cd511d1f8b947d3ce6b737d2e5a23d38ca"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "c257972697c37f7570ee593accb937e28470a51e904d01cd4da3462b3be76aa6"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "85138b5a5b9451a2bb9a69b65f0c08b19693bd159780ff1eb9a3950f9f01d731"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "85138b5a5b9451a2bb9a69b65f0c08b19693bd159780ff1eb9a3950f9f01d731"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "85138b5a5b9451a2bb9a69b65f0c08b19693bd159780ff1eb9a3950f9f01d731"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "f15548dc235de0c17bb0785e0a61c00082f264c56a23ac3c12742d5d44743165"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "cf5a0c3671e7cc0b067542676c5c8d77ec5b730d5fd16809a3d2434949e2b10f"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "f8aeaaed3d91c90ce6bb4128d32b67160c66bd13141b3cb1d1a4385f4385e7d0"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "f8aeaaed3d91c90ce6bb4128d32b67160c66bd13141b3cb1d1a4385f4385e7d0"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f8aeaaed3d91c90ce6bb4128d32b67160c66bd13141b3cb1d1a4385f4385e7d0"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b52d2ccad4b7435a7770e0620f1bf1c57b7a4fe3fb1ecf85952fa601c30213ee"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "8f237f0efcce770ea7cc897f8bd5eec20deb5c33422aafce95be4f0266fa1da8"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "8d354e45f8794200b7e62ca7a909134265d85b2dd3a0b12e1ad2e28e9d4315a3"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "8d354e45f8794200b7e62ca7a909134265d85b2dd3a0b12e1ad2e28e9d4315a3"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8d354e45f8794200b7e62ca7a909134265d85b2dd3a0b12e1ad2e28e9d4315a3"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "2e9c030af6a867bb19f7b1dbf4c4004f120c67e9129432cf859797780475ceff"
+    },
+    {
+      "case": "news-oral-nouns",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "76ce70ce9c9355e8e8e9498233a4fdbcca32e863906ee32d6433ee8ad49ef0e6"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El cuento policíaco y detectivesco",
+      "hash": "b3602d8f0355c9bcf78e9b4fa640047f771dbe010fdc32547ae3f5699cb1f427"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "b3602d8f0355c9bcf78e9b4fa640047f771dbe010fdc32547ae3f5699cb1f427"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "b3602d8f0355c9bcf78e9b4fa640047f771dbe010fdc32547ae3f5699cb1f427"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "0b88da16c54efe3c2952dad09ca4828b283aa5d73ac75c0a28a43238ff809290"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "a238726f5290b3d34dac55781803af60c8e6159d5ebecb8f077625ce1f2aa485"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El cuento policíaco y detectivesco",
+      "hash": "bf319d1a1b45ccef1b5dd8e8a345a489bbac631b43769d2b36a0f4f9b70f46eb"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "bf319d1a1b45ccef1b5dd8e8a345a489bbac631b43769d2b36a0f4f9b70f46eb"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "bf319d1a1b45ccef1b5dd8e8a345a489bbac631b43769d2b36a0f4f9b70f46eb"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "ebee3837e551e83b817572538002eb846432b254c4fe881ef99e060079931927"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "acb3d352ba60b79b4a827231ad1d7b42e388ec4252cfe735434f1b4f29890336"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El cuento policíaco y detectivesco",
+      "hash": "2aa4143006bbd602f2c9277237d70884a07ad913d01feec305a5fe0e702f544f"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "2aa4143006bbd602f2c9277237d70884a07ad913d01feec305a5fe0e702f544f"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "2aa4143006bbd602f2c9277237d70884a07ad913d01feec305a5fe0e702f544f"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "3d1de2236706ec408f418bf484772afcdda66ac020c21f49f03eb31367f4f714"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "9279b9c57da069a5b13749fb389dca848b6c397214e4b7cc412de6ef08474635"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El cuento policíaco y detectivesco",
+      "hash": "857846fd22a254724f959c84074559dfe47337aaac0f8f82a48eff9a9d0518a3"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "857846fd22a254724f959c84074559dfe47337aaac0f8f82a48eff9a9d0518a3"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "857846fd22a254724f959c84074559dfe47337aaac0f8f82a48eff9a9d0518a3"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6a7b87a3041ad3f19bb9a3e2f3f1d7975b12b1776611dfcda2fafee6ff1530d1"
+    },
+    {
+      "case": "detective-oral-resource",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "0e2b33189f6fe378e5e282ddc0f56c4daa8f2016eba74161438d9bf1a5e62741"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El informe de lectura",
+      "hash": "ab95b11a4d81384e3bd4fe1b5e8c1a473af30835ade180d4e59559c3b990052f"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "ab95b11a4d81384e3bd4fe1b5e8c1a473af30835ade180d4e59559c3b990052f"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "ab95b11a4d81384e3bd4fe1b5e8c1a473af30835ade180d4e59559c3b990052f"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "7d481c89937d0c959cdb5954ce2f9f176cf8cb65258c060855d74870d12811e6"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "91579f8ac5ae41ce6c90274143aff7e0e8df6c1d2d52eb32e4fed1a3bfab96b8"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El informe de lectura",
+      "hash": "64ebaf25c367798679ea3ddb3e1c2553daa68fe475a3340e90aa363c3c889a76"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "64ebaf25c367798679ea3ddb3e1c2553daa68fe475a3340e90aa363c3c889a76"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "64ebaf25c367798679ea3ddb3e1c2553daa68fe475a3340e90aa363c3c889a76"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "0bc9de35375aa1ca96de39686f6a3a1e529af7028e659c106c4179575c45b823"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "9e3c31c183e1049743ac8386dbe403380c745d41830c57f544d346f41398de79"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El informe de lectura",
+      "hash": "d7f01a342878f334454a60bfdecdf31078628a6e9ff419c54410fc26cfb095e0"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "d7f01a342878f334454a60bfdecdf31078628a6e9ff419c54410fc26cfb095e0"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "d7f01a342878f334454a60bfdecdf31078628a6e9ff419c54410fc26cfb095e0"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "d74d5c9137dc92b8ab6902100beb48f29d9340090ab96d31504c335dd02c4207"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "4ebde045f9cf774d8f26a79b8fbf6542da355db2c49ae58ddc0d89820e043d24"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El informe de lectura",
+      "hash": "adfdd85885823a0fe7ad294a53bce1b8949602c2d37072cc03cad023467904ec"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "adfdd85885823a0fe7ad294a53bce1b8949602c2d37072cc03cad023467904ec"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "adfdd85885823a0fe7ad294a53bce1b8949602c2d37072cc03cad023467904ec"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "80a7a40eb75dea38ab29f90b2700a8f51bf49d25341053c8a510b2e2ba7128f4"
+    },
+    {
+      "case": "report-oral-addition",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "1394bd1f593a96ddf650528732b6d3d92a0d73cf565fe015e1c2e805027b3a74"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "fd2a7691f3ab9995905cc8be7671a702d172eb548270204d8564b9e6cd348fe2"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "fd2a7691f3ab9995905cc8be7671a702d172eb548270204d8564b9e6cd348fe2"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "fd2a7691f3ab9995905cc8be7671a702d172eb548270204d8564b9e6cd348fe2"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "1e290a3129a5e4d417368f265ccb2a9338fa7cf2e4e4b8b95ef32d50ffbdb9e4"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "06df4bcec7cc2b457ebdf3a397f2f9ead1c5cfdf55e59d5058fd0e3f1e7a1702"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "fe3534a2e4915396ec62df32ae57de27fd08cba45e339ac1f828f886e1aec867"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "fe3534a2e4915396ec62df32ae57de27fd08cba45e339ac1f828f886e1aec867"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "fe3534a2e4915396ec62df32ae57de27fd08cba45e339ac1f828f886e1aec867"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "a486a985edb09edb05a1d17762038a24fa49c4083a1c57099a3c51b9d5b22e3e"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "7f4f55486a7204bff301ea59cbb2addcfe1ecbd34879662bc5bd81421c479d0d"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "d70e59e8001e44cfd2a5ccf9ea62ba1f70a001b7ddee437e89dd076b57ba61b1"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "d70e59e8001e44cfd2a5ccf9ea62ba1f70a001b7ddee437e89dd076b57ba61b1"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "d70e59e8001e44cfd2a5ccf9ea62ba1f70a001b7ddee437e89dd076b57ba61b1"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "5bd5493a8b37854055cdce50dc8e78e788e7e4e84172167bc5369b2748935338"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "dba7c25191419438ab9897c6bff1a555c53e3a2f6c8e41c9a2820bf81e53d09e"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "9493c2d26d34fc25b2362a5b4dffdd0b9c3cf9aa0a69bce580c09fcb18b5812a"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "9493c2d26d34fc25b2362a5b4dffdd0b9c3cf9aa0a69bce580c09fcb18b5812a"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "9493c2d26d34fc25b2362a5b4dffdd0b9c3cf9aa0a69bce580c09fcb18b5812a"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "65463ed1fc8adf4b986c6ad321feb0d05ac85edde5a149036aadc1ed26099375"
+    },
+    {
+      "case": "guide-oral-resources",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b484548b7a9e60ee999fca861ff40a27747eff53a76a2a660f937ee84a85a39b"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "453944b94e29446828566a1ae3b4129c60974db114ba0dc019fbad96ebf06eed"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "453944b94e29446828566a1ae3b4129c60974db114ba0dc019fbad96ebf06eed"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "453944b94e29446828566a1ae3b4129c60974db114ba0dc019fbad96ebf06eed"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "44b941c6d134b8f9a7776a62dedb1f3523571139badc3b32887814b5e162efc4"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "593f79431935b8e6ac44f2dd2b6e6255dec2609cdb6cbf9b7a15a3080a014849"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "714c81062cf5f846495590d600fa6170ac9688cd89e4ec82907f4c06455b501a"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "714c81062cf5f846495590d600fa6170ac9688cd89e4ec82907f4c06455b501a"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "714c81062cf5f846495590d600fa6170ac9688cd89e4ec82907f4c06455b501a"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "02df0e5700c266affd747fe29ef734b8d81302c73386a68f8eda742b8d9834db"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b1e8847619eeda72788ed114e78ffcb7b720dad66e34bc708521b3bf41913a31"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "6e2197ed1987eaf1a3564c510f026054de03b74f0a2a5550ad61a6a4a659c9cc"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "6e2197ed1987eaf1a3564c510f026054de03b74f0a2a5550ad61a6a4a659c9cc"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "6e2197ed1987eaf1a3564c510f026054de03b74f0a2a5550ad61a6a4a659c9cc"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "7a176addf164adfa4634d21fb65d69eec3e86f0910e35db82ee4ae0fd19b5f50"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "8aac87105544ff33140f4c48f5089b45a49ca465405fd93e925b390d3c015ac3"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "86d9fc016aa9f2e900216be6461b81265d9bd821191ca386f9f576f9dbca71db"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "86d9fc016aa9f2e900216be6461b81265d9bd821191ca386f9f576f9dbca71db"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "86d9fc016aa9f2e900216be6461b81265d9bd821191ca386f9f576f9dbca71db"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "085a5d8b291254a989eb69039aed7ff66abd14259c7108cd9b557035a30d3a46"
+    },
+    {
+      "case": "guide-oral-resource-option",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "c6dd3a38fba4cb15b87d625aa016da87afc193c7b112b379a48e5d2029d7f207"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "d6beffd2b06fd20f628f1eb07b65938245215131110be79341c7f6cd6b13946c"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "d6beffd2b06fd20f628f1eb07b65938245215131110be79341c7f6cd6b13946c"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "d6beffd2b06fd20f628f1eb07b65938245215131110be79341c7f6cd6b13946c"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "0e883a55bf311276e9a27fb48776f32defaa7015e7cbe299d91a3f33e3491537"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "f17db8b06938ab9a43cb66b3409666a7274b8fd2cdd6d8ccfbb7992637e7ab17"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "dfa68dccf87723683187008dbeb6f42175bf4ac4f0c95daca5d7e3ca3ef023b3"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "dfa68dccf87723683187008dbeb6f42175bf4ac4f0c95daca5d7e3ca3ef023b3"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "dfa68dccf87723683187008dbeb6f42175bf4ac4f0c95daca5d7e3ca3ef023b3"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b3a164a23c63843cd51e6e6ccb20dd72a8f9e65b26ed3018919b570d5629dabf"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "12e0500e4be1510002bced9ce6360940feca98b2c7d30ae456bac445b781f8b9"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "aa999ace7cc1a583770ae7907dfa37f2cbbf37742caba6bb30186ee467bd4042"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "aa999ace7cc1a583770ae7907dfa37f2cbbf37742caba6bb30186ee467bd4042"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "aa999ace7cc1a583770ae7907dfa37f2cbbf37742caba6bb30186ee467bd4042"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "10cf3cee9c4772a5e560bc3e8794b7c74dc3ae315763ffd86893376e544c7d42"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b492e7249ac24c21999da510a7419f1b8adcfe813b0748862f57ccc9a8dad3f4"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La guía turística",
+      "hash": "af149b37df01be3ed3cec1fc028b133ac356494daee06de59ba662dbb66ec524"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "af149b37df01be3ed3cec1fc028b133ac356494daee06de59ba662dbb66ec524"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "af149b37df01be3ed3cec1fc028b133ac356494daee06de59ba662dbb66ec524"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8726b141b26d3a60b7a34223d1b6634a0443fa37f9de35ac9583ca1b414216ec"
+    },
+    {
+      "case": "guide-reading-reconstruction",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "dae1c34bda55c9e372efe4c255c8cbed2060487206cd7b62814188be91d2be38"
+    }
+  ]
+}

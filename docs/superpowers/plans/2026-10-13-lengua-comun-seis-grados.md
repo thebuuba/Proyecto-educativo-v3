@@ -11,7 +11,7 @@ Ejecución directa con executing-plans, sin subagentes por preferencia vigente d
 - [x] Auditar 1.º contra PDF 69–75, subtemas, procedimientos y pendientes de seis módulos. Pendientes detallados registrados en `lengua-1-contratos-y-editor.md`.
 - [x] Reproducir y corregir reparto dependiente del orden de introducir puntos, conservando pesos manuales.
 - [x] Implementar diálogo transaccional de cambio de actividad: conservar/adaptar/cancelar, fallo, Escape/cierre y descarte de respuesta obsoleta.
-- [ ] Completar proveedores/familias/subtemas de 1.º y pruebas de contenido; HTTP y cuatro formatos en navegador real. Actualizar matriz, informe, commit/push.
+- [x] Completar proveedores/familias/subtemas de 1.º y pruebas de contenido; HTTP y cuatro formatos en navegador real. Actualizar matriz, informe, commit/push.
 - [ ] Auditar/completar/verificar 2.º con el mismo criterio; cerrar pendientes antes de avanzar; commit/push.
 - [ ] Auditar/completar/verificar 3.º; commit/push.
 - [ ] Auditar/completar/verificar 4.º; commit/push.

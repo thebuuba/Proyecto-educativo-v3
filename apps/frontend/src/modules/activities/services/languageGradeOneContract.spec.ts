@@ -5,9 +5,11 @@ import {scoreInstrumentFields} from './instrumentScoring'
 import {automaticInstrumentType} from '../utils/automaticInstrumentType'
 import {detectSecondaryLanguageActivity,type InstrumentType} from '@aula/shared'
 import procedures from '../../../../../../data/evaluation-instruments/language-grade-one-procedure-contracts.json'
+import completion from '../../../../../../data/evaluation-instruments/language-grade-one-completion-contracts.json'
 
 const context={level:'SECONDARY' as const,grade:1,cycle:1,subjectCode:'LEN',subjectName:'Lengua Española',optativeExitName:null,modalityCode:'academic'}
 const descriptions=[
+  ...completion.map(p=>p.description),
   ...procedures.map(p=>p.description),
   'Analiza en una noticia los sinónimos y las siglas con ejemplos del texto.',
   'Investiga los datos del hecho que aparece en la noticia y documenta su origen.',

@@ -19,22 +19,22 @@ export function requestedLanguageFeatures(features: LanguageFeature[], descripti
   const task = affirmativeLanguageTask(description)
   return features.filter(feature => new RegExp(feature.match).test(task)).map(feature => {
     const selected = feature.terms?.filter(([pattern]) => new RegExp(pattern).test(task)).map(([,term]) => term)
-    return {...feature, name: selected?.length ? selected.join(', ') : feature.name}
+    return {...feature, name: selected?.length ? selected.length===1 ? selected[0] : selected.slice(0,-1).join(', ')+' y '+selected.at(-1) : feature.name}
   })
 }
 
-export function languageFeatureCriterion(feature: LanguageFeature, scope: string, genre: string, mode: 'analysis'|'comparison'|'production'|'recitation'): ContextualTopicCriterion {
+export function languageFeatureCriterion(feature: LanguageFeature, scope: string, genre: string, mode: 'analysis'|'comparison'|'production'|'oral-production'|'recitation'): ContextualTopicCriterion {
   const target = feature.name
   const ofTarget = target.startsWith('el ') ? `del ${target.slice(3)}` : `de ${target}`
   const purpose = feature.function
-  const source = `el texto de ${genre}`
+  const source = mode==='oral-production' ? `la producción oral de ${genre}` : `el texto de ${genre}`
   const progressionLevels: ContextualTopicCriterion['progressionLevels'] = mode === 'comparison' ? [
     `Contrasta ${target} en los textos comparados y sustenta sus semejanzas o diferencias por su función para ${purpose}.`,
     `Localiza ${target} en los textos y establece un contraste sustentado, aunque deja sin explicar una relación con su función.`,
     `Enumera ejemplos de ${target} de los textos, pero no establece la semejanza o diferencia entre sus usos.`,
     `El contraste se basa en una atribución incorrecta: ${feature.error}.`,
     `No aporta ejemplos de los textos que permitan contrastar ${target}.`,
-  ] : mode === 'production' ? [
+  ] : mode === 'production' || mode === 'oral-production' ? [
     `Emplea ${target} en ${source} para ${purpose}, sin alterar el sentido de las ideas.`,
     `Emplea ${target} con la función solicitada; un uso aislado deja ambigua una relación entre ideas.`,
     `Incluye ${target}, pero varios usos no contribuyen a ${purpose}.`,
