@@ -12,7 +12,13 @@ vi.mock('@/services/apiClient', () => ({ api: { post: vi.fn() } }))
 const backendRequire = createRequire(resolve('../backend/package.json'))
 backendRequire('reflect-metadata')
 const ts = backendRequire('typescript')
+// Match CommonJS caching: expanding the catalog must not recompile every shared
+// dependency once per import path (or recurse forever on a circular import).
+const sourceModules=new Map<string,{exports:Record<string,any>}>()
 function sourceModule(file: string): Record<string, any> {
+  file=resolve(file)
+  const cached=sourceModules.get(file)
+  if(cached)return cached.exports
   const output = ts.transpileModule(readFileSync(file, 'utf8'), {
     compilerOptions: {
       module: ts.ModuleKind.CommonJS,
@@ -22,10 +28,16 @@ function sourceModule(file: string): Record<string, any> {
     },
   }).outputText
   const target = { exports: {} }
+  sourceModules.set(file,target)
   const requireSource = (id: string) =>
     id === '@aula/shared' ? sourceModule(resolve('../../packages/shared/src/index.ts'))
       : id.startsWith('.') ? sourceModule(resolve(dirname(file), id + '.ts')) : backendRequire(id)
-  new Function('require', 'module', 'exports', output)(requireSource, target, target.exports)
+  try {
+    new Function('require', 'module', 'exports', output)(requireSource, target, target.exports)
+  } catch(error) {
+    sourceModules.delete(file)
+    throw error
+  }
   return target.exports
 }
 const { SaveActivityDto } = sourceModule(

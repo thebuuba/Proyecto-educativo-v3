@@ -63,6 +63,7 @@ import { cn } from '@/utils/cn'
 import type { EvaluationProfile, InstrumentAcademicContext } from '@aula/shared'
 import {
   detectSecondaryLanguageActivity,
+  commonSecondaryLanguageGrade,
   firstSecondaryLanguageTechnique,
   type InstrumentRecommendation,
 } from '@aula/shared'
@@ -133,7 +134,9 @@ export function ActivityCreationView(props: {
     const timer = window.setTimeout(() => setFallbackNotice(''), 8000)
     return () => window.clearTimeout(timer)
   }, [fallbackNotice])
-  const contextualLanguageGrade = firstSecondaryLanguage ? 1 : secondSecondaryLanguage ? 2 : null
+  const academicContext=props.instrumentAcademicContext
+  const contextualLanguageGrade = academicContext ? commonSecondaryLanguageGrade(academicContext)
+    : firstSecondaryLanguage ? 1 : secondSecondaryLanguage ? 2 : null
   const latestDraft = useRef(activityDraft)
   latestDraft.current = activityDraft
   const preparationContext = useRef('')
@@ -371,6 +374,7 @@ export function ActivityCreationView(props: {
     editingActivityId,
     firstSecondaryLanguage,
     secondSecondaryLanguage,
+    contextualLanguageGrade,
     autoDetectionRevision,
   ])
 
@@ -657,7 +661,7 @@ export function ActivityCreationView(props: {
         participationMode:
           current.activityType === 'group' ? ('GROUP' as const) : ('INDIVIDUAL' as const),
         activityType: current.pedagogicalActivityType,
-        secondaryLanguageGrade: (contextualLanguageGrade as 1 | 2 | null) || undefined,
+        secondaryLanguageGrade: contextualLanguageGrade || undefined,
         academicContext: props.instrumentAcademicContext,
         includeAdditionalCandidates: true,
       }

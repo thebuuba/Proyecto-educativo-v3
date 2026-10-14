@@ -13,7 +13,7 @@ Ejecución directa con executing-plans, sin subagentes por preferencia vigente d
 - [x] Implementar diálogo transaccional de cambio de actividad: conservar/adaptar/cancelar, fallo, Escape/cierre y descarte de respuesta obsoleta.
 - [x] Completar proveedores/familias/subtemas de 1.º y pruebas de contenido; HTTP y cuatro formatos en navegador real. Actualizar matriz, informe, commit/push.
 - [x] Auditar/completar/verificar 2.º con el mismo criterio; cerrar pendientes antes de avanzar; commit/push.
-- [ ] Auditar/completar/verificar 3.º; commit/push.
+- [x] Auditar/completar/verificar 3.º; commit/push.
 - [ ] Auditar/completar/verificar 4.º; commit/push.
 - [ ] Auditar/completar/verificar 5.º, integrando análisis de novela .19; commit/push.
 - [ ] Auditar/completar/verificar 6.º; commit/push.

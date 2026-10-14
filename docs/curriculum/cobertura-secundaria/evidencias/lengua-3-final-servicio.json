@@ -1,0 +1,1668 @@
+{
+  "verifiedAt": "2026-10-14T02:34:21.048Z",
+  "complete": true,
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "0cb0a96cc2fb74a876ad137d01c6431de693b9c8",
+      "dirty": true,
+      "startedAt": "2026-10-14T02:30:56.007Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.27"
+    }
+  },
+  "results": [
+    {
+      "case": "procedure-1",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "299a2613714458495df1ab199e7df5c29b08313c1b69ede6988574e76ba041b7"
+    },
+    {
+      "case": "procedure-1",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "91c34f3a3991f8aa644ce21b2119bb321805fd4ae02a6e425e93584bcb13c7f7"
+    },
+    {
+      "case": "procedure-1",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8a89c69d705b3f86f33520b21276bdf87e1bf3f405a34a23eaa22736de5601df"
+    },
+    {
+      "case": "procedure-1",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "7c49e8ac8f7973a62214836b8bfc1c6c193b925b4f8600542308f9972205d7a4"
+    },
+    {
+      "case": "procedure-2",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ccecb195db79777916887cec70d6be5a0a22e05a779909edf8abcc72f5667296"
+    },
+    {
+      "case": "procedure-2",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "efde2fad5db889e78072cc9cdb0d4961033a9f93b146e3d442b94d73de7b7d6a"
+    },
+    {
+      "case": "procedure-2",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ae46bf9eaa66ffe4a743152f8b2e030ed3a7b41d195fefdfe70639b3be943c8d"
+    },
+    {
+      "case": "procedure-2",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "d97f91da2d0d7c864c021e10337749d3f514fb48ef433bf0cda29074a045c2cb"
+    },
+    {
+      "case": "procedure-3",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "c908f085e893a2b62d7542357743a23e0ff4ea64b28d43bd03cee808e107166f"
+    },
+    {
+      "case": "procedure-3",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "7407e82ef38b144c827f95885cb1d3d36c7784c54c165146ca5d29ca8407a775"
+    },
+    {
+      "case": "procedure-3",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "cd974caefa931e1fc445a922f63f8d194f767bc07a43d74cf22ec4f9448896b3"
+    },
+    {
+      "case": "procedure-3",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "5ed93357efb8f170af5bbe32a10fad53eca41a97f0e2eb0c87bc336c88b169bd"
+    },
+    {
+      "case": "procedure-4",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "5045fba8e0bb8d6edf11b5b98cae8996eddf9bd3f4d2293baf9383ed0146289d"
+    },
+    {
+      "case": "procedure-4",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b5e930a0ea1c2824830a9962372584de44b0d09a5cb979c9950190ac06aca0ee"
+    },
+    {
+      "case": "procedure-4",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8644d60a0533f1bf162400e2874a100bf1d29760297564a34fffa01ea40ca1c4"
+    },
+    {
+      "case": "procedure-4",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "5f4177b04258d98708d67d02a8a53ce5a1c9cfa0acc604d4f8307d4a8107a155"
+    },
+    {
+      "case": "procedure-5",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "18a6af93e46864fdfe846bb7b4818d113abd2da0789dc33a1b784071f94fc5d1"
+    },
+    {
+      "case": "procedure-5",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "ff83b3f71225c875f59007a205a036b8ab797ecca4155f384442947e3ae589a4"
+    },
+    {
+      "case": "procedure-5",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f2b602039b0721ae3d676f3c3c0be948d8acf408da324515d9a608fa3d713da1"
+    },
+    {
+      "case": "procedure-5",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "4016d27b53c81a90931a7958b05f0379e80050401d97d7edace2e7b6f990e4a1"
+    },
+    {
+      "case": "procedure-6",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "e003a2206325ea6420c9c6c63f97c77b22723c0269bb6087445a58be334b7904"
+    },
+    {
+      "case": "procedure-6",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "c751f406fed908c17811f5474a5a4a1b5fd9d0669f117dbe2177e29bfb7e0fa5"
+    },
+    {
+      "case": "procedure-6",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "6d5879a659bb75471d8398824cc6ad5bde428ed614a1ecc621013f97862896ed"
+    },
+    {
+      "case": "procedure-6",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "7b413230a1c220f55f2b8d2d8213310eff44e38ee05859bb8c6e80ba7f70fbb8"
+    },
+    {
+      "case": "procedure-7",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "5ae80de5a652695490b4d89a102a6c6ed7703d33105b506f9c78da7e7a7147a0"
+    },
+    {
+      "case": "procedure-7",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "cb58415df66e97856c6b205a0ec3eaa9bc3688df737ddc10403a82c35be52df5"
+    },
+    {
+      "case": "procedure-7",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "fdfa4073fc09ccbbcbf0fe8837bb36fe6f4f744ae0c87551ee93c4ef97c129b1"
+    },
+    {
+      "case": "procedure-7",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "202130c85203dc584818c280835a9930277c92ca752e082125bd2fb88082e106"
+    },
+    {
+      "case": "procedure-8",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "df6ccd5a0b887e4dbfeb40e25fb149f3047164fad9bd378ebab4a986ab10254a"
+    },
+    {
+      "case": "procedure-8",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "a13380bad742f8a3caa2c628065821486ffcaf6cb56b256bd9d3adf2ecff7f56"
+    },
+    {
+      "case": "procedure-8",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "52419a654a629c7aebf300fc18ddb4bfdaa793b6518924d74b2fd46699072374"
+    },
+    {
+      "case": "procedure-8",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "3c05af43fda9792f3c6ec7eb7ddeeae675626b2e759aa8e7091451bfd8a798af"
+    },
+    {
+      "case": "procedure-9",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "ff701ebbd0b937ffc3b2c3b64a8ac4b9b79e2366e7839d013a890df54b5a4180"
+    },
+    {
+      "case": "procedure-9",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "78f020434a4d9b9d3c7b07d4dea9d6f0d0e9309ce0bd4312ef8880956d38f00a"
+    },
+    {
+      "case": "procedure-9",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "a4760c7deb8173aec15112551919b58750b12bf31a0cf4367b0f741ab95f8b3b"
+    },
+    {
+      "case": "procedure-9",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e4b047397b2551b43f39338394a3649ad08a42b5d74a8262df0b7309f8cc0795"
+    },
+    {
+      "case": "procedure-10",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b1d519a773c769eae30215e633a1d929a795964e9e4f1842ed87b47731d339ad"
+    },
+    {
+      "case": "procedure-10",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "57beba51ef9e152b8069c818e1bfcc51be5b7e73743aade30bccd9905d2eaac7"
+    },
+    {
+      "case": "procedure-10",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "21f3759cb3e0ea91052f21a3f501471b53eb2ddf6e1606f2cd10ae45bface43d"
+    },
+    {
+      "case": "procedure-10",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "2a30043e7544b091330247bd18ae2365b3a6fdae0ea2eab7a742933b90579605"
+    },
+    {
+      "case": "procedure-11",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "1043d6becca9b21767ee8aee3cf5a576ae963ba63a115ce166ffaa93c10f2a5d"
+    },
+    {
+      "case": "procedure-11",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "598015e869a7f604f685632fe49a40fbe09a3af34a32a9ca6d9e46875ff74531"
+    },
+    {
+      "case": "procedure-11",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "c03027dfa8e32095fe76e19ca8065ee33b3a574dc107d83d1bd54847398af91b"
+    },
+    {
+      "case": "procedure-11",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "2ab93e1c6f220e7a48b833d0ddc73c835e967874be0df0b137a51f415880046e"
+    },
+    {
+      "case": "procedure-12",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "f42a2e9871d16196b9e9a3e6c48e40b3582a4cbf34b16c3ece9a3fda8391f126"
+    },
+    {
+      "case": "procedure-12",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "59c4c8155bb478943313ea0e3a1ef82a8de314c692d3394264482df2d3d0b73f"
+    },
+    {
+      "case": "procedure-12",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "c763f9c34912d971883ad0b45f02a6b6faebd491a907fc7d60358c2ca57af6ba"
+    },
+    {
+      "case": "procedure-12",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "8117e60e9b31363ee99305e7851939adccd89869947e30e0162991358797787a"
+    },
+    {
+      "case": "procedure-13",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "888a256720ac11a0114d8bf82b8154776a52b577016d99515f8c7a3f3b30d49c"
+    },
+    {
+      "case": "procedure-13",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "366c65205fd8bc04591638e6d687b6a882ffa307f527c25a1ce83baa9f38c0d5"
+    },
+    {
+      "case": "procedure-13",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e4ebc82a18fda693bf582b16d643e7798e8d47c40090b772d61ac4555eb69c9f"
+    },
+    {
+      "case": "procedure-13",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "846ed38093be15d0ae2ed75a5e181f66814e8c24b74236b47aeb048f07d48501"
+    },
+    {
+      "case": "procedure-14",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "062d19e60bf1583bfa5c56030c05da803cd7210f90ba372d7a67aa95c78ba923"
+    },
+    {
+      "case": "procedure-14",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "57f96625d93c34895d26eef9a4502970a79ee56ef6863c25cf97175661ac0251"
+    },
+    {
+      "case": "procedure-14",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "2f03157f12e420ddfe94ad610bed7bff76f7ce3391dabcea2c8ab3b2ebad8499"
+    },
+    {
+      "case": "procedure-14",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "144ee69a0241c188507dba3d3fd9bc5952516d482fc714ca31e244032fc5ba31"
+    },
+    {
+      "case": "procedure-15",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f3270fb503687724c8dce8851c6d6e144850ca96bdee6ba48646343101151767"
+    },
+    {
+      "case": "procedure-15",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f6269194162eed5e38b895401195649bcb2737ab77c69296143e4066cdfadd98"
+    },
+    {
+      "case": "procedure-15",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "77aa231f6ea877a26f5b16f98860f596bf0d9bee7af931a523a00739cb8cf56f"
+    },
+    {
+      "case": "procedure-15",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "6f8a193587863862ab6556e80724747039bc6eb600b15ab78f399e5c9ff9c268"
+    },
+    {
+      "case": "procedure-16",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "db0d75ce3eff557a9343915daf6833f650100af13d08be29d38a2df901061acb"
+    },
+    {
+      "case": "procedure-16",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "fa8c36168d61901f9a74f139f90177efe1b73b7e1c65e68a4f21ee79a61acd3f"
+    },
+    {
+      "case": "procedure-16",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "e5da1849ceb657ea7190a134609ee7e09ea837ef297dc42abf7a10c815ef93db"
+    },
+    {
+      "case": "procedure-16",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "eeac73b8a4e92d30561265d20a318e0974f090cc925f2fdf54ecd497726baef2"
+    },
+    {
+      "case": "procedure-17",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "2cbf8282990ed3faf6c27d103bec4276c132f0ac287d6dbc71b3c86a005d3948"
+    },
+    {
+      "case": "procedure-17",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "bf954ac1967b984b0eff7613e35b78f6bb0f13efb1a29bca47bebcc4125be55f"
+    },
+    {
+      "case": "procedure-17",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "d60fe5100b2a11996d76d01eed5080a67535371bf93ac71026b2b79166c19390"
+    },
+    {
+      "case": "procedure-17",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "03d9ecb61243623eea3686c4d31d8d67214983baf699288982b67017c0e3c65e"
+    },
+    {
+      "case": "procedure-18",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "19e17243ac510f0ac358e09bb096022b2e0b2832e7365bca4052966d611d3aa1"
+    },
+    {
+      "case": "procedure-18",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "0bc61a28a41d50fcadb0b8a48113cccf3d9f15ae4f7b02c5d7b95ad768980297"
+    },
+    {
+      "case": "procedure-18",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "d2119073ec50b5cce2c9639df7400013bfbd8a1c4b4ec190276aba819abf7c66"
+    },
+    {
+      "case": "procedure-18",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "293cfa2583ab01888c3f1fa2bcb18bf01d16e2fe3c6151bf17e3b5a76fa80dde"
+    },
+    {
+      "case": "procedure-19",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "3bbfc2086b0186dc571d588726631187ab693b5a1cf82fe7c188d6b08716df83"
+    },
+    {
+      "case": "procedure-19",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "47248d09e43ac707b578f9a21c893b10c43a033f4f373106643e92d8c049ac2b"
+    },
+    {
+      "case": "procedure-19",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8c05c24b32c4277fbdad83dde5d46a8664299929f97c3285b1d4f256390b4c1a"
+    },
+    {
+      "case": "procedure-19",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "6b65ee45ce574f42ec515d909fed2b0c58380f44d752ce1f194d87878636fb5f"
+    },
+    {
+      "case": "procedure-20",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e27b6b4e2394dcf6ac3cbeba7ca63dfa55409bd06f51b1c32338f7cdb8494b3e"
+    },
+    {
+      "case": "procedure-20",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "c8e2ef0018855b7200c4fc421b5ebfa7050248e05846e87828c4e24cc662e5bb"
+    },
+    {
+      "case": "procedure-20",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "aa1e93d831eedca4999efdb853cb132da7f281b7b5cee3339bd8d29fb82cdf10"
+    },
+    {
+      "case": "procedure-20",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "7ed875d92494c1ea3976c4f1b76f24ae2d3e1a3d79b5c93d717be75480c8e4b2"
+    },
+    {
+      "case": "procedure-21",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "5f17133adb499169036689bb6a16366ca857eb93fb46330afbb5203f2d3480fd"
+    },
+    {
+      "case": "procedure-21",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "089872d851315cbfecb05aa21b6af6a857413af73d27d16828c3d55aba5cd1ec"
+    },
+    {
+      "case": "procedure-21",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "cff1a5f464531eff631255d5e85292155cd8bbc1f76c0d818755b131edd9b6e7"
+    },
+    {
+      "case": "procedure-21",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "2f95271ade8551b53c96229386a7cbaedd848e31dc71785051709f327478b544"
+    },
+    {
+      "case": "procedure-22",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "4991a7f03b1ed30ce9b8ad8e62a8ad27d90d4ffee85a81babadf821d3680ff87"
+    },
+    {
+      "case": "procedure-22",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b303f7d2bdc2700f21bfe805767189829723e83e1dad43086dfbfcbfda8544cd"
+    },
+    {
+      "case": "procedure-22",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "69f7126e39a103bcc0b2fc47e855e93cd7b5f2d5fffc6807f80d8159108ff785"
+    },
+    {
+      "case": "procedure-22",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8a6cc8882721fe1bf86800610deb449d33a812e1ad765e19996c5ddc5a914de8"
+    },
+    {
+      "case": "procedure-23",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "7773c041296163aa68928d6c740274d0256b5138211ca7fe045b34a682f03078"
+    },
+    {
+      "case": "procedure-23",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "314f693a89d5d11ba5dcb4b46baacff2ff2c169768bc26a8af7b2f2ee1b1237d"
+    },
+    {
+      "case": "procedure-23",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f8b53ba9c128493b6d821fc53568a35a4a7a769fc275d5d3c3edba7debe27185"
+    },
+    {
+      "case": "procedure-23",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "08d572f19336734b0474078c3a31d5e6f81d8ada42ae1b6c7a22b1a33d0ff157"
+    },
+    {
+      "case": "procedure-24",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "1c8a2ec1d805fdcdc743f50bee70ad9e3e0df758ffe7ade69fdc75485d886ecb"
+    },
+    {
+      "case": "procedure-24",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "644842bd767499d88c985aa65f14258f50eca78734e520639627d075cc29af05"
+    },
+    {
+      "case": "procedure-24",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "8716966e131a5ce68da08d4353b49e638762ca31f8c73000d26beec941af0214"
+    },
+    {
+      "case": "procedure-24",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "c2d5b55ce81afc5ac15dd9fbdb5b575459b6e3236e1ac93a0528598696728c6b"
+    },
+    {
+      "case": "procedure-25",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "2a8cd1da30ce0d7a0d09f849c5d6ff14c8c5df060b6534032fbd6b8dee1f3c27"
+    },
+    {
+      "case": "procedure-25",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8348d40775d1f6ffccd94e22ca53e58fde6cae037153acb0c81dd232eef9b438"
+    },
+    {
+      "case": "procedure-25",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "61064c4b11e47f938c4e2b524d557395dda8320b88465644f713d9217f296592"
+    },
+    {
+      "case": "procedure-25",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "49bb12d9f70f6f39ce12e65f5ea47aebebd67b6c3949a072cad7370952139ad9"
+    },
+    {
+      "case": "procedure-26",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "46c42f147f1f664e2ece37ab822c5ef2b522bb30d2f4abcedb785c9752a37a95"
+    },
+    {
+      "case": "procedure-26",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "c40e4729d8c9ebbe3f2b011fa2d902981efaace911e9653efd1d292b63683182"
+    },
+    {
+      "case": "procedure-26",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "953cde2302e1803c053de1617beeb3ed6df47184ecb116e3f94705dd4c3558a2"
+    },
+    {
+      "case": "procedure-26",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e85ff03b3a674043666bc3d0a225160c968caea645e477136d7cbdb792340a8a"
+    },
+    {
+      "case": "procedure-27",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "cece28830daf4a58761361f972bce136ef584d45fcb9cac7d4105924ac45b77a"
+    },
+    {
+      "case": "procedure-27",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f38923158be2c93fbdc2b2e105145bef2fce5014aed591834fd76136e5d2b11b"
+    },
+    {
+      "case": "procedure-27",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "842001c80c7deaf2520470f6ede2064ad5185472db0d76a4f30f27b79289a2b4"
+    },
+    {
+      "case": "procedure-27",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "d449bd132a019dba11aa53737bbd175150d0365a63b53de4d5a7451f6bf051cc"
+    },
+    {
+      "case": "family-1",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "11fd926019e5a59be7ef9cab494352d656ca71aa1e29806be187807b6c4bbb83"
+    },
+    {
+      "case": "family-1",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "7ebf61714c3864f8a08f8b2fdae26b5f01ae87f1358fb05de04599238f4ed67f"
+    },
+    {
+      "case": "family-1",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b526d09bda92bfcc96d7fd45a7834cde393781406b27240f940c2fc90ea9d927"
+    },
+    {
+      "case": "family-1",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "9cdb5fe5204659ee230cbae4a9a286f43eb1faf82c22701396b0a3207ec3b473"
+    },
+    {
+      "case": "family-2",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "7b6606379abc9bd9c3b174ed2a87fb1ac7358b3250c299f99e8e56ddcb58f9c6"
+    },
+    {
+      "case": "family-2",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "5602b2d2b94059a3b0e11e4f7fc42933a2d97529f5ff5ed47962ecba9bbd1989"
+    },
+    {
+      "case": "family-2",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "452107f287911ea6979e89f4a90fbd7645a732d52d4c85e8e73e749ad91e406f"
+    },
+    {
+      "case": "family-2",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8a64a653a15b9ed7dfa22d85acab55dcab96732ec15c473623901fa768324c0d"
+    },
+    {
+      "case": "family-3",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "3cbb91ca2376b31ec34cf9d8c221734e8234aa0f26a3063f8c3909c94449ba81"
+    },
+    {
+      "case": "family-3",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "5b5c68353bac434cd8945aa4e506f65be60dbc81c6e8ffac200362aad627f76f"
+    },
+    {
+      "case": "family-3",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "f4731fd7f83acc2fcbbb474ed4fb84d90928dc231a95f225f3e59e780a080d74"
+    },
+    {
+      "case": "family-3",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "3b6c5a22a39e5952cc8b10b593c4af759e9c9db7a1a1f0ae1abd401cb7cc866c"
+    },
+    {
+      "case": "family-4",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "14cc4c13bcdf0acb8e144a7ee8c306349c986454fa3bff168c1a231cc1f129de"
+    },
+    {
+      "case": "family-4",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "3f2ee92ee558318cb61161de2832d8dcde6b61e656461a89e98f1db7147140b0"
+    },
+    {
+      "case": "family-4",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "383121207dbb973995e20f3d0d2906fd56c1ddc303533e0946516ad386f72fbd"
+    },
+    {
+      "case": "family-4",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f3d2fe8cf06986a38d6b753ea5098d34174c5491a56a3c94a0a7e5cec82e7402"
+    },
+    {
+      "case": "family-5",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "5efbd02ee36fcf40599a438883a4f23c36924eb3dedf50a84cc6624538403b53"
+    },
+    {
+      "case": "family-5",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "708d43553925bba4ebe85399a75079457072b7f4e38b87ff4ba7f0d6b1a07cb5"
+    },
+    {
+      "case": "family-5",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "f03e8f44d9f0f2fb058e07d8effbff2fe90227bc622de0b13cc9fd8e0dd5b8e2"
+    },
+    {
+      "case": "family-5",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "18052ba7db722541dd739ae5eb8139042e764bfbcefbace45f77176de7df4729"
+    },
+    {
+      "case": "family-6",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e7a09ea7922c676c7c100475ffc37e8840b12efb59fcdae099e0ba9e1a113f9e"
+    },
+    {
+      "case": "family-6",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "0b35335f0209aeca3a0e428373a783bd8ee0785bc5e09d9f639b90ad9d10d154"
+    },
+    {
+      "case": "family-6",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "469c11f354d283c3d1b7e923e9a4cb418e8012dc8d52719dbd58b55f49bafd8e"
+    },
+    {
+      "case": "family-6",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "d8978fad4ed88c579aa9473013113be875b22d754935f354d98e839e8d17f967"
+    },
+    {
+      "case": "family-7",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6d8f57592f8e11a0477acb0c72117c0b878b9e4898e80b3d1ee24d5bf6378841"
+    },
+    {
+      "case": "family-7",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "d6ceb5cffb17dec45c052809a79496fa6e4dfe68a851b6ceca39f66f77bb241e"
+    },
+    {
+      "case": "family-7",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "ae92998e9e5c1cf983542889d87b24197477a45a516d3a790f88295e3dc12746"
+    },
+    {
+      "case": "family-7",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6532bfae80b1f2f41105d62fd5865127ecf2edf9cdb869b6be95035c7201733f"
+    },
+    {
+      "case": "family-8",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "816407c7ae88e6f86abf0fcfd6af3c15bb6559938b5accbe72bf4af9e1972eef"
+    },
+    {
+      "case": "family-8",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "c024642390dea17d1ab91f6cd7edb9cfa13fd86b78c5a5f2c2416f36d51c77b1"
+    },
+    {
+      "case": "family-8",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "1fad8dbc92742840785ec43e4329f343064254eaba932af29390acc79f552df4"
+    },
+    {
+      "case": "family-8",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e48a6d63baa8c140030a19b23f206bef413ec6564cd8c50da511df23cc5c55f5"
+    },
+    {
+      "case": "family-9",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "c9a7b5a74c776f9ee077971cf5af2fe96012905bc31b0ccd08d34197c4aa4210"
+    },
+    {
+      "case": "family-9",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "83ef2562ba3c5be62c57358373ead4aebf051f9fe6cc5a64acc7928ec55ace44"
+    },
+    {
+      "case": "family-9",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "6ab27323c1ca42500142aff520485a53207a31b63a70d3411e0de2c7cc0d981a"
+    },
+    {
+      "case": "family-9",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "4c18cbcb0bd944c5958c7cb565c954f0c755e510ea5ce51fe9d9f0e1109ccdb2"
+    },
+    {
+      "case": "family-10",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "041d3f3d516804690e0e3bdade9746f195c906d8790cb3c5c017cb7e0b6e0c77"
+    },
+    {
+      "case": "family-10",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "b5c3276b564de1c767db9b7a79b2691bd20865849e679966276ab518f8b77eec"
+    },
+    {
+      "case": "family-10",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "c97b23f5a2f1c760976f3708fc0ce11cdee6238bdb0dad38432321418e5dbbc6"
+    },
+    {
+      "case": "family-10",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "cb5abb8f00c9b7a8f48cf201739b35a596238adce8f44aed32d12e5fd9c4a9e6"
+    },
+    {
+      "case": "family-11",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "f2fbce7869a409dd7ccab59ec47fa6312e611915b488e02bf8baed3a88d532c1"
+    },
+    {
+      "case": "family-11",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "f474a08904390a6ac07fe89c55ffcdeba46d40913aac6cf322ec09545cf89370"
+    },
+    {
+      "case": "family-11",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "41106042069e58f7d10a529ff08bda9eb2c92352a869687b2a7913e84d45f17f"
+    },
+    {
+      "case": "family-11",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "f20ebe37616a8fc1849e9e64698734e879aa34f6468f1171dcdc074df181d4a0"
+    },
+    {
+      "case": "family-12",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f6c814ea466de2d23450fed8623a90b7150e4ab54412ca318260fba2fae991fc"
+    },
+    {
+      "case": "family-12",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "ea231001f8200533fcc22d86f7e900f2d0d991c9984b30a4d550362c1f7dc0fa"
+    },
+    {
+      "case": "family-12",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "1e18157c9fc9ad022d779c2110b3a8394c4e1b9ee3d9fe8521fe5b27ed13dcf0"
+    },
+    {
+      "case": "family-12",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "3dd96920030957feedf4d2f2cb600d8b45c9c73a018beef2eb2501e340e34792"
+    },
+    {
+      "case": "family-13",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "9e5bf778100e45b6be05daffce9d14ba2d902db1db3ebf09885459c6ae28547d"
+    },
+    {
+      "case": "family-13",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "36b92e62f0adfff50724686fd652bccc0e5173f9a09f3258fe8e514f0aee8cef"
+    },
+    {
+      "case": "family-13",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6a1e6d17f1bc55d951bd242011eeaba23e33077987b839f8c257d4cf673b6a9c"
+    },
+    {
+      "case": "family-13",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "09ab1b0f7fbdd8e4308ad8695c4e5a1dede7944627ed4b0f29242bdefb6d1df1"
+    },
+    {
+      "case": "family-14",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e09beb4be8301fce0c8735042ac6d52c154ef4a94030510cdfa4718fd583a1d3"
+    },
+    {
+      "case": "family-14",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "5ad7a1d3df78a7e6aca7c71c5dd5b0d4ff6b9d160ca24a354d9a3b8ddc653eb9"
+    },
+    {
+      "case": "family-14",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "aa867ae0aa42b4ae7b23226eddfb8a3053cfe9046c1cc3ba5f2217c79717cb1f"
+    },
+    {
+      "case": "family-14",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "88d02bdb730a578f4b207a0c84df590a5cf5066323e2664b08b4f2b9c29c7e41"
+    },
+    {
+      "case": "family-15",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "44f4e518708059b5ca60796f0010bdfb03265b48a9d3fbc79d0ddd97331f2f8b"
+    },
+    {
+      "case": "family-15",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "278d3ce44437897c69b69794d03feb049c44a81b395c4b966ca880a751120499"
+    },
+    {
+      "case": "family-15",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "23938967d4574e769ff43bf9cb02479c2e44dd86d9bb8ff8158feb971ca4f102"
+    },
+    {
+      "case": "family-15",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "aa42f081a12eed8a010ef359c35319e4a7cbf5097503397a2115e0459a047a09"
+    },
+    {
+      "case": "family-16",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "ed34f3f0b0c89caff8e8e02ae19fb2ffe130866e9e6a9b79a2a2739e5bfa2072"
+    },
+    {
+      "case": "family-16",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "be6a320d3ccb09c7450675db184129529edadaca08b30ac792b2867e4ca1399e"
+    },
+    {
+      "case": "family-16",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "3dfb757e8f45a50c43c670e18673fc3274890c67184f7b9f3ca1a1fa3f332c03"
+    },
+    {
+      "case": "family-16",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "4a0206d92dd93aa7bfb01d059a6b155e050cb99149e52021245b0e25be9ed791"
+    },
+    {
+      "case": "family-17",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "be80e1bda66c53b70990e63f4496baf174411bc41023c198390c66a5022a5762"
+    },
+    {
+      "case": "family-17",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "36a59755582a32bfe8293c48a9545351bdbc0c76b4eff779102bfa267150a3b4"
+    },
+    {
+      "case": "family-17",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "af8d223f10667893632a678d3514be8ef630bb985053bd1f6052cb985522bc29"
+    },
+    {
+      "case": "family-17",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "6251d61ee716a50be1a6572e1c60a68bffe2afa05f54bf3c7c67721e25b4405e"
+    },
+    {
+      "case": "family-18",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "b935015ee6365255cfbd8f4dc833dbaa7ab215de0019a749500b1a1f6b0a47d4"
+    },
+    {
+      "case": "family-18",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f13c5351b2f96315bb8ec925c874a3f27142179b9a07d3199cd494856ae23224"
+    },
+    {
+      "case": "family-18",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "0a56aba6de6342badda17046c53fded33eb2d95fdd1e5279507e8b52811b630c"
+    },
+    {
+      "case": "family-18",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "ad4a49aa1a0f99694cc3cd91c0d11254cbf41f5129ae75ceeae501131086fe19"
+    },
+    {
+      "case": "family-19",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "d5ba41b125c31ed289f25330c8772928a51c2695207639001a7e45d6d733a781"
+    },
+    {
+      "case": "family-19",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "47aad3c894caca29dd0fd6112da1bf5f81cde0a9a137256e3e1846bef0d4288a"
+    },
+    {
+      "case": "family-19",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "58b1b1bf6d580f0bb8d70b33ea7f0c0f56eb92726c142dacedba65192d5b838e"
+    },
+    {
+      "case": "family-19",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "be4a91e3df72248be8c38897d43299d80c6f544ee39834cbd1185b569d2d9bda"
+    },
+    {
+      "case": "family-20",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "3b3420e9224e2e0ee35e0b826e80b607965efee55e9841fb377a9f4f83966ad8"
+    },
+    {
+      "case": "family-20",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "41b56756bb386b87b2aaf527893d217d67650f89ca7fff5c3cdb907a9ad33d6e"
+    },
+    {
+      "case": "family-20",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "9c5f806b99df521f4308f81702ee6d876110fbc5945c1bccf7d713ccac41e49f"
+    },
+    {
+      "case": "family-20",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "525597cbdfe04b03a003d115f91d7987a0669240694a4f85e7445ee9d6806548"
+    },
+    {
+      "case": "family-21",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "3295b3219779728cee96903e62ad0116425c25d20775086d19fae500d4e4fe4b"
+    },
+    {
+      "case": "family-21",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "4dcee3ac00c11387bb45f5ba6ae3f3de6d46aae4de1dd113750aa2ba3ab5f545"
+    },
+    {
+      "case": "family-21",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "38d99ba419e9189fe6a5b0b2eef17cc4998dfbe8190d547c4287b2ca7a057dae"
+    },
+    {
+      "case": "family-21",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "1c30a0ea1d302274d0f656caa834541f0746b003b9ca6e0cdd4d2e411eaa6032"
+    },
+    {
+      "case": "family-22",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "2cacb362b234a7f60936b31704feb11348160a301248e918a179575b111e20d9"
+    },
+    {
+      "case": "family-22",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "c0c6d479996adddf59e42d327199b056111505ff4b242ce71f78d1df8444f426"
+    },
+    {
+      "case": "family-22",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "dd1b7c214406a93ffa8831c98dd5d4ef73896db008141b5169ce2c906c68b986"
+    },
+    {
+      "case": "family-22",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "9226aa5e8cf6f57d3166a6e391c04c1e00dfd33166d6d084876f0c9900e78727"
+    },
+    {
+      "case": "family-23",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "65ae09ebc599f0b4b0b1e9642d36eaae644bf70f860d59425fd97663808244de"
+    },
+    {
+      "case": "family-23",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "4afc19b7e8213552ddf61ba8b59742db53434d9a361bc411a6b22124ad44786b"
+    },
+    {
+      "case": "family-23",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "eb6058b7ed202ae7d3bc2bd2604e2c004fa04c581c6d32582160640a61142e58"
+    },
+    {
+      "case": "family-23",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "3f57a2bfaf8dbeedab84d2840437200f2b837f56b09429847ebfbd4aeef55a20"
+    },
+    {
+      "case": "family-24",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "48edc7c06e2ced9452b25531752483bd648a13f346188549d7b9d0a5ffefe598"
+    },
+    {
+      "case": "family-24",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "b220aa9a71832a4a493beed21cf7b384cdb255795cb347ff48894e80cfcce520"
+    },
+    {
+      "case": "family-24",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "949e4101bccbe3d07c3a0c0fe35842f8531faa59ed381a3ba5c03e123611a3c6"
+    },
+    {
+      "case": "family-24",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "393470cdd53a8fb895a8c4a150367fffd0ea69c580a077d7c57ab9d96d9983dc"
+    },
+    {
+      "case": "family-25",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "bd6001285a59040d150953003b1a7c051e05c1104c3465b7a595950214fa8fc7"
+    },
+    {
+      "case": "family-25",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "91e920bd0ba0f5e44672d433ebed08e951fbcaa4f7c18481b81912cf8e2e1f80"
+    },
+    {
+      "case": "family-25",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "4f8e49cd13ea14415d131414078e3d7cb62caef9b7c82425157b315de5c2bb50"
+    },
+    {
+      "case": "family-25",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "599dee0b09a371ba4b441573e6126ccfb75d0cfbe5aaadb7374b30e369b805fb"
+    },
+    {
+      "case": "family-26",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "81e56c4ee0889530b47ac14f2b6be3e561176c2ccac831a4821820d979ac11ab"
+    },
+    {
+      "case": "family-26",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "a820037a551feb9e8cd043f3e925a94b14fce8b38ca4a98a879fe462514e4911"
+    },
+    {
+      "case": "family-26",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "a5168e34cc513f4f000b19c55d82db1cdc1803b09050d64a2b94284df8c0c1fb"
+    },
+    {
+      "case": "family-26",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "4b85eca552f6fcb3260222baf27c658d295b55308c8195bc973eab7f827ffc1b"
+    },
+    {
+      "case": "family-27",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "3cc39974f7227b3be66c3a6cff8f478e08fa1ef35c53cf86f71ae55119081bca"
+    },
+    {
+      "case": "family-27",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "69421b605c159f47eaf7cdc5921ae17684266e4ca13008e8877a4a039636ec01"
+    },
+    {
+      "case": "family-27",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "340a5aba943c3dd262e96f2f7670eee8ba55c9e1120c26f4e6500154b10da077"
+    },
+    {
+      "case": "family-27",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "0e9a53c1d8019528893ac5dc961e115d6915514e3846540de988a8d702b30a05"
+    },
+    {
+      "case": "family-28",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "60ff310e10a3c82be93b5c3045ee2fb71097a40a1d7b209a55a611cbd98440c3"
+    },
+    {
+      "case": "family-28",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "96f2851b97c9801b805e0406617cf9918569ca7b73979f771ee094e8fd7dd1d6"
+    },
+    {
+      "case": "family-28",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "645d16f6aed9c9622d48757ab95990bd26d8a9ca4e14cf598ac0adb9ac2b9fb1"
+    },
+    {
+      "case": "family-28",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "38d07cdace663491f8908b53801fdaa9973fa725bc0b52ea19b794e6a6e0f579"
+    },
+    {
+      "case": "family-29",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "1b030af2c5192ea98caab71c04a34feff683b59807d344a23c43c9f1cd5f2280"
+    },
+    {
+      "case": "family-29",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "68e014608d0993514edde175ce320305f93d965977176d8360ea1400640e3e8f"
+    },
+    {
+      "case": "family-29",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "d5aa2740f6f485191cfe60300988c914d900cbb00504d8e3af0cbd8498420da9"
+    },
+    {
+      "case": "family-29",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e582207146f23d90a69e2950db49524717f882d7f46312cdf99dbda6ff47c5a8"
+    },
+    {
+      "case": "family-30",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "75ac4099dc5013882a3422ece9213e3fd09ba73f1521d9eb4b2584868de1b81a"
+    },
+    {
+      "case": "family-30",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "6fe33093632dfec0f4584fc5c70787ca77eb6e33b05394b297364bbbe41727ab"
+    },
+    {
+      "case": "family-30",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8d225816f8f33920a2fe0131ca3b9e2b880212d93654bdbdd9f9546a40e29b92"
+    },
+    {
+      "case": "family-30",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "9f86a32fe50cea1fac038d7a16473dd4ace0b4e75cc02866e0c74a877d6d8c84"
+    },
+    {
+      "case": "family-31",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "c29961a806483abc198b4e36a7bd087479cb0876257082d3dc13f88179202074"
+    },
+    {
+      "case": "family-31",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "f0371aa004431ef04de43089581c0bce1a07fb9e9cba6f6b627e0eb397cb59b3"
+    },
+    {
+      "case": "family-31",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "d943e23f5cc41e29c32b9b599ded23a5c14a010ebe3b5e2b7c675886d072ef41"
+    },
+    {
+      "case": "family-31",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b41db71a74d0e929dd409c96f05aeb63fb4df8c08ef9342d4212ed0c1b95a2ef"
+    },
+    {
+      "case": "family-32",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "fdc02ad87b0d6ffa23bc76078c0f1dd3c5a38d61f8a7c4108f235677cae0ade7"
+    },
+    {
+      "case": "family-32",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "15ced17e3be118ba2f965196393023f1aa96126526ff8c26ca932f6d482913b0"
+    },
+    {
+      "case": "family-32",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f51d6e4b8e5c5f959ce87f1b83edc1da05027b61fd006d3d32a4529a0dedafe4"
+    },
+    {
+      "case": "family-32",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8222b00a8a89a716f7cb93f7dfcf89146c381c1045871efde47e725aa9acd08d"
+    }
+  ]
+}

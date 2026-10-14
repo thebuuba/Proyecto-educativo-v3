@@ -14,8 +14,9 @@ export * from './secondary-topic-recommendation'
 export {secondGradeNewsModule} from './secondary-news-grade-two'
 export {completeSecondGradeNewsCriteria as secondGradeNewsCriteria} from './secondary-language-grade-two-complete'
 export {secondGradeLanguageFeatures} from './secondary-language-grade-two-features'
+export {thirdGradeLanguageFeatures} from './secondary-language-grade-three-features'
 export * from './secondary-science'
-import { detectTopicActivity, findSecondaryLanguageTopic, normalizedTask } from './secondary-language-topics'
+import { detectTopicActivity, findSecondaryLanguageTopic, normalizedTask, commonSecondaryLanguageGrade } from './secondary-language-topics'
 import {resolveEvaluationTask} from './evaluation-task-contract'
 import {affirmativeLanguageTask} from './language-feature-criteria'
 export * from './evaluation-task-contract'
@@ -24,7 +25,7 @@ export * from './action-content-criteria'
 export * from './language-instrument-intent'
 export * from './language-procedure-criteria'
 export const ACTIVITY_DESCRIPTION_MAX_LENGTH = 10_000
-export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string }
+export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string; optativeExitName?:string|null }
 
 export function firstSecondaryLanguageGenre(title: string, description: string) {
   const find = (text: string) => /informe(?:s)? de lectura/.test(text) ? 'READING_REPORT' as const
@@ -40,7 +41,7 @@ export function firstSecondaryLanguageGenre(title: string, description: string) 
 export function detectSecondaryLanguageActivity(title: string, description: string, context: FirstSecondaryLanguageContext | null): string | null {
   const contextualTopic = findSecondaryLanguageTopic(title, description, context)
   if (contextualTopic) return detectTopicActivity(title, description, contextualTopic)
-  if (context?.level !== 'SECONDARY' || ![1, 2].includes(context.grade) || context.subjectCode.trim().toUpperCase() !== 'LEN') return null
+  if (!context || !commonSecondaryLanguageGrade(context) || ![1, 2].includes(context.grade)) return null
   const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
   const titleText = normalize(title)
   const task = affirmativeLanguageTask(description)
@@ -81,7 +82,7 @@ export function detectFirstSecondaryLanguageActivity(title: string, description:
   return context?.grade === 1 ? detectSecondaryLanguageActivity(title, description, context) : null
 }
 export function firstSecondaryLanguageTechnique(activityType: string): string {
-  return activityType === 'DEBATE' ? 'debate' : ['REPORT', 'ANALYSIS', 'COMPARISON', 'WRITTEN_PRODUCTION'].includes(activityType) ? 'analisis-producciones'
+  return activityType === 'DEBATE' ? 'debate' : ['REPORT', 'ANALYSIS', 'COMPARISON', 'WRITTEN_PRODUCTION','RESEARCH'].includes(activityType) ? 'analisis-producciones'
     : activityType === 'ORAL_PRESENTATION' ? 'presentacion'
     : activityType.endsWith('_ANALYSIS') ? 'observacion-sistematica'
     : activityType.endsWith('_COMPARISON') || activityType.endsWith('_WRITING') || activityType.endsWith('_CREATION')

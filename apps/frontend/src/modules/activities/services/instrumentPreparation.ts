@@ -1,5 +1,5 @@
 import type { InstrumentRecommendation } from '@aula/shared'
-import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria} from '@aula/shared'
+import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,commonSecondaryLanguageGrade} from '@aula/shared'
 import { distributeScoreUnits, instrumentEvaluationConfiguration, validateInstrumentDefinition } from '@aula/shared'
 import { editableAuthoredRecommendation, editableSecondaryTopicRecommendation, findSecondaryLanguageTopic, secondGradeNewsCriteria, withoutResources } from '@aula/shared'
 import { findSecondaryScienceTopic, secondaryScienceCriteria, scientificTaskType, type InstrumentAcademicContext } from '@aula/shared'
@@ -37,7 +37,7 @@ export function preparationFingerprint(input: { name: string; description: strin
   return JSON.stringify([input.name, input.description, input.pedagogicalActivityType, input.activityType, input.instrumentType, input.selectedCurriculumElementIds ?? []])
 }
 
-export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: 1 | 2; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
+export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: number; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
   const resolvedActivity=input.activityType??resolveEvaluationTask(input.activityTitle,input.description??'').action??'OTHER'
   const novel=secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',input.academicContext,resolvedActivity,input.includeAdditionalCandidates)
   if(novel.length) return editableAuthoredRecommendation(novel,input,resolvedActivity,'novela-analisis-fragmento-5')
@@ -48,7 +48,8 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
   const scienceCriteria = science ? secondaryScienceCriteria(science, input.description ?? '', input.instrumentType) : []
   if (science && scienceCriteria.length) return editableAuthoredRecommendation(scienceCriteria, input,
     input.activityType || scientificTaskType(input.activityTitle, input.description ?? '') || 'ANALYSIS', `science-${science}-${input.academicContext?.grade}`)
-  const topic = input.secondaryLanguageGrade ? findSecondaryLanguageTopic(input.activityTitle, input.description ?? '', { level: 'SECONDARY', grade: input.secondaryLanguageGrade, subjectCode: 'LEN' }) : null
+  const languageGrade=input.academicContext?commonSecondaryLanguageGrade(input.academicContext):input.secondaryLanguageGrade
+  const topic = languageGrade ? findSecondaryLanguageTopic(input.activityTitle, input.description ?? '', { level: 'SECONDARY', grade: languageGrade, subjectCode: 'LEN' }) : null
   if (topic) return editableSecondaryTopicRecommendation(topic, input)
   const text = `${input.activityTitle} ${withoutResources(input.description ?? '')}`.toLocaleLowerCase('es-DO')
   const firstGenre = input.secondaryLanguageGrade === 1 ? firstSecondaryLanguageGenre(input.activityTitle, input.description ?? '') : null

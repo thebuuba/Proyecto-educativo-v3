@@ -16,18 +16,29 @@ const cases = [
   ['Analiza el cuento de amor y amistad e identifica el conflicto.', 'ANALYSIS', 'analisis-producciones'],
   ['Recita una décima espinela respetando el ritmo.', 'ORAL_PRESENTATION', 'presentacion'],
 ] as const
+const thirdCases=[
+ ['Investigarán información y fuentes para un catálogo de especies.', 'RESEARCH', 'analisis-producciones'],
+ ['Analizarán una entrevista identificando los roles y las preguntas.', 'ANALYSIS', 'analisis-producciones'],
+ ['Redactarán una crónica de hechos documentados.', 'WRITTEN_PRODUCTION', 'analisis-producciones'],
+ ['Elaborarán un catálogo de flora y fauna.', 'WRITTEN_PRODUCTION', 'analisis-producciones'],
+ ['Redactarán un informe de experimento con los datos disponibles.', 'REPORT', 'analisis-producciones'],
+ ['Debatirán la tesis de un artículo de opinión.', 'DEBATE', 'debate'],
+ ['Narrarán oralmente un cuento social.', 'ORAL_PRESENTATION', 'presentacion'],
+ ['Recitarán un madrigal.', 'ORAL_PRESENTATION', 'presentacion'],
+] as const
 describe('grade two restored editor integration with editable contextual alternatives', () => {
   beforeEach(() => {
     localStorage.clear()
     vi.restoreAllMocks()
     vi.spyOn(api, 'post').mockRejectedValue(new Error('Servicio simulado no disponible'))
   })
-  it.each(cases)('prepares without a score, switches formats and confirms without losing selections: %s', async (description, activityType, technique) => {
+  it.each([...cases.map(c=>[...c,2] as const),...thirdCases.map(c=>[...c,3] as const)])('prepares without a score, switches formats and confirms without losing selections: %s', async (description, activityType, technique,grade) => {
     const onAdd = vi.fn(async (input: Parameters<ActivityEditorWorkspaceProps['onAddActivity']>[0]) => ({ ...input, id: 'saved' }))
     render(<ActivityEditorWorkspace
       initialDraft={{ ...newActivityDraft('b2'), name: 'Actividad', description, activityType: 'individual' }}
-      secondSecondaryLanguage sectionSubjectId="subject"
-      courseTitle="2.º · Lengua Española" periodShortName="P1" saving={false}
+      secondSecondaryLanguage={grade===2} sectionSubjectId="subject"
+      instrumentAcademicContext={{level:'SECONDARY',grade,subjectCode:'LEN',subjectName:'Lengua Española'}}
+      courseTitle={`${grade}.º · Lengua Española`} periodShortName="P1" saving={false}
       onAddActivity={onAdd} onUpdateActivity={async input => input}
     />)
     await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue(activityType), { timeout: 5000 })

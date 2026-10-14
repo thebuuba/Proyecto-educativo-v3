@@ -426,6 +426,194 @@
       "implementation": "PARTIAL_MATRICES_CONTEXTUAL_OPERATIONS",
       "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_SAVE_REOPEN_PASSED",
       "pending": "Vectores, tipos, determinantes e inversa pendientes. Solo operaciones, datos, justificacion e interpretacion de la consigna."
+    },
+    {
+      "id": "bfb77540-cff5-5bf8-8a5d-4b2e1efb329d",
+      "procedures": [
+        "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+        "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+        "170e292f-5990-583e-b30d-85502da48c63",
+        "224222b7-69db-52aa-9a0f-7a33ef8da209",
+        "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+      "catalogVersion": "evaluation-2026.27",
+      "report": "lengua-3-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "9e516a4a-e640-5e3f-914f-1a626b6e8fb8",
+      "procedures": [
+        "62759c0a-eb13-5f62-9a7a-3a1275e6db40",
+        "e884e94b-bfce-56a4-aa55-5bd2a65c1c8c",
+        "176e5422-77ee-59e3-98b3-9a2dee2f209e",
+        "61498b07-49c4-5566-9a37-928495c3e1a7"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+      "catalogVersion": "evaluation-2026.27",
+      "report": "lengua-3-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "613b5847-3a67-5eb1-a91e-2a388725792c",
+      "procedures": [
+        "e38ba93b-efd5-502d-a18e-942a667993f7",
+        "4a0015fc-92e8-5376-ba65-4926a10a10ec",
+        "1ad70373-5325-5f14-b269-5fc7c1a8a710",
+        "67b4db6b-b784-52fa-a457-e1c993ebd096"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+      "catalogVersion": "evaluation-2026.27",
+      "report": "lengua-3-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "236be722-0ef3-5211-9dd2-5af2c786fad6",
+      "procedures": [
+        "e259c20a-339a-5cbb-929d-277bbccb1ca5",
+        "ed5ff54f-fb19-575b-a4e1-0f3a6f69a9d5"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+      "catalogVersion": "evaluation-2026.27",
+      "report": "lengua-3-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "f7019573-c2eb-5685-a2bf-a0ac16c1e300",
+      "procedures": [
+        "21c4058c-30c8-54e1-9897-9a2540961219",
+        "4776afa3-9e42-5777-a564-b2e91dc807da",
+        "009b844a-c752-5b50-adf9-72cea44b5d6d",
+        "147f6896-1896-5640-b2dd-2562d5015ffe"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+      "catalogVersion": "evaluation-2026.27",
+      "report": "lengua-3-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "00f602dd-e9d8-50c5-b1d6-07b5e8d983b3",
+      "procedures": [
+        "83a0ab4b-a8f4-5188-862a-9756a880e047",
+        "a3e52e12-2a22-5aa4-b165-eec759f65571",
+        "d2680b65-eac2-57e1-ae9a-5404d78d548e",
+        "08484b46-dcc2-593f-bc3b-e119742a7eae"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+      "catalogVersion": "evaluation-2026.27",
+      "report": "lengua-3-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "0f3b956f-31a9-565d-9db4-9f07efd83410",
+      "procedures": [
+        "d970dd52-e4eb-51d6-8324-32c5a4009c3a",
+        "f4bc4dc2-b55e-58c4-8b6a-f08fed62b232",
+        "2bd30d3c-7fd2-5f09-a4e1-27d27095c687",
+        "87a532f1-23da-5d70-b533-136126263946"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+      "catalogVersion": "evaluation-2026.27",
+      "report": "lengua-3-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
     }
   ],
   "sourceAnomalies": [
@@ -498,6 +686,25 @@
       "catalogVersion": "evaluation-2026.25",
       "report": "lengua-2-cierre.md",
       "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 2.º. No garantiza interpretar toda descripción. Continuar 3.º–6.º en orden.",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "catalogVersion": "evaluation-2026.27",
+      "report": "lengua-3-cierre.md",
+      "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
       "engineConnection": "CONTEXTUAL_PROVIDER",
       "automatedVerification": "PASSED",
       "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",

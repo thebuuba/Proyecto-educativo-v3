@@ -3819,11 +3819,16 @@
       ],
       "inventoryStatus": "INVENTARIADO",
       "extractionStatus": "EXTRAÍDO",
-      "engineConnection": "PENDING",
-      "instrumentFormats": [],
-      "serviceVerification": "NOT_RUN",
-      "interfaceVerification": "NOT_RUN",
-      "pending": "Revisar temas y cobertura evaluativa del ámbito.",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
       "elements": {
         "CONCEPT": [
           {
@@ -5072,18 +5077,61 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+          "procedures": [
+            {
+              "id": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de la entrevista realizada a personas destacadas de la comunidad;\nanticipación del contenido a partir de la introducción; identificación de la intención\ncomunicativa que escucha; presentación (saludo, del entrevistado, del tema y el\nmotivo), cuerpo (preguntas y respuestas), cierre (resumen de lo tratado y/o valoración\npersonal), para mayor comprensión.\nRealización de inferencias basadas en las relaciones locales que existen entre las ideas\nque escucha, haciendo uso de las oraciones interrogativas y enunciativas, el tiempo\nverbal y el tono confesional que es propio de este tipo de texto; realización de las\ninferencias necesarias para comprender el sentido de la lectura que escucha.",
+              "pdfPage": 82,
+              "printedPage": "81",
+              "sourceOrder": 822000
+            },
+            {
+              "id": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+              "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa en la que participa como entrevistador/a;\ninvestigación y selección de los personajes relevantes de la comunidad para su\nrealización, según sus valores, aportes y transcendencia; delimitación del alcance de\nla entrevista: público, temas y contenido; elaboración de las preguntas, ajustándose a\nla intención comunicativa y al orden lógico con que se presentan las ideas. Realización\nde las preguntas, tomando en cuenta la estructura textual; desarrollo de estrategias\nde selección, registro y organización de la información necesaria para estructurar las\npreguntas en la que participa como entrevistador/a.\nSelección del vocabulario temático y del registro a la situación de comunicación;\nincorporación de recursos no verbales (gestos, entonación, postura física, tono de voz)\npara apoyar el contenido lingüístico adecuándolos a la expresión verbal.",
+              "pdfPage": 82,
+              "printedPage": "81",
+              "sourceOrder": 822001
+            },
+            {
+              "id": "170e292f-5990-583e-b30d-85502da48c63",
+              "text": "Comprensión escrita (leer)\nRealización de inferencias basadas en las relaciones locales que existen entre las ideas\nde la entrevista que lee; inferencia, a partir del contexto del significado de palabras\ndesconocidas contenidas en la transcripción; utilización del diccionario, en versión\nfísica y/o digital, para buscar la definición de las palabras que lee cuyo significado no\nha podido inferir. Realización de las inferencias necesarias para comprender el sentido\nglobal que lee; tomando en cuenta la estructura textual, la intención comunicativa, los\ntemas tratados a través de las diversas preguntas y respuestas.",
+              "pdfPage": 82,
+              "printedPage": "81",
+              "sourceOrder": 822002
+            },
+            {
+              "id": "224222b7-69db-52aa-9a0f-7a33ef8da209",
+              "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa de la entrevista en la que participa como\nentrevistador/a; investigación y selección de los personajes relevantes de la comunidad\npara su realización, según los valores, aportes y transcendencia; delimitación del alcance\nde la entrevista: público, temas y contenido. Elaboración de las",
+              "pdfPage": 82,
+              "printedPage": "81",
+              "sourceOrder": 822003
+            },
+            {
+              "id": "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1",
+              "text": "preguntas, ajustándose a la intención comunicativa y al orden lógico con que se\npresentan las ideas al/a la entrevistado/a; realización de las preguntas tomando en\ncuenta la estructura textual.\nDesarrollo de estrategias de selección, registro y organización de la información\nnecesaria para estructurar las preguntas en las que participa como entrevistador/a,\nselección del vocabulario temático y del registro adecuado a la situación de\ncomunicación en la que tiene lugar la entrevista; utilización de formas verbales\nen primera persona y en tono confesional (yo creo, yo considero, yo diría que, he\nintentado) en la entrevista.\nElaboración de borradores ajustándose a la intención, al/a la entrevistado/a y a la\nestructura de la entrevista. Revisión y corrección de los borradores con ayuda del/de\nla docente y de los compañeros y las compañeras.",
+              "pdfPage": 83,
+              "printedPage": "82",
+              "sourceOrder": 832000
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-3-cierre.md",
+          "catalogVersion": "evaluation-2026.27"
         },
         {
           "id": "9e516a4a-e640-5e3f-914f-1a626b6e8fb8",
@@ -5162,18 +5210,54 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+          "procedures": [
+            {
+              "id": "62759c0a-eb13-5f62-9a7a-3a1275e6db40",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de crónicas leídas en el aula y/o difundidas a través de algún medio\nde comunicación (periódico, radio, televisión…); anticipación del contenido que\nescucha a partir del título o de otras marcas textuales; identificación de la intención\ncomunicativa para entender su sentido global.\nUtilización de la estructura para mejor comprensión del contenido; inferencia del rol\ny la imagen del hablante en la crónica que escucha. Identificación de los hechos, del\nambiente y de las personas referidas en la crónica que escucha.",
+              "pdfPage": 83,
+              "printedPage": "82",
+              "sourceOrder": 832001
+            },
+            {
+              "id": "e884e94b-bfce-56a4-aa55-5bd2a65c1c8c",
+              "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa de la crónica que producirá oralmente.\nSelección con la ayuda del/de la docente sobre los detalles que se resaltan en el\ntema. Narrar de acuerdo con la intención comunicativa y los/las interlocutores/as,\najustándose a los hechos seleccionados para destacar el acto comunicativo. Utilización\nde conectores temporales para secuenciar los hechos noticiosos seleccionados.\nUtilización de sinónimos para adecuar las palabras que destacan los hechos\nnoticiosos que desea resaltar en la crónica; modalización de los hechos narrados en\nla crónica utilizando los adverbios de modo necesarios para transmitir la información,\nadecuándose a la situación comunicativa.",
+              "pdfPage": 83,
+              "printedPage": "82",
+              "sourceOrder": 832002
+            },
+            {
+              "id": "176e5422-77ee-59e3-98b3-9a2dee2f209e",
+              "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura de una crónica; anticipación del\ncontenido a partir del título y otras marcas paratextuales (título, volanta, copete,\nfotografía, epígrafe) utilizados en la crónica. Utilización de la estructura narrativa y\nde los componentes destacados en el cuerpo (qué, cómo, cuándo, quiénes) para\ncomprender la relevancia de la información.\nInferencia a partir del contexto del significado de las palabras que desconoce;\nutilización del diccionario en formato físico, virtual o digital para buscar la definición\nde las palabras cuyo significado no ha podido inferir a partir del contexto. Inferencia\nde la secuencia de los hechos a través de los conectores utilizados en la crónica;\nrealización de las inferencias necesarias para comprender el sentido global; paráfrasis\ndel sentido de la crónica, utilizando el vocabulario adecuado a este tipo de texto.",
+              "pdfPage": 83,
+              "printedPage": "82",
+              "sourceOrder": 832003
+            },
+            {
+              "id": "61498b07-49c4-5566-9a37-928495c3e1a7",
+              "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa; selección de los hechos noticiosos\nque destacará la información; investigación de los hechos, las causas y las posibles\nconsecuencias para destacarlos en la crónica; selección de la información relevante\nsobre los hechos que se resaltarán; elaboración de un esquema para organizar la\ninformación que presentará. Determinación de la audiencia y el registro que utilizará\npara transmitir la información.\nEmpleo de adverbios, preposiciones, pronombres y conectores de temporalidad\nnecesarios para transmitir la información en la crónica de forma coherente y cohesiva;\nempleo de la normativa: signos de puntuación; elaboración de los borradores\nnecesarios para la redacción final de la crónica enfatizando la corrección de los\nproblemas de contenido y la revisión de la normativa. Revisión y corrección de los\nborradores con ayuda del/de la docente y de los/las compañeros/as; ilustración con\nimágenes que contribuyan a la comprensión de los hechos dados a conocer en la\ncrónica.",
+              "pdfPage": 83,
+              "printedPage": "82",
+              "sourceOrder": 832004
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-3-cierre.md",
+          "catalogVersion": "evaluation-2026.27"
         },
         {
           "id": "613b5847-3a67-5eb1-a91e-2a388725792c",
@@ -5259,18 +5343,54 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+          "procedures": [
+            {
+              "id": "e38ba93b-efd5-502d-a18e-942a667993f7",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de catálogos leídos por los/las compañeros/as; anticipación del\ncontenido a partir del título u otras marcas textuales; inferencia de la intención\ncomunicativa que escucha; utilización de la estructura para comprender su contenido;\ninferencia a partir del contexto del significado de las palabras que desconoce.\nRealización de las inferencias necesarias para comprender el sentido global del\ncatálogo que escucha; utilización de la información gráfica, como dibujos y fotografías;\nparáfrasis del sentido global, utilizando el vocabulario apropiado para presentar la\ninformación.",
+              "pdfPage": 84,
+              "printedPage": "83",
+              "sourceOrder": 842000
+            },
+            {
+              "id": "4a0015fc-92e8-5376-ba65-4926a10a10ec",
+              "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del texto que va a producir oralmente;\nselección de las especies de la flora y la fauna del país; recopilación de la información\nnecesaria de cada especie: nombre común, nombre científico, descripción,\nreproducción, hábitat, conservación y peligros o amenazas, utilizando diversas\nfuentes impresas y electrónicas.\nDelimitación del alcance de su catálogo (tipo, tema y diseño de presentación) y el tipo\nde soporte (físico o digital); elaboración de mapas, gráficos o collage de fotografías\npara apoyar gráficamente el tema. Utilización de hipónimos e hiperónimos para\nreferirse a las especies de la flora y la fauna, utilización de un vocabulario adecuado\npara presentar la información.",
+              "pdfPage": 84,
+              "printedPage": "83",
+              "sourceOrder": 842001
+            },
+            {
+              "id": "1ad70373-5325-5f14-b269-5fc7c1a8a710",
+              "text": "Comprensión escrita (leer)\nEstablecimiento del propósito para la lectura del catálogo. Anticipación del contenido\ndel texto a partir del título y otras marcas paratextuales como dibujos y fotografías;\nidentificación de la secuencia textual descriptiva y sus características; activación de\nlos conocimientos previos necesarios para comprender el contenido; identificación\nde la intención comunicativa del texto.\nLectura en silencio o en voz alta en material impreso o en la pantalla, respetando las\nconvenciones de la lengua escrita; inferencia a partir del contexto del significado de\nlas palabras que desconoce; utilización del diccionario en formato impreso, digital o\nvirtual para buscar la definición de las palabras cuyo significado desconoce.\nRealización de las inferencias necesarias para comprender globalmente el sentido de\nla lectura; utilización de la estructura para comprender su contenido; reconstrucción\ndel sentido del texto por medio del resumen o la paráfrasis utilizando un vocabulario\napropiado.",
+              "pdfPage": 84,
+              "printedPage": "83",
+              "sourceOrder": 842002
+            },
+            {
+              "id": "67b4db6b-b784-52fa-a457-e1c993ebd096",
+              "text": "Producción escrita (escribir)\nLectura en silencio o en voz alta del catálogo en material impreso o en la pantalla,\nrespetando las convenciones de la lengua escrita; utilización del diccionario en\nformato impreso, digital o virtual para busca la definición de las palabras cuyo\nsignificado desconoce; utilización de la estructura para comprender su contenido;\nreconstrucción del sentido del texto por medio de la paráfrasis o resumen.\nDelimitación del alcance de su catálogo: tipo, tema y diseño de presentación y el\ntipo de soporte (físico o electrónico); elaboración de mapas, gráficos o collage de\nfotografías para apoyarse gráficamente en el tema.\nUtilización del vocabulario en la intención comunicativa; escritura de los primeros\nborradores, tomando en cuenta las características textuales previamente establecidas,\nasí como los signos auxiliares de la escritura; revisión de los borradores con ayuda\nde sus pares o el/la profesor/a, teniendo en cuenta el uso de los recursos del texto\ndescriptivo.",
+              "pdfPage": 84,
+              "printedPage": "83",
+              "sourceOrder": 842003
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-3-cierre.md",
+          "catalogVersion": "evaluation-2026.27"
         },
         {
           "id": "236be722-0ef3-5211-9dd2-5af2c786fad6",
@@ -5356,18 +5476,38 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN",
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+          "procedures": [
+            {
+              "id": "e259c20a-339a-5cbb-929d-277bbccb1ca5",
+              "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura del informe de experimento.\nAnticipación del contenido a partir de marcas textuales y paratextuales (gráficos,\ntablas, imágenes); inferencia de la intención comunicativa a partir de su estructura y\ndel vocabulario que le es propio; identificación de los conectores de secuenciación y\nde causalidad para comprender las relaciones lógicas entre las ideas contenidas en el\nprocedimiento y en la interpretación de los datos del informe que lee.\nUtilización del diccionario en versión física y/o digital para buscar la definición de\npalabras cuyo significado no ha podido inferir a partir del texto;\nRealización de inferencias a partir de tablas, gráficos, dibujos y otras marcas\nparatextuales presentes; paráfrasis del texto que lee a partir de la idea principal\ny las ideas secundarias, ajustándose a la intención comunicativa y a su estructura;\nconstrucción de mapas conceptuales, manuscritos y/o digitales, para dar cuenta de la\ncomprensión del informe de experimento leído.",
+              "pdfPage": 85,
+              "printedPage": "84",
+              "sourceOrder": 852000
+            },
+            {
+              "id": "ed5ff54f-fb19-575b-a4e1-0f3a6f69a9d5",
+              "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del informe de experimento que\nescribe.\nSelección del experimento sobre el que escribirá el informe; selección de las fuentes\nde información, en versión física y/o digital, que va a utilizar para producir por escrito\nlas ideas del experimento; desarrollo de estrategias de registro de la información\nnecesaria para el texto que escribe, utilizando esquemas que organizan las ideas\nsegún la estructura de este tipo de escritura. Estructuración de las ideas, atendiendo a\nlas partes que lo componen y al uso de la gramática específica (formas impersonales\ndel verbo, perífrasis verbales, palabras compuestas, conectores de secuenciación y de\ncausalidad, frases incidentales y adverbios de modo).\nUtilización de recursos paratextuales (tablas, gráficos, dibujos…) para ilustrar el\ncontenido del informe que escribe. Selección del léxico adecuado a la intención\ncomunicativa, a los/las interlocutores/as y al vocabulario temático; asignación de un\ntítulo coherente con el contenido del texto; redacción de borradores, manuscritos y/o\ndigitales correspondientes al Área de Ciencias de la Naturaleza, tomando en cuenta la\nintención comunicativa del mismo; revisión y corrección del informe de experimento\nde manera individual y con la colaboración del/de la docente y de sus compañeros\no compañeras.",
+              "pdfPage": 85,
+              "printedPage": "84",
+              "sourceOrder": 852001
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
           "sourceNotes": [
             {
               "id": "def6253f-9610-535f-ba61-e7ea99083b29",
@@ -5376,7 +5516,9 @@
               "printedPage": "84",
               "sourceOrder": 851011
             }
-          ]
+          ],
+          "report": "lengua-3-cierre.md",
+          "catalogVersion": "evaluation-2026.27"
         },
         {
           "id": "f7019573-c2eb-5685-a2bf-a0ac16c1e300",
@@ -5441,18 +5583,54 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+          "procedures": [
+            {
+              "id": "21c4058c-30c8-54e1-9897-9a2540961219",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de artículos de opinión leídos por el/la docente y por los/ las\ncompañeros/as de curso; anticipación del contenido a partir del título y otras marcas\ntextuales, identificación de la intención comunicativa del artículo de opinión para\ncomprender el sentido global del mismo. Utilización de la estructura (punto de\npartida, tesis, argumentos y conclusión) para comprender su contenido.\nUtilización del diccionario en versión física y/o digital para buscar la definición\nde palabras cuyo significado no ha podido inferir a partir del texto; realización de\nlas inferencias necesarias para comprender el sentido del artículo que escucha;\nidentificación de la tesis y los argumentos que la apoyan para comprender el texto\nque escucha; paráfrasis del contenido que escucha apoyándose en la postura y los\nargumentos del/del autor/a.",
+              "pdfPage": 85,
+              "printedPage": "84",
+              "sourceOrder": 852002
+            },
+            {
+              "id": "4776afa3-9e42-5777-a564-b2e91dc807da",
+              "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del comentario; selección del tema o\nproblemática que va a comentar; investigación de la temática o problemática que va\na desarrollar en el artículo de opinión. Planificación de los argumentos y la tesis del\ncomentario que va a producir de modo oral; formulación de la tesis para expresar su\nopinión respecto del tema. Estructuración de los argumentos para apoyar la tesis,\nhaciendo uso de adjetivos, conectores y marcadores que denoten la postura asumida.\nOrganización lógica de los argumentos para defender la tesis acerca de la realidad del\ncomentario; utilización del vocabulario en la intención comunicativa, a la audiencia\ny al tema seleccionado; utilización de citas textuales, de ejemplos y analogías para\napoyar su opinión sobre la problemática presentada; estructuración de la tesis y los\nargumentos que va a producir oralmente, tomando en cuenta el uso de los conectores,\nla nominalización, los adjetivos, los argumentos de autoridad, ejemplificación,\nanalogía y el tipo de registro.",
+              "pdfPage": 85,
+              "printedPage": "84",
+              "sourceOrder": 852003
+            },
+            {
+              "id": "009b844a-c752-5b50-adf9-72cea44b5d6d",
+              "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura de artículos de opinión sobre temas\ncontroversiales de su realidad personal o social; lectura atenta en la prensa escrita\n(virtual o impresa); anticipación del contenido de la lectura a partir del título y otras\nmarcas textuales. Utilización de la estructura para comprender su contenido.\nUtilización del diccionario para buscar la definición de las palabras cuyo significado\nno ha podido inferir; identificación de la tesis defendida por el/la autor/a del\nartículo de opinión que lee y de los argumentos que ofrece, utilizando la técnica del\nsubrayado. Realización de las inferencias necesarias para comprender el artículo que\nlee; paráfrasis de la tesis y de los argumentos del/de la autora/a.",
+              "pdfPage": 86,
+              "printedPage": "85",
+              "sourceOrder": 862000
+            },
+            {
+              "id": "147f6896-1896-5640-b2dd-2562d5015ffe",
+              "text": "Producción escrita (escribir)\nSelección de la temática que va a desarrollar en el artículo de opinión; investigación\nde la temática o problemática que va a desarrollar. Establecimiento de la intención\ncomunicativa; planificación de la tesis y los argumentos que va a desarrollar; selección\ndel vocabulario apropiado a la intención comunicativa, a la audiencia y al tema\nseleccionado.\nEstructuración del artículo que va a producir; escritura de borradores, manuscritos,\ndigitales, ajustándose al tema del comentario (punto de partida, tesis, argumentos,\nconclusión); asignación de un título y/o (y un subtítulo, si es necesario) en función\ndel contenido del texto; revisión y corrección del artículo que escribe, tomando en\ncuenta las sugerencias de sus pares y del/de la docente, además de las ideas propias,\natendiendo a la intención comunicativa, al tema, a la audiencia, a la estructura del\ntexto, a los párrafos, las oraciones, al léxico y la ortografía.",
+              "pdfPage": 86,
+              "printedPage": "85",
+              "sourceOrder": 862001
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-3-cierre.md",
+          "catalogVersion": "evaluation-2026.27"
         },
         {
           "id": "00f602dd-e9d8-50c5-b1d6-07b5e8d983b3",
@@ -5552,18 +5730,54 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+          "procedures": [
+            {
+              "id": "83a0ab4b-a8f4-5188-862a-9756a880e047",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de cuentos leídos por el/la profesor/a o grabados de la radio, del\nInternet o la televisión; anticipación del contenido a través del título y otras marcas\ntextuales; inferencia, a partir del contexto del significado de las palabras que\ndesconoce.\nRealización de las inferencias necesarias para comprender el sentido del cuento que\nescucha en forma oral o grabada. Reconocimiento de los personajes (principales,\nsecundarios, ambientales, incidentales o fugaces) y de los actantes (sujeto, objeto,\ncolaborador, aliado, cómplice, oponente) para comprender las motivaciones que\ndefinen sus acciones.",
+              "pdfPage": 86,
+              "printedPage": "85",
+              "sourceOrder": 862002
+            },
+            {
+              "id": "a3e52e12-2a22-5aa4-b165-eec759f65571",
+              "text": "Producción oral (hablar)\nDescripción del ambiente físico (cerrado, abierto, rural) y psicológico (conflicto,\nangustia, opresivo, alegre) para establecer la relación de influencia con los personajes;\nutilización de los elementos formales de la lengua propios de este tipo de texto:\ntiempos verbales, adjetivos, adverbios de tiempo y de secuencia, así como conectores\nlógicos para dar a entender con mayor claridad el texto narrado. Modulación,\nentonación, matización y cambios de voz en las entradas de los personajes, según sus\nactitudes y acciones para una mejor comprensión del cuento narrado.\nNarración del cuento ajustándose a la estructura, los elementos y la intención\ncomunicativa. Resumen o paráfrasis de la historia contada.",
+              "pdfPage": 86,
+              "printedPage": "85",
+              "sourceOrder": 862003
+            },
+            {
+              "id": "d2680b65-eac2-57e1-ae9a-5404d78d548e",
+              "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura del cuento social y cultural. Inferencia\ndel contenido del cuento a partir del título y otras marcas paratextuales (imagen,\ncolor, gráficos, cubierta). Utilización del diccionario en formato impreso, digital o\nvirtual para buscar la definición de las palabras y expresiones cuyo significado no ha\npodido inferir.\nLectura en silencioo en voz alta, en material impreso o en la pantalla, respetando las\nconvenciones de la lengua escrita. Utilización de la estructura del cuento (esquema\nnarrativo): la introducción, la complicación, la resolución y la evaluación para\ncomprender el texto. Reconocimiento de los personajes (principales, secundarios,\nambientales, incidentales o fugaces) y los actantes (sujeto, objeto, aliado, oponente)\npara comprender las motivaciones que definen sus acciones y funciones; utilización y\nreconocimiento de conectores coordinantes y subordinantes (y, e, ni, que, porque, ya\nque, de este modo, pues, por eso, de ahí que) para comprender la relación, coherencia\ny orden lógico en la narración.",
+              "pdfPage": 86,
+              "printedPage": "85",
+              "sourceOrder": 862004
+            },
+            {
+              "id": "08484b46-dcc2-593f-bc3b-e119742a7eae",
+              "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del cuento sobre temas de la realidad\nsocial, política o cultural que escribirá. Elección del tema o trama que abordará.\nElaboración de un esquema secuencial que servirá de guion para la escritura\ndel cuento; utilización de elementos formales y gramaticales (verbos, adverbios,\npronombres) en la producción escrita; utilización de un vocabulario según la\nintención comunicativa, los personajes que intervienen y el tema tratado.\nRecreación del escenario o ambiente en el que actuarán los personajes de la\nhistoria; escritura de los borradores del cuento social, político o cultural, tomando\nen cuenta la intención, los/las interlocutores/as, la estructura y las convenciones de\nla lengua escrita. Revisión y corrección del relato compartiéndolo con compañeros y\ncompañeras y con profesores/as; edición final y publicación en formato físico o digital.",
+              "pdfPage": 87,
+              "printedPage": "86",
+              "sourceOrder": 872000
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-3-cierre.md",
+          "catalogVersion": "evaluation-2026.27"
         },
         {
           "id": "0f3b956f-31a9-565d-9db4-9f07efd83410",
@@ -5614,25 +5828,63 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos en el cotejo de fuente de 3.º. No garantiza interpretar toda descripción. Continuar 4.º–6.º en orden.",
+          "procedures": [
+            {
+              "id": "d970dd52-e4eb-51d6-8324-32c5a4009c3a",
+              "text": "Comprensión oral (escuchar)\nAnticipación del contenido del poema a partir del título; escucha atenta de\nmadrigales de poetas españoles y latinoamericanos. Reconocimiento de la intención\ncomunicativa del autor y de los sentimientos que expresa; uso de la estructura, de la\nrima, el ritmo y las figuras literarias (epíteto, personificación, hipérbole, hipérbaton,\nsinestesia) presentes para comprender sus significados explícitos e implícitos y\ndisfrutar de las emociones que provoca. Identificación de los cambios de voz y de\nentonación con los sentimientos que el poema transmite. Paráfrasis oral utilizando el\nvocabulario en este tipo de texto.",
+              "pdfPage": 87,
+              "printedPage": "86",
+              "sourceOrder": 872001
+            },
+            {
+              "id": "f4bc4dc2-b55e-58c4-8b6a-f08fed62b232",
+              "text": "Producción oral (hablar)\nSelección de madrigales de autores españoles, latinoamericanos, caribeños y\ndominicanos, acordes a la intención comunicativa que quiere expresar; verbalización\nde figuras literarias (epíteto, personificación, hipérbole, hipérbaton, sinestesia), la\nrima y los versos del madrigal, usando la entonación y lenguaje gestual, acordes a la\nintención comunicativa y a los sentimientos que se quieren expresar. Uso de cambios\nde voz y de entonación, atendiendo a los sentimientos que el madrigal transmite.",
+              "pdfPage": 87,
+              "printedPage": "86",
+              "sourceOrder": 872002
+            },
+            {
+              "id": "2bd30d3c-7fd2-5f09-a4e1-27d27095c687",
+              "text": "Comprensión escrita (leer)\nAnticipación del contenido del madrigal a partir del título; establecimiento de\nun propósito para la lectura; inferencia a partir del contexto del significado de las\npalabras que desconoce. Reconocimiento de la intención comunicativa del autor y\nde los sentimientos que expresa.\nUso de la estructura (versos de siete y once sílabas), para comprender su significado;\nutilización de la rima y el ritmo y las figuras literarias (epíteto, personificación,\nhipérbole, hipérbaton, sinestesia) presentes para comprender sus significados\nimplícitos y disfrutar de las emociones que provoca; paráfrasis del sentido poético,\nutilizando el vocabulario de este tipo de texto.",
+              "pdfPage": 87,
+              "printedPage": "86",
+              "sourceOrder": 872003
+            },
+            {
+              "id": "87a532f1-23da-5d70-b533-136126263946",
+              "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir; selección del\ntema del madrigal; uso de la rima consonante de versos heptasílabos y endecasílabos.\nUtilización de vocabulario, el sentimiento o emoción que quiere expresar; utilización\nde figuras literarias: epíteto, personificación, hipérbole, hipérbaton, sinestesia en su\nproducción escrita; escritura de borradores, atendiendo su estructura, rima, figuras\nliterarias y vocabulario; revisión y corrección de borradores con ayuda del docente y\nlos compañeros. Edición y publicación del madrigal en un mural, en un libro artesanal\no en una revista escolar.",
+              "pdfPage": 87,
+              "printedPage": "86",
+              "sourceOrder": 872004
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_82_88",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-3-cierre.md",
+          "catalogVersion": "evaluation-2026.27"
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
-      "implementation": "PENDING",
-      "automatedVerification": "NOT_RUN",
-      "manualVerification": "NOT_RUN",
-      "applicationVerification": "NOT_RUN"
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "report": "lengua-3-cierre.md",
+      "catalogVersion": "evaluation-2026.27"
     },
     {
       "id": "49f16425-4d1d-5798-9af5-c69ba22b8020",

@@ -10,5 +10,7 @@ export function instrumentAcademicContext(subject?: SectionSubjectOption | null)
   const secondary=level.startsWith('secundar')
   const grade = secondary && sequence >= 7 ? sequence - 6 : sequence
   if (!Number.isInteger(grade) || grade < 1 || grade > 6) return null
-  return { level:secondary?'SECONDARY':'PRIMARY', grade, subjectCode: subject.subjectCode ?? '', subjectName: subject.subjectName }
+  const subjectName=subject.subjectName.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().trim()
+  const subjectCode=subject.subjectCode?.trim().toUpperCase() || (subjectName==='lengua espanola'?'LEN':'')
+  return { level:secondary?'SECONDARY':'PRIMARY', grade, subjectCode, subjectName: subject.subjectName }
 }

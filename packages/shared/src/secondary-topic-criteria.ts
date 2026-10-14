@@ -2,6 +2,7 @@ import { topicTaskMode } from './secondary-language-topics'
 import type { SecondaryLanguageTopic } from './secondary-topic-types'
 import {completeSecondGradeLanguageCriteria} from './secondary-language-grade-two-complete'
 import {affirmativeLanguageTask} from './language-feature-criteria'
+import {thirdGradeLanguageCriteria} from './secondary-language-grade-three-complete'
 
 export type ContextualTopicCriterion = {
   templateId: string; title: string; observable: string; weight: number
@@ -147,6 +148,7 @@ function baseSecondaryTopicCriteria(topic: SecondaryLanguageTopic, activityType:
 }
 
 export function secondaryTopicCriteria(topic:SecondaryLanguageTopic,activity:string,description:string):ContextualTopicCriterion[] {
+  if(topic.grade===3)return thirdGradeLanguageCriteria(topic,activity,description)
   const base=baseSecondaryTopicCriteria(topic,activity,description)
   return topic.grade===2?completeSecondGradeLanguageCriteria(topic.id,activity,description,base):base
 }

@@ -1,0 +1,560 @@
+[
+  {
+    "id": "procedure-1",
+    "topic": "entrevista",
+    "sourceId": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+    "description": "Escucharán una entrevista, anticiparán el tema a partir de la introducción y comprobarán sus predicciones.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-prediction",
+    "contains": "predicción",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-2",
+    "topic": "entrevista",
+    "sourceId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+    "description": "Realizarán oralmente una entrevista a un personaje de la comunidad seleccionado por sus aportes. Organizarán las preguntas con vocabulario temático, registro formal y gestos pertinentes.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "procedure-interviewee",
+    "contains": "aportes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-3",
+    "topic": "entrevista",
+    "sourceId": "170e292f-5990-583e-b30d-85502da48c63",
+    "description": "Leerán una entrevista, inferirán el significado de palabras desconocidas por el contexto y comprobarán una acepción en el diccionario.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-dictionary",
+    "contains": "acepción",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-4",
+    "topic": "entrevista",
+    "sourceId": "224222b7-69db-52aa-9a0f-7a33ef8da209",
+    "description": "Planificarán una entrevista delimitando el propósito, el público y el orden de las preguntas en un guion.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-outline",
+    "contains": "orden de las preguntas",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-5",
+    "topic": "entrevista",
+    "sourceId": "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1",
+    "description": "Redactarán una entrevista usando formas verbales en primera persona y tono confesional. Revisarán los borradores.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-first-person",
+    "contains": "primera persona",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-6",
+    "topic": "cronica",
+    "sourceId": "62759c0a-eb13-5f62-9a7a-3a1275e6db40",
+    "description": "Escucharán una crónica, identificarán los hechos, el ambiente y la perspectiva del cronista.",
+    "type": "ANALYSIS",
+    "criterion": "perspective",
+    "contains": "perspectiva",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-7",
+    "topic": "cronica",
+    "sourceId": "e884e94b-bfce-56a4-aa55-5bd2a65c1c8c",
+    "description": "Narrarán oralmente una crónica usando conectores de secuenciación temporal, sinónimos y adverbios de modo.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-manner",
+    "contains": "producción oral",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-8",
+    "topic": "cronica",
+    "sourceId": "176e5422-77ee-59e3-98b3-9a2dee2f209e",
+    "description": "Leerán una crónica, anticiparán su contenido a partir de la volanta, el copete y el epígrafe, y parafrasearán los hechos.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "cronista",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-9",
+    "topic": "cronica",
+    "sourceId": "61498b07-49c4-5566-9a37-928495c3e1a7",
+    "description": "Redactarán una crónica. Investigarán los hechos y sus causas, planificarán un esquema y revisarán borradores. Incorporarán imágenes que aclaren los hechos.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "research-sources",
+    "contains": "fuentes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-10",
+    "topic": "catalogo",
+    "sourceId": "e38ba93b-efd5-502d-a18e-942a667993f7",
+    "description": "Escucharán un catálogo y reconstruirán con sus propias palabras las características de las especies.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "especies",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-11",
+    "topic": "catalogo",
+    "sourceId": "4a0015fc-92e8-5376-ba65-4926a10a10ec",
+    "description": "Producirán oralmente un catálogo de flora y fauna indicando nombre común, nombre científico, reproducción, hábitat, conservación y amenazas. Recopilarán datos de fuentes.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "procedure-species-data",
+    "contains": "hábitat",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-12",
+    "topic": "catalogo",
+    "sourceId": "1ad70373-5325-5f14-b269-5fc7c1a8a710",
+    "description": "Leerán un catálogo, inferirán el significado de palabras desconocidas por el contexto y resumirán su información.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-vocabulary",
+    "contains": "contexto",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-13",
+    "topic": "catalogo",
+    "sourceId": "67b4db6b-b784-52fa-a457-e1c993ebd096",
+    "description": "Elaborarán un catálogo con gráficos o fotografías en soporte digital. Revisarán sus borradores y la legibilidad de sus entradas.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-graphics",
+    "contains": "gráficos o fotografías",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-14",
+    "topic": "informe-experimento",
+    "sourceId": "e259c20a-339a-5cbb-929d-277bbccb1ca5",
+    "description": "Leerán un informe de experimento y elaborarán un mapa conceptual del procedimiento, los resultados y su interpretación.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-organizer",
+    "contains": "resultados",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-15",
+    "topic": "informe-experimento",
+    "sourceId": "ed5ff54f-fb19-575b-a4e1-0f3a6f69a9d5",
+    "description": "Redactarán un informe de experimento con los datos dados. Planificarán un esquema, usarán formas impersonales, perífrasis verbales y frases incidentales. Revisarán el borrador.",
+    "type": "REPORT",
+    "criterion": "feature-impersonal",
+    "contains": "Emplea",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-16",
+    "topic": "articulo-opinion",
+    "sourceId": "21c4058c-30c8-54e1-9897-9a2540961219",
+    "description": "Escucharán un artículo de opinión y parafrasearán la tesis y los argumentos del autor.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "tesis",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-17",
+    "topic": "articulo-opinion",
+    "sourceId": "4776afa3-9e42-5777-a564-b2e91dc807da",
+    "description": "Producirán oralmente un artículo de opinión con una tesis sustentada mediante citas textuales, ejemplos y analogías.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-argument-types",
+    "contains": "producción oral",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-18",
+    "topic": "articulo-opinion",
+    "sourceId": "009b844a-c752-5b50-adf9-72cea44b5d6d",
+    "description": "Leerán un artículo de opinión y subrayarán la tesis y sus argumentos justificando las partes seleccionadas.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-underlining",
+    "contains": "Subraya",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-19",
+    "topic": "articulo-opinion",
+    "sourceId": "147f6896-1896-5640-b2dd-2562d5015ffe",
+    "description": "Escribirán un artículo de opinión. Planificarán tesis y argumentos, usarán modalizadores y revisarán los borradores según las sugerencias de sus compañeros.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-modalizers",
+    "contains": "Emplea",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-20",
+    "topic": "cuento-social",
+    "sourceId": "83a0ab4b-a8f4-5188-862a-9756a880e047",
+    "description": "Escucharán un cuento social e identificarán personajes principales, secundarios y actantes, vinculándolos con sus motivaciones.",
+    "type": "ANALYSIS",
+    "criterion": "feature-actants",
+    "contains": "actantes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-21",
+    "topic": "cuento-social",
+    "sourceId": "a3e52e12-2a22-5aa4-b165-eec759f65571",
+    "description": "Narrarán oralmente un cuento político describiendo el ambiente físico y psicológico y variando la voz según los personajes.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-setting",
+    "contains": "producción oral",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-22",
+    "topic": "cuento-social",
+    "sourceId": "d2680b65-eac2-57e1-ae9a-5404d78d548e",
+    "description": "Leerán un fragmento de cuento cultural y explicarán sus conectores coordinantes y subordinantes mediante ejemplos disponibles.",
+    "type": "ANALYSIS",
+    "criterion": "feature-connectors",
+    "contains": "subordinantes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-23",
+    "topic": "cuento-social",
+    "sourceId": "08484b46-dcc2-593f-bc3b-e119742a7eae",
+    "description": "Escribirán un cuento social, planificarán un esquema secuencial, usarán variantes lingüísticas y revisarán borradores. Publicarán la versión final en el medio acordado.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "process-publication",
+    "contains": "medio solicitado",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-24",
+    "topic": "madrigal",
+    "sourceId": "d970dd52-e4eb-51d6-8324-32c5a4009c3a",
+    "description": "Escucharán un madrigal, anticiparán su sentido a partir del título y parafrasearán los sentimientos de los versos.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "sentimientos",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-25",
+    "topic": "madrigal",
+    "sourceId": "f4bc4dc2-b55e-58c4-8b6a-f08fed62b232",
+    "description": "Recitarán un madrigal usando cambios de voz y gestos para expresar los sentimientos de los versos y hacer perceptible la sinestesia.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-literary",
+    "contains": "sinestesia",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-26",
+    "topic": "madrigal",
+    "sourceId": "2bd30d3c-7fd2-5f09-a4e1-27d27095c687",
+    "description": "Leerán un madrigal, distinguirán sus versos de siete y once sílabas e interpretarán sus imágenes poéticas.",
+    "type": "ANALYSIS",
+    "criterion": "verse",
+    "contains": "cómputo",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-27",
+    "topic": "madrigal",
+    "sourceId": "87a532f1-23da-5d70-b533-136126263946",
+    "description": "Escribirán un madrigal usando rima consonante, hipérbaton y personificación. Revisarán borradores y publicarán el poema en un mural.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-literary",
+    "contains": "hipérbaton",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "family-1",
+    "topic": "entrevista",
+    "description": "Realizarán oralmente una entrevista empleando gestos y un tono de voz que facilite comprender las preguntas.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-nonverbal",
+    "contains": "gestos",
+    "absent": "postura física obligatoria"
+  },
+  {
+    "id": "family-2",
+    "topic": "entrevista",
+    "description": "Escribirán solamente las preguntas para una entrevista, sin transcribir respuestas.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "questions",
+    "contains": "preguntas",
+    "absent": "transcripción de respuestas"
+  },
+  {
+    "id": "family-3",
+    "topic": "cronica",
+    "description": "Redactarán una crónica explicando las causas y posibles consecuencias de los hechos documentados.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-causes",
+    "contains": "consecuencias",
+    "absent": "consecuencias comprobadas"
+  },
+  {
+    "id": "family-4",
+    "topic": "catalogo",
+    "description": "Elaborarán un catálogo con mapas y fotografías en soporte físico y digital.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-medium",
+    "contains": "físico y digital",
+    "absent": "físico o digital"
+  },
+  {
+    "id": "family-5",
+    "topic": "catalogo",
+    "description": "Elaborarán un catálogo con mapas o fotografías en soporte físico o digital.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-graphics",
+    "contains": "mapas o fotografías",
+    "absent": "mapas y fotografías"
+  },
+  {
+    "id": "family-6",
+    "topic": "informe-experimento",
+    "description": "Leerán un informe de experimento y reconstruirán su sentido usando una tabla o un diagrama.",
+    "type": "ANALYSIS",
+    "criterion": "feature-graphics",
+    "contains": "tabla o diagrama",
+    "absent": "tabla y diagrama"
+  },
+  {
+    "id": "family-7",
+    "topic": "informe-experimento",
+    "description": "Redactarán un informe de experimento que incluya una conclusión sustentada en los resultados dados.",
+    "type": "REPORT",
+    "criterion": "procedure-conclusion",
+    "contains": "resultados",
+    "absent": "experimento nuevo"
+  },
+  {
+    "id": "family-8",
+    "topic": "articulo-opinion",
+    "description": "Escribirán un artículo de opinión con una conclusión que retome su tesis y argumentos.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-conclusion",
+    "contains": "tesis",
+    "absent": "experimento"
+  },
+  {
+    "id": "family-9",
+    "topic": "articulo-opinion",
+    "description": "Elaborarán un comentario oral a partir de un artículo de opinión, defendiendo su tesis con argumentos.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "thesis",
+    "contains": "Formula",
+    "absent": "informe de experimento"
+  },
+  {
+    "id": "family-10",
+    "topic": "cuento-social",
+    "description": "Narrarán oralmente un cuento social variando la voz en las intervenciones de los personajes.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "procedure-voices",
+    "contains": "personajes",
+    "absent": "desenlace"
+  },
+  {
+    "id": "family-11",
+    "topic": "madrigal",
+    "description": "Recitarán un madrigal usando lenguaje gestual para comunicar los sentimientos de los versos.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-nonverbal",
+    "contains": "gestos",
+    "absent": "Escribe"
+  },
+  {
+    "id": "family-12",
+    "topic": "madrigal",
+    "description": "Escribirán un madrigal con rima consonante entre versos heptasílabos y endecasílabos.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "rhyme",
+    "contains": "consonante",
+    "absent": "diez versos"
+  },
+  {
+    "id": "family-13",
+    "topic": "entrevista",
+    "description": "Redactarán las preguntas de una entrevista sin realizarla oralmente.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "questions",
+    "contains": "Organiza preguntas",
+    "absent": "Comunica el tema"
+  },
+  {
+    "id": "family-14",
+    "topic": "entrevista",
+    "description": "Compararán dos entrevistas, relacionando sus preguntas, respuestas y objetivos.",
+    "type": "COMPARISON",
+    "criterion": "questions",
+    "contains": "Contrasta",
+    "absent": "Redacta"
+  },
+  {
+    "id": "family-15",
+    "topic": "entrevista",
+    "description": "Investigarán los aportes del entrevistado para preparar una entrevista pertinente.",
+    "type": "RESEARCH",
+    "criterion": "procedure-interviewee",
+    "contains": "aportes",
+    "absent": "Realiza"
+  },
+  {
+    "id": "family-16",
+    "topic": "cronica",
+    "description": "Compararán dos crónicas de un acontecimiento contrastando los hechos y las perspectivas.",
+    "type": "COMPARISON",
+    "criterion": "facts",
+    "contains": "Contrasta",
+    "absent": "Redacta"
+  },
+  {
+    "id": "family-17",
+    "topic": "cronica",
+    "description": "Elaborarán un informe sobre una crónica leída explicando sus hechos y secuencia.",
+    "type": "REPORT",
+    "criterion": "facts",
+    "contains": "Reconoce",
+    "absent": "Relata hechos"
+  },
+  {
+    "id": "family-18",
+    "topic": "cronica",
+    "description": "Investigarán los hechos de una crónica y contrastarán sus fuentes.",
+    "type": "RESEARCH",
+    "criterion": "research-sources",
+    "contains": "fuentes",
+    "absent": "Redacta"
+  },
+  {
+    "id": "family-19",
+    "topic": "catalogo",
+    "description": "Compararán dos catálogos de flora y fauna contrastando la información de sus entradas.",
+    "type": "COMPARISON",
+    "criterion": "entries",
+    "contains": "Compara",
+    "absent": "Elabora"
+  },
+  {
+    "id": "family-20",
+    "topic": "catalogo",
+    "description": "Investigarán datos de especies para un catálogo y registrarán sus fuentes.",
+    "type": "RESEARCH",
+    "criterion": "research-information",
+    "contains": "especies",
+    "absent": "Elabora"
+  },
+  {
+    "id": "family-21",
+    "topic": "catalogo",
+    "description": "Presentarán por escrito un catálogo de especies sin mapas ni fotografías.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "entries",
+    "contains": "Describe",
+    "absent": "recursos gráficos"
+  },
+  {
+    "id": "family-22",
+    "topic": "informe-experimento",
+    "description": "Compararán dos informes de experimento relacionando los resultados con sus datos.",
+    "type": "COMPARISON",
+    "criterion": "results",
+    "contains": "Compara",
+    "absent": "Realiza"
+  },
+  {
+    "id": "family-23",
+    "topic": "informe-experimento",
+    "description": "Presentarán oralmente el análisis de un informe de experimento leído.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "results",
+    "contains": "Distingue",
+    "absent": "Comunica los resultados disponibles"
+  },
+  {
+    "id": "family-24",
+    "topic": "articulo-opinion",
+    "description": "Compararán dos artículos de opinión contrastando tesis y argumentos.",
+    "type": "COMPARISON",
+    "criterion": "arguments",
+    "contains": "Contrasta",
+    "absent": "Redacta"
+  },
+  {
+    "id": "family-25",
+    "topic": "articulo-opinion",
+    "description": "Debatirán la tesis de un artículo de opinión respondiendo a argumentos con evidencias del texto.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Escribe"
+  },
+  {
+    "id": "family-26",
+    "topic": "articulo-opinion",
+    "description": "Investigarán información y fuentes para fundamentar un artículo de opinión.",
+    "type": "RESEARCH",
+    "criterion": "research-information",
+    "contains": "tesis",
+    "absent": "Redacta"
+  },
+  {
+    "id": "family-27",
+    "topic": "cuento-social",
+    "description": "Compararán fragmentos de cuentos sociales relacionando conflictos, personajes y ambiente.",
+    "type": "COMPARISON",
+    "criterion": "conflict",
+    "contains": "Contrasta",
+    "absent": "desenlace"
+  },
+  {
+    "id": "family-28",
+    "topic": "cuento-social",
+    "description": "Elaborarán un comentario escrito sobre un cuento social relacionando el narrador con los hechos disponibles.",
+    "type": "ANALYSIS",
+    "criterion": "narrator",
+    "contains": "Identifica",
+    "absent": "Escribe un cuento"
+  },
+  {
+    "id": "family-29",
+    "topic": "cuento-social",
+    "description": "Elaborarán un informe sobre un fragmento de cuento político con su interpretación del conflicto.",
+    "type": "REPORT",
+    "criterion": "conflict",
+    "contains": "Explica",
+    "absent": "desenlace"
+  },
+  {
+    "id": "family-30",
+    "topic": "madrigal",
+    "description": "Compararán dos madrigales contrastando sentimientos, versos y rima.",
+    "type": "COMPARISON",
+    "criterion": "rhyme",
+    "contains": "Contrasta",
+    "absent": "diez versos"
+  },
+  {
+    "id": "family-31",
+    "topic": "madrigal",
+    "description": "Presentarán por escrito su análisis de un madrigal con ejemplos de sus versos.",
+    "type": "ANALYSIS",
+    "criterion": "meaning",
+    "contains": "Interpreta",
+    "absent": "Recita"
+  },
+  {
+    "id": "family-32",
+    "topic": "madrigal",
+    "description": "Elaborarán un informe sobre un madrigal interpretando su sentido poético.",
+    "type": "REPORT",
+    "criterion": "meaning",
+    "contains": "Interpreta",
+    "absent": "Escribe un madrigal"
+  }
+]
