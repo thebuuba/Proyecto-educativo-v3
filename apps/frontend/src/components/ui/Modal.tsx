@@ -2,11 +2,12 @@
  * Modal o diálogo superpuesto con foco atrapado y cierre por Escape.
  */
 import { X } from 'lucide-react'
-import { useRef, type ComponentType, type ReactNode } from 'react'
+import { useEffect, useRef, type ComponentType, type ReactNode } from 'react'
 
 import { Button } from '@/components/ui/Button'
 import { SemanticIcon, type SemanticTone } from '@/components/ui/SemanticUI'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 import { cn } from '@/utils/cn'
 
 /** Propiedades del componente Modal. */
@@ -19,6 +20,8 @@ type ModalProps = {
   children: ReactNode
   /** Función llamada al cerrar el modal. */
   onClose: () => void
+  /** Impide cerrar mientras se completa una operación del formulario. */
+  closeDisabled?: boolean
   /** Clases adicionales para el contenedor del diálogo. */
   className?: string
   /** Clases adicionales para el contenedor desplazable del contenido. */
@@ -44,6 +47,7 @@ export function Modal({
   description,
   children,
   onClose,
+  closeDisabled = false,
   className,
   contentClassName,
   overlayClassName,
@@ -53,13 +57,18 @@ export function Modal({
   eyebrow,
 }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
-  useFocusTrap({ ref: dialogRef, active: true, onEscape: onClose })
+  useOutsideClick({ ref: dialogRef, onClose, disabled: closeDisabled })
+  useFocusTrap({ ref: dialogRef, active: true, onEscape: closeDisabled ? undefined : onClose })
+  useEffect(() => {
+    if (closeDisabled) dialogRef.current?.focus()
+  }, [closeDisabled])
 
   return (
     <div className={cn('fixed inset-0 z-50 flex items-center justify-center bg-slate-950/35 px-4 py-6 backdrop-blur-[2px]', overlayClassName)}>
       <div
         ref={dialogRef}
         role="dialog"
+        tabIndex={-1}
         aria-modal="true"
         aria-label={title}
         className={cn(
@@ -83,7 +92,7 @@ export function Modal({
                 ) : null}
               </div>
             </div>
-            <Button variant="ghost" size="icon" className="shrink-0" aria-label="Cerrar" onClick={onClose}>
+            <Button data-ui-action="close" variant="ghost" size="icon" className="shrink-0" aria-label="Cerrar" disabled={closeDisabled} onClick={onClose}>
               <X className="size-5" />
             </Button>
           </div>

@@ -12,7 +12,7 @@ import {
   Settings2,
 } from 'lucide-react'
 import { lazy, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -73,7 +73,7 @@ export function PlanningPage() {
   }
 
   return (
-    <section className="mx-auto w-full min-w-0 max-w-[1440px] space-y-5">
+    <section className="w-full min-w-0 space-y-5">
       <PageHero
         title="Planificación"
         description="Organiza tus planificaciones y consulta el currículo dominicano desde un mismo espacio."
@@ -119,6 +119,7 @@ export function PlanningPage() {
 }
 
 function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }) {
+  const navigate = useNavigate()
   const {
     schoolYearId,
     schoolName,
@@ -150,10 +151,11 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
   const [query, setQuery] = useState('')
   const [courseFilter, setCourseFilter] = useState('')
   const [subjectFilter, setSubjectFilter] = useState('')
-  const [periodFilter, setPeriodFilter] = useState(activePeriodId ?? '')
+  const [periodFilter, setPeriodFilter] = useState(searchParams.get('academicPeriodId') ?? activePeriodId ?? '')
   const [dateFilter, setDateFilter] = useState('')
   const [viewMode, setViewMode] = useState<ViewMode>('grid')
   const openedCurriculumRequest = useRef<string | null>(null)
+  const openedReturnEntry = useRef<string | null>(null)
   const requestedCurriculumId = searchParams.get('subjectId') ?? searchParams.get('malla')
   const requestedGrade = searchParams.get('grade') ?? searchParams.get('grado')
   const requestedArea = searchParams.get('area')
@@ -166,17 +168,44 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
   }, [activePeriodId, periodFilter])
 
   useEffect(() => {
+    const requestedPeriod = searchParams.get('academicPeriodId')
+    if (requestedPeriod && requestedPeriod !== activePeriodId && periods.some(period => period.id === requestedPeriod)) {
+      setActivePeriodId(requestedPeriod)
+    }
+  }, [searchParams, activePeriodId, periods, setActivePeriodId])
+
+  useEffect(() => {
+    const entryId = searchParams.get('entryId')
+    if (!entryId || openedReturnEntry.current === entryId || loading) return
+    const entry = entries.find(item => item.id === entryId)
+    if (entry) {
+      openedReturnEntry.current = entryId
+      setPreviewEntry(entry)
+    }
+  }, [searchParams, entries, loading])
+
+  function createActivity(entry: PlanningEntryWithDetails) {
+    const returnParams = new URLSearchParams(searchParams)
+    returnParams.set('tab', 'planificaciones')
+    returnParams.set('entryId', entry.id)
+    returnParams.set('academicPeriodId', entry.academicPeriodId)
+    returnParams.delete('action')
+    navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: entry.sectionSubjectId, academicPeriodId: entry.academicPeriodId, planningEntryId: entry.id })}`, {
+      state: { activityCreatorOrigin: { kind: 'planning', label: 'Volver a Planificación', returnTo: `/planificaciones?${returnParams}` } },
+    })
+  }
+
+  useEffect(() => {
     if (
       loading ||
       !requestedCreate ||
-      !requestedCurriculumId ||
       !periods.length ||
-      openedCurriculumRequest.current === requestedCurriculumId
+      openedCurriculumRequest.current === (requestedCurriculumId ?? 'new')
     ) {
       return
     }
 
-    openedCurriculumRequest.current = requestedCurriculumId
+    openedCurriculumRequest.current = requestedCurriculumId ?? 'new'
     setEditingEntry(null)
     setFormError(null)
     setFormOpen(true)
@@ -497,7 +526,7 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
         <div className="space-y-3">
           <div className="flex justify-start">
             <div className="inline-flex rounded-xl bg-card p-1 shadow-sm" aria-label="Vista de planificaciones">
-              <button
+              <button data-ui-size="icon"
                 type="button"
                 aria-label="Ver en cuadros"
                 aria-pressed={viewMode === 'grid'}
@@ -510,7 +539,7 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
               >
                 <Grid2X2 className="size-4" />
               </button>
-              <button
+              <button data-ui-size="icon"
                 type="button"
                 aria-label="Ver como lista"
                 aria-pressed={viewMode === 'list'}
@@ -537,6 +566,7 @@ function PlanningEntriesPage({ searchParams }: { searchParams: URLSearchParams }
                 onDuplicate={handleDuplicate}
                 onArchive={requestArchive}
                 onDelete={requestDelete}
+                onCreateActivity={createActivity}
               />
             ))}
           </div>

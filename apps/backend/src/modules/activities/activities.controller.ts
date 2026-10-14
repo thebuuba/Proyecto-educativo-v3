@@ -19,7 +19,7 @@ export class ActivitiesController {
     @Query('academicPeriodId') academicPeriodId?: string,
     @Query('planningEntryId') planningEntryId?: string,
   ) {
-    return this.activities.findAll(user.schoolId, { sectionSubjectId, academicPeriodId, planningEntryId })
+    return this.activities.findAll(user.schoolId, { sectionSubjectId, academicPeriodId, planningEntryId }, user.id, user.roles)
   }
 
   @Get('center')
@@ -40,12 +40,12 @@ export class ActivitiesController {
     @Param('id') id: string,
     @Body() dto: { planningEntryId: string | null; planningMoment?: string },
   ) {
-    return this.activities.linkPlanning(user.schoolId, id, dto)
+    return this.activities.linkPlanning(user.schoolId, id, dto, user.id, user.roles)
   }
 
   @Delete(':id')
   @Roles('admin', 'director', 'coordinator', 'teacher')
   remove(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
-    return this.activities.remove(user.schoolId, id)
+    return this.activities.remove(user.schoolId, id, user.id, user.roles)
   }
 }

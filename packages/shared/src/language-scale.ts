@@ -1,0 +1,31 @@
+import {affirmativeLanguageTask} from './language-feature-criteria'
+import type {InstrumentRecommendation} from './instrument-recommendation'
+
+/** The observable is stated once; scale cells express its frequency or degree. */
+export function adaptLanguageScale(proposal: InstrumentRecommendation, description: string): InstrumentRecommendation {
+  if(proposal.instrumentType!=='escala') return proposal
+  const frequency=/regularidad|frecuencia/.test(affirmativeLanguageTask(description))
+  const labels=frequency
+    ? ['Siempre','Frecuentemente','A veces','Rara vez','Todavía no']
+    : ['Completo','Suficiente','Parcial','Incipiente','Aún no logrado']
+  const progression=frequency ? [
+    'En todas las oportunidades observadas.',
+    'En la mayoría de las oportunidades observadas.',
+    'En algunas de las oportunidades observadas.',
+    'En pocas oportunidades observadas.',
+    'En ninguna de las oportunidades observadas.',
+  ] : [
+    'Cumple todos los aspectos del indicador.',
+    'Cumple lo esencial del indicador; queda un aspecto por completar.',
+    'Cumple algunos aspectos del indicador y deja otros sin realizar.',
+    'Inicia el desempeño sin completar sus aspectos esenciales.',
+    'No demuestra el desempeño descrito en el indicador.',
+  ]
+  const indexes=proposal.levels.length===4?[0,1,2,4]:[0,1,2,3,4]
+  return {...proposal,
+    levels:proposal.levels.map((level,index)=>({...level,label:labels[indexes[index]]})),
+    criteria:proposal.criteria.map(criterion=>({...criterion,progressionLevels:[...progression],
+      descriptors:criterion.descriptors.map((descriptor,index)=>({...descriptor,text:progression[indexes[index]]})),
+    })),
+  }
+}

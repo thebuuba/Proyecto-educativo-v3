@@ -155,7 +155,7 @@ export function ImportStudentsModal({
         </label>
 
         <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
-          <Button variant="outline" onClick={onClose} disabled={isPreviewing || isSubmitting}>
+          <Button data-ui-action="cancel" variant="outline" onClick={onClose} disabled={isPreviewing || isSubmitting}>
             Cancelar
           </Button>
           <Button onClick={handlePreview} loading={isPreviewing} disabled={isSubmitting}>

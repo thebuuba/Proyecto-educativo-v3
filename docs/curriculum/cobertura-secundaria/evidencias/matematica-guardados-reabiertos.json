@@ -1,0 +1,3073 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "14a3e4eb58efe49a250c223969848b93ec03e9dc",
+      "dirty": true,
+      "startedAt": "2026-10-13T19:11:54.372Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.14"
+    }
+  },
+  "authentication": "PASSWORD_LOGIN_REAL",
+  "saved": [
+    {
+      "id": "b048bcd5-82f1-4804-ae74-ef3035eac74c",
+      "name": "Actividad 1 · QA matrices",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Los estudiantes resolverán situaciones prácticas relacionadas con la organización de datos mediante matrices. A partir de ejemplos de ventas de productos, cantidades y precios, construirán matrices y realizarán operaciones de suma, resta y multiplicación, según corresponda. Finalmente, explicarán los procedimientos utilizados e interpretarán los resultados, demostrando cómo las matrices facilitan la organización de información y la resolución de problemas de la vida cotidiana</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "11a7d4e2-bdb5-41b1-8c06-250f2f8557d7",
+      "instrumentSnapshotId": "27c5d105-2750-45fc-8af1-1de93d4ca010",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L5",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L4",
+            "label": "Logrado",
+            "proportion": 0.75
+          },
+          {
+            "id": "L3",
+            "label": "En proceso",
+            "proportion": 0.5
+          },
+          {
+            "id": "L2",
+            "label": "Requiere apoyo",
+            "proportion": 0.25
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-data:0",
+            "title": "Organización y significado de los datos",
+            "maxScore": 3.47,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-data",
+            "description": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+            "descriptors": [
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados sin alterar sus relaciones y vincula cada fila, columna y entrada con su significado.",
+                "levelId": "L5",
+                "scoreUnits": 347
+              },
+              {
+                "text": "La matriz conserva los datos y sus relaciones; una etiqueta o significado necesita precisión.",
+                "levelId": "L4",
+                "scoreUnits": 260
+              },
+              {
+                "text": "Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+                "levelId": "L3",
+                "scoreUnits": 174
+              },
+              {
+                "text": "La disposición impide reconocer las relaciones entre los datos y el significado de las filas y columnas.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No presenta evidencia que permita reconocer la organización de los datos en una matriz.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-selection:1",
+            "title": "Selección de operaciones y dimensiones · revisión docente",
+            "maxScore": 3.47,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-selection",
+            "description": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.",
+            "descriptors": [
+              {
+                "text": "Relaciona la operación con la pregunta, verifica las dimensiones necesarias y descarta las operaciones que no corresponden.",
+                "levelId": "L5",
+                "scoreUnits": 347
+              },
+              {
+                "text": "La operación corresponde a la situación y sus dimensiones son compatibles; la explicación de una condición es incompleta.",
+                "levelId": "L4",
+                "scoreUnits": 260
+              },
+              {
+                "text": "Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+                "levelId": "L3",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Elige operaciones con incompatibilidades de dimensiones que impiden resolver la situación.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No identifica una operación pertinente ni sus condiciones de dimensiones.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-operations:2",
+            "title": "Ejecución de las operaciones requeridas",
+            "maxScore": 4.34,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-operations",
+            "description": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+            "descriptors": [
+              {
+                "text": "Ejecuta correctamente las operaciones seleccionadas, manteniendo la correspondencia de entradas y el orden de los productos.",
+                "levelId": "L5",
+                "scoreUnits": 434
+              },
+              {
+                "text": "El procedimiento es correcto; un error aritmético aislado afecta una entrada.",
+                "levelId": "L4",
+                "scoreUnits": 326
+              },
+              {
+                "text": "Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+                "levelId": "L3",
+                "scoreUnits": 217
+              },
+              {
+                "text": "Los pasos no respetan las reglas de las operaciones y no permiten resolver la situación.",
+                "levelId": "L2",
+                "scoreUnits": 109
+              },
+              {
+                "text": "No desarrolla las operaciones necesarias para obtener un resultado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-justification:3",
+            "title": "Justificación del procedimiento",
+            "maxScore": 2.6,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-justification",
+            "description": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+            "descriptors": [
+              {
+                "text": "Justifica el procedimiento enlazando pregunta, datos y pasos; permite reconstruir el razonamiento seguido.",
+                "levelId": "L5",
+                "scoreUnits": 260
+              },
+              {
+                "text": "Relaciona los pasos con la pregunta; una decisión queda poco justificada.",
+                "levelId": "L4",
+                "scoreUnits": 195
+              },
+              {
+                "text": "Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+                "levelId": "L3",
+                "scoreUnits": 130
+              },
+              {
+                "text": "La explicación no relaciona las decisiones con el procedimiento desarrollado.",
+                "levelId": "L2",
+                "scoreUnits": 65
+              },
+              {
+                "text": "No aporta una explicación del procedimiento utilizado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 260,
+            "sourceReferences": []
+          },
+          {
+            "id": "manual:afd0c9ab-025d-40a7-8e65-c5571dca123c",
+            "title": "Interpretación en el contexto",
+            "maxScore": 3.47,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-interpretation",
+            "description": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+            "descriptors": [
+              {
+                "text": "Relaciona las entradas del resultado con lo que representan y responde de forma coherente a la situación.",
+                "levelId": "L5",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Interpreta el resultado en su contexto; una entrada o relación necesita precisión.",
+                "levelId": "L4",
+                "scoreUnits": 260
+              },
+              {
+                "text": "Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+                "levelId": "L3",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Repite resultados numéricos sin establecer qué significan para la situación.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No aporta una interpretación del resultado en el contexto planteado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "math-process:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "16ee203f-365a-5afd-9f91-6fefeac13af6",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "22f1a0a2-2f37-5d4e-b4f4-b8e1af52da50",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ee999a7c-5a08-523e-a342-18e384e86b5c",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "58db7735-e0bd-50e0-bc21-951c9f89f07a",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8f239e23-1c0e-5a19-8eb4-d7ec0e4b0b53",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "dc506264-93a2-5903-beca-eb1fd8c766a8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1c5da8ea-7594-51ab-a3fb-fba843a9f0f4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bde6726e-4d90-5f4d-b2ac-b3fac1963111",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ee952b0e-720f-5b95-a27e-fbca94613d8a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "23914aeb-60c8-583b-aecc-d692a1865a0b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3fe53299-4921-5825-87e1-ea233bd298a7",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "472633bd-43f8-51eb-adb0-cfe01fbc960e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "525f5bb9-b00d-5c83-ab38-f22d86abac40",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "60cca32a-0aa9-53dc-a48a-4e9e7587c54e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8bcdf170-85e0-53df-983e-ece997231a2d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "345177bc-17ee-5748-bc5a-f5f4847a12ad",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "500917d4-e19f-5317-9927-a9e3988046b0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4da380-4cb7-59a0-a590-9ed347eefacc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e98a9200-2637-500f-91c2-9ad76564dee0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b22f2e75-7004-5b6a-b1c2-98496b3e53ba",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fe824bfb-0592-5ba4-9979-85f6259d8c54",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3aeee472-b4b7-590b-9118-084b2c2b62a0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cc1357a1-1e07-50d8-a3a6-15aae63ba41d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fc3e24c3-73b1-5e41-bfab-53b509a10271",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=math",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=math-matrices-5",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.14",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "392f46f2-fbc7-5931-a290-c45a88a4f206",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "PROBLEM_SOLVING",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para Actividad 1 · QA matrices",
+        "rubrica:points:0": "3.47",
+        "rubrica:points:1": "3.47",
+        "rubrica:points:2": "4.34",
+        "rubrica:points:3": "2.6",
+        "rubrica:points:4": "3.47",
+        "rubrica:criterion:0": "Organización y significado de los datos",
+        "rubrica:criterion:1": "Selección de operaciones y dimensiones · revisión docente",
+        "rubrica:criterion:2": "Ejecución de las operaciones requeridas",
+        "rubrica:criterion:3": "Justificación del procedimiento",
+        "rubrica:criterion:4": "Interpretación en el contexto",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "Requiere apoyo",
+        "rubrica:level-name:3": "En proceso",
+        "rubrica:level-name:4": "Logrado",
+        "rubrica:level-name:5": "Destacado",
+        "rubrica:description:0": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+        "rubrica:description:1": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.",
+        "rubrica:description:2": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+        "rubrica:description:3": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+        "rubrica:description:4": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-data:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-selection:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-operations:2",
+        "rubrica:criterion-id:3": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-justification:3",
+        "rubrica:criterion-id:4": "manual:afd0c9ab-025d-40a7-8e65-c5571dca123c",
+        "rubrica:descriptor:0:1": "No presenta evidencia que permita reconocer la organización de los datos en una matriz.",
+        "rubrica:descriptor:0:2": "La disposición impide reconocer las relaciones entre los datos y el significado de las filas y columnas.",
+        "rubrica:descriptor:0:3": "Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+        "rubrica:descriptor:0:4": "La matriz conserva los datos y sus relaciones; una etiqueta o significado necesita precisión.",
+        "rubrica:descriptor:0:5": "Organiza los datos de cantidades, precios o ventas proporcionados sin alterar sus relaciones y vincula cada fila, columna y entrada con su significado.",
+        "rubrica:descriptor:1:1": "No identifica una operación pertinente ni sus condiciones de dimensiones.",
+        "rubrica:descriptor:1:2": "Elige operaciones con incompatibilidades de dimensiones que impiden resolver la situación.",
+        "rubrica:descriptor:1:3": "Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+        "rubrica:descriptor:1:4": "La operación corresponde a la situación y sus dimensiones son compatibles; la explicación de una condición es incompleta.",
+        "rubrica:descriptor:1:5": "Relaciona la operación con la pregunta, verifica las dimensiones necesarias y descarta las operaciones que no corresponden.",
+        "rubrica:descriptor:2:1": "No desarrolla las operaciones necesarias para obtener un resultado.",
+        "rubrica:descriptor:2:2": "Los pasos no respetan las reglas de las operaciones y no permiten resolver la situación.",
+        "rubrica:descriptor:2:3": "Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+        "rubrica:descriptor:2:4": "El procedimiento es correcto; un error aritmético aislado afecta una entrada.",
+        "rubrica:descriptor:2:5": "Ejecuta correctamente las operaciones seleccionadas, manteniendo la correspondencia de entradas y el orden de los productos.",
+        "rubrica:descriptor:3:1": "No aporta una explicación del procedimiento utilizado.",
+        "rubrica:descriptor:3:2": "La explicación no relaciona las decisiones con el procedimiento desarrollado.",
+        "rubrica:descriptor:3:3": "Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+        "rubrica:descriptor:3:4": "Relaciona los pasos con la pregunta; una decisión queda poco justificada.",
+        "rubrica:descriptor:3:5": "Justifica el procedimiento enlazando pregunta, datos y pasos; permite reconstruir el razonamiento seguido.",
+        "rubrica:descriptor:4:1": "No aporta una interpretación del resultado en el contexto planteado.",
+        "rubrica:descriptor:4:2": "Repite resultados numéricos sin establecer qué significan para la situación.",
+        "rubrica:descriptor:4:3": "Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+        "rubrica:descriptor:4:4": "Interpreta el resultado en su contexto; una entrada o relación necesita precisión.",
+        "rubrica:descriptor:4:5": "Relaciona las entradas del resultado con lo que representan y responde de forma coherente a la situación.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:level-points:5": "4",
+        "rubrica:meta:levelCount": "5",
+        "rubrica:meta:manualPoints": "true",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[400,400,500,300,400]",
+        "rubrica:meta:criteriaCount": "5",
+        "rubrica:meta:catalogVersion": "evaluation-2026.14",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Organización y significado de los datos\",\"description\":\"Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.\",\"progression\":[\"Organiza los datos de cantidades, precios o ventas proporcionados sin alterar sus relaciones y vincula cada fila, columna y entrada con su significado.\",\"La matriz conserva los datos y sus relaciones; una etiqueta o significado necesita precisión.\",\"Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.\",\"La disposición impide reconocer las relaciones entre los datos y el significado de las filas y columnas.\",\"No presenta evidencia que permita reconocer la organización de los datos en una matriz.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"Selección de operaciones y dimensiones · revisión docente\",\"description\":\"Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.\",\"progression\":[\"Relaciona la operación con la pregunta, verifica las dimensiones necesarias y descarta las operaciones que no corresponden.\",\"La operación corresponde a la situación y sus dimensiones son compatibles; la explicación de una condición es incompleta.\",\"Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.\",\"Elige operaciones con incompatibilidades de dimensiones que impiden resolver la situación.\",\"No identifica una operación pertinente ni sus condiciones de dimensiones.\"]}",
+        "rubrica:criterion-evidence:2": "{\"title\":\"Ejecución de las operaciones requeridas\",\"description\":\"Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.\",\"progression\":[\"Ejecuta correctamente las operaciones seleccionadas, manteniendo la correspondencia de entradas y el orden de los productos.\",\"El procedimiento es correcto; un error aritmético aislado afecta una entrada.\",\"Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.\",\"Los pasos no respetan las reglas de las operaciones y no permiten resolver la situación.\",\"No desarrolla las operaciones necesarias para obtener un resultado.\"]}",
+        "rubrica:criterion-evidence:3": "{\"title\":\"Justificación del procedimiento\",\"description\":\"Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.\",\"progression\":[\"Justifica el procedimiento enlazando pregunta, datos y pasos; permite reconstruir el razonamiento seguido.\",\"Relaciona los pasos con la pregunta; una decisión queda poco justificada.\",\"Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.\",\"La explicación no relaciona las decisiones con el procedimiento desarrollado.\",\"No aporta una explicación del procedimiento utilizado.\"]}",
+        "rubrica:criterion-evidence:4": "{\"title\":\"Interpretación en el contexto\",\"description\":\"Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.\",\"progression\":[\"Relaciona las entradas del resultado con lo que representan y responde de forma coherente a la situación.\",\"Interpreta el resultado en su contexto; una entrada o relación necesita precisión.\",\"Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.\",\"Repite resultados numéricos sin establecer qué significan para la situación.\",\"No aporta una interpretación del resultado en el contexto planteado.\"]}",
+        "rubrica:criterion-template:0": "math-matrices-data",
+        "rubrica:criterion-template:1": "math-matrices-selection",
+        "rubrica:criterion-template:2": "math-matrices-operations",
+        "rubrica:criterion-template:3": "math-matrices-justification",
+        "rubrica:criterion-template:4": "math-matrices-interpretation",
+        "rubrica:meta:customLevelPoints": "false",
+        "rubrica:meta:levelScoreWeights": "[4,3,2,1,0]"
+      },
+      "evaluationTechnique": "resolucion-problemas",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "cf61df2b-7c5f-45b3-b6ea-626a238d7e07",
+      "name": "QA filas matrices · lista-cotejo",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Los estudiantes resolverán situaciones prácticas relacionadas con la organización de datos mediante matrices. A partir de ejemplos de ventas de productos, cantidades y precios, construirán matrices y realizarán operaciones de suma, resta y multiplicación, según corresponda. Finalmente, explicarán los procedimientos utilizados e interpretarán los resultados, demostrando cómo las matrices facilitan la organización de información y la resolución de problemas de la vida cotidiana Comprobarán los resultados con los datos originales.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "2761d31d-fa23-447d-b6da-3b81d79d1b5f",
+      "instrumentSnapshotId": "2fb108e1-7f98-49c2-b65c-86f9f93c9435",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-data:0",
+            "title": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+            "maxScore": 3.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-data",
+            "description": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+            "descriptors": [
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+                "levelId": "L2",
+                "scoreUnits": 334
+              },
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 334,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-selection:1",
+            "title": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. · revisión docente",
+            "maxScore": 3.33,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-selection",
+            "description": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.",
+            "descriptors": [
+              {
+                "text": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.",
+                "levelId": "L2",
+                "scoreUnits": 333
+              },
+              {
+                "text": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 333,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-operations:2",
+            "title": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+            "maxScore": 4.17,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-operations",
+            "description": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+            "descriptors": [
+              {
+                "text": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+                "levelId": "L2",
+                "scoreUnits": 417
+              },
+              {
+                "text": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 417,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-justification:3",
+            "title": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+            "maxScore": 2.5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-justification",
+            "description": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+            "descriptors": [
+              {
+                "text": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+                "levelId": "L2",
+                "scoreUnits": 250
+              },
+              {
+                "text": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 250,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-interpretation:4",
+            "title": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+            "maxScore": 3.33,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-interpretation",
+            "description": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+            "descriptors": [
+              {
+                "text": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+                "levelId": "L2",
+                "scoreUnits": 333
+              },
+              {
+                "text": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 333,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-verification:5",
+            "title": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.",
+            "maxScore": 3.33,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-verification",
+            "description": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.",
+            "descriptors": [
+              {
+                "text": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.",
+                "levelId": "L2",
+                "scoreUnits": 333
+              },
+              {
+                "text": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 333,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "math-process:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "22f1a0a2-2f37-5d4e-b4f4-b8e1af52da50",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "dc506264-93a2-5903-beca-eb1fd8c766a8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4da380-4cb7-59a0-a590-9ed347eefacc",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e98a9200-2637-500f-91c2-9ad76564dee0",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b22f2e75-7004-5b6a-b1c2-98496b3e53ba",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cc1357a1-1e07-50d8-a3a6-15aae63ba41d",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fc3e24c3-73b1-5e41-bfab-53b509a10271",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "695b5f52-d00c-5414-825c-5b56f1a5a67e",
+              "topicCoverage": 0.25
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=math",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=math-matrices-5",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.14",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "392f46f2-fbc7-5931-a290-c45a88a4f206",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "PROBLEM_SOLVING",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA filas matrices · lista-cotejo",
+        "lista-cotejo:points:0": "3.34",
+        "lista-cotejo:points:1": "3.33",
+        "lista-cotejo:points:2": "4.17",
+        "lista-cotejo:points:3": "2.5",
+        "lista-cotejo:points:4": "3.33",
+        "lista-cotejo:points:5": "3.33",
+        "lista-cotejo:criterion:0": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+        "lista-cotejo:criterion:1": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. · revisión docente",
+        "lista-cotejo:criterion:2": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+        "lista-cotejo:criterion:3": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+        "lista-cotejo:criterion:4": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+        "lista-cotejo:criterion:5": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.",
+        "lista-cotejo:description:0": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+        "lista-cotejo:description:1": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.",
+        "lista-cotejo:description:2": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+        "lista-cotejo:description:3": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+        "lista-cotejo:description:4": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+        "lista-cotejo:description:5": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-data:0",
+        "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-selection:1",
+        "lista-cotejo:criterion-id:2": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-operations:2",
+        "lista-cotejo:criterion-id:3": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-justification:3",
+        "lista-cotejo:criterion-id:4": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-interpretation:4",
+        "lista-cotejo:criterion-id:5": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-verification:5",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[400,400,500,300,400,400]",
+        "lista-cotejo:meta:criteriaCount": "6",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.14",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.\",\"description\":\"Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.\",\"progression\":[\"Organiza los datos de cantidades, precios o ventas proporcionados sin alterar sus relaciones y vincula cada fila, columna y entrada con su significado.\",\"La matriz conserva los datos y sus relaciones; una etiqueta o significado necesita precisión.\",\"Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.\",\"La disposición impide reconocer las relaciones entre los datos y el significado de las filas y columnas.\",\"No presenta evidencia que permita reconocer la organización de los datos en una matriz.\"]}",
+        "lista-cotejo:criterion-evidence:1": "{\"title\":\"Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.\",\"description\":\"Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.\",\"progression\":[\"Relaciona la operación con la pregunta, verifica las dimensiones necesarias y descarta las operaciones que no corresponden.\",\"La operación corresponde a la situación y sus dimensiones son compatibles; la explicación de una condición es incompleta.\",\"Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.\",\"Elige operaciones con incompatibilidades de dimensiones que impiden resolver la situación.\",\"No identifica una operación pertinente ni sus condiciones de dimensiones.\"]}",
+        "lista-cotejo:criterion-evidence:2": "{\"title\":\"Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.\",\"description\":\"Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.\",\"progression\":[\"Ejecuta correctamente las operaciones seleccionadas, manteniendo la correspondencia de entradas y el orden de los productos.\",\"El procedimiento es correcto; un error aritmético aislado afecta una entrada.\",\"Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.\",\"Los pasos no respetan las reglas de las operaciones y no permiten resolver la situación.\",\"No desarrolla las operaciones necesarias para obtener un resultado.\"]}",
+        "lista-cotejo:criterion-evidence:3": "{\"title\":\"Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.\",\"description\":\"Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.\",\"progression\":[\"Justifica el procedimiento enlazando pregunta, datos y pasos; permite reconstruir el razonamiento seguido.\",\"Relaciona los pasos con la pregunta; una decisión queda poco justificada.\",\"Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.\",\"La explicación no relaciona las decisiones con el procedimiento desarrollado.\",\"No aporta una explicación del procedimiento utilizado.\"]}",
+        "lista-cotejo:criterion-evidence:4": "{\"title\":\"Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.\",\"description\":\"Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.\",\"progression\":[\"Relaciona las entradas del resultado con lo que representan y responde de forma coherente a la situación.\",\"Interpreta el resultado en su contexto; una entrada o relación necesita precisión.\",\"Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.\",\"Repite resultados numéricos sin establecer qué significan para la situación.\",\"No aporta una interpretación del resultado en el contexto planteado.\"]}",
+        "lista-cotejo:criterion-evidence:5": "{\"title\":\"Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.\",\"description\":\"Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.\",\"progression\":[\"Aplica la comprobación solicitada y localiza o descarta errores usando datos y resultado.\",\"Comprueba el resultado; una parte de la revisión queda sin documentar.\",\"La comprobación es parcial y no permite revisar todos los aspectos solicitados.\",\"La comprobación no guarda relación con el resultado que debía revisar.\",\"No aporta la comprobación solicitada.\"]}",
+        "lista-cotejo:criterion-template:0": "math-matrices-data",
+        "lista-cotejo:criterion-template:1": "math-matrices-selection",
+        "lista-cotejo:criterion-template:2": "math-matrices-operations",
+        "lista-cotejo:criterion-template:3": "math-matrices-justification",
+        "lista-cotejo:criterion-template:4": "math-matrices-interpretation",
+        "lista-cotejo:criterion-template:5": "math-matrices-verification"
+      },
+      "evaluationTechnique": "resolucion-problemas",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "0516c928-3556-492d-bb29-f85bf8133bc4",
+      "name": "QA filas matrices · escala",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Los estudiantes resolverán situaciones prácticas relacionadas con la organización de datos mediante matrices. A partir de ejemplos de ventas de productos, cantidades y precios, construirán matrices y realizarán operaciones de suma, resta y multiplicación, según corresponda. Finalmente, explicarán los procedimientos utilizados e interpretarán los resultados, demostrando cómo las matrices facilitan la organización de información y la resolución de problemas de la vida cotidiana Comprobarán los resultados con los datos originales.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "68463832-4b49-4ae4-8114-5e69249dc46c",
+      "instrumentSnapshotId": "703e021f-e714-4f38-91f2-46a0d1af3e2a",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L5",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L4",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L3",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L2",
+            "label": "Requiere apoyo",
+            "proportion": 0.1666666666666667
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.14:fallback:math-matrices-data:0",
+            "title": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+            "maxScore": 2.89,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-data",
+            "description": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+            "descriptors": [
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados sin alterar sus relaciones y vincula cada fila, columna y entrada con su significado.",
+                "levelId": "L5",
+                "scoreUnits": 289
+              },
+              {
+                "text": "La matriz conserva los datos y sus relaciones; una etiqueta o significado necesita precisión.",
+                "levelId": "L4",
+                "scoreUnits": 193
+              },
+              {
+                "text": "Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+                "levelId": "L3",
+                "scoreUnits": 96
+              },
+              {
+                "text": "La disposición impide reconocer las relaciones entre los datos y el significado de las filas y columnas.",
+                "levelId": "L2",
+                "scoreUnits": 48
+              },
+              {
+                "text": "No presenta evidencia que permita reconocer la organización de los datos en una matriz.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 289,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:fallback:math-matrices-selection:1",
+            "title": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. · revisión docente",
+            "maxScore": 2.89,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-selection",
+            "description": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.",
+            "descriptors": [
+              {
+                "text": "Relaciona la operación con la pregunta, verifica las dimensiones necesarias y descarta las operaciones que no corresponden.",
+                "levelId": "L5",
+                "scoreUnits": 289
+              },
+              {
+                "text": "La operación corresponde a la situación y sus dimensiones son compatibles; la explicación de una condición es incompleta.",
+                "levelId": "L4",
+                "scoreUnits": 193
+              },
+              {
+                "text": "Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+                "levelId": "L3",
+                "scoreUnits": 96
+              },
+              {
+                "text": "Elige operaciones con incompatibilidades de dimensiones que impiden resolver la situación.",
+                "levelId": "L2",
+                "scoreUnits": 48
+              },
+              {
+                "text": "No identifica una operación pertinente ni sus condiciones de dimensiones.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 289,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:fallback:math-matrices-operations:2",
+            "title": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+            "maxScore": 3.62,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-operations",
+            "description": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+            "descriptors": [
+              {
+                "text": "Ejecuta correctamente las operaciones seleccionadas, manteniendo la correspondencia de entradas y el orden de los productos.",
+                "levelId": "L5",
+                "scoreUnits": 362
+              },
+              {
+                "text": "El procedimiento es correcto; un error aritmético aislado afecta una entrada.",
+                "levelId": "L4",
+                "scoreUnits": 241
+              },
+              {
+                "text": "Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+                "levelId": "L3",
+                "scoreUnits": 121
+              },
+              {
+                "text": "Los pasos no respetan las reglas de las operaciones y no permiten resolver la situación.",
+                "levelId": "L2",
+                "scoreUnits": 60
+              },
+              {
+                "text": "No desarrolla las operaciones necesarias para obtener un resultado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 362,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:fallback:math-matrices-justification:3",
+            "title": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+            "maxScore": 2.17,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-justification",
+            "description": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+            "descriptors": [
+              {
+                "text": "Justifica el procedimiento enlazando pregunta, datos y pasos; permite reconstruir el razonamiento seguido.",
+                "levelId": "L5",
+                "scoreUnits": 217
+              },
+              {
+                "text": "Relaciona los pasos con la pregunta; una decisión queda poco justificada.",
+                "levelId": "L4",
+                "scoreUnits": 145
+              },
+              {
+                "text": "Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+                "levelId": "L3",
+                "scoreUnits": 72
+              },
+              {
+                "text": "La explicación no relaciona las decisiones con el procedimiento desarrollado.",
+                "levelId": "L2",
+                "scoreUnits": 36
+              },
+              {
+                "text": "No aporta una explicación del procedimiento utilizado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 217,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:fallback:math-matrices-interpretation:4",
+            "title": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+            "maxScore": 2.89,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-interpretation",
+            "description": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+            "descriptors": [
+              {
+                "text": "Relaciona las entradas del resultado con lo que representan y responde de forma coherente a la situación.",
+                "levelId": "L5",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Interpreta el resultado en su contexto; una entrada o relación necesita precisión.",
+                "levelId": "L4",
+                "scoreUnits": 193
+              },
+              {
+                "text": "Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+                "levelId": "L3",
+                "scoreUnits": 96
+              },
+              {
+                "text": "Repite resultados numéricos sin establecer qué significan para la situación.",
+                "levelId": "L2",
+                "scoreUnits": 48
+              },
+              {
+                "text": "No aporta una interpretación del resultado en el contexto planteado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 289,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-verification:5",
+            "title": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.",
+            "maxScore": 2.89,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-verification",
+            "description": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.",
+            "descriptors": [
+              {
+                "text": "Aplica la comprobación solicitada y localiza o descarta errores usando datos y resultado.",
+                "levelId": "L5",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Comprueba el resultado; una parte de la revisión queda sin documentar.",
+                "levelId": "L4",
+                "scoreUnits": 193
+              },
+              {
+                "text": "La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+                "levelId": "L3",
+                "scoreUnits": 96
+              },
+              {
+                "text": "La comprobación no guarda relación con el resultado que debía revisar.",
+                "levelId": "L2",
+                "scoreUnits": 48
+              },
+              {
+                "text": "No aporta la comprobación solicitada.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 289,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "math-process:TEACHER_OVERRIDE",
+          "ranking": [],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=math",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=math-matrices-5",
+            "Se requiere contexto estructurado y versión disponible."
+          ],
+          "mappingStatus": "NO_PUBLISHED_VERSION",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": null,
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.14",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": null,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "PROBLEM_SOLVING",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA filas matrices · escala",
+        "escala:points:0": "2.89",
+        "escala:points:1": "2.89",
+        "escala:points:2": "3.62",
+        "escala:points:3": "2.17",
+        "escala:points:4": "2.89",
+        "escala:points:5": "2.89",
+        "escala:criterion:0": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+        "escala:criterion:1": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. · revisión docente",
+        "escala:criterion:2": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+        "escala:criterion:3": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+        "escala:criterion:4": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+        "escala:criterion:5": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.",
+        "escala:level-name:1": "Inicial",
+        "escala:level-name:2": "Requiere apoyo",
+        "escala:level-name:3": "En proceso",
+        "escala:level-name:4": "Logrado",
+        "escala:level-name:5": "Destacado",
+        "escala:meta:noApply": "false",
+        "escala:description:0": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.",
+        "escala:description:1": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.",
+        "escala:description:2": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.",
+        "escala:description:3": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.",
+        "escala:description:4": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.",
+        "escala:description:5": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.",
+        "escala:meta:prepared": "true",
+        "escala:meta:template": "personalizada",
+        "escala:criterion-id:0": "proposal:evaluation-2026.14:fallback:math-matrices-data:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.14:fallback:math-matrices-selection:1",
+        "escala:criterion-id:2": "proposal:evaluation-2026.14:fallback:math-matrices-operations:2",
+        "escala:criterion-id:3": "proposal:evaluation-2026.14:fallback:math-matrices-justification:3",
+        "escala:criterion-id:4": "proposal:evaluation-2026.14:fallback:math-matrices-interpretation:4",
+        "escala:criterion-id:5": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-verification:5",
+        "escala:descriptor:0:1": "No presenta evidencia que permita reconocer la organización de los datos en una matriz.",
+        "escala:descriptor:0:2": "La disposición impide reconocer las relaciones entre los datos y el significado de las filas y columnas.",
+        "escala:descriptor:0:3": "Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+        "escala:descriptor:0:4": "La matriz conserva los datos y sus relaciones; una etiqueta o significado necesita precisión.",
+        "escala:descriptor:0:5": "Organiza los datos de cantidades, precios o ventas proporcionados sin alterar sus relaciones y vincula cada fila, columna y entrada con su significado.",
+        "escala:descriptor:1:1": "No identifica una operación pertinente ni sus condiciones de dimensiones.",
+        "escala:descriptor:1:2": "Elige operaciones con incompatibilidades de dimensiones que impiden resolver la situación.",
+        "escala:descriptor:1:3": "Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+        "escala:descriptor:1:4": "La operación corresponde a la situación y sus dimensiones son compatibles; la explicación de una condición es incompleta.",
+        "escala:descriptor:1:5": "Relaciona la operación con la pregunta, verifica las dimensiones necesarias y descarta las operaciones que no corresponden.",
+        "escala:descriptor:2:1": "No desarrolla las operaciones necesarias para obtener un resultado.",
+        "escala:descriptor:2:2": "Los pasos no respetan las reglas de las operaciones y no permiten resolver la situación.",
+        "escala:descriptor:2:3": "Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+        "escala:descriptor:2:4": "El procedimiento es correcto; un error aritmético aislado afecta una entrada.",
+        "escala:descriptor:2:5": "Ejecuta correctamente las operaciones seleccionadas, manteniendo la correspondencia de entradas y el orden de los productos.",
+        "escala:descriptor:3:1": "No aporta una explicación del procedimiento utilizado.",
+        "escala:descriptor:3:2": "La explicación no relaciona las decisiones con el procedimiento desarrollado.",
+        "escala:descriptor:3:3": "Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+        "escala:descriptor:3:4": "Relaciona los pasos con la pregunta; una decisión queda poco justificada.",
+        "escala:descriptor:3:5": "Justifica el procedimiento enlazando pregunta, datos y pasos; permite reconstruir el razonamiento seguido.",
+        "escala:descriptor:4:1": "No aporta una interpretación del resultado en el contexto planteado.",
+        "escala:descriptor:4:2": "Repite resultados numéricos sin establecer qué significan para la situación.",
+        "escala:descriptor:4:3": "Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+        "escala:descriptor:4:4": "Interpreta el resultado en su contexto; una entrada o relación necesita precisión.",
+        "escala:descriptor:4:5": "Relaciona las entradas del resultado con lo que representan y responde de forma coherente a la situación.",
+        "escala:descriptor:5:1": "No aporta la comprobación solicitada.",
+        "escala:descriptor:5:2": "La comprobación no guarda relación con el resultado que debía revisar.",
+        "escala:descriptor:5:3": "La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+        "escala:descriptor:5:4": "Comprueba el resultado; una parte de la revisión queda sin documentar.",
+        "escala:descriptor:5:5": "Aplica la comprobación solicitada y localiza o descarta errores usando datos y resultado.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "0.6666666666666666",
+        "escala:level-points:3": "1.3333333333333333",
+        "escala:level-points:4": "2.6666666666666665",
+        "escala:level-points:5": "4",
+        "escala:meta:levelCount": "5",
+        "escala:meta:pointsMode": "automatic",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[347,347,434,260,347,347]",
+        "escala:meta:criteriaCount": "6",
+        "escala:meta:catalogVersion": "evaluation-2026.14",
+        "escala:criterion-evidence:0": "{\"title\":\"Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.\",\"description\":\"Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas.\",\"progression\":[\"Organiza los datos de cantidades, precios o ventas proporcionados sin alterar sus relaciones y vincula cada fila, columna y entrada con su significado.\",\"La matriz conserva los datos y sus relaciones; una etiqueta o significado necesita precisión.\",\"Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.\",\"La disposición impide reconocer las relaciones entre los datos y el significado de las filas y columnas.\",\"No presenta evidencia que permita reconocer la organización de los datos en una matriz.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.\",\"description\":\"Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar.\",\"progression\":[\"Relaciona la operación con la pregunta, verifica las dimensiones necesarias y descarta las operaciones que no corresponden.\",\"La operación corresponde a la situación y sus dimensiones son compatibles; la explicación de una condición es incompleta.\",\"Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.\",\"Elige operaciones con incompatibilidades de dimensiones que impiden resolver la situación.\",\"No identifica una operación pertinente ni sus condiciones de dimensiones.\"]}",
+        "escala:criterion-evidence:2": "{\"title\":\"Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.\",\"description\":\"Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices.\",\"progression\":[\"Ejecuta correctamente las operaciones seleccionadas, manteniendo la correspondencia de entradas y el orden de los productos.\",\"El procedimiento es correcto; un error aritmético aislado afecta una entrada.\",\"Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.\",\"Los pasos no respetan las reglas de las operaciones y no permiten resolver la situación.\",\"No desarrolla las operaciones necesarias para obtener un resultado.\"]}",
+        "escala:criterion-evidence:3": "{\"title\":\"Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.\",\"description\":\"Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados.\",\"progression\":[\"Justifica el procedimiento enlazando pregunta, datos y pasos; permite reconstruir el razonamiento seguido.\",\"Relaciona los pasos con la pregunta; una decisión queda poco justificada.\",\"Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.\",\"La explicación no relaciona las decisiones con el procedimiento desarrollado.\",\"No aporta una explicación del procedimiento utilizado.\"]}",
+        "escala:criterion-evidence:4": "{\"title\":\"Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.\",\"description\":\"Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación.\",\"progression\":[\"Relaciona las entradas del resultado con lo que representan y responde de forma coherente a la situación.\",\"Interpreta el resultado en su contexto; una entrada o relación necesita precisión.\",\"Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.\",\"Repite resultados numéricos sin establecer qué significan para la situación.\",\"No aporta una interpretación del resultado en el contexto planteado.\"]}",
+        "escala:criterion-evidence:5": "{\"title\":\"Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.\",\"description\":\"Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales.\",\"progression\":[\"Aplica la comprobación solicitada y localiza o descarta errores usando datos y resultado.\",\"Comprueba el resultado; una parte de la revisión queda sin documentar.\",\"La comprobación es parcial y no permite revisar todos los aspectos solicitados.\",\"La comprobación no guarda relación con el resultado que debía revisar.\",\"No aporta la comprobación solicitada.\"]}",
+        "escala:criterion-template:0": "math-matrices-data",
+        "escala:criterion-template:1": "math-matrices-selection",
+        "escala:criterion-template:2": "math-matrices-operations",
+        "escala:criterion-template:3": "math-matrices-justification",
+        "escala:criterion-template:4": "math-matrices-interpretation",
+        "escala:criterion-template:5": "math-matrices-verification",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0.6666666666666666,0]"
+      },
+      "evaluationTechnique": "resolucion-problemas",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "2270b8f1-5625-4823-b28b-a8c78f95176e",
+      "name": "QA filas matrices · lista-ponderada",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Los estudiantes resolverán situaciones prácticas relacionadas con la organización de datos mediante matrices. A partir de ejemplos de ventas de productos, cantidades y precios, construirán matrices y realizarán operaciones de suma, resta y multiplicación, según corresponda. Finalmente, explicarán los procedimientos utilizados e interpretarán los resultados, demostrando cómo las matrices facilitan la organización de información y la resolución de problemas de la vida cotidiana Comprobarán los resultados con los datos originales.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "50789bb1-e36a-44b9-b52b-8149d2c84b24",
+      "instrumentSnapshotId": "4246163a-450c-4542-bba5-32716faff1d7",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-data:0",
+            "title": "Organización y significado de los datos",
+            "maxScore": 3.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-data",
+            "description": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+            "descriptors": [
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+                "levelId": "L3",
+                "scoreUnits": 334
+              },
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+                "levelId": "L2",
+                "scoreUnits": 167
+              },
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 334,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-selection:1",
+            "title": "Selección de operaciones y dimensiones · revisión docente",
+            "maxScore": 3.33,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-selection",
+            "description": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+            "descriptors": [
+              {
+                "text": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+                "levelId": "L3",
+                "scoreUnits": 333
+              },
+              {
+                "text": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+                "levelId": "L2",
+                "scoreUnits": 167
+              },
+              {
+                "text": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 333,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-operations:2",
+            "title": "Ejecución de las operaciones requeridas",
+            "maxScore": 4.17,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-operations",
+            "description": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+            "descriptors": [
+              {
+                "text": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+                "levelId": "L3",
+                "scoreUnits": 417
+              },
+              {
+                "text": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+                "levelId": "L2",
+                "scoreUnits": 209
+              },
+              {
+                "text": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 417,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-justification:3",
+            "title": "Justificación del procedimiento",
+            "maxScore": 2.5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-justification",
+            "description": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+            "descriptors": [
+              {
+                "text": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+                "levelId": "L3",
+                "scoreUnits": 250
+              },
+              {
+                "text": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+                "levelId": "L2",
+                "scoreUnits": 125
+              },
+              {
+                "text": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 250,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-interpretation:4",
+            "title": "Interpretación en el contexto",
+            "maxScore": 3.33,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-interpretation",
+            "description": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+            "descriptors": [
+              {
+                "text": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+                "levelId": "L3",
+                "scoreUnits": 333
+              },
+              {
+                "text": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+                "levelId": "L2",
+                "scoreUnits": 167
+              },
+              {
+                "text": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 333,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-verification:5",
+            "title": "Comprobación del resultado",
+            "maxScore": 3.33,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-verification",
+            "description": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+            "descriptors": [
+              {
+                "text": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+                "levelId": "L3",
+                "scoreUnits": 333
+              },
+              {
+                "text": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+                "levelId": "L2",
+                "scoreUnits": 167
+              },
+              {
+                "text": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 333,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "math-process:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "22f1a0a2-2f37-5d4e-b4f4-b8e1af52da50",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "dc506264-93a2-5903-beca-eb1fd8c766a8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4da380-4cb7-59a0-a590-9ed347eefacc",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e98a9200-2637-500f-91c2-9ad76564dee0",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b22f2e75-7004-5b6a-b1c2-98496b3e53ba",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cc1357a1-1e07-50d8-a3a6-15aae63ba41d",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fc3e24c3-73b1-5e41-bfab-53b509a10271",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "695b5f52-d00c-5414-825c-5b56f1a5a67e",
+              "topicCoverage": 0.25
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=math",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=math-matrices-5",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.14",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "392f46f2-fbc7-5931-a290-c45a88a4f206",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "PROBLEM_SOLVING",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA filas matrices · lista-ponderada",
+        "lista-ponderada:points:0": "3.34",
+        "lista-ponderada:points:1": "3.33",
+        "lista-ponderada:points:2": "4.17",
+        "lista-ponderada:points:3": "2.5",
+        "lista-ponderada:points:4": "3.33",
+        "lista-ponderada:points:5": "3.33",
+        "lista-ponderada:weight:0": "16.67",
+        "lista-ponderada:weight:1": "16.67",
+        "lista-ponderada:weight:2": "20.83",
+        "lista-ponderada:weight:3": "12.5",
+        "lista-ponderada:weight:4": "16.67",
+        "lista-ponderada:weight:5": "16.66",
+        "lista-ponderada:criterion:0": "Organización y significado de los datos",
+        "lista-ponderada:criterion:1": "Selección de operaciones y dimensiones · revisión docente",
+        "lista-ponderada:criterion:2": "Ejecución de las operaciones requeridas",
+        "lista-ponderada:criterion:3": "Justificación del procedimiento",
+        "lista-ponderada:criterion:4": "Interpretación en el contexto",
+        "lista-ponderada:criterion:5": "Comprobación del resultado",
+        "lista-ponderada:indicator:0": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+        "lista-ponderada:indicator:1": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+        "lista-ponderada:indicator:2": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+        "lista-ponderada:indicator:3": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+        "lista-ponderada:indicator:4": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+        "lista-ponderada:indicator:5": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+        "lista-ponderada:description:1": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+        "lista-ponderada:description:2": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+        "lista-ponderada:description:3": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+        "lista-ponderada:description:4": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+        "lista-ponderada:description:5": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-data:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-selection:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-operations:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-justification:3",
+        "lista-ponderada:criterion-id:4": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-interpretation:4",
+        "lista-ponderada:criterion-id:5": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-verification:5",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[400,400,500,300,400,400]",
+        "lista-ponderada:meta:criteriaCount": "6",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.14",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Organización y significado de los datos\",\"description\":\"Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.\",\"progression\":[\"Organiza los datos de cantidades, precios o ventas proporcionados sin alterar sus relaciones y vincula cada fila, columna y entrada con su significado.\",\"La matriz conserva los datos y sus relaciones; una etiqueta o significado necesita precisión.\",\"Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.\",\"La disposición impide reconocer las relaciones entre los datos y el significado de las filas y columnas.\",\"No presenta evidencia que permita reconocer la organización de los datos en una matriz.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Selección de operaciones y dimensiones\",\"description\":\"Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.\",\"progression\":[\"Relaciona la operación con la pregunta, verifica las dimensiones necesarias y descarta las operaciones que no corresponden.\",\"La operación corresponde a la situación y sus dimensiones son compatibles; la explicación de una condición es incompleta.\",\"Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.\",\"Elige operaciones con incompatibilidades de dimensiones que impiden resolver la situación.\",\"No identifica una operación pertinente ni sus condiciones de dimensiones.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Ejecución de las operaciones requeridas\",\"description\":\"Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.\",\"progression\":[\"Ejecuta correctamente las operaciones seleccionadas, manteniendo la correspondencia de entradas y el orden de los productos.\",\"El procedimiento es correcto; un error aritmético aislado afecta una entrada.\",\"Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.\",\"Los pasos no respetan las reglas de las operaciones y no permiten resolver la situación.\",\"No desarrolla las operaciones necesarias para obtener un resultado.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Justificación del procedimiento\",\"description\":\"Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.\",\"progression\":[\"Justifica el procedimiento enlazando pregunta, datos y pasos; permite reconstruir el razonamiento seguido.\",\"Relaciona los pasos con la pregunta; una decisión queda poco justificada.\",\"Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.\",\"La explicación no relaciona las decisiones con el procedimiento desarrollado.\",\"No aporta una explicación del procedimiento utilizado.\"]}",
+        "lista-ponderada:criterion-evidence:4": "{\"title\":\"Interpretación en el contexto\",\"description\":\"Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.\",\"progression\":[\"Relaciona las entradas del resultado con lo que representan y responde de forma coherente a la situación.\",\"Interpreta el resultado en su contexto; una entrada o relación necesita precisión.\",\"Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.\",\"Repite resultados numéricos sin establecer qué significan para la situación.\",\"No aporta una interpretación del resultado en el contexto planteado.\"]}",
+        "lista-ponderada:criterion-evidence:5": "{\"title\":\"Comprobación del resultado\",\"description\":\"Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.\",\"progression\":[\"Aplica la comprobación solicitada y localiza o descarta errores usando datos y resultado.\",\"Comprueba el resultado; una parte de la revisión queda sin documentar.\",\"La comprobación es parcial y no permite revisar todos los aspectos solicitados.\",\"La comprobación no guarda relación con el resultado que debía revisar.\",\"No aporta la comprobación solicitada.\"]}",
+        "lista-ponderada:criterion-template:0": "math-matrices-data",
+        "lista-ponderada:criterion-template:1": "math-matrices-selection",
+        "lista-ponderada:criterion-template:2": "math-matrices-operations",
+        "lista-ponderada:criterion-template:3": "math-matrices-justification",
+        "lista-ponderada:criterion-template:4": "math-matrices-interpretation",
+        "lista-ponderada:criterion-template:5": "math-matrices-verification"
+      },
+      "evaluationTechnique": "resolucion-problemas",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "e23e652b-c8e7-490c-89a3-956a5a91b7a4",
+      "name": "Calculamos alturas y distancias utilizando la trigonometría.",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Los estudiantes resolverán situaciones prácticas relacionadas con el cálculo de alturas y distancias de objetos de su entorno, utilizando las razones trigonométricas (seno, coseno y tangente). A partir de problemas planteados, identificarán los datos conocidos, seleccionarán la razón trigonométrica adecuada y realizarán los cálculos correspondientes. Finalmente, explicarán sus procedimientos y resultados, relacionando la trigonometría con situaciones de la vida cotidiana.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "0a90ee01-8f73-4438-ace8-c1d6f7203c0f",
+      "instrumentSnapshotId": "4ee0fd27-8d98-4045-bd2e-556157f88d6d",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.14:f1d980b5-b339-5fdd-b5a9-4f34a037359f:math-trigonometry-data:0",
+            "title": "Datos conocidos e incógnita",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-trigonometry-data",
+            "description": "Identifica medidas y ángulos conocidos, la altura o distancia buscada y sus relaciones en la situación. Parcial (50%): Identifica parte de los datos, pero confunde una medida conocida con la incógnita o su relación geométrica.",
+            "descriptors": [
+              {
+                "text": "Identifica medidas y ángulos conocidos, la altura o distancia buscada y sus relaciones en la situación. Parcial (50%): Identifica parte de los datos, pero confunde una medida conocida con la incógnita o su relación geométrica.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Identifica medidas y ángulos conocidos, la altura o distancia buscada y sus relaciones en la situación. Parcial (50%): Identifica parte de los datos, pero confunde una medida conocida con la incógnita o su relación geométrica.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Identifica medidas y ángulos conocidos, la altura o distancia buscada y sus relaciones en la situación. Parcial (50%): Identifica parte de los datos, pero confunde una medida conocida con la incógnita o su relación geométrica.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:f1d980b5-b339-5fdd-b5a9-4f34a037359f:math-trigonometry-ratio:1",
+            "title": "Elección de la razón trigonométrica",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-trigonometry-ratio",
+            "description": "Selecciona seno, coseno o tangente según las medidas conocidas y la altura o distancia buscada; plantea la relación correspondiente. Parcial (50%): Reconoce una razón posible, pero confunde lados o no la vincula con la incógnita.",
+            "descriptors": [
+              {
+                "text": "Selecciona seno, coseno o tangente según las medidas conocidas y la altura o distancia buscada; plantea la relación correspondiente. Parcial (50%): Reconoce una razón posible, pero confunde lados o no la vincula con la incógnita.",
+                "levelId": "L3",
+                "scoreUnits": 500
+              },
+              {
+                "text": "Selecciona seno, coseno o tangente según las medidas conocidas y la altura o distancia buscada; plantea la relación correspondiente. Parcial (50%): Reconoce una razón posible, pero confunde lados o no la vincula con la incógnita.",
+                "levelId": "L2",
+                "scoreUnits": 250
+              },
+              {
+                "text": "Selecciona seno, coseno o tangente según las medidas conocidas y la altura o distancia buscada; plantea la relación correspondiente. Parcial (50%): Reconoce una razón posible, pero confunde lados o no la vincula con la incógnita.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:f1d980b5-b339-5fdd-b5a9-4f34a037359f:math-trigonometry-calculation:2",
+            "title": "Cálculo de la altura o distancia",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-trigonometry-calculation",
+            "description": "Despeja la incógnita y calcula la altura o distancia con la razón elegida, expresando el resultado en las unidades de la situación. Parcial (50%): El planteamiento es aprovechable, pero un error de despeje o cálculo afecta la medida obtenida.",
+            "descriptors": [
+              {
+                "text": "Despeja la incógnita y calcula la altura o distancia con la razón elegida, expresando el resultado en las unidades de la situación. Parcial (50%): El planteamiento es aprovechable, pero un error de despeje o cálculo afecta la medida obtenida.",
+                "levelId": "L3",
+                "scoreUnits": 500
+              },
+              {
+                "text": "Despeja la incógnita y calcula la altura o distancia con la razón elegida, expresando el resultado en las unidades de la situación. Parcial (50%): El planteamiento es aprovechable, pero un error de despeje o cálculo afecta la medida obtenida.",
+                "levelId": "L2",
+                "scoreUnits": 250
+              },
+              {
+                "text": "Despeja la incógnita y calcula la altura o distancia con la razón elegida, expresando el resultado en las unidades de la situación. Parcial (50%): El planteamiento es aprovechable, pero un error de despeje o cálculo afecta la medida obtenida.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:f1d980b5-b339-5fdd-b5a9-4f34a037359f:math-trigonometry-justification:3",
+            "title": "Explicación del procedimiento",
+            "maxScore": 3,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-trigonometry-justification",
+            "description": "Explica la elección de la razón y los pasos seguidos para obtener la altura o distancia. Parcial (50%): Enumera algunos pasos sin explicar su relación con los datos o la incógnita.",
+            "descriptors": [
+              {
+                "text": "Explica la elección de la razón y los pasos seguidos para obtener la altura o distancia. Parcial (50%): Enumera algunos pasos sin explicar su relación con los datos o la incógnita.",
+                "levelId": "L3",
+                "scoreUnits": 300
+              },
+              {
+                "text": "Explica la elección de la razón y los pasos seguidos para obtener la altura o distancia. Parcial (50%): Enumera algunos pasos sin explicar su relación con los datos o la incógnita.",
+                "levelId": "L2",
+                "scoreUnits": 150
+              },
+              {
+                "text": "Explica la elección de la razón y los pasos seguidos para obtener la altura o distancia. Parcial (50%): Enumera algunos pasos sin explicar su relación con los datos o la incógnita.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 300,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:f1d980b5-b339-5fdd-b5a9-4f34a037359f:math-trigonometry-interpretation:4",
+            "title": "Interpretación de la medida obtenida",
+            "maxScore": 3,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-trigonometry-interpretation",
+            "description": "Explica qué representa la altura o distancia obtenida y si es coherente con las condiciones de la situación cotidiana. Parcial (50%): Relaciona parcialmente el número con la medida, sin revisar una condición importante.",
+            "descriptors": [
+              {
+                "text": "Explica qué representa la altura o distancia obtenida y si es coherente con las condiciones de la situación cotidiana. Parcial (50%): Relaciona parcialmente el número con la medida, sin revisar una condición importante.",
+                "levelId": "L3",
+                "scoreUnits": 300
+              },
+              {
+                "text": "Explica qué representa la altura o distancia obtenida y si es coherente con las condiciones de la situación cotidiana. Parcial (50%): Relaciona parcialmente el número con la medida, sin revisar una condición importante.",
+                "levelId": "L2",
+                "scoreUnits": 150
+              },
+              {
+                "text": "Explica qué representa la altura o distancia obtenida y si es coherente con las condiciones de la situación cotidiana. Parcial (50%): Relaciona parcialmente el número con la medida, sin revisar una condición importante.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 300,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "math-process",
+          "ranking": [
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "3a8ac37a-4dca-5639-a098-cb6dcb1b6ed1",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "67d0a3b9-da75-5e92-bd79-26e4f049ad0e",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "ef69274a-dc11-58cb-8bc7-4693e5395a71",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "fcc0049c-db73-5876-9531-67cbd2cd1bfe",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 42,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4e9baa7e-57bb-5eb2-80c4-d1df7af9bbf6",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 42,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "545f9784-4d09-5410-9d1c-619959c47627",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 42,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "57bbf8b3-4976-5baf-a941-35547b2a6c74",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "31b0fe4c-b80d-52a8-bab3-c4ffbadaa8c7",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 38,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "83a3d950-4c00-5335-9cfa-fecc1448be05",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 38,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f5cc25d9-4a4c-5ac7-86f4-a5f37ad552fe",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "eddab038-7a73-5b7a-bda4-97da9020a5af",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "15cfb6f0-f463-5634-a07b-d78688ca6d2e",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1a9da404-85a0-5e24-92e1-acacf713774a",
+              "topicCoverage": 0.2
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ca7350fb-dcc4-54ae-8fdb-d45ea65a3db4",
+              "topicCoverage": 0.2
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=math",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=math-trigonometry-6",
+            "La consigna de 6.º retoma razones trigonométricas documentadas en 5.º; no se atribuye respaldo específico de 6.º.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.14",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "f1d980b5-b339-5fdd-b5a9-4f34a037359f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "PROBLEM_SOLVING",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para Calculamos alturas y distancias utilizando la trigonometría.",
+        "lista-ponderada:points:0": "4",
+        "lista-ponderada:points:1": "5",
+        "lista-ponderada:points:2": "5",
+        "lista-ponderada:points:3": "3",
+        "lista-ponderada:points:4": "3",
+        "lista-ponderada:weight:0": "20",
+        "lista-ponderada:weight:1": "25",
+        "lista-ponderada:weight:2": "25",
+        "lista-ponderada:weight:3": "15",
+        "lista-ponderada:weight:4": "15",
+        "lista-ponderada:criterion:0": "Datos conocidos e incógnita",
+        "lista-ponderada:criterion:1": "Elección de la razón trigonométrica",
+        "lista-ponderada:criterion:2": "Cálculo de la altura o distancia",
+        "lista-ponderada:criterion:3": "Explicación del procedimiento",
+        "lista-ponderada:criterion:4": "Interpretación de la medida obtenida",
+        "lista-ponderada:indicator:0": "Identifica medidas y ángulos conocidos, la altura o distancia buscada y sus relaciones en la situación. Parcial (50%): Identifica parte de los datos, pero confunde una medida conocida con la incógnita o su relación geométrica.",
+        "lista-ponderada:indicator:1": "Selecciona seno, coseno o tangente según las medidas conocidas y la altura o distancia buscada; plantea la relación correspondiente. Parcial (50%): Reconoce una razón posible, pero confunde lados o no la vincula con la incógnita.",
+        "lista-ponderada:indicator:2": "Despeja la incógnita y calcula la altura o distancia con la razón elegida, expresando el resultado en las unidades de la situación. Parcial (50%): El planteamiento es aprovechable, pero un error de despeje o cálculo afecta la medida obtenida.",
+        "lista-ponderada:indicator:3": "Explica la elección de la razón y los pasos seguidos para obtener la altura o distancia. Parcial (50%): Enumera algunos pasos sin explicar su relación con los datos o la incógnita.",
+        "lista-ponderada:indicator:4": "Explica qué representa la altura o distancia obtenida y si es coherente con las condiciones de la situación cotidiana. Parcial (50%): Relaciona parcialmente el número con la medida, sin revisar una condición importante.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Identifica medidas y ángulos conocidos, la altura o distancia buscada y sus relaciones en la situación. Parcial (50%): Identifica parte de los datos, pero confunde una medida conocida con la incógnita o su relación geométrica.",
+        "lista-ponderada:description:1": "Selecciona seno, coseno o tangente según las medidas conocidas y la altura o distancia buscada; plantea la relación correspondiente. Parcial (50%): Reconoce una razón posible, pero confunde lados o no la vincula con la incógnita.",
+        "lista-ponderada:description:2": "Despeja la incógnita y calcula la altura o distancia con la razón elegida, expresando el resultado en las unidades de la situación. Parcial (50%): El planteamiento es aprovechable, pero un error de despeje o cálculo afecta la medida obtenida.",
+        "lista-ponderada:description:3": "Explica la elección de la razón y los pasos seguidos para obtener la altura o distancia. Parcial (50%): Enumera algunos pasos sin explicar su relación con los datos o la incógnita.",
+        "lista-ponderada:description:4": "Explica qué representa la altura o distancia obtenida y si es coherente con las condiciones de la situación cotidiana. Parcial (50%): Relaciona parcialmente el número con la medida, sin revisar una condición importante.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.14:f1d980b5-b339-5fdd-b5a9-4f34a037359f:math-trigonometry-data:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.14:f1d980b5-b339-5fdd-b5a9-4f34a037359f:math-trigonometry-ratio:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.14:f1d980b5-b339-5fdd-b5a9-4f34a037359f:math-trigonometry-calculation:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.14:f1d980b5-b339-5fdd-b5a9-4f34a037359f:math-trigonometry-justification:3",
+        "lista-ponderada:criterion-id:4": "proposal:evaluation-2026.14:f1d980b5-b339-5fdd-b5a9-4f34a037359f:math-trigonometry-interpretation:4",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[400,500,500,300,300]",
+        "lista-ponderada:meta:criteriaCount": "5",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.14",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Datos conocidos e incógnita\",\"description\":\"Identifica medidas y ángulos conocidos, la altura o distancia buscada y sus relaciones en la situación. Parcial (50%): Identifica parte de los datos, pero confunde una medida conocida con la incógnita o su relación geométrica.\",\"progression\":[\"Distingue los datos y la incógnita y relaciona las medidas con la situación geométrica, sin añadir datos no disponibles.\",\"Reconoce datos e incógnita; una relación entre las medidas necesita precisión.\",\"Identifica parte de los datos, pero confunde una medida conocida con la incógnita o su relación geométrica.\",\"Confunde los datos y la incógnita e impide plantear la situación.\",\"No identifica los datos ni la altura o distancia que se busca.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Elección de la razón trigonométrica\",\"description\":\"Selecciona seno, coseno o tangente según las medidas conocidas y la altura o distancia buscada; plantea la relación correspondiente. Parcial (50%): Reconoce una razón posible, pero confunde lados o no la vincula con la incógnita.\",\"progression\":[\"Elige y plantea la razón que relaciona datos e incógnita, distinguiendo cada lado respecto al ángulo.\",\"La razón y el planteamiento son pertinentes; la identificación de un lado necesita precisión.\",\"Reconoce una razón posible, pero confunde lados o no la vincula con la incógnita.\",\"La razón planteada no relaciona las medidas disponibles con la incógnita.\",\"No plantea una razón trigonométrica útil para la situación.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Cálculo de la altura o distancia\",\"description\":\"Despeja la incógnita y calcula la altura o distancia con la razón elegida, expresando el resultado en las unidades de la situación. Parcial (50%): El planteamiento es aprovechable, pero un error de despeje o cálculo afecta la medida obtenida.\",\"progression\":[\"Despeja y calcula correctamente, conserva las unidades y usa una precisión numérica coherente con los datos.\",\"El despeje y el cálculo son correctos; una unidad o aproximación necesita precisión.\",\"El planteamiento es aprovechable, pero un error de despeje o cálculo afecta la medida obtenida.\",\"Los errores de despeje o cálculo impiden obtener una medida válida.\",\"No desarrolla un cálculo que permita obtener la altura o distancia.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Explicación del procedimiento\",\"description\":\"Explica la elección de la razón y los pasos seguidos para obtener la altura o distancia. Parcial (50%): Enumera algunos pasos sin explicar su relación con los datos o la incógnita.\",\"progression\":[\"Justifica la razón y conecta datos, planteamiento, despeje y cálculo en una explicación reconstruible.\",\"Explica la razón y los pasos principales; una decisión queda poco justificada.\",\"Enumera algunos pasos sin explicar su relación con los datos o la incógnita.\",\"La explicación no permite reconstruir el procedimiento desarrollado.\",\"No aporta una explicación del procedimiento.\"]}",
+        "lista-ponderada:criterion-evidence:4": "{\"title\":\"Interpretación de la medida obtenida\",\"description\":\"Explica qué representa la altura o distancia obtenida y si es coherente con las condiciones de la situación cotidiana. Parcial (50%): Relaciona parcialmente el número con la medida, sin revisar una condición importante.\",\"progression\":[\"Interpreta la medida y contrasta su coherencia con los datos y condiciones de la situación.\",\"Interpreta la medida en la situación; la comprobación de coherencia es incompleta.\",\"Relaciona parcialmente el número con la medida, sin revisar una condición importante.\",\"Menciona el número sin explicar su significado en la situación.\",\"No relaciona el resultado con la altura o distancia buscada.\"]}",
+        "lista-ponderada:criterion-template:0": "math-trigonometry-data",
+        "lista-ponderada:criterion-template:1": "math-trigonometry-ratio",
+        "lista-ponderada:criterion-template:2": "math-trigonometry-calculation",
+        "lista-ponderada:criterion-template:3": "math-trigonometry-justification",
+        "lista-ponderada:criterion-template:4": "math-trigonometry-interpretation"
+      },
+      "evaluationTechnique": "resolucion-problemas",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "3e5a0a87-f41d-4e6f-9167-f59c8f670c10",
+      "name": "QA pesos matrices",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Los estudiantes resolverán situaciones prácticas relacionadas con la organización de datos mediante matrices. A partir de ejemplos de ventas de productos, cantidades y precios, construirán matrices y realizarán operaciones de suma, resta y multiplicación, según corresponda. Finalmente, explicarán los procedimientos utilizados e interpretarán los resultados, demostrando cómo las matrices facilitan la organización de información y la resolución de problemas de la vida cotidiana Comprobarán los resultados con los datos originales.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "a3c27f93-f5ca-4724-93b9-c28536df2295",
+      "instrumentSnapshotId": "e34451d0-94c7-40c0-9641-2f54d491e759",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.14:fallback:math-matrices-data:0",
+            "title": "Organización y significado de los datos",
+            "maxScore": 3.15,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-data",
+            "description": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+            "descriptors": [
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+                "levelId": "L3",
+                "scoreUnits": 315
+              },
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+                "levelId": "L2",
+                "scoreUnits": 158
+              },
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 315,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:fallback:math-matrices-selection:1",
+            "title": "Selección de operaciones y dimensiones · revisión docente",
+            "maxScore": 3.15,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "math-matrices-selection",
+            "description": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+            "descriptors": [
+              {
+                "text": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+                "levelId": "L3",
+                "scoreUnits": 315
+              },
+              {
+                "text": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+                "levelId": "L2",
+                "scoreUnits": 158
+              },
+              {
+                "text": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 315,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:fallback:math-matrices-operations:2",
+            "title": "Ejecución de las operaciones requeridas",
+            "maxScore": 3.95,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-operations",
+            "description": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+            "descriptors": [
+              {
+                "text": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+                "levelId": "L3",
+                "scoreUnits": 395
+              },
+              {
+                "text": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+                "levelId": "L2",
+                "scoreUnits": 198
+              },
+              {
+                "text": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 395,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:fallback:math-matrices-justification:3",
+            "title": "Justificación del procedimiento",
+            "maxScore": 2.37,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-justification",
+            "description": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+            "descriptors": [
+              {
+                "text": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+                "levelId": "L3",
+                "scoreUnits": 237
+              },
+              {
+                "text": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+                "levelId": "L2",
+                "scoreUnits": 119
+              },
+              {
+                "text": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 237,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:fallback:math-matrices-interpretation:4",
+            "title": "Interpretación en el contexto",
+            "maxScore": 3.15,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-interpretation",
+            "description": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+            "descriptors": [
+              {
+                "text": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+                "levelId": "L3",
+                "scoreUnits": 315
+              },
+              {
+                "text": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+                "levelId": "L2",
+                "scoreUnits": 158
+              },
+              {
+                "text": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 315,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-verification:5",
+            "title": "Comprobación del resultado",
+            "maxScore": 1.58,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-verification",
+            "description": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+            "descriptors": [
+              {
+                "text": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+                "levelId": "L3",
+                "scoreUnits": 158
+              },
+              {
+                "text": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+                "levelId": "L2",
+                "scoreUnits": 79
+              },
+              {
+                "text": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 158,
+            "relativeWeight": 2,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "math-process:TEACHER_OVERRIDE",
+          "ranking": [],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=math",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=math-matrices-5",
+            "Se requiere contexto estructurado y versión disponible."
+          ],
+          "mappingStatus": "NO_PUBLISHED_VERSION",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": null,
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.14",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": null,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "PROBLEM_SOLVING",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA pesos matrices",
+        "lista-ponderada:points:0": "3.15",
+        "lista-ponderada:points:1": "3.15",
+        "lista-ponderada:points:2": "3.95",
+        "lista-ponderada:points:3": "2.37",
+        "lista-ponderada:points:4": "3.15",
+        "lista-ponderada:points:5": "1.58",
+        "lista-ponderada:weight:0": "18.18",
+        "lista-ponderada:weight:1": "18.18",
+        "lista-ponderada:weight:2": "22.74",
+        "lista-ponderada:weight:3": "13.63",
+        "lista-ponderada:weight:4": "18.18",
+        "lista-ponderada:weight:5": "9.09",
+        "lista-ponderada:criterion:0": "Organización y significado de los datos",
+        "lista-ponderada:criterion:1": "Selección de operaciones y dimensiones · revisión docente",
+        "lista-ponderada:criterion:2": "Ejecución de las operaciones requeridas",
+        "lista-ponderada:criterion:3": "Justificación del procedimiento",
+        "lista-ponderada:criterion:4": "Interpretación en el contexto",
+        "lista-ponderada:criterion:5": "Comprobación del resultado",
+        "lista-ponderada:indicator:0": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+        "lista-ponderada:indicator:1": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+        "lista-ponderada:indicator:2": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+        "lista-ponderada:indicator:3": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+        "lista-ponderada:indicator:4": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+        "lista-ponderada:indicator:5": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+        "lista-ponderada:description:1": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+        "lista-ponderada:description:2": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+        "lista-ponderada:description:3": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+        "lista-ponderada:description:4": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+        "lista-ponderada:description:5": "Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.14:fallback:math-matrices-data:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.14:fallback:math-matrices-selection:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.14:fallback:math-matrices-operations:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.14:fallback:math-matrices-justification:3",
+        "lista-ponderada:criterion-id:4": "proposal:evaluation-2026.14:fallback:math-matrices-interpretation:4",
+        "lista-ponderada:criterion-id:5": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-verification:5",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[347,347,434,260,347,173.5]",
+        "lista-ponderada:criterion-weight:0": "4",
+        "lista-ponderada:criterion-weight:1": "4",
+        "lista-ponderada:criterion-weight:2": "5",
+        "lista-ponderada:criterion-weight:3": "3",
+        "lista-ponderada:criterion-weight:4": "4",
+        "lista-ponderada:criterion-weight:5": "2",
+        "lista-ponderada:meta:criteriaCount": "6",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.14",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Organización y significado de los datos\",\"description\":\"Organiza los datos de cantidades, precios o ventas proporcionados en matrices y explica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.\",\"progression\":[\"Organiza los datos de cantidades, precios o ventas proporcionados sin alterar sus relaciones y vincula cada fila, columna y entrada con su significado.\",\"La matriz conserva los datos y sus relaciones; una etiqueta o significado necesita precisión.\",\"Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.\",\"La disposición impide reconocer las relaciones entre los datos y el significado de las filas y columnas.\",\"No presenta evidencia que permita reconocer la organización de los datos en una matriz.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Selección de operaciones y dimensiones\",\"description\":\"Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.\",\"progression\":[\"Relaciona la operación con la pregunta, verifica las dimensiones necesarias y descarta las operaciones que no corresponden.\",\"La operación corresponde a la situación y sus dimensiones son compatibles; la explicación de una condición es incompleta.\",\"Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.\",\"Elige operaciones con incompatibilidades de dimensiones que impiden resolver la situación.\",\"No identifica una operación pertinente ni sus condiciones de dimensiones.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Ejecución de las operaciones requeridas\",\"description\":\"Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.\",\"progression\":[\"Ejecuta correctamente las operaciones seleccionadas, manteniendo la correspondencia de entradas y el orden de los productos.\",\"El procedimiento es correcto; un error aritmético aislado afecta una entrada.\",\"Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.\",\"Los pasos no respetan las reglas de las operaciones y no permiten resolver la situación.\",\"No desarrolla las operaciones necesarias para obtener un resultado.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Justificación del procedimiento\",\"description\":\"Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.\",\"progression\":[\"Justifica el procedimiento enlazando pregunta, datos y pasos; permite reconstruir el razonamiento seguido.\",\"Relaciona los pasos con la pregunta; una decisión queda poco justificada.\",\"Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.\",\"La explicación no relaciona las decisiones con el procedimiento desarrollado.\",\"No aporta una explicación del procedimiento utilizado.\"]}",
+        "lista-ponderada:criterion-evidence:4": "{\"title\":\"Interpretación en el contexto\",\"description\":\"Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.\",\"progression\":[\"Relaciona las entradas del resultado con lo que representan y responde de forma coherente a la situación.\",\"Interpreta el resultado en su contexto; una entrada o relación necesita precisión.\",\"Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.\",\"Repite resultados numéricos sin establecer qué significan para la situación.\",\"No aporta una interpretación del resultado en el contexto planteado.\"]}",
+        "lista-ponderada:criterion-evidence:5": "{\"title\":\"Comprobación del resultado\",\"description\":\"Comprueba el resultado mediante la revisión solicitada, contrastándolo con los datos y las relaciones originales. Parcial (50%): La comprobación es parcial y no permite revisar todos los aspectos solicitados.\",\"progression\":[\"Aplica la comprobación solicitada y localiza o descarta errores usando datos y resultado.\",\"Comprueba el resultado; una parte de la revisión queda sin documentar.\",\"La comprobación es parcial y no permite revisar todos los aspectos solicitados.\",\"La comprobación no guarda relación con el resultado que debía revisar.\",\"No aporta la comprobación solicitada.\"]}",
+        "lista-ponderada:criterion-template:0": "math-matrices-data",
+        "lista-ponderada:criterion-template:1": "math-matrices-selection",
+        "lista-ponderada:criterion-template:2": "math-matrices-operations",
+        "lista-ponderada:criterion-template:3": "math-matrices-justification",
+        "lista-ponderada:criterion-template:4": "math-matrices-interpretation",
+        "lista-ponderada:criterion-template:5": "math-matrices-verification"
+      },
+      "evaluationTechnique": "resolucion-problemas",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "53b4debe-9d9f-4c33-95c9-89558ecd3ea6",
+      "name": "QA ámbito matrices",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Los estudiantes resolverán situaciones prácticas relacionadas con la organización de datos mediante matrices. A partir de ejemplos de ventas de productos, cantidades y precios, construirán matrices y realizarán operaciones de suma, resta y multiplicación, según corresponda. Finalmente, explicarán los procedimientos utilizados e interpretarán los resultados, demostrando cómo las matrices facilitan la organización de información y la resolución de problemas de la vida cotidiana</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "3845b16a-9185-48e3-8ffc-10e2a67b45e2",
+      "instrumentSnapshotId": "384597f5-4664-4c17-a222-e29ef9123ee9",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-data:0",
+            "title": "Organización y significado de los datos",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-data",
+            "description": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices e identifica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+            "descriptors": [
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices e identifica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices e identifica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices e identifica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-selection:1",
+            "title": "Selección de operaciones y dimensiones",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-selection",
+            "description": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+            "descriptors": [
+              {
+                "text": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-operations:2",
+            "title": "Ejecución de las operaciones requeridas",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-operations",
+            "description": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+            "descriptors": [
+              {
+                "text": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+                "levelId": "L3",
+                "scoreUnits": 500
+              },
+              {
+                "text": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+                "levelId": "L2",
+                "scoreUnits": 250
+              },
+              {
+                "text": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-justification:3",
+            "title": "Justificación del procedimiento",
+            "maxScore": 3,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-justification",
+            "description": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+            "descriptors": [
+              {
+                "text": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+                "levelId": "L3",
+                "scoreUnits": 300
+              },
+              {
+                "text": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+                "levelId": "L2",
+                "scoreUnits": 150
+              },
+              {
+                "text": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 300,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-interpretation:4",
+            "title": "Interpretación en el contexto",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "math-matrices-interpretation",
+            "description": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+            "descriptors": [
+              {
+                "text": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "math-process",
+          "ranking": [
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "16ee203f-365a-5afd-9f91-6fefeac13af6",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "22f1a0a2-2f37-5d4e-b4f4-b8e1af52da50",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ee999a7c-5a08-523e-a342-18e384e86b5c",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "58db7735-e0bd-50e0-bc21-951c9f89f07a",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8f239e23-1c0e-5a19-8eb4-d7ec0e4b0b53",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "dc506264-93a2-5903-beca-eb1fd8c766a8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1c5da8ea-7594-51ab-a3fb-fba843a9f0f4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bde6726e-4d90-5f4d-b2ac-b3fac1963111",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ee952b0e-720f-5b95-a27e-fbca94613d8a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "23914aeb-60c8-583b-aecc-d692a1865a0b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3fe53299-4921-5825-87e1-ea233bd298a7",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "472633bd-43f8-51eb-adb0-cfe01fbc960e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "525f5bb9-b00d-5c83-ab38-f22d86abac40",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "60cca32a-0aa9-53dc-a48a-4e9e7587c54e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8bcdf170-85e0-53df-983e-ece997231a2d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "345177bc-17ee-5748-bc5a-f5f4847a12ad",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "500917d4-e19f-5317-9927-a9e3988046b0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4da380-4cb7-59a0-a590-9ed347eefacc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e98a9200-2637-500f-91c2-9ad76564dee0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b22f2e75-7004-5b6a-b1c2-98496b3e53ba",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fe824bfb-0592-5ba4-9979-85f6259d8c54",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3aeee472-b4b7-590b-9118-084b2c2b62a0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cc1357a1-1e07-50d8-a3a6-15aae63ba41d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fc3e24c3-73b1-5e41-bfab-53b509a10271",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=math",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=math-matrices-5",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.14",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "392f46f2-fbc7-5931-a290-c45a88a4f206",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "PROBLEM_SOLVING",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA ámbito matrices",
+        "lista-ponderada:points:0": "4",
+        "lista-ponderada:points:1": "4",
+        "lista-ponderada:points:2": "5",
+        "lista-ponderada:points:3": "3",
+        "lista-ponderada:points:4": "4",
+        "lista-ponderada:weight:0": "20",
+        "lista-ponderada:weight:1": "20",
+        "lista-ponderada:weight:2": "25",
+        "lista-ponderada:weight:3": "15",
+        "lista-ponderada:weight:4": "20",
+        "lista-ponderada:criterion:0": "Organización y significado de los datos",
+        "lista-ponderada:criterion:1": "Selección de operaciones y dimensiones",
+        "lista-ponderada:criterion:2": "Ejecución de las operaciones requeridas",
+        "lista-ponderada:criterion:3": "Justificación del procedimiento",
+        "lista-ponderada:criterion:4": "Interpretación en el contexto",
+        "lista-ponderada:indicator:0": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices e identifica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+        "lista-ponderada:indicator:1": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+        "lista-ponderada:indicator:2": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+        "lista-ponderada:indicator:3": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+        "lista-ponderada:indicator:4": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Organiza los datos de cantidades, precios o ventas proporcionados en matrices e identifica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.",
+        "lista-ponderada:description:1": "Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.",
+        "lista-ponderada:description:2": "Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.",
+        "lista-ponderada:description:3": "Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.",
+        "lista-ponderada:description:4": "Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-data:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-selection:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-operations:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-justification:3",
+        "lista-ponderada:criterion-id:4": "proposal:evaluation-2026.14:392f46f2-fbc7-5931-a290-c45a88a4f206:math-matrices-interpretation:4",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[400,400,500,300,400]",
+        "lista-ponderada:criterion-weight:0": "4",
+        "lista-ponderada:criterion-weight:1": "4",
+        "lista-ponderada:criterion-weight:2": "5",
+        "lista-ponderada:criterion-weight:3": "3",
+        "lista-ponderada:criterion-weight:4": "4",
+        "lista-ponderada:meta:criteriaCount": "5",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.14",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Organización y significado de los datos\",\"description\":\"Organiza los datos de cantidades, precios o ventas proporcionados en matrices e identifica qué representan sus filas, columnas y entradas. Parcial (50%): Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.\",\"progression\":[\"Organiza los datos de cantidades, precios o ventas proporcionados sin alterar sus relaciones y vincula cada fila, columna y entrada con su significado.\",\"La matriz conserva los datos y sus relaciones; una etiqueta o significado necesita precisión.\",\"Organiza parte de los datos, pero alguna entrada no coincide con la fila o columna correspondiente.\",\"La disposición impide reconocer las relaciones entre los datos y el significado de las filas y columnas.\",\"No presenta evidencia que permita reconocer la organización de los datos en una matriz.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Selección de operaciones y dimensiones\",\"description\":\"Selecciona suma, resta, multiplicación, según corresponda a cada situación, y comprueba la compatibilidad de las dimensiones antes de operar. Parcial (50%): Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.\",\"progression\":[\"Relaciona la operación con la pregunta, verifica las dimensiones necesarias y descarta las operaciones que no corresponden.\",\"La operación corresponde a la situación y sus dimensiones son compatibles; la explicación de una condición es incompleta.\",\"Reconoce una operación pertinente, pero omite una condición de dimensiones o elige otra sin relación con la pregunta.\",\"Elige operaciones con incompatibilidades de dimensiones que impiden resolver la situación.\",\"No identifica una operación pertinente ni sus condiciones de dimensiones.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Ejecución de las operaciones requeridas\",\"description\":\"Realiza las operaciones que corresponden a cada situación respetando el orden y la posición de las entradas de las matrices. Parcial (50%): Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.\",\"progression\":[\"Ejecuta correctamente las operaciones seleccionadas, manteniendo la correspondencia de entradas y el orden de los productos cuando corresponde.\",\"El procedimiento es correcto; un error aritmético aislado afecta una entrada.\",\"Completa parte de las operaciones, con errores de correspondencia o cálculo en varias entradas.\",\"Los pasos no respetan las reglas de las operaciones y no permiten resolver la situación.\",\"No desarrolla las operaciones necesarias para obtener un resultado.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Justificación del procedimiento\",\"description\":\"Explica por qué el procedimiento con matrices responde a la pregunta y relaciona sus pasos con los datos utilizados. Parcial (50%): Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.\",\"progression\":[\"Justifica el procedimiento enlazando pregunta, datos y pasos; permite reconstruir el razonamiento seguido.\",\"Relaciona los pasos con la pregunta; una decisión queda poco justificada.\",\"Enumera pasos, pero justifica solo algunas decisiones o no los relaciona con los datos.\",\"La explicación no relaciona las decisiones con el procedimiento desarrollado.\",\"No aporta una explicación del procedimiento utilizado.\"]}",
+        "lista-ponderada:criterion-evidence:4": "{\"title\":\"Interpretación en el contexto\",\"description\":\"Interpreta las entradas de la matriz resultante en relación con las cantidades, precios o ventas de la situación. Parcial (50%): Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.\",\"progression\":[\"Relaciona las entradas del resultado con lo que representan y responde de forma coherente a la situación.\",\"Interpreta el resultado en su contexto; una entrada o relación necesita precisión.\",\"Interpreta parte del resultado, pero atribuye un significado incorrecto a alguna entrada.\",\"Repite resultados numéricos sin establecer qué significan para la situación.\",\"No aporta una interpretación del resultado en el contexto planteado.\"]}",
+        "lista-ponderada:criterion-template:0": "math-matrices-data",
+        "lista-ponderada:criterion-template:1": "math-matrices-selection",
+        "lista-ponderada:criterion-template:2": "math-matrices-operations",
+        "lista-ponderada:criterion-template:3": "math-matrices-justification",
+        "lista-ponderada:criterion-template:4": "math-matrices-interpretation"
+      },
+      "evaluationTechnique": "resolucion-problemas",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ],
+  "historical": [
+    {
+      "id": "6b9d6dc6-1f25-47ea-90de-2fc7839eeef9",
+      "name": "Construimos un modelo de la célula animal y vegetal",
+      "catalogVersion": "evaluation-2026.10"
+    },
+    {
+      "id": "5bda12c8-d866-44f8-b24b-5123a722c494",
+      "name": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "catalogVersion": "evaluation-2026.10"
+    },
+    {
+      "id": "07c2a29b-dd0b-4fa0-94bf-fc6f20a6e8b1",
+      "name": "Actividad de aprendizaje",
+      "catalogVersion": "evaluation-2026.11"
+    },
+    {
+      "id": "cd6709ab-9a60-4fbd-8904-af15ba6f8f37",
+      "name": "Guía turística de dos lugares · QA local",
+      "catalogVersion": "evaluation-2026.12"
+    },
+    {
+      "id": "174c32cd-3d7e-49a4-aaa3-7e43c1863170",
+      "name": "Informe de lectura · QA personajes",
+      "catalogVersion": "evaluation-2026.13"
+    }
+  ]
+}

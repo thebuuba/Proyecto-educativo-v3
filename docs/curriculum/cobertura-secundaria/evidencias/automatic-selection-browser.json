@@ -1,0 +1,50 @@
+[
+  {
+    "heading": [
+      "6. Instrumento completo · Rúbrica de evaluación",
+      "Rúbrica de evaluación",
+      "Tu progreso"
+    ],
+    "instrument": "rubrica",
+    "trace": "Caso 1: Lengua Española · 2.º · regla esperada oral-written-art-project. Sin guardar.\n/evaluation-instruments/interpret: preferencia automática\n503: Falta instalar el catálogo evaluativo versionado.\n/evaluation-instruments/recommend: preferencia automática\n503: Falta instalar el catálogo evaluativo versionado.",
+    "case": "Informe de investigación",
+    "expectedRule": "oral-written-art-project",
+    "verified": true
+  },
+  {
+    "heading": [
+      "6. Instrumento completo · Lista de cotejo",
+      "Lista de cotejo",
+      "Tu progreso"
+    ],
+    "instrument": "lista-cotejo",
+    "trace": "Caso 2: Ciencias de la Naturaleza: Ciencias de la Vida · 2.º · regla esperada observation. Sin guardar.\n/evaluation-instruments/interpret: preferencia automática\n503: Falta instalar el catálogo evaluativo versionado.\n/evaluation-instruments/recommend: preferencia automática\n503: Falta instalar el catálogo evaluativo versionado.",
+    "case": "Observación de hojas",
+    "expectedRule": "observation",
+    "verified": true
+  },
+  {
+    "heading": [
+      "6. Instrumento completo · Escala estimativa",
+      "Escala estimativa",
+      "Tu progreso"
+    ],
+    "instrument": "escala",
+    "trace": "Caso 3: Educación Artística · 2.º · regla esperada motor-performance. Sin guardar.\n/evaluation-instruments/interpret: preferencia automática\n503: Falta instalar el catálogo evaluativo versionado.\n/evaluation-instruments/recommend: preferencia automática\n503: Falta instalar el catálogo evaluativo versionado.",
+    "case": "Práctica motriz",
+    "expectedRule": "motor-performance",
+    "verified": true
+  },
+  {
+    "heading": [
+      "6. Instrumento completo · Lista ponderada",
+      "Lista ponderada",
+      "Tu progreso"
+    ],
+    "instrument": "lista-ponderada",
+    "trace": "Caso 4: Ciencias de la Naturaleza: Física · 6.º · regla esperada math-process. Sin guardar.\n/evaluation-instruments/interpret: preferencia automática\n/evaluation-instruments/recommend: preferencia automática\n503: Falta instalar el catálogo evaluativo versionado.\n503: Falta instalar el catálogo evaluativo versionado.\n/evaluation-instruments/interpret: preferencia automática\n503: Falta instalar el catálogo evaluativo versionado.",
+    "case": "Ejercicios con la Ley de Ohm",
+    "expectedRule": "math-process",
+    "verified": true
+  }
+]

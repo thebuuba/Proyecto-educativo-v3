@@ -1,3 +1,4 @@
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { BookOpen, CalendarDays, GraduationCap } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
@@ -9,6 +10,8 @@ import { Select } from '@/components/ui/Select'
 import { getCourseTeams } from '@/modules/courses/services/coursesService'
 import type { CourseTeam } from '@/modules/courses/types'
 import { ActivityInfoModal } from '@/modules/activities/components/ActivityInfoModal'
+import { isFirstSecondaryLanguage } from '@/modules/activities/utils/firstSecondaryLanguageContext'
+import { instrumentAcademicContext } from '@/modules/activities/utils/instrumentAcademicContext'
 import { GradingBook } from '@/modules/grading/components/GradingBook'
 import '@/modules/grading/grading-design.css'
 import { useGrading } from '@/modules/grading/hooks/useGrading'
@@ -16,6 +19,7 @@ import type { GradingActivity, SectionSubjectOption } from '@/modules/grading/ty
 import { competencyPeriods, getRequestedCompetencyBlockId } from '@/modules/grading/utils/competencyGrades'
 
 export function GradingPage() {
+  const {schoolId, appUser} = useAuth()
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const requestedSectionSubjectId = searchParams.get('sectionSubjectId') ?? undefined
@@ -26,12 +30,16 @@ export function GradingPage() {
   const returnCourseId = searchParams.get('returnCourseId')
   const returnSubjectId = searchParams.get('returnSubjectId')
   const returnTab = searchParams.get('returnTab')
+  const requestedReturnTo = searchParams.get('returnTo')
+  const explicitReturnTo = requestedReturnTo?.startsWith('/') && !requestedReturnTo.startsWith('//') ? requestedReturnTo : null
   const returnsToSubject = searchParams.get('origin') === 'subject' && Boolean(returnCourseId && returnSubjectId)
   const returnsToActivities = searchParams.get('origin') === 'activities'
-  const returnToOrigin = returnsToSubject
+  const returnToOrigin = explicitReturnTo
+    ? () => navigate(explicitReturnTo)
+    : returnsToSubject
     ? () => navigate(`/cursos?${new URLSearchParams({ courseId: returnCourseId!, subjectId: returnSubjectId!, ...(returnTab ? { tab: returnTab } : {}) }).toString()}`)
     : returnsToActivities ? () => navigate('/actividades') : undefined
-  const originReturnLabel = returnsToSubject ? 'Volver a la asignatura' : returnsToActivities ? 'Volver a actividades' : undefined
+  const originReturnLabel = returnsToSubject ? 'Volver a la asignatura' : returnsToActivities || explicitReturnTo ? 'Volver a actividades' : undefined
 
   const {
     sectionSubjects,
@@ -39,6 +47,8 @@ export function GradingPage() {
     selectedSsId,
     setSelectedSsId,
     selectedPeriod,
+    academicPeriodId,
+    schoolYearId,
     selectedPeriodId,
     setSelectedPeriodId,
     students,
@@ -79,7 +89,7 @@ export function GradingPage() {
 
   useEffect(() => {
     if (requestedActivityMode !== 'edit' || !requestedActivityId || !selectedSsId) return
-    navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: selectedSsId, ...(requestedAcademicPeriodId ? { academicPeriodId: requestedAcademicPeriodId } : {}), activityId: requestedActivityId }).toString()}`, { replace: true })
+    navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: selectedSsId, ...(academicPeriodId ? { academicPeriodId } : {}), activityId: requestedActivityId }).toString()}`, { replace: true })
   }, [navigate, requestedAcademicPeriodId, requestedActivityId, requestedActivityMode, selectedSsId])
 
   function goToSavedActivity(activity: GradingActivity, mode: 'created' | 'updated') {
@@ -101,7 +111,7 @@ export function GradingPage() {
   function navigateActivityMode(mode: 'edit' | 'evaluate') {
     if (!requestedActivityId) return
     if (mode === 'edit') {
-      navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: selectedSsId, ...(requestedAcademicPeriodId ? { academicPeriodId: requestedAcademicPeriodId } : {}), activityId: requestedActivityId }).toString()}`)
+      navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: selectedSsId, ...(academicPeriodId ? { academicPeriodId } : {}), activityId: requestedActivityId }).toString()}`)
       return
     }
     const next = new URLSearchParams(searchParams)
@@ -155,6 +165,11 @@ export function GradingPage() {
       ) : (
         <div className="grading-workspace">
           <GradingBook
+            key={JSON.stringify([schoolId,appUser?.id,schoolYearId,selectedSsId,academicPeriodId])}
+            activityDraftContext={{schoolId:schoolId ?? '', userId:appUser?.id ?? '', schoolYearId:schoolYearId ?? '', sectionSubjectId:selectedSsId,academicPeriodId:academicPeriodId ?? ''}}
+            firstSecondaryLanguage={isFirstSecondaryLanguage(selectedSs)}
+            instrumentAcademicContext={instrumentAcademicContext(selectedSs)}
+            initialConfigOpen={searchParams.get('ajustes') === 'calculo'}
             evaluationProfile={selectedSs?.evaluationProfile}
             sectionSubjectId={selectedSsId}
             students={students}
@@ -182,7 +197,7 @@ export function GradingPage() {
             loadFinalRecords={loadFinalRecords}
             getActivitiesForPeriod={getActivitiesForPeriod}
             onActivityWorkspaceChange={setHideFilters}
-            onCreateActivityRequested={(blockId) => navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: selectedSsId, ...(requestedAcademicPeriodId ? { academicPeriodId: requestedAcademicPeriodId } : {}), ...(blockId ? { competencyBlockId: blockId } : {}) }).toString()}`)}
+            onCreateActivityRequested={(blockId) => navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: selectedSsId, ...(academicPeriodId ? { academicPeriodId } : {}), ...(blockId ? { competencyBlockId: blockId } : {}) }).toString()}`)}
           />
           {showRequestedViewer && requestedActivity ? <ActivityInfoModal activity={requestedActivity} onClose={() => { if (returnToOrigin) returnToOrigin(); else navigate('/calificaciones') }} onEdit={() => navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId: selectedSsId, academicPeriodId: requestedAcademicPeriodId ?? '', activityId: requestedActivity.id }).toString()}`)} onEvaluate={() => navigateActivityMode('evaluate')} /> : null}
         </div>

@@ -6,6 +6,7 @@
 import { lazy, Suspense } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 
+import { BillingPreviewGate } from '@/modules/promo/components/BillingPreviewGate'
 import { ErrorBoundary } from '@/components/ui/ErrorFallback'
 import { PageSkeleton } from '@/components/ui/PageSkeleton'
 import { AppLayout } from '@/layouts/AppLayout'
@@ -84,9 +85,9 @@ function App() {
         <Route path="/terminos" element={<TermsPage />} />
         <Route path="/contacto" element={<ContactPage />} />
         <Route path="/precios" element={<PricingPage />} />
-        <Route path="/contratar" element={<CheckoutPage />} />
-        <Route path="/contratar/estado/:estado" element={<PaymentStatusPage />} />
-        <Route path="/cuenta/suscripcion" element={<SubscriptionPage />} />
+        <Route path="/contratar" element={<BillingPreviewGate><CheckoutPage /></BillingPreviewGate>} />
+        <Route path="/contratar/estado/:estado" element={<BillingPreviewGate><PaymentStatusPage /></BillingPreviewGate>} />
+        <Route path="/cuenta/suscripcion" element={<BillingPreviewGate><SubscriptionPage /></BillingPreviewGate>} />
         <Route path="/registro" element={<RegisterPage />} />
         <Route path="/registro/confirma-correo" element={<ConfirmEmailPage />} />
         <Route path="/configuracion/centro" element={<OnboardingPage />} />

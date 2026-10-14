@@ -456,7 +456,7 @@ export class StudentsService {
             status: toRecordStatus(dto.status) as RecordStatus,
           },
         }))
-      await tx.enrollment.upsert({
+      const enrollment = await tx.enrollment.upsert({
         where: {
           studentId_schoolYearId: {
             studentId: created.id,
@@ -481,13 +481,15 @@ export class StudentsService {
           listNumber,
         },
       })
-      return created
+      return { student: created, enrollment }
     })
     invalidateEnrollmentOptions(schoolId)
 
     return {
-      ...student,
-      fullName: `${student.firstName} ${student.lastName}`.trim(),
+      ...student.student,
+      enrollmentId: student.enrollment.id,
+      listNumber: student.enrollment.listNumber ?? listNumber,
+      fullName: `${student.student.firstName} ${student.student.lastName}`.trim(),
     }
   }
 

@@ -1,0 +1,640 @@
+[
+  {
+    "id": "procedure-family-1",
+    "topic": "cronica",
+    "description": "Escucharán una crónica, anticiparán el contenido a partir del título y resumirán los hechos, el ambiente y los participantes.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "hechos",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "370c118d-5406-5327-8bba-6325ea12703f"
+  },
+  {
+    "id": "procedure-family-2",
+    "topic": "cronica",
+    "description": "Narrarán oralmente una crónica de actualidad usando conectores temporales, pronombres personales, voz pasiva, oraciones coordinadas y sinónimos.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-passive",
+    "contains": "producción oral",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "370c118d-5406-5327-8bba-6325ea12703f"
+  },
+  {
+    "id": "procedure-family-3",
+    "topic": "cronica",
+    "description": "Leerán una crónica, anticiparán su sentido a partir de la volanta, el copete y el epígrafe. Inferirán el significado de palabras desconocidas por el contexto y lo comprobarán en el diccionario.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-dictionary",
+    "contains": "acepción",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "370c118d-5406-5327-8bba-6325ea12703f"
+  },
+  {
+    "id": "procedure-family-4",
+    "topic": "cronica",
+    "description": "Redactarán una crónica investigando hechos, causas y posibles consecuencias. Organizarán un esquema, elegirán el registro para la audiencia, revisarán borradores y publicarán la versión final.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-causes",
+    "contains": "posibles consecuencias",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "370c118d-5406-5327-8bba-6325ea12703f"
+  },
+  {
+    "id": "procedure-family-5",
+    "topic": "instructivo",
+    "description": "Escucharán un instructivo de un juego, anticiparán su contenido y parafrasearán las instrucciones relacionando su orden y finalidad.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "instrucciones",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "acceb93b-533e-5b2d-8b6c-ffd5f971a1ff"
+  },
+  {
+    "id": "procedure-family-6",
+    "topic": "instructivo",
+    "description": "Producirán oralmente un instructivo de un juego. Organizarán las instrucciones con léxico técnico, adverbios y gestos que aclaren las acciones.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-vocabulary",
+    "contains": "producción oral",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "acceb93b-533e-5b2d-8b6c-ffd5f971a1ff"
+  },
+  {
+    "id": "procedure-family-7",
+    "topic": "instructivo",
+    "description": "Leerán un instructivo, identificarán la intención de los pasos y consultarán en el diccionario palabras cuyo significado no puedan inferir por el contexto.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-vocabulary",
+    "contains": "contexto",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "acceb93b-533e-5b2d-8b6c-ffd5f971a1ff"
+  },
+  {
+    "id": "procedure-family-8",
+    "topic": "instructivo",
+    "description": "Elaborarán un instructivo en soporte digital, organizarán un esquema y usarán léxico técnico, conectores de orden y finalidad, números y viñetas. Añadirán una ilustración o un dibujo que explique un paso.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-graphics",
+    "contains": "ilustración o dibujo",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "acceb93b-533e-5b2d-8b6c-ffd5f971a1ff"
+  },
+  {
+    "id": "procedure-family-9",
+    "topic": "informe-investigacion",
+    "description": "Escucharán un informe de investigación y resumirán el problema, los objetivos, el método y los resultados, distinguiendo su relación con las conclusiones.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "método",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "e5744392-a238-5d33-bfb6-9b2dcb08d517"
+  },
+  {
+    "id": "procedure-family-10",
+    "topic": "informe-investigacion",
+    "description": "Producirán oralmente un informe de investigación con los datos proporcionados, usando fuentes bibliográficas y mecanismos de citación para distinguir la voz propia de las fuentes.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-citations",
+    "contains": "producción oral",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "e5744392-a238-5d33-bfb6-9b2dcb08d517"
+  },
+  {
+    "id": "procedure-family-11",
+    "topic": "informe-investigacion",
+    "description": "Leerán un informe de investigación y explicarán los argumentos de analogía, ejemplificación, deducción y autoridad con los que sostiene sus afirmaciones.",
+    "type": "ANALYSIS",
+    "criterion": "feature-argument-types",
+    "contains": "deducción",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "e5744392-a238-5d33-bfb6-9b2dcb08d517"
+  },
+  {
+    "id": "procedure-family-12",
+    "topic": "informe-investigacion",
+    "description": "Redactarán un informe de investigación con datos dados. Planificarán un esquema del problema, método, marco teórico y resultados, usarán citas y referencias bibliográficas y explicarán recomendaciones sustentadas.",
+    "type": "REPORT",
+    "criterion": "theory",
+    "contains": "conceptos",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "e5744392-a238-5d33-bfb6-9b2dcb08d517"
+  },
+  {
+    "id": "procedure-family-13",
+    "topic": "articulo-opinion",
+    "description": "Escucharán un artículo de opinión y parafrasearán su tesis y argumentos, diferenciando hechos de opiniones.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "tesis",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "31fa58fe-2821-55cc-9124-6703ebf699d4"
+  },
+  {
+    "id": "procedure-family-14",
+    "topic": "articulo-opinion",
+    "description": "Planificarán un artículo de opinión seleccionando tesis, argumentos, contraargumentos y vocabulario para su destinatario. La conversación del grupo preparará la escritura del texto.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-outline",
+    "contains": "tesis",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "31fa58fe-2821-55cc-9124-6703ebf699d4"
+  },
+  {
+    "id": "procedure-family-15",
+    "topic": "articulo-opinion",
+    "description": "Leerán un artículo de opinión, anticiparán su tesis desde el título y comprobarán la predicción con las razones del autor.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-prediction",
+    "contains": "predicción",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "31fa58fe-2821-55cc-9124-6703ebf699d4"
+  },
+  {
+    "id": "procedure-family-16",
+    "topic": "articulo-opinion",
+    "description": "Escribirán un artículo de opinión con contraargumentos, citas directas y datos estadísticos. Revisarán borradores, ortografía y puntuación; publicarán el artículo en el medio acordado.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-counterarguments",
+    "contains": "postura contraria",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "31fa58fe-2821-55cc-9124-6703ebf699d4"
+  },
+  {
+    "id": "procedure-family-17",
+    "topic": "discurso-agradecimiento",
+    "description": "Escucharán un discurso de agradecimiento, identificarán la ocasión, la tesis y las razones para agradecer y parafrasearán su sentido.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "agradecimiento",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "12697a72-41be-5f03-802b-f3f56162c2fe"
+  },
+  {
+    "id": "procedure-family-18",
+    "topic": "discurso-agradecimiento",
+    "description": "Producirán oralmente un discurso de agradecimiento con marcas de cortesía, deícticos y entonación para expresar razones de reconocimiento al destinatario.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-deictics",
+    "contains": "producción oral",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "12697a72-41be-5f03-802b-f3f56162c2fe"
+  },
+  {
+    "id": "procedure-family-19",
+    "topic": "discurso-agradecimiento",
+    "description": "Leerán un discurso de agradecimiento y distinguirán las referencias léxicas, la autorreferencia, las marcas de cortesía y los organizadores que introducen otras voces.",
+    "type": "ANALYSIS",
+    "criterion": "feature-voices",
+    "contains": "ideas de otra voz",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "12697a72-41be-5f03-802b-f3f56162c2fe"
+  },
+  {
+    "id": "procedure-family-20",
+    "topic": "discurso-agradecimiento",
+    "description": "Redactarán un discurso de agradecimiento mediante un guion, usando citas textuales con comillas y paréntesis para reconocer otras voces. Revisarán los borradores antes de compartir el texto escrito.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "process-revision",
+    "contains": "cambios",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "12697a72-41be-5f03-802b-f3f56162c2fe"
+  },
+  {
+    "id": "procedure-family-21",
+    "topic": "novela",
+    "description": "Escucharán un fragmento de novela e inferirán las motivaciones de los personajes, distinguiendo narrador, ambiente y relaciones de causalidad entre las acciones. Resumirán las acciones con sus propias palabras.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "pasaje disponible",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "11f07c73-d310-565e-8d05-0da190350962"
+  },
+  {
+    "id": "procedure-family-22",
+    "topic": "novela",
+    "description": "Leerán un fragmento de novela. Identificarán sus voces y temas, inferirán por el contexto el significado de palabras desconocidas y comprobarán acepciones en el diccionario.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-dictionary",
+    "contains": "acepción",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "11f07c73-d310-565e-8d05-0da190350962"
+  },
+  {
+    "id": "procedure-family-23",
+    "topic": "soneto",
+    "description": "Escucharán un soneto y parafrasearán los sentimientos y significados implícitos que evocan sus imágenes y figuras literarias.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "sentimientos",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "ec355624-74ba-59cb-b85a-5577ab279b7c"
+  },
+  {
+    "id": "procedure-family-24",
+    "topic": "soneto",
+    "description": "Recitarán un soneto con entonación y lenguaje gestual acordes con los sentimientos de los versos, haciendo perceptible el hipérbaton.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-nonverbal",
+    "contains": "gestos",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "ec355624-74ba-59cb-b85a-5577ab279b7c"
+  },
+  {
+    "id": "procedure-family-25",
+    "topic": "soneto",
+    "description": "Leerán un soneto, anticiparán su contenido y analizarán las imágenes sensoriales y figuras literarias con ejemplos de los versos.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-prediction",
+    "contains": "predicción",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "ec355624-74ba-59cb-b85a-5577ab279b7c"
+  },
+  {
+    "id": "procedure-family-26",
+    "topic": "soneto",
+    "description": "Escribirán un soneto con versos endecasílabos, rima consonante y personificación. Revisarán los borradores y publicarán el poema en la revista escolar.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "process-publication",
+    "contains": "medio solicitado",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "ec355624-74ba-59cb-b85a-5577ab279b7c"
+  },
+  {
+    "id": "procedure-family-27",
+    "topic": "discurso-agradecimiento",
+    "description": "Presentarán oralmente un discurso de agradecimiento explicando las razones del reconocimiento.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "reasons",
+    "contains": "Fundamenta",
+    "absent": "Explica la tesis"
+  },
+  {
+    "id": "procedure-family-28",
+    "topic": "informe-investigacion",
+    "description": "Presentarán oralmente un informe de investigación relacionando problema, método y resultados dados.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "results",
+    "contains": "Relaciona los resultados",
+    "absent": "Comprueba cómo"
+  },
+  {
+    "id": "procedure-family-29",
+    "topic": "soneto",
+    "description": "Recitarán un soneto con entonación expresiva.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-nonverbal",
+    "contains": "la entonación",
+    "absent": "los gestos"
+  },
+  {
+    "id": "procedure-family-30",
+    "topic": "instructivo",
+    "description": "Elaborarán un instructivo con pasos ordenados y conectores de finalidad.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-connectors",
+    "contains": "los conectores de finalidad",
+    "absent": "los conectores de orden"
+  },
+  {
+    "id": "procedure-family-31",
+    "topic": "cronica",
+    "description": "Compararán dos crónicas de un hecho contrastando los hechos, el orden y la perspectiva de cada cronista.",
+    "type": "COMPARISON",
+    "criterion": "facts",
+    "contains": "Contrasta",
+    "absent": "instructivo"
+  },
+  {
+    "id": "procedure-family-32",
+    "topic": "cronica",
+    "description": "Investigarán hechos para una crónica y contrastarán las fuentes de la información.",
+    "type": "RESEARCH",
+    "criterion": "research-sources",
+    "contains": "fuentes",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-33",
+    "topic": "cronica",
+    "description": "Elaborarán un informe sobre una crónica leída, justificando sus interpretaciones con pasajes.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "Relata hechos"
+  },
+  {
+    "id": "procedure-family-34",
+    "topic": "cronica",
+    "description": "Redactarán una crónica usando adjetivos, adverbios de modo y oraciones yuxtapuestas y subordinadas.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-sentences",
+    "contains": "subordinadas",
+    "absent": "catálogo"
+  },
+  {
+    "id": "procedure-family-35",
+    "topic": "instructivo",
+    "description": "Compararán dos instructivos de un juego explicando el efecto del orden de las instrucciones.",
+    "type": "COMPARISON",
+    "criterion": "sequence",
+    "contains": "Compara",
+    "absent": "ejecuta físicamente"
+  },
+  {
+    "id": "procedure-family-36",
+    "topic": "instructivo",
+    "description": "Elaborarán un comentario escrito sobre un instructivo explicando qué permiten hacer sus pasos.",
+    "type": "ANALYSIS",
+    "criterion": "sequence",
+    "contains": "Relaciona",
+    "absent": "Ordena las instrucciones"
+  },
+  {
+    "id": "procedure-family-37",
+    "topic": "instructivo",
+    "description": "Elaborarán un instructivo con ilustraciones y dibujos, sin construir físicamente el objeto.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-graphics",
+    "contains": "ilustraciones y dibujos",
+    "absent": "Construye"
+  },
+  {
+    "id": "procedure-family-38",
+    "topic": "instructivo",
+    "description": "Investigarán información para un instructivo, seleccionando fuentes pertinentes al procedimiento.",
+    "type": "RESEARCH",
+    "criterion": "research-information",
+    "contains": "instrucciones",
+    "absent": "Construye"
+  },
+  {
+    "id": "procedure-family-39",
+    "topic": "instructivo",
+    "description": "Elaborarán un instructivo en soporte físico o digital con un título relacionado con las instrucciones.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-medium",
+    "contains": "físico o digital",
+    "absent": "físico y digital"
+  },
+  {
+    "id": "procedure-family-40",
+    "topic": "instructivo",
+    "description": "Elaborarán un instructivo en soporte físico y digital con un título relacionado con las instrucciones.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-medium",
+    "contains": "físico y digital",
+    "absent": "físico o digital"
+  },
+  {
+    "id": "procedure-family-41",
+    "topic": "informe-investigacion",
+    "description": "Compararán dos informes de investigación relacionando los métodos y resultados que comunican.",
+    "type": "COMPARISON",
+    "criterion": "results",
+    "contains": "Contrasta",
+    "absent": "Realiza una encuesta"
+  },
+  {
+    "id": "procedure-family-42",
+    "topic": "informe-investigacion",
+    "description": "Leerán un informe de investigación y elaborarán un mapa conceptual para representar problema, método y resultados.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-organizer",
+    "contains": "resultados",
+    "absent": "antes de desarrollar"
+  },
+  {
+    "id": "procedure-family-43",
+    "topic": "informe-investigacion",
+    "description": "Redactarán un informe de investigación con una conclusión y recomendaciones basadas en los resultados proporcionados, sin recolectar nuevos datos.",
+    "type": "REPORT",
+    "criterion": "recommendations",
+    "contains": "Propone",
+    "absent": "recolecta"
+  },
+  {
+    "id": "procedure-family-44",
+    "topic": "informe-investigacion",
+    "description": "Presentarán oralmente su análisis de un informe de investigación explicando sus resultados.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "results",
+    "contains": "Comprueba",
+    "absent": "Relaciona los resultados disponibles"
+  },
+  {
+    "id": "procedure-family-45",
+    "topic": "informe-investigacion",
+    "description": "Redactarán un informe de investigación con una tabla o un gráfico de los datos proporcionados.",
+    "type": "REPORT",
+    "criterion": "feature-graphics",
+    "contains": "tabla o gráfico",
+    "absent": "tabla y gráfico"
+  },
+  {
+    "id": "procedure-family-46",
+    "topic": "informe-investigacion",
+    "description": "Investigarán un problema para un informe de investigación y registrarán las fuentes de los datos.",
+    "type": "RESEARCH",
+    "criterion": "research-sources",
+    "contains": "fuentes",
+    "absent": "Elabora un experimento"
+  },
+  {
+    "id": "procedure-family-47",
+    "topic": "articulo-opinion",
+    "description": "Compararán dos artículos de opinión contrastando tesis, contraargumentos y datos estadísticos.",
+    "type": "COMPARISON",
+    "criterion": "feature-counterarguments",
+    "contains": "Contrasta",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-48",
+    "topic": "articulo-opinion",
+    "description": "Debatirán la tesis de un artículo de opinión respondiendo a las razones de los interlocutores con evidencia.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Escribe"
+  },
+  {
+    "id": "procedure-family-49",
+    "topic": "articulo-opinion",
+    "description": "Investigarán fuentes para fundamentar un artículo de opinión sobre un problema comunitario.",
+    "type": "RESEARCH",
+    "criterion": "research-information",
+    "contains": "tesis",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-50",
+    "topic": "articulo-opinion",
+    "description": "Escribirán un artículo de opinión usando oraciones subordinadas adverbiales, sustantivas y adjetivas.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-subordinate",
+    "contains": "sustantivas",
+    "absent": "novela"
+  },
+  {
+    "id": "procedure-family-51",
+    "topic": "articulo-opinion",
+    "description": "Escribirán un artículo de opinión con una conclusión relacionada con la tesis y sus argumentos.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-conclusion",
+    "contains": "tesis",
+    "absent": "experimento"
+  },
+  {
+    "id": "procedure-family-52",
+    "topic": "discurso-agradecimiento",
+    "description": "Compararán dos discursos de agradecimiento relacionando ocasión, participantes y razones del reconocimiento.",
+    "type": "COMPARISON",
+    "criterion": "reasons",
+    "contains": "Contrasta",
+    "absent": "Recita"
+  },
+  {
+    "id": "procedure-family-53",
+    "topic": "discurso-agradecimiento",
+    "description": "Elaborarán un comentario escrito sobre un discurso oral de agradecimiento, identificando sus razones y sus marcas de cortesía.",
+    "type": "ANALYSIS",
+    "criterion": "reasons",
+    "contains": "Explica",
+    "absent": "Comunica la ocasión"
+  },
+  {
+    "id": "procedure-family-54",
+    "topic": "discurso-agradecimiento",
+    "description": "Redactarán un discurso oral de agradecimiento sin presentarlo oralmente. Explicarán los aportes que motivan el reconocimiento.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "reasons",
+    "contains": "Fundamenta",
+    "absent": "ante la audiencia"
+  },
+  {
+    "id": "procedure-family-55",
+    "topic": "discurso-agradecimiento",
+    "description": "Investigarán los aportes de una persona para fundamentar un discurso de agradecimiento y registrarán sus fuentes.",
+    "type": "RESEARCH",
+    "criterion": "research-information",
+    "contains": "agradecimiento",
+    "absent": "Pronuncia"
+  },
+  {
+    "id": "procedure-family-56",
+    "topic": "discurso-agradecimiento",
+    "description": "Presentarán oralmente un discurso de agradecimiento con gestos y postura que apoyen el sentido de sus razones.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-nonverbal",
+    "contains": "gestos",
+    "absent": "contacto visual obligatorio"
+  },
+  {
+    "id": "procedure-family-57",
+    "topic": "novela",
+    "description": "Compararán fragmentos de dos novelas contrastando las motivaciones de los personajes y las perspectivas de los narradores.",
+    "type": "COMPARISON",
+    "criterion": "narrator",
+    "contains": "Contrasta",
+    "absent": "desenlace de toda"
+  },
+  {
+    "id": "procedure-family-58",
+    "topic": "novela",
+    "description": "Elaborarán un informe sobre un fragmento de novela con interpretaciones sustentadas en sus pasajes.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "Escribe una novela"
+  },
+  {
+    "id": "procedure-family-59",
+    "topic": "novela",
+    "description": "Presentarán oralmente el análisis de un fragmento de novela distinguiendo narrador y personajes.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "narrator",
+    "contains": "Distingue",
+    "absent": "Escribe una novela"
+  },
+  {
+    "id": "procedure-family-60",
+    "topic": "novela",
+    "description": "Debatirán las motivaciones de los personajes de un fragmento de novela con evidencias de sus acciones.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "desenlace"
+  },
+  {
+    "id": "procedure-family-61",
+    "topic": "novela",
+    "description": "Leerán un fragmento de novela y anticiparán lo que podría ocurrir con apoyo en indicios, sin inventar el desenlace de la obra.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-prediction",
+    "contains": "indicios",
+    "absent": "confirma"
+  },
+  {
+    "id": "procedure-family-62",
+    "topic": "novela",
+    "description": "Identificarán únicamente la voz del narrador de un fragmento de novela usando sus intervenciones.",
+    "type": "ANALYSIS",
+    "criterion": "narrator",
+    "contains": "Distingue",
+    "absent": "motivaciones de los personajes"
+  },
+  {
+    "id": "procedure-family-63",
+    "topic": "soneto",
+    "description": "Compararán dos sonetos contrastando sentimientos, organización de los versos y rima.",
+    "type": "COMPARISON",
+    "criterion": "rhyme",
+    "contains": "Contrasta",
+    "absent": "heptasílabos"
+  },
+  {
+    "id": "procedure-family-64",
+    "topic": "soneto",
+    "description": "Elaborarán un informe sobre un soneto interpretando sus sentimientos con apoyos de los versos.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "Escribe un soneto"
+  },
+  {
+    "id": "procedure-family-65",
+    "topic": "soneto",
+    "description": "Analizarán un soneto justificando sinalefa, sinéresis y diéresis en el cómputo de sus versos.",
+    "type": "ANALYSIS",
+    "criterion": "feature-licenses",
+    "contains": "diéresis",
+    "absent": "heptasílabos"
+  },
+  {
+    "id": "procedure-family-66",
+    "topic": "soneto",
+    "description": "Recitarán un soneto utilizando gestos que comuniquen los sentimientos de los versos.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-nonverbal",
+    "contains": "Relaciona los gestos",
+    "absent": "mediante pausas"
+  },
+  {
+    "id": "procedure-family-67",
+    "topic": "soneto",
+    "description": "Presentarán por escrito su análisis de un soneto relacionando rima y sentido.",
+    "type": "ANALYSIS",
+    "criterion": "rhyme",
+    "contains": "Explica",
+    "absent": "Recita"
+  },
+  {
+    "id": "procedure-family-68",
+    "topic": "soneto",
+    "description": "Escribirán un soneto sin publicarlo ni recitarlo.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "verse",
+    "contains": "endecasílabos",
+    "absent": "publicación"
+  }
+]

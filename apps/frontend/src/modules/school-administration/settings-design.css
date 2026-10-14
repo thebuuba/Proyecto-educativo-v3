@@ -1,0 +1,7 @@
+.settings-workspace :is(input:not([type='checkbox'], [type='radio']), select) {
+  border-radius: 9999px;
+}
+
+.settings-workspace button:not([data-ui-size='icon']) {
+  border-radius: 9999px;
+}

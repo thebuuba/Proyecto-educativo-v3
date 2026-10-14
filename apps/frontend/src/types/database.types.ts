@@ -1346,10 +1346,11 @@ export type Database = {
         ]
       }
       evaluation_instrument_snapshots: {
-        Row: { id: string; school_id: string; instrument_id: string; version_no: number; payload: Json; curriculum_version_id: string | null; curriculum_scope_id: string | null; catalog_version: string; created_at: string }
-        Insert: { id?: string; school_id: string; instrument_id: string; version_no?: number; payload: Json; curriculum_version_id?: string | null; curriculum_scope_id?: string | null; catalog_version: string; created_at?: string }
-        Update: { id?: string; school_id?: string; instrument_id?: string; version_no?: number; payload?: Json; curriculum_version_id?: string | null; curriculum_scope_id?: string | null; catalog_version?: string; created_at?: string }
+        Row: { id: string; school_id: string; instrument_id: string; version_no: number; previous_snapshot_id: string | null; payload: Json; curriculum_version_id: string | null; curriculum_scope_id: string | null; catalog_version: string; created_at: string }
+        Insert: { id?: string; school_id: string; instrument_id: string; version_no?: number; previous_snapshot_id?: string | null; payload: Json; curriculum_version_id?: string | null; curriculum_scope_id?: string | null; catalog_version: string; created_at?: string }
+        Update: { id?: string; school_id?: string; instrument_id?: string; version_no?: number; previous_snapshot_id?: string | null; payload?: Json; curriculum_version_id?: string | null; curriculum_scope_id?: string | null; catalog_version?: string; created_at?: string }
         Relationships: [
+          { foreignKeyName: "evaluation_instrument_snapshots_previous_snapshot_id_fkey"; columns: ["previous_snapshot_id"]; isOneToOne: false; referencedRelation: "evaluation_instrument_snapshots"; referencedColumns: ["id"] },
           { foreignKeyName: "evaluation_instrument_snapshots_school_id_fkey"; columns: ["school_id"]; isOneToOne: false; referencedRelation: "schools"; referencedColumns: ["id"] },
           { foreignKeyName: "evaluation_instrument_snapshots_instrument_id_fkey"; columns: ["instrument_id"]; isOneToOne: true; referencedRelation: "evaluation_instruments"; referencedColumns: ["id"] },
           { foreignKeyName: "evaluation_instrument_snapshots_curriculum_version_id_fkey"; columns: ["curriculum_version_id"]; isOneToOne: false; referencedRelation: "curriculum_versions"; referencedColumns: ["id"] },

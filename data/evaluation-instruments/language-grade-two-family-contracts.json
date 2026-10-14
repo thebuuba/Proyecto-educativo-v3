@@ -1,0 +1,15 @@
+[
+ {"id":"compare-news","description":"Compararán los datos y enfoques de dos noticias usando evidencias de ambas.","type":"NEWS_COMPARISON","criterion":"news-comparison-data","contains":"ambas noticias","absent":"news-writing"},
+ {"id":"compare-guide","description":"Compararán las características y la clasificación de lugares en dos guías turísticas.","type":"TOURIST_GUIDE_COMPARISON","criterion":"len-2-guia-turistica-places","contains":"Compara","absent":"Comunicación oral"},
+ {"id":"compare-article","description":"Compararán los problemas y soluciones de dos artículos expositivos.","type":"COMPARISON","criterion":"len-2-articulo-expositivo-problem-solution","contains":"Contrasta","absent":"publicación"},
+ {"id":"compare-report","description":"Compararán los resúmenes de dos informes de lectura y su fidelidad al texto leído.","type":"READING_REPORT_COMPARISON","criterion":"len-2-informe-de-lectura-summary","contains":"Compara","absent":"publicación"},
+ {"id":"compare-story","description":"Compararán los conflictos de dos cuentos de amor y amistad con sus resoluciones.","type":"COMPARISON","criterion":"len-2-cuento-amor-amistad-conflict","contains":"Compara","absent":"publicación"},
+ {"id":"compare-decima","description":"Compararán la rima y el ritmo de dos décimas espinelas.","type":"COMPARISON","criterion":"len-2-decima-espinela-rhyme","contains":"Contrasta","absent":"recita"},
+ {"id":"research-news","description":"Investigarán el hecho de una noticia y registrarán los datos y sus fuentes.","type":"RESEARCH","criterion":"news-research-sources","contains":"fuentes","absent":"Redacta el hecho"},
+ {"id":"research-guide","description":"Investigarán los lugares para una guía turística y comprobarán sus datos y fuentes.","type":"RESEARCH","criterion":"len-2-guia-turistica-research-sources","contains":"fuentes","absent":"Comunicación oral"},
+ {"id":"debate-news","description":"Debatirán sobre el hecho de una noticia sosteniendo posturas y respondiendo con evidencias.","type":"DEBATE","criterion":"news-debate-arguments","contains":"Defiende","absent":"Redacta el hecho"},
+ {"id":"report-guide","description":"Redactarán un informe sobre la guía turística y su organización.","type":"REPORT","criterion":"len-2-guia-turistica-report-organization","contains":"análisis sustentado","absent":"Crea una guía"},
+ {"id":"report-article","description":"Redactarán un informe sobre un artículo expositivo y analizarán su problema y solución.","type":"REPORT","criterion":"len-2-articulo-expositivo-report-organization","contains":"análisis sustentado","absent":"publicación"},
+ {"id":"report-story","description":"Redactarán un informe sobre un fragmento de cuento de amor y amistad y sus personajes.","type":"REPORT","criterion":"len-2-cuento-amor-amistad-conflict","contains":"disponibles","absent":"resolución del cuento"},
+ {"id":"report-decima","description":"Redactarán un informe sobre el tema de una décima espinela con evidencias de sus versos.","type":"REPORT","criterion":"len-2-decima-espinela-report-organization","contains":"análisis sustentado","absent":"publicación"}
+]

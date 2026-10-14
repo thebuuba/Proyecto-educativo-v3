@@ -1,0 +1,649 @@
+[
+  {
+    "id": "procedure-family-1",
+    "topic": "carta-autopresentacion",
+    "description": "Escucharán una carta de autopresentación y anticiparán el propósito a partir del destinatario. Resumirán el contenido mediante omisión, selección, generalización y reconstrucción de ideas.",
+    "type": "ANALYSIS",
+    "criterion": "feature-summary",
+    "contains": "generalización",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "5d3121ba-2636-556d-9fe3-2cabbc81ec1f"
+  },
+  {
+    "id": "procedure-family-2",
+    "topic": "carta-autopresentacion",
+    "description": "Planificarán una carta de autopresentación expresando intereses, preparación, experiencias y habilidades con conectores de finalidad y vocabulario pertinente al destinatario. La conversación preparará la escritura.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-outline",
+    "contains": "destinatario",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "5d3121ba-2636-556d-9fe3-2cabbc81ec1f"
+  },
+  {
+    "id": "procedure-family-3",
+    "topic": "carta-autopresentacion",
+    "description": "Leerán una carta de autopresentación e inferirán el significado de palabras desconocidas por el contexto; comprobarán su acepción en el diccionario y parafrasearán su contenido.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-dictionary",
+    "contains": "acepción",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "5d3121ba-2636-556d-9fe3-2cabbc81ec1f"
+  },
+  {
+    "id": "procedure-family-4",
+    "topic": "carta-autopresentacion",
+    "description": "Redactarán una carta de autopresentación en soporte digital, con lugar y fecha, destinatario, saludo, asunto, despedida y firma. Revisarán los borradores atendiendo a la brevedad y credibilidad del contenido.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "credibility",
+    "contains": "brevedad",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "5d3121ba-2636-556d-9fe3-2cabbc81ec1f"
+  },
+  {
+    "id": "procedure-family-5",
+    "topic": "resena",
+    "description": "Escucharán una reseña, inferirán la intención del autor y parafrasearán la síntesis y la valoración de la obra.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "valoración",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "0ea78b99-7e34-5be4-9a1f-96b6ea7b45f4"
+  },
+  {
+    "id": "procedure-family-6",
+    "topic": "resena",
+    "description": "Planificarán una reseña seleccionando citas claves y testimonios de la obra para fundamentar su valoración. Organizarán las ideas y el vocabulario para su audiencia.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-testimony",
+    "contains": "testimonios",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "0ea78b99-7e34-5be4-9a1f-96b6ea7b45f4"
+  },
+  {
+    "id": "procedure-family-7",
+    "topic": "resena",
+    "description": "Leerán una reseña, anticiparán su contenido a partir de las marcas paratextuales y comprobarán palabras desconocidas en el diccionario.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-dictionary",
+    "contains": "acepción",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "0ea78b99-7e34-5be4-9a1f-96b6ea7b45f4"
+  },
+  {
+    "id": "procedure-family-8",
+    "topic": "resena",
+    "description": "Escribirán una reseña con título, ficha bibliográfica, resumen y valoración personal de una película. Examinarán códigos, actores, director, técnicos y elementos verbales, paraverbales y no verbales. Revisarán y publicarán el texto en soporte digital.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-audiovisual",
+    "contains": "códigos expresivos",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "0ea78b99-7e34-5be4-9a1f-96b6ea7b45f4"
+  },
+  {
+    "id": "procedure-family-9",
+    "topic": "ensayo-argumentativo",
+    "description": "Escucharán un ensayo argumentativo, reconocerán pienso que y me parece que como opinión personal y según y de acuerdo con como fórmulas de citas. Resumirán la tesis y argumentos.",
+    "type": "ANALYSIS",
+    "criterion": "feature-citation-formula",
+    "contains": "atribución",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "f6f6b823-a101-51b0-9d20-f9b2ffda0a1c"
+  },
+  {
+    "id": "procedure-family-10",
+    "topic": "ensayo-argumentativo",
+    "description": "Planificarán un ensayo argumentativo para escribirlo, justificando el tema y título y organizando tesis, fuentes, argumentos y contraargumentos para su audiencia.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-outline",
+    "contains": "tesis",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "f6f6b823-a101-51b0-9d20-f9b2ffda0a1c"
+  },
+  {
+    "id": "procedure-family-11",
+    "topic": "ensayo-argumentativo",
+    "description": "Leerán un ensayo argumentativo, anticiparán su tesis a partir del título y comprobarán en el diccionario palabras desconocidas para comprender las razones del autor.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-dictionary",
+    "contains": "acepción",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "f6f6b823-a101-51b0-9d20-f9b2ffda0a1c"
+  },
+  {
+    "id": "procedure-family-12",
+    "topic": "ensayo-argumentativo",
+    "description": "Redactarán un ensayo argumentativo usando conectores de digresión, adición, contraste, consecuencia y orden; revisarán márgenes, párrafos, mayúsculas, tildes y signos de puntuación.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-writing-conventions",
+    "contains": "párrafos",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "f6f6b823-a101-51b0-9d20-f9b2ffda0a1c"
+  },
+  {
+    "id": "procedure-family-13",
+    "topic": "discurso-recibimiento-despedida",
+    "description": "Escucharán un discurso de despedida y anticiparán su contenido. Parafrasearán las razones del homenaje y distinguirán las marcas de cortesía y deícticos.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "participantes",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "868a8bf4-0c30-5672-9c57-e7955ff282bd"
+  },
+  {
+    "id": "procedure-family-14",
+    "topic": "discurso-recibimiento-despedida",
+    "description": "Producirán oralmente un discurso de recibimiento con gestos, entonación, ritmo y pausas para expresar las razones de la bienvenida. Identificarán las fuentes bibliográficas utilizadas.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-nonverbal",
+    "contains": "producción oral",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "868a8bf4-0c30-5672-9c57-e7955ff282bd"
+  },
+  {
+    "id": "procedure-family-15",
+    "topic": "discurso-recibimiento-despedida",
+    "description": "Leerán un discurso de despedida, reconocerán marcas paratextuales, subrayados, números y letras, negritas e itálicas para localizar la tesis y las razones; comprobarán palabras en el diccionario.",
+    "type": "ANALYSIS",
+    "criterion": "feature-markers",
+    "contains": "localizar",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "868a8bf4-0c30-5672-9c57-e7955ff282bd"
+  },
+  {
+    "id": "procedure-family-16",
+    "topic": "discurso-recibimiento-despedida",
+    "description": "Redactarán un discurso de recibimiento con un guion en soporte físico o digital, citas textuales, referencias bibliográficas, deícticos y conectores de apertura y cierre. Revisarán los borradores.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-sources",
+    "contains": "origen",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "868a8bf4-0c30-5672-9c57-e7955ff282bd"
+  },
+  {
+    "id": "procedure-family-17",
+    "topic": "novela",
+    "description": "Escucharán un fragmento de novela, anticiparán su contenido y resumirán acontecimientos, personajes, narrador y ambiente relacionando las causas de las acciones disponibles.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "pasaje disponible",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9"
+  },
+  {
+    "id": "procedure-family-18",
+    "topic": "novela",
+    "description": "Leerán un fragmento de novela, clasificarán personajes y actantes por sus acciones e interpretarán las voces. Consultarán palabras en el diccionario y usarán sinónimos en el resumen.",
+    "type": "ANALYSIS",
+    "criterion": "feature-synonyms",
+    "contains": "referente",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9"
+  },
+  {
+    "id": "procedure-family-19",
+    "topic": "poesia-satirica",
+    "description": "Escucharán un poema satírico y anticiparán su sentido a partir del título; inferirán palabras por el contexto y explicarán los significados implícitos y explícitos de la crítica.",
+    "type": "ANALYSIS",
+    "criterion": "feature-meaning",
+    "contains": "literal",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "9ba1f04a-8d21-5f0c-93c5-75cff971574b"
+  },
+  {
+    "id": "procedure-family-20",
+    "topic": "poesia-satirica",
+    "description": "Declamarán un poema satírico con entonación, ritmo, pausas y lenguaje gestual y corporal que comuniquen el sentido de la crítica.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "recitation-expression",
+    "contains": "sentido de la crítica",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "9ba1f04a-8d21-5f0c-93c5-75cff971574b"
+  },
+  {
+    "id": "procedure-family-21",
+    "topic": "poesia-satirica",
+    "description": "Leerán una poesía satírica, analizarán los elementos connotativos y denotativos y parafrasearán su sentido global.",
+    "type": "ANALYSIS",
+    "criterion": "feature-meaning",
+    "contains": "literal",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "9ba1f04a-8d21-5f0c-93c5-75cff971574b"
+  },
+  {
+    "id": "procedure-family-22",
+    "topic": "poesia-satirica",
+    "description": "Escribirán una poesía satírica con metáfora e ironía sobre una situación social. Revisarán ortografía y borradores y publicarán el poema en la revista escolar.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "process-publication",
+    "contains": "medio solicitado",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "9ba1f04a-8d21-5f0c-93c5-75cff971574b"
+  },
+  {
+    "id": "procedure-family-23",
+    "topic": "entremes-teatral",
+    "description": "Escucharán un entremés teatral, anticiparán su contenido y parafrasearán el tema. Relacionarán los hechos de la escena con hechos actuales y contenidos de otras materias.",
+    "type": "ANALYSIS",
+    "criterion": "connections",
+    "contains": "semejanzas",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "e3e55532-c167-522b-af89-d39d7054a67f"
+  },
+  {
+    "id": "procedure-family-24",
+    "topic": "entremes-teatral",
+    "description": "Representarán un entremés teatral con sus compañeros, enlazando los diálogos, las acciones de los personajes y la crítica de la escena.",
+    "type": "PERFORMANCE",
+    "criterion": "performance",
+    "contains": "Representa",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "e3e55532-c167-522b-af89-d39d7054a67f"
+  },
+  {
+    "id": "procedure-family-25",
+    "topic": "entremes-teatral",
+    "description": "Leerán un entremés teatral, subrayarán información relevante e inferirán el punto de vista implícito del autor a partir de la escena. Investigarán su vida y contexto social para contrastar su interpretación.",
+    "type": "ANALYSIS",
+    "criterion": "author-context",
+    "contains": "documentada",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "e3e55532-c167-522b-af89-d39d7054a67f"
+  },
+  {
+    "id": "procedure-family-26",
+    "topic": "entremes-teatral",
+    "description": "Escribirán un entremés teatral con crítica social y contexto espacial y temporal, utilizando ironía, retruécano y metáfora. Revisarán borradores y publicarán el texto en un mural.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-figures",
+    "contains": "retruécano",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "e3e55532-c167-522b-af89-d39d7054a67f"
+  },
+  {
+    "id": "procedure-family-27",
+    "topic": "carta-autopresentacion",
+    "description": "Redactarán una carta de autopresentación con lugar y fecha, cargo del destinatario, saludo, cuerpo, despedida y firma en formato físico o digital.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-letter-parts",
+    "contains": "la firma",
+    "absent": "físico y digital"
+  },
+  {
+    "id": "procedure-family-28",
+    "topic": "carta-autopresentacion",
+    "description": "Redactarán una carta de autopresentación en soporte digital y enviarán la versión final al destinatario acordado.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "delivery-confirmation",
+    "contains": "envío",
+    "absent": "correo tradicional"
+  },
+  {
+    "id": "procedure-family-29",
+    "topic": "ensayo-argumentativo",
+    "description": "Leerán un ensayo argumentativo y resumirán sus argumentos mediante omisión y generalización.",
+    "type": "ANALYSIS",
+    "criterion": "feature-summary",
+    "contains": "la generalización",
+    "absent": "la selección"
+  },
+  {
+    "id": "procedure-family-30",
+    "topic": "ensayo-argumentativo",
+    "description": "Escribirán un ensayo argumentativo utilizando argumentos por causa y efecto.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-arguments",
+    "contains": "los argumentos causales",
+    "absent": "estadísticos"
+  },
+  {
+    "id": "procedure-family-31",
+    "topic": "discurso-recibimiento-despedida",
+    "description": "Redactarán discursos de recibimiento y despedida con un guion en soporte físico o digital.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "medium",
+    "contains": "físico o digital",
+    "absent": "físico y digital"
+  },
+  {
+    "id": "procedure-family-32",
+    "topic": "novela",
+    "description": "Compararán dos fragmentos de novela usando sinónimos para referirse a sus personajes sin cambiar el sentido.",
+    "type": "COMPARISON",
+    "criterion": "feature-synonyms",
+    "contains": "referente",
+    "absent": "Escribe una novela"
+  },
+  {
+    "id": "procedure-family-33",
+    "topic": "poesia-satirica",
+    "description": "Escribirán un poema satírico en verso.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "tone",
+    "contains": "en verso",
+    "absent": "en verso o prosa"
+  },
+  {
+    "id": "procedure-family-34",
+    "topic": "entremes-teatral",
+    "description": "Analizarán un entremés teatral y subrayarán las intervenciones que sustentan la interpretación del conflicto.",
+    "type": "ANALYSIS",
+    "criterion": "underlining",
+    "contains": "Subraya",
+    "absent": "representa físicamente"
+  },
+  {
+    "id": "procedure-family-35",
+    "topic": "entremes-teatral",
+    "description": "Leerán un entremés teatral e inferirán el punto de vista implícito del autor usando las acciones e intervenciones.",
+    "type": "ANALYSIS",
+    "criterion": "author-view",
+    "contains": "inferencia",
+    "absent": "investiga la vida"
+  },
+  {
+    "id": "procedure-family-36",
+    "topic": "carta-autopresentacion",
+    "description": "Elaborarán un informe sobre una carta de autopresentación justificando su propósito con pasajes.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "envío"
+  },
+  {
+    "id": "procedure-family-37",
+    "topic": "carta-autopresentacion",
+    "description": "Redactarán una carta de autopresentación en soporte físico o digital y anotarán los datos del destinatario en el sobre.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "delivery",
+    "contains": "destinatario",
+    "absent": "físico y digital"
+  },
+  {
+    "id": "procedure-family-38",
+    "topic": "carta-autopresentacion",
+    "description": "Redactarán una carta de autopresentación sin enviarla ni publicarla.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "purpose",
+    "contains": "Organiza",
+    "absent": "publicación"
+  },
+  {
+    "id": "procedure-family-39",
+    "topic": "resena",
+    "description": "Escribirán una reseña de una novela policíaca leída justificando su valoración con pistas de la obra.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "assessment",
+    "contains": "Sustenta",
+    "absent": "misterio en el fragmento"
+  },
+  {
+    "id": "procedure-family-40",
+    "topic": "resena",
+    "description": "Escribirán una reseña con ficha bibliográfica y citas claves de la obra.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-bibliography",
+    "contains": "identificar",
+    "absent": "actuación"
+  },
+  {
+    "id": "procedure-family-41",
+    "topic": "ensayo-argumentativo",
+    "description": "Escribirán un ensayo argumentativo con argumentos por causa y efecto y teorías o generalizaciones.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-arguments",
+    "contains": "generalización",
+    "absent": "estadísticos"
+  },
+  {
+    "id": "procedure-family-42",
+    "topic": "ensayo-argumentativo",
+    "description": "Redactarán un ensayo argumentativo usando según y de acuerdo con para atribuir ideas a sus autores.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-citation-formula",
+    "contains": "atribución",
+    "absent": "ante la audiencia"
+  },
+  {
+    "id": "procedure-family-43",
+    "topic": "discurso-recibimiento-despedida",
+    "description": "Presentarán por escrito un discurso de despedida explicando las razones de la separación.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "reasons",
+    "contains": "Relaciona",
+    "absent": "Comunica la ocasión"
+  },
+  {
+    "id": "procedure-family-44",
+    "topic": "discurso-recibimiento-despedida",
+    "description": "Presentarán oralmente un discurso de despedida con entonación expresiva.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-nonverbal",
+    "contains": "la entonación",
+    "absent": "los gestos"
+  },
+  {
+    "id": "procedure-family-45",
+    "topic": "novela",
+    "description": "Identificarán únicamente el narrador de un fragmento de novela mediante sus intervenciones.",
+    "type": "ANALYSIS",
+    "criterion": "narrator",
+    "contains": "Distingue",
+    "absent": "motivaciones de los personajes"
+  },
+  {
+    "id": "procedure-family-46",
+    "topic": "novela",
+    "description": "Analizarán una novela atendiendo solo a los verbos en pasado y presente.",
+    "type": "ANALYSIS",
+    "criterion": "feature-past",
+    "contains": "presente",
+    "absent": "Temas sustentados"
+  },
+  {
+    "id": "procedure-family-47",
+    "topic": "poesia-satirica",
+    "description": "Escribirán una poesía satírica en prosa sin recitarla ni publicarla.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "tone",
+    "contains": "en prosa",
+    "absent": "catorce"
+  },
+  {
+    "id": "procedure-family-48",
+    "topic": "poesia-satirica",
+    "description": "Analizarán solo la metáfora de una poesía satírica utilizando ejemplos del texto.",
+    "type": "ANALYSIS",
+    "criterion": "feature-figures",
+    "contains": "la metáfora",
+    "absent": "la antítesis"
+  },
+  {
+    "id": "procedure-family-49",
+    "topic": "entremes-teatral",
+    "description": "Analizarán un fragmento de entremés teatral relacionando las intervenciones con la crítica social. Presentarán por escrito su análisis.",
+    "type": "ANALYSIS",
+    "criterion": "critique",
+    "contains": "Interpreta",
+    "absent": "Representa las intervenciones"
+  },
+  {
+    "id": "procedure-family-50",
+    "topic": "entremes-teatral",
+    "description": "Investigarán el origen del entremés teatral en el Siglo de Oro y contrastarán fuentes sobre su evolución.",
+    "type": "RESEARCH",
+    "criterion": "research-sources",
+    "contains": "fuentes",
+    "absent": "Escribe"
+  },
+  {
+    "id": "procedure-family-51",
+    "topic": "entremes-teatral",
+    "description": "Escribirán un entremés teatral sin representarlo ni publicarlo.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "scene",
+    "contains": "Desarrolla una escena",
+    "absent": "Representa las intervenciones"
+  },
+  {
+    "id": "procedure-family-52",
+    "topic": "carta-autopresentacion",
+    "description": "Compararán dos textos de carta de autopresentación explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "purpose",
+    "contains": "Contrasta",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-53",
+    "topic": "resena",
+    "description": "Compararán dos textos de reseña explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "assessment",
+    "contains": "Compara",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-54",
+    "topic": "resena",
+    "description": "Debatirán una interpretación de reseña con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-55",
+    "topic": "resena",
+    "description": "Elaborarán un informe sobre reseña explicando su interpretación con pasajes disponibles.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-56",
+    "topic": "ensayo-argumentativo",
+    "description": "Compararán dos textos de ensayo argumentativo explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "arguments",
+    "contains": "Contrasta",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-57",
+    "topic": "ensayo-argumentativo",
+    "description": "Debatirán una interpretación de ensayo argumentativo con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-58",
+    "topic": "ensayo-argumentativo",
+    "description": "Elaborarán un informe sobre ensayo argumentativo explicando su interpretación con pasajes disponibles.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-59",
+    "topic": "discurso-recibimiento-despedida",
+    "description": "Compararán dos textos de discurso de recibimiento explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "reasons",
+    "contains": "Compara",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-60",
+    "topic": "discurso-recibimiento-despedida",
+    "description": "Debatirán una interpretación de discurso de recibimiento con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-61",
+    "topic": "discurso-recibimiento-despedida",
+    "description": "Elaborarán un informe sobre discurso de recibimiento explicando su interpretación con pasajes disponibles.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-62",
+    "topic": "novela",
+    "description": "Compararán dos textos de novela explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "narrator",
+    "contains": "Contrasta",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-63",
+    "topic": "novela",
+    "description": "Debatirán una interpretación de novela con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-64",
+    "topic": "poesia-satirica",
+    "description": "Compararán dos textos de poesía satírica explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "critique",
+    "contains": "Contrasta",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-65",
+    "topic": "poesia-satirica",
+    "description": "Debatirán una interpretación de poesía satírica con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-66",
+    "topic": "poesia-satirica",
+    "description": "Elaborarán un informe sobre poesía satírica explicando su interpretación con pasajes disponibles.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-67",
+    "topic": "entremes-teatral",
+    "description": "Compararán dos textos de entremés teatral explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "critique",
+    "contains": "Contrasta",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-68",
+    "topic": "entremes-teatral",
+    "description": "Debatirán una interpretación de entremés teatral con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-69",
+    "topic": "entremes-teatral",
+    "description": "Elaborarán un informe sobre entremés teatral explicando su interpretación con pasajes disponibles.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "No aporta evidencia suficiente"
+  }
+]

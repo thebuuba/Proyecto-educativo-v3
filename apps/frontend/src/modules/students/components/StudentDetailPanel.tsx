@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 import { EnrollmentForm } from '@/modules/students/components/EnrollmentForm'
 import { StudentStatusBadge } from '@/modules/students/components/StudentStatusBadge'
 import {
@@ -81,6 +82,7 @@ export function StudentDetailPanel({
   const [deleteTarget, setDeleteTarget] = useState<EnrollmentListItem | null>(null)
   const panelRef = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref: panelRef, active: true, onEscape: onClose })
+  useOutsideClick({ ref: panelRef, onClose })
 
   useEffect(() => {
     let isMounted = true
@@ -177,7 +179,7 @@ export function StudentDetailPanel({
   const currentStudent = detail ?? student
 
   return (
-    <aside ref={panelRef} className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col border-l border-border bg-card shadow-xl">
+    <aside ref={panelRef} role="dialog" aria-label="Expediente del estudiante" className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col border-l border-border bg-card shadow-xl">
       <div className="flex items-start justify-between border-b border-border px-5 py-4">
         <div>
           <p className="text-xs font-medium uppercase text-muted-foreground">
@@ -187,7 +189,7 @@ export function StudentDetailPanel({
             {currentStudent.firstName} {currentStudent.lastName}
           </h3>
         </div>
-        <button
+        <button data-ui-size="icon" data-ui-action="close"
           type="button"
           className="inline-flex size-9 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground"
           aria-label="Cerrar detalle"
@@ -307,7 +309,7 @@ export function StudentDetailPanel({
                       <Badge tone={statusBadgeTone[enrollment.status]}>
                         {statusLabel[enrollment.status]}
                       </Badge>
-                      <button
+                      <button data-ui-size="icon"
                         type="button"
                         className="inline-flex size-7 items-center justify-center rounded-md text-muted-foreground hover:bg-background hover:text-destructive"
                         aria-label={`Eliminar matrícula de ${enrollment.gradeName}`}

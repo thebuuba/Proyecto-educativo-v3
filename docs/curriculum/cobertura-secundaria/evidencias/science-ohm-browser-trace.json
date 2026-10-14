@@ -1,0 +1,4161 @@
+[
+  {
+    "request": {},
+    "status": 401,
+    "response": {}
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "lista-cotejo"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "escala"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "lista-ponderada"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "lista-cotejo"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "escala"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "lista-ponderada"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "lista-cotejo"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "escala"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "lista-ponderada"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "lista-cotejo"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "escala"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "lista-ponderada"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "competencyBlock": "b1"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": null,
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "competencyBlock": "b1"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": null,
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "competencyBlock": "b1"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": null,
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "competencyBlock": "b1"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": null,
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "competencyBlock": "b1"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": null,
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "competencyBlock": "b1"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": null,
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "preferredInstrumentType": "lista-cotejo"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "competencyBlock": "b1",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "preferredInstrumentType": "escala"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "competencyBlock": "b1",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "preferredInstrumentType": "lista-ponderada"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "competencyBlock": "b1",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:01b2fa59-0542-551c-95df-8e3ffc4873ed:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "competencyBlock": "b1"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": null,
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "competencyBlock": "b1"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "7b3fd42d-0b49-4ac1-8e05-5dc6c3ba663f",
+      "activityTitle": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "description": "Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "EXERCISE_SET",
+      "curriculumScopeId": null,
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-data:0",
+          "templateId": "science-ohm-data",
+          "title": "Datos e incógnitas",
+          "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No identifica datos ni incógnita utilizables para resolver el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-formula:1",
+          "templateId": "science-ohm-formula",
+          "title": "Aplicación y despeje de la Ley de Ohm",
+          "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Selecciona y despeja la relación correcta; presenta un paso poco explícito.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No plantea una relación de la Ley de Ohm para el ejercicio.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-calculation:2",
+          "templateId": "science-ohm-calculation",
+          "title": "Cálculo y unidades eléctricas",
+          "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Un error aritmético o de unidades afecta parte de los resultados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta cálculos ni resultados interpretables.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-interpretation:3",
+          "templateId": "science-ohm-interpretation",
+          "title": "Interpretación de situaciones cotidianas",
+          "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una interpretación eléctrica de las situaciones planteadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-ohm-diagram:4",
+          "templateId": "science-ohm-diagram",
+          "title": "Esquema y funcionamiento del circuito",
+          "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "El esquema es parcial o algunas conexiones y funciones no se corresponden.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta un esquema reconocible ni una explicación de su funcionamiento.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

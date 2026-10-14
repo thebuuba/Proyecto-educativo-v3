@@ -1,0 +1,3438 @@
+{
+  "verifiedAt": "2026-10-14T03:12:24.163Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "4175eb99e17141dd69dfa5eb33be2990f409d457",
+      "dirty": true,
+      "startedAt": "2026-10-14T03:11:40.873Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.29"
+    }
+  },
+  "requests": 13,
+  "results": [
+    {
+      "purpose": "Se valorará la calidad en varias dimensiones.",
+      "format": "rubrica",
+      "interpretation": {
+        "suggestedActivityType": "ANALYSIS",
+        "activityType": "ANALYSIS",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON"
+        ],
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "0bf1f226-15d0-5808-95d4-074756740b5e",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Usa textos en la elaboración de proyectos que apoyan y valoran las prácticas ciudadanas y la solución de los problemas que afectan\na la comunidad.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 104,
+                "printedPage": "103"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "81409176-ed36-5f29-b314-55bbdab84bc3",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Redacta diferentes tipos de textos, tales como catálogos, recetas, artículos de opinión, instructivos, entre otros, para promover temas\ny problemas de salud, ambiente y alimentación, que aporten soluciones pertinentes.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 104,
+                "printedPage": "103"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "34fd140c-7bdd-5c5d-939c-cea977f1c163",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Utilización del diccionario en versión física y/o digital para buscar la definición de\npalabras cuyo significado no ha podido inferir a partir del texto; uso de la estructura\ndel soneto para comprender su contenido. Identificación y análisis de los recursos\nestilísticos para valorar la riqueza creativa y expresiva.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 103,
+                "printedPage": "102"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "46648650-fc90-53e3-b89c-0eec39d84b58",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Realización de inferencias basadas en las relaciones locales que existen entre las ideas\ncontenidas en la lectura que escucha, haciendo uso de los conectores de orden y\nde finalidad, de los adverbios, formas verbales y vocabulario temático; inferencia a\npartir del contexto del significado de las palabras que desconoce. Utilización del\ndiccionario en versión física y/o digital para comprender el sentido de las palabras\nque escucha, cuyo significado no ha podido inferir; realización de inferencias basadas\nen el contenido (tema, ideas principales y secundarias) para construir el sentido del\ncontenido; paráfrasis clara y coherente de la información que escucha, ajustándose a la\nintención comunicativa y a su estructura.\nProducción oral (hablar)",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 97,
+                "printedPage": "96"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Establecimiento de la situación de comunicación (intención y destinatarios) que produce\nde forma oral; selección y justificación de las fuentes bibliográficas, en versión física y/o\ndigital, a utilizar para producir por escrito las ideas del contenido; desarrollo de estrategias\nde registro y organización para estructurar el informe de investigación. Estructuración de\nlas ideas, atendiendo a las partes que lo componen y al uso de la gramática específica\n(formas impersonales del verbo, conectores de contraste, adición, cierre, explicación,\nejemplificación, finalidad, adverbios de frecuencia, de cantidad y de modo).",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 98,
+                "printedPage": "97"
+              }
+            ],
+            "topicCoverage": 0.125
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.29",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-purpose:0",
+            "templateId": "len-4-instructivo-purpose",
+            "title": "Propósito y destinatario del instructivo",
+            "description": "Explica qué permite hacer el instructivo y a quién se dirigen sus indicaciones.",
+            "maxScore": 7.71,
+            "maxScoreUnits": 771,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica qué permite hacer el instructivo y a quién se dirigen sus indicaciones.",
+              "Se reconoce qué se busca hacer; una indicación necesita adecuarse al destinatario.",
+              "Se menciona una actividad sin explicar qué orientan sus instrucciones.",
+              "Se atribuye al instructivo un uso incompatible con sus indicaciones.",
+              "No se reconoce el propósito de las instrucciones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica qué permite hacer el instructivo y a quién se dirigen sus indicaciones.",
+                "scoreUnits": 771
+              },
+              {
+                "levelId": "L3",
+                "text": "Se reconoce qué se busca hacer; una indicación necesita adecuarse al destinatario.",
+                "scoreUnits": 514
+              },
+              {
+                "levelId": "L2",
+                "text": "Se menciona una actividad sin explicar qué orientan sus instrucciones.",
+                "scoreUnits": 257
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce el propósito de las instrucciones.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-sequence:1",
+            "templateId": "len-4-instructivo-sequence",
+            "title": "Secuencia de las instrucciones",
+            "description": "Relaciona cada instrucción con la anterior y explica las condiciones necesarias para seguir el procedimiento descrito.",
+            "maxScore": 9.64,
+            "maxScoreUnits": 964,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona cada instrucción con la anterior y explica las condiciones necesarias para seguir el procedimiento descrito.",
+              "Puede seguirse la secuencia; una condición requiere explicitarse.",
+              "Se enumeran acciones sin indicar su orden o las condiciones para continuarlas.",
+              "El orden o una condición contradice el procedimiento y conduce a una acción distinta.",
+              "No hay una secuencia reconocible de instrucciones."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona cada instrucción con la anterior y explica las condiciones necesarias para seguir el procedimiento descrito.",
+                "scoreUnits": 964
+              },
+              {
+                "levelId": "L3",
+                "text": "Puede seguirse la secuencia; una condición requiere explicitarse.",
+                "scoreUnits": 643
+              },
+              {
+                "levelId": "L2",
+                "text": "Se enumeran acciones sin indicar su orden o las condiciones para continuarlas.",
+                "scoreUnits": 321
+              },
+              {
+                "levelId": "L1",
+                "text": "No hay una secuencia reconocible de instrucciones.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-4-instructivo",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_rubrica",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "0bf1f226-15d0-5808-95d4-074756740b5e",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "81409176-ed36-5f29-b314-55bbdab84bc3",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "34fd140c-7bdd-5c5d-939c-cea977f1c163",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "46648650-fc90-53e3-b89c-0eec39d84b58",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a0d15f66-b615-55cc-81de-28237828d0cb",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a9d7f904-5e0c-5d3e-be15-48f78fc680ae",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bef5d7d9-383e-5b68-83bc-8ccfa41ef7f5",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2e9bea5-f63d-580c-a0d1-5fc2b4b03cfe",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d5e64e84-bdb0-5b1e-967f-0f8f24401e54",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e3499067-ee8b-5e19-9947-da3914b0f508",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e730af75-e239-5bcb-9e7c-ce6c16a8f82e",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "edc68146-c1ef-5f11-987b-35e716686ebb",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "abcd724d-c5e6-5d80-9f49-2f16c61a6ea4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "acceb93b-533e-5b2d-8b6c-ffd5f971a1ff",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cca80fdb-7fe2-5abb-b52c-e64d15908ec8",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "purpose": "Se comprobará la presencia de cada evidencia con sí o no.",
+      "format": "lista-cotejo",
+      "interpretation": {
+        "suggestedActivityType": "ANALYSIS",
+        "activityType": "ANALYSIS",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON"
+        ],
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "81409176-ed36-5f29-b314-55bbdab84bc3",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Redacta diferentes tipos de textos, tales como catálogos, recetas, artículos de opinión, instructivos, entre otros, para promover temas\ny problemas de salud, ambiente y alimentación, que aporten soluciones pertinentes.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 104,
+                "printedPage": "103"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "3291c50f-e684-5ad1-af51-21c410e9b0b4",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Realización de inferencias basadas en los hechos y las opiniones emitidas en el artículo de\nopinión que escucha. Paráfrasis de la tesis y los argumentos que utiliza el autor del artículo\nde opinión que escucha; resumen del contenido que lee partiendo de la identificación de\nlas ideas principales (argumentos y tesis) y secundarias en cada párrafo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 99,
+                "printedPage": "98"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "37ec9614-3d26-5477-b673-b5cc8634f4bc",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Escucha atenta de novelas acordes con la edad e intereses; anticipación del contenido\nde la novela de aventuras a partir del título y otras marcas textuales; utilización de la\nestructura de la narración (inicio, nudo y desenlace), de los verbos en pasado y presente,\nde los conectores, de los adjetivos, de la distinción entre narrador y personajes y de las\nfórmulas de inicio y de cierre, para comprender su contenido; inferencia a partir del\ncontexto del significado de las palabras cuyo significado desconoce.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 102,
+                "printedPage": "101"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "46648650-fc90-53e3-b89c-0eec39d84b58",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Realización de inferencias basadas en las relaciones locales que existen entre las ideas\ncontenidas en la lectura que escucha, haciendo uso de los conectores de orden y\nde finalidad, de los adverbios, formas verbales y vocabulario temático; inferencia a\npartir del contexto del significado de las palabras que desconoce. Utilización del\ndiccionario en versión física y/o digital para comprender el sentido de las palabras\nque escucha, cuyo significado no ha podido inferir; realización de inferencias basadas\nen el contenido (tema, ideas principales y secundarias) para construir el sentido del\ncontenido; paráfrasis clara y coherente de la información que escucha, ajustándose a la\nintención comunicativa y a su estructura.\nProducción oral (hablar)",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 97,
+                "printedPage": "96"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "4916a1b4-95aa-58bc-a4fc-adb047c1a4c8",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Lectura atenta acorde con la edad e intereses; anticipación del contenido de la novela\nde aventuras a partir del título y otras marcas textuales y paratextuales; utilización de la\nestructura de la novela (inicio, nudo y desenlace), de los verbos en pasado y presente, de\nlos conectores, de los adjetivos, de la distinción entre narrador y personajes, las fórmulas\nde inicio y de cierre para comprender su contenido.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 102,
+                "printedPage": "101"
+              }
+            ],
+            "topicCoverage": 0.125
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.29",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-purpose:0",
+            "templateId": "len-4-instructivo-purpose",
+            "title": "Explica qué permite hacer el instructivo y a quién se dirigen sus indicaciones.",
+            "description": "Explica qué permite hacer el instructivo y a quién se dirigen sus indicaciones.",
+            "maxScore": 7.71,
+            "maxScoreUnits": 771,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica qué permite hacer el instructivo y a quién se dirigen sus indicaciones.",
+              "Se reconoce qué se busca hacer; una indicación necesita adecuarse al destinatario.",
+              "Se menciona una actividad sin explicar qué orientan sus instrucciones.",
+              "Se atribuye al instructivo un uso incompatible con sus indicaciones.",
+              "No se reconoce el propósito de las instrucciones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-sequence:1",
+            "templateId": "len-4-instructivo-sequence",
+            "title": "Relaciona cada instrucción con la anterior y explica las condiciones necesarias para seguir el procedimiento descrito.",
+            "description": "Relaciona cada instrucción con la anterior y explica las condiciones necesarias para seguir el procedimiento descrito.",
+            "maxScore": 9.64,
+            "maxScoreUnits": 964,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona cada instrucción con la anterior y explica las condiciones necesarias para seguir el procedimiento descrito.",
+              "Puede seguirse la secuencia; una condición requiere explicitarse.",
+              "Se enumeran acciones sin indicar su orden o las condiciones para continuarlas.",
+              "El orden o una condición contradice el procedimiento y conduce a una acción distinta.",
+              "No hay una secuencia reconocible de instrucciones."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-4-instructivo",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_lista-cotejo",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "81409176-ed36-5f29-b314-55bbdab84bc3",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3291c50f-e684-5ad1-af51-21c410e9b0b4",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "37ec9614-3d26-5477-b673-b5cc8634f4bc",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "46648650-fc90-53e3-b89c-0eec39d84b58",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4916a1b4-95aa-58bc-a4fc-adb047c1a4c8",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a0d15f66-b615-55cc-81de-28237828d0cb",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a9d7f904-5e0c-5d3e-be15-48f78fc680ae",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bef5d7d9-383e-5b68-83bc-8ccfa41ef7f5",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2e9bea5-f63d-580c-a0d1-5fc2b4b03cfe",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d5e64e84-bdb0-5b1e-967f-0f8f24401e54",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e3499067-ee8b-5e19-9947-da3914b0f508",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e730af75-e239-5bcb-9e7c-ce6c16a8f82e",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "edc68146-c1ef-5f11-987b-35e716686ebb",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "abcd724d-c5e6-5d80-9f49-2f16c61a6ea4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "acceb93b-533e-5b2d-8b6c-ffd5f971a1ff",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cca80fdb-7fe2-5abb-b52c-e64d15908ec8",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "purpose": "Se registrará la regularidad con que se cumplen los indicadores.",
+      "format": "escala",
+      "interpretation": {
+        "suggestedActivityType": "ANALYSIS",
+        "activityType": "ANALYSIS",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON"
+        ],
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "escala",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "e3499067-ee8b-5e19-9947-da3914b0f508",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Organización de la información registrada, utilizando estrategias que permiten\nestructurar las ideas, según las partes de los conectores de orden y de finalidad y el\nléxico apropiado al tema y a los interlocutores. Asignación de un título coherente\ncon el contenido; utilización de recursos paratextuales (cuadros, gráficos, fotografías,\ndibujos, viñetas, numeración…) para ilustrar el texto que produce por escrito.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 98,
+                "printedPage": "97"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "81409176-ed36-5f29-b314-55bbdab84bc3",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Redacta diferentes tipos de textos, tales como catálogos, recetas, artículos de opinión, instructivos, entre otros, para promover temas\ny problemas de salud, ambiente y alimentación, que aporten soluciones pertinentes.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 104,
+                "printedPage": "103"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "46648650-fc90-53e3-b89c-0eec39d84b58",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Realización de inferencias basadas en las relaciones locales que existen entre las ideas\ncontenidas en la lectura que escucha, haciendo uso de los conectores de orden y\nde finalidad, de los adverbios, formas verbales y vocabulario temático; inferencia a\npartir del contexto del significado de las palabras que desconoce. Utilización del\ndiccionario en versión física y/o digital para comprender el sentido de las palabras\nque escucha, cuyo significado no ha podido inferir; realización de inferencias basadas\nen el contenido (tema, ideas principales y secundarias) para construir el sentido del\ncontenido; paráfrasis clara y coherente de la información que escucha, ajustándose a la\nintención comunicativa y a su estructura.\nProducción oral (hablar)",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 97,
+                "printedPage": "96"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Establecimiento de la situación de comunicación (intención y destinatarios) que produce\nde forma oral; selección y justificación de las fuentes bibliográficas, en versión física y/o\ndigital, a utilizar para producir por escrito las ideas del contenido; desarrollo de estrategias\nde registro y organización para estructurar el informe de investigación. Estructuración de\nlas ideas, atendiendo a las partes que lo componen y al uso de la gramática específica\n(formas impersonales del verbo, conectores de contraste, adición, cierre, explicación,\nejemplificación, finalidad, adverbios de frecuencia, de cantidad y de modo).",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 98,
+                "printedPage": "97"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Establecimiento de la intención comunicativa del instructivo que\nproduce oralmente; selección y justificación del tema que produce oralmente,\nasí como de las fuentes de información que utiliza, en versión física y/o digital.\nDesarrollo de estrategias de selección, registro y organización de la información\nnecesaria para estructurar el informe que produce oralmente.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 97,
+                "printedPage": "96"
+              }
+            ],
+            "topicCoverage": 0.125
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.29",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-purpose:0",
+            "templateId": "len-4-instructivo-purpose",
+            "title": "Explica qué permite hacer el instructivo y a quién se dirigen sus indicaciones.",
+            "description": "Explica qué permite hacer el instructivo y a quién se dirigen sus indicaciones.",
+            "maxScore": 7.71,
+            "maxScoreUnits": 771,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En todas las oportunidades observadas.",
+              "En la mayoría de las oportunidades observadas.",
+              "En algunas de las oportunidades observadas.",
+              "En pocas oportunidades observadas.",
+              "En ninguna de las oportunidades observadas."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "En todas las oportunidades observadas.",
+                "scoreUnits": 771
+              },
+              {
+                "levelId": "L3",
+                "text": "En la mayoría de las oportunidades observadas.",
+                "scoreUnits": 514
+              },
+              {
+                "levelId": "L2",
+                "text": "En algunas de las oportunidades observadas.",
+                "scoreUnits": 257
+              },
+              {
+                "levelId": "L1",
+                "text": "En ninguna de las oportunidades observadas.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-sequence:1",
+            "templateId": "len-4-instructivo-sequence",
+            "title": "Relaciona cada instrucción con la anterior y explica las condiciones necesarias para seguir el procedimiento descrito.",
+            "description": "Relaciona cada instrucción con la anterior y explica las condiciones necesarias para seguir el procedimiento descrito.",
+            "maxScore": 9.64,
+            "maxScoreUnits": 964,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En todas las oportunidades observadas.",
+              "En la mayoría de las oportunidades observadas.",
+              "En algunas de las oportunidades observadas.",
+              "En pocas oportunidades observadas.",
+              "En ninguna de las oportunidades observadas."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "En todas las oportunidades observadas.",
+                "scoreUnits": 964
+              },
+              {
+                "levelId": "L3",
+                "text": "En la mayoría de las oportunidades observadas.",
+                "scoreUnits": 643
+              },
+              {
+                "levelId": "L2",
+                "text": "En algunas de las oportunidades observadas.",
+                "scoreUnits": 321
+              },
+              {
+                "levelId": "L1",
+                "text": "En ninguna de las oportunidades observadas.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-4-instructivo",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_escala",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "e3499067-ee8b-5e19-9947-da3914b0f508",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "81409176-ed36-5f29-b314-55bbdab84bc3",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "46648650-fc90-53e3-b89c-0eec39d84b58",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a0d15f66-b615-55cc-81de-28237828d0cb",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a9d7f904-5e0c-5d3e-be15-48f78fc680ae",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bef5d7d9-383e-5b68-83bc-8ccfa41ef7f5",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2e9bea5-f63d-580c-a0d1-5fc2b4b03cfe",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d5e64e84-bdb0-5b1e-967f-0f8f24401e54",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e730af75-e239-5bcb-9e7c-ce6c16a8f82e",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "edc68146-c1ef-5f11-987b-35e716686ebb",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "abcd724d-c5e6-5d80-9f49-2f16c61a6ea4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "acceb93b-533e-5b2d-8b6c-ffd5f971a1ff",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cca80fdb-7fe2-5abb-b52c-e64d15908ec8",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "purpose": "Se distribuirán pesos entre los componentes verificables.",
+      "format": "lista-ponderada",
+      "interpretation": {
+        "suggestedActivityType": "ANALYSIS",
+        "activityType": "ANALYSIS",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON"
+        ],
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-ponderada",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Establecimiento de la situación de comunicación (intención y destinatarios) que produce\nde forma oral; selección y justificación de las fuentes bibliográficas, en versión física y/o\ndigital, a utilizar para producir por escrito las ideas del contenido; desarrollo de estrategias\nde registro y organización para estructurar el informe de investigación. Estructuración de\nlas ideas, atendiendo a las partes que lo componen y al uso de la gramática específica\n(formas impersonales del verbo, conectores de contraste, adición, cierre, explicación,\nejemplificación, finalidad, adverbios de frecuencia, de cantidad y de modo).",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 98,
+                "printedPage": "97"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "a0d15f66-b615-55cc-81de-28237828d0cb",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Estructuración de las ideas del informe, atendiendo a las partes que lo componen y al\nuso de la gramática específica (formas impersonales del verbo, conectores de contraste,\nadición, cierre, explicación, ejemplificación y finalidad, adverbios de frecuencia, de cantidad\ny de modo).",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 99,
+                "printedPage": "98"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "81409176-ed36-5f29-b314-55bbdab84bc3",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Redacta diferentes tipos de textos, tales como catálogos, recetas, artículos de opinión, instructivos, entre otros, para promover temas\ny problemas de salud, ambiente y alimentación, que aporten soluciones pertinentes.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 104,
+                "printedPage": "103"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "46648650-fc90-53e3-b89c-0eec39d84b58",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Realización de inferencias basadas en las relaciones locales que existen entre las ideas\ncontenidas en la lectura que escucha, haciendo uso de los conectores de orden y\nde finalidad, de los adverbios, formas verbales y vocabulario temático; inferencia a\npartir del contexto del significado de las palabras que desconoce. Utilización del\ndiccionario en versión física y/o digital para comprender el sentido de las palabras\nque escucha, cuyo significado no ha podido inferir; realización de inferencias basadas\nen el contenido (tema, ideas principales y secundarias) para construir el sentido del\ncontenido; paráfrasis clara y coherente de la información que escucha, ajustándose a la\nintención comunicativa y a su estructura.\nProducción oral (hablar)",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 97,
+                "printedPage": "96"
+              }
+            ],
+            "topicCoverage": 0.125
+          },
+          {
+            "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+            "type": "PROCEDURE",
+            "text": "• Establecimiento de la intención comunicativa del instructivo que\nproduce oralmente; selección y justificación del tema que produce oralmente,\nasí como de las fuentes de información que utiliza, en versión física y/o digital.\nDesarrollo de estrategias de selección, registro y organización de la información\nnecesaria para estructurar el informe que produce oralmente.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 97,
+                "printedPage": "96"
+              }
+            ],
+            "topicCoverage": 0.125
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.29",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-purpose:0",
+            "templateId": "len-4-instructivo-purpose",
+            "title": "Propósito y destinatario del instructivo",
+            "description": "Explica qué permite hacer el instructivo y a quién se dirigen sus indicaciones. Parcial (50%): Se menciona una actividad sin explicar qué orientan sus instrucciones.",
+            "maxScore": 7.71,
+            "maxScoreUnits": 771,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica qué permite hacer el instructivo y a quién se dirigen sus indicaciones.",
+              "Se reconoce qué se busca hacer; una indicación necesita adecuarse al destinatario.",
+              "Se menciona una actividad sin explicar qué orientan sus instrucciones.",
+              "Se atribuye al instructivo un uso incompatible con sus indicaciones.",
+              "No se reconoce el propósito de las instrucciones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-sequence:1",
+            "templateId": "len-4-instructivo-sequence",
+            "title": "Secuencia de las instrucciones",
+            "description": "Relaciona cada instrucción con la anterior y explica las condiciones necesarias para seguir el procedimiento descrito. Parcial (50%): Se enumeran acciones sin indicar su orden o las condiciones para continuarlas.",
+            "maxScore": 9.64,
+            "maxScoreUnits": 964,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona cada instrucción con la anterior y explica las condiciones necesarias para seguir el procedimiento descrito.",
+              "Puede seguirse la secuencia; una condición requiere explicitarse.",
+              "Se enumeran acciones sin indicar su orden o las condiciones para continuarlas.",
+              "El orden o una condición contradice el procedimiento y conduce a una acción distinta.",
+              "No hay una secuencia reconocible de instrucciones."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-4-instructivo",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a0d15f66-b615-55cc-81de-28237828d0cb",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "81409176-ed36-5f29-b314-55bbdab84bc3",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "46648650-fc90-53e3-b89c-0eec39d84b58",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a9d7f904-5e0c-5d3e-be15-48f78fc680ae",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bad7924a-5b3b-52f4-ab66-6b29e93ecdf9",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bef5d7d9-383e-5b68-83bc-8ccfa41ef7f5",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2e9bea5-f63d-580c-a0d1-5fc2b4b03cfe",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d5e64e84-bdb0-5b1e-967f-0f8f24401e54",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e3499067-ee8b-5e19-9947-da3914b0f508",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e730af75-e239-5bcb-9e7c-ce6c16a8f82e",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "edc68146-c1ef-5f11-987b-35e716686ebb",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "abcd724d-c5e6-5d80-9f49-2f16c61a6ea4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "acceb93b-533e-5b2d-8b6c-ffd5f971a1ff",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "acd7d061-47d9-574f-97bb-6ff2dfb37c3a",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cca80fdb-7fe2-5abb-b52c-e64d15908ec8",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ],
+  "research": {
+    "suggestedActivityType": "RESEARCH",
+    "activityType": "RESEARCH",
+    "activityTypes": [
+      "EXPOSITION",
+      "ORAL_PRESENTATION",
+      "DEBATE",
+      "NEWSCAST",
+      "NEWS_ANALYSIS",
+      "NEWS_COMPARISON",
+      "NEWS_WRITING",
+      "TOURIST_GUIDE_CREATION",
+      "TOURIST_GUIDE_ANALYSIS",
+      "TOURIST_GUIDE_PRESENTATION",
+      "TOURIST_GUIDE_COMPARISON",
+      "POSTER_CREATION",
+      "POSTER_ANALYSIS",
+      "POSTER_COMPARISON",
+      "POSTER_PRESENTATION",
+      "READING_REPORT_WRITING",
+      "READING_REPORT_ANALYSIS",
+      "READING_REPORT_PRESENTATION",
+      "READING_REPORT_COMPARISON",
+      "DETECTIVE_STORY_WRITING",
+      "DETECTIVE_STORY_ANALYSIS",
+      "DETECTIVE_STORY_NARRATION",
+      "DETECTIVE_STORY_COMPARISON",
+      "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+      "CALLIGRAM_CREATION",
+      "CALLIGRAM_ANALYSIS",
+      "CALLIGRAM_COMPARISON",
+      "CALLIGRAM_RECITATION",
+      "CALLIGRAM_EXPLANATION",
+      "EXPERIMENT",
+      "LAB_PRACTICE",
+      "WRITTEN_PRODUCTION",
+      "ESSAY",
+      "REPORT",
+      "RESEARCH",
+      "PROJECT",
+      "PROBLEM_SOLVING",
+      "EXERCISE_SET",
+      "CONCEPT_MAP",
+      "PORTFOLIO",
+      "ARTISTIC_PRODUCTION",
+      "PERFORMANCE",
+      "MOTOR_SPORTS_PRACTICE",
+      "OBSERVATION",
+      "QUIZ_TEST",
+      "OTHER",
+      "ANALYSIS",
+      "COMPARISON"
+    ],
+    "suggestedEvaluationTechnique": "analisis-producciones",
+    "suggestedInstrumentType": "rubrica",
+    "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+    "curriculumStatus": "DRAFT",
+    "curriculumCandidates": [
+      {
+        "elementId": "50469b64-7695-592b-a624-e95be7efd075",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "type": "PROCEDURE",
+        "text": "• Establecimiento de la situación de comunicación (intención y destinatarios) del informe\nde investigación que escribe. Selección y justificación del tema sobre el que escribirá a\npartir de un problema detectado. Selección y justificación de las fuentes bibliográficas, en\nversión física y/o digital, a utilizar para producir por escrito los resultados finales. Desarrollo\nde estrategias de registro y organización de la información para estructurar el informe que\nescribe.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 99,
+            "printedPage": "98"
+          }
+        ],
+        "topicCoverage": 0.6
+      },
+      {
+        "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "type": "PROCEDURE",
+        "text": "• Establecimiento de la situación de comunicación (intención y destinatarios) que produce\nde forma oral; selección y justificación de las fuentes bibliográficas, en versión física y/o\ndigital, a utilizar para producir por escrito las ideas del contenido; desarrollo de estrategias\nde registro y organización para estructurar el informe de investigación. Estructuración de\nlas ideas, atendiendo a las partes que lo componen y al uso de la gramática específica\n(formas impersonales del verbo, conectores de contraste, adición, cierre, explicación,\nejemplificación, finalidad, adverbios de frecuencia, de cantidad y de modo).",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 98,
+            "printedPage": "97"
+          }
+        ],
+        "topicCoverage": 0.6
+      },
+      {
+        "elementId": "380b5d11-4d4a-52a8-a8fd-d95d4eb5fe93",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "type": "PROCEDURE",
+        "text": "• Paráfrasis del sentido global del informe de investigación que escucha, a partir del\nproblema planteado, los objetivos de la investigación, la metodología, las bases teóricas, el\nanálisis de los resultados, las conclusiones y recomendaciones, ajustándose a la intención\ncomunicativa y a la estructura de este tipo de texto. Resumen del contenido mediante la\nomisión de información no relevante, selección de las ideas principales, generalización y\nreconstrucción que representan el sentido global del texto.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 98,
+            "printedPage": "97"
+          }
+        ],
+        "topicCoverage": 0.4
+      },
+      {
+        "elementId": "908c7e10-f28a-5bcd-861b-a23012420c66",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "type": "PROCEDURE",
+        "text": "• Utilización de recursos paratextuales (tablas, gráficos, cuadros, elementos tipográficos…)\npara ilustrar el contenido que escribe; selección del léxico a la intención comunicativa, a\nlos interlocutores y al vocabulario temático del informe; asignación de un título coherente\ncon el contenido; utilización de diversos mecanismos de citación para desarrollar el marco\nteórico y el análisis de los resultados de la investigación.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 99,
+            "printedPage": "98"
+          }
+        ],
+        "topicCoverage": 0.4
+      },
+      {
+        "elementId": "a6f1db3c-2793-5b68-b1d3-0f4ff9987e17",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "type": "PROCEDURE",
+        "text": "• Establecimiento de un propósito para la lectura del informe de investigación; anticipación\ndel contenido de investigación a partir de marcas textuales y paratextuales (gráficos, tablas,\ncuadros, elementos tipográficos), activación de los conocimientos previos relacionados\ncon el tema de investigación; inferencia de la intención comunicativa del texto que lee,\nmediante su estructura y el vocabulario que le es propio.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 98,
+            "printedPage": "97"
+          }
+        ],
+        "topicCoverage": 0.4
+      }
+    ],
+    "curriculumMatch": "SUGGESTED",
+    "requiresCurriculumConfirmation": true,
+    "message": "Encontramos posibles referentes para revisar."
+  },
+  "suppliedData": [
+    {
+      "kind": "RECOMMENDATION",
+      "catalogVersion": "evaluation-2026.29",
+      "instrumentType": "rubrica",
+      "confidence": "LOW",
+      "activityType": "REPORT",
+      "evidenceTypes": [
+        "PRODUCT",
+        "KNOWLEDGE"
+      ],
+      "participationMode": "INDIVIDUAL",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+      "selectedCurriculumElements": [],
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-problem:0",
+          "templateId": "len-4-informe-investigacion-problem",
+          "title": "Problema, objetivos y método comunicados",
+          "description": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible.",
+          "maxScore": 7.71,
+          "maxScoreUnits": 771,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "progressionLevels": [
+            "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible.",
+            "Se comprende la relación entre problema y método; un objetivo necesita precisarse.",
+            "Enumera objetivos y acciones sin relacionarlos con el problema.",
+            "Atribuye al método un objetivo incompatible con las acciones descritas.",
+            "No relaciona el problema con los objetivos ni el método comunicado."
+          ],
+          "relativeWeight": 4,
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible.",
+              "scoreUnits": 771
+            },
+            {
+              "levelId": "L3",
+              "text": "Se comprende la relación entre problema y método; un objetivo necesita precisarse.",
+              "scoreUnits": 514
+            },
+            {
+              "levelId": "L2",
+              "text": "Enumera objetivos y acciones sin relacionarlos con el problema.",
+              "scoreUnits": 257
+            },
+            {
+              "levelId": "L1",
+              "text": "No relaciona el problema con los objetivos ni el método comunicado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-results:1",
+          "templateId": "len-4-informe-investigacion-results",
+          "title": "Resultados y argumentos de investigación",
+          "description": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información.",
+          "maxScore": 9.64,
+          "maxScoreUnits": 964,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "progressionLevels": [
+            "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información.",
+            "Los datos apoyan las afirmaciones; una interpretación necesita indicar su sustento.",
+            "Reproduce datos y afirmaciones sin mostrar qué relación tienen.",
+            "Atribuye a los datos una conclusión que no permiten o inventa resultados.",
+            "No relaciona resultados disponibles con las afirmaciones del informe."
+          ],
+          "relativeWeight": 5,
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información.",
+              "scoreUnits": 964
+            },
+            {
+              "levelId": "L3",
+              "text": "Los datos apoyan las afirmaciones; una interpretación necesita indicar su sustento.",
+              "scoreUnits": 643
+            },
+            {
+              "levelId": "L2",
+              "text": "Reproduce datos y afirmaciones sin mostrar qué relación tienen.",
+              "scoreUnits": 321
+            },
+            {
+              "levelId": "L1",
+              "text": "No relaciona resultados disponibles con las afirmaciones del informe.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "id": "L4",
+          "label": "Destacado",
+          "proportion": 1
+        },
+        {
+          "id": "L3",
+          "label": "Logrado",
+          "proportion": 0.6666666666666666
+        },
+        {
+          "id": "L2",
+          "label": "En proceso",
+          "proportion": 0.3333333333333333
+        },
+        {
+          "id": "L1",
+          "label": "Inicial",
+          "proportion": 0
+        }
+      ],
+      "totalScore": 17.35,
+      "totalScoreUnits": 1735,
+      "scoreUnit": 0.01,
+      "internalTrace": {
+        "mappingStatus": "RESOLVED",
+        "reasons": [
+          "module=lengua-secundaria-4-informe-investigacion",
+          "band=SECONDARY",
+          "discipline=language",
+          "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+          "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+        ],
+        "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+        "activityTypeOrigin": "DETECTED",
+        "ranking": [
+          {
+            "elementId": "380b5d11-4d4a-52a8-a8fd-d95d4eb5fe93",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "50469b64-7695-592b-a624-e95be7efd075",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "c5f18eb6-faa4-53a1-b396-b2d9ebfe49aa",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "908c7e10-f28a-5bcd-861b-a23012420c66",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "a6f1db3c-2793-5b68-b1d3-0f4ff9987e17",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "dbdceddd-0b4c-59a2-93ee-8486443ffda5",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "c2e9bea5-f63d-580c-a0d1-5fc2b4b03cfe",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "e23c52d5-606d-5567-8d79-06e68d280d4d",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "939c171c-8ce5-53c8-9810-33fe4844bd47",
+            "score": 43,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "be5a70d3-b9cb-5d71-95dd-c87d8d32aa35",
+            "score": 41,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "e5744392-a238-5d33-bfb6-9b2dcb08d517",
+            "score": 39,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=10",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "0f96b42a-1dc5-5e42-8310-6c3c85a43a24",
+            "score": 33,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "74bcf637-8787-53e1-84a9-bda9b15ca48f",
+            "score": 33,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "1226589a-4932-5eec-b97f-ca2f0a026c37",
+            "score": 31,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "bbd3b3f8-1347-561c-9600-8d4b84e49be7",
+            "score": 31,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+            "score": 30,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "a0d15f66-b615-55cc-81de-28237828d0cb",
+            "score": 30,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "7494ba49-f709-5a76-9d37-b683f6521de9",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "7bdb782e-02b3-5540-ab37-ef0c50285b00",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "aaf49863-a870-5d98-96e9-3d00934c3874",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "aec7604d-1709-5bf1-ad19-c61bd2bc5679",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "bef5d7d9-383e-5b68-83bc-8ccfa41ef7f5",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "e730af75-e239-5bcb-9e7c-ce6c16a8f82e",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          }
+        ],
+        "curriculumStatus": "DRAFT",
+        "lowCurriculumConfidence": true,
+        "consideredTypes": [
+          "SPECIFIC_COMPETENCY",
+          "EVALUATION_CRITERION",
+          "ACHIEVEMENT_INDICATOR",
+          "CONCEPT",
+          "PROCEDURE",
+          "ATTITUDE_VALUE"
+        ]
+      }
+    },
+    {
+      "kind": "RECOMMENDATION",
+      "catalogVersion": "evaluation-2026.29",
+      "instrumentType": "lista-cotejo",
+      "confidence": "LOW",
+      "activityType": "REPORT",
+      "evidenceTypes": [
+        "PRODUCT",
+        "KNOWLEDGE"
+      ],
+      "participationMode": "INDIVIDUAL",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+      "selectedCurriculumElements": [],
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-problem:0",
+          "templateId": "len-4-informe-investigacion-problem",
+          "title": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible.",
+          "description": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible.",
+          "maxScore": 7.71,
+          "maxScoreUnits": 771,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "progressionLevels": [
+            "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible.",
+            "Se comprende la relación entre problema y método; un objetivo necesita precisarse.",
+            "Enumera objetivos y acciones sin relacionarlos con el problema.",
+            "Atribuye al método un objetivo incompatible con las acciones descritas.",
+            "No relaciona el problema con los objetivos ni el método comunicado."
+          ],
+          "relativeWeight": 4,
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-results:1",
+          "templateId": "len-4-informe-investigacion-results",
+          "title": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información.",
+          "description": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información.",
+          "maxScore": 9.64,
+          "maxScoreUnits": 964,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "progressionLevels": [
+            "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información.",
+            "Los datos apoyan las afirmaciones; una interpretación necesita indicar su sustento.",
+            "Reproduce datos y afirmaciones sin mostrar qué relación tienen.",
+            "Atribuye a los datos una conclusión que no permiten o inventa resultados.",
+            "No relaciona resultados disponibles con las afirmaciones del informe."
+          ],
+          "relativeWeight": 5,
+          "descriptors": []
+        }
+      ],
+      "levels": [],
+      "totalScore": 17.35,
+      "totalScoreUnits": 1735,
+      "scoreUnit": 0.01,
+      "internalTrace": {
+        "mappingStatus": "RESOLVED",
+        "reasons": [
+          "module=lengua-secundaria-4-informe-investigacion",
+          "band=SECONDARY",
+          "discipline=language",
+          "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+          "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+        ],
+        "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+        "activityTypeOrigin": "DETECTED",
+        "ranking": [
+          {
+            "elementId": "380b5d11-4d4a-52a8-a8fd-d95d4eb5fe93",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "50469b64-7695-592b-a624-e95be7efd075",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "c5f18eb6-faa4-53a1-b396-b2d9ebfe49aa",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "908c7e10-f28a-5bcd-861b-a23012420c66",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "a6f1db3c-2793-5b68-b1d3-0f4ff9987e17",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "dbdceddd-0b4c-59a2-93ee-8486443ffda5",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "c2e9bea5-f63d-580c-a0d1-5fc2b4b03cfe",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "e23c52d5-606d-5567-8d79-06e68d280d4d",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "939c171c-8ce5-53c8-9810-33fe4844bd47",
+            "score": 43,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "be5a70d3-b9cb-5d71-95dd-c87d8d32aa35",
+            "score": 41,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "e5744392-a238-5d33-bfb6-9b2dcb08d517",
+            "score": 39,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=10",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "0f96b42a-1dc5-5e42-8310-6c3c85a43a24",
+            "score": 33,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "74bcf637-8787-53e1-84a9-bda9b15ca48f",
+            "score": 33,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "1226589a-4932-5eec-b97f-ca2f0a026c37",
+            "score": 31,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "bbd3b3f8-1347-561c-9600-8d4b84e49be7",
+            "score": 31,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+            "score": 30,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "a0d15f66-b615-55cc-81de-28237828d0cb",
+            "score": 30,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "7494ba49-f709-5a76-9d37-b683f6521de9",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "7bdb782e-02b3-5540-ab37-ef0c50285b00",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "aaf49863-a870-5d98-96e9-3d00934c3874",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "aec7604d-1709-5bf1-ad19-c61bd2bc5679",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "bef5d7d9-383e-5b68-83bc-8ccfa41ef7f5",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "e730af75-e239-5bcb-9e7c-ce6c16a8f82e",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          }
+        ],
+        "curriculumStatus": "DRAFT",
+        "lowCurriculumConfidence": true,
+        "consideredTypes": [
+          "SPECIFIC_COMPETENCY",
+          "EVALUATION_CRITERION",
+          "ACHIEVEMENT_INDICATOR",
+          "CONCEPT",
+          "PROCEDURE",
+          "ATTITUDE_VALUE"
+        ]
+      }
+    },
+    {
+      "kind": "RECOMMENDATION",
+      "catalogVersion": "evaluation-2026.29",
+      "instrumentType": "escala",
+      "confidence": "LOW",
+      "activityType": "REPORT",
+      "evidenceTypes": [
+        "PRODUCT",
+        "KNOWLEDGE"
+      ],
+      "participationMode": "INDIVIDUAL",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+      "selectedCurriculumElements": [],
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-problem:0",
+          "templateId": "len-4-informe-investigacion-problem",
+          "title": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible.",
+          "description": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible.",
+          "maxScore": 7.71,
+          "maxScoreUnits": 771,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "progressionLevels": [
+            "Cumple todos los aspectos del indicador.",
+            "Cumple lo esencial del indicador; queda un aspecto por completar.",
+            "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+            "Inicia el desempeño sin completar sus aspectos esenciales.",
+            "No demuestra el desempeño descrito en el indicador."
+          ],
+          "relativeWeight": 4,
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Cumple todos los aspectos del indicador.",
+              "scoreUnits": 771
+            },
+            {
+              "levelId": "L3",
+              "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "scoreUnits": 514
+            },
+            {
+              "levelId": "L2",
+              "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "scoreUnits": 257
+            },
+            {
+              "levelId": "L1",
+              "text": "No demuestra el desempeño descrito en el indicador.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-results:1",
+          "templateId": "len-4-informe-investigacion-results",
+          "title": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información.",
+          "description": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información.",
+          "maxScore": 9.64,
+          "maxScoreUnits": 964,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "progressionLevels": [
+            "Cumple todos los aspectos del indicador.",
+            "Cumple lo esencial del indicador; queda un aspecto por completar.",
+            "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+            "Inicia el desempeño sin completar sus aspectos esenciales.",
+            "No demuestra el desempeño descrito en el indicador."
+          ],
+          "relativeWeight": 5,
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Cumple todos los aspectos del indicador.",
+              "scoreUnits": 964
+            },
+            {
+              "levelId": "L3",
+              "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "scoreUnits": 643
+            },
+            {
+              "levelId": "L2",
+              "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "scoreUnits": 321
+            },
+            {
+              "levelId": "L1",
+              "text": "No demuestra el desempeño descrito en el indicador.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "id": "L4",
+          "label": "Completo",
+          "proportion": 1
+        },
+        {
+          "id": "L3",
+          "label": "Suficiente",
+          "proportion": 0.6666666666666666
+        },
+        {
+          "id": "L2",
+          "label": "Parcial",
+          "proportion": 0.3333333333333333
+        },
+        {
+          "id": "L1",
+          "label": "Aún no logrado",
+          "proportion": 0
+        }
+      ],
+      "totalScore": 17.35,
+      "totalScoreUnits": 1735,
+      "scoreUnit": 0.01,
+      "internalTrace": {
+        "mappingStatus": "RESOLVED",
+        "reasons": [
+          "module=lengua-secundaria-4-informe-investigacion",
+          "band=SECONDARY",
+          "discipline=language",
+          "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+          "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+        ],
+        "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+        "activityTypeOrigin": "DETECTED",
+        "ranking": [
+          {
+            "elementId": "380b5d11-4d4a-52a8-a8fd-d95d4eb5fe93",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "50469b64-7695-592b-a624-e95be7efd075",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "c5f18eb6-faa4-53a1-b396-b2d9ebfe49aa",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "908c7e10-f28a-5bcd-861b-a23012420c66",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "a6f1db3c-2793-5b68-b1d3-0f4ff9987e17",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "dbdceddd-0b4c-59a2-93ee-8486443ffda5",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "c2e9bea5-f63d-580c-a0d1-5fc2b4b03cfe",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "e23c52d5-606d-5567-8d79-06e68d280d4d",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "939c171c-8ce5-53c8-9810-33fe4844bd47",
+            "score": 43,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "be5a70d3-b9cb-5d71-95dd-c87d8d32aa35",
+            "score": 41,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "e5744392-a238-5d33-bfb6-9b2dcb08d517",
+            "score": 39,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=10",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "0f96b42a-1dc5-5e42-8310-6c3c85a43a24",
+            "score": 33,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "74bcf637-8787-53e1-84a9-bda9b15ca48f",
+            "score": 33,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "1226589a-4932-5eec-b97f-ca2f0a026c37",
+            "score": 31,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "bbd3b3f8-1347-561c-9600-8d4b84e49be7",
+            "score": 31,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+            "score": 30,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "a0d15f66-b615-55cc-81de-28237828d0cb",
+            "score": 30,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "7494ba49-f709-5a76-9d37-b683f6521de9",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "7bdb782e-02b3-5540-ab37-ef0c50285b00",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "aaf49863-a870-5d98-96e9-3d00934c3874",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "aec7604d-1709-5bf1-ad19-c61bd2bc5679",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "bef5d7d9-383e-5b68-83bc-8ccfa41ef7f5",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "e730af75-e239-5bcb-9e7c-ce6c16a8f82e",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          }
+        ],
+        "curriculumStatus": "DRAFT",
+        "lowCurriculumConfidence": true,
+        "consideredTypes": [
+          "SPECIFIC_COMPETENCY",
+          "EVALUATION_CRITERION",
+          "ACHIEVEMENT_INDICATOR",
+          "CONCEPT",
+          "PROCEDURE",
+          "ATTITUDE_VALUE"
+        ]
+      }
+    },
+    {
+      "kind": "RECOMMENDATION",
+      "catalogVersion": "evaluation-2026.29",
+      "instrumentType": "lista-ponderada",
+      "confidence": "LOW",
+      "activityType": "REPORT",
+      "evidenceTypes": [
+        "PRODUCT",
+        "KNOWLEDGE"
+      ],
+      "participationMode": "INDIVIDUAL",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+      "selectedCurriculumElements": [],
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-problem:0",
+          "templateId": "len-4-informe-investigacion-problem",
+          "title": "Problema, objetivos y método comunicados",
+          "description": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible. Parcial (50%): Enumera objetivos y acciones sin relacionarlos con el problema.",
+          "maxScore": 7.71,
+          "maxScoreUnits": 771,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "progressionLevels": [
+            "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible.",
+            "Se comprende la relación entre problema y método; un objetivo necesita precisarse.",
+            "Enumera objetivos y acciones sin relacionarlos con el problema.",
+            "Atribuye al método un objetivo incompatible con las acciones descritas.",
+            "No relaciona el problema con los objetivos ni el método comunicado."
+          ],
+          "relativeWeight": 4,
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-results:1",
+          "templateId": "len-4-informe-investigacion-results",
+          "title": "Resultados y argumentos de investigación",
+          "description": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información. Parcial (50%): Reproduce datos y afirmaciones sin mostrar qué relación tienen.",
+          "maxScore": 9.64,
+          "maxScoreUnits": 964,
+          "sourceType": "CONTEXTUALIZED",
+          "sourceReferences": [],
+          "progressionLevels": [
+            "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información.",
+            "Los datos apoyan las afirmaciones; una interpretación necesita indicar su sustento.",
+            "Reproduce datos y afirmaciones sin mostrar qué relación tienen.",
+            "Atribuye a los datos una conclusión que no permiten o inventa resultados.",
+            "No relaciona resultados disponibles con las afirmaciones del informe."
+          ],
+          "relativeWeight": 5,
+          "descriptors": []
+        }
+      ],
+      "levels": [],
+      "totalScore": 17.35,
+      "totalScoreUnits": 1735,
+      "scoreUnit": 0.01,
+      "internalTrace": {
+        "mappingStatus": "RESOLVED",
+        "reasons": [
+          "module=lengua-secundaria-4-informe-investigacion",
+          "band=SECONDARY",
+          "discipline=language",
+          "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+          "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+        ],
+        "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+        "activityTypeOrigin": "DETECTED",
+        "ranking": [
+          {
+            "elementId": "380b5d11-4d4a-52a8-a8fd-d95d4eb5fe93",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "50469b64-7695-592b-a624-e95be7efd075",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "c5f18eb6-faa4-53a1-b396-b2d9ebfe49aa",
+            "score": 61,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "908c7e10-f28a-5bcd-861b-a23012420c66",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "a6f1db3c-2793-5b68-b1d3-0f4ff9987e17",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "dbdceddd-0b4c-59a2-93ee-8486443ffda5",
+            "score": 59,
+            "topicCoverage": 0.375,
+            "reasons": [
+              "topicTokens=3/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "c2e9bea5-f63d-580c-a0d1-5fc2b4b03cfe",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "e23c52d5-606d-5567-8d79-06e68d280d4d",
+            "score": 44,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "939c171c-8ce5-53c8-9810-33fe4844bd47",
+            "score": 43,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "be5a70d3-b9cb-5d71-95dd-c87d8d32aa35",
+            "score": 41,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "e5744392-a238-5d33-bfb6-9b2dcb08d517",
+            "score": 39,
+            "topicCoverage": 0.25,
+            "reasons": [
+              "topicTokens=2/8",
+              "typeWeight=10",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "0f96b42a-1dc5-5e42-8310-6c3c85a43a24",
+            "score": 33,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "74bcf637-8787-53e1-84a9-bda9b15ca48f",
+            "score": 33,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "1226589a-4932-5eec-b97f-ca2f0a026c37",
+            "score": 31,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "bbd3b3f8-1347-561c-9600-8d4b84e49be7",
+            "score": 31,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=16",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+            "score": 30,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "a0d15f66-b615-55cc-81de-28237828d0cb",
+            "score": 30,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=1"
+            ]
+          },
+          {
+            "elementId": "7494ba49-f709-5a76-9d37-b683f6521de9",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "7bdb782e-02b3-5540-ab37-ef0c50285b00",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "aaf49863-a870-5d98-96e9-3d00934c3874",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "aec7604d-1709-5bf1-ad19-c61bd2bc5679",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "bef5d7d9-383e-5b68-83bc-8ccfa41ef7f5",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          },
+          {
+            "elementId": "e730af75-e239-5bcb-9e7c-ce6c16a8f82e",
+            "score": 27,
+            "topicCoverage": 0.125,
+            "reasons": [
+              "topicTokens=1/8",
+              "typeWeight=12",
+              "blockMatches=0",
+              "procedureMatches=0"
+            ]
+          }
+        ],
+        "curriculumStatus": "DRAFT",
+        "lowCurriculumConfidence": true,
+        "consideredTypes": [
+          "SPECIFIC_COMPETENCY",
+          "EVALUATION_CRITERION",
+          "ACHIEVEMENT_INDICATOR",
+          "CONCEPT",
+          "PROCEDURE",
+          "ATTITUDE_VALUE"
+        ]
+      }
+    }
+  ]
+}

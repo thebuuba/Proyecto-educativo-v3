@@ -209,6 +209,7 @@ export class ScheduleService {
           return {
             id: item.id,
             subjectName: subject?.name ?? '',
+            appearanceColor: item.appearanceColor,
             teacherName: teacher ? `${teacher.firstName} ${teacher.lastName}` : '',
           }
         })
@@ -633,6 +634,7 @@ export class ScheduleService {
         ...entry,
         status: entry.status.toLowerCase(),
         subjectName: subject?.name ?? '',
+        appearanceColor: sectionSubject?.appearanceColor ?? null,
         teacherName: teacher ? `${teacher.firstName} ${teacher.lastName}` : '',
         gradeName: grade?.name ?? '',
         academicLevelName: grade?.level ?? '',

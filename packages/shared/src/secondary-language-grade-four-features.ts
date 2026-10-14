@@ -1,0 +1,54 @@
+import type {LanguageFeature} from './language-feature-criteria'
+import {thirdGradeLanguageFeatures} from './secondary-language-grade-three-features'
+import {secondGradeLanguageFeatures} from './secondary-language-grade-two-features'
+const f=(id:string,match:string,name:string,purpose:string,error:string,terms?:[string,string][]):LanguageFeature=>({id,match,name,function:purpose,error,...(terms?{terms}:{})})
+const take=(genre:string,...ids:string[])=>thirdGradeLanguageFeatures[genre].filter(f=>ids.includes(f.id))
+const adjectives=secondGradeLanguageFeatures['guia-turistica'].filter(f=>f.id==='adjectives')
+const vocabulary=take('entrevista','vocabulary')[0]
+const impersonal=f('impersonal','impersonal','las formas impersonales del verbo','comunicar acciones sin atribuirlas a un sujeto inexistente','se añade un agente que cambia la acción comunicada')
+const infinitive=f('infinitive','infinitivo','los verbos en infinitivo','nombrar acciones y propósitos sin confundirlos con hechos ya realizados','se interpreta un propósito como un resultado ya obtenido')
+const graphics={...take('catalogo','graphics')[0],terms:[['grafic[oa]s?','los gráficos'],['tablas?','las tablas'],['diagramas?','los diagramas'],['dibujos?','los dibujos'],['fotografias?','las fotografías'],['imagenes','las imágenes'],['ilustraciones|ilustracion','las ilustraciones'],['mapas?(?! conceptual)','los mapas']] as [string,string][]}
+const adverbs=f('adverbs','adverbios?|construcciones adverbiales','los adverbios y construcciones adverbiales','precisar modo, frecuencia o cantidad de las acciones sin cambiar sus relaciones','se atribuye a una acción una circunstancia de otra', [['frecuencia','los adverbios de frecuencia'],['modo','los adverbios de modo'],['cantidad','los adverbios de cantidad']])
+const citations=f('citations','citacion|citas? (?:textuales|directas|indirectas)|comillas|parentesis|puntos suspensivos','los mecanismos de citación','distinguir palabras o ideas de la fuente de la voz propia y conservar su sentido al citarlas','se atribuye a la fuente una afirmación que no hizo o se presenta una cita como idea propia',[['directas','las citas directas'],['indirectas','las citas indirectas']])
+const sources=f('sources','referencias bibliograficas|fuentes bibliograficas','las referencias bibliográficas','identificar el origen de los datos e ideas y permitir contrastarlos con la fuente utilizada','la referencia corresponde a una obra distinta o no respalda la información atribuida')
+const connectors=f('connectors','conectores','los conectores de relación lógica','distinguir adición, contraste, explicación y finalidad entre las ideas que enlazan','el enlace invierte una causa, presenta una oposición como coincidencia o atribuye una conclusión ajena',[['contraste','los conectores de contraste'],['adicion','los conectores de adición'],['cierre','los conectores de cierre'],['ejemplificacion','los conectores de ejemplificación'],['finalidad','los conectores de finalidad'],['recapitulacion','los conectores de recapitulación'],['apertura','los conectores de apertura'],['causa','los conectores de causa y efecto']])
+const argumentsFeature=f('argument-types','composicion de argumentos|analogia|ejemplificacion|deduccion|de autoridad','los procedimientos de argumentación','relacionar razones y evidencias con la afirmación sustentada, distinguiendo lo que puede inferirse de los datos','se afirma una conclusión que no se desprende de las premisas o se atribuye autoridad a una fuente ajena',[['analogia','la analogía'],['ejemplificacion','la ejemplificación'],['deduccion','la deducción'],['autoridad','los argumentos de autoridad']])
+const discourse=f('discourse','organizadores discursivos|formulas de inicio|formulas.*cierre','los organizadores discursivos','señalar cambios y continuidades entre partes del texto manteniendo sus relaciones','un marcador atribuye continuidad a una idea que inicia otro asunto')
+const nonverbal=f('nonverbal','paralinguistic|gestos|gestual|corporal|tono de voz|entonacion|postura|recursos no verbales','los recursos expresivos solicitados','relacionar la expresión o los apoyos de acceso acordados con el sentido del contenido comunicado','el recurso expresa una emoción o relación contraria al contenido',[['gestos|gestual','los gestos'],['entonacion|tono de voz','la entonación'],['corporal|postura','la expresión corporal']])
+
+export const fourthGradeLanguageFeatures:Record<string,LanguageFeature[]>={
+ cronica:[...take('cronica','temporal','manner','paratext','register','vocabulary','synonyms','punctuation','circumstances','pronouns','sentences'),...adjectives,
+  f('types','tipos de cronica|caracteristicas','los tipos y características de la crónica','relacionar el acontecimiento narrado, su tratamiento y la perspectiva del cronista con la clase de crónica','se clasifica la crónica por un dato aislado que contradice su tratamiento del acontecimiento'),
+  f('passive','voz pasiva','los verbos en voz pasiva','distinguir quién recibe la acción de quién la realiza, incluso cuando el agente queda implícito','se intercambia el agente y quien recibe la acción'),
+ ],
+ instructivo:[impersonal,infinitive,adverbs,graphics,nonverbal,
+  f('vocabulary','lexico|vocabulario','el léxico técnico del instructivo','nombrar acciones y elementos del procedimiento de forma comprensible para quien lo utiliza','un término indica una acción distinta de la requerida'),
+  f('connectors','conectores','los conectores de orden y finalidad','enlazar los pasos y distinguir su secuencia del propósito de cada acción','se confunde la finalidad con un paso o se invierte la secuencia',[['\\borden\\b','los conectores de orden'],['\\bfinalidad\\b','los conectores de finalidad']]),
+  f('enumeration','numeros|vinetas|numeracion','los números y las viñetas','separar instrucciones y hacer reconocible su orden sin mezclar acciones de pasos distintos','una marca une acciones incompatibles o altera el paso al que pertenece una indicación'),
+ ],
+ 'informe-investigacion':[impersonal,infinitive,vocabulary,adverbs,citations,sources,connectors,argumentsFeature,graphics,
+  f('sentences','oraciones compuestas','las oraciones compuestas','enlazar proposiciones del informe manteniendo qué se afirma y cómo se relacionan los datos','se interpreta una proposición dependiente como conclusión independiente'),
+  f('organizers','esquemas de contenido|organizadores graficos','los esquemas y organizadores del contenido','representar las relaciones entre problema, método y resultados comunicados por el informe','un enlace atribuye un resultado a un procedimiento distinto'),
+ ],
+ 'articulo-opinion':[vocabulary,connectors,citations,graphics,...take('articulo-opinion','rhetorical','register'),
+  f('counterarguments','contraargument','los contraargumentos','reconocer una postura contraria y responder a sus razones con apoyos pertinentes, sin deformarla','se refuta una postura distinta de la que sostuvo el interlocutor'),
+  f('stance','expresiones.*(?:tesis|punto de vista)|verbos de opinion','las expresiones y verbos de opinión','atribuir la valoración a quien la sostiene y distinguirla de una afirmación presentada como hecho','se atribuye al autor la opinión de otra voz o se interpreta una duda como certeza'),
+  f('statistics','datos estadisticos|cifras|estadisticas','los datos estadísticos','sustentar argumentos indicando qué representan las cifras y qué relación guardan con la tesis','se usa una cifra fuera de su referente o se extrae de ella una conclusión no sustentada'),
+  f('subordinate','oraciones.*subordinadas','las oraciones subordinadas','relacionar circunstancias, sujetos y cualidades con la proposición de la que dependen','se atribuye una condición o cualidad a una afirmación distinta',[['adverbiales','las subordinadas adverbiales'],['sustantivas','las subordinadas sustantivas'],['adjetivas','las subordinadas adjetivas']]),
+ ],
+ 'discurso-agradecimiento':[vocabulary,citations,sources,connectors,nonverbal,...take('cronica','paratext','register'),
+  f('references','referencias lexic','las referencias léxicas de persona','retomar a los participantes manteniendo identificable a quién se atribuye cada aporte','la referencia cambia de persona y atribuye un aporte a alguien distinto'),
+  f('deictics','deictic|autorreferencia','la autorreferencia y los deícticos personales','distinguir la voz de quien agradece de las personas a quienes se dirige o incluye en su discurso','se interpreta el nosotros como un grupo ajeno a la situación comunicativa'),
+  f('courtesy','marcas de agradecimiento|cortesia','las marcas de agradecimiento y cortesía','expresar reconocimiento con formas adecuadas a la ocasión y a los participantes','una fórmula se dirige al participante equivocado o contradice el reconocimiento'),
+  f('voices','otras voces|intratextuales|intertextuales','los organizadores y las voces incorporadas','distinguir la referencia a una parte anterior del discurso de la incorporación de ideas de otra voz','se atribuye a otro autor una afirmación propia o se remite a una idea ausente'),
+ ],
+ novela:[...adjectives,...take('cuento-social','indicative','character-roles','setting'),discourse,vocabulary,
+  f('sequences','secuencias narrativas|descriptivas|dialogadas','las secuencias narrativas, descriptivas y dialogadas','distinguir hechos, rasgos del ambiente e intervenciones y explicar cómo contribuyen al pasaje','se interpreta una descripción como acción ocurrida o se atribuye un diálogo al narrador'),
+  f('connectors','conectores','los conectores temporales, causales y consecutivos','distinguir el orden de los hechos de sus causas y consecuencias','se interpreta una sucesión temporal como causa o se invierte una consecuencia'),
+  f('past','verbos en pasado','los verbos en pasado','distinguir acciones concluidas y situaciones en desarrollo al reconstruir el orden del relato','se interpreta una situación durativa como una acción puntual y cambia la secuencia'),
+ ],
+ soneto:[vocabulary,nonverbal,...take('madrigal','literary'),
+  f('licenses','licencias metricas|sinalefa|sineresis|dieresis|hiato','las licencias métricas','justificar uniones o separaciones de sonidos en el cómputo del verso sin confundir sílabas gramaticales y métricas','se cuenta una unión o separación inexistente y se altera la medida del verso',[['sinalefa','la sinalefa'],['sineresis','la sinéresis'],['dieresis','la diéresis'],['hiato','el hiato']]),
+  f('images','imagenes.*(?:visuales|auditivas|olfativas|tactiles|gustativas)','las imágenes sensoriales','relacionar sensaciones evocadas con palabras del verso y con el sentimiento expresado','se atribuye a la imagen una sensación o emoción contraria al verso',[['visuales','las imágenes visuales'],['auditivas','las imágenes auditivas'],['olfativas','las imágenes olfativas'],['tactiles','las imágenes táctiles'],['gustativas','las imágenes gustativas']]),
+ ]
+}

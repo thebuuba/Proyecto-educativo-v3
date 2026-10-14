@@ -1,0 +1,763 @@
+[
+  {
+    "grade": 1,
+    "format": "rubrica",
+    "name": "QA Lengua 1 · rúbrica · noticia",
+    "score": 17.35,
+    "pending": {
+      "points": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "selected": [
+        {
+          "label": "Estilo de bloque",
+          "value": "p"
+        },
+        {
+          "label": "Tamaño de letra",
+          "value": "14"
+        },
+        {
+          "label": "",
+          "value": "NEWS_ANALYSIS"
+        },
+        {
+          "label": "",
+          "value": "observacion-sistematica"
+        },
+        {
+          "label": "",
+          "value": "rubrica"
+        }
+      ]
+    },
+    "keepBefore": [
+      {
+        "label": "Buscar estudiantes, cursos, actividades",
+        "value": ""
+      },
+      {
+        "label": "Criterio 1",
+        "value": "Identificación de sus partes"
+      },
+      {
+        "label": "Destacado del criterio 1",
+        "value": "Identifica titular, entrada o copete y cuerpo en la noticia analizada."
+      },
+      {
+        "label": "Logrado del criterio 1",
+        "value": "Distingue titular, entrada y cuerpo; una delimitación necesita precisión."
+      },
+      {
+        "label": "En proceso del criterio 1",
+        "value": "Identifica algunas partes, pero confunde sus límites o funciones."
+      },
+      {
+        "label": "Inicial del criterio 1",
+        "value": "No identifica las partes presentes de la noticia."
+      },
+      {
+        "label": "Puntos del criterio 1",
+        "value": "5.11"
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Interpretación de la información"
+      },
+      {
+        "label": "Destacado del criterio 2",
+        "value": "Explica la información principal y establece inferencias sustentadas en la noticia."
+      },
+      {
+        "label": "Logrado del criterio 2",
+        "value": "Explica la información principal; una inferencia necesita apoyo más preciso."
+      },
+      {
+        "label": "En proceso del criterio 2",
+        "value": "Explica datos aislados sin relacionarlos con el sentido principal."
+      },
+      {
+        "label": "Inicial del criterio 2",
+        "value": "No presenta una interpretación reconocible de la información."
+      },
+      {
+        "label": "Puntos del criterio 2",
+        "value": "4.08"
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Justificación con evidencias"
+      },
+      {
+        "label": "Destacado del criterio 3",
+        "value": "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia."
+      },
+      {
+        "label": "Logrado del criterio 3",
+        "value": "Los datos citados apoyan las respuestas; una relación queda implícita."
+      },
+      {
+        "label": "En proceso del criterio 3",
+        "value": "Señala un dato o fragmento, pero no explica qué respuesta apoya."
+      },
+      {
+        "label": "Inicial del criterio 3",
+        "value": "No aporta datos ni fragmentos de la noticia para sustentar sus respuestas."
+      },
+      {
+        "label": "Puntos del criterio 3",
+        "value": "2.04"
+      },
+      {
+        "label": "Criterio 4",
+        "value": "Los sinónimos"
+      },
+      {
+        "label": "Destacado del criterio 4",
+        "value": "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente."
+      },
+      {
+        "label": "Logrado del criterio 4",
+        "value": "Localiza y caracteriza los sinónimos con ejemplos del texto; deja sin explicar una relación con su función."
+      },
+      {
+        "label": "En proceso del criterio 4",
+        "value": "Señala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente."
+      },
+      {
+        "label": "Inicial del criterio 4",
+        "value": "No localiza ejemplos pertinentes ni explica la función de los sinónimos en el texto disponible."
+      },
+      {
+        "label": "Puntos del criterio 4",
+        "value": "3.06"
+      },
+      {
+        "label": "Criterio 5",
+        "value": "Las siglas"
+      },
+      {
+        "label": "Destacado del criterio 5",
+        "value": "Identifica las siglas en el texto de noticia y explica, con ejemplos presentes, su función para referirse sin ambigüedad a nombres o expresiones del hecho informado."
+      },
+      {
+        "label": "Logrado del criterio 5",
+        "value": "Localiza y caracteriza las siglas con ejemplos del texto; deja sin explicar una relación con su función."
+      },
+      {
+        "label": "En proceso del criterio 5",
+        "value": "Señala ejemplos de las siglas, pero no explica cómo contribuyen a referirse sin ambigüedad a nombres o expresiones del hecho informado."
+      },
+      {
+        "label": "Inicial del criterio 5",
+        "value": "No localiza ejemplos pertinentes ni explica la función de las siglas en el texto disponible."
+      },
+      {
+        "label": "Puntos del criterio 5",
+        "value": "3.06"
+      }
+    ],
+    "keepAfter": [
+      {
+        "label": "Buscar estudiantes, cursos, actividades",
+        "value": ""
+      },
+      {
+        "label": "Criterio 1",
+        "value": "Identificación de sus partes"
+      },
+      {
+        "label": "Destacado del criterio 1",
+        "value": "Identifica titular, entrada o copete y cuerpo en la noticia analizada."
+      },
+      {
+        "label": "Logrado del criterio 1",
+        "value": "Distingue titular, entrada y cuerpo; una delimitación necesita precisión."
+      },
+      {
+        "label": "En proceso del criterio 1",
+        "value": "Identifica algunas partes, pero confunde sus límites o funciones."
+      },
+      {
+        "label": "Inicial del criterio 1",
+        "value": "No identifica las partes presentes de la noticia."
+      },
+      {
+        "label": "Puntos del criterio 1",
+        "value": "5.11"
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Interpretación de la información"
+      },
+      {
+        "label": "Destacado del criterio 2",
+        "value": "Explica la información principal y establece inferencias sustentadas en la noticia."
+      },
+      {
+        "label": "Logrado del criterio 2",
+        "value": "Explica la información principal; una inferencia necesita apoyo más preciso."
+      },
+      {
+        "label": "En proceso del criterio 2",
+        "value": "Explica datos aislados sin relacionarlos con el sentido principal."
+      },
+      {
+        "label": "Inicial del criterio 2",
+        "value": "No presenta una interpretación reconocible de la información."
+      },
+      {
+        "label": "Puntos del criterio 2",
+        "value": "4.08"
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Justificación con evidencias"
+      },
+      {
+        "label": "Destacado del criterio 3",
+        "value": "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia."
+      },
+      {
+        "label": "Logrado del criterio 3",
+        "value": "Los datos citados apoyan las respuestas; una relación queda implícita."
+      },
+      {
+        "label": "En proceso del criterio 3",
+        "value": "Señala un dato o fragmento, pero no explica qué respuesta apoya."
+      },
+      {
+        "label": "Inicial del criterio 3",
+        "value": "No aporta datos ni fragmentos de la noticia para sustentar sus respuestas."
+      },
+      {
+        "label": "Puntos del criterio 3",
+        "value": "2.04"
+      },
+      {
+        "label": "Criterio 4",
+        "value": "Los sinónimos"
+      },
+      {
+        "label": "Destacado del criterio 4",
+        "value": "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente."
+      },
+      {
+        "label": "Logrado del criterio 4",
+        "value": "Localiza y caracteriza los sinónimos con ejemplos del texto; deja sin explicar una relación con su función."
+      },
+      {
+        "label": "En proceso del criterio 4",
+        "value": "Señala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente."
+      },
+      {
+        "label": "Inicial del criterio 4",
+        "value": "No localiza ejemplos pertinentes ni explica la función de los sinónimos en el texto disponible."
+      },
+      {
+        "label": "Puntos del criterio 4",
+        "value": "3.06"
+      },
+      {
+        "label": "Criterio 5",
+        "value": "Las siglas"
+      },
+      {
+        "label": "Destacado del criterio 5",
+        "value": "Identifica las siglas en el texto de noticia y explica, con ejemplos presentes, su función para referirse sin ambigüedad a nombres o expresiones del hecho informado."
+      },
+      {
+        "label": "Logrado del criterio 5",
+        "value": "Localiza y caracteriza las siglas con ejemplos del texto; deja sin explicar una relación con su función."
+      },
+      {
+        "label": "En proceso del criterio 5",
+        "value": "Señala ejemplos de las siglas, pero no explica cómo contribuyen a referirse sin ambigüedad a nombres o expresiones del hecho informado."
+      },
+      {
+        "label": "Inicial del criterio 5",
+        "value": "No localiza ejemplos pertinentes ni explica la función de las siglas en el texto disponible."
+      },
+      {
+        "label": "Puntos del criterio 5",
+        "value": "3.06"
+      }
+    ],
+    "fields": [
+      {
+        "label": "Buscar estudiantes, cursos, actividades",
+        "value": ""
+      },
+      {
+        "label": "Criterio 1",
+        "value": "Identificación de sus partes"
+      },
+      {
+        "label": "Destacado del criterio 1",
+        "value": "Identifica titular, entrada o copete y cuerpo en la noticia analizada."
+      },
+      {
+        "label": "Logrado del criterio 1",
+        "value": "Distingue titular, entrada y cuerpo; una delimitación necesita precisión."
+      },
+      {
+        "label": "En proceso del criterio 1",
+        "value": "Identifica algunas partes, pero confunde sus límites o funciones."
+      },
+      {
+        "label": "Inicial del criterio 1",
+        "value": "No identifica las partes presentes de la noticia."
+      },
+      {
+        "label": "Puntos del criterio 1",
+        "value": "5.11"
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Interpretación de la información"
+      },
+      {
+        "label": "Destacado del criterio 2",
+        "value": "Explica la información principal y establece inferencias sustentadas en la noticia."
+      },
+      {
+        "label": "Logrado del criterio 2",
+        "value": "Explica la información principal; una inferencia necesita apoyo más preciso."
+      },
+      {
+        "label": "En proceso del criterio 2",
+        "value": "Explica datos aislados sin relacionarlos con el sentido principal."
+      },
+      {
+        "label": "Inicial del criterio 2",
+        "value": "No presenta una interpretación de los datos de la noticia. Ajuste manual del docente."
+      },
+      {
+        "label": "Puntos del criterio 2",
+        "value": "4.08"
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Justificación con evidencias"
+      },
+      {
+        "label": "Destacado del criterio 3",
+        "value": "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia."
+      },
+      {
+        "label": "Logrado del criterio 3",
+        "value": "Los datos citados apoyan las respuestas; una relación queda implícita."
+      },
+      {
+        "label": "En proceso del criterio 3",
+        "value": "Señala un dato o fragmento, pero no explica qué respuesta apoya."
+      },
+      {
+        "label": "Inicial del criterio 3",
+        "value": "No aporta datos ni fragmentos de la noticia para sustentar sus respuestas."
+      },
+      {
+        "label": "Puntos del criterio 3",
+        "value": "2.04"
+      },
+      {
+        "label": "Criterio 4",
+        "value": "Los sinónimos"
+      },
+      {
+        "label": "Destacado del criterio 4",
+        "value": "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente."
+      },
+      {
+        "label": "Logrado del criterio 4",
+        "value": "Localiza y caracteriza los sinónimos con ejemplos del texto; deja sin explicar una relación con su función."
+      },
+      {
+        "label": "En proceso del criterio 4",
+        "value": "Señala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente."
+      },
+      {
+        "label": "Inicial del criterio 4",
+        "value": "No localiza ejemplos pertinentes ni explica la función de los sinónimos en el texto disponible."
+      },
+      {
+        "label": "Puntos del criterio 4",
+        "value": "3.06"
+      },
+      {
+        "label": "Criterio 5",
+        "value": "Las siglas"
+      },
+      {
+        "label": "Destacado del criterio 5",
+        "value": "Identifica las siglas en el texto de noticia y explica, con ejemplos presentes, su función para referirse sin ambigüedad a nombres o expresiones del hecho informado."
+      },
+      {
+        "label": "Logrado del criterio 5",
+        "value": "Localiza y caracteriza las siglas con ejemplos del texto; deja sin explicar una relación con su función."
+      },
+      {
+        "label": "En proceso del criterio 5",
+        "value": "Señala ejemplos de las siglas, pero no explica cómo contribuyen a referirse sin ambigüedad a nombres o expresiones del hecho informado."
+      },
+      {
+        "label": "Inicial del criterio 5",
+        "value": "No localiza ejemplos pertinentes ni explica la función de las siglas en el texto disponible."
+      },
+      {
+        "label": "Puntos del criterio 5",
+        "value": "3.06"
+      }
+    ],
+    "cancel": true,
+    "escape": true,
+    "completedCell": true,
+    "detail": "Detalle de la actividad\nQA Lengua 1 · rúbrica · noticia\nPendiente de evaluación\nValor\n17.35 pts\nFecha\nSin fecha\nTécnica\nObservación sistemática\nInstrumento\nRúbrica de evaluación\nModalidad\nIndividual\nCompetencias\nB1: 100 %\nDescripción de la actividad\n\nAnalizarán la estructura de una noticia, sus sinónimos y las siglas presentes, con ejemplos del texto. Se valorará la calidad de la interpretación en varias dimensiones.\n\nRecursos necesarios\n\nNo se registraron recursos.\n\nInstrumento de evaluación · Solo lectura\nCriterio / indicador\tDestacado\nValor relativo: 3\n\tLogrado\nValor relativo: 2\n\tEn proceso\nValor relativo: 1\n\tInicial\nValor relativo: 0\n\tMáximo\nIdentificación de sus partes\n\nIdentifica titular, entrada o copete y cuerpo en la noticia analizada.\n\n\t\nIdentifica titular, entrada o copete y cuerpo en la noticia analizada.\n5.11 pts\n\t\nDistingue titular, entrada y cuerpo; una delimitación necesita precisión.\n3.41 pts\n\t\nIdentifica algunas partes, pero confunde sus límites o funciones.\n1.7 pts\n\t\nNo identifica las partes presentes de la noticia.\n0 pts\n\t5.11 pts\nInterpretación de la información\n\nExplica la información principal y establece inferencias sustentadas en la noticia.\n\n\t\nExplica la información principal y establece inferencias sustentadas en la noticia.\n4.08 pts\n\t\nExplica la información principal; una inferencia necesita apoyo más preciso.\n2.72 pts\n\t\nExplica datos aislados sin relacionarlos con el sentido principal.\n1.36 pts\n\t\nNo presenta una interpretación de los datos de la noticia. Ajuste manual del docente.\n0 pts\n\t4.08 pts\nJustificación con evidencias\n\nSustenta sus respuestas con datos o fragmentos pertinentes de la noticia.\n\n\t\nSustenta sus respuestas con datos o fragmentos pertinentes de la noticia.\n2.04 pts\n\t\nLos datos citados apoyan las respuestas; una relación queda implícita.\n1.36 pts\n\t\nSeñala un dato o fragmento, pero no explica qué respuesta apoya.\n0.68 pts\n\t\nNo aporta datos ni fragmentos de la noticia para sustentar sus respuestas.\n0 pts\n\t2.04 pts\nLos sinónimos\n\nIdentifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.\n\n\t\nIdentifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.\n3.06 pts\n\t\nLocaliza y caracteriza los sinónimos con ejemplos del texto; deja sin explicar una relación con su función.\n2.04 pts\n\t\nSeñala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente.\n1.02 pts\n\t\nNo localiza ejemplos pertinentes ni explica la función de los sinónimos en el texto disponible.\n0 pts\n\t3.06 pts\nLas siglas\n\nIdentifica las siglas en el texto de noticia y explica, con ejemplos presentes, su función para referirse sin ambigüedad a nombres o expresiones del hecho informado.\n\n\t\nIdentifica las siglas en el texto de noticia y explica, con ejemplos presentes, su función para referirse sin ambigüedad a nombres o expresiones del hecho informado.\n3.06 pts\n\t\nLocaliza y caracteriza las siglas con ejemplos del texto; deja sin explicar una relación con su función.\n2.04 pts\n\t\nSeñala ejemplos de las siglas, pero no explica cómo contribuyen a referirse sin ambigüedad a nombres o expresiones del hecho informado.\n1.02 pts\n\t\nNo localiza ejemplos pertinentes ni explica la función de las siglas en el texto disponible.\n0 pts\n\t3.06 pts\n\nPuntuación máxima: 17.35 pts\n\nCerrar\nEditar actividad\nCalificar",
+    "reopenedAfterReload": "Detalle de la actividad\nQA Lengua 1 · rúbrica · noticia\nPendiente de evaluación\nValor\n17.35 pts\nFecha\nSin fecha\nTécnica\nObservación sistemática\nInstrumento\nRúbrica de evaluación\nModalidad\nIndividual\nCompetencias\nB1: 100 %\nDescripción de la actividad\n\nAnalizarán la estructura de una noticia, sus sinónimos y las siglas presentes, con ejemplos del texto. Se valorará la calidad de la interpretación en varias dimensiones.\n\nRecursos necesarios\n\nNo se registraron recursos.\n\nInstrumento de evaluación · Solo lectura\nCriterio / indicador\tDestacado\nValor relativo: 3\n\tLogrado\nValor relativo: 2\n\tEn proceso\nValor relativo: 1\n\tInicial\nValor relativo: 0\n\tMáximo\nIdentificación de sus partes\n\nIdentifica titular, entrada o copete y cuerpo en la noticia analizada.\n\n\t\nIdentifica titular, entrada o copete y cuerpo en la noticia analizada.\n5.11 pts\n\t\nDistingue titular, entrada y cuerpo; una delimitación necesita precisión.\n3.41 pts\n\t\nIdentifica algunas partes, pero confunde sus límites o funciones.\n1.7 pts\n\t\nNo identifica las partes presentes de la noticia.\n0 pts\n\t5.11 pts\nInterpretación de la información\n\nExplica la información principal y establece inferencias sustentadas en la noticia.\n\n\t\nExplica la información principal y establece inferencias sustentadas en la noticia.\n4.08 pts\n\t\nExplica la información principal; una inferencia necesita apoyo más preciso.\n2.72 pts\n\t\nExplica datos aislados sin relacionarlos con el sentido principal.\n1.36 pts\n\t\nNo presenta una interpretación de los datos de la noticia. Ajuste manual del docente.\n0 pts\n\t4.08 pts\nJustificación con evidencias\n\nSustenta sus respuestas con datos o fragmentos pertinentes de la noticia.\n\n\t\nSustenta sus respuestas con datos o fragmentos pertinentes de la noticia.\n2.04 pts\n\t\nLos datos citados apoyan las respuestas; una relación queda implícita.\n1.36 pts\n\t\nSeñala un dato o fragmento, pero no explica qué respuesta apoya.\n0.68 pts\n\t\nNo aporta datos ni fragmentos de la noticia para sustentar sus respuestas.\n0 pts\n\t2.04 pts\nLos sinónimos\n\nIdentifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.\n\n\t\nIdentifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.\n3.06 pts\n\t\nLocaliza y caracteriza los sinónimos con ejemplos del texto; deja sin explicar una relación con su función.\n2.04 pts\n\t\nSeñala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente.\n1.02 pts\n\t\nNo localiza ejemplos pertinentes ni explica la función de los sinónimos en el texto disponible.\n0 pts\n\t3.06 pts\nLas siglas\n\nIdentifica las siglas en el texto de noticia y explica, con ejemplos presentes, su función para referirse sin ambigüedad a nombres o expresiones del hecho informado.\n\n\t\nIdentifica las siglas en el texto de noticia y explica, con ejemplos presentes, su función para referirse sin ambigüedad a nombres o expresiones del hecho informado.\n3.06 pts\n\t\nLocaliza y caracteriza las siglas con ejemplos del texto; deja sin explicar una relación con su función.\n2.04 pts\n\t\nSeñala ejemplos de las siglas, pero no explica cómo contribuyen a referirse sin ambigüedad a nombres o expresiones del hecho informado.\n1.02 pts\n\t\nNo localiza ejemplos pertinentes ni explica la función de las siglas en el texto disponible.\n0 pts\n\t3.06 pts\n\nPuntuación máxima: 17.35 pts\n\nCerrar\nEditar actividad\nCalificar",
+    "activityId": "e4eb148e-1512-44b7-9db0-41fb87d29d34",
+    "snapshotId": "27d9c73e-328a-4ea0-9d78-3f51352e5983",
+    "savedHash": "eec7ca595a54a9a310db593a0c49d6330381adca7843921782a90b2a771ba361"
+  },
+  {
+    "grade": 1,
+    "format": "lista-cotejo",
+    "total": 20,
+    "beforeAdapt": [
+      {
+        "label": "Criterio 1",
+        "value": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos."
+      },
+      {
+        "label": null,
+        "value": "4.35"
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar."
+      },
+      {
+        "label": null,
+        "value": "4.34"
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público."
+      },
+      {
+        "label": null,
+        "value": "3.48"
+      },
+      {
+        "label": "Criterio 4",
+        "value": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante."
+      },
+      {
+        "label": null,
+        "value": "2.61"
+      },
+      {
+        "label": "Criterio 5",
+        "value": "Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares."
+      },
+      {
+        "label": null,
+        "value": "2.61"
+      },
+      {
+        "label": "Criterio 6",
+        "value": "Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía."
+      },
+      {
+        "label": null,
+        "value": "2.61"
+      }
+    ],
+    "adapted": {
+      "fields": [
+        {
+          "label": "Criterio 1",
+          "value": "Explica cómo la guía orienta e informa a sus posibles visitantes."
+        },
+        {
+          "label": null,
+          "value": "4"
+        },
+        {
+          "label": "Criterio 2",
+          "value": "Identifica portada, información, imágenes y cierre, según estén presentes en la guía leída."
+        },
+        {
+          "label": null,
+          "value": "5"
+        },
+        {
+          "label": "Criterio 3",
+          "value": "Analiza cómo el vocabulario descriptivo y persuasivo, las marcas paratextuales y los recursos gráficos disponibles orientan al visitante."
+        },
+        {
+          "label": null,
+          "value": "5"
+        },
+        {
+          "label": "Criterio 4",
+          "value": "Reconstruye el sentido global y explica la información relevante sobre los lugares descritos."
+        },
+        {
+          "label": null,
+          "value": "4"
+        },
+        {
+          "label": "Criterio 5",
+          "value": "Sustenta sus respuestas con datos y ejemplos concretos de la guía analizada."
+        },
+        {
+          "label": null,
+          "value": "2"
+        }
+      ]
+    },
+    "formFields": [
+      {
+        "label": "Criterio 1",
+        "value": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos. Ajuste manual del docente."
+      },
+      {
+        "label": null,
+        "value": "4.35"
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar."
+      },
+      {
+        "label": null,
+        "value": "4.34"
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público."
+      },
+      {
+        "label": null,
+        "value": "3.48"
+      },
+      {
+        "label": "Criterio 4",
+        "value": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante."
+      },
+      {
+        "label": null,
+        "value": "2.61"
+      },
+      {
+        "label": "Criterio 5",
+        "value": "Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares."
+      },
+      {
+        "label": null,
+        "value": "2.61"
+      },
+      {
+        "label": "Criterio 6",
+        "value": "Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía."
+      },
+      {
+        "label": null,
+        "value": "2.61"
+      }
+    ],
+    "reopened": ":\n    - heading \"Detalle de la actividad\" [level=3]\n    - button \"Cerrar\" [active]:\n    - heading \"QA Lengua 1 · cotejo · guía\" [level=2]\n    - generic: Pendiente de evaluación\n    - term: Valor\n    - definition: 20 pts\n    - term: Fecha\n    - definition: Sin fecha\n    - term: Técnica\n    - definition: Análisis de producciones\n    - term: Instrumento\n    - definition: Lista de cotejo\n    - term: Modalidad\n    - definition: Individual\n    - term: Competencias\n    - definition: \"B1: 100 %\"\n    - heading \"Descripción de la actividad\" [level=3]\n    - paragraph: Elaborarán una guía turística con mapas y fotografías de los lugares descritos. Se verificará la presencia o ausencia de sus partes y de los recursos visuales solicitados.\n    - heading \"Recursos necesarios\" [level=3]\n    - paragraph: No se registraron recursos.\n    - heading \"Instrumento de evaluación · Solo lectura\" [level=3]\n    - table:\n      - rowgroup:\n        - 'row \"Criterio / indicador Sí Valor relativo: 1 No Valor relativo: 0 Máximo\"':\n          - columnheader \"Criterio / indicador\"\n          - 'columnheader \"Sí Valor relativo: 1\"':\n            - text: Sí\n            - generic: \"Valor relativo: 1\"\n          - 'columnheader \"No Valor relativo: 0\"':\n            - text: \"No\"\n            - generic: \"Valor relativo: 0\"\n          - columnheader \"Máximo\"\n      - rowgroup:\n        - row \"Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos. Ajuste manual del docente. Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos. — 4.35 pts — 0 pts 4.35 pts\":\n          - cell \"Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos. Ajuste manual del docente. Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.\":\n            - strong: Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos. Ajuste manual del docente.\n            - paragraph: Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.\n          - cell \"— 4.35 pts\":\n            - generic: —\n            - generic: 4.35 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"4.35 pts\"\n        - row \"Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. — 4.34 pts — 0 pts 4.34 pts\":\n          - cell \"Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.\":\n            - strong: Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.\n          - cell \"— 4.34 pts\":\n            - generic: —\n            - generic: 4.34 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"4.34 pts\"\n        - row \"Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. — 3.48 pts — 0 pts 3.48 pts\":\n          - cell \"Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.\":\n            - strong: Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.\n          - cell \"— 3.48 pts\":\n            - generic: —\n            - generic: 3.48 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"3.48 pts\"\n        - row \"Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. — 2.61 pts — 0 pts 2.61 pts\":\n          - cell \"Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.\":\n            - strong: Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.\n          - cell \"— 2.61 pts\":\n            - generic: —\n            - generic: 2.61 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"2.61 pts\"\n        - row \"Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares. — 2.61 pts — 0 pts 2.61 pts\":\n          - cell \"Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.\":\n            - strong: Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.\n          - cell \"— 2.61 pts\":\n            - generic: —\n            - generic: 2.61 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"2.61 pts\"\n        - row \"Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía. — 2.61 pts — 0 pts 2.61 pts\":\n          - cell \"Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía.\":\n            - strong: Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía.\n          - cell \"— 2.61 pts\":\n            - generic: —\n            - generic: 2.61 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"2.61 pts\"\n    - paragraph: \"Puntuación máxima: 20 pts\"\n    - button \"Cerrar\"\n    - button \"Editar actividad\"\n    - button \"Calificar\"\n  - dialog \"Actividad creada\":\n    - heading \"Actividad creada\" [level=3]\n    - paragraph: La actividad se guardó correctamente y ya está disponible en todos los espacios vinculados.\n    - button \"Cerrar\":\n    - paragraph: Guardado correctamente\n    - heading \"QA Lengua 1 · cotejo · guía\" [level=3]\n    - paragraph: Puedes volver a Actividades, abrir el mismo visor de detalle o comenzar a calificarla.\n    - button \"Volver\"\n    - button \"Ver actividad\":\n      - text: Ver actividad\n    - button \"Calificar\":\n      - text: Calificar",
+    "reopenedAfterReload": "Detalle de la actividad\nQA Lengua 1 · cotejo · guía\nPendiente de evaluación\nValor\n20 pts\nFecha\nSin fecha\nTécnica\nAnálisis de producciones\nInstrumento\nLista de cotejo\nModalidad\nIndividual\nCompetencias\nB1: 100 %\nDescripción de la actividad\n\nElaborarán una guía turística con mapas y fotografías de los lugares descritos. Se verificará la presencia o ausencia de sus partes y de los recursos visuales solicitados.\n\nRecursos necesarios\n\nNo se registraron recursos.\n\nInstrumento de evaluación · Solo lectura\nCriterio / indicador\tSí\nValor relativo: 1\n\tNo\nValor relativo: 0\n\tMáximo\nIncluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos. Ajuste manual del docente.\n\nIncluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.\n\n\t\n—\n4.35 pts\n\t\n—\n0 pts\n\t4.35 pts\nOrganiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.\t\n—\n4.34 pts\n\t\n—\n0 pts\n\t4.34 pts\nDescribe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.\t\n—\n3.48 pts\n\t\n—\n0 pts\n\t3.48 pts\nDistribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.\t\n—\n2.61 pts\n\t\n—\n0 pts\n\t2.61 pts\nPresenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.\t\n—\n2.61 pts\n\t\n—\n0 pts\n\t2.61 pts\nIncorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía.\t\n—\n2.61 pts\n\t\n—\n0 pts\n\t2.61 pts\n\nPuntuación máxima: 20 pts\n\nCerrar\nEditar actividad\nCalificar",
+    "activityId": "1cafee6b-c401-4117-8478-a68559da2934",
+    "snapshotId": "b1fac055-d230-4eff-ba5a-d4542947d56d",
+    "savedHash": "8c9c7f8095af8f2e0dd7c34da1414928780a70a79f6e0669819aa0337541aeb8"
+  },
+  {
+    "grade": 1,
+    "format": "escala",
+    "total": 15,
+    "formFields": [
+      {
+        "label": "Indicador 1",
+        "value": "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado."
+      },
+      {
+        "label": "Destacado del indicador 1",
+        "value": "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado."
+      },
+      {
+        "label": "Logrado del indicador 1",
+        "value": "Comunica el texto de forma comprensible; una expresión necesita precisión."
+      },
+      {
+        "label": "En proceso del indicador 1",
+        "value": "Comunica fragmentos comprensibles, pero algunas partes del texto quedan confusas."
+      },
+      {
+        "label": "Inicial del indicador 1",
+        "value": "No realiza una recitación audible del caligrama. Ajuste manual del docente."
+      },
+      {
+        "label": "Indicador 2",
+        "value": "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado."
+      },
+      {
+        "label": "Destacado del indicador 2",
+        "value": "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado."
+      },
+      {
+        "label": "Logrado del indicador 2",
+        "value": "Las pausas y la expresión apoyan el mensaje; una relación necesita precisión."
+      },
+      {
+        "label": "En proceso del indicador 2",
+        "value": "La expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas."
+      },
+      {
+        "label": "Inicial del indicador 2",
+        "value": "No comunica una relación reconocible entre expresión y mensaje."
+      },
+      {
+        "label": "Indicador 3",
+        "value": "Comunica el sentido global del caligrama durante la recitación."
+      },
+      {
+        "label": "Destacado del indicador 3",
+        "value": "Comunica el sentido global del caligrama durante la recitación."
+      },
+      {
+        "label": "Logrado del indicador 3",
+        "value": "La recitación comunica el sentido del poema; una relación necesita precisión."
+      },
+      {
+        "label": "En proceso del indicador 3",
+        "value": "Comunica ideas aisladas, pero pierde parte del sentido global del poema."
+      },
+      {
+        "label": "Inicial del indicador 3",
+        "value": "No comunica un sentido reconocible del poema."
+      },
+      {
+        "label": "Indicador 4",
+        "value": "Se escuchan los finales de los versos durante la recitación. Indicador añadido manualmente."
+      }
+    ],
+    "exhaustedCandidateManual": true,
+    "reopened": ":\n    - heading \"Detalle de la actividad\" [level=3]\n    - button \"Cerrar\" [active]:\n    - heading \"QA Lengua 1 · escala · caligrama\" [level=2]\n    - generic: Pendiente de evaluación\n    - term: Valor\n    - definition: 15 pts\n    - term: Fecha\n    - definition: Sin fecha\n    - term: Técnica\n    - definition: Presentación\n    - term: Instrumento\n    - definition: Escala estimativa\n    - term: Modalidad\n    - definition: Individual\n    - term: Competencias\n    - definition: \"B1: 100 %\"\n    - heading \"Descripción de la actividad\" [level=3]\n    - paragraph: Recitarán un caligrama haciendo perceptibles las pausas y el sentido de sus versos. Se observará la regularidad de la dicción y la expresividad en las recitaciones.Recitarán un caligrama haciendo perceptibles las pausas y el sentido de sus versos. Se observará la regularidad de la dicción y la expresividad en las recitaciones. Se escucharán las pausas.\n    - heading \"Recursos necesarios\" [level=3]\n    - paragraph: No se registraron recursos.\n    - heading \"Instrumento de evaluación · Solo lectura\" [level=3]\n    - table:\n      - rowgroup:\n        - 'row \"Criterio / indicador Destacado Valor relativo: 4 Logrado Valor relativo: 2.67 En proceso Valor relativo: 1.33 Inicial Valor relativo: 0 Máximo\"':\n          - columnheader \"Criterio / indicador\"\n          - 'columnheader \"Destacado Valor relativo: 4\"':\n            - text: Destacado\n            - generic: \"Valor relativo: 4\"\n          - 'columnheader \"Logrado Valor relativo: 2.67\"':\n            - text: Logrado\n            - generic: \"Valor relativo: 2.67\"\n          - 'columnheader \"En proceso Valor relativo: 1.33\"':\n            - text: En proceso\n            - generic: \"Valor relativo: 1.33\"\n          - 'columnheader \"Inicial Valor relativo: 0\"':\n            - text: Inicial\n            - generic: \"Valor relativo: 0\"\n          - columnheader \"Máximo\"\n      - rowgroup:\n        - row \"Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado. Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado. 4.02 pts Comunica el texto de forma comprensible; una expresión necesita precisión. 2.68 pts Comunica fragmentos comprensibles, pero algunas partes del texto quedan confusas. 1.34 pts No realiza una recitación audible del caligrama. Ajuste manual del docente. 0 pts 4.02 pts\":\n          - cell \"Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.\":\n            - strong: Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.\n          - cell \"Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado. 4.02 pts\":\n            - generic: Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.\n            - generic: 4.02 pts\n          - cell \"Comunica el texto de forma comprensible; una expresión necesita precisión. 2.68 pts\":\n            - generic: Comunica el texto de forma comprensible; una expresión necesita precisión.\n            - generic: 2.68 pts\n          - cell \"Comunica fragmentos comprensibles, pero algunas partes del texto quedan confusas. 1.34 pts\":\n            - generic: Comunica fragmentos comprensibles, pero algunas partes del texto quedan confusas.\n            - generic: 1.34 pts\n          - cell \"No realiza una recitación audible del caligrama. Ajuste manual del docente. 0 pts\":\n            - generic: No realiza una recitación audible del caligrama. Ajuste manual del docente.\n            - generic: 0 pts\n          - cell \"4.02 pts\"\n        - row \"Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado. Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado. 4.02 pts Las pausas y la expresión apoyan el mensaje; una relación necesita precisión. 2.68 pts La expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas. 1.34 pts No comunica una relación reconocible entre expresión y mensaje. 0 pts 4.02 pts\":\n          - cell \"Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.\":\n            - strong: Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.\n          - cell \"Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado. 4.02 pts\":\n            - generic: Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.\n            - generic: 4.02 pts\n          - cell \"Las pausas y la expresión apoyan el mensaje; una relación necesita precisión. 2.68 pts\":\n            - generic: Las pausas y la expresión apoyan el mensaje; una relación necesita precisión.\n            - generic: 2.68 pts\n          - cell \"La expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas. 1.34 pts\":\n            - generic: La expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas.\n            - generic: 1.34 pts\n          - cell \"No comunica una relación reconocible entre expresión y mensaje. 0 pts\":\n            - generic: No comunica una relación reconocible entre expresión y mensaje.\n            - generic: 0 pts\n          - cell \"4.02 pts\"\n        - row \"Comunica el sentido global del caligrama durante la recitación. Comunica el sentido global del caligrama durante la recitación. 3.21 pts La recitación comunica el sentido del poema; una relación necesita precisión. 2.14 pts Comunica ideas aisladas, pero pierde parte del sentido global del poema. 1.07 pts No comunica un sentido reconocible del poema. 0 pts 3.21 pts\":\n          - cell \"Comunica el sentido global del caligrama durante la recitación.\":\n            - strong: Comunica el sentido global del caligrama durante la recitación.\n          - cell \"Comunica el sentido global del caligrama durante la recitación. 3.21 pts\":\n            - generic: Comunica el sentido global del caligrama durante la recitación.\n            - generic: 3.21 pts\n          - cell \"La recitación comunica el sentido del poema; una relación necesita precisión. 2.14 pts\":\n            - generic: La recitación comunica el sentido del poema; una relación necesita precisión.\n            - generic: 2.14 pts\n          - cell \"Comunica ideas aisladas, pero pierde parte del sentido global del poema. 1.07 pts\":\n            - generic: Comunica ideas aisladas, pero pierde parte del sentido global del poema.\n            - generic: 1.07 pts\n          - cell \"No comunica un sentido reconocible del poema. 0 pts\":\n            - generic: No comunica un sentido reconocible del poema.\n            - generic: 0 pts\n          - cell \"3.21 pts\"\n        - row \"Se escuchan los finales de los versos durante la recitación. Indicador añadido manualmente. — 3.75 pts — 2.5 pts — 1.25 pts — 0 pts 3.75 pts\":\n          - cell \"Se escuchan los finales de los versos durante la recitación. Indicador añadido manualmente.\":\n            - strong: Se escuchan los finales de los versos durante la recitación. Indicador añadido manualmente.\n            - paragraph\n          - cell \"— 3.75 pts\":\n            - generic: —\n            - generic: 3.75 pts\n          - cell \"— 2.5 pts\":\n            - generic: —\n            - generic: 2.5 pts\n          - cell \"— 1.25 pts\":\n            - generic: —\n            - generic: 1.25 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"3.75 pts\"\n    - paragraph: \"Puntuación máxima: 15 pts\"\n    - button \"Cerrar\"\n    - button \"Editar actividad\"\n    - button \"Calificar\"\n  - dialog \"Actividad creada\":\n    - heading \"Actividad creada\" [level=3]\n    - paragraph: La actividad se guardó correctamente y ya está disponible en todos los espacios vinculados.\n    - button \"Cerrar\":\n    - paragraph: Guardado correctamente\n    - heading \"QA Lengua 1 · escala · caligrama\" [level=3]\n    - paragraph: Puedes volver a Actividades, abrir el mismo visor de detalle o comenzar a calificarla.\n    - button \"Volver\"\n    - button \"Ver actividad\":\n      - text: Ver actividad\n    - button \"Calificar\":\n      - text: Calificar",
+    "reopenedAfterReload": "Detalle de la actividad\nQA Lengua 1 · escala · caligrama\nPendiente de evaluación\nValor\n15 pts\nFecha\nSin fecha\nTécnica\nPresentación\nInstrumento\nEscala estimativa\nModalidad\nIndividual\nCompetencias\nB1: 100 %\nDescripción de la actividad\n\nRecitarán un caligrama haciendo perceptibles las pausas y el sentido de sus versos. Se observará la regularidad de la dicción y la expresividad en las recitaciones.Recitarán un caligrama haciendo perceptibles las pausas y el sentido de sus versos. Se observará la regularidad de la dicción y la expresividad en las recitaciones. Se escucharán las pausas.\n\nRecursos necesarios\n\nNo se registraron recursos.\n\nInstrumento de evaluación · Solo lectura\nCriterio / indicador\tDestacado\nValor relativo: 4\n\tLogrado\nValor relativo: 2.67\n\tEn proceso\nValor relativo: 1.33\n\tInicial\nValor relativo: 0\n\tMáximo\nComunica el texto de manera comprensible mediante la recitación o el apoyo acordado.\t\nComunica el texto de manera comprensible mediante la recitación o el apoyo acordado.\n4.02 pts\n\t\nComunica el texto de forma comprensible; una expresión necesita precisión.\n2.68 pts\n\t\nComunica fragmentos comprensibles, pero algunas partes del texto quedan confusas.\n1.34 pts\n\t\nNo realiza una recitación audible del caligrama. Ajuste manual del docente.\n0 pts\n\t4.02 pts\nUsa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.\t\nUsa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.\n4.02 pts\n\t\nLas pausas y la expresión apoyan el mensaje; una relación necesita precisión.\n2.68 pts\n\t\nLa expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas.\n1.34 pts\n\t\nNo comunica una relación reconocible entre expresión y mensaje.\n0 pts\n\t4.02 pts\nComunica el sentido global del caligrama durante la recitación.\t\nComunica el sentido global del caligrama durante la recitación.\n3.21 pts\n\t\nLa recitación comunica el sentido del poema; una relación necesita precisión.\n2.14 pts\n\t\nComunica ideas aisladas, pero pierde parte del sentido global del poema.\n1.07 pts\n\t\nNo comunica un sentido reconocible del poema.\n0 pts\n\t3.21 pts\nSe escuchan los finales de los versos durante la recitación. Indicador añadido manualmente.\n\n\t\n—\n3.75 pts\n\t\n—\n2.5 pts\n\t\n—\n1.25 pts\n\t\n—\n0 pts\n\t3.75 pts\n\nPuntuación máxima: 15 pts\n\nCerrar\nEditar actividad\nCalificar",
+    "activityId": "0531e179-78e4-4cbc-b42b-3176918ec82d",
+    "snapshotId": "5636a795-7c73-4f92-bd25-325e28901e84",
+    "savedHash": "79d5be4f789f6f0bb135e9e06b5ab40709f4e06680d72d509f46841a42cc1350"
+  },
+  {
+    "grade": 1,
+    "format": "lista-ponderada",
+    "total": 17.35,
+    "manualWeights": [
+      "21",
+      "15",
+      "16",
+      "12",
+      "12",
+      "12",
+      "12"
+    ],
+    "formFields": [
+      {
+        "label": "Criterio 1",
+        "value": "Mensaje del afiche"
+      },
+      {
+        "label": "Indicador del criterio 1",
+        "value": "El mensaje permite reconocer la actividad convocada y a sus destinatarios. Parcial: identifica la actividad pero deja ambiguo a quién se dirige. Ajuste manual del docente."
+      },
+      {
+        "label": null,
+        "value": "21"
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Adecuación al público destinatario"
+      },
+      {
+        "label": "Indicador del criterio 2",
+        "value": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él."
+      },
+      {
+        "label": null,
+        "value": "15"
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Argumentos y recursos persuasivos"
+      },
+      {
+        "label": "Indicador del criterio 3",
+        "value": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje."
+      },
+      {
+        "label": null,
+        "value": "16"
+      },
+      {
+        "label": "Criterio 4",
+        "value": "Organización, legibilidad y corrección"
+      },
+      {
+        "label": "Indicador del criterio 4",
+        "value": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche."
+      },
+      {
+        "label": null,
+        "value": "12"
+      },
+      {
+        "label": "Criterio 5",
+        "value": "La metáfora"
+      },
+      {
+        "label": "Indicador del criterio 5",
+        "value": "Emplea la metáfora en el texto de afiche para construir imágenes o destacar ideas y emociones mediante las palabras, sin alterar el sentido de las ideas. Parcial (50%): Incluye la metáfora, pero varios usos no contribuyen a construir imágenes o destacar ideas y emociones mediante las palabras."
+      },
+      {
+        "label": null,
+        "value": "12"
+      },
+      {
+        "label": "Criterio 6",
+        "value": "El modo imperativo"
+      },
+      {
+        "label": "Indicador del criterio 6",
+        "value": "Emplea el modo imperativo en el texto de afiche para dirigir una invitación, instrucción o llamado a la acción al destinatario, sin alterar el sentido de las ideas. Parcial (50%): Incluye el modo imperativo, pero varios usos no contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario."
+      },
+      {
+        "label": null,
+        "value": "12"
+      },
+      {
+        "label": "Criterio 7",
+        "value": "Información de la convocatoria"
+      },
+      {
+        "label": "Indicador del criterio 7",
+        "value": "Comunica fecha, lugar, horario del evento sin contradicciones con la convocatoria. Parcial (50%): Omite un dato solicitado y dificulta decidir cómo participar."
+      },
+      {
+        "label": null,
+        "value": "12"
+      }
+    ],
+    "failureDialog": ":\n    - heading \"Cambiar tipo de actividad\" [level=3]\n    - paragraph: Puedes conservar el instrumento actual o adaptarlo al nuevo tipo de actividad. Adaptarlo reemplazará sus criterios y descriptores.\n    - button \"Cerrar\":\n    - alert: description must be shorter than or equal to 5000 characters\n    - button \"Cancelar\"\n    - button \"Conservar instrumento\"\n    - button \"Adaptar instrumento\"",
+    "failurePreservedFields": true,
+    "reopened": ":\n    - heading \"Detalle de la actividad\" [level=3]\n    - button \"Cerrar\" [active]:\n    - heading \"QA Lengua 1 · ponderada · afiche\" [level=2]\n    - generic: Pendiente de evaluación\n    - term: Valor\n    - definition: 17.35 pts\n    - term: Fecha\n    - definition: Sin fecha\n    - term: Técnica\n    - definition: Análisis de producciones\n    - term: Instrumento\n    - definition: Lista ponderada\n    - term: Modalidad\n    - definition: Individual\n    - term: Competencias\n    - definition: \"B1: 100 %\"\n    - heading \"Descripción de la actividad\" [level=3]\n    - paragraph: Crearán un afiche para un evento escolar con fecha, lugar y horario. Emplearán el modo imperativo y una metáfora. Se asignarán pesos entre sus componentes verificables.\n    - heading \"Recursos necesarios\" [level=3]\n    - paragraph: No se registraron recursos.\n    - heading \"Instrumento de evaluación · Solo lectura\" [level=3]\n    - table:\n      - rowgroup:\n        - 'row \"Criterio / indicador Sí Valor relativo: 100 Parcial Valor relativo: 50 No Valor relativo: 0 Máximo\"':\n          - columnheader \"Criterio / indicador\"\n          - 'columnheader \"Sí Valor relativo: 100\"':\n            - text: Sí\n            - generic: \"Valor relativo: 100\"\n          - 'columnheader \"Parcial Valor relativo: 50\"':\n            - text: Parcial\n            - generic: \"Valor relativo: 50\"\n          - 'columnheader \"No Valor relativo: 0\"':\n            - text: \"No\"\n            - generic: \"Valor relativo: 0\"\n          - columnheader \"Máximo\"\n      - rowgroup:\n        - 'row \"Mensaje del afiche El mensaje permite reconocer la actividad convocada y a sus destinatarios. Parcial: identifica la actividad pero deja ambiguo a quién se dirige. Ajuste manual del docente. — 3.65 pts — 1.83 pts — 0 pts 3.65 pts\"':\n          - 'cell \"Mensaje del afiche El mensaje permite reconocer la actividad convocada y a sus destinatarios. Parcial: identifica la actividad pero deja ambiguo a quién se dirige. Ajuste manual del docente.\"':\n            - strong: Mensaje del afiche\n            - paragraph: \"El mensaje permite reconocer la actividad convocada y a sus destinatarios. Parcial: identifica la actividad pero deja ambiguo a quién se dirige. Ajuste manual del docente.\"\n          - cell \"— 3.65 pts\":\n            - generic: —\n            - generic: 3.65 pts\n          - cell \"— 1.83 pts\":\n            - generic: —\n            - generic: 1.83 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"3.65 pts\"\n        - 'row \"Adecuación al público destinatario Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él. — 2.6 pts — 1.3 pts — 0 pts 2.6 pts\"':\n          - 'cell \"Adecuación al público destinatario Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.\"':\n            - strong: Adecuación al público destinatario\n            - paragraph: \"Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.\"\n          - cell \"— 2.6 pts\":\n            - generic: —\n            - generic: 2.6 pts\n          - cell \"— 1.3 pts\":\n            - generic: —\n            - generic: 1.3 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"2.6 pts\"\n        - 'row \"Argumentos y recursos persuasivos Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje. — 2.78 pts — 1.39 pts — 0 pts 2.78 pts\"':\n          - 'cell \"Argumentos y recursos persuasivos Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.\"':\n            - strong: Argumentos y recursos persuasivos\n            - paragraph: \"Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.\"\n          - cell \"— 2.78 pts\":\n            - generic: —\n            - generic: 2.78 pts\n          - cell \"— 1.39 pts\":\n            - generic: —\n            - generic: 1.39 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"2.78 pts\"\n        - 'row \"Organización, legibilidad y corrección Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche. — 2.08 pts — 1.04 pts — 0 pts 2.08 pts\"':\n          - 'cell \"Organización, legibilidad y corrección Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.\"':\n            - strong: Organización, legibilidad y corrección\n            - paragraph: \"Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.\"\n          - cell \"— 2.08 pts\":\n            - generic: —\n            - generic: 2.08 pts\n          - cell \"— 1.04 pts\":\n            - generic: —\n            - generic: 1.04 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"2.08 pts\"\n        - 'row \"La metáfora Emplea la metáfora en el texto de afiche para construir imágenes o destacar ideas y emociones mediante las palabras, sin alterar el sentido de las ideas. Parcial (50%): Incluye la metáfora, pero varios usos no contribuyen a construir imágenes o destacar ideas y emociones mediante las palabras. — 2.08 pts — 1.04 pts — 0 pts 2.08 pts\"':\n          - 'cell \"La metáfora Emplea la metáfora en el texto de afiche para construir imágenes o destacar ideas y emociones mediante las palabras, sin alterar el sentido de las ideas. Parcial (50%): Incluye la metáfora, pero varios usos no contribuyen a construir imágenes o destacar ideas y emociones mediante las palabras.\"':\n            - strong: La metáfora\n            - paragraph: \"Emplea la metáfora en el texto de afiche para construir imágenes o destacar ideas y emociones mediante las palabras, sin alterar el sentido de las ideas. Parcial (50%): Incluye la metáfora, pero varios usos no contribuyen a construir imágenes o destacar ideas y emociones mediante las palabras.\"\n          - cell \"— 2.08 pts\":\n            - generic: —\n            - generic: 2.08 pts\n          - cell \"— 1.04 pts\":\n            - generic: —\n            - generic: 1.04 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"2.08 pts\"\n        - 'row \"El modo imperativo Emplea el modo imperativo en el texto de afiche para dirigir una invitación, instrucción o llamado a la acción al destinatario, sin alterar el sentido de las ideas. Parcial (50%): Incluye el modo imperativo, pero varios usos no contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario. — 2.08 pts — 1.04 pts — 0 pts 2.08 pts\"':\n          - 'cell \"El modo imperativo Emplea el modo imperativo en el texto de afiche para dirigir una invitación, instrucción o llamado a la acción al destinatario, sin alterar el sentido de las ideas. Parcial (50%): Incluye el modo imperativo, pero varios usos no contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario.\"':\n            - strong: El modo imperativo\n            - paragraph: \"Emplea el modo imperativo en el texto de afiche para dirigir una invitación, instrucción o llamado a la acción al destinatario, sin alterar el sentido de las ideas. Parcial (50%): Incluye el modo imperativo, pero varios usos no contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario.\"\n          - cell \"— 2.08 pts\":\n            - generic: —\n            - generic: 2.08 pts\n          - cell \"— 1.04 pts\":\n            - generic: —\n            - generic: 1.04 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"2.08 pts\"\n        - 'row \"Información de la convocatoria Comunica fecha, lugar, horario del evento sin contradicciones con la convocatoria. Parcial (50%): Omite un dato solicitado y dificulta decidir cómo participar. — 2.08 pts — 1.04 pts — 0 pts 2.08 pts\"':\n          - 'cell \"Información de la convocatoria Comunica fecha, lugar, horario del evento sin contradicciones con la convocatoria. Parcial (50%): Omite un dato solicitado y dificulta decidir cómo participar.\"':\n            - strong: Información de la convocatoria\n            - paragraph: \"Comunica fecha, lugar, horario del evento sin contradicciones con la convocatoria. Parcial (50%): Omite un dato solicitado y dificulta decidir cómo participar.\"\n          - cell \"— 2.08 pts\":\n            - generic: —\n            - generic: 2.08 pts\n          - cell \"— 1.04 pts\":\n            - generic: —\n            - generic: 1.04 pts\n          - cell \"— 0 pts\":\n            - generic: —\n            - generic: 0 pts\n          - cell \"2.08 pts\"\n    - paragraph: \"Puntuación máxima: 17.35 pts\"\n    - button \"Cerrar\"\n    - button \"Editar actividad\"\n    - button \"Calificar\"\n  - dialog \"Actividad creada\":\n    - heading \"Actividad creada\" [level=3]\n    - paragraph: La actividad se guardó correctamente y ya está disponible en todos los espacios vinculados.\n    - button \"Cerrar\":\n    - paragraph: Guardado correctamente\n    - heading \"QA Lengua 1 · ponderada · afiche\" [level=3]\n    - paragraph: Puedes volver a Actividades, abrir el mismo visor de detalle o comenzar a calificarla.\n    - button \"Volver\"\n    - button \"Ver actividad\":\n      - text: Ver actividad\n    - button \"Calificar\":\n      - text: Calificar",
+    "reopenedAfterReload": "Detalle de la actividad\nQA Lengua 1 · ponderada · afiche\nPendiente de evaluación\nValor\n17.35 pts\nFecha\nSin fecha\nTécnica\nAnálisis de producciones\nInstrumento\nLista ponderada\nModalidad\nIndividual\nCompetencias\nB1: 100 %\nDescripción de la actividad\n\nCrearán un afiche para un evento escolar con fecha, lugar y horario. Emplearán el modo imperativo y una metáfora. Se asignarán pesos entre sus componentes verificables.\n\nRecursos necesarios\n\nNo se registraron recursos.\n\nInstrumento de evaluación · Solo lectura\nCriterio / indicador\tSí\nValor relativo: 100\n\tParcial\nValor relativo: 50\n\tNo\nValor relativo: 0\n\tMáximo\nMensaje del afiche\n\nEl mensaje permite reconocer la actividad convocada y a sus destinatarios. Parcial: identifica la actividad pero deja ambiguo a quién se dirige. Ajuste manual del docente.\n\n\t\n—\n3.65 pts\n\t\n—\n1.83 pts\n\t\n—\n0 pts\n\t3.65 pts\nAdecuación al público destinatario\n\nAdapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.\n\n\t\n—\n2.6 pts\n\t\n—\n1.3 pts\n\t\n—\n0 pts\n\t2.6 pts\nArgumentos y recursos persuasivos\n\nUsa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.\n\n\t\n—\n2.78 pts\n\t\n—\n1.39 pts\n\t\n—\n0 pts\n\t2.78 pts\nOrganización, legibilidad y corrección\n\nPresenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.\n\n\t\n—\n2.08 pts\n\t\n—\n1.04 pts\n\t\n—\n0 pts\n\t2.08 pts\nLa metáfora\n\nEmplea la metáfora en el texto de afiche para construir imágenes o destacar ideas y emociones mediante las palabras, sin alterar el sentido de las ideas. Parcial (50%): Incluye la metáfora, pero varios usos no contribuyen a construir imágenes o destacar ideas y emociones mediante las palabras.\n\n\t\n—\n2.08 pts\n\t\n—\n1.04 pts\n\t\n—\n0 pts\n\t2.08 pts\nEl modo imperativo\n\nEmplea el modo imperativo en el texto de afiche para dirigir una invitación, instrucción o llamado a la acción al destinatario, sin alterar el sentido de las ideas. Parcial (50%): Incluye el modo imperativo, pero varios usos no contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario.\n\n\t\n—\n2.08 pts\n\t\n—\n1.04 pts\n\t\n—\n0 pts\n\t2.08 pts\nInformación de la convocatoria\n\nComunica fecha, lugar, horario del evento sin contradicciones con la convocatoria. Parcial (50%): Omite un dato solicitado y dificulta decidir cómo participar.\n\n\t\n—\n2.08 pts\n\t\n—\n1.04 pts\n\t\n—\n0 pts\n\t2.08 pts\n\nPuntuación máxima: 17.35 pts\n\nCerrar\nEditar actividad\nCalificar",
+    "activityId": "5be1137f-cfb1-41c3-9df4-2ef8a7de2647",
+    "snapshotId": "d7086d89-854e-4c3e-9c81-b3384b5d4139",
+    "savedHash": "0516ca7742d95a5924530c914e89f58a6f2c04ca3e34c2b57e6314154e5c69e5"
+  }
+]

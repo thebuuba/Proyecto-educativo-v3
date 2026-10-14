@@ -1,0 +1,72 @@
+import fs from 'node:fs'
+import assert from 'node:assert/strict'
+const source=JSON.parse(fs.readFileSync('docs/curriculum/cobertura-secundaria/lengua-3-cotejo-fuente.json','utf8'))
+const rows=[
+ ['Escucharán una entrevista, anticiparán el tema a partir de la introducción y comprobarán sus predicciones.','ANALYSIS','procedure-prediction','predicción'],
+ ['Realizarán oralmente una entrevista a un personaje de la comunidad seleccionado por sus aportes. Organizarán las preguntas con vocabulario temático, registro formal y gestos pertinentes.','ORAL_PRESENTATION','procedure-interviewee','aportes'],
+ ['Leerán una entrevista, inferirán el significado de palabras desconocidas por el contexto y comprobarán una acepción en el diccionario.','ANALYSIS','procedure-dictionary','acepción'],
+ ['Planificarán una entrevista delimitando el propósito, el público y el orden de las preguntas en un guion.','WRITTEN_PRODUCTION','procedure-outline','orden de las preguntas'],
+ ['Redactarán una entrevista usando formas verbales en primera persona y tono confesional. Revisarán los borradores.','WRITTEN_PRODUCTION','feature-first-person','primera persona'],
+ ['Escucharán una crónica, identificarán los hechos, el ambiente y la perspectiva del cronista.','ANALYSIS','perspective','perspectiva'],
+ ['Narrarán oralmente una crónica usando conectores de secuenciación temporal, sinónimos y adverbios de modo.','ORAL_PRESENTATION','feature-manner','producción oral'],
+ ['Leerán una crónica, anticiparán su contenido a partir de la volanta, el copete y el epígrafe, y parafrasearán los hechos.','ANALYSIS','procedure-paraphrase','cronista'],
+ ['Redactarán una crónica. Investigarán los hechos y sus causas, planificarán un esquema y revisarán borradores. Incorporarán imágenes que aclaren los hechos.','WRITTEN_PRODUCTION','research-sources','fuentes'],
+ ['Escucharán un catálogo y reconstruirán con sus propias palabras las características de las especies.','ANALYSIS','procedure-paraphrase','especies'],
+ ['Producirán oralmente un catálogo de flora y fauna indicando nombre común, nombre científico, reproducción, hábitat, conservación y amenazas. Recopilarán datos de fuentes.','ORAL_PRESENTATION','procedure-species-data','hábitat'],
+ ['Leerán un catálogo, inferirán el significado de palabras desconocidas por el contexto y resumirán su información.','ANALYSIS','procedure-vocabulary','contexto'],
+ ['Elaborarán un catálogo con gráficos o fotografías en soporte digital. Revisarán sus borradores y la legibilidad de sus entradas.','WRITTEN_PRODUCTION','feature-graphics','gráficos o fotografías'],
+ ['Leerán un informe de experimento y elaborarán un mapa conceptual del procedimiento, los resultados y su interpretación.','ANALYSIS','procedure-organizer','resultados'],
+ ['Redactarán un informe de experimento con los datos dados. Planificarán un esquema, usarán formas impersonales, perífrasis verbales y frases incidentales. Revisarán el borrador.','REPORT','feature-impersonal','Emplea'],
+ ['Escucharán un artículo de opinión y parafrasearán la tesis y los argumentos del autor.','ANALYSIS','procedure-paraphrase','tesis'],
+ ['Producirán oralmente un artículo de opinión con una tesis sustentada mediante citas textuales, ejemplos y analogías.','ORAL_PRESENTATION','feature-argument-types','producción oral'],
+ ['Leerán un artículo de opinión y subrayarán la tesis y sus argumentos justificando las partes seleccionadas.','ANALYSIS','procedure-underlining','Subraya'],
+ ['Escribirán un artículo de opinión. Planificarán tesis y argumentos, usarán modalizadores y revisarán los borradores según las sugerencias de sus compañeros.','WRITTEN_PRODUCTION','feature-modalizers','Emplea'],
+ ['Escucharán un cuento social e identificarán personajes principales, secundarios y actantes, vinculándolos con sus motivaciones.','ANALYSIS','feature-actants','actantes'],
+ ['Narrarán oralmente un cuento político describiendo el ambiente físico y psicológico y variando la voz según los personajes.','ORAL_PRESENTATION','feature-setting','producción oral'],
+ ['Leerán un fragmento de cuento cultural y explicarán sus conectores coordinantes y subordinantes mediante ejemplos disponibles.','ANALYSIS','feature-connectors','subordinantes'],
+ ['Escribirán un cuento social, planificarán un esquema secuencial, usarán variantes lingüísticas y revisarán borradores. Publicarán la versión final en el medio acordado.','WRITTEN_PRODUCTION','process-publication','medio solicitado'],
+ ['Escucharán un madrigal, anticiparán su sentido a partir del título y parafrasearán los sentimientos de los versos.','ANALYSIS','procedure-paraphrase','sentimientos'],
+ ['Recitarán un madrigal usando cambios de voz y gestos para expresar los sentimientos de los versos y hacer perceptible la sinestesia.','ORAL_PRESENTATION','feature-literary','sinestesia'],
+ ['Leerán un madrigal, distinguirán sus versos de siete y once sílabas e interpretarán sus imágenes poéticas.','ANALYSIS','verse','cómputo'],
+ ['Escribirán un madrigal usando rima consonante, hipérbaton y personificación. Revisarán borradores y publicarán el poema en un mural.','WRITTEN_PRODUCTION','feature-literary','hipérbaton'],
+]
+const procedures=source.topics.flatMap(t=>t.procedures.map(p=>({topic:t.provider,sourceId:p.id})))
+assert.equal(procedures.length,rows.length)
+const fixtures=rows.map(([description,type,criterion,contains],i)=>({id:'procedure-'+(i+1),...procedures[i],description,type,criterion,contains,absent:'No aporta evidencia suficiente'}))
+const extra=[
+ ['entrevista','Realizarán oralmente una entrevista empleando gestos y un tono de voz que facilite comprender las preguntas.','ORAL_PRESENTATION','feature-nonverbal','gestos','postura física obligatoria'],
+ ['entrevista','Escribirán solamente las preguntas para una entrevista, sin transcribir respuestas.','WRITTEN_PRODUCTION','questions','preguntas','transcripción de respuestas'],
+ ['cronica','Redactarán una crónica explicando las causas y posibles consecuencias de los hechos documentados.','WRITTEN_PRODUCTION','procedure-causes','consecuencias','consecuencias comprobadas'],
+ ['catalogo','Elaborarán un catálogo con mapas y fotografías en soporte físico y digital.','WRITTEN_PRODUCTION','procedure-medium','físico y digital','físico o digital'],
+ ['catalogo','Elaborarán un catálogo con mapas o fotografías en soporte físico o digital.','WRITTEN_PRODUCTION','feature-graphics','mapas o fotografías','mapas y fotografías'],
+ ['informe-experimento','Leerán un informe de experimento y reconstruirán su sentido usando una tabla o un diagrama.','ANALYSIS','feature-graphics','tabla o diagrama','tabla y diagrama'],
+ ['informe-experimento','Redactarán un informe de experimento que incluya una conclusión sustentada en los resultados dados.','REPORT','procedure-conclusion','resultados','experimento nuevo'],
+ ['articulo-opinion','Escribirán un artículo de opinión con una conclusión que retome su tesis y argumentos.','WRITTEN_PRODUCTION','procedure-conclusion','tesis','experimento'],
+ ['articulo-opinion','Elaborarán un comentario oral a partir de un artículo de opinión, defendiendo su tesis con argumentos.','ORAL_PRESENTATION','thesis','Formula','informe de experimento'],
+ ['cuento-social','Narrarán oralmente un cuento social variando la voz en las intervenciones de los personajes.','ORAL_PRESENTATION','procedure-voices','personajes','desenlace'],
+ ['madrigal','Recitarán un madrigal usando lenguaje gestual para comunicar los sentimientos de los versos.','ORAL_PRESENTATION','feature-nonverbal','gestos','Escribe'],
+ ['madrigal','Escribirán un madrigal con rima consonante entre versos heptasílabos y endecasílabos.','WRITTEN_PRODUCTION','rhyme','consonante','diez versos'],
+ ['entrevista','Redactarán las preguntas de una entrevista sin realizarla oralmente.','WRITTEN_PRODUCTION','questions','Organiza preguntas','Comunica el tema'],
+ ['entrevista','Compararán dos entrevistas, relacionando sus preguntas, respuestas y objetivos.','COMPARISON','questions','Contrasta','Redacta'],
+ ['entrevista','Investigarán los aportes del entrevistado para preparar una entrevista pertinente.','RESEARCH','procedure-interviewee','aportes','Realiza'],
+ ['cronica','Compararán dos crónicas de un acontecimiento contrastando los hechos y las perspectivas.','COMPARISON','facts','Contrasta','Redacta'],
+ ['cronica','Elaborarán un informe sobre una crónica leída explicando sus hechos y secuencia.','REPORT','facts','Reconoce','Relata hechos'],
+ ['cronica','Investigarán los hechos de una crónica y contrastarán sus fuentes.','RESEARCH','research-sources','fuentes','Redacta'],
+ ['catalogo','Compararán dos catálogos de flora y fauna contrastando la información de sus entradas.','COMPARISON','entries','Compara','Elabora'],
+ ['catalogo','Investigarán datos de especies para un catálogo y registrarán sus fuentes.','RESEARCH','research-information','especies','Elabora'],
+ ['catalogo','Presentarán por escrito un catálogo de especies sin mapas ni fotografías.','WRITTEN_PRODUCTION','entries','Describe','recursos gráficos'],
+ ['informe-experimento','Compararán dos informes de experimento relacionando los resultados con sus datos.','COMPARISON','results','Compara','Realiza'],
+ ['informe-experimento','Presentarán oralmente el análisis de un informe de experimento leído.','ORAL_PRESENTATION','results','Distingue','Comunica los resultados disponibles'],
+ ['articulo-opinion','Compararán dos artículos de opinión contrastando tesis y argumentos.','COMPARISON','arguments','Contrasta','Redacta'],
+ ['articulo-opinion','Debatirán la tesis de un artículo de opinión respondiendo a argumentos con evidencias del texto.','DEBATE','debate','responde','Escribe'],
+ ['articulo-opinion','Investigarán información y fuentes para fundamentar un artículo de opinión.','RESEARCH','research-information','tesis','Redacta'],
+ ['cuento-social','Compararán fragmentos de cuentos sociales relacionando conflictos, personajes y ambiente.','COMPARISON','conflict','Contrasta','desenlace'],
+ ['cuento-social','Elaborarán un comentario escrito sobre un cuento social relacionando el narrador con los hechos disponibles.','ANALYSIS','narrator','Identifica','Escribe un cuento'],
+ ['cuento-social','Elaborarán un informe sobre un fragmento de cuento político con su interpretación del conflicto.','REPORT','conflict','Explica','desenlace'],
+ ['madrigal','Compararán dos madrigales contrastando sentimientos, versos y rima.','COMPARISON','rhyme','Contrasta','diez versos'],
+ ['madrigal','Presentarán por escrito su análisis de un madrigal con ejemplos de sus versos.','ANALYSIS','meaning','Interpreta','Recita'],
+ ['madrigal','Elaborarán un informe sobre un madrigal interpretando su sentido poético.','REPORT','meaning','Interpreta','Escribe un madrigal'],
+]
+fixtures.push(...extra.map(([topic,description,type,criterion,contains,absent],i)=>({id:'family-'+(i+1),topic,description,type,criterion,contains,absent})))
+fs.writeFileSync('data/evaluation-instruments/language-grade-three-procedure-contracts.json',JSON.stringify(fixtures,null,2)+'\n')
+console.log({procedures:rows.length,families:extra.length})

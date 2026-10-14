@@ -39,6 +39,7 @@ export type EvaluatedInstrumentResult = {
   instrumentType: string
   selections: number[]
   criterionScores: number[]
+  applicableMaximums?: number[]
   completedAt: string
   observation?: string
   instrumentSnapshotId?: string

@@ -1,0 +1,54 @@
+import assert from 'node:assert/strict'
+import {readFileSync,writeFileSync} from 'node:fs'
+import {localClient,fingerprint} from './language-local-client.mjs'
+
+const grade=Number(process.argv[2]||1)
+const run=process.argv[3]||'base'
+assert(['base','procedimientos','cierre','final','funciones','gramatica','lexico','estrategias','generos','composicion'].includes(run))
+const subject=process.argv.find(arg=>arg.startsWith('--subject='))?.slice(10)??'LEN'
+assert(['LEN','ING'].includes(subject))
+const prefix=`${subject==='ING'?'ingles':'lengua'}-${grade}${run==='base'?'':'-'+run}`
+const root='docs/curriculum/cobertura-secundaria/evidencias/'
+const ui=JSON.parse(readFileSync(`${root}${prefix}-flujo-navegador.json`,'utf8'))
+assert(ui.every(record=>record.grade===grade),'Mixed grades in browser evidence')
+if(subject==='ING')assert(ui.every(record=>record.subject==='ING'),'Mixed subjects in browser evidence')
+const expectedFormats=process.argv[4]==='--partial'?new Set(ui.map(record=>record.format)).size:4
+assert(expectedFormats>0)
+const {request,health}=await localClient()
+const names=new Set(ui.map(record=>record.name))
+const saved=(await request('/activities')).filter(a=>names.has(a.name))
+assert.equal(new Set(saved.map(a=>a.instrumentType)).size,expectedFormats)
+for(const evidence of ui) {
+  const activity=saved.find(a=>a.name===evidence.name&&a.instrumentType===evidence.format)
+  assert(activity)
+  const proposal=activity.instrumentSnapshot
+  assert.equal(proposal.catalogVersion,evidence.catalogVersion??'evaluation-2026.20')
+  assert.equal(proposal.activityType,activity.pedagogicalActivityType)
+  assert.equal(proposal.totalScoreUnits,Math.round(activity.maxScore*100))
+  assert.equal(proposal.criteria.reduce((n,c)=>n+c.maxScoreUnits,0),proposal.totalScoreUnits)
+  if(run==='final'&&subject==='ING')for(const [index,criterion] of proposal.criteria.entries()){
+    assert.equal(activity.instrumentCriteria[`${activity.instrumentType}:criterion-id:${index}`],criterion.id,'Editor/snapshot identity mismatch')
+    assert.equal(activity.instrumentCriteria[`${activity.instrumentType}:criterion-template:${index}`],criterion.templateId,'Editor/snapshot objective mismatch')
+    assert.equal(Math.round(Number(activity.instrumentCriteria[`${activity.instrumentType}:points:${index}`])*100),criterion.maxScoreUnits,'Editor/snapshot points mismatch')
+  }
+  if(evidence.manualWeights&&!evidence.knownWeightFieldsMismatch){
+    assert.equal(evidence.manualWeights.reduce((sum,weight)=>sum+weight,0),100)
+    for(const [index,criterion] of proposal.criteria.entries()){
+      assert.equal(Number(activity.instrumentCriteria[`lista-ponderada:weight:${index}`]),evidence.manualWeights[index])
+      assert.equal(Math.round(Number(activity.instrumentCriteria[`lista-ponderada:points:${index}`])*100),criterion.maxScoreUnits,'Visible points differ from the saved snapshot')
+    }
+  }
+  const fields=evidence.formFields??evidence.fields
+  const savedValues=new Set(Object.values(activity.instrumentCriteria))
+  for(const field of fields) {
+    if(!field.value||!field.label||/instrumento|puntos|nivel/i.test(field.label)) continue
+    assert(savedValues.has(field.value),`UI text not persisted: ${evidence.format}, ${field.label}`)
+  }
+  assert(JSON.stringify(proposal).includes('Ajuste manual del docente.'))
+  evidence.activityId=activity.id
+  evidence.snapshotId=activity.instrumentSnapshotId
+  evidence.savedHash=fingerprint({snapshot:proposal,fields:activity.instrumentCriteria})
+}
+writeFileSync(`${root}${prefix}-flujo-navegador.json`,JSON.stringify(ui,null,2)+'\n')
+writeFileSync(`${root}${prefix}-persistencia.json`,JSON.stringify({verifiedAt:new Date().toISOString(),health,activities:saved},null,2)+'\n')
+console.log(JSON.stringify({grade,formats:expectedFormats,partial:expectedFormats<4,activities:saved.map(a=>({id:a.id,format:a.instrumentType,score:a.maxScore})),uiTextsPreserved:true,historicalReproductions:ui.filter(e=>e.knownWeightFieldsMismatch).length}))

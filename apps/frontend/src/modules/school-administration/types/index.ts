@@ -15,8 +15,8 @@ export type SchoolProfile = {
   logoUrl: string | null
   sector: 'public' | 'private' | 'semiofficial'
   centerCode: string | null
-  schoolShift: 'morning' | 'afternoon' | 'night' | 'extended' | 'full_day'
-  primaryModality: 'general' | 'academic' | 'technical_professional' | 'arts'
+  schoolShift: string
+  primaryModality: string
   enabledSubsystems: string[]
   officialExportsEnabled: boolean
   status: RecordStatus

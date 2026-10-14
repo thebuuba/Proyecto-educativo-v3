@@ -1,0 +1,106 @@
+{
+  "fields": [
+    {
+      "label": "Criterio 1",
+      "value": "Datos e incógnitas"
+    },
+    {
+      "label": "Destacado del criterio 1",
+      "value": "Distingue datos e incógnita en cada ejercicio y los expresa con sus magnitudes y unidades correspondientes."
+    },
+    {
+      "label": "Logrado del criterio 1",
+      "value": "Identifica los datos y la incógnita; una unidad o símbolo necesita precisión."
+    },
+    {
+      "label": "En proceso del criterio 1",
+      "value": "Identifica parte de los datos, pero confunde la incógnita o alguna magnitud."
+    },
+    {
+      "label": "Inicial del criterio 1",
+      "value": "No identifica datos ni incógnita utilizables para resolver el ejercicio."
+    },
+    {
+      "label": "Criterio 2",
+      "value": "Aplicación y despeje de la Ley de Ohm"
+    },
+    {
+      "label": "Destacado del criterio 2",
+      "value": "Aplica V = I × R, I = V/R o R = V/I según la incógnita y sustituye los datos de manera coherente."
+    },
+    {
+      "label": "Logrado del criterio 2",
+      "value": "Selecciona y despeja la relación correcta; presenta un paso poco explícito."
+    },
+    {
+      "label": "En proceso del criterio 2",
+      "value": "Reconoce la Ley de Ohm, pero un despeje o sustitución altera la relación entre magnitudes."
+    },
+    {
+      "label": "Inicial del criterio 2",
+      "value": "No plantea una relación de la Ley de Ohm para el ejercicio."
+    },
+    {
+      "label": "Criterio 3",
+      "value": "Cálculo y unidades eléctricas"
+    },
+    {
+      "label": "Destacado del criterio 3",
+      "value": "Obtiene resultados correctos y utiliza V, A u Ω de forma consistente en los pasos y respuestas."
+    },
+    {
+      "label": "Logrado del criterio 3",
+      "value": "El procedimiento y resultado son correctos, con una omisión menor de notación o unidad."
+    },
+    {
+      "label": "En proceso del criterio 3",
+      "value": "Un error aritmético o de unidades afecta parte de los resultados."
+    },
+    {
+      "label": "Inicial del criterio 3",
+      "value": "No presenta cálculos ni resultados interpretables."
+    },
+    {
+      "label": "Criterio 4",
+      "value": "Interpretación de situaciones cotidianas"
+    },
+    {
+      "label": "Destacado del criterio 4",
+      "value": "Explica la relación entre las tres magnitudes y la aplica coherentemente a las situaciones cotidianas planteadas."
+    },
+    {
+      "label": "Logrado del criterio 4",
+      "value": "Relaciona las magnitudes con la situación, con una consecuencia poco desarrollada."
+    },
+    {
+      "label": "En proceso del criterio 4",
+      "value": "Describe la situación, pero relaciona solo parcialmente sus magnitudes eléctricas."
+    },
+    {
+      "label": "Inicial del criterio 4",
+      "value": "No presenta una interpretación eléctrica de las situaciones planteadas."
+    },
+    {
+      "label": "Criterio 5",
+      "value": "Esquema y funcionamiento del circuito"
+    },
+    {
+      "label": "Destacado del criterio 5",
+      "value": "El esquema muestra conexiones coherentes; identifica sus componentes y explica el recorrido de la corriente y la función de los elementos representados."
+    },
+    {
+      "label": "Logrado del criterio 5",
+      "value": "El esquema y sus componentes son reconocibles; una conexión o explicación requiere precisión."
+    },
+    {
+      "label": "En proceso del criterio 5",
+      "value": "El esquema es parcial o algunas conexiones y funciones no se corresponden."
+    },
+    {
+      "label": "Inicial del criterio 5",
+      "value": "No presenta un esquema reconocible ni una explicación de su funcionamiento."
+    }
+  ],
+  "trace": "Entorno original localhost:5173 → backend:3000. Solo interpretar/preparar; sin guardar.\n/evaluation-instruments/interpret: 503 Falta instalar el catálogo evaluativo versionado.\n/evaluation-instruments/recommend: 503 Falta instalar el catálogo evaluativo versionado.",
+  "type": "EXERCISE_SET"
+}

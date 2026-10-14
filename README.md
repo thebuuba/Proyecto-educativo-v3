@@ -45,11 +45,22 @@ Prisma Client y compilar el backend.
 
 ## Configuracion y desarrollo
 
-El desarrollo diario usa el Worker local contra el proyecto remoto **AulaBase Development**. Las credenciales viven solo en `.dev.vars.local`, que está ignorado por Git:
+El desarrollo diario usa el Worker local y la base de datos configurada en `.dev.vars.local`, que está ignorado por Git. Ese archivo puede apuntar a Supabase local o al proyecto remoto de desarrollo:
 
 ```bash
 pnpm cloudflare:dev
 ```
+
+Antes de iniciar por primera vez tras actualizar el código, prepara exclusivamente el catálogo evaluativo versionado (no ejecuta el seed general ni publica catálogos curriculares):
+
+```bash
+pnpm catalog:diagnose:development
+pnpm catalog:prepare:development --expected-project-ref=REF_DEL_PROYECTO
+```
+
+El segundo comando exige identificar explícitamente el proyecto Supabase de destino. Sustituye `REF_DEL_PROYECTO` por su referencia y comprueba que coincida con ambas conexiones de `.dev.vars.local`; el comando se detiene sin cambios ante otro proyecto. Es idempotente: crea la versión ausente, conserva una copia idéntica y rechaza un conflicto de contenido que debe resolverse con una versión nueva. La preparación remota se ejecuta por separado; `cloudflare:dev` conserva su inicio local habitual.
+
+Antes de ejecutarlo, comprueba que `SUPABASE_URL` y `DATABASE_URL` de `.dev.vars.local` pertenezcan a Development y que el proyecto esté activo. `pnpm exec supabase projects list` permite verificar el proyecto enlazado sin mostrar contraseñas. No reutilices credenciales de producción ni relajes esta comprobación.
 
 La aplicación completa queda en `http://localhost:8787`: React sirve la interfaz y NestJS responde bajo `/api/v1`. Supabase local sigue disponible para reconstruir y validar migraciones desde cero:
 

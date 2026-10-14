@@ -2,9 +2,10 @@
  * Panel lateral deslizable desde la derecha.
  */
 import { X } from 'lucide-react'
-import type { ReactNode } from 'react'
+import { useRef, type ReactNode } from 'react'
 
 import { Button } from '@/components/ui/Button'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 
 /** Propiedades del componente Drawer. */
 type DrawerProps = {
@@ -28,8 +29,10 @@ type DrawerProps = {
  * @param props.onClose - Callback de cierre.
  */
 export function Drawer({ title, eyebrow, children, onClose }: DrawerProps) {
+  const panelRef = useRef<HTMLElement>(null)
+  useOutsideClick({ ref: panelRef, onClose })
   return (
-    <aside className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col border-l border-border bg-popover text-popover-foreground shadow-xl">
+    <aside ref={panelRef} role="dialog" aria-label={title} className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col border-l border-border bg-popover text-popover-foreground shadow-xl">
       <div className="flex items-start justify-between border-b border-border px-5 py-4">
         <div>
           {eyebrow ? (
@@ -39,7 +42,7 @@ export function Drawer({ title, eyebrow, children, onClose }: DrawerProps) {
           ) : null}
           <h3 className="mt-1 text-lg font-semibold text-foreground">{title}</h3>
         </div>
-        <Button variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}>
+        <Button data-ui-action="close" variant="ghost" size="icon" aria-label="Cerrar" onClick={onClose}>
           <X className="size-5" />
         </Button>
       </div>

@@ -1,0 +1,660 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+  "pdfPages": [
+    134,
+    136
+  ],
+  "method": "Cotejo de ejemplos discursivos de comprensión y producción. Se distinguen27 ejemplos receptivos,12 escritos,7 orales y producción audiovisual; una modalidad no convierte automáticamente las demás en evidencia oficial.",
+  "genres": [
+    {
+      "id": "conversation",
+      "name": "conversación",
+      "reading": true,
+      "writing": false,
+      "oral": true,
+      "meaning": "interlocutores",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+          "text": "• Producción de textos orales, tales como: conversaciones,\ncanciones, recetas, mensajes, noticias, descripciones y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342013
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "business-card",
+      "name": "tarjeta de presentación",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "identificación y contacto",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "list",
+      "name": "lista",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "elementos de la lista",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "advertisement",
+      "name": "anuncio",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "producto o servicio",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "recipe",
+      "name": "receta",
+      "reading": true,
+      "writing": false,
+      "oral": true,
+      "meaning": "acciones de preparación",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+          "text": "• Producción de textos orales, tales como: conversaciones,\ncanciones, recetas, mensajes, noticias, descripciones y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342013
+        }
+      ],
+      "implementation": "REUSES_EXISTING_COMMUNICATIVE_FUNCTION"
+    },
+    {
+      "id": "sign",
+      "name": "letrero",
+      "reading": true,
+      "writing": true,
+      "oral": false,
+      "meaning": "indicación del letrero",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "notice",
+      "name": "aviso",
+      "reading": true,
+      "writing": true,
+      "oral": false,
+      "meaning": "información del aviso",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "poster",
+      "name": "afiche",
+      "reading": true,
+      "writing": true,
+      "oral": false,
+      "meaning": "mensaje central del afiche",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "message",
+      "name": "mensaje",
+      "reading": true,
+      "writing": true,
+      "oral": true,
+      "meaning": "propósito del mensaje",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        },
+        {
+          "id": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+          "text": "• Producción de textos orales, tales como: conversaciones,\ncanciones, recetas, mensajes, noticias, descripciones y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342013
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "email",
+      "name": "correo electrónico",
+      "reading": true,
+      "writing": true,
+      "oral": false,
+      "meaning": "destinatario y propósito del correo",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "cv",
+      "name": "currículum vitae",
+      "reading": true,
+      "writing": true,
+      "oral": false,
+      "meaning": "datos de perfil solicitados",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "letter",
+      "name": "carta",
+      "reading": true,
+      "writing": true,
+      "oral": false,
+      "meaning": "destinatario y propósito de la carta",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "form",
+      "name": "formulario",
+      "reading": true,
+      "writing": true,
+      "oral": false,
+      "meaning": "campos solicitados",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "forecast",
+      "name": "pronóstico del tiempo",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "condiciones atmosféricas",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "REUSES_EXISTING_COMMUNICATIVE_FUNCTION"
+    },
+    {
+      "id": "news",
+      "name": "noticia",
+      "reading": true,
+      "writing": false,
+      "oral": true,
+      "meaning": "suceso comunicado",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+          "text": "• Producción de textos orales, tales como: conversaciones,\ncanciones, recetas, mensajes, noticias, descripciones y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342013
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "schedule",
+      "name": "horario",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "actividad y momento",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "agenda",
+      "name": "agenda",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "compromisos",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "map",
+      "name": "croquis",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "ubicaciones y referencias",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "questionnaire",
+      "name": "cuestionario",
+      "reading": true,
+      "writing": true,
+      "oral": false,
+      "meaning": "información buscada",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "brochure",
+      "name": "folleto",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "información del folleto",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "song",
+      "name": "canción",
+      "reading": true,
+      "writing": false,
+      "oral": true,
+      "meaning": "mensaje de la canción",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+          "text": "• Producción de textos orales, tales como: conversaciones,\ncanciones, recetas, mensajes, noticias, descripciones y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342013
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "poem",
+      "name": "poesía",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "sentido de los versos",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "comic",
+      "name": "historieta",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "viñetas",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "tourist-guide",
+      "name": "guía turística",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "lugares y orientaciones",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "description",
+      "name": "descripción",
+      "reading": true,
+      "writing": true,
+      "oral": true,
+      "meaning": "características",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        },
+        {
+          "id": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+          "text": "• Producción de textos orales, tales como: conversaciones,\ncanciones, recetas, mensajes, noticias, descripciones y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342013
+        }
+      ],
+      "implementation": "REUSES_EXISTING_COMMUNICATIVE_FUNCTION"
+    },
+    {
+      "id": "biography",
+      "name": "biografía",
+      "reading": true,
+      "writing": false,
+      "oral": false,
+      "meaning": "acontecimientos de la vida",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "narrative",
+      "name": "narración",
+      "reading": true,
+      "writing": true,
+      "oral": true,
+      "meaning": "acontecimientos y personajes",
+      "source": [
+        {
+          "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+          "text": "• Comprensión de textos orales y escritos, tales como:\nconversaciones, tarjetas de presentación, listas, anuncios,\nrecetas, letreros, avisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias, horarios,\nagendas, croquis, cuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones, biografías y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342012
+        },
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        },
+        {
+          "id": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+          "text": "• Producción de textos orales, tales como: conversaciones,\ncanciones, recetas, mensajes, noticias, descripciones y\nnarraciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342013
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "meme",
+      "name": "meme",
+      "reading": false,
+      "writing": true,
+      "oral": false,
+      "meaning": "texto e imagen",
+      "source": [
+        {
+          "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+          "text": "• Producción de textos escritos, tales como: mensajes,\ncorreos electrónicos, cartas, curriculum vitae, avisos, afiches,\nletreros, memes, formularios, cuestionarios, narraciones y\ndescripciones.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342014
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    },
+    {
+      "id": "audiovisual",
+      "name": "producción audiovisual",
+      "reading": false,
+      "writing": false,
+      "oral": true,
+      "meaning": "recursos seleccionados",
+      "source": [
+        {
+          "id": "20c9b087-4975-5a30-9bad-61f9944831f2",
+          "text": "• Producción de audiovisuales.",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1342015
+        }
+      ],
+      "implementation": "GENRE_SPECIFIC_PROVIDER"
+    }
+  ],
+  "limits": "Criterios de comunicación básica redactados para los requisitos solicitados; no se exige dominio profesional de cada género. Un texto puede ser solo una fuente para inspeccionar gramática o vocabulario. Continúan pendientes acciones mixtas y composición extensa."
+}

@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-const { get, post, signInWithPassword, signInWithOAuth, signUp, signOut, setSession, clearPersistedSupabaseSession } = vi.hoisted(() => ({
+const { isRememberSessionEnabled, get, post, signInWithPassword, signInWithOAuth, signUp, signOut, setSession, clearPersistedSupabaseSession } = vi.hoisted(() => ({
+  isRememberSessionEnabled: vi.fn(() => true),
   get: vi.fn(),
   post: vi.fn(),
   signInWithPassword: vi.fn(),
@@ -16,7 +17,7 @@ vi.mock('@/services/apiClient', async (importOriginal) => ({
   api: { get, post },
 }))
 vi.mock('@/modules/auth/services/supabaseClient', () => ({
-  isRememberSessionEnabled: () => true,
+  isRememberSessionEnabled,
   clearPersistedSupabaseSession,
   supabase: { auth: { signInWithPassword, signInWithOAuth, signUp, signOut, setSession } },
 }))
@@ -85,7 +86,7 @@ describe('persistent login', () => {
     expect(post).toHaveBeenCalledWith('/auth/login', {
       email: 'teacher@example.com',
       password: 'secret',
-    }, { clearResponseCache: true })
+    }, { clearResponseCache: true, headers: { 'X-Remember-Session': 'true' } })
   })
 })
 
@@ -102,5 +103,21 @@ describe('logout', () => {
     post.mockResolvedValue({ verificationRequired: 'email', supabaseSession: { accessToken: 'token', refreshToken: 'refresh' } })
     await expect(login({ email: 'ada@escuela.edu', password: 'secret' })).rejects.toMatchObject({ status: 409, method: 'email' })
     expect(setSession).toHaveBeenCalledWith({ access_token: 'token', refresh_token: 'refresh' })
+  })
+})
+
+
+describe('preferencia de sesión en todos los caminos de acceso', () => {
+  it('envía false tanto por Supabase como por el login alternativo', async () => {
+    isRememberSessionEnabled.mockReturnValue(false)
+    post.mockResolvedValue({ user: {}, appUser: {}, roles: [], permissions: [] })
+    get.mockResolvedValue({})
+    signInWithPassword.mockResolvedValue({ data: { session: { access_token: 'token' } }, error: null })
+    await login({ email: 'test@example.invalid', password: 'test-password' })
+    expect(post).toHaveBeenLastCalledWith('/auth/session', undefined, expect.objectContaining({ headers: expect.objectContaining({ 'X-Remember-Session': 'false' }) }))
+    signInWithPassword.mockResolvedValue({ data: {}, error: { message: 'Failed to fetch' } })
+    await login({ email: 'test@example.invalid', password: 'test-password' })
+    expect(post).toHaveBeenLastCalledWith('/auth/login', expect.anything(), expect.objectContaining({ headers: { 'X-Remember-Session': 'false' } }))
+    isRememberSessionEnabled.mockReturnValue(true)
   })
 })

@@ -1,11 +1,12 @@
 import 'reflect-metadata'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { validate } from 'class-validator'
 import { plainToInstance } from 'class-transformer'
 import { EvaluationInstrumentsService } from './evaluation-instruments.service'
 import { RecommendInstrumentDto } from './recommend-instrument.dto'
-import { evaluationCatalogV1 } from './catalog-v1'
-import { seedEvaluationCatalog } from './catalog-operations'
+import { evaluationCatalogCurrent } from './catalog-current'
+import { diagnoseEvaluationCatalog, seedEvaluationCatalog } from './catalog-operations'
+import grammar from '../../../../../data/evaluation-instruments/english-grade-one-grammar-contracts.json'
 
 const mocks = vi.hoisted(() => ({
   sectionSubject: { findFirst: vi.fn() }, evaluationCatalogRelease: { findUnique: vi.fn(), create: vi.fn() },
@@ -24,15 +25,60 @@ function assignment() {
 }
 beforeEach(() => {
   vi.resetAllMocks()
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('External AI calls disabled in tests')))
   mocks.sectionSubject.findFirst.mockResolvedValue(assignment())
-  mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: evaluationCatalogV1 })
+  mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: evaluationCatalogCurrent })
   mocks.curriculumVersion.findUnique.mockResolvedValue({ id: input.curriculumVersionId, level: 'PRIMARY', status: 'DRAFT' })
   mocks.curriculumVersion.findFirst.mockResolvedValue(null)
   mocks.curriculumScope.findMany.mockResolvedValue([scope])
   mocks.curriculumSubjectMapping.findMany.mockResolvedValue([])
   mocks.curriculumElement.findMany.mockResolvedValue([])
 })
+afterEach(() => { vi.unstubAllGlobals() })
 describe('API service security and version policy', () => {
+  it('diagnoses and seeds the new release without replacing installed historical releases', async () => {
+    mocks.evaluationCatalogRelease.findUnique.mockResolvedValueOnce(null).mockResolvedValueOnce(null)
+    mocks.evaluationCatalogRelease.create.mockResolvedValue({})
+    expect(await diagnoseEvaluationCatalog(mocks as never)).toEqual({ version: 'evaluation-2026.47', status: 'MISSING' })
+    expect(await seedEvaluationCatalog(mocks as never)).toBe('CREATED')
+    expect(mocks.evaluationCatalogRelease.create.mock.calls[0][0].data.version).toBe('evaluation-2026.47')
+  })
+  it('interprets an unspecified task using the selected technique while keeping an explicit evidence action dominant', async () => {
+    const service = new EvaluationInstrumentsService()
+    const result = await service.interpret(user, { sectionSubjectId: input.sectionSubjectId, activityTitle: 'Actividad', evaluationTechnique: 'debate' })
+    expect(result.suggestedActivityType).toBe('DEBATE')
+    expect(result.suggestedEvaluationTechnique).toBe('debate')
+    const detected = await service.interpret(user, { sectionSubjectId: input.sectionSubjectId, activityTitle: 'Actividad',
+      description: 'Elaborarán un informe sobre la práctica motriz.', evaluationTechnique: 'debate' })
+    expect(detected.suggestedActivityType).toBe('REPORT')
+  })
+  it('devuelve400 explicativo cuando no caben todos los requisitos, sin una propuesta truncada',async()=>{
+    const row=assignment()
+    row.grade.sequence=1
+    row.grade.academicLevel.code='secundario'
+    row.grade.academicCycle.code='secundario_primer_ciclo'
+    row.subject.code='ING'
+    row.subject.name='Inglés'
+    mocks.sectionSubject.findFirst.mockResolvedValue(row)
+    const request={...input,curriculumVersionId:undefined,description:`Leerán un texto en inglés e identificarán ${grammar.map(f=>f.term).join(', ')}.`}
+    await expect(new EvaluationInstrumentsService().recommend(user,request)).rejects.toMatchObject({status:400,message:expect.stringContaining('31 criterios')})
+  })
+  it('en producción no selecciona DRAFT implícitamente para interpretar ni recomendar',async()=>{
+    const previous=process.env.NODE_ENV
+    process.env.NODE_ENV='production'
+    mocks.curriculumVersion.findFirst.mockImplementation(async({where})=>where.status==='DRAFT' ? {id:input.curriculumVersionId,level:'PRIMARY',status:'DRAFT'} : null)
+    try {
+      const service=new EvaluationInstrumentsService()
+      const interpretation=await service.interpret(user,{sectionSubjectId:input.sectionSubjectId,activityTitle:'Actividad'})
+      const result=await service.recommend(user,{...input,curriculumVersionId:undefined})
+      expect(interpretation.curriculumVersionId).toBeNull()
+      expect(result.curriculumVersionId).toBeNull()
+      expect(mocks.curriculumVersion.findFirst.mock.calls.every(([arg])=>arg.where.status==='PUBLISHED')).toBe(true)
+    } finally {
+      if(previous === undefined) delete process.env.NODE_ENV
+      else process.env.NODE_ENV=previous
+    }
+  })
   it('filtra escuela y docente asignado antes de leer currículo', async () => {
     await new EvaluationInstrumentsService().recommend(user, input)
     expect(mocks.sectionSubject.findFirst.mock.calls[0][0].where).toEqual({ id: input.sectionSubjectId, schoolId: user.schoolId, status: 'ACTIVE', teacher: { userId: user.id, schoolId: user.schoolId, status: 'ACTIVE' } })
@@ -84,18 +130,21 @@ describe('API service security and version policy', () => {
     const result = await new EvaluationInstrumentsService().interpret(user, { sectionSubjectId: input.sectionSubjectId,
       activityTitle: 'Exposición sobre el sistema respiratorio', curriculumVersionId: input.curriculumVersionId })
     expect(result.suggestedActivityType).toBe('EXPOSITION')
+    expect(result.suggestedEvaluationTechnique).toBe('exposicion')
+    expect(result.suggestedInstrumentType).toBe('rubrica')
     expect(result.curriculumMatch).toBe('NONE')
     expect(result.curriculumCandidates).toEqual([])
     expect(mocks.sectionSubject.findFirst).toHaveBeenCalledTimes(1)
   })
-  it('la interpretación local puede usar DRAFT; recommend sin versión sigue limitado a PUBLISHED', async () => {
+  it('interpretar y recomendar resuelven el mismo DRAFT local sin depender del orden de respuesta', async () => {
     mocks.curriculumVersion.findFirst.mockImplementation(async ({ where }) => where.status === 'DRAFT'
       ? { id: input.curriculumVersionId, level: 'PRIMARY', status: 'DRAFT' } : null)
     const interpretation = await new EvaluationInstrumentsService().interpret(user, { sectionSubjectId: input.sectionSubjectId,
       activityTitle: 'Actividad de ciencias' })
     expect(interpretation.curriculumVersionId).toBe(input.curriculumVersionId)
     const recommendation = await new EvaluationInstrumentsService().recommend(user, { ...input, curriculumVersionId: undefined })
-    expect(recommendation.curriculumVersionId).toBeNull()
+    expect(recommendation.curriculumVersionId).toBe(interpretation.curriculumVersionId)
+    expect(recommendation.curriculumScopeId).toBe(interpretation.curriculumScopeId)
   })
   it('rechaza una selección explícita fuera del contexto autorizado', async () => {
     await expect(new EvaluationInstrumentsService().recommend(user, { ...input,
@@ -118,7 +167,7 @@ describe('API service security and version policy', () => {
     await expect(seedEvaluationCatalog(mocks as never)).rejects.toThrow('versión nueva')
   })
   it('tolera dos instaladores concurrentes sólo si el contenido coincide', async () => {
-    mocks.evaluationCatalogRelease.findUnique.mockResolvedValueOnce(null).mockResolvedValueOnce({ payload: evaluationCatalogV1 })
+    mocks.evaluationCatalogRelease.findUnique.mockResolvedValueOnce(null).mockResolvedValueOnce({ payload: evaluationCatalogCurrent })
     mocks.evaluationCatalogRelease.create.mockRejectedValue(Object.assign(new Error('unique'), { code: 'P2002' }))
     await expect(seedEvaluationCatalog(mocks as never)).resolves.toBe('UNCHANGED')
   })
@@ -130,5 +179,82 @@ describe('API service security and version policy', () => {
       expect((await validate(plainToInstance(RecommendInstrumentDto, { ...input, ...invalid }))).length).toBeGreaterThan(0)
     }
     expect((await validate(plainToInstance(RecommendInstrumentDto, { ...input, schoolId: 'attacker' }), { whitelist: true, forbidNonWhitelisted: true })).length).toBeGreaterThan(0)
+  })
+})
+
+describe('bounded AI wording refinement', () => {
+  beforeEach(() => {
+    vi.stubGlobal('fetch', vi.fn())
+    vi.stubEnv('NODE_ENV', 'test')
+    vi.stubEnv('DEEPSEEK_API_KEY', 'placeholder-test-key')
+  })
+  afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs() })
+
+  async function baseline() { return new EvaluationInstrumentsService().recommend(user, input) }
+  async function refineWith(payload: unknown) {
+    vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ choices: [{ message: { content: JSON.stringify(payload) } }] }) } as Response)
+    vi.stubEnv('NODE_ENV', 'production')
+    return new EvaluationInstrumentsService().recommend(user, input)
+  }
+  const wording = (result: Awaited<ReturnType<typeof baseline>>) => ({ criteria: result.criteria.map(criterion => ({
+    id: criterion.id, title: 'Criterio revisado', description: 'Evidencia revisada y observable.',
+    descriptors: criterion.descriptors.map(() => 'Desempeño revisado.'), maxScoreUnits: 99999,
+    sourceType: 'CURRICULUM_DERIVED', sourceReferences: [{ elementId: 'invented' }],
+  })) })
+
+  it('copies only wording and preserves scores, IDs, sources and descriptor metadata', async () => {
+    const original = await baseline()
+    const refined = await refineWith(wording(original))
+    expect(refined.criteria.map(criterion => criterion.title)).toEqual(original.criteria.map(() => 'Criterio revisado'))
+    for (const [index, criterion] of refined.criteria.entries()) {
+      expect({ ...criterion, title: original.criteria[index].title, description: original.criteria[index].description,
+        descriptors: criterion.descriptors.map((descriptor, i) => ({ ...descriptor, text: original.criteria[index].descriptors[i].text })) }).toEqual(original.criteria[index])
+    }
+    expect(refined.totalScoreUnits).toBe(2000)
+  })
+  it.each(['duplicate', 'unknown', 'wrong-title-type', 'blank-description', 'wrong-descriptor-type', 'descriptor-count'])(
+    'keeps the deterministic result for an incompatible %s response', async failure => {
+      const original = await baseline()
+      const payload = wording(original)
+      if (failure === 'duplicate') payload.criteria[1].id = payload.criteria[0].id
+      if (failure === 'unknown') payload.criteria[0].id = 'invented'
+      if (failure === 'wrong-title-type') Object.assign(payload.criteria[0], { title: 42 })
+      if (failure === 'blank-description') payload.criteria[0].description = '  '
+      if (failure === 'wrong-descriptor-type') Object.assign(payload.criteria[0], { descriptors: [null, null, null, null] })
+      if (failure === 'descriptor-count') payload.criteria[0].descriptors.pop()
+      expect(await refineWith(payload)).toEqual(original)
+    })
+  it.each(['http', 'timeout', 'malformed-json'])('keeps the deterministic result when the API fails with %s', async failure => {
+    const original = await baseline()
+    if (failure === 'http') vi.mocked(fetch).mockResolvedValue({ ok: false, status: 503 } as Response)
+    if (failure === 'timeout') vi.mocked(fetch).mockRejectedValue(new Error('Timeout'))
+    if (failure === 'malformed-json') vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ choices: [{ message: { content: '{' } }] }) } as Response)
+    vi.stubEnv('NODE_ENV', 'production')
+    expect(await new EvaluationInstrumentsService().recommend(user, input)).toEqual(original)
+  })
+  it.each(['curriculum-derived', 'authored-without-progression', 'progression'])('preserves %s criteria while refining generic wording', async protection => {
+    const original = await baseline()
+    if (protection === 'curriculum-derived') original.criteria[0].sourceType = 'CURRICULUM_DERIVED'
+    if (protection === 'authored-without-progression') original.criteria[0].templateId = 'authored-without-progression'
+    if (protection === 'progression') original.criteria[0].progressionLevels = ['Completo', 'Principal', 'Parcial', 'Escaso', 'Sin evidencia']
+    const payload = wording(original); payload.criteria.shift()
+    vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ choices: [{ message: { content: JSON.stringify(payload) } }] }) } as Response)
+    vi.stubEnv('NODE_ENV', 'production')
+    const refiner = new EvaluationInstrumentsService() as unknown as { refineWithAi?: (result: typeof original, request: typeof input, context: null) => Promise<typeof original> }
+    const result = await (refiner.refineWithAi?.(original, input, null) ?? original)
+    expect(result.criteria[0]).toEqual(original.criteria[0])
+    expect(result.criteria.slice(1).every(criterion => criterion.title === 'Criterio revisado')).toBe(true)
+  })
+  it('validates additional candidate pools without enforcing final instrument capacity', async () => {
+    const original = await baseline()
+    original.criteria = Array.from({ length: 21 }, (_, index) => ({ ...original.criteria[0], id: `candidate-${index}`, maxScore: 1, maxScoreUnits: 100 }))
+    original.totalScore = 21; original.totalScoreUnits = 2100
+    vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ choices: [{ message: { content: JSON.stringify(wording(original)) } }] }) } as Response)
+    vi.stubEnv('NODE_ENV', 'production')
+    const request = { ...input, maxScore: 21, includeAdditionalCandidates: true }
+    const refiner = new EvaluationInstrumentsService() as unknown as { refineWithAi?: (result: typeof original, requestInput: typeof request, context: null) => Promise<typeof original> }
+    const result = await (refiner.refineWithAi?.(original, request, null) ?? original)
+    expect(result.criteria).toHaveLength(21)
+    expect(result.criteria.every(criterion => criterion.title === 'Criterio revisado')).toBe(true)
   })
 })

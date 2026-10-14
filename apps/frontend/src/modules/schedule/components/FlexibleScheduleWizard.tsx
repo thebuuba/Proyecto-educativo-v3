@@ -1,3 +1,4 @@
+import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import {
   Check,
   ChevronDown,
@@ -277,7 +278,7 @@ export function FlexibleScheduleWizard({
       }) ?? (journey
         ? candidates.find((element) => element.dataset.scheduleReview === journey.name)
         : undefined) ?? candidates[0]
-      target?.scrollIntoView?.({ behavior: 'smooth', block: 'center' })
+      target?.scrollIntoView?.({ behavior: isMotionReduced() ? 'auto' : 'smooth', block: 'center' })
       target?.focus({ preventScroll: true })
     }, 0)
   }
@@ -771,7 +772,7 @@ export function FlexibleScheduleWizard({
               Atrás
             </Button>
           ) : onCancel ? (
-            <Button type="button" variant="ghost" onClick={onCancel}>
+            <Button data-ui-action="cancel" type="button" variant="ghost" onClick={onCancel}>
               Cancelar
             </Button>
           ) : null}
@@ -930,7 +931,7 @@ export function FlexibleScheduleWizard({
               </p>
             ) : null}
             <div className="flex justify-end gap-2">
-              <Button type="button" variant="ghost" onClick={() => setCellEditor(null)}>
+              <Button data-ui-action="cancel" type="button" variant="ghost" onClick={() => setCellEditor(null)}>
                 Cancelar
               </Button>
               <Button type="button" onClick={saveCellEditor}>
@@ -1033,7 +1034,7 @@ export function FlexibleScheduleWizard({
               />
             </Field>
             <div className="flex justify-end gap-2">
-              <Button type="button" variant="ghost" onClick={() => setNonLectiveEditor(null)}>
+              <Button data-ui-action="cancel" type="button" variant="ghost" onClick={() => setNonLectiveEditor(null)}>
                 Cancelar
               </Button>
               <Button type="button" onClick={saveNonLectiveEditor}>
@@ -1482,7 +1483,7 @@ function WeeklyPeriodGrid({
           <span className="mt-1 inline-block text-[9px] font-bold text-primary">● Ajustado</span>
         ) : null}
         <div data-schedule-menu className="absolute right-1 top-1">
-          <button
+          <button data-ui-size="icon"
             type="button"
             aria-label={`Acciones para ${block.name} del ${scheduleDays.find((item) => item.dayOfWeek === day)?.name.toLowerCase()}`}
             aria-haspopup="menu"
@@ -1559,7 +1560,7 @@ function WeeklyPeriodGrid({
     const menuKey = `row-${block.key}`
     return (
       <div data-schedule-menu className="relative mt-1">
-        <button
+        <button data-ui-size="icon"
           type="button"
           aria-label={`Acciones globales para ${block.name}`}
           aria-haspopup="menu"

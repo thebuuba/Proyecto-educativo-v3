@@ -1,0 +1,1516 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "55bb4b94917185c4ea335be738c8d2903692b57c",
+      "dirty": false,
+      "startedAt": "2026-10-13T15:35:08.795Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.13"
+    }
+  },
+  "authentication": "PASSWORD_LOGIN_REAL",
+  "controls": [
+    {
+      "id": "6b9d6dc6-1f25-47ea-90de-2fc7839eeef9",
+      "name": "Construimos un modelo de la célula animal y vegetal",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "de24f6d5-1eb8-4804-a1c5-59be80957c23",
+      "instrumentSnapshotId": "12b19a86-5ed2-4aa2-bac2-cf36391c52d5",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.10:fallback:science-cells-structures:0",
+            "title": "Identificación de estructuras celulares",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "science-cells-structures",
+            "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+            "descriptors": [
+              {
+                "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+                "levelId": "L4",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 267
+              },
+              {
+                "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+                "levelId": "L2",
+                "scoreUnits": 133
+              },
+              {
+                "text": "No permite identificar las estructuras celulares solicitadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.10:fallback:science-cells-representation:1",
+            "title": "Representación de ambos tipos celulares",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "science-cells-representation",
+            "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+            "descriptors": [
+              {
+                "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+                "levelId": "L4",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 267
+              },
+              {
+                "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+                "levelId": "L2",
+                "scoreUnits": 133
+              },
+              {
+                "text": "No presenta una representación reconocible del tipo celular solicitado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.10:fallback:science-cells-functions:2",
+            "title": "Funciones de los organelos",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "science-cells-functions",
+            "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+            "descriptors": [
+              {
+                "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+                "levelId": "L4",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+                "levelId": "L3",
+                "scoreUnits": 267
+              },
+              {
+                "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+                "levelId": "L2",
+                "scoreUnits": 133
+              },
+              {
+                "text": "No aporta relaciones entre los organelos y sus funciones.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.10:fallback:science-cells-comparison:3",
+            "title": "Comparación entre células",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "science-cells-comparison",
+            "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+            "descriptors": [
+              {
+                "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+                "levelId": "L4",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+                "levelId": "L3",
+                "scoreUnits": 267
+              },
+              {
+                "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+                "levelId": "L2",
+                "scoreUnits": 133
+              },
+              {
+                "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.10:fallback:science-cells-oral:4",
+            "title": "Explicación oral del modelo científico",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "science-cells-oral",
+            "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+            "descriptors": [
+              {
+                "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+                "levelId": "L4",
+                "scoreUnits": 400
+              },
+              {
+                "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+                "levelId": "L3",
+                "scoreUnits": 267
+              },
+              {
+                "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+                "levelId": "L2",
+                "scoreUnits": 133
+              },
+              {
+                "text": "No ofrece una explicación oral del trabajo.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "PROJECT",
+        "evidenceTypes": [
+          "PRODUCT",
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project",
+          "ranking": [],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=science",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=science-cells-2",
+            "Se requiere contexto estructurado y versión disponible."
+          ],
+          "mappingStatus": "NO_PUBLISHED_VERSION",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": null,
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.10",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": null,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "PROJECT",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para Construimos un modelo de la célula animal y vegetal",
+        "rubrica:points:0": "4",
+        "rubrica:points:1": "4",
+        "rubrica:points:2": "4",
+        "rubrica:points:3": "4",
+        "rubrica:points:4": "4",
+        "rubrica:criterion:0": "Identificación de estructuras celulares",
+        "rubrica:criterion:1": "Representación de ambos tipos celulares",
+        "rubrica:criterion:2": "Funciones de los organelos",
+        "rubrica:criterion:3": "Comparación entre células",
+        "rubrica:criterion:4": "Explicación oral del modelo científico",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+        "rubrica:description:1": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+        "rubrica:description:2": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+        "rubrica:description:3": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+        "rubrica:description:4": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.10:fallback:science-cells-structures:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.10:fallback:science-cells-representation:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.10:fallback:science-cells-functions:2",
+        "rubrica:criterion-id:3": "proposal:evaluation-2026.10:fallback:science-cells-comparison:3",
+        "rubrica:criterion-id:4": "proposal:evaluation-2026.10:fallback:science-cells-oral:4",
+        "rubrica:descriptor:0:1": "No permite identificar las estructuras celulares solicitadas.",
+        "rubrica:descriptor:0:2": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+        "rubrica:descriptor:0:3": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+        "rubrica:descriptor:0:4": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+        "rubrica:descriptor:1:1": "No presenta una representación reconocible del tipo celular solicitado.",
+        "rubrica:descriptor:1:2": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+        "rubrica:descriptor:1:3": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+        "rubrica:descriptor:1:4": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+        "rubrica:descriptor:2:1": "No aporta relaciones entre los organelos y sus funciones.",
+        "rubrica:descriptor:2:2": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+        "rubrica:descriptor:2:3": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+        "rubrica:descriptor:2:4": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+        "rubrica:descriptor:3:1": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+        "rubrica:descriptor:3:2": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+        "rubrica:descriptor:3:3": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+        "rubrica:descriptor:3:4": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+        "rubrica:descriptor:4:1": "No ofrece una explicación oral del trabajo.",
+        "rubrica:descriptor:4:2": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+        "rubrica:descriptor:4:3": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+        "rubrica:descriptor:4:4": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[400,400,400,400,400]",
+        "rubrica:meta:criteriaCount": "5",
+        "rubrica:meta:catalogVersion": "evaluation-2026.10",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "proyecto",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "5bda12c8-d866-44f8-b24b-5123a722c494",
+      "name": "Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Los estudiantes resolverán ejercicios prácticos relacionados con la Ley de Ohm, calculando el voltaje, la corriente y la resistencia eléctrica mediante la fórmula V = I × R. Posteriormente, analizarán situaciones cotidianas en las que se aplica esta ley y elaborarán un esquema de un circuito eléctrico sencillo, identificando sus componentes y explicando su funcionamiento</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "00f83118-30a1-4aa8-9704-84957401d81e",
+      "instrumentSnapshotId": "ec5a0301-85e8-4656-b890-4fd22879585e",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.10:fallback:science-ohm-data:0",
+            "title": "Datos e incógnitas",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "science-ohm-data",
+            "description": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+            "descriptors": [
+              {
+                "text": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.10:fallback:science-ohm-formula:1",
+            "title": "Aplicación y despeje de la Ley de Ohm",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "science-ohm-formula",
+            "description": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+            "descriptors": [
+              {
+                "text": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.10:fallback:science-ohm-calculation:2",
+            "title": "Cálculo y unidades eléctricas",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "science-ohm-calculation",
+            "description": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+            "descriptors": [
+              {
+                "text": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.10:fallback:science-ohm-interpretation:3",
+            "title": "Interpretación de situaciones cotidianas",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "science-ohm-interpretation",
+            "description": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+            "descriptors": [
+              {
+                "text": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.10:fallback:science-ohm-diagram:4",
+            "title": "Esquema y funcionamiento del circuito",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "science-ohm-diagram",
+            "description": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+            "descriptors": [
+              {
+                "text": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "EXERCISE_SET",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "math-process",
+          "ranking": [],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=science",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=science-ohm-6",
+            "Se requiere contexto estructurado y versión disponible."
+          ],
+          "mappingStatus": "NO_PUBLISHED_VERSION",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": null,
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.10",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": null,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "EXERCISE_SET",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para Aplicamos la Ley de Ohm en situaciones de la vida cotidiana",
+        "lista-ponderada:points:0": "3.47",
+        "lista-ponderada:points:1": "3.47",
+        "lista-ponderada:points:2": "3.47",
+        "lista-ponderada:points:3": "3.47",
+        "lista-ponderada:points:4": "3.47",
+        "lista-ponderada:weight:0": "20",
+        "lista-ponderada:weight:1": "20",
+        "lista-ponderada:weight:2": "20",
+        "lista-ponderada:weight:3": "20",
+        "lista-ponderada:weight:4": "20",
+        "lista-ponderada:criterion:0": "Datos e incógnitas",
+        "lista-ponderada:criterion:1": "Aplicación y despeje de la Ley de Ohm",
+        "lista-ponderada:criterion:2": "Cálculo y unidades eléctricas",
+        "lista-ponderada:criterion:3": "Interpretación de situaciones cotidianas",
+        "lista-ponderada:criterion:4": "Esquema y funcionamiento del circuito",
+        "lista-ponderada:indicator:0": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+        "lista-ponderada:indicator:1": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+        "lista-ponderada:indicator:2": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+        "lista-ponderada:indicator:3": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+        "lista-ponderada:indicator:4": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Identifica los datos conocidos y la magnitud que debe calcular: voltaje, corriente o resistencia.",
+        "lista-ponderada:description:1": "Selecciona V = I × R y despeja la magnitud solicitada antes de sustituir los datos.",
+        "lista-ponderada:description:2": "Realiza los cálculos y expresa los resultados en voltios, amperios u ohmios según la magnitud.",
+        "lista-ponderada:description:3": "Relaciona voltaje, corriente y resistencia para explicar las situaciones cotidianas analizadas.",
+        "lista-ponderada:description:4": "Elabora un esquema de circuito sencillo, identifica sus componentes y explica cómo se relacionan para su funcionamiento.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.10:fallback:science-ohm-data:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.10:fallback:science-ohm-formula:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.10:fallback:science-ohm-calculation:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.10:fallback:science-ohm-interpretation:3",
+        "lista-ponderada:criterion-id:4": "proposal:evaluation-2026.10:fallback:science-ohm-diagram:4",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[347,347,347,347,347]",
+        "lista-ponderada:meta:criteriaCount": "5",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.10"
+      },
+      "evaluationTechnique": "resolucion-problemas",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "07c2a29b-dd0b-4fa0-94bf-fc6f20a6e8b1",
+      "name": "Actividad de aprendizaje",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Los estudiantes redactarán una noticia sobre un acontecimiento de su comunidad, con titular, entrada y cuerpo. Explicarán qué ocurrió, a quién, dónde, cuándo y cómo, según la información disponible. Organizarán los datos y revisarán la claridad del escrito.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "5ed167c3-e3a8-4f5a-9c41-43ca516b468a",
+      "instrumentSnapshotId": "9ef4fe9d-7973-402b-b7d4-014d5c8a7ae0",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.11:fallback:news-essential:0",
+            "title": "Información esencial de la noticia",
+            "maxScore": 4.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "news-essential",
+            "description": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+            "descriptors": [
+              {
+                "text": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+                "levelId": "L4",
+                "scoreUnits": 434
+              },
+              {
+                "text": "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+                "levelId": "L3",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+                "levelId": "L2",
+                "scoreUnits": 145
+              },
+              {
+                "text": "No presenta un hecho noticioso reconocible.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.11:fallback:news-structure:1",
+            "title": "Titular, entrada y cuerpo",
+            "maxScore": 4.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "news-structure",
+            "description": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+            "descriptors": [
+              {
+                "text": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+                "levelId": "L4",
+                "scoreUnits": 434
+              },
+              {
+                "text": "Titular, entrada y cuerpo son reconocibles; una parte repite información.",
+                "levelId": "L3",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Presenta titular y datos, pero la entrada o el desarrollo quedan incompletos.",
+                "levelId": "L2",
+                "scoreUnits": 145
+              },
+              {
+                "text": "No organiza el escrito como una noticia.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.11:fallback:news-sequence:2",
+            "title": "Secuencia y cohesión",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "news-sequence",
+            "description": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+            "descriptors": [
+              {
+                "text": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+                "levelId": "L4",
+                "scoreUnits": 347
+              },
+              {
+                "text": "El orden permite seguir el hecho; un enlace temporal necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 231
+              },
+              {
+                "text": "Relaciona algunos datos, pero los saltos de orden dificultan seguir el hecho.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No se reconoce una secuencia entre los datos de la noticia.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.11:fallback:news-language:3",
+            "title": "Lenguaje periodístico",
+            "maxScore": 2.6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "news-language",
+            "description": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+            "descriptors": [
+              {
+                "text": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+                "levelId": "L4",
+                "scoreUnits": 260
+              },
+              {
+                "text": "El vocabulario y los verbos comunican el hecho con una imprecisión menor.",
+                "levelId": "L3",
+                "scoreUnits": 173
+              },
+              {
+                "text": "El vocabulario o los tiempos verbales vuelven ambigua parte de la información.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "El lenguaje no permite comprender el hecho informado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 260,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.11:fallback:news-revision:4",
+            "title": "Revisión de la versión escrita",
+            "maxScore": 2.6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "news-revision",
+            "description": "Revisa puntuación, ortografía y claridad antes de presentar la versión final.",
+            "descriptors": [
+              {
+                "text": "Revisa puntuación, ortografía y claridad antes de presentar la versión final.",
+                "levelId": "L4",
+                "scoreUnits": 260
+              },
+              {
+                "text": "La revisión corrige la mayoría de los errores que afectan la lectura.",
+                "levelId": "L3",
+                "scoreUnits": 173
+              },
+              {
+                "text": "Corrige algunos errores, pero conserva problemas de puntuación u ortografía que dificultan pasajes.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "La versión presentada no permite leer una noticia comprensible.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 260,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "NEWS_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project",
+          "ranking": [],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "Se requiere contexto estructurado y versión disponible."
+          ],
+          "mappingStatus": "NO_PUBLISHED_VERSION",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": null,
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.11",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": null,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "NEWS_WRITING",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para Actividad de aprendizaje",
+        "rubrica:points:0": "4.34",
+        "rubrica:points:1": "4.34",
+        "rubrica:points:2": "3.47",
+        "rubrica:points:3": "2.6",
+        "rubrica:points:4": "2.6",
+        "rubrica:criterion:0": "Información esencial de la noticia",
+        "rubrica:criterion:1": "Titular, entrada y cuerpo",
+        "rubrica:criterion:2": "Secuencia y cohesión",
+        "rubrica:criterion:3": "Lenguaje periodístico",
+        "rubrica:criterion:4": "Revisión de la versión escrita",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+        "rubrica:description:1": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+        "rubrica:description:2": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+        "rubrica:description:3": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+        "rubrica:description:4": "Revisa puntuación, ortografía y claridad antes de presentar la versión final.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.11:fallback:news-essential:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.11:fallback:news-structure:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.11:fallback:news-sequence:2",
+        "rubrica:criterion-id:3": "proposal:evaluation-2026.11:fallback:news-language:3",
+        "rubrica:criterion-id:4": "proposal:evaluation-2026.11:fallback:news-revision:4",
+        "rubrica:descriptor:0:1": "No presenta un hecho noticioso reconocible.",
+        "rubrica:descriptor:0:2": "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+        "rubrica:descriptor:0:3": "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+        "rubrica:descriptor:0:4": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+        "rubrica:descriptor:1:1": "No organiza el escrito como una noticia.",
+        "rubrica:descriptor:1:2": "Presenta titular y datos, pero la entrada o el desarrollo quedan incompletos.",
+        "rubrica:descriptor:1:3": "Titular, entrada y cuerpo son reconocibles; una parte repite información.",
+        "rubrica:descriptor:1:4": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+        "rubrica:descriptor:2:1": "No se reconoce una secuencia entre los datos de la noticia.",
+        "rubrica:descriptor:2:2": "Relaciona algunos datos, pero los saltos de orden dificultan seguir el hecho.",
+        "rubrica:descriptor:2:3": "El orden permite seguir el hecho; un enlace temporal necesita precisión.",
+        "rubrica:descriptor:2:4": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+        "rubrica:descriptor:3:1": "El lenguaje no permite comprender el hecho informado.",
+        "rubrica:descriptor:3:2": "El vocabulario o los tiempos verbales vuelven ambigua parte de la información.",
+        "rubrica:descriptor:3:3": "El vocabulario y los verbos comunican el hecho con una imprecisión menor.",
+        "rubrica:descriptor:3:4": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+        "rubrica:descriptor:4:1": "La versión presentada no permite leer una noticia comprensible.",
+        "rubrica:descriptor:4:2": "Corrige algunos errores, pero conserva problemas de puntuación u ortografía que dificultan pasajes.",
+        "rubrica:descriptor:4:3": "La revisión corrige la mayoría de los errores que afectan la lectura.",
+        "rubrica:descriptor:4:4": "Revisa puntuación, ortografía y claridad antes de presentar la versión final.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[434,434,347,260,260]",
+        "rubrica:meta:criteriaCount": "5",
+        "rubrica:meta:catalogVersion": "evaluation-2026.11",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "cd6709ab-9a60-4fbd-8904-af15ba6f8f37",
+      "name": "Guía turística de dos lugares · QA local",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Los estudiantes elaborarán una guía turística de dos lugares de su comunidad, describiendo sus características y atractivos. Organizarán portada, información y cierre e incluirán un mapa o fotografías como alternativas para orientar al visitante. Revisarán la claridad del texto.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "e19484cd-1ebb-40db-8f8c-24f5709513ab",
+      "instrumentSnapshotId": "0d4a4af0-19b2-4594-971f-d2cefe099d55",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-content:0",
+            "title": "Información de dos lugares solicitados",
+            "maxScore": 3.77,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-content",
+            "description": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+            "descriptors": [
+              {
+                "text": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "levelId": "L3",
+                "scoreUnits": 377
+              },
+              {
+                "text": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "levelId": "L2",
+                "scoreUnits": 189
+              },
+              {
+                "text": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 377,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-structure:1",
+            "title": "Estructura de la guía turística",
+            "maxScore": 3.77,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-structure",
+            "description": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+            "descriptors": [
+              {
+                "text": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+                "levelId": "L3",
+                "scoreUnits": 377
+              },
+              {
+                "text": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+                "levelId": "L2",
+                "scoreUnits": 189
+              },
+              {
+                "text": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 377,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-description:2",
+            "title": "Descripción y orientación al visitante",
+            "maxScore": 3.02,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-description",
+            "description": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+            "descriptors": [
+              {
+                "text": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+                "levelId": "L3",
+                "scoreUnits": 302
+              },
+              {
+                "text": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+                "levelId": "L2",
+                "scoreUnits": 151
+              },
+              {
+                "text": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 302,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-organization:3",
+            "title": "Organización y claridad",
+            "maxScore": 2.27,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-organization",
+            "description": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+            "descriptors": [
+              {
+                "text": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+                "levelId": "L3",
+                "scoreUnits": 227
+              },
+              {
+                "text": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+                "levelId": "L2",
+                "scoreUnits": 114
+              },
+              {
+                "text": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 227,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-revision:4",
+            "title": "Revisión de la versión final",
+            "maxScore": 2.26,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-revision",
+            "description": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+            "descriptors": [
+              {
+                "text": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+                "levelId": "L3",
+                "scoreUnits": 226
+              },
+              {
+                "text": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+                "levelId": "L2",
+                "scoreUnits": 113
+              },
+              {
+                "text": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 226,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.12:fallback:guide-visual:5",
+            "title": "Información visual de los lugares",
+            "maxScore": 2.26,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-visual",
+            "description": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+            "descriptors": [
+              {
+                "text": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+                "levelId": "L3",
+                "scoreUnits": 226
+              },
+              {
+                "text": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+                "levelId": "L2",
+                "scoreUnits": 113
+              },
+              {
+                "text": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 226,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "Se requiere contexto estructurado y versión disponible."
+          ],
+          "mappingStatus": "NO_PUBLISHED_VERSION",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": null,
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.12",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": null,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "TOURIST_GUIDE_CREATION",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para Guía turística de dos lugares · QA local",
+        "lista-ponderada:points:0": "3.77",
+        "lista-ponderada:points:1": "3.77",
+        "lista-ponderada:points:2": "3.02",
+        "lista-ponderada:points:3": "2.27",
+        "lista-ponderada:points:4": "2.26",
+        "lista-ponderada:points:5": "2.26",
+        "lista-ponderada:weight:0": "21.73",
+        "lista-ponderada:weight:1": "21.73",
+        "lista-ponderada:weight:2": "17.41",
+        "lista-ponderada:weight:3": "13.08",
+        "lista-ponderada:weight:4": "13.03",
+        "lista-ponderada:weight:5": "13.02",
+        "lista-ponderada:criterion:0": "Información de dos lugares solicitados",
+        "lista-ponderada:criterion:1": "Estructura de la guía turística",
+        "lista-ponderada:criterion:2": "Descripción y orientación al visitante",
+        "lista-ponderada:criterion:3": "Organización y claridad",
+        "lista-ponderada:criterion:4": "Revisión de la versión final",
+        "lista-ponderada:criterion:5": "Información visual de los lugares",
+        "lista-ponderada:indicator:0": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+        "lista-ponderada:indicator:1": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+        "lista-ponderada:indicator:2": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+        "lista-ponderada:indicator:3": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+        "lista-ponderada:indicator:4": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+        "lista-ponderada:indicator:5": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Incluye información pertinente y veraz sobre dos lugares solicitados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+        "lista-ponderada:description:1": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+        "lista-ponderada:description:2": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+        "lista-ponderada:description:3": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+        "lista-ponderada:description:4": "Revisa la claridad, la puntuación, la ortografía y la presentación antes de publicar la guía física o digital. Parcial (50%): Corrige algunos errores, pero conserva problemas que dificultan datos de la guía.",
+        "lista-ponderada:description:5": "Relaciona el recurso visual elegido entre las alternativas solicitadas con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.12:fallback:guide-content:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.12:fallback:guide-structure:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.12:fallback:guide-description:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.12:fallback:guide-organization:3",
+        "lista-ponderada:criterion-id:4": "proposal:evaluation-2026.12:fallback:guide-revision:4",
+        "lista-ponderada:criterion-id:5": "proposal:evaluation-2026.12:fallback:guide-visual:5",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[377,377,302,227,226,226]",
+        "lista-ponderada:meta:criteriaCount": "6",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.12"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "174c32cd-3d7e-49a4-aaa3-7e43c1863170",
+      "name": "Informe de lectura · QA personajes",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Los estudiantes leerán un cuento y redactarán un informe de lectura con introducción, resumen de las ideas principales, análisis de los personajes y conclusión personal. Relacionarán sus interpretaciones con ejemplos del texto leído y cuidarán la claridad de la versión final.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "4c373af7-e00c-4427-a9f2-c2b8ead9c516",
+      "instrumentSnapshotId": "90bc5887-75e4-4649-a88f-4d514fd66c56",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-summary:0",
+            "title": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+            "maxScore": 3.77,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-summary",
+            "description": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+            "descriptors": [
+              {
+                "text": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+                "levelId": "L4",
+                "scoreUnits": 377
+              },
+              {
+                "text": "El resumen conserva las ideas principales; omite un detalle secundario.",
+                "levelId": "L3",
+                "scoreUnits": 251
+              },
+              {
+                "text": "Recupera hechos o ideas aislados, pero omite relaciones necesarias para comprender el texto.",
+                "levelId": "L2",
+                "scoreUnits": 126
+              },
+              {
+                "text": "No presenta una síntesis reconocible del texto leído.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 377,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-analysis:1",
+            "title": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+            "maxScore": 3.77,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-analysis",
+            "description": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+            "descriptors": [
+              {
+                "text": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+                "levelId": "L4",
+                "scoreUnits": 377
+              },
+              {
+                "text": "Relaciona acciones y motivaciones de los personajes con ejemplos del texto; una relación necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 251
+              },
+              {
+                "text": "Describe personajes o menciona sus acciones sin relacionarlos con sus motivaciones ni con ejemplos del texto.",
+                "levelId": "L2",
+                "scoreUnits": 126
+              },
+              {
+                "text": "No aporta una interpretación sobre las acciones o motivaciones de los personajes.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 377,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-structure:2",
+            "title": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+            "maxScore": 3.02,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-structure",
+            "description": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+            "descriptors": [
+              {
+                "text": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+                "levelId": "L4",
+                "scoreUnits": 302
+              },
+              {
+                "text": "Las partes del informe son reconocibles; una sección necesita desarrollo.",
+                "levelId": "L3",
+                "scoreUnits": 201
+              },
+              {
+                "text": "El resumen o análisis se presentan, pero faltan partes necesarias para relacionarlos.",
+                "levelId": "L2",
+                "scoreUnits": 101
+              },
+              {
+                "text": "No organiza un informe de lectura reconocible.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 302,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-coherence:3",
+            "title": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+            "maxScore": 2.27,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-coherence",
+            "description": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+            "descriptors": [
+              {
+                "text": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+                "levelId": "L4",
+                "scoreUnits": 227
+              },
+              {
+                "text": "La relación entre resumen y análisis se comprende; un enlace necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 151
+              },
+              {
+                "text": "Presenta ideas aisladas y los conectores no aclaran su relación.",
+                "levelId": "L2",
+                "scoreUnits": 76
+              },
+              {
+                "text": "No se reconoce una relación comprensible entre las ideas del informe.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 227,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-revision:4",
+            "title": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+            "maxScore": 2.26,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-revision",
+            "description": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+            "descriptors": [
+              {
+                "text": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+                "levelId": "L4",
+                "scoreUnits": 226
+              },
+              {
+                "text": "La versión final permite comprender el informe, con errores menores.",
+                "levelId": "L3",
+                "scoreUnits": 151
+              },
+              {
+                "text": "Conserva problemas de claridad, puntuación u ortografía que dificultan algunos pasajes.",
+                "levelId": "L2",
+                "scoreUnits": 75
+              },
+              {
+                "text": "La versión final no permite comprender el contenido del informe.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 226,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.13:fallback:report-conclusion:5",
+            "title": "Formula una conclusión o interpretación personal coherente con el texto y la sustenta mediante el análisis realizado.",
+            "maxScore": 2.26,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "report-conclusion",
+            "description": "Formula una conclusión o interpretación personal coherente con el texto y la sustenta mediante el análisis realizado.",
+            "descriptors": [
+              {
+                "text": "La conclusión se apoya en ideas y ejemplos del texto leído.",
+                "levelId": "L4",
+                "scoreUnits": 226
+              },
+              {
+                "text": "La conclusión retoma la interpretación; una relación con el análisis necesita desarrollo.",
+                "levelId": "L3",
+                "scoreUnits": 151
+              },
+              {
+                "text": "Propone una opinión sobre el texto sin relacionarla con los ejemplos analizados.",
+                "levelId": "L2",
+                "scoreUnits": 75
+              },
+              {
+                "text": "No presenta una conclusión relacionada con el texto leído.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 226,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "Se requiere contexto estructurado y versión disponible."
+          ],
+          "mappingStatus": "NO_PUBLISHED_VERSION",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": null,
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.13",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": null,
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "READING_REPORT_WRITING",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para Informe de lectura · QA personajes",
+        "escala:points:0": "3.77",
+        "escala:points:1": "3.77",
+        "escala:points:2": "3.02",
+        "escala:points:3": "2.27",
+        "escala:points:4": "2.26",
+        "escala:points:5": "2.26",
+        "escala:criterion:0": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+        "escala:criterion:1": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+        "escala:criterion:2": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+        "escala:criterion:3": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+        "escala:criterion:4": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+        "escala:criterion:5": "Formula una conclusión o interpretación personal coherente con el texto y la sustenta mediante el análisis realizado.",
+        "escala:level-name:1": "Inicial",
+        "escala:level-name:2": "En proceso",
+        "escala:level-name:3": "Logrado",
+        "escala:level-name:4": "Destacado",
+        "escala:description:0": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+        "escala:description:1": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+        "escala:description:2": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+        "escala:description:3": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+        "escala:description:4": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+        "escala:description:5": "Formula una conclusión o interpretación personal coherente con el texto y la sustenta mediante el análisis realizado.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.13:fallback:report-summary:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.13:fallback:report-analysis:1",
+        "escala:criterion-id:2": "proposal:evaluation-2026.13:fallback:report-structure:2",
+        "escala:criterion-id:3": "proposal:evaluation-2026.13:fallback:report-coherence:3",
+        "escala:criterion-id:4": "proposal:evaluation-2026.13:fallback:report-revision:4",
+        "escala:criterion-id:5": "proposal:evaluation-2026.13:fallback:report-conclusion:5",
+        "escala:descriptor:0:1": "No presenta una síntesis reconocible del texto leído.",
+        "escala:descriptor:0:2": "Recupera hechos o ideas aislados, pero omite relaciones necesarias para comprender el texto.",
+        "escala:descriptor:0:3": "El resumen conserva las ideas principales; omite un detalle secundario.",
+        "escala:descriptor:0:4": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+        "escala:descriptor:1:1": "No aporta una interpretación sobre las acciones o motivaciones de los personajes.",
+        "escala:descriptor:1:2": "Describe personajes o menciona sus acciones sin relacionarlos con sus motivaciones ni con ejemplos del texto.",
+        "escala:descriptor:1:3": "Relaciona acciones y motivaciones de los personajes con ejemplos del texto; una relación necesita precisión.",
+        "escala:descriptor:1:4": "Interpreta las acciones, motivaciones y características de los personajes y sustenta su explicación con ejemplos pertinentes del texto leído.",
+        "escala:descriptor:2:1": "No organiza un informe de lectura reconocible.",
+        "escala:descriptor:2:2": "El resumen o análisis se presentan, pero faltan partes necesarias para relacionarlos.",
+        "escala:descriptor:2:3": "Las partes del informe son reconocibles; una sección necesita desarrollo.",
+        "escala:descriptor:2:4": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+        "escala:descriptor:3:1": "No se reconoce una relación comprensible entre las ideas del informe.",
+        "escala:descriptor:3:2": "Presenta ideas aisladas y los conectores no aclaran su relación.",
+        "escala:descriptor:3:3": "La relación entre resumen y análisis se comprende; un enlace necesita precisión.",
+        "escala:descriptor:3:4": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+        "escala:descriptor:4:1": "La versión final no permite comprender el contenido del informe.",
+        "escala:descriptor:4:2": "Conserva problemas de claridad, puntuación u ortografía que dificultan algunos pasajes.",
+        "escala:descriptor:4:3": "La versión final permite comprender el informe, con errores menores.",
+        "escala:descriptor:4:4": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+        "escala:descriptor:5:1": "No presenta una conclusión relacionada con el texto leído.",
+        "escala:descriptor:5:2": "Propone una opinión sobre el texto sin relacionarla con los ejemplos analizados.",
+        "escala:descriptor:5:3": "La conclusión retoma la interpretación; una relación con el análisis necesita desarrollo.",
+        "escala:descriptor:5:4": "La conclusión se apoya en ideas y ejemplos del texto leído.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[377,377,302,227,226,226]",
+        "escala:meta:criteriaCount": "6",
+        "escala:meta:catalogVersion": "evaluation-2026.13",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

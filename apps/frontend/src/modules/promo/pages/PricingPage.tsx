@@ -1,4 +1,5 @@
-﻿import { useState } from 'react'
+import { billingPreviewEnabled } from '@/config/billing-preview'
+import { useState } from 'react'
 import { ArrowRight, Check, Info, Minus } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { PromoLayout } from '@/modules/promo/components/PromoLayout'
@@ -63,11 +64,11 @@ export function PricingPage() {
                 to={
                   plan.purchase === 'contact'
                     ? '/contacto?motivo=institucional'
-                    : `/contratar?plan=${plan.id}&periodo=${period}`
+                    : billingPreviewEnabled ? `/contratar?plan=${plan.id}&periodo=${period}` : '/registro'
                 }
                 className={`mt-6 flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold ${plan.featured ? 'bg-primary text-primary-foreground' : 'border border-border text-foreground hover:bg-muted'}`}
               >
-                {plan.purchase === 'contact' ? 'Contactar' : 'Ver propuesta'}{' '}
+                {plan.purchase === 'contact' ? 'Contactar' : billingPreviewEnabled ? 'Ver propuesta' : 'Crear cuenta'}{' '}
                 <ArrowRight size={16} />
               </Link>
               <ul className="mt-7 space-y-3 border-t border-border pt-6">

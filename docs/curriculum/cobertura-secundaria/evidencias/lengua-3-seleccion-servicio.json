@@ -1,0 +1,1732 @@
+{
+  "verifiedAt": "2026-10-14T02:40:16.153Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "0cb0a96cc2fb74a876ad137d01c6431de693b9c8",
+      "dirty": true,
+      "startedAt": "2026-10-14T02:39:24.057Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.27"
+    }
+  },
+  "requests": 9,
+  "results": [
+    {
+      "purpose": "Se valorará la calidad en varias dimensiones.",
+      "format": "rubrica",
+      "interpretation": {
+        "suggestedActivityType": "ANALYSIS",
+        "activityType": "ANALYSIS",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON"
+        ],
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "170e292f-5990-583e-b30d-85502da48c63",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Comprensión escrita (leer)\nRealización de inferencias basadas en las relaciones locales que existen entre las ideas\nde la entrevista que lee; inferencia, a partir del contexto del significado de palabras\ndesconocidas contenidas en la transcripción; utilización del diccionario, en versión\nfísica y/o digital, para buscar la definición de las palabras que lee cuyo significado no\nha podido inferir. Realización de las inferencias necesarias para comprender el sentido\nglobal que lee; tomando en cuenta la estructura textual, la intención comunicativa, los\ntemas tratados a través de las diversas preguntas y respuestas.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa en la que participa como entrevistador/a;\ninvestigación y selección de los personajes relevantes de la comunidad para su\nrealización, según sus valores, aportes y transcendencia; delimitación del alcance de\nla entrevista: público, temas y contenido; elaboración de las preguntas, ajustándose a\nla intención comunicativa y al orden lógico con que se presentan las ideas. Realización\nde las preguntas, tomando en cuenta la estructura textual; desarrollo de estrategias\nde selección, registro y organización de la información necesaria para estructurar las\npreguntas en la que participa como entrevistador/a.\nSelección del vocabulario temático y del registro a la situación de comunicación;\nincorporación de recursos no verbales (gestos, entonación, postura física, tono de voz)\npara apoyar el contenido lingüístico adecuándolos a la expresión verbal.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "preguntas, ajustándose a la intención comunicativa y al orden lógico con que se\npresentan las ideas al/a la entrevistado/a; realización de las preguntas tomando en\ncuenta la estructura textual.\nDesarrollo de estrategias de selección, registro y organización de la información\nnecesaria para estructurar las preguntas en las que participa como entrevistador/a,\nselección del vocabulario temático y del registro adecuado a la situación de\ncomunicación en la que tiene lugar la entrevista; utilización de formas verbales\nen primera persona y en tono confesional (yo creo, yo considero, yo diría que, he\nintentado) en la entrevista.\nElaboración de borradores ajustándose a la intención, al/a la entrevistado/a y a la\nestructura de la entrevista. Revisión y corrección de los borradores con ayuda del/de\nla docente y de los compañeros y las compañeras.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 83,
+                "printedPage": "82"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Comprensión oral (escuchar)\nEscucha atenta de la entrevista realizada a personas destacadas de la comunidad;\nanticipación del contenido a partir de la introducción; identificación de la intención\ncomunicativa que escucha; presentación (saludo, del entrevistado, del tema y el\nmotivo), cuerpo (preguntas y respuestas), cierre (resumen de lo tratado y/o valoración\npersonal), para mayor comprensión.\nRealización de inferencias basadas en las relaciones locales que existen entre las ideas\nque escucha, haciendo uso de las oraciones interrogativas y enunciativas, el tiempo\nverbal y el tono confesional que es propio de este tipo de texto; realización de las\ninferencias necesarias para comprender el sentido de la lectura que escucha.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "224222b7-69db-52aa-9a0f-7a33ef8da209",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa de la entrevista en la que participa como\nentrevistador/a; investigación y selección de los personajes relevantes de la comunidad\npara su realización, según los valores, aportes y transcendencia; delimitación del alcance\nde la entrevista: público, temas y contenido. Elaboración de las",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.125
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.27",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-purpose:0",
+            "templateId": "len-3-entrevista-purpose",
+            "title": "Propósito y alcance de la entrevista",
+            "description": "Relaciona el tema y el destinatario con el propósito de la entrevista.",
+            "maxScore": 5.34,
+            "maxScoreUnits": 534,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona el tema y el destinatario con el propósito de la entrevista.",
+              "El tema responde al propósito; queda una pregunta cuya pertinencia necesita aclararse.",
+              "Se nombra un tema sin explicar qué se busca conocer del entrevistado.",
+              "Se atribuye a la entrevista un propósito incompatible con las preguntas.",
+              "No hay evidencia del propósito ni del tema de la entrevista."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona el tema y el destinatario con el propósito de la entrevista.",
+                "scoreUnits": 534
+              },
+              {
+                "levelId": "L3",
+                "text": "El tema responde al propósito; queda una pregunta cuya pertinencia necesita aclararse.",
+                "scoreUnits": 356
+              },
+              {
+                "levelId": "L2",
+                "text": "Se nombra un tema sin explicar qué se busca conocer del entrevistado.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L1",
+                "text": "No hay evidencia del propósito ni del tema de la entrevista.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-questions:1",
+            "templateId": "len-3-entrevista-questions",
+            "title": "Preguntas y respuestas de la entrevista",
+            "description": "Explica cómo las preguntas y respuestas desarrollan el tema y organizan la presentación, el cuerpo y el cierre de la entrevista.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo las preguntas y respuestas desarrollan el tema y organizan la presentación, el cuerpo y el cierre de la entrevista.",
+              "Las preguntas y respuestas desarrollan el tema; una transición necesita enlazarse.",
+              "Se enumeran preguntas o respuestas aisladas sin explicar su relación.",
+              "Una pregunta se interpreta a partir de una respuesta ajena o contradictoria.",
+              "No se relacionan preguntas y respuestas con el tema de la entrevista."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica cómo las preguntas y respuestas desarrollan el tema y organizan la presentación, el cuerpo y el cierre de la entrevista.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L3",
+                "text": "Las preguntas y respuestas desarrollan el tema; una transición necesita enlazarse.",
+                "scoreUnits": 445
+              },
+              {
+                "levelId": "L2",
+                "text": "Se enumeran preguntas o respuestas aisladas sin explicar su relación.",
+                "scoreUnits": 222
+              },
+              {
+                "levelId": "L1",
+                "text": "No se relacionan preguntas y respuestas con el tema de la entrevista.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-roles:2",
+            "templateId": "len-3-entrevista-roles",
+            "title": "Roles de los participantes",
+            "description": "Identifica los roles del entrevistador y del entrevistado a partir de sus intervenciones.",
+            "maxScore": 5.34,
+            "maxScoreUnits": 534,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los roles del entrevistador y del entrevistado a partir de sus intervenciones.",
+              "Se distinguen los roles; una intervención necesita atribuirse con mayor claridad.",
+              "Se nombran participantes sin relacionarlos con sus intervenciones.",
+              "Se atribuye al entrevistador la respuesta del entrevistado o se intercambian sus roles.",
+              "No se identifican los participantes a partir de sus intervenciones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica los roles del entrevistador y del entrevistado a partir de sus intervenciones.",
+                "scoreUnits": 534
+              },
+              {
+                "levelId": "L3",
+                "text": "Se distinguen los roles; una intervención necesita atribuirse con mayor claridad.",
+                "scoreUnits": 356
+              },
+              {
+                "levelId": "L2",
+                "text": "Se nombran participantes sin relacionarlos con sus intervenciones.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L1",
+                "text": "No se identifican los participantes a partir de sus intervenciones.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-3-entrevista",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_rubrica",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "170e292f-5990-583e-b30d-85502da48c63",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "224222b7-69db-52aa-9a0f-7a33ef8da209",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "06a97526-2a8b-5941-8db6-df676660ac14",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bfb77540-cff5-5bf8-8a5d-4b2e1efb329d",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d1971335-145d-5d95-8410-33f13c7a66b8",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dee20651-5c17-5125-8726-70cfaf27a2bb",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "purpose": "Se comprobará la presencia de cada evidencia con sí o no.",
+      "format": "lista-cotejo",
+      "interpretation": {
+        "suggestedActivityType": "ANALYSIS",
+        "activityType": "ANALYSIS",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON"
+        ],
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "170e292f-5990-583e-b30d-85502da48c63",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Comprensión escrita (leer)\nRealización de inferencias basadas en las relaciones locales que existen entre las ideas\nde la entrevista que lee; inferencia, a partir del contexto del significado de palabras\ndesconocidas contenidas en la transcripción; utilización del diccionario, en versión\nfísica y/o digital, para buscar la definición de las palabras que lee cuyo significado no\nha podido inferir. Realización de las inferencias necesarias para comprender el sentido\nglobal que lee; tomando en cuenta la estructura textual, la intención comunicativa, los\ntemas tratados a través de las diversas preguntas y respuestas.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa en la que participa como entrevistador/a;\ninvestigación y selección de los personajes relevantes de la comunidad para su\nrealización, según sus valores, aportes y transcendencia; delimitación del alcance de\nla entrevista: público, temas y contenido; elaboración de las preguntas, ajustándose a\nla intención comunicativa y al orden lógico con que se presentan las ideas. Realización\nde las preguntas, tomando en cuenta la estructura textual; desarrollo de estrategias\nde selección, registro y organización de la información necesaria para estructurar las\npreguntas en la que participa como entrevistador/a.\nSelección del vocabulario temático y del registro a la situación de comunicación;\nincorporación de recursos no verbales (gestos, entonación, postura física, tono de voz)\npara apoyar el contenido lingüístico adecuándolos a la expresión verbal.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "preguntas, ajustándose a la intención comunicativa y al orden lógico con que se\npresentan las ideas al/a la entrevistado/a; realización de las preguntas tomando en\ncuenta la estructura textual.\nDesarrollo de estrategias de selección, registro y organización de la información\nnecesaria para estructurar las preguntas en las que participa como entrevistador/a,\nselección del vocabulario temático y del registro adecuado a la situación de\ncomunicación en la que tiene lugar la entrevista; utilización de formas verbales\nen primera persona y en tono confesional (yo creo, yo considero, yo diría que, he\nintentado) en la entrevista.\nElaboración de borradores ajustándose a la intención, al/a la entrevistado/a y a la\nestructura de la entrevista. Revisión y corrección de los borradores con ayuda del/de\nla docente y de los compañeros y las compañeras.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 83,
+                "printedPage": "82"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Comprensión oral (escuchar)\nEscucha atenta de la entrevista realizada a personas destacadas de la comunidad;\nanticipación del contenido a partir de la introducción; identificación de la intención\ncomunicativa que escucha; presentación (saludo, del entrevistado, del tema y el\nmotivo), cuerpo (preguntas y respuestas), cierre (resumen de lo tratado y/o valoración\npersonal), para mayor comprensión.\nRealización de inferencias basadas en las relaciones locales que existen entre las ideas\nque escucha, haciendo uso de las oraciones interrogativas y enunciativas, el tiempo\nverbal y el tono confesional que es propio de este tipo de texto; realización de las\ninferencias necesarias para comprender el sentido de la lectura que escucha.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "224222b7-69db-52aa-9a0f-7a33ef8da209",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa de la entrevista en la que participa como\nentrevistador/a; investigación y selección de los personajes relevantes de la comunidad\npara su realización, según los valores, aportes y transcendencia; delimitación del alcance\nde la entrevista: público, temas y contenido. Elaboración de las",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.125
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.27",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-purpose:0",
+            "templateId": "len-3-entrevista-purpose",
+            "title": "Relaciona el tema y el destinatario con el propósito de la entrevista.",
+            "description": "Relaciona el tema y el destinatario con el propósito de la entrevista.",
+            "maxScore": 5.34,
+            "maxScoreUnits": 534,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona el tema y el destinatario con el propósito de la entrevista.",
+              "El tema responde al propósito; queda una pregunta cuya pertinencia necesita aclararse.",
+              "Se nombra un tema sin explicar qué se busca conocer del entrevistado.",
+              "Se atribuye a la entrevista un propósito incompatible con las preguntas.",
+              "No hay evidencia del propósito ni del tema de la entrevista."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-questions:1",
+            "templateId": "len-3-entrevista-questions",
+            "title": "Explica cómo las preguntas y respuestas desarrollan el tema y organizan la presentación, el cuerpo y el cierre de la entrevista.",
+            "description": "Explica cómo las preguntas y respuestas desarrollan el tema y organizan la presentación, el cuerpo y el cierre de la entrevista.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo las preguntas y respuestas desarrollan el tema y organizan la presentación, el cuerpo y el cierre de la entrevista.",
+              "Las preguntas y respuestas desarrollan el tema; una transición necesita enlazarse.",
+              "Se enumeran preguntas o respuestas aisladas sin explicar su relación.",
+              "Una pregunta se interpreta a partir de una respuesta ajena o contradictoria.",
+              "No se relacionan preguntas y respuestas con el tema de la entrevista."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-roles:2",
+            "templateId": "len-3-entrevista-roles",
+            "title": "Identifica los roles del entrevistador y del entrevistado a partir de sus intervenciones.",
+            "description": "Identifica los roles del entrevistador y del entrevistado a partir de sus intervenciones.",
+            "maxScore": 5.34,
+            "maxScoreUnits": 534,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los roles del entrevistador y del entrevistado a partir de sus intervenciones.",
+              "Se distinguen los roles; una intervención necesita atribuirse con mayor claridad.",
+              "Se nombran participantes sin relacionarlos con sus intervenciones.",
+              "Se atribuye al entrevistador la respuesta del entrevistado o se intercambian sus roles.",
+              "No se identifican los participantes a partir de sus intervenciones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-3-entrevista",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_lista-cotejo",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "170e292f-5990-583e-b30d-85502da48c63",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "224222b7-69db-52aa-9a0f-7a33ef8da209",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4a0015fc-92e8-5376-ba65-4926a10a10ec",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "06a97526-2a8b-5941-8db6-df676660ac14",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bfb77540-cff5-5bf8-8a5d-4b2e1efb329d",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d1971335-145d-5d95-8410-33f13c7a66b8",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dee20651-5c17-5125-8726-70cfaf27a2bb",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "purpose": "Se registrará la regularidad con que se cumplen los indicadores.",
+      "format": "escala",
+      "interpretation": {
+        "suggestedActivityType": "ANALYSIS",
+        "activityType": "ANALYSIS",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON"
+        ],
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "escala",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "170e292f-5990-583e-b30d-85502da48c63",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Comprensión escrita (leer)\nRealización de inferencias basadas en las relaciones locales que existen entre las ideas\nde la entrevista que lee; inferencia, a partir del contexto del significado de palabras\ndesconocidas contenidas en la transcripción; utilización del diccionario, en versión\nfísica y/o digital, para buscar la definición de las palabras que lee cuyo significado no\nha podido inferir. Realización de las inferencias necesarias para comprender el sentido\nglobal que lee; tomando en cuenta la estructura textual, la intención comunicativa, los\ntemas tratados a través de las diversas preguntas y respuestas.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa en la que participa como entrevistador/a;\ninvestigación y selección de los personajes relevantes de la comunidad para su\nrealización, según sus valores, aportes y transcendencia; delimitación del alcance de\nla entrevista: público, temas y contenido; elaboración de las preguntas, ajustándose a\nla intención comunicativa y al orden lógico con que se presentan las ideas. Realización\nde las preguntas, tomando en cuenta la estructura textual; desarrollo de estrategias\nde selección, registro y organización de la información necesaria para estructurar las\npreguntas en la que participa como entrevistador/a.\nSelección del vocabulario temático y del registro a la situación de comunicación;\nincorporación de recursos no verbales (gestos, entonación, postura física, tono de voz)\npara apoyar el contenido lingüístico adecuándolos a la expresión verbal.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "preguntas, ajustándose a la intención comunicativa y al orden lógico con que se\npresentan las ideas al/a la entrevistado/a; realización de las preguntas tomando en\ncuenta la estructura textual.\nDesarrollo de estrategias de selección, registro y organización de la información\nnecesaria para estructurar las preguntas en las que participa como entrevistador/a,\nselección del vocabulario temático y del registro adecuado a la situación de\ncomunicación en la que tiene lugar la entrevista; utilización de formas verbales\nen primera persona y en tono confesional (yo creo, yo considero, yo diría que, he\nintentado) en la entrevista.\nElaboración de borradores ajustándose a la intención, al/a la entrevistado/a y a la\nestructura de la entrevista. Revisión y corrección de los borradores con ayuda del/de\nla docente y de los compañeros y las compañeras.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 83,
+                "printedPage": "82"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Comprensión oral (escuchar)\nEscucha atenta de la entrevista realizada a personas destacadas de la comunidad;\nanticipación del contenido a partir de la introducción; identificación de la intención\ncomunicativa que escucha; presentación (saludo, del entrevistado, del tema y el\nmotivo), cuerpo (preguntas y respuestas), cierre (resumen de lo tratado y/o valoración\npersonal), para mayor comprensión.\nRealización de inferencias basadas en las relaciones locales que existen entre las ideas\nque escucha, haciendo uso de las oraciones interrogativas y enunciativas, el tiempo\nverbal y el tono confesional que es propio de este tipo de texto; realización de las\ninferencias necesarias para comprender el sentido de la lectura que escucha.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "224222b7-69db-52aa-9a0f-7a33ef8da209",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa de la entrevista en la que participa como\nentrevistador/a; investigación y selección de los personajes relevantes de la comunidad\npara su realización, según los valores, aportes y transcendencia; delimitación del alcance\nde la entrevista: público, temas y contenido. Elaboración de las",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.125
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.27",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-purpose:0",
+            "templateId": "len-3-entrevista-purpose",
+            "title": "Relaciona el tema y el destinatario con el propósito de la entrevista.",
+            "description": "Relaciona el tema y el destinatario con el propósito de la entrevista.",
+            "maxScore": 5.34,
+            "maxScoreUnits": 534,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En todas las oportunidades observadas.",
+              "En la mayoría de las oportunidades observadas.",
+              "En algunas de las oportunidades observadas.",
+              "En pocas oportunidades observadas.",
+              "En ninguna de las oportunidades observadas."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "En todas las oportunidades observadas.",
+                "scoreUnits": 534
+              },
+              {
+                "levelId": "L3",
+                "text": "En la mayoría de las oportunidades observadas.",
+                "scoreUnits": 356
+              },
+              {
+                "levelId": "L2",
+                "text": "En algunas de las oportunidades observadas.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L1",
+                "text": "En ninguna de las oportunidades observadas.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-questions:1",
+            "templateId": "len-3-entrevista-questions",
+            "title": "Explica cómo las preguntas y respuestas desarrollan el tema y organizan la presentación, el cuerpo y el cierre de la entrevista.",
+            "description": "Explica cómo las preguntas y respuestas desarrollan el tema y organizan la presentación, el cuerpo y el cierre de la entrevista.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En todas las oportunidades observadas.",
+              "En la mayoría de las oportunidades observadas.",
+              "En algunas de las oportunidades observadas.",
+              "En pocas oportunidades observadas.",
+              "En ninguna de las oportunidades observadas."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "En todas las oportunidades observadas.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L3",
+                "text": "En la mayoría de las oportunidades observadas.",
+                "scoreUnits": 445
+              },
+              {
+                "levelId": "L2",
+                "text": "En algunas de las oportunidades observadas.",
+                "scoreUnits": 222
+              },
+              {
+                "levelId": "L1",
+                "text": "En ninguna de las oportunidades observadas.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-roles:2",
+            "templateId": "len-3-entrevista-roles",
+            "title": "Identifica los roles del entrevistador y del entrevistado a partir de sus intervenciones.",
+            "description": "Identifica los roles del entrevistador y del entrevistado a partir de sus intervenciones.",
+            "maxScore": 5.34,
+            "maxScoreUnits": 534,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En todas las oportunidades observadas.",
+              "En la mayoría de las oportunidades observadas.",
+              "En algunas de las oportunidades observadas.",
+              "En pocas oportunidades observadas.",
+              "En ninguna de las oportunidades observadas."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "En todas las oportunidades observadas.",
+                "scoreUnits": 534
+              },
+              {
+                "levelId": "L3",
+                "text": "En la mayoría de las oportunidades observadas.",
+                "scoreUnits": 356
+              },
+              {
+                "levelId": "L2",
+                "text": "En algunas de las oportunidades observadas.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L1",
+                "text": "En ninguna de las oportunidades observadas.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-3-entrevista",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_escala",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "170e292f-5990-583e-b30d-85502da48c63",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "224222b7-69db-52aa-9a0f-7a33ef8da209",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "06a97526-2a8b-5941-8db6-df676660ac14",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bfb77540-cff5-5bf8-8a5d-4b2e1efb329d",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d1971335-145d-5d95-8410-33f13c7a66b8",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dee20651-5c17-5125-8726-70cfaf27a2bb",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "purpose": "Se distribuirán pesos entre los componentes verificables.",
+      "format": "lista-ponderada",
+      "interpretation": {
+        "suggestedActivityType": "ANALYSIS",
+        "activityType": "ANALYSIS",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON"
+        ],
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-ponderada",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "170e292f-5990-583e-b30d-85502da48c63",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Comprensión escrita (leer)\nRealización de inferencias basadas en las relaciones locales que existen entre las ideas\nde la entrevista que lee; inferencia, a partir del contexto del significado de palabras\ndesconocidas contenidas en la transcripción; utilización del diccionario, en versión\nfísica y/o digital, para buscar la definición de las palabras que lee cuyo significado no\nha podido inferir. Realización de las inferencias necesarias para comprender el sentido\nglobal que lee; tomando en cuenta la estructura textual, la intención comunicativa, los\ntemas tratados a través de las diversas preguntas y respuestas.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa en la que participa como entrevistador/a;\ninvestigación y selección de los personajes relevantes de la comunidad para su\nrealización, según sus valores, aportes y transcendencia; delimitación del alcance de\nla entrevista: público, temas y contenido; elaboración de las preguntas, ajustándose a\nla intención comunicativa y al orden lógico con que se presentan las ideas. Realización\nde las preguntas, tomando en cuenta la estructura textual; desarrollo de estrategias\nde selección, registro y organización de la información necesaria para estructurar las\npreguntas en la que participa como entrevistador/a.\nSelección del vocabulario temático y del registro a la situación de comunicación;\nincorporación de recursos no verbales (gestos, entonación, postura física, tono de voz)\npara apoyar el contenido lingüístico adecuándolos a la expresión verbal.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "preguntas, ajustándose a la intención comunicativa y al orden lógico con que se\npresentan las ideas al/a la entrevistado/a; realización de las preguntas tomando en\ncuenta la estructura textual.\nDesarrollo de estrategias de selección, registro y organización de la información\nnecesaria para estructurar las preguntas en las que participa como entrevistador/a,\nselección del vocabulario temático y del registro adecuado a la situación de\ncomunicación en la que tiene lugar la entrevista; utilización de formas verbales\nen primera persona y en tono confesional (yo creo, yo considero, yo diría que, he\nintentado) en la entrevista.\nElaboración de borradores ajustándose a la intención, al/a la entrevistado/a y a la\nestructura de la entrevista. Revisión y corrección de los borradores con ayuda del/de\nla docente y de los compañeros y las compañeras.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 83,
+                "printedPage": "82"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Comprensión oral (escuchar)\nEscucha atenta de la entrevista realizada a personas destacadas de la comunidad;\nanticipación del contenido a partir de la introducción; identificación de la intención\ncomunicativa que escucha; presentación (saludo, del entrevistado, del tema y el\nmotivo), cuerpo (preguntas y respuestas), cierre (resumen de lo tratado y/o valoración\npersonal), para mayor comprensión.\nRealización de inferencias basadas en las relaciones locales que existen entre las ideas\nque escucha, haciendo uso de las oraciones interrogativas y enunciativas, el tiempo\nverbal y el tono confesional que es propio de este tipo de texto; realización de las\ninferencias necesarias para comprender el sentido de la lectura que escucha.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 82,
+                "printedPage": "81"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "176e5422-77ee-59e3-98b3-9a2dee2f209e",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+            "type": "PROCEDURE",
+            "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura de una crónica; anticipación del\ncontenido a partir del título y otras marcas paratextuales (título, volanta, copete,\nfotografía, epígrafe) utilizados en la crónica. Utilización de la estructura narrativa y\nde los componentes destacados en el cuerpo (qué, cómo, cuándo, quiénes) para\ncomprender la relevancia de la información.\nInferencia a partir del contexto del significado de las palabras que desconoce;\nutilización del diccionario en formato físico, virtual o digital para buscar la definición\nde las palabras cuyo significado no ha podido inferir a partir del contexto. Inferencia\nde la secuencia de los hechos a través de los conectores utilizados en la crónica;\nrealización de las inferencias necesarias para comprender el sentido global; paráfrasis\ndel sentido de la crónica, utilizando el vocabulario adecuado a este tipo de texto.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 83,
+                "printedPage": "82"
+              }
+            ],
+            "topicCoverage": 0.125
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.27",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-purpose:0",
+            "templateId": "len-3-entrevista-purpose",
+            "title": "Propósito y alcance de la entrevista",
+            "description": "Relaciona el tema y el destinatario con el propósito de la entrevista. Parcial (50%): Se nombra un tema sin explicar qué se busca conocer del entrevistado.",
+            "maxScore": 5.34,
+            "maxScoreUnits": 534,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona el tema y el destinatario con el propósito de la entrevista.",
+              "El tema responde al propósito; queda una pregunta cuya pertinencia necesita aclararse.",
+              "Se nombra un tema sin explicar qué se busca conocer del entrevistado.",
+              "Se atribuye a la entrevista un propósito incompatible con las preguntas.",
+              "No hay evidencia del propósito ni del tema de la entrevista."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-questions:1",
+            "templateId": "len-3-entrevista-questions",
+            "title": "Preguntas y respuestas de la entrevista",
+            "description": "Explica cómo las preguntas y respuestas desarrollan el tema y organizan la presentación, el cuerpo y el cierre de la entrevista. Parcial (50%): Se enumeran preguntas o respuestas aisladas sin explicar su relación.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo las preguntas y respuestas desarrollan el tema y organizan la presentación, el cuerpo y el cierre de la entrevista.",
+              "Las preguntas y respuestas desarrollan el tema; una transición necesita enlazarse.",
+              "Se enumeran preguntas o respuestas aisladas sin explicar su relación.",
+              "Una pregunta se interpreta a partir de una respuesta ajena o contradictoria.",
+              "No se relacionan preguntas y respuestas con el tema de la entrevista."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-roles:2",
+            "templateId": "len-3-entrevista-roles",
+            "title": "Roles de los participantes",
+            "description": "Identifica los roles del entrevistador y del entrevistado a partir de sus intervenciones. Parcial (50%): Se nombran participantes sin relacionarlos con sus intervenciones.",
+            "maxScore": 5.34,
+            "maxScoreUnits": 534,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los roles del entrevistador y del entrevistado a partir de sus intervenciones.",
+              "Se distinguen los roles; una intervención necesita atribuirse con mayor claridad.",
+              "Se nombran participantes sin relacionarlos con sus intervenciones.",
+              "Se atribuye al entrevistador la respuesta del entrevistado o se intercambian sus roles.",
+              "No se identifican los participantes a partir de sus intervenciones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-3-entrevista",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "170e292f-5990-583e-b30d-85502da48c63",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "176e5422-77ee-59e3-98b3-9a2dee2f209e",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "224222b7-69db-52aa-9a0f-7a33ef8da209",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ed5ff54f-fb19-575b-a4e1-0f3a6f69a9d5",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "06a97526-2a8b-5941-8db6-df676660ac14",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bfb77540-cff5-5bf8-8a5d-4b2e1efb329d",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d1971335-145d-5d95-8410-33f13c7a66b8",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dee20651-5c17-5125-8726-70cfaf27a2bb",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ],
+  "research": {
+    "suggestedActivityType": "RESEARCH",
+    "activityType": "RESEARCH",
+    "activityTypes": [
+      "EXPOSITION",
+      "ORAL_PRESENTATION",
+      "DEBATE",
+      "NEWSCAST",
+      "NEWS_ANALYSIS",
+      "NEWS_COMPARISON",
+      "NEWS_WRITING",
+      "TOURIST_GUIDE_CREATION",
+      "TOURIST_GUIDE_ANALYSIS",
+      "TOURIST_GUIDE_PRESENTATION",
+      "TOURIST_GUIDE_COMPARISON",
+      "POSTER_CREATION",
+      "POSTER_ANALYSIS",
+      "POSTER_COMPARISON",
+      "POSTER_PRESENTATION",
+      "READING_REPORT_WRITING",
+      "READING_REPORT_ANALYSIS",
+      "READING_REPORT_PRESENTATION",
+      "READING_REPORT_COMPARISON",
+      "DETECTIVE_STORY_WRITING",
+      "DETECTIVE_STORY_ANALYSIS",
+      "DETECTIVE_STORY_NARRATION",
+      "DETECTIVE_STORY_COMPARISON",
+      "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+      "CALLIGRAM_CREATION",
+      "CALLIGRAM_ANALYSIS",
+      "CALLIGRAM_COMPARISON",
+      "CALLIGRAM_RECITATION",
+      "CALLIGRAM_EXPLANATION",
+      "EXPERIMENT",
+      "LAB_PRACTICE",
+      "WRITTEN_PRODUCTION",
+      "ESSAY",
+      "REPORT",
+      "RESEARCH",
+      "PROJECT",
+      "PROBLEM_SOLVING",
+      "EXERCISE_SET",
+      "CONCEPT_MAP",
+      "PORTFOLIO",
+      "ARTISTIC_PRODUCTION",
+      "PERFORMANCE",
+      "MOTOR_SPORTS_PRACTICE",
+      "OBSERVATION",
+      "QUIZ_TEST",
+      "OTHER",
+      "ANALYSIS",
+      "COMPARISON"
+    ],
+    "suggestedEvaluationTechnique": "analisis-producciones",
+    "suggestedInstrumentType": "rubrica",
+    "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+    "curriculumStatus": "DRAFT",
+    "curriculumCandidates": [
+      {
+        "elementId": "4a0015fc-92e8-5376-ba65-4926a10a10ec",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "type": "PROCEDURE",
+        "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del texto que va a producir oralmente;\nselección de las especies de la flora y la fauna del país; recopilación de la información\nnecesaria de cada especie: nombre común, nombre científico, descripción,\nreproducción, hábitat, conservación y peligros o amenazas, utilizando diversas\nfuentes impresas y electrónicas.\nDelimitación del alcance de su catálogo (tipo, tema y diseño de presentación) y el tipo\nde soporte (físico o digital); elaboración de mapas, gráficos o collage de fotografías\npara apoyar gráficamente el tema. Utilización de hipónimos e hiperónimos para\nreferirse a las especies de la flora y la fauna, utilización de un vocabulario adecuado\npara presentar la información.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 84,
+            "printedPage": "83"
+          }
+        ],
+        "topicCoverage": 0.6
+      },
+      {
+        "elementId": "41ac1065-5ade-5066-953c-c0f6b91ceaef",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "type": "ACHIEVEMENT_INDICATOR",
+        "text": "• Elabora textos como el catálogo, recetas, artículos de opinión, instructivos, entre otros, en la promoción de situaciones sobre\nsalud y ambiente, flora y fauna dominicanas y en general.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 88,
+            "printedPage": "87"
+          }
+        ],
+        "topicCoverage": 0.2
+      },
+      {
+        "elementId": "61498b07-49c4-5566-9a37-928495c3e1a7",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "type": "PROCEDURE",
+        "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa; selección de los hechos noticiosos\nque destacará la información; investigación de los hechos, las causas y las posibles\nconsecuencias para destacarlos en la crónica; selección de la información relevante\nsobre los hechos que se resaltarán; elaboración de un esquema para organizar la\ninformación que presentará. Determinación de la audiencia y el registro que utilizará\npara transmitir la información.\nEmpleo de adverbios, preposiciones, pronombres y conectores de temporalidad\nnecesarios para transmitir la información en la crónica de forma coherente y cohesiva;\nempleo de la normativa: signos de puntuación; elaboración de los borradores\nnecesarios para la redacción final de la crónica enfatizando la corrección de los\nproblemas de contenido y la revisión de la normativa. Revisión y corrección de los\nborradores con ayuda del/de la docente y de los/las compañeros/as; ilustración con\nimágenes que contribuyan a la comprensión de los hechos dados a conocer en la\ncrónica.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 83,
+            "printedPage": "82"
+          }
+        ],
+        "topicCoverage": 0.2
+      },
+      {
+        "elementId": "1ad70373-5325-5f14-b269-5fc7c1a8a710",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "type": "PROCEDURE",
+        "text": "Comprensión escrita (leer)\nEstablecimiento del propósito para la lectura del catálogo. Anticipación del contenido\ndel texto a partir del título y otras marcas paratextuales como dibujos y fotografías;\nidentificación de la secuencia textual descriptiva y sus características; activación de\nlos conocimientos previos necesarios para comprender el contenido; identificación\nde la intención comunicativa del texto.\nLectura en silencio o en voz alta en material impreso o en la pantalla, respetando las\nconvenciones de la lengua escrita; inferencia a partir del contexto del significado de\nlas palabras que desconoce; utilización del diccionario en formato impreso, digital o\nvirtual para buscar la definición de las palabras cuyo significado desconoce.\nRealización de las inferencias necesarias para comprender globalmente el sentido de\nla lectura; utilización de la estructura para comprender su contenido; reconstrucción\ndel sentido del texto por medio del resumen o la paráfrasis utilizando un vocabulario\napropiado.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 84,
+            "printedPage": "83"
+          }
+        ],
+        "topicCoverage": 0.2
+      },
+      {
+        "elementId": "3ffa38e7-3146-57e7-b657-f2b4431233eb",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "type": "SPECIFIC_COMPETENCY",
+        "text": "Presenta resultados de investigaciones a través de textos específicos, orales y escritos, como ensayos o informes,\nque evidencian la solución de problemas en contextos determinados, con una postura de criticidad, valoración y\nrespeto a los datos citados.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 82,
+            "printedPage": "81"
+          }
+        ],
+        "topicCoverage": 0.2
+      }
+    ],
+    "curriculumMatch": "SUGGESTED",
+    "requiresCurriculumConfirmation": true,
+    "message": "Encontramos posibles referentes para revisar."
+  }
+}

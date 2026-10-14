@@ -421,7 +421,7 @@ function JournalCard({
                   : ''}
               </p>
             </div>
-            <button
+            <button data-ui-size="icon"
               onClick={onEdit}
               aria-label="Abrir anotación"
               className="grid size-9 shrink-0 place-items-center rounded-xl text-muted-foreground transition hover:bg-muted hover:text-foreground"
@@ -820,7 +820,7 @@ export function JournalForm({
         {error ? <FeedbackBanner tone="danger">{error}</FeedbackBanner> : null}
 
         <div className="flex justify-end gap-2 border-t border-border pt-4">
-          <Button type="button" variant="outline" onClick={onClose}>
+          <Button data-ui-action="cancel" type="button" variant="outline" onClick={onClose}>
             Cancelar
           </Button>
           <Button type="submit" loading={saving}>

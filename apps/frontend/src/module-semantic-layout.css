@@ -1,6 +1,89 @@
+/* El layout es el único propietario del margen exterior de cada pantalla. */
+.app-main {
+  --app-page-block-gap: 20px;
+  padding-block: var(--app-page-block-gap);
+}
+
+.app-main > :first-child {
+  margin-block-start: 0;
+}
+
+@media (min-width: 1024px) {
+  .app-main {
+    --app-page-block-gap: 32px;
+  }
+}
+
 /* Utilidad explícita para el tono de navegación derivado del azul principal. */
 .text-primary-variant {
   color: var(--primary-variant);
+}
+
+/* La preferencia del navegador incluye los diálogos renderizados en portales. */
+:root[data-reduced-motion='true'],
+:root[data-reduced-motion='true'] *,
+:root[data-reduced-motion='true'] *::before,
+:root[data-reduced-motion='true'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* Cancelación y cierre: regla visual compartida para toda la aplicación. */
+:root button[data-ui-action='cancel'] {
+  background-color: var(--destructive);
+  border-color: var(--destructive);
+  color: var(--destructive-foreground);
+}
+
+:root button[data-ui-action='cancel']:not(:disabled):hover {
+  background-color: var(--destructive-hover);
+  border-color: var(--destructive-hover);
+}
+
+:root button[data-ui-action='cancel']:focus-visible {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--destructive) 25%, transparent);
+}
+
+:root button[data-ui-action='close'] {
+  color: var(--destructive);
+}
+
+:root [role='dialog'] button[data-ui-action='close'] {
+  color: var(--muted-foreground);
+}
+
+:root button[data-ui-action='close']:not(:disabled):is(:hover, :focus-visible) {
+  background-color: var(--danger-light);
+  color: var(--destructive);
+}
+
+/* Botones de modal: forma de píldora y acciones compactas. */
+:root [role='dialog'] button {
+  border-radius: 9999px;
+}
+
+:root [role='dialog'] button:not([aria-pressed]):not([role='tab']):not([data-ui-size='icon']):not([data-ui-action='close']) {
+  height: auto;
+  min-height: 36px;
+  padding: 6px 14px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+}
+
+@media (max-width: 639px) {
+  :root [role='dialog'] button:not([aria-pressed]):not([role='tab']):not([data-ui-size='icon']):not([data-ui-action='close']) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media (pointer: coarse) {
+  :root [role='dialog'] button:not([aria-pressed]):not([role='tab']):not([data-ui-size='icon']):not([data-ui-action='close']) {
+    min-height: 44px;
+  }
 }
 
 /*
@@ -28,6 +111,6 @@ main[data-module='estudiantes'] tbody tr:hover {
 }
 
 /* Los menús secundarios no deben competir con la acción primaria. */
-main[data-module] :where(button, a).bg-card.border.border-border {
+main[data-module] :where(button, a).bg-card.border.border-border:not(:focus-visible) {
   box-shadow: none;
 }

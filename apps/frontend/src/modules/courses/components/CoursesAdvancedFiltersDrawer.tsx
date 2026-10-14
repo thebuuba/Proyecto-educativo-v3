@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 
 export type CourseAdvancedFilters = {
   level: string
@@ -22,7 +23,6 @@ type Option = { value: string; label: string; group?: string }
 export function CoursesAdvancedFiltersDrawer({
   open,
   filters,
-  initialFilters,
   levelOptions,
   cycleOptions,
   subjectOptions,
@@ -51,7 +51,7 @@ export function CoursesAdvancedFiltersDrawer({
   const panelRef = useRef<HTMLElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const [subjectQuery, setSubjectQuery] = useState('')
-  const dirty = JSON.stringify(filters) !== JSON.stringify(initialFilters)
+  useOutsideClick({ ref: panelRef, onClose, active: open })
   const activeCount = countAdvancedFilters(filters)
 
   const visibleSubjects = useMemo(() => {
@@ -92,7 +92,7 @@ export function CoursesAdvancedFiltersDrawer({
   const patch = (values: Partial<CourseAdvancedFilters>) => onChange({ ...filters, ...values })
 
   return (
-    <div className="fixed inset-0 z-50 bg-foreground/20 backdrop-blur-[1px] motion-safe:animate-[fadeIn_200ms_ease-out]" onMouseDown={(event) => { if (event.target === event.currentTarget && !dirty) onClose() }}>
+    <div className="fixed inset-0 z-50 bg-foreground/20 backdrop-blur-[1px] motion-safe:animate-[fadeIn_200ms_ease-out]">
       <aside id="course-advanced-filters" ref={panelRef} role="dialog" aria-modal="true" aria-labelledby="course-advanced-filters-title" className="ml-auto flex h-full w-full max-w-[31rem] flex-col border-l border-border bg-card shadow-2xl motion-safe:animate-[slideInRight_250ms_ease-out]">
         <div className="h-1 shrink-0 bg-primary" />
         <header className="flex shrink-0 items-start justify-between border-b border-border px-6 py-5">
@@ -103,7 +103,7 @@ export function CoursesAdvancedFiltersDrawer({
             </div>
             <p className="mt-1 text-sm leading-5 text-muted-foreground">Encuentra exactamente los cursos que necesitas.</p>
           </div>
-          <Button type="button" variant="ghost" size="icon" onClick={onClose} aria-label="Cerrar filtros avanzados"><X className="size-5" /></Button>
+          <Button data-ui-action="close" type="button" variant="ghost" size="icon" onClick={onClose} aria-label="Cerrar filtros avanzados"><X className="size-5" /></Button>
         </header>
 
         <div className="min-h-0 flex-1 overflow-y-auto px-6 py-2">
@@ -151,7 +151,7 @@ export function CoursesAdvancedFiltersDrawer({
         <footer className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-t border-border bg-card px-6 py-4">
           <Button type="button" variant="ghost" size="sm" onClick={onReset}><RotateCcw className="size-4" /> Restablecer filtros</Button>
           <div className="flex gap-2">
-            <Button type="button" variant="outline" onClick={onClose}>Cancelar</Button>
+            <Button data-ui-action="cancel" type="button" variant="outline" onClick={onClose}>Cancelar</Button>
             <Button type="button" onClick={onApply}>Aplicar · {resultCount} cursos</Button>
           </div>
         </footer>

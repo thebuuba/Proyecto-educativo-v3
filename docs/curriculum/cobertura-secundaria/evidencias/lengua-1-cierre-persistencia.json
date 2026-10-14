@@ -1,0 +1,1386 @@
+{
+  "verifiedAt": "2026-10-14T01:00:59.407Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "8350fe887c0672652676174db749f2f3d31bebdb",
+      "dirty": true,
+      "startedAt": "2026-10-14T00:58:10.975Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.23"
+    }
+  },
+  "activities": [
+    {
+      "id": "77f192a7-c5e5-4360-95e9-04bed3443dc5",
+      "name": "QA Lengua 1 cierre · rúbrica · guía oral",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Presentarán oralmente una guía turística y utilizarán mapas y fotografías para ubicar los lugares descritos. Se valorará la calidad en varias dimensiones.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "926df465-8aaf-4404-8255-74daad03e963",
+      "instrumentSnapshotId": "8f3ce9be-a767-42c4-acbc-f61282c5274a",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-content:0",
+            "title": "Información de los lugares seleccionados",
+            "maxScore": 4.34,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "guide-content",
+            "description": "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+            "descriptors": [
+              {
+                "text": "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+                "levelId": "L4",
+                "scoreUnits": 434
+              },
+              {
+                "text": "Comunica información de los lugares y atractivos con una imprecisión menor.",
+                "levelId": "L3",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Comunica algunos datos, pero omite información necesaria para reconocer los lugares.",
+                "levelId": "L2",
+                "scoreUnits": 145
+              },
+              {
+                "text": "No comunica información reconocible de los lugares de la guía. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-purpose:1",
+            "title": "Orientación al visitante",
+            "maxScore": 3.48,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-purpose",
+            "description": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+            "descriptors": [
+              {
+                "text": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+                "levelId": "L4",
+                "scoreUnits": 348
+              },
+              {
+                "text": "Las descripciones orientan al visitante; una expresión necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 232
+              },
+              {
+                "text": "Menciona atractivos sin explicar por qué son pertinentes para el público de la guía.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No comunica características que orienten al visitante.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 348,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-organization:2",
+            "title": "Organización de la presentación",
+            "maxScore": 3.48,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-organization",
+            "description": "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+            "descriptors": [
+              {
+                "text": "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+                "levelId": "L4",
+                "scoreUnits": 348
+              },
+              {
+                "text": "La secuencia permite seguir la presentación; una transición necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 232
+              },
+              {
+                "text": "La presentación contiene datos aislados y cuesta asociarlos con cada lugar.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No se reconoce una secuencia entre los datos presentados.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 348,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-oral:3",
+            "title": "Claridad de la comunicación oral",
+            "maxScore": 3.48,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-oral",
+            "description": "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+            "descriptors": [
+              {
+                "text": "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+                "levelId": "L4",
+                "scoreUnits": 348
+              },
+              {
+                "text": "La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.",
+                "levelId": "L3",
+                "scoreUnits": 232
+              },
+              {
+                "text": "Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No comunica información comprensible mediante la presentación o el apoyo acordado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 348,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-individual:4",
+            "title": "Dominio individual",
+            "maxScore": 2.61,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-individual",
+            "description": "Explica con sus palabras la información de los lugares que presenta.",
+            "descriptors": [
+              {
+                "text": "Explica con sus palabras la información de los lugares que presenta.",
+                "levelId": "L4",
+                "scoreUnits": 261
+              },
+              {
+                "text": "Explica con sus palabras los lugares presentados; un dato necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Repite datos de los lugares sin explicar su significado para la visita.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No ofrece una explicación reconocible de los lugares que presenta.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 261,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-visual:5",
+            "title": "Información visual de los lugares",
+            "maxScore": 2.61,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "guide-visual",
+            "description": "Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía.",
+            "descriptors": [
+              {
+                "text": "Los mapas y fotografías corresponden a los lugares y permiten localizarlos o reconocerlos.",
+                "levelId": "L4",
+                "scoreUnits": 261
+              },
+              {
+                "text": "Los recursos corresponden a los lugares; una referencia visual queda sin identificar.",
+                "levelId": "L3",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Se incluyen recursos, pero no se establece su relación con los lugares descritos.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No se aportan los recursos visuales solicitados.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 261,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "MEDIUM",
+        "totalScore": 20,
+        "activityType": "TOURIST_GUIDE_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_rubrica",
+          "ranking": [
+            {
+              "score": 89,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=6"
+              ],
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 89,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 76,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=5"
+              ],
+              "elementId": "6d928034-270a-5523-a99d-11285a2fa97f",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3857d3c9-4854-5405-a086-a63bc8b0c375",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "56301465-88e2-54cc-a5db-627c7266844c",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "edd5d7f8-172b-5927-a153-73b58a9756a6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "550df0a4-8032-5593-bceb-0916487cd755",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": false
+        },
+        "catalogVersion": "evaluation-2026.23",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "TOURIST_GUIDE_PRESENTATION",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para QA Lengua 1 cierre · rúbrica · guía oral",
+        "rubrica:points:0": "4.34",
+        "rubrica:points:1": "3.48",
+        "rubrica:points:2": "3.48",
+        "rubrica:points:3": "3.48",
+        "rubrica:points:4": "2.61",
+        "rubrica:points:5": "2.61",
+        "rubrica:criterion:0": "Información de los lugares seleccionados",
+        "rubrica:criterion:1": "Orientación al visitante",
+        "rubrica:criterion:2": "Organización de la presentación",
+        "rubrica:criterion:3": "Claridad de la comunicación oral",
+        "rubrica:criterion:4": "Dominio individual",
+        "rubrica:criterion:5": "Información visual de los lugares",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+        "rubrica:description:1": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+        "rubrica:description:2": "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+        "rubrica:description:3": "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+        "rubrica:description:4": "Explica con sus palabras la información de los lugares que presenta.",
+        "rubrica:description:5": "Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-content:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-purpose:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-organization:2",
+        "rubrica:criterion-id:3": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-oral:3",
+        "rubrica:criterion-id:4": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-individual:4",
+        "rubrica:criterion-id:5": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-visual:5",
+        "rubrica:descriptor:0:1": "No comunica información reconocible de los lugares de la guía. Ajuste manual del docente.",
+        "rubrica:descriptor:0:2": "Comunica algunos datos, pero omite información necesaria para reconocer los lugares.",
+        "rubrica:descriptor:0:3": "Comunica información de los lugares y atractivos con una imprecisión menor.",
+        "rubrica:descriptor:0:4": "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+        "rubrica:descriptor:1:1": "No comunica características que orienten al visitante.",
+        "rubrica:descriptor:1:2": "Menciona atractivos sin explicar por qué son pertinentes para el público de la guía.",
+        "rubrica:descriptor:1:3": "Las descripciones orientan al visitante; una expresión necesita precisión.",
+        "rubrica:descriptor:1:4": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+        "rubrica:descriptor:2:1": "No se reconoce una secuencia entre los datos presentados.",
+        "rubrica:descriptor:2:2": "La presentación contiene datos aislados y cuesta asociarlos con cada lugar.",
+        "rubrica:descriptor:2:3": "La secuencia permite seguir la presentación; una transición necesita precisión.",
+        "rubrica:descriptor:2:4": "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+        "rubrica:descriptor:3:1": "No comunica información comprensible mediante la presentación o el apoyo acordado.",
+        "rubrica:descriptor:3:2": "Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.",
+        "rubrica:descriptor:3:3": "La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.",
+        "rubrica:descriptor:3:4": "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+        "rubrica:descriptor:4:1": "No ofrece una explicación reconocible de los lugares que presenta.",
+        "rubrica:descriptor:4:2": "Repite datos de los lugares sin explicar su significado para la visita.",
+        "rubrica:descriptor:4:3": "Explica con sus palabras los lugares presentados; un dato necesita precisión.",
+        "rubrica:descriptor:4:4": "Explica con sus palabras la información de los lugares que presenta.",
+        "rubrica:descriptor:5:1": "No se aportan los recursos visuales solicitados.",
+        "rubrica:descriptor:5:2": "Se incluyen recursos, pero no se establece su relación con los lugares descritos.",
+        "rubrica:descriptor:5:3": "Los recursos corresponden a los lugares; una referencia visual queda sin identificar.",
+        "rubrica:descriptor:5:4": "Los mapas y fotografías corresponden a los lugares y permiten localizarlos o reconocerlos.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[5,4,4,4,3,3]",
+        "rubrica:criterion-weight:0": "5",
+        "rubrica:criterion-weight:1": "4",
+        "rubrica:criterion-weight:2": "4",
+        "rubrica:criterion-weight:3": "4",
+        "rubrica:criterion-weight:4": "3",
+        "rubrica:criterion-weight:5": "3",
+        "rubrica:meta:criteriaCount": "6",
+        "rubrica:meta:catalogVersion": "evaluation-2026.23",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Información de los lugares seleccionados\",\"description\":\"Presenta información pertinente y veraz sobre los lugares seleccionados.\",\"progression\":[\"Presenta información pertinente y veraz sobre los lugares seleccionados.\",\"Comunica información de los lugares y atractivos con una imprecisión menor.\",\"Comunica algunos datos, pero omite información necesaria para reconocer los lugares.\",\"Presenta datos que contradicen las características de los lugares.\",\"No comunica información reconocible de los lugares de la guía.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"Orientación al visitante\",\"description\":\"Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.\",\"progression\":[\"Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.\",\"Las descripciones orientan al visitante; una expresión necesita precisión.\",\"Menciona atractivos sin explicar por qué son pertinentes para el público de la guía.\",\"Las expresiones atribuyen atractivos que no corresponden a los lugares.\",\"No comunica características que orienten al visitante.\"]}",
+        "rubrica:criterion-evidence:2": "{\"title\":\"Organización de la presentación\",\"description\":\"Ordena la información de la guía en una secuencia clara y fácil de seguir.\",\"progression\":[\"Ordena la información de la guía en una secuencia clara y fácil de seguir.\",\"La secuencia permite seguir la presentación; una transición necesita precisión.\",\"La presentación contiene datos aislados y cuesta asociarlos con cada lugar.\",\"El orden mezcla datos de lugares distintos y cambia su sentido.\",\"No se reconoce una secuencia entre los datos presentados.\"]}",
+        "rubrica:criterion-evidence:3": "{\"title\":\"Claridad de la comunicación oral\",\"description\":\"Expone con dicción, volumen, ritmo y entonación comprensibles.\",\"progression\":[\"Expone con dicción, volumen, ritmo y entonación comprensibles.\",\"La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.\",\"Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.\",\"La forma de comunicar altera las relaciones entre los datos de los lugares.\",\"No comunica información comprensible mediante la presentación o el apoyo acordado.\"]}",
+        "rubrica:criterion-evidence:4": "{\"title\":\"Dominio individual\",\"description\":\"Explica con sus palabras la información de los lugares que presenta.\",\"progression\":[\"Explica con sus palabras la información de los lugares que presenta.\",\"Explica con sus palabras los lugares presentados; un dato necesita precisión.\",\"Repite datos de los lugares sin explicar su significado para la visita.\",\"Su explicación confunde características o información de los lugares.\",\"No ofrece una explicación reconocible de los lugares que presenta.\"]}",
+        "rubrica:criterion-evidence:5": "{\"title\":\"Información visual de los lugares\",\"description\":\"Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía.\",\"progression\":[\"Los mapas y fotografías corresponden a los lugares y permiten localizarlos o reconocerlos.\",\"Los recursos corresponden a los lugares; una referencia visual queda sin identificar.\",\"Se incluyen recursos, pero no se establece su relación con los lugares descritos.\",\"Los recursos representan lugares distintos de los descritos.\",\"No se aportan los recursos visuales solicitados.\"]}",
+        "rubrica:criterion-template:0": "guide-content",
+        "rubrica:criterion-template:1": "guide-purpose",
+        "rubrica:criterion-template:2": "guide-organization",
+        "rubrica:criterion-template:3": "guide-oral",
+        "rubrica:criterion-template:4": "guide-individual",
+        "rubrica:criterion-template:5": "guide-visual",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "exposicion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "2308e4fb-5f2f-4650-86d5-4eb8271d9952",
+      "name": "QA Lengua 1 cierre · cotejo · puntuación",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Revisarán un informe de lectura y corregirán únicamente sus comillas para delimitar las citas del texto leído. Se comprobará la presencia de las evidencias de corrección.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "b23be94c-0ea7-490b-8be9-b97300a4c049",
+      "instrumentSnapshotId": "5ee40bcf-308c-4048-81e7-d5ecf6c083ff",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-feature-punctuation:0",
+            "title": "Emplea las comillas en el texto de informe de lectura para delimitar citas o expresiones reproducidas y distinguirlas de la voz propia, sin alterar el sentido de las ideas. Ajuste manual del docente.",
+            "maxScore": 17.35,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "report-feature-punctuation",
+            "description": "Emplea las comillas en el texto de informe de lectura para delimitar citas o expresiones reproducidas y distinguirlas de la voz propia, sin alterar el sentido de las ideas.",
+            "descriptors": [
+              {
+                "text": "Emplea las comillas en el texto de informe de lectura para delimitar citas o expresiones reproducidas y distinguirlas de la voz propia, sin alterar el sentido de las ideas.",
+                "levelId": "L2",
+                "scoreUnits": 1735
+              },
+              {
+                "text": "Emplea las comillas en el texto de informe de lectura para delimitar citas o expresiones reproducidas y distinguirlas de la voz propia, sin alterar el sentido de las ideas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1735,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-cotejo",
+          "ranking": [
+            {
+              "score": 64,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ee0cfcaa-6207-53d0-91b0-4a41d350d96f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.23",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "READING_REPORT_WRITING",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA Lengua 1 cierre · cotejo · puntuación",
+        "lista-cotejo:points:0": "17.35",
+        "lista-cotejo:criterion:0": "Emplea las comillas en el texto de informe de lectura para delimitar citas o expresiones reproducidas y distinguirlas de la voz propia, sin alterar el sentido de las ideas. Ajuste manual del docente.",
+        "lista-cotejo:description:0": "Emplea las comillas en el texto de informe de lectura para delimitar citas o expresiones reproducidas y distinguirlas de la voz propia, sin alterar el sentido de las ideas.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-feature-punctuation:0",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[3]",
+        "lista-cotejo:criterion-weight:0": "3",
+        "lista-cotejo:meta:criteriaCount": "1",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.23",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Emplea las comillas en el texto de informe de lectura para delimitar citas o expresiones reproducidas y distinguirlas de la voz propia, sin alterar el sentido de las ideas.\",\"description\":\"Emplea las comillas en el texto de informe de lectura para delimitar citas o expresiones reproducidas y distinguirlas de la voz propia, sin alterar el sentido de las ideas.\",\"progression\":[\"Emplea las comillas en el texto de informe de lectura para delimitar citas o expresiones reproducidas y distinguirlas de la voz propia, sin alterar el sentido de las ideas.\",\"Emplea las comillas con la función solicitada; un uso aislado deja ambigua una relación entre ideas.\",\"Incluye las comillas, pero varios usos no contribuyen a delimitar citas o expresiones reproducidas y distinguirlas de la voz propia.\",\"El uso de las comillas altera el sentido del texto: atribuye a la cita palabras ajenas o deja sin delimitar las palabras reproducidas.\",\"No incorpora evidencia del uso solicitado de las comillas en su texto.\"]}",
+        "lista-cotejo:criterion-template:0": "report-feature-punctuation"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "3d5f877e-1121-48d9-9506-dbfcb53e7f2c",
+      "name": "QA Lengua 1 cierre · escala · grados del adjetivo",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 15,
+      "description": "<p>Analizarán únicamente los grados positivo, comparativo y superlativo del adjetivo en una guía turística. Se registrará la regularidad de sus identificaciones durante las lecturas.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "169033ef-c8f8-4687-af80-68b09c98f9d1",
+      "instrumentSnapshotId": "b79c2abb-4a51-4503-afbe-358a46a613cf",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-feature-adjective-degree:0",
+            "title": "Identifica el grado positivo, el grado comparativo y el grado superlativo en el texto de guía turística y explica, con ejemplos presentes, su función para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.",
+            "maxScore": 15,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "guide-feature-adjective-degree",
+            "description": "Identifica el grado positivo, el grado comparativo y el grado superlativo en el texto de guía turística y explica, con ejemplos presentes, su función para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 1500
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 1000
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 500
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1500,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 15,
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_escala",
+          "ranking": [
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "6d928034-270a-5523-a99d-11285a2fa97f",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "56301465-88e2-54cc-a5db-627c7266844c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "caeca724-f16b-5730-be70-d3e671ae7840",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1bd75c21-a659-5124-903b-02925b284b13",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "50810071-d964-5722-ae8b-296148af63c6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a1b5246-0a6d-563c-9a02-3176de6f7503",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d61bd6e7-998d-53a8-8e8f-fb6fc21060d3",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.23",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1500,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "TOURIST_GUIDE_ANALYSIS",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA Lengua 1 cierre · escala · grados del adjetivo",
+        "escala:points:0": "15",
+        "escala:criterion:0": "Identifica el grado positivo, el grado comparativo y el grado superlativo en el texto de guía turística y explica, con ejemplos presentes, su función para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.",
+        "escala:level-name:1": "Todavía no",
+        "escala:level-name:2": "A veces",
+        "escala:level-name:3": "Frecuentemente",
+        "escala:level-name:4": "Siempre",
+        "escala:description:0": "Identifica el grado positivo, el grado comparativo y el grado superlativo en el texto de guía turística y explica, con ejemplos presentes, su función para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-feature-adjective-degree:0",
+        "escala:descriptor:0:1": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+        "escala:descriptor:0:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[3]",
+        "escala:criterion-weight:0": "3",
+        "escala:meta:criteriaCount": "1",
+        "escala:meta:catalogVersion": "evaluation-2026.23",
+        "escala:criterion-evidence:0": "{\"title\":\"Identifica el grado positivo, el grado comparativo y el grado superlativo en el texto de guía turística y explica, con ejemplos presentes, su función para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.\",\"description\":\"Identifica el grado positivo, el grado comparativo y el grado superlativo en el texto de guía turística y explica, con ejemplos presentes, su función para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-template:0": "guide-feature-adjective-degree",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "observacion-sistematica",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "34a7843f-a97c-4a38-a644-aebdf2a6c9e8",
+      "name": "QA Lengua 1 cierre · ponderada · planificación",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Planificarán los componentes textuales y visuales de un afiche para una jornada cultural. Se asignarán pesos entre los componentes verificables.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "668f5507-e1ad-4494-bccd-854fa47368ab",
+      "instrumentSnapshotId": "5abb204e-a385-4208-90df-7835c9a483d6",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-procedure-outline:0",
+            "title": "Planificación del texto",
+            "maxScore": 20,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "poster-procedure-outline",
+            "description": "Organiza un plan que permite reconocer la distribución de los componentes textuales y visuales del mensaje antes de desarrollar el texto. Parcial (50%): Enumera componentes pertinentes, pero no organiza sus relaciones en el plan. Ajuste manual del docente.",
+            "descriptors": [
+              {
+                "text": "Organiza un plan que permite reconocer la distribución de los componentes textuales y visuales del mensaje antes de desarrollar el texto. Parcial (50%): Enumera componentes pertinentes, pero no organiza sus relaciones en el plan. Ajuste manual del docente.",
+                "levelId": "L3",
+                "scoreUnits": 2000
+              },
+              {
+                "text": "Organiza un plan que permite reconocer la distribución de los componentes textuales y visuales del mensaje antes de desarrollar el texto. Parcial (50%): Enumera componentes pertinentes, pero no organiza sus relaciones en el plan. Ajuste manual del docente.",
+                "levelId": "L2",
+                "scoreUnits": 1000
+              },
+              {
+                "text": "Organiza un plan que permite reconocer la distribución de los componentes textuales y visuales del mensaje antes de desarrollar el texto. Parcial (50%): Enumera componentes pertinentes, pero no organiza sus relaciones en el plan. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 2000,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 73,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "550df0a4-8032-5593-bceb-0916487cd755",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "75ccb373-3eb0-5d30-af1f-714caffce54d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "2fb5fb3a-4bd1-5b47-a4cf-a43f348646c2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "74b33fad-b618-5157-9517-8e0165a2a333",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.23",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "POSTER_CREATION",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA Lengua 1 cierre · ponderada · planificación",
+        "lista-ponderada:points:0": "20",
+        "lista-ponderada:weight:0": "100",
+        "lista-ponderada:criterion:0": "Planificación del texto",
+        "lista-ponderada:indicator:0": "Organiza un plan que permite reconocer la distribución de los componentes textuales y visuales del mensaje antes de desarrollar el texto. Parcial (50%): Enumera componentes pertinentes, pero no organiza sus relaciones en el plan. Ajuste manual del docente.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Organiza un plan que permite reconocer la distribución de los componentes textuales y visuales del mensaje antes de desarrollar el texto. Parcial (50%): Enumera componentes pertinentes, pero no organiza sus relaciones en el plan.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.23:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-procedure-outline:0",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[3]",
+        "lista-ponderada:criterion-weight:0": "3",
+        "lista-ponderada:meta:criteriaCount": "1",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.23",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Planificación del texto\",\"description\":\"Organiza un plan que permite reconocer la distribución de los componentes textuales y visuales del mensaje antes de desarrollar el texto. Parcial (50%): Enumera componentes pertinentes, pero no organiza sus relaciones en el plan.\",\"progression\":[\"El plan hace explícita la distribución de los componentes textuales y visuales del mensaje y permite seguir cómo se desarrollará el texto.\",\"El plan permite seguir el desarrollo previsto; una conexión entre sus componentes necesita aclararse.\",\"Enumera componentes pertinentes, pero no organiza sus relaciones en el plan.\",\"El orden o las relaciones del plan contradicen el propósito o el contenido que se pretende desarrollar.\",\"No aporta evidencia de la planificación solicitada.\"]}",
+        "lista-ponderada:criterion-template:0": "poster-procedure-outline"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import { FeedbackBanner, FilterBar, PageHero, ProgressIndicator, StatusBadge, ty
 import { ActivityInfoModal } from '@/modules/activities/components/ActivityInfoModal'
 import { ActivityDraftsPanel } from '@/modules/activities/components/ActivityDraftsPanel'
 import type { StoredActivityDraftSummary } from '@/modules/activities/utils/activityDraftStorage'
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { getActivityCenter } from '@/modules/activities/services/activitiesService'
 import type { ActivityCenterWorkspace, GlobalActivity } from '@/modules/activities/types'
 import { activityAppliesToBlock, activityCompetencyWeights, competencyBlocks } from '@/modules/grading/utils/competencyGrades'
@@ -18,6 +19,12 @@ type ActivityState = 'pending' | 'partial' | 'graded'
 const emptyWorkspace: ActivityCenterWorkspace = { sectionSubjects: [], academicPeriods: [], activities: [] }
 
 export function ActivitiesPage() {
+  const { schoolId, appUser } = useAuth()
+  if (!schoolId || !appUser?.id) return <FeedbackBanner tone="warning">Falta el contexto de tu cuenta. Vuelve a iniciar sesión para continuar.</FeedbackBanner>
+  return <ScopedActivitiesPage key={JSON.stringify([schoolId, appUser.id])} />
+}
+
+function ScopedActivitiesPage() {
   const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
   const savedActivityId = searchParams.get('activitySaved')
@@ -25,6 +32,7 @@ export function ActivitiesPage() {
   const [workspace, setWorkspace] = useState(emptyWorkspace)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [retry, setRetry] = useState(0)
   const [query, setQuery] = useState('')
   const [courseId, setCourseId] = useState('all')
   const [subjectId, setSubjectId] = useState('all')
@@ -36,12 +44,14 @@ export function ActivitiesPage() {
 
   useEffect(() => {
     let active = true
+    setLoading(true)
+    setError(null)
     getActivityCenter()
       .then((data) => { if (active) setWorkspace(data) })
       .catch((reason) => { if (active) setError(reason instanceof Error ? reason.message : 'No se pudieron cargar las actividades.') })
       .finally(() => { if (active) setLoading(false) })
     return () => { active = false }
-  }, [])
+  }, [retry])
 
   const courses = useMemo(() => Array.from(new Map(workspace.sectionSubjects.map((item) => [item.sectionId ?? item.id, { id: item.sectionId ?? item.id, label: `${item.gradeName} ${item.sectionName}` }])).values()), [workspace.sectionSubjects])
   const subjects = workspace.sectionSubjects.filter((item) => courseId === 'all' || item.sectionId === courseId)
@@ -65,8 +75,8 @@ export function ActivitiesPage() {
   }
 
   const draftHref = (draft: StoredActivityDraftSummary) => {
-    const sectionSubject = workspace.sectionSubjects.find((item) => `${item.gradeName} ${item.sectionName} · ${item.subjectName}` === draft.courseTitle)
-    const period = workspace.academicPeriods.find((item) => (!sectionSubject?.schoolYearId || item.schoolYearId === sectionSubject.schoolYearId) && item.name.split('—')[0]?.trim() === draft.periodShortName)
+    const sectionSubject = workspace.sectionSubjects.find(item => item.id === draft.context.sectionSubjectId && item.schoolYearId === draft.context.schoolYearId)
+    const period = workspace.academicPeriods.find(item => item.id === draft.context.academicPeriodId && item.schoolYearId === draft.context.schoolYearId)
     if (!sectionSubject || !period) return null
     return `/actividades/crear?${new URLSearchParams({ sectionSubjectId: sectionSubject.id, academicPeriodId: period.id, competencyBlockId: draft.blockId, ...(draft.draft.draftId ? { activityDraftId: draft.draft.draftId } : {}) }).toString()}`
   }
@@ -89,7 +99,7 @@ export function ActivitiesPage() {
       <div className="mt-3 flex flex-col gap-3 border-t border-border/60 pt-3 sm:flex-row sm:items-center sm:justify-between"><div className="flex gap-2 overflow-x-auto pb-0.5"><StatusFilter active={status === 'all'} label="Todas" count={statusCounts.all} tone="neutral" onClick={() => setStatus('all')} /><StatusFilter active={status === 'pending'} label="Pendientes" count={statusCounts.pending} tone="warning" onClick={() => setStatus('pending')} /><StatusFilter active={status === 'partial'} label="En evaluación" count={statusCounts.partial} tone="info" onClick={() => setStatus('partial')} /><StatusFilter active={status === 'graded'} label="Calificadas" count={statusCounts.graded} tone="success" onClick={() => setStatus('graded')} /></div>{!loading ? <p className="shrink-0 text-xs font-semibold text-muted-foreground">{visible.length} de {workspace.activities.length} actividades</p> : null}</div>
     </FilterBar>
 
-    {error ? <FeedbackBanner role="alert" tone="danger">{error}</FeedbackBanner> : loading ? <div role="status" className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">{Array.from({ length: 6 }, (_, index) => <div key={index} className="h-56 animate-pulse rounded-3xl bg-card/70" />)}</div> : !visible.length ? <EmptyState title="No hay actividades" description={workspace.activities.length ? 'Prueba con otros filtros.' : 'Crea la primera actividad para comenzar.'} icon={CheckSquare} tone="warning" /> : <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">{visible.map((activity) => <ActivityCard key={activity.id} activity={activity} onView={() => setSelectedActivity(activity)} />)}</div>}
+    {error ? <FeedbackBanner role="alert" tone="danger">{error}<Button variant="outline" onClick={() => setRetry(value => value + 1)}>Reintentar actividades</Button></FeedbackBanner> : loading ? <div role="status" className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">{Array.from({ length: 6 }, (_, index) => <div key={index} className="h-56 animate-pulse rounded-3xl bg-card/70" />)}</div> : !visible.length ? <EmptyState title="No hay actividades" description={workspace.activities.length ? 'Prueba con otros filtros.' : 'Crea la primera actividad para comenzar.'} icon={CheckSquare} tone="warning" /> : <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">{visible.map((activity) => <ActivityCard key={activity.id} activity={activity} onView={() => setSelectedActivity(activity)} />)}</div>}
 
     {creating ? <CreateActivityDialog workspace={workspace} onClose={() => setCreating(false)} /> : null}
     {selectedActivity ? <ActivityInfoModal activity={selectedActivity} onClose={() => setSelectedActivity(null)} onEdit={() => { const activity = selectedActivity; setSelectedActivity(null); navigate(editActivityHref(activity)) }} onEvaluate={() => { const activity = selectedActivity; setSelectedActivity(null); navigate(activityHref(activity, 'evaluate')) }} /> : null}
@@ -130,7 +140,7 @@ function CreateActivityDialog({ workspace, onClose }: { workspace: ActivityCente
   const courses = Array.from(new Map(workspace.sectionSubjects.map((item) => [item.sectionId ?? item.id, `${item.gradeName} ${item.sectionName}`])).entries())
   const subjects = workspace.sectionSubjects.filter((item) => item.sectionId === courseId)
   const ready = sectionSubjectId && academicPeriodId && competencyBlockId
-  return <Modal title="Crear actividad" description="Selecciona el contexto académico; el formulario completará la actividad y su instrumento." onClose={onClose} className="max-w-xl" contentClassName="p-5"><div className="grid gap-4 sm:grid-cols-2"><Filter label="Curso" value={courseId} onChange={(value) => { setCourseId(value); setSectionSubjectId(''); setAcademicPeriodId(''); setCompetencyBlockId('') }}><option value="">Selecciona un curso</option>{courses.map(([id, label]) => <option key={id} value={id}>{label}</option>)}</Filter><Filter label="Asignatura" value={sectionSubjectId} onChange={(value) => { setSectionSubjectId(value); setAcademicPeriodId(''); setCompetencyBlockId('') }}><option value="">Selecciona una asignatura</option>{subjects.map((item) => <option key={item.id} value={item.id}>{item.subjectName}</option>)}</Filter><Filter label="Período" value={academicPeriodId} onChange={setAcademicPeriodId}><option value="">Selecciona un período</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</Filter><Filter label="Bloque de competencias" value={competencyBlockId} onChange={setCompetencyBlockId}><option value="">Selecciona un bloque</option>{availableBlocks.map((block) => <option key={block.id} value={block.id}>{block.shortName} · {block.name}</option>)}</Filter></div><div className="mt-5 flex justify-end gap-2 border-t border-border pt-4"><Button variant="outline" onClick={onClose}>Cancelar</Button><Button disabled={!ready} onClick={() => navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId, academicPeriodId, competencyBlockId }).toString()}`, { state: { activityCreatorOrigin: { kind: 'activities', label: 'Volver a Actividades', returnTo: '/actividades' } } })}><Plus className="size-4" /> Continuar</Button></div></Modal>
+  return <Modal title="Crear actividad" description="Selecciona el contexto académico; el formulario completará la actividad y su instrumento." onClose={onClose} className="max-w-xl" contentClassName="p-5"><div className="grid gap-4 sm:grid-cols-2"><Filter label="Curso" value={courseId} onChange={(value) => { setCourseId(value); setSectionSubjectId(''); setAcademicPeriodId(''); setCompetencyBlockId('') }}><option value="">Selecciona un curso</option>{courses.map(([id, label]) => <option key={id} value={id}>{label}</option>)}</Filter><Filter label="Asignatura" value={sectionSubjectId} onChange={(value) => { setSectionSubjectId(value); setAcademicPeriodId(''); setCompetencyBlockId('') }}><option value="">Selecciona una asignatura</option>{subjects.map((item) => <option key={item.id} value={item.id}>{item.subjectName}</option>)}</Filter><Filter label="Período" value={academicPeriodId} onChange={setAcademicPeriodId}><option value="">Selecciona un período</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</Filter><Filter label="Bloque de competencias" value={competencyBlockId} onChange={setCompetencyBlockId}><option value="">Selecciona un bloque</option>{availableBlocks.map((block) => <option key={block.id} value={block.id}>{block.shortName} · {block.name}</option>)}</Filter></div><div className="mt-5 flex justify-end gap-2 border-t border-border pt-4"><Button data-ui-action="cancel" variant="outline" onClick={onClose}>Cancelar</Button><Button disabled={!ready} onClick={() => navigate(`/actividades/crear?${new URLSearchParams({ sectionSubjectId, academicPeriodId, competencyBlockId }).toString()}`, { state: { activityCreatorOrigin: { kind: 'activities', label: 'Volver a Actividades', returnTo: '/actividades' } } })}><Plus className="size-4" /> Continuar</Button></div></Modal>
 }
 
 function Filter({ label, value, onChange, children }: { label: string; value: string; onChange: (value: string) => void; children: ReactNode }) { return <label className="grid min-w-0 gap-1 text-[10px] font-extrabold uppercase tracking-[0.08em] text-muted-foreground">{label}<select value={value} onChange={(event) => onChange(event.target.value)} className="h-11 min-w-0 rounded-xl border border-border bg-card px-3 text-sm font-bold normal-case tracking-normal text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{children}</select></label> }

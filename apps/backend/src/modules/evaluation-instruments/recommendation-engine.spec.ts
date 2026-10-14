@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 import { describe, it, expect } from 'vitest'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { academicContext, resolveScope, type AcademicContext } from './curriculum-context'
-import { recommend, distributeScore, detectActivityType, similarToken, rankCurriculum, assertValidRecommendation, type RankedElement } from './recommendation-engine'
+import { recommend, distributeScore, detectActivityType, detectFirstSecondaryLanguageActivity, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, similarToken, rankCurriculum, assertValidRecommendation, type RankedElement } from './recommendation-engine'
 
 const root = resolve(process.cwd(), '../..')
 const cases = JSON.parse(readFileSync(resolve(root, 'data/evaluation-instruments/cases-v1.json'), 'utf8')) as { case: string; level: 'PRIMARY' | 'SECONDARY'; grade: number; code: string; subject: string; exit?: string; activityTitle: string; description?: string; maxScore: number; expectedInstrument: string }[]
@@ -12,6 +12,133 @@ const scopes = rows.filter(r => r.kind === 'scope')
 const elements: RankedElement[] = rows.filter(r => r.kind === 'element').map(r => ({ elementId: r.id, scopeId: scopes.find(s => s.stableKey === r.scopeKey).id,
   versionId: r.versionId, type: r.type, text: r.originalText, normalizedText: r.normalizedText,
   sources: [{ documentId: r.source.documentId, pdfPage: r.source.pdfPage, printedPage: r.source.printedPage }] }))
+
+describe('shared instrument boundaries', () => {
+  it('keeps an exact one-cent recommendation with zero-point rows', () => {
+    const result = recommend({ activityTitle: 'Proyecto', participationMode: 'INDIVIDUAL', maxScore: 0.01 }, null, null, [], 'UNMAPPED', null)
+    expect(result.criteria.reduce((total, criterion) => total + criterion.maxScoreUnits, 0)).toBe(1)
+    expect(result.criteria.some(criterion => criterion.maxScoreUnits === 0)).toBe(true)
+  })
+
+  it('rejects a recommendation containing 21 criteria', () => {
+    const result = recommend({ activityTitle: 'Proyecto', participationMode: 'INDIVIDUAL', maxScore: 20 }, null, null, [], 'UNMAPPED', null)
+    result.criteria = Array.from({ length: 21 }, (_, index) => ({ ...result.criteria[0], id: `c${index}`, maxScore: 1, maxScoreUnits: 100 }))
+    result.totalScore = 21; result.totalScoreUnits = 2100
+    expect(() => assertValidRecommendation(result)).toThrow()
+  })
+})
+
+describe('Selecciones automáticas de Lengua Española en 1.º de secundaria', () => {
+  const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+  it.each([
+    ['Redactar una noticia', '', 'NEWS_WRITING', 'analisis-producciones', 'rubrica'],
+    ['Actividad', 'Presentarán oralmente una guía turística de dos lugares de la comunidad.', 'TOURIST_GUIDE_PRESENTATION', 'exposicion', 'rubrica'],
+    ['Informe de lectura', 'Compararán dos informes e identificarán diferencias en su estructura.', 'READING_REPORT_COMPARISON', 'analisis-producciones', 'rubrica'],
+    ['El afiche', 'Analizarán un afiche e identificarán su propósito y destinatarios.', 'POSTER_ANALYSIS', 'observacion-sistematica', 'lista-cotejo'],
+    ['El cuento policíaco', 'Narrarán oralmente el cuento y explicarán sus pistas.', 'DETECTIVE_STORY_NARRATION', 'presentacion', 'rubrica'],
+    ['Crear un caligrama', '', 'CALLIGRAM_CREATION', 'analisis-producciones', 'rubrica'],
+    ['Actividad', 'Leerán un cuento y redactarán un informe de lectura.', 'READING_REPORT_WRITING', 'analisis-producciones', 'rubrica'],
+  ])('interpreta %s: %s', (title, description, expected, technique, instrument) => {
+    const type = detectFirstSecondaryLanguageActivity(title, description, context)
+    expect(type).toBe(expected)
+    expect(firstSecondaryLanguageSelections(type!)).toEqual({ suggestedEvaluationTechnique: technique, suggestedInstrumentType: instrument })
+    const result = recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'UNMAPPED', null)
+    expect(result.activityType).toBe(expected)
+    expect(result.instrumentType).toBe(instrument)
+  })
+  it('excluye otras asignaturas y grados', () => {
+    expect(detectFirstSecondaryLanguageActivity('Crear un caligrama', '', { ...context, grade: 2 })).toBeNull()
+    expect(detectFirstSecondaryLanguageActivity('Crear un caligrama', '', { ...context, subjectCode: 'ING' })).toBeNull()
+    expect(detectFirstSecondaryLanguageActivity('Crear un caligrama', '', { ...context, level: 'PRIMARY' })).toBeNull()
+  })
+  it('prioriza el informe que se elabora después de leer un cuento', () => {
+    const title = 'Informe de lectura de un cuento'
+    const description = 'Los estudiantes seleccionarán un cuento corto de su preferencia, realizarán una lectura comprensiva y elaborarán un informe escrito en el que presentarán el título de la obra, su autor, un resumen de los acontecimientos principales, una descripción de los personajes y un análisis de los valores o situaciones sociales presentes en la historia. Finalmente, redactarán una conclusión expresando su interpretación personal del texto'
+    const type = detectFirstSecondaryLanguageActivity(title, description, context)
+    expect(type).toBe('READING_REPORT_WRITING')
+    expect(firstSecondaryLanguageSelections(type!)).toEqual({ suggestedEvaluationTechnique: 'analisis-producciones', suggestedInstrumentType: 'rubrica' })
+    expect(recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'UNMAPPED', null).activityType).toBe(type)
+  })
+  it('expone propuestas adicionales del catálogo solo para la solicitud explícita', () => {
+    const input = { activityTitle: 'Informe de lectura de un cuento',
+      description: 'Elaborarán un informe de lectura con resumen, análisis de personajes y conclusión.',
+      participationMode: 'INDIVIDUAL' as const, maxScore: 20, preferredInstrumentType: 'rubrica' as const }
+    const initial = recommend(input, context, null, [], 'UNMAPPED', null)
+    const expanded = recommend({ ...input, includeAdditionalCandidates: true }, context, null, [], 'UNMAPPED', null)
+    expect(expanded.criteria.length).toBe(initial.criteria.length)
+    expect(expanded.criteria.slice(0, initial.criteria.length).map(item => item.title)).toEqual(initial.criteria.map(item => item.title))
+    expect(expanded.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(2000)
+    expect(expanded.criteria.every(item => item.templateId.startsWith('report-'))).toBe(true)
+    expect(expanded.criteria.map(item => item.title)).not.toContain('Contenido y adecuación')
+  })
+})
+
+describe('Recomendaciones generales fuera del alcance de 1.º de secundaria', () => {
+  it('clasifica la elaboración del informe en 2.º como Informe y propone técnica e instrumento', () => {
+    const title = 'Análisis y elaboración de un informe de lectura.'
+    const description = 'Los estudiantes seleccionarán un cuento, realizarán una lectura comprensiva y elaborarán un informe escrito con resumen, personajes y conclusión.'
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 2, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: null }
+    const type = detectActivityType(title, description, evaluationCatalogV1, false)
+    expect(type.id).toBe('REPORT')
+    expect(suggestedSelections(type.id, context)).toEqual({ suggestedEvaluationTechnique: 'analisis-producciones', suggestedInstrumentType: 'rubrica' })
+    expect(recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'UNMAPPED', null).activityType).toBe('REPORT')
+  })
+})
+describe('La noticia de Lengua Española en 2.º de secundaria', () => {
+  const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 2, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+  const cases = [
+    ['La noticia', 'Los estudiantes redactarán una noticia sobre una situación de su comunidad, con titular, entrada y cuerpo', 'NEWS_WRITING', 'analisis-producciones', 'rubrica', 'Titular, entrada y cuerpo'],
+    ['Lo que ocurre en el mundo', 'Leerán una noticia sobre inmigración, identificarán sus partes y explicarán el hecho con evidencias del texto', 'NEWS_ANALYSIS', 'observacion-sistematica', 'lista-cotejo', 'Interrogantes fundamentales'],
+    ['Dos versiones de un hecho', 'Compararán dos noticias sobre el mismo acontecimiento y justificarán sus semejanzas y diferencias', 'NEWS_COMPARISON', 'analisis-producciones', 'rubrica', 'Semejanzas y diferencias'],
+    ['Nuestro noticiero', 'Presentarán oralmente una noticia sobre educación, explicando qué ocurrió, a quién, dónde, cuándo y cómo', 'NEWSCAST', 'exposicion', 'rubrica', 'Interrogantes de la noticia'],
+    ['Una noticia para debatir', 'Debatirán sobre el hecho presentado en una noticia, argumentando sus posturas con evidencias', 'DEBATE', 'debate', 'rubrica', 'Argumentos sobre la noticia'],
+  ] as const
+  it.each(cases)('interpreta y prepara %s', (title, description, expectedType, expectedTechnique, expectedInstrument, expectedCriterion) => {
+    const detected = detectSecondaryLanguageActivity(title, description, context)
+    expect(detected).toBe(expectedType)
+    expect(firstSecondaryLanguageSelections(detected!)).toEqual({ suggestedEvaluationTechnique: expectedTechnique, suggestedInstrumentType: expectedInstrument })
+    for (const maxScore of [20, 17.35]) for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore, preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(expectedType)
+      expect(result.instrumentType).toBe(instrumentType)
+      if (instrumentType === 'rubrica' || instrumentType === 'lista-ponderada') expect(result.criteria.map(item => item.title)).toContain(expectedCriterion)
+      else expect(result.criteria.map(item => item.title)).toEqual(result.criteria.map(item => item.description))
+      expect(result.totalScoreUnits).toBe(Math.round(maxScore * 100))
+      expect(result.internalTrace.reasons).toContain('module=lengua-secundaria-2-la-noticia')
+      if (instrumentType === 'rubrica' || instrumentType === 'escala') {
+        expect(result.criteria[0].descriptors).toHaveLength(4)
+        expect(new Set(result.criteria[0].descriptors.map(item => item.text)).size).toBe(4)
+      }
+    }
+  })
+  it('conserva un informe sobre la noticia como producto principal y respeta la elección explícita', () => {
+    const title = 'Informe sobre una noticia'
+    const description = 'Elaborarán un informe escrito sobre una noticia de educación con análisis y evidencias del texto.'
+    expect(detectSecondaryLanguageActivity(title, description, context)).toBe('REPORT')
+    const result = recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'UNMAPPED', null)
+    expect(result.activityType).toBe('REPORT')
+    expect(result.criteria.map(item => item.title)).toContain('Organización del informe')
+    const manual = recommend({ activityTitle: title, description, participationMode: 'INDIVIDUAL', maxScore: 20, pedagogicalActivityType: 'ESSAY' }, context, null, [], 'UNMAPPED', null)
+    expect(manual.activityType).toBe('ESSAY')
+    expect(manual.criteria.map(item => item.title)).not.toContain('Organización del informe')
+  })
+  it('no impone imágenes, equipo ni gramática no solicitada', () => {
+    const base = { activityTitle: 'La noticia', description: 'Redactarán una noticia sobre su comunidad con titular, entrada y cuerpo.',
+      participationMode: 'INDIVIDUAL' as const, maxScore: 20 }
+    const result = recommend(base, context, null, [], 'UNMAPPED', null)
+    expect(JSON.stringify(result.criteria)).not.toMatch(/imágenes|fotografías|trabajo en equipo|pluscuamperfecto|subordinadas/i)
+    const requested = recommend({ ...base, description: `${base.description} Usarán oraciones coordinadas y subordinadas y el pretérito pluscuamperfecto.` },
+      context, null, [], 'UNMAPPED', null)
+    expect(requested.criteria.find(item => item.templateId === 'news-feature-complex-sentences')?.description).toContain('oraciones coordinadas y las oraciones subordinadas')
+    expect(requested.criteria.find(item => item.templateId === 'news-feature-indicative')?.description).toContain('pretérito pluscuamperfecto')
+  })
+  it('mantiene el alcance de 1.º y excluye otros grados y materias', () => {
+    expect(detectSecondaryLanguageActivity('La noticia', 'Debatirán sobre una noticia.', { ...context, grade: 1 })).toBe('DEBATE')
+    expect(detectSecondaryLanguageActivity('La noticia', 'Debatirán sobre una noticia.', { ...context, grade: 3 })).toBeNull()
+    expect(detectSecondaryLanguageActivity('La noticia', 'Debatirán sobre una noticia.', { ...context, subjectCode: 'SOC' })).toBeNull()
+  })
+})
+
 function run(fixture = cases[1], options = {}) {
   const context: AcademicContext = { level: fixture.level, grade: fixture.grade, cycle: fixture.grade <= 3 ? 1 : 2, subjectCode: fixture.code, subjectName: fixture.subject, optativeExitName: fixture.exit ?? null, modalityCode: 'academic' }
   const resolution = resolveScope(context, scopes.filter(s => s.level === fixture.level))
@@ -99,9 +226,9 @@ describe('Recomendador con currículo literal completo', () => {
     expect(typo.confidence).toBe('LOW')
     expect(typo.selectedCurriculumElements).toEqual([])
   })
-  it('prioriza la evidencia nombrada en el título frente a menciones de la descripción', () => {
+  it('prioriza la acción principal descrita y usa el título como apoyo', () => {
     expect(detectActivityType('Informe científico sobre reacciones químicas', 'Describir los datos del experimento').id).toBe('REPORT')
-    expect(detectActivityType('Investigación sobre terremotos', 'Preparar una exposición final').id).toBe('RESEARCH')
+    expect(detectActivityType('Investigación sobre terremotos', 'Investigar para presentar una exposición final').id).toBe('EXPOSITION')
     expect(detectActivityType('Actividad', 'Resolver problemas con fracciones').id).toBe('PROBLEM_SOLVING')
   })
   it('reconoce familias representativas y erratas acotadas sin reinterpretar otros títulos', () => {
@@ -165,7 +292,7 @@ describe('Recomendador con currículo literal completo', () => {
     ['Exposición sobre la biodiversidad', 'Ciencias de la Naturaleza', 'NAT', 'EXPOSITION', 'rubrica', /biodiversidad/i],
     ['Experimento sobre densidad', 'Ciencias de la Naturaleza', 'NAT', 'EXPERIMENT', 'rubrica', /densidad/i],
     ['Resolución de problemas con fracciones', 'Matemática', 'MAT', 'PROBLEM_SOLVING', 'lista-ponderada', /fracciones/i],
-    ['Producción de un cuento corto', 'Lengua Española', 'LEN', 'WRITTEN_PRODUCTION', 'rubrica', /cuento corto/i],
+    ['Producción de un cuento corto', 'Lengua Española', 'LEN', 'WRITTEN_PRODUCTION', 'rubrica', /cuento/i],
     ['Pintura sobre identidad cultural', 'Educación Artística', 'ART', 'ARTISTIC_PRODUCTION', 'rubrica', /identidad cultural/i],
     ['Investigación sobre las migraciones', 'Ciencias Sociales', 'SOC', 'RESEARCH', 'rubrica', /migraciones/i],
   ])('genera contenido disciplinar válido para %s', (activityTitle, subjectName, subjectCode, activityType, instrumentType, topic) => {
@@ -241,12 +368,130 @@ describe('Recomendador con currículo literal completo', () => {
     expect(math.criteria.some(criterion => criterion.description.includes('fracciones'))).toBe(true)
     const story = run({ ...cases[4], activityTitle: 'Producción de un cuento corto', description: 'Escribir un cuento corto con desarrollo coherente y vocabulario adecuado.' }).result
     expect(story.criteria.map(criterion => criterion.title)).toContain('Estructura narrativa del cuento')
-    expect(story.criteria.some(criterion => criterion.description.includes('cuento corto'))).toBe(true)
+    expect(story.criteria.some(criterion => criterion.description.includes('acontecimientos del cuento'))).toBe(true)
     expect(JSON.stringify(story.criteria)).not.toMatch(/volcan|científic/)
   })
   it('catálogo global: IDs únicos, tipos existentes y referencias coherentes', () => {
     for (const entries of [evaluationCatalogV1.activityTypes, evaluationCatalogV1.criterionTemplates, evaluationCatalogV1.recommendationRules]) expect(new Set(entries.map(e => e.id)).size).toBe(entries.length)
-    expect(evaluationCatalogV1.activityTypes).toHaveLength(20)
+    expect(evaluationCatalogV1.activityTypes).toHaveLength(46)
     for (const rule of evaluationCatalogV1.recommendationRules) expect(evaluationCatalogV1.instrumentTemplates.map(t => t.id)).toContain(rule.instrument)
+  })
+  it.each([
+    ['La noticia', 'Los estudiantes redactarán una noticia sobre un acontecimiento escolar, con titular, entrada y cuerpo', 'NEWS_WRITING', ['Información esencial de la noticia', 'Titular, entrada y cuerpo']],
+    ['La noticia', 'Los estudiantes leerán una noticia e identificarán sus partes y las interrogantes que responde', 'NEWS_ANALYSIS', ['Identificación de sus partes', 'Interrogantes fundamentales']],
+    ['Noticiero escolar', 'Los estudiantes presentarán oralmente en equipos noticias del centro; se calificará individualmente', 'NEWSCAST', ['Información periodística', 'Dominio individual de la noticia asignada']],
+  ])('prepara La noticia según la acción descrita: %s', (activityTitle, description, activityType, expectedTitles) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore: 17.5, participationMode: description.includes('equipos') ? 'GROUP' : 'INDIVIDUAL', preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      expect(result.instrumentType).toBe(instrumentType)
+      if (instrumentType === 'rubrica' || instrumentType === 'lista-ponderada') expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      else expect(result.criteria.map(item => item.title)).toEqual(result.criteria.map(item => item.description))
+      expect(result.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(1750)
+      expect(result.criteria.every(item => item.sourceType === 'CONTEXTUALIZED' && item.sourceReferences.length === 0)).toBe(true)
+      if (instrumentType === 'rubrica' || instrumentType === 'escala') expect(result.criteria.every(item => item.descriptors.length === 4)).toBe(true)
+    }
+  })
+  it.each([
+    ['Conoce mi comunidad', 'Los estudiantes elaborarán una guía turística de su comunidad con portada, información de tres lugares, imágenes y cierre.', 'TOURIST_GUIDE_CREATION', ['Información de tres lugares solicitados', 'Estructura de la guía turística']],
+    ['La guía turística', 'Los estudiantes leerán una guía turística e identificarán su estructura y los recursos que utiliza para orientar al visitante.', 'TOURIST_GUIDE_ANALYSIS', ['Identificación de la estructura', 'Recursos para orientar al visitante']],
+    ['Lugares de mi comunidad', 'Los estudiantes presentarán oralmente dos lugares de interés utilizando una guía turística; se calificará individualmente.', 'TOURIST_GUIDE_PRESENTATION', ['Información de dos lugares solicitados', 'Claridad de la comunicación oral', 'Dominio individual']],
+    ['Dos destinos', 'Los estudiantes compararán dos guías turísticas y justificarán cuál orienta mejor al visitante.', 'TOURIST_GUIDE_COMPARISON', ['Comparación del contenido', 'Conclusión sustentada']],
+  ])('prepara La guía turística según la acción descrita: %s', (activityTitle, description, activityType, expectedTitles) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore: 17.35, participationMode: description.includes('individual') ? 'INDIVIDUAL' : 'GROUP', preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      expect(result.instrumentType).toBe(instrumentType)
+      if (instrumentType === 'rubrica' || instrumentType === 'lista-ponderada') expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      else expect(result.criteria.map(item => item.title)).toEqual(result.criteria.map(item => item.description))
+      expect(result.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(1735)
+      expect(result.criteria.every(item => item.sourceType === 'CONTEXTUALIZED' && item.sourceReferences.length === 0)).toBe(true)
+      if (instrumentType === 'rubrica' || instrumentType === 'escala') expect(result.criteria.every(item => item.descriptors.length === 4)).toBe(true)
+    }
+  })
+  it('respeta el tipo explícito aunque el texto sugiera otra acción de guía turística', () => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle: 'La guía turística', description: 'Leer y analizar una guía turística.', pedagogicalActivityType: 'TOURIST_GUIDE_CREATION', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(result.activityType).toBe('TOURIST_GUIDE_CREATION')
+  })
+  it.each([
+    ['Cuidemos el agua', 'Los estudiantes elaborarán un afiche para motivar a la comunidad escolar a ahorrar agua, con un mensaje breve, recomendaciones e imágenes relacionadas.', 'POSTER_CREATION', ['Mensaje del afiche', 'Adecuación al público destinatario']],
+    ['Mensajes que convencen', 'Los estudiantes analizarán un afiche de prevención e identificarán su propósito, destinatarios y recursos utilizados para convencer.', 'POSTER_ANALYSIS', ['Propósito y destinatarios del afiche', 'Recursos para convencer']],
+    ['Dos formas de comunicar', 'Los estudiantes compararán dos afiches sobre convivencia escolar y justificarán cuál comunica mejor su mensaje.', 'POSTER_COMPARISON', ['Comparación de mensajes y argumentos', 'Eficacia comunicativa']],
+    ['Nuestra campaña', 'Cada estudiante presentará oralmente su afiche sobre cuidado del entorno y explicará el mensaje, el público destinatario y la elección de sus elementos visuales.', 'POSTER_PRESENTATION', ['Mensaje del afiche', 'Claridad de la presentación oral']],
+  ])('prepara El afiche según la acción descrita: %s', (activityTitle, description, activityType, expectedTitles) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const maxScore of [20, 17.35]) for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore, participationMode: 'INDIVIDUAL', preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      expect(result.instrumentType).toBe(instrumentType)
+      if (instrumentType === 'rubrica' || instrumentType === 'lista-ponderada') expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      else expect(result.criteria.map(item => item.title)).toEqual(result.criteria.map(item => item.description))
+      expect(result.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(Math.round(maxScore * 100))
+      if (activityType === 'POSTER_ANALYSIS') expect(JSON.stringify(result.criteria)).not.toMatch(/elabora|produce otro afiche/i)
+      if (activityTitle === 'Cuidemos el agua') expect(JSON.stringify(result.criteria)).not.toMatch(/fecha|lugar de realizaci[oó]n/i)
+      if (instrumentType === 'rubrica' || instrumentType === 'escala') expect(result.criteria.every(item => item.descriptors.length === 4)).toBe(true)
+    }
+  })
+  it('la selección explícita de actividad de afiche prevalece sobre la acción detectada', () => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle: 'Mensajes', description: 'Analizarán un afiche de prevención.', pedagogicalActivityType: 'POSTER_CREATION', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(result.activityType).toBe('POSTER_CREATION')
+    expect(result.criteria.map(item => item.title)).toContain('Organización, legibilidad y corrección')
+  })
+  it.each([
+    ['Informe sobre un cuento', 'Elaborarán un informe de lectura sobre un cuento e incluirán resumen y análisis de sus valores.', 'READING_REPORT_WRITING', ['Estructura del informe de lectura', 'Análisis sociocultural']],
+    ['Comprender un informe', 'Leerán un informe de lectura e identificarán su estructura, resumen y análisis.', 'READING_REPORT_ANALYSIS', ['Identificación de la estructura', 'Comprensión del resumen']],
+    ['Compartimos la lectura', 'Presentarán oralmente un informe de lectura sobre una leyenda y responderán preguntas individualmente.', 'READING_REPORT_PRESENTATION', ['Organización del informe oral', 'Claridad de la exposición']],
+    ['Dos interpretaciones', 'Compararán informes de lectura sobre una novela y justificarán sus diferencias.', 'READING_REPORT_COMPARISON', ['Comparación de interpretaciones', 'Conclusión comparativa']],
+  ])('prepara El informe de lectura según la acción: %s', (activityTitle, description, activityType, expectedTitles) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore: 17.35, participationMode: 'INDIVIDUAL', preferredInstrumentType: instrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      if (instrumentType === 'rubrica' || instrumentType === 'lista-ponderada') expect(result.criteria.map(item => item.title)).toEqual(expect.arrayContaining(expectedTitles))
+      else expect(result.criteria.map(item => item.title)).toEqual(result.criteria.map(item => item.description))
+      expect(result.totalScoreUnits).toBe(1735)
+    }
+  })
+  it.each([
+    ['Creación detectivesca', 'Los estudiantes escribirán un cuento detectivesco con un objeto desaparecido, personajes sospechosos, pistas y un desenlace que explique lo ocurrido.', 'DETECTIVE_STORY_WRITING', 'Misterio, pistas y resolución'],
+    ['Análisis policial', 'Los estudiantes leerán un cuento policíaco e identificarán el narrador, los personajes, el ambiente y las pistas que permiten comprender el desenlace.', 'DETECTIVE_STORY_ANALYSIS', 'Narrador y perspectiva'],
+    ['Narración detectivesca', 'Cada estudiante narrará oralmente un cuento detectivesco, manteniendo la secuencia de los hechos y utilizando la voz para diferenciar las intervenciones de los personajes.', 'DETECTIVE_STORY_NARRATION', 'Voces de narrador y personajes'],
+    ['Comparación detectivesca', 'Los estudiantes compararán dos cuentos detectivescos y explicarán diferencias en personajes, ambientes y resolución del misterio, usando ejemplos de ambos.', 'DETECTIVE_STORY_COMPARISON', 'Resolución del misterio'],
+  ])('prepara el cuento policíaco: %s', (activityTitle, description, activityType, criterionTitle) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const maxScore of [20, 17.35]) for (const preferredInstrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore, participationMode: 'INDIVIDUAL', preferredInstrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      if(preferredInstrumentType==='rubrica'||preferredInstrumentType==='lista-ponderada') expect(result.criteria.map(item => item.title)).toContain(criterionTitle)
+      else expect(result.criteria.map(item=>item.title)).toEqual(result.criteria.map(item=>item.description))
+      expect(result.totalScoreUnits).toBe(Math.round(maxScore * 100))
+    }
+  })
+  it('conserva el informe de lectura como producto aunque trate un cuento detectivesco', () => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    const result = recommend({ activityTitle: 'Lectura detectivesca', description: 'Los estudiantes redactarán un informe de lectura sobre un cuento detectivesco.', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(result.activityType).toBe('READING_REPORT_WRITING')
+    expect(result.criteria.map(item => item.title)).toContain('Estructura del informe de lectura')
+  })
+  it.each([
+    ['Árbol de palabras', 'Los estudiantes escribirán un poema sobre la naturaleza y distribuirán sus versos formando la silueta de un árbol. Pueden utilizar verso libre.', 'CALLIGRAM_CREATION', 'Relación entre tema y figura'],
+    ['Interpretamos el caligrama', 'Los estudiantes analizarán un caligrama e interpretarán cómo la figura formada por sus palabras se relaciona con el mensaje y los sentimientos del poema.', 'CALLIGRAM_ANALYSIS', 'Relación entre texto y figura'],
+    ['Comparamos caligramas', 'Los estudiantes compararán dos caligramas y justificarán semejanzas y diferencias en sus mensajes y organización visual.', 'CALLIGRAM_COMPARISON', 'Comparación de figuras'],
+    ['Recitamos', 'Cada estudiante recitará un caligrama seleccionado, utilizando una entonación acorde con los sentimientos del poema.', 'CALLIGRAM_RECITATION', 'Entonación y expresión'],
+    ['Explicamos', 'Cada estudiante presentará oralmente su caligrama y explicará la relación entre el tema, las palabras elegidas y la figura.', 'CALLIGRAM_EXPLANATION', 'Tema, palabras y figura'],
+  ])('prepara el caligrama: %s', (activityTitle, description, activityType, criterionTitle) => {
+    const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
+    for (const preferredInstrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
+      const result = recommend({ activityTitle, description, maxScore: 17.35, participationMode: 'INDIVIDUAL', preferredInstrumentType }, context, null, [], 'UNMAPPED', null)
+      expect(result.activityType).toBe(activityType)
+      if(preferredInstrumentType==='rubrica'||preferredInstrumentType==='lista-ponderada') expect(result.criteria.map(item => item.title)).toContain(criterionTitle)
+      else expect(result.criteria.map(item=>item.title)).toEqual(result.criteria.map(item=>item.description))
+      expect(result.totalScoreUnits).toBe(1735)
+      if (activityType === 'CALLIGRAM_CREATION') expect(JSON.stringify(result.criteria)).toContain('sin exigir rima')
+    }
   })
 })

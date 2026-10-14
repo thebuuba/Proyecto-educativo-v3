@@ -1,10 +1,11 @@
 import { BadRequestException, ForbiddenException, HttpException, Injectable, Logger, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
-import { evaluationCatalogV1 } from './catalog-v1'
+import { evaluationCatalogCurrent } from './catalog-current'
 import { academicContext, resolveScope } from './curriculum-context'
-import { detectActivityType, rankCurriculum, recommend } from './recommendation-engine'
+import { assertValidRecommendation, detectActivityType, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
+import {resolveFirstGradeEnglishTask,firstGradeEnglishSelections,InstrumentCapacityError} from '@aula/shared'
 
 /** Deterministic, read-only recommendation boundary. All tenancy checks precede curricular reads. */
 @Injectable()
@@ -12,7 +13,11 @@ export class EvaluationInstrumentsService {
   private readonly logger = new Logger(EvaluationInstrumentsService.name)
   async interpret(user: AuthenticatedUser, input: InterpretActivityDto) {
     const resolved = await this.resolve(user, input, true)
-    const detected = detectActivityType(input.activityTitle, input.description ?? '')
+    const englishTask=resolveFirstGradeEnglishTask(input.activityTitle,input.description??'',resolved.context)
+    const scopedType = englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
+    const detected = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === scopedType)
+      ?? detectActivityType(input.activityTitle, input.description ?? '', evaluationCatalogCurrent, false, input.evaluationTechnique)
+    const selections = englishTask?firstGradeEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '') : suggestedSelections(detected.id, resolved.context, input.description ?? '')
     const type = input.pedagogicalActivityType ?? detected.id
     const ranked = rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
       resolved.resolution.scope, resolved.rows)
@@ -20,7 +25,9 @@ export class EvaluationInstrumentsService {
       ...element, normalizedText: undefined, topicCoverage,
     }))
     const confident = Boolean(resolved.resolution.scope && ranked[0]?.topicCoverage >= 0.6)
-    return { suggestedActivityType: detected.id, activityType: type, activityTypes: evaluationCatalogV1.activityTypes.map(({ id }) => id),
+    return { suggestedActivityType: detected.id, activityType: type, activityTypes: evaluationCatalogCurrent.activityTypes.map(({ id }) => id),
+      ...(selections ?? {}),
+      ...(input.evaluationTechnique ? { suggestedEvaluationTechnique: input.evaluationTechnique } : {}),
       curriculumVersionId: resolved.version?.id ?? null, curriculumScopeId: resolved.resolution.scope?.id ?? null,
       curriculumStatus: resolved.version?.status ?? null, curriculumCandidates: candidates,
       curriculumMatch: confident ? 'SUGGESTED' : 'NONE', requiresCurriculumConfirmation: true,
@@ -29,15 +36,16 @@ export class EvaluationInstrumentsService {
 
   async recommend(user: AuthenticatedUser, input: RecommendInstrumentDto) {
     try {
-      const { context, resolution, rows, version } = await this.resolve(user, input)
+      const { context, resolution, rows, version } = await this.resolve(user, input, true)
       if (input.selectedCurriculumElementIds?.some(id => !rows.some(row => row.elementId === id))) throw new BadRequestException('Elemento curricular ajeno al ámbito autorizado.')
       const result = recommend(input, context, resolution.scope, rows, resolution.status, version?.status ?? null)
       result.internalTrace.reasons.push(resolution.reason)
       result.curriculumVersionId = version?.id ?? null
-      return result
+      return await this.refineWithAi(result, input, context)
     } catch (error) {
+      if(error instanceof InstrumentCapacityError)throw new BadRequestException(error.message)
       const details = { route: 'POST /evaluation-instruments/recommend', sectionSubjectId: input.sectionSubjectId,
-        catalogVersion: evaluationCatalogV1.version, curriculumVersionId: input.curriculumVersionId ?? null,
+        catalogVersion: evaluationCatalogCurrent.version, curriculumVersionId: input.curriculumVersionId ?? null,
         curriculumScopeId: input.curriculumScopeId ?? null, activityType: input.pedagogicalActivityType ?? null,
         instrumentType: input.preferredInstrumentType ?? null,
         errorClass: error instanceof Error ? error.constructor.name : typeof error,
@@ -45,6 +53,59 @@ export class EvaluationInstrumentsService {
       if (error instanceof HttpException) this.logger.warn(JSON.stringify(details))
       else this.logger.error(JSON.stringify(details), error instanceof Error ? error.stack : undefined)
       throw error
+    }
+  }
+
+  private async refineWithAi(result: ReturnType<typeof recommend>, input: RecommendInstrumentDto, context: ReturnType<typeof academicContext>) {
+    const apiKey = process.env.DEEPSEEK_API_KEY?.trim()
+    if (!apiKey || process.env.NODE_ENV === 'test') return result
+    const editableCriteria = result.criteria.filter(criterion => criterion.sourceType !== 'CURRICULUM_DERIVED' && !criterion.progressionLevels
+      && evaluationCatalogCurrent.criterionTemplates.some(template => template.id === criterion.templateId))
+    if (!editableCriteria.length) return result
+    const curriculum = result.selectedCurriculumElements.slice(0, 12).map(element => ({
+      id: element.elementId, type: element.type, text: element.text,
+    }))
+    const prompt = {
+      grade: context?.grade ?? null, level: context?.level ?? null, subject: context?.subjectName ?? null,
+      activity: { title: input.activityTitle, description: input.description ?? '', type: result.activityType,
+        technique: input.evaluationTechnique ?? null, evidence: input.evidenceInstructions ?? null,
+        resources: input.resources ?? [], priorities: input.evaluationPriorities ?? [], organizationMode: input.organizationMode ?? input.participationMode,
+        gradingMode: input.participationMode, planningMoment: input.planningMoment ?? null },
+      instrumentType: result.instrumentType,
+      criteria: editableCriteria.map(criterion => ({ id: criterion.id, title: criterion.title, description: criterion.description,
+        descriptors: criterion.descriptors.map(descriptor => descriptor.text) })),
+      curriculum,
+    }
+    try {
+      const response = await fetch('https://api.deepseek.com/chat/completions', {
+        method: 'POST', signal: AbortSignal.timeout(30_000),
+        headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: process.env.DEEPSEEK_MODEL ?? 'deepseek-v4-flash', temperature: 0.2,
+          response_format: { type: 'json_object' }, max_tokens: 2400,
+          messages: [{ role: 'system', content: 'Redacta criterios de evaluación pedagógicos, específicos y observables. Respeta exactamente los IDs y la cantidad de criterios y descriptores recibidos. No inventes referencias curriculares, recursos, requisitos, posturas ni preguntas de debate. Distingue trabajo en equipos de calificación individual. Devuelve únicamente JSON: {"criteria":[{"id":"","title":"","description":"","descriptors":[""]}]}.' },
+            { role: 'user', content: JSON.stringify(prompt) }], user_id: `school:${result.curriculumScopeId ?? 'unmapped'}` }),
+      })
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
+      const payload = await response.json() as { choices?: Array<{ message?: { content?: string } }> }
+      const parsed = JSON.parse(payload.choices?.[0]?.message?.content ?? '{}') as { criteria?: Array<{ id?: string; title?: string; description?: string; descriptors?: string[] }> }
+      if (!Array.isArray(parsed.criteria) || parsed.criteria.length !== editableCriteria.length) throw new Error('Cantidad de criterios incompatible')
+      const editableIds = new Set(editableCriteria.map(criterion => criterion.id))
+      const byId = new Map(parsed.criteria.map(criterion => [criterion.id, criterion]))
+      if (byId.size !== editableIds.size || parsed.criteria.some(criterion => typeof criterion.id !== 'string' || !editableIds.has(criterion.id))) throw new Error('IDs de criterios incompatibles')
+      const refined = { ...result, criteria: result.criteria.map(criterion => {
+        if (!editableIds.has(criterion.id)) return criterion
+        const generated = byId.get(criterion.id)
+        if (typeof generated?.title !== 'string' || !generated.title.trim() || typeof generated.description !== 'string' || !generated.description.trim() || !Array.isArray(generated.descriptors)
+          || generated.descriptors.length !== criterion.descriptors.length || generated.descriptors.some(text => typeof text !== 'string' || !text.trim())) throw new Error('Estructura de criterio incompatible')
+        return { ...criterion, title: generated.title.trim(), description: generated.description.trim(),
+          descriptors: criterion.descriptors.map((descriptor, index) => ({ ...descriptor, text: generated.descriptors![index].trim() })) }
+      }) }
+      refined.internalTrace = { ...refined.internalTrace, reasons: [...refined.internalTrace.reasons, 'Redacción refinada por IA con contexto académico acotado; referencias y puntuaciones preservadas por la aplicación.'] }
+      assertValidRecommendation(refined, Boolean(input.includeAdditionalCandidates))
+      return refined
+    } catch (error) {
+      this.logger.warn(`Refinamiento IA no disponible; se conserva la propuesta determinista. ${error instanceof Error ? error.message : String(error)}`)
+      return result
     }
   }
 
@@ -63,7 +124,7 @@ export class EvaluationInstrumentsService {
     const context = academicContext(assignment.grade, assignment.subject, assignment.curriculumContext?.optativeExitName ?? null)
     let release
     try {
-      release = await prisma.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogV1.version } })
+      release = await prisma.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogCurrent.version } })
     } catch (error) {
       const code = typeof error === 'object' && error && 'code' in error ? String(error.code) : ''
       if (code === 'P2021' || code === 'P2022') throw new ServiceUnavailableException('El catálogo evaluativo no está instalado. Aplica las migraciones y el paso de instalación del catálogo.')
@@ -71,7 +132,7 @@ export class EvaluationInstrumentsService {
     }
     if (!release) throw new ServiceUnavailableException('Falta instalar el catálogo evaluativo versionado.')
     // Load the DB release only if its canonical content equals the reviewed, typed seed.
-    if (canonicalJson(release.payload) !== canonicalJson(evaluationCatalogV1)) throw new ServiceUnavailableException('El catálogo difiere del seed revisado.')
+    if (canonicalJson(release.payload) !== canonicalJson(evaluationCatalogCurrent)) throw new ServiceUnavailableException('El catálogo difiere del seed revisado.')
     let version = null
     if (input.curriculumVersionId) {
       version = await prisma.curriculumVersion.findUnique({ where: { id: input.curriculumVersionId } })

@@ -1,0 +1,1878 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "64a2b1f65cea242ca5903fc2a183e97af08dc125",
+      "dirty": true,
+      "startedAt": "2026-10-13T21:07:26.845Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.15"
+    }
+  },
+  "authentication": "PASSWORD_LOGIN_REAL",
+  "saved": [
+    {
+      "id": "67f0aa9e-74e1-407c-9c56-80102fc125c2",
+      "name": "QA afiche · revisión contextual",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Elaborarán un afiche sobre la convivencia escolar con mensaje breve, público destinatario, argumentos y una imagen o símbolo, cuidando la legibilidad.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "6df836ca-b281-4d52-ab43-3e2a72371218",
+      "instrumentSnapshotId": "6fff0a1f-9e42-4733-b027-eac03edaf1cb",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-message:0",
+            "title": "Mensaje del afiche",
+            "maxScore": 4.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-message",
+            "description": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+            "descriptors": [
+              {
+                "text": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+                "levelId": "L4",
+                "scoreUnits": 434
+              },
+              {
+                "text": "El mensaje comunica la idea central; una expresión necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 289
+              },
+              {
+                "text": "El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+                "levelId": "L2",
+                "scoreUnits": 145
+              },
+              {
+                "text": "No comunica un mensaje reconocible del afiche.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-audience:1",
+            "title": "Adecuación al público destinatario · revisión docente",
+            "maxScore": 3.47,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "poster-audience",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "descriptors": [
+              {
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+                "levelId": "L4",
+                "scoreUnits": 347
+              },
+              {
+                "text": "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+                "levelId": "L3",
+                "scoreUnits": 231
+              },
+              {
+                "text": "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No permite reconocer a quién se dirige el afiche.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-persuasion:2",
+            "title": "Argumentos y recursos persuasivos",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-persuasion",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "descriptors": [
+              {
+                "text": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+                "levelId": "L4",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 231
+              },
+              {
+                "text": "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No aporta argumentos ni recursos persuasivos reconocibles.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-visuals:3",
+            "title": "Relación entre texto y elementos visuales",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-visuals",
+            "description": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+            "descriptors": [
+              {
+                "text": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+                "levelId": "L4",
+                "scoreUnits": 347
+              },
+              {
+                "text": "El recurso visual se vincula con el texto; una relación necesita mayor claridad.",
+                "levelId": "L3",
+                "scoreUnits": 231
+              },
+              {
+                "text": "Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No presenta el recurso visual solicitado ni una relación reconocible con el texto.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-legibility:4",
+            "title": "Organización, legibilidad y corrección",
+            "maxScore": 2.6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-legibility",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "descriptors": [
+              {
+                "text": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+                "levelId": "L4",
+                "scoreUnits": 260
+              },
+              {
+                "text": "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+                "levelId": "L3",
+                "scoreUnits": 173
+              },
+              {
+                "text": "La organización o varios errores dificultan comprender partes importantes del afiche.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No presenta un texto legible y organizado para comunicar el mensaje.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 260,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project",
+          "ranking": [
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "637c2904-96b6-576c-bab4-6a0bfdf66944",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "75ccb373-3eb0-5d30-af1f-714caffce54d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a789f2f7-2d52-530a-9b35-24635197aafa",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b54f35d0-4528-5e35-9896-23e407b57835",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "74b33fad-b618-5157-9517-8e0165a2a333",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 18,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "58de88aa-c45b-5b70-b2d4-bdb6e39f5bdb",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 18,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1dbeb12-2f97-5fc6-8b0f-f0f277a1e7ff",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.15",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "POSTER_CREATION",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para QA afiche · revisión contextual",
+        "rubrica:points:0": "4.34",
+        "rubrica:points:1": "3.47",
+        "rubrica:points:2": "3.47",
+        "rubrica:points:3": "3.47",
+        "rubrica:points:4": "2.6",
+        "rubrica:criterion:0": "Mensaje del afiche",
+        "rubrica:criterion:1": "Adecuación al público destinatario · revisión docente",
+        "rubrica:criterion:2": "Argumentos y recursos persuasivos",
+        "rubrica:criterion:3": "Relación entre texto y elementos visuales",
+        "rubrica:criterion:4": "Organización, legibilidad y corrección",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+        "rubrica:description:1": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+        "rubrica:description:2": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+        "rubrica:description:3": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+        "rubrica:description:4": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-message:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-audience:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-persuasion:2",
+        "rubrica:criterion-id:3": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-visuals:3",
+        "rubrica:criterion-id:4": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-legibility:4",
+        "rubrica:descriptor:0:1": "No comunica un mensaje reconocible del afiche.",
+        "rubrica:descriptor:0:2": "El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+        "rubrica:descriptor:0:3": "El mensaje comunica la idea central; una expresión necesita precisión.",
+        "rubrica:descriptor:0:4": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+        "rubrica:descriptor:1:1": "No permite reconocer a quién se dirige el afiche.",
+        "rubrica:descriptor:1:2": "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+        "rubrica:descriptor:1:3": "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+        "rubrica:descriptor:1:4": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+        "rubrica:descriptor:2:1": "No aporta argumentos ni recursos persuasivos reconocibles.",
+        "rubrica:descriptor:2:2": "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+        "rubrica:descriptor:2:3": "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+        "rubrica:descriptor:2:4": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+        "rubrica:descriptor:3:1": "No presenta el recurso visual solicitado ni una relación reconocible con el texto.",
+        "rubrica:descriptor:3:2": "Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.",
+        "rubrica:descriptor:3:3": "El recurso visual se vincula con el texto; una relación necesita mayor claridad.",
+        "rubrica:descriptor:3:4": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+        "rubrica:descriptor:4:1": "No presenta un texto legible y organizado para comunicar el mensaje.",
+        "rubrica:descriptor:4:2": "La organización o varios errores dificultan comprender partes importantes del afiche.",
+        "rubrica:descriptor:4:3": "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+        "rubrica:descriptor:4:4": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[434,347,347,347,260]",
+        "rubrica:criterion-weight:0": "5",
+        "rubrica:criterion-weight:1": "4",
+        "rubrica:criterion-weight:2": "4",
+        "rubrica:criterion-weight:3": "4",
+        "rubrica:criterion-weight:4": "3",
+        "rubrica:meta:criteriaCount": "5",
+        "rubrica:meta:catalogVersion": "evaluation-2026.15",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Mensaje del afiche\",\"description\":\"Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.\",\"progression\":[\"Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.\",\"El mensaje comunica la idea central; una expresión necesita precisión.\",\"El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.\",\"El mensaje contradice o confunde el tema y la acción que pretende comunicar.\",\"No comunica un mensaje reconocible del afiche.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"Adecuación al público destinatario\",\"description\":\"Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.\",\"progression\":[\"Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.\",\"El vocabulario y la acción corresponden al público; una expresión requiere ajuste.\",\"El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.\",\"El lenguaje y la acción contradicen las necesidades del público previsto.\",\"No permite reconocer a quién se dirige el afiche.\"]}",
+        "rubrica:criterion-evidence:2": "{\"title\":\"Argumentos y recursos persuasivos\",\"description\":\"Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.\",\"progression\":[\"Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.\",\"Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.\",\"Usa expresiones para convencer, pero algunas no sustentan el mensaje.\",\"Los argumentos contradicen el mensaje o presentan datos inventados como hechos.\",\"No aporta argumentos ni recursos persuasivos reconocibles.\"]}",
+        "rubrica:criterion-evidence:3": "{\"title\":\"Relación entre texto y elementos visuales\",\"description\":\"Relaciona el texto con la alternativa visual elegida: imagen o símbolo.\",\"progression\":[\"Relaciona el texto con la alternativa visual elegida: imagen o símbolo.\",\"El recurso visual se vincula con el texto; una relación necesita mayor claridad.\",\"Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.\",\"El recurso visual contradice o desvía el mensaje del texto.\",\"No presenta el recurso visual solicitado ni una relación reconocible con el texto.\"]}",
+        "rubrica:criterion-evidence:4": "{\"title\":\"Organización, legibilidad y corrección\",\"description\":\"Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.\",\"progression\":[\"Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.\",\"El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.\",\"La organización o varios errores dificultan comprender partes importantes del afiche.\",\"La distribución o la escritura impiden seguir el mensaje principal.\",\"No presenta un texto legible y organizado para comunicar el mensaje.\"]}",
+        "rubrica:criterion-template:0": "poster-message",
+        "rubrica:criterion-template:1": "poster-audience",
+        "rubrica:criterion-template:2": "poster-persuasion",
+        "rubrica:criterion-template:3": "poster-visuals",
+        "rubrica:criterion-template:4": "poster-legibility",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "a07ac919-5ca6-4738-98fb-3a6e26df1ba7",
+      "name": "QA afiche · lista-cotejo",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Elaborarán un afiche sobre la convivencia escolar con mensaje breve, público destinatario, argumentos y una imagen o símbolo, cuidando la legibilidad.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "4fbb29da-12fa-4e8d-a3f7-178f1ba61993",
+      "instrumentSnapshotId": "a718570c-dff0-4c36-9e9d-c8aabaa08c30",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-message:0",
+            "title": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-message",
+            "description": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+            "descriptors": [
+              {
+                "text": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+                "levelId": "L2",
+                "scoreUnits": 500
+              },
+              {
+                "text": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-audience:1",
+            "title": "Adapta el vocabulario al público destinatario · revisión docente",
+            "maxScore": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "poster-audience",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "descriptors": [
+              {
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+                "levelId": "L2",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-persuasion:2",
+            "title": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-persuasion",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "descriptors": [
+              {
+                "text": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+                "levelId": "L2",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-visuals:3",
+            "title": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-visuals",
+            "description": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+            "descriptors": [
+              {
+                "text": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+                "levelId": "L2",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-legibility:4",
+            "title": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "maxScore": 3,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-legibility",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "descriptors": [
+              {
+                "text": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+                "levelId": "L2",
+                "scoreUnits": 300
+              },
+              {
+                "text": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 300,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "637c2904-96b6-576c-bab4-6a0bfdf66944",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "75ccb373-3eb0-5d30-af1f-714caffce54d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a789f2f7-2d52-530a-9b35-24635197aafa",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b54f35d0-4528-5e35-9896-23e407b57835",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "74b33fad-b618-5157-9517-8e0165a2a333",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 18,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "58de88aa-c45b-5b70-b2d4-bdb6e39f5bdb",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 18,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1dbeb12-2f97-5fc6-8b0f-f0f277a1e7ff",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.15",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "POSTER_CREATION",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA afiche · lista-cotejo",
+        "lista-cotejo:points:0": "5",
+        "lista-cotejo:points:1": "4",
+        "lista-cotejo:points:2": "4",
+        "lista-cotejo:points:3": "4",
+        "lista-cotejo:points:4": "3",
+        "lista-cotejo:criterion:0": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+        "lista-cotejo:criterion:1": "Adapta el vocabulario al público destinatario · revisión docente",
+        "lista-cotejo:criterion:2": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+        "lista-cotejo:criterion:3": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+        "lista-cotejo:criterion:4": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+        "lista-cotejo:description:0": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+        "lista-cotejo:description:1": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+        "lista-cotejo:description:2": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+        "lista-cotejo:description:3": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+        "lista-cotejo:description:4": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-message:0",
+        "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-audience:1",
+        "lista-cotejo:criterion-id:2": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-persuasion:2",
+        "lista-cotejo:criterion-id:3": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-visuals:3",
+        "lista-cotejo:criterion-id:4": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-legibility:4",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[500,400,400,400,300]",
+        "lista-cotejo:criterion-weight:0": "5",
+        "lista-cotejo:criterion-weight:1": "4",
+        "lista-cotejo:criterion-weight:2": "4",
+        "lista-cotejo:criterion-weight:3": "4",
+        "lista-cotejo:criterion-weight:4": "3",
+        "lista-cotejo:meta:criteriaCount": "5",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.15",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.\",\"description\":\"Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.\",\"progression\":[\"Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.\",\"El mensaje comunica la idea central; una expresión necesita precisión.\",\"El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.\",\"El mensaje contradice o confunde el tema y la acción que pretende comunicar.\",\"No comunica un mensaje reconocible del afiche.\"]}",
+        "lista-cotejo:criterion-evidence:1": "{\"title\":\"Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.\",\"description\":\"Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.\",\"progression\":[\"Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.\",\"El vocabulario y la acción corresponden al público; una expresión requiere ajuste.\",\"El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.\",\"El lenguaje y la acción contradicen las necesidades del público previsto.\",\"No permite reconocer a quién se dirige el afiche.\"]}",
+        "lista-cotejo:criterion-evidence:2": "{\"title\":\"Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.\",\"description\":\"Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.\",\"progression\":[\"Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.\",\"Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.\",\"Usa expresiones para convencer, pero algunas no sustentan el mensaje.\",\"Los argumentos contradicen el mensaje o presentan datos inventados como hechos.\",\"No aporta argumentos ni recursos persuasivos reconocibles.\"]}",
+        "lista-cotejo:criterion-evidence:3": "{\"title\":\"Relaciona el texto con la alternativa visual elegida: imagen o símbolo.\",\"description\":\"Relaciona el texto con la alternativa visual elegida: imagen o símbolo.\",\"progression\":[\"Relaciona el texto con la alternativa visual elegida: imagen o símbolo.\",\"El recurso visual se vincula con el texto; una relación necesita mayor claridad.\",\"Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.\",\"El recurso visual contradice o desvía el mensaje del texto.\",\"No presenta el recurso visual solicitado ni una relación reconocible con el texto.\"]}",
+        "lista-cotejo:criterion-evidence:4": "{\"title\":\"Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.\",\"description\":\"Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.\",\"progression\":[\"Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.\",\"El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.\",\"La organización o varios errores dificultan comprender partes importantes del afiche.\",\"La distribución o la escritura impiden seguir el mensaje principal.\",\"No presenta un texto legible y organizado para comunicar el mensaje.\"]}",
+        "lista-cotejo:criterion-template:0": "poster-message",
+        "lista-cotejo:criterion-template:1": "poster-audience",
+        "lista-cotejo:criterion-template:2": "poster-persuasion",
+        "lista-cotejo:criterion-template:3": "poster-visuals",
+        "lista-cotejo:criterion-template:4": "poster-legibility"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "628657b6-cc00-4d4c-b92b-68d74fd6c44e",
+      "name": "QA afiche · escala",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Elaborarán un afiche sobre la convivencia escolar con mensaje breve, público destinatario, argumentos y una imagen o símbolo, cuidando la legibilidad.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "a67f811d-0ebb-4cfc-ae7a-e7ec00487748",
+      "instrumentSnapshotId": "42ad9fa8-6edb-4418-9de2-aa1ef7574b1b",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-message:0",
+            "title": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+            "maxScore": 4.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-message",
+            "description": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+            "descriptors": [
+              {
+                "text": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+                "levelId": "L4",
+                "scoreUnits": 434
+              },
+              {
+                "text": "El mensaje comunica la idea central; una expresión necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 289
+              },
+              {
+                "text": "El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+                "levelId": "L2",
+                "scoreUnits": 145
+              },
+              {
+                "text": "No comunica un mensaje reconocible del afiche.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-audience:1",
+            "title": "Adapta el vocabulario al público destinatario · revisión docente",
+            "maxScore": 3.47,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "poster-audience",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "descriptors": [
+              {
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+                "levelId": "L4",
+                "scoreUnits": 347
+              },
+              {
+                "text": "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+                "levelId": "L3",
+                "scoreUnits": 231
+              },
+              {
+                "text": "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No permite reconocer a quién se dirige el afiche.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-persuasion:2",
+            "title": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-persuasion",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "descriptors": [
+              {
+                "text": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+                "levelId": "L4",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 231
+              },
+              {
+                "text": "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No aporta argumentos ni recursos persuasivos reconocibles.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-visuals:3",
+            "title": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-visuals",
+            "description": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+            "descriptors": [
+              {
+                "text": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+                "levelId": "L4",
+                "scoreUnits": 347
+              },
+              {
+                "text": "El recurso visual se vincula con el texto; una relación necesita mayor claridad.",
+                "levelId": "L3",
+                "scoreUnits": 231
+              },
+              {
+                "text": "Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.",
+                "levelId": "L2",
+                "scoreUnits": 116
+              },
+              {
+                "text": "No presenta el recurso visual solicitado ni una relación reconocible con el texto.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-legibility:4",
+            "title": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "maxScore": 2.6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-legibility",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "descriptors": [
+              {
+                "text": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+                "levelId": "L4",
+                "scoreUnits": 260
+              },
+              {
+                "text": "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+                "levelId": "L3",
+                "scoreUnits": 173
+              },
+              {
+                "text": "La organización o varios errores dificultan comprender partes importantes del afiche.",
+                "levelId": "L2",
+                "scoreUnits": 87
+              },
+              {
+                "text": "No presenta un texto legible y organizado para comunicar el mensaje.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 260,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "637c2904-96b6-576c-bab4-6a0bfdf66944",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "75ccb373-3eb0-5d30-af1f-714caffce54d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a789f2f7-2d52-530a-9b35-24635197aafa",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b54f35d0-4528-5e35-9896-23e407b57835",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "74b33fad-b618-5157-9517-8e0165a2a333",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 18,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "58de88aa-c45b-5b70-b2d4-bdb6e39f5bdb",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 18,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1dbeb12-2f97-5fc6-8b0f-f0f277a1e7ff",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.15",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "POSTER_CREATION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA afiche · escala",
+        "escala:points:0": "4.34",
+        "escala:points:1": "3.47",
+        "escala:points:2": "3.47",
+        "escala:points:3": "3.47",
+        "escala:points:4": "2.6",
+        "escala:criterion:0": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+        "escala:criterion:1": "Adapta el vocabulario al público destinatario · revisión docente",
+        "escala:criterion:2": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+        "escala:criterion:3": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+        "escala:criterion:4": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+        "escala:level-name:1": "Inicial",
+        "escala:level-name:2": "En proceso",
+        "escala:level-name:3": "Logrado",
+        "escala:level-name:4": "Destacado",
+        "escala:description:0": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+        "escala:description:1": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+        "escala:description:2": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+        "escala:description:3": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+        "escala:description:4": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-message:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-audience:1",
+        "escala:criterion-id:2": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-persuasion:2",
+        "escala:criterion-id:3": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-visuals:3",
+        "escala:criterion-id:4": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-legibility:4",
+        "escala:descriptor:0:1": "No comunica un mensaje reconocible del afiche.",
+        "escala:descriptor:0:2": "El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+        "escala:descriptor:0:3": "El mensaje comunica la idea central; una expresión necesita precisión.",
+        "escala:descriptor:0:4": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.",
+        "escala:descriptor:1:1": "No permite reconocer a quién se dirige el afiche.",
+        "escala:descriptor:1:2": "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+        "escala:descriptor:1:3": "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+        "escala:descriptor:1:4": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+        "escala:descriptor:2:1": "No aporta argumentos ni recursos persuasivos reconocibles.",
+        "escala:descriptor:2:2": "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+        "escala:descriptor:2:3": "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+        "escala:descriptor:2:4": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+        "escala:descriptor:3:1": "No presenta el recurso visual solicitado ni una relación reconocible con el texto.",
+        "escala:descriptor:3:2": "Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.",
+        "escala:descriptor:3:3": "El recurso visual se vincula con el texto; una relación necesita mayor claridad.",
+        "escala:descriptor:3:4": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo.",
+        "escala:descriptor:4:1": "No presenta un texto legible y organizado para comunicar el mensaje.",
+        "escala:descriptor:4:2": "La organización o varios errores dificultan comprender partes importantes del afiche.",
+        "escala:descriptor:4:3": "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+        "escala:descriptor:4:4": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[434,347,347,347,260]",
+        "escala:criterion-weight:0": "5",
+        "escala:criterion-weight:1": "4",
+        "escala:criterion-weight:2": "4",
+        "escala:criterion-weight:3": "4",
+        "escala:criterion-weight:4": "3",
+        "escala:meta:criteriaCount": "5",
+        "escala:meta:catalogVersion": "evaluation-2026.15",
+        "escala:criterion-evidence:0": "{\"title\":\"Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.\",\"description\":\"Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.\",\"progression\":[\"Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.\",\"El mensaje comunica la idea central; una expresión necesita precisión.\",\"El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.\",\"El mensaje contradice o confunde el tema y la acción que pretende comunicar.\",\"No comunica un mensaje reconocible del afiche.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.\",\"description\":\"Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.\",\"progression\":[\"Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.\",\"El vocabulario y la acción corresponden al público; una expresión requiere ajuste.\",\"El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.\",\"El lenguaje y la acción contradicen las necesidades del público previsto.\",\"No permite reconocer a quién se dirige el afiche.\"]}",
+        "escala:criterion-evidence:2": "{\"title\":\"Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.\",\"description\":\"Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.\",\"progression\":[\"Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.\",\"Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.\",\"Usa expresiones para convencer, pero algunas no sustentan el mensaje.\",\"Los argumentos contradicen el mensaje o presentan datos inventados como hechos.\",\"No aporta argumentos ni recursos persuasivos reconocibles.\"]}",
+        "escala:criterion-evidence:3": "{\"title\":\"Relaciona el texto con la alternativa visual elegida: imagen o símbolo.\",\"description\":\"Relaciona el texto con la alternativa visual elegida: imagen o símbolo.\",\"progression\":[\"Relaciona el texto con la alternativa visual elegida: imagen o símbolo.\",\"El recurso visual se vincula con el texto; una relación necesita mayor claridad.\",\"Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.\",\"El recurso visual contradice o desvía el mensaje del texto.\",\"No presenta el recurso visual solicitado ni una relación reconocible con el texto.\"]}",
+        "escala:criterion-evidence:4": "{\"title\":\"Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.\",\"description\":\"Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.\",\"progression\":[\"Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.\",\"El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.\",\"La organización o varios errores dificultan comprender partes importantes del afiche.\",\"La distribución o la escritura impiden seguir el mensaje principal.\",\"No presenta un texto legible y organizado para comunicar el mensaje.\"]}",
+        "escala:criterion-template:0": "poster-message",
+        "escala:criterion-template:1": "poster-audience",
+        "escala:criterion-template:2": "poster-persuasion",
+        "escala:criterion-template:3": "poster-visuals",
+        "escala:criterion-template:4": "poster-legibility",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "f5018a8d-bb36-404d-ab01-f4d021a3d41e",
+      "name": "QA afiche · lista-ponderada",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Elaborarán un afiche sobre la convivencia escolar con mensaje breve, público destinatario, argumentos y una imagen o símbolo, cuidando la legibilidad.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "50226cf4-2589-4fc5-8ff9-3044f9a70573",
+      "instrumentSnapshotId": "fe67de70-e5a7-432c-bd09-c44a7c22d5a2",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-message:0",
+            "title": "Mensaje del afiche",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-message",
+            "description": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo. Parcial (50%): El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+            "descriptors": [
+              {
+                "text": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo. Parcial (50%): El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+                "levelId": "L3",
+                "scoreUnits": 500
+              },
+              {
+                "text": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo. Parcial (50%): El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+                "levelId": "L2",
+                "scoreUnits": 250
+              },
+              {
+                "text": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo. Parcial (50%): El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-audience:1",
+            "title": "Adecuación al público destinatario · revisión docente",
+            "maxScore": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "poster-audience",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+            "descriptors": [
+              {
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-persuasion:2",
+            "title": "Argumentos y recursos persuasivos",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-persuasion",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+            "descriptors": [
+              {
+                "text": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-visuals:3",
+            "title": "Relación entre texto y elementos visuales",
+            "maxScore": 4,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-visuals",
+            "description": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo. Parcial (50%): Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.",
+            "descriptors": [
+              {
+                "text": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo. Parcial (50%): Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo. Parcial (50%): Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo. Parcial (50%): Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-legibility:4",
+            "title": "Organización, legibilidad y corrección",
+            "maxScore": 3,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "poster-legibility",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.",
+            "descriptors": [
+              {
+                "text": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.",
+                "levelId": "L3",
+                "scoreUnits": 300
+              },
+              {
+                "text": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.",
+                "levelId": "L2",
+                "scoreUnits": 150
+              },
+              {
+                "text": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 300,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "ranking": [
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "637c2904-96b6-576c-bab4-6a0bfdf66944",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "75ccb373-3eb0-5d30-af1f-714caffce54d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a789f2f7-2d52-530a-9b35-24635197aafa",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b54f35d0-4528-5e35-9896-23e407b57835",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "74b33fad-b618-5157-9517-8e0165a2a333",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 18,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "58de88aa-c45b-5b70-b2d4-bdb6e39f5bdb",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 18,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=3",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1dbeb12-2f97-5fc6-8b0f-f0f277a1e7ff",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.15",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "POSTER_CREATION",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA afiche · lista-ponderada",
+        "lista-ponderada:points:0": "5",
+        "lista-ponderada:points:1": "4",
+        "lista-ponderada:points:2": "4",
+        "lista-ponderada:points:3": "4",
+        "lista-ponderada:points:4": "3",
+        "lista-ponderada:weight:0": "25",
+        "lista-ponderada:weight:1": "20",
+        "lista-ponderada:weight:2": "20",
+        "lista-ponderada:weight:3": "20",
+        "lista-ponderada:weight:4": "15",
+        "lista-ponderada:criterion:0": "Mensaje del afiche",
+        "lista-ponderada:criterion:1": "Adecuación al público destinatario · revisión docente",
+        "lista-ponderada:criterion:2": "Argumentos y recursos persuasivos",
+        "lista-ponderada:criterion:3": "Relación entre texto y elementos visuales",
+        "lista-ponderada:criterion:4": "Organización, legibilidad y corrección",
+        "lista-ponderada:indicator:0": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo. Parcial (50%): El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+        "lista-ponderada:indicator:1": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+        "lista-ponderada:indicator:2": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+        "lista-ponderada:indicator:3": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo. Parcial (50%): Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.",
+        "lista-ponderada:indicator:4": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo. Parcial (50%): El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+        "lista-ponderada:description:1": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+        "lista-ponderada:description:2": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+        "lista-ponderada:description:3": "Relaciona el texto con la alternativa visual elegida: imagen o símbolo. Parcial (50%): Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.",
+        "lista-ponderada:description:4": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-message:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-audience:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-persuasion:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-visuals:3",
+        "lista-ponderada:criterion-id:4": "proposal:evaluation-2026.15:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:poster-legibility:4",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[500,400,400,400,300]",
+        "lista-ponderada:criterion-weight:0": "5",
+        "lista-ponderada:criterion-weight:1": "4",
+        "lista-ponderada:criterion-weight:2": "4",
+        "lista-ponderada:criterion-weight:3": "4",
+        "lista-ponderada:criterion-weight:4": "3",
+        "lista-ponderada:meta:criteriaCount": "5",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.15",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Mensaje del afiche\",\"description\":\"Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo. Parcial (50%): El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.\",\"progression\":[\"Comunica acciones o ideas pertinentes sobre la convivencia escolar mediante un mensaje breve, claro y persuasivo.\",\"El mensaje comunica la idea central; una expresión necesita precisión.\",\"El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.\",\"El mensaje contradice o confunde el tema y la acción que pretende comunicar.\",\"No comunica un mensaje reconocible del afiche.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Adecuación al público destinatario\",\"description\":\"Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.\",\"progression\":[\"Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.\",\"El vocabulario y la acción corresponden al público; una expresión requiere ajuste.\",\"El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.\",\"El lenguaje y la acción contradicen las necesidades del público previsto.\",\"No permite reconocer a quién se dirige el afiche.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Argumentos y recursos persuasivos\",\"description\":\"Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.\",\"progression\":[\"Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.\",\"Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.\",\"Usa expresiones para convencer, pero algunas no sustentan el mensaje.\",\"Los argumentos contradicen el mensaje o presentan datos inventados como hechos.\",\"No aporta argumentos ni recursos persuasivos reconocibles.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Relación entre texto y elementos visuales\",\"description\":\"Relaciona el texto con la alternativa visual elegida: imagen o símbolo. Parcial (50%): Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.\",\"progression\":[\"Relaciona el texto con la alternativa visual elegida: imagen o símbolo.\",\"El recurso visual se vincula con el texto; una relación necesita mayor claridad.\",\"Texto y recurso visual se relacionan parcialmente y compiten por comunicar la idea.\",\"El recurso visual contradice o desvía el mensaje del texto.\",\"No presenta el recurso visual solicitado ni una relación reconocible con el texto.\"]}",
+        "lista-ponderada:criterion-evidence:4": "{\"title\":\"Organización, legibilidad y corrección\",\"description\":\"Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.\",\"progression\":[\"Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.\",\"El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.\",\"La organización o varios errores dificultan comprender partes importantes del afiche.\",\"La distribución o la escritura impiden seguir el mensaje principal.\",\"No presenta un texto legible y organizado para comunicar el mensaje.\"]}",
+        "lista-ponderada:criterion-template:0": "poster-message",
+        "lista-ponderada:criterion-template:1": "poster-audience",
+        "lista-ponderada:criterion-template:2": "poster-persuasion",
+        "lista-ponderada:criterion-template:3": "poster-visuals",
+        "lista-ponderada:criterion-template:4": "poster-legibility"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ],
+  "historical": [
+    {
+      "id": "b048bcd5-82f1-4804-ae74-ef3035eac74c",
+      "name": "Actividad 1 · QA matrices",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "cf61df2b-7c5f-45b3-b6ea-626a238d7e07",
+      "name": "QA filas matrices · lista-cotejo",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "0516c928-3556-492d-bb29-f85bf8133bc4",
+      "name": "QA filas matrices · escala",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "2270b8f1-5625-4823-b28b-a8c78f95176e",
+      "name": "QA filas matrices · lista-ponderada",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "e23e652b-c8e7-490c-89a3-956a5a91b7a4",
+      "name": "Calculamos alturas y distancias utilizando la trigonometría.",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "3e5a0a87-f41d-4e6f-9167-f59c8f670c10",
+      "name": "QA pesos matrices",
+      "catalogVersion": "evaluation-2026.14"
+    },
+    {
+      "id": "53b4debe-9d9f-4c33-95c9-89558ecd3ea6",
+      "name": "QA ámbito matrices",
+      "catalogVersion": "evaluation-2026.14"
+    }
+  ]
+}

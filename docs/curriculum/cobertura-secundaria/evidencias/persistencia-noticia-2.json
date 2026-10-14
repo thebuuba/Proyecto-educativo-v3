@@ -1,0 +1,185 @@
+{
+  "target": "Supabase local 54332",
+  "fixtureSchoolId": "81cb4def-f3b1-407f-97ef-6bf9ee882356",
+  "catalogVersion": "evaluation-2026.9",
+  "authentication": "JWT sintético con guards reales; no prueba de login",
+  "persistedActivities": 24,
+  "retriedWithoutDuplicates": true,
+  "previousReleasesAndSnapshotsPreserved": true,
+  "manualRevisionPreserved": true,
+  "revisionLineage": [
+    "8b092110-b3b3-4c1f-bfb6-076ab2a29ad5",
+    "274b7aff-6da4-4d29-8238-d7cc4a3eced3"
+  ],
+  "changedRetryRejected": true,
+  "results": [
+    {
+      "activityId": "1612bccd-dfb1-4f1a-beca-be800245e89a",
+      "description": "Redacta una noticia sobre el ambiente.",
+      "instrumentType": "rubrica",
+      "activityType": "NEWS_WRITING",
+      "snapshotId": "94cadf4d-25a4-4903-a402-ddd202d483ff"
+    },
+    {
+      "activityId": "dc27e32d-5ba7-4749-9a85-6a53d7cf5c9a",
+      "description": "Redacta una noticia sobre el ambiente.",
+      "instrumentType": "lista-cotejo",
+      "activityType": "NEWS_WRITING",
+      "snapshotId": "f4cb91ef-7e3f-4100-a294-99d232012e6e"
+    },
+    {
+      "activityId": "96949e5c-d965-4654-8b2e-54f57230b141",
+      "description": "Redacta una noticia sobre el ambiente.",
+      "instrumentType": "escala",
+      "activityType": "NEWS_WRITING",
+      "snapshotId": "840b15fc-56e6-464b-ba00-8cdb69caeb18"
+    },
+    {
+      "activityId": "b0b98425-1bbd-409a-9f9c-7797a19bcc9b",
+      "description": "Redacta una noticia sobre el ambiente.",
+      "instrumentType": "lista-ponderada",
+      "activityType": "NEWS_WRITING",
+      "snapshotId": "5469bfcb-be51-4559-be6b-2167dd2815d1"
+    },
+    {
+      "activityId": "5f6d7ad9-f1eb-4f0e-abf3-d65e99cfb70e",
+      "description": "Analiza una noticia sobre educación.",
+      "instrumentType": "rubrica",
+      "activityType": "NEWS_ANALYSIS",
+      "snapshotId": "6aea31e2-6cc2-413f-99b0-6d0860a5f7a9"
+    },
+    {
+      "activityId": "3569697f-0084-4dcc-9986-516230fb53b0",
+      "description": "Analiza una noticia sobre educación.",
+      "instrumentType": "lista-cotejo",
+      "activityType": "NEWS_ANALYSIS",
+      "snapshotId": "f5fb1b96-37c1-4139-a359-711018260184"
+    },
+    {
+      "activityId": "854cbcd9-3b18-458b-83bb-0c54257d4bc4",
+      "description": "Analiza una noticia sobre educación.",
+      "instrumentType": "escala",
+      "activityType": "NEWS_ANALYSIS",
+      "snapshotId": "a7647118-c85c-4d13-af92-08ad0c8e4d8b"
+    },
+    {
+      "activityId": "77066e64-32cd-4864-9f07-3929e24197bc",
+      "description": "Analiza una noticia sobre educación.",
+      "instrumentType": "lista-ponderada",
+      "activityType": "NEWS_ANALYSIS",
+      "snapshotId": "526be3fb-403a-4f05-881f-deb3af093450"
+    },
+    {
+      "activityId": "bad7cfdc-ec8a-4005-87e4-5ab4f6b8681a",
+      "description": "Compara dos noticias sobre educación.",
+      "instrumentType": "rubrica",
+      "activityType": "NEWS_COMPARISON",
+      "snapshotId": "570a456b-d35b-473f-825f-a429cce91764"
+    },
+    {
+      "activityId": "1134b2b0-8c20-46fa-8d6a-0064312be958",
+      "description": "Compara dos noticias sobre educación.",
+      "instrumentType": "lista-cotejo",
+      "activityType": "NEWS_COMPARISON",
+      "snapshotId": "ecae3f5f-6ef3-4861-ab02-1ebf1627f99f"
+    },
+    {
+      "activityId": "d0e3ecbf-87da-430c-bd55-7dface58a2e4",
+      "description": "Compara dos noticias sobre educación.",
+      "instrumentType": "escala",
+      "activityType": "NEWS_COMPARISON",
+      "snapshotId": "14ef4f44-53e6-463d-a172-eaf6511a5185"
+    },
+    {
+      "activityId": "b5a64893-4765-42c9-bdcc-157650482b86",
+      "description": "Compara dos noticias sobre educación.",
+      "instrumentType": "lista-ponderada",
+      "activityType": "NEWS_COMPARISON",
+      "snapshotId": "69a7e340-fa37-40f3-bab9-912bf06afa22"
+    },
+    {
+      "activityId": "dcddb60c-bb2a-4a36-8972-d0f4e3c124ff",
+      "description": "Presenta una noticia en un noticiero.",
+      "instrumentType": "rubrica",
+      "activityType": "NEWSCAST",
+      "snapshotId": "a79cf34e-de83-46c4-906d-e007835405c1"
+    },
+    {
+      "activityId": "e6db75e5-f4b3-42bc-ad05-7dfb7b0c4638",
+      "description": "Presenta una noticia en un noticiero.",
+      "instrumentType": "lista-cotejo",
+      "activityType": "NEWSCAST",
+      "snapshotId": "ebebaf63-6661-4af5-af18-d251bdbbbf52"
+    },
+    {
+      "activityId": "2f367415-f45e-4e35-bf83-1f552c559172",
+      "description": "Presenta una noticia en un noticiero.",
+      "instrumentType": "escala",
+      "activityType": "NEWSCAST",
+      "snapshotId": "2079a670-6f28-4452-86ce-10ec8013576b"
+    },
+    {
+      "activityId": "76688d6f-97e2-4544-aeb4-3721507ddcf8",
+      "description": "Presenta una noticia en un noticiero.",
+      "instrumentType": "lista-ponderada",
+      "activityType": "NEWSCAST",
+      "snapshotId": "e621040c-5067-4b17-9ec4-bc09dd4bff0a"
+    },
+    {
+      "activityId": "99eb4055-5274-4223-bd14-59f9241ebb09",
+      "description": "Redacta un informe sobre una noticia.",
+      "instrumentType": "rubrica",
+      "activityType": "REPORT",
+      "snapshotId": "b0e1d8e3-82d2-4067-86e7-7254f911bdb7"
+    },
+    {
+      "activityId": "39ff0d13-797a-413c-87f8-03f83ae21099",
+      "description": "Redacta un informe sobre una noticia.",
+      "instrumentType": "lista-cotejo",
+      "activityType": "REPORT",
+      "snapshotId": "48e313f0-c499-4297-8d58-ca5579b78e4c"
+    },
+    {
+      "activityId": "11a51ac5-ff11-40d5-9b19-56d3e9470f90",
+      "description": "Redacta un informe sobre una noticia.",
+      "instrumentType": "escala",
+      "activityType": "REPORT",
+      "snapshotId": "5289c34d-4bbb-4d56-ad97-cb9e16dbe90f"
+    },
+    {
+      "activityId": "8f3a6006-2db3-4e84-8a0b-92b910ba5a1b",
+      "description": "Redacta un informe sobre una noticia.",
+      "instrumentType": "lista-ponderada",
+      "activityType": "REPORT",
+      "snapshotId": "2ed6e9ee-838e-4d78-a011-7dab3e0afb44"
+    },
+    {
+      "activityId": "d43b2799-37d5-4630-89cf-f157ab2fd1fd",
+      "description": "Debate sobre una noticia.",
+      "instrumentType": "rubrica",
+      "activityType": "DEBATE",
+      "snapshotId": "96c49c0d-b5d4-40bc-875d-4258e0845a91"
+    },
+    {
+      "activityId": "27251be9-0ccd-429e-aeef-101934ab2064",
+      "description": "Debate sobre una noticia.",
+      "instrumentType": "lista-cotejo",
+      "activityType": "DEBATE",
+      "snapshotId": "2ae3e624-17d3-440a-9bd5-3393a1457c6a"
+    },
+    {
+      "activityId": "468e63ef-7223-41ff-92ba-b654c7969084",
+      "description": "Debate sobre una noticia.",
+      "instrumentType": "escala",
+      "activityType": "DEBATE",
+      "snapshotId": "929c3251-85ce-410a-9921-885520c0c25c"
+    },
+    {
+      "activityId": "4b06c694-8452-43f0-8bae-6ad81319422c",
+      "description": "Debate sobre una noticia.",
+      "instrumentType": "lista-ponderada",
+      "activityType": "DEBATE",
+      "snapshotId": "8b092110-b3b3-4c1f-bfb6-076ab2a29ad5"
+    }
+  ]
+}

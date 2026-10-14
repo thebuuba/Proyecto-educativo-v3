@@ -82,6 +82,11 @@ describe('DashboardPage', () => {
     localStorage.removeItem('aulabase:home-widgets:v2:local')
   })
 
+  it('abre el editor de widgets desde el acceso de configuración', () => {
+    render(<MemoryRouter initialEntries={['/inicio?ajustes=widgets']}><DashboardPage /></MemoryRouter>)
+    expect(screen.getByRole('dialog', { name: 'Editar widgets' })).toBeInTheDocument()
+  })
+
   it('distinguishes completed, current, and upcoming classes with real agenda data', () => {
     const base = {
       subjectName: 'Ciencias de la Naturaleza', gradeName: '2.º', sectionName: 'A',
@@ -139,11 +144,13 @@ describe('DashboardPage', () => {
     expect(shortcutOption).toBeTruthy()
     await user.click(within(shortcutOption!).getByRole('button', { name: 'Agregar' }))
     await user.click(screen.getByRole('button', { name: 'Cerrar' }))
+    expect(screen.queryByRole('link', { name: 'Estudiantes' })).not.toBeInTheDocument()
     await user.click(screen.getByText('Agregar', { selector: 'summary' }))
-    await user.click(screen.getByRole('button', { name: 'Estudiantes' }))
-    expect(screen.getByRole('link', { name: 'Estudiantes' })).toHaveAttribute(
+    expect(screen.queryByRole('button', { name: 'Estudiantes' })).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Configuración' }))
+    expect(screen.getByRole('link', { name: 'Configuración' })).toHaveAttribute(
       'href',
-      '/estudiantes',
+      '/configuracion',
     )
   })
 })

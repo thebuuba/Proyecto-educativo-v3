@@ -1,0 +1,3187 @@
+{
+  "verifiedAt": "2026-10-14T05:33:31.158Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "85f6149527328b1306387349fbadc1e996f98c0b",
+      "dirty": true,
+      "startedAt": "2026-10-14T05:30:55.384Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.38"
+    }
+  },
+  "activities": [
+    {
+      "id": "b71af1b7-735d-4ee1-a689-f846f85d92d6",
+      "name": "ING 1 Léxico alimentos · rúbrica",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Escribirán un mensaje en inglés usando vocabulario de alimentos.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "ea5d0b23-69fc-4ee3-9685-a1e36882328e",
+      "instrumentSnapshotId": "20d889b7-354b-448f-abdc-4fb83aba0e39",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-food:0",
+            "title": "Vocabulario de alimentos",
+            "maxScore": 20,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-lexicon-food",
+            "description": "Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.",
+            "descriptors": [
+              {
+                "text": "Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.",
+                "levelId": "L4",
+                "scoreUnits": 2000
+              },
+              {
+                "text": "La selección de palabras permite identificar la comida o bebida mencionada; un uso aislado necesita revisión.",
+                "levelId": "L3",
+                "scoreUnits": 1333
+              },
+              {
+                "text": "Incluye algunas palabras pertinentes, pero otros usos no permiten identificar la comida o bebida mencionada.",
+                "levelId": "L2",
+                "scoreUnits": 667
+              },
+              {
+                "text": "No aporta usos reconocibles de alimentos para la situación solicitada. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 2000,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "ranking": [
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6fcdada4-755a-5b03-9e2a-6490c7954f15",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "869fa6eb-a2f4-5433-a680-a21fb1b2ce81",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "88327894-1acb-5008-8077-e011ceeb0c3d",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a756d91a-2d03-5366-ad41-115ba70b4ba3",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0bd05b7c-8d26-5615-97e0-98fdd879848b",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1349f236-6d54-5d0e-a9c0-8f8a417c479d",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e5014b24-e00a-5c0b-9b1a-68c22879a896",
+              "topicCoverage": 0.1666666666666667
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.37",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para ING 1 Léxico alimentos · rúbrica",
+        "rubrica:points:0": "20",
+        "rubrica:criterion:0": "Vocabulario de alimentos",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-food:0",
+        "rubrica:descriptor:0:1": "No aporta usos reconocibles de alimentos para la situación solicitada. Ajuste manual del docente.",
+        "rubrica:descriptor:0:2": "Incluye algunas palabras pertinentes, pero otros usos no permiten identificar la comida o bebida mencionada.",
+        "rubrica:descriptor:0:3": "La selección de palabras permite identificar la comida o bebida mencionada; un uso aislado necesita revisión.",
+        "rubrica:descriptor:0:4": "Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[3]",
+        "rubrica:criterion-weight:0": "3",
+        "rubrica:meta:criteriaCount": "1",
+        "rubrica:meta:catalogVersion": "evaluation-2026.37",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Vocabulario de alimentos\",\"description\":\"Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.\",\"progression\":[\"Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.\",\"La selección de palabras permite identificar la comida o bebida mencionada; un uso aislado necesita revisión.\",\"Incluye algunas palabras pertinentes, pero otros usos no permiten identificar la comida o bebida mencionada.\",\"La elección de palabras altera el mensaje: atribuye al alimento un nombre que corresponde a otro producto.\",\"No aporta usos reconocibles de alimentos para la situación solicitada.\"]}",
+        "rubrica:criterion-template:0": "ing-1-lexicon-food",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "f579f6cc-511d-4c0f-bf36-3647f6370a40",
+      "name": "ING 1 Léxico transporte · cotejo",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Escucharán un mensaje en inglés e identificarán vocabulario de medios de transporte.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "88d9d266-c824-4cfb-8cdd-5af83515abaf",
+      "instrumentSnapshotId": "dbc380fa-ff51-48d9-8858-6a28712364d7",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-transport:0",
+            "title": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés. Ajuste manual del docente.",
+            "maxScore": 17.35,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-lexicon-transport",
+            "description": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.",
+            "descriptors": [
+              {
+                "text": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.",
+                "levelId": "L2",
+                "scoreUnits": 1735
+              },
+              {
+                "text": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1735,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "LISTENING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE"
+        ],
+        "internalTrace": {
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "ranking": [
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a23a5ef3-b95b-56e1-b746-62921c01bb05",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b397ab38-64b6-5f71-bb82-96468dbfa190",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6fcdada4-755a-5b03-9e2a-6490c7954f15",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "869fa6eb-a2f4-5433-a680-a21fb1b2ce81",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "88327894-1acb-5008-8077-e011ceeb0c3d",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a756d91a-2d03-5366-ad41-115ba70b4ba3",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 26,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1349f236-6d54-5d0e-a9c0-8f8a417c479d",
+              "topicCoverage": 0.1428571428571428
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=listening",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.37",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "LISTENING_COMPREHENSION",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para ING 1 Léxico transporte · cotejo",
+        "lista-cotejo:points:0": "17.35",
+        "lista-cotejo:criterion:0": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés. Ajuste manual del docente.",
+        "lista-cotejo:description:0": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-transport:0",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[3]",
+        "lista-cotejo:criterion-weight:0": "3",
+        "lista-cotejo:meta:criteriaCount": "1",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.37",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.\",\"description\":\"Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.\",\"progression\":[\"Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.\",\"Localiza ejemplos pertinentes de medios de transporte; una identificación aislada requiere precisión.\",\"Reconoce algunas palabras solicitadas, pero omite o confunde otras presentes en el mensaje escuchado.\",\"Confunde el significado en el mensaje: cambia el medio de transporte indicado.\",\"No identifica ejemplos pertinentes de medios de transporte en el mensaje escuchado.\"]}",
+        "lista-cotejo:criterion-template:0": "ing-1-lexicon-transport"
+      },
+      "evaluationTechnique": "observacion-sistematica",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "bf36e8f7-6fc1-4e59-9c54-b5a93d602e30",
+      "name": "ING 1 Expresiones agradecimiento · escala",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Conversarán en inglés usando expresiones para agradecer. Registrar la frecuencia de uso durante varios intercambios.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "e6b165bf-ed3e-43c0-a20d-c964ef10020e",
+      "instrumentSnapshotId": "fc5cc726-2cfd-497d-9d7b-5b38d178707e",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-thanks:0",
+            "title": "Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.",
+            "maxScore": 10,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-lexicon-thanks",
+            "description": "Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 1000
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 667
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 333
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1000,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-interaction:1",
+            "title": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+            "maxScore": 10,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-1-interaction",
+            "description": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 1000
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 667
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 333
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1000,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_escala",
+          "ranking": [
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "df4f0013-9084-5e81-81c8-659036f09469",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e2774f70-176f-5d57-82a6-a01dcb35de02",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "88327894-1acb-5008-8077-e011ceeb0c3d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8c2b8cc7-30f7-5657-b36b-7d2bdd67e00c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9b193ee8-6c71-55bc-ba46-8dcec520c4d1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c4fae86a-a157-507f-8098-5a1cd3dc63e9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "dd36cfac-6a63-5e1d-8fcc-bf3f09e6101f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e7d6df46-0782-5a4d-afdd-1e976f0613af",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f6965b0d-0391-5f2f-bf02-2ce2d89f45f0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "04f66a9a-e974-55a8-bcbd-9974016787c8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b6043d32-f392-5b3a-aacc-2bfb7508b10a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c44f35a2-1cf0-5661-b04d-5d1dc9766538",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=interaction",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.37",
+        "instrumentType": "escala",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_INTERACTION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para ING 1 Expresiones agradecimiento · escala",
+        "escala:points:0": "10",
+        "escala:points:1": "10",
+        "escala:criterion:0": "Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.",
+        "escala:criterion:1": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+        "escala:level-name:1": "Todavía no",
+        "escala:level-name:2": "A veces",
+        "escala:level-name:3": "Frecuentemente",
+        "escala:level-name:4": "Siempre",
+        "escala:description:0": "Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.",
+        "escala:description:1": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-thanks:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-interaction:1",
+        "escala:descriptor:0:1": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+        "escala:descriptor:0:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:1:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:1:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:1:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:1:4": "En todas las oportunidades observadas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[3,3]",
+        "escala:criterion-weight:0": "3",
+        "escala:criterion-weight:1": "3",
+        "escala:meta:criteriaCount": "2",
+        "escala:meta:catalogVersion": "evaluation-2026.37",
+        "escala:criterion-evidence:0": "{\"title\":\"Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.\",\"description\":\"Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.\",\"description\":\"Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-template:0": "ing-1-lexicon-thanks",
+        "escala:criterion-template:1": "ing-1-interaction",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "observacion-directa",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "5db16629-0558-495a-b385-a411c69efbc1",
+      "name": "ING 1 Léxico orientación · ponderada",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Escribirán un mensaje en inglés usando vocabulario de puntos cardinales y medios de transporte. Asignar pesos diferentes por componente.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "1d9c5485-3af0-4e98-ab7a-6493feaaad81",
+      "instrumentSnapshotId": "fbb98bdd-e8b9-4f4d-9bfc-8d1c56ef5485",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-transport:0",
+            "title": "Vocabulario de medios de transporte",
+            "maxScore": 10.41,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-lexicon-transport",
+            "description": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado. Ajuste manual del docente.",
+            "descriptors": [
+              {
+                "text": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado. Ajuste manual del docente.",
+                "levelId": "L3",
+                "scoreUnits": 1041
+              },
+              {
+                "text": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado. Ajuste manual del docente.",
+                "levelId": "L2",
+                "scoreUnits": 521
+              },
+              {
+                "text": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1041,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-compass:1",
+            "title": "Vocabulario de puntos cardinales",
+            "maxScore": 6.94,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-1-lexicon-compass",
+            "description": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+            "descriptors": [
+              {
+                "text": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+                "levelId": "L3",
+                "scoreUnits": 694
+              },
+              {
+                "text": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+                "levelId": "L2",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 694,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "49253093-d98a-549d-9935-599cc516414e",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "5344754f-d56f-53bb-b3d0-0e59688425b3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b397ab38-64b6-5f71-bb82-96468dbfa190",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6fcdada4-755a-5b03-9e2a-6490c7954f15",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "869fa6eb-a2f4-5433-a680-a21fb1b2ce81",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "88327894-1acb-5008-8077-e011ceeb0c3d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a23a5ef3-b95b-56e1-b746-62921c01bb05",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a756d91a-2d03-5366-ad41-115ba70b4ba3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "08667c75-3188-57d7-98a4-43ec8811963b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1349f236-6d54-5d0e-a9c0-8f8a417c479d",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.37",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para ING 1 Léxico orientación · ponderada",
+        "lista-ponderada:points:0": "8.68",
+        "lista-ponderada:points:1": "8.67",
+        "lista-ponderada:weight:0": "60",
+        "lista-ponderada:weight:1": "40",
+        "lista-ponderada:criterion:0": "Vocabulario de medios de transporte",
+        "lista-ponderada:criterion:1": "Vocabulario de puntos cardinales",
+        "lista-ponderada:indicator:0": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado. Ajuste manual del docente.",
+        "lista-ponderada:indicator:1": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado.",
+        "lista-ponderada:description:1": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-transport:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.37:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-compass:1",
+        "lista-ponderada:meta:manualPoints": "true",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[3,3]",
+        "lista-ponderada:criterion-weight:0": "3",
+        "lista-ponderada:criterion-weight:1": "3",
+        "lista-ponderada:meta:criteriaCount": "2",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.37",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Vocabulario de medios de transporte\",\"description\":\"Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado.\",\"progression\":[\"Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado.\",\"La selección de palabras permite nombrar el medio de desplazamiento solicitado; un uso aislado necesita revisión.\",\"Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado.\",\"La elección de palabras altera el mensaje: cambia el medio de transporte indicado.\",\"No aporta usos reconocibles de medios de transporte para la situación solicitada.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Vocabulario de puntos cardinales\",\"description\":\"Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.\",\"progression\":[\"Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada.\",\"La selección de palabras permite comunicar la orientación espacial indicada; un uso aislado necesita revisión.\",\"Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.\",\"La elección de palabras altera el mensaje: invierte la dirección espacial que se desea comunicar.\",\"No aporta usos reconocibles de puntos cardinales para la situación solicitada.\"]}",
+        "lista-ponderada:criterion-template:0": "ing-1-lexicon-transport",
+        "lista-ponderada:criterion-template:1": "ing-1-lexicon-compass"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "86510e97-3622-43ba-ab1e-ed904758edf5",
+      "name": "ING 1 Léxico alimentos · rúbrica revisada",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Escribirán un mensaje en inglés usando vocabulario de alimentos.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "7d133953-4d95-48e6-acc6-4b5fa1a4e54d",
+      "instrumentSnapshotId": "c7fd2923-284f-45e3-972d-754e45f4b19b",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-food:0",
+            "title": "Vocabulario de alimentos",
+            "maxScore": 20,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-lexicon-food",
+            "description": "Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.",
+            "descriptors": [
+              {
+                "text": "Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.",
+                "levelId": "L4",
+                "scoreUnits": 2000
+              },
+              {
+                "text": "La selección de palabras permite identificar la comida o bebida mencionada; un uso aislado necesita revisión.",
+                "levelId": "L3",
+                "scoreUnits": 1333
+              },
+              {
+                "text": "Incluye algunas palabras pertinentes, pero otros usos no permiten identificar la comida o bebida mencionada.",
+                "levelId": "L2",
+                "scoreUnits": 667
+              },
+              {
+                "text": "No aporta usos reconocibles del vocabulario solicitado de alimentos para la situación solicitada. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 2000,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "ranking": [
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6fcdada4-755a-5b03-9e2a-6490c7954f15",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "869fa6eb-a2f4-5433-a680-a21fb1b2ce81",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "88327894-1acb-5008-8077-e011ceeb0c3d",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a756d91a-2d03-5366-ad41-115ba70b4ba3",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0bd05b7c-8d26-5615-97e0-98fdd879848b",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1349f236-6d54-5d0e-a9c0-8f8a417c479d",
+              "topicCoverage": 0.1666666666666667
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e5014b24-e00a-5c0b-9b1a-68c22879a896",
+              "topicCoverage": 0.1666666666666667
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.38",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para ING 1 Léxico alimentos · rúbrica revisada",
+        "rubrica:points:0": "20",
+        "rubrica:criterion:0": "Vocabulario de alimentos",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-food:0",
+        "rubrica:descriptor:0:1": "No aporta usos reconocibles del vocabulario solicitado de alimentos para la situación solicitada. Ajuste manual del docente.",
+        "rubrica:descriptor:0:2": "Incluye algunas palabras pertinentes, pero otros usos no permiten identificar la comida o bebida mencionada.",
+        "rubrica:descriptor:0:3": "La selección de palabras permite identificar la comida o bebida mencionada; un uso aislado necesita revisión.",
+        "rubrica:descriptor:0:4": "Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[3]",
+        "rubrica:criterion-weight:0": "3",
+        "rubrica:meta:criteriaCount": "1",
+        "rubrica:meta:catalogVersion": "evaluation-2026.38",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Vocabulario de alimentos\",\"description\":\"Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.\",\"progression\":[\"Emplea el vocabulario solicitado de alimentos en inglés para identificar la comida o bebida mencionada.\",\"La selección de palabras permite identificar la comida o bebida mencionada; un uso aislado necesita revisión.\",\"Incluye algunas palabras pertinentes, pero otros usos no permiten identificar la comida o bebida mencionada.\",\"La elección de palabras altera el mensaje: atribuye al alimento un nombre que corresponde a otro producto.\",\"No aporta usos reconocibles del vocabulario solicitado de alimentos para la situación solicitada.\"]}",
+        "rubrica:criterion-template:0": "ing-1-lexicon-food",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "b9399213-8e86-4a44-a981-217d8f0a92c8",
+      "name": "ING 1 Léxico transporte · cotejo revisado",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Escucharán un mensaje en inglés e identificarán vocabulario de medios de transporte.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "3f05d270-0835-42b7-9894-094892b26e5e",
+      "instrumentSnapshotId": "a40d5e44-a202-4c28-9d43-dbbd36c2e761",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-transport:0",
+            "title": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés. Ajuste manual del docente.",
+            "maxScore": 17.35,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-lexicon-transport",
+            "description": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.",
+            "descriptors": [
+              {
+                "text": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.",
+                "levelId": "L2",
+                "scoreUnits": 1735
+              },
+              {
+                "text": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1735,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "LISTENING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE"
+        ],
+        "internalTrace": {
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "ranking": [
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a23a5ef3-b95b-56e1-b746-62921c01bb05",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b397ab38-64b6-5f71-bb82-96468dbfa190",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6fcdada4-755a-5b03-9e2a-6490c7954f15",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "869fa6eb-a2f4-5433-a680-a21fb1b2ce81",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "88327894-1acb-5008-8077-e011ceeb0c3d",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a756d91a-2d03-5366-ad41-115ba70b4ba3",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 26,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1349f236-6d54-5d0e-a9c0-8f8a417c479d",
+              "topicCoverage": 0.1428571428571428
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=listening",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.38",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "LISTENING_COMPREHENSION",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para ING 1 Léxico transporte · cotejo revisado",
+        "lista-cotejo:points:0": "17.35",
+        "lista-cotejo:criterion:0": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés. Ajuste manual del docente.",
+        "lista-cotejo:description:0": "Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-transport:0",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[3]",
+        "lista-cotejo:criterion-weight:0": "3",
+        "lista-cotejo:meta:criteriaCount": "1",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.38",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.\",\"description\":\"Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.\",\"progression\":[\"Identifica el vocabulario solicitado de medios de transporte en el mensaje escuchado en inglés.\",\"Localiza ejemplos pertinentes del vocabulario solicitado de medios de transporte; una identificación aislada requiere precisión.\",\"Reconoce algunas palabras solicitadas, pero omite o confunde otras presentes en el mensaje escuchado.\",\"Confunde el significado en el mensaje: cambia el medio de transporte indicado.\",\"No identifica ejemplos pertinentes del vocabulario solicitado de medios de transporte en el mensaje escuchado.\"]}",
+        "lista-cotejo:criterion-template:0": "ing-1-lexicon-transport"
+      },
+      "evaluationTechnique": "observacion-sistematica",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "77fee5bf-c358-4794-bbf2-c9d85798c0ef",
+      "name": "ING 1 Agradecimiento · escala revisada",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Conversarán en inglés usando expresiones para agradecer. Registrar la frecuencia de uso durante varios intercambios.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "1290848c-af6d-4431-9eb0-d56252f4bf48",
+      "instrumentSnapshotId": "c52bc797-c9f8-4949-a560-4b9806c6f520",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-thanks:0",
+            "title": "Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.",
+            "maxScore": 10,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-lexicon-thanks",
+            "description": "Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 1000
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 667
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 333
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1000,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-interaction:1",
+            "title": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+            "maxScore": 10,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-1-interaction",
+            "description": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 1000
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 667
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 333
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1000,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_escala",
+          "ranking": [
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "df4f0013-9084-5e81-81c8-659036f09469",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e2774f70-176f-5d57-82a6-a01dcb35de02",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "88327894-1acb-5008-8077-e011ceeb0c3d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8c2b8cc7-30f7-5657-b36b-7d2bdd67e00c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9b193ee8-6c71-55bc-ba46-8dcec520c4d1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c4fae86a-a157-507f-8098-5a1cd3dc63e9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "dd36cfac-6a63-5e1d-8fcc-bf3f09e6101f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e7d6df46-0782-5a4d-afdd-1e976f0613af",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f6965b0d-0391-5f2f-bf02-2ce2d89f45f0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "04f66a9a-e974-55a8-bcbd-9974016787c8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b6043d32-f392-5b3a-aacc-2bfb7508b10a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c44f35a2-1cf0-5661-b04d-5d1dc9766538",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=interaction",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.38",
+        "instrumentType": "escala",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_INTERACTION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para ING 1 Agradecimiento · escala revisada",
+        "escala:points:0": "10",
+        "escala:points:1": "10",
+        "escala:criterion:0": "Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.",
+        "escala:criterion:1": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+        "escala:level-name:1": "Todavía no",
+        "escala:level-name:2": "A veces",
+        "escala:level-name:3": "Frecuentemente",
+        "escala:level-name:4": "Siempre",
+        "escala:description:0": "Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.",
+        "escala:description:1": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-thanks:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-interaction:1",
+        "escala:descriptor:0:1": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+        "escala:descriptor:0:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:1:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:1:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:1:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:1:4": "En todas las oportunidades observadas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[3,3]",
+        "escala:criterion-weight:0": "3",
+        "escala:criterion-weight:1": "3",
+        "escala:meta:criteriaCount": "2",
+        "escala:meta:catalogVersion": "evaluation-2026.38",
+        "escala:criterion-evidence:0": "{\"title\":\"Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.\",\"description\":\"Emplea las expresiones para agradecer en inglés para comunicar agradecimiento por la ayuda o acción indicada.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.\",\"description\":\"Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-template:0": "ing-1-lexicon-thanks",
+        "escala:criterion-template:1": "ing-1-interaction",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "observacion-directa",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "80b19034-7238-448e-820f-9813fbd68b45",
+      "name": "ING 1 Orientación · ponderada revisada",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Escribirán un mensaje en inglés usando vocabulario de puntos cardinales y medios de transporte. Asignar pesos por componente.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "c70c9568-2b9e-435d-9cc5-d20092b3584c",
+      "instrumentSnapshotId": "3affc1d7-8802-4497-866d-b3fead28be4d",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-transport:0",
+            "title": "Vocabulario de medios de transporte",
+            "maxScore": 10.41,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-lexicon-transport",
+            "description": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado. Ajuste manual del docente.",
+            "descriptors": [
+              {
+                "text": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado. Ajuste manual del docente.",
+                "levelId": "L3",
+                "scoreUnits": 1041
+              },
+              {
+                "text": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado. Ajuste manual del docente.",
+                "levelId": "L2",
+                "scoreUnits": 521
+              },
+              {
+                "text": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1041,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-compass:1",
+            "title": "Vocabulario de puntos cardinales",
+            "maxScore": 6.94,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-1-lexicon-compass",
+            "description": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+            "descriptors": [
+              {
+                "text": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+                "levelId": "L3",
+                "scoreUnits": 694
+              },
+              {
+                "text": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+                "levelId": "L2",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 694,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "49253093-d98a-549d-9935-599cc516414e",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "5344754f-d56f-53bb-b3d0-0e59688425b3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b397ab38-64b6-5f71-bb82-96468dbfa190",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6fcdada4-755a-5b03-9e2a-6490c7954f15",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "869fa6eb-a2f4-5433-a680-a21fb1b2ce81",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "88327894-1acb-5008-8077-e011ceeb0c3d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a23a5ef3-b95b-56e1-b746-62921c01bb05",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a756d91a-2d03-5366-ad41-115ba70b4ba3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "08667c75-3188-57d7-98a4-43ec8811963b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1349f236-6d54-5d0e-a9c0-8f8a417c479d",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.38",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para ING 1 Orientación · ponderada revisada",
+        "lista-ponderada:points:0": "10.41",
+        "lista-ponderada:points:1": "6.94",
+        "lista-ponderada:weight:0": "60",
+        "lista-ponderada:weight:1": "40",
+        "lista-ponderada:criterion:0": "Vocabulario de medios de transporte",
+        "lista-ponderada:criterion:1": "Vocabulario de puntos cardinales",
+        "lista-ponderada:indicator:0": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado. Ajuste manual del docente.",
+        "lista-ponderada:indicator:1": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado.",
+        "lista-ponderada:description:1": "Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-transport:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.38:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-lexicon-compass:1",
+        "lista-ponderada:meta:manualPoints": "true",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[3,3]",
+        "lista-ponderada:criterion-weight:0": "3",
+        "lista-ponderada:criterion-weight:1": "3",
+        "lista-ponderada:meta:criteriaCount": "2",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.38",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Vocabulario de medios de transporte\",\"description\":\"Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado.\",\"progression\":[\"Emplea el vocabulario solicitado de medios de transporte en inglés para nombrar el medio de desplazamiento solicitado.\",\"La selección de palabras permite nombrar el medio de desplazamiento solicitado; un uso aislado necesita revisión.\",\"Incluye algunas palabras pertinentes, pero otros usos no permiten nombrar el medio de desplazamiento solicitado.\",\"La elección de palabras altera el mensaje: cambia el medio de transporte indicado.\",\"No aporta usos reconocibles del vocabulario solicitado de medios de transporte para la situación solicitada.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Vocabulario de puntos cardinales\",\"description\":\"Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada. Parcial (50%): Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.\",\"progression\":[\"Emplea el vocabulario solicitado de puntos cardinales en inglés para comunicar la orientación espacial indicada.\",\"La selección de palabras permite comunicar la orientación espacial indicada; un uso aislado necesita revisión.\",\"Incluye algunas palabras pertinentes, pero otros usos no permiten comunicar la orientación espacial indicada.\",\"La elección de palabras altera el mensaje: invierte la dirección espacial que se desea comunicar.\",\"No aporta usos reconocibles del vocabulario solicitado de puntos cardinales para la situación solicitada.\"]}",
+        "lista-ponderada:criterion-template:0": "ing-1-lexicon-transport",
+        "lista-ponderada:criterion-template:1": "ing-1-lexicon-compass"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

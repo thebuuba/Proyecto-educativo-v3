@@ -1,0 +1,1306 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "f14393b54ff7034c5a96f5c1e4fa899e3ede28d8",
+      "dirty": true,
+      "startedAt": "2026-10-14T05:14:44.238Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.36"
+    }
+  },
+  "verifiedAt": "2026-10-14T05:15:22.046Z",
+  "results": [
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés e identificarán adverbios de tiempo, frecuencia y modo.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.36",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-time-adverbs:0",
+            "templateId": "ing-1-feature-time-adverbs",
+            "title": "Identifica los adverbios de tiempo en el texto disponible en inglés.",
+            "description": "Identifica los adverbios de tiempo en el texto disponible en inglés.",
+            "maxScore": 5.79,
+            "maxScoreUnits": 579,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los adverbios de tiempo en el texto disponible en inglés.",
+              "Localiza ejemplos pertinentes de los adverbios de tiempo; una identificación aislada necesita precisión.",
+              "Localiza algunos ejemplos de los adverbios de tiempo, pero confunde otros.",
+              "Interpreta incorrectamente la estructura: desplaza la acción a un momento distinto del indicado.",
+              "No localiza ejemplos pertinentes de los adverbios de tiempo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-frequency-adverbs:1",
+            "templateId": "ing-1-feature-frequency-adverbs",
+            "title": "Identifica los adverbios de frecuencia en el texto disponible en inglés.",
+            "description": "Identifica los adverbios de frecuencia en el texto disponible en inglés.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los adverbios de frecuencia en el texto disponible en inglés.",
+              "Localiza ejemplos pertinentes de los adverbios de frecuencia; una identificación aislada necesita precisión.",
+              "Localiza algunos ejemplos de los adverbios de frecuencia, pero confunde otros.",
+              "Interpreta incorrectamente la estructura: confunde una acción habitual con una ocasional o inexistente.",
+              "No localiza ejemplos pertinentes de los adverbios de frecuencia en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-manner-adverbs:2",
+            "templateId": "ing-1-feature-manner-adverbs",
+            "title": "Identifica los adverbios de modo en el texto disponible en inglés.",
+            "description": "Identifica los adverbios de modo en el texto disponible en inglés.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los adverbios de modo en el texto disponible en inglés.",
+              "Localiza ejemplos pertinentes de los adverbios de modo; una identificación aislada necesita precisión.",
+              "Localiza algunos ejemplos de los adverbios de modo, pero confunde otros.",
+              "Interpreta incorrectamente la estructura: altera la manera en que se realiza la acción descrita.",
+              "No localiza ejemplos pertinentes de los adverbios de modo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "c44f35a2-1cf0-5661-b04d-5d1dc9766538",
+              "score": 68,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9b9dc1c8-314d-5c9e-98cd-19732864d8f0",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "929ea780-a9e4-5702-b1ab-09fa056194a6",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b793c8d2-d589-5a6b-a020-627869ffb059",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d9faf613-fd78-5bc5-ba5b-f65e4ddcc371",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f0cfdfd1-4176-582d-9a5c-fbdec0345ed3",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés e identificarán preposiciones de tiempo y lugar.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.36",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-time-prepositions:0",
+            "templateId": "ing-1-feature-time-prepositions",
+            "title": "Identifica las preposiciones de tiempo en el texto disponible en inglés.",
+            "description": "Identifica las preposiciones de tiempo en el texto disponible en inglés.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica las preposiciones de tiempo en el texto disponible en inglés.",
+              "Localiza ejemplos pertinentes de las preposiciones de tiempo; una identificación aislada necesita precisión.",
+              "Localiza algunos ejemplos de las preposiciones de tiempo, pero confunde otros.",
+              "Interpreta incorrectamente la estructura: sitúa el hecho en una referencia temporal diferente.",
+              "No localiza ejemplos pertinentes de las preposiciones de tiempo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-place-prepositions:1",
+            "templateId": "ing-1-feature-place-prepositions",
+            "title": "Identifica las preposiciones de lugar en el texto disponible en inglés.",
+            "description": "Identifica las preposiciones de lugar en el texto disponible en inglés.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica las preposiciones de lugar en el texto disponible en inglés.",
+              "Localiza ejemplos pertinentes de las preposiciones de lugar; una identificación aislada necesita precisión.",
+              "Localiza algunos ejemplos de las preposiciones de lugar, pero confunde otros.",
+              "Interpreta incorrectamente la estructura: cambia la relación espacial entre los elementos.",
+              "No localiza ejemplos pertinentes de las preposiciones de lugar en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 45,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d9faf613-fd78-5bc5-ba5b-f65e4ddcc371",
+              "score": 43,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "25ee4c2a-c2eb-5aeb-9505-d16c231d0927",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "69d6ef67-56a6-5718-842e-50031049f344",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9b9dc1c8-314d-5c9e-98cd-19732864d8f0",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "369e99a7-3efd-5257-8d5c-b880e4b0e8c5",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "64fa6c1a-6d2a-56f3-b3c1-82053cfbc060",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "929ea780-a9e4-5702-b1ab-09fa056194a6",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b9b58d25-116d-50ae-9233-dc36ded34ff3",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c44f35a2-1cf0-5661-b04d-5d1dc9766538",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c594dcfb-cd26-51fa-b561-20fc065b0d30",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f0cfdfd1-4176-582d-9a5c-fbdec0345ed3",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés e identificarán conectores de coordinación, tiempo y secuencia.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.36",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-coordination-connectors:0",
+            "templateId": "ing-1-feature-coordination-connectors",
+            "title": "Identifica los conectores de coordinación en el texto disponible en inglés.",
+            "description": "Identifica los conectores de coordinación en el texto disponible en inglés.",
+            "maxScore": 5.79,
+            "maxScoreUnits": 579,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los conectores de coordinación en el texto disponible en inglés.",
+              "Localiza ejemplos pertinentes de los conectores de coordinación; una identificación aislada necesita precisión.",
+              "Localiza algunos ejemplos de los conectores de coordinación, pero confunde otros.",
+              "Interpreta incorrectamente la estructura: confunde suma, contraste y alternativa entre las ideas.",
+              "No localiza ejemplos pertinentes de los conectores de coordinación en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-time-connectors:1",
+            "templateId": "ing-1-feature-time-connectors",
+            "title": "Identifica los conectores de tiempo en el texto disponible en inglés.",
+            "description": "Identifica los conectores de tiempo en el texto disponible en inglés.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los conectores de tiempo en el texto disponible en inglés.",
+              "Localiza ejemplos pertinentes de los conectores de tiempo; una identificación aislada necesita precisión.",
+              "Localiza algunos ejemplos de los conectores de tiempo, pero confunde otros.",
+              "Interpreta incorrectamente la estructura: invierte la relación de anterioridad o posterioridad de las acciones.",
+              "No localiza ejemplos pertinentes de los conectores de tiempo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-sequence-connectors:2",
+            "templateId": "ing-1-feature-sequence-connectors",
+            "title": "Identifica los conectores de secuencia en el texto disponible en inglés.",
+            "description": "Identifica los conectores de secuencia en el texto disponible en inglés.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los conectores de secuencia en el texto disponible en inglés.",
+              "Localiza ejemplos pertinentes de los conectores de secuencia; una identificación aislada necesita precisión.",
+              "Localiza algunos ejemplos de los conectores de secuencia, pero confunde otros.",
+              "Interpreta incorrectamente la estructura: cambia el orden necesario para seguir los pasos o acontecimientos.",
+              "No localiza ejemplos pertinentes de los conectores de secuencia en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "f0cfdfd1-4176-582d-9a5c-fbdec0345ed3",
+              "score": 68,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9b9dc1c8-314d-5c9e-98cd-19732864d8f0",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "929ea780-a9e4-5702-b1ab-09fa056194a6",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c44f35a2-1cf0-5661-b04d-5d1dc9766538",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d9faf613-fd78-5bc5-ba5b-f65e4ddcc371",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Comparen por escrito dos lugares en inglés usando comparativos.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.36",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-comparison:0",
+            "templateId": "ing-1-comparison",
+            "title": "Semejanzas y diferencias",
+            "description": "Compara en inglés los elementos indicados estableciendo semejanzas y diferencias sobre un mismo aspecto.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Compara en inglés los elementos indicados estableciendo semejanzas y diferencias sobre un mismo aspecto.",
+              "La comparación es comprensible; una relación entre los elementos necesita precisión.",
+              "Describe por separado los elementos sin relacionar sus semejanzas y diferencias.",
+              "Compara aspectos distintos como si fueran equivalentes y altera la relación entre los elementos.",
+              "No aporta una semejanza ni una diferencia reconocible de los elementos indicados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Compara en inglés los elementos indicados estableciendo semejanzas y diferencias sobre un mismo aspecto.",
+                "scoreUnits": 800
+              },
+              {
+                "levelId": "L3",
+                "text": "La comparación es comprensible; una relación entre los elementos necesita precisión.",
+                "scoreUnits": 533
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe por separado los elementos sin relacionar sus semejanzas y diferencias.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una semejanza ni una diferencia reconocible de los elementos indicados.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-feature-comparative:1",
+            "templateId": "ing-1-feature-comparative",
+            "title": "El grado comparativo",
+            "description": "Emplea el grado comparativo en el mensaje en inglés para establecer una comparación o destacar un elemento dentro de un conjunto.",
+            "maxScore": 6,
+            "maxScoreUnits": 600,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea el grado comparativo en el mensaje en inglés para establecer una comparación o destacar un elemento dentro de un conjunto.",
+              "La estructura permite establecer una comparación o destacar un elemento dentro de un conjunto; un uso aislado necesita revisión.",
+              "Incluye ejemplos del grado comparativo, pero varios usos no permiten establecer una comparación o destacar un elemento dentro de un conjunto.",
+              "El uso de la estructura cambia el sentido: confunde la relación entre dos elementos con la selección de uno dentro de un conjunto.",
+              "No aporta usos reconocibles del grado comparativo para el propósito solicitado."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea el grado comparativo en el mensaje en inglés para establecer una comparación o destacar un elemento dentro de un conjunto.",
+                "scoreUnits": 600
+              },
+              {
+                "levelId": "L3",
+                "text": "La estructura permite establecer una comparación o destacar un elemento dentro de un conjunto; un uso aislado necesita revisión.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye ejemplos del grado comparativo, pero varios usos no permiten establecer una comparación o destacar un elemento dentro de un conjunto.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta usos reconocibles del grado comparativo para el propósito solicitado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.36:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-written:2",
+            "templateId": "ing-1-written",
+            "title": "Mensaje escrito comprensible",
+            "description": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.",
+            "maxScore": 6,
+            "maxScoreUnits": 600,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.",
+              "Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.",
+              "Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.",
+              "La organización de las frases o las palabras elegidas cambia el sentido del mensaje escrito.",
+              "No se aporta un mensaje escrito reconocible en inglés."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.",
+                "scoreUnits": 600
+              },
+              {
+                "levelId": "L3",
+                "text": "Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L1",
+                "text": "No se aporta un mensaje escrito reconocible en inglés.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=comparison",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+              "score": 53,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 51,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "69d6ef67-56a6-5718-842e-50031049f344",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 37,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "25ee4c2a-c2eb-5aeb-9505-d16c231d0927",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dc9ca4f1-7083-5dd2-a61b-4043e8c3ce81",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 33,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 33,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "88327894-1acb-5008-8077-e011ceeb0c3d",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "369e99a7-3efd-5257-8d5c-b880e4b0e8c5",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "64fa6c1a-6d2a-56f3-b3c1-82053cfbc060",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "65eecefb-fb45-52f0-bf18-93ad88b2acb8",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b9b58d25-116d-50ae-9233-dc36ded34ff3",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c594dcfb-cd26-51fa-b561-20fc065b0d30",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ]
+}

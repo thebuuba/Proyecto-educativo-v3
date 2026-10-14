@@ -1,6 +1,7 @@
 ﻿import { ArrowRight, GraduationCap, Menu } from 'lucide-react'
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useReducedMotion } from '@/hooks/useInterfacePreferences'
 import '@/modules/promo/promo-motion.css'
 
 const nav = [
@@ -12,15 +13,19 @@ const nav = [
 ]
 
 export function PromoLayout({ children }: { children: ReactNode }) {
+  const reducedMotion = useReducedMotion()
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
   const mainRef = useRef<HTMLElement>(null)
+  useLayoutEffect(() => {
+    document.documentElement.dataset.reducedMotion = String(reducedMotion)
+  }, [reducedMotion])
   useLayoutEffect(() => {
     const main = mainRef.current
     if (
       !main ||
       !('IntersectionObserver' in window) ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      reducedMotion
     )
       return
     const sections = Array.from(main.children).filter(
@@ -40,8 +45,11 @@ export function PromoLayout({ children }: { children: ReactNode }) {
       section.setAttribute('data-promo-pending', '')
       observer.observe(section)
     })
-    return () => observer.disconnect()
-  }, [location.pathname])
+    return () => {
+      observer.disconnect()
+      sections.forEach((section) => section.removeAttribute('data-promo-pending'))
+    }
+  }, [location.pathname, reducedMotion])
   useEffect(() => {
     if (location.hash) {
       requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView())
@@ -87,7 +95,7 @@ export function PromoLayout({ children }: { children: ReactNode }) {
               Crear cuenta <ArrowRight size={16} />
             </Link>
           </div>
-          <button
+          <button data-ui-size="icon"
             type="button"
             className="grid size-11 place-items-center rounded-xl border border-border lg:hidden"
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}

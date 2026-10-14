@@ -1,0 +1,1764 @@
+{
+  "verifiedAt": "2026-10-14T04:25:32.118Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "6687c21d8712973e43d30e4d0d971750d8094ccf",
+      "dirty": true,
+      "startedAt": "2026-10-14T04:22:26.743Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.34"
+    }
+  },
+  "activities": [
+    {
+      "id": "14f1082d-1f15-4cc3-b22b-18c29ef0824b",
+      "name": "QA Lengua 6 revisión · Orden narrativo · .34",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Analizarán el orden cronológico y el orden de la narración de un fragmento de novela, justificando sus relaciones con indicios del pasaje. Se valorará la calidad en varias dimensiones.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "2ec7af3a-2479-4fcb-b36e-4e8b2b713a1e",
+      "instrumentSnapshotId": "3b53169e-9788-48bb-8b81-4bcef4985484",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-novela-feature-order:0",
+            "title": "El orden cronológico y el orden de la narración",
+            "maxScore": 20,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-6-novela-feature-order",
+            "description": "Identifica el orden cronológico y el orden de la narración en el texto de novela y explica, con ejemplos presentes, su función para distinguir cuándo suceden los hechos de cuándo los presenta el narrador y justificar anticipaciones o retrospecciones con indicios del pasaje.",
+            "descriptors": [
+              {
+                "text": "Identifica el orden cronológico y el orden de la narración en el texto de novela y explica, con ejemplos presentes, su función para distinguir cuándo suceden los hechos de cuándo los presenta el narrador y justificar anticipaciones o retrospecciones con indicios del pasaje.",
+                "levelId": "L4",
+                "scoreUnits": 2000
+              },
+              {
+                "text": "Localiza y caracteriza el orden cronológico y el orden de la narración con ejemplos del texto; deja sin explicar una relación con su función.",
+                "levelId": "L3",
+                "scoreUnits": 1333
+              },
+              {
+                "text": "Señala ejemplos del orden cronológico y el orden de la narración, pero no explica cómo contribuyen a distinguir cuándo suceden los hechos de cuándo los presenta el narrador y justificar anticipaciones o retrospecciones con indicios del pasaje.",
+                "levelId": "L2",
+                "scoreUnits": 667
+              },
+              {
+                "text": "No localiza ejemplos pertinentes ni explica la función del orden cronológico y el orden de la narración en el texto disponible. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 2000,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "MEDIUM",
+        "totalScore": 20,
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_rubrica",
+          "ranking": [
+            {
+              "score": 98,
+              "reasons": [
+                "topicTokens=6/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "2edc20fd-d9bc-5bc8-9926-f9e44f22262d",
+              "topicCoverage": 0.75
+            },
+            {
+              "score": 70,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "26aa5301-c95b-58a8-8d8c-434a7096131c",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "00e9abe5-a45d-5714-8960-63e7f616f97a",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "2dbff3b2-98e8-5b51-a495-ddf125a80ac0",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "9daf54a9-99c8-5aea-bb75-df5b5ed29883",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "34dfe4e6-fa11-5abd-acbe-51fee5325243",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "7dba67c1-7175-51f6-bac6-4153c28be755",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "f5463a93-68f4-53c1-b27d-432ec58166e0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "46ca9b01-418a-5184-a4aa-9430895d606b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "868addd9-7bcb-5430-8d16-872d4d15e0e1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "239e4784-98e7-5836-a69e-2c5a43a152ca",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "75178c5e-b7a7-5087-8e39-9c8bdc2bb644",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "04ad9a37-66e3-5d2a-afe7-dcf85318821e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "07c6a3f6-5b22-5ebe-a8e9-2650831c5384",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "16bc161e-779e-5ae9-80a8-0a65ef7749a9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1ab4de80-cbe2-5564-b3db-2cf1452d82da",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "25161c4a-ab9e-57f8-bc39-1a22e5f07375",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "2a538e81-a314-5c2c-89f8-1ed656949fd7",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3b922707-b719-5e24-bb67-ac6928ed6af0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "61c70484-1647-5292-8f3c-f2a6d885631d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6b582266-0a1f-5c94-ac9a-ebe2a09b47e3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "79dd36e2-53b5-550f-ab60-64e7be534099",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "80b458ce-c00f-503a-a72b-ce74cb3f53c2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9f0e6cf2-17b4-5e90-bf2b-41026e4eaf63",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-6-novela",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": false
+        },
+        "catalogVersion": "evaluation-2026.34",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "6ad1b787-5408-5d4b-aa28-0895bebb30e8",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ANALYSIS",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para QA Lengua 6 revisión · Orden narrativo · .34",
+        "rubrica:points:0": "20",
+        "rubrica:criterion:0": "El orden cronológico y el orden de la narración",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Identifica el orden cronológico y el orden de la narración en el texto de novela y explica, con ejemplos presentes, su función para distinguir cuándo suceden los hechos de cuándo los presenta el narrador y justificar anticipaciones o retrospecciones con indicios del pasaje.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-novela-feature-order:0",
+        "rubrica:descriptor:0:1": "No localiza ejemplos pertinentes ni explica la función del orden cronológico y el orden de la narración en el texto disponible. Ajuste manual del docente.",
+        "rubrica:descriptor:0:2": "Señala ejemplos del orden cronológico y el orden de la narración, pero no explica cómo contribuyen a distinguir cuándo suceden los hechos de cuándo los presenta el narrador y justificar anticipaciones o retrospecciones con indicios del pasaje.",
+        "rubrica:descriptor:0:3": "Localiza y caracteriza el orden cronológico y el orden de la narración con ejemplos del texto; deja sin explicar una relación con su función.",
+        "rubrica:descriptor:0:4": "Identifica el orden cronológico y el orden de la narración en el texto de novela y explica, con ejemplos presentes, su función para distinguir cuándo suceden los hechos de cuándo los presenta el narrador y justificar anticipaciones o retrospecciones con indicios del pasaje.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[3]",
+        "rubrica:criterion-weight:0": "3",
+        "rubrica:meta:criteriaCount": "1",
+        "rubrica:meta:catalogVersion": "evaluation-2026.34",
+        "rubrica:criterion-evidence:0": "{\"title\":\"El orden cronológico y el orden de la narración\",\"description\":\"Identifica el orden cronológico y el orden de la narración en el texto de novela y explica, con ejemplos presentes, su función para distinguir cuándo suceden los hechos de cuándo los presenta el narrador y justificar anticipaciones o retrospecciones con indicios del pasaje.\",\"progression\":[\"Identifica el orden cronológico y el orden de la narración en el texto de novela y explica, con ejemplos presentes, su función para distinguir cuándo suceden los hechos de cuándo los presenta el narrador y justificar anticipaciones o retrospecciones con indicios del pasaje.\",\"Localiza y caracteriza el orden cronológico y el orden de la narración con ejemplos del texto; deja sin explicar una relación con su función.\",\"Señala ejemplos del orden cronológico y el orden de la narración, pero no explica cómo contribuyen a distinguir cuándo suceden los hechos de cuándo los presenta el narrador y justificar anticipaciones o retrospecciones con indicios del pasaje.\",\"La explicación se apoya en una identificación incorrecta: se toma una retrospección como hecho posterior y se invierte la causalidad.\",\"No localiza ejemplos pertinentes ni explica la función del orden cronológico y el orden de la narración en el texto disponible.\"]}",
+        "rubrica:criterion-template:0": "len-6-novela-feature-order",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "d2911b38-2b9b-4404-9f83-b76811b37254",
+      "name": "QA Lengua 6 revisión · Recitación verificable · .34",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Declamarán un poema social comunicando sus sentimientos mediante ritmo y entonación. Se comprobará la presencia de cada evidencia con sí o no.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "a4954917-8e51-4bdc-a754-2391e1a67be9",
+      "instrumentSnapshotId": "0d20108b-3daa-4046-9f0e-5d69307b3d7e",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-poesia-social-recitation-sequence:0",
+            "title": "Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados. Ajuste manual del docente.",
+            "maxScore": 8.68,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-6-poesia-social-recitation-sequence",
+            "description": "Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+            "descriptors": [
+              {
+                "text": "Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+                "levelId": "L2",
+                "scoreUnits": 868
+              },
+              {
+                "text": "Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 868,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-poesia-social-recitation-expression:1",
+            "title": "Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+            "maxScore": 8.67,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-6-poesia-social-recitation-expression",
+            "description": "Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+            "descriptors": [
+              {
+                "text": "Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+                "levelId": "L2",
+                "scoreUnits": 867
+              },
+              {
+                "text": "Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 867,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-cotejo",
+          "ranking": [
+            {
+              "score": 73,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "7b597868-db06-5dea-a57a-7697bb456f67",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 73,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "fec54f3e-7181-577e-83b9-974dfd336a46",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8e73189d-bc29-51ca-87a4-bee6f96bdfd9",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fc6fae06-9ada-515a-9590-61d064e393fd",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ecbc84e5-b8f9-5570-a2be-718c4191766c",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "9daf54a9-99c8-5aea-bb75-df5b5ed29883",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "beb30632-a86c-5efe-97ec-5c89e296be4c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "2b14d761-871d-5508-b9a5-c0318354ee4e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "7dba67c1-7175-51f6-bac6-4153c28be755",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "868addd9-7bcb-5430-8d16-872d4d15e0e1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d7913c9a-131a-5862-ad17-a00443023ce4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "f37be6ef-4fce-55cb-8439-b7de9a236036",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "16bc161e-779e-5ae9-80a8-0a65ef7749a9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "696f45d9-327a-5deb-8b17-4e91afdf9b26",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "7e75e18a-2a9c-548e-9b0c-b2a4e6c2af4d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "95ff948e-5a57-5938-979f-43e1ba670d7c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a0469326-a614-5c22-8802-6537b7e863f2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ab47bfe3-cf84-5285-a4e6-72a067f71ab4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bdb2ac74-170a-5ba9-a01a-f14fcd26fddf",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ef049135-5df7-5045-ad5e-2fc9c1ddfda2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "600e202a-ad37-5e4f-ab0c-b0e132150de9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "075c5060-a759-5c4c-b71f-cf8bcac011e2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e4b85be6-d0fa-5bc2-9f07-6d8447c4d19d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3b922707-b719-5e24-bb67-ac6928ed6af0",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-6-poesia-social",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.34",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "6ad1b787-5408-5d4b-aa28-0895bebb30e8",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_PRESENTATION",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA Lengua 6 revisión · Recitación verificable · .34",
+        "lista-cotejo:points:0": "8.68",
+        "lista-cotejo:points:1": "8.67",
+        "lista-cotejo:criterion:0": "Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados. Ajuste manual del docente.",
+        "lista-cotejo:criterion:1": "Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+        "lista-cotejo:description:0": "Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+        "lista-cotejo:description:1": "Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-poesia-social-recitation-sequence:0",
+        "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-poesia-social-recitation-expression:1",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[3,3]",
+        "lista-cotejo:criterion-weight:0": "3",
+        "lista-cotejo:criterion-weight:1": "3",
+        "lista-cotejo:meta:criteriaCount": "2",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.34",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.\",\"description\":\"Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.\",\"progression\":[\"Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.\",\"Una omisión puntual no impide seguir el sentido del poema.\",\"Las omisiones o repeticiones interrumpen la relación entre varios versos.\",\"Los cambios de orden alteran el sentido del poema recitado.\",\"No se presenta una recitación reconocible del poema social con los apoyos acordados.\"]}",
+        "lista-cotejo:criterion-evidence:1": "{\"title\":\"Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.\",\"description\":\"Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.\",\"progression\":[\"Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.\",\"Se perciben los sentimientos; una pausa o énfasis necesita vincularse con el verso.\",\"Los énfasis se limitan a palabras aisladas y no permiten seguir la emoción de los versos.\",\"La expresión comunica un sentimiento contrario al sentido del verso.\",\"No aporta evidencia de expresión del sentido mediante la recitación o el apoyo acordado.\"]}",
+        "lista-cotejo:criterion-template:0": "len-6-poesia-social-recitation-sequence",
+        "lista-cotejo:criterion-template:1": "len-6-poesia-social-recitation-expression"
+      },
+      "evaluationTechnique": "presentacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "4919ca19-ef20-4e1d-8952-9751ed152f9b",
+      "name": "QA Lengua 6 revisión · Ritmo sin duplicación · .34",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 15,
+      "description": "<p>Declamarán un poema social comunicando sus sentimientos mediante ritmo y entonación. Se registrará la regularidad con que se cumplen los indicadores.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "3b98f98f-4f54-4709-b223-e8dc40e6d651",
+      "instrumentSnapshotId": "0b938c16-4b03-402d-aebb-ecd4422904a3",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-poesia-social-recitation-sequence:0",
+            "title": "Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+            "maxScore": 7.5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-6-poesia-social-recitation-sequence",
+            "description": "Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 750
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 500
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 250
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 750,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-poesia-social-recitation-expression:1",
+            "title": "Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+            "maxScore": 7.5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-6-poesia-social-recitation-expression",
+            "description": "Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 750
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 500
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 250
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 750,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 15,
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_escala",
+          "ranking": [
+            {
+              "score": 73,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "7b597868-db06-5dea-a57a-7697bb456f67",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 73,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "fec54f3e-7181-577e-83b9-974dfd336a46",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8e73189d-bc29-51ca-87a4-bee6f96bdfd9",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fc6fae06-9ada-515a-9590-61d064e393fd",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ecbc84e5-b8f9-5570-a2be-718c4191766c",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "9daf54a9-99c8-5aea-bb75-df5b5ed29883",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "beb30632-a86c-5efe-97ec-5c89e296be4c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "7dba67c1-7175-51f6-bac6-4153c28be755",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "868addd9-7bcb-5430-8d16-872d4d15e0e1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d7913c9a-131a-5862-ad17-a00443023ce4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "f37be6ef-4fce-55cb-8439-b7de9a236036",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "2b14d761-871d-5508-b9a5-c0318354ee4e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "696f45d9-327a-5deb-8b17-4e91afdf9b26",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "7e75e18a-2a9c-548e-9b0c-b2a4e6c2af4d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "95ff948e-5a57-5938-979f-43e1ba670d7c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a0469326-a614-5c22-8802-6537b7e863f2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ab47bfe3-cf84-5285-a4e6-72a067f71ab4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bdb2ac74-170a-5ba9-a01a-f14fcd26fddf",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ef049135-5df7-5045-ad5e-2fc9c1ddfda2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "16bc161e-779e-5ae9-80a8-0a65ef7749a9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "600e202a-ad37-5e4f-ab0c-b0e132150de9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e4b85be6-d0fa-5bc2-9f07-6d8447c4d19d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "075c5060-a759-5c4c-b71f-cf8bcac011e2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3b922707-b719-5e24-bb67-ac6928ed6af0",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-6-poesia-social",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.34",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1500,
+        "curriculumScopeId": "6ad1b787-5408-5d4b-aa28-0895bebb30e8",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_PRESENTATION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA Lengua 6 revisión · Ritmo sin duplicación · .34",
+        "escala:points:0": "7.5",
+        "escala:points:1": "7.5",
+        "escala:criterion:0": "Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+        "escala:criterion:1": "Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+        "escala:level-name:1": "Todavía no",
+        "escala:level-name:2": "A veces",
+        "escala:level-name:3": "Frecuentemente",
+        "escala:level-name:4": "Siempre",
+        "escala:description:0": "Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+        "escala:description:1": "Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-poesia-social-recitation-sequence:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-poesia-social-recitation-expression:1",
+        "escala:descriptor:0:1": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+        "escala:descriptor:0:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:1:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:1:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:1:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:1:4": "En todas las oportunidades observadas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[3,3]",
+        "escala:criterion-weight:0": "3",
+        "escala:criterion-weight:1": "3",
+        "escala:meta:criteriaCount": "2",
+        "escala:meta:catalogVersion": "evaluation-2026.34",
+        "escala:criterion-evidence:0": "{\"title\":\"Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.\",\"description\":\"Recita el poema social conservando la secuencia y el sentido de sus versos, con los apoyos acordados.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.\",\"description\":\"Comunica los sentimientos del poema social mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-template:0": "len-6-poesia-social-recitation-sequence",
+        "escala:criterion-template:1": "len-6-poesia-social-recitation-expression",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "presentacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "eac59e54-06de-48f8-bb5d-1b5e01635671",
+      "name": "QA Lengua 6 revisión · Monólogo · .34",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Representarán un monólogo manteniendo el punto de vista del personaje y la situación del parlamento. Se distribuirán pesos entre los componentes verificables.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "f3573d3d-c372-478b-b6d0-662fd913f99f",
+      "instrumentSnapshotId": "2372493e-c9c4-40f6-bcdd-c615316401c5",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-monologo-voice:0",
+            "title": "Voz, personaje y punto de vista del monólogo",
+            "maxScore": 6.2,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-6-monologo-voice",
+            "description": "Mantiene reconocible el punto de vista del personaje durante la representación del monólogo mediante sus intervenciones y formas de expresión. Parcial (50%): Dice intervenciones aisladas sin mantener reconocible el punto de vista de la voz monologal. Ajuste manual del docente.",
+            "descriptors": [
+              {
+                "text": "Mantiene reconocible el punto de vista del personaje durante la representación del monólogo mediante sus intervenciones y formas de expresión. Parcial (50%): Dice intervenciones aisladas sin mantener reconocible el punto de vista de la voz monologal. Ajuste manual del docente.",
+                "levelId": "L3",
+                "scoreUnits": 620
+              },
+              {
+                "text": "Mantiene reconocible el punto de vista del personaje durante la representación del monólogo mediante sus intervenciones y formas de expresión. Parcial (50%): Dice intervenciones aisladas sin mantener reconocible el punto de vista de la voz monologal. Ajuste manual del docente.",
+                "levelId": "L2",
+                "scoreUnits": 310
+              },
+              {
+                "text": "Mantiene reconocible el punto de vista del personaje durante la representación del monólogo mediante sus intervenciones y formas de expresión. Parcial (50%): Dice intervenciones aisladas sin mantener reconocible el punto de vista de la voz monologal. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 620,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-monologo-development:1",
+            "title": "Desarrollo del tema y situación del monólogo",
+            "maxScore": 4.96,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-6-monologo-development",
+            "description": "Hace comprensible la situación y el desarrollo del tema en la representación del monólogo mediante el orden y las relaciones entre sus intervenciones. Parcial (50%): Representa fragmentos desconectados que dificultan seguir la situación y el tema.",
+            "descriptors": [
+              {
+                "text": "Hace comprensible la situación y el desarrollo del tema en la representación del monólogo mediante el orden y las relaciones entre sus intervenciones. Parcial (50%): Representa fragmentos desconectados que dificultan seguir la situación y el tema.",
+                "levelId": "L3",
+                "scoreUnits": 496
+              },
+              {
+                "text": "Hace comprensible la situación y el desarrollo del tema en la representación del monólogo mediante el orden y las relaciones entre sus intervenciones. Parcial (50%): Representa fragmentos desconectados que dificultan seguir la situación y el tema.",
+                "levelId": "L2",
+                "scoreUnits": 248
+              },
+              {
+                "text": "Hace comprensible la situación y el desarrollo del tema en la representación del monólogo mediante el orden y las relaciones entre sus intervenciones. Parcial (50%): Representa fragmentos desconectados que dificultan seguir la situación y el tema.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 496,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-monologo-performance:2",
+            "title": "Expresión y comprensión del parlamento",
+            "maxScore": 6.19,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-6-monologo-performance",
+            "description": "Representa la voz del personaje con pausas, énfasis y articulación, o apoyos de acceso acordados, que permiten comprender el sentido de sus intervenciones. Parcial (50%): Las pausas o énfasis fragmentan las intervenciones y dificultan comprender su sentido.",
+            "descriptors": [
+              {
+                "text": "Representa la voz del personaje con pausas, énfasis y articulación, o apoyos de acceso acordados, que permiten comprender el sentido de sus intervenciones. Parcial (50%): Las pausas o énfasis fragmentan las intervenciones y dificultan comprender su sentido.",
+                "levelId": "L3",
+                "scoreUnits": 619
+              },
+              {
+                "text": "Representa la voz del personaje con pausas, énfasis y articulación, o apoyos de acceso acordados, que permiten comprender el sentido de sus intervenciones. Parcial (50%): Las pausas o énfasis fragmentan las intervenciones y dificultan comprender su sentido.",
+                "levelId": "L2",
+                "scoreUnits": 310
+              },
+              {
+                "text": "Representa la voz del personaje con pausas, énfasis y articulación, o apoyos de acceso acordados, que permiten comprender el sentido de sus intervenciones. Parcial (50%): Las pausas o énfasis fragmentan las intervenciones y dificultan comprender su sentido.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 619,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "MEDIUM",
+        "totalScore": 17.35,
+        "activityType": "PERFORMANCE",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 86,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "16bc161e-779e-5ae9-80a8-0a65ef7749a9",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 83,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3b922707-b719-5e24-bb67-ac6928ed6af0",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0bc42aaa-17a8-50a1-84bf-e224e8839d3f",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "2a538e81-a314-5c2c-89f8-1ed656949fd7",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "79dd36e2-53b5-550f-ab60-64e7be534099",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "803414ff-b533-5dc1-8fa8-f8ffc3f8abbe",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "86fba876-4470-55b1-8d47-304387c8551f",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e741fd30-851e-5a52-936b-6a17e0b5fc14",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "75bf27de-e959-5f23-a583-bd7e100fd10c",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e249c082-9e6a-5445-b287-87b8726edc1a",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "7dba67c1-7175-51f6-bac6-4153c28be755",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "868addd9-7bcb-5430-8d16-872d4d15e0e1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ca2d0b98-39cc-51f7-bdd1-5158e0e18b08",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "f08b47e8-8021-5241-9d06-b3d57e7bb21a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "239e4784-98e7-5836-a69e-2c5a43a152ca",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b1a48d70-c5f2-53ca-82bf-3a6a84fcb2ec",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "00e9abe5-a45d-5714-8960-63e7f616f97a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "26aa5301-c95b-58a8-8d8c-434a7096131c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "2edc20fd-d9bc-5bc8-9926-f9e44f22262d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "37b8adb5-59cb-509f-befb-4c2aa01628ff",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "5becc595-81d0-5511-859f-e0afe824a13c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6b582266-0a1f-5c94-ac9a-ebe2a09b47e3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "75178c5e-b7a7-5087-8e39-9c8bdc2bb644",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "80b458ce-c00f-503a-a72b-ce74cb3f53c2",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-6-monologo",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": false
+        },
+        "catalogVersion": "evaluation-2026.34",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "6ad1b787-5408-5d4b-aa28-0895bebb30e8",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "PERFORMANCE",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA Lengua 6 revisión · Monólogo · .34",
+        "lista-ponderada:points:0": "6.2",
+        "lista-ponderada:points:1": "4.96",
+        "lista-ponderada:points:2": "6.19",
+        "lista-ponderada:weight:0": "35.72",
+        "lista-ponderada:weight:1": "28.57",
+        "lista-ponderada:weight:2": "35.71",
+        "lista-ponderada:criterion:0": "Voz, personaje y punto de vista del monólogo",
+        "lista-ponderada:criterion:1": "Desarrollo del tema y situación del monólogo",
+        "lista-ponderada:criterion:2": "Expresión y comprensión del parlamento",
+        "lista-ponderada:indicator:0": "Mantiene reconocible el punto de vista del personaje durante la representación del monólogo mediante sus intervenciones y formas de expresión. Parcial (50%): Dice intervenciones aisladas sin mantener reconocible el punto de vista de la voz monologal. Ajuste manual del docente.",
+        "lista-ponderada:indicator:1": "Hace comprensible la situación y el desarrollo del tema en la representación del monólogo mediante el orden y las relaciones entre sus intervenciones. Parcial (50%): Representa fragmentos desconectados que dificultan seguir la situación y el tema.",
+        "lista-ponderada:indicator:2": "Representa la voz del personaje con pausas, énfasis y articulación, o apoyos de acceso acordados, que permiten comprender el sentido de sus intervenciones. Parcial (50%): Las pausas o énfasis fragmentan las intervenciones y dificultan comprender su sentido.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Mantiene reconocible el punto de vista del personaje durante la representación del monólogo mediante sus intervenciones y formas de expresión. Parcial (50%): Dice intervenciones aisladas sin mantener reconocible el punto de vista de la voz monologal.",
+        "lista-ponderada:description:1": "Hace comprensible la situación y el desarrollo del tema en la representación del monólogo mediante el orden y las relaciones entre sus intervenciones. Parcial (50%): Representa fragmentos desconectados que dificultan seguir la situación y el tema.",
+        "lista-ponderada:description:2": "Representa la voz del personaje con pausas, énfasis y articulación, o apoyos de acceso acordados, que permiten comprender el sentido de sus intervenciones. Parcial (50%): Las pausas o énfasis fragmentan las intervenciones y dificultan comprender su sentido.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-monologo-voice:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-monologo-development:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.34:6ad1b787-5408-5d4b-aa28-0895bebb30e8:len-6-monologo-performance:2",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[5,4,5]",
+        "lista-ponderada:criterion-weight:0": "5",
+        "lista-ponderada:criterion-weight:1": "4",
+        "lista-ponderada:criterion-weight:2": "5",
+        "lista-ponderada:meta:criteriaCount": "3",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.34",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Voz, personaje y punto de vista del monólogo\",\"description\":\"Mantiene reconocible el punto de vista del personaje durante la representación del monólogo mediante sus intervenciones y formas de expresión. Parcial (50%): Dice intervenciones aisladas sin mantener reconocible el punto de vista de la voz monologal.\",\"progression\":[\"Mantiene reconocible el punto de vista del personaje durante la representación del monólogo mediante sus intervenciones y formas de expresión.\",\"El punto de vista se mantiene; una expresión necesita vincularse mejor con la intención del personaje.\",\"Dice intervenciones aisladas sin mantener reconocible el punto de vista de la voz monologal.\",\"La expresión atribuye al personaje una intención contraria al sentido de sus intervenciones.\",\"No se reconoce el punto de vista del personaje en la representación.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Desarrollo del tema y situación del monólogo\",\"description\":\"Hace comprensible la situación y el desarrollo del tema en la representación del monólogo mediante el orden y las relaciones entre sus intervenciones. Parcial (50%): Representa fragmentos desconectados que dificultan seguir la situación y el tema.\",\"progression\":[\"Hace comprensible la situación y el desarrollo del tema en la representación del monólogo mediante el orden y las relaciones entre sus intervenciones.\",\"Se sigue la situación y el tema; una transición necesita enlazarse mejor con la intervención anterior.\",\"Representa fragmentos desconectados que dificultan seguir la situación y el tema.\",\"El orden de las intervenciones cambia el sentido de la situación representada.\",\"No se reconoce una relación entre las intervenciones, la situación y el tema representados.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Expresión y comprensión del parlamento\",\"description\":\"Representa la voz del personaje con pausas, énfasis y articulación, o apoyos de acceso acordados, que permiten comprender el sentido de sus intervenciones. Parcial (50%): Las pausas o énfasis fragmentan las intervenciones y dificultan comprender su sentido.\",\"progression\":[\"Representa la voz del personaje con pausas, énfasis y articulación, o apoyos de acceso acordados, que permiten comprender el sentido de sus intervenciones.\",\"Se comprende el parlamento; una pausa o énfasis dificulta seguir una intervención puntual.\",\"Las pausas o énfasis fragmentan las intervenciones y dificultan comprender su sentido.\",\"La expresión cambia el sentido de una intervención del personaje.\",\"No se comprende el parlamento mediante la expresión ni los apoyos acordados.\"]}",
+        "lista-ponderada:criterion-template:0": "len-6-monologo-voice",
+        "lista-ponderada:criterion-template:1": "len-6-monologo-development",
+        "lista-ponderada:criterion-template:2": "len-6-monologo-performance"
+      },
+      "evaluationTechnique": "dramatizacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

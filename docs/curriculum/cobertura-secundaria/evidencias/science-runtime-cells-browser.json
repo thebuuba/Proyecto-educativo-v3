@@ -1,0 +1,106 @@
+{
+  "fields": [
+    {
+      "label": "Criterio 1",
+      "value": "Identificación de estructuras celulares"
+    },
+    {
+      "label": "Destacado del criterio 1",
+      "value": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras."
+    },
+    {
+      "label": "Logrado del criterio 1",
+      "value": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión."
+    },
+    {
+      "label": "En proceso del criterio 1",
+      "value": "Identifica algunas estructuras, pero confunde su ubicación o denominación."
+    },
+    {
+      "label": "Inicial del criterio 1",
+      "value": "No permite identificar las estructuras celulares solicitadas."
+    },
+    {
+      "label": "Criterio 2",
+      "value": "Representación de ambos tipos celulares"
+    },
+    {
+      "label": "Destacado del criterio 2",
+      "value": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido."
+    },
+    {
+      "label": "Logrado del criterio 2",
+      "value": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión."
+    },
+    {
+      "label": "En proceso del criterio 2",
+      "value": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos."
+    },
+    {
+      "label": "Inicial del criterio 2",
+      "value": "No presenta una representación reconocible del tipo celular solicitado."
+    },
+    {
+      "label": "Criterio 3",
+      "value": "Funciones de los organelos"
+    },
+    {
+      "label": "Destacado del criterio 3",
+      "value": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular."
+    },
+    {
+      "label": "Logrado del criterio 3",
+      "value": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada."
+    },
+    {
+      "label": "En proceso del criterio 3",
+      "value": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos."
+    },
+    {
+      "label": "Inicial del criterio 3",
+      "value": "No aporta relaciones entre los organelos y sus funciones."
+    },
+    {
+      "label": "Criterio 4",
+      "value": "Comparación entre células"
+    },
+    {
+      "label": "Destacado del criterio 4",
+      "value": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos."
+    },
+    {
+      "label": "Logrado del criterio 4",
+      "value": "Explica semejanzas y diferencias correctas, con justificación parcial."
+    },
+    {
+      "label": "En proceso del criterio 4",
+      "value": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados."
+    },
+    {
+      "label": "Inicial del criterio 4",
+      "value": "No presenta semejanzas ni diferencias entre los tipos solicitados."
+    },
+    {
+      "label": "Criterio 5",
+      "value": "Explicación oral del modelo científico"
+    },
+    {
+      "label": "Destacado del criterio 5",
+      "value": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación."
+    },
+    {
+      "label": "Logrado del criterio 5",
+      "value": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada."
+    },
+    {
+      "label": "En proceso del criterio 5",
+      "value": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas."
+    },
+    {
+      "label": "Inicial del criterio 5",
+      "value": "No ofrece una explicación oral del trabajo."
+    }
+  ],
+  "trace": "Entorno original localhost:5173 → backend:3000. Solo interpretar/preparar; sin guardar.\n/evaluation-instruments/interpret: 503 Falta instalar el catálogo evaluativo versionado.\n/evaluation-instruments/recommend: 503 Falta instalar el catálogo evaluativo versionado.",
+  "type": "PROJECT"
+}

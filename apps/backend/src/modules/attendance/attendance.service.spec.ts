@@ -104,11 +104,11 @@ describe('AttendanceService.findClassAttendanceRange', () => {
 describe('AttendanceService.getStudentsBySection', () => {
   beforeEach(() => vi.clearAllMocks())
 
-  it('uses the numeric student code as the attendance list order', async () => {
+  it('uses the stored enrollment list number as the attendance order', async () => {
     mocks.prisma.enrollment.findMany.mockResolvedValue([
-      { id: 'enrollment-10', studentId: 'student-10' },
-      { id: 'enrollment-2', studentId: 'student-2' },
-      { id: 'enrollment-1', studentId: 'student-1' },
+      { id: 'enrollment-10', studentId: 'student-10', listNumber: 10 },
+      { id: 'enrollment-2', studentId: 'student-2', listNumber: 2 },
+      { id: 'enrollment-1', studentId: 'student-1', listNumber: 1 },
     ])
     mocks.prisma.student.findMany.mockResolvedValue([
       { id: 'student-10', studentCode: 'A10', firstName: 'Diez', lastName: 'Alumno' },
@@ -121,7 +121,7 @@ describe('AttendanceService.getStudentsBySection', () => {
     expect(result.map(({ studentCode, listNumber }) => ({ studentCode, listNumber }))).toEqual([
       { studentCode: 'A1', listNumber: 1 },
       { studentCode: 'A2', listNumber: 2 },
-      { studentCode: 'A10', listNumber: 3 },
+      { studentCode: 'A10', listNumber: 10 },
     ])
   })
 })

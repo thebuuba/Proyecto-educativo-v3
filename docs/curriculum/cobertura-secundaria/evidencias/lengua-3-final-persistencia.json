@@ -1,0 +1,1857 @@
+{
+  "verifiedAt": "2026-10-14T02:34:19.309Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "0cb0a96cc2fb74a876ad137d01c6431de693b9c8",
+      "dirty": true,
+      "startedAt": "2026-10-14T02:30:56.007Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.27"
+    }
+  },
+  "activities": [
+    {
+      "id": "22d96992-964b-47a1-ba3a-d5629c7dd8a2",
+      "name": "QA Lengua 3 final · Madrigal · escala 27",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 15,
+      "description": "<p>Recitarán un madrigal usando ritmo, pausas y gestos para comunicar los sentimientos de los versos. Se registrará la regularidad con que se cumplen los indicadores.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "b257cd49-36ef-4375-8a2c-98dfb2cdeec3",
+      "instrumentSnapshotId": "828849c7-a0f2-40ad-8d0b-13a642aad0cd",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-madrigal-recitation-sequence:0",
+            "title": "Recita el madrigal conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+            "maxScore": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-3-madrigal-recitation-sequence",
+            "description": "Recita el madrigal conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 500
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 333
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 167
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-madrigal-recitation-expression:1",
+            "title": "Comunica los sentimientos del madrigal mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-madrigal-recitation-expression",
+            "description": "Comunica los sentimientos del madrigal mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 500
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 333
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 167
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-madrigal-feature-nonverbal:2",
+            "title": "Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del madrigal.",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-madrigal-feature-nonverbal",
+            "description": "Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del madrigal.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 500
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 333
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 167
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 15,
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_escala",
+          "ranking": [
+            {
+              "score": 61,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "f4bc4dc2-b55e-58c4-8b6a-f08fed62b232",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "d970dd52-e4eb-51d6-8324-32c5a4009c3a",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 58,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "2bd30d3c-7fd2-5f09-a4e1-27d27095c687",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "87a532f1-23da-5d70-b533-136126263946",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "29d5f7e6-5fa6-5d5d-8a07-e0a66a1303f6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "53c7ec90-7b5a-5f34-bc32-a40d9a51bb77",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6ea178bf-9ebc-592d-afa9-2461bfef5b6d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "7890b8db-f94d-5651-8ad1-f6cf91fcf59c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9121b49f-8006-543f-862c-e14cd200b604",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "ac9b2f37-499b-536b-a045-adf03dd25b4a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c292e0ca-976c-5fa6-8fe9-3908fb808a2c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f9f2f93f-ffd2-5b94-aaca-57b646b248be",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "224222b7-69db-52aa-9a0f-7a33ef8da209",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "29cc544f-e603-59cf-bc95-20bdb2654a1b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "da89f8cf-0342-5707-a73b-134b32de0ca2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0f3b956f-31a9-565d-9db4-9f07efd83410",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-3-madrigal",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.27",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1500,
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_PRESENTATION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA Lengua 3 final · Madrigal · escala 27",
+        "escala:points:0": "5",
+        "escala:points:1": "5",
+        "escala:points:2": "5",
+        "escala:criterion:0": "Recita el madrigal conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+        "escala:criterion:1": "Comunica los sentimientos del madrigal mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+        "escala:criterion:2": "Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del madrigal.",
+        "escala:level-name:1": "Todavía no",
+        "escala:level-name:2": "A veces",
+        "escala:level-name:3": "Frecuentemente",
+        "escala:level-name:4": "Siempre",
+        "escala:description:0": "Recita el madrigal conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+        "escala:description:1": "Comunica los sentimientos del madrigal mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+        "escala:description:2": "Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del madrigal.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-madrigal-recitation-sequence:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-madrigal-recitation-expression:1",
+        "escala:criterion-id:2": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-madrigal-feature-nonverbal:2",
+        "escala:descriptor:0:1": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+        "escala:descriptor:0:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:1:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:1:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:1:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:1:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:2:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:2:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:2:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:2:4": "En todas las oportunidades observadas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[3,3,3]",
+        "escala:criterion-weight:0": "3",
+        "escala:criterion-weight:1": "3",
+        "escala:criterion-weight:2": "3",
+        "escala:meta:criteriaCount": "3",
+        "escala:meta:catalogVersion": "evaluation-2026.27",
+        "escala:criterion-evidence:0": "{\"title\":\"Recita el madrigal conservando la secuencia y el sentido de sus versos, con los apoyos acordados.\",\"description\":\"Recita el madrigal conservando la secuencia y el sentido de sus versos, con los apoyos acordados.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Comunica los sentimientos del madrigal mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.\",\"description\":\"Comunica los sentimientos del madrigal mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:2": "{\"title\":\"Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del madrigal.\",\"description\":\"Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del madrigal.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-template:0": "len-3-madrigal-recitation-sequence",
+        "escala:criterion-template:1": "len-3-madrigal-recitation-expression",
+        "escala:criterion-template:2": "len-3-madrigal-feature-nonverbal",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "presentacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "1a64826e-9e0d-4d7f-a786-ba04d02ea866",
+      "name": "QA Lengua 3 final · Catálogo · ponderada 27",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Elaborarán un catálogo de flora y fauna con gráficos o fotografías en soporte físico o digital. Se distribuirán pesos entre los componentes verificables.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "603cd08f-4b93-458f-9c27-67a565223450",
+      "instrumentSnapshotId": "eb288c7c-c73c-43b8-adc5-64d8c42814e1",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-catalogo-organization:0",
+            "title": "Organización y consulta del catálogo",
+            "maxScore": 4.63,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-3-catalogo-organization",
+            "description": "Organiza las entradas del catálogo para localizar y consultar información de las especies según el propósito y destinatario. Parcial (50%): Se agrupa información sin mostrar cómo localizar la entrada correspondiente. Ajuste manual del docente.",
+            "descriptors": [
+              {
+                "text": "Organiza las entradas del catálogo para localizar y consultar información de las especies según el propósito y destinatario. Parcial (50%): Se agrupa información sin mostrar cómo localizar la entrada correspondiente. Ajuste manual del docente.",
+                "levelId": "L3",
+                "scoreUnits": 463
+              },
+              {
+                "text": "Organiza las entradas del catálogo para localizar y consultar información de las especies según el propósito y destinatario. Parcial (50%): Se agrupa información sin mostrar cómo localizar la entrada correspondiente. Ajuste manual del docente.",
+                "levelId": "L2",
+                "scoreUnits": 232
+              },
+              {
+                "text": "Organiza las entradas del catálogo para localizar y consultar información de las especies según el propósito y destinatario. Parcial (50%): Se agrupa información sin mostrar cómo localizar la entrada correspondiente. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 463,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-catalogo-entries:1",
+            "title": "Información descriptiva de las especies",
+            "maxScore": 5.78,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-catalogo-entries",
+            "description": "Describe las especies del catálogo mediante características que permiten reconocerlas y distinguirlas. Parcial (50%): Se enumeran especies sin relacionarlas con rasgos que las distingan.",
+            "descriptors": [
+              {
+                "text": "Describe las especies del catálogo mediante características que permiten reconocerlas y distinguirlas. Parcial (50%): Se enumeran especies sin relacionarlas con rasgos que las distingan.",
+                "levelId": "L3",
+                "scoreUnits": 578
+              },
+              {
+                "text": "Describe las especies del catálogo mediante características que permiten reconocerlas y distinguirlas. Parcial (50%): Se enumeran especies sin relacionarlas con rasgos que las distingan.",
+                "levelId": "L2",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Describe las especies del catálogo mediante características que permiten reconocerlas y distinguirlas. Parcial (50%): Se enumeran especies sin relacionarlas con rasgos que las distingan.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 578,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-catalogo-feature-graphics:2",
+            "title": "Gráficos o fotografías",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-catalogo-feature-graphics",
+            "description": "Emplea gráficos o fotografías en el texto de catálogo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas. Parcial (50%): Incluye gráficos o fotografías, pero varios usos no contribuyen a relacionar lo representado con la información del texto y mantener sus datos o referencias.",
+            "descriptors": [
+              {
+                "text": "Emplea gráficos o fotografías en el texto de catálogo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas. Parcial (50%): Incluye gráficos o fotografías, pero varios usos no contribuyen a relacionar lo representado con la información del texto y mantener sus datos o referencias.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Emplea gráficos o fotografías en el texto de catálogo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas. Parcial (50%): Incluye gráficos o fotografías, pero varios usos no contribuyen a relacionar lo representado con la información del texto y mantener sus datos o referencias.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Emplea gráficos o fotografías en el texto de catálogo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas. Parcial (50%): Incluye gráficos o fotografías, pero varios usos no contribuyen a relacionar lo representado con la información del texto y mantener sus datos o referencias.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-catalogo-procedure-medium:3",
+            "title": "Consulta en el soporte solicitado",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-catalogo-procedure-medium",
+            "description": "Presenta el catálogo en soporte físico o digital con entradas legibles que permiten localizar la información de las especies. Parcial (50%): Los datos son legibles, pero su distribución dificulta relacionarlos con las entradas.",
+            "descriptors": [
+              {
+                "text": "Presenta el catálogo en soporte físico o digital con entradas legibles que permiten localizar la información de las especies. Parcial (50%): Los datos son legibles, pero su distribución dificulta relacionarlos con las entradas.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Presenta el catálogo en soporte físico o digital con entradas legibles que permiten localizar la información de las especies. Parcial (50%): Los datos son legibles, pero su distribución dificulta relacionarlos con las entradas.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Presenta el catálogo en soporte físico o digital con entradas legibles que permiten localizar la información de las especies. Parcial (50%): Los datos son legibles, pero su distribución dificulta relacionarlos con las entradas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "HIGH",
+        "totalScore": 17.35,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 111,
+              "reasons": [
+                "topicTokens=7/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "4a0015fc-92e8-5376-ba65-4926a10a10ec",
+              "topicCoverage": 0.875
+            },
+            {
+              "score": 89,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "67b4db6b-b784-52fa-a457-e1c993ebd096",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 60,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "41ac1065-5ade-5066-953c-c0f6b91ceaef",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e38ba93b-efd5-502d-a18e-942a667993f7",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "ed5ff54f-fb19-575b-a4e1-0f3a6f69a9d5",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "e259c20a-339a-5cbb-929d-277bbccb1ca5",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 48,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "176e5422-77ee-59e3-98b3-9a2dee2f209e",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1ad70373-5325-5f14-b269-5fc7c1a8a710",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "08484b46-dcc2-593f-bc3b-e119742a7eae",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "170e292f-5990-583e-b30d-85502da48c63",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "c8a530f1-418f-54ec-95d9-8294a4bddf2b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "d2680b65-eac2-57e1-ae9a-5404d78d548e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "a3e52e12-2a22-5aa4-b165-eec759f65571",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "21c4058c-30c8-54e1-9897-9a2540961219",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "613b5847-3a67-5eb1-a91e-2a388725792c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8fd288a4-7e87-5dc7-b7b3-4ada871a3f32",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f94dbc26-77c4-5898-833c-270c19394210",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-3-catalogo",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": false
+        },
+        "catalogVersion": "evaluation-2026.27",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA Lengua 3 final · Catálogo · ponderada 27",
+        "lista-ponderada:points:0": "4.63",
+        "lista-ponderada:points:1": "5.78",
+        "lista-ponderada:points:2": "3.47",
+        "lista-ponderada:points:3": "3.47",
+        "lista-ponderada:weight:0": "26.67",
+        "lista-ponderada:weight:1": "33.33",
+        "lista-ponderada:weight:2": "20",
+        "lista-ponderada:weight:3": "20",
+        "lista-ponderada:criterion:0": "Organización y consulta del catálogo",
+        "lista-ponderada:criterion:1": "Información descriptiva de las especies",
+        "lista-ponderada:criterion:2": "Gráficos o fotografías",
+        "lista-ponderada:criterion:3": "Consulta en el soporte solicitado",
+        "lista-ponderada:indicator:0": "Organiza las entradas del catálogo para localizar y consultar información de las especies según el propósito y destinatario. Parcial (50%): Se agrupa información sin mostrar cómo localizar la entrada correspondiente. Ajuste manual del docente.",
+        "lista-ponderada:indicator:1": "Describe las especies del catálogo mediante características que permiten reconocerlas y distinguirlas. Parcial (50%): Se enumeran especies sin relacionarlas con rasgos que las distingan.",
+        "lista-ponderada:indicator:2": "Emplea gráficos o fotografías en el texto de catálogo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas. Parcial (50%): Incluye gráficos o fotografías, pero varios usos no contribuyen a relacionar lo representado con la información del texto y mantener sus datos o referencias.",
+        "lista-ponderada:indicator:3": "Presenta el catálogo en soporte físico o digital con entradas legibles que permiten localizar la información de las especies. Parcial (50%): Los datos son legibles, pero su distribución dificulta relacionarlos con las entradas.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Organiza las entradas del catálogo para localizar y consultar información de las especies según el propósito y destinatario. Parcial (50%): Se agrupa información sin mostrar cómo localizar la entrada correspondiente.",
+        "lista-ponderada:description:1": "Describe las especies del catálogo mediante características que permiten reconocerlas y distinguirlas. Parcial (50%): Se enumeran especies sin relacionarlas con rasgos que las distingan.",
+        "lista-ponderada:description:2": "Emplea gráficos o fotografías en el texto de catálogo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas. Parcial (50%): Incluye gráficos o fotografías, pero varios usos no contribuyen a relacionar lo representado con la información del texto y mantener sus datos o referencias.",
+        "lista-ponderada:description:3": "Presenta el catálogo en soporte físico o digital con entradas legibles que permiten localizar la información de las especies. Parcial (50%): Los datos son legibles, pero su distribución dificulta relacionarlos con las entradas.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-catalogo-organization:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-catalogo-entries:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-catalogo-feature-graphics:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-catalogo-procedure-medium:3",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[4,5,3,3]",
+        "lista-ponderada:criterion-weight:0": "4",
+        "lista-ponderada:criterion-weight:1": "5",
+        "lista-ponderada:criterion-weight:2": "3",
+        "lista-ponderada:criterion-weight:3": "3",
+        "lista-ponderada:meta:criteriaCount": "4",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.27",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Organización y consulta del catálogo\",\"description\":\"Organiza las entradas del catálogo para localizar y consultar información de las especies según el propósito y destinatario. Parcial (50%): Se agrupa información sin mostrar cómo localizar la entrada correspondiente.\",\"progression\":[\"Organiza las entradas del catálogo para localizar y consultar información de las especies según el propósito y destinatario.\",\"Se pueden consultar las entradas; una referencia de organización necesita aclararse.\",\"Se agrupa información sin mostrar cómo localizar la entrada correspondiente.\",\"La organización remite a una especie distinta de la consultada.\",\"No hay una organización que permita consultar las entradas del catálogo.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Información descriptiva de las especies\",\"description\":\"Describe las especies del catálogo mediante características que permiten reconocerlas y distinguirlas. Parcial (50%): Se enumeran especies sin relacionarlas con rasgos que las distingan.\",\"progression\":[\"Describe las especies del catálogo mediante características que permiten reconocerlas y distinguirlas.\",\"Las características distinguen las especies; una descripción necesita precisar a cuál corresponde.\",\"Se enumeran especies sin relacionarlas con rasgos que las distingan.\",\"Se atribuye a una especie una característica de otra.\",\"No se presenta información que permita reconocer las especies.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Gráficos o fotografías\",\"description\":\"Emplea gráficos o fotografías en el texto de catálogo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas. Parcial (50%): Incluye gráficos o fotografías, pero varios usos no contribuyen a relacionar lo representado con la información del texto y mantener sus datos o referencias.\",\"progression\":[\"Emplea gráficos o fotografías en el texto de catálogo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas.\",\"Emplea gráficos o fotografías con la función solicitada; un uso aislado deja ambigua una relación entre ideas.\",\"Incluye gráficos o fotografías, pero varios usos no contribuyen a relacionar lo representado con la información del texto y mantener sus datos o referencias.\",\"El uso de gráficos o fotografías altera el sentido del texto: el recurso representa datos o referentes incompatibles con el pasaje.\",\"No incorpora evidencia del uso solicitado de gráficos o fotografías en su texto.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Consulta en el soporte solicitado\",\"description\":\"Presenta el catálogo en soporte físico o digital con entradas legibles que permiten localizar la información de las especies. Parcial (50%): Los datos son legibles, pero su distribución dificulta relacionarlos con las entradas.\",\"progression\":[\"Presenta el catálogo en soporte físico o digital con entradas legibles que permiten localizar la información de las especies.\",\"Las entradas pueden consultarse; una referencia o distribución dificulta localizar un dato.\",\"Los datos son legibles, pero su distribución dificulta relacionarlos con las entradas.\",\"La disposición mezcla información de distintas especies y cambia sus referencias.\",\"No presenta el catálogo de forma consultable en el soporte solicitado.\"]}",
+        "lista-ponderada:criterion-template:0": "len-3-catalogo-organization",
+        "lista-ponderada:criterion-template:1": "len-3-catalogo-entries",
+        "lista-ponderada:criterion-template:2": "len-3-catalogo-feature-graphics",
+        "lista-ponderada:criterion-template:3": "len-3-catalogo-procedure-medium"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "e1be5664-a8ce-4fc8-80a9-833a750d664e",
+      "name": "QA Lengua 3 final · Entrevista · rúbrica 27",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Realizarán oralmente una entrevista a un personaje de la comunidad seleccionado por sus aportes. Organizarán las preguntas con vocabulario temático, registro formal y gestos pertinentes. Se valorará la calidad en varias dimensiones.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "f07eb4ab-2eed-4fcf-bf42-5514ba133550",
+      "instrumentSnapshotId": "b5d54482-9519-400f-930c-d1d1c71e435e",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-purpose:0",
+            "title": "Propósito y alcance de la entrevista",
+            "maxScore": 2.86,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-3-entrevista-purpose",
+            "description": "Delimita el tema, el destinatario y el propósito que orienta la entrevista.",
+            "descriptors": [
+              {
+                "text": "Delimita el tema, el destinatario y el propósito que orienta la entrevista.",
+                "levelId": "L4",
+                "scoreUnits": 286
+              },
+              {
+                "text": "El tema responde al propósito; queda una pregunta cuya pertinencia necesita aclararse.",
+                "levelId": "L3",
+                "scoreUnits": 191
+              },
+              {
+                "text": "Se nombra un tema sin explicar qué se busca conocer del entrevistado.",
+                "levelId": "L2",
+                "scoreUnits": 95
+              },
+              {
+                "text": "No hay evidencia del propósito ni del tema de la entrevista. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 286,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-questions:1",
+            "title": "Preguntas y respuestas de la entrevista",
+            "maxScore": 3.57,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-entrevista-questions",
+            "description": "Organiza preguntas pertinentes al entrevistado y al tema, con una secuencia que permite profundizar en sus respuestas.",
+            "descriptors": [
+              {
+                "text": "Organiza preguntas pertinentes al entrevistado y al tema, con una secuencia que permite profundizar en sus respuestas.",
+                "levelId": "L4",
+                "scoreUnits": 357
+              },
+              {
+                "text": "Las preguntas y respuestas desarrollan el tema; una transición necesita enlazarse.",
+                "levelId": "L3",
+                "scoreUnits": 238
+              },
+              {
+                "text": "Se enumeran preguntas o respuestas aisladas sin explicar su relación.",
+                "levelId": "L2",
+                "scoreUnits": 119
+              },
+              {
+                "text": "No se relacionan preguntas y respuestas con el tema de la entrevista.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 357,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-roles:2",
+            "title": "Roles de los participantes",
+            "maxScore": 2.86,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-entrevista-roles",
+            "description": "Distingue las intervenciones del entrevistador y del entrevistado, respetando a quién pertenece cada pregunta o respuesta.",
+            "descriptors": [
+              {
+                "text": "Distingue las intervenciones del entrevistador y del entrevistado, respetando a quién pertenece cada pregunta o respuesta.",
+                "levelId": "L4",
+                "scoreUnits": 286
+              },
+              {
+                "text": "Se distinguen los roles; una intervención necesita atribuirse con mayor claridad.",
+                "levelId": "L3",
+                "scoreUnits": 191
+              },
+              {
+                "text": "Se nombran participantes sin relacionarlos con sus intervenciones.",
+                "levelId": "L2",
+                "scoreUnits": 95
+              },
+              {
+                "text": "No se identifican los participantes a partir de sus intervenciones.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 286,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-feature-register:3",
+            "title": "El registro formal",
+            "maxScore": 2.15,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-entrevista-feature-register",
+            "description": "Emplea el registro formal en la producción oral de entrevista para ajustar el tratamiento y las expresiones al interlocutor y a la situación, sin alterar el sentido de las ideas.",
+            "descriptors": [
+              {
+                "text": "Emplea el registro formal en la producción oral de entrevista para ajustar el tratamiento y las expresiones al interlocutor y a la situación, sin alterar el sentido de las ideas.",
+                "levelId": "L4",
+                "scoreUnits": 215
+              },
+              {
+                "text": "Emplea el registro formal con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+                "levelId": "L3",
+                "scoreUnits": 143
+              },
+              {
+                "text": "Incluye el registro formal, pero varios usos no contribuyen a ajustar el tratamiento y las expresiones al interlocutor y a la situación.",
+                "levelId": "L2",
+                "scoreUnits": 72
+              },
+              {
+                "text": "No incorpora evidencia del uso solicitado del registro formal en su texto.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 215,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-feature-vocabulary:4",
+            "title": "El vocabulario temático",
+            "maxScore": 2.14,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-entrevista-feature-vocabulary",
+            "description": "Emplea el vocabulario temático en la producción oral de entrevista para nombrar con significado pertinente los elementos y relaciones del pasaje, sin alterar el sentido de las ideas.",
+            "descriptors": [
+              {
+                "text": "Emplea el vocabulario temático en la producción oral de entrevista para nombrar con significado pertinente los elementos y relaciones del pasaje, sin alterar el sentido de las ideas.",
+                "levelId": "L4",
+                "scoreUnits": 214
+              },
+              {
+                "text": "Emplea el vocabulario temático con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+                "levelId": "L3",
+                "scoreUnits": 143
+              },
+              {
+                "text": "Incluye el vocabulario temático, pero varios usos no contribuyen a nombrar con significado pertinente los elementos y relaciones del pasaje.",
+                "levelId": "L2",
+                "scoreUnits": 71
+              },
+              {
+                "text": "No incorpora evidencia del uso solicitado del vocabulario temático en su texto.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 214,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-feature-nonverbal:5",
+            "title": "Los gestos y recursos expresivos solicitados",
+            "maxScore": 2.14,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-entrevista-feature-nonverbal",
+            "description": "Emplea los gestos y recursos expresivos solicitados en la producción oral de entrevista para apoyar el sentido de las intervenciones o versos mediante recursos expresivos o apoyos de acceso acordados, sin alterar el sentido de las ideas.",
+            "descriptors": [
+              {
+                "text": "Emplea los gestos y recursos expresivos solicitados en la producción oral de entrevista para apoyar el sentido de las intervenciones o versos mediante recursos expresivos o apoyos de acceso acordados, sin alterar el sentido de las ideas.",
+                "levelId": "L4",
+                "scoreUnits": 214
+              },
+              {
+                "text": "Emplea los gestos y recursos expresivos solicitados con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+                "levelId": "L3",
+                "scoreUnits": 143
+              },
+              {
+                "text": "Incluye los gestos y recursos expresivos solicitados, pero varios usos no contribuyen a apoyar el sentido de las intervenciones o versos mediante recursos expresivos o apoyos de acceso acordados.",
+                "levelId": "L2",
+                "scoreUnits": 71
+              },
+              {
+                "text": "No incorpora evidencia del uso solicitado de los gestos y recursos expresivos solicitados en su texto.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 214,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-procedure-interviewee:6",
+            "title": "Selección informada del entrevistado",
+            "maxScore": 2.14,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-entrevista-procedure-interviewee",
+            "description": "Justifica la selección del entrevistado relacionando sus experiencias o aportes documentados con el tema y el propósito de las preguntas.",
+            "descriptors": [
+              {
+                "text": "Justifica la selección del entrevistado relacionando sus experiencias o aportes documentados con el tema y el propósito de las preguntas.",
+                "levelId": "L4",
+                "scoreUnits": 214
+              },
+              {
+                "text": "Los aportes se relacionan con el tema; queda implícita su relación con una pregunta.",
+                "levelId": "L3",
+                "scoreUnits": 143
+              },
+              {
+                "text": "Enumera datos de la persona sin explicar por qué permiten abordar el tema.",
+                "levelId": "L2",
+                "scoreUnits": 71
+              },
+              {
+                "text": "No aporta información que justifique la selección del entrevistado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 214,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-oral:7",
+            "title": "Comunicación e intercambio de ideas",
+            "maxScore": 2.14,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-entrevista-oral",
+            "description": "Comunica el tema y las informaciones de las preguntas y respuestas mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados.",
+            "descriptors": [
+              {
+                "text": "Comunica el tema y las informaciones de las preguntas y respuestas mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados.",
+                "levelId": "L4",
+                "scoreUnits": 214
+              },
+              {
+                "text": "Las ideas se comprenden; una transición o referencia necesita aclararse.",
+                "levelId": "L3",
+                "scoreUnits": 143
+              },
+              {
+                "text": "Se comunican ideas aisladas y cuesta reconocer sus relaciones.",
+                "levelId": "L2",
+                "scoreUnits": 71
+              },
+              {
+                "text": "No aporta evidencia de comunicación del contenido mediante la presentación o el apoyo acordado.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 214,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "MEDIUM",
+        "totalScore": 20,
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_rubrica",
+          "ranking": [
+            {
+              "score": 86,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "463972b5-a2cc-520b-8df0-3f4b81b5e63a",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 83,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "224222b7-69db-52aa-9a0f-7a33ef8da209",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 64,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "ae70cdb2-7d5c-5fe3-ab67-94c10f549231",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "4a0015fc-92e8-5376-ba65-4926a10a10ec",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 48,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "4776afa3-9e42-5777-a564-b2e91dc807da",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "61498b07-49c4-5566-9a37-928495c3e1a7",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a8da201e-7c8e-519d-9c76-1e9e65cb0eb1",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "ac9b2f37-499b-536b-a045-adf03dd25b4a",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ed5ff54f-fb19-575b-a4e1-0f3a6f69a9d5",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e884e94b-bfce-56a4-aa55-5bd2a65c1c8c",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6ea178bf-9ebc-592d-afa9-2461bfef5b6d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "83a0ab4b-a8f4-5188-862a-9756a880e047",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "a3e52e12-2a22-5aa4-b165-eec759f65571",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "08484b46-dcc2-593f-bc3b-e119742a7eae",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "147f6896-1896-5640-b2dd-2562d5015ffe",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "29d5f7e6-5fa6-5d5d-8a07-e0a66a1303f6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9121b49f-8006-543f-862c-e14cd200b604",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "f4bc4dc2-b55e-58c4-8b6a-f08fed62b232",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "170e292f-5990-583e-b30d-85502da48c63",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "87a532f1-23da-5d70-b533-136126263946",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d2680b65-eac2-57e1-ae9a-5404d78d548e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "009b844a-c752-5b50-adf9-72cea44b5d6d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "da89f8cf-0342-5707-a73b-134b32de0ca2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8a013b52-dff4-59b0-89e6-8c0668e95f51",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-3-entrevista",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": false
+        },
+        "catalogVersion": "evaluation-2026.27",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_PRESENTATION",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para QA Lengua 3 final · Entrevista · rúbrica 27",
+        "rubrica:points:0": "2.86",
+        "rubrica:points:1": "3.57",
+        "rubrica:points:2": "2.86",
+        "rubrica:points:3": "2.15",
+        "rubrica:points:4": "2.14",
+        "rubrica:points:5": "2.14",
+        "rubrica:points:6": "2.14",
+        "rubrica:points:7": "2.14",
+        "rubrica:criterion:0": "Propósito y alcance de la entrevista",
+        "rubrica:criterion:1": "Preguntas y respuestas de la entrevista",
+        "rubrica:criterion:2": "Roles de los participantes",
+        "rubrica:criterion:3": "El registro formal",
+        "rubrica:criterion:4": "El vocabulario temático",
+        "rubrica:criterion:5": "Los gestos y recursos expresivos solicitados",
+        "rubrica:criterion:6": "Selección informada del entrevistado",
+        "rubrica:criterion:7": "Comunicación e intercambio de ideas",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Delimita el tema, el destinatario y el propósito que orienta la entrevista.",
+        "rubrica:description:1": "Organiza preguntas pertinentes al entrevistado y al tema, con una secuencia que permite profundizar en sus respuestas.",
+        "rubrica:description:2": "Distingue las intervenciones del entrevistador y del entrevistado, respetando a quién pertenece cada pregunta o respuesta.",
+        "rubrica:description:3": "Emplea el registro formal en la producción oral de entrevista para ajustar el tratamiento y las expresiones al interlocutor y a la situación, sin alterar el sentido de las ideas.",
+        "rubrica:description:4": "Emplea el vocabulario temático en la producción oral de entrevista para nombrar con significado pertinente los elementos y relaciones del pasaje, sin alterar el sentido de las ideas.",
+        "rubrica:description:5": "Emplea los gestos y recursos expresivos solicitados en la producción oral de entrevista para apoyar el sentido de las intervenciones o versos mediante recursos expresivos o apoyos de acceso acordados, sin alterar el sentido de las ideas.",
+        "rubrica:description:6": "Justifica la selección del entrevistado relacionando sus experiencias o aportes documentados con el tema y el propósito de las preguntas.",
+        "rubrica:description:7": "Comunica el tema y las informaciones de las preguntas y respuestas mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-purpose:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-questions:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-roles:2",
+        "rubrica:criterion-id:3": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-feature-register:3",
+        "rubrica:criterion-id:4": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-feature-vocabulary:4",
+        "rubrica:criterion-id:5": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-feature-nonverbal:5",
+        "rubrica:criterion-id:6": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-procedure-interviewee:6",
+        "rubrica:criterion-id:7": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-entrevista-oral:7",
+        "rubrica:descriptor:0:1": "No hay evidencia del propósito ni del tema de la entrevista. Ajuste manual del docente.",
+        "rubrica:descriptor:0:2": "Se nombra un tema sin explicar qué se busca conocer del entrevistado.",
+        "rubrica:descriptor:0:3": "El tema responde al propósito; queda una pregunta cuya pertinencia necesita aclararse.",
+        "rubrica:descriptor:0:4": "Delimita el tema, el destinatario y el propósito que orienta la entrevista.",
+        "rubrica:descriptor:1:1": "No se relacionan preguntas y respuestas con el tema de la entrevista.",
+        "rubrica:descriptor:1:2": "Se enumeran preguntas o respuestas aisladas sin explicar su relación.",
+        "rubrica:descriptor:1:3": "Las preguntas y respuestas desarrollan el tema; una transición necesita enlazarse.",
+        "rubrica:descriptor:1:4": "Organiza preguntas pertinentes al entrevistado y al tema, con una secuencia que permite profundizar en sus respuestas.",
+        "rubrica:descriptor:2:1": "No se identifican los participantes a partir de sus intervenciones.",
+        "rubrica:descriptor:2:2": "Se nombran participantes sin relacionarlos con sus intervenciones.",
+        "rubrica:descriptor:2:3": "Se distinguen los roles; una intervención necesita atribuirse con mayor claridad.",
+        "rubrica:descriptor:2:4": "Distingue las intervenciones del entrevistador y del entrevistado, respetando a quién pertenece cada pregunta o respuesta.",
+        "rubrica:descriptor:3:1": "No incorpora evidencia del uso solicitado del registro formal en su texto.",
+        "rubrica:descriptor:3:2": "Incluye el registro formal, pero varios usos no contribuyen a ajustar el tratamiento y las expresiones al interlocutor y a la situación.",
+        "rubrica:descriptor:3:3": "Emplea el registro formal con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+        "rubrica:descriptor:3:4": "Emplea el registro formal en la producción oral de entrevista para ajustar el tratamiento y las expresiones al interlocutor y a la situación, sin alterar el sentido de las ideas.",
+        "rubrica:descriptor:4:1": "No incorpora evidencia del uso solicitado del vocabulario temático en su texto.",
+        "rubrica:descriptor:4:2": "Incluye el vocabulario temático, pero varios usos no contribuyen a nombrar con significado pertinente los elementos y relaciones del pasaje.",
+        "rubrica:descriptor:4:3": "Emplea el vocabulario temático con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+        "rubrica:descriptor:4:4": "Emplea el vocabulario temático en la producción oral de entrevista para nombrar con significado pertinente los elementos y relaciones del pasaje, sin alterar el sentido de las ideas.",
+        "rubrica:descriptor:5:1": "No incorpora evidencia del uso solicitado de los gestos y recursos expresivos solicitados en su texto.",
+        "rubrica:descriptor:5:2": "Incluye los gestos y recursos expresivos solicitados, pero varios usos no contribuyen a apoyar el sentido de las intervenciones o versos mediante recursos expresivos o apoyos de acceso acordados.",
+        "rubrica:descriptor:5:3": "Emplea los gestos y recursos expresivos solicitados con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+        "rubrica:descriptor:5:4": "Emplea los gestos y recursos expresivos solicitados en la producción oral de entrevista para apoyar el sentido de las intervenciones o versos mediante recursos expresivos o apoyos de acceso acordados, sin alterar el sentido de las ideas.",
+        "rubrica:descriptor:6:1": "No aporta información que justifique la selección del entrevistado.",
+        "rubrica:descriptor:6:2": "Enumera datos de la persona sin explicar por qué permiten abordar el tema.",
+        "rubrica:descriptor:6:3": "Los aportes se relacionan con el tema; queda implícita su relación con una pregunta.",
+        "rubrica:descriptor:6:4": "Justifica la selección del entrevistado relacionando sus experiencias o aportes documentados con el tema y el propósito de las preguntas.",
+        "rubrica:descriptor:7:1": "No aporta evidencia de comunicación del contenido mediante la presentación o el apoyo acordado.",
+        "rubrica:descriptor:7:2": "Se comunican ideas aisladas y cuesta reconocer sus relaciones.",
+        "rubrica:descriptor:7:3": "Las ideas se comprenden; una transición o referencia necesita aclararse.",
+        "rubrica:descriptor:7:4": "Comunica el tema y las informaciones de las preguntas y respuestas mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[4,5,4,3,3,3,3,3]",
+        "rubrica:criterion-weight:0": "4",
+        "rubrica:criterion-weight:1": "5",
+        "rubrica:criterion-weight:2": "4",
+        "rubrica:criterion-weight:3": "3",
+        "rubrica:criterion-weight:4": "3",
+        "rubrica:criterion-weight:5": "3",
+        "rubrica:criterion-weight:6": "3",
+        "rubrica:criterion-weight:7": "3",
+        "rubrica:meta:criteriaCount": "8",
+        "rubrica:meta:catalogVersion": "evaluation-2026.27",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Propósito y alcance de la entrevista\",\"description\":\"Delimita el tema, el destinatario y el propósito que orienta la entrevista.\",\"progression\":[\"Delimita el tema, el destinatario y el propósito que orienta la entrevista.\",\"El tema responde al propósito; queda una pregunta cuya pertinencia necesita aclararse.\",\"Se nombra un tema sin explicar qué se busca conocer del entrevistado.\",\"Se atribuye a la entrevista un propósito incompatible con las preguntas.\",\"No hay evidencia del propósito ni del tema de la entrevista.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"Preguntas y respuestas de la entrevista\",\"description\":\"Organiza preguntas pertinentes al entrevistado y al tema, con una secuencia que permite profundizar en sus respuestas.\",\"progression\":[\"Organiza preguntas pertinentes al entrevistado y al tema, con una secuencia que permite profundizar en sus respuestas.\",\"Las preguntas y respuestas desarrollan el tema; una transición necesita enlazarse.\",\"Se enumeran preguntas o respuestas aisladas sin explicar su relación.\",\"Una pregunta se interpreta a partir de una respuesta ajena o contradictoria.\",\"No se relacionan preguntas y respuestas con el tema de la entrevista.\"]}",
+        "rubrica:criterion-evidence:2": "{\"title\":\"Roles de los participantes\",\"description\":\"Distingue las intervenciones del entrevistador y del entrevistado, respetando a quién pertenece cada pregunta o respuesta.\",\"progression\":[\"Distingue las intervenciones del entrevistador y del entrevistado, respetando a quién pertenece cada pregunta o respuesta.\",\"Se distinguen los roles; una intervención necesita atribuirse con mayor claridad.\",\"Se nombran participantes sin relacionarlos con sus intervenciones.\",\"Se atribuye al entrevistador la respuesta del entrevistado o se intercambian sus roles.\",\"No se identifican los participantes a partir de sus intervenciones.\"]}",
+        "rubrica:criterion-evidence:3": "{\"title\":\"El registro formal\",\"description\":\"Emplea el registro formal en la producción oral de entrevista para ajustar el tratamiento y las expresiones al interlocutor y a la situación, sin alterar el sentido de las ideas.\",\"progression\":[\"Emplea el registro formal en la producción oral de entrevista para ajustar el tratamiento y las expresiones al interlocutor y a la situación, sin alterar el sentido de las ideas.\",\"Emplea el registro formal con la función solicitada; un uso aislado deja ambigua una relación entre ideas.\",\"Incluye el registro formal, pero varios usos no contribuyen a ajustar el tratamiento y las expresiones al interlocutor y a la situación.\",\"El uso del registro formal altera el sentido del texto: se mezclan tratamientos incompatibles o expresiones ajenas a la relación comunicativa.\",\"No incorpora evidencia del uso solicitado del registro formal en su texto.\"]}",
+        "rubrica:criterion-evidence:4": "{\"title\":\"El vocabulario temático\",\"description\":\"Emplea el vocabulario temático en la producción oral de entrevista para nombrar con significado pertinente los elementos y relaciones del pasaje, sin alterar el sentido de las ideas.\",\"progression\":[\"Emplea el vocabulario temático en la producción oral de entrevista para nombrar con significado pertinente los elementos y relaciones del pasaje, sin alterar el sentido de las ideas.\",\"Emplea el vocabulario temático con la función solicitada; un uso aislado deja ambigua una relación entre ideas.\",\"Incluye el vocabulario temático, pero varios usos no contribuyen a nombrar con significado pertinente los elementos y relaciones del pasaje.\",\"El uso del vocabulario temático altera el sentido del texto: un término atribuye al referente una propiedad o relación que no tiene en el pasaje.\",\"No incorpora evidencia del uso solicitado del vocabulario temático en su texto.\"]}",
+        "rubrica:criterion-evidence:5": "{\"title\":\"Los gestos y recursos expresivos solicitados\",\"description\":\"Emplea los gestos y recursos expresivos solicitados en la producción oral de entrevista para apoyar el sentido de las intervenciones o versos mediante recursos expresivos o apoyos de acceso acordados, sin alterar el sentido de las ideas.\",\"progression\":[\"Emplea los gestos y recursos expresivos solicitados en la producción oral de entrevista para apoyar el sentido de las intervenciones o versos mediante recursos expresivos o apoyos de acceso acordados, sin alterar el sentido de las ideas.\",\"Emplea los gestos y recursos expresivos solicitados con la función solicitada; un uso aislado deja ambigua una relación entre ideas.\",\"Incluye los gestos y recursos expresivos solicitados, pero varios usos no contribuyen a apoyar el sentido de las intervenciones o versos mediante recursos expresivos o apoyos de acceso acordados.\",\"El uso de los gestos y recursos expresivos solicitados altera el sentido del texto: el gesto o recurso expresa una relación o emoción contraria al contenido comunicado.\",\"No incorpora evidencia del uso solicitado de los gestos y recursos expresivos solicitados en su texto.\"]}",
+        "rubrica:criterion-evidence:6": "{\"title\":\"Selección informada del entrevistado\",\"description\":\"Justifica la selección del entrevistado relacionando sus experiencias o aportes documentados con el tema y el propósito de las preguntas.\",\"progression\":[\"Justifica la selección del entrevistado relacionando sus experiencias o aportes documentados con el tema y el propósito de las preguntas.\",\"Los aportes se relacionan con el tema; queda implícita su relación con una pregunta.\",\"Enumera datos de la persona sin explicar por qué permiten abordar el tema.\",\"Atribuye al entrevistado experiencias ajenas o incompatibles con la información consultada.\",\"No aporta información que justifique la selección del entrevistado.\"]}",
+        "rubrica:criterion-evidence:7": "{\"title\":\"Comunicación e intercambio de ideas\",\"description\":\"Comunica el tema y las informaciones de las preguntas y respuestas mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados.\",\"progression\":[\"Comunica el tema y las informaciones de las preguntas y respuestas mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados.\",\"Las ideas se comprenden; una transición o referencia necesita aclararse.\",\"Se comunican ideas aisladas y cuesta reconocer sus relaciones.\",\"La secuencia o el vocabulario cambia el sentido de las ideas comunicadas.\",\"No aporta evidencia de comunicación del contenido mediante la presentación o el apoyo acordado.\"]}",
+        "rubrica:criterion-template:0": "len-3-entrevista-purpose",
+        "rubrica:criterion-template:1": "len-3-entrevista-questions",
+        "rubrica:criterion-template:2": "len-3-entrevista-roles",
+        "rubrica:criterion-template:3": "len-3-entrevista-feature-register",
+        "rubrica:criterion-template:4": "len-3-entrevista-feature-vocabulary",
+        "rubrica:criterion-template:5": "len-3-entrevista-feature-nonverbal",
+        "rubrica:criterion-template:6": "len-3-entrevista-procedure-interviewee",
+        "rubrica:criterion-template:7": "len-3-entrevista-oral",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "presentacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "aaabc4be-c9b8-4e12-a444-2709618f9ad3",
+      "name": "QA Lengua 3 final · Informe de experimento · cotejo 27",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Redactarán un informe de experimento con los datos proporcionados, relacionando procedimiento, resultados e interpretación. Se comprobará la presencia de cada evidencia con sí o no. No se pide realizar el experimento.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "23738207-1303-4c06-b6f3-d62f547b24f5",
+      "instrumentSnapshotId": "79d5763e-db99-4958-aa36-6c7aafc6d970",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-informe-experimento-procedure:0",
+            "title": "Organiza el informe de experimento relacionando su propósito con el procedimiento descrito y el orden de las acciones registradas. Ajuste manual del docente.",
+            "maxScore": 7.71,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-3-informe-experimento-procedure",
+            "description": "Organiza el informe de experimento relacionando su propósito con el procedimiento descrito y el orden de las acciones registradas.",
+            "descriptors": [
+              {
+                "text": "Organiza el informe de experimento relacionando su propósito con el procedimiento descrito y el orden de las acciones registradas.",
+                "levelId": "L2",
+                "scoreUnits": 771
+              },
+              {
+                "text": "Organiza el informe de experimento relacionando su propósito con el procedimiento descrito y el orden de las acciones registradas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 771,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-informe-experimento-results:1",
+            "title": "Comunica los resultados disponibles y relaciona su interpretación con los datos, sin inventar observaciones.",
+            "maxScore": 9.64,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-3-informe-experimento-results",
+            "description": "Comunica los resultados disponibles y relaciona su interpretación con los datos, sin inventar observaciones.",
+            "descriptors": [
+              {
+                "text": "Comunica los resultados disponibles y relaciona su interpretación con los datos, sin inventar observaciones.",
+                "levelId": "L2",
+                "scoreUnits": 964
+              },
+              {
+                "text": "Comunica los resultados disponibles y relaciona su interpretación con los datos, sin inventar observaciones.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 964,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "REPORT",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-cotejo",
+          "ranking": [
+            {
+              "score": 73,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e259c20a-339a-5cbb-929d-277bbccb1ca5",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 62,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "3ffa38e7-3146-57e7-b657-f2b4431233eb",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "61498b07-49c4-5566-9a37-928495c3e1a7",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "def6253f-9610-535f-ba61-e7ea99083b29",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "10dc51dd-1df7-5e9f-8486-fc58d4a9ae87",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "ed5ff54f-fb19-575b-a4e1-0f3a6f69a9d5",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e6847fb8-7923-5223-9b62-021e13042a74",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "236be722-0ef3-5211-9dd2-5af2c786fad6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e884e94b-bfce-56a4-aa55-5bd2a65c1c8c",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-3-informe-experimento",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.27",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "REPORT",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA Lengua 3 final · Informe de experimento · cotejo 27",
+        "lista-cotejo:points:0": "7.71",
+        "lista-cotejo:points:1": "9.64",
+        "lista-cotejo:criterion:0": "Organiza el informe de experimento relacionando su propósito con el procedimiento descrito y el orden de las acciones registradas. Ajuste manual del docente.",
+        "lista-cotejo:criterion:1": "Comunica los resultados disponibles y relaciona su interpretación con los datos, sin inventar observaciones.",
+        "lista-cotejo:description:0": "Organiza el informe de experimento relacionando su propósito con el procedimiento descrito y el orden de las acciones registradas.",
+        "lista-cotejo:description:1": "Comunica los resultados disponibles y relaciona su interpretación con los datos, sin inventar observaciones.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-informe-experimento-procedure:0",
+        "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.27:39d21319-20c5-54de-90f4-0aebdc7338c4:len-3-informe-experimento-results:1",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[4,5]",
+        "lista-cotejo:criterion-weight:0": "4",
+        "lista-cotejo:criterion-weight:1": "5",
+        "lista-cotejo:meta:criteriaCount": "2",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.27",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Organiza el informe de experimento relacionando su propósito con el procedimiento descrito y el orden de las acciones registradas.\",\"description\":\"Organiza el informe de experimento relacionando su propósito con el procedimiento descrito y el orden de las acciones registradas.\",\"progression\":[\"Organiza el informe de experimento relacionando su propósito con el procedimiento descrito y el orden de las acciones registradas.\",\"El procedimiento responde al propósito; una transición entre acciones necesita aclararse.\",\"Se enumeran acciones sin relacionarlas con el propósito o su secuencia.\",\"Se altera el orden de acciones y cambia el procedimiento comunicado.\",\"No hay evidencia del propósito ni del procedimiento descrito.\"]}",
+        "lista-cotejo:criterion-evidence:1": "{\"title\":\"Comunica los resultados disponibles y relaciona su interpretación con los datos, sin inventar observaciones.\",\"description\":\"Comunica los resultados disponibles y relaciona su interpretación con los datos, sin inventar observaciones.\",\"progression\":[\"Comunica los resultados disponibles y relaciona su interpretación con los datos, sin inventar observaciones.\",\"La interpretación se apoya en datos; una afirmación necesita precisar qué resultado la respalda.\",\"Se enumeran resultados sin explicar qué interpretación permiten.\",\"Se atribuye a los datos un resultado que no contienen o se presenta una inferencia como observación.\",\"No se relacionan resultados e interpretación con datos disponibles.\"]}",
+        "lista-cotejo:criterion-template:0": "len-3-informe-experimento-procedure",
+        "lista-cotejo:criterion-template:1": "len-3-informe-experimento-results"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

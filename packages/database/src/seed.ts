@@ -1,117 +1,68 @@
-/**
- * @fileoverview Script de seed para poblar la base de datos con datos
- * iniciales (roles, permisos, catálogos RD).
- */
-
+/** Inicialización de un administrador local, explícita y sin datos de prueba implícitos. */
 import { prisma } from './index.js'
+import { assertExistingSeedIdentity, seedConfiguration, type SeedConfiguration } from './seed-config.js'
 
-const seedAdminEmail = process.env.SEED_ADMIN_EMAIL ?? 'admin@test.com'
-const seedAdminPassword = process.env.SEED_ADMIN_PASSWORD
-
-async function getAuthUserIdByEmail(email: string) {
-  const rows = await prisma.$queryRaw<Array<{ id: string }>>`
-    select id::text as id
-    from auth.users
-    where email = ${email}
-    limit 1
-  `
-
-  return rows[0]?.id ?? null
-}
-
-async function createAuthUser(email: string, password: string) {
-  const url = process.env.SUPABASE_URL?.replace(/\/$/, '')
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-
-  if (!url || !serviceKey) {
-    throw new Error('SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required to seed an admin user.')
-  }
-
-  const response = await fetch(`${url}/auth/v1/admin/users`, {
+async function createAuthUser(config: SeedConfiguration) {
+  const response = await fetch(`${config.supabaseUrl}/auth/v1/admin/users`, {
     method: 'POST',
-    headers: {
-      apikey: serviceKey,
-      authorization: `Bearer ${serviceKey}`,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      email,
-      password,
-      email_confirm: true,
-      user_metadata: { full_name: 'Admin Aula Base' },
-    }),
+    headers: { apikey: config.serviceKey, authorization: `Bearer ${config.serviceKey}`, 'content-type': 'application/json' },
+    body: JSON.stringify({ email: config.email, password: config.password, email_confirm: true, user_metadata: { full_name: config.fullName } }),
   })
-
-  if (!response.ok) {
-    throw new Error(`Could not create Supabase Auth seed user: ${response.status} ${await response.text()}`)
-  }
-
-  const user = await response.json() as { id?: string }
-  if (!user.id) throw new Error('Supabase Auth seed user response did not include an id.')
-  return user.id
+  if (!response.ok) throw new Error(`No se pudo crear la identidad local: HTTP ${response.status}.`)
+  const identity = await response.json() as { id?: string }
+  if (!identity.id) throw new Error('Supabase no devolvió el identificador del usuario.')
+  return identity.id
 }
 
-async function getOrCreateSeedAdminAuthUser() {
-  const existingId = await getAuthUserIdByEmail(seedAdminEmail)
-  if (existingId) return existingId
-
-  if (!seedAdminPassword) {
-    console.log('Skipped admin user seed: set SEED_ADMIN_PASSWORD to create one.')
-    return null
-  }
-
-  return createAuthUser(seedAdminEmail, seedAdminPassword)
-}
-
-/**
- * @description Función principal del seed. Crea un centro educativo por
- * defecto, el rol de administrador, y un usuario admin de prueba.
- */
 async function main() {
-  const school = await prisma.school.upsert({
-    where: { slug: 'aula-base' },
-    update: {},
-    create: {
-      name: 'Aula Base',
-      slug: 'aula-base',
-    },
-  })
-
-  const adminRole = await prisma.role.upsert({
-    where: { key: 'admin' },
-    update: {},
-    create: { key: 'admin', name: 'Administrador' },
-  })
-
-  const authUserId = await getOrCreateSeedAdminAuthUser()
-  if (!authUserId) {
-    console.log('Seeded:', school.name, '| Admin: skipped')
+  const config = seedConfiguration()
+  if (!config) {
+    console.log('Administrador omitido: requiere SEED_BOOTSTRAP_ADMIN=true y configuración local explícita.')
     return
   }
-
-  const adminUser = await prisma.appUser.upsert({
-    where: { email: seedAdminEmail },
-    update: { authUserId, schoolId: school.id },
-    create: {
-      authUserId,
-      email: seedAdminEmail,
-      fullName: 'Admin Aula Base',
-      schoolId: school.id,
-    },
-  })
-
-  await prisma.userRole.upsert({
-    where: { userId_roleId: { userId: adminUser.id, roleId: adminRole.id } },
-    update: {},
-    create: { userId: adminUser.id, roleId: adminRole.id, schoolId: school.id },
-  })
-
-  console.log('Seeded:', school.name, '| Admin:', adminUser.email)
+  try {
+    const [school, user, identities] = await Promise.all([
+      prisma.school.findUnique({ where: { slug: config.schoolSlug } }),
+      prisma.appUser.findUnique({ where: { email: config.email } }),
+      prisma.$queryRaw<Array<{ id: string }>>`select id::text as id from auth.users where lower(email) = ${config.email} limit 1`,
+    ])
+    if (school && school.name !== config.schoolName) throw new Error('El slug pertenece a un centro con un nombre diferente.')
+    const authId = identities[0]?.id ?? null
+    if (user || authId) {
+      const assignment = user && school ? await prisma.userRole.findFirst({
+        where: { userId: user.id, schoolId: school.id, status: 'ACTIVE', role: { key: 'admin', status: 'ACTIVE' } },
+      }) : null
+      assertExistingSeedIdentity(user, school?.id, authId, Boolean(assignment))
+      console.log('El administrador local ya estaba inicializado. No se cambió su cuenta ni su contraseña.')
+      return
+    }
+    const authUserId = await createAuthUser(config)
+    try {
+      await prisma.$transaction(async (tx) => {
+        const targetSchool = school ?? await tx.school.create({ data: { name: config.schoolName, slug: config.schoolSlug } })
+        const adminRole = await tx.role.upsert({ where: { key: 'admin' }, update: {}, create: { key: 'admin', name: 'Administrador' } })
+        if (adminRole.status !== 'ACTIVE') throw new Error('El rol de administrador no está activo.')
+        const admin = await tx.appUser.create({ data: { authUserId, email: config.email, fullName: config.fullName, schoolId: targetSchool.id } })
+        await tx.userRole.create({ data: { userId: admin.id, roleId: adminRole.id, schoolId: targetSchool.id } })
+      })
+    } catch (error) {
+      // Solo limpia la identidad recién creada y únicamente si no llegó a vincularse.
+      const linked = await prisma.appUser.findUnique({ where: { authUserId } }).catch(() => undefined)
+      if (linked === null) {
+        const cleanup = await fetch(`${config.supabaseUrl}/auth/v1/admin/users/${authUserId}`, {
+          method: 'DELETE', headers: { apikey: config.serviceKey, authorization: `Bearer ${config.serviceKey}` },
+        }).catch(() => null)
+        if (!cleanup?.ok) console.error('La identidad local pendiente requiere revisión manual.')
+      }
+      throw error
+    }
+    console.log('Administrador local inicializado para el centro configurado.')
+  } finally {
+    await prisma.$disconnect()
+  }
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-    process.exit(1)
-  })
-  .finally(() => prisma.$disconnect())
+main().catch((error) => {
+  console.error(error instanceof Error ? error.message : 'No se pudo inicializar el administrador local.')
+  process.exitCode = 1
+})

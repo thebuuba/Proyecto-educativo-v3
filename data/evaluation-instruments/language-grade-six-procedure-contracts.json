@@ -1,0 +1,658 @@
+[
+  {
+    "id": "procedure-family-1",
+    "topic": "informe-investigacion",
+    "description": "Escucharán un informe de investigación y parafrasearán el problema, objetivos, método, bases teóricas, conclusiones y recomendaciones. Resumirán mediante omisión, selección y generalización.",
+    "type": "ANALYSIS",
+    "criterion": "feature-summary",
+    "contains": "generalización",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "5f005c94-af0b-5100-8283-dc67139a010f"
+  },
+  {
+    "id": "procedure-family-2",
+    "topic": "informe-investigacion",
+    "description": "Producirán oralmente un informe de investigación justificando el problema con los datos dados y argumentos de analogía, ejemplificación, deducción y autoridad; usarán formas impersonales y vocabulario apropiado.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-argument-types",
+    "contains": "producción oral",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "5f005c94-af0b-5100-8283-dc67139a010f"
+  },
+  {
+    "id": "procedure-family-3",
+    "topic": "informe-investigacion",
+    "description": "Leerán un informe de investigación, anticiparán el contenido desde marcas paratextuales y gráficos. Inferirán el significado de palabras desconocidas y lo comprobarán en el diccionario.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-dictionary",
+    "contains": "acepción",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "5f005c94-af0b-5100-8283-dc67139a010f"
+  },
+  {
+    "id": "procedure-family-4",
+    "topic": "informe-investigacion",
+    "description": "Redactarán un informe de investigación en soporte digital con datos proporcionados. Planificarán un esquema, usarán citas para el marco teórico, una tabla o gráfico para los resultados, redactarán conclusiones y revisarán los borradores.",
+    "type": "REPORT",
+    "criterion": "feature-graphics",
+    "contains": "tabla o gráfico",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "5f005c94-af0b-5100-8283-dc67139a010f"
+  },
+  {
+    "id": "procedure-family-5",
+    "topic": "reportaje",
+    "description": "Escucharán un reportaje, anticiparán el contenido y parafrasearán los hechos, el contexto y las explicaciones del problema.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "hechos",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "4552445e-e0c1-55d2-9cdb-2a1c0b7dd4a6"
+  },
+  {
+    "id": "procedure-family-6",
+    "topic": "reportaje",
+    "description": "Producirán oralmente un reportaje con información investigada, entrevistas o testimonios, imágenes y recursos no verbales que apoyen la comprensión; usarán oraciones coordinadas y vocabulario pertinente.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-testimony",
+    "contains": "producción oral",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "4552445e-e0c1-55d2-9cdb-2a1c0b7dd4a6"
+  },
+  {
+    "id": "procedure-family-7",
+    "topic": "reportaje",
+    "description": "Leerán un reportaje e inferirán la intención y relaciones entre las ideas; comprobarán en el diccionario las palabras que desconozcan.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-dictionary",
+    "contains": "acepción",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "4552445e-e0c1-55d2-9cdb-2a1c0b7dd4a6"
+  },
+  {
+    "id": "procedure-family-8",
+    "topic": "reportaje",
+    "description": "Redactarán un reportaje en soporte físico o digital contrastando la diversidad y fiabilidad de las fuentes. Usarán fotografías o gráficos y revisarán sus borradores.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "source-reliability",
+    "contains": "discrepancias",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "4552445e-e0c1-55d2-9cdb-2a1c0b7dd4a6"
+  },
+  {
+    "id": "procedure-family-9",
+    "topic": "ensayo-argumentativo",
+    "description": "Escucharán un ensayo argumentativo y anticiparán su contenido a partir del título y marcas paratextuales.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-prediction",
+    "contains": "indicios",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "d30efb3e-9cbc-5609-8cf4-1dbdc1590d75"
+  },
+  {
+    "id": "procedure-family-10",
+    "topic": "ensayo-argumentativo",
+    "description": "Planificarán un ensayo argumentativo que escribirán, organizando tesis, fuentes, argumentos y contraargumentos para el destinatario.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-outline",
+    "contains": "tesis",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "d30efb3e-9cbc-5609-8cf4-1dbdc1590d75"
+  },
+  {
+    "id": "procedure-family-11",
+    "topic": "ensayo-argumentativo",
+    "description": "Leerán un ensayo argumentativo identificando la tesis, argumentos, contraargumentos y falacias. Resumirán mediante omisión, selección, generalización y reconstrucción.",
+    "type": "ANALYSIS",
+    "criterion": "feature-fallacies",
+    "contains": "razonamiento",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "d30efb3e-9cbc-5609-8cf4-1dbdc1590d75"
+  },
+  {
+    "id": "procedure-family-12",
+    "topic": "ensayo-argumentativo",
+    "description": "Escribirán un ensayo argumentativo utilizando conectores de rectificación, distanciamiento, refuerzo y recapitulación. Revisarán los borradores, márgenes, párrafos, mayúsculas y tildes.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-writing-conventions",
+    "contains": "párrafos",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "d30efb3e-9cbc-5609-8cf4-1dbdc1590d75"
+  },
+  {
+    "id": "procedure-family-13",
+    "topic": "discurso-graduacion",
+    "description": "Escucharán un discurso de graduación, anticiparán su contenido y explicarán la tesis, las razones y las referencias a los participantes.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-prediction",
+    "contains": "indicios",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "63507baa-230a-5de2-8b57-71b1f96b79a1"
+  },
+  {
+    "id": "procedure-family-14",
+    "topic": "discurso-graduacion",
+    "description": "Producirán oralmente un discurso de graduación con una tesis, argumentos y una anécdota pertinente. Usarán entonación, gestos y marcas de cortesía para comunicar el mensaje.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-anecdotes",
+    "contains": "producción oral",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "63507baa-230a-5de2-8b57-71b1f96b79a1"
+  },
+  {
+    "id": "procedure-family-15",
+    "topic": "discurso-graduacion",
+    "description": "Leerán un discurso de graduación y reconocerán otras voces, citas textuales y organizadores intratextuales, expresiones de postura y marcas paratextuales; comprobarán palabras en el diccionario.",
+    "type": "ANALYSIS",
+    "criterion": "feature-voices",
+    "contains": "ideas de otra voz",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "63507baa-230a-5de2-8b57-71b1f96b79a1"
+  },
+  {
+    "id": "procedure-family-16",
+    "topic": "discurso-graduacion",
+    "description": "Redactarán un discurso de graduación con un esquema o guion en soporte físico o digital, organizando tesis y argumentos. Usarán deícticos, referencias léxicas, citas y signos de puntuación; revisarán los borradores.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "procedure-outline",
+    "contains": "esquema o guion",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "63507baa-230a-5de2-8b57-71b1f96b79a1"
+  },
+  {
+    "id": "procedure-family-17",
+    "topic": "novela",
+    "description": "Escucharán un fragmento de novela y resumirán las acciones, motivaciones, voces y ambiente, distinguiendo el orden cronológico del orden de la narración.",
+    "type": "ANALYSIS",
+    "criterion": "feature-order",
+    "contains": "cronológico",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "324f4751-173e-5862-b222-b448ab38d26c"
+  },
+  {
+    "id": "procedure-family-18",
+    "topic": "novela",
+    "description": "Leerán un fragmento de novela, clasificarán personajes y actantes por sus acciones y distinguirán narrador y voces. Consultarán palabras en el diccionario y usarán sinónimos en la paráfrasis.",
+    "type": "ANALYSIS",
+    "criterion": "feature-actants",
+    "contains": "quién actúa",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "324f4751-173e-5862-b222-b448ab38d26c"
+  },
+  {
+    "id": "procedure-family-19",
+    "topic": "poesia-social",
+    "description": "Escucharán un poema social, anticiparán su sentido y parafrasearán la problemática y sentimientos que evocan sus imágenes.",
+    "type": "ANALYSIS",
+    "criterion": "procedure-paraphrase",
+    "contains": "problemática",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "9b92013d-f1f5-5ad3-9cfe-3d749c611421"
+  },
+  {
+    "id": "procedure-family-20",
+    "topic": "poesia-social",
+    "description": "Declamarán un poema social con ritmo, entonación y lenguaje gestual y corporal que comunique los sentimientos y sentido del texto.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "recitation-expression",
+    "contains": "sentimientos",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "9b92013d-f1f5-5ad3-9cfe-3d749c611421"
+  },
+  {
+    "id": "procedure-family-21",
+    "topic": "poesia-social",
+    "description": "Leerán una poesía social, interpretarán los sentidos connotativos y denotativos y parafrasearán el contenido con vocabulario pertinente.",
+    "type": "ANALYSIS",
+    "criterion": "feature-meaning",
+    "contains": "connotaciones",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "9b92013d-f1f5-5ad3-9cfe-3d749c611421"
+  },
+  {
+    "id": "procedure-family-22",
+    "topic": "poesia-social",
+    "description": "Escribirán un poema social usando metáfora y personificación. Revisarán ortografía y borradores y publicarán el poema en un mural o revista escolar.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "process-publication",
+    "contains": "medio solicitado",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "9b92013d-f1f5-5ad3-9cfe-3d749c611421"
+  },
+  {
+    "id": "procedure-family-23",
+    "topic": "monologo",
+    "description": "Escucharán un monólogo, parafrasearán el tema e inferirán el punto de vista del autor. Identificarán objetos simbólicos y rasgos de la personalidad de la voz monologal.",
+    "type": "ANALYSIS",
+    "criterion": "feature-symbols",
+    "contains": "significado",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "8a46a4a6-74a7-5488-a880-384c273549a4"
+  },
+  {
+    "id": "procedure-family-24",
+    "topic": "monologo",
+    "description": "Representarán un monólogo utilizando objetos como símbolos y recursos verbales y no verbales para expresar el punto de vista del personaje.",
+    "type": "PERFORMANCE",
+    "criterion": "performance",
+    "contains": "Representa",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "8a46a4a6-74a7-5488-a880-384c273549a4"
+  },
+  {
+    "id": "procedure-family-25",
+    "topic": "monologo",
+    "description": "Leerán un monólogo teatral y subrayarán intervenciones relevantes. Inferirán el punto de vista del autor y relacionarán la situación con la realidad cotidiana y otras materias.",
+    "type": "ANALYSIS",
+    "criterion": "author-view",
+    "contains": "inferencia",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "8a46a4a6-74a7-5488-a880-384c273549a4"
+  },
+  {
+    "id": "procedure-family-26",
+    "topic": "monologo",
+    "description": "Escribirán un monólogo con secuencias de narración, descripción y argumentación; usarán objetos como símbolos, conectores lógicos, figuras literarias y rasgos de personalidad de la voz. Revisarán los borradores.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-sequences",
+    "contains": "Emplea",
+    "absent": "No aporta evidencia suficiente",
+    "sourceTopicId": "8a46a4a6-74a7-5488-a880-384c273549a4"
+  },
+  {
+    "id": "procedure-family-27",
+    "topic": "monologo",
+    "description": "Representarán un monólogo utilizando recursos verbales y no verbales para hacer reconocible el punto de vista de la voz.",
+    "type": "PERFORMANCE",
+    "criterion": "feature-nonverbal",
+    "contains": "no verbales",
+    "absent": "segundo actor"
+  },
+  {
+    "id": "procedure-family-28",
+    "topic": "monologo",
+    "description": "Analizarán un monólogo atendiendo solo a la descripción del personaje.",
+    "type": "ANALYSIS",
+    "criterion": "feature-sequences",
+    "contains": "descripción",
+    "absent": "Representa la voz"
+  },
+  {
+    "id": "procedure-family-29",
+    "topic": "discurso-graduacion",
+    "description": "Analizarán un discurso de graduación atendiendo solo a las oraciones desiderativas.",
+    "type": "ANALYSIS",
+    "criterion": "feature-attitude",
+    "contains": "desiderativas",
+    "absent": "las oraciones interrogativas"
+  },
+  {
+    "id": "procedure-family-30",
+    "topic": "informe-investigacion",
+    "description": "Redactarán un informe de investigación con datos dados y recomendaciones sustentadas en los resultados.",
+    "type": "REPORT",
+    "criterion": "recommendations",
+    "contains": "resultados",
+    "absent": "Origen de la información"
+  },
+  {
+    "id": "procedure-family-31",
+    "topic": "informe-investigacion",
+    "description": "Analizarán un informe de investigación atendiendo solo a conectores de concesión y expresiones modalizadoras.",
+    "type": "ANALYSIS",
+    "criterion": "feature-modalizers",
+    "contains": "certeza",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-32",
+    "topic": "informe-investigacion",
+    "description": "Presentarán oralmente un informe de investigación explicando el problema, el método y los resultados disponibles.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "results",
+    "contains": "Relaciona los resultados",
+    "absent": "Comprueba cómo"
+  },
+  {
+    "id": "procedure-family-33",
+    "topic": "informe-investigacion",
+    "description": "Investigarán información y fuentes para un informe de investigación.",
+    "type": "RESEARCH",
+    "criterion": "research-sources",
+    "contains": "fuentes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-34",
+    "topic": "reportaje",
+    "description": "Escribirán un reportaje con información y testimonios ya proporcionados sin realizar entrevistas.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-testimony",
+    "contains": "declaraciones",
+    "absent": "realiza entrevistas"
+  },
+  {
+    "id": "procedure-family-35",
+    "topic": "reportaje",
+    "description": "Analizarán solo las oraciones subordinadas de un reportaje.",
+    "type": "ANALYSIS",
+    "criterion": "feature-subordinate",
+    "contains": "proposición",
+    "absent": "oraciones subordinadas sustantivas especificativas"
+  },
+  {
+    "id": "procedure-family-36",
+    "topic": "reportaje",
+    "description": "Elaborarán un reportaje usando una fotografía o un gráfico con información ya proporcionada.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-graphics",
+    "contains": "fotografía o gráfico",
+    "absent": "fotografía y gráfico"
+  },
+  {
+    "id": "procedure-family-37",
+    "topic": "reportaje",
+    "description": "Investigarán los hechos de un reportaje y contrastarán la fiabilidad de las fuentes.",
+    "type": "RESEARCH",
+    "criterion": "source-reliability",
+    "contains": "discrepancias",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-38",
+    "topic": "ensayo-argumentativo",
+    "description": "Escribirán un ensayo argumentativo sobre el reportaje leído, defendiendo una tesis con razones propias.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "arguments",
+    "contains": "Sostiene la tesis",
+    "absent": "Desarrollo informativo del reportaje"
+  },
+  {
+    "id": "procedure-family-39",
+    "topic": "ensayo-argumentativo",
+    "description": "Analizarán únicamente las falacias de un ensayo argumentativo, justificando qué conclusión no sostienen sus razones.",
+    "type": "ANALYSIS",
+    "criterion": "feature-fallacies",
+    "contains": "razonamiento",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-40",
+    "topic": "discurso-graduacion",
+    "description": "Presentarán por escrito un discurso de graduación con una tesis y razones sustentadas.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "thesis",
+    "contains": "Fundamenta",
+    "absent": "Comunica la ocasión"
+  },
+  {
+    "id": "procedure-family-41",
+    "topic": "discurso-graduacion",
+    "description": "Presentarán oralmente un discurso de graduación con entonación expresiva, sin anécdotas ni gestos obligatorios.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "feature-nonverbal",
+    "contains": "la entonación",
+    "absent": "las anécdotas"
+  },
+  {
+    "id": "procedure-family-42",
+    "topic": "novela",
+    "description": "Analizarán solo los tipos de narrador de los fragmentos de novela disponibles y qué conoce cada voz.",
+    "type": "ANALYSIS",
+    "criterion": "feature-narrator-types",
+    "contains": "conoce",
+    "absent": "desenlace"
+  },
+  {
+    "id": "procedure-family-43",
+    "topic": "novela",
+    "description": "Identificarán únicamente el narrador de un fragmento de novela con evidencias de sus intervenciones.",
+    "type": "ANALYSIS",
+    "criterion": "narrator",
+    "contains": "Distingue",
+    "absent": "motivaciones de los personajes"
+  },
+  {
+    "id": "procedure-family-44",
+    "topic": "novela",
+    "description": "Elaborarán un informe sobre un fragmento de novela sustentando las interpretaciones en sus pasajes.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "Escribe una novela"
+  },
+  {
+    "id": "procedure-family-45",
+    "topic": "poesia-social",
+    "description": "Escribirán poesía social en verso libre sin rima obligatoria, sin publicarla ni declamarla.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-verse",
+    "contains": "el verso libre",
+    "absent": "rima consonante"
+  },
+  {
+    "id": "procedure-family-46",
+    "topic": "poesia-social",
+    "description": "Escribirán un poema social en verso rimado.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "feature-verse",
+    "contains": "el verso rimado",
+    "absent": "catorce versos"
+  },
+  {
+    "id": "procedure-family-47",
+    "topic": "poesia-social",
+    "description": "Declamarán un poema social con entonación, sin gestos obligatorios.",
+    "type": "ORAL_PRESENTATION",
+    "criterion": "recitation-expression",
+    "contains": "sentimientos",
+    "absent": "los gestos"
+  },
+  {
+    "id": "procedure-family-48",
+    "topic": "monologo",
+    "description": "Analizarán el monólogo representado explicando la voz y la situación.",
+    "type": "ANALYSIS",
+    "criterion": "voice",
+    "contains": "Interpreta",
+    "absent": "Representa la voz"
+  },
+  {
+    "id": "procedure-family-49",
+    "topic": "monologo",
+    "description": "Escribirán un monólogo teatral sin representarlo ni utilizar objetos.",
+    "type": "WRITTEN_PRODUCTION",
+    "criterion": "voice",
+    "contains": "Construye",
+    "absent": "objetos simbólicos"
+  },
+  {
+    "id": "procedure-family-50",
+    "topic": "monologo",
+    "description": "Presentarán por escrito un análisis de un monólogo representado usando sus intervenciones.",
+    "type": "ANALYSIS",
+    "criterion": "voice",
+    "contains": "Interpreta",
+    "absent": "Representa la voz"
+  },
+  {
+    "id": "procedure-family-51",
+    "topic": "monologo",
+    "description": "Compararán un soliloquio y una comedia de pie como formas de monólogo, contrastando la relación de la voz con el público.",
+    "type": "COMPARISON",
+    "criterion": "feature-types",
+    "contains": "comedia de pie",
+    "absent": "segundo actor"
+  },
+  {
+    "id": "procedure-family-52",
+    "topic": "informe-investigacion",
+    "description": "Compararán dos textos de informe de investigación explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "results",
+    "contains": "Contrasta",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-53",
+    "topic": "informe-investigacion",
+    "description": "Debatirán una interpretación de informe de investigación con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-54",
+    "topic": "reportaje",
+    "description": "Compararán dos textos de reportaje explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "context",
+    "contains": "Contrasta",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-55",
+    "topic": "reportaje",
+    "description": "Debatirán una interpretación de reportaje con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-56",
+    "topic": "reportaje",
+    "description": "Elaborarán un informe sobre reportaje justificando la interpretación con pasajes disponibles.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-57",
+    "topic": "ensayo-argumentativo",
+    "description": "Compararán dos textos de ensayo argumentativo explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "arguments",
+    "contains": "Contrasta",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-58",
+    "topic": "ensayo-argumentativo",
+    "description": "Debatirán una interpretación de ensayo argumentativo con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-59",
+    "topic": "ensayo-argumentativo",
+    "description": "Elaborarán un informe sobre ensayo argumentativo justificando la interpretación con pasajes disponibles.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-60",
+    "topic": "discurso-graduacion",
+    "description": "Compararán dos textos de discurso de graduación explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "thesis",
+    "contains": "Compara",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-61",
+    "topic": "discurso-graduacion",
+    "description": "Debatirán una interpretación de discurso de graduación con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-62",
+    "topic": "discurso-graduacion",
+    "description": "Elaborarán un informe sobre discurso de graduación justificando la interpretación con pasajes disponibles.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-63",
+    "topic": "novela",
+    "description": "Compararán dos textos de novela explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "narrator",
+    "contains": "Contrasta",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-64",
+    "topic": "novela",
+    "description": "Debatirán una interpretación de novela con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-65",
+    "topic": "poesia-social",
+    "description": "Compararán dos textos de poesía social explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "meaning",
+    "contains": "Contrasta",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-66",
+    "topic": "poesia-social",
+    "description": "Debatirán una interpretación de poesía social con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-67",
+    "topic": "poesia-social",
+    "description": "Elaborarán un informe sobre poesía social justificando la interpretación con pasajes disponibles.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-68",
+    "topic": "monologo",
+    "description": "Compararán dos textos de monólogo explicando semejanzas y diferencias sustentadas en pasajes.",
+    "type": "COMPARISON",
+    "criterion": "voice",
+    "contains": "Contrasta",
+    "absent": "No aporta evidencia suficiente"
+  },
+  {
+    "id": "procedure-family-69",
+    "topic": "monologo",
+    "description": "Debatirán una interpretación de monólogo con evidencias del texto y responderán a otras posturas.",
+    "type": "DEBATE",
+    "criterion": "debate",
+    "contains": "responde",
+    "absent": "Redacta"
+  },
+  {
+    "id": "procedure-family-70",
+    "topic": "monologo",
+    "description": "Elaborarán un informe sobre monólogo justificando la interpretación con pasajes disponibles.",
+    "type": "REPORT",
+    "criterion": "report-evidence",
+    "contains": "pasajes",
+    "absent": "No aporta evidencia suficiente"
+  }
+]

@@ -252,19 +252,19 @@ export class AttendanceService {
       return {
         enrollmentId: enr.id,
         studentId: enr.studentId,
+        listNumber: enr.listNumber,
         studentCode: student?.studentCode ?? '',
         firstName: student?.firstName ?? '',
         lastName: student?.lastName ?? '',
       }
       })
       .sort((first, second) => {
-        const studentCode = first.studentCode.localeCompare(second.studentCode, 'es', { numeric: true })
-        if (studentCode !== 0) return studentCode
+        const listOrder = (first.listNumber ?? Number.MAX_SAFE_INTEGER) - (second.listNumber ?? Number.MAX_SAFE_INTEGER)
+        if (listOrder !== 0) return listOrder
         const lastName = first.lastName.localeCompare(second.lastName, 'es')
         if (lastName !== 0) return lastName
         return first.firstName.localeCompare(second.firstName, 'es')
       })
-      .map((student, index) => ({ ...student, listNumber: index + 1 }))
   }
 
   /**
@@ -299,6 +299,7 @@ export class AttendanceService {
       return {
         enrollmentId: enr.id,
         studentId: enr.studentId,
+        listNumber: enr.listNumber,
         studentCode: student?.studentCode ?? '',
         firstName: student?.firstName ?? '',
         lastName: student?.lastName ?? '',
@@ -306,7 +307,9 @@ export class AttendanceService {
         status: existing?.status ?? null,
         notes: existing?.notes ?? '',
       }
-    })
+    }).sort((first, second) => (first.listNumber ?? Number.MAX_SAFE_INTEGER) - (second.listNumber ?? Number.MAX_SAFE_INTEGER)
+      || first.lastName.localeCompare(second.lastName, 'es')
+      || first.firstName.localeCompare(second.firstName, 'es'))
   }
 
   /**
@@ -385,6 +388,12 @@ export class AttendanceService {
     if (!enrollment) throw new NotFoundException('Enrollment not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
     if (!academicPeriod) throw new NotFoundException('Academic period not found')
+    if (enrollment.sectionId !== sectionSubject.sectionId || enrollment.schoolYearId !== sectionSubject.schoolYearId) {
+      throw new BadRequestException('Enrollment does not match section subject')
+    }
+    if (academicPeriod.schoolYearId !== sectionSubject.schoolYearId) {
+      throw new BadRequestException('Academic period does not match section subject school year')
+    }
 
     const existing = await prisma.attendanceClass.findFirst({
       where: {

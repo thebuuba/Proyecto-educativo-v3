@@ -36,7 +36,7 @@ const generalSubjects: Record<string, string> = {
 }
 /** Audited code adapter. Source spelling is never modified in the curricular dataset. */
 function identity(context: AcademicContext) {
-  const code = context.subjectCode.toUpperCase()
+  const code = context.subjectCode.trim().toUpperCase()
   const opt = /^OPT-(HLM|HCS|MT|CT)(?:-(LEN|ING|SOC))?-([456])$/.exec(code)
   if (opt) {
     const exit = optativeExits[opt[1] as keyof typeof optativeExits]
@@ -62,7 +62,12 @@ function identity(context: AcademicContext) {
 export function resolveScope(context: AcademicContext, scopes: ScopeCandidate[], reviewedScopeIds: string[] = []) {
   const key = identity(context)
   if (!key.valid || !key.name) return { status: 'CONFLICT', scope: null, candidates: [], reason: 'Código de asignatura incompatible con grado/nivel/salida.' }
-  if (context.modalityCode && !['academic', 'general'].includes(context.modalityCode)) {
+  // PDF 55 / printed 54 includes the common academic component of these modalities.
+  // Their specialist subjects and academic exits require separate, verified designs.
+  const commonComponent = context.level === 'SECONDARY' && context.cycle === 2 && context.grade >= 4 && context.grade <= 6
+    && ['technical_professional', 'arts'].includes(context.modalityCode ?? '')
+    && key.source === 'STRUCTURED_SUBJECT_CODE' && !key.exit
+  if (context.modalityCode && !['academic', 'general'].includes(context.modalityCode) && !commonComponent) {
     return { status: 'UNSUPPORTED_MODALITY', scope: null, candidates: [], reason: 'No se ha importado el currículo de esa modalidad.' }
   }
   const candidates = scopes.filter(scope => scope.grade === context.grade && scope.cycle === context.cycle
@@ -76,14 +81,23 @@ export function resolveScope(context: AcademicContext, scopes: ScopeCandidate[],
   if (scope.optativeExitName && context.modalityCode !== 'academic' && context.modalityCode !== 'general') return { status: 'INCOMPLETE_CONTEXT', scope: null, candidates: [scope.id], reason: 'Falta modalidad académica configurada.' }
   // A stale/manual mapping cannot override hard academic constraints or disambiguate a missing exit.
   if (reviewedScopeIds.length && !reviewedScopeIds.includes(scope.id)) return { status: 'CONFLICT', scope: null, candidates: [], reason: 'Mapping revisado incompatible con el contexto operativo.' }
-  return { status: 'RESOLVED', scope, candidates: [scope.id], reason: reviewedScopeIds.includes(scope.id) ? 'REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT' : key.source }
+  return { status: 'RESOLVED', scope, candidates: [scope.id], reason: reviewedScopeIds.includes(scope.id) ? 'REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT'
+    : commonComponent ? 'COMMON_ACADEMIC_COMPONENT' : key.source }
 }
 export function discipline(scope: ScopeCandidate | null, context: AcademicContext | null) {
+  const code = context?.subjectCode.trim().toUpperCase().replace(/^PRI-/, '') ?? ''
+  if (/^(SOC|OPT-HCS-SOC)(?:-|$)/.test(code)) return 'social'
+  if (/^(NAT|OPT-CT)(?:-|$)/.test(code)) return 'science'
+  if (/^(MAT|OPT-MT)(?:-|$)/.test(code)) return 'math'
+  if (/^(LEN|ING|FRA|OPT-HLM|OPT-HCS-LEN)(?:-|$)/.test(code)) return 'language'
+  if (code === 'ART') return 'art'
+  if (code === 'EFI') return 'motor'
+  if (code === 'FHR') return 'fihr'
   const name = normalize(scope?.areaName ?? context?.subjectName ?? '')
+  if (/social|geografia|ciudadania|filosofia/.test(name)) return 'social'
   if (/ciencias|naturaleza|tierra|universo|quimica|biologia|fisica y computacion/.test(name)) return 'science'
   if (/matematica|estadistica|calculo/.test(name)) return 'math'
   if (/lengua|literaria|ingles|frances|textos/.test(name)) return 'language'
-  if (/social|geografia|ciudadania|filosofia/.test(name)) return 'social'
   if (/artistica/.test(name)) return 'art'
   if (/educacion fisica/.test(name)) return 'motor'
   if (/humana|religiosa/.test(name)) return 'fihr'

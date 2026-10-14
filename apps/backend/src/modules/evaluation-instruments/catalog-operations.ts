@@ -1,22 +1,30 @@
 import type { PrismaClient, Prisma } from '@aula/database'
-import { evaluationCatalogV1 } from './catalog-v1'
+import { evaluationCatalogCurrent } from './catalog-current'
 import { academicContext, resolveScope } from './curriculum-context'
 import { canonicalJson } from './evaluation-instruments.service'
 
+export async function diagnoseEvaluationCatalog(db: PrismaClient) {
+  const existing = await db.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogCurrent.version } })
+  return {
+    version: evaluationCatalogCurrent.version,
+    status: !existing ? 'MISSING' : canonicalJson(existing.payload) === canonicalJson(evaluationCatalogCurrent) ? 'COMPATIBLE' : 'CONFLICT',
+  }
+}
+
 export async function seedEvaluationCatalog(db: PrismaClient) {
-  const existing = await db.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogV1.version } })
+  const existing = await db.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogCurrent.version } })
   if (existing) {
-    if (canonicalJson(existing.payload) !== canonicalJson(evaluationCatalogV1)) throw new Error('El release ya existe con contenido diferente; crear una versión nueva.')
+    if (canonicalJson(existing.payload) !== canonicalJson(evaluationCatalogCurrent)) throw new Error('El release ya existe con contenido diferente; crear una versión nueva.')
     return 'UNCHANGED'
   }
   try {
-    await db.evaluationCatalogRelease.create({ data: { version: evaluationCatalogV1.version, payload: evaluationCatalogV1 as unknown as Prisma.InputJsonValue } })
+    await db.evaluationCatalogRelease.create({ data: { version: evaluationCatalogCurrent.version, payload: evaluationCatalogCurrent as unknown as Prisma.InputJsonValue } })
     return 'CREATED'
   } catch (error) {
     const code = typeof error === 'object' && error && 'code' in error ? String(error.code) : ''
     if (code !== 'P2002') throw error
-    const concurrent = await db.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogV1.version } })
-    if (!concurrent || canonicalJson(concurrent.payload) !== canonicalJson(evaluationCatalogV1)) throw new Error('El release concurrente tiene contenido diferente; crear una versión nueva.', { cause: error })
+    const concurrent = await db.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogCurrent.version } })
+    if (!concurrent || canonicalJson(concurrent.payload) !== canonicalJson(evaluationCatalogCurrent)) throw new Error('El release concurrente tiene contenido diferente; crear una versión nueva.', { cause: error })
     return 'UNCHANGED'
   }
 }

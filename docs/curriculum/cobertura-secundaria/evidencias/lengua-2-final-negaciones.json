@@ -1,0 +1,2331 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "9832264d58ff5a689a94cd153d6dc06b5b1e2a0e",
+      "dirty": true,
+      "startedAt": "2026-10-14T01:57:09.023Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.25"
+    }
+  },
+  "verifiedAt": "2026-10-14T01:58:12.951Z",
+  "results": [
+    {
+      "description": "Elaborarán una guía turística sin mapas ni fotografías.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.25",
+        "instrumentType": "rubrica",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del texto que va a producir oralmente;\nelección de los lugares turísticos más importantes del país y su clasificación: provincias,\nmonumentos, ríos, playas y lugares turísticos; recopilación de la información necesaria\ndel lugar; paquetes turísticos, excursiones, reservas, etc.) utilizando fuentes bibliográficas\ny recursos tecnológicos; delimitación del alcance de la guía turística: público, tema y\ndiseño de presentación; empleo de mapas, gráficos o collage de fotografías para explicitar\ngráficamente el tema de la guía turística; empleo de la descripción topográfica para\ndestacar aspectos sobresalientes del lugar seleccionado del país.\nUtilización de verbos en presente del indicativo para expresar las cualidades de ese lugar\ndel país; así como conectores especiales y temporales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir; selección\nde los lugares turísticos de mayor interés del país: provincias, monumentos, ríos, playas\nlugares turísticos; recopilación de la información necesaria del lugar; definición de la\nestructura, registro y recursos de la guía turística; selección del soporte: físico (libro) o\ndigital; elaboración de los materiales gráficos que va a emplear (mapas, gráficos o collage\nde fotografías),utilización de la estructura (portada, información, imágenes y cierre), los\nverbos en presente del indicativo, sustantivos propios, comunes y abstractos, los adjetivos,\npara producir la guía turística; utilización de los signos convencionales de la escritura al\nescribir el texto (comas, dos puntos, comillas, signos de interrogación y de exclamación).\nEscritura de los primeros borradores, tomando en cuenta las características previamente\nestablecidas; revisión de los borradores con ayuda de pares o el/la profesor/a teniendo en\ncuenta el uso de los recursos del texto descriptivo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-purpose:0",
+            "templateId": "len-2-guia-turistica-purpose",
+            "title": "Propósito y destinatario de la guía turística",
+            "description": "Adapta la información de la guía turística a la orientación del visitante.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta la información de la guía turística a la orientación del visitante.",
+              "La orientación al visitante se relaciona con información pertinente de los lugares.",
+              "Se reconoce al visitante destinatario, pero no se relaciona con la información seleccionada.",
+              "Se confunde la orientación turística con una narración de experiencias sin propósito informativo.",
+              "No hay evidencia del propósito ni del visitante destinatario."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Adapta la información de la guía turística a la orientación del visitante.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "La orientación al visitante se relaciona con información pertinente de los lugares.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconoce al visitante destinatario, pero no se relaciona con la información seleccionada.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No hay evidencia del propósito ni del visitante destinatario.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-places:1",
+            "templateId": "len-2-guia-turistica-places",
+            "title": "Descripción y clasificación de lugares",
+            "description": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+              "Los lugares se distinguen por características pertinentes; queda una clasificación sin justificar.",
+              "Se enumeran lugares, pero no se distinguen por características o categorías.",
+              "La descripción atribuye características que no corresponden a los lugares señalados.",
+              "No se aportan características reconocibles de los lugares."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+                "scoreUnits": 588
+              },
+              {
+                "levelId": "L3",
+                "text": "Los lugares se distinguen por características pertinentes; queda una clasificación sin justificar.",
+                "scoreUnits": 392
+              },
+              {
+                "levelId": "L2",
+                "text": "Se enumeran lugares, pero no se distinguen por características o categorías.",
+                "scoreUnits": 196
+              },
+              {
+                "levelId": "L1",
+                "text": "No se aportan características reconocibles de los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-organization:2",
+            "templateId": "len-2-guia-turistica-organization",
+            "title": "Organización de la guía turística",
+            "description": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+              "Se relacionan las partes principales con la consulta de información, aunque el cierre necesita precisión.",
+              "Se reconocen partes aisladas sin relacionarlas con la consulta de la guía.",
+              "Se confunden portada, desarrollo informativo y cierre.",
+              "No se evidencia una organización reconocible de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Se relacionan las partes principales con la consulta de información, aunque el cierre necesita precisión.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconocen partes aisladas sin relacionarlas con la consulta de la guía.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No se evidencia una organización reconocible de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-spatial:3",
+            "templateId": "len-2-guia-turistica-spatial",
+            "title": "Orientación espacial y vocabulario",
+            "description": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+              "Las relaciones entre los lugares son comprensibles, aunque una referencia espacial resulta imprecisa.",
+              "Se mencionan lugares sin establecer relaciones espaciales entre ellos.",
+              "Las referencias espaciales sitúan los lugares de forma contradictoria.",
+              "No hay referencias que permitan situar los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+                "scoreUnits": 470
+              },
+              {
+                "levelId": "L3",
+                "text": "Las relaciones entre los lugares son comprensibles, aunque una referencia espacial resulta imprecisa.",
+                "scoreUnits": 313
+              },
+              {
+                "levelId": "L2",
+                "text": "Se mencionan lugares sin establecer relaciones espaciales entre ellos.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No hay referencias que permitan situar los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-2-guia-turistica",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "53983111-93a5-5e64-8deb-b8cb02c53b46",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "9e7bc8a4-4249-5845-b4fc-edac7e2ef8e6",
+              "score": 56,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c5bfa453-dc73-53e9-a353-1457ecef84f1",
+              "score": 40,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "9a3f5c34-b341-5f32-89fa-e6b683aa060a",
+              "score": 34,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Elaborarán una guía turística por escrito, sin exposición oral.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.25",
+        "instrumentType": "rubrica",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del texto que va a producir oralmente;\nelección de los lugares turísticos más importantes del país y su clasificación: provincias,\nmonumentos, ríos, playas y lugares turísticos; recopilación de la información necesaria\ndel lugar; paquetes turísticos, excursiones, reservas, etc.) utilizando fuentes bibliográficas\ny recursos tecnológicos; delimitación del alcance de la guía turística: público, tema y\ndiseño de presentación; empleo de mapas, gráficos o collage de fotografías para explicitar\ngráficamente el tema de la guía turística; empleo de la descripción topográfica para\ndestacar aspectos sobresalientes del lugar seleccionado del país.\nUtilización de verbos en presente del indicativo para expresar las cualidades de ese lugar\ndel país; así como conectores especiales y temporales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir; selección\nde los lugares turísticos de mayor interés del país: provincias, monumentos, ríos, playas\nlugares turísticos; recopilación de la información necesaria del lugar; definición de la\nestructura, registro y recursos de la guía turística; selección del soporte: físico (libro) o\ndigital; elaboración de los materiales gráficos que va a emplear (mapas, gráficos o collage\nde fotografías),utilización de la estructura (portada, información, imágenes y cierre), los\nverbos en presente del indicativo, sustantivos propios, comunes y abstractos, los adjetivos,\npara producir la guía turística; utilización de los signos convencionales de la escritura al\nescribir el texto (comas, dos puntos, comillas, signos de interrogación y de exclamación).\nEscritura de los primeros borradores, tomando en cuenta las características previamente\nestablecidas; revisión de los borradores con ayuda de pares o el/la profesor/a teniendo en\ncuenta el uso de los recursos del texto descriptivo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "CONCEPT",
+            "text": "La guía turística",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-purpose:0",
+            "templateId": "len-2-guia-turistica-purpose",
+            "title": "Propósito y destinatario de la guía turística",
+            "description": "Adapta la información de la guía turística a la orientación del visitante.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta la información de la guía turística a la orientación del visitante.",
+              "La orientación al visitante se relaciona con información pertinente de los lugares.",
+              "Se reconoce al visitante destinatario, pero no se relaciona con la información seleccionada.",
+              "Se confunde la orientación turística con una narración de experiencias sin propósito informativo.",
+              "No hay evidencia del propósito ni del visitante destinatario."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Adapta la información de la guía turística a la orientación del visitante.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "La orientación al visitante se relaciona con información pertinente de los lugares.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconoce al visitante destinatario, pero no se relaciona con la información seleccionada.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No hay evidencia del propósito ni del visitante destinatario.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-places:1",
+            "templateId": "len-2-guia-turistica-places",
+            "title": "Descripción y clasificación de lugares",
+            "description": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+              "Los lugares se distinguen por características pertinentes; queda una clasificación sin justificar.",
+              "Se enumeran lugares, pero no se distinguen por características o categorías.",
+              "La descripción atribuye características que no corresponden a los lugares señalados.",
+              "No se aportan características reconocibles de los lugares."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+                "scoreUnits": 588
+              },
+              {
+                "levelId": "L3",
+                "text": "Los lugares se distinguen por características pertinentes; queda una clasificación sin justificar.",
+                "scoreUnits": 392
+              },
+              {
+                "levelId": "L2",
+                "text": "Se enumeran lugares, pero no se distinguen por características o categorías.",
+                "scoreUnits": 196
+              },
+              {
+                "levelId": "L1",
+                "text": "No se aportan características reconocibles de los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-organization:2",
+            "templateId": "len-2-guia-turistica-organization",
+            "title": "Organización de la guía turística",
+            "description": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+              "Se relacionan las partes principales con la consulta de información, aunque el cierre necesita precisión.",
+              "Se reconocen partes aisladas sin relacionarlas con la consulta de la guía.",
+              "Se confunden portada, desarrollo informativo y cierre.",
+              "No se evidencia una organización reconocible de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Se relacionan las partes principales con la consulta de información, aunque el cierre necesita precisión.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconocen partes aisladas sin relacionarlas con la consulta de la guía.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No se evidencia una organización reconocible de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-spatial:3",
+            "templateId": "len-2-guia-turistica-spatial",
+            "title": "Orientación espacial y vocabulario",
+            "description": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+              "Las relaciones entre los lugares son comprensibles, aunque una referencia espacial resulta imprecisa.",
+              "Se mencionan lugares sin establecer relaciones espaciales entre ellos.",
+              "Las referencias espaciales sitúan los lugares de forma contradictoria.",
+              "No hay referencias que permitan situar los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+                "scoreUnits": 470
+              },
+              {
+                "levelId": "L3",
+                "text": "Las relaciones entre los lugares son comprensibles, aunque una referencia espacial resulta imprecisa.",
+                "scoreUnits": 313
+              },
+              {
+                "levelId": "L2",
+                "text": "Se mencionan lugares sin establecer relaciones espaciales entre ellos.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No hay referencias que permitan situar los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-2-guia-turistica",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "53983111-93a5-5e64-8deb-b8cb02c53b46",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+              "score": 81,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c5bfa453-dc73-53e9-a353-1457ecef84f1",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Elaborarán una guía turística sin mapas ni fotografías.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.25",
+        "instrumentType": "lista-cotejo",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del texto que va a producir oralmente;\nelección de los lugares turísticos más importantes del país y su clasificación: provincias,\nmonumentos, ríos, playas y lugares turísticos; recopilación de la información necesaria\ndel lugar; paquetes turísticos, excursiones, reservas, etc.) utilizando fuentes bibliográficas\ny recursos tecnológicos; delimitación del alcance de la guía turística: público, tema y\ndiseño de presentación; empleo de mapas, gráficos o collage de fotografías para explicitar\ngráficamente el tema de la guía turística; empleo de la descripción topográfica para\ndestacar aspectos sobresalientes del lugar seleccionado del país.\nUtilización de verbos en presente del indicativo para expresar las cualidades de ese lugar\ndel país; así como conectores especiales y temporales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir; selección\nde los lugares turísticos de mayor interés del país: provincias, monumentos, ríos, playas\nlugares turísticos; recopilación de la información necesaria del lugar; definición de la\nestructura, registro y recursos de la guía turística; selección del soporte: físico (libro) o\ndigital; elaboración de los materiales gráficos que va a emplear (mapas, gráficos o collage\nde fotografías),utilización de la estructura (portada, información, imágenes y cierre), los\nverbos en presente del indicativo, sustantivos propios, comunes y abstractos, los adjetivos,\npara producir la guía turística; utilización de los signos convencionales de la escritura al\nescribir el texto (comas, dos puntos, comillas, signos de interrogación y de exclamación).\nEscritura de los primeros borradores, tomando en cuenta las características previamente\nestablecidas; revisión de los borradores con ayuda de pares o el/la profesor/a teniendo en\ncuenta el uso de los recursos del texto descriptivo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-purpose:0",
+            "templateId": "len-2-guia-turistica-purpose",
+            "title": "Adapta la información de la guía turística a la orientación del visitante.",
+            "description": "Adapta la información de la guía turística a la orientación del visitante.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta la información de la guía turística a la orientación del visitante.",
+              "La orientación al visitante se relaciona con información pertinente de los lugares.",
+              "Se reconoce al visitante destinatario, pero no se relaciona con la información seleccionada.",
+              "Se confunde la orientación turística con una narración de experiencias sin propósito informativo.",
+              "No hay evidencia del propósito ni del visitante destinatario."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-places:1",
+            "templateId": "len-2-guia-turistica-places",
+            "title": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+            "description": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+              "Los lugares se distinguen por características pertinentes; queda una clasificación sin justificar.",
+              "Se enumeran lugares, pero no se distinguen por características o categorías.",
+              "La descripción atribuye características que no corresponden a los lugares señalados.",
+              "No se aportan características reconocibles de los lugares."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-organization:2",
+            "templateId": "len-2-guia-turistica-organization",
+            "title": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+            "description": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+              "Se relacionan las partes principales con la consulta de información, aunque el cierre necesita precisión.",
+              "Se reconocen partes aisladas sin relacionarlas con la consulta de la guía.",
+              "Se confunden portada, desarrollo informativo y cierre.",
+              "No se evidencia una organización reconocible de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-spatial:3",
+            "templateId": "len-2-guia-turistica-spatial",
+            "title": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+            "description": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+              "Las relaciones entre los lugares son comprensibles, aunque una referencia espacial resulta imprecisa.",
+              "Se mencionan lugares sin establecer relaciones espaciales entre ellos.",
+              "Las referencias espaciales sitúan los lugares de forma contradictoria.",
+              "No hay referencias que permitan situar los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-2-guia-turistica",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "53983111-93a5-5e64-8deb-b8cb02c53b46",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "9e7bc8a4-4249-5845-b4fc-edac7e2ef8e6",
+              "score": 56,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c5bfa453-dc73-53e9-a353-1457ecef84f1",
+              "score": 40,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "9a3f5c34-b341-5f32-89fa-e6b683aa060a",
+              "score": 34,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Elaborarán una guía turística por escrito, sin exposición oral.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.25",
+        "instrumentType": "lista-cotejo",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del texto que va a producir oralmente;\nelección de los lugares turísticos más importantes del país y su clasificación: provincias,\nmonumentos, ríos, playas y lugares turísticos; recopilación de la información necesaria\ndel lugar; paquetes turísticos, excursiones, reservas, etc.) utilizando fuentes bibliográficas\ny recursos tecnológicos; delimitación del alcance de la guía turística: público, tema y\ndiseño de presentación; empleo de mapas, gráficos o collage de fotografías para explicitar\ngráficamente el tema de la guía turística; empleo de la descripción topográfica para\ndestacar aspectos sobresalientes del lugar seleccionado del país.\nUtilización de verbos en presente del indicativo para expresar las cualidades de ese lugar\ndel país; así como conectores especiales y temporales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir; selección\nde los lugares turísticos de mayor interés del país: provincias, monumentos, ríos, playas\nlugares turísticos; recopilación de la información necesaria del lugar; definición de la\nestructura, registro y recursos de la guía turística; selección del soporte: físico (libro) o\ndigital; elaboración de los materiales gráficos que va a emplear (mapas, gráficos o collage\nde fotografías),utilización de la estructura (portada, información, imágenes y cierre), los\nverbos en presente del indicativo, sustantivos propios, comunes y abstractos, los adjetivos,\npara producir la guía turística; utilización de los signos convencionales de la escritura al\nescribir el texto (comas, dos puntos, comillas, signos de interrogación y de exclamación).\nEscritura de los primeros borradores, tomando en cuenta las características previamente\nestablecidas; revisión de los borradores con ayuda de pares o el/la profesor/a teniendo en\ncuenta el uso de los recursos del texto descriptivo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "CONCEPT",
+            "text": "La guía turística",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-purpose:0",
+            "templateId": "len-2-guia-turistica-purpose",
+            "title": "Adapta la información de la guía turística a la orientación del visitante.",
+            "description": "Adapta la información de la guía turística a la orientación del visitante.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta la información de la guía turística a la orientación del visitante.",
+              "La orientación al visitante se relaciona con información pertinente de los lugares.",
+              "Se reconoce al visitante destinatario, pero no se relaciona con la información seleccionada.",
+              "Se confunde la orientación turística con una narración de experiencias sin propósito informativo.",
+              "No hay evidencia del propósito ni del visitante destinatario."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-places:1",
+            "templateId": "len-2-guia-turistica-places",
+            "title": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+            "description": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+              "Los lugares se distinguen por características pertinentes; queda una clasificación sin justificar.",
+              "Se enumeran lugares, pero no se distinguen por características o categorías.",
+              "La descripción atribuye características que no corresponden a los lugares señalados.",
+              "No se aportan características reconocibles de los lugares."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-organization:2",
+            "templateId": "len-2-guia-turistica-organization",
+            "title": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+            "description": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+              "Se relacionan las partes principales con la consulta de información, aunque el cierre necesita precisión.",
+              "Se reconocen partes aisladas sin relacionarlas con la consulta de la guía.",
+              "Se confunden portada, desarrollo informativo y cierre.",
+              "No se evidencia una organización reconocible de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-spatial:3",
+            "templateId": "len-2-guia-turistica-spatial",
+            "title": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+            "description": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+              "Las relaciones entre los lugares son comprensibles, aunque una referencia espacial resulta imprecisa.",
+              "Se mencionan lugares sin establecer relaciones espaciales entre ellos.",
+              "Las referencias espaciales sitúan los lugares de forma contradictoria.",
+              "No hay referencias que permitan situar los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-2-guia-turistica",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "53983111-93a5-5e64-8deb-b8cb02c53b46",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+              "score": 81,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c5bfa453-dc73-53e9-a353-1457ecef84f1",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Elaborarán una guía turística sin mapas ni fotografías.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.25",
+        "instrumentType": "escala",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del texto que va a producir oralmente;\nelección de los lugares turísticos más importantes del país y su clasificación: provincias,\nmonumentos, ríos, playas y lugares turísticos; recopilación de la información necesaria\ndel lugar; paquetes turísticos, excursiones, reservas, etc.) utilizando fuentes bibliográficas\ny recursos tecnológicos; delimitación del alcance de la guía turística: público, tema y\ndiseño de presentación; empleo de mapas, gráficos o collage de fotografías para explicitar\ngráficamente el tema de la guía turística; empleo de la descripción topográfica para\ndestacar aspectos sobresalientes del lugar seleccionado del país.\nUtilización de verbos en presente del indicativo para expresar las cualidades de ese lugar\ndel país; así como conectores especiales y temporales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir; selección\nde los lugares turísticos de mayor interés del país: provincias, monumentos, ríos, playas\nlugares turísticos; recopilación de la información necesaria del lugar; definición de la\nestructura, registro y recursos de la guía turística; selección del soporte: físico (libro) o\ndigital; elaboración de los materiales gráficos que va a emplear (mapas, gráficos o collage\nde fotografías),utilización de la estructura (portada, información, imágenes y cierre), los\nverbos en presente del indicativo, sustantivos propios, comunes y abstractos, los adjetivos,\npara producir la guía turística; utilización de los signos convencionales de la escritura al\nescribir el texto (comas, dos puntos, comillas, signos de interrogación y de exclamación).\nEscritura de los primeros borradores, tomando en cuenta las características previamente\nestablecidas; revisión de los borradores con ayuda de pares o el/la profesor/a teniendo en\ncuenta el uso de los recursos del texto descriptivo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-purpose:0",
+            "templateId": "len-2-guia-turistica-purpose",
+            "title": "Adapta la información de la guía turística a la orientación del visitante.",
+            "description": "Adapta la información de la guía turística a la orientación del visitante.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-places:1",
+            "templateId": "len-2-guia-turistica-places",
+            "title": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+            "description": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 588
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 392
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 196
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-organization:2",
+            "templateId": "len-2-guia-turistica-organization",
+            "title": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+            "description": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-spatial:3",
+            "templateId": "len-2-guia-turistica-spatial",
+            "title": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+            "description": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 470
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 313
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-2-guia-turistica",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "53983111-93a5-5e64-8deb-b8cb02c53b46",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "9e7bc8a4-4249-5845-b4fc-edac7e2ef8e6",
+              "score": 56,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c5bfa453-dc73-53e9-a353-1457ecef84f1",
+              "score": 40,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "9a3f5c34-b341-5f32-89fa-e6b683aa060a",
+              "score": 34,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Elaborarán una guía turística por escrito, sin exposición oral.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.25",
+        "instrumentType": "escala",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del texto que va a producir oralmente;\nelección de los lugares turísticos más importantes del país y su clasificación: provincias,\nmonumentos, ríos, playas y lugares turísticos; recopilación de la información necesaria\ndel lugar; paquetes turísticos, excursiones, reservas, etc.) utilizando fuentes bibliográficas\ny recursos tecnológicos; delimitación del alcance de la guía turística: público, tema y\ndiseño de presentación; empleo de mapas, gráficos o collage de fotografías para explicitar\ngráficamente el tema de la guía turística; empleo de la descripción topográfica para\ndestacar aspectos sobresalientes del lugar seleccionado del país.\nUtilización de verbos en presente del indicativo para expresar las cualidades de ese lugar\ndel país; así como conectores especiales y temporales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir; selección\nde los lugares turísticos de mayor interés del país: provincias, monumentos, ríos, playas\nlugares turísticos; recopilación de la información necesaria del lugar; definición de la\nestructura, registro y recursos de la guía turística; selección del soporte: físico (libro) o\ndigital; elaboración de los materiales gráficos que va a emplear (mapas, gráficos o collage\nde fotografías),utilización de la estructura (portada, información, imágenes y cierre), los\nverbos en presente del indicativo, sustantivos propios, comunes y abstractos, los adjetivos,\npara producir la guía turística; utilización de los signos convencionales de la escritura al\nescribir el texto (comas, dos puntos, comillas, signos de interrogación y de exclamación).\nEscritura de los primeros borradores, tomando en cuenta las características previamente\nestablecidas; revisión de los borradores con ayuda de pares o el/la profesor/a teniendo en\ncuenta el uso de los recursos del texto descriptivo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "CONCEPT",
+            "text": "La guía turística",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-purpose:0",
+            "templateId": "len-2-guia-turistica-purpose",
+            "title": "Adapta la información de la guía turística a la orientación del visitante.",
+            "description": "Adapta la información de la guía turística a la orientación del visitante.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-places:1",
+            "templateId": "len-2-guia-turistica-places",
+            "title": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+            "description": "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 588
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 392
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 196
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-organization:2",
+            "templateId": "len-2-guia-turistica-organization",
+            "title": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+            "description": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-spatial:3",
+            "templateId": "len-2-guia-turistica-spatial",
+            "title": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+            "description": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 470
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 313
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-2-guia-turistica",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "53983111-93a5-5e64-8deb-b8cb02c53b46",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+              "score": 81,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c5bfa453-dc73-53e9-a353-1457ecef84f1",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Elaborarán una guía turística sin mapas ni fotografías.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.25",
+        "instrumentType": "lista-ponderada",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del texto que va a producir oralmente;\nelección de los lugares turísticos más importantes del país y su clasificación: provincias,\nmonumentos, ríos, playas y lugares turísticos; recopilación de la información necesaria\ndel lugar; paquetes turísticos, excursiones, reservas, etc.) utilizando fuentes bibliográficas\ny recursos tecnológicos; delimitación del alcance de la guía turística: público, tema y\ndiseño de presentación; empleo de mapas, gráficos o collage de fotografías para explicitar\ngráficamente el tema de la guía turística; empleo de la descripción topográfica para\ndestacar aspectos sobresalientes del lugar seleccionado del país.\nUtilización de verbos en presente del indicativo para expresar las cualidades de ese lugar\ndel país; así como conectores especiales y temporales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir; selección\nde los lugares turísticos de mayor interés del país: provincias, monumentos, ríos, playas\nlugares turísticos; recopilación de la información necesaria del lugar; definición de la\nestructura, registro y recursos de la guía turística; selección del soporte: físico (libro) o\ndigital; elaboración de los materiales gráficos que va a emplear (mapas, gráficos o collage\nde fotografías),utilización de la estructura (portada, información, imágenes y cierre), los\nverbos en presente del indicativo, sustantivos propios, comunes y abstractos, los adjetivos,\npara producir la guía turística; utilización de los signos convencionales de la escritura al\nescribir el texto (comas, dos puntos, comillas, signos de interrogación y de exclamación).\nEscritura de los primeros borradores, tomando en cuenta las características previamente\nestablecidas; revisión de los borradores con ayuda de pares o el/la profesor/a teniendo en\ncuenta el uso de los recursos del texto descriptivo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-purpose:0",
+            "templateId": "len-2-guia-turistica-purpose",
+            "title": "Propósito y destinatario de la guía turística",
+            "description": "Adapta la información de la guía turística a la orientación del visitante. Parcial (50%): Se reconoce al visitante destinatario, pero no se relaciona con la información seleccionada.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta la información de la guía turística a la orientación del visitante.",
+              "La orientación al visitante se relaciona con información pertinente de los lugares.",
+              "Se reconoce al visitante destinatario, pero no se relaciona con la información seleccionada.",
+              "Se confunde la orientación turística con una narración de experiencias sin propósito informativo.",
+              "No hay evidencia del propósito ni del visitante destinatario."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-places:1",
+            "templateId": "len-2-guia-turistica-places",
+            "title": "Descripción y clasificación de lugares",
+            "description": "Describe y clasifica los lugares de la guía mediante características e información comprobable. Parcial (50%): Se enumeran lugares, pero no se distinguen por características o categorías.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+              "Los lugares se distinguen por características pertinentes; queda una clasificación sin justificar.",
+              "Se enumeran lugares, pero no se distinguen por características o categorías.",
+              "La descripción atribuye características que no corresponden a los lugares señalados.",
+              "No se aportan características reconocibles de los lugares."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-organization:2",
+            "templateId": "len-2-guia-turistica-organization",
+            "title": "Organización de la guía turística",
+            "description": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares. Parcial (50%): Se reconocen partes aisladas sin relacionarlas con la consulta de la guía.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+              "Se relacionan las partes principales con la consulta de información, aunque el cierre necesita precisión.",
+              "Se reconocen partes aisladas sin relacionarlas con la consulta de la guía.",
+              "Se confunden portada, desarrollo informativo y cierre.",
+              "No se evidencia una organización reconocible de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-spatial:3",
+            "templateId": "len-2-guia-turistica-spatial",
+            "title": "Orientación espacial y vocabulario",
+            "description": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística. Parcial (50%): Se mencionan lugares sin establecer relaciones espaciales entre ellos.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+              "Las relaciones entre los lugares son comprensibles, aunque una referencia espacial resulta imprecisa.",
+              "Se mencionan lugares sin establecer relaciones espaciales entre ellos.",
+              "Las referencias espaciales sitúan los lugares de forma contradictoria.",
+              "No hay referencias que permitan situar los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-2-guia-turistica",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "53983111-93a5-5e64-8deb-b8cb02c53b46",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "9e7bc8a4-4249-5845-b4fc-edac7e2ef8e6",
+              "score": 56,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c5bfa453-dc73-53e9-a353-1457ecef84f1",
+              "score": 40,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "9a3f5c34-b341-5f32-89fa-e6b683aa060a",
+              "score": 34,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Elaborarán una guía turística por escrito, sin exposición oral.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.25",
+        "instrumentType": "lista-ponderada",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa del texto que va a producir oralmente;\nelección de los lugares turísticos más importantes del país y su clasificación: provincias,\nmonumentos, ríos, playas y lugares turísticos; recopilación de la información necesaria\ndel lugar; paquetes turísticos, excursiones, reservas, etc.) utilizando fuentes bibliográficas\ny recursos tecnológicos; delimitación del alcance de la guía turística: público, tema y\ndiseño de presentación; empleo de mapas, gráficos o collage de fotografías para explicitar\ngráficamente el tema de la guía turística; empleo de la descripción topográfica para\ndestacar aspectos sobresalientes del lugar seleccionado del país.\nUtilización de verbos en presente del indicativo para expresar las cualidades de ese lugar\ndel país; así como conectores especiales y temporales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir; selección\nde los lugares turísticos de mayor interés del país: provincias, monumentos, ríos, playas\nlugares turísticos; recopilación de la información necesaria del lugar; definición de la\nestructura, registro y recursos de la guía turística; selección del soporte: físico (libro) o\ndigital; elaboración de los materiales gráficos que va a emplear (mapas, gráficos o collage\nde fotografías),utilización de la estructura (portada, información, imágenes y cierre), los\nverbos en presente del indicativo, sustantivos propios, comunes y abstractos, los adjetivos,\npara producir la guía turística; utilización de los signos convencionales de la escritura al\nescribir el texto (comas, dos puntos, comillas, signos de interrogación y de exclamación).\nEscritura de los primeros borradores, tomando en cuenta las características previamente\nestablecidas; revisión de los borradores con ayuda de pares o el/la profesor/a teniendo en\ncuenta el uso de los recursos del texto descriptivo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          },
+          {
+            "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+            "type": "CONCEPT",
+            "text": "La guía turística",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 77,
+                "printedPage": "76"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-purpose:0",
+            "templateId": "len-2-guia-turistica-purpose",
+            "title": "Propósito y destinatario de la guía turística",
+            "description": "Adapta la información de la guía turística a la orientación del visitante. Parcial (50%): Se reconoce al visitante destinatario, pero no se relaciona con la información seleccionada.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta la información de la guía turística a la orientación del visitante.",
+              "La orientación al visitante se relaciona con información pertinente de los lugares.",
+              "Se reconoce al visitante destinatario, pero no se relaciona con la información seleccionada.",
+              "Se confunde la orientación turística con una narración de experiencias sin propósito informativo.",
+              "No hay evidencia del propósito ni del visitante destinatario."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-places:1",
+            "templateId": "len-2-guia-turistica-places",
+            "title": "Descripción y clasificación de lugares",
+            "description": "Describe y clasifica los lugares de la guía mediante características e información comprobable. Parcial (50%): Se enumeran lugares, pero no se distinguen por características o categorías.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe y clasifica los lugares de la guía mediante características e información comprobable.",
+              "Los lugares se distinguen por características pertinentes; queda una clasificación sin justificar.",
+              "Se enumeran lugares, pero no se distinguen por características o categorías.",
+              "La descripción atribuye características que no corresponden a los lugares señalados.",
+              "No se aportan características reconocibles de los lugares."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-organization:2",
+            "templateId": "len-2-guia-turistica-organization",
+            "title": "Organización de la guía turística",
+            "description": "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares. Parcial (50%): Se reconocen partes aisladas sin relacionarlas con la consulta de la guía.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la guía turística con portada, información y cierre que facilite localizar los lugares.",
+              "Se relacionan las partes principales con la consulta de información, aunque el cierre necesita precisión.",
+              "Se reconocen partes aisladas sin relacionarlas con la consulta de la guía.",
+              "Se confunden portada, desarrollo informativo y cierre.",
+              "No se evidencia una organización reconocible de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.25:30cb5974-6192-5f2e-8bd5-d98c091b1858:len-2-guia-turistica-spatial:3",
+            "templateId": "len-2-guia-turistica-spatial",
+            "title": "Orientación espacial y vocabulario",
+            "description": "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística. Parcial (50%): Se mencionan lugares sin establecer relaciones espaciales entre ellos.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa descripciones y relaciones espaciales claras para situar los lugares de la guía turística.",
+              "Las relaciones entre los lugares son comprensibles, aunque una referencia espacial resulta imprecisa.",
+              "Se mencionan lugares sin establecer relaciones espaciales entre ellos.",
+              "Las referencias espaciales sitúan los lugares de forma contradictoria.",
+              "No hay referencias que permitan situar los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "module=lengua-secundaria-2-guia-turistica",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "31f0fd7d-64ed-57ea-a580-27ea37c8844b",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "3ccbe1c7-82cd-5db3-9e48-588d83312496",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "53983111-93a5-5e64-8deb-b8cb02c53b46",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "df7ff9cf-61ac-542a-8cf3-ee2d98146a4b",
+              "score": 91,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "a5536c76-af76-53df-aa37-181e67ef25a0",
+              "score": 81,
+              "topicCoverage": 0.6666666666666666,
+              "reasons": [
+                "topicTokens=2/3",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c5bfa453-dc73-53e9-a353-1457ecef84f1",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=1/3",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ]
+}

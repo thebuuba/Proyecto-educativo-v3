@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 import { MemoryRouter } from 'react-router-dom'
+import { primaryEvaluationProfile } from '@aula/shared'
 
 import type { SectionSubjectAssignment } from '@/modules/courses/types'
 import { buildSubjectAttendanceHref } from '@/modules/courses/utils/subjectNavigation'
@@ -120,6 +121,26 @@ describe('menú administrativo de una asignatura activa', () => {
     expect(destination.searchParams.get('competencyBlockId')).toBe('b1')
     expect(destination.searchParams.get('returnCourseId')).toBe('course-1')
     expect(destination.searchParams.get('returnSubjectId')).toBe('assignment-1')
+  })
+
+  it('ofrece únicamente los tres bloques configurados para primaria', () => {
+    render(
+      <MemoryRouter>
+        <ActivityBlockPickerDialog
+          evaluationProfile={primaryEvaluationProfile}
+          assignmentId="assignment-1"
+          courseId="course-1"
+          courseName="4.º A"
+          subjectName="Ciencias de la Naturaleza"
+          onClose={vi.fn()}
+        />
+      </MemoryRouter>,
+    )
+
+    const links = screen.getAllByRole('link')
+    expect(links).toHaveLength(3)
+    expect(links.map((link) => link.getAttribute('data-competency-block-id'))).toEqual(['b1', 'b2', 'b3'])
+    expect(screen.queryByText('Bloque 4')).not.toBeInTheDocument()
   })
 
   it('abre la asignatura al pulsar cualquier zona de la tarjeta o usar Enter', async () => {

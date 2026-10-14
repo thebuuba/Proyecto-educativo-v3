@@ -1,0 +1,37 @@
+{
+  "verifiedAt": "2026-10-14T01:58:13.373Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "9832264d58ff5a689a94cd153d6dc06b5b1e2a0e",
+      "dirty": true,
+      "startedAt": "2026-10-14T01:57:09.023Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.25"
+    }
+  },
+  "baselineSnapshotsPreserved": 28,
+  "fullInstrumentsPreserved": [
+    "77f192a7-c5e5-4360-95e9-04bed3443dc5",
+    "2308e4fb-5f2f-4650-86d5-4eb8271d9952",
+    "3d5f877e-1121-48d9-9506-dbfcb53e7f2c",
+    "34a7843f-a97c-4a38-a644-aebdf2a6c9e8",
+    "e4eb148e-1512-44b7-9db0-41fb87d29d34",
+    "1cafee6b-c401-4117-8478-a68559da2934",
+    "0531e179-78e4-4cbc-b42b-3176918ec82d",
+    "5be1137f-cfb1-41c3-9df4-2ef8a7de2647",
+    "169c228e-8310-434c-8dc0-ce01a2ac3982",
+    "5a5e68ef-6884-4869-b627-8d9415713944",
+    "660373a8-22fc-4c3e-9022-7560c5a31b4a",
+    "34c51d99-ef6e-48a2-964e-b99fd7fe0cf2",
+    "0e9a5532-3e8f-4dde-8d0c-b6af87d76ee3",
+    "2baa64fd-970c-4fe2-833b-8025b6ec1640",
+    "af65cd06-7cf2-4096-824c-9ccf98c67c4d",
+    "fb44a01e-1aa6-44b7-aed2-539df478f7be",
+    "ae831f4b-e428-4add-a529-fd14e3b82518",
+    "88936968-5c67-4643-8602-d815e660b101",
+    "063f7e0b-f062-4276-ae35-9c743116a767",
+    "9ca06396-34b9-4141-b3e6-5b517e8fccb3"
+  ],
+  "currentSnapshots": 48
+}

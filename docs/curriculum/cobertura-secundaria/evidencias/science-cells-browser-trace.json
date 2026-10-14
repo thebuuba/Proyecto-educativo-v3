@@ -1,0 +1,2794 @@
+[
+  {
+    "request": {},
+    "status": 401,
+    "response": {}
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identificación de estructuras celulares",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite identificar las estructuras celulares solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representación de ambos tipos celulares",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una representación reconocible del tipo celular solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Funciones de los organelos",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta relaciones entre los organelos y sus funciones.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Comparación entre células",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Explicación oral del modelo científico",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No ofrece una explicación oral del trabajo.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "lista-cotejo"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "escala"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite identificar las estructuras celulares solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una representación reconocible del tipo celular solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta relaciones entre los organelos y sus funciones.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No ofrece una explicación oral del trabajo.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "lista-ponderada"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identificación de estructuras celulares",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representación de ambos tipos celulares",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Funciones de los organelos",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Comparación entre células",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Explicación oral del modelo científico",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identificación de estructuras celulares",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite identificar las estructuras celulares solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representación de ambos tipos celulares",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una representación reconocible del tipo celular solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Funciones de los organelos",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta relaciones entre los organelos y sus funciones.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Comparación entre células",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Explicación oral del modelo científico",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No ofrece una explicación oral del trabajo.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "lista-cotejo"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "escala"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite identificar las estructuras celulares solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una representación reconocible del tipo celular solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta relaciones entre los organelos y sus funciones.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No ofrece una explicación oral del trabajo.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "preferredInstrumentType": "lista-ponderada"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identificación de estructuras celulares",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representación de ambos tipos celulares",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Funciones de los organelos",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Comparación entre células",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Explicación oral del modelo científico",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identificación de estructuras celulares",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite identificar las estructuras celulares solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representación de ambos tipos celulares",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una representación reconocible del tipo celular solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Funciones de los organelos",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta relaciones entre los organelos y sus funciones.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Comparación entre células",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Explicación oral del modelo científico",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No ofrece una explicación oral del trabajo.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "lista-cotejo"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "escala"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite identificar las estructuras celulares solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una representación reconocible del tipo celular solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta relaciones entre los organelos y sus funciones.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No ofrece una explicación oral del trabajo.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "lista-ponderada"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identificación de estructuras celulares",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representación de ambos tipos celulares",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Funciones de los organelos",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Comparación entre células",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Explicación oral del modelo científico",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identificación de estructuras celulares",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite identificar las estructuras celulares solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representación de ambos tipos celulares",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una representación reconocible del tipo celular solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Funciones de los organelos",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta relaciones entre los organelos y sus funciones.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Comparación entre células",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Explicación oral del modelo científico",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No ofrece una explicación oral del trabajo.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "lista-cotejo"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "escala"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite identificar las estructuras celulares solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una representación reconocible del tipo celular solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta relaciones entre los organelos y sus funciones.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+              "scoreUnits": 347
+            },
+            {
+              "levelId": "L3",
+              "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+              "scoreUnits": 231
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+              "scoreUnits": 116
+            },
+            {
+              "levelId": "L1",
+              "text": "No ofrece una explicación oral del trabajo.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Actividad de aprendizaje",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "pedagogicalActivityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 17.35,
+      "preferredInstrumentType": "lista-ponderada"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identificación de estructuras celulares",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representación de ambos tipos celulares",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Funciones de los organelos",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Comparación entre células",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Explicación oral del modelo científico",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 3.47,
+          "maxScoreUnits": 347,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "competencyBlock": "b1"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": null,
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identificación de estructuras celulares",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite identificar las estructuras celulares solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representación de ambos tipos celulares",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una representación reconocible del tipo celular solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Funciones de los organelos",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta relaciones entre los organelos y sus funciones.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Comparación entre células",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Explicación oral del modelo científico",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No ofrece una explicación oral del trabajo.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "competencyBlock": "b1"
+    },
+    "status": 200,
+    "response": {
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8"
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "preferredInstrumentType": "rubrica"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": null,
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identificación de estructuras celulares",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite identificar las estructuras celulares solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representación de ambos tipos celulares",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una representación reconocible del tipo celular solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Funciones de los organelos",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta relaciones entre los organelos y sus funciones.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Comparación entre células",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:fallback:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Explicación oral del modelo científico",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No ofrece una explicación oral del trabajo.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "preferredInstrumentType": "escala"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Ubica y rotula correctamente núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal, sin confundir las estructuras.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Identifica las estructuras solicitadas; una ubicación o rótulo necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Identifica algunas estructuras, pero confunde su ubicación o denominación.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite identificar las estructuras celulares solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "La representación de la célula animal y la vegetal distingue su organización y sus rasgos propios mediante el medio elegido.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Representa la célula animal y la vegetal; un rasgo diferenciador necesita precisión.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Representa solo uno de los dos tipos, o las dos representaciones no permiten diferenciarlos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta una representación reconocible del tipo celular solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Relaciona cada organelo solicitado con su función y explica su aporte al funcionamiento celular.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Relaciona los organelos con sus funciones, con una explicación poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Explica algunas funciones, pero atribuye funciones incorrectas a otros organelos.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta relaciones entre los organelos y sus funciones.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica semejanzas y diferencias pertinentes y las sustenta en las estructuras y funciones de ambos tipos.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "Explica semejanzas y diferencias correctas, con justificación parcial.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Reconoce algunas semejanzas o diferencias, pero confunde rasgos de los tipos comparados.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta semejanzas ni diferencias entre los tipos solicitados.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica el modelo, las funciones y la comparación de manera articulada y usa sus representaciones para apoyar la presentación.",
+              "scoreUnits": 400
+            },
+            {
+              "levelId": "L3",
+              "text": "La presentación explica el trabajo con vocabulario comprensible; una relación científica queda poco desarrollada.",
+              "scoreUnits": 267
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta el trabajo, pero sus explicaciones son fragmentarias o contienen confusiones científicas.",
+              "scoreUnits": 133
+            },
+            {
+              "levelId": "L1",
+              "text": "No ofrece una explicación oral del trabajo.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "sectionSubjectId": "62a826de-2c1d-4c71-be0c-62b04ce542b1",
+      "activityTitle": "Construimos un modelo de la célula animal y vegetal",
+      "description": "Los estudiantes elaborarán una maqueta o dibujo de una célula animal y una vegetal, identificando sus principales estructuras, como el núcleo, la membrana celular, el citoplasma y las mitocondrias. Luego, realizarán una comparación entre ambos tipos de células, explicando sus semejanzas, diferencias y las funciones de sus organelos. Finalmente, presentarán sus trabajos ante sus compañeros, fortaleciendo sus conocimientos científicos y su creatividad",
+      "participationMode": "INDIVIDUAL",
+      "maxScore": 20,
+      "competencyBlock": "b1",
+      "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "preferredInstrumentType": "lista-ponderada"
+    },
+    "status": 200,
+    "response": {
+      "catalogVersion": "evaluation-2026.10",
+      "activityType": "PROJECT",
+      "curriculumScopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "criteria": [
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-structures:0",
+          "templateId": "science-cells-structures",
+          "title": "Identificación de estructuras celulares",
+          "description": "Identifica y ubica núcleo, membrana celular, citoplasma, mitocondrias en la célula animal y la vegetal.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-representation:1",
+          "templateId": "science-cells-representation",
+          "title": "Representación de ambos tipos celulares",
+          "description": "Representa la célula animal y la vegetal mediante la alternativa solicitada: maqueta o dibujo cuando la consigna permite elegir.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-functions:2",
+          "templateId": "science-cells-functions",
+          "title": "Funciones de los organelos",
+          "description": "Relaciona núcleo, membrana celular, citoplasma, mitocondrias con sus funciones celulares.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-comparison:3",
+          "templateId": "science-cells-comparison",
+          "title": "Comparación entre células",
+          "description": "Explica semejanzas y diferencias entre los tipos celulares solicitados con apoyo en sus estructuras y funciones.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        },
+        {
+          "id": "proposal:evaluation-2026.10:82830d4e-4eb9-5c2c-9120-3c3036c54ac8:science-cells-oral:4",
+          "templateId": "science-cells-oral",
+          "title": "Explicación oral del modelo científico",
+          "description": "Presenta el trabajo y explica las estructuras, funciones y comparación solicitadas usando vocabulario científico comprensible.",
+          "maxScore": 4,
+          "maxScoreUnits": 400,
+          "sourceType": "CONTEXTUALIZED",
+          "descriptors": []
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1468 @@
+{
+  "verifiedAt": "2026-10-14T06:13:45.929Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "35d2be7f4e4b0ac02f7e6e517ada64bbf9fa4f62",
+      "dirty": true,
+      "startedAt": "2026-10-14T06:13:13.604Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.40"
+    }
+  },
+  "activities": [
+    {
+      "id": "96ce2a9e-70d9-4d59-ae7c-22a1e3adcc24",
+      "name": "ING 1 Correo electrónico · rúbrica",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Redactarán un correo electrónico en inglés para la situación y el destinatario acordados.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "a401d2f9-b011-4643-bbc0-dbd757388190",
+      "instrumentSnapshotId": "2a2a29d3-e131-4491-8526-aeb1df59908c",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.40:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-genre-email:0",
+            "title": "Comunicación por correo electrónico",
+            "maxScore": 20,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-genre-email",
+            "description": "Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.",
+            "descriptors": [
+              {
+                "text": "Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.",
+                "levelId": "L4",
+                "scoreUnits": 2000
+              },
+              {
+                "text": "La producción permite reconocer el destinatario y propósito del correo y su información solicitada; una relación necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 1333
+              },
+              {
+                "text": "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer el destinatario y propósito del correo y su información solicitada.",
+                "levelId": "L2",
+                "scoreUnits": 667
+              },
+              {
+                "text": "No aporta una producción reconocible que comunique el destinatario y propósito del correo y su información solicitada. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 2000,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "ranking": [
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 48,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b397ab38-64b6-5f71-bb82-96468dbfa190",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "c04124f4-0c49-5a26-ae16-8512e18d0363",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "df4f0013-9084-5e81-81c8-659036f09469",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e2774f70-176f-5d57-82a6-a01dcb35de02",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "b6a7e120-af0f-539b-99de-d38274077921",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4aae97e8-3ae2-5e28-b24e-07755897c17e",
+              "topicCoverage": 0.1428571428571428
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.40",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para ING 1 Correo electrónico · rúbrica",
+        "rubrica:points:0": "20",
+        "rubrica:criterion:0": "Comunicación por correo electrónico",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.40:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-genre-email:0",
+        "rubrica:descriptor:0:1": "No aporta una producción reconocible que comunique el destinatario y propósito del correo y su información solicitada. Ajuste manual del docente.",
+        "rubrica:descriptor:0:2": "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer el destinatario y propósito del correo y su información solicitada.",
+        "rubrica:descriptor:0:3": "La producción permite reconocer el destinatario y propósito del correo y su información solicitada; una relación necesita precisión.",
+        "rubrica:descriptor:0:4": "Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[4]",
+        "rubrica:criterion-weight:0": "4",
+        "rubrica:meta:criteriaCount": "1",
+        "rubrica:meta:catalogVersion": "evaluation-2026.40",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Comunicación por correo electrónico\",\"description\":\"Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.\",\"progression\":[\"Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.\",\"La producción permite reconocer el destinatario y propósito del correo y su información solicitada; una relación necesita precisión.\",\"Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer el destinatario y propósito del correo y su información solicitada.\",\"La producción cambia el sentido: dirige a otra persona información que no corresponde al propósito del correo.\",\"No aporta una producción reconocible que comunique el destinatario y propósito del correo y su información solicitada.\"]}",
+        "rubrica:criterion-template:0": "ing-1-genre-email",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "a043d387-8040-4e9e-adfe-d18139adc98d",
+      "name": "ING 1 Formulario · cotejo",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Leerán un formulario en inglés e identificarán la información de los campos solicitados.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "b27971e5-f5e4-4309-bfec-d58445a390d9",
+      "instrumentSnapshotId": "9eda573e-d934-4910-94d1-4eb92c4ff098",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.40:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-genre-form:0",
+            "title": "Identifica los campos solicitados del formulario y los datos que contienen o requieren en el texto disponible en inglés. Ajuste manual del docente.",
+            "maxScore": 17.35,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-genre-form",
+            "description": "Identifica los campos solicitados del formulario y los datos que contienen o requieren en el texto disponible en inglés.",
+            "descriptors": [
+              {
+                "text": "Identifica los campos solicitados del formulario y los datos que contienen o requieren en el texto disponible en inglés.",
+                "levelId": "L2",
+                "scoreUnits": 1735
+              },
+              {
+                "text": "Identifica los campos solicitados del formulario y los datos que contienen o requieren en el texto disponible en inglés.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1735,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "ranking": [
+            {
+              "score": 67,
+              "reasons": [
+                "topicTokens=3/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.4285714285714285
+            },
+            {
+              "score": 53,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "topicCoverage": 0.2857142857142857
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "0fd7efb6-5c1f-569b-a373-bd910b999535",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "b397ab38-64b6-5f71-bb82-96468dbfa190",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "c04124f4-0c49-5a26-ae16-8512e18d0363",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 34,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "986e04c2-72c6-5a0d-959f-597d0b1b1423",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9ab3a87e-8266-5b18-be5b-f6641f1c8046",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "dc9ca4f1-7083-5dd2-a61b-4043e8c3ce81",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "97ced1a6-faeb-5054-920f-fccfef1c2189",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba",
+              "topicCoverage": 0.1428571428571428
+            },
+            {
+              "score": 28,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c7956bdd-ddb9-520d-b1a7-300e5b761783",
+              "topicCoverage": 0.1428571428571428
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.40",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "READING_COMPREHENSION",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para ING 1 Formulario · cotejo",
+        "lista-cotejo:points:0": "17.35",
+        "lista-cotejo:criterion:0": "Identifica los campos solicitados del formulario y los datos que contienen o requieren en el texto disponible en inglés. Ajuste manual del docente.",
+        "lista-cotejo:description:0": "Identifica los campos solicitados del formulario y los datos que contienen o requieren en el texto disponible en inglés.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.40:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-genre-form:0",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[4]",
+        "lista-cotejo:criterion-weight:0": "4",
+        "lista-cotejo:meta:criteriaCount": "1",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.40",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Identifica los campos solicitados del formulario y los datos que contienen o requieren en el texto disponible en inglés.\",\"description\":\"Identifica los campos solicitados del formulario y los datos que contienen o requieren en el texto disponible en inglés.\",\"progression\":[\"Identifica los campos solicitados del formulario y los datos que contienen o requieren en el texto disponible en inglés.\",\"Reconoce los campos solicitados del formulario y los datos que contienen o requieren; una referencia aislada necesita precisión.\",\"Recupera datos aislados, pero no permite reconocer por completo los campos solicitados del formulario y los datos que contienen o requieren.\",\"La interpretación altera la información: sitúa los datos en campos que piden una información diferente.\",\"No aporta información reconocible sobre los campos solicitados del formulario y los datos que contienen o requieren a partir del texto disponible.\"]}",
+        "lista-cotejo:criterion-template:0": "ing-1-genre-form"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "e2a54cc4-f6d9-450b-9475-4ddd90e455c1",
+      "name": "ING 1 Conversación · escala",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Participarán en una conversación breve en inglés para la situación acordada. Registrar la frecuencia de respuesta durante varios intercambios.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "c7a8dbcd-b664-41eb-8c51-2d23fa2ada3d",
+      "instrumentSnapshotId": "691f100a-bbca-4482-a826-4774c6070624",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.40:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-genre-conversation:0",
+            "title": "Relaciona sus intervenciones en inglés con las de los interlocutores para mantener el intercambio acordado.",
+            "maxScore": 20,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-genre-conversation",
+            "description": "Relaciona sus intervenciones en inglés con las de los interlocutores para mantener el intercambio acordado.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 2000
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 1333
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 667
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 2000,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_escala",
+          "ranking": [
+            {
+              "score": 62,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "c04124f4-0c49-5a26-ae16-8512e18d0363",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "df4f0013-9084-5e81-81c8-659036f09469",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e2774f70-176f-5d57-82a6-a01dcb35de02",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "b6a7e120-af0f-539b-99de-d38274077921",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4aae97e8-3ae2-5e28-b24e-07755897c17e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c44f35a2-1cf0-5661-b04d-5d1dc9766538",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=interaction",
+            "functions=",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.40",
+        "instrumentType": "escala",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_INTERACTION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para ING 1 Conversación · escala",
+        "escala:points:0": "20",
+        "escala:criterion:0": "Relaciona sus intervenciones en inglés con las de los interlocutores para mantener el intercambio acordado.",
+        "escala:level-name:1": "Todavía no",
+        "escala:level-name:2": "A veces",
+        "escala:level-name:3": "Frecuentemente",
+        "escala:level-name:4": "Siempre",
+        "escala:description:0": "Relaciona sus intervenciones en inglés con las de los interlocutores para mantener el intercambio acordado.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.40:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-genre-conversation:0",
+        "escala:descriptor:0:1": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+        "escala:descriptor:0:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[4]",
+        "escala:criterion-weight:0": "4",
+        "escala:meta:criteriaCount": "1",
+        "escala:meta:catalogVersion": "evaluation-2026.40",
+        "escala:criterion-evidence:0": "{\"title\":\"Relaciona sus intervenciones en inglés con las de los interlocutores para mantener el intercambio acordado.\",\"description\":\"Relaciona sus intervenciones en inglés con las de los interlocutores para mantener el intercambio acordado.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-template:0": "ing-1-genre-conversation",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "observacion-directa",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "4845fad0-f744-4ff0-8bfa-1789ef803391",
+      "name": "ING 1 Video descriptivo · ponderada",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Crearán un video en inglés con imágenes y textos breves para describir un lugar. No se requiere narración oral. Asignar pesos por componente.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "82f0ca31-6b46-4c6e-b5d8-d0567c9247e1",
+      "instrumentSnapshotId": "2fb88842-4056-475c-b66a-aae05f136560",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.40:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-description:0",
+            "title": "Características descritas",
+            "maxScore": 8.68,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-1-description",
+            "description": "Describe en inglés las características solicitadas de la persona, objeto o lugar con frases breves que permiten reconocer lo descrito. Parcial (50%): Menciona características aisladas sin relacionarlas con la persona, objeto o lugar indicado. Ajuste manual del docente.",
+            "descriptors": [
+              {
+                "text": "Describe en inglés las características solicitadas de la persona, objeto o lugar con frases breves que permiten reconocer lo descrito. Parcial (50%): Menciona características aisladas sin relacionarlas con la persona, objeto o lugar indicado. Ajuste manual del docente.",
+                "levelId": "L3",
+                "scoreUnits": 868
+              },
+              {
+                "text": "Describe en inglés las características solicitadas de la persona, objeto o lugar con frases breves que permiten reconocer lo descrito. Parcial (50%): Menciona características aisladas sin relacionarlas con la persona, objeto o lugar indicado. Ajuste manual del docente.",
+                "levelId": "L2",
+                "scoreUnits": 434
+              },
+              {
+                "text": "Describe en inglés las características solicitadas de la persona, objeto o lugar con frases breves que permiten reconocer lo descrito. Parcial (50%): Menciona características aisladas sin relacionarlas con la persona, objeto o lugar indicado. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 868,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.40:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-genre-audiovisual:1",
+            "title": "Mensaje de la producción audiovisual",
+            "maxScore": 8.67,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-1-genre-audiovisual",
+            "description": "Relaciona los recursos seleccionados con un mensaje en inglés comprensible para el destinatario acordado. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la relación entre los recursos seleccionados y el mensaje audiovisual.",
+            "descriptors": [
+              {
+                "text": "Relaciona los recursos seleccionados con un mensaje en inglés comprensible para el destinatario acordado. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la relación entre los recursos seleccionados y el mensaje audiovisual.",
+                "levelId": "L3",
+                "scoreUnits": 867
+              },
+              {
+                "text": "Relaciona los recursos seleccionados con un mensaje en inglés comprensible para el destinatario acordado. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la relación entre los recursos seleccionados y el mensaje audiovisual.",
+                "levelId": "L2",
+                "scoreUnits": 434
+              },
+              {
+                "text": "Relaciona los recursos seleccionados con un mensaje en inglés comprensible para el destinatario acordado. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la relación entre los recursos seleccionados y el mensaje audiovisual.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 867,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "AUDIOVISUAL_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 60,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "c16ab3b4-024a-5abd-91b1-cdbc1a0c0c59",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "df4f0013-9084-5e81-81c8-659036f09469",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "69d6ef67-56a6-5718-842e-50031049f344",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c594dcfb-cd26-51fa-b561-20fc065b0d30",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "165abc91-7e3d-5a97-b67a-4ad8b8f3fa9b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "c04124f4-0c49-5a26-ae16-8512e18d0363",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "25ee4c2a-c2eb-5aeb-9505-d16c231d0927",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e2774f70-176f-5d57-82a6-a01dcb35de02",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "2e452c37-c1b4-5a07-873b-143dc65b574f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=audiovisual",
+            "functions=description",
+            "coverage=COMMUNICATIVE_FUNCTIONS_AND_EXPLICIT_GRAMMAR_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.40",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "AUDIOVISUAL_PRODUCTION",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para ING 1 Video descriptivo · ponderada",
+        "lista-ponderada:points:0": "8.68",
+        "lista-ponderada:points:1": "8.67",
+        "lista-ponderada:weight:0": "50",
+        "lista-ponderada:weight:1": "50",
+        "lista-ponderada:criterion:0": "Características descritas",
+        "lista-ponderada:criterion:1": "Mensaje de la producción audiovisual",
+        "lista-ponderada:indicator:0": "Describe en inglés las características solicitadas de la persona, objeto o lugar con frases breves que permiten reconocer lo descrito. Parcial (50%): Menciona características aisladas sin relacionarlas con la persona, objeto o lugar indicado. Ajuste manual del docente.",
+        "lista-ponderada:indicator:1": "Relaciona los recursos seleccionados con un mensaje en inglés comprensible para el destinatario acordado. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la relación entre los recursos seleccionados y el mensaje audiovisual.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Describe en inglés las características solicitadas de la persona, objeto o lugar con frases breves que permiten reconocer lo descrito. Parcial (50%): Menciona características aisladas sin relacionarlas con la persona, objeto o lugar indicado.",
+        "lista-ponderada:description:1": "Relaciona los recursos seleccionados con un mensaje en inglés comprensible para el destinatario acordado. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la relación entre los recursos seleccionados y el mensaje audiovisual.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.40:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-description:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.40:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-genre-audiovisual:1",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[4,4]",
+        "lista-ponderada:criterion-weight:0": "4",
+        "lista-ponderada:criterion-weight:1": "4",
+        "lista-ponderada:meta:criteriaCount": "2",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.40",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Características descritas\",\"description\":\"Describe en inglés las características solicitadas de la persona, objeto o lugar con frases breves que permiten reconocer lo descrito. Parcial (50%): Menciona características aisladas sin relacionarlas con la persona, objeto o lugar indicado.\",\"progression\":[\"Describe en inglés las características solicitadas de la persona, objeto o lugar con frases breves que permiten reconocer lo descrito.\",\"Las características descritas son reconocibles; una referencia necesita precisión.\",\"Menciona características aisladas sin relacionarlas con la persona, objeto o lugar indicado.\",\"Atribuye características contradictorias y cambia la descripción solicitada.\",\"No se reconocen características de la persona, objeto o lugar indicado.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Mensaje de la producción audiovisual\",\"description\":\"Relaciona los recursos seleccionados con un mensaje en inglés comprensible para el destinatario acordado. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la relación entre los recursos seleccionados y el mensaje audiovisual.\",\"progression\":[\"Relaciona los recursos seleccionados con un mensaje en inglés comprensible para el destinatario acordado.\",\"La producción permite reconocer la relación entre los recursos seleccionados y el mensaje audiovisual; una relación necesita precisión.\",\"Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la relación entre los recursos seleccionados y el mensaje audiovisual.\",\"La producción cambia el sentido: los recursos comunican ideas incompatibles con el mensaje solicitado.\",\"No aporta una producción reconocible que comunique la relación entre los recursos seleccionados y el mensaje audiovisual.\"]}",
+        "lista-ponderada:criterion-template:0": "ing-1-description",
+        "lista-ponderada:criterion-template:1": "ing-1-genre-audiovisual"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

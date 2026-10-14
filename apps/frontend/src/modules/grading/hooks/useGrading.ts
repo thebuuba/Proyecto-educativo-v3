@@ -510,6 +510,8 @@ export function useGrading(options: { initialSectionSubjectId?: string; initialA
     selectedSs,
     selectedSsId,
     setSelectedSsId,
+    academicPeriodId,
+    schoolYearId: gradingContext?.schoolYearId,
     periods: competencyPeriods,
     selectedPeriod,
     selectedPeriodId,

@@ -1,0 +1,1980 @@
+{
+  "verifiedAt": "2026-10-14T03:13:12.565Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "4175eb99e17141dd69dfa5eb33be2990f409d457",
+      "dirty": true,
+      "startedAt": "2026-10-14T03:11:40.873Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.29"
+    }
+  },
+  "activities": [
+    {
+      "id": "7f86ef39-a21b-4a23-afd8-60089935b9d5",
+      "name": "QA Lengua 4 .29 · Instructivo · Cotejo",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Elaborarán un instructivo de un juego con pasos ordenados, conectores de finalidad y una ilustración o un dibujo en soporte digital. Se comprobará la presencia de cada evidencia con sí o no.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "724cfcca-6d90-45d2-a580-8841fd1005f6",
+      "instrumentSnapshotId": "515e10e2-5564-43cb-a115-96e520a1f244",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-purpose:0",
+            "title": "Delimita qué permite hacer el instructivo y adecua las indicaciones a quien las utilizará. Ajuste manual del docente.",
+            "maxScore": 3.86,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-4-instructivo-purpose",
+            "description": "Delimita qué permite hacer el instructivo y adecua las indicaciones a quien las utilizará.",
+            "descriptors": [
+              {
+                "text": "Delimita qué permite hacer el instructivo y adecua las indicaciones a quien las utilizará.",
+                "levelId": "L2",
+                "scoreUnits": 386
+              },
+              {
+                "text": "Delimita qué permite hacer el instructivo y adecua las indicaciones a quien las utilizará.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 386,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-sequence:1",
+            "title": "Ordena las instrucciones y sus condiciones para que pueda seguirse el procedimiento o las reglas del juego descrito.",
+            "maxScore": 4.82,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-instructivo-sequence",
+            "description": "Ordena las instrucciones y sus condiciones para que pueda seguirse el procedimiento o las reglas del juego descrito.",
+            "descriptors": [
+              {
+                "text": "Ordena las instrucciones y sus condiciones para que pueda seguirse el procedimiento o las reglas del juego descrito.",
+                "levelId": "L2",
+                "scoreUnits": 482
+              },
+              {
+                "text": "Ordena las instrucciones y sus condiciones para que pueda seguirse el procedimiento o las reglas del juego descrito.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 482,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-feature-graphics:2",
+            "title": "Emplea ilustración o dibujo en el texto de instructivo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas.",
+            "maxScore": 2.89,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-instructivo-feature-graphics",
+            "description": "Emplea ilustración o dibujo en el texto de instructivo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas.",
+            "descriptors": [
+              {
+                "text": "Emplea ilustración o dibujo en el texto de instructivo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas.",
+                "levelId": "L2",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Emplea ilustración o dibujo en el texto de instructivo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 289,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-feature-connectors:3",
+            "title": "Emplea los conectores de finalidad en el texto de instructivo para enlazar los pasos y distinguir su secuencia del propósito de cada acción, sin alterar el sentido de las ideas.",
+            "maxScore": 2.89,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-instructivo-feature-connectors",
+            "description": "Emplea los conectores de finalidad en el texto de instructivo para enlazar los pasos y distinguir su secuencia del propósito de cada acción, sin alterar el sentido de las ideas.",
+            "descriptors": [
+              {
+                "text": "Emplea los conectores de finalidad en el texto de instructivo para enlazar los pasos y distinguir su secuencia del propósito de cada acción, sin alterar el sentido de las ideas.",
+                "levelId": "L2",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Emplea los conectores de finalidad en el texto de instructivo para enlazar los pasos y distinguir su secuencia del propósito de cada acción, sin alterar el sentido de las ideas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 289,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-procedure-medium:4",
+            "title": "Dispone el instructivo en soporte digital con pasos legibles y referencias que permiten seguir las indicaciones.",
+            "maxScore": 2.89,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-instructivo-procedure-medium",
+            "description": "Dispone el instructivo en soporte digital con pasos legibles y referencias que permiten seguir las indicaciones.",
+            "descriptors": [
+              {
+                "text": "Dispone el instructivo en soporte digital con pasos legibles y referencias que permiten seguir las indicaciones.",
+                "levelId": "L2",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Dispone el instructivo en soporte digital con pasos legibles y referencias que permiten seguir las indicaciones.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 289,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-cotejo",
+          "ranking": [
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "46648650-fc90-53e3-b89c-0eec39d84b58",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e3499067-ee8b-5e19-9947-da3914b0f508",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bef5d7d9-383e-5b68-83bc-8ccfa41ef7f5",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "58bfa198-2b2c-5fee-abde-288250a54367",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a0d15f66-b615-55cc-81de-28237828d0cb",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c2e9bea5-f63d-580c-a0d1-5fc2b4b03cfe",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "abcd724d-c5e6-5d80-9f49-2f16c61a6ea4",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cca80fdb-7fe2-5abb-b52c-e64d15908ec8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 36,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e730af75-e239-5bcb-9e7c-ce6c16a8f82e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "20f29ded-8701-5b03-a915-d5e6f278ec54",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d5e64e84-bdb0-5b1e-967f-0f8f24401e54",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "81409176-ed36-5f29-b314-55bbdab84bc3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "cc98136c-1b10-558d-9f7e-7a1ef86a8a66",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "df6f8fd3-112d-51ec-a49f-2a3ef8730691",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "edc68146-c1ef-5f11-987b-35e716686ebb",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "f318fcff-8831-5428-85ff-61c7269abe62",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "37ec9614-3d26-5477-b673-b5cc8634f4bc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4916a1b4-95aa-58bc-a4fc-adb047c1a4c8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bad7924a-5b3b-52f4-ab66-6b29e93ecdf9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "18862c86-577e-5458-ae41-058ea5e1d52f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "474b23da-0809-535b-b180-dd16a83265c3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4954c259-81fa-5470-87d4-f2d025d69709",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-4-instructivo",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.29",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA Lengua 4 .29 · Instructivo · Cotejo",
+        "lista-cotejo:points:0": "3.86",
+        "lista-cotejo:points:1": "4.82",
+        "lista-cotejo:points:2": "2.89",
+        "lista-cotejo:points:3": "2.89",
+        "lista-cotejo:points:4": "2.89",
+        "lista-cotejo:criterion:0": "Delimita qué permite hacer el instructivo y adecua las indicaciones a quien las utilizará. Ajuste manual del docente.",
+        "lista-cotejo:criterion:1": "Ordena las instrucciones y sus condiciones para que pueda seguirse el procedimiento o las reglas del juego descrito.",
+        "lista-cotejo:criterion:2": "Emplea ilustración o dibujo en el texto de instructivo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas.",
+        "lista-cotejo:criterion:3": "Emplea los conectores de finalidad en el texto de instructivo para enlazar los pasos y distinguir su secuencia del propósito de cada acción, sin alterar el sentido de las ideas.",
+        "lista-cotejo:criterion:4": "Dispone el instructivo en soporte digital con pasos legibles y referencias que permiten seguir las indicaciones.",
+        "lista-cotejo:description:0": "Delimita qué permite hacer el instructivo y adecua las indicaciones a quien las utilizará.",
+        "lista-cotejo:description:1": "Ordena las instrucciones y sus condiciones para que pueda seguirse el procedimiento o las reglas del juego descrito.",
+        "lista-cotejo:description:2": "Emplea ilustración o dibujo en el texto de instructivo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas.",
+        "lista-cotejo:description:3": "Emplea los conectores de finalidad en el texto de instructivo para enlazar los pasos y distinguir su secuencia del propósito de cada acción, sin alterar el sentido de las ideas.",
+        "lista-cotejo:description:4": "Dispone el instructivo en soporte digital con pasos legibles y referencias que permiten seguir las indicaciones.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-purpose:0",
+        "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-sequence:1",
+        "lista-cotejo:criterion-id:2": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-feature-graphics:2",
+        "lista-cotejo:criterion-id:3": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-feature-connectors:3",
+        "lista-cotejo:criterion-id:4": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-instructivo-procedure-medium:4",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[4,5,3,3,3]",
+        "lista-cotejo:criterion-weight:0": "4",
+        "lista-cotejo:criterion-weight:1": "5",
+        "lista-cotejo:criterion-weight:2": "3",
+        "lista-cotejo:criterion-weight:3": "3",
+        "lista-cotejo:criterion-weight:4": "3",
+        "lista-cotejo:meta:criteriaCount": "5",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.29",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Delimita qué permite hacer el instructivo y adecua las indicaciones a quien las utilizará.\",\"description\":\"Delimita qué permite hacer el instructivo y adecua las indicaciones a quien las utilizará.\",\"progression\":[\"Delimita qué permite hacer el instructivo y adecua las indicaciones a quien las utilizará.\",\"Se reconoce qué se busca hacer; una indicación necesita adecuarse al destinatario.\",\"Se menciona una actividad sin explicar qué orientan sus instrucciones.\",\"Se atribuye al instructivo un uso incompatible con sus indicaciones.\",\"No se reconoce el propósito de las instrucciones.\"]}",
+        "lista-cotejo:criterion-evidence:1": "{\"title\":\"Ordena las instrucciones y sus condiciones para que pueda seguirse el procedimiento o las reglas del juego descrito.\",\"description\":\"Ordena las instrucciones y sus condiciones para que pueda seguirse el procedimiento o las reglas del juego descrito.\",\"progression\":[\"Ordena las instrucciones y sus condiciones para que pueda seguirse el procedimiento o las reglas del juego descrito.\",\"Puede seguirse la secuencia; una condición requiere explicitarse.\",\"Se enumeran acciones sin indicar su orden o las condiciones para continuarlas.\",\"El orden o una condición contradice el procedimiento y conduce a una acción distinta.\",\"No hay una secuencia reconocible de instrucciones.\"]}",
+        "lista-cotejo:criterion-evidence:2": "{\"title\":\"Emplea ilustración o dibujo en el texto de instructivo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas.\",\"description\":\"Emplea ilustración o dibujo en el texto de instructivo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas.\",\"progression\":[\"Emplea ilustración o dibujo en el texto de instructivo para relacionar lo representado con la información del texto y mantener sus datos o referencias, sin alterar el sentido de las ideas.\",\"Emplea ilustración o dibujo con la función solicitada; un uso aislado deja ambigua una relación entre ideas.\",\"Incluye ilustración o dibujo, pero varios usos no contribuyen a relacionar lo representado con la información del texto y mantener sus datos o referencias.\",\"El uso de ilustración o dibujo altera el sentido del texto: el recurso representa datos o referentes incompatibles con el pasaje.\",\"No incorpora evidencia del uso solicitado de ilustración o dibujo en su texto.\"]}",
+        "lista-cotejo:criterion-evidence:3": "{\"title\":\"Emplea los conectores de finalidad en el texto de instructivo para enlazar los pasos y distinguir su secuencia del propósito de cada acción, sin alterar el sentido de las ideas.\",\"description\":\"Emplea los conectores de finalidad en el texto de instructivo para enlazar los pasos y distinguir su secuencia del propósito de cada acción, sin alterar el sentido de las ideas.\",\"progression\":[\"Emplea los conectores de finalidad en el texto de instructivo para enlazar los pasos y distinguir su secuencia del propósito de cada acción, sin alterar el sentido de las ideas.\",\"Emplea los conectores de finalidad con la función solicitada; un uso aislado deja ambigua una relación entre ideas.\",\"Incluye los conectores de finalidad, pero varios usos no contribuyen a enlazar los pasos y distinguir su secuencia del propósito de cada acción.\",\"El uso de los conectores de finalidad altera el sentido del texto: se confunde la finalidad con un paso o se invierte la secuencia.\",\"No incorpora evidencia del uso solicitado de los conectores de finalidad en su texto.\"]}",
+        "lista-cotejo:criterion-evidence:4": "{\"title\":\"Dispone el instructivo en soporte digital con pasos legibles y referencias que permiten seguir las indicaciones.\",\"description\":\"Dispone el instructivo en soporte digital con pasos legibles y referencias que permiten seguir las indicaciones.\",\"progression\":[\"Dispone el instructivo en soporte digital con pasos legibles y referencias que permiten seguir las indicaciones.\",\"Las instrucciones pueden consultarse; una referencia dificulta localizar un paso.\",\"El texto es legible, pero su distribución dificulta reconocer la secuencia de pasos.\",\"La disposición mezcla pasos o recursos y cambia el orden de las indicaciones.\",\"No presenta las instrucciones de forma consultable en el soporte solicitado.\"]}",
+        "lista-cotejo:criterion-template:0": "len-4-instructivo-purpose",
+        "lista-cotejo:criterion-template:1": "len-4-instructivo-sequence",
+        "lista-cotejo:criterion-template:2": "len-4-instructivo-feature-graphics",
+        "lista-cotejo:criterion-template:3": "len-4-instructivo-feature-connectors",
+        "lista-cotejo:criterion-template:4": "len-4-instructivo-procedure-medium"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "64b7b89c-01a0-4757-a15c-d9adf2e0510e",
+      "name": "QA Lengua 4 .29 · Soneto · Escala",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 15,
+      "description": "<p>Recitarán un soneto utilizando entonación y lenguaje gestual para comunicar los sentimientos de los versos. Se registrará la regularidad con que se cumplen los indicadores.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "78294843-1305-4ee8-be9b-cae75e15d1cd",
+      "instrumentSnapshotId": "f92802a7-97b9-4094-87b1-f24694776619",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-soneto-recitation-sequence:0",
+            "title": "Recita el soneto conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+            "maxScore": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-4-soneto-recitation-sequence",
+            "description": "Recita el soneto conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 500
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 333
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 167
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-soneto-recitation-expression:1",
+            "title": "Comunica los sentimientos del soneto mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-soneto-recitation-expression",
+            "description": "Comunica los sentimientos del soneto mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 500
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 333
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 167
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-soneto-feature-nonverbal:2",
+            "title": "Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del soneto.",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-soneto-feature-nonverbal",
+            "description": "Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del soneto.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 500
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 333
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 167
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "MEDIUM",
+        "totalScore": 15,
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_escala",
+          "ranking": [
+            {
+              "score": 83,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "59548950-a1ac-5431-9c79-93e94fe6017f",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 83,
+              "reasons": [
+                "topicTokens=5/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a4a34610-c28a-59b1-84f7-c950fb93cf19",
+              "topicCoverage": 0.625
+            },
+            {
+              "score": 73,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "804406d8-7d2d-5e3b-a293-3c382f4e6c6f",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "2731e702-d5e5-526a-b82e-5dcfa8b663a2",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "78547aed-bfbd-55a3-a5b7-2658f2e5fa84",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "531eb941-6b98-57ec-8e5f-20488a47e1ef",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6ee257b3-47b5-50a5-91e1-4b0783ad791b",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6b2d903b-60ae-5d0f-a341-011c7bfca160",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "85108d6e-be88-5553-8199-f4615990802b",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "00ec7e2b-ac08-5116-aa2f-48c93a8f6c7a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0bf1f226-15d0-5808-95d4-074756740b5e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1226589a-4932-5eec-b97f-ca2f0a026c37",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "74bcf637-8787-53e1-84a9-bda9b15ca48f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "77eb214b-8fab-5971-8391-5d3591100014",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9abb32d1-e4a4-50e3-af18-fc95ed10d1cf",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "a36a3d86-85b8-5575-aef7-8a301627688f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bbd3b3f8-1347-561c-9600-8d4b84e49be7",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f85b8cf2-66d1-52c5-b5c9-68a4dbffacef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fafcd3e5-1226-578a-a35d-0685c14e8b82",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "99109843-91ef-53e0-b969-cbab8ec652d0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "edc68146-c1ef-5f11-987b-35e716686ebb",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e3499067-ee8b-5e19-9947-da3914b0f508",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1eff965d-e65a-5a0a-8c59-c862658ec434",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-4-soneto",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": false
+        },
+        "catalogVersion": "evaluation-2026.29",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1500,
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_PRESENTATION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA Lengua 4 .29 · Soneto · Escala",
+        "escala:points:0": "5",
+        "escala:points:1": "5",
+        "escala:points:2": "5",
+        "escala:criterion:0": "Recita el soneto conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+        "escala:criterion:1": "Comunica los sentimientos del soneto mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+        "escala:criterion:2": "Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del soneto.",
+        "escala:level-name:1": "Todavía no",
+        "escala:level-name:2": "A veces",
+        "escala:level-name:3": "Frecuentemente",
+        "escala:level-name:4": "Siempre",
+        "escala:description:0": "Recita el soneto conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+        "escala:description:1": "Comunica los sentimientos del soneto mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+        "escala:description:2": "Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del soneto.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-soneto-recitation-sequence:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-soneto-recitation-expression:1",
+        "escala:criterion-id:2": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-soneto-feature-nonverbal:2",
+        "escala:descriptor:0:1": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+        "escala:descriptor:0:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:1:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:1:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:1:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:1:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:2:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:2:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:2:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:2:4": "En todas las oportunidades observadas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[3,3,3]",
+        "escala:criterion-weight:0": "3",
+        "escala:criterion-weight:1": "3",
+        "escala:criterion-weight:2": "3",
+        "escala:meta:criteriaCount": "3",
+        "escala:meta:catalogVersion": "evaluation-2026.29",
+        "escala:criterion-evidence:0": "{\"title\":\"Recita el soneto conservando la secuencia y el sentido de sus versos, con los apoyos acordados.\",\"description\":\"Recita el soneto conservando la secuencia y el sentido de sus versos, con los apoyos acordados.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Comunica los sentimientos del soneto mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.\",\"description\":\"Comunica los sentimientos del soneto mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:2": "{\"title\":\"Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del soneto.\",\"description\":\"Relaciona los gestos o apoyos de acceso acordados con los sentimientos y las imágenes de los versos del soneto.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-template:0": "len-4-soneto-recitation-sequence",
+        "escala:criterion-template:1": "len-4-soneto-recitation-expression",
+        "escala:criterion-template:2": "len-4-soneto-feature-nonverbal",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "presentacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "2f6773b5-bc00-4523-9998-0c704b0192e0",
+      "name": "QA Lengua 4 .29 · Novela · Rúbrica",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Analizarán un fragmento de novela relacionando narrador, personajes, motivaciones y acontecimientos disponibles. Se valorará la calidad en varias dimensiones.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "4f7b21a3-bef9-4ce8-8f97-54118430f157",
+      "instrumentSnapshotId": "a78e53cc-634e-4878-a3f2-031b6daa1e90",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-novela-plot:0",
+            "title": "Acontecimientos y relaciones de la trama",
+            "maxScore": 5.88,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-4-novela-plot",
+            "description": "Relaciona los acontecimientos disponibles de la novela y sustenta sus vínculos temporales y causales en el pasaje.",
+            "descriptors": [
+              {
+                "text": "Relaciona los acontecimientos disponibles de la novela y sustenta sus vínculos temporales y causales en el pasaje.",
+                "levelId": "L4",
+                "scoreUnits": 588
+              },
+              {
+                "text": "Las relaciones corresponden al pasaje; una transición necesita apoyo textual.",
+                "levelId": "L3",
+                "scoreUnits": 392
+              },
+              {
+                "text": "Enumera acontecimientos sin explicar sus relaciones.",
+                "levelId": "L2",
+                "scoreUnits": 196
+              },
+              {
+                "text": "No relaciona acontecimientos reconocibles del pasaje. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 588,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-novela-characters:1",
+            "title": "Personajes, motivaciones y ambiente",
+            "maxScore": 4.71,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-novela-characters",
+            "description": "Sustenta las motivaciones de los personajes relacionando sus acciones con el ambiente disponible en la novela.",
+            "descriptors": [
+              {
+                "text": "Sustenta las motivaciones de los personajes relacionando sus acciones con el ambiente disponible en la novela.",
+                "levelId": "L4",
+                "scoreUnits": 471
+              },
+              {
+                "text": "Las motivaciones tienen apoyo en acciones; una relación con el ambiente necesita aclararse.",
+                "levelId": "L3",
+                "scoreUnits": 314
+              },
+              {
+                "text": "Describe personajes o lugares sin explicar su influencia en las acciones.",
+                "levelId": "L2",
+                "scoreUnits": 157
+              },
+              {
+                "text": "No aporta acciones que sustenten las motivaciones ni su relación con el ambiente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 471,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-novela-narrator:2",
+            "title": "Narrador y voces de los personajes",
+            "maxScore": 4.71,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-novela-narrator",
+            "description": "Distingue al narrador de los personajes y explica qué información permite conocer cada voz en el texto disponible.",
+            "descriptors": [
+              {
+                "text": "Distingue al narrador de los personajes y explica qué información permite conocer cada voz en el texto disponible.",
+                "levelId": "L4",
+                "scoreUnits": 471
+              },
+              {
+                "text": "Distingue las voces; una intervención necesita atribuirse con mayor claridad.",
+                "levelId": "L3",
+                "scoreUnits": 314
+              },
+              {
+                "text": "Nombra voces sin explicar quién comunica cada información.",
+                "levelId": "L2",
+                "scoreUnits": 157
+              },
+              {
+                "text": "No identifica las voces mediante evidencias del texto disponible.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 471,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-novela-theme:3",
+            "title": "Temas sustentados en el pasaje",
+            "maxScore": 4.7,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-novela-theme",
+            "description": "Formula una interpretación de los temas de la novela apoyada en acciones, ambientes o intervenciones del pasaje disponible.",
+            "descriptors": [
+              {
+                "text": "Formula una interpretación de los temas de la novela apoyada en acciones, ambientes o intervenciones del pasaje disponible.",
+                "levelId": "L4",
+                "scoreUnits": 470
+              },
+              {
+                "text": "El tema tiene apoyo textual; una relación con la evidencia necesita explicarse.",
+                "levelId": "L3",
+                "scoreUnits": 313
+              },
+              {
+                "text": "Nombra asuntos generales sin relacionarlos con el pasaje.",
+                "levelId": "L2",
+                "scoreUnits": 157
+              },
+              {
+                "text": "No propone un tema sustentado en el pasaje.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 470,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_rubrica",
+          "ranking": [
+            {
+              "score": 70,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "02244223-58ff-5305-8e3b-26332087d790",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0c3adb3f-06b6-5591-8a68-af3f185eacf9",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "37ec9614-3d26-5477-b673-b5cc8634f4bc",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4916a1b4-95aa-58bc-a4fc-adb047c1a4c8",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "7420867c-d4a0-5181-86b7-d3f8835beefc",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a4a28966-ee10-5b99-a717-6e8f1b606519",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0f96b42a-1dc5-5e42-8310-6c3c85a43a24",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "498d8d6d-82c9-548f-9385-39e88e99e07b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "531eb941-6b98-57ec-8e5f-20488a47e1ef",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "58bfa198-2b2c-5fee-abde-288250a54367",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "7bdb782e-02b3-5540-ab37-ef0c50285b00",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a6f1db3c-2793-5b68-b1d3-0f4ff9987e17",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0f770e20-4d5b-51be-9ed1-5c8424bb6b0a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "11f07c73-d310-565e-8d05-0da190350962",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bddd52bc-495b-59c4-85e0-c486fe5cf601",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ef839fd2-05dd-5922-b039-a6f8f64f1ac5",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-4-novela",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.29",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ANALYSIS",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para QA Lengua 4 .29 · Novela · Rúbrica",
+        "rubrica:points:0": "5.88",
+        "rubrica:points:1": "4.71",
+        "rubrica:points:2": "4.71",
+        "rubrica:points:3": "4.7",
+        "rubrica:criterion:0": "Acontecimientos y relaciones de la trama",
+        "rubrica:criterion:1": "Personajes, motivaciones y ambiente",
+        "rubrica:criterion:2": "Narrador y voces de los personajes",
+        "rubrica:criterion:3": "Temas sustentados en el pasaje",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Relaciona los acontecimientos disponibles de la novela y sustenta sus vínculos temporales y causales en el pasaje.",
+        "rubrica:description:1": "Sustenta las motivaciones de los personajes relacionando sus acciones con el ambiente disponible en la novela.",
+        "rubrica:description:2": "Distingue al narrador de los personajes y explica qué información permite conocer cada voz en el texto disponible.",
+        "rubrica:description:3": "Formula una interpretación de los temas de la novela apoyada en acciones, ambientes o intervenciones del pasaje disponible.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-novela-plot:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-novela-characters:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-novela-narrator:2",
+        "rubrica:criterion-id:3": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-novela-theme:3",
+        "rubrica:descriptor:0:1": "No relaciona acontecimientos reconocibles del pasaje. Ajuste manual del docente.",
+        "rubrica:descriptor:0:2": "Enumera acontecimientos sin explicar sus relaciones.",
+        "rubrica:descriptor:0:3": "Las relaciones corresponden al pasaje; una transición necesita apoyo textual.",
+        "rubrica:descriptor:0:4": "Relaciona los acontecimientos disponibles de la novela y sustenta sus vínculos temporales y causales en el pasaje.",
+        "rubrica:descriptor:1:1": "No aporta acciones que sustenten las motivaciones ni su relación con el ambiente.",
+        "rubrica:descriptor:1:2": "Describe personajes o lugares sin explicar su influencia en las acciones.",
+        "rubrica:descriptor:1:3": "Las motivaciones tienen apoyo en acciones; una relación con el ambiente necesita aclararse.",
+        "rubrica:descriptor:1:4": "Sustenta las motivaciones de los personajes relacionando sus acciones con el ambiente disponible en la novela.",
+        "rubrica:descriptor:2:1": "No identifica las voces mediante evidencias del texto disponible.",
+        "rubrica:descriptor:2:2": "Nombra voces sin explicar quién comunica cada información.",
+        "rubrica:descriptor:2:3": "Distingue las voces; una intervención necesita atribuirse con mayor claridad.",
+        "rubrica:descriptor:2:4": "Distingue al narrador de los personajes y explica qué información permite conocer cada voz en el texto disponible.",
+        "rubrica:descriptor:3:1": "No propone un tema sustentado en el pasaje.",
+        "rubrica:descriptor:3:2": "Nombra asuntos generales sin relacionarlos con el pasaje.",
+        "rubrica:descriptor:3:3": "El tema tiene apoyo textual; una relación con la evidencia necesita explicarse.",
+        "rubrica:descriptor:3:4": "Formula una interpretación de los temas de la novela apoyada en acciones, ambientes o intervenciones del pasaje disponible.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[5,4,4,4]",
+        "rubrica:criterion-weight:0": "5",
+        "rubrica:criterion-weight:1": "4",
+        "rubrica:criterion-weight:2": "4",
+        "rubrica:criterion-weight:3": "4",
+        "rubrica:meta:criteriaCount": "4",
+        "rubrica:meta:catalogVersion": "evaluation-2026.29",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Acontecimientos y relaciones de la trama\",\"description\":\"Relaciona los acontecimientos disponibles de la novela y sustenta sus vínculos temporales y causales en el pasaje.\",\"progression\":[\"Relaciona los acontecimientos disponibles de la novela y sustenta sus vínculos temporales y causales en el pasaje.\",\"Las relaciones corresponden al pasaje; una transición necesita apoyo textual.\",\"Enumera acontecimientos sin explicar sus relaciones.\",\"Invierte una causa y consecuencia o añade acontecimientos ausentes del pasaje.\",\"No relaciona acontecimientos reconocibles del pasaje.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"Personajes, motivaciones y ambiente\",\"description\":\"Sustenta las motivaciones de los personajes relacionando sus acciones con el ambiente disponible en la novela.\",\"progression\":[\"Sustenta las motivaciones de los personajes relacionando sus acciones con el ambiente disponible en la novela.\",\"Las motivaciones tienen apoyo en acciones; una relación con el ambiente necesita aclararse.\",\"Describe personajes o lugares sin explicar su influencia en las acciones.\",\"Atribuye a un personaje una motivación contraria a sus acciones.\",\"No aporta acciones que sustenten las motivaciones ni su relación con el ambiente.\"]}",
+        "rubrica:criterion-evidence:2": "{\"title\":\"Narrador y voces de los personajes\",\"description\":\"Distingue al narrador de los personajes y explica qué información permite conocer cada voz en el texto disponible.\",\"progression\":[\"Distingue al narrador de los personajes y explica qué información permite conocer cada voz en el texto disponible.\",\"Distingue las voces; una intervención necesita atribuirse con mayor claridad.\",\"Nombra voces sin explicar quién comunica cada información.\",\"Confunde narrador y autor o atribuye a un personaje palabras de otro.\",\"No identifica las voces mediante evidencias del texto disponible.\"]}",
+        "rubrica:criterion-evidence:3": "{\"title\":\"Temas sustentados en el pasaje\",\"description\":\"Formula una interpretación de los temas de la novela apoyada en acciones, ambientes o intervenciones del pasaje disponible.\",\"progression\":[\"Formula una interpretación de los temas de la novela apoyada en acciones, ambientes o intervenciones del pasaje disponible.\",\"El tema tiene apoyo textual; una relación con la evidencia necesita explicarse.\",\"Nombra asuntos generales sin relacionarlos con el pasaje.\",\"Atribuye al texto un tema incompatible con la evidencia disponible.\",\"No propone un tema sustentado en el pasaje.\"]}",
+        "rubrica:criterion-template:0": "len-4-novela-plot",
+        "rubrica:criterion-template:1": "len-4-novela-characters",
+        "rubrica:criterion-template:2": "len-4-novela-narrator",
+        "rubrica:criterion-template:3": "len-4-novela-theme",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "82be0b7f-dd4d-4783-afc8-797a216f013d",
+      "name": "QA Lengua 4 .29 · Datos dados · Ponderada",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Redactarán un informe de investigación relacionando problema, objetivos, método y resultados con los datos proporcionados. Incluirán una conclusión y recomendaciones sustentadas en esos resultados. Se distribuirán pesos entre los componentes verificables.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "a0144009-9617-4070-805d-02a93869ec3e",
+      "instrumentSnapshotId": "83927d07-fd2e-4a42-8368-bd2914401fe8",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-problem:0",
+            "title": "Problema, objetivos y método comunicados",
+            "maxScore": 4.63,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-4-informe-investigacion-problem",
+            "description": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible. Parcial (50%): Enumera objetivos y acciones sin relacionarlos con el problema. Ajuste manual del docente.",
+            "descriptors": [
+              {
+                "text": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible. Parcial (50%): Enumera objetivos y acciones sin relacionarlos con el problema. Ajuste manual del docente.",
+                "levelId": "L3",
+                "scoreUnits": 463
+              },
+              {
+                "text": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible. Parcial (50%): Enumera objetivos y acciones sin relacionarlos con el problema. Ajuste manual del docente.",
+                "levelId": "L2",
+                "scoreUnits": 232
+              },
+              {
+                "text": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible. Parcial (50%): Enumera objetivos y acciones sin relacionarlos con el problema. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 463,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-results:1",
+            "title": "Resultados y argumentos de investigación",
+            "maxScore": 5.78,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-informe-investigacion-results",
+            "description": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información. Parcial (50%): Reproduce datos y afirmaciones sin mostrar qué relación tienen.",
+            "descriptors": [
+              {
+                "text": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información. Parcial (50%): Reproduce datos y afirmaciones sin mostrar qué relación tienen.",
+                "levelId": "L3",
+                "scoreUnits": 578
+              },
+              {
+                "text": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información. Parcial (50%): Reproduce datos y afirmaciones sin mostrar qué relación tienen.",
+                "levelId": "L2",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información. Parcial (50%): Reproduce datos y afirmaciones sin mostrar qué relación tienen.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 578,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-procedure-conclusion:2",
+            "title": "Conclusión sustentada",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-informe-investigacion-procedure-conclusion",
+            "description": "Formula una conclusión que retoma los resultados disponibles y la interpretación de sus datos, sin añadir afirmaciones ajenas al desarrollo. Parcial (50%): Repite datos o ideas sin explicar qué permiten concluir.",
+            "descriptors": [
+              {
+                "text": "Formula una conclusión que retoma los resultados disponibles y la interpretación de sus datos, sin añadir afirmaciones ajenas al desarrollo. Parcial (50%): Repite datos o ideas sin explicar qué permiten concluir.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Formula una conclusión que retoma los resultados disponibles y la interpretación de sus datos, sin añadir afirmaciones ajenas al desarrollo. Parcial (50%): Repite datos o ideas sin explicar qué permiten concluir.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Formula una conclusión que retoma los resultados disponibles y la interpretación de sus datos, sin añadir afirmaciones ajenas al desarrollo. Parcial (50%): Repite datos o ideas sin explicar qué permiten concluir.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-recommendations:3",
+            "title": "Recomendaciones vinculadas con los resultados",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-4-informe-investigacion-recommendations",
+            "description": "Propone recomendaciones que responden al problema y se apoyan en los resultados disponibles, indicando su alcance. Parcial (50%): Enumera recomendaciones sin mostrar qué resultados las justifican.",
+            "descriptors": [
+              {
+                "text": "Propone recomendaciones que responden al problema y se apoyan en los resultados disponibles, indicando su alcance. Parcial (50%): Enumera recomendaciones sin mostrar qué resultados las justifican.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Propone recomendaciones que responden al problema y se apoyan en los resultados disponibles, indicando su alcance. Parcial (50%): Enumera recomendaciones sin mostrar qué resultados las justifican.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Propone recomendaciones que responden al problema y se apoyan en los resultados disponibles, indicando su alcance. Parcial (50%): Enumera recomendaciones sin mostrar qué resultados las justifican.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "REPORT",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 73,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "380b5d11-4d4a-52a8-a8fd-d95d4eb5fe93",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 73,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "c5f18eb6-faa4-53a1-b396-b2d9ebfe49aa",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 61,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "50469b64-7695-592b-a624-e95be7efd075",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 61,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "dbdceddd-0b4c-59a2-93ee-8486443ffda5",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "908c7e10-f28a-5bcd-861b-a23012420c66",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "a6f1db3c-2793-5b68-b1d3-0f4ff9987e17",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "660eebc9-6b98-5bff-8df1-f823a2ab0d73",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "c2e9bea5-f63d-580c-a0d1-5fc2b4b03cfe",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 46,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "e23c52d5-606d-5567-8d79-06e68d280d4d",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "939c171c-8ce5-53c8-9810-33fe4844bd47",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "be5a70d3-b9cb-5d71-95dd-c87d8d32aa35",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e5744392-a238-5d33-bfb6-9b2dcb08d517",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "74bcf637-8787-53e1-84a9-bda9b15ca48f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0f96b42a-1dc5-5e42-8310-6c3c85a43a24",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "a0d15f66-b615-55cc-81de-28237828d0cb",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1226589a-4932-5eec-b97f-ca2f0a026c37",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bbd3b3f8-1347-561c-9600-8d4b84e49be7",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "97732820-32e9-5a26-843b-7325cd8a7cea",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "7494ba49-f709-5a76-9d37-b683f6521de9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "7bdb782e-02b3-5540-ab37-ef0c50285b00",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "aaf49863-a870-5d98-96e9-3d00934c3874",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "aec7604d-1709-5bf1-ad19-c61bd2bc5679",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "bef5d7d9-383e-5b68-83bc-8ccfa41ef7f5",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e730af75-e239-5bcb-9e7c-ce6c16a8f82e",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-4-informe-investigacion",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.29",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "REPORT",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA Lengua 4 .29 · Datos dados · Ponderada",
+        "lista-ponderada:points:0": "4.63",
+        "lista-ponderada:points:1": "5.78",
+        "lista-ponderada:points:2": "3.47",
+        "lista-ponderada:points:3": "3.47",
+        "lista-ponderada:weight:0": "26.67",
+        "lista-ponderada:weight:1": "33.33",
+        "lista-ponderada:weight:2": "20",
+        "lista-ponderada:weight:3": "20",
+        "lista-ponderada:criterion:0": "Problema, objetivos y método comunicados",
+        "lista-ponderada:criterion:1": "Resultados y argumentos de investigación",
+        "lista-ponderada:criterion:2": "Conclusión sustentada",
+        "lista-ponderada:criterion:3": "Recomendaciones vinculadas con los resultados",
+        "lista-ponderada:indicator:0": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible. Parcial (50%): Enumera objetivos y acciones sin relacionarlos con el problema. Ajuste manual del docente.",
+        "lista-ponderada:indicator:1": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información. Parcial (50%): Reproduce datos y afirmaciones sin mostrar qué relación tienen.",
+        "lista-ponderada:indicator:2": "Formula una conclusión que retoma los resultados disponibles y la interpretación de sus datos, sin añadir afirmaciones ajenas al desarrollo. Parcial (50%): Repite datos o ideas sin explicar qué permiten concluir.",
+        "lista-ponderada:indicator:3": "Propone recomendaciones que responden al problema y se apoyan en los resultados disponibles, indicando su alcance. Parcial (50%): Enumera recomendaciones sin mostrar qué resultados las justifican.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible. Parcial (50%): Enumera objetivos y acciones sin relacionarlos con el problema.",
+        "lista-ponderada:description:1": "Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información. Parcial (50%): Reproduce datos y afirmaciones sin mostrar qué relación tienen.",
+        "lista-ponderada:description:2": "Formula una conclusión que retoma los resultados disponibles y la interpretación de sus datos, sin añadir afirmaciones ajenas al desarrollo. Parcial (50%): Repite datos o ideas sin explicar qué permiten concluir.",
+        "lista-ponderada:description:3": "Propone recomendaciones que responden al problema y se apoyan en los resultados disponibles, indicando su alcance. Parcial (50%): Enumera recomendaciones sin mostrar qué resultados las justifican.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-problem:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-results:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-procedure-conclusion:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.29:49f16425-4d1d-5798-9af5-c69ba22b8020:len-4-informe-investigacion-recommendations:3",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[4,5,3,3]",
+        "lista-ponderada:criterion-weight:0": "4",
+        "lista-ponderada:criterion-weight:1": "5",
+        "lista-ponderada:criterion-weight:2": "3",
+        "lista-ponderada:criterion-weight:3": "3",
+        "lista-ponderada:meta:criteriaCount": "4",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.29",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Problema, objetivos y método comunicados\",\"description\":\"Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible. Parcial (50%): Enumera objetivos y acciones sin relacionarlos con el problema.\",\"progression\":[\"Organiza el informe relacionando el problema y los objetivos con el método descrito y la información disponible.\",\"Se comprende la relación entre problema y método; un objetivo necesita precisarse.\",\"Enumera objetivos y acciones sin relacionarlos con el problema.\",\"Atribuye al método un objetivo incompatible con las acciones descritas.\",\"No relaciona el problema con los objetivos ni el método comunicado.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Resultados y argumentos de investigación\",\"description\":\"Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información. Parcial (50%): Reproduce datos y afirmaciones sin mostrar qué relación tienen.\",\"progression\":[\"Relaciona los resultados disponibles con las afirmaciones del informe y distingue datos, interpretaciones y límites de la información.\",\"Los datos apoyan las afirmaciones; una interpretación necesita indicar su sustento.\",\"Reproduce datos y afirmaciones sin mostrar qué relación tienen.\",\"Atribuye a los datos una conclusión que no permiten o inventa resultados.\",\"No relaciona resultados disponibles con las afirmaciones del informe.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Conclusión sustentada\",\"description\":\"Formula una conclusión que retoma los resultados disponibles y la interpretación de sus datos, sin añadir afirmaciones ajenas al desarrollo. Parcial (50%): Repite datos o ideas sin explicar qué permiten concluir.\",\"progression\":[\"Formula una conclusión que retoma los resultados disponibles y la interpretación de sus datos, sin añadir afirmaciones ajenas al desarrollo.\",\"La conclusión se relaciona con el desarrollo; una afirmación necesita un apoyo más claro.\",\"Repite datos o ideas sin explicar qué permiten concluir.\",\"La conclusión contradice los apoyos del desarrollo o se basa en información ausente.\",\"No presenta la conclusión solicitada ni su relación con el desarrollo.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Recomendaciones vinculadas con los resultados\",\"description\":\"Propone recomendaciones que responden al problema y se apoyan en los resultados disponibles, indicando su alcance. Parcial (50%): Enumera recomendaciones sin mostrar qué resultados las justifican.\",\"progression\":[\"Propone recomendaciones que responden al problema y se apoyan en los resultados disponibles, indicando su alcance.\",\"Las recomendaciones se apoyan en resultados; una condición de aplicación queda implícita.\",\"Enumera recomendaciones sin mostrar qué resultados las justifican.\",\"Una recomendación contradice un resultado o requiere información ausente.\",\"No relaciona recomendaciones con resultados del informe.\"]}",
+        "lista-ponderada:criterion-template:0": "len-4-informe-investigacion-problem",
+        "lista-ponderada:criterion-template:1": "len-4-informe-investigacion-results",
+        "lista-ponderada:criterion-template:2": "len-4-informe-investigacion-procedure-conclusion",
+        "lista-ponderada:criterion-template:3": "len-4-informe-investigacion-recommendations"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+import assert from 'node:assert/strict'
+import { spawnSync } from 'node:child_process'
+import { createRequire } from 'node:module'
+import { readFileSync, writeFileSync } from 'node:fs'
+import { randomBytes, randomUUID } from 'node:crypto'
+
+// Run with native Node after building backend and shared. Never load remote .env credentials.
+const cli = process.env.npm_execpath ?? process.argv[2]
+if (!cli) throw new Error('Proporcionar la ruta del CLI pnpm existente como primer argumento; no se descarga otro CLI.')
+const statusResult = spawnSync(process.execPath, [cli, 'exec', 'supabase', 'status', '--output', 'json'], { encoding: 'utf8' })
+if (statusResult.status !== 0) throw new Error('No se pudo confirmar Supabase local.')
+const local = JSON.parse(statusResult.stdout)
+for (const [key, port] of [['DB_URL', '54332'], ['API_URL', '54321']]) {
+  const url = new URL(local[key])
+  assert.ok(['localhost', '127.0.0.1'].includes(url.hostname) && url.port === port, 'Sólo destinos locales confirmados.')
+}
+const secret = randomBytes(48).toString('hex')
+Object.assign(process.env, { DATABASE_URL: local.DB_URL, SUPABASE_URL: local.API_URL,
+  SUPABASE_ANON_KEY: local.ANON_KEY, SUPABASE_SERVICE_ROLE_KEY: local.SERVICE_ROLE_KEY,
+  JWT_SECRET: secret, NODE_ENV: 'development' })
+const requireBackend = createRequire(new URL('../../apps/backend/package.json', import.meta.url))
+const requireFrontend = createRequire(new URL('../../apps/frontend/package.json', import.meta.url))
+const { prisma } = requireBackend('@aula/database')
+const shared = requireBackend('@aula/shared')
+const { evaluationCatalogCurrent } = requireBackend('./dist/modules/evaluation-instruments/catalog-current.js')
+if (process.argv.includes('--before')) assert.equal(evaluationCatalogCurrent.version,'evaluation-2026.9','La evidencia anterior solo se reproduce con el build original .9; no se sobrescribe con un build corregido.')
+const typescript = requireFrontend('typescript')
+const adapterSource = readFileSync('apps/frontend/src/modules/activities/services/instrumentPreparation.ts', 'utf8')
+const adapter = { exports: {} }
+new Function('require', 'module', 'exports', typescript.transpileModule(adapterSource, {
+  compilerOptions: { module: typescript.ModuleKind.CommonJS, target: typescript.ScriptTarget.ES2022 },
+}).outputText)(name => {
+  if (name === '@aula/shared') return shared
+  if (name === '@/services/apiClient') return { api: {} }
+  throw new Error('Importación inesperada del adaptador: ' + name)
+}, adapter, adapter.exports)
+
+const scienceCase = JSON.parse(readFileSync('data/evaluation-instruments/science-regressions.json','utf8')).find(item=>item.id === (process.argv.includes('--ohm') ? 'ohm' : 'cells'))
+const selectionCases = process.argv.includes('--selection') ? JSON.parse(readFileSync('data/evaluation-instruments/automatic-selection-cases.json','utf8')) : null
+const fixtureId = randomUUID()
+const fingerprints = async () => ({
+  releases: await prisma.$queryRawUnsafe('select version, md5(payload::text) fingerprint from evaluation_catalog_releases order by version'),
+  snapshots: await prisma.$queryRawUnsafe('select id, md5(payload::text) fingerprint from evaluation_instrument_snapshots where school_id <> $1::uuid order by id', fixtureId),
+})
+const previous = await fingerprints()
+// Diagnostic ranking fractions are approximate; all business fields below stay exact.
+const comparableTrace = value => {
+  if (typeof value === 'number') return Number(value.toPrecision(15))
+  if (Array.isArray(value)) return value.map(comparableTrace)
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, comparableTrace(item)]))
+  return value
+}
+let app, userId, lastInput, fixtureCreated = false
+const results = []
+try {
+  const column = await prisma.$queryRawUnsafe("select exists(select 1 from information_schema.columns where table_schema='public' and table_name='evaluation_instrument_snapshots' and column_name='previous_snapshot_id') available")
+  assert.equal(column[0].available, true, 'Falta la migración local de linaje; no se aplica automáticamente.')
+  const [level, cycle, modality, role, version] = await Promise.all([
+    prisma.drAcademicLevel.findUnique({ where: { code: 'secundario' } }),
+    prisma.drAcademicCycle.findUnique({ where: { code: scienceCase.grade === 2 ? 'secundario_primer_ciclo' : 'secundario_segundo_ciclo' } }),
+    prisma.drModality.findUnique({ where: { code: 'academic' } }),
+    prisma.role.findUnique({ where: { key: 'teacher' } }),
+    prisma.curriculumVersion.findUnique({ where: { id: JSON.parse(readFileSync('data/curriculum/secondary-2023.jsonl', 'utf8').split('\n')[0]).id } }),
+  ])
+  assert.ok(level && cycle && modality && role && version, 'Faltan datos locales de referencia.')
+  assert.equal(version.level, 'SECONDARY')
+  const email = `qa-secundaria-${fixtureId}@example.invalid`
+  const authResponse = await fetch(`${local.API_URL}/auth/v1/admin/users`, { method: 'POST',
+    headers: { 'Content-Type': 'application/json', apikey: local.SERVICE_ROLE_KEY, Authorization: `Bearer ${local.SERVICE_ROLE_KEY}` },
+    body: JSON.stringify({ email, email_confirm: true }),
+  })
+  assert.equal(authResponse.ok, true, 'No se pudo crear la identidad ficticia en Auth local.')
+  const authUser = await authResponse.json()
+  const fixture = await prisma.$transaction(async tx => {
+    await tx.school.create({ data: { id: fixtureId, name: 'QA ficticia cobertura secundaria', slug: `qa-secundaria-${fixtureId}` } })
+    const user = await tx.appUser.create({ data: { authUserId: authUser.id, fullName: 'Docente ficticio QA', email, schoolId: fixtureId } })
+    await tx.userRole.create({ data: { userId: user.id, roleId: role.id, schoolId: fixtureId } })
+    const teacher = await tx.teacher.create({ data: { userId: user.id, schoolId: fixtureId, employeeCode: 'QA-001', firstName: 'Docente', lastName: 'Ficticio' } })
+    const year = await tx.schoolYear.create({ data: { schoolId: fixtureId, name: 'QA 2026-2027', startDate: new Date('2026-08-01'), endDate: new Date('2027-07-31') } })
+    const grade = await tx.grade.create({ data: { schoolId: fixtureId, name: scienceCase.grade+'.º QA', sequence: scienceCase.grade, level: 'Secundario', academicLevelId: level.id, academicCycleId: cycle.id, defaultModalityId: modality.id } })
+    const section = await tx.section.create({ data: { schoolId: fixtureId, gradeId: grade.id, name: 'QA' } })
+    const subject = await tx.subject.create({ data: { schoolId: fixtureId, code: scienceCase.code, name: scienceCase.name } })
+    const assignment = await tx.sectionSubject.create({ data: { schoolId: fixtureId, schoolYearId: year.id, gradeId: grade.id, sectionId: section.id, subjectId: subject.id, teacherId: teacher.id } })
+    const period = await tx.academicPeriod.create({ data: { schoolId: fixtureId, schoolYearId: year.id, name: 'QA P1', sequence: 1, startDate: year.startDate, endDate: year.endDate } })
+    return { user, year, assignment, period }
+  })
+  fixtureCreated = true
+  userId = fixture.user.id
+  const { createApplication } = requireBackend('./dist/bootstrap.js')
+  app = await createApplication()
+  app.useLogger(false)
+  const browserResponses = []
+  if (process.argv.includes('--browser')) app.use((req,res,next)=>{
+    if (req.url.includes('/evaluation-instruments/')) {
+      const send = res.json.bind(res)
+      res.json = value => {
+        const payload=value.data ?? value
+        browserResponses.push({request:req.body,status:res.statusCode,response:{catalogVersion:payload.catalogVersion,activityType:payload.activityType,curriculumScopeId:payload.curriculumScopeId,criteria:payload.criteria?.map(({sourceReferences,...criterion})=>criterion)}})
+        writeFileSync(`docs/curriculum/cobertura-secundaria/evidencias/science-${scienceCase.id}-browser-trace.json`,JSON.stringify(browserResponses,null,2)+'\n')
+        return send(value)
+      }
+    }
+    next()
+  })
+  if (process.argv.includes('--browser')) app.use((req,res,next)=>{
+    if(req.url !== '/api/v1/qa/context') return next()
+    res.setHeader('Set-Cookie','aulabase_session='+jwt+'; HttpOnly; Path=/; SameSite=Lax')
+    res.json({scienceCase,sectionSubjectId:fixture.assignment.id,fixtureSchoolId:fixtureId,userId,schoolYearId:fixture.year.id,academicPeriodId:fixture.period.id,catalogVersion:evaluationCatalogCurrent.version})
+  })
+  await app.listen(0, '127.0.0.1')
+  const base = `http://127.0.0.1:${app.getHttpServer().address().port}/api/v1`
+    // Synthetic session tests the real JWT/role/assignment guards, not the password login flow.
+  const { JwtService } = requireBackend('@nestjs/jwt')
+  const jwt = new JwtService({ secret }).sign({ sub: userId, email, tokenVersion: 1 }, { expiresIn: process.argv.includes('--browser') ? '30m' : '5m' })
+  const request = async (path, body, expected = 200, authenticated = true) => {
+    const response = await fetch(base + path, { method: 'POST', headers: {
+      'Content-Type': 'application/json', ...(authenticated ? { cookie: `aulabase_session=${jwt}` } : {}),
+    }, body: JSON.stringify(body) })
+    const json = await response.json()
+    assert.equal(response.status, expected, `${path}: ${JSON.stringify(json).slice(0, 450)}`)
+    return json.data
+  }
+  const descriptions = selectionCases ? selectionCases.map(item=>item.description) : [scienceCase.description]
+  await request('/evaluation-instruments/recommend', {}, 401, false)
+  for (const description of descriptions) for (const maxScore of [20,17.35]) for (const neutral of [false,true]) {
+    const selectionCase = selectionCases?.find(item=>item.description===description)
+    const activityTitle = neutral ? 'Actividad de aprendizaje' : selectionCase?.activityTitle ?? scienceCase.activityTitle
+    for (const requestedInstrumentType of selectionCases ? [undefined] : ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']) {
+      const interpreted = await request('/evaluation-instruments/interpret', { sectionSubjectId: fixture.assignment.id, activityTitle, description, curriculumVersionId: version.id })
+      const proposal = await request('/evaluation-instruments/recommend', { sectionSubjectId: fixture.assignment.id, activityTitle, description,
+        curriculumVersionId: version.id, pedagogicalActivityType: interpreted.activityType,
+        participationMode: 'INDIVIDUAL', maxScore, preferredInstrumentType: requestedInstrumentType })
+      const instrumentType = proposal.instrumentType
+      assert.equal(proposal.catalogVersion, evaluationCatalogCurrent.version)
+      assert.equal(proposal.totalScoreUnits, Math.round(maxScore*100))
+      if (selectionCase) {assert.equal(instrumentType,selectionCase.instrument);assert.equal(proposal.internalTrace.ruleId,selectionCase.rule);assert.equal(proposal.activityType,selectionCase.activityType)}
+      else if (!process.argv.includes('--before')) { assert.equal(instrumentType,requestedInstrumentType);assert.equal(proposal.criteria.length,5); assert.ok(proposal.criteria.every(c=>c.templateId.startsWith(`science-${scienceCase.id}-`))); assert.equal(proposal.activityType,scienceCase.expectedType) }
+      const fields = adapter.exports.recommendationToFields(proposal, activityTitle)
+      assert.deepEqual(shared.validateInstrumentDefinition(instrumentType, fields, maxScore), [])
+      const snapshot = adapter.exports.alignRecommendationWithFields(proposal, fields, maxScore)
+      assert.ok(snapshot, 'El adaptador no pudo alinear el snapshot final.')
+      const input = { creationId: randomUUID(), sectionSubjectId: fixture.assignment.id, academicPeriodId: fixture.period.id, schoolYearId: fixture.year.id,
+        competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, name: activityTitle, description, activityType: 'individual', date: '', maxScore,
+        instrumentType, instrumentCriteria: fields, instrumentSnapshot: snapshot, pedagogicalActivityType: proposal.activityType,
+        evaluationTechnique: interpreted.suggestedEvaluationTechnique ?? (proposal.activityType === 'PROJECT' ? 'proyecto' : 'resolucion-problemas') }
+      results.push({phase:process.argv.includes('--before') ? 'before':'after', case:scienceCase.id, neutral, maxScore, instrumentType, interpreted, proposal, fields})
+      if (process.argv.includes('--before')) continue
+      lastInput = input
+      const saved = await request('/activities', input, 201)
+      assert.equal(saved.id, input.creationId)
+      const activity = await prisma.evaluationActivity.findUnique({ where: { id: saved.id }, include: { instrumentSnapshot: true, instrument: true } })
+      assert.equal(activity.schoolId, fixtureId)
+      assert.deepEqual(activity.instrument.criteria, fields)
+      const { internalTrace: storedTrace, ...storedEvidence } = activity.instrumentSnapshot.payload
+      const { internalTrace: expectedTrace, ...expectedEvidence } = snapshot
+      assert.deepEqual(storedEvidence, expectedEvidence)
+      assert.deepEqual(comparableTrace(storedTrace), comparableTrace(expectedTrace))
+      assert.equal(activity.instrumentSnapshot.versionNo, 1)
+      const retried = await request('/activities', input, 201)
+      assert.equal(retried.id, saved.id)
+    }
+  }
+  writeFileSync('docs/curriculum/cobertura-secundaria/evidencias/'+(selectionCases?'automatic-selection':'science-'+scienceCase.id)+'-'+(process.argv.includes('--before')?'before':'after')+'.json',JSON.stringify({catalogVersion:evaluationCatalogCurrent.version,results},null,2)+'\n')
+  if (process.argv.includes('--browser')) {
+    console.log(JSON.stringify({browserApi:base,case:scienceCase.id})); await new Promise(resolve=>process.stdin.once('data',resolve))
+  }
+  if (process.argv.includes('--before')) {console.log(JSON.stringify({baseline:scienceCase.id,catalog:evaluationCatalogCurrent.version,results:results.length}))} else {
+  const expectedCount = descriptions.length * (selectionCases ? 4 : 16)
+  assert.equal(await prisma.evaluationActivity.count({ where: { schoolId: fixtureId } }), expectedCount)
+  assert.equal(await prisma.evaluationInstrumentSnapshot.count({ where: { schoolId: fixtureId } }), expectedCount)
+  const oldActivity = await prisma.evaluationActivity.findUnique({ where: { id: lastInput.creationId }, include: { instrumentSnapshot: true } })
+  const oldFingerprint = await prisma.$queryRawUnsafe('select md5(payload::text) fingerprint from evaluation_instrument_snapshots where id=$1::uuid', oldActivity.instrumentSnapshot.id)
+  const editedFields = { ...lastInput.instrumentCriteria, 'lista-ponderada:criterion:0': `${lastInput.instrumentCriteria['lista-ponderada:criterion:0']} (revisión docente)` }
+  const editedSnapshot = adapter.exports.alignRecommendationWithFields(lastInput.instrumentSnapshot, editedFields, 17.35)
+  assert.ok(editedSnapshot)
+  const revisionInput = { ...lastInput, creationId: undefined, id: lastInput.creationId, instrumentCriteria: editedFields, instrumentSnapshot: editedSnapshot }
+  await request('/activities', revisionInput, 201)
+  const revised = await prisma.evaluationActivity.findUnique({ where: { id: lastInput.creationId }, include: { instrumentSnapshot: true, instrument: true } })
+  assert.equal(revised.instrumentSnapshot.versionNo, 2)
+  assert.equal(revised.instrumentSnapshot.previousSnapshotId, oldActivity.instrumentSnapshot.id)
+  assert.equal(revised.instrument.criteria['lista-ponderada:criterion:0'], editedFields['lista-ponderada:criterion:0'])
+  assert.deepEqual(await prisma.$queryRawUnsafe('select md5(payload::text) fingerprint from evaluation_instrument_snapshots where id=$1::uuid', oldActivity.instrumentSnapshot.id), oldFingerprint)
+  await request('/activities', { ...lastInput, name: 'Envío distinto con el mismo identificador' }, 409)
+  assert.equal(await prisma.evaluationActivity.count({ where: { schoolId: fixtureId } }), expectedCount)
+  assert.equal(await prisma.evaluationInstrumentSnapshot.count({ where: { schoolId: fixtureId } }), expectedCount + 1)
+  assert.deepEqual(await fingerprints(), previous, 'Cambió un release o snapshot ajeno a esta fixture.')
+  console.log(JSON.stringify({ target: 'Supabase local 54332', fixtureSchoolId: fixtureId, catalogVersion: evaluationCatalogCurrent.version,
+    authentication: 'JWT sintético con guards reales; no prueba de login', persistedActivities: results.length,
+    retriedWithoutDuplicates: true, previousReleasesAndSnapshotsPreserved: true,
+    manualRevisionPreserved: true, revisionLineage: [oldActivity.instrumentSnapshot.id, revised.instrumentSnapshot.id],
+    changedRetryRejected: true, cases:results.length }))
+  }
+} finally {
+  if (fixtureCreated) {
+    await prisma.userRole.updateMany({ where: { userId }, data: { status: 'INACTIVE' } })
+    await prisma.appUser.update({ where: { id: userId }, data: { status: 'INACTIVE', tokenVersion: { increment: 1 } } })
+    await prisma.teacher.updateMany({ where: { schoolId: fixtureId }, data: { status: 'INACTIVE' } })
+    await prisma.school.update({ where: { id: fixtureId }, data: { status: 'INACTIVE' } })
+  }
+  if (app) await app.close()
+  await prisma.$disconnect()
+}

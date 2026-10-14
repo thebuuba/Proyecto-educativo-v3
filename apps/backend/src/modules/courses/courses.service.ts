@@ -13,6 +13,7 @@ import {
   optionCache,
   optionCacheKeys,
 } from '../../common/cache/option-cache'
+import { defaultSchoolYear } from '../../common/school-year-defaults'
 import { CreateGradeDto } from './dto/create-grade.dto'
 import { UpdateGradeDto } from './dto/update-grade.dto'
 import { CreateSectionDto } from './dto/create-section.dto'
@@ -69,13 +70,11 @@ async function resolveSchoolYear(schoolId: string) {
     select: { id: true, name: true },
   })
   if (sy) return sy
-  const year = new Date().getFullYear()
+  const defaults = defaultSchoolYear()
   const schoolYear = await prisma.schoolYear.create({
     data: {
       schoolId,
-      name: `${year}-${year + 1}`,
-      startDate: new Date(year, 7, 1),
-      endDate: new Date(year + 1, 6, 31),
+      ...defaults,
       isCurrent: true,
     },
     select: { id: true, name: true },
@@ -185,6 +184,7 @@ export class CoursesService {
         ...grade,
         status: status(grade.status),
         academicLevelName: grade.academicLevelId ? levelById.get(grade.academicLevelId)?.name ?? null : null,
+        academicLevelCode: grade.academicLevelId ? levelById.get(grade.academicLevelId)?.code ?? null : null,
         academicCycleName: grade.academicCycleId ? cycleById.get(grade.academicCycleId)?.name ?? null : null,
         defaultModalityName: grade.defaultModalityId ? modalityById.get(grade.defaultModalityId)?.name ?? null : null,
         sections: sections

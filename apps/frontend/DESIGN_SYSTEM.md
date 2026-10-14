@@ -12,12 +12,14 @@ AulaBase usa los valores de la referencia de Inicio, definidos en `src/semantic-
 - Verde `#10b981`: éxito, completado y asistencia.
 - Coral `hsl(4 80% 60%)`: error, incidencia y acción destructiva.
 - Amarillo `#fbbf24`: pendiente y actividades.
-- Violeta, turquesa, naranja, rosa y pizarra: identidad puntual de los módulos en iconos y accesos rápidos.
+- No se permiten familias de identidad adicionales: usar exclusivamente azul, verde, coral, amarillo, gris, blanco y texto oscuro.
 - Gris `hsl(214 32% 91%)`: estructura, controles secundarios, vacío e inactividad.
 - Blanco `#FFFFFF`: tarjetas, menús, modales y superficies principales.
 - Texto `hsl(220 30% 18%)`: títulos y contenido principal.
 
 La fuente de la interfaz es **Poppins**. El fondo general es `hsl(213 45% 96%)`.
+
+La tipografía usa pesos 400 para texto normal, 500 para navegación y controles secundarios, y 600 para títulos, cifras, botones principales y etiquetas. No se usan pesos superiores a 600. Los títulos principales llevan `tracking-tight`; las etiquetas cortas en mayúsculas usan 10 px, peso 600 y espaciado entre letras de `0.14em` a `0.18em`.
 
 Los tonos suaves deben derivarse mediante tokens CSS o `color-mix`; no se deben introducir nuevas familias cromáticas.
 
@@ -58,6 +60,16 @@ También usar `Button`, `Card`, `EmptyState`, `Input`, `Select`, `Textarea`, `Mo
 - Radio estándar de tarjetas principales: `1.5rem` / `rounded-3xl`.
 - Controles: `rounded-xl`.
 - Sombras: suaves; usar `dashboard-warm-shadow` o las sombras de componentes compartidos.
+
+## Espaciado exterior de los paneles
+
+Todos los paneles autenticados usan el espaciado de Cursos, definido en `AppLayout`: margen horizontal de 16 px en móvil, 24 px desde `sm` y 32 px desde `lg`; separación superior e inferior de 20 px, o 32 px desde `lg`.
+
+La separación vertical pertenece exclusivamente a `.app-main` y al token `--app-page-block-gap` de `module-semantic-layout.css`. La raíz de un módulo no debe añadir `mt-*`, `pt-*`, `py-*` ni otro margen o relleno superior: su primer bloque visible comienza en el límite de contenido del layout. El relleno interno de las tarjetas y la separación entre bloques sí pertenecen al módulo.
+
+Al cambiar de pantalla (`pathname`), `AppLayout` devuelve el desplazamiento al inicio antes de pintar la nueva vista. Cambiar filtros dentro de la misma pantalla conserva la posición; el desplazamiento anterior no debe alterar el margen inicial de otro módulo.
+
+El contenido ocupa todo el ancho disponible. No añadir límites de ancho ni centrado automático al contenedor principal de un módulo: desplazan sus bordes respecto a los demás paneles. Los formularios, modales y bloques internos sí pueden limitar su ancho cuando lo necesiten.
 
 ## Encabezados
 
@@ -145,7 +157,7 @@ Esas funciones siempre usan los tokens semánticos oficiales.
 
 ## Prohibido
 
-No introducir colores Tailwind directos fuera de la paleta de referencia en módulos de negocio. Los acentos violeta, turquesa, naranja, rosa y pizarra se consumen mediante tokens, no con valores repetidos en cada pantalla:
+No introducir colores Tailwind directos fuera de la paleta de referencia en módulos de negocio. No usar acentos violeta, turquesa, naranja, rosa ni pizarra, tampoco mediante tokens de identidad:
 
 ```text
 bg-violet-50
@@ -182,12 +194,17 @@ O, preferiblemente, `SemanticUI`.
 - Atención explícita: `warning` solo cuando la acción requiera cuidado.
 - Acciones poco frecuentes deben ir en un menú `Acciones` o `…`.
 
+Por indicación de diseño, los botones de cancelación usan rojo oficial mediante `data-ui-action="cancel"`. Los botones con X usan `data-ui-action="close"`: son rojos fuera de un diálogo y, dentro de un modal, pasan de neutro a rojo al hacer hover o recibir foco de teclado. Estas reglas compartidas viven en `module-semantic-layout.css` y se aplican tanto a `Button` como a botones nativos.
+
+Los botones de todos los modales tienen forma de píldora. Las acciones usan altura mínima de 36 px, texto de 13 px y relleno horizontal de 14 px; en dispositivos táctiles conservan un mínimo de 44 px. Las pestañas, opciones de selección y controles de icono mantienen sus dimensiones propias. `Button` expone `data-ui-size` para identificar los controles de icono.
+
 ## Formularios y modales
 
 - Usar `Input`, `Select` y `Textarea`; no crear tamaños/focos locales salvo necesidad real.
 - Los controles estándar comparten altura, radio y foco azul.
 - `Modal` debe encargarse de cabecera, icono semántico y cierre.
 - `ConfirmDialog` debe usarse para confirmaciones y acciones destructivas.
+- Pulsar fuera cierra el diálogo superior mediante `useOutsideClick`; `Modal` y `Drawer` ya lo incorporan. Los modales personalizados deben usar el mismo hook sobre su contenedor con `role="dialog"`. El clic se consume para no activar controles del fondo. Las operaciones pendientes y las animaciones de salida conservan su bloqueo de cierre.
 - No crear gradientes de marca en botones de formularios.
 - El contexto del módulo puede usar un tono semántico; la acción principal sigue siendo azul salvo que el significado exija otra cosa.
 
@@ -223,6 +240,14 @@ No existe un puente global de colores heredados. Nunca crear uno nuevo.
 - Todo componente nuevo debe usar directamente tokens o componentes semánticos.
 
 Cuando se migre un subcomponente heredado, retirar su regla localizada de compatibilidad en el mismo cambio cuando sea seguro hacerlo. Una excepción temporal nunca debe filtrarse a otro módulo.
+
+## Configuración
+
+- Organizar `/configuracion` en Centro educativo, Calendario, Usuarios, Cuenta e interfaz y Módulos; cada categoría usa tarjetas blancas y acciones semánticas compartidas.
+- Mantener el margen del layout, títulos oscuros, campos y botones de acción redondos. `settings-design.css` solo ajusta la forma de controles dentro de `settings-workspace`; no introduce una paleta de compatibilidad.
+- Mostrar únicamente ajustes que tengan soporte real en las API o en las preferencias del navegador. Los roles, correo y estado de usuarios permanecen informativos.
+- Las preferencias personales también están disponibles en `/perfil`: menú lateral expandido y reducción de animaciones. Esta última se combina con la preferencia de movimiento del sistema operativo.
+- Mantener los enlaces antiguos a años y períodos y ofrecer accesos directos a los ajustes existentes de cada módulo.
 
 ## Criterio final
 

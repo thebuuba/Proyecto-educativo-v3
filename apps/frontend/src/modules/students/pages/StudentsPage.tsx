@@ -49,6 +49,8 @@ import type {
   EnrollmentCourse,
   ImportCourseStudentRow,
 } from '@/modules/students/types'
+import './students-design.css'
+
 import { cn } from '@/utils/cn'
 import { createScopedTtlCache } from '@/utils/scopedTtlCache'
 
@@ -357,16 +359,17 @@ export function StudentsPage({ initialCourseId, initialAction, embedded = false,
   }
 
   return (
-    <section className="w-full min-w-0 space-y-5">
+    <section className="students-workspace w-full min-w-0 space-y-6">
       {!embedded ? (
         <PageHero
           title="Matrícula"
           description="Selecciona un curso para matricular, importar y revisar estudiantes."
           icon={UsersRound}
-          tone="success"
+          tone="info"
+          className="students-page-heading"
           eyebrow="Gestión de estudiantes"
           actions={
-            <label className="w-full min-w-[18rem] text-[10px] font-extrabold uppercase tracking-[0.14em] text-muted-foreground sm:w-[22rem]">
+            <label className="w-full min-w-0 text-xs font-medium text-muted-foreground sm:w-72">
               Curso
               <Select
                 value={selectedCourseId}
@@ -387,9 +390,9 @@ export function StudentsPage({ initialCourseId, initialAction, embedded = false,
             </label>
           }
         >
-          {!loadingCourses && courses.length > 0 ? (
+          {!selectedCourse && !loadingCourses && courses.length > 0 ? (
             <div className="flex flex-wrap gap-2">
-              <StatusBadge tone="success">{courses.length} cursos disponibles</StatusBadge>
+              <StatusBadge tone="neutral">{courses.length} cursos disponibles</StatusBadge>
               {selectedCourse ? <StatusBadge tone="info">Curso seleccionado</StatusBadge> : <StatusBadge tone="warning">Selecciona un curso</StatusBadge>}
             </div>
           ) : null}
@@ -399,7 +402,7 @@ export function StudentsPage({ initialCourseId, initialAction, embedded = false,
       <FeedbackMessage tone="error" message={actionError} />
       <FeedbackMessage tone="success" message={actionSuccess} />
 
-      {!embedded && !loadingCourses && courses.length > 0 ? (
+      {!embedded && !selectedCourse && !loadingCourses && courses.length > 0 ? (
         <EnrollmentFlowSteps hasSelectedCourse={Boolean(selectedCourse)} />
       ) : null}
 
@@ -423,36 +426,37 @@ export function StudentsPage({ initialCourseId, initialAction, embedded = false,
           }
         />
       ) : !selectedCourse ? (
-        <section className="dashboard-warm-shadow overflow-hidden rounded-3xl bg-card">
-          <div className="flex flex-col gap-3 bg-success/12 px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-7">
+        <section className="space-y-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-muted-foreground">Paso 1 · Selección</p>
-              <h2 className="mt-1 text-2xl font-extrabold tracking-tight text-foreground">Elige el curso que vas a gestionar</h2>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">Paso 1 · Selección</p>
+              <h2 className="mt-1 text-2xl font-semibold tracking-tight text-foreground">Elige el curso que vas a gestionar</h2>
               <p className="mt-1 text-sm text-muted-foreground">
                 Puedes abrirlo desde esta lista o utilizar el selector superior.
               </p>
             </div>
-            <StatusBadge tone="success">{courses.length} curso{courses.length === 1 ? '' : 's'} disponible{courses.length === 1 ? '' : 's'}</StatusBadge>
+            <StatusBadge tone="neutral">{courses.length} curso{courses.length === 1 ? '' : 's'} disponible{courses.length === 1 ? '' : 's'}</StatusBadge>
           </div>
 
-          <div className="space-y-8 p-5 sm:p-7">
+          <div className="space-y-8">
             {groupedCourses.map(([level, levelCourses]) => (
               <section key={level} aria-labelledby={`courses-${level.toLowerCase()}`}>
                 <div className="mb-4 flex items-center gap-3">
-                  <h3 id={`courses-${level.toLowerCase()}`} className="text-lg font-extrabold text-foreground">{level}</h3>
+                  <h3 id={`courses-${level.toLowerCase()}`} className="text-lg font-semibold text-foreground">{level}</h3>
                   <StatusBadge tone="neutral">{levelCourses.length} curso{levelCourses.length === 1 ? '' : 's'}</StatusBadge>
                 </div>
-                <div className={cn('grid min-w-0 grid-cols-1 gap-4', levelCourses.length > 1 && '2xl:grid-cols-2')}>
+                <div className="grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                   {levelCourses.map((course) => (
-                    <div key={course.id} className="relative">
+                    <div key={course.id} className="relative min-w-0">
                       <CourseCard course={course} onSelect={() => selectCourse(course.id)} />
                       {canCreateEnrollment ? (
                         <Link
                           to={`/cursos?courseId=${course.sectionId}`}
                           aria-label={`Administrar curso ${course.gradeName} ${course.sectionName}`}
-                          className="absolute right-4 top-4 inline-flex size-10 items-center justify-center gap-2 rounded-xl bg-muted/75 text-xs font-bold text-muted-foreground transition hover:bg-primary/12 hover:text-primary-variant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:w-auto sm:px-3"
+                          title={`Administrar curso ${course.gradeName} ${course.sectionName}`}
+                          className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-xl text-muted-foreground transition hover:bg-primary/12 hover:text-primary-variant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                         >
-                          <Archive className="size-4" /> <span className="hidden sm:inline">Administrar curso</span>
+                          <Archive className="size-4" />
                         </Link>
                       ) : null}
                     </div>
@@ -474,15 +478,15 @@ export function StudentsPage({ initialCourseId, initialAction, embedded = false,
           </button>
 
           <section className="dashboard-warm-shadow overflow-hidden rounded-3xl bg-card">
-            <div className="bg-success/12 px-5 py-6 sm:px-7">
+            <div className="px-5 py-6 sm:px-6">
               <div className="flex flex-col gap-5 xl:flex-row xl:items-start xl:justify-between">
                 <div className="flex min-w-0 items-start gap-4">
-                  <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-success/22 text-lg font-extrabold text-foreground">
+                  <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary/12 text-lg font-semibold text-foreground">
                     {selectedCourse.gradeName}{selectedCourse.sectionName}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-muted-foreground">Curso seleccionado</p>
-                    <h2 className="mt-1 break-words text-2xl font-extrabold tracking-tight text-foreground">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">Curso seleccionado</p>
+                    <h2 className="mt-1 break-words text-2xl font-semibold tracking-tight text-foreground">
                       {selectedCourse.gradeName} {selectedCourse.sectionName}
                     </h2>
                     <p className="mt-1 text-sm font-medium text-muted-foreground">
@@ -509,7 +513,7 @@ export function StudentsPage({ initialCourseId, initialAction, embedded = false,
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid gap-3 px-5 pb-5 sm:grid-cols-2 sm:px-6 xl:grid-cols-4">
               <CourseSummaryItem icon={<UsersRound className="size-5" />} label="Estudiantes" value={String(students.length)} detail="Matrícula activa" tone="success" />
               <CourseSummaryItem icon={<GraduationCap className="size-5" />} label="Grado y sección" value={`${selectedCourse.gradeName} ${selectedCourse.sectionName}`} detail={selectedCourse.area || 'Área no definida'} tone="info" />
               <CourseSummaryItem icon={<BookOpen className="size-5" />} label="Asignaturas" value={String(selectedCourse.subjectCount ?? selectedCourse.subjects?.length ?? 1)} detail={selectedCourse.subjectName} tone="info" />
@@ -522,19 +526,14 @@ export function StudentsPage({ initialCourseId, initialAction, embedded = false,
             </div>
           </section>
 
-          <section className="dashboard-warm-shadow overflow-hidden rounded-3xl bg-card">
+          <section className="dashboard-warm-shadow rounded-3xl bg-card">
             <header className="flex flex-col gap-3 border-b border-border/65 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7">
               <div>
-                <h2 className="text-lg font-extrabold text-foreground">Estudiantes matriculados</h2>
+                <h2 className="text-lg font-semibold text-foreground">Estudiantes matriculados</h2>
                 <p className="mt-0.5 text-sm text-muted-foreground">
                   {students.length === 0 ? 'Comienza agregando la matrícula de este curso.' : `${students.length} estudiante${students.length === 1 ? '' : 's'} en la matrícula activa.`}
                 </p>
               </div>
-              {students.length > 0 && canCreateEnrollment ? (
-                <Button variant="secondary" className="h-10 px-4 text-sm" onClick={openCreateForm}>
-                  <Plus className="size-4 text-primary" /> Nuevo estudiante
-                </Button>
-              ) : null}
             </header>
 
             {loadingStudents ? (
@@ -550,14 +549,12 @@ export function StudentsPage({ initialCourseId, initialAction, embedded = false,
                 onEdit={openEditForm}
                 onDeactivate={setDeactivateTarget}
                 onTransfer={openTransferForm}
-                onAdd={openCreateForm}
-                onImport={() => setImportModalOpen(true)}
               />
             ) : (
               <div className="grid min-h-[310px] gap-8 px-6 py-9 md:grid-cols-[1.15fr_0.85fr] md:px-9">
                 <div className="flex flex-col justify-center">
                   <SemanticIcon icon={UsersRound} tone="success" className="size-12" iconClassName="size-6" />
-                  <h3 className="mt-5 text-2xl font-extrabold tracking-tight text-foreground">Aún no hay estudiantes en este curso</h3>
+                  <h3 className="mt-5 text-2xl font-semibold tracking-tight text-foreground">Aún no hay estudiantes en este curso</h3>
                   <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">
                     Agrega estudiantes individualmente o importa una lista. Después podrás gestionar asistencia, calificaciones y reportes desde su matrícula.
                   </p>
@@ -573,7 +570,7 @@ export function StudentsPage({ initialCourseId, initialAction, embedded = false,
                   ) : null}
                 </div>
 
-                <aside className="flex flex-col justify-center rounded-2xl bg-warning/18 p-6">
+                <aside className="flex flex-col justify-center rounded-2xl bg-muted/60 p-6">
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">Datos recomendados</p>
                   <ul className="mt-4 space-y-3 text-sm leading-5 text-muted-foreground">
                     <li className="flex gap-3"><span className="font-bold text-foreground">01</span> Matrícula o código del estudiante</li>
@@ -654,11 +651,11 @@ function CourseSummaryItem({
   }
 
   return (
-    <div className="flex min-w-0 items-start gap-3 bg-card px-5 py-5 sm:px-6">
+    <div className="flex min-w-0 items-start gap-3 rounded-2xl bg-muted/60 p-3">
       <span className={cn('flex size-10 shrink-0 items-center justify-center rounded-xl text-foreground', toneClass[tone])}>{icon}</span>
       <div className="min-w-0">
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">{label}</p>
-        <p className="mt-1 truncate text-base font-extrabold text-foreground" title={value}>{value}</p>
+        <p className="text-xs font-medium text-muted-foreground">{label}</p>
+        <p className="mt-1 truncate text-base font-semibold text-foreground" title={value}>{value}</p>
         <p className="mt-0.5 truncate text-xs text-muted-foreground" title={detail}>{detail}</p>
       </div>
     </div>
@@ -669,12 +666,12 @@ function EnrollmentFlowSteps({ hasSelectedCourse }: { hasSelectedCourse: boolean
   return (
     <nav aria-label="Progreso de matrícula" className="dashboard-warm-shadow flex items-center gap-3 rounded-2xl bg-card px-4 py-3 sm:w-fit">
       <span className="flex items-center gap-2 text-sm font-bold text-foreground">
-        <span className="flex size-7 items-center justify-center rounded-lg bg-success/20 text-xs text-foreground">1</span>
+        <span className="flex size-7 items-center justify-center rounded-lg bg-primary/12 text-xs text-foreground">1</span>
         Elegir curso
       </span>
       <span className="h-px w-8 bg-border" aria-hidden="true" />
       <span className={cn('flex items-center gap-2 text-sm font-bold', hasSelectedCourse ? 'text-foreground' : 'text-muted-foreground')}>
-        <span className={cn('flex size-7 items-center justify-center rounded-lg text-xs', hasSelectedCourse ? 'bg-success/20 text-foreground' : 'bg-muted text-muted-foreground')}>2</span>
+        <span className={cn('flex size-7 items-center justify-center rounded-lg text-xs', hasSelectedCourse ? 'bg-primary/12 text-foreground' : 'bg-muted text-muted-foreground')}>2</span>
         Gestionar matrícula
       </span>
     </nav>

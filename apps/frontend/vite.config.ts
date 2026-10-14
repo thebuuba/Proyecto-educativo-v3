@@ -65,6 +65,7 @@ export default defineConfig(({ mode }) => {
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@aula/shared': path.resolve(__dirname, '../../packages/shared/src/index.ts'),
     },
   },
   }

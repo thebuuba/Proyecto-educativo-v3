@@ -1,8 +1,12 @@
-import { IsArray, IsDateString, IsIn, IsNotEmpty, IsNumber, IsObject, IsOptional, IsString, IsUUID, Max, MaxLength, Min } from 'class-validator'
+import { IsArray, Matches, IsIn, IsNotEmpty, IsNumber, IsObject, IsOptional, IsString, IsUUID, Max, MaxLength, Min } from 'class-validator'
 import type { InstrumentRecommendation } from '@aula/shared'
-import { evaluationCatalogV1 } from '../../evaluation-instruments/catalog-v1'
+import { evaluationCatalogCurrent } from '../../evaluation-instruments/catalog-current'
 
 export class SaveActivityDto {
+  @IsOptional()
+  @IsUUID('4')
+  creationId?: string
+
   @IsOptional()
   @IsString()
   id?: string
@@ -44,7 +48,7 @@ export class SaveActivityDto {
   maxScore!: number
 
   @IsOptional()
-  @IsDateString()
+  @Matches(/^(?:\d{4}-\d{2}-\d{2})?$/)
   date?: string
 
   @IsOptional()
@@ -61,6 +65,7 @@ export class SaveActivityDto {
 
   @IsOptional()
   @IsString()
+  @IsIn(['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'])
   instrumentType?: string
 
   @IsOptional()
@@ -68,7 +73,7 @@ export class SaveActivityDto {
   instrumentCriteria?: Record<string, string>
 
   @IsOptional()
-  @IsIn(evaluationCatalogV1.activityTypes.map(({ id }) => id))
+  @IsIn(evaluationCatalogCurrent.activityTypes.map(({ id }) => id))
   pedagogicalActivityType?: string
 
   @IsOptional()
@@ -94,6 +99,7 @@ export class SaveActivityDto {
 
   @IsOptional()
   @IsString()
+  @IsIn(['individual', 'group'])
   activityType?: 'individual' | 'group'
 
   @IsOptional()
@@ -103,9 +109,11 @@ export class SaveActivityDto {
 
   @IsOptional()
   @IsString()
+  @IsIn(['inicio', 'desarrollo', 'cierre', ''])
   planningMoment?: 'inicio' | 'desarrollo' | 'cierre' | ''
 
   @IsOptional()
   @IsString()
+  @IsIn(['grading', 'planning'])
   source?: 'grading' | 'planning'
 }

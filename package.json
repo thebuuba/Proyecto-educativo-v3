@@ -6,6 +6,8 @@
   },
   "scripts": {
     "dev": "turbo dev",
+    "dev:local": "node scripts/dev-local.mjs",
+    "dev:local:seed": "node scripts/seed-dev-local.mjs",
     "build": "turbo build",
     "lint": "turbo lint",
     "test": "pnpm --filter backend test",
@@ -22,7 +24,9 @@
     "cloudflare:types": "wrangler types",
     "supabase:local": "supabase start -x edge-runtime,logflare,vector",
     "supabase:stop": "supabase stop",
-    "supabase:keepalive": "node scripts/supabase-keepalive.mjs"
+    "supabase:keepalive": "node scripts/supabase-keepalive.mjs",
+    "catalog:diagnose:development": "pnpm --filter backend build && pnpm --filter @aula/database exec dotenv -e ../../.dev.vars.local -- node ../../apps/backend/dist/scripts/diagnose-evaluation-catalog.js",
+    "catalog:prepare:development": "pnpm --filter backend build && pnpm --filter @aula/database exec dotenv -e ../../.dev.vars.local -- node ../../apps/backend/dist/scripts/install-evaluation-catalog.js"
   },
   "devDependencies": {
     "pdfjs-dist": "^6.1.200",

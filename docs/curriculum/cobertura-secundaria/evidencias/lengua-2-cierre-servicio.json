@@ -1,0 +1,4180 @@
+{
+  "verifiedAt": "2026-10-14T01:46:31.839Z",
+  "complete": true,
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "56e72f427df454e4477117c35ca35b9d8de90292",
+      "dirty": true,
+      "startedAt": "2026-10-14T01:28:30.981Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.24"
+    }
+  },
+  "results": [
+    {
+      "case": "written-guide",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "a80c969350ef2acf5ea54378b26524c973cdfb543072ca4afbb16da5e1ed477b"
+    },
+    {
+      "case": "written-guide",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8fee9719a785e9d04f82f43c4e16e75fc87232dc5c78f22cc24bc267dd0bf7f5"
+    },
+    {
+      "case": "written-guide",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "d37e0bb8673fbc714bf40b0080774b690ed37d8cc140774ae69707f1c640ab69"
+    },
+    {
+      "case": "written-guide",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "ee26f8e17662c2223a1518e66f67bec92c3bd5ab8225dda494a9bdce52d9aba5"
+    },
+    {
+      "case": "article-comparative-construction",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "86c2a9e3ab81e7682e857fd573d65ba9f61e6bf4e3048a18f608de7b3602a229"
+    },
+    {
+      "case": "article-comparative-construction",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "07b8d5b1cf840a85a961470eb122eb6802574ff6bc0de9cc8544a7253ca7b51d"
+    },
+    {
+      "case": "article-comparative-construction",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "69d4f15cd96e73bc5a2c98cee50d04e41567132aaa34a0cb151a9a9928401534"
+    },
+    {
+      "case": "article-comparative-construction",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "233e7463735d4df9188dffa09f054b50a36d754f19e9d77e6a50e6c4188fc22d"
+    },
+    {
+      "case": "article-agreement",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "b090cf432ef3c7bb46c6677a4d9e7b40b64f48025619de314bd51df69ff877e3"
+    },
+    {
+      "case": "article-agreement",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "72b4069c98201cc6cdaf88d16dd842d59b476cd884c039f915add8da73267828"
+    },
+    {
+      "case": "article-agreement",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "926a724fdb4bd35de236d766865434377410cff1e28f69ca3b832562ba6a1a94"
+    },
+    {
+      "case": "article-agreement",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "802510080400ff89162ce10ec0b0b8d9eb079d5bacc0b7e6364ae4badd465009"
+    },
+    {
+      "case": "article-demonstratives",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "ae1da89f00df935592dc4deaf6054b99aca9de5aa47f1ac738678047747f0ab2"
+    },
+    {
+      "case": "article-demonstratives",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "02c3c4469f70e29b620e647980df1b6e92e83ad41e3c99e843fd3bd5def7d01f"
+    },
+    {
+      "case": "article-demonstratives",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "2d69706c0ede802bd860f20b68e02ac8a87b9edfb40a3a066f7e68ed2e594821"
+    },
+    {
+      "case": "article-demonstratives",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "61e0a9571257f6ac77cfceb9a3a6628c173b5bc5eeccfa5961df7ff477c5f371"
+    },
+    {
+      "case": "article-causal-connectors",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "a983279fd454a4804f6575f32c8fc97cfc5c19814e2c96b7d32735ef4b091b1f"
+    },
+    {
+      "case": "article-causal-connectors",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "de249034e7e97c7ae5b9d46d907b828e047806b6e5f9d5163cb069b130fb29a1"
+    },
+    {
+      "case": "article-causal-connectors",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "26e54dc577b09c5c69a2823fd506adba768181cae79bc67d7a1856ecfac3a8aa"
+    },
+    {
+      "case": "article-causal-connectors",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ae4212196474a1443c16e51850bf5d68bc66fd149dac4fbb33d95e06f1bc4c48"
+    },
+    {
+      "case": "article-paraphrase",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "56322d6b1b82763503e8084d9d0c63f9208fdb21a72c978c076e55db91f85e3f"
+    },
+    {
+      "case": "article-paraphrase",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "9e2dde1e36b3073e939746c3f5054a41724fdcfe99523adc4421eb9ab2cdba5f"
+    },
+    {
+      "case": "article-paraphrase",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "70f34e6db241e76719fff935ac1287b8b827dc2d3b2369ce4328a296c51c752d"
+    },
+    {
+      "case": "article-paraphrase",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "edebfca2738093810a1ca7beb4a312d002bebaa661592b22c99afd744ded49d8"
+    },
+    {
+      "case": "article-planning",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "d877a6d299b778ec9261e6ce7236af00deb611b32d209ad58e0fd3caefe26dcd"
+    },
+    {
+      "case": "article-planning",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "a01c2c551b3a2f004f84d6c822f4bb25c4cc322eecdc6d5b512e877c23d883db"
+    },
+    {
+      "case": "article-planning",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b7d298b1672960374820a524c532ddcc851e00385c2fa1860a30325885004a88"
+    },
+    {
+      "case": "article-planning",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "e030c263c3c64c2ddf2e54923fa163e91479fa6fea4a08e01d089703654d9827"
+    },
+    {
+      "case": "article-research",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "a3a8ec7ec0821c89c00671a5bd87548d8af615fdcd625090bab32033570a1a68"
+    },
+    {
+      "case": "article-research",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "3d2fd03231b902326d86d684f4b75dba079d0640a9e646fc4a4b08eea9231328"
+    },
+    {
+      "case": "article-research",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "c3fdc8409ff128a94d4e59197ffc476a7c75af6feb32a4bce2e6c6c88a70100e"
+    },
+    {
+      "case": "article-research",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "1ea5d4c1b22a1bfc215035ed38027c0b3acd0331cc7725e33fc12f5254bdb148"
+    },
+    {
+      "case": "guide-spatial",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "e5e921a9fc1783db817af4dcf3ee425b356407f092623e1f6e83cad2bece115a"
+    },
+    {
+      "case": "guide-spatial",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "994f77407419d6d6cfff0ec66df360642429913bb88417249c2ce1b6b47d0180"
+    },
+    {
+      "case": "guide-spatial",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "fda391ebaa5234c2840c565e0864ee0ef02f51e769155d254d8634e3279af62e"
+    },
+    {
+      "case": "guide-spatial",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a984ede5f6039e9faddda56897b55ab9c7202be10999ff9fd6afab9f2541144c"
+    },
+    {
+      "case": "guide-auxiliary",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8aee87d264910d40e62d2acf93da0f39a4eb082a584f8f3bcefeddb50ca6c148"
+    },
+    {
+      "case": "guide-auxiliary",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "ee314dbdf3807e6ee7e18a293cd50d7701ffbf039c0493d6960cfc3e74bec3b8"
+    },
+    {
+      "case": "guide-auxiliary",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6b841f0dffaeeb92ce9d65e92915c172455df03657327488043930033984c4a5"
+    },
+    {
+      "case": "guide-auxiliary",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "d57c5293566f6535754b3d2450e5a874c206e94c1a561b0c27978cfb3fd4fb3f"
+    },
+    {
+      "case": "guide-prediction",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "2619e801b083a61a3216ea79b53d678d011f8c75df39425d32a43d9a2e9cb2fe"
+    },
+    {
+      "case": "guide-prediction",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "abc86bf0c3cdacf4b98bcff93eaa1c42b4e7f23dd12bfbc03f23c5686ffa4c5a"
+    },
+    {
+      "case": "guide-prediction",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b4bfcddf247004ef97fedd3361f24c803146d9f681f7f61b0c5e1caa31f78d35"
+    },
+    {
+      "case": "guide-prediction",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "690b5ad222dbb1a51cf69dd8525a31d9f7bb513a54743a0552d8d91a36766857"
+    },
+    {
+      "case": "guide-classification",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "17509bcdc1c3b9ad2f07cbd683d8574081a032cc2bc118a2b4d325b9831fff90"
+    },
+    {
+      "case": "guide-classification",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "f7cfac0526562f0e8379e125c026e4669db2a2d70ac600aa33bec144cdbba020"
+    },
+    {
+      "case": "guide-classification",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "9964ef92d1772d533da158a28a693969cc3dda31aca72b94abffece6aee5ecc9"
+    },
+    {
+      "case": "guide-classification",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "823a4edea73fa2217ff06ce309b626636e7deea10f0c77be14d629a7531b2b3f"
+    },
+    {
+      "case": "report-paragraph",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "c69f23277d5b0ca2408859e80a5ec38ba24f17df66663cf257ebcb3de96c6df1"
+    },
+    {
+      "case": "report-paragraph",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "058b2e60e24dc96c893079db6e0aaa4a920accb751d6c92b9ac92b8a618b9b0e"
+    },
+    {
+      "case": "report-paragraph",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "a51ea0817e851aa14aa0ea377c41dae9bff867ce97606086ee3d7f44a8382e0e"
+    },
+    {
+      "case": "report-paragraph",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6e1169a0f1e6f4a3b42b2508d258615ee6a6d0406befbe0989ff290c2b9620bc"
+    },
+    {
+      "case": "report-tense",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "6f6feee133484194701ad8d957fbff46f90eb6bb0da538b46aa021eaff22855b"
+    },
+    {
+      "case": "report-tense",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b121746a821269dc64027b5f7224746d8f7b89bb7db9914fc5bd2b60c2d92b22"
+    },
+    {
+      "case": "report-tense",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "abf3ec30c8e4344dd0792326d9b5b78111c68d412e54fe61f9cf2e366731ada0"
+    },
+    {
+      "case": "report-tense",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ed5a66ae24f91cb853da7e53070854dfb29d6cfe0c437e21bb5f87fdf9833048"
+    },
+    {
+      "case": "report-summary",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "fdb4fcdea18b7a734cd36d59984c8dfee0b4d366e3c0e663a69795ee475c99ec"
+    },
+    {
+      "case": "report-summary",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "7895287db49b891a220efd2523ef72eca886673c35919729b815b0e4f79cc44f"
+    },
+    {
+      "case": "report-summary",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "75428eaf9f4567b50b6fc32d72942b209e5de915fe6cb624d739db9acf255bd9"
+    },
+    {
+      "case": "report-summary",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "286534c1a70a13a3c5d40c5e158abce4d945011318e5c8807ed54ed6c239e2a1"
+    },
+    {
+      "case": "story-fragment",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "debda9abb7f034ce788a45fe7b8a372b07f6af8fe80751fba8a702f47e8bfe45"
+    },
+    {
+      "case": "story-fragment",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "e4d0269aa915b24569325596c40de56a888274f15c52d265aa88bf4906e66792"
+    },
+    {
+      "case": "story-fragment",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "de55fc23b903e79d42308454ab75af03be22e6ca2fddeeed059fdd414248ab86"
+    },
+    {
+      "case": "story-fragment",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "2602b4dbb928568f67f172da7564c81db87fe221117b3bcf1543fb81328aa477"
+    },
+    {
+      "case": "story-subjunctive",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "a6789cc8b87ec80ee20bb2842c65a403df742be04f429d5ebaa1ea87601324f7"
+    },
+    {
+      "case": "story-subjunctive",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "3fa0d0ad8b6f59fca9dd3eb35bd697f5acf4f1ebc67c2e3f97bfcaad64c8cb57"
+    },
+    {
+      "case": "story-subjunctive",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "32e0b3dac682a861a5d79235717168cc5e485d414353505f8eb87eb209fadb94"
+    },
+    {
+      "case": "story-subjunctive",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "769223c68db616e3d197995b0e3fd3075c049b27da8ef3f7030e8d19cfd8bf84"
+    },
+    {
+      "case": "story-dialogue",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "68cbbcdf06376ee111df774abad191e1c17b9b1a56ae6717fd4a08cf7bc434b0"
+    },
+    {
+      "case": "story-dialogue",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "98a53553db7b97b36cb05210ff503fe42f9503df917b4e2bc04cebcbfc24aa8f"
+    },
+    {
+      "case": "story-dialogue",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "00597c62fe69a8494600ea4fcbe5174957e612923c4021c037064f5dd49ecb72"
+    },
+    {
+      "case": "story-dialogue",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "cf57fc20a9e0708e04effe26e89f9faf2606913c1d3630c270138c6935fcfe07"
+    },
+    {
+      "case": "story-authors",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "4dfd795c1266a8ba613e78693414ca17db45659a25fc5f87e553fa5f8ef145f0"
+    },
+    {
+      "case": "story-authors",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "c72d5d66c9c59b2da742e7e2322d19a8a087bc30c6007d4ee0de786d22f3a571"
+    },
+    {
+      "case": "story-authors",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "85e84f26777c431706a5b72c8ee05972e8253dfa7b321e0aa534017d4beda03a"
+    },
+    {
+      "case": "story-authors",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "4495b42789319f3ba7fe9eb183a85d7c975925b062baf843834bf523d6468d5d"
+    },
+    {
+      "case": "decima-irony",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "c71beb2425ecace313c36a27a0fadd0878c7a5c1ca92ea54835f12067d02b3e2"
+    },
+    {
+      "case": "decima-irony",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "f5000f11fd08cd52fad75c3720883be02f333c6668ede586a4ce5e6e733239ca"
+    },
+    {
+      "case": "decima-irony",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "a75ae7397f69aa0371f06b4f94ec49fc32180ba64adaa55a203a1e8992b231cc"
+    },
+    {
+      "case": "decima-irony",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b2e1f22007496d156c4dc014f2895c86cc65685e63ba535e94989c73a846330d"
+    },
+    {
+      "case": "decima-recite",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a84267b7ddf46739bd9686dac6c811e96f42333bc4a29b113490db5acc6b4c32"
+    },
+    {
+      "case": "decima-recite",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "4b9b095c1e00d5eb0816829b3a40e053571b5cf9e5a96a6ba1ff7d0c3a3432ba"
+    },
+    {
+      "case": "decima-recite",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "cafb080312be05cd58d3007e13f709c93803810f8ed2e29c30d68ba416729e11"
+    },
+    {
+      "case": "decima-recite",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "839f3bd952dd1e750c3d551a10547e675bbe7611e18ee0af2ac124360df2f84a"
+    },
+    {
+      "case": "decima-revision",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "4856f22b1df54e8e7e689deeef22230911cf1cb3084e9fa10a68300254dc9179"
+    },
+    {
+      "case": "decima-revision",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8549ab8f1096638c7638724fbbc7f25ba505e2a1e21bd14a1f5f04b3c137ce5c"
+    },
+    {
+      "case": "decima-revision",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "058c1a5c7fb5f954601f4f632a663870dbaa894534d9104917760ac7e52abfe8"
+    },
+    {
+      "case": "decima-revision",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "7f52c02cf144450f4dec6a7c49e86b17afc7ae71c5cf0d08383c52378ea2f079"
+    },
+    {
+      "case": "news-subordination",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "247dd67d5b2e27c7c93781980d4defb7bbfde83148d9a62bfa9736e1829273dc"
+    },
+    {
+      "case": "news-subordination",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "354179901d321313238653b4611142e591fc8d1f34935126b0d32b1a027d7984"
+    },
+    {
+      "case": "news-subordination",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "7784344ec5c80dc293ee6c435d86a3c3ad8d2f0c5580ee0251d7e25302356ad7"
+    },
+    {
+      "case": "news-subordination",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b4b9130e4a4688930f4e34c0045df139cd22a5794d9dedea2ffad0efe2f04998"
+    },
+    {
+      "case": "news-perfect",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "298927da5d25060ad93f8389dfc8fe7a638dcac17710d699017058e1f21e83d3"
+    },
+    {
+      "case": "news-perfect",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "ee7d56a1a9fab5c5143006dfd671d0b851642897784242990f7d9cbeda323c76"
+    },
+    {
+      "case": "news-perfect",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "503ea3a54c67e44eedf29d088cb5cede94d43335ef3a778f938c19185918f981"
+    },
+    {
+      "case": "news-perfect",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "39028c1175b27da713ef2e6d52c1995fe93117ed33beafbc818113fef6afe69a"
+    },
+    {
+      "case": "news-prediction",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "62aeb48d467c7fb6a80b9a26ac9f12b1182831d3233f9aebfe515184556ed19c"
+    },
+    {
+      "case": "news-prediction",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "828f5c89945039e55e55d127a02ab2f14a7f6d72dae041d938be8712ce2362f4"
+    },
+    {
+      "case": "news-prediction",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "0015622cf235b49a1554c7f631af190737090e8cea0abf85cedf300ced83446e"
+    },
+    {
+      "case": "news-prediction",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "50a8ae50865490d6f3b680374e72ed5c0e899d34decb69a777b8f6814cb280eb"
+    },
+    {
+      "case": "procedure-1",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e04c5899cb4984db01061413bee568afaf2e01a84619ce1d6a09dff0960629d7"
+    },
+    {
+      "case": "procedure-1",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e04c5899cb4984db01061413bee568afaf2e01a84619ce1d6a09dff0960629d7"
+    },
+    {
+      "case": "procedure-1",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "e04c5899cb4984db01061413bee568afaf2e01a84619ce1d6a09dff0960629d7"
+    },
+    {
+      "case": "procedure-1",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "28f2166e855daca11e5b4863348bf65c2a345c80c2beed7712dcd24b8e3111c9"
+    },
+    {
+      "case": "procedure-1",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "28f2166e855daca11e5b4863348bf65c2a345c80c2beed7712dcd24b8e3111c9"
+    },
+    {
+      "case": "procedure-1",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "28f2166e855daca11e5b4863348bf65c2a345c80c2beed7712dcd24b8e3111c9"
+    },
+    {
+      "case": "procedure-1",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ed53bba11c8b296c24f99e81b0973e6ac07a7ad261b728593e60d1d9a1c8ea15"
+    },
+    {
+      "case": "procedure-1",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "ed53bba11c8b296c24f99e81b0973e6ac07a7ad261b728593e60d1d9a1c8ea15"
+    },
+    {
+      "case": "procedure-1",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "ed53bba11c8b296c24f99e81b0973e6ac07a7ad261b728593e60d1d9a1c8ea15"
+    },
+    {
+      "case": "procedure-1",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "bda669a1ce3560baa699b267dd0a578b48a75929735034a6cae1fc6c21783af9"
+    },
+    {
+      "case": "procedure-1",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "bda669a1ce3560baa699b267dd0a578b48a75929735034a6cae1fc6c21783af9"
+    },
+    {
+      "case": "procedure-1",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "bda669a1ce3560baa699b267dd0a578b48a75929735034a6cae1fc6c21783af9"
+    },
+    {
+      "case": "procedure-2",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "63e88d2e6908040e8858785135a561976bfb01c99e4070534f5e88c6405b9716"
+    },
+    {
+      "case": "procedure-2",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "63e88d2e6908040e8858785135a561976bfb01c99e4070534f5e88c6405b9716"
+    },
+    {
+      "case": "procedure-2",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "63e88d2e6908040e8858785135a561976bfb01c99e4070534f5e88c6405b9716"
+    },
+    {
+      "case": "procedure-2",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "0c66efad0898a5fff7433dbf1cf58a209e3bda6fe5d53644078ba8c4f98ca77e"
+    },
+    {
+      "case": "procedure-2",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "0c66efad0898a5fff7433dbf1cf58a209e3bda6fe5d53644078ba8c4f98ca77e"
+    },
+    {
+      "case": "procedure-2",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "0c66efad0898a5fff7433dbf1cf58a209e3bda6fe5d53644078ba8c4f98ca77e"
+    },
+    {
+      "case": "procedure-2",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "ce507cb2bf6ca3916dceab18dcbc8e02698eccfd1a6f018771bc5bd704e1b7d0"
+    },
+    {
+      "case": "procedure-2",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "ce507cb2bf6ca3916dceab18dcbc8e02698eccfd1a6f018771bc5bd704e1b7d0"
+    },
+    {
+      "case": "procedure-2",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "ce507cb2bf6ca3916dceab18dcbc8e02698eccfd1a6f018771bc5bd704e1b7d0"
+    },
+    {
+      "case": "procedure-2",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "24eab2dee7806c6b311aea85c30c928bba4fba6509cffb785c35a185b40c5c01"
+    },
+    {
+      "case": "procedure-2",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "24eab2dee7806c6b311aea85c30c928bba4fba6509cffb785c35a185b40c5c01"
+    },
+    {
+      "case": "procedure-2",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "24eab2dee7806c6b311aea85c30c928bba4fba6509cffb785c35a185b40c5c01"
+    },
+    {
+      "case": "procedure-3",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8337247c504b3201f907ea8955ec86fc58fac11d457f909c1788eeafbb113b2f"
+    },
+    {
+      "case": "procedure-3",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8337247c504b3201f907ea8955ec86fc58fac11d457f909c1788eeafbb113b2f"
+    },
+    {
+      "case": "procedure-3",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "8337247c504b3201f907ea8955ec86fc58fac11d457f909c1788eeafbb113b2f"
+    },
+    {
+      "case": "procedure-3",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "d489980170f9da13ac69e77227a86df4e9b797a85b207ac91966c82b6016e8fe"
+    },
+    {
+      "case": "procedure-3",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "d489980170f9da13ac69e77227a86df4e9b797a85b207ac91966c82b6016e8fe"
+    },
+    {
+      "case": "procedure-3",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "d489980170f9da13ac69e77227a86df4e9b797a85b207ac91966c82b6016e8fe"
+    },
+    {
+      "case": "procedure-3",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "3e5cfd6b642a6d24b0e32c4be9629861e16eddf97515107bbeea03d35ca6ea5e"
+    },
+    {
+      "case": "procedure-3",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "3e5cfd6b642a6d24b0e32c4be9629861e16eddf97515107bbeea03d35ca6ea5e"
+    },
+    {
+      "case": "procedure-3",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "3e5cfd6b642a6d24b0e32c4be9629861e16eddf97515107bbeea03d35ca6ea5e"
+    },
+    {
+      "case": "procedure-3",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8cc90dd1478140aa1554f0cda3fb895a551ce16d03b47e853ec06d75c585bdb0"
+    },
+    {
+      "case": "procedure-3",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8cc90dd1478140aa1554f0cda3fb895a551ce16d03b47e853ec06d75c585bdb0"
+    },
+    {
+      "case": "procedure-3",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "8cc90dd1478140aa1554f0cda3fb895a551ce16d03b47e853ec06d75c585bdb0"
+    },
+    {
+      "case": "procedure-4",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "40ee877a79813dba72ca2254111d424e30f7500fa3fa825f2521d20a08d358ad"
+    },
+    {
+      "case": "procedure-4",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "40ee877a79813dba72ca2254111d424e30f7500fa3fa825f2521d20a08d358ad"
+    },
+    {
+      "case": "procedure-4",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "40ee877a79813dba72ca2254111d424e30f7500fa3fa825f2521d20a08d358ad"
+    },
+    {
+      "case": "procedure-4",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b7c5369fca4faaac33c79f6064aa69766d9ec6aa90a366c2921532bbf13894bf"
+    },
+    {
+      "case": "procedure-4",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "b7c5369fca4faaac33c79f6064aa69766d9ec6aa90a366c2921532bbf13894bf"
+    },
+    {
+      "case": "procedure-4",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "b7c5369fca4faaac33c79f6064aa69766d9ec6aa90a366c2921532bbf13894bf"
+    },
+    {
+      "case": "procedure-4",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "bc330e593485784d0b665efca82127918367bc970bc1c3e318f0f691f9c76df3"
+    },
+    {
+      "case": "procedure-4",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "bc330e593485784d0b665efca82127918367bc970bc1c3e318f0f691f9c76df3"
+    },
+    {
+      "case": "procedure-4",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "bc330e593485784d0b665efca82127918367bc970bc1c3e318f0f691f9c76df3"
+    },
+    {
+      "case": "procedure-4",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "947d31f35eb312d2872db4d95fc6a97db723a2993032c103e13d511f77d69f6e"
+    },
+    {
+      "case": "procedure-4",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "947d31f35eb312d2872db4d95fc6a97db723a2993032c103e13d511f77d69f6e"
+    },
+    {
+      "case": "procedure-4",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "947d31f35eb312d2872db4d95fc6a97db723a2993032c103e13d511f77d69f6e"
+    },
+    {
+      "case": "procedure-5",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "fb1aa6fe0a38de86acd1b1c393b50cddb1ee6ab42d1ea20b30b7aa0db0d432d0"
+    },
+    {
+      "case": "procedure-5",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "fb1aa6fe0a38de86acd1b1c393b50cddb1ee6ab42d1ea20b30b7aa0db0d432d0"
+    },
+    {
+      "case": "procedure-5",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "fb1aa6fe0a38de86acd1b1c393b50cddb1ee6ab42d1ea20b30b7aa0db0d432d0"
+    },
+    {
+      "case": "procedure-5",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "233b8a96499e0f59170cf809069c4e194327eb529fe016ce54814ed270ba5fcd"
+    },
+    {
+      "case": "procedure-5",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "233b8a96499e0f59170cf809069c4e194327eb529fe016ce54814ed270ba5fcd"
+    },
+    {
+      "case": "procedure-5",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "233b8a96499e0f59170cf809069c4e194327eb529fe016ce54814ed270ba5fcd"
+    },
+    {
+      "case": "procedure-5",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "cf96675d7b875a810598771a5700dcee2528695339a1e9e2896d5fa8eb33fd34"
+    },
+    {
+      "case": "procedure-5",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "cf96675d7b875a810598771a5700dcee2528695339a1e9e2896d5fa8eb33fd34"
+    },
+    {
+      "case": "procedure-5",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "cf96675d7b875a810598771a5700dcee2528695339a1e9e2896d5fa8eb33fd34"
+    },
+    {
+      "case": "procedure-5",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a26166770ec9421373c3c856a34f97b0c9a2736c1589927aae45f05109a39f91"
+    },
+    {
+      "case": "procedure-5",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "a26166770ec9421373c3c856a34f97b0c9a2736c1589927aae45f05109a39f91"
+    },
+    {
+      "case": "procedure-5",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "a26166770ec9421373c3c856a34f97b0c9a2736c1589927aae45f05109a39f91"
+    },
+    {
+      "case": "procedure-6",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b15e1d9920b45825b04f6fc14338d8911e26e47dfe982461689ca59660e44cf4"
+    },
+    {
+      "case": "procedure-6",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "b15e1d9920b45825b04f6fc14338d8911e26e47dfe982461689ca59660e44cf4"
+    },
+    {
+      "case": "procedure-6",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "b15e1d9920b45825b04f6fc14338d8911e26e47dfe982461689ca59660e44cf4"
+    },
+    {
+      "case": "procedure-6",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "64ed81fa9db52a080caca1101099d412429fa51ced9fc4244bb0e502eee6c1ee"
+    },
+    {
+      "case": "procedure-6",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "64ed81fa9db52a080caca1101099d412429fa51ced9fc4244bb0e502eee6c1ee"
+    },
+    {
+      "case": "procedure-6",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "64ed81fa9db52a080caca1101099d412429fa51ced9fc4244bb0e502eee6c1ee"
+    },
+    {
+      "case": "procedure-6",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "26d648987e42771e7026f451a907080c0edc7e9cec274943d720ad16e53dd33d"
+    },
+    {
+      "case": "procedure-6",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "26d648987e42771e7026f451a907080c0edc7e9cec274943d720ad16e53dd33d"
+    },
+    {
+      "case": "procedure-6",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "26d648987e42771e7026f451a907080c0edc7e9cec274943d720ad16e53dd33d"
+    },
+    {
+      "case": "procedure-6",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "f023082bb738d0a0674fb858b25b3c66c1a9d2b31f49a99974c1dee93e4460cd"
+    },
+    {
+      "case": "procedure-6",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f023082bb738d0a0674fb858b25b3c66c1a9d2b31f49a99974c1dee93e4460cd"
+    },
+    {
+      "case": "procedure-6",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "f023082bb738d0a0674fb858b25b3c66c1a9d2b31f49a99974c1dee93e4460cd"
+    },
+    {
+      "case": "procedure-7",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "f60356e331b618cd7810ade100c2fc9fff7e793265dd7cf51bb54a3a632a5cb7"
+    },
+    {
+      "case": "procedure-7",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f60356e331b618cd7810ade100c2fc9fff7e793265dd7cf51bb54a3a632a5cb7"
+    },
+    {
+      "case": "procedure-7",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "f60356e331b618cd7810ade100c2fc9fff7e793265dd7cf51bb54a3a632a5cb7"
+    },
+    {
+      "case": "procedure-7",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "d4745dccc8ac9d834d1eb1e019bf0dde0a22202f0dfcacf985e76ba7d0f4de87"
+    },
+    {
+      "case": "procedure-7",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "d4745dccc8ac9d834d1eb1e019bf0dde0a22202f0dfcacf985e76ba7d0f4de87"
+    },
+    {
+      "case": "procedure-7",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "d4745dccc8ac9d834d1eb1e019bf0dde0a22202f0dfcacf985e76ba7d0f4de87"
+    },
+    {
+      "case": "procedure-7",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "3e7243577d8886596f0348485f6b0bd82857abd38054b21b1f74542ccba48494"
+    },
+    {
+      "case": "procedure-7",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "3e7243577d8886596f0348485f6b0bd82857abd38054b21b1f74542ccba48494"
+    },
+    {
+      "case": "procedure-7",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "3e7243577d8886596f0348485f6b0bd82857abd38054b21b1f74542ccba48494"
+    },
+    {
+      "case": "procedure-7",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "4b34e8eff99eb41c1c5220b13b00bd91f2e778cdb14f7a800ab0a5d01135bb51"
+    },
+    {
+      "case": "procedure-7",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "4b34e8eff99eb41c1c5220b13b00bd91f2e778cdb14f7a800ab0a5d01135bb51"
+    },
+    {
+      "case": "procedure-7",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "4b34e8eff99eb41c1c5220b13b00bd91f2e778cdb14f7a800ab0a5d01135bb51"
+    },
+    {
+      "case": "procedure-8",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "0ab830624482e93e28c55010423f9e9a7ea169383ce0d6585a56ffc412f9d49b"
+    },
+    {
+      "case": "procedure-8",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "0ab830624482e93e28c55010423f9e9a7ea169383ce0d6585a56ffc412f9d49b"
+    },
+    {
+      "case": "procedure-8",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "0ab830624482e93e28c55010423f9e9a7ea169383ce0d6585a56ffc412f9d49b"
+    },
+    {
+      "case": "procedure-8",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "9e0098009ffcd1dec23ca74a19654b8a2e20f78f393a1df4f56f1faa0c6b2841"
+    },
+    {
+      "case": "procedure-8",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "9e0098009ffcd1dec23ca74a19654b8a2e20f78f393a1df4f56f1faa0c6b2841"
+    },
+    {
+      "case": "procedure-8",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "9e0098009ffcd1dec23ca74a19654b8a2e20f78f393a1df4f56f1faa0c6b2841"
+    },
+    {
+      "case": "procedure-8",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a827ea088550770c658e341a2e6b10ed7701fc82be68451d44f8fe084f5407ad"
+    },
+    {
+      "case": "procedure-8",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "a827ea088550770c658e341a2e6b10ed7701fc82be68451d44f8fe084f5407ad"
+    },
+    {
+      "case": "procedure-8",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "a827ea088550770c658e341a2e6b10ed7701fc82be68451d44f8fe084f5407ad"
+    },
+    {
+      "case": "procedure-8",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "c2b569098958144df6b399cd37745afd7ed88913aab49c5496cc5edd06b13319"
+    },
+    {
+      "case": "procedure-8",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "c2b569098958144df6b399cd37745afd7ed88913aab49c5496cc5edd06b13319"
+    },
+    {
+      "case": "procedure-8",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "c2b569098958144df6b399cd37745afd7ed88913aab49c5496cc5edd06b13319"
+    },
+    {
+      "case": "procedure-9",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "036f1c71ffbd1ed4f04c80a135d558be8ac2f95372f23b25c51f3bb5e6458a94"
+    },
+    {
+      "case": "procedure-9",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "036f1c71ffbd1ed4f04c80a135d558be8ac2f95372f23b25c51f3bb5e6458a94"
+    },
+    {
+      "case": "procedure-9",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "036f1c71ffbd1ed4f04c80a135d558be8ac2f95372f23b25c51f3bb5e6458a94"
+    },
+    {
+      "case": "procedure-9",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "924183a424bf3b9d5e8a3458636304fa724e0e9bf9834fff05d51ce307301311"
+    },
+    {
+      "case": "procedure-9",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "924183a424bf3b9d5e8a3458636304fa724e0e9bf9834fff05d51ce307301311"
+    },
+    {
+      "case": "procedure-9",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "924183a424bf3b9d5e8a3458636304fa724e0e9bf9834fff05d51ce307301311"
+    },
+    {
+      "case": "procedure-9",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "86a5b097b562fbb1d0f04851031b1b42322f5289f18b479dda50a49906bc1503"
+    },
+    {
+      "case": "procedure-9",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "86a5b097b562fbb1d0f04851031b1b42322f5289f18b479dda50a49906bc1503"
+    },
+    {
+      "case": "procedure-9",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "86a5b097b562fbb1d0f04851031b1b42322f5289f18b479dda50a49906bc1503"
+    },
+    {
+      "case": "procedure-9",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "e3c6d69b128a795dfca500b0400009bb76d23eda863440a55750b47872d0c404"
+    },
+    {
+      "case": "procedure-9",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e3c6d69b128a795dfca500b0400009bb76d23eda863440a55750b47872d0c404"
+    },
+    {
+      "case": "procedure-9",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "e3c6d69b128a795dfca500b0400009bb76d23eda863440a55750b47872d0c404"
+    },
+    {
+      "case": "procedure-10",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "0fe455946d8f1bf78061872598d76a8114864bc6a5ea6f47637b29d5c8690319"
+    },
+    {
+      "case": "procedure-10",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "0fe455946d8f1bf78061872598d76a8114864bc6a5ea6f47637b29d5c8690319"
+    },
+    {
+      "case": "procedure-10",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "0fe455946d8f1bf78061872598d76a8114864bc6a5ea6f47637b29d5c8690319"
+    },
+    {
+      "case": "procedure-10",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "51f9c0833bda0daffcb0f27d77deeba94e8fc25c54edda24ede57ed56726a31a"
+    },
+    {
+      "case": "procedure-10",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "51f9c0833bda0daffcb0f27d77deeba94e8fc25c54edda24ede57ed56726a31a"
+    },
+    {
+      "case": "procedure-10",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "51f9c0833bda0daffcb0f27d77deeba94e8fc25c54edda24ede57ed56726a31a"
+    },
+    {
+      "case": "procedure-10",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "a047736882c2179068e1d9639ca7fb3d71864b4b4efa33238fb6ae4fad3030c0"
+    },
+    {
+      "case": "procedure-10",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "a047736882c2179068e1d9639ca7fb3d71864b4b4efa33238fb6ae4fad3030c0"
+    },
+    {
+      "case": "procedure-10",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "a047736882c2179068e1d9639ca7fb3d71864b4b4efa33238fb6ae4fad3030c0"
+    },
+    {
+      "case": "procedure-10",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "dd009cadd19914abd178094aaeee4952c4897413d5c41aa3ab1ec6f4684bd95d"
+    },
+    {
+      "case": "procedure-10",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "dd009cadd19914abd178094aaeee4952c4897413d5c41aa3ab1ec6f4684bd95d"
+    },
+    {
+      "case": "procedure-10",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "dd009cadd19914abd178094aaeee4952c4897413d5c41aa3ab1ec6f4684bd95d"
+    },
+    {
+      "case": "procedure-11",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "4e15553892dde5839bcab8b1c5c9dc83a04798117877c06eae4ee0c7615d4a79"
+    },
+    {
+      "case": "procedure-11",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "4e15553892dde5839bcab8b1c5c9dc83a04798117877c06eae4ee0c7615d4a79"
+    },
+    {
+      "case": "procedure-11",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "4e15553892dde5839bcab8b1c5c9dc83a04798117877c06eae4ee0c7615d4a79"
+    },
+    {
+      "case": "procedure-11",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "5906771a05c0d35a7e3d0f75b445ca5de205d3d2b8e568defe4ecfee62c3eca4"
+    },
+    {
+      "case": "procedure-11",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "5906771a05c0d35a7e3d0f75b445ca5de205d3d2b8e568defe4ecfee62c3eca4"
+    },
+    {
+      "case": "procedure-11",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "5906771a05c0d35a7e3d0f75b445ca5de205d3d2b8e568defe4ecfee62c3eca4"
+    },
+    {
+      "case": "procedure-11",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "6b7ef07e285855bda490d82001ea2528a4e342512d83a647c248edd7fb849f95"
+    },
+    {
+      "case": "procedure-11",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "6b7ef07e285855bda490d82001ea2528a4e342512d83a647c248edd7fb849f95"
+    },
+    {
+      "case": "procedure-11",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "6b7ef07e285855bda490d82001ea2528a4e342512d83a647c248edd7fb849f95"
+    },
+    {
+      "case": "procedure-11",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "0a7ec6012cdbd92f9fe918ea17e202ee8053b6b710482940878e025bf2ca97de"
+    },
+    {
+      "case": "procedure-11",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "0a7ec6012cdbd92f9fe918ea17e202ee8053b6b710482940878e025bf2ca97de"
+    },
+    {
+      "case": "procedure-11",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "0a7ec6012cdbd92f9fe918ea17e202ee8053b6b710482940878e025bf2ca97de"
+    },
+    {
+      "case": "procedure-12",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b22ed63db53b933dcd33425fece3520b90a69fceb96e702ec5bad981411ea966"
+    },
+    {
+      "case": "procedure-12",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "b22ed63db53b933dcd33425fece3520b90a69fceb96e702ec5bad981411ea966"
+    },
+    {
+      "case": "procedure-12",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "b22ed63db53b933dcd33425fece3520b90a69fceb96e702ec5bad981411ea966"
+    },
+    {
+      "case": "procedure-12",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "1ce7bc6eefaa9228b6d94a4cf02142b32592a5f7341bc10bc2813ed1c2562cd9"
+    },
+    {
+      "case": "procedure-12",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "1ce7bc6eefaa9228b6d94a4cf02142b32592a5f7341bc10bc2813ed1c2562cd9"
+    },
+    {
+      "case": "procedure-12",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "1ce7bc6eefaa9228b6d94a4cf02142b32592a5f7341bc10bc2813ed1c2562cd9"
+    },
+    {
+      "case": "procedure-12",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "a769001aa0e99adfcfa8ce712a9c4890ff13704fda97b84e597ab5621e07cab3"
+    },
+    {
+      "case": "procedure-12",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "a769001aa0e99adfcfa8ce712a9c4890ff13704fda97b84e597ab5621e07cab3"
+    },
+    {
+      "case": "procedure-12",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "a769001aa0e99adfcfa8ce712a9c4890ff13704fda97b84e597ab5621e07cab3"
+    },
+    {
+      "case": "procedure-12",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "4303ae4eddd9735bc0bc561b273a9da40b8a467005e21d3acc4c686098382132"
+    },
+    {
+      "case": "procedure-12",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "4303ae4eddd9735bc0bc561b273a9da40b8a467005e21d3acc4c686098382132"
+    },
+    {
+      "case": "procedure-12",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "4303ae4eddd9735bc0bc561b273a9da40b8a467005e21d3acc4c686098382132"
+    },
+    {
+      "case": "procedure-13",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "883957933275f7f5dbccd882ce2dba4705c154764b2d1dde527952c296053c6f"
+    },
+    {
+      "case": "procedure-13",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "883957933275f7f5dbccd882ce2dba4705c154764b2d1dde527952c296053c6f"
+    },
+    {
+      "case": "procedure-13",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "883957933275f7f5dbccd882ce2dba4705c154764b2d1dde527952c296053c6f"
+    },
+    {
+      "case": "procedure-13",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "63d0c9603248ac154f2bd81617259a6de4617628b8387aeafa9293dde5e2f4e8"
+    },
+    {
+      "case": "procedure-13",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "63d0c9603248ac154f2bd81617259a6de4617628b8387aeafa9293dde5e2f4e8"
+    },
+    {
+      "case": "procedure-13",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "63d0c9603248ac154f2bd81617259a6de4617628b8387aeafa9293dde5e2f4e8"
+    },
+    {
+      "case": "procedure-13",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e23a3a9c76b230c0381847d1000e7c824dd02baedf6e37e4147c173016475220"
+    },
+    {
+      "case": "procedure-13",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e23a3a9c76b230c0381847d1000e7c824dd02baedf6e37e4147c173016475220"
+    },
+    {
+      "case": "procedure-13",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "e23a3a9c76b230c0381847d1000e7c824dd02baedf6e37e4147c173016475220"
+    },
+    {
+      "case": "procedure-13",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "5c34f88fc3ddc58a115942b14a27f2132ff819a4ce1f8b305d6d5a411d1b9884"
+    },
+    {
+      "case": "procedure-13",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "5c34f88fc3ddc58a115942b14a27f2132ff819a4ce1f8b305d6d5a411d1b9884"
+    },
+    {
+      "case": "procedure-13",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "5c34f88fc3ddc58a115942b14a27f2132ff819a4ce1f8b305d6d5a411d1b9884"
+    },
+    {
+      "case": "procedure-14",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "8c9a9746bd022bddecb806da7900fd10e5e0770a4ae71d50ba97dbd5ea3c187f"
+    },
+    {
+      "case": "procedure-14",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8c9a9746bd022bddecb806da7900fd10e5e0770a4ae71d50ba97dbd5ea3c187f"
+    },
+    {
+      "case": "procedure-14",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "8c9a9746bd022bddecb806da7900fd10e5e0770a4ae71d50ba97dbd5ea3c187f"
+    },
+    {
+      "case": "procedure-14",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "b675ac17402e3d712ebe945d84b8cae5281faa336bac98ab10fe6d1de9a9d485"
+    },
+    {
+      "case": "procedure-14",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "b675ac17402e3d712ebe945d84b8cae5281faa336bac98ab10fe6d1de9a9d485"
+    },
+    {
+      "case": "procedure-14",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "b675ac17402e3d712ebe945d84b8cae5281faa336bac98ab10fe6d1de9a9d485"
+    },
+    {
+      "case": "procedure-14",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "ddbaefa0ad2d56e160b4e8608f633a6847a2d062238722fc800cc1416d69981b"
+    },
+    {
+      "case": "procedure-14",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "ddbaefa0ad2d56e160b4e8608f633a6847a2d062238722fc800cc1416d69981b"
+    },
+    {
+      "case": "procedure-14",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "ddbaefa0ad2d56e160b4e8608f633a6847a2d062238722fc800cc1416d69981b"
+    },
+    {
+      "case": "procedure-14",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "fa1419c3d053120b31202fd7567932f79eaf6090028a9faf99220d57b231d309"
+    },
+    {
+      "case": "procedure-14",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "fa1419c3d053120b31202fd7567932f79eaf6090028a9faf99220d57b231d309"
+    },
+    {
+      "case": "procedure-14",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "fa1419c3d053120b31202fd7567932f79eaf6090028a9faf99220d57b231d309"
+    },
+    {
+      "case": "procedure-15",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "393f1876749fd967676665edd509866f0f58a94186bad8b07edb426707968787"
+    },
+    {
+      "case": "procedure-15",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "393f1876749fd967676665edd509866f0f58a94186bad8b07edb426707968787"
+    },
+    {
+      "case": "procedure-15",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "393f1876749fd967676665edd509866f0f58a94186bad8b07edb426707968787"
+    },
+    {
+      "case": "procedure-15",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "063a76d7c1ff33c9da42dd1afde623508b744d8b65d6c46892b185e8879f2c9f"
+    },
+    {
+      "case": "procedure-15",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "063a76d7c1ff33c9da42dd1afde623508b744d8b65d6c46892b185e8879f2c9f"
+    },
+    {
+      "case": "procedure-15",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "063a76d7c1ff33c9da42dd1afde623508b744d8b65d6c46892b185e8879f2c9f"
+    },
+    {
+      "case": "procedure-15",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6f44f0c5033191bf633df27f2cace5664bcf7df0c1e4abd39a07a228d12eba24"
+    },
+    {
+      "case": "procedure-15",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "6f44f0c5033191bf633df27f2cace5664bcf7df0c1e4abd39a07a228d12eba24"
+    },
+    {
+      "case": "procedure-15",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "6f44f0c5033191bf633df27f2cace5664bcf7df0c1e4abd39a07a228d12eba24"
+    },
+    {
+      "case": "procedure-15",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "f9d14d1903800f7f0fef0168d429a8889e94f5e81b075fb34c277248c0c05184"
+    },
+    {
+      "case": "procedure-15",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f9d14d1903800f7f0fef0168d429a8889e94f5e81b075fb34c277248c0c05184"
+    },
+    {
+      "case": "procedure-15",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "f9d14d1903800f7f0fef0168d429a8889e94f5e81b075fb34c277248c0c05184"
+    },
+    {
+      "case": "procedure-16",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "f51338fd82d98c8edbbaa1f327d2e2a1299e7438126353059c39d568978f4e13"
+    },
+    {
+      "case": "procedure-16",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "f51338fd82d98c8edbbaa1f327d2e2a1299e7438126353059c39d568978f4e13"
+    },
+    {
+      "case": "procedure-16",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "f51338fd82d98c8edbbaa1f327d2e2a1299e7438126353059c39d568978f4e13"
+    },
+    {
+      "case": "procedure-16",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "811f2ec34523dbd94ea53999c520d2ede4cd7e4e963dfcfa8c47b1999dbf9fcc"
+    },
+    {
+      "case": "procedure-16",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "811f2ec34523dbd94ea53999c520d2ede4cd7e4e963dfcfa8c47b1999dbf9fcc"
+    },
+    {
+      "case": "procedure-16",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "811f2ec34523dbd94ea53999c520d2ede4cd7e4e963dfcfa8c47b1999dbf9fcc"
+    },
+    {
+      "case": "procedure-16",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "4d0630056addf8736af47c7a2be5f234c99204713a75d8e66f969d741d4244fa"
+    },
+    {
+      "case": "procedure-16",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "4d0630056addf8736af47c7a2be5f234c99204713a75d8e66f969d741d4244fa"
+    },
+    {
+      "case": "procedure-16",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "4d0630056addf8736af47c7a2be5f234c99204713a75d8e66f969d741d4244fa"
+    },
+    {
+      "case": "procedure-16",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "0c3831547320fa247ba7c1825518812b72782701350c812a5b284772553fb478"
+    },
+    {
+      "case": "procedure-16",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "0c3831547320fa247ba7c1825518812b72782701350c812a5b284772553fb478"
+    },
+    {
+      "case": "procedure-16",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "0c3831547320fa247ba7c1825518812b72782701350c812a5b284772553fb478"
+    },
+    {
+      "case": "procedure-17",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "5cb98a7721f15aeba6bc74d226240eee7a68ef6768eb03d7df508f533db1f7c4"
+    },
+    {
+      "case": "procedure-17",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "5cb98a7721f15aeba6bc74d226240eee7a68ef6768eb03d7df508f533db1f7c4"
+    },
+    {
+      "case": "procedure-17",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "5cb98a7721f15aeba6bc74d226240eee7a68ef6768eb03d7df508f533db1f7c4"
+    },
+    {
+      "case": "procedure-17",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "e51551f8604ea36154d356ac266bcbc3b8e1051345f1b5f9442c6381c1362447"
+    },
+    {
+      "case": "procedure-17",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e51551f8604ea36154d356ac266bcbc3b8e1051345f1b5f9442c6381c1362447"
+    },
+    {
+      "case": "procedure-17",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "e51551f8604ea36154d356ac266bcbc3b8e1051345f1b5f9442c6381c1362447"
+    },
+    {
+      "case": "procedure-17",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "19a65fc6ffbf06065593e8aa5857b01d04357a7601413701641acf02a777182c"
+    },
+    {
+      "case": "procedure-17",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "19a65fc6ffbf06065593e8aa5857b01d04357a7601413701641acf02a777182c"
+    },
+    {
+      "case": "procedure-17",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "19a65fc6ffbf06065593e8aa5857b01d04357a7601413701641acf02a777182c"
+    },
+    {
+      "case": "procedure-17",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "77cf9e780b30cf44ce4e5bded97685ec883624b0464b0cd0dd3860ad188e7766"
+    },
+    {
+      "case": "procedure-17",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "77cf9e780b30cf44ce4e5bded97685ec883624b0464b0cd0dd3860ad188e7766"
+    },
+    {
+      "case": "procedure-17",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "77cf9e780b30cf44ce4e5bded97685ec883624b0464b0cd0dd3860ad188e7766"
+    },
+    {
+      "case": "procedure-18",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6797f3ba47a6c7cb04be5f08777176c5a5088810b2b50ecbff0add3e0ecae1c6"
+    },
+    {
+      "case": "procedure-18",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "6797f3ba47a6c7cb04be5f08777176c5a5088810b2b50ecbff0add3e0ecae1c6"
+    },
+    {
+      "case": "procedure-18",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "6797f3ba47a6c7cb04be5f08777176c5a5088810b2b50ecbff0add3e0ecae1c6"
+    },
+    {
+      "case": "procedure-18",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "dd2181d779146d95ca58b17d2f91f0249b2e6a7fbad1d107e40aed43d61f74c9"
+    },
+    {
+      "case": "procedure-18",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "dd2181d779146d95ca58b17d2f91f0249b2e6a7fbad1d107e40aed43d61f74c9"
+    },
+    {
+      "case": "procedure-18",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "dd2181d779146d95ca58b17d2f91f0249b2e6a7fbad1d107e40aed43d61f74c9"
+    },
+    {
+      "case": "procedure-18",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "c329a7a0a5072ffedae65332e70863b4d2c032789d42c498b92edae92cd0d0bf"
+    },
+    {
+      "case": "procedure-18",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "c329a7a0a5072ffedae65332e70863b4d2c032789d42c498b92edae92cd0d0bf"
+    },
+    {
+      "case": "procedure-18",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "c329a7a0a5072ffedae65332e70863b4d2c032789d42c498b92edae92cd0d0bf"
+    },
+    {
+      "case": "procedure-18",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "7d1327d125780c3d7331dafbcbb5b5975cae9c642c32aad1b5ac4dc04196110c"
+    },
+    {
+      "case": "procedure-18",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "7d1327d125780c3d7331dafbcbb5b5975cae9c642c32aad1b5ac4dc04196110c"
+    },
+    {
+      "case": "procedure-18",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "7d1327d125780c3d7331dafbcbb5b5975cae9c642c32aad1b5ac4dc04196110c"
+    },
+    {
+      "case": "procedure-19",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "4cb55be5aba790ade30207d8039292b55b9c624ecd553e357f82b60d23952233"
+    },
+    {
+      "case": "procedure-19",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "4cb55be5aba790ade30207d8039292b55b9c624ecd553e357f82b60d23952233"
+    },
+    {
+      "case": "procedure-19",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "4cb55be5aba790ade30207d8039292b55b9c624ecd553e357f82b60d23952233"
+    },
+    {
+      "case": "procedure-19",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "9b5ccedf06c09aa1403e13ad3bafa4095f333fd336866fc0bf87bcf0245e4e53"
+    },
+    {
+      "case": "procedure-19",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "9b5ccedf06c09aa1403e13ad3bafa4095f333fd336866fc0bf87bcf0245e4e53"
+    },
+    {
+      "case": "procedure-19",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "9b5ccedf06c09aa1403e13ad3bafa4095f333fd336866fc0bf87bcf0245e4e53"
+    },
+    {
+      "case": "procedure-19",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e79eb21c3687ef29b720059b7f64a2563d7c4c945ff14acfe5689a310461b85f"
+    },
+    {
+      "case": "procedure-19",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e79eb21c3687ef29b720059b7f64a2563d7c4c945ff14acfe5689a310461b85f"
+    },
+    {
+      "case": "procedure-19",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "e79eb21c3687ef29b720059b7f64a2563d7c4c945ff14acfe5689a310461b85f"
+    },
+    {
+      "case": "procedure-19",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "af951ab7610c52f6bb37d1a41ae4a6b5e95e74738a064e67356b43d91e7bbf74"
+    },
+    {
+      "case": "procedure-19",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "af951ab7610c52f6bb37d1a41ae4a6b5e95e74738a064e67356b43d91e7bbf74"
+    },
+    {
+      "case": "procedure-19",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "af951ab7610c52f6bb37d1a41ae4a6b5e95e74738a064e67356b43d91e7bbf74"
+    },
+    {
+      "case": "procedure-20",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "6918aad324adf127aec3ef099c905c5656c3a32ae5fdbda8183b33cbeab82d0a"
+    },
+    {
+      "case": "procedure-20",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "6918aad324adf127aec3ef099c905c5656c3a32ae5fdbda8183b33cbeab82d0a"
+    },
+    {
+      "case": "procedure-20",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "6918aad324adf127aec3ef099c905c5656c3a32ae5fdbda8183b33cbeab82d0a"
+    },
+    {
+      "case": "procedure-20",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "b10d9b66d60239d0a15278680be00d51875213c409fc35a0a20a85cd4490e200"
+    },
+    {
+      "case": "procedure-20",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "b10d9b66d60239d0a15278680be00d51875213c409fc35a0a20a85cd4490e200"
+    },
+    {
+      "case": "procedure-20",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "b10d9b66d60239d0a15278680be00d51875213c409fc35a0a20a85cd4490e200"
+    },
+    {
+      "case": "procedure-20",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "191cb6fe92fb472b01513076533ed68473b81293b7a03f5390e07b8714e7b091"
+    },
+    {
+      "case": "procedure-20",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "191cb6fe92fb472b01513076533ed68473b81293b7a03f5390e07b8714e7b091"
+    },
+    {
+      "case": "procedure-20",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "191cb6fe92fb472b01513076533ed68473b81293b7a03f5390e07b8714e7b091"
+    },
+    {
+      "case": "procedure-20",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "2e44a6dca3f1a41bb3a8fc8fe463d2a0a225f98f4ca07925082215404a1d4744"
+    },
+    {
+      "case": "procedure-20",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "2e44a6dca3f1a41bb3a8fc8fe463d2a0a225f98f4ca07925082215404a1d4744"
+    },
+    {
+      "case": "procedure-20",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "2e44a6dca3f1a41bb3a8fc8fe463d2a0a225f98f4ca07925082215404a1d4744"
+    },
+    {
+      "case": "procedure-21",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8178124dc3a6a93483a8e3038fc09f5cbeb7953c82a7a7901c3672020b12890f"
+    },
+    {
+      "case": "procedure-21",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8178124dc3a6a93483a8e3038fc09f5cbeb7953c82a7a7901c3672020b12890f"
+    },
+    {
+      "case": "procedure-21",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "8178124dc3a6a93483a8e3038fc09f5cbeb7953c82a7a7901c3672020b12890f"
+    },
+    {
+      "case": "procedure-21",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b1353a3210d87a39f2293b947c80f3f6495d6860e7bf2ab72a92c78b11c8d8e1"
+    },
+    {
+      "case": "procedure-21",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "b1353a3210d87a39f2293b947c80f3f6495d6860e7bf2ab72a92c78b11c8d8e1"
+    },
+    {
+      "case": "procedure-21",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "b1353a3210d87a39f2293b947c80f3f6495d6860e7bf2ab72a92c78b11c8d8e1"
+    },
+    {
+      "case": "procedure-21",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "4a61965dd2975709bd2f02226a8ad9561fa16a52ec011bb8904ba209d35d05ff"
+    },
+    {
+      "case": "procedure-21",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "4a61965dd2975709bd2f02226a8ad9561fa16a52ec011bb8904ba209d35d05ff"
+    },
+    {
+      "case": "procedure-21",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "4a61965dd2975709bd2f02226a8ad9561fa16a52ec011bb8904ba209d35d05ff"
+    },
+    {
+      "case": "procedure-21",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "a80417be0881e81b3931a3656f3bfcf5bb6bf32635f800880e06bf848657d77e"
+    },
+    {
+      "case": "procedure-21",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "a80417be0881e81b3931a3656f3bfcf5bb6bf32635f800880e06bf848657d77e"
+    },
+    {
+      "case": "procedure-21",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "a80417be0881e81b3931a3656f3bfcf5bb6bf32635f800880e06bf848657d77e"
+    },
+    {
+      "case": "procedure-22",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "7f5e870774e89ace435b58dd18e2a0b3c312768ff3d59bb313422b8995d69d70"
+    },
+    {
+      "case": "procedure-22",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "7f5e870774e89ace435b58dd18e2a0b3c312768ff3d59bb313422b8995d69d70"
+    },
+    {
+      "case": "procedure-22",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "7f5e870774e89ace435b58dd18e2a0b3c312768ff3d59bb313422b8995d69d70"
+    },
+    {
+      "case": "procedure-22",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "df1570a7e7a4e15b3c5797a5eff6487c023b98a8b1baeea2bda088ff41f730f6"
+    },
+    {
+      "case": "procedure-22",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "df1570a7e7a4e15b3c5797a5eff6487c023b98a8b1baeea2bda088ff41f730f6"
+    },
+    {
+      "case": "procedure-22",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "df1570a7e7a4e15b3c5797a5eff6487c023b98a8b1baeea2bda088ff41f730f6"
+    },
+    {
+      "case": "procedure-22",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e477c094ca47df624465f42ae6264b6eacb89852e00cdebd2f3b00948d7d4e0b"
+    },
+    {
+      "case": "procedure-22",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e477c094ca47df624465f42ae6264b6eacb89852e00cdebd2f3b00948d7d4e0b"
+    },
+    {
+      "case": "procedure-22",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "e477c094ca47df624465f42ae6264b6eacb89852e00cdebd2f3b00948d7d4e0b"
+    },
+    {
+      "case": "procedure-22",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "5745d4e40e191853a3be66c90203c3728291361e3fe7aee0634ae30360020ad2"
+    },
+    {
+      "case": "procedure-22",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "El ciclo del agua",
+      "hash": "5745d4e40e191853a3be66c90203c3728291361e3fe7aee0634ae30360020ad2"
+    },
+    {
+      "case": "procedure-22",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "La noticia",
+      "hash": "5745d4e40e191853a3be66c90203c3728291361e3fe7aee0634ae30360020ad2"
+    },
+    {
+      "case": "procedure-23",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "8f415b533b326376cdf9c62413db7becf9a78752ae67a6a4026691e74d0bb35a"
+    },
+    {
+      "case": "procedure-23",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "8f415b533b326376cdf9c62413db7becf9a78752ae67a6a4026691e74d0bb35a"
+    },
+    {
+      "case": "procedure-23",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "8f415b533b326376cdf9c62413db7becf9a78752ae67a6a4026691e74d0bb35a"
+    },
+    {
+      "case": "procedure-23",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "e4d67fa4d89299e4a90aff4837dd6c0653a85fb26367417de304c4c5d1fad34d"
+    },
+    {
+      "case": "procedure-23",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "e4d67fa4d89299e4a90aff4837dd6c0653a85fb26367417de304c4c5d1fad34d"
+    },
+    {
+      "case": "procedure-23",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "e4d67fa4d89299e4a90aff4837dd6c0653a85fb26367417de304c4c5d1fad34d"
+    },
+    {
+      "case": "procedure-23",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "31792d8df897a4e2c577e79185d96dd9949e6a57b4ee44f408d969cf30a00256"
+    },
+    {
+      "case": "procedure-23",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "31792d8df897a4e2c577e79185d96dd9949e6a57b4ee44f408d969cf30a00256"
+    },
+    {
+      "case": "procedure-23",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "31792d8df897a4e2c577e79185d96dd9949e6a57b4ee44f408d969cf30a00256"
+    },
+    {
+      "case": "procedure-23",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "58bd06e70bc00918bf4387d3028a207094ef0603b71ffc3c35f9ccefe724a0bf"
+    },
+    {
+      "case": "procedure-23",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "El ciclo del agua",
+      "hash": "58bd06e70bc00918bf4387d3028a207094ef0603b71ffc3c35f9ccefe724a0bf"
+    },
+    {
+      "case": "procedure-23",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "La noticia",
+      "hash": "58bd06e70bc00918bf4387d3028a207094ef0603b71ffc3c35f9ccefe724a0bf"
+    },
+    {
+      "case": "procedure-24",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "df89d81e4dbeacd33ba0b5b60cac7a906ddb5f1369140de6337399b6bba3e551"
+    },
+    {
+      "case": "procedure-24",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "df89d81e4dbeacd33ba0b5b60cac7a906ddb5f1369140de6337399b6bba3e551"
+    },
+    {
+      "case": "procedure-24",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "df89d81e4dbeacd33ba0b5b60cac7a906ddb5f1369140de6337399b6bba3e551"
+    },
+    {
+      "case": "procedure-24",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "d3b325460c6e179fa25106beb7a369c5429262de99fd9e0641c33e30c3131bbf"
+    },
+    {
+      "case": "procedure-24",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "d3b325460c6e179fa25106beb7a369c5429262de99fd9e0641c33e30c3131bbf"
+    },
+    {
+      "case": "procedure-24",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "d3b325460c6e179fa25106beb7a369c5429262de99fd9e0641c33e30c3131bbf"
+    },
+    {
+      "case": "procedure-24",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "734098205d5c6c29993753f4a581140a8f89abccb2031bcac0c0778ac83e10de"
+    },
+    {
+      "case": "procedure-24",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "734098205d5c6c29993753f4a581140a8f89abccb2031bcac0c0778ac83e10de"
+    },
+    {
+      "case": "procedure-24",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "734098205d5c6c29993753f4a581140a8f89abccb2031bcac0c0778ac83e10de"
+    },
+    {
+      "case": "procedure-24",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "529187b040d4ff94e8094ff5fbfa5e2f986d1607adfefd54ec906f53451bb328"
+    },
+    {
+      "case": "procedure-24",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "El ciclo del agua",
+      "hash": "529187b040d4ff94e8094ff5fbfa5e2f986d1607adfefd54ec906f53451bb328"
+    },
+    {
+      "case": "procedure-24",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "La noticia",
+      "hash": "529187b040d4ff94e8094ff5fbfa5e2f986d1607adfefd54ec906f53451bb328"
+    },
+    {
+      "case": "5e233561-1b2c-5f30-a09d-8c7115e91335",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e04c5899cb4984db01061413bee568afaf2e01a84619ce1d6a09dff0960629d7"
+    },
+    {
+      "case": "5e233561-1b2c-5f30-a09d-8c7115e91335",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "28f2166e855daca11e5b4863348bf65c2a345c80c2beed7712dcd24b8e3111c9"
+    },
+    {
+      "case": "5e233561-1b2c-5f30-a09d-8c7115e91335",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ed53bba11c8b296c24f99e81b0973e6ac07a7ad261b728593e60d1d9a1c8ea15"
+    },
+    {
+      "case": "5e233561-1b2c-5f30-a09d-8c7115e91335",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "bda669a1ce3560baa699b267dd0a578b48a75929735034a6cae1fc6c21783af9"
+    },
+    {
+      "case": "5b370889-14d1-5a15-9f3d-50c37639d540",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "f0fa188e5ab75529bf57a9374bd2c7c26eda947022750d107d0fd4991add2cc6"
+    },
+    {
+      "case": "5b370889-14d1-5a15-9f3d-50c37639d540",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "cfeeb39eb5c06f490efbf8e9b4bd5c448b36ca7852d79c0b0c55848201d11dcd"
+    },
+    {
+      "case": "5b370889-14d1-5a15-9f3d-50c37639d540",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "bec66b4ad47d1efc752e10c443e2e376cd81166f0f1339a59e79487610a05140"
+    },
+    {
+      "case": "5b370889-14d1-5a15-9f3d-50c37639d540",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a22a910ac0e8dd5a84593929a06ff3e7c240800fb5e3865ef5907516ffa709ef"
+    },
+    {
+      "case": "cc450be9-08a1-52a0-8736-8fd658614446",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "5ae61fe7634c85d7374ddab5a69d828fe0d668e5da574456133ea7bd72f3954f"
+    },
+    {
+      "case": "cc450be9-08a1-52a0-8736-8fd658614446",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "840a3e30e3f4b9786f397d26c3c0a06a3f964979864cbef7f149f4db407aee8b"
+    },
+    {
+      "case": "cc450be9-08a1-52a0-8736-8fd658614446",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6ff5647a027ad7cb44d1d2c2345efaf55063ecc9a5cfb09485c6ca3a31383e17"
+    },
+    {
+      "case": "cc450be9-08a1-52a0-8736-8fd658614446",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8e5b91ae556733cd95d665f7088d22ac51b2acd620c90af682c482abcf55c4e7"
+    },
+    {
+      "case": "90d6ae86-6b8b-57b1-ab11-965f2d8cf4f4",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "3fb7d4dd1a1a9770d8891d245c6afec068f33c2cced57f2490a116f9fbef8c58"
+    },
+    {
+      "case": "90d6ae86-6b8b-57b1-ab11-965f2d8cf4f4",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b3758867a910617681b3d64900568423ef7bf1f2407eac26049590261be29229"
+    },
+    {
+      "case": "90d6ae86-6b8b-57b1-ab11-965f2d8cf4f4",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "9cf1a1448f975eb120b8147cb8817cd2ed1d736a2027dc93ab6f0de8053c4999"
+    },
+    {
+      "case": "90d6ae86-6b8b-57b1-ab11-965f2d8cf4f4",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "5c4a24eb415fa644d3ee248ea18feeca97dde9ce9f0ce3e1adcfa598a40e75b0"
+    },
+    {
+      "case": "3ff4580b-b3ff-521d-9aa3-3535eb7013dc",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "244ccf4c58fd94aa30be330f727a7963cf7d8a0b92895cd8ffb7e929087813e3"
+    },
+    {
+      "case": "3ff4580b-b3ff-521d-9aa3-3535eb7013dc",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "4b01e727dfe7180cdd86f2a265b2b09eb8bcbba6a55746a9d8923da8f33deb66"
+    },
+    {
+      "case": "3ff4580b-b3ff-521d-9aa3-3535eb7013dc",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "49f47a1b9efe233d8835289deb19da7dbd8f52f90b07d473b143da8f9a4d3a2f"
+    },
+    {
+      "case": "3ff4580b-b3ff-521d-9aa3-3535eb7013dc",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "08f2ba004138b304f09252924f112da7b85dc017e0320ed575497b117e5db962"
+    },
+    {
+      "case": "0ae868e3-b8c5-5bf4-8814-1c63367d4408",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "da2a665c17239808dfff3aa4c8a5c0fe57bf5027aeee78d6d223aea3f93b2eef"
+    },
+    {
+      "case": "0ae868e3-b8c5-5bf4-8814-1c63367d4408",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "636af7be2851cc6adce4136222f4b70a70827aad0fba6ee02532cc9d3759607b"
+    },
+    {
+      "case": "0ae868e3-b8c5-5bf4-8814-1c63367d4408",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "f1c754b0fb0092ac8d9e44385f9cd871b9d738c87772f46b1ed0fad346e5baaf"
+    },
+    {
+      "case": "0ae868e3-b8c5-5bf4-8814-1c63367d4408",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "d0bf0c612e5d1133e7464806103e69b2b7662629eaf11c6ec9c8c2b9fefe2b90"
+    },
+    {
+      "case": "4c28317a-b5b7-54fa-9b75-bb03fd6c820c",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "8801e6d2c8253da640f92fb2ab3519c32869df56dccb38e901da992ef7f4b403"
+    },
+    {
+      "case": "4c28317a-b5b7-54fa-9b75-bb03fd6c820c",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "1ed9f2d03af48ff9d841beb3037f5a63659eb0e0d2bc791368e7cd660d2ba4d3"
+    },
+    {
+      "case": "4c28317a-b5b7-54fa-9b75-bb03fd6c820c",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "18bffa60d8f4be4b0cd6b29d8ed71cb138d7f9081f5a382c7d3410cb4600710a"
+    },
+    {
+      "case": "4c28317a-b5b7-54fa-9b75-bb03fd6c820c",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ee2d5563f76d1e94fd6f3bf2cf2cad19499ad1694e7cfb9f7e7acdfc5d8da435"
+    },
+    {
+      "case": "c9c766ed-07d7-5402-95da-817f0bb3741a",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "5636b60413b60fce765ae52e30c9972afcac809a2ff90b44a664f9e139fce985"
+    },
+    {
+      "case": "c9c766ed-07d7-5402-95da-817f0bb3741a",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "c1b5c94373d80ce9007bcde1f6c56ff073d39ac0b39d7ac603590025752947d1"
+    },
+    {
+      "case": "c9c766ed-07d7-5402-95da-817f0bb3741a",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "87edb6f11889436365ca2101108a841cda77d7702096d6e5fb0e171a13b659bb"
+    },
+    {
+      "case": "c9c766ed-07d7-5402-95da-817f0bb3741a",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "47a46326c1d3582602cfaaa1234a1ef57a9371b388f73a5f3267be70ce2ee3ea"
+    },
+    {
+      "case": "e55780b0-35e2-5ded-8128-6dfd39721e20",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "bcf6d2d3ee0f8d298a5047af4da9a647aca5124ed3686d9391ea9171f9999aa1"
+    },
+    {
+      "case": "e55780b0-35e2-5ded-8128-6dfd39721e20",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6f9357a884aa9e1ebd491eef934b1e24e45317d053cc37a3d1dd04b7fbba2b5f"
+    },
+    {
+      "case": "e55780b0-35e2-5ded-8128-6dfd39721e20",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "710f66c6226cfd06832ba924fcc11c1b9e727665e1fb8b224cd77dda3ad3bddc"
+    },
+    {
+      "case": "e55780b0-35e2-5ded-8128-6dfd39721e20",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "2343018285f8a55c9e569a732e556f4ce68083afaac28f6f08901f48ce50fccc"
+    },
+    {
+      "case": "4998f289-ceb3-59b3-9ad3-b35ba45e125b",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "7db64df33fbee63e45bb8653a4979750d068d701c44c4541e0843ffe4efe8a3a"
+    },
+    {
+      "case": "4998f289-ceb3-59b3-9ad3-b35ba45e125b",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "4f5e57e4d2e582031b99eb2569f84c8613aa2de0b95c325330b159bc57258b9e"
+    },
+    {
+      "case": "4998f289-ceb3-59b3-9ad3-b35ba45e125b",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "69e81233d86a6d4a4be15ba8206dd725d73f6614d3e4890956718ffe8367851d"
+    },
+    {
+      "case": "4998f289-ceb3-59b3-9ad3-b35ba45e125b",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "9ec2b363a44aa68c417c669abb46ab7697f010135974592e0b662bae64978a39"
+    },
+    {
+      "case": "995c366c-da0f-5533-a10d-8ebb1e3e18b0",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "6746e5b989456e8b86c93d556414ce8f9089e61795fbcadeb46e409ead4f22c3"
+    },
+    {
+      "case": "995c366c-da0f-5533-a10d-8ebb1e3e18b0",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "9f2a0f1aba809f2efcba0f40ffcfaff3dc81f04119824fab0c5c6209c050863b"
+    },
+    {
+      "case": "995c366c-da0f-5533-a10d-8ebb1e3e18b0",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "7d85bc7189bcfba0e9bfaf05795078ef21fb70f1c120265ae4ea8f7640082135"
+    },
+    {
+      "case": "995c366c-da0f-5533-a10d-8ebb1e3e18b0",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "d3bf61f11d57acbabf1227c2fa07bee8e010a2b2115923c89d90bc531a53aa44"
+    },
+    {
+      "case": "b6fd3ae6-8f60-5d71-a8e7-e83be5a8dc9f",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "f71d2234e4d78d0537b28ebc21c83821cb86e7e1e6523e0cb3178c63addfb004"
+    },
+    {
+      "case": "b6fd3ae6-8f60-5d71-a8e7-e83be5a8dc9f",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "cee4ceaf531cc18759649040429d00d8e79a9c53315567ffce871a3aa2bcd423"
+    },
+    {
+      "case": "b6fd3ae6-8f60-5d71-a8e7-e83be5a8dc9f",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b3f6f725a1d0cc57824398fde8194ac34340540298a613dbafc55b98bfdd4bca"
+    },
+    {
+      "case": "b6fd3ae6-8f60-5d71-a8e7-e83be5a8dc9f",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "56d149633c1c37be41544a5f507ffba67c3486f5bc56a68834020bd320e6f752"
+    },
+    {
+      "case": "57cdb974-b3ef-534c-94ff-1df2a99220b0",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "918e8d6562b4dcd5db782588a25a980c838d604d0072effb13023821af53e7cc"
+    },
+    {
+      "case": "57cdb974-b3ef-534c-94ff-1df2a99220b0",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "f33f6b08fb81ef2f3b6307c3ad2155f873b307dc57924900bdaa4d972181c470"
+    },
+    {
+      "case": "57cdb974-b3ef-534c-94ff-1df2a99220b0",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "255966af1dfbe01dbbd9859550a9e2ef0bc0a83b9a2b902f65d03e56364edbd4"
+    },
+    {
+      "case": "57cdb974-b3ef-534c-94ff-1df2a99220b0",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "452b95a786ef9b0ae3eda7b39721422b04b3f04df43546c76758cd24ffa96320"
+    },
+    {
+      "case": "41151933-428c-5db4-b7fd-5c7c7e43d29f",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "2dfeaacd461b475c8fa732b0402b3d479544633f0e131010de14109bfdafd945"
+    },
+    {
+      "case": "41151933-428c-5db4-b7fd-5c7c7e43d29f",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "bc00bb8ecf888325f7cf75c682d7c50a98121665035134cadc0e82eccfaa4647"
+    },
+    {
+      "case": "41151933-428c-5db4-b7fd-5c7c7e43d29f",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "296f07c08aedd4ab6a72ad0429f61e376d5cea383484ac4a715c64111f694ed6"
+    },
+    {
+      "case": "41151933-428c-5db4-b7fd-5c7c7e43d29f",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a40dafa63cdb03a8ee0ecc0c83f830613f42ef91e7f139c89c0dfb34552bf82a"
+    },
+    {
+      "case": "deef5089-9f79-5a42-9141-4a93576c0dff",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b612cfd630a2df1bd5b048b17561b60c9c7a84ee143f0e31f71a72110c442923"
+    },
+    {
+      "case": "deef5089-9f79-5a42-9141-4a93576c0dff",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b811db25c52e5fde219eb8e6745983c84e0cce8e3889cbc1ba181e5d377b9b93"
+    },
+    {
+      "case": "deef5089-9f79-5a42-9141-4a93576c0dff",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "ebb1940c414678f65da16fffda0acf1e5dea829c7a6bfb12ae2ecb523099c3de"
+    },
+    {
+      "case": "deef5089-9f79-5a42-9141-4a93576c0dff",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "89ef4a9d5cbb087db277a59b64972ea5f9e8e712af4a8cbd940128962b951fac"
+    },
+    {
+      "case": "a25abc81-4ef8-5a96-9f97-b67c9f58475c",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "1545510f1beebbdabec4012e46a47a0c87581fed814090f076b5adcac5726d98"
+    },
+    {
+      "case": "a25abc81-4ef8-5a96-9f97-b67c9f58475c",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ce134577eb15a5af9c3b1f7308126a416a5de6c684c9c2ce82f08c685923d56f"
+    },
+    {
+      "case": "a25abc81-4ef8-5a96-9f97-b67c9f58475c",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "61803164bfee6080d8099272919c6764058509579ad2d832e39fce3883df7fd7"
+    },
+    {
+      "case": "a25abc81-4ef8-5a96-9f97-b67c9f58475c",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "80f0dae4d1f1ec974865e897f3a825da6f11cede8312e525b16bcbbda634c8b4"
+    },
+    {
+      "case": "f9a28c9c-c46b-55ea-a57b-a375b819547d",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "79a53b839e816cf2242447f40a510397eb088aba18792fe0d07d303cb0208204"
+    },
+    {
+      "case": "f9a28c9c-c46b-55ea-a57b-a375b819547d",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "7346509642f378e3902a95120dd691a3d831c171a01977d8ef8e37d4a061b48a"
+    },
+    {
+      "case": "f9a28c9c-c46b-55ea-a57b-a375b819547d",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "c2d6f33640474a13bf9d7081de9c51668ab217562d43cf9ad9b5763944094d83"
+    },
+    {
+      "case": "f9a28c9c-c46b-55ea-a57b-a375b819547d",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "17289440ab24dfc044ea60bdfef47c54c3beda3ef8914e49efcf31ee00726782"
+    },
+    {
+      "case": "653eebd4-fb5e-52bd-ae52-90048d17b239",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "4ead3344b57aa03f6fdcb04f53afb4ee3d57e5c0ec9d79ad555adfa27ff63b51"
+    },
+    {
+      "case": "653eebd4-fb5e-52bd-ae52-90048d17b239",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "32f737e49a6116f11c7b95b13fdd3f93d4bd87613e294f33c77da31cecc703a3"
+    },
+    {
+      "case": "653eebd4-fb5e-52bd-ae52-90048d17b239",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "c9f8a7ed3751117391f1fd5475fe446300f54b81b42eac47367d95e9c5663914"
+    },
+    {
+      "case": "653eebd4-fb5e-52bd-ae52-90048d17b239",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "cadaa21edcb188b0670b2af8f64528e50fca9f0f592545f9563582c3fb03fc61"
+    },
+    {
+      "case": "0c871d1b-fc32-56cc-8122-3b407846d4ac",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e215e28404a58f27f8dc4e87612aa732313afc18b1dbf4bf2da9fd3bd8b5c591"
+    },
+    {
+      "case": "0c871d1b-fc32-56cc-8122-3b407846d4ac",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "65fb1fad010ace39061fcaa5c73568508e2a02250c9aa5984e17d950cd43c933"
+    },
+    {
+      "case": "0c871d1b-fc32-56cc-8122-3b407846d4ac",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e4e13694b80790463e77fb324d3ad62db4a4647c39869a25b10eb3c433cb907e"
+    },
+    {
+      "case": "0c871d1b-fc32-56cc-8122-3b407846d4ac",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "9467c5223c5fe557276b118d57e0fc2def81026ab7f70e275c017c9d9438c963"
+    },
+    {
+      "case": "a7591e5b-0445-55a5-8a2b-a7b788456298",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "b9de16b50fec74275f89a5269f8fccf312d8cc26b3032e81db412ca457642ba4"
+    },
+    {
+      "case": "a7591e5b-0445-55a5-8a2b-a7b788456298",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "4da76378a0987527e8529a10d1d1cac9631623d043e4e5c6c98ace5fb188d5b0"
+    },
+    {
+      "case": "a7591e5b-0445-55a5-8a2b-a7b788456298",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "c3a815767285c3340655d68a47022be216d3231fa2ad774a6d2f7ff9fe3f45db"
+    },
+    {
+      "case": "a7591e5b-0445-55a5-8a2b-a7b788456298",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "e09d3f6251065743f14489defed3df30cbd5c7a6d2a8cb01754bf22266748d72"
+    },
+    {
+      "case": "6fe9f321-6afd-5acd-bdd2-d92c1af93ec0",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "c5aa141fbd90b7c7e37c6108cc8ebfd83f239ed9196969f3954b303f120f54fd"
+    },
+    {
+      "case": "6fe9f321-6afd-5acd-bdd2-d92c1af93ec0",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "d7d34f99ee50ba40ee549cc5a50f175d4c47c6c5dc9f8173cd693275f091777c"
+    },
+    {
+      "case": "6fe9f321-6afd-5acd-bdd2-d92c1af93ec0",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "2bc0f2cbb06326d9bf1f4e5cfbcef1e9c1be1240721ee048681314ef7a6c285c"
+    },
+    {
+      "case": "6fe9f321-6afd-5acd-bdd2-d92c1af93ec0",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "dc6185cd09e10df94a30053dc876b6beed52649af33e2e28e2df18a1d40a1c61"
+    },
+    {
+      "case": "79a4d114-5b4c-50f2-a660-25825f10e656",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "876240d2381764b195427caeb6b94372f4696544a3ee654e1adb11f69fd645d2"
+    },
+    {
+      "case": "79a4d114-5b4c-50f2-a660-25825f10e656",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "dc8c66f2ce4f47a6c2096499030f308626cdefa47a5440c61588dfb7fa642555"
+    },
+    {
+      "case": "79a4d114-5b4c-50f2-a660-25825f10e656",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "02ef9615c0d6cb49b19bacb956f75ffca3a1f8b7e550ff106c1a5295de5ab3e7"
+    },
+    {
+      "case": "79a4d114-5b4c-50f2-a660-25825f10e656",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "59df097495ddfb4f5b72bb20ab2d453c539626b510a29486bd49fc694a2fcd8d"
+    },
+    {
+      "case": "0b96cdbd-e43a-580d-af3f-3dba0e626ca7",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "fba9983227dffc63fca3545f1a2b14ed544a71711c22076c64ca4b2d4b7b4fe0"
+    },
+    {
+      "case": "0b96cdbd-e43a-580d-af3f-3dba0e626ca7",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "1221a412eb5060c3facac1798017f2c204ecb0f33909776f1b74549e4875e365"
+    },
+    {
+      "case": "0b96cdbd-e43a-580d-af3f-3dba0e626ca7",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a9b17db2864aff2e04181d9a62fa0c392364f8fd7750e23b4581733e61664d62"
+    },
+    {
+      "case": "0b96cdbd-e43a-580d-af3f-3dba0e626ca7",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "e67d2055484a7a4edf8cac7da19c0dff1987ae7104f748e785349086418fda39"
+    },
+    {
+      "case": "bd0fbe5a-ae29-5e5d-9b3e-1c3413765806",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "455abd7995d21617eab1b5cbfc7158d715f06b82773cf1540689ca00326cc5e5"
+    },
+    {
+      "case": "bd0fbe5a-ae29-5e5d-9b3e-1c3413765806",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "883e05e465d9b185e1a35efbe648fa021c123fa47c177585929f837d18650e07"
+    },
+    {
+      "case": "bd0fbe5a-ae29-5e5d-9b3e-1c3413765806",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "0b44cbc6eeb874011c0020fd309bb871f6f2a35d6da224a52b355f66918de79d"
+    },
+    {
+      "case": "bd0fbe5a-ae29-5e5d-9b3e-1c3413765806",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "ec85ceb14b8e3d46c0a7765ce51a3b5e93ddccc7eac0b1bc9808f6f1ecb13808"
+    },
+    {
+      "case": "a3a76a84-7828-52e8-9e42-28e0c0382389",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e399456902de9446254efdbf21313c2492c0bcbc984d72fdec7d3ebe637e6e48"
+    },
+    {
+      "case": "a3a76a84-7828-52e8-9e42-28e0c0382389",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b2bfc001eb9dd995a76f23aa3b5432bfd82b570a95b9f32ce41828c91a0af2b1"
+    },
+    {
+      "case": "a3a76a84-7828-52e8-9e42-28e0c0382389",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "fbab6e39553925be25645befdef262edca923407015aef3f8a92da02f6d1cf27"
+    },
+    {
+      "case": "a3a76a84-7828-52e8-9e42-28e0c0382389",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "b83023af0b6cdbd06aacc72a134927dfa5986b7e1001ae9bfce270b820541300"
+    },
+    {
+      "case": "b9309069-5548-5c87-907e-b8b3b35c7195",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "1b448e740bb845091f1f10ae3e2db1f1798602101b9b5bf5c8642bdf47c45e9d"
+    },
+    {
+      "case": "b9309069-5548-5c87-907e-b8b3b35c7195",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "b752948cd218d7d3cf5804b182ae6a35b105c7aadaf4099fbc048e6271a79678"
+    },
+    {
+      "case": "b9309069-5548-5c87-907e-b8b3b35c7195",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "82697c4546e033389602dd8a23b6d91afb73913d418bbc65cad66dd1d2fe0b1f"
+    },
+    {
+      "case": "b9309069-5548-5c87-907e-b8b3b35c7195",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "0d3cad79e7dc8820137e25b39f236add174a2ccbe7a76fc6e3fcb223f141965e"
+    },
+    {
+      "case": "14b71a98-a43f-5fa5-aa00-39e9d4813260",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "cca478790d43621064267e8433f30bbbd033a150f9960e648fb6a96a19cc6463"
+    },
+    {
+      "case": "14b71a98-a43f-5fa5-aa00-39e9d4813260",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "c63d8bbbc308b46ec63e5d8bb5aa145e520998c8686d387cbb947a663b433eca"
+    },
+    {
+      "case": "14b71a98-a43f-5fa5-aa00-39e9d4813260",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6c2672097218b729f603c89cb3aa34a9e20c550272290b4010fd53a364d6a41b"
+    },
+    {
+      "case": "14b71a98-a43f-5fa5-aa00-39e9d4813260",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "dc42cb7d050466125611887ab695626c0488e2b9ef8a69f9ff873868dffe2114"
+    },
+    {
+      "case": "195c5384-8386-5194-97e2-0d62606b3f78",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "5851fdb740d675832e4e39aed461b3a2c10fc63cc40430413d9f2d09f492b9e9"
+    },
+    {
+      "case": "195c5384-8386-5194-97e2-0d62606b3f78",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "2ed50bc0a58be348f7425c6cd2ba4401273538ed569acdfb64c34084388c324a"
+    },
+    {
+      "case": "195c5384-8386-5194-97e2-0d62606b3f78",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "6916a27b9574a1c090c870531ad1cdbc887405b0eb501b39bb951923b65d672e"
+    },
+    {
+      "case": "195c5384-8386-5194-97e2-0d62606b3f78",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "567268043b23d58ef930e7c0d94da6dfbc2de947e122c6e5318ca2e1945400cf"
+    },
+    {
+      "case": "695cff1a-cebb-5799-8738-a3b92bc8a507",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "2685558ea636e74427566af36dbf6366793ee8114de66614fb5cfe503ce2b839"
+    },
+    {
+      "case": "695cff1a-cebb-5799-8738-a3b92bc8a507",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "efd0ac5738e517912ab4edc936132d5fbcdd830702564923326406dd4fbae6cd"
+    },
+    {
+      "case": "695cff1a-cebb-5799-8738-a3b92bc8a507",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "1803a5c49feea36993799d4b0325f8f0cdacc8d2d32170a32a28f6f4407b5e4d"
+    },
+    {
+      "case": "695cff1a-cebb-5799-8738-a3b92bc8a507",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a456cb0d388d74c64d7a0de1015401fce26e4330621b1adac930792eea1f3274"
+    },
+    {
+      "case": "d3d0c9d6-8bd2-57d2-8b67-69a83581ffa5",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "ef1505c6c777adde0bc2fd24472adf7e3dbeaec6800fed4bddf8fc87c68cdc4e"
+    },
+    {
+      "case": "d3d0c9d6-8bd2-57d2-8b67-69a83581ffa5",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "69fc3ad7a5f5dbe9b52c8c2d0cbd7c38fe869e156d9801575ed822b320272752"
+    },
+    {
+      "case": "d3d0c9d6-8bd2-57d2-8b67-69a83581ffa5",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "0e1aaaa71f605edabc18005bcdf2c05b79ee9744d287e8a374be7acc52aec18d"
+    },
+    {
+      "case": "d3d0c9d6-8bd2-57d2-8b67-69a83581ffa5",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "06c46dccffba38f149796b28649e13977f83d4b139b8b6a203ff75544f7cd086"
+    },
+    {
+      "case": "1393c0b6-ab69-5d90-affc-07dc2d73e08e",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "86c2a9e3ab81e7682e857fd573d65ba9f61e6bf4e3048a18f608de7b3602a229"
+    },
+    {
+      "case": "1393c0b6-ab69-5d90-affc-07dc2d73e08e",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "07b8d5b1cf840a85a961470eb122eb6802574ff6bc0de9cc8544a7253ca7b51d"
+    },
+    {
+      "case": "1393c0b6-ab69-5d90-affc-07dc2d73e08e",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "69d4f15cd96e73bc5a2c98cee50d04e41567132aaa34a0cb151a9a9928401534"
+    },
+    {
+      "case": "1393c0b6-ab69-5d90-affc-07dc2d73e08e",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "233e7463735d4df9188dffa09f054b50a36d754f19e9d77e6a50e6c4188fc22d"
+    },
+    {
+      "case": "c6b311e7-6b90-50bd-a949-958ebf5b5bc5",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "ca3544ac2d34182fa54d2f9f65240cc2995768bfb337751574bccca69fcb2221"
+    },
+    {
+      "case": "c6b311e7-6b90-50bd-a949-958ebf5b5bc5",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "26ab30ea4e4d86b2f06013cd229a0182cce1cd0cb3e6955e94ba886866efd478"
+    },
+    {
+      "case": "c6b311e7-6b90-50bd-a949-958ebf5b5bc5",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a26c3b0de2880ade46a6f8b0d8bbfad7d62bf9dcba709291877ae76245718fad"
+    },
+    {
+      "case": "c6b311e7-6b90-50bd-a949-958ebf5b5bc5",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "35519ae77fe7f5fa6f7445b45283260cf30fb498aeaff8fdeb6dd2c4e9a2373b"
+    },
+    {
+      "case": "12de9b6f-34f3-5a04-907e-e0712bc2c8f0",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "744c38aa2acde9be2b6ed88253a4555352c87c57882926eff70fa94da531fb22"
+    },
+    {
+      "case": "12de9b6f-34f3-5a04-907e-e0712bc2c8f0",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "073c23975c08d989d4d883df647f9c01de513024d81c71ea0308e4dcbb35726a"
+    },
+    {
+      "case": "12de9b6f-34f3-5a04-907e-e0712bc2c8f0",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "17cd098adb64de582c9d6b3df2f00e8f0fd51f004c8e8e2f9337724f93991454"
+    },
+    {
+      "case": "12de9b6f-34f3-5a04-907e-e0712bc2c8f0",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "1683e81c1b85b0133f900cfa9f6f81f5ed75ce702b9c67c041a0772d674348c4"
+    },
+    {
+      "case": "6cfbfca4-fe8e-581e-9d04-e7a52890c794",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "124858c50e6db3cb979b41c3d9155a03dbd05881e299c7e5ce1600ac3452af77"
+    },
+    {
+      "case": "6cfbfca4-fe8e-581e-9d04-e7a52890c794",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "16ed3da97d251e87c304c149918d3ba5279daeee01aa75a341c790239ed9787d"
+    },
+    {
+      "case": "6cfbfca4-fe8e-581e-9d04-e7a52890c794",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "19ae9ac009f70ce3bbb37e28ae15c52b04758429824dd3bb69034d8d59ffcd07"
+    },
+    {
+      "case": "6cfbfca4-fe8e-581e-9d04-e7a52890c794",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "240f87981da8aecaf869b8a17a255a9e43390581d4648375f0c3377e8f16e1cc"
+    },
+    {
+      "case": "e5b71b4b-ac53-5cc9-855d-115f313084b5",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "ca3544ac2d34182fa54d2f9f65240cc2995768bfb337751574bccca69fcb2221"
+    },
+    {
+      "case": "e5b71b4b-ac53-5cc9-855d-115f313084b5",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "26ab30ea4e4d86b2f06013cd229a0182cce1cd0cb3e6955e94ba886866efd478"
+    },
+    {
+      "case": "e5b71b4b-ac53-5cc9-855d-115f313084b5",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a26c3b0de2880ade46a6f8b0d8bbfad7d62bf9dcba709291877ae76245718fad"
+    },
+    {
+      "case": "e5b71b4b-ac53-5cc9-855d-115f313084b5",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "35519ae77fe7f5fa6f7445b45283260cf30fb498aeaff8fdeb6dd2c4e9a2373b"
+    },
+    {
+      "case": "22ebabcd-ea5a-5d74-8a5f-d062ca288a0f",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "c69f23277d5b0ca2408859e80a5ec38ba24f17df66663cf257ebcb3de96c6df1"
+    },
+    {
+      "case": "22ebabcd-ea5a-5d74-8a5f-d062ca288a0f",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "058b2e60e24dc96c893079db6e0aaa4a920accb751d6c92b9ac92b8a618b9b0e"
+    },
+    {
+      "case": "22ebabcd-ea5a-5d74-8a5f-d062ca288a0f",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "a51ea0817e851aa14aa0ea377c41dae9bff867ce97606086ee3d7f44a8382e0e"
+    },
+    {
+      "case": "22ebabcd-ea5a-5d74-8a5f-d062ca288a0f",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "6e1169a0f1e6f4a3b42b2508d258615ee6a6d0406befbe0989ff290c2b9620bc"
+    },
+    {
+      "case": "f98375af-3836-5a83-a867-17fda9492f87",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "4cae8658f97695a5a916871646317f48b027a932605fcd26b0c8de96c67344ca"
+    },
+    {
+      "case": "f98375af-3836-5a83-a867-17fda9492f87",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "19274103f3f604424b20466f4c565c48f525295326e9dd8ee2addcf3bbf4e135"
+    },
+    {
+      "case": "f98375af-3836-5a83-a867-17fda9492f87",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ba35e63cbd42b91bcdb40ff7fb76f2743e0f6f6dfa5eb7cc8494b5658798e9ec"
+    },
+    {
+      "case": "f98375af-3836-5a83-a867-17fda9492f87",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "097b018b958a90aaa8ffa08e38cd2f1cacaafde24009721637c3c37a4701e68e"
+    },
+    {
+      "case": "f677d35c-6b58-5363-8442-27304c0f6313",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "adc1bde1af7f6442ca6cf6a13fd1bd6eac8954e81a0797bbdef947d3101c21ec"
+    },
+    {
+      "case": "f677d35c-6b58-5363-8442-27304c0f6313",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "7a402fd15432a3aed0b8d8f1c30ca7b9ad0dd8eefb2feb9e4663910391473c48"
+    },
+    {
+      "case": "f677d35c-6b58-5363-8442-27304c0f6313",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "f7e6c83e51bb221e2a196a6c4d6ea61d1cf2804b5da4bba50d982bcf499ca331"
+    },
+    {
+      "case": "f677d35c-6b58-5363-8442-27304c0f6313",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "d113734102f4039c7181c6ceb567dad9309ae2610c273d5369a1c9de25244f8b"
+    },
+    {
+      "case": "89f62591-3692-5888-b629-b93ae3bb971b",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "ff88b36d8ab7428f49f9a2f844547bd9c817eebc8be119345df50aa5d1fe2b98"
+    },
+    {
+      "case": "89f62591-3692-5888-b629-b93ae3bb971b",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8755767910210760f14096a3c38976b2efea9fac5fbcc0ae5d94c9104786fa3f"
+    },
+    {
+      "case": "89f62591-3692-5888-b629-b93ae3bb971b",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "f6314daec7cceddf1a10f27889ae63785cfa13965a91618ab334dc943dacbd3a"
+    },
+    {
+      "case": "89f62591-3692-5888-b629-b93ae3bb971b",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b975c746bac92ae4b592661cf37dd03190e1fda011553f90e42dbb6058800cfe"
+    },
+    {
+      "case": "a2974afc-2b1e-507d-a89f-574065990ef2",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "84b5865bd86e9c61d07fb2a9b16d0b90b12892cfddcb0e7d886e6ce468bb20ff"
+    },
+    {
+      "case": "a2974afc-2b1e-507d-a89f-574065990ef2",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "ecb54d74089f6bb825093ccd62e15928ca01caeeaafd8c93360f437aedec16c7"
+    },
+    {
+      "case": "a2974afc-2b1e-507d-a89f-574065990ef2",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "e0658778ad0dc94ddcb2f52dedbbcf27ee5ea5116b31dcd57963972678ea8c6d"
+    },
+    {
+      "case": "a2974afc-2b1e-507d-a89f-574065990ef2",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "c3774f901103ce9e6a0f86c90ba5b68c47b40a1d36ad48b60c4a72a7e12c2f0b"
+    },
+    {
+      "case": "86b5e5f8-094f-54b6-ba7d-7654e33cfc7a",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "4ea13eda8a2f3547c756d67f902a8f9055d1f93a2e163017c8984136063c0d83"
+    },
+    {
+      "case": "86b5e5f8-094f-54b6-ba7d-7654e33cfc7a",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "418d3b661d5ea583e65166148e3155e1d0104d77ee62b40c6950b1bd194174e7"
+    },
+    {
+      "case": "86b5e5f8-094f-54b6-ba7d-7654e33cfc7a",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "f1d871bc2eda11d9024442cdfd452a295aaf5a3cf471ac3b08e7997606662d4f"
+    },
+    {
+      "case": "86b5e5f8-094f-54b6-ba7d-7654e33cfc7a",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "5b7dda26bda3b9a16a224e6a73987a3725cbe09868d43d01df17b62f8789b673"
+    },
+    {
+      "case": "f04bb7a0-6427-5e44-9cb9-07f1a3e7c054",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "ff88b36d8ab7428f49f9a2f844547bd9c817eebc8be119345df50aa5d1fe2b98"
+    },
+    {
+      "case": "f04bb7a0-6427-5e44-9cb9-07f1a3e7c054",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8755767910210760f14096a3c38976b2efea9fac5fbcc0ae5d94c9104786fa3f"
+    },
+    {
+      "case": "f04bb7a0-6427-5e44-9cb9-07f1a3e7c054",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "f6314daec7cceddf1a10f27889ae63785cfa13965a91618ab334dc943dacbd3a"
+    },
+    {
+      "case": "f04bb7a0-6427-5e44-9cb9-07f1a3e7c054",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "b975c746bac92ae4b592661cf37dd03190e1fda011553f90e42dbb6058800cfe"
+    },
+    {
+      "case": "f94c7914-3238-5f5b-89c6-aac6210495e8",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "351d6c52e9ad3ece2114c407feaea4999a9c2314636a0e20666e02a772c281bd"
+    },
+    {
+      "case": "f94c7914-3238-5f5b-89c6-aac6210495e8",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "da7ea70a47c60f5c27b94d55aa3d2823988531ff88cb9482e25d8bf434507304"
+    },
+    {
+      "case": "f94c7914-3238-5f5b-89c6-aac6210495e8",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "39ff234b071dd4cf0d7077f1571142184cebf300ff1cdd802970e07cf20d39b2"
+    },
+    {
+      "case": "f94c7914-3238-5f5b-89c6-aac6210495e8",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "5cc7942658c53ba89db161d4319946e96e3a29cf3d1af7a2721e505b02600f6f"
+    },
+    {
+      "case": "7f200b27-a463-500b-8781-22bbc820f1ed",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "88fefa633d9ee86e2b4e066dfffcd6811befd0ee3189412535e3e06e9f8d0379"
+    },
+    {
+      "case": "7f200b27-a463-500b-8781-22bbc820f1ed",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "875935c27cb6be7ddf3e7659586a0be2b6e4622944b21f53d0fc3db19a819190"
+    },
+    {
+      "case": "7f200b27-a463-500b-8781-22bbc820f1ed",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "f3b791d6d00e6802c334deb9ca7caf8df1814e37beffa17efd788ddc59197382"
+    },
+    {
+      "case": "7f200b27-a463-500b-8781-22bbc820f1ed",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "7d47c7695e526d047240fd758572ba5c429e6793f81fbcec2f346fe011715a9b"
+    },
+    {
+      "case": "dc6aeb8c-a4eb-5b8e-b5a4-b8acba8d4b2c",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "876b32498a44040aec49c08bcd69e859d3c9695f607fb29756f4d6d5b37c9bf6"
+    },
+    {
+      "case": "dc6aeb8c-a4eb-5b8e-b5a4-b8acba8d4b2c",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "2c1eda2233f5d575aa030ef94737c26fcb02093c89d6b4480bae96eb6d583dc0"
+    },
+    {
+      "case": "dc6aeb8c-a4eb-5b8e-b5a4-b8acba8d4b2c",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "2f051820b396e97a0c45389a6919f98f599f2e39d6c90192e14c5e2703d2ab75"
+    },
+    {
+      "case": "dc6aeb8c-a4eb-5b8e-b5a4-b8acba8d4b2c",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "16ab9f902718c6dfe77beafbaafb41caa75b9eafdc7431fdaf459ff5399e0e77"
+    },
+    {
+      "case": "6921ac69-76c6-5e15-b17d-a41c9fff7636",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "9b5f805c3c29afcdf0211119b9877166584a7c46ce2204602cb2ff98662316a6"
+    },
+    {
+      "case": "6921ac69-76c6-5e15-b17d-a41c9fff7636",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "5fbe5de8faeef2a80b9d643fda4fb4216086cfd007e98bc8de3991c57feeddd5"
+    },
+    {
+      "case": "6921ac69-76c6-5e15-b17d-a41c9fff7636",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "feecec1a13a5c6664e10076060f3ec5fcdc1cd1d55c5ea5bef182d1366478d38"
+    },
+    {
+      "case": "6921ac69-76c6-5e15-b17d-a41c9fff7636",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "986c7a9c73632d173780b72f98a9b5dbc16cdb6e000eb6b766780ba8680c9eba"
+    },
+    {
+      "case": "3eb15637-e7f2-5681-a40c-e83758fa6da0",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a5c38a1be27ccb45fada8d3f6570701600b333dc50b0d59147b31071243e8750"
+    },
+    {
+      "case": "3eb15637-e7f2-5681-a40c-e83758fa6da0",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a029e611edbbd4ad6b8ba78ace5971b25a9fc39301a568a7c10776dcc9eb2519"
+    },
+    {
+      "case": "3eb15637-e7f2-5681-a40c-e83758fa6da0",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "5dc880c68c8653442c6965388b04b479f1977da3dd29b7551e072a8c1c8ed4d0"
+    },
+    {
+      "case": "3eb15637-e7f2-5681-a40c-e83758fa6da0",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "08adb55edc29661b0a90dcee5fa51c9c8c3b59c42c6a91b67df022e5defb6ee0"
+    },
+    {
+      "case": "d8a258c0-498e-5bd2-b421-9622881b8f2f",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "e2e256fcd1fdf0393db00d77fa8db006b8329095db1d6b9f15c1e7d649f4360a"
+    },
+    {
+      "case": "d8a258c0-498e-5bd2-b421-9622881b8f2f",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "0a4f5f5a299f96eb45d8e18e7633edcdcb5020f20e320a10d6a29eda3c4bf3bb"
+    },
+    {
+      "case": "d8a258c0-498e-5bd2-b421-9622881b8f2f",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "63066608443e41112141ea1802c006bdac9ec6071012c8c75ed78128a1bb7a2c"
+    },
+    {
+      "case": "d8a258c0-498e-5bd2-b421-9622881b8f2f",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "8c3e4614f0185a618c912c7a7fafeea2a2f001dbe2cbaa492498ad52c1f79d7e"
+    },
+    {
+      "case": "78679f25-53bd-5457-9138-d778ea9d4dd6",
+      "format": "rubrica",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "abd85d36d705de4f00f333b5c553072f840a685f0383b09144a03e45acf942d7"
+    },
+    {
+      "case": "78679f25-53bd-5457-9138-d778ea9d4dd6",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "728a4d35011b3d1b9a3228c9304517586bcb0a499b937bff9054a6c12658d181"
+    },
+    {
+      "case": "78679f25-53bd-5457-9138-d778ea9d4dd6",
+      "format": "escala",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "a1c38b21e5b199d7784303c1b89c040c89c5f45821f353fb9d6d3c60ce0b721a"
+    },
+    {
+      "case": "78679f25-53bd-5457-9138-d778ea9d4dd6",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "activityTitle": "Trabajo",
+      "hash": "edb4c56897b3d911951678b46ddd624d2a2d6c900060e3c792f4c817f46618d0"
+    },
+    {
+      "case": "2b89a101-1512-55fa-8131-8c6cddd51950",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "485f1d7d427414919865bbb0eec9025dfeb48c92e9835aa7a2f3dd69f9b59afd"
+    },
+    {
+      "case": "2b89a101-1512-55fa-8131-8c6cddd51950",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "429b9163f0708735e931eb1e6df920beedb2248f6cf3ee19fc6c8681da229602"
+    },
+    {
+      "case": "2b89a101-1512-55fa-8131-8c6cddd51950",
+      "format": "escala",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "79d996db080fea88ac621e1b2bab0a0468d59001fbd3185681c1dd2d1369dcdf"
+    },
+    {
+      "case": "2b89a101-1512-55fa-8131-8c6cddd51950",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "activityTitle": "Trabajo",
+      "hash": "a7d5caf57b79af5ff88ac9435f4bfe5b0fc8a92dde98dee450ebd19b5af943f0"
+    },
+    {
+      "case": "cc4299ab-9077-58ab-9c45-cf997a2abd0d",
+      "format": "rubrica",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "9d03a0a13182527376cbe190442ca9ccd83caf2ca97360413e74aa9401cd26fe"
+    },
+    {
+      "case": "cc4299ab-9077-58ab-9c45-cf997a2abd0d",
+      "format": "lista-cotejo",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "c7062edaed6445db8ea3a2aefa62443f8782356e4102f2dc8fa621f446d86988"
+    },
+    {
+      "case": "cc4299ab-9077-58ab-9c45-cf997a2abd0d",
+      "format": "escala",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "e3fb0928269fa5ed9dc9e9c5646800dc91189b9bee2acec951d4b6886ddd1f92"
+    },
+    {
+      "case": "cc4299ab-9077-58ab-9c45-cf997a2abd0d",
+      "format": "lista-ponderada",
+      "maxScore": 15,
+      "activityTitle": "Trabajo",
+      "hash": "cd95383c4c4290302c63b456f5a855f1b85ecd0957bab699ae8df89b4b7cc5ff"
+    },
+    {
+      "automatic": true,
+      "purpose": "Se valorará la calidad en varias dimensiones.",
+      "expected": "rubrica"
+    },
+    {
+      "automatic": true,
+      "purpose": "Se comprobará la presencia o ausencia de sus partes.",
+      "expected": "lista-cotejo"
+    },
+    {
+      "automatic": true,
+      "purpose": "Se registrará la regularidad de sus identificaciones.",
+      "expected": "escala"
+    },
+    {
+      "automatic": true,
+      "purpose": "Se distribuirán pesos entre los componentes verificables.",
+      "expected": "lista-ponderada"
+    }
+  ]
+}

@@ -10,6 +10,8 @@ export interface RecommendationCriterion {
   id: string; title: string; description: string; maxScore: number; maxScoreUnits: number
   sourceType: CriterionSource; sourceReferences: CurriculumReference[]; templateId: string
   descriptors: { levelId: string; text: string; scoreUnits: number }[]
+  progressionLevels?: string[]
+  relativeWeight?: number
 }
 export interface InstrumentRecommendation {
   kind: 'RECOMMENDATION'; catalogVersion: string; instrumentType: InstrumentType

@@ -13,8 +13,8 @@ import { SaveActivityDto } from './dto/save-activity.dto'
 export class ActivitiesService {
   constructor(private readonly grading: GradingService) {}
 
-  findAll(schoolId: string, filters: { sectionSubjectId?: string; academicPeriodId?: string; planningEntryId?: string }) {
-    return this.grading.getActivities(schoolId, filters)
+  findAll(schoolId: string, filters: { sectionSubjectId?: string; academicPeriodId?: string; planningEntryId?: string }, userId: string, roles: string[]) {
+    return this.grading.getActivities(schoolId, filters, userId, roles)
   }
 
   getCenter(schoolId: string, userId: string, roles: string[]) {
@@ -25,11 +25,11 @@ export class ActivitiesService {
     return this.grading.saveActivity(schoolId, userId, dto, roles)
   }
 
-  linkPlanning(schoolId: string, id: string, dto: { planningEntryId: string | null; planningMoment?: string }) {
-    return this.grading.linkActivityToPlanning(schoolId, id, dto)
+  linkPlanning(schoolId: string, id: string, dto: { planningEntryId: string | null; planningMoment?: string }, userId: string, roles: string[]) {
+    return this.grading.linkActivityToPlanning(schoolId, id, dto, userId, roles)
   }
 
-  remove(schoolId: string, id: string) {
-    return this.grading.deleteActivity(schoolId, id)
+  remove(schoolId: string, id: string, userId: string, roles: string[]) {
+    return this.grading.deleteActivity(schoolId, id, userId, roles)
   }
 }

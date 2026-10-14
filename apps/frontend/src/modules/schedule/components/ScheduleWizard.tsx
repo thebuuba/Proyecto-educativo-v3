@@ -762,7 +762,7 @@ export function ScheduleWizard({
               Atrás
             </Button>
           ) : onCancel ? (
-            <Button variant="ghost" onClick={onCancel}>
+            <Button data-ui-action="cancel" variant="ghost" onClick={onCancel}>
               Cancelar
             </Button>
           ) : null}

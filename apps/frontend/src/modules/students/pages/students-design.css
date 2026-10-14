@@ -1,0 +1,276 @@
+.students-workspace {
+  width: 100%;
+}
+
+.students-workspace .dashboard-warm-shadow {
+  box-shadow:
+    0 1px 3px color-mix(in srgb, var(--foreground) 8%, transparent),
+    0 1px 2px color-mix(in srgb, var(--foreground) 4%, transparent);
+}
+
+.students-workspace :is(button, summary, a):focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+.students-workspace button,
+.students-workspace h2,
+.students-workspace h3 {
+  font-weight: 600;
+}
+
+.students-page-heading h1 {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 600;
+}
+.students-page-heading .text-accent {
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+.students-page-heading > div > div:last-child {
+  min-width: 0;
+}
+.students-workspace [aria-label='Progreso de matrícula'] {
+  box-shadow: none;
+  background: transparent;
+  padding-inline: 0;
+}
+
+.students-course-card {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 24px;
+  padding: 20px;
+  background: var(--card);
+  text-align: left;
+  box-shadow:
+    0 1px 3px color-mix(in srgb, var(--foreground) 8%, transparent),
+    0 1px 2px color-mix(in srgb, var(--foreground) 4%, transparent);
+  transition:
+    transform 150ms ease-out,
+    box-shadow 150ms ease-out;
+}
+
+.students-course-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 15px -3px color-mix(in srgb, var(--foreground) 8%, transparent),
+    0 4px 6px -4px color-mix(in srgb, var(--foreground) 8%, transparent);
+}
+
+.students-course-subjects {
+  min-height: 32px;
+  align-content: start;
+}
+.students-course-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: auto;
+}
+.students-course-metrics > span {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 10px 8px;
+  border-radius: 16px;
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+.students-course-metrics strong {
+  color: var(--foreground);
+  font-size: 14px;
+  font-weight: 600;
+}
+.students-course-metrics small {
+  font-size: 11px;
+  font-weight: 400;
+}
+.students-course-action {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-radius: 16px;
+  background: var(--primary);
+  padding: 8px 12px;
+  color: var(--primary-foreground);
+  font-size: 13px;
+  font-weight: 500;
+}
+.students-workspace .students-list-filters {
+  margin: 0;
+  border-radius: 0;
+  padding: 20px;
+  box-shadow: none;
+}
+.students-roster {
+  table-layout: auto;
+}
+.students-roster th {
+  padding: 12px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+}
+.students-roster td {
+  padding: 14px 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
+}
+.students-roster tr:last-child td {
+  border-bottom: 0;
+}
+.students-list-number {
+  width: 56px;
+  text-align: center;
+  font-size: 12px;
+}
+.students-list-actions {
+  width: 220px;
+}
+.students-list-code {
+  overflow-wrap: anywhere;
+}
+.students-avatar {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--primary-variant);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.students-actions-menu {
+  position: relative;
+  text-align: left;
+}
+.students-actions-menu summary {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  list-style: none;
+  place-items: center;
+  border-radius: 16px;
+  color: var(--muted-foreground);
+}
+.students-actions-menu summary::-webkit-details-marker {
+  display: none;
+}
+.students-actions-menu summary:hover,
+.students-actions-menu[open] summary {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.students-actions-options {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  z-index: 30;
+  width: 192px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow:
+    0 4px 6px -1px color-mix(in srgb, var(--foreground) 10%, transparent),
+    0 2px 4px -2px color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+.students-actions-options button {
+  width: 100%;
+  min-height: 44px;
+  justify-content: start;
+  padding-inline: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.students-actions-options button.text-destructive {
+  color: var(--destructive);
+}
+.students-roster tr:last-child .students-actions-options {
+  top: auto;
+  bottom: 48px;
+}
+
+@media (max-width: 1199px) {
+  .students-roster,
+  .students-roster tbody {
+    display: block;
+  }
+  .students-roster thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+    overflow: hidden;
+  }
+  .students-roster tr {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) auto;
+    gap: 8px;
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+  }
+  .students-roster td {
+    display: block;
+    padding: 0;
+    border: 0;
+  }
+  .students-list-number {
+    width: auto;
+    padding-top: 12px !important;
+  }
+  .students-list-name {
+    grid-column: 2 / -1;
+  }
+  .students-list-code {
+    grid-column: 2;
+  }
+  .students-list-status {
+    grid-column: 3;
+  }
+  .students-list-actions {
+    grid-column: 2 / -1;
+    width: auto;
+    margin-top: 4px;
+  }
+  .students-list-actions > div {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 639px) {
+  .students-page-heading h1 {
+    font-size: 24px;
+  }
+  .students-page-heading > div > div:last-child {
+    width: 100%;
+  }
+  .students-workspace [aria-label='Progreso de matrícula'] {
+    gap: 8px;
+  }
+  .students-workspace [aria-label='Progreso de matrícula'] > span {
+    font-size: 12px;
+  }
+  .students-workspace [aria-label='Progreso de matrícula'] > span[aria-hidden] {
+    width: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .students-course-card {
+    transition: none;
+  }
+  .students-course-card:hover {
+    transform: none;
+  }
+}

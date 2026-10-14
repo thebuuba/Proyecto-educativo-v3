@@ -4,9 +4,9 @@ import { Link, Navigate, useLocation } from 'react-router-dom'
 import { FacebookIcon, GoogleIcon } from '@/components/auth/AuthIcons'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { createAulaSession, requestMagicLink, requestPasswordReset } from '@/modules/auth/services/authService'
-import { supabase } from '@/modules/auth/services/supabaseClient'
+import { isRememberSessionEnabled, setRememberSessionEnabled, supabase } from '@/modules/auth/services/supabaseClient'
 import { ApiError } from '@/services/apiClient'
-import { PromoLayout } from '@/modules/promo/components/PromoLayout'
+import { AccessLayout } from '@/modules/auth/components/AccessLayout'
 
 type LocationState = { from?: { pathname?: string }; registered?: boolean }
 type RememberedAccount = {
@@ -43,6 +43,7 @@ export function LoginPage() {
   const [email, setEmail] = useState(() => rememberedAccount?.email ?? '')
   const [verificationEmail, setVerificationEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [rememberSession, setRememberSession] = useState(isRememberSessionEnabled)
   const [visible, setVisible] = useState(false)
   const [error, setError] = useState('')
   const [feedback, setFeedback] = useState('')
@@ -153,7 +154,7 @@ export function LoginPage() {
   }
 
   return (
-    <PromoLayout>
+    <AccessLayout>
       <div className="mx-auto max-w-xl px-4 py-8 sm:px-6 sm:py-14">
         <section className="rounded-[28px] bg-card p-6 shadow-sm sm:p-10">
           <div className="mb-8 grid size-11 place-items-center rounded-xl bg-primary text-primary-foreground">
@@ -226,6 +227,8 @@ export function LoginPage() {
                 onClick={() => {
                   setEmail('')
                   setPassword('')
+                  setRememberSessionEnabled(false)
+                  setRememberSession(false)
                   setRememberedAccount(null)
                 }}
               >
@@ -305,6 +308,21 @@ export function LoginPage() {
               </button>
             </form>
           )}
+          <label className="mt-6 flex items-start gap-3 text-sm text-foreground">
+            <input
+              type="checkbox"
+              checked={rememberSession}
+              disabled={busy}
+              onChange={(event) => {
+                setRememberSessionEnabled(event.target.checked)
+                setRememberSession(event.target.checked)
+              }}
+              className="mt-1 size-4 accent-primary"
+            />
+            <span>Recordar sesión en este equipo
+              <span className="block text-xs text-muted-foreground">No lo actives en computadoras compartidas.</span>
+            </span>
+          </label>
           <div className="my-7 flex items-center gap-4 text-xs text-muted-foreground">
             <span className="h-px flex-1 bg-border" />O continúa con
             <span className="h-px flex-1 bg-border" />
@@ -335,7 +353,7 @@ export function LoginPage() {
           </p>
         </section>
       </div>
-    </PromoLayout>
+    </AccessLayout>
   )
 }
 

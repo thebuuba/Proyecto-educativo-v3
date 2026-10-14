@@ -1,0 +1,52 @@
+{
+  "agenda": {
+    "bottom": 3161.75,
+    "height": 856.75,
+    "left": 20,
+    "right": 340,
+    "top": 2305,
+    "width": 320,
+    "x": 20,
+    "y": 2305
+  },
+  "grids": [
+    {
+      "class": "grid gap-6 xl:grid-cols-[minmax(0,1fr)_340px]",
+      "columns": "320px",
+      "gap": "24px",
+      "width": 320
+    },
+    {
+      "class": "grid gap-4 md:grid-cols-3",
+      "columns": "320px",
+      "gap": "16px",
+      "width": 320
+    },
+    {
+      "class": "mt-4 grid grid-cols-3 gap-3 sm:grid-cols-5 xl:grid-cols-9",
+      "columns": "98.6562px 98.6719px 98.6562px",
+      "gap": "12px",
+      "width": 320
+    }
+  ],
+  "scrollAreas": [
+    {
+      "class": "flex-1 overflow-y-auto px-5 py-5 sm:px-8",
+      "client": 360,
+      "scroll": 467
+    },
+    {
+      "class": "relative overflow-hidden rounded-3xl bg-primary p-5 text-primary-foreground shadow-xl shadow-primary/30",
+      "client": 320,
+      "scroll": 360
+    }
+  ],
+  "title": {
+    "line": "32px",
+    "size": "24px"
+  },
+  "viewport": {
+    "height": 812,
+    "width": 375
+  }
+}

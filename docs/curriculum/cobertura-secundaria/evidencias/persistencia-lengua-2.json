@@ -1,0 +1,156 @@
+{
+  "target": "Supabase local 54332",
+  "fixtureSchoolId": "4be4c252-56a1-4feb-bf5c-1d2bd8252a62",
+  "authentication": "JWT sintético con guards reales; no prueba de login",
+  "persistedActivities": 20,
+  "retriedWithoutDuplicates": true,
+  "previousReleasesAndSnapshotsPreserved": true,
+  "manualRevisionPreserved": true,
+  "revisionLineage": [
+    "f806618f-d23c-4eba-9f11-c4578a428d7c",
+    "a2d22c64-92e9-483e-a052-59dd2e22ce8a"
+  ],
+  "changedRetryRejected": true,
+  "results": [
+    {
+      "activityId": "efbe5e8f-08b7-49ea-8c46-b7e178ace73c",
+      "description": "Identifica la estructura de la guía turística.",
+      "instrumentType": "rubrica",
+      "activityType": "TOURIST_GUIDE_ANALYSIS",
+      "snapshotId": "a17164b1-48ec-44cf-ba48-235af39b13bd"
+    },
+    {
+      "activityId": "22b34886-9041-4efd-989d-8cb95013d4c6",
+      "description": "Identifica la estructura de la guía turística.",
+      "instrumentType": "lista-cotejo",
+      "activityType": "TOURIST_GUIDE_ANALYSIS",
+      "snapshotId": "eb59884c-03f6-4314-9dc9-1f13732266e0"
+    },
+    {
+      "activityId": "57acd2d0-94d1-46c9-a693-ddeaccfadf24",
+      "description": "Identifica la estructura de la guía turística.",
+      "instrumentType": "escala",
+      "activityType": "TOURIST_GUIDE_ANALYSIS",
+      "snapshotId": "e23bf7b0-cd07-4013-9574-321a0018081f"
+    },
+    {
+      "activityId": "f7d30515-8323-42c6-af09-051f1f0d613e",
+      "description": "Identifica la estructura de la guía turística.",
+      "instrumentType": "lista-ponderada",
+      "activityType": "TOURIST_GUIDE_ANALYSIS",
+      "snapshotId": "cdb7ffc6-9be2-4e37-a185-955ebb506243"
+    },
+    {
+      "activityId": "8deb8d50-eac8-4180-b0a9-c0c0b33dd69c",
+      "description": "Escribe un artículo expositivo sobre el agua con organización problema-solución.",
+      "instrumentType": "rubrica",
+      "activityType": "WRITTEN_PRODUCTION",
+      "snapshotId": "ab252dc9-0789-4bec-a449-e37e7a0f0a23"
+    },
+    {
+      "activityId": "ea92dd2c-4d27-4e22-881e-9cc784ebf42a",
+      "description": "Escribe un artículo expositivo sobre el agua con organización problema-solución.",
+      "instrumentType": "lista-cotejo",
+      "activityType": "WRITTEN_PRODUCTION",
+      "snapshotId": "3ac57bf8-557c-4ae2-91e4-6f1109631029"
+    },
+    {
+      "activityId": "6745720a-0916-461e-893c-b040d0c68b0d",
+      "description": "Escribe un artículo expositivo sobre el agua con organización problema-solución.",
+      "instrumentType": "escala",
+      "activityType": "WRITTEN_PRODUCTION",
+      "snapshotId": "b6b76880-7f23-41a0-bdc3-5075b3e0b3f7"
+    },
+    {
+      "activityId": "64cef65b-f03d-459c-b141-a0fd721dadb1",
+      "description": "Escribe un artículo expositivo sobre el agua con organización problema-solución.",
+      "instrumentType": "lista-ponderada",
+      "activityType": "WRITTEN_PRODUCTION",
+      "snapshotId": "9c6f87e1-cf7c-4393-818d-553360c2f1b0"
+    },
+    {
+      "activityId": "fc4a89e3-b29d-47b0-a9a4-d9649e4f930f",
+      "description": "Redacta un informe de lectura sobre el cuento leído.",
+      "instrumentType": "rubrica",
+      "activityType": "REPORT",
+      "snapshotId": "1f96d82a-b86a-4aa3-8f09-f93c9a772be5"
+    },
+    {
+      "activityId": "5e47d7c8-e8ba-4c2a-bace-7fc9b7d390cb",
+      "description": "Redacta un informe de lectura sobre el cuento leído.",
+      "instrumentType": "lista-cotejo",
+      "activityType": "REPORT",
+      "snapshotId": "6beaf934-734b-47b9-8d95-b32b799ddfe5"
+    },
+    {
+      "activityId": "8eefb2bd-3f10-4f95-b5aa-525090c1f24c",
+      "description": "Redacta un informe de lectura sobre el cuento leído.",
+      "instrumentType": "escala",
+      "activityType": "REPORT",
+      "snapshotId": "515c3563-088e-4a0b-a2fd-43952fd9e632"
+    },
+    {
+      "activityId": "db5f1b38-41c9-427b-a0bf-3277637fa7a7",
+      "description": "Redacta un informe de lectura sobre el cuento leído.",
+      "instrumentType": "lista-ponderada",
+      "activityType": "REPORT",
+      "snapshotId": "e1610a7c-eb87-4a01-94e2-2201b6887d5a"
+    },
+    {
+      "activityId": "fec7304f-e3ea-48e4-a562-184d335a3884",
+      "description": "Narra oralmente un cuento de amor y amistad.",
+      "instrumentType": "rubrica",
+      "activityType": "ORAL_PRESENTATION",
+      "snapshotId": "f1e2e8ea-2830-4bcd-abf6-f6c7d63e4028"
+    },
+    {
+      "activityId": "fbc4f0c9-8889-473d-bd79-688b8620c651",
+      "description": "Narra oralmente un cuento de amor y amistad.",
+      "instrumentType": "lista-cotejo",
+      "activityType": "ORAL_PRESENTATION",
+      "snapshotId": "939b177b-39ca-4fe1-a48a-27ba920a6c17"
+    },
+    {
+      "activityId": "1f31f5b2-f1d9-4c42-9c88-2e8dd4018e68",
+      "description": "Narra oralmente un cuento de amor y amistad.",
+      "instrumentType": "escala",
+      "activityType": "ORAL_PRESENTATION",
+      "snapshotId": "953aafb3-39a1-4576-9fed-1f5b19b85763"
+    },
+    {
+      "activityId": "e111a7ae-09b1-416b-9584-bbf0fe5ebed0",
+      "description": "Narra oralmente un cuento de amor y amistad.",
+      "instrumentType": "lista-ponderada",
+      "activityType": "ORAL_PRESENTATION",
+      "snapshotId": "b1d2f9b7-a771-48b2-a80b-38004dc2626d"
+    },
+    {
+      "activityId": "ea92be34-b404-4e2f-8eee-26234beddc98",
+      "description": "Recita una décima espinela respetando el ritmo.",
+      "instrumentType": "rubrica",
+      "activityType": "ORAL_PRESENTATION",
+      "snapshotId": "5de39336-a189-4286-9564-4ef659e7e5c5"
+    },
+    {
+      "activityId": "415de3e0-82ea-4bc2-944c-99e4f2c27e03",
+      "description": "Recita una décima espinela respetando el ritmo.",
+      "instrumentType": "lista-cotejo",
+      "activityType": "ORAL_PRESENTATION",
+      "snapshotId": "0783e4e0-1a21-49ad-9560-cabb33667817"
+    },
+    {
+      "activityId": "45ea823e-ad58-4d94-9df3-a10c79721154",
+      "description": "Recita una décima espinela respetando el ritmo.",
+      "instrumentType": "escala",
+      "activityType": "ORAL_PRESENTATION",
+      "snapshotId": "f2821afa-121c-40f1-907a-0542605b5e1d"
+    },
+    {
+      "activityId": "67b891f9-d3ae-4e10-baf4-2b68d05096ea",
+      "description": "Recita una décima espinela respetando el ritmo.",
+      "instrumentType": "lista-ponderada",
+      "activityType": "ORAL_PRESENTATION",
+      "snapshotId": "f806618f-d23c-4eba-9f11-c4578a428d7c"
+    }
+  ]
+}

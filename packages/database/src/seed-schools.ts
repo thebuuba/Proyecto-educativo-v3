@@ -2,9 +2,10 @@ import { createWriteStream, existsSync } from 'node:fs'
 import { createReadStream } from 'node:fs'
 import { createInterface } from 'node:readline'
 import { prisma } from './index.js'
+import { seedCsvPath } from './seed-csv-path.js'
 
 const CSV_URL = 'https://ministeriodeeducacion.gob.do/transparencia/file/descarga?fileNombre=8sq-centros-educativos-de-republica-dominicana-periodo-escolar-2023-2024.csv&fileExt=csv&fileName=RTz-8sq-centros-educativos-de-republica-dominicana-periodo-escolar-2023-2024csv.csv&category=conjunto-de-datos-abiertos&subcategory=1-centros-educativos'
-const CSV_PATH = '/tmp/escuelas_dominicanas.csv'
+const CSV_PATH = seedCsvPath()
 
 function normalizeSector(sector: string): string {
   const s = sector.trim().toUpperCase()

@@ -1,0 +1,524 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "f037918ad4204bbfe37ad779be838be55d4c1407",
+      "dirty": false,
+      "startedAt": "2026-10-13T21:43:26.032Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.17"
+    }
+  },
+  "input": {
+    "sectionSubjectId": "f71192cd-1a20-48f2-b7b7-17fd31f7bc9d",
+    "activityTitle": "El misterio detrás de las pistas.",
+    "description": "Los estudiantes leerán un fragmento de una novela policíaca para identificar los personajes principales y secundarios, el ambiente, el conflicto, las pistas y la secuencia de los acontecimientos. Posteriormente, elaborarán un análisis escrito en el que expliquen cómo se desarrolla el misterio, cuál es el papel del investigador y de qué manera se llega a la resolución del caso. Finalmente, presentarán una interpretación personal del texto, justificando sus conclusiones con evidencias de la lectura."
+  },
+  "interpretation": {
+    "suggestedActivityType": "ANALYSIS",
+    "activityType": "ANALYSIS",
+    "activityTypes": [
+      "EXPOSITION",
+      "ORAL_PRESENTATION",
+      "DEBATE",
+      "NEWSCAST",
+      "NEWS_ANALYSIS",
+      "NEWS_COMPARISON",
+      "NEWS_WRITING",
+      "TOURIST_GUIDE_CREATION",
+      "TOURIST_GUIDE_ANALYSIS",
+      "TOURIST_GUIDE_PRESENTATION",
+      "TOURIST_GUIDE_COMPARISON",
+      "POSTER_CREATION",
+      "POSTER_ANALYSIS",
+      "POSTER_COMPARISON",
+      "POSTER_PRESENTATION",
+      "READING_REPORT_WRITING",
+      "READING_REPORT_ANALYSIS",
+      "READING_REPORT_PRESENTATION",
+      "READING_REPORT_COMPARISON",
+      "DETECTIVE_STORY_WRITING",
+      "DETECTIVE_STORY_ANALYSIS",
+      "DETECTIVE_STORY_NARRATION",
+      "DETECTIVE_STORY_COMPARISON",
+      "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+      "CALLIGRAM_CREATION",
+      "CALLIGRAM_ANALYSIS",
+      "CALLIGRAM_COMPARISON",
+      "CALLIGRAM_RECITATION",
+      "CALLIGRAM_EXPLANATION",
+      "EXPERIMENT",
+      "LAB_PRACTICE",
+      "WRITTEN_PRODUCTION",
+      "ESSAY",
+      "REPORT",
+      "RESEARCH",
+      "PROJECT",
+      "PROBLEM_SOLVING",
+      "EXERCISE_SET",
+      "CONCEPT_MAP",
+      "PORTFOLIO",
+      "ARTISTIC_PRODUCTION",
+      "PERFORMANCE",
+      "MOTOR_SPORTS_PRACTICE",
+      "OBSERVATION",
+      "QUIZ_TEST",
+      "OTHER",
+      "ANALYSIS",
+      "COMPARISON"
+    ],
+    "suggestedEvaluationTechnique": "analisis-producciones",
+    "suggestedInstrumentType": "rubrica",
+    "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "curriculumScopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+    "curriculumStatus": "DRAFT",
+    "curriculumCandidates": [
+      {
+        "elementId": "0e4eb6ac-9469-5683-a95a-210d99a9fca1",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "type": "PROCEDURE",
+        "text": "Comprensión oral (escuchar)\nEscucha atenta de la lectura de entremeses por parte del docente o sus\ncompañeros de clase, anticipación del contenido del entremés a partir del\ntítulo, la descripción del ambiente y los personajes en el mismo; comprensión\ny parafraseo del tema desarrollado en el entremés; comprensión del tema\nque trata y la realidad a la que se hace referencia a partir de los elementos\nestructurales que reconoce.\nInferencia del punto de vista del autor expresado en el entremés a partir de\nlos elementos estructurales que reconoce sobre el posible contexto espacial,\ntemporal, social y cultural al que se hace referencia; identificando los conectores\nlógicos utilizados; comprende la relación que establecen entre las partes del\ntexto o ideas que conecta.\nEstablecimiento de relaciones entre el tema tratado en el entremés y los\ncontenidos de otras materias, reconociendo los usos de la legua no existentes\nen la actualidad; la relación entre los hechos presentados con hechos reales del\npasado, del presente o del futuro; investigación del contexto social y la vida del\nautor para inferir motivaciones por las cuales el autor aborda el tema tratado y\nla forma en que lo hace.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 110,
+            "printedPage": "109"
+          }
+        ],
+        "topicCoverage": 0.25
+      },
+      {
+        "elementId": "24e14dbf-d42d-5d88-b8f9-9b9b4a3208c9",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "type": "PROCEDURE",
+        "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura de la carta de autopresentación,\nanticipando el contenido a partir de la silueta, de fragmentos leídos y de\notras marcas textuales, haciendo uso de inferencias acerca de la intención\ncomunicativa.\nUtilización de la estructura de la carta de autopresentación: (lugar y fecha,\ndestinatario, saludo, cuerpo o asunto que la motiva, despedida y firma) para\ncomprender su contenido, identifica los conectores de finalidad, de adición y de\ncausa• efecto que explican las razones a partir del contexto, del significado de\nlas palabras que desconoce, y utilizando el diccionario en versión física o digital\npara comprender el sentido global.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 105,
+            "printedPage": "104"
+          }
+        ],
+        "topicCoverage": 0.25
+      },
+      {
+        "elementId": "de4751ec-1896-55a5-a789-67ffa9956adc",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "type": "PROCEDURE",
+        "text": "Comprensión oral (escuchar)\nAnticipación del contenido de la carta de autopresentación a partir del\ndestinatario y/o del inicio del cuerpo de la carta, escuchando atentamente carta\ndonde identifica la intención comunicativa del hablante.\nUtilización de la estructura de la carta (lugar y fecha, destinatario, saludo,\nasunto que motiva la carta, despedida y firma) para comprender su contenido;\ninferencias a partir del contexto, del significado de las palabras que desconoce,\nnecesarias para comprender el sentido global de lo que escucha, ya sea leída por\nsus pares o por el/la docente. Paráfrasis clara y coherente de la información de\nla carta de autopresentación que escucha, resumiendo el contenido mediante\nla omisión de información no relevante, identificando de las ideas principales,\ngeneralización y reconstrucción de las ideas que representan el sentido global\ndel texto.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 105,
+            "printedPage": "104"
+          }
+        ],
+        "topicCoverage": 0.25
+      },
+      {
+        "elementId": "10ad2049-4ad6-5650-9996-4710b255d3e4",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "type": "PROCEDURE",
+        "text": "Producción escrita (escribir)\nSelección de la obra temática y la intención comunicativa sobre la cual redactará\ncitas claves (del reportaje, película, documental, obra teatral) y testimonios (del\nautor, personaje de la película, espectáculo) para incluirlas en la reseña.\nPlanificación de la obra, tomando en cuenta su estructura (título, ficha\nbibliográfica, resumen del argumento y valoración personal) y contenido\n(códigos, actores, director, técnicos, público, elementos verbales, paraverbales\ny no verbales).\nSelección del vocabulario apropiado y al tema para la audiencia, utiliza\nconectores de adición y cierre para expresar sus ideas de modo coherente,\nredacta de un primer borrador de la reseña manuscrito o digital, revisa y corrige\nla reseña de manera individual y con la colaboración del/de la docente y de sus\ncompañeros o compañeras, edita y publica en soporte físico o digital.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 106,
+            "printedPage": "105"
+          }
+        ],
+        "topicCoverage": 0.125
+      },
+      {
+        "elementId": "4771e869-1675-55cb-afdf-9a5f1a3f8eef",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "type": "PROCEDURE",
+        "text": "Producción oral (hablar)\nProducción de entremeses de forma oral junto con sus compañeros de clase;\nanticipación del contenido del entremés a partir del título, la descripción del\nambiente y los personajes en el mismo; producción y parafraseo del tema\ndesarrollado en el entremés del tema que trata y la realidad a la que hace\nreferencia a partir de sus elementos estructurales.\nInferencia del punto de vista del autor expresado en el entremés en sus\nelementos estructurales, puntos de vista del autor no expresados, de sus\nelementos estructurales, del posible contexto espacial, temporal, social y\ncultural al que se hace referencia, uso de conectores lógicos de manera efectiva,\nlogrando establecer la relación entre las ideas expresadas.\nEstablecimiento de relaciones entre el tema tratado en el entremés y los\ncontenidos de otras materias, reconociendo usos de la lengua no existentes\nen la actualidad, la relación entre los hechos presentados en el entremés con\nhechos reales del pasado, del presente o del futuro.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 110,
+            "printedPage": "109"
+          }
+        ],
+        "topicCoverage": 0.125
+      }
+    ],
+    "curriculumMatch": "NONE",
+    "requiresCurriculumConfirmation": true,
+    "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+  },
+  "proposal": {
+    "kind": "RECOMMENDATION",
+    "catalogVersion": "evaluation-2026.17",
+    "instrumentType": "rubrica",
+    "confidence": "LOW",
+    "activityType": "ANALYSIS",
+    "evidenceTypes": [
+      "KNOWLEDGE",
+      "PRODUCT"
+    ],
+    "participationMode": "INDIVIDUAL",
+    "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "curriculumScopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+    "selectedCurriculumElements": [],
+    "criteria": [
+      {
+        "id": "proposal:evaluation-2026.17:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:language-content:0",
+        "templateId": "language-content",
+        "title": "Contenido y adecuación",
+        "description": "Desarrolla las ideas del las pistas de acuerdo con la consigna.",
+        "maxScore": 4,
+        "maxScoreUnits": 400,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "sourceReferences": [],
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza con precisión, autonomía y consistencia.",
+            "scoreUnits": 400
+          },
+          {
+            "levelId": "L3",
+            "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+            "scoreUnits": 267
+          },
+          {
+            "levelId": "L2",
+            "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza parcialmente y requiere apoyo frecuente.",
+            "scoreUnits": 133
+          },
+          {
+            "levelId": "L1",
+            "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.17:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:language-structure:1",
+        "templateId": "language-structure",
+        "title": "Estructura",
+        "description": "Organiza el texto según las convenciones del género trabajado.",
+        "maxScore": 3,
+        "maxScoreUnits": 300,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "sourceReferences": [],
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza con precisión, autonomía y consistencia.",
+            "scoreUnits": 300
+          },
+          {
+            "levelId": "L3",
+            "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+            "scoreUnits": 200
+          },
+          {
+            "levelId": "L2",
+            "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+            "scoreUnits": 100
+          },
+          {
+            "levelId": "L1",
+            "text": "Organiza el texto según las convenciones del género trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.17:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:language-coherence:2",
+        "templateId": "language-coherence",
+        "title": "Coherencia y cohesión",
+        "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+        "maxScore": 3,
+        "maxScoreUnits": 300,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "sourceReferences": [],
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza con precisión, autonomía y consistencia.",
+            "scoreUnits": 300
+          },
+          {
+            "levelId": "L3",
+            "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+            "scoreUnits": 200
+          },
+          {
+            "levelId": "L2",
+            "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza parcialmente y requiere apoyo frecuente.",
+            "scoreUnits": 100
+          },
+          {
+            "levelId": "L1",
+            "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.17:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:language-correctness:3",
+        "templateId": "language-correctness",
+        "title": "Vocabulario y corrección",
+        "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+        "maxScore": 3,
+        "maxScoreUnits": 300,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "sourceReferences": [],
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza con precisión, autonomía y consistencia.",
+            "scoreUnits": 300
+          },
+          {
+            "levelId": "L3",
+            "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza adecuadamente, con detalles menores por mejorar.",
+            "scoreUnits": 200
+          },
+          {
+            "levelId": "L2",
+            "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza parcialmente y requiere apoyo frecuente.",
+            "scoreUnits": 100
+          },
+          {
+            "levelId": "L1",
+            "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.17:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:organization:4",
+        "templateId": "organization",
+        "title": "Organización",
+        "description": "Organiza las ideas en una secuencia comprensible.",
+        "maxScore": 2,
+        "maxScoreUnits": 200,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "sourceReferences": [],
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Organiza las ideas en una secuencia comprensible. Lo realiza con precisión, autonomía y consistencia.",
+            "scoreUnits": 200
+          },
+          {
+            "levelId": "L3",
+            "text": "Organiza las ideas en una secuencia comprensible. Lo realiza adecuadamente, con detalles menores por mejorar.",
+            "scoreUnits": 133
+          },
+          {
+            "levelId": "L2",
+            "text": "Organiza las ideas en una secuencia comprensible. Lo realiza parcialmente y requiere apoyo frecuente.",
+            "scoreUnits": 67
+          },
+          {
+            "levelId": "L1",
+            "text": "Organiza las ideas en una secuencia comprensible. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ],
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "totalScore": 15,
+    "totalScoreUnits": 1500,
+    "scoreUnit": 0.01,
+    "internalTrace": {
+      "mappingStatus": "RESOLVED",
+      "reasons": [
+        "band=SECONDARY",
+        "discipline=language",
+        "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+        "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+      ],
+      "ruleId": "oral-written-art-project",
+      "activityTypeOrigin": "DETECTED",
+      "ranking": [
+        {
+          "elementId": "0e4eb6ac-9469-5683-a95a-210d99a9fca1",
+          "score": 45,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "24e14dbf-d42d-5d88-b8f9-9b9b4a3208c9",
+          "score": 45,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "de4751ec-1896-55a5-a789-67ffa9956adc",
+          "score": 43,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "10ad2049-4ad6-5650-9996-4710b255d3e4",
+          "score": 33,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "4771e869-1675-55cb-afdf-9a5f1a3f8eef",
+          "score": 33,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "511ee7f1-ad8f-5aa1-a2fe-1ea945626315",
+          "score": 33,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "cec296fc-1903-54d8-a95b-de3163e0be1c",
+          "score": 33,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "92298e31-fc48-5d8f-adfa-0a8fd9ba0469",
+          "score": 31,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "0275bfe7-c3d9-5df2-88b6-85e1ad129994",
+          "score": 29,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "1f588d35-c347-543d-97a1-033303f664c8",
+          "score": 29,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+          "score": 29,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "ec40e10d-ee9a-5b1f-b98c-759bd54c99b2",
+          "score": 29,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+          "score": 25,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=10",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        }
+      ],
+      "curriculumStatus": "DRAFT",
+      "lowCurriculumConfidence": true,
+      "consideredTypes": [
+        "SPECIFIC_COMPETENCY",
+        "EVALUATION_CRITERION",
+        "ACHIEVEMENT_INDICATOR",
+        "CONCEPT",
+        "PROCEDURE",
+        "ATTITUDE_VALUE"
+      ]
+    }
+  }
+}

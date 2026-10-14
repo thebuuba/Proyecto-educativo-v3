@@ -42,7 +42,7 @@ function currentPrisma() {
   return (globalForPrisma.prisma ??= createPrismaClient())
 }
 
-export const prisma = new Proxy({} as PrismaClient, {
+export const prisma: PrismaClient = new Proxy({} as PrismaClient, {
   get(_target, property) {
     const client = currentPrisma()
     const value = Reflect.get(client, property)
