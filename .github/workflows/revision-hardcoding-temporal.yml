@@ -33,8 +33,9 @@ jobs:
         shell: bash
         run: |
           if [ -f .automation/hardcoding.patch ]; then
-            git apply --check .automation/hardcoding.patch
-            git apply .automation/hardcoding.patch
+            python3 -c 'import base64,gzip,pathlib,sys; sys.stdout.buffer.write(gzip.decompress(base64.b64decode(pathlib.Path(".automation/hardcoding.patch").read_bytes(),validate=True)))' > /tmp/configuracion.patch
+            git apply --check /tmp/configuracion.patch
+            git apply /tmp/configuracion.patch
             git diff --check
             git rm .automation/hardcoding.patch
             git add apps packages scripts docs .env.example .dev.vars.example
