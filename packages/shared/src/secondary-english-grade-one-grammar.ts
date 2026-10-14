@@ -55,7 +55,7 @@ export function requestedEnglishGrammar(text:string){
  return requestedLanguageFeatures(englishGradeOneGrammar,expanded)
 }
 
-export function englishGrammarCriterion(feature:LanguageFeature,text:string,mode:string):ContextualTopicCriterion{
+export function englishGrammarCriterion(feature:LanguageFeature,text:string,mode:string,scope='ing-1'):ContextualTopicCriterion{
  const receptive=mode==='reading'||mode==='listening'
  const source=mode==='listening'?'mensaje escuchado':'texto disponible'
  const explain=/\b(?:explic\w*|justific\w*|funcion|relacion\w*)\b/.test(text)
@@ -74,5 +74,5 @@ export function englishGrammarCriterion(feature:LanguageFeature,text:string,mode
   `El uso de la estructura cambia el sentido: ${feature.error}.`,
   `No aporta usos reconocibles ${ofTarget} para el propósito solicitado.`,
  ]
- return {templateId:`ing-1-feature-${feature.id}`,title:target.charAt(0).toUpperCase()+target.slice(1),observable:levels[0],weight:3,progressionLevels:levels}
+ return {templateId:`${scope}-feature-${feature.id}`,title:target.charAt(0).toUpperCase()+target.slice(1),observable:levels[0],weight:3,progressionLevels:levels}
 }

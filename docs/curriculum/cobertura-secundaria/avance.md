@@ -1,5 +1,19 @@
 # Avance durable — cobertura secundaria
 
+## Encargo vigente: Inglés común 2.º–6.º, en orden — 14/10/2026
+
+El adjunto `1297efcd-88c8-4e97-91b1-15282f03e099/Texto pegado.txt` autoriza continuar estos cinco grados. Sustituye las detenciones de las secciones históricas. Ejecución directa sin subagentes; cerrar cada grado antes del siguiente y detenerse tras sexto.
+
+Base publicada `891ccca847fa6f0b9ee1d03a7bcd89fd37c63254`, rama `amplia-instrumentos-secundaria`, catálogo .46. Recuperados Docker/Supabase local sin reset y frontend5173/backend3000. La conexión habitual de Chrome volvió a funcionar; acceso real autenticado con la cuenta ficticia local comprobado. La captura del usuario en8787 corresponde a otra dirección: no atribuirle el backend de5173.
+
+Inglés2 **parcial**. Fuente común PDF140–145 cotejada visualmente,196 registros con decisiones individuales explícitas. Confirmada la propuesta general de cinco criterios para el correo de planes. Conectado un proveedor propio de nueve funciones y requisitos de encuentro/respuesta, con oraciones básicas enlazadas; detección y alternativa comparten el despacho por grado. .46/.47 congelados; .48 instalado/cargado local. Corregido «el hora» hallado en la revisión de Chrome .47 con prueba roja→verde. Gramática41 familias conectadas pero pendientes de contratos exhaustivos/revisión, sin declarar cobertura integral.
+
+Pruebas:6.459 backend/65 archivos;817 frontend/7 archivos; inventario9 y builds exigidos/shared/Cloudflare dry-run aprobados.41 regresiones frontend iniciales de base. HTTP9 propuestas .46 antes;72 propuestas/nueve interpretaciones por .47/.48. Puntaje pendiente y operaciones de candidatos/completar/manuales/IDs verificadas automáticamente; totales20/17.35. Cuatro funciones cotidianas generadas/editadas/resumidas/guardadas/reabiertas en Chrome y cotejadas con snapshots; pesos20/30/25/25% conservados.108 anteriores intactos,112 actuales. [Informe parcial](ingles-2-punto-de-avance.md), [instrumentos completos](ingles-2-funciones-ejemplos.md).
+
+**Faltan** gramática exhaustiva, léxico/expresiones, estrategias, géneros, contexto observable, composición extensa/negaciones/alternativas y revisión integral. El reinicio de Vite vació el formulario no guardado de la prueba; se reintrodujo, sin afirmar recuperación íntegra. No se ha comenzado3.º; segundo no está cerrado. [Plan de continuación](../../superpowers/plans/2026-10-14-ingles-comun-2-6.md).
+
+Las secciones siguientes conservan el historial; sus órdenes de detenerse quedan sustituidas por el encargo vigente.
+
 ## Encargo vigente: corrección transversal de criterios (.46)
 
 No continuar la ampliación curricular. Alcance cerrado al flujo de añadir/completar en Lengua común1.º–6.º e Inglés común1.º, cuatro formatos. [Informe](criterios-adicionales-informe.md), [matriz de40 familias/768 consignas](criterios-matriz-proveedores.md), [ejemplos completos](criterios-ejemplos-completos.md). Se mantienen todos los cierres/evidencias anteriores, registrando esta regresión adicional y su corrección.

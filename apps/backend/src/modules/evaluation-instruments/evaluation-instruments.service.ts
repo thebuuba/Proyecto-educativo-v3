@@ -5,7 +5,7 @@ import { evaluationCatalogCurrent } from './catalog-current'
 import { academicContext, resolveScope } from './curriculum-context'
 import { detectActivityType, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
-import {resolveFirstGradeEnglishTask,firstGradeEnglishSelections,InstrumentCapacityError} from '@aula/shared'
+import {resolveCommonEnglishTask,commonEnglishSelections,InstrumentCapacityError} from '@aula/shared'
 
 /** Deterministic, read-only recommendation boundary. All tenancy checks precede curricular reads. */
 @Injectable()
@@ -13,11 +13,11 @@ export class EvaluationInstrumentsService {
   private readonly logger = new Logger(EvaluationInstrumentsService.name)
   async interpret(user: AuthenticatedUser, input: InterpretActivityDto) {
     const resolved = await this.resolve(user, input, true)
-    const englishTask=resolveFirstGradeEnglishTask(input.activityTitle,input.description??'',resolved.context)
+    const englishTask=resolveCommonEnglishTask(input.activityTitle,input.description??'',resolved.context)
     const scopedType = englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
     const detected = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === scopedType)
       ?? detectActivityType(input.activityTitle, input.description ?? '', evaluationCatalogCurrent, false)
-    const selections = englishTask?firstGradeEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '') : suggestedSelections(detected.id, resolved.context, input.description ?? '')
+    const selections = englishTask?commonEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '') : suggestedSelections(detected.id, resolved.context, input.description ?? '')
     const type = input.pedagogicalActivityType ?? detected.id
     const ranked = rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
       resolved.resolution.scope, resolved.rows)

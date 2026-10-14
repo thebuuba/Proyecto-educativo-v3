@@ -1571,6 +1571,132 @@
       "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
       "catalogVersion": "evaluation-2026.45",
       "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_AND_EXCLUSIONS_REVIEWED"
+    },
+    {
+      "id": "a3fa1fef-ada2-58dd-98a8-583937514904",
+      "implementation": "PARTIAL_FUNCTIONS_ONLY",
+      "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
+      "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+      "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+      "report": "ingles-2-punto-de-avance.md",
+      "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
+      "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
+      "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
+      "catalogVersion": "evaluation-2026.48"
+    },
+    {
+      "id": "bffcadc6-9a8d-56a8-87ab-bd99121220b2",
+      "implementation": "PARTIAL_FUNCTIONS_ONLY",
+      "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
+      "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+      "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+      "report": "ingles-2-punto-de-avance.md",
+      "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
+      "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
+      "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
+      "catalogVersion": "evaluation-2026.48"
+    },
+    {
+      "id": "793cbabd-53ec-54ec-9ce9-4b6cbc66814c",
+      "implementation": "PARTIAL_FUNCTIONS_ONLY",
+      "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
+      "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+      "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+      "report": "ingles-2-punto-de-avance.md",
+      "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
+      "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
+      "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
+      "catalogVersion": "evaluation-2026.48"
+    },
+    {
+      "id": "d46327e3-353d-5343-bd04-e63f0464ef91",
+      "implementation": "PARTIAL_FUNCTIONS_ONLY",
+      "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
+      "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+      "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+      "report": "ingles-2-punto-de-avance.md",
+      "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
+      "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
+      "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
+      "catalogVersion": "evaluation-2026.48"
+    },
+    {
+      "id": "1e0f4eac-f8ea-5df5-9377-fd5f8e659e19",
+      "implementation": "PARTIAL_FUNCTIONS_ONLY",
+      "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
+      "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+      "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+      "report": "ingles-2-punto-de-avance.md",
+      "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
+      "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
+      "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
+      "catalogVersion": "evaluation-2026.48"
+    },
+    {
+      "id": "99bb98b0-f00d-5a0f-b097-22c6386775f0",
+      "implementation": "PARTIAL_FUNCTIONS_ONLY",
+      "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
+      "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+      "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+      "report": "ingles-2-punto-de-avance.md",
+      "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
+      "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
+      "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
+      "catalogVersion": "evaluation-2026.48"
     }
   ],
   "sourceAnomalies": [
@@ -1752,6 +1878,27 @@
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
       "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES_AND_CAPACITY_AND_ROW_OPERATIONS",
       "pending": "Sin pendientes conocidos dentro de las familias y requisitos documentados. Análisis determinista limitado a patrones ensayados; no cobertura de cualquier redacción."
+    },
+    {
+      "id": "7e4c1236-8f04-5817-b017-a9ace9edff5e",
+      "implementation": "PARTIAL_FUNCTIONS_ONLY",
+      "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
+      "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+      "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+      "report": "ingles-2-punto-de-avance.md",
+      "catalogVersion": "evaluation-2026.48",
+      "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
+      "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
+      "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero."
     }
   ],
   "sourceAdditions": [

@@ -1,5 +1,23 @@
 # Continuación del encargo completo
 
+## Retomar aquí: Inglés común 2.º–6.º — 14/10/2026
+
+Alcance autorizado por adjunto `1297efcd-88c8-4e97-91b1-15282f03e099/Texto pegado.txt`; sin subagentes. [Estado vigente](avance.md), [plan](../../superpowers/plans/2026-10-14-ingles-comun-2-6.md). No usar las detenciones históricas como impedimento: el usuario autorizó esta ampliación después de ellas.
+
+Rama `amplia-instrumentos-secundaria`, base891ccca publicada, .46/.47 congelados y .48 instalado/cargado local. Supabase54321 conserva datos, frontend5173/backend3000. Chrome habitual accesible y autenticado con cuenta ficticia; no cambiarlo al8787 de la captura ni al remoto. Credenciales, .env, cuentas y logs de arranque excluidos de Git y no deben imprimirse.
+
+Segundo sigue **parcial**. PDF140–145 cotejado visualmente: páginas143/144 son continuaciones de gramática con otras columnas vacías.196 registros; distinguir encabezados, «You’re welcome» como continuación, gramática incrustada en deseos, y registros compuestos de tecnología/vías, número/artículos/comparativos, pronombres, adverbios y conectores. La frase «Identificación de que se comprensión oral» aparece así en la fuente y requiere registrar ambigüedad sin inventar contenido. Excluir motivación, ansiedad y rasgos personales como calificaciones.
+
+Se reprodujeron los cinco criterios generales en .46 para el correo de planes. Nueve funciones propias y gramática41 familias curada de segundo; despacho compartido. Backend6.459/65 y frontend817/7 pasan; inventario9/builds exigidos/shared/Cloudflare dry-run aprobados. El total ausente/cero no es una entrada válida del backend: pendiente se verifica en frontend, conservando puntuación invisible y reparto posterior.
+
+HTTP: nueve propuestas previas .46;72 propuestas/nueve interpretaciones en .47 y .48. Chrome descubrió «el hora» en .47, corregido con prueba roja→verde en .48. Cuatro recorridos cotidianos de funciones editados/guardados/reabiertos y cotejados con snapshot/IDs/objetivos/textos/puntos; ponderada20/30/25/25% conservada.108 históricos intactos;112 actuales. [Informe](ingles-2-punto-de-avance.md), [ejemplos completos](ingles-2-funciones-ejemplos.md). El reinicio de Vite vació el formulario no guardado de prueba, que se reintrodujo; no atribuir recuperación íntegra.
+
+Siguiente: contratos exhaustivos de gramática y revisión de patrones; conectar léxico/expresiones, estrategias, géneros/contexto/composición con TDD. Registrar por cada familia evidencia y pendientes; conservar filas/capacidad/puntos/históricos/CRUD. .48 ya instalado es inmutable: congelarlo antes de la siguiente versión. No cerrar segundo ni comenzar tercero mientras esos pendientes sigan abiertos. Reutilizar helpers solo para formas presentes en ambas fuentes; no copiar primero cambiando el grado. Actualizar matriz, revisión final y commits/push de cada bloque.
+
+No IA de aplicación, dependencias, rediseño, main, producción, reset ni modificación de snapshots. Actualizar este punto después de cada bloque y publicar commits coherentes en español.
+
+Lo siguiente es historial.
+
 ## Encargo vigente: corrección transversal de criterios (.46)
 
 No continuar la ampliación curricular. Alcance cerrado al flujo de añadir/completar en Lengua común1.º–6.º e Inglés común1.º, cuatro formatos. [Informe](criterios-adicionales-informe.md), [matriz de40 familias/768 consignas](criterios-matriz-proveedores.md), [ejemplos completos](criterios-ejemplos-completos.md). Se mantienen todos los cierres/evidencias anteriores, registrando esta regresión adicional y su corrección.

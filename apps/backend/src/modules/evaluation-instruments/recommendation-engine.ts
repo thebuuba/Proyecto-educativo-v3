@@ -9,7 +9,7 @@ import { readingReportCriteria } from './authored/language/reading-report-grade-
 import { detectiveStoryCriteria } from './authored/language/detective-story-grade-1'
 import { calligramCriteria } from './authored/language/calligram-grade-1'
 import type { AuthoredCriterion } from './authored/language/types'
-import { distributeScoreUnits, findSecondaryLanguageTopic, secondaryTopicCriteria, withoutResources, scientificTaskType, findSecondaryScienceTopic, secondaryScienceCriteria, resolveFirstGradeEnglishTask,firstGradeEnglishCriteria,firstGradeEnglishSelections,commonFirstGradeEnglish } from '@aula/shared'
+import { distributeScoreUnits, findSecondaryLanguageTopic, secondaryTopicCriteria, withoutResources, scientificTaskType, findSecondaryScienceTopic, secondaryScienceCriteria, resolveCommonEnglishTask,commonEnglishCriteria,commonEnglishSelections,commonSecondaryEnglish,englishTaskGrade } from '@aula/shared'
 import { detectSecondaryLanguageActivity, firstSecondaryLanguageTechnique, INSTRUMENT_MAX_CRITERIA, type CurriculumReference, type InstrumentRecommendation, type RecommendationCriterion } from '@aula/shared'
 export { detectFirstSecondaryLanguageActivity, detectSecondaryLanguageActivity } from '@aula/shared'
 import { type EvaluationCatalog, evaluationCatalogCurrent } from './catalog-current'
@@ -193,8 +193,8 @@ export function firstSecondaryLanguageSelections(activityType: string, descripti
 }
 
 export function suggestedSelections(activityType: string, context: AcademicContext | null, description = '') {
-  const english=resolveFirstGradeEnglishTask('',description,context)
-  if(english)return firstGradeEnglishSelections(english,description)
+  const english=resolveCommonEnglishTask('',description,context)
+  if(english)return commonEnglishSelections(english,description)
   const activity = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === activityType)
   if (!activity) return null
   const band = context?.level === 'PRIMARY' ? context.cycle === 1 ? 'PRIMARY_FIRST' : 'PRIMARY_SECOND' : 'SECONDARY'
@@ -218,7 +218,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const text = normalize(`${input.activityTitle} ${withoutResources(input.description ?? '')}`)
   const explicit = input.pedagogicalActivityType ? catalog.activityTypes.find(a => a.id === input.pedagogicalActivityType) : undefined
   if (input.pedagogicalActivityType && !explicit) throw new Error('Tipo pedagógico desconocido.')
-  const englishTask=catalog.englishGradeOneModule?resolveFirstGradeEnglishTask(input.activityTitle,input.description??'',context):null
+  const englishTask=(context?.grade===2?catalog.englishGradeTwoModule:catalog.englishGradeOneModule)?resolveCommonEnglishTask(input.activityTitle,input.description??'',context):null
   const scopedType = englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', context)
   const detectedByCatalog = catalog.activityTypes.find(entry => entry.id === scopedType)
     ?? detectActivityType(input.activityTitle, input.description ?? '', catalog, false)
@@ -273,8 +273,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     && (!r.maxScore || input.maxScore <= r.maxScore) && (!r.evidence || r.evidence.every(e => activity.evidence.includes(e))))
     .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
   const levelCount = input.levelCount ?? 4
-  const instrumentIntent = context?.level === 'SECONDARY' && (context.subjectCode === 'LEN'||commonFirstGradeEnglish(context)) ? languageInstrumentIntent(input.description ?? '') : undefined
-  const chosenInstrument = input.preferredInstrumentType ?? instrumentIntent ?? (englishTask?firstGradeEnglishSelections(englishTask,input.description??'').suggestedInstrumentType:rule.instrument)
+  const instrumentIntent = context?.level === 'SECONDARY' && (context.subjectCode === 'LEN'||commonSecondaryEnglish(context)) ? languageInstrumentIntent(input.description ?? '') : undefined
+  const chosenInstrument = input.preferredInstrumentType ?? instrumentIntent ?? (englishTask?commonEnglishSelections(englishTask,input.description??'').suggestedInstrumentType:rule.instrument)
   const scores = distributeScoreUnits(Math.round(input.maxScore * 100), chosenInstrument === 'lista-ponderada'
     ? distributeScoreUnits(10000, candidateWeights) : candidateWeights)
   const template = catalog.instrumentTemplates.find(t => t.id === chosenInstrument)!
@@ -314,7 +314,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const detectiveModule = firstGenre === 'DETECTIVE_STORY' && isFirstGradeDetectiveActivity(activity.id)
   const calligramModule = firstGenre === 'CALLIGRAM' && isFirstGradeCalligramActivity(activity.id)
   const novelCriteria=contextualTopic?[]:secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',context,activity.id,input.includeAdditionalCandidates)
-  const selectedAuthored: AuthoredCriterion[] = englishTask ? firstGradeEnglishCriteria(englishTask) : novelCriteria.length ? novelCriteria : mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
+  const selectedAuthored: AuthoredCriterion[] = englishTask ? commonEnglishCriteria(englishTask) : novelCriteria.length ? novelCriteria : mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
     : scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
     : contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '',input.includeAdditionalCandidates)
     : newsModule ? context?.grade === 2 ? secondGradeNewsCriteria(activity.id, input.description ?? '') : newsCriteria(activity.id, input.description ?? '')
@@ -356,7 +356,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       ranking: ranking.slice(0, 24).map(r => ({ elementId: r.element.elementId, score: r.score, topicCoverage: r.topicCoverage, reasons: r.reasons })),
       curriculumStatus, lowCurriculumConfidence: confidence === 'LOW', consideredTypes: Object.keys(typeWeights) } }
   if (scienceTopic) result.internalTrace.reasons.push(`module=science-${scienceTopic}-${context?.grade}`)
-  if(englishTask)result.internalTrace.reasons.push('module=ingles-comunicacion-1',`mode=${englishTask.mode}`,`functions=${englishTask.functions.join(',')}`,'coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES')
+  if(englishTask)result.internalTrace.reasons.push(`module=ingles-comunicacion-${englishTaskGrade(englishTask)}`,`mode=${englishTask.mode}`,`functions=${englishTask.functions.join(',')}`,englishTaskGrade(englishTask)===1?'coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES':'coverage=COMMON_SECOND_GRADE_FUNCTIONS_PARTIAL')
   if(novelCriteria.length) result.internalTrace.reasons.push('module=novela-analisis-fragmento-5','coverage=TASK_DERIVED_PARTIAL',`task=${JSON.stringify(resolveEvaluationTask(input.activityTitle,input.description??''))}`)
   if(authored.some(row=>row.templateId.startsWith('task-'))) result.internalTrace.reasons.push('coverage=ACTION_ONLY')
   if (mathTopic) result.internalTrace.reasons.push(`module=math-${mathTopic}-${context?.grade}`,
