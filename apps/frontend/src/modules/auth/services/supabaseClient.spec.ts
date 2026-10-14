@@ -49,7 +49,9 @@ describe('consentimiento de persistencia de sesión', () => {
     expect(isRememberSessionEnabled()).toBe(false)
   })
   it('permite abrir el enlace PKCE en otra pestaña sin persistir la sesión', () => {
-    const key = `sb-${new URL(import.meta.env.VITE_SUPABASE_URL).hostname.split('.')[0]}-auth-token-code-verifier`
+    const url = import.meta.env.VITE_SUPABASE_URL
+    if (!url) throw new Error('VITE_SUPABASE_URL es necesaria para esta prueba.')
+    const key = `sb-${new URL(url).hostname.split('.')[0]}-auth-token-code-verifier`
     const clock = vi.spyOn(Date, 'now').mockReturnValue(1000)
     authSessionStorage.setItem(key, 'single-use-verifier')
     authSessionStorage.setItem('test-token', 'tab-only')
