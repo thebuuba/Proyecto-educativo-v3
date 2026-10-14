@@ -13630,11 +13630,16 @@
       ],
       "inventoryStatus": "INVENTARIADO",
       "extractionStatus": "EXTRAÍDO",
-      "engineConnection": "PENDING",
-      "instrumentFormats": [],
-      "serviceVerification": "NOT_RUN",
-      "interfaceVerification": "NOT_RUN",
-      "pending": "Revisar temas y cobertura evaluativa del ámbito.",
+      "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
+      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
       "elements": {
         "CONCEPT": [
           {
@@ -15059,122 +15064,459 @@
       },
       "topics": [
         {
-          "id": "7a39affe-3bce-5f6c-9917-0f76b48416c0",
-          "title": "Temas",
+          "id": "f2761aa8-223b-522a-8a30-7d88961a7421",
+          "title": "Identificación personal",
           "source": {
-            "id": "7a39affe-3bce-5f6c-9917-0f76b48416c0",
-            "text": "Temas",
+            "id": "f2761aa8-223b-522a-8a30-7d88961a7421",
+            "text": "• Identificación personal",
             "pdfPage": 134,
             "printedPage": "133",
-            "sourceOrder": 1341000
+            "sourceOrder": 1341001
           },
-          "subtopics": [
-            {
-              "id": "f2761aa8-223b-522a-8a30-7d88961a7421",
-              "text": "• Identificación personal",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341001
-            },
-            {
-              "id": "6c073daa-0225-5c77-931e-ca9449b33601",
-              "text": "• Relaciones humanas y sociales",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341002
-            },
-            {
-              "id": "0ff81864-ed17-5bc7-a363-0e79b0601d39",
-              "text": "• Actividades de la vida diaria",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341003
-            },
-            {
-              "id": "7c849379-fd20-55d2-8645-838fac2615e2",
-              "text": "• Vivienda, entorno y ciudad",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341004
-            },
-            {
-              "id": "9d5479d5-b3b2-5a50-bf71-7c25a32f6e62",
-              "text": "• Escuela y educación",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341005
-            },
-            {
-              "id": "929ea780-a9e4-5702-b1ab-09fa056194a6",
-              "text": "• Deporte, tiempo libre y recreación",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341006
-            },
-            {
-              "id": "87d9ec64-70a9-5cb7-bb58-8def4bd3aaa7",
-              "text": "• Alimentación",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341007
-            },
-            {
-              "id": "b445adce-1ed9-5a1a-bfc7-2f5d3e57ed9e",
-              "text": "• Salud y cuidados físicos",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341008
-            },
-            {
-              "id": "aad9e806-9dd4-5b9a-92e1-77c41ac9bff6",
-              "text": "• Lengua y comunicación",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341009
-            },
-            {
-              "id": "d6e4ec8f-a88a-54f8-9e07-8a69ac5cadea",
-              "text": "• Ciencia y tecnología",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341010
-            },
-            {
-              "id": "d49eb452-91b3-5d67-84f9-b53c882c0486",
-              "text": "• Clima, condiciones atmosféricas y\nmedio ambiente",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341011
-            },
-            {
-              "id": "8b6eb5b3-05c1-5c11-bc33-4c08ae593dba",
-              "text": "• Bienes y servicios",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341012
-            },
-            {
-              "id": "1dc38012-559e-5f6a-9332-7beacb40559b",
-              "text": "• Actividades sociales y culturales:\nViajes y turismo",
-              "pdfPage": 134,
-              "printedPage": "133",
-              "sourceOrder": 1341013
-            }
-          ],
+          "subtopics": [],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "ONE_FORMAT_LOCAL_UI_PASSED",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
           "procedures": [],
           "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_UI_EXAMPLE_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "6c073daa-0225-5c77-931e-ca9449b33601",
+          "title": "Relaciones humanas y sociales",
+          "source": {
+            "id": "6c073daa-0225-5c77-931e-ca9449b33601",
+            "text": "• Relaciones humanas y sociales",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341002
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "ONE_FORMAT_LOCAL_UI_PASSED",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_UI_EXAMPLE_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "0ff81864-ed17-5bc7-a363-0e79b0601d39",
+          "title": "Actividades de la vida diaria",
+          "source": {
+            "id": "0ff81864-ed17-5bc7-a363-0e79b0601d39",
+            "text": "• Actividades de la vida diaria",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341003
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "ONE_FORMAT_LOCAL_UI_PASSED",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_UI_EXAMPLE_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "7c849379-fd20-55d2-8645-838fac2615e2",
+          "title": "Vivienda, entorno y ciudad",
+          "source": {
+            "id": "7c849379-fd20-55d2-8645-838fac2615e2",
+            "text": "• Vivienda, entorno y ciudad",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341004
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "PENDING_TOPIC_UI",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_HTTP_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "9d5479d5-b3b2-5a50-bf71-7c25a32f6e62",
+          "title": "Escuela y educación",
+          "source": {
+            "id": "9d5479d5-b3b2-5a50-bf71-7c25a32f6e62",
+            "text": "• Escuela y educación",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341005
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "PENDING_TOPIC_UI",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_HTTP_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "929ea780-a9e4-5702-b1ab-09fa056194a6",
+          "title": "Deporte, tiempo libre y recreación",
+          "source": {
+            "id": "929ea780-a9e4-5702-b1ab-09fa056194a6",
+            "text": "• Deporte, tiempo libre y recreación",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341006
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "PENDING_TOPIC_UI",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_HTTP_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "87d9ec64-70a9-5cb7-bb58-8def4bd3aaa7",
+          "title": "Alimentación",
+          "source": {
+            "id": "87d9ec64-70a9-5cb7-bb58-8def4bd3aaa7",
+            "text": "• Alimentación",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341007
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "PENDING_TOPIC_UI",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_HTTP_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "b445adce-1ed9-5a1a-bfc7-2f5d3e57ed9e",
+          "title": "Salud y cuidados físicos",
+          "source": {
+            "id": "b445adce-1ed9-5a1a-bfc7-2f5d3e57ed9e",
+            "text": "• Salud y cuidados físicos",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341008
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "PENDING_TOPIC_UI",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_HTTP_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "aad9e806-9dd4-5b9a-92e1-77c41ac9bff6",
+          "title": "Lengua y comunicación",
+          "source": {
+            "id": "aad9e806-9dd4-5b9a-92e1-77c41ac9bff6",
+            "text": "• Lengua y comunicación",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341009
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "PENDING_TOPIC_UI",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_HTTP_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "d6e4ec8f-a88a-54f8-9e07-8a69ac5cadea",
+          "title": "Ciencia y tecnología",
+          "source": {
+            "id": "d6e4ec8f-a88a-54f8-9e07-8a69ac5cadea",
+            "text": "• Ciencia y tecnología",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341010
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "PENDING_TOPIC_UI",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_HTTP_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "d49eb452-91b3-5d67-84f9-b53c882c0486",
+          "title": "Clima, condiciones atmosféricas y medio ambiente",
+          "source": {
+            "id": "d49eb452-91b3-5d67-84f9-b53c882c0486",
+            "text": "• Clima, condiciones atmosféricas y\nmedio ambiente",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341011
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "ONE_FORMAT_LOCAL_UI_PASSED",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_UI_EXAMPLE_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "8b6eb5b3-05c1-5c11-bc33-4c08ae593dba",
+          "title": "Bienes y servicios",
+          "source": {
+            "id": "8b6eb5b3-05c1-5c11-bc33-4c08ae593dba",
+            "text": "• Bienes y servicios",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341012
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "PENDING_TOPIC_UI",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_HTTP_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
+        },
+        {
+          "id": "1dc38012-559e-5f6a-9332-7beacb40559b",
+          "title": "Actividades sociales y culturales: Viajes y turismo",
+          "source": {
+            "id": "1dc38012-559e-5f6a-9332-7beacb40559b",
+            "text": "• Actividades sociales y culturales:\nViajes y turismo",
+            "pdfPage": 134,
+            "printedPage": "133",
+            "sourceOrder": 1341013
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "PENDING_TOPIC_UI",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+          "automatedVerification": "PARTIAL_PASSED",
+          "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+          "applicationVerification": "LOCAL_HTTP_PASSED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md",
+          "catalogVersion": "evaluation-2026.35"
         },
         {
           "id": "1349f236-6d54-5d0e-a9c0-8f8a417c479d",
@@ -15459,14 +15801,37 @@
               "pdfPage": 135,
               "printedPage": "134",
               "sourceOrder": 1351031
-            },
-            {
-              "id": "bf2f974a-4bf5-5cf4-a609-ee895f85a79c",
-              "text": "• Saludos:\nHello! How are you? Fine, thanks.\nAnd you?",
-              "pdfPage": 136,
-              "printedPage": "135",
-              "sourceOrder": 1361000
-            },
+            }
+          ],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PENDING",
+          "instrumentFormats": [],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "procedures": [],
+          "procedureAssociation": "PENDING_VISUAL_REVIEW",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PENDING_SPECIFIC_REQUIREMENTS",
+          "automatedVerification": "NOT_RUN",
+          "manualVerification": "NOT_RUN",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md"
+        },
+        {
+          "id": "bf2f974a-4bf5-5cf4-a609-ee895f85a79c",
+          "title": "Expresiones",
+          "source": {
+            "id": "bf2f974a-4bf5-5cf4-a609-ee895f85a79c",
+            "text": "• Saludos:\nHello! How are you? Fine, thanks.\nAnd you?",
+            "pdfPage": 136,
+            "printedPage": "135",
+            "sourceOrder": 1361000
+          },
+          "subtopics": [
             {
               "id": "7e15d862-c5bd-5eed-8d62-cc9a5ac7cb26",
               "text": "• Despedidas:\nHave a nice day!",
@@ -15572,14 +15937,17 @@
           "instrumentFormats": [],
           "serviceVerification": "NOT_RUN",
           "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
           "procedures": [],
           "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PENDING_SPECIFIC_REQUIREMENTS",
           "automatedVerification": "NOT_RUN",
           "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md"
         },
         {
           "id": "c6e52bcc-66da-5cf0-a60b-342bd4aabe50",
@@ -15612,34 +15980,14 @@
               "pdfPage": 136,
               "printedPage": "135",
               "sourceOrder": 1361018
-            }
-          ],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
-        },
-        {
-          "id": "4c602c86-c0c2-5768-b8ea-1de7f49b635e",
-          "title": "It’s snowing now.\nI can’t go because I’m studying now.",
-          "source": {
-            "id": "4c602c86-c0c2-5768-b8ea-1de7f49b635e",
-            "text": "It’s snowing now.\nI can’t go because I’m studying now.",
-            "pdfPage": 137,
-            "printedPage": "136",
-            "sourceOrder": 1371000
-          },
-          "subtopics": [
+            },
+            {
+              "id": "4c602c86-c0c2-5768-b8ea-1de7f49b635e",
+              "text": "It’s snowing now.\nI can’t go because I’m studying now.",
+              "pdfPage": 137,
+              "printedPage": "136",
+              "sourceOrder": 1371000
+            },
             {
               "id": "c4f3147b-b94c-5b3a-bb19-278b8e666167",
               "text": "•Pasado simple para narrar\nexperiencias personales:\nI won a chess tournament last year.",
@@ -15653,34 +16001,14 @@
               "pdfPage": 137,
               "printedPage": "136",
               "sourceOrder": 1371002
-            }
-          ],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
-        },
-        {
-          "id": "bbd1e291-68c3-5b64-ac75-ed4d4c01f70d",
-          "title": "Have you ever eaten Mexican food?\nI’ve been to Spain twice.",
-          "source": {
-            "id": "bbd1e291-68c3-5b64-ac75-ed4d4c01f70d",
-            "text": "Have you ever eaten Mexican food?\nI’ve been to Spain twice.",
-            "pdfPage": 137,
-            "printedPage": "136",
-            "sourceOrder": 1371003
-          },
-          "subtopics": [
+            },
+            {
+              "id": "bbd1e291-68c3-5b64-ac75-ed4d4c01f70d",
+              "text": "Have you ever eaten Mexican food?\nI’ve been to Spain twice.",
+              "pdfPage": 137,
+              "printedPage": "136",
+              "sourceOrder": 1371003
+            },
             {
               "id": "1e4a1a5d-433a-5f7b-932e-24a085dc1846",
               "text": "• Will y be going to para referirse a las\ncondiciones atmosféricas:\nIt’s going to snow all day long. It will\nbe sunny on Monday.",
@@ -15792,34 +16120,14 @@
               "pdfPage": 137,
               "printedPage": "136",
               "sourceOrder": 1371019
-            }
-          ],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
-        },
-        {
-          "id": "64fa6c1a-6d2a-56f3-b3c1-82053cfbc060",
-          "title": "It’s usually very hot in the summer.\nLugar (in, on, at…)\nThere’s a beautiful vase on the night table.",
-          "source": {
-            "id": "64fa6c1a-6d2a-56f3-b3c1-82053cfbc060",
-            "text": "It’s usually very hot in the summer.\nLugar (in, on, at…)\nThere’s a beautiful vase on the night table.",
-            "pdfPage": 138,
-            "printedPage": "137",
-            "sourceOrder": 1381000
-          },
-          "subtopics": [
+            },
+            {
+              "id": "64fa6c1a-6d2a-56f3-b3c1-82053cfbc060",
+              "text": "It’s usually very hot in the summer.\nLugar (in, on, at…)\nThere’s a beautiful vase on the night table.",
+              "pdfPage": 138,
+              "printedPage": "137",
+              "sourceOrder": 1381000
+            },
             {
               "id": "c44f35a2-1cf0-5661-b04d-5d1dc9766538",
               "text": "• Adverbios de:\nTiempo (early, tomorrow, late…) She goes to\nwork early every day.\nFrecuencia (always, sometimes, never…) My\nfamily always goes to church on Sundays.Modo\n(fast, hard, slowly, carefully...)\nSandra writes the reports quickly.\nIntensidad (very, really…) It’s really hot today!\nCerteza (maybe, perhaps, sure…) Maybe this\nwill help.",
@@ -15841,21 +16149,35 @@
           "instrumentFormats": [],
           "serviceVerification": "NOT_RUN",
           "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
+          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
           "procedures": [],
           "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED",
+          "implementation": "PENDING_SPECIFIC_REQUIREMENTS",
           "automatedVerification": "NOT_RUN",
           "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-1-funciones.md"
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
-      "implementation": "PENDING",
-      "automatedVerification": "NOT_RUN",
-      "manualVerification": "NOT_RUN",
-      "applicationVerification": "NOT_RUN"
+      "implementation": "PARTIAL_COMMUNICATIVE_FUNCTIONS",
+      "automatedVerification": "PARTIAL_PASSED",
+      "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "conceptHeadings": [
+        {
+          "id": "7a39affe-3bce-5f6c-9917-0f76b48416c0",
+          "text": "Temas",
+          "pdfPage": 134,
+          "printedPage": "133",
+          "sourceOrder": 1341000
+        }
+      ],
+      "report": "ingles-1-funciones.md",
+      "catalogVersion": "evaluation-2026.35"
     },
     {
       "id": "7e4c1236-8f04-5817-b017-a9ace9edff5e",

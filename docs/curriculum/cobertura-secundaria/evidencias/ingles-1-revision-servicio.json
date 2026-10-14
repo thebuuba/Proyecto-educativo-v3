@@ -1,0 +1,3877 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "1fd7fbda8d4bca269055ac36e8427033bf0e08d9",
+      "dirty": true,
+      "startedAt": "2026-10-14T04:50:23.296Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.35"
+    }
+  },
+  "verifiedAt": "2026-10-14T04:51:34.565Z",
+  "results": [
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Expresarán oralmente en inglés sus preferencias sobre actividades de tiempo libre.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.35",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-preferences:0",
+            "templateId": "ing-1-preferences",
+            "title": "Gustos y preferencias",
+            "description": "Expresa en inglés sus gustos o preferencias sobre las actividades o elementos indicados y permite distinguir qué prefiere.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa en inglés sus gustos o preferencias sobre las actividades o elementos indicados y permite distinguir qué prefiere.",
+              "Se reconoce qué actividad o elemento prefiere; una expresión necesita aclaración.",
+              "Nombra actividades o elementos sin dejar clara su preferencia.",
+              "Confunde el gusto y el rechazo o atribuye la preferencia a otra persona.",
+              "No se reconoce una preferencia sobre las actividades o elementos indicados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expresa en inglés sus gustos o preferencias sobre las actividades o elementos indicados y permite distinguir qué prefiere.",
+                "scoreUnits": 991
+              },
+              {
+                "levelId": "L3",
+                "text": "Se reconoce qué actividad o elemento prefiere; una expresión necesita aclaración.",
+                "scoreUnits": 661
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra actividades o elementos sin dejar clara su preferencia.",
+                "scoreUnits": 330
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce una preferencia sobre las actividades o elementos indicados.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-intelligibility:1",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje oral comprensible",
+            "description": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+              "Se comprenden las ideas principales; una expresión necesita aclaración o repetición.",
+              "Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.",
+              "Las expresiones elegidas cambian el sentido de las ideas que se desean comunicar.",
+              "No se aporta un mensaje oral reconocible en inglés con los apoyos acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+                "scoreUnits": 744
+              },
+              {
+                "levelId": "L3",
+                "text": "Se comprenden las ideas principales; una expresión necesita aclaración o repetición.",
+                "scoreUnits": 496
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L1",
+                "text": "No se aporta un mensaje oral reconocible en inglés con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=oral",
+            "functions=preferences",
+            "coverage=COMMUNICATIVE_FUNCTIONS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 70,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=3/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "79ceceef-2ef9-5789-81c7-b2947a33c181",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc",
+              "score": 47,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "929ea780-a9e4-5702-b1ab-09fa056194a6",
+              "score": 47,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "score": 37,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "25ee4c2a-c2eb-5aeb-9505-d16c231d0927",
+              "score": 37,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+              "score": 37,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 37,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dc9ca4f1-7083-5dd2-a61b-4043e8c3ce81",
+              "score": 37,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+              "score": 37,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5344754f-d56f-53bb-b3d0-0e59688425b3",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6108e6c7-a917-589c-b369-2c5075af840c",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b6a7e120-af0f-539b-99de-d38274077921",
+              "score": 33,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 33,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "835011cb-d843-5aec-b44e-270a647f9c88",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "89ba3b86-02f3-5c43-aab4-f10729e89356",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a62c474f-82a7-5534-829f-388e0d2958a4",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c44f35a2-1cf0-5661-b04d-5d1dc9766538",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d9faf613-fd78-5bc5-ba5b-f65e4ddcc371",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Escribirán en inglés una invitación a una celebración.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.35",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-invitation:0",
+            "templateId": "ing-1-invitation",
+            "title": "Formulación de la invitación",
+            "description": "Formula en inglés una invitación comprensible que permite reconocer la actividad propuesta al destinatario.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula en inglés una invitación comprensible que permite reconocer la actividad propuesta al destinatario.",
+              "La propuesta es reconocible; una referencia de la invitación necesita precisión.",
+              "Menciona una actividad, pero no queda claro que la propone al destinatario.",
+              "La formulación cambia la actividad que se pretende proponer.",
+              "No se reconoce una invitación a la actividad indicada."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula en inglés una invitación comprensible que permite reconocer la actividad propuesta al destinatario.",
+                "scoreUnits": 991
+              },
+              {
+                "levelId": "L3",
+                "text": "La propuesta es reconocible; una referencia de la invitación necesita precisión.",
+                "scoreUnits": 661
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona una actividad, pero no queda claro que la propone al destinatario.",
+                "scoreUnits": 330
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce una invitación a la actividad indicada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-written:1",
+            "templateId": "ing-1-written",
+            "title": "Mensaje escrito comprensible",
+            "description": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.",
+              "Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.",
+              "Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.",
+              "La organización de las frases o las palabras elegidas cambia el sentido del mensaje escrito.",
+              "No se aporta un mensaje escrito reconocible en inglés."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.",
+                "scoreUnits": 744
+              },
+              {
+                "levelId": "L3",
+                "text": "Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.",
+                "scoreUnits": 496
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L1",
+                "text": "No se aporta un mensaje escrito reconocible en inglés.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=invitation",
+            "coverage=COMMUNICATIVE_FUNCTIONS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "6108e6c7-a917-589c-b369-2c5075af840c",
+              "score": 43,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 43,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9ab3a87e-8266-5b18-be5b-f6641f1c8046",
+              "score": 43,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "score": 43,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c04124f4-0c49-5a26-ae16-8512e18d0363",
+              "score": 43,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+              "score": 43,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "score": 43,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 43,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3808952f-b79d-5d6b-ae05-357f8e69a3ff",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5fb519fb-6e44-52d2-9335-65a13cd921ab",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "fbebeebb-8049-5000-8a71-526b6ed7e1c7",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "631863ec-2df1-50b4-ade9-ca2caf8bfeb9",
+              "score": 37,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b793c8d2-d589-5a6b-a020-627869ffb059",
+              "score": 37,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c421df3e-c90e-5e5e-b840-695992240c71",
+              "score": 37,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d8fa800d-7db4-5ffe-96e1-278b3a9a8886",
+              "score": 37,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f",
+              "score": 37,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "fbb73712-1736-5278-ae5b-71cec1a56c5b",
+              "score": 37,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=1/4",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Responderán oralmente en inglés a una invitación, aceptándola o rechazándola con cortesía.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.35",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-invitation:0",
+            "templateId": "ing-1-invitation",
+            "title": "Respuesta a la invitación",
+            "description": "Acepta o rechaza en inglés la invitación recibida con una expresión cortés que comunica la respuesta elegida.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Acepta o rechaza en inglés la invitación recibida con una expresión cortés que comunica la respuesta elegida.",
+              "La aceptación o el rechazo es reconocible; una expresión cortés necesita precisión.",
+              "Responde a la invitación, pero no queda claro si la acepta o rechaza.",
+              "La respuesta expresa lo contrario de la aceptación o el rechazo que pretende comunicar.",
+              "No aporta una respuesta reconocible a la invitación recibida."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Acepta o rechaza en inglés la invitación recibida con una expresión cortés que comunica la respuesta elegida.",
+                "scoreUnits": 991
+              },
+              {
+                "levelId": "L3",
+                "text": "La aceptación o el rechazo es reconocible; una expresión cortés necesita precisión.",
+                "scoreUnits": 661
+              },
+              {
+                "levelId": "L2",
+                "text": "Responde a la invitación, pero no queda claro si la acepta o rechaza.",
+                "scoreUnits": 330
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una respuesta reconocible a la invitación recibida.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-intelligibility:1",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje oral comprensible",
+            "description": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+              "Se comprenden las ideas principales; una expresión necesita aclaración o repetición.",
+              "Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.",
+              "Las expresiones elegidas cambian el sentido de las ideas que se desean comunicar.",
+              "No se aporta un mensaje oral reconocible en inglés con los apoyos acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+                "scoreUnits": 744
+              },
+              {
+                "levelId": "L3",
+                "text": "Se comprenden las ideas principales; una expresión necesita aclaración o repetición.",
+                "scoreUnits": 496
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L1",
+                "text": "No se aporta un mensaje oral reconocible en inglés con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=oral",
+            "functions=invitation",
+            "coverage=COMMUNICATIVE_FUNCTIONS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 45,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d8fa800d-7db4-5ffe-96e1-278b3a9a8886",
+              "score": 43,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0fd7efb6-5c1f-569b-a373-bd910b999535",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "25ee4c2a-c2eb-5aeb-9505-d16c231d0927",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6108e6c7-a917-589c-b369-2c5075af840c",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9ab3a87e-8266-5b18-be5b-f6641f1c8046",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c04124f4-0c49-5a26-ae16-8512e18d0363",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c6178830-b9ff-5bd2-8339-80331f5cebc4",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3808952f-b79d-5d6b-ae05-357f8e69a3ff",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "fbebeebb-8049-5000-8a71-526b6ed7e1c7",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "631863ec-2df1-50b4-ade9-ca2caf8bfeb9",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b793c8d2-d589-5a6b-a020-627869ffb059",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d51f96e9-8781-5563-a691-b0479d877106",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Escucharán un pronóstico del tiempo en inglés e identificarán las condiciones atmosféricas, el lugar y el día anunciados.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.35",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "LISTENING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-weather:0",
+            "templateId": "ing-1-weather",
+            "title": "Identifica las condiciones atmosféricas del mensaje escuchado en inglés y las relaciona con el lugar y el día indicados.",
+            "description": "Identifica las condiciones atmosféricas del mensaje escuchado en inglés y las relaciona con el lugar y el día indicados.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica las condiciones atmosféricas del mensaje escuchado en inglés y las relaciona con el lugar y el día indicados.",
+              "Las condiciones atmosféricas se comprenden; una referencia del pronóstico necesita precisión.",
+              "Reconoce términos del tiempo, pero no los relaciona con la información solicitada.",
+              "Confunde las condiciones atmosféricas y cambia la información del pronóstico.",
+              "No aporta información reconocible sobre las condiciones atmosféricas solicitadas."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-source:1",
+            "templateId": "ing-1-source",
+            "title": "Responde a lo solicitado apoyándose en palabras o datos presentes en el mensaje escuchado en inglés.",
+            "description": "Responde a lo solicitado apoyándose en palabras o datos presentes en el mensaje escuchado en inglés.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Responde a lo solicitado apoyándose en palabras o datos presentes en el mensaje escuchado en inglés.",
+              "La respuesta corresponde al mensaje escuchado; una relación con sus palabras o datos necesita precisión.",
+              "Recupera palabras aisladas, pero deja sin relacionar datos necesarios para responder a lo solicitado.",
+              "La respuesta contradice la información disponible en el mensaje.",
+              "No aporta una respuesta relacionada con información reconocible del mensaje."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=listening",
+            "functions=weather",
+            "coverage=COMMUNICATIVE_FUNCTIONS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "score": 54,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7956bdd-ddb9-520d-b1a7-300e5b761783",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1e4a1a5d-433a-5f7b-932e-24a085dc1846",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "540e8635-e504-5249-8693-8581f4b30932",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d49eb452-91b3-5d67-84f9-b53c882c0486",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "fbb73712-1736-5278-ae5b-71cec1a56c5b",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "25ee4c2a-c2eb-5aeb-9505-d16c231d0927",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "50bc85f8-8102-5394-b75c-eeed65610f29",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "69d6ef67-56a6-5718-842e-50031049f344",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "369e99a7-3efd-5257-8d5c-b880e4b0e8c5",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5b02977b-6cd0-5bad-a925-c4009cac4eb8",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "64fa6c1a-6d2a-56f3-b3c1-82053cfbc060",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "929ea780-a9e4-5702-b1ab-09fa056194a6",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b9b58d25-116d-50ae-9233-dc36ded34ff3",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c44f35a2-1cf0-5661-b04d-5d1dc9766538",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Conversarán en inglés solicitando y ofreciendo información personal: nombre y edad. Se valorará la calidad en varias dimensiones.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL"
+      },
+      "interpretation": {
+        "suggestedActivityType": "ORAL_INTERACTION",
+        "activityType": "ORAL_INTERACTION",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON",
+          "ORAL_INTERACTION",
+          "LISTENING_COMPREHENSION",
+          "READING_COMPREHENSION"
+        ],
+        "suggestedEvaluationTechnique": "observacion-directa",
+        "suggestedInstrumentType": "rubrica",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "PROCEDURE",
+            "text": "• Solicitar y ofrecer información personal",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 134,
+                "printedPage": "133"
+              }
+            ],
+            "topicCoverage": 0.375
+          },
+          {
+            "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "CONCEPT",
+            "text": "• Presente simple para solicitar y\nofrecer información personal;\nreferirse a actividades cotidianas;\nexpresar opiniones; y describir\npersonas, objetos, lugares y\ncondiciones atmosféricas:\nI live in San Juan.\nI go to school early every morning.\nPlaying chess is better than watching\nTV.\nMy brothers have short curly hair\nand big brown eyes.\nEmma is very smart.\nThis neighborhood looks really quiet.\nIt’s hot and sunny in Santo Domingo\nnow",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 136,
+                "printedPage": "135"
+              }
+            ],
+            "topicCoverage": 0.375
+          },
+          {
+            "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir de la escucha o lectura de textos claros, breves y sencillos, donde\nse describen el entorno inmediato, información personal propia y de otras personas, actividades cotidianas y preferencias personales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Se expresa en inglés mediante una serie de frases y oraciones breves y sencillas enlazadas por conectores comunes para compartir\ninformación, puntos de vista e ideas referentes al entorno próximo y actividades cotidianas, aunque con pausas y reformulaciones en\nlo oral y con posibles errores básicos en lo escrito.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Interactúa de forma oral y escrita utilizando una serie de frases y oraciones breves y sencillas y con diversidad de vocabulario básico\nreferente a información personal, actividades cotidianas y el entorno inmediato, pero con suficiente claridad para ser comprendido\ncon un poco de esfuerzo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.35",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Información personal solicitada",
+            "description": "Comunica en inglés nombre y edad de la persona o personaje indicado, con frases breves que permiten reconocer los datos solicitados.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica en inglés nombre y edad de la persona o personaje indicado, con frases breves que permiten reconocer los datos solicitados.",
+              "Se reconocen los datos principales de nombre y edad; una referencia aislada necesita aclaración.",
+              "Se reconocen algunos datos de nombre y edad, pero otros quedan incompletos o no se relacionan con la persona indicada.",
+              "Confunde los datos entre personas o personajes y cambia la identidad descrita.",
+              "No aporta datos reconocibles de la persona o personaje indicado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica en inglés nombre y edad de la persona o personaje indicado, con frases breves que permiten reconocer los datos solicitados.",
+                "scoreUnits": 800
+              },
+              {
+                "levelId": "L3",
+                "text": "Se reconocen los datos principales de nombre y edad; una referencia aislada necesita aclaración.",
+                "scoreUnits": 533
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconocen algunos datos de nombre y edad, pero otros quedan incompletos o no se relacionan con la persona indicada.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta datos reconocibles de la persona o personaje indicado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-interaction:1",
+            "templateId": "ing-1-interaction",
+            "title": "Respuesta al interlocutor",
+            "description": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+            "maxScore": 6,
+            "maxScoreUnits": 600,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+              "Responde al interlocutor de forma pertinente; necesita una aclaración puntual para continuar.",
+              "Responde a algunas intervenciones, pero otras quedan sin una respuesta relacionada.",
+              "Las respuestas cambian el sentido de lo dicho por el interlocutor e interrumpen el intercambio.",
+              "No se aporta una respuesta reconocible a las intervenciones del interlocutor."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+                "scoreUnits": 600
+              },
+              {
+                "levelId": "L3",
+                "text": "Responde al interlocutor de forma pertinente; necesita una aclaración puntual para continuar.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L2",
+                "text": "Responde a algunas intervenciones, pero otras quedan sin una respuesta relacionada.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L1",
+                "text": "No se aporta una respuesta reconocible a las intervenciones del interlocutor.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje oral comprensible",
+            "description": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+            "maxScore": 6,
+            "maxScoreUnits": 600,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+              "Se comprenden las ideas principales; una expresión necesita aclaración o repetición.",
+              "Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.",
+              "Las expresiones elegidas cambian el sentido de las ideas que se desean comunicar.",
+              "No se aporta un mensaje oral reconocible en inglés con los apoyos acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+                "scoreUnits": 600
+              },
+              {
+                "levelId": "L3",
+                "text": "Se comprenden las ideas principales; una expresión necesita aclaración o repetición.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L1",
+                "text": "No se aporta un mensaje oral reconocible en inglés con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=interaction",
+            "functions=personal",
+            "coverage=COMMUNICATIVE_FUNCTIONS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_rubrica",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+              "score": 56,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "score": 54,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dc9ca4f1-7083-5dd2-a61b-4043e8c3ce81",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0fd7efb6-5c1f-569b-a373-bd910b999535",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "986e04c2-72c6-5a0d-959f-597d0b1b1423",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9ab3a87e-8266-5b18-be5b-f6641f1c8046",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b397ab38-64b6-5f71-bb82-96468dbfa190",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c04124f4-0c49-5a26-ae16-8512e18d0363",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "97ced1a6-faeb-5054-920f-fccfef1c2189",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9e9f3ba9-ce25-567e-af99-3d12c9443a53",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7956bdd-ddb9-520d-b1a7-300e5b761783",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5f7c0409-c651-5982-9c9d-fc10b3a03fcc",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Conversarán en inglés solicitando y ofreciendo información personal: nombre y edad. Se comprobará la presencia de cada evidencia con sí o no.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL"
+      },
+      "interpretation": {
+        "suggestedActivityType": "ORAL_INTERACTION",
+        "activityType": "ORAL_INTERACTION",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON",
+          "ORAL_INTERACTION",
+          "LISTENING_COMPREHENSION",
+          "READING_COMPREHENSION"
+        ],
+        "suggestedEvaluationTechnique": "observacion-directa",
+        "suggestedInstrumentType": "lista-cotejo",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "PROCEDURE",
+            "text": "• Solicitar y ofrecer información personal",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 134,
+                "printedPage": "133"
+              }
+            ],
+            "topicCoverage": 0.375
+          },
+          {
+            "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "CONCEPT",
+            "text": "• Presente simple para solicitar y\nofrecer información personal;\nreferirse a actividades cotidianas;\nexpresar opiniones; y describir\npersonas, objetos, lugares y\ncondiciones atmosféricas:\nI live in San Juan.\nI go to school early every morning.\nPlaying chess is better than watching\nTV.\nMy brothers have short curly hair\nand big brown eyes.\nEmma is very smart.\nThis neighborhood looks really quiet.\nIt’s hot and sunny in Santo Domingo\nnow",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 136,
+                "printedPage": "135"
+              }
+            ],
+            "topicCoverage": 0.375
+          },
+          {
+            "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir de la escucha o lectura de textos claros, breves y sencillos, donde\nse describen el entorno inmediato, información personal propia y de otras personas, actividades cotidianas y preferencias personales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Se expresa en inglés mediante una serie de frases y oraciones breves y sencillas enlazadas por conectores comunes para compartir\ninformación, puntos de vista e ideas referentes al entorno próximo y actividades cotidianas, aunque con pausas y reformulaciones en\nlo oral y con posibles errores básicos en lo escrito.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Interactúa de forma oral y escrita utilizando una serie de frases y oraciones breves y sencillas y con diversidad de vocabulario básico\nreferente a información personal, actividades cotidianas y el entorno inmediato, pero con suficiente claridad para ser comprendido\ncon un poco de esfuerzo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.35",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Comunica en inglés nombre y edad de la persona o personaje indicado, con frases breves que permiten reconocer los datos solicitados.",
+            "description": "Comunica en inglés nombre y edad de la persona o personaje indicado, con frases breves que permiten reconocer los datos solicitados.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica en inglés nombre y edad de la persona o personaje indicado, con frases breves que permiten reconocer los datos solicitados.",
+              "Se reconocen los datos principales de nombre y edad; una referencia aislada necesita aclaración.",
+              "Se reconocen algunos datos de nombre y edad, pero otros quedan incompletos o no se relacionan con la persona indicada.",
+              "Confunde los datos entre personas o personajes y cambia la identidad descrita.",
+              "No aporta datos reconocibles de la persona o personaje indicado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-interaction:1",
+            "templateId": "ing-1-interaction",
+            "title": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+            "description": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+            "maxScore": 6,
+            "maxScoreUnits": 600,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+              "Responde al interlocutor de forma pertinente; necesita una aclaración puntual para continuar.",
+              "Responde a algunas intervenciones, pero otras quedan sin una respuesta relacionada.",
+              "Las respuestas cambian el sentido de lo dicho por el interlocutor e interrumpen el intercambio.",
+              "No se aporta una respuesta reconocible a las intervenciones del interlocutor."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+            "description": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+            "maxScore": 6,
+            "maxScoreUnits": 600,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+              "Se comprenden las ideas principales; una expresión necesita aclaración o repetición.",
+              "Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.",
+              "Las expresiones elegidas cambian el sentido de las ideas que se desean comunicar.",
+              "No se aporta un mensaje oral reconocible en inglés con los apoyos acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=interaction",
+            "functions=personal",
+            "coverage=COMMUNICATIVE_FUNCTIONS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_lista-cotejo",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+              "score": 56,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "score": 56,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dc9ca4f1-7083-5dd2-a61b-4043e8c3ce81",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0fd7efb6-5c1f-569b-a373-bd910b999535",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "986e04c2-72c6-5a0d-959f-597d0b1b1423",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9ab3a87e-8266-5b18-be5b-f6641f1c8046",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b397ab38-64b6-5f71-bb82-96468dbfa190",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c04124f4-0c49-5a26-ae16-8512e18d0363",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5f7c0409-c651-5982-9c9d-fc10b3a03fcc",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "97ced1a6-faeb-5054-920f-fccfef1c2189",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9e9f3ba9-ce25-567e-af99-3d12c9443a53",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7956bdd-ddb9-520d-b1a7-300e5b761783",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Conversarán en inglés solicitando y ofreciendo información personal: nombre y edad. Se registrará la regularidad de cada indicador.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL"
+      },
+      "interpretation": {
+        "suggestedActivityType": "ORAL_INTERACTION",
+        "activityType": "ORAL_INTERACTION",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON",
+          "ORAL_INTERACTION",
+          "LISTENING_COMPREHENSION",
+          "READING_COMPREHENSION"
+        ],
+        "suggestedEvaluationTechnique": "observacion-directa",
+        "suggestedInstrumentType": "escala",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "PROCEDURE",
+            "text": "• Solicitar y ofrecer información personal",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 134,
+                "printedPage": "133"
+              }
+            ],
+            "topicCoverage": 0.375
+          },
+          {
+            "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "CONCEPT",
+            "text": "• Presente simple para solicitar y\nofrecer información personal;\nreferirse a actividades cotidianas;\nexpresar opiniones; y describir\npersonas, objetos, lugares y\ncondiciones atmosféricas:\nI live in San Juan.\nI go to school early every morning.\nPlaying chess is better than watching\nTV.\nMy brothers have short curly hair\nand big brown eyes.\nEmma is very smart.\nThis neighborhood looks really quiet.\nIt’s hot and sunny in Santo Domingo\nnow",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 136,
+                "printedPage": "135"
+              }
+            ],
+            "topicCoverage": 0.375
+          },
+          {
+            "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir de la escucha o lectura de textos claros, breves y sencillos, donde\nse describen el entorno inmediato, información personal propia y de otras personas, actividades cotidianas y preferencias personales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Se expresa en inglés mediante una serie de frases y oraciones breves y sencillas enlazadas por conectores comunes para compartir\ninformación, puntos de vista e ideas referentes al entorno próximo y actividades cotidianas, aunque con pausas y reformulaciones en\nlo oral y con posibles errores básicos en lo escrito.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Interactúa de forma oral y escrita utilizando una serie de frases y oraciones breves y sencillas y con diversidad de vocabulario básico\nreferente a información personal, actividades cotidianas y el entorno inmediato, pero con suficiente claridad para ser comprendido\ncon un poco de esfuerzo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.35",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Comunica en inglés nombre y edad de la persona o personaje indicado, con frases breves que permiten reconocer los datos solicitados.",
+            "description": "Comunica en inglés nombre y edad de la persona o personaje indicado, con frases breves que permiten reconocer los datos solicitados.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En todas las oportunidades observadas.",
+              "En la mayoría de las oportunidades observadas.",
+              "En algunas de las oportunidades observadas.",
+              "En pocas oportunidades observadas.",
+              "En ninguna de las oportunidades observadas."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "En todas las oportunidades observadas.",
+                "scoreUnits": 800
+              },
+              {
+                "levelId": "L3",
+                "text": "En la mayoría de las oportunidades observadas.",
+                "scoreUnits": 533
+              },
+              {
+                "levelId": "L2",
+                "text": "En algunas de las oportunidades observadas.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L1",
+                "text": "En ninguna de las oportunidades observadas.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-interaction:1",
+            "templateId": "ing-1-interaction",
+            "title": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+            "description": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+            "maxScore": 6,
+            "maxScoreUnits": 600,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En todas las oportunidades observadas.",
+              "En la mayoría de las oportunidades observadas.",
+              "En algunas de las oportunidades observadas.",
+              "En pocas oportunidades observadas.",
+              "En ninguna de las oportunidades observadas."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "En todas las oportunidades observadas.",
+                "scoreUnits": 600
+              },
+              {
+                "levelId": "L3",
+                "text": "En la mayoría de las oportunidades observadas.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L2",
+                "text": "En algunas de las oportunidades observadas.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L1",
+                "text": "En ninguna de las oportunidades observadas.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+            "description": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+            "maxScore": 6,
+            "maxScoreUnits": 600,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En todas las oportunidades observadas.",
+              "En la mayoría de las oportunidades observadas.",
+              "En algunas de las oportunidades observadas.",
+              "En pocas oportunidades observadas.",
+              "En ninguna de las oportunidades observadas."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "En todas las oportunidades observadas.",
+                "scoreUnits": 600
+              },
+              {
+                "levelId": "L3",
+                "text": "En la mayoría de las oportunidades observadas.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L2",
+                "text": "En algunas de las oportunidades observadas.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L1",
+                "text": "En ninguna de las oportunidades observadas.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=interaction",
+            "functions=personal",
+            "coverage=COMMUNICATIVE_FUNCTIONS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_escala",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+              "score": 56,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "score": 54,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dc9ca4f1-7083-5dd2-a61b-4043e8c3ce81",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0fd7efb6-5c1f-569b-a373-bd910b999535",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "986e04c2-72c6-5a0d-959f-597d0b1b1423",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9ab3a87e-8266-5b18-be5b-f6641f1c8046",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b397ab38-64b6-5f71-bb82-96468dbfa190",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c04124f4-0c49-5a26-ae16-8512e18d0363",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "97ced1a6-faeb-5054-920f-fccfef1c2189",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9e9f3ba9-ce25-567e-af99-3d12c9443a53",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7956bdd-ddb9-520d-b1a7-300e5b761783",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5f7c0409-c651-5982-9c9d-fc10b3a03fcc",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "d2dc01ec-1baf-4402-aacc-b476f7efa3f0",
+        "activityTitle": "Actividad",
+        "description": "Conversarán en inglés solicitando y ofreciendo información personal: nombre y edad. Se distribuirán pesos entre los componentes verificables.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL"
+      },
+      "interpretation": {
+        "suggestedActivityType": "ORAL_INTERACTION",
+        "activityType": "ORAL_INTERACTION",
+        "activityTypes": [
+          "EXPOSITION",
+          "ORAL_PRESENTATION",
+          "DEBATE",
+          "NEWSCAST",
+          "NEWS_ANALYSIS",
+          "NEWS_COMPARISON",
+          "NEWS_WRITING",
+          "TOURIST_GUIDE_CREATION",
+          "TOURIST_GUIDE_ANALYSIS",
+          "TOURIST_GUIDE_PRESENTATION",
+          "TOURIST_GUIDE_COMPARISON",
+          "POSTER_CREATION",
+          "POSTER_ANALYSIS",
+          "POSTER_COMPARISON",
+          "POSTER_PRESENTATION",
+          "READING_REPORT_WRITING",
+          "READING_REPORT_ANALYSIS",
+          "READING_REPORT_PRESENTATION",
+          "READING_REPORT_COMPARISON",
+          "DETECTIVE_STORY_WRITING",
+          "DETECTIVE_STORY_ANALYSIS",
+          "DETECTIVE_STORY_NARRATION",
+          "DETECTIVE_STORY_COMPARISON",
+          "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+          "CALLIGRAM_CREATION",
+          "CALLIGRAM_ANALYSIS",
+          "CALLIGRAM_COMPARISON",
+          "CALLIGRAM_RECITATION",
+          "CALLIGRAM_EXPLANATION",
+          "EXPERIMENT",
+          "LAB_PRACTICE",
+          "WRITTEN_PRODUCTION",
+          "ESSAY",
+          "REPORT",
+          "RESEARCH",
+          "PROJECT",
+          "PROBLEM_SOLVING",
+          "EXERCISE_SET",
+          "CONCEPT_MAP",
+          "PORTFOLIO",
+          "ARTISTIC_PRODUCTION",
+          "PERFORMANCE",
+          "MOTOR_SPORTS_PRACTICE",
+          "OBSERVATION",
+          "QUIZ_TEST",
+          "OTHER",
+          "ANALYSIS",
+          "COMPARISON",
+          "ORAL_INTERACTION",
+          "LISTENING_COMPREHENSION",
+          "READING_COMPREHENSION"
+        ],
+        "suggestedEvaluationTechnique": "observacion-directa",
+        "suggestedInstrumentType": "lista-ponderada",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "curriculumStatus": "DRAFT",
+        "curriculumCandidates": [
+          {
+            "elementId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "PROCEDURE",
+            "text": "• Solicitar y ofrecer información personal",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 134,
+                "printedPage": "133"
+              }
+            ],
+            "topicCoverage": 0.375
+          },
+          {
+            "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "CONCEPT",
+            "text": "• Presente simple para solicitar y\nofrecer información personal;\nreferirse a actividades cotidianas;\nexpresar opiniones; y describir\npersonas, objetos, lugares y\ncondiciones atmosféricas:\nI live in San Juan.\nI go to school early every morning.\nPlaying chess is better than watching\nTV.\nMy brothers have short curly hair\nand big brown eyes.\nEmma is very smart.\nThis neighborhood looks really quiet.\nIt’s hot and sunny in Santo Domingo\nnow",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 136,
+                "printedPage": "135"
+              }
+            ],
+            "topicCoverage": 0.375
+          },
+          {
+            "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir de la escucha o lectura de textos claros, breves y sencillos, donde\nse describen el entorno inmediato, información personal propia y de otras personas, actividades cotidianas y preferencias personales.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Se expresa en inglés mediante una serie de frases y oraciones breves y sencillas enlazadas por conectores comunes para compartir\ninformación, puntos de vista e ideas referentes al entorno próximo y actividades cotidianas, aunque con pausas y reformulaciones en\nlo oral y con posibles errores básicos en lo escrito.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          },
+          {
+            "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "text": "• Interactúa de forma oral y escrita utilizando una serie de frases y oraciones breves y sencillas y con diversidad de vocabulario básico\nreferente a información personal, actividades cotidianas y el entorno inmediato, pero con suficiente claridad para ser comprendido\ncon un poco de esfuerzo.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 139,
+                "printedPage": "138"
+              }
+            ],
+            "topicCoverage": 0.25
+          }
+        ],
+        "curriculumMatch": "NONE",
+        "requiresCurriculumConfirmation": true,
+        "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.35",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Información personal solicitada",
+            "description": "Comunica en inglés nombre y edad de la persona o personaje indicado, con frases breves que permiten reconocer los datos solicitados. Parcial (50%): Se reconocen algunos datos de nombre y edad, pero otros quedan incompletos o no se relacionan con la persona indicada.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica en inglés nombre y edad de la persona o personaje indicado, con frases breves que permiten reconocer los datos solicitados.",
+              "Se reconocen los datos principales de nombre y edad; una referencia aislada necesita aclaración.",
+              "Se reconocen algunos datos de nombre y edad, pero otros quedan incompletos o no se relacionan con la persona indicada.",
+              "Confunde los datos entre personas o personajes y cambia la identidad descrita.",
+              "No aporta datos reconocibles de la persona o personaje indicado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-interaction:1",
+            "templateId": "ing-1-interaction",
+            "title": "Respuesta al interlocutor",
+            "description": "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita. Parcial (50%): Responde a algunas intervenciones, pero otras quedan sin una respuesta relacionada.",
+            "maxScore": 6,
+            "maxScoreUnits": 600,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.",
+              "Responde al interlocutor de forma pertinente; necesita una aclaración puntual para continuar.",
+              "Responde a algunas intervenciones, pero otras quedan sin una respuesta relacionada.",
+              "Las respuestas cambian el sentido de lo dicho por el interlocutor e interrumpen el intercambio.",
+              "No se aporta una respuesta reconocible a las intervenciones del interlocutor."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.35:7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje oral comprensible",
+            "description": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas. Parcial (50%): Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.",
+            "maxScore": 6,
+            "maxScoreUnits": 600,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas.",
+              "Se comprenden las ideas principales; una expresión necesita aclaración o repetición.",
+              "Se comprenden expresiones aisladas, pero resulta difícil relacionarlas con el mensaje solicitado.",
+              "Las expresiones elegidas cambian el sentido de las ideas que se desean comunicar.",
+              "No se aporta un mensaje oral reconocible en inglés con los apoyos acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=interaction",
+            "functions=personal",
+            "coverage=COMMUNICATIVE_FUNCTIONS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+              "score": 56,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+              "score": 54,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dc9ca4f1-7083-5dd2-a61b-4043e8c3ce81",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55963d7d-e5d9-5ac8-ac3d-9d5316d1a16f",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6a33cc30-b319-5b7d-98e4-4a2305619f9b",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "915c2c89-f331-502d-8810-bafb76fe8ca1",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0fd7efb6-5c1f-569b-a373-bd910b999535",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "66175ea5-dcc3-5db0-b743-2d923dc5c768",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "986e04c2-72c6-5a0d-959f-597d0b1b1423",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9ab3a87e-8266-5b18-be5b-f6641f1c8046",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b2ca2d54-1133-5cda-b0ce-2206f00a3da6",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b397ab38-64b6-5f71-bb82-96468dbfa190",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c04124f4-0c49-5a26-ae16-8512e18d0363",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "839eb826-cf47-5507-9245-2b9baf0fbeef",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "97ced1a6-faeb-5054-920f-fccfef1c2189",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9e9f3ba9-ce25-567e-af99-3d12c9443a53",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c7956bdd-ddb9-520d-b1a7-300e5b761783",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5f7c0409-c651-5982-9c9d-fc10b3a03fcc",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ]
+}

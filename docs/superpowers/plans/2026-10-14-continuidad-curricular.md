@@ -8,7 +8,7 @@
 
 - [x] Revisión de cierre de Lengua: reproducir redundancia de ritmo en poesía social y de comunicación genérica en representación de entremés; corregir composición compartida y contracción gramatical «de el». Archivos: language-feature-criteria.ts, secondary-language-grade-three-complete.ts, perfiles de sexto y pruebas de backend/contrato.
 - [x] Verificar los cuatro formatos, selección/técnica, puntos y servicio/alternativa; HTTP autenticado y guardados/reaperturas nuevos de las consignas corregidas. Conservar ejemplos históricos. Catalogar como release nuevo, ejecutar pruebas/builds exigidos, actualizar matriz/continuación y commit/push.
-- [ ] Confirmar visualmente el orden del índice oficial y registrar ámbitos comunes/optativos sin inferirlos del número de temas extraídos.
+- [x] Confirmar la transición física Lengua–Lenguas extranjeras–Inglés y registrar ruta de ámbitos comunes/optativos. No hay índice en las primeras60 páginas; el resto de las secciones deberá cotejarse antes de implementar. Véase `orden-de-continuacion.md`.
 - [ ] Siguiente asignatura: auditar 1.º, corregir límites de inventario y crear contratos semánticos rojos; conectar proveedor, cuatro formatos, selección manual y puntuación. Verificar UI y persistencia; cerrar grado con evidencia y commit/push antes de avanzar.
 - [ ] Repetir 2.º–6.º donde corresponda; después siguiente asignatura en el orden verificado. Las optativas se abordan únicamente en su ámbito y grado oficial.
 
@@ -19,3 +19,5 @@ Cada bloque añade aquí o en su informe un punto de continuación: base Git, al
 Lengua en revisión final: dos redundancias pedagógicas confirmadas al leer los instrumentos persistidos. Los 40 temas conservan sus verificaciones anteriores; poesía social 6.º y entremés 5.º requieren este ajuste antes de iniciar otra asignatura. No hay bloqueo. El entorno local conserva .33 y 69 snapshots; los temporales .superpowers quedan fuera de Git.
 
 Cierre del bloque .34: nueve fallos rojos reproducidos; trece regresiones verdes; suites completas, HTTP24 y UI5 aprobados; históricos74 intactos. Próximo: Inglés1.º, inventario temático/gramatical con fuente visual antes de implementar.
+
+Bloque .35: conexión inicial de funciones comunicativas de Inglés1.º; fuente134–139 cotejada, reagrupación íntegra de96 conceptos,15 consignas en cuatro formatos, selector automático/manual, HTTP y cuatro guardados/reaperturas. Grado todavía parcial: continuar gramática, léxico, expresiones, estrategias, géneros/productos y acciones mixtas antes de segundo. Informe `ingles-1-funciones.md`.

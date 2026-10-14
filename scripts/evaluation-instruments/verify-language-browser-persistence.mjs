@@ -4,11 +4,14 @@ import {localClient,fingerprint} from './language-local-client.mjs'
 
 const grade=Number(process.argv[2]||1)
 const run=process.argv[3]||'base'
-assert(['base','procedimientos','cierre','final'].includes(run))
-const prefix=`lengua-${grade}${run==='base'?'':'-'+run}`
+assert(['base','procedimientos','cierre','final','funciones'].includes(run))
+const subject=process.argv.find(arg=>arg.startsWith('--subject='))?.slice(10)??'LEN'
+assert(['LEN','ING'].includes(subject))
+const prefix=`${subject==='ING'?'ingles':'lengua'}-${grade}${run==='base'?'':'-'+run}`
 const root='docs/curriculum/cobertura-secundaria/evidencias/'
 const ui=JSON.parse(readFileSync(`${root}${prefix}-flujo-navegador.json`,'utf8'))
 assert(ui.every(record=>record.grade===grade),'Mixed grades in browser evidence')
+if(subject==='ING')assert(ui.every(record=>record.subject==='ING'),'Mixed subjects in browser evidence')
 const expectedFormats=process.argv[4]==='--partial'?new Set(ui.map(record=>record.format)).size:4
 assert(expectedFormats>0)
 const {request,health}=await localClient()

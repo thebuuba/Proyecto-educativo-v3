@@ -5,6 +5,23 @@ import { buildSecondaryInventory, applyInventoryReview } from './secondary-inven
 
 const rows = readFileSync('data/curriculum/secondary-2023.jsonl', 'utf8').trim().split('\n').map(JSON.parse)
 
+test('reagrupa los ejemplos ingleses según cotejo sin perder ni duplicar conceptos',()=>{
+ const raw=buildSecondaryInventory(rows),scope=raw.scopes.find(s=>s.id==='7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f'),concepts=scope.elements.CONCEPT
+ const layout={scopeId:scope.id,provenance:'PDF_COLUMNS_VISUALLY_REVIEWED',headingIds:[concepts[0].id],groups:[...concepts.slice(1,14).map(e=>({id:e.id,title:e.text.replace(/^•\s*/,''),memberIds:[]})),
+ {id:concepts[14].id,title:'Vocabulario',memberIds:concepts.slice(15,54).map(e=>e.id)},
+ {id:concepts[54].id,title:'Expresiones',memberIds:concepts.slice(55,69).map(e=>e.id)},
+ {id:concepts[69].id,title:'Gramática',memberIds:concepts.slice(70).map(e=>e.id)}]}
+ const review={sourceSha256:raw.source.sha256,topicLayouts:[layout]}
+ const updated=applyInventoryReview(buildSecondaryInventory(rows),review).scopes.find(s=>s.id===scope.id)
+ assert.equal(updated.topics.length,16)
+ assert.deepEqual(updated.elements,scope.elements)
+ assert.equal(updated.topics.at(-1).subtopics.length,26)
+ assert(updated.topics.every(t=>t.implementation==='PENDING'&&t.interfaceVerification==='NOT_RUN'))
+ const mutate=fn=>{const clone=structuredClone(review);fn(clone.topicLayouts[0]);return clone}
+ for(const invalid of [mutate(l=>l.groups.pop()),mutate(l=>l.groups[0].memberIds.push(concepts[2].id)),mutate(l=>l.groups[0].memberIds.push('alien')),mutate(l=>l.provenance='GUESS')])
+  assert.throws(()=>applyInventoryReview(buildSecondaryInventory(rows),invalid),/cotejo|concepto|duplicad|cobertura/i)
+})
+
 test('incorpora omisiones cotejadas en regiones del PDF sin alterar la extracción ni completar su cobertura',()=>{
  const raw=buildSecondaryInventory(rows),scope=raw.scopes.find(s=>s.grade===5&&s.subject==='Lengua Española'&&s.character==='COMMON'),topic=scope.topics.find(t=>t.title==='La novela')
  const ref={id:'reviewed-novel-example',text:'• Los adjetivos',pdfPage:109,printedPage:'108',sourceOrder:1091004,provenance:'PDF_REGION_VISUALLY_REVIEWED',region:[46,44,156,251]}

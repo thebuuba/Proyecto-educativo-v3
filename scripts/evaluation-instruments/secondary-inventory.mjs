@@ -40,6 +40,26 @@ export function applyInventoryReview(inventory, review) {
     scope.elements[addition.type].push({...ref})
     if(addition.type==='CONCEPT')scope.topics.find(t=>t.id===addition.topicId).subtopics.push({...ref})
   }
+  // A reviewed layout can repair column/page boundaries; every source concept stays accounted for.
+  for(const layout of review.topicLayouts??[]){
+    const scope=inventory.scopes.find(s=>s.id===layout.scopeId)
+    if(!scope||layout.provenance!=='PDF_COLUMNS_VISUALLY_REVIEWED'||!Array.isArray(layout.groups)||!layout.groups.length)throw new Error('Reagrupación sin cotejo de fuente válido.')
+    const concepts=new Map(scope.elements.CONCEPT.map(e=>[e.id,e])),seen=new Set()
+    const take=id=>{
+      if(!concepts.has(id))throw new Error(`Concepto ajeno al ámbito: ${id}`)
+      if(seen.has(id))throw new Error(`Concepto duplicado en la reagrupación: ${id}`)
+      seen.add(id)
+      return concepts.get(id)
+    }
+    scope.conceptHeadings=(layout.headingIds??[]).map(take)
+    const defaults=scope.topics[0]
+    scope.topics=layout.groups.map(group=>{
+      if(!group.title?.trim()||!Array.isArray(group.memberIds))throw new Error('Grupo conceptual sin título o miembros cotejados.')
+      const source=take(group.id)
+      return {...defaults,id:group.id,title:group.title,source,subtopics:group.memberIds.map(take),sourceNotes:[],procedures:[],boundaryReview:'VISUALLY_REVIEWED',provenance:layout.provenance}
+    })
+    if(seen.size!==concepts.size)throw new Error('Cobertura incompleta de conceptos en la reagrupación.')
+  }
   const statusFields = ['implementation', 'automatedVerification', 'manualVerification', 'applicationVerification', 'boundaryReview', 'procedureAssociation', 'report', 'catalogVersion', 'engineConnection', 'instrumentFormats', 'serviceVerification', 'interfaceVerification', 'pending']
   for(const entry of review.scopes ?? []) {
     const scope=inventory.scopes.find(scope=>scope.id === entry.id)

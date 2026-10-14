@@ -1,5 +1,5 @@
 type ActivityDefaults = { activityType: string; technique: string; instrument: string }
-import { scientificTaskType,resolveEvaluationTask } from '@aula/shared'
+import { scientificTaskType,resolveEvaluationTask,resolveFirstGradeEnglishTask,firstGradeEnglishSelections } from '@aula/shared'
 import type { InstrumentAcademicContext } from '@aula/shared'
 import { automaticInstrumentType } from './automaticInstrumentType'
 
@@ -7,6 +7,8 @@ const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '
 
 /** Immediate defaults from the teacher's task, using only options already offered by the creator. */
 export function activityDefaultSuggestions(title: string, description: string, context?: InstrumentAcademicContext | null, maxScore?: number | null): ActivityDefaults | null {
+  const english=resolveFirstGradeEnglishTask(title,description,context)
+  if(english)return {activityType:english.activityType,technique:english.technique,instrument:firstGradeEnglishSelections(english,description).suggestedInstrumentType}
   const result=detectActivityDefaults(title,description)
   return result ? {...result,instrument:automaticInstrumentType(result.activityType,context,maxScore,description)} : null
 }

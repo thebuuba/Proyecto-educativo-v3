@@ -1,5 +1,10 @@
 # Continuación del encargo completo
 
+## Avance vigente de Inglés primero
+
+Catálogo local `evaluation-2026.35`; base Git `1fd7fbda8d4bca269055ac36e8427033bf0e08d9`. Funciones comunicativas compartidas conectadas y cuatro formatos guardados/reabiertos. Fuente134–139 y96 conceptos cotejados. **Primero sigue parcial**: faltan gramática, léxico, expresiones, estrategias, géneros/productos y consignas mixtas. No avanzar a segundo hasta cerrar estos pendientes. [Informe](ingles-1-funciones.md); [ruta posterior](orden-de-continuacion.md). Lengua1.º–6.º conserva su cierre .34. Sin bloqueo externo. Mantener commits/push en `amplia-instrumentos-secundaria`, ejecución directa sin subagentes, sin producción ni reset.
+
+
 ## Encargo vigente: continuidad curricular autorizada (.34)
 
 Lengua común 1.º–6.º supera la revisión adicional: corregidas redundancias de ritmo y representación y una contracción gramatical. Backend4.306, frontend9.553, inventario8, builds exigidos y24 propuestas HTTP de seis grados aprobados; cinco guardados/reaperturas nuevos,74 snapshots preservados. [Informe y evidencia](lengua-revision-final.md). Catálogo local .34; no producción ni históricos alterados.

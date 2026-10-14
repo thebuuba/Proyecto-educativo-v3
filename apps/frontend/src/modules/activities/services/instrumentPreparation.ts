@@ -1,5 +1,5 @@
 import type { InstrumentRecommendation } from '@aula/shared'
-import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,commonSecondaryLanguageGrade} from '@aula/shared'
+import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,commonSecondaryLanguageGrade,resolveFirstGradeEnglishTask,firstGradeEnglishCriteria} from '@aula/shared'
 import { distributeScoreUnits, instrumentEvaluationConfiguration, validateInstrumentDefinition } from '@aula/shared'
 import { editableAuthoredRecommendation, editableSecondaryTopicRecommendation, findSecondaryLanguageTopic, secondGradeNewsCriteria, withoutResources } from '@aula/shared'
 import { findSecondaryScienceTopic, secondaryScienceCriteria, scientificTaskType, type InstrumentAcademicContext } from '@aula/shared'
@@ -38,6 +38,8 @@ export function preparationFingerprint(input: { name: string; description: strin
 }
 
 export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: number; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
+  const english=resolveFirstGradeEnglishTask(input.activityTitle,input.description??'',input.academicContext)
+  if(english)return editableAuthoredRecommendation(firstGradeEnglishCriteria(english),input,input.activityType??english.activityType,'ingles-comunicacion-1')
   const resolvedActivity=input.activityType??resolveEvaluationTask(input.activityTitle,input.description??'').action??'OTHER'
   const novel=secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',input.academicContext,resolvedActivity,input.includeAdditionalCandidates)
   if(novel.length&&!findSecondaryLanguageTopic(input.activityTitle,input.description??'',input.academicContext??null)) return editableAuthoredRecommendation(novel,input,resolvedActivity,'novela-analisis-fragmento-5')

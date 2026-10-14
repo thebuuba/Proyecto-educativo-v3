@@ -205,6 +205,7 @@ export { completeFirstGradeNewsCriteria as firstGradeNewsCriteria, completeFirst
   firstGradeLanguageFeatures, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity } from './secondary-language-grade-one-complete'
 export { findSecondaryMathTopic, secondaryMathCriteria, secondaryMathModules } from './secondary-math'
 export {adaptLanguageScale} from './language-scale'
+export {commonFirstGradeEnglish,resolveFirstGradeEnglishTask,firstGradeEnglishCriteria,firstGradeEnglishSelections,englishGradeOneModule} from './secondary-english-grade-one'
 export {firstGradeLanguageCompletionFeatures} from './language-procedure-completion'
 export type EntityStatus = 'active' | 'inactive'
 
