@@ -1,5 +1,5 @@
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
-import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,languageInstrumentIntent} from '@aula/shared'
+import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,languageInstrumentIntent,assertInstrumentCapacity} from '@aula/shared'
 import { newsCriteria } from './authored/language/news-grade-1'
 import { adaptLanguageScale, formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
@@ -323,7 +323,9 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
         : readingReportModule ? readingReportCriteria(activity.id, input.description ?? '')
           : detectiveModule ? detectiveStoryCriteria(activity.id, input.description ?? '')
             : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : band==='SECONDARY'&&(area==='language'||resolveEvaluationTask('',input.description??'').product) ? actionContentCriteria(activity.id,input.description??'') : []
-  const authored: AuthoredCriterion[] = selectedAuthored.filter(item=>!mathTopic || input.includeAdditionalCandidates || !item.templateId.endsWith('-verification')).slice(0, INSTRUMENT_MAX_CRITERIA).map(item => item.progressionLevels
+  const eligibleAuthored = selectedAuthored.filter(item=>!mathTopic || input.includeAdditionalCandidates || !item.templateId.endsWith('-verification'))
+  assertInstrumentCapacity(eligibleAuthored.length)
+  const authored: AuthoredCriterion[] = eligibleAuthored.map(item => item.progressionLevels
     ? formatAuthoredCriteria([{ ...item, progressionLevels: item.progressionLevels }], chosenInstrument)[0] : item)
   const authoredWeights = authored.map(item => item.weight)
   const authoredScores = distributeScoreUnits(Math.round(input.maxScore * 100), chosenInstrument === 'lista-ponderada'

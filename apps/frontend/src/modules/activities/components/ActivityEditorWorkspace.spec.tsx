@@ -13,6 +13,7 @@ import { api, ApiError } from '@/services/apiClient'
 import scienceFixtures from '../../../../../../data/evaluation-instruments/science-regressions.json'
 import selectionFixtures from '../../../../../../data/evaluation-instruments/automatic-selection-cases.json'
 import novelFixture from '../../../../../../data/evaluation-instruments/novel-task-regression.json'
+import grammarCapacity from '../../../../../../data/evaluation-instruments/english-grade-one-grammar-contracts.json'
 
 vi.mock('@/modules/grading/components/ActivityDescriptionEditor', () => ({
   ActivityDescriptionEditor: ({
@@ -74,6 +75,28 @@ function props() {
 }
 
 describe('independent activity editor', () => {
+  it('un rechazo por capacidad después de confirmar regeneración conserva la edición manual',async()=>{
+    vi.spyOn(api,'post').mockRejectedValue(new ApiError(400,'La consigna requiere 31 criterios y el instrumento admite hasta 20.'))
+    const original=readyDraft()
+    original.instrumentFields['lista-cotejo:criterion:0']='Criterio editado por el docente'
+    render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" />)
+    fireEvent.click(screen.getByRole('button',{name:'Generar nuevo instrumento'}))
+    const dialog=await screen.findByRole('dialog',{name:'¿Reemplazar el instrumento editado?'})
+    fireEvent.click(within(dialog).getByRole('button',{name:'Cambiar instrumento'}))
+    await screen.findByText(/La consigna requiere 31 criterios/)
+    expect(screen.getByLabelText('Criterio 1')).toHaveValue('Criterio editado por el docente')
+    expect(screen.getByRole('textbox',{name:/Valor en puntos/})).toHaveValue('20')
+  })
+  for(const offline of [false,true])it(`capacidad excedida conserva el instrumento previo: ${offline?'alternativa':'servicio'}`,async()=>{
+    const message='La consigna requiere 31 criterios y el instrumento admite hasta 20.'
+    vi.spyOn(api,'post').mockRejectedValue(new ApiError(offline?503:400,offline?'No disponible':message))
+    const original={...readyDraft(),name:'Requisitos extensos',description:`Leerán un texto en inglés e identificarán ${grammarCapacity.map(f=>f.term).join(', ')}.`,preparedManuallyEdited:false}
+    render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" instrumentAcademicContext={{level:'SECONDARY',grade:1,subjectCode:'ING'}} />)
+    await screen.findByText(/La consigna requiere 31 criterios/,{}, {timeout:5000})
+    expect(screen.getByLabelText('Criterio 1')).toHaveValue(original.instrumentFields['lista-cotejo:criterion:0'])
+    expect(screen.queryByText(/Revisa el instrumento alternativo antes de guardar/)).not.toBeInTheDocument()
+    expect(screen.getByRole('textbox',{name:/Valor en puntos/})).toHaveValue('20')
+  })
   it('keeps the modality when another field changes before the next render',()=>{
     render(<ActivityEditorWorkspace {...props()} initialDraft={{...newActivityDraft('b1'),name:'Actividad'}} />)
     act(()=>{

@@ -62,6 +62,7 @@ import { ApiError } from '@/services/apiClient'
 import { cn } from '@/utils/cn'
 import type { EvaluationProfile, InstrumentAcademicContext } from '@aula/shared'
 import {
+  InstrumentCapacityError,
   detectSecondaryLanguageActivity,
   commonSecondaryLanguageGrade,
   firstSecondaryLanguageTechnique,
@@ -516,8 +517,7 @@ export function ActivityCreationView(props: {
         !(error instanceof ApiError && error.status >= 400 && error.status < 500) &&
         (!requestedDraft.preparedManuallyEdited || replaceManual)
       ) {
-        useEditableTemplate(manualSelections.current.instrument || preferredType ? requestedType : undefined, newGeneration, Boolean(preferredType))
-        setFallbackNotice(
+        if(useEditableTemplate(manualSelections.current.instrument || preferredType ? requestedType : undefined, newGeneration, Boolean(preferredType)))setFallbackNotice(
           'El servicio no respondió. Revisa el instrumento alternativo antes de guardar.',
         )
       } else {
@@ -665,9 +665,13 @@ export function ActivityCreationView(props: {
         academicContext: props.instrumentAcademicContext,
         includeAdditionalCandidates: true,
       }
-      candidates = [0, 1].flatMap(
+      try { candidates = [0, 1].flatMap(
         (variation) => editableFallbackRecommendation({ ...base, variation }).criteria,
-      )
+      ) } catch (localError) {
+        if(!(localError instanceof InstrumentCapacityError))throw localError
+        setPreparationError(localError.message)
+        return
+      }
       usedAlternative = current.preparedRecommendation?.catalogVersion !== 'editable-fallback-v1'
     } finally {
       addingRequest.current = false
@@ -748,7 +752,8 @@ export function ActivityCreationView(props: {
       ? (current.instrumentGeneration || 0) + 1
       : current.instrumentGeneration || 0
     const score = committedScore.current
-    const proposal = editableFallbackRecommendation({
+    let proposal: InstrumentRecommendation
+    try { proposal = editableFallbackRecommendation({
       activityTitle: current.name,
       description: activityDescriptionText(current.description),
       maxScore: score ?? 20,
@@ -760,7 +765,12 @@ export function ActivityCreationView(props: {
         : current.pedagogicalActivityType || scopedActivity || defaults?.activityType || undefined,
       secondaryLanguageGrade: contextualLanguageGrade || undefined,
       academicContext: props.instrumentAcademicContext,
-    })
+    }) } catch (error) {
+      if(!(error instanceof InstrumentCapacityError))throw error
+      setPreparationError(error.message)
+      setFallbackNotice('')
+      return false
+    }
     const preparedFields = scoreInstrumentFields(
       recommendationToFields(proposal, current.name),
       instrumentType,
@@ -782,6 +792,7 @@ export function ActivityCreationView(props: {
     onChangeDraft({ ...next, preparedFingerprint: preparationFingerprint(next) })
     setFailedInstrumentType('')
     setPreparationError('')
+    return true
   }
 
   function requestInstrumentFromScratch() {

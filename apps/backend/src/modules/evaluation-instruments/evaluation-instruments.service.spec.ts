@@ -6,6 +6,7 @@ import { EvaluationInstrumentsService } from './evaluation-instruments.service'
 import { RecommendInstrumentDto } from './recommend-instrument.dto'
 import { evaluationCatalogCurrent } from './catalog-current'
 import { seedEvaluationCatalog } from './catalog-operations'
+import grammar from '../../../../../data/evaluation-instruments/english-grade-one-grammar-contracts.json'
 
 const mocks = vi.hoisted(() => ({
   sectionSubject: { findFirst: vi.fn() }, evaluationCatalogRelease: { findUnique: vi.fn(), create: vi.fn() },
@@ -33,6 +34,17 @@ beforeEach(() => {
   mocks.curriculumElement.findMany.mockResolvedValue([])
 })
 describe('API service security and version policy', () => {
+  it('devuelve400 explicativo cuando no caben todos los requisitos, sin una propuesta truncada',async()=>{
+    const row=assignment()
+    row.grade.sequence=1
+    row.grade.academicLevel.code='secundario'
+    row.grade.academicCycle.code='secundario_primer_ciclo'
+    row.subject.code='ING'
+    row.subject.name='Inglés'
+    mocks.sectionSubject.findFirst.mockResolvedValue(row)
+    const request={...input,curriculumVersionId:undefined,description:`Leerán un texto en inglés e identificarán ${grammar.map(f=>f.term).join(', ')}.`}
+    await expect(new EvaluationInstrumentsService().recommend(user,request)).rejects.toMatchObject({status:400,message:expect.stringContaining('31 criterios')})
+  })
   it('en producción no selecciona DRAFT implícitamente para interpretar ni recomendar',async()=>{
     const previous=process.env.NODE_ENV
     process.env.NODE_ENV='production'

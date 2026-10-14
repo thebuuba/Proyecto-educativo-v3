@@ -14,17 +14,18 @@ export async function localClient() {
   const cookie=login.headers.getSetCookie().find(v=>v.startsWith('aulabase_session='))?.split(';')[0]
   assert(cookie)
   let nextRequest=0
-  const request=async(path,input,attempt=0)=>{
+  const request=async(path,input,attempt=0,allowError=false)=>{
     const wait=Math.max(0,nextRequest-Date.now())
     nextRequest=Date.now()+wait+800
     if(wait) await delay(wait)
     const response=await fetch(base+path,{method:input?'POST':'GET',headers:{cookie,'Content-Type':'application/json'},...(input?{body:JSON.stringify(input)}:{})})
     if(response.status===429&&attempt<3) {
       await delay(Math.min(60000,Math.max(1000,Number(response.headers.get('retry-after')||60)*1000)))
-      return request(path,input,attempt+1)
+      return request(path,input,attempt+1,allowError)
     }
+    if(allowError)return {status:response.status,body:await response.json()}
     assert(response.ok,`${path}: HTTP ${response.status}`)
     return (await response.json()).data
   }
-  return {request,health}
+  return {request,health,requestResult:(path,input)=>request(path,input,0,true)}
 }

@@ -1,5 +1,24 @@
 # Continuación del encargo completo
 
+## Trabajo detenido y punto de recuperación — 14/10/2026 (.42)
+
+**El usuario ordenó detener la ampliación curricular y publicar únicamente el cierre del avance actual. No comenzar otro bloque ni reanudar por las autorizaciones históricas de abajo.** Inglés común1.º mantiene estado parcial; Lengua Española común1.º–6.º conserva el cierre .34 de sus familias verificadas. Las demás asignaturas y optativas mantienen sus estados propios.
+
+Último avance previo confirmado en remoto: `6a07b05285b55485afd3a87dd81b443a3341445a` (composición .41), rama `amplia-instrumentos-secundaria`, origen `https://github.com/thebuuba/Proyecto-educativo-v3.git`. El commit que incorpora este cierre guarda los cambios .42 como **punto de avance**, sin afirmar que Inglés1 o el recorrido visual de capacidad estén terminados. La evidencia de servicio ejecutó esa base con cambios pendientes (`dirty: true`); no atribuirle retroactivamente el hash del cierre.
+
+Implementado: comprobación compartida de hasta20 criterios, eliminación del recorte silencioso del servicio, error400 explicativo y manejo de ese límite en la alternativa del editor sin sustituir campos ni ediciones previas. Catálogo local instalado/cargado `evaluation-2026.42`; .41 archivado. [Informe del bloque y evidencias](criterios-capacidad-punto-de-avance.md).
+
+Validación reciente reutilizada: backend6.300/63, frontend11.225/107, builds backend/frontend y Cloudflare dry-run; recompilación backend durante recuperación local. Validación específica del cierre:33 backend y siete frontend aprobadas. HTTP: ocho rechazos de31 y ocho aceptaciones de20 criterios, cuatro formatos y20/17.35. Persistencia histórica:102 snapshots,28 de referencia y74 completos. `git diff --check` sin errores. Las suites completas no se repitieron porque el cierre no cambia implementación.
+
+**Siguiente pendiente, solo cuando el usuario autorice reanudar:**
+
+1. Retomar el borrador local «QA capacidad · copia temporal», conservado tras reiniciar el entorno. La última acción fue «Generar nuevo instrumento» y la última observación el diálogo «¿Reemplazar el instrumento editado?». No se confirmó «Cambiar instrumento»; falta observar el error y contrastar campos manuales y puntos antes/después. No afirmar que la comprobación visual esté aprobada.
+2. Revisar los17 registros ATTITUDE_VALUE y21 ACHIEVEMENT_INDICATOR de Inglés1 (PDF134–139), conectar requisitos observables explícitos cuando proceda y documentar motivación/condiciones personales que no deben convertirse en calificación de personalidad.
+3. Completar revisión final de pertinencia, detección actividad/técnica/instrumento, formatos, matriz con evidencia y recorridos autenticados de generación, edición, guardado y reapertura. Inglés1 sigue parcial hasta cerrar esos requisitos.
+4. Solo después, continuar Inglés2.º–6.º y la [ruta oficial documentada](orden-de-continuacion.md), si se reanuda el encargo.
+
+No se eliminaron archivos locales. Credenciales, `.env`, cuentas de pruebas, logs y temporales quedan fuera del commit; `.superpowers/` conserva material de trabajo local. Mantener ejecución directa sin subagentes, sin IA, rediseño, main, producción, reset o cambios históricos. Las secciones siguientes son historial.
+
 ## Avance vigente: composición de Inglés primero
 
 Catálogo local `evaluation-2026.41`; base ejecutada `569b660` más cambios del bloque. Composición de ocho consignas mixtas verificada;80 propuestas y ocho interpretaciones HTTP y cuatro formatos editados, guardados y reabiertos. Se preservan102 snapshots (28 de referencia y74 completos). Backend6.290, frontend11.219; builds verificados. [Informe](ingles-1-composicion.md). **Primero sigue parcial**. Continuar composición extensa/límite20; revisar entonces fuente completa y pertinencia antes de segundo. No hay bloqueo. Ejecución directa sin subagentes, commits/push autorizados; sin IA, rediseño, producción, reset ni cambio de snapshots históricos.

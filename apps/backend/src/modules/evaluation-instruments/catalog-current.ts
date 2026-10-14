@@ -37,6 +37,7 @@ import {evaluationCatalogV37} from './catalog-v37'
 import {evaluationCatalogV38} from './catalog-v38'
 import {evaluationCatalogV39} from './catalog-v39'
 import {evaluationCatalogV40} from './catalog-v40'
+import {evaluationCatalogV41} from './catalog-v41'
 import {englishGradeOneGenres} from '@aula/shared'
 import {englishGradeOneStrategies} from '@aula/shared'
 import {englishGradeOneLexicon} from '@aula/shared'
@@ -48,8 +49,9 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV40,
-  version: 'evaluation-2026.41',
+  ...evaluationCatalogV41,
+  version: 'evaluation-2026.42',
+  authoredCriterionCapacityPolicy:'REJECT_OVER_CAPACITY_WITHOUT_SILENT_TRUNCATION_V1',
   englishGradeOneCompositionPolicy:'INDEPENDENT_ACTIONS_PRESERVE_RECEPTION_PRODUCTION_AND_REQUIREMENTS_V1',
   englishGradeOneGenres,
   englishGradeOneGenrePolicy:'BASIC_GENRE_INFORMATION_WITH_REQUESTED_EVIDENCE_PRIORITY_V1',
@@ -81,6 +83,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV41.version)return evaluationCatalogV41
   if(version===evaluationCatalogV40.version)return evaluationCatalogV40
   if(version===evaluationCatalogV39.version)return evaluationCatalogV39
   if(version===evaluationCatalogV38.version)return evaluationCatalogV38

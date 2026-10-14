@@ -2,6 +2,17 @@ import type { InstrumentType } from './instrument-recommendation'
 
 export const INSTRUMENT_TYPES = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const
 export const INSTRUMENT_MAX_CRITERIA = 20
+export class InstrumentCapacityError extends RangeError {
+  readonly criterionCount: number
+  constructor(criterionCount: number) {
+    super(`La consigna requiere ${criterionCount} criterios y el instrumento admite hasta ${INSTRUMENT_MAX_CRITERIA}. Divide la actividad o acota sus requisitos para generar un instrumento completo. Se conservaron tus cambios.`)
+    this.name = 'InstrumentCapacityError'
+    this.criterionCount = criterionCount
+  }
+}
+export function assertInstrumentCapacity(criterionCount: number) {
+  if (criterionCount > INSTRUMENT_MAX_CRITERIA) throw new InstrumentCapacityError(criterionCount)
+}
 export const INSTRUMENT_MIN_LEVELS = 2
 export const INSTRUMENT_MAX_LEVELS = 6
 export const INSTRUMENT_NO_APPLY_SELECTION = -1

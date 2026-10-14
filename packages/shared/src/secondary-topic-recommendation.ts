@@ -1,5 +1,5 @@
 import type { InstrumentRecommendation, InstrumentType } from './instrument-recommendation'
-import { distributeScoreUnits } from './instrument-definition'
+import { distributeScoreUnits, assertInstrumentCapacity } from './instrument-definition'
 import { secondaryTopicCriteria, type ContextualTopicCriterion } from './secondary-topic-criteria'
 import { detectTopicActivity } from './secondary-language-topics'
 import type { SecondaryLanguageTopic } from './secondary-topic-types'
@@ -18,6 +18,7 @@ export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTop
 export function editableAuthoredRecommendation(authored: ContextualTopicCriterion[], input: {
   activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string
 }, activity: string, moduleName: string): InstrumentRecommendation {
+  assertInstrumentCapacity(authored.length)
   authored = formatAuthoredCriteria(authored, input.instrumentType)
   const levels = input.instrumentType === 'rubrica' || input.instrumentType === 'escala'
     ? ['Destacado', 'Logrado', 'En proceso', 'Inicial'].map((label, index) => ({ id: `L${4 - index}`, label, proportion: (3 - index) / 3 })) : []

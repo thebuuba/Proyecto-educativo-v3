@@ -1,5 +1,17 @@
 # Avance durable — cobertura secundaria
 
+## Cierre solicitado del avance actual — 14/10/2026 (.42)
+
+**La ampliación curricular está detenida por instrucción del usuario. No iniciar otro bloque. Inglés común de 1.º permanece parcial**: falta concluir la comprobación visual del límite de20 criterios y la revisión final de cobertura y pertinencia. Lengua Española común1.º–6.º conserva su cierre verificado .34, dentro de las familias documentadas.
+
+El avance de Inglés ya publicado llega a composición de acciones independientes, commit `6a07b05285b55485afd3a87dd81b443a3341445a`, rama `amplia-instrumentos-secundaria`, repositorio `https://github.com/thebuuba/Proyecto-educativo-v3.git`; el remoto se comprobó antes del cierre. Este punto de avance incorpora la protección compartida de capacidad: evita truncar31 requisitos a20 en el servicio y evita una propuesta local inválida de31 filas. Respuesta400 explicativa, conservación del instrumento previo y sus ediciones, catálogo local `evaluation-2026.42`, .41 congelado. [Alcance, evidencia y pendientes](criterios-capacidad-punto-de-avance.md).
+
+Comprobaciones recientes reutilizadas: backend6.300/63 archivos; frontend11.225/107; builds backend/frontend y Cloudflare dry-run. El backend volvió a compilar al recuperar el entorno local. El cierre ejecutó únicamente33 pruebas backend de capacidad/servicio y siete frontend de capacidad/conservación, todas aprobadas; no repitió suites completas. Servicio local: ocho rechazos de31 criterios y ocho propuestas completas de20, cuatro instrumentos ×20/17.35. Permanecen102 snapshots (28 de referencia y74 completos). `git diff --check` sin errores antes de preparar el commit.
+
+**Pendiente inmediato al reanudar con nueva instrucción:** completar la prueba visual ya iniciada en el borrador «QA capacidad · copia temporal»; se recuperó con sus cambios, pero la última observación quedó en el diálogo de sustitución, antes de confirmar. No existe evidencia visual del resultado final y no se declara cerrado el límite. Después: revisar17 registros de actitudes/valores y21 indicadores de logro de Inglés1, distinguir condiciones personales de evidencias evaluables, cerrar revisión del diff, matriz y cuatro recorridos finales de generación/edición/guardado/reapertura. No avanzar a Inglés2 antes de ese cierre.
+
+Se conservan todos los cambios y los archivos locales de trabajo; credenciales, `.env`, cuentas locales, logs y temporales se excluyen del commit. No hay cambios de esquema, reset, reescritura de snapshots, IA, rediseño, mezcla con main ni despliegue. Las secciones siguientes son historial y no autorizan continuar mientras rija esta detención.
+
 ## Avance vigente: composición de Inglés primero
 
 Catálogo local `evaluation-2026.41`; base ejecutada `569b660` más cambios del bloque. Composición de ocho consignas mixtas verificada;80 propuestas y ocho interpretaciones HTTP y cuatro formatos editados, guardados y reabiertos. Se preservan102 snapshots (28 de referencia y74 completos). Backend6.290, frontend11.219; builds verificados. [Informe](ingles-1-composicion.md). **Primero sigue parcial**. Continuar composición extensa/límite20; revisar entonces fuente completa y pertinencia antes de segundo. No hay bloqueo. Ejecución directa sin subagentes, commits/push autorizados; sin IA, rediseño, producción, reset ni cambio de snapshots históricos.

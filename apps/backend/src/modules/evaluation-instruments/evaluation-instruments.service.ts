@@ -5,7 +5,7 @@ import { evaluationCatalogCurrent } from './catalog-current'
 import { academicContext, resolveScope } from './curriculum-context'
 import { detectActivityType, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
-import {resolveFirstGradeEnglishTask,firstGradeEnglishSelections} from '@aula/shared'
+import {resolveFirstGradeEnglishTask,firstGradeEnglishSelections,InstrumentCapacityError} from '@aula/shared'
 
 /** Deterministic, read-only recommendation boundary. All tenancy checks precede curricular reads. */
 @Injectable()
@@ -42,6 +42,7 @@ export class EvaluationInstrumentsService {
       result.curriculumVersionId = version?.id ?? null
       return result
     } catch (error) {
+      if(error instanceof InstrumentCapacityError)throw new BadRequestException(error.message)
       const details = { route: 'POST /evaluation-instruments/recommend', sectionSubjectId: input.sectionSubjectId,
         catalogVersion: evaluationCatalogCurrent.version, curriculumVersionId: input.curriculumVersionId ?? null,
         curriculumScopeId: input.curriculumScopeId ?? null, activityType: input.pedagogicalActivityType ?? null,
