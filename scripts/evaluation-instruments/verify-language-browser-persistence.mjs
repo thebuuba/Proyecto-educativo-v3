@@ -4,7 +4,7 @@ import {localClient,fingerprint} from './language-local-client.mjs'
 
 const grade=Number(process.argv[2]||1)
 const run=process.argv[3]||'base'
-assert(['base','procedimientos','cierre','final','funciones','gramatica'].includes(run))
+assert(['base','procedimientos','cierre','final','funciones','gramatica','lexico'].includes(run))
 const subject=process.argv.find(arg=>arg.startsWith('--subject='))?.slice(10)??'LEN'
 assert(['LEN','ING'].includes(subject))
 const prefix=`${subject==='ING'?'ingles':'lengua'}-${grade}${run==='base'?'':'-'+run}`
@@ -26,6 +26,13 @@ for(const evidence of ui) {
   assert.equal(proposal.activityType,activity.pedagogicalActivityType)
   assert.equal(proposal.totalScoreUnits,Math.round(activity.maxScore*100))
   assert.equal(proposal.criteria.reduce((n,c)=>n+c.maxScoreUnits,0),proposal.totalScoreUnits)
+  if(evidence.manualWeights&&!evidence.knownWeightFieldsMismatch){
+    assert.equal(evidence.manualWeights.reduce((sum,weight)=>sum+weight,0),100)
+    for(const [index,criterion] of proposal.criteria.entries()){
+      assert.equal(Number(activity.instrumentCriteria[`lista-ponderada:weight:${index}`]),evidence.manualWeights[index])
+      assert.equal(Math.round(Number(activity.instrumentCriteria[`lista-ponderada:points:${index}`])*100),criterion.maxScoreUnits,'Visible points differ from the saved snapshot')
+    }
+  }
   const fields=evidence.formFields??evidence.fields
   const savedValues=new Set(Object.values(activity.instrumentCriteria))
   for(const field of fields) {
@@ -39,4 +46,4 @@ for(const evidence of ui) {
 }
 writeFileSync(`${root}${prefix}-flujo-navegador.json`,JSON.stringify(ui,null,2)+'\n')
 writeFileSync(`${root}${prefix}-persistencia.json`,JSON.stringify({verifiedAt:new Date().toISOString(),health,activities:saved},null,2)+'\n')
-console.log(JSON.stringify({grade,formats:expectedFormats,partial:expectedFormats<4,activities:saved.map(a=>({id:a.id,format:a.instrumentType,score:a.maxScore})),uiTextsPreserved:true}))
+console.log(JSON.stringify({grade,formats:expectedFormats,partial:expectedFormats<4,activities:saved.map(a=>({id:a.id,format:a.instrumentType,score:a.maxScore})),uiTextsPreserved:true,historicalReproductions:ui.filter(e=>e.knownWeightFieldsMismatch).length}))

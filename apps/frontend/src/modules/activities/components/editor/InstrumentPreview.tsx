@@ -31,6 +31,7 @@ import { RubricInstrument } from '@/modules/activities/components/editor/RubricI
 import { ScaleInstrument } from '@/modules/activities/components/editor/ScaleInstrument'
 import { WeightedListInstrument } from '@/modules/activities/components/editor/WeightedListInstrument'
 import { appendInstrumentCriterion } from '@/modules/activities/services/instrumentCriterionAddition'
+import { scoreInstrumentFields } from '@/modules/activities/services/instrumentScoring'
 import { competencyBlocks } from '@/modules/grading/utils/competencyGrades'
 import { cn } from '@/utils/cn'
 import { type InstrumentRecommendation } from '@aula/shared'
@@ -230,7 +231,10 @@ export function InstrumentPreview({
   }, [highlight, instrumentType])
 
   function updateField(key: string, value: string) {
-    onFieldsChange({ ...fields, [key]: value })
+    const next = { ...fields, [key]: value }
+    onFieldsChange(key.startsWith('lista-ponderada:weight:')
+      ? scoreInstrumentFields(next, instrumentType, scorePending ? null : maxScore)
+      : next)
   }
 
   const criterionCount =

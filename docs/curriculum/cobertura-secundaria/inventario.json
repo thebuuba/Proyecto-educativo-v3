@@ -13639,7 +13639,7 @@
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
       "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
-      "pending": "Pendientes vocabulario, expresiones, estrategias, géneros/productos, modalidades mixtas y composición de consignas extensas.",
+      "pending": "Pendientes estrategias, géneros/productos, modalidades mixtas y composición de consignas extensas. No avanzar a segundo.",
       "elements": {
         "CONCEPT": [
           {
@@ -15805,21 +15805,27 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "engineConnection": "CONTEXTUAL_PROVIDER_EXPLICIT_LEXICON",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
+          "pending": "Familias explícitas verificadas; pendientes géneros/productos, estrategias, modalidades mixtas y composición extensa del grado. Cuatro formatos en ejemplos representativos, no53 recorridos UI individuales.",
           "procedures": [],
           "procedureAssociation": "PENDING_VISUAL_REVIEW",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "PENDING_SPECIFIC_REQUIREMENTS",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN",
+          "implementation": "IMPLEMENTED_EXPLICIT_LEXICAL_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_AND_DESCRIPTORS_REVIEWED",
+          "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
           "sourceNotes": [],
           "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
-          "report": "ingles-1-funciones.md"
+          "report": "ingles-1-lexico.md",
+          "catalogVersion": "evaluation-2026.38"
         },
         {
           "id": "bf2f974a-4bf5-5cf4-a609-ee895f85a79c",
@@ -15933,21 +15939,27 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
+          "engineConnection": "CONTEXTUAL_PROVIDER_EXPLICIT_LEXICON",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+          "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
+          "pending": "Familias explícitas verificadas; pendientes géneros/productos, estrategias, modalidades mixtas y composición extensa del grado. Cuatro formatos en ejemplos representativos, no53 recorridos UI individuales.",
           "procedures": [],
           "procedureAssociation": "PENDING_VISUAL_REVIEW",
           "boundaryReview": "VISUALLY_REVIEWED",
-          "implementation": "PENDING_SPECIFIC_REQUIREMENTS",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN",
+          "implementation": "IMPLEMENTED_EXPLICIT_LEXICAL_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_AND_DESCRIPTORS_REVIEWED",
+          "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
           "sourceNotes": [],
           "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
-          "report": "ingles-1-funciones.md"
+          "report": "ingles-1-lexico.md",
+          "catalogVersion": "evaluation-2026.38"
         },
         {
           "id": "c6e52bcc-66da-5cf0-a60b-342bd4aabe50",
@@ -16169,7 +16181,7 @@
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
-      "implementation": "PARTIAL_FUNCTIONS_AND_EXPLICIT_GRAMMAR",
+      "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
       "automatedVerification": "PARTIAL_PASSED",
       "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
       "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
@@ -16182,8 +16194,8 @@
           "sourceOrder": 1341000
         }
       ],
-      "report": "ingles-1-gramatica.md",
-      "catalogVersion": "evaluation-2026.36"
+      "report": "ingles-1-lexico.md",
+      "catalogVersion": "evaluation-2026.38"
     },
     {
       "id": "7e4c1236-8f04-5817-b017-a9ace9edff5e",

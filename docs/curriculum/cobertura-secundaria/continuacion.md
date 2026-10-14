@@ -1,5 +1,10 @@
 # Continuación del encargo completo
 
+## Avance vigente: léxico y expresiones de Inglés primero
+
+Catálogo local `evaluation-2026.38`; base de ejecución `85f6149` más cambios del bloque. Conectadas39 familias de vocabulario y14 funciones expresivas;424 propuestas HTTP en .37 y24 revisadas en .38. Cuatro formatos guardados/reabiertos nuevamente en .38, incluido ajuste60/40 que ahora coincide en campos y snapshot. Se preservan90 snapshots (28 de referencia y62 completos); una reproducción anterior de puntos desactualizados queda identificada como fallo histórico. [Informe](ingles-1-lexico.md). **Primero sigue parcial**: continuar estrategias (PROCEDURE16–52), géneros/productos (12–15), acciones mixtas y límite20 antes del cierre. No hay bloqueo externo. Sin subagentes, IA, rediseño, producción, reset ni cambios históricos.
+
+
 ## Avance vigente de Inglés primero con gramática
 
 Catálogo local `evaluation-2026.36`; base `f14393b54ff7034c5a96f5c1e4fa899e3ede28d8`. Conectadas31 estructuras en reconocimiento, explicación y uso;248 propuestas HTTP y cuatro guardados/reaperturas. Se preservan82 snapshots. [Informe](ingles-1-gramatica.md). **El grado permanece parcial.** Continuar con39 familias de vocabulario (conceptos15–53 del ámbito) y expresiones (54–68, con una repetición oficial); después estrategias, géneros/productos y modalidades mixtas. Verificar también composición cuando se supera el límite existente de20 criterios. No avanzar a segundo. Ejecución directa sin subagentes, commits/push autorizados, sin producción, reset ni cambios históricos. Las secciones siguientes son historial.

@@ -1498,17 +1498,43 @@
     },
     {
       "id": "1349f236-6d54-5d0e-a9c0-8f8a417c479d",
-      "implementation": "PENDING_SPECIFIC_REQUIREMENTS",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "implementation": "IMPLEMENTED_EXPLICIT_LEXICAL_FAMILIES",
+      "report": "ingles-1-lexico.md",
+      "pending": "Familias explícitas verificadas; pendientes géneros/productos, estrategias, modalidades mixtas y composición extensa del grado. Cuatro formatos en ejemplos representativos, no53 recorridos UI individuales.",
+      "boundaryReview": "VISUALLY_REVIEWED",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_AND_DESCRIPTORS_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_EXPLICIT_LEXICON",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
+      "catalogVersion": "evaluation-2026.38"
     },
     {
       "id": "bf2f974a-4bf5-5cf4-a609-ee895f85a79c",
-      "implementation": "PENDING_SPECIFIC_REQUIREMENTS",
-      "report": "ingles-1-funciones.md",
-      "pending": "Pendientes requisitos gramaticales/léxicos específicos, expresiones y estrategias, géneros/productos y acciones mixtas. Funciones básicas verificadas; grado no completo.",
-      "boundaryReview": "VISUALLY_REVIEWED"
+      "implementation": "IMPLEMENTED_EXPLICIT_LEXICAL_FAMILIES",
+      "report": "ingles-1-lexico.md",
+      "pending": "Familias explícitas verificadas; pendientes géneros/productos, estrategias, modalidades mixtas y composición extensa del grado. Cuatro formatos en ejemplos representativos, no53 recorridos UI individuales.",
+      "boundaryReview": "VISUALLY_REVIEWED",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_AND_DESCRIPTORS_REVIEWED",
+      "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER_EXPLICIT_LEXICON",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
+      "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
+      "catalogVersion": "evaluation-2026.38"
     },
     {
       "id": "c6e52bcc-66da-5cf0-a60b-342bd4aabe50",
@@ -1692,7 +1718,7 @@
     },
     {
       "id": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
-      "implementation": "PARTIAL_FUNCTIONS_AND_EXPLICIT_GRAMMAR",
+      "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
       "automatedVerification": "PARTIAL_PASSED",
       "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
       "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
@@ -1705,9 +1731,9 @@
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
       "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
-      "catalogVersion": "evaluation-2026.36",
-      "report": "ingles-1-gramatica.md",
-      "pending": "Pendientes vocabulario, expresiones, estrategias, géneros/productos, modalidades mixtas y composición de consignas extensas."
+      "catalogVersion": "evaluation-2026.38",
+      "report": "ingles-1-lexico.md",
+      "pending": "Pendientes estrategias, géneros/productos, modalidades mixtas y composición de consignas extensas. No avanzar a segundo."
     }
   ],
   "sourceAdditions": [

@@ -207,6 +207,7 @@ export { findSecondaryMathTopic, secondaryMathCriteria, secondaryMathModules } f
 export {adaptLanguageScale} from './language-scale'
 export {commonFirstGradeEnglish,resolveFirstGradeEnglishTask,firstGradeEnglishCriteria,firstGradeEnglishSelections,englishGradeOneModule} from './secondary-english-grade-one'
 export {englishGradeOneGrammar} from './secondary-english-grade-one-grammar'
+export {englishGradeOneLexicon} from './secondary-english-grade-one-lexicon'
 export {firstGradeLanguageCompletionFeatures} from './language-procedure-completion'
 export type EntityStatus = 'active' | 'inactive'
 

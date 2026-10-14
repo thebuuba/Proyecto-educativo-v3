@@ -23,3 +23,5 @@ Cierre del bloque .34: nueve fallos rojos reproducidos; trece regresiones verdes
 Bloque .35: conexión inicial de funciones comunicativas de Inglés1.º; fuente134–139 cotejada, reagrupación íntegra de96 conceptos,15 consignas en cuatro formatos, selector automático/manual, HTTP y cuatro guardados/reaperturas. Grado todavía parcial: continuar gramática, léxico, expresiones, estrategias, géneros/productos y acciones mixtas antes de segundo. Informe `ingles-1-funciones.md`.
 
 Bloque .36:31 estructuras gramaticales conectadas, fuente136–138, cuatro formatos y persistencia. Próximo: vocabulario/expresiones de primero; después estrategias y composición. Ver `ingles-1-gramatica.md`. Primero sigue parcial.
+
+Bloque .37/.38:39 familias léxicas y14 expresivas conectadas. Corregida actualización de puntos al editar porcentajes en InstrumentPreview; cuatro recorridos finales .38 y90 snapshots conservados. Siguiente: estrategias, productos y composición de primero; no avanzar de grado.
