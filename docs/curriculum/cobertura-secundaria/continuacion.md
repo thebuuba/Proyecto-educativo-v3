@@ -1,5 +1,11 @@
 # Continuación del encargo completo
 
+## Bloque vigente: 1.º–5.º verificados; continuar 6.º (.31)
+
+Quinto cierra siete temas, 68 conceptos lógicos (69 registros) y 26 modalidades (28 registros de procedimientos), con 145 consignas. Se recuperaron del PDF ocho conceptos y cinco procedimientos omitidos por la extracción, como suplemento trazable del inventario. Backend 3.729; frontend completo 7.907 más 1.767 comprobaciones finales. HTTP 304 +21 finales; cuatro formatos guardados/reabiertos, textos cotejados y 64 snapshots preservados. [Informe y límites](lengua-5-cierre.md).
+
+**Siguiente: 6.º, PDF113 en adelante.** Auditar tablas, completar proveedores y cerrar los cuatro formatos con persistencia real. Runtime .31; .29/.30 archivados. Sin bloqueo, subagentes, producción ni alteración de históricos. Las secciones siguientes son historial.
+
 ## Bloque vigente: 1.º–4.º verificados; continuar 5.º (.29)
 
 Cuarto cierra siete temas, 67 conceptos lógicos (68 registros) y 26 bloques de modalidad (92 registros de procedimientos) con 143 consignas. Backend 3.147; frontend 6.131 más 1.736 comprobaciones finales. HTTP 528 iniciales +272 finales +13 de selección; cuatro formatos finales guardados/reabiertos, textos cotejados y60 snapshots conservados. [Informe, familias y límites](lengua-4-cierre.md).

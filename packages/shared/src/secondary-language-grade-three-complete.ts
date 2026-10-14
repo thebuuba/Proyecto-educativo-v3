@@ -26,7 +26,7 @@ export function composeLanguageCriteria(topic:SecondaryLanguageTopic,activity:st
  const reciting=mode==='ORAL'&&/recit|declam/.test(task)
  const narrating=mode==='ORAL'&&/narr\w*.*oralmente/.test(task)
  const oralCreation=mode==='ORAL'&&(/produc\w*|elabor\w*|realiz\w*.*entrevista/.test(task)||narrating
-  ||topic.grade>=4&&['discurso-agradecimiento','informe-investigacion','instructivo'].includes(topic.id)&&/present\w*\s+oralmente/.test(task)&&!/analisis|analiz|interpret|comentario|leido/.test(task))
+  ||topic.grade>=4&&['discurso-agradecimiento','discurso-recibimiento-despedida','informe-investigacion','instructivo'].includes(topic.id)&&/present\w*\s+oralmente/.test(task)&&!/analisis|analiz|interpret|comentario|leido/.test(task))
  const producing=topic.id!=='novela'&&(mode==='PRODUCTION'||mode==='REPORT'&&['informe-experimento','informe-investigacion'].includes(topic.id)||oralCreation)
  const features=requestedLanguageFeatures(availableFeatures,description).map(f=>{
   if(f.id!=='graphics')return f

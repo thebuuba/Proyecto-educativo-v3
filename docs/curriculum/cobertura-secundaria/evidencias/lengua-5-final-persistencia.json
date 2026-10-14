@@ -1,0 +1,1501 @@
+{
+  "verifiedAt": "2026-10-14T03:41:37.680Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "c3d777e0b178f3e3b20738ef4122194026daa822",
+      "dirty": true,
+      "startedAt": "2026-10-14T03:39:52.560Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.31"
+    }
+  },
+  "activities": [
+    {
+      "id": "962cd2f9-74e4-493c-8598-50409f8696ca",
+      "name": "QA Lengua 5 · Reseña contextual · .30",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Escribirán una reseña de una novela leída distinguiendo la síntesis de la obra y su valoración personal. Justificarán el juicio con pasajes disponibles. Se valorará la calidad en varias dimensiones.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "71b78062-dd1a-4ce3-807f-f98e42045fb9",
+      "instrumentSnapshotId": "d6cd68bb-f713-4082-a4bc-603f104d41e7",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.30:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-resena-summary:0",
+            "title": "Identificación y síntesis de la obra reseñada",
+            "maxScore": 8.89,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-5-resena-summary",
+            "description": "Sitúa la obra reseñada y sintetiza su contenido conservando sus relaciones principales, distinguiéndolo de la opinión propia.",
+            "descriptors": [
+              {
+                "text": "Sitúa la obra reseñada y sintetiza su contenido conservando sus relaciones principales, distinguiéndolo de la opinión propia.",
+                "levelId": "L4",
+                "scoreUnits": 889
+              },
+              {
+                "text": "La síntesis conserva el contenido; una referencia a la obra necesita precisarse.",
+                "levelId": "L3",
+                "scoreUnits": 593
+              },
+              {
+                "text": "Enumera datos de la obra sin relacionarlos o mezcla resumen con opinión.",
+                "levelId": "L2",
+                "scoreUnits": 296
+              },
+              {
+                "text": "No presenta una síntesis reconocible del contenido reseñado. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 889,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.30:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-resena-assessment:1",
+            "title": "Valoración sustentada de la obra",
+            "maxScore": 11.11,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-5-resena-assessment",
+            "description": "Sustenta la valoración personal de la obra con aspectos identificables de su contenido o realización y explica por qué apoyan su juicio.",
+            "descriptors": [
+              {
+                "text": "Sustenta la valoración personal de la obra con aspectos identificables de su contenido o realización y explica por qué apoyan su juicio.",
+                "levelId": "L4",
+                "scoreUnits": 1111
+              },
+              {
+                "text": "El juicio tiene apoyo en la obra; una relación con la evidencia necesita explicarse.",
+                "levelId": "L3",
+                "scoreUnits": 741
+              },
+              {
+                "text": "Expresa gusto o disgusto sin vincularlo con aspectos reconocibles de la obra.",
+                "levelId": "L2",
+                "scoreUnits": 370
+              },
+              {
+                "text": "No presenta una valoración sustentada de la obra.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1111,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_rubrica",
+          "ranking": [
+            {
+              "score": 76,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "10ad2049-4ad6-5650-9996-4710b255d3e4",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 61,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "ec40e10d-ee9a-5b1f-b98c-759bd54c99b2",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 58,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "511ee7f1-ad8f-5aa1-a2fe-1ea945626315",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ],
+              "elementId": "76d2d1ee-2283-588b-af31-803d7c6871e3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "822d22d4-52c5-5c82-913f-359cb9fc51d0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "0d807295-3ce7-5aa2-b489-dc545c412601",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "68cb5586-9c97-5338-9770-ffdecfe38fdc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "469f2309-57d4-58c6-8f72-a839e2c04dc5",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4751ec-1896-55a5-a789-67ffa9956adc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0ea78b99-7e34-5be4-9a1f-96b6ea7b45f4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-5-resena",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.30",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para QA Lengua 5 · Reseña contextual · .30",
+        "rubrica:points:0": "8.89",
+        "rubrica:points:1": "11.11",
+        "rubrica:criterion:0": "Identificación y síntesis de la obra reseñada",
+        "rubrica:criterion:1": "Valoración sustentada de la obra",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Sitúa la obra reseñada y sintetiza su contenido conservando sus relaciones principales, distinguiéndolo de la opinión propia.",
+        "rubrica:description:1": "Sustenta la valoración personal de la obra con aspectos identificables de su contenido o realización y explica por qué apoyan su juicio.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.30:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-resena-summary:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.30:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-resena-assessment:1",
+        "rubrica:descriptor:0:1": "No presenta una síntesis reconocible del contenido reseñado. Ajuste manual del docente.",
+        "rubrica:descriptor:0:2": "Enumera datos de la obra sin relacionarlos o mezcla resumen con opinión.",
+        "rubrica:descriptor:0:3": "La síntesis conserva el contenido; una referencia a la obra necesita precisarse.",
+        "rubrica:descriptor:0:4": "Sitúa la obra reseñada y sintetiza su contenido conservando sus relaciones principales, distinguiéndolo de la opinión propia.",
+        "rubrica:descriptor:1:1": "No presenta una valoración sustentada de la obra.",
+        "rubrica:descriptor:1:2": "Expresa gusto o disgusto sin vincularlo con aspectos reconocibles de la obra.",
+        "rubrica:descriptor:1:3": "El juicio tiene apoyo en la obra; una relación con la evidencia necesita explicarse.",
+        "rubrica:descriptor:1:4": "Sustenta la valoración personal de la obra con aspectos identificables de su contenido o realización y explica por qué apoyan su juicio.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[4,5]",
+        "rubrica:criterion-weight:0": "4",
+        "rubrica:criterion-weight:1": "5",
+        "rubrica:meta:criteriaCount": "2",
+        "rubrica:meta:catalogVersion": "evaluation-2026.30",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Identificación y síntesis de la obra reseñada\",\"description\":\"Sitúa la obra reseñada y sintetiza su contenido conservando sus relaciones principales, distinguiéndolo de la opinión propia.\",\"progression\":[\"Sitúa la obra reseñada y sintetiza su contenido conservando sus relaciones principales, distinguiéndolo de la opinión propia.\",\"La síntesis conserva el contenido; una referencia a la obra necesita precisarse.\",\"Enumera datos de la obra sin relacionarlos o mezcla resumen con opinión.\",\"Atribuye a la obra hechos que no contiene o presenta la opinión como contenido original.\",\"No presenta una síntesis reconocible del contenido reseñado.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"Valoración sustentada de la obra\",\"description\":\"Sustenta la valoración personal de la obra con aspectos identificables de su contenido o realización y explica por qué apoyan su juicio.\",\"progression\":[\"Sustenta la valoración personal de la obra con aspectos identificables de su contenido o realización y explica por qué apoyan su juicio.\",\"El juicio tiene apoyo en la obra; una relación con la evidencia necesita explicarse.\",\"Expresa gusto o disgusto sin vincularlo con aspectos reconocibles de la obra.\",\"Justifica el juicio con contenido ajeno o contrario a la obra reseñada.\",\"No presenta una valoración sustentada de la obra.\"]}",
+        "rubrica:criterion-template:0": "len-5-resena-summary",
+        "rubrica:criterion-template:1": "len-5-resena-assessment",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "be95d7a2-6583-4ed8-bd3f-0451083466bd",
+      "name": "QA Lengua 5 · Carta verificable · .30",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Redactarán una carta de autopresentación con lugar y fecha, destinatario, saludo, cuerpo, despedida y firma. Se comprobará la presencia de cada evidencia con sí o no.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "5e61d989-ac71-4e88-a42b-b5c6cf249631",
+      "instrumentSnapshotId": "642de06a-2491-47b7-8c37-b2be95535200",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.30:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-carta-autopresentacion-purpose:0",
+            "title": "Organiza la carta de autopresentación para que el destinatario reconozca quién escribe y con qué propósito se dirige a él. Ajuste manual del docente.",
+            "maxScore": 5.78,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-5-carta-autopresentacion-purpose",
+            "description": "Organiza la carta de autopresentación para que el destinatario reconozca quién escribe y con qué propósito se dirige a él.",
+            "descriptors": [
+              {
+                "text": "Organiza la carta de autopresentación para que el destinatario reconozca quién escribe y con qué propósito se dirige a él.",
+                "levelId": "L2",
+                "scoreUnits": 578
+              },
+              {
+                "text": "Organiza la carta de autopresentación para que el destinatario reconozca quién escribe y con qué propósito se dirige a él.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 578,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.30:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-carta-autopresentacion-reasons:1",
+            "title": "Fundamenta el interés en presentarse relacionando capacidades o experiencias pertinentes con el propósito de la carta.",
+            "maxScore": 7.23,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-5-carta-autopresentacion-reasons",
+            "description": "Fundamenta el interés en presentarse relacionando capacidades o experiencias pertinentes con el propósito de la carta.",
+            "descriptors": [
+              {
+                "text": "Fundamenta el interés en presentarse relacionando capacidades o experiencias pertinentes con el propósito de la carta.",
+                "levelId": "L2",
+                "scoreUnits": 723
+              },
+              {
+                "text": "Fundamenta el interés en presentarse relacionando capacidades o experiencias pertinentes con el propósito de la carta.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 723,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.30:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-carta-autopresentacion-feature-letter-parts:2",
+            "title": "Emplea el lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma en el texto de carta de autopresentación para situar la comunicación y hacer reconocibles remitente, destinatario, asunto y cierre sin mezclar sus funciones, sin alterar el sentido de las ideas.",
+            "maxScore": 4.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-5-carta-autopresentacion-feature-letter-parts",
+            "description": "Emplea el lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma en el texto de carta de autopresentación para situar la comunicación y hacer reconocibles remitente, destinatario, asunto y cierre sin mezclar sus funciones, sin alterar el sentido de las ideas.",
+            "descriptors": [
+              {
+                "text": "Emplea el lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma en el texto de carta de autopresentación para situar la comunicación y hacer reconocibles remitente, destinatario, asunto y cierre sin mezclar sus funciones, sin alterar el sentido de las ideas.",
+                "levelId": "L2",
+                "scoreUnits": 434
+              },
+              {
+                "text": "Emplea el lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma en el texto de carta de autopresentación para situar la comunicación y hacer reconocibles remitente, destinatario, asunto y cierre sin mezclar sus funciones, sin alterar el sentido de las ideas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "HIGH",
+        "totalScore": 17.35,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-cotejo",
+          "ranking": [
+            {
+              "score": 114,
+              "reasons": [
+                "topicTokens=7/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "822d22d4-52c5-5c82-913f-359cb9fc51d0",
+              "topicCoverage": 0.875
+            },
+            {
+              "score": 111,
+              "reasons": [
+                "topicTokens=7/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "24e14dbf-d42d-5d88-b8f9-9b9b4a3208c9",
+              "topicCoverage": 0.875
+            },
+            {
+              "score": 108,
+              "reasons": [
+                "topicTokens=7/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4751ec-1896-55a5-a789-67ffa9956adc",
+              "topicCoverage": 0.875
+            },
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "da463373-4efd-5f03-8353-e5109cd1ebea",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "5d3121ba-2636-556d-9fe3-2cabbc81ec1f",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b686de2f-5427-5355-9fe0-66a54a891b14",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "68cb5586-9c97-5338-9770-ffdecfe38fdc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "10ad2049-4ad6-5650-9996-4710b255d3e4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=4"
+              ],
+              "elementId": "511ee7f1-ad8f-5aa1-a2fe-1ea945626315",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "d3a86276-7a72-588d-8dda-943543b33255",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3d24b630-6007-580c-ab32-7d2f3a7b132b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "cec296fc-1903-54d8-a95b-de3163e0be1c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "ec40e10d-ee9a-5b1f-b98c-759bd54c99b2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d7e30776-111a-583e-9a2d-be7bf005c71d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "64f06be2-0d8d-5b93-bc14-8ea020658f49",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d433c218-ef4a-5b96-b826-19e341bd0365",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-5-carta-autopresentacion",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": false
+        },
+        "catalogVersion": "evaluation-2026.30",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA Lengua 5 · Carta verificable · .30",
+        "lista-cotejo:points:0": "5.78",
+        "lista-cotejo:points:1": "7.23",
+        "lista-cotejo:points:2": "4.34",
+        "lista-cotejo:criterion:0": "Organiza la carta de autopresentación para que el destinatario reconozca quién escribe y con qué propósito se dirige a él. Ajuste manual del docente.",
+        "lista-cotejo:criterion:1": "Fundamenta el interés en presentarse relacionando capacidades o experiencias pertinentes con el propósito de la carta.",
+        "lista-cotejo:criterion:2": "Emplea el lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma en el texto de carta de autopresentación para situar la comunicación y hacer reconocibles remitente, destinatario, asunto y cierre sin mezclar sus funciones, sin alterar el sentido de las ideas.",
+        "lista-cotejo:description:0": "Organiza la carta de autopresentación para que el destinatario reconozca quién escribe y con qué propósito se dirige a él.",
+        "lista-cotejo:description:1": "Fundamenta el interés en presentarse relacionando capacidades o experiencias pertinentes con el propósito de la carta.",
+        "lista-cotejo:description:2": "Emplea el lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma en el texto de carta de autopresentación para situar la comunicación y hacer reconocibles remitente, destinatario, asunto y cierre sin mezclar sus funciones, sin alterar el sentido de las ideas.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.30:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-carta-autopresentacion-purpose:0",
+        "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.30:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-carta-autopresentacion-reasons:1",
+        "lista-cotejo:criterion-id:2": "proposal:evaluation-2026.30:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-carta-autopresentacion-feature-letter-parts:2",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[4,5,3]",
+        "lista-cotejo:criterion-weight:0": "4",
+        "lista-cotejo:criterion-weight:1": "5",
+        "lista-cotejo:criterion-weight:2": "3",
+        "lista-cotejo:meta:criteriaCount": "3",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.30",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Organiza la carta de autopresentación para que el destinatario reconozca quién escribe y con qué propósito se dirige a él.\",\"description\":\"Organiza la carta de autopresentación para que el destinatario reconozca quién escribe y con qué propósito se dirige a él.\",\"progression\":[\"Organiza la carta de autopresentación para que el destinatario reconozca quién escribe y con qué propósito se dirige a él.\",\"Se reconocen remitente y propósito; una referencia al destinatario necesita aclararse.\",\"Enumera partes de la carta sin relacionarlas con quién escribe ni para qué.\",\"Confunde al remitente con el destinatario o atribuye un propósito contrario a la carta.\",\"No se reconoce quién se presenta ni el propósito de la carta.\"]}",
+        "lista-cotejo:criterion-evidence:1": "{\"title\":\"Fundamenta el interés en presentarse relacionando capacidades o experiencias pertinentes con el propósito de la carta.\",\"description\":\"Fundamenta el interés en presentarse relacionando capacidades o experiencias pertinentes con el propósito de la carta.\",\"progression\":[\"Fundamenta el interés en presentarse relacionando capacidades o experiencias pertinentes con el propósito de la carta.\",\"Las capacidades sustentan el interés; una relación con el propósito queda implícita.\",\"Enumera cualidades o experiencias sin explicar su pertinencia para la autopresentación.\",\"Atribuye capacidades ajenas al remitente o razones incompatibles con el propósito.\",\"No relaciona capacidades ni experiencias con los motivos de presentarse.\"]}",
+        "lista-cotejo:criterion-evidence:2": "{\"title\":\"Emplea el lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma en el texto de carta de autopresentación para situar la comunicación y hacer reconocibles remitente, destinatario, asunto y cierre sin mezclar sus funciones, sin alterar el sentido de las ideas.\",\"description\":\"Emplea el lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma en el texto de carta de autopresentación para situar la comunicación y hacer reconocibles remitente, destinatario, asunto y cierre sin mezclar sus funciones, sin alterar el sentido de las ideas.\",\"progression\":[\"Emplea el lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma en el texto de carta de autopresentación para situar la comunicación y hacer reconocibles remitente, destinatario, asunto y cierre sin mezclar sus funciones, sin alterar el sentido de las ideas.\",\"Emplea el lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma con la función solicitada; un uso aislado deja ambigua una relación entre ideas.\",\"Incluye el lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma, pero varios usos no contribuyen a situar la comunicación y hacer reconocibles remitente, destinatario, asunto y cierre sin mezclar sus funciones.\",\"El uso del lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma altera el sentido del texto: se confunde la identificación del destinatario con la firma del remitente.\",\"No incorpora evidencia del uso solicitado del lugar y la fecha, el saludo, el cuerpo de la carta, la despedida y la firma en su texto.\"]}",
+        "lista-cotejo:criterion-template:0": "len-5-carta-autopresentacion-purpose",
+        "lista-cotejo:criterion-template:1": "len-5-carta-autopresentacion-reasons",
+        "lista-cotejo:criterion-template:2": "len-5-carta-autopresentacion-feature-letter-parts"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "940ba32f-25c3-41ff-abb8-9d21fc3f0c68",
+      "name": "QA Lengua 5 · Recitación satírica final · .31",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 15,
+      "description": "<p>Declamarán un poema satírico manteniendo el sentido de la crítica, el ritmo y la entonación. Se registrará la regularidad con que se cumplen los indicadores.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "2944c7cd-6533-434c-a4ef-ab1d3d003aa6",
+      "instrumentSnapshotId": "483518b0-2199-42f3-8fea-b76b805247cb",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-poesia-satirica-recitation-sequence:0",
+            "title": "Recita el poema satírico conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+            "maxScore": 7.5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-5-poesia-satirica-recitation-sequence",
+            "description": "Recita el poema satírico conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 750
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 500
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 250
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 750,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-poesia-satirica-recitation-expression:1",
+            "title": "Comunica el sentido de la crítica del poema satírico mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+            "maxScore": 7.5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-5-poesia-satirica-recitation-expression",
+            "description": "Comunica el sentido de la crítica del poema satírico mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 750
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 500
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 250
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 750,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 15,
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_escala",
+          "ranking": [
+            {
+              "score": 73,
+              "reasons": [
+                "topicTokens=4/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "9561fff4-8601-5165-bee5-c3035a12fe97",
+              "topicCoverage": 0.5
+            },
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "1f588d35-c347-543d-97a1-033303f664c8",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 44,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "0d807295-3ce7-5aa2-b489-dc545c412601",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "10ad2e51-368f-5bf0-9dea-ba961e180281",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "76d2d1ee-2283-588b-af31-803d7c6871e3",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "de4751ec-1896-55a5-a789-67ffa9956adc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0275bfe7-c3d9-5df2-88b6-85e1ad129994",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "24e14dbf-d42d-5d88-b8f9-9b9b4a3208c9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "469f2309-57d4-58c6-8f72-a839e2c04dc5",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "92298e31-fc48-5d8f-adfa-0a8fd9ba0469",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "07bc8009-fd55-5693-a01e-5eb2a5300f05",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9ba1f04a-8d21-5f0c-93c5-75cff971574b",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-5-poesia-satirica",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.31",
+        "instrumentType": "escala",
+        "totalScoreUnits": 1500,
+        "curriculumScopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_PRESENTATION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA Lengua 5 · Recitación satírica final · .31",
+        "escala:points:0": "7.5",
+        "escala:points:1": "7.5",
+        "escala:criterion:0": "Recita el poema satírico conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+        "escala:criterion:1": "Comunica el sentido de la crítica del poema satírico mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+        "escala:level-name:1": "Todavía no",
+        "escala:level-name:2": "A veces",
+        "escala:level-name:3": "Frecuentemente",
+        "escala:level-name:4": "Siempre",
+        "escala:description:0": "Recita el poema satírico conservando la secuencia y el sentido de sus versos, con los apoyos acordados.",
+        "escala:description:1": "Comunica el sentido de la crítica del poema satírico mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-poesia-satirica-recitation-sequence:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-poesia-satirica-recitation-expression:1",
+        "escala:descriptor:0:1": "En ninguna de las oportunidades observadas. Ajuste manual del docente.",
+        "escala:descriptor:0:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:1:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:1:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:1:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:1:4": "En todas las oportunidades observadas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[3,3]",
+        "escala:criterion-weight:0": "3",
+        "escala:criterion-weight:1": "3",
+        "escala:meta:criteriaCount": "2",
+        "escala:meta:catalogVersion": "evaluation-2026.31",
+        "escala:criterion-evidence:0": "{\"title\":\"Recita el poema satírico conservando la secuencia y el sentido de sus versos, con los apoyos acordados.\",\"description\":\"Recita el poema satírico conservando la secuencia y el sentido de sus versos, con los apoyos acordados.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Comunica el sentido de la crítica del poema satírico mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.\",\"description\":\"Comunica el sentido de la crítica del poema satírico mediante ritmo, pausas y entonación, o los apoyos de acceso acordados.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-template:0": "len-5-poesia-satirica-recitation-sequence",
+        "escala:criterion-template:1": "len-5-poesia-satirica-recitation-expression",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "presentacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "ba7aef2d-9f98-4a4e-af3b-d71741c52ce2",
+      "name": "QA Lengua 5 · Escena ponderada · .31",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Representarán un entremés teatral con sus compañeros, enlazando las intervenciones de los personajes, el conflicto y la crítica social. Se distribuirán pesos entre los componentes verificables.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "13997e25-21de-41ee-a82a-90a9bf993d70",
+      "instrumentSnapshotId": "04ce0abe-d171-4f11-99bf-58e6668934dd",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-scene:0",
+            "title": "Conflicto, personajes y diálogo de la escena",
+            "maxScore": 4.63,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "len-5-entremes-teatral-scene",
+            "description": "Relaciona el conflicto de la escena disponible con los personajes y las intervenciones que hacen avanzar la acción del entremés. Parcial (50%): Enumera intervenciones o personajes sin explicar su relación con el conflicto. Ajuste manual del docente.",
+            "descriptors": [
+              {
+                "text": "Relaciona el conflicto de la escena disponible con los personajes y las intervenciones que hacen avanzar la acción del entremés. Parcial (50%): Enumera intervenciones o personajes sin explicar su relación con el conflicto. Ajuste manual del docente.",
+                "levelId": "L3",
+                "scoreUnits": 463
+              },
+              {
+                "text": "Relaciona el conflicto de la escena disponible con los personajes y las intervenciones que hacen avanzar la acción del entremés. Parcial (50%): Enumera intervenciones o personajes sin explicar su relación con el conflicto. Ajuste manual del docente.",
+                "levelId": "L2",
+                "scoreUnits": 232
+              },
+              {
+                "text": "Relaciona el conflicto de la escena disponible con los personajes y las intervenciones que hacen avanzar la acción del entremés. Parcial (50%): Enumera intervenciones o personajes sin explicar su relación con el conflicto. Ajuste manual del docente.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 463,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-critique:1",
+            "title": "Crítica social y sentido del entremés",
+            "maxScore": 5.78,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-5-entremes-teatral-critique",
+            "description": "Interpreta la crítica social del entremés con apoyo en las situaciones y diálogos de la escena disponible. Parcial (50%): Enumera elementos cómicos sin explicar qué conducta o situación se critica.",
+            "descriptors": [
+              {
+                "text": "Interpreta la crítica social del entremés con apoyo en las situaciones y diálogos de la escena disponible. Parcial (50%): Enumera elementos cómicos sin explicar qué conducta o situación se critica.",
+                "levelId": "L3",
+                "scoreUnits": 578
+              },
+              {
+                "text": "Interpreta la crítica social del entremés con apoyo en las situaciones y diálogos de la escena disponible. Parcial (50%): Enumera elementos cómicos sin explicar qué conducta o situación se critica.",
+                "levelId": "L2",
+                "scoreUnits": 289
+              },
+              {
+                "text": "Interpreta la crítica social del entremés con apoyo en las situaciones y diálogos de la escena disponible. Parcial (50%): Enumera elementos cómicos sin explicar qué conducta o situación se critica.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 578,
+            "relativeWeight": 5,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-oral:2",
+            "title": "Comunicación e intercambio de ideas",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-5-entremes-teatral-oral",
+            "description": "Comunica el conflicto, las intervenciones y la crítica social de la escena mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados. Parcial (50%): Se comunican ideas aisladas y cuesta reconocer sus relaciones.",
+            "descriptors": [
+              {
+                "text": "Comunica el conflicto, las intervenciones y la crítica social de la escena mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados. Parcial (50%): Se comunican ideas aisladas y cuesta reconocer sus relaciones.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Comunica el conflicto, las intervenciones y la crítica social de la escena mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados. Parcial (50%): Se comunican ideas aisladas y cuesta reconocer sus relaciones.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Comunica el conflicto, las intervenciones y la crítica social de la escena mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados. Parcial (50%): Se comunican ideas aisladas y cuesta reconocer sus relaciones.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-performance:3",
+            "title": "Intervenciones y acción en la representación",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "len-5-entremes-teatral-performance",
+            "description": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+            "descriptors": [
+              {
+                "text": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "PERFORMANCE",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 58,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0e4eb6ac-9469-5683-a95a-210d99a9fca1",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 58,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4771e869-1675-55cb-afdf-9a5f1a3f8eef",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 58,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "76d2d1ee-2283-588b-af31-803d7c6871e3",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 56,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "10ad2049-4ad6-5650-9996-4710b255d3e4",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "511ee7f1-ad8f-5aa1-a2fe-1ea945626315",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "ec40e10d-ee9a-5b1f-b98c-759bd54c99b2",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "124694d7-6dd8-56b2-ae6e-2d003717235b",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e3e55532-c167-522b-af89-d39d7054a67f",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "07bc8009-fd55-5693-a01e-5eb2a5300f05",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "8f70a5ca-8abf-5839-a5af-e0490b5b9814",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0275bfe7-c3d9-5df2-88b6-85e1ad129994",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1f588d35-c347-543d-97a1-033303f664c8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "68cb5586-9c97-5338-9770-ffdecfe38fdc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "822d22d4-52c5-5c82-913f-359cb9fc51d0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d3a86276-7a72-588d-8dda-943543b33255",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "de4751ec-1896-55a5-a789-67ffa9956adc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "034999b7-5283-54aa-8500-f03c92d31f6f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "34d07495-99f1-5368-afd1-793df6be11dc",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c0604aba-428b-5aa7-b6d2-2cd2e4307543",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "module=lengua-secundaria-5-entremes-teatral",
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.31",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "PERFORMANCE",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA Lengua 5 · Escena ponderada · .31",
+        "lista-ponderada:points:0": "4.63",
+        "lista-ponderada:points:1": "5.78",
+        "lista-ponderada:points:2": "3.47",
+        "lista-ponderada:points:3": "3.47",
+        "lista-ponderada:weight:0": "26.67",
+        "lista-ponderada:weight:1": "33.33",
+        "lista-ponderada:weight:2": "20",
+        "lista-ponderada:weight:3": "20",
+        "lista-ponderada:criterion:0": "Conflicto, personajes y diálogo de la escena",
+        "lista-ponderada:criterion:1": "Crítica social y sentido del entremés",
+        "lista-ponderada:criterion:2": "Comunicación e intercambio de ideas",
+        "lista-ponderada:criterion:3": "Intervenciones y acción en la representación",
+        "lista-ponderada:indicator:0": "Relaciona el conflicto de la escena disponible con los personajes y las intervenciones que hacen avanzar la acción del entremés. Parcial (50%): Enumera intervenciones o personajes sin explicar su relación con el conflicto. Ajuste manual del docente.",
+        "lista-ponderada:indicator:1": "Interpreta la crítica social del entremés con apoyo en las situaciones y diálogos de la escena disponible. Parcial (50%): Enumera elementos cómicos sin explicar qué conducta o situación se critica.",
+        "lista-ponderada:indicator:2": "Comunica el conflicto, las intervenciones y la crítica social de la escena mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados. Parcial (50%): Se comunican ideas aisladas y cuesta reconocer sus relaciones.",
+        "lista-ponderada:indicator:3": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Relaciona el conflicto de la escena disponible con los personajes y las intervenciones que hacen avanzar la acción del entremés. Parcial (50%): Enumera intervenciones o personajes sin explicar su relación con el conflicto.",
+        "lista-ponderada:description:1": "Interpreta la crítica social del entremés con apoyo en las situaciones y diálogos de la escena disponible. Parcial (50%): Enumera elementos cómicos sin explicar qué conducta o situación se critica.",
+        "lista-ponderada:description:2": "Comunica el conflicto, las intervenciones y la crítica social de la escena mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados. Parcial (50%): Se comunican ideas aisladas y cuesta reconocer sus relaciones.",
+        "lista-ponderada:description:3": "Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-scene:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-critique:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-oral:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.31:1ef1e94e-5976-5272-af8b-6b2d6e093b2b:len-5-entremes-teatral-performance:3",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[4,5,3,3]",
+        "lista-ponderada:criterion-weight:0": "4",
+        "lista-ponderada:criterion-weight:1": "5",
+        "lista-ponderada:criterion-weight:2": "3",
+        "lista-ponderada:criterion-weight:3": "3",
+        "lista-ponderada:meta:criteriaCount": "4",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.31",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Conflicto, personajes y diálogo de la escena\",\"description\":\"Relaciona el conflicto de la escena disponible con los personajes y las intervenciones que hacen avanzar la acción del entremés. Parcial (50%): Enumera intervenciones o personajes sin explicar su relación con el conflicto.\",\"progression\":[\"Relaciona el conflicto de la escena disponible con los personajes y las intervenciones que hacen avanzar la acción del entremés.\",\"Las intervenciones permiten seguir el conflicto; una transición necesita aclararse.\",\"Enumera intervenciones o personajes sin explicar su relación con el conflicto.\",\"Atribuye una intervención a otro personaje y cambia el sentido del conflicto.\",\"No relaciona las intervenciones de los personajes con la acción de la escena.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Crítica social y sentido del entremés\",\"description\":\"Interpreta la crítica social del entremés con apoyo en las situaciones y diálogos de la escena disponible. Parcial (50%): Enumera elementos cómicos sin explicar qué conducta o situación se critica.\",\"progression\":[\"Interpreta la crítica social del entremés con apoyo en las situaciones y diálogos de la escena disponible.\",\"La crítica tiene apoyo en la escena; un vínculo con el diálogo necesita explicarse.\",\"Enumera elementos cómicos sin explicar qué conducta o situación se critica.\",\"Atribuye a la escena una crítica contraria a sus situaciones y diálogos.\",\"No relaciona la crítica con evidencia de la escena disponible.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Comunicación e intercambio de ideas\",\"description\":\"Comunica el conflicto, las intervenciones y la crítica social de la escena mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados. Parcial (50%): Se comunican ideas aisladas y cuesta reconocer sus relaciones.\",\"progression\":[\"Comunica el conflicto, las intervenciones y la crítica social de la escena mediante una secuencia y un vocabulario comprensibles para la audiencia, con los apoyos de acceso acordados.\",\"Las ideas se comprenden; una transición o referencia necesita aclararse.\",\"Se comunican ideas aisladas y cuesta reconocer sus relaciones.\",\"La secuencia o el vocabulario cambia el sentido de las ideas comunicadas.\",\"No aporta evidencia de comunicación del contenido mediante la presentación o el apoyo acordado.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Intervenciones y acción en la representación\",\"description\":\"Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados. Parcial (50%): Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.\",\"progression\":[\"Representa las intervenciones de su personaje relacionándolas con las acciones y respuestas de la escena, con los apoyos de acceso acordados.\",\"Se sigue la acción; una entrada o respuesta necesita vincularse mejor con la intervención anterior.\",\"Dice intervenciones aisladas sin relacionarlas con lo que sucede en la escena.\",\"Atribuye a su personaje intervenciones de otro y cambia el conflicto representado.\",\"No aporta evidencia de las intervenciones de su personaje en la escena con los apoyos acordados.\"]}",
+        "lista-ponderada:criterion-template:0": "len-5-entremes-teatral-scene",
+        "lista-ponderada:criterion-template:1": "len-5-entremes-teatral-critique",
+        "lista-ponderada:criterion-template:2": "len-5-entremes-teatral-oral",
+        "lista-ponderada:criterion-template:3": "len-5-entremes-teatral-performance"
+      },
+      "evaluationTechnique": "dramatizacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

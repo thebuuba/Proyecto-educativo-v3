@@ -5,6 +5,19 @@ import { buildSecondaryInventory, applyInventoryReview } from './secondary-inven
 
 const rows = readFileSync('data/curriculum/secondary-2023.jsonl', 'utf8').trim().split('\n').map(JSON.parse)
 
+test('incorpora omisiones cotejadas en regiones del PDF sin alterar la extracción ni completar su cobertura',()=>{
+ const raw=buildSecondaryInventory(rows),scope=raw.scopes.find(s=>s.grade===5&&s.subject==='Lengua Española'&&s.character==='COMMON'),topic=scope.topics.find(t=>t.title==='La novela')
+ const ref={id:'reviewed-novel-example',text:'• Los adjetivos',pdfPage:109,printedPage:'108',sourceOrder:1091004,provenance:'PDF_REGION_VISUALLY_REVIEWED',region:[46,44,156,251]}
+ const review={sourceSha256:raw.source.sha256,sourceAdditions:[{topicId:topic.id,type:'CONCEPT',reference:ref}]}
+ const result=applyInventoryReview(buildSecondaryInventory(rows),review),novel=result.scopes.find(s=>s.id===scope.id).topics.find(t=>t.id===topic.id)
+ assert(novel.subtopics.some(s=>s.id===ref.id&&s.provenance==='PDF_REGION_VISUALLY_REVIEWED'))
+ assert.equal(novel.implementation,'PENDING')
+ assert(!topic.subtopics.some(s=>s.id===ref.id))
+ assert.throws(()=>applyInventoryReview(buildSecondaryInventory(rows),{...review,sourceAdditions:[{...review.sourceAdditions[0],reference:{...ref,pdfPage:400}}]}),/región|página/i)
+ assert.throws(()=>applyInventoryReview(buildSecondaryInventory(rows),{...review,sourceAdditions:[{...review.sourceAdditions[0],reference:{...ref,id:topic.id}}]}),/duplicada/i)
+ assert.throws(()=>applyInventoryReview(buildSecondaryInventory(rows),{...review,sourceAdditions:[{...review.sourceAdditions[0],type:'GUESS'}]}),/tipo/i)
+})
+
 test('registra adaptación de una consigna en un ámbito sin inventar un tema oficial', () => {
   const inventory=buildSecondaryInventory(rows)
   const scope=inventory.scopes.find(s=>s.grade===6 && s.subject==='Matemática')

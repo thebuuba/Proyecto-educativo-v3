@@ -25,12 +25,17 @@ import { secondaryLanguageGradeThreeTopics,thirdGradeLanguageFeatures } from '@a
 import {secondaryLanguageGradeFourTopics,fourthGradeLanguageFeatures} from '@aula/shared'
 import {evaluationCatalogV27} from './catalog-v27'
 import {evaluationCatalogV28} from './catalog-v28'
+import {evaluationCatalogV29} from './catalog-v29'
+import {evaluationCatalogV30} from './catalog-v30'
+import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula/shared'
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV28,
-  version: 'evaluation-2026.29',
-  contextualModules:[...secondaryLanguageGradeTwoTopics,...secondaryLanguageGradeThreeTopics,...secondaryLanguageGradeFourTopics],
+  ...evaluationCatalogV30,
+  version: 'evaluation-2026.31',
+  contextualModules:[...secondaryLanguageGradeTwoTopics,...secondaryLanguageGradeThreeTopics,...secondaryLanguageGradeFourTopics,...secondaryLanguageGradeFiveTopics],
+  fifthGradeLanguageFeatures,
+  fifthGradeLanguagePolicy:'TOPIC_ACTION_EXPLICIT_REQUIREMENTS_SOURCE_OVERLAY_PERFORMANCE_V2',
   fourthGradeLanguageFeatures,
   fourthGradeLanguagePolicy:'TOPIC_ACTION_EXPLICIT_REQUIREMENTS_TERMS_V2',
   thirdGradeLanguageFeatures,
@@ -40,6 +45,8 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV30.version)return evaluationCatalogV30
+  if(version===evaluationCatalogV29.version)return evaluationCatalogV29
   if(version===evaluationCatalogV28.version)return evaluationCatalogV28
   if(version===evaluationCatalogV27.version)return evaluationCatalogV27
   if(version===evaluationCatalogV26.version)return evaluationCatalogV26

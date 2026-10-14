@@ -15,7 +15,7 @@ Ejecución directa con executing-plans, sin subagentes por preferencia vigente d
 - [x] Auditar/completar/verificar 2.º con el mismo criterio; cerrar pendientes antes de avanzar; commit/push.
 - [x] Auditar/completar/verificar 3.º; commit/push.
 - [x] Auditar/completar/verificar 4.º; commit/push.
-- [ ] Auditar/completar/verificar 5.º, integrando análisis de novela .19; commit/push.
+- [x] Auditar/completar/verificar 5.º, integrando análisis de novela .19; commit/push.
 - [ ] Auditar/completar/verificar 6.º; commit/push.
 - [ ] Revisión final, pruebas/builds exigidos, ejemplos completos, evidencia de cobertura por tema/familia/formato y entorno ejecutado.
 

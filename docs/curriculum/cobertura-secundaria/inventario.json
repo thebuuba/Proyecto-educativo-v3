@@ -9008,11 +9008,16 @@
       ],
       "inventoryStatus": "INVENTARIADO",
       "extractionStatus": "EXTRAÍDO",
-      "engineConnection": "PENDING",
-      "instrumentFormats": [],
-      "serviceVerification": "NOT_RUN",
-      "interfaceVerification": "NOT_RUN",
-      "pending": "Revisar temas y cobertura evaluativa del ámbito.",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
       "elements": {
         "CONCEPT": [
           {
@@ -9504,6 +9509,118 @@
             "pdfPage": 110,
             "printedPage": "109",
             "sourceOrder": 1101010
+          },
+          {
+            "id": "reviewed-len-5-novela-conceptos-1",
+            "text": "• Conectores temporales,\n  causales y consecutivos",
+            "pdfPage": 109,
+            "printedPage": "108",
+            "sourceOrder": 1091000,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              46,
+              44,
+              156,
+              251
+            ]
+          },
+          {
+            "id": "reviewed-len-5-novela-conceptos-2",
+            "text": "• Organizadores discursivos",
+            "pdfPage": 109,
+            "printedPage": "108",
+            "sourceOrder": 1091001,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              46,
+              44,
+              156,
+              251
+            ]
+          },
+          {
+            "id": "reviewed-len-5-novela-conceptos-3",
+            "text": "• Verbos en pasado y\n  presente",
+            "pdfPage": 109,
+            "printedPage": "108",
+            "sourceOrder": 1091002,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              46,
+              44,
+              156,
+              251
+            ]
+          },
+          {
+            "id": "reviewed-len-5-novela-conceptos-4",
+            "text": "• Los adjetivos",
+            "pdfPage": 109,
+            "printedPage": "108",
+            "sourceOrder": 1091003,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              46,
+              44,
+              156,
+              251
+            ]
+          },
+          {
+            "id": "reviewed-len-5-novela-conceptos-5",
+            "text": "• El narrador (primera,\n  tercera persona) y los\n  personajes",
+            "pdfPage": 109,
+            "printedPage": "108",
+            "sourceOrder": 1091004,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              46,
+              44,
+              156,
+              251
+            ]
+          },
+          {
+            "id": "reviewed-len-5-novela-conceptos-6",
+            "text": "• Temas de la novela",
+            "pdfPage": 109,
+            "printedPage": "108",
+            "sourceOrder": 1091005,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              46,
+              44,
+              156,
+              251
+            ]
+          },
+          {
+            "id": "reviewed-len-5-novela-conceptos-7",
+            "text": "• Los personajes\n  principales y secundarios,\n  protagonista y antagonista",
+            "pdfPage": 109,
+            "printedPage": "108",
+            "sourceOrder": 1091006,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              46,
+              44,
+              156,
+              251
+            ]
+          },
+          {
+            "id": "reviewed-len-5-novela-conceptos-8",
+            "text": "• Los tipos de actantes:\n  agente, paciente,\n  beneficiario, cómplice,\n  ayudante, ponente, aliado",
+            "pdfPage": 109,
+            "printedPage": "108",
+            "sourceOrder": 1091007,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              46,
+              44,
+              156,
+              251
+            ]
           }
         ],
         "PROCEDURE": [
@@ -9667,6 +9784,76 @@
             "pdfPage": 111,
             "printedPage": "110",
             "sourceOrder": 1112001
+          },
+          {
+            "id": "reviewed-len-5-ensayo-oral-1",
+            "text": "Comprensión oral (escuchar)\nEstablecimiento de un propósito para la escucha del ensayo argumentativo\nleídos por el docente y los compañeros de clases; realiza inferencias a partir del\ntítulo y elementos paratextuales para anticipar posibles contenidos basadas en\nla intención y el tipo de audiencia.\nUtilización de la estructura del ensayo argumentativo para comprender su\ncontenido globalmente, del contexto y sentido a partir de palabras cuyos\nsignificados desconoce,  realizando  inferencias  para comprender  la  tesis\ncentral del ensayo y los argumentos utilizados para apoyarla, identifica formas\npersonales como: “pienso que”, “me parece que”, para comprender cuando el\nautor del ensayo sostiene una opinión.\nIdentificación de  fórmulas como “Según…”, “De  acuerdo  con…”,  para\ncomprender cuando el autor del ensayo introduce las citas o argumentos\nde autoridad; basadas en las relaciones lógicas entre las ideas contenidas en\nel ensayo argumentativo, apoyándose en los conectores utilizados; resumen\ndel contenido del ensayo, mediante la omisión de información no relevante,\nselección de las ideas principales (argumentos), generalización y reconstrucción\nde las ideas que representan el sentido global del texto.",
+            "pdfPage": 107,
+            "printedPage": "106",
+            "sourceOrder": 1072000,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              157,
+              44,
+              447,
+              379
+            ]
+          },
+          {
+            "id": "reviewed-len-5-ensayo-oral-2",
+            "text": "Producción oral (hablar)\nEstablecimiento de la situación de comunicación del ensayo argumentativo\nque producirá por escrito: intención y audiencia.\nSelección y justificación del tema sobre el que escribirá el ensayo argumentativo;\nasignación de un título posible; planificación de la tesis o punto de vista que\ndefenderá; las fuentes de información de donde tomará los argumentos y\ncontraargumentos; uso del léxico adecuado con el tema, la intención, los\ndestinatarios, los conectores de digresión, adición, contraste, consecuencia y\norden para dar cohesión al ensayo.",
+            "pdfPage": 107,
+            "printedPage": "106",
+            "sourceOrder": 1072001,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              157,
+              44,
+              447,
+              379
+            ]
+          },
+          {
+            "id": "reviewed-len-5-novela-comprension-1",
+            "text": "Comprensión oral (escuchar)\nEscucha atenta de novelas cortas acordes con la edad e intereses, anticipando\nel contenido a partir del título y otras marcas textuales; uso de la estructura de\nla novela (inicio, nudo y desenlace), los verbos en pasado y presente, de los\nconectores, de los adjetivos, de la distinción entre narrador y personajes para\ncomprender su contenido.\nInferencia a partir del contexto, del significado de las palabras cuyo significado\ndesconoce para comprender el sentido global de la novela, identifica las acciones\nrealizadas por los personajes de la novela y sobre la relación de causalidad entre\nellas; distinción entre el narrador y los personajes para comprender la trama y el\ntema; uso vocabulario apropiado; y resumen del contenido, apoyándose en el\nnarrador, los personajes, las acciones, el ambiente y la atmósfera, el o los temas\ny los diálogos de los personajes.",
+            "pdfPage": 109,
+            "printedPage": "108",
+            "sourceOrder": 1092000,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              157,
+              44,
+              447,
+              369
+            ]
+          },
+          {
+            "id": "reviewed-len-5-novela-comprension-2",
+            "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura de la novela; anticipación del\ncontenido de la novela a partir del título, y otras marcas textuales y paratextuales,\nusos de la estructura de la novela (inicio, nudo y desenlace), de los conectores,\nde los verbos en pasado y presente, de los adjetivos, de la distinción entre\nnarrador y personajes y de las fórmulas de inicio y de cierre para comprender\nsu contenido.\n\nInferencia a partir del contexto del significado de las palabras que desconoce, usa\ndiccionario, identifica las distintas voces (narrador y personajes) que intervienen\nen la novela, para la comprensión del sentido global; identifica y clasifica los\npersonajes, las intenciones de las acciones; usando un vocabulario apropiado\ny mediante el uso de sinónimos y otros recursos; y resumen apoyándose en el\nnarrador, los personajes, las acciones, el ambiente y la atmósfera, el o los temas\ny los diálogos de los personajes.",
+            "pdfPage": 109,
+            "printedPage": "108",
+            "sourceOrder": 1092001,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              157,
+              44,
+              447,
+              369
+            ]
+          },
+          {
+            "id": "reviewed-len-5-poesia-escritura-1",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del poema que va a producir\npor escrito, selección del tema, personaje, hecho o situación que enfocará en\nel poema; utilización del vocabulario apropiado a su intención comunicativa\ny al sentimiento o emoción que quiere transmitir, de los recursos literarios\nque demanda el abordaje del tema según: los sentimientos, la creatividad, la\nconnotación.\nEscritura, revisión y corrección de borradores de poemas de contenido satírico\ncon ayuda del docente y los compañeros y compañeras de clases, atendiendo\na la emoción y sentimiento que quiere expresar; la intención comunicativa,\nla estructura, recursos estilísticos; el vocabulario y la corrección ortográfica;\nedición y publicación de los poemas de contenido satírico en los murales del\naula, en los diferentes blogs de los grupos, así como en un libro artesanal o en\nuna revista escolar.",
+            "pdfPage": 110,
+            "printedPage": "109",
+            "sourceOrder": 1102000,
+            "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+            "region": [
+              157,
+              44,
+              447,
+              212
+            ]
           }
         ],
         "ATTITUDE_VALUE": [
@@ -10198,18 +10385,59 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN",
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+          "procedures": [
+            {
+              "id": "de4751ec-1896-55a5-a789-67ffa9956adc",
+              "text": "Comprensión oral (escuchar)\nAnticipación del contenido de la carta de autopresentación a partir del\ndestinatario y/o del inicio del cuerpo de la carta, escuchando atentamente carta\ndonde identifica la intención comunicativa del hablante.\nUtilización de la estructura de la carta (lugar y fecha, destinatario, saludo,\nasunto que motiva la carta, despedida y firma) para comprender su contenido;\ninferencias a partir del contexto, del significado de las palabras que desconoce,\nnecesarias para comprender el sentido global de lo que escucha, ya sea leída por\nsus pares o por el/la docente. Paráfrasis clara y coherente de la información de\nla carta de autopresentación que escucha, resumiendo el contenido mediante\nla omisión de información no relevante, identificando de las ideas principales,\ngeneralización y reconstrucción de las ideas que representan el sentido global\ndel texto.",
+              "pdfPage": 105,
+              "printedPage": "104",
+              "sourceOrder": 1052000
+            },
+            {
+              "id": "da463373-4efd-5f03-8353-e5109cd1ebea",
+              "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa de la carta: (presentación de\nintereses, preparación, experiencias y habilidades que posee), expresado\nmediante oraciones claras y coherentes las capacidades, las razones y\nargumentos que justifican la autopresentación.\nInclusión de conectores de finalidad, de adición y causa• efecto para explicar\nlas razones e intereses que motivan la carta, haciendo uso de un vocabulario\napropiado a la intención comunicativa y a los destinatarios.",
+              "pdfPage": 105,
+              "printedPage": "104",
+              "sourceOrder": 1052001
+            },
+            {
+              "id": "24e14dbf-d42d-5d88-b8f9-9b9b4a3208c9",
+              "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura de la carta de autopresentación,\nanticipando el contenido a partir de la silueta, de fragmentos leídos y de\notras marcas textuales, haciendo uso de inferencias acerca de la intención\ncomunicativa.\nUtilización de la estructura de la carta de autopresentación: (lugar y fecha,\ndestinatario, saludo, cuerpo o asunto que la motiva, despedida y firma) para\ncomprender su contenido, identifica los conectores de finalidad, de adición y de\ncausa• efecto que explican las razones a partir del contexto, del significado de\nlas palabras que desconoce, y utilizando el diccionario en versión física o digital\npara comprender el sentido global.",
+              "pdfPage": 105,
+              "printedPage": "104",
+              "sourceOrder": 1052002
+            },
+            {
+              "id": "0275bfe7-c3d9-5df2-88b6-85e1ad129994",
+              "text": "Realización de inferencias basadas en las relaciones locales que existen entre las\nideas contenidas, uso de paráfrasis clara y coherente de la información, resumen\ndel contenido mediante la omisión de información no relevante, selección de las\nideas principales y generalización y reconstrucción de las ideas que representan\nel sentido global del texto.",
+              "pdfPage": 106,
+              "printedPage": "105",
+              "sourceOrder": 1062000
+            },
+            {
+              "id": "822d22d4-52c5-5c82-913f-359cb9fc51d0",
+              "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa de la carta de autopresentación\nque escribe: presentación de intereses, preparación, experiencias y habilidades\nque se poseen, selección del/de los destinatarios (s) y del soporte (físico o digital)\ny de los argumentos que justifican el motivo y uso de vocabulario temático\n(interés, tener, poseer, candidato/a, experiencia, habilidad, oportunidad, logro)\najustado a la intención.\nEscritura de borradores ajustándose a la estructura (lugar y fecha, destinatario,\ncargo o estatus, saludo, cuerpo o asunto de la carta, despedida y firma), revisión\ny corrección tomando en cuenta la brevedad y credibilidad en el contenido, con\nla ayuda del/de la docente y de las compañeras y compañeros.\nEdición de la versión final utilizando medios físicos y/o digitales, selección y\nllenado, tomando en cuenta el protocolo para la escritura del mismo (datos del\nremitente y destinatario de manera convencional) y envío de la versión final\nutilizando el correo electrónico y/o el correo tradicional.",
+              "pdfPage": 106,
+              "printedPage": "105",
+              "sourceOrder": 1062001
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
           "sourceNotes": [
             {
               "id": "64f06be2-0d8d-5b93-bc14-8ea020658f49",
@@ -10225,7 +10453,9 @@
               "printedPage": "104",
               "sourceOrder": 1051011
             }
-          ]
+          ],
+          "report": "lengua-5-cierre.md",
+          "catalogVersion": "evaluation-2026.31"
         },
         {
           "id": "0ea78b99-7e34-5be4-9a1f-96b6ea7b45f4",
@@ -10290,18 +10520,54 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+          "procedures": [
+            {
+              "id": "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+              "text": "Comprensión oral (escuchar)\nEstablecimiento de un propósito para la escucha de la reseña leída por el\ndocente, por un compañero o compañera, a partir de marcas textuales.\nRealización de inferencias basadas en la situación de comunicación en que se\nproduce la reseña (intención, autor, audiencia, tema), relaciones lógicas entre\nlas ideas, a partir del contexto, del significado de las palabras que no conoce\npara realizar una paráfrasis del sentido global, apoyándose en el argumento\nde la obra, el tiempo, el lugar de los personajes, sus interacciones, el tema, los\ndiálogos y el género al que pertenece.",
+              "pdfPage": 106,
+              "printedPage": "105",
+              "sourceOrder": 1062002
+            },
+            {
+              "id": "ec40e10d-ee9a-5b1f-b98c-759bd54c99b2",
+              "text": "Producción oral (hablar)\nEstablecimiento de la intención comunicativa de la reseña que el destinatario\nproducirá, selección de la fuente de información, citas claves (del reportaje,\npelícula, documental, obra teatral) y testimonios (del autor, personaje de la\npelícula, espectáculo) que incluirá.\nRegistro de la información (argumento y valoración personal) necesaria para\nestructurar el contenido, organización de las ideas, utilización de los conectores\nentre las oraciones y los párrafos para mantener la cohesión, las relaciones de\ncoherencia y el uso de vocabulario adecuado al contexto y a la función.",
+              "pdfPage": 106,
+              "printedPage": "105",
+              "sourceOrder": 1062003
+            },
+            {
+              "id": "469f2309-57d4-58c6-8f72-a839e2c04dc5",
+              "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura de la reseña: en silencio o en\nvoz alta, anticipando el contenido a partir de marcas textuales y paratextuales,\nrealizando inferencias basadas en la situación de comunicación (intención,\nautor, audiencia, tema) y a través de relaciones lógicas entre las ideas.\nUtilización de la estructura para comprender su contenido, a partir del contexto\ndel significado de las palabras temáticas que no conoce, uso de diccionario en\nversión física y/o digital y paráfrasis del sentido global de la reseña que lee.",
+              "pdfPage": 106,
+              "printedPage": "105",
+              "sourceOrder": 1062004
+            },
+            {
+              "id": "10ad2049-4ad6-5650-9996-4710b255d3e4",
+              "text": "Producción escrita (escribir)\nSelección de la obra temática y la intención comunicativa sobre la cual redactará\ncitas claves (del reportaje, película, documental, obra teatral) y testimonios (del\nautor, personaje de la película, espectáculo) para incluirlas en la reseña.\nPlanificación de la obra, tomando en cuenta su estructura (título, ficha\nbibliográfica, resumen del argumento y valoración personal) y contenido\n(códigos, actores, director, técnicos, público, elementos verbales, paraverbales\ny no verbales).\nSelección del vocabulario apropiado y al tema para la audiencia, utiliza\nconectores de adición y cierre para expresar sus ideas de modo coherente,\nredacta de un primer borrador de la reseña manuscrito o digital, revisa y corrige\nla reseña de manera individual y con la colaboración del/de la docente y de sus\ncompañeros o compañeras, edita y publica en soporte físico o digital.",
+              "pdfPage": 106,
+              "printedPage": "105",
+              "sourceOrder": 1062005
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-5-cierre.md",
+          "catalogVersion": "evaluation-2026.31"
         },
         {
           "id": "f6f6b823-a101-51b0-9d20-f9b2ffda0a1c",
@@ -10352,18 +10618,68 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+          "procedures": [
+            {
+              "id": "reviewed-len-5-ensayo-oral-1",
+              "text": "Comprensión oral (escuchar)\nEstablecimiento de un propósito para la escucha del ensayo argumentativo\nleídos por el docente y los compañeros de clases; realiza inferencias a partir del\ntítulo y elementos paratextuales para anticipar posibles contenidos basadas en\nla intención y el tipo de audiencia.\nUtilización de la estructura del ensayo argumentativo para comprender su\ncontenido globalmente, del contexto y sentido a partir de palabras cuyos\nsignificados desconoce,  realizando  inferencias  para comprender  la  tesis\ncentral del ensayo y los argumentos utilizados para apoyarla, identifica formas\npersonales como: “pienso que”, “me parece que”, para comprender cuando el\nautor del ensayo sostiene una opinión.\nIdentificación de  fórmulas como “Según…”, “De  acuerdo  con…”,  para\ncomprender cuando el autor del ensayo introduce las citas o argumentos\nde autoridad; basadas en las relaciones lógicas entre las ideas contenidas en\nel ensayo argumentativo, apoyándose en los conectores utilizados; resumen\ndel contenido del ensayo, mediante la omisión de información no relevante,\nselección de las ideas principales (argumentos), generalización y reconstrucción\nde las ideas que representan el sentido global del texto.",
+              "pdfPage": 107,
+              "printedPage": "106",
+              "sourceOrder": 1072000,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                157,
+                44,
+                447,
+                379
+              ]
+            },
+            {
+              "id": "reviewed-len-5-ensayo-oral-2",
+              "text": "Producción oral (hablar)\nEstablecimiento de la situación de comunicación del ensayo argumentativo\nque producirá por escrito: intención y audiencia.\nSelección y justificación del tema sobre el que escribirá el ensayo argumentativo;\nasignación de un título posible; planificación de la tesis o punto de vista que\ndefenderá; las fuentes de información de donde tomará los argumentos y\ncontraargumentos; uso del léxico adecuado con el tema, la intención, los\ndestinatarios, los conectores de digresión, adición, contraste, consecuencia y\norden para dar cohesión al ensayo.",
+              "pdfPage": 107,
+              "printedPage": "106",
+              "sourceOrder": 1072001,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                157,
+                44,
+                447,
+                379
+              ]
+            },
+            {
+              "id": "92298e31-fc48-5d8f-adfa-0a8fd9ba0469",
+              "text": "Comprensión escrita (leer)\nAnticipación del contenido del ensayo argumentativo que lee a partir de marcas\ntextuales y paratextuales; establece un propósito; infiere sobre la estructura, la\nintención, el tipo de audiencia y el uso de diccionario para comprender palabras\ncuyo significado desconoce y su contenido global.\nRealización de inferencias para comprender la tesis central del ensayo que lee\ny los argumentos utilizados para apoyarla; basadas en las relaciones lógicas e\nideas principales para conocer el sentido global del texto.",
+              "pdfPage": 107,
+              "printedPage": "106",
+              "sourceOrder": 1072000
+            },
+            {
+              "id": "511ee7f1-ad8f-5aa1-a2fe-1ea945626315",
+              "text": "Producción escrita (escribir)\nEstablecimiento de la situación de comunicación del ensayo argumentativo\nque produce: intención, audiencia/destinatarios, justificación del tema, título\nposible, tesis o punto de vista, las fuentes y organización de la información\nsegún la estructura canónica del texto. Utilización del léxico adecuado con el\ntema, uso de conectores de digresión, adición, contraste, consecuencia y orden\npara dar cohesión al ensayo argumentativo que escribe; empleo de formas\npersonales: pienso que”, “me parece que” ... fórmulas para introducir las citas:\n“Según…”, “De acuerdo con…”; revisión con ayuda del/de la docente, de un\ncompañero o de una compañera.\nEdición del ensayo argumentativo que produce por escrito, tomando en cuenta\nlas convenciones de la escritura: uso de márgenes, separación de oraciones y\npárrafos, uso de las mayúsculas, la tilde y los signos de puntuación.",
+              "pdfPage": 107,
+              "printedPage": "106",
+              "sourceOrder": 1072001
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-5-cierre.md",
+          "catalogVersion": "evaluation-2026.31"
         },
         {
           "id": "868a8bf4-0c30-5672-9c57-e7955ff282bd",
@@ -10505,18 +10821,54 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+          "procedures": [
+            {
+              "id": "7f687801-fc15-5aa9-b96a-f384f6617ea7",
+              "text": "Comprensión oral (escuchar)\nEstablecimiento de un propósito comunicativo para escuchar discursos de\nrecibimiento y despedida, anticipando del contenido lo que escucha en\nla introducción, determina el contexto espacio - temporal y sociocultural,\nsignificado de palabras que no conoce y la tesis que presenta la importancia de\ndespedir o recibir.\nIdentificación de las razones por las que el homenajeado es merecedor de que\nse le dedique un discurso de recibimiento o despedida, la apertura y del cierre,\nlas referencias léxicas autorreferencial de persona, los deícticos de las personas\ngramaticales, conectores de causa• efecto, marcas de recibimiento y despedida\ny expresiones que indiquen posturas de cortesía.",
+              "pdfPage": 108,
+              "printedPage": "107",
+              "sourceOrder": 1082000
+            },
+            {
+              "id": "0d807295-3ce7-5aa2-b489-dc545c412601",
+              "text": "Producción oral (hablar)\nUso en público de las reglas ortológicas en los momentos de enunciar su\ndiscurso, teniendo en cuenta los elementos paralingüísticos: gestos, entonación,\nademanes, ritmo y pausas para apoyar el contenido lingüístico.\nEstablecimiento de un propósito comunicativo para producir ortológicamente\ndiscursos de recibimiento y despedida, anticipando el contenido, las referencias\nléxicas, las autorreferenciales, tomando en cuenta la situación contextual,\nestructura (punto de partida, tesis, argumentos, conclusión), conectores\nde apertura y cierre y de causa - efecto, organizadores intratextuales,\nparalingüísticos y extralingüísticos para introducir otras voces en el texto.\nEmpleo de estrategias para mantener la atención de público: mirar a los\nojos a alguno de los presentes, entonación, postura relajada, gesticulación,\nvocabulario acorde al contexto, muestra alegría y entusiasmo, involucra a sus\noyentes con el uso de verbos en primera o segunda persona y validación de las\nfuentes bibliográficas utilizadas.",
+              "pdfPage": 108,
+              "printedPage": "107",
+              "sourceOrder": 1082001
+            },
+            {
+              "id": "9d204a83-2be7-5b07-9f23-b2e6a31ed3ca",
+              "text": "Comprensión escrita (leer)\nActivación de experiencias previas a través de la prelectura de discursos,\nanticipando el contenido en la introducción, determina el contexto espacio-\ntemporal y sociocultural, del significado de palabras que no conoce usando\nel diccionario en versión física y/o digital, reconociendo las referencias léxicas\nde persona y autorreferencial, los conectores de apertura y cierre y de causa-\nefecto, las marcas de cortesía, de recibimiento y de despedida, marcadores\nintertextuales, intratextuales y paratextuales para introducir y despedir.\nReconocimiento de marcadores presentes en los discursos que lee: números\no letras para enumerar hechos, razones, etc., subrayados, cambios en el tipo\nde letra, itálica, negrita, de la tesis, de los signos de puntuación, citas textuales:\ncomillas, paréntesis, puntos suspensivos; y paráfrasis del contenido global del\ndiscurso.",
+              "pdfPage": 108,
+              "printedPage": "107",
+              "sourceOrder": 1082002
+            },
+            {
+              "id": "68cb5586-9c97-5338-9770-ffdecfe38fdc",
+              "text": "Producción escrita (escribir)\nEstablecimiento de un propósito comunicativo para producir por escrito el\ndiscurso que será oralizado, información necesaria, selecciona del soporte (físico\ny/o digital) sobre el que realizarán los esquemas o guiones, organiza las ideas de\nmanera lógica, la estructura (punto de partida, tesis, argumentos, conclusión),\nla escritura convencional, signos de puntuación para hacer citas textuales:\ncomillas, paréntesis, puntos suspensivos, las referencias léxicas de persona,\nautorreferencial y los deícticos de las personas gramaticales.\nUtilización de conectores de apertura y cierre y de causa - efecto, empleo de\nlas marcas tanto de cortesía como de recibimiento y despedida, organizadores\nintratextuales, y uso de la (s) cita (s) a través de la correcta presentación de las\nfuentes bibliográfica utilizadas.\nRedacción, revisión y corrección de borradores de discursos, manuscritos y/o\ndigitales, tomando en cuenta su estructura textual, intención comunicativa,\ndestinatarios, vocabulario temático y gramática textual, aprovechando la ayuda\ndel/de la docente, de los compañeros y compañeras.",
+              "pdfPage": 108,
+              "printedPage": "107",
+              "sourceOrder": 1082003
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-5-cierre.md",
+          "catalogVersion": "evaluation-2026.31"
         },
         {
           "id": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
@@ -10542,11 +10894,123 @@
               "pdfPage": 108,
               "printedPage": "107",
               "sourceOrder": 1081013
+            },
+            {
+              "id": "reviewed-len-5-novela-conceptos-1",
+              "text": "• Conectores temporales,\n  causales y consecutivos",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1091000,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                46,
+                44,
+                156,
+                251
+              ]
+            },
+            {
+              "id": "reviewed-len-5-novela-conceptos-2",
+              "text": "• Organizadores discursivos",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1091001,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                46,
+                44,
+                156,
+                251
+              ]
+            },
+            {
+              "id": "reviewed-len-5-novela-conceptos-3",
+              "text": "• Verbos en pasado y\n  presente",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1091002,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                46,
+                44,
+                156,
+                251
+              ]
+            },
+            {
+              "id": "reviewed-len-5-novela-conceptos-4",
+              "text": "• Los adjetivos",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1091003,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                46,
+                44,
+                156,
+                251
+              ]
+            },
+            {
+              "id": "reviewed-len-5-novela-conceptos-5",
+              "text": "• El narrador (primera,\n  tercera persona) y los\n  personajes",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1091004,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                46,
+                44,
+                156,
+                251
+              ]
+            },
+            {
+              "id": "reviewed-len-5-novela-conceptos-6",
+              "text": "• Temas de la novela",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1091005,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                46,
+                44,
+                156,
+                251
+              ]
+            },
+            {
+              "id": "reviewed-len-5-novela-conceptos-7",
+              "text": "• Los personajes\n  principales y secundarios,\n  protagonista y antagonista",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1091006,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                46,
+                44,
+                156,
+                251
+              ]
+            },
+            {
+              "id": "reviewed-len-5-novela-conceptos-8",
+              "text": "• Los tipos de actantes:\n  agente, paciente,\n  beneficiario, cómplice,\n  ayudante, ponente, aliado",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1091007,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                46,
+                44,
+                156,
+                251
+              ]
             }
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "TASK_DERIVED_PROVIDER",
+          "engineConnection": "CONTEXTUAL_PROVIDER",
           "instrumentFormats": [
             "rubrica",
             "lista-cotejo",
@@ -10555,16 +11019,45 @@
           ],
           "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
           "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
-          "pending": "Adaptación acotada de la consigna de análisis de fragmento policíaco, no cobertura de La novela. Pendientes revisión visual/asociación oficial de procedimientos, otras acciones, géneros, grados y requisitos focalizados. No atribuir a Lengua común el bloque policíaco de la optativa ni declarar implementada la creación narrativa.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PARTIAL_TASK_DERIVED_NOVEL_ANALYSIS",
+          "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+          "procedures": [
+            {
+              "id": "reviewed-len-5-novela-comprension-1",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de novelas cortas acordes con la edad e intereses, anticipando\nel contenido a partir del título y otras marcas textuales; uso de la estructura de\nla novela (inicio, nudo y desenlace), los verbos en pasado y presente, de los\nconectores, de los adjetivos, de la distinción entre narrador y personajes para\ncomprender su contenido.\nInferencia a partir del contexto, del significado de las palabras cuyo significado\ndesconoce para comprender el sentido global de la novela, identifica las acciones\nrealizadas por los personajes de la novela y sobre la relación de causalidad entre\nellas; distinción entre el narrador y los personajes para comprender la trama y el\ntema; uso vocabulario apropiado; y resumen del contenido, apoyándose en el\nnarrador, los personajes, las acciones, el ambiente y la atmósfera, el o los temas\ny los diálogos de los personajes.",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1092000,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                157,
+                44,
+                447,
+                369
+              ]
+            },
+            {
+              "id": "reviewed-len-5-novela-comprension-2",
+              "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura de la novela; anticipación del\ncontenido de la novela a partir del título, y otras marcas textuales y paratextuales,\nusos de la estructura de la novela (inicio, nudo y desenlace), de los conectores,\nde los verbos en pasado y presente, de los adjetivos, de la distinción entre\nnarrador y personajes y de las fórmulas de inicio y de cierre para comprender\nsu contenido.\n\nInferencia a partir del contexto del significado de las palabras que desconoce, usa\ndiccionario, identifica las distintas voces (narrador y personajes) que intervienen\nen la novela, para la comprensión del sentido global; identifica y clasifica los\npersonajes, las intenciones de las acciones; usando un vocabulario apropiado\ny mediante el uso de sinónimos y otros recursos; y resumen apoyándose en el\nnarrador, los personajes, las acciones, el ambiente y la atmósfera, el o los temas\ny los diálogos de los personajes.",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1092001,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                157,
+                44,
+                447,
+                369
+              ]
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
           "automatedVerification": "PASSED",
-          "manualVerification": "TASK_DERIVED_DESCRIPTORS_REVIEWED_NOT_OFFICIAL_ALIGNMENT",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
           "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
-          "report": "novela-5-contrato-tema-accion.md",
-          "catalogVersion": "evaluation-2026.19"
+          "report": "lengua-5-cierre.md",
+          "catalogVersion": "evaluation-2026.31"
         },
         {
           "id": "9ba1f04a-8d21-5f0c-93c5-75cff971574b",
@@ -10650,18 +11143,61 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+          "procedures": [
+            {
+              "id": "1f588d35-c347-543d-97a1-033303f664c8",
+              "text": "Comprensión oral (escuchar)\nAnticipación del contenido del poema a partir del título, escucha atenta de\npoemas satíricos de autores dominicanos, latinoamericanos y españoles sobre\npersonajes, hechos diversos, presentes y pasados.\nInferencias a partir del contexto del significado de las palabras que se desconocen,\nreconocimiento de los sentimientos evocados y la intención comunicativa del\nautor, comprensión y disfrute de los significados, explícitos e implícitos y de las\nemociones que provoca los poemas escuchados, identificación de los cambios\ny matices de entonación, según la temática y los sentimientos que el poema\nevoca.",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1092000
+            },
+            {
+              "id": "9561fff4-8601-5165-bee5-c3035a12fe97",
+              "text": "Producción oral (hablar)\nSelección de poemas de autores dominicanos, latinoamericanos y españoles,\nrepresentativos de la poesía satírica, verbalización y declamación de poemas\nsatíricos manteniendo la entonación, el ritmo y la fluidez que demandan,\nsegún el tema, la estructura y los recursos estilísticos de los mismos, el lenguaje\ngestual y corporal con la intención comunicativa y los sentimientos que refleja\nla narración.",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1092001
+            },
+            {
+              "id": "10ad2e51-368f-5bf0-9dea-ba961e180281",
+              "text": "Comprensión escrita (leer)\nAnticipación del contenido de los poemas a partir del título, establecimiento de\nun propósito para la lectura de los poemas, inferencias a partir del contexto del\nsignificado de las palabras que desconoce.\nReconocimiento de la intención comunicativa del autor y de los sentimientos\nque el texto evoca, uso de la estructura del poema para determinar su\ndesarrollo y la distribución del contenido, identificación y análisis de los recursos\nestilísticos para valorar la riqueza creativa y expresiva del poema, determinando\nlos significados explícitos e implícitos que presenta el poema a partir de los\nelementos connotativos y denotativos. Paráfrasis del sentido global de los\npoemas de contenido social, utilizando el vocabulario en este tipo de texto.",
+              "pdfPage": 109,
+              "printedPage": "108",
+              "sourceOrder": 1092002
+            },
+            {
+              "id": "reviewed-len-5-poesia-escritura-1",
+              "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del poema que va a producir\npor escrito, selección del tema, personaje, hecho o situación que enfocará en\nel poema; utilización del vocabulario apropiado a su intención comunicativa\ny al sentimiento o emoción que quiere transmitir, de los recursos literarios\nque demanda el abordaje del tema según: los sentimientos, la creatividad, la\nconnotación.\nEscritura, revisión y corrección de borradores de poemas de contenido satírico\ncon ayuda del docente y los compañeros y compañeras de clases, atendiendo\na la emoción y sentimiento que quiere expresar; la intención comunicativa,\nla estructura, recursos estilísticos; el vocabulario y la corrección ortográfica;\nedición y publicación de los poemas de contenido satírico en los murales del\naula, en los diferentes blogs de los grupos, así como en un libro artesanal o en\nuna revista escolar.",
+              "pdfPage": 110,
+              "printedPage": "109",
+              "sourceOrder": 1102000,
+              "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+              "region": [
+                157,
+                44,
+                447,
+                212
+              ]
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-5-cierre.md",
+          "catalogVersion": "evaluation-2026.31"
         },
         {
           "id": "e3e55532-c167-522b-af89-d39d7054a67f",
@@ -10747,25 +11283,70 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "engineConnection": "CONTEXTUAL_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+          "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+          "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+          "procedures": [
+            {
+              "id": "0e4eb6ac-9469-5683-a95a-210d99a9fca1",
+              "text": "Comprensión oral (escuchar)\nEscucha atenta de la lectura de entremeses por parte del docente o sus\ncompañeros de clase, anticipación del contenido del entremés a partir del\ntítulo, la descripción del ambiente y los personajes en el mismo; comprensión\ny parafraseo del tema desarrollado en el entremés; comprensión del tema\nque trata y la realidad a la que se hace referencia a partir de los elementos\nestructurales que reconoce.\nInferencia del punto de vista del autor expresado en el entremés a partir de\nlos elementos estructurales que reconoce sobre el posible contexto espacial,\ntemporal, social y cultural al que se hace referencia; identificando los conectores\nlógicos utilizados; comprende la relación que establecen entre las partes del\ntexto o ideas que conecta.\nEstablecimiento de relaciones entre el tema tratado en el entremés y los\ncontenidos de otras materias, reconociendo los usos de la legua no existentes\nen la actualidad; la relación entre los hechos presentados con hechos reales del\npasado, del presente o del futuro; investigación del contexto social y la vida del\nautor para inferir motivaciones por las cuales el autor aborda el tema tratado y\nla forma en que lo hace.",
+              "pdfPage": 110,
+              "printedPage": "109",
+              "sourceOrder": 1102000
+            },
+            {
+              "id": "4771e869-1675-55cb-afdf-9a5f1a3f8eef",
+              "text": "Producción oral (hablar)\nProducción de entremeses de forma oral junto con sus compañeros de clase;\nanticipación del contenido del entremés a partir del título, la descripción del\nambiente y los personajes en el mismo; producción y parafraseo del tema\ndesarrollado en el entremés del tema que trata y la realidad a la que hace\nreferencia a partir de sus elementos estructurales.\nInferencia del punto de vista del autor expresado en el entremés en sus\nelementos estructurales, puntos de vista del autor no expresados, de sus\nelementos estructurales, del posible contexto espacial, temporal, social y\ncultural al que se hace referencia, uso de conectores lógicos de manera efectiva,\nlogrando establecer la relación entre las ideas expresadas.\nEstablecimiento de relaciones entre el tema tratado en el entremés y los\ncontenidos de otras materias, reconociendo usos de la lengua no existentes\nen la actualidad, la relación entre los hechos presentados en el entremés con\nhechos reales del pasado, del presente o del futuro.",
+              "pdfPage": 110,
+              "printedPage": "109",
+              "sourceOrder": 1102001
+            },
+            {
+              "id": "d3a86276-7a72-588d-8dda-943543b33255",
+              "text": "Comprensión escrita (leer)\nLectura y análisis de los elementos y la estructura de un entremés compartido\nen el aula y guiado por el docente, y más adelante cada estudiante de manera\nindividual, anticipando el contenido a partir del título, la fecha, el autor u otros\nelementos; comprensión y parafraseo del tema desarrollado; reconocimiento\ndel contexto espacial y temporal de los hechos narrados.",
+              "pdfPage": 110,
+              "printedPage": "109",
+              "sourceOrder": 1102002
+            },
+            {
+              "id": "8f70a5ca-8abf-5839-a5af-e0490b5b9814",
+              "text": "Inferencia del punto de vista del autor expresado en el entremés de los elementos\nestructurales que reconoce, de puntos de vista del autor no expresados, a\npartir de los elementos estructurales que reconoce, de los conectores lógicos\nutilizados y comprende la relación que establecen entre las partes del texto,\nsubrayando y/o parafraseo de información relevante para fines establecidos\npreviamente.\nEstablecimiento de relaciones entre el tema tratado en el entremés y los\ncontenidos de otras materias, estableciendo relaciones tanto comparativas\ncomo de causa/consecuencia entre los hechos narrados con hechos actuales;\nsu contextualización espacial y temporal investigado del contexto social y la\nvida del autor, para inferir motivaciones por las cuales el autor aborda el tema\ntratado y la forma en que lo hace.",
+              "pdfPage": 111,
+              "printedPage": "110",
+              "sourceOrder": 1112000
+            },
+            {
+              "id": "76d2d1ee-2283-588b-af31-803d7c6871e3",
+              "text": "Producción escrita (escribir)\nUtilización de los elementos estructurales que conoce del entremés, para\nrepresentar el tema que desea tratar y la realidad a la que desea hacer referencia;\nexponiendo su punto de vista acerca de los temas tratados; construye el\ncontexto espacial, temporal, social y cultural de manera analógica o metafórica\nal que se hace referencia; estableciendo relaciones entre el tema tratado en el\nentremés y los contenidos de otras materias; uso de manera consciente de los\nelementos satíricos y de crítica social en el entremés que produce.\nRelación de los hechos presentados en el entremés con hechos reales del\npasado, del presente o del futuro; usando conectores lógicos de manera\nefectiva, logrando establecer la relación entre las ideas expresadas; de figuras\nliterarias de uso común: ironía, el retruécano, la metáfora, la alegoría, entre otros.\nEscritura, revisión y corrección de borradores del entremés con ayuda del\ndocente y/o compañeros, atendiendo su intención comunicativa, su estructura,\nsus elementos lingüísticos y contextuales; edita y publica el entremés que\nproduce en murales, revistas, blogs.",
+              "pdfPage": 111,
+              "printedPage": "110",
+              "sourceOrder": 1112001
+            }
+          ],
+          "procedureAssociation": "VISUALLY_REVIEWED",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "PASSED",
+          "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+          "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+          "report": "lengua-5-cierre.md",
+          "catalogVersion": "evaluation-2026.31"
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
-      "implementation": "PENDING",
-      "automatedVerification": "NOT_RUN",
-      "manualVerification": "NOT_RUN",
-      "applicationVerification": "NOT_RUN"
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "report": "lengua-5-cierre.md",
+      "catalogVersion": "evaluation-2026.31"
     },
     {
       "id": "6ad1b787-5408-5d4b-aa28-0895bebb30e8",

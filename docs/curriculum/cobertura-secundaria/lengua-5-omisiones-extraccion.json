@@ -1,0 +1,247 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 5,
+  "subject": "Lengua Española común",
+  "status": "VISUALLY_REVIEWED_SOURCE_OVERLAY_NOT_DATABASE_IMPORT",
+  "notes": [
+    "Ocho conceptos de novela y cinco procedimientos estaban ausentes de la extracción importada. Se incorporan al inventario revisado sin modificar los IDs ni los datos originales.",
+    "Estos identificadores reviewed-* son referencias de cotejo, no IDs importados de elementos curriculares de la base.",
+    "La fuente escribe «ponente» en la lista de actantes de novela. Se conserva literalmente y se diferencia de la adaptación evaluativa «oponente»."
+  ],
+  "additions": [
+    {
+      "topicId": "f6f6b823-a101-51b0-9d20-f9b2ffda0a1c",
+      "type": "PROCEDURE",
+      "reference": {
+        "id": "reviewed-len-5-ensayo-oral-1",
+        "text": "Comprensión oral (escuchar)\nEstablecimiento de un propósito para la escucha del ensayo argumentativo\nleídos por el docente y los compañeros de clases; realiza inferencias a partir del\ntítulo y elementos paratextuales para anticipar posibles contenidos basadas en\nla intención y el tipo de audiencia.\nUtilización de la estructura del ensayo argumentativo para comprender su\ncontenido globalmente, del contexto y sentido a partir de palabras cuyos\nsignificados desconoce,  realizando  inferencias  para comprender  la  tesis\ncentral del ensayo y los argumentos utilizados para apoyarla, identifica formas\npersonales como: “pienso que”, “me parece que”, para comprender cuando el\nautor del ensayo sostiene una opinión.\nIdentificación de  fórmulas como “Según…”, “De  acuerdo  con…”,  para\ncomprender cuando el autor del ensayo introduce las citas o argumentos\nde autoridad; basadas en las relaciones lógicas entre las ideas contenidas en\nel ensayo argumentativo, apoyándose en los conectores utilizados; resumen\ndel contenido del ensayo, mediante la omisión de información no relevante,\nselección de las ideas principales (argumentos), generalización y reconstrucción\nde las ideas que representan el sentido global del texto.",
+        "pdfPage": 107,
+        "printedPage": "106",
+        "sourceOrder": 1072000,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          157,
+          44,
+          447,
+          379
+        ]
+      }
+    },
+    {
+      "topicId": "f6f6b823-a101-51b0-9d20-f9b2ffda0a1c",
+      "type": "PROCEDURE",
+      "reference": {
+        "id": "reviewed-len-5-ensayo-oral-2",
+        "text": "Producción oral (hablar)\nEstablecimiento de la situación de comunicación del ensayo argumentativo\nque producirá por escrito: intención y audiencia.\nSelección y justificación del tema sobre el que escribirá el ensayo argumentativo;\nasignación de un título posible; planificación de la tesis o punto de vista que\ndefenderá; las fuentes de información de donde tomará los argumentos y\ncontraargumentos; uso del léxico adecuado con el tema, la intención, los\ndestinatarios, los conectores de digresión, adición, contraste, consecuencia y\norden para dar cohesión al ensayo.",
+        "pdfPage": 107,
+        "printedPage": "106",
+        "sourceOrder": 1072001,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          157,
+          44,
+          447,
+          379
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-1",
+        "text": "• Conectores temporales,\n  causales y consecutivos",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091000,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-2",
+        "text": "• Organizadores discursivos",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091001,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-3",
+        "text": "• Verbos en pasado y\n  presente",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091002,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-4",
+        "text": "• Los adjetivos",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091003,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-5",
+        "text": "• El narrador (primera,\n  tercera persona) y los\n  personajes",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091004,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-6",
+        "text": "• Temas de la novela",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091005,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-7",
+        "text": "• Los personajes\n  principales y secundarios,\n  protagonista y antagonista",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091006,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-8",
+        "text": "• Los tipos de actantes:\n  agente, paciente,\n  beneficiario, cómplice,\n  ayudante, ponente, aliado",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091007,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "PROCEDURE",
+      "reference": {
+        "id": "reviewed-len-5-novela-comprension-1",
+        "text": "Comprensión oral (escuchar)\nEscucha atenta de novelas cortas acordes con la edad e intereses, anticipando\nel contenido a partir del título y otras marcas textuales; uso de la estructura de\nla novela (inicio, nudo y desenlace), los verbos en pasado y presente, de los\nconectores, de los adjetivos, de la distinción entre narrador y personajes para\ncomprender su contenido.\nInferencia a partir del contexto, del significado de las palabras cuyo significado\ndesconoce para comprender el sentido global de la novela, identifica las acciones\nrealizadas por los personajes de la novela y sobre la relación de causalidad entre\nellas; distinción entre el narrador y los personajes para comprender la trama y el\ntema; uso vocabulario apropiado; y resumen del contenido, apoyándose en el\nnarrador, los personajes, las acciones, el ambiente y la atmósfera, el o los temas\ny los diálogos de los personajes.",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1092000,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          157,
+          44,
+          447,
+          369
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "PROCEDURE",
+      "reference": {
+        "id": "reviewed-len-5-novela-comprension-2",
+        "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura de la novela; anticipación del\ncontenido de la novela a partir del título, y otras marcas textuales y paratextuales,\nusos de la estructura de la novela (inicio, nudo y desenlace), de los conectores,\nde los verbos en pasado y presente, de los adjetivos, de la distinción entre\nnarrador y personajes y de las fórmulas de inicio y de cierre para comprender\nsu contenido.\n\nInferencia a partir del contexto del significado de las palabras que desconoce, usa\ndiccionario, identifica las distintas voces (narrador y personajes) que intervienen\nen la novela, para la comprensión del sentido global; identifica y clasifica los\npersonajes, las intenciones de las acciones; usando un vocabulario apropiado\ny mediante el uso de sinónimos y otros recursos; y resumen apoyándose en el\nnarrador, los personajes, las acciones, el ambiente y la atmósfera, el o los temas\ny los diálogos de los personajes.",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1092001,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          157,
+          44,
+          447,
+          369
+        ]
+      }
+    },
+    {
+      "topicId": "9ba1f04a-8d21-5f0c-93c5-75cff971574b",
+      "type": "PROCEDURE",
+      "reference": {
+        "id": "reviewed-len-5-poesia-escritura-1",
+        "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del poema que va a producir\npor escrito, selección del tema, personaje, hecho o situación que enfocará en\nel poema; utilización del vocabulario apropiado a su intención comunicativa\ny al sentimiento o emoción que quiere transmitir, de los recursos literarios\nque demanda el abordaje del tema según: los sentimientos, la creatividad, la\nconnotación.\nEscritura, revisión y corrección de borradores de poemas de contenido satírico\ncon ayuda del docente y los compañeros y compañeras de clases, atendiendo\na la emoción y sentimiento que quiere expresar; la intención comunicativa,\nla estructura, recursos estilísticos; el vocabulario y la corrección ortográfica;\nedición y publicación de los poemas de contenido satírico en los murales del\naula, en los diferentes blogs de los grupos, así como en un libro artesanal o en\nuna revista escolar.",
+        "pdfPage": 110,
+        "printedPage": "109",
+        "sourceOrder": 1102000,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          157,
+          44,
+          447,
+          212
+        ]
+      }
+    }
+  ]
+}

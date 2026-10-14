@@ -3,12 +3,15 @@
   "topics": [
     {
       "id": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
-      "boundaryReview": "PENDING_VISUAL_REVIEW",
-      "procedureAssociation": "PENDING_VISUAL_REVIEW",
-      "procedures": [],
-      "implementation": "PARTIAL_TASK_DERIVED_NOVEL_ANALYSIS",
-      "engineConnection": "TASK_DERIVED_PROVIDER",
-      "catalogVersion": "evaluation-2026.19",
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "procedures": [
+        "reviewed-len-5-novela-comprension-1",
+        "reviewed-len-5-novela-comprension-2"
+      ],
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "catalogVersion": "evaluation-2026.31",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
@@ -16,12 +19,12 @@
         "lista-ponderada"
       ],
       "automatedVerification": "PASSED",
-      "manualVerification": "TASK_DERIVED_DESCRIPTORS_REVIEWED_NOT_OFFICIAL_ALIGNMENT",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
       "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
       "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
       "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
-      "report": "novela-5-contrato-tema-accion.md",
-      "pending": "Adaptación acotada de la consigna de análisis de fragmento policíaco, no cobertura de La novela. Pendientes revisión visual/asociación oficial de procedimientos, otras acciones, géneros, grados y requisitos focalizados. No atribuir a Lengua común el bloque policíaco de la optativa ni declarar implementada la creación narrativa."
+      "report": "lengua-5-cierre.md",
+      "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º."
     },
     {
       "id": "76d1d9e3-52af-58b4-a886-50daf7b4ed98",
@@ -867,6 +870,170 @@
         "escala",
         "lista-ponderada"
       ]
+    },
+    {
+      "id": "5d3121ba-2636-556d-9fe3-2cabbc81ec1f",
+      "procedures": [
+        "de4751ec-1896-55a5-a789-67ffa9956adc",
+        "da463373-4efd-5f03-8353-e5109cd1ebea",
+        "24e14dbf-d42d-5d88-b8f9-9b9b4a3208c9",
+        "0275bfe7-c3d9-5df2-88b6-85e1ad129994",
+        "822d22d4-52c5-5c82-913f-359cb9fc51d0"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+      "catalogVersion": "evaluation-2026.31",
+      "report": "lengua-5-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "0ea78b99-7e34-5be4-9a1f-96b6ea7b45f4",
+      "procedures": [
+        "6859f2d7-d876-5e5c-89b0-eb5d8e04534f",
+        "ec40e10d-ee9a-5b1f-b98c-759bd54c99b2",
+        "469f2309-57d4-58c6-8f72-a839e2c04dc5",
+        "10ad2049-4ad6-5650-9996-4710b255d3e4"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+      "catalogVersion": "evaluation-2026.31",
+      "report": "lengua-5-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "f6f6b823-a101-51b0-9d20-f9b2ffda0a1c",
+      "procedures": [
+        "reviewed-len-5-ensayo-oral-1",
+        "reviewed-len-5-ensayo-oral-2",
+        "92298e31-fc48-5d8f-adfa-0a8fd9ba0469",
+        "511ee7f1-ad8f-5aa1-a2fe-1ea945626315"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+      "catalogVersion": "evaluation-2026.31",
+      "report": "lengua-5-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "868a8bf4-0c30-5672-9c57-e7955ff282bd",
+      "procedures": [
+        "7f687801-fc15-5aa9-b96a-f384f6617ea7",
+        "0d807295-3ce7-5aa2-b489-dc545c412601",
+        "9d204a83-2be7-5b07-9f23-b2e6a31ed3ca",
+        "68cb5586-9c97-5338-9770-ffdecfe38fdc"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+      "catalogVersion": "evaluation-2026.31",
+      "report": "lengua-5-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "9ba1f04a-8d21-5f0c-93c5-75cff971574b",
+      "procedures": [
+        "1f588d35-c347-543d-97a1-033303f664c8",
+        "9561fff4-8601-5165-bee5-c3035a12fe97",
+        "10ad2e51-368f-5bf0-9dea-ba961e180281",
+        "reviewed-len-5-poesia-escritura-1"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+      "catalogVersion": "evaluation-2026.31",
+      "report": "lengua-5-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "id": "e3e55532-c167-522b-af89-d39d7054a67f",
+      "procedures": [
+        "0e4eb6ac-9469-5683-a95a-210d99a9fca1",
+        "4771e869-1675-55cb-afdf-9a5f1a3f8eef",
+        "d3a86276-7a72-588d-8dda-943543b33255",
+        "8f70a5ca-8abf-5839-a5af-e0490b5b9814",
+        "76d2d1ee-2283-588b-af31-803d7c6871e3"
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_105_112",
+      "procedureAssociation": "VISUALLY_REVIEWED",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+      "catalogVersion": "evaluation-2026.31",
+      "report": "lengua-5-cierre.md",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
     }
   ],
   "sourceAnomalies": [
@@ -989,6 +1156,261 @@
         "escala",
         "lista-ponderada"
       ]
+    },
+    {
+      "id": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "catalogVersion": "evaluation-2026.31",
+      "report": "lengua-5-cierre.md",
+      "pending": "Sin pendientes de las familias y requisitos definidos y verificados en el cotejo de 5.º. No garantiza interpretar toda descripción. Continuar 6.º.",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "automatedVerification": "PASSED",
+      "manualVerification": "SOURCE_BLOCKS_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
+      "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
+      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED",
+      "interfaceVerification": "NORMAL_LOCAL_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    }
+  ],
+  "sourceAdditions": [
+    {
+      "topicId": "f6f6b823-a101-51b0-9d20-f9b2ffda0a1c",
+      "type": "PROCEDURE",
+      "reference": {
+        "id": "reviewed-len-5-ensayo-oral-1",
+        "text": "Comprensión oral (escuchar)\nEstablecimiento de un propósito para la escucha del ensayo argumentativo\nleídos por el docente y los compañeros de clases; realiza inferencias a partir del\ntítulo y elementos paratextuales para anticipar posibles contenidos basadas en\nla intención y el tipo de audiencia.\nUtilización de la estructura del ensayo argumentativo para comprender su\ncontenido globalmente, del contexto y sentido a partir de palabras cuyos\nsignificados desconoce,  realizando  inferencias  para comprender  la  tesis\ncentral del ensayo y los argumentos utilizados para apoyarla, identifica formas\npersonales como: “pienso que”, “me parece que”, para comprender cuando el\nautor del ensayo sostiene una opinión.\nIdentificación de  fórmulas como “Según…”, “De  acuerdo  con…”,  para\ncomprender cuando el autor del ensayo introduce las citas o argumentos\nde autoridad; basadas en las relaciones lógicas entre las ideas contenidas en\nel ensayo argumentativo, apoyándose en los conectores utilizados; resumen\ndel contenido del ensayo, mediante la omisión de información no relevante,\nselección de las ideas principales (argumentos), generalización y reconstrucción\nde las ideas que representan el sentido global del texto.",
+        "pdfPage": 107,
+        "printedPage": "106",
+        "sourceOrder": 1072000,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          157,
+          44,
+          447,
+          379
+        ]
+      }
+    },
+    {
+      "topicId": "f6f6b823-a101-51b0-9d20-f9b2ffda0a1c",
+      "type": "PROCEDURE",
+      "reference": {
+        "id": "reviewed-len-5-ensayo-oral-2",
+        "text": "Producción oral (hablar)\nEstablecimiento de la situación de comunicación del ensayo argumentativo\nque producirá por escrito: intención y audiencia.\nSelección y justificación del tema sobre el que escribirá el ensayo argumentativo;\nasignación de un título posible; planificación de la tesis o punto de vista que\ndefenderá; las fuentes de información de donde tomará los argumentos y\ncontraargumentos; uso del léxico adecuado con el tema, la intención, los\ndestinatarios, los conectores de digresión, adición, contraste, consecuencia y\norden para dar cohesión al ensayo.",
+        "pdfPage": 107,
+        "printedPage": "106",
+        "sourceOrder": 1072001,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          157,
+          44,
+          447,
+          379
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-1",
+        "text": "• Conectores temporales,\n  causales y consecutivos",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091000,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-2",
+        "text": "• Organizadores discursivos",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091001,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-3",
+        "text": "• Verbos en pasado y\n  presente",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091002,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-4",
+        "text": "• Los adjetivos",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091003,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-5",
+        "text": "• El narrador (primera,\n  tercera persona) y los\n  personajes",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091004,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-6",
+        "text": "• Temas de la novela",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091005,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-7",
+        "text": "• Los personajes\n  principales y secundarios,\n  protagonista y antagonista",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091006,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "CONCEPT",
+      "reference": {
+        "id": "reviewed-len-5-novela-conceptos-8",
+        "text": "• Los tipos de actantes:\n  agente, paciente,\n  beneficiario, cómplice,\n  ayudante, ponente, aliado",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1091007,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          46,
+          44,
+          156,
+          251
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "PROCEDURE",
+      "reference": {
+        "id": "reviewed-len-5-novela-comprension-1",
+        "text": "Comprensión oral (escuchar)\nEscucha atenta de novelas cortas acordes con la edad e intereses, anticipando\nel contenido a partir del título y otras marcas textuales; uso de la estructura de\nla novela (inicio, nudo y desenlace), los verbos en pasado y presente, de los\nconectores, de los adjetivos, de la distinción entre narrador y personajes para\ncomprender su contenido.\nInferencia a partir del contexto, del significado de las palabras cuyo significado\ndesconoce para comprender el sentido global de la novela, identifica las acciones\nrealizadas por los personajes de la novela y sobre la relación de causalidad entre\nellas; distinción entre el narrador y los personajes para comprender la trama y el\ntema; uso vocabulario apropiado; y resumen del contenido, apoyándose en el\nnarrador, los personajes, las acciones, el ambiente y la atmósfera, el o los temas\ny los diálogos de los personajes.",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1092000,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          157,
+          44,
+          447,
+          369
+        ]
+      }
+    },
+    {
+      "topicId": "b9fb8677-c4d8-57c2-9304-f0b11d879de9",
+      "type": "PROCEDURE",
+      "reference": {
+        "id": "reviewed-len-5-novela-comprension-2",
+        "text": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura de la novela; anticipación del\ncontenido de la novela a partir del título, y otras marcas textuales y paratextuales,\nusos de la estructura de la novela (inicio, nudo y desenlace), de los conectores,\nde los verbos en pasado y presente, de los adjetivos, de la distinción entre\nnarrador y personajes y de las fórmulas de inicio y de cierre para comprender\nsu contenido.\n\nInferencia a partir del contexto del significado de las palabras que desconoce, usa\ndiccionario, identifica las distintas voces (narrador y personajes) que intervienen\nen la novela, para la comprensión del sentido global; identifica y clasifica los\npersonajes, las intenciones de las acciones; usando un vocabulario apropiado\ny mediante el uso de sinónimos y otros recursos; y resumen apoyándose en el\nnarrador, los personajes, las acciones, el ambiente y la atmósfera, el o los temas\ny los diálogos de los personajes.",
+        "pdfPage": 109,
+        "printedPage": "108",
+        "sourceOrder": 1092001,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          157,
+          44,
+          447,
+          369
+        ]
+      }
+    },
+    {
+      "topicId": "9ba1f04a-8d21-5f0c-93c5-75cff971574b",
+      "type": "PROCEDURE",
+      "reference": {
+        "id": "reviewed-len-5-poesia-escritura-1",
+        "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del poema que va a producir\npor escrito, selección del tema, personaje, hecho o situación que enfocará en\nel poema; utilización del vocabulario apropiado a su intención comunicativa\ny al sentimiento o emoción que quiere transmitir, de los recursos literarios\nque demanda el abordaje del tema según: los sentimientos, la creatividad, la\nconnotación.\nEscritura, revisión y corrección de borradores de poemas de contenido satírico\ncon ayuda del docente y los compañeros y compañeras de clases, atendiendo\na la emoción y sentimiento que quiere expresar; la intención comunicativa,\nla estructura, recursos estilísticos; el vocabulario y la corrección ortográfica;\nedición y publicación de los poemas de contenido satírico en los murales del\naula, en los diferentes blogs de los grupos, así como en un libro artesanal o en\nuna revista escolar.",
+        "pdfPage": 110,
+        "printedPage": "109",
+        "sourceOrder": 1102000,
+        "provenance": "PDF_REGION_VISUALLY_REVIEWED",
+        "region": [
+          157,
+          44,
+          447,
+          212
+        ]
+      }
     }
   ]
 }

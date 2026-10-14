@@ -40,7 +40,7 @@ export function preparationFingerprint(input: { name: string; description: strin
 export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: number; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
   const resolvedActivity=input.activityType??resolveEvaluationTask(input.activityTitle,input.description??'').action??'OTHER'
   const novel=secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',input.academicContext,resolvedActivity,input.includeAdditionalCandidates)
-  if(novel.length) return editableAuthoredRecommendation(novel,input,resolvedActivity,'novela-analisis-fragmento-5')
+  if(novel.length&&!findSecondaryLanguageTopic(input.activityTitle,input.description??'',input.academicContext??null)) return editableAuthoredRecommendation(novel,input,resolvedActivity,'novela-analisis-fragmento-5')
   const math = findSecondaryMathTopic(input.activityTitle, input.description ?? '', input.academicContext)
   const mathCriteria = math ? secondaryMathCriteria(math, input.description ?? '').filter(row=>input.includeAdditionalCandidates || !row.templateId.endsWith('-verification')) : []
   if (math && mathCriteria.length) return editableAuthoredRecommendation(mathCriteria,input,input.activityType || 'PROBLEM_SOLVING',`math-${math}-${input.academicContext?.grade}`)

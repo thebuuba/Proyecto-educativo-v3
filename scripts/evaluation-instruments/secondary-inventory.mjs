@@ -28,6 +28,18 @@ function topicCandidates(concepts) {
 /** Reviewed evidence lives separately, so rebuilding extraction cannot erase progress. */
 export function applyInventoryReview(inventory, review) {
   if (review.sourceSha256 !== inventory.source.sha256) throw new Error('La revisión corresponde a otra fuente.')
+  // Explicit, visually checked omissions are an overlay, never a rewrite of the imported source.
+  const knownIds=new Set([...inventory.scopes,...inventory.cycleScopes].flatMap(s=>Object.values(s.elements).flat().map(e=>e.id)))
+  for(const addition of review.sourceAdditions??[]){
+    if(!['CONCEPT','PROCEDURE'].includes(addition.type))throw new Error('Tipo de adición de fuente no admitido.')
+    const scope=inventory.scopes.find(s=>s.topics.some(t=>t.id===addition.topicId)),ref=addition.reference
+    if(!scope)throw new Error(`Tema de adición desconocido: ${addition.topicId}`)
+    if(!ref?.id||knownIds.has(ref.id))throw new Error('Referencia de adición ausente o duplicada.')
+    if(!scope.pdfPages.includes(ref.pdfPage)||ref.provenance!=='PDF_REGION_VISUALLY_REVIEWED'||!ref.text?.trim()||!Array.isArray(ref.region)||ref.region.length!==4||!ref.region.every(Number.isFinite)||ref.region[0]>=ref.region[2]||ref.region[1]>=ref.region[3])throw new Error('Página o región de adición sin cotejo válido.')
+    knownIds.add(ref.id)
+    scope.elements[addition.type].push({...ref})
+    if(addition.type==='CONCEPT')scope.topics.find(t=>t.id===addition.topicId).subtopics.push({...ref})
+  }
   const statusFields = ['implementation', 'automatedVerification', 'manualVerification', 'applicationVerification', 'boundaryReview', 'procedureAssociation', 'report', 'catalogVersion', 'engineConnection', 'instrumentFormats', 'serviceVerification', 'interfaceVerification', 'pending']
   for(const entry of review.scopes ?? []) {
     const scope=inventory.scopes.find(scope=>scope.id === entry.id)

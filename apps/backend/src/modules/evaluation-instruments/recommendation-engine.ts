@@ -310,10 +310,10 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const readingReportModule = firstGenre === 'READING_REPORT'
   const detectiveModule = firstGenre === 'DETECTIVE_STORY' && isFirstGradeDetectiveActivity(activity.id)
   const calligramModule = firstGenre === 'CALLIGRAM' && isFirstGradeCalligramActivity(activity.id)
-  const novelCriteria=secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',context,activity.id,input.includeAdditionalCandidates)
+  const novelCriteria=contextualTopic?[]:secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',context,activity.id,input.includeAdditionalCandidates)
   const selectedAuthored: AuthoredCriterion[] = novelCriteria.length ? novelCriteria : mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
     : scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
-    : contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '')
+    : contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '',input.includeAdditionalCandidates)
     : newsModule ? context?.grade === 2 ? secondGradeNewsCriteria(activity.id, input.description ?? '') : newsCriteria(activity.id, input.description ?? '')
     : touristGuideModule ? touristGuideCriteria(activity.id, input.description ?? '')
       : posterModule ? posterCriteria(activity.id, input.activityTitle, input.description ?? '')

@@ -8,10 +8,10 @@ import { adaptLanguageScale } from './language-scale'
 
 export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTopic, input: {
   activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType
-  participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string
+  participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; includeAdditionalCandidates?:boolean
 }): InstrumentRecommendation {
   const activity = input.activityType ?? detectTopicActivity(input.activityTitle, input.description ?? '', topic)
-  const authored = secondaryTopicCriteria(topic, activity, input.description ?? '')
+  const authored = secondaryTopicCriteria(topic, activity, input.description ?? '',input.includeAdditionalCandidates)
   return editableAuthoredRecommendation(authored, input, activity, `lengua-secundaria-${topic.grade}-${topic.id}`)
 }
 

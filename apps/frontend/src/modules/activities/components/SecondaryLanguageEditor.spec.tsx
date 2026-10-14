@@ -35,13 +35,22 @@ const fourthCases=[
  ['Analizarán un fragmento de novela distinguiendo narrador y personajes.', 'ANALYSIS', 'analisis-producciones'],
  ['Recitarán un soneto usando gestos.', 'ORAL_PRESENTATION', 'presentacion'],
 ] as const
+const fifthCases=[
+ ['Redactarán una carta de autopresentación.', 'WRITTEN_PRODUCTION', 'analisis-producciones'],
+ ['Escribirán una reseña de una novela leída.', 'WRITTEN_PRODUCTION', 'analisis-producciones'],
+ ['Escribirán un ensayo argumentativo con conectores de contraste.', 'WRITTEN_PRODUCTION', 'analisis-producciones'],
+ ['Presentarán oralmente un discurso de recibimiento.', 'ORAL_PRESENTATION', 'presentacion'],
+ ['Analizarán un fragmento de novela.', 'ANALYSIS', 'analisis-producciones'],
+ ['Declamarán un poema satírico.', 'ORAL_PRESENTATION', 'presentacion'],
+ ['Representarán un entremés teatral.', 'PERFORMANCE', 'dramatizacion'],
+] as const
 describe('grade two restored editor integration with editable contextual alternatives', () => {
   beforeEach(() => {
     localStorage.clear()
     vi.restoreAllMocks()
     vi.spyOn(api, 'post').mockRejectedValue(new Error('Servicio simulado no disponible'))
   })
-  it.each([...cases.map(c=>[...c,2] as const),...thirdCases.map(c=>[...c,3] as const),...fourthCases.map(c=>[...c,4] as const)])('prepares without a score, switches formats and confirms without losing selections: %s', async (description, activityType, technique,grade) => {
+  it.each([...cases.map(c=>[...c,2] as const),...thirdCases.map(c=>[...c,3] as const),...fourthCases.map(c=>[...c,4] as const),...fifthCases.map(c=>[...c,5] as const)])('prepares without a score, switches formats and confirms without losing selections: %s', async (description, activityType, technique,grade) => {
     const onAdd = vi.fn(async (input: Parameters<ActivityEditorWorkspaceProps['onAddActivity']>[0]) => ({ ...input, id: 'saved' }))
     render(<ActivityEditorWorkspace
       initialDraft={{ ...newActivityDraft('b2'), name: 'Actividad', description, activityType: 'individual' }}

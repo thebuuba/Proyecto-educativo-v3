@@ -16,6 +16,7 @@ export {completeSecondGradeNewsCriteria as secondGradeNewsCriteria} from './seco
 export {secondGradeLanguageFeatures} from './secondary-language-grade-two-features'
 export {thirdGradeLanguageFeatures} from './secondary-language-grade-three-features'
 export {fourthGradeLanguageFeatures} from './secondary-language-grade-four-features'
+export {fifthGradeLanguageFeatures} from './secondary-language-grade-five-features'
 export * from './secondary-science'
 import { detectTopicActivity, findSecondaryLanguageTopic, normalizedTask, commonSecondaryLanguageGrade } from './secondary-language-topics'
 import {resolveEvaluationTask} from './evaluation-task-contract'
@@ -84,7 +85,7 @@ export function detectFirstSecondaryLanguageActivity(title: string, description:
 }
 export function firstSecondaryLanguageTechnique(activityType: string): string {
   return activityType === 'DEBATE' ? 'debate' : ['REPORT', 'ANALYSIS', 'COMPARISON', 'WRITTEN_PRODUCTION','RESEARCH'].includes(activityType) ? 'analisis-producciones'
-    : activityType === 'ORAL_PRESENTATION' ? 'presentacion'
+    : activityType === 'ORAL_PRESENTATION' ? 'presentacion' : activityType==='PERFORMANCE'?'dramatizacion'
     : activityType.endsWith('_ANALYSIS') ? 'observacion-sistematica'
     : activityType.endsWith('_COMPARISON') || activityType.endsWith('_WRITING') || activityType.endsWith('_CREATION')
       ? 'analisis-producciones' : activityType === 'CALLIGRAM_RECITATION' || activityType === 'DETECTIVE_STORY_NARRATION'
