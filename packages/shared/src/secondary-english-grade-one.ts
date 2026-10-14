@@ -6,18 +6,19 @@ import {requestedEnglishGrammar,englishGrammarCriterion} from './secondary-engli
 import {requestedEnglishLexicon,englishLexicalCriterion} from './secondary-english-grade-one-lexicon'
 import {requestedEnglishStrategies,englishStrategyCriteria} from './secondary-english-grade-one-strategies'
 import {requestedEnglishGenres,englishGenreCriteria} from './secondary-english-grade-one-genres'
+import {withoutResources} from './evaluation-task-text'
 
 export const englishGradeOneModule={id:'ingles-comunicacion-1',grade:1,subjectCode:'ING',pdfPages:[134,135,136,137,138,139],policy:'COMMUNICATIVE_FUNCTION_MODALITY_V1'}
 
 export function commonFirstGradeEnglish(context?:InstrumentAcademicContext|null) {
  if(context?.level!=='SECONDARY'||context.grade!==1||context.optativeExitName)return false
  const code=context.subjectCode.trim().toUpperCase()
- return code==='ING'||(!code&&/^(?:ingles|english)$/.test(affirmativeLanguageTask(context.subjectName??'')))
+ return code==='ING'||(!code&&/^(?:(?:lenguas? extranjeras? )?ingles|english)$/.test(affirmativeLanguageTask(context.subjectName??'')))
 }
 
 type Mode='reading'|'listening'|'interaction'|'oral'|'writing'|'audiovisual'
 type FunctionId='personal'|'invitation'|'routine'|'comparison'|'instructions'|'preferences'|'clarification'|'weather'|'directions'|'experience'|'opinion'|'description'
-export type EnglishTask={mode:Mode; functions:FunctionId[]; text:string; evidenceText?:string; activityType:string; technique:string}
+export type EnglishTask={mode:Mode; functions:FunctionId[]; text:string; evidenceText?:string; activityType:string; technique:string; actions?:EnglishTask[]}
 const modes:Record<Mode,{activityType:string;technique:string}>={
  reading:{activityType:'READING_COMPREHENSION',technique:'analisis-producciones'},
  listening:{activityType:'LISTENING_COMPREHENSION',technique:'observacion-sistematica'},
@@ -29,6 +30,32 @@ const modes:Record<Mode,{activityType:string;technique:string}>={
 
 /** Content and action come from the assignment; a decorative heading cannot change them. */
 export function resolveFirstGradeEnglishTask(title:string,description:string,context?:InstrumentAcademicContext|null):EnglishTask|null {
+ if(!commonFirstGradeEnglish(context))return null
+ // Split independent actions before normalization removes sentence boundaries. Infinitives
+ // of purpose ("para describir") remain attached to their requested product.
+ const raw=withoutResources(description||title).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
+ const action='(?:leer(?:an)?|lean|escuchar(?:an)?|escuchen|redactar(?:an)?|redacten|escribir(?:an)?|escriban|presentar(?:an)?|presenten|expondran|conversar(?:an)?|dialogar(?:an)?|comparar(?:an)?|compar(?:en|an)|crear(?:an)?|elaborar(?:an)?|revisar(?:an)?|planificar(?:an)?|recitar(?:an)?|cantar(?:an)?)'
+ const prefix='(?:(?:luego|despues|posteriormente|finalmente),?\\s+)?(?:(?:los estudiantes|el alumnado|cada estudiante|ellos|ellas)\\s+)?(?:(?:lo|la|los|las)\\s+)?'
+ const boundary=new RegExp(`(?:[.;]\\s*|\\s+(?:y|luego|despues|posteriormente|finalmente)\\s+)(?=${prefix}${action}\\b)`,'g')
+ const parts=raw.split(boundary).filter(Boolean)
+ const actions:EnglishTask[]=[]
+ for(const part of parts){
+  let task=resolveSingleEnglishAction('',part,context)
+  const previous=actions.at(-1)
+  // Explicit pronoun refers to the preceding text product, without transferring its
+  // verbs (which would incorrectly turn an oral presentation back into writing).
+  if(!task&&previous&&/\b(?:lo|la|los|las)\s+(?:present\w*|leer\w*|redact\w*)\b/.test(part)){
+   const genres=requestedEnglishGenres(previous.text).map(g=>previous.text.match(new RegExp(`\\b(?:${g.match})\\b`))?.[0]).filter(Boolean)
+   if(genres.length)task=resolveSingleEnglishAction('',`${part} ${genres.join(' ')}`,context)
+  }
+  if(task)actions.push(task)
+ }
+ if(actions.length<2)return resolveSingleEnglishAction(title,description,context)
+ const primary=actions.filter(part=>!['reading','listening'].includes(part.mode)).at(-1)??actions.at(-1)!
+ return {...primary,text:affirmativeLanguageTask(description||title),functions:[...new Set(actions.flatMap(part=>part.functions))],actions}
+}
+
+function resolveSingleEnglishAction(title:string,description:string,context?:InstrumentAcademicContext|null):EnglishTask|null {
  if(!commonFirstGradeEnglish(context))return null
  const text=affirmativeLanguageTask(description||title)
  const grammar=requestedEnglishGrammar(text)
@@ -70,7 +97,7 @@ export function resolveFirstGradeEnglishTask(title:string,description:string,con
 }
 
 export function firstGradeEnglishSelections(task:EnglishTask,description:string){
- const discreteReception=(task.mode==='reading'||task.mode==='listening')&&!/\b(?:explic\w*|justific\w*|infer\w*|argument\w*)\b/.test(task.text)
+ const discreteReception=(task.actions??[task]).every(action=>(action.mode==='reading'||action.mode==='listening')&&!/\b(?:explic\w*|justific\w*|infer\w*|argument\w*)\b/.test(action.text))
  return {suggestedEvaluationTechnique:task.technique,suggestedInstrumentType:languageInstrumentIntent(description)??(discreteReception?'lista-cotejo':'rubrica')}
 }
 
@@ -78,6 +105,16 @@ const row=(id:string,title:string,levels:ContextualTopicCriterion['progressionLe
 const list=(items:string[])=>items.length<2?items[0]:items.slice(0,-1).join(', ')+' y '+items.at(-1)
 
 export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCriterion[]{
+ if(task.actions){
+  const rows:ContextualTopicCriterion[]=[],seen=new Set<string>()
+  for(const [index,action] of task.actions.entries())for(const criterion of firstGradeEnglishCriteria(action)){
+   const key=JSON.stringify(criterion)
+   if(seen.has(key))continue
+   seen.add(key)
+   rows.push(rows.some(row=>row.templateId===criterion.templateId)?{...criterion,templateId:`${criterion.templateId}:${action.mode}:${index+1}`}:criterion)
+  }
+  return rows
+ }
  const {text,mode}=task,receptive=mode==='reading'||mode==='listening'
  const source=mode==='listening'?'mensaje escuchado':'texto leído'
  const output=mode==='writing'?'escrito':'oral'
@@ -212,7 +249,7 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
  result.push(...strategies)
  const genres=englishGenreCriteria(text,mode,result)
  result.push(...genres)
- if(receptive&&!grammar.length&&!lexicon.length&&!strategies.length&&!genres.length)result.push(row('source','Comprensión sustentada en el mensaje',[
+ if(receptive&&!result.length)result.push(row('source','Comprensión sustentada en el mensaje',[
   `Responde a lo solicitado apoyándose en palabras o datos presentes en el ${source} en inglés.`,
   `La respuesta corresponde al ${source}; una relación con sus palabras o datos necesita precisión.`,
   'Recupera palabras aisladas, pero deja sin relacionar datos necesarios para responder a lo solicitado.',
@@ -226,7 +263,7 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
   'Las respuestas cambian el sentido de lo dicho por el interlocutor e interrumpen el intercambio.',
   'No se aporta una respuesta reconocible a las intervenciones del interlocutor.',
  ],3))
- if(!receptive&&mode!=='audiovisual'&&task.functions.length)result.push(mode==='writing'?row('written','Mensaje escrito comprensible',[
+ if(!receptive&&mode!=='audiovisual'&&(task.functions.length||mode==='oral'&&genres.length))result.push(mode==='writing'?row('written','Mensaje escrito comprensible',[
   'Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.',
   'Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.',
   'Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.',

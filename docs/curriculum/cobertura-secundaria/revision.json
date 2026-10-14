@@ -1718,7 +1718,7 @@
     },
     {
       "id": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
-      "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON_STRATEGIES_GENRES",
+      "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON_STRATEGIES_GENRES_COMPOSITION",
       "automatedVerification": "PARTIAL_PASSED",
       "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
       "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
@@ -1731,9 +1731,9 @@
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
       "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
-      "catalogVersion": "evaluation-2026.40",
-      "report": "ingles-1-generos.md",
-      "pending": "Pendientes modalidades mixtas, composición de consignas extensas y revisión final. No avanzar a segundo."
+      "catalogVersion": "evaluation-2026.41",
+      "report": "ingles-1-composicion.md",
+      "pending": "Pendiente composición de consignas extensas y revisión final. No avanzar a segundo."
     }
   ],
   "sourceAdditions": [

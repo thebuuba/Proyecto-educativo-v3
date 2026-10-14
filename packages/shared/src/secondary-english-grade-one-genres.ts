@@ -44,7 +44,20 @@ export function englishGenreCriteria(text:string,mode:string,existing:Contextual
   // A text used to inspect a requested form or strategy is a source, not another deliverable.
   if(receptive&&existing.some(c=>/ing-1-(?:feature|lexicon|strategy)-/.test(c.templateId)))return false
   return true
- }).map(g=>{
+ }).map(original=>{
+  let g=original
+  if(receptive&&g.id==='schedule'){
+   const evidence=text.match(/\b(?:identific\w*|localiz\w*|reconoc\w*)\s+(.+)/)?.[1]??''
+   if(/\bactividades\b/.test(evidence)&&!/\b(?:hora\w*|momento\w*|informacion|datos)\b/.test(evidence))g={...g,data:'las actividades solicitadas del horario',error:'identifica una actividad distinta de la indicada en el horario'}
+  }
+  if(receptive&&['email','letter'].includes(g.id)){
+   const evidence=text.match(/\b(?:identific\w*|localiz\w*|reconoc\w*)\s+(.+)/)?.[1]??''
+   const recipient=/\bdestinatarios?\b/.test(evidence),purpose=/\b(?:proposito|intencion)\b/.test(evidence)
+   if(recipient!==purpose&&!/\b(?:informacion|datos|contenido)\b/.test(evidence)){
+    const sourceName=g.id==='email'?'del correo':'de la carta'
+    g={...g,data:`${recipient?'el destinatario':'el propósito'} ${sourceName}`,error:recipient?'atribuye el mensaje a un destinatario distinto del indicado':'atribuye al mensaje una intención contraria a la comunicada'}
+   }
+  }
   const levels:ContextualTopicCriterion['progressionLevels']=receptive?[
    `Identifica ${g.data} en el ${source} en inglés.`,
    `Reconoce ${g.data}; una referencia aislada necesita precisión.`,

@@ -9,7 +9,7 @@ for(const record of initial.snapshots){
   assert.equal(fingerprint({snapshot:activity.instrumentSnapshot,maxScore:activity.maxScore,instrumentType:activity.instrumentType}),record.hash)
 }
 const complete=[]
-for(const file of readdirSync(root).filter(name=>/^(?:lengua|ingles)-\d+-(?:procedimientos-|cierre-|final-|funciones-|gramatica-|lexico-|estrategias-|generos-)?persistencia.json$/.test(name))) {
+for(const file of readdirSync(root).filter(name=>/^(?:lengua|ingles)-\d+-(?:procedimientos-|cierre-|final-|funciones-|gramatica-|lexico-|estrategias-|generos-|composicion-)?persistencia.json$/.test(name))) {
   for(const prior of JSON.parse(readFileSync(root+file,'utf8')).activities) {
     const actual=current.find(a=>a.id===prior.id);assert(actual)
     assert.deepEqual(actual.instrumentSnapshot,prior.instrumentSnapshot)

@@ -1,5 +1,10 @@
 # Avance durable — cobertura secundaria
 
+## Avance vigente: composición de Inglés primero
+
+Catálogo local `evaluation-2026.41`; base ejecutada `569b660` más cambios del bloque. Composición de ocho consignas mixtas verificada;80 propuestas y ocho interpretaciones HTTP y cuatro formatos editados, guardados y reabiertos. Se preservan102 snapshots (28 de referencia y74 completos). Backend6.290, frontend11.219; builds verificados. [Informe](ingles-1-composicion.md). **Primero sigue parcial**. Continuar composición extensa/límite20; revisar entonces fuente completa y pertinencia antes de segundo. No hay bloqueo. Ejecución directa sin subagentes, commits/push autorizados; sin IA, rediseño, producción, reset ni cambio de snapshots históricos.
+
+
 ## Avance vigente: géneros de Inglés primero
 
 Catálogo local `evaluation-2026.40`; base ejecutada `35d2be7f4e4b0ac02f7e6e517ada64bbf9fa4f62` más cambios del bloque. Conectadas29 familias de géneros;188 propuestas HTTP y cuatro formatos editados, guardados y reabiertos. Se preservan98 snapshots (28 de referencia y70 completos). Backend6.205, frontend11.155; builds verificados. [Informe](ingles-1-generos.md). **Primero sigue parcial**. Continuar consignas con acciones mixtas y composición extensa/límite20; revisar entonces fuente completa y pertinencia antes de segundo. No hay bloqueo. Ejecución directa sin subagentes, commits/push autorizados; sin IA, rediseño, producción, reset ni cambio de snapshots históricos.
