@@ -16,8 +16,8 @@ Ejecución directa con executing-plans, sin subagentes por preferencia vigente d
 - [x] Auditar/completar/verificar 3.º; commit/push.
 - [x] Auditar/completar/verificar 4.º; commit/push.
 - [x] Auditar/completar/verificar 5.º, integrando análisis de novela .19; commit/push.
-- [ ] Auditar/completar/verificar 6.º; commit/push.
-- [ ] Revisión final, pruebas/builds exigidos, ejemplos completos, evidencia de cobertura por tema/familia/formato y entorno ejecutado.
+- [x] Auditar/completar/verificar 6.º; commit/push.
+- [x] Revisión final, pruebas/builds exigidos, ejemplos completos, evidencia de cobertura por tema/familia/formato y entorno ejecutado.
 
 Revisión: títulos incompatibles, productos equivalentes, requisitos ausentes/alternativos, fallback sin esconder 4xx, selección manual en borradores recuperados, total antes/después, adaptación fallida sin mutaciones y preservación de 28 snapshots actuales. Pruebas rojas antes de modificar cada comportamiento; reutilizar las regresiones previas.
 

@@ -27,13 +27,18 @@ import {evaluationCatalogV27} from './catalog-v27'
 import {evaluationCatalogV28} from './catalog-v28'
 import {evaluationCatalogV29} from './catalog-v29'
 import {evaluationCatalogV30} from './catalog-v30'
+import {evaluationCatalogV31} from './catalog-v31'
+import {evaluationCatalogV32} from './catalog-v32'
+import {secondaryLanguageGradeSixTopics,sixthGradeLanguageFeatures} from '@aula/shared'
 import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula/shared'
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV30,
-  version: 'evaluation-2026.31',
-  contextualModules:[...secondaryLanguageGradeTwoTopics,...secondaryLanguageGradeThreeTopics,...secondaryLanguageGradeFourTopics,...secondaryLanguageGradeFiveTopics],
+  ...evaluationCatalogV32,
+  version: 'evaluation-2026.33',
+  contextualModules:[...secondaryLanguageGradeTwoTopics,...secondaryLanguageGradeThreeTopics,...secondaryLanguageGradeFourTopics,...secondaryLanguageGradeFiveTopics,...secondaryLanguageGradeSixTopics],
+  sixthGradeLanguageFeatures,
+  sixthGradeLanguagePolicy:'TOPIC_ACTION_EXPLICIT_REQUIREMENTS_PERFORMANCE_V2',
   fifthGradeLanguageFeatures,
   fifthGradeLanguagePolicy:'TOPIC_ACTION_EXPLICIT_REQUIREMENTS_SOURCE_OVERLAY_PERFORMANCE_V2',
   fourthGradeLanguageFeatures,
@@ -45,6 +50,8 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV32.version)return evaluationCatalogV32
+  if(version===evaluationCatalogV31.version)return evaluationCatalogV31
   if(version===evaluationCatalogV30.version)return evaluationCatalogV30
   if(version===evaluationCatalogV29.version)return evaluationCatalogV29
   if(version===evaluationCatalogV28.version)return evaluationCatalogV28

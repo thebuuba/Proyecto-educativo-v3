@@ -17,8 +17,9 @@ export const affirmativeLanguageTask = (description: string) => normalizedTask(d
 /** Explicit linguistic requirements, independent of the title and delivered document's name. */
 export function requestedLanguageFeatures(features: LanguageFeature[], description: string) {
   const task = affirmativeLanguageTask(description)
-  return features.filter(feature => new RegExp(feature.match).test(task)).map(feature => {
-    const selected = feature.terms?.filter(([pattern]) => new RegExp(pattern).test(task)).map(([,term]) => term)
+  const patternFor=(feature:LanguageFeature,pattern:string)=>new RegExp(feature.id==='graphics'?`\\b(?:${pattern})`:pattern)
+  return features.filter(feature => patternFor(feature,feature.match).test(task)).map(feature => {
+    const selected = feature.terms?.filter(([pattern]) => patternFor(feature,pattern).test(task)).map(([,term]) => term)
     return {...feature, name: selected?.length ? selected.length===1 ? selected[0] : selected.slice(0,-1).join(', ')+' y '+selected.at(-1) : feature.name}
   })
 }

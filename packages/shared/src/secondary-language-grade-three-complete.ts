@@ -26,12 +26,12 @@ export function composeLanguageCriteria(topic:SecondaryLanguageTopic,activity:st
  const reciting=mode==='ORAL'&&/recit|declam/.test(task)
  const narrating=mode==='ORAL'&&/narr\w*.*oralmente/.test(task)
  const oralCreation=mode==='ORAL'&&(/produc\w*|elabor\w*|realiz\w*.*entrevista/.test(task)||narrating
-  ||topic.grade>=4&&['discurso-agradecimiento','discurso-recibimiento-despedida','informe-investigacion','instructivo'].includes(topic.id)&&/present\w*\s+oralmente/.test(task)&&!/analisis|analiz|interpret|comentario|leido/.test(task))
+  ||topic.grade>=4&&['discurso-agradecimiento','discurso-recibimiento-despedida','discurso-graduacion','informe-investigacion','instructivo','reportaje','monologo'].includes(topic.id)&&/present\w*\s+oralmente/.test(task)&&!/analisis|analiz|interpret|comentario|leido/.test(task))
  const producing=topic.id!=='novela'&&(mode==='PRODUCTION'||mode==='REPORT'&&['informe-experimento','informe-investigacion'].includes(topic.id)||oralCreation)
  const features=requestedLanguageFeatures(availableFeatures,description).map(f=>{
   if(f.id!=='graphics')return f
   const matches=(f.terms??[]).flatMap(([pattern,name])=>{
-   const m=new RegExp(pattern).exec(task)
+   const m=new RegExp(`\\b(?:${pattern})`).exec(task)
    if(!m)return []
    const singular:Record<string,string>={grafico:'gráfico',grafica:'gráfica',fotografia:'fotografía',ilustracion:'ilustración'}
    return [{name:topic.grade>=4&&singular[m[0]]?singular[m[0]]:/^(?:tabla|diagrama|dibujo|mapa)$/.test(m[0])?m[0]:name.replace(/^(?:los|las) /,''),index:m.index,end:m.index+m[0].length}]
@@ -41,6 +41,7 @@ export function composeLanguageCriteria(topic:SecondaryLanguageTopic,activity:st
   return {...f,name:matches.map(m=>m.name).join(joiner)}
  })
  let rows:Criterion[]=topic.dimensions.map(d=>{
+  if(activity==='PERFORMANCE'&&d.performance)return {templateId:`${scope}-${d.id}`,title:d.title,observable:d.performance.observable,progressionLevels:[d.performance.observable,...d.performance.evidence],weight:d.weight}
   const observable=mode==='COMPARISON'?d.comparison:producing?d.production:d.analysis
   return {templateId:`${scope}-${d.id}`,title:d.title,observable,progressionLevels:[observable,...d.evidence],weight:d.weight}
  })

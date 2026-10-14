@@ -1,5 +1,11 @@
 # Avance durable — cobertura secundaria
 
+## Estado final: Lengua Española común 1.º–6.º verificada (.33)
+
+Cerrados los 40 temas de los seis grados dentro de sus familias y requisitos definidos. Matriz revisada: 363 registros conceptuales, con límites de extracción y optativas separados. Backend 4.293 pruebas; frontend 9.553; inventario 8; builds backend/frontend y Cloudflare dry-run aprobados. Sexto: 308 recomendaciones HTTP en .32 y 25 solicitudes finales en .33; cuatro formatos guardados/reabiertos. Se afinó también la representación del entremés de quinto, sin exigir un comentario de análisis durante la actuación. Hay 41 instrumentos completos comprobados y 28 snapshots de referencia preservados (69 en total).
+
+[Informe final, cobertura, ejemplos y límites](lengua-comun-1-6-informe-final.md). Sin pendientes del alcance definido de Lengua común; las optativas y las demás asignaturas mantienen su estado propio. Runtime local .33. No producción, reset ni alteración de históricos. Las secciones siguientes son historial de ejecución, no pendientes vigentes.
+
 ## Bloque vigente: 1.º–5.º verificados; continuar 6.º (.31)
 
 Quinto cierra siete temas, 68 conceptos lógicos (69 registros) y 26 modalidades (28 registros de procedimientos), con 145 consignas. Se recuperaron del PDF ocho conceptos y cinco procedimientos omitidos por la extracción, como suplemento trazable del inventario. Backend 3.729; frontend completo 7.907 más 1.767 comprobaciones finales. HTTP 304 +21 finales; cuatro formatos guardados/reabiertos, textos cotejados y 64 snapshots preservados. [Informe y límites](lengua-5-cierre.md).

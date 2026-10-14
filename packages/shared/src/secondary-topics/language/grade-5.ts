@@ -41,3 +41,19 @@ export const secondaryLanguageGradeFiveTopics:SecondaryLanguageTopic[]=[
    'La crítica tiene apoyo en la escena; un vínculo con el diálogo necesita explicarse.','Enumera elementos cómicos sin explicar qué conducta o situación se critica.','Atribuye a la escena una crítica contraria a sus situaciones y diálogos.','No relaciona la crítica con evidencia de la escena disponible.'],5),
  ]),
 ]
+// Performance is assessed in the scene itself; an analytical commentary is a different product.
+const performanceEvidence:Record<string,NonNullable<SecondaryLanguageTopic['dimensions'][number]['performance']>>={
+ scene:{observable:'Hace reconocible el conflicto en la escena representada mediante las intervenciones y reacciones de los personajes, conservando sus relaciones y cambios.',evidence:[
+  'El conflicto se comprende; una reacción necesita vincularse mejor con la intervención anterior.',
+  'Representa intervenciones aisladas que no permiten seguir los cambios del conflicto.',
+  'Atribuye una intervención a otro personaje y cambia el conflicto de la escena representada.',
+  'No se reconoce el conflicto a través de las intervenciones representadas.',
+ ]},
+ critique:{observable:'Comunica la crítica social del entremés mediante el sentido de las situaciones y los recursos cómicos de la representación.',evidence:[
+  'La crítica se reconoce en la escena; un énfasis cómico necesita relacionarse mejor con la situación.',
+  'Presenta efectos cómicos aislados que no permiten reconocer la conducta o situación criticada.',
+  'La representación comunica una postura contraria a la crítica del entremés.',
+  'No se reconoce la crítica social en las situaciones representadas.',
+ ]},
+}
+for(const d of secondaryLanguageGradeFiveTopics.find(t=>t.id==='entremes-teatral')!.dimensions)d.performance=performanceEvidence[d.id]

@@ -2,6 +2,7 @@ export type TopicTaskMode = 'PRODUCTION' | 'ANALYSIS' | 'COMPARISON' | 'ORAL' | 
 export type TopicDimension = {
   id: string; title: string; production: string; analysis: string; comparison: string
   evidence: [string, string, string, string]; weight: number; requestedOnly?: string
+  performance?: { observable: string; evidence: [string, string, string, string] }
 }
 export type SecondaryLanguageTopic = {
   id: string; grade: number; subjectCode: string; aliases: string[]

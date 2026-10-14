@@ -17,6 +17,7 @@ export {secondGradeLanguageFeatures} from './secondary-language-grade-two-featur
 export {thirdGradeLanguageFeatures} from './secondary-language-grade-three-features'
 export {fourthGradeLanguageFeatures} from './secondary-language-grade-four-features'
 export {fifthGradeLanguageFeatures} from './secondary-language-grade-five-features'
+export {sixthGradeLanguageFeatures} from './secondary-language-grade-six-features'
 export * from './secondary-science'
 import { detectTopicActivity, findSecondaryLanguageTopic, normalizedTask, commonSecondaryLanguageGrade } from './secondary-language-topics'
 import {resolveEvaluationTask} from './evaluation-task-contract'

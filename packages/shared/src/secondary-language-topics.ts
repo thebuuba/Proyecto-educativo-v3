@@ -2,6 +2,7 @@ import { secondaryLanguageGradeTwoTopics } from './secondary-topics/language/gra
 import { secondaryLanguageGradeThreeTopics } from './secondary-topics/language/grade-3'
 import { secondaryLanguageGradeFourTopics } from './secondary-topics/language/grade-4'
 import { secondaryLanguageGradeFiveTopics } from './secondary-topics/language/grade-5'
+import { secondaryLanguageGradeSixTopics } from './secondary-topics/language/grade-6'
 import type { SecondaryLanguageTopic, TopicTaskMode } from './secondary-topic-types'
 import {resolveEvaluationTask} from './evaluation-task-contract'
 import {withoutResources} from './evaluation-task-text'
@@ -11,6 +12,7 @@ export { secondaryLanguageGradeTwoTopics } from './secondary-topics/language/gra
 export { secondaryLanguageGradeThreeTopics } from './secondary-topics/language/grade-3'
 export { secondaryLanguageGradeFourTopics } from './secondary-topics/language/grade-4'
 export { secondaryLanguageGradeFiveTopics } from './secondary-topics/language/grade-5'
+export { secondaryLanguageGradeSixTopics } from './secondary-topics/language/grade-6'
 export type { SecondaryLanguageTopic, TopicDimension, TopicTaskMode } from './secondary-topic-types'
 
 const normalized = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
@@ -21,7 +23,13 @@ export function commonSecondaryLanguageGrade(context:SecondaryTopicContext|null|
 export function findSecondaryLanguageTopic(title: string, description: string, context: SecondaryTopicContext | null) {
   if (!commonSecondaryLanguageGrade(context)) return null
   const task = affirmativeLanguageTask(withoutResources(description))
-  const find = (value: string) => [...secondaryLanguageGradeTwoTopics,...secondaryLanguageGradeThreeTopics,...secondaryLanguageGradeFourTopics,...secondaryLanguageGradeFiveTopics].find(topic => topic.grade === context!.grade && topic.aliases.some(alias => ` ${normalized(value)} `.includes(` ${normalized(alias)} `)))
+  const find = (value: string) => {
+    const text=` ${normalized(value)} `
+    return [...secondaryLanguageGradeTwoTopics,...secondaryLanguageGradeThreeTopics,...secondaryLanguageGradeFourTopics,...secondaryLanguageGradeFiveTopics,...secondaryLanguageGradeSixTopics]
+      .filter(topic=>topic.grade===context!.grade)
+      .map(topic=>({topic,index:Math.min(...topic.aliases.map(alias=>text.indexOf(` ${normalized(alias)} `)).filter(i=>i>=0))}))
+      .filter(candidate=>Number.isFinite(candidate.index)).sort((a,b)=>a.index-b.index)[0]?.topic
+  }
   const described=find(task)
   if(described)return described
   if(context!.grade===2&&/\bnoticias?\b|\bnoticiero\b/.test(normalized(task)))return null
@@ -40,7 +48,7 @@ export function detectTopicActivity(title: string, description: string, topic: S
   const task = affirmativeLanguageTask(withoutResources(description) || title)
   const contract=resolveEvaluationTask(title,task)
   if(topic.grade>=3&&/\b(?:debat\w*|debates?)\b/.test(task))return 'DEBATE'
-  if(topic.id==='entremes-teatral'&&/\b(?:represent\w*|dramatiz\w*|actuar\w*|escenific\w*)\b/.test(task))return 'PERFORMANCE'
+  if(['entremes-teatral','monologo'].includes(topic.id)&&/\b(?:represent(?:ar\w*|an|a|en|ando)|dramatiz(?:ar\w*|an|a|en|ando)|actuar\w*|escenific(?:ar\w*|an|a|en|ando))\b/.test(task))return 'PERFORMANCE'
   if(contract.product==='ANALYTICAL_TEXT'&&!contract.oral) return topic.id==='guia-turistica'?'TOURIST_GUIDE_ANALYSIS':topic.id==='informe-de-lectura'?'READING_REPORT_ANALYSIS':'ANALYSIS'
   const comprehensionProduct=/\b(?:leer\w*|leeran|comprend\w*)\b.*\b(?:elabor\w*|constru\w*)\b.*\b(?:organizador grafico|cuadro sinoptico|esquema|mapa conceptual)\b/.test(task)&&!/planific|borrador|redact/.test(task)
   if(comprehensionProduct)return topic.id==='guia-turistica'?'TOURIST_GUIDE_ANALYSIS':topic.id==='informe-de-lectura'?'READING_REPORT_ANALYSIS':'ANALYSIS'
@@ -50,14 +58,15 @@ export function detectTopicActivity(title: string, description: string, topic: S
   const research=actionText.search(/\binvestig(?:ar\w*|an|a|uen|ando)\b/)
   const firstReading=actionText.search(/\b(?:leer\w*|leeran|analiz\w*|interpret\w*|escuch\w*)\b/)
   if(research>=0&&(firstReading<0||research<firstReading)&&!(topic.grade>=3&&/\b(?:redact\w*|escrib\w*|elabor\w*)\b/.test(actionText)))return 'RESEARCH'
-  const writing=/\b(?:redact\w*|escrib\w*|elabor\w*|planific\w*|revis(?:ar|aran|a|en)|correg\w*|cre(?:ar\w*|an|a)|produc(?:ir\w*|iran|en|e|iendo)|compon(?:er|dr\w*|en|e|gan|iendo))\b/.test(actionText)
+  const writingIndex=actionText.search(/\b(?:redact\w*|escrib\w*|elabor\w*|planific\w*|revis(?:ar|aran|a|en)|correg\w*|cre(?:ar\w*|an|a)|produc(?:ir\w*|iran|en|e|iendo)|compon(?:er|dr\w*|en|e|gan|iendo))\b/)
+  const writing=writingIndex>=0
     ||/\bpresent\w*\b.*\b(?:por escrito|escrita|escrito)\b/.test(actionText)
   const comprehension=/parafras|propias palabras|\bresum(?:iran|ir|e)\b|predicci|anticip|inferir|clasific|reconstru/.test(actionText)&&!writing
   const comparison=actionText.search(/\b(?:compar(?:ar\w*|an|a|en|ando)|contrast(?:ar\w*|an|a|en|ando))\b/)
   const analysis=actionText.search(/\b(?:analiz\w*|interpret\w*|identific\w*)\b/)
   const multiple=/\b(?:dos|ambos|varios|diferentes)\b/.test(actionText)
-  const compare=comparison>=0&&(analysis<0||comparison<analysis||multiple)&&(firstReading<0||comparison<firstReading||multiple)
-  const oral=contract.oral||/\b(?:recit\w*|declam\w*|exposicion|narr\w*\s+oralmente)\b/.test(actionText)
+  const compare=comparison>=0&&(analysis<0||comparison<analysis||multiple)&&(firstReading<0||comparison<firstReading||multiple)&&(writingIndex<0||comparison<writingIndex)
+  const oral=contract.oral||/\b(?:recit(?:ar\w*|an|a|en|ando)|declam(?:ar\w*|an|a|en|ando)|exposicion|narr\w*\s+oralmente)\b/.test(actionText)
   const mode=compare?'COMPARISON':comprehension?'ANALYSIS':oral?'ORAL':writing?'PRODUCTION':'ANALYSIS'
   if (topic.id === 'guia-turistica') return `TOURIST_GUIDE_${mode === 'PRODUCTION' ? 'CREATION' : mode === 'ORAL' ? 'PRESENTATION' : mode}`
   if (topic.id === 'informe-de-lectura') return mode === 'PRODUCTION' ? 'REPORT' : `READING_REPORT_${mode === 'ORAL' ? 'PRESENTATION' : mode}`

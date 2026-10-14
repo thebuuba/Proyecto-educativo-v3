@@ -1,5 +1,7 @@
 # Lengua Española común: familias verificadas de 5.º
 
+Actualización al cierre de sexto, catálogo `.33`: se corrigió la redacción analítica de las dimensiones del entremés cuando la tarea es representarlo. Conflicto y crítica se observan ahora en la escena; el análisis conserva sus criterios. Ocho regresiones compartidas de quinto/sexto y cuatro propuestas HTTP de entremés verifican los cuatro formatos. Una ponderada adicional, actividad `ce5a35c6-4ade-449a-95b3-879cff3baed5` a 17.35, se guardó y reabrió con textos manuales intactos: [persistencia](evidencias/lengua-5-cierre-persistencia.json), [navegador](evidencias/lengua-5-cierre-flujo-navegador.json). El estado vigente está en el [informe conjunto](lengua-comun-1-6-informe-final.md); las referencias a sexto pendiente que siguen son históricas.
+
 Se verificaron los siete temas y sus familias definidas, con 145 consignas en los cuatro instrumentos. Sexto continúa pendiente. El alcance es el cotejo y las familias comprobadas, no la interpretación de cualquier descripción imaginable.
 
 ## Causa y cambios

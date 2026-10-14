@@ -44,13 +44,22 @@ const fifthCases=[
  ['Declamarán un poema satírico.', 'ORAL_PRESENTATION', 'presentacion'],
  ['Representarán un entremés teatral.', 'PERFORMANCE', 'dramatizacion'],
 ] as const
+const sixthCases=[
+ ['Redactarán un informe de investigación con datos dados.', 'REPORT', 'analisis-producciones'],
+ ['Escribirán un reportaje de hechos documentados.', 'WRITTEN_PRODUCTION', 'analisis-producciones'],
+ ['Analizarán las falacias de un ensayo argumentativo.', 'ANALYSIS', 'analisis-producciones'],
+ ['Presentarán oralmente un discurso de graduación.', 'ORAL_PRESENTATION', 'presentacion'],
+ ['Analizarán el orden de la narración de un fragmento de novela.', 'ANALYSIS', 'analisis-producciones'],
+ ['Declamarán un poema social.', 'ORAL_PRESENTATION', 'presentacion'],
+ ['Representarán un monólogo teatral.', 'PERFORMANCE', 'dramatizacion'],
+] as const
 describe('grade two restored editor integration with editable contextual alternatives', () => {
   beforeEach(() => {
     localStorage.clear()
     vi.restoreAllMocks()
     vi.spyOn(api, 'post').mockRejectedValue(new Error('Servicio simulado no disponible'))
   })
-  it.each([...cases.map(c=>[...c,2] as const),...thirdCases.map(c=>[...c,3] as const),...fourthCases.map(c=>[...c,4] as const),...fifthCases.map(c=>[...c,5] as const)])('prepares without a score, switches formats and confirms without losing selections: %s', async (description, activityType, technique,grade) => {
+  it.each([...cases.map(c=>[...c,2] as const),...thirdCases.map(c=>[...c,3] as const),...fourthCases.map(c=>[...c,4] as const),...fifthCases.map(c=>[...c,5] as const),...sixthCases.map(c=>[...c,6] as const)])('prepares without a score, switches formats and confirms without losing selections: %s', async (description, activityType, technique,grade) => {
     const onAdd = vi.fn(async (input: Parameters<ActivityEditorWorkspaceProps['onAddActivity']>[0]) => ({ ...input, id: 'saved' }))
     render(<ActivityEditorWorkspace
       initialDraft={{ ...newActivityDraft('b2'), name: 'Actividad', description, activityType: 'individual' }}
