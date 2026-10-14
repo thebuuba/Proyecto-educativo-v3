@@ -2218,14 +2218,14 @@ export function EstudiantesTab({ students, loading, error, courseId, sectionId, 
             {canEnroll && courseId ? (
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  to={`/cursos?courseId=${encodeURIComponent(courseId)}&view=students&action=new`}
+                  to={`/cursos?courseId=${encodeURIComponent(sectionId ?? courseId)}&view=students&action=new`}
                   className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary-hover"
                 >
                   <Plus className="size-4" />
                   Matricular estudiante
                 </Link>
                 <Link
-                  to={`/cursos?courseId=${encodeURIComponent(courseId)}&view=students&action=import`}
+                  to={`/cursos?courseId=${encodeURIComponent(sectionId ?? courseId)}&view=students&action=import`}
                   className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-5 text-sm font-bold text-foreground transition-colors hover:bg-muted"
                 >
                   <ClipboardList className="size-4" />

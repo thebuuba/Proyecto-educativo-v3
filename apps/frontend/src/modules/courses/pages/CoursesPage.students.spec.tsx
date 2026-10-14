@@ -99,6 +99,20 @@ describe('estudiantes de una asignatura', () => {
     Element.prototype.scrollIntoView = vi.fn()
   })
 
+  it('lleva la matrícula vacía al curso de la sección, no al id de la asignatura', () => {
+    render(<MemoryRouter><EstudiantesTab
+      students={[]} loading={false} error={null}
+      courseId="subject-1" sectionId="section-1" canEnroll
+      gradingStudents={[]} activities={[]} gradeRecords={[]} teams={[]} journalCourse={null}
+    /></MemoryRouter>)
+    expect(screen.getByRole('link', { name: 'Matricular estudiante' })).toHaveAttribute(
+      'href', '/cursos?courseId=section-1&view=students&action=new',
+    )
+    expect(screen.getByRole('link', { name: 'Importar listado' })).toHaveAttribute(
+      'href', '/cursos?courseId=section-1&view=students&action=import',
+    )
+  })
+
   it('muestra el detalle con desplazamiento suave y crea la observación sin salir de la vista', async () => {
     const user = userEvent.setup()
     mocks.getJournalEntries.mockResolvedValueOnce([]).mockResolvedValueOnce([]).mockResolvedValue([journalEntry])

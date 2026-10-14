@@ -144,6 +144,7 @@ describe('DashboardPage', () => {
     expect(shortcutOption).toBeTruthy()
     await user.click(within(shortcutOption!).getByRole('button', { name: 'Agregar' }))
     await user.click(screen.getByRole('button', { name: 'Cerrar' }))
+    expect(screen.queryByRole('link', { name: 'Estudiantes' })).not.toBeInTheDocument()
     await user.click(screen.getByText('Agregar', { selector: 'summary' }))
     expect(screen.queryByRole('button', { name: 'Estudiantes' })).not.toBeInTheDocument()
     await user.click(screen.getByRole('button', { name: 'Administración escolar' }))
