@@ -6,6 +6,12 @@ export class RecommendInstrumentDto {
   @IsUUID() sectionSubjectId!: string
   @IsString() @MinLength(1) @MaxLength(300) activityTitle!: string
   @IsOptional() @IsString() @MaxLength(ACTIVITY_DESCRIPTION_MAX_LENGTH) description?: string
+  @IsOptional() @IsString() @MaxLength(100) evaluationTechnique?: string
+  @IsOptional() @IsString() @MaxLength(2000) evidenceInstructions?: string
+  @IsOptional() @IsArray() @ArrayMaxSize(20) @IsString({ each: true }) @MaxLength(150, { each: true }) resources?: string[]
+  @IsOptional() @IsArray() @ArrayMaxSize(12) @IsString({ each: true }) @MaxLength(300, { each: true }) evaluationPriorities?: string[]
+  @IsOptional() @IsIn(['INDIVIDUAL', 'GROUP']) organizationMode?: 'INDIVIDUAL' | 'GROUP'
+  @IsOptional() @IsIn(['inicio', 'desarrollo', 'cierre']) planningMoment?: 'inicio' | 'desarrollo' | 'cierre'
   @IsIn(['INDIVIDUAL', 'GROUP']) participationMode!: 'INDIVIDUAL' | 'GROUP'
   @IsOptional() @IsIn(evaluationCatalogCurrent.activityTypes.map(a => a.id)) pedagogicalActivityType?: string
   @IsNumber({ maxDecimalPlaces: 2, allowInfinity: false, allowNaN: false }) @Min(0.01) @Max(10000) maxScore!: number
@@ -24,6 +30,13 @@ export class InterpretActivityDto {
   @IsUUID() sectionSubjectId!: string
   @IsString() @MinLength(1) @MaxLength(300) activityTitle!: string
   @IsOptional() @IsString() @MaxLength(ACTIVITY_DESCRIPTION_MAX_LENGTH) description?: string
+  @IsOptional() @IsString() @MaxLength(100) evaluationTechnique?: string
+  @IsOptional() @IsString() @MaxLength(2000) evidenceInstructions?: string
+  @IsOptional() @IsArray() @ArrayMaxSize(20) @IsString({ each: true }) @MaxLength(150, { each: true }) resources?: string[]
+  @IsOptional() @IsArray() @ArrayMaxSize(12) @IsString({ each: true }) @MaxLength(300, { each: true }) evaluationPriorities?: string[]
+  @IsOptional() @IsIn(['INDIVIDUAL', 'GROUP']) organizationMode?: 'INDIVIDUAL' | 'GROUP'
+  @IsOptional() @IsIn(['inicio', 'desarrollo', 'cierre']) planningMoment?: 'inicio' | 'desarrollo' | 'cierre'
+  @IsOptional() @IsIn(['INDIVIDUAL', 'GROUP']) participationMode?: 'INDIVIDUAL' | 'GROUP'
   @IsOptional() @IsIn(evaluationCatalogCurrent.activityTypes.map(a => a.id)) pedagogicalActivityType?: string
   @IsOptional() @IsIn(['b1', 'b2', 'b3', 'b4']) competencyBlock?: string
   @IsOptional() @IsUUID() curriculumVersionId?: string

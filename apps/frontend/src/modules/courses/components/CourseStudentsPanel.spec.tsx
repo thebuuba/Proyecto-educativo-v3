@@ -101,7 +101,10 @@ describe('CourseStudentsPanel', () => {
       await act(async () => undefined)
       const dialog = screen.getByRole('dialog', { name: 'Agregar estudiantes' })
       if (action === 'Escape') fireEvent.keyDown(dialog, { key: 'Escape' })
-      else if (action === 'Exterior') fireEvent.click(dialog.parentElement!)
+      else if (action === 'Exterior') {
+        fireEvent.pointerDown(dialog.parentElement!)
+        fireEvent.click(dialog.parentElement!)
+      }
       else fireEvent.click(within(dialog).getByRole('button', { name: action }))
       expect(dialog).toBeInTheDocument()
       act(() => vi.advanceTimersByTime(159))

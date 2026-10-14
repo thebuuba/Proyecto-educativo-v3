@@ -3,6 +3,11 @@ import { discipline, resolveScope, type AcademicContext } from './curriculum-con
 import { recommend } from './recommendation-engine'
 
 describe('official secondary subject identities', () => {
+  it.each([['PRI-MAT', 'math'], ['NAT-BIO', 'science'], ['OPT-HCS-SOC-4', 'social'], ['OPT-HLM-ING-4', 'language'],
+    ['ART', 'art'], ['EFI', 'motor'], ['FHR', 'fihr']])('classifies %s using its structured code when the display name is generic', (subjectCode, expected) => {
+    expect(discipline(null, { level: 'SECONDARY', cycle: 2, grade: 4, subjectCode, subjectName: 'Asignatura optativa',
+      modalityCode: 'academic', optativeExitName: null })).toBe(expected)
+  })
   for (const modalityCode of ['technical_professional', 'arts']) {
     for (const grade of [4, 5, 6]) {
       it.each([

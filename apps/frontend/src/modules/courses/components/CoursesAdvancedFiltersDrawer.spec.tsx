@@ -25,6 +25,7 @@ describe('CoursesAdvancedFiltersDrawer', () => {
     render(<CoursesAdvancedFiltersDrawer open filters={{ ...filters, onlyWithTeams: true }} initialFilters={filters}
       levelOptions={[]} cycleOptions={[]} subjectOptions={[]} gradeOptions={[]} sectionOptions={[]}
       resultCount={2} onChange={vi.fn()} onApply={onApply} onReset={vi.fn()} onClose={onClose} />)
+    fireEvent.pointerDown(screen.getByRole('dialog').parentElement!)
     fireEvent.click(screen.getByRole('dialog').parentElement!)
     expect(onClose).toHaveBeenCalledTimes(1)
     expect(onApply).not.toHaveBeenCalled()

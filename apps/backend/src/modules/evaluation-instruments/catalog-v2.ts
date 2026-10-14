@@ -1,4 +1,4 @@
-import { evaluationCatalogV1, type CriterionTemplate, type EvaluationCatalog } from './catalog-v1'
+import { evaluationCatalogV1, type CriterionTemplate, type EvaluationCatalog } from './catalog-original-v1'
 
 const productCriteria: CriterionTemplate[] = [
   { id: 'oral-mastery', title: 'Dominio del tema', observable: 'Explica el tema con autonomía, sin depender de la lectura del material de apoyo.', simple: 'Explica el tema con sus propias palabras.', area: '*', families: ['ORAL'], evidence: ['PERFORMANCE', 'KNOWLEDGE'], purpose: 'Valorar dominio oral', bands: ['PRIMARY_FIRST', 'PRIMARY_SECOND', 'SECONDARY'], keywords: ['dominio', 'sin leer', 'propias palabras'], weight: 4 },

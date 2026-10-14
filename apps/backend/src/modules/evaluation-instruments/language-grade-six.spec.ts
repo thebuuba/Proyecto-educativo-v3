@@ -7,7 +7,6 @@ import fixtures from '../../../../../data/evaluation-instruments/language-grade-
 import subtopics from '../../../../../data/evaluation-instruments/language-grade-six-subtopic-contracts.json'
 import procedures from '../../../../../data/evaluation-instruments/language-grade-six-procedure-contracts.json'
 import {recommend} from './recommendation-engine'
-import {findSecondaryLanguageTopic} from '@aula/shared'
 const context={level:'SECONDARY' as const,grade:6,cycle:2,subjectCode:'LEN',subjectName:'Lengua Española',optativeExitName:null,modalityCode:'academic'}
 describe('Lengua 6: contenido conectado al servicio',()=>{
  for(const [grade,genre] of [[5,'entremés teatral'],[6,'monólogo']] as const)for(const preferredInstrumentType of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)it(`representación observable sin comentario impuesto: ${grade} ${preferredInstrumentType}`,()=>{

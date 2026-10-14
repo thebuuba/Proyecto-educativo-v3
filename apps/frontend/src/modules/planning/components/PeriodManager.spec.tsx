@@ -96,6 +96,7 @@ describe('PeriodManager', () => {
     expect(screen.getByRole('button', { name: 'Cancelar edición' })).toBeDisabled()
     expect(screen.getByRole('button', { name: 'Cerrar' })).toBeDisabled()
     expect(screen.getByLabelText('Nombre')).toBeDisabled()
+    fireEvent.pointerDown(screen.getByRole('dialog').parentElement!)
     fireEvent.click(screen.getByRole('dialog').parentElement!)
     fireEvent.keyDown(screen.getByRole('dialog'), { key: 'Escape' })
     expect(onClose).not.toHaveBeenCalled()

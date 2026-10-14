@@ -17,6 +17,8 @@ import { type AcademicContext, type ScopeCandidate, discipline, normalize } from
 
 export interface RecommendationInput {
   activityTitle: string; description?: string; participationMode: 'INDIVIDUAL' | 'GROUP'
+  evaluationTechnique?: string; evidenceInstructions?: string; resources?: string[]; evaluationPriorities?: string[]
+  organizationMode?: 'INDIVIDUAL' | 'GROUP'; planningMoment?: 'inicio' | 'desarrollo' | 'cierre'
   pedagogicalActivityType?: string; maxScore: number; competencyBlock?: string; levelCount?: 4 | 5
   preferredInstrumentType?: 'rubrica' | 'lista-cotejo' | 'escala' | 'lista-ponderada'
   includeAdditionalCandidates?: boolean
@@ -54,7 +56,15 @@ export function topicTerms(title: string, description = '') {
   return fromDescription.length >= 2 ? fromDescription.slice(0,8)
     : fromTitle.length >= 2 ? fromTitle : [...new Set([...fromTitle, ...fromDescription])].slice(0, 8)
 }
-export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogCurrent, contextualTypes = true) {
+const activityTypeTechniques: Record<string, string> = {
+  DEBATE: 'debate', EXPOSITION: 'exposicion', ORAL_PRESENTATION: 'presentacion', CONCEPT_MAP: 'mapa-conceptual',
+  ESSAY: 'ensayo', PROJECT: 'proyecto', PORTFOLIO: 'portafolio', QUIZ_TEST: 'prueba-escrita',
+  PROBLEM_SOLVING: 'resolucion-problemas', WRITTEN_PRODUCTION: 'analisis-producciones', OBSERVATION: 'observacion-directa',
+  REPORT: 'analisis-producciones', LAB_PRACTICE: 'observacion-sistematica', EXPERIMENT: 'observacion-sistematica',
+}
+export const suggestEvaluationTechnique = (activityType: string) => activityTypeTechniques[activityType] ?? null
+
+export function detectActivityType(title: string, description: string, catalog: EvaluationCatalog = evaluationCatalogCurrent, contextualTypes = true, evaluationTechnique?: string) {
   const contract=resolveEvaluationTask(title,description)
   if(contract.action) return catalog.activityTypes.find(entry=>entry.id===(contract.oral&&contract.product==='ANALYTICAL_TEXT'?'ORAL_PRESENTATION':contract.action))!
   const scientific = scientificTaskType(title, description)
@@ -88,7 +98,9 @@ export function detectActivityType(title: string, description: string, catalog: 
   }
   // The description normally expresses the task the student will perform. The title
   // is supporting context and may only name the topic (for example, "La noticia").
-  return find(withoutResources(description), true) ?? find(title) ?? catalog.activityTypes.find(a => a.id === 'OTHER')!
+  const techniqueType = evaluationTechnique ? Object.entries(activityTypeTechniques).find(([, technique]) => normalize(technique) === normalize(evaluationTechnique))?.[0]
+    ?? (/^observacion(?: directa| sistematica)?$/.test(normalize(evaluationTechnique)) ? 'OBSERVATION' : undefined) : undefined
+  return find(withoutResources(description), true) ?? find(title) ?? catalog.activityTypes.find(a => a.id === techniqueType) ?? catalog.activityTypes.find(a => a.id === 'OTHER')!
 }
 export function rankCurriculum(title: string, description: string, activityType: string, competencyBlock: string | undefined,
   scope: ScopeCandidate | null, elements: RankedElement[], catalog: EvaluationCatalog = evaluationCatalogCurrent) {
@@ -208,20 +220,21 @@ export function suggestedSelections(activityType: string, context: AcademicConte
     MOTOR: 'observacion-directa', PROJECT_BASED: 'proyecto', ARTISTIC: 'analisis-producciones', PRACTICAL: 'observacion-directa',
   }
   return {
-    suggestedEvaluationTechnique: activityType === 'QUIZ_TEST' ? 'prueba-escrita' : techniques[activity.family] ?? 'observacion-directa',
+    suggestedEvaluationTechnique: suggestEvaluationTechnique(activityType) ?? techniques[activity.family] ?? 'observacion-directa',
     suggestedInstrumentType: (context?.level === 'SECONDARY' && context.subjectCode === 'LEN' ? languageInstrumentIntent(description) : undefined) ?? rule.instrument,
   }
 }
 
 export function recommend(input: RecommendationInput, context: AcademicContext | null, scope: ScopeCandidate | null,
   elements: RankedElement[], mappingStatus: string, curriculumStatus: string | null, catalog: EvaluationCatalog = evaluationCatalogCurrent): InstrumentRecommendation {
-  const text = normalize(`${input.activityTitle} ${withoutResources(input.description ?? '')}`)
+  const genericDescription = [withoutResources(input.description ?? ''), input.evidenceInstructions ?? '', ...(input.evaluationPriorities ?? [])].join(' ')
+  const text = normalize(`${input.activityTitle} ${genericDescription} ${(input.resources ?? []).join(' ')}`)
   const explicit = input.pedagogicalActivityType ? catalog.activityTypes.find(a => a.id === input.pedagogicalActivityType) : undefined
   if (input.pedagogicalActivityType && !explicit) throw new Error('Tipo pedagógico desconocido.')
   const englishTask=catalog.englishGradeOneModule?resolveFirstGradeEnglishTask(input.activityTitle,input.description??'',context):null
   const scopedType = englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', context)
   const detectedByCatalog = catalog.activityTypes.find(entry => entry.id === scopedType)
-    ?? detectActivityType(input.activityTitle, input.description ?? '', catalog, false)
+    ?? detectActivityType(input.activityTitle, input.description ?? '', catalog, false, input.evaluationTechnique)
   const detected = detectedByCatalog.id === 'OTHER' && /observ(?:ar|an|aran|arán).*(?:registr|tabla)/.test(text)
     ? catalog.activityTypes.find(entry => entry.id === 'OBSERVATION')! : detectedByCatalog
   const activity = explicit ?? detected
@@ -247,10 +260,12 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const selectedRefs = selected.map(({ element: { normalizedText: _text, ...reference } }) => reference)
   const count = band === 'PRIMARY_FIRST' ? (input.maxScore <= 10 ? 3 : 4) : band === 'PRIMARY_SECOND' ? 5 : activity.family === 'SCIENTIFIC' ? 6 : 5
   const topic = teacherTopic(input.activityTitle,input.description)
-  const dimensions = area === 'science' ? learningDimensions(input.description ?? '', topic) : []
+  const dimensions = area === 'science' ? learningDimensions(genericDescription, topic) : []
   const visualResources = /imagenes|recursos visuales|laminas|diapositivas/.test(text)
   const allCandidates = catalog.criterionTemplates.filter(t => (t.area === area || t.area === '*') && t.bands.includes(band)
-    && (area === '*' || !t.families.length || t.families.includes(activity.family)) && t.evidence.some(e => activity.evidence.includes(e))
+    && (!t.families.length || t.families.includes(activity.family)) && t.evidence.some(e => activity.evidence.includes(e))
+    && (!t.id.startsWith('concept-') || activity.id === 'CONCEPT_MAP')
+    && (!t.id.startsWith('debate-') || activity.id === 'DEBATE')
     && (!t.attitude || attitudeRelevant) && (!t.requires || t.requires.some(word => text.includes(normalize(word)))))
     .map(t => ({ template: t, score: t.weight + (t.area === area && area !== '*' ? 10 : 0)
       + (activity.family === 'ORAL' && ['organization', 'communication'].includes(t.id) ? 17 : 0)
@@ -259,14 +274,23 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       + Math.min(2, selected.reduce((sum, r) => sum + overlap(tokens(t.keywords.join(' ')), r.element.normalizedText), 0)) }))
     .sort((a, b) => b.score - a.score || a.template.id.localeCompare(b.template.id))
   const byId = (id: string) => allCandidates.find(candidate => candidate.template.id === id)
+  const productPriorityIds: Record<string, string[]> = {
+    EXPOSITION: ['science-content', 'oral-mastery', 'organization', 'communication', 'oral-resources', 'oral-responses'],
+    ORAL_PRESENTATION: ['language-content', 'oral-mastery', 'organization', 'communication', 'oral-resources', 'oral-responses'],
+    DEBATE: ['science-content', 'debate-evidence', 'debate-response', 'communication', 'debate-response', 'oral-mastery'],
+    REPORT: ['science-procedure', 'science-data', 'science-interpretation', 'science-conclusion', 'organization', 'language-correctness'],
+    CONCEPT_MAP: ['science-content', 'concept-hierarchy', 'concept-relations', 'organization'],
+    PROJECT: ['project-product', 'project-process', 'organization', 'communication'],
+  }
   const priorityIds = area === 'science' && activity.family === 'ORAL' && dimensions.length
     ? dimensions.length > 1 ? ['science-content', 'science-content', 'science-accuracy', 'organization', visualResources ? 'instructions' : 'communication']
       : ['science-content', 'science-accuracy', 'communication', 'organization', 'instructions']
     : area === 'science' && activity.family === 'OBSERVATIONAL' && dimensions.length > 1
-      ? ['science-content', 'science-content', 'science-data', 'science-accuracy', 'science-interpretation'] : []
+      ? ['science-content', 'science-content', 'science-data', 'science-accuracy', 'science-interpretation'] : productPriorityIds[activity.id] ?? []
   const prioritized = priorityIds.map(byId).filter((candidate): candidate is (typeof allCandidates)[number] => Boolean(candidate))
+  const requestedCount = dimensions.length ? count : Math.min(8, Math.max(count, prioritized.length))
   const candidates = [...prioritized, ...allCandidates.filter(candidate => !prioritized.includes(candidate))]
-    .slice(0, input.includeAdditionalCandidates ? INSTRUMENT_MAX_CRITERIA : count)
+    .slice(0, input.includeAdditionalCandidates ? INSTRUMENT_MAX_CRITERIA : requestedCount)
   const candidateWeights = candidates.map((candidate, index) => priorityIds.length && dimensions.length > 1 && candidates.length === 5
     ? [5, 4, 4, 4, 3][index] : candidate.template.weight)
   const rule = catalog.recommendationRules.filter(r => (!r.families.length || r.families.includes(activity.family)) && (!r.band || r.band === band)
@@ -290,14 +314,28 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     const observable = band === 'PRIMARY_FIRST' ? criterion.simple : criterion.observable
     const dimension = criterion.id === 'science-content' ? dimensions[candidates.slice(0, index).filter(candidate => candidate.template.id === 'science-content').length]
       ?? (topic !== input.activityTitle ? { title: `Comprensión de ${topic}`, observable: `Explica las ideas principales de ${topic}.` } : undefined) : undefined
-    const contextual = dimension?.observable ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? `Utiliza imágenes o recursos visuales para apoyar la explicación de ${topic}.` : null) ?? (criterion.id === 'science-accuracy' && /vocabulario cientifico/.test(text) ? `Emplea vocabulario científico adecuado al explicar ${topic}.` : null) ?? (criterion.id === 'organization' && activity.family === 'ORAL' ? `Organiza y comunica las ideas sobre ${topic} en una secuencia comprensible.` : null) ?? (criterion.id === 'organization' && area === 'science' && ['PROJECT_BASED', 'WRITTEN'].includes(activity.family) && topic !== input.activityTitle ? `Organiza las ideas y evidencias sobre ${topic} en una secuencia comprensible.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-intention' ? `Expresa ${topic} mediante decisiones visuales reconocibles.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-composition' && /pintura/.test(text) ? `Organiza los elementos de la pintura para comunicar ${topic}.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-context' ? `Ubica ${topic} en tiempo, lugar y contexto.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-causes' && /causas|consecuencias/.test(text) ? `Explica causas y consecuencias de ${topic} con evidencia.` : null)
+    const teamOrganization = (input.organizationMode ?? input.participationMode) === 'GROUP'
+    const debateResponseIndex = criterion.id === 'debate-response' ? candidates.slice(0, index).filter(candidate => candidate.template.id === 'debate-response').length : -1
+    const debateContext = activity.id !== 'DEBATE' ? null
+      : criterion.id === 'debate-evidence' ? 'Sustenta su postura con razones, ejemplos o evidencias pertinentes al tema definido por el docente.'
+        : criterion.id === 'debate-response' && debateResponseIndex === 0 ? `Escucha el argumento de ${teamOrganization ? 'otro equipo' : 'otra persona'}, lo contrasta y responde de manera pertinente.`
+          : criterion.id === 'debate-response' ? 'Escucha con respeto, espera su turno y se relaciona con las ideas expresadas por los demás.'
+            : criterion.id === 'communication' ? 'Expresa sus intervenciones con claridad, vocabulario adecuado y una idea comprensible.'
+              : criterion.id === 'oral-mastery' ? `Realiza aportes ${input.participationMode === 'INDIVIDUAL' ? 'individuales' : 'del equipo'} pertinentes al debate sobre ${topic}${teamOrganization && input.participationMode === 'INDIVIDUAL' ? ', aunque el trabajo se organice en equipos' : ''}.` : null
+    const contextual = debateContext ?? dimension?.observable ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? `Utiliza imágenes o recursos visuales para apoyar la explicación de ${topic}.` : null) ?? (criterion.id === 'science-accuracy' && /vocabulario cientifico/.test(text) ? `Emplea vocabulario científico adecuado al explicar ${topic}.` : null) ?? (criterion.id === 'organization' && activity.family === 'ORAL' ? `Organiza y comunica las ideas sobre ${topic} en una secuencia comprensible.` : null) ?? (criterion.id === 'organization' && area === 'science' && ['PROJECT_BASED', 'WRITTEN'].includes(activity.family) && topic !== input.activityTitle ? `Organiza las ideas y evidencias sobre ${topic} en una secuencia comprensible.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-intention' ? `Expresa ${topic} mediante decisiones visuales reconocibles.` : null) ?? (topic !== input.activityTitle && criterion.id === 'art-composition' && /pintura/.test(text) ? `Organiza los elementos de la pintura para comunicar ${topic}.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-context' ? `Ubica ${topic} en tiempo, lugar y contexto.` : null) ?? (topic !== input.activityTitle && criterion.id === 'social-causes' && /causas|consecuencias/.test(text) ? `Explica causas y consecuencias de ${topic} con evidencia.` : null)
     const narrativeStructure=criterion.id==='language-structure'&&activity.id==='WRITTEN_PRODUCTION'&&/\bcuento\b/.test(normalize(input.description||input.activityTitle))
     const description = narrativeStructure ? 'Organiza los acontecimientos del cuento en una secuencia que permite seguir su conflicto y resolución.' : contextual ?? (literal ? literal.element.text : content ? `${observable} Relacionado con ${content.element.text}.` : prudentObservable(criterion.id,observable,topic))
     const sourceType = contextual || content ? 'CONTEXTUALIZED' : literal ? 'CURRICULUM_DERIVED' : 'ACTIVITY_TEMPLATE'
     const sourceReferences = !contextual && reference ? selectedRefs.filter(r => r.elementId === reference.elementId) : []
     const patterns = band === 'PRIMARY_FIRST' ? catalog.descriptorPatterns.simple : catalog.descriptorPatterns.regular
     const patternIndexes = levelCount === 4 ? [0, 1, 3, 4] : [0, 1, 2, 3, 4]
-    const title = dimension?.title ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? 'Uso de recursos de apoyo' : topic && topic !== input.activityTitle && criterion.id === 'science-accuracy' ? `Precisión científica sobre ${topic}` : criterion.id === 'organization' && activity.family === 'ORAL' ? 'Organización y comunicación de la exposición' : criterion.id === 'organization' && area === 'science' && ['PROJECT_BASED', 'WRITTEN'].includes(activity.family) ? `Organización de la evidencia sobre ${topic}` : criterion.id === 'art-intention' && topic !== input.activityTitle ? `Intención expresiva sobre ${topic}` : criterion.id === 'art-composition' && /pintura/.test(text) ? 'Composición de la pintura' : criterion.id === 'social-context' && topic !== input.activityTitle ? `Contexto de ${topic}` : criterion.id === 'social-causes' && /causas|consecuencias/.test(text) ? `Causas y consecuencias de ${topic}` : area === 'language' && criterion.id === 'language-structure' && /cuento/.test(text) ? 'Estructura narrativa del cuento' : criterion.title)
+    const debateTitle = activity.id !== 'DEBATE' ? null
+      : criterion.id === 'debate-evidence' ? 'Argumentación con razones y evidencias'
+        : criterion.id === 'debate-response' && debateResponseIndex === 0 ? `Respuesta a los argumentos ${teamOrganization ? 'del otro equipo' : 'de otra persona'}`
+          : criterion.id === 'debate-response' ? 'Escucha y respeto de los turnos'
+            : criterion.id === 'communication' ? 'Claridad de las intervenciones'
+              : criterion.id === 'oral-mastery' ? input.participationMode === 'INDIVIDUAL' ? 'Aporte individual' : 'Aporte del equipo' : null
+    const title = debateTitle ?? dimension?.title ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? 'Uso de recursos de apoyo' : topic && topic !== input.activityTitle && criterion.id === 'science-accuracy' ? `Precisión científica sobre ${topic}` : criterion.id === 'organization' && activity.family === 'ORAL' ? 'Organización y comunicación de la exposición' : criterion.id === 'organization' && area === 'science' && ['PROJECT_BASED', 'WRITTEN'].includes(activity.family) ? `Organización de la evidencia sobre ${topic}` : criterion.id === 'art-intention' && topic !== input.activityTitle ? `Intención expresiva sobre ${topic}` : criterion.id === 'art-composition' && /pintura/.test(text) ? 'Composición de la pintura' : criterion.id === 'social-context' && topic !== input.activityTitle ? `Contexto de ${topic}` : criterion.id === 'social-causes' && /causas|consecuencias/.test(text) ? `Causas y consecuencias de ${topic}` : area === 'language' && criterion.id === 'language-structure' && /cuento/.test(text) ? 'Estructura narrativa del cuento' : criterion.title)
     const texts = contextual ? contextualDescriptors(description, patternIndexes, title, criterion.id) : patternIndexes.map(i => `${observable} ${patterns[i]}`)
     return { id: `proposal:${catalog.version}:${scope?.id ?? 'fallback'}:${criterion.id}:${index}`, templateId: criterion.id,
       title, description, maxScore: scores[index] / 100, maxScoreUnits: scores[index], relativeWeight: candidateWeights[index], sourceType, sourceReferences,
@@ -307,7 +345,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const firstGenre = context?.level === 'SECONDARY' && context.grade === 1 && spanishLanguage ? firstSecondaryLanguageGenre(input.activityTitle, input.description ?? '') : null
   const newsModule = !contextualTopic && context?.level === 'SECONDARY' && (context.grade === 1 && firstGenre === 'NEWS' && isFirstGradeNewsActivity(activity.id) || context.grade === 2
     && ['NEWSCAST', 'NEWS_ANALYSIS', 'NEWS_COMPARISON', 'NEWS_WRITING', 'REPORT', 'DEBATE', 'RESEARCH'].includes(activity.id))
-    && spanishLanguage && /\bnotici(?:a|as|ero)\b/.test(text)
+    && spanishLanguage && /\bnotici(?:a|as|ero)\b/.test(normalize(`${input.activityTitle} ${withoutResources(input.description ?? '')}`))
   const touristGuideModule = firstGenre === 'TOURIST_GUIDE' && isFirstGradeGuideActivity(activity.id)
   const posterModule = firstGenre === 'POSTER' && isFirstGradePosterActivity(activity.id)
   const readingReportModule = firstGenre === 'READING_REPORT'

@@ -26,8 +26,7 @@
     "supabase:stop": "supabase stop",
     "supabase:keepalive": "node scripts/supabase-keepalive.mjs",
     "catalog:diagnose:development": "pnpm --filter backend build && pnpm --filter @aula/database exec dotenv -e ../../.dev.vars.local -- node ../../apps/backend/dist/scripts/diagnose-evaluation-catalog.js",
-    "catalog:prepare:development": "pnpm --filter backend build && pnpm --filter @aula/database exec dotenv -e ../../.dev.vars.local -- node ../../apps/backend/dist/scripts/install-evaluation-catalog.js",
-    "cloudflare:dev:catalog": "pnpm catalog:prepare:development && node scripts/cloudflare-local.mjs"
+    "catalog:prepare:development": "pnpm --filter backend build && pnpm --filter @aula/database exec dotenv -e ../../.dev.vars.local -- node ../../apps/backend/dist/scripts/install-evaluation-catalog.js"
   },
   "devDependencies": {
     "pdfjs-dist": "^6.1.200",

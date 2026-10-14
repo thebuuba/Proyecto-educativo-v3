@@ -7,7 +7,8 @@ export function assertEvaluationCatalogTarget(expected: string, environment: Nod
   const databaseUrl = new URL(environment.DATABASE_URL ?? 'http://missing')
   const directHostMatches = databaseUrl.hostname === `db.${expected}.supabase.co`
   const poolerUserMatches = databaseUrl.username === `postgres.${expected}` || databaseUrl.username.endsWith(`.${expected}`)
-  if (!directHostMatches && !poolerUserMatches) {
+  const poolerHostMatches = /^[a-z0-9-]+\.pooler\.supabase\.com$/.test(databaseUrl.hostname)
+  if (!directHostMatches && !(poolerHostMatches && poolerUserMatches)) {
     throw new Error(`DATABASE_URL no identifica el proyecto esperado ${expected}; no se realizaron cambios.`)
   }
 }

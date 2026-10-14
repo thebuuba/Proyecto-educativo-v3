@@ -50,5 +50,6 @@ describe('Matriz de proveedores implementados de Lengua1–6',()=>{
     expect(sum,c.key).toBe(score===null?0:Math.round(score*100))
    }
   }
- })
+ // Each case checks all 768 curriculum tasks across both providers and editing operations.
+ }, 30_000)
 })

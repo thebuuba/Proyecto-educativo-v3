@@ -96,6 +96,26 @@ function requiredField(target: ActivityCompletionTarget) {
   )
 }
 
+function instrumentPreparationContext(draft: ActivityDraft, limitForService = false) {
+  const instructions = `${activityDescriptionText(draft.description)} ${draft.evidenceInstructions ?? ''}`
+  const context = {
+    evaluationTechnique: draft.evaluationTechnique || undefined,
+    evidenceInstructions: draft.evidenceInstructions || undefined,
+    resources: draft.resources,
+    evaluationPriorities: draft.observations.trim() ? [draft.observations] : undefined,
+    organizationMode: draft.activityType === 'group' || draft.teamIds.length || /\b(?:en|por)\s+(?:equipos?|grupos?)\b/i.test(instructions) ? 'GROUP' as const : 'INDIVIDUAL' as const,
+    participationMode: draft.activityType === 'group' ? 'GROUP' as const : 'INDIVIDUAL' as const,
+    planningMoment: draft.planningMoment || undefined,
+  }
+  if (!limitForService) return context
+  return { ...context,
+    evaluationTechnique: draft.evaluationTechnique.trim().slice(0, 100) || undefined,
+    evidenceInstructions: draft.evidenceInstructions?.trim().slice(0, 2000) || undefined,
+    resources: draft.resources.slice(0, 20).map(resource => resource.trim().slice(0, 150)),
+    evaluationPriorities: draft.observations.trim() ? [draft.observations.trim().slice(0, 300)] : undefined,
+  }
+}
+
 export function ActivityCreationView(props: {
   instrumentAcademicContext?: InstrumentAcademicContext | null
   firstSecondaryLanguage?: boolean
@@ -145,7 +165,7 @@ export function ActivityCreationView(props: {
   const criterionContext = useRef([sectionSubjectId,academicContext,block.id])
   criterionContext.current = [sectionSubjectId,academicContext,block.id]
   const preparationContext = useRef('')
-  preparationContext.current = JSON.stringify([sectionSubjectId, block.id, activityDraft.draftId, editingActivityId])
+  preparationContext.current = JSON.stringify([sectionSubjectId, academicContext, block.id, activityDraft.draftId, editingActivityId])
   const committedScore = useRef(validActivityScore(activityDraft.maxScore))
   useEffect(() => {
     committedScore.current = validActivityScore(activityDraft.maxScore)
@@ -238,6 +258,7 @@ export function ActivityCreationView(props: {
   const manualPedagogicalType = activityDraft.autoDetectedPedagogicalActivityType
     ? ''
     : activityDraft.pedagogicalActivityType || ''
+  const interpretationContext = JSON.stringify(instrumentPreparationContext(activityDraft))
 
   useEffect(() => {
     if (!sectionSubjectId || !activityDraft.name.trim() || editingActivityId) {
@@ -292,6 +313,8 @@ export function ActivityCreationView(props: {
           onChangeDraftRef.current(next)
         }
       }
+      const requestedFingerprint = preparationFingerprint(latestDraft.current)
+      const requestedContext = preparationContext.current
       interpretActivity(
         {
           sectionSubjectId,
@@ -299,6 +322,7 @@ export function ActivityCreationView(props: {
           description: activityDescriptionText(activityDraft.description),
           pedagogicalActivityType: manualPedagogicalType || undefined,
           competencyBlock: block.id,
+          ...instrumentPreparationContext(latestDraft.current, true),
         },
         abort.signal,
       )
@@ -306,8 +330,8 @@ export function ActivityCreationView(props: {
           if (abort.signal.aborted) return
           const current = latestDraft.current
           if (
-            current.name !== activityDraft.name ||
-            current.description !== activityDraft.description
+            preparationFingerprint(current) !== requestedFingerprint ||
+            preparationContext.current !== requestedContext
           )
             return
           setInterpretation(value)
@@ -382,6 +406,9 @@ export function ActivityCreationView(props: {
     secondSecondaryLanguage,
     contextualLanguageGrade,
     autoDetectionRevision,
+    interpretationContext,
+    academicContext,
+    activityDraft.draftId,
   ])
 
   async function prepare(
@@ -423,7 +450,7 @@ export function ActivityCreationView(props: {
         sectionSubjectId,
         activityTitle: requestedDraft.name,
         description: activityDescriptionText(requestedDraft.description),
-        participationMode: requestedDraft.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
+        ...instrumentPreparationContext(requestedDraft, true),
         pedagogicalActivityType: requestedDraft.autoDetectedPedagogicalActivityType
           ? undefined
           : requestedDraft.pedagogicalActivityType || undefined,
@@ -522,7 +549,7 @@ export function ActivityCreationView(props: {
         !(error instanceof ApiError && error.status >= 400 && error.status < 500) &&
         (!requestedDraft.preparedManuallyEdited || replaceManual)
       ) {
-        if(useEditableTemplate(manualSelections.current.instrument || preferredType ? requestedType : undefined, newGeneration, Boolean(preferredType)))setFallbackNotice(
+        if(applyEditableTemplate(manualSelections.current.instrument || preferredType ? requestedType : undefined, newGeneration, Boolean(preferredType)))setFallbackNotice(
           'El servicio no respondió. Revisa el instrumento alternativo antes de guardar.',
         )
       } else {
@@ -655,7 +682,7 @@ export function ActivityCreationView(props: {
     const current = latestDraft.current
     const signature = criterionRequestSignature(current)
     const type = current.instrumentType as InstrumentRecommendation['instrumentType']
-    let candidates: InstrumentRecommendation['criteria'] = []
+    let candidates: InstrumentRecommendation['criteria']
     let usedAlternative = false
     let catalogVersion: string | undefined
     try {
@@ -665,7 +692,7 @@ export function ActivityCreationView(props: {
         sectionSubjectId: sectionSubjectId!,
         activityTitle: current.name,
         description: activityDescriptionText(current.description),
-        participationMode: current.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
+        ...instrumentPreparationContext(current, true),
         pedagogicalActivityType: current.pedagogicalActivityType || undefined,
         maxScore: 100,
         competencyBlock: block.id,
@@ -689,8 +716,7 @@ export function ActivityCreationView(props: {
         description: activityDescriptionText(current.description),
         maxScore: 100,
         instrumentType: type,
-        participationMode:
-          current.activityType === 'group' ? ('GROUP' as const) : ('INDIVIDUAL' as const),
+        ...instrumentPreparationContext(current),
         activityType: current.pedagogicalActivityType,
         secondaryLanguageGrade: contextualLanguageGrade || undefined,
         academicContext: props.instrumentAcademicContext,
@@ -781,7 +807,7 @@ export function ActivityCreationView(props: {
     void requestAdditionalCriterion(()=>{},identity)
   }
 
-  function useEditableTemplate(
+  function applyEditableTemplate(
     preferredType?: string,
     newGeneration = false,
     manualInstrumentSelection = false,
@@ -790,6 +816,7 @@ export function ActivityCreationView(props: {
     const automatic = !manualSelections.current.instrument
     const defaults = activityDefaultSuggestions(current.name,activityDescriptionText(current.description),props.instrumentAcademicContext,committedScore.current)
     const scopedActivity = contextualLanguageGrade ? detectSecondaryLanguageActivity(current.name,activityDescriptionText(current.description),{level:'SECONDARY',grade:contextualLanguageGrade,subjectCode:'LEN'}) : null
+    const detectedActivity = scopedActivity || defaults?.activityType || current.pedagogicalActivityType
     const instrumentType = (preferredType ||
       (automatic ? automaticInstrumentType(current.autoDetectedPedagogicalActivityType ? scopedActivity || defaults?.activityType || 'OTHER' : current.pedagogicalActivityType || scopedActivity || defaults?.activityType || 'OTHER',props.instrumentAcademicContext,committedScore.current,activityDescriptionText(current.description))
         : failedInstrumentType || current.instrumentType || 'rubrica')) as InstrumentRecommendation['instrumentType']
@@ -804,9 +831,9 @@ export function ActivityCreationView(props: {
       maxScore: score ?? 20,
       instrumentType,
       variation: generation % 2,
-      participationMode: current.activityType === 'group' ? 'GROUP' : 'INDIVIDUAL',
+      ...instrumentPreparationContext(current),
       activityType: current.autoDetectedPedagogicalActivityType
-        ? scopedActivity || defaults?.activityType || current.pedagogicalActivityType || undefined
+        ? detectedActivity === 'OTHER' ? undefined : detectedActivity
         : current.pedagogicalActivityType || scopedActivity || defaults?.activityType || undefined,
       secondaryLanguageGrade: contextualLanguageGrade || undefined,
       academicContext: props.instrumentAcademicContext,
@@ -825,6 +852,7 @@ export function ActivityCreationView(props: {
     const next = {
       ...current,
       instrumentType,
+      pedagogicalActivityType: current.autoDetectedPedagogicalActivityType ? proposal.activityType : current.pedagogicalActivityType,
       instrumentFields: preparedFields,
       instrumentCompleted: true,
       preparedRecommendation: scoreRecommendation(proposal, preparedFields, score),
@@ -1590,7 +1618,7 @@ export function ActivityCreationView(props: {
               return
             }
             if (nextType === '__fallback__') {
-              useEditableTemplate(undefined, true)
+              applyEditableTemplate(undefined, true)
               return
             }
             await prepare(

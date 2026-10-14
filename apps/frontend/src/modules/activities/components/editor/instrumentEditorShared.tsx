@@ -876,7 +876,7 @@ export function rebalanceInstrumentRows(
   type: string,
   maxScore: number,
 ) {
-  let next = { ...fields }
+  const next = { ...fields }
   if (type === 'lista-ponderada') {
     const count = inferInstrumentCount(next, type, 'criterion', 0)
     distributeScoreUnits(

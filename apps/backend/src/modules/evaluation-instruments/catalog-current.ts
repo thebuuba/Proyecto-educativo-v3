@@ -50,9 +50,12 @@ import {englishGradeOneModule} from '@aula/shared'
 import type {ActivityTypeEntry} from './catalog-v1'
 import {secondaryLanguageGradeSixTopics,sixthGradeLanguageFeatures} from '@aula/shared'
 import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula/shared'
+import { productCriterionTemplates } from './catalog-product-criteria'
+import { evaluationCatalogV1 as evaluationCatalogOriginalV1 } from './catalog-original-v1'
+import { evaluationCatalogV2 } from './catalog-v2'
 
 /** New release; previous releases remain unchanged for existing snapshots. */
-export const evaluationCatalogCurrent = {
+export const evaluationCatalogV46 = {
   ...evaluationCatalogV45,
   version: 'evaluation-2026.46',
   criterionCompletionPolicy:'EXPLICIT_MANUAL_ADDITION_EXHAUSTION_NO_BLANK_PROPOSAL_V1',
@@ -90,8 +93,23 @@ export const evaluationCatalogCurrent = {
   secondGradeLanguageFeatures,
   secondGradeLanguagePolicy:'PROCEDURAL_DETAILS_COMPREHENSION_PRODUCTS_AND_FAMILIES_V2',
 }
+/** Recovered generic product criteria are a new release, preserving published snapshots. */
+export const evaluationCatalogCurrent = {
+  ...evaluationCatalogV46,
+  version: 'evaluation-2026.47',
+  activityTypes: evaluationCatalogV46.activityTypes.map(entry => ({
+    ...entry,
+    triggers: entry.id === 'WRITTEN_PRODUCTION' ? [...entry.triggers, 'trabajo escrito', 'redactar']
+      : entry.id === 'PROJECT' ? [...entry.triggers, 'cartel', 'modelo']
+        : entry.id === 'CONCEPT_MAP' ? [...entry.triggers, 'esquema conceptual'] : entry.triggers,
+  })),
+  criterionTemplates: [...evaluationCatalogV46.criterionTemplates, ...productCriterionTemplates],
+}
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogOriginalV1.version)return evaluationCatalogOriginalV1
+  if(version===evaluationCatalogV2.version)return evaluationCatalogV2
+  if(version===evaluationCatalogV46.version)return evaluationCatalogV46
   if(version===evaluationCatalogV45.version)return evaluationCatalogV45
   if(version===evaluationCatalogV44.version)return evaluationCatalogV44
   if(version===evaluationCatalogV43.version)return evaluationCatalogV43

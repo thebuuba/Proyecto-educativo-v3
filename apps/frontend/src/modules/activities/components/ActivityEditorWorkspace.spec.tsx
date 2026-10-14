@@ -209,7 +209,7 @@ describe('independent activity editor', () => {
     })
     render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" />)
     fireEvent.change(screen.getByRole('combobox',{name:'Tipo de actividad'}),{target:{value:'ANALYSIS'}})
-    let dialog=await screen.findByRole('dialog',{name:'Cambiar tipo de actividad'})
+    const dialog=await screen.findByRole('dialog',{name:'Cambiar tipo de actividad'})
     fireEvent.click(within(dialog).getByRole('button',{name:'Adaptar instrumento'}))
     if(failure){
       await within(dialog).findByRole('alert')

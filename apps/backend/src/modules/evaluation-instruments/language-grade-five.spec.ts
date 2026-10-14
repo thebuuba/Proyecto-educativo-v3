@@ -5,7 +5,6 @@ import fixtures from '../../../../../data/evaluation-instruments/language-grade-
 import subtopics from '../../../../../data/evaluation-instruments/language-grade-five-subtopic-contracts.json'
 import procedures from '../../../../../data/evaluation-instruments/language-grade-five-procedure-contracts.json'
 import {recommend} from './recommendation-engine'
-import {findSecondaryLanguageTopic} from '@aula/shared'
 const context={level:'SECONDARY' as const,grade:5,cycle:2,subjectCode:'LEN',subjectName:'Lengua Española',optativeExitName:null,modalityCode:'academic'}
 describe('Lengua 5: contenido conectado al servicio',()=>{
  it('recitación satírica: sentido crítico sin duplicar entonación',()=>{

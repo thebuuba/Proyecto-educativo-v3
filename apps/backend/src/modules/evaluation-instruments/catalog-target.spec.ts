@@ -12,4 +12,9 @@ describe('protección del destino del catálogo evaluativo', () => {
   it('rechaza una DATABASE_URL de otro proyecto aunque SUPABASE_URL sea correcta', () => {
     expect(() => assertEvaluationCatalogTarget(ref, { SUPABASE_URL: `https://${ref}.supabase.co`, DATABASE_URL: 'postgresql://postgres.otroproyecto:secret@aws-0-us-east-1.pooler.supabase.com:6543/postgres' })).toThrow('DATABASE_URL')
   })
+
+  it.each(['attacker.example', 'pooler.supabase.com.attacker.example', 'pooler.supabase.com'])('rechaza el host ajeno %s aunque el usuario identifique el proyecto', host => {
+    expect(() => assertEvaluationCatalogTarget(ref, { SUPABASE_URL: `https://${ref}.supabase.co`,
+      DATABASE_URL: `postgresql://postgres.${ref}:placeholder@${host}:6543/postgres` })).toThrow('DATABASE_URL')
+  })
 })

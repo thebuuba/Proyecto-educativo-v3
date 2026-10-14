@@ -1,5 +1,6 @@
 import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import { ActivityEditorWorkspace } from '@/modules/activities/components/ActivityEditorWorkspace'
+import { ActivityEditorProfile, useActivityEditorProfile } from '@/modules/activities/components/editor/ActivityEditorProfile'
 import { activityToDraft,buildActivityDraftMetas,emptyActivityDraft,formatDraftDate,newActivityDraft,sortDraftMetas,type ActivityDraftMeta,type ActivityDraftsByBlock } from '@/modules/activities/components/editor/editorModel'
 import { ActivityDescriptionContent,activityDescriptionText,activityMomentTitle,blockAccents,blockShortNames,formatActivityDate,getBlockAccent,instrumentTitle,ProgressBar } from '@/modules/activities/components/editor/editorPresentation'
 import { defaultRubricLevelPoints,distributeScore,inferInstrumentCount,inferRubricLevels,instrumentFieldKey,instrumentTypographyClass,rubricDefaultLevelNames,rubricLevelVisual,scaleLevelVisual,scaleTemplateLevels,weightedResponseVisual } from '@/modules/activities/components/editor/instrumentEditorShared'
@@ -85,7 +86,6 @@ formatGrade,
 getRecoveryScores,
 scoreForActivity,
 scoreNeedsPersistence,
-competencyBlocks as secondaryCompetencyBlocks,
 sumActivityMaxScore,
 type CompetencyBlockId,
 type CompetencyPeriodId
@@ -140,9 +140,9 @@ type GradingBookProps = {
   onCreateActivityRequested?: (blockId?: CompetencyBlockId) => void
 }
 
-let competencyBlocks: EvaluationProfile['blocks'] = secondaryCompetencyBlocks
 
-let activeEvaluationProfile: EvaluationProfile = secondaryEvaluationProfile
+
+
 
 type MainView = 'blocks' | 'period' | 'annual' | 'final'
 
@@ -166,7 +166,11 @@ type ActivitySaveCompletion =
   | { kind: 'created'; activity: GradingActivity; updated: boolean }
   | { kind: 'draft'; blockId: CompetencyBlockId; activityName: string }
 
-export function GradingBook({
+export function GradingBook(props: GradingBookProps) {
+  return <ActivityEditorProfile profile={props.evaluationProfile}><GradingBookContent {...props} /></ActivityEditorProfile>
+}
+
+function GradingBookContent({
   instrumentAcademicContext,
   activityDraftContext,
   initialConfigOpen = false,
@@ -203,8 +207,8 @@ export function GradingBook({
   onViewCreatedActivity,
   onCreateActivityRequested,
 }: GradingBookProps) {
-  activeEvaluationProfile = evaluationProfile ?? secondaryEvaluationProfile
-  competencyBlocks = activeEvaluationProfile.blocks
+  const activeEvaluationProfile = evaluationProfile ?? secondaryEvaluationProfile
+  const competencyBlocks = activeEvaluationProfile.blocks
   const initialLaunchKey = initialActivityAction === 'create'
     ? `create:${initialActivityBlockId ?? 'select-block'}`
     : null
@@ -336,7 +340,7 @@ export function GradingBook({
         status,
       }
     }),
-    [activities, config, records, recoveryScores, students],
+    [activities, config, competencyBlocks, records, recoveryScores, students],
   )
   const periodAverage = averageNumbers(
     blockSummaries
@@ -919,7 +923,7 @@ function BlockMatrixView({
   students,
 }: {
   blockSummaries: Array<{
-    block: (typeof competencyBlocks)[number]
+    block: EvaluationProfile['blocks'][number]
     index: number
     activities: GradingActivity[]
     expected: number
@@ -1123,6 +1127,7 @@ function BlockGradeView({
   records: GradeRecordRow[]
   students: StudentGradeRow[]
 }) {
+  const competencyBlocks = useActivityEditorProfile().blocks
   const [activeTab, setActiveTab] = useState<BlockGradeTab>(initialTab)
   const blockTabs = ['matrix', 'activities', 'students', 'stats'] as const
   const block = competencyBlocks.find((item) => item.id === blockId) ?? competencyBlocks[0]
@@ -1608,6 +1613,7 @@ function ActivityDetailView({
   saving: boolean
   students: StudentGradeRow[]
 }) {
+  const competencyBlocks = useActivityEditorProfile().blocks
   const block = competencyBlocks.find((item) => item.id === activity.competencyBlockId) ?? competencyBlocks[0]
   const [tab, setTab] = useState<ActivityDetailTab>(initialTab)
   const [studentIndex, setStudentIndex] = useState(0)
@@ -2161,7 +2167,7 @@ function PeriodSummaryView({
   students,
 }: {
   blockSummaries: Array<{
-    block: (typeof competencyBlocks)[number]
+    block: EvaluationProfile['blocks'][number]
     index: number
     activities: GradingActivity[]
     average: number | null
@@ -2176,6 +2182,8 @@ function PeriodSummaryView({
   recoveryScores: RecoveryScores
   students: StudentGradeRow[]
 }) {
+  const activeEvaluationProfile = useActivityEditorProfile()
+  const competencyBlocks = activeEvaluationProfile.blocks
   const activities = [...new Map(blockSummaries.flatMap((summary) => summary.activities).map((activity) => [activity.id, activity])).values()]
   const rows = buildCompactGradeRows(students, activities, records, activeEvaluationProfile)
   const evaluatedCells = students.reduce((total, student) => total + activities.filter((activity) => scoreForActivity(records, student.enrollmentId, activity.id)).length, 0)
@@ -2277,6 +2285,7 @@ function AnnualComparisonView({
   recordsByPeriod: Map<CompetencyPeriodId, GradeRecordRow[]>
   students: StudentGradeRow[]
 }) {
+  const competencyBlocks = useActivityEditorProfile().blocks
   if (loading) {
     return <div className="flex min-h-[220px] items-center justify-center text-sm font-medium text-muted-foreground">Calculando vista anual...</div>
   }
@@ -2409,6 +2418,7 @@ function AnnualResultView(props: {
   recordsByPeriod: Map<CompetencyPeriodId, GradeRecordRow[]>
   students: StudentGradeRow[]
 }) {
+  const competencyBlocks = useActivityEditorProfile().blocks
   if (props.loading) {
     return <div className="flex min-h-[220px] items-center justify-center text-sm font-medium text-muted-foreground">Calculando resultado anual...</div>
   }
@@ -2542,6 +2552,7 @@ function ActivitiesHubView({
   periodName: string
   periodShortName: string
 }) {
+  const competencyBlocks = useActivityEditorProfile().blocks
   return (
     <section className="space-y-5">
       <header className="flex flex-col gap-3 rounded-2xl bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-5">
@@ -2591,7 +2602,7 @@ function ActivityBlockHubCard({
 }: {
   accent: (typeof blockAccents)[number]
   activities: GradingActivity[]
-  block: (typeof competencyBlocks)[number]
+  block: EvaluationProfile['blocks'][number]
   onSelectBlock: () => void
 }) {
   const plannedPoints = sumActivityMaxScore(activities, block.id)
@@ -2759,6 +2770,7 @@ function ActivityDraftsView({
   periodName: string
   periodShortName: string
 }) {
+  const competencyBlocks = useActivityEditorProfile().blocks
   const [activeBlock, setActiveBlock] = useState<'all' | CompetencyBlockId>(initialBlock)
   const [instrumentFilter, setInstrumentFilter] = useState('all')
   const [periodFilter, setPeriodFilter] = useState('all')

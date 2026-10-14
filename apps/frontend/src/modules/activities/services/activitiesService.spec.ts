@@ -14,8 +14,8 @@ backendRequire('reflect-metadata')
 const ts = backendRequire('typescript')
 // Match CommonJS caching: expanding the catalog must not recompile every shared
 // dependency once per import path (or recurse forever on a circular import).
-const sourceModules=new Map<string,{exports:Record<string,any>}>()
-function sourceModule(file: string): Record<string, any> {
+const sourceModules=new Map<string,{exports:Record<string,unknown>}>()
+function sourceModule(file: string): Record<string, unknown> {
   file=resolve(file)
   const cached=sourceModules.get(file)
   if(cached)return cached.exports

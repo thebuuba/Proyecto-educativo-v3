@@ -24,6 +24,16 @@ function proposal(type: InstrumentRecommendation['instrumentType']): InstrumentR
 }
 
 describe('adaptación del instrumento preparado', () => {
+  it('invalida todo el contexto de evidencia sin regenerar por un cambio de puntuación', () => {
+    const input = { name: 'Actividad', description: 'Consigna', maxScore: '20', activityType: 'individual', instrumentType: 'rubrica',
+      evaluationTechnique: 'debate', evidenceInstructions: 'Argumentar', resources: ['Libro'], observations: 'Priorizar evidencias', planningMoment: 'inicio', teamIds: [] }
+    const fingerprint = preparationFingerprint(input)
+    for (const change of [{ evaluationTechnique: 'presentacion' }, { evidenceInstructions: 'Entregar un mapa conceptual' }, { resources: ['Pizarra'] },
+      { observations: 'Priorizar claridad' }, { planningMoment: 'cierre' }, { teamIds: ['team'] }, { organizationMode: 'GROUP' as const }, { evaluationPriorities: ['Claridad'] }]) {
+      expect(preparationFingerprint({ ...input, ...change })).not.toBe(fingerprint)
+    }
+    expect(preparationFingerprint({ ...input, maxScore: '17.35' })).toBe(fingerprint)
+  })
   for (const type of ['rubrica', 'escala', 'lista-cotejo', 'lista-ponderada'] as const) it(`conserva ${type} y el total exacto`, () => {
     const original = proposal(type)
     const fields = recommendationToFields(original, 'Mi experimento')
@@ -115,6 +125,52 @@ describe('adaptación del instrumento preparado', () => {
     const fallback = editableFallbackRecommendation({ activityTitle: 'Árbol', description: 'Escribirán un poema y distribuirán sus versos formando la silueta de un árbol; pueden usar verso libre.', maxScore: 20, instrumentType: 'escala', participationMode: 'INDIVIDUAL' })
     expect(fallback.criteria.map(item => item.title)).toContain('Tema y figura')
     expect(JSON.stringify(fallback.criteria)).toContain('sin exigir rima')
+  })
+})
+
+describe('plantillas genéricas recuperadas de instrumentos-evaluacion', () => {
+  it.each([
+    ['DEBATE', 'Debatir sobre energías renovables', 'Argumentación con razones y evidencias', 6],
+    ['CONCEPT_MAP', 'Preparar un mapa conceptual de energías renovables', 'Relaciones y palabras enlace', 4],
+    ['REPORT', 'Redactar un informe de la práctica y sus resultados', 'Análisis y conclusión', 4],
+    ['WRITTEN_PRODUCTION', 'Elaborar un trabajo escrito sobre energías renovables', 'Desarrollo y evidencias', 4],
+    ['ESSAY', 'Redactar un ensayo sobre energías renovables', 'Desarrollo y evidencias', 4],
+  ])('detecta %s desde la evidencia y conserva los cuatro formatos', (activityType, evidenceInstructions, criterionTitle, count) => {
+    for (const instrumentType of ['rubrica', 'escala', 'lista-cotejo', 'lista-ponderada'] as const) {
+      const result = editableFallbackRecommendation({ activityTitle: 'Energías renovables', description: 'Aplicar lo aprendido.', evidenceInstructions,
+        instrumentType, participationMode: 'INDIVIDUAL', organizationMode: 'GROUP', resources: ['Diapositivas'], maxScore: 17.35 })
+      expect(result.activityType).toBe(activityType)
+      expect(result.criteria).toHaveLength(count)
+      const expectedTemplate = activityType === 'DEBATE' ? 'debate-argument' : activityType === 'CONCEPT_MAP' ? 'map-relations' : activityType === 'REPORT' ? 'report-analysis' : 'written-evidence'
+      expect(result.criteria.some(criterion => criterion.templateId === expectedTemplate)).toBe(true)
+      if (instrumentType === 'rubrica' || instrumentType === 'lista-ponderada') expect(result.criteria.map(criterion => criterion.title)).toContain(criterionTitle)
+      expect(result.totalScoreUnits).toBe(1735)
+      expect(result.criteria.reduce((sum, criterion) => sum + criterion.maxScoreUnits, 0)).toBe(1735)
+      expect(result.catalogVersion).toBe('editable-fallback-v1')
+      expect(result.internalTrace.mappingStatus).toBe('FALLBACK')
+      expect(JSON.stringify(result.criteria)).not.toMatch(/recursos visuales|diapositivas|otro equipo/i)
+      if (instrumentType === 'rubrica' || instrumentType === 'escala') expect(result.criteria[0].descriptors[0].text).not.toBe(result.criteria[0].descriptors[1].text)
+      expect(alignRecommendationWithFields(result, recommendationToFields(result, 'Energías renovables'), 17.35)?.totalScoreUnits).toBe(1735)
+    }
+  })
+  it('usa la técnica explícita para una consigna genérica y conserva los proveedores de asignatura', () => {
+    const result = editableFallbackRecommendation({ activityTitle: 'Energías renovables', description: 'Aplicar lo aprendido.', evaluationTechnique: 'debate',
+      instrumentType: 'rubrica', participationMode: 'INDIVIDUAL', maxScore: 20 })
+    expect(result.activityType).toBe('DEBATE')
+    expect(result.criteria).toHaveLength(6)
+    const english = editableFallbackRecommendation({ activityTitle: 'Rutina', description: 'Presentarán oralmente en inglés cinco actividades de su rutina diaria en presente simple.',
+      activityType: 'ORAL_PRESENTATION', evaluationTechnique: 'debate', academicContext: { level: 'SECONDARY', grade: 1, subjectCode: 'ING' },
+      instrumentType: 'rubrica', participationMode: 'INDIVIDUAL', maxScore: 20 })
+    expect(english.criteria.some(criterion => criterion.templateId.startsWith('ing-1-'))).toBe(true)
+    expect(english.criteria.some(criterion => criterion.templateId.startsWith('debate-'))).toBe(false)
+  })
+  it('conserva la comparación de células en un debate sin reemplazarlo por una exposición', () => {
+    const result = editableFallbackRecommendation({ activityTitle: 'Células animales y vegetales', description: 'Comparar ambos tipos en un debate.',
+      activityType: 'DEBATE', organizationMode: 'GROUP', instrumentType: 'rubrica', participationMode: 'INDIVIDUAL', maxScore: 20 })
+    expect(result.criteria[0].title).toBe('Comparación científica entre células eucariotas animales y vegetales')
+    expect(result.criteria[0].descriptors[0].text).toContain('Compara con precisión')
+    expect(result.criteria).toHaveLength(6)
+    expect(result.activityType).toBe('DEBATE')
   })
 })
 

@@ -154,8 +154,6 @@ function ScopedEditor(props: ActivityEditorWorkspaceProps) {
         setStorageStatus(stored.ok ? '' : stored.error)
       }
       setSavedActivity(result)
-    } catch (reason) {
-      throw reason
     } finally {
       savingRef.current = false
     }

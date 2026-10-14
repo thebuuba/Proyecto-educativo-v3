@@ -67,7 +67,7 @@ function renderBook(overrides: Partial<ComponentProps<typeof GradingBook>> = {},
     ...overrides,
   }
   const book = <GradingBook {...props} />
-  return render(options?.strict ? <StrictMode>{book}</StrictMode> : book)
+  return { ...render(options?.strict ? <StrictMode>{book}</StrictMode> : book), props }
 }
 
 function seededInstrumentDraft(id: string, type: 'rubrica' | 'lista-cotejo' | 'escala' | 'lista-ponderada' = 'rubrica') {
@@ -86,6 +86,14 @@ function seededInstrumentDraft(id: string, type: 'rubrica' | 'lista-cotejo' | 'e
 }
 
 describe('GradingBook', () => {
+  it('conserva los tres bloques de primaria al interactuar junto a un libro de secundaria', () => {
+    const primary = renderBook({ activities: [] })
+    renderBook({ activities: [] })
+    primary.rerender(<GradingBook {...primary.props} evaluationProfile={primaryEvaluationProfile} />)
+    expect(within(primary.container).queryByText('Bloque 4')).not.toBeInTheDocument()
+    expect(within(primary.container).getByText('Bloque 3')).toBeInTheDocument()
+  })
+
   it('redistributes No aplica exactly and blocks an evaluation with every criterion excluded', async () => {
     const onSaveScore = vi.fn().mockResolvedValue(true)
     const activity: GradingActivity = {id:'na',name:'Lista contextual',competencyBlockId:'b1',maxScore:20,instrumentType:'lista-cotejo',instrumentCriteria:{
@@ -807,13 +815,16 @@ describe('GradingBook', () => {
     const {proposal}=seededInstrumentDraft('complete-obsolete-'+reason)
     let finish!: (value:unknown)=>void
     const delayed=new Promise(resolve=>{finish=resolve})
-    const post=vi.spyOn(api,'post').mockReturnValue(delayed as never)
+    const post=vi.spyOn(api,'post').mockImplementation(async path => path === '/evaluation-instruments/recommend'
+      ? await delayed as never
+      : { suggestedActivityType: 'READING_REPORT_WRITING', activityType: 'READING_REPORT_WRITING', activityTypes: [], curriculumVersionId: null,
+        curriculumScopeId: null, curriculumCandidates: [], curriculumMatch: 'NONE', message: '' } as never)
     const user=userEvent.setup()
     renderBook({sectionSubjectId:'ss-1',initialActivityAction:'create',initialActivityBlockId:'b1',initialActivityDraftId:'complete-obsolete-'+reason})
     fireEvent.change(screen.getByRole('textbox',{name:'Inicial del criterio 1'}),{target:{value:''}})
     await user.click(screen.getAllByRole('button',{name:'Acciones de la fila'})[0])
     await user.click(screen.getByRole('menuitem',{name:'Completar criterio'}))
-    expect(post).toHaveBeenCalledTimes(1)
+    expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')).toHaveLength(1)
     if(reason==='edición') fireEvent.change(screen.getByRole('textbox',{name:'Inicial del criterio 1'}),{target:{value:'Mi descriptor posterior'}})
     else {
       await user.click(screen.getByRole('button',{name:'Completando criterio…'}))

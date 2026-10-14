@@ -85,6 +85,14 @@ export function resolveScope(context: AcademicContext, scopes: ScopeCandidate[],
     : commonComponent ? 'COMMON_ACADEMIC_COMPONENT' : key.source }
 }
 export function discipline(scope: ScopeCandidate | null, context: AcademicContext | null) {
+  const code = context?.subjectCode.trim().toUpperCase().replace(/^PRI-/, '') ?? ''
+  if (/^(SOC|OPT-HCS-SOC)(?:-|$)/.test(code)) return 'social'
+  if (/^(NAT|OPT-CT)(?:-|$)/.test(code)) return 'science'
+  if (/^(MAT|OPT-MT)(?:-|$)/.test(code)) return 'math'
+  if (/^(LEN|ING|FRA|OPT-HLM|OPT-HCS-LEN)(?:-|$)/.test(code)) return 'language'
+  if (code === 'ART') return 'art'
+  if (code === 'EFI') return 'motor'
+  if (code === 'FHR') return 'fihr'
   const name = normalize(scope?.areaName ?? context?.subjectName ?? '')
   if (/social|geografia|ciudadania|filosofia/.test(name)) return 'social'
   if (/ciencias|naturaleza|tierra|universo|quimica|biologia|fisica y computacion/.test(name)) return 'science'

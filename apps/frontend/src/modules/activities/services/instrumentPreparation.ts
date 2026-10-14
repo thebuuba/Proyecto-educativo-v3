@@ -12,6 +12,15 @@ import { firstGradeReadingReportCriteria } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
 import { api } from '@/services/apiClient'
 
+type InstrumentPreparationContext = {
+  evaluationTechnique?: string
+  evidenceInstructions?: string
+  resources?: string[]
+  evaluationPriorities?: string[]
+  organizationMode?: 'INDIVIDUAL' | 'GROUP'
+  planningMoment?: string
+}
+
 export type ActivityInterpretation = {
   suggestedActivityType: string
   suggestedEvaluationTechnique?: string
@@ -25,19 +34,21 @@ export type ActivityInterpretation = {
   message: string
 }
 
-export function interpretActivity(input: { sectionSubjectId: string; activityTitle: string; description?: string; pedagogicalActivityType?: string; competencyBlock?: string }, signal?: AbortSignal) {
+export function interpretActivity(input: InstrumentPreparationContext & { sectionSubjectId: string; activityTitle: string; description?: string; pedagogicalActivityType?: string; competencyBlock?: string; participationMode?: 'INDIVIDUAL' | 'GROUP' }, signal?: AbortSignal) {
   return api.post<ActivityInterpretation>('/evaluation-instruments/interpret', input, { signal })
 }
 
-export function prepareInstrument(input: { sectionSubjectId: string; activityTitle: string; description?: string; participationMode: 'INDIVIDUAL' | 'GROUP'; pedagogicalActivityType?: string; maxScore: number; competencyBlock?: string; curriculumVersionId?: string; preferredInstrumentType?: string; selectedCurriculumElementIds?: string[]; includeAdditionalCandidates?: boolean; levelCount?: 4 | 5 }) {
+export function prepareInstrument(input: InstrumentPreparationContext & { sectionSubjectId: string; activityTitle: string; description?: string; participationMode: 'INDIVIDUAL' | 'GROUP'; pedagogicalActivityType?: string; maxScore: number; competencyBlock?: string; curriculumVersionId?: string; preferredInstrumentType?: string; selectedCurriculumElementIds?: string[]; includeAdditionalCandidates?: boolean; levelCount?: 4 | 5 }) {
   return api.post<InstrumentRecommendation>('/evaluation-instruments/recommend', input)
 }
 
-export function preparationFingerprint(input: { name: string; description: string; maxScore: string; pedagogicalActivityType?: string; activityType: string; instrumentType: string; selectedCurriculumElementIds?: string[] }) {
-  return JSON.stringify([input.name, input.description, input.pedagogicalActivityType, input.activityType, input.instrumentType, input.selectedCurriculumElementIds ?? []])
+export function preparationFingerprint(input: InstrumentPreparationContext & { name: string; description: string; maxScore: string; pedagogicalActivityType?: string; activityType: string; instrumentType: string; selectedCurriculumElementIds?: string[]; observations?: string; teamIds?: string[] }) {
+  return JSON.stringify([input.name, input.description, input.pedagogicalActivityType, input.activityType, input.instrumentType, input.selectedCurriculumElementIds ?? [],
+    input.evaluationTechnique ?? '', input.evidenceInstructions ?? '', input.resources ?? [], input.evaluationPriorities ?? [], input.observations ?? '', input.organizationMode ?? '', input.planningMoment ?? '', input.teamIds ?? []])
 }
 
-export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: number; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
+export function editableFallbackRecommendation(input: InstrumentPreparationContext & { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: number; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
+  if (input.evidenceInstructions?.trim()) input = { ...input, description: [input.description, input.evidenceInstructions].filter(Boolean).join('\n') }
   const english=resolveFirstGradeEnglishTask(input.activityTitle,input.description??'',input.academicContext)
   if(english)return editableAuthoredRecommendation(firstGradeEnglishCriteria(english),input,input.activityType??english.activityType,'ingles-comunicacion-1')
   const resolvedActivity=input.activityType??resolveEvaluationTask(input.activityTitle,input.description??'').action??'OTHER'
@@ -101,6 +112,44 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
   const graphicsRequested = /imagen|im[aá]genes|foto|mapa|gr[aá]fico|dibujo|collage|recurso visual/.test(text)
   const posterTopic = /agua/.test(text) ? 'el cuidado y ahorro del agua' : /convivencia escolar/.test(text) ? 'la convivencia escolar' : /entorno/.test(text) ? 'el cuidado del entorno' : 'el tema indicado'
   const reciting = input.activityType ? input.activityType === 'CALLIGRAM_RECITATION' : /recitar|declamar/.test(text)
+  const normalized = text.normalize('NFD').replace(/\p{M}/gu, '')
+  const cellComparison = /celulas?/.test(normalized) && /animal/.test(normalized) && /vegetal/.test(normalized)
+  const techniqueTypes: Record<string, string> = { debate: 'DEBATE', 'mapa-conceptual': 'CONCEPT_MAP', ensayo: 'ESSAY', 'analisis-producciones': 'WRITTEN_PRODUCTION' }
+  const genericActivity = input.activityType || (/\bdebat\w*\b/.test(normalized) ? 'DEBATE' : /\bmapas? conceptual(?:es)?\b/.test(normalized) ? 'CONCEPT_MAP'
+    : /\binforme|\breporte/.test(normalized) ? 'REPORT' : /\bensayo/.test(normalized) ? 'ESSAY'
+      : /trabajo escrito|produccion escrita|\bredact/.test(normalized) ? 'WRITTEN_PRODUCTION' : techniqueTypes[input.evaluationTechnique ?? ''] || 'OTHER')
+  const definitionsByType: Record<string, Array<{ id: string; title: string; description: string; descriptors: [string, string, string, string] }>> = {
+    DEBATE: [
+      { id: 'debate-content', title: cellComparison ? 'Comparación científica entre células eucariotas animales y vegetales' : 'Dominio del contenido del debate',
+        description: cellComparison ? 'Compara semejanzas y diferencias entre las células eucariotas animales y vegetales con precisión científica.' : 'Utiliza el contenido de la actividad con precisión durante el debate.',
+        descriptors: cellComparison ? ['Compara con precisión varias semejanzas y diferencias y explica su importancia.', 'Compara correctamente las semejanzas y diferencias principales.', 'Menciona algunas diferencias, con omisiones o imprecisiones.', 'No logra establecer una comparación científicamente válida.'] : ['Integra el contenido con precisión y profundidad en sus intervenciones.', 'Utiliza correctamente las ideas principales del contenido.', 'Utiliza parte del contenido con algunas imprecisiones.', 'Sus intervenciones no evidencian comprensión suficiente del contenido.'] },
+      { id: 'debate-argument', title: 'Argumentación con razones y evidencias', description: 'Sustenta sus ideas con razones, ejemplos o evidencias pertinentes.', descriptors: ['Construye argumentos coherentes y los respalda con razones y evidencias pertinentes.', 'Presenta argumentos claros respaldados por al menos una razón o ejemplo pertinente.', 'Expresa una postura, pero ofrece apoyo limitado o poco relacionado.', 'Formula afirmaciones sin razones ni evidencias que las sustenten.'] },
+      { id: 'debate-response', title: 'Respuesta a otros argumentos', description: 'Escucha, contrasta y responde los argumentos presentados por los demás participantes.', descriptors: ['Responde directamente, contrasta ideas y justifica su respuesta con precisión.', 'Responde de manera pertinente a los argumentos principales.', 'Responde parcialmente o se desvía de la idea que debía contrastar.', 'No responde a los argumentos presentados.'] },
+      { id: 'debate-clarity', title: 'Claridad de las intervenciones', description: 'Comunica cada intervención de forma clara, audible y comprensible.', descriptors: ['Interviene con claridad, vocabulario preciso y una secuencia fácil de seguir.', 'Expresa sus ideas de manera clara y mayormente ordenada.', 'Algunas intervenciones resultan confusas o poco audibles.', 'Sus intervenciones no permiten comprender la idea que desea comunicar.'] },
+      { id: 'debate-listening', title: 'Escucha y respeto de los turnos', description: 'Escucha activamente, respeta los turnos y se relaciona con las ideas de los demás.', descriptors: ['Escucha de forma constante, respeta todos los turnos y retoma ideas ajenas de manera constructiva.', 'Escucha y respeta los turnos durante la mayor parte del debate.', 'Interrumpe ocasionalmente o muestra atención irregular.', 'Interrumpe reiteradamente o no atiende las intervenciones de los demás.'] },
+      { id: 'debate-individual', title: 'Aporte individual', description: `Realiza aportes propios y pertinentes${input.organizationMode === 'GROUP' ? ', aunque la actividad se organice en equipos' : ''}.`, descriptors: ['Realiza varios aportes propios, pertinentes y conectados con el desarrollo del debate.', 'Realiza al menos un aporte propio y pertinente.', 'Su aporte es breve, repetitivo o requiere apoyo para relacionarse con el debate.', 'No realiza un aporte individual observable.'] },
+    ],
+    CONCEPT_MAP: [
+      { id: 'map-content', title: 'Selección de conceptos', description: 'Incluye los conceptos esenciales del tema.', descriptors: ['Incluye todos los conceptos esenciales con precisión.', 'Incluye los conceptos principales.', 'Omite varios conceptos importantes.', 'Incluye pocos conceptos o conceptos incorrectos.'] },
+      { id: 'map-hierarchy', title: 'Jerarquía conceptual', description: 'Organiza los conceptos desde los generales hasta los específicos.', descriptors: ['La jerarquía es completa, lógica y consistente.', 'La jerarquía principal es correcta.', 'La jerarquía presenta algunos niveles confusos.', 'No se reconoce una jerarquía conceptual.'] },
+      { id: 'map-relations', title: 'Relaciones y palabras enlace', description: 'Conecta conceptos mediante relaciones correctas y palabras enlace significativas.', descriptors: ['Todas las conexiones expresan relaciones precisas.', 'La mayoría de las conexiones son correctas.', 'Varias conexiones son vagas o incorrectas.', 'Las conexiones no explican relaciones entre conceptos.'] },
+      { id: 'map-readability', title: 'Claridad visual', description: 'Presenta una estructura legible que permite seguir las relaciones.', descriptors: ['La estructura se lee con facilidad y guía claramente el recorrido.', 'La estructura es legible y comprensible.', 'La lectura presenta algunas dificultades.', 'La disposición impide comprender el mapa.'] },
+    ],
+    REPORT: [
+      { id: 'report-purpose', title: 'Propósito y contenido', description: 'Desarrolla el propósito del informe con información pertinente.', descriptors: ['Desarrolla el propósito con información completa y precisa.', 'Desarrolla el propósito con la información principal.', 'Presenta información parcial o algunas imprecisiones.', 'No desarrolla el propósito del informe.'] },
+      { id: 'report-method', title: 'Procedimiento', description: 'Describe el procedimiento realizado de forma ordenada y reproducible.', descriptors: ['Describe todos los pasos con orden y detalle suficiente para reproducirlos.', 'Describe los pasos principales en orden.', 'Omite pasos o presenta un orden confuso.', 'No permite reconocer el procedimiento realizado.'] },
+      { id: 'report-data', title: 'Registro de resultados', description: 'Presenta observaciones o datos de manera clara y fiel.', descriptors: ['Registra datos completos, claros y sin alteraciones.', 'Registra correctamente los resultados principales.', 'El registro es incompleto o poco claro.', 'No presenta resultados utilizables.'] },
+      { id: 'report-analysis', title: 'Análisis y conclusión', description: 'Interpreta los resultados y formula una conclusión coherente.', descriptors: ['Relaciona datos, explicación y conclusión con precisión.', 'Interpreta los resultados y presenta una conclusión coherente.', 'La interpretación o conclusión es parcial.', 'La conclusión no se apoya en los resultados.'] },
+    ],
+    WRITTEN_PRODUCTION: [
+      { id: 'written-content', title: 'Contenido y propósito', description: 'Desarrolla el tema y responde al propósito del trabajo escrito.', descriptors: ['Desarrolla el tema con profundidad, precisión y enfoque sostenido.', 'Desarrolla las ideas principales de acuerdo con el propósito.', 'Desarrolla el tema parcialmente o con algunas imprecisiones.', 'El texto no responde al propósito solicitado.'] },
+      { id: 'written-structure', title: 'Organización del texto', description: 'Organiza el texto con una secuencia y partes reconocibles.', descriptors: ['Organiza las ideas con estructura completa y transiciones claras.', 'Presenta una estructura clara y ordenada.', 'La organización contiene saltos o partes poco desarrolladas.', 'Las ideas aparecen sin una estructura reconocible.'] },
+      { id: 'written-evidence', title: 'Desarrollo y evidencias', description: 'Explica las ideas mediante razones, ejemplos o información pertinente.', descriptors: ['Desarrolla cada idea con razones y ejemplos pertinentes.', 'Apoya las ideas principales con información adecuada.', 'El apoyo es limitado o poco conectado con las ideas.', 'Presenta afirmaciones sin desarrollo.'] },
+      { id: 'written-correctness', title: 'Claridad y corrección', description: 'Utiliza vocabulario adecuado y revisa la escritura.', descriptors: ['Redacta con claridad, vocabulario preciso y corrección consistente.', 'Redacta de forma comprensible con errores menores.', 'Los errores dificultan parcialmente la lectura.', 'Los errores impiden comprender el texto.'] },
+    ],
+  }
+  const generic = !detectiveStory && !calligram && !readingReport && !poster && !touristGuide && !news
+    ? definitionsByType[genericActivity === 'ESSAY' ? 'WRITTEN_PRODUCTION' : genericActivity] : undefined
   const authored = detectiveStory && analyzing ? [
     ['Estructura y trama', 'Interpreta inicio, nudo y desenlace y explica cómo progresa el misterio.'],
     ['Narrador, personajes y ambiente', 'Identifica y relaciona estos elementos en la historia.'],
@@ -250,7 +299,7 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
     ['Secuencia y cohesión', 'Ordena la información y usa conectores de orden y temporales.'],
     ['Lenguaje periodístico', 'Emplea un registro formal y vocabulario preciso.'],
     ['Revisión escrita', 'Revisa puntuación, ortografía y claridad antes de presentar la versión final.'],
-  ] : [
+  ] : generic ? generic.map(({ title, description }) => [title, description]) : [
     ['Dominio del contenido', `Explica con precisión el contenido trabajado en ${input.activityTitle}.`],
     ['Desarrollo de la actividad', 'Realiza la tarea principal solicitada y presenta evidencia observable.'],
     ['Organización', 'Organiza la información o el producto en una secuencia comprensible.'],
@@ -286,15 +335,15 @@ export function editableFallbackRecommendation(input: { activityTitle: string; d
   const criteria = authored.map(([title, description], index) => {
     const maxScoreUnits = base + (index < totalUnits - base * authored.length ? 1 : 0)
     const progression = readingReport ? reportProgressions[title] : undefined
-    return { id: `fallback:${index}`, templateId: 'editable-fallback', title, description, maxScore: maxScoreUnits / 100, maxScoreUnits,
+    return { id: `fallback:${generic?.[index].id ?? index}`, templateId: generic?.[index].id ?? 'editable-fallback', title, description, maxScore: maxScoreUnits / 100, maxScoreUnits,
       sourceType: 'ACTIVITY_TEMPLATE' as const, sourceReferences: [], descriptors: levels.map(level => ({ levelId: level.id,
-        text: level.id === 'L4' ? description : progression ? progression[level.id === 'L3' ? 0 : level.id === 'L2' ? 1 : 2]
+        text: generic ? generic[index].descriptors[4 - Number(level.id.slice(1))] : level.id === 'L4' ? description : progression ? progression[level.id === 'L3' ? 0 : level.id === 'L2' ? 1 : 2]
           : level.id === 'L3' ? input.variation ? `${description} Cumple la mayor parte de lo solicitado; necesita precisar un detalle.` : `${description} Incluye la evidencia principal, con detalles por precisar.`
             : level.id === 'L2' ? input.variation ? `${description} Desarrolla un aspecto reconocible, pero omite otros necesarios.` : `${description} Incluye solo parte de la evidencia o presenta errores que afectan su sentido.`
               : input.variation ? `${description} La evidencia presentada todavía no permite comprobarlo.` : `${description} Aún no aporta evidencia suficiente de este criterio.`,
         scoreUnits: Math.round(maxScoreUnits * level.proportion) })) }
   })
-  return { kind: 'RECOMMENDATION', catalogVersion: 'editable-fallback-v1', instrumentType: input.instrumentType, confidence: 'LOW', activityType: input.activityType ?? 'OTHER', evidenceTypes: ['KNOWLEDGE', 'PERFORMANCE', 'PRODUCT'], participationMode: input.participationMode,
+  return { kind: 'RECOMMENDATION', catalogVersion: 'editable-fallback-v1', instrumentType: input.instrumentType, confidence: 'LOW', activityType: input.activityType || (generic ? genericActivity : 'OTHER'), evidenceTypes: ['KNOWLEDGE', 'PERFORMANCE', 'PRODUCT'], participationMode: input.participationMode,
     curriculumVersionId: null, curriculumScopeId: null, selectedCurriculumElements: [], criteria, levels, totalScore: input.maxScore,
     totalScoreUnits: criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0), scoreUnit: 0.01,
     internalTrace: { mappingStatus: 'FALLBACK', reasons: ['Plantilla editable local basada en la actividad; requiere revisión docente.'], ruleId: 'editable-fallback', activityTypeOrigin: 'DEFAULT', ranking: [], curriculumStatus: null, lowCurriculumConfidence: true, consideredTypes: [] } }

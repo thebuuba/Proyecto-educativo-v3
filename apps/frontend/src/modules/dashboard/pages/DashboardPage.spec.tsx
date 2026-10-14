@@ -147,8 +147,8 @@ describe('DashboardPage', () => {
     expect(screen.queryByRole('link', { name: 'Estudiantes' })).not.toBeInTheDocument()
     await user.click(screen.getByText('Agregar', { selector: 'summary' }))
     expect(screen.queryByRole('button', { name: 'Estudiantes' })).not.toBeInTheDocument()
-    await user.click(screen.getByRole('button', { name: 'Administración escolar' }))
-    expect(screen.getByRole('link', { name: 'Administración escolar' })).toHaveAttribute(
+    await user.click(screen.getByRole('button', { name: 'Configuración' }))
+    expect(screen.getByRole('link', { name: 'Configuración' })).toHaveAttribute(
       'href',
       '/configuracion',
     )
