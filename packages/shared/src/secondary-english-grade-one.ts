@@ -4,6 +4,7 @@ import type {InstrumentAcademicContext} from './secondary-science'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import {requestedEnglishGrammar,englishGrammarCriterion} from './secondary-english-grade-one-grammar'
 import {requestedEnglishLexicon,englishLexicalCriterion} from './secondary-english-grade-one-lexicon'
+import {requestedEnglishStrategies,englishStrategyCriteria} from './secondary-english-grade-one-strategies'
 
 export const englishGradeOneModule={id:'ingles-comunicacion-1',grade:1,subjectCode:'ING',pdfPages:[134,135,136,137,138,139],policy:'COMMUNICATIVE_FUNCTION_MODALITY_V1'}
 
@@ -36,9 +37,12 @@ export function resolveFirstGradeEnglishTask(title:string,description:string,con
  else if(/\b(?:dialog\w*|convers\w*|intercambios? orales?|entrevist\w*|role play)\b/.test(text))mode='interaction'
  else if(/\b(?:escrib\w*|redact\w*|por escrito|writ\w*)\b/.test(text))mode='writing'
  else if(/\b(?:oralmente|oral|present\w*|expon\w*|speak\w*|tell)\b/.test(text))mode='oral'
+ else if(/\b(?:ensay\w*|reproduccion de palabras)\b/.test(text))mode='oral'
+ else if(/\b(?:planific\w*|revis\w* (?:el )?borrador)\b/.test(text))mode='writing'
  else if((grammar.length||lexicon.length)&&/\b(?:identific\w*|analiz\w*|localiz\w*|reconoc\w*)\b/.test(text))mode='reading'
  else if((grammar.length||lexicon.length)&&/\b(?:complet\w*|transform\w*|correg\w*|formul\w*|utiliz\w*)\b/.test(text))mode='writing'
  if(!mode)return null
+ const strategies=requestedEnglishStrategies(text,mode)
  const functions:FunctionId[]=[]
  if(/\b(?:informacion personal|nombre y edad|personal information|name and age)\b/.test(text))functions.push('personal')
  if(/\b(?:invit\w*|invitations?)\b/.test(text))functions.push('invitation')
@@ -52,7 +56,9 @@ export function resolveFirstGradeEnglishTask(title:string,description:string,con
  if(/\b(?:experiencia|experiencias|acontecimientos|experiences)\b/.test(text))functions.push('experience')
  if(/\b(?:opinion|opiniones|opinion[s]?)\b/.test(text))functions.push('opinion')
  if(!functions.length&&/\b(?:describ\w*|descrip\w*|describe)\b/.test(text))functions.push('description')
- return functions.length||grammar.length||lexicon.length?{mode,functions,text,...modes[mode]}:null
+ if(strategies.some(f=>f.id==='cultural-comparison'))for(const id of ['comparison','preferences','weather','description'] as FunctionId[])if(functions.includes(id))functions.splice(functions.indexOf(id),1)
+ if(strategies.some(f=>f.id==='help')&&functions.includes('clarification'))functions.splice(functions.indexOf('clarification'),1)
+ return functions.length||grammar.length||lexicon.length||strategies.length?{mode,functions,text,...modes[mode]}:null
 }
 
 export function firstGradeEnglishSelections(task:EnglishTask,description:string){
@@ -192,9 +198,11 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
  })
  const grammar=requestedEnglishGrammar(text)
  result.push(...grammar.map(f=>englishGrammarCriterion(f,text,mode)))
- const lexicon=requestedEnglishLexicon(text)
+ const strategies=englishStrategyCriteria(text,mode)
+ const lexicon=requestedEnglishLexicon(text).filter(f=>f.id!=='translation'||!strategies.some(s=>s.templateId==='ing-1-strategy-help'))
  result.push(...lexicon.map(f=>englishLexicalCriterion(f,text,mode)))
- if(receptive&&!grammar.length&&!lexicon.length)result.push(row('source','Comprensión sustentada en el mensaje',[
+ result.push(...strategies)
+ if(receptive&&!grammar.length&&!lexicon.length&&!strategies.length)result.push(row('source','Comprensión sustentada en el mensaje',[
   `Responde a lo solicitado apoyándose en palabras o datos presentes en el ${source} en inglés.`,
   `La respuesta corresponde al ${source}; una relación con sus palabras o datos necesita precisión.`,
   'Recupera palabras aisladas, pero deja sin relacionar datos necesarios para responder a lo solicitado.',

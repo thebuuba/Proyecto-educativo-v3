@@ -13639,7 +13639,7 @@
       ],
       "serviceVerification": "LOCAL_AUTHENTICATED_HTTP_PASSED",
       "interfaceVerification": "FOUR_SAVED_REOPENED_EXAMPLES",
-      "pending": "Pendientes estrategias, géneros/productos, modalidades mixtas y composición de consignas extensas. No avanzar a segundo.",
+      "pending": "Pendientes géneros/productos, modalidades mixtas, composición de consignas extensas y revisión final. No avanzar a segundo.",
       "elements": {
         "CONCEPT": [
           {
@@ -16181,7 +16181,7 @@
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
-      "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+      "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON_STRATEGIES",
       "automatedVerification": "PARTIAL_PASSED",
       "manualVerification": "SOURCE_AND_FUNCTIONS_REVIEWED",
       "applicationVerification": "FOUR_LOCAL_UI_FLOWS_PASSED",
@@ -16194,8 +16194,8 @@
           "sourceOrder": 1341000
         }
       ],
-      "report": "ingles-1-lexico.md",
-      "catalogVersion": "evaluation-2026.38"
+      "report": "ingles-1-estrategias.md",
+      "catalogVersion": "evaluation-2026.39"
     },
     {
       "id": "7e4c1236-8f04-5817-b017-a9ace9edff5e",

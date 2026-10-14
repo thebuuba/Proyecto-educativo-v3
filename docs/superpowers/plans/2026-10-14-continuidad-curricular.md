@@ -25,3 +25,5 @@ Bloque .35: conexión inicial de funciones comunicativas de Inglés1.º; fuente1
 Bloque .36:31 estructuras gramaticales conectadas, fuente136–138, cuatro formatos y persistencia. Próximo: vocabulario/expresiones de primero; después estrategias y composición. Ver `ingles-1-gramatica.md`. Primero sigue parcial.
 
 Bloque .37/.38:39 familias léxicas y14 expresivas conectadas. Corregida actualización de puntos al editar porcentajes en InstrumentPreview; cuatro recorridos finales .38 y90 snapshots conservados. Siguiente: estrategias, productos y composición de primero; no avanzar de grado.
+
+Bloque .39:22 estrategias observables conectadas,88 propuestas HTTP y cuatro formatos guardados/reabiertos.94 snapshots intactos. Primero sigue parcial: géneros/productos, modalidades mixtas y composición extensa son el siguiente paso.

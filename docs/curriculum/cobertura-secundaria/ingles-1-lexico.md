@@ -25,7 +25,7 @@ Se conserva el ejemplo previo `5db16629-0558-495a-b385-a411c69efbc1` como reprod
 - [424 propuestas HTTP .37](evidencias/ingles-1-lexico-servicio.json) y [24 propuestas revisadas .38](evidencias/ingles-1-lexico-revision.json), con contexto académico real.
 - Cuatro recorridos finales .38: rúbrica de alimentos20; cotejo de escucha/transporte17.35; escala de frecuencia/agradecimiento20; ponderada de transporte/orientación17.35, editada60/40. Generación, edición, guardado y reapertura autenticados. [Campos capturados](evidencias/ingles-1-lexico-flujo-navegador.json), [instrumentos persistidos](evidencias/ingles-1-lexico-persistencia.json) y [ejemplos completos legibles](ingles-1-lexico-ejemplos.md).
 - Rúbrica por calidad del uso; cotejo para identificación discreta; escala por registro explícito de frecuencia; ponderada por pesos de componentes. Se comprueba la recomendación automática, sin cuotas ni cambio de la elección manual.
--90 snapshots preservados:28 de referencia y62 instrumentos completos. Incluye las cuatro pruebas iniciales .37 y las cuatro revisadas .38; el fallo histórico de pesos está señalado.
+- 90 snapshots preservados:28 de referencia y62 instrumentos completos. Incluye las cuatro pruebas iniciales .37 y las cuatro revisadas .38; el fallo histórico de pesos está señalado.
 
 Catálogo actual `evaluation-2026.38`; `.36` y `.37` archivados sin modificar releases instalados. Rama `amplia-instrumentos-secundaria`, repositorio `thebuuba/Proyecto-educativo-v3`, base ejecutada `85f6149` más cambios registrados como `dirty`. Frontend5173, API3000 y Supabase local54321. Compilaciones backend/frontend y Cloudflare `--dry-run` verificadas antes del commit; ninguna publicación a producción.
 

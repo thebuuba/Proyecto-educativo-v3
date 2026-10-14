@@ -1,5 +1,10 @@
 # Continuación del encargo completo
 
+## Avance vigente: estrategias de Inglés primero
+
+Catálogo local `evaluation-2026.39`; base ejecutada `6ecd73e6d751c6d61cf12bd5135dd9ad73439a37` más cambios del bloque. Conectadas22 familias de estrategias observables;88 propuestas HTTP y cuatro formatos editados, guardados y reabiertos. Se preservan94 snapshots (28 de referencia y66 completos). Backend5.816, frontend10.779; builds verificados. [Informe](ingles-1-estrategias.md). **Primero sigue parcial**. Continuar géneros/productos (PROCEDURE12–15), consignas con acciones mixtas y composición extensa/límite20; revisar entonces fuente completa y pertinencia antes de segundo. No hay bloqueo. Ejecución directa sin subagentes, commits/push autorizados; sin IA, rediseño, producción, reset ni cambio de snapshots históricos.
+
+
 ## Avance vigente: léxico y expresiones de Inglés primero
 
 Catálogo local `evaluation-2026.38`; base de ejecución `85f6149` más cambios del bloque. Conectadas39 familias de vocabulario y14 funciones expresivas;424 propuestas HTTP en .37 y24 revisadas en .38. Cuatro formatos guardados/reabiertos nuevamente en .38, incluido ajuste60/40 que ahora coincide en campos y snapshot. Se preservan90 snapshots (28 de referencia y62 completos); una reproducción anterior de puntos desactualizados queda identificada como fallo histórico. [Informe](ingles-1-lexico.md). **Primero sigue parcial**: continuar estrategias (PROCEDURE16–52), géneros/productos (12–15), acciones mixtas y límite20 antes del cierre. No hay bloqueo externo. Sin subagentes, IA, rediseño, producción, reset ni cambios históricos.
