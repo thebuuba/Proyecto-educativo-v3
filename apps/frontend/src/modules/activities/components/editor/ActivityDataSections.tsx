@@ -205,6 +205,7 @@ export const pedagogicalActivityLabels: Record<string, string> = {
   EXPOSITION: 'Exposición',
   ORAL_PRESENTATION: 'Presentación oral',
   ORAL_INTERACTION: 'Interacción oral',
+  AUDIOVISUAL_PRODUCTION: 'Producción audiovisual',
   LISTENING_COMPREHENSION: 'Comprensión oral',
   READING_COMPREHENSION: 'Comprensión escrita',
   DEBATE: 'Debate',

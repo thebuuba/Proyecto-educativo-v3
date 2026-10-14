@@ -89,7 +89,7 @@ export const englishGradeOneStrategies:Strategy[]=[
   'No aporta una hipótesis relacionada con el paratexto disponible.',
  ]),
  strategy('grapheme-phoneme','grafia y (?:el )?sonido|grafema.*fonema',['reading'],'Correspondencia entre grafía y sonido',[
-  'Relaciona la grafía y sonido de las palabras en inglés solicitadas mediante la identificación acordada.',
+  'Relaciona la grafía y el sonido de las palabras en inglés solicitadas mediante la identificación acordada.',
   'Reconoce las correspondencias principales; una palabra necesita revisión.',
   'Reconoce algunas correspondencias, pero confunde otras palabras solicitadas.',
   'Asocia las grafías con sonidos que corresponden a palabras diferentes.',

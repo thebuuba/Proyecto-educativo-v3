@@ -13,7 +13,7 @@ const grammar:LanguageFeature[]=[
  feature('would','would','would en la invitación','formular o aceptar cortésmente una invitación','la estructura cambia la invitación por una afirmación que no propone ni responde'),
  feature('declining-forms','can t|cannot|have to','can’t o have to según la forma solicitada','expresar imposibilidad u obligación al rechazar una invitación','comunica posibilidad cuando pretende expresar imposibilidad u obligación'),
  feature('there-be','there (?:is|are|be)|there y be','there + be','indicar existencia y cantidad en la descripción de un lugar','confunde la existencia o el número de los elementos descritos'),
- feature('imperative','imperativo|imperative','el imperativo','comunicar la acción solicitada en una instrucción','cambia una instrucción afirmativa por una prohibición o altera la acción solicitada'),
+ feature('imperative','imperativos?|imperatives?','el imperativo','comunicar la acción solicitada en una instrucción','cambia una instrucción afirmativa por una prohibición o altera la acción solicitada'),
  feature('lets','let s','let’s','proponer una actividad compartida mediante una invitación','la expresión deja de proponer una acción compartida al interlocutor'),
  feature('question-tags','question tags?','las question tags','solicitar confirmación de una afirmación mediante una coletilla relacionada','la coletilla no corresponde al sujeto, auxiliar o polaridad de la afirmación'),
  feature('possessive-s','posesivo s|genitivo sajon|possessive s','el posesivo ’s','relacionar una pertenencia con su poseedor','atribuye la pertenencia a un poseedor distinto'),

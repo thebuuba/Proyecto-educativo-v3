@@ -35,6 +35,8 @@ import {evaluationCatalogV35} from './catalog-v35'
 import {evaluationCatalogV36} from './catalog-v36'
 import {evaluationCatalogV37} from './catalog-v37'
 import {evaluationCatalogV38} from './catalog-v38'
+import {evaluationCatalogV39} from './catalog-v39'
+import {englishGradeOneGenres} from '@aula/shared'
 import {englishGradeOneStrategies} from '@aula/shared'
 import {englishGradeOneLexicon} from '@aula/shared'
 import {englishGradeOneGrammar} from '@aula/shared'
@@ -45,8 +47,10 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV38,
-  version: 'evaluation-2026.39',
+  ...evaluationCatalogV39,
+  version: 'evaluation-2026.40',
+  englishGradeOneGenres,
+  englishGradeOneGenrePolicy:'BASIC_GENRE_INFORMATION_WITH_REQUESTED_EVIDENCE_PRIORITY_V1',
   englishGradeOneStrategies,
   englishGradeOneStrategyPolicy:'EXPLICIT_OBSERVABLE_PROCEDURES_WITHOUT_PERSONAL_TRAIT_SCORES_V1',
   englishGradeOneLexicon,
@@ -58,6 +62,7 @@ export const evaluationCatalogCurrent = {
     {id:'ORAL_INTERACTION',family:'ORAL',evidence:['PERFORMANCE','KNOWLEDGE'],triggers:[]},
     {id:'LISTENING_COMPREHENSION',family:'OBSERVATIONAL',evidence:['KNOWLEDGE','PERFORMANCE'],triggers:[]},
     {id:'READING_COMPREHENSION',family:'WRITTEN',evidence:['KNOWLEDGE','PRODUCT'],triggers:[]},
+    {id:'AUDIOVISUAL_PRODUCTION',family:'PROJECT_BASED',evidence:['PRODUCT','KNOWLEDGE'],triggers:[]},
   ] as ActivityTypeEntry[],
   languageCompositionPolicy:'EXPLICIT_EVIDENCE_WITHOUT_DUPLICATE_RHYTHM_OR_PERFORMANCE_ORAL_V1',
   contextualModules:[...secondaryLanguageGradeTwoTopics,...secondaryLanguageGradeThreeTopics,...secondaryLanguageGradeFourTopics,...secondaryLanguageGradeFiveTopics,...secondaryLanguageGradeSixTopics],
@@ -74,6 +79,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV39.version)return evaluationCatalogV39
   if(version===evaluationCatalogV38.version)return evaluationCatalogV38
   if(version===evaluationCatalogV37.version)return evaluationCatalogV37
   if(version===evaluationCatalogV36.version)return evaluationCatalogV36

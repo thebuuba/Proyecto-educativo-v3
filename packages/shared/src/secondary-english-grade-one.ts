@@ -5,6 +5,7 @@ import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import {requestedEnglishGrammar,englishGrammarCriterion} from './secondary-english-grade-one-grammar'
 import {requestedEnglishLexicon,englishLexicalCriterion} from './secondary-english-grade-one-lexicon'
 import {requestedEnglishStrategies,englishStrategyCriteria} from './secondary-english-grade-one-strategies'
+import {requestedEnglishGenres,englishGenreCriteria} from './secondary-english-grade-one-genres'
 
 export const englishGradeOneModule={id:'ingles-comunicacion-1',grade:1,subjectCode:'ING',pdfPages:[134,135,136,137,138,139],policy:'COMMUNICATIVE_FUNCTION_MODALITY_V1'}
 
@@ -14,15 +15,16 @@ export function commonFirstGradeEnglish(context?:InstrumentAcademicContext|null)
  return code==='ING'||(!code&&/^(?:ingles|english)$/.test(affirmativeLanguageTask(context.subjectName??'')))
 }
 
-type Mode='reading'|'listening'|'interaction'|'oral'|'writing'
+type Mode='reading'|'listening'|'interaction'|'oral'|'writing'|'audiovisual'
 type FunctionId='personal'|'invitation'|'routine'|'comparison'|'instructions'|'preferences'|'clarification'|'weather'|'directions'|'experience'|'opinion'|'description'
-export type EnglishTask={mode:Mode; functions:FunctionId[]; text:string; activityType:string; technique:string}
+export type EnglishTask={mode:Mode; functions:FunctionId[]; text:string; evidenceText?:string; activityType:string; technique:string}
 const modes:Record<Mode,{activityType:string;technique:string}>={
  reading:{activityType:'READING_COMPREHENSION',technique:'analisis-producciones'},
  listening:{activityType:'LISTENING_COMPREHENSION',technique:'observacion-sistematica'},
  interaction:{activityType:'ORAL_INTERACTION',technique:'observacion-directa'},
  oral:{activityType:'ORAL_PRESENTATION',technique:'presentacion'},
  writing:{activityType:'WRITTEN_PRODUCTION',technique:'analisis-producciones'},
+ audiovisual:{activityType:'AUDIOVISUAL_PRODUCTION',technique:'analisis-producciones'},
 }
 
 /** Content and action come from the assignment; a decorative heading cannot change them. */
@@ -31,34 +33,40 @@ export function resolveFirstGradeEnglishTask(title:string,description:string,con
  const text=affirmativeLanguageTask(description||title)
  const grammar=requestedEnglishGrammar(text)
  const lexicon=requestedEnglishLexicon(text)
+ const genres=requestedEnglishGenres(text)
  let mode:Mode|undefined
  if(/\b(?:escuch\w*|listen\w*)\b/.test(text))mode='listening'
  else if(/\b(?:leer\w*|leeran|leyendo|lectura|read\w*)\b/.test(text))mode='reading'
+ else if(genres.some(g=>g.id==='audiovisual')&&/\b(?:crea\w*|elabor\w*|produc\w*|graba\w*|present\w*)\b/.test(text))mode='audiovisual'
  else if(/\b(?:dialog\w*|convers\w*|intercambios? orales?|entrevist\w*|role play)\b/.test(text))mode='interaction'
  else if(/\b(?:escrib\w*|redact\w*|por escrito|writ\w*)\b/.test(text))mode='writing'
  else if(/\b(?:oralmente|oral|present\w*|expon\w*|speak\w*|tell)\b/.test(text))mode='oral'
  else if(/\b(?:ensay\w*|reproduccion de palabras)\b/.test(text))mode='oral'
  else if(/\b(?:planific\w*|revis\w* (?:el )?borrador)\b/.test(text))mode='writing'
- else if((grammar.length||lexicon.length)&&/\b(?:identific\w*|analiz\w*|localiz\w*|reconoc\w*)\b/.test(text))mode='reading'
+ else if(genres.length&&/\b(?:elabor\w*|crea\w*|disen\w*|complet\w*)\b/.test(text))mode='writing'
+ else if(genres.length&&/\b(?:canta\w*|recita\w*|interpreta\w*)\b/.test(text))mode='oral'
+ else if((grammar.length||lexicon.length||genres.length)&&/\b(?:identific\w*|analiz\w*|localiz\w*|reconoc\w*)\b/.test(text))mode='reading'
  else if((grammar.length||lexicon.length)&&/\b(?:complet\w*|transform\w*|correg\w*|formul\w*|utiliz\w*)\b/.test(text))mode='writing'
  if(!mode)return null
  const strategies=requestedEnglishStrategies(text,mode)
+ const evidenceText=(mode==='reading'||mode==='listening')?text.match(/\b(?:identific\w*|localiz\w*|reconoc\w*|analiz\w*)\s+(.+)/)?.[1]??text:text
+ const functionText=evidenceText!==text&&(grammar.length||lexicon.length)?evidenceText:text
  const functions:FunctionId[]=[]
- if(/\b(?:informacion personal|nombre y edad|personal information|name and age)\b/.test(text))functions.push('personal')
- if(/\b(?:invit\w*|invitations?)\b/.test(text))functions.push('invitation')
- if(/\b(?:rutina|rutinas|actividades (?:cotidianas|diarias)|routine|daily activities)\b/.test(text))functions.push('routine')
- if(/\b(?:compar(?:a|an|ar|aran|ando|en|e|emos|acion|aciones)|compare|semejanzas|diferencias)\b/.test(text))functions.push('comparison')
- if(/\b(?:recorrid\w*|direcciones|para llegar|directions)\b/.test(text))functions.push('directions')
- else if(/\b(?:instrucciones|indicaciones|recetas?|instructions?|recipe)\b/.test(text))functions.push('instructions')
- if(/\b(?:gustos|preferencias|likes|dislikes|preferences)\b/.test(text))functions.push('preferences')
- if(/\b(?:repeticion|aclaracion|clarification|repeat)\b/.test(text))functions.push('clarification')
- if(/\b(?:clima|pronostico del tiempo|condiciones atmosfericas|weather|forecast)\b/.test(text))functions.push('weather')
- if(/\b(?:experiencia|experiencias|acontecimientos|experiences)\b/.test(text))functions.push('experience')
- if(/\b(?:opinion|opiniones|opinion[s]?)\b/.test(text))functions.push('opinion')
- if(!functions.length&&/\b(?:describ\w*|descrip\w*|describe)\b/.test(text))functions.push('description')
+ if(/\b(?:informacion personal|nombre y edad|personal information|name and age)\b/.test(functionText))functions.push('personal')
+ if(/\b(?:invit\w*|invitations?)\b/.test(functionText))functions.push('invitation')
+ if(/\b(?:rutina|rutinas|actividades (?:cotidianas|diarias)|routine|daily activities)\b/.test(functionText))functions.push('routine')
+ if(/\b(?:compar(?:a|an|ar|aran|ando|en|e|emos|acion|aciones)|compare|semejanzas|diferencias)\b/.test(functionText))functions.push('comparison')
+ if(/\b(?:recorrid\w*|direcciones|para llegar|directions)\b/.test(functionText))functions.push('directions')
+ else if(/\b(?:instrucciones|indicaciones|recetas?|instructions?|recipe)\b/.test(functionText))functions.push('instructions')
+ if(/\b(?:gustos|preferencias|likes|dislikes|preferences)\b/.test(functionText))functions.push('preferences')
+ if(/\b(?:repeticion|aclaracion|clarification|repeat)\b/.test(functionText))functions.push('clarification')
+ if(/\b(?:clima|pronostico del tiempo|condiciones atmosfericas|weather|forecast)\b/.test(functionText))functions.push('weather')
+ if(/\b(?:experiencia|experiencias|acontecimientos|experiences)\b/.test(functionText))functions.push('experience')
+ if(/\b(?:opinion|opiniones|opinion[s]?)\b/.test(functionText))functions.push('opinion')
+ if(!functions.length&&/\b(?:describ\w*|descrip\w*|describe)\b/.test(functionText))functions.push('description')
  if(strategies.some(f=>f.id==='cultural-comparison'))for(const id of ['comparison','preferences','weather','description'] as FunctionId[])if(functions.includes(id))functions.splice(functions.indexOf(id),1)
  if(strategies.some(f=>f.id==='help')&&functions.includes('clarification'))functions.splice(functions.indexOf('clarification'),1)
- return functions.length||grammar.length||lexicon.length||strategies.length?{mode,functions,text,...modes[mode]}:null
+ return functions.length||grammar.length||lexicon.length||strategies.length||genres.length?{mode,functions,text,evidenceText,...modes[mode]}:null
 }
 
 export function firstGradeEnglishSelections(task:EnglishTask,description:string){
@@ -196,27 +204,29 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
    }
   }
  })
- const grammar=requestedEnglishGrammar(text)
- result.push(...grammar.map(f=>englishGrammarCriterion(f,text,mode)))
+ const grammar=requestedEnglishGrammar(task.evidenceText??text)
+ result.push(...grammar.map(f=>englishGrammarCriterion(f,task.evidenceText??text,mode)))
  const strategies=englishStrategyCriteria(text,mode)
- const lexicon=requestedEnglishLexicon(text).filter(f=>f.id!=='translation'||!strategies.some(s=>s.templateId==='ing-1-strategy-help'))
+ const lexicon=requestedEnglishLexicon(task.evidenceText??text).filter(f=>f.id!=='translation'||!strategies.some(s=>s.templateId==='ing-1-strategy-help'))
  result.push(...lexicon.map(f=>englishLexicalCriterion(f,text,mode)))
  result.push(...strategies)
- if(receptive&&!grammar.length&&!lexicon.length&&!strategies.length)result.push(row('source','Comprensión sustentada en el mensaje',[
+ const genres=englishGenreCriteria(text,mode,result)
+ result.push(...genres)
+ if(receptive&&!grammar.length&&!lexicon.length&&!strategies.length&&!genres.length)result.push(row('source','Comprensión sustentada en el mensaje',[
   `Responde a lo solicitado apoyándose en palabras o datos presentes en el ${source} en inglés.`,
   `La respuesta corresponde al ${source}; una relación con sus palabras o datos necesita precisión.`,
   'Recupera palabras aisladas, pero deja sin relacionar datos necesarios para responder a lo solicitado.',
   'La respuesta contradice la información disponible en el mensaje.',
   'No aporta una respuesta relacionada con información reconocible del mensaje.',
  ],3))
- if(mode==='interaction'&&!receptive)result.push(row('interaction','Respuesta al interlocutor',[
+ if(mode==='interaction'&&!receptive&&!genres.some(g=>g.templateId==='ing-1-genre-conversation'))result.push(row('interaction','Respuesta al interlocutor',[
   'Relaciona sus intervenciones breves en inglés con lo dicho por el interlocutor y permite continuar el intercambio, usando aclaraciones cuando las necesita.',
   'Responde al interlocutor de forma pertinente; necesita una aclaración puntual para continuar.',
   'Responde a algunas intervenciones, pero otras quedan sin una respuesta relacionada.',
   'Las respuestas cambian el sentido de lo dicho por el interlocutor e interrumpen el intercambio.',
   'No se aporta una respuesta reconocible a las intervenciones del interlocutor.',
  ],3))
- if(!receptive&&task.functions.length)result.push(mode==='writing'?row('written','Mensaje escrito comprensible',[
+ if(!receptive&&mode!=='audiovisual'&&task.functions.length)result.push(mode==='writing'?row('written','Mensaje escrito comprensible',[
   'Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.',
   'Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.',
   'Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.',

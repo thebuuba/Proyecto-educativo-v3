@@ -209,6 +209,7 @@ export {commonFirstGradeEnglish,resolveFirstGradeEnglishTask,firstGradeEnglishCr
 export {englishGradeOneGrammar} from './secondary-english-grade-one-grammar'
 export {englishGradeOneLexicon} from './secondary-english-grade-one-lexicon'
 export {englishGradeOneStrategies} from './secondary-english-grade-one-strategies'
+export {englishGradeOneGenres} from './secondary-english-grade-one-genres'
 export {firstGradeLanguageCompletionFeatures} from './language-procedure-completion'
 export type EntityStatus = 'active' | 'inactive'
 

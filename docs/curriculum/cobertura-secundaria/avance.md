@@ -1,5 +1,10 @@
 # Avance durable — cobertura secundaria
 
+## Avance vigente: géneros de Inglés primero
+
+Catálogo local `evaluation-2026.40`; base ejecutada `35d2be7f4e4b0ac02f7e6e517ada64bbf9fa4f62` más cambios del bloque. Conectadas29 familias de géneros;188 propuestas HTTP y cuatro formatos editados, guardados y reabiertos. Se preservan98 snapshots (28 de referencia y70 completos). Backend6.205, frontend11.155; builds verificados. [Informe](ingles-1-generos.md). **Primero sigue parcial**. Continuar consignas con acciones mixtas y composición extensa/límite20; revisar entonces fuente completa y pertinencia antes de segundo. No hay bloqueo. Ejecución directa sin subagentes, commits/push autorizados; sin IA, rediseño, producción, reset ni cambio de snapshots históricos.
+
+
 ## Avance vigente: estrategias de Inglés primero
 
 Catálogo local `evaluation-2026.39`; base ejecutada `6ecd73e6d751c6d61cf12bd5135dd9ad73439a37` más cambios del bloque. Conectadas22 familias de estrategias observables;88 propuestas HTTP y cuatro formatos editados, guardados y reabiertos. Se preservan94 snapshots (28 de referencia y66 completos). Backend5.816, frontend10.779; builds verificados. [Informe](ingles-1-estrategias.md). **Primero sigue parcial**. Continuar géneros/productos (PROCEDURE12–15), consignas con acciones mixtas y composición extensa/límite20; revisar entonces fuente completa y pertinencia antes de segundo. No hay bloqueo. Ejecución directa sin subagentes, commits/push autorizados; sin IA, rediseño, producción, reset ni cambio de snapshots históricos.

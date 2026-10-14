@@ -27,3 +27,5 @@ Bloque .36:31 estructuras gramaticales conectadas, fuente136–138, cuatro forma
 Bloque .37/.38:39 familias léxicas y14 expresivas conectadas. Corregida actualización de puntos al editar porcentajes en InstrumentPreview; cuatro recorridos finales .38 y90 snapshots conservados. Siguiente: estrategias, productos y composición de primero; no avanzar de grado.
 
 Bloque .39:22 estrategias observables conectadas,88 propuestas HTTP y cuatro formatos guardados/reabiertos.94 snapshots intactos. Primero sigue parcial: géneros/productos, modalidades mixtas y composición extensa son el siguiente paso.
+
+Bloque .40:22 generos observables conectadas,188 propuestas HTTP y cuatro formatos guardados/reabiertos.98 snapshots intactos. Primero sigue parcial: modalidades mixtas y composición extensa son el siguiente paso.

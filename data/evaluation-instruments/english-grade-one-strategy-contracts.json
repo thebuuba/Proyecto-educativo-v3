@@ -11,7 +11,7 @@
  {"id":"nonverbal-production","description":"Presentarán oralmente en inglés un mensaje utilizando gestos para apoyar lo que comunican.","meaning":"gestos","mode":"ORAL_PRESENTATION"},
  {"id":"reading-purpose","description":"Antes de leer un texto en inglés, establecerán el propósito de la lectura.","meaning":"propósito de lectura","mode":"READING_COMPREHENSION"},
  {"id":"hypothesis","description":"Leerán el título y las imágenes de un texto en inglés y formularán hipótesis de lectura usando los elementos paratextuales.","meaning":"hipótesis","mode":"READING_COMPREHENSION"},
- {"id":"grapheme-phoneme","description":"Leerán palabras en inglés e identificarán la correspondencia entre grafía y sonido.","meaning":"grafía y sonido","mode":"READING_COMPREHENSION"},
+ {"id":"grapheme-phoneme","description":"Leerán palabras en inglés e identificarán la correspondencia entre grafía y sonido.","meaning":"grafía y el sonido","mode":"READING_COMPREHENSION"},
  {"id":"annotation","description":"Leerán un texto en inglés y subrayarán la información relevante para su propósito de lectura.","meaning":"información pertinente","mode":"READING_COMPREHENSION"},
  {"id":"dictionary","description":"Leerán un texto en inglés y consultarán el diccionario para seleccionar el significado pertinente de palabras desconocidas.","meaning":"acepción","mode":"READING_COMPREHENSION"},
  {"id":"text-intention","description":"Leerán un texto en inglés e identificarán la intención comunicativa del texto.","meaning":"intención del texto","mode":"READING_COMPREHENSION"},
