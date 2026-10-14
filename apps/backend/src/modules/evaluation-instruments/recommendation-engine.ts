@@ -1,5 +1,5 @@
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
-import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria} from '@aula/shared'
+import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,languageInstrumentIntent} from '@aula/shared'
 import { newsCriteria } from './authored/language/news-grade-1'
 import { formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
@@ -182,17 +182,17 @@ function contextualDescriptors(observable: string, indexes: number[], title: str
           : `No aporta evidencia suficiente para valorar ${title.toLocaleLowerCase('es-DO')}.`)
 }
 
-export function firstSecondaryLanguageSelections(activityType: string) {
+export function firstSecondaryLanguageSelections(activityType: string, description = '') {
   const activity = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === activityType)
   if (!activity) return null
   const rule = evaluationCatalogCurrent.recommendationRules.filter(entry => (!entry.families.length || entry.families.includes(activity.family))
     && (!entry.band || entry.band === 'SECONDARY') && (!entry.evidence || entry.evidence.every(evidence => activity.evidence.includes(evidence))))
     .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
   const technique = firstSecondaryLanguageTechnique(activityType)
-  return { suggestedEvaluationTechnique: technique, suggestedInstrumentType: rule.instrument }
+  return { suggestedEvaluationTechnique: technique, suggestedInstrumentType: languageInstrumentIntent(description) ?? rule.instrument }
 }
 
-export function suggestedSelections(activityType: string, context: AcademicContext | null) {
+export function suggestedSelections(activityType: string, context: AcademicContext | null, description = '') {
   const activity = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === activityType)
   if (!activity) return null
   const band = context?.level === 'PRIMARY' ? context.cycle === 1 ? 'PRIMARY_FIRST' : 'PRIMARY_SECOND' : 'SECONDARY'
@@ -207,7 +207,7 @@ export function suggestedSelections(activityType: string, context: AcademicConte
   }
   return {
     suggestedEvaluationTechnique: activityType === 'QUIZ_TEST' ? 'prueba-escrita' : techniques[activity.family] ?? 'observacion-directa',
-    suggestedInstrumentType: rule.instrument,
+    suggestedInstrumentType: (context?.level === 'SECONDARY' && context.subjectCode === 'LEN' ? languageInstrumentIntent(description) : undefined) ?? rule.instrument,
   }
 }
 
@@ -264,13 +264,16 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const prioritized = priorityIds.map(byId).filter((candidate): candidate is (typeof allCandidates)[number] => Boolean(candidate))
   const candidates = [...prioritized, ...allCandidates.filter(candidate => !prioritized.includes(candidate))]
     .slice(0, input.includeAdditionalCandidates ? INSTRUMENT_MAX_CRITERIA : count)
-  const scores = distributeScore(input.maxScore, candidates.map((candidate, index) => priorityIds.length && dimensions.length > 1 && candidates.length === 5
-    ? [5, 4, 4, 4, 3][index] : candidate.template.weight))
+  const candidateWeights = candidates.map((candidate, index) => priorityIds.length && dimensions.length > 1 && candidates.length === 5
+    ? [5, 4, 4, 4, 3][index] : candidate.template.weight)
   const rule = catalog.recommendationRules.filter(r => (!r.families.length || r.families.includes(activity.family)) && (!r.band || r.band === band)
     && (!r.maxScore || input.maxScore <= r.maxScore) && (!r.evidence || r.evidence.every(e => activity.evidence.includes(e))))
     .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
   const levelCount = input.levelCount ?? 4
-  const chosenInstrument = input.preferredInstrumentType ?? rule.instrument
+  const instrumentIntent = context?.level === 'SECONDARY' && context.subjectCode === 'LEN' ? languageInstrumentIntent(input.description ?? '') : undefined
+  const chosenInstrument = input.preferredInstrumentType ?? instrumentIntent ?? rule.instrument
+  const scores = distributeScoreUnits(Math.round(input.maxScore * 100), chosenInstrument === 'lista-ponderada'
+    ? distributeScoreUnits(10000, candidateWeights) : candidateWeights)
   const template = catalog.instrumentTemplates.find(t => t.id === chosenInstrument)!
   const levels = template.descriptors ? catalog.descriptorPatterns.scales[levelCount].map((label, index) => ({ id: `L${levelCount - index}`, label, proportion: (levelCount - index - 1) / (levelCount - 1) })) : []
   const genericCriteria: RecommendationCriterion[] = candidates.map(({ template: criterion }, index) => {
@@ -294,7 +297,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     const title = dimension?.title ?? (criterion.id === 'instructions' && visualResources && activity.family === 'ORAL' ? 'Uso de recursos de apoyo' : topic && topic !== input.activityTitle && criterion.id === 'science-accuracy' ? `Precisión científica sobre ${topic}` : criterion.id === 'organization' && activity.family === 'ORAL' ? 'Organización y comunicación de la exposición' : criterion.id === 'organization' && area === 'science' && ['PROJECT_BASED', 'WRITTEN'].includes(activity.family) ? `Organización de la evidencia sobre ${topic}` : criterion.id === 'art-intention' && topic !== input.activityTitle ? `Intención expresiva sobre ${topic}` : criterion.id === 'art-composition' && /pintura/.test(text) ? 'Composición de la pintura' : criterion.id === 'social-context' && topic !== input.activityTitle ? `Contexto de ${topic}` : criterion.id === 'social-causes' && /causas|consecuencias/.test(text) ? `Causas y consecuencias de ${topic}` : area === 'language' && criterion.id === 'language-structure' && /cuento/.test(text) ? 'Estructura narrativa del cuento' : criterion.title)
     const texts = contextual ? contextualDescriptors(description, patternIndexes, title, criterion.id) : patternIndexes.map(i => `${observable} ${patterns[i]}`)
     return { id: `proposal:${catalog.version}:${scope?.id ?? 'fallback'}:${criterion.id}:${index}`, templateId: criterion.id,
-      title, description, maxScore: scores[index] / 100, maxScoreUnits: scores[index], sourceType, sourceReferences,
+      title, description, maxScore: scores[index] / 100, maxScoreUnits: scores[index], relativeWeight: candidateWeights[index], sourceType, sourceReferences,
       descriptors: levels.map((level, i) => ({ levelId: level.id, text: texts[i], scoreUnits: Math.round(scores[index] * level.proportion) })) }
   })
   const spanishLanguage = area === 'language' && context?.subjectCode.toUpperCase() === 'LEN'
@@ -319,9 +322,9 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
             : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : band==='SECONDARY'&&(area==='language'||resolveEvaluationTask('',input.description??'').product) ? actionContentCriteria(activity.id,input.description??'') : []
   const authored: AuthoredCriterion[] = selectedAuthored.filter(item=>!mathTopic || input.includeAdditionalCandidates || !item.templateId.endsWith('-verification')).slice(0, INSTRUMENT_MAX_CRITERIA).map(item => item.progressionLevels
     ? formatAuthoredCriteria([{ ...item, progressionLevels: item.progressionLevels }], chosenInstrument)[0] : item)
-  const authoredScores = authored.length ? scienceTopic || contextualTopic || newsModule
-    ? distributeScoreUnits(Math.round(input.maxScore * 100), authored.map(item => item.weight))
-    : distributeScore(input.maxScore, authored.map(item => item.weight)) : []
+  const authoredWeights = authored.map(item => item.weight)
+  const authoredScores = distributeScoreUnits(Math.round(input.maxScore * 100), chosenInstrument === 'lista-ponderada'
+    ? distributeScoreUnits(10000, authoredWeights) : authoredWeights)
   const authoredPatternIndexes = levelCount === 4 ? [0, 1, 3, 4] : [0, 1, 2, 3, 4]
   const authoredCriteria: RecommendationCriterion[] = authored.map((item, index) => ({
     id: `proposal:${catalog.version}:${scope?.id ?? 'fallback'}:${item.templateId}:${index}`,
@@ -344,7 +347,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     participationMode: input.participationMode, curriculumVersionId: scope?.versionId ?? null, curriculumScopeId: scope?.id ?? null,
     selectedCurriculumElements: selectedRefs, criteria, levels, totalScore: input.maxScore, totalScoreUnits, scoreUnit: 0.01,
     internalTrace: { mappingStatus, reasons: [...(contextualTopic ? [`module=lengua-secundaria-${contextualTopic.grade}-${contextualTopic.id}`] : []), `band=${band}`, `discipline=${area}`, ...(newsModule ? [`module=lengua-secundaria-${context?.grade}-la-noticia`] : []), ...(touristGuideModule ? ['module=lengua-secundaria-1-guia-turistica'] : []), ...(posterModule ? ['module=lengua-secundaria-1-el-afiche'] : []), ...(readingReportModule ? ['module=lengua-secundaria-1-informe-de-lectura'] : []), ...(detectiveModule ? ['module=lengua-secundaria-1-cuento-policiaco'] : []), ...(calligramModule ? ['module=lengua-secundaria-1-caligrama'] : []), 'No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.'],
-      ruleId: input.preferredInstrumentType ? `${rule.id}:TEACHER_OVERRIDE` : rule.id, activityTypeOrigin: explicit ? 'EXPLICIT' : detected.id !== 'OTHER' ? 'DETECTED' : 'DEFAULT',
+      ruleId: input.preferredInstrumentType ? `${rule.id}:TEACHER_OVERRIDE` : instrumentIntent ? `LANGUAGE_TASK_${instrumentIntent}` : rule.id, activityTypeOrigin: explicit ? 'EXPLICIT' : detected.id !== 'OTHER' ? 'DETECTED' : 'DEFAULT',
       ranking: ranking.slice(0, 24).map(r => ({ elementId: r.element.elementId, score: r.score, topicCoverage: r.topicCoverage, reasons: r.reasons })),
       curriculumStatus, lowCurriculumConfidence: confidence === 'LOW', consideredTypes: Object.keys(typeWeights) } }
   if (scienceTopic) result.internalTrace.reasons.push(`module=science-${scienceTopic}-${context?.grade}`)

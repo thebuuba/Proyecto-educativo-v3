@@ -317,9 +317,13 @@ export function draftToActivity(
   if (!locked && validateActivityCompletion(draft).length)
     throw new Error('Completa los campos indicados antes de guardar.')
   const score = Number(draft.maxScore)
-  const snapshot = draft.preparedRecommendation
+  let snapshot = draft.preparedRecommendation
     ? alignRecommendationWithFields(draft.preparedRecommendation, draft.instrumentFields, score)
     : undefined
+  // Keeping an instrument changes the activity metadata, not its criteria or identity.
+  // The persisted proposal and activity must still agree on the explicit selection.
+  if (!locked && snapshot && draft.preparedManuallyEdited && draft.pedagogicalActivityType)
+    snapshot = {...snapshot, activityType: draft.pedagogicalActivityType}
   if (!locked && draft.preparedRecommendation && !snapshot)
     throw new Error('Revisa la definición del instrumento antes de guardar.')
   const metadata = {

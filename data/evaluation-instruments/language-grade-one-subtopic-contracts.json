@@ -1,0 +1,717 @@
+[
+  {
+    "topicId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+    "topic": "La noticia",
+    "source": {
+      "id": "7dca01fd-d231-553b-9761-d0f5b787e0ec",
+      "text": "• Función y estructura",
+      "pdfPage": 69,
+      "printedPage": "68",
+      "sourceOrder": 691001
+    },
+    "description": "Analiza la noticia atendiendo a Función y estructura. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "news-structure"
+  },
+  {
+    "topicId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+    "topic": "La noticia",
+    "source": {
+      "id": "b431e723-effb-567a-925c-593d2467f168",
+      "text": "• Interrogantes",
+      "pdfPage": 69,
+      "printedPage": "68",
+      "sourceOrder": 691002
+    },
+    "description": "Analiza la noticia atendiendo a Interrogantes. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "news-questions"
+  },
+  {
+    "topicId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+    "topic": "La noticia",
+    "source": {
+      "id": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+      "text": "• Elementos que hacen que un\nhecho sea noticia",
+      "pdfPage": 69,
+      "printedPage": "68",
+      "sourceOrder": 691003
+    },
+    "description": "Analiza la noticia atendiendo a Elementos que hacen que un hecho sea noticia. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "news-feature-newsworthiness"
+  },
+  {
+    "topicId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+    "topic": "La noticia",
+    "source": {
+      "id": "fe273448-e4f5-57a6-9e45-de66a5fb0a0e",
+      "text": "• Conectores de orden y\ntemporales",
+      "pdfPage": 69,
+      "printedPage": "68",
+      "sourceOrder": 691004
+    },
+    "description": "Analiza la noticia atendiendo a Conectores de orden y temporales. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "news-feature-connectors"
+  },
+  {
+    "topicId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+    "topic": "La noticia",
+    "source": {
+      "id": "d6c9f468-36c3-5376-99f9-829c06040af0",
+      "text": "• Modo y tiempos verbales",
+      "pdfPage": 69,
+      "printedPage": "68",
+      "sourceOrder": 691005
+    },
+    "description": "Analiza la noticia atendiendo a Modo y tiempos verbales. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "news-feature-indicative"
+  },
+  {
+    "topicId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+    "topic": "La noticia",
+    "source": {
+      "id": "bb6e1a76-f79b-5b08-bea4-035e754cb7fa",
+      "text": "• Sinónimos",
+      "pdfPage": 69,
+      "printedPage": "68",
+      "sourceOrder": 691006
+    },
+    "description": "Analiza la noticia atendiendo a Sinónimos. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "news-feature-synonyms"
+  },
+  {
+    "topicId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+    "topic": "La noticia",
+    "source": {
+      "id": "f0d32dc5-b1ff-56fa-bbda-82c765783714",
+      "text": "• La puntuación",
+      "pdfPage": 69,
+      "printedPage": "68",
+      "sourceOrder": 691007
+    },
+    "description": "Analiza la noticia atendiendo a La puntuación. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "news-feature-punctuation"
+  },
+  {
+    "topicId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+    "topic": "La noticia",
+    "source": {
+      "id": "8b208fc0-808f-5b83-a900-94bcb5196005",
+      "text": "• Siglas, abreviaturas y acrónimos",
+      "pdfPage": 69,
+      "printedPage": "68",
+      "sourceOrder": 691008
+    },
+    "description": "Analiza la noticia atendiendo a Siglas, abreviaturas y acrónimos. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "news-feature-abbreviations"
+  },
+  {
+    "topicId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+    "topic": "La noticia",
+    "source": {
+      "id": "1efbd6db-f7f9-5d1c-9fd4-e28addf19e76",
+      "text": "• Elementos paratextuales",
+      "pdfPage": 69,
+      "printedPage": "68",
+      "sourceOrder": 691009
+    },
+    "description": "Analiza la noticia atendiendo a Elementos paratextuales. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "news-feature-paratext"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "36833dd9-a703-5c75-9d1b-706e3ae74446",
+      "text": "• Estructura",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701001
+    },
+    "description": "Analiza la guía turística atendiendo a Estructura. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-structure"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "f52138d8-da5b-5980-aad8-dde3b57be185",
+      "text": "• Estructura (portada, información,\nimágenes y cierre)",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701002
+    },
+    "description": "Analiza la guía turística atendiendo a Estructura (portada, información, imágenes y cierre). Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-structure"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "0995dbc7-bf72-5a4f-ab32-482ac40adc51",
+      "text": "• Características: apariencia,\nestímulos, atractivos y contenido",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701003
+    },
+    "description": "Analiza la guía turística atendiendo a Características: apariencia, estímulos, atractivos y contenido. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-feature-appearance"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "9ecafda4-b9de-5d4d-a97c-9fbb79c085ea",
+      "text": "• Sustantivos abstractos (alegría,\nlaboriosidad, servicio, etc.)",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701004
+    },
+    "description": "Analiza la guía turística atendiendo a Sustantivos abstractos (alegría, laboriosidad, servicio, etc.). Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-feature-nouns"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "789d33c7-a01b-531d-a640-52806b8cbc1f",
+      "text": "• Sustantivos propios y comunes\nde lugares",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701005
+    },
+    "description": "Analiza la guía turística atendiendo a Sustantivos propios y comunes de lugares. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-feature-nouns"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "d61bd6e7-998d-53a8-8e8f-fb6fc21060d3",
+      "text": "• Adjetivos calificativos y\ndeterminativos",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701006
+    },
+    "description": "Analiza la guía turística atendiendo a Adjetivos calificativos y determinativos. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-feature-adjectives"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "be5cac83-7c27-5e9d-af9e-21df20bd2e8a",
+      "text": "• Vocabulario atractivo y persuasivo",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701007
+    },
+    "description": "Analiza la guía turística atendiendo a Vocabulario atractivo y persuasivo. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-feature-persuasion"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "4eedf9ad-ecbe-5d02-8855-2a02851693a0",
+      "text": "• Verbos en presente de indicativo",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701008
+    },
+    "description": "Analiza la guía turística atendiendo a Verbos en presente de indicativo. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-feature-indicative"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "544ec67d-8607-5a66-b32a-51d8243c26bf",
+      "text": "• Oraciones exclamativas",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701009
+    },
+    "description": "Analiza la guía turística atendiendo a Oraciones exclamativas. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-feature-signs"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "1033a541-12ff-52de-82a1-8b3a9af5b936",
+      "text": "• Oraciones interrogativas",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701010
+    },
+    "description": "Analiza la guía turística atendiendo a Oraciones interrogativas. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-feature-signs"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "10254927-6924-5c89-bd70-e9104fcd5f8b",
+      "text": "• Sintagma nominal (núcleo,\nmodificador directo y\nmodificador indirecto)",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701011
+    },
+    "description": "Analiza la guía turística atendiendo a Sintagma nominal (núcleo, modificador directo y modificador indirecto). Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-feature-noun-group"
+  },
+  {
+    "topicId": "56301465-88e2-54cc-a5db-627c7266844c",
+    "topic": "La guía turística",
+    "source": {
+      "id": "3857d3c9-4854-5405-a086-a63bc8b0c375",
+      "text": "• Información gráfica (mapas,\ngráficos, dibujos, fotografías)",
+      "pdfPage": 70,
+      "printedPage": "69",
+      "sourceOrder": 701012
+    },
+    "description": "Analiza la guía turística atendiendo a Información gráfica (mapas, gráficos, dibujos, fotografías). Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "guide-resources"
+  },
+  {
+    "topicId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+    "topic": "El informe de lectura",
+    "source": {
+      "id": "63c90584-6581-502e-90b9-3cb0240adcfc",
+      "text": "• Función",
+      "pdfPage": 71,
+      "printedPage": "70",
+      "sourceOrder": 711001
+    },
+    "description": "Analiza el informe de lectura atendiendo a Función. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "report-purpose"
+  },
+  {
+    "topicId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+    "topic": "El informe de lectura",
+    "source": {
+      "id": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+      "text": "• Estructura (título del informe,\nintroducción, desarrollo,\nconclusión)",
+      "pdfPage": 71,
+      "printedPage": "70",
+      "sourceOrder": 711002
+    },
+    "description": "Analiza el informe de lectura atendiendo a Estructura (título del informe, introducción, desarrollo, conclusión). Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "report-structure"
+  },
+  {
+    "topicId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+    "topic": "El informe de lectura",
+    "source": {
+      "id": "7c94e4cb-8eac-582a-b2e1-9a65c18fb00e",
+      "text": "• El resumen como estrategia",
+      "pdfPage": 71,
+      "printedPage": "70",
+      "sourceOrder": 711003
+    },
+    "description": "Analiza el informe de lectura atendiendo a El resumen como estrategia. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "report-summary"
+  },
+  {
+    "topicId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+    "topic": "El informe de lectura",
+    "source": {
+      "id": "a9c9954d-d575-5ce8-92a4-df1f518ead70",
+      "text": "• Pasos para realizar un resumen",
+      "pdfPage": 71,
+      "printedPage": "70",
+      "sourceOrder": 711004
+    },
+    "description": "Analiza el informe de lectura atendiendo a Pasos para realizar un resumen. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "report-feature-summary"
+  },
+  {
+    "topicId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+    "topic": "El informe de lectura",
+    "source": {
+      "id": "6a1b5246-0a6d-563c-9a02-3176de6f7503",
+      "text": "• Adjetivos",
+      "pdfPage": 71,
+      "printedPage": "70",
+      "sourceOrder": 711005
+    },
+    "description": "Analiza el informe de lectura atendiendo a Adjetivos. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "report-feature-adjectives"
+  },
+  {
+    "topicId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+    "topic": "El informe de lectura",
+    "source": {
+      "id": "d314711b-b756-57de-9263-b023ff12f4bd",
+      "text": "• Verbos en presente y en pasado\nde indicativo",
+      "pdfPage": 71,
+      "printedPage": "70",
+      "sourceOrder": 711006
+    },
+    "description": "Analiza el informe de lectura atendiendo a Verbos en presente y en pasado de indicativo. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "report-feature-indicative"
+  },
+  {
+    "topicId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+    "topic": "El informe de lectura",
+    "source": {
+      "id": "5a0d128b-afc1-50e0-8e42-804d94f60d56",
+      "text": "• Conectores de ejemplificación",
+      "pdfPage": 71,
+      "printedPage": "70",
+      "sourceOrder": 711007
+    },
+    "description": "Analiza el informe de lectura atendiendo a Conectores de ejemplificación. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "report-feature-exemplification"
+  },
+  {
+    "topicId": "74b33fad-b618-5157-9517-8e0165a2a333",
+    "topic": "El afiche",
+    "source": {
+      "id": "7c083d99-b9e8-57b0-900e-b90436495f69",
+      "text": "• Función y estructura",
+      "pdfPage": 72,
+      "printedPage": "71",
+      "sourceOrder": 721001
+    },
+    "description": "Analiza el afiche atendiendo a Función y estructura. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "poster-purpose"
+  },
+  {
+    "topicId": "74b33fad-b618-5157-9517-8e0165a2a333",
+    "topic": "El afiche",
+    "source": {
+      "id": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
+      "text": "• El afiche como texto\nargumentativo",
+      "pdfPage": 72,
+      "printedPage": "71",
+      "sourceOrder": 721002
+    },
+    "description": "Analiza el afiche atendiendo a El afiche como texto argumentativo. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "poster-persuasion"
+  },
+  {
+    "topicId": "74b33fad-b618-5157-9517-8e0165a2a333",
+    "topic": "El afiche",
+    "source": {
+      "id": "be45d0d1-666b-5016-8d34-1a0ee7ac83d8",
+      "text": "• Situación comunicativa",
+      "pdfPage": 72,
+      "printedPage": "71",
+      "sourceOrder": 721003
+    },
+    "description": "Analiza el afiche atendiendo a Situación comunicativa. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "poster-purpose"
+  },
+  {
+    "topicId": "74b33fad-b618-5157-9517-8e0165a2a333",
+    "topic": "El afiche",
+    "source": {
+      "id": "be5d26d3-0d77-543c-9a87-146c7d275731",
+      "text": "• Recursos poéticos: metáforas,\npleonasmos, elipsis, exageración",
+      "pdfPage": 72,
+      "printedPage": "71",
+      "sourceOrder": 721004
+    },
+    "description": "Analiza el afiche atendiendo a Recursos poéticos: metáforas, pleonasmos, elipsis, exageración. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "poster-feature-literary"
+  },
+  {
+    "topicId": "74b33fad-b618-5157-9517-8e0165a2a333",
+    "topic": "El afiche",
+    "source": {
+      "id": "86345894-03da-5e9a-98b0-b01b34c31230",
+      "text": "• Argumentos para convencer",
+      "pdfPage": 72,
+      "printedPage": "71",
+      "sourceOrder": 721005
+    },
+    "description": "Analiza el afiche atendiendo a Argumentos para convencer. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "poster-persuasion"
+  },
+  {
+    "topicId": "74b33fad-b618-5157-9517-8e0165a2a333",
+    "topic": "El afiche",
+    "source": {
+      "id": "816526f4-7335-5287-b520-4e2f732a853d",
+      "text": "• El imperativo",
+      "pdfPage": 72,
+      "printedPage": "71",
+      "sourceOrder": 721006
+    },
+    "description": "Analiza el afiche atendiendo a El imperativo. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "poster-feature-imperative"
+  },
+  {
+    "topicId": "74b33fad-b618-5157-9517-8e0165a2a333",
+    "topic": "El afiche",
+    "source": {
+      "id": "cab080c8-d150-5a3f-8ffe-5e2dcb7549c2",
+      "text": "• Lo connotativo expresivo",
+      "pdfPage": 72,
+      "printedPage": "71",
+      "sourceOrder": 721007
+    },
+    "description": "Analiza el afiche atendiendo a Lo connotativo expresivo. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "poster-feature-connotation"
+  },
+  {
+    "topicId": "74b33fad-b618-5157-9517-8e0165a2a333",
+    "topic": "El afiche",
+    "source": {
+      "id": "c1a153a4-c3c1-55c6-bdbc-0305a189a73d",
+      "text": "• Palabras y frases de prevención\no alerta",
+      "pdfPage": 72,
+      "printedPage": "71",
+      "sourceOrder": 721008
+    },
+    "description": "Analiza el afiche atendiendo a Palabras y frases de prevención o alerta. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "poster-feature-prevention"
+  },
+  {
+    "topicId": "74b33fad-b618-5157-9517-8e0165a2a333",
+    "topic": "El afiche",
+    "source": {
+      "id": "9cd28a86-f862-58f7-a043-ce0cbab94c9f",
+      "text": "• Verbos y perífrasis de obligación\no posibilidad",
+      "pdfPage": 72,
+      "printedPage": "71",
+      "sourceOrder": 721009
+    },
+    "description": "Analiza el afiche atendiendo a Verbos y perífrasis de obligación o posibilidad. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "poster-feature-periphrasis"
+  },
+  {
+    "topicId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+    "topic": "El cuento policíaco y detectivesco",
+    "source": {
+      "id": "96838d33-443f-5312-a5dd-9bca788d97c2",
+      "text": "• Función y estructura",
+      "pdfPage": 73,
+      "printedPage": "72",
+      "sourceOrder": 731001
+    },
+    "description": "Analiza el cuento policíaco y detectivesco atendiendo a Función y estructura. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "detective-structure"
+  },
+  {
+    "topicId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+    "topic": "El cuento policíaco y detectivesco",
+    "source": {
+      "id": "f229145b-f27a-52ef-857c-5dc2edb2cf69",
+      "text": "• Características: el ambiente, la\ntrama y los personajes",
+      "pdfPage": 73,
+      "printedPage": "72",
+      "sourceOrder": 731002
+    },
+    "description": "Analiza el cuento policíaco y detectivesco atendiendo a Características: el ambiente, la trama y los personajes. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "detective-characters"
+  },
+  {
+    "topicId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+    "topic": "El cuento policíaco y detectivesco",
+    "source": {
+      "id": "9bd89592-7605-5046-8265-d6890433ef33",
+      "text": "• El narrador",
+      "pdfPage": 73,
+      "printedPage": "72",
+      "sourceOrder": 731003
+    },
+    "description": "Analiza el cuento policíaco y detectivesco atendiendo a El narrador. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "detective-narrator"
+  },
+  {
+    "topicId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+    "topic": "El cuento policíaco y detectivesco",
+    "source": {
+      "id": "9f64310c-c947-5136-b052-391410785bb2",
+      "text": "• Recursos lingüísticos y literarios",
+      "pdfPage": 73,
+      "printedPage": "72",
+      "sourceOrder": 731004
+    },
+    "description": "Analiza el cuento policíaco y detectivesco atendiendo a Recursos lingüísticos y literarios. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "detective-resources"
+  },
+  {
+    "topicId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+    "topic": "El cuento policíaco y detectivesco",
+    "source": {
+      "id": "a655b161-ab61-595f-bffe-c55d0d2e5c85",
+      "text": "• Los actantes",
+      "pdfPage": 73,
+      "printedPage": "72",
+      "sourceOrder": 731005
+    },
+    "description": "Analiza el cuento policíaco y detectivesco atendiendo a Los actantes. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "detective-feature-actants"
+  },
+  {
+    "topicId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+    "topic": "El cuento policíaco y detectivesco",
+    "source": {
+      "id": "36e9c144-6d5f-57a3-94e2-3a4c96773976",
+      "text": "• Verbo en pretérito indefinido\ny en pretérito imperfecto del\nindicativo",
+      "pdfPage": 73,
+      "printedPage": "72",
+      "sourceOrder": 731006
+    },
+    "description": "Analiza el cuento policíaco y detectivesco atendiendo a Verbo en pretérito indefinido y en pretérito imperfecto del indicativo. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "detective-feature-indicative"
+  },
+  {
+    "topicId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+    "topic": "El cuento policíaco y detectivesco",
+    "source": {
+      "id": "79ca1110-b6a6-5cae-9e66-eec9e8fe18b2",
+      "text": "• Adverbios de tiempo y espacio",
+      "pdfPage": 73,
+      "printedPage": "72",
+      "sourceOrder": 731007
+    },
+    "description": "Analiza el cuento policíaco y detectivesco atendiendo a Adverbios de tiempo y espacio. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "detective-feature-adverbs"
+  },
+  {
+    "topicId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+    "topic": "El cuento policíaco y detectivesco",
+    "source": {
+      "id": "50810071-d964-5722-ae8b-296148af63c6",
+      "text": "• Adjetivos",
+      "pdfPage": 73,
+      "printedPage": "72",
+      "sourceOrder": 731008
+    },
+    "description": "Analiza el cuento policíaco y detectivesco atendiendo a Adjetivos. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "detective-feature-adjectives"
+  },
+  {
+    "topicId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+    "topic": "El cuento policíaco y detectivesco",
+    "source": {
+      "id": "550e059b-4981-56f9-8869-97ffa30fc185",
+      "text": "• Conectores, coordinantes y de\nconsecuencia",
+      "pdfPage": 73,
+      "printedPage": "72",
+      "sourceOrder": 731009
+    },
+    "description": "Analiza el cuento policíaco y detectivesco atendiendo a Conectores, coordinantes y de consecuencia. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "detective-feature-connectors"
+  },
+  {
+    "topicId": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
+    "topic": "El caligrama",
+    "source": {
+      "id": "ec9ca380-06c8-5b66-92cf-8f24eb0f6225",
+      "text": "• Función y estructura",
+      "pdfPage": 74,
+      "printedPage": "73",
+      "sourceOrder": 741001
+    },
+    "description": "Analiza el caligrama atendiendo a Función y estructura. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "calligram-relation"
+  },
+  {
+    "topicId": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
+    "topic": "El caligrama",
+    "source": {
+      "id": "5149b76d-b17d-5c9d-a0ec-80ed97965303",
+      "text": "• La tipografía, caligrafía",
+      "pdfPage": 74,
+      "printedPage": "73",
+      "sourceOrder": 741002
+    },
+    "description": "Analiza el caligrama atendiendo a La tipografía, caligrafía. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "calligram-feature-typography"
+  },
+  {
+    "topicId": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
+    "topic": "El caligrama",
+    "source": {
+      "id": "2fb5fb3a-4bd1-5b47-a4cf-a43f348646c2",
+      "text": "• Imagen visual",
+      "pdfPage": 74,
+      "printedPage": "73",
+      "sourceOrder": 741003
+    },
+    "description": "Analiza el caligrama atendiendo a Imagen visual. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "calligram-relation"
+  },
+  {
+    "topicId": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
+    "topic": "El caligrama",
+    "source": {
+      "id": "6d17c841-b0de-594e-bb70-3501e6519b11",
+      "text": "• El tema del poema",
+      "pdfPage": 74,
+      "printedPage": "73",
+      "sourceOrder": 741004
+    },
+    "description": "Analiza el caligrama atendiendo a El tema del poema. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "calligram-intention"
+  },
+  {
+    "topicId": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
+    "topic": "El caligrama",
+    "source": {
+      "id": "bad379b8-8d00-56ec-b5e1-f436557d29fc",
+      "text": "• El verso libre",
+      "pdfPage": 74,
+      "printedPage": "73",
+      "sourceOrder": 741005
+    },
+    "description": "Analiza el caligrama atendiendo a El verso libre. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "calligram-feature-free-verse"
+  },
+  {
+    "topicId": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
+    "topic": "El caligrama",
+    "source": {
+      "id": "e6b7ec90-65cb-5c4a-b217-36cd77a2c671",
+      "text": "• Figuras literarias: epíteto, anáfora,\ncomparación, personificación y\nmetáfora",
+      "pdfPage": 74,
+      "printedPage": "73",
+      "sourceOrder": 741006
+    },
+    "description": "Analiza el caligrama atendiendo a Figuras literarias: epíteto, anáfora, comparación, personificación y metáfora. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "calligram-feature-literary"
+  },
+  {
+    "topicId": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
+    "topic": "El caligrama",
+    "source": {
+      "id": "b70e0e8e-1735-57d1-b621-9a25d73de62c",
+      "text": "• Sustantivos",
+      "pdfPage": 74,
+      "printedPage": "73",
+      "sourceOrder": 741007
+    },
+    "description": "Analiza el caligrama atendiendo a Sustantivos. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "calligram-feature-nouns"
+  },
+  {
+    "topicId": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
+    "topic": "El caligrama",
+    "source": {
+      "id": "1bd75c21-a659-5124-903b-02925b284b13",
+      "text": "• Adjetivos",
+      "pdfPage": 74,
+      "printedPage": "73",
+      "sourceOrder": 741008
+    },
+    "description": "Analiza el caligrama atendiendo a Adjetivos. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "calligram-feature-adjectives"
+  },
+  {
+    "topicId": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
+    "topic": "El caligrama",
+    "source": {
+      "id": "2a40f2dc-1306-5bc9-ae93-cf353fc3283c",
+      "text": "• Descripciones",
+      "pdfPage": 74,
+      "printedPage": "73",
+      "sourceOrder": 741009
+    },
+    "description": "Analiza el caligrama atendiendo a Descripciones. Sustenta las respuestas con evidencias disponibles.",
+    "expectedCriterion": "calligram-feature-description"
+  }
+]

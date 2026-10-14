@@ -20,7 +20,9 @@ export function editableAuthoredRecommendation(authored: ContextualTopicCriterio
   authored = formatAuthoredCriteria(authored, input.instrumentType)
   const levels = input.instrumentType === 'rubrica' || input.instrumentType === 'escala'
     ? ['Destacado', 'Logrado', 'En proceso', 'Inicial'].map((label, index) => ({ id: `L${4 - index}`, label, proportion: (3 - index) / 3 })) : []
-  const points = distributeScoreUnits(Math.round(input.maxScore * 100), authored.map(criterion => criterion.weight))
+  const weights = authored.map(criterion => criterion.weight)
+  const points = distributeScoreUnits(Math.round(input.maxScore * 100), input.instrumentType === 'lista-ponderada'
+    ? distributeScoreUnits(10000, weights) : weights)
   return {
     kind: 'RECOMMENDATION', catalogVersion: 'editable-fallback-v1', instrumentType: input.instrumentType,
     confidence: 'LOW', activityType: activity, evidenceTypes: ['KNOWLEDGE', 'PRODUCT', 'PERFORMANCE'], participationMode: input.participationMode,

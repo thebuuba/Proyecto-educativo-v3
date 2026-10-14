@@ -1,0 +1,4391 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "de15fce28ca70500b3061d03dc6e7edc6206af4d",
+      "dirty": true,
+      "startedAt": "2026-10-14T00:16:58.499Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.20"
+    }
+  },
+  "verifiedAt": "2026-10-14T00:18:39.628Z",
+  "results": [
+    {
+      "description": "Elabora una guía turística con mapas y fotografías.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "rubrica",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir;\nselección de los lugares de mayor interés de la comunidad; clasificación de\nlos lugares seleccionados; definición de la estructura, registro y recursos de\nla guía turística; selección del soporte de la guía: físico (libro) o digital y la\ntecnología que va a utilizar para su elaboración; elaboración de los materiales\ngráficos que va a emplear en la guía (mapas, gráficos o collage de fotografías);\nutilización de la estructura (portada, información e imágenes y cierre), los\nverbos en presente de indicativo, sustantivos propios, comunes y abstractos,\nlos adjetivos, para producir la guía turística; vocabulario para producir la guía\nturística de acuerdo a la intención comunicativa; los signos convencionales\nde la escritura (comas, dos puntos, comillas, signos de interrogación y de\nexclamación).",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 71,
+                "printedPage": "70"
+              }
+            ]
+          },
+          {
+            "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+            "type": "PROCEDURE",
+            "text": "Establecimiento de la intención comunicativa del texto que va a producir\noralmente; elección de los lugares de mayor interés de la comunidad y su\nclasificación en: museos, plazas, bibliotecas, exposiciones, restaurantes,\nhoteles, salas de conciertos, cines, teatros y parques; recopilación de la\ninformación necesaria del lugar; delimitación del alcance de su guía: público,\ntema y diseño de presentación; empleo de mapas, gráficos o collage\nde fotografías para explicitar gráficamente el tema de la guía turística;\ndescripción topográfica para destacar aspectos sobresalientes de los lugares\nde su comunidad.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 70,
+                "printedPage": "69"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Información de los lugares seleccionados",
+            "description": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+            "maxScore": 3.77,
+            "maxScoreUnits": 377,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+                "scoreUnits": 377
+              },
+              {
+                "levelId": "L3",
+                "text": "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+                "scoreUnits": 251
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "scoreUnits": 126
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta información reconocible de los lugares de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Estructura de la guía turística",
+            "description": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+            "maxScore": 3.77,
+            "maxScoreUnits": 377,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+              "Portada, información y cierre se reconocen; una parte queda poco desarrollada.",
+              "Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+              "La organización confunde las partes de la guía y dificulta localizar los lugares.",
+              "No presenta una estructura reconocible de guía turística."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+                "scoreUnits": 377
+              },
+              {
+                "levelId": "L3",
+                "text": "Portada, información y cierre se reconocen; una parte queda poco desarrollada.",
+                "scoreUnits": 251
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+                "scoreUnits": 126
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una estructura reconocible de guía turística.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Descripción y orientación al visitante",
+            "description": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+            "maxScore": 3.02,
+            "maxScoreUnits": 302,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+              "Las descripciones permiten reconocer los atractivos; una expresión necesita precisión.",
+              "Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+              "El vocabulario o las formas verbales alteran las características de los lugares.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+                "scoreUnits": 302
+              },
+              {
+                "levelId": "L3",
+                "text": "Las descripciones permiten reconocer los atractivos; una expresión necesita precisión.",
+                "scoreUnits": 201
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+                "scoreUnits": 101
+              },
+              {
+                "levelId": "L1",
+                "text": "No describe características que orienten al visitante sobre los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-organization:3",
+            "templateId": "guide-organization",
+            "title": "Organización y claridad",
+            "description": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+            "maxScore": 2.27,
+            "maxScoreUnits": 227,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+              "La secuencia permite localizar la información; una relación con el propósito queda poco clara.",
+              "La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+              "La distribución sitúa datos bajo lugares equivocados.",
+              "La información no permite reconocer una secuencia de orientación para el visitante."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+                "scoreUnits": 227
+              },
+              {
+                "levelId": "L3",
+                "text": "La secuencia permite localizar la información; una relación con el propósito queda poco clara.",
+                "scoreUnits": 151
+              },
+              {
+                "levelId": "L2",
+                "text": "La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+                "scoreUnits": 76
+              },
+              {
+                "levelId": "L1",
+                "text": "La información no permite reconocer una secuencia de orientación para el visitante.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-revision:4",
+            "templateId": "guide-revision",
+            "title": "Claridad y convenciones de la guía",
+            "description": "Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.",
+            "maxScore": 2.26,
+            "maxScoreUnits": 226,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La escritura, la puntuación y la ortografía permiten comprender los datos y las indicaciones de la guía.",
+              "La guía se comprende; un error aislado dificulta una indicación secundaria.",
+              "Varios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares.",
+              "Los errores cambian la información de un lugar o el sentido de una indicación.",
+              "La versión presentada no permite leer información comprensible de los lugares."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La escritura, la puntuación y la ortografía permiten comprender los datos y las indicaciones de la guía.",
+                "scoreUnits": 226
+              },
+              {
+                "levelId": "L3",
+                "text": "La guía se comprende; un error aislado dificulta una indicación secundaria.",
+                "scoreUnits": 151
+              },
+              {
+                "levelId": "L2",
+                "text": "Varios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares.",
+                "scoreUnits": 75
+              },
+              {
+                "levelId": "L1",
+                "text": "La versión presentada no permite leer información comprensible de los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-visual:5",
+            "templateId": "guide-visual",
+            "title": "Información visual de los lugares",
+            "description": "Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía.",
+            "maxScore": 2.26,
+            "maxScoreUnits": 226,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los mapas y fotografías corresponden a los lugares y permiten localizarlos o reconocerlos.",
+              "Los recursos corresponden a los lugares; una referencia visual queda sin identificar.",
+              "Se incluyen recursos, pero no se establece su relación con los lugares descritos.",
+              "Los recursos representan lugares distintos de los descritos.",
+              "No se aportan los recursos visuales solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Los mapas y fotografías corresponden a los lugares y permiten localizarlos o reconocerlos.",
+                "scoreUnits": 226
+              },
+              {
+                "levelId": "L3",
+                "text": "Los recursos corresponden a los lugares; una referencia visual queda sin identificar.",
+                "scoreUnits": 151
+              },
+              {
+                "levelId": "L2",
+                "text": "Se incluyen recursos, pero no se establece su relación con los lugares descritos.",
+                "scoreUnits": 75
+              },
+              {
+                "levelId": "L1",
+                "text": "No se aportan los recursos visuales solicitados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+              "score": 81,
+              "topicCoverage": 0.6,
+              "reasons": [
+                "topicTokens=3/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "6d928034-270a-5523-a99d-11285a2fa97f",
+              "score": 62,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "score": 62,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "3857d3c9-4854-5405-a086-a63bc8b0c375",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "56301465-88e2-54cc-a5db-627c7266844c",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4341313f-9526-5f29-97cf-22b96fe40580",
+              "score": 38,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+              "score": 37,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+              "score": 37,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Elabora una guía turística con mapas y fotografías.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "lista-cotejo",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir;\nselección de los lugares de mayor interés de la comunidad; clasificación de\nlos lugares seleccionados; definición de la estructura, registro y recursos de\nla guía turística; selección del soporte de la guía: físico (libro) o digital y la\ntecnología que va a utilizar para su elaboración; elaboración de los materiales\ngráficos que va a emplear en la guía (mapas, gráficos o collage de fotografías);\nutilización de la estructura (portada, información e imágenes y cierre), los\nverbos en presente de indicativo, sustantivos propios, comunes y abstractos,\nlos adjetivos, para producir la guía turística; vocabulario para producir la guía\nturística de acuerdo a la intención comunicativa; los signos convencionales\nde la escritura (comas, dos puntos, comillas, signos de interrogación y de\nexclamación).",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 71,
+                "printedPage": "70"
+              }
+            ]
+          },
+          {
+            "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+            "type": "PROCEDURE",
+            "text": "Establecimiento de la intención comunicativa del texto que va a producir\noralmente; elección de los lugares de mayor interés de la comunidad y su\nclasificación en: museos, plazas, bibliotecas, exposiciones, restaurantes,\nhoteles, salas de conciertos, cines, teatros y parques; recopilación de la\ninformación necesaria del lugar; delimitación del alcance de su guía: público,\ntema y diseño de presentación; empleo de mapas, gráficos o collage\nde fotografías para explicitar gráficamente el tema de la guía turística;\ndescripción topográfica para destacar aspectos sobresalientes de los lugares\nde su comunidad.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 70,
+                "printedPage": "69"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+            "description": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+            "maxScore": 3.77,
+            "maxScoreUnits": 377,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+            "description": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+            "maxScore": 3.77,
+            "maxScoreUnits": 377,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+              "Portada, información y cierre se reconocen; una parte queda poco desarrollada.",
+              "Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+              "La organización confunde las partes de la guía y dificulta localizar los lugares.",
+              "No presenta una estructura reconocible de guía turística."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+            "description": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+            "maxScore": 3.02,
+            "maxScoreUnits": 302,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+              "Las descripciones permiten reconocer los atractivos; una expresión necesita precisión.",
+              "Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+              "El vocabulario o las formas verbales alteran las características de los lugares.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-organization:3",
+            "templateId": "guide-organization",
+            "title": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+            "description": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+            "maxScore": 2.27,
+            "maxScoreUnits": 227,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+              "La secuencia permite localizar la información; una relación con el propósito queda poco clara.",
+              "La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+              "La distribución sitúa datos bajo lugares equivocados.",
+              "La información no permite reconocer una secuencia de orientación para el visitante."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-revision:4",
+            "templateId": "guide-revision",
+            "title": "Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.",
+            "description": "Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.",
+            "maxScore": 2.26,
+            "maxScoreUnits": 226,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La escritura, la puntuación y la ortografía permiten comprender los datos y las indicaciones de la guía.",
+              "La guía se comprende; un error aislado dificulta una indicación secundaria.",
+              "Varios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares.",
+              "Los errores cambian la información de un lugar o el sentido de una indicación.",
+              "La versión presentada no permite leer información comprensible de los lugares."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-visual:5",
+            "templateId": "guide-visual",
+            "title": "Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía.",
+            "description": "Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía.",
+            "maxScore": 2.26,
+            "maxScoreUnits": 226,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los mapas y fotografías corresponden a los lugares y permiten localizarlos o reconocerlos.",
+              "Los recursos corresponden a los lugares; una referencia visual queda sin identificar.",
+              "Se incluyen recursos, pero no se establece su relación con los lugares descritos.",
+              "Los recursos representan lugares distintos de los descritos.",
+              "No se aportan los recursos visuales solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+              "score": 81,
+              "topicCoverage": 0.6,
+              "reasons": [
+                "topicTokens=3/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "6d928034-270a-5523-a99d-11285a2fa97f",
+              "score": 62,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "score": 62,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "3857d3c9-4854-5405-a086-a63bc8b0c375",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "56301465-88e2-54cc-a5db-627c7266844c",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4341313f-9526-5f29-97cf-22b96fe40580",
+              "score": 38,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+              "score": 37,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+              "score": 37,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Elabora una guía turística con mapas y fotografías.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "escala",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir;\nselección de los lugares de mayor interés de la comunidad; clasificación de\nlos lugares seleccionados; definición de la estructura, registro y recursos de\nla guía turística; selección del soporte de la guía: físico (libro) o digital y la\ntecnología que va a utilizar para su elaboración; elaboración de los materiales\ngráficos que va a emplear en la guía (mapas, gráficos o collage de fotografías);\nutilización de la estructura (portada, información e imágenes y cierre), los\nverbos en presente de indicativo, sustantivos propios, comunes y abstractos,\nlos adjetivos, para producir la guía turística; vocabulario para producir la guía\nturística de acuerdo a la intención comunicativa; los signos convencionales\nde la escritura (comas, dos puntos, comillas, signos de interrogación y de\nexclamación).",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 71,
+                "printedPage": "70"
+              }
+            ]
+          },
+          {
+            "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+            "type": "PROCEDURE",
+            "text": "Establecimiento de la intención comunicativa del texto que va a producir\noralmente; elección de los lugares de mayor interés de la comunidad y su\nclasificación en: museos, plazas, bibliotecas, exposiciones, restaurantes,\nhoteles, salas de conciertos, cines, teatros y parques; recopilación de la\ninformación necesaria del lugar; delimitación del alcance de su guía: público,\ntema y diseño de presentación; empleo de mapas, gráficos o collage\nde fotografías para explicitar gráficamente el tema de la guía turística;\ndescripción topográfica para destacar aspectos sobresalientes de los lugares\nde su comunidad.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 70,
+                "printedPage": "69"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+            "description": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+            "maxScore": 3.77,
+            "maxScoreUnits": 377,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+                "scoreUnits": 377
+              },
+              {
+                "levelId": "L3",
+                "text": "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+                "scoreUnits": 251
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "scoreUnits": 126
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta información reconocible de los lugares de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+            "description": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+            "maxScore": 3.77,
+            "maxScoreUnits": 377,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+              "Portada, información y cierre se reconocen; una parte queda poco desarrollada.",
+              "Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+              "La organización confunde las partes de la guía y dificulta localizar los lugares.",
+              "No presenta una estructura reconocible de guía turística."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+                "scoreUnits": 377
+              },
+              {
+                "levelId": "L3",
+                "text": "Portada, información y cierre se reconocen; una parte queda poco desarrollada.",
+                "scoreUnits": 251
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+                "scoreUnits": 126
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una estructura reconocible de guía turística.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+            "description": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+            "maxScore": 3.02,
+            "maxScoreUnits": 302,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+              "Las descripciones permiten reconocer los atractivos; una expresión necesita precisión.",
+              "Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+              "El vocabulario o las formas verbales alteran las características de los lugares.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+                "scoreUnits": 302
+              },
+              {
+                "levelId": "L3",
+                "text": "Las descripciones permiten reconocer los atractivos; una expresión necesita precisión.",
+                "scoreUnits": 201
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+                "scoreUnits": 101
+              },
+              {
+                "levelId": "L1",
+                "text": "No describe características que orienten al visitante sobre los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-organization:3",
+            "templateId": "guide-organization",
+            "title": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+            "description": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+            "maxScore": 2.27,
+            "maxScoreUnits": 227,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+              "La secuencia permite localizar la información; una relación con el propósito queda poco clara.",
+              "La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+              "La distribución sitúa datos bajo lugares equivocados.",
+              "La información no permite reconocer una secuencia de orientación para el visitante."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+                "scoreUnits": 227
+              },
+              {
+                "levelId": "L3",
+                "text": "La secuencia permite localizar la información; una relación con el propósito queda poco clara.",
+                "scoreUnits": 151
+              },
+              {
+                "levelId": "L2",
+                "text": "La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+                "scoreUnits": 76
+              },
+              {
+                "levelId": "L1",
+                "text": "La información no permite reconocer una secuencia de orientación para el visitante.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-revision:4",
+            "templateId": "guide-revision",
+            "title": "Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.",
+            "description": "Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.",
+            "maxScore": 2.26,
+            "maxScoreUnits": 226,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La escritura, la puntuación y la ortografía permiten comprender los datos y las indicaciones de la guía.",
+              "La guía se comprende; un error aislado dificulta una indicación secundaria.",
+              "Varios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares.",
+              "Los errores cambian la información de un lugar o el sentido de una indicación.",
+              "La versión presentada no permite leer información comprensible de los lugares."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La escritura, la puntuación y la ortografía permiten comprender los datos y las indicaciones de la guía.",
+                "scoreUnits": 226
+              },
+              {
+                "levelId": "L3",
+                "text": "La guía se comprende; un error aislado dificulta una indicación secundaria.",
+                "scoreUnits": 151
+              },
+              {
+                "levelId": "L2",
+                "text": "Varios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares.",
+                "scoreUnits": 75
+              },
+              {
+                "levelId": "L1",
+                "text": "La versión presentada no permite leer información comprensible de los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-visual:5",
+            "templateId": "guide-visual",
+            "title": "Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía.",
+            "description": "Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía.",
+            "maxScore": 2.26,
+            "maxScoreUnits": 226,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los mapas y fotografías corresponden a los lugares y permiten localizarlos o reconocerlos.",
+              "Los recursos corresponden a los lugares; una referencia visual queda sin identificar.",
+              "Se incluyen recursos, pero no se establece su relación con los lugares descritos.",
+              "Los recursos representan lugares distintos de los descritos.",
+              "No se aportan los recursos visuales solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Los mapas y fotografías corresponden a los lugares y permiten localizarlos o reconocerlos.",
+                "scoreUnits": 226
+              },
+              {
+                "levelId": "L3",
+                "text": "Los recursos corresponden a los lugares; una referencia visual queda sin identificar.",
+                "scoreUnits": 151
+              },
+              {
+                "levelId": "L2",
+                "text": "Se incluyen recursos, pero no se establece su relación con los lugares descritos.",
+                "scoreUnits": 75
+              },
+              {
+                "levelId": "L1",
+                "text": "No se aportan los recursos visuales solicitados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+              "score": 81,
+              "topicCoverage": 0.6,
+              "reasons": [
+                "topicTokens=3/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "6d928034-270a-5523-a99d-11285a2fa97f",
+              "score": 62,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "score": 62,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "3857d3c9-4854-5405-a086-a63bc8b0c375",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "56301465-88e2-54cc-a5db-627c7266844c",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4341313f-9526-5f29-97cf-22b96fe40580",
+              "score": 38,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+              "score": 37,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+              "score": 37,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Elabora una guía turística con mapas y fotografías.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "lista-ponderada",
+        "confidence": "MEDIUM",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [
+          {
+            "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+            "type": "PROCEDURE",
+            "text": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir;\nselección de los lugares de mayor interés de la comunidad; clasificación de\nlos lugares seleccionados; definición de la estructura, registro y recursos de\nla guía turística; selección del soporte de la guía: físico (libro) o digital y la\ntecnología que va a utilizar para su elaboración; elaboración de los materiales\ngráficos que va a emplear en la guía (mapas, gráficos o collage de fotografías);\nutilización de la estructura (portada, información e imágenes y cierre), los\nverbos en presente de indicativo, sustantivos propios, comunes y abstractos,\nlos adjetivos, para producir la guía turística; vocabulario para producir la guía\nturística de acuerdo a la intención comunicativa; los signos convencionales\nde la escritura (comas, dos puntos, comillas, signos de interrogación y de\nexclamación).",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 71,
+                "printedPage": "70"
+              }
+            ]
+          },
+          {
+            "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+            "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+            "scopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+            "type": "PROCEDURE",
+            "text": "Establecimiento de la intención comunicativa del texto que va a producir\noralmente; elección de los lugares de mayor interés de la comunidad y su\nclasificación en: museos, plazas, bibliotecas, exposiciones, restaurantes,\nhoteles, salas de conciertos, cines, teatros y parques; recopilación de la\ninformación necesaria del lugar; delimitación del alcance de su guía: público,\ntema y diseño de presentación; empleo de mapas, gráficos o collage\nde fotografías para explicitar gráficamente el tema de la guía turística;\ndescripción topográfica para destacar aspectos sobresalientes de los lugares\nde su comunidad.",
+            "sources": [
+              {
+                "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+                "pdfPage": 70,
+                "printedPage": "69"
+              }
+            ]
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Información de los lugares seleccionados",
+            "description": "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+            "maxScore": 3.77,
+            "maxScoreUnits": 377,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye información pertinente y veraz sobre los lugares seleccionados, destacando sus características y atractivos.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Estructura de la guía turística",
+            "description": "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar. Parcial (50%): Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+            "maxScore": 3.77,
+            "maxScoreUnits": 377,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la guía con portada, información y cierre, e integra el recurso visual solicitado o la alternativa elegida cuando la consigna permite optar.",
+              "Portada, información y cierre se reconocen; una parte queda poco desarrollada.",
+              "Presenta información de los lugares, pero la portada o el cierre quedan incompletos.",
+              "La organización confunde las partes de la guía y dificulta localizar los lugares.",
+              "No presenta una estructura reconocible de guía turística."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Descripción y orientación al visitante",
+            "description": "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público. Parcial (50%): Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+            "maxScore": 3.02,
+            "maxScoreUnits": 302,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe los lugares con sustantivos propios, adjetivos y verbos en presente, usando vocabulario atractivo adecuado al público.",
+              "Las descripciones permiten reconocer los atractivos; una expresión necesita precisión.",
+              "Nombra lugares y algunas características sin explicar su atractivo para el visitante.",
+              "El vocabulario o las formas verbales alteran las características de los lugares.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-organization:3",
+            "templateId": "guide-organization",
+            "title": "Organización y claridad",
+            "description": "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante. Parcial (50%): La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+            "maxScore": 2.27,
+            "maxScoreUnits": 227,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distribuye la información en una secuencia comprensible y relaciona el contenido con el propósito de orientar al visitante.",
+              "La secuencia permite localizar la información; una relación con el propósito queda poco clara.",
+              "La información se distribuye parcialmente y cuesta relacionar cada dato con su lugar.",
+              "La distribución sitúa datos bajo lugares equivocados.",
+              "La información no permite reconocer una secuencia de orientación para el visitante."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-revision:4",
+            "templateId": "guide-revision",
+            "title": "Claridad y convenciones de la guía",
+            "description": "Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares. Parcial (50%): Varios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares.",
+            "maxScore": 2.26,
+            "maxScoreUnits": 226,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La escritura, la puntuación y la ortografía permiten comprender los datos y las indicaciones de la guía.",
+              "La guía se comprende; un error aislado dificulta una indicación secundaria.",
+              "Varios errores de escritura o puntuación vuelven ambiguos datos o indicaciones de los lugares.",
+              "Los errores cambian la información de un lugar o el sentido de una indicación.",
+              "La versión presentada no permite leer información comprensible de los lugares."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:guide-visual:5",
+            "templateId": "guide-visual",
+            "title": "Información visual de los lugares",
+            "description": "Incorpora mapas y fotografías que permiten localizar o reconocer los lugares descritos en la guía. Parcial (50%): Se incluyen recursos, pero no se establece su relación con los lugares descritos.",
+            "maxScore": 2.26,
+            "maxScoreUnits": 226,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los mapas y fotografías corresponden a los lugares y permiten localizarlos o reconocerlos.",
+              "Los recursos corresponden a los lugares; una referencia visual queda sin identificar.",
+              "Se incluyen recursos, pero no se establece su relación con los lugares descritos.",
+              "Los recursos representan lugares distintos de los descritos.",
+              "No se aportan los recursos visuales solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "score": 106,
+              "topicCoverage": 0.8,
+              "reasons": [
+                "topicTokens=4/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+              "score": 81,
+              "topicCoverage": 0.6,
+              "reasons": [
+                "topicTokens=3/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "6d928034-270a-5523-a99d-11285a2fa97f",
+              "score": 62,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "score": 62,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "3857d3c9-4854-5405-a086-a63bc8b0c375",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "56301465-88e2-54cc-a5db-627c7266844c",
+              "score": 54,
+              "topicCoverage": 0.4,
+              "reasons": [
+                "topicTokens=2/5",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4341313f-9526-5f29-97cf-22b96fe40580",
+              "score": 38,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+              "score": 37,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+              "score": 37,
+              "topicCoverage": 0.2,
+              "reasons": [
+                "topicTokens=1/5",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": false,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Redactarán una noticia sin publicar. Revisarán el borrador con sus compañeros.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "NEWS_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-essential:0",
+            "templateId": "news-essential",
+            "title": "Información esencial de la noticia",
+            "description": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+            "maxScore": 4.57,
+            "maxScoreUnits": 457,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+              "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+              "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+              "Los datos se contradicen y alteran el hecho que se pretende informar.",
+              "No presenta un hecho noticioso reconocible."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+                "scoreUnits": 457
+              },
+              {
+                "levelId": "L3",
+                "text": "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+                "scoreUnits": 305
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+                "scoreUnits": 152
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un hecho noticioso reconocible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-structure:1",
+            "templateId": "news-structure",
+            "title": "Titular, entrada y cuerpo",
+            "description": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+            "maxScore": 4.56,
+            "maxScoreUnits": 456,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+              "Titular, entrada y cuerpo son reconocibles; una parte repite información.",
+              "Presenta titular y datos, pero la entrada o el desarrollo quedan incompletos.",
+              "Confunde la función del titular con la entrada o el cuerpo.",
+              "No organiza el escrito como una noticia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+                "scoreUnits": 456
+              },
+              {
+                "levelId": "L3",
+                "text": "Titular, entrada y cuerpo son reconocibles; una parte repite información.",
+                "scoreUnits": 304
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta titular y datos, pero la entrada o el desarrollo quedan incompletos.",
+                "scoreUnits": 152
+              },
+              {
+                "levelId": "L1",
+                "text": "No organiza el escrito como una noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-sequence:2",
+            "templateId": "news-sequence",
+            "title": "Secuencia y cohesión",
+            "description": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+              "El orden permite seguir el hecho; un enlace temporal necesita precisión.",
+              "Relaciona algunos datos, pero los saltos de orden dificultan seguir el hecho.",
+              "Los conectores sitúan los hechos en un orden contradictorio.",
+              "No se reconoce una secuencia entre los datos de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+                "scoreUnits": 365
+              },
+              {
+                "levelId": "L3",
+                "text": "El orden permite seguir el hecho; un enlace temporal necesita precisión.",
+                "scoreUnits": 243
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona algunos datos, pero los saltos de orden dificultan seguir el hecho.",
+                "scoreUnits": 122
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce una secuencia entre los datos de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-language:3",
+            "templateId": "news-language",
+            "title": "Lenguaje periodístico",
+            "description": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+              "El vocabulario y los verbos comunican el hecho con una imprecisión menor.",
+              "El vocabulario o los tiempos verbales vuelven ambigua parte de la información.",
+              "El registro o los verbos cambian el sentido de los hechos.",
+              "El lenguaje no permite comprender el hecho informado."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+                "scoreUnits": 274
+              },
+              {
+                "levelId": "L3",
+                "text": "El vocabulario y los verbos comunican el hecho con una imprecisión menor.",
+                "scoreUnits": 183
+              },
+              {
+                "levelId": "L2",
+                "text": "El vocabulario o los tiempos verbales vuelven ambigua parte de la información.",
+                "scoreUnits": 91
+              },
+              {
+                "levelId": "L1",
+                "text": "El lenguaje no permite comprender el hecho informado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-process-revision:4",
+            "templateId": "news-process-revision",
+            "title": "Revisión del borrador",
+            "description": "Muestra cambios entre el borrador y la versión revisada de noticia que resuelven problemas de contenido, organización o escritura encontrados.",
+            "maxScore": 1.83,
+            "maxScoreUnits": 183,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+              "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+              "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+              "Los cambios introducen contradicciones o eliminan información necesaria para comprender el texto.",
+              "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+                "scoreUnits": 183
+              },
+              {
+                "levelId": "L3",
+                "text": "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+                "scoreUnits": 122
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+                "scoreUnits": 61
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Redactarán una noticia sin publicar. Revisarán el borrador con sus compañeros.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "NEWS_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-essential:0",
+            "templateId": "news-essential",
+            "title": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+            "description": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+            "maxScore": 4.57,
+            "maxScoreUnits": 457,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+              "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+              "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+              "Los datos se contradicen y alteran el hecho que se pretende informar.",
+              "No presenta un hecho noticioso reconocible."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-structure:1",
+            "templateId": "news-structure",
+            "title": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+            "description": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+            "maxScore": 4.56,
+            "maxScoreUnits": 456,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+              "Titular, entrada y cuerpo son reconocibles; una parte repite información.",
+              "Presenta titular y datos, pero la entrada o el desarrollo quedan incompletos.",
+              "Confunde la función del titular con la entrada o el cuerpo.",
+              "No organiza el escrito como una noticia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-sequence:2",
+            "templateId": "news-sequence",
+            "title": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+            "description": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+              "El orden permite seguir el hecho; un enlace temporal necesita precisión.",
+              "Relaciona algunos datos, pero los saltos de orden dificultan seguir el hecho.",
+              "Los conectores sitúan los hechos en un orden contradictorio.",
+              "No se reconoce una secuencia entre los datos de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-language:3",
+            "templateId": "news-language",
+            "title": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+            "description": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+              "El vocabulario y los verbos comunican el hecho con una imprecisión menor.",
+              "El vocabulario o los tiempos verbales vuelven ambigua parte de la información.",
+              "El registro o los verbos cambian el sentido de los hechos.",
+              "El lenguaje no permite comprender el hecho informado."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-process-revision:4",
+            "templateId": "news-process-revision",
+            "title": "Muestra cambios entre el borrador y la versión revisada de noticia que resuelven problemas de contenido, organización o escritura encontrados.",
+            "description": "Muestra cambios entre el borrador y la versión revisada de noticia que resuelven problemas de contenido, organización o escritura encontrados.",
+            "maxScore": 1.83,
+            "maxScoreUnits": 183,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+              "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+              "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+              "Los cambios introducen contradicciones o eliminan información necesaria para comprender el texto.",
+              "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Redactarán una noticia sin publicar. Revisarán el borrador con sus compañeros.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "NEWS_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-essential:0",
+            "templateId": "news-essential",
+            "title": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+            "description": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+            "maxScore": 4.57,
+            "maxScoreUnits": 457,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+              "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+              "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+              "Los datos se contradicen y alteran el hecho que se pretende informar.",
+              "No presenta un hecho noticioso reconocible."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+                "scoreUnits": 457
+              },
+              {
+                "levelId": "L3",
+                "text": "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+                "scoreUnits": 305
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+                "scoreUnits": 152
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un hecho noticioso reconocible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-structure:1",
+            "templateId": "news-structure",
+            "title": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+            "description": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+            "maxScore": 4.56,
+            "maxScoreUnits": 456,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+              "Titular, entrada y cuerpo son reconocibles; una parte repite información.",
+              "Presenta titular y datos, pero la entrada o el desarrollo quedan incompletos.",
+              "Confunde la función del titular con la entrada o el cuerpo.",
+              "No organiza el escrito como una noticia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+                "scoreUnits": 456
+              },
+              {
+                "levelId": "L3",
+                "text": "Titular, entrada y cuerpo son reconocibles; una parte repite información.",
+                "scoreUnits": 304
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta titular y datos, pero la entrada o el desarrollo quedan incompletos.",
+                "scoreUnits": 152
+              },
+              {
+                "levelId": "L1",
+                "text": "No organiza el escrito como una noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-sequence:2",
+            "templateId": "news-sequence",
+            "title": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+            "description": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+              "El orden permite seguir el hecho; un enlace temporal necesita precisión.",
+              "Relaciona algunos datos, pero los saltos de orden dificultan seguir el hecho.",
+              "Los conectores sitúan los hechos en un orden contradictorio.",
+              "No se reconoce una secuencia entre los datos de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+                "scoreUnits": 365
+              },
+              {
+                "levelId": "L3",
+                "text": "El orden permite seguir el hecho; un enlace temporal necesita precisión.",
+                "scoreUnits": 243
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona algunos datos, pero los saltos de orden dificultan seguir el hecho.",
+                "scoreUnits": 122
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce una secuencia entre los datos de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-language:3",
+            "templateId": "news-language",
+            "title": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+            "description": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+              "El vocabulario y los verbos comunican el hecho con una imprecisión menor.",
+              "El vocabulario o los tiempos verbales vuelven ambigua parte de la información.",
+              "El registro o los verbos cambian el sentido de los hechos.",
+              "El lenguaje no permite comprender el hecho informado."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+                "scoreUnits": 274
+              },
+              {
+                "levelId": "L3",
+                "text": "El vocabulario y los verbos comunican el hecho con una imprecisión menor.",
+                "scoreUnits": 183
+              },
+              {
+                "levelId": "L2",
+                "text": "El vocabulario o los tiempos verbales vuelven ambigua parte de la información.",
+                "scoreUnits": 91
+              },
+              {
+                "levelId": "L1",
+                "text": "El lenguaje no permite comprender el hecho informado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-process-revision:4",
+            "templateId": "news-process-revision",
+            "title": "Muestra cambios entre el borrador y la versión revisada de noticia que resuelven problemas de contenido, organización o escritura encontrados.",
+            "description": "Muestra cambios entre el borrador y la versión revisada de noticia que resuelven problemas de contenido, organización o escritura encontrados.",
+            "maxScore": 1.83,
+            "maxScoreUnits": 183,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+              "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+              "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+              "Los cambios introducen contradicciones o eliminan información necesaria para comprender el texto.",
+              "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+                "scoreUnits": 183
+              },
+              {
+                "levelId": "L3",
+                "text": "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+                "scoreUnits": 122
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+                "scoreUnits": 61
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Redactarán una noticia sin publicar. Revisarán el borrador con sus compañeros.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "NEWS_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-essential:0",
+            "templateId": "news-essential",
+            "title": "Información esencial de la noticia",
+            "description": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. Parcial (50%): Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+            "maxScore": 4.57,
+            "maxScoreUnits": 457,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió.",
+              "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+              "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+              "Los datos se contradicen y alteran el hecho que se pretende informar.",
+              "No presenta un hecho noticioso reconocible."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-structure:1",
+            "templateId": "news-structure",
+            "title": "Titular, entrada y cuerpo",
+            "description": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos. Parcial (50%): Presenta titular y datos, pero la entrada o el desarrollo quedan incompletos.",
+            "maxScore": 4.56,
+            "maxScoreUnits": 456,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+              "Titular, entrada y cuerpo son reconocibles; una parte repite información.",
+              "Presenta titular y datos, pero la entrada o el desarrollo quedan incompletos.",
+              "Confunde la función del titular con la entrada o el cuerpo.",
+              "No organiza el escrito como una noticia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-sequence:2",
+            "templateId": "news-sequence",
+            "title": "Secuencia y cohesión",
+            "description": "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas. Parcial (50%): Relaciona algunos datos, pero los saltos de orden dificultan seguir el hecho.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena la información y utiliza conectores de orden y temporales para relacionar las ideas.",
+              "El orden permite seguir el hecho; un enlace temporal necesita precisión.",
+              "Relaciona algunos datos, pero los saltos de orden dificultan seguir el hecho.",
+              "Los conectores sitúan los hechos en un orden contradictorio.",
+              "No se reconoce una secuencia entre los datos de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-language:3",
+            "templateId": "news-language",
+            "title": "Lenguaje periodístico",
+            "description": "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado. Parcial (50%): El vocabulario o los tiempos verbales vuelven ambigua parte de la información.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea un registro formal, vocabulario preciso y formas verbales adecuadas al hecho narrado.",
+              "El vocabulario y los verbos comunican el hecho con una imprecisión menor.",
+              "El vocabulario o los tiempos verbales vuelven ambigua parte de la información.",
+              "El registro o los verbos cambian el sentido de los hechos.",
+              "El lenguaje no permite comprender el hecho informado."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-process-revision:4",
+            "templateId": "news-process-revision",
+            "title": "Revisión del borrador",
+            "description": "Muestra cambios entre el borrador y la versión revisada de noticia que resuelven problemas de contenido, organización o escritura encontrados. Parcial (50%): Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+            "maxScore": 1.83,
+            "maxScoreUnits": 183,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+              "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+              "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+              "Los cambios introducen contradicciones o eliminan información necesaria para comprender el texto.",
+              "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 55,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "6386112a-44b3-5b36-9416-1f31d2540550",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+              "score": 52,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 34,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 29,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Analizarán en una noticia únicamente los sinónimos, sin estudiar las siglas. Explicarán los conectores temporales.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-feature-connectors:0",
+            "templateId": "news-feature-connectors",
+            "title": "Los conectores de orden y temporales",
+            "description": "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia.",
+              "Localiza y caracteriza los conectores de orden y temporales con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de los conectores de orden y temporales, pero no explica cómo contribuyen a enlazar la secuencia de los hechos de la noticia.",
+              "La explicación se apoya en una identificación incorrecta: se invierte el orden temporal o se enlazan hechos que no guardan esa relación.",
+              "No localiza ejemplos pertinentes ni explica la función de los conectores de orden y temporales en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia.",
+                "scoreUnits": 868
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza los conectores de orden y temporales con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 579
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos de los conectores de orden y temporales, pero no explica cómo contribuyen a enlazar la secuencia de los hechos de la noticia.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función de los conectores de orden y temporales en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-feature-synonyms:1",
+            "templateId": "news-feature-synonyms",
+            "title": "Los sinónimos",
+            "description": "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.",
+              "Localiza y caracteriza los sinónimos con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente.",
+              "La explicación se apoya en una identificación incorrecta: se sustituye una palabra por otra de significado incompatible en ese contexto.",
+              "No localiza ejemplos pertinentes ni explica la función de los sinónimos en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.",
+                "scoreUnits": 867
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza los sinónimos con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función de los sinónimos en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 61,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 59,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 33,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "caaa246b-f525-5292-8ed0-0fd2e8309566",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+              "score": 29,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "fe273448-e4f5-57a6-9e45-de66a5fb0a0e",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "550e059b-4981-56f9-8869-97ffa30fc185",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5a0d128b-afc1-50e0-8e42-804d94f60d56",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8b208fc0-808f-5b83-a900-94bcb5196005",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bb6e1a76-f79b-5b08-bea4-035e754cb7fa",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Analizarán en una noticia únicamente los sinónimos, sin estudiar las siglas. Explicarán los conectores temporales.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-feature-connectors:0",
+            "templateId": "news-feature-connectors",
+            "title": "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia.",
+            "description": "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia.",
+              "Localiza y caracteriza los conectores de orden y temporales con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de los conectores de orden y temporales, pero no explica cómo contribuyen a enlazar la secuencia de los hechos de la noticia.",
+              "La explicación se apoya en una identificación incorrecta: se invierte el orden temporal o se enlazan hechos que no guardan esa relación.",
+              "No localiza ejemplos pertinentes ni explica la función de los conectores de orden y temporales en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-feature-synonyms:1",
+            "templateId": "news-feature-synonyms",
+            "title": "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.",
+            "description": "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.",
+              "Localiza y caracteriza los sinónimos con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente.",
+              "La explicación se apoya en una identificación incorrecta: se sustituye una palabra por otra de significado incompatible en ese contexto.",
+              "No localiza ejemplos pertinentes ni explica la función de los sinónimos en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 61,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 59,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 33,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "caaa246b-f525-5292-8ed0-0fd2e8309566",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+              "score": 29,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "fe273448-e4f5-57a6-9e45-de66a5fb0a0e",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "550e059b-4981-56f9-8869-97ffa30fc185",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5a0d128b-afc1-50e0-8e42-804d94f60d56",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8b208fc0-808f-5b83-a900-94bcb5196005",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bb6e1a76-f79b-5b08-bea4-035e754cb7fa",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Analizarán en una noticia únicamente los sinónimos, sin estudiar las siglas. Explicarán los conectores temporales.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-feature-connectors:0",
+            "templateId": "news-feature-connectors",
+            "title": "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia.",
+            "description": "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia.",
+              "Localiza y caracteriza los conectores de orden y temporales con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de los conectores de orden y temporales, pero no explica cómo contribuyen a enlazar la secuencia de los hechos de la noticia.",
+              "La explicación se apoya en una identificación incorrecta: se invierte el orden temporal o se enlazan hechos que no guardan esa relación.",
+              "No localiza ejemplos pertinentes ni explica la función de los conectores de orden y temporales en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia.",
+                "scoreUnits": 868
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza los conectores de orden y temporales con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 579
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos de los conectores de orden y temporales, pero no explica cómo contribuyen a enlazar la secuencia de los hechos de la noticia.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función de los conectores de orden y temporales en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-feature-synonyms:1",
+            "templateId": "news-feature-synonyms",
+            "title": "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.",
+            "description": "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.",
+              "Localiza y caracteriza los sinónimos con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente.",
+              "La explicación se apoya en una identificación incorrecta: se sustituye una palabra por otra de significado incompatible en ese contexto.",
+              "No localiza ejemplos pertinentes ni explica la función de los sinónimos en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.",
+                "scoreUnits": 867
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza los sinónimos con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función de los sinónimos en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 61,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 59,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 33,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "caaa246b-f525-5292-8ed0-0fd2e8309566",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+              "score": 29,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "fe273448-e4f5-57a6-9e45-de66a5fb0a0e",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "550e059b-4981-56f9-8869-97ffa30fc185",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5a0d128b-afc1-50e0-8e42-804d94f60d56",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8b208fc0-808f-5b83-a900-94bcb5196005",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bb6e1a76-f79b-5b08-bea4-035e754cb7fa",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Analizarán en una noticia únicamente los sinónimos, sin estudiar las siglas. Explicarán los conectores temporales.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.20",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-feature-connectors:0",
+            "templateId": "news-feature-connectors",
+            "title": "Los conectores de orden y temporales",
+            "description": "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia. Parcial (50%): Señala ejemplos de los conectores de orden y temporales, pero no explica cómo contribuyen a enlazar la secuencia de los hechos de la noticia.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los conectores de orden y temporales en el texto de noticia y explica, con ejemplos presentes, su función para enlazar la secuencia de los hechos de la noticia.",
+              "Localiza y caracteriza los conectores de orden y temporales con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de los conectores de orden y temporales, pero no explica cómo contribuyen a enlazar la secuencia de los hechos de la noticia.",
+              "La explicación se apoya en una identificación incorrecta: se invierte el orden temporal o se enlazan hechos que no guardan esa relación.",
+              "No localiza ejemplos pertinentes ni explica la función de los conectores de orden y temporales en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.20:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:news-feature-synonyms:1",
+            "templateId": "news-feature-synonyms",
+            "title": "Los sinónimos",
+            "description": "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente. Parcial (50%): Señala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica los sinónimos en el texto de noticia y explica, con ejemplos presentes, su función para retomar una misma idea sin repeticiones ni cambios de referente.",
+              "Localiza y caracteriza los sinónimos con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de los sinónimos, pero no explica cómo contribuyen a retomar una misma idea sin repeticiones ni cambios de referente.",
+              "La explicación se apoya en una identificación incorrecta: se sustituye una palabra por otra de significado incompatible en ese contexto.",
+              "No localiza ejemplos pertinentes ni explica la función de los sinónimos en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 61,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 59,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 33,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "caaa246b-f525-5292-8ed0-0fd2e8309566",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+              "score": 29,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "fe273448-e4f5-57a6-9e45-de66a5fb0a0e",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "550e059b-4981-56f9-8869-97ffa30fc185",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "5a0d128b-afc1-50e0-8e42-804d94f60d56",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8b208fc0-808f-5b83-a900-94bcb5196005",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bb6e1a76-f79b-5b08-bea4-035e754cb7fa",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ]
+}

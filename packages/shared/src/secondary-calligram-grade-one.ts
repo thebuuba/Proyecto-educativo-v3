@@ -43,7 +43,7 @@ export function firstGradeCalligramCriteria(activity:string,description:string):
   if(mode==='CALLIGRAM_EXPLANATION'&&!/ideas|sentimientos|emociones/.test(task)) rows=rows.filter(row=>row.templateId!=='calligram-feelings')
   if(mode==='CALLIGRAM_COMPARISON'&&!/conclu/.test(task)) rows=rows.filter(row=>row.templateId!=='calligram-conclusion')
   if(mode==='CALLIGRAM_ANALYSIS') {
-    const focus={relation:/relacion|texto|figura|palabras.*mensaje/,intention:/intencion|sentimientos|emociones/,resources:/recursos|figuras literarias|vocabulario|metafora|anafora|epiteto|personific|comparacion/,visual:/organizacion|tipograf|disposicion|legibilidad/,evidence:/evidencia|justific|versos.*rasgos|sustent|ejemplos/}
+    const focus={relation:/funcion|estructura|imagen visual|relacion|texto|figura|palabras.*mensaje/,intention:/tema del poema|intencion|sentimientos|emociones/,resources:/recursos|figuras literarias|vocabulario|metafora|anafora|epiteto|personific|comparacion/,visual:/organizacion|tipograf|disposicion|legibilidad/,evidence:/evidencia|justific|versos.*rasgos|sustent|ejemplos/}
     if(Object.values(focus).some(pattern=>pattern.test(task))) rows=rows.filter(row=>focus[row.templateId.replace('calligram-','') as keyof typeof focus]?.test(task))
   }
   return rows.map(row=>{

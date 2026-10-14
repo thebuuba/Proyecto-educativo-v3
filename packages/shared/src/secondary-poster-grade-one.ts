@@ -40,7 +40,7 @@ export function firstGradePosterCriteria(activity:string,_title:string,descripti
   if(mode==='POSTER_PRESENTATION'&&!/preguntas/.test(task)) rows=rows.filter(row=>row.templateId!=='poster-individual')
   if(mode==='POSTER_COMPARISON'&&!/proposito|publico|destinatario|intencion/.test(task)) rows=rows.filter(row=>row.templateId!=='poster-purpose')
   if(mode==='POSTER_ANALYSIS') {
-    const focus={purpose:/proposito|intencion|destinatario|publico/,message:/mensaje|idea principal|sentido/,persuasion:/persua|argument|convencer|recursos/,visuals:/imagen|color|visual|tipograf/,evidence:/evidencia|justific|sustent|ejemplos|inferen/}
+    const focus={purpose:/funcion|situacion comunicativa|proposito|intencion|destinatario|publico/,message:/mensaje|idea principal|sentido/,persuasion:/persua|argument|convencer|recursos/,visuals:/estructura|imagen|color|visual|tipograf/,evidence:/evidencia|justific|sustent|ejemplos|inferen/}
     const explicit=Object.values(focus).some(pattern=>pattern.test(task))
     if(explicit) rows=rows.filter(row=>focus[row.templateId.replace('poster-','') as keyof typeof focus]?.test(task))
   }

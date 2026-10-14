@@ -1,5 +1,17 @@
 # Continuación del encargo completo
 
+## Encargo vigente 13/10: Lengua Española común 1.º–6.º, en ejecución
+
+El adjunto a7fdea3e sustituye la pausa del encargo anterior. Ejecutar grados en orden, sin subagentes, con commit/push por bloque; no desplegar ni modificar instrumentos históricos. Plan: `docs/superpowers/plans/2026-10-13-lengua-comun-seis-grados.md`.
+
+Bloque actual: 1.º. PDF 69–75 revisado visualmente; se respetan las continuaciones entre columnas y el bloque anómalo de noticia de PDF 74. Se añadieron contratos para los 55 subtemas y criterios focalizados de gramática/recursos, investigación de noticia/guía e informes sobre afiche/cuento/caligrama. Catálogo .20 instalado solo local; .19 archivado. Verificados 34 recorridos de familia, 660 peticiones normales y 12 de requisitos ausentes. Cuatro formatos guardados/reabiertos realmente y textos contrastados con persistencia. [Informe del bloque](lengua-1-contratos-y-editor.md).
+
+Transversal: reparto por pesos originales, propósito evaluativo para recomendar formato, distinción entre presentar por escrito y exponer oralmente; diálogo conservar/adaptar/cancelar con descarte de respuestas tardías y fallos sin fallback. Se reprodujo además que conservar impedía guardar por discordancia del tipo en los metadatos; corregido sin cambiar las filas. Corregidos publicación no solicitada, negación que absorbía frases posteriores y cambios simultáneos del formulario. Backend 1.390 / frontend 971; builds backend/frontend/shared/Cloudflare dry-run aprobados. Los 28 snapshots anteriores siguen intactos (32 actuales).
+
+**Siguiente bloque, todavía 1.º:** conectar y probar procedimientos detallados de paráfrasis, anticipación/predicciones, inferencia de vocabulario, clasificación y conectores espaciales en guía, planificación con esquema, ilustración solicitada y rima/ritmo del caligrama; comprensión oral y combinaciones pertinentes. Alinear límite de descripción (editor 10.000, DTO 5.000). No avanzar a 2.º ni marcar completo antes de cerrar estos puntos. La matriz registra esta cobertura parcial de forma explícita. Después continuar 2.º→6.º sin nueva autorización. Los formatos representativos de 1.º ya tienen persistencia real; cualquier nueva versión debe preservar los 32 snapshots existentes.
+
+Las secciones siguientes son historial. No aplicar su restricción anterior de limitar el trabajo a novela.
+
 ## Encargo vigente: corrección acotada de novela y contrato compartido (.19)
 
 Commit funcional **`54aaf4ff80d7ee483e30f8f06f0cf3a6ca86d911`**, publicado en `origin/amplia-instrumentos-secundaria` de `https://github.com/thebuuba/Proyecto-educativo-v3.git`. Entorno reiniciado con ese commit y `dirty=false` al arranque, frontend Vite 5173, API mediante proxy y Supabase local; catálogo `evaluation-2026.19`. La respuesta autenticada posterior al reinicio vuelve a producir los cinco criterios específicos. [Evidencia del código ejecutado](evidencias/entorno-catalogo19-ejecutado.json). El navegador se recargó y volvió a abrir la actividad exacta con las seis filas editadas. El commit posterior solo documenta esta comprobación; no cambia el código ejecutado.

@@ -335,7 +335,8 @@ export function recommendationToFields(proposal: InstrumentRecommendation, activ
     }
   }
   if (type === 'lista-ponderada') {
-    const weights = distributeScoreUnits(10000, proposal.criteria.map(criterion => criterion.maxScoreUnits))
+    const authored = proposal.criteria.every(criterion => Number.isFinite(criterion.relativeWeight) && criterion.relativeWeight! > 0)
+    const weights = distributeScoreUnits(10000, proposal.criteria.map(criterion => authored ? criterion.relativeWeight! : criterion.maxScoreUnits))
     weights.forEach((weight, index) => { fields[`${type}:weight:${index}`] = String(weight / 100) })
   }
   return fields

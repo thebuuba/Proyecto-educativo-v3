@@ -52,7 +52,8 @@ export function scoreInstrumentFields(fields: Record<string, string>, type: stri
   if (!length) return next
   if (['rubrica', 'escala'].includes(type) && !validLevelCount(fields, type)) return next
   if (!next[`${type}:meta:scoreWeights`]) {
-    const original = proposal?.criteria.map(criterion => criterion.maxScoreUnits) ?? []
+    const authored = proposal?.criteria.every(criterion => Number.isFinite(criterion.relativeWeight) && criterion.relativeWeight! > 0)
+    const original = proposal?.criteria.map(criterion => authored ? criterion.relativeWeight! : criterion.maxScoreUnits) ?? []
     next[`${type}:meta:scoreWeights`] = JSON.stringify(original.length === length ? original : Array.from({ length }, () => 1))
   }
   if (type === 'rubrica' || type === 'escala') {

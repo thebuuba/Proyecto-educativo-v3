@@ -2,10 +2,14 @@ import {describe,it,expect} from 'vitest'
 import {recommend,detectActivityType} from './recommendation-engine'
 import type {AcademicContext} from './curriculum-context'
 import fixture from '../../../../../data/evaluation-instruments/novel-task-regression.json'
-import {detectSecondaryLanguageActivity} from '@aula/shared'
+import {detectSecondaryLanguageActivity,distributeScoreUnits} from '@aula/shared'
 const context:AcademicContext={level:'SECONDARY',grade:5,cycle:2,subjectCode:'LEN',subjectName:'Lengua Española',optativeExitName:null,modalityCode:'academic'}
 const run=(description=fixture.description,activityTitle=fixture.activityTitle,pedagogicalActivityType?:string)=>recommend({activityTitle,description,pedagogicalActivityType,maxScore:15,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
 describe('Contrato entre texto estudiado y producto solicitado',()=>{
+  it('service and editor use the same relative weight distribution',()=>{
+    const r=run()
+    expect(r.criteria.map(c=>c.maxScoreUnits)).toEqual(distributeScoreUnits(1500,r.criteria.map(c=>c.relativeWeight!)))
+  })
   it('conserva Análisis pero evalúa las evidencias del fragmento, no crear una novela',()=>{
     const r=run()
     expect(r.activityType).toBe('ANALYSIS')

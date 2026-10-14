@@ -1,10 +1,21 @@
 import { describe, expect, it } from 'vitest'
 import { editableFallbackRecommendation, recommendationToFields } from './instrumentPreparation'
 import { distributeUnits, rememberManualLevelWeights, rememberManualScoreWeights, scoreInstrumentFields, scoreRecommendation, validActivityScore } from './instrumentScoring'
+import { editableAuthoredRecommendation } from '@aula/shared'
 
 const formats = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const
 
 describe('puntaje pendiente y redistribución del instrumento', () => {
+  for (const type of formats) for (const total of [15,20,17.35]) it(`same authored weights before or after preparation: ${type} ${total}`, () => {
+    const criteria = [4,5,4,5,2,2].map((weight,index) => ({templateId:`criterion-${index}`,title:`Componente ${index}`,observable:'Evidencia solicitada',weight,progressionLevels:['Completa','Casi completa','Incompleta','Contradictoria','Ausente'] as [string,string,string,string,string]}))
+    const prepare = (maxScore:number) => editableAuthoredRecommendation(criteria,{activityTitle:'Análisis',maxScore,instrumentType:type,participationMode:'INDIVIDUAL'},'ANALYSIS','test')
+    const initial=prepare(20), direct=prepare(total)
+    const pending=scoreInstrumentFields(recommendationToFields(initial,'Análisis'),type,null,initial)
+    const after=scoreInstrumentFields(pending,type,total,initial)
+    const before=scoreInstrumentFields(recommendationToFields(direct,'Análisis'),type,total,direct)
+    expect(Array.from({length:criteria.length},(_,i)=>after[`${type}:points:${i}`])).toEqual(Array.from({length:criteria.length},(_,i)=>before[`${type}:points:${i}`]))
+    if(type==='lista-ponderada') expect(Array.from({length:criteria.length},(_,i)=>after[`${type}:weight:${i}`])).toEqual(Array.from({length:criteria.length},(_,i)=>before[`${type}:weight:${i}`]))
+  })
   it('keeps zero level ratios and tiny-score level definitions usable', () => {
     const proposal = editableFallbackRecommendation({activityTitle: 'Small', maxScore: 20, instrumentType: 'escala', participationMode: 'INDIVIDUAL'})
     const original = { ...recommendationToFields(proposal, 'Small'), 'escala:level-points:1': '0', 'escala:level-points:4': '10', 'escala:level-points:3': '9' }

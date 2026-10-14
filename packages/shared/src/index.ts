@@ -18,6 +18,7 @@ import {resolveEvaluationTask} from './evaluation-task-contract'
 export * from './evaluation-task-contract'
 export * from './secondary-novel-analysis'
 export * from './action-content-criteria'
+export * from './language-instrument-intent'
 export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string }
 
 export function firstSecondaryLanguageGenre(title: string, description: string) {
@@ -45,24 +46,26 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
   const action = (value: string) => {
     const contract=resolveEvaluationTask('',value)
     if(contract.product==='ANALYTICAL_TEXT'&&!contract.oral) return `${module}_ANALYSIS`
-    if (module !== 'READING_REPORT' && /\binformes?\b/.test(value) && /\b(?:redact\w*|escrib\w*|elabor\w*|prepar\w*|produc\w*)\b/.test(value)) return 'REPORT'
+    if (module !== 'READING_REPORT' && contract.product === 'REPORT') return 'REPORT'
     if (module === 'NEWS') {
       if (/\binformes?\b/.test(value) && /\b(?:redact\w*|escrib\w*|elabor\w*|prepar\w*|produc\w*)\b/.test(value)) return 'REPORT'
       if (/\b(?:debat\w*|debates?)\b/.test(value)) return 'DEBATE'
     }
     const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon\w*)\b/.test(value)
-    const comparing = /\b(?:compar\w*|contrast\w*)\b/.test(value)
-    const oralAction = /\b(?:present(?:ar\w*|an|a|amos|en|ando)|presentacion(?:es)?|presente(?=\s+(?:la|el|una?|sus?|las|los)\b)|expon(?:er\w*|e|en|emos|dr\w*|iendo|ga|gan)|exposicion(?:es)?|oralmente)\b/.test(value)
-    const presenting = oralAction || /\bexplic\w*\b/.test(value)
+    const comparing = /\b(?:compar(?:ar\w*|an|a|en|ando)|contrast\w*|comparacion entre)\b/.test(value)
+    const oralAction = contract.oral || /\bexposicion\b/.test(value)
+    const presenting = oralAction
     const analyzing = /\b(?:analiz\w*|identific\w*|interpret\w*|leer\w*|leeran|lectura)\b/.test(value)
     if (module === 'NEWS' && /\bnoticiero\b/.test(value)) return 'NEWSCAST'
     if (module === 'DETECTIVE_STORY' && /\b(?:narrar\w*|narracion|narraran|contar|contaran)\b/.test(value)) return 'DETECTIVE_STORY_NARRATION'
     if (module === 'CALLIGRAM' && /\b(?:recit\w*|declam\w*)\b/.test(value)) return 'CALLIGRAM_RECITATION'
     if (comparing) return `${module}_COMPARISON`
     if (writing) return module === 'NEWS' ? 'NEWS_WRITING' : `${module}_CREATION`.replace('READING_REPORT_CREATION', 'READING_REPORT_WRITING').replace('DETECTIVE_STORY_CREATION', 'DETECTIVE_STORY_WRITING')
+    if (/\b(?:investig\w*|document\w*)\b/.test(value) && ['NEWS','TOURIST_GUIDE'].includes(module)) return 'RESEARCH'
     if (analyzing && !oralAction) return `${module}_ANALYSIS`
     if (presenting) return module === 'NEWS' ? 'NEWSCAST' : module === 'DETECTIVE_STORY' ? 'DETECTIVE_STORY_ANALYSIS_PRESENTATION' : module === 'CALLIGRAM' ? 'CALLIGRAM_EXPLANATION' : `${module}_PRESENTATION`
     if (analyzing) return `${module}_ANALYSIS`
+    if (/\b(?:explic\w*|present\w*)\b/.test(value)) return `${module}_ANALYSIS`
     return null
   }
   return action(task) ?? action(titleText)
@@ -178,13 +181,17 @@ export const GradeRecordStatusEnum = {
 export type GradeRecordStatus = (typeof GradeRecordStatusEnum)[keyof typeof GradeRecordStatusEnum]
 
 /** @description Estado booleano simplificado de una entidad: activo o inactivo. */
-export { firstGradeNewsCriteria, firstGradeNewsModule, isFirstGradeNewsActivity } from './secondary-news-grade-one'
+export { firstGradeNewsModule } from './secondary-news-grade-one'
 export { formatAuthoredCriteria } from './authored-instrument-format'
-export { firstGradeGuideCriteria, firstGradeGuideModule, isFirstGradeGuideActivity } from './secondary-guide-grade-one'
-export { firstGradeReadingReportCriteria, firstGradeReadingReportModule } from './secondary-reading-report-grade-one'
-export { firstGradePosterCriteria, firstGradePosterModule, isFirstGradePosterActivity } from './secondary-poster-grade-one'
-export { firstGradeDetectiveCriteria, firstGradeDetectiveModule, isFirstGradeDetectiveActivity } from './secondary-detective-grade-one'
-export { firstGradeCalligramCriteria, firstGradeCalligramModule, isFirstGradeCalligramActivity } from './secondary-calligram-grade-one'
+export { firstGradeGuideModule } from './secondary-guide-grade-one'
+export { firstGradeReadingReportModule } from './secondary-reading-report-grade-one'
+export { firstGradePosterModule } from './secondary-poster-grade-one'
+export { firstGradeDetectiveModule } from './secondary-detective-grade-one'
+export { firstGradeCalligramModule } from './secondary-calligram-grade-one'
+export { completeFirstGradeNewsCriteria as firstGradeNewsCriteria, completeFirstGradeGuideCriteria as firstGradeGuideCriteria,
+  completeFirstGradeReadingReportCriteria as firstGradeReadingReportCriteria, completeFirstGradePosterCriteria as firstGradePosterCriteria,
+  completeFirstGradeDetectiveCriteria as firstGradeDetectiveCriteria, completeFirstGradeCalligramCriteria as firstGradeCalligramCriteria,
+  firstGradeLanguageFeatures, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity } from './secondary-language-grade-one-complete'
 export { findSecondaryMathTopic, secondaryMathCriteria, secondaryMathModules } from './secondary-math'
 export type EntityStatus = 'active' | 'inactive'
 

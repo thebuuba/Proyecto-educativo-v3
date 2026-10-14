@@ -22,7 +22,7 @@ describe('Caligrama de primero: niveles por acción y requisitos',()=>{
     expect(JSON.stringify(result.criteria)).not.toMatch(/sentimientos personales|creencias/i)
   })
   it('incluye preguntas explícitas sin convertir una explicación grupal en dominio individual',()=>{
-    const result=recommend({activityTitle:'El caligrama',description:fixtures[4].description+' Responderán preguntas sobre su proceso y producto.',maxScore:20,participationMode:'GROUP'},context,null,[],'UNMAPPED',null)
+    const result=recommend({activityTitle:'El caligrama',description:fixtures[4].description+' La exposición será oral. Responderán preguntas sobre su proceso y producto.',maxScore:20,participationMode:'GROUP'},context,null,[],'UNMAPPED',null)
     expect(result.criteria.find(c=>c.templateId==='calligram-individual')?.title).toBe('Respuestas sobre el proceso y el producto')
     expect(result.criteria.some(c=>c.title==='Dominio individual')).toBe(false)
   })

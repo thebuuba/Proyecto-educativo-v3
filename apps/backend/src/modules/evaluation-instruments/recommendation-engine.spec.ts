@@ -32,7 +32,7 @@ describe('Selecciones automáticas de Lengua Española en 1.º de secundaria', (
   const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
   it.each([
     ['Redactar una noticia', '', 'NEWS_WRITING', 'analisis-producciones', 'rubrica'],
-    ['Actividad', 'Presentarán una guía turística de dos lugares de la comunidad.', 'TOURIST_GUIDE_PRESENTATION', 'exposicion', 'rubrica'],
+    ['Actividad', 'Presentarán oralmente una guía turística de dos lugares de la comunidad.', 'TOURIST_GUIDE_PRESENTATION', 'exposicion', 'rubrica'],
     ['Informe de lectura', 'Compararán dos informes e identificarán diferencias en su estructura.', 'READING_REPORT_COMPARISON', 'analisis-producciones', 'rubrica'],
     ['El afiche', 'Analizarán un afiche e identificarán su propósito y destinatarios.', 'POSTER_ANALYSIS', 'observacion-sistematica', 'lista-cotejo'],
     ['El cuento policíaco', 'Narrarán oralmente el cuento y explicarán sus pistas.', 'DETECTIVE_STORY_NARRATION', 'presentacion', 'rubrica'],
@@ -378,7 +378,7 @@ describe('Recomendador con currículo literal completo', () => {
   it.each([
     ['La noticia', 'Los estudiantes redactarán una noticia sobre un acontecimiento escolar, con titular, entrada y cuerpo', 'NEWS_WRITING', ['Información esencial de la noticia', 'Titular, entrada y cuerpo']],
     ['La noticia', 'Los estudiantes leerán una noticia e identificarán sus partes y las interrogantes que responde', 'NEWS_ANALYSIS', ['Identificación de sus partes', 'Interrogantes fundamentales']],
-    ['Noticiero escolar', 'Los estudiantes presentarán en equipos noticias del centro; se calificará individualmente', 'NEWSCAST', ['Información periodística', 'Dominio individual de la noticia asignada']],
+    ['Noticiero escolar', 'Los estudiantes presentarán oralmente en equipos noticias del centro; se calificará individualmente', 'NEWSCAST', ['Información periodística', 'Dominio individual de la noticia asignada']],
   ])('prepara La noticia según la acción descrita: %s', (activityTitle, description, activityType, expectedTitles) => {
     const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
     for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
@@ -419,7 +419,7 @@ describe('Recomendador con currículo literal completo', () => {
     ['Cuidemos el agua', 'Los estudiantes elaborarán un afiche para motivar a la comunidad escolar a ahorrar agua, con un mensaje breve, recomendaciones e imágenes relacionadas.', 'POSTER_CREATION', ['Mensaje del afiche', 'Adecuación al público destinatario']],
     ['Mensajes que convencen', 'Los estudiantes analizarán un afiche de prevención e identificarán su propósito, destinatarios y recursos utilizados para convencer.', 'POSTER_ANALYSIS', ['Propósito y destinatarios del afiche', 'Recursos para convencer']],
     ['Dos formas de comunicar', 'Los estudiantes compararán dos afiches sobre convivencia escolar y justificarán cuál comunica mejor su mensaje.', 'POSTER_COMPARISON', ['Comparación de mensajes y argumentos', 'Eficacia comunicativa']],
-    ['Nuestra campaña', 'Cada estudiante presentará su afiche sobre cuidado del entorno y explicará el mensaje, el público destinatario y la elección de sus elementos visuales.', 'POSTER_PRESENTATION', ['Mensaje del afiche', 'Claridad de la presentación oral']],
+    ['Nuestra campaña', 'Cada estudiante presentará oralmente su afiche sobre cuidado del entorno y explicará el mensaje, el público destinatario y la elección de sus elementos visuales.', 'POSTER_PRESENTATION', ['Mensaje del afiche', 'Claridad de la presentación oral']],
   ])('prepara El afiche según la acción descrita: %s', (activityTitle, description, activityType, expectedTitles) => {
     const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
     for (const maxScore of [20, 17.35]) for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
@@ -443,7 +443,7 @@ describe('Recomendador con currículo literal completo', () => {
   it.each([
     ['Informe sobre un cuento', 'Elaborarán un informe de lectura sobre un cuento e incluirán resumen y análisis de sus valores.', 'READING_REPORT_WRITING', ['Estructura del informe de lectura', 'Análisis sociocultural']],
     ['Comprender un informe', 'Leerán un informe de lectura e identificarán su estructura, resumen y análisis.', 'READING_REPORT_ANALYSIS', ['Identificación de la estructura', 'Comprensión del resumen']],
-    ['Compartimos la lectura', 'Presentarán un informe de lectura sobre una leyenda y responderán preguntas individualmente.', 'READING_REPORT_PRESENTATION', ['Organización del informe oral', 'Claridad de la exposición']],
+    ['Compartimos la lectura', 'Presentarán oralmente un informe de lectura sobre una leyenda y responderán preguntas individualmente.', 'READING_REPORT_PRESENTATION', ['Organización del informe oral', 'Claridad de la exposición']],
     ['Dos interpretaciones', 'Compararán informes de lectura sobre una novela y justificarán sus diferencias.', 'READING_REPORT_COMPARISON', ['Comparación de interpretaciones', 'Conclusión comparativa']],
   ])('prepara El informe de lectura según la acción: %s', (activityTitle, description, activityType, expectedTitles) => {
     const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
@@ -481,7 +481,7 @@ describe('Recomendador con currículo literal completo', () => {
     ['Interpretamos el caligrama', 'Los estudiantes analizarán un caligrama e interpretarán cómo la figura formada por sus palabras se relaciona con el mensaje y los sentimientos del poema.', 'CALLIGRAM_ANALYSIS', 'Relación entre texto y figura'],
     ['Comparamos caligramas', 'Los estudiantes compararán dos caligramas y justificarán semejanzas y diferencias en sus mensajes y organización visual.', 'CALLIGRAM_COMPARISON', 'Comparación de figuras'],
     ['Recitamos', 'Cada estudiante recitará un caligrama seleccionado, utilizando una entonación acorde con los sentimientos del poema.', 'CALLIGRAM_RECITATION', 'Entonación y expresión'],
-    ['Explicamos', 'Cada estudiante presentará su caligrama y explicará la relación entre el tema, las palabras elegidas y la figura.', 'CALLIGRAM_EXPLANATION', 'Tema, palabras y figura'],
+    ['Explicamos', 'Cada estudiante presentará oralmente su caligrama y explicará la relación entre el tema, las palabras elegidas y la figura.', 'CALLIGRAM_EXPLANATION', 'Tema, palabras y figura'],
   ])('prepara el caligrama: %s', (activityTitle, description, activityType, criterionTitle) => {
     const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
     for (const preferredInstrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {

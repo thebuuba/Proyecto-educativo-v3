@@ -27,7 +27,9 @@ describe('guía turística de primero: evidencia progresiva y requisitos', () =>
     const description = `Redacta un informe sobre ${topic}, analiza su contenido y formula una conclusión.`
     expect(detectSecondaryLanguageActivity('Actividad', description, context)).toBe('REPORT')
     const result = recommend({ activityTitle: 'Actividad', description, participationMode: 'INDIVIDUAL', maxScore: 20 }, context, null, [], 'NO_MAPPING', null)
-    expect(result.criteria.some(row => /^(detective|calligram|poster)-/.test(row.templateId))).toBe(false)
+    expect(result.criteria.every(row => /^(detective|calligram|poster)-/.test(row.templateId))).toBe(true)
+    expect(result.criteria.some(row => /report-organization$/.test(row.templateId))).toBe(true)
+    expect(result.criteria.map(row=>row.description).join(' ')).not.toMatch(/Crea |Redacta un cuento|Compone |Diseña un afiche/)
   })
   for (const [activity, description] of [
     ['TOURIST_GUIDE_CREATION', 'Elabora una guía turística de dos lugares con un mapa o fotografías.'],

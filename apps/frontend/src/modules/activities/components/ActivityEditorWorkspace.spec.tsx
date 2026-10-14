@@ -74,6 +74,109 @@ function props() {
 }
 
 describe('independent activity editor', () => {
+  it('keeps the modality when another field changes before the next render',()=>{
+    render(<ActivityEditorWorkspace {...props()} initialDraft={{...newActivityDraft('b1'),name:'Actividad'}} />)
+    act(()=>{
+      screen.getByRole('button',{name:/^Individual\s*Cada estudiante/}).click()
+      fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:'Analizarán una noticia.'}})
+    })
+    expect(screen.getByRole('button',{name:/✓\s*Modalidad de la actividad/})).toBeInTheDocument()
+    expect(screen.getByLabelText('Descripción de la actividad')).toHaveValue('Analizarán una noticia.')
+  })
+  for (const interruption of ['cancel', 'description', 'context']) it(`activity adaptation discards late response after ${interruption}`, async () => {
+    const original = {...readyDraft(), pedagogicalActivityType: 'REPORT'}
+    original.preparedFingerprint = preparationFingerprint(original)
+    const adapted = {...original.preparedRecommendation, activityType: 'ANALYSIS', criteria: original.preparedRecommendation.criteria.map(c => ({...c, title: 'Respuesta obsoleta'}))}
+    let resolveResponse!: (value: InstrumentRecommendation) => void
+    const calls = vi.spyOn(api, 'post').mockImplementation(path => path.endsWith('/interpret')
+      ? Promise.resolve({suggestedActivityType: 'REPORT', activityType: 'REPORT'})
+      : new Promise(resolve => { resolveResponse = resolve }))
+    const view = render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" />)
+    fireEvent.change(screen.getByRole('combobox', {name: 'Tipo de actividad'}), {target: {value: 'ANALYSIS'}})
+    const dialog = await screen.findByRole('dialog', {name: 'Cambiar tipo de actividad'})
+    fireEvent.click(within(dialog).getByRole('button', {name: 'Adaptar instrumento'}))
+    await waitFor(() => expect(resolveResponse).toBeTypeOf('function'))
+    expect(calls.mock.calls.filter(([path]) => path.endsWith('/recommend'))).toHaveLength(1)
+    if (interruption === 'cancel') fireEvent.click(within(dialog).getByRole('button', {name: 'Cancelar'}))
+    if (interruption === 'description') fireEvent.change(screen.getByLabelText('Descripción de la actividad'), {target: {value: 'Una consigna diferente.'}})
+    if (interruption === 'context') view.rerender(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="changed-subject" />)
+    await act(async () => resolveResponse(adapted))
+    expect(screen.getByLabelText('Criterio 1')).toHaveValue(original.preparedRecommendation.criteria[0].title)
+    expect(screen.getByRole('combobox', {name: 'Tipo de actividad'})).toHaveValue('REPORT')
+  })
+  for (const invalid of ['forbidden', 'wrong-activity', 'wrong-format']) it(`activity adaptation preserves draft on ${invalid}`, async () => {
+    const original = {...readyDraft(), pedagogicalActivityType: 'REPORT'}
+    original.preparedFingerprint = preparationFingerprint(original)
+    vi.spyOn(api, 'post').mockImplementation(async path => {
+      if (path.endsWith('/interpret')) return {suggestedActivityType: 'REPORT', activityType: 'REPORT'}
+      if (invalid === 'forbidden') throw new ApiError(403, 'Sin permiso para preparar')
+      return {...original.preparedRecommendation, activityType: invalid === 'wrong-activity' ? 'REPORT' : 'ANALYSIS', instrumentType: invalid === 'wrong-format' ? 'rubrica' : original.instrumentType}
+    })
+    render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" />)
+    fireEvent.change(screen.getByRole('combobox', {name: 'Tipo de actividad'}), {target: {value: 'ANALYSIS'}})
+    const dialog = await screen.findByRole('dialog', {name: 'Cambiar tipo de actividad'})
+    fireEvent.click(within(dialog).getByRole('button', {name: 'Adaptar instrumento'}))
+    await within(dialog).findByRole('alert')
+    expect(screen.getByLabelText('Criterio 1')).toHaveValue(original.preparedRecommendation.criteria[0].title)
+    expect(readActivityDrafts(context)).toEqual([])
+    expect(screen.queryByText(/Revisa el instrumento alternativo/)).not.toBeInTheDocument()
+  })
+  for (const choice of ['Conservar instrumento', 'Cancelar', 'Cerrar', 'Escape']) it(`activity change transaction: ${choice}`, async () => {
+    const original=readyDraft()
+    original.preparedRecommendation={...original.preparedRecommendation,catalogVersion:'evaluation-2026.20',activityType:'REPORT'}
+    original.pedagogicalActivityType='REPORT'
+    original.preparedFingerprint=preparationFingerprint(original)
+    vi.spyOn(api,'post').mockRejectedValue(new ApiError(503,'Sin conexión'))
+    render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" />)
+    fireEvent.change(screen.getByRole('combobox',{name:'Tipo de actividad'}),{target:{value:'ANALYSIS'}})
+    const dialog=await screen.findByRole('dialog',{name:'Cambiar tipo de actividad'})
+    expect(screen.getByRole('combobox',{name:'Tipo de actividad'})).toHaveValue('REPORT')
+    if(choice==='Escape') fireEvent.keyDown(dialog,{key:'Escape'})
+    else fireEvent.click(within(dialog).getByRole('button',{name:choice}))
+    await waitFor(()=>expect(screen.queryByRole('dialog',{name:'Cambiar tipo de actividad'})).not.toBeInTheDocument())
+    expect(screen.getByRole('combobox',{name:'Tipo de actividad'})).toHaveValue(choice==='Conservar instrumento'?'ANALYSIS':'REPORT')
+    expect(screen.getByLabelText('Criterio 1')).toHaveValue(original.preparedRecommendation.criteria[0].title)
+    if(choice==='Conservar instrumento') {
+      const draft=readActivityDrafts(context)[0].draft as ReturnType<typeof newActivityDraft>
+      expect(draft.instrumentFields).toEqual(original.instrumentFields)
+      expect(draft.preparedRecommendation).toEqual(original.preparedRecommendation)
+      expect(draft.preparedManuallyEdited).toBe(true)
+      const payload=draftToActivity(draft)
+      expect(payload.instrumentSnapshot?.activityType).toBe('ANALYSIS')
+      expect(payload.instrumentSnapshot?.criteria).toEqual(draftToActivity(original).instrumentSnapshot?.criteria)
+      fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:'Otra consigna para comparar noticias.'}})
+      await act(async()=>{await new Promise(resolve=>setTimeout(resolve,1050))})
+      expect(readActivityDrafts(context)[0].draft.instrumentFields).toEqual(original.instrumentFields)
+    }
+  })
+  for (const failure of [false,true]) it(`activity change adaptation ${failure?'failure then retry':'valid response'}`,async()=>{
+    const original=readyDraft()
+    original.pedagogicalActivityType='REPORT';original.preparedFingerprint=preparationFingerprint(original)
+    const adapted={...original.preparedRecommendation,activityType:'ANALYSIS',criteria:original.preparedRecommendation.criteria.map(c=>({...c,title:'Análisis nuevo: '+c.title}))}
+    let reject=failure
+    vi.spyOn(api,'post').mockImplementation(async path=>{
+      if(path.endsWith('/interpret')) return {suggestedActivityType:'REPORT',activityType:'REPORT'}
+      if(reject) throw new ApiError(503,'Servicio no disponible')
+      return adapted
+    })
+    render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" />)
+    fireEvent.change(screen.getByRole('combobox',{name:'Tipo de actividad'}),{target:{value:'ANALYSIS'}})
+    let dialog=await screen.findByRole('dialog',{name:'Cambiar tipo de actividad'})
+    fireEvent.click(within(dialog).getByRole('button',{name:'Adaptar instrumento'}))
+    if(failure){
+      await within(dialog).findByRole('alert')
+      expect(readActivityDrafts(context)).toEqual([])
+      expect(screen.getByRole('combobox',{name:'Tipo de actividad'})).toHaveValue('REPORT')
+      expect(screen.getByLabelText('Criterio 1')).toHaveValue(original.preparedRecommendation.criteria[0].title)
+      reject=false
+      fireEvent.click(within(dialog).getByRole('button',{name:'Adaptar instrumento'}))
+    }
+    await waitFor(()=>expect(screen.queryByRole('dialog',{name:'Cambiar tipo de actividad'})).not.toBeInTheDocument())
+    expect((readActivityDrafts(context)[0].draft as ReturnType<typeof newActivityDraft>).pedagogicalActivityType).toBe('ANALYSIS')
+    expect(readActivityDrafts(context)[0].draft.instrumentType).toBe(original.instrumentType)
+    expect(readActivityDrafts(context)[0].draft.maxScore).toBe(original.maxScore)
+    expect(screen.getByLabelText('Criterio 1')).toHaveValue(adapted.criteria[0].title)
+  })
   for (const offline of [false, true]) for (const selected of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {
     it(`novel: explicit ${selected} before description, ${offline ? 'fallback' : 'service'}`, async () => {
       const academicContext = { level: 'SECONDARY' as const, grade: 5, subjectCode: 'LEN' }

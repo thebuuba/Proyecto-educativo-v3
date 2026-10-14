@@ -1,5 +1,11 @@
 # Avance durable — cobertura secundaria
 
+## Encargo vigente: Lengua común 1.º–6.º, en orden
+
+El adjunto a7fdea3e reactiva expresamente la ampliación de Lengua común. Bloque .20: 55 subtemas y 34 familias de 1.º conectados y comprobados en cuatro formatos; 660 solicitudes HTTP y 12 regresiones posteriores, más cuatro guardados/reabiertos en navegador local con textos contrastados contra base. Puntuación antes/después unificada, propósito de instrumento compartido y diálogo transaccional de cambio de actividad. Backend 1.390 / frontend 971 y builds obligatorios aprobados; 28 snapshots históricos intactos (32 actuales). [Informe, ejemplos y evidencias](lengua-1-contratos-y-editor.md).
+
+**1.º sigue parcial**: faltan procedimientos detallados identificados al contrastar PDF 69–75 y la discrepancia de límite de descripción. Continúa con esos puntos antes de 2.º. Las secciones posteriores documentan bloques históricos; su pausa de ampliación ya no es la instrucción vigente. No hay ninguna asignatura declarada completa.
+
 ## Encargo acotado actual: contrato tema/acción/producto (.19)
 
 Por instrucción nueva del usuario, no se continúa ahora la ampliación curricular completa. Corregido el análisis escrito del fragmento de novela policíaca de Lengua 5.º: el servicio ya clasificaba Análisis, pero seleccionaba plantillas de producción; además interpolaba mal el título. Contrato compartido, proveedor acotado, progresiones específicas y alternativa por acción. Cuatro formatos, títulos contrastados, 15/20/17,35 y puntaje pendiente; cuatro guardados/reabiertos reales con ediciones, candidato y celda completada. Los 24 snapshots históricos permanecen intactos.

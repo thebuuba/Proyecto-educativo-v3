@@ -9,7 +9,12 @@
       "implementation": "PARTIAL_TASK_DERIVED_NOVEL_ANALYSIS",
       "engineConnection": "TASK_DERIVED_PROVIDER",
       "catalogVersion": "evaluation-2026.19",
-      "instrumentFormats": ["rubrica", "lista-cotejo", "escala", "lista-ponderada"],
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
       "automatedVerification": "PASSED",
       "manualVerification": "TASK_DERIVED_DESCRIPTORS_REVIEWED_NOT_OFFICIAL_ALIGNMENT",
       "applicationVerification": "NORMAL_LOCAL_LOGIN_SAVE_REOPEN_PASSED",
@@ -182,7 +187,7 @@
     },
     {
       "id": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
-      "implementation": "PARTIAL_NEWS_CORE_SIX_ACTIVITY_FAMILIES",
+      "implementation": "PARTIAL_SUBTOPICS_AND_34_FAMILIES_VERIFIED_PROCEDURES_PENDING",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "procedures": [
@@ -193,25 +198,25 @@
         "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
         "71c8091f-c16b-5568-a567-fefeeb6ab5a6"
       ],
-      "report": "noticia-1-reauditoria.md",
+      "report": "lengua-1-contratos-y-editor.md",
       "automatedVerification": "PASSED",
-      "manualVerification": "SOURCE_69_70_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
-      "applicationVerification": "NORMAL_LOCAL_HTTP_AND_BROWSER_RUBRIC_PASSED",
-      "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+      "manualVerification": "SUBTOPIC_DESCRIPTORS_REVIEWED_PROCEDURES_PENDING",
+      "applicationVerification": "NORMAL_LOCAL_REPRESENTATIVE_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
         "escala",
         "lista-ponderada"
       ],
-      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED_96_CASES",
-      "interfaceVerification": "NORMAL_BROWSER_RUBRIC_SAVE_REOPEN_PASSED",
-      "catalogVersion": "evaluation-2026.11",
-      "pending": "Verificar navegador de otros tres formatos y subtemas gramaticales, sinónimos, siglas y requisitos muy focalizados; no equivale a completar Lengua 1.º."
+      "serviceVerification": "NORMAL_LOCAL_FOUR_FORMATS_ALL_DEFINED_FAMILIES_PASSED",
+      "interfaceVerification": "GRADE_REPRESENTATIVE_FOUR_FORMATS_PERSISTED",
+      "catalogVersion": "evaluation-2026.20",
+      "pending": "Pendientes procedimientos detallados: paráfrasis, anticipación/predicciones, inferencia contextual, clasificación/conectores de guía, esquema, ilustración y rima/ritmo según tema. No completa el grado; ver informe. Navegador representativo por grado, no cada familia."
     },
     {
       "id": "56301465-88e2-54cc-a5db-627c7266844c",
-      "implementation": "PARTIAL_GUIDE_CORE_FIVE_ACTIVITY_FAMILIES",
+      "implementation": "PARTIAL_SUBTOPICS_AND_34_FAMILIES_VERIFIED_PROCEDURES_PENDING",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "procedures": [
@@ -224,25 +229,25 @@
         "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
         "c48372c9-5df0-5a1d-b905-7de155ae1af8"
       ],
-      "report": "guia-1-reauditoria.md",
+      "report": "lengua-1-contratos-y-editor.md",
       "automatedVerification": "PASSED",
-      "manualVerification": "SOURCE_70_71_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
-      "applicationVerification": "NORMAL_LOCAL_HTTP_AND_BROWSER_WEIGHTED_PASSED",
-      "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+      "manualVerification": "SUBTOPIC_DESCRIPTORS_REVIEWED_PROCEDURES_PENDING",
+      "applicationVerification": "NORMAL_LOCAL_REPRESENTATIVE_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
         "escala",
         "lista-ponderada"
       ],
-      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED_80_CASES",
-      "interfaceVerification": "NORMAL_BROWSER_WEIGHTED_SAVE_REOPEN_PASSED",
-      "catalogVersion": "evaluation-2026.12",
-      "pending": "Verificar otros tres formatos en navegador; ampliar análisis focalizado, gramática y solicitudes de varios medios visuales. No equivale a completar Lengua 1.º."
+      "serviceVerification": "NORMAL_LOCAL_FOUR_FORMATS_ALL_DEFINED_FAMILIES_PASSED",
+      "interfaceVerification": "GRADE_REPRESENTATIVE_FOUR_FORMATS_PERSISTED",
+      "catalogVersion": "evaluation-2026.20",
+      "pending": "Pendientes procedimientos detallados: paráfrasis, anticipación/predicciones, inferencia contextual, clasificación/conectores de guía, esquema, ilustración y rima/ritmo según tema. No completa el grado; ver informe. Navegador representativo por grado, no cada familia."
     },
     {
       "id": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
-      "implementation": "PARTIAL_READING_REPORT_CORE_FOUR_ACTIVITY_FAMILIES",
+      "implementation": "PARTIAL_SUBTOPICS_AND_34_FAMILIES_VERIFIED_PROCEDURES_PENDING",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "procedures": [
@@ -252,25 +257,25 @@
         "5b1e7ea8-a3e7-589a-9701-792813138f20",
         "f44cf502-e335-5fcd-b2c1-d58e5c21b85c"
       ],
-      "report": "informe-lectura-1-reauditoria.md",
+      "report": "lengua-1-contratos-y-editor.md",
       "automatedVerification": "PASSED",
-      "manualVerification": "SOURCE_71_72_AND_PEDAGOGICAL_EXAMPLES_REVIEWED",
-      "applicationVerification": "NORMAL_LOCAL_HTTP_AND_BROWSER_SCALE_PASSED",
-      "engineConnection": "SHARED_CONTEXTUAL_PROVIDER",
+      "manualVerification": "SUBTOPIC_DESCRIPTORS_REVIEWED_PROCEDURES_PENDING",
+      "applicationVerification": "NORMAL_LOCAL_REPRESENTATIVE_FOUR_FORMATS_SAVE_REOPEN_PASSED",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
         "escala",
         "lista-ponderada"
       ],
-      "serviceVerification": "NORMAL_LOCAL_HTTP_PASSED_64_CASES",
-      "interfaceVerification": "NORMAL_BROWSER_SCALE_SAVE_REOPEN_PASSED",
-      "catalogVersion": "evaluation-2026.13",
-      "pending": "Completar análisis muy focalizado, requisitos gramaticales y revisión de borradores solicitada; verificar otros tres formatos en navegador. No equivale a completar Lengua 1.º."
+      "serviceVerification": "NORMAL_LOCAL_FOUR_FORMATS_ALL_DEFINED_FAMILIES_PASSED",
+      "interfaceVerification": "GRADE_REPRESENTATIVE_FOUR_FORMATS_PERSISTED",
+      "catalogVersion": "evaluation-2026.20",
+      "pending": "Pendientes procedimientos detallados: paráfrasis, anticipación/predicciones, inferencia contextual, clasificación/conectores de guía, esquema, ilustración y rima/ritmo según tema. No completa el grado; ver informe. Navegador representativo por grado, no cada familia."
     },
     {
       "id": "74b33fad-b618-5157-9517-8e0165a2a333",
-      "implementation": "PARTIAL_FOUR_ACTIVITY_FAMILIES_SHARED_PROVIDER",
+      "implementation": "PARTIAL_SUBTOPICS_AND_34_FAMILIES_VERIFIED_PROCEDURES_PENDING",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "procedures": [
@@ -278,15 +283,25 @@
         "156d82cc-d619-56fa-8bb9-3563fb155b3f",
         "75ccb373-3eb0-5d30-af1f-714caffce54d"
       ],
-      "report": "afiche-1-reauditoria.md",
-      "catalogVersion": "evaluation-2026.15",
-      "serviceVerification": "NORMAL_REAL_LOGIN_64_PROPOSALS_7_REGRESSIONS_FOCUSED_ANALYSIS_PASSED",
-      "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_CREATION_SAVE_REOPEN_PASSED",
-      "pending": "Focused grammar, requested event details, further action filtering and additional authored candidates. Not complete secondary coverage."
+      "report": "lengua-1-contratos-y-editor.md",
+      "catalogVersion": "evaluation-2026.20",
+      "serviceVerification": "NORMAL_LOCAL_FOUR_FORMATS_ALL_DEFINED_FAMILIES_PASSED",
+      "interfaceVerification": "GRADE_REPRESENTATIVE_FOUR_FORMATS_PERSISTED",
+      "pending": "Pendientes procedimientos detallados: paráfrasis, anticipación/predicciones, inferencia contextual, clasificación/conectores de guía, esquema, ilustración y rima/ritmo según tema. No completa el grado; ver informe. Navegador representativo por grado, no cada familia.",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "automatedVerification": "PASSED",
+      "manualVerification": "SUBTOPIC_DESCRIPTORS_REVIEWED_PROCEDURES_PENDING",
+      "applicationVerification": "NORMAL_LOCAL_REPRESENTATIVE_FOUR_FORMATS_SAVE_REOPEN_PASSED"
     },
     {
       "id": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
-      "implementation": "PARTIAL_FIVE_ACTIVITY_FAMILIES_SHARED_PROVIDER",
+      "implementation": "PARTIAL_SUBTOPICS_AND_34_FAMILIES_VERIFIED_PROCEDURES_PENDING",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "procedures": [
@@ -295,15 +310,25 @@
         "caaa246b-f525-5292-8ed0-0fd2e8309566",
         "28865ef6-91d3-5df9-b417-0a81f880732a"
       ],
-      "report": "cuento-policiaco-1-reauditoria.md",
-      "catalogVersion": "evaluation-2026.16",
-      "serviceVerification": "NORMAL_REAL_LOGIN_80_PROPOSALS_8_REGRESSIONS_FOCUSED_ANALYSIS_PASSED",
-      "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_ANALYSIS_NARRATION_WRITING_SAVE_REOPEN_PASSED",
-      "pending": "Focused grammar, further comparison/presentation filtering, additional authored candidates and all-family browser coverage. Not complete secondary coverage."
+      "report": "lengua-1-contratos-y-editor.md",
+      "catalogVersion": "evaluation-2026.20",
+      "serviceVerification": "NORMAL_LOCAL_FOUR_FORMATS_ALL_DEFINED_FAMILIES_PASSED",
+      "interfaceVerification": "GRADE_REPRESENTATIVE_FOUR_FORMATS_PERSISTED",
+      "pending": "Pendientes procedimientos detallados: paráfrasis, anticipación/predicciones, inferencia contextual, clasificación/conectores de guía, esquema, ilustración y rima/ritmo según tema. No completa el grado; ver informe. Navegador representativo por grado, no cada familia.",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "automatedVerification": "PASSED",
+      "manualVerification": "SUBTOPIC_DESCRIPTORS_REVIEWED_PROCEDURES_PENDING",
+      "applicationVerification": "NORMAL_LOCAL_REPRESENTATIVE_FOUR_FORMATS_SAVE_REOPEN_PASSED"
     },
     {
       "id": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
-      "implementation": "PARTIAL_FIVE_ACTIVITY_FAMILIES_SHARED_PROVIDER",
+      "implementation": "PARTIAL_SUBTOPICS_AND_34_FAMILIES_VERIFIED_PROCEDURES_PENDING",
       "boundaryReview": "VISUALLY_REVIEWED",
       "procedureAssociation": "VISUALLY_REVIEWED",
       "procedures": [
@@ -312,11 +337,21 @@
         "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
         "6386112a-44b3-5b36-9416-1f31d2540550"
       ],
-      "report": "caligrama-1-reauditoria.md",
-      "catalogVersion": "evaluation-2026.17",
-      "serviceVerification": "NORMAL_REAL_LOGIN_80_PROPOSALS_9_REGRESSIONS_FOCUSED_ANALYSIS_PASSED",
-      "interfaceVerification": "NORMAL_BROWSER_FOUR_FORMATS_CREATION_ANALYSIS_RECITATION_COMPARISON_SAVE_REOPEN_PASSED",
-      "pending": "Focused grammar/poetic resources, requested draft/publication requirements, further action filtering, additional authored candidates, explanation/group browser coverage. Not complete secondary coverage."
+      "report": "lengua-1-contratos-y-editor.md",
+      "catalogVersion": "evaluation-2026.20",
+      "serviceVerification": "NORMAL_LOCAL_FOUR_FORMATS_ALL_DEFINED_FAMILIES_PASSED",
+      "interfaceVerification": "GRADE_REPRESENTATIVE_FOUR_FORMATS_PERSISTED",
+      "pending": "Pendientes procedimientos detallados: paráfrasis, anticipación/predicciones, inferencia contextual, clasificación/conectores de guía, esquema, ilustración y rima/ritmo según tema. No completa el grado; ver informe. Navegador representativo por grado, no cada familia.",
+      "engineConnection": "CONTEXTUAL_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "automatedVerification": "PASSED",
+      "manualVerification": "SUBTOPIC_DESCRIPTORS_REVIEWED_PROCEDURES_PENDING",
+      "applicationVerification": "NORMAL_LOCAL_REPRESENTATIVE_FOUR_FORMATS_SAVE_REOPEN_PASSED"
     },
     {
       "id": "4916701f-df02-5247-84d8-3aa598f61ef5",
