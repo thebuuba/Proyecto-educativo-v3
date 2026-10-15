@@ -18,6 +18,8 @@ Se revisó y concilió el historial remoto: `20261015105401_activity_teaching_st
 
 El [despliegue de Staging](https://github.com/thebuuba/Proyecto-educativo-v3/actions/runs/38775219535) terminó correctamente en su segundo intento, con código `127bd77`. La gestión está disponible en [Ajustes → Suscripción y pagos de Staging](https://aula-base-staging.prroyectoeducativo00.workers.dev/configuracion?tab=suscripcion), usando una cuenta de Development. Se comprobaron inicio de sesión con cookies reales, prueba gratuita idempotente de dos titulares distintos y soporte con aislamiento de propietario. Development tiene 80 migraciones y 20 tablas comerciales con RLS; no hay precios, pagos ni suscripciones Paddle. Este resultado no acredita todavía un checkout de Paddle Sandbox.
 
+Por autorización posterior del usuario, la rama **local** se conectó a producción y se aplicaron allí las cinco migraciones pendientes, quedando 80. El registro nuevo conduce ahora a Suscripción y pagos y ofrece iniciar explícitamente la prueba de 14 días; el módulo está habilitado solo en la configuración local del backend. Acceso local: `http://127.0.0.1:5173/configuracion?tab=suscripcion&bienvenida=1`. Esto no publica la interfaz en la web principal ni habilita Paddle: no hay precios y checkout, eventos y enforcement siguen apagados. No trasladar los fixtures QA de Development a producción para probar pagos. [Resultados y alcance exacto](SUSCRIPCIONES_PAGOS_RESULTADOS.md#registro-conectado-a-la-prueba-gratuita-en-la-rama-local).
+
 Copiar la plantilla local, que solo contiene campos vacíos:
 
 ```powershell
