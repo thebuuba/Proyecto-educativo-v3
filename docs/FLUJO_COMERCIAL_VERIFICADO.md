@@ -42,3 +42,17 @@ Paddle Sandbox todavía necesita cuenta/credenciales, un precio mensual de 799 c
 La inspección remota de Staging detectó una entrega antigua con «Importe y moneda pendientes». Este arreglo se verifica en localhost, conforme a la aclaración del propietario; no modifica la web principal ni publica Staging.
 
 Se intentó una revisión acotada de solo lectura con `deepseek-worker` de OpenCode. El servicio devolvió `Unexpected server error` (`err_8f08a9a4`), sin resultado utilizable. La revisión del diff y las comprobaciones quedaron a cargo del agente principal.
+
+## Ajuste visual posterior: solo el plan Docente
+
+El propietario pidió recuperar el diseño anterior de las tarjetas de precios y ocultar los planes Centro e Institucional, aplazados. `/precios` presenta ahora una única tarjeta Docente centrada: descripción breve, precio destacado, periodicidad mensual, referencia DOP, mes gratis con tarjeta, botón redondeado y lista de funciones separada por una línea. Se retiró la tabla comparativa; no se ofrecen anualidades. Las condiciones detalladas se consultan en desplegables debajo de la tarjeta. Registro, gestión en Ajustes y oferta compartida mantienen sus destinos y condiciones.
+
+- La prueba de precios falló antes del ajuste y pasó después. `pnpm --filter frontend exec vitest run src/modules/promo`: **3 archivos y 4 pruebas**, código 0.
+- `pnpm --filter backend test`: **85 archivos y 6.648 pruebas**, código 0; `pnpm --filter backend build`: código 0.
+- `pnpm --filter frontend build`: código 0. El primer intento detectó una opción `exact` no admitida por el tipo de Testing Library; se sustituyó por una expresión regular anclada y se repitieron prueba y compilación.
+- ESLint de la página y su prueba: código 0.
+- `pnpm cloudflare:build`: código 0, cuatro tareas correctas y dry-run sin despliegue. El backend local se detuvo para liberar Prisma y se restauró después.
+- Chrome local: una tarjeta Docente con US$7.99, sin Centro/Institucional ni tabla; desplegable de moneda abierto y cerrado correctamente, mostrando tasa y fecha. Captura: `output/screenshots/precios-docente-diseno-anterior.png`.
+- La revisión delegada a OpenCode volvió a fallar por error de servicio (`err_e410d38c`); no produjo cambios ni aprobación de revisión. El agente principal revisó el resultado.
+
+Este ajuste se aplica a localhost y a la rama de trabajo. No publica la web principal ni activa cobros.

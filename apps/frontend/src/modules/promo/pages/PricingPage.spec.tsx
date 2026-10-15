@@ -7,7 +7,9 @@ vi.mock('../components/PromoLayout', () => ({ PromoLayout: ({ children }: { chil
 describe('public individual monthly offering', () => {
   it('shows the approved monthly offer with card and DOP reference, without pending promises', () => {
     render(<MemoryRouter><PricingPage /></MemoryRouter>)
-    expect(screen.getByRole('heading', { name: 'Docente Completo' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /^Docente$/ })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: /centro|institucional/i })).not.toBeInTheDocument()
+    expect(screen.queryByRole('table')).not.toBeInTheDocument()
     expect(screen.queryByRole('button', { name: /anual/i })).not.toBeInTheDocument()
     expect(screen.getAllByText(/US\$7\.99/).length).toBeGreaterThan(0)
     expect(screen.getByText(/primer mes gratis con tarjeta/i)).toBeInTheDocument()
@@ -16,7 +18,7 @@ describe('public individual monthly offering', () => {
     expect(screen.queryByText(/pendientes de aprobación/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/14 días/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/sin tarjeta/i)).not.toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /crear cuenta para continuar/i })).toHaveAttribute('href', '/registro')
+    expect(screen.getByRole('link', { name: /^crear cuenta$/i })).toHaveAttribute('href', '/registro')
     expect(screen.getByRole('link', { name: /gestionar mi suscripción/i })).toHaveAttribute('href', '/cuenta/suscripcion')
   })
 })
