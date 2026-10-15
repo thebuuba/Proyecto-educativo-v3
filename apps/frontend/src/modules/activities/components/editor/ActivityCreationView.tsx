@@ -192,6 +192,7 @@ export function ActivityCreationView(props: {
   onChangeDraftRef.current = onChangeDraft
   const [interpretation, setInterpretation] = useState<ActivityInterpretation | null>(null)
   const [preparing, setPreparing] = useState(false)
+  const [preparationRevision, retryPreparation] = useState(0)
   const [regenerated, setRegenerated] = useState(false)
   const preparingRequest = useRef(false)
   const preparationSequence = useRef(0)
@@ -240,6 +241,8 @@ export function ActivityCreationView(props: {
       activityDraft.preparedRecommendation && activityDraft.preparedFingerprint !== fingerprint,
     )
   const savedSnapshot = structuralLocked
+  const initialInstrument = !activityDraft.preparedRecommendation &&
+    !activityDraft.manualInstrumentBlank && !activityDraft.preparedManuallyEdited
   const canKeepCurrentInstrument = (() => {
     if (!stale || !editingActivityId || !activityDraft.preparedFingerprint) return false
     try {
@@ -552,7 +555,15 @@ export function ActivityCreationView(props: {
     } finally {
       if (requestSequence === preparationSequence.current) {
         preparingRequest.current = false
-        if (mounted.current) setPreparing(false)
+        if (mounted.current) {
+          setPreparing(false)
+          // A newer draft's debounce may have elapsed while this request was in flight.
+          if (
+            requestedContext !== preparationContext.current ||
+            preparationFingerprint(latestDraft.current) !== requestedFingerprint ||
+            JSON.stringify([latestDraft.current.maxScore, latestDraft.current.instrumentFields]) !== requestedFields
+          ) retryPreparation(value => value + 1)
+        }
       }
     }
   }
@@ -581,6 +592,7 @@ export function ActivityCreationView(props: {
     activityDraft.preparedManuallyEdited,
     activityDraft.preparedRecommendation,
     stale,
+    preparationRevision,
   ])
 
   function requestInstrumentChange(instrumentType: string) {
@@ -1171,6 +1183,11 @@ export function ActivityCreationView(props: {
             <h3 className="text-lg font-black text-foreground">
               6. Instrumento completo · {instrumentLabel}
             </h3>
+            {preparing && !activityDraft.preparedRecommendation ? (
+              <FeedbackBanner tone="warning" role="status">
+                Preparando el instrumento de evaluación…
+              </FeedbackBanner>
+            ) : null}
             {structuralLocked ? (
               <ReadOnlyInstrument
                 type={activityDraft.instrumentType}
@@ -1207,21 +1224,22 @@ export function ActivityCreationView(props: {
             ) : null}
             {!preparationError &&
             !savedSnapshot &&
-            (activityDraft.preparedRecommendation ||
-              activityDraft.manualInstrumentBlank ||
-              activityDraft.preparedManuallyEdited) ? (
+            (!initialInstrument ||
+              (activityDraft.name.trim() && activityDescriptionText(activityDraft.description).trim())) ? (
               <div className="flex flex-wrap gap-2">
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => requestRegeneration()}
+                  onClick={() => initialInstrument ? void prepare() : requestRegeneration()}
                   disabled={preparing}
                 >
                   {preparing
                     ? 'Preparando…'
-                    : regenerated
-                      ? 'Instrumento preparado'
-                      : 'Generar nuevo instrumento'}
+                    : initialInstrument
+                      ? 'Preparar instrumento'
+                      : regenerated
+                        ? 'Instrumento preparado'
+                        : 'Generar nuevo instrumento'}
                 </Button>
                 {!activityDraft.manualInstrumentBlank ? (
                   <Button type="button" variant="ghost" onClick={requestInstrumentFromScratch}>

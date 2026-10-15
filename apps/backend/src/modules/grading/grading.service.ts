@@ -1060,6 +1060,7 @@ export class GradingService {
       await assertPlanningEntryScope(schoolId, dto.planningEntryId, dto.sectionSubjectId, dto.academicPeriodId)
     }
     try {
+      // Remote round trips for context checks and writes can exceed Prisma's default 5 seconds.
       return await prisma.$transaction(async tx => {
         let existing: any = null
         let persistedSchoolYearId = schoolYearId
@@ -1123,7 +1124,7 @@ export class GradingService {
         await this.syncActivityTeams(saved.id, schoolId, requestedTeams, tx)
         const refreshed = await tx.evaluationActivity.findUnique({ where: { id: saved.id }, include: activityInclude })
         return mapEvaluationActivity(refreshed)
-      })
+      }, { timeout: 20_000 })
     } catch (error) {
       // Concurrent retries race on the activity PK; the losing transaction rolls back its instrument.
       if (dto.creationId && (error as { code?: string }).code === 'P2002') {
