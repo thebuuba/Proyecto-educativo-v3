@@ -1,18 +1,11 @@
 import { ArrowRight, Check, CreditCard } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { SUBSCRIPTION_OFFER } from '@aula/shared'
+import { SubscriptionOfferSummary } from '@/modules/billing/components/SubscriptionOfferSummary'
 import { Card, CardContent } from '@/components/ui/Card'
-import { FeedbackBanner, SemanticIcon, StatusBadge } from '@/components/ui/SemanticUI'
+import { FeedbackBanner, SemanticIcon } from '@/components/ui/SemanticUI'
 import { PromoLayout } from '@/modules/promo/components/PromoLayout'
-import {
-  dopReferenceNotice,
-  formatOfferAmount,
-  offerPeriodLabel,
-} from '@/modules/billing/utils/offer'
 
 export function PricingPage() {
-  const amount = formatOfferAmount(SUBSCRIPTION_OFFER)
-  const period = offerPeriodLabel(SUBSCRIPTION_OFFER)
   return (
     <PromoLayout>
       <section className="mx-auto max-w-3xl space-y-6 px-4 py-12 sm:px-6">
@@ -26,26 +19,22 @@ export function PricingPage() {
             <SemanticIcon icon={CreditCard} tone="info" />
             <div><h2 className="text-2xl font-semibold text-foreground">Docente Completo</h2><p className="mt-1 text-sm text-muted-foreground">Periodicidad mensual</p></div>
           </div>
-          <StatusBadge tone="info">{amount} / {period}</StatusBadge>
-          <p className="text-sm leading-6 text-foreground">
-            Primer mes gratis con tarjeta. Después, {amount} cada {period} con renovación automática;
-            puedes cancelar antes del primer cobro.
-          </p>
+          <SubscriptionOfferSummary />
           <ul className="space-y-3 text-sm">
-            {['Funciones docentes existentes según tu rol.', 'Titularidad individual, vinculada a tu cuenta.', 'Historial de pagos, cobertura y soporte desde Configuración.'].map(text => (
+            {['Cursos, asistencia y calificaciones.', 'Actividades e instrumentos de evaluación.', 'Planificación, bitácora y reportes según tu rol.', 'Suscripción, cancelación, pagos y soporte desde Ajustes.'].map(text => (
               <li key={text} className="flex gap-2"><Check className="size-4 shrink-0 text-success" aria-hidden="true" />{text}</li>
             ))}
           </ul>
-          <Link to="/cuenta/suscripcion" className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-medium text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-            Gestionar mi suscripción <ArrowRight className="size-4" aria-hidden="true" />
+          <Link to="/registro" className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-medium text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+            Crear cuenta para continuar <ArrowRight className="size-4" aria-hidden="true" />
           </Link>
+          <p className="text-sm text-muted-foreground">¿Ya tienes cuenta? <Link to="/cuenta/suscripcion" className="inline-flex min-h-11 items-center text-primary underline">Gestionar mi suscripción</Link></p>
         </CardContent></Card>
         <FeedbackBanner tone="info">
           El primer mes es gratuito y requiere tarjeta. La fecha exacta del primer cobro la confirma
-          Paddle al crear la suscripción; no se cobra hoy.
+          Paddle antes de confirmar el checkout. Crear una cuenta no activa la prueba ni autoriza cargos.
         </FeedbackBanner>
         <div className="space-y-3 text-sm leading-6 text-muted-foreground">
-          <p>{dopReferenceNotice(SUBSCRIPTION_OFFER)}</p>
           <p>Una transferencia requiere revisión del ingreso bancario por administración comercial; subir un comprobante no activa el plan. La transferencia no autoriza débitos mensuales ni sustituye la prueba con tarjeta.</p>
           <p>Las cortesías administrativas se registran por separado y no son pagos. Soporte permanece disponible para cuentas con cobertura vencida.</p>
           <Link to="/contacto" className="inline-flex min-h-11 items-center text-primary underline">Contactar con AulaBase</Link>

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { formatSchoolLocation, SchoolSearchInput, type SchoolResult } from '@/modules/auth/components/SchoolSearchInput'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
+import { SubscriptionOfferSummary } from '@/modules/billing/components/SubscriptionOfferSummary'
 import { AccessFooter } from '@/modules/auth/components/RegistrationLayout'
 import { supabase } from '@/modules/auth/services/supabaseClient'
 import type { CompleteOnboardingInput } from '@/modules/auth/types/auth'
@@ -227,6 +228,13 @@ export function OnboardingPage() {
             {step === 0 ? <CenterStep draft={draft} errors={errors} editingName={editingName} setEditingName={setEditingName} showHistorical={showHistorical} setShowHistorical={setShowHistorical} update={update} changeSchoolQuery={changeSchoolQuery} selectSchool={selectSchool} /> : null}
             {step === 1 && school ? <ContextStep draft={draft} school={school} errors={errors} allowedLevels={allowedLevels} allowedShifts={allowedShifts} allowedModalities={allowedModalities} toggleValue={toggleValue} update={update} /> : null}
             {step === 2 && school ? <ConfirmationStep draft={draft} school={school} /> : null}
+            {step === 2 && !resetMode ? (
+              <section className="setup-card mt-5" aria-label="Tu siguiente paso: suscripción">
+                <h2 className="mb-3 font-semibold text-foreground">Después, activa tu mes gratuito</h2>
+                <SubscriptionOfferSummary />
+                <p className="mt-3 text-sm text-muted-foreground">Guardar esta configuración no inicia una prueba ni autoriza un pago. A continuación revisarás tu suscripción en Ajustes.</p>
+              </section>
+            ) : null}
           </div>
 
           {submitError ? <div role="alert" className="mt-5 rounded-2xl border border-destructive/25 bg-destructive/12 px-4 py-3 text-sm font-semibold">{submitError}</div> : null}
@@ -235,7 +243,7 @@ export function OnboardingPage() {
             {step > 0 && <Button variant="ghost" onClick={() => { setErrors({}); setSubmitError(''); setStep((current) => Math.max(0, current - 1)) }} disabled={submitting}>
               <ChevronLeft className="size-4" />{step === 2 ? 'Volver y editar' : 'Atrás'}
             </Button>}
-            {step < 2 ? <Button onClick={goNext}>Continuar<ArrowRight size={16} /></Button> : <Button loading={submitting} onClick={() => void submit()}>{submitting ? 'Entrando a AulaBase…' : 'Entrar a AulaBase'}</Button>}
+            {step < 2 ? <Button onClick={goNext}>Continuar<ArrowRight size={16} /></Button> : <Button loading={submitting} onClick={() => void submit()}>{submitting ? 'Guardando configuración…' : resetMode ? 'Entrar a AulaBase' : 'Continuar a mi suscripción'}</Button>}
           </footer>
         </section>
         <AccessFooter />

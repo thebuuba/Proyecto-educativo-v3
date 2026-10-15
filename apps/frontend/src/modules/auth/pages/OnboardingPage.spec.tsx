@@ -137,9 +137,9 @@ describe('OnboardingPage', () => {
 
   it('submits the directory school id and teacher context only from step 3', async () => {
     renderPage()
-    expect(screen.queryByRole('button', { name: 'Entrar a AulaBase' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Continuar a mi suscripción' })).not.toBeInTheDocument()
     reachConfirmation()
-    fireEvent.click(screen.getByRole('button', { name: 'Entrar a AulaBase' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Continuar a mi suscripción' }))
     await waitFor(() => expect(completeOnboarding).toHaveBeenCalledWith(expect.objectContaining({
       school: { id: 'school-directory-id', name: 'Católico Cardenal Beras' },
       teacherContext: { levels: ['secondary'], shifts: ['morning'], modalities: ['regular'] },
@@ -150,17 +150,19 @@ describe('OnboardingPage', () => {
     completeOnboarding.mockRejectedValueOnce(new Error('Error temporal')).mockResolvedValueOnce({})
     renderPage()
     reachConfirmation()
-    fireEvent.click(screen.getByRole('button', { name: 'Entrar a AulaBase' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Continuar a mi suscripción' }))
     expect(await screen.findByRole('alert')).toHaveTextContent('Error temporal')
     expect(screen.getByText('Revisa tu configuración')).toBeInTheDocument()
-    fireEvent.click(screen.getByRole('button', { name: 'Entrar a AulaBase' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Continuar a mi suscripción' }))
     await waitFor(() => expect(completeOnboarding).toHaveBeenCalledTimes(2))
   })
 
   it('lleva el onboarding nuevo a la suscripción con la bienvenida marcada', async () => {
     renderPage()
     reachConfirmation()
-    fireEvent.click(screen.getByRole('button', { name: 'Entrar a AulaBase' }))
+    expect(screen.getAllByText(/US\$7\.99/).length).toBeGreaterThan(0)
+    expect(screen.getByText(/la prueba comienza al completar el checkout con tarjeta/i)).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Continuar a mi suscripción' }))
     expect(await screen.findByText('Bienvenido')).toBeInTheDocument()
     await waitFor(
       () =>

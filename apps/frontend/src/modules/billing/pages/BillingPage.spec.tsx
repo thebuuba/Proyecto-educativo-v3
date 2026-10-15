@@ -78,6 +78,14 @@ beforeEach(() => {
 })
 
 describe('BillingPage', () => {
+  it('distingue el precio aprobado de los métodos de pago aún no habilitados', async () => {
+    mocked.getBillingOverview.mockResolvedValue(makeOverview({ prices: [], checkoutEnabled: false }))
+    renderPage()
+    expect(await screen.findByText('Sin formas de pago habilitadas')).toBeInTheDocument()
+    expect(screen.getAllByText(/US\$7\.99/).length).toBeGreaterThan(0)
+    expect(screen.queryByText('Sin precios publicados')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /activar mes gratuito/i })).not.toBeInTheDocument()
+  })
   it('muestra el estado no configurado sin operaciones ni soporte', async () => {
     mocked.getBillingOverview.mockResolvedValue(
       makeOverview({ enabled: false, supportEmail: null }),

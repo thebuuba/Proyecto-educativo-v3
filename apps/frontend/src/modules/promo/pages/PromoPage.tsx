@@ -1,5 +1,6 @@
 import { ArrowRight, Check, CheckCircle2, MessageCircle } from 'lucide-react'
 import { Link, Navigate } from 'react-router-dom'
+import { SubscriptionOfferSummary } from '@/modules/billing/components/SubscriptionOfferSummary'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { PromoLayout } from '@/modules/promo/components/PromoLayout'
 import { ProductDemo } from '@/modules/promo/components/ProductDemo'
@@ -47,6 +48,11 @@ export function PromoPage() {
               bitácora para que registres la información una vez y consultes el progreso de tus
               estudiantes cuando lo necesites.
             </p>
+            <div className="mt-6 rounded-2xl bg-card p-5 text-left shadow-sm">
+              <p className="mb-2 text-sm font-semibold text-foreground">Docente Completo</p>
+              <SubscriptionOfferSummary />
+              <Link to="/precios" className="mt-2 inline-flex min-h-11 items-center text-sm font-medium text-primary underline">Ver precios y condiciones</Link>
+            </div>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row xl:justify-start">
               <Link
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary-hover"

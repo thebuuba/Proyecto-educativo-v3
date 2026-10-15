@@ -609,8 +609,8 @@ function PlansCard({
           <EmptyState
             compact
             icon={Receipt}
-            title="Sin precios publicados"
-            description="El servidor todavía no expone precios autorizados."
+            title="Sin formas de pago habilitadas"
+            description="La mensualidad aprobada se muestra arriba. Podrás contratar cuando se habilite una forma de pago para tu cuenta."
           />
         ) : (
           <ul className="space-y-3">

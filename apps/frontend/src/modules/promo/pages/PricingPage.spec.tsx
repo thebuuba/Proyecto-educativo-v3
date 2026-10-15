@@ -16,6 +16,7 @@ describe('public individual monthly offering', () => {
     expect(screen.queryByText(/pendientes de aprobación/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/14 días/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/sin tarjeta/i)).not.toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /crear cuenta para continuar/i })).toHaveAttribute('href', '/registro')
     expect(screen.getByRole('link', { name: /gestionar mi suscripción/i })).toHaveAttribute('href', '/cuenta/suscripcion')
   })
 })

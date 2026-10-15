@@ -1,3 +1,5 @@
+import { SUBSCRIPTION_OFFER } from '@aula/shared'
+import { formatOfferAmount } from '@/modules/billing/utils/offer'
 import {
   CalendarCheckIcon,
   ClipboardListIcon,
@@ -109,8 +111,8 @@ export const steps: Step[] = [
     description: 'Indica tu escuela, el año escolar y tus cursos y asignaturas.',
   },
   {
-    title: 'Empieza a trabajar',
-    description: 'Pasa lista, registra calificaciones y planifica desde la aplicación.',
+    title: 'Activa tu mes gratuito',
+    description: 'Confirma tu tarjeta y la renovación en Ajustes. La prueba comienza al completar el checkout.',
   },
 ]
 
@@ -138,7 +140,7 @@ export const faqs: FaqItem[] = [
   },
   {
     q: '¿Cuánto cuesta?',
-    a: 'Los importes están en proceso de definición. En la página de precios verás la propuesta de planes y la unidad de cobro. Si representas a un centro, puedes escribirnos para conversar.',
+    a: `Docente Completo cuesta ${formatOfferAmount(SUBSCRIPTION_OFFER)} al mes, después de un mes natural gratuito con tarjeta obligatoria. Se renueva automáticamente y puedes cancelar antes del primer cobro desde Ajustes. El cargo es en USD; la referencia DOP es informativa. Crear la cuenta no inicia la prueba.`,
   },
   {
     q: '¿Aula Base sigue el calendario escolar del MINERD?',

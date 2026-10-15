@@ -28,6 +28,14 @@ function fillForm() {
 describe('RegisterPage', () => {
   beforeEach(() => { register.mockReset(); sessionStorage.clear() })
 
+  it('muestra la oferta antes de crear la cuenta sin activar una prueba', () => {
+    renderPage()
+    expect(screen.getAllByText(/US\$7\.99/).length).toBeGreaterThan(0)
+    expect(screen.getByText(/la prueba comienza al completar el checkout con tarjeta/i)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /ver precios y condiciones/i })).toHaveAttribute('href', '/precios')
+    expect(register).not.toHaveBeenCalled()
+  })
+
   it('does not create an account with invalid fields or without consent', () => {
     renderPage()
     fireEvent.click(screen.getByRole('button', { name: 'Crear cuenta' }))
