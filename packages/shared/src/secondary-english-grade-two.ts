@@ -9,6 +9,7 @@ import {requestedGradeTwoLexicon,gradeTwoLexicalCriterion} from './secondary-eng
 import {requestedGradeTwoStrategies,gradeTwoStrategyCriteria} from './secondary-english-grade-two-strategies'
 import {requestedGradeTwoGenres,gradeTwoGenreCriteria} from './secondary-english-grade-two-genres'
 import {gradeTwoContextCriteria} from './secondary-english-grade-two-context'
+import {affirmativeScopedEnglishTask,commonEnglishGrade} from './secondary-english-task-text'
 
 export const englishGradeTwoModule={id:'ingles-comunicacion-2',grade:2,subjectCode:'ING',pdfPages:[140,141,142,143,144,145],policy:'COMMON_CURRICULUM_FUNCTIONS_ALIASES_FORMS_PRODUCTS_COMPOSITION_V7'}
 type Mode='reading'|'listening'|'interaction'|'oral'|'writing'|'audiovisual'|'analysis'|'comparison'|'research'
@@ -22,10 +23,9 @@ const modes:Record<Mode,{activityType:string;technique:string}>={
  research:{activityType:'RESEARCH',technique:'analisis-producciones'},
 }
 export function commonSecondGradeEnglish(context?:InstrumentAcademicContext|null){
- return context?.level==='SECONDARY'&&context.grade===2&&!context.optativeExitName&&(context.subjectCode.trim().toUpperCase()==='ING'||!context.subjectCode.trim()&&/^(?:(?:lenguas? extranjeras? )?ingles|english)$/.test(affirmativeLanguageTask(context.subjectName??'')))
+ return commonEnglishGrade(context,2)
 }
-export const affirmativeSecondGradeEnglishTask=(description:string)=>affirmativeLanguageTask(withoutResources(description).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
- .replace(/\bno (?:se )?(?:evalu\w*|calific\w*|exig\w*|requer\w*|us\w*|utiliz\w*|emple\w*|respond\w*)\b[^.;]*/g,''))
+export const affirmativeSecondGradeEnglishTask=affirmativeScopedEnglishTask
 function single(description:string):EnglishGradeTwoTask|null{
  const text=affirmativeSecondGradeEnglishTask(description)
  const contextText=normalizedTask(withoutResources(description).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/\bno (?:se )?(?:evalu\w*|calific\w*|exig\w*|requer\w*)\b[^.;]*/g,''))

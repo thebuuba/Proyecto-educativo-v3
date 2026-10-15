@@ -18745,11 +18745,16 @@
       ],
       "inventoryStatus": "INVENTARIADO",
       "extractionStatus": "EXTRAÍDO",
-      "engineConnection": "PENDING",
-      "instrumentFormats": [],
+      "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+      "instrumentFormats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
       "serviceVerification": "NOT_RUN",
       "interfaceVerification": "NOT_RUN",
-      "pending": "Revisar temas y cobertura evaluativa del ámbito.",
+      "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
       "elements": {
         "CONCEPT": [
           {
@@ -19873,115 +19878,424 @@
       },
       "topics": [
         {
-          "id": "9100a22d-591e-5562-be04-9000308769d9",
-          "title": "Temas",
+          "id": "c1897bb0-cd33-5234-9c6d-43b9d5af81f3",
+          "title": "Relaciones humanas y sociales",
           "source": {
-            "id": "9100a22d-591e-5562-be04-9000308769d9",
-            "text": "Temas",
+            "id": "c1897bb0-cd33-5234-9c6d-43b9d5af81f3",
+            "text": "• Relaciones humanas y sociales",
             "pdfPage": 146,
             "printedPage": "145",
-            "sourceOrder": 1461000
+            "sourceOrder": 1461001
           },
-          "subtopics": [
-            {
-              "id": "c1897bb0-cd33-5234-9c6d-43b9d5af81f3",
-              "text": "• Relaciones humanas y sociales",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461001
-            },
-            {
-              "id": "f953f768-fc34-5ad5-8066-64a498826cb9",
-              "text": "• Actividades de la vida diaria",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461002
-            },
-            {
-              "id": "7676f06d-7760-53ac-9ee8-fc796f4d746c",
-              "text": "• Vivienda, entorno y ciudad",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461003
-            },
-            {
-              "id": "06a64620-8ba6-58d5-8dc6-b47503ee92b0",
-              "text": "• Escuela y educación",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461004
-            },
-            {
-              "id": "c27d2e98-f595-5381-a418-bbf51ddd5ccc",
-              "text": "• Deporte, tiempo libre y recreación",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461005
-            },
-            {
-              "id": "02750d39-aedf-5eff-a655-442e715f9fd2",
-              "text": "• Alimentación",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461006
-            },
-            {
-              "id": "4d38e5d6-26d6-5650-95c6-c16eb8210bf9",
-              "text": "• Salud y cuidados físicos",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461007
-            },
-            {
-              "id": "79b6a15a-175b-536a-95bb-780c37796096",
-              "text": "• Lengua y comunicación",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461008
-            },
-            {
-              "id": "ca21b7dd-e1b6-5edc-a128-1d8be63a81eb",
-              "text": "• Ciencia y tecnología",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461009
-            },
-            {
-              "id": "7c3dcdf8-c255-5bee-ac43-fbba54eeb069",
-              "text": "•Clima, condiciones atmosféricas y\nmedioambiente",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461010
-            },
-            {
-              "id": "006d021a-571e-5938-b401-f6d5a244a2ad",
-              "text": "• Bienes y servicios",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461011
-            },
-            {
-              "id": "4127f0d1-1f81-5db6-9d9b-d49c76d462e8",
-              "text": "• Actividades sociales y culturales:\nViajes y turismo",
-              "pdfPage": 146,
-              "printedPage": "145",
-              "sourceOrder": 1461012
-            }
-          ],
+          "subtopics": [],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
           "serviceVerification": "NOT_RUN",
           "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
           "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
+        },
+        {
+          "id": "f953f768-fc34-5ad5-8066-64a498826cb9",
+          "title": "Actividades de la vida diaria",
+          "source": {
+            "id": "f953f768-fc34-5ad5-8066-64a498826cb9",
+            "text": "• Actividades de la vida diaria",
+            "pdfPage": 146,
+            "printedPage": "145",
+            "sourceOrder": 1461002
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
+        },
+        {
+          "id": "7676f06d-7760-53ac-9ee8-fc796f4d746c",
+          "title": "Vivienda, entorno y ciudad",
+          "source": {
+            "id": "7676f06d-7760-53ac-9ee8-fc796f4d746c",
+            "text": "• Vivienda, entorno y ciudad",
+            "pdfPage": 146,
+            "printedPage": "145",
+            "sourceOrder": 1461003
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
+        },
+        {
+          "id": "06a64620-8ba6-58d5-8dc6-b47503ee92b0",
+          "title": "Escuela y educación",
+          "source": {
+            "id": "06a64620-8ba6-58d5-8dc6-b47503ee92b0",
+            "text": "• Escuela y educación",
+            "pdfPage": 146,
+            "printedPage": "145",
+            "sourceOrder": 1461004
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
+        },
+        {
+          "id": "c27d2e98-f595-5381-a418-bbf51ddd5ccc",
+          "title": "Deporte, tiempo libre y recreación",
+          "source": {
+            "id": "c27d2e98-f595-5381-a418-bbf51ddd5ccc",
+            "text": "• Deporte, tiempo libre y recreación",
+            "pdfPage": 146,
+            "printedPage": "145",
+            "sourceOrder": 1461005
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
+        },
+        {
+          "id": "02750d39-aedf-5eff-a655-442e715f9fd2",
+          "title": "Alimentación",
+          "source": {
+            "id": "02750d39-aedf-5eff-a655-442e715f9fd2",
+            "text": "• Alimentación",
+            "pdfPage": 146,
+            "printedPage": "145",
+            "sourceOrder": 1461006
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
+        },
+        {
+          "id": "4d38e5d6-26d6-5650-95c6-c16eb8210bf9",
+          "title": "Salud y cuidados físicos",
+          "source": {
+            "id": "4d38e5d6-26d6-5650-95c6-c16eb8210bf9",
+            "text": "• Salud y cuidados físicos",
+            "pdfPage": 146,
+            "printedPage": "145",
+            "sourceOrder": 1461007
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
+        },
+        {
+          "id": "79b6a15a-175b-536a-95bb-780c37796096",
+          "title": "Lengua y comunicación",
+          "source": {
+            "id": "79b6a15a-175b-536a-95bb-780c37796096",
+            "text": "• Lengua y comunicación",
+            "pdfPage": 146,
+            "printedPage": "145",
+            "sourceOrder": 1461008
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
+        },
+        {
+          "id": "ca21b7dd-e1b6-5edc-a128-1d8be63a81eb",
+          "title": "Ciencia y tecnología",
+          "source": {
+            "id": "ca21b7dd-e1b6-5edc-a128-1d8be63a81eb",
+            "text": "• Ciencia y tecnología",
+            "pdfPage": 146,
+            "printedPage": "145",
+            "sourceOrder": 1461009
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
+        },
+        {
+          "id": "7c3dcdf8-c255-5bee-ac43-fbba54eeb069",
+          "title": "Clima, condiciones atmosféricas y\nmedioambiente",
+          "source": {
+            "id": "7c3dcdf8-c255-5bee-ac43-fbba54eeb069",
+            "text": "•Clima, condiciones atmosféricas y\nmedioambiente",
+            "pdfPage": 146,
+            "printedPage": "145",
+            "sourceOrder": 1461010
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
+        },
+        {
+          "id": "006d021a-571e-5938-b401-f6d5a244a2ad",
+          "title": "Bienes y servicios",
+          "source": {
+            "id": "006d021a-571e-5938-b401-f6d5a244a2ad",
+            "text": "• Bienes y servicios",
+            "pdfPage": 146,
+            "printedPage": "145",
+            "sourceOrder": 1461011
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
+        },
+        {
+          "id": "4127f0d1-1f81-5db6-9d9b-d49c76d462e8",
+          "title": "Actividades sociales y culturales:\nViajes y turismo",
+          "source": {
+            "id": "4127f0d1-1f81-5db6-9d9b-d49c76d462e8",
+            "text": "• Actividades sociales y culturales:\nViajes y turismo",
+            "pdfPage": 146,
+            "printedPage": "145",
+            "sourceOrder": 1461012
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "NOT_RUN",
+          "interfaceVerification": "NOT_RUN",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
         },
         {
           "id": "ab70133b-188f-5f7a-898f-27ce81ceafba",
@@ -20130,18 +20444,27 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
           "serviceVerification": "NOT_RUN",
           "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
           "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
         },
         {
           "id": "78871f33-550c-5a47-acfa-69d3bc1307dd",
@@ -20171,22 +20494,31 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
           "serviceVerification": "NOT_RUN",
           "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
           "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
         },
         {
           "id": "24ec62f8-849a-5eda-9fa4-ae19da105892",
-          "title": "Gramática",
+          "title": "Gramática: formas y usos",
           "source": {
             "id": "24ec62f8-849a-5eda-9fa4-ae19da105892",
             "text": "Gramática",
@@ -20208,60 +20540,21 @@
               "pdfPage": 147,
               "printedPage": "146",
               "sourceOrder": 1471019
-            }
-          ],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
-        },
-        {
-          "id": "e7813c73-bc64-5648-abc9-3c8811e96501",
-          "title": "Presente perfecto para dar noticias: Have you\never been to San Francisco? Emily has just\ngraduated from high school.\nPasado continuo y pasado simple para narrar\nhistorias:\nRosa arrived when they were leaving the\nplace.\nPasado simple y presente simple al comparar\nhechos y situaciones del pasado con el presente:\nThis river was crystal clear years ago, but\nnow it’s polluted.\nWill y be going to para hacer inferencias y\npredicciones:\nThe temperature will be around 32°F today.\nBertha will pass the test because she’s\nstudying very hard.\nMy team is going to win the World Cup next\nyear because it has the best players.\nThere + be para solicitar y ofrecer indicaciones y\nhacer anuncios y dar noticias:\nIs there a mall around here?\nThere’s going to be a talk on biodiversity next\nweek.\nThere has just been an earthquake.\nModo imperativo para ofrecer indicaciones y\nhacer prohibiciones:\nTurn right on Main Street. Please, do not\nenter!\nLet’s para ofrecer indicaciones y\nsugerencias:\nNow, let’s click on the tool bar. Let’s not go to\nthe beach.\nWhy don’t/ why not para hacer sugerencias:\nWhy not tell your mom about it?\nCan, should, must, may, might, have to, need\nto... para expresar opiniones, dar indicaciones y\nhacer sugerencias, prohibiciones e inferencias.",
-          "source": {
-            "id": "e7813c73-bc64-5648-abc9-3c8811e96501",
-            "text": "Presente perfecto para dar noticias: Have you\never been to San Francisco? Emily has just\ngraduated from high school.\nPasado continuo y pasado simple para narrar\nhistorias:\nRosa arrived when they were leaving the\nplace.\nPasado simple y presente simple al comparar\nhechos y situaciones del pasado con el presente:\nThis river was crystal clear years ago, but\nnow it’s polluted.\nWill y be going to para hacer inferencias y\npredicciones:\nThe temperature will be around 32°F today.\nBertha will pass the test because she’s\nstudying very hard.\nMy team is going to win the World Cup next\nyear because it has the best players.\nThere + be para solicitar y ofrecer indicaciones y\nhacer anuncios y dar noticias:\nIs there a mall around here?\nThere’s going to be a talk on biodiversity next\nweek.\nThere has just been an earthquake.\nModo imperativo para ofrecer indicaciones y\nhacer prohibiciones:\nTurn right on Main Street. Please, do not\nenter!\nLet’s para ofrecer indicaciones y\nsugerencias:\nNow, let’s click on the tool bar. Let’s not go to\nthe beach.\nWhy don’t/ why not para hacer sugerencias:\nWhy not tell your mom about it?\nCan, should, must, may, might, have to, need\nto... para expresar opiniones, dar indicaciones y\nhacer sugerencias, prohibiciones e inferencias.",
-            "pdfPage": 148,
-            "printedPage": "147",
-            "sourceOrder": 1481000
-          },
-          "subtopics": [],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
-        },
-        {
-          "id": "fca3a28f-f5ee-56f4-b53d-8edab3b3f122",
-          "title": "Mary’s car is here, so she must be inside the\nbuilding.\nI think you should see a doctor.\nYou can’t use your cell phone in class.\nYou must take two of these pills every\nm o r n i n g.",
-          "source": {
-            "id": "fca3a28f-f5ee-56f4-b53d-8edab3b3f122",
-            "text": "Mary’s car is here, so she must be inside the\nbuilding.\nI think you should see a doctor.\nYou can’t use your cell phone in class.\nYou must take two of these pills every\nm o r n i n g.",
-            "pdfPage": 148,
-            "printedPage": "147",
-            "sourceOrder": 1481001
-          },
-          "subtopics": [
+            },
+            {
+              "id": "e7813c73-bc64-5648-abc9-3c8811e96501",
+              "text": "Presente perfecto para dar noticias: Have you\never been to San Francisco? Emily has just\ngraduated from high school.\nPasado continuo y pasado simple para narrar\nhistorias:\nRosa arrived when they were leaving the\nplace.\nPasado simple y presente simple al comparar\nhechos y situaciones del pasado con el presente:\nThis river was crystal clear years ago, but\nnow it’s polluted.\nWill y be going to para hacer inferencias y\npredicciones:\nThe temperature will be around 32°F today.\nBertha will pass the test because she’s\nstudying very hard.\nMy team is going to win the World Cup next\nyear because it has the best players.\nThere + be para solicitar y ofrecer indicaciones y\nhacer anuncios y dar noticias:\nIs there a mall around here?\nThere’s going to be a talk on biodiversity next\nweek.\nThere has just been an earthquake.\nModo imperativo para ofrecer indicaciones y\nhacer prohibiciones:\nTurn right on Main Street. Please, do not\nenter!\nLet’s para ofrecer indicaciones y\nsugerencias:\nNow, let’s click on the tool bar. Let’s not go to\nthe beach.\nWhy don’t/ why not para hacer sugerencias:\nWhy not tell your mom about it?\nCan, should, must, may, might, have to, need\nto... para expresar opiniones, dar indicaciones y\nhacer sugerencias, prohibiciones e inferencias.",
+              "pdfPage": 148,
+              "printedPage": "147",
+              "sourceOrder": 1481000
+            },
+            {
+              "id": "fca3a28f-f5ee-56f4-b53d-8edab3b3f122",
+              "text": "Mary’s car is here, so she must be inside the\nbuilding.\nI think you should see a doctor.\nYou can’t use your cell phone in class.\nYou must take two of these pills every\nm o r n i n g.",
+              "pdfPage": 148,
+              "printedPage": "147",
+              "sourceOrder": 1481001
+            },
             {
               "id": "b0ae9076-8da1-5038-a5c9-7f3ad66f028c",
               "text": "•Cláusulas adjetivas y sustantivas:\nThat’s the elementary school where I studied.\nI believe that soccer is an interesting sport.\nCondicional para ofrecer información y hacer\npredicciones:\nIf you are going to ride a motorcycle, you\nmust wear a helmet.If you miss more\nclasses, you will fail the course.\nQuestion tags:\nI don’t have to push the POWER button, do I?",
@@ -20338,34 +20631,14 @@
               "pdfPage": 149,
               "printedPage": "148",
               "sourceOrder": 1491008
-            }
-          ],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
-        },
-        {
-          "id": "c6bea9a3-537f-56d5-89ab-3cea1e1881f1",
-          "title": "Objeto:\nMe, you, him, her, them … We need to talk\nto him.\nReflexivos: myself, yourself...\nBabies cannot take care of themselves.\nRelativos: that, who, which, whose…\nAlexander Fleming, who was a scientist,\ndiscovered penicillin in 1928.",
-          "source": {
-            "id": "c6bea9a3-537f-56d5-89ab-3cea1e1881f1",
-            "text": "Objeto:\nMe, you, him, her, them … We need to talk\nto him.\nReflexivos: myself, yourself...\nBabies cannot take care of themselves.\nRelativos: that, who, which, whose…\nAlexander Fleming, who was a scientist,\ndiscovered penicillin in 1928.",
-            "pdfPage": 149,
-            "printedPage": "148",
-            "sourceOrder": 1491009
-          },
-          "subtopics": [
+            },
+            {
+              "id": "c6bea9a3-537f-56d5-89ab-3cea1e1881f1",
+              "text": "Objeto:\nMe, you, him, her, them … We need to talk\nto him.\nReflexivos: myself, yourself...\nBabies cannot take care of themselves.\nRelativos: that, who, which, whose…\nAlexander Fleming, who was a scientist,\ndiscovered penicillin in 1928.",
+              "pdfPage": 149,
+              "printedPage": "148",
+              "sourceOrder": 1491009
+            },
             {
               "id": "150e9a80-c6ed-5e4d-9038-030ea6a66fd5",
               "text": "• Adverbios y frases adverbiales de:\nTi e m p o :\nearly, late, last week… I woke up l ate this\nmorning.\nDuración: since, for…\nShe has worked there since 2013.\nModo: badly, well…\nShe behaves very well at school\nIntensidad: very, quite, so, too… This city\nused to be very quiet.\nGrado:\nSo much, a lot…\nHe has a lot of friends.\nCerteza: maybe, perhaps, possibly,\ncertainly… Maybe they didn’t install the App\nthe right way.",
@@ -20379,167 +20652,93 @@
               "pdfPage": 150,
               "printedPage": "149",
               "sourceOrder": 1501000
-            }
-          ],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
-        },
-        {
-          "id": "7cf63b0c-a40e-52bb-a35a-8039e9cea03c",
-          "title": "Tiempo: in, on, at…\nHurricane George hit Santo Domingo in\n1998.\nLugar: in, behind, near, next to… Please, sit\nnext to the window.",
-          "source": {
-            "id": "7cf63b0c-a40e-52bb-a35a-8039e9cea03c",
-            "text": "Tiempo: in, on, at…\nHurricane George hit Santo Domingo in\n1998.\nLugar: in, behind, near, next to… Please, sit\nnext to the window.",
-            "pdfPage": 150,
-            "printedPage": "149",
-            "sourceOrder": 1501001
-          },
-          "subtopics": [
+            },
+            {
+              "id": "7cf63b0c-a40e-52bb-a35a-8039e9cea03c",
+              "text": "Tiempo: in, on, at…\nHurricane George hit Santo Domingo in\n1998.\nLugar: in, behind, near, next to… Please, sit\nnext to the window.",
+              "pdfPage": 150,
+              "printedPage": "149",
+              "sourceOrder": 1501001
+            },
             {
               "id": "880b8097-5a10-5054-aaae-0030b56cb736",
               "text": "•Conectores de: Coordinación: and, or,\nbut…",
               "pdfPage": 150,
               "printedPage": "149",
               "sourceOrder": 1501002
+            },
+            {
+              "id": "9ea35999-792b-5580-81c2-a0372e0d73e9",
+              "text": "I used to study late at night, but now I prefer\nto study in the morning.",
+              "pdfPage": 150,
+              "printedPage": "149",
+              "sourceOrder": 1501003
+            },
+            {
+              "id": "f2974073-896d-5e36-a86b-57fa2dc71ab0",
+              "text": "Tiempo: before, after, when, while…\nJoe did\nthe laundry before he went to the mall.",
+              "pdfPage": 150,
+              "printedPage": "149",
+              "sourceOrder": 1501004
+            },
+            {
+              "id": "cedb1d11-0d8d-5cdd-9d12-19a0dc284391",
+              "text": "Secuencia: first, second, then, next, finally, …\nFinally, we arrived home.\nCausa y consecuencia: so, therefore,\nbecause, then… I want to learn English, so\nI practice every day.\nFinalidad: to, in order to, so that…\nSophia registered in a language school to\nlearn Portuguese.\nContraste: but, however, nevertheless…",
+              "pdfPage": 150,
+              "printedPage": "149",
+              "sourceOrder": 1501005
+            },
+            {
+              "id": "90260c6f-d9c7-5aa1-8de8-1835059bb55a",
+              "text": "I understand your point of view; however, I\nbelieve he’s right.\nConcesión: although, even though…\nAlthough Charles was very tired, he\nco m p l e t e d\nthe project.",
+              "pdfPage": 150,
+              "printedPage": "149",
+              "sourceOrder": 1501006
             }
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
+          "engineConnection": "PARTIAL_COMMON_THIRD_GRADE_PROVIDER",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
           "serviceVerification": "NOT_RUN",
           "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
+          "pending": "Tercero parcial: conectar estrategias, géneros, contexto y composición; revisión integral, operaciones y CRUD autenticados/snapshots. No iniciar cuarto.",
           "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
-        },
-        {
-          "id": "9ea35999-792b-5580-81c2-a0372e0d73e9",
-          "title": "I used to study late at night, but now I prefer\nto study in the morning.",
-          "source": {
-            "id": "9ea35999-792b-5580-81c2-a0372e0d73e9",
-            "text": "I used to study late at night, but now I prefer\nto study in the morning.",
-            "pdfPage": 150,
-            "printedPage": "149",
-            "sourceOrder": 1501003
-          },
-          "subtopics": [],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
-        },
-        {
-          "id": "f2974073-896d-5e36-a86b-57fa2dc71ab0",
-          "title": "Tiempo: before, after, when, while…\nJoe did\nthe laundry before he went to the mall.",
-          "source": {
-            "id": "f2974073-896d-5e36-a86b-57fa2dc71ab0",
-            "text": "Tiempo: before, after, when, while…\nJoe did\nthe laundry before he went to the mall.",
-            "pdfPage": 150,
-            "printedPage": "149",
-            "sourceOrder": 1501004
-          },
-          "subtopics": [],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
-        },
-        {
-          "id": "cedb1d11-0d8d-5cdd-9d12-19a0dc284391",
-          "title": "Secuencia: first, second, then, next, finally, …\nFinally, we arrived home.\nCausa y consecuencia: so, therefore,\nbecause, then… I want to learn English, so\nI practice every day.\nFinalidad: to, in order to, so that…\nSophia registered in a language school to\nlearn Portuguese.\nContraste: but, however, nevertheless…",
-          "source": {
-            "id": "cedb1d11-0d8d-5cdd-9d12-19a0dc284391",
-            "text": "Secuencia: first, second, then, next, finally, …\nFinally, we arrived home.\nCausa y consecuencia: so, therefore,\nbecause, then… I want to learn English, so\nI practice every day.\nFinalidad: to, in order to, so that…\nSophia registered in a language school to\nlearn Portuguese.\nContraste: but, however, nevertheless…",
-            "pdfPage": 150,
-            "printedPage": "149",
-            "sourceOrder": 1501005
-          },
-          "subtopics": [],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
-        },
-        {
-          "id": "90260c6f-d9c7-5aa1-8de8-1835059bb55a",
-          "title": "I understand your point of view; however, I\nbelieve he’s right.\nConcesión: although, even though…\nAlthough Charles was very tired, he\nco m p l e t e d\nthe project.",
-          "source": {
-            "id": "90260c6f-d9c7-5aa1-8de8-1835059bb55a",
-            "text": "I understand your point of view; however, I\nbelieve he’s right.\nConcesión: although, even though…\nAlthough Charles was very tired, he\nco m p l e t e d\nthe project.",
-            "pdfPage": 150,
-            "printedPage": "149",
-            "sourceOrder": 1501006
-          },
-          "subtopics": [],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PENDING",
-          "instrumentFormats": [],
-          "serviceVerification": "NOT_RUN",
-          "interfaceVerification": "NOT_RUN",
-          "pending": "Revisar límites, contenido evaluativo y conexión al motor.",
-          "procedures": [],
-          "procedureAssociation": "PENDING_VISUAL_REVIEW",
-          "boundaryReview": "PENDING_VISUAL_REVIEW",
-          "implementation": "PENDING",
-          "automatedVerification": "NOT_RUN",
-          "manualVerification": "NOT_RUN",
-          "applicationVerification": "NOT_RUN"
+          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+          "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+          "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+          "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+          "applicationVerification": "NOT_RUN",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-3-punto-de-avance.md",
+          "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
-      "implementation": "PENDING",
-      "automatedVerification": "NOT_RUN",
-      "manualVerification": "NOT_RUN",
-      "applicationVerification": "NOT_RUN"
+      "implementation": "PARTIAL_FUNCTIONS_GRAMMAR_LEXICON",
+      "automatedVerification": "FUNCTIONS_GRAMMAR_LEXICON_DEFINED_CONTRACTS_ONLY",
+      "manualVerification": "SOURCE_158_RECORDS_VISUALLY_REVIEWED",
+      "applicationVerification": "NOT_RUN",
+      "conceptHeadings": [
+        {
+          "id": "9100a22d-591e-5562-be04-9000308769d9",
+          "text": "Temas",
+          "pdfPage": 146,
+          "printedPage": "145",
+          "sourceOrder": 1461000
+        }
+      ],
+      "boundaryReview": "VISUALLY_REVIEWED_PDF_146_151",
+      "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+      "report": "ingles-3-punto-de-avance.md",
+      "catalogVersion": "evaluation-2026.54_CODE_NOT_INSTALLED"
     },
     {
       "id": "011167a1-54f7-5915-9d75-5168ec1b0a97",

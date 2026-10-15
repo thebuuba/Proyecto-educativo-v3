@@ -49,6 +49,8 @@ import {evaluationCatalogV49} from './catalog-v49'
 import {evaluationCatalogV50} from './catalog-v50'
 import {evaluationCatalogV51} from './catalog-v51'
 import {evaluationCatalogV52} from './catalog-v52'
+import {evaluationCatalogV53} from './catalog-v53'
+import {englishGradeThreeModule,englishGradeThreeGrammar,englishGradeThreeLexicon} from '@aula/shared'
 import {englishGradeTwoModule,englishGradeTwoGrammar,englishGradeTwoLexicon,englishGradeTwoStrategies,englishGradeTwoGenres} from '@aula/shared'
 import {englishGradeOneGenres} from '@aula/shared'
 import {englishGradeOneStrategies} from '@aula/shared'
@@ -61,8 +63,11 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV52,
-  version: 'evaluation-2026.53',
+  ...evaluationCatalogV53,
+  version: 'evaluation-2026.54',
+  englishGradeThreeModule,
+  englishGradeThreeGrammar,
+  englishGradeThreeLexicon,
   englishGradeTwoNarrativePolicy:'EXPERIENCE_EVENTS_ONCE_EXPLICIT_NARRATIVE_COMPONENTS_RETAINED_V1',
   englishGradeTwoShoppingPolicy:'PURCHASE_VERB_FORMS_EXCLUDE_CHECK_AND_COMPREHEND_V1',
   englishGradeTwoRevisionPolicy:'EXPLICIT_MEANING_CORRECTION_AND_REPLY_EVIDENCE_V1',
@@ -109,8 +114,9 @@ export const evaluationCatalogCurrent = {
   secondGradeLanguageFeatures,
   secondGradeLanguagePolicy:'PROCEDURAL_DETAILS_COMPREHENSION_PRODUCTS_AND_FAMILIES_V2',
 }
-export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
+export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV53.version)return evaluationCatalogV53
   if(version===evaluationCatalogV52.version)return evaluationCatalogV52
   if(version===evaluationCatalogV51.version)return evaluationCatalogV51
   if(version===evaluationCatalogV50.version)return evaluationCatalogV50

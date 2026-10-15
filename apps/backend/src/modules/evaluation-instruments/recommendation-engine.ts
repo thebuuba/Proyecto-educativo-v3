@@ -218,7 +218,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const text = normalize(`${input.activityTitle} ${withoutResources(input.description ?? '')}`)
   const explicit = input.pedagogicalActivityType ? catalog.activityTypes.find(a => a.id === input.pedagogicalActivityType) : undefined
   if (input.pedagogicalActivityType && !explicit) throw new Error('Tipo pedagógico desconocido.')
-  const englishTask=(context?.grade===2?catalog.englishGradeTwoModule:catalog.englishGradeOneModule)?resolveCommonEnglishTask(input.activityTitle,input.description??'',context):null
+  const englishModule=context?.grade===1?catalog.englishGradeOneModule:context?.grade===2?catalog.englishGradeTwoModule:context?.grade===3?catalog.englishGradeThreeModule:null
+  const englishTask=englishModule?resolveCommonEnglishTask(input.activityTitle,input.description??'',context):null
   const scopedType = englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', context)
   const detectedByCatalog = catalog.activityTypes.find(entry => entry.id === scopedType)
     ?? detectActivityType(input.activityTitle, input.description ?? '', catalog, false)
@@ -356,7 +357,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       ranking: ranking.slice(0, 24).map(r => ({ elementId: r.element.elementId, score: r.score, topicCoverage: r.topicCoverage, reasons: r.reasons })),
       curriculumStatus, lowCurriculumConfidence: confidence === 'LOW', consideredTypes: Object.keys(typeWeights) } }
   if (scienceTopic) result.internalTrace.reasons.push(`module=science-${scienceTopic}-${context?.grade}`)
-  if(englishTask)result.internalTrace.reasons.push(`module=ingles-comunicacion-${englishTaskGrade(englishTask)}`,`mode=${englishTask.mode}`,`functions=${englishTask.functions.join(',')}`,englishTaskGrade(englishTask)===1?'coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES':'coverage=DEFINED_COMMON_SECOND_GRADE_PROVIDERS')
+  if(englishTask)result.internalTrace.reasons.push(`module=ingles-comunicacion-${englishTaskGrade(englishTask)}`,`mode=${englishTask.mode}`,`functions=${englishTask.functions.join(',')}`,englishTaskGrade(englishTask)===1?'coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES':englishTaskGrade(englishTask)===2?'coverage=DEFINED_COMMON_SECOND_GRADE_PROVIDERS':'coverage=COMMON_THIRD_GRADE_PROVIDERS_PARTIAL')
   if(novelCriteria.length) result.internalTrace.reasons.push('module=novela-analisis-fragmento-5','coverage=TASK_DERIVED_PARTIAL',`task=${JSON.stringify(resolveEvaluationTask(input.activityTitle,input.description??''))}`)
   if(authored.some(row=>row.templateId.startsWith('task-'))) result.internalTrace.reasons.push('coverage=ACTION_ONLY')
   if (mathTopic) result.internalTrace.reasons.push(`module=math-${mathTopic}-${context?.grade}`,
