@@ -22,6 +22,7 @@ const mocks = vi.hoisted(() => {
     billingServicePeriod: delegate(),
     billingCourtesy: delegate(),
     billingPayment: delegate(),
+    billingDocument: delegate(),
     billingTransferRequest: delegate(),
     billingBankMovement: delegate(),
     billingBankAccount: delegate(),

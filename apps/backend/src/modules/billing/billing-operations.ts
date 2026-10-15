@@ -273,6 +273,10 @@ export class BillingOperations {
           metadata: { billingAnchor: anchor, transferRequestId: transfer.id, bankMovementId: dto.bankMovementId },
         },
       })
+      // Internal commercial receipt only; this is not a Dominican fiscal document.
+      await db.billingDocument.create({ data: { accountId: transfer.accountId, paymentId: payment.id,
+        documentType: 'RECEIPT', number: `REC-${payment.id}`, amountMinor: transfer.amountMinor,
+        currency: transfer.currency, environment: 'SANDBOX', issuedAt: now } })
       const period = await db.billingServicePeriod.create({
         data: {
           accountId: transfer.accountId, planId: transfer.planId, paymentId: payment.id, source: 'TRANSFER',
