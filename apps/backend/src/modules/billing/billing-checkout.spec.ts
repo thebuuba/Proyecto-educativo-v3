@@ -45,7 +45,7 @@ const user: AuthenticatedUser = { id: 'user-1', email: 'teacher@example.com', sc
 
 const approvedPrice = {
   id: PRICE_ID,
-  unitPriceAmount: '599',
+  unitPriceAmount: '799',
   currencyCode: 'USD',
   billingInterval: 'month',
   billingFrequency: 1,
@@ -76,7 +76,7 @@ describe('BillingProviderService.checkout', () => {
     store.requireBilling.mockReturnValue({ enabled: true, checkout: true, events: true, enforce: false, trialDays: 14, graceDays: 7 })
     store.billingAccount.mockResolvedValue({ id: 'acct-1', userId: 'user-1', status: 'ACTIVE', sandbox: true })
     store.authorizedPrice.mockResolvedValue({
-      id: 'price-1', planId: 'plan-1', providerPriceId: PRICE_ID, amountMinor: 599n, currency: 'USD', interval: 'MONTHLY', intervalCount: 1,
+      id: 'price-1', planId: 'plan-1', providerPriceId: PRICE_ID, amountMinor: 799n, currency: 'USD', interval: 'MONTHLY', intervalCount: 1,
     })
     store.billingNow.mockResolvedValue(NOW)
     store.audit.mockResolvedValue(undefined)
@@ -135,7 +135,7 @@ describe('BillingProviderService.checkout', () => {
     const data = db.billingSubscription.create.mock.calls[0][0].data
     expect(data.metadata).toMatchObject({
       trialPolicy: 'card-month-v1', trialEligible: true, termsVersion: 'v1', acceptAutoRenewal: true,
-      price: { amountMinor: '599', currency: 'USD', providerPriceId: PRICE_ID },
+      price: { amountMinor: '799', currency: 'USD', providerPriceId: PRICE_ID },
     })
     // The trial period belongs to the price, never to the transaction request.
     const sent = paddle.createTransaction.mock.calls[0][0]

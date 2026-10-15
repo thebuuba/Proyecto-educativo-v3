@@ -11,12 +11,12 @@ export async function testCardTrial({ db, backend, events, reviewer, schoolId, p
   await db.query('insert into app_users(id,auth_user_id,full_name,email,school_id) values ($1,$2,$3,$4,$5)', [user.id,user.auth,'Synthetic card trial teacher',user.email,schoolId])
   await db.query("insert into user_roles(user_id,role_id,school_id) select $1,id,$2 from roles where key='teacher'", [user.id,schoolId])
   await db.query('insert into billing_accounts(id,user_id) values ($1,$2)', [accountId,user.id])
-  await db.query("insert into billing_prices(id,plan_id,version,currency,amount_minor,status,is_public,provider,provider_price_id) values ($1,$2,3,'USD',599,'active',true,'paddle',$3)", [priceId,planId,remotePriceId])
+  await db.query("insert into billing_prices(id,plan_id,version,currency,amount_minor,status,is_public,provider,provider_price_id) values ($1,$2,3,'USD',799,'active',true,'paddle',$3)", [priceId,planId,remotePriceId])
   await db.query("insert into billing_provider_customers(account_id,provider,provider_customer_id) values ($1,'paddle',$2)", [accountId,customerId])
   const at = new Date(Date.now()-60000), until = new Date(at)
   until.setUTCMonth(until.getUTCMonth()+1)
   const period = { starts_at: at.toISOString(), ends_at: until.toISOString() }
-  const price = { id: remotePriceId, status: 'active', unit_price: {amount:'599',currency_code:'USD'}, billing_cycle: {interval:'month',frequency:1},
+  const price = { id: remotePriceId, status: 'active', unit_price: {amount:'799',currency_code:'USD'}, billing_cycle: {interval:'month',frequency:1},
     tax_mode:'internal', unit_price_overrides:[], trial_period:{interval:'month',frequency:1,requires_payment_method:true,unit_price:null,unit_price_overrides:[]} }
   let subscription = {id:subscriptionId,status:'trialing',customer_id:customerId,collection_mode:'automatic',updated_at:at.toISOString(),next_billed_at:period.ends_at,
     current_billing_period:null,scheduled_change:null,items:[{status:'trialing',price,quantity:1,recurring:true,trial_dates:period,next_billed_at:period.ends_at}]}

@@ -19,7 +19,7 @@ export function resolveSubscriptionOffer(
   return overview.offer ?? SUBSCRIPTION_OFFER
 }
 
-/** Importe aprobado formateado en su moneda (p. ej. `US$5.99`). */
+/** Importe aprobado formateado en su moneda (p. ej. `US$7.99`). */
 export function formatOfferAmount(offer: BillingOffer): string {
   return formatAmount(offer.amountMinor, offer.currency)
 }

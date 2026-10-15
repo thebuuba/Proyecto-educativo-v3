@@ -9,7 +9,7 @@ const TRIAL = { startsAt: '2026-10-15T14:00:00Z', endsAt: '2026-11-15T14:00:00Z'
 
 const approvedPrice = (overrides: Partial<PaddlePrice> = {}): PaddlePrice => ({
   id: PRICE_ID,
-  unitPriceAmount: '599',
+  unitPriceAmount: '799',
   currencyCode: 'USD',
   billingInterval: 'month',
   billingFrequency: 1,
@@ -49,6 +49,7 @@ describe('checkTrialPrice', () => {
   it('fails closed for any deviation from the approved offer', () => {
     const cases: Array<Partial<PaddlePrice>> = [
       { unitPriceAmount: '1200' },
+      { unitPriceAmount: '599' }, // La oferta anterior ya no autoriza nuevas altas.
       { currencyCode: 'DOP' },
       { billingInterval: 'year' },
       { billingFrequency: 1, billingInterval: 'year' },

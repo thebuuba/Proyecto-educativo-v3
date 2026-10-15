@@ -9,7 +9,7 @@ describe('public individual monthly offering', () => {
     render(<MemoryRouter><PricingPage /></MemoryRouter>)
     expect(screen.getByRole('heading', { name: 'Docente Completo' })).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: /anual/i })).not.toBeInTheDocument()
-    expect(screen.getAllByText(/US\$5\.99/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/US\$7\.99/).length).toBeGreaterThan(0)
     expect(screen.getByText(/primer mes gratis con tarjeta/i)).toBeInTheDocument()
     expect(screen.getByText(/61\.6788/)).toBeInTheDocument()
     expect(screen.getByText(/14 oct 2026/)).toBeInTheDocument()

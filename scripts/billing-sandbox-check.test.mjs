@@ -29,7 +29,7 @@ const baseEnv = () => ({
   BILLING_TERMS_VERSION: '2026-01-01',
   FRONTEND_URL: 'https://staging.example.invalid',
 })
-const baseOptions = () => ({ online: false, price: PRICE_ID, amount: '599', currency: 'USD', webhookUrl: WEBHOOK_URL })
+const baseOptions = () => ({ online: false, price: PRICE_ID, amount: '799', currency: 'USD', webhookUrl: WEBHOOK_URL })
 const collect = () => { const lines = []; return { log: (line) => lines.push(String(line)), lines } }
 
 test('identificadores sandbox reconocen formato real y rechazan live', () => {
@@ -45,7 +45,7 @@ test('identificadores sandbox reconocen formato real y rechazan live', () => {
 })
 
 test('parseArgs acepta flags conocidos y reporta desconocidos y valores ausentes', () => {
-  const parsed = parseArgs(['--online', '--price', PRICE_ID, '--amount', '599', '--currency', 'USD', '--webhook-url', WEBHOOK_URL])
+  const parsed = parseArgs(['--online', '--price', PRICE_ID, '--amount', '799', '--currency', 'USD', '--webhook-url', WEBHOOK_URL])
   assert.deepEqual(parsed.errors, [])
   assert.equal(parsed.values.online, true)
   assert.equal(parsed.values.price, PRICE_ID)
@@ -77,19 +77,19 @@ test('validateOptions exige price, amount, currency y url de webhook válidos', 
 })
 
 test('validatePrice exige un mes gratis con tarjeta y rechaza pruebas sin tarjeta', () => {
-  const good = { status: 'active', unit_price: { amount: '599', currency_code: 'USD' }, billing_cycle: { interval: 'month', frequency: 1 }, trial_period: { interval: 'month', frequency: 1, requires_payment_method: true, unit_price: null }, tax_mode: 'internal', unit_price_overrides: [] }
+  const good = { status: 'active', unit_price: { amount: '799', currency_code: 'USD' }, billing_cycle: { interval: 'month', frequency: 1 }, trial_period: { interval: 'month', frequency: 1, requires_payment_method: true, unit_price: null }, tax_mode: 'internal', unit_price_overrides: [] }
   const approved = { ...good, trial_period: { interval: 'month', frequency: 1, requires_payment_method: true, unit_price: null } }
-  assert.deepEqual(validatePrice(approved, { amount: '599', currency: 'USD' }), [])
-  assert.ok(validatePrice({ ...good, trial_period: null }, { amount: '599', currency: 'USD' }).includes('price_trial_policy_mismatch'))
+  assert.deepEqual(validatePrice(approved, { amount: '799', currency: 'USD' }), [])
+  assert.ok(validatePrice({ ...good, trial_period: null }, { amount: '799', currency: 'USD' }).includes('price_trial_policy_mismatch'))
   for (const trial_period of [
     { ...approved.trial_period, requires_payment_method: false },
     { ...approved.trial_period, interval: 'day', frequency: 30 },
     { ...approved.trial_period, unit_price: { amount: '1', currency_code: 'USD' } },
     { ...approved.trial_period, unit_price_overrides: [{ country_codes: ['DO'], unit_price: { amount: '100', currency_code: 'USD' } }] },
-  ]) assert.ok(validatePrice({ ...approved, trial_period }, { amount: '599', currency: 'USD' }).includes('price_trial_policy_mismatch'))
-  assert.ok(validatePrice({ ...good, status: 'archived' }, { amount: '599', currency: 'USD' }).includes('price_not_active'))
-  assert.ok(validatePrice({ ...good, unit_price: { amount: '2000', currency_code: 'USD' } }, { amount: '599', currency: 'USD' }).includes('price_amount_mismatch'))
-  assert.ok(validatePrice({ ...good, billing_cycle: { interval: 'year', frequency: 1 } }, { amount: '599', currency: 'USD' }).includes('price_cycle_mismatch'))
+  ]) assert.ok(validatePrice({ ...approved, trial_period }, { amount: '799', currency: 'USD' }).includes('price_trial_policy_mismatch'))
+  assert.ok(validatePrice({ ...good, status: 'archived' }, { amount: '799', currency: 'USD' }).includes('price_not_active'))
+  assert.ok(validatePrice({ ...good, unit_price: { amount: '2000', currency_code: 'USD' } }, { amount: '799', currency: 'USD' }).includes('price_amount_mismatch'))
+  assert.ok(validatePrice({ ...good, billing_cycle: { interval: 'year', frequency: 1 } }, { amount: '799', currency: 'USD' }).includes('price_cycle_mismatch'))
   assert.ok(REQUIRED_EVENTS.includes('subscription.trialing'))
 })
 
@@ -121,7 +121,7 @@ test('fetchJson sólo hace GET y no filtra secretos ni URLs ajenas en el error',
 test('run offline valida sin tocar la red y nunca imprime el valor de un secreto', async () => {
   let called = false
   const { log, lines } = collect()
-  const result = await run({ env: baseEnv(), argv: ['--price', PRICE_ID, '--amount', '599', '--currency', 'USD', '--webhook-url', WEBHOOK_URL], fetchImpl: async () => { called = true; throw new Error('no debe llamarse') }, log })
+  const result = await run({ env: baseEnv(), argv: ['--price', PRICE_ID, '--amount', '799', '--currency', 'USD', '--webhook-url', WEBHOOK_URL], fetchImpl: async () => { called = true; throw new Error('no debe llamarse') }, log })
   assert.equal(result.ok, true)
   assert.equal(result.online, false)
   assert.equal(called, false)
@@ -129,7 +129,7 @@ test('run offline valida sin tocar la red y nunca imprime el valor de un secreto
 })
 
 test('run online sólo hace los GET de precio y notification-settings y no finge checkout', async () => {
-  const priceBody = { data: { id: PRICE_ID, status: 'active', unit_price: { amount: '599', currency_code: 'USD' }, billing_cycle: { interval: 'month', frequency: 1 }, trial_period: { interval: 'month', frequency: 1, requires_payment_method: true, unit_price: null }, tax_mode: 'internal', unit_price_overrides: [] } }
+  const priceBody = { data: { id: PRICE_ID, status: 'active', unit_price: { amount: '799', currency_code: 'USD' }, billing_cycle: { interval: 'month', frequency: 1 }, trial_period: { interval: 'month', frequency: 1, requires_payment_method: true, unit_price: null }, tax_mode: 'internal', unit_price_overrides: [] } }
   const settingsBody = { data: [{ type: 'url', destination: WEBHOOK_URL, active: true, traffic_source: 'platform',
     endpoint_secret_key: baseEnv().PADDLE_SANDBOX_WEBHOOK_SECRET, subscribed_events: REQUIRED_EVENTS.map(name => ({name})) }] }
   const calls = []
@@ -138,7 +138,7 @@ test('run online sólo hace los GET de precio y notification-settings y no finge
     return { ok: true, status: 200, json: async () => (url.includes('/prices/') ? priceBody : settingsBody) }
   }
   const { log, lines } = collect()
-  const result = await run({ env: baseEnv(), argv: ['--online', '--price', PRICE_ID, '--amount', '599', '--currency', 'USD', '--webhook-url', WEBHOOK_URL], fetchImpl, log })
+  const result = await run({ env: baseEnv(), argv: ['--online', '--price', PRICE_ID, '--amount', '799', '--currency', 'USD', '--webhook-url', WEBHOOK_URL], fetchImpl, log })
   assert.equal(result.ok, true)
   assert.equal(calls.length, 2)
   assert.ok(calls.every((call) => call.init.method === 'GET'))
@@ -148,9 +148,9 @@ test('run online sólo hace los GET de precio y notification-settings y no finge
 })
 
 test('verifica secreto, fiscalidad fija y rechaza argumentos que podrían exponer claves', async () => {
-  const price = {status:'active',unit_price:{amount:'599',currency_code:'USD'},billing_cycle:{interval:'month',frequency:1},trial_period:null,tax_mode:'external',unit_price_overrides:[]}
-  assert.ok(validatePrice(price,{amount:'599',currency:'USD'}).includes('price_tax_mode_unsupported'))
-  assert.ok(validatePrice({...price,tax_mode:'internal',unit_price_overrides:[{}]},{amount:'599',currency:'USD'}).includes('price_overrides_unsupported'))
+  const price = {status:'active',unit_price:{amount:'799',currency_code:'USD'},billing_cycle:{interval:'month',frequency:1},trial_period:null,tax_mode:'external',unit_price_overrides:[]}
+  assert.ok(validatePrice(price,{amount:'799',currency:'USD'}).includes('price_tax_mode_unsupported'))
+  assert.ok(validatePrice({...price,tax_mode:'internal',unit_price_overrides:[{}]},{amount:'799',currency:'USD'}).includes('price_overrides_unsupported'))
   const endpoint = {type:'url',active:true,traffic_source:'all',subscribed_events:REQUIRED_EVENTS.map(name=>({name})),endpoint_secret_key:'different'}
   assert.ok(validateWebhook(endpoint,'expected-secret').includes('webhook_secret_mismatch'))
   const {log,lines}=collect()
@@ -162,7 +162,7 @@ test('verifica secreto, fiscalidad fija y rechaza argumentos que podrían expone
 test('run online rechaza claves live antes de cualquier llamada de red', async () => {
   let called = false
   const { log } = collect()
-  const result = await run({ env: { ...baseEnv(), PADDLE_SANDBOX_API_KEY: LIVE_KEY }, argv: ['--online', '--price', PRICE_ID, '--amount', '599', '--currency', 'USD', '--webhook-url', WEBHOOK_URL], fetchImpl: async () => { called = true; throw new Error('no debe llamarse') }, log })
+  const result = await run({ env: { ...baseEnv(), PADDLE_SANDBOX_API_KEY: LIVE_KEY }, argv: ['--online', '--price', PRICE_ID, '--amount', '799', '--currency', 'USD', '--webhook-url', WEBHOOK_URL], fetchImpl: async () => { called = true; throw new Error('no debe llamarse') }, log })
   assert.equal(result.ok, false)
   assert.equal(called, false)
   assert.ok(result.errors.includes('live_api_key_rejected'))

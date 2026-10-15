@@ -1,6 +1,6 @@
 # Prueba de un mes con tarjeta y renovación mensual
 
-El propietario aprobó US$5.99 mensuales, un mes natural gratuito con tarjeta obligatoria y renovación automática. Se mantiene Paddle, cobro en USD y referencia DOP fechada. Esta autorización no habilita dinero real ni publica la rama en la web principal.
+El propietario aprobó US$7.99 mensuales, un mes natural gratuito con tarjeta obligatoria y renovación automática. Se mantiene Paddle, cobro en USD y referencia DOP fechada. Esta autorización no habilita dinero real ni publica la rama en la web principal.
 
 1. Una oferta compartida identifica importe, moneda, período y referencia DOP del BCRD (14/10/2026, 61.6788 DOP/USD). La referencia no se presenta como conversión bancaria garantizada ni cotización en tiempo real.
 2. Se retira la emisión de pruebas locales sin tarjeta. El titular debe completar el checkout sandbox y aceptar de forma explícita renovación, importe y condiciones. Las pruebas históricas conservan sus fechas.

@@ -371,10 +371,10 @@ describe('receive: processing', () => {
 describe('card trial activation', () => {
   const TRIAL_DATES = { startsAt: '2026-10-15T14:00:00Z', endsAt: '2026-11-15T14:00:00Z' }
 
-  const reservedSubscription = () => ({ ...subscription(), price: {...subscription().price,amountMinor:599n}, metadata: {
+  const reservedSubscription = () => ({ ...subscription(), price: {...subscription().price,amountMinor:799n}, metadata: {
     checkoutOperationId: 'op-1', checkoutTransactionId:'txn_1',trialPolicy:'card-month-v1',acceptAutoRenewal:true,termsVersion:'v1',acceptedAt:NOW.toISOString(),
   } })
-  const approvedPrice = {id:'pri_x',status:'active',unitPriceAmount:'599',currencyCode:'USD',billingInterval:'month',billingFrequency:1,
+  const approvedPrice = {id:'pri_x',status:'active',unitPriceAmount:'799',currencyCode:'USD',billingInterval:'month',billingFrequency:1,
     trialInterval:'month',trialFrequency:1,taxMode:'internal',requiresPaymentMethod:true,unitPriceOverrides:[],trialUnitPrice:null,trialUnitPriceOverrides:[]}
 
   const trialProviderSubscription = () => ({

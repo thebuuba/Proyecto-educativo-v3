@@ -2,7 +2,7 @@
 
 ## Decisiones posteriores del propietario (15/10/2026)
 
-El propietario aprobó Paddle, **US$5.99 mensuales**, referencia aproximada en DOP fechada y **un mes natural gratuito con tarjeta obligatoria y renovación automática**, con aceptación expresa y cancelación accesible. Esta decisión sustituye la propuesta inicial de 14 días sin tarjeta. No se revocan pruebas históricas. Ver [plan de implementación](docs/plans/2026-10-15-prueba-con-tarjeta.md).
+El propietario aprobó Paddle, **US$7.99 mensuales**, referencia aproximada en DOP fechada y **un mes natural gratuito con tarjeta obligatoria y renovación automática**, con aceptación expresa y cancelación accesible. Esta decisión sustituye la propuesta inicial de 14 días sin tarjeta. No se revocan pruebas históricas. Ver [plan de implementación](docs/plans/2026-10-15-prueba-con-tarjeta.md).
 
 También autorizó conectar exclusivamente esta rama a la base de producción y aplicar allí la entrega. Esta excepción está documentada en los resultados y no autoriza publicar la web principal, fusionar a `main` ni activar cobros reales. Las pruebas automatizadas de pagos y tarjetas siguen ejecutándose con datos sintéticos en una base desechable; completar Paddle Sandbox continúa siendo un requisito externo.
 

@@ -3,7 +3,7 @@ import { createPaddleSandboxClient } from './paddle-sandbox'
 import { checkTrialPrice, checkTrialSubscription } from './billing-trial'
 
 const priceId = `pri_${'c'.repeat(26)}`
-const fixture = () => ({ id:priceId, status:'active', unit_price:{amount:'599',currency_code:'USD'},
+const fixture = () => ({ id:priceId, status:'active', unit_price:{amount:'799',currency_code:'USD'},
   billing_cycle:{interval:'month',frequency:1}, tax_mode:'internal', unit_price_overrides:[],
   trial_period:{interval:'month',frequency:1,requires_payment_method:true,unit_price:null as unknown,unit_price_overrides:[] as unknown[]} })
 const clientFor = (data: unknown) => createPaddleSandboxClient({

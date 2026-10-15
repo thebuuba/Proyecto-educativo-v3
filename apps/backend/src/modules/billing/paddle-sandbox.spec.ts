@@ -337,7 +337,7 @@ describe('remote operations', () => {
         billing_cycle: { interval: 'month', frequency: 1 },
         trial_period: { interval: 'month', frequency: 1, requires_payment_method: true, unit_price: null },
         tax_mode: 'internal',
-        unit_price: { amount: '599', currency_code: 'USD' },
+        unit_price: { amount: '799', currency_code: 'USD' },
         unit_price_overrides: [],
       },
     }
@@ -352,7 +352,7 @@ describe('remote operations', () => {
       status: 'active',
       trialUnitPrice: null,
       trialUnitPriceOverrides: [],
-      unitPriceAmount: '599',
+      unitPriceAmount: '799',
       currencyCode: 'USD',
       billingInterval: 'month',
       billingFrequency: 1,

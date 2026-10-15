@@ -15,14 +15,14 @@ const mockedCreateCheckout = vi.mocked(createCheckout)
 const price: BillingPrice = {
   id: 'price-paddle',
   label: 'Docente Completo',
-  amountMinor: 599,
+  amountMinor: 799,
   currency: 'USD',
   interval: 'month',
   mode: 'paddle',
 }
 
 const offer: BillingOffer = {
-  amountMinor: 599,
+  amountMinor: 799,
   currency: 'USD',
   interval: 'month',
   intervalCount: 1,
@@ -84,7 +84,7 @@ describe('CheckoutDialog', () => {
 
     expect(screen.getByText(/hoy no se cobra/i)).toBeInTheDocument()
     expect(screen.getByText(/el primer cobro se hará al completar el mes/i)).toBeInTheDocument()
-    expect(screen.getAllByText(/US\$5\.99/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/US\$7\.99/).length).toBeGreaterThan(0)
     expect(screen.getByText(/si cancelas antes de esa fecha/i)).toBeInTheDocument()
     expect(screen.getByText(/61\.6788/)).toBeInTheDocument()
   })

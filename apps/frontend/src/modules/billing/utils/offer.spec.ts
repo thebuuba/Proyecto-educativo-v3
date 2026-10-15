@@ -12,7 +12,7 @@ import {
 } from './offer'
 
 const approvedOffer: BillingOffer = {
-  amountMinor: 599,
+  amountMinor: 799,
   currency: 'USD',
   interval: 'month',
   intervalCount: 1,
@@ -49,7 +49,7 @@ function makeOverview(overrides: Partial<BillingOverview> = {}): BillingOverview
 describe('oferta compartida', () => {
   it('usa la constante aprobada cuando el servidor no publica oferta', () => {
     const offer = resolveSubscriptionOffer(makeOverview({ offer: null }))
-    expect(offer.amountMinor).toBe(599)
+    expect(offer.amountMinor).toBe(799)
     expect(offer.currency).toBe('USD')
     expect(offer.trial).toEqual({ interval: 'month', intervalCount: 1, requiresCard: true })
   })
@@ -60,12 +60,12 @@ describe('oferta compartida', () => {
   })
 
   it('formatea el importe aprobado y su período', () => {
-    expect(formatOfferAmount(approvedOffer)).toBe('US$5.99')
+    expect(formatOfferAmount(approvedOffer)).toBe('US$7.99')
     expect(offerPeriodLabel(approvedOffer)).toBe('mes')
   })
 
   it('calcula la referencia DOP con tasa y fecha visibles, sin prometer banco ni impuestos', () => {
-    expect(formatDopReference(approvedOffer)).toBe('RD$369.46')
+    expect(formatDopReference(approvedOffer)).toBe('RD$492.81')
     const notice = dopReferenceNotice(approvedOffer)
     expect(notice).toContain('61.6788')
     expect(notice).toContain('14 oct 2026')
@@ -75,11 +75,11 @@ describe('oferta compartida', () => {
 })
 
 describe('precio con tarjeta autorizado', () => {
-  it('encuentra el precio Paddle de 599 USD y no uno manual', () => {
+  it('encuentra el precio Paddle de 799 USD y no uno manual', () => {
     const paddle = {
       id: 'price-paddle',
       label: 'Docente Completo',
-      amountMinor: 599,
+      amountMinor: 799,
       currency: 'USD',
       interval: 'month',
       mode: 'paddle',
@@ -97,7 +97,7 @@ describe('precio con tarjeta autorizado', () => {
     const byId = {
       id: 'price-provider',
       label: 'Docente Completo',
-      amountMinor: 599,
+      amountMinor: 799,
       currency: 'USD',
       interval: 'month',
       mode: 'paddle',
@@ -105,7 +105,7 @@ describe('precio con tarjeta autorizado', () => {
     const overview = makeOverview({
       offer: { ...approvedOffer, providerPriceId: 'price-provider' },
       prices: [
-        { ...byId, id: 'price-otro', amountMinor: 599 },
+        { ...byId, id: 'price-otro', amountMinor: 799 },
         byId,
       ],
     })
@@ -116,7 +116,7 @@ describe('precio con tarjeta autorizado', () => {
     const paddle = {
       id: 'price-paddle',
       label: 'Docente Completo',
-      amountMinor: 599,
+      amountMinor: 799,
       currency: 'USD',
       interval: 'month',
       mode: 'paddle',

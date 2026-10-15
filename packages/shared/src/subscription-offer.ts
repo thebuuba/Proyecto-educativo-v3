@@ -1,6 +1,6 @@
 /** Oferta aprobada; DOP es una referencia fechada, nunca la moneda del cargo. */
 export const SUBSCRIPTION_OFFER = {
-  amountMinor: 599,
+  amountMinor: 799,
   currency: 'USD',
   interval: 'month',
   intervalCount: 1,

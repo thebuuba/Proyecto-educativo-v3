@@ -33,7 +33,7 @@ const mocked = vi.mocked(billingService)
 const offerPrice: BillingPrice = {
   id: 'price-paddle',
   label: 'Docente Completo',
-  amountMinor: 599,
+  amountMinor: 799,
   currency: 'USD',
   interval: 'month',
   mode: 'paddle',
@@ -144,7 +144,7 @@ describe('BillingPage', () => {
     renderPage()
 
     await screen.findByText(/cobertura efectiva/i)
-    expect(screen.getAllByText(/US\$5\.99/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/US\$7\.99/).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/mes gratuito/i).length).toBeGreaterThan(0)
     expect(screen.queryByText(/14 días/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/sin tarjeta/i)).not.toBeInTheDocument()

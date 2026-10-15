@@ -340,3 +340,27 @@ Checkout, eventos reales y enforcement siguen apagados en el entorno local conec
 - `pnpm cloudflare:build` final: código 0; cuatro builds correctos y `wrangler deploy --dry-run`, sin despliegue. Se detuvo exclusivamente el proceso del backend local verificado para liberar la DLL de Prisma en Windows y se restauró con el código compilado nuevo. Los avisos de tamaño de chunks de Vite no impidieron compilar.
 - Se eliminó el contenedor PostgreSQL propio `aulabase-cardtrial-20261015` y su volumen anónimo, después de verificar su ID exacto. La base de producción no se utilizó para los fixtures de pagos.
 - Verificación HTTP local final, consumiendo cada respuesta: /api/v1/health 200, facturación anónima 401 y ruta de Ajustes 200 a través de Vite. No se inició una prueba ni se modificó una cuenta de producción para comprobarlo.
+
+
+## Ajuste de mensualidad aprobado: US$7.99 (15/10/2026)
+
+El propietario sustituy? el precio de US$5.99 por **US$7.99 mensuales**. La constante compartida publica 799 centavos USD; registro, precios, Ajustes y consentimiento de checkout consumen esa oferta. Se conserva un mes natural gratuito con tarjeta obligatoria, aceptaci?n expresa y cancelaci?n accesible. La referencia informativa existente de 61.6788 DOP/USD del 14/10/2026 calcula ahora aproximadamente **RD$492.81**; no se presenta como tasa actual ni conversi?n bancaria garantizada.
+
+Se actualizaron fixtures de backend/frontend y del diagn?stico/flujo desechable, as? como el encargo, plan y gu?a de Paddle Sandbox. El servidor filtra y valida el cat?logo contra 799 centavos y rechaza la oferta anterior de 599 para nuevas altas. No se cambiaron precios hist?ricos, migraciones, datos de producci?n ni configuraciones live. Las secciones anteriores y el PDF comparativo entregado conservan la evidencia y los importes vigentes al elaborarlos.
+
+Verificaci?n de esta revisi?n:
+
+- Prueba inicial de oferta: fall? con el importe anterior antes de cambiar la constante compartida.
+- `pnpm --filter @aula/shared build`: c?digo 0.
+- `pnpm --filter backend test`: c?digo 0, **85 archivos y 6.648 pruebas**.
+- `pnpm --filter backend build`: c?digo 0.
+- `pnpm --filter frontend exec vitest run --maxWorkers=1 src/modules/billing src/modules/promo src/modules/auth/pages/OnboardingPage.spec.tsx`: c?digo 0, **12 archivos y 83 pruebas**. La primera ejecuci?n detect? tres expectativas de texto que a?n conten?an el precio anterior; se corrigieron y la repetici?n completa pas?.
+- `pnpm --filter frontend build`: c?digo 0, con el aviso existente de tama?o de chunks.
+- `node --test scripts/billing-sandbox-check.test.mjs`: c?digo 0, **11 pruebas**, sin claves ni red. Los fixtures SQL de tarjeta se alinearon; no se volvi? a ejecutar la suite de PostgreSQL desechable en esta revisi?n.
+
+Se intent? delegar una revisi?n acotada y de solo lectura a `deepseek-worker` de OpenCode; el servicio devolvi? `Unexpected server error` (referencia `err_823ca5bc`). El principal revis? el diff y los consumidores de la oferta directamente. Esa delegaci?n no produjo una revisi?n utilizable.
+
+Pendiente externo: crear/verificar en Paddle Sandbox el precio mensual de USD7.99 (799 centavos), sin alterar precios hist?ricos, y vincular su identificador autorizado al cat?logo. Se mantienen pendientes la cuenta/credenciales y la prueba real de tarjeta del proveedor; este cambio de c?digo no las sustituye. No se despleg? la web principal, no se fusion? a `main` y los cobros reales siguen apagados.
+
+- `pnpm cloudflare:build`: repetici?n final con c?digo 0; cuatro tareas de build y `wrangler deploy --dry-run`, sin despliegue. El primer intento fall? con EPERM porque el backend local bloqueaba la DLL de Prisma; se verific? y detuvo ?nicamente ese proceso, se repiti? la compilaci?n y se restaur? el servidor local. Comprobaci?n HTTP posterior: `/api/v1/health` devolvi? 200.
+- `git diff --check`: sin errores.

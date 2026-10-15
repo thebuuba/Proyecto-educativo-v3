@@ -1,6 +1,6 @@
 # Conectar Paddle Sandbox
 
-**Política aprobada el 15/10/2026:** un mes natural gratuito con tarjeta obligatoria y renovación automática por **US$5.99 al mes**. La referencia en pesos es aproximada y fechada; Paddle factura en USD. Esta política sustituye la prueba local de 14 días descrita en las evidencias históricas de esta guía. Las pruebas ya emitidas conservan su vencimiento. No se habilitan cobros reales.
+**Política aprobada el 15/10/2026:** un mes natural gratuito con tarjeta obligatoria y renovación automática por **US$7.99 al mes**. La referencia en pesos es aproximada y fechada; Paddle factura en USD. Esta política sustituye la prueba local de 14 días descrita en las evidencias históricas de esta guía. Las pruebas ya emitidas conservan su vencimiento. No se habilitan cobros reales.
 
 Esta guía configura exclusivamente pruebas. No autoriza cuentas live, producción, migraciones remotas ni dinero real. El código debe estar en `feat/suscripciones-pagos-20261015`.
 
@@ -48,7 +48,7 @@ La página exige sesión y que la transacción pertenezca a un intento reservado
 
 ## 4. Crear producto y precio de prueba
 
-Crear un producto **Docente Completo** con precio **USD 5.99** (`amount=599`), ciclo `month`, frecuencia `1`. Configurar en **el precio** una prueba de un mes: `trial_period={interval:"month",frequency:1,requires_payment_method:true,unit_price:null}` y sin precios alternativos por país, tampoco en la prueba. Si el dashboard no expone estos campos, configurarlos mediante la API oficial de precios de Sandbox. No crear una prueba sin tarjeta. El servidor consulta y valida el precio antes de reservar el checkout; no añade `trial_period` al cuerpo de creación de transacciones.
+Crear un producto **Docente Completo** con precio **USD 7.99** (`amount=799`), ciclo `month`, frecuencia `1`. Configurar en **el precio** una prueba de un mes: `trial_period={interval:"month",frequency:1,requires_payment_method:true,unit_price:null}` y sin precios alternativos por país, tampoco en la prueba. Si el dashboard no expone estos campos, configurarlos mediante la API oficial de precios de Sandbox. No crear una prueba sin tarjeta. El servidor consulta y valida el precio antes de reservar el checkout; no añade `trial_period` al cuerpo de creación de transacciones.
 
 Para esta primera validación con importe fijo, usar impuestos incluidos (`tax_mode=internal`), cantidad 1, sin descuentos ni importes por país. El procesamiento exige que el importe y la moneda confirmados coincidan con los autorizados localmente. Si se prueba otra política fiscal, descuentos o conversión, hay que implementar y probar esa conciliación antes de cobrar.
 
@@ -86,7 +86,7 @@ Copiar el secreto del destino a `PADDLE_SANDBOX_WEBHOOK_SECRET`. La URL no lleva
 Con las claves configuradas, reemplazar los cuatro campos entre ángulos y ejecutar:
 
 ```powershell
-node --env-file=.env.billing-sandbox.local scripts/billing-sandbox-check.mjs --price "<PRICE_ID>" --amount "599" --currency "USD" --webhook-url "https://<HOST_DE_PRUEBAS>/api/v1/billing/webhooks/paddle"
+node --env-file=.env.billing-sandbox.local scripts/billing-sandbox-check.mjs --price "<PRICE_ID>" --amount "799" --currency "USD" --webhook-url "https://<HOST_DE_PRUEBAS>/api/v1/billing/webhooks/paddle"
 ```
 
 Por defecto no contacta ninguna API: solo valida formatos y campos obligatorios. Para consultar de verdad el precio y el destino en Paddle, repetir el mismo comando añadiendo `--online`. Solo hace dos GET a `sandbox-api.paddle.com`; no crea clientes, cargos ni suscripciones. Comprueba la respuesta real `data`, la periodicidad, fiscalidad fija y la coincidencia del secreto de firma del destino sin imprimirlo. No recorre más de 200 destinos de notificación: si hay más, localizar el destino explícitamente antes de operar. Un diagnóstico correcto no sustituye completar un checkout y recibir su webhook.

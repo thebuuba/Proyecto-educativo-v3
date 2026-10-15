@@ -58,7 +58,7 @@ describe('BillingService.overview', () => {
     mocks.db.billingAdmin.findFirst.mockResolvedValue(null)
     mocks.db.billingSupportCase.findMany.mockResolvedValue([])
     mocks.db.billingPrice.findMany.mockResolvedValue([
-      { id: 'price-1', plan: { name: 'Docente' }, amountMinor: 599n, currency: 'USD', interval: 'MONTHLY', provider: 'PADDLE' },
+      { id: 'price-1', plan: { name: 'Docente' }, amountMinor: 799n, currency: 'USD', interval: 'MONTHLY', provider: 'PADDLE' },
       { id: 'price-2', plan: { name: 'Cortesía' }, amountMinor: 0n, currency: 'USD', interval: 'MONTHLY', provider: 'PADDLE' },
     ])
 
@@ -67,9 +67,9 @@ describe('BillingService.overview', () => {
     expect(result.offer).toEqual(SUBSCRIPTION_OFFER)
     expect(mocks.db.billingPrice.findMany).toHaveBeenCalledWith(expect.objectContaining({
       where: expect.objectContaining({ AND: expect.arrayContaining([
-        { OR: [ { provider:'MANUAL' }, { provider:'PADDLE',amountMinor:599n,currency:'USD',providerPriceId:{not:null} } ] },
+        { OR: [ { provider:'MANUAL' }, { provider:'PADDLE',amountMinor:799n,currency:'USD',providerPriceId:{not:null} } ] },
       ]) }),
     }))
-    expect(result.prices).toEqual([{ id: 'price-1', label: 'Docente', amountMinor: 599, currency: 'USD', interval: 'monthly', mode: 'paddle' }])
+    expect(result.prices).toEqual([{ id: 'price-1', label: 'Docente', amountMinor: 799, currency: 'USD', interval: 'monthly', mode: 'paddle' }])
   })
 })
