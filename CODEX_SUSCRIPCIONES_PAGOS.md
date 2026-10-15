@@ -216,8 +216,8 @@ Todas las entregas de código están pendientes al crear este archivo. Actualiza
 
 - [x] Confirmar `main` y crear rama de implementación.
 - [x] Guardar el encargo para continuidad en Codex.
-- [ ] Iniciar una tarea real de Codex y comprobar su entorno/repositorio.
-- [ ] Revisar base actual y reproducir compilaciones/pruebas.
+- [x] Iniciar una tarea real de Codex y comprobar su entorno/repositorio.
+- [ ] Revisar base actual y reproducir compilaciones/pruebas. Backend inicial comprobado; ver registro de resultados.
 - [ ] Entrega 1: modelo/configuración.
 - [ ] Entrega 2: registro/prueba.
 - [ ] Entrega 3: acceso/administración/cortesías.
@@ -230,3 +230,13 @@ Todas las entregas de código están pendientes al crear este archivo. Actualiza
 - [ ] Obtener autorización independiente para producción.
 
 Preparación inicial: rama creada desde `dfdee49835e35071c811f14216ea71b6c9bbf636`; sin cambios de código, pruebas ejecutadas, tareas de Codex iniciadas, migraciones aplicadas ni pagos activados en este paso.
+
+Continuación de implementación: evidencia y limitaciones actualizadas en `docs/SUSCRIPCIONES_PAGOS_RESULTADOS.md`. No interpretar la preparación inicial como el estado final de la rama.
+
+## Estado después de implementar, 15 de octubre de 2026
+
+El registro inicial anterior se conserva como historial. Se implementaron y confirmaron por entregas el modelo comercial, prueba única, acceso centralizado, cortesías, transferencias, adaptador exclusivo sandbox, eventos y conciliación, configuración, soporte, avisos y panel comercial. Se añadieron cuatro migraciones nuevas; no se modificaron migraciones antiguas ni bases remotas.
+
+La validación local incluye migraciones/RLS en PostgreSQL aislado, recorridos HTTP reales de Node y Workers y pruebas unitarias de backend/interfaz. Los comandos, resultados y condiciones pendientes están en [el registro comprobado](docs/SUSCRIPCIONES_PAGOS_RESULTADOS.md).
+
+La aceptación integral externa de las entregas 5–8 sigue pendiente: no hay credenciales sandbox verificadas, proveedor/cuenta receptora ni condiciones comerciales aprobadas. El bloqueo académico tampoco puede activarse mientras las imágenes académicas se entreguen mediante URLs públicas; una migración de seguridad impide esa activación. No se considera autorizado ni listo el lanzamiento a producción.
