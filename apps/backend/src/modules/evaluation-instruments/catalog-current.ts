@@ -1,4 +1,4 @@
-import { secondaryLanguageGradeTwoTopics, secondGradeNewsModule, secondaryScienceModules } from '@aula/shared'
+import { secondaryLanguageGradeTwoTopics, secondGradeNewsModule, secondaryScienceModules,firstGradeReadingReportModule } from '@aula/shared'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { evaluationCatalogV8 } from './catalog-v8'
 import { evaluationCatalogV9 } from './catalog-v9'
@@ -62,6 +62,9 @@ import {evaluationCatalogV62} from './catalog-v62'
 import {evaluationCatalogV63} from './catalog-v63'
 import {evaluationCatalogV64} from './catalog-v64'
 import {evaluationCatalogV65} from './catalog-v65'
+import {evaluationCatalogV66} from './catalog-v66'
+import {evaluationCatalogV67} from './catalog-v67'
+import {evaluationCatalogV68} from './catalog-v68'
 import {englishGradeSixModule,englishGradeSixGrammar,englishGradeSixLexicon,englishGradeSixStrategies,englishGradeSixGenres} from '@aula/shared'
 import {englishGradeFiveModule,englishGradeFiveGrammar,englishGradeFiveLexicon,englishGradeFiveStrategies,englishGradeFiveGenres} from '@aula/shared'
 import {englishGradeFourModule,englishGradeFourGrammar,englishGradeFourLexicon,englishGradeFourStrategies,englishGradeFourGenres} from '@aula/shared'
@@ -78,8 +81,11 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV65,
-  version: 'evaluation-2026.66',
+  ...evaluationCatalogV68,
+  version: 'evaluation-2026.69',
+  firstGradeReadingReportModule,
+  readingReportSourcePolicy:'REQUESTED_SOURCE_WITHOUT_ASSUMED_LITERARY_TEXT_OR_RESEARCH_V1',
+  taskRequirementPolicy:'EXPLICIT_NATURAL_REQUESTS_MIXED_MODALITY_DELIVERY_V1',
   englishChecklistEvidencePolicy:'EXPLICIT_FACTS_GENRES_AND_FUNCTIONAL_FIELDS_V4',
   englishRevisionPolicy:'OBSERVABLE_CHECK_CORRECT_OR_UNCHANGED_V1',
   englishGradeSixModule,
@@ -164,6 +170,9 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV66.version)return evaluationCatalogV66
+  if(version===evaluationCatalogV67.version)return evaluationCatalogV67
+  if(version===evaluationCatalogV68.version)return evaluationCatalogV68
   if(version===evaluationCatalogV65.version)return evaluationCatalogV65
   if(version===evaluationCatalogV64.version)return evaluationCatalogV64
   if(version===evaluationCatalogV63.version)return evaluationCatalogV63

@@ -1,5 +1,5 @@
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
-import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,languageInstrumentIntent,assertInstrumentCapacity} from '@aula/shared'
+import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,languageInstrumentIntent,assertInstrumentCapacity,withDeliveryCriteria,deliveryConditions} from '@aula/shared'
 import { newsCriteria } from './authored/language/news-grade-1'
 import { adaptLanguageScale, formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
@@ -323,8 +323,9 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
       : posterModule ? posterCriteria(activity.id, input.activityTitle, input.description ?? '')
         : readingReportModule ? readingReportCriteria(activity.id, input.description ?? '')
           : detectiveModule ? detectiveStoryCriteria(activity.id, input.description ?? '')
-            : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : band==='SECONDARY'&&(area==='language'||resolveEvaluationTask('',input.description??'').product) ? actionContentCriteria(activity.id,input.description??'') : []
-  const eligibleAuthored = selectedAuthored.filter(item=>!mathTopic || input.includeAdditionalCandidates || !item.templateId.endsWith('-verification'))
+            : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : band==='SECONDARY'&&(area==='language'||area==='math'&&activity.id==='EXERCISE_SET'||resolveEvaluationTask('',input.description??'').product) ? actionContentCriteria(activity.id,input.description??'') : []
+  const baseAuthored:AuthoredCriterion[]=selectedAuthored.length?selectedAuthored:deliveryConditions(input.description??'').length?genericCriteria.map(c=>({templateId:c.templateId,title:c.title,observable:c.description,weight:c.relativeWeight??3,progressionLevels:(c.progressionLevels??catalog.descriptorPatterns.regular.map(pattern=>`${c.description} ${pattern}`)) as [string,string,string,string,string]})):[]
+  const eligibleAuthored = withDeliveryCriteria(baseAuthored.filter(item=>!mathTopic || input.includeAdditionalCandidates || !item.templateId.endsWith('-verification')),input.description??'')
   const authored: AuthoredCriterion[] = eligibleAuthored.flatMap<AuthoredCriterion>(item => item.progressionLevels
     ? formatAuthoredCriteria([{ ...item, progressionLevels: item.progressionLevels }], chosenInstrument) : [item])
   if (!input.includeAdditionalCandidates) assertInstrumentCapacity(authored.length)

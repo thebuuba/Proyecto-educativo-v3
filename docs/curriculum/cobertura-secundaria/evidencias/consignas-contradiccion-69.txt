@@ -1,0 +1,408 @@
+- complementary:
+  - link "Aula Base, inicio":
+    - /url: /inicio
+  - button "Expandir menú":
+  - navigation "Navegación principal":
+    - link "Inicio":
+      - /url: /inicio
+    - link "Cursos":
+      - /url: /cursos
+    - link "Horario":
+      - /url: /horario
+    - link "Asistencia":
+      - /url: /asistencia
+    - link "Evaluación":
+      - /url: /calificaciones
+    - link "Actividades":
+      - /url: /actividades
+    - link "Planificación":
+      - /url: /planificaciones
+    - link "Bitácora":
+      - /url: /bitacora
+    - link "Reportes":
+      - /url: /reportes
+  - link "Ajustes":
+    - /url: /perfil
+  - button "Cerrar sesión"
+- banner:
+  - searchbox "Buscar estudiantes, cursos, actividades"
+  - button "Notificaciones":
+  - button "Ayuda":
+  - button "Hola, Docente DOCENTE · QA P1 DF":
+    - generic: Hola, Docente
+    - generic: DOCENTE · QA P1
+    - generic: DF
+- main:
+  - status: Borrador guardado
+  - button "Volver a Actividades"
+  - generic: ›
+  - generic: Bloque 1
+  - generic: ›
+  - generic: Crear actividad
+  - paragraph: Bloque 1
+  - heading "Competencia Comunicativa" [level=2]
+  - paragraph: Competencia Comunicativa
+  - generic: Borrador autoguardado
+  - main:
+    - heading "Crear actividad" [level=2]
+    - paragraph: Completa la actividad y su instrumento como un único flujo.
+    - generic: Progreso de la actividad
+    - generic: 86%
+    - generic: 1. Bloques de competencias
+    - paragraph: Selecciona uno o varios bloques
+    - paragraph: El bloque desde el que abriste la actividad se mantiene como principal.
+    - checkbox "Bloque 1 Competencia Comunicativa Principal" [checked] [disabled]
+    - strong: Bloque 1
+    - generic: Competencia Comunicativa
+    - generic: Principal
+    - checkbox "Bloque 2 Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas"
+    - strong: Bloque 2
+    - generic: Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas
+    - checkbox "Bloque 3 Ética y Ciudadana y Desarrollo Personal y Espiritual"
+    - strong: Bloque 3
+    - generic: Ética y Ciudadana y Desarrollo Personal y Espiritual
+    - checkbox "Bloque 4 Científica y Tecnológica y Ambiental y de la Salud"
+    - strong: Bloque 4
+    - generic: Científica y Tecnológica y Ambiental y de la Salud
+    - generic: 2. Actividad
+    - text: Nombre de la actividad *
+    - textbox "Nombre de la actividad *":
+      - /placeholder: "Ej: Exposición oral sobre el cambio climático"
+      - text: QA informe breve · condiciones de entrega
+    - combobox "Estilo de bloque":
+      - option "Párrafo" [selected]
+      - option "Subtítulo"
+      - option "Cita"
+    - combobox "Tamaño de letra":
+      - option "Mixto" [disabled]
+      - option "12"
+      - option "14" [selected]
+      - option "16"
+      - option "18"
+      - option "20"
+      - option "24"
+      - option "28"
+      - option "32"
+    - button "Negrita":
+    - button "Cursiva":
+    - button "Subrayado":
+    - button "Lista con viñetas":
+    - button "Lista numerada":
+    - button "Alinear a la izquierda":
+    - button "Centrar":
+    - button "Alinear a la derecha":
+    - button "Insertar o editar enlace":
+    - button "Subir imagen":
+    - button "Deshacer":
+    - button "Rehacer" [disabled]:
+    - button "Limpiar formato":
+    - button "Ampliar editor":
+    - generic "Descripción de la actividad" [active]:
+      - paragraph: Hacen un informe de lectura de una noticia. Mínimo cinco páginas y máximo tres páginas.
+    - generic: 87 / 10.000 caracteres
+    - text: Tipo de actividad
+    - combobox "Tipo de actividad":
+      - option "Detectar automáticamente"
+      - option "Noticiero"
+      - option "Análisis de noticia"
+      - option "Comparación de noticias"
+      - option "Redacción de noticia"
+      - option "Elaboración de guía turística"
+      - option "Análisis de guía turística"
+      - option "Presentación de guía turística"
+      - option "Comparación de guías turísticas"
+      - option "Elaboración de informe de lectura" [selected]
+      - option "Análisis de informe de lectura"
+      - option "Presentación de informe de lectura"
+      - option "Comparación de informes de lectura"
+      - option "Elaboración de afiche"
+      - option "Análisis de afiche"
+      - option "Comparación de afiches"
+      - option "Presentación de afiche"
+      - option "Escritura de cuento policíaco"
+      - option "Análisis de cuento policíaco"
+      - option "Narración de cuento policíaco"
+      - option "Comparación de cuentos policíacos"
+      - option "Presentación del análisis del cuento"
+      - option "Creación de caligrama"
+      - option "Análisis de caligrama"
+      - option "Comparación de caligramas"
+      - option "Recitación de caligrama"
+      - option "Explicación de caligrama"
+      - option "Exposición"
+      - option "Presentación oral"
+      - option "Interacción oral"
+      - option "Producción audiovisual"
+      - option "Comprensión oral"
+      - option "Comprensión escrita"
+      - option "Debate"
+      - option "Experimento"
+      - option "Práctica de laboratorio"
+      - option "Producción escrita"
+      - option "Ensayo"
+      - option "Informe"
+      - option "Análisis"
+      - option "Comparación"
+      - option "Investigación"
+      - option "Proyecto"
+      - option "Resolución de problemas"
+      - option "Ejercicios"
+      - option "Mapa conceptual"
+      - option "Portafolio"
+      - option "Producción artística"
+      - option "Representación"
+      - option "Práctica motriz"
+      - option "Observación"
+      - option "Prueba"
+      - option "Otra actividad"
+    - generic: 3. Modalidad
+    - button "Individual Cada estudiante realiza la actividad de forma individual.":
+      - generic: Individual
+      - generic: Cada estudiante realiza la actividad de forma individual.
+    - button "Grupal La actividad se realiza en grupos de estudiantes.":
+      - generic: Grupal
+      - generic: La actividad se realiza en grupos de estudiantes.
+    - generic: 4. Evaluación
+    - text: Técnica de evaluación *
+    - combobox "Técnica de evaluación *":
+      - option "Seleccionar automáticamente"
+      - option "Observación directa"
+      - option "Observación sistemática"
+      - option "Preguntas orales"
+      - option "Diálogo reflexivo"
+      - option "Debate"
+      - option "Exposición"
+      - option "Presentación"
+      - option "Entrevista"
+      - option "Mesa redonda"
+      - option "Dramatización"
+      - option "Análisis de producciones" [selected]
+      - option "Portafolio"
+      - option "Diario reflexivo"
+      - option "Estudio de caso"
+      - option "Proyecto"
+      - option "Resolución de problemas"
+      - option "Mapa conceptual"
+      - option "Ensayo"
+      - option "Prueba escrita"
+      - option "Autoevaluación"
+      - option "Coevaluación"
+      - option "Heteroevaluación"
+    - text: Tipo de instrumento
+    - combobox "Tipo de instrumento":
+      - option "Seleccionar automáticamente"
+      - option "Rúbrica"
+      - option "Lista de cotejo" [selected]
+      - option "Escala estimativa"
+      - option "Lista ponderada"
+    - text: Valor en puntos *
+    - textbox "Valor en puntos * pts": "20"
+    - generic: pts
+    - generic: 5. Recursos
+    - generic: (Opcional)
+    - paragraph: Selecciona los recursos que utilizarás en esta actividad.
+    - textbox "Buscar o agregar recurso..."
+    - button "Mostrar recursos":
+    - button "Mis recursos 0 recursos personalizados":
+      - generic: Mis recursos
+      - generic: 0 recursos personalizados
+    - button "Agregar recurso personalizado":
+      - text: Agregar recurso personalizado
+    - heading "6. Instrumento completo · Lista de cotejo" [level=3]
+    - alert:
+      - paragraph: "Requisitos de entrega contradictorios: los límites de páginas no son compatibles. Revisa la consigna; se conservaron tus cambios."
+      - button "Generar nuevo instrumento"
+      - button "Crear desde cero"
+    - region "Instrumento y estado de criterios":
+      - paragraph: Instrumento seleccionado
+      - heading "Lista de cotejo" [level=3]
+      - paragraph: Construye el instrumento que utilizarás para evaluar esta actividad.
+      - text: Título del instrumento
+      - textbox "Título del instrumento":
+        - /placeholder: Ej. Lista de cotejo para la actividad
+        - text: Lista de cotejo para QA informe breve · condiciones de entrega
+      - button "Vista previa":
+        - text: Vista previa
+      - paragraph: Actividad
+      - paragraph: 20 puntos
+      - paragraph: Criterios
+      - paragraph: "10"
+      - paragraph: Niveles
+      - paragraph: No aplica
+      - paragraph: Puntuación configurada
+      - paragraph:
+        - text: 20/20 pts
+      - paragraph: Estado
+      - paragraph:
+        - text: Listo para revisar
+      - button "Añadir criterio manual"
+      - paragraph: Criterios de cumplimiento
+      - paragraph: Verifica el cumplimiento de criterios específicos.
+      - button "Texto compacto": A−
+      - button "Texto normal" [pressed]: A
+      - button "Texto grande": A+
+      - button "Alternar negrita": B
+      - button "Alinear a la izquierda" [pressed]:
+      - button "Centrar":
+      - button "Alinear a la derecha":
+      - button "Configurar lista":
+        - text: Configurar lista
+      - button "Agregar criterio":
+        - text: Agregar criterio
+      - table:
+        - rowgroup:
+          - row "Criterios Sí No Valor":
+            - columnheader "Criterios"
+            - columnheader "Sí"
+            - columnheader "No"
+            - columnheader "Valor"
+            - columnheader
+        - rowgroup:
+          - row "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido. 4.76 Acciones de la fila":
+            - cell "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.":
+              - textbox "Criterio 1":
+                - /placeholder: 1. Criterio
+                - text: Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.
+            - cell
+            - cell
+            - cell "4.76":
+              - textbox "—": "4.76"
+            - cell "Acciones de la fila":
+              - button "Acciones de la fila":
+          - row "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído. 4.76 Acciones de la fila":
+            - cell "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído.":
+              - textbox "Criterio 2":
+                - /placeholder: 2. Criterio
+                - text: Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído.
+            - cell
+            - cell
+            - cell "4.76":
+              - textbox "—": "4.76"
+            - cell "Acciones de la fila":
+              - button "Acciones de la fila":
+          - row "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe. 3.81 Acciones de la fila":
+            - cell "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.":
+              - textbox "Criterio 3":
+                - /placeholder: 3. Criterio
+                - text: Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.
+            - cell
+            - cell
+            - cell "3.81":
+              - textbox "—": "3.81"
+            - cell "Acciones de la fila":
+              - button "Acciones de la fila":
+          - row "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación. 2.86 Acciones de la fila":
+            - cell "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.":
+              - textbox "Criterio 4":
+                - /placeholder: 4. Criterio
+                - text: Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.
+            - cell
+            - cell
+            - cell "2.86":
+              - textbox "—": "2.86"
+            - cell "Acciones de la fila":
+              - button "Acciones de la fila":
+          - row "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe. 2.86 Acciones de la fila":
+            - cell "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.":
+              - textbox "Criterio 5":
+                - /placeholder: 5. Criterio
+                - text: Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.
+            - cell
+            - cell
+            - cell "2.86":
+              - textbox "—": "2.86"
+            - cell "Acciones de la fila":
+              - button "Acciones de la fila":
+          - 'row "La entrega cumple la condición solicitada: entre 1 y 3 páginas. 0.19 Acciones de la fila"':
+            - 'cell "La entrega cumple la condición solicitada: entre 1 y 3 páginas."':
+              - textbox "Criterio 6":
+                - /placeholder: 6. Criterio
+                - text: "La entrega cumple la condición solicitada: entre 1 y 3 páginas."
+            - cell
+            - cell
+            - cell "0.19":
+              - textbox "—": "0.19"
+            - cell "Acciones de la fila":
+              - button "Acciones de la fila":
+          - 'row "La entrega cumple la condición solicitada: interlineado 1.5. 0.19 Acciones de la fila"':
+            - 'cell "La entrega cumple la condición solicitada: interlineado 1.5."':
+              - textbox "Criterio 7":
+                - /placeholder: 7. Criterio
+                - text: "La entrega cumple la condición solicitada: interlineado 1.5."
+            - cell
+            - cell
+            - cell "0.19":
+              - textbox "—": "0.19"
+            - cell "Acciones de la fila":
+              - button "Acciones de la fila":
+          - 'row "La entrega cumple la condición solicitada: fuente Arial o Calibri. 0.19 Acciones de la fila"':
+            - 'cell "La entrega cumple la condición solicitada: fuente Arial o Calibri."':
+              - textbox "Criterio 8":
+                - /placeholder: 8. Criterio
+                - text: "La entrega cumple la condición solicitada: fuente Arial o Calibri."
+            - cell
+            - cell
+            - cell "0.19":
+              - textbox "—": "0.19"
+            - cell "Acciones de la fila":
+              - button "Acciones de la fila":
+          - 'row "La entrega cumple la condición solicitada: tamaño de letra 12. 0.19 Acciones de la fila"':
+            - 'cell "La entrega cumple la condición solicitada: tamaño de letra 12."':
+              - textbox "Criterio 9":
+                - /placeholder: 9. Criterio
+                - text: "La entrega cumple la condición solicitada: tamaño de letra 12."
+            - cell
+            - cell
+            - cell "0.19":
+              - textbox "—": "0.19"
+            - cell "Acciones de la fila":
+              - button "Acciones de la fila":
+          - 'row "La entrega cumple la condición solicitada: sin portada. 0.19 Acciones de la fila"':
+            - 'cell "La entrega cumple la condición solicitada: sin portada."':
+              - textbox "Criterio 10":
+                - /placeholder: 10. Criterio
+                - text: "La entrega cumple la condición solicitada: sin portada."
+            - cell
+            - cell
+            - cell "0.19":
+              - textbox "—": "0.19"
+            - cell "Acciones de la fila":
+              - button "Acciones de la fila":
+          - row "Puntuación máxima total 20 / 20 pts":
+            - cell "Puntuación máxima total"
+            - cell "20 / 20 pts"
+            - cell
+    - button "Guardar" [disabled]
+  - complementary:
+    - heading "Tu progreso" [level=3]
+    - img "86% completado":
+      - generic: 86%
+    - paragraph: Actividad casi lista
+    - paragraph: Completa los elementos pendientes.
+    - paragraph: Elementos completados (6/7)
+    - button "✓ Bloques de competencias" [disabled]:
+      - generic: ✓
+      - generic: Bloques de competencias
+    - button "✓ Nombre de la actividad" [disabled]:
+      - generic: ✓
+      - generic: Nombre de la actividad
+    - button "✓ Valor de la actividad" [disabled]:
+      - generic: ✓
+      - generic: Valor de la actividad
+    - button "✓ Técnica de evaluación" [disabled]:
+      - generic: ✓
+      - generic: Técnica de evaluación
+    - button "✓ Instrumento completo" [disabled]:
+      - generic: ✓
+      - generic: Instrumento completo
+    - button "✓ Modalidad de la actividad" [disabled]:
+      - generic: ✓
+      - generic: Modalidad de la actividad
+    - button "! Descripción de la actividad":
+      - generic: "!"
+      - generic: Descripción de la actividad
+    - button "Ir al siguiente pendiente":
+      - text: Ir al siguiente pendiente
+    - button "Cancelar":
+      - text: Cancelar
+    - paragraph: El borrador se ha guardado en este dispositivo.

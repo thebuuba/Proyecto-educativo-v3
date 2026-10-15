@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/Button'
+import {FeedbackBanner} from '@/components/ui/SemanticUI'
 import { Input } from '@/components/ui/Input'
 import { Modal } from '@/components/ui/Modal'
 import { ChecklistInstrument } from '@/modules/activities/components/editor/ChecklistInstrument'
@@ -44,6 +45,9 @@ export function InstrumentPreview({
   onCompleteCriterion,
   completingCriterionId,
   criterionRequestBusy = false,
+  criterionNotice = '',
+  criterionNoticeError = false,
+  onDismissCriterionNotice,
   activityName,
   block,
   completed,
@@ -63,6 +67,9 @@ export function InstrumentPreview({
   onCompleteCriterion?: (row: number) => void
   completingCriterionId?: string | null
   criterionRequestBusy?: boolean
+  criterionNotice?:string
+  criterionNoticeError?:boolean
+  onDismissCriterionNotice?:()=>void
   activityName: string
   block: (typeof competencyBlocks)[number]
   completed: boolean
@@ -365,6 +372,10 @@ export function InstrumentPreview({
       ) : null}
 
       <div className={cn('p-4', instrumentTypographyClass(instrumentType, fields))}>
+        {criterionNotice?<FeedbackBanner role={criterionNoticeError?'alert':'status'} tone={criterionNoticeError?'danger':'info'} className="mb-3 flex items-center justify-between gap-3">
+          <span>{criterionNotice}</span>
+          <Button type="button" variant="ghost" size="icon" aria-label="Cerrar aviso de criterios" onClick={onDismissCriterionNotice}><X className="size-4"/></Button>
+        </FeedbackBanner>:null}
         {onAddManualCriterion ? <Button type="button" variant="ghost" size="sm"
           disabled={criterionRequestBusy || addingCriterion || Number(fields[`${instrumentType}:meta:criteriaCount`]) >= 20}
           onClick={onAddManualCriterion}>Añadir criterio manual</Button> : null}

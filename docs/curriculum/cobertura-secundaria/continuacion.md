@@ -1,5 +1,13 @@
 # Continuación del encargo completo
 
+## Encargo vigente: consignas naturales y criterios — 15/10/2026
+
+Adjunto 50f00616-6622-4f7d-93f7-dbf4e5c7fea8 **cerrado en los patrones definidos**. Base publicada dc50778, rama amplia-instrumentos-secundaria. [Informe](consignas-informe.md), [instrumentos completos](consignas-ejemplos-completos.md). Se reprodujo My Future Plans en HTTP/Chrome .66 y se corrigieron los filtros gramaticales, modalidades coordinadas, condiciones de entrega, resolución local de grado, informes breves y feedback de Agregar/Completar. Catálogo final .69 local; .66/.67/.68 congelados y comparados íntegramente con la base. Suma/resta solo acción básica, sin ampliar Matemática.
+
+Plan: [consignas y criterios](../../superpowers/plans/2026-10-15-consignas-y-criterios.md). Backend36.796/93, frontend37.457/119, inventario/conciliación11; builds backend/frontend/Cloudflare dry-run aprobados. HTTP264 +4 interpretaciones +4 rechazos y8 comprobaciones de unidades. Tres CRUD reales con campos/snapshots iguales: dos de Inglés4(.67), uno de Lengua1(.69); otra prueba de Agregar queda solo como borrador ficticio. Los135 snapshots previos permanecen idénticos; ahora138=108+28+2. Matriz12 ámbitos/133 temas con seguimiento y límites, sin cambiar cierres ni otras áreas.
+
+No queda pendiente conocido en los casos exigidos. Instrucciones inglesas y requisitos de formato arbitrarios siguen fuera de garantía; informe y matriz lo explican. **Detenerse, sin otra asignatura**. Este cierre se publica mediante commit español/push normal; al recuperar comprobar Git, hash remoto y árbol antes de actuar. El proceso probado identifica dc50778 y dirty=true; no atribuirle retroactivamente el hash del commit de entrega. Sin subagentes, despliegue, main, reset ni cambios históricos. El estado siguiente es histórico.
+
 ## Estado vigente: ajuste de calidad de Inglés común1.º–6.º — 15/10/2026
 
 Nuevo encargo del adjunto fdfa93c7-3ad4-4828-bb8b-4a75a3b5927b, posterior al cierre2–6. [Informe de calidad](ingles-calidad-informe.md), [instrumentos completos corregidos](ingles-calidad-ejemplos-completos.md). Corrección compartida de cotejo: datos independientes declarados, relaciones conservadas, peso/IDs y límite20 después de expandir; añadir/completar tras renombrar y duplicados del CV/formulario. Revisión observable admite mantener texto correcto sin cambios; progresiones/parcial adaptados a los cuatro formatos y sin fila si no se pide revisión.

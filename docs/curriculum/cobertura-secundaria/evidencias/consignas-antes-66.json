@@ -1,0 +1,1054 @@
+{
+  "input": {
+    "sectionSubjectId": "3dc78449-550c-4773-bbfb-2fbc9c23af76",
+    "activityTitle": "My Future Plans (Mis planes para el futuro).",
+    "description": "Los estudiantes elaborarán una presentación oral y escrita en inglés sobre sus planes y metas para el futuro, utilizando las estructuras gramaticales will y going to. Describirán sus aspiraciones académicas, profesionales y personales mediante oraciones sencillas y coherentes. Finalmente, compartirán sus presentaciones con sus compañeros, fortaleciendo sus habilidades de expresión oral, escritura y comunicación en inglés.",
+    "maxScore": 20,
+    "participationMode": "INDIVIDUAL"
+  },
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "75ed6e9dd5d217afccdab30c59df874fdea9b49a",
+      "dirty": true,
+      "startedAt": "2026-10-15T09:42:26.527Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.66"
+    }
+  },
+  "interpretation": {
+    "suggestedActivityType": "ORAL_PRESENTATION",
+    "activityType": "ORAL_PRESENTATION",
+    "activityTypes": [
+      "EXPOSITION",
+      "ORAL_PRESENTATION",
+      "DEBATE",
+      "NEWSCAST",
+      "NEWS_ANALYSIS",
+      "NEWS_COMPARISON",
+      "NEWS_WRITING",
+      "TOURIST_GUIDE_CREATION",
+      "TOURIST_GUIDE_ANALYSIS",
+      "TOURIST_GUIDE_PRESENTATION",
+      "TOURIST_GUIDE_COMPARISON",
+      "POSTER_CREATION",
+      "POSTER_ANALYSIS",
+      "POSTER_COMPARISON",
+      "POSTER_PRESENTATION",
+      "READING_REPORT_WRITING",
+      "READING_REPORT_ANALYSIS",
+      "READING_REPORT_PRESENTATION",
+      "READING_REPORT_COMPARISON",
+      "DETECTIVE_STORY_WRITING",
+      "DETECTIVE_STORY_ANALYSIS",
+      "DETECTIVE_STORY_NARRATION",
+      "DETECTIVE_STORY_COMPARISON",
+      "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+      "CALLIGRAM_CREATION",
+      "CALLIGRAM_ANALYSIS",
+      "CALLIGRAM_COMPARISON",
+      "CALLIGRAM_RECITATION",
+      "CALLIGRAM_EXPLANATION",
+      "EXPERIMENT",
+      "LAB_PRACTICE",
+      "WRITTEN_PRODUCTION",
+      "ESSAY",
+      "REPORT",
+      "RESEARCH",
+      "PROJECT",
+      "PROBLEM_SOLVING",
+      "EXERCISE_SET",
+      "CONCEPT_MAP",
+      "PORTFOLIO",
+      "ARTISTIC_PRODUCTION",
+      "PERFORMANCE",
+      "MOTOR_SPORTS_PRACTICE",
+      "OBSERVATION",
+      "QUIZ_TEST",
+      "OTHER",
+      "ANALYSIS",
+      "COMPARISON",
+      "ORAL_INTERACTION",
+      "LISTENING_COMPREHENSION",
+      "READING_COMPREHENSION",
+      "AUDIOVISUAL_PRODUCTION"
+    ],
+    "suggestedEvaluationTechnique": "presentacion",
+    "suggestedInstrumentType": "rubrica",
+    "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "curriculumScopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+    "curriculumStatus": "DRAFT",
+    "curriculumCandidates": [
+      {
+        "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "type": "SPECIFIC_COMPETENCY",
+        "text": "Interactúa en el idioma inglés de forma sostenida y comprensible, utilizando una estructura\nsencilla del discurso en distintas situaciones de comunicación para informar, dar instrucciones,\nnarrar, opinar, expresar planes futuros y explicar problemas sobre aspectos de la vida diaria y\ntemas que le son familiares o de su interés.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 158,
+            "printedPage": "157"
+          }
+        ],
+        "topicCoverage": 0.625
+      },
+      {
+        "elementId": "bce20a76-7a5c-5a9b-8b21-51c4cad7637a",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "type": "SPECIFIC_COMPETENCY",
+        "text": "Interactúa de forma sencilla en el idioma inglés en distintas situaciones de comunicación sobre\ntemas habituales, utilizando una estructura lógica y creativa en el discurso donde se expresan\nopiniones, se hacen predicciones y se relatan experiencias, empleando estrategias de desempeño\ncomunicativo.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 158,
+            "printedPage": "157"
+          }
+        ],
+        "topicCoverage": 0.375
+      },
+      {
+        "elementId": "6f867b15-248b-5e95-995a-d858412015aa",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "type": "CONCEPT",
+        "text": "Gramática\nOraciones enunciativas (afirmativas y negativas),\ninterrogativas y exclamativas.\nPresente simple para pedir y dar opiniones e\ni n fo r m a c i ó n :\nWhat do you think?\nI think Helen is a very nice person.\nPresente continuo para expresar planes futuros:\nMargaret is visiting her parents in Panama next month.\nPasado simple para comunicar noticias y relatar\nexperiencias:\nGeorge finished the project successfully and got a\npromotion. Last Saturday, I went to the beach with my\nfamily.\nPresente perfecto para comunicar noticias y relatar\nexperiencias recientes:\nAlex has just gotten a better job.\nUsed to:\nI used to attend English classes every afternoon when I\nlived in my hometown.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 159,
+            "printedPage": "158"
+          }
+        ],
+        "topicCoverage": 0.375
+      },
+      {
+        "elementId": "bb1c6adb-248f-5f94-9d96-b7d483e224b0",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "type": "SPECIFIC_COMPETENCY",
+        "text": "Se comunica en el idioma inglés con cortesía, honestidad y actitud de respeto al expresar o\nescuchar opiniones, deseos, relato de experiencias y planes futuros.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 158,
+            "printedPage": "157"
+          }
+        ],
+        "topicCoverage": 0.375
+      },
+      {
+        "elementId": "1e378491-4e54-5bd2-8f00-b70ddfcc6075",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "type": "ACHIEVEMENT_INDICATOR",
+        "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir del mensaje general, las ideas principales y los detalles específicos de\ntextos escritos y de discursos orales articulados con claridad y en lengua estándar, cuya finalidad es informar, opinar, dar instrucciones,\ncomunicar noticias, narrar, expresar planes futuros, inferir, predecir y explicar problemas y sus motivos, referentes a situaciones de la\nvida diaria y a temas cotidianos o culturales y abstractos de su interés, aunque en ocasiones requiera releer o que le repitan.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 162,
+            "printedPage": "161"
+          }
+        ],
+        "topicCoverage": 0.25
+      }
+    ],
+    "curriculumMatch": "SUGGESTED",
+    "requiresCurriculumConfirmation": true,
+    "message": "Encontramos posibles referentes para revisar."
+  },
+  "initial": {
+    "kind": "RECOMMENDATION",
+    "catalogVersion": "evaluation-2026.66",
+    "instrumentType": "rubrica",
+    "confidence": "MEDIUM",
+    "activityType": "ORAL_PRESENTATION",
+    "evidenceTypes": [
+      "PERFORMANCE",
+      "KNOWLEDGE"
+    ],
+    "participationMode": "INDIVIDUAL",
+    "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "curriculumScopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+    "selectedCurriculumElements": [
+      {
+        "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "type": "SPECIFIC_COMPETENCY",
+        "text": "Interactúa en el idioma inglés de forma sostenida y comprensible, utilizando una estructura\nsencilla del discurso en distintas situaciones de comunicación para informar, dar instrucciones,\nnarrar, opinar, expresar planes futuros y explicar problemas sobre aspectos de la vida diaria y\ntemas que le son familiares o de su interés.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 158,
+            "printedPage": "157"
+          }
+        ]
+      }
+    ],
+    "criteria": [
+      {
+        "id": "proposal:evaluation-2026.66:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-plans:0",
+        "templateId": "ing-4-plans",
+        "title": "Plan futuro relacionado con la situación",
+        "description": "Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada.",
+        "maxScore": 7.27,
+        "maxScoreUnits": 727,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada.",
+          "El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión.",
+          "Menciona una acción futura sin relacionar parte de la información solicitada del plan.",
+          "Cambia la acción o los datos del plan y comunica una situación futura diferente de la indicada.",
+          "No se reconoce un plan futuro relacionado con la situación solicitada."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada.",
+            "scoreUnits": 727
+          },
+          {
+            "levelId": "L3",
+            "text": "El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión.",
+            "scoreUnits": 485
+          },
+          {
+            "levelId": "L2",
+            "text": "Menciona una acción futura sin relacionar parte de la información solicitada del plan.",
+            "scoreUnits": 242
+          },
+          {
+            "levelId": "L1",
+            "text": "No se reconoce un plan futuro relacionado con la situación solicitada.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.66:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-genre-presentation:1",
+        "templateId": "ing-4-genre-presentation",
+        "title": "Ideas relacionadas en la presentación",
+        "description": "Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito.",
+        "maxScore": 7.27,
+        "maxScoreUnits": 727,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito.",
+          "La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión.",
+          "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación.",
+          "La producción cambia el sentido: cambia el asunto o las relaciones entre las ideas de la presentación.",
+          "No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito.",
+            "scoreUnits": 727
+          },
+          {
+            "levelId": "L3",
+            "text": "La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión.",
+            "scoreUnits": 485
+          },
+          {
+            "levelId": "L2",
+            "text": "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación.",
+            "scoreUnits": 242
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.66:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-intelligibility:2",
+        "templateId": "ing-4-intelligibility",
+        "title": "Discurso oral sostenido y comprensible",
+        "description": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+        "maxScore": 5.46,
+        "maxScoreUnits": 546,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+          "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+          "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+          "La organización o las expresiones cambian el sentido de las ideas que se comunican.",
+          "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+            "scoreUnits": 546
+          },
+          {
+            "levelId": "L3",
+            "text": "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+            "scoreUnits": 364
+          },
+          {
+            "levelId": "L2",
+            "text": "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+            "scoreUnits": 182
+          },
+          {
+            "levelId": "L1",
+            "text": "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ],
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "totalScore": 20,
+    "totalScoreUnits": 2000,
+    "scoreUnit": 0.01,
+    "internalTrace": {
+      "mappingStatus": "RESOLVED",
+      "reasons": [
+        "band=SECONDARY",
+        "discipline=language",
+        "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+        "module=ingles-comunicacion-4",
+        "mode=oral",
+        "functions=plans",
+        "coverage=DEFINED_COMMON_FOURTH_GRADE_PROVIDERS",
+        "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+      ],
+      "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+      "activityTypeOrigin": "DETECTED",
+      "ranking": [
+        {
+          "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+          "score": 83,
+          "topicCoverage": 0.625,
+          "reasons": [
+            "topicTokens=5/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "bce20a76-7a5c-5a9b-8b21-51c4cad7637a",
+          "score": 58,
+          "topicCoverage": 0.375,
+          "reasons": [
+            "topicTokens=3/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "6f867b15-248b-5e95-995a-d858412015aa",
+          "score": 56,
+          "topicCoverage": 0.375,
+          "reasons": [
+            "topicTokens=3/8",
+            "typeWeight=10",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "bb1c6adb-248f-5f94-9d96-b7d483e224b0",
+          "score": 56,
+          "topicCoverage": 0.375,
+          "reasons": [
+            "topicTokens=3/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "1e378491-4e54-5bd2-8f00-b70ddfcc6075",
+          "score": 49,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "623f2f4e-5006-5b7e-8484-f6b092dfc450",
+          "score": 49,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "eaa6d012-2f93-5034-a8e5-d2b8bfd0ec77",
+          "score": 49,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "4589d1db-eec0-5859-a697-dff794f2747f",
+          "score": 45,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "53675368-3ba3-5f50-9943-bfb6469046f8",
+          "score": 43,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "fadeb578-c7a4-598b-b774-3c2c5f6b63a0",
+          "score": 43,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=10",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "542426d4-2bf1-5545-81e9-45e861ca791d",
+          "score": 41,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=10",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "747fc437-0adb-55bb-b44d-8a05996a8427",
+          "score": 41,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "084555fc-3c0c-5476-8bcf-d1ec6161ae1f",
+          "score": 37,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "439b1a4d-bce5-556f-89e8-bf04908acc5f",
+          "score": 37,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "7c1f58e1-7b8a-5276-8656-e5592dda236e",
+          "score": 37,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "23246e95-8c14-5aa1-9a78-65978a676c29",
+          "score": 35,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "80f5108d-6127-5cd0-926d-dc3da189a3ab",
+          "score": 35,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "fd6fd47e-0a8e-5901-8190-073633362b1f",
+          "score": 35,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "b0bf3d5e-0f1a-5b63-92a3-2c9cd85ea588",
+          "score": 33,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "e9b7407f-2e85-54fb-a02d-9c66bdce21fa",
+          "score": 33,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "a0938bae-4c46-55e0-80bc-cc2b449d8358",
+          "score": 31,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "d0257dc9-8898-5537-9c4e-8dd44c9c0bb0",
+          "score": 31,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        }
+      ],
+      "curriculumStatus": "DRAFT",
+      "lowCurriculumConfidence": false,
+      "consideredTypes": [
+        "SPECIFIC_COMPETENCY",
+        "EVALUATION_CRITERION",
+        "ACHIEVEMENT_INDICATOR",
+        "CONCEPT",
+        "PROCEDURE",
+        "ATTITUDE_VALUE"
+      ]
+    }
+  },
+  "candidates": {
+    "kind": "RECOMMENDATION",
+    "catalogVersion": "evaluation-2026.66",
+    "instrumentType": "rubrica",
+    "confidence": "MEDIUM",
+    "activityType": "ORAL_PRESENTATION",
+    "evidenceTypes": [
+      "PERFORMANCE",
+      "KNOWLEDGE"
+    ],
+    "participationMode": "INDIVIDUAL",
+    "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "curriculumScopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+    "selectedCurriculumElements": [
+      {
+        "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+        "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "scopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "type": "SPECIFIC_COMPETENCY",
+        "text": "Interactúa en el idioma inglés de forma sostenida y comprensible, utilizando una estructura\nsencilla del discurso en distintas situaciones de comunicación para informar, dar instrucciones,\nnarrar, opinar, expresar planes futuros y explicar problemas sobre aspectos de la vida diaria y\ntemas que le son familiares o de su interés.",
+        "sources": [
+          {
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+            "pdfPage": 158,
+            "printedPage": "157"
+          }
+        ]
+      }
+    ],
+    "criteria": [
+      {
+        "id": "proposal:evaluation-2026.66:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-plans:0",
+        "templateId": "ing-4-plans",
+        "title": "Plan futuro relacionado con la situación",
+        "description": "Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada.",
+        "maxScore": 7.27,
+        "maxScoreUnits": 727,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada.",
+          "El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión.",
+          "Menciona una acción futura sin relacionar parte de la información solicitada del plan.",
+          "Cambia la acción o los datos del plan y comunica una situación futura diferente de la indicada.",
+          "No se reconoce un plan futuro relacionado con la situación solicitada."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada.",
+            "scoreUnits": 727
+          },
+          {
+            "levelId": "L3",
+            "text": "El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión.",
+            "scoreUnits": 485
+          },
+          {
+            "levelId": "L2",
+            "text": "Menciona una acción futura sin relacionar parte de la información solicitada del plan.",
+            "scoreUnits": 242
+          },
+          {
+            "levelId": "L1",
+            "text": "No se reconoce un plan futuro relacionado con la situación solicitada.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.66:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-genre-presentation:1",
+        "templateId": "ing-4-genre-presentation",
+        "title": "Ideas relacionadas en la presentación",
+        "description": "Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito.",
+        "maxScore": 7.27,
+        "maxScoreUnits": 727,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito.",
+          "La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión.",
+          "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación.",
+          "La producción cambia el sentido: cambia el asunto o las relaciones entre las ideas de la presentación.",
+          "No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito.",
+            "scoreUnits": 727
+          },
+          {
+            "levelId": "L3",
+            "text": "La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión.",
+            "scoreUnits": 485
+          },
+          {
+            "levelId": "L2",
+            "text": "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación.",
+            "scoreUnits": 242
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.66:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-intelligibility:2",
+        "templateId": "ing-4-intelligibility",
+        "title": "Discurso oral sostenido y comprensible",
+        "description": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+        "maxScore": 5.46,
+        "maxScoreUnits": 546,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+          "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+          "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+          "La organización o las expresiones cambian el sentido de las ideas que se comunican.",
+          "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+            "scoreUnits": 546
+          },
+          {
+            "levelId": "L3",
+            "text": "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+            "scoreUnits": 364
+          },
+          {
+            "levelId": "L2",
+            "text": "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+            "scoreUnits": 182
+          },
+          {
+            "levelId": "L1",
+            "text": "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ],
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "totalScore": 20,
+    "totalScoreUnits": 2000,
+    "scoreUnit": 0.01,
+    "internalTrace": {
+      "mappingStatus": "RESOLVED",
+      "reasons": [
+        "band=SECONDARY",
+        "discipline=language",
+        "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+        "module=ingles-comunicacion-4",
+        "mode=oral",
+        "functions=plans",
+        "coverage=DEFINED_COMMON_FOURTH_GRADE_PROVIDERS",
+        "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+      ],
+      "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+      "activityTypeOrigin": "DETECTED",
+      "ranking": [
+        {
+          "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+          "score": 83,
+          "topicCoverage": 0.625,
+          "reasons": [
+            "topicTokens=5/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "bce20a76-7a5c-5a9b-8b21-51c4cad7637a",
+          "score": 58,
+          "topicCoverage": 0.375,
+          "reasons": [
+            "topicTokens=3/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "6f867b15-248b-5e95-995a-d858412015aa",
+          "score": 56,
+          "topicCoverage": 0.375,
+          "reasons": [
+            "topicTokens=3/8",
+            "typeWeight=10",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "bb1c6adb-248f-5f94-9d96-b7d483e224b0",
+          "score": 56,
+          "topicCoverage": 0.375,
+          "reasons": [
+            "topicTokens=3/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "1e378491-4e54-5bd2-8f00-b70ddfcc6075",
+          "score": 49,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "623f2f4e-5006-5b7e-8484-f6b092dfc450",
+          "score": 49,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "eaa6d012-2f93-5034-a8e5-d2b8bfd0ec77",
+          "score": 49,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "4589d1db-eec0-5859-a697-dff794f2747f",
+          "score": 45,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "53675368-3ba3-5f50-9943-bfb6469046f8",
+          "score": 43,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "fadeb578-c7a4-598b-b774-3c2c5f6b63a0",
+          "score": 43,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=10",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "542426d4-2bf1-5545-81e9-45e861ca791d",
+          "score": 41,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=10",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "747fc437-0adb-55bb-b44d-8a05996a8427",
+          "score": 41,
+          "topicCoverage": 0.25,
+          "reasons": [
+            "topicTokens=2/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "084555fc-3c0c-5476-8bcf-d1ec6161ae1f",
+          "score": 37,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "439b1a4d-bce5-556f-89e8-bf04908acc5f",
+          "score": 37,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "7c1f58e1-7b8a-5276-8656-e5592dda236e",
+          "score": 37,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "23246e95-8c14-5aa1-9a78-65978a676c29",
+          "score": 35,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "80f5108d-6127-5cd0-926d-dc3da189a3ab",
+          "score": 35,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "fd6fd47e-0a8e-5901-8190-073633362b1f",
+          "score": 35,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "b0bf3d5e-0f1a-5b63-92a3-2c9cd85ea588",
+          "score": 33,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "e9b7407f-2e85-54fb-a02d-9c66bdce21fa",
+          "score": 33,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "a0938bae-4c46-55e0-80bc-cc2b449d8358",
+          "score": 31,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=12",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "d0257dc9-8898-5537-9c4e-8dd44c9c0bb0",
+          "score": 31,
+          "topicCoverage": 0.125,
+          "reasons": [
+            "topicTokens=1/8",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        }
+      ],
+      "curriculumStatus": "DRAFT",
+      "lowCurriculumConfidence": false,
+      "consideredTypes": [
+        "SPECIFIC_COMPETENCY",
+        "EVALUATION_CRITERION",
+        "ACHIEVEMENT_INDICATOR",
+        "CONCEPT",
+        "PROCEDURE",
+        "ATTITUDE_VALUE"
+      ]
+    }
+  }
+}

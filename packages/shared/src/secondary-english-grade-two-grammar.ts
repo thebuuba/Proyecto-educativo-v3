@@ -1,5 +1,6 @@
 import {affirmativeLanguageTask,requestedLanguageFeatures,type LanguageFeature} from './language-feature-criteria'
 import {englishGradeOneGrammar,englishGrammarCriterion} from './secondary-english-grade-one-grammar'
+import {explicitEnglishFeatureRequest} from './english-feature-request'
 
 /** PDF142–144. Reuse only forms explicitly present in both common scopes.
  * Future forms, advice, states, quantity, duration and narrative background have
@@ -40,14 +41,12 @@ export function requestedGradeTwoGrammar(text:string){
  for(const [category,names] of [['adverbios?','tiempo|frecuencia|cantidad|intensidad'],['preposiciones?','tiempo|duracion'],['conectores?','coordinacion|tiempo|secuencia|causa']] as const)
   expanded=expanded.replace(new RegExp(`\\b(${category}) de ((?:${names})(?:\\s+(?:y\\s+)?(?:${names}))*)\\b`,'g'),(_,label:string,items:string)=>items.split(/\s+(?:y\s+)?/).map(item=>`${label} de ${item}`).join(' y '))
  const forms=englishGradeTwoGrammar.map(f=>f.match).join('|')
- const cue='(?:utiliz\\w*|emple\\w*|us(?:ar(?:an)?|an|en)|identific\\w*|localiz\\w*|reconoc\\w*|compar(?:ar(?:an)?|an|en)|(?:funcion|significado|uso) de)'
- const article='(?:(?:el|la|los|las|verbo|modal|forma|estructura)\\s+)*'
  return requestedLanguageFeatures(englishGradeTwoGrammar,expanded).filter(f=>{
   if(!['will','wishes','permission','duration-prepositions'].includes(f.id))return true
   const named=f.id==='duration-prepositions'&&/\bpreposiciones? de duracion\b/.test(expanded)
   // An ambiguous English word is evidence only inside an explicitly requested
   // form/list, not a date (May), a person's name (Will), or quoted content.
-  return named||new RegExp(`\\b${cue}\\s+${article}(?:(?:${forms})(?:\\s+(?:(?:y|o|e)\\s+)?)${article})*(?:${f.match})`).test(expanded)
+  return named||explicitEnglishFeatureRequest(expanded,f.match,forms)
  }).map(f=>{
   const terms=f.terms?.filter(([pattern])=>new RegExp(pattern).test(expanded)).map(([,name])=>name)??[]
   if(terms.length>1&&terms.some((term,index)=>index<terms.length-1&&expanded.includes(`${term.replace(/[’']/g,' ')} o ${terms[index+1].replace(/[’']/g,' ')}`)))return {...f,name:terms.join(' o ')+', según la alternativa elegida'}

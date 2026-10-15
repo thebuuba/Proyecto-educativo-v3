@@ -1,5 +1,6 @@
 import {requestedLanguageFeatures,type LanguageFeature} from './language-feature-criteria'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
+import {explicitEnglishFeatureRequest} from './english-feature-request'
 
 const feature=(id:string,match:string,name:string,purpose:string,error:string):LanguageFeature=>({id,match:`\\b(?:${match})\\b`,name,function:purpose,error})
 /** MINERD 2023, PDF136–138. Authored evaluative evidence, not literal official rubrics. */
@@ -9,7 +10,7 @@ const grammar:LanguageFeature[]=[
  feature('present-continuous','presente continuo|present continuous','el presente continuo','situar una acción en desarrollo en el momento indicado','confunde la acción en desarrollo con una acción terminada o habitual'),
  feature('past-simple','pasado simple|simple past|past simple','el pasado simple','situar hechos o experiencias terminados en el pasado','presenta como actual un hecho situado en el pasado o cambia quién lo realizó'),
  feature('present-perfect','presente perfecto|present perfect','el presente perfecto','referir experiencias anteriores relacionadas con el presente','confunde la experiencia anterior con una acción que está ocurriendo ahora'),
- feature('future','will|be going to','will o be going to según la forma solicitada','comunicar previsiones para el momento futuro indicado','sitúa la previsión en un momento distinto del anunciado'),
+ feature('future','will|(?:be )?going to','will o be going to según la forma solicitada','comunicar previsiones para el momento futuro indicado','sitúa la previsión en un momento distinto del anunciado'),
  feature('would','would','would en la invitación','formular o aceptar cortésmente una invitación','la estructura cambia la invitación por una afirmación que no propone ni responde'),
  feature('declining-forms','can t|cannot|have to','can’t o have to según la forma solicitada','expresar imposibilidad u obligación al rechazar una invitación','comunica posibilidad cuando pretende expresar imposibilidad u obligación'),
  feature('there-be','there (?:is|are|be)|there y be','there + be','indicar existencia y cantidad en la descripción de un lugar','confunde la existencia o el número de los elementos descritos'),
@@ -39,7 +40,7 @@ const grammar:LanguageFeature[]=[
 
 const terms:Record<string,Array<[string,string]>>={
  'preference-verbs':[['\\blike\\b','el verbo like'],['\\bprefer\\b','el verbo prefer'],['\\benjoy\\b','el verbo enjoy']],
- future:[['\\bwill\\b','will'],['\\bbe going to\\b','be going to']],
+ future:[['\\bwill\\b','will'],['\\b(?:be )?going to\\b','be going to']],
  'declining-forms':[['\\bcan t\\b|\\bcannot\\b','can’t'],['\\bhave to\\b','have to']],
  articles:[['\\bdefinidos?\\b|\\bdefinite\\b','los artículos definidos'],['\\bindefinidos?\\b|\\bindefinite\\b','los artículos indefinidos']],
  comparative:[['\\bcomparativos?\\b|\\bcomparative\\b','el grado comparativo'],['\\bsuperlativos?\\b|\\bsuperlative\\b','el grado superlativo']],
@@ -52,7 +53,7 @@ export function requestedEnglishGrammar(text:string){
   ['preposiciones?','tiempo|lugar'],
   ['conectores?','coordinacion|tiempo|secuencia|causa|consecuencia'],
  ])expanded=expanded.replace(new RegExp(`\\b(${category}) de ((?:${names})(?:\\s+(?:y\\s+)?(?:${names}))*)\\b`,'g'),(_,label:string,items:string)=>items.split(/\s+(?:y\s+)?/).map(item=>`${label} de ${item}`).join(' y '))
- return requestedLanguageFeatures(englishGradeOneGrammar,expanded)
+ return requestedLanguageFeatures(englishGradeOneGrammar,expanded).filter(f=>f.id!=='future'||explicitEnglishFeatureRequest(expanded,f.match,englishGradeOneGrammar.map(g=>g.match).join('|'))).map(f=>f.id==='future'&&/\bwill o (?:be )?going to\b/.test(expanded)?{...f,name:'will o be going to, según la alternativa elegida'}:f)
 }
 
 export function englishGrammarCriterion(feature:LanguageFeature,text:string,mode:string,scope='ing-1'):ContextualTopicCriterion{

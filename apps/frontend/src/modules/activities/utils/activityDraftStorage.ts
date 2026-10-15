@@ -1,4 +1,4 @@
-import { validateInstrumentDefinition } from '@aula/shared'
+import { validateInstrumentDefinition,deliveryConditions,TaskRequirementError } from '@aula/shared'
 import type { CompetencyBlockId } from '@/modules/grading/utils/competencyGrades'
 
 export const activityDraftStoragePrefix = 'grading-activity-drafts:v2:'
@@ -157,6 +157,7 @@ export function validateActivityDraft(draft: StoredActivityDraft): ActivityDraft
   }
   const description = typeof DOMParser === 'undefined' ? (draft.description ?? '').replace(/<[^>]*>/g, ' ') : new DOMParser().parseFromString(draft.description ?? '', 'text/html').body.textContent ?? ''
   if (!description.trim()) add('description', 'Descripción de la actividad', 'Describe lo que harán los estudiantes y la evidencia que entregarán.')
+  try {deliveryConditions(description)}catch(error){if(error instanceof TaskRequirementError)add('description','Requisitos de entrega',error.message);else throw error}
   return issues
 }
 

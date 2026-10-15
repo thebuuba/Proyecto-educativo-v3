@@ -2,6 +2,7 @@ import {requestedLanguageFeatures,type LanguageFeature} from './language-feature
 import {englishGrammarCriterion} from './secondary-english-grade-one-grammar'
 import {affirmativeScopedEnglishTask} from './secondary-english-task-text'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
+import {explicitEnglishFeatureRequest} from './english-feature-request'
 
 export function requestedScopedEnglishGrammar(description:string,features:LanguageFeature[],extraGuarded:string[]=[]){
  let text=affirmativeScopedEnglishTask(description)
@@ -9,9 +10,7 @@ export function requestedScopedEnglishGrammar(description:string,features:Langua
   text=text.replace(new RegExp(`\\b(${category}) de ((?:${names})(?:\\s+(?:y\\s+)?(?:${names}))*)\\b`,'g'),(_,label:string,items:string)=>items.split(/\s+(?:y\s+)?/).map(item=>`${label} de ${item}`).join(' y '))
  const guarded=new Set(['used-to','will','going-to','there-be','lets','why-suggestion','agreement-responses',...extraGuarded,...features.filter(f=>f.id.startsWith('modal-')).map(f=>f.id)])
  const forms=features.map(f=>f.match).join('|')
- const cue='(?:utiliz\\w*|emple\\w*|us(?:ar(?:an)?|an|en|ando)|identific\\w*|localiz\\w*|reconoc\\w*|compar(?:ar(?:an)?|an|en)|(?:funcion|significado|uso) de)'
- const article='(?:(?:el|la|los|las|verbo|modal|forma|estructura)\\s+)*'
- const selected=requestedLanguageFeatures(features,text).filter(f=>!guarded.has(f.id)||new RegExp(`\\b${cue}\\s+${article}(?:(?:${forms})(?:\\s+(?:(?:y|o|e)\\s+)?)${article})*(?:${f.match})`).test(text))
+ const selected=requestedLanguageFeatures(features,text).filter(f=>!guarded.has(f.id)||explicitEnglishFeatureRequest(text,f.match,forms))
  return combineEnglishFeatureAlternatives(text,selected)
 }
 export function englishAlternativeGroups<T extends {id:string;match:string}>(text:string,selected:T[]):T[][]{
@@ -23,9 +22,9 @@ export function englishAlternativeGroups<T extends {id:string;match:string}>(tex
   const alternatives=[f],match=text.match(new RegExp(f.match))
   let end=(match?.index??-1)+(match?.[0].length??0)
   for(;;){
-   const next=ordered.find(other=>!consumed.has(other.id)&&!alternatives.includes(other)&&new RegExp(`^\\s+o\\s+${article}(?:${other.match})`).test(text.slice(end)))
+   const next=ordered.find(other=>!consumed.has(other.id)&&!alternatives.includes(other)&&new RegExp(`^\\s+(?:o|or)\\s+${article}(?:${other.match})`).test(text.slice(end)))
    if(!next)break
-   const continuation=text.slice(end).match(new RegExp(`^\\s+o\\s+${article}(?:${next.match})`))!
+   const continuation=text.slice(end).match(new RegExp(`^\\s+(?:o|or)\\s+${article}(?:${next.match})`))!
    alternatives.push(next);consumed.add(next.id);end+=continuation[0].length
   }
   groups.push(alternatives)

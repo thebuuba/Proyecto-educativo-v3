@@ -5,7 +5,7 @@ import { evaluationCatalogCurrent } from './catalog-current'
 import { academicContext, resolveScope } from './curriculum-context'
 import { detectActivityType, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
-import {resolveCommonEnglishTask,commonEnglishSelections,InstrumentCapacityError} from '@aula/shared'
+import {resolveCommonEnglishTask,commonEnglishSelections,InstrumentCapacityError,TaskRequirementError,deliveryConditions} from '@aula/shared'
 
 /** Deterministic, read-only recommendation boundary. All tenancy checks precede curricular reads. */
 @Injectable()
@@ -13,6 +13,7 @@ export class EvaluationInstrumentsService {
   private readonly logger = new Logger(EvaluationInstrumentsService.name)
   async interpret(user: AuthenticatedUser, input: InterpretActivityDto) {
     const resolved = await this.resolve(user, input, true)
+    try {deliveryConditions(input.description??'')}catch(error){if(error instanceof TaskRequirementError)throw new BadRequestException(error.message);throw error}
     const englishTask=resolveCommonEnglishTask(input.activityTitle,input.description??'',resolved.context)
     const scopedType = englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
     const detected = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === scopedType)
@@ -42,7 +43,7 @@ export class EvaluationInstrumentsService {
       result.curriculumVersionId = version?.id ?? null
       return result
     } catch (error) {
-      if(error instanceof InstrumentCapacityError)throw new BadRequestException(error.message)
+      if(error instanceof InstrumentCapacityError||error instanceof TaskRequirementError)throw new BadRequestException(error.message)
       const details = { route: 'POST /evaluation-instruments/recommend', sectionSubjectId: input.sectionSubjectId,
         catalogVersion: evaluationCatalogCurrent.version, curriculumVersionId: input.curriculumVersionId ?? null,
         curriculumScopeId: input.curriculumScopeId ?? null, activityType: input.pedagogicalActivityType ?? null,

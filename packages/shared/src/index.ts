@@ -54,6 +54,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
   if (!module) return null
   const action = (value: string) => {
     const contract=resolveEvaluationTask('',value)
+    if(module==='READING_REPORT'&&contract.product==='REPORT')return 'READING_REPORT_WRITING'
     if(contract.product==='ANALYTICAL_TEXT'&&!contract.oral) return `${module}_ANALYSIS`
     if (module !== 'READING_REPORT' && contract.product === 'REPORT') return 'REPORT'
     if (/parafras|propias palabras|\bresum(?:iran|ir|e)\b|predicci|anticip|inferir|inferiran|reconstru(?:ir|iran|yan|yen|ye|ccion)/.test(value)
@@ -258,3 +259,4 @@ export {englishGradeSixGrammar} from './secondary-english-grade-six-grammar'
 export {englishGradeSixLexicon} from './secondary-english-grade-six-lexicon'
 export {englishGradeSixStrategies} from './secondary-english-grade-six-strategies'
 export {englishGradeSixGenres} from './secondary-english-grade-six-genres'
+export {deliveryConditions,deliveryCriteria,withDeliveryCriteria,TaskRequirementError} from './task-delivery-requirements'

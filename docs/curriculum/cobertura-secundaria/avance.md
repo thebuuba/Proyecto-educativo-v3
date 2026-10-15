@@ -1,5 +1,13 @@
 # Avance durable — cobertura secundaria
 
+## Cierre vigente: consignas naturales y criterios — 15/10/2026
+
+[Informe completo](consignas-informe.md), [ocho instrumentos completos](consignas-ejemplos-completos.md). Encargo 50f00616 completado en sus patrones definidos: My Future Plans incorpora ambas formas y modalidades desde el inicio; Agregar informa de forma persistente junto al instrumento y añade fila completa cuando hay un objetivo disponible. Completar respeta vacíos, identidad, textos y puntos. Condiciones de entrega compartidas con validación de contradicciones; informes breves sin investigación/ficción añadidas. Suma/resta solo evidencia básica `ACTION_ONLY`, sin ampliar cobertura curricular.
+
+Catálogo final local **evaluation-2026.69**; .66/.67/.68 congelados y sus payloads cotejados con lo instalado. Backend 36.796/93, frontend 37.457/119, inventario/conciliación11 y compilaciones backend/frontend/Cloudflare dry-run aprobados. HTTP264 +4 interpretaciones +4 rechazos y8 verificaciones de unidades. Tres CRUD auténticos: dos de Inglés4(.67) y un cotejo de Lengua1(.69); sus campos/IDs/puntos coinciden con snapshots. Agregar con candidato se verifica además en un borrador no guardado en la base. Antes135=105+28+2; después138=108+28+2; los135 snapshots previos permanecen idénticos.
+
+Matriz: seguimiento de12 ámbitos comunes/133 temas; cierres originales y otras asignaturas/optativas preservados. Reconocimiento lingüístico y condiciones enumerados, no comprensión general de inglés ni cierre de géneros ajenos al proveedor. Límites y pendientes fuera de esos patrones en el informe. Sin pendiente conocido dentro de los casos exigidos; **detenerse aquí**, sin otro bloque. Este cierre se publica por commit/push normal en la rama actual; confirmar su hash y la igualdad con origin al recuperar. El proceso probado registra dc50778 con cambios de este encargo, no un hash de entrega retroactivo. Los estados siguientes son históricos.
+
 ## Estado vigente: ajuste de calidad de Inglés común1.º–6.º — 15/10/2026
 
 Nuevo encargo del adjunto fdfa93c7-3ad4-4828-bb8b-4a75a3b5927b, posterior al cierre2–6. [Informe de calidad](ingles-calidad-informe.md), [instrumentos completos corregidos](ingles-calidad-ejemplos-completos.md). Corrección compartida de cotejo: datos independientes declarados, relaciones conservadas, peso/IDs y límite20 después de expandir; añadir/completar tras renombrar y duplicados del CV/formulario. Revisión observable admite mantener texto correcto sin cambios; progresiones/parcial adaptados a los cuatro formatos y sin fila si no se pide revisión.

@@ -1,5 +1,7 @@
 # Corrección de Actividades e Instrumentos
 
+Seguimiento de consignas naturales,15/10/2026: formas futuras y modalidades coordinadas, condiciones de entrega/contradicciones, informes breves y Agregar/Completar con feedback persistente. Catálogo local.69; tres CRUD y135 históricos conservados; matriz con límites reales y sin ampliar asignaturas. [Informe final y evidencias](../../curriculum/cobertura-secundaria/consignas-informe.md), [instrumentos completos](../../curriculum/cobertura-secundaria/consignas-ejemplos-completos.md). Prevalece este seguimiento; lo siguiente conserva su fecha y alcance históricos.
+
 Seguimiento de calidad de Inglés1.º–6.º,15/10/2026: cotejos con datos independientes, revisión observable sin cambios forzados y conciliación135=105+28+2. Catálogo local.66; sin alterar históricos ni ampliar otra asignatura. [Informe y verificaciones](../../curriculum/cobertura-secundaria/ingles-calidad-informe.md).
 
 Continuidad al15/10/2026: el encargo posterior de Inglés común2.º–6.º terminó en las familias y patrones definidos, con catálogo local.63 y cuatro recorridos autenticados por grado. [Informe consolidado y límites](../../curriculum/cobertura-secundaria/ingles-2-6-informe-consolidado.md), [cierre de sexto](../../curriculum/cobertura-secundaria/ingles-6-informe-final.md). Rama actual `amplia-instrumentos-secundaria`; ejecución posterior sin subagentes. El informe del12/10 que sigue conserva su contexto histórico.

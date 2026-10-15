@@ -260,7 +260,7 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
    }
   }
  })
- const grammar=requestedEnglishGrammar(task.evidenceText??text)
+ const grammar=requestedEnglishGrammar(`${task.evidenceText&&task.evidenceText!==text?'identificaran ':''}${task.evidenceText??text}`)
  result.push(...grammar.map(f=>englishGrammarCriterion(f,task.evidenceText??text,mode)))
  const strategies=englishStrategyCriteria(text,mode)
  const lexicon=requestedEnglishLexicon(task.evidenceText??text).filter(f=>f.id!=='translation'||!strategies.some(s=>s.templateId==='ing-1-strategy-help'))
@@ -283,7 +283,7 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
   'Las respuestas cambian el sentido de lo dicho por el interlocutor e interrumpen el intercambio.',
   'No se aporta una respuesta reconocible a las intervenciones del interlocutor.',
  ],3))
- if(!receptive&&mode!=='audiovisual'&&(task.functions.length||mode==='oral'&&genres.length))result.push(mode==='writing'?row('written','Mensaje escrito comprensible',[
+ if(!receptive&&mode!=='audiovisual'&&(task.functions.length||mode==='oral'&&genres.length||/\bpresentacion (?:oral|por escrito)\b/.test(text)))result.push(mode==='writing'?row('written','Mensaje escrito comprensible',[
   'Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.',
   'Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.',
   'Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.',

@@ -1,4 +1,4 @@
-import {render,screen,fireEvent,waitFor,act} from '@testing-library/react'
+import {render,screen,fireEvent,waitFor,act,within} from '@testing-library/react'
 import {it,expect,vi,beforeEach} from 'vitest'
 import type {ComponentProps} from 'react'
 import {ActivityEditorWorkspace} from './ActivityEditorWorkspace'
@@ -117,4 +117,43 @@ it('exige confirmar antes de redistribuir puntos manuales al añadir',async()=>{
  await waitFor(()=>expect(getDraft()?.instrumentFields?.['rubrica:meta:criteriaCount']).toBe('4'))
  const fields=getDraft()!.instrumentFields!
  expect(Array.from({length:4},(_,i)=>Math.round(Number(fields[`rubrica:points:${i}`])*100)).reduce((a,b)=>a+b,0)).toBe(2000)
+})
+it('mantiene el agotamiento junto al control manual sin caducar',async()=>{
+ vi.spyOn(api,'post').mockRejectedValue(new Error('offline'))
+ const {pool,initial,props,view}=setup()
+ const fields=recommendationToFields(pool,'Rutina')
+ const draft={...initial,instrumentFields:fields,preparedRecommendation:pool}
+ view.rerender(<ActivityEditorWorkspace {...props} initialDraft={draft} sectionSubjectId="subject" instrumentAcademicContext={academic}/>)
+ // Remount with the complete pool: no unselected objective remains.
+ view.unmount();localStorage.clear()
+ render(<ActivityEditorWorkspace {...props} initialDraft={draft} sectionSubjectId="subject" instrumentAcademicContext={academic}/>)
+ fireEvent.click(screen.getByRole('button',{name:'Agregar criterio'}))
+ const notice=await screen.findByText(/No hay otro criterio automático pertinente/)
+ const region=screen.getByRole('region',{name:'Instrumento y estado de criterios'})
+ expect(region).toContainElement(notice)
+ expect(within(region).getByRole('button',{name:'Añadir criterio manual'})).toBeVisible()
+ vi.useFakeTimers()
+ await act(async()=>{vi.advanceTimersByTime(9000)})
+ expect(notice).toBeVisible()
+ vi.useRealTimers()
+})
+it('bloquea duplicados durante Agregar y permite reintentar tras un error',async()=>{
+ let finish!:(value:unknown)=>void
+ const pending=new Promise(resolve=>{finish=resolve})
+ const post=vi.spyOn(api,'post').mockImplementation(async path=>path.endsWith('/recommend')?await pending as never:{curriculumCandidates:[]} as never)
+ const {pool,initial}=setup({remote:true})
+ const button=screen.getByRole('button',{name:'Agregar criterio'})
+ fireEvent.click(button)
+ expect(await screen.findByRole('button',{name:'Añadiendo…'})).toBeDisabled()
+ fireEvent.click(button)
+ expect(post.mock.calls.filter(([path])=>path.endsWith('/recommend'))).toHaveLength(1)
+ await act(async()=>{finish({...pool,catalogVersion:'evaluation-2026.67'});await pending})
+ expect(screen.getAllByRole('button',{name:'Acciones de la fila'})).toHaveLength(4)
+ expect(screen.getByLabelText('Criterio 1')).toHaveValue(initial.instrumentFields['rubrica:criterion:0'])
+ post.mockRejectedValue(new ApiError(400,'Revisa la consigna antes de reintentar'))
+ fireEvent.click(screen.getByRole('button',{name:'Agregar criterio'}))
+ const error=await screen.findByText('Revisa la consigna antes de reintentar')
+ expect(screen.getByRole('region',{name:'Instrumento y estado de criterios'})).toContainElement(error)
+ expect(screen.getByRole('button',{name:'Agregar criterio'})).toBeEnabled()
+ expect(screen.getAllByRole('button',{name:'Acciones de la fila'})).toHaveLength(4)
 })

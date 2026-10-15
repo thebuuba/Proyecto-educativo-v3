@@ -42,6 +42,7 @@ export function requestedGradeFourGrammar(text:string){
  })
 }
 export function gradeFourGrammarCriterion(feature:LanguageFeature,text:string,mode:string){
+ if(feature.id==='will'&&/\bplanes?\b/.test(text))feature={...feature,function:'comunicar la intención o decisión futura del referente en el plan solicitado',error:'cambia la acción o el momento futuro del plan comunicado'}
  const explains=new RegExp(`\\b(?:funcion|significado|uso) (?:de|del|de la) (?:(?:el|la|los|las)\\s+)*(?:${feature.match})`).test(text)&&/\b(?:explic\w*|analiz\w*|investig\w*)\b/.test(text)
  return scopedEnglishGrammarCriterion(feature,text,mode!=='comparison'&&explains?'analysis':mode,'ing-4')
 }

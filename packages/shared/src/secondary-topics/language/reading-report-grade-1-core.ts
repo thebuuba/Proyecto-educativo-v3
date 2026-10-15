@@ -3,7 +3,7 @@ type AuthoredCriterion = { templateId: string; title: string; observable: string
 
 export function rawFirstGradeReadingReportCriteria(activityType: string, description: string): AuthoredCriterion[] {
   const text = normalize(description)
-  const literaryText = /\bcuentos?\b/.test(text) ? 'cuento leído' : /\bleyendas?\b/.test(text) ? 'leyenda leída' : /\bfabulas?\b/.test(text) ? 'fábula leída' : /\bnovelas?\b/.test(text) ? 'novela leída' : 'texto literario seleccionado'
+  const literaryText = /\bcuentos?\b/.test(text) ? 'cuento leído' : /\bleyendas?\b/.test(text) ? 'leyenda leída' : /\bfabulas?\b/.test(text) ? 'fábula leída' : /\bnovelas?\b/.test(text) ? 'novela leída' : /\bnoticias?\b/.test(text)?'la noticia leída':'texto seleccionado'
   if (activityType === 'READING_REPORT_ANALYSIS') return [
     { templateId: 'report-purpose', title: 'Función y propósito del informe', observable: 'Explica para qué se elaboró el informe de lectura y qué texto analiza.', weight: 4 },
     { templateId: 'report-structure', title: 'Identificación de la estructura', observable: 'Identifica título, introducción, desarrollo y conclusión en el informe leído.', weight: 4 },
