@@ -240,3 +240,5 @@ El registro inicial anterior se conserva como historial. Se implementaron y conf
 La validación local incluye migraciones/RLS en PostgreSQL aislado, recorridos HTTP reales de Node y Workers y pruebas unitarias de backend/interfaz. Los comandos, resultados y condiciones pendientes están en [el registro comprobado](docs/SUSCRIPCIONES_PAGOS_RESULTADOS.md).
 
 La aceptación integral externa de las entregas 5–8 sigue pendiente: no hay credenciales sandbox verificadas, proveedor/cuenta receptora ni condiciones comerciales aprobadas. El bloqueo académico tampoco puede activarse mientras las imágenes académicas se entreguen mediante URLs públicas; una migración de seguridad impide esa activación. No se considera autorizado ni listo el lanzamiento a producción.
+
+Continuación posterior: se añadió la página autenticada de Paddle.js necesaria para el default payment link y un diagnóstico de sandbox que solo consulta la API con `--online`. El usuario está creando la cuenta; no se probaron credenciales reales. Instrucciones reproducibles en [PADDLE_SANDBOX.md](docs/PADDLE_SANDBOX.md) y resultados ampliados en el registro anterior.

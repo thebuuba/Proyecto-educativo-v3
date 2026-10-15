@@ -10,6 +10,8 @@ Crear una cuenta independiente en [Paddle Sandbox](https://sandbox-vendors.paddl
 
 Usar una instalación de pruebas separada con las migraciones y las claves propias de Supabase. No reutilizar `.dev.vars` ni enlaces de bases de producción. La URL pública HTTPS de este entorno será necesaria para que Paddle entregue webhooks. Un frontend local sirve para abrir checkout, pero no es por sí solo un destino público de webhooks.
 
+Inventario de solo lectura del 15 de octubre de 2026: el conector AulaBase muestra **AulaBase Development** (`eolgunypmtgrsyrjzcld`) en estado `INACTIVE`. No se reactivó ni se consultaron sus tablas. Antes de utilizarlo hay que verificar su reactivación y la correspondencia de backend, frontend y Storage con ese proyecto; el nombre «staging» de una configuración no prueba por sí solo qué base usa.
+
 Copiar la plantilla local, que solo contiene campos vacíos:
 
 ```powershell

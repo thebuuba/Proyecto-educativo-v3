@@ -144,4 +144,34 @@ Se eliminó al terminar el contenedor desechable propio y sus bases sintéticas.
 
 ## Entregas registradas
 
-Se registraron 13 commits nuevos en español sobre la rama existente, incluyendo este registro. Para revisar cada entrega: `git log --oneline abe62896..HEAD`. Los commits separan calendario, modelo/migraciones, adaptador, acceso, operaciones, archivos/checkout, recibos, eventos/conciliación, API/mantenimiento, pruebas integrales, interfaz, precios públicos y documentación. No se reescribió el historial ni se fusionó a `main`.
+En el primer bloque se registraron 13 commits nuevos en español sobre la rama existente. Para revisar cada entrega y sus continuaciones: `git log --oneline abe62896..HEAD`. Los commits separan calendario, modelo/migraciones, adaptador, acceso, operaciones, archivos/checkout, recibos, eventos/conciliación, API/mantenimiento, pruebas integrales, interfaz, precios públicos y documentación. No se reescribió el historial ni se fusionó a `main`.
+
+## Continuación: preparar la conexión real al sandbox
+
+El usuario confirmó que todavía no tenía cuenta Paddle Sandbox y empezó su registro. No se ejecutaron solicitudes reales al proveedor ni se configuraron secretos. La integración externa continúa pendiente; esta entrega elimina una carencia concreta del checkout y prepara el diagnóstico reproducible.
+
+Se listaron únicamente metadatos de proyectos mediante el conector Supabase AulaBase: `AulaBase Development` (`eolgunypmtgrsyrjzcld`) figura `INACTIVE`. No se reactivó, no se ejecutó SQL remoto ni se leyeron claves. Hay que disponer de un proyecto de pruebas operativo y verificar los destinos antes de conectar el primer checkout real del sandbox.
+
+- La documentación oficial confirma que `checkout.url` usa una página de la aplicación con Paddle.js, no necesariamente un host de Paddle. Se sustituyó esa suposición por `/api/v1/billing/checkout-page?_ptxn=…`, con página HTML autenticada y vinculada a la reserva del titular.
+- La página exige token público `test_…`, llama primero a `Paddle.Environment.set("sandbox")`, carga el SDK oficial y no acredita cobertura desde el navegador. Devuelve CSP con nonce y `Cache-Control: private, no-store`; no expone API key ni secreto del webhook. El servidor pasa su origen autorizado como `checkout.url` al crear la transacción y el frontend acepta únicamente la ruta local exacta o los hosts sandbox previamente permitidos.
+- Se añadió `PADDLE_SANDBOX_CLIENT_TOKEN` a las variables explícitas del Worker y a los ejemplos vacíos. Falta de token válido u origen de pruebas impide crear una nueva reserva remota.
+- `scripts/billing-sandbox-check.mjs` comprueba formatos sin red por defecto. Solo `--online` permite GET al host fijo sandbox para consultar precio y destino de notificaciones. Valida el sobre real `data`, eventos como objetos, moneda/importe/ciclo, impuestos incluidos sin importes por país y coincidencia del secreto del destino. Los valores secretos y argumentos desconocidos no se imprimen. No abre checkout ni acredita que se haya recibido una firma real.
+- [.env.billing-sandbox.example](../.env.billing-sandbox.example) contiene únicamente campos vacíos y controles apagados. Su copia `.env.billing-sandbox.local` queda cubierta por `*.local` en `.gitignore`. [Guía de conexión](PADDLE_SANDBOX.md): registro, credenciales, producto, default payment link, webhook y escenarios de aceptación.
+- DeepSeek V4.1 Flash analizó la migración de imágenes: hacen falta un mapeo del recurso a la asignatura, autorización por el ACL académico y compatibilidad de URLs guardadas. Cambiar solo la visibilidad rompería lectores legítimos. No se privatizó ningún bucket ni se aplicó una migración remota; ese bloqueo de lanzamiento sigue abierto.
+
+### Comprobaciones de esta continuación
+
+La revisión independiente de DeepSeek señaló que `style-src` no permitía la hoja externa de Paddle.js. Se comprobó el [SDK oficial servido por Paddle](https://cdn.paddle.com/paddle/v2/paddle.js): sandbox usa `https://sandbox-cdn.paddle.com/paddle/v2/assets/css/paddle.css`. Se permitieron explícitamente los dos CDN de estilos y se añadió una prueba de cabeceras que falló antes de corregir cada omisión. La revisión no identificó otros defectos en los cambios. No se ejecutó el SDK con credenciales reales ni se presenta la inspección estática como una compra verificada.
+
+- `pnpm --filter backend test`: código 0, **81 archivos, 6.616 pruebas**; 50,18 s después de la corrección de CSP.
+- `pnpm --filter backend build`: código 0.
+- `pnpm --filter frontend exec vitest run --maxWorkers=1 src/modules/billing src/modules/promo/pages/PricingPage.spec.tsx`: código 0, **8 archivos, 48 pruebas**, 26,36 s al ejecutarlas por separado. La ejecución simultánea con el backend agotó 5 s en dos pruebas de interacción existentes; no se ampliaron timeouts ni se cambiaron sus expectativas.
+- `node --test scripts/billing-sandbox-check.test.mjs`: código 0, **11 pruebas**, sin red. La revisión añadió regresiones que primero fallaron para el sobre `data`, eventos como objetos, fiscalidad, secreto de destino y origen de aplicación.
+- `node scripts/billing-sandbox-check.mjs` sin credenciales: código 1 esperado, lista campos ausentes sin revelar valores ni contactar APIs.
+- `node scripts/test-billing-database.mjs --workflows --worker`: código 0. Añadió comprobación HTTP de la página HTML: propietario 200, otro titular 404, anónimo 401, CSP nonce, no-store y ausencia de API key. Las 79 migraciones y los recorridos anteriores también pasaron en PostgreSQL desechable.
+- `pnpm --filter frontend build`: código 0. Continúa el aviso existente de bundles grandes.
+- `pnpm cloudflare:build`: código 0, cuatro builds correctos y `wrangler deploy --dry-run` correcto después de corregir la CSP; bundle 9.672,47 KiB, gzip 2.179,12 KiB. No se desplegó.
+
+No se cambió el esquema en esta continuación. El contenedor aislado propio fue eliminado después de las pruebas. El bloqueo de las imágenes públicas y la aceptación integral de Paddle/Storage/condiciones continúan pendientes; las comprobaciones locales no se presentan como prueba de operación externa.
+
+Esta continuación añade cuatro commits en español: página de pago, diagnóstico/guía, corrección de CSP y resultados. Se mantiene la misma rama existente, sin reescribir su historial ni fusionar a `main`.
