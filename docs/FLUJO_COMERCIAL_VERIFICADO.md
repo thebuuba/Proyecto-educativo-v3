@@ -2,6 +2,8 @@
 
 Revisión del 15/10/2026 en `feat/suscripciones-pagos-20261015`. El propietario confirmó que el problema se observaba en **localhost**.
 
+Actualización posterior: la [aceptación real de Paddle Sandbox](PADDLE_SANDBOX_ACEPTACION_2026-10-15.md) ya comprobó checkout, mes gratuito con tarjeta, primer pago simulado de US$7.99, portal, cancelación, rechazo de tarjeta y reenvío idempotente. Se ejecutó en PostgreSQL local aislado y en un frontend separado del localhost habitual conectado a producción. No se activaron cobros Live ni se publicó la web principal.
+
 ## Causa y corrección
 
 La oferta ya estaba centralizada en US$7.99, pero la portada y el registro no la mostraban. Las preguntas frecuentes decían que el importe seguía por definir. El recorrido lateral del registro terminaba en «Entra a la aplicación» sin explicar la activación con tarjeta. Además, Ajustes mostraba «Sin precios publicados» cuando faltaban métodos autorizados, aunque sí mostraba la mensualidad aprobada en el bloque de prueba.

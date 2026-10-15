@@ -1,5 +1,7 @@
 # Conectar Paddle Sandbox
 
+**Aceptación real del 15/10/2026:** checkout con tarjeta de prueba, webhooks firmados, mes gratuito, primer pago simulado de US$7.99, portal y cancelación comprobados en una base local aislada. Ver [identificadores, incidencias y límites](PADDLE_SANDBOX_ACEPTACION_2026-10-15.md). El resultado no activa Live ni habilita checkout sobre producción.
+
 **Política aprobada el 15/10/2026:** un mes natural gratuito con tarjeta obligatoria y renovación automática por **US$7.99 al mes**. La referencia en pesos es aproximada y fechada; Paddle factura en USD. Esta política sustituye la prueba local de 14 días descrita en las evidencias históricas de esta guía. Las pruebas ya emitidas conservan su vencimiento. No se habilitan cobros reales.
 
 Esta guía configura exclusivamente pruebas. No autoriza cuentas live, producción, migraciones remotas ni dinero real. El código debe estar en `feat/suscripciones-pagos-20261015`.
