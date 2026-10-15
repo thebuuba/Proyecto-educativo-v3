@@ -1,5 +1,6 @@
 import { ConflictException, HttpException, Injectable, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { createHash } from 'node:crypto'
+import { isDeepStrictEqual } from 'node:util'
 import { prisma } from '@aula/database'
 import type { Prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
@@ -26,7 +27,8 @@ import {
  * - Signatures are verified over the original bytes with the webhook secret and
  *   the database server clock; invalid signatures are never persisted.
  * - Events are stored durably before acknowledgement and deduplicated by the
- *   provider key plus a sha256 of the raw body.
+ *   provider event key and event content; delivery notification_id may change.
+ *   The original raw-body sha256 remains stored for audit.
  * - Processing runs inside a transaction that locks the event row and the owner
  *   (`app_users`, event -> owner order), so effects plus the terminal status are
  *   atomic. A crash or a second delivery cannot leave partial commercial state.
@@ -188,6 +190,16 @@ const parseEnvelope = (bytes: Buffer): BillingEnvelope | null => {
   return { eventId, eventType, payload: record as unknown as Prisma.InputJsonValue, data }
 }
 
+/** A Paddle replay changes its delivery ID, not the immutable event. */
+function sameEventPayload(stored: { payloadHash: string | null; payload?: unknown }, payloadHash: string, payload: unknown): boolean {
+  if (stored.payloadHash === payloadHash) return true
+  const previous = asRecord(stored.payload), incoming = asRecord(payload)
+  if (!previous || !incoming) return false
+  const { notification_id: _previousDelivery, ...previousEvent } = previous
+  const { notification_id: _incomingDelivery, ...incomingEvent } = incoming
+  return isDeepStrictEqual(previousEvent, incomingEvent)
+}
+
 interface LockedEvent {
   id: string
   status: keyof typeof EVENT_STATUS_MAP
@@ -227,7 +239,7 @@ export class BillingEventsService {
     const payloadHash = sha256(bytes)
     const key = { provider: PROVIDER, environment: ENVIRONMENT, providerEventId: envelope.eventId }
     const existing = await prisma.billingEvent.findUnique({ where: { provider_environment_providerEventId: key } })
-    if (existing && existing.payloadHash !== payloadHash) {
+    if (existing && !sameEventPayload(existing, payloadHash, envelope.payload)) {
       await this.auditMismatch(existing.id, envelope.eventId)
       return { accepted: false, status: 'rejected', reason: 'payload_mismatch' }
     }
@@ -253,15 +265,15 @@ export class BillingEventsService {
       if (!isUniqueViolation(error)) throw error
       const raced = await prisma.billingEvent.findUnique({ where: { provider_environment_providerEventId: key } })
       if (!raced) return { accepted: false, status: 'rejected', reason: 'race_unresolved' }
-      if (raced.payloadHash !== payloadHash) {
+      if (!sameEventPayload(raced, payloadHash, envelope.payload)) {
         await this.auditMismatch(raced.id, envelope.eventId)
         return { accepted: false, status: 'rejected', reason: 'payload_mismatch' }
       }
       return { accepted: true, status: 'duplicate', duplicate: true, eventId: raced.id }
     }
 
-    // A concurrent upsert can win without raising P2002: always compare the stored hash.
-    if (event.payloadHash !== payloadHash) {
+    // A concurrent upsert can win without P2002: compare its stored event too.
+    if (!sameEventPayload(event, payloadHash, envelope.payload)) {
       await this.auditMismatch(event.id, envelope.eventId)
       return { accepted: false, status: 'rejected', reason: 'payload_mismatch' }
     }

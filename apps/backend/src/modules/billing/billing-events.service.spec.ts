@@ -171,6 +171,31 @@ describe('receive: server flags and signature', () => {
 // ---------------------------------------------------------------------------
 
 describe('receive: durable deduplication', () => {
+  it.each(['lookup', 'upsert', 'unique-race'])('accepts a signed Paddle replay with a new notification_id (%s)', async (path) => {
+    const original = { ...JSON.parse(envelope('unknown.event', { amount: '799' })), notification_id: 'ntf_original' }
+    const body = JSON.stringify({ ...original, notification_id: 'ntf_replay' })
+    const stored = { ...persistedEvent('unknown.event', JSON.stringify(original)), payload: original, status: 'PROCESSED' }
+    if (path === 'lookup') db.billingEvent.findUnique.mockResolvedValue(stored)
+    if (path === 'unique-race') {
+      db.billingEvent.findUnique.mockResolvedValueOnce(null).mockResolvedValueOnce(stored)
+      db.billingEvent.upsert.mockRejectedValueOnce(Object.assign(new Error('unique'), { code: 'P2002' }))
+    } else db.billingEvent.upsert.mockResolvedValue(stored)
+    lockRows.push(lockRow('unknown.event', original.data, 'processed'))
+
+    expect(await service.receive(Buffer.from(body), sign(body))).toMatchObject({ accepted: true, status: 'duplicate' })
+    expect(db.billingPayment.create).not.toHaveBeenCalled()
+    expect(db.billingTrial.create).not.toHaveBeenCalled()
+    expect(db.billingAuditLog.create).not.toHaveBeenCalled()
+  })
+
+  it('rejects changed payment data even when the notification_id changes', async () => {
+    const original = { ...JSON.parse(envelope('unknown.event', { amount: '799' })), notification_id: 'ntf_original' }
+    const body = JSON.stringify({ ...original, data: { amount: '1' }, notification_id: 'ntf_replay' })
+    db.billingEvent.findUnique.mockResolvedValue({ ...persistedEvent('unknown.event', JSON.stringify(original)), payload: original, status: 'PROCESSED' })
+    expect(await service.receive(Buffer.from(body), sign(body))).toMatchObject({ accepted: false, reason: 'payload_mismatch' })
+    expect(db.billingEvent.upsert).not.toHaveBeenCalled()
+  })
+
   it('acknowledges an already processed identical event without reprocessing it', async () => {
     const body = envelope('unknown.event', {})
     db.billingEvent.findUnique.mockResolvedValue({ ...persistedEvent('unknown.event', body), status: 'PROCESSED' })

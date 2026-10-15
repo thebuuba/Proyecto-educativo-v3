@@ -258,10 +258,17 @@ try {
   assert.equal(repeated.status, 201, `Repeated delivery must be acknowledged: ${repeatedBody}`)
   assert.equal(JSON.parse(repeatedBody).data.status, 'duplicate')
 
+  // Paddle Replay issues a new notification_id for the same immutable event.
+  const replay = await deliverSigned(Buffer.from(JSON.stringify({ ...payload, notification_id: `ntf_${randomUUID()}` })))
+  assert.equal(replay.status, 201)
+  assert.equal((await replay.json()).data.status, 'duplicate')
+  const changedEvent = await deliverSigned(Buffer.from(JSON.stringify({ ...payload, notification_id: `ntf_${randomUUID()}`, data: { amount: '1' } })))
+  assert.equal(changedEvent.status, 400, 'A valid new signature cannot change an existing event')
+
   const stored = await db.query('select status::text as status from public.billing_events where provider_event_id = $1', [eventId])
   assert.equal(stored.rowCount, 1, 'The event must be persisted exactly once.')
   assert.equal(stored.rows[0].status, 'ignored')
-  console.log('PASS: signed unknown webhook returns 201/ignored, deduplicates, and persists exactly one row.')
+  console.log('PASS: signed unknown webhook and new delivery IDs deduplicate; changed event content is rejected; exactly one row persists.')
 
   // Same signature, different whitespace: the bytes changed, so the signature must fail.
   const tampered = Buffer.concat([rawBody, Buffer.from(' ', 'utf8')])
