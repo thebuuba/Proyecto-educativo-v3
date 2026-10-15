@@ -1,10 +1,10 @@
-DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:54332/postgres
+DATABASE_URL=postgresql://app_backend_local.eolgunypmtgrsyrjzcld:DEVELOPMENT_PASSWORD@aws-0-us-east-1.pooler.supabase.com:5432/postgres?sslmode=require
 FRONTEND_URL=http://localhost:8787
 JWT_SECRET=replace-with-a-random-development-secret
-SUPABASE_ANON_KEY=replace-with-local-anon-key
-SUPABASE_SERVICE_ROLE_KEY=replace-with-local-service-role-key
-SUPABASE_URL=http://127.0.0.1:54321
-VITE_SUPABASE_ANON_KEY=replace-with-local-anon-key
-VITE_SUPABASE_URL=http://127.0.0.1:54321
+SUPABASE_ANON_KEY=replace-with-development-legacy-anon-key
+SUPABASE_SERVICE_ROLE_KEY=replace-with-development-legacy-service-role-key
+SUPABASE_URL=https://eolgunypmtgrsyrjzcld.supabase.co
+VITE_SUPABASE_ANON_KEY=replace-with-development-legacy-anon-key
+VITE_SUPABASE_URL=https://eolgunypmtgrsyrjzcld.supabase.co
 DEEPSEEK_API_KEY=replace-with-development-deepseek-key
 DEEPSEEK_MODEL=deepseek-v4-flash

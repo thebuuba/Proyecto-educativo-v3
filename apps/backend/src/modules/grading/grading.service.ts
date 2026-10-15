@@ -1219,7 +1219,9 @@ export class GradingService {
   ) {
     const references = await this.validatePreparedActivity(dto, sectionSubject, tx)
     const proposal = dto.instrumentSnapshot!
-    const teacher = await tx.teacher.findFirst({ where: { id: sectionSubject.teacherId ?? '', userId, schoolId, status: 'ACTIVE' } })
+    const teacher = sectionSubject.teacherId
+      ? await tx.teacher.findFirst({ where: { id: sectionSubject.teacherId, userId, schoolId, status: 'ACTIVE' } })
+      : null
     // Administrative workflows may also create activities, but teacher preferences are private and only recorded for the assigned teacher.
     const instrument = await tx.evaluationInstrument.create({ data: {
       schoolId, name: evaluationInstrumentName(proposal.instrumentType), type: proposal.instrumentType,

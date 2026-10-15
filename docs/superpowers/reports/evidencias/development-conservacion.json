@@ -1,0 +1,33 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "originalDataPreserved": true,
+  "comparison": {
+    "activities": {
+      "originalCount": 11,
+      "afterCount": 11,
+      "hashUnchanged": true
+    },
+    "auth": {
+      "originalCount": 4,
+      "afterCount": 4,
+      "hashUnchanged": true
+    },
+    "grades": {
+      "originalCount": 2,
+      "afterCount": 2,
+      "hashUnchanged": true
+    },
+    "instruments": {
+      "originalCount": 9,
+      "afterCount": 9,
+      "hashUnchanged": true
+    },
+    "schedule": {
+      "originalCount": 30,
+      "afterCount": 30,
+      "hashUnchanged": true
+    }
+  },
+  "exclusions": "Only newly created QA identity and school; newly added activity/grade fields; schedule time-slot IDs and update timestamps normalized while comparing logical content.",
+  "noProductionDataCopied": true
+}

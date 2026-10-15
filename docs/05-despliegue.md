@@ -16,22 +16,28 @@ Render y Vercel ya no forman parte de la configuración del repositorio.
 
 ## Desarrollo y verificación local
 
-El desarrollo diario usa el Worker local conectado al proyecto remoto **AulaBase Development** (`eolgunypmtgrsyrjzcld`). Sus credenciales viven solo en `.dev.vars.local`, ignorado por Git:
+El desarrollo diario usa el Worker local conectado al proyecto remoto **AulaBase Development** (`eolgunypmtgrsyrjzcld`). `.dev.vars.local`, ignorado por Git, es la fuente validada para el arranque del Worker:
 
 ```bash
 pnpm install
 pnpm cloudflare:dev
 ```
 
-`cloudflare:dev` compila frontend y backend, sirve todo en `http://localhost:8787` y conecta Prisma, Auth y Storage exclusivamente a Development. Supabase local permanece disponible para validar migraciones destructivas o reconstrucciones desde cero.
+`cloudflare:dev` compila frontend y backend, sirve todo en `http://localhost:8787` y conecta Prisma, Auth, Storage y Vite exclusivamente a Development. `scripts/cloudflare-development-environment.mjs` valida las URLs y la referencia de las claves JWT legacy, rechaza producción y conexiones administradoras, y evita que las variables heredadas del terminal sustituyan el archivo validado.
+
+PostgreSQL local usa `app_backend_local.eolgunypmtgrsyrjzcld` en el pooler IPv4 `aws-0-us-east-1.pooler.supabase.com:5432`, con TLS. El rol `app_backend_local` hereda los privilegios y políticas de `app_backend`; su credencial es exclusiva de Development y no cambia la del rol existente. El binding de Hyperdrive de producción no se modifica: Wrangler local recibe una conexión local explícita después de validar el entorno.
+
+La configuración se alinea en `.dev.vars.local`, `.env.local`, `apps/backend/.env`, `apps/frontend/.env` y `apps/frontend/.env.local`; todos están ignorados por Git. Los dos archivos del frontend contienen solo valores públicos `VITE_*`. Los ejemplos contienen únicamente placeholders. Las cuentas, datos y contraseñas existentes de Development se conservan y no se copian desde producción.
+
+Supabase Docker en `54321/54332` es un entorno diferente, reservado para las comprobaciones locales que lo seleccionan explícitamente. No es el destino de `cloudflare:dev`.
 
 Prisma crea su cliente dentro de cada petición del Worker. No lo conviertas de nuevo en un pool global: Cloudflare limpia las conexiones por invocación y Hyperdrive mantiene el pool compartido junto a PostgreSQL.
 
-Para comprobar las migraciones desde cero:
+Para comprobar la protección del entorno y consultar el historial de Development sin modificarlo:
 
 ```bash
-pnpm exec supabase db reset
-pnpm supabase:stop
+node --test scripts/cloudflare-development-environment.spec.mjs
+pnpm exec supabase db query --linked --project-ref eolgunypmtgrsyrjzcld "select version, name from supabase_migrations.schema_migrations order by version"
 ```
 
 ```bash
@@ -73,7 +79,7 @@ pnpm exec wrangler hyperdrive update aa6bc681f16b42699381fdcf0f5386b7 \
   --sslmode require
 ```
 
-Confirma primero la cuenta con `pnpm exec wrangler whoami`. No uses Supavisor. Verifica después la configuración con `pnpm exec wrangler hyperdrive get ID`: el host y el usuario deben corresponder a producción y `caching.disabled` debe ser `true`.
+Confirma primero la cuenta con `pnpm exec wrangler whoami`. No uses Supavisor como origen del Hyperdrive de producción; esa restricción no cambia el pooler IPv4 utilizado por el Worker local. Verifica después la configuración con `pnpm exec wrangler hyperdrive get ID`: el host y el usuario deben corresponder a producción y `caching.disabled` debe ser `true`.
 
 Nunca guardes la URL o contraseña de PostgreSQL en `wrangler.jsonc`. El Worker reemplaza `DATABASE_URL` con `HYPERDRIVE.connectionString` y activa el modo producción cuando el binding existe.
 
@@ -116,13 +122,7 @@ VITE_SUPABASE_ANON_KEY=clave-publica-anon
 
 Las migraciones viven en `supabase/migrations/` y no se reescriben después de aplicarse. La migración `20260714201742_add_activity_description_images.sql` crea el bucket público limitado a 5 MB y políticas para que cada usuario autenticado escriba únicamente en su carpeta.
 
-Si existen migraciones pendientes:
-
-```bash
-supabase link --project-ref PROJECT_REF
-supabase db push
-pnpm db:generate
-```
+Para recuperar Development, revisa cada migración pendiente contra su esquema y sus datos actuales. Comprueba sus dependencias, backfills, privilegios y RLS; prueba la compatibilidad en una transacción terminada en rollback. Después aplica cada archivo aprobado y registra su versión original en `supabase_migrations.schema_migrations` en la misma transacción. No ejecutes reset ni un push indiscriminado de migraciones antiguas. El [informe de separación del 15/10/2026](superpowers/reports/2026-10-15-separacion-development.md) enumera las doce migraciones aplicadas y sus comprobaciones.
 
 Configura cada proyecto en Supabase Auth:
 

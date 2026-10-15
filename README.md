@@ -45,17 +45,18 @@ Prisma Client y compilar el backend.
 
 ## Configuracion y desarrollo
 
-El desarrollo diario usa el Worker local contra el proyecto remoto **AulaBase Development**. Las credenciales viven solo en `.dev.vars.local`, que está ignorado por Git:
+El desarrollo diario usa el Worker local contra **AulaBase Development** (`eolgunypmtgrsyrjzcld`). PostgreSQL usa el rol `app_backend_local` y el pooler IPv4 de ese proyecto; Auth, Storage y las variables públicas de Vite usan también Development. Las credenciales viven en archivos locales ignorados por Git; `.dev.vars.local` es la fuente validada por el comando:
 
 ```bash
 pnpm cloudflare:dev
 ```
 
-La aplicación completa queda en `http://localhost:8787`: React sirve la interfaz y NestJS responde bajo `/api/v1`. Supabase local sigue disponible para reconstruir y validar migraciones desde cero:
+La aplicación completa queda en `http://localhost:8787`: React sirve la interfaz y NestJS responde bajo `/api/v1`. El arranque rechaza producción, claves de otro proyecto, conexiones administradoras y variables mezcladas; las variables heredadas del terminal no reemplazan el archivo validado. No modifica el Hyperdrive remoto de producción. Las cuentas de Development son independientes de producción.
+
+Supabase Docker, utilizado por `pnpm dev:local`, es otro entorno de pruebas independiente en `54321/54332`; no es el destino de `cloudflare:dev`:
 
 ```bash
 pnpm supabase:local
-pnpm exec supabase db reset
 pnpm supabase:stop
 ```
 
@@ -76,20 +77,13 @@ No pongas `SUPABASE_SERVICE_ROLE_KEY` ni secretos en variables `VITE_*`.
 
 ## Base De Datos
 
-El CLI queda enlazado al proyecto de desarrollo. Para aplicar allí las migraciones pendientes:
+El CLI queda enlazado a Development. Antes de cualquier cambio, confirma su identificador y revisa los archivos pendientes uno por uno. No uses un `db push` general para recuperar el entorno ni repitas migraciones ya registradas:
 
 ```bash
-pnpm exec supabase db push --dry-run
-pnpm exec supabase db push
+pnpm exec supabase db query --linked --project-ref eolgunypmtgrsyrjzcld "select version, name from supabase_migrations.schema_migrations order by version"
 ```
 
-Para comprobarlas primero en Supabase local:
-
-```bash
-pnpm exec supabase db push --local --include-all
-pnpm db:generate
-pnpm db:seed
-```
+Cada migración revisada debe ejecutarse y registrar su versión original en una misma transacción. La recuperación del 15/10/2026 y las comprobaciones de conservación están documentadas en [el informe de Development](docs/superpowers/reports/2026-10-15-separacion-development.md).
 
 Otros comandos disponibles:
 
@@ -106,6 +100,7 @@ pnpm --filter backend build
 pnpm --filter frontend test
 pnpm --filter frontend build
 pnpm cloudflare:build
+node --test scripts/cloudflare-development-environment.spec.mjs
 pnpm cloudflare:verify http://localhost:8787
 ```
 

@@ -1,0 +1,27 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "base": "http://localhost:8787",
+  "verification": "real authenticated HTTP and database; browser automation unavailable",
+  "creatorContextStatus": 200,
+  "subject": "ING",
+  "grade": 2,
+  "catalogVersion": "evaluation-2026.69",
+  "detectedStrategy": "DIALOGIC_INQUIRY",
+  "automaticSavedAndReopened": true,
+  "manualStrategy": "CASE_STUDY",
+  "manualSavedAndReopened": true,
+  "instrumentUnchanged": true,
+  "instrumentHash": "4e0e2a95cf261743e37f82e3e3d4fec0d300e94e22badc4b466b4473a98818b9",
+  "instrumentId": "8d24c41d-817d-4ba0-90c4-8d5a29d04a0e",
+  "snapshotId": "fae8085c-7e99-4467-9540-155da8d9e10e",
+  "activityId": "00dbee91-1eda-4ec4-81b5-f93072e87a1d",
+  "testSchoolId": "bc96bc29-98f2-4e80-84d9-506126e20a4c",
+  "accountCreatedOnlyInDevelopment": true,
+  "finalBuildReopen": {
+    "status": 200,
+    "authIssuerProject": "eolgunypmtgrsyrjzcld",
+    "strategy": "CASE_STUDY",
+    "origin": "MANUAL",
+    "instrumentHashUnchanged": true
+  }
+}

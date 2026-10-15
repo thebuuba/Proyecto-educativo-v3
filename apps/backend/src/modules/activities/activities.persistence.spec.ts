@@ -303,6 +303,19 @@ describe('instrument validation and graded metadata', () => {
     expect((await controller().save(user, prepared(20))).instrumentSnapshotVersion).toBe(1)
   })
 
+  it('saves a prepared activity for an administrator when no teacher is assigned', async () => {
+    db.state.subjects[0].teacherId = null
+    db.state.subjects[0].teacher = null
+    const findTeacher = vi.spyOn(db.prisma.teacher, 'findFirst').mockImplementation(async ({ where }: any) => {
+      if (where.id === '') throw new Error('invalid input syntax for type uuid: ""')
+      return null
+    })
+    const saved = await controller().save({ ...user, roles: ['admin'] }, prepared())
+    expect(saved.instrumentSnapshotVersion).toBe(1)
+    expect(db.state.preferences).toHaveLength(0)
+    expect(findTeacher).not.toHaveBeenCalledWith(expect.objectContaining({ where: expect.objectContaining({ id: '' }) }))
+  })
+
   it('allows versioned graded metadata but rejects changed scoring evidence', async () => {
     const request = prepared()
     const original = await controller().save(user, request)
