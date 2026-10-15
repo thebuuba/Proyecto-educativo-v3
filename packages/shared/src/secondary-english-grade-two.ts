@@ -1,45 +1,71 @@
 import {affirmativeLanguageTask} from './language-feature-criteria'
 import {languageInstrumentIntent} from './language-instrument-intent'
 import {withoutResources} from './evaluation-task-text'
+import {normalizedTask} from './evaluation-task-text'
 import type {InstrumentAcademicContext} from './secondary-science'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import {requestedGradeTwoGrammar,gradeTwoGrammarCriterion} from './secondary-english-grade-two-grammar'
+import {requestedGradeTwoLexicon,gradeTwoLexicalCriterion} from './secondary-english-grade-two-lexicon'
+import {requestedGradeTwoStrategies,gradeTwoStrategyCriteria} from './secondary-english-grade-two-strategies'
+import {requestedGradeTwoGenres,gradeTwoGenreCriteria} from './secondary-english-grade-two-genres'
+import {gradeTwoContextCriteria} from './secondary-english-grade-two-context'
 
-export const englishGradeTwoModule={id:'ingles-comunicacion-2',grade:2,subjectCode:'ING',pdfPages:[140,141,142,143,144,145],policy:'LINKED_BASIC_SENTENCES_FUNCTIONS_AND_INDEPENDENT_ACTIONS_V2'}
-type Mode='reading'|'listening'|'interaction'|'oral'|'writing'|'audiovisual'
+export const englishGradeTwoModule={id:'ingles-comunicacion-2',grade:2,subjectCode:'ING',pdfPages:[140,141,142,143,144,145],policy:'COMMON_CURRICULUM_FUNCTIONS_ALIASES_FORMS_PRODUCTS_COMPOSITION_V7'}
+type Mode='reading'|'listening'|'interaction'|'oral'|'writing'|'audiovisual'|'analysis'|'comparison'|'research'
 type FunctionId='conversation'|'daily'|'states'|'help'|'shopping'|'wishes'|'advice'|'plans'|'experience'
-export type EnglishGradeTwoTask={grade:2;mode:Mode;functions:FunctionId[];text:string;activityType:string;technique:string;actions?:EnglishGradeTwoTask[]}
+export type EnglishGradeTwoTask={grade:2;mode:Mode;functions:FunctionId[];text:string;requirementText?:string;contextText?:string;activityType:string;technique:string;actions?:EnglishGradeTwoTask[]}
 const modes:Record<Mode,{activityType:string;technique:string}>={
  reading:{activityType:'READING_COMPREHENSION',technique:'analisis-producciones'},listening:{activityType:'LISTENING_COMPREHENSION',technique:'observacion-sistematica'},
  interaction:{activityType:'ORAL_INTERACTION',technique:'observacion-directa'},oral:{activityType:'ORAL_PRESENTATION',technique:'presentacion'},
  writing:{activityType:'WRITTEN_PRODUCTION',technique:'analisis-producciones'},audiovisual:{activityType:'AUDIOVISUAL_PRODUCTION',technique:'analisis-producciones'},
+ analysis:{activityType:'ANALYSIS',technique:'analisis-producciones'},comparison:{activityType:'COMPARISON',technique:'analisis-producciones'},
+ research:{activityType:'RESEARCH',technique:'analisis-producciones'},
 }
 export function commonSecondGradeEnglish(context?:InstrumentAcademicContext|null){
  return context?.level==='SECONDARY'&&context.grade===2&&!context.optativeExitName&&(context.subjectCode.trim().toUpperCase()==='ING'||!context.subjectCode.trim()&&/^(?:(?:lenguas? extranjeras? )?ingles|english)$/.test(affirmativeLanguageTask(context.subjectName??'')))
 }
+export const affirmativeSecondGradeEnglishTask=(description:string)=>affirmativeLanguageTask(withoutResources(description).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
+ .replace(/\bno (?:se )?(?:evalu\w*|calific\w*|exig\w*|requer\w*|us\w*|utiliz\w*|emple\w*|respond\w*)\b[^.;]*/g,''))
 function single(description:string):EnglishGradeTwoTask|null{
- const text=affirmativeLanguageTask(withoutResources(description)).replace(/\bno (?:se )?(?:evalu\w*|calific\w*|exig\w*|requer\w*)\b[^.;]*/g,'')
+ const text=affirmativeSecondGradeEnglishTask(description)
+ const contextText=normalizedTask(withoutResources(description).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/\bno (?:se )?(?:evalu\w*|calific\w*|exig\w*|requer\w*)\b[^.;]*/g,''))
+ const grammar=requestedGradeTwoGrammar(text)
+ const lexical=requestedGradeTwoLexicon(text)
+ const strategic=requestedGradeTwoStrategies(text)
+ const genres=requestedGradeTwoGenres(text)
+ const context=gradeTwoContextCriteria(contextText)
+ const features=grammar.length+lexical.length+strategic.length+genres.length+context.length
+ const modeText=text.replace(/\b(?:para|a fin de) (?:leer|escuchar|escribir|redactar|presentar|conversar|dialogar|comparar)\b/g,'para')
  let mode:Mode|undefined
- if(/\b(?:escuch\w*|listen\w*)\b/.test(text))mode='listening'
- else if(/\b(?:leer\w*|lean|lectura|leyendo|read\w*)\b/.test(text))mode='reading'
- else if(/\b(?:video|audiovisual)\b/.test(text)&&/\b(?:grab\w*|crea\w*|elabor\w*)\b/.test(text))mode='audiovisual'
- else if(/\b(?:dialog\w*|convers\w*|entrevist\w*|intercambio oral|role play)\b/.test(text))mode='interaction'
- else if(/\b(?:escrib\w*|escrit\w*|redact\w*|correo|por escrito|writ\w*)\b/.test(text))mode='writing'
- else if(/\b(?:oral\w*|present\w*|expon\w*|narr\w*|speak\w*|tell)\b/.test(text))mode='oral'
- else if(requestedGradeTwoGrammar(text).length&&/\b(?:identific\w*|reconoc\w*|localiz\w*|analiz\w*)\b/.test(text))mode='reading'
- else if(requestedGradeTwoGrammar(text).length&&/\b(?:utiliz\w*|emple\w*|complet\w*|transform\w*)\b/.test(text))mode='writing'
+ if(/\b(?:investig\w*|research)\b/.test(modeText)&&/\b(?:informacion|textos?|fuentes?)\b/.test(text))mode='research'
+ else if(/\b(?:escuch\w*|listen\w*)\b/.test(modeText))mode='listening'
+ else if(/\b(?:leer\w*|lean|lectura|leyendo|read\w*)\b/.test(modeText))mode='reading'
+ else if(/\b(?:video|audiovisual)\b/.test(modeText)&&/\b(?:grab\w*|crea\w*|elabor\w*)\b/.test(modeText))mode='audiovisual'
+ else if(/\b(?:escrib\w*|escrit\w*|redact\w*|correo|por escrito|writ\w*)\b/.test(modeText))mode='writing'
+ else if(/\b(?:dialog\w*|convers\w*|entrevist\w*|intercambio oral|role play)\b/.test(modeText))mode='interaction'
+ else if(features&&/\b(?:compar(?:ar(?:an)?|en|an|ando)|contrast(?:ar(?:an)?|en|an)|compare)\b/.test(text))mode='comparison'
+ else if(features&&/\b(?:explic\w*|analiz\w*)\b/.test(text))mode='analysis'
+ else if(/\b(?:oral\w*|present(?:ar|aran|an|en|acion)|expon\w*|narr\w*|speak\w*|tell)\b/.test(text))mode='oral'
+ else if(strategic.some(f=>f.id==='rehearsal'))mode='oral'
+ else if(features&&/\b(?:identific\w*|reconoc\w*|localiz\w*)\b/.test(text))mode='reading'
+ else if(features&&/\b(?:utiliz\w*|emple\w*|complet\w*|transform\w*)\b/.test(text))mode='writing'
+ else if(genres.length&&/\b(?:crea\w*|elabor\w*|disen\w*)\b/.test(text))mode='writing'
+ else if(genres.length&&/\b(?:canta\w*|recita\w*|interpreta\w*)\b/.test(text))mode='oral'
  if(!mode)return null
  const functions:FunctionId[]=[]
  if(/\b(?:sostener|sostend\w*|mantener|mantend\w*)\b/.test(text)&&/\bconversacion\b/.test(text))functions.push('conversation')
- if(/\b(?:actividades (?:cotidianas|diarias)|rutina|daily activities|routine)\b/.test(text))functions.push('daily')
- if(/\b(?:estado(?:s)? de animo|sensacion(?:es)? fisica(?:s)?|estado(?:s)? fisico(?:s)?|moods?)\b/.test(text))functions.push('states')
+ if(/\b(?:actividades (?:cotidianas|diarias|de la vida diaria)|rutina|daily activities|routine)\b/.test(text))functions.push('daily')
+ if(/\b(?:estado(?:s)? (?:de animo|animicos?)|sensacion(?:es)? fisica(?:s)?|estado(?:s)? fisico(?:s)?|moods?)\b/.test(text))functions.push('states')
  if(/\bayuda|\bhelp\b/.test(text))functions.push('help')
- if(/\b(?:compr\w*|shopping|precio|price)\b/.test(text))functions.push('shopping')
+ if(/\b(?:compr(?:a(?:r(?:an)?|n|ndo|s)?|e(?:n|mos)?|o)|shopping)\b/.test(text))functions.push('shopping')
  if(/\b(?:deseos?|esperanzas?|wishes|hopes)\b/.test(text))functions.push('wishes')
- if(/\b(?:consejos?|sugerencias?|advice|suggestions?)\b/.test(text))functions.push('advice')
+ if(/\b(?:consejos?|sugerencias?|recomendaciones?|advice|suggestions?)\b/.test(text))functions.push('advice')
  if(/\b(?:planes?|planear\w*|encuentro|cita|meeting|plans)\b/.test(text))functions.push('plans')
  if(/\b(?:experiencias?|acontecimientos?|hechos pasados|experience)\b/.test(text))functions.push('experience')
- return functions.length||requestedGradeTwoGrammar(text).length?{grade:2,mode,functions,text,...modes[mode]}:null
+ if(!functions.length&&mode==='interaction'&&/\b(?:convers(?:ar(?:an)?|an|en)|dialog(?:ar(?:an)?|an|uen))\b/.test(text))functions.push('conversation')
+ if(requestedGradeTwoStrategies(text,mode).some(f=>f.id==='cultural-comparison'))functions.splice(0)
+ const supported=grammar.length+lexical.length+requestedGradeTwoStrategies(text,mode).length+requestedGradeTwoGenres(text,mode).length
+ return functions.length||supported||context.length||mode==='research'?{grade:2,mode,functions,text,contextText,...modes[mode]}:null
 }
 /** Independent finite actions preserve reception and production; purpose infinitives
  * and requirements remain attached to their action. Source order selects the last
@@ -47,11 +73,20 @@ function single(description:string):EnglishGradeTwoTask|null{
  */
 export function resolveSecondGradeEnglishTask(title:string,description:string,context?:InstrumentAcademicContext|null):EnglishGradeTwoTask|null{
  if(!commonSecondGradeEnglish(context))return null
- const raw=withoutResources(description||title).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
+ const raw=withoutResources(description||title).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/\bno (?:se )?(?:evalu\w*|calific\w*|exig\w*|requer\w*|us\w*|utiliz\w*|emple\w*|respond\w*)\b[^.;]*/g,'')
  const action='(?:leer(?:an)?|lean|escuchar(?:an)?|escuchen|redactar(?:an)?|redacten|escribir(?:an)?|escriban|presentar(?:an)?|presenten|expondran|conversar(?:an)?|dialogar(?:an)?|comparar(?:an)?|compar(?:en|an)|crear(?:an)?|elaborar(?:an)?|narrar(?:an)?)'
- const prefix='(?:(?:luego|despues|posteriormente|finalmente),?\\s+)?(?:(?:los estudiantes|el alumnado|cada estudiante|ellos|ellas)\\s+)?'
+ const prefix='(?:(?:luego|despues|posteriormente|finalmente),?\\s+)?(?:(?:los estudiantes|el alumnado|cada estudiante|ellos|ellas)\\s+)?(?:(?:lo|la|los|las)\\s+)?'
  const parts=raw.split(new RegExp(`(?:[.;]\\s*|\\s+(?:y|luego|despues|posteriormente|finalmente)\\s+)(?=${prefix}${action}\\b)`,'g'))
- const actions=parts.map(single).filter((part):part is EnglishGradeTwoTask=>Boolean(part))
+ const actions:EnglishGradeTwoTask[]=[]
+ for(const part of parts){
+  const previous=actions.at(-1)
+  let task=single(part)
+  if(!task&&previous&&/\b(?:lo|la|los|las|sus trabajos)\s+(?:present\w*|expon\w*)\b/.test(part)){
+   task={...previous,mode:'oral',actions:undefined,...modes.oral,requirementText:affirmativeSecondGradeEnglishTask(part),contextText:normalizedTask(part)}
+  }
+  if(!task&&previous&&/\b(?:compar(?:aran|an|en|ar))\b/.test(part)&&/\b(?:ambos contextos|ambos paises|los dos contextos)\b/.test(part)&&/republica dominicana.*otros paises/.test(previous.text))task=single(part+' República Dominicana y otros países')
+  if(task)actions.push(task)
+ }
  if(actions.length<2)return single(description||title)
  const primary=actions.filter(part=>!['reading','listening'].includes(part.mode)).at(-1)??actions.at(-1)!
  return {...primary,text:affirmativeLanguageTask(description||title),actions}
@@ -70,7 +105,7 @@ export function secondGradeEnglishCriteria(task:EnglishGradeTwoTask):ContextualT
   }
   return rows
  }
- const {mode,text}=task,receptive=['reading','listening'].includes(mode),source=mode==='listening'?'mensaje escuchado':'texto leído'
+ const {mode,text}=task,receptive=['reading','listening','analysis','comparison','research'].includes(mode),source=mode==='listening'?'mensaje escuchado':'texto leído'
  const rows:ContextualTopicCriterion[]=task.functions.map(id=>{
   switch(id){
    case 'conversation':return row(id,'Continuidad de la conversación',[
@@ -92,7 +127,7 @@ export function secondGradeEnglishCriteria(task:EnglishGradeTwoTask):ContextualT
     ])
    }
    case 'states':{
-    const targets=[/estado(?:s)? de animo|moods?/.test(text)?'el estado de ánimo':'',/sensacion(?:es)? fisica(?:s)?|estado(?:s)? fisico(?:s)?/.test(text)?'la sensación física':''].filter(Boolean).join(' y ')
+    const targets=[/estado(?:s)? (?:de animo|animicos?)|moods?/.test(text)?'el estado de ánimo':'',/sensacion(?:es)? fisica(?:s)?|estado(?:s)? fisico(?:s)?|estados animicos y fisicos/.test(text)?'la sensación física':''].filter(Boolean).join(' y ')
     return row(id,'Estados del personaje o referente',[
      receptive?`Distingue ${targets} del personaje o referente indicado en el ${source} en inglés.`:`Describe en inglés ${targets} del personaje o referente indicado con oraciones básicas que permiten reconocer lo descrito.`,
      'Se comprende el estado solicitado; una referencia al personaje necesita precisión.',
@@ -105,7 +140,7 @@ export function secondGradeEnglishCriteria(task:EnglishGradeTwoTask):ContextualT
     const requesting=/solicit\w*|pedir\w*|pid\w*/.test(text),offering=/ofrec\w*|ofert\w*|offer/.test(text)
     const target=requesting&&offering?'la solicitud y la oferta de ayuda':offering?'la oferta de ayuda':'la solicitud de ayuda'
     return row(id,'Solicitud u oferta de ayuda',[
-     receptive?`Reconoce ${target} y a qué necesidad se refiere en el ${source} en inglés.`:`Formula en inglés ${target} relacionándola con la necesidad indicada en la tarea.`,
+     receptive?`Reconoce ${target} y a qué necesidad se refiere en el ${source} en inglés.`:`Formula en inglés ${target} ${requesting&&offering?'relacionándolas':'relacionándola'} con la necesidad indicada en la tarea.`,
      'Se comprende qué ayuda se pide u ofrece; una referencia a la necesidad requiere precisión.',
      'Menciona ayuda sin precisar qué necesita o qué ofrece ante la situación.',
      'La ayuda solicitada u ofrecida se refiere a una necesidad diferente de la planteada.',
@@ -139,7 +174,7 @@ export function secondGradeEnglishCriteria(task:EnglishGradeTwoTask):ContextualT
    ])
    case 'plans':{
     const details=[/\bdia\b|fecha|date/.test(text)?'el día':'',/\bhora\b|time/.test(text)?'la hora':'',/lugar|place/.test(text)?'el lugar':''].filter(Boolean)
-    const target=details.length<2?details[0]??'la información del plan solicitada':details.slice(0,-1).join(', ')+' y '+details.at(-1)
+    const target=details.length<2?details[0]??'la información solicitada':details.slice(0,-1).join(', ')+' y '+details.at(-1)
     return row(id,'Plan o encuentro acordado',[
      receptive?`Identifica la acción propuesta y ${target} en el plan del ${source} en inglés.`:`Comunica en inglés la acción propuesta y ${target} del plan o encuentro solicitado mediante oraciones básicas enlazadas.`,
      'El plan es reconocible; una referencia necesaria para el encuentro requiere precisión.',
@@ -157,8 +192,24 @@ export function secondGradeEnglishCriteria(task:EnglishGradeTwoTask):ContextualT
    ])
   }
  })
- rows.push(...requestedGradeTwoGrammar(text).map(f=>gradeTwoGrammarCriterion(f,text,mode)))
- if(mode==='interaction'||mode==='writing'&&/\b(?:responder\w*|respond\w*|intercambi\w*)\b/.test(text))rows.push(row('interaction','Respuesta al interlocutor',[
+ const requirements=task.requirementText??text
+ rows.push(...requestedGradeTwoGrammar(requirements).map(f=>gradeTwoGrammarCriterion(f,requirements,mode)))
+ rows.push(...requestedGradeTwoLexicon(requirements).map(f=>gradeTwoLexicalCriterion(f,requirements,mode)))
+ rows.push(...gradeTwoStrategyCriteria(requirements,mode))
+ rows.push(...gradeTwoGenreCriteria(requirements,mode,rows))
+ if(mode==='research'){
+  const target=[['celebraciones','las celebraciones'],['lugares de interes','los lugares de interés'],['tecnologia','la tecnología'],['salud','la salud'],['clima','el clima'],['situaciones problematicas','las situaciones problemáticas'],['actividades de tiempo libre','las actividades de tiempo libre']].filter(([pattern])=>new RegExp(pattern).test(text)).map(([,label])=>label).join(' y ')||'el asunto solicitado'
+  const provided=/proporcionad\w*|suministrad\w*/.test(text)
+  rows.push(row('research','Información recuperada de la investigación',[
+   `Recupera y relaciona información de ${provided?'los textos en inglés proporcionados':'las fuentes consultadas en inglés'} sobre ${target}, vinculándola con la pregunta o finalidad de la investigación.`,
+   'La información responde a la búsqueda principal; una relación con lo consultado necesita precisión.',
+   'Recupera datos aislados, pero deja sin relacionar información necesaria para responder a la búsqueda.',
+   'Atribuye a las fuentes información incompatible con lo consultado o con la búsqueda solicitada.',
+   'No aporta información reconocible relacionada con lo consultado y la búsqueda solicitada.',
+  ]))
+ }
+ rows.push(...gradeTwoContextCriteria(task.contextText??text,receptive))
+ if(mode==='interaction'||mode==='writing'&&/\b(?:responder\w*|respond\w*|intercambi\w*)\b|\b(?:correo|mensaje) (?:electronico )?de respuesta\b/.test(text))rows.push(row('interaction','Respuesta al interlocutor',[
   `Relaciona su respuesta en inglés con la intervención del interlocutor y permite continuar el intercambio${mode==='writing'?' escrito':''}.`,
   'La respuesta corresponde a lo dicho; necesita una aclaración puntual para continuar.',
   'Responde solo a una parte de la intervención y deja información relevante sin relacionar.',

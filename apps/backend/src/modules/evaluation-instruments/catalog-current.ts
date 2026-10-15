@@ -44,7 +44,12 @@ import {evaluationCatalogV44} from './catalog-v44'
 import {evaluationCatalogV45} from './catalog-v45'
 import {evaluationCatalogV46} from './catalog-v46'
 import {evaluationCatalogV47} from './catalog-v47'
-import {englishGradeTwoModule,englishGradeTwoGrammar} from '@aula/shared'
+import {evaluationCatalogV48} from './catalog-v48'
+import {evaluationCatalogV49} from './catalog-v49'
+import {evaluationCatalogV50} from './catalog-v50'
+import {evaluationCatalogV51} from './catalog-v51'
+import {evaluationCatalogV52} from './catalog-v52'
+import {englishGradeTwoModule,englishGradeTwoGrammar,englishGradeTwoLexicon,englishGradeTwoStrategies,englishGradeTwoGenres} from '@aula/shared'
 import {englishGradeOneGenres} from '@aula/shared'
 import {englishGradeOneStrategies} from '@aula/shared'
 import {englishGradeOneLexicon} from '@aula/shared'
@@ -56,8 +61,12 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV47,
-  version: 'evaluation-2026.48',
+  ...evaluationCatalogV52,
+  version: 'evaluation-2026.53',
+  englishGradeTwoNarrativePolicy:'EXPERIENCE_EVENTS_ONCE_EXPLICIT_NARRATIVE_COMPONENTS_RETAINED_V1',
+  englishGradeTwoShoppingPolicy:'PURCHASE_VERB_FORMS_EXCLUDE_CHECK_AND_COMPREHEND_V1',
+  englishGradeTwoRevisionPolicy:'EXPLICIT_MEANING_CORRECTION_AND_REPLY_EVIDENCE_V1',
+  englishGradeTwoReceptionPolicy:'REQUESTED_MENU_PRODUCT_PRICE_NO_IMPLICIT_PURCHASE_V1',
   criterionCompletionPolicy:'EXPLICIT_MANUAL_ADDITION_EXHAUSTION_NO_BLANK_PROPOSAL_V1',
   englishGradeOneRequestedEvidencePolicy:'ACTIVITY_QUANTITY_TEMPORAL_EXPRESSIONS_ORAL_QUESTION_RESPONSE_V1',
   englishGradeOneContextPolicy:'EXPLICIT_OBSERVABLE_COMMUNICATION_NO_UNREQUESTED_CONDITIONS_V2',
@@ -76,6 +85,11 @@ export const evaluationCatalogCurrent = {
   englishGradeOneModule,
   englishGradeTwoModule,
   englishGradeTwoGrammar,
+  englishGradeTwoLexicon,
+  englishGradeTwoStrategies,
+  englishGradeTwoGenres,
+  englishGradeTwoEvidencePolicy:'COMMON_SCOPE_EXPLICIT_FORMS_ACTIONS_PRODUCTS_CONDITIONS_NO_TRAIT_SCORES_V1',
+  englishGradeTwoAlternativePolicy:'REQUESTED_ONE_OF_FORMS_OR_PRODUCTS_NOT_SIMULTANEOUS_REQUIREMENTS_V1',
   activityTypes:[...evaluationCatalogV34.activityTypes,
     {id:'ORAL_INTERACTION',family:'ORAL',evidence:['PERFORMANCE','KNOWLEDGE'],triggers:[]},
     {id:'LISTENING_COMPREHENSION',family:'OBSERVATIONAL',evidence:['KNOWLEDGE','PERFORMANCE'],triggers:[]},
@@ -97,6 +111,11 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV52.version)return evaluationCatalogV52
+  if(version===evaluationCatalogV51.version)return evaluationCatalogV51
+  if(version===evaluationCatalogV50.version)return evaluationCatalogV50
+  if(version===evaluationCatalogV49.version)return evaluationCatalogV49
+  if(version===evaluationCatalogV48.version)return evaluationCatalogV48
   if(version===evaluationCatalogV47.version)return evaluationCatalogV47
   if(version===evaluationCatalogV46.version)return evaluationCatalogV46
   if(version===evaluationCatalogV45.version)return evaluationCatalogV45

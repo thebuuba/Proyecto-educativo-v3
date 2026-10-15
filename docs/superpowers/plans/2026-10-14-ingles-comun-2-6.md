@@ -18,7 +18,7 @@ Ejecución directa con `executing-plans`; sin subagentes. Encargo del adjunto `1
 ## Puertas de avance
 
 - [x] Base .46 comprobada; entorno recuperado sin reset,41 regresiones iniciales y rutina habitual con cinco evidencias/puntaje pendiente/17.35/agotamiento.
-- [ ] Segundo: PDF140–145, primer ciclo, común; fuente→motor→cuatro formatos→persistencia→cierre/push.
+- [x] Segundo: PDF140–145, primer ciclo, común; familias definidas verificadas,196 registros, cuatro formatos y persistencia. Un fragmento fuente ininterpretable excluido expresamente; cierre .53.
 - [ ] Tercero: PDF146–151; misma puerta, con requisitos propios.
 - [ ] Cuarto: PDF158–162, segundo ciclo, común; misma puerta.
 - [ ] Quinto: PDF163–168; misma puerta.
@@ -26,6 +26,6 @@ Ejecución directa con `executing-plans`; sin subagentes. Encargo del adjunto `1
 
 ## Recuperación
 
-Segundo sigue parcial en .48:196 registros cotejados, nueve funciones conectadas y cuatro ejemplos cotidianos editados/guardados/reabiertos. HTTP72 propuestas/nueve interpretaciones;6.459 backend,817 frontend, inventario9 y builds requeridos aprobados;108 previos intactos,112 actuales. La revisión descubrió/corrigió «el hora» antes de guardar. Próximo bloque: gramática41 familias y sus variaciones; después léxico/expresiones, estrategias, géneros/contexto/composición y cierre integral. Fuente y cuatro CRUD de funciones no cierran el grado.
+Segundo cierra sus familias definidas en .53:196 registros cotejados,16 grupos de conceptos, nueve funciones,41 familias gramaticales y léxico/expresiones/estrategias/géneros/contexto/composición conectados. Un fragmento oficial ininterpretable está excluido y documentado. HTTP158 casos/ocho selecciones/cuatro rechazos/cuatro conjuntos;10.210 backend,3.412 frontend específicas, inventario9 y builds requeridos aprobados. Cuatro nuevos CRUD cotidianos y snapshots cotejados;108 de base intactos,116 actuales. Revisión corrigió omisiones y falsas coincidencias. Próximo bloque: fuente visual propia de tercero146–151; después contratos e implementación, sin copiar el grado anterior.
 
 Inicio: Docker/Supabase/frontend apagados; no es un fallo del motor. Se inicia Docker oculto y `pnpm supabase:local`, conservando datos. Herramienta PDF en entorno temporal local, fuera de dependencias de aplicación y Git. No comenzar a implementar otro grado hasta cerrar segundo. El documento de continuación prevalece con el estado real de cada bloque.

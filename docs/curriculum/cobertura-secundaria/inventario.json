@@ -16219,16 +16219,16 @@
       ],
       "inventoryStatus": "INVENTARIADO",
       "extractionStatus": "EXTRAÍDO",
-      "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
+      "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
       "instrumentFormats": [
         "rubrica",
         "lista-cotejo",
         "escala",
         "lista-ponderada"
       ],
-      "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
-      "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
-      "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
+      "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+      "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+      "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
       "elements": {
         "CONCEPT": [
           {
@@ -17618,129 +17618,459 @@
       },
       "topics": [
         {
-          "id": "a3fa1fef-ada2-58dd-98a8-583937514904",
-          "title": "Temas",
+          "id": "ed5a15c5-84a2-56b3-9308-e0dd6d85b56b",
+          "title": "Relaciones humanas y sociales",
           "source": {
-            "id": "a3fa1fef-ada2-58dd-98a8-583937514904",
-            "text": "Temas",
+            "id": "ed5a15c5-84a2-56b3-9308-e0dd6d85b56b",
+            "text": "• Relaciones humanas y sociales",
             "pdfPage": 140,
             "printedPage": "139",
-            "sourceOrder": 1401000
+            "sourceOrder": 1401001
           },
-          "subtopics": [
-            {
-              "id": "ed5a15c5-84a2-56b3-9308-e0dd6d85b56b",
-              "text": "• Relaciones humanas y sociales",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401001
-            },
-            {
-              "id": "bd67c8db-ab79-5248-9a54-5f0750a39bc4",
-              "text": "• Actividades de la vida diaria",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401002
-            },
-            {
-              "id": "0ca7cee4-4194-568c-b2fd-5c7552003719",
-              "text": "• Vivienda, entorno y ciudad",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401003
-            },
-            {
-              "id": "bb5af495-1cbb-56ca-999c-8035c673ddeb",
-              "text": "•Escuela y educación",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401004
-            },
-            {
-              "id": "ea9b484f-9bb9-53ee-ba62-ae32651f02a3",
-              "text": "• Deporte, tiempo libre y recreación",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401005
-            },
-            {
-              "id": "d9c12db0-1de4-5da2-9fc4-07117f0e5257",
-              "text": "• Alimentación",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401006
-            },
-            {
-              "id": "f15ce6fe-5322-5f7b-8364-833ec5b773f9",
-              "text": "• Salud y cuidados físicos",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401007
-            },
-            {
-              "id": "1925ecfe-18f3-515f-9047-0e843e4e9e54",
-              "text": "• Ciencia y tecnología",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401008
-            },
-            {
-              "id": "46820447-0401-5f6c-957d-8e4c6cfc03e3",
-              "text": "• Lengua y comunicación",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401009
-            },
-            {
-              "id": "7281e275-ff2b-537e-9942-4baa9382440d",
-              "text": "• Clima, condiciones atmosféricas y\nmedioambiente",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401010
-            },
-            {
-              "id": "1ac7716e-9711-5833-bdc6-ffd2a73e8608",
-              "text": "•Bienes y servicios",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401011
-            },
-            {
-              "id": "a57ea7c7-eb6b-5881-9a57-c762d710d03e",
-              "text": "•Actividades sociales y culturales",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401012
-            },
-            {
-              "id": "8c4396ff-c348-52ba-8453-cc45639ea089",
-              "text": "• Viajes y turismo",
-              "pdfPage": 140,
-              "printedPage": "139",
-              "sourceOrder": 1401013
-            }
-          ],
+          "subtopics": [],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
           "instrumentFormats": [
             "rubrica",
             "lista-cotejo",
             "escala",
             "lista-ponderada"
           ],
-          "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
-          "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
-          "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
           "procedures": [],
-          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
           "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
-          "implementation": "PARTIAL_FUNCTIONS_ONLY",
-          "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
-          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
-          "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
-          "report": "ingles-2-punto-de-avance.md",
-          "catalogVersion": "evaluation-2026.48"
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "bd67c8db-ab79-5248-9a54-5f0750a39bc4",
+          "title": "Actividades de la vida diaria",
+          "source": {
+            "id": "bd67c8db-ab79-5248-9a54-5f0750a39bc4",
+            "text": "• Actividades de la vida diaria",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401002
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "0ca7cee4-4194-568c-b2fd-5c7552003719",
+          "title": "Vivienda, entorno y ciudad",
+          "source": {
+            "id": "0ca7cee4-4194-568c-b2fd-5c7552003719",
+            "text": "• Vivienda, entorno y ciudad",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401003
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "bb5af495-1cbb-56ca-999c-8035c673ddeb",
+          "title": "Escuela y educación",
+          "source": {
+            "id": "bb5af495-1cbb-56ca-999c-8035c673ddeb",
+            "text": "•Escuela y educación",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401004
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "ea9b484f-9bb9-53ee-ba62-ae32651f02a3",
+          "title": "Deporte, tiempo libre y recreación",
+          "source": {
+            "id": "ea9b484f-9bb9-53ee-ba62-ae32651f02a3",
+            "text": "• Deporte, tiempo libre y recreación",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401005
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "d9c12db0-1de4-5da2-9fc4-07117f0e5257",
+          "title": "Alimentación",
+          "source": {
+            "id": "d9c12db0-1de4-5da2-9fc4-07117f0e5257",
+            "text": "• Alimentación",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401006
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "f15ce6fe-5322-5f7b-8364-833ec5b773f9",
+          "title": "Salud y cuidados físicos",
+          "source": {
+            "id": "f15ce6fe-5322-5f7b-8364-833ec5b773f9",
+            "text": "• Salud y cuidados físicos",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401007
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "1925ecfe-18f3-515f-9047-0e843e4e9e54",
+          "title": "Ciencia y tecnología",
+          "source": {
+            "id": "1925ecfe-18f3-515f-9047-0e843e4e9e54",
+            "text": "• Ciencia y tecnología",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401008
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "46820447-0401-5f6c-957d-8e4c6cfc03e3",
+          "title": "Lengua y comunicación",
+          "source": {
+            "id": "46820447-0401-5f6c-957d-8e4c6cfc03e3",
+            "text": "• Lengua y comunicación",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401009
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "7281e275-ff2b-537e-9942-4baa9382440d",
+          "title": "Clima, condiciones atmosféricas y\nmedioambiente",
+          "source": {
+            "id": "7281e275-ff2b-537e-9942-4baa9382440d",
+            "text": "• Clima, condiciones atmosféricas y\nmedioambiente",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401010
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "1ac7716e-9711-5833-bdc6-ffd2a73e8608",
+          "title": "Bienes y servicios",
+          "source": {
+            "id": "1ac7716e-9711-5833-bdc6-ffd2a73e8608",
+            "text": "•Bienes y servicios",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401011
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "a57ea7c7-eb6b-5881-9a57-c762d710d03e",
+          "title": "Actividades sociales y culturales",
+          "source": {
+            "id": "a57ea7c7-eb6b-5881-9a57-c762d710d03e",
+            "text": "•Actividades sociales y culturales",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401012
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "8c4396ff-c348-52ba-8453-cc45639ea089",
+          "title": "Viajes y turismo",
+          "source": {
+            "id": "8c4396ff-c348-52ba-8453-cc45639ea089",
+            "text": "• Viajes y turismo",
+            "pdfPage": 140,
+            "printedPage": "139",
+            "sourceOrder": 1401013
+          },
+          "subtopics": [],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
         },
         {
           "id": "bffcadc6-9a8d-56a8-87ab-bd99121220b2",
@@ -17787,41 +18117,7 @@
               "pdfPage": 140,
               "printedPage": "139",
               "sourceOrder": 1401019
-            }
-          ],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
-          "instrumentFormats": [
-            "rubrica",
-            "lista-cotejo",
-            "escala",
-            "lista-ponderada"
-          ],
-          "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
-          "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
-          "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
-          "procedures": [],
-          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
-          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
-          "implementation": "PARTIAL_FUNCTIONS_ONLY",
-          "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
-          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
-          "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
-          "report": "ingles-2-punto-de-avance.md",
-          "catalogVersion": "evaluation-2026.48"
-        },
-        {
-          "id": "793cbabd-53ec-54ec-9ce9-4b6cbc66814c",
-          "title": "Vocabulario",
-          "source": {
-            "id": "793cbabd-53ec-54ec-9ce9-4b6cbc66814c",
-            "text": "Vocabulario",
-            "pdfPage": 141,
-            "printedPage": "140",
-            "sourceOrder": 1411000
-          },
-          "subtopics": [
+            },
             {
               "id": "1dfc6c83-0d2e-5142-a07d-1592dbb0916a",
               "text": "• Condiciones atmosféricas: rainy,\nsunny, cloudy, cold…",
@@ -17972,25 +18268,27 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
           "instrumentFormats": [
             "rubrica",
             "lista-cotejo",
             "escala",
             "lista-ponderada"
           ],
-          "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
-          "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
-          "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
           "procedures": [],
-          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
           "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
-          "implementation": "PARTIAL_FUNCTIONS_ONLY",
-          "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
-          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
-          "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
-          "report": "ingles-2-punto-de-avance.md",
-          "catalogVersion": "evaluation-2026.48"
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
         },
         {
           "id": "d46327e3-353d-5343-bd04-e63f0464ef91",
@@ -18100,14 +18398,43 @@
               "pdfPage": 142,
               "printedPage": "141",
               "sourceOrder": 1421014
-            },
-            {
-              "id": "f434b944-6c3c-58db-8568-7f4574423a45",
-              "text": "• Presente simple para sostener una\nconversación:\nWhat do you do for a living? Hello,\nthis is Ethan.",
-              "pdfPage": 142,
-              "printedPage": "141",
-              "sourceOrder": 1421015
-            },
+            }
+          ],
+          "inventoryStatus": "INVENTARIADO",
+          "extractionStatus": "EXTRAÍDO",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
+          "instrumentFormats": [
+            "rubrica",
+            "lista-cotejo",
+            "escala",
+            "lista-ponderada"
+          ],
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
+          "procedures": [],
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
+        },
+        {
+          "id": "f434b944-6c3c-58db-8568-7f4574423a45",
+          "title": "Gramática: formas y usos",
+          "source": {
+            "id": "f434b944-6c3c-58db-8568-7f4574423a45",
+            "text": "• Presente simple para sostener una\nconversación:\nWhat do you do for a living? Hello,\nthis is Ethan.",
+            "pdfPage": 142,
+            "printedPage": "141",
+            "sourceOrder": 1421015
+          },
+          "subtopics": [
             {
               "id": "350a364f-d68c-5b1c-8a8e-d2da2cf25bb8",
               "text": "• Presente simple para referirse a\nactividades cotidianas:\nShe always picks up her kids at\nschool.",
@@ -18310,82 +18637,28 @@
               "pdfPage": 144,
               "printedPage": "143",
               "sourceOrder": 1441006
-            }
-          ],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
-          "instrumentFormats": [
-            "rubrica",
-            "lista-cotejo",
-            "escala",
-            "lista-ponderada"
-          ],
-          "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
-          "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
-          "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
-          "procedures": [],
-          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
-          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
-          "implementation": "PARTIAL_FUNCTIONS_ONLY",
-          "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
-          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
-          "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
-          "report": "ingles-2-punto-de-avance.md",
-          "catalogVersion": "evaluation-2026.48"
-        },
-        {
-          "id": "1e0f4eac-f8ea-5df5-9377-fd5f8e659e19",
-          "title": "Pronombres:\nObjeto: me, her, them… Would you call me\nlater, please?\nPosesivos: mine, yours, his, hers… These red\npens are mine.\nReflexivos: myself, yourself...\nHe cut himself while he was cooking.",
-          "source": {
-            "id": "1e0f4eac-f8ea-5df5-9377-fd5f8e659e19",
-            "text": "Pronombres:\nObjeto: me, her, them… Would you call me\nlater, please?\nPosesivos: mine, yours, his, hers… These red\npens are mine.\nReflexivos: myself, yourself...\nHe cut himself while he was cooking.",
-            "pdfPage": 144,
-            "printedPage": "143",
-            "sourceOrder": 1441007
-          },
-          "subtopics": [
+            },
+            {
+              "id": "1e0f4eac-f8ea-5df5-9377-fd5f8e659e19",
+              "text": "Pronombres:\nObjeto: me, her, them… Would you call me\nlater, please?\nPosesivos: mine, yours, his, hers… These red\npens are mine.\nReflexivos: myself, yourself...\nHe cut himself while he was cooking.",
+              "pdfPage": 144,
+              "printedPage": "143",
+              "sourceOrder": 1441007
+            },
             {
               "id": "4a8903c6-3348-5d6d-9b0d-262bc38f632b",
               "text": "• Adverbios de:\nTiempo: now, in the past, yet, already, still… I\nstill want to go there.\nFrecuencia: never, always; once a week, … I\nnever drink coffee at night.\nCantidad: most of, some of…",
               "pdfPage": 144,
               "printedPage": "143",
               "sourceOrder": 1441008
-            }
-          ],
-          "inventoryStatus": "INVENTARIADO",
-          "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
-          "instrumentFormats": [
-            "rubrica",
-            "lista-cotejo",
-            "escala",
-            "lista-ponderada"
-          ],
-          "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
-          "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
-          "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
-          "procedures": [],
-          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
-          "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
-          "implementation": "PARTIAL_FUNCTIONS_ONLY",
-          "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
-          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
-          "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
-          "report": "ingles-2-punto-de-avance.md",
-          "catalogVersion": "evaluation-2026.48"
-        },
-        {
-          "id": "99bb98b0-f00d-5a0f-b097-22c6386775f0",
-          "title": "Most of my friends learned English in high\nschool.\nIntensidad: very, so, really, too The movie was\nreally boring.",
-          "source": {
-            "id": "99bb98b0-f00d-5a0f-b097-22c6386775f0",
-            "text": "Most of my friends learned English in high\nschool.\nIntensidad: very, so, really, too The movie was\nreally boring.",
-            "pdfPage": 144,
-            "printedPage": "143",
-            "sourceOrder": 1441009
-          },
-          "subtopics": [
+            },
+            {
+              "id": "99bb98b0-f00d-5a0f-b097-22c6386775f0",
+              "text": "Most of my friends learned English in high\nschool.\nIntensidad: very, so, really, too The movie was\nreally boring.",
+              "pdfPage": 144,
+              "printedPage": "143",
+              "sourceOrder": 1441009
+            },
             {
               "id": "01c4d772-9347-5866-be2a-bec54c6018e8",
               "text": "•Preposiciones de:\nTiempo: in, on, at…\nI’ll meet you at 3:00 pm.\nDuración: since, for, ago, until… I lived there\nuntil 2014.",
@@ -18403,36 +18676,54 @@
           ],
           "inventoryStatus": "INVENTARIADO",
           "extractionStatus": "EXTRAÍDO",
-          "engineConnection": "PARTIAL_COMMON_ENGLISH_FUNCTION_PROVIDER",
+          "engineConnection": "COMMON_ENGLISH_SECOND_GRADE_SCOPED_PROVIDERS",
           "instrumentFormats": [
             "rubrica",
             "lista-cotejo",
             "escala",
             "lista-ponderada"
           ],
-          "serviceVerification": "FUNCTIONS_LOCAL_AUTHENTICATED_HTTP_ONLY_SCOPE_PARTIAL",
-          "interfaceVerification": "FOUR_FUNCTION_EXAMPLES_SAVED_REOPENED_SCOPE_PARTIAL",
-          "pending": "Segundo parcial: completar gramática, léxico, expresiones, estrategias, géneros/contexto y composición; contratos exhaustivos, revisión de todas las familias, operaciones de filas y cierre integral. HTTP/Chrome aprobados únicamente para ejemplos de funciones; no comenzar tercero.",
+          "serviceVerification": "158_DEFINED_CASES_HTTP_FORMAT_ROTATION_SELECTION_CAPACITY",
+          "interfaceVerification": "FOUR_AUTHENTICATED_CHROME_CRUD_FIELDS_IDENTITIES_POINTS_CHECKED",
+          "pending": "Sin pendientes de implementación de las familias definidas. Limitación: fragmento oficial PROCEDURE20 ininterpretable excluido, sin inventar significado. Comprensión determinista acotada a patrones ensayados; no se promete cualquier redacción. Siguiente grado3, no Francés.",
           "procedures": [],
-          "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
+          "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
           "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
-          "implementation": "PARTIAL_FUNCTIONS_ONLY",
-          "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
-          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
-          "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
-          "report": "ingles-2-punto-de-avance.md",
-          "catalogVersion": "evaluation-2026.48"
+          "implementation": "VERIFIED_DEFINED_FAMILIES",
+          "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+          "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+          "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+          "sourceNotes": [],
+          "provenance": "PDF_COLUMNS_VISUALLY_REVIEWED",
+          "report": "ingles-2-informe-final.md",
+          "catalogVersion": "evaluation-2026.53"
         }
       ],
       "extraction": "EXTRACTED_PENDING_REVIEW",
-      "implementation": "PARTIAL_FUNCTIONS_ONLY",
-      "automatedVerification": "FUNCTION_CONTRACTS_AND_ROW_OPERATIONS_ONLY",
-      "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED",
-      "applicationVerification": "FOUR_FUNCTION_EXAMPLES_ONLY_SCOPE_PARTIAL",
+      "implementation": "VERIFIED_DEFINED_FAMILIES",
+      "automatedVerification": "DEFINED_FAMILIES_FOUR_FORMATS_TOTALS_PENDING_ROW_OPERATIONS_PARITY",
+      "manualVerification": "SOURCE_196_RECORDS_VISUALLY_REVIEWED_ONE_UNINTERPRETABLE_FRAGMENT_EXCLUDED",
+      "applicationVerification": "FOUR_EVERYDAY_INSTRUMENTS_EDITED_SAVED_REOPENED_SNAPSHOTS_CHECKED",
+      "conceptHeadings": [
+        {
+          "id": "a3fa1fef-ada2-58dd-98a8-583937514904",
+          "text": "Temas",
+          "pdfPage": 140,
+          "printedPage": "139",
+          "sourceOrder": 1401000
+        },
+        {
+          "id": "793cbabd-53ec-54ec-9ce9-4b6cbc66814c",
+          "text": "Vocabulario",
+          "pdfPage": 141,
+          "printedPage": "140",
+          "sourceOrder": 1411000
+        }
+      ],
       "boundaryReview": "VISUALLY_REVIEWED_PDF_140_145",
-      "procedureAssociation": "SOURCE_LEDGER_WITH_EXPLICIT_PENDING",
-      "report": "ingles-2-punto-de-avance.md",
-      "catalogVersion": "evaluation-2026.48"
+      "procedureAssociation": "SOURCE_LEDGER_CONDITIONAL_PROVIDERS_EXPLICIT_EXCLUSIONS",
+      "report": "ingles-2-informe-final.md",
+      "catalogVersion": "evaluation-2026.53"
     },
     {
       "id": "cc482480-0f08-5657-98aa-1afd28ecfa1a",

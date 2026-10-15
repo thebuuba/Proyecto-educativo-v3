@@ -27,7 +27,12 @@
     "Los temas cotidianos son ámbitos de comunicación; no generan filas por mencionar su nombre.",
     "Géneros de recepción y producción tienen listas diferentes; no trasladar todos los productos de recepción a producción."
   ],
-  "status": "PARTIAL_NO_GRADE_CLOSURE",
+  "limitations": [
+    "Un fragmento oficial ininterpretable excluido expresamente; no se afirma resolverlo.",
+    "Cobertura de familias y patrones definidos; no de cualquier redacción imaginable.",
+    "Audiovisual procede de una consigna explícita, no de una lista curricular inventada."
+  ],
+  "status": "VERIFIED_DEFINED_FAMILIES_WITH_DOCUMENTED_SOURCE_EXCLUSION",
   "records": [
     {
       "id": "a3fa1fef-ada2-58dd-98a8-583937514904",
@@ -50,10 +55,14 @@
       "sourceOrder": 1401001,
       "type": "CONCEPT",
       "index": 1,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-conversation",
+        "ing-2-states",
+        "ing-2-help"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "bd67c8db-ab79-5248-9a54-5f0750a39bc4",
@@ -63,10 +72,12 @@
       "sourceOrder": 1401002,
       "type": "CONCEPT",
       "index": 2,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-daily"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "0ca7cee4-4194-568c-b2fd-5c7552003719",
@@ -76,10 +87,13 @@
       "sourceOrder": 1401003,
       "type": "CONCEPT",
       "index": 3,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-places",
+        "ing-2-lexicon-roads"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "bb5af495-1cbb-56ca-999c-8035c673ddeb",
@@ -89,10 +103,13 @@
       "sourceOrder": 1401004,
       "type": "CONCEPT",
       "index": 4,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-subjects",
+        "ing-2-lexicon-education"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "ea9b484f-9bb9-53ee-ba62-ae32651f02a3",
@@ -102,10 +119,13 @@
       "sourceOrder": 1401005,
       "type": "CONCEPT",
       "index": 5,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-leisure",
+        "ing-2-lexicon-sports"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "d9c12db0-1de4-5da2-9fc4-07117f0e5257",
@@ -115,10 +135,12 @@
       "sourceOrder": 1401006,
       "type": "CONCEPT",
       "index": 6,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-food"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "f15ce6fe-5322-5f7b-8364-833ec5b773f9",
@@ -128,10 +150,15 @@
       "sourceOrder": 1401007,
       "type": "CONCEPT",
       "index": 7,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-states",
+        "ing-2-lexicon-ailments",
+        "ing-2-lexicon-medicines",
+        "ing-2-context-care"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "1925ecfe-18f3-515f-9047-0e843e4e9e54",
@@ -141,10 +168,14 @@
       "sourceOrder": 1401008,
       "type": "CONCEPT",
       "index": 8,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-technology",
+        "ing-2-help",
+        "ing-2-advice"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "46820447-0401-5f6c-957d-8e4c6cfc03e3",
@@ -154,10 +185,13 @@
       "sourceOrder": 1401009,
       "type": "CONCEPT",
       "index": 9,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-strategy-dictionary",
+        "ing-2-strategy-revision"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "7281e275-ff2b-537e-9942-4baa9382440d",
@@ -167,10 +201,13 @@
       "sourceOrder": 1401010,
       "type": "CONCEPT",
       "index": 10,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-weather-words",
+        "ing-2-context-care"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "1ac7716e-9711-5833-bdc6-ffd2a73e8608",
@@ -180,10 +217,13 @@
       "sourceOrder": 1401011,
       "type": "CONCEPT",
       "index": 11,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-shopping",
+        "ing-2-context-purchase-choice"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "a57ea7c7-eb6b-5881-9a57-c762d710d03e",
@@ -193,10 +233,12 @@
       "sourceOrder": 1401012,
       "type": "CONCEPT",
       "index": 12,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "8c4396ff-c348-52ba-8453-cc45639ea089",
@@ -206,10 +248,13 @@
       "sourceOrder": 1401013,
       "type": "CONCEPT",
       "index": 13,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-transport",
+        "ing-2-plans"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
     },
     {
       "id": "bffcadc6-9a8d-56a8-87ab-bd99121220b2",
@@ -232,10 +277,12 @@
       "sourceOrder": 1401015,
       "type": "CONCEPT",
       "index": 15,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-daily"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "2bcfb8ef-a684-5f27-9360-b1e6dd196cf9",
@@ -245,10 +292,12 @@
       "sourceOrder": 1401016,
       "type": "CONCEPT",
       "index": 16,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-leisure"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "49f7dd1c-5c0c-5928-8312-3ca8a24a1291",
@@ -258,10 +307,12 @@
       "sourceOrder": 1401017,
       "type": "CONCEPT",
       "index": 17,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-subjects"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "f4b745e5-b2e0-5aa6-b417-98d7523f53e0",
@@ -271,10 +322,12 @@
       "sourceOrder": 1401018,
       "type": "CONCEPT",
       "index": 18,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-celebrations"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "cc67f623-2a66-5909-a71d-6c452165a798",
@@ -284,10 +337,12 @@
       "sourceOrder": 1401019,
       "type": "CONCEPT",
       "index": 19,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-food"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "793cbabd-53ec-54ec-9ce9-4b6cbc66814c",
@@ -310,10 +365,12 @@
       "sourceOrder": 1411001,
       "type": "CONCEPT",
       "index": 21,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-weather-words"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "f76df507-c63e-50d9-a9c3-c9493ac0dbd7",
@@ -323,10 +380,12 @@
       "sourceOrder": 1411002,
       "type": "CONCEPT",
       "index": 22,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-sports"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "a2bf7b7b-6903-58a4-88e1-44144a2f8cfe",
@@ -336,10 +395,12 @@
       "sourceOrder": 1411003,
       "type": "CONCEPT",
       "index": 23,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-money"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "65cc3397-c504-5df0-9908-a67bc95a5ccb",
@@ -349,10 +410,12 @@
       "sourceOrder": 1411004,
       "type": "CONCEPT",
       "index": 24,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-ailments"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "23536f8c-47e1-5fa5-aeef-a50ac2af2a80",
@@ -362,10 +425,12 @@
       "sourceOrder": 1411005,
       "type": "CONCEPT",
       "index": 25,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-education"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "90d1c284-15de-5731-9917-d6db63ac1501",
@@ -375,10 +440,12 @@
       "sourceOrder": 1411006,
       "type": "CONCEPT",
       "index": 26,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-shops"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "1ac47bfe-4b56-5ab0-858b-5e02ce446e74",
@@ -388,10 +455,12 @@
       "sourceOrder": 1411007,
       "type": "CONCEPT",
       "index": 27,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-moods"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "9b14cf81-c1f6-5d52-ab09-d59cf9bbe5b2",
@@ -401,10 +470,12 @@
       "sourceOrder": 1411008,
       "type": "CONCEPT",
       "index": 28,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-life-events"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "26800733-77c9-562c-966d-e7c389a652c0",
@@ -414,10 +485,12 @@
       "sourceOrder": 1411009,
       "type": "CONCEPT",
       "index": 29,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-interaction-channels"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "f4fda688-4d33-5605-840b-d4eee78f06f2",
@@ -427,10 +500,12 @@
       "sourceOrder": 1411010,
       "type": "CONCEPT",
       "index": 30,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-places"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "f77d36b0-006a-5f96-b7a3-78bdfe5d2896",
@@ -440,10 +515,12 @@
       "sourceOrder": 1411011,
       "type": "CONCEPT",
       "index": 31,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-medicines"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "1599baba-12e5-5f81-a6f2-2817936dbc61",
@@ -453,10 +530,12 @@
       "sourceOrder": 1411012,
       "type": "CONCEPT",
       "index": 32,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-transport"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "7b2b40f3-11e1-524c-98de-40a4d3b1a8c9",
@@ -466,10 +545,12 @@
       "sourceOrder": 1411013,
       "type": "CONCEPT",
       "index": 33,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-cardinal"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "47937919-717f-5778-b2e5-eeffd254b0a4",
@@ -479,10 +560,12 @@
       "sourceOrder": 1411014,
       "type": "CONCEPT",
       "index": 34,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-ordinal"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "29f444e7-894d-5e97-a2e3-fe82cd0902ae",
@@ -492,10 +575,12 @@
       "sourceOrder": 1411015,
       "type": "CONCEPT",
       "index": 35,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-jobs"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "7bb66e1f-2bac-50a4-af8e-98ff50a882a0",
@@ -505,10 +590,12 @@
       "sourceOrder": 1411016,
       "type": "CONCEPT",
       "index": 36,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-body"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "b1de4f95-07ec-512a-ae29-f0bc3e148fc9",
@@ -518,10 +605,12 @@
       "sourceOrder": 1411017,
       "type": "CONCEPT",
       "index": 37,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-compass"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "42fc8160-c137-534b-9476-922a970ce195",
@@ -531,10 +620,12 @@
       "sourceOrder": 1411018,
       "type": "CONCEPT",
       "index": 38,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-relationships"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "0e96bb59-5fc1-51ea-9653-dc7ce02826a2",
@@ -544,10 +635,12 @@
       "sourceOrder": 1411019,
       "type": "CONCEPT",
       "index": 39,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-physical-sensations"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "0f3cd362-43ca-5c1e-af3e-78434713901a",
@@ -557,10 +650,12 @@
       "sourceOrder": 1411020,
       "type": "CONCEPT",
       "index": 40,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-sizes"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "680ecfa2-bf5c-59bc-9484-744492328fc0",
@@ -570,10 +665,13 @@
       "sourceOrder": 1411021,
       "type": "CONCEPT",
       "index": 41,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo. Registro compuesto: tecnología y vías; separar ambas familias léxicas.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero. Registro compuesto: tecnología y vías; separar ambas familias léxicas.",
+      "providers": [
+        "ing-2-lexicon-technology",
+        "ing-2-lexicon-roads"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "d46327e3-353d-5343-bd04-e63f0464ef91",
@@ -596,10 +694,12 @@
       "sourceOrder": 1421001,
       "type": "CONCEPT",
       "index": 43,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-courtesy"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "b1d3ba3a-af62-507c-b64f-52be867ecc9a",
@@ -611,8 +711,10 @@
       "index": 44,
       "decision": "CONTINUATION_NOT_NEW_FAMILY",
       "note": "You’re welcome continúa las fórmulas de cortesía de la fila anterior; no constituye una nueva familia.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "providers": [
+        "ing-2-lexicon-courtesy"
+      ],
+      "verification": "LEXICON_COURTESY_CONTRACTS"
     },
     {
       "id": "7f677ffd-384a-5474-80d5-6d62563618a0",
@@ -622,10 +724,12 @@
       "sourceOrder": 1421003,
       "type": "CONCEPT",
       "index": 45,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-attention"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "c4dbbb07-1e31-55fd-9f7a-a92389761468",
@@ -635,10 +739,12 @@
       "sourceOrder": 1421004,
       "type": "CONCEPT",
       "index": 46,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-interruption"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "2ae85c93-e07a-565d-9523-599da21f36e6",
@@ -648,10 +754,12 @@
       "sourceOrder": 1421005,
       "type": "CONCEPT",
       "index": 47,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-turns"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "b2321df7-c413-538b-b931-92006e635cca",
@@ -661,10 +769,12 @@
       "sourceOrder": 1421006,
       "type": "CONCEPT",
       "index": 48,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-repetition"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "6506c016-e4d2-59cc-94c1-a43df93eb38e",
@@ -674,10 +784,12 @@
       "sourceOrder": 1421007,
       "type": "CONCEPT",
       "index": 49,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-excuse"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "443ccfdc-9a9f-5f23-a26c-a789bde85a7d",
@@ -687,10 +799,12 @@
       "sourceOrder": 1421008,
       "type": "CONCEPT",
       "index": 50,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-uncertainty"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "b8f14799-878f-5bf0-98ba-be7335e89a35",
@@ -700,10 +814,12 @@
       "sourceOrder": 1421009,
       "type": "CONCEPT",
       "index": 51,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-empathy"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "6aa70f20-7391-5e32-b77c-314fd17dac60",
@@ -713,10 +829,12 @@
       "sourceOrder": 1421010,
       "type": "CONCEPT",
       "index": 52,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-indifference"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "e2953c97-bcf8-5002-91df-be072774e4d9",
@@ -726,10 +844,12 @@
       "sourceOrder": 1421011,
       "type": "CONCEPT",
       "index": 53,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-agreement"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "dfa4dfbf-91bc-5d33-a762-b87226cb586c",
@@ -739,10 +859,12 @@
       "sourceOrder": 1421012,
       "type": "CONCEPT",
       "index": 54,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-dates"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "a3650f34-0094-52e5-ade0-87e60b84348c",
@@ -752,10 +874,12 @@
       "sourceOrder": 1421013,
       "type": "CONCEPT",
       "index": 55,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-hours"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "77c9d689-9b36-5261-8ea7-d1214ac427fb",
@@ -765,10 +889,12 @@
       "sourceOrder": 1421014,
       "type": "CONCEPT",
       "index": 56,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo. Expresiones de deseos y esperanzas con encabezado Gramática incrustado; separar etiqueta del contenido.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero. Expresiones de deseos y esperanzas con encabezado Gramática incrustado; separar etiqueta del contenido.",
+      "providers": [
+        "ing-2-lexicon-desire"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "f434b944-6c3c-58db-8568-7f4574423a45",
@@ -778,12 +904,12 @@
       "sourceOrder": 1421015,
       "type": "CONCEPT",
       "index": 57,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-present-simple"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "350a364f-d68c-5b1c-8a8e-d2da2cf25bb8",
@@ -793,12 +919,12 @@
       "sourceOrder": 1421016,
       "type": "CONCEPT",
       "index": 58,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-present-simple"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "8040a7de-3874-50fd-aed0-31a5723a7d86",
@@ -808,12 +934,12 @@
       "sourceOrder": 1421017,
       "type": "CONCEPT",
       "index": 59,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-present-simple"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "aadd83e1-fc02-5943-b192-fb7528d294bc",
@@ -823,12 +949,12 @@
       "sourceOrder": 1421018,
       "type": "CONCEPT",
       "index": 60,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-present-simple"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "f7f2caae-2252-5752-9377-ea646f068a78",
@@ -838,12 +964,12 @@
       "sourceOrder": 1421019,
       "type": "CONCEPT",
       "index": 61,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-past-simple"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "c209bd7c-591d-59c1-adb9-ea9a0e49f27f",
@@ -853,12 +979,12 @@
       "sourceOrder": 1421020,
       "type": "CONCEPT",
       "index": 62,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-past-continuous"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "380639cf-3149-5146-93d7-ecea67710dd0",
@@ -868,12 +994,12 @@
       "sourceOrder": 1421021,
       "type": "CONCEPT",
       "index": 63,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-present-perfect"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "185b80c1-35f0-5862-a5a4-12aec86aae4c",
@@ -883,13 +1009,13 @@
       "sourceOrder": 1431000,
       "type": "CONCEPT",
       "index": 64,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
-        "ing-2-feature-past-continuous",
-        "ing-2-feature-past-simple"
+        "ing-2-feature-past-simple",
+        "ing-2-feature-past-continuous"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "8479cd14-bbb3-5cbe-bb99-7f3cd03b6eab",
@@ -899,12 +1025,12 @@
       "sourceOrder": 1431001,
       "type": "CONCEPT",
       "index": 65,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-will"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "263ce2a7-a44e-5066-94a7-a02c6a885e52",
@@ -914,12 +1040,12 @@
       "sourceOrder": 1431002,
       "type": "CONCEPT",
       "index": 66,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-going-to"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "22c3c034-591c-5afc-af57-3679236af764",
@@ -929,12 +1055,12 @@
       "sourceOrder": 1431003,
       "type": "CONCEPT",
       "index": 67,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-present-continuous"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "80bb9837-21be-587b-b488-2da3bef43b9b",
@@ -944,12 +1070,12 @@
       "sourceOrder": 1431004,
       "type": "CONCEPT",
       "index": 68,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-there-past"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "352e5a82-0289-5007-a7e8-ab15853f8d3f",
@@ -959,12 +1085,12 @@
       "sourceOrder": 1431005,
       "type": "CONCEPT",
       "index": 69,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-imperative"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "de9c4398-da2f-5e96-aad2-a2bc743de0e8",
@@ -974,12 +1100,12 @@
       "sourceOrder": 1431006,
       "type": "CONCEPT",
       "index": 70,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-lets"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "bc6fd400-cc5c-5cfa-ba36-079261868474",
@@ -989,12 +1115,12 @@
       "sourceOrder": 1431007,
       "type": "CONCEPT",
       "index": 71,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-wishes"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "4bba1e27-e3db-54bc-82ac-8c0595f027be",
@@ -1004,12 +1130,12 @@
       "sourceOrder": 1431008,
       "type": "CONCEPT",
       "index": 72,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-permission"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "285f907c-d651-5d8e-aeb9-3f3aba49ed54",
@@ -1019,12 +1145,12 @@
       "sourceOrder": 1431009,
       "type": "CONCEPT",
       "index": 73,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-should"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "0b1a42fd-650b-539a-93cb-ce1c7df4410e",
@@ -1034,12 +1160,12 @@
       "sourceOrder": 1431010,
       "type": "CONCEPT",
       "index": 74,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-conditional"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "f495da67-9031-5f64-92f1-4469aaa03818",
@@ -1049,12 +1175,12 @@
       "sourceOrder": 1431011,
       "type": "CONCEPT",
       "index": 75,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-question-tags"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "ffe38529-f293-56a4-ad03-da23c84bc43f",
@@ -1064,12 +1190,12 @@
       "sourceOrder": 1431012,
       "type": "CONCEPT",
       "index": 76,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-passive"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "702baa30-f852-5e5d-8569-e883e8ccca30",
@@ -1079,12 +1205,12 @@
       "sourceOrder": 1431013,
       "type": "CONCEPT",
       "index": 77,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-exclamation"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "86052547-8691-5570-abc9-6a689858c427",
@@ -1094,12 +1220,12 @@
       "sourceOrder": 1431014,
       "type": "CONCEPT",
       "index": 78,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-possessive-s"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "9504dd28-08c8-5561-9d47-69ed7de45fd8",
@@ -1109,12 +1235,12 @@
       "sourceOrder": 1431015,
       "type": "CONCEPT",
       "index": 79,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-countability"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "ab22ae38-2762-5a66-ab6e-85143e8d27ac",
@@ -1124,12 +1250,12 @@
       "sourceOrder": 1441000,
       "type": "CONCEPT",
       "index": 80,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-gender"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "04559fef-5a44-5a7f-8856-3714c7df594b",
@@ -1139,14 +1265,14 @@
       "sourceOrder": 1441001,
       "type": "CONCEPT",
       "index": 81,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
       "providers": [
-        "ing-2-feature-number",
         "ing-2-feature-articles",
-        "ing-2-feature-comparative"
+        "ing-2-feature-comparative",
+        "ing-2-feature-number"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "d81a9da3-6077-5b68-a55d-ecd4bf7921b6",
@@ -1156,12 +1282,12 @@
       "sourceOrder": 1441002,
       "type": "CONCEPT",
       "index": 82,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-present-participle"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "cf6b552a-108b-5971-a52e-3c1ed8a7fc16",
@@ -1171,12 +1297,12 @@
       "sourceOrder": 1441003,
       "type": "CONCEPT",
       "index": 83,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-past-participle"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "3de7501c-0d4c-58d0-a3a8-c7998a570a1d",
@@ -1186,12 +1312,12 @@
       "sourceOrder": 1441004,
       "type": "CONCEPT",
       "index": 84,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-interrogative-pronouns"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "eecfacbe-4a53-5aca-baa4-ffebe3c406ae",
@@ -1201,12 +1327,12 @@
       "sourceOrder": 1441005,
       "type": "CONCEPT",
       "index": 85,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-how-much-many"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "c8a9932a-720e-5435-afc7-6808fe2a58bb",
@@ -1216,12 +1342,12 @@
       "sourceOrder": 1441006,
       "type": "CONCEPT",
       "index": 86,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
       "providers": [
         "ing-2-feature-why-suggestion"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "1e0f4eac-f8ea-5df5-9377-fd5f8e659e19",
@@ -1231,14 +1357,14 @@
       "sourceOrder": 1441007,
       "type": "CONCEPT",
       "index": 87,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
       "providers": [
         "ing-2-feature-object-pronouns",
         "ing-2-feature-possessive-pronouns",
         "ing-2-feature-reflexive-pronouns"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "4a8903c6-3348-5d6d-9b0d-262bc38f632b",
@@ -1248,14 +1374,14 @@
       "sourceOrder": 1441008,
       "type": "CONCEPT",
       "index": 88,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
       "providers": [
         "ing-2-feature-time-adverbs",
         "ing-2-feature-frequency-adverbs",
         "ing-2-feature-quantity-adverbs"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "99bb98b0-f00d-5a0f-b097-22c6386775f0",
@@ -1265,13 +1391,13 @@
       "sourceOrder": 1441009,
       "type": "CONCEPT",
       "index": 89,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
       "providers": [
-        "ing-2-feature-quantity-adverbs",
-        "ing-2-feature-degree-adverbs"
+        "ing-2-feature-degree-adverbs",
+        "ing-2-feature-quantity-adverbs"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "01c4d772-9347-5866-be2a-bec54c6018e8",
@@ -1281,13 +1407,13 @@
       "sourceOrder": 1441010,
       "type": "CONCEPT",
       "index": 90,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
       "providers": [
         "ing-2-feature-time-prepositions",
         "ing-2-feature-duration-prepositions"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "2e4629c6-b29a-5d3a-98ae-80f58b18c01f",
@@ -1297,15 +1423,15 @@
       "sourceOrder": 1441011,
       "type": "CONCEPT",
       "index": 91,
-      "decision": "CONNECTED_PENDING_EXHAUSTIVE_REVIEW",
-      "note": "Requisitos gramaticales presentes en segundo; autoría conectada. Pendientes contratos de todas las formas, usos específicos, variaciones y revisión de pertinencia. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
       "providers": [
         "ing-2-feature-coordination-connectors",
         "ing-2-feature-time-connectors",
         "ing-2-feature-sequence-connectors",
         "ing-2-feature-cause-connectors"
       ],
-      "verification": "NOT_RUN"
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "0e7d2a8f-fb3c-52b8-8008-531ee044c2c0",
@@ -1329,7 +1455,7 @@
       "type": "PROCEDURE",
       "index": 1,
       "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
-      "note": "Función propia del grado: nueve consignas representativas, cuatro formatos,20/17.35 y alternativa local; no equivale al cierre integral del grado.",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
       "providers": [
         "ing-2-conversation"
       ],
@@ -1344,7 +1470,7 @@
       "type": "PROCEDURE",
       "index": 2,
       "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
-      "note": "Función propia del grado: nueve consignas representativas, cuatro formatos,20/17.35 y alternativa local; no equivale al cierre integral del grado.",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
       "providers": [
         "ing-2-daily"
       ],
@@ -1359,7 +1485,7 @@
       "type": "PROCEDURE",
       "index": 3,
       "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
-      "note": "Función propia del grado: nueve consignas representativas, cuatro formatos,20/17.35 y alternativa local; no equivale al cierre integral del grado.",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
       "providers": [
         "ing-2-states"
       ],
@@ -1374,7 +1500,7 @@
       "type": "PROCEDURE",
       "index": 4,
       "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
-      "note": "Función propia del grado: nueve consignas representativas, cuatro formatos,20/17.35 y alternativa local; no equivale al cierre integral del grado.",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
       "providers": [
         "ing-2-help"
       ],
@@ -1389,7 +1515,7 @@
       "type": "PROCEDURE",
       "index": 5,
       "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
-      "note": "Función propia del grado: nueve consignas representativas, cuatro formatos,20/17.35 y alternativa local; no equivale al cierre integral del grado.",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
       "providers": [
         "ing-2-shopping"
       ],
@@ -1404,7 +1530,7 @@
       "type": "PROCEDURE",
       "index": 6,
       "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
-      "note": "Función propia del grado: nueve consignas representativas, cuatro formatos,20/17.35 y alternativa local; no equivale al cierre integral del grado.",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
       "providers": [
         "ing-2-wishes"
       ],
@@ -1419,7 +1545,7 @@
       "type": "PROCEDURE",
       "index": 7,
       "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
-      "note": "Función propia del grado: nueve consignas representativas, cuatro formatos,20/17.35 y alternativa local; no equivale al cierre integral del grado.",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
       "providers": [
         "ing-2-advice"
       ],
@@ -1434,7 +1560,7 @@
       "type": "PROCEDURE",
       "index": 8,
       "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
-      "note": "Función propia del grado: nueve consignas representativas, cuatro formatos,20/17.35 y alternativa local; no equivale al cierre integral del grado.",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
       "providers": [
         "ing-2-plans"
       ],
@@ -1449,7 +1575,7 @@
       "type": "PROCEDURE",
       "index": 9,
       "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
-      "note": "Función propia del grado: nueve consignas representativas, cuatro formatos,20/17.35 y alternativa local; no equivale al cierre integral del grado.",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
       "providers": [
         "ing-2-experience"
       ],
@@ -1476,10 +1602,39 @@
       "sourceOrder": 1402011,
       "type": "PROCEDURE",
       "index": 11,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Recepción28, producción oral8 y escrita11: respetar la lista de cada modalidad. No convertir fuentes de apoyo en productos, ni sumar correo/carta alternativos, ni duplicar acontecimientos de experiencia/narración.",
+      "providers": [
+        "ing-2-genre-conversation",
+        "ing-2-genre-business-card",
+        "ing-2-genre-list",
+        "ing-2-genre-advertisement",
+        "ing-2-genre-recipe",
+        "ing-2-genre-sign",
+        "ing-2-genre-notice",
+        "ing-2-genre-poster",
+        "ing-2-genre-message",
+        "ing-2-genre-email",
+        "ing-2-genre-cv",
+        "ing-2-genre-letter",
+        "ing-2-genre-form",
+        "ing-2-genre-forecast",
+        "ing-2-genre-news",
+        "ing-2-genre-schedule",
+        "ing-2-genre-agenda",
+        "ing-2-genre-menu",
+        "ing-2-genre-map",
+        "ing-2-genre-questionnaire",
+        "ing-2-genre-brochure",
+        "ing-2-genre-song",
+        "ing-2-genre-poem",
+        "ing-2-genre-comic",
+        "ing-2-genre-tourist-guide",
+        "ing-2-genre-description",
+        "ing-2-genre-biography",
+        "ing-2-genre-narrative"
+      ],
+      "verification": "english-grade-two-genres.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "387e915a-a6e6-5632-b21a-ce1b6f7a061c",
@@ -1489,10 +1644,19 @@
       "sourceOrder": 1402012,
       "type": "PROCEDURE",
       "index": 12,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Recepción28, producción oral8 y escrita11: respetar la lista de cada modalidad. No convertir fuentes de apoyo en productos, ni sumar correo/carta alternativos, ni duplicar acontecimientos de experiencia/narración.",
+      "providers": [
+        "ing-2-genre-conversation",
+        "ing-2-genre-recipe",
+        "ing-2-genre-message",
+        "ing-2-genre-news",
+        "ing-2-genre-song",
+        "ing-2-genre-description",
+        "ing-2-genre-narrative",
+        "ing-2-genre-monologue"
+      ],
+      "verification": "english-grade-two-genres.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "b1b1992f-cbfa-541b-8910-1dd825f27264",
@@ -1502,10 +1666,22 @@
       "sourceOrder": 1402013,
       "type": "PROCEDURE",
       "index": 13,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Recepción28, producción oral8 y escrita11: respetar la lista de cada modalidad. No convertir fuentes de apoyo en productos, ni sumar correo/carta alternativos, ni duplicar acontecimientos de experiencia/narración.",
+      "providers": [
+        "ing-2-genre-sign",
+        "ing-2-genre-notice",
+        "ing-2-genre-poster",
+        "ing-2-genre-message",
+        "ing-2-genre-email",
+        "ing-2-genre-cv",
+        "ing-2-genre-letter",
+        "ing-2-genre-form",
+        "ing-2-genre-questionnaire",
+        "ing-2-genre-description",
+        "ing-2-genre-narrative"
+      ],
+      "verification": "english-grade-two-genres.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "be32956b-d8c5-5429-b086-2c10d0c9d4f3",
@@ -1528,10 +1704,12 @@
       "sourceOrder": 1412001,
       "type": "PROCEDURE",
       "index": 15,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-anticipation"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "267b3256-bbbb-5998-aaa9-a6300c3dbd24",
@@ -1541,10 +1719,12 @@
       "sourceOrder": 1412002,
       "type": "PROCEDURE",
       "index": 16,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-listening"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "35e98f9d-b3f5-500c-bdae-0f3d459c7741",
@@ -1554,10 +1734,12 @@
       "sourceOrder": 1412003,
       "type": "PROCEDURE",
       "index": 17,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-nonverbal-reception"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "f8451e45-1d6b-5395-a20e-9d94e237e1ac",
@@ -1567,10 +1749,12 @@
       "sourceOrder": 1412004,
       "type": "PROCEDURE",
       "index": 18,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-inference"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "a0fb17f7-d348-5a14-bfc4-36c6e3800a1a",
@@ -1580,10 +1764,12 @@
       "sourceOrder": 1412005,
       "type": "PROCEDURE",
       "index": 19,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-help"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "10680af6-649d-5209-9333-5e0c7f15e099",
@@ -1593,8 +1779,8 @@
       "sourceOrder": 1412006,
       "type": "PROCEDURE",
       "index": 20,
-      "decision": "AMBIGUOUS_SOURCE_PENDING",
-      "note": "La fuente visible dice «Identificación de que se comprensión oral». No corregir ni inventar silenciosamente una habilidad; cubrir por separado intención/situación cuando se soliciten.",
+      "decision": "EXCLUDED_UNINTERPRETABLE_SOURCE_FRAGMENT",
+      "note": "La fuente visible dice «Identificación de que se comprensión oral». No se afirma haber implementado su significado indeterminado ni se hereda el sustituto de primero. Intención y situación se cubren por sus registros explícitos. Limitación de la fuente conservada; requeriría una fe de erratas oficial para atribuirle otra habilidad.",
       "providers": [],
       "verification": "NOT_RUN"
     },
@@ -1619,10 +1805,12 @@
       "sourceOrder": 1412008,
       "type": "PROCEDURE",
       "index": 22,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-rehearsal"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "88b94970-51b8-5d77-beb2-27b8185f905a",
@@ -1632,10 +1820,12 @@
       "sourceOrder": 1412009,
       "type": "PROCEDURE",
       "index": 23,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-situation"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "5e707f2d-2920-5f2d-869f-9bb7312fce38",
@@ -1645,10 +1835,12 @@
       "sourceOrder": 1412010,
       "type": "PROCEDURE",
       "index": 24,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-communicative-purpose"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "8419ddae-f365-52eb-8275-33101cdee0da",
@@ -1658,10 +1850,12 @@
       "sourceOrder": 1412011,
       "type": "PROCEDURE",
       "index": 25,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-nonverbal-production"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "a96a45c7-926e-550a-bef9-1ff4e8f0bff0",
@@ -1684,10 +1878,12 @@
       "sourceOrder": 1412013,
       "type": "PROCEDURE",
       "index": 27,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-reading-purpose"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "6f9414ba-b705-5d37-b3d0-3abf36620370",
@@ -1697,10 +1893,12 @@
       "sourceOrder": 1412014,
       "type": "PROCEDURE",
       "index": 28,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-hypothesis"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "a264e814-3718-508b-885b-a468a4a4b6a7",
@@ -1710,10 +1908,12 @@
       "sourceOrder": 1412015,
       "type": "PROCEDURE",
       "index": 29,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-grapheme-phoneme"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "a093694c-81ec-5dd4-a4e1-40555ef06cd4",
@@ -1723,10 +1923,12 @@
       "sourceOrder": 1412016,
       "type": "PROCEDURE",
       "index": 30,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-inference"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "34a87613-f853-55ff-8022-cdccd8be209a",
@@ -1736,10 +1938,14 @@
       "sourceOrder": 1412017,
       "type": "PROCEDURE",
       "index": 31,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-annotation",
+        "ing-2-strategy-dictionary",
+        "ing-2-strategy-text-intention"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "0e72fc0a-16b7-525e-af02-1c053b1a3c92",
@@ -1762,10 +1968,13 @@
       "sourceOrder": 1412019,
       "type": "PROCEDURE",
       "index": 33,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-communicative-purpose",
+        "ing-2-strategy-text-type"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "ff2e5cf3-591b-519d-a415-0e90a55446e0",
@@ -1775,10 +1984,12 @@
       "sourceOrder": 1412020,
       "type": "PROCEDURE",
       "index": 34,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-planning"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "724b5297-c249-5791-a44a-db8d2933d9c5",
@@ -1788,10 +1999,12 @@
       "sourceOrder": 1412021,
       "type": "PROCEDURE",
       "index": 35,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-dictionary"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "57f8915e-b3e6-50bf-98be-3ee64ca3db3b",
@@ -1801,10 +2014,12 @@
       "sourceOrder": 1412022,
       "type": "PROCEDURE",
       "index": 36,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-revision"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "5590228e-99bf-51e5-9440-191e7a781586",
@@ -1827,10 +2042,12 @@
       "sourceOrder": 1412024,
       "type": "PROCEDURE",
       "index": 38,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-association"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "48e7feb1-5d6f-5a31-9720-774741b93a09",
@@ -1853,10 +2070,12 @@
       "sourceOrder": 1412026,
       "type": "PROCEDURE",
       "index": 40,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-practice"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "76714318-dcd0-5b15-8c71-d1c355a431ab",
@@ -1879,10 +2098,12 @@
       "sourceOrder": 1422001,
       "type": "PROCEDURE",
       "index": 42,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-social-formulas"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "4dbe2761-f4ad-5fc9-afcc-dbd382123180",
@@ -1905,10 +2126,12 @@
       "sourceOrder": 1422003,
       "type": "PROCEDURE",
       "index": 44,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "847049a8-e5a1-59ba-9b4a-23ff4d48026e",
@@ -1918,10 +2141,12 @@
       "sourceOrder": 1422004,
       "type": "PROCEDURE",
       "index": 45,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "a6146bc0-15ee-5d82-b480-3d14d7be7e18",
@@ -1931,10 +2156,12 @@
       "sourceOrder": 1422005,
       "type": "PROCEDURE",
       "index": 46,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "48132342-23ca-587f-a2e8-30bedfbc2823",
@@ -1944,10 +2171,12 @@
       "sourceOrder": 1422006,
       "type": "PROCEDURE",
       "index": 47,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "48ea54b9-9b5f-5fef-aeab-394f3c5aa159",
@@ -1957,10 +2186,12 @@
       "sourceOrder": 1422007,
       "type": "PROCEDURE",
       "index": 48,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "25264153-07ad-589c-9b49-c27a1a3f96eb",
@@ -1970,10 +2201,12 @@
       "sourceOrder": 1422008,
       "type": "PROCEDURE",
       "index": 49,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "865c714a-e9db-5114-beae-10edcfe6dd70",
@@ -1983,10 +2216,12 @@
       "sourceOrder": 1422009,
       "type": "PROCEDURE",
       "index": 50,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
     },
     {
       "id": "14edba6d-a755-5d4a-8359-479575af1727",
@@ -2009,10 +2244,12 @@
       "sourceOrder": 1403001,
       "type": "ATTITUDE_VALUE",
       "index": 1,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-courtesy"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "3d984018-6853-5cc5-896d-fa5c765e9079",
@@ -2022,10 +2259,12 @@
       "sourceOrder": 1403002,
       "type": "ATTITUDE_VALUE",
       "index": 2,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "01e9fa6d-9d18-5f4c-8ad7-059ceef41cd2",
@@ -2035,10 +2274,12 @@
       "sourceOrder": 1403003,
       "type": "ATTITUDE_VALUE",
       "index": 3,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-ethical-ict"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "d4875d7a-7acf-5b7c-af38-c270ff96b184",
@@ -2048,10 +2289,12 @@
       "sourceOrder": 1403004,
       "type": "ATTITUDE_VALUE",
       "index": 4,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-agreed-time"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "56ea0f9a-0256-5ead-86f1-cd6a0d549cf7",
@@ -2061,10 +2304,12 @@
       "sourceOrder": 1403005,
       "type": "ATTITUDE_VALUE",
       "index": 5,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-empathetic-response"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "d48e8f08-83e8-5345-9a71-ec4e1515dc9a",
@@ -2087,10 +2332,12 @@
       "sourceOrder": 1403007,
       "type": "ATTITUDE_VALUE",
       "index": 7,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-courtesy"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "35af5738-8608-5ed6-84d3-ce36126a8355",
@@ -2100,10 +2347,12 @@
       "sourceOrder": 1403008,
       "type": "ATTITUDE_VALUE",
       "index": 8,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-purchase-choice"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "fbce4f44-5e97-5fa0-82d2-c120549d870f",
@@ -2113,10 +2362,12 @@
       "sourceOrder": 1403009,
       "type": "ATTITUDE_VALUE",
       "index": 9,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-faithful-information"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "2f4bb071-569f-5f47-8d24-421a2b90abd2",
@@ -2126,10 +2377,12 @@
       "sourceOrder": 1403010,
       "type": "ATTITUDE_VALUE",
       "index": 10,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-agreed-time"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "4a67b93b-b691-5d7b-9ad1-c4b980d9153a",
@@ -2139,10 +2392,12 @@
       "sourceOrder": 1403011,
       "type": "ATTITUDE_VALUE",
       "index": 11,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-agreed-time"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "56d19477-b93e-56f6-80e1-02fc7bdc9abc",
@@ -2178,10 +2433,12 @@
       "sourceOrder": 1403014,
       "type": "ATTITUDE_VALUE",
       "index": 14,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "1245f84a-e93c-5a9e-85cd-9b3e2dc43ded",
@@ -2191,10 +2448,13 @@
       "sourceOrder": 1403015,
       "type": "ATTITUDE_VALUE",
       "index": 15,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-care",
+        "ing-2-context-care"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "d48063fa-e402-5be1-929f-cf4f5548bb8d",
@@ -2217,10 +2477,12 @@
       "sourceOrder": 1403017,
       "type": "ATTITUDE_VALUE",
       "index": 17,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Pendiente traducción condicional a evidencia comunicativa observable; no calificar posesiones, salud, rasgos, privacidad ni hábitos reales. Las condiciones de compra/ayuda deben provenir de la tarea.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-help"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
     },
     {
       "id": "c345e381-5656-5012-9015-fd4a04aef6da",
@@ -2230,10 +2492,20 @@
       "sourceOrder": 1406000,
       "type": "SPECIFIC_COMPETENCY",
       "index": 0,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-conversation",
+        "ing-2-daily",
+        "ing-2-states",
+        "ing-2-help",
+        "ing-2-shopping",
+        "ing-2-wishes",
+        "ing-2-advice",
+        "ing-2-plans",
+        "ing-2-experience"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "010db75a-733f-53f8-bc02-f77b2e61b9ce",
@@ -2243,10 +2515,15 @@
       "sourceOrder": 1406001,
       "type": "SPECIFIC_COMPETENCY",
       "index": 1,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-interaction",
+        "ing-2-written",
+        "ing-2-intelligibility",
+        "ing-2-feature-sequence-connectors"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "8d162a2a-f8a9-5011-9fc8-a4348ba86549",
@@ -2256,10 +2533,14 @@
       "sourceOrder": 1406002,
       "type": "SPECIFIC_COMPETENCY",
       "index": 2,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "b90dd6d6-437e-52af-96da-b3a16456a609",
@@ -2269,10 +2550,14 @@
       "sourceOrder": 1406003,
       "type": "SPECIFIC_COMPETENCY",
       "index": 3,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-context-respect-differences",
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "94810e21-74ef-56b1-9804-1dea5e5100c3",
@@ -2282,10 +2567,14 @@
       "sourceOrder": 1406004,
       "type": "SPECIFIC_COMPETENCY",
       "index": 4,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-lexicon-technology"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "39f6627b-736e-56a3-9c4e-d9ddf71ff064",
@@ -2295,10 +2584,15 @@
       "sourceOrder": 1406005,
       "type": "SPECIFIC_COMPETENCY",
       "index": 5,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-care",
+        "ing-2-daily",
+        "ing-2-shopping",
+        "ing-2-states"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "20fb601f-680b-5df0-936a-772f84eb7dd9",
@@ -2308,10 +2602,14 @@
       "sourceOrder": 1406006,
       "type": "SPECIFIC_COMPETENCY",
       "index": 6,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-context-faithful-information",
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "e37b9e09-9918-52b6-a5c6-8bb5d2a30be1",
@@ -2321,10 +2619,20 @@
       "sourceOrder": 1405000,
       "type": "FUNDAMENTAL_COMPETENCY",
       "index": 0,
-      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
-      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-conversation",
+        "ing-2-daily",
+        "ing-2-states",
+        "ing-2-help",
+        "ing-2-shopping",
+        "ing-2-wishes",
+        "ing-2-advice",
+        "ing-2-plans",
+        "ing-2-experience"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "beec6259-6ff4-5da6-bb84-3af1b9d61f62",
@@ -2334,10 +2642,15 @@
       "sourceOrder": 1405001,
       "type": "FUNDAMENTAL_COMPETENCY",
       "index": 1,
-      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
-      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-interaction",
+        "ing-2-written",
+        "ing-2-intelligibility",
+        "ing-2-feature-sequence-connectors"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "23102276-0602-506c-a321-a4f2344063c5",
@@ -2347,10 +2660,14 @@
       "sourceOrder": 1405002,
       "type": "FUNDAMENTAL_COMPETENCY",
       "index": 2,
-      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
-      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "281ae4bc-f0de-5c0f-8e99-9fac99783f90",
@@ -2360,10 +2677,14 @@
       "sourceOrder": 1405003,
       "type": "FUNDAMENTAL_COMPETENCY",
       "index": 3,
-      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
-      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-context-respect-differences",
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "d86f2447-5b82-5951-9261-58b259890927",
@@ -2373,10 +2694,14 @@
       "sourceOrder": 1405004,
       "type": "FUNDAMENTAL_COMPETENCY",
       "index": 4,
-      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
-      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-lexicon-technology"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "1de9ca49-b369-599c-a3a5-8a8a10b4c48c",
@@ -2386,10 +2711,15 @@
       "sourceOrder": 1405005,
       "type": "FUNDAMENTAL_COMPETENCY",
       "index": 5,
-      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
-      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-care",
+        "ing-2-daily",
+        "ing-2-shopping",
+        "ing-2-states"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "1a4af663-2e2f-50ed-9ec3-88ace535c2bd",
@@ -2399,10 +2729,14 @@
       "sourceOrder": 1405006,
       "type": "FUNDAMENTAL_COMPETENCY",
       "index": 6,
-      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
-      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-context-faithful-information",
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "f88f0d74-9450-570f-8ade-ed2cd0621617",
@@ -2412,10 +2746,21 @@
       "sourceOrder": 1454000,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 0,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-conversation",
+        "ing-2-daily",
+        "ing-2-states",
+        "ing-2-help",
+        "ing-2-shopping",
+        "ing-2-wishes",
+        "ing-2-advice",
+        "ing-2-plans",
+        "ing-2-experience",
+        "ing-2-genre-message"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "7e8ca7b1-c9ad-5484-a0c6-ca31b71f8abf",
@@ -2425,10 +2770,14 @@
       "sourceOrder": 1454001,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 1,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-written",
+        "ing-2-intelligibility",
+        "ing-2-feature-coordination-connectors"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "8f622c07-36dd-5657-b1fd-dcb16fd08204",
@@ -2438,10 +2787,14 @@
       "sourceOrder": 1454002,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 2,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-interaction",
+        "ing-2-written",
+        "ing-2-intelligibility"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "200bd7ff-5255-5b82-a348-b32bd17d035a",
@@ -2451,10 +2804,15 @@
       "sourceOrder": 1454003,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 3,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-experience",
+        "ing-2-plans",
+        "ing-2-feature-time-connectors",
+        "ing-2-strategy-inference"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "cbcfa1ea-82ca-5c8d-b926-a6a7b5549eb6",
@@ -2464,10 +2822,15 @@
       "sourceOrder": 1454004,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 4,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-written",
+        "ing-2-intelligibility",
+        "ing-2-feature-sequence-connectors",
+        "ing-2-strategy-planning"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "70df5d8c-35b4-587e-83e8-8e96093a0e54",
@@ -2477,10 +2840,15 @@
       "sourceOrder": 1454005,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 5,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-interaction",
+        "ing-2-experience",
+        "ing-2-plans",
+        "ing-2-advice"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "e35f0b25-71fc-5519-b0f8-c4003a9330a3",
@@ -2490,10 +2858,14 @@
       "sourceOrder": 1454006,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 6,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-genre-message"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "cc4d7fb7-36c7-5b2c-9ad5-5d800f9b2beb",
@@ -2503,10 +2875,14 @@
       "sourceOrder": 1454007,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 7,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-advice",
+        "ing-2-written",
+        "ing-2-intelligibility"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "c215eb49-141e-5319-9a1c-29d843ca9afc",
@@ -2516,10 +2892,16 @@
       "sourceOrder": 1454008,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 8,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-daily",
+        "ing-2-states",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "3fbda16d-b92e-5183-9c8a-824d329ac532",
@@ -2529,10 +2911,13 @@
       "sourceOrder": 1454009,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 9,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison",
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "8efe2d8a-deaf-58d3-b4eb-610df6dcf588",
@@ -2542,10 +2927,13 @@
       "sourceOrder": 1454010,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 10,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "74754c61-ce1f-57d3-8ea6-3af771982634",
@@ -2555,10 +2943,14 @@
       "sourceOrder": 1454011,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 11,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-conversation",
+        "ing-2-strategy-social-formulas",
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "5a627c47-e475-5308-bbb3-d6b686693f2e",
@@ -2568,10 +2960,14 @@
       "sourceOrder": 1454012,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 12,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-lexicon-technology",
+        "ing-2-genre-message",
+        "ing-2-context-faithful-information"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "354fde2a-229d-58a6-a6fe-89ee274d4b4f",
@@ -2581,10 +2977,16 @@
       "sourceOrder": 1454013,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 13,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-advice",
+        "ing-2-states",
+        "ing-2-wishes",
+        "ing-2-experience",
+        "ing-2-lexicon-technology"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "8b5c661b-4157-5c86-a270-de4ddc428d20",
@@ -2594,10 +2996,15 @@
       "sourceOrder": 1454014,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 14,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-advice",
+        "ing-2-interaction",
+        "ing-2-context-ethical-ict",
+        "ing-2-lexicon-technology"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "28def97b-7fe2-505f-a8f1-1aaaaca74afd",
@@ -2607,10 +3014,12 @@
       "sourceOrder": 1454015,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 15,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-care"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "980bba8a-b605-5460-94c3-4e3fad0c9d89",
@@ -2620,10 +3029,14 @@
       "sourceOrder": 1454016,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 16,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-care",
+        "ing-2-advice",
+        "ing-2-plans"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "0ffa4a44-6542-5f2c-882a-10a347debf2f",
@@ -2633,10 +3046,13 @@
       "sourceOrder": 1454017,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 17,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-care",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "8cfa42e9-7466-5f1a-819c-ef8218ea5a13",
@@ -2646,10 +3062,12 @@
       "sourceOrder": 1454018,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 18,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-empathetic-response"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "0a26fb16-1f41-5249-9b8d-3d5180a4ed56",
@@ -2659,10 +3077,13 @@
       "sourceOrder": 1454019,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 19,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     },
     {
       "id": "c574bb01-d136-5d02-9a84-a9d1c327a79d",
@@ -2672,10 +3093,13 @@
       "sourceOrder": 1454020,
       "type": "ACHIEVEMENT_INDICATOR",
       "index": 20,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente cotejada; falta conectar y verificar la evidencia evaluativa propia de segundo.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
     }
   ]
 }

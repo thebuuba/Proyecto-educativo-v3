@@ -1,5 +1,5 @@
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
-type Strategy={id:string;match:string;modes:string[];title:string;levels:NonNullable<ContextualTopicCriterion['progressionLevels']>}
+export type Strategy={id:string;match:string;modes:string[];title:string;levels:NonNullable<ContextualTopicCriterion['progressionLevels']>}
 const receptive=['reading','listening'],productive=['writing','oral','interaction']
 const strategy=(id:string,match:string,modes:string[],title:string,levels:Strategy['levels']):Strategy=>({id,match,modes,title,levels})
 /** Observable language-learning procedures, PDF135–136; anxiety and personal traits are not scored. */
@@ -160,12 +160,12 @@ export const englishGradeOneStrategies:Strategy[]=[
  ]),
 ]
 
-export function requestedEnglishStrategies(text:string,mode?:string){
- return englishGradeOneStrategies.filter(f=>(!mode||f.modes.includes(mode))&&new RegExp(`\\b(?:${f.match})\\b`).test(text))
+export function requestedEnglishStrategies(text:string,mode?:string,strategies=englishGradeOneStrategies){
+ return strategies.filter(f=>(!mode||f.modes.includes(mode))&&new RegExp(`\\b(?:${f.match})\\b`).test(text))
 }
 
-export function englishStrategyCriteria(text:string,mode:string):ContextualTopicCriterion[]{
- return requestedEnglishStrategies(text,mode).map(f=>{
+export function englishStrategyCriteria(text:string,mode:string,scope='ing-1',strategies=englishGradeOneStrategies):ContextualTopicCriterion[]{
+ return requestedEnglishStrategies(text,mode,strategies).map(f=>{
   let levels=f.levels
   if(f.id==='cultural-comparison'){
    const aspects=[['celebraciones','las celebraciones'],['puntualidad','la puntualidad'],['gustos|preferencias','los gustos y preferencias'],['formas de interactuar','las formas de interactuar'],['rasgos fisicos','los rasgos físicos de las personas o personajes de los ejemplos'],['efecto del clima|clima en las condiciones','el efecto del clima en las condiciones de vida']].filter(([pattern])=>new RegExp(pattern).test(text)).map(([,label])=>label)
@@ -176,6 +176,6 @@ export function englishStrategyCriteria(text:string,mode:string):ContextualTopic
    const selected=subrayar&&anotar?'el subrayado y la anotación solicitados':subrayar?'el subrayado solicitado':'la anotación solicitada'
    levels=[levels[0].replace('el subrayado o la anotación solicitada',selected),...levels.slice(1)] as Strategy['levels']
   }
-  return {templateId:`ing-1-strategy-${f.id}`,title:f.title,observable:levels[0],weight:3,progressionLevels:levels}
+  return {templateId:`${scope}-strategy-${f.id}`,title:f.title,observable:levels[0],weight:3,progressionLevels:levels}
  })
 }

@@ -25,6 +25,16 @@ describe('Inglés común segundo: funciones propias del currículo',()=>{
   expect(p.catalogVersion).toBe('evaluation-2026.46')
   expect(p.criteria.some(c=>c.templateId.startsWith('ing-2-'))).toBe(false)
  })
+ for(const [description,id,activity] of [
+  ['Intercambiarán por escrito información en inglés sobre actividades de la vida diaria.','daily','WRITTEN_PRODUCTION'],
+  ['Presentarán oralmente en inglés los estados anímicos y físicos de un personaje ficticio.','states','ORAL_PRESENTATION'],
+  ['Dialogarán en inglés para ofrecer recomendaciones sobre un problema cotidiano.','advice','ORAL_INTERACTION'],
+  ['Conversarán en inglés sobre una situación escolar.','conversation','ORAL_INTERACTION'],
+ ] as const)it(`conecta la función con denominación curricular o sinónimo: ${id}`,()=>{
+  const p=propose(description)
+  expect(p.activityType).toBe(activity)
+  expect(p.criteria.map(c=>c.templateId)).toContain(`ing-2-${id}`)
+ })
  for(const fixture of fixtures)for(const format of formats)for(const total of [20,17.35])it(`${fixture.id} ${format} ${total}`,()=>{
   const p=propose(fixture.description,format,total),text=JSON.stringify(p.criteria)
   expect(p.activityType).toBe(fixture.activity)

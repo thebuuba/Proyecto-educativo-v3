@@ -1,7 +1,7 @@
 import {requestedLanguageFeatures,type LanguageFeature} from './language-feature-criteria'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 
-type LexicalFeature=LanguageFeature&{category:'vocabulary'|'expression'}
+export type LexicalFeature=LanguageFeature&{category:'vocabulary'|'expression'}
 const word=(id:string,match:string,name:string,purpose:string,error:string):LexicalFeature=>({id,match:`\\b(?:${match})\\b`,name,function:purpose,error,category:'vocabulary'})
 const expression=(id:string,match:string,name:string,purpose:string,error:string):LexicalFeature=>({...word(id,match,name,purpose,error),category:'expression'})
 /** PDF134–136: lexical families and expressions; examples are not mandatory word lists. */
@@ -66,9 +66,9 @@ export function requestedEnglishLexicon(text:string){
  return requestedLanguageFeatures(englishGradeOneLexicon.filter(f=>f.category==='expression'||lexical),text)
 }
 
-export function englishLexicalCriterion(feature:LanguageFeature,text:string,mode:string):ContextualTopicCriterion{
+export function englishLexicalCriterion(feature:LanguageFeature,text:string,mode:string,scope='ing-1',category?:LexicalFeature['category']):ContextualTopicCriterion{
  const receptive=mode==='reading'||mode==='listening',source=mode==='listening'?'mensaje escuchado':'texto disponible'
- const expression=englishGradeOneLexicon.find(f=>f.id===feature.id)?.category==='expression'
+ const expression=(category??englishGradeOneLexicon.find(f=>f.id===feature.id)?.category)==='expression'
  const target=`${expression?'las expresiones para':'el vocabulario solicitado de'} ${feature.name}`
  const ofTarget=target.startsWith('el ')?`del ${target.slice(3)}`:`de ${target}`
  const explain=/\b(?:explic\w*|justific\w*|significado|funcion)\b/.test(text)
@@ -85,5 +85,5 @@ export function englishLexicalCriterion(feature:LanguageFeature,text:string,mode
   `La elección de ${expression?'expresiones':'palabras'} altera el mensaje: ${feature.error}.`,
   `No aporta usos reconocibles ${ofTarget} para la situación solicitada.`,
  ]
- return {templateId:`ing-1-lexicon-${feature.id}`,title:`${expression?'Expresiones para':'Vocabulario de'} ${feature.name}`,observable:levels[0],weight:3,progressionLevels:levels}
+ return {templateId:`${scope}-lexicon-${feature.id}`,title:`${expression?'Expresiones para':'Vocabulario de'} ${feature.name}`,observable:levels[0],weight:3,progressionLevels:levels}
 }

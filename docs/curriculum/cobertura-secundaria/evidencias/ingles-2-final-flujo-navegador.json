@@ -1,0 +1,378 @@
+[
+  {
+    "grade": 2,
+    "subject": "ING",
+    "format": "rubrica",
+    "name": "ING 2 final · Leemos y respondemos · rúbrica",
+    "description": "Leerán un correo en inglés para identificar el día, la hora y el lugar de un encuentro. Luego escribirán un correo de respuesta para hacer planes sobre el encuentro utilizando going to. Revisarán el significado y la corrección del mensaje antes de entregarlo.",
+    "catalogVersion": "evaluation-2026.51",
+    "pointTotal": 20,
+    "formFields": [
+      {
+        "label": "Criterio 1",
+        "value": "Plan identificado en la lectura. Ajuste manual del docente."
+      },
+      {
+        "label": "Destacado del criterio 1",
+        "value": "Identifica la acción propuesta y el día, la hora y el lugar en el plan del texto leído en inglés."
+      },
+      {
+        "label": "Logrado del criterio 1",
+        "value": "El plan es reconocible; una referencia necesaria para el encuentro requiere precisión."
+      },
+      {
+        "label": "En proceso del criterio 1",
+        "value": "Menciona una acción futura, pero omite parte de la información solicitada para el encuentro."
+      },
+      {
+        "label": "Inicial del criterio 1",
+        "value": "No se reconoce un plan o encuentro relacionado con lo solicitado."
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Plan o encuentro acordado"
+      },
+      {
+        "label": "Destacado del criterio 2",
+        "value": "Comunica en inglés la acción propuesta y la información solicitada del plan o encuentro solicitado mediante oraciones básicas enlazadas."
+      },
+      {
+        "label": "Logrado del criterio 2",
+        "value": "El plan es reconocible; una referencia necesaria para el encuentro requiere precisión."
+      },
+      {
+        "label": "En proceso del criterio 2",
+        "value": "Menciona una acción futura, pero omite parte de la información solicitada para el encuentro."
+      },
+      {
+        "label": "Inicial del criterio 2",
+        "value": "No se reconoce un plan o encuentro relacionado con lo solicitado."
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Be going to"
+      },
+      {
+        "label": "Destacado del criterio 3",
+        "value": "Emplea be going to en el mensaje en inglés para expresar la intención o el plan futuro solicitado."
+      },
+      {
+        "label": "Logrado del criterio 3",
+        "value": "La estructura permite expresar la intención o el plan futuro solicitado; un uso aislado necesita revisión."
+      },
+      {
+        "label": "En proceso del criterio 3",
+        "value": "Incluye ejemplos de be going to, pero varios usos no permiten expresar la intención o el plan futuro solicitado."
+      },
+      {
+        "label": "Inicial del criterio 3",
+        "value": "No aporta usos reconocibles de be going to para el propósito solicitado."
+      },
+      {
+        "label": "Criterio 4",
+        "value": "Revisión de sentido y escritura"
+      },
+      {
+        "label": "Destacado del criterio 4",
+        "value": "Los cambios realizados resuelven los problemas de sentido o escritura identificados en el mensaje en inglés."
+      },
+      {
+        "label": "Logrado del criterio 4",
+        "value": "Los cambios resuelven los problemas principales; una relación necesita revisión."
+      },
+      {
+        "label": "En proceso del criterio 4",
+        "value": "Modifica partes del mensaje, pero mantiene problemas identificados que dificultan comprenderlo."
+      },
+      {
+        "label": "Inicial del criterio 4",
+        "value": "No aporta cambios relacionados con los problemas de revisión planteados."
+      },
+      {
+        "label": "Criterio 5",
+        "value": "Respuesta al interlocutor"
+      },
+      {
+        "label": "Destacado del criterio 5",
+        "value": "Relaciona su respuesta en inglés con la intervención del interlocutor y permite continuar el intercambio escrito."
+      },
+      {
+        "label": "Logrado del criterio 5",
+        "value": "La respuesta corresponde a lo dicho; necesita una aclaración puntual para continuar."
+      },
+      {
+        "label": "En proceso del criterio 5",
+        "value": "Responde solo a una parte de la intervención y deja información relevante sin relacionar."
+      },
+      {
+        "label": "Inicial del criterio 5",
+        "value": "No aporta una respuesta reconocible relacionada con lo dicho por el interlocutor."
+      },
+      {
+        "label": "Criterio 6",
+        "value": "Mensaje escrito enlazado y comprensible"
+      },
+      {
+        "label": "Destacado del criterio 6",
+        "value": "Enlaza oraciones básicas en inglés que permiten comprender las ideas del mensaje escrito; los errores aislados no impiden seguir el sentido."
+      },
+      {
+        "label": "Logrado del criterio 6",
+        "value": "Se comprenden las ideas principales; una unión entre oraciones o una palabra requiere revisión."
+      },
+      {
+        "label": "En proceso del criterio 6",
+        "value": "Se comprenden oraciones aisladas, pero varias relaciones entre ideas quedan ambiguas."
+      },
+      {
+        "label": "Inicial del criterio 6",
+        "value": "No se reconoce un mensaje escrito relacionado con el propósito solicitado."
+      }
+    ],
+    "points": [
+      {
+        "label": "Puntos del criterio 1",
+        "value": "4"
+      },
+      {
+        "label": "Puntos del criterio 2",
+        "value": "4"
+      },
+      {
+        "label": "Puntos del criterio 3",
+        "value": "3"
+      },
+      {
+        "label": "Puntos del criterio 4",
+        "value": "3"
+      },
+      {
+        "label": "Puntos del criterio 5",
+        "value": "3"
+      },
+      {
+        "label": "Puntos del criterio 6",
+        "value": "3"
+      }
+    ],
+    "activityId": "1a7d671b-3235-4820-990e-78b07a9275d8",
+    "reopened": true,
+    "pendingPointsBlank": true,
+    "snapshotId": "39d565a4-6691-4cae-89f0-8b204ad74b3b",
+    "savedHash": "d8a6ebb04887c291f9c374f5e1f973e49c39eb5307072b99f80f6a6b1c8315d9"
+  },
+  {
+    "grade": 2,
+    "subject": "ING",
+    "format": "lista-cotejo",
+    "name": "ING 2 final · Consultamos el menú · cotejo",
+    "description": "Leerán un menú en inglés e identificarán los productos y sus precios. Subrayarán la información solicitada en el texto. Se comprobará la presencia de cada evidencia con sí o no.",
+    "catalogVersion": "evaluation-2026.52",
+    "pointTotal": 17.35,
+    "formFields": [
+      {
+        "label": "Criterio 1",
+        "value": "Selecciona información pertinente del mensaje en inglés mediante el subrayado solicitado."
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Identifica los productos y sus precios solicitados del menú en el texto disponible en inglés. Ajuste manual del docente."
+      }
+    ],
+    "points": [],
+    "textPoints": [
+      "7.44",
+      "9.91"
+    ],
+    "activityId": "6236cec4-8fbb-4591-a9bc-dc7824a452f7",
+    "reopened": true,
+    "emptyRowCompleted": true,
+    "exhaustionPreservedRows": true,
+    "snapshotId": "bb5f6a89-1ab2-408f-a046-19ca300efd43",
+    "savedHash": "6a05980753e6dffcfc4182d1b9069c2f4b4729b6aab3b0255e6f29fab854b995"
+  },
+  {
+    "grade": 2,
+    "subject": "ING",
+    "format": "escala",
+    "name": "ING 2 final · Ayuda con cortesía · escala",
+    "description": "Dialogarán en inglés para solicitar y ofrecer ayuda sobre una tarea escolar. Utilizarán expresiones de cortesía como please y thank you y fórmulas cotidianas de interacción social. Se registrará la regularidad de cada indicador durante los intercambios.",
+    "catalogVersion": "evaluation-2026.52",
+    "pointTotal": 20,
+    "formFields": [
+      {
+        "label": "Indicador 1",
+        "value": "Formula en inglés la solicitud y la oferta de ayuda relacionándolas con la necesidad indicada en la tarea. Ajuste manual del docente."
+      },
+      {
+        "label": "Siempre del indicador 1",
+        "value": "En todas las oportunidades observadas."
+      },
+      {
+        "label": "Frecuentemente del indicador 1",
+        "value": "En la mayoría de las oportunidades observadas."
+      },
+      {
+        "label": "A veces del indicador 1",
+        "value": "En algunas de las oportunidades observadas."
+      },
+      {
+        "label": "Todavía no del indicador 1",
+        "value": "En ninguna de las oportunidades observadas."
+      },
+      {
+        "label": "Indicador 2",
+        "value": "Emplea las expresiones para mostrar cortesía en inglés para comunicar el trato cortés en la situación indicada."
+      },
+      {
+        "label": "Siempre del indicador 2",
+        "value": "En todas las oportunidades observadas."
+      },
+      {
+        "label": "Frecuentemente del indicador 2",
+        "value": "En la mayoría de las oportunidades observadas."
+      },
+      {
+        "label": "A veces del indicador 2",
+        "value": "En algunas de las oportunidades observadas."
+      },
+      {
+        "label": "Todavía no del indicador 2",
+        "value": "En ninguna de las oportunidades observadas."
+      },
+      {
+        "label": "Indicador 3",
+        "value": "Utiliza en inglés fórmulas de interacción pertinentes para iniciar, mantener o cerrar el intercambio según la situación solicitada."
+      },
+      {
+        "label": "Siempre del indicador 3",
+        "value": "En todas las oportunidades observadas."
+      },
+      {
+        "label": "Frecuentemente del indicador 3",
+        "value": "En la mayoría de las oportunidades observadas."
+      },
+      {
+        "label": "A veces del indicador 3",
+        "value": "En algunas de las oportunidades observadas."
+      },
+      {
+        "label": "Todavía no del indicador 3",
+        "value": "En ninguna de las oportunidades observadas."
+      },
+      {
+        "label": "Indicador 4",
+        "value": "Relaciona su respuesta en inglés con la intervención del interlocutor y permite continuar el intercambio."
+      },
+      {
+        "label": "Siempre del indicador 4",
+        "value": "En todas las oportunidades observadas."
+      },
+      {
+        "label": "Frecuentemente del indicador 4",
+        "value": "En la mayoría de las oportunidades observadas."
+      },
+      {
+        "label": "A veces del indicador 4",
+        "value": "En algunas de las oportunidades observadas."
+      },
+      {
+        "label": "Todavía no del indicador 4",
+        "value": "En ninguna de las oportunidades observadas."
+      },
+      {
+        "label": "Indicador 5",
+        "value": "Comunica en inglés oraciones básicas enlazadas que permiten seguir el mensaje oral; las pausas, reformulaciones y apoyos acordados permiten reconocer las ideas."
+      },
+      {
+        "label": "Siempre del indicador 5",
+        "value": "En todas las oportunidades observadas."
+      },
+      {
+        "label": "Frecuentemente del indicador 5",
+        "value": "En la mayoría de las oportunidades observadas."
+      },
+      {
+        "label": "A veces del indicador 5",
+        "value": "En algunas de las oportunidades observadas."
+      },
+      {
+        "label": "Todavía no del indicador 5",
+        "value": "En ninguna de las oportunidades observadas."
+      }
+    ],
+    "activityId": "77bd3de7-4a6f-4731-8da5-5efce7649e28",
+    "reopened": true,
+    "partialRowCompleted": true,
+    "manualIndicatorPreserved": true,
+    "unmatchedParaphrasePreservedWithNotice": true,
+    "snapshotId": "ce45ba94-19e6-4142-833e-faaa497d2795",
+    "savedHash": "4ce996cd0fd38836428c35d0faff17745a5000d7de83bd2b88f05ea1d0b662f6"
+  },
+  {
+    "grade": 2,
+    "subject": "ING",
+    "format": "lista-ponderada",
+    "name": "ING 2 final · Narración de una experiencia · ponderada",
+    "description": "Escribirán una narración breve en inglés sobre una experiencia ficticia. Utilizarán pasado simple, pasado continuo y conectores de secuencia para enlazar los acontecimientos. Se distribuirán pesos entre los componentes verificables.",
+    "catalogVersion": "evaluation-2026.53",
+    "pointTotal": 17.35,
+    "formFields": [
+      {
+        "label": "Criterio 1",
+        "value": "Secuencia de hechos y experiencia. Ajuste manual del docente."
+      },
+      {
+        "label": "Indicador del criterio 1",
+        "value": "Narra en inglés los hechos de la experiencia real o ficticia solicitada mediante oraciones básicas enlazadas en una secuencia comprensible. Parcial (50%): Comunica hechos aislados sin establecer varias relaciones necesarias para seguir la experiencia."
+      },
+      {
+        "label": "Criterio 2",
+        "value": "El pasado simple"
+      },
+      {
+        "label": "Indicador del criterio 2",
+        "value": "Emplea el pasado simple en el mensaje en inglés para situar hechos o experiencias terminados en el pasado. Parcial (50%): Incluye ejemplos del pasado simple, pero varios usos no permiten situar hechos o experiencias terminados en el pasado."
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Los conectores de secuencia"
+      },
+      {
+        "label": "Indicador del criterio 3",
+        "value": "Emplea los conectores de secuencia en el mensaje en inglés para ordenar pasos o acontecimientos. Parcial (50%): Incluye ejemplos de los conectores de secuencia, pero varios usos no permiten ordenar pasos o acontecimientos."
+      },
+      {
+        "label": "Criterio 4",
+        "value": "El pasado continuo"
+      },
+      {
+        "label": "Indicador del criterio 4",
+        "value": "Emplea el pasado continuo en el mensaje en inglés para situar la acción que estaba en desarrollo como contexto de un acontecimiento pasado. Parcial (50%): Incluye ejemplos del pasado continuo, pero varios usos no permiten situar la acción que estaba en desarrollo como contexto de un acontecimiento pasado."
+      },
+      {
+        "label": "Criterio 5",
+        "value": "Mensaje escrito enlazado y comprensible"
+      },
+      {
+        "label": "Indicador del criterio 5",
+        "value": "Enlaza oraciones básicas en inglés que permiten comprender las ideas del mensaje escrito; los errores aislados no impiden seguir el sentido. Parcial (50%): Se comprenden oraciones aisladas, pero varias relaciones entre ideas quedan ambiguas."
+      }
+    ],
+    "points": [],
+    "textPoints": [],
+    "activityId": "f598b9dd-1d63-435a-b7cf-76a526047657",
+    "reopened": true,
+    "manualWeights": [
+      30,
+      20,
+      20,
+      15,
+      15
+    ],
+    "partialRowCompleted": true,
+    "pointsPreservedOnCompletion": true,
+    "snapshotId": "6371300c-c15a-42f4-8b0c-f32e42768677",
+    "savedHash": "89793488e85d86157a080b3ac84d372656d0b02ae42fffcfe640c1e40ab1039b"
+  }
+]

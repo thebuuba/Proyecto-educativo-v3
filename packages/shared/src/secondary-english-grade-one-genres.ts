@@ -1,5 +1,5 @@
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
-type Genre={id:string;match:string;title:string;data:string;production:string;error:string;existingFunction?:string}
+export type Genre={id:string;match:string;title:string;data:string;production:string;error:string;existingFunction?:string}
 const genre=(id:string,match:string,title:string,data:string,production:string,error:string,existingFunction?:string):Genre=>({id,match,title,data,production,error,...(existingFunction?{existingFunction}:{})})
 /** Discursive examples in PDF134,136. Criteria address basic communication, not professional genre mastery. */
 export const englishGradeOneGenres:Genre[]=[
@@ -34,15 +34,18 @@ export const englishGradeOneGenres:Genre[]=[
  genre('audiovisual','produccion(?:es)? audiovisual(?:es)?|videos?','Mensaje de la producción audiovisual','la relación entre los recursos seleccionados y el mensaje audiovisual','Relaciona los recursos seleccionados con un mensaje en inglés comprensible para el destinatario acordado.','los recursos comunican ideas incompatibles con el mensaje solicitado'),
 ]
 
-export const requestedEnglishGenres=(text:string)=>englishGradeOneGenres.filter(g=>new RegExp(`\\b(?:${g.match})\\b`).test(text))
+export const requestedEnglishGenres=(text:string,genres=englishGradeOneGenres)=>genres.filter(g=>new RegExp(`\\b(?:${g.match})\\b`).test(text))
 
-export function englishGenreCriteria(text:string,mode:string,existing:ContextualTopicCriterion[]):ContextualTopicCriterion[]{
+export function englishGenreCriteria(text:string,mode:string,existing:ContextualTopicCriterion[],scope='ing-1',genres=englishGradeOneGenres,preserveRequestedData=false):ContextualTopicCriterion[]{
  const receptive=mode==='reading'||mode==='listening',source=mode==='listening'?'mensaje escuchado':'texto disponible'
- return requestedEnglishGenres(text).filter(g=>{
-  if(g.existingFunction&&existing.some(c=>c.templateId===`ing-1-${g.existingFunction}`))return false
+ return requestedEnglishGenres(text,genres).filter(g=>{
+  if(g.existingFunction&&existing.some(c=>c.templateId===`${scope}-${g.existingFunction}`))return false
   if(existing.length&&['message','conversation','schedule'].includes(g.id))return false
   // A text used to inspect a requested form or strategy is a source, not another deliverable.
-  if(receptive&&existing.some(c=>/ing-1-(?:feature|lexicon|strategy)-/.test(c.templateId)))return false
+  if(receptive&&existing.some(c=>new RegExp(`${scope}-(?:feature|lexicon|strategy)-`).test(c.templateId))){
+   const explicitData=preserveRequestedData&&/\b(?:identific\w*|localiz\w*|reconoc\w*)\b.*\b(?:destinatario|proposito|informacion|datos|actividades|horas?|precio|lugares?|acontecimientos|personajes)\b/.test(text)
+   if(!explicitData)return false
+  }
   return true
  }).map(original=>{
   let g=original
@@ -71,6 +74,6 @@ export function englishGenreCriteria(text:string,mode:string,existing:Contextual
    `La producción cambia el sentido: ${g.error}.`,
    `No aporta una producción reconocible que comunique ${g.data}.`,
   ]
-  return {templateId:`ing-1-genre-${g.id}`,title:g.title,observable:levels[0],weight:4,progressionLevels:levels}
+  return {templateId:`${scope}-genre-${g.id}`,title:g.title,observable:levels[0],weight:4,progressionLevels:levels}
  })
 }
