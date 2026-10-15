@@ -38,6 +38,8 @@ Se reutilizan los adaptadores del editor. No se añade otro campo de estrategia 
 
 ## Prueba manual pendiente
 
+Límite confirmado posteriormente mediante SQL de solo lectura: Development no contiene versiones en `curriculum_versions`. Los cuatro snapshots QA de `.70` conservan referencias curriculares DB nulas; sí conservan contexto académico, catálogo evaluativo e identidades de instrumento. Los ámbitos de este informe identifican la fuente local revisada, no una versión curricular publicada en esa base. No se modifican snapshots históricos para rellenar esas referencias. La vinculación a un catálogo curricular DB sigue pendiente y no se acredita por estas pruebas.
+
 En una sesión de navegador separada, abrir `http://localhost:8787` y acceder con la cuenta QA Development ya existente (credenciales locales ignoradas, no incluidas aquí). Seleccionar `1.º secundaria QA Francés Development / QA Francés / Francés`. Crear una actividad usando la consigna de los [cuatro ejemplos completos](frances-1-ejemplos.md), comprobar estrategia automática y seleccionar otra manualmente. Verificar el instrumento con puntuación inicialmente vacía; asignar 20 y luego 17.35, editar un texto/peso, guardar y reabrir. Repetir para los cuatro formatos y comprobar que cambiar únicamente la estrategia conserva exactamente el instrumento. Al agotar los candidatos, comprobar el aviso persistente. No borrar almacenamiento ni borradores existentes.
 
 ## Archivos y reproducción

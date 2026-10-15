@@ -20,9 +20,17 @@ Inventario contrastado visualmente: Francés común de 1.º–6.º, PDF 181–19
 
 Una revalidación de solo lectura falló al salir Wrangler por DNS `ENOTFOUND`; tras reiniciar, la revalidación final pasó. Servidor local launcher PID 46088, listener observado PID 11120; comprobar antes de iniciar otro. Log `dev-2-stdout.log`. No hay proceso HTTP pendiente. La pestaña personal mantiene el asset antiguo `/assets/index-yWh82mQY.js`; no se recargó ni se alteró su borrador. Recorrido visual QA pendiente por ausencia de navegador aislado.
 
+## Último bloque verificado — 3.º
+
+Segundo publicado en `38935f91`. Tercero implementado y verificado; el commit que contiene esta actualización es su cierre. Catálogo `.72` instalado `CREATED`/`UNCHANGED`, cuatro releases previos preservados y `.71` congelado. Contexto QA `c782def1-cef7-4cce-b7df-670866f8c6e4`. Pruebas focalizadas 354 backend/303 frontend; backend completo 37.194. Ajuste léxico probado y recompilado; tres builds finales aprobados. [Informe](frances-3.md), [evidencia](frances-3-verificacion.json), [ejemplos](frances-3-ejemplos.md).
+
+HTTP/DB terminado: 12 interpretaciones, 24 recomendaciones, cuatro formatos guardados/editados/reabiertos y estrategia-only exacta. Tras el último build, cuatro recomendaciones y cuatro reaperturas sin cambios de hash. No hay comando HTTP pendiente ni deben repetirse esas escrituras. Servidor único observado listener 11120, launcher 46088. Chrome personal conserva el asset anterior, QA visual pendiente.
+
+Hallazgo de procedencia: `curriculum_versions` está vacío en Development. Los snapshots QA de 1.º–2.º tienen referencias curriculares DB nulas, aunque contexto académico/catálogo evaluativo/identidades sí se conservaron. La fuente oficial está revisada localmente. Antes del cierre global, resolver o delimitar expresamente esta vinculación. No publicar un subconjunto francés como versión global sin aislar la selección por asignatura: `EvaluationInstrumentsService.resolve` elige por nivel; eso daría una versión francesa a Inglés/Lengua aunque sin ámbito. Una solución acotada posible, tras los seis proveedores, es versión de fuente solo FRA común con IDs propios, metadata de asignaturas, selección compatible en el servicio y pruebas de no contaminación, importación idempotente solo Development, sin esquema nuevo ni otros contenidos; conservar snapshots viejos y verificar nuevos snapshots vinculados. `app_backend_local` tiene INSERT en tablas curriculares (comprobado solo lectura). Dataset original `data/curriculum/secondary-2023.jsonl`; no importar en bloque otras materias/optativas ni reutilizar IDs de la versión completa para un subconjunto.
+
 ## Siguiente acción concreta
 
-Publicar este cierre de 2.º, después congelar `.71` e implementar 3.º con PDF 189–192: ubicación/direcciones, clima, acciones en curso y planes futuros, con sus contenidos específicos. No tocar snapshots ni releases anteriores. Continuar secuencialmente hasta 6.º, sin otras asignaturas ni subagentes.
+Publicar el cierre de 3.º. Resolver la selección por asignatura antes de importar una fuente exclusivamente FRA común en Development (sin otros contenidos ni esquema nuevo). Conservar snapshots históricos sin referencias; verificar nuevos snapshots vinculados. Luego congelar `.72` y continuar 4.º: datos personales, servicios urbanos, compras, sentimientos/necesidades y salud, PDF 199–202. En los grados siguientes puede usarse `--representative`: una recomendación HTTP por caso, formatos/totales rotados y cuatro guardados; la matriz completa cuatro formatos × dos totales ya se ejecuta automáticamente. Continuar hasta 6.º sin otras asignaturas ni subagentes.
 
 ## Decisiones y límites
 

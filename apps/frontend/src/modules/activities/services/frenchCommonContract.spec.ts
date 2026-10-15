@@ -5,8 +5,9 @@ import { appendInstrumentCriterion, completeInstrumentCriterion, nextCatalogCrit
 import { activityDefaultSuggestions } from '../utils/activityDefaultSuggestions'
 import { recommend } from '../../../../../backend/src/modules/evaluation-instruments/recommendation-engine'
 import grade2 from '../../../../../../data/evaluation-instruments/french-grade-2-contracts.json'
+import grade3 from '../../../../../../data/evaluation-instruments/french-grade-3-contracts.json'
 
-const grades = [{ grade: 2, fixtures: grade2 }]
+const grades = [{ grade: 2, fixtures: grade2 }, { grade: 3, fixtures: grade3 }]
 const formats = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const
 for (const { grade, fixtures } of grades) describe(`Francés ${grade}.º: paridad y editor`, () => {
   const context = { level: 'SECONDARY' as const, grade, cycle: grade <= 3 ? 1 : 2, modalityCode: 'academic', subjectCode: 'FRA', subjectName: 'Francés', optativeExitName: null }

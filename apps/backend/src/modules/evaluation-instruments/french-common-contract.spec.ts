@@ -2,8 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { recommend } from './recommendation-engine'
 import { evaluationCatalogForVersion } from './catalog-current'
 import grade2 from '../../../../../data/evaluation-instruments/french-grade-2-contracts.json'
+import grade3 from '../../../../../data/evaluation-instruments/french-grade-3-contracts.json'
 
-const grades = [{ grade: 2, fixtures: grade2, prior: 'evaluation-2026.70' }]
+const grades = [{ grade: 2, fixtures: grade2, prior: 'evaluation-2026.70' }, { grade: 3, fixtures: grade3, prior: 'evaluation-2026.71' }]
 const formats = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const
 for (const { grade, fixtures, prior } of grades) describe(`Francés común ${grade}.º: contenido y regresiones`, () => {
   const context = { level: 'SECONDARY' as const, grade, cycle: grade <= 3 ? 1 : 2, modalityCode: 'academic', subjectCode: 'FRA', subjectName: 'Francés', optativeExitName: null }
@@ -52,5 +53,25 @@ for (const { grade, fixtures, prior } of grades) describe(`Francés común ${gra
   ]) it(`contenido específico: ${id}`, () => {
     const p = recommend({ activityTitle: 'Actividad', description, maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
     expect(p.criteria.some(c => c.templateId === `fra-${grade}-${id}`)).toBe(true)
+  })
+  if (grade === 3) for (const [description, id] of [
+    ['Indiquez où se trouve la bibliothèque en français.', 'location'],
+    ['Utiliza en francés las tres formas de interrogación.', 'grammar-questions'],
+    ['Escribe oraciones exclamativas en francés.', 'grammar-exclamation'],
+    ['Identifica en el texto francés los artículos contractos.', 'grammar-contracted'],
+    ['Utiliza en francés los verbos impersonales solicitados.', 'grammar-impersonal'],
+    ['Écrivez les actions en cours avec être en train de en français.', 'grammar-ongoing'],
+    ['Escribe los planes futuros usando el futuro próximo en francés.', 'grammar-near-future'],
+    ['Escribe vocabulario de puntos cardinales en francés.', 'lexicon-cardinal'],
+    ['Escribe vocabulario de unidades métricas en francés.', 'lexicon-measures'],
+    ['Écrivez le vocabulaire des saisons en français.', 'lexicon-seasons'],
+    ['Escribe vocabulario de expresiones de tiempo en francés.', 'lexicon-time'],
+  ]) it(`contenido específico: ${id}`, () => {
+    const p = recommend({ activityTitle: 'Actividad', description, maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(p.criteria.some(c => c.templateId === `fra-${grade}-${id}`)).toBe(true)
+  })
+  if (grade === 3) it('un ejercicio de vocabulario no exige producir un informe del clima', () => {
+    const p = recommend({ activityTitle: 'Actividad', description: 'Écrivez le vocabulaire des phénomènes atmosphériques en français.', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(p.criteria.map(c => c.templateId)).toEqual(['fra-3-lexicon-weather', 'fra-3-written'])
   })
 })

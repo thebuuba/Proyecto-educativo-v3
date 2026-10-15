@@ -32,4 +32,6 @@ Lectura del DOM de la pestaña personal, sin navegar ni editar: todavía carga `
 
 ## Archivos y conservación
 
+Límite de procedencia curricular: una consulta posterior de solo lectura confirmó que `curriculum_versions` está vacío en Development. Los cuatro snapshots `.71` tienen `curriculum_version_id` y `curriculum_scope_id` nulos. El contexto académico QA y el catálogo evaluativo sí están comprobados; la fuente oficial y sus ámbitos pertenecen al inventario local revisado. Queda pendiente vincular un catálogo curricular DB, sin reescribir estos snapshots históricos. No confundir las dos capas de catálogo.
+
 `secondary-french-grade-2.ts` contiene el contenido de este grado; `secondary-french-curriculum.ts` comparte únicamente construcción de criterios gramaticales/léxicos. `secondary-french.ts` selecciona las familias y asigna identidades por grado. Contratos y pruebas comunes backend/frontend amplían la matriz sin duplicar el editor. `catalog-v70.ts` congela el release previo; scripts de QA registran cada escritura para impedir repeticiones ciegas ante una interrupción. Sin cambios de esquema, producción, cuentas anteriores ni snapshots históricos.

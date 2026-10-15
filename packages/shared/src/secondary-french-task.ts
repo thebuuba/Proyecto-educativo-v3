@@ -33,7 +33,7 @@ function modeOf(text: string): FrenchMode | null {
   if (interaction) return written ? 'written-interaction' : 'oral-interaction'
   if (written) return 'writing'
   if (/\b(?:oral(?:ement|mente)?|present(?:a|an|ar|aran|en|ando)|presente(?:z|r|nt)|expone\w*|expondr\w*|recit\w*|cant\w*|chant\w*|parlez)\b/.test(text)) return 'oral'
-  if (new RegExp(`\\b${actionVerb}\\b`).test(text) || /\b(?:identifi\w*|releve\w*|localiz\w*|situe\w*|ubica\w*|indica\w*|complete\w*|completa\w*|utiliz\w*|utilise\w*|reconoc\w*|reconnai\w*)\b/.test(text)) return 'unspecified'
+  if (new RegExp(`\\b${actionVerb}\\b`).test(text) || /\b(?:identifi\w*|releve\w*|localiz\w*|situe\w*|ubica\w*|indica\w*|indiqu\w*|complete\w*|completa\w*|utiliz\w*|utilise\w*|reconoc\w*|reconnai\w*)\b/.test(text)) return 'unspecified'
   return null
 }
 
@@ -43,7 +43,8 @@ export function parseFrenchTask(title: string, description: string, grade: numbe
   if (/\ben (?:ingles|anglais|espanol|espagnol)\b/.test(text) && !/\ben (?:frances|francais)\b/.test(text)) return null
   const featureIds = (part: string) => {
     const content = part.replace(/\b(?:oral(?:ement|mente)?|par ecrit|por escrito|en frances|en francais)\b/g, ' ').replace(/\s+/g, ' ')
-    return features.filter(feature => feature.match.test(content)).map(feature => feature.id)
+    const lexicalTask = /\b(?:escrib\w*|identifi\w*|ecri\w*|releve\w*|lisez|lee|lean)\s+(?:(?:el|un|le|du|des|les)\s+)?(?:vocabulario|lexico|terminos|vocabulaire|lexique|mots)\b/.test(content)
+    return features.filter(feature => (!lexicalTask || /^(?:lexicon|grammar)-/.test(feature.id)) && feature.match.test(content)).map(feature => feature.id)
   }
   const single = (part: string): FrenchAction | null => {
     const mode = modeOf(part), ids = featureIds(part)

@@ -6,17 +6,19 @@ import { frenchGradeOneFeatures, frenchGradeOneGrammar, frenchGradeOneStrategies
 import { frenchGradeOneGenres, frenchGradeOneLexicon } from './secondary-french-grade-1-details'
 import { frenchDeliveryCriteria } from './secondary-french-delivery'
 import { frenchGradeTwoFeatures } from './secondary-french-grade-2'
+import { frenchGradeThreeFeatures } from './secondary-french-grade-3'
 import { frenchOral, frenchWritten, frenchReceptive, frenchRequirementText, normalizeFrenchTask, parseFrenchTask, type FrenchAction, type FrenchTask, type FrenchFeature } from './secondary-french-task'
 export { frenchGradeOneModule } from './secondary-french-grade-1'
 export { frenchGradeTwoModule } from './secondary-french-grade-2'
+export { frenchGradeThreeModule } from './secondary-french-grade-3'
 
 export function commonSecondaryFrench(context?: InstrumentAcademicContext | null) {
-  if (context?.level !== 'SECONDARY' || ![1, 2].includes(context.grade) || context.optativeExitName) return false
+  if (context?.level !== 'SECONDARY' || ![1, 2, 3].includes(context.grade) || context.optativeExitName) return false
   const code = context.subjectCode.trim().toUpperCase()
   return code === 'FRA' || (!code && /^(?:(?:lenguas? extranjeras? )?frances|francais)$/.test(normalizeFrenchTask(context.subjectName ?? '')))
 }
 const features = [...frenchGradeOneFeatures, ...frenchGradeOneGrammar, ...frenchGradeOneStrategies, ...frenchGradeOneGenres, ...frenchGradeOneLexicon]
-const gradeFeatures = (grade: number) => grade === 2 ? frenchGradeTwoFeatures : features
+const gradeFeatures = (grade: number) => grade === 3 ? frenchGradeThreeFeatures : grade === 2 ? frenchGradeTwoFeatures : features
 export function resolveCommonFrenchTask(title: string, description: string, context?: InstrumentAcademicContext | null): FrenchTask | null {
   return commonSecondaryFrench(context) ? parseFrenchTask(title, description, context!.grade, gradeFeatures(context!.grade)) : null
 }
@@ -58,7 +60,7 @@ function actionCriteria(action: FrenchAction, features: FrenchFeature[]): Contex
 export function commonFrenchCriteria(task: FrenchTask): ContextualTopicCriterion[] {
   const rows: ContextualTopicCriterion[] = []
   for (const [index, action] of task.actions.entries()) for (const raw of actionCriteria(action, gradeFeatures(task.grade))) {
-    const criterion = { ...raw, templateId: raw.templateId.replace(/^fra-1-/, `fra-${task.grade}-`) }
+    const criterion = { ...raw, templateId: raw.templateId.replace(/^fra-\d+-/, `fra-${task.grade}-`) }
     if (rows.some(row => row.templateId === criterion.templateId && row.observable === criterion.observable)) continue
     rows.push(rows.some(row => row.templateId === criterion.templateId) ? { ...criterion, templateId: `${criterion.templateId}:${action.mode}:${index}` } : criterion)
   }

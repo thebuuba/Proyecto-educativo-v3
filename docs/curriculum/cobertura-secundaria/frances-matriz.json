@@ -3765,15 +3765,22 @@
         ]
       },
       "coverage": {
-        "inventory": "VISUALLY_VERIFIED",
-        "implementation": "PENDING",
-        "providers": [],
-        "automated": "NOT_RUN",
-        "httpDatabase": "NOT_RUN",
-        "browser": "NOT_RUN",
-        "evidence": [],
+        "inventory": "VISUALLY_REVIEWED",
+        "implementation": "CONNECTED_DEFINED_PATTERNS",
+        "providers": [
+          "frances-comunicacion-3"
+        ],
+        "catalog": "evaluation-2026.72",
+        "automated": "PASSED: 354 backend French / 303 frontend French, including previous grades",
+        "httpDatabase": "PASSED: 12 interpretations, 24 recommendations, 4 formats saved/edited/reopened",
+        "browser": "PENDING_ISOLATED_QA_BROWSER_UNAVAILABLE",
+        "evidence": [
+          "frances-3.md",
+          "frances-3-ejemplos.md",
+          "frances-3-verificacion.json"
+        ],
         "pending": [
-          "Implement and verify in grade order."
+          "Recorrido visual QA en sesión separada; patrones lingüísticos acotados, sin comprensión universal."
         ]
       },
       "pedagogicalInventory": {
@@ -6826,5 +6833,10 @@
         "adaptation": "Not implemented"
       }
     }
-  ]
+  ],
+  "runtimeCurriculumCatalog": {
+    "status": "NOT_INSTALLED_IN_DEVELOPMENT",
+    "checked": "2026-10-15",
+    "detail": "curriculum_versions vacío. Fuente oficial revisada localmente; referencias curriculares DB nulas. El catálogo evaluativo y el contexto académico se verifican por separado."
+  }
 }

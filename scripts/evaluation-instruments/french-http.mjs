@@ -15,6 +15,7 @@ const require = createRequire(new URL('../../apps/backend/package.json', import.
 const { prisma } = require('@aula/database')
 const grade = Number(process.argv[2] ?? 1)
 const recheck = process.argv.includes('--recheck')
+const representative = process.argv.includes('--representative')
 const progressFile = `.wrangler/french-source/grade-${grade}-http-progress.json`
 if (!recheck) assert(!existsSync(progressFile) && !existsSync(`.wrangler/french-source/grade-${grade}-http.json`), 'Prior run exists: inspect its result; use --recheck for completed evidence, never repeat writes blindly')
 const progress = { grade, started: new Date().toISOString(), phase: 'READ_ONLY_GENERATION', writes: [] }
@@ -72,7 +73,7 @@ try {
     // Full Cartesian coverage is automated; HTTP exercises every case and total,
     // rotates the formats, then persists and reopens all four formats below.
     // Keep remote checks sequential: local Wrangler/DNS is intermittently unstable.
-    for (const type of [formats[fixtureIndex % formats.length]]) for (const total of [20, 17.35]) {
+    for (const type of [formats[fixtureIndex % formats.length]]) for (const total of representative ? [fixtureIndex % 2 ? 17.35 : 20] : [20, 17.35]) {
       const input = { sectionSubjectId: context.sectionSubjectId, activityTitle: 'QA Francés · ' + f.id, description: f.description, maxScore: total, participationMode: 'INDIVIDUAL', preferredInstrumentType: type, competencyBlock: 'b1' }
       const proposal = (await request('/evaluation-instruments/recommend', input)).data
       assert.equal(proposal.activityType, f.activity)
@@ -107,6 +108,10 @@ try {
     progress.writes.at(-1).activityId = saved.id; checkpoint()
     const reopen = async () => (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data.find(activity => activity.id === saved.id)
     const original = await reopen(); assert(original)
+    assert(original.instrumentId && original.instrumentSnapshotId && original.instrumentSnapshot)
+    assert.equal(original.instrumentSnapshot.curriculumScopeId, proposal.curriculumScopeId)
+    assert.equal(original.instrumentSnapshot.curriculumVersionId, proposal.curriculumVersionId)
+    assert.equal(original.instrumentSnapshot.catalogVersion, proposal.catalogVersion)
     assert.equal(original.teachingStrategyId, detected.id)
     assert.equal(original.instrumentCriteria[`${type}:description:0`], fields[`${type}:description:0`])
     const before = definition(original)
@@ -119,7 +124,7 @@ try {
     assert.equal(row.schoolId, context.schoolId); assert.equal(row.sectionSubjectId, context.sectionSubjectId)
     assert.equal(row.instrumentId, before.instrumentId); assert.equal(row.instrumentSnapshotId, before.snapshotId)
     assert.equal(row.teachingStrategyId, 'CASE_STUDY')
-    savedEvidence.push({ type, total, activityId: saved.id, instrumentId: row.instrumentId, snapshotId: row.instrumentSnapshotId, instrumentHash: hash(before), manualTextAndWeightsPreserved: true, strategyOnlyExact: true })
+    savedEvidence.push({ type, total, activityId: saved.id, instrumentId: row.instrumentId, snapshotId: row.instrumentSnapshotId, instrumentHash: hash(before), manualTextAndWeightsPreserved: true, strategyOnlyExact: true, curriculum: { versionId: proposal.curriculumVersionId, scopeId: proposal.curriculumScopeId, status: proposal.internalTrace.curriculumStatus } })
     progress.writes.at(-1).verified = savedEvidence.at(-1); checkpoint()
     examples.push({ type, description, total, catalog: proposal.catalogVersion, levels: proposal.levels, criteria: proposal.criteria.map(({ id, sourceReferences, ...criterion }) => criterion) })
     console.log(JSON.stringify({ phase: 'saved-and-reopened', grade, type, activityId: saved.id, instrumentUnchanged: true }))
@@ -132,11 +137,14 @@ try {
       assert(activity); assert.equal(hash(definition(activity)), saved.instrumentHash)
       assert.equal(activity.teachingStrategyId, 'CASE_STUDY')
     }
-    report.finalBuildRecheck = { generated, reopened: report.savedEvidence.length, at: new Date().toISOString(), transientFailures }
+    report.finalBuildRecheck = { generated, reopened: report.savedEvidence.length, at: new Date().toISOString(), transientFailures, curriculumContexts: report.savedEvidence.map(saved => {
+      const snapshot = activities.find(row => row.id === saved.activityId).instrumentSnapshot
+      assert(snapshot); return { activityId: saved.activityId, catalog: snapshot.catalogVersion, versionId: snapshot.curriculumVersionId, scopeId: snapshot.curriculumScopeId }
+    }) }
     writeFileSync(`.wrangler/french-source/grade-${grade}-http.json`, JSON.stringify(report, null, 2) + '\n')
     console.log(JSON.stringify({ phase: 'final-build-recheck', grade, generated, reopenedUnchanged: report.savedEvidence.length }))
   } else {
-    const report = { project, base, grade, subject: 'FRA', verification: 'AUTHENTICATED_HTTP_AND_DATABASE_NOT_BROWSER', interpreted: fixtures.length, generated, savedEvidence, transientFailures, browser: 'PENDING' }
+    const report = { project, base, grade, subject: 'FRA', verification: 'AUTHENTICATED_HTTP_AND_DATABASE_NOT_BROWSER', scoreCoverage: representative ? 'BOTH_TOTALS_ACROSS_CASES; FULL_CARTESIAN_MATRIX_AUTOMATED' : 'BOTH_TOTALS_EACH_CASE', interpreted: fixtures.length, generated, savedEvidence, transientFailures, browser: 'PENDING' }
     writeFileSync(`.wrangler/french-source/grade-${grade}-http.json`, JSON.stringify(report, null, 2) + '\n')
     writeFileSync(`.wrangler/french-source/grade-${grade}-examples.json`, JSON.stringify(examples, null, 2) + '\n')
     progress.phase = 'COMPLETE'; checkpoint()
