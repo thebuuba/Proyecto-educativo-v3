@@ -1,22 +1,3 @@
-export type Coverage = { startsAt: Date; endsAt: Date | null; revokedAt?: Date | null }
-export type AccessInput = {
-  active: boolean; enforced: boolean; paid?: Coverage[]; trial?: Coverage | null
-  grants?: Coverage[]; grace?: Coverage | null; previouslyPaid?: boolean
-}
-export function evaluateAccess(input: AccessInput, now: Date): { allowed: boolean; reason: string; until: Date | null } {
-  if (!input.active) return { allowed: false, reason: 'suspended', until: null }
-  const covers = (p: Coverage) => !p.revokedAt && p.startsAt <= now && (!p.endsAt || now < p.endsAt)
-  const sources: [string, Coverage[]][] = [
-    ['paid', input.paid ?? []], ['courtesy', input.grants ?? []],
-    ['trial', input.trial ? [input.trial] : []],
-    ['grace', input.previouslyPaid && input.grace ? [input.grace] : []],
-  ]
-  for (const [reason, periods] of sources) {
-    const current = periods.filter(covers).sort((a, b) => (b.endsAt?.getTime() ?? Infinity) - (a.endsAt?.getTime() ?? Infinity))[0]
-    if (current) return { allowed: true, reason, until: current.endsAt }
-  }
-  return { allowed: !input.enforced, reason: input.enforced ? 'expired' : 'legacy', until: null }
-}
 export function addBillingMonth(start: Date, anchor: number): Date {
   if (!Number.isInteger(anchor) || anchor < 1 || anchor > 31 || !Number.isFinite(start.getTime())) throw new Error('Invalid billing anchor')
   // Dominican local time is UTC-04, without daylight saving. Preserve the original anchor across February.

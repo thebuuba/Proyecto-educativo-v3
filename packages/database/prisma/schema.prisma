@@ -1849,7 +1849,7 @@ model BillingDocument {
   accountId          String              @map("account_id") @db.Uuid
   paymentId          String?             @map("payment_id") @db.Uuid
   subscriptionId     String?             @map("subscription_id") @db.Uuid
-  documentType       BillingDocumentType
+  documentType       BillingDocumentType @map("document_type")
   number             String?
   amountMinor        BigInt              @map("amount_minor")
   currency           String              @db.Char(3)

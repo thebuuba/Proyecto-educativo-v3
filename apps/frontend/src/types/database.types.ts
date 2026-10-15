@@ -2957,6 +2957,12 @@ export type Database = {
           },
         ]
       }
+      billing_runtime_settings: {
+        Row: { id: string; enforce_access: boolean; updated_at: string }
+        Insert: { id?: string; enforce_access?: boolean; updated_at?: string }
+        Update: { id?: string; enforce_access?: boolean; updated_at?: string }
+        Relationships: []
+      }
       billing_plans: {
         Row: { code: string; created_at: string; description: string | null; features: string[]; grace_days: number; id: string; is_public: boolean; name: string; status: Database["public"]["Enums"]["billing_plan_status"]; trial_days: number; updated_at: string }
         Insert: { code: string; created_at?: string; description?: string | null; features?: string[]; grace_days?: number; id?: string; is_public?: boolean; name: string; status?: Database["public"]["Enums"]["billing_plan_status"]; trial_days?: number; updated_at?: string }
@@ -3327,12 +3333,6 @@ export type Database = {
     CompositeTypes: {
       [_ in never]: never
     }
-  }
-  billing_runtime_settings: {
-    Row: { id: string; enforce_access: boolean; updated_at: string }
-    Insert: { id?: string; enforce_access?: boolean; updated_at?: string }
-    Update: { id?: string; enforce_access?: boolean; updated_at?: string }
-    Relationships: []
   }
 }
 

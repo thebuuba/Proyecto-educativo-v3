@@ -2,8 +2,17 @@
  * Guard de autenticación JWT.
  * Protege los endpoints requiriendo un JWT válido en la cookie HttpOnly.
  */
-import { Injectable } from '@nestjs/common'
+import { Injectable, type ExecutionContext } from '@nestjs/common'
 import { AuthGuard } from '@nestjs/passport'
+import { enforceAcademicAccess } from '../../billing/billing-access'
 
 @Injectable()
-export class JwtAuthGuard extends AuthGuard('jwt') {}
+export class JwtAuthGuard extends AuthGuard('jwt') {
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    const authenticated = await super.canActivate(context)
+    if (!authenticated) return false
+    const request = context.switchToHttp().getRequest()
+    await enforceAcademicAccess(request.user.id, request.path)
+    return true
+  }
+}
