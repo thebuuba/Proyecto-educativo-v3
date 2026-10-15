@@ -726,7 +726,7 @@ function SubscriptionsCard({
                         Abrir portal de pago
                       </Button>
                     ) : null}
-                    {!subscription.cancelAtPeriodEnd ? (
+                    {subscription.mode === 'paddle' && ['active', 'trialing', 'past_due'].includes(subscription.providerStatus) && !subscription.cancelAtPeriodEnd ? (
                       <Button
                         size="sm"
                         variant="outline"

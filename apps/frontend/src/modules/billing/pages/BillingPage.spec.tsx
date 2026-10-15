@@ -276,6 +276,23 @@ describe('BillingPage', () => {
     expect(screen.queryByRole('button', { name: /^enviar$/i })).not.toBeInTheDocument()
   })
 
+  it('ofrece cancelar solo renovaciones Paddle vigentes, nunca intentos vencidos ni transferencias', async () => {
+    mocked.getBillingOverview.mockResolvedValue(makeOverview({
+      checkoutEnabled: true,
+      subscriptions: [
+        ...['expired', 'incomplete', 'paused', 'canceled', 'unknown'].map((providerStatus) => ({
+          id: providerStatus, providerStatus, currentPeriodEnd: null, cancelAtPeriodEnd: false, mode: 'paddle',
+        })),
+        { id: 'manual', providerStatus: 'active', currentPeriodEnd: null, cancelAtPeriodEnd: false, mode: 'manual' },
+        { id: 'scheduled', providerStatus: 'trialing', currentPeriodEnd: null, cancelAtPeriodEnd: true, mode: 'paddle' },
+        { id: 'current', providerStatus: 'trialing', currentPeriodEnd: null, cancelAtPeriodEnd: false, mode: 'paddle' },
+      ],
+    }))
+    renderPage()
+    await screen.findByText('expired')
+    expect(screen.getAllByRole('button', { name: /^cancelar renovación$/i })).toHaveLength(1)
+  })
+
   it('muestra documentos y avisos reales sin afirmar un correo enviado', async () => {
     mocked.getBillingOverview.mockResolvedValue(
       makeOverview({
