@@ -17,11 +17,11 @@ const { db, paddle, allMocks } = vi.hoisted(() => {
     billingServicePeriod: { findFirst: vi.fn(), create: vi.fn() },
     billingSubscription: { findFirst: vi.fn(), findUnique: vi.fn(), update: vi.fn() },
     billingProviderCustomer: { findFirst: vi.fn() },
-    billingTrial: { updateMany: vi.fn() },
+    billingTrial: { updateMany: vi.fn(), findUnique: vi.fn(), create: vi.fn() },
     billingAdmin: { findFirst: vi.fn() },
     billingOutbox: { findFirst: vi.fn(), create: vi.fn() },
   }
-  const paddle = { getTransaction: vi.fn(), getSubscription: vi.fn(), listTransactions: vi.fn() }
+  const paddle = { getPrice: vi.fn(), getTransaction: vi.fn(), getSubscription: vi.fn(), listTransactions: vi.fn() }
   const allMocks = [
     db.$queryRaw, db.$transaction,
     ...Object.values(db.billingEvent), ...Object.values(db.billingAuditLog), ...Object.values(db.billingPayment),
@@ -119,6 +119,8 @@ beforeEach(() => {
   db.billingEvent.findUnique.mockResolvedValue(null)
   db.billingEvent.update.mockResolvedValue({})
   db.billingAdmin.findFirst.mockResolvedValue({ id: 'admin-1' })
+  db.billingTrial.findUnique.mockResolvedValue(null)
+  db.billingTrial.create.mockImplementation(async ({ data }: { data: Record<string, unknown> }) => ({ id: 'trial-1', ...data }))
   paddle.listTransactions.mockResolvedValue([])
 })
 
@@ -359,6 +361,161 @@ describe('receive: processing', () => {
     expect(failure.data.attempts).toEqual({ increment: 1 })
     expect(failure.data.lastError).not.toContain(SECRET)
     expect(failure.data.nextRetryAt).toBeInstanceOf(Date)
+  })
+})
+
+// ---------------------------------------------------------------------------
+// card trial: zero-amount completion and linked subscription.trialing
+// ---------------------------------------------------------------------------
+
+describe('card trial activation', () => {
+  const TRIAL_DATES = { startsAt: '2026-10-15T14:00:00Z', endsAt: '2026-11-15T14:00:00Z' }
+
+  const reservedSubscription = () => ({ ...subscription(), price: {...subscription().price,amountMinor:599n}, metadata: {
+    checkoutOperationId: 'op-1', checkoutTransactionId:'txn_1',trialPolicy:'card-month-v1',acceptAutoRenewal:true,termsVersion:'v1',acceptedAt:NOW.toISOString(),
+  } })
+  const approvedPrice = {id:'pri_x',status:'active',unitPriceAmount:'599',currencyCode:'USD',billingInterval:'month',billingFrequency:1,
+    trialInterval:'month',trialFrequency:1,taxMode:'internal',requiresPaymentMethod:true,unitPriceOverrides:[],trialUnitPrice:null,trialUnitPriceOverrides:[]}
+
+  const trialProviderSubscription = () => ({
+    id: 'sub_x', status: 'trialing', customerId: 'ctm_x', nextBilledAt: TRIAL_DATES.endsAt,
+    currentBillingPeriod: null, scheduledChange: null,
+    collectionMode: 'automatic', trialDates: TRIAL_DATES,
+    items: [{ status: 'trialing', priceId: 'pri_x', trialDates: TRIAL_DATES, nextBilledAt: TRIAL_DATES.endsAt, recurring: true }],
+  })
+
+  const zeroTransaction = {
+    id: 'txn_1', status: 'completed', customerId: 'ctm_x', subscriptionId: 'sub_x',
+    priceIds: ['pri_x'], currencyCode: 'USD', total: '0', billingPeriod: null,
+    customData: { checkoutOperationId: 'op-1' }, billedAt: null,
+  }
+
+  const prepareZeroCompletion = () => {
+    const body = envelope('transaction.completed', { id: 'txn_1', customer_id: 'ctm_x' })
+    db.billingEvent.upsert.mockResolvedValue(persistedEvent('transaction.completed', body))
+    lockRows.push(lockRow('transaction.completed', { id: 'txn_1', customer_id: 'ctm_x' }))
+    db.billingProviderCustomer.findFirst.mockResolvedValue(accountLink)
+    db.billingSubscription.findFirst.mockResolvedValue(reservedSubscription())
+    db.billingOutbox.findFirst.mockResolvedValue(null)
+    paddle.getTransaction.mockResolvedValue(zeroTransaction)
+    paddle.getSubscription.mockResolvedValue(trialProviderSubscription())
+    paddle.getPrice.mockResolvedValue(approvedPrice)
+    return body
+  }
+
+  it('rechecks the remote price: a cardless or paid trial never grants access', async () => {
+    const body = prepareZeroCompletion()
+    paddle.getPrice.mockResolvedValue({...approvedPrice,requiresPaymentMethod:false})
+    const result = await service.receive(Buffer.from(body),sign(body))
+    expect(result.status).toBe('failed')
+    expect(db.billingTrial.create).not.toHaveBeenCalled()
+  })
+
+  it('does not grant from subscription.trialing without a completed reserved checkout', async () => {
+    const body = envelope('subscription.trialing',{id:'sub_x'})
+    db.billingEvent.upsert.mockResolvedValue(persistedEvent('subscription.trialing',body))
+    lockRows.push(lockRow('subscription.trialing',{id:'sub_x'}))
+    db.billingSubscription.findFirst.mockResolvedValue(reservedSubscription())
+    db.billingProviderCustomer.findFirst.mockResolvedValue(accountLink)
+    paddle.getSubscription.mockResolvedValue(trialProviderSubscription())
+    paddle.getPrice.mockResolvedValue(approvedPrice)
+    paddle.getTransaction.mockResolvedValue({...zeroTransaction,status:'ready'})
+    const result = await service.receive(Buffer.from(body),sign(body))
+    expect(result.status).toBe('failed')
+    expect(db.billingTrial.create).not.toHaveBeenCalled()
+  })
+
+  it('grants the single account trial from a zero-amount completion without fabricating money', async () => {
+    const body = prepareZeroCompletion()
+
+    const result = await service.receive(Buffer.from(body), sign(body))
+
+    expect(result).toMatchObject({ accepted: true, status: 'processed' })
+    expect(paddle.getSubscription).toHaveBeenCalledWith('sub_x')
+    expect(db.billingPayment.create).not.toHaveBeenCalled()
+    expect(db.billingDocument.create).not.toHaveBeenCalled()
+    expect(db.billingTrial.updateMany).not.toHaveBeenCalled()
+    const created = db.billingTrial.create.mock.calls[0][0].data
+    expect(created).toMatchObject({ accountId: 'acc-1', planId: 'plan-1', subscriptionId: 'sub-local', status: 'ACTIVE' })
+    expect((created.startsAt as Date).toISOString()).toBe('2026-10-15T14:00:00.000Z')
+    expect((created.endsAt as Date).toISOString()).toBe('2026-11-15T14:00:00.000Z')
+  })
+
+  it('never activates a trial without a mandatory card method', async () => {
+    const body = prepareZeroCompletion()
+    paddle.getSubscription.mockResolvedValue({ ...trialProviderSubscription(), collectionMode: 'manual' })
+
+    const result = await service.receive(Buffer.from(body), sign(body))
+
+    expect(result).toMatchObject({ accepted: true, status: 'processed' })
+    expect(db.billingTrial.create).not.toHaveBeenCalled()
+    expect(db.billingAuditLog.create).toHaveBeenCalledWith(expect.objectContaining({
+      data: expect.objectContaining({ action: 'billing.trial.rejected' }),
+    }))
+  })
+
+  it('never activates a trial with invalid official dates', async () => {
+    const body = prepareZeroCompletion()
+    paddle.getSubscription.mockResolvedValue({
+      ...trialProviderSubscription(),
+      trialDates: { startsAt: '2026-11-15T14:00:00Z', endsAt: '2026-10-15T14:00:00Z' },
+      items: [{ status: 'trialing', priceId: 'pri_x', trialDates: { startsAt: '2026-11-15T14:00:00Z', endsAt: '2026-10-15T14:00:00Z' }, nextBilledAt: TRIAL_DATES.endsAt, recurring: true }],
+    })
+
+    await service.receive(Buffer.from(body), sign(body))
+
+    expect(db.billingTrial.create).not.toHaveBeenCalled()
+  })
+
+  it('never creates a second trial for an account that already had one', async () => {
+    const body = prepareZeroCompletion()
+    db.billingTrial.findUnique.mockResolvedValue({ id: 'trial-old', subscriptionId: 'sub-old' })
+
+    await service.receive(Buffer.from(body), sign(body))
+
+    expect(db.billingTrial.create).not.toHaveBeenCalled()
+  })
+
+  it('ties a zero-amount confirmation to the reserved transaction of the account', async () => {
+    const body = prepareZeroCompletion()
+    paddle.getTransaction.mockResolvedValue({ ...zeroTransaction, customData: { checkoutOperationId: 'other-op' } })
+
+    const result = await service.receive(Buffer.from(body), sign(body))
+
+    expect(result).toMatchObject({ accepted: true, status: 'failed' })
+    expect(db.billingTrial.create).not.toHaveBeenCalled()
+  })
+
+  it('processes a linked subscription.trialing idempotently without extending an existing trial', async () => {
+    const body = envelope('subscription.trialing', { id: 'sub_x', customer_id: 'ctm_x' })
+    db.billingEvent.upsert.mockResolvedValue(persistedEvent('subscription.trialing', body))
+    lockRows.push(lockRow('subscription.trialing', { id: 'sub_x', customer_id: 'ctm_x' }))
+    db.billingProviderCustomer.findFirst.mockResolvedValue(accountLink)
+    db.billingSubscription.findFirst.mockResolvedValue(reservedSubscription())
+    db.billingOutbox.findFirst.mockResolvedValue(null)
+    db.billingTrial.findUnique.mockResolvedValue({ id: 'trial-existing', startsAt: new Date('2026-09-01T00:00:00Z'), endsAt: new Date('2026-10-01T00:00:00Z') })
+    paddle.getSubscription.mockResolvedValue(trialProviderSubscription())
+
+    const result = await service.receive(Buffer.from(body), sign(body))
+
+    expect(result).toMatchObject({ accepted: true, status: 'processed' })
+    expect(db.billingTrial.create).not.toHaveBeenCalled()
+    expect(db.billingTrial.updateMany).not.toHaveBeenCalled()
+    expect(db.billingSubscription.update).toHaveBeenCalled()
+  })
+
+  it('ignores a subscription.trialing that arrives before the secure link', async () => {
+    const body = envelope('subscription.trialing', { id: 'sub_x', customer_id: 'ctm_x' })
+    db.billingEvent.upsert.mockResolvedValue(persistedEvent('subscription.trialing', body))
+    lockRows.push(lockRow('subscription.trialing', { id: 'sub_x', customer_id: 'ctm_x' }))
+    db.billingSubscription.findFirst.mockResolvedValue(null)
+    db.billingTrial.findUnique.mockResolvedValue(null)
+
+    const result = await service.receive(Buffer.from(body), sign(body))
+
+    expect(result).toMatchObject({ accepted: true, status: 'processed' })
+    expect(paddle.getSubscription).not.toHaveBeenCalled()
+    expect(db.billingTrial.create).not.toHaveBeenCalled()
   })
 })
 

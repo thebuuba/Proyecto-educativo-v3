@@ -4,13 +4,14 @@ import { prisma } from '@aula/database'
 import type { Prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { readBillingConfig } from './billing-policy'
+import { TRIAL_POLICY, checkTrialPrice, checkTrialSubscription } from './billing-trial'
+import { SUBSCRIPTION_OFFER } from '@aula/shared'
 import { audit, billingNow, notify, requireCommercialAdmin } from './billing-store'
 import {
   PADDLE_WEBHOOK_MAX_BYTES,
   PaddleSandboxError,
   createPaddleSandboxClient,
   verifyPaddleSignature,
-  type PaddleBillingPeriod,
   type PaddleSandboxClient,
   type PaddleSubscription,
   type PaddleTransaction,
@@ -35,13 +36,12 @@ import {
  * - Transaction status is never used as a subscription status, and unknown
  *   signed states never grant access.
  *
- * Known limits (no schema or migration may be changed from this task):
+ * Known limits:
  * - `billing_events` has no `occurred_at` column: the provider timestamp lives in
  *   the stored `payload` envelope and stale-delivery protection relies on
  *   `BillingSubscription.metadata.providerUpdatedAt`.
  * - Partial refunds are tracked inside `BillingPayment.metadata.adjustmentRefunds`
  *   because no dedicated refund table exists; the amount is capped by the payment.
- * - `receive`/`retry`/`reconcile` are not yet exposed through a controller/module.
  */
 
 const PROVIDER = 'PADDLE' as const
@@ -113,14 +113,6 @@ const genericMessage = (error: unknown): string => {
   }
   return 'processing_failed'
 }
-
-const EVENT_STATUS = {
-  received: 'RECEIVED',
-  processing: 'PROCESSING',
-  processed: 'PROCESSED',
-  failed: 'FAILED',
-  ignored: 'IGNORED',
-} as const
 
 /** PostgreSQL stores the enum in lower case; never compare raw values to upper case. */
 const normalizeEventStatus = (raw: string): keyof typeof EVENT_STATUS_MAP => {
@@ -558,8 +550,9 @@ export class BillingEventsService {
 
     const amount = parseMinor(provider.total)
     if (amount === null) throw new Error('invalid_amount')
-    // A zero-amount invoice is not money received.
-    if (amount === 0n) return 'processed'
+    // A zero-amount invoice is the card trial's own confirmation, never money
+    // received: it grants the single account trial and no payment or receipt.
+    if (amount === 0n) return this.onZeroAmountCompleted(tx, subscription, provider, occurredAt)
 
     if (amount !== price.amountMinor) {
       // Never credit an amount other than the server-authorized sandbox price.
@@ -658,6 +651,99 @@ export class BillingEventsService {
       data: { status: 'CONVERTED', convertedAt: now, endedAt: now },
     })
     return 'processed'
+  }
+
+  /**
+   * A zero-amount completed transaction is the provider's own card trial. It is
+   * never treated as a payment: the provider subscription is re-read and, only
+   * when it is a genuine card trial for the reserved price, the account's single
+   * trial is recorded with the provider-owned official dates.
+   */
+  private async onZeroAmountCompleted(
+    tx: Db,
+    subscription: SubscriptionWithPrice,
+    provider: PaddleTransaction,
+    occurredAt: Date,
+  ): Promise<ProcessingOutcome> {
+    const providerSubscriptionId = subscription.providerSubscriptionId
+    if (!providerSubscriptionId || provider.subscriptionId !== providerSubscriptionId) {
+      throw new Error('subscription_identity_mismatch')
+    }
+    // The zero charge must belong to the transaction reserved for this account.
+    const reservedOperation = asString(asMetadata(subscription.metadata).checkoutOperationId)
+    const operationId = asString((provider.customData ?? {}).checkoutOperationId)
+    if (reservedOperation && operationId !== reservedOperation) throw new Error('reserved_transaction_mismatch')
+
+    const provided = await this.createPaddleClient().getSubscription(providerSubscriptionId)
+    if (provided.id !== providerSubscriptionId || provided.customerId !== provider.customerId) {
+      throw new Error('subscription_identity_mismatch')
+    }
+
+    await this.applyProviderSubscription(tx, subscription, provided, occurredAt)
+    await this.grantTrialFromProvider(tx, subscription, provided, provider)
+    return 'processed'
+  }
+
+  private async grantTrialFromProvider(tx: Db, subscription: SubscriptionWithPrice, provided: PaddleSubscription, completed?: PaddleTransaction): Promise<void> {
+    const existing = await tx.billingTrial.findUnique({ where: { accountId: subscription.accountId }, select: { id: true } })
+    if (existing) return
+    const state = asMetadata(subscription.metadata)
+    if (state.trialPolicy !== TRIAL_POLICY || state.acceptAutoRenewal !== true || !asString(state.termsVersion) || !parseDate(asString(state.acceptedAt))) {
+      throw new Error('missing_trial_consent')
+    }
+    const priceId = subscription.price.providerPriceId
+    if (!priceId || subscription.price.amountMinor !== BigInt(SUBSCRIPTION_OFFER.amountMinor) || subscription.price.currency !== SUBSCRIPTION_OFFER.currency) {
+      throw new Error('trial_quote_mismatch')
+    }
+    const client = this.createPaddleClient()
+    const price = await client.getPrice(priceId)
+    if (price.id !== priceId || !checkTrialPrice(price).ok) throw new Error('trial_price_policy_mismatch')
+    const reservedId = asString(state.checkoutTransactionId)
+    const transaction = completed ?? (reservedId ? await client.getTransaction(reservedId) : null)
+    const operation = asString(state.checkoutOperationId)
+    if (!transaction || transaction.status !== 'completed' || transaction.total !== '0' ||
+      transaction.customerId !== provided.customerId || transaction.subscriptionId !== provided.id ||
+      transaction.currencyCode !== SUBSCRIPTION_OFFER.currency || transaction.priceIds.length !== 1 || transaction.priceIds[0] !== priceId ||
+      (reservedId && transaction.id !== reservedId) || !operation || asString(transaction.customData?.checkoutOperationId) !== operation) {
+      throw new Error('unconfirmed_trial_checkout')
+    }
+    const link = await tx.billingProviderCustomer.findFirst({ where: { accountId: subscription.accountId, provider: PROVIDER, environment: ENVIRONMENT }, select: { providerCustomerId: true } })
+    if (!link || link.providerCustomerId !== provided.customerId) throw new Error('trial_customer_mismatch')
+    const paid = await tx.billingPayment.findFirst({ where: { accountId: subscription.accountId, amountMinor: { gt: 0n },
+      status: { in: ['SUCCEEDED', 'REFUNDED', 'PARTIALLY_REFUNDED', 'DISPUTED'] } }, select: { id: true } })
+    if (paid) throw new Error('trial_account_already_paid')
+    const check = checkTrialSubscription(provided, subscription.price.providerPriceId)
+    if (!check.ok) {
+      await audit(tx, {
+        accountId: subscription.accountId,
+        actorType: 'provider',
+        action: 'billing.trial.rejected',
+        entityType: 'billing_subscription',
+        entityId: subscription.id,
+        metadata: { reason: check.reason, providerSubscriptionId: provided.id },
+      })
+      return
+    }
+    // One trial per account: an existing trial is never replaced nor extended.
+    const trial = await tx.billingTrial.create({
+      data: {
+        accountId: subscription.accountId,
+        planId: subscription.planId,
+        subscriptionId: subscription.id,
+        status: 'ACTIVE',
+        startsAt: check.grant.startsAt,
+        endsAt: check.grant.endsAt,
+      },
+    })
+    await audit(tx, {
+      accountId: subscription.accountId,
+      actorType: 'provider',
+      action: 'billing.trial.started',
+      entityType: 'billing_trial',
+      entityId: trial.id,
+      metadata: { subscriptionId: subscription.id, endsAt: check.grant.endsAt.toISOString() },
+    })
+    await notify(tx, subscription.accountId, 'trial_started', `trial-started:${trial.id}`, { endsAt: check.grant.endsAt.toISOString() })
   }
 
   private async onPaymentFailed(tx: Db, data: Record<string, unknown>): Promise<ProcessingOutcome> {
@@ -852,6 +938,7 @@ export class BillingEventsService {
     })
     if (!subscription) return 'processed'
     // Always read the current provider state so stale deliveries cannot restore old states.
+    await this.lockAccount(tx, subscription.accountId)
     const provided = await this.createPaddleClient().getSubscription(providerSubscriptionId)
     if (provided.id !== providerSubscriptionId) throw new Error('subscription_identity_mismatch')
     const link = await tx.billingProviderCustomer.findFirst({
@@ -872,6 +959,11 @@ export class BillingEventsService {
         metadata: { providerSubscriptionId },
       })
       await notify(tx, subscription.accountId, 'subscription_canceled', `canceled:${providerSubscriptionId}`, {})
+    }
+    // A linked trialing subscription reconciles the trial idempotently: it never
+    // replaces nor extends an account's existing trial.
+    if (mapSubscriptionStatus(provided.status) === 'TRIALING') {
+      await this.grantTrialFromProvider(tx, subscription, provided)
     }
     return 'processed'
   }
@@ -993,4 +1085,4 @@ export class BillingEventsService {
 // caught at compile time instead of silently comparing raw lower-case values.
 // ---------------------------------------------------------------------------
 
-export type BillingEventStatusName = (typeof EVENT_STATUS)[keyof typeof EVENT_STATUS]
+export type BillingEventStatusName = (typeof EVENT_STATUS_MAP)[string]

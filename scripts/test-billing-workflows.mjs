@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict'
 import { createHmac, randomUUID } from 'node:crypto'
 import { createRequire } from 'node:module'
+import { testCardTrial } from './test-billing-card-trial.mjs'
 const require = createRequire(new URL('../packages/database/package.json', import.meta.url))
 const { Client } = require('pg')
 const url = new URL(process.env.BILLING_WORKFLOW_DATABASE_URL ?? '')
@@ -38,24 +39,32 @@ const { effectiveAccess } = backend('./dist/modules/billing/billing-store.js')
 url.username = 'app_backend'
 const [one, two, reviewer, schoolAdmin] = users
 const operations = new BillingOperations()
+// Explicit historical fixture: the public endpoint must never issue cardless trials now.
+async function historicalTrial(user) {
+  await db.query('insert into billing_accounts(user_id) values ($1) on conflict (user_id) do nothing', [user.id])
+  return (await db.query(`insert into billing_trials(account_id,plan_id,starts_at,ends_at)
+    select id,$2,now(),now()+interval '14 days' from billing_accounts where user_id=$1 returning id,ends_at`, [user.id,planId])).rows[0]
+}
 try {
   await runWithPrismaClient(url.toString(), async () => {
     for (const model of Prisma.dmmf.datamodel.models.filter(model=>model.name.startsWith('Billing'))) {
       await prisma[model.name[0].toLowerCase()+model.name.slice(1)].findMany({take:1})
     }
     console.log('PASS: every commercial Prisma model reads through app_backend against the migrated SQL schema.')
-    const [trialA, trialB] = await Promise.all([operations.startTrial(one), operations.startTrial(one)])
-    assert.equal(trialA.id, trialB.id)
-    assert.equal(trialA.endsAt, trialB.endsAt)
+    const { BillingService } = backend('./dist/modules/billing/billing.service.js')
+    assert((await new BillingService().overview(one)).prices.some(price=>price.id===priceId && price.mode==='manual'), 'The card offer must retain the authorized manual transfer option')
+    await assert.rejects(operations.startTrial(one), error => error.getStatus() === 409)
+    const trialA = await historicalTrial(one)
     await db.query('update public.app_users set email=$1 where id=$2', [`changed-${randomUUID()}@example.invalid`,one.id])
-    assert.equal((await operations.startTrial(one)).endsAt, trialA.endsAt)
+    assert.equal((await operations.startTrial(one)).endsAt,trialA.ends_at.toISOString())
+    assert.equal((await db.query('select ends_at from billing_trials where id=$1',[trialA.id])).rows[0].ends_at.toISOString(), trialA.ends_at.toISOString())
     assert.equal((await effectiveAccess(two.id)).allowed, false)
     await assert.rejects(operations.grantCourtesy(schoolAdmin, { userId: two.id, planId, startsAt: new Date().toISOString(), reason: 'Synthetic courtesy reason', acknowledgeActiveRenewal: false }))
     const courtesy = await operations.grantCourtesy(reviewer, { userId: two.id, planId, startsAt: new Date(Date.now()-60000).toISOString(), reason: 'Synthetic courtesy reason', acknowledgeActiveRenewal: false })
     assert.equal((await effectiveAccess(two.id)).reason, 'courtesy')
     await operations.revokeCourtesy(reviewer, courtesy.id, { reason: 'Synthetic courtesy revocation' })
     assert.equal((await effectiveAccess(two.id)).allowed, false)
-    console.log('PASS: concurrent unique trial, immutable expiry after email change, independent teachers and commercial permission.')
+    console.log('PASS: cardless endpoint rejected, historical coverage retained after email change, independent teachers and commercial permission.')
 
     const [a, b] = await Promise.all([operations.createTransfer(one,{priceId}), operations.createTransfer(one,{priceId})])
     assert.equal(a.id,b.id)
@@ -115,7 +124,7 @@ try {
     console.log('PASS: a full refund remains in gross/refund history and does not appear as net revenue.')
 
     const { BillingMaintenance } = backend('./dist/modules/billing/billing-maintenance.js')
-    await operations.startTrial(reviewer)
+    await historicalTrial(reviewer)
     await db.query("update public.billing_trials set ends_at=now()+interval '1 day' where account_id=(select id from billing_accounts where user_id=$1)",[reviewer.id])
     const maintenance = new BillingMaintenance(events)
     await assert.rejects(maintenance.run(schoolAdmin))
@@ -158,6 +167,8 @@ try {
       assert.equal((await db.query("select signature_valid from billing_events where provider_event_id like $1",[`reconciliation:${transactionId}:%`])).rows[0].signature_valid,false)
       console.log('PASS: simulated provider recovery of first checkout/payment, immutable owner linkage and idempotent real DB coverage.')
     } finally { globalThis.fetch = actualFetch }
+
+    await testCardTrial({ db, backend, events, reviewer, schoolId, planId, effectiveAccess })
 
     // The recovery fixture now has paid coverage. Explicitly expire it before
     // exercising the separate HTTP recovery route scenario below.
