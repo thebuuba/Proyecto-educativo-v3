@@ -20,17 +20,22 @@ export function createUpperEnglishProvider(definition:Definition){
   const text=affirmativeScopedEnglishTask(description),contextText=englishContextTask(description)
   const action=text.replace(/\b(?:para|a fin de) (?:leer|escuchar|escribir|redactar|presentar|dialogar|conversar|comparar)\b/g,'para')
   let mode:UpperEnglishMode|undefined
-  if(/\binvestig\w*\b/.test(action))mode='research'
-  else if(/\b(?:escuch\w*|listen\w*)\b/.test(action))mode='listening'
-  else if(/\b(?:leer\w*|lean|lectura|leyendo|read\w*)\b/.test(action))mode='reading'
+  if(/\binvestig(?:ar(?:an)?|an|uen|ando)\b/.test(action))mode='research'
+  else if(/\b(?:escuch(?:ar(?:an)?|an|en|ando)|listen(?:s|ing)?)\b/.test(action))mode='listening'
+  else if(/\b(?:leer(?:an)?|lean|leen|leyendo|read(?:s|ing)?)\b/.test(action))mode='reading'
   else if(/\b(?:video|audiovisual)\b/.test(action)&&/\b(?:grab\w*|crea\w*|elabor\w*)\b/.test(action))mode='audiovisual'
-  else if(/\b(?:escrib\w*|escrit\w*|redact\w*|por escrito|writ\w*)\b/.test(action))mode='writing'
+  else if(/\b(?:escrib\w*|redact\w*|por escrito|writ\w*)\b/.test(action))mode='writing'
   else if(/\b(?:dialog(?:ar(?:an)?|an|uen|ando)|convers(?:ar(?:an)?|an|en|ando)|intercambio oral|role play)\b/.test(action))mode='interaction'
-  else if(/\b(?:oral\w*|present(?:ar|aran|an|en|acion)|expon\w*|narr\w*|ensay\w*|recit\w*|canta\w*)\b/.test(action))mode='oral'
   else if(/\b(?:compar(?:ar(?:an)?|en|an)|contrast\w*)\b/.test(action))mode='comparison'
+  else if(/\banaliz\w*\b/.test(action))mode='analysis'
+  else if(/\b(?:oral\w*|present(?:ar|aran|an|en)|expon\w*|narr\w*|ensay\w*|recit\w*|canta\w*)\b/.test(action))mode='oral'
   else if(/\b(?:analiz\w*|explic\w*|infer\w*)\b/.test(action))mode='analysis'
   else if(/\b(?:identific\w*|reconoc\w*|localiz\w*)\b/.test(action))mode='reading'
   else if(/\b(?:utiliz\w*|emple\w*|complet\w*|crea\w*|elabor\w*|planific\w*)\b/.test(action))mode='writing'
+  else if(/^(?:lectura|reading)\b/.test(action))mode='reading'
+  else if(/^escucha\b/.test(action))mode='listening'
+  else if(/^presentacion\b/.test(action))mode='oral'
+  else if(/^(?:escritura|produccion escrita)\b/.test(action))mode='writing'
   if(!mode)return null
   const inherited=previous&&/\b(?:lo|la|los|las|sus trabajos)\s+(?:present\w*|expon\w*)\b/.test(text)
   const evidence:UpperEnglishEvidence={mode,text:inherited?previous.text:text,contextText,requirementText:text,functions:inherited?previous.functions:definition.functions(text)}

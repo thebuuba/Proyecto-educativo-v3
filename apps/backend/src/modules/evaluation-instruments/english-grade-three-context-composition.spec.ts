@@ -6,6 +6,11 @@ const context={level:'SECONDARY' as const,grade:3,cycle:1,subjectCode:'ING',opta
 const formats=['rubrica','lista-cotejo','escala','lista-ponderada'] as const
 const propose=(description:string,preferredInstrumentType:typeof formats[number]='rubrica',maxScore=20,title='Actividad')=>recommend({activityTitle:title,description,preferredInstrumentType,maxScore,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
 describe('Tercero: condiciones comunicativas explícitas y acciones independientes',()=>{
+ it('un aporte individual sobre un problema no exige intervenciones de un equipo',()=>{
+  const p=propose('Escribirán en inglés un mensaje para aportar una propuesta individual sobre un problema comunitario ficticio, con los datos proporcionados.')
+  const c=p.criteria.find(c=>c.templateId==='ing-3-context-social-contribution')!
+  expect(c).toBeDefined();expect(JSON.stringify(c)).not.toContain('equipo')
+ })
  for(const f of compositions)for(const format of formats)for(const total of [20,17.35])it(`composición ${f.id} ${format} ${total}`,()=>{
   const p=propose(f.description,format,total)
   expect(p.activityType).toBe(f.activity)

@@ -24,9 +24,9 @@ export function gradeThreeContextCriteria(text:string,receptive=false){
   'No aporta una intervención reconocible relacionada con las normas y el mensaje solicitados.',
  ]))
  if(!receptive&&/\b(?:problema comunitario|problematicas? sociales?|problemas? sociales?)\b/.test(text)&&/\b(?:aport\w*|contribu\w*)\b/.test(text))rows.push(row('social-contribution','Aporte comunicativo ante el problema dado',[
-  'Aporta en inglés una propuesta relacionada con el problema proporcionado y con la intervención del equipo, permitiendo continuar la búsqueda comunicativa de una solución.',
-  'El aporte responde al problema principal; una relación con la intervención del equipo necesita precisión.',
-  'Expresa una propuesta aislada sin relacionarla claramente con el problema y los aportes disponibles.',
+  `Aporta en inglés una propuesta relacionada con el problema proporcionado y con ${/\bequipo\b/.test(text)?'la intervención del equipo':'los datos de la situación'}, permitiendo continuar la búsqueda comunicativa de una solución.`,
+  `El aporte responde al problema principal; una relación con ${/\bequipo\b/.test(text)?'la intervención del equipo':'los datos de la situación'} necesita precisión.`,
+  `Expresa una propuesta aislada sin relacionarla claramente con el problema y ${/\bequipo\b/.test(text)?'los aportes disponibles':'los datos proporcionados'}.`,
   'El aporte cambia el problema o contradice las condiciones proporcionadas para la situación.',
   'No aporta una propuesta comunicativa reconocible relacionada con el problema de la tarea.',
  ]))

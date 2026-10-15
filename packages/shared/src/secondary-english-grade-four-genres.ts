@@ -24,5 +24,6 @@ export function gradeFourGenreCriteria(text:string,mode:string,existing:Contextu
   if(g.id==='narrative'&&existing.some(c=>c.templateId==='ing-4-experience')&&!/personajes|narrador|estructura (?:de la )?narracion/.test(text))return false
   return true
  })
- return gradeTwoGenreCriteria(text,['analysis','comparison','research'].includes(mode)?'reading':mode,existing,'ing-4',genres)
+ const fields=[/\bemisor\b/.test(text)?'el emisor':'',/\bfecha\b/.test(text)?'la fecha':'',/\btotal\b/.test(text)?'el total':''].filter(Boolean).join(', ')
+ return gradeTwoGenreCriteria(text,['analysis','comparison','research'].includes(mode)?'reading':mode,existing,'ing-4',genres.map(g=>g.id==='invoice'&&fields?{...g,data:fields+' de la factura y sus referentes'}:g))
 }

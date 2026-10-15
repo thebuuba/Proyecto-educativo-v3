@@ -41,4 +41,7 @@ export function requestedGradeFourGrammar(text:string){
   return f
  })
 }
-export const gradeFourGrammarCriterion=(feature:LanguageFeature,text:string,mode:string)=>scopedEnglishGrammarCriterion(feature,text,mode,'ing-4')
+export function gradeFourGrammarCriterion(feature:LanguageFeature,text:string,mode:string){
+ const explains=new RegExp(`\\b(?:funcion|significado|uso) (?:de|del|de la) (?:(?:el|la|los|las)\\s+)*(?:${feature.match})`).test(text)&&/\b(?:explic\w*|analiz\w*|investig\w*)\b/.test(text)
+ return scopedEnglishGrammarCriterion(feature,text,mode!=='comparison'&&explains?'analysis':mode,'ing-4')
+}

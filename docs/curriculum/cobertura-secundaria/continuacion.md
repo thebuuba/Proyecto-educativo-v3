@@ -1,5 +1,12 @@
 # Continuación del encargo completo
 
+## Estado vigente — 15/10/2026
+
+Inglés común4.º verificado en sus familias y patrones definidos: fuente162 registros/15 grupos, contexto e indicadores/composición conectados, cuatro formatos y CRUD auténticos cotejados con snapshots. Backend22.227/81, frontend9.868/5, HTTP172+8+4rechazos/4pools en58 y ocho seguimientos en60;125 snapshots/95 completos, base conservada. Builds obligatorios aprobados. [Informe final de cuarto](ingles-4-informe-final.md), [instrumentos completos](ingles-4-ejemplos-finales.md). .57/.58/.59 congelados; .60 instalado/cargado local. Publicar cierre, comprobar push y continuar quinto común PDF163–168; no sexto hasta cerrar quinto. Sin subagentes, francés, optativas, IA de aplicación, rediseño, main, producción ni reset.
+
+Las secciones siguientes conservan los puntos históricos; prevalece este estado y el informe final de cuarto.
+
+
 ## Retomar aquí: Inglés común 2.º–6.º — 14/10/2026
 
 Retomar después del seguimiento: `505566168ffdc2565ee69860928b6d7c31c555b1` publicado, `.56` instalado/cargado y congelado. HTTP de subconjuntos culturales3/4 y generación real en Chrome3 aprobados;121 snapshots/91 completos/108 de base intactos. No hay pendiente conocido en ese seguimiento. **Próximo: contexto/indicadores y composición de cuarto**, creando `.57` a partir del `.56` congelado; después revisión integral/operaciones/HTTP/cuatro CRUD/snapshots antes de quinto. Cuarto no está cerrado. Las actualizaciones anteriores que dicen «instalar56» ya se completaron.

@@ -20,11 +20,13 @@ Ejecución directa con `executing-plans`; sin subagentes. Encargo del adjunto `1
 - [x] Base .46 comprobada; entorno recuperado sin reset,41 regresiones iniciales y rutina habitual con cinco evidencias/puntaje pendiente/17.35/agotamiento.
 - [x] Segundo: PDF140–145, primer ciclo, común; familias definidas verificadas,196 registros, cuatro formatos y persistencia. Un fragmento fuente ininterpretable excluido expresamente; cierre .53.
 - [x] Tercero: PDF146–151,158 registros/15 grupos; familias definidas verificadas, cuatro formatos/CRUD/snapshots y cierre .55.
-- [ ] Cuarto: PDF158–162, segundo ciclo, común; misma puerta.
+- [x] Cuarto: PDF158–162, segundo ciclo, común; misma puerta.
 - [ ] Quinto: PDF163–168; misma puerta.
 - [ ] Sexto: PDF169–174; misma puerta y consolidación final.
 
 ## Recuperación
+
+Cuarto cerrado en las familias definidas (.59): ver informe final, fuente162/15, backend22226, frontend9868, HTTP172+8+4/7delta, cuatroCRUD/snapshots125. Publicar y continuar quinto PDF163–168. Estados anteriores conservados debajo.
 
 Seguimiento3 ya comprobado:5055661 publicado,56 instalado/cargado y congelado, HTTP subconjuntos3/4 y generación Chrome3 aprobados. Históricos121/91/108 intactos. Siguiente contexto/indicadores y composición de cuarto en57; luego puertas completas de cierre antes de quinto. Cuarto sigue parcial; las líneas de instalación pendiente siguientes son históricas.
 

@@ -4,6 +4,7 @@ import {writeSecondaryInventory} from './secondary-inventory.mjs'
 const root='docs/curriculum/cobertura-secundaria/'
 const inventory=JSON.parse(readFileSync(root+'inventario.json','utf8'))
 const scope=inventory.scopes.find(s=>s.id==='011167a1-54f7-5915-9d75-5168ec1b0a97')
+const closed=process.argv.includes('--close')
 assert.equal(scope.subject,'Inglés');assert.equal(scope.character,'COMMON');assert.equal(scope.grade,4)
 assert.deepEqual(scope.pdfPages,[158,159,160,161,162])
 const functions=JSON.parse(readFileSync('data/evaluation-instruments/english-grade-four-contracts.json','utf8'))
@@ -11,6 +12,11 @@ const grammar=JSON.parse(readFileSync('data/evaluation-instruments/english-grade
 const lexicon=JSON.parse(readFileSync('data/evaluation-instruments/english-grade-four-lexicon-contracts.json','utf8'))
 const strategies=JSON.parse(readFileSync('data/evaluation-instruments/english-grade-four-strategy-contracts.json','utf8'))
 const genres=JSON.parse(readFileSync('data/evaluation-instruments/english-grade-four-genre-contracts.json','utf8'))
+const contexts=JSON.parse(readFileSync('data/evaluation-instruments/english-grade-four-context-contracts.json','utf8'))
+const contextual=(type,index)=>[...new Set(contexts.filter(f=>f.sourceTypes[type]?.includes(index)).map(f=>f.templateId))]
+const functional=functions.flatMap(f=>f.criteria.map(id=>`ing-4-${id}`))
+const specific=[functional,['ing-4-written','ing-4-intelligibility','ing-4-opinion'],['ing-4-context-problem-description','ing-4-context-problem-solution','ing-4-problem-causes'],['ing-4-strategy-courtesy','ing-4-context-respect-differences'],['ing-4-research','ing-4-context-source-information'],['ing-4-context-care','ing-4-context-risk-care'],['ing-4-strategy-courtesy','ing-4-context-faithful-information','ing-4-opinion','ing-4-wishes','ing-4-plans','ing-4-experience']]
+const indicators=[functional,['ing-4-written','ing-4-intelligibility'],['ing-4-interaction'],functional,['ing-4-opinion'],['ing-4-interaction'],['ing-4-context-problem-information'],['ing-4-context-problem-description','ing-4-problem-causes'],['ing-4-context-problem-solution'],['ing-4-strategy-cultural-comparison','ing-4-context-respect-differences'],['ing-4-strategy-courtesy','ing-4-context-respect-differences'],['ing-4-strategy-courtesy','ing-4-context-critical-information'],['ing-4-research'],['ing-4-context-source-information','ing-4-written','ing-4-intelligibility'],['ing-4-context-source-information','ing-4-interaction'],['ing-4-context-care'],['ing-4-context-risk-care'],['ing-4-context-care','ing-4-interaction'],['ing-4-wishes','ing-4-plans','ing-4-experience'],['ing-4-strategy-courtesy','ing-4-opinion'],['ing-4-strategy-courtesy','ing-4-context-faithful-information','ing-4-strategy-cultural-comparison']]
 const headings={CONCEPT:[0,13,29],PROCEDURE:[0,9,14,21,28,36,41,45]}
 const records=Object.entries(scope.elements).flatMap(([type,elements])=>elements.map((record,index)=>{
  let decision='PENDING_EVALUATIVE_CONNECTION',note='Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.',providers=[],verification='NOT_RUN'
@@ -23,6 +29,9 @@ const records=Object.entries(scope.elements).flatMap(([type,elements])=>elements
  else if(type==='PROCEDURE'&&strategies.some(f=>f.sourceIndex===index)){decision='CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY';providers=[...new Set(strategies.filter(f=>f.sourceIndex===index).map(f=>`ing-4-strategy-${f.id}`))];verification='english-grade-four-strategies-genres.spec.ts';note='Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.'}
  else if(type==='PROCEDURE'&&genres.some(f=>f.sourceIndices.includes(index))){decision='CONNECTED_MODALITY_SCOPED_GENRES';providers=genres.filter(f=>f.sourceIndices.includes(index)).map(f=>`ing-4-genre-${f.id}`);verification='english-grade-four-strategies-genres.spec.ts';note='Listas cotejadas por modalidad: recepción oral12/escrita30, producción oral10/escrita14; audiovisual explícito. Respetar fuentes, productos y alternativas; no trasladar géneros entre listas.'}
  else if(type==='PROCEDURE'&&index===48){decision='CONNECTED_CULTURAL_COMPARISON_SCOPE_INTRODUCTION';providers=['ing-4-strategy-cultural-comparison'];verification='english-grade-four-strategies-genres.spec.ts';note='Introduce la comparación cultural de los siete aspectos siguientes; no es una fila adicional ni exige todos los aspectos a la vez.'}
+ else if(type==='ATTITUDE_VALUE'){decision='CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION';providers=contextual(type,index);verification='english-grade-four-context-composition.spec.ts';note='Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.'}
+ else if(type==='SPECIFIC_COMPETENCY'){decision='CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE';providers=specific[index];verification='FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS';note='Evidencias solicitadas de cuarto; la competencia no se convierte en un criterio genérico independiente.'}
+ else if(type==='ACHIEVEMENT_INDICATOR'){decision='CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE';providers=indicators[index];verification='FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS';note='Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.'}
  else if(type==='FUNDAMENTAL_COMPETENCY'){decision='ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION';note='Organiza la competencia específica; no es una fila independiente.'}
  if(type==='CONCEPT'&&index===43)note+=' Contiene encabezado Gramática y múltiples contenidos reales: enunciativas, interrogativas, exclamativas y varios tiempos; no descartar como mero encabezado.'
  if(type==='CONCEPT'&&[45,46,47,49,50,51,52].includes(index))note+=' Registro compuesto: conservar cada forma, función o ejemplo con su origen.'
@@ -31,7 +40,8 @@ const records=Object.entries(scope.elements).flatMap(([type,elements])=>elements
 }))
 assert.equal(records.length,162);assert.equal(new Set(records.map(r=>r.id)).size,162)
 assert(records.filter(r=>r.decision.startsWith('CONNECTED')).every(r=>r.providers.length))
-const validProviders=new Set([...functions.map(f=>`ing-4-${f.id}`),...grammar.map(f=>`ing-4-feature-${f.id}`),...lexicon.map(f=>`ing-4-lexicon-${f.id}`),...strategies.map(f=>`ing-4-strategy-${f.id}`),...genres.map(f=>`ing-4-genre-${f.id}`)])
+assert(!records.some(r=>r.decision==='PENDING_EVALUATIVE_CONNECTION'),'Registro sin decisión')
+const validProviders=new Set([...functional,'ing-4-written','ing-4-intelligibility','ing-4-interaction',...contexts.map(f=>f.templateId),...grammar.map(f=>`ing-4-feature-${f.id}`),...lexicon.map(f=>`ing-4-lexicon-${f.id}`),...strategies.map(f=>`ing-4-strategy-${f.id}`),...genres.map(f=>`ing-4-genre-${f.id}`)])
 assert(records.every(r=>r.providers.every(p=>validProviders.has(p))),'Proveedor inexistente')
 const report={sourceSha256:inventory.source.sha256,scopeId:scope.id,grade:4,cycle:2,subject:'Inglés',character:'COMMON',pdfPages:scope.pdfPages,printedPages:[157,158,159,160,161],method:'Cinco páginas renderizadas y cotejadas visualmente, incluidas columnas y continuaciones.',layoutNotes:['PDF161 continúa gramática con las otras columnas vacías.','CONCEPT43 combina encabezado y contenidos; conservar todas sus formas.','Comprensión oral12 y escrita30 géneros; producción oral10 y escrita14. No trasladar una lista a todas las modalidades.','Doce ámbitos cotidianos,15 familias de vocabulario y13 expresivas; no copiar los de tercero.'],status:'PARTIAL_FUNCTIONS_GRAMMAR_NO_GRADE_CLOSURE',records}
 writeFileSync(root+'ingles-4-cotejo-fuente.json',JSON.stringify(report,null,2)+'\n')
@@ -46,10 +56,24 @@ if(process.argv.includes('--installed')){
  assert.equal(health.development.catalogVersion,codeVersion)
  Object.assign(status,{catalogVersion:codeVersion,applicationVerification:'INSTALLED_PROVIDER_GRADE_CLOSURE_PENDING',serviceVerification:'PARTIAL_HTTP_CULTURAL_FOLLOWUP_ONLY_NOT_GRADE_CLOSURE',interfaceVerification:'NOT_RUN_FOR_GRADE_FOUR'})
 }
-report.status='PARTIAL_DEFINED_CONTENT_CONTEXT_COMPOSITION_PENDING'
+report.status='CONNECTED_DEFINED_FAMILIES_FINAL_REVIEW_PENDING'
 report.layoutNotes=report.layoutNotes.map(n=>n.replace('13 expresivas','13 registros expresivos/15 intenciones'))
 writeFileSync(root+'ingles-4-cotejo-fuente.json',JSON.stringify(report,null,2)+'\n')
-Object.assign(status,{implementation:'PARTIAL_FUNCTIONS_GRAMMAR_LEXICON_STRATEGIES_GENRES',automatedVerification:'DEFINED_CONTENT_CONTRACTS_CONTEXT_COMPOSITION_PENDING',pending:'Contenido definido conectado en código. Faltan contexto/indicadores, composición y revisión integral/operaciones/HTTP/cuatro CRUD auténticos/snapshots. No iniciar quinto.'})
+Object.assign(status,{implementation:'CONNECTED_DEFINED_FAMILIES_FINAL_REVIEW_PENDING',automatedVerification:'FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS',pending:'Familias definidas conectadas en código; faltan cierre de revisión integral/HTTP/cuatro CRUD auténticos/snapshots. No iniciar quinto.'})
+if(closed){
+ const http=JSON.parse(readFileSync(root+'evidencias/ingles-4-integral-servicio.json','utf8'))
+ const delta=JSON.parse(readFileSync(root+'evidencias/ingles-4-seguimientos-servicio-60.json','utf8'))
+ const ui=JSON.parse(readFileSync(root+'evidencias/ingles-4-final-flujo-navegador.json','utf8'))
+ const persisted=JSON.parse(readFileSync(root+'evidencias/ingles-4-final-persistencia.json','utf8'))
+ assert.equal(http.health.development.catalogVersion,'evaluation-2026.58');assert.equal(http.results.length,172);assert.equal(http.selections.length,8);assert.equal(http.capacity.length,4)
+ assert.equal(delta.health.development.catalogVersion,'evaluation-2026.60');assert.equal(delta.results.length,8)
+ assert.equal(ui.length,4);assert.equal(new Set(ui.map(a=>a.format)).size,4);assert(ui.every(a=>a.reopened&&a.savedHash));assert.equal(persisted.activities.length,4)
+ report.status='VERIFIED_DEFINED_FAMILIES'
+ for(const record of report.records){record.decision=record.decision.replace('_GRADE_PARTIAL','');record.note=record.note.replace('No implica cierre del grado.','Con revisión integral, HTTP y cuatro formatos persistidos.')}
+ report.applicationEvidence=['evidencias/ingles-4-integral-servicio.json','evidencias/ingles-4-seguimientos-servicio-60.json','evidencias/ingles-4-final-flujo-navegador.json','evidencias/ingles-4-final-persistencia.json','ingles-4-ejemplos-finales.md','ingles-4-informe-final.md']
+ writeFileSync(root+'ingles-4-cotejo-fuente.json',JSON.stringify(report,null,2)+'\n')
+ Object.assign(status,{implementation:'VERIFIED_DEFINED_FAMILIES',catalogVersion:codeVersion,applicationVerification:'FOUR_EVERYDAY_FORMATS_GENERATED_EDITED_SAVED_REOPENED_SNAPSHOTS',serviceVerification:'HTTP_172_FAMILIES_8_SELECTIONS_4_CAPACITY_AT_58_AND_8_DELTA_AT_60',interfaceVerification:'FOUR_FORMATS_AUTHENTICATED_CRUD_57_58_AND_GENERATION_DELTA_59',report:'ingles-4-informe-final.md',engineConnection:'COMMON_FOURTH_GRADE_DEFINED_FAMILIES',pending:'Sin pendientes conocidos en las familias y patrones definidos. No se garantiza cualquier redacción imaginable; se excluyen rasgos internos, hábitos privados y productos no solicitados.'})
+}
 review.scopes=[...(review.scopes??[]).filter(s=>s.id!==scope.id),{id:scope.id,...status}]
 const concepts=scope.elements.CONCEPT
 const layout={scopeId:scope.id,provenance:'PDF_COLUMNS_VISUALLY_REVIEWED',headingIds:[concepts[0].id],groups:[...concepts.slice(1,13).map(c=>({id:c.id,title:c.text.replace(/^•\s*/,''),memberIds:[]})),{id:concepts[13].id,title:'Vocabulario',memberIds:concepts.slice(14,29).map(c=>c.id)},{id:concepts[29].id,title:'Expresiones',memberIds:concepts.slice(30,43).map(c=>c.id)},{id:concepts[43].id,title:'Gramática: formas y usos',memberIds:concepts.slice(44).map(c=>c.id)}]}

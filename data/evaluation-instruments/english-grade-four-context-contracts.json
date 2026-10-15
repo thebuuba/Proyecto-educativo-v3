@@ -1,0 +1,256 @@
+[
+  {
+    "id": "ethical-ict",
+    "templateId": "ing-4-context-ethical-ict",
+    "sourceTypes": {
+      "ATTITUDE_VALUE": [
+        1
+      ],
+      "SPECIFIC_COMPETENCY": [
+        3
+      ],
+      "ACHIEVEMENT_INDICATOR": [
+        11
+      ]
+    },
+    "description": "Escribirán en inglés un mensaje para comunicar información en un chat ficticio, respetando las normas éticas proporcionadas y la privacidad de los datos de la tarea."
+  },
+  {
+    "id": "agreed-time",
+    "templateId": "ing-4-context-agreed-time",
+    "sourceTypes": {
+      "ATTITUDE_VALUE": [
+        2
+      ]
+    },
+    "description": "Dialogarán en inglés en un intercambio virtual para compartir información, ajustando sus intervenciones al tiempo y los turnos acordados en la tarea."
+  },
+  {
+    "id": "empathetic-response",
+    "templateId": "ing-4-context-empathetic-response",
+    "sourceTypes": {
+      "ATTITUDE_VALUE": [
+        4
+      ]
+    },
+    "description": "Dialogarán en inglés para responder con empatía a la necesidad comunicada por un personaje ficticio."
+  },
+  {
+    "id": "faithful-information",
+    "templateId": "ing-4-context-faithful-information",
+    "sourceTypes": {
+      "ATTITUDE_VALUE": [
+        7
+      ],
+      "SPECIFIC_COMPETENCY": [
+        6
+      ],
+      "ACHIEVEMENT_INDICATOR": [
+        14,
+        20
+      ]
+    },
+    "description": "Escribirán en inglés una noticia conservando fielmente la información proporcionada, sin inventar datos."
+  },
+  {
+    "id": "social-contribution",
+    "templateId": "ing-4-context-social-contribution",
+    "sourceTypes": {
+      "ATTITUDE_VALUE": [
+        9
+      ],
+      "SPECIFIC_COMPETENCY": [
+        2
+      ]
+    },
+    "description": "Dialogarán en inglés para aportar una propuesta sobre un problema comunitario ficticio, relacionándola con los datos y el aporte del equipo."
+  },
+  {
+    "id": "care",
+    "templateId": "ing-4-context-care",
+    "sourceTypes": {
+      "ATTITUDE_VALUE": [
+        10
+      ],
+      "SPECIFIC_COMPETENCY": [
+        5
+      ],
+      "ACHIEVEMENT_INDICATOR": [
+        15,
+        17
+      ]
+    },
+    "description": "Leerán en inglés un mensaje e identificarán las acciones indicadas para cuidar la salud y el medioambiente de la situación proporcionada."
+  },
+  {
+    "id": "critical-information",
+    "templateId": "ing-4-context-critical-information",
+    "sourceTypes": {
+      "ATTITUDE_VALUE": [
+        11
+      ],
+      "SPECIFIC_COMPETENCY": [
+        1
+      ],
+      "ACHIEVEMENT_INDICATOR": [
+        3
+      ]
+    },
+    "description": "Escribirán en inglés una predicción sobre una noticia proporcionada, distinguiendo los hechos confirmados de las posibilidades e inferencias."
+  },
+  {
+    "id": "respect-differences",
+    "templateId": "ing-4-context-respect-differences",
+    "sourceTypes": {
+      "ATTITUDE_VALUE": [
+        13,
+        14
+      ],
+      "SPECIFIC_COMPETENCY": [
+        3
+      ],
+      "ACHIEVEMENT_INDICATOR": [
+        9,
+        10,
+        11
+      ]
+    },
+    "description": "Escribirán en inglés información sobre los personajes de los ejemplos proporcionados, sin estereotipos ni generalizaciones por su edad, género, nacionalidad o capacidades."
+  },
+  {
+    "id": "problem-description",
+    "templateId": "ing-4-context-problem-description",
+    "sourceTypes": {
+      "ACHIEVEMENT_INDICATOR": [
+        7
+      ]
+    },
+    "description": "Describirán oralmente en inglés el problema cotidiano del personaje, comunicando los detalles de la situación proporcionada."
+  },
+  {
+    "id": "problem-solution",
+    "templateId": "ing-4-context-problem-solution",
+    "sourceTypes": {
+      "SPECIFIC_COMPETENCY": [
+        2
+      ],
+      "ACHIEVEMENT_INDICATOR": [
+        8
+      ]
+    },
+    "description": "Escribirán en inglés una propuesta de solución para el problema cotidiano de una situación proporcionada, relacionándola con sus datos."
+  },
+  {
+    "id": "problem-information",
+    "templateId": "ing-4-context-problem-information",
+    "sourceTypes": {
+      "ACHIEVEMENT_INDICATOR": [
+        6
+      ]
+    },
+    "description": "Leerán en inglés un mensaje e identificarán el problema cotidiano del personaje y los datos solicitados para resolverlo."
+  },
+  {
+    "id": "inference",
+    "templateId": "ing-4-context-inference",
+    "sourceTypes": {
+      "ACHIEVEMENT_INDICATOR": [
+        0,
+        2
+      ]
+    },
+    "description": "Analizarán en inglés las pistas de una situación proporcionada y harán una inferencia sobre lo ocurrido, distinguiendo lo inferido de lo expresamente comunicado."
+  },
+  {
+    "id": "research",
+    "templateId": "ing-4-research",
+    "sourceTypes": {
+      "SPECIFIC_COMPETENCY": [
+        4
+      ],
+      "ACHIEVEMENT_INDICATOR": [
+        12
+      ]
+    },
+    "description": "Investigarán información sobre tecnología en textos en inglés proporcionados y organizarán los datos para responder a la pregunta de la tarea."
+  },
+  {
+    "id": "risk-care",
+    "templateId": "ing-4-context-risk-care",
+    "sourceTypes": {
+      "SPECIFIC_COMPETENCY": [
+        5
+      ],
+      "ACHIEVEMENT_INDICATOR": [
+        16,
+        17
+      ]
+    },
+    "description": "Describirán oralmente en inglés el riesgo para la salud y el medioambiente de una situación ficticia y comunicarán las orientaciones de cuidado solicitadas."
+  },
+  {
+    "id": "plans",
+    "templateId": "ing-4-plans",
+    "sourceTypes": {
+      "ATTITUDE_VALUE": [
+        15
+      ],
+      "ACHIEVEMENT_INDICATOR": [
+        18
+      ]
+    },
+    "description": "Planificarán las actividades futuras de un personaje para la próxima semana y las comunicarán en inglés por escrito."
+  },
+  {
+    "id": "courtesy",
+    "templateId": "ing-4-strategy-courtesy",
+    "sourceTypes": {
+      "ATTITUDE_VALUE": [
+        3,
+        6,
+        8
+      ],
+      "ACHIEVEMENT_INDICATOR": [
+        10,
+        11,
+        19,
+        20
+      ]
+    },
+    "description": "Dialogarán en inglés para expresar una opinión sobre los personajes, con respeto y sin descalificaciones."
+  },
+  {
+    "id": "research",
+    "templateId": "ing-4-research",
+    "sourceTypes": {
+      "SPECIFIC_COMPETENCY": [
+        4
+      ],
+      "ACHIEVEMENT_INDICATOR": [
+        12
+      ]
+    },
+    "description": "Localizarán y organizarán información sobre ciencia y tecnología en los textos en inglés proporcionados, según la pregunta indicada."
+  },
+  {
+    "id": "source-information",
+    "templateId": "ing-4-context-source-information",
+    "sourceTypes": {
+      "ACHIEVEMENT_INDICATOR": [
+        13,
+        14
+      ]
+    },
+    "description": "Escribirán en inglés un mensaje para compartir información científica válida y confiable, contrastando los datos con las fuentes proporcionadas."
+  },
+  {
+    "id": "solidarity",
+    "templateId": "ing-4-context-empathetic-response",
+    "sourceTypes": {
+      "ATTITUDE_VALUE": [
+        4
+      ]
+    },
+    "description": "Dialogarán en inglés para formular una respuesta solidaria de apoyo a la necesidad comunicada por un personaje ficticio."
+  }
+]

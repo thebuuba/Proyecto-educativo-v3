@@ -1,5 +1,12 @@
 # Avance durable — cobertura secundaria
 
+## Estado vigente — 15/10/2026
+
+Inglés común4.º verificado en sus familias y patrones definidos: fuente162 registros/15 grupos, contexto e indicadores/composición conectados, cuatro formatos y CRUD auténticos cotejados con snapshots. Backend22.227/81, frontend9.868/5, HTTP172+8+4rechazos/4pools en58 y ocho seguimientos en60;125 snapshots/95 completos, base conservada. Builds obligatorios aprobados. [Informe final de cuarto](ingles-4-informe-final.md), [instrumentos completos](ingles-4-ejemplos-finales.md). .57/.58/.59 congelados; .60 instalado/cargado local. Publicar cierre, comprobar push y continuar quinto común PDF163–168; no sexto hasta cerrar quinto. Sin subagentes, francés, optativas, IA de aplicación, rediseño, main, producción ni reset.
+
+Las secciones siguientes conservan los puntos históricos; prevalece este estado y el informe final de cuarto.
+
+
 ## Encargo vigente: Inglés común 2.º–6.º, en orden — 14/10/2026
 
 El adjunto `1297efcd-88c8-4e97-91b1-15282f03e099/Texto pegado.txt` autoriza continuar estos cinco grados. Sustituye las detenciones de las secciones históricas. Ejecución directa sin subagentes; cerrar cada grado antes del siguiente y detenerse tras sexto.

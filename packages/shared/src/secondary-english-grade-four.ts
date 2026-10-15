@@ -4,18 +4,22 @@ import {requestedGradeFourGrammar,gradeFourGrammarCriterion} from './secondary-e
 import {requestedGradeFourLexicon,gradeFourLexicalCriterion,withoutGradeFourLexicalTargets} from './secondary-english-grade-four-lexicon'
 import {requestedGradeFourStrategies,gradeFourStrategyCriteria} from './secondary-english-grade-four-strategies'
 import {gradeFourGenreCriteria} from './secondary-english-grade-four-genres'
+import {gradeFourContextCriteria} from './secondary-english-grade-four-context'
+import {englishAlternativeGroups} from './secondary-english-grammar'
 
-export const englishGradeFourModule={id:'ingles-comunicacion-4',grade:4,subjectCode:'ING',pdfPages:[158,159,160,161,162],policy:'COMMON_FOURTH_GRADE_FUNCTIONS_GRAMMAR_LEXICON_STRATEGIES_GENRES_PARTIAL_V2'}
+export const englishGradeFourModule={id:'ingles-comunicacion-4',grade:4,subjectCode:'ING',pdfPages:[158,159,160,161,162],policy:'COMMON_FOURTH_GRADE_DEFINED_FAMILIES_CONTEXT_COMPOSITION_REVIEW_PENDING_V3'}
 const row=(id:string,title:string,levels:NonNullable<ContextualTopicCriterion['progressionLevels']>,weight=4):ContextualTopicCriterion=>({templateId:`ing-4-${id}`,title,observable:levels[0],progressionLevels:levels,weight})
+const asks=/\b(?:solicit(?:ar(?:an)?|an|en|ando)|pedir(?:an)?|pid(?:an|en|iendo))\b/
+const offers=/\b(?:ofrec(?:er(?:an)?|en|eran|iendo)|compart(?:ir(?:an)?|an|en|iendo)|intercambi(?:ar(?:an)?|an|en|ando))\b/
 export function requestedGradeFourFunctions(raw:string){
  const text=withoutGradeFourLexicalTargets(raw)
  const ids:string[]=[]
- if(/\b(?:solicit\w*|ofrec\w*|pedir\w*|pid\w*|compart\w*|intercambi\w*)\b/.test(text)&&/\binformacion\b/.test(text))ids.push('information')
+ if((asks.test(text)||offers.test(text))&&/\binformacion\b/.test(text))ids.push('information')
  if(/\b(?:prediccion(?:es)?|predecir\w*|predeciran)\b/.test(text))ids.push('prediction')
  if(/\b(?:anuncios?|anunci\w*)\b/.test(text))ids.push('announcement')
  if(/\bproblemas?\b/.test(text)&&/\b(?:motivos?|causas?|explic\w*)\b/.test(text))ids.push('problem-causes')
  if(/\b(?:deseos?|esperanzas?)\b/.test(text))ids.push('wishes')
- if(/\b(?:planes?|plan futuro)\b/.test(text))ids.push('plans')
+ if(/\b(?:planes?|plan futuro)\b|\bplanific\w* (?:las )?actividades futuras\b/.test(text))ids.push('plans')
  if(/\bnoticias?\b/.test(text))ids.push('news')
  if(/\b(?:experiencias?|relatos?|narracion(?:es)?)\b/.test(text)&&!/\bvocabulario de experiencias\b/.test(text))ids.push('experience')
  const askingOpinion=/\b(?:pedir(?:an)?|pidan|solicitar(?:an)?) (?:una |las )?opinion(?:es)?\b/.test(text)
@@ -28,10 +32,20 @@ export function requestedGradeFourFunctions(raw:string){
 export function fourthGradeEnglishContent(task:UpperEnglishEvidence){
  const {text,mode}=task,receptive=['reading','listening','analysis','comparison','research'].includes(mode),source=mode==='listening'?'mensaje escuchado':'texto disponible'
  const cultural=requestedGradeFourStrategies(task.requirementText,mode).some(f=>f.id==='cultural-comparison')
- const rows=(cultural?[]:task.functions).map(id=>{
+ const functionRows=(cultural?[]:task.functions).map(id=>{
+  if(!receptive&&['instructions','directions'].includes(id)&&asks.test(text)&&!/\b(?:dar(?:an)?|dan|den|comunic(?:ar(?:an)?|an|en)|ofrecer(?:an)?)\b/.test(text)){
+   const target=id==='instructions'?'la tarea y los pasos que necesita aclarar':'el destino y la referencia del recorrido que necesita aclarar'
+   return row(id,'Solicitud pertinente de '+(id==='instructions'?'instrucciones':'indicaciones'),[
+    `Solicita en inglés ${id==='instructions'?'instrucciones':'indicaciones'}, precisando ${target} en la situación proporcionada.`,
+    'La solicitud se comprende y se relaciona con la situación; una referencia necesita precisión.',
+    'Formula una solicitud general sin precisar la información que necesita para continuar.',
+    'La solicitud cambia la tarea o el destino y pide información incompatible con la situación.',
+    'No se reconoce una solicitud pertinente de la información necesaria para la situación dada.',
+   ])
+  }
   switch(id){
    case 'information':{
-    const ask=/solicit\w*|pedir\w*|pid\w*/.test(text),offer=/ofrec\w*|compart\w*|intercambi\w*/.test(text)
+    const ask=asks.test(text),offer=offers.test(text)
     const action=ask&&offer?'Solicita y ofrece':ask?'Solicita':'Ofrece'
     return row(id,'Información vinculada con la pregunta',[
      receptive?`Relaciona la pregunta y la información solicitada u ofrecida en el ${source} en inglés con la situación indicada.`:`${action} en inglés la información de la situación proporcionada, relacionando la pregunta y la respuesta con los datos necesarios para continuar el intercambio.`,
@@ -96,15 +110,23 @@ export function fourthGradeEnglishContent(task:UpperEnglishEvidence){
     'Cambia la relación entre acontecimientos y altera la experiencia solicitada.',
     'No se reconocen acontecimientos relacionados con la experiencia indicada.',
    ])
-   case 'opinion':return row(id,'Opinión relacionada con la situación',[
+   case 'opinion':{
+    if(mode==='comparison')return row(id,'Contraste de los puntos de vista de los textos',[
+     `Contrasta los puntos de vista de los textos en inglés y sustenta sus semejanzas y diferencias${/razon|justific\w*/.test(text)?' con las razones expuestas':' con la información proporcionada'}.`,
+     'Establece un contraste pertinente entre los puntos de vista; una relación con la información que lo sustenta necesita precisión.',
+     'Enumera los puntos de vista, pero deja sin relacionar las semejanzas o diferencias solicitadas.',
+     'El contraste atribuye a los textos puntos de vista o razones incompatibles con la información proporcionada.',
+     'No aporta un contraste reconocible entre los puntos de vista de los textos disponibles.',
+    ])
+    return row(id,'Opinión relacionada con la situación',[
     receptive?`Reconoce la opinión del ${source} en inglés${/razon|justific\w*/.test(text)?' y la relaciona con la razón que la sustenta':''}.`:`Comunica en inglés su opinión sobre la situación proporcionada${/razon|justific\w*/.test(text)?' y la relaciona con la razón solicitada':''}.`,
     'La opinión se comprende; una referencia a la situación necesita precisión.',
     'Menciona expresiones de opinión sin establecer claramente el punto de vista sobre la situación.',
     'Atribuye a la situación un punto de vista incompatible con la información proporcionada.',
     'No se reconoce una opinión relacionada con la situación indicada.',
-   ])
+   ])}
    case 'directions':return row(id,'Indicaciones del recorrido señalado',[
-    receptive?`Relaciona las indicaciones del ${source} en inglés con el recorrido y el lugar señalados.`:'Solicita o comunica en inglés indicaciones que permiten seguir el recorrido hacia el lugar señalado en el croquis o situación proporcionados.',
+    receptive?`Relaciona las indicaciones del ${source} en inglés con el recorrido y el lugar señalados.`:`${asks.test(text)?'Solicita y comunica':'Comunica'} en inglés indicaciones que permiten seguir el recorrido hacia el lugar señalado en el croquis o situación proporcionados.`,
     'Se reconoce el recorrido; una referencia de orientación necesita precisión.',
     'Menciona lugares o referencias aisladas sin enlazarlos para seguir el recorrido.',
     'Las indicaciones cambian el recorrido o conducen a otro lugar.',
@@ -120,21 +142,27 @@ export function fourthGradeEnglishContent(task:UpperEnglishEvidence){
    default:throw new Error('Función de cuarto no definida.')
   }
  })
+ const matches:Record<string,string>={wishes:'deseos?|esperanzas?',plans:'planes?|plan futuro',information:'informacion',prediction:'predicciones?|prediccion',announcement:'anuncios?', 'problem-causes':'problemas?',news:'noticias?',experience:'experiencias?|relatos?|narraciones?',opinion:'opiniones?|opinion|puntos? de vista',directions:'indicaciones',instructions:'instrucciones'}
+ const rows=englishAlternativeGroups(task.requirementText,functionRows.map(c=>({...c,id:c.templateId.slice('ing-4-'.length),match:matches[c.templateId.slice('ing-4-'.length)]}))).map(group=>{
+  if(group.length===1){const {id,match,...criterion}=group[0];return criterion}
+  return row(group.map(c=>c.id).join('-or-'),group.map(c=>c.title).join(' o '),[0,1,2,3,4].map(i=>group.map(c=>`${c.progressionLevels![i]}`).join(' / ')+' Se valora únicamente la alternativa elegida.') as NonNullable<ContextualTopicCriterion['progressionLevels']>)
+ })
  rows.push(...requestedGradeFourGrammar(task.requirementText).map(f=>gradeFourGrammarCriterion(f,task.requirementText,mode)))
  const lexical=requestedGradeFourLexicon(task.requirementText).filter(f=>f.category!=='expression'||/\bexpresiones\b/.test(task.requirementText)||!['opinion','news'].includes(f.id)||!task.functions.includes(f.id))
  rows.push(...lexical.map(f=>gradeFourLexicalCriterion(f,task.requirementText,mode)))
  rows.push(...gradeFourStrategyCriteria(task.requirementText,mode))
+ rows.push(...gradeFourContextCriteria(task,rows))
  rows.push(...gradeFourGenreCriteria(task.requirementText,mode,rows))
- // Other curricular providers are connected in the next block, before closure.
  if(!rows.length)return rows
- if(mode==='interaction')rows.push(row('interaction','Respuesta que sostiene el intercambio',[
+ if(mode==='interaction'||mode==='writing'&&/\b(?:responder\w*|respuesta|intercambi\w*)\b/.test(task.requirementText))rows.push(row('interaction','Respuesta que sostiene el intercambio',[
   'Relaciona su respuesta en inglés con lo dicho por el interlocutor y aporta información pertinente que permite sostener el intercambio.',
   'La respuesta permite continuar el intercambio; una referencia necesita aclaración.',
   'Responde a parte de la intervención y deja información necesaria sin relacionar.',
   'Responde a un asunto diferente y cambia el sentido de la intervención del interlocutor.',
   'No se reconoce una respuesta pertinente que permita continuar el intercambio.',
  ],3))
- if(!receptive&&mode!=='audiovisual')rows.push(mode==='writing'?row('written','Mensaje escrito estructurado y comprensible',[
+ const preparationOnly=/\b(?:planific\w*|ensay\w*)\b/.test(task.requirementText)&&!/\b(?:present(?:ar|aran|an|en)|expon\w*|comunic\w*|escrib\w*|redact\w*)\b/.test(task.requirementText)
+ if(!receptive&&mode!=='audiovisual'&&!preparationOnly)rows.push(mode==='writing'?row('written','Mensaje escrito estructurado y comprensible',[
   'Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.',
   'El mensaje escrito se comprende; una relación entre ideas necesita revisión.',
   'Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.',

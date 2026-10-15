@@ -6,6 +6,25 @@ const context={level:'SECONDARY' as const,grade:4,cycle:2,subjectCode:'ING',subj
 const formats=['rubrica','lista-cotejo','escala','lista-ponderada'] as const
 const propose=(description:string,preferredInstrumentType?:typeof formats[number],maxScore=20,title='Actividad',academic:Parameters<typeof recommend>[1]=context)=>recommend({activityTitle:title,description,maxScore,participationMode:'INDIVIDUAL',preferredInstrumentType},academic,null,[],'UNMAPPED',null)
 describe('Inglés común cuarto: funciones propias cotejadas en PDF158–162',()=>{
+ it('solicitar y dar indicaciones conserva ambas acciones',()=>{
+  expect(propose(fixtures.find(f=>f.id==='directions')!.description).criteria.find(c=>c.templateId==='ing-4-directions')!.description).toMatch(/^Solicita y comunica /)
+ })
+ for(const target of ['instrucciones para una tarea escolar','indicaciones para llegar al lugar del croquis'])it(`solicitar ${target} no exige dar los pasos o el recorrido`,()=>{
+  const c=propose(`Dialogarán en inglés para solicitar ${target}.`).criteria.find(c=>c.templateId===`ing-4-${target.startsWith('instrucciones')?'instructions':'directions'}`)!
+  expect(c.description).toMatch(/^Solicita /)
+  expect(c.progressionLevels![2]).toContain('solicitud')
+ })
+ it('información solicitada no pide formular otra solicitud ni sustituye el género',()=>{
+  const p=propose('Presentarán oralmente en inglés una conversación para comunicar la información solicitada.')
+  expect(p.criteria.map(c=>c.templateId)).toContain('ing-4-genre-conversation')
+  expect(p.criteria.map(c=>c.templateId)).not.toContain('ing-4-information')
+ })
+ for(const [description,activity] of [
+  ['Escribirán en inglés un mensaje para ofrecer información sobre los datos de la lectura.','WRITTEN_PRODUCTION'],
+  ['Presentarán oralmente en inglés los datos de una investigación tecnológica para ofrecer información al grupo.','ORAL_PRESENTATION'],
+  ['Escribirán en inglés un mensaje sobre los datos de la escucha de una noticia.','WRITTEN_PRODUCTION'],
+  ['Compararán oralmente en inglés los puntos de vista de dos textos proporcionados.','COMPARISON'],
+ ] as const)it(`la acción pedida determina ${activity}: ${description}`,()=>expect(propose(description).activityType).toBe(activity))
  it('identifica cuarto como conexión parcial sin atribuirle el cierre de tercero',()=>{
   expect(propose(fixtures[0].description).internalTrace.reasons).toContain('coverage=COMMON_FOURTH_GRADE_PROVIDERS_PARTIAL')
  })

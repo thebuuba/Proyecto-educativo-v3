@@ -52,6 +52,10 @@ import {evaluationCatalogV52} from './catalog-v52'
 import {evaluationCatalogV53} from './catalog-v53'
 import {evaluationCatalogV54} from './catalog-v54'
 import {evaluationCatalogV55} from './catalog-v55'
+import {evaluationCatalogV56} from './catalog-v56'
+import {evaluationCatalogV57} from './catalog-v57'
+import {evaluationCatalogV58} from './catalog-v58'
+import {evaluationCatalogV59} from './catalog-v59'
 import {englishGradeFourModule,englishGradeFourGrammar,englishGradeFourLexicon,englishGradeFourStrategies,englishGradeFourGenres} from '@aula/shared'
 import {englishGradeThreeModule,englishGradeThreeGrammar,englishGradeThreeLexicon,englishGradeThreeStrategies,englishGradeThreeGenres} from '@aula/shared'
 import {englishGradeTwoModule,englishGradeTwoGrammar,englishGradeTwoLexicon,englishGradeTwoStrategies,englishGradeTwoGenres} from '@aula/shared'
@@ -66,8 +70,16 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV55,
-  version: 'evaluation-2026.56',
+  ...evaluationCatalogV59,
+  version: 'evaluation-2026.60',
+  englishGradeFourDirectionsPolicy:'REQUEST_AND_DELIVER_PRESERVE_CONJUNCTION_V1',
+  englishGradeFourRequestPolicy:'ASK_ONLY_INSTRUCTIONS_DIRECTIONS_NO_UNREQUESTED_DELIVERY_V1',
+  englishGradeFourSolidarityPolicy:'REQUESTED_SUPPORTING_RESPONSE_NOT_PERSONAL_TRAIT_V1',
+  englishGradeFourInformationPolicy:'ASK_OFFER_ACTION_EXCLUDES_SOLICITADA_ADJECTIVE_V1',
+  englishGradeFourContextPolicy:'EXPLICIT_OBSERVABLE_CONTEXT_SOURCE_INFORMATION_NO_PRIVATE_TRAITS_V1',
+  englishGradeFourCompositionPolicy:'INDEPENDENT_ACTIONS_ONE_CHOSEN_ALTERNATIVE_SOURCE_FIELDS_WRITTEN_REPLY_V1',
+  englishActionDetectionPolicy:'FINITE_REQUESTED_ACTION_NOT_NOUN_OBJECT_V1',
+  englishSocialContributionPolicy:'TEAM_ONLY_WHEN_REQUESTED_V2',
   englishGradeFourModule,
   englishGradeFourGrammar,
   englishGradeFourLexicon,
@@ -129,6 +141,10 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV59.version)return evaluationCatalogV59
+  if(version===evaluationCatalogV58.version)return evaluationCatalogV58
+  if(version===evaluationCatalogV57.version)return evaluationCatalogV57
+  if(version===evaluationCatalogV56.version)return evaluationCatalogV56
   if(version===evaluationCatalogV55.version)return evaluationCatalogV55
   if(version===evaluationCatalogV54.version)return evaluationCatalogV54
   if(version===evaluationCatalogV53.version)return evaluationCatalogV53

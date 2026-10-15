@@ -14,22 +14,30 @@ export function requestedScopedEnglishGrammar(description:string,features:Langua
  const selected=requestedLanguageFeatures(features,text).filter(f=>!guarded.has(f.id)||new RegExp(`\\b${cue}\\s+${article}(?:(?:${forms})(?:\\s+(?:(?:y|o|e)\\s+)?)${article})*(?:${f.match})`).test(text))
  return combineEnglishFeatureAlternatives(text,selected)
 }
-export function combineEnglishFeatureAlternatives<T extends LanguageFeature>(text:string,selected:T[]){
- const article='(?:(?:el|la|los|las|verbo|modal|forma|estructura)\\s+)*'
- const consumed=new Set<string>(),result:T[]=[]
- for(const f of selected){
+export function englishAlternativeGroups<T extends {id:string;match:string}>(text:string,selected:T[]):T[][]{
+ const article='(?:(?:un|una|el|la|los|las|verbo|modal|forma|estructura)\\s+)*'
+ const consumed=new Set<string>(),groups:T[][]=[]
+ const ordered=selected.slice().sort((a,b)=>(text.match(new RegExp(a.match))?.index??Infinity)-(text.match(new RegExp(b.match))?.index??Infinity))
+ for(const f of ordered){
   if(consumed.has(f.id))continue
   const alternatives=[f],match=text.match(new RegExp(f.match))
   let end=(match?.index??-1)+(match?.[0].length??0)
   for(;;){
-   const next=selected.find(other=>!consumed.has(other.id)&&!alternatives.includes(other)&&new RegExp(`^\\s+o\\s+${article}(?:${other.match})`).test(text.slice(end)))
+   const next=ordered.find(other=>!consumed.has(other.id)&&!alternatives.includes(other)&&new RegExp(`^\\s+o\\s+${article}(?:${other.match})`).test(text.slice(end)))
    if(!next)break
    const continuation=text.slice(end).match(new RegExp(`^\\s+o\\s+${article}(?:${next.match})`))!
    alternatives.push(next);consumed.add(next.id);end+=continuation[0].length
   }
-  result.push(alternatives.length===1?f:{...f,id:alternatives.map(a=>a.id).join('-or-'),name:alternatives.map(a=>a.name).join(' o ')+', según la alternativa elegida',function:alternatives.map(a=>a.function).join(' o ')+', según la forma elegida y la intención solicitada',error:alternatives.map(a=>a.error).join(' o ')+', según la alternativa elegida',terms:undefined})
+  groups.push(alternatives)
  }
- return result
+ const membership=new Map(groups.flatMap(g=>g.map(f=>[f.id,g] as const))),emitted=new Set<T[]>()
+ return selected.flatMap(f=>{const group=membership.get(f.id)!;if(emitted.has(group))return [];emitted.add(group);return [group]})
+}
+export function combineEnglishFeatureAlternatives<T extends LanguageFeature>(text:string,selected:T[]){
+ return englishAlternativeGroups(text,selected).map(alternatives=>{
+  const f=alternatives[0]
+  return alternatives.length===1?f:{...f,id:alternatives.map(a=>a.id).join('-or-'),name:alternatives.map(a=>a.name).join(' o ')+', según la alternativa elegida',function:alternatives.map(a=>a.function).join(' o ')+', según la forma elegida y la intención solicitada',error:alternatives.map(a=>a.error).join(' o ')+', según la alternativa elegida',terms:undefined}
+ })
 }
 export function scopedEnglishGrammarCriterion(feature:LanguageFeature,text:string,mode:string,scope:string):ContextualTopicCriterion{
  const c=englishGrammarCriterion(feature,text,['analysis','comparison','research'].includes(mode)?'reading':mode,scope)
