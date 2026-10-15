@@ -101,7 +101,7 @@ export function validatePrice(price, expected = {}) {
   if (price.unit_price?.currency_code !== expected.currency) errors.push('price_currency_mismatch')
   if (price.billing_cycle?.interval !== 'month' || price.billing_cycle?.frequency !== 1) errors.push('price_cycle_mismatch')
   const trial = price.trial_period
-  if (trial?.interval !== 'month' || trial.frequency !== 1 || trial.requires_payment_method !== true || trial.unit_price !== null || (trial.unit_price_overrides?.length ?? 0) !== 0) errors.push('price_trial_policy_mismatch')
+  if (trial?.interval !== 'month' || trial.frequency !== 1 || trial.requires_payment_method !== true || (trial.unit_price ?? null) !== null || (trial.unit_price_overrides?.length ?? 0) !== 0) errors.push('price_trial_policy_mismatch')
   if (price.tax_mode !== 'internal') errors.push('price_tax_mode_unsupported')
   if (!Array.isArray(price.unit_price_overrides) || price.unit_price_overrides.length) errors.push('price_overrides_unsupported')
   if (expected.price && price.id !== expected.price) errors.push('price_identity_mismatch')

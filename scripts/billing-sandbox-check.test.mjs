@@ -80,6 +80,9 @@ test('validatePrice exige un mes gratis con tarjeta y rechaza pruebas sin tarjet
   const good = { status: 'active', unit_price: { amount: '799', currency_code: 'USD' }, billing_cycle: { interval: 'month', frequency: 1 }, trial_period: { interval: 'month', frequency: 1, requires_payment_method: true, unit_price: null }, tax_mode: 'internal', unit_price_overrides: [] }
   const approved = { ...good, trial_period: { interval: 'month', frequency: 1, requires_payment_method: true, unit_price: null } }
   assert.deepEqual(validatePrice(approved, { amount: '799', currency: 'USD' }), [])
+  // Paddle's real free-trial response omits unit_price instead of returning null.
+  const { unit_price: _free, ...remoteFreeTrial } = approved.trial_period
+  assert.deepEqual(validatePrice({ ...approved, trial_period: remoteFreeTrial }, { amount: '799', currency: 'USD' }), [])
   assert.ok(validatePrice({ ...good, trial_period: null }, { amount: '799', currency: 'USD' }).includes('price_trial_policy_mismatch'))
   for (const trial_period of [
     { ...approved.trial_period, requires_payment_method: false },
