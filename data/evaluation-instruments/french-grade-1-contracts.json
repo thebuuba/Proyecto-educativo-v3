@@ -1,0 +1,14 @@
+[
+  {"id":"saludos-breve","description":"En parejas, saluden y despídanse en francés.","activity":"ORAL_INTERACTION","contains":["greetings","interaction","oral"],"excludes":["written","routine"]},
+  {"id":"aula-frances","description":"Par deux, demandez de répéter une consigne de classe en français et répondez à votre camarade.","activity":"ORAL_INTERACTION","contains":["classroom","interaction","oral"],"excludes":["personal"]},
+  {"id":"identidad-desarrollada","description":"Escribe en francés una presentación de un personaje ficticio con su nombre, edad y nacionalidad. Revisa el borrador y corrige los datos confusos si los hay.","activity":"WRITTEN_PRODUCTION","contains":["personal","written","revision"],"excludes":["oral","interaction","routine"]},
+  {"id":"descripcion-mixta","description":"Décrivez par écrit une personne de votre famille, con sus rasgos físicos.","activity":"WRITTEN_PRODUCTION","contains":["description","written"],"excludes":["routine","location"]},
+  {"id":"ubicacion-oral","description":"Indica oralmente en francés dónde están los objetos del aula.","activity":"ORAL_PRESENTATION","contains":["location","oral"],"excludes":["written","personal"]},
+  {"id":"rutina-frances","description":"Présentez oralement votre routine quotidienne en français.","activity":"ORAL_PRESENTATION","contains":["routine","oral"],"excludes":["written","personal"]},
+  {"id":"comprension-lectora","description":"Lisez la présentation en français et relevez le nom et l'âge du personnage.","activity":"READING_COMPREHENSION","contains":["personal"],"excludes":["oral","written","interaction"]},
+  {"id":"comprension-auditiva","description":"Escucha en francés la descripción del aula e identifica dónde están los objetos.","activity":"LISTENING_COMPREHENSION","contains":["location"],"excludes":["oral","written","interaction"]},
+  {"id":"interaccion-escrita","description":"Échangez des messages écrits en français pour vous présenter et répondre à votre camarade.","activity":"WRITTEN_PRODUCTION","contains":["personal","interaction","written"],"excludes":["oral"]},
+  {"id":"mixta-independiente","description":"Lee la presentación del personaje e identifica su nombre. Luego escribe en francés una descripción física de una persona de tu familia.","activity":"WRITTEN_PRODUCTION","contains":["personal","description","written"],"excludes":["oral","routine"]},
+  {"id":"negacion","description":"Escribe en francés la rutina diaria. No hagas una presentación oral ni un diálogo.","activity":"WRITTEN_PRODUCTION","contains":["routine","written"],"excludes":["oral","interaction"]},
+  {"id":"alternativa","description":"Présentez votre routine oralement ou par écrit en français.","activity":"OTHER","contains":["alternative"],"excludes":["oral","written"]}
+]

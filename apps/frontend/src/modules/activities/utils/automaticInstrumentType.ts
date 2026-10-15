@@ -1,3 +1,4 @@
+import { resolveCommonFrenchTask, commonFrenchSelections } from '@aula/shared'
 import {languageInstrumentIntent,commonSecondaryEnglish,resolveCommonEnglishTask,commonEnglishSelections, type InstrumentAcademicContext, type InstrumentType} from '@aula/shared'
 
 const observational = new Set(['NEWS_ANALYSIS','TOURIST_GUIDE_ANALYSIS','POSTER_ANALYSIS','READING_REPORT_ANALYSIS','DETECTIVE_STORY_ANALYSIS','CALLIGRAM_ANALYSIS','PORTFOLIO','OBSERVATION','LISTENING_COMPREHENSION'])
@@ -5,6 +6,8 @@ const observational = new Set(['NEWS_ANALYSIS','TOURIST_GUIDE_ANALYSIS','POSTER_
 export function automaticInstrumentType(activityType: string, context?: InstrumentAcademicContext | null, maxScore?: number | null, description = ''): InstrumentType {
   const intent = context?.level === 'SECONDARY' && (context.subjectCode === 'LEN'||commonSecondaryEnglish(context)) ? languageInstrumentIntent(description) : undefined
   if (intent) return intent
+  const french=resolveCommonFrenchTask('',description,context)
+  if(french)return commonFrenchSelections(french,description).suggestedInstrumentType
   const english=resolveCommonEnglishTask('',description,context)
   if(english)return commonEnglishSelections(english,description).suggestedInstrumentType
   if (context?.level === 'PRIMARY' && context.grade <= 3 && maxScore != null && maxScore <= 10

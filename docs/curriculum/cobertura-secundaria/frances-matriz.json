@@ -1452,15 +1452,21 @@
         ]
       },
       "coverage": {
-        "inventory": "VISUALLY_VERIFIED",
-        "implementation": "PENDING",
-        "providers": [],
-        "automated": "NOT_RUN",
-        "httpDatabase": "NOT_RUN",
-        "browser": "NOT_RUN",
-        "evidence": [],
+        "inventory": "VISUALLY_REVIEWED",
+        "implementation": "CONNECTED_DEFINED_PATTERNS",
+        "providers": [
+          "frances-comunicacion-1"
+        ],
+        "catalog": "evaluation-2026.70",
+        "automated": "PASSED: backend 128; frontend 103; regression suites",
+        "httpDatabase": "PASSED: 12 interpretations, 24 recommendations, 4 formats saved/edited/reopened; final-build recheck 4 recommendations + 4 unchanged instruments",
+        "browser": "PENDING_ISOLATED_QA_BROWSER_UNAVAILABLE",
+        "evidence": [
+          "frances-1.md",
+          "frances-1-ejemplos.md"
+        ],
         "pending": [
-          "Implement and verify in grade order."
+          "Recorrido visual QA en sesión separada; patrones lingüísticos acotados, sin comprensión universal."
         ]
       },
       "pedagogicalInventory": {

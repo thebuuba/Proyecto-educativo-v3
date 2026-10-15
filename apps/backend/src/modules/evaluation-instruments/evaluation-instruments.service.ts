@@ -1,3 +1,4 @@
+import { resolveCommonFrenchTask, commonFrenchSelections } from '@aula/shared'
 import { BadRequestException, ForbiddenException, HttpException, Injectable, Logger, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
@@ -14,11 +15,12 @@ export class EvaluationInstrumentsService {
   async interpret(user: AuthenticatedUser, input: InterpretActivityDto) {
     const resolved = await this.resolve(user, input, true)
     try {deliveryConditions(input.description??'')}catch(error){if(error instanceof TaskRequirementError)throw new BadRequestException(error.message);throw error}
+    const frenchTask=resolveCommonFrenchTask(input.activityTitle,input.description??'',resolved.context)
     const englishTask=resolveCommonEnglishTask(input.activityTitle,input.description??'',resolved.context)
-    const scopedType = englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
+    const scopedType = frenchTask?.activityType??englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
     const detected = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === scopedType)
       ?? detectActivityType(input.activityTitle, input.description ?? '', evaluationCatalogCurrent, false)
-    const selections = englishTask?commonEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '') : suggestedSelections(detected.id, resolved.context, input.description ?? '')
+    const selections = frenchTask?commonFrenchSelections(frenchTask,input.description??''):englishTask?commonEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '') : suggestedSelections(detected.id, resolved.context, input.description ?? '')
     const type = input.pedagogicalActivityType ?? detected.id
     const ranked = rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
       resolved.resolution.scope, resolved.rows)

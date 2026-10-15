@@ -1,10 +1,11 @@
 import {affirmativeLanguageTask} from './language-feature-criteria'
 import type {InstrumentRecommendation} from './instrument-recommendation'
+import { frenchRequirementText } from './secondary-french-task'
 
 /** The observable is stated once; scale cells express its frequency or degree. */
-export function adaptLanguageScale(proposal: InstrumentRecommendation, description: string): InstrumentRecommendation {
+export function adaptLanguageScale(proposal: InstrumentRecommendation, description: string, language?: 'fr'): InstrumentRecommendation {
   if(proposal.instrumentType!=='escala') return proposal
-  const frequency=/regularidad|frecuencia/.test(affirmativeLanguageTask(description))
+  const frequency=/regularidad|frecuencia/.test(affirmativeLanguageTask(description)) || language === 'fr' && /\b(?:regularite|frequence)\b/.test(frenchRequirementText(description))
   const labels=frequency
     ? ['Siempre','Frecuentemente','A veces','Rara vez','Todavía no']
     : ['Completo','Suficiente','Parcial','Incipiente','Aún no logrado']

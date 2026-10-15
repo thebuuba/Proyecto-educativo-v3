@@ -1,3 +1,4 @@
+import { frenchRequirementText } from './secondary-french-task'
 /** Pedagogical strategies/teaching techniques; never evaluation criteria or techniques. */
 export type TeachingStrategyOrigin = 'AUTO' | 'MANUAL' | 'UNKNOWN'
 export type TeachingStrategyContext = { level?: string | null; grade?: number | null; subjectCode?: string | null }
@@ -72,7 +73,7 @@ function taskText(value: string) {
     .split(/[.;\n]+/).filter(part=>! /\b(?:no|sin)\b/i.test(part)).join('. '))
 }
 export function detectTeachingStrategy(input: TeachingStrategyContext & {title?: string; description?: string; activityType?: string; participationMode?: string}) {
-  const text = taskText(input.description ?? '')
+  const text = taskText(input.subjectCode?.toUpperCase() === 'FRA' ? frenchRequirementText(input.description ?? '') : input.description ?? '')
   const title = taskText(input.title ?? '')
   const has=(pattern:RegExp)=>pattern.test(text)
   const candidates:{id:string;reason:string;score:number}[]=[]

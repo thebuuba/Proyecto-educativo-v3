@@ -42,5 +42,5 @@ export function editableAuthoredRecommendation(authored: ContextualTopicCriterio
     internalTrace: { mappingStatus: 'FALLBACK', reasons: [`module=${moduleName}`, 'Adaptación evaluativa editable; no constituye aprobación curricular.'],
       ruleId: 'editable-topic', activityTypeOrigin: input.activityType ? 'EXPLICIT' : 'DETECTED', ranking: [], curriculumStatus: null, lowCurriculumConfidence: true, consideredTypes: [] },
   }
-  return /^(?:lengua-|novela-|ingles-)/.test(moduleName) ? adaptLanguageScale(proposal,input.description??'') : proposal
+  return /^(?:lengua-|novela-|ingles-|frances-)/.test(moduleName) ? adaptLanguageScale(proposal,input.description??'',moduleName.startsWith('frances-')?'fr':undefined) : proposal
 }

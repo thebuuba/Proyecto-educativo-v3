@@ -10,11 +10,13 @@ Revalidación de apertura de este encargo: `pnpm cloudflare:build` termina con c
 
 ## Estado de Francés
 
-Inventario contrastado visualmente: Francés común de 1.º–6.º, PDF 181–192 y 199–209. Matriz de 813 registros oficiales y síntesis por grado en `frances-inventario.md`. Proveedor pendiente: no hay prueba HTTP/DB/navegador atribuible todavía a Francés. El cierre de apertura está publicado en `6f346a2`.
+Inventario contrastado visualmente: Francés común de 1.º–6.º, PDF 181–192 y 199–209. Matriz de 813 registros oficiales y síntesis por grado en `frances-inventario.md`, publicados en `9bb94b9`. El cierre de apertura está publicado en `6f346a2`.
+
+Último bloque implementado y verificado mediante automatización y HTTP/DB: 1.º, catálogo `evaluation-2026.70`, instalado idempotentemente en Development; `.69` congelado y comparado con DB sin diferencias. Contexto QA 1.º/FRA `947b09d3-b2d0-4817-ac1c-5b8e9a6f3577`, centro ficticio existente. Suites completas backend 36.968 y frontend 37.576; focalizadas finales 128/103; tres builds finales aprobados. Doce interpretaciones, 24 recomendaciones y cuatro formatos guardados/editados/reabiertos. Revalidación tras el último build: cuatro recomendaciones y cuatro instrumentos reabiertos idénticos. [Informe](frances-1.md), [ejemplos completos](frances-1-ejemplos.md). Recorrido visual QA pendiente, expresamente separado de lo comprobado.
 
 ## Siguiente acción concreta
 
-Implementar y verificar primero el grado 1.º (seis funciones, PDF 181–184), empezando por contratos RED y detección propia de acciones y condiciones. Congelar evaluation-2026.69 antes de crear el siguiente release. No saltar a los demás grados por estar inventariados.
+Cerrar este bloque con commit/push y continuar 2.º: información personal, vivienda, rutinas y preferencias; gramática, léxico y géneros de PDF 185–188. Congelar `.70` antes de publicar `.71`; no tocar snapshots ni releases anteriores. Los procesos HTTP terminaron. Servidor único: launcher observado PID 29456, listener PID 10808; comprobar antes de iniciar otro. Entry final `/assets/index-1Rd3evFh.js`. Logs/credenciales solo en rutas ignoradas. Chrome conserva la sesión personal; IAB aislado no disponible, QA visual pendiente. Continuar secuencialmente hasta 6.º, sin otras asignaturas ni subagentes.
 
 ## Decisiones y límites
 

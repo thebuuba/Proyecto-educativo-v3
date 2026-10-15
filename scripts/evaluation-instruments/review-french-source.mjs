@@ -45,6 +45,7 @@ const grades = scopes.map(scope => {
     pdfPages: scope.pdfPages, printedPages: [...new Set(Object.values(scope.elements).flat().map(element => element.printedPage))],
     officialRecords: Object.entries(scope.elements).flatMap(([type, elements]) => elements.map(element => ({ type, ...element }))),
     visualReview: previous?.visualReview ?? { status: 'PENDING', pages: [], observations: [] },
+    ...(previous?.pedagogicalInventory ? { pedagogicalInventory: previous.pedagogicalInventory } : {}),
     coverage: previous?.coverage ?? { inventory: 'EXTRACTED', implementation: 'PENDING', providers: [], automated: 'NOT_RUN', httpDatabase: 'NOT_RUN', browser: 'NOT_RUN', evidence: [], pending: ['Contrastar tablas y continuaciones; definir familias evaluativas.'] },
   }
 })

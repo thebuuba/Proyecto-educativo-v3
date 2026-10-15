@@ -1,0 +1,134 @@
+import assert from 'node:assert/strict'
+import { readFileSync, writeFileSync } from 'node:fs'
+import { parseEnv } from 'node:util'
+import { createRequire } from 'node:module'
+import { createHash, randomUUID } from 'node:crypto'
+import { setTimeout as delay } from 'node:timers/promises'
+import { developmentEnvironment, developmentProjectRef as project } from '../cloudflare-development-environment.mjs'
+import { recommendationToFields, alignRecommendationWithFields, editableFallbackRecommendation } from '../../apps/frontend/src/modules/activities/services/instrumentPreparation.ts'
+import { scoreInstrumentFields, rememberManualScoreWeights } from '../../apps/frontend/src/modules/activities/services/instrumentScoring.ts'
+import { detectTeachingStrategy, validateInstrumentDefinition } from '../../packages/shared/src/index.ts'
+
+// Run with run-french-http.mjs: it bundles existing TS adapters using the installed esbuild.
+Object.assign(process.env, developmentEnvironment(parseEnv(readFileSync('.dev.vars.local', 'utf8'))))
+const require = createRequire(new URL('../../apps/backend/package.json', import.meta.url))
+const { prisma } = require('@aula/database')
+const grade = Number(process.argv[2] ?? 1)
+const recheck = process.argv.includes('--recheck')
+const context = JSON.parse(readFileSync(`.wrangler/french-source/grade-${grade}-context.json`, 'utf8'))
+assert.equal(context.project, project)
+assert.equal(context.schoolId, 'bc96bc29-98f2-4e80-84d9-506126e20a4c')
+const account = JSON.parse(readFileSync('.development-qa-account.local', 'utf8'))
+const base = 'http://localhost:8787'
+let cookie, nextRequest = 0
+const transientFailures = []
+const request = async (path, input, attempt = 0) => {
+  const wait = Math.max(0, nextRequest - Date.now()); if (wait) await delay(wait)
+  nextRequest = Date.now() + 900
+  let response
+  try {
+    response = await fetch(base + '/api/v1' + path, { method: input ? 'POST' : 'GET', headers: { 'Content-Type': 'application/json', ...(cookie ? { cookie } : {}) }, ...(input ? { body: JSON.stringify(input) } : {}), signal: AbortSignal.timeout(35000) })
+  } catch {
+    transientFailures.push({ path, attempt, failure: 'CONNECTION_OR_TIMEOUT' })
+    if (attempt < 2 && /^\/(?:health|activities\/center|evaluation-instruments\/(?:interpret|recommend)|activities\?)/.test(path)) {
+      console.log(JSON.stringify({ phase: 'read-only-retry', path, attempt: attempt + 1 }))
+      await delay(3000); return request(path, input, attempt + 1)
+    }
+    throw Error(`${path}: request did not complete within the connection/time limit`)
+  }
+  if ([500, 502, 503, 504].includes(response.status) && attempt < 2 && path.startsWith('/evaluation-instruments/')) {
+    transientFailures.push({ path, attempt, failure: `HTTP_${response.status}` })
+    console.log(JSON.stringify({ phase: 'read-only-retry', path, status: response.status, attempt: attempt + 1 }))
+    await delay(3000); return request(path, input, attempt + 1)
+  }
+  assert(response.ok, `${path}: HTTP ${response.status}`)
+  return { data: (await response.json()).data, response }
+}
+const content = proposal => ({ activity: proposal.activityType, type: proposal.instrumentType, levels: proposal.levels, criteria: proposal.criteria.map(({ id, sourceType, sourceReferences, ...row }) => row) })
+const canonical = value => value && typeof value === 'object' ? Array.isArray(value) ? value.map(canonical) : Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])])) : value
+const hash = value => createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex')
+const definition = activity => ({ instrumentId: activity.instrumentId, snapshotId: activity.instrumentSnapshotId, snapshot: activity.instrumentSnapshot, criteria: activity.instrumentCriteria, maxScore: activity.maxScore, type: activity.instrumentType, technique: activity.evaluationTechnique })
+try {
+  const health = await request('/health')
+  assert(health.response.headers.get('content-security-policy').includes(project))
+  const login = await request('/auth/login', { email: account.email, password: account.password })
+  cookie = login.response.headers.getSetCookie().find(value => value.startsWith('aulabase_session='))?.split(';')[0]
+  assert(cookie)
+  const center = (await request('/activities/center')).data
+  assert(center.sectionSubjects.some(subject => subject.id === context.sectionSubjectId))
+  console.log(JSON.stringify({ phase: 'authenticated-context', project, grade, sectionSubjectId: context.sectionSubjectId }))
+  const fixtures = JSON.parse(readFileSync(`data/evaluation-instruments/french-grade-${grade}-contracts.json`, 'utf8'))
+  const formats = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']
+  let generated = 0
+  const academic = { level: 'SECONDARY', grade, subjectCode: 'FRA', subjectName: 'Francés' }
+  for (const [fixtureIndex, f] of fixtures.entries()) {
+    if (recheck && fixtureIndex !== 0 && f.id !== 'mixta-independiente') continue
+    const interpreted = (await request('/evaluation-instruments/interpret', { sectionSubjectId: context.sectionSubjectId, activityTitle: 'QA Francés · ' + f.id, description: f.description, competencyBlock: 'b1' })).data
+    assert.equal(interpreted.suggestedActivityType, f.activity, f.id)
+    // Full Cartesian coverage is automated; HTTP exercises every case and total,
+    // rotates the formats, then persists and reopens all four formats below.
+    for (const type of [formats[fixtureIndex % formats.length]]) for (const total of [20, 17.35]) {
+      const input = { sectionSubjectId: context.sectionSubjectId, activityTitle: 'QA Francés · ' + f.id, description: f.description, maxScore: total, participationMode: 'INDIVIDUAL', preferredInstrumentType: type, competencyBlock: 'b1' }
+      const proposal = (await request('/evaluation-instruments/recommend', input)).data
+      assert.equal(proposal.activityType, f.activity)
+      assert.equal(proposal.totalScoreUnits, Math.round(total * 100))
+      assert.deepEqual(content(proposal), content(editableFallbackRecommendation({ ...input, instrumentType: type, academicContext: academic })), `Service/local mismatch: ${f.id}/${type}`)
+      generated++
+    }
+    console.log(JSON.stringify({ phase: 'generation', project, grade, case: f.id, verified: generated }))
+  }
+  const savedEvidence = [], examples = []
+  const description = 'En parejas, simulen un encuentro con roles: se presentarán en francés indicando nombre, edad y nacionalidad, y responderán a su interlocutor.'
+  const detected = detectTeachingStrategy({ ...academic, description })
+  assert.equal(detected.id, 'SIMULATION')
+  for (const [index, type] of (recheck ? [] : formats).entries()) {
+    const total = index % 2 ? 17.35 : 20, name = `QA Francés ${grade}.º · ${type} · ${randomUUID().slice(0, 8)}`
+    const proposal = (await request('/evaluation-instruments/recommend', { sectionSubjectId: context.sectionSubjectId, activityTitle: name, description, participationMode: 'INDIVIDUAL', maxScore: total, preferredInstrumentType: type, competencyBlock: 'b1' })).data
+    let fields = recommendationToFields(proposal, name)
+    assert.deepEqual(validateInstrumentDefinition(type, fields, total), [])
+    // Explicit teacher edit through the same adapter used by the editor.
+    fields[`${type}:description:0`] += ' Evidencia QA revisada por el docente.'
+    if (type === 'lista-ponderada') fields[`${type}:indicator:0`] = fields[`${type}:description:0`]
+    const key = type === 'lista-ponderada' ? 'weight' : 'points'
+    fields[`${type}:${key}:0`] = String(Math.round((Number(fields[`${type}:${key}:0`]) - 0.01) * 100) / 100)
+    fields[`${type}:${key}:1`] = String(Math.round((Number(fields[`${type}:${key}:1`]) + 0.01) * 100) / 100)
+    fields = scoreInstrumentFields(rememberManualScoreWeights(fields, type), type, total, proposal)
+    assert.deepEqual(validateInstrumentDefinition(type, fields, total), [])
+    const snapshot = alignRecommendationWithFields(proposal, fields, total); assert(snapshot)
+    const input = { creationId: randomUUID(), sectionSubjectId: context.sectionSubjectId, schoolYearId: context.schoolYearId, academicPeriodId: context.academicPeriodId, competencyBlockId: 'b1', name, description, maxScore: total, activityType: 'individual', instrumentType: type, instrumentCriteria: fields, instrumentSnapshot: snapshot, pedagogicalActivityType: proposal.activityType, teachingStrategyId: detected.id, teachingStrategyOrigin: 'AUTO' }
+    const saved = (await request('/activities', input)).data
+    const reopen = async () => (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data.find(activity => activity.id === saved.id)
+    const original = await reopen(); assert(original)
+    assert.equal(original.teachingStrategyId, detected.id)
+    assert.equal(original.instrumentCriteria[`${type}:description:0`], fields[`${type}:description:0`])
+    const before = definition(original)
+    const { creationId, ...edit } = input
+    const changed = (await request('/activities', { ...edit, id: saved.id, instrumentId: saved.instrumentId, teachingStrategyId: 'CASE_STUDY', teachingStrategyOrigin: 'MANUAL' })).data
+    assert.equal(changed.teachingStrategyId, 'CASE_STUDY')
+    const reopened = await reopen()
+    assert.deepEqual(definition(reopened), before, 'Strategy-only change modified instrument')
+    const row = await prisma.evaluationActivity.findUniqueOrThrow({ where: { id: saved.id }, select: { schoolId: true, sectionSubjectId: true, instrumentId: true, instrumentSnapshotId: true, teachingStrategyId: true } })
+    assert.equal(row.schoolId, context.schoolId); assert.equal(row.sectionSubjectId, context.sectionSubjectId)
+    assert.equal(row.instrumentId, before.instrumentId); assert.equal(row.instrumentSnapshotId, before.snapshotId)
+    assert.equal(row.teachingStrategyId, 'CASE_STUDY')
+    savedEvidence.push({ type, total, activityId: saved.id, instrumentId: row.instrumentId, snapshotId: row.instrumentSnapshotId, instrumentHash: hash(before), manualTextAndWeightsPreserved: true, strategyOnlyExact: true })
+    examples.push({ type, description, total, catalog: proposal.catalogVersion, levels: proposal.levels, criteria: proposal.criteria.map(({ id, sourceReferences, ...criterion }) => criterion) })
+    console.log(JSON.stringify({ phase: 'saved-and-reopened', grade, type, activityId: saved.id, instrumentUnchanged: true }))
+  }
+  if (recheck) {
+    const report = JSON.parse(readFileSync(`.wrangler/french-source/grade-${grade}-http.json`, 'utf8'))
+    const activities = (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data
+    for (const saved of report.savedEvidence) {
+      const activity = activities.find(row => row.id === saved.activityId)
+      assert(activity); assert.equal(hash(definition(activity)), saved.instrumentHash)
+      assert.equal(activity.teachingStrategyId, 'CASE_STUDY')
+    }
+    report.finalBuildRecheck = { generated, reopened: report.savedEvidence.length, at: new Date().toISOString(), transientFailures }
+    writeFileSync(`.wrangler/french-source/grade-${grade}-http.json`, JSON.stringify(report, null, 2) + '\n')
+    console.log(JSON.stringify({ phase: 'final-build-recheck', grade, generated, reopenedUnchanged: report.savedEvidence.length }))
+  } else {
+    const report = { project, base, grade, subject: 'FRA', verification: 'AUTHENTICATED_HTTP_AND_DATABASE_NOT_BROWSER', interpreted: fixtures.length, generated, savedEvidence, transientFailures, browser: 'PENDING' }
+    writeFileSync(`.wrangler/french-source/grade-${grade}-http.json`, JSON.stringify(report, null, 2) + '\n')
+    writeFileSync(`.wrangler/french-source/grade-${grade}-examples.json`, JSON.stringify(examples, null, 2) + '\n')
+  }
+} finally { await prisma.$disconnect() }

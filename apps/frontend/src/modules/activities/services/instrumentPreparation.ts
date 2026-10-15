@@ -1,3 +1,4 @@
+import { resolveCommonFrenchTask, commonFrenchCriteria } from '@aula/shared'
 import type { InstrumentRecommendation } from '@aula/shared'
 import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,commonSecondaryLanguageGrade,resolveCommonEnglishTask,commonEnglishCriteria,englishTaskGrade} from '@aula/shared'
 import { distributeScoreUnits, instrumentEvaluationConfiguration, validateInstrumentDefinition } from '@aula/shared'
@@ -40,6 +41,8 @@ export function preparationFingerprint(input: { name: string; description: strin
 export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: number; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
   const authorizedGrade=input.academicContext?commonSecondaryLanguageGrade(input.academicContext):input.secondaryLanguageGrade
   if(authorizedGrade)input={...input,secondaryLanguageGrade:authorizedGrade}
+  const french=resolveCommonFrenchTask(input.activityTitle,input.description??'',input.academicContext)
+  if(french)return editableAuthoredRecommendation(commonFrenchCriteria(french),input,input.activityType??french.activityType,`frances-comunicacion-${french.grade}`)
   const english=resolveCommonEnglishTask(input.activityTitle,input.description??'',input.academicContext)
   if(english)return editableAuthoredRecommendation(commonEnglishCriteria(english),input,input.activityType??english.activityType,`ingles-comunicacion-${englishTaskGrade(english)}`)
   const resolvedActivity=input.activityType??resolveEvaluationTask(input.activityTitle,input.description??'').action??'OTHER'

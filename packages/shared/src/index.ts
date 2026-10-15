@@ -262,3 +262,5 @@ export {englishGradeSixGenres} from './secondary-english-grade-six-genres'
 export {deliveryConditions,deliveryCriteria,withDeliveryCriteria,TaskRequirementError} from './task-delivery-requirements'
 export { teachingStrategies, teachingStrategyCatalogVersion, resolveTeachingStrategy, teachingStrategyAllowed, detectTeachingStrategy, normalizeTeachingStrategyText } from './teaching-strategies'
 export type { TeachingStrategy, TeachingStrategyOrigin, TeachingStrategyContext } from './teaching-strategies'
+
+export * from './secondary-french'
