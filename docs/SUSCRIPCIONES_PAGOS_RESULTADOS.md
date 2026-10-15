@@ -175,3 +175,34 @@ La revisión independiente de DeepSeek señaló que `style-src` no permitía la 
 No se cambió el esquema en esta continuación. El contenedor aislado propio fue eliminado después de las pruebas. El bloqueo de las imágenes públicas y la aceptación integral de Paddle/Storage/condiciones continúan pendientes; las comprobaciones locales no se presentan como prueba de operación externa.
 
 Esta continuación añade cuatro commits en español: página de pago, diagnóstico/guía, corrección de CSP y resultados. Se mantiene la misma rama existente, sin reescribir su historial ni fusionar a `main`.
+
+## Continuación: Ajustes y preparación de Staging
+
+El código incorpora **Suscripción y pagos** como categoría propia del panel de Ajustes (`/configuracion?tab=suscripcion`), accesible a los titulares admitidos por el módulo. La sección funciona aunque falle la carga de los datos del centro. La administración del centro conserva su autorización por rol y los formularios mantienen su borrador al cambiar a la suscripción. La ruta anterior `/cuenta/suscripcion` redirige con `replace` y conserva los parámetros. Se reutiliza `BillingPage` en modo integrado y los componentes del sistema visual existente.
+
+DeepSeek V4.1 Flash de OpenCode implementó la integración y ejecutó una revisión acotada de migraciones. La revisión principal ajustó la navegación de docentes, retiró un campo adicional de permisos del sidebar y añadió la regresión de conservación del borrador. No se aceptó su sugerencia de omitir la migración versionada `local_backend_role`: el SQL crea un rol `NOLOGIN` y no justifica alterar el historial. No se ejecutó esa migración desde esta sesión.
+
+### Comprobaciones locales
+
+- `pnpm --filter backend test`: código 0, **81 archivos y 6.616 pruebas**, 42,48 s.
+- `pnpm --filter backend build`: código 0.
+- `pnpm --filter frontend exec vitest run --maxWorkers=1 src/components/navigation/Sidebar.spec.tsx src/modules/school-administration/pages/SchoolAdministrationPage.spec.tsx src/modules/billing src/App.redirect.spec.tsx src/routes/appRoutes.spec.ts src/modules/promo/pages/PricingPage.spec.tsx`: código 0, **12 archivos y 62 pruebas**, 49,93 s. Incluye el borrador del centro, ruta anterior, navegación, modo integrado y comportamiento de facturación.
+- `pnpm --filter frontend build`: código 0; persiste el aviso existente de bundles grandes.
+- `pnpm cloudflare:build`: código 0, cuatro builds y empaquetado Wrangler `--dry-run`; 9.672,47 KiB, gzip 2.179,12 KiB.
+- `node --test scripts/check-staging-environment.test.mjs`: código 0, **2 pruebas**, con casos directos/pooler y rechazo de producción, URLs mezcladas, roles insuficientes y credenciales en mensajes. Regresión comprobada primero en rojo y después en verde.
+
+### Acciones remotas y bloqueo comprobado
+
+Se reactivó únicamente **AulaBase Development** (`eolgunypmtgrsyrjzcld`), esperando hasta `ACTIVE_HEALTHY`. Se verificó el destino de Hyperdrive de Staging: host de Development, rol `app_backend`, puerto 5432 y caché deshabilitada. Se sincronizaron las claves de Supabase de Development solo en `aula-base-staging`, verificando previamente el proyecto de los JWT, y se fijó `BILLING_ENVIRONMENT=sandbox`. El módulo está configurado como habilitado, pero `BILLING_CHECKOUT_ENABLED`, `BILLING_EVENTS_ENABLED` y `BILLING_ENFORCE_ACCESS` permanecen `false`. La respuesta 200 de salud del Worker existente no acredita que esta rama esté desplegada ni que sus tablas existan.
+
+El usuario delegó la elección de la excepción de despliegue. Staging admite ahora exclusivamente las ramas exactas `main` y `feat/suscripciones-pagos-20261015`, sin comodines. Se comprobó por lectura que Production mantiene su política de ramas protegidas; no se modificó la protección de `main`.
+
+El [despliegue de Staging 38770526041](https://github.com/thebuuba/Proyecto-educativo-v3/actions/runs/38770526041) se detuvo inicialmente por la política del entorno. Tras la excepción, el segundo intento llegó al nuevo control `check-staging-environment.mjs` y rechazó la conexión administrativa configurada. Instalación, migraciones, catálogo y despliegue quedaron omitidos. La validación exige Worker de Staging, frontend de Development y conexión PostgreSQL administrativa del mismo proyecto antes de cualquier migración. No se debilitó el control para continuar.
+
+**Bloqueo de credencial:** falta configurar correctamente `SUPABASE_DB_URL` en el GitHub Environment Staging. Las conexiones locales verificadas de Development usan `app_backend`, no el usuario administrativo requerido. GitHub no permite leer el valor de un secreto; el error no demuestra por sí solo cuál de host, usuario, protocolo o base incumple el control. Un intento previo de diagnóstico CLI con referencia explícita de Development devolvió 403 `LegacyDbConfigLoginRoleStatusError`; no aplicó migraciones. No se rotó la contraseña ni se reutilizaron credenciales de producción.
+
+**Cambio concurrente del historial:** antes del intento se observaron 64 migraciones, 5 centros, 11 franjas y 30 entradas de horario en Development. Se conservó una copia local ignorada de las franjas y vínculos afectados para una futura comparación. Después del intento fallido, una consulta encontró **76 migraciones, 6 centros, 55 franjas y las mismas 30 entradas**. Entre las versiones remotas aparece `20261015105401_activity_teaching_strategy`, ausente del árbol de esta rama y de `origin/main` consultado. Esos cambios no proceden de este workflow, cuyos pasos de migración fueron omitidos. No se borró ni reparó ese historial, ni se atribuye conservación semántica de horarios solo al recuento. Antes de reintentar hay que obtener/revisar el SQL de esa migración y comprobar la coherencia del historial. Se verificaron **cero tablas `billing_%`**: las cuatro migraciones comerciales siguen pendientes en Development.
+
+No se crearon usuarios de prueba ni se intentaron operaciones comerciales sobre una base sin el esquema requerido. No se comprobó aún el recorrido autenticado en el Worker de Staging con este código. Siguen pendientes cuenta/credenciales Paddle Sandbox, precio y condiciones de prueba, checkout/webhook real y comprobación de Storage. Los bloqueos de lanzamiento descritos antes siguen vigentes. No se modificó Supabase Production, no se activaron cobros reales y no se fusionó a `main`.
+
+Entregas de código de esta continuación: `9bb12ab` (protección del destino de migraciones) y `5da02cd` (suscripción integrada en Ajustes), publicadas en la rama existente mediante push normal. La documentación registra el resultado efectivo, incluido el despliegue detenido.

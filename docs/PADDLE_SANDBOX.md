@@ -10,7 +10,13 @@ Crear una cuenta independiente en [Paddle Sandbox](https://sandbox-vendors.paddl
 
 Usar una instalación de pruebas separada con las migraciones y las claves propias de Supabase. No reutilizar `.dev.vars` ni enlaces de bases de producción. La URL pública HTTPS de este entorno será necesaria para que Paddle entregue webhooks. Un frontend local sirve para abrir checkout, pero no es por sí solo un destino público de webhooks.
 
-Inventario de solo lectura del 15 de octubre de 2026: el conector AulaBase muestra **AulaBase Development** (`eolgunypmtgrsyrjzcld`) en estado `INACTIVE`. No se reactivó ni se consultaron sus tablas. Antes de utilizarlo hay que verificar su reactivación y la correspondencia de backend, frontend y Storage con ese proyecto; el nombre «staging» de una configuración no prueba por sí solo qué base usa.
+Actualización del 15 de octubre de 2026: **AulaBase Development** (`eolgunypmtgrsyrjzcld`) fue reactivado y alcanzó `ACTIVE_HEALTHY`. Se verificó que Hyperdrive de Staging apunta a ese proyecto con el rol `app_backend`, y se sincronizaron exclusivamente en el Worker de Staging sus credenciales de Supabase Development. Los controles de checkout, eventos y bloqueo académico siguen apagados; no hay credenciales Paddle configuradas.
+
+El despliegue de esta rama **todavía no se completó**. La validación previa rechazó `SUPABASE_DB_URL` del GitHub Environment **Staging**: no cumple los requisitos de conexión administrativa de Development. Configurar allí la URL de PostgreSQL obtenida desde **Connect** del proyecto Development, con usuario `postgres` en conexión directa o `postgres.eolgunypmtgrsyrjzcld` en el pooler y base `postgres`. No usar la conexión de ejecución `app_backend`, una API key ni la URL de Production. Guardarla como secreto, nunca en el chat o en Git. El script no imprime el secreto ni permite continuar con un destino distinto.
+
+Antes de reintentar, comprobar también el historial remoto: la última consulta encontró 76 migraciones y una versión `20261015105401_activity_teaching_strategy` ausente de esta rama y de `origin/main` consultado. No marcarla como aplicada localmente ni borrar/reparar el historial sin obtener y revisar su SQL original. Las cuatro migraciones de facturación aún no están aplicadas en Development. [Evidencia y resultados](SUSCRIPCIONES_PAGOS_RESULTADOS.md#continuación-ajustes-y-preparación-de-staging).
+
+En el código de esta rama, la entrada de gestión está en **Ajustes → Suscripción y pagos**, con enlace `/configuracion?tab=suscripcion`. La ruta anterior redirige conservando sus parámetros. No confundir la compilación local correcta con una publicación disponible en Staging.
 
 Copiar la plantilla local, que solo contiene campos vacíos:
 
