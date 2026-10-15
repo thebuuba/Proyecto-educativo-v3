@@ -3073,10 +3073,11 @@ export type Database = {
         ]
       }
       billing_trials: {
-        Row: { account_id: string; converted_at: string | null; created_at: string; ended_at: string | null; ends_at: string; id: string; plan_id: string; starts_at: string; status: Database["public"]["Enums"]["billing_trial_status"]; updated_at: string }
-        Insert: { account_id: string; converted_at?: string | null; created_at?: string; ended_at?: string | null; ends_at: string; id?: string; plan_id: string; starts_at?: string; status?: Database["public"]["Enums"]["billing_trial_status"]; updated_at?: string }
-        Update: { account_id?: string; converted_at?: string | null; created_at?: string; ended_at?: string | null; ends_at?: string; id?: string; plan_id?: string; starts_at?: string; status?: Database["public"]["Enums"]["billing_trial_status"]; updated_at?: string }
+        Row: { subscription_id: string | null; account_id: string; converted_at: string | null; created_at: string; ended_at: string | null; ends_at: string; id: string; plan_id: string; starts_at: string; status: Database["public"]["Enums"]["billing_trial_status"]; updated_at: string }
+        Insert: { subscription_id?: string | null; account_id: string; converted_at?: string | null; created_at?: string; ended_at?: string | null; ends_at: string; id?: string; plan_id: string; starts_at?: string; status?: Database["public"]["Enums"]["billing_trial_status"]; updated_at?: string }
+        Update: { subscription_id?: string | null; account_id?: string; converted_at?: string | null; created_at?: string; ended_at?: string | null; ends_at?: string; id?: string; plan_id?: string; starts_at?: string; status?: Database["public"]["Enums"]["billing_trial_status"]; updated_at?: string }
         Relationships: [
+          { foreignKeyName: "billing_trials_subscription_owner_fk"; columns: ["subscription_id", "account_id"]; isOneToOne: true; referencedRelation: "billing_subscriptions"; referencedColumns: ["id", "account_id"] },
           { foreignKeyName: "billing_trials_account_id_fkey"; columns: ["account_id"]; isOneToOne: true; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
           { foreignKeyName: "billing_trials_plan_id_fkey"; columns: ["plan_id"]; isOneToOne: false; referencedRelation: "billing_plans"; referencedColumns: ["id"] },
         ]

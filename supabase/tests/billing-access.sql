@@ -76,4 +76,24 @@ do $$ begin
  if exists (select 1 from public.subjects where code='SYNTHETIC') then raise exception 'Expired account bypassed academic RLS'; end if;
 end $$;
 reset role;
+-- A provider trial must belong to the same account as its subscription.
+insert into public.billing_prices (id,plan_id,version,currency,amount_minor,provider,status)
+ values ('80000000-0000-4000-8000-000000000001','40000000-0000-4000-8000-000000000001',1,'USD',599,'paddle','active');
+insert into public.billing_subscriptions (id,account_id,plan_id,price_id,provider)
+ values ('90000000-0000-4000-8000-000000000001','50000000-0000-4000-8000-000000000002','40000000-0000-4000-8000-000000000001','80000000-0000-4000-8000-000000000001','paddle');
+do $$ begin
+ begin
+  update public.billing_trials set subscription_id='90000000-0000-4000-8000-000000000001'
+   where account_id='50000000-0000-4000-8000-000000000001';
+  raise exception 'Cross-account provider trial accepted';
+ exception when foreign_key_violation then null; end;
+end $$;
+insert into public.billing_trials (account_id,plan_id,subscription_id,starts_at,ends_at)
+ values ('50000000-0000-4000-8000-000000000002','40000000-0000-4000-8000-000000000001','90000000-0000-4000-8000-000000000001',now(),now()+interval '1 month');
+do $$ begin
+ begin
+  delete from public.billing_subscriptions where id='90000000-0000-4000-8000-000000000001';
+  raise exception 'Provider trial lost its subscription';
+ exception when foreign_key_violation then null; end;
+end $$;
 rollback;

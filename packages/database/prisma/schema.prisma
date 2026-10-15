@@ -1802,6 +1802,7 @@ model BillingSubscription {
   price      BillingPrice       @relation(fields: [priceId], references: [id])
   payments   BillingPayment[]
   documents  BillingDocument[]
+  trial      BillingTrial?
 
   @@unique([id, accountId], map: "billing_subscriptions_id_account_unique")
   @@index([accountId, status])
@@ -1974,6 +1975,7 @@ model BillingTrial {
   id          String             @id @default(uuid()) @db.Uuid
   accountId   String             @unique @map("account_id") @db.Uuid
   planId      String             @map("plan_id") @db.Uuid
+  subscriptionId String?         @unique @map("subscription_id") @db.Uuid
   status      BillingTrialStatus @default(ACTIVE)
   startsAt    DateTime           @default(now()) @map("starts_at") @db.Timestamptz(6)
   endsAt      DateTime           @map("ends_at") @db.Timestamptz(6)
@@ -1985,6 +1987,9 @@ model BillingTrial {
   account BillingAccount @relation(fields: [accountId], references: [id], onDelete: Cascade)
   plan    BillingPlan    @relation(fields: [planId], references: [id])
 
+  subscription BillingSubscription? @relation(fields: [subscriptionId, accountId], references: [id, accountId], onDelete: Restrict, map: "billing_trials_subscription_owner_fk")
+
+  @@unique([subscriptionId, accountId], map: "billing_trials_subscription_id_account_id_key")
   @@index([status, endsAt])
   @@map("billing_trials")
 }
