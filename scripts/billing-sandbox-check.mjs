@@ -13,6 +13,7 @@ export const REQUIRED_EVENTS = [
   'adjustment.created',
   'adjustment.updated',
   'subscription.created',
+  'subscription.trialing',
   'subscription.updated',
   'subscription.activated',
   'subscription.canceled',
@@ -99,7 +100,8 @@ export function validatePrice(price, expected = {}) {
   if (String(price.unit_price?.amount ?? '') !== String(expected.amount)) errors.push('price_amount_mismatch')
   if (price.unit_price?.currency_code !== expected.currency) errors.push('price_currency_mismatch')
   if (price.billing_cycle?.interval !== 'month' || price.billing_cycle?.frequency !== 1) errors.push('price_cycle_mismatch')
-  if (price.trial_period !== null) errors.push('price_trial_period_present')
+  const trial = price.trial_period
+  if (trial?.interval !== 'month' || trial.frequency !== 1 || trial.requires_payment_method !== true || trial.unit_price !== null || (trial.unit_price_overrides?.length ?? 0) !== 0) errors.push('price_trial_policy_mismatch')
   if (price.tax_mode !== 'internal') errors.push('price_tax_mode_unsupported')
   if (!Array.isArray(price.unit_price_overrides) || price.unit_price_overrides.length) errors.push('price_overrides_unsupported')
   if (expected.price && price.id !== expected.price) errors.push('price_identity_mismatch')
