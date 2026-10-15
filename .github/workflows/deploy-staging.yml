@@ -49,6 +49,9 @@ jobs:
             exit 1
           fi
 
+      - name: Impedir destinos de producción o mezclados
+        run: node scripts/check-staging-environment.mjs
+
       - run: pnpm install --frozen-lockfile
       - run: pnpm db:generate
       - run: pnpm build
