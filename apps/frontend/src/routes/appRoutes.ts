@@ -219,7 +219,9 @@ export const appRoutes: AppRoute[] = [
     label: 'Configuración',
     icon: Settings,
     component: SchoolAdministrationPage,
-    allowedRoles: ['admin'],
+    // Cada titular gestiona su cuenta; las categorías administrativas siguen
+    // limitadas al rol admin dentro de la página y en las APIs existentes.
+    allowedRoles: allRoles,
   },
   {
     path: '/perfil',

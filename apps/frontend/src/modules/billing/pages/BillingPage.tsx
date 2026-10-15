@@ -108,7 +108,15 @@ function documentTone(type: string): 'info' | 'neutral' {
   return type.includes('invoice') || type.includes('factura') ? 'info' : 'neutral'
 }
 
-export function BillingPage() {
+type BillingPageProps = {
+  /**
+   * Oculta la cabecera `PageHero` cuando la página se integra en otro panel
+   * que ya aporta el título, conservando actualizar, avisos, cobertura y soporte.
+   */
+  embedded?: boolean
+}
+
+export function BillingPage({ embedded = false }: BillingPageProps = {}) {
   const { overview, loading, error, refetch } = useBilling()
   const [pending, setPending] = useState<string | null>(null)
   const [notice, setNotice] = useState<Notice | null>(null)
@@ -159,13 +167,17 @@ export function BillingPage() {
 
   return (
     <section className="billing-workspace w-full min-w-0 space-y-5">
-      <PageHero
-        title="Suscripción y pagos"
-        description="Consulta tu cobertura, tu forma de pago y el historial registrado por el servidor."
-        icon={CreditCard}
-        tone="info"
-        eyebrow="Cuenta"
-        actions={
+      {embedded ? (
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            {overview ? (
+              <>
+                <AccessStatusBadge overview={overview} />
+                <StatusBadge tone="neutral">Entorno: {overview.environment}</StatusBadge>
+                {!overview.enabled ? <StatusBadge tone="warning">Contratación desactivada</StatusBadge> : null}
+              </>
+            ) : null}
+          </div>
           <Button
             variant="outline"
             size="sm"
@@ -176,16 +188,36 @@ export function BillingPage() {
             <RefreshCw className={loading ? 'size-4 animate-spin motion-reduce:animate-none' : 'size-4'} aria-hidden="true" />
             Actualizar
           </Button>
-        }
-      >
-        {overview ? (
-          <div className="flex flex-wrap items-center gap-2">
-            <AccessStatusBadge overview={overview} />
-            <StatusBadge tone="neutral">Entorno: {overview.environment}</StatusBadge>
-            {!overview.enabled ? <StatusBadge tone="warning">Contratación desactivada</StatusBadge> : null}
-          </div>
-        ) : null}
-      </PageHero>
+        </div>
+      ) : (
+        <PageHero
+          title="Suscripción y pagos"
+          description="Consulta tu cobertura, tu forma de pago y el historial registrado por el servidor."
+          icon={CreditCard}
+          tone="info"
+          eyebrow="Cuenta"
+          actions={
+            <Button
+              variant="outline"
+              size="sm"
+              className="rounded-full"
+              disabled={loading}
+              onClick={() => void refetch()}
+            >
+              <RefreshCw className={loading ? 'size-4 animate-spin motion-reduce:animate-none' : 'size-4'} aria-hidden="true" />
+              Actualizar
+            </Button>
+          }
+        >
+          {overview ? (
+            <div className="flex flex-wrap items-center gap-2">
+              <AccessStatusBadge overview={overview} />
+              <StatusBadge tone="neutral">Entorno: {overview.environment}</StatusBadge>
+              {!overview.enabled ? <StatusBadge tone="warning">Contratación desactivada</StatusBadge> : null}
+            </div>
+          ) : null}
+        </PageHero>
+      )}
 
       {error ? (
         <FeedbackBanner tone="danger" role="alert" className="flex flex-wrap items-center justify-between gap-3">

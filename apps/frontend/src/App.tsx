@@ -47,7 +47,6 @@ const PaymentStatusPage = lazyPage(
   () => import('@/modules/promo/pages/CheckoutPage'),
   'PaymentStatusPage',
 )
-const BillingPage = lazyPage(() => import('@/modules/billing/pages/BillingPage'), 'BillingPage')
 const ResetPasswordPage = lazyPage(
   () => import('@/modules/auth/pages/ResetPasswordPage'),
   'ResetPasswordPage',
@@ -69,6 +68,18 @@ const billingAllowedRoles: UserRole[] = [
   'guardian',
   'viewer',
 ]
+
+/**
+ * Conserva el enlace antiguo `/cuenta/suscripcion` redirigiendo a la categoría
+ * de suscripción dentro de Configuración, sin perder los parámetros de
+ * recuperación (por ejemplo, de pagos vencidos).
+ */
+export function LegacySubscriptionRedirect() {
+  const { search } = useLocation()
+  const next = new URLSearchParams(search)
+  next.set('tab', 'suscripcion')
+  return <Navigate to={`/configuracion?${next.toString()}`} replace />
+}
 
 /**
  * Componente principal de la aplicación.
@@ -123,13 +134,16 @@ function App() {
               />
             )
           })}
+          {/*
+            La suscripción se gestiona dentro de Configuración. Se conservan los
+            roles autenticados que ya accedían a esta ruta y la redirección
+            mantiene los parámetros de recuperación de pagos vencidos.
+          */}
           <Route
             path="cuenta/suscripcion"
             element={
               <RequireAuth allowedRoles={billingAllowedRoles}>
-                <ErrorBoundary key="/cuenta/suscripcion">
-                  <BillingPage />
-                </ErrorBoundary>
+                <LegacySubscriptionRedirect />
               </RequireAuth>
             }
           />

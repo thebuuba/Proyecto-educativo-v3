@@ -1,10 +1,11 @@
 import { ArrowRight, BookOpen, CalendarClock, CalendarRange, CreditCard, GraduationCap, LayoutDashboard, RefreshCw, Settings2, SlidersHorizontal, UsersRound } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { Suspense, lazy, useEffect, useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
 import { FeedbackBanner, PageHero, SemanticIcon, StatusBadge } from '@/components/ui/SemanticUI'
+import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { PeriodManager } from '@/modules/planning/components/PeriodManager'
 import { ProfilePage } from '@/modules/profile/pages/ProfilePage'
 import { AcademicYearManager } from '@/modules/school-administration/components/AcademicYearManager'
@@ -14,12 +15,18 @@ import { useSchoolAdministration } from '@/modules/school-administration/hooks/u
 import { cn } from '@/utils/cn'
 import '../settings-design.css'
 
+// Carga diferida: el resto de categorías de Configuración no arrastran el módulo comercial.
+const BillingPage = lazy(() =>
+  import('@/modules/billing/pages/BillingPage').then((module) => ({ default: module.BillingPage })),
+)
+
 const categories = [
-  { id: 'centro', label: 'Centro educativo', icon: BookOpen },
-  { id: 'calendario', label: 'Calendario', icon: CalendarRange },
-  { id: 'usuarios', label: 'Usuarios', icon: UsersRound },
-  { id: 'cuenta', label: 'Cuenta e interfaz', icon: SlidersHorizontal },
-  { id: 'modulos', label: 'Módulos', icon: LayoutDashboard },
+  { id: 'centro', label: 'Centro educativo', icon: BookOpen, adminOnly: true },
+  { id: 'calendario', label: 'Calendario', icon: CalendarRange, adminOnly: true },
+  { id: 'usuarios', label: 'Usuarios', icon: UsersRound, adminOnly: true },
+  { id: 'cuenta', label: 'Cuenta e interfaz', icon: SlidersHorizontal, adminOnly: false },
+  { id: 'suscripcion', label: 'Suscripción y pagos', icon: CreditCard, adminOnly: false },
+  { id: 'modulos', label: 'Módulos', icon: LayoutDashboard, adminOnly: true },
 ] as const
 const moduleSettings = [
   { title: 'Inicio', description: 'Organiza tus widgets y accesos rápidos.', href: '/inicio?ajustes=widgets', icon: LayoutDashboard },
@@ -32,12 +39,18 @@ const moduleSettings = [
 
 export function SchoolAdministrationPage() {
   const { profile, schoolYears, academicPeriods, loading, error, refetch, saveProfile, addSchoolYear, editSchoolYear, activateSchoolYear } = useSchoolAdministration()
+  const { hasRole } = useAuth()
+  const canManageSchool = hasRole(['admin'])
   const [periodManagerOpen, setPeriodManagerOpen] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
   const location = useLocation()
   const requested = searchParams.get('tab')
-  const fallback = ['#anos-escolares', '#periodos-academicos'].includes(location.hash) ? 'calendario' : 'centro'
-  const category = categories.find((item) => item.id === requested)?.id ?? fallback
+  // Los titulares no administradores solo ven su suscripción y su cuenta personal.
+  const availableCategories = categories.filter((item) => !item.adminOnly || canManageSchool)
+  const fallback = canManageSchool
+    ? (['#anos-escolares', '#periodos-academicos'].includes(location.hash) ? 'calendario' : 'centro')
+    : 'suscripcion'
+  const category = availableCategories.find((item) => item.id === requested)?.id ?? fallback
   const currentSchoolYear = schoolYears.find((year) => year.isCurrent) ?? null
 
   useEffect(() => {
@@ -65,7 +78,7 @@ export function SchoolAdministrationPage() {
         <aside className="min-w-0 space-y-4">
           <Card className="p-2">
             <nav aria-label="Categorías de configuración" className="grid gap-1 sm:grid-cols-2 lg:grid-cols-1">
-              {categories.map(({ id, label, icon: Icon }) => <button key={id} type="button" aria-current={category === id ? 'page' : undefined}
+              {availableCategories.map(({ id, label, icon: Icon }) => <button key={id} type="button" aria-current={category === id ? 'page' : undefined}
                 onClick={() => selectCategory(id)}
                 className={cn('flex min-h-11 items-center gap-3 rounded-full px-4 py-3 text-left text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring', category === id ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-foreground')}>
                 <Icon className="size-4 shrink-0" aria-hidden="true" /><span>{label}</span>
@@ -80,10 +93,14 @@ export function SchoolAdministrationPage() {
         </aside>
 
         <div className="min-w-0 space-y-5">
-          {loading && !profile ? <Card><CardContent><p role="status" className="py-12 text-center text-sm text-muted-foreground">Cargando configuración...</p></CardContent></Card> : <>
-            <section id="centro-educativo" hidden={category !== 'centro'} className="scroll-mt-28">
-              <SchoolProfileForm profile={profile} onSave={saveProfile} />
-            </section>
+          {canManageSchool && (!loading || profile) ? <section id="centro-educativo" hidden={category !== 'centro'} className="scroll-mt-28">
+            <SchoolProfileForm profile={profile} onSave={saveProfile} />
+          </section> : null}
+          {category === 'suscripcion' ? <section id="suscripcion" aria-label="Suscripción y pagos" className="scroll-mt-28">
+            <Suspense fallback={<Card><CardContent><p role="status" className="py-12 text-center text-sm text-muted-foreground">Cargando suscripción y pagos...</p></CardContent></Card>}>
+              <BillingPage embedded />
+            </Suspense>
+          </section> : loading && !profile ? <Card><CardContent><p role="status" className="py-12 text-center text-sm text-muted-foreground">Cargando configuración...</p></CardContent></Card> : <>
             {category === 'calendario' ? <div className="space-y-5">
               <section id="anos-escolares" className="scroll-mt-28"><AcademicYearManager schoolYears={schoolYears} onAdd={addSchoolYear} onEdit={editSchoolYear} onActivate={activateSchoolYear} /></section>
               <section id="periodos-academicos" className="scroll-mt-28">
@@ -101,12 +118,13 @@ export function SchoolAdministrationPage() {
             </div> : null}
             {category === 'usuarios' ? <SchoolUsersPanel /> : null}
             {category === 'cuenta' ? <div className="space-y-5">
-              <Card>
-                <CardHeader className="flex flex-wrap items-start justify-between gap-4">
-                  <div className="flex items-start gap-3"><SemanticIcon icon={CreditCard} tone="info" /><div><CardTitle>Suscripción y pagos</CardTitle><CardDescription>Consulta tu cobertura, tu forma de pago y el historial registrado.</CardDescription></div></div>
-                  <Link to="/cuenta/suscripcion" aria-label="Gestionar suscripción y pagos" className="inline-flex min-h-10 items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Gestionar suscripción <ArrowRight className="size-4" aria-hidden="true" /></Link>
-                </CardHeader>
-              </Card>
+              <Card><CardContent className="flex flex-wrap items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-foreground">Suscripción y pagos</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Gestiona tu cobertura, forma de pago e historial en la pestaña de suscripción.</p>
+                </div>
+                <Button variant="outline" size="sm" className="rounded-full" onClick={() => selectCategory('suscripcion')}>Gestionar suscripción <ArrowRight className="size-4" aria-hidden="true" /></Button>
+              </CardContent></Card>
               <ProfilePage embedded />
             </div> : null}
             {category === 'modulos' ? <div className="space-y-4">

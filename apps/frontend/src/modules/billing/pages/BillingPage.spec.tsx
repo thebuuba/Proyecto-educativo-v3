@@ -268,4 +268,21 @@ describe('BillingPage', () => {
     expect(await screen.findByText(/panel comercial/i)).toBeInTheDocument()
     expect(mocked.getAdminOverview).toHaveBeenCalled()
   })
+
+  it('en modo integrado oculta la cabecera duplicada y conserva actualizar y soporte', async () => {
+    mocked.getBillingOverview.mockResolvedValue(makeOverview())
+
+    render(
+      <MemoryRouter>
+        <BillingPage embedded />
+      </MemoryRouter>,
+    )
+
+    expect(await screen.findByText(/cobertura efectiva/i)).toBeInTheDocument()
+    expect(
+      screen.queryByRole('heading', { level: 1, name: /suscripción y pagos/i }),
+    ).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /actualizar/i })).toBeInTheDocument()
+    expect(screen.getByText('Soporte')).toBeInTheDocument()
+  })
 })

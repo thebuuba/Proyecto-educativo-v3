@@ -78,7 +78,7 @@ describe('Sidebar', () => {
       </MemoryRouter>,
     )
     expect(screen.getByRole('link', { name: 'Cursos' })).toHaveAttribute('aria-current', 'page')
-    expect(screen.getByRole('link', { name: 'Configuración' })).toHaveAttribute('href', '/perfil')
+    expect(screen.getByRole('link', { name: 'Configuración' })).toHaveAttribute('href', '/configuracion')
     expect(screen.queryByRole('link', { name: 'Ajustes' })).not.toBeInTheDocument()
   })
 
