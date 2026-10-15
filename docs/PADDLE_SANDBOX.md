@@ -1,5 +1,7 @@
 # Conectar Paddle Sandbox
 
+**Política aprobada el 15/10/2026:** un mes natural gratuito con tarjeta obligatoria y renovación automática por **US$5.99 al mes**. La referencia en pesos es aproximada y fechada; Paddle factura en USD. Esta política sustituye la prueba local de 14 días descrita en las evidencias históricas de esta guía. Las pruebas ya emitidas conservan su vencimiento. No se habilitan cobros reales.
+
 Esta guía configura exclusivamente pruebas. No autoriza cuentas live, producción, migraciones remotas ni dinero real. El código debe estar en `feat/suscripciones-pagos-20261015`.
 
 ## 1. Crear la cuenta
@@ -46,7 +48,7 @@ La página exige sesión y que la transacción pertenezca a un intento reservado
 
 ## 4. Crear producto y precio de prueba
 
-Crear un producto **Docente Completo** con un precio mensual, frecuencia 1 y sin prueba del proveedor (la prueba única la gestiona AulaBase). Elegir importe y moneda de pruebas expresamente; aún no hay precio comercial aprobado. No asumir que DOP está soportado por Paddle: comprobar el selector y su catálogo de monedas.
+Crear un producto **Docente Completo** con precio **USD 5.99** (`amount=599`), ciclo `month`, frecuencia `1`. Configurar en **el precio** una prueba de un mes: `trial_period={interval:"month",frequency:1,requires_payment_method:true,unit_price:null}` y sin precios alternativos por país, tampoco en la prueba. Si el dashboard no expone estos campos, configurarlos mediante la API oficial de precios de Sandbox. No crear una prueba sin tarjeta. El servidor consulta y valida el precio antes de reservar el checkout; no añade `trial_period` al cuerpo de creación de transacciones.
 
 Para esta primera validación con importe fijo, usar impuestos incluidos (`tax_mode=internal`), cantidad 1, sin descuentos ni importes por país. El procesamiento exige que el importe y la moneda confirmados coincidan con los autorizados localmente. Si se prueba otra política fiscal, descuentos o conversión, hay que implementar y probar esa conciliación antes de cobrar.
 
@@ -68,6 +70,7 @@ transaction.payment_failed
 adjustment.created
 adjustment.updated
 subscription.created
+subscription.trialing
 subscription.updated
 subscription.activated
 subscription.canceled
@@ -83,16 +86,16 @@ Copiar el secreto del destino a `PADDLE_SANDBOX_WEBHOOK_SECRET`. La URL no lleva
 Con las claves configuradas, reemplazar los cuatro campos entre ángulos y ejecutar:
 
 ```powershell
-node --env-file=.env.billing-sandbox.local scripts/billing-sandbox-check.mjs --price "<PRICE_ID>" --amount "<IMPORTE_EN_UNIDADES_MENORES>" --currency "<MONEDA_ISO>" --webhook-url "https://<HOST_DE_PRUEBAS>/api/v1/billing/webhooks/paddle"
+node --env-file=.env.billing-sandbox.local scripts/billing-sandbox-check.mjs --price "<PRICE_ID>" --amount "599" --currency "USD" --webhook-url "https://<HOST_DE_PRUEBAS>/api/v1/billing/webhooks/paddle"
 ```
 
 Por defecto no contacta ninguna API: solo valida formatos y campos obligatorios. Para consultar de verdad el precio y el destino en Paddle, repetir el mismo comando añadiendo `--online`. Solo hace dos GET a `sandbox-api.paddle.com`; no crea clientes, cargos ni suscripciones. Comprueba la respuesta real `data`, la periodicidad, fiscalidad fija y la coincidencia del secreto de firma del destino sin imprimirlo. No recorre más de 200 destinos de notificación: si hay más, localizar el destino explícitamente antes de operar. Un diagnóstico correcto no sustituye completar un checkout y recibir su webhook.
 
 Después, en el entorno de pruebas autorizado, habilitar módulo, eventos y contratación; configurar una versión de condiciones válida exclusivamente para pruebas. Mantener el bloqueo académico apagado mientras el bucket de imágenes siga público y asignar el permiso de administrador comercial a un operador de prueba. No iniciar el flujo desde producción.
 
-Desde una cuenta docente de prueba: iniciar una prueba gratuita o elegir contratación anticipada de forma explícita, abrir checkout y utilizar las tarjetas que publique la documentación de sandbox. Verificar en la app y en el dashboard:
+Desde una cuenta docente sintética en una base aislada: abrir checkout desde Ajustes, aceptar expresamente tarjeta, renovación mensual y condiciones y utilizar las tarjetas que publique la documentación de sandbox. El retorno del navegador no concede acceso. Verificar en la app y en el dashboard:
 
-1. Pago completado: un pago y un período, con titular y moneda correctos; retorno del navegador sin webhook no acredita acceso.
+1. Alta gratuita confirmada por Paddle: una prueba vinculada a la suscripción, con fechas del proveedor, sin pago ni recibo de importe cero. Primer cobro mensual: un pago y un período con titular, USD e importe correctos. No debe concederse otra prueba a ese titular.
 2. Pago rechazado: no concede cobertura pagada.
 3. Repetición del mismo evento: no duplica pago, período ni recibo.
 4. Cancelación: proveedor confirma fin de período, conservando cobertura válida.
@@ -108,3 +111,5 @@ Registrar identificadores de prueba y resultados sin claves, datos de tarjetas n
 - [Paddle.Environment.set](https://developer.paddle.com/paddle-js/methods/paddle-environment-set/).
 - [Precio, periodicidad e impuestos](https://developer.paddle.com/api-reference/prices/get-price/).
 - [Destinos de notificaciones](https://developer.paddle.com/api-reference/notification-settings/list-notification-settings/).
+- [Crear una suscripción en prueba](https://developer.paddle.com/build/trials/create-trial/).
+- [Evento subscription.trialing](https://developer.paddle.com/webhooks/subscriptions/subscription-trialing/).
