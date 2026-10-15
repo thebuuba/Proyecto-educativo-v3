@@ -1,5 +1,10 @@
 # Continuación del encargo completo
 
+## Quinto verificado — 15/10/2026
+
+Inglés común5.º verificado en sus familias y patrones definidos, catálogo local62;61 congelado. Fuente156/15; backend29.331/86, frontend6.140 final y regresión reciente12.020/5, inventario9/builds/diff. HTTP187+8+4cap en61 y40seguimientos62; cuatro CRUD auténticos en62 cotejados con snapshots,129actuales/99completos/base intacta. Código publicado1f1abf9; [informe final](ingles-5-informe-final.md), [instrumentos completos](ingles-5-ejemplos-finales.md). Publicar cierre y continuar sexto común PDF169–174, último bloque autorizado. No francés ni optativas. Los estados anteriores son históricos.
+
+
 ## Retomar quinto — 15/10/2026
 
 Cuarto publicado en `6dc1e0b8cc3d160f016462bc451df4f3de25c701`, remoto comprobado y árbol limpio al cerrar. Quinto en ejecución: fuentePDF163–168 cotejada/156 registros/15 grupos, funciones12, gramática60/120 formas, léxico22/expresiones7, estrategias/géneros/contexto/composición conectados en código. Reproducción60 de doce casos sin proveedor propio guardada. `.60` congelado; `.61` en carga/verificación local. [Punto de avance](ingles-5-punto-de-avance.md). Faltan revisión integral final, HTTP/cuatro CRUD/snapshots/históricos y publicación. No iniciar sexto hasta cerrar quinto.

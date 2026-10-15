@@ -21,10 +21,12 @@ Ejecución directa con `executing-plans`; sin subagentes. Encargo del adjunto `1
 - [x] Segundo: PDF140–145, primer ciclo, común; familias definidas verificadas,196 registros, cuatro formatos y persistencia. Un fragmento fuente ininterpretable excluido expresamente; cierre .53.
 - [x] Tercero: PDF146–151,158 registros/15 grupos; familias definidas verificadas, cuatro formatos/CRUD/snapshots y cierre .55.
 - [x] Cuarto: PDF158–162, segundo ciclo, común; misma puerta.
-- [ ] Quinto: PDF163–168; misma puerta.
+- [x] Quinto: PDF163–168; misma puerta.
 - [ ] Sexto: PDF169–174; misma puerta y consolidación final.
 
 ## Recuperación
+
+Quinto verificado62:156/15, backend29331, frontend6140 y12020reciente, HTTP187+8+4cap/40delta, cuatroCRUD/snapshots129/99. Código1f1abf9publicado; publicar el cierre y continuar sexto PDF169–174. Detenerse tras sexto.
 
 Cuarto cerrado en las familias definidas (.59): ver informe final, fuente162/15, backend22226, frontend9868, HTTP172+8+4/7delta, cuatroCRUD/snapshots125. Publicar y continuar quinto PDF163–168. Estados anteriores conservados debajo.
 

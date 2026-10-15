@@ -29,7 +29,7 @@
     "Doce ámbitos,22 familias léxicas, siete intenciones expresivas; no copiar los quince de cuarto.",
     "Las cuatro listas de géneros coinciden con cuarto, cotejadas por separado."
   ],
-  "status": "CONNECTED_DEFINED_FAMILIES_FINAL_REVIEW_PENDING",
+  "status": "VERIFIED_DEFINED_FAMILIES",
   "records": [
     {
       "id": "9e59b899-61da-59c2-a7c8-d6161ac5abaf",
@@ -2641,5 +2641,13 @@
       ],
       "verification": "FIFTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
     }
+  ],
+  "applicationEvidence": [
+    "evidencias/ingles-5-integral-servicio.json",
+    "evidencias/ingles-5-seguimientos-servicio-62.json",
+    "evidencias/ingles-5-final-flujo-navegador.json",
+    "evidencias/ingles-5-final-persistencia.json",
+    "ingles-5-ejemplos-finales.md",
+    "ingles-5-informe-final.md"
   ]
 }
