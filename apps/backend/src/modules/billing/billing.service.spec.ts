@@ -66,7 +66,9 @@ describe('BillingService.overview', () => {
 
     expect(result.offer).toEqual(SUBSCRIPTION_OFFER)
     expect(mocks.db.billingPrice.findMany).toHaveBeenCalledWith(expect.objectContaining({
-      where: expect.objectContaining({ provider: 'PADDLE' }),
+      where: expect.objectContaining({ AND: expect.arrayContaining([
+        { OR: [ { provider:'MANUAL' }, { provider:'PADDLE',amountMinor:599n,currency:'USD',providerPriceId:{not:null} } ] },
+      ]) }),
     }))
     expect(result.prices).toEqual([{ id: 'price-1', label: 'Docente', amountMinor: 599, currency: 'USD', interval: 'monthly', mode: 'paddle' }])
   })

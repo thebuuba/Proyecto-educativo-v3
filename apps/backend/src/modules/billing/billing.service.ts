@@ -34,9 +34,10 @@ export class BillingService {
       prisma.billingSupportCase.findMany({ where: { userId: user.id }, orderBy: { createdAt: 'desc' }, take: 50,
         select: { id: true, number: true, category: true, status: true, createdAt: true } }),
       config.checkout ? prisma.billingPrice.findMany({ where: {
-        status: 'ACTIVE', isPublic: true, provider: 'PADDLE', interval: 'MONTHLY', intervalCount: 1,
+        status: 'ACTIVE', isPublic: true, interval: 'MONTHLY', intervalCount: 1,
         plan: { code: 'docente-completo', status: 'ACTIVE', isPublic: true },
         AND: [
+          { OR: [{ provider: 'MANUAL' }, { provider: 'PADDLE', amountMinor: BigInt(SUBSCRIPTION_OFFER.amountMinor), currency: SUBSCRIPTION_OFFER.currency, providerPriceId: { not: null } }] },
           { OR: [{ effectiveFrom: null }, { effectiveFrom: { lte: now } }] },
           { OR: [{ effectiveTo: null }, { effectiveTo: { gt: now } }] },
         ],
