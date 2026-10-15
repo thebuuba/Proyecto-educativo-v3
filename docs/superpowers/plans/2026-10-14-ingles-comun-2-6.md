@@ -26,6 +26,8 @@ Ejecución directa con `executing-plans`; sin subagentes. Encargo del adjunto `1
 
 ## Recuperación
 
+Actualización de cuarto: léxico15/expresiones15 de13 registros, estrategias27 y géneros por modalidad conectados. Backend22.002/80, frontend9.596/2, inventario9 y builds. Publicar bloque y cargar56; verificar el seguimiento cultural de tercero (solo el componente pedido) e históricos. Después contexto/indicadores y composición propios de cuarto, revisión integral/operaciones/HTTP/cuatro CRUD/snapshots antes de quinto. `.56` aún solo código; matriz parcial. Las líneas siguientes conservan el punto anterior.
+
 Segundo cerrado .53/publicado7eb7e3b. Tercero cerrado .55/publicado63bf1df:158 registros/15 grupos, HTTP156+8+4rechazos/4conjuntos, cuatro formatos finales y snapshots;121 actuales/91 completos/108 de base preservados. Cuarto parcial: fuente158–162 cotejada/162 registros/15 grupos; once funciones y44 familias gramaticales/115 formas, backend19.936/78, frontend3.552 e inventario9/builds. `.56` solo código; servicio .55. Siguiente: léxico/expresiones, estrategias, géneros, contexto/indicadores y composición de cuarto; después las puertas completas antes de quinto. Sin Francés ni subagentes.
 
 Inicio: Docker/Supabase/frontend apagados; no es un fallo del motor. Se inicia Docker oculto y `pnpm supabase:local`, conservando datos. Herramienta PDF en entorno temporal local, fuera de dependencias de aplicación y Git. No comenzar a implementar otro grado hasta cerrar segundo. El documento de continuación prevalece con el estado real de cada bloque.

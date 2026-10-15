@@ -167,7 +167,8 @@ export function requestedEnglishStrategies(text:string,mode?:string,strategies=e
 export function englishStrategyCriteria(text:string,mode:string,scope='ing-1',strategies=englishGradeOneStrategies):ContextualTopicCriterion[]{
  return requestedEnglishStrategies(text,mode,strategies).map(f=>{
   let levels=f.levels
-  if(f.id==='cultural-comparison'){
+  if(f.id==='understanding'&&/comprend\w* y que (?:necesit\w*|no comprend\w*)/.test(text))levels=[levels[0].replace('o qué necesita aclarar','y qué necesita aclarar'),...levels.slice(1)] as Strategy['levels']
+  if(f.id==='cultural-comparison'&&scope==='ing-1'){
    const aspects=[['celebraciones','las celebraciones'],['puntualidad','la puntualidad'],['gustos|preferencias','los gustos y preferencias'],['formas de interactuar','las formas de interactuar'],['rasgos fisicos','los rasgos físicos de las personas o personajes de los ejemplos'],['efecto del clima|clima en las condiciones','el efecto del clima en las condiciones de vida']].filter(([pattern])=>new RegExp(pattern).test(text)).map(([,label])=>label)
    if(aspects.length){const target=aspects.length===1?aspects[0]:aspects.slice(0,-1).join(', ')+' y '+aspects.at(-1);levels=levels.map(level=>level.replace('los aspectos solicitados',target)) as Strategy['levels']}
   }

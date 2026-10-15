@@ -1,10 +1,14 @@
 import {createUpperEnglishProvider,type UpperEnglishEvidence} from './secondary-english-upper-task'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import {requestedGradeFourGrammar,gradeFourGrammarCriterion} from './secondary-english-grade-four-grammar'
+import {requestedGradeFourLexicon,gradeFourLexicalCriterion,withoutGradeFourLexicalTargets} from './secondary-english-grade-four-lexicon'
+import {requestedGradeFourStrategies,gradeFourStrategyCriteria} from './secondary-english-grade-four-strategies'
+import {gradeFourGenreCriteria} from './secondary-english-grade-four-genres'
 
-export const englishGradeFourModule={id:'ingles-comunicacion-4',grade:4,subjectCode:'ING',pdfPages:[158,159,160,161,162],policy:'COMMON_FOURTH_GRADE_FUNCTIONS_PARTIAL_V1'}
+export const englishGradeFourModule={id:'ingles-comunicacion-4',grade:4,subjectCode:'ING',pdfPages:[158,159,160,161,162],policy:'COMMON_FOURTH_GRADE_FUNCTIONS_GRAMMAR_LEXICON_STRATEGIES_GENRES_PARTIAL_V2'}
 const row=(id:string,title:string,levels:NonNullable<ContextualTopicCriterion['progressionLevels']>,weight=4):ContextualTopicCriterion=>({templateId:`ing-4-${id}`,title,observable:levels[0],progressionLevels:levels,weight})
-export function requestedGradeFourFunctions(text:string){
+export function requestedGradeFourFunctions(raw:string){
+ const text=withoutGradeFourLexicalTargets(raw)
  const ids:string[]=[]
  if(/\b(?:solicit\w*|ofrec\w*|pedir\w*|pid\w*|compart\w*|intercambi\w*)\b/.test(text)&&/\binformacion\b/.test(text))ids.push('information')
  if(/\b(?:prediccion(?:es)?|predecir\w*|predeciran)\b/.test(text))ids.push('prediction')
@@ -14,7 +18,8 @@ export function requestedGradeFourFunctions(text:string){
  if(/\b(?:planes?|plan futuro)\b/.test(text))ids.push('plans')
  if(/\bnoticias?\b/.test(text))ids.push('news')
  if(/\b(?:experiencias?|relatos?|narracion(?:es)?)\b/.test(text)&&!/\bvocabulario de experiencias\b/.test(text))ids.push('experience')
- if(/\b(?:opinion(?:es)?|puntos? de vista)\b/.test(text))ids.push('opinion')
+ const askingOpinion=/\b(?:pedir(?:an)?|pidan|solicitar(?:an)?) (?:una |las )?opinion(?:es)?\b/.test(text)
+ if(/\b(?:opinion(?:es)?|puntos? de vista)\b/.test(text)&&(!askingOpinion||/\b(?:expres\w*|comunic\w*|dar(?:an)?) (?:su |la )?(?:opinion(?:es)?|propia|suya)\b/.test(text)))ids.push('opinion')
  const route=/\bindicaciones\b/.test(text)&&/\b(?:llegar|lugar|recorrido|ruta|croquis)\b/.test(text)
  if(route)ids.push('directions')
  if(/\binstrucciones\b/.test(text)||!route&&/\bindicaciones\b/.test(text))ids.push('instructions')
@@ -22,7 +27,8 @@ export function requestedGradeFourFunctions(text:string){
 }
 export function fourthGradeEnglishContent(task:UpperEnglishEvidence){
  const {text,mode}=task,receptive=['reading','listening','analysis','comparison','research'].includes(mode),source=mode==='listening'?'mensaje escuchado':'texto disponible'
- const rows=task.functions.map(id=>{
+ const cultural=requestedGradeFourStrategies(task.requirementText,mode).some(f=>f.id==='cultural-comparison')
+ const rows=(cultural?[]:task.functions).map(id=>{
   switch(id){
    case 'information':{
     const ask=/solicit\w*|pedir\w*|pid\w*/.test(text),offer=/ofrec\w*|compart\w*|intercambi\w*/.test(text)
@@ -45,10 +51,10 @@ export function fourthGradeEnglishContent(task:UpperEnglishEvidence){
    case 'announcement':{
     const details=[/\bdia\b|fecha/.test(text)?'el día':'',/\bhora\b/.test(text)?'la hora':'',/\blugar\b/.test(text)?'el lugar':''].filter(Boolean).join(', ')
     return row(id,'Información de lo que se anuncia',[
-     receptive?`Identifica qué se anuncia en el ${source} en inglés y relaciona los datos solicitados.`:`Comunica en inglés qué se anuncia${details?' e incluye '+details+' proporcionados':' y los datos solicitados de la situación proporcionada'}, permitiendo reconocer el acontecimiento anunciado.`,
+     receptive?`Identifica qué se anuncia en el ${source} en inglés y relaciona los datos solicitados.`:`Comunica en inglés qué se anuncia${details?' e incluye '+details+' proporcionados':' y los datos solicitados de la situación proporcionada'}, permitiendo reconocer lo anunciado.`,
      'Se reconoce lo anunciado y los datos principales; una referencia necesita precisión.',
-     'Comunica datos aislados sin establecer claramente qué se anuncia o qué información corresponde al acto.',
-     'Cambia el acto anunciado o atribuye a la situación datos incompatibles con los proporcionados.',
+     'Comunica datos aislados sin establecer claramente qué se anuncia o qué información le corresponde.',
+     'Cambia lo anunciado o atribuye a la situación datos incompatibles con los proporcionados.',
      'No se reconoce un anuncio relacionado con la situación indicada.',
     ])
    }
@@ -84,7 +90,7 @@ export function fourthGradeEnglishContent(task:UpperEnglishEvidence){
     'No se reconoce una noticia relacionada con el acontecimiento y los datos proporcionados.',
    ])
    case 'experience':return row(id,'Experiencia y secuencia de acontecimientos',[
-    receptive?`Relaciona los acontecimientos de la experiencia en el ${source} en inglés en una secuencia comprensible.`:'Relata en inglés la experiencia real o ficticia elegida para la tarea, enlazando sus acontecimientos en una secuencia que permite seguir lo ocurrido.',
+    receptive?`Relaciona los acontecimientos de la experiencia en el ${source} en inglés en una secuencia comprensible.`:'Relata en inglés la experiencia indicada en la tarea, enlazando sus acontecimientos en una secuencia que permite seguir lo ocurrido.',
     'La experiencia y su secuencia se comprenden; una relación entre acontecimientos necesita precisión.',
     'Comunica acontecimientos aislados, pero omite relaciones necesarias para seguir la experiencia.',
     'Cambia la relación entre acontecimientos y altera la experiencia solicitada.',
@@ -115,6 +121,10 @@ export function fourthGradeEnglishContent(task:UpperEnglishEvidence){
   }
  })
  rows.push(...requestedGradeFourGrammar(task.requirementText).map(f=>gradeFourGrammarCriterion(f,task.requirementText,mode)))
+ const lexical=requestedGradeFourLexicon(task.requirementText).filter(f=>f.category!=='expression'||/\bexpresiones\b/.test(task.requirementText)||!['opinion','news'].includes(f.id)||!task.functions.includes(f.id))
+ rows.push(...lexical.map(f=>gradeFourLexicalCriterion(f,task.requirementText,mode)))
+ rows.push(...gradeFourStrategyCriteria(task.requirementText,mode))
+ rows.push(...gradeFourGenreCriteria(task.requirementText,mode,rows))
  // Other curricular providers are connected in the next block, before closure.
  if(!rows.length)return rows
  if(mode==='interaction')rows.push(row('interaction','Respuesta que sostiene el intercambio',[

@@ -52,7 +52,7 @@ import {evaluationCatalogV52} from './catalog-v52'
 import {evaluationCatalogV53} from './catalog-v53'
 import {evaluationCatalogV54} from './catalog-v54'
 import {evaluationCatalogV55} from './catalog-v55'
-import {englishGradeFourModule,englishGradeFourGrammar} from '@aula/shared'
+import {englishGradeFourModule,englishGradeFourGrammar,englishGradeFourLexicon,englishGradeFourStrategies,englishGradeFourGenres} from '@aula/shared'
 import {englishGradeThreeModule,englishGradeThreeGrammar,englishGradeThreeLexicon,englishGradeThreeStrategies,englishGradeThreeGenres} from '@aula/shared'
 import {englishGradeTwoModule,englishGradeTwoGrammar,englishGradeTwoLexicon,englishGradeTwoStrategies,englishGradeTwoGenres} from '@aula/shared'
 import {englishGradeOneGenres} from '@aula/shared'
@@ -70,6 +70,11 @@ export const evaluationCatalogCurrent = {
   version: 'evaluation-2026.56',
   englishGradeFourModule,
   englishGradeFourGrammar,
+  englishGradeFourLexicon,
+  englishGradeFourStrategies,
+  englishGradeFourGenres,
+  englishGenreAlternativesPolicy:'ALL_CONTIGUOUS_ALTERNATIVES_ONE_SELECTED_PRODUCT_V2',
+  englishCulturalAspectsPolicy:'ONLY_REQUESTED_COMPONENTS_SCOPE_OWN_GRADE_V1',
   englishGradeThreeComprehensionPolicy:'EXPLICIT_COMPREHENSION_AND_CLARIFICATION_BOTH_REQUIRED_V1',
   englishGradeThreeModule,
   englishGradeThreeGrammar,

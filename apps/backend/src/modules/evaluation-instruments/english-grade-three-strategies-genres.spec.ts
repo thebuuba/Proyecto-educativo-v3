@@ -35,4 +35,10 @@ describe('Tercero: estrategias y géneros propios según modalidad y fuente',()=
   const c=p.criteria.find(c=>c.templateId==='ing-3-strategy-understanding')!
   expect(c.description).toContain('comprendido y qué necesita aclarar')
  })
+ it('un aspecto cultural aislado no exige los otros elementos de su encabezado compuesto',()=>{
+  const legends=propose('Compararán en inglés las leyendas de los ejemplos proporcionados de República Dominicana y otros países.','rubrica',20).criteria.find(c=>c.templateId==='ing-3-strategy-cultural-comparison')!
+  expect(legends.description).toContain('leyendas');expect(legends.description).not.toContain('historias')
+  const warnings=propose('Compararán en inglés las advertencias de los ejemplos proporcionados de República Dominicana y otros países.','rubrica',20).criteria.find(c=>c.templateId==='ing-3-strategy-cultural-comparison')!
+  expect(warnings.description).toContain('advertencias');expect(warnings.description).not.toContain('prohibiciones')
+ })
 })

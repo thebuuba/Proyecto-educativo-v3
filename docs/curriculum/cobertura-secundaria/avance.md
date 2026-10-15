@@ -14,7 +14,9 @@ Segundo publicado: `7eb7e3b124c1442c896a5e9fdd481bc7fc45b3d5`, hash remoto compr
 
 Tercero publicado y comprobado: `63bf1df746c58f74c9d395714ad41c03fa0fcd53`. Cuarto **parcial**: fuente158–162 cotejada,162 registros/15 grupos; once evidencias funcionales y44 familias gramaticales/115 formas conectadas. Backend19.936/78, frontend3.552 e inventario9; builds backend/frontend/Cloudflare dry-run aprobados. `.56` solo código, `.55` congelado y cargado por el servicio local. [Punto de avance de cuarto](ingles-4-punto-de-avance.md).
 
-**Siguiente pendiente:** léxico/expresiones, estrategias, géneros, contexto/indicadores y composición de cuarto; después revisión/operaciones/HTTP/cuatro CRUD auténticos/snapshots/históricos y cierre. No iniciar quinto. El encargo sigue abierto hasta sexto y no incluye Francés. Reinicios anteriores de Vite vaciaron formularios no guardados, reintroducidos sin afirmar recuperación íntegra. La detección sigue acotada a patrones ensayados. [Plan](../../superpowers/plans/2026-10-14-ingles-comun-2-6.md).
+Actualización de cuarto: léxico15 familias, expresiones15 intenciones de13 registros,27 estrategias y géneros por modalidad conectados. Backend22.002/80, frontend9.596/2 (cuarto5.608+tercero3.988), inventario9 y builds aprobados. Un seguimiento cultural de tercero conserva solo leyendas o advertencias cuando eso se pide; rojo→verde y regresión aprobados, todavía pendiente de cargar/comprobar localmente `.56`. No se ha comenzado otro grado.
+
+**Siguiente pendiente:** publicar el bloque, instalar `.56` y verificar ese seguimiento/históricos; después contexto/indicadores y composición de cuarto, revisión/operaciones/HTTP/cuatro CRUD/snapshots/históricos y cierre. No iniciar quinto. El encargo sigue abierto hasta sexto y no incluye Francés. La detección sigue acotada a patrones ensayados. [Plan](../../superpowers/plans/2026-10-14-ingles-comun-2-6.md).
 
 Las secciones siguientes conservan el historial; sus órdenes de detenerse quedan sustituidas por el encargo vigente.
 

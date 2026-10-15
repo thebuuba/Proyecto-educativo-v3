@@ -25,7 +25,7 @@ export function createUpperEnglishProvider(definition:Definition){
   else if(/\b(?:leer\w*|lean|lectura|leyendo|read\w*)\b/.test(action))mode='reading'
   else if(/\b(?:video|audiovisual)\b/.test(action)&&/\b(?:grab\w*|crea\w*|elabor\w*)\b/.test(action))mode='audiovisual'
   else if(/\b(?:escrib\w*|escrit\w*|redact\w*|por escrito|writ\w*)\b/.test(action))mode='writing'
-  else if(/\b(?:dialog\w*|convers\w*|intercambio oral|role play)\b/.test(action))mode='interaction'
+  else if(/\b(?:dialog(?:ar(?:an)?|an|uen|ando)|convers(?:ar(?:an)?|an|en|ando)|intercambio oral|role play)\b/.test(action))mode='interaction'
   else if(/\b(?:oral\w*|present(?:ar|aran|an|en|acion)|expon\w*|narr\w*|ensay\w*|recit\w*|canta\w*)\b/.test(action))mode='oral'
   else if(/\b(?:compar(?:ar(?:an)?|en|an)|contrast\w*)\b/.test(action))mode='comparison'
   else if(/\b(?:analiz\w*|explic\w*|infer\w*)\b/.test(action))mode='analysis'

@@ -24,9 +24,9 @@
     "PDF161 continúa gramática con las otras columnas vacías.",
     "CONCEPT43 combina encabezado y contenidos; conservar todas sus formas.",
     "Comprensión oral12 y escrita30 géneros; producción oral10 y escrita14. No trasladar una lista a todas las modalidades.",
-    "Doce ámbitos cotidianos,15 familias de vocabulario y13 expresivas; no copiar los de tercero."
+    "Doce ámbitos cotidianos,15 familias de vocabulario y13 registros expresivos/15 intenciones; no copiar los de tercero."
   ],
-  "status": "PARTIAL_FUNCTIONS_GRAMMAR_NO_GRADE_CLOSURE",
+  "status": "PARTIAL_DEFINED_CONTENT_CONTEXT_COMPOSITION_PENDING",
   "records": [
     {
       "id": "62783978-901b-57ac-b172-ad019a7bd286",
@@ -218,10 +218,12 @@
       "sourceOrder": 1581014,
       "type": "CONCEPT",
       "index": 14,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-events-celebrations"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "e4cc1138-2d68-5072-9f25-3ed9fc4ef650",
@@ -231,10 +233,12 @@
       "sourceOrder": 1581015,
       "type": "CONCEPT",
       "index": 15,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-communication"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "479c68ba-9bf7-5a99-b56f-d95a85914c8e",
@@ -244,10 +248,12 @@
       "sourceOrder": 1581016,
       "type": "CONCEPT",
       "index": 16,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-sports"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "4dafa1ee-4d7d-5ec7-97e4-ec2577729b3b",
@@ -257,10 +263,12 @@
       "sourceOrder": 1581017,
       "type": "CONCEPT",
       "index": 17,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-education"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "f05d7197-00a0-59b3-98f8-4162be80f4e0",
@@ -270,10 +278,12 @@
       "sourceOrder": 1581018,
       "type": "CONCEPT",
       "index": 18,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-kitchen-equipment"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "517af419-5cc1-52ca-af90-c85d8322738c",
@@ -283,10 +293,12 @@
       "sourceOrder": 1581019,
       "type": "CONCEPT",
       "index": 19,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-contingencies"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "76a1d934-daa0-50b7-9009-d81c0850be45",
@@ -296,10 +308,12 @@
       "sourceOrder": 1581020,
       "type": "CONCEPT",
       "index": 20,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-experiences"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "75cf0881-0d87-5b13-ac01-db6848bb123f",
@@ -309,10 +323,12 @@
       "sourceOrder": 1581021,
       "type": "CONCEPT",
       "index": 21,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-natural-phenomena"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "acf88ad2-e2db-5bd4-939c-8935ba7ac5f8",
@@ -322,10 +338,12 @@
       "sourceOrder": 1591000,
       "type": "CONCEPT",
       "index": 22,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-tools"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "a1f05971-9b95-51fa-b8ef-91972d3afb05",
@@ -335,10 +353,12 @@
       "sourceOrder": 1591001,
       "type": "CONCEPT",
       "index": 23,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-places"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "a0c7eefb-2652-53ae-8162-65285a1def48",
@@ -348,10 +368,12 @@
       "sourceOrder": 1591002,
       "type": "CONCEPT",
       "index": 24,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-transport"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "591cfd49-075d-597d-a272-847e7247476c",
@@ -361,10 +383,12 @@
       "sourceOrder": 1591003,
       "type": "CONCEPT",
       "index": 25,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-food-preparation"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "d18c0601-f7a3-59ec-ab25-10cb59ba626e",
@@ -374,10 +398,12 @@
       "sourceOrder": 1591004,
       "type": "CONCEPT",
       "index": 26,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-recreation"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "96aafe07-469c-5e3c-b716-75fb79dcedcc",
@@ -387,10 +413,12 @@
       "sourceOrder": 1591005,
       "type": "CONCEPT",
       "index": 27,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-technology"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "1220e6cd-cdd3-54ca-97be-b4263a8432bc",
@@ -400,10 +428,12 @@
       "sourceOrder": 1591006,
       "type": "CONCEPT",
       "index": 28,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-travel"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "91097732-340e-5896-a9e5-3cd58f56f37d",
@@ -426,10 +456,12 @@
       "sourceOrder": 1591008,
       "type": "CONCEPT",
       "index": 30,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-attention"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "75d2325a-518e-5cef-8c87-c0ca3eec049e",
@@ -439,10 +471,12 @@
       "sourceOrder": 1591009,
       "type": "CONCEPT",
       "index": 31,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-encouragement"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "c87db446-e57c-5657-ba95-a87976fae1f0",
@@ -452,10 +486,13 @@
       "sourceOrder": 1591010,
       "type": "CONCEPT",
       "index": 32,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-interest",
+        "ing-4-lexicon-amazement"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "0bbd5075-350a-570f-aa80-2172213815c3",
@@ -465,10 +502,12 @@
       "sourceOrder": 1591011,
       "type": "CONCEPT",
       "index": 33,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-empathy"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "be48ad01-0a99-5524-a029-6fb828ac90e5",
@@ -478,10 +517,13 @@
       "sourceOrder": 1591012,
       "type": "CONCEPT",
       "index": 34,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-ask-opinion",
+        "ing-4-lexicon-opinion"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "9fd6edd2-befa-5833-8ee6-3ac2eb2c9972",
@@ -491,10 +533,12 @@
       "sourceOrder": 1591013,
       "type": "CONCEPT",
       "index": 35,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-agreement"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "16b80f5d-1c08-57f0-b44f-3d5996afd430",
@@ -504,10 +548,12 @@
       "sourceOrder": 1591014,
       "type": "CONCEPT",
       "index": 36,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-coincidence"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "a8b7aee0-07d7-5cb0-be76-3154524ea649",
@@ -517,10 +563,12 @@
       "sourceOrder": 1591015,
       "type": "CONCEPT",
       "index": 37,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-clarification"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "e20d6add-01e6-5cba-9576-0236d0c68579",
@@ -530,10 +578,12 @@
       "sourceOrder": 1591016,
       "type": "CONCEPT",
       "index": 38,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-change-topic"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "e820f928-f901-5c8a-a5e4-d742d2bd3492",
@@ -543,10 +593,12 @@
       "sourceOrder": 1591017,
       "type": "CONCEPT",
       "index": 39,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-close-conversation"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "8f7d33d0-39ad-58d0-ac8d-2188315c4829",
@@ -556,10 +608,12 @@
       "sourceOrder": 1591018,
       "type": "CONCEPT",
       "index": 40,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-news"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "1f6c7517-9581-5479-80b9-4181faed00af",
@@ -569,10 +623,12 @@
       "sourceOrder": 1591019,
       "type": "CONCEPT",
       "index": 41,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-excuse"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "fce0fd78-a13a-545c-9f9c-4a425af67069",
@@ -582,10 +638,12 @@
       "sourceOrder": 1591020,
       "type": "CONCEPT",
       "index": 42,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_LEXICON_CONTRACTS_GRADE_PARTIAL",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-congratulations"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
     },
     {
       "id": "6f867b15-248b-5e95-995a-d858412015aa",
@@ -959,10 +1017,23 @@
       "sourceOrder": 1582010,
       "type": "PROCEDURE",
       "index": 10,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Listas cotejadas por modalidad: recepción oral12/escrita30, producción oral10/escrita14; audiovisual explícito. Respetar fuentes, productos y alternativas; no trasladar géneros entre listas.",
+      "providers": [
+        "ing-4-genre-conversation",
+        "ing-4-genre-advertisement",
+        "ing-4-genre-notice",
+        "ing-4-genre-message",
+        "ing-4-genre-forecast",
+        "ing-4-genre-news",
+        "ing-4-genre-song",
+        "ing-4-genre-poem",
+        "ing-4-genre-description",
+        "ing-4-genre-biography",
+        "ing-4-genre-narrative",
+        "ing-4-genre-instructions"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "0b69053d-83f9-5c64-83d9-4d5e0afd6d27",
@@ -972,10 +1043,21 @@
       "sourceOrder": 1582011,
       "type": "PROCEDURE",
       "index": 11,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Listas cotejadas por modalidad: recepción oral12/escrita30, producción oral10/escrita14; audiovisual explícito. Respetar fuentes, productos y alternativas; no trasladar géneros entre listas.",
+      "providers": [
+        "ing-4-genre-conversation",
+        "ing-4-genre-recipe",
+        "ing-4-genre-message",
+        "ing-4-genre-news",
+        "ing-4-genre-song",
+        "ing-4-genre-description",
+        "ing-4-genre-narrative",
+        "ing-4-genre-monologue",
+        "ing-4-genre-presentation",
+        "ing-4-genre-argumentation"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "f0304f14-6368-56fb-b1ff-ee3b3c76e549",
@@ -985,10 +1067,41 @@
       "sourceOrder": 1592000,
       "type": "PROCEDURE",
       "index": 12,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Listas cotejadas por modalidad: recepción oral12/escrita30, producción oral10/escrita14; audiovisual explícito. Respetar fuentes, productos y alternativas; no trasladar géneros entre listas.",
+      "providers": [
+        "ing-4-genre-business-card",
+        "ing-4-genre-list",
+        "ing-4-genre-advertisement",
+        "ing-4-genre-recipe",
+        "ing-4-genre-sign",
+        "ing-4-genre-notice",
+        "ing-4-genre-poster",
+        "ing-4-genre-message",
+        "ing-4-genre-email",
+        "ing-4-genre-cv",
+        "ing-4-genre-letter",
+        "ing-4-genre-form",
+        "ing-4-genre-news",
+        "ing-4-genre-schedule",
+        "ing-4-genre-agenda",
+        "ing-4-genre-menu",
+        "ing-4-genre-map",
+        "ing-4-genre-questionnaire",
+        "ing-4-genre-brochure",
+        "ing-4-genre-song",
+        "ing-4-genre-poem",
+        "ing-4-genre-comic",
+        "ing-4-genre-tourist-guide",
+        "ing-4-genre-description",
+        "ing-4-genre-biography",
+        "ing-4-genre-narrative",
+        "ing-4-genre-catalog",
+        "ing-4-genre-dictionary",
+        "ing-4-genre-invoice",
+        "ing-4-genre-instructions"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "711629a9-c37e-524a-899a-a723be4c9dae",
@@ -998,10 +1111,25 @@
       "sourceOrder": 1592001,
       "type": "PROCEDURE",
       "index": 13,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Listas cotejadas por modalidad: recepción oral12/escrita30, producción oral10/escrita14; audiovisual explícito. Respetar fuentes, productos y alternativas; no trasladar géneros entre listas.",
+      "providers": [
+        "ing-4-genre-recipe",
+        "ing-4-genre-sign",
+        "ing-4-genre-notice",
+        "ing-4-genre-poster",
+        "ing-4-genre-message",
+        "ing-4-genre-email",
+        "ing-4-genre-cv",
+        "ing-4-genre-letter",
+        "ing-4-genre-form",
+        "ing-4-genre-questionnaire",
+        "ing-4-genre-description",
+        "ing-4-genre-biography",
+        "ing-4-genre-narrative",
+        "ing-4-genre-instructions"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "0a05443b-6101-5c4a-93be-8bcd8299987d",
@@ -1024,10 +1152,12 @@
       "sourceOrder": 1592003,
       "type": "PROCEDURE",
       "index": 15,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-anticipation"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "2bd61b29-cf63-561f-96a5-438774203ddf",
@@ -1037,10 +1167,12 @@
       "sourceOrder": 1592004,
       "type": "PROCEDURE",
       "index": 16,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-listening"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "1357b482-14e5-52ca-8234-7af1951c6ca5",
@@ -1050,10 +1182,12 @@
       "sourceOrder": 1592005,
       "type": "PROCEDURE",
       "index": 17,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-nonverbal-reception"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "baba5edd-12c3-5997-8354-2cc254b51358",
@@ -1063,10 +1197,12 @@
       "sourceOrder": 1592006,
       "type": "PROCEDURE",
       "index": 18,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-inference"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "7676f3b3-57a7-5d56-8d5a-822d7e928f65",
@@ -1076,10 +1212,12 @@
       "sourceOrder": 1592007,
       "type": "PROCEDURE",
       "index": 19,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-help"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "4227a3e8-ad4e-5224-b9ed-1e853d2aa77a",
@@ -1089,10 +1227,12 @@
       "sourceOrder": 1592008,
       "type": "PROCEDURE",
       "index": 20,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-understanding"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "1803c055-9fa3-5abb-9372-6c6f285a25f3",
@@ -1115,10 +1255,12 @@
       "sourceOrder": 1592010,
       "type": "PROCEDURE",
       "index": 22,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-rehearsal"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "e18c02c0-110e-5069-9410-d71e03ab784a",
@@ -1128,10 +1270,12 @@
       "sourceOrder": 1592011,
       "type": "PROCEDURE",
       "index": 23,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-situation"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "4f5cae20-4d1a-5363-ba84-01fb00a1df0e",
@@ -1141,10 +1285,12 @@
       "sourceOrder": 1592012,
       "type": "PROCEDURE",
       "index": 24,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-communicative-purpose"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "9e174e34-95e2-58b4-8000-9dac886419cc",
@@ -1154,10 +1300,12 @@
       "sourceOrder": 1592013,
       "type": "PROCEDURE",
       "index": 25,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-planning"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "d8235acf-90b8-5492-bd1c-30a6eb0521b9",
@@ -1167,10 +1315,13 @@
       "sourceOrder": 1592014,
       "type": "PROCEDURE",
       "index": 26,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-new-combinations",
+        "ing-4-strategy-feedback"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "e059b511-ce79-5870-a988-7bb5ebae4251",
@@ -1180,10 +1331,12 @@
       "sourceOrder": 1592015,
       "type": "PROCEDURE",
       "index": 27,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-nonverbal-production"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "470268b0-1ce6-5173-a7be-1728b39ae5cc",
@@ -1206,10 +1359,12 @@
       "sourceOrder": 1592017,
       "type": "PROCEDURE",
       "index": 29,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-reading-purpose"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "5ce9e28a-18ff-50c7-a13e-1e02fb509f32",
@@ -1219,10 +1374,12 @@
       "sourceOrder": 1592018,
       "type": "PROCEDURE",
       "index": 30,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-hypothesis"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "909cb1b6-a377-5a09-8fc3-8b714b2a9c01",
@@ -1232,10 +1389,12 @@
       "sourceOrder": 1592019,
       "type": "PROCEDURE",
       "index": 31,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-grapheme-phoneme"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "562545e2-2cfb-5d93-9eff-2baba6ba27cf",
@@ -1245,10 +1404,12 @@
       "sourceOrder": 1602000,
       "type": "PROCEDURE",
       "index": 32,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-inference"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "0f58e490-c64a-5f6b-a5dd-be0fcf39e51e",
@@ -1258,10 +1419,13 @@
       "sourceOrder": 1602001,
       "type": "PROCEDURE",
       "index": 33,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-annotation",
+        "ing-4-strategy-dictionary"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "208c64f2-62c3-5d3e-a0db-572f75927473",
@@ -1271,10 +1435,12 @@
       "sourceOrder": 1602002,
       "type": "PROCEDURE",
       "index": 34,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-main-details"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "72d4893b-3a01-5e6c-ab21-0bfcb0e56d9f",
@@ -1284,10 +1450,12 @@
       "sourceOrder": 1602003,
       "type": "PROCEDURE",
       "index": 35,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-text-intention"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "aa30be67-9dc7-5b94-9e3a-5aaba2846ed5",
@@ -1310,10 +1478,13 @@
       "sourceOrder": 1602005,
       "type": "PROCEDURE",
       "index": 37,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-communicative-purpose",
+        "ing-4-strategy-text-type"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "cac66804-b47e-5646-984e-8d333f837f44",
@@ -1323,10 +1494,12 @@
       "sourceOrder": 1602006,
       "type": "PROCEDURE",
       "index": 38,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-planning"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "6f8e7a07-7557-5cf5-8d9b-e50c73382603",
@@ -1336,10 +1509,12 @@
       "sourceOrder": 1602007,
       "type": "PROCEDURE",
       "index": 39,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-dictionary"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "a23c5b2f-5db3-5e26-ae02-3edc8af31d0f",
@@ -1349,10 +1524,12 @@
       "sourceOrder": 1602008,
       "type": "PROCEDURE",
       "index": 40,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-revision"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "2f41887f-d6d1-58f3-98a4-406c6dec9158",
@@ -1375,10 +1552,12 @@
       "sourceOrder": 1602010,
       "type": "PROCEDURE",
       "index": 42,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-association"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "51a30b25-02eb-5b34-a17a-d83cd531faf3",
@@ -1401,10 +1580,12 @@
       "sourceOrder": 1602012,
       "type": "PROCEDURE",
       "index": 44,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-practice"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "dadd828b-90ac-5833-b404-689cc7b45893",
@@ -1427,10 +1608,12 @@
       "sourceOrder": 1602014,
       "type": "PROCEDURE",
       "index": 46,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-courtesy"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "8c26cbe3-b130-5328-9693-4a86640f17de",
@@ -1440,10 +1623,12 @@
       "sourceOrder": 1602015,
       "type": "PROCEDURE",
       "index": 47,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-neutral-register"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "37d6179b-a8a1-50d7-9e5c-98b1484806d5",
@@ -1453,10 +1638,12 @@
       "sourceOrder": 1602016,
       "type": "PROCEDURE",
       "index": 48,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_CULTURAL_COMPARISON_SCOPE_INTRODUCTION",
+      "note": "Introduce la comparación cultural de los siete aspectos siguientes; no es una fila adicional ni exige todos los aspectos a la vez.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "d7a07de3-c3b0-5008-b05b-a1ab75cd8df5",
@@ -1466,10 +1653,12 @@
       "sourceOrder": 1602017,
       "type": "PROCEDURE",
       "index": 49,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "621a2703-58da-5987-86fa-63035c17e993",
@@ -1479,10 +1668,12 @@
       "sourceOrder": 1602018,
       "type": "PROCEDURE",
       "index": 50,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "83404c61-2f8f-5914-b6cd-d4cb66979019",
@@ -1492,10 +1683,12 @@
       "sourceOrder": 1602019,
       "type": "PROCEDURE",
       "index": 51,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "a1e26a88-302c-5ade-bba3-295c4fff347d",
@@ -1505,10 +1698,12 @@
       "sourceOrder": 1602020,
       "type": "PROCEDURE",
       "index": 52,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "9e675000-3739-58eb-b3e6-fb2d7342927b",
@@ -1518,10 +1713,12 @@
       "sourceOrder": 1602021,
       "type": "PROCEDURE",
       "index": 53,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "fa967b23-257d-5aae-a3e7-14a2278339d6",
@@ -1531,10 +1728,12 @@
       "sourceOrder": 1602022,
       "type": "PROCEDURE",
       "index": 54,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "31783c5f-b62d-51a8-a130-88316509f4db",
@@ -1544,10 +1743,12 @@
       "sourceOrder": 1602023,
       "type": "PROCEDURE",
       "index": 55,
-      "decision": "PENDING_EVALUATIVE_CONNECTION",
-      "note": "Fuente visualmente cotejada; conexión y verificación evaluativa propia de cuarto pendientes.",
-      "providers": [],
-      "verification": "NOT_RUN"
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
     },
     {
       "id": "18d13313-e7a4-5f6e-bb76-944a73c7c907",

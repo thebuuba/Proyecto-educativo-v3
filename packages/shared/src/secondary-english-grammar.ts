@@ -12,7 +12,11 @@ export function requestedScopedEnglishGrammar(description:string,features:Langua
  const cue='(?:utiliz\\w*|emple\\w*|us(?:ar(?:an)?|an|en|ando)|identific\\w*|localiz\\w*|reconoc\\w*|compar(?:ar(?:an)?|an|en)|(?:funcion|significado|uso) de)'
  const article='(?:(?:el|la|los|las|verbo|modal|forma|estructura)\\s+)*'
  const selected=requestedLanguageFeatures(features,text).filter(f=>!guarded.has(f.id)||new RegExp(`\\b${cue}\\s+${article}(?:(?:${forms})(?:\\s+(?:(?:y|o|e)\\s+)?)${article})*(?:${f.match})`).test(text))
- const consumed=new Set<string>(),result:LanguageFeature[]=[]
+ return combineEnglishFeatureAlternatives(text,selected)
+}
+export function combineEnglishFeatureAlternatives<T extends LanguageFeature>(text:string,selected:T[]){
+ const article='(?:(?:el|la|los|las|verbo|modal|forma|estructura)\\s+)*'
+ const consumed=new Set<string>(),result:T[]=[]
  for(const f of selected){
   if(consumed.has(f.id))continue
   const alternatives=[f],match=text.match(new RegExp(f.match))

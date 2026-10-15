@@ -20,14 +20,20 @@ export function gradeTwoGenreCriteria(text:string,mode:string,existing:Contextua
  const covered=selected.filter(g=>!(g.id==='email'&&existing.some(c=>/^ing-2-(?:plans|daily|wishes|advice|experience)$/.test(c.templateId))&&!/destinatario|estructura del correo/.test(text))
   &&!(g.id==='narrative'&&existing.some(c=>c.templateId==='ing-2-experience')&&!/personajes|narrador|estructura (?:de la )?narracion/.test(text)))
  const combined:Genre[]=[],consumed=new Set<string>()
- for(const g of covered){
+ const ordered=covered.slice().sort((a,b)=>(text.match(new RegExp(a.match))?.index??Infinity)-(text.match(new RegExp(b.match))?.index??Infinity))
+ for(const g of ordered){
   if(consumed.has(g.id))continue
   const match=text.match(new RegExp(`\\b(?:${g.match})\\b`))
-  const start=(match?.index??-1)+(match?.[0].length??0)
-  const next=covered.find(other=>other.id!==g.id&&!consumed.has(other.id)&&new RegExp(`^\\s+o\\s+(?:(?:un|una|el|la)\\s+)?(?:${other.match})\\b`).test(text.slice(start)))
-  if(next){
-   consumed.add(next.id)
-   combined.push({...g,id:`${g.id}-or-${next.id}`,title:`${g.title} o ${next.title.toLowerCase()}`,data:'la información solicitada en el producto elegido',production:'Comunica en inglés la información solicitada en el producto elegido entre las alternativas indicadas, con un mensaje comprensible relacionado con el propósito de la tarea.',error:'la información cambia el propósito del producto elegido'})
+  let end=(match?.index??-1)+(match?.[0].length??0)
+  const alternatives=[g]
+  for(;;){
+   const next=ordered.find(other=>!alternatives.includes(other)&&!consumed.has(other.id)&&new RegExp(`^\\s+o\\s+(?:(?:un|una|el|la)\\s+)?(?:${other.match})\\b`).test(text.slice(end)))
+   if(!next)break
+   const continuation=text.slice(end).match(new RegExp(`^\\s+o\\s+(?:(?:un|una|el|la)\\s+)?(?:${next.match})\\b`))!
+   consumed.add(next.id);alternatives.push(next);end+=continuation[0].length
+  }
+  if(alternatives.length>1){
+   combined.push({...g,id:alternatives.map(g=>g.id).join('-or-'),title:alternatives.map((g,i)=>i?g.title.toLowerCase():g.title).join(' o '),data:'la información solicitada en el producto elegido',production:'Comunica en inglés la información solicitada en el producto elegido entre las alternativas indicadas, con un mensaje comprensible relacionado con el propósito de la tarea.',error:'la información cambia el propósito del producto elegido'})
   }else combined.push(g)
  }
  return englishGenreCriteria(text,['analysis','comparison'].includes(mode)?'reading':mode,existing,scope,combined,true)
