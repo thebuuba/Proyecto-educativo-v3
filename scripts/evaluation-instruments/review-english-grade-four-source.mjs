@@ -37,6 +37,15 @@ const report={sourceSha256:inventory.source.sha256,scopeId:scope.id,grade:4,cycl
 writeFileSync(root+'ingles-4-cotejo-fuente.json',JSON.stringify(report,null,2)+'\n')
 const review=JSON.parse(readFileSync(root+'revision.json','utf8'));assert.equal(review.sourceSha256,report.sourceSha256)
 const status={implementation:'PARTIAL_FUNCTIONS_GRAMMAR',automatedVerification:'FUNCTION_GRAMMAR_DEFINED_CONTRACTS_ONLY',manualVerification:'SOURCE_162_RECORDS_VISUALLY_REVIEWED',boundaryReview:'VISUALLY_REVIEWED_PDF_158_162',procedureAssociation:'SOURCE_LEDGER_WITH_EXPLICIT_PENDING',report:'ingles-4-punto-de-avance.md',catalogVersion:'evaluation-2026.56_CODE_NOT_INSTALLED',engineConnection:'PARTIAL_COMMON_FOURTH_GRADE_PROVIDER',instrumentFormats:['rubrica','lista-cotejo','escala','lista-ponderada'],applicationVerification:'NOT_RUN',serviceVerification:'REPRODUCTION_55_GENERIC_BEFORE_INSTALL',interfaceVerification:'NOT_RUN',pending:'Conectar léxico/expresiones, estrategias, géneros, contexto/indicadores y composición; revisión integral, operaciones, HTTP y cuatro CRUD auténticos/snapshots. No iniciar quinto.'}
+const codeVersion=readFileSync('apps/backend/src/modules/evaluation-instruments/catalog-current.ts','utf8').match(/version:\s*'(evaluation-2026\.\d+)'/)?.[1]
+assert(codeVersion)
+status.catalogVersion=codeVersion+'_CODE_NOT_INSTALLED'
+if(process.argv.includes('--installed')){
+ const health=(await fetch('http://localhost:5173/api/v1/health').then(r=>r.json())).data
+ assert.equal(health.development.supabaseOrigin,'http://127.0.0.1:54321')
+ assert.equal(health.development.catalogVersion,codeVersion)
+ Object.assign(status,{catalogVersion:codeVersion,applicationVerification:'INSTALLED_PROVIDER_GRADE_CLOSURE_PENDING',serviceVerification:'PARTIAL_HTTP_CULTURAL_FOLLOWUP_ONLY_NOT_GRADE_CLOSURE',interfaceVerification:'NOT_RUN_FOR_GRADE_FOUR'})
+}
 report.status='PARTIAL_DEFINED_CONTENT_CONTEXT_COMPOSITION_PENDING'
 report.layoutNotes=report.layoutNotes.map(n=>n.replace('13 expresivas','13 registros expresivos/15 intenciones'))
 writeFileSync(root+'ingles-4-cotejo-fuente.json',JSON.stringify(report,null,2)+'\n')

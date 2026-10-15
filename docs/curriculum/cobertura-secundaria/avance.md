@@ -16,7 +16,9 @@ Tercero publicado y comprobado: `63bf1df746c58f74c9d395714ad41c03fa0fcd53`. Cuar
 
 Actualización de cuarto: léxico15 familias, expresiones15 intenciones de13 registros,27 estrategias y géneros por modalidad conectados. Backend22.002/80, frontend9.596/2 (cuarto5.608+tercero3.988), inventario9 y builds aprobados. Un seguimiento cultural de tercero conserva solo leyendas o advertencias cuando eso se pide; rojo→verde y regresión aprobados, todavía pendiente de cargar/comprobar localmente `.56`. No se ha comenzado otro grado.
 
-**Siguiente pendiente:** publicar el bloque, instalar `.56` y verificar ese seguimiento/históricos; después contexto/indicadores y composición de cuarto, revisión/operaciones/HTTP/cuatro CRUD/snapshots/históricos y cierre. No iniciar quinto. El encargo sigue abierto hasta sexto y no incluye Francés. La detección sigue acotada a patrones ensayados. [Plan](../../superpowers/plans/2026-10-14-ingles-comun-2-6.md).
+Seguimiento completado: bloque publicado `505566168ffdc2565ee69860928b6d7c31c555b1`, `.56` instalado/cargado desde ese commit con árbol limpio al inicio, y congelado para la siguiente versión. HTTP de subconjuntos culturales3/4 y generación real en Chrome3 aprobados;121 snapshots/91 completos/108 de base intactos. La comprobación nueva de navegador es generación, no otro CRUD.
+
+**Siguiente pendiente:** contexto/indicadores y composición de cuarto en `.57`; después revisión/operaciones/HTTP/cuatro CRUD/snapshots/históricos y cierre. No iniciar quinto. El encargo sigue abierto hasta sexto y no incluye Francés. La detección sigue acotada a patrones ensayados. [Plan](../../superpowers/plans/2026-10-14-ingles-comun-2-6.md).
 
 Las secciones siguientes conservan el historial; sus órdenes de detenerse quedan sustituidas por el encargo vigente.
 
