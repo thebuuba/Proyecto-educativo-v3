@@ -206,3 +206,48 @@ El [despliegue de Staging 38770526041](https://github.com/thebuuba/Proyecto-educ
 No se crearon usuarios de prueba ni se intentaron operaciones comerciales sobre una base sin el esquema requerido. No se comprobó aún el recorrido autenticado en el Worker de Staging con este código. Siguen pendientes cuenta/credenciales Paddle Sandbox, precio y condiciones de prueba, checkout/webhook real y comprobación de Storage. Los bloqueos de lanzamiento descritos antes siguen vigentes. No se modificó Supabase Production, no se activaron cobros reales y no se fusionó a `main`.
 
 Entregas de código de esta continuación: `9bb12ab` (protección del destino de migraciones) y `5da02cd` (suscripción integrada en Ajustes), publicadas en la rama existente mediante push normal. La documentación registra el resultado efectivo, incluido el despliegue detenido.
+
+## Continuación: secreto actualizado y migraciones de Development
+
+El usuario actualizó el secreto administrativo exclusivamente en GitHub Staging. El [intento 38774563488](https://github.com/thebuuba/Proyecto-educativo-v3/actions/runs/38774563488) pasó la validación de proyecto y los builds, pero el dry-run de migraciones falló con `ECONNREFUSED` al endpoint directo IPv6 de Development. No fue un rechazo de contraseña. Se ajustó el workflow para usar el Session pooler IPv4 previamente verificado de Development, conservando contraseña escapada y parámetros TLS. La transformación sucede después de validar el proyecto y el rol administrativos; el valor se enmascara antes de escribirlo en `GITHUB_ENV`. El catálogo usa la misma conexión resultante. No se sustituyó el secreto almacenado ni se relajó la comprobación del destino.
+
+La migración remota adicional se localizó en `origin/amplia-instrumentos-secundaria`, commit `3a434c1e`. Se incorporó su archivo original `20261015105401_activity_teaching_strategy.sql`: ambos blobs Git son `96ec0b1509dea30df3283ee2f974345a966066aa`. Se alinearon únicamente los campos `teachingStrategyId` y `teachingStrategyOrigin` de Prisma y sus tipos Row/Insert/Update del frontend. No se importaron editor, servicios ni catálogo de la otra funcionalidad; no se generó una versión nueva de una migración ya aplicada ni se usó `migration repair`.
+
+La comparación completa confirmó **76 versiones remotas, 80 locales, ninguna versión solo remota y únicamente las cuatro migraciones de facturación pendientes**. DeepSeek V4.1 Flash revisó esta reconciliación y, por separado, el cambio del pooler; no encontró defectos bloqueantes. La revisión principal comprobó el SQL remoto, los tipos reales de las columnas, la identidad del archivo y el orden validación → transformación → enmascarado.
+
+### Verificación local de esta entrega
+
+- Validación Prisma: código 0 usando una URL ficticia loopback; no consulta una base. El primer intento sin `DATABASE_URL` falló por configuración ausente, no por el esquema. Generación de Prisma: código 0 tras liberar el proceso Node que bloqueaba la DLL en Windows; posteriormente se restauró el backend local.
+- `pnpm --filter backend test`: código 0, **81 archivos, 6.616 pruebas**, 42,89 s.
+- `pnpm --filter backend build`: código 0.
+- `pnpm --filter frontend build`: código 0; aviso preexistente de bundles grandes.
+- `pnpm cloudflare:build`: código 0, cuatro builds y dry-run Wrangler; sin desplegar producción.
+- `node scripts/test-billing-database.mjs --workflows --worker`: código 0; **80 migraciones** aplicadas en PostgreSQL desechable. Pasaron modelos Prisma con rol `app_backend`, RLS/permisos, cobertura individual, prueba única, cortesías, transferencias, concurrencia/reembolsos, soporte, checkout HTML y HTTP real Node/workerd. El proveedor remoto sigue simulado en este ensayo. Se eliminó el contenedor propio `aulabase-billing-reconcile-20261015` al finalizar.
+- `node --test scripts/check-staging-environment.test.mjs`: código 0, **5 pruebas**. Se observó fallo antes de implementar la transformación; después se comprobó contraseña escapada/TLS, idempotencia, rechazo de producción y roles insuficientes, ejecución restringida a Actions y exportación enmascarada. No usa credenciales reales.
+
+### Aplicación en Development y corrección de secretos
+
+El primer intento del [run 38775219535](https://github.com/thebuuba/Proyecto-educativo-v3/actions/runs/38775219535) pasó dry-run y aplicó las cuatro migraciones comerciales, además de instalar el catálogo versionado. Una consulta posterior confirmó **80 migraciones, 20 tablas `billing_%`, cero tablas comerciales sin RLS y `enforce_access=false`**. Se conservaron los recuentos previos de 55 franjas y 30 entradas de horario; estas cuatro migraciones no hacen el backfill académico ya aplicado por otra tarea. No se atribuye a los recuentos por sí solos una auditoría semántica del horario.
+
+El run se detuvo antes de desplegar al detectar que faltaba `DEEPSEEK_API_KEY` en Staging. Al investigarlo, se encontró un error de la preparación anterior: en operaciones de secretos de Wrangler, combinar `--env staging` y `--name aula-base-staging` crea el nombre `aula-base-staging-staging`. La afirmación anterior de sincronización en el Worker correcto queda corregida por esta comprobación. Se verificó que ese Worker auxiliar fue creado por aquella operación a las 16:36 UTC del 15/10 y solo contenía el despliegue vacío y cambios de secretos propios; se eliminó por su nombre exacto. No se eliminó el Worker de Staging ni uno de Production.
+
+Se repitió la sincronización usando solo `--env staging`, verificando antes el nombre del entorno en `wrangler.jsonc` y los proyectos de las credenciales. La clave DeepSeek se obtuvo del respaldo local de backend identificado como Development, sin copiar credenciales de Production ni solicitar inferencias. La lectura posterior de **nombres** de secretos del Worker correcto confirmó JWT, DeepSeek, Supabase y los cinco controles comerciales. Checkout, eventos y enforcement siguen apagados. Se relanzó el mismo run; sus migraciones son ya aplicadas y no deben repetirse.
+
+Commits de código: `a8ca7ad` (reconciliación mínima del historial) y `127bd77` (pooler compatible con GitHub Actions), ambos en español y publicados mediante push normal en la rama existente. El esquema de Production y `main` permanecen fuera de estas operaciones.
+
+### Resultado remoto verificado
+
+El **segundo intento** del [run 38775219535](https://github.com/thebuuba/Proyecto-educativo-v3/actions/runs/38775219535) terminó con `success`: historial ya actualizado, catálogo instalado, secretos comprobados, Worker desplegado y smoke correcto. Código publicado `127bd77f25d4b1703708deaa5b99bbc7a061a3e6`. Se repitió `pnpm cloudflare:smoke https://aula-base-staging.prroyectoeducativo00.workers.dev` desde el equipo local: código 0. La entrada es [Ajustes → Suscripción y pagos de Staging](https://aula-base-staging.prroyectoeducativo00.workers.dev/configuracion?tab=suscripcion). Las cuentas de Production no se copiaron a Development para esta comprobación.
+
+Se prepararon un centro QA separado, dos docentes sintéticos con correos `example.invalid` y un plan de prueba privado `docente-completo`, sin precio ni importe comercial. Los usuarios Auth se crearon mediante la API administrativa de Development con correo confirmado, sin solicitar envío de correo. Las credenciales y el arnés están solo en `.opencode/`, ignorado por Git. Se conserva este fixture identificado como QA en Development; no se borró historial comercial ni se modificaron usuarios académicos existentes.
+
+Comprobación HTTP real contra el Worker desplegado, con sesiones obtenidas por `/api/v1/auth/login`:
+
+- Dos inicios de sesión 201 y cookies de sesión válidas. Consulta de facturación anónima: 401; consulta del titular: 200.
+- Módulo habilitado en sandbox; checkout y eventos deshabilitados. Cada docente inicia su propia prueba; repetir el POST devuelve el mismo identificador y vencimiento y deja un único registro por titular. Se comprobó también la creación inicial de la segunda cuenta, no solo la lectura de una prueba ya existente.
+- Soporte crea un caso persistido y numerado: lectura del titular 200, otro docente 403. El docente tampoco accede a administración comercial: 403.
+- Consulta SQL final: **80 migraciones, 2 pruebas, 1 caso de soporte, 0 pagos, 0 suscripciones y 0 precios**. **Cero grants directos** sobre tablas comerciales para `anon`, `authenticated` o `PUBLIC`; `enforce_access=false`.
+
+El primer arnés pretendía leer el ledger con el rol de ejecución `app_backend` y recibió P2010 por falta de privilegios; se retiró esa lectura del arnés, manteniendo la comprobación del ledger mediante el conector administrativo de solo lectura. Después se observó una aserción inicial sin localización suficiente; se añadió diagnóstico de código/línea y se repitió sin cambiar el código desplegado ni las expectativas HTTP. Pasaron ambos recorridos posteriores, incluida una prueba creada desde cero para el segundo docente. No se atribuye aquel fallo a una causa no demostrada. El resultado final del arnés fue código 0.
+
+**Pendiente externo:** crear/configurar Paddle Sandbox, fijar precio/moneda y condiciones exclusivamente de prueba, configurar precio/token/webhook y completar pago, rechazo, portal, cancelación y conciliación reales del sandbox. No se usaron claves Paddle ni se ejecutaron cobros. Tampoco se ejecutaron solicitudes de IA: disponer del secreto de Development no constituye una prueba de su proveedor. El recorrido visual de navegador y la API real de Storage no se presentan como comprobados por este arnés HTTP. Continúa pendiente resolver la entrega autorizada de imágenes antes de habilitar bloqueo académico.
