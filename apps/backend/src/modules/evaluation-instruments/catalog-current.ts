@@ -50,7 +50,7 @@ import {evaluationCatalogV50} from './catalog-v50'
 import {evaluationCatalogV51} from './catalog-v51'
 import {evaluationCatalogV52} from './catalog-v52'
 import {evaluationCatalogV53} from './catalog-v53'
-import {englishGradeThreeModule,englishGradeThreeGrammar,englishGradeThreeLexicon} from '@aula/shared'
+import {englishGradeThreeModule,englishGradeThreeGrammar,englishGradeThreeLexicon,englishGradeThreeStrategies,englishGradeThreeGenres} from '@aula/shared'
 import {englishGradeTwoModule,englishGradeTwoGrammar,englishGradeTwoLexicon,englishGradeTwoStrategies,englishGradeTwoGenres} from '@aula/shared'
 import {englishGradeOneGenres} from '@aula/shared'
 import {englishGradeOneStrategies} from '@aula/shared'
@@ -68,6 +68,8 @@ export const evaluationCatalogCurrent = {
   englishGradeThreeModule,
   englishGradeThreeGrammar,
   englishGradeThreeLexicon,
+  englishGradeThreeStrategies,
+  englishGradeThreeGenres,
   englishGradeTwoNarrativePolicy:'EXPERIENCE_EVENTS_ONCE_EXPLICIT_NARRATIVE_COMPONENTS_RETAINED_V1',
   englishGradeTwoShoppingPolicy:'PURCHASE_VERB_FORMS_EXCLUDE_CHECK_AND_COMPREHEND_V1',
   englishGradeTwoRevisionPolicy:'EXPLICIT_MEANING_CORRECTION_AND_REPLY_EVIDENCE_V1',

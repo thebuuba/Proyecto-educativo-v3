@@ -4,6 +4,22 @@ import fixtures from '../../../../../data/evaluation-instruments/english-grade-t
 const context={level:'SECONDARY' as const,grade:3,cycle:1,subjectCode:'ING',optativeExitName:null}
 const propose=(description:string,format:'rubrica'|'lista-cotejo'|'escala'|'lista-ponderada'='rubrica',score=20,title='Actividad')=>recommend({activityTitle:title,description,maxScore:score,preferredInstrumentType:format,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
 describe('Tercero: formas y usos propios, PDF147–150',()=>{
+ for(const f of fixtures)for(const action of ['Compararán la función de','Investigarán en textos en inglés el uso de'])for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const total of [20,17.35])it(`${f.id} ${action} ${format} ${total}`,()=>{
+  const p=propose(`${action} ${f.forms[0]} con ejemplos de los textos proporcionados.`,format,total)
+  expect(p.activityType).toBe(action.startsWith('Compararán')?'COMPARISON':'RESEARCH')
+  const c=p.criteria.find(c=>c.templateId===`ing-3-feature-${f.id}`)
+  expect(c).toBeDefined();expect(c!.description).not.toMatch(/^Emplea /)
+  expect(c!.description).toContain(action.startsWith('Compararán')?'Contrasta':'Identifica')
+ })
+ it('will o going to son alternativas, no dos usos obligatorios',()=>{
+  const p=propose('Escribirán una predicción en inglés utilizando will o going to, según la alternativa elegida.')
+  expect(p.criteria.filter(c=>c.templateId.startsWith('ing-3-feature-'))).toHaveLength(1)
+  expect(p.criteria.find(c=>c.templateId.startsWith('ing-3-feature-'))!.title).toContain(' o ')
+ })
+ it('usando introduce un requisito igual que utilizando',()=>{
+  const description='Escribirán en inglés una predicción usando will.'
+  expect(propose(description).criteria).toEqual(propose(description.replace('usando','utilizando')).criteria)
+ })
  for(const f of fixtures)for(const form of f.forms)for(const action of ['Leerán un texto en inglés e identificarán','Explicarán la función de','Escribirán un mensaje en inglés utilizando'])for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const score of [20,17.35])it(`${f.id} ${form} ${action} ${format} ${score}`,()=>{
   const description=`${action} ${form}${action.startsWith('Explicarán')?' con ejemplos de un texto en inglés':''}.`
   const p=propose(description,format,score),c=p.criteria.find(c=>c.templateId===`ing-3-feature-${f.id}`)

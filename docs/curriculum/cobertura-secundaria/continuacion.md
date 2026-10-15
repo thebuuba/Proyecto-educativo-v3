@@ -2,6 +2,8 @@
 
 ## Retomar aquí: Inglés común 2.º–6.º — 14/10/2026
 
+Última actualización: segundo publicado7eb7e3b, punto inicial de tercero publicadobba48e5. Tercero tiene conexiones en código de funciones/gramática/léxico/estrategias/géneros/contexto/composición;158 registros y15 grupos con decisiones. Backend15.197/76, frontend18.792/114 e inventario9, builds aprobados. Falta cierre: instalar .54 local (runtime aún .53), HTTP corregido, cuatro CRUD auténticos con ediciones/snapshots/históricos, operaciones y revisión final. Reproducción del .53 genérico guardada. No iniciar cuarto. El detalle siguiente conserva los puntos previos; prevalecen esta actualización y el informe de tercero.
+
 Alcance autorizado por adjunto `1297efcd-88c8-4e97-91b1-15282f03e099/Texto pegado.txt`; sin subagentes. [Estado vigente](avance.md), [plan](../../superpowers/plans/2026-10-14-ingles-comun-2-6.md). No usar las detenciones históricas como impedimento: el usuario autorizó esta ampliación después de ellas.
 
 Rama `amplia-instrumentos-secundaria`, base891ccca publicada, último punto de funciones `b769b19` y cierre de segundo .53. Catálogos .48–.52 congelados; .53 instalado/cargado local. Supabase54321 conserva datos, frontend5173/backend3000. Chrome habitual accesible y autenticado con cuenta ficticia; no cambiarlo al8787 de la captura ni al remoto. Credenciales, .env, cuentas y logs de arranque excluidos de Git y no deben imprimirse. Confirmar el commit de cierre y su push con Git; la evidencia HTTP/Chrome registra b769b19 más cambios pendientes, sin atribución retroactiva.

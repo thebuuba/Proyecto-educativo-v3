@@ -13,8 +13,8 @@ export const englishGradeTwoGenres:ScopedGenre[]=[
  {...englishGradeOneGenres.find(g=>g.id==='audiovisual')!,modes:['audiovisual'],source:'EXPLICIT_TASK'},
 ]
 export const requestedGradeTwoGenres=(text:string,mode?:string)=>requestedEnglishGenres(text,englishGradeTwoGenres.filter(g=>!mode||g.modes.includes(['analysis','comparison'].includes(mode)?'reading':mode)))
-export function gradeTwoGenreCriteria(text:string,mode:string,existing:ContextualTopicCriterion[]){
- const selected=requestedGradeTwoGenres(text,mode).map(g=>g.id==='menu'&&/\b(?:precios?|prices?)\b/.test(text)?{...g,data:/\bproductos?\b/.test(text)?'los productos y sus precios solicitados del menú':'los precios solicitados del menú',error:'atribuye a un producto el precio de otro elemento del menú'}:g)
+export function gradeTwoGenreCriteria(text:string,mode:string,existing:ContextualTopicCriterion[],scope='ing-2',genres=englishGradeTwoGenres){
+ const selected=requestedEnglishGenres(text,genres.filter(g=>g.modes.includes(['analysis','comparison'].includes(mode)?'reading':mode))).map(g=>g.id==='menu'&&/\b(?:precios?|prices?)\b/.test(text)?{...g,data:/\bproductos?\b/.test(text)?'los productos y sus precios solicitados del menú':'los precios solicitados del menú',error:'atribuye a un producto el precio de otro elemento del menú'}:g)
  // Requested communicative content already carries the purpose of a message;
  // source documents do not become additional delivered products.
  const covered=selected.filter(g=>!(g.id==='email'&&existing.some(c=>/^ing-2-(?:plans|daily|wishes|advice|experience)$/.test(c.templateId))&&!/destinatario|estructura del correo/.test(text))
@@ -30,5 +30,5 @@ export function gradeTwoGenreCriteria(text:string,mode:string,existing:Contextua
    combined.push({...g,id:`${g.id}-or-${next.id}`,title:`${g.title} o ${next.title.toLowerCase()}`,data:'la información solicitada en el producto elegido',production:'Comunica en inglés la información solicitada en el producto elegido entre las alternativas indicadas, con un mensaje comprensible relacionado con el propósito de la tarea.',error:'la información cambia el propósito del producto elegido'})
   }else combined.push(g)
  }
- return englishGenreCriteria(text,['analysis','comparison'].includes(mode)?'reading':mode,existing,'ing-2',combined,true)
+ return englishGenreCriteria(text,['analysis','comparison'].includes(mode)?'reading':mode,existing,scope,combined,true)
 }

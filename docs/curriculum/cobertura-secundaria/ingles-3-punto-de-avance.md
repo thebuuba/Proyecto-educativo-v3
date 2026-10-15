@@ -20,6 +20,14 @@ Resultados: backend completo13.412 pruebas/74 archivos; frontend de tercero3.000
 
 Conectar estrategias observables —incluida comprensión expresada—, géneros por modalidad, actitudes/contexto/indicadores y composición de acciones independientes. Revisión semántica integral, negaciones/alternativas y usos específicos; capacidad20/conjuntos mayores, candidatos/agotamiento/completado, ediciones/pesos/respuestas obsoletas. HTTP autenticado y cuatro consignas cotidianas completas en Chrome: generar→editar→resumen→guardar→reabrir, cotejar IDs/textos/puntos con snapshots y comprobar históricos. Solo entonces cerrar tercero y seguir a cuarto.
 
+### Ampliación del punto de avance
+
+El punto anterior se publicó como `bba48e5`. Ahora están conectadas las23 estrategias definidas, incluida comprensión expresada y los cuatro aspectos culturales propios; géneros de recepción28/oral8/escrita11 y audiovisual explícito; condiciones comunicativas observables y composición de acciones. Se conserva lectura→respuesta escrita→revisión y presentación anafórica, sin convertir una finalidad en otra acción ni los productos alternativos en entregas simultáneas. Las fuentes por registro se vinculan con proveedores condicionales; el grado sigue pendiente de cierre.
+
+La revisión reprodujo y corrigió duplicación prohibición/aviso, alias «correo», will o going to como alternativa, «usando» como introductor gramatical y exposición oral indebidamente agregada a un video. Comparación e investigación se ensayan en las52 familias gramaticales. Backend completo15.197/76; frontend completo18.792/114 y contrato específico3.948, builds aprobados según sus logs locales. Las comprobaciones completas no sustituyen la verificación en Chrome.
+
+La reproducción HTTP del runtime .53, anterior a instalar tercero, devuelve las mismas cinco filas generales para opinión oral y lectura→respuesta: [evidencia](evidencias/ingles-3-reproduccion-53.json). Falta instalar .54, ejecutar HTTP corregido y los cuatro CRUD auténticos, comprobar snapshots/históricos y cerrar la revisión final. No iniciar cuarto.
+
 Catálogo .54 **definido en código, todavía sin instalar ni cargar en el servicio local**; runtime sigue .53 del cierre de segundo. .53 congelado. Los casos de tercero no tienen aún verificación HTTP ni de navegador. No declarar el grado completo por la cantidad de filas o pruebas.
 
 Rama `amplia-instrumentos-secundaria`, segundo publicado como `7eb7e3b124c1442c896a5e9fdd481bc7fc45b3d5`. Este bloque se guarda como punto de avance, no como cierre de tercero. Sin subagentes, IA, dependencias nuevas, rediseño, main, producción, reset ni cambios en instrumentos históricos.

@@ -1,14 +1,17 @@
 import {languageInstrumentIntent} from './language-instrument-intent'
-import {affirmativeScopedEnglishTask,commonEnglishGrade} from './secondary-english-task-text'
+import {affirmativeScopedEnglishTask,commonEnglishGrade,englishContextTask,independentEnglishActionParts} from './secondary-english-task-text'
 import type {InstrumentAcademicContext} from './secondary-science'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import {requestedGradeThreeGrammar,gradeThreeGrammarCriterion} from './secondary-english-grade-three-grammar'
 import {requestedGradeThreeLexicon,gradeThreeLexicalCriterion} from './secondary-english-grade-three-lexicon'
+import {requestedGradeThreeStrategies,gradeThreeStrategyCriteria} from './secondary-english-grade-three-strategies'
+import {requestedGradeThreeGenres,gradeThreeGenreCriteria} from './secondary-english-grade-three-genres'
+import {gradeThreeContextCriteria} from './secondary-english-grade-three-context'
 
-export const englishGradeThreeModule={id:'ingles-comunicacion-3',grade:3,subjectCode:'ING',pdfPages:[146,147,148,149,150,151],policy:'COMMON_THIRD_GRADE_FUNCTIONS_GRAMMAR_LEXICON_PARTIAL_V1'}
+export const englishGradeThreeModule={id:'ingles-comunicacion-3',grade:3,subjectCode:'ING',pdfPages:[146,147,148,149,150,151],policy:'COMMON_THIRD_GRADE_FUNCTIONS_GRAMMAR_LEXICON_STRATEGIES_GENRES_CONTEXT_COMPOSITION_V2'}
 type Mode='reading'|'listening'|'interaction'|'oral'|'writing'|'audiovisual'|'analysis'|'comparison'|'research'
 type FunctionId='explanations'|'opinion'|'suggestion'|'prohibition'|'warning'|'directions'|'instructions'|'narrative'|'inference'|'prediction'|'news'|'past-present'
-export type EnglishGradeThreeTask={grade:3;mode:Mode;functions:FunctionId[];text:string;activityType:string;technique:string;actions?:EnglishGradeThreeTask[]}
+export type EnglishGradeThreeTask={grade:3;mode:Mode;functions:FunctionId[];text:string;contextText?:string;requirementText?:string;activityType:string;technique:string;actions?:EnglishGradeThreeTask[]}
 const modes:Record<Mode,{activityType:string;technique:string}>={
  reading:{activityType:'READING_COMPREHENSION',technique:'analisis-producciones'},listening:{activityType:'LISTENING_COMPREHENSION',technique:'observacion-sistematica'},
  interaction:{activityType:'ORAL_INTERACTION',technique:'observacion-directa'},oral:{activityType:'ORAL_PRESENTATION',technique:'presentacion'},
@@ -16,9 +19,8 @@ const modes:Record<Mode,{activityType:string;technique:string}>={
  analysis:{activityType:'ANALYSIS',technique:'analisis-producciones'},comparison:{activityType:'COMPARISON',technique:'analisis-producciones'},research:{activityType:'RESEARCH',technique:'analisis-producciones'},
 }
 export const commonThirdGradeEnglish=(context?:InstrumentAcademicContext|null)=>commonEnglishGrade(context,3)
-export function resolveThirdGradeEnglishTask(title:string,description:string,context?:InstrumentAcademicContext|null):EnglishGradeThreeTask|null{
- if(!commonThirdGradeEnglish(context))return null
- const text=affirmativeScopedEnglishTask(description||title),functions:FunctionId[]=[]
+function single(description:string):EnglishGradeThreeTask|null{
+ const text=affirmativeScopedEnglishTask(description),contextText=englishContextTask(description),functions:FunctionId[]=[]
  if(/\b(?:explicaciones|motivos|razones de (?:una|la) decision)\b/.test(text))functions.push('explanations')
  if(/\b(?:opinion(?:es)?|puntos? de vista)\b/.test(text))functions.push('opinion')
  if(/\b(?:sugerencias?|consejos?)\b/.test(text))functions.push('suggestion')
@@ -33,8 +35,10 @@ export function resolveThirdGradeEnglishTask(title:string,description:string,con
  if(/\b(?:compar\w*|contrast\w*)\b/.test(text)&&/\bpasado\b/.test(text)&&/\bpresente\b/.test(text))functions.push('past-present')
  const grammar=requestedGradeThreeGrammar(text)
  const lexical=requestedGradeThreeLexicon(text)
- if(!functions.length&&!grammar.length&&!lexical.length)return null
- const action=text.replace(/\bpara (?:leer|escuchar|escribir|redactar|presentar|comparar)\b/g,'para')
+ const strategies=requestedGradeThreeStrategies(text),genres=requestedGradeThreeGenres(text)
+ const contextual=gradeThreeContextCriteria(contextText)
+ if(!functions.length&&!grammar.length&&!lexical.length&&!strategies.length&&!genres.length&&!contextual.length&&!/\binvestig\w*\b/.test(text))return null
+ const action=text.replace(/\b(?:para|a fin de) (?:leer|escuchar|escribir|redactar|presentar|comparar)\b/g,'para')
  let mode:Mode|undefined
  if(/\binvestig\w*\b/.test(action))mode='research'
  else if(/\b(?:escuch\w*|listen\w*)\b/.test(action))mode='listening'
@@ -44,10 +48,28 @@ export function resolveThirdGradeEnglishTask(title:string,description:string,con
  else if(/\b(?:dialog\w*|convers\w*|intercambio oral|role play)\b/.test(action))mode='interaction'
  else if(/\b(?:oral\w*|present(?:ar|aran|an|en|acion)|expon\w*|narr\w*)\b/.test(action))mode='oral'
  else if(functions.includes('past-present'))mode='comparison'
- else if(grammar.length&&/\b(?:compar(?:ar(?:an)?|en|an)|contrast\w*)\b/.test(action))mode='comparison'
+ else if((grammar.length||strategies.length)&&/\b(?:compar(?:ar(?:an)?|en|an)|contrast\w*)\b/.test(action))mode='comparison'
  else if(/\b(?:analiz\w*|explic\w*|infer\w*)\b/.test(action))mode='analysis'
+ else if(strategies.some(f=>f.id==='rehearsal'))mode='oral'
+ else if(/\b(?:particip\w* oralmente|canta\w*|recita\w*)\b/.test(action))mode='oral'
+ else if(/\b(?:identific\w*|reconoc\w*|localiz\w*)\b/.test(action))mode='reading'
+ else if(genres.length&&/\b(?:crea\w*|elabor\w*)\b/.test(action))mode='writing'
+ if(requestedGradeThreeStrategies(text,mode).some(s=>s.id==='cultural-comparison'))functions.splice(0)
  if(!mode)return null
- return {grade:3,mode,functions,text,...modes[mode]}
+ return {grade:3,mode,functions,text,contextText,...modes[mode]}
+}
+export function resolveThirdGradeEnglishTask(title:string,description:string,context?:InstrumentAcademicContext|null):EnglishGradeThreeTask|null{
+ if(!commonThirdGradeEnglish(context))return null
+ const actions:EnglishGradeThreeTask[]=[]
+ for(const part of independentEnglishActionParts(description||title)){
+  const previous=actions.at(-1)
+  let task=single(part)
+  if(!task&&previous&&/\b(?:lo|la|los|las|sus trabajos)\s+(?:present\w*|expon\w*)\b/.test(part))task={...previous,mode:'oral',actions:undefined,...modes.oral,requirementText:affirmativeScopedEnglishTask(part),contextText:englishContextTask(part)}
+  if(task)actions.push(task)
+ }
+ if(actions.length<2)return single(description||title)
+ const primary=actions.filter(a=>!['reading','listening'].includes(a.mode)).at(-1)??actions.at(-1)!
+ return {...primary,text:affirmativeScopedEnglishTask(description||title),actions}
 }
 export function thirdGradeEnglishSelections(task:EnglishGradeThreeTask,description:string){
  const discrete=(task.actions??[task]).every(a=>['reading','listening'].includes(a.mode)&&!/\b(?:infer\w*|explic\w*|justific\w*|argument\w*)\b/.test(a.text))
@@ -55,6 +77,14 @@ export function thirdGradeEnglishSelections(task:EnglishGradeThreeTask,descripti
 }
 const row=(id:string,title:string,levels:NonNullable<ContextualTopicCriterion['progressionLevels']>,weight=4):ContextualTopicCriterion=>({templateId:`ing-3-${id}`,title,observable:levels[0],progressionLevels:levels,weight})
 export function thirdGradeEnglishCriteria(task:EnglishGradeThreeTask):ContextualTopicCriterion[]{
+ if(task.actions){
+  const rows:ContextualTopicCriterion[]=[],seen=new Set<string>()
+  for(const [index,action] of task.actions.entries())for(const criterion of thirdGradeEnglishCriteria(action)){
+   const key=JSON.stringify(criterion);if(seen.has(key))continue;seen.add(key)
+   rows.push(rows.some(r=>r.templateId===criterion.templateId)?{...criterion,templateId:`${criterion.templateId}:${action.mode}:${index+1}`}:criterion)
+  }
+  return rows
+ }
  const {text,mode}=task,receptive=['reading','listening','analysis','comparison','research'].includes(mode),source=mode==='listening'?'mensaje escuchado':'texto disponible'
  const rows=task.functions.map(id=>{
   switch(id){
@@ -151,16 +181,30 @@ export function thirdGradeEnglishCriteria(task:EnglishGradeThreeTask):Contextual
    ])
   }
  })
- rows.push(...requestedGradeThreeGrammar(text).map(f=>gradeThreeGrammarCriterion(f,text,mode)))
- rows.push(...requestedGradeThreeLexicon(text).map(f=>gradeThreeLexicalCriterion(f,text,mode)))
- if(mode==='interaction')rows.push(row('interaction','Respuesta relacionada con el interlocutor',[
+ const requirements=task.requirementText??text
+ rows.push(...requestedGradeThreeGrammar(requirements).map(f=>gradeThreeGrammarCriterion(f,requirements,mode)))
+ rows.push(...requestedGradeThreeLexicon(requirements).map(f=>gradeThreeLexicalCriterion(f,requirements,mode)))
+ rows.push(...gradeThreeStrategyCriteria(requirements,mode))
+ rows.push(...gradeThreeGenreCriteria(requirements,mode,rows))
+ rows.push(...gradeThreeContextCriteria(task.contextText??text,receptive))
+ if(mode==='research'){
+  const subject=[['tecnologia','la tecnología'],['cienci\\w*','la ciencia'],['medioambiente|medio ambiente','el medioambiente'],['salud','la salud'],['tradiciones','las tradiciones']].filter(([pattern])=>new RegExp(pattern).test(text)).map(([,label])=>label).join(' y ')||'el asunto indicado'
+  rows.push(row('research','Información localizada y relacionada con la búsqueda',[
+   `Localiza y relaciona información sobre ${subject} en ${/proporcionad\w*|suministrad\w*/.test(text)?'los textos en inglés proporcionados':'las fuentes en inglés consultadas'}${/sistematiz\w*|organiz\w* (?:los )?datos/.test(text)?', organizando los datos según la pregunta de la tarea':', vinculando los datos con la pregunta o finalidad de la investigación'}.`,
+   'La información responde a la búsqueda principal; una relación entre los datos y lo consultado necesita precisión.',
+   'Recupera datos aislados sin establecer las relaciones necesarias para responder a la búsqueda indicada.',
+   'Atribuye a los textos datos incompatibles con la información consultada o con la pregunta de la tarea.',
+   'No aporta información reconocible relacionada con los textos consultados y la búsqueda solicitada.',
+  ]))
+ }
+ if(mode==='interaction'||mode==='writing'&&/\b(?:responder\w*|respond\w*|intercambi\w*)\b/.test(requirements))rows.push(row('interaction','Respuesta relacionada con el interlocutor',[
   'Relaciona su intervención en inglés con lo dicho por el interlocutor y aporta información que permite continuar el intercambio.',
   'La intervención corresponde a lo dicho; una referencia requiere aclaración para continuar.',
   'Responde a una parte de la intervención y deja información relevante sin relacionar.',
   'Interpreta otro asunto como objeto de la intervención y responde a una información diferente.',
   'No aporta una intervención reconocible relacionada con lo dicho por el interlocutor.',
  ],3))
- if(!receptive)rows.push(mode==='writing'?row('written','Mensaje escrito enlazado y comprensible',[
+ if(!receptive&&mode!=='audiovisual')rows.push(mode==='writing'?row('written','Mensaje escrito enlazado y comprensible',[
   'Enlaza en inglés frases y oraciones con conectores sencillos que permiten seguir la información del mensaje escrito; los errores básicos aislados no impiden comprenderlo.',
   'Las ideas principales se comprenden; una unión entre oraciones necesita revisión.',
   'Se comprenden expresiones aisladas, pero varias relaciones entre ideas quedan ambiguas.',
