@@ -29,7 +29,7 @@
     "Trece ámbitos,17 familias léxicas/cuatro intenciones expresivas; no copiar las22/siete de quinto.",
     "Las listas de géneros coinciden con quinto, cotejadas por modalidad."
   ],
-  "status": "CONNECTED_DEFINED_FAMILIES_FINAL_REVIEW_PENDING",
+  "status": "VERIFIED_DEFINED_FAMILIES",
   "records": [
     {
       "id": "2764a4fa-6e03-5dcb-8b89-b996bfac44f0",
@@ -2680,5 +2680,14 @@
       ],
       "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
     }
+  ],
+  "applicationEvidence": [
+    "evidencias/ingles-6-integral-servicio.json",
+    "evidencias/ingles-6-seguimientos-servicio-63.json",
+    "evidencias/ingles-6-final-flujo-navegador.json",
+    "evidencias/ingles-6-final-persistencia.json",
+    "evidencias/lengua-historicos-evaluation-2026.63.json",
+    "ingles-6-ejemplos-finales.md",
+    "ingles-6-informe-final.md"
   ]
 }

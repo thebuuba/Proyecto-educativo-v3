@@ -1,5 +1,16 @@
 # Avance durable — cobertura secundaria
 
+## Estado vigente: cierre de Inglés común2.º–6.º — 15/10/2026
+
+Encargo finalizado en sus familias y patrones definidos; **detenerse tras sexto**, sin iniciar otra asignatura ni optativas. [Informe consolidado](ingles-2-6-informe-consolidado.md), [cierre de sexto](ingles-6-informe-final.md), [cuatro instrumentos completos de sexto](ingles-6-ejemplos-finales.md). Fuente de sexto159 registros/16 grupos; once evidencias funcionales,58 familias gramaticales/134 formas,17 léxicas/cuatro expresivas,23 estrategias y géneros/contexto/composición verificados.
+
+Código de sexto publicado/ejecutado61e8a5a10b891da6874a9d3ab3eb77c4a6a226c1; catálogo local .63 instalado/cargado, .62 conservado. Backend36.689/91; frontend completo36.940/117 y6.140 específicas tras el ajuste final; builds backend/frontend/Cloudflare dry-run aprobados, inventario9. HTTP178+8selecciones+4rechazos/pools y88seguimientos (incluidos ocho de quinto). Cuatro CRUD cotidianos auténticos en Chrome .63, campos/IDs/puntos/pesos cotejados con snapshots, puntaje pendiente y manuales conservados;133 snapshots actuales/103 completos,108 de base y28 referencias intactas.
+
+Matriz y ledger cerrados con evidencia, exclusiones y límites explícitos; no se promete comprender cualquier redacción ni se marca completa otra asignatura. El cierre documental/evidencias se publica en este commit; al recuperar, comprobar hash remoto y árbol. El hash final y resultado del push se confirman en la entrega para no atribuirlos retroactivamente a las pruebas. Sin IA de aplicación, dependencias, rediseño, subagentes, main, despliegue, reset ni cambios históricos.
+
+Las secciones siguientes son **históricas** y no autorizan reabrir grados ni avanzar a otra asignatura. Para recuperar el trabajo, comprobar Git y leer este estado y el informe consolidado; no repetir suites completas si el motor sigue en61e8a5a. Siguiente pendiente: ninguno dentro del alcance definido; un nuevo bloque necesita un nuevo encargo.
+
+
 ## Retomar sexto — 15/10/2026
 
 Quinto cerrado/publicado `45e5fdb18d5e0a691351c8070648eea559757743`, remoto igual y árbol limpio. Sexto parcial: fuente169–174 cotejada/159registros/16grupos, funciones11, gramática58/134, léxico17/expresiones4, estrategias23/géneros/contexto/composición conectados. [Punto de avance](ingles-6-punto-de-avance.md). .62 congelado; .63 solo código. Completar regresión/builds, instalación/HTTP/cuatro CRUD/snapshots/históricos y revisión antes de publicar el cierre. Seguimiento5: interactuar en consulta simulada reconocido, pendiente HTTP63. Detenerse tras sexto, sin otro bloque.

@@ -22,9 +22,11 @@ Ejecución directa con `executing-plans`; sin subagentes. Encargo del adjunto `1
 - [x] Tercero: PDF146–151,158 registros/15 grupos; familias definidas verificadas, cuatro formatos/CRUD/snapshots y cierre .55.
 - [x] Cuarto: PDF158–162, segundo ciclo, común; misma puerta.
 - [x] Quinto: PDF163–168; misma puerta.
-- [ ] Sexto: PDF169–174; misma puerta y consolidación final.
+- [x] Sexto: PDF169–174; misma puerta y consolidación final.
 
 ## Recuperación
+
+Encargo2–6 finalizado: sexto .63, fuente159/16, HTTP178+8+4cap/88seguimientos, cuatroCRUD/snapshots133/103 y builds aprobados. Código61e8a5a publicado/ejecutado; cierre documental en este commit. [Informe consolidado](../../curriculum/cobertura-secundaria/ingles-2-6-informe-consolidado.md). Detenerse; no iniciar otra asignatura. Los párrafos siguientes conservan estados históricos.
 
 Quinto verificado62:156/15, backend29331, frontend6140 y12020reciente, HTTP187+8+4cap/40delta, cuatroCRUD/snapshots129/99. Código1f1abf9publicado; publicar el cierre y continuar sexto PDF169–174. Detenerse tras sexto.
 

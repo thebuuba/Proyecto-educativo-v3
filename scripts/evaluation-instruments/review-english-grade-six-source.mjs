@@ -39,7 +39,28 @@ const codeVersion=readFileSync('apps/backend/src/modules/evaluation-instruments/
 const report={sourceSha256:inventory.source.sha256,scopeId:scope.id,grade:6,cycle:2,subject:'Inglés',character:'COMMON',pdfPages:scope.pdfPages,printedPages:[168,169,170,171,172,173],method:'Seis páginas renderizadas y cotejadas visualmente por columnas y continuaciones.',layoutNotes:['PDF172–173 continúan solo gramática; otras columnas vacías.','CONCEPT37 une encabezado y estructuras reales.44 es parte del diálogo continuado de43/45;45 contiene además estructuras nuevas.','PROCEDURE23 contiene planificación y lenguaje no verbal. No excluir ni reducir a un solo procedimiento.','Trece ámbitos,17 familias léxicas/cuatro intenciones expresivas; no copiar las22/siete de quinto.','Las listas de géneros coinciden con quinto, cotejadas por modalidad.'],status:'CONNECTED_DEFINED_FAMILIES_FINAL_REVIEW_PENDING',records}
 const status={implementation:report.status,automatedVerification:'DEFINED_CONTENT_CONTRACTS_REVIEW_PENDING',manualVerification:'SOURCE_159_RECORDS_VISUALLY_REVIEWED',applicationVerification:'NOT_RUN',boundaryReview:'VISUALLY_REVIEWED_PDF_169_174',procedureAssociation:'SOURCE_LEDGER_WITH_CONDITIONAL_CONNECTIONS_AND_EXCLUSIONS',report:'ingles-6-punto-de-avance.md',catalogVersion:codeVersion+'_CODE_NOT_INSTALLED',engineConnection:'COMMON_SIXTH_GRADE_DEFINED_FAMILIES_REVIEW_PENDING',instrumentFormats:['rubrica','lista-cotejo','escala','lista-ponderada'],serviceVerification:'REPRODUCTION_62_NO_GRADE_PROVIDER',interfaceVerification:'NOT_RUN',pending:'Revisión integral, HTTP/límites/operaciones, cuatro CRUD cotidianos autenticados/snapshots/históricos y publicación. Detenerse tras sexto, sin otra asignatura.'}
 if(process.argv.includes('--installed')){const health=(await fetch('http://localhost:5173/api/v1/health').then(r=>r.json())).data;assert.equal(health.development.supabaseOrigin,'http://127.0.0.1:54321');assert.equal(health.development.catalogVersion,codeVersion);status.catalogVersion=codeVersion;status.applicationVerification='INSTALLED_FINAL_REVIEW_PENDING'}
-if(closed)throw new Error('Puertas de cierre de sexto aún no configuradas: conservar parcial')
+if(closed){
+ const evidence=name=>JSON.parse(readFileSync(root+'evidencias/'+name,'utf8'))
+ const http=evidence('ingles-6-integral-servicio.json'),delta=evidence('ingles-6-seguimientos-servicio-63.json')
+ const ui=evidence('ingles-6-final-flujo-navegador.json'),persisted=evidence('ingles-6-final-persistencia.json')
+ const history=evidence('lengua-historicos-evaluation-2026.63.json')
+ assert.equal(codeVersion,'evaluation-2026.63')
+ for(const proof of [http,delta,persisted,history]){
+  assert.equal(proof.health.development.catalogVersion,codeVersion)
+  assert.equal(proof.health.development.supabaseOrigin,'http://127.0.0.1:54321')
+ }
+ assert.equal(http.results.length,178);assert.equal(http.selections.length,8);assert.equal(http.capacity.length,4)
+ assert(http.capacity.every(c=>c.count>20&&c.rejectedWithoutPool));assert.equal(delta.results.length,88)
+ assert.equal(ui.length,4);assert.deepEqual(new Set(ui.map(a=>a.format)),new Set(status.instrumentFormats))
+ assert(ui.every(a=>a.reopened&&a.savedHash&&a.freshEditPageVerified));assert.equal(persisted.activities.length,4)
+ assert(persisted.activities.every(a=>a.instrumentSnapshot.catalogVersion===codeVersion&&ui.some(u=>u.activityId===a.id)))
+ assert.equal(history.englishGradeTwoBaselinePreserved,108);assert.equal(history.baselineSnapshotsPreserved,28)
+ assert(persisted.activities.every(a=>history.fullInstrumentsPreserved.includes(a.id)))
+ for(const name of ['ingles-6-ejemplos-finales.md','ingles-6-informe-final.md'])assert(readFileSync(root+name,'utf8').length>500)
+ report.status='VERIFIED_DEFINED_FAMILIES'
+ report.applicationEvidence=['evidencias/ingles-6-integral-servicio.json','evidencias/ingles-6-seguimientos-servicio-63.json','evidencias/ingles-6-final-flujo-navegador.json','evidencias/ingles-6-final-persistencia.json','evidencias/lengua-historicos-evaluation-2026.63.json','ingles-6-ejemplos-finales.md','ingles-6-informe-final.md']
+ Object.assign(status,{implementation:report.status,automatedVerification:'ALL_DEFINED_FAMILIES_FOUR_FORMATS',applicationVerification:'FOUR_EVERYDAY_FORMATS_GENERATED_EDITED_SAVED_REOPENED_SNAPSHOTS',catalogVersion:codeVersion,report:'ingles-6-informe-final.md',engineConnection:'COMMON_SIXTH_GRADE_DEFINED_FAMILIES',serviceVerification:'HTTP_178_FAMILIES_8_SELECTIONS_4_CAPACITY_AND_88_FOLLOWUPS_AT_63',interfaceVerification:'FOUR_FORMATS_AUTHENTICATED_CRUD_63',pending:'Sin pendientes conocidos en las familias y patrones definidos. No se garantiza cualquier redacción imaginable; encabezados, rasgos internos y datos privados no se puntúan. Encargo Inglés común2–6 finalizado; detenerse sin iniciar otra asignatura.'})
+}
 writeFileSync(root+'ingles-6-cotejo-fuente.json',JSON.stringify(report,null,2)+'\n')
 const review=JSON.parse(readFileSync(root+'revision.json','utf8'));assert.equal(review.sourceSha256,report.sourceSha256);review.scopes=[...(review.scopes??[]).filter(s=>s.id!==scope.id),{id:scope.id,...status}]
 const concepts=scope.elements.CONCEPT,layout={scopeId:scope.id,provenance:'PDF_COLUMNS_VISUALLY_REVIEWED',headingIds:[concepts[0].id],groups:[...concepts.slice(1,14).map(c=>({id:c.id,title:c.text.replace(/^•\s*/,''),memberIds:[]})),{id:concepts[14].id,title:'Vocabulario',memberIds:concepts.slice(15,32).map(c=>c.id)},{id:concepts[32].id,title:'Expresiones',memberIds:concepts.slice(33,37).map(c=>c.id)},{id:concepts[37].id,title:'Gramática: formas y usos',memberIds:concepts.slice(38).map(c=>c.id)}]}
