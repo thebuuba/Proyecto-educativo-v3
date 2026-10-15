@@ -50,8 +50,8 @@ export function requestedGradeFiveLexicon(description:string){
  const selected=requestedLanguageFeatures(englishGradeFiveLexicon.filter(f=>f.category==='expression'||lexical),text).filter(f=>!['date','time'].includes(f.id)||/expresiones para/.test(text)||/\b(?:expres\w*|comunic\w*|decir\w*|indic\w*) (?:una |la )?(?:fecha|hora)\b/.test(text)).map(f=>({...f,category:englishGradeFiveLexicon.find(original=>original.id===f.id)!.category}))
  return combineEnglishFeatureAlternatives(text,selected)
 }
-export function gradeFiveLexicalCriterion(f:LexicalFeature,text:string,mode:string):ContextualTopicCriterion{
- const c=englishLexicalCriterion(f,text,['analysis','comparison','research'].includes(mode)?'reading':mode,'ing-5',f.category)
+export function gradeFiveLexicalCriterion(f:LexicalFeature,text:string,mode:string,scope='ing-5'):ContextualTopicCriterion{
+ const c=englishLexicalCriterion(f,text,['analysis','comparison','research'].includes(mode)?'reading':mode,scope,f.category)
  if(mode!=='comparison')return c
  const target=`${f.category==='expression'?'las expresiones para':'el vocabulario de'} ${f.name}`
  const levels:NonNullable<ContextualTopicCriterion['progressionLevels']>=[

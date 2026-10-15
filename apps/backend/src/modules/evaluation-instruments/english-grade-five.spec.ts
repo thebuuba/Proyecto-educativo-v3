@@ -5,6 +5,10 @@ import {evaluationCatalogForVersion} from './catalog-current'
 const context={level:'SECONDARY' as const,grade:5,cycle:2,subjectCode:'ING',subjectName:'Inglés',optativeExitName:null}
 const propose=(description:string,preferredInstrumentType:'rubrica'|'lista-cotejo'|'escala'|'lista-ponderada'='rubrica',maxScore=20,title='Actividad')=>recommend({activityTitle:title,description,preferredInstrumentType,maxScore,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
 describe('Quinto común: funciones de PDF163–168',()=>{
+ it('interactuar en la consulta simulada usa el proveedor propio de quinto',()=>{
+  const p=propose('Interactuarán en inglés en una consulta médica simulada, con la ficha de un personaje ficticio.')
+  expect(p.activityType).toBe('ORAL_INTERACTION');expect(p.criteria.map(c=>c.templateId)).toContain('ing-5-medical-interaction')
+ })
  it('mantiene concordancia de los descriptores de sugerencia',()=>{
   const c=propose(fixtures.find(f=>f.id==='suggestion')!.description).criteria.find(c=>c.templateId==='ing-5-suggestion')!
   expect(c.progressionLevels![1]).toMatch(/^La sugerencia solicitada o comunicada /)

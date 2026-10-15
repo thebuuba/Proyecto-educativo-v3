@@ -1,5 +1,10 @@
 # Avance durable — cobertura secundaria
 
+## Retomar sexto — 15/10/2026
+
+Quinto cerrado/publicado `45e5fdb18d5e0a691351c8070648eea559757743`, remoto igual y árbol limpio. Sexto parcial: fuente169–174 cotejada/159registros/16grupos, funciones11, gramática58/134, léxico17/expresiones4, estrategias23/géneros/contexto/composición conectados. [Punto de avance](ingles-6-punto-de-avance.md). .62 congelado; .63 solo código. Completar regresión/builds, instalación/HTTP/cuatro CRUD/snapshots/históricos y revisión antes de publicar el cierre. Seguimiento5: interactuar en consulta simulada reconocido, pendiente HTTP63. Detenerse tras sexto, sin otro bloque.
+
+
 ## Quinto verificado — 15/10/2026
 
 Inglés común5.º verificado en sus familias y patrones definidos, catálogo local62;61 congelado. Fuente156/15; backend29.331/86, frontend6.140 final y regresión reciente12.020/5, inventario9/builds/diff. HTTP187+8+4cap en61 y40seguimientos62; cuatro CRUD auténticos en62 cotejados con snapshots,129actuales/99completos/base intacta. Código publicado1f1abf9; [informe final](ingles-5-informe-final.md), [instrumentos completos](ingles-5-ejemplos-finales.md). Publicar cierre y continuar sexto común PDF169–174, último bloque autorizado. No francés ni optativas. Los estados anteriores son históricos.
