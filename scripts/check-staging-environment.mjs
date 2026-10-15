@@ -1,4 +1,5 @@
 import { pathToFileURL } from 'node:url'
+import { appendFileSync } from 'node:fs'
 
 export const STAGING_PROJECT_REF = 'eolgunypmtgrsyrjzcld'
 const STAGING_APP_ORIGIN = 'https://aula-base-staging.prroyectoeducativo00.workers.dev'
@@ -21,7 +22,27 @@ export function assertStagingEnvironment(env = process.env) {
   return { projectRef: STAGING_PROJECT_REF, appOrigin: STAGING_APP_ORIGIN }
 }
 
+export function stagingMigrationUrl(env = process.env) {
+  assertStagingEnvironment(env)
+  const db = new URL(env.SUPABASE_DB_URL)
+  // Session pooler verified against Development; GitHub-hosted runners cannot use its direct IPv6 endpoint.
+  db.hostname = 'aws-0-us-east-1.pooler.supabase.com'
+  db.username = `postgres.${STAGING_PROJECT_REF}`
+  db.port = '5432'
+  return db.href
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  try { console.log(`Destino de staging verificado: ${assertStagingEnvironment().projectRef}.`) }
+  try {
+    console.log(`Destino de staging verificado: ${assertStagingEnvironment().projectRef}.`)
+    if (process.argv.includes('--github-env')) {
+      if (process.env.GITHUB_ACTIONS !== 'true' || !process.env.GITHUB_ENV) throw new Error('La preparación de conexión requiere GitHub Actions.')
+      const connection = stagingMigrationUrl()
+      // Register the transformed credential with the runner before subsequent step env logs can display it.
+      console.log(`::add-mask::${connection}`)
+      appendFileSync(process.env.GITHUB_ENV, `SUPABASE_DB_URL=${connection}\n`)
+      console.log('Conexión de migraciones preparada mediante Session pooler de Development.')
+    }
+  }
   catch (error) { console.error(error.message); process.exitCode = 1 }
 }
