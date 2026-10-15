@@ -134,9 +134,12 @@ export function OnboardingPage() {
 
   useEffect(() => {
     if (!showWelcome) return
-    const timeout = window.setTimeout(() => navigate('/inicio', { replace: true }), 1400)
+    // El onboarding nuevo termina en la suscripción con la bienvenida marcada;
+    // reabrir el onboarding (`reset`) o una cuenta ya completada sigue entrando a Inicio.
+    const destination = resetMode ? '/inicio' : '/configuracion?tab=suscripcion&bienvenida=1'
+    const timeout = window.setTimeout(() => navigate(destination, { replace: true }), 1400)
     return () => window.clearTimeout(timeout)
-  }, [navigate, showWelcome])
+  }, [navigate, resetMode, showWelcome])
 
   const school = draft.selectedSchool
   const allowedLevels = useMemo(() => availableValues(school?.niveles, levelOptions, draft.correctingOffer), [draft.correctingOffer, school?.niveles])

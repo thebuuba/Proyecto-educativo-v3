@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
@@ -56,9 +56,9 @@ function makeOverview(overrides: Partial<BillingOverview> = {}): BillingOverview
   }
 }
 
-function renderPage() {
+function renderPage(initialEntries: string[] = ['/']) {
   return render(
-    <MemoryRouter>
+    <MemoryRouter initialEntries={initialEntries}>
       <BillingPage />
     </MemoryRouter>,
   )
@@ -284,5 +284,70 @@ describe('BillingPage', () => {
     ).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: /actualizar/i })).toBeInTheDocument()
     expect(screen.getByText('Soporte')).toBeInTheDocument()
+  })
+
+  it('muestra la bienvenida de prueba sin iniciarla al montar y solo al confirmar', async () => {
+    const user = userEvent.setup()
+    mocked.getBillingOverview.mockResolvedValue(
+      makeOverview({ access: { allowed: true, reason: 'legacy', until: null } }),
+    )
+
+    renderPage(['/?bienvenida=1'])
+
+    expect(await screen.findByText(/bienvenido a aulabase/i)).toBeInTheDocument()
+    expect(mocked.startTrial).not.toHaveBeenCalled()
+
+    await user.click(screen.getByRole('button', { name: /comenzar prueba de 14 días/i }))
+
+    await waitFor(() => expect(mocked.startTrial).toHaveBeenCalledTimes(1))
+  })
+
+  it.each([true, false])('muestra la bienvenida con acceso legacy permitido y módulo %s', async (enabled) => {
+    mocked.getBillingOverview.mockResolvedValue(makeOverview({
+      enabled,
+      access: { allowed: true, reason: 'legacy', until: null },
+    }))
+    renderPage(['/?bienvenida=1'])
+    expect(await screen.findByText(enabled ? 'Bienvenido a AulaBase' : 'Tu cuenta ya está lista')).toBeInTheDocument()
+    expect(Boolean(screen.queryByRole('button', { name: /comenzar prueba de 14 días/i }))).toBe(enabled)
+    expect(mocked.startTrial).not.toHaveBeenCalled()
+  })
+
+  it('oculta la invitación de bienvenida si ya tiene prueba activa', async () => {
+    mocked.getBillingOverview.mockResolvedValue(
+      makeOverview({
+        trial: { startsAt: '2026-10-01T00:00:00.000Z', endsAt: '2026-10-15T00:00:00.000Z' },
+      }),
+    )
+
+    renderPage(['/?bienvenida=1'])
+
+    await screen.findByText(/cobertura efectiva/i)
+    expect(screen.queryByText(/bienvenido a aulabase/i)).not.toBeInTheDocument()
+  })
+
+  it('oculta la invitación de bienvenida si ya tiene cobertura vigente', async () => {
+    mocked.getBillingOverview.mockResolvedValue(
+      makeOverview({
+        access: { allowed: true, reason: 'paid', until: '2026-11-15T00:00:00.000Z' },
+      }),
+    )
+
+    renderPage(['/?bienvenida=1'])
+
+    await screen.findByText(/cobertura efectiva/i)
+    expect(screen.queryByText(/bienvenido a aulabase/i)).not.toBeInTheDocument()
+  })
+
+  it('indica con honestidad que la prueba no está disponible si el módulo está apagado', async () => {
+    mocked.getBillingOverview.mockResolvedValue(
+      makeOverview({ enabled: false, access: { allowed: true, reason: 'legacy', until: null } }),
+    )
+
+    renderPage(['/?bienvenida=1'])
+
+    expect(await screen.findByText(/cuando el servidor habilite la contratación/i)).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /comenzar prueba/i })).not.toBeInTheDocument()
+    expect(mocked.startTrial).not.toHaveBeenCalled()
   })
 })

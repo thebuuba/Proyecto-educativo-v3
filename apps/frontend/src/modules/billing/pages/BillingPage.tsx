@@ -20,6 +20,7 @@ import {
   TriangleAlert,
 } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
@@ -118,10 +119,18 @@ type BillingPageProps = {
 
 export function BillingPage({ embedded = false }: BillingPageProps = {}) {
   const { overview, loading, error, refetch } = useBilling()
+  const [searchParams] = useSearchParams()
   const [pending, setPending] = useState<string | null>(null)
   const [notice, setNotice] = useState<Notice | null>(null)
   const [checkoutPrice, setCheckoutPrice] = useState<BillingPrice | null>(null)
   const [cancelOpen, setCancelOpen] = useState(false)
+
+  // La bienvenida del onboarding solo invita cuando aún no hay prueba ni cobertura;
+  // si el módulo está apagado se informa la indisponibilidad sin ofrecer la prueba.
+  const welcomeRequested = searchParams.get('bienvenida') === '1'
+  const showWelcome =
+    welcomeRequested && overview !== null && !overview.trial &&
+    ['legacy', 'expired'].includes(overview.access.reason)
 
   async function run(key: string, action: () => Promise<unknown>, successText: string) {
     setPending(key)
@@ -141,6 +150,14 @@ export function BillingPage({ embedded = false }: BillingPageProps = {}) {
   }
 
   const busy = (key: string) => pending === key
+
+  function startTrialFromWelcome() {
+    void run(
+      'trial',
+      () => startTrial(),
+      'Prueba gratuita iniciada. No se realizará ningún cobro al terminar sin tu autorización.',
+    )
+  }
 
   async function handlePortal() {
     setPending('portal')
@@ -254,19 +271,21 @@ export function BillingPage({ embedded = false }: BillingPageProps = {}) {
             </FeedbackBanner>
           ) : null}
 
+          {showWelcome ? (
+            <WelcomeTrialNotice
+              enabled={overview.enabled}
+              pending={busy('trial')}
+              onStartTrial={startTrialFromWelcome}
+            />
+          ) : null}
+
           <AccessCard overview={overview} />
 
           <div className="grid min-w-0 gap-5 xl:grid-cols-2">
             <TrialCard
               overview={overview}
               pending={busy('trial')}
-              onStartTrial={() =>
-                void run(
-                  'trial',
-                  () => startTrial(),
-                  'Prueba gratuita iniciada. No se realizará ningún cobro al terminar sin tu autorización.',
-                )
-              }
+              onStartTrial={startTrialFromWelcome}
             />
             <PlansCard
               overview={overview}
@@ -416,6 +435,41 @@ function AccessCard({ overview }: { overview: BillingOverview }) {
         </ul>
       </CardContent>
     </Card>
+  )
+}
+
+function WelcomeTrialNotice({
+  enabled,
+  pending,
+  onStartTrial,
+}: {
+  enabled: boolean
+  pending: boolean
+  onStartTrial: () => void
+}) {
+  return (
+    <FeedbackBanner tone={enabled ? 'info' : 'warning'}>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex min-w-0 items-start gap-3">
+          <SemanticIcon icon={enabled ? Gift : TriangleAlert} tone={enabled ? 'info' : 'warning'} />
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-foreground">
+              {enabled ? 'Bienvenido a AulaBase' : 'Tu cuenta ya está lista'}
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {enabled
+                ? 'Activa tu prueba gratuita de 14 días: sin tarjeta y sin cobros automáticos al terminar.'
+                : 'La contratación está desactivada en este momento; cuando el servidor habilite la contratación podrás iniciar tu prueba.'}
+            </p>
+          </div>
+        </div>
+        {enabled ? (
+          <Button loading={pending} onClick={onStartTrial}>
+            Comenzar prueba de 14 días
+          </Button>
+        ) : null}
+      </div>
+    </FeedbackBanner>
   )
 }
 
