@@ -3,6 +3,8 @@ import assert from 'node:assert/strict'
 import { randomUUID } from 'node:crypto'
 import { createRequire } from 'node:module'
 import { readFile, readdir } from 'node:fs/promises'
+import { spawnSync } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
 const require = createRequire(new URL('../packages/database/package.json', import.meta.url))
 const { Client } = require('pg')
 const origin = new URL(process.env.BILLING_TEST_DATABASE_URL ?? 'postgresql://postgres@127.0.0.1:55439/postgres')
@@ -23,6 +25,7 @@ try {
       if not exists (select 1 from pg_roles where rolname = 'authenticated') then create role authenticated; end if;
       if not exists (select 1 from pg_roles where rolname = 'service_role') then create role service_role bypassrls; end if;
     end $$;
+    alter default privileges in schema public grant select, insert, update, delete on tables to anon, authenticated, service_role;
     create schema auth; create schema storage; create schema extensions;
     create schema supabase_migrations;
     create table supabase_migrations.schema_migrations (version text primary key);
@@ -57,6 +60,18 @@ try {
   // Additional behavioral scenarios are kept in SQL so the real constraints and policies execute.
   await db.query(await readFile(new URL('../supabase/tests/billing-access.sql', import.meta.url), 'utf8'))
   console.log('PASS: individual coverage, suspension, courtesy revocation, expiry, trial uniqueness and direct API isolation.')
+  if (process.argv.includes('--workflows')) {
+    const child = spawnSync(process.execPath, [fileURLToPath(new URL('./test-billing-workflows.mjs', import.meta.url))], {
+      stdio: 'inherit', env: { ...process.env, BILLING_WORKFLOW_DATABASE_URL: origin.toString() },
+    })
+    assert.equal(child.status, 0, 'Service workflows failed against isolated app_backend/RLS')
+  }
+  if (process.argv.includes('--worker')) {
+    const child = spawnSync(process.execPath, [fileURLToPath(new URL('./test-billing-worker.mjs', import.meta.url))], {
+      stdio: 'inherit', env: { ...process.env, BILLING_WORKFLOW_DATABASE_URL: origin.toString() },
+    })
+    assert.equal(child.status, 0, 'Cloudflare raw-body acceptance failed')
+  }
   if (process.argv.includes('--keep')) console.log(`BILLING_ACCEPTANCE_DATABASE=${origin.toString()}`)
 } finally {
   await db.end()

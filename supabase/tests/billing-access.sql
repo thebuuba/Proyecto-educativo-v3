@@ -11,9 +11,23 @@ insert into public.billing_plans (id,code,name) values ('40000000-0000-4000-8000
 insert into public.billing_accounts (id,user_id) values
  ('50000000-0000-4000-8000-000000000001','30000000-0000-4000-8000-000000000001'),
  ('50000000-0000-4000-8000-000000000002','30000000-0000-4000-8000-000000000002');
+insert into public.subjects (id,school_id,code,name) values
+ ('70000000-0000-4000-8000-000000000001','10000000-0000-4000-8000-000000000001','SYNTHETIC','Synthetic subject');
+insert into storage.objects (bucket_id,name,owner_id) values
+ ('activity-description-images','synthetic-owner/image.png','20000000-0000-4000-8000-000000000001');
 do $$ begin
  if not (app_private.billing_effective_access('30000000-0000-4000-8000-000000000001')->>'allowed')::boolean then raise exception 'Flags off must preserve access'; end if;
 end $$;
+do $$ begin
+ begin
+  update public.billing_runtime_settings set enforce_access = true;
+  raise exception 'Commercial enforcement accepted public academic object URLs';
+ exception when raise_exception then
+  if sqlerrm = 'Commercial enforcement accepted public academic object URLs' then raise; end if;
+ end;
+end $$;
+-- Synthetic-only private bucket setup. This does not migrate the real editor or its legacy URLs.
+update storage.buckets set public=false where id='activity-description-images';
 update public.billing_runtime_settings set enforce_access = true;
 insert into public.billing_courtesies (id,account_id,plan_id,starts_at,reason,granted_by) values
  ('60000000-0000-4000-8000-000000000001','50000000-0000-4000-8000-000000000001','40000000-0000-4000-8000-000000000001',now()-interval '1 day','Synthetic administrative courtesy','30000000-0000-4000-8000-000000000002');
@@ -21,6 +35,17 @@ do $$ begin
  if app_private.billing_effective_access('30000000-0000-4000-8000-000000000001')->>'reason' <> 'courtesy' then raise exception 'Courtesy not honored'; end if;
  if (app_private.billing_effective_access('30000000-0000-4000-8000-000000000002')->>'allowed')::boolean then raise exception 'School peer gained another owner coverage'; end if;
 end $$;
+set local role authenticated;
+select set_config('request.jwt.claim.sub','20000000-0000-4000-8000-000000000001',true);
+do $$ begin
+ if not exists (select 1 from public.subjects where code='SYNTHETIC') then raise exception 'Valid courtesy lost legitimate school access'; end if;
+ if not exists (select 1 from storage.objects where name='synthetic-owner/image.png') then raise exception 'Valid courtesy lost owned Storage access'; end if;
+end $$;
+select set_config('request.jwt.claim.sub','20000000-0000-4000-8000-000000000002',true);
+do $$ begin
+ if exists (select 1 from public.subjects where code='SYNTHETIC') then raise exception 'Expired school peer read academic data directly'; end if;
+end $$;
+reset role;
 update public.app_users set status='inactive' where id='30000000-0000-4000-8000-000000000001';
 do $$ begin
  if (app_private.billing_effective_access('30000000-0000-4000-8000-000000000001')->>'allowed')::boolean then raise exception 'Suspension must override courtesy'; end if;
@@ -48,6 +73,7 @@ do $$ begin
   raise exception 'Client elevated commercial permissions';
  exception when insufficient_privilege then null; end;
  if app_private.billing_current_user_allowed() then raise exception 'auth.uid mapping used wrong AppUser'; end if;
+ if exists (select 1 from public.subjects where code='SYNTHETIC') then raise exception 'Expired account bypassed academic RLS'; end if;
 end $$;
 reset role;
 rollback;
