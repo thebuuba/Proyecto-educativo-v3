@@ -1,9 +1,11 @@
 /**
- * Confirmación de contratación anticipada.
+ * Confirmación del mes gratuito con tarjeta.
  *
- * Aclara que activar el plan de pago ahora termina la prueba gratuita e inicia
- * un período pagado, y permite continuar con la prueba. Solo acepta destinos de
- * checkout `https` del sandbox de Paddle; nunca declara éxito desde la URL.
+ * Explica que hoy no se cobra, que el primer cobro ocurre al completar el mes
+ * con la fecha que confirme el proveedor, y que puede cancelarse antes. Exige
+ * aceptar de forma explícita la renovación automática y las condiciones; ninguna
+ * casilla viene preseleccionada. Solo acepta destinos de checkout `https` del
+ * sandbox de Paddle; nunca declara éxito desde la URL.
  */
 
 import { CreditCard } from 'lucide-react'
@@ -13,15 +15,18 @@ import { Button } from '@/components/ui/Button'
 import { Modal } from '@/components/ui/Modal'
 import { FeedbackBanner } from '@/components/ui/SemanticUI'
 import { createCheckout } from '@/modules/billing/services/billingService'
-import type { BillingPrice } from '@/modules/billing/types'
+import type { BillingOffer, BillingPrice } from '@/modules/billing/types'
 import {
   billingErrorMessage,
   formatAmount,
   isAuthorizedSandboxCheckoutUrl,
 } from '@/modules/billing/utils/billingFormat'
+import { dopReferenceNotice, offerPeriodLabel } from '@/modules/billing/utils/offer'
 
 type CheckoutDialogProps = {
   price: BillingPrice
+  /** Oferta aprobada; aporta la referencia DOP y el período de renovación. */
+  offer: BillingOffer
   trialActive: boolean
   environment: string
   /** Versión de condiciones publicada por el servidor; sin ella no se contrata. */
@@ -31,18 +36,27 @@ type CheckoutDialogProps = {
 
 export function CheckoutDialog({
   price,
+  offer,
   trialActive,
   environment,
   termsVersion,
   onClose,
 }: CheckoutDialogProps) {
-  const [accepted, setAccepted] = useState(false)
+  const [renewalAccepted, setRenewalAccepted] = useState(false)
+  const [conditionsAccepted, setConditionsAccepted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  const amount = formatAmount(price.amountMinor, price.currency)
+  const period = offerPeriodLabel(offer)
 
   async function handleConfirm() {
     if (!termsVersion) {
       setError('El servidor todavía no publica la versión de condiciones. No es posible contratar.')
+      return
+    }
+    if (!renewalAccepted || !conditionsAccepted) {
+      setError('Confirma la renovación automática y las condiciones antes de continuar.')
       return
     }
     setSubmitting(true)
@@ -50,7 +64,8 @@ export function CheckoutDialog({
     try {
       const result = await createCheckout({
         priceId: price.id,
-        acceptEarlyEnd: accepted,
+        acceptAutoRenewal: renewalAccepted,
+        acceptEarlyEnd: false,
         termsVersion,
       })
       if (result.url && isAuthorizedSandboxCheckoutUrl(result.url, environment)) {
@@ -70,8 +85,8 @@ export function CheckoutDialog({
 
   return (
     <Modal
-      title="Contratar plan de pago"
-      description={`${price.label} · ${formatAmount(price.amountMinor, price.currency)} / ${price.interval}`}
+      title="Activar mes gratuito"
+      description={`${price.label} · ${amount} / ${period}`}
       icon={CreditCard}
       tone="info"
       className="max-w-xl"
@@ -84,11 +99,24 @@ export function CheckoutDialog({
           se realizará un cobro real.
         </p>
 
+        <FeedbackBanner tone="info">
+          <div className="space-y-2 text-sm leading-6">
+            <p className="font-semibold text-foreground">Hoy no se cobra.</p>
+            <p>
+              El primer cobro se hará al completar el mes gratuito, por {amount} en USD, con la
+              fecha que confirme el proveedor al crear la suscripción.
+            </p>
+            <p>Si cancelas antes de esa fecha, no se te cobrará.</p>
+          </div>
+        </FeedbackBanner>
+
+        <p className="text-sm leading-6 text-muted-foreground">
+          Después se renueva automáticamente cada {period} por {amount}. {dopReferenceNotice(offer)}
+        </p>
+
         {trialActive ? (
           <FeedbackBanner tone="warning">
-            Si el pago se confirma, tu prueba gratuita termina y comienza un período pagado. Hasta
-            que el pago no se confirme, la prueba sigue activa. Puedes cerrar esta ventana y
-            continuar con la prueba cuando quieras.
+            La prueba ya utilizada conserva sus fechas. No se concede un segundo mes gratuito.
           </FeedbackBanner>
         ) : null}
 
@@ -103,13 +131,26 @@ export function CheckoutDialog({
           <input
             type="checkbox"
             className="mt-0.5 size-4 shrink-0 accent-[var(--primary)]"
-            checked={accepted}
+            checked={renewalAccepted}
             disabled={submitting || !termsVersion}
-            onChange={(event) => setAccepted(event.target.checked)}
+            onChange={(event) => setRenewalAccepted(event.target.checked)}
           />
           <span className="leading-5 text-foreground">
-            Confirmo que quiero iniciar un período pagado en cuanto se confirme el pago y que acepto
-            la versión de condiciones publicada por el servidor.
+            Confirmo la renovación automática cada {period} por {amount} hasta que cancele.
+          </span>
+        </label>
+
+        <label className="flex items-start gap-3 rounded-2xl border border-border bg-muted/30 p-4 text-sm">
+          <input
+            type="checkbox"
+            className="mt-0.5 size-4 shrink-0 accent-[var(--primary)]"
+            checked={conditionsAccepted}
+            disabled={submitting || !termsVersion}
+            onChange={(event) => setConditionsAccepted(event.target.checked)}
+          />
+          <span className="leading-5 text-foreground">
+            Acepto las condiciones: un mes gratuito con tarjeta y después renovación mensual
+            por {amount} hasta que cancele.
           </span>
         </label>
 
@@ -121,14 +162,14 @@ export function CheckoutDialog({
 
         <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
           <Button data-ui-action="cancel" variant="outline" disabled={submitting} onClick={onClose}>
-            Continuar con la prueba
+            Volver
           </Button>
           <Button
-            disabled={!accepted || !termsVersion}
+            disabled={!renewalAccepted || !conditionsAccepted || !termsVersion}
             loading={submitting}
             onClick={() => void handleConfirm()}
           >
-            Continuar al pago
+            Activar mes gratuito
           </Button>
         </div>
       </div>

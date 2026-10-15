@@ -18,6 +18,7 @@ export type BillingAccess = {
 
 /** Prueba gratuita única por cuenta. */
 export type BillingTrial = {
+  status?: string
   startsAt: string
   endsAt: string
 }
@@ -81,6 +82,38 @@ export type BillingPrice = {
   mode: string
 }
 
+/** Referencia cambiaria fechada del Banco Central; nunca la moneda del cargo. */
+export type BillingOfferReference = {
+  rate: number
+  date: string
+  sourceUrl: string
+}
+
+/** Prueba publicada por la oferta: un período gratuito con tarjeta obligatoria. */
+export type BillingOfferTrial = {
+  interval: string
+  intervalCount: number
+  requiresCard: boolean
+}
+
+/**
+ * Oferta aprobada publicada por el servidor.
+ *
+ * Es opcional: si falta, el cliente usa la constante compartida aprobada. La
+ * interfaz nunca inventa un `providerPriceId`; si el servidor no lo publica, el
+ * precio con tarjeta se busca entre los precios autorizados de `prices`.
+ */
+export type BillingOffer = {
+  amountMinor: number
+  currency: string
+  interval: string
+  intervalCount: number
+  trial: BillingOfferTrial
+  dopReference: BillingOfferReference
+  /** Precio del proveedor autorizado; `null` o ausente si no está publicado. */
+  providerPriceId?: string | null
+}
+
 /** Caso de soporte persistido. */
 export type BillingCase = {
   id: string
@@ -142,6 +175,8 @@ export type BillingOverview = {
   transfers: BillingTransfer[]
   subscriptions: BillingSubscription[]
   prices: BillingPrice[]
+  /** Oferta aprobada; si falta se usa la constante compartida. */
+  offer?: BillingOffer | null
   cases: BillingCase[]
   /** Avisos internos persistidos (`in_app`); no confirman un correo enviado. */
   notices: BillingNotice[]

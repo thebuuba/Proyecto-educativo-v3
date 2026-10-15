@@ -1,15 +1,14 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import * as billingService from '@/modules/billing/services/billingService'
-import type { BillingOverview } from '@/modules/billing/types'
+import type { BillingOverview, BillingPrice } from '@/modules/billing/types'
 import { BillingPage } from './BillingPage'
 
 vi.mock('@/modules/billing/services/billingService', () => ({
   getBillingOverview: vi.fn(),
-  startTrial: vi.fn(),
   createTransfer: vi.fn(),
   reportTransfer: vi.fn(),
   createCheckout: vi.fn(),
@@ -31,6 +30,15 @@ vi.mock('@/modules/billing/services/billingService', () => ({
 
 const mocked = vi.mocked(billingService)
 
+const offerPrice: BillingPrice = {
+  id: 'price-paddle',
+  label: 'Docente Completo',
+  amountMinor: 599,
+  currency: 'USD',
+  interval: 'month',
+  mode: 'paddle',
+}
+
 function makeOverview(overrides: Partial<BillingOverview> = {}): BillingOverview {
   return {
     enabled: true,
@@ -45,6 +53,7 @@ function makeOverview(overrides: Partial<BillingOverview> = {}): BillingOverview
     transfers: [],
     subscriptions: [],
     prices: [],
+    offer: null,
     cases: [],
     notices: [],
     commercialAdmin: false,
@@ -80,7 +89,7 @@ describe('BillingPage', () => {
     expect(
       await screen.findByText(/el canal de soporte aún no está configurado/i),
     ).toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: /iniciar prueba gratuita/i })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /activar mes gratuito/i })).not.toBeInTheDocument()
     expect(screen.queryByRole('button', { name: /enviar solicitud de soporte/i })).not.toBeInTheDocument()
   })
 
@@ -129,29 +138,69 @@ describe('BillingPage', () => {
     expect(screen.queryByText(/número de caso/i)).not.toBeInTheDocument()
   })
 
-  it('no permite contratar con tarjeta si el servidor no publica la versión de condiciones', async () => {
+  it('muestra la oferta aprobada con un mes con tarjeta y sin promesas de 14 días', async () => {
+    mocked.getBillingOverview.mockResolvedValue(makeOverview({ offer: null, prices: [] }))
+
+    renderPage()
+
+    await screen.findByText(/cobertura efectiva/i)
+    expect(screen.getAllByText(/US\$5\.99/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/mes gratuito/i).length).toBeGreaterThan(0)
+    expect(screen.queryByText(/14 días/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/sin tarjeta/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/sin cobro/i)).not.toBeInTheDocument()
+  })
+
+  it('muestra la referencia DOP con tasa, fecha y salvedad bancaria', async () => {
+    mocked.getBillingOverview.mockResolvedValue(makeOverview())
+
+    renderPage()
+
+    expect(await screen.findByText(/61\.6788/)).toBeInTheDocument()
+    expect(screen.getByText(/14 oct 2026/)).toBeInTheDocument()
+    expect(screen.getByText(/banco/i)).toBeInTheDocument()
+    expect(screen.getByText(/impuestos/i)).toBeInTheDocument()
+  })
+
+  it('no inicia la prueba ni el checkout al montar', async () => {
     mocked.getBillingOverview.mockResolvedValue(
-      makeOverview({
-        checkoutEnabled: true,
-        termsVersion: null,
-        prices: [
-          {
-            id: 'price-1',
-            label: 'Docente Completo',
-            amountMinor: 2900,
-            currency: 'USD',
-            interval: 'monthly',
-            mode: 'paddle',
-          },
-        ],
-      }),
+      makeOverview({ checkoutEnabled: true, prices: [offerPrice] }),
     )
 
     renderPage()
 
-    const button = await screen.findByRole('button', { name: /contratar con tarjeta/i })
-    expect(button).toBeDisabled()
+    await screen.findByText(/cobertura efectiva/i)
     expect(mocked.createCheckout).not.toHaveBeenCalled()
+
+    await userEvent.setup().click(screen.getAllByRole('button', { name: /activar mes gratuito/i })[0])
+
+    expect(await screen.findByRole('dialog')).toBeInTheDocument()
+    expect(mocked.createCheckout).not.toHaveBeenCalled()
+  })
+
+  it('no permite activar el mes con tarjeta si el servidor no publica la versión de condiciones', async () => {
+    mocked.getBillingOverview.mockResolvedValue(
+      makeOverview({ checkoutEnabled: true, termsVersion: null, prices: [offerPrice] }),
+    )
+
+    renderPage()
+
+    await screen.findByText(/cobertura efectiva/i)
+    expect(screen.queryByRole('button', { name: /activar mes gratuito/i })).not.toBeInTheDocument()
+    expect(screen.getAllByText(/la activación con tarjeta no está disponible/i).length).toBeGreaterThan(0)
+    expect(mocked.createCheckout).not.toHaveBeenCalled()
+  })
+
+  it('muestra indisponibilidad honesta cuando la oferta no está configurada', async () => {
+    mocked.getBillingOverview.mockResolvedValue(
+      makeOverview({ checkoutEnabled: false, eventsEnabled: false, prices: [] }),
+    )
+
+    renderPage()
+
+    await screen.findByText(/cobertura efectiva/i)
+    expect(screen.getAllByText(/la activación con tarjeta no está disponible/i).length).toBeGreaterThan(0)
+    expect(screen.queryByRole('button', { name: /activar mes gratuito/i })).not.toBeInTheDocument()
   })
 
   it('no ofrece tarjeta para un precio manual', async () => {
@@ -175,7 +224,7 @@ describe('BillingPage', () => {
     renderPage()
 
     expect(await screen.findByRole('button', { name: /solicitar transferencia/i })).toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: /contratar con tarjeta/i })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /activar mes gratuito/i })).not.toBeInTheDocument()
   })
 
   it('permite pedir soporte estando vencido y sin correo configurado si el módulo está activo', async () => {
@@ -286,31 +335,38 @@ describe('BillingPage', () => {
     expect(screen.getByText('Soporte')).toBeInTheDocument()
   })
 
-  it('muestra la bienvenida de prueba sin iniciarla al montar y solo al confirmar', async () => {
-    const user = userEvent.setup()
+  it('conserva las fechas históricas de la prueba sin iniciar operaciones', async () => {
     mocked.getBillingOverview.mockResolvedValue(
-      makeOverview({ access: { allowed: true, reason: 'legacy', until: null } }),
+      makeOverview({
+        trial: { startsAt: '2026-10-01T00:00:00.000Z', endsAt: '2026-10-15T00:00:00.000Z' },
+      }),
+    )
+
+    renderPage()
+
+    expect(await screen.findByText(/inició el/i)).toBeInTheDocument()
+    expect(screen.getByText(/finaliza el/i)).toBeInTheDocument()
+    expect(mocked.createCheckout).not.toHaveBeenCalled()
+  })
+
+  it('muestra la bienvenida sin iniciar operaciones y solo abre el diálogo al pulsar', async () => {
+    mocked.getBillingOverview.mockResolvedValue(
+      makeOverview({
+        checkoutEnabled: true,
+        prices: [offerPrice],
+        access: { allowed: true, reason: 'legacy', until: null },
+      }),
     )
 
     renderPage(['/?bienvenida=1'])
 
     expect(await screen.findByText(/bienvenido a aulabase/i)).toBeInTheDocument()
-    expect(mocked.startTrial).not.toHaveBeenCalled()
+    expect(mocked.createCheckout).not.toHaveBeenCalled()
 
-    await user.click(screen.getByRole('button', { name: /comenzar prueba de 14 días/i }))
+    await userEvent.setup().click(screen.getAllByRole('button', { name: /activar mes gratuito/i })[0])
 
-    await waitFor(() => expect(mocked.startTrial).toHaveBeenCalledTimes(1))
-  })
-
-  it.each([true, false])('muestra la bienvenida con acceso legacy permitido y módulo %s', async (enabled) => {
-    mocked.getBillingOverview.mockResolvedValue(makeOverview({
-      enabled,
-      access: { allowed: true, reason: 'legacy', until: null },
-    }))
-    renderPage(['/?bienvenida=1'])
-    expect(await screen.findByText(enabled ? 'Bienvenido a AulaBase' : 'Tu cuenta ya está lista')).toBeInTheDocument()
-    expect(Boolean(screen.queryByRole('button', { name: /comenzar prueba de 14 días/i }))).toBe(enabled)
-    expect(mocked.startTrial).not.toHaveBeenCalled()
+    expect(await screen.findByRole('dialog')).toBeInTheDocument()
+    expect(mocked.createCheckout).not.toHaveBeenCalled()
   })
 
   it('oculta la invitación de bienvenida si ya tiene prueba activa', async () => {
@@ -339,15 +395,33 @@ describe('BillingPage', () => {
     expect(screen.queryByText(/bienvenido a aulabase/i)).not.toBeInTheDocument()
   })
 
-  it('indica con honestidad que la prueba no está disponible si el módulo está apagado', async () => {
+  it('indica con honestidad que la activación no está disponible si el módulo está apagado', async () => {
     mocked.getBillingOverview.mockResolvedValue(
       makeOverview({ enabled: false, access: { allowed: true, reason: 'legacy', until: null } }),
     )
 
     renderPage(['/?bienvenida=1'])
 
-    expect(await screen.findByText(/cuando el servidor habilite la contratación/i)).toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: /comenzar prueba/i })).not.toBeInTheDocument()
-    expect(mocked.startTrial).not.toHaveBeenCalled()
+    expect(await screen.findAllByText(/la activación con tarjeta no está disponible/i)).not.toHaveLength(0)
+    expect(screen.queryByRole('button', { name: /activar mes gratuito/i })).not.toBeInTheDocument()
+    expect(mocked.createCheckout).not.toHaveBeenCalled()
+  })
+
+  it('no repite el verde de un pago confirmado sin consentimiento', async () => {
+    const user = userEvent.setup()
+    mocked.getBillingOverview.mockResolvedValue(
+      makeOverview({ checkoutEnabled: true, prices: [offerPrice] }),
+    )
+    mocked.createCheckout.mockResolvedValue({ url: null, status: 'ready' })
+
+    renderPage()
+
+    await user.click((await screen.findAllByRole('button', { name: /activar mes gratuito/i }))[0])
+    const dialog = await screen.findByRole('dialog')
+    expect(dialog).toBeInTheDocument()
+
+    // Sin marcar el consentimiento el diálogo no permite continuar.
+    expect(within(dialog).getByRole('button', { name: /activar mes gratuito/i })).toBeDisabled()
+    await waitFor(() => expect(mocked.createCheckout).not.toHaveBeenCalled())
   })
 })

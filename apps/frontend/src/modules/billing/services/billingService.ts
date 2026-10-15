@@ -28,11 +28,6 @@ export function getBillingOverview(): Promise<BillingOverview> {
   return api.get<BillingOverview>('/billing')
 }
 
-/** Inicia la prueba gratuita una sola vez por cuenta. */
-export function startTrial(): Promise<unknown> {
-  return api.post<unknown>('/billing/trial')
-}
-
 /** Crea una solicitud de transferencia para un precio autorizado. */
 export function createTransfer(priceId: string): Promise<unknown> {
   return api.post<unknown>('/billing/transfers', { priceId })
@@ -45,9 +40,16 @@ export function reportTransfer(transferId: string, bankReference: string): Promi
   })
 }
 
-/** Inicia un checkout sandbox del proveedor automático. */
+/**
+ * Inicia el mes gratuito con tarjeta en el proveedor automático.
+ *
+ * El servidor exige confirmar la renovación automática, el importe mensual
+ * y la versión de condiciones. Nunca se emite una prueba sin tarjeta
+ * ni se envía un precio no autorizado.
+ */
 export function createCheckout(input: {
   priceId: string
+  acceptAutoRenewal: boolean
   acceptEarlyEnd: boolean
   termsVersion: string
 }): Promise<CheckoutResult> {

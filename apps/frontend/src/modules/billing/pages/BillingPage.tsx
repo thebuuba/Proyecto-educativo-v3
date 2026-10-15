@@ -47,12 +47,12 @@ import {
   createTransfer,
   openPortal,
   reportTransfer,
-  startTrial,
   uploadTransferReceipt,
 } from '@/modules/billing/services/billingService'
 import type {
   BillingDocument,
   BillingNotice,
+  BillingOffer,
   BillingOverview,
   BillingPrice,
   BillingTransfer,
@@ -65,6 +65,14 @@ import {
   formatDateTime,
   isAuthorizedSandboxPortalUrl,
 } from '@/modules/billing/utils/billingFormat'
+import {
+  canStartCardCheckout,
+  dopReferenceNotice,
+  formatOfferAmount,
+  offerPeriodLabel,
+  resolveCardPrice,
+  resolveSubscriptionOffer,
+} from '@/modules/billing/utils/offer'
 
 type Notice = { tone: 'success' | 'danger'; text: string }
 
@@ -151,12 +159,16 @@ export function BillingPage({ embedded = false }: BillingPageProps = {}) {
 
   const busy = (key: string) => pending === key
 
-  function startTrialFromWelcome() {
-    void run(
-      'trial',
-      () => startTrial(),
-      'Prueba gratuita iniciada. No se realizará ningún cobro al terminar sin tu autorización.',
-    )
+  // Oferta aprobada y precio con tarjeta autorizado. La oferta se muestra
+  // aunque el checkout esté apagado; el botón de activación solo aparece si el
+  // servidor publica precio, habilitó checkout/eventos y publica condiciones.
+  const offer = overview ? resolveSubscriptionOffer(overview) : null
+  const cardPrice = overview ? resolveCardPrice(overview) : null
+  const canCheckout = overview ? canStartCardCheckout(overview) : false
+
+  /** Abre el diálogo del mes gratuito solo con el precio autorizado. */
+  function openFreeMonthCheckout() {
+    if (cardPrice) setCheckoutPrice(cardPrice)
   }
 
   async function handlePortal() {
@@ -271,24 +283,28 @@ export function BillingPage({ embedded = false }: BillingPageProps = {}) {
             </FeedbackBanner>
           ) : null}
 
-          {showWelcome ? (
+          {showWelcome && offer ? (
             <WelcomeTrialNotice
-              enabled={overview.enabled}
-              pending={busy('trial')}
-              onStartTrial={startTrialFromWelcome}
+              enabled={canCheckout}
+              onStartTrial={openFreeMonthCheckout}
             />
           ) : null}
 
           <AccessCard overview={overview} />
 
           <div className="grid min-w-0 gap-5 xl:grid-cols-2">
-            <TrialCard
-              overview={overview}
-              pending={busy('trial')}
-              onStartTrial={startTrialFromWelcome}
-            />
+            {offer ? (
+              <TrialCard
+                overview={overview}
+                offer={offer}
+                canCheckout={canCheckout}
+                onStartTrial={openFreeMonthCheckout}
+              />
+            ) : null}
             <PlansCard
               overview={overview}
+              cardPrice={cardPrice}
+              canCheckout={canCheckout}
               pending={pending}
               onCheckout={setCheckoutPrice}
               onTransfer={(price) =>
@@ -333,9 +349,10 @@ export function BillingPage({ embedded = false }: BillingPageProps = {}) {
         </>
       ) : null}
 
-      {checkoutPrice && overview ? (
+      {checkoutPrice && overview && offer ? (
         <CheckoutDialog
           price={checkoutPrice}
+          offer={offer}
           trialActive={Boolean(overview.trial)}
           environment={overview.environment}
           termsVersion={overview.termsVersion}
@@ -418,7 +435,8 @@ function AccessCard({ overview }: { overview: BillingOverview }) {
         <ul className="grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
           <li className="flex gap-2">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-warning" aria-hidden="true" />
-            La prueba no cobra ni pide tarjeta y la gestiona Aula Base.
+            El mes gratuito requiere tarjeta y se activa con el proveedor; después se renueva
+            automáticamente salvo que canceles.
           </li>
           <li className="flex gap-2">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
@@ -440,11 +458,9 @@ function AccessCard({ overview }: { overview: BillingOverview }) {
 
 function WelcomeTrialNotice({
   enabled,
-  pending,
   onStartTrial,
 }: {
   enabled: boolean
-  pending: boolean
   onStartTrial: () => void
 }) {
   return (
@@ -458,15 +474,13 @@ function WelcomeTrialNotice({
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
               {enabled
-                ? 'Activa tu prueba gratuita de 14 días: sin tarjeta y sin cobros automáticos al terminar.'
-                : 'La contratación está desactivada en este momento; cuando el servidor habilite la contratación podrás iniciar tu prueba.'}
+                ? 'Activa tu mes natural gratuito con tarjeta. Hoy no se cobra; el primer cargo se confirma con el proveedor al completar el mes.'
+                : 'Podrás activar tu mes gratuito con tarjeta cuando la contratación esté disponible; conservas tu acceso mientras tanto.'}
             </p>
           </div>
         </div>
         {enabled ? (
-          <Button loading={pending} onClick={onStartTrial}>
-            Comenzar prueba de 14 días
-          </Button>
+          <Button onClick={onStartTrial}>Activar mes gratuito</Button>
         ) : null}
       </div>
     </FeedbackBanner>
@@ -475,27 +489,36 @@ function WelcomeTrialNotice({
 
 function TrialCard({
   overview,
-  pending,
+  offer,
+  canCheckout,
   onStartTrial,
 }: {
   overview: BillingOverview
-  pending: boolean
+  offer: BillingOffer
+  canCheckout: boolean
   onStartTrial: () => void
 }) {
+  const amount = formatOfferAmount(offer)
+  const period = offerPeriodLabel(offer)
+  const active = overview.trial?.status === 'active' &&
+    new Date(overview.trial.endsAt).getTime() > new Date(overview.serverNow).getTime()
   return (
     <Card>
       <CardHeader className="flex items-start gap-3">
         <SemanticIcon icon={CalendarClock} tone="warning" />
         <div>
-          <CardTitle>Prueba gratuita</CardTitle>
-          <CardDescription>Única por cuenta, sin tarjeta y sin cobro automático.</CardDescription>
+          <CardTitle>{overview.trial ? 'Tu prueba gratuita' : 'Mes gratuito con tarjeta'}</CardTitle>
+          <CardDescription>
+            {overview.trial ? 'Consulta las fechas de prueba confirmadas para tu cuenta.' :
+              <>Un mes natural gratuito; después, {amount} cada {period} con renovación automática.</>}
+          </CardDescription>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
         {overview.trial ? (
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
-              <StatusBadge tone="warning">Prueba activa</StatusBadge>
+              <StatusBadge tone={active ? 'warning' : 'neutral'}>{active ? 'Prueba activa' : 'Prueba finalizada'}</StatusBadge>
               <span className="text-sm text-muted-foreground">
                 Inició el {formatDate(overview.trial.startsAt)}
               </span>
@@ -507,22 +530,31 @@ function TrialCard({
               <p className="mt-1 text-sm text-muted-foreground">
                 Queda:{' '}
                 <ServerCountdown target={overview.trial.endsAt} serverNow={overview.serverNow} fallback="—" />.
-                Al terminar no se cobra sin tu autorización.
+                Conservamos las fechas que registró el servidor.
               </p>
             </div>
           </div>
         ) : (
-          <p className="text-sm text-muted-foreground">
-            {overview.enabled
-              ? 'Puedes iniciar la prueba una vez. No pedimos tarjeta ni generamos cobros durante la prueba.'
-              : 'La prueba todavía no está habilitada por el servidor.'}
-          </p>
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <p>
+              Hoy no se cobra. El primer cobro se hará al completar el mes gratuito, con la fecha
+              que confirme el proveedor al crear la suscripción.
+            </p>
+            <p>
+              Importe aprobado: {amount} en USD. {dopReferenceNotice(offer)}
+            </p>
+          </div>
         )}
 
-        {!overview.trial && overview.enabled ? (
-          <Button loading={pending} onClick={onStartTrial}>
-            Iniciar prueba gratuita
-          </Button>
+        {!overview.trial ? (
+          canCheckout ? (
+            <Button onClick={onStartTrial}>Activar mes gratuito</Button>
+          ) : (
+            <p className="text-sm text-muted-foreground">
+              La activación con tarjeta no está disponible en este momento. Puedes pagar por
+              transferencia si el servidor la habilita o pedir soporte; no se borran tus datos.
+            </p>
+          )
         ) : null}
       </CardContent>
     </Card>
@@ -531,11 +563,15 @@ function TrialCard({
 
 function PlansCard({
   overview,
+  cardPrice,
+  canCheckout,
   pending,
   onCheckout,
   onTransfer,
 }: {
   overview: BillingOverview
+  cardPrice: BillingPrice | null
+  canCheckout: boolean
   pending: string | null
   onCheckout: (price: BillingPrice) => void
   onTransfer: (price: BillingPrice) => void
@@ -552,28 +588,20 @@ function PlansCard({
       <CardContent className="space-y-4">
         <div className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
           <p className="rounded-2xl bg-muted/40 p-3">
-            <span className="font-semibold text-foreground">Renovación automática:</span> el proveedor
-            cobra solo al inicio de cada período y puedes consultar su fecha confirmada.
+            <span className="font-semibold text-foreground">Renovación automática:</span> tras el
+            mes gratuito, el proveedor cobra solo al inicio de cada período y puedes consultar su
+            fecha confirmada.
           </p>
           <p className="rounded-2xl bg-muted/40 p-3">
             <span className="font-semibold text-foreground">Transferencia:</span> haces el ingreso y
             reportas la referencia. La cobertura se activa solo cuando administración confirma el
-            ingreso; no autoriza débito mensual.
+            ingreso; no autoriza débito mensual ni sustituye la prueba con tarjeta.
           </p>
         </div>
 
         {!overview.enabled ? (
           <FeedbackBanner tone="warning">
             La contratación está desactivada. No se crean nuevos pagos ni transferencias.
-          </FeedbackBanner>
-        ) : null}
-
-        {overview.enabled &&
-        !overview.termsVersion &&
-        overview.prices.some((price) => price.mode === 'paddle') ? (
-          <FeedbackBanner tone="warning">
-            El servidor todavía no publica la versión de condiciones; la contratación con tarjeta
-            permanece deshabilitada hasta que la publique.
           </FeedbackBanner>
         ) : null}
 
@@ -599,19 +627,13 @@ function PlansCard({
                 </div>
                 {overview.enabled ? (
                   <div className="flex flex-wrap items-center gap-2">
-                    {price.mode === 'paddle' && overview.checkoutEnabled ? (
+                    {price.mode === 'paddle' && canCheckout && cardPrice?.id === price.id ? (
                       <Button
                         size="sm"
                         className="rounded-full"
-                        disabled={!overview.termsVersion}
-                        title={
-                          overview.termsVersion
-                            ? undefined
-                            : 'El servidor no publica la versión de condiciones.'
-                        }
                         onClick={() => onCheckout(price)}
                       >
-                        Contratar con tarjeta
+                        Activar mes gratuito
                       </Button>
                     ) : null}
                     {price.mode === 'manual' && overview.bankInstructions ? (
