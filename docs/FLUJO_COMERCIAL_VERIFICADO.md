@@ -56,3 +56,13 @@ El propietario pidió recuperar el diseño anterior de las tarjetas de precios y
 - La revisión delegada a OpenCode volvió a fallar por error de servicio (`err_e410d38c`); no produjo cambios ni aprobación de revisión. El agente principal revisó el resultado.
 
 Este ajuste se aplica a localhost y a la rama de trabajo. No publica la web principal ni activa cobros.
+
+## Llamada a la acción de prueba gratuita
+
+El propietario pidió una presentación comercial más atractiva. La tarjeta Docente destaca el mes gratuito antes del precio y usa un botón azul «Probar un mes gratis» que enlaza a `/registro`. El precio sigue siendo US$7.99 mensuales después del mes gratis; se explican tarjeta obligatoria, referencia DOP y renovación automática. «Primero crearás tu cuenta» aclara el siguiente paso sin atribuir activación al enlace.
+
+La prueba del CTA falló antes del cambio y pasó después. Suite de promoción: 3 archivos y 4 pruebas, código 0; backend: 85 archivos y 6.648 pruebas, código 0. Compilaciones independientes de backend y frontend y lint de la página/prueba: código 0. Se conserva la configuración de pagos sin cambios. Evidencia visual local: `output/screenshots/precios-probar-gratis.png`.
+
+OpenCode no pudo completar la revisión de solo lectura por un error de servicio (`err_3947cba4`); el principal revisó el diff. No se habilitaron cobros ni se publicaron cambios en la web principal.
+
+`pnpm cloudflare:build` final: código 0, cuatro tareas correctas y dry-run sin despliegue. Se restauró el backend local tras liberar la DLL de Prisma para compilar.

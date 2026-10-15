@@ -32,17 +32,18 @@ export function PricingPage() {
         <Card className="mx-auto mt-10 max-w-sm rounded-[28px] border border-border shadow-sm sm:mt-12">
           <CardContent className="p-6 sm:p-8">
             <h2 className="text-2xl font-semibold text-foreground">Docente</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Para un docente que organiza sus propios cursos</p>
-            <p className="mt-6 text-3xl font-semibold text-foreground">{amount}</p>
-            <p className="mt-1 text-xs text-muted-foreground">por docente · facturación mensual</p>
-            <p className="mt-2 text-sm text-muted-foreground">≈ {formatDopReference(SUBSCRIPTION_OFFER)} / mes</p>
+            <p className="mt-2 text-sm text-muted-foreground">Tus clases, evaluaciones y planificaciones, en un solo lugar.</p>
             <div className="mt-5"><StatusBadge tone="info">Primer mes gratis con tarjeta</StatusBadge></div>
+            <p className="mt-4 text-4xl font-semibold tracking-tight text-foreground">{amount}<span className="ml-1 text-base font-normal text-muted-foreground">/ mes</span></p>
+            <p className="mt-1 text-sm text-muted-foreground">Mensual, después de tu mes gratis</p>
+            <p className="mt-2 text-sm text-muted-foreground">≈ {formatDopReference(SUBSCRIPTION_OFFER)} / mes</p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Después se renueva automáticamente cada mes. Puedes cancelar antes del primer cobro desde Ajustes.
+              Renovación automática. Cancela antes del primer cobro desde Ajustes.
             </p>
-            <Link to="/registro" className="mt-6 flex min-h-12 items-center justify-center gap-2 rounded-full border border-border px-5 text-sm font-semibold text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-              Crear cuenta <ArrowRight size={16} aria-hidden="true" />
+            <Link to="/registro" className="mt-6 flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+              Probar un mes gratis <ArrowRight size={16} aria-hidden="true" />
             </Link>
+            <p className="mt-2 text-center text-xs text-muted-foreground">Primero crearás tu cuenta.</p>
             <ul className="mt-7 space-y-3 border-t border-border pt-6">
               {teacherFeatures.map((feature) => (
                 <li key={feature} className="flex gap-2.5 text-sm leading-relaxed">
