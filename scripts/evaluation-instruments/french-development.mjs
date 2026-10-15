@@ -2,7 +2,6 @@ import assert from 'node:assert/strict'
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { parseEnv } from 'node:util'
 import { createRequire } from 'node:module'
-import { createHash } from 'node:crypto'
 import { developmentEnvironment, developmentProjectRef } from '../cloudflare-development-environment.mjs'
 
 // Credentials remain in ignored local files; no environment, cookies or login responses are logged.
@@ -11,7 +10,6 @@ const require = createRequire(new URL('../../apps/backend/package.json', import.
 const { prisma } = require('@aula/database')
 const { evaluationCatalogCurrent, evaluationCatalogForVersion } = require('../../apps/backend/dist/modules/evaluation-instruments/catalog-current.js')
 const { seedEvaluationCatalog } = require('../../apps/backend/dist/modules/evaluation-instruments/catalog-operations.js')
-const { canonicalJson } = require('../../apps/backend/dist/modules/evaluation-instruments/evaluation-instruments.service.js')
 const qa = JSON.parse(readFileSync('.development-qa-context.local', 'utf8'))
 assert.equal(qa.project, developmentProjectRef)
 assert.equal(qa.schoolId, 'bc96bc29-98f2-4e80-84d9-506126e20a4c')
@@ -19,23 +17,26 @@ const gradeNumber = Number(process.argv[3] ?? 1)
 assert(evaluationCatalogCurrent.frenchModules?.some(module => module.grade === gradeNumber), 'Grade not connected in this build')
 const output = '.wrangler/french-source'
 mkdirSync(output, { recursive: true })
-const hash = value => createHash('sha256').update(canonicalJson(value)).digest('hex')
 try {
   const school = await prisma.school.findUniqueOrThrow({ where: { id: qa.schoolId } })
   assert.match(school.name, /ficticio QA Development/)
   const user = await prisma.appUser.findUniqueOrThrow({ where: { id: qa.userId } })
   assert.equal(user.schoolId, qa.schoolId)
   if (process.argv[2] === 'install') {
-    const before = await prisma.evaluationCatalogRelease.findMany({ select: { version: true, payload: true } })
-    for (const release of before) {
-      const source = evaluationCatalogForVersion(release.version)
-      if (release.version === 'evaluation-2026.69') assert.equal(hash(source), hash(release.payload), 'Historical .69 differs from installed payload')
+    // Compare historical fingerprints inside PostgreSQL instead of downloading every large payload twice.
+    const fingerprints = () => prisma.$queryRawUnsafe('select version, md5(payload::text) as hash from evaluation_catalog_releases order by version')
+    const before = await fingerprints()
+    const priorVersion = `evaluation-2026.${Number(evaluationCatalogCurrent.version.split('.').at(-1)) - 1}`
+    if (before.some(release => release.version === priorVersion)) {
+      const source = evaluationCatalogForVersion(priorVersion); assert(source)
+      const [match] = await prisma.$queryRawUnsafe('select payload = $2::jsonb as identical from evaluation_catalog_releases where version = $1', priorVersion, JSON.stringify(source))
+      assert.equal(match.identical, true, 'Frozen previous release differs from installed payload')
     }
     const first = await seedEvaluationCatalog(prisma)
     const second = await seedEvaluationCatalog(prisma)
     assert.equal(second, 'UNCHANGED')
-    const after = await prisma.evaluationCatalogRelease.findMany({ select: { version: true, payload: true } })
-    for (const release of before) assert.equal(hash(after.find(r => r.version === release.version)?.payload), hash(release.payload), 'Historical release changed')
+    const after = await fingerprints()
+    for (const release of before) assert.equal(after.find(r => r.version === release.version)?.hash, release.hash, 'Historical release changed')
     const result = { project: developmentProjectRef, catalog: evaluationCatalogCurrent.version, first, second, preservedReleases: before.length }
     writeFileSync(`${output}/grade-${gradeNumber}-catalog.json`, JSON.stringify(result, null, 2) + '\n')
     console.log(JSON.stringify(result))

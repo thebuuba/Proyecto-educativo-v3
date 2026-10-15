@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { parseEnv } from 'node:util'
 import { createRequire } from 'node:module'
 import { createHash, randomUUID } from 'node:crypto'
@@ -15,6 +15,10 @@ const require = createRequire(new URL('../../apps/backend/package.json', import.
 const { prisma } = require('@aula/database')
 const grade = Number(process.argv[2] ?? 1)
 const recheck = process.argv.includes('--recheck')
+const progressFile = `.wrangler/french-source/grade-${grade}-http-progress.json`
+if (!recheck) assert(!existsSync(progressFile) && !existsSync(`.wrangler/french-source/grade-${grade}-http.json`), 'Prior run exists: inspect its result; use --recheck for completed evidence, never repeat writes blindly')
+const progress = { grade, started: new Date().toISOString(), phase: 'READ_ONLY_GENERATION', writes: [] }
+const checkpoint = () => writeFileSync(progressFile, JSON.stringify(progress, null, 2) + '\n')
 const context = JSON.parse(readFileSync(`.wrangler/french-source/grade-${grade}-context.json`, 'utf8'))
 assert.equal(context.project, project)
 assert.equal(context.schoolId, 'bc96bc29-98f2-4e80-84d9-506126e20a4c')
@@ -67,6 +71,7 @@ try {
     assert.equal(interpreted.suggestedActivityType, f.activity, f.id)
     // Full Cartesian coverage is automated; HTTP exercises every case and total,
     // rotates the formats, then persists and reopens all four formats below.
+    // Keep remote checks sequential: local Wrangler/DNS is intermittently unstable.
     for (const type of [formats[fixtureIndex % formats.length]]) for (const total of [20, 17.35]) {
       const input = { sectionSubjectId: context.sectionSubjectId, activityTitle: 'QA Francés · ' + f.id, description: f.description, maxScore: total, participationMode: 'INDIVIDUAL', preferredInstrumentType: type, competencyBlock: 'b1' }
       const proposal = (await request('/evaluation-instruments/recommend', input)).data
@@ -78,7 +83,8 @@ try {
     console.log(JSON.stringify({ phase: 'generation', project, grade, case: f.id, verified: generated }))
   }
   const savedEvidence = [], examples = []
-  const description = 'En parejas, simulen un encuentro con roles: se presentarán en francés indicando nombre, edad y nacionalidad, y responderán a su interlocutor.'
+  const description = JSON.parse(readFileSync('data/evaluation-instruments/french-persistence-cases.json', 'utf8'))[grade]
+  assert(description, 'No reviewed persistence case for grade')
   const detected = detectTeachingStrategy({ ...academic, description })
   assert.equal(detected.id, 'SIMULATION')
   for (const [index, type] of (recheck ? [] : formats).entries()) {
@@ -96,7 +102,9 @@ try {
     assert.deepEqual(validateInstrumentDefinition(type, fields, total), [])
     const snapshot = alignRecommendationWithFields(proposal, fields, total); assert(snapshot)
     const input = { creationId: randomUUID(), sectionSubjectId: context.sectionSubjectId, schoolYearId: context.schoolYearId, academicPeriodId: context.academicPeriodId, competencyBlockId: 'b1', name, description, maxScore: total, activityType: 'individual', instrumentType: type, instrumentCriteria: fields, instrumentSnapshot: snapshot, pedagogicalActivityType: proposal.activityType, teachingStrategyId: detected.id, teachingStrategyOrigin: 'AUTO' }
+    progress.phase = 'SAVING'; progress.writes.push({ creationId: input.creationId, name, type }); checkpoint()
     const saved = (await request('/activities', input)).data
+    progress.writes.at(-1).activityId = saved.id; checkpoint()
     const reopen = async () => (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data.find(activity => activity.id === saved.id)
     const original = await reopen(); assert(original)
     assert.equal(original.teachingStrategyId, detected.id)
@@ -112,6 +120,7 @@ try {
     assert.equal(row.instrumentId, before.instrumentId); assert.equal(row.instrumentSnapshotId, before.snapshotId)
     assert.equal(row.teachingStrategyId, 'CASE_STUDY')
     savedEvidence.push({ type, total, activityId: saved.id, instrumentId: row.instrumentId, snapshotId: row.instrumentSnapshotId, instrumentHash: hash(before), manualTextAndWeightsPreserved: true, strategyOnlyExact: true })
+    progress.writes.at(-1).verified = savedEvidence.at(-1); checkpoint()
     examples.push({ type, description, total, catalog: proposal.catalogVersion, levels: proposal.levels, criteria: proposal.criteria.map(({ id, sourceReferences, ...criterion }) => criterion) })
     console.log(JSON.stringify({ phase: 'saved-and-reopened', grade, type, activityId: saved.id, instrumentUnchanged: true }))
   }
@@ -130,5 +139,6 @@ try {
     const report = { project, base, grade, subject: 'FRA', verification: 'AUTHENTICATED_HTTP_AND_DATABASE_NOT_BROWSER', interpreted: fixtures.length, generated, savedEvidence, transientFailures, browser: 'PENDING' }
     writeFileSync(`.wrangler/french-source/grade-${grade}-http.json`, JSON.stringify(report, null, 2) + '\n')
     writeFileSync(`.wrangler/french-source/grade-${grade}-examples.json`, JSON.stringify(examples, null, 2) + '\n')
+    progress.phase = 'COMPLETE'; checkpoint()
   }
 } finally { await prisma.$disconnect() }

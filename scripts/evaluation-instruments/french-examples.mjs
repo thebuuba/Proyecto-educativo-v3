@@ -1,10 +1,11 @@
 import { createRequire } from 'node:module'
-import { writeFileSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
 const require = createRequire(import.meta.url)
 const { recommend } = require('../../apps/backend/dist/modules/evaluation-instruments/recommendation-engine.js')
 const grade = Number(process.argv[2] ?? 1)
 const context = { level: 'SECONDARY', grade, cycle: grade <= 3 ? 1 : 2, modalityCode: 'academic', subjectCode: 'FRA', subjectName: 'Francés', optativeExitName: null }
-const description = 'En parejas, simulen un encuentro con roles: se presentarán en francés indicando nombre, edad y nacionalidad, y responderán a su interlocutor.'
+const description = JSON.parse(readFileSync('data/evaluation-instruments/french-persistence-cases.json', 'utf8'))[grade]
+if (!description) throw Error('No reviewed persistence case for this grade')
 const lines = [`# Francés ${grade}.º — cuatro instrumentos completos de ejemplo`, '', 'Adaptaciones evaluativas de AulaBase, no rúbricas oficiales de MINERD. Generadas con el motor compilado; la evidencia HTTP/DB y la visual se documentan por separado en el informe del grado.', '', '**Consigna:** ' + description, '', 'Puntaje de estos ejemplos: **17.35** (elección explícita para ilustrar el reparto; el creador comienza con puntuación pendiente). Las cantidades se reparten en centésimas. El título de la actividad no se inserta en los criterios.', '']
 const cell = text => String(text).replaceAll('|', '\\|').replaceAll('\n', ' ')
 for (const format of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']) {

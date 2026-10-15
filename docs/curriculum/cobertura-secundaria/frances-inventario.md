@@ -37,6 +37,6 @@ Estrategias observables posibles: localizar información en lo escuchado/leído,
 
 ## Estado y reproducción
 
-Inventario y revisión visual completos; **ningún grado está implementado por este inventario**. Proveedores y evidencias automatizadas/HTTP/DB/navegador se registran independientemente en la matriz. Siguiente bloque: 1.º.
+Inventario y revisión visual completos. Este inventario por sí solo no acredita implementación: proveedores y evidencias automatizadas/HTTP/DB/navegador se registran independientemente en la matriz y los informes de cada grado.
 
 `node scripts/evaluation-instruments/review-french-source.mjs` comprueba el hash, genera la matriz y renderiza las mallas en `.wrangler/french-source/` (ignorado). Acepta números de página para revisar límites adicionales. No instala dependencias, no toca bases y no marca revisión visual automáticamente. Los estados manuales de revisión y cobertura se conservan al regenerar.

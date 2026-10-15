@@ -14,9 +14,15 @@ Inventario contrastado visualmente: Francés común de 1.º–6.º, PDF 181–19
 
 Último bloque implementado y verificado mediante automatización y HTTP/DB: 1.º, catálogo `evaluation-2026.70`, instalado idempotentemente en Development; `.69` congelado y comparado con DB sin diferencias. Contexto QA 1.º/FRA `947b09d3-b2d0-4817-ac1c-5b8e9a6f3577`, centro ficticio existente. Suites completas backend 36.968 y frontend 37.576; focalizadas finales 128/103; tres builds finales aprobados. Doce interpretaciones, 24 recomendaciones y cuatro formatos guardados/editados/reabiertos. Revalidación tras el último build: cuatro recomendaciones y cuatro instrumentos reabiertos idénticos. [Informe](frances-1.md), [ejemplos completos](frances-1-ejemplos.md). Recorrido visual QA pendiente, expresamente separado de lo comprobado.
 
+## Último bloque verificado — 2.º
+
+Último commit publicado antes de este bloque: `3e5bbb84` (1.º). Segundo grado implementado y verificado; el commit que contiene esta actualización es su cierre. Catálogo `.71` instalado (`CREATED`/`UNCHANGED`), `.70` congelado y tres releases previos preservados. Contexto QA FRA `2f89026e-d2ef-4878-b783-145748c95c06`. Pruebas finales: backend completo 37.085, focalizadas 245 backend/203 frontend; tres builds finales aprobados. Las 12 interpretaciones, 24 recomendaciones y cuatro formatos guardados/editados/reabiertos pasaron. Revalidación sobre build final: cuatro recomendaciones y cuatro instrumentos reabiertos idénticos. [Evidencia persistente](frances-2-verificacion.json), [informe](frances-2.md), [ejemplos](frances-2-ejemplos.md). **No repetir escrituras**.
+
+Una revalidación de solo lectura falló al salir Wrangler por DNS `ENOTFOUND`; tras reiniciar, la revalidación final pasó. Servidor local launcher PID 46088, listener observado PID 11120; comprobar antes de iniciar otro. Log `dev-2-stdout.log`. No hay proceso HTTP pendiente. La pestaña personal mantiene el asset antiguo `/assets/index-yWh82mQY.js`; no se recargó ni se alteró su borrador. Recorrido visual QA pendiente por ausencia de navegador aislado.
+
 ## Siguiente acción concreta
 
-Cerrar este bloque con commit/push y continuar 2.º: información personal, vivienda, rutinas y preferencias; gramática, léxico y géneros de PDF 185–188. Congelar `.70` antes de publicar `.71`; no tocar snapshots ni releases anteriores. Los procesos HTTP terminaron. Servidor único: launcher observado PID 29456, listener PID 10808; comprobar antes de iniciar otro. Entry final `/assets/index-1Rd3evFh.js`. Logs/credenciales solo en rutas ignoradas. Chrome conserva la sesión personal; IAB aislado no disponible, QA visual pendiente. Continuar secuencialmente hasta 6.º, sin otras asignaturas ni subagentes.
+Publicar este cierre de 2.º, después congelar `.71` e implementar 3.º con PDF 189–192: ubicación/direcciones, clima, acciones en curso y planes futuros, con sus contenidos específicos. No tocar snapshots ni releases anteriores. Continuar secuencialmente hasta 6.º, sin otras asignaturas ni subagentes.
 
 ## Decisiones y límites
 

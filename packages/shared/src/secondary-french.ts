@@ -5,22 +5,25 @@ import { languageInstrumentIntent } from './language-instrument-intent'
 import { frenchGradeOneFeatures, frenchGradeOneGrammar, frenchGradeOneStrategies, frenchRow } from './secondary-french-grade-1'
 import { frenchGradeOneGenres, frenchGradeOneLexicon } from './secondary-french-grade-1-details'
 import { frenchDeliveryCriteria } from './secondary-french-delivery'
-import { frenchOral, frenchWritten, frenchReceptive, frenchRequirementText, normalizeFrenchTask, parseFrenchTask, type FrenchAction, type FrenchTask } from './secondary-french-task'
+import { frenchGradeTwoFeatures } from './secondary-french-grade-2'
+import { frenchOral, frenchWritten, frenchReceptive, frenchRequirementText, normalizeFrenchTask, parseFrenchTask, type FrenchAction, type FrenchTask, type FrenchFeature } from './secondary-french-task'
 export { frenchGradeOneModule } from './secondary-french-grade-1'
+export { frenchGradeTwoModule } from './secondary-french-grade-2'
 
 export function commonSecondaryFrench(context?: InstrumentAcademicContext | null) {
-  if (context?.level !== 'SECONDARY' || context.grade !== 1 || context.optativeExitName) return false
+  if (context?.level !== 'SECONDARY' || ![1, 2].includes(context.grade) || context.optativeExitName) return false
   const code = context.subjectCode.trim().toUpperCase()
   return code === 'FRA' || (!code && /^(?:(?:lenguas? extranjeras? )?frances|francais)$/.test(normalizeFrenchTask(context.subjectName ?? '')))
 }
 const features = [...frenchGradeOneFeatures, ...frenchGradeOneGrammar, ...frenchGradeOneStrategies, ...frenchGradeOneGenres, ...frenchGradeOneLexicon]
+const gradeFeatures = (grade: number) => grade === 2 ? frenchGradeTwoFeatures : features
 export function resolveCommonFrenchTask(title: string, description: string, context?: InstrumentAcademicContext | null): FrenchTask | null {
-  return commonSecondaryFrench(context) ? parseFrenchTask(title, description, context!.grade, features) : null
+  return commonSecondaryFrench(context) ? parseFrenchTask(title, description, context!.grade, gradeFeatures(context!.grade)) : null
 }
 
-function actionCriteria(action: FrenchAction): ContextualTopicCriterion[] {
+function actionCriteria(action: FrenchAction, features: FrenchFeature[]): ContextualTopicCriterion[] {
   if (action.alternatives) {
-    const branches = action.alternatives.map(a => actionCriteria(a))
+    const branches = action.alternatives.map(a => actionCriteria(a, features))
     // One chosen route is sufficient; never require the union of the alternative products.
     return [frenchRow('alternative', 'Cumplimiento de una alternativa autorizada', [0, 1, 2, 3, 4].map(level =>
       `En la alternativa elegida: ${branches.map(rows => rows.map(row => row.progressionLevels[level]).join(' ')).join(' O BIEN: ')}`,
@@ -54,7 +57,8 @@ function actionCriteria(action: FrenchAction): ContextualTopicCriterion[] {
 
 export function commonFrenchCriteria(task: FrenchTask): ContextualTopicCriterion[] {
   const rows: ContextualTopicCriterion[] = []
-  for (const [index, action] of task.actions.entries()) for (const criterion of actionCriteria(action)) {
+  for (const [index, action] of task.actions.entries()) for (const raw of actionCriteria(action, gradeFeatures(task.grade))) {
+    const criterion = { ...raw, templateId: raw.templateId.replace(/^fra-1-/, `fra-${task.grade}-`) }
     if (rows.some(row => row.templateId === criterion.templateId && row.observable === criterion.observable)) continue
     rows.push(rows.some(row => row.templateId === criterion.templateId) ? { ...criterion, templateId: `${criterion.templateId}:${action.mode}:${index}` } : criterion)
   }

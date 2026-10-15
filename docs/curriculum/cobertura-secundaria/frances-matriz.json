@@ -2700,15 +2700,22 @@
         ]
       },
       "coverage": {
-        "inventory": "VISUALLY_VERIFIED",
-        "implementation": "PENDING",
-        "providers": [],
-        "automated": "NOT_RUN",
-        "httpDatabase": "NOT_RUN",
-        "browser": "NOT_RUN",
-        "evidence": [],
+        "inventory": "VISUALLY_REVIEWED",
+        "implementation": "CONNECTED_DEFINED_PATTERNS",
+        "providers": [
+          "frances-comunicacion-2"
+        ],
+        "catalog": "evaluation-2026.71",
+        "automated": "PASSED: 245 backend French / 203 frontend French, including previous grades",
+        "httpDatabase": "PASSED: 12 interpretations, 24 recommendations, 4 formats saved/edited/reopened",
+        "browser": "PENDING_ISOLATED_QA_BROWSER_UNAVAILABLE",
+        "evidence": [
+          "frances-2.md",
+          "frances-2-ejemplos.md",
+          "frances-2-verificacion.json"
+        ],
         "pending": [
-          "Implement and verify in grade order."
+          "Recorrido visual QA en sesión separada; patrones lingüísticos acotados, sin comprensión universal."
         ]
       },
       "pedagogicalInventory": {
