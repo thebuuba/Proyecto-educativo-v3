@@ -1,0 +1,516 @@
+[
+  {
+    "id": "declarative",
+    "sourceIndices": [
+      43
+    ],
+    "forms": [
+      "oraciones enunciativas",
+      "oraciones afirmativas",
+      "oraciones negativas",
+      "declarative sentences"
+    ],
+    "purpose": "afirmación"
+  },
+  {
+    "id": "interrogative-sentences",
+    "sourceIndices": [
+      43
+    ],
+    "forms": [
+      "oraciones interrogativas",
+      "preguntas directas",
+      "interrogative sentences"
+    ],
+    "purpose": "preguntar"
+  },
+  {
+    "id": "present-simple",
+    "sourceIndices": [
+      43,
+      45
+    ],
+    "forms": [
+      "presente simple",
+      "present simple",
+      "simple present"
+    ],
+    "purpose": "información"
+  },
+  {
+    "id": "present-continuous",
+    "sourceIndices": [
+      43
+    ],
+    "forms": [
+      "presente continuo",
+      "present continuous"
+    ],
+    "purpose": "plan"
+  },
+  {
+    "id": "past-simple",
+    "sourceIndices": [
+      43,
+      45
+    ],
+    "forms": [
+      "pasado simple",
+      "past simple",
+      "simple past"
+    ],
+    "purpose": "acontecimiento"
+  },
+  {
+    "id": "present-perfect",
+    "sourceIndices": [
+      43
+    ],
+    "forms": [
+      "presente perfecto",
+      "present perfect"
+    ],
+    "purpose": "reciente"
+  },
+  {
+    "id": "used-to",
+    "sourceIndices": [
+      43
+    ],
+    "forms": [
+      "used to"
+    ],
+    "purpose": "hábito pasado"
+  },
+  {
+    "id": "imperative",
+    "sourceIndices": [
+      44
+    ],
+    "forms": [
+      "imperativo",
+      "imperative"
+    ],
+    "purpose": "instrucción"
+  },
+  {
+    "id": "past-continuous",
+    "sourceIndices": [
+      45
+    ],
+    "forms": [
+      "pasado continuo",
+      "past continuous"
+    ],
+    "purpose": "desarrollo"
+  },
+  {
+    "id": "future-continuous",
+    "sourceIndices": [
+      46
+    ],
+    "forms": [
+      "futuro continuo",
+      "future continuous",
+      "future progressive"
+    ],
+    "purpose": "plan"
+  },
+  {
+    "id": "going-to",
+    "sourceIndices": [
+      46
+    ],
+    "forms": [
+      "going to",
+      "be going to"
+    ],
+    "purpose": "resultado futuro"
+  },
+  {
+    "id": "will",
+    "sourceIndices": [
+      46
+    ],
+    "forms": [
+      "will"
+    ],
+    "purpose": "predicción"
+  },
+  {
+    "id": "hope",
+    "sourceIndices": [
+      46
+    ],
+    "forms": [
+      "hope"
+    ],
+    "purpose": "esperanza"
+  },
+  {
+    "id": "wish",
+    "sourceIndices": [
+      46
+    ],
+    "forms": [
+      "wish"
+    ],
+    "purpose": "deseo"
+  },
+  {
+    "id": "would-like",
+    "sourceIndices": [
+      46
+    ],
+    "forms": [
+      "would like"
+    ],
+    "purpose": "deseo"
+  },
+  {
+    "id": "verb-complements",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "verbos seguidos de infinitivo",
+      "verbos seguidos de gerundio",
+      "verbos que admiten infinitivo o gerundio"
+    ],
+    "purpose": "complemento"
+  },
+  {
+    "id": "phrasal-verbs",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "phrasal verbs",
+      "verbos frasales",
+      "turn up",
+      "fill out",
+      "get along with",
+      "look after"
+    ],
+    "purpose": "verbo y su partícula"
+  },
+  {
+    "id": "there-be",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "there be",
+      "there is",
+      "there are",
+      "there was",
+      "there were",
+      "there has been",
+      "there have been",
+      "there will be",
+      "there is going to be"
+    ],
+    "purpose": "existencia"
+  },
+  {
+    "id": "conditional",
+    "sourceIndices": [
+      47,
+      48
+    ],
+    "forms": [
+      "condicional",
+      "condicional cero",
+      "zero conditional",
+      "primer condicional",
+      "first conditional"
+    ],
+    "purpose": "condición"
+  },
+  {
+    "id": "passive",
+    "sourceIndices": [
+      49
+    ],
+    "forms": [
+      "voz pasiva",
+      "voz pasiva en presente",
+      "voz pasiva en pasado",
+      "voz pasiva en futuro",
+      "passive voice",
+      "present passive",
+      "past passive",
+      "future passive"
+    ],
+    "purpose": "acción que recibe"
+  },
+  {
+    "id": "indirect-questions",
+    "sourceIndices": [
+      49
+    ],
+    "forms": [
+      "preguntas indirectas",
+      "embedded questions",
+      "indirect questions",
+      "preguntas integradas"
+    ],
+    "purpose": "pregunta dentro"
+  },
+  {
+    "id": "nominal-gerund",
+    "sourceIndices": [
+      49
+    ],
+    "forms": [
+      "gerundio en función sustantiva",
+      "gerundio como sustantivo",
+      "gerunds as nouns"
+    ],
+    "purpose": "actividad como elemento nominal"
+  },
+  {
+    "id": "zero-article",
+    "sourceIndices": [
+      49
+    ],
+    "forms": [
+      "omisión del artículo",
+      "artículo cero",
+      "zero article"
+    ],
+    "purpose": "referencia general"
+  },
+  {
+    "id": "frequency-adverbs",
+    "sourceIndices": [
+      49
+    ],
+    "forms": [
+      "adverbios de frecuencia",
+      "adverbs of frequency"
+    ],
+    "purpose": "frecuencia"
+  },
+  {
+    "id": "preposition-use",
+    "sourceIndices": [
+      50
+    ],
+    "forms": [
+      "uso de preposiciones",
+      "preposiciones solicitadas"
+    ],
+    "purpose": "relación"
+  },
+  {
+    "id": "time-prepositions",
+    "sourceIndices": [
+      51
+    ],
+    "forms": [
+      "preposiciones de tiempo",
+      "prepositions of time"
+    ],
+    "purpose": "referencia temporal"
+  },
+  {
+    "id": "sentence-final-preposition",
+    "sourceIndices": [
+      51
+    ],
+    "forms": [
+      "preposición al final de la oración",
+      "sentence final preposition"
+    ],
+    "purpose": "complemento"
+  },
+  {
+    "id": "exclamation",
+    "forms": [
+      "oraciones exclamativas",
+      "exclamatory sentences"
+    ],
+    "sourceIndices": [
+      43
+    ],
+    "purpose": "reacción"
+  },
+  {
+    "id": "question-tags",
+    "forms": [
+      "question tags"
+    ],
+    "sourceIndices": [
+      49
+    ],
+    "purpose": "confirmación"
+  },
+  {
+    "id": "comparative",
+    "forms": [
+      "grado comparativo y superlativo",
+      "comparative",
+      "superlative"
+    ],
+    "sourceIndices": [
+      49
+    ],
+    "purpose": "comparación"
+  },
+  {
+    "id": "present-participle",
+    "forms": [
+      "participio presente",
+      "present participle"
+    ],
+    "sourceIndices": [
+      49
+    ],
+    "purpose": "efecto"
+  },
+  {
+    "id": "past-participle",
+    "forms": [
+      "participio pasado",
+      "past participle"
+    ],
+    "sourceIndices": [
+      49
+    ],
+    "purpose": "estado"
+  },
+  {
+    "id": "time-adverbs",
+    "forms": [
+      "adverbios de tiempo",
+      "adverbs of time"
+    ],
+    "sourceIndices": [
+      49
+    ],
+    "purpose": "cuándo"
+  },
+  {
+    "id": "manner-adverbs",
+    "forms": [
+      "adverbios de modo",
+      "adverbs of manner"
+    ],
+    "sourceIndices": [
+      49
+    ],
+    "purpose": "cómo"
+  },
+  {
+    "id": "place-prepositions",
+    "forms": [
+      "preposiciones de lugar",
+      "prepositions of place"
+    ],
+    "sourceIndices": [
+      51
+    ],
+    "purpose": "espacio"
+  },
+  {
+    "id": "interrogative-pronouns",
+    "forms": [
+      "pronombres interrogativos",
+      "interrogative pronouns"
+    ],
+    "sourceIndices": [
+      51
+    ],
+    "purpose": "preguntar"
+  },
+  {
+    "id": "reflexive-pronouns",
+    "forms": [
+      "pronombres reflexivos",
+      "reflexive pronouns"
+    ],
+    "sourceIndices": [
+      51
+    ],
+    "purpose": "mismo"
+  },
+  {
+    "id": "relative-pronouns",
+    "forms": [
+      "pronombres relativos",
+      "relative pronouns"
+    ],
+    "sourceIndices": [
+      51
+    ],
+    "purpose": "referente"
+  },
+  {
+    "id": "cause-connectors",
+    "forms": [
+      "conectores de causa y consecuencia",
+      "conectores de causalidad",
+      "cause and effect connectors"
+    ],
+    "sourceIndices": [
+      52
+    ],
+    "purpose": "causa"
+  },
+  {
+    "id": "contrast-connectors",
+    "forms": [
+      "conectores de contraste",
+      "contrast connectors"
+    ],
+    "sourceIndices": [
+      52
+    ],
+    "purpose": "contrastar"
+  },
+  {
+    "id": "concession-connectors",
+    "forms": [
+      "conectores de concesión",
+      "concession connectors"
+    ],
+    "sourceIndices": [
+      52
+    ],
+    "purpose": "concesión"
+  },
+  {
+    "id": "purpose-connectors",
+    "forms": [
+      "conectores de finalidad",
+      "purpose connectors"
+    ],
+    "sourceIndices": [
+      52
+    ],
+    "purpose": "finalidad"
+  },
+  {
+    "id": "sequence-connectors",
+    "forms": [
+      "conectores de secuencia",
+      "sequence connectors"
+    ],
+    "sourceIndices": [
+      53
+    ],
+    "purpose": "orden"
+  },
+  {
+    "id": "time-connectors",
+    "forms": [
+      "conectores de tiempo",
+      "temporal connectors"
+    ],
+    "sourceIndices": [
+      54
+    ],
+    "purpose": "momentos"
+  }
+]
