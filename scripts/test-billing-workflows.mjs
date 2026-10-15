@@ -162,11 +162,16 @@ try {
     // The recovery fixture now has paid coverage. Explicitly expire it before
     // exercising the separate HTTP recovery route scenario below.
     await db.query("update billing_service_periods set starts_at=now()-interval '2 days', ends_at=now()-interval '1 day' where account_id=$1",[accountId])
+    const checkoutTransaction = providerId('txn')
+    const checkoutOwner = (await db.query('select id from billing_accounts where user_id=$1',[one.id])).rows[0].id
+    await db.query("insert into billing_subscriptions(id,account_id,plan_id,price_id,provider,metadata) values ($1,$2,$3,$4,'paddle',$5)",
+      [randomUUID(),checkoutOwner,planId,paddlePriceId,JSON.stringify({checkoutTransactionId:checkoutTransaction})])
 
     // Boot the actual Node application: this also verifies DI, global DTO validation and raw-body capture.
     Object.assign(process.env, { DATABASE_URL: url.toString(), NODE_ENV: 'test', JWT_SECRET: 'SYNTHETIC-LOCAL-JWT-SECRET-ONLY',
       SUPABASE_URL: 'http://127.0.0.1:54321', SUPABASE_SERVICE_ROLE_KEY: 'SYNTHETIC-LOCAL-ONLY',
       PADDLE_SANDBOX_API_KEY: 'pdl_sdbx_apikey_SYNTHETIC-ONLY' })
+    process.env.PADDLE_SANDBOX_CLIENT_TOKEN = `test_${'a'.repeat(27)}`
     backend('@nestjs/common').Logger.overrideLogger(false)
     const { createApplication } = backend('./dist/bootstrap.js')
     const app = await createApplication()
@@ -178,6 +183,18 @@ try {
     },body:body?JSON.stringify(body):undefined})
     try {
       assert.equal((await request(null,'/billing')).status,401)
+      const checkoutPage = await request(one,`/billing/checkout-page?_ptxn=${checkoutTransaction}`)
+      assert.equal(checkoutPage.status,200)
+      assert.match(checkoutPage.headers.get('content-type'),/text\/html/)
+      assert.match(checkoutPage.headers.get('cache-control'),/no-store/)
+      const checkoutHtml = await checkoutPage.text()
+      assert.match(checkoutHtml,/Paddle.Environment.set\("sandbox"\)/)
+      assert.ok(!checkoutHtml.includes(process.env.PADDLE_SANDBOX_API_KEY))
+      const nonce = checkoutPage.headers.get('content-security-policy').match(/'nonce-([^']+)'/)[1]
+      assert.ok(checkoutHtml.includes(`nonce="${nonce}"`))
+      assert.equal((await request(two,`/billing/checkout-page?_ptxn=${checkoutTransaction}`)).status,404)
+      assert.equal((await request(null,`/billing/checkout-page?_ptxn=${checkoutTransaction}`)).status,401)
+      console.log('PASS: actual HTML checkout page enforces reserved owner, sandbox token, nonce CSP and no-store without exposing the API key.')
       assert.equal((await request(two,'/students')).status,402)
       assert.equal((await request(two,'/billing')).status,200)
       assert.equal((await request(schoolAdmin,'/billing/admin')).status,403)

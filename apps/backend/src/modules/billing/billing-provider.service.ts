@@ -5,6 +5,7 @@ import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import type { CheckoutDto } from './billing.dto'
 import { audit, authorizedPrice, billingAccount, billingNow, requireBilling, withBillingOwner } from './billing-store'
 import { createPaddleSandboxClient, PADDLE_SANDBOX_API_ORIGIN } from './paddle-sandbox'
+import { checkoutBaseUrl, checkoutClientToken, checkoutPageHtml, checkoutPath } from './billing-checkout-page'
 
 const acting = ['INCOMPLETE', 'TRIALING', 'ACTIVE', 'PAST_DUE', 'PAUSED'] as const
 const metadata = (value: Prisma.JsonValue): Prisma.JsonObject => value && typeof value === 'object' && !Array.isArray(value) ? value : {}
@@ -61,6 +62,8 @@ export class BillingProviderService {
     const config = requireBilling()
     if (!config.checkout) throw new ServiceUnavailableException('Las nuevas contrataciones están desactivadas.')
     if (!config.events || !process.env.PADDLE_SANDBOX_WEBHOOK_SECRET) throw new ServiceUnavailableException('Configura la recepción fiable de eventos sandbox antes de iniciar una contratación automática.')
+    checkoutClientToken()
+    const paymentLink = checkoutBaseUrl()
     if (!process.env.BILLING_TERMS_VERSION || dto.termsVersion !== process.env.BILLING_TERMS_VERSION) {
       throw new BadRequestException('Revisa y acepta las condiciones vigentes del servidor.')
     }
@@ -96,16 +99,16 @@ export class BillingProviderService {
     if (!reserved.created) {
       const state = metadata(reserved.subscription.metadata)
       if (reserved.subscription.status !== 'INCOMPLETE') throw new ConflictException('Ya existe una suscripción. Usa el portal para gestionarla.')
-      return { url: typeof state.checkoutUrl === 'string' ? sandboxDestination(state.checkoutUrl) : null,
-        status: typeof state.checkoutUrl === 'string' ? 'pending' : 'verifying' }
+      const transactionId = typeof state.checkoutTransactionId === 'string' ? state.checkoutTransactionId : null
+      return { url: transactionId ? checkoutPath(transactionId) : null, status: transactionId ? 'pending' : 'verifying' }
     }
     const state = metadata(reserved.subscription.metadata)
     try {
       const customerId = await providerCustomer(reserved.accountId, user)
       const remote = await client.createTransaction({ customerId, priceId: reserved.providerPriceId,
-        customData: { checkoutOperationId: state.checkoutOperationId } })
+        customData: { checkoutOperationId: state.checkoutOperationId }, checkoutUrl: paymentLink })
       if (remote.customerId !== customerId || !/^txn_[a-z\d]{26}$/.test(remote.id)) throw new ServiceUnavailableException('La transacción sandbox no corresponde al titular.')
-      const checkoutUrl = remote.checkoutUrl ? sandboxDestination(remote.checkoutUrl) : null
+      const checkoutUrl = checkoutPath(remote.id)
       await withBillingOwner(user.id, async (db) => {
         const latest = await db.billingSubscription.findUniqueOrThrow({ where: { id: reserved.subscription.id } })
         await db.billingSubscription.update({ where: { id: latest.id }, data: { metadata: {
@@ -121,6 +124,19 @@ export class BillingProviderService {
       })
       throw new ServiceUnavailableException('El intento quedó pendiente de verificación sandbox. No se creará otro automáticamente; contacta soporte.')
     }
+  }
+
+  async checkoutPage(user: AuthenticatedUser, transactionId: string, nonce: string) {
+    const config = requireBilling()
+    if (!config.checkout || !config.events) throw new ServiceUnavailableException('El checkout sandbox está desactivado.')
+    checkoutPath(transactionId)
+    const token = checkoutClientToken()
+    const reserved = await prisma.billingSubscription.findFirst({ where: {
+      account: { userId: user.id, status: 'ACTIVE' }, provider: 'PADDLE', environment: 'SANDBOX', status: 'INCOMPLETE',
+      metadata: { path: ['checkoutTransactionId'], equals: transactionId },
+    } })
+    if (!reserved) throw new NotFoundException('Intento de pago no disponible para tu cuenta. Revisa Suscripción y pagos.')
+    return checkoutPageHtml(token, nonce)
   }
 
   async portal(user: AuthenticatedUser) {

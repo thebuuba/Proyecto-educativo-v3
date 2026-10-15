@@ -182,6 +182,13 @@ describe('remote operations', () => {
     })
   })
 
+  it('passes the server payment page to Paddle instead of assuming a hosted provider URL', async () => {
+    const { calls, client } = okClient(jsonResponse(201, { data: { id: 'txn_01h00000000000000000000000' } }))
+    await client.createTransaction({ customerId: 'ctm_01h00000000000000000000000', priceId: 'pri_01h00000000000000000000000',
+      checkoutUrl: 'https://staging.example.invalid/api/v1/billing/checkout-page' })
+    expect(JSON.parse(calls[0].init.body ?? '{}').checkout).toEqual({ url: 'https://staging.example.invalid/api/v1/billing/checkout-page' })
+  })
+
   it('maps the provider-owned period, custom data, price ids and update time defensively', async () => {
     const transaction = {
       data: {

@@ -38,6 +38,15 @@ describe('formatAmount', () => {
 })
 
 describe('autorización de URLs sandbox del proveedor', () => {
+  it('admite solo la página local exacta para un intento reservado', () => {
+    const transaction = `txn_${'a'.repeat(26)}`
+    expect(isAuthorizedSandboxCheckoutUrl(`/api/v1/billing/checkout-page?_ptxn=${transaction}`, 'sandbox')).toBe(true)
+    for (const value of [`//evil.invalid/api/v1/billing/checkout-page?_ptxn=${transaction}`,
+      '/api/v1/billing/checkout-page?_ptxn=invalid', `/api/v1/billing/checkout-page?_ptxn=${transaction}&next=evil`,
+      `/api/v1/billing/checkout-page/other?_ptxn=${transaction}`]) {
+      expect(isAuthorizedSandboxCheckoutUrl(value, 'sandbox')).toBe(false)
+    }
+  })
   it('acepta solo destinos https del sandbox sin credenciales ni puerto', () => {
     for (const host of [
       'sandbox-checkout.paddle.com',

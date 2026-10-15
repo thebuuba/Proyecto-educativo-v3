@@ -25,6 +25,7 @@ type WorkerEnv = {
   BILLING_TERMS_VERSION?: string
   PADDLE_SANDBOX_API_KEY?: string
   PADDLE_SANDBOX_WEBHOOK_SECRET?: string
+  PADDLE_SANDBOX_CLIENT_TOKEN?: string
   BILLING_MAINTENANCE_ACTOR_ID?: string
 }
 
@@ -45,6 +46,7 @@ async function initialize(workerEnv: WorkerEnv) {
     'BILLING_GRACE_DAYS', 'BILLING_BANK_INSTRUCTIONS', 'BILLING_BANK_ACCOUNT_ID',
     'BILLING_SUPPORT_EMAIL', 'BILLING_TERMS_VERSION',
     'PADDLE_SANDBOX_API_KEY', 'PADDLE_SANDBOX_WEBHOOK_SECRET',
+    'PADDLE_SANDBOX_CLIENT_TOKEN',
     'BILLING_MAINTENANCE_ACTOR_ID',
   ] as const) {
     if (workerEnv[name] !== undefined) process.env[name] = workerEnv[name]

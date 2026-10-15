@@ -149,6 +149,8 @@ export interface CreateTransactionInput {
   priceId: string
   quantity?: number
   customData?: Record<string, unknown>
+  /** Server-configured application page that includes Paddle.js. */
+  checkoutUrl?: string
 }
 
 export interface CreateCustomerPortalSessionInput {
@@ -468,6 +470,7 @@ export function createPaddleSandboxClient(options: PaddleSandboxClientOptions): 
         customer_id: input.customerId,
       }
       if (input.customData !== undefined) body.custom_data = input.customData
+      if (input.checkoutUrl !== undefined) body.checkout = { url: input.checkoutUrl }
 
       const result = await performRequest('/transactions', 'POST', body)
       return mapTransaction(readData(result))

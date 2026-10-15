@@ -122,6 +122,7 @@ function isAllowedSandboxHost(host: string): boolean {
  */
 export function isAuthorizedSandboxCheckoutUrl(url: string, environment: string): boolean {
   if (environment !== 'sandbox') return false
+  if (/^\/api\/v1\/billing\/checkout-page\?_ptxn=txn_[a-z\d]{26}$/.test(url)) return true
   const host = safeHttpsHost(url)
   return host !== null && isAllowedSandboxHost(host)
 }

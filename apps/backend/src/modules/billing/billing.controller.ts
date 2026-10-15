@@ -1,7 +1,8 @@
-import { Body, CanActivate, Controller, ExecutionContext, Get, Headers, HttpException, HttpStatus, Injectable, Param, ParseUUIDPipe, Post, Query, Req, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common'
+import { Body, CanActivate, Controller, ExecutionContext, Get, Headers, HttpException, HttpStatus, Injectable, Param, ParseUUIDPipe, Post, Query, Req, Res, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common'
 import { FileInterceptor } from '@nestjs/platform-express'
 import type { RawBodyRequest } from '@nestjs/common'
-import type { Request } from 'express'
+import type { Request, Response } from 'express'
+import { randomBytes } from 'node:crypto'
 import { SkipThrottle, Throttle } from '@nestjs/throttler'
 import { prisma } from '@aula/database'
 import { CurrentUser } from '../../common/decorators/current-user.decorator'
@@ -39,6 +40,15 @@ export class BillingController {
   @Get('transfers/:id/receipt') receipt(@CurrentUser() user: AuthenticatedUser, @Param('id', ParseUUIDPipe) id: string) { return this.receipts.download(user, id) }
   @Throttle({ default: { limit: 5, ttl: 60000 } })
   @Post('checkout') checkout(@CurrentUser() user: AuthenticatedUser, @Body() dto: CheckoutDto) { return this.provider.checkout(user, dto) }
+  @Get('checkout-page')
+  async checkoutPage(@CurrentUser() user: AuthenticatedUser, @Query('_ptxn') transaction: string, @Res() response: Response) {
+    const nonce = randomBytes(18).toString('base64url')
+    const html = await this.provider.checkoutPage(user, transaction, nonce)
+    response.setHeader('Cache-Control', 'private, no-store, max-age=0')
+    response.setHeader('Referrer-Policy', 'no-referrer')
+    response.setHeader('Content-Security-Policy', `default-src 'none'; script-src 'nonce-${nonce}' https://cdn.paddle.com; frame-src https://*.paddle.com; connect-src https://*.paddle.com; img-src data: https://*.paddle.com; style-src 'unsafe-inline'; frame-ancestors 'none'; base-uri 'none'; form-action https://*.paddle.com`)
+    return response.type('html').send(html)
+  }
   @Post('portal') portal(@CurrentUser() user: AuthenticatedUser) { return this.provider.portal(user) }
   @Post('cancel-renewal') cancel(@CurrentUser() user: AuthenticatedUser) { return this.provider.cancelRenewal(user) }
   @Throttle({ default: { limit: 5, ttl: 60000 } })
