@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, CalendarClock, CalendarRange, GraduationCap, LayoutDashboard, RefreshCw, Settings2, SlidersHorizontal, UsersRound } from 'lucide-react'
+import { ArrowRight, BookOpen, CalendarClock, CalendarRange, CreditCard, GraduationCap, LayoutDashboard, RefreshCw, Settings2, SlidersHorizontal, UsersRound } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
 
@@ -100,7 +100,15 @@ export function SchoolAdministrationPage() {
               </section>
             </div> : null}
             {category === 'usuarios' ? <SchoolUsersPanel /> : null}
-            {category === 'cuenta' ? <ProfilePage embedded /> : null}
+            {category === 'cuenta' ? <div className="space-y-5">
+              <Card>
+                <CardHeader className="flex flex-wrap items-start justify-between gap-4">
+                  <div className="flex items-start gap-3"><SemanticIcon icon={CreditCard} tone="info" /><div><CardTitle>Suscripción y pagos</CardTitle><CardDescription>Consulta tu cobertura, tu forma de pago y el historial registrado.</CardDescription></div></div>
+                  <Link to="/cuenta/suscripcion" aria-label="Gestionar suscripción y pagos" className="inline-flex min-h-10 items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Gestionar suscripción <ArrowRight className="size-4" aria-hidden="true" /></Link>
+                </CardHeader>
+              </Card>
+              <ProfilePage embedded />
+            </div> : null}
             {category === 'modulos' ? <div className="space-y-4">
               <div><h2 className="text-lg font-semibold">Configuración por módulo</h2><p className="mt-1 text-sm text-muted-foreground">Abre cada espacio para ajustar sus opciones específicas.</p></div>
               <div className="grid gap-4 xl:grid-cols-2">{moduleSettings.map(({ title, description, href, icon }) => <Card key={title}><CardContent className="flex h-full flex-col">
