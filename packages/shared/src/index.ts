@@ -247,3 +247,9 @@ export function addWeekdays(startDate: string, offset: number) {
   }
   return date.toISOString().slice(0, 10)
 }
+
+export {englishGradeFiveModule,commonFifthGradeEnglish,resolveFifthGradeEnglishTask} from './secondary-english-grade-five'
+export {englishGradeFiveGrammar} from './secondary-english-grade-five-grammar'
+export {englishGradeFiveLexicon} from './secondary-english-grade-five-lexicon'
+export {englishGradeFiveStrategies} from './secondary-english-grade-five-strategies'
+export {englishGradeFiveGenres} from './secondary-english-grade-five-genres'

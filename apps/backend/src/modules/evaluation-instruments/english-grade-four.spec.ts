@@ -25,8 +25,8 @@ describe('Inglés común cuarto: funciones propias cotejadas en PDF158–162',()
   ['Escribirán en inglés un mensaje sobre los datos de la escucha de una noticia.','WRITTEN_PRODUCTION'],
   ['Compararán oralmente en inglés los puntos de vista de dos textos proporcionados.','COMPARISON'],
  ] as const)it(`la acción pedida determina ${activity}: ${description}`,()=>expect(propose(description).activityType).toBe(activity))
- it('identifica cuarto como conexión parcial sin atribuirle el cierre de tercero',()=>{
-  expect(propose(fixtures[0].description).internalTrace.reasons).toContain('coverage=COMMON_FOURTH_GRADE_PROVIDERS_PARTIAL')
+ it('identifica la cobertura propia de cuarto sin atribuirle el grado de tercero',()=>{
+  expect(propose(fixtures[0].description).internalTrace.reasons).toContain('coverage=DEFINED_COMMON_FOURTH_GRADE_PROVIDERS')
  })
  for(const f of fixtures)for(const format of formats)for(const score of [20,17.35])it(`${f.id} ${format} ${score}`,()=>{
   const p=propose(f.description,format,score)

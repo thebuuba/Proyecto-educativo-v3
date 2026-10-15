@@ -1,0 +1,667 @@
+[
+  {
+    "id": "declarative",
+    "sourceIndices": [
+      38
+    ],
+    "forms": [
+      "oraciones enunciativas",
+      "oraciones afirmativas",
+      "oraciones negativas",
+      "declarative sentences"
+    ],
+    "purpose": "afirmación"
+  },
+  {
+    "id": "interrogative-sentences",
+    "sourceIndices": [
+      38
+    ],
+    "forms": [
+      "oraciones interrogativas",
+      "preguntas directas",
+      "interrogative sentences"
+    ],
+    "purpose": "preguntar"
+  },
+  {
+    "id": "used-to",
+    "sourceIndices": [
+      40
+    ],
+    "forms": [
+      "used to"
+    ],
+    "purpose": "hábito pasado"
+  },
+  {
+    "id": "verb-complements",
+    "sourceIndices": [
+      43
+    ],
+    "forms": [
+      "verbos seguidos de infinitivo",
+      "verbos seguidos de gerundio",
+      "verbos que admiten infinitivo o gerundio"
+    ],
+    "purpose": "complemento"
+  },
+  {
+    "id": "indirect-questions",
+    "sourceIndices": [
+      48
+    ],
+    "forms": [
+      "preguntas indirectas",
+      "embedded questions",
+      "indirect questions",
+      "preguntas integradas"
+    ],
+    "purpose": "pregunta dentro"
+  },
+  {
+    "id": "zero-article",
+    "sourceIndices": [
+      48
+    ],
+    "forms": [
+      "omisión del artículo",
+      "artículo cero",
+      "zero article"
+    ],
+    "purpose": "referencia general"
+  },
+  {
+    "id": "frequency-adverbs",
+    "sourceIndices": [
+      49
+    ],
+    "forms": [
+      "adverbios de frecuencia",
+      "adverbs of frequency"
+    ],
+    "purpose": "frecuencia"
+  },
+  {
+    "id": "preposition-use",
+    "sourceIndices": [
+      50
+    ],
+    "forms": [
+      "uso de preposiciones",
+      "preposiciones solicitadas"
+    ],
+    "purpose": "relación"
+  },
+  {
+    "id": "sentence-final-preposition",
+    "sourceIndices": [
+      51
+    ],
+    "forms": [
+      "preposición al final de la oración",
+      "sentence final preposition"
+    ],
+    "purpose": "complemento"
+  },
+  {
+    "id": "exclamation",
+    "forms": [
+      "oraciones exclamativas",
+      "exclamatory sentences"
+    ],
+    "sourceIndices": [
+      38
+    ],
+    "purpose": "reacción"
+  },
+  {
+    "id": "question-tags",
+    "forms": [
+      "question tags"
+    ],
+    "sourceIndices": [
+      46
+    ],
+    "purpose": "confirmación"
+  },
+  {
+    "id": "comparative",
+    "forms": [
+      "grado comparativo y superlativo",
+      "comparative",
+      "superlative"
+    ],
+    "sourceIndices": [
+      48
+    ],
+    "purpose": "comparación"
+  },
+  {
+    "id": "time-adverbs",
+    "forms": [
+      "adverbios de tiempo",
+      "adverbs of time"
+    ],
+    "sourceIndices": [
+      49
+    ],
+    "purpose": "cuándo"
+  },
+  {
+    "id": "manner-adverbs",
+    "forms": [
+      "adverbios de modo",
+      "adverbs of manner"
+    ],
+    "sourceIndices": [
+      49
+    ],
+    "purpose": "cómo"
+  },
+  {
+    "id": "reflexive-pronouns",
+    "forms": [
+      "pronombres reflexivos",
+      "reflexive pronouns"
+    ],
+    "sourceIndices": [
+      51
+    ],
+    "purpose": "mismo"
+  },
+  {
+    "id": "relative-pronouns",
+    "forms": [
+      "pronombres relativos",
+      "relative pronouns"
+    ],
+    "sourceIndices": [
+      51
+    ],
+    "purpose": "referente"
+  },
+  {
+    "id": "contrast-connectors",
+    "forms": [
+      "conectores de contraste",
+      "contrast connectors"
+    ],
+    "sourceIndices": [
+      53
+    ],
+    "purpose": "contrastar"
+  },
+  {
+    "id": "concession-connectors",
+    "forms": [
+      "conectores de concesión",
+      "concession connectors"
+    ],
+    "sourceIndices": [
+      53
+    ],
+    "purpose": "concesión"
+  },
+  {
+    "id": "sequence-connectors",
+    "forms": [
+      "conectores de secuencia",
+      "sequence connectors"
+    ],
+    "sourceIndices": [
+      53
+    ],
+    "purpose": "orden"
+  },
+  {
+    "id": "time-connectors",
+    "forms": [
+      "conectores de tiempo",
+      "temporal connectors"
+    ],
+    "sourceIndices": [
+      53
+    ],
+    "purpose": "momentos"
+  },
+  {
+    "id": "present-simple",
+    "sourceIndices": [
+      38,
+      39
+    ],
+    "forms": [
+      "presente simple",
+      "present simple",
+      "simple present"
+    ],
+    "purpose": "comunicar los datos actuales de la consulta simulada o del problema reclamado según la situación indicada"
+  },
+  {
+    "id": "medical-verbs",
+    "sourceIndices": [
+      38
+    ],
+    "forms": [
+      "be, have, feel y hurt"
+    ],
+    "purpose": "relacionar el estado o síntoma con el personaje de la ficha de la consulta simulada"
+  },
+  {
+    "id": "suggest",
+    "sourceIndices": [
+      39
+    ],
+    "forms": [
+      "suggest"
+    ],
+    "purpose": "proponer una recomendación relacionada con la necesidad indicada"
+  },
+  {
+    "id": "advise",
+    "sourceIndices": [
+      39
+    ],
+    "forms": [
+      "advise"
+    ],
+    "purpose": "comunicar un consejo relacionado con la necesidad del referente indicado"
+  },
+  {
+    "id": "causatives",
+    "sourceIndices": [
+      39
+    ],
+    "forms": [
+      "verbos causativos",
+      "causative verbs",
+      "get, have y make"
+    ],
+    "purpose": "distinguir quién encarga o provoca la acción y quién la realiza o la recibe en la situación"
+  },
+  {
+    "id": "past-simple",
+    "sourceIndices": [
+      40
+    ],
+    "forms": [
+      "pasado simple",
+      "past simple",
+      "simple past"
+    ],
+    "purpose": "narrar el acontecimiento terminado con su referencia al pasado"
+  },
+  {
+    "id": "present-perfect",
+    "sourceIndices": [
+      40
+    ],
+    "forms": [
+      "presente perfecto",
+      "present perfect"
+    ],
+    "purpose": "relacionar el antecedente del personaje de la consulta simulada con la situación presente"
+  },
+  {
+    "id": "present-perfect-continuous",
+    "sourceIndices": [
+      40
+    ],
+    "forms": [
+      "presente perfecto continuo",
+      "present perfect continuous"
+    ],
+    "purpose": "comunicar la continuidad del estado o actividad que se relaciona con la consulta simulada o la información reportada"
+  },
+  {
+    "id": "past-continuous",
+    "sourceIndices": [
+      40
+    ],
+    "forms": [
+      "pasado continuo",
+      "past continuous"
+    ],
+    "purpose": "situar la acción en desarrollo con la que se relaciona otro acontecimiento de la narración"
+  },
+  {
+    "id": "past-perfect",
+    "sourceIndices": [
+      40
+    ],
+    "forms": [
+      "pasado perfecto",
+      "past perfect"
+    ],
+    "purpose": "distinguir el acontecimiento anterior a otro hecho pasado de la narración"
+  },
+  {
+    "id": "future-continuous",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "futuro continuo",
+      "future continuous"
+    ],
+    "purpose": "situar la acción que estará en desarrollo al reportar información o expresar una probabilidad"
+  },
+  {
+    "id": "modal-cannot",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "can’t",
+      "cannot"
+    ],
+    "purpose": "comunicar la prohibición de la acción en la situación indicada"
+  },
+  {
+    "id": "modal-must",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "must"
+    ],
+    "purpose": "expresar la obligación o la certeza deducida de los indicios según la intención solicitada"
+  },
+  {
+    "id": "modal-have-to",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "have to"
+    ],
+    "purpose": "comunicar la obligación establecida en las condiciones de la situación"
+  },
+  {
+    "id": "modal-should",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "should"
+    ],
+    "purpose": "comunicar un consejo relacionado con la necesidad del personaje"
+  },
+  {
+    "id": "modal-ought-to",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "ought to"
+    ],
+    "purpose": "comunicar una recomendación relacionada con los datos de la situación"
+  },
+  {
+    "id": "modal-supposed-to",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "be supposed to"
+    ],
+    "purpose": "comunicar la acción esperada por la norma o acuerdo proporcionado"
+  },
+  {
+    "id": "modal-need-to",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "need to"
+    ],
+    "purpose": "comunicar la necesidad de una acción en la situación indicada"
+  },
+  {
+    "id": "modal-may",
+    "sourceIndices": [
+      41,
+      42
+    ],
+    "forms": [
+      "may"
+    ],
+    "purpose": "comunicar una posibilidad o una solicitud cortés al obtener bienes o servicios según la intención indicada"
+  },
+  {
+    "id": "modal-might",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "might"
+    ],
+    "purpose": "expresar una posibilidad incierta relacionada con los indicios de la situación"
+  },
+  {
+    "id": "modal-could",
+    "sourceIndices": [
+      41,
+      42
+    ],
+    "forms": [
+      "could"
+    ],
+    "purpose": "comunicar una posibilidad o una solicitud cortés de bienes o servicios según la intención indicada"
+  },
+  {
+    "id": "modal-will",
+    "sourceIndices": [
+      41,
+      42
+    ],
+    "forms": [
+      "will"
+    ],
+    "purpose": "comunicar la elección o solicitud futura del bien o servicio indicado"
+  },
+  {
+    "id": "modal-would-like",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "would like"
+    ],
+    "purpose": "solicitar cortésmente el bien o servicio indicado"
+  },
+  {
+    "id": "modal-can",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "can"
+    ],
+    "purpose": "solicitar el bien o servicio de la transacción mediante una expresión cortés"
+  },
+  {
+    "id": "phrasal-verbs",
+    "sourceIndices": [
+      43
+    ],
+    "forms": [
+      "phrasal verbs",
+      "verbos frasales",
+      "settle down",
+      "pick up"
+    ],
+    "purpose": "relacionar el verbo y su partícula con el significado de la acción indicada"
+  },
+  {
+    "id": "there-be",
+    "sourceIndices": [
+      43
+    ],
+    "forms": [
+      "there + be",
+      "there was",
+      "there were"
+    ],
+    "purpose": "comunicar la existencia de un acontecimiento o referente al narrar hechos pasados"
+  },
+  {
+    "id": "mixed-conditional",
+    "sourceIndices": [
+      44
+    ],
+    "forms": [
+      "condicional mixto",
+      "mixed conditional"
+    ],
+    "purpose": "relacionar la condición con el resultado modal que depende de ella en la situación"
+  },
+  {
+    "id": "second-conditional",
+    "sourceIndices": [
+      45
+    ],
+    "forms": [
+      "segundo condicional",
+      "second conditional"
+    ],
+    "purpose": "relacionar una situación hipotética con su resultado posible sin presentarla como un hecho confirmado"
+  },
+  {
+    "id": "passive",
+    "sourceIndices": [
+      46
+    ],
+    "forms": [
+      "voz pasiva",
+      "passive voice"
+    ],
+    "purpose": "relacionar el acontecimiento narrado con el referente que recibe la acción"
+  },
+  {
+    "id": "reported-speech",
+    "sourceIndices": [
+      46,
+      47
+    ],
+    "forms": [
+      "reported speech",
+      "estilo indirecto",
+      "discurso indirecto"
+    ],
+    "purpose": "reportar lo dicho conservando la información, sus referentes y las relaciones temporales indicadas"
+  },
+  {
+    "id": "emphatic-do",
+    "sourceIndices": [
+      48
+    ],
+    "forms": [
+      "oraciones enfáticas con do",
+      "emphatic do"
+    ],
+    "purpose": "enfatizar la afirmación conservando la acción y su referencia temporal"
+  },
+  {
+    "id": "quantity-adverbs",
+    "sourceIndices": [
+      49
+    ],
+    "forms": [
+      "adverbios de cantidad",
+      "adverbs of quantity"
+    ],
+    "purpose": "precisar la cantidad comunicada en la situación"
+  },
+  {
+    "id": "probability-adverbs",
+    "sourceIndices": [
+      49
+    ],
+    "forms": [
+      "adverbios de probabilidad",
+      "adverbios de certeza",
+      "adverbs of probability",
+      "adverbs of certainty"
+    ],
+    "purpose": "expresar el grado de probabilidad o seguridad de la información"
+  },
+  {
+    "id": "emphatic-reflexives",
+    "sourceIndices": [
+      52
+    ],
+    "forms": [
+      "uso enfático de los pronombres reflexivos",
+      "emphatic reflexive pronouns"
+    ],
+    "purpose": "destacar al referente que realiza la acción sin cambiar su identidad"
+  },
+  {
+    "id": "how-much-many",
+    "sourceIndices": [
+      52
+    ],
+    "forms": [
+      "how much",
+      "how many"
+    ],
+    "purpose": "preguntar por la cantidad o el precio en la transacción indicada"
+  },
+  {
+    "id": "why-suggestion",
+    "sourceIndices": [
+      52
+    ],
+    "forms": [
+      "why don’t",
+      "why not"
+    ],
+    "purpose": "proponer una acción como consejo o sugerencia en la situación indicada"
+  },
+  {
+    "id": "addition-connectors",
+    "sourceIndices": [
+      53
+    ],
+    "forms": [
+      "conectores de adición",
+      "addition connectors"
+    ],
+    "purpose": "añadir información relacionada con la idea anterior"
+  },
+  {
+    "id": "condition-connectors",
+    "sourceIndices": [
+      53
+    ],
+    "forms": [
+      "conectores de condición",
+      "condition connectors"
+    ],
+    "purpose": "relacionar una acción con la condición que permite realizarla"
+  },
+  {
+    "id": "correlative-connectors",
+    "sourceIndices": [
+      53
+    ],
+    "forms": [
+      "conectores de correlación",
+      "correlative connectors"
+    ],
+    "purpose": "relacionar los elementos con la suma, alternativa o negación correlativa indicada"
+  },
+  {
+    "id": "illustration-connectors",
+    "sourceIndices": [
+      53
+    ],
+    "forms": [
+      "conectores de ilustración",
+      "illustration connectors"
+    ],
+    "purpose": "relacionar una idea con el ejemplo que permite ilustrarla"
+  }
+]

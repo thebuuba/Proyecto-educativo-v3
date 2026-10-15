@@ -1,5 +1,10 @@
 # Continuación del encargo completo
 
+## Retomar quinto — 15/10/2026
+
+Cuarto publicado en `6dc1e0b8cc3d160f016462bc451df4f3de25c701`, remoto comprobado y árbol limpio al cerrar. Quinto en ejecución: fuentePDF163–168 cotejada/156 registros/15 grupos, funciones12, gramática60/120 formas, léxico22/expresiones7, estrategias/géneros/contexto/composición conectados en código. Reproducción60 de doce casos sin proveedor propio guardada. `.60` congelado; `.61` en carga/verificación local. [Punto de avance](ingles-5-punto-de-avance.md). Faltan revisión integral final, HTTP/cuatro CRUD/snapshots/históricos y publicación. No iniciar sexto hasta cerrar quinto.
+
+
 ## Estado vigente — 15/10/2026
 
 Inglés común4.º verificado en sus familias y patrones definidos: fuente162 registros/15 grupos, contexto e indicadores/composición conectados, cuatro formatos y CRUD auténticos cotejados con snapshots. Backend22.227/81, frontend9.868/5, HTTP172+8+4rechazos/4pools en58 y ocho seguimientos en60;125 snapshots/95 completos, base conservada. Builds obligatorios aprobados. [Informe final de cuarto](ingles-4-informe-final.md), [instrumentos completos](ingles-4-ejemplos-finales.md). .57/.58/.59 congelados; .60 instalado/cargado local. Publicar cierre, comprobar push y continuar quinto común PDF163–168; no sexto hasta cerrar quinto. Sin subagentes, francés, optativas, IA de aplicación, rediseño, main, producción ni reset.

@@ -56,6 +56,9 @@ import {evaluationCatalogV56} from './catalog-v56'
 import {evaluationCatalogV57} from './catalog-v57'
 import {evaluationCatalogV58} from './catalog-v58'
 import {evaluationCatalogV59} from './catalog-v59'
+import {evaluationCatalogV60} from './catalog-v60'
+import {evaluationCatalogV61} from './catalog-v61'
+import {englishGradeFiveModule,englishGradeFiveGrammar,englishGradeFiveLexicon,englishGradeFiveStrategies,englishGradeFiveGenres} from '@aula/shared'
 import {englishGradeFourModule,englishGradeFourGrammar,englishGradeFourLexicon,englishGradeFourStrategies,englishGradeFourGenres} from '@aula/shared'
 import {englishGradeThreeModule,englishGradeThreeGrammar,englishGradeThreeLexicon,englishGradeThreeStrategies,englishGradeThreeGenres} from '@aula/shared'
 import {englishGradeTwoModule,englishGradeTwoGrammar,englishGradeTwoLexicon,englishGradeTwoStrategies,englishGradeTwoGenres} from '@aula/shared'
@@ -70,8 +73,15 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV59,
-  version: 'evaluation-2026.60',
+  ...evaluationCatalogV61,
+  version: 'evaluation-2026.62',
+  englishGradeFiveSuggestionPolicy:'AUTHORED_SUGGESTION_DESCRIPTORS_GRAMMATICAL_AGREEMENT_V1',
+  englishGradeFiveContextCompositionPolicy:'REQUESTED_CONJUNCTIONS_ALTERNATIVES_WISHES_PLANS_AND_HELP_V1',
+  englishGradeFiveModule,
+  englishGradeFiveGrammar,
+  englishGradeFiveLexicon,
+  englishGradeFiveStrategies,
+  englishGradeFiveGenres,
   englishGradeFourDirectionsPolicy:'REQUEST_AND_DELIVER_PRESERVE_CONJUNCTION_V1',
   englishGradeFourRequestPolicy:'ASK_ONLY_INSTRUCTIONS_DIRECTIONS_NO_UNREQUESTED_DELIVERY_V1',
   englishGradeFourSolidarityPolicy:'REQUESTED_SUPPORTING_RESPONSE_NOT_PERSONAL_TRAIT_V1',
@@ -139,8 +149,10 @@ export const evaluationCatalogCurrent = {
   secondGradeLanguageFeatures,
   secondGradeLanguagePolicy:'PROCEDURAL_DETAILS_COMPREHENSION_PRODUCTS_AND_FAMILIES_V2',
 }
-export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
+export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV61.version)return evaluationCatalogV61
+  if(version===evaluationCatalogV60.version)return evaluationCatalogV60
   if(version===evaluationCatalogV59.version)return evaluationCatalogV59
   if(version===evaluationCatalogV58.version)return evaluationCatalogV58
   if(version===evaluationCatalogV57.version)return evaluationCatalogV57
