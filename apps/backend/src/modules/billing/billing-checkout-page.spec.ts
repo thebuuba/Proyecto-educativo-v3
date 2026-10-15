@@ -38,4 +38,10 @@ describe('sandbox checkout payment page', () => {
     expect(html).not.toContain('apiKey')
     expect(html).not.toContain('checkout.completed')
   })
+  it('only offers card as a payment method in the sandbox checkout', () => {
+    const html = checkoutPageHtml(token, 'safe-nonce')
+    expect(html).toContain('allowedPaymentMethods')
+    expect(html).toContain('["card"]')
+    expect(html).not.toMatch(/paypal|apple_pay|google_pay/i)
+  })
 })

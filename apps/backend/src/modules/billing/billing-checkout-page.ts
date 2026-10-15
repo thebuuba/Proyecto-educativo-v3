@@ -31,6 +31,6 @@ export function checkoutPageHtml(token: string, nonce: string): string {
 <p>El acceso se actualizará cuando el servidor confirme el pago.</p><p><a href="/cuenta/suscripcion">Volver a Suscripción y pagos</a></p>
 <noscript>Activa JavaScript para abrir el checkout de prueba.</noscript></main>
 <script nonce="${nonce}" src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script nonce="${nonce}">Paddle.Environment.set("sandbox");Paddle.Initialize({token: ${JSON.stringify(token)}, checkout: {settings: {locale: "es", allowLogout: false}}});</script>
+<script nonce="${nonce}">Paddle.Environment.set("sandbox");Paddle.Initialize({token: ${JSON.stringify(token)}, checkout: {settings: {locale: "es", allowLogout: false, allowedPaymentMethods: ["card"]}}});</script>
 </body></html>`
 }

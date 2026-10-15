@@ -15,7 +15,7 @@ describe('sandbox commercial boundaries', () => {
   it('does not initiate a checkout while installation or new contracting is disabled', async () => {
     vi.stubEnv('BILLING_ENABLED', 'false')
     await expect(new BillingProviderService().checkout({ id: 'x', schoolId: 's', roles: ['teacher'], email: 'test@example.invalid' }, {
-      priceId: 'x', acceptEarlyEnd: false, termsVersion: 'unapproved',
+      priceId: 'x', acceptAutoRenewal: true, acceptEarlyEnd: false, termsVersion: 'unapproved',
     })).rejects.toThrow()
   })
   it('renders a payment page only for the reserved transaction of its authenticated owner', async () => {

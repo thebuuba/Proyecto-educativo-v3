@@ -1,10 +1,12 @@
 import { BadRequestException, ConflictException, Injectable, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { prisma, type Prisma } from '@aula/database'
+import { SUBSCRIPTION_OFFER } from '@aula/shared'
 import { randomUUID } from 'node:crypto'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import type { CheckoutDto } from './billing.dto'
-import { audit, authorizedPrice, billingAccount, billingNow, requireBilling, withBillingOwner } from './billing-store'
+import { audit, authorizedPrice, billingAccount, requireBilling, withBillingOwner } from './billing-store'
 import { createPaddleSandboxClient, PADDLE_SANDBOX_API_ORIGIN } from './paddle-sandbox'
+import { TRIAL_POLICY, assertTrialPrice } from './billing-trial'
 import { checkoutBaseUrl, checkoutClientToken, checkoutPageHtml, checkoutPath } from './billing-checkout-page'
 
 const acting = ['INCOMPLETE', 'TRIALING', 'ACTIVE', 'PAST_DUE', 'PAUSED'] as const
@@ -67,18 +69,39 @@ export class BillingProviderService {
     if (!process.env.BILLING_TERMS_VERSION || dto.termsVersion !== process.env.BILLING_TERMS_VERSION) {
       throw new BadRequestException('Revisa y acepta las condiciones vigentes del servidor.')
     }
+    if (dto.acceptAutoRenewal !== true) {
+      throw new BadRequestException('Debes aceptar explícitamente la renovación automática y el importe mensual.')
+    }
     const client = sandboxClient()
     // Persist the reservation before the remote mutation. A timeout never permits a second charge attempt.
     const reserved = await withBillingOwner(user.id, async (db, now) => {
       const account = await billingAccount(user.id, db)
       const existing = await db.billingSubscription.findFirst({ where: { accountId: account.id, status: { in: [...acting] } } })
-      if (existing) return { subscription: existing, created: false, accountId: account.id, providerPriceId: '' }
+      if (existing) {
+        const pending = metadata(existing.metadata)
+        if (existing.status === 'INCOMPLETE' && (existing.priceId !== dto.priceId || pending.trialPolicy !== TRIAL_POLICY ||
+          pending.acceptAutoRenewal !== true || pending.termsVersion !== dto.termsVersion)) {
+          throw new ConflictException('El intento pendiente corresponde a otro precio o condiciones. Solicita revisión antes de continuar.')
+        }
+        return { subscription: existing, created: false, accountId: account.id, providerPriceId: '' }
+      }
       const price = await authorizedPrice(dto.priceId, 'PADDLE', now, db)
       if (!price.providerPriceId) throw new ServiceUnavailableException('El precio sandbox no está configurado.')
-      const trial = await db.billingTrial.findUnique({ where: { accountId: account.id } })
-      if (trial?.status === 'ACTIVE' && trial.endsAt > now && !dto.acceptEarlyEnd) {
-        throw new BadRequestException('Puedes continuar la prueba o aceptar explícitamente terminarla al confirmar el pago.')
+      if (price.amountMinor !== BigInt(SUBSCRIPTION_OFFER.amountMinor) || price.currency !== SUBSCRIPTION_OFFER.currency) {
+        throw new ServiceUnavailableException('El precio local no coincide con la oferta mensual aprobada.')
       }
+      // The trial period belongs to the catalog price: verify the remote offer
+      // (amount, interval, internal tax, free month, card required) before any
+      // local reservation or provider mutation is attempted.
+      assertTrialPrice(await client.getPrice(price.providerPriceId))
+      const trial = await db.billingTrial.findUnique({ where: { accountId: account.id } })
+      // Reusing this provider price grants another remote trial regardless of
+      // local metadata. Renewals use the portal; resubscription needs a
+      // separately verified price without a trial.
+      if (trial) throw new ConflictException('Ya utilizaste tu prueba gratuita. Gestiona la renovación en el portal o solicita soporte para contratar sin otra prueba.')
+      const paid = await db.billingPayment.findFirst({ where: { accountId: account.id,
+        amountMinor: { gt: 0n }, status: { in: ['SUCCEEDED', 'REFUNDED', 'PARTIALLY_REFUNDED', 'DISPUTED'] } }, select: { id: true } })
+      if (paid) throw new ConflictException('La cuenta ya registró un pago. Solicita soporte para contratar sin otra prueba gratuita.')
       const manualCoverage = await db.billingServicePeriod.findFirst({ where: {
         accountId: account.id, endsAt: { gt: now }, source: { in: ['TRANSFER', 'MANUAL_PAYMENT'] },
         payment: { status: 'SUCCEEDED' },
@@ -89,11 +112,16 @@ export class BillingProviderService {
       if (courtesy) throw new ConflictException('Tienes una cortesía vigente. Solicita revisión antes de activar cobros.')
       const subscription = await db.billingSubscription.create({ data: {
         accountId: account.id, planId: price.planId, priceId: price.id, provider: 'PADDLE', environment: 'SANDBOX',
-        metadata: { checkoutOperationId: randomUUID(), checkoutState: 'creating', termsVersion: dto.termsVersion,
-          acceptedAt: now.toISOString(), acceptEarlyEnd: dto.acceptEarlyEnd },
+        metadata: { checkoutOperationId: randomUUID(), checkoutState: 'creating',
+          trialPolicy: TRIAL_POLICY, trialEligible: true,
+          termsVersion: dto.termsVersion, acceptedAt: now.toISOString(),
+          acceptAutoRenewal: true, acceptEarlyEnd: dto.acceptEarlyEnd,
+          price: { amountMinor: price.amountMinor.toString(), currency: price.currency,
+            interval: price.interval.toLowerCase(), intervalCount: price.intervalCount, providerPriceId: price.providerPriceId } },
       } })
       await audit(db, { accountId: account.id, actorUserId: user.id, action: 'checkout_reserved', entityType: 'subscription', entityId: subscription.id,
-        metadata: { termsVersion: dto.termsVersion, acceptEarlyEnd: dto.acceptEarlyEnd } })
+        metadata: { termsVersion: dto.termsVersion, acceptAutoRenewal: true, acceptEarlyEnd: dto.acceptEarlyEnd,
+          trialPolicy: TRIAL_POLICY } })
       return { subscription, created: true, accountId: account.id, providerPriceId: price.providerPriceId }
     })
     if (!reserved.created) {

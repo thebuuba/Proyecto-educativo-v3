@@ -112,24 +112,16 @@ describe('BillingOperations', () => {
   })
 
   describe('startTrial', () => {
-    it('inicia la prueba con los días del servidor y el plan docente sin precio', async () => {
+    it('deja de emitir pruebas sin tarjeta con un 409 explicativo', async () => {
       mocks.db.billingTrial.findUnique.mockResolvedValue(null)
-      mocks.db.billingPayment.findFirst.mockResolvedValue(null)
-      mocks.db.billingCourtesy.findFirst.mockResolvedValue(null)
-      mocks.db.billingPlan.findFirst.mockResolvedValue({ id: 'plan-1' })
-      mocks.db.billingTrial.create.mockImplementation(async ({ data }: { data: Record<string, unknown> }) => ({ id: 'trial-1', ...data }))
 
-      const result = await operations.startTrial(user)
-
-      expect(result).toMatchObject({ id: 'trial-1', planId: 'plan-1', status: 'active' })
-      const created = mocks.db.billingTrial.create.mock.calls[0][0].data
-      expect((created.endsAt as Date).getTime() - (created.startsAt as Date).getTime()).toBe(14 * 86400000)
-      expect(mocks.db.billingPlan.findFirst).toHaveBeenCalledWith({ where: { code: 'docente-completo', status: 'ACTIVE' }, select: { id: true } })
-      expect(mocks.authorizedPrice).not.toHaveBeenCalled()
-      expect(mocks.audit).toHaveBeenCalledWith(mocks.db, expect.objectContaining({ action: 'trial.started' }))
+      await expect(operations.startTrial(user)).rejects.toMatchObject({ status: 409 })
+      await expect(operations.startTrial(user)).rejects.toThrow(/tarjeta/i)
+      expect(mocks.db.billingTrial.create).not.toHaveBeenCalled()
+      expect(mocks.audit).not.toHaveBeenCalledWith(mocks.db, expect.objectContaining({ action: 'trial.started' }))
     })
 
-    it('devuelve la prueba original en un reintento sin reiniciarla', async () => {
+    it('conserva la prueba histórica sin reiniciarla ni borrarla', async () => {
       mocks.db.billingTrial.findUnique.mockResolvedValue({
         id: 'trial-1', planId: 'plan-1', status: 'EXPIRED',
         startsAt: new Date('2026-01-01T00:00:00Z'), endsAt: new Date('2026-01-15T00:00:00Z'),
@@ -139,37 +131,7 @@ describe('BillingOperations', () => {
 
       expect(result).toMatchObject({ id: 'trial-1', status: 'expired' })
       expect(mocks.db.billingTrial.create).not.toHaveBeenCalled()
-    })
-
-    it('no es elegible si ya pagó antes', async () => {
-      mocks.db.billingTrial.findUnique.mockResolvedValue(null)
-      mocks.db.billingPayment.findFirst.mockResolvedValue({ id: 'pay-1' })
-
-      await expect(operations.startTrial(user)).rejects.toThrow(/pago/i)
-      expect(mocks.db.billingTrial.create).not.toHaveBeenCalled()
-    })
-
-    it('no es elegible con una cortesía activa', async () => {
-      mocks.db.billingTrial.findUnique.mockResolvedValue(null)
-      mocks.db.billingPayment.findFirst.mockResolvedValue(null)
-      mocks.db.billingCourtesy.findFirst.mockResolvedValue({ id: 'c-1' })
-
-      await expect(operations.startTrial(user)).rejects.toThrow(/cortes/i)
-      expect(mocks.db.billingTrial.create).not.toHaveBeenCalled()
-    })
-
-    it('limita la vigencia de la cortesía al plan docente y al presente', async () => {
-      mocks.db.billingTrial.findUnique.mockResolvedValue(null)
-      mocks.db.billingPayment.findFirst.mockResolvedValue(null)
-      mocks.db.billingCourtesy.findFirst.mockResolvedValue({ id: 'c-1' })
-
-      await expect(operations.startTrial(user)).rejects.toThrow()
-
-      const args = mocks.db.billingCourtesy.findFirst.mock.calls[0][0]
-      expect(args.where).toMatchObject({
-        accountId: 'acct-1', status: 'ACTIVE', revokedAt: null, startsAt: { lte: mocks.now },
-        plan: { code: 'docente-completo' },
-      })
+      expect(mocks.db.billingTrial.update).not.toHaveBeenCalled()
     })
 
     it('no ofrece la prueba comercial a quien no es docente ni altera roles', async () => {

@@ -7,6 +7,8 @@ export class ReportTransferDto {
   @IsString() @Length(3, 160) bankReference!: string
 }
 export class CheckoutDto extends CreateTransferDto {
+  /** Explicit consent to the recurring monthly charge after the free month. */
+  @IsBoolean() acceptAutoRenewal!: boolean
   @IsBoolean() acceptEarlyEnd!: boolean
   @IsString() @Length(1, 80) termsVersion!: string
 }

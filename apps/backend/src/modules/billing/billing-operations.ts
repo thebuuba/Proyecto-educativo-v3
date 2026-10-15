@@ -32,8 +32,6 @@ import {
   type BillingTx,
 } from './billing-store'
 
-/** Only the published monthly individual plan exists in the first version. */
-const DOCENTE_PLAN_CODE = 'docente-completo'
 /** Manual transfers keep an explicit, server-defined validity window. */
 const TRANSFER_EXPIRY_DAYS = 7
 const ADMIN_DEFAULT_PAGE_SIZE = 20
@@ -76,51 +74,26 @@ type SupportCategory = 'PAYMENT' | 'TECHNICAL' | 'SUBSCRIPTION' | 'OTHER'
 
 @Injectable()
 export class BillingOperations {
-  /** One trial per account, started and measured by the server clock. */
+  /**
+   * The commercial trial is now card-only: it is granted from a confirmed
+   * Paddle checkout, never fabricated locally without a payment method.
+   * Historical trials keep their original dates and are never deleted.
+   */
   async startTrial(user: AuthenticatedUser) {
     const config = requireBilling()
     // The commercial trial is a teacher benefit; never grant or alter roles here.
     if (!user.roles.includes('teacher')) throw new ForbiddenException('La prueba comercial está disponible solo para docentes.')
     if (config.trialDays <= 0) throw new ServiceUnavailableException('La prueba gratuita está desactivada.')
 
-    return withBillingOwner(user.id, async (db, now) => {
+    return withBillingOwner(user.id, async (db) => {
       const account = await billingAccount(user.id, db)
 
       const existing = await db.billingTrial.findUnique({ where: { accountId: account.id } })
       if (existing) return this.trialView(existing)
 
-      const paid = await db.billingPayment.findFirst({
-        where: { accountId: account.id, status: 'SUCCEEDED', amountMinor: { gt: 0n } },
-        select: { id: true },
-      })
-      if (paid) throw new ConflictException('La cuenta ya registró un pago; la prueba solo aplica a cuentas nuevas.')
-
-      const courtesy = await db.billingCourtesy.findFirst({
-        where: {
-          accountId: account.id, status: 'ACTIVE', revokedAt: null, startsAt: { lte: now },
-          plan: { code: DOCENTE_PLAN_CODE },
-          OR: [{ endsAt: null }, { endsAt: { gt: now } }],
-        },
-        select: { id: true },
-      })
-      if (courtesy) throw new ConflictException('La cuenta ya tiene una cortesía vigente; no se inicia una prueba.')
-
-      const plan = await db.billingPlan.findFirst({
-        where: { code: DOCENTE_PLAN_CODE, status: 'ACTIVE' },
-        select: { id: true },
-      })
-      if (!plan) throw new NotFoundException('El plan docente no está disponible.')
-
-      const endsAt = new Date(now.getTime() + config.trialDays * 86400000)
-      const trial = await db.billingTrial.create({
-        data: { accountId: account.id, planId: plan.id, status: 'ACTIVE', startsAt: now, endsAt },
-      })
-      await audit(db, {
-        accountId: account.id, actorUserId: user.id, action: 'trial.started',
-        entityType: 'billing_trial', entityId: trial.id, metadata: { trialDays: config.trialDays },
-      })
-      await notify(db, account.id, 'trial_started', `trial-started:${trial.id}`, { endsAt: endsAt.toISOString() })
-      return this.trialView(trial)
+      throw new ConflictException(
+        'La prueba gratuita ahora requiere tarjeta. Inicia el mes gratuito desde la contratación con tarjeta; solo se concede una prueba por cuenta.',
+      )
     })
   }
 
@@ -347,7 +320,7 @@ export class BillingOperations {
     if (endsAt && !Number.isFinite(endsAt.getTime())) throw new BadRequestException('Fecha de fin inválida.')
     if (endsAt && endsAt.getTime() <= startsAt.getTime()) throw new BadRequestException('La cortesía debe terminar después de iniciar.')
 
-    return withBillingOwner(dto.userId, async (db, now) => {
+    return withBillingOwner(dto.userId, async (db) => {
       const account = await billingAccount(dto.userId, db)
       const plan = await db.billingPlan.findFirst({ where: { id: dto.planId, status: 'ACTIVE' }, select: { id: true } })
       if (!plan) throw new NotFoundException('El plan de la cortesía no está disponible.')

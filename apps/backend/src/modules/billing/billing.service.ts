@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { prisma } from '@aula/database'
+import { SUBSCRIPTION_OFFER } from '@aula/shared'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { readBillingConfig } from './billing-policy'
 import { billingNow, effectiveAccess, publicMoney, requireBilling, requireCommercialAdmin } from './billing-store'
@@ -11,6 +12,7 @@ export class BillingService {
     const empty = {
       enabled: config.enabled, environment: 'sandbox', checkoutEnabled: false, eventsEnabled: config.events,
       access: { allowed: true, reason: 'legacy', until: null } as { allowed: boolean; reason: string; until: string | null },
+      offer: SUBSCRIPTION_OFFER,
       trial: null, grants: [], payments: [], documents: [], transfers: [], subscriptions: [], prices: [], cases: [], notices: [],
       commercialAdmin: false, supportEmail: process.env.BILLING_SUPPORT_EMAIL || null,
       bankInstructions: null as string | null, termsVersion: process.env.BILLING_TERMS_VERSION || null,
@@ -32,7 +34,7 @@ export class BillingService {
       prisma.billingSupportCase.findMany({ where: { userId: user.id }, orderBy: { createdAt: 'desc' }, take: 50,
         select: { id: true, number: true, category: true, status: true, createdAt: true } }),
       config.checkout ? prisma.billingPrice.findMany({ where: {
-        status: 'ACTIVE', isPublic: true, interval: 'MONTHLY', intervalCount: 1,
+        status: 'ACTIVE', isPublic: true, provider: 'PADDLE', interval: 'MONTHLY', intervalCount: 1,
         plan: { code: 'docente-completo', status: 'ACTIVE', isPublic: true },
         AND: [
           { OR: [{ effectiveFrom: null }, { effectiveFrom: { lte: now } }] },
