@@ -1,5 +1,7 @@
 # Inglés común de quinto: cierre de las familias verificadas
 
+Rectificación de calidad,15/10/2026: los cierres curriculares se conservan, pero el cotejo de datos independientes y el criterio de revisión recibieron un ajuste posterior en.64–.66. Los ejemplos previos siguen siendo evidencia histórica; los corregidos, la conciliación de cantidades y las verificaciones nuevas están en el [informe de calidad de Inglés1–6](ingles-calidad-informe.md).
+
 Fuente oficial PDF163–168, impresas162–167, ámbito73fa64a1-0c71-58a0-90c2-7df2f33b7a62, segundo ciclo. Seis páginas cotejadas visualmente,156 registros/15 grupos. PDF166–167 continúan solo gramática;42/47 continúan ejemplos de modales/estilo indirecto,36/38 unen encabezado y contenido real. [Ledger por registro](ingles-5-cotejo-fuente.json).
 
 Doce evidencias funcionales,60 familias gramaticales/120 formas y alias;22 familias de vocabulario y siete intenciones en dos registros expresivos compuestos;24 estrategias, géneros por modalidad, contexto/indicadores y siete consignas mixtas. Las listas de géneros coinciden con cuarto tras cotejo independiente: recepción12/30 y producción10/14. Se reutiliza mecánica y contenido común únicamente donde coincide el significado curricular; consultas simuladas, reclamaciones, compras, probabilidad/certeza, reporte y narración tienen propósitos propios de quinto. Compensación, principales/secundarias y cuatro aspectos culturales se configuran para este grado.

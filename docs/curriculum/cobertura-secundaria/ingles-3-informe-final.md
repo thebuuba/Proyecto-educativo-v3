@@ -1,5 +1,7 @@
 # Inglés común de tercero: cierre de las familias definidas
 
+Rectificación de calidad,15/10/2026: los cierres curriculares se conservan, pero el cotejo de datos independientes y el criterio de revisión recibieron un ajuste posterior en.64–.66. Los ejemplos previos siguen siendo evidencia histórica; los corregidos, la conciliación de cantidades y las verificaciones nuevas están en el [informe de calidad de Inglés1–6](ingles-calidad-informe.md).
+
 Fuente oficial: MINERD, adecuación secundaria2023, PDF146–151/impresas145–150, primer ciclo, ámbito `cc482480-0f08-5657-98aa-1afd28ecfa1a`. Las seis páginas se cotejaron visualmente, incluidas las continuaciones gramaticales de149/150 y las otras columnas vacías. Los158 registros conservan identidad, página, decisión y proveedor en el [cotejo](ingles-3-cotejo-fuente.json). La matriz agrupa12 ámbitos cotidianos y vocabulario/expresiones/gramática:15 grupos sin duplicaciones.
 
 ## Causa y correcciones

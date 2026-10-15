@@ -1,5 +1,7 @@
 # Cierre de Inglés común de segundo a sexto
 
+Rectificación de calidad,15/10/2026: los cierres curriculares se conservan, pero el cotejo de datos independientes y el criterio de revisión recibieron un ajuste posterior en.64–.66. Los ejemplos previos siguen siendo evidencia histórica; los corregidos, la conciliación de cantidades y las verificaciones nuevas están en el [informe de calidad de Inglés1–6](ingles-calidad-informe.md).
+
 Se conectaron y verificaron las familias y patrones definidos de Inglés común2.º–6.º, en orden, conservando Lengua1.º–6.º, Inglés1.º y las correcciones compartidas del editor. El encargo termina tras sexto. No se ha comenzado Francés, otra asignatura ni optativas. La matriz distingue contenido evaluativo conectado, condiciones observables, encabezados y exclusiones; no declara cubierto el currículo entero por estar inventariado.
 
 ## Cobertura real por grado
@@ -42,7 +44,7 @@ Se comprobaron añadir candidato compatible sin duplicar objetivo, completar fil
 
 Última regresión completa backend:36.689/91. Frontend completo:36.940/117, seguido por6.140 específicas de sexto tras el último ajuste; detalle de reutilización en su informe. Builds backend/frontend y Cloudflare dry-run aprobados. Inventario9; diff final comprobado. Los resultados anteriores de cada grado se conservan con su versión y hash de ejecución.
 
-Históricos finales:133 snapshots actuales y103 instrumentos completos cotejados;108 actividades de base de Inglés y28 referencias iniciales conservadas. [Evidencia histórica.63](evidencias/lengua-historicos-evaluation-2026.63.json). Cada CRUD final compara campos visibles y snapshot persistido al reabrir una página real de edición. Las versiones anteriores del catálogo se conservaron; no se reescribieron instrumentos históricos.
+Recuento de aquel cierre:133 actividades con snapshot actual =103 actividades con evidencia completa +28 referencias iniciales +2 actividades adicionales, sin solapamiento entre esas tres categorías. La base108 de Inglés se solapa (78+28+2), por lo que no se suma nuevamente. La consulta posterior confirmó también133 filas de instrumento y de snapshot, sin versiones predecesoras en este conjunto local. Véase la conciliación por IDs del informe de calidad. [Evidencia histórica.63](evidencias/lengua-historicos-evaluation-2026.63.json). Cada CRUD final compara campos visibles y snapshot persistido al reabrir una página real de edición. Las versiones anteriores del catálogo se conservaron; no se reescribieron instrumentos históricos.
 
 ## Archivos y Git
 

@@ -1,5 +1,7 @@
 # Inglés común de sexto: cierre de las familias verificadas
 
+Rectificación de calidad,15/10/2026: los cierres curriculares se conservan, pero el cotejo de datos independientes y el criterio de revisión recibieron un ajuste posterior en.64–.66. Los ejemplos previos siguen siendo evidencia histórica; los corregidos, la conciliación de cantidades y las verificaciones nuevas están en el [informe de calidad de Inglés1–6](ingles-calidad-informe.md).
+
 Se completó la conexión y verificación de las familias y patrones definidos de sexto, último grado del encargo. Fuente oficial PDF 169–174, impresas 168–173, segundo ciclo común; ámbito `ae0c8305-150c-5996-ab4a-deb379827ea9`. Se cotejaron visualmente las seis páginas: 159 registros y 16 grupos. [Decisión y conexión por registro](ingles-6-cotejo-fuente.json).
 
 PDF 172–173 continúa únicamente gramática. CONCEPT37 une encabezado y estructuras reales; CONCEPT44 continúa un diálogo de43/45; otros registros compuestos conservan todas sus formas. PROCEDURE23 incluye planificación y lenguaje no verbal, con dos evidencias cuando se solicitan. El espaciado extraído «l o» de PROCEDURE18 se contrastó como «lo», interpretable; no se inventó un procedimiento.

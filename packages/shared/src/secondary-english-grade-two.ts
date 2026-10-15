@@ -9,7 +9,7 @@ import {requestedGradeTwoLexicon,gradeTwoLexicalCriterion} from './secondary-eng
 import {requestedGradeTwoStrategies,gradeTwoStrategyCriteria} from './secondary-english-grade-two-strategies'
 import {requestedGradeTwoGenres,gradeTwoGenreCriteria} from './secondary-english-grade-two-genres'
 import {gradeTwoContextCriteria} from './secondary-english-grade-two-context'
-import {affirmativeScopedEnglishTask,commonEnglishGrade} from './secondary-english-task-text'
+import {affirmativeScopedEnglishTask,commonEnglishGrade,englishProfileWithoutNarration} from './secondary-english-task-text'
 
 export const englishGradeTwoModule={id:'ingles-comunicacion-2',grade:2,subjectCode:'ING',pdfPages:[140,141,142,143,144,145],policy:'COMMON_CURRICULUM_FUNCTIONS_ALIASES_FORMS_PRODUCTS_COMPOSITION_V7'}
 type Mode='reading'|'listening'|'interaction'|'oral'|'writing'|'audiovisual'|'analysis'|'comparison'|'research'
@@ -61,7 +61,7 @@ function single(description:string):EnglishGradeTwoTask|null{
  if(/\b(?:deseos?|esperanzas?|wishes|hopes)\b/.test(text))functions.push('wishes')
  if(/\b(?:consejos?|sugerencias?|recomendaciones?|advice|suggestions?)\b/.test(text))functions.push('advice')
  if(/\b(?:planes?|planear\w*|encuentro|cita|meeting|plans)\b/.test(text))functions.push('plans')
- if(/\b(?:experiencias?|acontecimientos?|hechos pasados|experience)\b/.test(text))functions.push('experience')
+ if(/\b(?:experiencias?|acontecimientos?|hechos pasados|experience)\b/.test(text)&&!englishProfileWithoutNarration(text))functions.push('experience')
  if(!functions.length&&mode==='interaction'&&/\b(?:convers(?:ar(?:an)?|an|en)|dialog(?:ar(?:an)?|an|uen))\b/.test(text))functions.push('conversation')
  if(requestedGradeTwoStrategies(text,mode).some(f=>f.id==='cultural-comparison'))functions.splice(0)
  const supported=grammar.length+lexical.length+requestedGradeTwoStrategies(text,mode).length+requestedGradeTwoGenres(text,mode).length
@@ -127,14 +127,19 @@ export function secondGradeEnglishCriteria(task:EnglishGradeTwoTask):ContextualT
     ])
    }
    case 'states':{
-    const targets=[/estado(?:s)? (?:de animo|animicos?)|moods?/.test(text)?'el estado de ánimo':'',/sensacion(?:es)? fisica(?:s)?|estado(?:s)? fisico(?:s)?|estados animicos y fisicos/.test(text)?'la sensación física':''].filter(Boolean).join(' y ')
-    return row(id,'Estados del personaje o referente',[
+    const aspects=[/estado(?:s)? (?:de animo|animicos?)|moods?/.test(text)?'el estado de ánimo':'',/sensacion(?:es)? fisica(?:s)?|estado(?:s)? fisico(?:s)?|estados animicos y fisicos/.test(text)?'la sensación física':''].filter(Boolean),targets=aspects.join(' y ')
+    const criterion=row(id,'Estados del personaje o referente',[
      receptive?`Distingue ${targets} del personaje o referente indicado en el ${source} en inglés.`:`Describe en inglés ${targets} del personaje o referente indicado con oraciones básicas que permiten reconocer lo descrito.`,
      'Se comprende el estado solicitado; una referencia al personaje necesita precisión.',
      'Nombra estados aislados sin establecer cuál corresponde al personaje o referente.',
      'Atribuye al personaje un estado incompatible con la situación comunicada.',
      'No aporta información reconocible del estado solicitado del personaje o referente.',
     ])
+    if(aspects.length>1&&!/\bo\b/.test(text))criterion.checklistParts=aspects.map(target=>{
+     const progressionLevels=criterion.progressionLevels.map(level=>level.replace(targets,target)) as ContextualTopicCriterion['progressionLevels']
+     return {key:target==='el estado de ánimo'?'mood':'physical',observable:progressionLevels[0],progressionLevels}
+    })
+    return criterion
    }
    case 'help':{
     const requesting=/solicit\w*|pedir\w*|pid\w*/.test(text),offering=/ofrec\w*|ofert\w*|offer/.test(text)

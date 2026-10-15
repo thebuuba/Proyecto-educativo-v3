@@ -1,0 +1,935 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "75ed6e9dd5d217afccdab30c59df874fdea9b49a",
+      "dirty": true,
+      "startedAt": "2026-10-15T09:36:42.359Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.66"
+    }
+  },
+  "activities": [
+    {
+      "id": "16e7d658-bee1-4b11-b354-e12cdf042a2a",
+      "name": "QA calidad · Experiencia y capacidades separadas · sexto",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Leerán en inglés un curriculum vitae e identificarán la experiencia y capacidades del perfil proporcionado de un personaje ficticio.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "05837a6f-cfa0-4b86-9fdc-078f8df81122",
+      "instrumentSnapshotId": "5446808f-3f84-40c8-a7db-c4b7adc46ee0",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.65:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-genre-cv:experience:0",
+            "title": "Identifica la experiencia del perfil indicado en el currículum vitae en inglés. Ajuste manual del docente.",
+            "maxScore": 8.68,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-6-genre-cv:experience",
+            "description": "Identifica la experiencia del perfil indicado en el currículum vitae en el texto disponible en inglés.",
+            "descriptors": [
+              {
+                "text": "Identifica la experiencia del perfil indicado en el currículum vitae en el texto disponible en inglés.",
+                "levelId": "L2",
+                "scoreUnits": 868
+              },
+              {
+                "text": "Identifica la experiencia del perfil indicado en el currículum vitae en el texto disponible en inglés.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 868,
+            "relativeWeight": 2,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.65:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-genre-cv:capacities:1",
+            "title": "Identifica las capacidades del perfil indicado en el currículum vitae en el texto disponible en inglés.",
+            "maxScore": 8.67,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-6-genre-cv:capacities",
+            "description": "Identifica las capacidades del perfil indicado en el currículum vitae en el texto disponible en inglés.",
+            "descriptors": [
+              {
+                "text": "Identifica las capacidades del perfil indicado en el currículum vitae en el texto disponible en inglés.",
+                "levelId": "L2",
+                "scoreUnits": 867
+              },
+              {
+                "text": "Identifica las capacidades del perfil indicado en el currículum vitae en el texto disponible en inglés.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 867,
+            "relativeWeight": 2,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "ranking": [
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 43,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "30de0692-edaa-5567-98a2-e2c232c12767",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3eb2b826-eda8-53ed-8362-b0ccebfbc910",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "5643d0db-e0d5-5153-8c56-10327798a016",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=3",
+                "procedureMatches=0"
+              ],
+              "elementId": "6cf24ed3-879b-5873-89fe-1f2ba72f46d2",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "12867625-d0d6-5744-bef7-79c003e33c26",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "34d8121d-1375-55fc-98b1-9392ee86e314",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "4bdf57f0-a4c6-5f10-96c8-c080eaef71f1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "a146e080-2a5f-522b-8f94-535bc1e4522e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "326a4684-8cff-5b1f-abdf-5390c720ddae",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b8241bf8-4393-5447-b27e-832ac3923c7c",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e1a63052-f434-5ca2-ac92-4325e6f5c55a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4a65e9b5-2332-52d5-8f61-00513e1e8a12",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "5d20974b-13bc-5744-a451-8910ed4cdded",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "60f4967e-95ed-5bc1-adbd-05ae6f415707",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.65",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "READING_COMPREHENSION",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA calidad · Experiencia y capacidades separadas · sexto",
+        "lista-cotejo:points:0": "8.68",
+        "lista-cotejo:points:1": "8.67",
+        "lista-cotejo:criterion:0": "Identifica la experiencia del perfil indicado en el currículum vitae en inglés. Ajuste manual del docente.",
+        "lista-cotejo:criterion:1": "Identifica las capacidades del perfil indicado en el currículum vitae en el texto disponible en inglés.",
+        "lista-cotejo:description:0": "Identifica la experiencia del perfil indicado en el currículum vitae en el texto disponible en inglés.",
+        "lista-cotejo:description:1": "Identifica las capacidades del perfil indicado en el currículum vitae en el texto disponible en inglés.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.65:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-genre-cv:experience:0",
+        "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.65:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-genre-cv:capacities:1",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[2,2]",
+        "lista-cotejo:criterion-weight:0": "2",
+        "lista-cotejo:criterion-weight:1": "2",
+        "lista-cotejo:meta:criteriaCount": "2",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.65",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Identifica la experiencia del perfil indicado en el currículum vitae en el texto disponible en inglés.\",\"description\":\"Identifica la experiencia del perfil indicado en el currículum vitae en el texto disponible en inglés.\",\"progression\":[\"Identifica la experiencia del perfil indicado en el currículum vitae en el texto disponible en inglés.\",\"Reconoce la experiencia del perfil indicado en el currículum vitae; una referencia necesita precisión.\",\"Recupera una parte de la información, pero deja sin identificar por completo la experiencia del perfil indicado en el currículum vitae.\",\"Atribuye la experiencia a un referente diferente del indicado en la fuente.\",\"No aporta información reconocible para identificar la experiencia del perfil indicado en el currículum vitae.\"]}",
+        "lista-cotejo:criterion-evidence:1": "{\"title\":\"Identifica las capacidades del perfil indicado en el currículum vitae en el texto disponible en inglés.\",\"description\":\"Identifica las capacidades del perfil indicado en el currículum vitae en el texto disponible en inglés.\",\"progression\":[\"Identifica las capacidades del perfil indicado en el currículum vitae en el texto disponible en inglés.\",\"Reconoce las capacidades del perfil indicado en el currículum vitae; una referencia necesita precisión.\",\"Recupera una parte de la información, pero deja sin identificar por completo las capacidades del perfil indicado en el currículum vitae.\",\"Atribuye las capacidades a un referente diferente del indicado en la fuente.\",\"No aporta información reconocible para identificar las capacidades del perfil indicado en el currículum vitae.\"]}",
+        "lista-cotejo:criterion-template:0": "ing-6-genre-cv:experience",
+        "lista-cotejo:criterion-template:1": "ing-6-genre-cv:capacities"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "2139c7d2-dc5c-4596-9cda-aa737f650085",
+      "name": "QA calidad · Revisamos sin cambios innecesarios · sexto",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Escribirán en inglés un correo electrónico con un mensaje para un personaje ficticio. Revisarán el sentido y la corrección del texto.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "1885e251-0024-419a-8f6b-609d11a51bd9",
+      "instrumentSnapshotId": "51c02558-c414-4531-928c-64dc9fb826aa",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.65:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-revision:0",
+            "title": "Revisión observable del sentido y la escritura. Ajuste manual del docente.",
+            "maxScore": 5,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-6-strategy-revision",
+            "description": "En la revisión observable, comprueba el sentido y la corrección del mensaje en inglés; mantiene lo correcto y, cuando aparecen problemas durante la comprobación, los identifica y corrige sin alterar la intención.",
+            "descriptors": [
+              {
+                "text": "En la revisión observable, comprueba el sentido y la corrección del mensaje en inglés; mantiene lo correcto y, cuando aparecen problemas durante la comprobación, los identifica y corrige sin alterar la intención.",
+                "levelId": "L4",
+                "scoreUnits": 500
+              },
+              {
+                "text": "Comprueba el sentido y la corrección; conserva lo correcto y corrige los problemas observados si los hay, aunque una comprobación necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 333
+              },
+              {
+                "text": "La revisión observable comprueba solo parte del sentido o la corrección; quedan comprobaciones sin realizar o problemas observados sin resolver.",
+                "levelId": "L2",
+                "scoreUnits": 167
+              },
+              {
+                "text": "No se observa la comprobación solicitada; el producto final por sí solo no permite acreditar el proceso de revisión.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 500,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.65:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-genre-email:1",
+            "title": "Comunicación por correo electrónico",
+            "maxScore": 9,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-6-genre-email",
+            "description": "Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.",
+            "descriptors": [
+              {
+                "text": "Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.",
+                "levelId": "L4",
+                "scoreUnits": 900
+              },
+              {
+                "text": "La producción permite reconocer el destinatario y propósito del correo y su información solicitada; una relación necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 600
+              },
+              {
+                "text": "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer el destinatario y propósito del correo y su información solicitada.",
+                "levelId": "L2",
+                "scoreUnits": 300
+              },
+              {
+                "text": "No aporta una producción reconocible que comunique el destinatario y propósito del correo y su información solicitada.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 900,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.65:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-written:2",
+            "title": "Texto escrito estructurado y comprensible",
+            "maxScore": 6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-6-written",
+            "description": "Organiza en inglés las ideas del texto con una estructura y relaciones que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.",
+            "descriptors": [
+              {
+                "text": "Organiza en inglés las ideas del texto con una estructura y relaciones que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.",
+                "levelId": "L4",
+                "scoreUnits": 600
+              },
+              {
+                "text": "El texto se comprende; una relación entre ideas necesita revisión.",
+                "levelId": "L3",
+                "scoreUnits": 400
+              },
+              {
+                "text": "Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el texto.",
+                "levelId": "L2",
+                "scoreUnits": 200
+              },
+              {
+                "text": "No se reconoce un texto escrito relacionado con el propósito de la tarea.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 600,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "ranking": [
+            {
+              "score": 62,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "3eb2b826-eda8-53ed-8362-b0ccebfbc910",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 59,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "30de0692-edaa-5567-98a2-e2c232c12767",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "12867625-d0d6-5744-bef7-79c003e33c26",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "2aa8a929-5a98-5f30-8432-2b1d7064cb7e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "a146e080-2a5f-522b-8f94-535bc1e4522e",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "326a4684-8cff-5b1f-abdf-5390c720ddae",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "79c2843e-dcfe-5451-a384-565b1228b126",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 30,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "9f7f0156-e076-5014-a42f-c54648251ebf",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "11864385-21cd-597a-be3f-2ecf5230d245",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "3aabbaf3-eb35-576d-8e91-cca1ab86753a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4c416817-9b3c-5e16-a1ef-5adfa56dc968",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "abda43a4-731b-5563-a2d6-dcdc4768cbaa",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f0b56380-43c2-579f-bee5-0ee6034eb5d7",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=writing",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.65",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para QA calidad · Revisamos sin cambios innecesarios · sexto",
+        "rubrica:points:0": "5",
+        "rubrica:points:1": "9",
+        "rubrica:points:2": "6",
+        "rubrica:criterion:0": "Revisión observable del sentido y la escritura. Ajuste manual del docente.",
+        "rubrica:criterion:1": "Comunicación por correo electrónico",
+        "rubrica:criterion:2": "Texto escrito estructurado y comprensible",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "En la revisión observable, comprueba el sentido y la corrección del mensaje en inglés; mantiene lo correcto y, cuando aparecen problemas durante la comprobación, los identifica y corrige sin alterar la intención.",
+        "rubrica:description:1": "Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.",
+        "rubrica:description:2": "Organiza en inglés las ideas del texto con una estructura y relaciones que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.65:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-revision:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.65:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-genre-email:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.65:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-written:2",
+        "rubrica:descriptor:0:1": "No se observa la comprobación solicitada; el producto final por sí solo no permite acreditar el proceso de revisión.",
+        "rubrica:descriptor:0:2": "La revisión observable comprueba solo parte del sentido o la corrección; quedan comprobaciones sin realizar o problemas observados sin resolver.",
+        "rubrica:descriptor:0:3": "Comprueba el sentido y la corrección; conserva lo correcto y corrige los problemas observados si los hay, aunque una comprobación necesita precisión.",
+        "rubrica:descriptor:0:4": "En la revisión observable, comprueba el sentido y la corrección del mensaje en inglés; mantiene lo correcto y, cuando aparecen problemas durante la comprobación, los identifica y corrige sin alterar la intención.",
+        "rubrica:descriptor:1:1": "No aporta una producción reconocible que comunique el destinatario y propósito del correo y su información solicitada.",
+        "rubrica:descriptor:1:2": "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer el destinatario y propósito del correo y su información solicitada.",
+        "rubrica:descriptor:1:3": "La producción permite reconocer el destinatario y propósito del correo y su información solicitada; una relación necesita precisión.",
+        "rubrica:descriptor:1:4": "Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.",
+        "rubrica:descriptor:2:1": "No se reconoce un texto escrito relacionado con el propósito de la tarea.",
+        "rubrica:descriptor:2:2": "Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el texto.",
+        "rubrica:descriptor:2:3": "El texto se comprende; una relación entre ideas necesita revisión.",
+        "rubrica:descriptor:2:4": "Organiza en inglés las ideas del texto con una estructura y relaciones que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:manualPoints": "true",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[5,9,6]",
+        "rubrica:criterion-weight:0": "3",
+        "rubrica:criterion-weight:1": "4",
+        "rubrica:criterion-weight:2": "3",
+        "rubrica:meta:criteriaCount": "3",
+        "rubrica:meta:catalogVersion": "evaluation-2026.65",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Revisión observable del sentido y la escritura. Ajuste manual del docente.\",\"description\":\"En la revisión observable, comprueba el sentido y la corrección del mensaje en inglés; mantiene lo correcto y, cuando aparecen problemas durante la comprobación, los identifica y corrige sin alterar la intención.\",\"progression\":[\"En la revisión observable, comprueba el sentido y la corrección del mensaje en inglés; mantiene lo correcto y, cuando aparecen problemas durante la comprobación, los identifica y corrige sin alterar la intención.\",\"Comprueba el sentido y la corrección; conserva lo correcto y corrige los problemas observados si los hay, aunque una comprobación necesita precisión.\",\"La revisión observable comprueba solo parte del sentido o la corrección; quedan comprobaciones sin realizar o problemas observados sin resolver.\",\"La comprobación pasa por alto problemas señalados durante la revisión o introduce cambios que alteran el sentido.\",\"No se observa la comprobación solicitada; el producto final por sí solo no permite acreditar el proceso de revisión.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"Comunicación por correo electrónico\",\"description\":\"Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.\",\"progression\":[\"Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.\",\"La producción permite reconocer el destinatario y propósito del correo y su información solicitada; una relación necesita precisión.\",\"Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer el destinatario y propósito del correo y su información solicitada.\",\"La producción cambia el sentido: dirige a otra persona información que no corresponde al propósito del correo.\",\"No aporta una producción reconocible que comunique el destinatario y propósito del correo y su información solicitada.\"]}",
+        "rubrica:criterion-evidence:2": "{\"title\":\"Texto escrito estructurado y comprensible\",\"description\":\"Organiza en inglés las ideas del texto con una estructura y relaciones que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.\",\"progression\":[\"Organiza en inglés las ideas del texto con una estructura y relaciones que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.\",\"El texto se comprende; una relación entre ideas necesita revisión.\",\"Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el texto.\",\"La organización o las expresiones cambian el sentido del texto solicitado.\",\"No se reconoce un texto escrito relacionado con el propósito de la tarea.\"]}",
+        "rubrica:criterion-template:0": "ing-6-strategy-revision",
+        "rubrica:criterion-template:1": "ing-6-genre-email",
+        "rubrica:criterion-template:2": "ing-6-written",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ],
+  "historicalActivitiesPreserved": 133
+}

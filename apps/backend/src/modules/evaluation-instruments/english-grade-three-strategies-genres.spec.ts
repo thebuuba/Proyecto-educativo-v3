@@ -1,3 +1,4 @@
+import {englishObjectiveId} from './english-quality-test-utils'
 import {describe,it,expect} from 'vitest'
 import {recommend} from './recommendation-engine'
 import strategies from '../../../../../data/evaluation-instruments/english-grade-three-strategy-contracts.json'
@@ -6,7 +7,7 @@ const context={level:'SECONDARY' as const,grade:3,subjectCode:'ING',cycle:1,opta
 const propose=(description:string,preferredInstrumentType:'rubrica'|'lista-cotejo'|'escala'|'lista-ponderada',maxScore:number,title='Actividad')=>recommend({activityTitle:title,description,preferredInstrumentType,maxScore,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
 describe('Tercero: estrategias y géneros propios según modalidad y fuente',()=>{
  for(const f of strategies)for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const total of [20,17.35])it(`estrategia ${f.sourceIndex} ${f.id} ${format} ${total}`,()=>{
-  const p=propose(f.description,format,total),c=p.criteria.find(c=>c.templateId===`ing-3-strategy-${f.id}`)
+  const p=propose(f.description,format,total),c=p.criteria.find(c=>englishObjectiveId(c.templateId)===`ing-3-strategy-${f.id}`)
   expect(c).toBeDefined();expect(c!.progressionLevels).toHaveLength(5)
   expect(c!.progressionLevels?.[4]).toMatch(/^No /)
   expect(p.criteria).toEqual(propose(f.description,format,total,'La célula').criteria)

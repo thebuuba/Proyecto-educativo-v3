@@ -123,12 +123,12 @@ export const englishGradeOneStrategies:Strategy[]=[
   'La planificación organiza ideas ajenas al propósito o destinatario del mensaje.',
   'No aporta una organización de ideas relacionada con el mensaje solicitado.',
  ]),
- strategy('revision','revis\\w* (?:el |un )?(?:borrador|mensaje|texto)|correg\\w* problemas',['writing'],'Revisión de sentido y escritura',[
-  'Los cambios realizados resuelven los problemas de sentido o escritura identificados en el mensaje en inglés.',
-  'Los cambios resuelven los problemas principales; una relación necesita revisión.',
-  'Modifica partes del mensaje, pero mantiene problemas identificados que dificultan comprenderlo.',
-  'Los cambios introducen contradicciones o alteran la idea que se quería comunicar.',
-  'No aporta cambios relacionados con los problemas de revisión planteados.',
+ strategy('revision','revis\\w* (?:el |un )?(?:borrador|mensaje|texto|sentido)|revis\\w* (?:el )?(?:significado|sentido|correccion)(?: y (?:la )?correccion)? (?:del |de un )?(?:mensaje|texto|borrador)|correg\\w* problemas',['writing'],'Revisión de sentido y escritura',[
+  'En la revisión observable, comprueba el sentido y la corrección del mensaje en inglés; mantiene lo correcto y, cuando aparecen problemas durante la comprobación, los identifica y corrige sin alterar la intención.',
+  'Comprueba el sentido y la corrección; conserva lo correcto y corrige los problemas observados si los hay, aunque una comprobación necesita precisión.',
+  'La revisión observable comprueba solo parte del sentido o la corrección; quedan comprobaciones sin realizar o problemas observados sin resolver.',
+  'La comprobación pasa por alto problemas señalados durante la revisión o introduce cambios que alteran el sentido.',
+  'No se observa la comprobación solicitada; el producto final por sí solo no permite acreditar el proceso de revisión.',
  ]),
  strategy('association','asociaciones mentales|asociacion mental|asociaciones con acciones',receptive,'Asociaciones para comprender palabras',[
   'Establece una asociación entre la palabra o expresión en inglés y su significado mediante el recurso acordado.',
@@ -167,6 +167,17 @@ export function requestedEnglishStrategies(text:string,mode?:string,strategies=e
 export function englishStrategyCriteria(text:string,mode:string,scope='ing-1',strategies=englishGradeOneStrategies):ContextualTopicCriterion[]{
  return requestedEnglishStrategies(text,mode,strategies).map(f=>{
   let levels=f.levels
+  let checklistParts:ContextualTopicCriterion['checklistParts']
+  if(f.id==='revision')checklistParts=[['sense','el sentido previsto'],['correctness','la corrección de la escritura']].map(([key,target])=>{
+   const progressionLevels:Strategy['levels']=[
+    `En la revisión observable, comprueba ${target} del mensaje en inglés; mantiene lo correcto y, cuando aparecen problemas en ese aspecto, los identifica y corrige.`,
+    `Comprueba ${target}; conserva lo correcto y corrige los problemas observados si los hay, aunque una comprobación necesita precisión.`,
+    `La revisión observable comprueba solo una parte de ${target}; quedan comprobaciones sin realizar o problemas observados sin resolver.`,
+    `La comprobación pasa por alto problemas señalados de ${target} o introduce cambios que alteran el mensaje.`,
+    `No se observa la comprobación solicitada de ${target}; el producto final por sí solo no acredita el proceso.`,
+   ]
+   return {key,observable:progressionLevels[0],progressionLevels}
+  })
   if(f.id==='understanding'&&/comprend\w* y que (?:necesit\w*|no comprend\w*)/.test(text))levels=[levels[0].replace('o qué necesita aclarar','y qué necesita aclarar'),...levels.slice(1)] as Strategy['levels']
   if(f.id==='cultural-comparison'&&scope==='ing-1'){
    const aspects=[['celebraciones','las celebraciones'],['puntualidad','la puntualidad'],['gustos|preferencias','los gustos y preferencias'],['formas de interactuar','las formas de interactuar'],['rasgos fisicos','los rasgos físicos de las personas o personajes de los ejemplos'],['efecto del clima|clima en las condiciones','el efecto del clima en las condiciones de vida']].filter(([pattern])=>new RegExp(pattern).test(text)).map(([,label])=>label)
@@ -174,9 +185,14 @@ export function englishStrategyCriteria(text:string,mode:string,scope='ing-1',st
   }
   if(f.id==='annotation'){
    const subrayar=/\bsubray\w*/.test(text),anotar=/\banot\w*/.test(text)
-   const selected=subrayar&&anotar?'el subrayado y la anotación solicitados':subrayar?'el subrayado solicitado':'la anotación solicitada'
+   const alternative=/\b(?:subray\w*|anot\w*)\s+o\s+(?:subray\w*|anot\w*)/.test(text)
+   const selected=subrayar&&anotar?alternative?'la alternativa elegida: subrayar o anotar':'el subrayado y la anotación solicitados':subrayar?'el subrayado solicitado':'la anotación solicitada'
    levels=[levels[0].replace('el subrayado o la anotación solicitada',selected),...levels.slice(1)] as Strategy['levels']
+   if(subrayar&&anotar&&!alternative)checklistParts=[['underline','Subraya'],['annotate','Anota']].map(([key,verb])=>{
+    const progressionLevels:Strategy['levels']=[`${verb} la información solicitada del texto en inglés, seleccionando expresiones pertinentes para la búsqueda.`,`La selección contiene la información principal solicitada; una referencia necesita precisión.`,'Selecciona parte de la información y deja datos solicitados sin localizar.','Selecciona información ajena a la búsqueda solicitada.','No se observa la selección de información solicitada.']
+    return {key,observable:progressionLevels[0],progressionLevels}
+   })
   }
-  return {templateId:`${scope}-strategy-${f.id}`,title:f.title,observable:levels[0],weight:3,progressionLevels:levels}
+  return {templateId:`${scope}-strategy-${f.id}`,title:f.title,observable:levels[0],weight:3,progressionLevels:levels,...(checklistParts?{checklistParts}:{})}
  })
 }

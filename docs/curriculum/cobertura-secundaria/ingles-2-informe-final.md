@@ -1,5 +1,7 @@
 # Inglés común de segundo: cierre de familias definidas
 
+Rectificación de calidad,15/10/2026: los cierres curriculares se conservan, pero el cotejo de datos independientes y el criterio de revisión recibieron un ajuste posterior en.64–.66. Los ejemplos previos siguen siendo evidencia histórica; los corregidos, la conciliación de cantidades y las verificaciones nuevas están en el [informe de calidad de Inglés1–6](ingles-calidad-informe.md).
+
 Fecha de trabajo:14/10/2026, República Dominicana. **Este cierre corresponde a2.º; el encargo de2.º–6.º continúa.** Fuente oficial MINERD: PDF140–145, páginas impresas139–144, primer ciclo, Inglés común, ámbito `7e4c1236-8f04-5817-b017-a9ace9edff5e`. No incluye optativas.
 
 ## Cobertura y fuente

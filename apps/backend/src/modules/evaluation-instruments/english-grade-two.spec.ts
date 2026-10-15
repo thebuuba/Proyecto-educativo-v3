@@ -1,3 +1,4 @@
+import {englishObjectiveId} from './english-quality-test-utils'
 import {describe,it,expect} from 'vitest'
 import {recommend,suggestedSelections} from './recommendation-engine'
 import fixtures from '../../../../../data/evaluation-instruments/english-grade-two-contracts.json'
@@ -38,7 +39,7 @@ describe('Inglés común segundo: funciones propias del currículo',()=>{
  for(const fixture of fixtures)for(const format of formats)for(const total of [20,17.35])it(`${fixture.id} ${format} ${total}`,()=>{
   const p=propose(fixture.description,format,total),text=JSON.stringify(p.criteria)
   expect(p.activityType).toBe(fixture.activity)
-  expect(p.criteria.map(c=>c.templateId)).toEqual(fixture.criteria.map(id=>`ing-2-${id}`))
+  expect([...new Set(p.criteria.map(c=>englishObjectiveId(c.templateId)))]).toEqual(fixture.criteria.map(id=>`ing-2-${id}`))
   for(const value of fixture.contains)expect(text).toContain(value)
   for(const value of fixture.excludes)expect(text.toLowerCase()).not.toContain(value.toLowerCase())
   expect(p.criteria.every(c=>c.progressionLevels?.length===5)).toBe(true)

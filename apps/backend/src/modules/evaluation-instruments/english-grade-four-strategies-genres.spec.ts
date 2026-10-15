@@ -1,3 +1,4 @@
+import {englishObjectiveId} from './english-quality-test-utils'
 import {describe,it,expect} from 'vitest'
 import {recommend} from './recommendation-engine'
 import strategies from '../../../../../data/evaluation-instruments/english-grade-four-strategy-contracts.json'
@@ -6,7 +7,7 @@ const context={level:'SECONDARY' as const,grade:4,cycle:2,subjectCode:'ING',opta
 const propose=(description:string,preferredInstrumentType:'rubrica'|'lista-cotejo'|'escala'|'lista-ponderada'='rubrica',maxScore=20,title='Actividad')=>recommend({activityTitle:title,description,preferredInstrumentType,maxScore,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
 describe('Cuarto: estrategias y listas distintas por modalidad cotejadas en PDF158–161',()=>{
  for(const f of strategies)for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const total of [20,17.35])it(`estrategia ${f.sourceIndex} ${f.id} ${format} ${total}`,()=>{
-  const p=propose(f.description,format,total),c=p.criteria.find(c=>c.templateId===`ing-4-strategy-${f.id}`)
+  const p=propose(f.description,format,total),c=p.criteria.find(c=>englishObjectiveId(c.templateId)===`ing-4-strategy-${f.id}`)
   expect(c).toBeDefined();expect(c!.progressionLevels).toHaveLength(5)
   expect(p.criteria).toEqual(propose(f.description,format,total,'La célula').criteria)
   expect(p.criteria.reduce((s,c)=>s+c.maxScoreUnits,0)).toBe(Math.round(total*100))

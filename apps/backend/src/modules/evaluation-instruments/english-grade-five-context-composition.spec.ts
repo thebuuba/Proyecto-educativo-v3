@@ -1,3 +1,4 @@
+import {englishObjectiveId} from './english-quality-test-utils'
 import {describe,it,expect} from 'vitest'
 import {recommend} from './recommendation-engine'
 import contexts from '../../../../../data/evaluation-instruments/english-grade-five-context-contracts.json'
@@ -35,7 +36,7 @@ describe('Quinto: contexto solicitado y consignas mixtas',()=>{
  for(const f of compositions)for(const format of formats)for(const total of [20,17.35])it(`composición ${f.id} ${format} ${total}`,()=>{
   const p=propose(f.description,format,total)
   expect(p.activityType).toBe(f.activity)
-  for(const id of f.criteria)expect(p.criteria.map(c=>c.templateId)).toContain(`ing-5-${id}`)
+  for(const id of f.criteria)expect(p.criteria.map(c=>englishObjectiveId(c.templateId))).toContain(`ing-5-${id}`)
   for(const id of f.excluded??[])expect(p.criteria.map(c=>c.templateId)).not.toContain(`ing-5-${id}`)
   expect(p.criteria.reduce((s,c)=>s+c.maxScoreUnits,0)).toBe(Math.round(total*100))
  })

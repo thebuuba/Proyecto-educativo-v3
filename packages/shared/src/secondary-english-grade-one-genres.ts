@@ -36,6 +36,41 @@ export const englishGradeOneGenres:Genre[]=[
 
 export const requestedEnglishGenres=(text:string,genres=englishGradeOneGenres)=>genres.filter(g=>new RegExp(`\\b(?:${g.match})\\b`).test(text))
 
+/** Named data can be checked separately; correspondence, sequence and argument remain one performance. */
+function checklistGenreParts(genre:Genre,text:string,source:string,receptive:boolean):{parts?:ContextualTopicCriterion['checklistParts'];data:string}|undefined{
+ if(!receptive&&!['cv','form','business-card'].includes(genre.id))return undefined
+ const evidence=receptive?text.match(/\b(?:identific\w*|localiz\w*|reconoc\w*|extraer\w*)\s+([^.;]+)/)?.[1]
+  :text.match(/\b(?:inclu\w*|complet\w*|consign\w*|con)\s+([^.;]+)/)?.[1]
+ if(!evidence||/\b(?:relacion\w*|correspond\w*|compar\w*)\b/.test(evidence))return undefined
+ const fields:Record<string,[string,string,string][]>={
+  cv:[['experience','experiencia','la experiencia'],['capacities','capacidades|competencias','las capacidades'],['education','formacion|educacion','la formación']],
+  'business-card':[['name','nombre','el nombre'],['occupation','ocupacion|profesion','la ocupación'],['phone','telefono','el teléfono'],['email','correo electronico|email','el correo electrónico']],
+  form:[['name','nombre','el nombre'],['age','edad','la edad'],['phone','telefono','el teléfono'],['address','direccion','la dirección'],['email','correo electronico|email','el correo electrónico']],
+  invoice:[['issuer','emisor','el emisor'],['date','fecha','la fecha'],['total','total','el total']],
+  email:[['recipient','destinatarios?','el destinatario'],['purpose','proposito|intencion','el propósito']],
+  letter:[['recipient','destinatarios?','el destinatario'],['purpose','proposito|intencion','el propósito']],
+ }
+ const selected=(fields[genre.id]??[]).filter(([,pattern])=>new RegExp(`\\b(?:${pattern})\\b`).test(evidence))
+ if(!selected.length)return undefined
+ const positions=selected.map(([,pattern])=>evidence.match(new RegExp(`\\b(?:${pattern})\\b`))!)
+ const start=Math.min(...positions.map(m=>m.index!)),end=Math.max(...positions.map(m=>m.index!+m[0].length))
+ const reference=genre.id==='cv'?'del perfil indicado en el currículum vitae':genre.id==='form'?'del formulario':genre.id==='invoice'?'de la factura':genre.id==='letter'?'de la carta':genre.id==='email'?'del correo':'de la tarjeta de presentación'
+ if(/\bo\b/.test(evidence.slice(start,end)))return {data:`el dato solicitado de la alternativa elegida ${reference}`}
+ const labels=selected.map(([, ,label])=>label),data=(labels.length===1?labels[0]:labels.slice(0,-1).join(', ')+' y '+labels.at(-1))+' '+reference
+ const parts=selected.map(([key,,label])=>{
+  const target=`${label} ${reference}`
+  const levels:ContextualTopicCriterion['progressionLevels']=[
+   receptive?`Identifica ${target} en el ${source} en inglés.`:`Incluye en inglés ${target}, con datos de la persona o personaje indicado.`,
+   `Reconoce ${target}; una referencia necesita precisión.`,
+   `Recupera una parte de la información, pero deja sin identificar por completo ${target}.`,
+   `Atribuye ${label} a un referente diferente del indicado en la fuente.`,
+   `No aporta información reconocible para identificar ${target}.`,
+  ]
+  return {key,observable:levels[0],progressionLevels:levels}
+ })
+ return {data,parts}
+}
+
 export function englishGenreCriteria(text:string,mode:string,existing:ContextualTopicCriterion[],scope='ing-1',genres=englishGradeOneGenres,preserveRequestedData=false):ContextualTopicCriterion[]{
  const receptive=mode==='reading'||mode==='listening',source=mode==='listening'?'mensaje escuchado':'texto disponible'
  return requestedEnglishGenres(text,genres).filter(g=>{
@@ -61,6 +96,8 @@ export function englishGenreCriteria(text:string,mode:string,existing:Contextual
     g={...g,data:`${recipient?'el destinatario':'el propósito'} ${sourceName}`,error:recipient?'atribuye el mensaje a un destinatario distinto del indicado':'atribuye al mensaje una intención contraria a la comunicada'}
    }
   }
+  const discrete=checklistGenreParts(g,text,source,receptive)
+  if(discrete)g={...g,data:discrete.data,...(!receptive?{production:`Incluye en inglés ${discrete.data}, con datos de la persona o personaje indicado.`}:{})}
   const levels:ContextualTopicCriterion['progressionLevels']=receptive?[
    `Identifica ${g.data} en el ${source} en inglés.`,
    `Reconoce ${g.data}; una referencia aislada necesita precisión.`,
@@ -74,6 +111,7 @@ export function englishGenreCriteria(text:string,mode:string,existing:Contextual
    `La producción cambia el sentido: ${g.error}.`,
    `No aporta una producción reconocible que comunique ${g.data}.`,
   ]
-  return {templateId:`${scope}-genre-${g.id}`,title:g.title,observable:levels[0],weight:4,progressionLevels:levels}
+  return {templateId:`${scope}-genre-${g.id}`,title:g.title,observable:levels[0],weight:4,progressionLevels:levels,
+   ...(discrete?.parts?{checklistParts:discrete.parts}:{})}
  })
 }

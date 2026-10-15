@@ -1,3 +1,4 @@
+import {englishObjectiveId} from './english-quality-test-utils'
 import {describe,it,expect} from 'vitest'
 import {recommend} from './recommendation-engine'
 import fixtures from '../../../../../data/evaluation-instruments/english-grade-two-strategy-contracts.json'
@@ -6,7 +7,7 @@ const formats=['rubrica','lista-cotejo','escala','lista-ponderada'] as const
 const propose=(description:string,format:typeof formats[number]='rubrica',score=20,title='Actividad')=>recommend({activityTitle:title,description,maxScore:score,preferredInstrumentType:format,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
 describe('Segundo: procedimientos estratégicos vinculados a evidencias observables',()=>{
  for(const f of fixtures)for(const format of formats)for(const score of [20,17.35])it(`${f.sourceIndex} ${f.id} ${format} ${score}`,()=>{
-  const p=propose(f.description,format,score),c=p.criteria.find(c=>c.templateId===`ing-2-strategy-${f.id}`)
+  const p=propose(f.description,format,score),c=p.criteria.find(c=>englishObjectiveId(c.templateId)===`ing-2-strategy-${f.id}`)
   expect(c).toBeDefined();expect(c!.progressionLevels).toHaveLength(5)
   expect(c!.progressionLevels?.[4]).toMatch(/^No /)
   expect(p.criteria).toEqual(propose(f.description,format,score,'La célula').criteria)

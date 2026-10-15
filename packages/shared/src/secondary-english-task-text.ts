@@ -6,6 +6,7 @@ import type {InstrumentAcademicContext} from './secondary-science'
  * affirmative clause. Resources are not independent assessed actions. */
 export const affirmativeScopedEnglishTask=(description:string)=>affirmativeLanguageTask(withoutResources(description).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
  .replace(/\bno (?:se )?(?:evalu\w*|calific\w*|exig\w*|requer\w*|us\w*|utiliz\w*|emple\w*|respond\w*)\b[^.;]*/g,''))
+export const englishProfileWithoutNarration=(text:string)=>/\b(?:curriculum(?: vitae)?|cv)\b/.test(text)&&!/\b(?:narr\w*|relat\w*|secuencia de acontecimientos)\b/.test(text)
 export function commonEnglishGrade(context:InstrumentAcademicContext|null|undefined,grade:number){
  return context?.level==='SECONDARY'&&context.grade===grade&&!context.optativeExitName&&(context.subjectCode.trim().toUpperCase()==='ING'||!context.subjectCode.trim()&&/^(?:(?:lenguas? extranjeras? )?ingles|english)$/.test(affirmativeLanguageTask(context.subjectName??'')))
 }

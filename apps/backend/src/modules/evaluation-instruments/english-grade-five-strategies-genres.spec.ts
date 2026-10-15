@@ -1,3 +1,4 @@
+import {englishObjectiveId} from './english-quality-test-utils'
 import {describe,it,expect} from 'vitest'
 import {recommend} from './recommendation-engine'
 import strategies from '../../../../../data/evaluation-instruments/english-grade-five-strategy-contracts.json'
@@ -20,7 +21,7 @@ describe('Quinto: estrategias y listas por modalidad cotejadas en PDF163–165',
   expect(c.description).toContain('derechos');expect(c.description).not.toContain('deberes')
  })
  for(const f of strategies)for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const total of [20,17.35])it(`estrategia ${f.sourceIndex} ${f.id} ${format} ${total}`,()=>{
-  const p=propose(f.description,format,total),c=p.criteria.find(c=>c.templateId===`ing-5-strategy-${f.id}`)
+  const p=propose(f.description,format,total),c=p.criteria.find(c=>englishObjectiveId(c.templateId)===`ing-5-strategy-${f.id}`)
   expect(c).toBeDefined();expect(c!.progressionLevels).toHaveLength(5)
   expect(p.criteria).toEqual(propose(f.description,format,total,'La célula').criteria)
   expect(p.criteria.reduce((s,c)=>s+c.maxScoreUnits,0)).toBe(Math.round(total*100))

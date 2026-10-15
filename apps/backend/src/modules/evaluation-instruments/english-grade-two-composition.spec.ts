@@ -1,3 +1,4 @@
+import {englishObjectiveId} from './english-quality-test-utils'
 import {describe,it,expect} from 'vitest'
 import {recommend} from './recommendation-engine'
 import fixtures from '../../../../../data/evaluation-instruments/english-grade-two-composition-contracts.json'
@@ -8,7 +9,7 @@ describe('Segundo: acciones independientes, alternativas y límites',()=>{
  for(const f of fixtures)for(const format of formats)for(const score of [20,17.35])it(`${f.id} ${format} ${score}`,()=>{
   const p=propose(f.description,format,score)
   expect(p.activityType).toBe(f.activity)
-  for(const id of f.criteria)expect(p.criteria.map(c=>c.templateId)).toContain(`ing-2-${id}`)
+  for(const id of f.criteria)expect(p.criteria.map(c=>englishObjectiveId(c.templateId))).toContain(`ing-2-${id}`)
   for(const id of f.excluded??[])expect(p.criteria.map(c=>c.templateId)).not.toContain(`ing-2-${id}`)
   for(const word of f.contains)expect(JSON.stringify(p.criteria)).toContain(word)
   expect(p.criteria).toEqual(propose(f.description,format,score,'La célula').criteria)

@@ -1,5 +1,7 @@
 # Inglés común de cuarto: cierre de las familias verificadas
 
+Rectificación de calidad,15/10/2026: los cierres curriculares se conservan, pero el cotejo de datos independientes y el criterio de revisión recibieron un ajuste posterior en.64–.66. Los ejemplos previos siguen siendo evidencia histórica; los corregidos, la conciliación de cantidades y las verificaciones nuevas están en el [informe de calidad de Inglés1–6](ingles-calidad-informe.md).
+
 Fuente oficial: PDF158–162, páginas impresas157–161, ámbito011167a1-54f7-5915-9d75-5168ec1b0a97, segundo ciclo. Cinco páginas cotejadas visualmente, con162 registros y15 grupos. PDF161 continúa gramática con las otras columnas vacías. [Ledger por registro](ingles-4-cotejo-fuente.json).
 
 Se conectaron once evidencias funcionales;44 familias gramaticales/115 formas y alias;15 familias de vocabulario;15 intenciones de13 registros expresivos;27 estrategias; y géneros separados por modalidad: comprensión oral12/escrita30, producción oral10/escrita14. Contextos, indicadores y consignas mixtas conservan acciones, datos, propósitos, alternativas, negaciones y recursos. No se exige conocimiento científico especializado ni información privada por mencionar esos ámbitos. Motivación, ansiedad, autocontrol y humildad internos se excluyen de puntuación.

@@ -325,9 +325,9 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
           : detectiveModule ? detectiveStoryCriteria(activity.id, input.description ?? '')
             : calligramModule ? calligramCriteria(activity.id, input.description ?? '') : band==='SECONDARY'&&(area==='language'||resolveEvaluationTask('',input.description??'').product) ? actionContentCriteria(activity.id,input.description??'') : []
   const eligibleAuthored = selectedAuthored.filter(item=>!mathTopic || input.includeAdditionalCandidates || !item.templateId.endsWith('-verification'))
-  if (!input.includeAdditionalCandidates) assertInstrumentCapacity(eligibleAuthored.length)
-  const authored: AuthoredCriterion[] = eligibleAuthored.map(item => item.progressionLevels
-    ? formatAuthoredCriteria([{ ...item, progressionLevels: item.progressionLevels }], chosenInstrument)[0] : item)
+  const authored: AuthoredCriterion[] = eligibleAuthored.flatMap<AuthoredCriterion>(item => item.progressionLevels
+    ? formatAuthoredCriteria([{ ...item, progressionLevels: item.progressionLevels }], chosenInstrument) : [item])
+  if (!input.includeAdditionalCandidates) assertInstrumentCapacity(authored.length)
   const authoredWeights = authored.map(item => item.weight)
   const authoredScores = distributeScoreUnits(Math.round(input.maxScore * 100), chosenInstrument === 'lista-ponderada'
     ? distributeScoreUnits(10000, authoredWeights) : authoredWeights)

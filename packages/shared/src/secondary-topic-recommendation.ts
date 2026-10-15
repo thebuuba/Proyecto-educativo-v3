@@ -18,8 +18,8 @@ export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTop
 export function editableAuthoredRecommendation(authored: ContextualTopicCriterion[], input: {
   activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; includeAdditionalCandidates?: boolean
 }, activity: string, moduleName: string): InstrumentRecommendation {
-  if (!input.includeAdditionalCandidates) assertInstrumentCapacity(authored.length)
   authored = formatAuthoredCriteria(authored, input.instrumentType)
+  if (!input.includeAdditionalCandidates) assertInstrumentCapacity(authored.length)
   const levels = input.instrumentType === 'rubrica' || input.instrumentType === 'escala'
     ? ['Destacado', 'Logrado', 'En proceso', 'Inicial'].map((label, index) => ({ id: `L${4 - index}`, label, proportion: (3 - index) / 3 })) : []
   const weights = authored.map(criterion => criterion.weight)

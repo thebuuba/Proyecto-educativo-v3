@@ -1,0 +1,29 @@
+{
+  "catalogVersion": "evaluation-2026.66",
+  "grade": 1,
+  "manualInstrument": "lista-cotejo",
+  "description": "Presentarán oralmente en inglés información personal de un personaje ficticio, indicando nombre y edad.",
+  "fields": [
+    {
+      "label": "Criterio 1",
+      "value": "Comunica en inglés el nombre de la persona o personaje indicado de forma comprensible."
+    },
+    {
+      "label": "Criterio 2",
+      "value": "Comunica en inglés la edad de la persona o personaje indicado de forma comprensible."
+    },
+    {
+      "label": "Criterio 3",
+      "value": "Comunica el mensaje oral en inglés con frases breves y vocabulario comprensible; las pausas, reformulaciones o apoyos acordados permiten seguir las ideas."
+    }
+  ],
+  "numeric": [],
+  "points": [
+    "5.72",
+    "5.71",
+    "8.57"
+  ],
+  "weights": [],
+  "saved": false,
+  "scope": "GENERATION_ONLY_NOT_CRUD"
+}

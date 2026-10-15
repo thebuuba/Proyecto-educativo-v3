@@ -1,5 +1,7 @@
 # Instrumentos cotidianos finales de Inglés común segundo
 
+Rectificación de calidad,15/10/2026: los cierres curriculares se conservan, pero el cotejo de datos independientes y el criterio de revisión recibieron un ajuste posterior en.64–.66. Los ejemplos previos siguen siendo evidencia histórica; los corregidos, la conciliación de cantidades y las verificaciones nuevas están en el [informe de calidad de Inglés1–6](ingles-calidad-informe.md).
+
 Cuatro formatos generados, editados, guardados y reabiertos en Chrome habitual con la cuenta ficticia local. [Campos y snapshots completos](evidencias/ingles-2-final-persistencia.json); [campos observados en navegador](evidencias/ingles-2-final-flujo-navegador.json). Rúbrica .51, cotejo y escala .52, ponderada .53; las correcciones posteriores no cambian el contenido de los primeros tres ejemplos.
 
 ## ING 2 final · Leemos y respondemos · rúbrica

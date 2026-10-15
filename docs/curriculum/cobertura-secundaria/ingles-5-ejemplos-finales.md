@@ -1,5 +1,7 @@
 # Instrumentos cotidianos finales de Inglés común quinto
 
+Rectificación de calidad,15/10/2026: los cierres curriculares se conservan, pero el cotejo de datos independientes y el criterio de revisión recibieron un ajuste posterior en.64–.66. Los ejemplos previos siguen siendo evidencia histórica; los corregidos, la conciliación de cantidades y las verificaciones nuevas están en el [informe de calidad de Inglés1–6](ingles-calidad-informe.md).
+
 Cuatro formatos generados, editados, guardados y reabiertos en Chrome habitual con la cuenta ficticia local. [Campos y snapshots completos](evidencias/ingles-5-final-persistencia.json); [campos observados en navegador](evidencias/ingles-5-final-flujo-navegador.json). Los cuatro formatos usan .62; las alternativas se conservan y los pesos manuales de la ponderada se cotejaron con el snapshot.
 
 ## QA cierre · Reclamación y respuesta · quinto

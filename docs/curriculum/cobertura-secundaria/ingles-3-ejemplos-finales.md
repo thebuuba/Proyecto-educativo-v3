@@ -1,5 +1,7 @@
 # Instrumentos cotidianos finales de Inglés común tercero
 
+Rectificación de calidad,15/10/2026: los cierres curriculares se conservan, pero el cotejo de datos independientes y el criterio de revisión recibieron un ajuste posterior en.64–.66. Los ejemplos previos siguen siendo evidencia histórica; los corregidos, la conciliación de cantidades y las verificaciones nuevas están en el [informe de calidad de Inglés1–6](ingles-calidad-informe.md).
+
 Cuatro formatos generados, editados, guardados y reabiertos en Chrome habitual con la cuenta ficticia local. [Campos y snapshots completos](evidencias/ingles-3-final-persistencia.json); [campos observados en navegador](evidencias/ingles-3-final-flujo-navegador.json). Rúbrica .54; cotejo, escala y ponderada .55. Un primer cotejo .54 se conserva como histórico; el final .55 verifica la conjunción pedida sin corrección manual del indicador de comprensión.
 
 ## ING 3 final · Leemos la noticia y respondemos · rúbrica

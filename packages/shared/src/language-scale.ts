@@ -24,8 +24,13 @@ export function adaptLanguageScale(proposal: InstrumentRecommendation, descripti
   const indexes=proposal.levels.length===4?[0,1,2,4]:[0,1,2,3,4]
   return {...proposal,
     levels:proposal.levels.map((level,index)=>({...level,label:labels[indexes[index]]})),
-    criteria:proposal.criteria.map(criterion=>({...criterion,progressionLevels:[...progression],
-      descriptors:criterion.descriptors.map((descriptor,index)=>({...descriptor,text:progression[indexes[index]]})),
-    })),
+    criteria:proposal.criteria.map(criterion=>{
+      // Degree of a requested revision needs its authored conditional evidence, not inferred edits.
+      const selected=!frequency&&/^ing-[1-6]-strategy-revision(?:$|:)/.test(criterion.templateId)&&criterion.progressionLevels
+        ? criterion.progressionLevels:progression
+      return {...criterion,progressionLevels:[...selected],
+        descriptors:criterion.descriptors.map((descriptor,index)=>({...descriptor,text:selected[indexes[index]]})),
+      }
+    }),
   }
 }

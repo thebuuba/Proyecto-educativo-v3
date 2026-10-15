@@ -1,5 +1,16 @@
 # Avance durable — cobertura secundaria
 
+## Estado vigente: ajuste de calidad de Inglés común1.º–6.º — 15/10/2026
+
+Nuevo encargo del adjunto fdfa93c7-3ad4-4828-bb8b-4a75a3b5927b, posterior al cierre2–6. [Informe de calidad](ingles-calidad-informe.md), [instrumentos completos corregidos](ingles-calidad-ejemplos-completos.md). Corrección compartida de cotejo: datos independientes declarados, relaciones conservadas, peso/IDs y límite20 después de expandir; añadir/completar tras renombrar y duplicados del CV/formulario. Revisión observable admite mantener texto correcto sin cambios; progresiones/parcial adaptados a los cuatro formatos y sin fila si no se pide revisión.
+
+Catálogo final .66 instalado/cargado; .63/.64/.65 congelados. Backend36.753/92; frontend completo37.191/118 y277dirigidas tras la última alternativa; inventario/conciliación11. Builds backend/frontend y Cloudflare dry-run aprobados. HTTP240casos comunes +16funcionales1/2 y30recomendaciones naturales; seguimiento de alternativas por separado. Dos CRUD reales.65 reabiertos/cotejados de nuevo en.66 (CV17.35 y rúbrica de revisión20, manuales5/9/6); generación adicional de primero.66, sin atribuirle CRUD.
+
+Conciliación: antes133=103+28+2 y después135=105+28+2, conjuntos disjuntos; base108 solapada78+28+2. Consulta de tablas y IDs completa en el informe; cero versiones predecesoras en este conjunto local. Los133 snapshots/actividades anteriores permanecen idénticos; no se borraron ni reescribieron datos. Cierres y límites curriculares preservados, otras asignaturas sin tocar.
+
+El ajuste se publica en este commit; comprobar hash remoto/árbol al recuperar. El proceso probado registra75ed6e9 con cambios pendientes de este ajuste, no el hash del cierre atribuido retroactivamente. **Detenerse después de este ajuste**; sin otra asignatura, optativas, subagentes, IA de aplicación, dependencias, rediseño, main, despliegue ni reset. Siguiente pendiente: ninguno en los patrones definidos; cualquier ampliación requiere nuevo encargo. Las secciones siguientes son históricas.
+
+
 ## Estado vigente: cierre de Inglés común2.º–6.º — 15/10/2026
 
 Encargo finalizado en sus familias y patrones definidos; **detenerse tras sexto**, sin iniciar otra asignatura ni optativas. [Informe consolidado](ingles-2-6-informe-consolidado.md), [cierre de sexto](ingles-6-informe-final.md), [cuatro instrumentos completos de sexto](ingles-6-ejemplos-finales.md). Fuente de sexto159 registros/16 grupos; once evidencias funcionales,58 familias gramaticales/134 formas,17 léxicas/cuatro expresivas,23 estrategias y géneros/contexto/composición verificados.

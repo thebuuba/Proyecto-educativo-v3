@@ -1,3 +1,4 @@
+import {englishObjectiveId} from './english-quality-test-utils'
 import {describe,it,expect} from 'vitest'
 import {recommend} from './recommendation-engine'
 import fixtures from '../../../../../data/evaluation-instruments/english-grade-three-context-contracts.json'
@@ -14,7 +15,7 @@ describe('Tercero: condiciones comunicativas explícitas y acciones independient
  for(const f of compositions)for(const format of formats)for(const total of [20,17.35])it(`composición ${f.id} ${format} ${total}`,()=>{
   const p=propose(f.description,format,total)
   expect(p.activityType).toBe(f.activity)
-  for(const id of f.criteria)expect(p.criteria.map(c=>c.templateId)).toContain(`ing-3-${id}`)
+  for(const id of f.criteria)expect(p.criteria.map(c=>englishObjectiveId(c.templateId))).toContain(`ing-3-${id}`)
   for(const id of f.excluded??[])expect(p.criteria.map(c=>c.templateId)).not.toContain(`ing-3-${id}`)
  })
  for(const f of fixtures)for(const format of formats)for(const total of [20,17.35])it(`${f.id} ${f.description.slice(0,12)} ${format} ${total}`,()=>{
@@ -28,7 +29,7 @@ describe('Tercero: condiciones comunicativas explícitas y acciones independient
  for(const format of formats)for(const total of [20,17.35])it(`recepción y respuesta escrita ${format} ${total}`,()=>{
   const p=propose('Leerán una noticia breve en inglés e identificarán el acontecimiento. Luego escribirán un correo en inglés para expresar su opinión sobre el hecho con una razón y responder al mensaje proporcionado. Finalmente revisarán el sentido y la corrección del mensaje escrito.',format,total)
   expect(p.activityType).toBe('WRITTEN_PRODUCTION')
-  const ids=p.criteria.map(c=>c.templateId)
+  const ids=p.criteria.map(c=>englishObjectiveId(c.templateId))
   for(const id of ['ing-3-news','ing-3-opinion','ing-3-interaction','ing-3-strategy-revision','ing-3-written'])expect(ids).toContain(id)
   expect(p.criteria.find(c=>c.templateId==='ing-3-news')?.description).toContain('texto disponible')
   expect(p.criteria.find(c=>c.templateId==='ing-3-opinion')?.description).toContain('Expresa')

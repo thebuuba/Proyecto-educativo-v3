@@ -6,6 +6,7 @@ import {requestedGradeFourStrategies,gradeFourStrategyCriteria} from './secondar
 import {gradeFourGenreCriteria} from './secondary-english-grade-four-genres'
 import {gradeFourContextCriteria} from './secondary-english-grade-four-context'
 import {englishAlternativeGroups} from './secondary-english-grammar'
+import {englishProfileWithoutNarration} from './secondary-english-task-text'
 
 export const englishGradeFourModule={id:'ingles-comunicacion-4',grade:4,subjectCode:'ING',pdfPages:[158,159,160,161,162],policy:'COMMON_FOURTH_GRADE_DEFINED_FAMILIES_CONTEXT_COMPOSITION_REVIEW_PENDING_V3'}
 const row=(id:string,title:string,levels:NonNullable<ContextualTopicCriterion['progressionLevels']>,weight=4):ContextualTopicCriterion=>({templateId:`ing-4-${id}`,title,observable:levels[0],progressionLevels:levels,weight})
@@ -21,7 +22,7 @@ export function requestedGradeFourFunctions(raw:string){
  if(/\b(?:deseos?|esperanzas?)\b/.test(text))ids.push('wishes')
  if(/\b(?:planes?|plan futuro)\b|\bplanific\w* (?:las )?actividades futuras\b/.test(text))ids.push('plans')
  if(/\bnoticias?\b/.test(text))ids.push('news')
- if(/\b(?:experiencias?|relatos?|narracion(?:es)?)\b/.test(text)&&!/\bvocabulario de experiencias\b/.test(text))ids.push('experience')
+ if(/\b(?:experiencias?|relatos?|narracion(?:es)?)\b/.test(text)&&!/\bvocabulario de experiencias\b/.test(text)&&!englishProfileWithoutNarration(text))ids.push('experience')
  const askingOpinion=/\b(?:pedir(?:an)?|pidan|solicitar(?:an)?) (?:una |las )?opinion(?:es)?\b/.test(text)
  if(/\b(?:opinion(?:es)?|puntos? de vista)\b/.test(text)&&(!askingOpinion||/\b(?:expres\w*|comunic\w*|dar(?:an)?) (?:su |la )?(?:opinion(?:es)?|propia|suya)\b/.test(text)))ids.push('opinion')
  const route=/\bindicaciones\b/.test(text)&&/\b(?:llegar|lugar|recorrido|ruta|croquis)\b/.test(text)
