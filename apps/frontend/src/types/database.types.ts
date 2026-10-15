@@ -959,6 +959,8 @@ export type Database = {
       evaluation_activities: {
         Row: {
           pedagogical_activity_type: string | null
+          teaching_strategy_id: string | null
+          teaching_strategy_origin: string
           instrument_snapshot_id: string | null
           academic_period_id: string
           activity_date: string | null
@@ -989,6 +991,8 @@ export type Database = {
         }
         Insert: {
           pedagogical_activity_type?: string | null
+          teaching_strategy_id?: string | null
+          teaching_strategy_origin?: string
           instrument_snapshot_id?: string | null
           academic_period_id: string
           activity_date?: string | null
@@ -1019,6 +1023,8 @@ export type Database = {
         }
         Update: {
           pedagogical_activity_type?: string | null
+          teaching_strategy_id?: string | null
+          teaching_strategy_origin?: string
           instrument_snapshot_id?: string | null
           academic_period_id?: string
           activity_date?: string | null

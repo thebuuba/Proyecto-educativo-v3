@@ -1,4 +1,4 @@
-import type { EvaluationProfile, InstrumentRecommendation } from '@aula/shared'
+import type { EvaluationProfile, InstrumentRecommendation, TeachingStrategyOrigin } from '@aula/shared'
 
 export type SectionSubjectOption = {
   id: string
@@ -43,6 +43,8 @@ export type Activity = {
   evaluatedCount?: number
   instrumentSnapshot?: InstrumentRecommendation
   pedagogicalActivityType?: string
+  teachingStrategyId?: string | null
+  teachingStrategyOrigin?: TeachingStrategyOrigin
   instrumentCriteria?: Record<string, string>
   evaluationTechnique?: string
   observations?: string

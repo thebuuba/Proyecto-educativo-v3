@@ -869,6 +869,8 @@ model EvaluationActivity {
   instrumentId         String?      @map("instrument_id") @db.Uuid
   instrumentSnapshotId String?      @unique @map("instrument_snapshot_id") @db.Uuid
   pedagogicalActivityType String?   @map("pedagogical_activity_type")
+  teachingStrategyId   String?      @map("teaching_strategy_id")
+  teachingStrategyOrigin String    @default("UNKNOWN") @map("teaching_strategy_origin")
   competencyBlockId    String       @map("competency_block_id")
   competencyBlockWeights Json       @default("{}") @map("competency_block_weights")
   planningMoment       String?      @map("planning_moment")

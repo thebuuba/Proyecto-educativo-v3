@@ -1,5 +1,7 @@
 # Corrección de Actividades e Instrumentos
 
+Seguimiento15/10/2026: campo opcional Estrategia de enseñanza y aprendizaje, catálogo16 entradas y selección automática/manual/desconocida, persistencia completa y conservación exacta de instrumentos. Migración nueva local, tres CRUD Chrome,12 contextos HTTP y138 históricos preservados; sin ampliar cobertura curricular. [Informe y fuentes](../../curriculum/cobertura-secundaria/estrategias-informe.md). Las secciones posteriores conservan su alcance histórico.
+
 Seguimiento de consignas naturales,15/10/2026: formas futuras y modalidades coordinadas, condiciones de entrega/contradicciones, informes breves y Agregar/Completar con feedback persistente. Catálogo local.69; tres CRUD y135 históricos conservados; matriz con límites reales y sin ampliar asignaturas. [Informe final y evidencias](../../curriculum/cobertura-secundaria/consignas-informe.md), [instrumentos completos](../../curriculum/cobertura-secundaria/consignas-ejemplos-completos.md). Prevalece este seguimiento; lo siguiente conserva su fecha y alcance históricos.
 
 Seguimiento de calidad de Inglés1.º–6.º,15/10/2026: cotejos con datos independientes, revisión observable sin cambios forzados y conciliación135=105+28+2. Catálogo local.66; sin alterar históricos ni ampliar otra asignatura. [Informe y verificaciones](../../curriculum/cobertura-secundaria/ingles-calidad-informe.md).

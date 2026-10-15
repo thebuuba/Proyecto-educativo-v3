@@ -21,6 +21,8 @@ export type StoredActivityDraft = {
   competencyBlockWeights?: Record<string, number>
   date?: string
   description?: string
+  teachingStrategyId?: string | null
+  teachingStrategyOrigin?: 'AUTO' | 'MANUAL' | 'UNKNOWN'
   instrumentType?: string
   instrumentFields?: Record<string, string>
   evaluationTechnique?: string
@@ -43,6 +45,8 @@ const isContext = (value: unknown): value is ActivityDraftContext => Boolean(val
 function isStoredDraft(value: unknown): value is StoredActivityDraft {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return false
   const draft = value as Record<string, unknown>
+  if (draft.teachingStrategyId != null && typeof draft.teachingStrategyId !== 'string') return false
+  if (draft.teachingStrategyOrigin !== undefined && !['AUTO','MANUAL','UNKNOWN'].includes(String(draft.teachingStrategyOrigin))) return false
   const strings = ['draftId', 'creationId', 'updatedAt', 'name', 'maxScore', 'competencyBlockId', 'date', 'description', 'instrumentType', 'evaluationTechnique', 'planningMoment', 'activityType']
   if (strings.some(field => draft[field] !== undefined && typeof draft[field] !== 'string')) return false
   if (draft.instrumentCompleted !== undefined && typeof draft.instrumentCompleted !== 'boolean') return false

@@ -44,6 +44,8 @@ export function saveActivity(input: SaveActivityInput): Promise<Activity> {
     instrumentType: input.instrumentType,
     instrumentCriteria: input.instrumentCriteria,
     pedagogicalActivityType: input.pedagogicalActivityType,
+    teachingStrategyId: input.teachingStrategyId,
+    teachingStrategyOrigin: input.teachingStrategyOrigin,
     instrumentSnapshot: input.instrumentSnapshot,
     evaluationTechnique: input.evaluationTechnique,
     observations: input.observations,

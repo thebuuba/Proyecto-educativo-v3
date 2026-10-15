@@ -157,6 +157,8 @@ it('creates from a real planning card and recovers its link and return destinati
     ...stored.draft,
     name: 'Actividad vinculada',
     description: 'Analizar el texto.',
+    teachingStrategyId: 'DEBATE',
+    teachingStrategyOrigin: 'MANUAL' as const,
     maxScore: '20',
     activityType: 'individual',
     evaluationTechnique: 'analisis-producciones',
@@ -199,6 +201,8 @@ it('creates from a real planning card and recovers its link and return destinati
     expect.objectContaining({
       planningEntryId: 'plan-1',
       source: 'planning',
+      teachingStrategyId: 'DEBATE',
+      teachingStrategyOrigin: 'MANUAL',
       sectionSubjectId: 'subject',
       academicPeriodId: 'period',
     }),

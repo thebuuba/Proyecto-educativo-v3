@@ -1,5 +1,7 @@
 import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
+import { TeachingStrategyField } from './TeachingStrategyField'
+import type { TeachingStrategyContext } from '@aula/shared'
 import { ResourcePicker } from '@/modules/activities/components/editor/ActivityResources'
 import {
   type ActivityCompletionTarget,
@@ -255,8 +257,10 @@ export function ActivityDataSections({
   firstSecondaryLanguage,
   secondSecondaryLanguage,
   structuralLocked = false,
+  strategyContext = {},
 }: {
   structuralLocked?: boolean
+  strategyContext?: TeachingStrategyContext
   activityDraft: ActivityDraft
   teams: CourseTeam[]
   accent: (typeof blockAccents)[number]
@@ -343,6 +347,7 @@ export function ActivityDataSections({
                 ))}
             </Select>
           </label>
+          <TeachingStrategyField draft={activityDraft} context={strategyContext} onChange={onChangeDraft}/>
         </div>
       </CreationFormSection>
 

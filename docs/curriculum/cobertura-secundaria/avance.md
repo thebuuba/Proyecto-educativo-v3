@@ -1,5 +1,11 @@
 # Avance durable — cobertura secundaria
 
+## Cierre vigente: estrategia de enseñanza y aprendizaje — 15/10/2026
+
+[Informe de implementación, fuentes y evidencias](estrategias-informe.md). Campo opcional dentro de Actividad, catálogo compartido16 entradas, detección determinista y edición manual conservada, búsqueda/teclado y retorno automático. Borrador, creación, edición, duplicación, resumen, detalle y reapertura conectados; origen AUTO/MANUAL/UNKNOWN y conservación de históricos. Planificación conserva texto libre y el vínculo/retorno existente, verificados en local.
+
+Migración nueva aplicada solo local, Prisma y tipos alineados; permisos/RLS previos conservados.138 actividades/instrumentos/snapshots previos íntegros. HTTP12 contextos con reintentos y rechazos; Chrome tres guardados/reaperturas, edición solo de estrategia con instrumento/snapshot exactos, móvil y teclado. Backend36.839/94; frontend37.464/120 más ocho dirigidas finales. Catálogo de instrumentos69 y matriz curricular sin cambios. Sin IA, dependencias, subagentes, reset, main ni producción. Cierre de builds/Git en informe y entrega; detenerse tras publicar. No se inicia otra ampliación.
+
 ## Cierre vigente: consignas naturales y criterios — 15/10/2026
 
 [Informe completo](consignas-informe.md), [ocho instrumentos completos](consignas-ejemplos-completos.md). Encargo 50f00616 completado en sus patrones definidos: My Future Plans incorpora ambas formas y modalidades desde el inicio; Agregar informa de forma persistente junto al instrumento y añade fila completa cuando hay un objetivo disponible. Completar respeta vacíos, identidad, textos y puntos. Condiciones de entrega compartidas con validación de contradicciones; informes breves sin investigación/ficción añadidas. Suma/resta solo evidencia básica `ACTION_ONLY`, sin ampliar cobertura curricular.

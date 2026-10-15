@@ -1,0 +1,220 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "7b6dd4b787dbcfefea5baf745d93162c9969fd5f",
+      "dirty": true,
+      "startedAt": "2026-10-15T10:59:53.929Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.69"
+    }
+  },
+  "activities": [
+    {
+      "code": "LEN",
+      "grade": 1,
+      "id": "32200f62-061c-46fc-8ca9-23fc7b72c2bd",
+      "maxScore": 20,
+      "instrumentId": "aca018bd-c749-4237-8064-da5961c73b13",
+      "instrumentHash": "23e7553a276d1e00a974db3110b3d6499a5ce308c86175111a52c19b66043ce1",
+      "auto": "CASE_STUDY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    },
+    {
+      "code": "LEN",
+      "grade": 2,
+      "id": "afc76eb9-68e0-40c0-aaf1-1b82a96c8e4a",
+      "maxScore": 17.35,
+      "instrumentId": "b44ef793-a734-4e67-9b33-fd41c5f3668c",
+      "instrumentHash": "25caa884d3080f28d77bc6eb0f591df63ab112911a54785e5c77369d2ad310e0",
+      "auto": "CASE_STUDY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    },
+    {
+      "code": "LEN",
+      "grade": 3,
+      "id": "561fe5d1-38e5-436c-8ce8-9b6d1fd87ead",
+      "maxScore": 20,
+      "instrumentId": "30511b19-a338-4ac5-9549-f4619e3027f8",
+      "instrumentHash": "81a1ebf725a26e2daf457da2ffd2acf78dfba34967efd0243c4bc863abd8e8dd",
+      "auto": "CASE_STUDY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    },
+    {
+      "code": "LEN",
+      "grade": 4,
+      "id": "0765cb3f-23d6-4b7d-ba37-88e4e4e0ef3d",
+      "maxScore": 17.35,
+      "instrumentId": "0ea668f9-d2be-4094-8f9e-f026dca5a969",
+      "instrumentHash": "b28dd24c16fd8f14119f75fe7981fe2c310cb86f0b45d39939d679264a4cc64f",
+      "auto": "CASE_STUDY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    },
+    {
+      "code": "LEN",
+      "grade": 5,
+      "id": "9a9b42b6-a5cd-4f53-8a6d-b697ed912f74",
+      "maxScore": 20,
+      "instrumentId": "a183aeee-34b3-4ced-b77b-fc7d1c301bf6",
+      "instrumentHash": "1074e65c8e40f89fb9d3de5165dc8291f998afe49466189205fd8923a46bfb0b",
+      "auto": "CASE_STUDY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    },
+    {
+      "code": "LEN",
+      "grade": 6,
+      "id": "80ae96e3-87c9-4db9-b99d-26f3bcfb9579",
+      "maxScore": 17.35,
+      "instrumentId": "9ee7c0f5-560b-4313-820b-8d85e54e897d",
+      "instrumentHash": "d8ecce1e5029e37ccebb2dcfe3dab423ad6c7307e1fdfcfa8e34072eb51137f4",
+      "auto": "CASE_STUDY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    },
+    {
+      "code": "ING",
+      "grade": 1,
+      "id": "23e98c54-3b7e-4b32-b984-43c8a03811e5",
+      "maxScore": 20,
+      "instrumentId": "6de2e65f-899a-4c2b-9c27-e651690b0dff",
+      "instrumentHash": "62fbe9b5b4c8d1a4f77f4e36d711b784498f7ef433439b97c8e337d398f84311",
+      "auto": "DIALOGIC_INQUIRY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    },
+    {
+      "code": "ING",
+      "grade": 2,
+      "id": "a1b00293-6ba2-480c-8f31-db7d3194e0f9",
+      "maxScore": 17.35,
+      "instrumentId": "1bc33c6f-7636-48b9-8b6c-be373f37d412",
+      "instrumentHash": "05793e110bfa90535413f908277edff1559706b0c1adf86a0a9da2b2271621be",
+      "auto": "DIALOGIC_INQUIRY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    },
+    {
+      "code": "ING",
+      "grade": 3,
+      "id": "86778513-df58-4667-846d-92ef898bfa2f",
+      "maxScore": 20,
+      "instrumentId": "55f980c5-4657-4e89-8ada-5af75cb5225e",
+      "instrumentHash": "74bc44939f96120e74ea03e0ecf667c0679dbd2fe7164e956280a4ebc06f6ea2",
+      "auto": "DIALOGIC_INQUIRY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    },
+    {
+      "code": "ING",
+      "grade": 4,
+      "id": "f4916f33-1d0f-4778-9e28-78e7ad1498a1",
+      "maxScore": 17.35,
+      "instrumentId": "36ed099d-bea8-4491-8da1-44f7fe3bcc37",
+      "instrumentHash": "91916891d4d3482a444663dc831d2676a1274ab8efd02b60d764973cb60d0bb2",
+      "auto": "DIALOGIC_INQUIRY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    },
+    {
+      "code": "ING",
+      "grade": 5,
+      "id": "b8268d6f-bbe6-4d88-b833-0f52a3516c5e",
+      "maxScore": 20,
+      "instrumentId": "d5d0b5d8-ca04-4e9c-833a-7d48e82ba08f",
+      "instrumentHash": "62417eb6ef45f6ef62c8c7992bd8dcdeb8aed4a2d6816cd9dd993c6421dc6c1c",
+      "auto": "DIALOGIC_INQUIRY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    },
+    {
+      "code": "ING",
+      "grade": 6,
+      "id": "3057fc68-529b-4eca-bd0a-5bc61685d571",
+      "maxScore": 17.35,
+      "instrumentId": "0acc704d-e3de-4436-9352-f1d4542c80b0",
+      "instrumentHash": "27da09393ec4cfcb4cc227308540f891b81d0e86eec7fae6dc15d8f2cb8018e8",
+      "auto": "DIALOGIC_INQUIRY",
+      "manual": "DEBATE",
+      "invalidRejected": 400,
+      "foreignContextRejected": 404
+    }
+  ],
+  "rejects": [
+    {
+      "code": "LEN",
+      "grade": 1,
+      "status": 400
+    },
+    {
+      "code": "LEN",
+      "grade": 2,
+      "status": 400
+    },
+    {
+      "code": "LEN",
+      "grade": 3,
+      "status": 400
+    },
+    {
+      "code": "LEN",
+      "grade": 4,
+      "status": 400
+    },
+    {
+      "code": "LEN",
+      "grade": 5,
+      "status": 400
+    },
+    {
+      "code": "LEN",
+      "grade": 6,
+      "status": 400
+    },
+    {
+      "code": "ING",
+      "grade": 1,
+      "status": 400
+    },
+    {
+      "code": "ING",
+      "grade": 2,
+      "status": 400
+    },
+    {
+      "code": "ING",
+      "grade": 3,
+      "status": 400
+    },
+    {
+      "code": "ING",
+      "grade": 4,
+      "status": 400
+    },
+    {
+      "code": "ING",
+      "grade": 5,
+      "status": 400
+    },
+    {
+      "code": "ING",
+      "grade": 6,
+      "status": 400
+    }
+  ]
+}

@@ -13,6 +13,7 @@ import { SaveGradeDto } from './dto/save-grade.dto'
 import { SaveActivityDto } from '../activities/dto/save-activity.dto'
 import { evaluationCatalogForVersion } from '../evaluation-instruments/catalog-current'
 import { academicContext, resolveScope } from '../evaluation-instruments/curriculum-context'
+import { teachingStrategyAllowed } from '@aula/shared'
 
 export function __test__clearGradingCache() {
   optionCache.clear()
@@ -38,6 +39,8 @@ function mapEvaluationActivity(activity: any, profile?: EvaluationProfile) {
     evaluatedCount: activity._count?.gradesRecords ?? 0,
     instrumentSnapshot: activity.instrumentSnapshot?.payload ?? undefined,
     pedagogicalActivityType: activity.pedagogicalActivityType ?? undefined,
+    teachingStrategyId: activity.teachingStrategyId ?? null,
+    teachingStrategyOrigin: activity.teachingStrategyOrigin ?? 'UNKNOWN',
     instrumentCriteria: activity.instrument?.criteria && typeof activity.instrument.criteria === 'object'
       ? activity.instrument.criteria
       : {},
@@ -107,6 +110,17 @@ function validateActivityInput(dto: SaveActivityDto) {
     dto.source !== undefined && !['grading', 'planning'].includes(dto.source)) throw new BadRequestException('Modalidad, momento u origen no válido.')
   if (dto.date && (!/^\d{4}-\d{2}-\d{2}$/.test(dto.date) || !Number.isFinite(Date.parse(dto.date)) || new Date(dto.date).toISOString().slice(0, 10) !== dto.date)) {
     throw new BadRequestException('La fecha debe ser una fecha válida YYYY-MM-DD.')
+  }
+}
+
+function validateTeachingStrategy(dto: SaveActivityDto, sectionSubject: any) {
+  const origin = dto.teachingStrategyOrigin ?? 'UNKNOWN'
+  const levelCode = sectionSubject.grade?.academicLevel?.code
+  const level = levelCode === 'secundario' ? 'SECONDARY' : levelCode === 'primario' ? 'PRIMARY' : null
+  if (!['AUTO','MANUAL','UNKNOWN'].includes(origin) ||
+    (origin === 'MANUAL' && !dto.teachingStrategyId) ||
+    (dto.teachingStrategyId != null && !teachingStrategyAllowed(dto.teachingStrategyId, {level}))) {
+    throw new BadRequestException('La estrategia de enseñanza y aprendizaje no es válida para este contexto.')
   }
 }
 
@@ -352,6 +366,7 @@ function activityData(schoolId: string, userId: string, dto: SaveActivityDto, sc
   return {
     schoolId, schoolYearId, sectionSubjectId: dto.sectionSubjectId, academicPeriodId: dto.academicPeriodId,
     planningEntryId: dto.planningEntryId || null, pedagogicalActivityType: dto.pedagogicalActivityType ?? null,
+    teachingStrategyId: dto.teachingStrategyId ?? null, teachingStrategyOrigin: dto.teachingStrategyOrigin ?? 'UNKNOWN',
     competencyBlockId: dto.competencyBlockId, competencyBlockWeights, planningMoment: dto.planningMoment || null,
     name: dto.name.trim(), description: dto.description?.trim() ?? '', activityType: dto.activityType ?? 'individual',
     maxScore: dto.maxScore, activityDate: dto.date ? new Date(`${dto.date}T00:00:00.000Z`) : null,
@@ -1018,6 +1033,7 @@ export class GradingService {
     if (dto.id && dto.creationId) throw new BadRequestException('creationId solo se permite al crear una actividad.')
     const actorId = roles === undefined ? undefined : userId
     const { sectionSubject, academicPeriod } = await assertActivityContext(schoolId, dto.sectionSubjectId, dto.academicPeriodId, actorId, roles)
+    validateTeachingStrategy(dto, sectionSubject)
     const evaluationProfile = resolveEvaluationProfile(sectionSubject.grade?.academicLevel?.code)
     if (!isBlockInEvaluationProfile(evaluationProfile, dto.competencyBlockId)) {
       throw new BadRequestException('El bloque de competencias no es valido para el nivel academico')
@@ -1060,6 +1076,7 @@ export class GradingService {
           if (persistedSchoolYearId !== destinationSubject.schoolYearId) throw new BadRequestException('School year does not match section subject')
           const profile = resolveEvaluationProfile(destinationSubject.grade?.academicLevel?.code)
           dto = mergedActivityDto(dto, existing)
+          validateTeachingStrategy(dto, destinationSubject)
           persistedBlockWeights = validateCompetencyBlockWeights(profile, dto.competencyBlockId, dto.competencyBlockWeights)
           dto.schoolYearId = persistedSchoolYearId
           validateActivityInput(dto)

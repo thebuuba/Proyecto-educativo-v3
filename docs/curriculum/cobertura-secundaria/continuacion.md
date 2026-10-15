@@ -1,5 +1,13 @@
 # Continuación del encargo completo
 
+## Encargo vigente: estrategia de enseñanza y aprendizaje — 15/10/2026
+
+Adjunto c3aba48a. Implementación transversal del campo opcional en Actividades, catálogo compartido `teaching-strategies-2026.1` con16 entradas oficiales verificadas, automático/manual/desconocido, búsqueda y retorno automático. [Informe y evidencias](estrategias-informe.md). Base7b6dd4b, rama amplia-instrumentos-secundaria; sin subagentes. No amplía grados/asignaturas ni modifica matriz/inventario/revisión. Catálogo evaluativo69 permanece intacto.
+
+Migración nueva `20261015105401_activity_teaching_strategy.sql` aplicada solo a Supabase local, con registro transaccional; Prisma/tipos alineados. Se preservaron138 actividades/instrumentos/snapshots previos. Históricos null/UNKNOWN; Planificación conserva texto libre. HTTP12 contextos LEN/ING1.º–6.º; tres actividades reales Chrome guardadas/reabiertas (original, copia y entrada desde Planificación); edición solo de estrategia conserva exactamente instrumento/snapshot y manuales. Teclado/móvil/escritorio comprobados. Backend36.839/94, frontend37.464/120 y ocho pruebas dirigidas finales. Builds y revisión final documentados en el informe y cierre de Git en la entrega.
+
+Siguiente acción al recuperar: comprobar hash remoto y árbol, leer este informe. Encargo cerrado; detenerse, sin otro bloque curricular. Pendiente externo: aplicar esta nueva migración al entorno que se publique en un encargo futuro autorizado, nunca asumir que ya está en producción. Límites explícitos del detector/ámbitos en el informe. Las secciones siguientes son históricas.
+
 ## Encargo vigente: consignas naturales y criterios — 15/10/2026
 
 Adjunto 50f00616-6622-4f7d-93f7-dbf4e5c7fea8 **cerrado en los patrones definidos**. Base publicada dc50778, rama amplia-instrumentos-secundaria. [Informe](consignas-informe.md), [instrumentos completos](consignas-ejemplos-completos.md). Se reprodujo My Future Plans en HTTP/Chrome .66 y se corrigieron los filtros gramaticales, modalidades coordinadas, condiciones de entrega, resolución local de grado, informes breves y feedback de Agregar/Completar. Catálogo final .69 local; .66/.67/.68 congelados y comparados íntegramente con la base. Suma/resta solo acción básica, sin ampliar Matemática.

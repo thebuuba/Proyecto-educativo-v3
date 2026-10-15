@@ -150,6 +150,47 @@ describe('activity mutation context after waiting for the row lock', () => {
 })
 
 function controller() { return new ActivitiesController(new ActivitiesService(new GradingService())) }
+
+describe('estrategia principal persistida', () => {
+  it('permite cambiar estrategia de una actividad calificada sin tocar notas ni definición',async()=>{
+    const saved=await controller().save(user,dto)
+    db.state.grades.push({id:'grade-1',schoolId:user.schoolId,evaluationActivityId:saved.id,score:17})
+    const instruments=structuredClone(db.state.instruments),grades=structuredClone(db.state.grades)
+    const updated=await controller().save(user,{...dto,id:saved.id,instrumentId:saved.instrumentId,teachingStrategyId:'CASE_STUDY',teachingStrategyOrigin:'MANUAL'})
+    expect(updated.teachingStrategyId).toBe('CASE_STUDY')
+    expect(db.state.instruments).toEqual(instruments)
+    expect(db.state.grades).toEqual(grades)
+  })
+  it('guarda origen manual y conserva instrumento al editar solo estrategia y al reintentar', async () => {
+    const input = {...dto, creationId, teachingStrategyId:'CASE_STUDY', teachingStrategyOrigin:'MANUAL' as const}
+    const saved = await controller().save(user,input)
+    expect(saved).toMatchObject({teachingStrategyId:'CASE_STUDY',teachingStrategyOrigin:'MANUAL'})
+    expect((await controller().save(user,input)).id).toBe(saved.id)
+    const before=structuredClone(db.state.instruments)
+    const edited=await controller().save(user,{...dto,id:saved.id,instrumentId:saved.instrumentId,teachingStrategyId:'DEBATE',teachingStrategyOrigin:'MANUAL'})
+    expect(edited).toMatchObject({teachingStrategyId:'DEBATE',teachingStrategyOrigin:'MANUAL',instrumentId:saved.instrumentId})
+    expect(db.state.instruments).toEqual(before)
+    const omitted=await controller().save(user,{...dto,id:saved.id,instrumentId:saved.instrumentId})
+    expect(omitted.teachingStrategyId).toBe('DEBATE')
+  })
+  it('histórico ausente sigue desconocido; no infiere retroactivamente',async()=>{
+    const saved=await controller().save(user,{...dto,description:'Debaten posturas con argumentos.'})
+    expect(saved).toMatchObject({teachingStrategyId:null,teachingStrategyOrigin:'UNKNOWN'})
+  })
+  it.each([
+    {teachingStrategyId:'inventada',teachingStrategyOrigin:'MANUAL'},
+    {teachingStrategyId:'DEBATE',teachingStrategyOrigin:'MALFORMADO'},
+    {teachingStrategyId:null,teachingStrategyOrigin:'MANUAL'},
+  ])('rechaza valor inválido sin escrituras: %j',async selection=>{
+    await expect(controller().save(user,{...dto,...selection} as SaveActivityDto)).rejects.toMatchObject({status:400})
+    expect(db.state.activities).toHaveLength(0)
+    expect(db.state.instruments).toHaveLength(0)
+  })
+  it('rechaza técnica fuera del ámbito verificado',async()=>{
+    db.state.subjects[0].grade.academicLevel={code:'primario'}
+    await expect(controller().save(user,{...dto,teachingStrategyId:'FORUM',teachingStrategyOrigin:'MANUAL'})).rejects.toMatchObject({status:400})
+  })
+})
 function existing(overrides = {}) {
   db.state.activities.push({ id: 'activity-1', schoolId: 'school-1', schoolYearId: 'year-1', sectionSubjectId: 'ss-1',
     academicPeriodId: 'period-1', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, status: 'ACTIVE', createdBy: 'user-1', name: 'Proyecto', maxScore: 20, ...overrides })

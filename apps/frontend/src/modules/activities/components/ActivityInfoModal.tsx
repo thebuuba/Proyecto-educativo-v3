@@ -13,6 +13,7 @@ export function ActivityInfoModal({activity,onClose,onEdit,onEvaluate}: {activit
       <dl className="grid gap-3 sm:grid-cols-3">
         {[
           ['Valor',`${activity.maxScore} pts`], ['Fecha',formatActivityDate(activity.date)], ['Técnica',formatActivityTechnique(activity.evaluationTechnique)],
+          ['Estrategia de enseñanza y aprendizaje',resolveTeachingStrategy(activity.teachingStrategyId??'')?.name??'Sin estrategia'],
           ['Instrumento',instrumentTitle(activity.instrumentType ?? '')], ['Modalidad',activity.activityType === 'group' ? 'Grupal' : 'Individual'],
           ['Competencias',Object.entries(activity.competencyBlockWeights ?? {[activity.competencyBlockId]:1}).map(([block,weight])=>`${block.toUpperCase()}: ${Math.round(weight*100)} %`).join(' · ')],
         ].map(([label,value])=><div key={label} className="rounded-xl border border-border p-3"><dt className="text-xs text-muted-foreground">{label}</dt><dd className="mt-1 text-sm font-semibold text-foreground">{value}</dd></div>)}
@@ -27,3 +28,4 @@ export function ActivityInfoModal({activity,onClose,onEdit,onEvaluate}: {activit
     </div>
   </Modal>
 }
+import {resolveTeachingStrategy} from '@aula/shared'

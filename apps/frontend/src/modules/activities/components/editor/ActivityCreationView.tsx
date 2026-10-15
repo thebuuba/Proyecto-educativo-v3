@@ -64,6 +64,8 @@ import { cn } from '@/utils/cn'
 import type { EvaluationProfile, InstrumentAcademicContext } from '@aula/shared'
 import {
   InstrumentCapacityError,
+  detectTeachingStrategy,
+  resolveTeachingStrategy,
   TaskRequirementError,
   detectSecondaryLanguageActivity,
   commonSecondaryLanguageGrade,
@@ -145,6 +147,17 @@ export function ActivityCreationView(props: {
     : firstSecondaryLanguage ? 1 : secondSecondaryLanguage ? 2 : null
   const latestDraft = useRef(activityDraft)
   latestDraft.current = activityDraft
+  const strategyContext = {level:academicContext?.level,grade:academicContext?.grade,subjectCode:academicContext?.subjectCode}
+  const detectedStrategy = activityDraft.teachingStrategyOrigin === 'AUTO'
+    ? detectTeachingStrategy({...strategyContext,title:activityDraft.name,description:activityDescriptionText(activityDraft.description)}).id
+    : activityDraft.teachingStrategyId
+  useEffect(()=>{
+    const current=latestDraft.current
+    if(current.teachingStrategyOrigin!=='AUTO'||(current.teachingStrategyId??null)===(detectedStrategy??null))return
+    const next={...current,teachingStrategyId:detectedStrategy??null}
+    latestDraft.current=next
+    onChangeDraft(next)
+  },[detectedStrategy,activityDraft.teachingStrategyOrigin,activityDraft.teachingStrategyId,onChangeDraft])
   const criterionContext = useRef([sectionSubjectId,academicContext,block.id])
   criterionContext.current = [sectionSubjectId,academicContext,block.id]
   const preparationContext = useRef('')
@@ -1126,6 +1139,7 @@ export function ActivityCreationView(props: {
           ) : null}
           <div>
             <ActivityDataSections
+              strategyContext={strategyContext}
               structuralLocked={structuralLocked}
               activityDraft={activityDraft}
               teams={teams}
@@ -1420,6 +1434,11 @@ export function ActivityCreationView(props: {
                     icon: <Users className="size-4" />,
                     label: 'Modalidad',
                     value: activityDraft.activityType === 'group' ? 'Grupal' : 'Individual',
+                  },
+                  {
+                    icon: <BookOpen className="size-4" />,
+                    label: 'Estrategia de enseñanza y aprendizaje',
+                    value: resolveTeachingStrategy(activityDraft.teachingStrategyId ?? '')?.name ?? 'Sin estrategia',
                   },
                   {
                     icon: <Target className="size-4" />,
