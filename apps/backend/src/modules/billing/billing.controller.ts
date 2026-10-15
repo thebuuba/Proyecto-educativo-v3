@@ -46,7 +46,7 @@ export class BillingController {
     const html = await this.provider.checkoutPage(user, transaction, nonce)
     response.setHeader('Cache-Control', 'private, no-store, max-age=0')
     response.setHeader('Referrer-Policy', 'no-referrer')
-    response.setHeader('Content-Security-Policy', `default-src 'none'; script-src 'nonce-${nonce}' https://cdn.paddle.com; frame-src https://*.paddle.com; connect-src https://*.paddle.com; img-src data: https://*.paddle.com; style-src 'unsafe-inline'; frame-ancestors 'none'; base-uri 'none'; form-action https://*.paddle.com`)
+    response.setHeader('Content-Security-Policy', `default-src 'none'; script-src 'nonce-${nonce}' https://cdn.paddle.com; frame-src https://*.paddle.com; connect-src https://*.paddle.com; img-src data: https://*.paddle.com; style-src 'unsafe-inline' https://cdn.paddle.com https://sandbox-cdn.paddle.com; frame-ancestors 'none'; base-uri 'none'; form-action https://*.paddle.com`)
     return response.type('html').send(html)
   }
   @Post('portal') portal(@CurrentUser() user: AuthenticatedUser) { return this.provider.portal(user) }
