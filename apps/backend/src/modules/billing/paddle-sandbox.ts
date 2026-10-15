@@ -21,6 +21,12 @@ export const PADDLE_SANDBOX_API_ORIGIN = 'https://sandbox-api.paddle.com' as con
 export const PADDLE_WEBHOOK_TOLERANCE_SECONDS = 5 as const
 export const PADDLE_WEBHOOK_MAX_BYTES = 1_048_576 as const
 export const PADDLE_DEFAULT_TIMEOUT_MS = 10_000 as const
+/**
+ * Paddle caps `per_page` at 200. The adapter intentionally fetches a single page
+ * and does not implement cursor pagination, so at most the newest 200 transactions
+ * for a customer are visible to reconciliation.
+ */
+export const PADDLE_LIST_PAGE_SIZE = 200 as const
 
 // ---------------------------------------------------------------------------
 // Errors
@@ -119,6 +125,7 @@ export interface PaddleSubscription {
   nextBilledAt: string | null
   currentBillingPeriod: PaddleBillingPeriod | null
   scheduledChange: PaddleScheduledChange | null
+  updatedAt?: string | null
 }
 
 export interface PaddlePortalSubscriptionLink {
@@ -159,6 +166,8 @@ export interface PaddleSandboxClient {
   cancelSubscriptionAtPeriodEnd(input: CancelSubscriptionAtPeriodEndInput): Promise<PaddleSubscription>
   getTransaction(transactionId: string): Promise<PaddleTransaction>
   getSubscription(subscriptionId: string): Promise<PaddleSubscription>
+  /** Lists the newest transactions for a server-authorized customer id. */
+  listTransactions(customerId: string): Promise<PaddleTransaction[]>
   verifyWebhook(rawBody: string | Uint8Array, signatureHeader: string | null | undefined): boolean
 }
 
@@ -341,6 +350,7 @@ const mapSubscription = (data: Record<string, unknown>): PaddleSubscription => {
     id: asString(data.id) ?? '',
     status: asString(data.status) ?? 'unknown',
     customerId: asString(data.customer_id) ?? '',
+    ...(asString(data.updated_at) ? { updatedAt: asString(data.updated_at) } : {}),
     nextBilledAt: asString(data.next_billed_at),
     currentBillingPeriod:
       period && asString(period.starts_at) && asString(period.ends_at)
@@ -380,9 +390,6 @@ const mapPortalSession = (data: Record<string, unknown>): PaddlePortalSession =>
 export function createPaddleSandboxClient(options: PaddleSandboxClientOptions): PaddleSandboxClient {
   const { apiKey, webhookSecret } = options
   assertSandboxApiKey(apiKey)
-  if (!webhookSecret) {
-    throw new PaddleSandboxError('A Paddle webhook secret is required', { code: 'invalid_configuration' })
-  }
 
   const timeoutMs = options.timeoutMs ?? PADDLE_DEFAULT_TIMEOUT_MS
   if (!Number.isInteger(timeoutMs) || timeoutMs <= 0) {
@@ -499,6 +506,21 @@ export function createPaddleSandboxClient(options: PaddleSandboxClientOptions): 
       assertPaddleId(subscriptionId, ID_PATTERNS.subscription, 'subscription')
       const result = await performRequest(`/subscriptions/${subscriptionId}`, 'GET')
       return mapSubscription(readData(result))
+    },
+
+    async listTransactions(customerId) {
+      assertPaddleId(customerId, ID_PATTERNS.customer, 'customer')
+      // Server-side link only: the customer id is never caller-supplied. Paddle
+      // returns the collection under `data`; anything else is treated as empty.
+      const result = await performRequest(
+        `/transactions?customer_id=${customerId}&per_page=${PADDLE_LIST_PAGE_SIZE}`,
+        'GET',
+      )
+      const entries = Array.isArray(result.data) ? result.data : []
+      return entries
+        .map(asRecord)
+        .filter((entry): entry is Record<string, unknown> => entry !== null)
+        .map(mapTransaction)
     },
 
     verifyWebhook(rawBody, signatureHeader) {

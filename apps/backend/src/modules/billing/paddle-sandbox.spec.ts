@@ -66,10 +66,6 @@ describe('sandbox-only environment', () => {
     expect(() => createPaddleSandboxClient({ ...base, apiKey: '' })).toThrow()
   })
 
-  it('accepts a sandbox key and requires a webhook secret', () => {
-    expect(() => createPaddleSandboxClient({ apiKey: SANDBOX_KEY, webhookSecret: WEBHOOK_SECRET })).not.toThrow()
-    expect(() => createPaddleSandboxClient({ apiKey: SANDBOX_KEY, webhookSecret: '' })).toThrow()
-  })
 })
 
 // ---------------------------------------------------------------------------
@@ -125,6 +121,16 @@ describe('webhook signature verification', () => {
 // ---------------------------------------------------------------------------
 
 describe('remote operations', () => {
+  it('allows authenticated cancellation/read APIs without enabling webhook verification', async () => {
+    const { request } = recordingRequest(jsonResponse(200, { data: { id: 'sub_01h00000000000000000000000', status: 'active' } }))
+    const client = createPaddleSandboxClient({ apiKey: SANDBOX_KEY, webhookSecret: '', request })
+    expect((await client.getSubscription('sub_01h00000000000000000000000')).status).toBe('active')
+    expect(client.verifyWebhook('{}', 'ts=1;h1=abc')).toBe(false)
+  })
+  it('retains the provider subscription version instead of relying on delivery order', async () => {
+    const { client } = okClient(jsonResponse(200, { data: { id: 'sub_01h00000000000000000000000', status: 'active', updated_at: '2026-10-15T13:00:00Z' } }))
+    expect((await client.getSubscription('sub_01h00000000000000000000000')).updatedAt).toBe('2026-10-15T13:00:00Z')
+  })
   it('creates a transaction with server-supplied price and customer only', async () => {
     const transaction = {
       data: {
@@ -280,6 +286,46 @@ describe('remote operations', () => {
     const sub = await client.getSubscription('sub_01h00000000000000000000000')
     expect(calls[1].url).toBe(`${PADDLE_SANDBOX_API_ORIGIN}/subscriptions/sub_01h00000000000000000000000`)
     expect(sub.id).toBe('txn_01h00000000000000000000000')
+  })
+
+  it('lists newest transactions for a server-authorized customer and maps them', async () => {
+    const { calls, client } = okClient(
+      jsonResponse(200, {
+        data: [
+          {
+            id: 'txn_01h00000000000000000000000',
+            status: 'completed',
+            customer_id: 'ctm_01h00000000000000000000000',
+            subscription_id: 'sub_01h00000000000000000000000',
+            updated_at: '2026-10-01T04:00:05Z',
+            billing_period: { starts_at: '2026-10-01T04:00:00Z', ends_at: '2026-11-01T04:00:00Z' },
+            details: { totals: { total: '1500' } },
+          },
+          'not-an-object',
+        ],
+      }),
+    )
+
+    const transactions = await client.listTransactions('ctm_01h00000000000000000000000')
+
+    expect(calls).toHaveLength(1)
+    expect(calls[0].url).toBe(`${PADDLE_SANDBOX_API_ORIGIN}/transactions?customer_id=ctm_01h00000000000000000000000&per_page=200`)
+    expect(calls[0].init.method).toBe('GET')
+    expect(transactions).toHaveLength(1)
+    expect(transactions[0]).toMatchObject({
+      id: 'txn_01h00000000000000000000000',
+      status: 'completed',
+      customerId: 'ctm_01h00000000000000000000000',
+      subscriptionId: 'sub_01h00000000000000000000000',
+      total: '1500',
+      updatedAt: '2026-10-01T04:00:05Z',
+    })
+  })
+
+  it('rejects a malformed customer id before listing transactions', async () => {
+    const { calls, client } = okClient(jsonResponse(200, { data: [] }))
+    await expect(client.listTransactions('user@example.com')).rejects.toBeInstanceOf(PaddleSandboxError)
+    expect(calls).toHaveLength(0)
   })
 
   it('only ever talks to the sandbox origin', async () => {
