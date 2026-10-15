@@ -66,3 +66,15 @@ La prueba del CTA falló antes del cambio y pasó después. Suite de promoción:
 OpenCode no pudo completar la revisión de solo lectura por un error de servicio (`err_3947cba4`); el principal revisó el diff. No se habilitaron cobros ni se publicaron cambios en la web principal.
 
 `pnpm cloudflare:build` final: código 0, cuatro tareas correctas y dry-run sin despliegue. Se restauró el backend local tras liberar la DLL de Prisma para compilar.
+
+## Preparación de conexión a la cuenta Paddle (15/10/2026)
+
+La cuenta abierta por el propietario correspondía a Live (`vendors.paddle.com/onboarding/get-started`). Se siguió el enlace visible «Cambiar a Sandbox», que llevó al inicio de sesión independiente de pruebas. El propietario indicó que estaba creando la cuenta Sandbox; no se completaron contraseñas ni aceptación de términos en su nombre. Live y los cobros reales permanecen sin cambios.
+
+Se creó `.env.billing-sandbox.local` desde el ejemplo, después de comprobar que está ignorado por Git y que no existía. No contiene credenciales, y sus controles de facturación siguen desactivados. No se cargó en el servidor local conectado a producción.
+
+`node scripts/test-billing-database.mjs --workflows --worker` terminó con código 0 contra PostgreSQL 17 desechable, publicado únicamente en `127.0.0.1:55439`: **81 migraciones**, RLS/privilegios, cobertura, consentimiento, reserva de checkout, prueba confirmada por proveedor simulado, idempotencia, cancelación, ausencia de pagos cero y firmas sobre bytes originales en Node/workerd. El script eliminó la base temporal al terminar; no consultó ni modificó Supabase de producción. Estos resultados no equivalen a haber completado un checkout real en Paddle Sandbox.
+
+Pendientes de la conexión externa: terminar el acceso a Sandbox, configurar producto/precio mensual USD7.99 con mes gratuito y tarjeta, credenciales locales, default payment link y webhook HTTPS de pruebas, verificar el catálogo remoto y completar el recorrido con tarjeta de prueba. No se ha declarado conectada la pasarela. La documentación oficial de Paddle revisada mantiene el período de prueba como atributo del precio y exige default payment link antes de crear transacciones.
+
+La búsqueda de conectores no encontró un plugin Paddle disponible en esta sesión. El intento de revisión acotada con `deepseek-worker` falló por error del servicio (`err_d8b0fa5b`), sin resultado utilizable; la revisión se realizó directamente.
