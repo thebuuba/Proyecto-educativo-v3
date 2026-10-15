@@ -28,17 +28,17 @@
 
 - [x] Revisar Git, procesos y sincronización; conservar el commit `1db3e19` existente.
 - [x] Ejecutar `pnpm cloudflare:build` y verificar PostgreSQL/Auth/Storage/frontend de localhost.
-- [ ] Documentar el nuevo resultado, revisar diff/secretos y publicar el punto de continuación.
+- [x] Documentar el nuevo resultado, revisar diff/secretos y publicar el punto de continuación (`6f346a2`).
 
 ## Bloque 1 — inventario contrastado
 
 **Fuentes:** `apps/frontend/public/docs/adecuacion-curricular-nivel-secundario-2023.pdf`, `docs/curriculum/cobertura-secundaria/inventario.json`.
 **Crear:** `frances-matriz.json`, `frances-inventario.md` y script reproducible `scripts/evaluation-instruments/review-french-source.mjs`.
 
-- [ ] Verificar hash y ámbitos comunes; renderizar tablas y continuaciones con PDF.js/canvas existentes.
-- [ ] Revisar páginas aplicables y registrar por grado funciones, conceptos, géneros, estrategias, fuentes y exclusiones. Mantener las citas oficiales sin normalizarlas silenciosamente.
-- [ ] Separar estados de inventario, conexión, automatización, HTTP/DB y navegador; todavía no marcar cobertura implementada.
-- [ ] Verificar artefactos y publicar inventario/plan.
+- [x] Verificar hash y ámbitos comunes; renderizar tablas y continuaciones con PDF.js/canvas existentes.
+- [x] Revisar páginas aplicables y registrar por grado funciones, conceptos, géneros, estrategias, fuentes y exclusiones. Mantener las citas oficiales sin normalizarlas silenciosamente.
+- [x] Separar estados de inventario, conexión, automatización, HTTP/DB y navegador; todavía no marcar cobertura implementada.
+- [x] Verificar artefactos y publicar inventario/plan.
 
 ## Bloques 2–7 — un grado aplicable por bloque, en orden
 

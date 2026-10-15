@@ -10,11 +10,11 @@ Revalidación de apertura de este encargo: `pnpm cloudflare:build` termina con c
 
 ## Estado de Francés
 
-Pendiente de implementar. El inventario existente identifica ámbitos comunes de 1.º–6.º; todavía se están contrastando visualmente sus páginas. No hay proveedor francés conectado ni prueba HTTP/DB/navegador atribuible a Francés.
+Inventario contrastado visualmente: Francés común de 1.º–6.º, PDF 181–192 y 199–209. Matriz de 813 registros oficiales y síntesis por grado en `frances-inventario.md`. Proveedor pendiente: no hay prueba HTTP/DB/navegador atribuible todavía a Francés. El cierre de apertura está publicado en `6f346a2`.
 
 ## Siguiente acción concreta
 
-Renderizar y revisar las tablas de Francés del PDF oficial, verificar límites de grados/columnas/continuaciones y producir la matriz. Después implementar y verificar primero el grado 1.º, sin saltar a los demás por estar inventariados.
+Implementar y verificar primero el grado 1.º (seis funciones, PDF 181–184), empezando por contratos RED y detección propia de acciones y condiciones. Congelar evaluation-2026.69 antes de crear el siguiente release. No saltar a los demás grados por estar inventariados.
 
 ## Decisiones y límites
 
