@@ -9,6 +9,7 @@ import lexicon from '../../../../../../data/evaluation-instruments/english-grade
 import strategies from '../../../../../../data/evaluation-instruments/english-grade-three-strategy-contracts.json'
 import genres from '../../../../../../data/evaluation-instruments/english-grade-three-genre-contracts.json'
 import contexts from '../../../../../../data/evaluation-instruments/english-grade-three-context-contracts.json'
+import compositions from '../../../../../../data/evaluation-instruments/english-grade-three-composition-contracts.json'
 import {matchingCatalogCriterion,nextCatalogCriterion,appendInstrumentCriterion,completeInstrumentCriterion} from './instrumentCriterionAddition'
 const academic={level:'SECONDARY' as const,grade:3,cycle:1,modalityCode:'academic',subjectCode:'ING',subjectName:'Inglés',optativeExitName:null}
 const cases=[...functions.map(f=>({id:f.id,description:f.description})),...grammar.flatMap(f=>f.forms.flatMap(form=>[
@@ -17,7 +18,7 @@ const cases=[...functions.map(f=>({id:f.id,description:f.description})),...gramm
  {id:`${f.id}-${form}-write`,description:`Escribirán en inglés un mensaje utilizando ${form}.`},
 ])),...lexicon.flatMap(f=>['Leerán un texto en inglés e identificarán','Escribirán en inglés un mensaje utilizando'].map(action=>({id:`lexicon-${f.id}-${action}`,description:`${action} ${f.category==='vocabulary'?'vocabulario de':'expresiones para'} ${f.label}.`})))]
 const content=(p:ReturnType<typeof recommend>)=>p.criteria.map(c=>({id:c.templateId,title:c.title,description:c.description,weight:c.relativeWeight,points:c.maxScoreUnits,descriptors:c.descriptors.map(d=>d.text),progression:c.progressionLevels}))
-cases.push(...strategies,...contexts,...genres.flatMap(g=>g.modes.map(mode=>({id:`genre-${g.id}-${mode}`,description:`${mode==='reading'?'Leerán':mode==='listening'?'Escucharán':mode==='interaction'?'Dialogarán':mode==='audiovisual'?'Crearán':'Presentarán oralmente'} en inglés un ${g.label}.`}))))
+cases.push(...strategies,...contexts,...compositions,...genres.flatMap(g=>g.modes.map(mode=>({id:`genre-${g.id}-${mode}`,description:`${mode==='reading'?'Leerán':mode==='listening'?'Escucharán':mode==='writing'?'Escribirán':mode==='interaction'?'Dialogarán':mode==='audiovisual'?'Crearán':'Presentarán oralmente'} en inglés un ${g.label}.`}))))
 describe('Tercero: funciones y gramática en servicio, alternativa y adaptador',()=>{
  for(const f of cases)for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const total of [20,17.35])it(`${f.id} ${format} ${total}`,()=>{
   const input={activityTitle:'Actividad',description:f.description,participationMode:'INDIVIDUAL' as const,maxScore:total,preferredInstrumentType:format}

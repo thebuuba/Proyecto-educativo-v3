@@ -50,6 +50,7 @@ import {evaluationCatalogV50} from './catalog-v50'
 import {evaluationCatalogV51} from './catalog-v51'
 import {evaluationCatalogV52} from './catalog-v52'
 import {evaluationCatalogV53} from './catalog-v53'
+import {evaluationCatalogV54} from './catalog-v54'
 import {englishGradeThreeModule,englishGradeThreeGrammar,englishGradeThreeLexicon,englishGradeThreeStrategies,englishGradeThreeGenres} from '@aula/shared'
 import {englishGradeTwoModule,englishGradeTwoGrammar,englishGradeTwoLexicon,englishGradeTwoStrategies,englishGradeTwoGenres} from '@aula/shared'
 import {englishGradeOneGenres} from '@aula/shared'
@@ -63,8 +64,9 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV53,
-  version: 'evaluation-2026.54',
+  ...evaluationCatalogV54,
+  version: 'evaluation-2026.55',
+  englishGradeThreeComprehensionPolicy:'EXPLICIT_COMPREHENSION_AND_CLARIFICATION_BOTH_REQUIRED_V1',
   englishGradeThreeModule,
   englishGradeThreeGrammar,
   englishGradeThreeLexicon,
@@ -118,6 +120,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV54.version)return evaluationCatalogV54
   if(version===evaluationCatalogV53.version)return evaluationCatalogV53
   if(version===evaluationCatalogV52.version)return evaluationCatalogV52
   if(version===evaluationCatalogV51.version)return evaluationCatalogV51

@@ -6,6 +6,9 @@ const context={level:'SECONDARY' as const,grade:3,cycle:1,subjectCode:'ING',subj
 const formats=['rubrica','lista-cotejo','escala','lista-ponderada'] as const
 const propose=(description:string,preferredInstrumentType?:typeof formats[number],maxScore=20,title='Actividad',academic:Parameters<typeof recommend>[1]=context)=>recommend({activityTitle:title,description,maxScore,participationMode:'INDIVIDUAL',preferredInstrumentType},academic,null,[],'UNMAPPED',null)
 describe('Inglés común tercero: funciones propias cotejadas en PDF146–151',()=>{
+ it('identifica las familias definidas de tercero en la traza',()=>{
+  expect(propose(fixtures[0].description).internalTrace.reasons).toContain('coverage=DEFINED_COMMON_THIRD_GRADE_PROVIDERS')
+ })
  for(const f of fixtures)for(const format of formats)for(const score of [20,17.35])it(`${f.id} ${format} ${score}`,()=>{
   const p=propose(f.description,format,score)
   expect(p.activityType).toBe(f.activity)

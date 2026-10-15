@@ -152,7 +152,7 @@ export function thirdGradeEnglishCriteria(task:EnglishGradeThreeTask):Contextual
     'No se reconocen acontecimientos relacionados con la historia indicada.',
    ])
    case 'inference':return row(id,'Conclusión sustentada en las pistas disponibles',[
-    `Relaciona las pistas o información del ${source} en inglés con su conclusión sobre lo ocurrido, distinguiendo lo inferido de lo expresamente comunicado.`,
+    `Relaciona las pistas o información ${mode==='listening'?'del mensaje escuchado':mode==='reading'?'del texto disponible':'de la situación proporcionada'} en inglés con su conclusión sobre lo ocurrido, distinguiendo lo inferido de lo expresamente comunicado.`,
     'La conclusión se apoya en las pistas principales; una relación con la información necesita precisión.',
     'Menciona pistas y una conclusión, pero deja sin explicar cómo se relacionan.',
     'La conclusión contradice las pistas o atribuye a la fuente información que no proporciona.',

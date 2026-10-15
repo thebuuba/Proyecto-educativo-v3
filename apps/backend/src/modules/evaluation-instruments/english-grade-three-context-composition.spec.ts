@@ -1,10 +1,17 @@
 import {describe,it,expect} from 'vitest'
 import {recommend} from './recommendation-engine'
 import fixtures from '../../../../../data/evaluation-instruments/english-grade-three-context-contracts.json'
+import compositions from '../../../../../data/evaluation-instruments/english-grade-three-composition-contracts.json'
 const context={level:'SECONDARY' as const,grade:3,cycle:1,subjectCode:'ING',optativeExitName:null}
 const formats=['rubrica','lista-cotejo','escala','lista-ponderada'] as const
 const propose=(description:string,preferredInstrumentType:typeof formats[number]='rubrica',maxScore=20,title='Actividad')=>recommend({activityTitle:title,description,preferredInstrumentType,maxScore,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
 describe('Tercero: condiciones comunicativas explícitas y acciones independientes',()=>{
+ for(const f of compositions)for(const format of formats)for(const total of [20,17.35])it(`composición ${f.id} ${format} ${total}`,()=>{
+  const p=propose(f.description,format,total)
+  expect(p.activityType).toBe(f.activity)
+  for(const id of f.criteria)expect(p.criteria.map(c=>c.templateId)).toContain(`ing-3-${id}`)
+  for(const id of f.excluded??[])expect(p.criteria.map(c=>c.templateId)).not.toContain(`ing-3-${id}`)
+ })
  for(const f of fixtures)for(const format of formats)for(const total of [20,17.35])it(`${f.id} ${f.description.slice(0,12)} ${format} ${total}`,()=>{
   const p=propose(f.description,format,total)
   const c=p.criteria.find(c=>c.templateId===`ing-3-${f.id==='research'?'research':'context-'+f.id}`)
@@ -44,6 +51,15 @@ describe('Tercero: condiciones comunicativas explícitas y acciones independient
  it('no añade rasgos internos, conducta fuera de la tarea ni contenidos negados o recursos',()=>{
   const p=propose('Dialogarán en inglés para expresar una opinión. No se evaluará la motivación, ansiedad, honestidad ni autocontrol. No se exigirá una predicción ni consultar el diccionario. Recursos: un esquema de voz pasiva.')
   expect(p.criteria.map(c=>c.templateId)).toEqual(['ing-3-opinion','ing-3-interaction','ing-3-intelligibility'])
+ })
+ it('una inferencia oral sobre una situación no exige un texto ni costumbres ausentes',()=>{
+  const p=propose('Presentarán oralmente en inglés una inferencia a partir de las pistas de una situación ficticia, sin estereotipos ni generalizaciones.')
+  const inference=p.criteria.find(c=>c.templateId==='ing-3-inference')!
+  const respect=p.criteria.find(c=>c.templateId==='ing-3-context-respect-differences')!
+  expect(inference.description).toContain('situación proporcionada')
+  expect(inference.description).not.toContain('texto disponible')
+  expect(respect.description).not.toContain('costumbres')
+  expect(respect.description).toContain('ejemplos')
  })
  it('ofrece más de veinte candidatos pero rechaza un instrumento final que excede el límite',()=>{
   const description='Escribirán en inglés un mensaje usando presente simple, presente continuo, pasado simple, pasado continuo, presente perfecto, used to, will, going to, there is, there was, imperativo, let’s, why not, can, should, must, may, might, have to, need to, cláusulas adjetivas, cláusulas sustantivas, condicional, question tags, voz pasiva en pasado, voz pasiva en presente, oraciones exclamativas, sustantivos abstractos, gerundio como sujeto, artículo cero, pronombres relativos, adverbios de duración y adverbios de intensidad.'

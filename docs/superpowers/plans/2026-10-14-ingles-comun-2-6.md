@@ -19,13 +19,13 @@ Ejecución directa con `executing-plans`; sin subagentes. Encargo del adjunto `1
 
 - [x] Base .46 comprobada; entorno recuperado sin reset,41 regresiones iniciales y rutina habitual con cinco evidencias/puntaje pendiente/17.35/agotamiento.
 - [x] Segundo: PDF140–145, primer ciclo, común; familias definidas verificadas,196 registros, cuatro formatos y persistencia. Un fragmento fuente ininterpretable excluido expresamente; cierre .53.
-- [ ] Tercero: PDF146–151; misma puerta, con requisitos propios.
+- [x] Tercero: PDF146–151,158 registros/15 grupos; familias definidas verificadas, cuatro formatos/CRUD/snapshots y cierre .55.
 - [ ] Cuarto: PDF158–162, segundo ciclo, común; misma puerta.
 - [ ] Quinto: PDF163–168; misma puerta.
 - [ ] Sexto: PDF169–174; misma puerta y consolidación final.
 
 ## Recuperación
 
-Segundo cerrado en familias definidas .53 y publicado7eb7e3b:196 registros/16 grupos, cuatro CRUD/snapshots,108 de base intactos/116 actuales. Tercero parcial: fuente146–151 ya cotejada,158 registros/15 grupos; doce evidencias funcionales,52 familias gramaticales/105 formas y19 léxicas/cinco expresivas conectadas. Backend13.412, frontend tercero3.000 y regresión de segundo3.400, inventario9. .54 solo código; runtime .53. Siguiente: estrategias/géneros/contexto/indicadores/composición, luego todas las puertas de revisión/HTTP/CRUD/snapshots. No iniciar cuarto.
+Segundo cerrado .53/publicado7eb7e3b. Tercero cerrado en familias definidas .55:158 registros/15 grupos, funciones/gramática/léxico/estrategias/géneros/contexto/composición, HTTP156+8+4rechazos/4conjuntos, cuatro formatos finales y snapshots. Backend15.240/76, frontend actual4.008/3 y regresión completa reciente18.792/114; inventario9 y builds.121 snapshots/91 completos/108 de base preservados. Publicar el cierre y verificar push; después cuarto común PDF158–162, segundo ciclo. Quinto/sexto pendientes. Sin Francés ni subagentes.
 
 Inicio: Docker/Supabase/frontend apagados; no es un fallo del motor. Se inicia Docker oculto y `pnpm supabase:local`, conservando datos. Herramienta PDF en entorno temporal local, fuera de dependencias de aplicación y Git. No comenzar a implementar otro grado hasta cerrar segundo. El documento de continuación prevalece con el estado real de cada bloque.

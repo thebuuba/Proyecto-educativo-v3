@@ -6,6 +6,16 @@ const row=(id:string,title:string,levels:NonNullable<ContextualTopicCriterion['p
 export function gradeThreeContextCriteria(text:string,receptive=false){
  const shared=new Set(['courtesy','respect-differences','empathetic-response','faithful-information','care'])
  const rows=gradeTwoContextCriteria(text,receptive).filter(c=>shared.has(c.templateId.replace('ing-2-context-',''))).map(c=>({...c,templateId:c.templateId.replace('ing-2-','ing-3-')}))
+ for(const c of rows)if(c.templateId==='ing-3-context-respect-differences'){
+  c.title='Información de los ejemplos sin estereotipos'
+  c.progressionLevels=[
+   'Comunica en inglés la información de los personajes o ejemplos proporcionados sin atribuir a todas las personas características de un caso particular.',
+   'La información se comprende sin descalificaciones; una referencia al ejemplo necesita precisión.',
+   'Describe el caso, pero una generalización no se sustenta en la información proporcionada.',
+   'Descalifica a un grupo o atribuye a todas las personas características no sustentadas por los ejemplos.',
+   'No aporta un mensaje reconocible relacionado con la información de los personajes o ejemplos solicitados.',
+  ];c.observable=c.progressionLevels[0]
+ }
  if(!receptive&&/\b(?:normas|reglas) (?:del intercambio|de (?:la )?comunicacion)\b/.test(text)&&/\b(?:proporcionad\w*|acordad\w*)\b/.test(text))rows.push(row('agreed-norms','Intervención compatible con las normas dadas',[
   'Comunica en inglés su intervención de acuerdo con las normas proporcionadas para el intercambio, permitiendo reconocer el mensaje y la participación de los interlocutores.',
   'El mensaje cumple las normas principales; una referencia de la intervención necesita ajuste.',

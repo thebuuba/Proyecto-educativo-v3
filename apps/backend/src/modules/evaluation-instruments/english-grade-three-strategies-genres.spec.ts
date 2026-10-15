@@ -30,4 +30,9 @@ describe('Tercero: estrategias y géneros propios según modalidad y fuente',()=
   const p=propose('Dialogarán en inglés para expresar una opinión. No se evaluará la motivación ni la ansiedad. No se exigirá consultar un diccionario. Recursos: diccionario y guía de inferencia.','rubrica',20)
   expect(p.criteria.some(c=>c.templateId.includes('strategy-'))).toBe(false)
  })
+ it('la comprensión y la dificultad son ambas evidencias cuando así se solicita',()=>{
+  const p=propose('Escucharán una noticia en inglés e indicarán qué comprendieron y qué necesitan aclarar.','lista-cotejo',17.35)
+  const c=p.criteria.find(c=>c.templateId==='ing-3-strategy-understanding')!
+  expect(c.description).toContain('comprendido y qué necesita aclarar')
+ })
 })

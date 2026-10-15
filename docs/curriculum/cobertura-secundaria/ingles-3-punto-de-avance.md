@@ -1,5 +1,7 @@
 # Inglés común de tercero: punto de avance
 
+**Documento histórico:** el cierre posterior y el siguiente pendiente están en el [informe final](ingles-3-informe-final.md). Las limitaciones de este punto no describen el estado final.
+
 **Tercero sigue parcial; no iniciar cuarto.** Fuente MINERD, primer ciclo, PDF146–151/páginas impresas145–150, ámbito `cc482480-0f08-5657-98aa-1afd28ecfa1a`. Las seis páginas fueron renderizadas y cotejadas visualmente. [Decisiones individuales](ingles-3-cotejo-fuente.json), [matriz](matriz.csv).
 
 Los158 registros conservan sus IDs y páginas. Doce ámbitos cotidianos —el último combina actividades sociales/culturales y viajes/turismo— más vocabulario, expresiones y gramática:15 grupos. PDF149/150 continúan gramática con otras columnas vacías. Se identificaron registros compuestos de cuatro expresiones, múltiples tiempos/modales/cláusulas, participios, pronombres, adverbios, preposiciones y conectores. PROCEDURE8 contiene anuncios/noticias y comparación pasado/presente. PROCEDURE19 sí especifica indicar que se comprende; no corresponde heredar la exclusión del fragmento de segundo.
