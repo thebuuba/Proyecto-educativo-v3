@@ -329,6 +329,97 @@ describe('remote operations', () => {
     })
   })
 
+  it('reads a price and normalizes its billing cycle, tax mode, trial and overrides', async () => {
+    const price = {
+      data: {
+        id: 'pri_01h00000000000000000000000',
+        status: 'active',
+        billing_cycle: { interval: 'month', frequency: 1 },
+        trial_period: { interval: 'month', frequency: 1, requires_payment_method: true, unit_price: null },
+        tax_mode: 'internal',
+        unit_price: { amount: '599', currency_code: 'USD' },
+        unit_price_overrides: [],
+      },
+    }
+    const { calls, client } = okClient(jsonResponse(200, price))
+    const result = await client.getPrice('pri_01h00000000000000000000000')
+
+    expect(calls).toHaveLength(1)
+    expect(calls[0].url).toBe(`${PADDLE_SANDBOX_API_ORIGIN}/prices/pri_01h00000000000000000000000`)
+    expect(calls[0].init.method).toBe('GET')
+    expect(result).toEqual({
+      id: 'pri_01h00000000000000000000000',
+      status: 'active',
+      trialUnitPrice: null,
+      trialUnitPriceOverrides: [],
+      unitPriceAmount: '599',
+      currencyCode: 'USD',
+      billingInterval: 'month',
+      billingFrequency: 1,
+      trialInterval: 'month',
+      trialFrequency: 1,
+      taxMode: 'internal',
+      requiresPaymentMethod: true,
+      unitPriceOverrides: [],
+    })
+  })
+
+  it('treats a price without a trial period or overrides defensively', async () => {
+    const { client } = okClient(jsonResponse(200, { data: { id: 'pri_01h00000000000000000000000' } }))
+    expect(await client.getPrice('pri_01h00000000000000000000000')).toMatchObject({
+      billingInterval: null, trialInterval: null, taxMode: null, requiresPaymentMethod: null, unitPriceOverrides: [],
+    })
+  })
+
+  it('rejects a malformed price id before any request', async () => {
+    const { calls, client } = okClient(jsonResponse(200, { data: {} }))
+    await expect(client.getPrice('price-x')).rejects.toBeInstanceOf(PaddleSandboxError)
+    expect(calls).toHaveLength(0)
+  })
+
+  it('exposes collection mode, trial dates and items for trial validation', async () => {
+    const trialDates = { starts_at: '2026-10-15T14:00:00Z', ends_at: '2026-11-15T14:00:00Z' }
+    const { client } = okClient(
+      jsonResponse(200, {
+        data: {
+          id: 'sub_01h00000000000000000000000',
+          status: 'trialing',
+          customer_id: 'ctm_01h00000000000000000000000',
+          next_billed_at: trialDates.ends_at,
+          collection_mode: 'automatic',
+          trial_dates: trialDates,
+          items: [
+            { status: 'trialing', quantity: 1, recurring: true, next_billed_at: trialDates.ends_at, trial_dates: trialDates, price: { id: 'pri_01h00000000000000000000000' } },
+            'not-an-object',
+          ],
+        },
+      }),
+    )
+
+    const result = await client.getSubscription('sub_01h00000000000000000000000')
+
+    expect(result.collectionMode).toBe('automatic')
+    expect(result.trialDates).toEqual({ startsAt: trialDates.starts_at, endsAt: trialDates.ends_at })
+    expect(result.items).toEqual([
+      {
+        status: 'trialing',
+        quantity: 1,
+        priceId: 'pri_01h00000000000000000000000',
+        trialDates: { startsAt: trialDates.starts_at, endsAt: trialDates.ends_at },
+        nextBilledAt: trialDates.ends_at,
+        recurring: true,
+      },
+    ])
+  })
+
+  it('keeps the legacy subscription shape when trial fields are absent', async () => {
+    const { client } = okClient(jsonResponse(200, { data: {
+      id: 'sub_01h00000000000000000000000', status: 'active', customer_id: 'ctm_01h00000000000000000000000',
+    } }))
+    const result = await client.getSubscription('sub_01h00000000000000000000000')
+    expect(Object.keys(result).sort()).toEqual(['currentBillingPeriod', 'customerId', 'id', 'nextBilledAt', 'scheduledChange', 'status'])
+  })
+
   it('rejects a malformed customer id before listing transactions', async () => {
     const { calls, client } = okClient(jsonResponse(200, { data: [] }))
     await expect(client.listTransactions('user@example.com')).rejects.toBeInstanceOf(PaddleSandboxError)

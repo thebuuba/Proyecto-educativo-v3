@@ -113,6 +113,20 @@ export interface PaddleBillingPeriod {
   endsAt: string
 }
 
+export interface PaddleTrialDates {
+  startsAt: string
+  endsAt: string
+}
+
+export interface PaddleSubscriptionItem {
+  status: string
+  quantity?: number | null
+  priceId: string | null
+  trialDates: PaddleTrialDates | null
+  nextBilledAt: string | null
+  recurring: boolean
+}
+
 export interface PaddleScheduledChange {
   action: string
   effectiveAt: string
@@ -126,6 +140,27 @@ export interface PaddleSubscription {
   currentBillingPeriod: PaddleBillingPeriod | null
   scheduledChange: PaddleScheduledChange | null
   updatedAt?: string | null
+  /** Only present in the normalizer output when the provider payload carried it. */
+  collectionMode?: string | null
+  trialDates?: PaddleTrialDates | null
+  items?: PaddleSubscriptionItem[]
+}
+
+/** Catalog price facts needed to authorize the card trial before any charge. */
+export interface PaddlePrice {
+  id: string
+  status?: string | null
+  trialUnitPrice?: unknown
+  trialUnitPriceOverrides?: unknown[]
+  unitPriceAmount: string | null
+  currencyCode: string | null
+  billingInterval: string | null
+  billingFrequency: number | null
+  trialInterval: string | null
+  trialFrequency: number | null
+  taxMode: string | null
+  requiresPaymentMethod: boolean | null
+  unitPriceOverrides: unknown[]
 }
 
 export interface PaddlePortalSubscriptionLink {
@@ -168,6 +203,8 @@ export interface PaddleSandboxClient {
   cancelSubscriptionAtPeriodEnd(input: CancelSubscriptionAtPeriodEndInput): Promise<PaddleSubscription>
   getTransaction(transactionId: string): Promise<PaddleTransaction>
   getSubscription(subscriptionId: string): Promise<PaddleSubscription>
+  /** Reads a catalog price so its trial and tax facts can be verified server-side. */
+  getPrice(priceId: string): Promise<PaddlePrice>
   /** Lists the newest transactions for a server-authorized customer id. */
   listTransactions(customerId: string): Promise<PaddleTransaction[]>
   verifyWebhook(rawBody: string | Uint8Array, signatureHeader: string | null | undefined): boolean
@@ -339,15 +376,34 @@ const mapTransaction = (data: Record<string, unknown>): PaddleTransaction => {
     billingPeriod: startsAt && endsAt ? { startsAt, endsAt } : null,
     customData: asRecord(data.custom_data),
     priceIds: items
-      .map((item) => asString(item.price_id))
+      .map((item) => asString(asRecord(item.price)?.id) ?? asString(item.price_id))
       .filter((priceId): priceId is string => priceId !== null),
     updatedAt: asString(data.updated_at),
   }
 }
 
+const mapTrialDates = (value: unknown): PaddleTrialDates | null => {
+  const record = asRecord(value)
+  const startsAt = record ? asString(record.starts_at) : null
+  const endsAt = record ? asString(record.ends_at) : null
+  return startsAt && endsAt ? { startsAt, endsAt } : null
+}
+
+const mapSubscriptionItem = (entry: Record<string, unknown>): PaddleSubscriptionItem => ({
+  status: asString(entry.status) ?? 'unknown',
+  quantity: typeof entry.quantity === 'number' && Number.isInteger(entry.quantity) ? entry.quantity : null,
+  priceId: asString(asRecord(entry.price)?.id),
+  trialDates: mapTrialDates(entry.trial_dates),
+  nextBilledAt: asString(entry.next_billed_at),
+  recurring: entry.recurring === true,
+})
+
 const mapSubscription = (data: Record<string, unknown>): PaddleSubscription => {
   const period = asRecord(data.current_billing_period)
   const change = asRecord(data.scheduled_change)
+  const items = Array.isArray(data.items)
+    ? data.items.map(asRecord).filter((entry): entry is Record<string, unknown> => entry !== null).map(mapSubscriptionItem)
+    : null
   return {
     id: asString(data.id) ?? '',
     status: asString(data.status) ?? 'unknown',
@@ -362,6 +418,35 @@ const mapSubscription = (data: Record<string, unknown>): PaddleSubscription => {
       change && asString(change.action) && asString(change.effective_at)
         ? { action: asString(change.action) as string, effectiveAt: asString(change.effective_at) as string }
         : null,
+    // Optional keys are only added when the provider payload carried them, so old
+    // payment fixtures keep the exact legacy shape.
+    ...(data.collection_mode !== undefined ? { collectionMode: asString(data.collection_mode) } : {}),
+    ...(data.trial_dates !== undefined ? { trialDates: mapTrialDates(data.trial_dates) } : {}),
+    ...(items !== null ? { items } : {}),
+  }
+}
+
+const asInteger = (value: unknown): number | null =>
+  typeof value === 'number' && Number.isInteger(value) ? value : null
+
+const mapPrice = (data: Record<string, unknown>): PaddlePrice => {
+  const billing = asRecord(data.billing_cycle)
+  const trial = asRecord(data.trial_period)
+  const unit = asRecord(data.unit_price)
+  return {
+    id: asString(data.id) ?? '',
+    status: asString(data.status),
+    trialUnitPrice: trial?.unit_price ?? null,
+    trialUnitPriceOverrides: Array.isArray(trial?.unit_price_overrides) ? trial.unit_price_overrides : [],
+    unitPriceAmount: unit ? asString(unit.amount) : null,
+    currencyCode: unit ? asString(unit.currency_code) : null,
+    billingInterval: billing ? asString(billing.interval) : null,
+    billingFrequency: billing ? asInteger(billing.frequency) : null,
+    trialInterval: trial ? asString(trial.interval) : null,
+    trialFrequency: trial ? asInteger(trial.frequency) : null,
+    taxMode: asString(data.tax_mode),
+    requiresPaymentMethod: typeof trial?.requires_payment_method === 'boolean' ? trial.requires_payment_method : null,
+    unitPriceOverrides: Array.isArray(data.unit_price_overrides) ? data.unit_price_overrides : [],
   }
 }
 
@@ -509,6 +594,12 @@ export function createPaddleSandboxClient(options: PaddleSandboxClientOptions): 
       assertPaddleId(subscriptionId, ID_PATTERNS.subscription, 'subscription')
       const result = await performRequest(`/subscriptions/${subscriptionId}`, 'GET')
       return mapSubscription(readData(result))
+    },
+
+    async getPrice(priceId) {
+      assertPaddleId(priceId, ID_PATTERNS.price, 'price')
+      const result = await performRequest(`/prices/${priceId}`, 'GET')
+      return mapPrice(readData(result))
     },
 
     async listTransactions(customerId) {
