@@ -1,5 +1,9 @@
 # Continuación del encargo completo
 
+## Encargo vigente: Francés común — 15/10/2026
+
+El adjunto `d2d4353c-ff04-4737-bb10-eb95459fd213` autoriza cerrar Development y continuar autónomamente con Francés común, grado por grado, sin subagentes ni producción. Estado y siguiente acción: [frances-continuacion.md](frances-continuacion.md). Las órdenes de detenerse de los apartados siguientes pertenecen a encargos anteriores. Cierre Development publicado en `1db3e19`; build y destino exclusivo Development revalidados antes de comenzar el inventario francés.
+
 ## Encargo vigente: estrategia de enseñanza y aprendizaje — 15/10/2026
 
 Adjunto c3aba48a. Implementación transversal del campo opcional en Actividades, catálogo compartido `teaching-strategies-2026.1` con16 entradas oficiales verificadas, automático/manual/desconocido, búsqueda y retorno automático. [Informe y evidencias](estrategias-informe.md). Base7b6dd4b, rama amplia-instrumentos-secundaria; sin subagentes. No amplía grados/asignaturas ni modifica matriz/inventario/revisión. Catálogo evaluativo69 permanece intacto.
