@@ -8,8 +8,14 @@ const env = developmentEnvironment(parseEnv(readFileSync('.dev.vars.local', 'utf
 Object.assign(process.env, env)
 const base = 'http://localhost:8787', dist = 'apps/frontend/dist'
 const digest = bytes => createHash('sha256').update(bytes).digest('hex')
+const read = async (url, options = {}) => {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try { return await fetch(url, { ...options, signal: AbortSignal.timeout(20000) }) }
+    catch { if (attempt === 2) throw Error('Runtime read failed after three bounded attempts: ' + new URL(url).pathname) }
+  }
+}
 const request = async path => {
-  const response = await fetch(base + path, { cache: 'no-store', signal: AbortSignal.timeout(20000) })
+  const response = await read(base + path, { cache: 'no-store' })
   assert.equal(response.status, 200, path); return response
 }
 const health = await request('/api/v1/health')
@@ -25,8 +31,8 @@ for (const path of [...new Set([localEntry, ...relevant.map(name => '/assets/' +
   if (path === localEntry) { assert(bytes.includes(project)); assert(!bytes.includes('vqrptqffeezqacwtmlqq')); assert(!bytes.includes(env.SUPABASE_SERVICE_ROLE_KEY)) }
   assets.push({ path, sha256: digest(bytes), cacheControl: response.headers.get('cache-control') })
 }
-const auth = await fetch(env.SUPABASE_URL + '/auth/v1/health', { headers: { apikey: env.SUPABASE_ANON_KEY } }); assert.equal(auth.status, 200)
-const storage = await fetch(env.SUPABASE_URL + '/storage/v1/bucket', { headers: { apikey: env.SUPABASE_SERVICE_ROLE_KEY, Authorization: 'Bearer ' + env.SUPABASE_SERVICE_ROLE_KEY } }); assert.equal(storage.status, 200)
+const auth = await read(env.SUPABASE_URL + '/auth/v1/health', { headers: { apikey: env.SUPABASE_ANON_KEY } }); assert.equal(auth.status, 200)
+const storage = await read(env.SUPABASE_URL + '/storage/v1/bucket', { headers: { apikey: env.SUPABASE_SERVICE_ROLE_KEY, Authorization: 'Bearer ' + env.SUPABASE_SERVICE_ROLE_KEY } }); assert.equal(storage.status, 200)
 const require = createRequire(new URL('../../apps/backend/package.json', import.meta.url)), { prisma } = require('@aula/database')
 try {
   const [sql] = await prisma.$queryRawUnsafe('select current_user::text as role, (select rolbypassrls from pg_roles where rolname=current_user) as bypass')

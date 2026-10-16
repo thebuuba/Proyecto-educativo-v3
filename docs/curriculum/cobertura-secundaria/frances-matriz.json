@@ -1467,7 +1467,9 @@
         ],
         "pending": [
           "Recorrido visual QA en sesión separada; patrones lingüísticos acotados, sin comprensión universal."
-        ]
+        ],
+        "linkedSourceEvidence": "frances-fuente-verificacion.json",
+        "linkedSourceStatus": "FOUR_FORMATS_PASSED"
       },
       "pedagogicalInventory": {
         "document": "frances-inventario.md",
@@ -2716,7 +2718,9 @@
         ],
         "pending": [
           "Recorrido visual QA en sesión separada; patrones lingüísticos acotados, sin comprensión universal."
-        ]
+        ],
+        "linkedSourceEvidence": "frances-fuente-verificacion.json",
+        "linkedSourceStatus": "PENDING_INFRASTRUCTURE"
       },
       "pedagogicalInventory": {
         "document": "frances-inventario.md",
@@ -3781,7 +3785,9 @@
         ],
         "pending": [
           "Recorrido visual QA en sesión separada; patrones lingüísticos acotados, sin comprensión universal."
-        ]
+        ],
+        "linkedSourceEvidence": "frances-fuente-verificacion.json",
+        "linkedSourceStatus": "PENDING_INFRASTRUCTURE"
       },
       "pedagogicalInventory": {
         "document": "frances-inventario.md",
@@ -6835,8 +6841,10 @@
     }
   ],
   "runtimeCurriculumCatalog": {
-    "status": "NOT_INSTALLED_IN_DEVELOPMENT",
-    "checked": "2026-10-15",
-    "detail": "curriculum_versions vacío. Fuente oficial revisada localmente; referencias curriculares DB nulas. El catálogo evaluativo y el contexto académico se verifican por separado."
+    "status": "INSTALLED_FRENCH_COMMON_ONLY",
+    "project": "eolgunypmtgrsyrjzcld",
+    "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+    "code": "MINERD_SECUNDARIA_2023_FRA_COMUN_V1",
+    "evidence": "frances-fuente-development.md"
   }
 }

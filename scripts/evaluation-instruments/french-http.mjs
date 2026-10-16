@@ -16,9 +16,25 @@ const { prisma } = require('@aula/database')
 const grade = Number(process.argv[2] ?? 1)
 const recheck = process.argv.includes('--recheck')
 const representative = process.argv.includes('--representative')
-const progressFile = `.wrangler/french-source/grade-${grade}-http-progress.json`
-if (!recheck) assert(!existsSync(progressFile) && !existsSync(`.wrangler/french-source/grade-${grade}-http.json`), 'Prior run exists: inspect its result; use --recheck for completed evidence, never repeat writes blindly')
-const progress = { grade, started: new Date().toISOString(), phase: 'READ_ONLY_GENERATION', writes: [] }
+const sourceLinked = process.argv.includes('--source-linked')
+const resume = process.argv.includes('--resume-verified')
+const prefix = `.wrangler/french-source/grade-${grade}${sourceLinked ? '-linked' : ''}`
+const sourceCatalog = existsSync('.wrangler/french-source/source-catalog.json') ? JSON.parse(readFileSync('.wrangler/french-source/source-catalog.json', 'utf8')) : null
+if (sourceLinked) assert(sourceCatalog, 'Install reviewed source first')
+const assertCurriculum = proposal => {
+  if (!sourceCatalog) return
+  assert.equal(proposal.curriculumVersionId, sourceCatalog.versionId)
+  assert.equal(proposal.curriculumScopeId, sourceCatalog.metadata.scopeMap[grade].id)
+}
+const progressFile = `${prefix}-http-progress.json`
+if (!recheck && !resume) assert(!existsSync(progressFile) && !existsSync(`${prefix}-http.json`), 'Prior run exists: inspect its result; use --recheck for completed evidence, never repeat writes blindly')
+const progress = resume ? JSON.parse(readFileSync(progressFile, 'utf8')) : { grade, started: new Date().toISOString(), phase: 'READ_ONLY_GENERATION', writes: [] }
+if (resume) {
+  assert(sourceLinked && !recheck && !existsSync(`${prefix}-http.json`))
+  assert.equal(progress.grade, grade)
+  assert(progress.writes.length > 0 && progress.writes.every(row => row.verified && row.activityId === row.verified.activityId), 'Uncertain write: inspect the database before resuming')
+  assert.equal(new Set(progress.writes.map(row => row.type)).size, progress.writes.length)
+}
 const checkpoint = () => writeFileSync(progressFile, JSON.stringify(progress, null, 2) + '\n')
 const context = JSON.parse(readFileSync(`.wrangler/french-source/grade-${grade}-context.json`, 'utf8'))
 assert.equal(context.project, project)
@@ -67,6 +83,7 @@ try {
   let generated = 0
   const academic = { level: 'SECONDARY', grade, subjectCode: 'FRA', subjectName: 'Francés' }
   for (const [fixtureIndex, f] of fixtures.entries()) {
+    if (sourceLinked && !recheck) continue // Separate linked snapshots; rechecks still exercise service/local parity.
     if (recheck && fixtureIndex !== 0 && f.id !== 'mixta-independiente') continue
     const interpreted = (await request('/evaluation-instruments/interpret', { sectionSubjectId: context.sectionSubjectId, activityTitle: 'QA Francés · ' + f.id, description: f.description, competencyBlock: 'b1' })).data
     assert.equal(interpreted.suggestedActivityType, f.activity, f.id)
@@ -76,6 +93,7 @@ try {
     for (const type of [formats[fixtureIndex % formats.length]]) for (const total of representative ? [fixtureIndex % 2 ? 17.35 : 20] : [20, 17.35]) {
       const input = { sectionSubjectId: context.sectionSubjectId, activityTitle: 'QA Francés · ' + f.id, description: f.description, maxScore: total, participationMode: 'INDIVIDUAL', preferredInstrumentType: type, competencyBlock: 'b1' }
       const proposal = (await request('/evaluation-instruments/recommend', input)).data
+      assertCurriculum(proposal)
       assert.equal(proposal.activityType, f.activity)
       assert.equal(proposal.totalScoreUnits, Math.round(total * 100))
       assert.deepEqual(content(proposal), content(editableFallbackRecommendation({ ...input, instrumentType: type, academicContext: academic })), `Service/local mismatch: ${f.id}/${type}`)
@@ -83,14 +101,26 @@ try {
     }
     console.log(JSON.stringify({ phase: 'generation', project, grade, case: f.id, verified: generated }))
   }
-  const savedEvidence = [], examples = []
+  const savedEvidence = resume ? progress.writes.map(row => row.verified) : [], examples = []
+  if (resume) {
+    const existing = (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data
+    for (const saved of savedEvidence) {
+      const activity = existing.find(row => row.id === saved.activityId); assert(activity)
+      assert.equal(hash(definition(activity)), saved.instrumentHash)
+      assert.equal(activity.teachingStrategyId, 'CASE_STUDY')
+      assertCurriculum(activity.instrumentSnapshot)
+    }
+  }
   const description = JSON.parse(readFileSync('data/evaluation-instruments/french-persistence-cases.json', 'utf8'))[grade]
   assert(description, 'No reviewed persistence case for grade')
   const detected = detectTeachingStrategy({ ...academic, description })
   assert.equal(detected.id, 'SIMULATION')
   for (const [index, type] of (recheck ? [] : formats).entries()) {
-    const total = index % 2 ? 17.35 : 20, name = `QA Francés ${grade}.º · ${type} · ${randomUUID().slice(0, 8)}`
+    if (savedEvidence.some(row => row.type === type)) continue
+    const total = index % 2 ? 17.35 : 20, name = `QA Francés ${grade}.º${sourceLinked ? ' fuente vinculada' : ''} · ${type} · ${randomUUID().slice(0, 8)}`
     const proposal = (await request('/evaluation-instruments/recommend', { sectionSubjectId: context.sectionSubjectId, activityTitle: name, description, participationMode: 'INDIVIDUAL', maxScore: total, preferredInstrumentType: type, competencyBlock: 'b1' })).data
+    assertCurriculum(proposal)
+    assert.deepEqual(content(proposal), content(editableFallbackRecommendation({ activityTitle: name, description, participationMode: 'INDIVIDUAL', maxScore: total, instrumentType: type, academicContext: academic })), `Persistence service/local mismatch: ${grade}/${type}`)
     let fields = recommendationToFields(proposal, name)
     assert.deepEqual(validateInstrumentDefinition(type, fields, total), [])
     // Explicit teacher edit through the same adapter used by the editor.
@@ -130,7 +160,7 @@ try {
     console.log(JSON.stringify({ phase: 'saved-and-reopened', grade, type, activityId: saved.id, instrumentUnchanged: true }))
   }
   if (recheck) {
-    const report = JSON.parse(readFileSync(`.wrangler/french-source/grade-${grade}-http.json`, 'utf8'))
+    const report = JSON.parse(readFileSync(`${prefix}-http.json`, 'utf8'))
     const activities = (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data
     for (const saved of report.savedEvidence) {
       const activity = activities.find(row => row.id === saved.activityId)
@@ -141,12 +171,12 @@ try {
       const snapshot = activities.find(row => row.id === saved.activityId).instrumentSnapshot
       assert(snapshot); return { activityId: saved.activityId, catalog: snapshot.catalogVersion, versionId: snapshot.curriculumVersionId, scopeId: snapshot.curriculumScopeId }
     }) }
-    writeFileSync(`.wrangler/french-source/grade-${grade}-http.json`, JSON.stringify(report, null, 2) + '\n')
+    writeFileSync(`${prefix}-http.json`, JSON.stringify(report, null, 2) + '\n')
     console.log(JSON.stringify({ phase: 'final-build-recheck', grade, generated, reopenedUnchanged: report.savedEvidence.length }))
   } else {
-    const report = { project, base, grade, subject: 'FRA', verification: 'AUTHENTICATED_HTTP_AND_DATABASE_NOT_BROWSER', scoreCoverage: representative ? 'BOTH_TOTALS_ACROSS_CASES; FULL_CARTESIAN_MATRIX_AUTOMATED' : 'BOTH_TOTALS_EACH_CASE', interpreted: fixtures.length, generated, savedEvidence, transientFailures, browser: 'PENDING' }
-    writeFileSync(`.wrangler/french-source/grade-${grade}-http.json`, JSON.stringify(report, null, 2) + '\n')
-    writeFileSync(`.wrangler/french-source/grade-${grade}-examples.json`, JSON.stringify(examples, null, 2) + '\n')
+    const report = { project, base, grade, subject: 'FRA', verification: 'AUTHENTICATED_HTTP_AND_DATABASE_NOT_BROWSER', scoreCoverage: sourceLinked ? 'FOUR_LINKED_FORMATS; PRIOR_MATRIX_PRESERVED' : representative ? 'BOTH_TOTALS_ACROSS_CASES; FULL_CARTESIAN_MATRIX_AUTOMATED' : 'BOTH_TOTALS_EACH_CASE', interpreted: sourceLinked ? 0 : fixtures.length, generated, savedEvidence, transientFailures, browser: 'PENDING' }
+    writeFileSync(`${prefix}-http.json`, JSON.stringify(report, null, 2) + '\n')
+    writeFileSync(`${prefix}-examples.json`, JSON.stringify(examples, null, 2) + '\n')
     progress.phase = 'COMPLETE'; checkpoint()
   }
 } finally { await prisma.$disconnect() }

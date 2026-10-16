@@ -1,7 +1,9 @@
 import { createRequire } from 'node:module'
+import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 const require = createRequire(import.meta.url)
+if (existsSync('.wrangler/french-source/http.paused')) throw Error('HTTP QA paused before starting; no requests or writes were made by this run')
 const wranglerRequire = createRequire(require.resolve('wrangler/package.json'))
 const { build } = wranglerRequire('esbuild')
 const outfile = resolve('.wrangler/french-source/french-http.bundle.mjs')

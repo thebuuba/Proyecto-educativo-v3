@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 const grade = Number(process.argv[2])
 const directory = '.wrangler/french-source'
 const read = file => JSON.parse(readFileSync(`${directory}/${file}`, 'utf8'))
@@ -20,7 +20,12 @@ const output = `docs/curriculum/cobertura-secundaria/frances-${grade}-verificaci
 writeFileSync(output, JSON.stringify(evidence, null, 2) + '\n')
 const matrixFile = 'docs/curriculum/cobertura-secundaria/frances-matriz.json'
 const matrix = JSON.parse(readFileSync(matrixFile, 'utf8'))
-matrix.runtimeCurriculumCatalog = { status: 'NOT_INSTALLED_IN_DEVELOPMENT', checked: '2026-10-15', detail: 'curriculum_versions vacío. Fuente oficial revisada localmente; referencias curriculares DB nulas. El catálogo evaluativo y el contexto académico se verifican por separado.' }
+if (existsSync(`${directory}/source-catalog.json`)) {
+  const source = read('source-catalog.json')
+  assert.equal(source.project, http.project)
+  assert(http.savedEvidence.every(row => row.curriculum?.versionId === source.versionId && row.curriculum?.scopeId === source.metadata.scopeMap[grade].id), 'New QA snapshots must bind the reviewed source')
+  matrix.runtimeCurriculumCatalog = { status: 'INSTALLED_FRENCH_COMMON_ONLY', project: source.project, versionId: source.versionId, code: source.code, evidence: 'frances-fuente-development.md' }
+} else matrix.runtimeCurriculumCatalog = { status: 'NOT_INSTALLED_IN_DEVELOPMENT', checked: '2026-10-15', detail: 'Fuente oficial revisada localmente; referencias curriculares DB nulas.' }
 matrix.grades.find(item => item.grade === grade).coverage = { inventory: 'VISUALLY_REVIEWED', implementation: 'CONNECTED_DEFINED_PATTERNS', providers: [`frances-comunicacion-${grade}`], catalog: catalog.catalog, automated: `PASSED: ${tests.backendFrench} backend French / ${tests.frontendFrench} frontend French, including previous grades`, httpDatabase: `PASSED: ${http.interpreted} interpretations, ${http.generated} recommendations, 4 formats saved/edited/reopened`, browser: 'PENDING_ISOLATED_QA_BROWSER_UNAVAILABLE', evidence: [`frances-${grade}.md`, `frances-${grade}-ejemplos.md`, `frances-${grade}-verificacion.json`], pending: ['Recorrido visual QA en sesión separada; patrones lingüísticos acotados, sin comprensión universal.'] }
 writeFileSync(matrixFile, JSON.stringify(matrix, null, 2) + '\n')
 console.log(JSON.stringify({ evidence: output, tests }))

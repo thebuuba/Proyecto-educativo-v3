@@ -1,0 +1,216 @@
+{
+  "recordedAt": "2026-10-16T01:29:34.309Z",
+  "source": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_FRA_COMUN_V1",
+    "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+    "documentId": "0dbd0c6a-f061-55d6-a32a-733a6f8c8454",
+    "metadata": {
+      "subjectCodes": [
+        "FRA"
+      ],
+      "commonOnly": true,
+      "datasetDigest": "9771763ab5f7cfc83e8afc286c08f83b5cbf475379a4277f130db3750f52b6bc",
+      "sourceVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "sourcePdfHash": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+      "scopeMap": {
+        "1": {
+          "sourceId": "ce0c7661-2119-5679-8fed-8e4507b92e17",
+          "id": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+        },
+        "2": {
+          "sourceId": "d61f0959-332f-5a0e-8f5e-b1c05dcadae9",
+          "id": "1bc92e1d-e8bf-59e2-9299-e7bceb367c4a"
+        },
+        "3": {
+          "sourceId": "06576745-46a4-56a3-9dc8-cff915975251",
+          "id": "30f30d54-2d6c-5571-8d84-09d05302a897"
+        },
+        "4": {
+          "sourceId": "507fac2f-7254-5a1f-8374-a707c672a0bf",
+          "id": "bc3e08fa-8996-51ec-bf13-50128a239410"
+        },
+        "5": {
+          "sourceId": "405bf920-4398-57c8-abb1-dbe48adb1b9a",
+          "id": "04d22933-7265-53fd-88a9-99df80f8beff"
+        },
+        "6": {
+          "sourceId": "d0978ec6-aa60-5592-b034-6f042269dba9",
+          "id": "c035800a-97a2-5766-ae31-ee29b81bf72b"
+        }
+      },
+      "review": "docs/curriculum/cobertura-secundaria/frances-matriz.json"
+    },
+    "scopes": 6,
+    "elements": 813,
+    "relations": 42,
+    "result": "UNCHANGED",
+    "preservedSnapshots": 14
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-CC59BukY.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-CC59BukY.js",
+        "sha256": "2a1c774d85b59d21bb60a9fc61de09b83d6c4a35cf2a5e2d42b6736d6e0618bc",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-Djo3MmIz.js",
+        "sha256": "9457a368846a304e1c8259af6e8e2902c4c50b0e0abeb1c14458869066eac88f",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-CRqJmrAB.js",
+        "sha256": "d39ce75cab92768ca9d4a0992537809491d538cbe21647610c905562a7fa635f",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-DzvmaSSZ.js",
+        "sha256": "4d36638ecd62473252fa88a242406a81cf59d73ef3dd4af5faf2910df16bc9d6",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-D6YgG7Py.js",
+        "sha256": "f62ad5e2e6cfc5723f6352ab75dd2fbf6cdc2e0089eee0758ceb3fe24d3983c0",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "434e188a2db83eb0ba08c183b8580e4deceb5e068fcda428bff319a649e9a162",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "linked": [
+    {
+      "project": "eolgunypmtgrsyrjzcld",
+      "base": "http://localhost:8787",
+      "grade": 1,
+      "subject": "FRA",
+      "verification": "AUTHENTICATED_HTTP_AND_DATABASE_NOT_BROWSER",
+      "scoreCoverage": "FOUR_LINKED_FORMATS; PRIOR_MATRIX_PRESERVED",
+      "interpreted": 0,
+      "generated": 0,
+      "savedEvidence": [
+        {
+          "type": "rubrica",
+          "total": 20,
+          "activityId": "429017fc-1c09-4583-b38f-e8dcd897b6df",
+          "instrumentId": "883bd474-4c6a-4324-975c-548261933b70",
+          "snapshotId": "64b386cb-57bb-4ea6-9897-7651733070c2",
+          "instrumentHash": "215922a14f8c6a47b3a1bb2440198de4ca5fe568af609f822d75846b116b6585",
+          "manualTextAndWeightsPreserved": true,
+          "strategyOnlyExact": true,
+          "curriculum": {
+            "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+            "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0",
+            "status": "PUBLISHED"
+          }
+        },
+        {
+          "type": "lista-cotejo",
+          "total": 17.35,
+          "activityId": "4fcc7de5-8f1c-4270-9c4f-714c8cd28015",
+          "instrumentId": "579ba2c2-3899-4b79-a464-83121ad5edd6",
+          "snapshotId": "167c18f6-7d0b-48c1-942c-79573a6479c0",
+          "instrumentHash": "159390903ca946eea51183f775cda0b1394d66d09d0f29b5def00601991f27da",
+          "manualTextAndWeightsPreserved": true,
+          "strategyOnlyExact": true,
+          "curriculum": {
+            "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+            "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0",
+            "status": "PUBLISHED"
+          }
+        },
+        {
+          "type": "escala",
+          "total": 20,
+          "activityId": "592396e0-8462-412d-8585-34a5a8619240",
+          "instrumentId": "f1e038ae-7ed8-4019-b797-2d621c423aa8",
+          "snapshotId": "542dfb37-039e-47e0-8888-d28302bd8ce7",
+          "instrumentHash": "9fb24b04d6a7cb4ce837bcc7ff3bd344932536ac6e45517ff3c9f829ced39d30",
+          "manualTextAndWeightsPreserved": true,
+          "strategyOnlyExact": true,
+          "curriculum": {
+            "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+            "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0",
+            "status": "PUBLISHED"
+          }
+        },
+        {
+          "type": "lista-ponderada",
+          "total": 17.35,
+          "activityId": "27b08739-142c-4350-ade9-e5a99c587874",
+          "instrumentId": "7b0aae22-34df-4951-95ac-0b37c8229937",
+          "snapshotId": "eb98f06e-da15-44e7-83db-d1b10ba165c6",
+          "instrumentHash": "ddead5f899d9a06cbebf167274be22a14d217239722749e13aad42aa7546cd34",
+          "manualTextAndWeightsPreserved": true,
+          "strategyOnlyExact": true,
+          "curriculum": {
+            "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+            "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0",
+            "status": "PUBLISHED"
+          }
+        }
+      ],
+      "transientFailures": [],
+      "browser": "PENDING"
+    }
+  ],
+  "pending": [
+    {
+      "grade": 2,
+      "status": "BLOCKED_LOCAL_DNS_OR_CONNECTION_RESET",
+      "verified": [
+        {
+          "type": "rubrica",
+          "total": 20,
+          "activityId": "aa8c8c57-9425-42d0-a9e8-9a5f67728ccd",
+          "instrumentId": "93e10ade-2353-4b42-a809-3fa4243c1c35",
+          "snapshotId": "6ade24fb-df56-4f19-a976-952fc25b0b02",
+          "instrumentHash": "ee9740d06eed70821e501eab8dab4e4057a1522a25a04050804f1130b2edbc3e",
+          "manualTextAndWeightsPreserved": true,
+          "strategyOnlyExact": true,
+          "curriculum": {
+            "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+            "scopeId": "1bc92e1d-e8bf-59e2-9299-e7bceb367c4a",
+            "status": "PUBLISHED"
+          }
+        }
+      ],
+      "uncertainActivityIds": [
+        "ab21edfc-bcad-40c4-bf3f-277b5bd710d4"
+      ],
+      "next": "Inspect existing activities read-only before any resume. Never recreate uncertain writes."
+    },
+    {
+      "grade": 3,
+      "status": "BLOCKED_LOCAL_DNS_OR_CONNECTION_RESET",
+      "verified": [],
+      "uncertainActivityIds": [],
+      "next": "Inspect existing activities read-only before any resume. Never recreate uncertain writes."
+    }
+  ],
+  "browser": "PENDING_ISOLATED_QA_BROWSER_UNAVAILABLE"
+}

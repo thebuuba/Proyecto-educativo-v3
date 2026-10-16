@@ -3,7 +3,7 @@ import { BadRequestException, ForbiddenException, HttpException, Injectable, Log
 import { prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { evaluationCatalogCurrent } from './catalog-current'
-import { academicContext, resolveScope } from './curriculum-context'
+import { academicContext, resolveScope, type AcademicContext } from './curriculum-context'
 import { detectActivityType, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
 import {resolveCommonEnglishTask,commonEnglishSelections,InstrumentCapacityError,TaskRequirementError,deliveryConditions} from '@aula/shared'
@@ -71,37 +71,56 @@ export class EvaluationInstrumentsService {
     if ([assignment.grade, assignment.subject, assignment.section, assignment.schoolYear].some(row => row.schoolId !== user.schoolId || row.status !== 'ACTIVE')
       || assignment.section.gradeId !== assignment.gradeId) throw new ForbiddenException('Contexto académico inconsistente.')
     const context = academicContext(assignment.grade, assignment.subject, assignment.curriculumContext?.optativeExitName ?? null)
-    let release
+    let releases: Array<{ identical: boolean }>
     try {
-      release = await prisma.evaluationCatalogRelease.findUnique({ where: { version: evaluationCatalogCurrent.version } })
+      // Compare the entire reviewed release in PostgreSQL; return one boolean, not its large payload.
+      releases = await prisma.$queryRaw<Array<{ identical: boolean }>>`
+        SELECT payload = ${JSON.stringify(evaluationCatalogCurrent)}::jsonb AS identical
+        FROM public.evaluation_catalog_releases WHERE version = ${evaluationCatalogCurrent.version}`
     } catch (error) {
       const code = typeof error === 'object' && error && 'code' in error ? String(error.code) : ''
-      if (code === 'P2021' || code === 'P2022') throw new ServiceUnavailableException('El catálogo evaluativo no está instalado. Aplica las migraciones y el paso de instalación del catálogo.')
+      const databaseCode = typeof error === 'object' && error && 'meta' in error ? (error.meta as { code?: string } | null)?.code : undefined
+      if (code === 'P2021' || code === 'P2022' || (code === 'P2010' && ['42P01', '42703'].includes(databaseCode ?? ''))) throw new ServiceUnavailableException('El catálogo evaluativo no está instalado. Aplica las migraciones y el paso de instalación del catálogo.')
       throw error
     }
-    if (!release) throw new ServiceUnavailableException('Falta instalar el catálogo evaluativo versionado.')
-    // Load the DB release only if its canonical content equals the reviewed, typed seed.
-    if (canonicalJson(release.payload) !== canonicalJson(evaluationCatalogCurrent)) throw new ServiceUnavailableException('El catálogo difiere del seed revisado.')
+    if (!releases.length) throw new ServiceUnavailableException('Falta instalar el catálogo evaluativo versionado.')
+    if (releases[0].identical !== true) throw new ServiceUnavailableException('El catálogo difiere del seed revisado.')
     let version = null
     if (input.curriculumVersionId) {
       version = await prisma.curriculumVersion.findUnique({ where: { id: input.curriculumVersionId } })
-      if (!context || !version || version.level !== context.level || !['DRAFT', 'PUBLISHED'].includes(version.status)) throw new BadRequestException('Versión curricular incompatible o no disponible.')
+      if (!context || !version || version.level !== context.level || !['DRAFT', 'PUBLISHED'].includes(version.status) || !versionAllowsContext(version, context)) throw new BadRequestException('Versión curricular incompatible o no disponible.')
     } else if (context) {
-      version = await prisma.curriculumVersion.findFirst({ where: { level: context.level, status: 'PUBLISHED' }, orderBy: [{ editionYear: 'desc' }, { publishedAt: 'desc' }, { id: 'asc' }] })
+      version = await versionForContext(context, 'PUBLISHED')
       if (!version && developmentDraft && process.env.NODE_ENV !== 'production') {
-        version = await prisma.curriculumVersion.findFirst({ where: { level: context.level, status: 'DRAFT' }, orderBy: [{ editionYear: 'desc' }, { id: 'asc' }] })
+        version = await versionForContext(context, 'DRAFT')
       }
     }
     const scopes = version && context ? await prisma.curriculumScope.findMany({ where: { versionId: version.id, grade: context.grade, cycle: context.cycle } }) : []
     const mappings = version && context ? await prisma.curriculumSubjectMapping.findMany({ where: { subjectId: assignment.subjectId, mappingStatus: 'REVIEWED', scope: { versionId: version.id, grade: context.grade, cycle: context.cycle } } }) : []
     const resolution = context && version ? resolveScope(context, scopes, mappings.map(m => m.scopeId)) : { status: context ? 'NO_PUBLISHED_VERSION' : 'INCOMPLETE_CONTEXT', scope: null, reason: 'Se requiere contexto estructurado y versión disponible.' }
     if (input.curriculumScopeId && input.curriculumScopeId !== resolution.scope?.id) throw new BadRequestException('El ámbito solicitado no corresponde al contexto autorizado.')
-    const elements = resolution.scope ? await prisma.curriculumElement.findMany({ where: { scopeId: resolution.scope.id, versionId: resolution.scope.versionId }, include: { sourceSpans: true }, orderBy: { id: 'asc' } }) : []
+    const elements = resolution.scope ? await prisma.curriculumElement.findMany({ where: { scopeId: resolution.scope.id, versionId: resolution.scope.versionId }, select: { id: true, versionId: true, scopeId: true, elementType: true, originalText: true, normalizedText: true, sourceSpans: { select: { documentId: true, pdfPage: true, printedPage: true } } }, orderBy: { id: 'asc' } }) : []
     const rows = elements.map(e => ({ elementId: e.id, versionId: e.versionId, scopeId: e.scopeId,
       type: e.elementType, text: e.originalText, normalizedText: e.normalizedText,
       sources: e.sourceSpans.map(s => ({ documentId: s.documentId, pdfPage: s.pdfPage, printedPage: s.printedPage })) }))
     return { context, resolution, rows, version }
   }
+}
+
+function versionAllowsContext(version: { importMetadata?: unknown }, context: AcademicContext) {
+  const metadata = version.importMetadata && typeof version.importMetadata === 'object' && !Array.isArray(version.importMetadata)
+    ? version.importMetadata as Record<string, unknown> : {}
+  if (metadata.commonOnly === true && context.optativeExitName) return false
+  if (!('subjectCodes' in metadata)) return true // Historical complete catalogs retain their policy.
+  const code = context.subjectCode.trim().toUpperCase() || (/frances|francais/.test((context.subjectName ?? '').normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()) ? 'FRA' : '')
+  return Array.isArray(metadata.subjectCodes) && metadata.subjectCodes.some(value => typeof value === 'string' && value.toUpperCase() === code)
+}
+
+async function versionForContext(context: AcademicContext, status: 'PUBLISHED' | 'DRAFT') {
+  const query = { where: { level: context.level, status }, orderBy: [{ editionYear: 'desc' as const }, ...(status === 'PUBLISHED' ? [{ publishedAt: 'desc' as const }] : []), { id: 'asc' as const }] }
+  const latest = await prisma.curriculumVersion.findFirst(query)
+  if (!latest || versionAllowsContext(latest, context)) return latest
+  return (await prisma.curriculumVersion.findMany(query)).find(version => versionAllowsContext(version, context)) ?? null
 }
 
 export function canonicalJson(value: unknown): string {
