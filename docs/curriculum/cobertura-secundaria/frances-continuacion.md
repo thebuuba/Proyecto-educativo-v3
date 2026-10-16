@@ -38,3 +38,15 @@ Publicar el cierre de 3.º. Resolver la selección por asignatura antes de impor
 - Usar PDF.js y `@napi-rs/canvas` ya presentes para renderizar; no instalar dependencias.
 - Revisiones propias; la prohibición de subagentes del usuario prevalece sobre los pasos de delegación de las guías.
 - Las instrucciones anteriores de detenerse antes de otra asignatura son históricas; el nuevo encargo autoriza únicamente Francés común.
+
+## Reanudación y prioridad complementaria
+
+Se retira el anuncio de preparación automática antes de continuar 4.º. La prueba dirigida pasa 7/7 y backend completo 37.201/37.201; se conservan errores y recuperación. Commit propio de esta corrección antes del siguiente bloque curricular.
+
+La fuente francesa acotada ya se instaló en Development: `MINERD_SECUNDARIA_2023_FRA_COMUN_V1`, ID `de6de6bc-0d23-59da-917e-22cb92c0a3af`, seis ámbitos, 813 elementos y 42 relaciones. Segunda instalación `UNCHANGED`, 14 snapshots previos intactos. Las referencias inicialmente nulas son históricas: no se reescriben. Está pendiente cerrar nuevas pruebas vinculadas de 1.º–3.º.
+
+La ejecución vinculada de 1.º se interrumpió al preparar la cuarta recomendación por timeout. Sus tres escrituras (rúbrica/cotejo/escala) están verificadas en `grade-1-linked-http-progress.json`; no repetirlas. El runner admite `--source-linked --resume-verified`, exige escrituras verificadas y comprueba sus hashes antes de crear únicamente el formato que falta. El archivo ignorado `http.paused` impide arrancar nuevas pruebas hasta desplegar localmente el build revisado.
+
+Causa de lentitud medida: descargar 631 KB de catálogo por petición tardó 28.987 ms; comparación completa parametrizada JSONB en PostgreSQL: 2.481 ms. El servicio ahora devuelve solo la igualdad y selecciona las columnas curriculares necesarias. Pruebas dirigidas del servicio 31/31. No se modifica esquema ni configuración remota. El antiguo servidor salió por DNS; comprobar el nuevo proceso y el listener antes de iniciar otro. Ningún comando HTTP sigue activo.
+
+4.º está preparado en archivos nuevos (proveedor y contratos), todavía sin conexión ni instalación. Los contratos 4.º demostraron 96 fallos antes de conectar el proveedor; sus imports temporales se retiraron hasta cerrar la fuente y el ajuste silencioso. `.72` ya está congelado en archivo nuevo; conservarlo. Luego conectar 4.º como `.73` y continuar 5.º/6.º secuencialmente.

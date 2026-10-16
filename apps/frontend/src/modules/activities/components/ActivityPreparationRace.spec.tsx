@@ -79,7 +79,7 @@ describe('automatic instrument preparation request lifecycle', () => {
     expect(draft.instrumentFields['lista-cotejo:meta:scorePending']).toBe('true')
   })
 
-  it('shows initial preparation and keeps a rejected draft recoverable without an automatic error loop', async () => {
+  it('keeps automatic preparation silent and a rejected draft recoverable without an automatic error loop', async () => {
     let reject!: (error: Error) => void
     const pending = new Promise<InstrumentRecommendation>((_, failure) => { reject = failure })
     const post = vi.spyOn(api, 'post').mockImplementation(async path => (await (path.endsWith('/interpret') ? interpretation : pending)) as never)
@@ -87,8 +87,9 @@ describe('automatic instrument preparation request lifecycle', () => {
     expect(screen.getByRole('button', { name: 'Preparar instrumento' })).toBeEnabled()
     await advance(500)
     await advance(1000)
-    expect(screen.getByText('Preparando el instrumento de evaluación…')).toBeVisible()
-    expect(screen.getByRole('button', { name: 'Preparando…' })).toBeDisabled()
+    expect(screen.queryByText(/Preparando|Instrumento preparado/)).not.toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Instrumento completo/ }).parentElement?.querySelector('[role="status"]')).toBeNull()
+    expect(screen.getByRole('button', { name: 'Preparar instrumento' })).toBeDisabled()
     await act(async () => { reject(new ApiError(400, 'Revisa la consigna antes de continuar.')) })
     await advance(5000)
     expect(screen.getByText('Revisa la consigna antes de continuar.')).toBeVisible()

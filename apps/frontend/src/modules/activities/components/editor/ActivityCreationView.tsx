@@ -193,7 +193,6 @@ export function ActivityCreationView(props: {
   const [interpretation, setInterpretation] = useState<ActivityInterpretation | null>(null)
   const [preparing, setPreparing] = useState(false)
   const [preparationRevision, retryPreparation] = useState(0)
-  const [regenerated, setRegenerated] = useState(false)
   const preparingRequest = useRef(false)
   const preparationSequence = useRef(0)
   const mounted = useRef(true)
@@ -514,10 +513,6 @@ export function ActivityCreationView(props: {
       const prepared = { ...next, preparedFingerprint: preparationFingerprint(next) }
       latestDraft.current = prepared
       onChangeDraft(prepared)
-      if (newGeneration) {
-        setRegenerated(true)
-        window.setTimeout(() => setRegenerated(false), 1800)
-      }
       setFailedInstrumentType('')
       setFallbackNotice('')
       if (activityChange) manualSelections.current.activity = Boolean(activityChange.type)
@@ -1183,11 +1178,6 @@ export function ActivityCreationView(props: {
             <h3 className="text-lg font-black text-foreground">
               6. Instrumento completo · {instrumentLabel}
             </h3>
-            {preparing && !activityDraft.preparedRecommendation ? (
-              <FeedbackBanner tone="warning" role="status">
-                Preparando el instrumento de evaluación…
-              </FeedbackBanner>
-            ) : null}
             {structuralLocked ? (
               <ReadOnlyInstrument
                 type={activityDraft.instrumentType}
@@ -1209,7 +1199,7 @@ export function ActivityCreationView(props: {
                     onClick={() => requestRegeneration()}
                     disabled={preparing}
                   >
-                    {preparing ? 'Preparando…' : 'Generar nuevo instrumento'}
+                    Generar nuevo instrumento
                   </Button>
                   <Button
                     type="button"
@@ -1233,13 +1223,7 @@ export function ActivityCreationView(props: {
                   onClick={() => initialInstrument ? void prepare() : requestRegeneration()}
                   disabled={preparing}
                 >
-                  {preparing
-                    ? 'Preparando…'
-                    : initialInstrument
-                      ? 'Preparar instrumento'
-                      : regenerated
-                        ? 'Instrumento preparado'
-                        : 'Generar nuevo instrumento'}
+                  {initialInstrument ? 'Preparar instrumento' : 'Generar nuevo instrumento'}
                 </Button>
                 {!activityDraft.manualInstrumentBlank ? (
                   <Button type="button" variant="ghost" onClick={requestInstrumentFromScratch}>
