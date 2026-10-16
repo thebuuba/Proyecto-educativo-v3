@@ -1,0 +1,468 @@
+[
+  {
+    "id": "reals",
+    "description": "Opera con números reales.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica las propiedades de los números irracionales.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la radicación dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "patterns",
+    "description": "Determina el patrón numérico de la secuencia dada.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica el patrón numérico indicado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Representa el patrón numérico de la situación.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "expressions",
+    "description": "Evalúa las expresiones algebraicas con los valores dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Traduce al lenguaje algebraico la situación proporcionada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "translation"
+        ]
+      },
+      {
+        "description": "Reduce términos semejantes.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Analiza los errores de las expresiones algebraicas dadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "linear-equations",
+    "description": "Resuelve problemas de ecuaciones de primer grado.",
+    "activity": "PROBLEM_SOLVING",
+    "requiredActions": [
+      "understanding",
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica el procedimiento de las ecuaciones lineales sin resolverlas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Comprueba la solución de la ecuación lineal dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "verification"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "linear-inequalities",
+    "description": "Resuelve inecuaciones de primer grado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Representa la solución de la desigualdad de primer grado dada.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la inecuación lineal resuelta.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "quadratics",
+    "description": "Resuelve la ecuación de segundo grado dada.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica otro método válido para la ecuación cuadrática.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Comprueba las raíces de la ecuación cuadrática.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "verification"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "quadratic-inequalities",
+    "description": "Resuelve problemas con inecuaciones de segundo grado.",
+    "activity": "PROBLEM_SOLVING",
+    "requiredActions": [
+      "understanding",
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica el conjunto solución de la desigualdad de segundo grado dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la inecuación cuadrática.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "planning",
+    "description": "Analiza la planificación financiera proporcionada.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "analysis"
+    ],
+    "variants": [
+      {
+        "description": "Elabora un proyecto de planificación financiera que ahorre los recursos dados.",
+        "activity": "PROJECT",
+        "requiredActions": [
+          "model"
+        ]
+      },
+      {
+        "description": "Clasifica los actores de la planificación financiera.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "compound",
+    "description": "Calcula el interés compuesto de la situación dada.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica cómo calcular el monto sin efectuar cálculos.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Modeliza el interés compuesto con los datos disponibles.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "model"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "geometry",
+    "description": "Investiga el origen y evolución de la geometría.",
+    "activity": "RESEARCH",
+    "requiredActions": [
+      "inquiry"
+    ],
+    "variants": [
+      {
+        "description": "Clasifica las ramas de la geometría.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Interpreta los elementos básicos de la geometría.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "coordinates",
+    "description": "Representa las figuras dadas en el plano cartesiano.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "representation"
+    ],
+    "variants": [
+      {
+        "description": "Interpreta las coordenadas indicadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de los puntos del plano cartesiano.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "distance",
+    "description": "Calcula la distancia entre dos puntos del plano.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica la longitud de un segmento con las coordenadas dadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Comprueba la distancia entre puntos dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "verification"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "heron",
+    "description": "Aplica la fórmula de Herón al triángulo dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica la fórmula de Herón sin calcular áreas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la fórmula de Herón aplicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "triangle",
+    "description": "Demuestra el teorema fundamental del triángulo.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "explanation"
+    ],
+    "variants": [
+      {
+        "description": "Aplica el teorema fundamental del triángulo a los datos dados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Analiza el error del teorema fundamental del triángulo aplicado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "round-bodies",
+    "description": "Calcula el volumen del cono, cilindro y esfera dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Construye el desarrollo plano del cilindro dado.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Explica por qué la esfera no admite un desarrollo plano exacto.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Resuelve problemas con cuerpos redondos.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "position",
+    "description": "Calcula los cuartiles de los datos dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Interpreta los deciles indicados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de los quintiles calculados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "statistics",
+    "description": "Construye el gráfico circular con los datos agrupados dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "representation"
+    ],
+    "variants": [
+      {
+        "description": "Interpreta el polígono de frecuencia indicado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      },
+      {
+        "description": "Recolecta y organiza los datos agrupados solicitados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "collection",
+          "organization"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "probability",
+    "description": "Calcula la probabilidad del evento compuesto dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Construye el diagrama de árbol del experimento aleatorio.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Interpreta la tabla de números aleatorios proporcionada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      }
+    ]
+  }
+]

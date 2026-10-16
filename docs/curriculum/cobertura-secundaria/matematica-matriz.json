@@ -2003,7 +2003,594 @@
           "printedPage": "220"
         }
       ],
-      "topics": [],
+      "topics": [
+        {
+          "id": "reals",
+          "grade": 2,
+          "label": "números reales",
+          "match": "reales?|irracionales?|potenciacion|radicacion",
+          "relation": "el valor real, las propiedades de la operación y las condiciones de potencias o raíces solicitadas",
+          "representation": "sitúa los reales pedidos conservando su orden y valor",
+          "pages": [
+            220
+          ],
+          "sourceRecordIds": [
+            "c88c68e9-09f5-5d11-bc68-ce1841edf458",
+            "ff195e3c-c355-55e3-8e3c-60515f38d600",
+            "0b1bcdb7-7e8a-52ea-b5ab-9eed4c30865e"
+          ],
+          "families": [
+            {
+              "description": "Opera con números reales.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica las propiedades de los números irracionales.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores de la radicación dada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "patterns",
+          "grade": 2,
+          "label": "patrones numéricos",
+          "match": "patron(?:es)? numericos?|secuencia numerica",
+          "relation": "la regularidad que relaciona los términos dados y permite justificar su continuación",
+          "representation": "representa la regularidad de la secuencia numérica sin alterar los términos dados",
+          "pages": [
+            220
+          ],
+          "sourceRecordIds": [
+            "c88c68e9-09f5-5d11-bc68-ce1841edf458",
+            "5a914be5-d60b-5d2a-852d-f64089b8925d"
+          ],
+          "families": [
+            {
+              "description": "Determina el patrón numérico de la secuencia dada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica el patrón numérico indicado.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Representa el patrón numérico de la situación.",
+              "activity": "EXERCISE_SET"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "expressions",
+          "grade": 2,
+          "label": "expresiones algebraicas",
+          "match": "expresiones? algebraicas?|lenguaje algebraico|terminos semejantes",
+          "relation": "la equivalencia de expresiones, el significado de las variables y el orden de operaciones solicitado",
+          "representation": "representa las cantidades y relaciones mediante las expresiones algebraicas solicitadas",
+          "pages": [
+            220
+          ],
+          "sourceRecordIds": [
+            "002ab301-74dd-5954-9124-fc67435e3b2b",
+            "7061b947-5d48-556a-89b7-1416d33359f2",
+            "a6172dc0-cda6-586c-b4a9-cbaaa6e33d8b",
+            "ae88e3ec-6712-5ec7-b1e6-c4f7cb0e32e9"
+          ],
+          "families": [
+            {
+              "description": "Evalúa las expresiones algebraicas con los valores dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Traduce al lenguaje algebraico la situación proporcionada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Reduce términos semejantes.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Analiza los errores de las expresiones algebraicas dadas.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "linear-equations",
+          "grade": 2,
+          "label": "ecuaciones de primer grado",
+          "match": "ecuacion(?:es)? (?:de )?(?:primer grado|lineal(?:es)?)",
+          "relation": "la equivalencia de las ecuaciones y el valor de la incógnita que satisface la igualdad",
+          "representation": "representa la ecuación lineal solicitada conservando su relación de igualdad",
+          "pages": [
+            220
+          ],
+          "exclude": "inecuacion",
+          "sourceRecordIds": [
+            "dfdd52c3-fd26-5e3f-87af-45b9f95e9a23"
+          ],
+          "families": [
+            {
+              "description": "Resuelve problemas de ecuaciones de primer grado.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica el procedimiento de las ecuaciones lineales sin resolverlas.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Comprueba la solución de la ecuación lineal dada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "linear-inequalities",
+          "grade": 2,
+          "label": "inecuaciones de primer grado",
+          "match": "inecuacion(?:es)? (?:de )?(?:primer grado|lineal(?:es)?)|desigualdad(?:es)? de primer grado",
+          "relation": "las transformaciones equivalentes de la desigualdad y el conjunto solución, incluido el cambio de sentido cuando corresponde",
+          "representation": "representa el conjunto solución de la desigualdad lineal solicitada",
+          "pages": [
+            220
+          ],
+          "sourceRecordIds": [
+            "dfdd52c3-fd26-5e3f-87af-45b9f95e9a23"
+          ],
+          "families": [
+            {
+              "description": "Resuelve inecuaciones de primer grado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Representa la solución de la desigualdad de primer grado dada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Analiza los errores de la inecuación lineal resuelta.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "quadratics",
+          "grade": 2,
+          "label": "ecuaciones de segundo grado",
+          "match": "ecuacion(?:es)? (?:de )?(?:segundo grado|cuadraticas?)",
+          "relation": "la equivalencia de la ecuación cuadrática y las raíces que satisfacen la igualdad, según los datos disponibles",
+          "representation": "representa la ecuación cuadrática pedida manteniendo sus soluciones y referencias",
+          "pages": [
+            220
+          ],
+          "exclude": "inecuacion",
+          "sourceRecordIds": [
+            "e6b0a4e0-146c-5253-af9e-660ac3cbaa32"
+          ],
+          "families": [
+            {
+              "description": "Resuelve la ecuación de segundo grado dada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica otro método válido para la ecuación cuadrática.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Comprueba las raíces de la ecuación cuadrática.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "quadratic-inequalities",
+          "grade": 2,
+          "label": "inecuaciones de segundo grado",
+          "match": "inecuacion(?:es)? (?:de )?(?:segundo grado|cuadraticas?)|desigualdad(?:es)? de segundo grado",
+          "relation": "el signo de la expresión cuadrática y los intervalos que satisfacen la desigualdad solicitada",
+          "representation": "representa los intervalos solución de la desigualdad cuadrática solicitada",
+          "pages": [
+            220
+          ],
+          "sourceRecordIds": [
+            "e6b0a4e0-146c-5253-af9e-660ac3cbaa32"
+          ],
+          "families": [
+            {
+              "description": "Resuelve problemas con inecuaciones de segundo grado.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica el conjunto solución de la desigualdad de segundo grado dada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores de la inecuación cuadrática.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "planning",
+          "grade": 2,
+          "label": "planificación financiera",
+          "match": "planificacion financiera|ahorro de recursos",
+          "relation": "la relación entre recursos, metas, ahorro y actores de la planificación financiera indicada",
+          "representation": "organiza los recursos y metas de la planificación financiera solicitada",
+          "pages": [
+            220
+          ],
+          "sourceRecordIds": [
+            "002ab301-74dd-5954-9124-fc67435e3b2b",
+            "3ca48c62-8a7f-57c7-a9d6-2196fb87a7a1",
+            "ed2a04cd-7c8f-57de-8058-0c044fef6683",
+            "ceea1fc2-b871-59a6-bdbe-72695edf3a9b",
+            "dba9f986-b004-5a0f-945a-70e26ef6975c",
+            "7fae8202-4e46-5453-bafa-45fbe8c05a0a"
+          ],
+          "families": [
+            {
+              "description": "Analiza la planificación financiera proporcionada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Elabora un proyecto de planificación financiera que ahorre los recursos dados.",
+              "activity": "PROJECT"
+            },
+            {
+              "description": "Clasifica los actores de la planificación financiera.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "compound",
+          "grade": 2,
+          "label": "interés compuesto y monto",
+          "match": "interes compuesto|monto",
+          "relation": "la capitalización y la correspondencia entre capital, tasa, período y monto de la situación financiera dada",
+          "representation": "representa la evolución solicitada del monto según sus períodos de capitalización",
+          "pages": [
+            220
+          ],
+          "sourceRecordIds": [
+            "002ab301-74dd-5954-9124-fc67435e3b2b",
+            "473b81e6-4d9a-5363-9790-2edd32883328"
+          ],
+          "families": [
+            {
+              "description": "Calcula el interés compuesto de la situación dada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica cómo calcular el monto sin efectuar cálculos.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Modeliza el interés compuesto con los datos disponibles.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "geometry",
+          "grade": 2,
+          "label": "geometría plana y sus ramas",
+          "match": "geometria|elementos basicos",
+          "relation": "las propiedades de los elementos básicos o las ramas de geometría plana solicitadas",
+          "representation": "representa los elementos geométricos solicitados respetando sus propiedades",
+          "pages": [
+            220
+          ],
+          "sourceRecordIds": [
+            "20209a93-420a-50cb-878f-64d2d29615d1",
+            "56abef7c-686b-5e7b-ae61-c3f510bab96f",
+            "af44cf40-9fd3-53bb-a856-9cd1d297e32f",
+            "b79f0e95-743e-56dd-ad0f-99d94df72aab",
+            "026c94df-4c34-5782-a238-894e85b41c64"
+          ],
+          "families": [
+            {
+              "description": "Investiga el origen y evolución de la geometría.",
+              "activity": "RESEARCH"
+            },
+            {
+              "description": "Clasifica las ramas de la geometría.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Interpreta los elementos básicos de la geometría.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "coordinates",
+          "grade": 2,
+          "label": "plano cartesiano",
+          "match": "plano cartesiano|coordenadas?|figuras geometricas",
+          "relation": "el orden de coordenadas, la posición respecto a los ejes y las relaciones de la figura indicada",
+          "representation": "sitúa las figuras o puntos indicados manteniendo el orden de sus coordenadas",
+          "pages": [
+            220
+          ],
+          "exclude": "distancia entre|longitud de un segmento",
+          "sourceRecordIds": [
+            "56abef7c-686b-5e7b-ae61-c3f510bab96f",
+            "4b8fac1e-a4be-55a8-a8b9-7fe7976d576a",
+            "30e04746-e010-5f36-b88b-629be5000ca8"
+          ],
+          "families": [
+            {
+              "description": "Representa las figuras dadas en el plano cartesiano.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Interpreta las coordenadas indicadas.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores de los puntos del plano cartesiano.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "distance",
+          "grade": 2,
+          "label": "distancia entre puntos",
+          "match": "distancia entre (?:dos )?puntos|longitud de un segmento",
+          "relation": "la diferencia entre las coordenadas y su relación con la distancia o longitud solicitada",
+          "representation": "representa el segmento entre los puntos indicados conservando sus extremos y longitud",
+          "pages": [
+            220
+          ],
+          "sourceRecordIds": [
+            "56abef7c-686b-5e7b-ae61-c3f510bab96f",
+            "adf96697-ed66-51e7-8648-741a178b051f"
+          ],
+          "families": [
+            {
+              "description": "Calcula la distancia entre dos puntos del plano.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica la longitud de un segmento con las coordenadas dadas.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Comprueba la distancia entre puntos dada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "heron",
+          "grade": 2,
+          "label": "fórmula de Herón",
+          "match": "heron",
+          "relation": "la relación del semiperímetro y las longitudes de los tres lados con el área del triángulo, comprobando su existencia",
+          "representation": "representa el triángulo indicado distinguiendo los lados utilizados en la fórmula de Herón",
+          "pages": [
+            220
+          ],
+          "sourceRecordIds": [
+            "56abef7c-686b-5e7b-ae61-c3f510bab96f",
+            "2905f734-5bad-56dc-90bd-23144cdf3ac7"
+          ],
+          "families": [
+            {
+              "description": "Aplica la fórmula de Herón al triángulo dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica la fórmula de Herón sin calcular áreas.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores de la fórmula de Herón aplicada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "triangle",
+          "grade": 2,
+          "label": "teorema fundamental del triángulo",
+          "match": "teorema fundamental del triangulo",
+          "relation": "la suma de las medidas de los ángulos interiores del triángulo y su justificación en el teorema solicitado",
+          "representation": "representa las relaciones angulares del triángulo necesarias para el teorema solicitado",
+          "pages": [
+            220
+          ],
+          "sourceRecordIds": [
+            "56abef7c-686b-5e7b-ae61-c3f510bab96f",
+            "2905f734-5bad-56dc-90bd-23144cdf3ac7"
+          ],
+          "families": [
+            {
+              "description": "Demuestra el teorema fundamental del triángulo.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Aplica el teorema fundamental del triángulo a los datos dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Analiza el error del teorema fundamental del triángulo aplicado.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "round-bodies",
+          "grade": 2,
+          "label": "cono, cilindro y esfera",
+          "match": "cono|cilindro|esfera|cuerpos redondos",
+          "relation": "la forma del cuerpo redondo, sus dimensiones y la magnitud solicitada, distinguiendo radio, diámetro y altura cuando correspondan",
+          "representation": "representa el cuerpo o desarrollo plano solicitado conservando sus propiedades; no convierte la esfera en un desarrollo plano exacto",
+          "pages": [
+            220,
+            221
+          ],
+          "sourceRecordIds": [
+            "b753a9e7-6688-52b2-a5cf-094bfd0eaa63",
+            "ceea1fc2-b871-59a6-bdbe-72695edf3a9b",
+            "2277f003-f5cf-5a95-9801-2a5d8a5d8624",
+            "3439bb5c-7fe1-52bf-b14c-d08aa9e7351c",
+            "30e04746-e010-5f36-b88b-629be5000ca8"
+          ],
+          "families": [
+            {
+              "description": "Calcula el volumen del cono, cilindro y esfera dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Construye el desarrollo plano del cilindro dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica por qué la esfera no admite un desarrollo plano exacto.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Resuelve problemas con cuerpos redondos.",
+              "activity": "PROBLEM_SOLVING"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "position",
+          "grade": 2,
+          "label": "medidas de posición",
+          "match": "medidas? de posicion|deciles?|cuartiles?|quintiles?",
+          "relation": "el orden de los datos y la posición o partición correspondiente al decil, cuartil o quintil solicitado",
+          "representation": "representa la partición o posición indicada conservando el orden de los datos",
+          "pages": [
+            220,
+            221
+          ],
+          "sourceRecordIds": [
+            "176a8c86-14ea-55f7-ab0c-283c6ee211cb",
+            "4d3a1017-d9b4-5c97-add9-cf1c7526cf7c"
+          ],
+          "families": [
+            {
+              "description": "Calcula los cuartiles de los datos dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Interpreta los deciles indicados.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores de los quintiles calculados.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "statistics",
+          "grade": 2,
+          "label": "datos agrupados y gráficos",
+          "match": "datos agrupados|estadistic\\w*|poligonos? de frecuencia|graficos? circulares?",
+          "relation": "la correspondencia entre datos, intervalos, frecuencias y proporciones del gráfico o tabla solicitado",
+          "representation": "construye el gráfico solicitado conservando frecuencias, intervalos o proporciones según su tipo",
+          "pages": [
+            220,
+            221
+          ],
+          "exclude": "^(?!.*(?:grafico|poligono|tabla)).*(?:medidas? de posicion|cuartil|decil|quintil)",
+          "sourceRecordIds": [
+            "ffb7884f-5734-5eb6-9435-5065442d86e8",
+            "176a8c86-14ea-55f7-ab0c-283c6ee211cb",
+            "dc52ab84-ceeb-50a5-9194-3e3e6b85abef"
+          ],
+          "families": [
+            {
+              "description": "Construye el gráfico circular con los datos agrupados dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Interpreta el polígono de frecuencia indicado.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Recolecta y organiza los datos agrupados solicitados.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "probability",
+          "grade": 2,
+          "label": "experimentos y eventos compuestos",
+          "match": "probabil\\w*|eventos? compuestos?|experimentos? aleatorios?|diagramas? de arbol|numeros aleatorios",
+          "relation": "el espacio de resultados y la relación entre eventos del experimento indicado, justificando dependencia o independencia solo cuando los datos lo permiten",
+          "representation": "representa las ramas o resultados del experimento solicitado sin omitir ni duplicar posibilidades",
+          "pages": [
+            220,
+            221
+          ],
+          "sourceRecordIds": [
+            "176a8c86-14ea-55f7-ab0c-283c6ee211cb",
+            "59c716a2-9a74-55c4-913d-77a044fb72b1",
+            "dc52ab84-ceeb-50a5-9194-3e3e6b85abef"
+          ],
+          "families": [
+            {
+              "description": "Calcula la probabilidad del evento compuesto dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Construye el diagrama de árbol del experimento aleatorio.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Interpreta la tabla de números aleatorios proporcionada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-2.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        }
+      ],
       "unassignedSourceRecords": [
         {
           "id": "20811096-0bff-5f18-bdca-b6b8eb44e2bd",
@@ -2011,182 +2598,17 @@
           "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
         },
         {
-          "id": "c88c68e9-09f5-5d11-bc68-ce1841edf458",
-          "text": "• Números reales y sus propiedades,\nnúmeros irracionales, patrones\nnuméricos.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
           "id": "5b4ee04c-4f4d-570b-a591-682ea33670a2",
           "text": "Algebra:",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "002ab301-74dd-5954-9124-fc67435e3b2b",
-          "text": "• Expresiones algebraicas.\nConceptos de ecuación de primer\ny segundo grado, desigualdad\ny propiedades. Planificación\nfinanciera, interés compuesto,\nmonto.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "20209a93-420a-50cb-878f-64d2d29615d1",
-          "text": "Geometría:",
-          "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
-        },
-        {
-          "id": "56abef7c-686b-5e7b-ae61-c3f510bab96f",
-          "text": "• Geometría plana: origen,\nevolución y clasificación, plano\ncartesiano, distancia entre dos\npuntos del plano cartesiano.\nFórmula de Herón, Teorema\nfundamental del triángulo.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "reason": "REQUIRES_REVIEW_UNMAPPED"
         },
         {
           "id": "46887995-da5b-5556-907e-841ddb327a44",
           "text": "Medición:",
           "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
-        },
-        {
-          "id": "b753a9e7-6688-52b2-a5cf-094bfd0eaa63",
-          "text": "• Volumen de cuerpos redondos.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "ffb7884f-5734-5eb6-9435-5065442d86e8",
-          "text": "Estadística:",
-          "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
-        },
-        {
-          "id": "176a8c86-14ea-55f7-ab0c-283c6ee211cb",
-          "text": "• Estadística y probabilidad para\ndatos agrupados, eventos\ncompuestos, Medidas de posición,\ngráficos estadísticos tales como\ndiagramas de árbol, polígonos de\nfrecuencias y gráficos circulares.\nExperimentos aleatorios",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "ff195e3c-c355-55e3-8e3c-60515f38d600",
-          "text": "• Operaciones en los números reales: adición, sustracción,\nmultiplicación, división, potenciación y radicación.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "5a914be5-d60b-5d2a-852d-f64089b8925d",
-          "text": "• Establecimiento de patrones numéricos en una situación\nplanteada.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "0b1bcdb7-7e8a-52ea-b5ab-9eed4c30865e",
-          "text": "• Resolución de problemas de situaciones del contexto,\nque impliquen el uso de las operaciones aritméticas\nfundamentales con números reales.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "7061b947-5d48-556a-89b7-1416d33359f2",
-          "text": "• Traducción de lenguaje algebraico a lenguaje ordinario y\nviceversa.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "a6172dc0-cda6-586c-b4a9-cbaaa6e33d8b",
-          "text": "• Reducción de términos semejantes.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "ae88e3ec-6712-5ec7-b1e6-c4f7cb0e32e9",
-          "text": "• Evaluación de expresiones algebraicas, usando las\ndiferentes modalidades de cálculo (mental, escrito y\nelectrónico), cuidando el orden de las operaciones.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "dfdd52c3-fd26-5e3f-87af-45b9f95e9a23",
-          "text": "• Resolución de problemas que impliquen el planteo y\nsolución de ecuaciones e inecuaciones de Primer Grado.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "e6b0a4e0-146c-5253-af9e-660ac3cbaa32",
-          "text": "• Resolución de problemas que impliquen el planteo y\nsolución de ecuaciones e inecuaciones de Segundo Grado.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "3ca48c62-8a7f-57c7-a9d6-2196fb87a7a1",
-          "text": "• Definición y análisis del concepto de planificación\nfinanciera.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "ed2a04cd-7c8f-57de-8058-0c044fef6683",
-          "text": "• Elaboración de proyectos partiendo de una planificación",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "ceea1fc2-b871-59a6-bdbe-72695edf3a9b",
-          "text": "• financiera que implique ahorro de recursos naturales y\neconómicos para un buen desempeño ciudadano.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "dba9f986-b004-5a0f-945a-70e26ef6975c",
-          "text": "• Clasificación de la estructura y actores de la planificación",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "7fae8202-4e46-5453-bafa-45fbe8c05a0a",
-          "text": "• financiera.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "473b81e6-4d9a-5363-9790-2edd32883328",
-          "text": "• Cálculo de interés compuesto en una determinada\nsituación financiera.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "af44cf40-9fd3-53bb-a856-9cd1d297e32f",
-          "text": "• Investigación en fuentes seguras sobre el origen y\nevolución de la geometría.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "b79f0e95-743e-56dd-ad0f-99d94df72aab",
-          "text": "• Clasificación de las diferentes ramas de la geometría de\nacuerdo con su contexto histórico.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "026c94df-4c34-5782-a238-894e85b41c64",
-          "text": "• Análisis e interpretación de los elementos básicos de la\ngeometría.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "4b8fac1e-a4be-55a8-a8b9-7fe7976d576a",
-          "text": "• Representación de figuras geométricas en el plano\ncartesiano.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "adf96697-ed66-51e7-8648-741a178b051f",
-          "text": "• Cálculo de la distancia entre dos puntos y longitud de un\nsegmento en el plano.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "2905f734-5bad-56dc-90bd-23144cdf3ac7",
-          "text": "• Aplicación de la fórmula de Herón, Demostración y\naplicación del teorema fundamental del triángulo.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "2277f003-f5cf-5a95-9801-2a5d8a5d8624",
-          "text": "• Cálculo de y volumen de un cono recto, de un cilindro\nrecto y de una esfera.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "3439bb5c-7fe1-52bf-b14c-d08aa9e7351c",
-          "text": "• Construcción y desarrollo plano de cuerpos redondos (cono,\ncilindro, esfera).",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "30e04746-e010-5f36-b88b-629be5000ca8",
-          "text": "• Resolución de problemas cotidianos en los que intervienen\ncuerpos redondos y polígonos en el plano cartesiano.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "4d3a1017-d9b4-5c97-add9-cf1c7526cf7c",
-          "text": "• Cálculo en forma elemental de medidas de posición, Cálculo\nde medidas de posición en situaciones dadas (deciles, cuartiles,\nquintiles, etc.).",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "59c716a2-9a74-55c4-913d-77a044fb72b1",
-          "text": "• Cálculo de la probabilidad de un evento mediante tablas de\nnúmeros aleatorios.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "dc52ab84-ceeb-50a5-9194-3e3e6b85abef",
-          "text": "• Construcción de diagramas de árbol, polígonos de frecuencia y\ngráficos circulares.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
         }
       ],
-      "status": "NOT_IMPLEMENTED"
+      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PENDING"
     },
     {
       "grade": 3,

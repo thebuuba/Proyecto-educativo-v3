@@ -1,0 +1,313 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "base": "http://localhost:8787",
+  "grade": 2,
+  "verification": "AUTHENTICATED_HTTP_DB_AND_EDITOR_ADAPTERS_NOT_VISUAL",
+  "savedEvidence": [
+    {
+      "type": "rubrica",
+      "total": 20,
+      "activityId": "78ebeb7d-7224-40c3-9c09-c43dbcca98d7",
+      "instrumentHash": "db45a4d8a1d4a6ac1ec3293f84448281fb79d954837b6bdc7eb7d6847dce4b58",
+      "snapshotId": "00c835d1-7c0c-4707-93e6-1c36fd369270",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "12e9f361-a41c-5505-84d0-888818f8dbbf"
+      }
+    },
+    {
+      "type": "lista-cotejo",
+      "total": 17.35,
+      "activityId": "f52e58ea-f6b2-465b-ad2a-c86432e2543b",
+      "instrumentHash": "561729732f3ed3e7198dcc366aaaaa8b93e302ddd623b03b31361c5324812241",
+      "snapshotId": "46b2fef2-a935-4cf1-b9fb-da1f2347ffa6",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "12e9f361-a41c-5505-84d0-888818f8dbbf"
+      }
+    },
+    {
+      "type": "escala",
+      "total": 20,
+      "activityId": "7e529dc1-38c9-4526-a4bb-498d6c58e67e",
+      "instrumentHash": "9cb0ca5caaef348a6ad4e8b2dfcab22b1e69b02f6744b679e074fc7b0b2bf351",
+      "snapshotId": "fff80944-e9f4-4353-a3ea-4b67a4204aad",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "12e9f361-a41c-5505-84d0-888818f8dbbf"
+      }
+    },
+    {
+      "type": "lista-ponderada",
+      "total": 17.35,
+      "activityId": "544b2e03-72d9-4020-ae27-75e70b4162c5",
+      "instrumentHash": "56a7ebad7e69ff88650c17a24405b4dad2ddab191b11af710745ddcde61cca59",
+      "snapshotId": "fc8120f5-fd11-4771-8f5e-26e663d7f919",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "12e9f361-a41c-5505-84d0-888818f8dbbf"
+      }
+    }
+  ],
+  "timings": [
+    {
+      "path": "/health",
+      "status": 200,
+      "ms": 709
+    },
+    {
+      "path": "/auth/login",
+      "status": 201,
+      "ms": 1861
+    },
+    {
+      "path": "/activities/center",
+      "status": 200,
+      "ms": 11241
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 5761
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 5773
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 6624
+    },
+    {
+      "path": "/activities?sectionSubjectId=721d35f3-7417-4d38-8108-04b1febdf8cc",
+      "status": 200,
+      "ms": 2626
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 5629
+    },
+    {
+      "path": "/activities?sectionSubjectId=721d35f3-7417-4d38-8108-04b1febdf8cc",
+      "status": 200,
+      "ms": 2360
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 5544
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 5988
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 6911
+    },
+    {
+      "path": "/activities?sectionSubjectId=721d35f3-7417-4d38-8108-04b1febdf8cc",
+      "status": 200,
+      "ms": 3383
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 5217
+    },
+    {
+      "path": "/activities?sectionSubjectId=721d35f3-7417-4d38-8108-04b1febdf8cc",
+      "status": 200,
+      "ms": 2625
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 4354
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 5098
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 5381
+    },
+    {
+      "path": "/activities?sectionSubjectId=721d35f3-7417-4d38-8108-04b1febdf8cc",
+      "status": 200,
+      "ms": 2734
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 7883
+    },
+    {
+      "path": "/activities?sectionSubjectId=721d35f3-7417-4d38-8108-04b1febdf8cc",
+      "status": 200,
+      "ms": 2591
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 4932
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 5966
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 6044
+    },
+    {
+      "path": "/activities?sectionSubjectId=721d35f3-7417-4d38-8108-04b1febdf8cc",
+      "status": 200,
+      "ms": 2543
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 5640
+    },
+    {
+      "path": "/activities?sectionSubjectId=721d35f3-7417-4d38-8108-04b1febdf8cc",
+      "status": 200,
+      "ms": 2152
+    }
+  ],
+  "browser": "PENDING",
+  "catalog": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.80",
+    "grade": 2,
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 12,
+    "preservedSnapshots": 46
+  },
+  "history": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 9,
+    "preservedSnapshots": 42,
+    "newReleases": 4,
+    "newSnapshots": 9
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index--g5M8UDI.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index--g5M8UDI.js",
+        "sha256": "af0dbff5a6e586009129e1a3f4d7bc65f7af48903c56a9851ef2cc5dfb29a4f2",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace--Ppmqyc6.js",
+        "sha256": "e5678c4d0f8e742e28ae27fa2a3ac346265e625509ef07901c60207b82f004a2",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-IZW2K0rk.js",
+        "sha256": "f4f21717d473e24252b6a8fe6daa022cd9c05b98d14d7a7e3303fb5ed0ade4f9",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-CxLsOSn3.js",
+        "sha256": "b7277085b44d51496910e724b1640d89d3ccecb362527c906ac74cccc2cdee6b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-CemUbFkY.js",
+        "sha256": "f3a840b0b05a78caa886f657a3e79eaf6cc933e5eb4b93395357922d0dacf908",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "41256719c42b7891d9c79292b404e42c253870c80ff04a0823882a9445f94da4",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "builds": [
+    {
+      "command": "pnpm --filter @aula/shared build",
+      "exit": 0,
+      "seconds": 1.658,
+      "log": ".wrangler/math-source/grade-2-shared-build.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "exit": 0,
+      "seconds": 5.086,
+      "log": ".wrangler/math-source/grade-2-backend-build.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "exit": 0,
+      "seconds": 15.192,
+      "log": ".wrangler/math-source/grade-2-frontend-build.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "exit": 0,
+      "seconds": 50.772,
+      "log": ".wrangler/math-source/grade-2-cloudflare-build.log"
+    }
+  ],
+  "visual": {
+    "grade": 2,
+    "project": "eolgunypmtgrsyrjzcld",
+    "account": "PERSONAL_DEVELOPMENT",
+    "activityId": "0ce0df02-aa38-4f9a-af0d-f1639d665a0c",
+    "initialStrategyVisible": true,
+    "initialScoreBlank": true,
+    "strategyOnlyInstrumentEqual": true,
+    "explicitTotals": [
+      20,
+      17.35
+    ],
+    "editedCriterionPreserved": true,
+    "savedAndReopened": true,
+    "format": "rubrica",
+    "otherFormats": "HTTP_DB_VERIFIED_NOT_VISUAL",
+    "existingDraftsPreserved": true
+  }
+}

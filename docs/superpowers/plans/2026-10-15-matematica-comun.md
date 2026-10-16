@@ -5,7 +5,7 @@
 
 - [x] Preparación: contrastar fuente/continuaciones, inventariar temas y procedimientos, registrar matriz y estado previo; conservar hashes de releases/snapshots.
 - [x] Base compartida y 1.º: intérprete por acciones, proveedor con contenido específico, cuatro formatos/sugerencias/paridad; pruebas rojas antes del código; revisar ejemplos completos; instalar release y fuente solo en Development; QA editor/HTTP/DB y límites visuales; builds requeridos y commit/push.
-- [ ] 2.º: temas/procedimientos y regresiones propias, variantes negativas/alternativas, pertinencia completa; release congelado/idempotente; QA y cierre por grado antes de avanzar.
+- [x] 2.º: temas/procedimientos y regresiones propias, variantes negativas/alternativas, pertinencia completa; release congelado/idempotente; QA y cierre por grado antes de avanzar.
 - [ ] 3.º: mismo contrato, sin ampliar el texto de fórmulas ausentes de la fuente ni imponer un método único; QA/cierre.
 - [ ] 4.º: geometría, representaciones/razonamiento solo cuando corresponden; QA/cierre.
 - [ ] 5.º: cónicas/vectores/matrices/trigonometría en su grado correcto; conservar historia y comportamientos útiles; QA/cierre.

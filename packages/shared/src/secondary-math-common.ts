@@ -2,20 +2,21 @@ import type { InstrumentAcademicContext } from './secondary-science'
 import type { ContextualTopicCriterion } from './secondary-topic-criteria'
 import type { InstrumentRecommendation, InstrumentType } from './instrument-recommendation'
 import { commonMathGradeOneTopics } from './secondary-math-grade-1'
+import {commonMathGradeTwoTopics} from './secondary-math-grade-2'
 import type { CommonMathTopic } from './secondary-math-common-types'
 
-export const commonMathTopicsByGrade: Record<number, CommonMathTopic[]> = { 1: commonMathGradeOneTopics }
+export const commonMathTopicsByGrade: Record<number, CommonMathTopic[]> = { 1: commonMathGradeOneTopics,2:commonMathGradeTwoTopics }
 export const commonMathModules = Object.entries(commonMathTopicsByGrade).map(([grade,topics])=>({ id:`matematica-comun-${grade}`,grade:Number(grade),subjectCode:'MAT',topics,policy:'REQUESTED_MATH_ACTIONS_CONTENT_CONDITIONS_ALTERNATIVES_V1' }))
 const normalize = (value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
 export function mathRequirementText(value:string) {
   return normalize(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/[«“"][^»”"]*[»”"]/g,''))
     .replace(/\b(?:recursos?|ejemplos?)\s*:[^.;\n]*/g,'')
     .replace(/\b(?:como recurso|como ejemplo|por ejemplo)[^.;\n]*/g,'')
-    .replace(/\b(?:no\s+(?:(?:se|deben?|es necesario|hay que)\s+)?|sin\s+)(?:calcul\w*|resolv\w*|resolver\w*|dibuj\w*|grafic\w*|represent\w*|explic\w*|justific\w*|(?:comprob|comprueb)\w*|verific\w*|constru\w*|correg\w*|corrig\w*|investig\w*|elabor\w*|escrib\w*|orden\w*|recolect\w*|organiz\w*|model\w*)(?:(?!\bpero\b)[^.;\n])*/g,'')
+    .replace(/\b(?:no\s+(?:(?:se|deben?|es necesario|hay que)\s+)?|sin\s+)(?:calcul\w*|resolv\w*|resolver\w*|dibuj\w*|grafic\w*|represent\w*|explic\w*|justific\w*|(?:comprob|comprueb)\w*|verific\w*|constru\w*|correg\w*|corrig\w*|investig\w*|elabor\w*|escrib\w*|orden\w*|recolect\w*|organiz\w*|model\w*|reduc\w*|reduzc\w*|eval\w*|traduc\w*|traduz\w*)(?:(?!\bpero\b)[^.;\n])*/g,'')
     .replace(/resulv(?:e|an)|resuelbe/g,'resuelve').replace(/fraciones/g,'fracciones').replace(/porcentages/g,'porcentajes').trim()
 }
-const computeVerb = '(?:calcul\\w*|resuel\\w*|resolv\\w*|resolver\\w*|oper(?:a|an|ar|en|aran|ando)|sum(?:a|an|ar|en|aran)|rest(?:a|an|ar|en|aran)|multiplic(?:a|an|ar|ando)|multipliqu(?:en|e)|divid\\w*|simplific\\w*|convier\\w*|convert\\w*|halla\\w*|determina\\w*)'
-const verb = `(?:${computeVerb}|explic\\w*|justific\\w*|demuestr\\w*|demostr\\w*|represent\\w*|dibuj\\w*|grafic\\w*|constru\\w*|interpret\\w*|analiz\\w*|compar\\w*|clasific\\w*|identific\\w*|investig\\w*|elabor\\w*|model\\w*|(?:comprob|comprueb)\\w*|verific\\w*|corrig\\w*|correg\\w*|lee|lean|leer\\w*|escrib\\w*|orden\\w*|recolect\\w*|organiz\\w*|agrup\\w*|estim\\w*)`
+const computeVerb = '(?:eval(?:ua|uan|uar|uen|uaran)|reduc(?:e|en|ir)|aplic(?:a|an|ar)|apliqu(?:e|en)|calcul\\w*|resuel\\w*|resolv\\w*|resolver\\w*|oper(?:a|an|ar|en|aran|ando)|sum(?:a|an|ar|en|aran)|rest(?:a|an|ar|en|aran)|multiplic(?:a|an|ar|ando)|multipliqu(?:en|e)|divid\\w*|simplific\\w*|convier\\w*|convert\\w*|halla\\w*|determina\\w*)'
+const verb = `(?:${computeVerb}|explic\\w*|justific\\w*|demuestr\\w*|demostr\\w*|represent\\w*|dibuj\\w*|grafic\\w*|constru\\w*|interpret\\w*|analiz\\w*|compar\\w*|clasific\\w*|identific\\w*|investig\\w*|elabor\\w*|model\\w*|(?:comprob|comprueb)\\w*|verific\\w*|corrig\\w*|correg\\w*|lee|lean|leer\\w*|escrib\\w*|orden\\w*|recolect\\w*|organiz\\w*|agrup\\w*|estim\\w*|traduc\\w*|traduz\\w*)`
 const investigates=(text:string)=>/\b(?:investiga(?:n|r|ran)?|investiguen|investigad|investigaran)\b/.test(text)
 function computational(text:string){const compute=text.search(new RegExp(`\\b${computeVerb}\\b`)),cognitive=text.search(/\b(?:explic\w*|analiz\w*|interpret\w*|compar\w*)\b/);return compute>=0&&(cognitive<0||compute<cognitive)||/^\s*(?:operaciones|ejercicios)\b/.test(text)}
 const createsProject=(text:string)=>/\b(?:elabor\w*|desarroll\w*|realiz\w*|crea\w*|disen\w*)\b[^.;]*\bproyect\w*\b/.test(text)
@@ -48,10 +49,12 @@ function actionCriteria(action:MathAction):ContextualTopicCriterion[]{
   const rows:ContextualTopicCriterion[]=[]
   for(const t of action.topics){
     const text=action.text, label=t.label
-    const relation=/\b(?:origen|historia|etimolog\w*)\b/.test(text)?`el origen o significado histórico solicitado de ${label}`:t.relation
+    const relation=/\b(?:origen|historia|etimolog\w*)\b/.test(text)?`el origen o significado histórico solicitado de ${label}`
+      :/esfera/.test(text)&&/desarrollo plano/.test(text)?'la curvatura de la esfera y la imposibilidad de extender su superficie en un plano sin distorsión':t.relation
     const add=(key:string,title:string,levels:Levels,weight=3)=>rows.push(criterion(t,key,title,levels,weight))
     const explains=/\b(?:explic\w*|justific\w*|demuestr\w*|demostr\w*)\b/.test(text)
     const calculation=computational(text)
+    if(/\b(?:traduc\w*|traduz\w*)\b/.test(text))add('translation',`Traducción matemática de ${label}`,[`Expresa la misma relación de ${label} en el lenguaje solicitado, conservando cantidades, operaciones, incógnitas y condiciones proporcionadas.`,`La traducción de ${label} conserva la relación principal; un símbolo necesita precisión.`,`Traduce parte de ${label}, pero omite una relación necesaria.`,`La traducción cambia el significado de la situación de ${label}.`,`No aporta una traducción verificable de ${label}.`])
     if(/\bestim(?:a|an|ar|en|aran)\b/.test(text))add('estimation',`Estimación de ${label}`,[`Propone una aproximación razonable de ${label} a partir de las referencias disponibles y de ${relation}, distinguiéndola de un valor exacto.`,`La estimación de ${label} usa referencias pertinentes; una aproximación necesita precisión.`,`La estimación de ${label} usa parte de la información, pero su aproximación no queda suficientemente respaldada.`,`La estimación de ${label} contradice las referencias o magnitudes disponibles.`,`No aporta una estimación verificable de ${label}.`])
     if(/\banaliz\w*\b/.test(text)&&!/\berror\w*\b/.test(text))add('analysis',`Análisis de ${label}`,[`Examina las relaciones solicitadas de ${label} utilizando ${relation} y distingue qué se puede concluir de la información disponible.`,`El análisis de ${label} reconoce las relaciones principales; una inferencia necesita mayor respaldo.`,`Analiza parte de ${label}, pero confunde una relación necesaria para la conclusión.`,`Las conclusiones sobre ${label} contradicen las relaciones o datos proporcionados.`,`No aporta un análisis relacionado con ${label}.`])
     if(calculation&&/\bproblemas?\b/.test(text))add('understanding',`Datos e incógnitas de ${label}`,[`Distingue los datos, la incógnita y las condiciones disponibles del problema de ${label}, relacionándolos con ${relation} sin inventar valores faltantes.`,`Reconoce los datos y la incógnita de ${label}; una condición necesita precisión.`,`Reconoce parte de los datos de ${label}, pero confunde una condición con la incógnita.`,`Los datos o la incógnita seleccionados de ${label} no corresponden al problema.`,`No identifica datos e incógnita verificables del problema de ${label}.`],2)
