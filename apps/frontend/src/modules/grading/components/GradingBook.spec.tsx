@@ -837,7 +837,8 @@ describe('GradingBook', () => {
     await user.click(screen.getByRole('button', { name: 'Cambiar instrumento' }))
     await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Nuevo criterio de lectura'))
     expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')).toHaveLength(1)
-    await user.click(screen.getByRole('button', { name: 'Instrumento preparado' }))
+    expect(screen.queryByRole('button', { name: 'Instrumento preparado' })).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Generar nuevo instrumento' }))
     await waitFor(() => expect(post.mock.calls.filter(([path]) => path === '/evaluation-instruments/recommend')).toHaveLength(2))
   })
 
