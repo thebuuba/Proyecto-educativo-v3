@@ -17,6 +17,8 @@ try{
   if(operation==='install'){
     const before=await fingerprints(),baselineFile=output+'/history-before.json'
     if(!existsSync(baselineFile))writeFileSync(baselineFile,JSON.stringify({project,...before},null,2)+'\n')
+    const gradeBaselineFile=`${output}/grade-${gradeNumber}-history-before.json`
+    if(!existsSync(gradeBaselineFile))writeFileSync(gradeBaselineFile,JSON.stringify({project,...before},null,2)+'\n',{flag:'wx'})
     const prior=`evaluation-2026.${Number(catalog.version.split('.').at(-1))-1}`,frozen=evaluationCatalogForVersion(prior);assert(frozen)
     if(before.releases.some(r=>r.version===prior)){
       const [match]=await prisma.$queryRaw`SELECT payload=${JSON.stringify(frozen)}::jsonb AS identical FROM evaluation_catalog_releases WHERE version=${prior}`;assert.equal(match.identical,true,'Frozen previous release differs from stored payload')
@@ -47,6 +49,14 @@ try{
     for(const row of before.releases)assert.equal(after.releases.find(r=>r.version===row.version)?.hash,row.hash)
     for(const row of before.snapshots)assert.equal(after.snapshots.find(r=>r.id===row.id)?.hash,row.hash)
     const result={project,preservedReleases:before.releases.length,preservedSnapshots:before.snapshots.length,newReleases:after.releases.length-before.releases.length,newSnapshots:after.snapshots.length-before.snapshots.length}
+    const gradeBaselineFile=`${output}/grade-${gradeNumber}-history-before.json`
+    if(existsSync(gradeBaselineFile)){
+      const gradeBefore=JSON.parse(readFileSync(gradeBaselineFile,'utf8'));assert.equal(gradeBefore.project,project)
+      for(const row of gradeBefore.releases)assert.equal(after.releases.find(r=>r.version===row.version)?.hash,row.hash)
+      for(const row of gradeBefore.snapshots)assert.equal(after.snapshots.find(r=>r.id===row.id)?.hash,row.hash)
+      result.gradeBaseline={grade:gradeNumber,preservedReleases:gradeBefore.releases.length,preservedSnapshots:gradeBefore.snapshots.length,newReleases:after.releases.length-gradeBefore.releases.length,newSnapshots:after.snapshots.length-gradeBefore.snapshots.length}
+    }
     writeFileSync(`${output}/history-after.json`,JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result))
+    writeFileSync(`${output}/grade-${gradeNumber}-history-after.json`,JSON.stringify(result,null,2)+'\n')
   }else throw Error('Select install, context or history')
 }finally{await prisma.$disconnect()}

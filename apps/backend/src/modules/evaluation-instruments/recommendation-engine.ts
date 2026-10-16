@@ -239,7 +239,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const matchedTopic = findSecondaryLanguageTopic(input.activityTitle, input.description ?? '', context)
   const contextualTopic = area === 'language' && catalog.contextualModules?.some(topic => topic.id === matchedTopic?.id && topic.grade === matchedTopic.grade) ? matchedTopic : null
   const matchedScience = findSecondaryScienceTopic(input.activityTitle, input.description ?? '', context)
-  const scienceTopic = catalog.scienceModules?.some(module => module.id === matchedScience && module.grade === context?.grade) ? matchedScience : null
+  const scienceTopic = !commonScience && catalog.scienceModules?.some(module => module.id === matchedScience && module.grade === context?.grade) ? matchedScience : null
   const matchedMath = findSecondaryMathTopic(input.activityTitle, input.description ?? '', context)
   const mathTopic = !mathTask && catalog.mathModules?.some(module=>module.id === matchedMath && module.grade === context?.grade) ? matchedMath : null
   const attitudeRelevant = /convivencia|cooperaci|valores|respeto|solidaridad|seguridad/.test(text)

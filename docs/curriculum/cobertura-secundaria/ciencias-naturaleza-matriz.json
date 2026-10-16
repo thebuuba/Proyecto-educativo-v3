@@ -19,7 +19,7 @@
       ],
       "visualReview": {
         "status": "REVIEWED",
-        "method": "Rendered PDF293–295; table columns, continued concepts/procedures and separate indicators checked. Source spelling retained."
+        "method": "Rendered PDF293,294,295; table columns, continuations and separate indicators checked. Source spelling retained."
       },
       "officialRecords": [
         {
@@ -1519,7 +1519,7 @@
       "grade": 2,
       "scopeId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
       "subject": "Ciencias de la Naturaleza",
-      "component": null,
+      "component": "Ciencias de la Vida",
       "pdfPages": [
         296,
         297,
@@ -1527,8 +1527,8 @@
         299
       ],
       "visualReview": {
-        "status": "PENDING",
-        "method": null
+        "status": "REVIEWED",
+        "method": "Rendered PDF296,297,298,299; table columns, continuations and separate indicators checked. Source spelling retained."
       },
       "officialRecords": [
         {
@@ -2547,473 +2547,747 @@
           "printedPage": "298"
         }
       ],
-      "topics": [],
+      "topics": [
+        {
+          "grade": 2,
+          "pages": [
+            296
+          ],
+          "id": "bioelements",
+          "label": "bioelementos y moléculas de la materia viva",
+          "match": "bioelement\\w*|moleculas? (?:de la materia viva|constituyentes)|elementos y moleculas|materia viva",
+          "relation": "la relación de los elementos o moléculas solicitados con la composición y las funciones de la materia viva",
+          "exclude": "niveles de organizacion|organizacion de la materia",
+          "officialRecordIds": [
+            "245be2a0-8686-5e68-849b-dd7f2fc2b0a7",
+            "55a7c029-feac-591f-9cb6-8c126ad24be6",
+            "a99c574c-6352-5593-a293-5f978095cda5",
+            "8531ec84-61af-5789-8787-4f0f6fe93349",
+            "412d5e88-25db-5719-9745-9f9b3bc9e6a1"
+          ],
+          "families": [
+            "Explica las funciones de los bioelementos y moléculas de la materia viva.",
+            "Interpreta el modelo proporcionado de los bioelementos sin construir otro."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296
+          ],
+          "id": "organization",
+          "label": "niveles de organización de la materia viva",
+          "match": "niveles? de organizacion|organizacion de la materia viva",
+          "relation": "la relación entre los niveles de organización solicitados, distinguiendo sus componentes y su integración",
+          "officialRecordIds": [
+            "150bbd54-f44e-50a0-adf7-6eac1c933807",
+            "412d5e88-25db-5719-9745-9f9b3bc9e6a1"
+          ],
+          "families": [
+            "Ordena e identifica los niveles de organización de la materia viva.",
+            "Representa los niveles de organización de la materia viva mediante un esquema."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296
+          ],
+          "id": "cells",
+          "label": "organización celular",
+          "match": "celul\\w*|eucariot\\w*|procariot\\w*|organel\\w*|organul\\w*",
+          "relation": "la organización y las relaciones entre las estructuras y funciones del tipo celular solicitado",
+          "exclude": "mitosis|division celular",
+          "officialRecordIds": [
+            "4916701f-df02-5247-84d8-3aa598f61ef5",
+            "a339c71a-1c66-5294-bd92-bc85d0c95d23",
+            "f94d727b-73b3-53ee-9e75-705bb4cd9994",
+            "412d5e88-25db-5719-9745-9f9b3bc9e6a1",
+            "6dd78416-fb90-5b4f-bfc6-cde194294ff8",
+            "2bbe883b-7ada-59cd-a0cf-d87f047d4192",
+            "82edb0a8-c51f-57ad-948b-00c90962d448",
+            "933cb505-a508-5f05-97de-9ccb95511132",
+            "e2413b60-9b7c-5ab1-98cc-769de1934ad4"
+          ],
+          "families": [
+            "Explica las partes y funciones de una célula.",
+            "Compara la célula animal y vegetal.",
+            "Dibuja la célula vegetal e identifica las estructuras solicitadas.",
+            "Representa la célula animal mediante un dibujo o una maqueta.",
+            "Compara células eucariotas y procariotas.",
+            "Realiza la práctica indicada de observación de células y registra lo observado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296
+          ],
+          "id": "mitosis",
+          "label": "división celular por mitosis",
+          "match": "mitosis|division celular",
+          "relation": "la secuencia de la mitosis y la distribución de la información genética en las células resultantes según el modelo estudiado",
+          "officialRecordIds": [
+            "e2413b60-9b7c-5ab1-98cc-769de1934ad4"
+          ],
+          "families": [
+            "Explica la división celular por mitosis.",
+            "Interpreta las imágenes proporcionadas de la mitosis sin realizar una práctica."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296
+          ],
+          "id": "tissues",
+          "label": "tejidos, órganos y sistemas",
+          "match": "tejidos?|organos?|sistemas? de organos",
+          "relation": "la relación entre la organización de tejidos, órganos o sistemas solicitados y sus funciones",
+          "exclude": "organel|organul|organos reproductores|aparatos reproductores",
+          "officialRecordIds": [
+            "9362e055-f68f-5feb-a592-ebb5a9fe0855",
+            "6290ad16-6ff8-5f55-8934-d844762572df",
+            "d862a3e9-d053-5940-a4e8-7dba9a42133b",
+            "d775e873-efb4-5658-9525-a8ae10798d88",
+            "6563ebbb-7ade-5468-852b-b8f7b6868f02"
+          ],
+          "families": [
+            "Compara tejidos, órganos y sistemas de órganos según sus funciones.",
+            "Identifica los tejidos en las imágenes proporcionadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296
+          ],
+          "id": "photosynthesis",
+          "label": "fotosíntesis",
+          "match": "fotosintesis",
+          "relation": "la transformación de materia y energía durante la fotosíntesis, según las condiciones y evidencias solicitadas",
+          "officialRecordIds": [
+            "ff7f7c9d-4dc9-5c31-9092-366e4a32c263"
+          ],
+          "families": [
+            "Explica el proceso de fotosíntesis.",
+            "Formula una hipótesis sobre la fotosíntesis sin realizar experimentos.",
+            "Analiza los datos proporcionados de una experiencia de fotosíntesis sin recolectar datos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296
+          ],
+          "id": "metabolism",
+          "label": "metabolismo y enzimas",
+          "match": "metabolismo|enzimas?|reacciones enzimaticas",
+          "relation": "la función catalítica de las enzimas y su relación con las reacciones metabólicas examinadas",
+          "officialRecordIds": [
+            "14dc8808-6410-5afa-93f9-e6e36180033f"
+          ],
+          "families": [
+            "Explica la función de las enzimas en el metabolismo.",
+            "Interpreta los datos proporcionados de las reacciones de las enzimas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296
+          ],
+          "id": "denaturation",
+          "label": "temperatura y desnaturalización en procesos biológicos",
+          "match": "desnaturalizacion|calor y temperatura",
+          "relation": "el efecto de las condiciones térmicas estudiadas sobre la estructura y función de las moléculas biológicas",
+          "officialRecordIds": [
+            "815d6e7a-ea32-58ce-8d6d-4e12ed2cf6f3"
+          ],
+          "families": [
+            "Analiza los datos proporcionados sobre temperatura y desnaturalización en procesos biológicos.",
+            "Explica la influencia de calor y temperatura en la desnaturalización."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296
+          ],
+          "id": "biomechanics",
+          "label": "principios físicos de sistemas biológicos",
+          "match": "corazon|vision|brazo|contraccion muscular|palanca",
+          "relation": "el principio físico solicitado y su relación con la función del corazón, la visión o el sistema de palancas examinado",
+          "officialRecordIds": [
+            "e2413b60-9b7c-5ab1-98cc-769de1934ad4",
+            "dfd4956b-2775-5828-82f9-b62ffa15b53f"
+          ],
+          "families": [
+            "Explica el principio físico del brazo como palanca y su relación con la contracción muscular.",
+            "Interpreta el modelo proporcionado del funcionamiento del corazón y la visión."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296,
+            297
+          ],
+          "id": "genes",
+          "label": "genes, genotipo, fenotipo y mutaciones",
+          "match": "genes?|genotip\\w*|fenotip\\w*|mutacion\\w*|genetica",
+          "relation": "la relación entre información genética, características observables y variación, sin asumir que toda mutación determina una enfermedad",
+          "exclude": "ingenieria genetica",
+          "officialRecordIds": [
+            "d862a3e9-d053-5940-a4e8-7dba9a42133b",
+            "75d7ea9f-24c7-54a8-a854-d90d33d32847",
+            "9fa592f7-52dc-55c0-8a25-fcb396e60fc5",
+            "56a4e65e-b577-57b7-af61-55c75b5dfc64",
+            "53fe5e1b-eed3-5cdd-8593-d111547357f5",
+            "ae32b62e-f39b-5a17-8f2b-6d741809b46d",
+            "412d5e88-25db-5719-9745-9f9b3bc9e6a1",
+            "1934fc18-f64a-5d14-8f34-179503e92699",
+            "dfd40ffd-fd87-5eed-bbb0-bdfb3b7888ba",
+            "813e6744-3c89-56f3-be80-366c5867bb4b",
+            "ae7c053a-956b-5fe8-a6fb-b7214f0f1ff5",
+            "5c12ab02-7558-5bb0-bb09-c67e0ee1f85b",
+            "01e1be98-d490-5b87-9b2b-b2f14d91c852",
+            "0d6710e8-9da7-586b-b530-66787f39c8f2"
+          ],
+          "families": [
+            "Compara genotipo y fenotipo con los datos proporcionados.",
+            "Explica qué son los genes y las mutaciones sin afirmar que toda mutación causa enfermedad."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296,
+            297
+          ],
+          "id": "nucleic-acids",
+          "label": "ADN y ARN",
+          "match": "adn|arn|desoxirribonucleico|ribonucleico|doble helice",
+          "relation": "la estructura y función del ácido nucleico solicitado, distinguiendo almacenamiento de información y participación en su expresión cuando se comparan",
+          "officialRecordIds": [
+            "fd207dae-57fd-5fff-bc3d-3d094143923a",
+            "dceedbe7-cf74-504a-b159-c2a294ebe66c",
+            "80ca66f7-604a-561b-9854-0b54c41c11ed",
+            "4a0eb505-2afc-5a35-be5b-c3790d080b82"
+          ],
+          "families": [
+            "Compara estructura y función del ADN y ARN.",
+            "Representa la doble hélice del ADN mediante un modelo."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297
+          ],
+          "id": "mendel",
+          "label": "herencia mendeliana y árboles genealógicos",
+          "match": "mendel\\w*|arbol genealogico|dominantes?|recesivos?",
+          "relation": "las relaciones de herencia definidas por el problema o árbol proporcionado, sin extender un modelo mendeliano simple a todos los rasgos humanos",
+          "officialRecordIds": [
+            "dfd40ffd-fd87-5eed-bbb0-bdfb3b7888ba",
+            "01e1be98-d490-5b87-9b2b-b2f14d91c852"
+          ],
+          "families": [
+            "Resuelve los ejercicios de herencia mendeliana con los datos ficticios proporcionados.",
+            "Interpreta el árbol genealógico proporcionado e identifica los caracteres dominantes y recesivos.",
+            "Explica los aportes de Gregorio Mendel."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296,
+            297
+          ],
+          "id": "hereditary-disease",
+          "label": "enfermedades y síndromes hereditarios",
+          "match": "enfermedad\\w* hereditari\\w*|sindromes? genetic\\w*",
+          "relation": "la relación entre herencia y el síndrome o enfermedad del caso ficticio o fuente, sin inferir diagnósticos personales",
+          "officialRecordIds": [
+            "9c620316-4ff8-5e69-ab54-f436030ef196",
+            "ae7c053a-956b-5fe8-a6fb-b7214f0f1ff5"
+          ],
+          "families": [
+            "Analiza el caso ficticio proporcionado de una enfermedad hereditaria sin diagnosticar a estudiantes.",
+            "Investiga en fuentes la herencia de síndromes genéticos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297
+          ],
+          "id": "genetic-engineering",
+          "label": "ingeniería genética y genoma humano",
+          "match": "ingenieria genetica|genoma humano",
+          "relation": "la modificación o estudio de información genética y la aplicación indicada en medicina o agricultura, distinguiendo posibilidades, evidencia y límites",
+          "officialRecordIds": [
+            "5c12ab02-7558-5bb0-bb09-c67e0ee1f85b",
+            "0d6710e8-9da7-586b-b530-66787f39c8f2"
+          ],
+          "families": [
+            "Debate aplicaciones de la ingeniería genética en medicina y agricultura con las fuentes proporcionadas.",
+            "Investiga en fuentes el genoma humano y redacta un informe."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296,
+            297
+          ],
+          "id": "reproduction",
+          "label": "reproducción sexual y asexual",
+          "match": "reproduccion|biparticion|fision|esporulacion|gametogenesis",
+          "relation": "las características del mecanismo reproductivo solicitado y la participación o ausencia de gametos cuando se comparan modalidades",
+          "officialRecordIds": [
+            "1834f0f4-c007-50b9-9e35-37610db3db52",
+            "0232a35b-4941-5ffe-bc34-80792c2f75ac",
+            "ae32b62e-f39b-5a17-8f2b-6d741809b46d",
+            "0d6710e8-9da7-586b-b530-66787f39c8f2",
+            "ce3aa7d7-9a8e-55a2-b366-4d7a278f811b"
+          ],
+          "families": [
+            "Compara reproducción asexual y sexual en plantas y animales.",
+            "Clasifica los ejemplos proporcionados de bipartición, fisión, esporulación y gametogénesis."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            296,
+            297
+          ],
+          "id": "reproductive-system",
+          "label": "aparatos reproductores y hormonas sexuales",
+          "match": "(?:aparatos?|organos?) reproductores?|hormonas? sexuales?|accion de las hormonas",
+          "relation": "la relación entre estructuras, funciones o cambios biológicos y las hormonas o aparatos reproductores solicitados",
+          "officialRecordIds": [
+            "d775e873-efb4-5658-9525-a8ae10798d88",
+            "ae0e4ff6-eecd-59c4-ac68-fdbd71435131",
+            "e2708325-5f27-5731-8fd0-5748fcb8889b",
+            "fde35daf-65e6-5f02-ac51-59c39d4b9bcb"
+          ],
+          "families": [
+            "Identifica las estructuras y explica las funciones de los aparatos reproductores masculino y femenino en los esquemas proporcionados.",
+            "Explica los cambios biológicos por la acción de las hormonas sexuales."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297
+          ],
+          "id": "pregnancy",
+          "label": "ciclo menstrual, fecundación, embarazo y parto",
+          "match": "ciclo menstrual|fecundacion|embarazo|parto",
+          "relation": "la secuencia o relación biológica solicitada y las consecuencias examinadas con fuentes o casos ficticios, sin inferir información personal",
+          "officialRecordIds": [
+            "5a6e2476-23eb-55f7-9a12-6c30ff8add44",
+            "2ef34e32-1f0d-5ce1-88cf-94691cf391e0",
+            "0e8418f1-0e4d-5e54-9981-7ef9199f8f5e"
+          ],
+          "families": [
+            "Explica la relación entre ciclo menstrual, fecundación, embarazo y parto con la información del texto.",
+            "Analiza causas y consecuencias del embarazo a temprana edad a partir del caso ficticio proporcionado.",
+            "Ordena las etapas del embarazo en el esquema proporcionado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297
+          ],
+          "id": "evolution",
+          "label": "evolución y adaptación",
+          "match": "evolucion|darwin|lamarck|seleccion natural|adaptacion|fosil\\w*|diversidad de los seres vivos.*(?:tiempo|generacion)",
+          "relation": "las evidencias de cambio de las poblaciones a través de generaciones y las explicaciones históricas solicitadas, sin atribuir cambios heredables a una necesidad del individuo",
+          "officialRecordIds": [
+            "27b77661-e4ba-5e9d-8bbf-3010878f2840",
+            "d48a208d-c73f-5ee7-90fa-041fd8afabf5",
+            "cca83824-80d4-5b35-a27e-6da46b87a448",
+            "b6e55532-91b7-55ee-aa53-d59d0ffd8b58",
+            "31fc0333-04e2-5c86-bf91-e45783842699",
+            "139d072e-6416-539c-884b-5459813b87f9"
+          ],
+          "families": [
+            "Compara las teorías de Darwin y Lamarck con las evidencias del texto.",
+            "Analiza los fósiles proporcionados como evidencia de la evolución de las especies.",
+            "Explica selección natural y adaptación sin afirmar que los individuos cambian porque lo necesitan."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297
+          ],
+          "id": "metamorphosis",
+          "label": "metamorfosis",
+          "match": "metamorfosis",
+          "relation": "la secuencia de cambios del organismo durante su desarrollo, sin confundirla con evolución de una población",
+          "officialRecordIds": [
+            "bdd284ae-8ce9-517e-84b3-0bac0197a8d2"
+          ],
+          "families": [
+            "Compara la metamorfosis de los seres vivos representados en las imágenes.",
+            "Ordena las fases de metamorfosis en el modelo proporcionado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            298
+          ],
+          "id": "biodiversity",
+          "label": "biodiversidad, dominios y reinos",
+          "match": "diversidad biologica|biodiversidad|dominios?|reinos?",
+          "relation": "las características biológicas que sustentan la biodiversidad o la clasificación de los organismos solicitados",
+          "officialRecordIds": [
+            "e0c14569-c46b-55f5-8cab-ca6f3d659b0d",
+            "aa80d49f-a82f-5cbe-a414-4658a26c6944"
+          ],
+          "families": [
+            "Clasifica los organismos proporcionados en dominios y reinos mediante sus características.",
+            "Formula preguntas investigables sobre la diversidad biológica."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297,
+            298
+          ],
+          "id": "ecosystems",
+          "label": "ecosistemas y sucesión ecológica",
+          "match": "ecosistemas?|sucesion ecologica|ecologia",
+          "relation": "la relación entre componentes e interacciones del ecosistema solicitado y sus cambios cuando se estudia sucesión",
+          "officialRecordIds": [
+            "5b8d8ead-6721-5761-915a-d7dd66b4c186",
+            "cb864d83-3097-5105-a659-83a3b4b79a28",
+            "8a30303f-ee2d-5ed7-8699-ea27458c3058",
+            "546fae58-3053-5961-9a68-93f16e082639",
+            "83f48d54-1c0e-5a7b-827c-490777835ffd"
+          ],
+          "families": [
+            "Explica estructura y función de los ecosistemas y la sucesión ecológica.",
+            "Analiza un ecosistema del entorno con las fotografías proporcionadas sin realizar una salida de campo."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297,
+            298
+          ],
+          "id": "food-energy",
+          "label": "flujo de energía y cadenas alimenticias",
+          "match": "flujo de energia|cadena alimenticia|cadena alimentaria",
+          "relation": "la dirección de la transferencia de energía entre los organismos y las relaciones alimentarias solicitadas",
+          "officialRecordIds": [
+            "bcac3eb1-9c6e-56df-b7d4-afa5978849f0",
+            "83f48d54-1c0e-5a7b-827c-490777835ffd"
+          ],
+          "families": [
+            "Interpreta la cadena alimenticia proporcionada y explica el flujo de energía.",
+            "Representa el flujo de energía del ecosistema mediante un esquema."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            298
+          ],
+          "id": "biotechnology",
+          "label": "biotecnología, acuacultura, viveros y huertos",
+          "match": "biotecnolog\\w*|acuacultura|viveros?|huertos?|invernaderos?",
+          "relation": "la aplicación biológica solicitada y su relación con la producción o conservación, reconociendo condiciones y límites de la propuesta",
+          "officialRecordIds": [
+            "af0e9cd2-e21d-56c0-b150-15b57f150c15",
+            "4e998ed8-4fd6-5094-862f-75e92c56bc60",
+            "857c1697-d582-5f17-b0ba-2d7e4aa6c988"
+          ],
+          "families": [
+            "Investiga en fuentes la acuacultura y la biotecnología y redacta un informe.",
+            "Elabora un proyecto documental sobre viveros, huertos e invernaderos sin construirlos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297,
+            298
+          ],
+          "id": "natural-resources",
+          "label": "recursos naturales y desarrollo sostenible",
+          "match": "recursos naturales|desarrollo sostenible|parques nacionales|situacion ambiental",
+          "relation": "la relación entre el recurso natural, su uso y la conservación o sostenibilidad en el caso dominicano solicitado",
+          "officialRecordIds": [
+            "af733db1-ff57-5225-80d7-e9d2e7b84eec",
+            "cbff8d4b-a1ce-55f7-9600-650cd6a7bf58",
+            "5d476d07-101e-59f6-9f67-4e98aa521a97"
+          ],
+          "families": [
+            "Analiza el manejo de recursos naturales de República Dominicana con los datos proporcionados.",
+            "Argumenta una propuesta de desarrollo sostenible con evidencias del caso."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297,
+            298
+          ],
+          "id": "pollution",
+          "label": "contaminación y manejo de residuos",
+          "match": "contaminacion|contaminantes|reducir|reusar|reciclar",
+          "relation": "la relación entre fuentes, medio afectado y consecuencias de la contaminación o las medidas de manejo de residuos solicitadas",
+          "officialRecordIds": [
+            "9c4f91a4-34e6-5e3b-a88c-99518b9bb504",
+            "ed958d31-6603-5db8-af1b-9030be94f8b3",
+            "79619bc8-9d34-515c-81d1-264df1cf81d0"
+          ],
+          "families": [
+            "Analiza las causas y consecuencias de la contaminación en el caso proporcionado.",
+            "Elabora un proyecto sobre reducir, reusar y reciclar con la información proporcionada, sin recolectar muestras."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297,
+            298
+          ],
+          "id": "climate",
+          "label": "clima, calentamiento global y cambio climático",
+          "match": "clima|calentamiento global|cambio climatico",
+          "relation": "la relación entre las condiciones climáticas o su cambio y los efectos sobre los seres vivos examinados",
+          "officialRecordIds": [
+            "e12b2b2f-aaa9-552c-bc90-40d976aa3663",
+            "b8fc36c4-28cd-5acd-afa2-f871ad44dc05",
+            "74231357-ee41-5fa1-9f5a-819d1ee2514d",
+            "c40116b8-f15a-5a80-af7e-409a1042b972"
+          ],
+          "families": [
+            "Explica los efectos del calentamiento global y del cambio climático sobre los seres vivos.",
+            "Interpreta los datos proporcionados de clima y biodiversidad."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297,
+            298
+          ],
+          "id": "immunity",
+          "label": "sistema inmunológico",
+          "match": "inmunolog\\w*|inmunitari\\w*|autoinmun\\w*|asma|alergias?",
+          "relation": "la función de defensa y la alteración inmunitaria del caso ficticio solicitado, sin equiparar alergia, autoinmunidad y deficiencia inmunitaria",
+          "officialRecordIds": [
+            "82edb0a8-c51f-57ad-948b-00c90962d448",
+            "17327547-7232-5811-a4d0-9fd8543ef57e",
+            "5c364f5f-28e9-5bed-81d6-709b76735a68",
+            "240c9016-2806-5df7-9f5c-92a39b66dbf8",
+            "fa8fd870-dcf8-5ccb-b4cc-ebe6d4b903ff"
+          ],
+          "families": [
+            "Explica la función del sistema inmunológico.",
+            "Compara asma, alergias, autoinmunidad y deficiencia inmunitaria a partir de los casos ficticios proporcionados, sin diagnosticar personas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297,
+            298
+          ],
+          "id": "nutrition",
+          "label": "nutrición, alimentos y enfermedades metabólicas",
+          "match": "nutricion|alimentos?|alimentari\\w*|metabolic\\w*|vitaminic\\w*|diabetes|obesidad|intolerancia",
+          "relation": "la relación entre alimentación, necesidades del organismo y las alteraciones del caso o fuente, sin diagnosticar personas ni prescribir tratamientos",
+          "officialRecordIds": [
+            "53eca022-4937-587b-b8ec-775709a7237b",
+            "19beff72-9e31-57fe-ad29-f75cf43bd1d6",
+            "d10ee2be-f3e5-56d5-94de-dd5b80a939f8"
+          ],
+          "families": [
+            "Analiza la relación entre nutrición, alimentos y salud con los datos proporcionados.",
+            "Explica enfermedades por desórdenes alimentarios, déficit vitamínico, diabetes, obesidad e intolerancia a alimentos con las fuentes proporcionadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            298
+          ],
+          "id": "infection",
+          "label": "enfermedades infecciosas",
+          "match": "virus|bacterias?|hongos?|infeccios\\w*",
+          "relation": "la relación entre el agente señalado y la enfermedad o prevención estudiada, sin equiparar virus, bacterias y hongos",
+          "officialRecordIds": [
+            "fdabcf7c-237d-50f6-adcf-252dc522c3f7"
+          ],
+          "families": [
+            "Compara enfermedades causadas por virus, bacterias y hongos con la información del texto.",
+            "Investiga fuentes sobre prevención de enfermedades infecciosas sin realizar cultivos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 2,
+          "pages": [
+            297,
+            298
+          ],
+          "id": "hygiene",
+          "label": "higiene y prevención de enfermedades",
+          "match": "higiene|prevencion (?:de enfermedades|y tratamiento)",
+          "relation": "la relación de las medidas de higiene solicitadas con la prevención indicada en las fuentes o el caso, sin añadir prescripciones personales",
+          "officialRecordIds": [
+            "03e469b2-c6c6-5eca-8159-2b7fe2e845d3",
+            "6ba54602-ceff-5bf0-949e-1d3d0e3f2d1b"
+          ],
+          "families": [
+            "Argumenta medidas de higiene para prevenir enfermedades a partir del caso proporcionado.",
+            "Prepara una presentación oral sobre higiene y salud con las fuentes proporcionadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-2.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        }
+      ],
       "unassignedSourceRecords": [
-        {
-          "id": "245be2a0-8686-5e68-849b-dd7f2fc2b0a7",
-          "text": "Bioelementos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "55a7c029-feac-591f-9cb6-8c126ad24be6",
-          "text": "• Materia viva",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "150bbd54-f44e-50a0-adf7-6eac1c933807",
-          "text": "• Niveles de organización.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "4916701f-df02-5247-84d8-3aa598f61ef5",
-          "text": "Célula",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "a339c71a-1c66-5294-bd92-bc85d0c95d23",
-          "text": "• Eucariota",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "f94d727b-73b3-53ee-9e75-705bb4cd9994",
-          "text": "• Procariota",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "9362e055-f68f-5feb-a592-ebb5a9fe0855",
-          "text": "• Tejidos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "6290ad16-6ff8-5f55-8934-d844762572df",
-          "text": "• Órganos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "d862a3e9-d053-5940-a4e8-7dba9a42133b",
-          "text": "• Sistemas de órganos\nGenética",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "75d7ea9f-24c7-54a8-a854-d90d33d32847",
-          "text": "• Genes",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "9fa592f7-52dc-55c0-8a25-fcb396e60fc5",
-          "text": "• Fenotipo",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "56a4e65e-b577-57b7-af61-55c75b5dfc64",
-          "text": "• Genotipo",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "53fe5e1b-eed3-5cdd-8593-d111547357f5",
-          "text": "• Mutación",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "fd207dae-57fd-5fff-bc3d-3d094143923a",
-          "text": "• Ácido desoxirribonucleico (ADN)",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "dceedbe7-cf74-504a-b159-c2a294ebe66c",
-          "text": "• Ácido ribonucleico (ARN)",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "9c620316-4ff8-5e69-ab54-f436030ef196",
-          "text": "• Enfermedades hereditarias",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "1834f0f4-c007-50b9-9e35-37610db3db52",
-          "text": "Reproducción",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "0232a35b-4941-5ffe-bc34-80792c2f75ac",
-          "text": "• Asexual (bipartición, fisión,\nesporulación…)",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ae32b62e-f39b-5a17-8f2b-6d741809b46d",
-          "text": "• Sexual (gametogénesis)",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "d775e873-efb4-5658-9525-a8ae10798d88",
-          "text": "• Órganos reproductores humanos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ae0e4ff6-eecd-59c4-ac68-fdbd71435131",
-          "text": "• Hormonas sexuales",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "a99c574c-6352-5593-a293-5f978095cda5",
-          "text": "- Planteamiento del problema, formulación de\npreguntas e hipótesis, diseño y construcción\nde modelos, simulaciones utilizando recursos\ntecnológicos e ingeniería, análisis, evaluación y\npresentación de resultados con modelos, esquemas,\ndiagramas sobre los bioelementos:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "8531ec84-61af-5789-8787-4f0f6fe93349",
-          "text": "• Elementos y moléculas químicas constituyentes de los\nseres vivos y sus funciones.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "412d5e88-25db-5719-9745-9f9b3bc9e6a1",
-          "text": "• Características de los niveles de organización de la\nmateria viva.\nObservación, planificación y ejecución de\nexperimentos, registro y análisis (imágenes, datos e\ninformaciones), utilización de recursos (instrumentos,\ndispositivos y reactivos), simulaciones utilizando\nrecursos tecnológicos e ingeniería, resolución y\nevaluación (procesos, instrumentos y estrategias\napropiadas) para la caracterización de la célula:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "6dd78416-fb90-5b4f-bfc6-cde194294ff8",
-          "text": "• Partes fundamentales de una célula",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "2bbe883b-7ada-59cd-a0cf-d87f047d4192",
-          "text": "• Características de las células vegetales y animales",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "82edb0a8-c51f-57ad-948b-00c90962d448",
-          "text": "• Función de los organelos celulares (núcleo, membrana,\ncitoplasma, mitocondria)",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "933cb505-a508-5f05-97de-9ccb95511132",
-          "text": "• Características de las células vegetales y animales",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "e2413b60-9b7c-5ab1-98cc-769de1934ad4",
-          "text": "• División celular por mitosis",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
         {
           "id": "27f3ee3d-4126-58e6-875b-e0eff702ab6c",
           "text": "- Observación, formulación de preguntas, diseño y\nconstrucción de modelos, simulaciones con recursos\ntecnológicos y materiales, resolución de problemas\n(análisis, discusión y evaluación) y presentación de\nresultados con modelos, esquemas, diagramas sobre\nlos sistemas y funciones:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ff7f7c9d-4dc9-5c31-9092-366e4a32c263",
-          "text": "• Proceso de fotosíntesis.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "14dc8808-6410-5afa-93f9-e6e36180033f",
-          "text": "• Metabolismo, enzimas y sus reacciones.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "815d6e7a-ea32-58ce-8d6d-4e12ed2cf6f3",
-          "text": "• Calor y temperatura en los procesos biológicos;\ndesnaturalización.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "6563ebbb-7ade-5468-852b-b8f7b6868f02",
-          "text": "• Características y funciones de tejidos, órganos, sistemas\nde órganos y sistemas.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "dfd4956b-2775-5828-82f9-b62ffa15b53f",
-          "text": "• Principio físico en que se fundamenta el funcionamiento\nde: el corazón, la visión, el brazo y la contracción muscular\ncomo ejemplo de palanca.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "5b8d8ead-6721-5761-915a-d7dd66b4c186",
-          "text": "Ecología",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "cb864d83-3097-5105-a659-83a3b4b79a28",
-          "text": "• Ecosistema",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "8a30303f-ee2d-5ed7-8699-ea27458c3058",
-          "text": "• Sucesión ecológica",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "bcac3eb1-9c6e-56df-b7d4-afa5978849f0",
-          "text": "• Flujo de energía",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "9c4f91a4-34e6-5e3b-a88c-99518b9bb504",
-          "text": "• Contaminación",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "e12b2b2f-aaa9-552c-bc90-40d976aa3663",
-          "text": "• Clima",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "b8fc36c4-28cd-5acd-afa2-f871ad44dc05",
-          "text": "• Calentamiento Global",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "74231357-ee41-5fa1-9f5a-819d1ee2514d",
-          "text": "• Cambio climático",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "af733db1-ff57-5225-80d7-e9d2e7b84eec",
-          "text": "• Recursos naturales",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "cbff8d4b-a1ce-55f7-9600-650cd6a7bf58",
-          "text": "• Desarrollo sostenible",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "feafd909-2ad3-5652-ada5-71ba3ac88885",
           "text": "Salud",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "17327547-7232-5811-a4d0-9fd8543ef57e",
-          "text": "• Sistema inmunológico",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "53eca022-4937-587b-b8ec-775709a7237b",
-          "text": "• Nutrición y alimentos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "03e469b2-c6c6-5eca-8159-2b7fe2e845d3",
-          "text": "• Higiene",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "1934fc18-f64a-5d14-8f34-179503e92699",
-          "text": "Observación, planificación y ejecución de experimentos,\nregistro y análisis (gráficas, datos e informaciones),\nutilización de recursos (instrumentos, dispositivos y\nmateriales biológicos), simulaciones utilizando recursos\ntecnológicos e ingeniería, resolución y evaluación\n(procesos, instrumentos y estrategias apropiadas) de\nproblemas en donde se involucran nociones de genética:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "dfd40ffd-fd87-5eed-bbb0-bdfb3b7888ba",
-          "text": "• La genética, los trabajos de Gregorio Mendel.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "813e6744-3c89-56f3-be80-366c5867bb4b",
-          "text": "• Características fenotípicas de los progenitores.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "80ca66f7-604a-561b-9854-0b54c41c11ed",
-          "text": "• Estructura y función de la molécula del ácido\ndesoxirribonucleico (ADN).",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "4a0eb505-2afc-5a35-be5b-c3790d080b82",
-          "text": "• Modelo de doble hélice del ácido desoxirribonucleico\n(ADN).",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ae7c053a-956b-5fe8-a6fb-b7214f0f1ff5",
-          "text": "• Herencia de síndromes genéticos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "5c12ab02-7558-5bb0-bb09-c67e0ee1f85b",
-          "text": "• Ingeniería genética, genoma humano y aplicaciones.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "01e1be98-d490-5b87-9b2b-b2f14d91c852",
-          "text": "• Rasgos o caracteres dominantes y recesivos de los\nestudiantes de la clase; árbol genealógico.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "0d6710e8-9da7-586b-b530-66787f39c8f2",
-          "text": "Ingeniería genética en la medicina y la agricultura.\nFormulación de preguntas, búsqueda y registro de\ninformación y evidencias, diseño y construcción de\nmodelos, simulación, discusión, evaluación; utilización\nde recursos (instrumentos, materiales, reactivos y\ndispositivos tecnológicos) para análisis, discusión y\nexposición sobre la reproducción:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ce3aa7d7-9a8e-55a2-b366-4d7a278f811b",
-          "text": "• Reproducción asexual y sexual de plantas y animales.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "e2708325-5f27-5731-8fd0-5748fcb8889b",
-          "text": "• Estructuras y funciones de los aparatos reproductores\nmasculino y femenino.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "5a6e2476-23eb-55f7-9a12-6c30ff8add44",
-          "text": "• Ciclo menstrual, fecundación, embarazo y parto.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "fde35daf-65e6-5f02-ac51-59c39d4b9bcb",
-          "text": "• Cambios biológicos, morfológicos, fisiológicos por la\nacción de las hormonas.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "2ef34e32-1f0d-5ce1-88cf-94691cf391e0",
-          "text": "• Etapas del embarazo.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "0e8418f1-0e4d-5e54-9981-7ef9199f8f5e",
-          "text": "• Causas y consecuencias del embarazo a temprana edad.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "27b77661-e4ba-5e9d-8bbf-3010878f2840",
-          "text": "Observación, formulación de preguntas e hipótesis,\nplanificación y ejecución de experimentos, registro\nde evidencias, diseño y construcción de modelos,\nsimulación, discusión, evaluación; utilización de recursos\n(instrumentos, materiales, reactivos y dispositivos\ntecnológicos) para la medición, análisis y exposición sobre\nlas ideas de la evolución:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "d48a208d-c73f-5ee7-90fa-041fd8afabf5",
-          "text": "• Factores responsables de la diversidad de los seres vivos a\ntravés del tiempo.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "cca83824-80d4-5b35-a27e-6da46b87a448",
-          "text": "• Teorías de la evolución. Darwin y Lamarck, selección natural\ny adaptación.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "b6e55532-91b7-55ee-aa53-d59d0ffd8b58",
-          "text": "• Fósiles como evidencia del proceso evolutivo de las especies.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "bdd284ae-8ce9-517e-84b3-0bac0197a8d2",
-          "text": "• Metamorfosis de diferentes seres vivos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "31fc0333-04e2-5c86-bf91-e45783842699",
-          "text": "• Evolución de las especies del medio acuático al terrestre.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "139d072e-6416-539c-884b-5459813b87f9",
-          "text": "• Adaptación del sistema esquelético de diferentes\norganismos.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "2e3df7fa-4d80-5634-96b4-e4becbb175de",
           "text": "Observación, planteamiento del problema e hipótesis,\nplanificación y ejecución de experimentos, medición\ny registro de datos, diseño y construcción de modelos,\nutilización de instrumentos y recursos tecnológicos,\nsimulaciones, análisis y utilización de distintas estrategias\nen la resolución de problemas relacionados con el medio\nambiente:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "e0c14569-c46b-55f5-8cab-ca6f3d659b0d",
-          "text": "• Diversidad biológica.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "aa80d49f-a82f-5cbe-a414-4658a26c6944",
-          "text": "• Clasificación de dominios y reinos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "546fae58-3053-5961-9a68-93f16e082639",
-          "text": "• Ecosistemas, su estructura y función.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "83f48d54-1c0e-5a7b-827c-490777835ffd",
-          "text": "• Flujo de energía en los ecosistemas y en la cadena\nalimenticia.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "af0e9cd2-e21d-56c0-b150-15b57f150c15",
-          "text": "• Acuacultura aplicando la biotecnología.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "4e998ed8-4fd6-5094-862f-75e92c56bc60",
-          "text": "• Viveros forestales, huertos escolares y comunitarios e\ninvernaderos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "5d476d07-101e-59f6-9f67-4e98aa521a97",
-          "text": "• Situación ambiental en la República Dominicana: agua,\nsuelo, parques nacionales, ríos, bosques, costas y manejo\nde estos recursos naturales.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ed958d31-6603-5db8-af1b-9030be94f8b3",
-          "text": "• Problemas ambientales: contaminación, fenómenos\nnaturales y antrópicos; causas y consecuencias, medidas.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "c40116b8-f15a-5a80-af7e-409a1042b972",
-          "text": "• Cambio climático.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "79619bc8-9d34-515c-81d1-264df1cf81d0",
-          "text": "• Estrategias para reducir los efectos de la contaminación\n(reducir, reusar, reciclar).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "637504dd-85d7-5cf1-b849-bcfbb6381677",
           "text": "Formulación de preguntas, búsqueda y registro de\ninformación y evidencias, evaluación; utilización de\nrecursos (instrumentos, materiales, reactivos y dispositivos\ntecnológicos) para el análisis, discusión y exposición sobre\nlas enfermedades:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "5c364f5f-28e9-5bed-81d6-709b76735a68",
-          "text": "• Sistema inmunológico.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "19beff72-9e31-57fe-ad29-f75cf43bd1d6",
-          "text": "• Enfermedades causadas por desórdenes alimentarios.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "d10ee2be-f3e5-56d5-94de-dd5b80a939f8",
-          "text": "• Enfermedades metabólicas: déficit vitamínico, diabetes,\nobesidad e intolerancia a alimentos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "fdabcf7c-237d-50f6-adcf-252dc522c3f7",
-          "text": "• Enfermedades comunes causadas por virus, bacterias y\nhongos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "240c9016-2806-5df7-9f5c-92a39b66dbf8",
-          "text": "• Enfermedades del sistema inmunológico: asma, alergias.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "fa8fd870-dcf8-5ccb-b4cc-ebe6d4b903ff",
-          "text": "• Enfermedades autoinmunes y aquellas causadas por\ndeficiencia inmunitaria.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "6ba54602-ceff-5bf0-949e-1d3d0e3f2d1b",
-          "text": "• Prevención y tratamiento de enfermedades: la higiene.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "f724a398-67d9-58a7-811d-d399c5d611d6",
           "text": "• Proyecto de investigación e innovación escolar guiado",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "857c1697-d582-5f17-b0ba-2d7e4aa6c988",
-          "text": "• En problemas ambientales, biotecnología o salud de\nimpacto personal, comunitario, regional o global.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         }
       ],
-      "instrumentReview": null,
-      "httpVerification": null,
-      "visualVerification": null,
-      "status": "NOT_IMPLEMENTED",
+      "instrumentReview": {
+        "grade": 2,
+        "status": "REVIEWED_DEFINED_FIXTURES",
+        "scope": "30 topics, 68 descriptions, 272 complete instruments; PDF296–299 columns and continuation reviewed visually",
+        "method": "Read complete rubric views in sequential blocks, including scientific relations, all progression descriptors and absence of extra tasks. Inspected checklist, achievement scale and partial-credit transformations for cell explanation; automatic format, parity and scoring contracts supplement the review.",
+        "corrections": [
+          "Provided images/models do not require making representations",
+          "Cell explanation separates parts and functions without requiring drawings or labels",
+          "ADN-only and ARN-only tasks keep their scope",
+          "Mendel historical contributions do not imply solving crosses",
+          "Qualitative hereditary exercises do not impose numerical calculations",
+          "Ordering stages has an explicit sequence criterion",
+          "Recorded and provided data are distinguished",
+          "Energy flow does not duplicate a general ecosystem dimension",
+          "Basic immune function does not impose a disease case",
+          "Drawing or model remains an alternative"
+        ],
+        "limits": [
+          "Defined deterministic wording patterns, not every possible wording",
+          "General comparison criteria use the requested scientific characteristics without prescribing a new comparison table",
+          "Full visual editor verification is separate and recorded in the grade report",
+          "Health examples use provided sources or fictitious cases, never personal diagnoses or prescriptions"
+        ],
+        "instrumentArtifact": "ciencias-naturaleza-2-instrumentos.json"
+      },
+      "httpVerification": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "savedAndReopened": 4
+      },
+      "visualVerification": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "allFieldsEqual": true
+      },
+      "status": "VERIFIED_DEFINED_PATTERNS",
       "exclusions": [
         "Optativas y contenidos atribuidos a otros grados.",
         "Actitudes personales y listados generales de procesos no se convierten en requisitos de cada actividad."

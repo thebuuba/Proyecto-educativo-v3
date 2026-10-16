@@ -289,7 +289,7 @@ describe('Recomendador con currículo literal completo', () => {
     expect(result.selectedCurriculumElements).toEqual([])
   })
   it.each([
-    ['Exposición sobre la biodiversidad', 'Ciencias de la Naturaleza', 'NAT', 'EXPOSITION', 'rubrica', /biodiversidad/i],
+    ['Exposición sobre la biodiversidad', 'Ciencias de la Naturaleza', 'NAT', 'ORAL_PRESENTATION', 'rubrica', /biodiversidad/i],
     ['Experimento sobre densidad', 'Ciencias de la Naturaleza', 'NAT', 'EXPERIMENT', 'rubrica', /densidad/i],
     ['Resolución de problemas con fracciones', 'Matemática', 'MAT', 'PROBLEM_SOLVING', 'lista-ponderada', /fracciones/i],
     ['Producción de un cuento corto', 'Lengua Española', 'LEN', 'WRITTEN_PRODUCTION', 'rubrica', /cuento/i],
@@ -300,7 +300,9 @@ describe('Recomendador con currículo literal completo', () => {
     const result = recommend({ activityTitle, description: '', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
     expect(result.activityType).toBe(activityType)
     expect(result.instrumentType).toBe(instrumentType)
-    expect(result.criteria.length).toBeGreaterThanOrEqual(4)
+    // The scoped science provider does not pad a brief oral task to four rows.
+    if(subjectCode==='NAT'&&activityType==='ORAL_PRESENTATION')expect(result.criteria.map(c=>c.templateId)).toEqual(['nat-2-biodiversity-oral'])
+    else expect(result.criteria.length).toBeGreaterThanOrEqual(4)
     expect(JSON.stringify(result.criteria)).toMatch(topic)
     expect(result.criteria.every(item => item.title.trim() && item.description.trim())).toBe(true)
     expect(result.criteria.reduce((sum, item) => sum + item.maxScoreUnits, 0)).toBe(2000)

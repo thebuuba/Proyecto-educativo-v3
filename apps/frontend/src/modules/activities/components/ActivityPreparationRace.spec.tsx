@@ -39,14 +39,17 @@ async function advance(ms: number) {
 }
 
 describe('automatic instrument preparation request lifecycle', () => {
-  it('Ciencias descarta la respuesta anterior y el título viejo al cambiar de contenido en el mismo borrador',async()=>{
-    const academic={level:'SECONDARY' as const,grade:1,subjectCode:'NAT-TU'}
-    const first='Explica las causas de los sismos.',latest='Compara energía renovable y no renovable.'
-    const build=(description:string)=>editableFallbackRecommendation({activityTitle:'Sismos',description,maxScore:20,instrumentType:'rubrica',participationMode:'INDIVIDUAL',academicContext:academic})
+  for(const sample of [
+    {grade:1,code:'NAT-TU',title:'Sismos',first:'Explica las causas de los sismos.',latest:'Compara energía renovable y no renovable.',expected:/energía renovable/,obsolete:/sismo|terremoto/},
+    {grade:2,code:'NAT-VIDA',title:'Células',first:'Explica las partes y funciones de una célula.',latest:'Interpreta los datos proporcionados de fotosíntesis.',expected:/fotosíntesis/,obsolete:/célula|organelo/},
+  ])it(`Ciencias ${sample.grade} descarta la respuesta y el título anteriores en el mismo borrador`,async()=>{
+    const academic={level:'SECONDARY' as const,grade:sample.grade,subjectCode:sample.code}
+    const {first,latest}=sample
+    const build=(description:string)=>editableFallbackRecommendation({activityTitle:sample.title,description,maxScore:20,instrumentType:'rubrica',participationMode:'INDIVIDUAL',academicContext:academic})
     let finish!:(p:InstrumentRecommendation)=>void
     const pending=new Promise<InstrumentRecommendation>(resolve=>{finish=resolve});let requests=0
     const post=vi.spyOn(api,'post').mockImplementation(async(_path,body)=>{const input=body as {description:string};return(await(++requests===1?pending:build(input.description))) as never})
-    mount({name:'Sismos',description:first,pedagogicalActivityType:'',autoDetectedPedagogicalActivityType:true},academic)
+    mount({name:sample.title,description:first,pedagogicalActivityType:'',autoDetectedPedagogicalActivityType:true},academic)
     await advance(500);await advance(1000)
     expect(requests).toBe(1)
     fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:latest}})
@@ -55,8 +58,8 @@ describe('automatic instrument preparation request lifecycle', () => {
     const draft=readActivityDrafts(context)[0].draft as ActivityDraft
     expect(post.mock.calls.every(([path])=>path.endsWith('/recommend'))).toBe(true)
     expect(draft.preparedRecommendation?.criteria.length).toBeGreaterThan(0)
-    expect(JSON.stringify(draft.preparedRecommendation?.criteria)).toMatch(/energía renovable/)
-    expect(JSON.stringify(draft.preparedRecommendation?.criteria)).not.toMatch(/sismo|terremoto/)
+    expect(JSON.stringify(draft.preparedRecommendation?.criteria)).toMatch(sample.expected)
+    expect(JSON.stringify(draft.preparedRecommendation?.criteria)).not.toMatch(sample.obsolete)
     expect(draft.maxScore).toBe('')
   })
   beforeEach(() => {

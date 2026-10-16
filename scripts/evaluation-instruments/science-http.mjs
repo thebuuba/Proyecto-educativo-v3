@@ -59,12 +59,17 @@ try{
       generated.push({type,total,catalog:proposal.catalogVersion})
       saveReadProof()
     }
-    if(grade===1){
-      const controls=[
+    if(grade===1||grade===2){
+      const controls=grade===1?[
         ['Formula preguntas investigables sobre los vientos.','-question',/-research$/],
         ['Explica el ciclo del agua o representa la estructura interna de la Tierra mediante un dibujo.','-alternative',null],
         ['Formulen una hipótesis sobre la erosión del suelo. Realicen la práctica indicada y registren las observaciones.','-experiment-procedure',/-research$/],
         ['Los estudiantes explicarán cómo realizar un experimento sobre erosión del suelo.','-explanation',/-experiment-procedure$|safety$/],
+      ]:[
+        ['Explica las partes y funciones de una célula.','-functions',/-representation$/],
+        ['Compara la metamorfosis de los seres vivos representados en las imágenes.','-comparison',/-representation$/],
+        ['Resuelve los ejercicios de herencia mendeliana con los datos ficticios proporcionados.','-problem-reasoning',/-calculation$|result$/],
+        ['Interpreta los datos proporcionados de fotosíntesis sin realizar experimentos.','-data-interpretation',/-experiment-procedure$|safety$/],
       ]
       report.semanticControls=[]
       for(const [description,required,forbidden] of controls){

@@ -54,13 +54,13 @@
 - [x] HTTP/DB autenticado, cuatro formatos20/17.35, guardado/reapertura/históricos.
 - [x] Navegador QA: cuatro formatos, edición, añadir/completar, estrategia, guardado/reapertura y tiempos.
 - [x] Checks del repositorio, informe y revisión diff/secretos.
-- [ ] Commit español y push normal del bloque1.º: consultar Git para confirmar operación, no asumirla desde este archivo.
+- [x] Commit español y push normal del bloque1.º: `38bc31d29f3085579e786851823bc3aea70bb57a`, sincronizado.
 
 ### 2.º → 6.º
 
 Para cada grado, repetir lectura visual y matriz → prueba roja → proveedor → revisión científica completa → pruebas focalizadas/regresiones → congelar/versionar/instalar idempotente → HTTP/DB → navegador cuatro formatos y tiempos → checks afectados/informe/commit/push. No conectar el siguiente grado antes de cerrar el anterior.
 
-- [ ] 2.º: fuente y componente pendientes de revisión visual.
+- [x] 2.º: Ciencias de la Vida PDF296–299;30temas/68consignas/272instrumentos revisados, fuente/release87 idempotentes, HTTP/DB y navegador cuatro formatos, checks finales aprobados. Informe y evidencia por grado; consultar Git para el commit/push del cierre.
 - [ ] 3.º: fuente y componente pendientes de revisión visual.
 - [ ] 4.º: fuente y componente pendientes de revisión visual.
 - [ ] 5.º: fuente y componente pendientes de revisión visual.

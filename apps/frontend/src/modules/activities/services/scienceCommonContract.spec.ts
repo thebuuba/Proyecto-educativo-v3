@@ -6,9 +6,11 @@ import {scoreInstrumentFields} from './instrumentScoring'
 import {appendInstrumentCriterion,completeInstrumentCriterion,nextCatalogCriterion} from './instrumentCriterionAddition'
 import {activityDefaultSuggestions} from '../utils/activityDefaultSuggestions'
 import topics from '../../../../../../data/evaluation-instruments/science-grade-1-contracts.json'
-const cases=topics.flatMap(f=>[f,...(f.variants??[]).map(description=>({description,id:f.id}))])
-const context={level:'SECONDARY' as const,grade:1,cycle:1,modalityCode:'academic',subjectCode:'NAT-TU',subjectName:'Ciencias de la Naturaleza',optativeExitName:null}
-describe('Ciencias 1.º: paridad, formatos, edición y precisión',()=>{
+import topicsTwo from '../../../../../../data/evaluation-instruments/science-grade-2-contracts.json'
+for(const {grade,code,fixtures} of [{grade:1,code:'NAT-TU',fixtures:topics},{grade:2,code:'NAT-VIDA',fixtures:topicsTwo}]){
+const cases=fixtures.flatMap(f=>[f,...(f.variants??[]).map(description=>({description,id:f.id}))])
+const context={level:'SECONDARY' as const,grade,cycle:1,modalityCode:'academic',subjectCode:code,subjectName:'Ciencias de la Naturaleza',optativeExitName:null}
+describe(`Ciencias ${grade}.º: paridad, formatos, edición y precisión`,()=>{
   for(const f of cases)for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const score of [20,17.35])it(`${f.id}/${format}/${score}`,()=>{
     const input={activityTitle:'Actividad',description:f.description,maxScore:score,participationMode:'INDIVIDUAL' as const}
     const local=editableFallbackRecommendation({...input,instrumentType:format,academicContext:context})
@@ -42,3 +44,5 @@ describe('Ciencias 1.º: paridad, formatos, edición y precisión',()=>{
     expect(detectTeachingStrategy({...context,description:'Analiza un problema sobre sismos.'}).id).toBeNull()
   })
 })
+
+}
