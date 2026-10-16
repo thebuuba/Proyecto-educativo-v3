@@ -136,7 +136,7 @@ export function SchoolAdministrationPage() {
         setConnectedPaymentsOpen(true)
         document.getElementById('connected-billing-management')?.scrollIntoView({ block: 'start' })
       }} />
-      <div className="mx-auto mt-10 max-w-[1360px] space-y-4 border-t border-border/70 pt-5">
+      <div className="mt-10 w-full min-w-0 space-y-4 border-t border-border/70 pt-5">
         <div className="flex flex-wrap gap-3 text-sm">
           <Link className="text-primary-variant underline underline-offset-4" to="/perfil">
             Mi cuenta de AulaBase
