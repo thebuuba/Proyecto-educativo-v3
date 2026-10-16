@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { SchoolAdministrationPage } from './SchoolAdministrationPage'
+import { useSchoolAdministration } from '../hooks/useSchoolAdministration'
 
 const state = vi.hoisted(() => {
   const baseProfile = {
@@ -54,19 +55,61 @@ const state = vi.hoisted(() => {
   }
 })
 
-vi.mock('@/modules/settings-reference/services/profileSettingsService', () => ({ getOwnProfileSettings: vi.fn().mockResolvedValue({
-  id: 'user-1', fullName: 'Ana P?rez', email: 'ana@example.test', phone: null, avatarUrl: null,
-  createdAt: '2026-01-01T00:00:00Z', roles: ['teacher'], institution: 'Centro Aula', academicIdentifier: null,
-  preferences: { publicName:null, bio:null, birthDate:null, country:null, city:null, educationLevel:null, language:'es', timezone:'UTC', interests:[] },
-  stats: [], completeness: 10,
-}), updateOwnProfileSettings: vi.fn(), uploadOwnAvatar: vi.fn(), removeOwnAvatar: vi.fn() }))
+vi.mock('@/modules/settings-reference/services/profileSettingsService', () => ({
+  getOwnProfileSettings: vi.fn().mockResolvedValue({
+    id: 'user-1',
+    fullName: 'Ana P?rez',
+    email: 'ana@example.test',
+    phone: null,
+    avatarUrl: null,
+    createdAt: '2026-01-01T00:00:00Z',
+    roles: ['teacher'],
+    institution: 'Centro Aula',
+    academicIdentifier: null,
+    preferences: {
+      publicName: null,
+      bio: null,
+      birthDate: null,
+      country: null,
+      city: null,
+      educationLevel: null,
+      language: 'es',
+      timezone: 'UTC',
+      interests: [],
+    },
+    stats: [],
+    completeness: 10,
+  }),
+  updateOwnProfileSettings: vi.fn(),
+  uploadOwnAvatar: vi.fn(),
+  removeOwnAvatar: vi.fn(),
+}))
 
 const auth = vi.hoisted(() => ({ canManage: true }))
-vi.mock('@/modules/billing/hooks/useBilling', () => ({useBilling: () => ({loading:false,error:null,refetch:vi.fn(),overview:{enabled:true,environment:'sandbox',access:{allowed:false,reason:'none',until:null},payments:[],documents:[],subscriptions:[],prices:[]}})}))
-vi.mock('@/modules/auth/services/supabaseClient', () => ({supabase:{auth:{mfa:{listFactors:vi.fn().mockResolvedValue({data:{all:[]},error:null})}}}}))
+vi.mock('@/modules/billing/hooks/useBilling', () => ({
+  useBilling: () => ({
+    loading: false,
+    error: null,
+    refetch: vi.fn(),
+    overview: {
+      enabled: true,
+      environment: 'sandbox',
+      access: { allowed: false, reason: 'none', until: null },
+      payments: [],
+      documents: [],
+      subscriptions: [],
+      prices: [],
+    },
+  }),
+}))
+vi.mock('@/modules/auth/services/supabaseClient', () => ({
+  supabase: {
+    auth: { mfa: { listFactors: vi.fn().mockResolvedValue({ data: { all: [] }, error: null }) } },
+  },
+}))
 
 vi.mock('@/modules/school-administration/hooks/useSchoolAdministration', () => ({
-  useSchoolAdministration: () => state,
+  useSchoolAdministration: vi.fn(() => state),
 }))
 vi.mock('@/modules/auth/hooks/useAuth', () => ({
   useAuth: () => ({
@@ -110,28 +153,40 @@ afterEach(() => {
 })
 
 describe('panel de ajustes con el diseño de referencia', () => {
-  it('mantiene el borrador administrativo al recorrer los ajustes personales', async () => {
-    const user = userEvent.setup()
-    render(
-      <MemoryRouter initialEntries={['/configuracion?tab=centro']}>
-        <SchoolAdministrationPage />
-      </MemoryRouter>,
-    )
-    await user.clear(screen.getByLabelText(/Nombre de la institución/))
-    await user.type(screen.getByLabelText(/Nombre de la institución/), 'Borrador del centro')
-    await user.click(screen.getByRole('button', { name: 'Suscripción y pagos' }))
-    expect(screen.getByRole('heading', { name: 'Planes de suscripción' })).toBeInTheDocument()
-    await user.click(screen.getByRole('link', { name: 'Centro educativo' }))
-    expect(screen.getByLabelText(/Nombre de la institución/)).toHaveValue('Borrador del centro')
-  })
+  it.each(['cuenta', 'seguridad', 'notificaciones', 'suscripcion', 'privacidad'])(
+    'no monta ni consulta administracion al abrir %s',
+    async (section) => {
+      render(
+        <MemoryRouter initialEntries={['/configuracion?tab=' + section]}>
+          <SchoolAdministrationPage />
+        </MemoryRouter>,
+      )
+      expect(screen.getByRole('navigation', { name: 'Secciones de ajustes' })).toBeInTheDocument()
+      for (const name of [
+        'Mi cuenta de AulaBase',
+        'Centro educativo',
+        'Calendario',
+        'Usuarios',
+        'M\u00f3dulos',
+      ]) {
+        expect(screen.queryByRole('link', { name })).not.toBeInTheDocument()
+      }
+      expect(
+        screen.queryByRole('heading', { name: 'Configuraci\u00f3n', hidden: true }),
+      ).not.toBeInTheDocument()
+      expect(useSchoolAdministration).not.toHaveBeenCalled()
+    },
+  )
 
-  it('conserva el acceso antiguo al calendario', () => {
+  it('conserva el acceso antiguo al calendario', async () => {
     render(
       <MemoryRouter initialEntries={['/configuracion#anos-escolares']}>
         <SchoolAdministrationPage />
       </MemoryRouter>,
     )
-    expect(screen.getByRole('heading', { name: 'Años escolares y calendario' })).toBeInTheDocument()
+    expect(
+      await screen.findByRole('heading', { name: 'Años escolares y calendario' }),
+    ).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Calendario' })).toHaveAttribute(
       'aria-current',
       'page',
