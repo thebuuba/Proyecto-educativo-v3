@@ -1,5 +1,6 @@
 import { Transform } from 'class-transformer'
-import { IsNotEmpty, IsOptional, IsString, IsUrl, MaxLength, ValidateIf } from 'class-validator'
+import { IsNotEmpty, IsOptional, IsString, isURL, MaxLength, ValidateBy, ValidateIf } from 'class-validator'
+import { MANAGED_AVATAR } from '../profile-avatar'
 
 export class UpdateProfileDto {
   @ValidateIf((_object, value) => value !== undefined)
@@ -15,7 +16,8 @@ export class UpdateProfileDto {
   phone?: string | null
 
   @IsOptional()
-  @IsUrl({ protocols: ['http', 'https'], require_protocol: true })
+  @ValidateBy({ name: 'avatarUrl', validator: { validate: value => typeof value === 'string'
+    && (MANAGED_AVATAR.test(value) || isURL(value, { protocols: ['http', 'https'], require_protocol: true })) } })
   @MaxLength(2048)
   avatarUrl?: string | null
 }

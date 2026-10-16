@@ -82,6 +82,11 @@ export type Database = {
   }
   public: {
     Tables: {
+      user_profile_settings: CurriculumTable<{
+        user_id: string; public_name: string | null; bio: string | null; birth_date: string | null
+        country: string | null; city: string | null; education_level: string | null; language: string
+        timezone: string; interests: string[]; avatar_path: string | null; created_at: string; updated_at: string
+      }, 'user_id'>
       curriculum_versions: CurriculumTable<CurriculumVersionRow, 'code' | 'level' | 'edition_year'>
       evaluation_catalog_releases: CurriculumTable<{ version: string; payload: Json; created_at: string }, 'version' | 'payload'>
       section_curriculum_contexts: CurriculumTable<{ section_subject_id: string; optative_exit_name: string; created_at: string }, 'section_subject_id' | 'optative_exit_name'>
