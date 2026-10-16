@@ -1,4 +1,5 @@
 import { resolveCommonFrenchTask, commonFrenchSelections, commonFrenchCriteria } from '@aula/shared'
+import { resolveCommonMathTask,commonMathCriteria,commonMathSelections,adaptMathScale } from '@aula/shared'
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
 import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,languageInstrumentIntent,assertInstrumentCapacity,withDeliveryCriteria,deliveryConditions} from '@aula/shared'
 import { newsCriteria } from './authored/language/news-grade-1'
@@ -224,7 +225,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const englishModule=context?.grade===1?catalog.englishGradeOneModule:context?.grade===2?catalog.englishGradeTwoModule:context?.grade===3?catalog.englishGradeThreeModule:context?.grade===4?catalog.englishGradeFourModule:context?.grade===5?catalog.englishGradeFiveModule:context?.grade===6?catalog.englishGradeSixModule:null
   const englishTask=englishModule?resolveCommonEnglishTask(input.activityTitle,input.description??'',context):null
   const frenchTask=catalog.frenchModules?.some(module=>module.grade===context?.grade)?resolveCommonFrenchTask(input.activityTitle,input.description??'',context):null
-  const scopedType = frenchTask?.activityType??englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', context)
+  const mathTask=catalog.mathCommonModules?.some(module=>module.grade===context?.grade)?resolveCommonMathTask(input.activityTitle,input.description??'',context):null
+  const scopedType = mathTask?.activityType??frenchTask?.activityType??englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', context)
   const detectedByCatalog = catalog.activityTypes.find(entry => entry.id === scopedType)
     ?? detectActivityType(input.activityTitle, input.description ?? '', catalog, false)
   const detected = detectedByCatalog.id === 'OTHER' && /observ(?:ar|an|aran|arán).*(?:registr|tabla)/.test(text)
@@ -237,7 +239,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const matchedScience = findSecondaryScienceTopic(input.activityTitle, input.description ?? '', context)
   const scienceTopic = catalog.scienceModules?.some(module => module.id === matchedScience && module.grade === context?.grade) ? matchedScience : null
   const matchedMath = findSecondaryMathTopic(input.activityTitle, input.description ?? '', context)
-  const mathTopic = catalog.mathModules?.some(module=>module.id === matchedMath && module.grade === context?.grade) ? matchedMath : null
+  const mathTopic = !mathTask && catalog.mathModules?.some(module=>module.id === matchedMath && module.grade === context?.grade) ? matchedMath : null
   const attitudeRelevant = /convivencia|cooperaci|valores|respeto|solidaridad|seguridad/.test(text)
   // Keep content/genre words (poema, ensayo, pintura). Strip only pedagogical boilerplate.
   const ranking = rankCurriculum(input.activityTitle, input.description ?? '', activity.id, input.competencyBlock, scope, elements, catalog)
@@ -279,7 +281,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
   const levelCount = input.levelCount ?? 4
   const instrumentIntent = context?.level === 'SECONDARY' && (context.subjectCode === 'LEN'||commonSecondaryEnglish(context)) ? languageInstrumentIntent(input.description ?? '') : undefined
-  const chosenInstrument = input.preferredInstrumentType ?? (frenchTask?commonFrenchSelections(frenchTask,input.description??'').suggestedInstrumentType:undefined) ?? instrumentIntent ?? (englishTask?commonEnglishSelections(englishTask,input.description??'').suggestedInstrumentType:rule.instrument)
+  const chosenInstrument = input.preferredInstrumentType ?? (mathTask?commonMathSelections(mathTask,input.description??'').suggestedInstrumentType:undefined) ?? (frenchTask?commonFrenchSelections(frenchTask,input.description??'').suggestedInstrumentType:undefined) ?? instrumentIntent ?? (englishTask?commonEnglishSelections(englishTask,input.description??'').suggestedInstrumentType:rule.instrument)
   const scores = distributeScoreUnits(Math.round(input.maxScore * 100), chosenInstrument === 'lista-ponderada'
     ? distributeScoreUnits(10000, candidateWeights) : candidateWeights)
   const template = catalog.instrumentTemplates.find(t => t.id === chosenInstrument)!
@@ -319,7 +321,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const detectiveModule = firstGenre === 'DETECTIVE_STORY' && isFirstGradeDetectiveActivity(activity.id)
   const calligramModule = firstGenre === 'CALLIGRAM' && isFirstGradeCalligramActivity(activity.id)
   const novelCriteria=contextualTopic?[]:secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',context,activity.id,input.includeAdditionalCandidates)
-  const selectedAuthored: AuthoredCriterion[] = frenchTask ? commonFrenchCriteria(frenchTask) : englishTask ? commonEnglishCriteria(englishTask) : novelCriteria.length ? novelCriteria : mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
+  const selectedAuthored: AuthoredCriterion[] = mathTask ? commonMathCriteria(mathTask) : frenchTask ? commonFrenchCriteria(frenchTask) : englishTask ? commonEnglishCriteria(englishTask) : novelCriteria.length ? novelCriteria : mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
     : scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
     : contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '',input.includeAdditionalCandidates)
     : newsModule ? context?.grade === 2 ? secondGradeNewsCriteria(activity.id, input.description ?? '') : newsCriteria(activity.id, input.description ?? '')
@@ -368,7 +370,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   if(authored.some(row=>row.templateId.startsWith('task-'))) result.internalTrace.reasons.push('coverage=ACTION_ONLY')
   if (mathTopic) result.internalTrace.reasons.push(`module=math-${mathTopic}-${context?.grade}`,
     ...(mathTopic === 'trigonometry' ? ['La consigna de 6.º retoma razones trigonométricas documentadas en 5.º; no se atribuye respaldo específico de 6.º.'] : []))
-  const formatted = context?.level==='SECONDARY' && area==='language' && authoredCriteria.length && !authored.some(row=>row.templateId.startsWith('task-'))
+  const formatted = mathTask ? adaptMathScale(result,input.description??'') : context?.level==='SECONDARY' && area==='language' && authoredCriteria.length && !authored.some(row=>row.templateId.startsWith('task-'))
     ? adaptLanguageScale(result,input.description??'',frenchTask?'fr':undefined) : result
   assertValidRecommendation(formatted, Boolean(input.includeAdditionalCandidates))
   return formatted

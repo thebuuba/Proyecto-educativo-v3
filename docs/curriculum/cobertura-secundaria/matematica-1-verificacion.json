@@ -1,0 +1,351 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "base": "http://localhost:8787",
+  "grade": 1,
+  "verification": "AUTHENTICATED_HTTP_DB_AND_EDITOR_ADAPTERS_NOT_VISUAL",
+  "savedEvidence": [
+    {
+      "type": "rubrica",
+      "total": 20,
+      "activityId": "34511008-b17b-4bb8-af98-9425c368b123",
+      "instrumentHash": "ed663457323ce566032350254060076cfd4fad598834e4490e5954621e5f4650",
+      "snapshotId": "d7450e47-7545-425f-a7d2-4b5061313eee",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+      }
+    },
+    {
+      "type": "lista-cotejo",
+      "total": 17.35,
+      "activityId": "d0049da1-508c-4034-b211-86fd531ebd47",
+      "instrumentHash": "59b18b32a858c900cc3d421f7579c89428bd8e7145e2a9ee738375fc0bd56d59",
+      "snapshotId": "267b0763-030d-4bec-b00d-16339cfcbe8d",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+      }
+    },
+    {
+      "type": "escala",
+      "total": 20,
+      "activityId": "74182b48-5692-49a7-a7fe-e7967f35aec7",
+      "instrumentHash": "0f36a754fc32ba19031919ccabf622109fe7bc24700428c711db32963d9f3432",
+      "snapshotId": "b1a87508-9804-401f-b72f-9e40d9a0e45c",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+      }
+    },
+    {
+      "type": "lista-ponderada",
+      "total": 17.35,
+      "activityId": "1da7c4e1-9346-4ae8-8817-e5d9cca461aa",
+      "instrumentHash": "e0ed64a38403987fc67f85d6d5c276fa63a1fbf6eee5145a2895442a78d60066",
+      "snapshotId": "2808735a-06db-46a1-9dea-2ab97d10f888",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+      }
+    }
+  ],
+  "timings": [
+    {
+      "path": "/health",
+      "status": 200,
+      "ms": 802
+    },
+    {
+      "path": "/auth/login",
+      "status": 201,
+      "ms": 2079
+    },
+    {
+      "path": "/activities/center",
+      "status": 200,
+      "ms": 21871
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 4077
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 5423
+    },
+    {
+      "path": "/health",
+      "status": 200,
+      "ms": 684
+    },
+    {
+      "path": "/auth/login",
+      "status": 201,
+      "ms": 3126
+    },
+    {
+      "path": "/activities/center",
+      "status": 200,
+      "ms": 24811
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 6911
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 6156
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 7207
+    },
+    {
+      "path": "/activities?sectionSubjectId=7a192307-6f5d-4aac-8e6d-969cf2fbfc12",
+      "status": 200,
+      "ms": 2717
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 7831
+    },
+    {
+      "path": "/activities?sectionSubjectId=7a192307-6f5d-4aac-8e6d-969cf2fbfc12",
+      "status": 200,
+      "ms": 2665
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7261
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 7398
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 6244
+    },
+    {
+      "path": "/activities?sectionSubjectId=7a192307-6f5d-4aac-8e6d-969cf2fbfc12",
+      "status": 200,
+      "ms": 3503
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 5644
+    },
+    {
+      "path": "/activities?sectionSubjectId=7a192307-6f5d-4aac-8e6d-969cf2fbfc12",
+      "status": 200,
+      "ms": 2977
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7037
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 5441
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 7184
+    },
+    {
+      "path": "/activities?sectionSubjectId=7a192307-6f5d-4aac-8e6d-969cf2fbfc12",
+      "status": 200,
+      "ms": 4738
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 6095
+    },
+    {
+      "path": "/activities?sectionSubjectId=7a192307-6f5d-4aac-8e6d-969cf2fbfc12",
+      "status": 200,
+      "ms": 5022
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 6345
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 7224
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 7529
+    },
+    {
+      "path": "/activities?sectionSubjectId=7a192307-6f5d-4aac-8e6d-969cf2fbfc12",
+      "status": 200,
+      "ms": 3985
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 6183
+    },
+    {
+      "path": "/activities?sectionSubjectId=7a192307-6f5d-4aac-8e6d-969cf2fbfc12",
+      "status": 200,
+      "ms": 4205
+    }
+  ],
+  "browser": "PENDING",
+  "finalBuildRecheck": {
+    "at": "2026-10-16T04:16:00.410Z",
+    "reopened": 4,
+    "generated": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "catalog": "evaluation-2026.79"
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "catalog": "evaluation-2026.79"
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "catalog": "evaluation-2026.79"
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "catalog": "evaluation-2026.79"
+      }
+    ],
+    "languageRegressions": [
+      {
+        "language": "FRA",
+        "catalog": "evaluation-2026.79",
+        "curriculumVersionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+        "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+      },
+      {
+        "language": "ING",
+        "catalog": "evaluation-2026.79",
+        "curriculumVersionId": null,
+        "scopeId": null
+      }
+    ]
+  },
+  "history": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 9,
+    "preservedSnapshots": 42,
+    "newReleases": 3,
+    "newSnapshots": 4
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-Dznz5FKs.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-Dznz5FKs.js",
+        "sha256": "922de424222d8596a92443a5aed641f288d84d633f8078cd93503de928a896c1",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-DnppQflu.js",
+        "sha256": "8bed87f7ca8e404d1c5d7aa0086e3ff09b1878fd938e3c004fc4de5a3fc68246",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-DXUXOFnc.js",
+        "sha256": "6ee7bcacf1eed357e17c6793968559a10178b12b1a94ff9e95f7c8bb7c074c99",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-DdAsCPId.js",
+        "sha256": "8925056fabff337d053bb79dbde83a802a46bf19d3c6a82cd4b3a4ab0e21586b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-BKZgJ7P9.js",
+        "sha256": "b8ddced17fb5868acafdff0084e70e8df03b42fe4df1c9eb6af850b89c11f00c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "ae38befb5d6ee12e4c18c42efe61710d626569c08785226e231b90279b04f4c8",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "builds": [
+    {
+      "command": "pnpm --filter @aula/shared build",
+      "exit": 0,
+      "seconds": 1.73,
+      "log": ".wrangler/math-source/grade-1-shared-build.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "exit": 0,
+      "seconds": 5.348,
+      "log": ".wrangler/math-source/grade-1-backend-build.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "exit": 0,
+      "seconds": 14.405,
+      "log": ".wrangler/math-source/grade-1-frontend-build.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "exit": 0,
+      "seconds": 34.899,
+      "log": ".wrangler/math-source/grade-1-cloudflare-build.log"
+    }
+  ]
+}

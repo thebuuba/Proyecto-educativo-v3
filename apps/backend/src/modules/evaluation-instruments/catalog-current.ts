@@ -72,6 +72,10 @@ import {evaluationCatalogV72} from './catalog-v72'
 import {evaluationCatalogV73} from './catalog-v73'
 import {evaluationCatalogV74} from './catalog-v74'
 import {evaluationCatalogV75} from './catalog-v75'
+import {evaluationCatalogV76} from './catalog-v76'
+import {evaluationCatalogV77} from './catalog-v77'
+import {evaluationCatalogV78} from './catalog-v78'
+import {commonMathModules} from '@aula/shared'
 import {frenchGradeOneModule, frenchGradeTwoModule, frenchGradeThreeModule, frenchGradeFourModule, frenchGradeFiveModule, frenchGradeSixModule} from '@aula/shared'
 import {englishGradeSixModule,englishGradeSixGrammar,englishGradeSixLexicon,englishGradeSixStrategies,englishGradeSixGenres} from '@aula/shared'
 import {englishGradeFiveModule,englishGradeFiveGrammar,englishGradeFiveLexicon,englishGradeFiveStrategies,englishGradeFiveGenres} from '@aula/shared'
@@ -90,7 +94,8 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.76',
+  version: 'evaluation-2026.79',
+  mathCommonModules: commonMathModules,
   frenchInteractionEvidencePolicy: 'EXPLICIT_QUESTIONS_RESPONSES_RESIDENCE_AND_EXCHANGED_ROLES_V1',
   frenchModules: [frenchGradeOneModule, frenchGradeTwoModule, frenchGradeThreeModule, frenchGradeFourModule, frenchGradeFiveModule, frenchGradeSixModule],
   firstGradeReadingReportModule,
@@ -178,8 +183,11 @@ export const evaluationCatalogCurrent = {
   secondGradeLanguageFeatures,
   secondGradeLanguagePolicy:'PROCEDURAL_DETAILS_COMPREHENSION_PRODUCTS_AND_FAMILIES_V2',
 }
-export type EvaluationCatalog = typeof evaluationCatalogV1 & { frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
+export type EvaluationCatalog = typeof evaluationCatalogV1 & { mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV76.version)return evaluationCatalogV76
+  if(version===evaluationCatalogV77.version)return evaluationCatalogV77
+  if(version===evaluationCatalogV78.version)return evaluationCatalogV78
   if(version===evaluationCatalogV75.version)return evaluationCatalogV75
   if(version===evaluationCatalogV74.version)return evaluationCatalogV74
   if(version===evaluationCatalogV73.version)return evaluationCatalogV73

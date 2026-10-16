@@ -1,0 +1,521 @@
+[
+  {
+    "id": "integers",
+    "description": "Calcula operaciones con números enteros.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Lee y escribe los enteros dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "reading",
+          "notation"
+        ]
+      },
+      {
+        "description": "Ordena los enteros indicados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "ordering"
+        ]
+      },
+      {
+        "description": "Analiza los errores de las operaciones con enteros.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rationals",
+    "description": "Resuelve ejercicios con fracciones y explica el procedimiento.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Representa fracciones en la recta numérica.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Explica cómo operar fracciones. No calcules resultados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Suma fraciones.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "absolute",
+    "description": "Calcula el valor absoluto de números racionales.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Compara el valor absoluto de los números dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "comparison"
+        ]
+      },
+      {
+        "description": "Analiza el error del valor absoluto calculado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "percent",
+    "description": "Resuelve problemas de porcentajes con los datos dados.",
+    "activity": "PROBLEM_SOLVING",
+    "variants": [
+      {
+        "description": "Modeliza la relación entre el porcentaje y las cantidades de la situación dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "model"
+        ]
+      },
+      {
+        "description": "Analiza los errores del cálculo de porcentajes.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      },
+      {
+        "description": "Calcula porcentages.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "simple-interest",
+    "description": "Calcula el interés simple de la situación dada.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Explica la relación entre capital, tasa y tiempo del interés simple.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Modeliza el interés simple con los datos dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "model"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "compound-interest",
+    "description": "Explica el procedimiento del interés compuesto sin calcular resultados.",
+    "activity": "ANALYSIS",
+    "variants": [
+      {
+        "description": "Calcula el interés compuesto indicado.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Compara interés simple y compuesto.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "comparison"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tax",
+    "description": "Resuelve problemas sobre impuestos.",
+    "activity": "PROBLEM_SOLVING",
+    "variants": [
+      {
+        "description": "Investiga el origen de los impuestos.",
+        "activity": "RESEARCH",
+        "requiredActions": [
+          "inquiry"
+        ]
+      },
+      {
+        "description": "Analiza los errores del impuesto calculado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      },
+      {
+        "description": "Explica el origen de los impuestos.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "economy",
+    "description": "Investiga el origen del concepto de economía y clasifica sus principales áreas.",
+    "activity": "RESEARCH",
+    "variants": [
+      {
+        "description": "Elabora un proyecto de acciones económicas y emprendimiento sostenible con los recursos dados.",
+        "activity": "PROJECT",
+        "requiredActions": [
+          "model"
+        ]
+      },
+      {
+        "description": "Analiza los recursos de las acciones económicas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "analysis"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lines",
+    "description": "Construye rectas paralelas y perpendiculares.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Clasifica las rectas dadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Explica las relaciones entre rectas paralelas y perpendiculares.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Clasifica las rectas secantes dadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "angles",
+    "description": "Calcula el complemento y suplemento de los ángulos dados.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Construye la bisectriz del ángulo dado.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Explica cómo hallar el complemento de los ángulos dados sin calcularlo.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pythagoras",
+    "description": "Resuelve problemas aplicando el teorema de Pitágoras y comprueba los resultados.",
+    "activity": "PROBLEM_SOLVING",
+    "variants": [
+      {
+        "description": "Demuestra el teorema de Pitágoras.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la aplicación del teorema de Pitágoras.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prisms",
+    "description": "Calcula el área y el volumen de los prismas dados.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Identifica las aristas y vértices del prisma dado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Resuelve problemas de volumen de cuerpos formados por varios prismas rectos.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pyramids",
+    "description": "Explica cómo calcular el volumen de una pirámide.",
+    "activity": "ANALYSIS",
+    "variants": [
+      {
+        "description": "Calcula el volumen de las pirámides dadas.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Representa la base y la altura de la pirámide indicada.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Identifica las aristas y vértices de la pirámide dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "capacity",
+    "description": "Interpreta la capacidad de los recipientes y su relación con el volumen.",
+    "activity": "ANALYSIS",
+    "variants": [
+      {
+        "description": "Estima la capacidad de los recipientes dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "estimation"
+        ]
+      },
+      {
+        "description": "Explica la equivalencia entre el litro y el decímetro cúbico.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "units",
+    "description": "Convierte las unidades cúbicas indicadas.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Identifica las unidades de medida del sistema inglés.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Analiza los errores en la conversión de unidades cúbicas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mass",
+    "description": "Convierte de toneladas a gramos y kilogramos en los ejercicios dados.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Estima las medidas de masa indicadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "estimation"
+        ]
+      },
+      {
+        "description": "Explica cómo convertir toneladas a kilogramos sin calcular resultados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "time",
+    "description": "Elabora un cronograma con los tiempos dados y compara su duración.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Estima la duración de las actividades indicadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "estimation"
+        ]
+      },
+      {
+        "description": "Convierte las unidades de tiempo dadas.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "temperature",
+    "description": "Identifica las temperaturas indicadas en los termómetros dados.",
+    "activity": "ANALYSIS",
+    "variants": [
+      {
+        "description": "Lee las temperaturas indicadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "reading"
+        ]
+      },
+      {
+        "description": "Compara las temperaturas de los termómetros dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "comparison"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "coordinates",
+    "description": "Representa los puntos dados en el plano cartesiano.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Interpreta las coordenadas de los puntos dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      },
+      {
+        "description": "Analiza el error en la posición de los puntos del plano cartesiano.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "statistics",
+    "description": "Construye e interpreta el histograma de los datos agrupados proporcionados.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Recolecta y organiza los datos agrupados de la situación indicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "collection",
+          "organization"
+        ]
+      },
+      {
+        "description": "Analiza los errores del histograma dado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      },
+      {
+        "description": "Interpreta el histograma y la media de los datos proporcionados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "central",
+    "description": "Calcula la media, la mediana y la moda de los datos dados.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Interpreta la media, mediana y moda dadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      },
+      {
+        "description": "Explica cómo calcular la mediana sin calcularla.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "probability",
+    "description": "Construye el espacio muestral y calcula la probabilidad de un evento simple.",
+    "activity": "EXERCISE_SET",
+    "variants": [
+      {
+        "description": "Interpreta la probabilidad del evento simple dado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      },
+      {
+        "description": "Analiza los errores del espacio muestral dado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  }
+]

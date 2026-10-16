@@ -1,9 +1,12 @@
 import { resolveCommonFrenchTask, commonFrenchSelections } from '@aula/shared'
+import {resolveCommonMathTask,commonMathSelections} from '@aula/shared'
 import {languageInstrumentIntent,commonSecondaryEnglish,resolveCommonEnglishTask,commonEnglishSelections, type InstrumentAcademicContext, type InstrumentType} from '@aula/shared'
 
 const observational = new Set(['NEWS_ANALYSIS','TOURIST_GUIDE_ANALYSIS','POSTER_ANALYSIS','READING_REPORT_ANALYSIS','DETECTIVE_STORY_ANALYSIS','CALLIGRAM_ANALYSIS','PORTFOLIO','OBSERVATION','LISTENING_COMPREHENSION'])
 /** Local equivalent of the installed catalog rules; cross-layer tests cover every catalog type. */
 export function automaticInstrumentType(activityType: string, context?: InstrumentAcademicContext | null, maxScore?: number | null, description = ''): InstrumentType {
+  const math=resolveCommonMathTask('',description,context)
+  if(math)return commonMathSelections(math,description).suggestedInstrumentType
   const intent = context?.level === 'SECONDARY' && (context.subjectCode === 'LEN'||commonSecondaryEnglish(context)) ? languageInstrumentIntent(description) : undefined
   if (intent) return intent
   const french=resolveCommonFrenchTask('',description,context)

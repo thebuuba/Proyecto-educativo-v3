@@ -66,6 +66,7 @@ import {
   InstrumentCapacityError,
   detectTeachingStrategy,
   resolveCommonFrenchTask,
+  resolveCommonMathTask,
   resolveTeachingStrategy,
   TaskRequirementError,
   detectSecondaryLanguageActivity,
@@ -311,9 +312,10 @@ export function ActivityCreationView(props: {
           onChangeDraftRef.current(next)
         }
       }
-      // French selections are already deterministic locally. Recommendation resolves
+      // Recognized French and mathematics selections are deterministic locally. Recommendation resolves
       // the same authorized curriculum and validates its catalog on the server.
-      if (resolveCommonFrenchTask(activityDraft.name, activityDescriptionText(activityDraft.description), props.instrumentAcademicContext)) {
+      if (resolveCommonFrenchTask(activityDraft.name, activityDescriptionText(activityDraft.description), props.instrumentAcademicContext)
+        || resolveCommonMathTask(activityDraft.name, activityDescriptionText(activityDraft.description), props.instrumentAcademicContext)) {
         setInterpretation(null)
         return
       }

@@ -264,3 +264,4 @@ export { teachingStrategies, teachingStrategyCatalogVersion, resolveTeachingStra
 export type { TeachingStrategy, TeachingStrategyOrigin, TeachingStrategyContext } from './teaching-strategies'
 
 export * from './secondary-french'
+export * from './secondary-math-common'
