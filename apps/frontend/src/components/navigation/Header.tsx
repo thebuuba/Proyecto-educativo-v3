@@ -259,7 +259,7 @@ export function Header({ onOpenSidebar, isSidebarExpanded, onToggleSidebar }: He
                 </div>
 
                 <Link
-                  to="/perfil"
+                  to="/configuracion?tab=cuenta"
                   className="mt-4 inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground hover:bg-primary-hover"
                   onClick={() => setProfileOpen(false)}
                 >

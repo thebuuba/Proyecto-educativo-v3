@@ -171,7 +171,7 @@ export function Sidebar({ isOpen, isExpanded, onClose }: SidebarProps) {
           {mainRoutes.map(renderLink)}
         </nav>
         <div className="sidebar-footer">
-          {renderLink(routes.find((item) => item.path === '/configuracion') ?? { path: '/perfil', label: 'Configuración', icon: Settings, allowedRoles: [] })}
+          {renderLink(routes.find((item) => item.path === '/configuracion') ?? { path: '/configuracion', label: 'Configuración', icon: Settings, allowedRoles: [] })}
           <button
             type="button"
             onClick={() => {

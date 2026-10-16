@@ -138,7 +138,7 @@ export function SchoolAdministrationPage() {
       }} />
       <div className="mt-10 w-full min-w-0 space-y-4 border-t border-border/70 pt-5">
         <div className="flex flex-wrap gap-3 text-sm">
-          <Link className="text-primary-variant underline underline-offset-4" to="/perfil">
+          <Link className="text-primary-variant underline underline-offset-4" to="/configuracion?tab=cuenta">
             Mi cuenta de AulaBase
           </Link>
           {canManageSchool
