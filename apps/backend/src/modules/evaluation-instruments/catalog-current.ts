@@ -70,7 +70,8 @@ import {evaluationCatalogV70} from './catalog-v70'
 import {evaluationCatalogV71} from './catalog-v71'
 import {evaluationCatalogV72} from './catalog-v72'
 import {evaluationCatalogV73} from './catalog-v73'
-import {frenchGradeOneModule, frenchGradeTwoModule, frenchGradeThreeModule, frenchGradeFourModule, frenchGradeFiveModule} from '@aula/shared'
+import {evaluationCatalogV74} from './catalog-v74'
+import {frenchGradeOneModule, frenchGradeTwoModule, frenchGradeThreeModule, frenchGradeFourModule, frenchGradeFiveModule, frenchGradeSixModule} from '@aula/shared'
 import {englishGradeSixModule,englishGradeSixGrammar,englishGradeSixLexicon,englishGradeSixStrategies,englishGradeSixGenres} from '@aula/shared'
 import {englishGradeFiveModule,englishGradeFiveGrammar,englishGradeFiveLexicon,englishGradeFiveStrategies,englishGradeFiveGenres} from '@aula/shared'
 import {englishGradeFourModule,englishGradeFourGrammar,englishGradeFourLexicon,englishGradeFourStrategies,englishGradeFourGenres} from '@aula/shared'
@@ -88,8 +89,8 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.74',
-  frenchModules: [frenchGradeOneModule, frenchGradeTwoModule, frenchGradeThreeModule, frenchGradeFourModule, frenchGradeFiveModule],
+  version: 'evaluation-2026.75',
+  frenchModules: [frenchGradeOneModule, frenchGradeTwoModule, frenchGradeThreeModule, frenchGradeFourModule, frenchGradeFiveModule, frenchGradeSixModule],
   firstGradeReadingReportModule,
   readingReportSourcePolicy:'REQUESTED_SOURCE_WITHOUT_ASSUMED_LITERARY_TEXT_OR_RESEARCH_V1',
   taskRequirementPolicy:'EXPLICIT_NATURAL_REQUESTS_MIXED_MODALITY_DELIVERY_V1',
@@ -177,6 +178,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV74.version)return evaluationCatalogV74
   if(version===evaluationCatalogV73.version)return evaluationCatalogV73
   if(version===evaluationCatalogV72.version)return evaluationCatalogV72
   if(version===evaluationCatalogV71.version)return evaluationCatalogV71

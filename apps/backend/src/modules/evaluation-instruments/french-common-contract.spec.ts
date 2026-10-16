@@ -5,8 +5,9 @@ import grade2 from '../../../../../data/evaluation-instruments/french-grade-2-co
 import grade3 from '../../../../../data/evaluation-instruments/french-grade-3-contracts.json'
 import grade4 from '../../../../../data/evaluation-instruments/french-grade-4-contracts.json'
 import grade5 from '../../../../../data/evaluation-instruments/french-grade-5-contracts.json'
+import grade6 from '../../../../../data/evaluation-instruments/french-grade-6-contracts.json'
 
-const grades = [{ grade: 2, fixtures: grade2, prior: 'evaluation-2026.70' }, { grade: 3, fixtures: grade3, prior: 'evaluation-2026.71' }, { grade: 4, fixtures: grade4, prior: 'evaluation-2026.72' }, { grade: 5, fixtures: grade5, prior: 'evaluation-2026.73' }]
+const grades = [{ grade: 2, fixtures: grade2, prior: 'evaluation-2026.70' }, { grade: 3, fixtures: grade3, prior: 'evaluation-2026.71' }, { grade: 4, fixtures: grade4, prior: 'evaluation-2026.72' }, { grade: 5, fixtures: grade5, prior: 'evaluation-2026.73' }, { grade: 6, fixtures: grade6, prior: 'evaluation-2026.74' }]
 const formats = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const
 for (const { grade, fixtures, prior } of grades) describe(`Francés común ${grade}.º: contenido y regresiones`, () => {
   const context = { level: 'SECONDARY' as const, grade, cycle: grade <= 3 ? 1 : 2, modalityCode: 'academic', subjectCode: 'FRA', subjectName: 'Francés', optativeExitName: null }
@@ -126,5 +127,25 @@ for (const { grade, fixtures, prior } of grades) describe(`Francés común ${gra
   if (grade === 5) it('una respuesta no obliga a crear otra invitación y una conjunción no impone gramática', () => {
     const p = recommend({ activityTitle: 'Actividad', description: 'Écrivez une réponse pour refuser une invitation en français, mais sans dialogue oral.', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
     expect(p.criteria.map(c => c.templateId)).toEqual(['fra-5-invitation-response', 'fra-5-written'])
+  })
+  if (grade === 6) for (const [description, id] of [
+    ['Réservez une table en français.', 'reservation'], ['Commandez un plat en français.', 'order'],
+    ["Payez l'addition en français.", 'payment'], ['Racontez oralement une expérience vécue en français.', 'experience'],
+    ['Escribe una carta sobre un viaje en francés.', 'letter'], ['Escribe una invitación en francés.', 'invitation'],
+    ['Escribe vocabulario de alojamiento en francés.', 'lexicon-lodging'],
+    ['Écrivez le vocabulaire des couverts en français.', 'lexicon-utensils'],
+    ['Escribe vocabulario de cantidades en francés.', 'lexicon-quantities'],
+    ['Escribe vocabulario de servicios de transporte en francés.', 'lexicon-transport'],
+    ['Escribe vocabulario de estudios en francés.', 'lexicon-school'],
+    ['Escribe vocabulario de opiniones en francés.', 'lexicon-opinion'],
+  ]) it(`contenido específico: ${id}`, () => {
+    const p = recommend({ activityTitle: 'Actividad', description, maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(p.criteria.some(c => c.templateId === `fra-${grade}-${id}`)).toBe(true)
+  })
+  if (grade === 6) it('no inventa un programa gramatical de pasado ni impone reserva o pago a un pedido', () => {
+    const p = recommend({ activityTitle: 'Actividad', description: 'Escribe en francés una experiencia usando el passé composé.', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(p.criteria.map(c => c.templateId)).toEqual(['fra-6-experience', 'fra-6-written'])
+    const order = recommend({ activityTitle: 'Actividad', description: 'Commandez un plat en français.', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(order.criteria.map(c => c.templateId)).toEqual(['fra-6-order'])
   })
 })

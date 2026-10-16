@@ -21,7 +21,7 @@ export const frenchReceptive = (mode: FrenchMode) => mode === 'reading' || mode 
 export const frenchWritten = (mode: FrenchMode) => mode === 'writing' || mode === 'written-interaction'
 export const frenchOral = (mode: FrenchMode) => mode === 'oral' || mode === 'oral-interaction'
 export const frenchSource = (mode: FrenchMode) => mode === 'listening' ? 'mensaje escuchado' : 'texto leído'
-const actionVerb = '(?:lee|lean|leer(?:an)?|lisez|lire|lisent|escuch\\w*|ecoutez|ecouter|ecoutent|escrib\\w*|redact\\w*|ecrivez|ecrire|ecrivent|redigez|rediger|present\\w*|presentez|presenter|presentent|describ\\w*|decrivez|decrire|decrivent|convers\\w*|dialog\\w*|echangez|echanger|echangent|achetez|acheter|achetent|demandez|demander|solicita\\w*|exprimez|exprimer|expresa\\w*|invitez|inviter|acceptez|accepter|refusez|refuser|acepta\\w*|rechaz\\w*|invita\\w*|donnez|donner|prohibe\\w*|interdisez|interdire)'
+const actionVerb = '(?:lee|lean|leer(?:an)?|lisez|lire|lisent|escuch\\w*|ecoutez|ecouter|ecoutent|escrib\\w*|redact\\w*|ecrivez|ecrire|ecrivent|redigez|rediger|present\\w*|presentez|presenter|presentent|describ\\w*|decrivez|decrire|decrivent|convers\\w*|dialog\\w*|echangez|echanger|echangent|achetez|acheter|achetent|demandez|demander|solicita\\w*|exprimez|exprimer|expresa\\w*|invitez|inviter|acceptez|accepter|refusez|refuser|acepta\\w*|rechaz\\w*|invita\\w*|donnez|donner|prohibe\\w*|interdisez|interdire|reserv\\w*|commande\\w*|pedir|pide\\w*|paga\\w*|paye\\w*|racontez|raconter|relatez|relata\\w*)'
 const independent = new RegExp(`(?:[.;\\n]\\s*|\\s+(?:y|et|luego|despues|puis|ensuite)\\s+)(?=(?:(?:luego|despues|puis|ensuite)[, ]+)?(?:(?:los estudiantes|cada estudiante|les eleves)\\s+)?${actionVerb}\\b)`, 'g')
 
 function modeOf(text: string): FrenchMode | null {
@@ -74,7 +74,8 @@ export function parseFrenchTask(title: string, description: string, grade: numbe
     }
   }
   if (!actions.length) return null
-  const primary = actions.filter(action => !frenchReceptive(action.mode)).at(-1) ?? actions.at(-1)!
+  // A dependent request without a modality cannot override an explicit dialogue/written task.
+  const primary = actions.filter(action => !frenchReceptive(action.mode) && (action.mode !== 'unspecified' || action.alternatives)).at(-1) ?? actions.at(-1)!
   const activities: Record<FrenchMode, string> = { reading: 'READING_COMPREHENSION', listening: 'LISTENING_COMPREHENSION', oral: 'ORAL_PRESENTATION', writing: 'WRITTEN_PRODUCTION', 'oral-interaction': 'ORAL_INTERACTION', 'written-interaction': 'WRITTEN_PRODUCTION', unspecified: 'OTHER' }
   return { grade, actions, activityType: activities[primary.mode], technique: frenchReceptive(primary.mode) || frenchWritten(primary.mode) ? 'analisis-producciones' : primary.mode.includes('interaction') ? 'observacion-directa' : primary.mode === 'oral' ? 'presentacion' : 'observacion-sistematica' }
 }
