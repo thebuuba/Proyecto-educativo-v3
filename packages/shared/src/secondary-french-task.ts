@@ -21,7 +21,7 @@ export const frenchReceptive = (mode: FrenchMode) => mode === 'reading' || mode 
 export const frenchWritten = (mode: FrenchMode) => mode === 'writing' || mode === 'written-interaction'
 export const frenchOral = (mode: FrenchMode) => mode === 'oral' || mode === 'oral-interaction'
 export const frenchSource = (mode: FrenchMode) => mode === 'listening' ? 'mensaje escuchado' : 'texto leído'
-const actionVerb = '(?:lee|lean|leer(?:an)?|lisez|lire|lisent|escuch\\w*|ecoutez|ecouter|ecoutent|escrib\\w*|redact\\w*|ecrivez|ecrire|ecrivent|redigez|rediger|present\\w*|presentez|presenter|presentent|describ\\w*|decrivez|decrire|decrivent|convers\\w*|dialog\\w*|echangez|echanger|echangent)'
+const actionVerb = '(?:lee|lean|leer(?:an)?|lisez|lire|lisent|escuch\\w*|ecoutez|ecouter|ecoutent|escrib\\w*|redact\\w*|ecrivez|ecrire|ecrivent|redigez|rediger|present\\w*|presentez|presenter|presentent|describ\\w*|decrivez|decrire|decrivent|convers\\w*|dialog\\w*|echangez|echanger|echangent|achetez|acheter|achetent|demandez|demander|solicita\\w*|exprimez|exprimer|expresa\\w*)'
 const independent = new RegExp(`(?:[.;\\n]\\s*|\\s+(?:y|et|luego|despues|puis|ensuite)\\s+)(?=(?:(?:luego|despues|puis|ensuite)[, ]+)?(?:(?:los estudiantes|cada estudiante|les eleves)\\s+)?${actionVerb}\\b)`, 'g')
 
 function modeOf(text: string): FrenchMode | null {

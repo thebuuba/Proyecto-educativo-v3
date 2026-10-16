@@ -28,6 +28,7 @@ const assets = []
 for (const path of [...new Set([localEntry, ...relevant.map(name => '/assets/' + name), '/sw.js'])]) {
   const response = await request(path), bytes = Buffer.from(await response.arrayBuffer())
   assert.equal(digest(bytes), digest(readFileSync(dist + path)), path + ' differs from build')
+  assert(!bytes.includes('Preparando el instrumento de evaluación'), 'Removed preparation announcement remains in a served asset')
   if (path === localEntry) { assert(bytes.includes(project)); assert(!bytes.includes('vqrptqffeezqacwtmlqq')); assert(!bytes.includes(env.SUPABASE_SERVICE_ROLE_KEY)) }
   assets.push({ path, sha256: digest(bytes), cacheControl: response.headers.get('cache-control') })
 }

@@ -16,6 +16,7 @@ const { prisma } = require('@aula/database')
 const grade = Number(process.argv[2] ?? 1)
 const recheck = process.argv.includes('--recheck')
 const representative = process.argv.includes('--representative')
+const persistenceOnly = process.argv.includes('--persistence-only')
 const sourceLinked = process.argv.includes('--source-linked')
 const resume = process.argv.includes('--resume-verified')
 const prefix = `.wrangler/french-source/grade-${grade}${sourceLinked ? '-linked' : ''}`
@@ -83,7 +84,7 @@ try {
   let generated = 0
   const academic = { level: 'SECONDARY', grade, subjectCode: 'FRA', subjectName: 'Francés' }
   for (const [fixtureIndex, f] of fixtures.entries()) {
-    if (sourceLinked && !recheck) continue // Separate linked snapshots; rechecks still exercise service/local parity.
+    if ((sourceLinked || persistenceOnly) && !recheck) continue // Four direct proposals; the complete language matrix is automated.
     if (recheck && fixtureIndex !== 0 && f.id !== 'mixta-independiente') continue
     const interpreted = (await request('/evaluation-instruments/interpret', { sectionSubjectId: context.sectionSubjectId, activityTitle: 'QA Francés · ' + f.id, description: f.description, competencyBlock: 'b1' })).data
     assert.equal(interpreted.suggestedActivityType, f.activity, f.id)
@@ -145,6 +146,7 @@ try {
     assert.equal(original.teachingStrategyId, detected.id)
     assert.equal(original.instrumentCriteria[`${type}:description:0`], fields[`${type}:description:0`])
     const before = definition(original)
+    progress.writes.at(-1).originalInstrumentHash = hash(before); checkpoint()
     const { creationId, ...edit } = input
     const changed = (await request('/activities', { ...edit, id: saved.id, instrumentId: saved.instrumentId, teachingStrategyId: 'CASE_STUDY', teachingStrategyOrigin: 'MANUAL' })).data
     assert.equal(changed.teachingStrategyId, 'CASE_STUDY')
@@ -174,7 +176,7 @@ try {
     writeFileSync(`${prefix}-http.json`, JSON.stringify(report, null, 2) + '\n')
     console.log(JSON.stringify({ phase: 'final-build-recheck', grade, generated, reopenedUnchanged: report.savedEvidence.length }))
   } else {
-    const report = { project, base, grade, subject: 'FRA', verification: 'AUTHENTICATED_HTTP_AND_DATABASE_NOT_BROWSER', scoreCoverage: sourceLinked ? 'FOUR_LINKED_FORMATS; PRIOR_MATRIX_PRESERVED' : representative ? 'BOTH_TOTALS_ACROSS_CASES; FULL_CARTESIAN_MATRIX_AUTOMATED' : 'BOTH_TOTALS_EACH_CASE', interpreted: sourceLinked ? 0 : fixtures.length, generated, savedEvidence, transientFailures, browser: 'PENDING' }
+    const report = { project, base, grade, subject: 'FRA', verification: 'AUTHENTICATED_HTTP_AND_DATABASE_NOT_BROWSER', scoreCoverage: sourceLinked ? 'FOUR_LINKED_FORMATS; PRIOR_MATRIX_PRESERVED' : persistenceOnly ? 'FOUR_FORMATS_BOTH_TOTALS; LANGUAGE_MATRIX_AUTOMATED' : representative ? 'BOTH_TOTALS_ACROSS_CASES; FULL_CARTESIAN_MATRIX_AUTOMATED' : 'BOTH_TOTALS_EACH_CASE', interpreted: sourceLinked || persistenceOnly ? 0 : fixtures.length, generated, persistenceRecommendations: formats.length, savedEvidence, transientFailures, browser: 'PENDING' }
     writeFileSync(`${prefix}-http.json`, JSON.stringify(report, null, 2) + '\n')
     writeFileSync(`${prefix}-examples.json`, JSON.stringify(examples, null, 2) + '\n')
     progress.phase = 'COMPLETE'; checkpoint()

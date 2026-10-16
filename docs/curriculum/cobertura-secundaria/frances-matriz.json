@@ -1475,7 +1475,7 @@
         "document": "frances-inventario.md",
         "section": "Grado 1",
         "officialText": "officialRecords",
-        "adaptation": "Not implemented"
+        "adaptation": "Patrones acotados conectados; consultar frances-1.md y sus límites de verificación."
       }
     },
     {
@@ -2726,7 +2726,7 @@
         "document": "frances-inventario.md",
         "section": "Grado 2",
         "officialText": "officialRecords",
-        "adaptation": "Not implemented"
+        "adaptation": "Patrones acotados conectados; consultar frances-2.md y sus límites de verificación."
       }
     },
     {
@@ -3793,7 +3793,7 @@
         "document": "frances-inventario.md",
         "section": "Grado 3",
         "officialText": "officialRecords",
-        "adaptation": "Not implemented"
+        "adaptation": "Patrones acotados conectados; consultar frances-3.md y sus límites de verificación."
       }
     },
     {
@@ -4820,22 +4820,29 @@
         ]
       },
       "coverage": {
-        "inventory": "VISUALLY_VERIFIED",
-        "implementation": "PENDING",
-        "providers": [],
-        "automated": "NOT_RUN",
-        "httpDatabase": "NOT_RUN",
-        "browser": "NOT_RUN",
-        "evidence": [],
+        "inventory": "VISUALLY_REVIEWED",
+        "implementation": "CONNECTED_DEFINED_PATTERNS",
+        "providers": [
+          "frances-comunicacion-4"
+        ],
+        "catalog": "evaluation-2026.73",
+        "automated": "PASSED: 470 backend French / 403 frontend French, including previous grades",
+        "httpDatabase": "PASSED: 0 interpretations, 0 matrix recommendations, 4 persistence recommendations, 4 formats saved/edited/reopened; final recheck 4",
+        "browser": "PENDING_ISOLATED_QA_BROWSER_UNAVAILABLE",
+        "evidence": [
+          "frances-4.md",
+          "frances-4-ejemplos.md",
+          "frances-4-verificacion.json"
+        ],
         "pending": [
-          "Implement and verify in grade order."
+          "Recorrido visual QA en sesión separada; patrones lingüísticos acotados, sin comprensión universal."
         ]
       },
       "pedagogicalInventory": {
         "document": "frances-inventario.md",
         "section": "Grado 4",
         "officialText": "officialRecords",
-        "adaptation": "Not implemented"
+        "adaptation": "Patrones acotados conectados; consultar frances-4.md y sus límites de verificación."
       }
     },
     {

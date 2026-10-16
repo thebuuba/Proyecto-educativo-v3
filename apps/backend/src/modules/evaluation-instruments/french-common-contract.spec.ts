@@ -3,8 +3,9 @@ import { recommend } from './recommendation-engine'
 import { evaluationCatalogForVersion } from './catalog-current'
 import grade2 from '../../../../../data/evaluation-instruments/french-grade-2-contracts.json'
 import grade3 from '../../../../../data/evaluation-instruments/french-grade-3-contracts.json'
+import grade4 from '../../../../../data/evaluation-instruments/french-grade-4-contracts.json'
 
-const grades = [{ grade: 2, fixtures: grade2, prior: 'evaluation-2026.70' }, { grade: 3, fixtures: grade3, prior: 'evaluation-2026.71' }]
+const grades = [{ grade: 2, fixtures: grade2, prior: 'evaluation-2026.70' }, { grade: 3, fixtures: grade3, prior: 'evaluation-2026.71' }, { grade: 4, fixtures: grade4, prior: 'evaluation-2026.72' }]
 const formats = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const
 for (const { grade, fixtures, prior } of grades) describe(`Francés común ${grade}.º: contenido y regresiones`, () => {
   const context = { level: 'SECONDARY' as const, grade, cycle: grade <= 3 ? 1 : 2, modalityCode: 'academic', subjectCode: 'FRA', subjectName: 'Francés', optativeExitName: null }
@@ -73,5 +74,34 @@ for (const { grade, fixtures, prior } of grades) describe(`Francés común ${gra
   if (grade === 3) it('un ejercicio de vocabulario no exige producir un informe del clima', () => {
     const p = recommend({ activityTitle: 'Actividad', description: 'Écrivez le vocabulaire des phénomènes atmosphériques en français.', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
     expect(p.criteria.map(c => c.templateId)).toEqual(['fra-3-lexicon-weather', 'fra-3-written'])
+  })
+  if (grade === 4) for (const [description, id] of [
+    ['Escribe información personal en francés.', 'personal'],
+    ['Escribe vocabulario de síntomas en francés.', 'lexicon-health'],
+    ['Écrivez le vocabulaire des vêtements en français.', 'lexicon-clothes'],
+    ['Escribe vocabulario de formas de pago en francés.', 'lexicon-payment'],
+    ['Escribe vocabulario de partes del cuerpo en francés.', 'lexicon-body'],
+    ['Utiliza en francés los artículos partitivos.', 'grammar-partitives'],
+    ['Identifica los artículos contractos en el texto francés.', 'grammar-contracted'],
+    ['Utiliza los pronombres interrogativos en francés.', 'grammar-pronouns'],
+    ['Identifica la negación ne…jamais en el texto francés.', 'grammar-negation'],
+    ['Escribe en francés usando demostrativos.', 'grammar-demonstratives'],
+    ['Utiliza en francés la posición del adjetivo solicitada.', 'grammar-adjective-position'],
+    ['Identifica en el texto francés los adverbios de frecuencia.', 'grammar-adverbs'],
+    ['Escribe una solicitud de compra en francés e indica cómo pagar.', 'payment'],
+    ['Escribe una solicitud de compra en francés e indica el precio.', 'price'],
+    ["Écrivez une demande d'achat et indiquez la quantité en français.", 'quantity'],
+    ['Achetez une chemise en français.', 'shopping'],
+    ['Exprimez les sentiments du personnage en français.', 'feelings'],
+    ['Demandez le prix en français.', 'price'],
+  ]) it(`contenido específico: ${id}`, () => {
+    const p = recommend({ activityTitle: 'Actividad', description, maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(p.criteria.some(c => c.templateId === `fra-${grade}-${id}`)).toBe(true)
+  })
+  if (grade >= 4) it('la escala de grado conserva evidencia contextual y la gramática no se confunde con frecuencia observada', () => {
+    const p = recommend({ activityTitle: 'Actividad', description: fixtures.at(-1)!.description, preferredInstrumentType: 'escala', maxScore: 17.35, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(p.criteria.every(c => c.descriptors[0].text === c.progressionLevels?.[0] && !c.descriptors[0].text.includes('todos los aspectos del indicador'))).toBe(true)
+    const grammar = recommend({ activityTitle: 'Actividad', description: 'Identifica en el texto francés los adverbios de frecuencia.', preferredInstrumentType: 'escala', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(grammar.levels[0].label).not.toBe('Siempre')
   })
 })

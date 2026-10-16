@@ -1,0 +1,14 @@
+[
+  {"id":"compras-breve","description":"Escribe en francés una solicitud de compra de una camisa.","activity":"WRITTEN_PRODUCTION","contains":["shopping","written"],"excludes":["payment","oral","health"]},
+  {"id":"sentimientos-frances","description":"Présentez oralement les sentiments du personnage en français.","activity":"ORAL_PRESENTATION","contains":["feelings","oral"],"excludes":["written","health"]},
+  {"id":"salud-desarrollada","description":"Escribe en francés un mensaje sobre los síntomas de un personaje ficticio y cómo se siente. Revisa el borrador.","activity":"WRITTEN_PRODUCTION","contains":["health","message","written","revision"],"excludes":["oral","shopping"]},
+  {"id":"servicios-mixta","description":"Décrivez par écrit les services de la ville, indicando para qué sirve cada lugar en francés.","activity":"WRITTEN_PRODUCTION","contains":["city-services","written"],"excludes":["oral","shopping"]},
+  {"id":"lectura-compras","description":"Lisez une demande d'achat en français et identifiez le produit demandé.","activity":"READING_COMPREHENSION","contains":["shopping"],"excludes":["oral","written","payment"]},
+  {"id":"escucha-necesidades","description":"Escucha en francés las necesidades físicas del personaje e identifica qué necesita.","activity":"LISTENING_COMPREHENSION","contains":["needs"],"excludes":["oral","written","shopping"]},
+  {"id":"interaccion-oral","description":"En parejas, dialoguen en francés para realizar una compra en una tienda de ropa.","activity":"ORAL_INTERACTION","contains":["shopping","interaction","oral"],"excludes":["written","payment"]},
+  {"id":"interaccion-escrita","description":"Échangez des messages écrits en français sur les sentiments du personnage.","activity":"WRITTEN_PRODUCTION","contains":["feelings","interaction","written"],"excludes":["oral"]},
+  {"id":"mixta-independiente","description":"Lee en francés la información de servicios de la ciudad. Luego escribe en francés una solicitud de compra.","activity":"WRITTEN_PRODUCTION","contains":["city-services","shopping","written"],"excludes":["oral"]},
+  {"id":"negacion","description":"Écrivez les symptômes du personnage en français. Ne faites pas de dialogue oral.","activity":"WRITTEN_PRODUCTION","contains":["health","written"],"excludes":["oral","interaction"]},
+  {"id":"alternativa","description":"Describe los sentimientos del personaje oralmente o por escrito en francés.","activity":"OTHER","contains":["alternative"],"excludes":["oral","written"]},
+  {"id":"gramatica-cortesia","description":"Escribe en francés una solicitud de compra usando el condicional de cortesía.","activity":"WRITTEN_PRODUCTION","contains":["shopping","grammar-polite-conditional","written"],"excludes":["oral","payment"]}
+]
