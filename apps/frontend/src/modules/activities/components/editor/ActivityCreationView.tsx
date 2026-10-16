@@ -600,8 +600,15 @@ export function ActivityCreationView(props: {
   ])
 
   function requestInstrumentChange(instrumentType: string) {
-    if (instrumentType === activityDraft.instrumentType) return
     manualSelections.current.instrument = Boolean(instrumentType)
+    if (instrumentType === activityDraft.instrumentType) {
+      if (activityDraft.autoSelectedInstrumentType) {
+        const next={...latestDraft.current,autoSelectedInstrumentType:false}
+        latestDraft.current=next
+        onChangeDraft(next)
+      }
+      return
+    }
     if (activityDraft.preparedManuallyEdited) {
       setPendingInstrumentType(instrumentType || '__auto__')
       return
@@ -946,6 +953,11 @@ export function ActivityCreationView(props: {
     draft = {...latestDraft.current, ...Object.fromEntries(
       Object.entries(draft).filter(([key, value]) => value !== activityDraft[key as keyof ActivityDraft]),
     )}
+    if (!draft.evaluationTechnique && draft.autoSelectedEvaluationTechnique) {
+      const scopedType=contextualLanguageGrade?detectSecondaryLanguageActivity(draft.name,activityDescriptionText(draft.description),{level:'SECONDARY',grade:contextualLanguageGrade,subjectCode:'LEN'}):null
+      const automaticTechnique=scopedType?firstSecondaryLanguageTechnique(scopedType):activityDefaultSuggestions(draft.name,activityDescriptionText(draft.description),props.instrumentAcademicContext,committedScore.current)?.technique
+      if(automaticTechnique)draft={...draft,evaluationTechnique:automaticTechnique}
+    }
     const changedInstrument = draft.instrumentType !== activityDraft.instrumentType
     const changedPedagogicalType =
       draft.pedagogicalActivityType !== activityDraft.pedagogicalActivityType
@@ -961,11 +973,11 @@ export function ActivityCreationView(props: {
       manualSelections.current.instrument = Boolean(
         draft.instrumentType && !draft.autoSelectedInstrumentType,
       )
-    if (changedPedagogicalType)
+    if (changedPedagogicalType || draft.autoDetectedPedagogicalActivityType !== activityDraft.autoDetectedPedagogicalActivityType)
       manualSelections.current.activity = Boolean(
         draft.pedagogicalActivityType && !draft.autoDetectedPedagogicalActivityType,
       )
-    if (draft.evaluationTechnique !== activityDraft.evaluationTechnique)
+    if (draft.evaluationTechnique !== activityDraft.evaluationTechnique || draft.autoSelectedEvaluationTechnique !== activityDraft.autoSelectedEvaluationTechnique)
       manualSelections.current.technique = Boolean(
         draft.evaluationTechnique && !draft.autoSelectedEvaluationTechnique,
       )
@@ -1600,7 +1612,10 @@ export function ActivityCreationView(props: {
               }}>Cancelar</Button>
               <Button variant="outline" disabled={preparing} onClick={() => {
                 const current = latestDraft.current
-                const next = {...current, pedagogicalActivityType: pendingActivityType, autoDetectedPedagogicalActivityType: !pendingActivityType, preparedManuallyEdited: true}
+                const automaticType = contextualLanguageGrade
+                  ? detectSecondaryLanguageActivity(current.name,activityDescriptionText(current.description),{level:'SECONDARY',grade:contextualLanguageGrade,subjectCode:'LEN'})
+                  : activityDefaultSuggestions(current.name,activityDescriptionText(current.description),props.instrumentAcademicContext,committedScore.current)?.activityType
+                const next = {...current, pedagogicalActivityType: pendingActivityType || automaticType || current.pedagogicalActivityType, autoDetectedPedagogicalActivityType: !pendingActivityType, preparedManuallyEdited: true}
                 const kept = {...next, preparedFingerprint: preparationFingerprint(next)}
                 manualSelections.current.activity = Boolean(pendingActivityType)
                 latestDraft.current = kept

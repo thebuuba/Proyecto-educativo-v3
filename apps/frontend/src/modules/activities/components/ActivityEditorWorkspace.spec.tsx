@@ -1,3 +1,4 @@
+import {chooseActivitySelection,activitySelectionName} from './activitySelectionTestUtils'
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { secondaryEvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
@@ -87,14 +88,14 @@ describe('independent activity editor', () => {
       return {suggestedActivityType:'WRITTEN_PRODUCTION',suggestedEvaluationTechnique:'analisis-producciones',suggestedInstrumentType:'rubrica',curriculumVersionId:null,curriculumCandidates:[]} as never
     })
     render(<ActivityEditorWorkspace {...props()} initialDraft={initial} sectionSubjectId="subject" instrumentAcademicContext={{level:'SECONDARY',grade:1,subjectCode:'ING'}} />)
-    fireEvent.change(screen.getByRole('combobox',{name:'Tipo de instrumento'}),{target:{value:''}})
+    chooseActivitySelection('Tipo de instrumento', '')
     await waitFor(()=>expect(calls).toBe(1))
     fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:description}})
     await act(async()=>{finish(initial.preparedRecommendation!);await pending})
     await waitFor(()=>expect(calls).toBeGreaterThan(1),{timeout:5000})
     const requests=post.mock.calls.filter(([path])=>path.endsWith('/recommend'))
     expect(requests.at(-1)?.[1]).toMatchObject({description,preferredInstrumentType:undefined})
-    await waitFor(()=>expect(screen.getByRole('combobox',{name:'Tipo de instrumento'})).toHaveValue('rubrica'))
+    await waitFor(()=>expect(screen.getByRole('button',{name:'Tipo de instrumento'})).toHaveTextContent(activitySelectionName('rubrica')))
   })
   it('un rechazo por capacidad después de confirmar regeneración conserva la edición manual',async()=>{
     vi.spyOn(api,'post').mockRejectedValue(new ApiError(400,'La consigna requiere 31 criterios y el instrumento admite hasta 20.'))
@@ -140,7 +141,7 @@ describe('independent activity editor', () => {
       ? Promise.resolve({suggestedActivityType: 'REPORT', activityType: 'REPORT'})
       : new Promise(resolve => { resolveResponse = resolve }))
     const view = render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" />)
-    fireEvent.change(screen.getByRole('combobox', {name: 'Tipo de actividad'}), {target: {value: 'ANALYSIS'}})
+    chooseActivitySelection('Tipo de actividad', 'ANALYSIS')
     const dialog = await screen.findByRole('dialog', {name: 'Cambiar tipo de actividad'})
     fireEvent.click(within(dialog).getByRole('button', {name: 'Adaptar instrumento'}))
     await waitFor(() => expect(resolveResponse).toBeTypeOf('function'))
@@ -150,7 +151,7 @@ describe('independent activity editor', () => {
     if (interruption === 'context') view.rerender(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="changed-subject" />)
     await act(async () => resolveResponse(adapted))
     expect(screen.getByLabelText('Criterio 1')).toHaveValue(original.preparedRecommendation.criteria[0].title)
-    expect(screen.getByRole('combobox', {name: 'Tipo de actividad'})).toHaveValue('REPORT')
+    expect(screen.getByRole('button', {name: 'Tipo de actividad'})).toHaveTextContent(activitySelectionName('REPORT'))
   })
   for (const invalid of ['forbidden', 'wrong-activity', 'wrong-format']) it(`activity adaptation preserves draft on ${invalid}`, async () => {
     const original = {...readyDraft(), pedagogicalActivityType: 'REPORT'}
@@ -161,7 +162,7 @@ describe('independent activity editor', () => {
       return {...original.preparedRecommendation, activityType: invalid === 'wrong-activity' ? 'REPORT' : 'ANALYSIS', instrumentType: invalid === 'wrong-format' ? 'rubrica' : original.instrumentType}
     })
     render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" />)
-    fireEvent.change(screen.getByRole('combobox', {name: 'Tipo de actividad'}), {target: {value: 'ANALYSIS'}})
+    chooseActivitySelection('Tipo de actividad', 'ANALYSIS')
     const dialog = await screen.findByRole('dialog', {name: 'Cambiar tipo de actividad'})
     fireEvent.click(within(dialog).getByRole('button', {name: 'Adaptar instrumento'}))
     await within(dialog).findByRole('alert')
@@ -176,13 +177,13 @@ describe('independent activity editor', () => {
     original.preparedFingerprint=preparationFingerprint(original)
     vi.spyOn(api,'post').mockRejectedValue(new ApiError(503,'Sin conexión'))
     render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" />)
-    fireEvent.change(screen.getByRole('combobox',{name:'Tipo de actividad'}),{target:{value:'ANALYSIS'}})
+    chooseActivitySelection('Tipo de actividad', 'ANALYSIS')
     const dialog=await screen.findByRole('dialog',{name:'Cambiar tipo de actividad'})
-    expect(screen.getByRole('combobox',{name:'Tipo de actividad'})).toHaveValue('REPORT')
+    expect(screen.getByRole('button',{name:'Tipo de actividad'})).toHaveTextContent(activitySelectionName('REPORT'))
     if(choice==='Escape') fireEvent.keyDown(dialog,{key:'Escape'})
     else fireEvent.click(within(dialog).getByRole('button',{name:choice}))
     await waitFor(()=>expect(screen.queryByRole('dialog',{name:'Cambiar tipo de actividad'})).not.toBeInTheDocument())
-    expect(screen.getByRole('combobox',{name:'Tipo de actividad'})).toHaveValue(choice==='Conservar instrumento'?'ANALYSIS':'REPORT')
+    expect(screen.getByRole('button',{name:'Tipo de actividad'})).toHaveTextContent(activitySelectionName(choice==='Conservar instrumento'?'ANALYSIS':'REPORT'))
     expect(screen.getByLabelText('Criterio 1')).toHaveValue(original.preparedRecommendation.criteria[0].title)
     if(choice==='Conservar instrumento') {
       const draft=readActivityDrafts(context)[0].draft as ReturnType<typeof newActivityDraft>
@@ -208,13 +209,13 @@ describe('independent activity editor', () => {
       return adapted
     })
     render(<ActivityEditorWorkspace {...props()} initialDraft={original} sectionSubjectId="subject" />)
-    fireEvent.change(screen.getByRole('combobox',{name:'Tipo de actividad'}),{target:{value:'ANALYSIS'}})
+    chooseActivitySelection('Tipo de actividad', 'ANALYSIS')
     let dialog=await screen.findByRole('dialog',{name:'Cambiar tipo de actividad'})
     fireEvent.click(within(dialog).getByRole('button',{name:'Adaptar instrumento'}))
     if(failure){
       await within(dialog).findByRole('alert')
       expect(readActivityDrafts(context)).toEqual([])
-      expect(screen.getByRole('combobox',{name:'Tipo de actividad'})).toHaveValue('REPORT')
+      expect(screen.getByRole('button',{name:'Tipo de actividad'})).toHaveTextContent(activitySelectionName('REPORT'))
       expect(screen.getByLabelText('Criterio 1')).toHaveValue(original.preparedRecommendation.criteria[0].title)
       reject=false
       fireEvent.click(within(dialog).getByRole('button',{name:'Adaptar instrumento'}))
@@ -234,7 +235,7 @@ describe('independent activity editor', () => {
         return path.endsWith('/interpret') ? {suggestedActivityType: 'ANALYSIS', activityType: 'ANALYSIS', suggestedInstrumentType: 'rubrica'} : proposal
       })
       render(<ActivityEditorWorkspace {...props()} initialDraft={newActivityDraft('b1')} sectionSubjectId="subject" instrumentAcademicContext={academicContext} />)
-      fireEvent.change(screen.getByRole('combobox', {name: 'Tipo de instrumento'}), {target: {value: selected}})
+      chooseActivitySelection('Tipo de instrumento', selected)
       fireEvent.change(screen.getByLabelText('Nombre de la actividad *'), {target: {value: novelFixture.activityTitle}})
       fireEvent.click(screen.getByRole('button', {name: /Individual\s*Cada estudiante/}))
       fireEvent.change(screen.getByRole('textbox', {name: /Valor en puntos/}), {target: {value: '15'}})
@@ -255,7 +256,7 @@ describe('independent activity editor', () => {
     render(<ActivityEditorWorkspace {...props()} initialDraft={{...newActivityDraft('b1'),name:fixture.activityTitle,description:fixture.description,maxScore:'20',activityType:'individual',instrumentType:'rubrica',autoSelectedInstrumentType:false}} sectionSubjectId="subject" />)
     await waitFor(()=>expect((readActivityDrafts(context)[0]?.draft as ReturnType<typeof newActivityDraft>)?.preparedRecommendation?.catalogVersion).toBe('editable-fallback-v1'),{timeout:5000})
     expect(readActivityDrafts(context)[0].draft.instrumentType).toBe('rubrica')
-    fireEvent.change(screen.getByRole('combobox',{name:'Tipo de instrumento'}),{target:{value:''}})
+    chooseActivitySelection('Tipo de instrumento', '')
     await waitFor(()=>expect(readActivityDrafts(context)[0].draft.instrumentType).toBe('lista-ponderada'),{timeout:5000})
     expect((readActivityDrafts(context)[0].draft as ReturnType<typeof newActivityDraft>).autoSelectedInstrumentType).toBe(true)
   })
@@ -422,9 +423,7 @@ describe('independent activity editor', () => {
       throw new Error('Sin interpretación remota')
     })
     render(<ActivityEditorWorkspace {...props()} initialDraft={draft} sectionSubjectId="subject" />)
-    fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), {
-      target: { value: 'lista-cotejo' },
-    })
+    chooseActivitySelection('Tipo de instrumento','lista-cotejo')
     await waitFor(
       () =>
         expect(screen.getByPlaceholderText('1. Criterio')).toHaveValue(proposal.criteria[0].title),
@@ -458,9 +457,7 @@ describe('independent activity editor', () => {
       throw new Error('Sin interpretación remota')
     })
     render(<ActivityEditorWorkspace {...props()} initialDraft={draft} sectionSubjectId="subject" />)
-    fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), {
-      target: { value: 'lista-cotejo' },
-    })
+    chooseActivitySelection('Tipo de instrumento','lista-cotejo')
     await waitFor(
       () => expect(post.mock.calls.some(([path]) => path.endsWith('/recommend'))).toBe(true),
       { timeout: 5000 },

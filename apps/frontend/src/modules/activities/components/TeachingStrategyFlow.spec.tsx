@@ -20,31 +20,31 @@ function setup(type:InstrumentType='rubrica',historical=false) {
  render(<ActivityEditorWorkspace activityDraftContext={context} courseTitle="Curso" periodShortName="P1" saving={false} onAddActivity={vi.fn(async i=>({...i,id:'saved'}))} onUpdateActivity={vi.fn(async i=>i)} initialDraft={draft} instrumentAcademicContext={academic}/>)
  return {draft,getDraft:()=>readActivityDrafts(context)[0]?.draft as ActivityDraft|undefined}
 }
-function choose(label:string){fireEvent.click(screen.getByRole('combobox',{name:'Estrategia de enseñanza y aprendizaje'}));fireEvent.click(within(screen.getByRole('listbox',{name:'Estrategia de enseñanza y aprendizaje'})).getByRole('option',{name:label}))}
+function choose(label:string){fireEvent.click(screen.getByRole('button',{name:'Estrategia de enseñanza y aprendizaje'}));fireEvent.click(within(screen.getByRole('dialog',{name:'Estrategia de enseñanza y aprendizaje'})).getByRole('radio',{name:label}));fireEvent.click(screen.getByRole('button',{name:'Confirmar'}))}
 it.each(['rubrica','lista-cotejo','escala','lista-ponderada'] as const)('auto, manual y retorno conservan instrumento exacto: %s',async type=>{
  const {draft,getDraft}=setup(type)
- await waitFor(()=>expect(screen.getByRole('combobox',{name:'Estrategia de enseñanza y aprendizaje'})).toHaveTextContent('Estudio de caso'))
+ await waitFor(()=>expect(screen.getByRole('button',{name:'Estrategia de enseñanza y aprendizaje'})).toHaveTextContent('Estudio de caso'))
  choose('Debate')
  await waitFor(()=>expect(getDraft()?.teachingStrategyOrigin).toBe('MANUAL'))
  expect(getDraft()?.instrumentFields).toEqual(draft.instrumentFields)
  expect(getDraft()?.preparedRecommendation).toEqual(draft.preparedRecommendation)
  fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:'Dialogan mediante preguntas abiertas guiadas por el docente.'}})
- expect(screen.getByRole('combobox',{name:'Estrategia de enseñanza y aprendizaje'})).toHaveTextContent('Debate')
+ expect(screen.getByRole('button',{name:'Estrategia de enseñanza y aprendizaje'})).toHaveTextContent('Debate')
  choose('Seleccionar automáticamente')
- await waitFor(()=>expect(screen.getByRole('combobox',{name:'Estrategia de enseñanza y aprendizaje'})).toHaveTextContent('Indagación dialógica'))
+ await waitFor(()=>expect(screen.getByRole('button',{name:'Estrategia de enseñanza y aprendizaje'})).toHaveTextContent('Indagación dialógica'))
  expect(getDraft()?.teachingStrategyOrigin).toBe('AUTO')
  expect(getDraft()?.instrumentFields).toEqual(draft.instrumentFields)
 })
 it('histórico permanece ausente hasta acción explícita; búsqueda y teclado',async()=>{
  setup('rubrica',true)
- const selector=screen.getByRole('combobox',{name:'Estrategia de enseñanza y aprendizaje'})
+ const selector=screen.getByRole('button',{name:'Estrategia de enseñanza y aprendizaje'})
  expect(selector).toHaveTextContent('Sin estrategia')
  fireEvent.click(selector)
- const search=screen.getByRole('searchbox',{name:'Buscar estrategia'})
+ const search=screen.getByRole('searchbox',{name:'Buscar estrategia de enseñanza y aprendizaje'})
  fireEvent.change(search,{target:{value:'socrático'}})
- expect(screen.getByRole('option',{name:'Indagación dialógica o cuestionamiento'})).toBeVisible()
- fireEvent.keyDown(search,{key:'ArrowDown'})
- fireEvent.keyDown(search,{key:'Enter'})
+ expect(screen.getByRole('radio',{name:'Indagación dialógica o cuestionamiento'})).toBeVisible()
+ fireEvent.click(screen.getByRole('radio',{name:'Indagación dialógica o cuestionamiento'}))
+ fireEvent.click(screen.getByRole('button',{name:'Confirmar'}))
  expect(selector).toHaveTextContent('Indagación dialógica')
 })
 it('recuperación y duplicación conservan selección y origen; viejos no se infieren',()=>{

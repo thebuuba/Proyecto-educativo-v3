@@ -14,7 +14,8 @@ describe('Consignas naturales y condiciones explícitas',()=>{
  it('consigna de ejercicios conserva las operaciones sin inventar unidades ni explicación',()=>{
   const context={level:'SECONDARY' as const,grade:2,cycle:1,subjectCode:'MAT',subjectName:'Matemática',optativeExitName:null,modalityCode:'academic'}
   const p=recommend({activityTitle:'Actividad',description:'Los estudiantes resuelven ejercicios de suma y resta',maxScore:20,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
-  expect(p.activityType).toBe('EXERCISE_SET');expect(p.criteria).toHaveLength(2)
+  expect(p.activityType).toBe('EXERCISE_SET');expect(p.instrumentType).toBe('lista-cotejo')
+  expect(p.criteria.map(c=>c.templateId)).toEqual(['mat-2-arithmetic-calculation','mat-2-arithmetic-result:suma','mat-2-arithmetic-result:resta'])
   expect(JSON.stringify(p.criteria)).toContain('suma y resta');expect(JSON.stringify(p.criteria)).not.toMatch(/unidades|investigación|bibliografía|oral|materiales/)
   expect(p.internalTrace.reasons).toContain('coverage=ACTION_ONLY')
  })

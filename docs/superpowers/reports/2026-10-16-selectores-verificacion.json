@@ -1,0 +1,228 @@
+{
+  "branch": "amplia-instrumentos-secundaria",
+  "baseCommit": "87c6224654cc56019f06821c9dc886ecadb5c1dd",
+  "catalog": "evaluation-2026.85",
+  "checks": [
+    {
+      "command": "pnpm --filter @aula/shared build",
+      "exit": 0,
+      "seconds": 4.059,
+      "log": ".wrangler/math-source/selectors-final-shared-build.log"
+    },
+    {
+      "command": "pnpm --filter backend test",
+      "exit": 0,
+      "seconds": 17.321,
+      "log": ".wrangler/math-source/selectors-final-backend-test.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "exit": 0,
+      "seconds": 13.735,
+      "log": ".wrangler/math-source/selectors-final-backend-build.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "exit": 0,
+      "seconds": 33.922,
+      "log": ".wrangler/math-source/selectors-final-frontend-build.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "exit": 0,
+      "seconds": 42.285,
+      "log": ".wrangler/math-source/selectors-final-cloudflare-build.log"
+    },
+    {
+      "command": "pnpm --filter frontend test",
+      "exit": 0,
+      "seconds": 112.621,
+      "log": ".wrangler/math-source/selectors-final-frontend-test.log"
+    }
+  ],
+  "tests": {
+    "backend": {
+      "files": 100,
+      "passed": 40589
+    },
+    "frontend": {
+      "files": 129,
+      "passed": 41046
+    },
+    "additionalCreatorLifecycle": {
+      "passed": 14,
+      "temperatureToOperations": true
+    }
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-DcKmj8JH.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-DcKmj8JH.js",
+        "sha256": "27fa5614a6e00413193be7d4682ef07a445881ebcf83fe655b1686fee9d7e99e",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-DR50KFiL.js",
+        "sha256": "51d472a808f4277ee462a298433e2a7f3a9cd23b83ff096e88112f928641083a",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-BD4ss526.js",
+        "sha256": "fba87adc4d954c8982648596ca11d87bbd809d434a76edd93e9f31c44de628e7",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-BOntTm6L.js",
+        "sha256": "03b209803c5560405751168d634a9f09f7f0bf4d455bfb3f8cd556cfced834f0",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-BTycPVi6.js",
+        "sha256": "fa229b2f56d59e67999b226619b05d607c1eb631d516dcd3580b3c0623958994",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "c9ed1587813c20b9334c93180f7ba391f92146ea918a4343475b60ec33d825fa",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "catalogFirstInstallation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.85",
+    "grade": 1,
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 17,
+    "preservedSnapshots": 72
+  },
+  "catalogFinalRecheck": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.85",
+    "grade": 1,
+    "first": "UNCHANGED",
+    "second": "UNCHANGED",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73
+  },
+  "persisted": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "activityId": "caf5d55f-0ff2-4f61-b272-1bdc9f46a8f6",
+    "subject": "MAT",
+    "grade": 1,
+    "type": "lista-cotejo",
+    "total": 17.35,
+    "strategy": "EXPOSITORY",
+    "origin": "MANUAL",
+    "snapshotId": "e736c5db-788f-4a38-84ef-457f04388149",
+    "instrumentHash": "827e03232146f9dae4478705c5348110ced623bee5e8cd0bc3ee7692a89deffb",
+    "snapshotHash": "07355e60766bb78979625d311e9a2f824991c600d096772721d4515c5019fbce",
+    "matchingActivities": 1
+  },
+  "browser": {
+    "allFieldsExact": true,
+    "before": [
+      {
+        "label": "Criterio 1",
+        "value": "QA manual: conserva las tres operaciones."
+      },
+      {
+        "label": null,
+        "value": "8.68"
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Obtiene el resultado solicitado de la resta solicitada coherente con los datos disponibles, sin añadir datos no proporcionados."
+      },
+      {
+        "label": null,
+        "value": "2.89"
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Obtiene el resultado solicitado de la multiplicación solicitada coherente con los datos disponibles, sin añadir datos no proporcionados."
+      },
+      {
+        "label": null,
+        "value": "2.89"
+      },
+      {
+        "label": "Criterio 4",
+        "value": "Obtiene el resultado solicitado de la división solicitada coherente con los datos disponibles, sin añadir datos no proporcionados."
+      },
+      {
+        "label": null,
+        "value": "2.89"
+      }
+    ],
+    "after": [
+      {
+        "label": "Criterio 1",
+        "value": "QA manual: conserva las tres operaciones."
+      },
+      {
+        "label": null,
+        "value": "8.68"
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Obtiene el resultado solicitado de la resta solicitada coherente con los datos disponibles, sin añadir datos no proporcionados."
+      },
+      {
+        "label": null,
+        "value": "2.89"
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Obtiene el resultado solicitado de la multiplicación solicitada coherente con los datos disponibles, sin añadir datos no proporcionados."
+      },
+      {
+        "label": null,
+        "value": "2.89"
+      },
+      {
+        "label": "Criterio 4",
+        "value": "Obtiene el resultado solicitado de la división solicitada coherente con los datos disponibles, sin añadir datos no proporcionados."
+      },
+      {
+        "label": null,
+        "value": "2.89"
+      }
+    ],
+    "url": "http://localhost:8787/actividades/crear?sectionSubjectId=5a9e2be2-6eed-4a43-abf7-30aa9470d7ce&academicPeriodId=fec939cd-a621-4a7e-af29-795e8d792c49&activityId=caf5d55f-0ff2-4f61-b272-1bdc9f46a8f6"
+  },
+  "http": {
+    "beforeCases": 8,
+    "afterCases": 9,
+    "formatsPerCase": 4
+  },
+  "limits": [
+    "No original literal instruction available",
+    "HTTP verifies sw.js bytes, not all private browser caches or registrations"
+  ],
+  "productionModified": false,
+  "deployed": false,
+  "merged": false
+}

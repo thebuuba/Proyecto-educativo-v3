@@ -75,26 +75,28 @@ it.each(['english', 'french'].flatMap(subject => ['nuevo', 'histórico'].map(mod
 
     const name = await screen.findByRole('textbox', { name: /Nombre de la actividad/ })
     await waitFor(() => expect(name).toHaveValue(mode === 'histórico' ? title : ''))
-    const strategy = screen.getByRole('combobox', { name: strategyLabel })
-    expect(screen.getAllByRole('combobox', { name: strategyLabel })).toHaveLength(1)
+    const strategy = screen.getByRole('button', { name: strategyLabel })
+    expect(screen.getAllByRole('button', { name: strategyLabel })).toHaveLength(1)
     expect(strategy).toBeVisible()
+    for(const field of ['Tipo de actividad','Técnica de evaluación','Tipo de instrumento'])expect(screen.getByRole('button',{name:field})).toBeVisible()
     expect(strategy).toHaveTextContent('Sin estrategia')
     expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).toHaveValue('')
 
-    const activityType = screen.getByRole('combobox', { name: 'Tipo de actividad' })
+    const activityType = screen.getByRole('button', { name: 'Tipo de actividad' })
     const modality = screen.getByText('3. Modalidad')
     expect(activityType.compareDocumentPosition(strategy) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
     expect(strategy.compareDocumentPosition(modality) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
     expect(strategy.closest('section')).toBe(activityType.closest('section'))
 
     fireEvent.click(strategy)
-    fireEvent.click(within(screen.getByRole('listbox', { name: strategyLabel })).getByRole('option', { name: 'Debate' }))
+    fireEvent.click(within(screen.getByRole('dialog', { name: strategyLabel })).getByRole('radio', { name: 'Debate' }))
+    fireEvent.click(screen.getByRole('button', {name:'Confirmar'}))
     expect(strategy).toHaveTextContent('Debate')
     await waitFor(() => expect(readActivityDrafts(currentContext)[0]?.draft).toMatchObject({
       teachingStrategyId: 'DEBATE', teachingStrategyOrigin: 'MANUAL', maxScore: '',
       ...(mode === 'histórico' ? { name: title, description, competencyBlockId: 'b2' } : {}),
     }))
-    expect(screen.getAllByRole('combobox', { name: strategyLabel })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: strategyLabel })).toHaveLength(1)
     expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).toHaveValue('')
   },
 )

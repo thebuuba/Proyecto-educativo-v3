@@ -1,3 +1,4 @@
+import {chooseActivitySelection,activitySelectionName} from './activitySelectionTestUtils'
 import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import type { InstrumentAcademicContext, InstrumentRecommendation, InstrumentType } from '@aula/shared'
@@ -48,17 +49,79 @@ describe('automatic instrument preparation request lifecycle', () => {
     vi.restoreAllMocks()
   })
 
+  it('confirmar el formato automático visible lo convierte en elección manual sin regenerar',async()=>{
+    const post=vi.spyOn(api,'post').mockImplementation(()=>new Promise(()=>{}))
+    mount({instrumentType:'lista-cotejo',autoSelectedInstrumentType:true})
+    chooseActivitySelection('Tipo de instrumento','lista-cotejo')
+    expect((readActivityDrafts(context)[0]?.draft as ActivityDraft)?.autoSelectedInstrumentType).toBe(false)
+    expect(post).not.toHaveBeenCalled()
+    await advance(1000)
+    expect(post.mock.calls.find(([path])=>path.endsWith('/recommend'))?.[1]).toMatchObject({preferredInstrumentType:'lista-cotejo'})
+  })
+
+  it('confirmar actividad y técnica visibles mantiene su prioridad ante la siguiente interpretación',async()=>{
+    vi.spyOn(api,'post').mockResolvedValue({...interpretation,suggestedActivityType:'PROJECT',suggestedEvaluationTechnique:'proyecto'} as never)
+    mount({pedagogicalActivityType:'REPORT',autoDetectedPedagogicalActivityType:true,evaluationTechnique:'analisis-producciones',autoSelectedEvaluationTechnique:true})
+    chooseActivitySelection('Tipo de actividad','REPORT')
+    chooseActivitySelection('Técnica de evaluación','analisis-producciones')
+    fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:'Los estudiantes elaborarán un proyecto de investigación.'}})
+    await advance(500)
+    expect(readActivityDrafts(context)[0]?.draft).toMatchObject({pedagogicalActivityType:'REPORT',autoDetectedPedagogicalActivityType:false,evaluationTechnique:'analisis-producciones',autoSelectedEvaluationTechnique:false})
+  })
+
+  it('volver al tipo automático y conservar instrumento muestra el tipo vigente sin vaciarlo',async()=>{
+    const academic={level:'SECONDARY' as const,grade:1,subjectCode:'MAT'}
+    const description='Los estudiantes resolverán ejercicios de multiplicación, resta y división.'
+    const p=editableFallbackRecommendation({activityTitle:'Operaciones',description,maxScore:20,instrumentType:'lista-cotejo',participationMode:'INDIVIDUAL',academicContext:academic})
+    vi.spyOn(api,'post').mockImplementation(()=>new Promise(()=>{}))
+    mount({name:'Operaciones',description,pedagogicalActivityType:'ANALYSIS',autoDetectedPedagogicalActivityType:false,instrumentType:'lista-cotejo',preparedRecommendation:p,preparedManuallyEdited:true},academic)
+    chooseActivitySelection('Tipo de actividad','')
+    fireEvent.click(screen.getByRole('button',{name:'Conservar instrumento'}))
+    expect(screen.getByRole('button',{name:'Tipo de actividad'})).toHaveTextContent('Ejercicios')
+    expect((readActivityDrafts(context)[0]?.draft as ActivityDraft)?.autoDetectedPedagogicalActivityType).toBe(true)
+    expect((readActivityDrafts(context)[0]?.draft as ActivityDraft)?.preparedRecommendation).toEqual(p)
+  })
+
+  it('volver a técnica automática con instrumento conservado resuelve la técnica vigente',()=>{
+    const academic={level:'SECONDARY' as const,grade:1,subjectCode:'MAT'},description='Resuelve multiplicaciones, restas y divisiones.'
+    const p=editableFallbackRecommendation({activityTitle:'Operaciones',description,maxScore:20,instrumentType:'lista-cotejo',participationMode:'INDIVIDUAL',academicContext:academic})
+    mount({name:'Operaciones',description,evaluationTechnique:'debate',autoSelectedEvaluationTechnique:false,instrumentType:'lista-cotejo',preparedRecommendation:p,preparedManuallyEdited:true},academic)
+    chooseActivitySelection('Técnica de evaluación','')
+    expect(screen.getByRole('button',{name:'Técnica de evaluación'})).toHaveTextContent('Análisis de producciones')
+    expect((readActivityDrafts(context)[0]?.draft as ActivityDraft)?.preparedRecommendation).toEqual(p)
+  })
+
+  it('sustituye temperatura por las operaciones vigentes sin heredar el título anterior',async()=>{
+    const academic={level:'SECONDARY' as const,grade:1,subjectCode:'MAT'}
+    const temperature='Resuelve un problema de temperatura con multiplicación, resta y división usando los datos proporcionados.'
+    const operations='Los estudiantes resolverán ejercicios de multiplicación, resta y división.'
+    vi.spyOn(api,'post').mockImplementation(async(path,body)=>{
+      if(!path.endsWith('/recommend'))throw new Error('Interpretación redundante')
+      const input=body as {activityTitle:string;description:string;maxScore:number;preferredInstrumentType?:InstrumentType;participationMode:'INDIVIDUAL'}
+      return editableFallbackRecommendation({...input,instrumentType:input.preferredInstrumentType??'lista-cotejo',academicContext:academic}) as never
+    })
+    mount({name:'El termómetro y la temperatura',description:temperature,pedagogicalActivityType:'',autoDetectedPedagogicalActivityType:true},academic)
+    await advance(500);await advance(2000)
+    expect(JSON.stringify((readActivityDrafts(context)[0]?.draft as ActivityDraft)?.preparedRecommendation?.criteria)).toMatch(/temperatura/)
+    fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:operations}})
+    await advance(500);await advance(2000)
+    const criteria=(readActivityDrafts(context)[0]?.draft as ActivityDraft)?.preparedRecommendation?.criteria
+    expect(criteria?.length).toBeGreaterThan(0)
+    expect(JSON.stringify(criteria)).not.toMatch(/temperatura|termómetro/)
+    for(const operation of ['multiplic','resta','divisi'])expect(JSON.stringify(criteria)).toMatch(new RegExp(operation))
+  })
+
   it('prepara Francés reconocido con una sola solicitud, sin interpretación curricular redundante', async () => {
     const academic = { level: 'SECONDARY' as const, grade: 1, subjectCode: 'FRA', subjectName: 'Francés' }
     const french = 'En parejas, los estudiantes se saludarán en francés y realizarán un diálogo breve para preguntar y responder su nombre, edad y lugar de residencia. Luego intercambiarán los roles.'
     const result = editableFallbackRecommendation({ activityTitle: 'Nos presentamos en francés', description: french, maxScore: 20, participationMode: 'GROUP', instrumentType: 'rubrica', academicContext: academic })
     const post = vi.spyOn(api, 'post').mockImplementation(async path => (path.endsWith('/interpret') ? interpretation : result) as never)
     mount({ name: 'Nos presentamos en francés', description: french, pedagogicalActivityType: '', autoDetectedPedagogicalActivityType: true }, academic)
-    expect(screen.getAllByRole('combobox', { name: 'Estrategia de enseñanza y aprendizaje' })).toHaveLength(1)
+    expect(screen.getAllByRole('button', { name: 'Estrategia de enseñanza y aprendizaje' })).toHaveLength(1)
     await advance(500)
     await advance(1000)
     expect(post.mock.calls.map(([path]) => path)).toEqual(['/evaluation-instruments/recommend'])
-    expect(screen.getByRole('combobox', { name: 'Estrategia de enseñanza y aprendizaje' })).toHaveTextContent('Simulación')
+    expect(screen.getByRole('button', { name: 'Estrategia de enseñanza y aprendizaje' })).toHaveTextContent('Simulación')
     expect(screen.getByLabelText('Criterio 1')).toBeVisible()
     expect(readActivityDrafts(context)[0].draft.maxScore).toBe('')
   })
@@ -79,9 +142,10 @@ describe('automatic instrument preparation request lifecycle', () => {
     await advance(500); await advance(1000)
     expect(requests).toBe(1)
     fireEvent.change(screen.getByLabelText('Descripción de la actividad'), { target: { value: latest } })
-    fireEvent.click(screen.getByRole('combobox', { name: 'Estrategia de enseñanza y aprendizaje' }))
-    fireEvent.click(within(screen.getByRole('listbox', { name: 'Estrategia de enseñanza y aprendizaje' })).getByRole('option', { name: 'Debate' }))
-    fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), { target: { value: 'lista-cotejo' } })
+    fireEvent.click(screen.getByRole('button', { name: 'Estrategia de enseñanza y aprendizaje' }))
+    fireEvent.click(within(screen.getByRole('dialog', { name: 'Estrategia de enseñanza y aprendizaje' })).getByRole('radio', { name: 'Debate' }))
+    fireEvent.click(screen.getByRole('button', {name:'Confirmar'}))
+    chooseActivitySelection('Tipo de instrumento', 'lista-cotejo')
     await advance(500); await advance(1000)
     await act(async () => { finish(build(first, 'rubrica')) })
     await advance(1000)
@@ -107,7 +171,7 @@ describe('automatic instrument preparation request lifecycle', () => {
     await advance(500)
     await advance(1000)
     expect(requests).toBe(1)
-    expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue('lista-cotejo')
+    expect(screen.getByRole('button', { name: 'Tipo de instrumento' })).toHaveTextContent(activitySelectionName('lista-cotejo'))
     fireEvent.change(screen.getByLabelText('Descripción de la actividad'), { target: { value: updatedDescription } })
     await advance(500)
     await advance(1000)
@@ -160,11 +224,11 @@ describe('automatic instrument preparation request lifecycle', () => {
     mount()
     await advance(500)
     await advance(1000)
-    fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), { target: { value: 'rubrica' } })
+    chooseActivitySelection('Tipo de instrumento', 'rubrica')
     await advance(1000)
     await act(async () => { finish(proposal) })
     await advance(1000)
-    expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue('rubrica')
+    expect(screen.getByRole('button', { name: 'Tipo de instrumento' })).toHaveTextContent(activitySelectionName('rubrica'))
     expect(screen.getByLabelText('Criterio 1')).toHaveValue('Criterio de la rúbrica elegida')
     expect(post.mock.calls.filter(([path]) => path.endsWith('/recommend')).at(-1)?.[1]).toMatchObject({ preferredInstrumentType: 'rubrica' })
     expect((readActivityDrafts(context)[0].draft as ActivityDraft).autoSelectedInstrumentType).toBe(false)
@@ -210,10 +274,10 @@ describe('automatic instrument preparation request lifecycle', () => {
       description: 'En parejas, los estudiantes realizarán una entrevista de trabajo simulada en inglés. Uno entrevistará y el otro responderá sobre la experiencia y las capacidades de un personaje ficticio. Luego intercambiarán los roles.',
       pedagogicalActivityType: '',
     }, { level: 'SECONDARY', grade: 6, subjectCode: 'ING' })
-    fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), { target: { value: 'lista-cotejo' } })
+    chooseActivitySelection('Tipo de instrumento', 'lista-cotejo')
     await advance(500)
     await advance(1000)
-    expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue('lista-cotejo')
+    expect(screen.getByRole('button', { name: 'Tipo de instrumento' })).toHaveTextContent(activitySelectionName('lista-cotejo'))
     expect(screen.getByRole('region', { name: 'Instrumento y estado de criterios' })).toBeVisible()
     expect(screen.getByLabelText('Criterio 1')).not.toHaveValue('')
     const draft = readActivityDrafts(context)[0].draft as ActivityDraft

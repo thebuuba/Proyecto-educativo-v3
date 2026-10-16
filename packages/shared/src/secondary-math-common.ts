@@ -10,8 +10,9 @@ import {commonMathGradeSixTopics} from './secondary-math-grade-6'
 import type { CommonMathTopic } from './secondary-math-common-types'
 
 export const commonMathTopicsByGrade: Record<number, CommonMathTopic[]> = { 1: commonMathGradeOneTopics,2:commonMathGradeTwoTopics,3:commonMathGradeThreeTopics,4:commonMathGradeFourTopics,5:commonMathGradeFiveTopics,6:commonMathGradeSixTopics }
-export const commonMathModules = Object.entries(commonMathTopicsByGrade).map(([grade,topics])=>({ id:`matematica-comun-${grade}`,grade:Number(grade),subjectCode:'MAT',topics,policy:'REQUESTED_MATH_ACTIONS_CONTENT_CONDITIONS_ALTERNATIVES_V1' }))
+export const commonMathModules = Object.entries(commonMathTopicsByGrade).map(([grade,topics])=>({ id:`matematica-comun-${grade}`,grade:Number(grade),subjectCode:'MAT',topics,policy:'REQUESTED_MATH_ACTIONS_CURRENT_DESCRIPTION_ARITHMETIC_PURPOSE_V2' }))
 const normalize = (value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
+const mathList=(values:string[])=>values.length>1?`${values.slice(0,-1).join(', ')} y ${values.at(-1)}`:values[0]??''
 export function mathRequirementText(value:string) {
   return normalize(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/[«“"][^»”"]*[»”"]/g,''))
     .replace(/\b(?:recursos?|ejemplos?)\s*:[^.;\n]*/g,'')
@@ -33,7 +34,12 @@ export function resolveCommonMathTask(title:string,description:string,context?:I
   const text=mathRequirementText(description.trim()||title), heading=mathRequirementText(title)
   const find=(part:string)=>topics.filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(part)&&(!t.exclude||!new RegExp(t.exclude).test(part)))
   if(!text||!new RegExp(`\\b${verb}\\b|\\bejercicios?\\b`).test(text)&&!find(text).length)return null
-  const global=find(text),fallback=global.length?global:find(heading)
+  const global=find(text)
+  // Arithmetic is already meaningful evidence; a missing number set must not import an old title's context.
+  const operations=[['suma','sum\\w*|adicion\\w*'],['resta','rest\\w*|sustraccion\\w*'],['multiplicación','multiplic\\w*|multipliqu\\w*'],['división','divisi\\w*|divid\\w*']].filter(([,pattern])=>new RegExp(`\\b(?:${pattern})\\b`).test(text)).map(([name])=>name)
+  const arithmetic:CommonMathTopic={id:'arithmetic',grade:context.grade,label:'operaciones aritméticas',match:'',pages:[],relation:`el valor de los operandos, los signos y las propiedades de ${operations.length?mathList(operations):'las operaciones solicitadas'}`,representation:'representa únicamente las operaciones y los datos solicitados'}
+  const arithmeticRequested=/\b(?:operaciones aritmeticas|multiplic\w*|multipliqu\w*|resta\w*|sustraccion\w*|divisi\w*|divid\w*|suma\w*|adicion\w*)\b/.test(text)
+  const fallback=global.length?global:arithmeticRequested?[arithmetic]:find(heading)
   if(!global.length&&Object.values(commonMathTopicsByGrade).flat().some(t=>new RegExp(`\\b(?:${t.match})\\b`).test(text)))return null
   if(!fallback.length)return null
   const split=new RegExp(`(?:[.;\\n]\\s*|\\s+(?:y|e|luego|despues)\\s+)(?=(?:(?:los estudiantes|cada estudiante)\\s+)?${verb}\\b)`,'g')
@@ -56,12 +62,16 @@ function actionCriteria(action:MathAction):ContextualTopicCriterion[]{
   if(action.alternatives){const branches=action.alternatives.map(actionCriteria);return [criterion(action.topics[0],'alternative','Cumplimiento de una alternativa matemática',[0,1,2,3,4].map(level=>`En la alternativa elegida: ${branches.map(rows=>rows.map(r=>r.progressionLevels[level]).join(' ')).join(' O BIEN: ')}`) as Levels)]}
   const rows:ContextualTopicCriterion[]=[]
   for(const t of action.topics){
-    const text=action.text, label=t.label
+    const text=action.text, thermometer=t.id==='temperature'&&/termometr\w*|escala/.test(text)
+    const label=thermometer?'temperatura señalada en el termómetro':t.label
     const relation=/\b(?:origen|historia|etimolog\w*)\b/.test(text)?`el origen o significado histórico solicitado de ${label}`
+      :t.id==='temperature'&&!thermometer?'los valores de temperatura proporcionados y los cambios que exige la operación solicitada'
       :/esfera/.test(text)&&/desarrollo plano/.test(text)?'la curvatura de la esfera y la imposibilidad de extender su superficie en un plano sin distorsión':t.relation
     const add=(key:string,title:string,levels:Levels,weight=3)=>rows.push(criterion(t,key,title,levels,weight))
     const explains=/\b(?:explic\w*|justific\w*|demuestr\w*|demostr\w*)\b/.test(text)
-    const calculation=computational(text)
+    const autonomy=/\b(?:observ\w*|registr\w*|evalu\w*)\b.*\bgrado de autonomia\b/.test(text)
+    const calculation=computational(text)&&!autonomy
+    if(autonomy)add('autonomy',`Autonomía en ${label}`,[`Realiza las operaciones solicitadas de ${label}, relacionadas con ${relation}, de forma autónoma.`,`Realiza las operaciones de ${label} con apoyo puntual para continuar.`,`Realiza parte de las operaciones de ${label} con apoyo frecuente para decidir los pasos.`,`Necesita apoyo continuo para realizar las operaciones de ${label}.`,`Aún no realiza las operaciones solicitadas de ${label}, incluso con apoyo.`])
     if(/\b(?:traduc\w*|traduz\w*)\b/.test(text))add('translation',`Traducción matemática de ${label}`,[`Expresa la misma relación de ${label} en el lenguaje solicitado, conservando cantidades, operaciones, incógnitas y condiciones proporcionadas.`,`La traducción de ${label} conserva la relación principal; un símbolo necesita precisión.`,`Traduce parte de ${label}, pero omite una relación necesaria.`,`La traducción cambia el significado de la situación de ${label}.`,`No aporta una traducción verificable de ${label}.`])
     if(/\bestim(?:a|an|ar|en|aran)\b/.test(text))add('estimation',`Estimación de ${label}`,[`Propone una aproximación razonable de ${label} a partir de las referencias disponibles y de ${relation}, distinguiéndola de un valor exacto.`,`La estimación de ${label} usa referencias pertinentes; una aproximación necesita precisión.`,`La estimación de ${label} usa parte de la información, pero su aproximación no queda suficientemente respaldada.`,`La estimación de ${label} contradice las referencias o magnitudes disponibles.`,`No aporta una estimación verificable de ${label}.`])
     if(/\banaliz\w*\b/.test(text)&&!/\berror\w*\b/.test(text))add('analysis',`Análisis de ${label}`,[`Examina las relaciones solicitadas de ${label} utilizando ${relation} y distingue qué se puede concluir de la información disponible.`,`El análisis de ${label} reconoce las relaciones principales; una inferencia necesita mayor respaldo.`,`Analiza parte de ${label}, pero confunde una relación necesaria para la conclusión.`,`Las conclusiones sobre ${label} contradicen las relaciones o datos proporcionados.`,`No aporta un análisis relacionado con ${label}.`])
@@ -74,16 +84,22 @@ function actionCriteria(action:MathAction):ContextualTopicCriterion[]{
       if(t.id==='complex')requestPatterns.push(['binómica','binomica'],['polar','polar'],['trigonométrica','trigonometrica'])
       if(t.id==='trig-equations')requestPatterns.push(['lineal','lineal(?:es)?'],['cuadrática','cuadraticas?'])
       const requests=requestPatterns.filter(([,pattern])=>new RegExp(`\\b(?:${pattern})\\b`).test(text)).map(([name])=>name)
-      const requested=requests.length?` para ${requests.join(' y ')}`:''
+      const requested=requests.length?` para ${mathList(requests)}`:''
       if(t.id==='matrices')add('selection','Compatibilidad de dimensiones',[`Selecciona únicamente las operaciones solicitadas, según corresponda, y comprueba las dimensiones necesarias y el orden de los factores antes de operar.`,`Las operaciones y dimensiones son compatibles; una condición necesita precisión.`,`Reconoce una operación pertinente, pero omite una condición de dimensiones.`,`Las dimensiones o el orden de los factores impiden realizar la operación solicitada.`,`No identifica las condiciones de dimensiones necesarias para operar.`],4)
       add('calculation',`Procedimiento de ${label}`,[`Aplica un procedimiento matemáticamente válido${requested} en ${label}, respetando ${relation}.`,`El procedimiento de ${label}${requested} conserva las relaciones esenciales; un paso necesita precisión.`,`Aplica parte del procedimiento de ${label}${requested}, pero pierde una relación necesaria entre sus pasos.`,`Los pasos contradicen ${relation} y no permiten resolver lo solicitado${requested}.`,`No aporta un procedimiento reconocible de ${label}${requested}.`],4)
-      const resultLevels=(request=''):Levels=>{const target=`${label}${request?` (${request})`:requested}`;return [`Obtiene el resultado solicitado de ${target} coherente con los datos disponibles, sin añadir datos no proporcionados.`,`El resultado de ${target} es aprovechable; un error aislado de cálculo o notación requiere ajuste.`,`Obtiene parte del resultado de ${target}, con errores que afectan su validez.`,`El resultado de ${target} no corresponde a los datos o a lo que se pide.`,`No aporta un resultado verificable de ${target}.`]}
+      const resultLevels=(request=''):Levels=>{const target=t.id==='arithmetic'&&request?`la ${request} solicitada`:`${label}${request?` (${request})`:requested}`;return [`Obtiene el resultado solicitado de ${target} coherente con los datos disponibles, sin añadir datos no proporcionados.`,`El resultado de ${target} es aprovechable; un error aislado de cálculo o notación requiere ajuste.`,`Obtiene parte del resultado de ${target}, con errores que afectan su validez.`,`El resultado de ${target} no corresponde a los datos o a lo que se pide.`,`No aporta un resultado verificable de ${target}.`]}
       const result=criterion(t,'result',`Resultado de ${label}`,resultLevels(),4)
       if(requests.length>1)result.checklistParts=requests.map(request=>({key:normalize(request),observable:resultLevels(request)[0],progressionLevels:resultLevels(request)}))
       rows.push(result)
     }
-    if(explains&&!/\berror\w*\b/.test(text))add('explanation',`Razonamiento sobre ${label}`,[`Explica ${relation} y relaciona sus decisiones con la tarea de ${label}, admitiendo otros métodos válidos.`,`La explicación de ${label} enlaza las decisiones principales; una relación necesita mayor fundamento.`,`Menciona pasos o propiedades de ${label}, pero solo explica parte de sus relaciones.`,`La explicación contradice ${relation}.`,`No aporta una explicación matemática relacionada con ${label}.`])
-    if(represents(text))add('representation',`Representación de ${label}`,[`${t.representation.charAt(0).toUpperCase()+t.representation.slice(1)}, usando solamente el formato y datos solicitados.`,`La representación de ${label} mantiene sus relaciones principales; una posición, etiqueta o referencia necesita precisión.`,`La representación de ${label} es parcial y deja ambiguas algunas relaciones necesarias.`,`La representación altera ${relation}.`,`No aporta la representación solicitada de ${label}.`])
+    if(explains&&!/\berror\w*\b/.test(text))add('explanation',`Razonamiento sobre ${label}`,/diferentes metodos|distintos metodos|eleccion de (?:metodos|procedimientos)/.test(text)?[
+      `Justifica los métodos o la elección de procedimientos de ${label} mediante ${relation}, explicando por qué son válidos para los mismos datos.`,
+      `Justifica los métodos de ${label}; una relación entre sus pasos necesita mayor fundamento.`,
+      `Describe los métodos de ${label}, pero fundamenta solo parte de sus decisiones.`,
+      `La justificación de los métodos contradice ${relation}.`,
+      `No aporta una justificación reconocible de los métodos de ${label}.`,
+    ]:[`Explica ${relation} y relaciona sus decisiones con la tarea de ${label}, admitiendo otros métodos válidos.`,`La explicación de ${label} enlaza las decisiones principales; una relación necesita mayor fundamento.`,`Menciona pasos o propiedades de ${label}, pero solo explica parte de sus relaciones.`,`La explicación contradice ${relation}.`,`No aporta una explicación matemática relacionada con ${label}.`])
+    if(represents(text))add('representation',`Representación de ${label}`,[`${t.id==='temperature'&&!thermometer?'Representa los valores y cambios de temperatura proporcionados':t.representation.charAt(0).toUpperCase()+t.representation.slice(1)}, usando solamente el formato y datos solicitados.`,`La representación de ${label} mantiene sus relaciones principales; una posición, etiqueta o referencia necesita precisión.`,`La representación de ${label} es parcial y deja ambiguas algunas relaciones necesarias.`,`La representación altera ${relation}.`,`No aporta la representación solicitada de ${label}.`])
     if(/\berror\w*\b/.test(text)&&/analiz\w*|identific\w*|explic\w*/.test(text))add('error',`Análisis del error en ${label}`,[`Localiza el paso o relación incorrectos de ${label} y explica el error mediante ${relation}.`,`Localiza el error de ${label}; su explicación necesita precisar una relación.`,`Reconoce un resultado dudoso de ${label}, pero no localiza claramente su causa.`,`Atribuye el error de ${label} a un paso válido o lo explica con una propiedad incorrecta.`,`No identifica un error verificable del trabajo de ${label}.`])
     if(/\b(?:corrig\w*|correg\w*)\b/.test(text))add('correction',`Corrección de ${label}`,[`Corrige el error indicado de ${label} conservando los pasos válidos y restableciendo ${relation}.`,`La corrección de ${label} es pertinente; queda un ajuste menor.`,`La corrección resuelve parte del error de ${label}, pero deja otra relación incorrecta.`,`La corrección de ${label} introduce otro error en una relación válida.`,`No aporta una corrección verificable de ${label}.`])
     if(/\b(?:(?:comprob|comprueb)\w*|verific\w*)\b/.test(text))add('verification',`Comprobación de ${label}`,[`Comprueba lo solicitado de ${label} mediante un contraste válido con ${relation} y con los datos o relaciones originales.`,`La comprobación de ${label} es válida; queda un paso sin documentar.`,`La comprobación de ${label} es parcial y no permite decidir si todo el resultado es válido.`,`La comprobación de ${label} repite el resultado sin contrastarlo con una relación independiente.`,`No aporta la comprobación solicitada de ${label}.`],2)
@@ -112,13 +128,17 @@ function actionCriteria(action:MathAction):ContextualTopicCriterion[]{
 export function commonMathCriteria(task:CommonMathTask){const rows=task.actions.flatMap(actionCriteria);return rows.filter((r,i)=>rows.findIndex(other=>other.templateId===r.templateId&&other.observable===r.observable)===i).map((r,i,all)=>all.findIndex(other=>other.templateId===r.templateId)===i?r:{...r,templateId:`${r.templateId}:${i}`})}
 export function commonMathSelections(task:CommonMathTask,description:string){
   const text=mathRequirementText(description)
-  const instrument:InstrumentType=/ponder\w*|pesos? por|puntos por/.test(text)?'lista-ponderada':/\b(?:observ\w*|registr\w*|evalu\w*)\b.*\b(?:grado|frecuencia|regularidad)\b/.test(text)?'escala':/si o no|cotej\w*|verific\w*.*cumplimiento/.test(text)?'lista-cotejo':task.actions.some(a=>/explic\w*|justific\w*|demostr\w*|analiz\w*.*error|model\w*|proyect\w*|investig\w*/.test(a.text))?'rubrica':['ANALYSIS'].includes(task.activityType)?'lista-cotejo':'lista-ponderada'
+  const partialCredit=/ponder\w*|pesos? (?:por|al|para)|puntos (?:por|al|para)|credito parcial/.test(text)
+  const observed=/\b(?:observ\w*|registr\w*|evalu\w*)\b.*\b(?:grado|frecuencia|regularidad)\b/.test(text)
+  const progressive=task.actions.some(a=>/explic\w*|justific\w*|demostr\w*|demuestr\w*|analiz\w*.*error|model\w*|proyect\w*|investig\w*/.test(a.text))
+  const instrument:InstrumentType=partialCredit?'lista-ponderada':observed?'escala':/si o no|cotej\w*|verific\w*.*cumplimiento/.test(text)?'lista-cotejo':progressive?'rubrica':['ANALYSIS','EXERCISE_SET','PROBLEM_SOLVING'].includes(task.activityType)?'lista-cotejo':'lista-ponderada'
   return {suggestedInstrumentType:instrument,suggestedEvaluationTechnique:task.technique}
 }
 export function adaptMathScale(proposal:InstrumentRecommendation,description:string):InstrumentRecommendation {
   if(proposal.instrumentType!=='escala')return proposal
   const frequency=/\b(?:observ\w*|registr\w*|evalu\w*)\b.*\b(?:frecuencia|regularidad)\b/.test(mathRequirementText(description))
-  const labels=frequency?['Siempre','Frecuentemente','A veces','Rara vez','Todavía no']:['Completo','Suficiente','Parcial','Incipiente','Aún no logrado']
+  const autonomy=/\bgrado de autonomia\b/.test(mathRequirementText(description))
+  const labels=frequency?['Siempre','Frecuentemente','A veces','Rara vez','Todavía no']:autonomy?['Autónomo','Con apoyo puntual','Con apoyo frecuente','Con apoyo continuo','Aún no logrado']:['Completo','Suficiente','Parcial','Incipiente','Aún no logrado']
   const indexes=proposal.levels.length===4?[0,1,2,4]:[0,1,2,3,4]
   return {...proposal,levels:proposal.levels.map((l,i)=>({...l,label:labels[indexes[i]]})),criteria:proposal.criteria.map(c=>({...c,descriptors:c.descriptors.map((d,i)=>({...d,text:frequency?['En todas las oportunidades observadas.','En la mayoría de las oportunidades observadas.','En algunas oportunidades observadas.','En pocas oportunidades observadas.','En ninguna oportunidad observada.'][indexes[i]]:c.progressionLevels?.[indexes[i]]??d.text}))}))}
 }

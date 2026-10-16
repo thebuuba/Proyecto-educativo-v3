@@ -4,7 +4,7 @@ import {mkdirSync} from 'node:fs'
 import {resolve} from 'node:path'
 import {pathToFileURL} from 'node:url'
 const command=process.argv[2]
-assert(['artifacts','development','source-catalog','http','review'].includes(command),'Select a known Mathematics QA operation')
+assert(['artifacts','development','source-catalog','http','review','relevance','relevance-http'].includes(command),'Select a known Mathematics QA operation')
 mkdirSync('.wrangler/math-source',{recursive:true})
 const require=createRequire(import.meta.url),wranglerRequire=createRequire(require.resolve('wrangler/package.json')),{build}=wranglerRequire('esbuild')
 const outfile=resolve(`.wrangler/math-source/math-${command}.bundle.mjs`)
