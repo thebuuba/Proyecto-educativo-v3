@@ -1,0 +1,356 @@
+{
+  "scope": "MATEMATICA_COMUN_1_6",
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.84",
+  "branch": "amplia-instrumentos-secundaria",
+  "implementationHead": "31726de3105c4865e91a1cd5c19c1e0b8fa95ec3",
+  "topics": 111,
+  "cases": 361,
+  "completeExampleInstruments": 1444,
+  "grades": [
+    {
+      "grade": 1,
+      "topics": 22,
+      "cases": 73,
+      "commit": "9ff519f7a37d766dbe0ea290f04e01e0d59479ea",
+      "httpSavedAndReopened": 4,
+      "visual": {
+        "grade": 1,
+        "project": "eolgunypmtgrsyrjzcld",
+        "account": "PERSONAL_DEVELOPMENT",
+        "activityId": "90c3a716-8fa4-4dd3-ac10-42ad8c3e1aee",
+        "catalog": "evaluation-2026.84",
+        "initialStrategyVisible": true,
+        "initialScoreBlank": true,
+        "strategyOnlyInstrumentEqual": true,
+        "explicitTotals": [
+          20,
+          17.35
+        ],
+        "formatsInspected": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "formatSavedAndReopened": "lista-ponderada",
+        "editedCriterionPreserved": true,
+        "reopenedFieldsEqual": true,
+        "existingDraftsPreserved": true
+      }
+    },
+    {
+      "grade": 2,
+      "topics": 18,
+      "cases": 56,
+      "commit": "836bdf08aa3a3f54508c655e3744faf23375d4a7",
+      "httpSavedAndReopened": 4,
+      "visual": {
+        "grade": 2,
+        "project": "eolgunypmtgrsyrjzcld",
+        "account": "PERSONAL_DEVELOPMENT",
+        "activityId": "0ce0df02-aa38-4f9a-af0d-f1639d665a0c",
+        "initialStrategyVisible": true,
+        "initialScoreBlank": true,
+        "strategyOnlyInstrumentEqual": true,
+        "explicitTotals": [
+          20,
+          17.35
+        ],
+        "editedCriterionPreserved": true,
+        "savedAndReopened": true,
+        "format": "rubrica",
+        "otherFormats": "HTTP_DB_VERIFIED_NOT_VISUAL",
+        "existingDraftsPreserved": true,
+        "formatsInspected": [
+          "rubrica"
+        ],
+        "formatSavedAndReopened": "rubrica"
+      }
+    },
+    {
+      "grade": 3,
+      "topics": 16,
+      "cases": 53,
+      "commit": "31ad6685bf7ba55e15e6b0dcd3fb862760ff3c16",
+      "httpSavedAndReopened": 4,
+      "visual": {
+        "grade": 3,
+        "project": "eolgunypmtgrsyrjzcld",
+        "account": "PERSONAL_DEVELOPMENT",
+        "activityId": "f2e8070c-5c1f-42c7-9fa8-150a60c76159",
+        "initialStrategyVisible": true,
+        "initialScoreBlank": true,
+        "strategyOnlyInstrumentEqual": true,
+        "explicitTotals": [
+          17.35
+        ],
+        "formatsInspected": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "formatSavedAndReopened": "lista-ponderada",
+        "completeOnlyEmpty": true,
+        "ambiguousManualObjectiveRecovery": true,
+        "weights": [
+          36.38,
+          36.35,
+          27.27
+        ],
+        "reopenedFieldsEqual": true,
+        "existingDraftsPreserved": true
+      }
+    },
+    {
+      "grade": 4,
+      "topics": 14,
+      "cases": 48,
+      "commit": "03a2c92033d32b1a36bc35b85597dbb3235302e5",
+      "httpSavedAndReopened": 4,
+      "visual": {
+        "grade": 4,
+        "project": "eolgunypmtgrsyrjzcld",
+        "account": "PERSONAL_DEVELOPMENT",
+        "activityId": "9b221490-d38b-4a0e-a1cf-aa365e8c9b65",
+        "initialStrategyVisible": true,
+        "initialScoreBlank": true,
+        "strategyOnlyInstrumentEqual": true,
+        "explicitTotals": [
+          17.35
+        ],
+        "formatsInspected": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "formatSavedAndReopened": "lista-cotejo",
+        "points": [
+          6.3,
+          3.17,
+          3.15,
+          4.73
+        ],
+        "reopenedFieldsEqual": true,
+        "existingDraftsPreserved": true
+      }
+    },
+    {
+      "grade": 5,
+      "topics": 19,
+      "cases": 59,
+      "commit": "94003f4aa697b12e8872cbaa251117ed17f060c5",
+      "httpSavedAndReopened": 4,
+      "visual": {
+        "grade": 5,
+        "project": "eolgunypmtgrsyrjzcld",
+        "account": "PERSONAL_DEVELOPMENT",
+        "activityId": "d0a41ac6-7f66-435b-9af3-0f53892b46fa",
+        "initialStrategyVisible": true,
+        "initialScoreBlank": true,
+        "strategyOnlyInstrumentEqual": true,
+        "explicitTotals": [
+          20,
+          17.35
+        ],
+        "formatsInspected": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "formatSavedAndReopened": "escala",
+        "completeOnlyEmpty": true,
+        "manualDescriptorPreserved": true,
+        "reopenedFieldsEqual": true,
+        "existingDraftsPreserved": true
+      }
+    },
+    {
+      "grade": 6,
+      "topics": 22,
+      "cases": 72,
+      "commit": "31726de3105c4865e91a1cd5c19c1e0b8fa95ec3",
+      "httpSavedAndReopened": 4,
+      "visual": {
+        "grade": 6,
+        "project": "eolgunypmtgrsyrjzcld",
+        "account": "PERSONAL_DEVELOPMENT",
+        "activityId": "e975422b-c3ec-4f25-b118-923f06612e5f",
+        "initialStrategyVisible": true,
+        "initialScoreBlank": true,
+        "strategyOnlyInstrumentEqual": true,
+        "explicitTotals": [
+          20,
+          17.35
+        ],
+        "formatsInspected": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "formatSavedAndReopened": "lista-ponderada",
+        "completeOnlyEmpty": true,
+        "addMissingCriterion": true,
+        "redistributionConfirmed": true,
+        "exhaustionNotice": true,
+        "manualTextAndWeightsPreserved": true,
+        "weights": [
+          36.38,
+          36.35,
+          27.27
+        ],
+        "reopenedFieldsEqual": true,
+        "existingDraftsPreserved": true
+      }
+    }
+  ],
+  "history": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 9,
+    "preservedSnapshots": 42,
+    "newReleases": 8,
+    "newSnapshots": 30
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-WzTnhmkS.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-WzTnhmkS.js",
+        "sha256": "07237130ce5da0c37c3c2c946b2e49268c4f6c5b0b41115b223050d5d236e45b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-CNfcO1hI.js",
+        "sha256": "84d09c8bdcceae58227f857b06db9bb24404aa74539e7de2ad4bf2074433d487",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-Bkd8Y_e0.js",
+        "sha256": "91b76f1b0e7e9e707c236c15b1f62dbbacdfdd1402b378335ef0b77f4609cd76",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-B8Ph1N1m.js",
+        "sha256": "57d47c3d377ef627469cbe6f549c1bd5f7c4ceaba7c5272e0687d336c825060c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-D8OlLd4b.js",
+        "sha256": "396143a8f770ee98079abc3296b022bcfce02c75f9e30712cff298a3addb7bbb",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "804aaf4abaed58a5ca316ab64ea2c3324dd97767e20d1b58b8c9e9b25aef87de",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "builds": [
+    {
+      "command": "pnpm --filter @aula/shared build",
+      "exit": 0,
+      "seconds": 2.147,
+      "log": ".wrangler/math-source/grade-6-shared-build.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "exit": 0,
+      "seconds": 9.798,
+      "log": ".wrangler/math-source/grade-6-backend-build.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "exit": 0,
+      "seconds": 12.844,
+      "log": ".wrangler/math-source/grade-6-frontend-build.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "exit": 0,
+      "seconds": 18.504,
+      "log": ".wrangler/math-source/grade-6-cloudflare-build.log"
+    }
+  ],
+  "automated": {
+    "backend": {
+      "files": 99,
+      "tests": 40507,
+      "exit": 0
+    },
+    "frontend": {
+      "files": 127,
+      "tests": 40990,
+      "exit": 0
+    }
+  },
+  "finalReadOnlyRecheck": {
+    "at": "2026-10-16T09:45:41.910Z",
+    "reopened": 4,
+    "generated": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "catalog": "evaluation-2026.84"
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "catalog": "evaluation-2026.84"
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "catalog": "evaluation-2026.84"
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "catalog": "evaluation-2026.84"
+      }
+    ],
+    "languageRegressions": [
+      {
+        "language": "FRA",
+        "catalog": "evaluation-2026.84",
+        "curriculumVersionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+        "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+      },
+      {
+        "language": "ING",
+        "catalog": "evaluation-2026.84",
+        "curriculumVersionId": null,
+        "scopeId": null
+      }
+    ]
+  },
+  "limitations": [
+    "PERSONAL_BROWSER_VISUAL_SAMPLE_NOT_EVERY_FORMAT_PERSISTENCE",
+    "NO_BROWSER_CACHE_OR_SERVICE_WORKER_REGISTRATION_INSPECTION",
+    "INTERMITTENT_EXTERNAL_DNS_NETWORK_AND_LOCAL_ASSET_WATCHER"
+  ]
+}

@@ -204,7 +204,7 @@
       "ms": 2171
     }
   ],
-  "browser": "PENDING",
+  "browser": "PARTIAL_PERSONAL_VISUAL_SEE_VISUAL",
   "finalBuildRecheck": {
     "at": "2026-10-16T09:46:15.263Z",
     "reopened": 4,
@@ -373,5 +373,6 @@
     ],
     "reopenedFieldsEqual": true,
     "existingDraftsPreserved": true
-  }
+  },
+  "initialBrowserStatus": "PENDING"
 }

@@ -219,7 +219,7 @@
       "ms": 4205
     }
   ],
-  "browser": "PENDING",
+  "browser": "PARTIAL_PERSONAL_VISUAL_SEE_VISUAL",
   "finalBuildRecheck": {
     "at": "2026-10-16T04:16:00.410Z",
     "reopened": 4,
@@ -347,5 +347,30 @@
       "seconds": 34.899,
       "log": ".wrangler/math-source/grade-1-cloudflare-build.log"
     }
-  ]
+  ],
+  "visual": {
+    "grade": 1,
+    "project": "eolgunypmtgrsyrjzcld",
+    "account": "PERSONAL_DEVELOPMENT",
+    "activityId": "90c3a716-8fa4-4dd3-ac10-42ad8c3e1aee",
+    "catalog": "evaluation-2026.84",
+    "initialStrategyVisible": true,
+    "initialScoreBlank": true,
+    "strategyOnlyInstrumentEqual": true,
+    "explicitTotals": [
+      20,
+      17.35
+    ],
+    "formatsInspected": [
+      "rubrica",
+      "lista-cotejo",
+      "escala",
+      "lista-ponderada"
+    ],
+    "formatSavedAndReopened": "lista-ponderada",
+    "editedCriterionPreserved": true,
+    "reopenedFieldsEqual": true,
+    "existingDraftsPreserved": true
+  },
+  "initialBrowserStatus": "PENDING"
 }

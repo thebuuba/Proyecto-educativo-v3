@@ -1455,8 +1455,18 @@
           "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
         }
       ],
-      "visualVerification": null,
-      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PENDING"
+      "visualVerification": {
+        "status": "PARTIAL_PERSONAL_BROWSER",
+        "formatsInspected": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "formatSavedAndReopened": "lista-ponderada",
+        "reopenedFieldsEqual": true
+      },
+      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PARTIAL"
     },
     {
       "grade": 2,
@@ -2673,8 +2683,10 @@
       ],
       "visualVerification": {
         "status": "PARTIAL_PERSONAL_BROWSER",
-        "formatsInspected": [],
-        "formatSavedAndReopened": null,
+        "formatsInspected": [
+          "rubrica"
+        ],
+        "formatSavedAndReopened": "rubrica",
         "reopenedFieldsEqual": null
       },
       "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PARTIAL"

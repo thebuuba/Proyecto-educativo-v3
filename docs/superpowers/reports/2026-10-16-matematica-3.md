@@ -1,6 +1,6 @@
 # Matemática común — 3.º de secundaria
 
-Catálogo evaluation-2026.81, rama amplia-instrumentos-secundaria. 16 temas y 53 consignas/variantes. Bloque automático y HTTP/DB verificado; prueba visual pendiente.
+Catálogo evaluation-2026.81, rama amplia-instrumentos-secundaria. 16 temas y 53 consignas/variantes. Bloque automático y HTTP/DB verificado; alcance visual documentado en la nota del grado.
 
 ## Cobertura y pertinencia
 

@@ -1,6 +1,6 @@
 # Matemática común — 1.º de secundaria
 
-Estado: pruebas automáticas, recorrido autenticado y relectura final verificados. No acredita todavía 2.º–6.º ni una prueba visual del navegador personal.
+Estado del bloque inicial: pruebas automáticas, recorrido autenticado y relectura final verificados. La prueba visual posterior con la cuenta propia se documenta al final. El estado acumulado de 1.º–6.º está en el informe consolidado.
 
 ## Cobertura y fuente
 
@@ -51,3 +51,7 @@ Pendiente visual: guardar antes cualquier edición abierta, abrir una pestaña n
 `secondary-math-common.ts`, `secondary-math-common-types.ts`, `secondary-math-grade-1.ts` e índice compartido; conexión en `recommendation-engine.ts`, `evaluation-instruments.service.ts`, `catalog-current.ts` y snapshots `.76/.77/.78`; adaptadores `instrumentPreparation.ts`, `activityDefaultSuggestions.ts`, `automaticInstrumentType.ts`, `ActivityCreationView.tsx`; contratos backend/frontend y fixtures matemáticos; scripts `run-math`, `math-artifacts`, `math-review`, `math-development`, `math-source-catalog`, `math-http`; matriz, instrumentos, diseño, plan e informe.
 
 Rama `amplia-instrumentos-secundaria`, sin main. Cerrar mediante commit en español y push normal tras verificar evidencia, diff, UTF-8 y exclusión de secretos/respaldos/credenciales QA. [Continuación precisa](../../curriculum/cobertura-secundaria/matematica-continuacion.md). Después avanzar automáticamente a 2.º, hasta terminar 6.º; no iniciar otra asignatura.
+
+## Comprobación visual posterior al cierre de sexto
+
+Con catálogo .84 y la cuenta propia de Development se recuperó la prueba antes bloqueada. Se comprobó estrategia visible al abrir, puntos inicialmente vacíos, consigna de suma/resta de enteros y los cuatro editores: rúbrica, cotejo con resultados separados, escala por grados y ponderada. Se probaron 20 y 17.35. Se editó el tercer criterio y cambió manualmente a Estudio de caso: igualdad exacta de tabla/campos. Actividad90c3a716-8fa4-4dd3-ac10-42ad8c3e1aee guardada/reabierta, nueve campos exactos. Los otros tres formatos tienen guardado/reapertura HTTP/DB, no persistencia visual personal. Añadir/completar en1.º sigue comprobado por contratos/adaptadores/HTTP, no por clics de esta prueba. Los cuatro borradores anteriores se conservaron. No se amplió contenido ni se modificó código en esta comprobación.

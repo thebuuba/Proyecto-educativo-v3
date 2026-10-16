@@ -194,7 +194,7 @@
       "ms": 3269
     }
   ],
-  "browser": "PENDING",
+  "browser": "PARTIAL_PERSONAL_VISUAL_SEE_VISUAL",
   "catalog": {
     "project": "eolgunypmtgrsyrjzcld",
     "catalog": "evaluation-2026.82",
@@ -318,5 +318,6 @@
     ],
     "reopenedFieldsEqual": true,
     "existingDraftsPreserved": true
-  }
+  },
+  "initialBrowserStatus": "PENDING"
 }
