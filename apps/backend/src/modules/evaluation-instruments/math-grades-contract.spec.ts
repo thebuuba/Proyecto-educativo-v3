@@ -1,11 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import { detectTeachingStrategy } from '@aula/shared'
 import { recommend } from './recommendation-engine'
+import sixthGrade from '../../../../../data/evaluation-instruments/math-grade-6-contracts.json'
 import fifthGrade from '../../../../../data/evaluation-instruments/math-grade-5-contracts.json'
 import fourthGrade from '../../../../../data/evaluation-instruments/math-grade-4-contracts.json'
 import thirdGrade from '../../../../../data/evaluation-instruments/math-grade-3-contracts.json'
 import topics from '../../../../../data/evaluation-instruments/math-grade-2-contracts.json'
-for(const [grade,topicsForGrade] of [[2,topics],[3,thirdGrade],[4,fourthGrade],[5,fifthGrade]] as const){
+for(const [grade,topicsForGrade] of [[2,topics],[3,thirdGrade],[4,fourthGrade],[5,fifthGrade],[6,sixthGrade]] as const){
 const cases=topicsForGrade.flatMap(f=>[f,...(f.variants??[]).map(v=>({...v,id:f.id}))])
 
 const context = { level: 'SECONDARY' as const, grade, cycle: grade<=3?1:2, modalityCode: 'academic', subjectCode: 'MAT', subjectName: 'Matemática', optativeExitName: null }
@@ -23,6 +24,42 @@ describe(`Matemática común ${grade}.º: contenido solicitado, acciones y forma
     expect(propose(f.description,format,total,'Ensayo de literatura inglesa').criteria).toEqual(p.criteria)
     expect(p.criteria.map(c=>c.description).join(' ')).not.toMatch(/rapidez|estética|caligrafía|participación|cartulina|datos ficticios/)
   })
+  if(grade===6){
+    it('el cotejo identifica de forma independiente cada forma compleja solicitada',()=>{
+      const p=propose('Identifica los números complejos en forma binómica, polar y trigonométrica dados.','lista-cotejo')
+      for(const form of ['binomica','polar','trigonometrica'])expect(p.criteria.some(c=>c.templateId.includes('concept:'+form))).toBe(true)
+    })
+    it('pares ordenados no exige ordenar y las dos sucesiones sobreviven al orden de redacción',()=>{
+      const p=propose('Representa los números complejos dados como pares ordenados.')
+      expect(p.criteria.map(c=>c.templateId)).toEqual(['mat-6-complex-representation'])
+      const q=propose('Compara las sucesiones geométricas y aritméticas dadas.')
+      expect(q.criteria.some(c=>c.templateId==='mat-6-arithmetic-comparison')).toBe(true)
+      expect(q.criteria.some(c=>c.templateId==='mat-6-geometric-comparison')).toBe(true)
+    })
+    it('usar una identidad como método no crea una segunda ecuación independiente',()=>{
+      const p=propose('Resuelve la ecuación trigonométrica mediante las identidades trigonométricas indicadas.')
+      expect(p.criteria.every(c=>c.templateId.startsWith('mat-6-trig-equations-'))).toBe(true)
+    })
+    it('derivar mediante límite no duplica una tarea de límites, y la negación no exige cálculo',()=>{
+      expect(propose('Calcula la derivada de la función mediante el concepto de límite.').criteria.every(c=>c.templateId.startsWith('mat-6-derivatives-'))).toBe(true)
+      const p=propose('No deriven funciones, pero explica las reglas de derivación o representa el número complejo dado.')
+      expect(p.criteria).toHaveLength(1);expect(p.criteria[0].description).toMatch(/O BIEN/)
+      expect(p.criteria[0].description).not.toMatch(/Obtiene el resultado/)
+    })
+    it('conserva dos regímenes y dos tipos de integral como resultados independientes',()=>{
+      const p=propose('Calcula el interés simple y compuesto con los datos dados.','lista-cotejo')
+      expect(p.criteria.some(c=>c.templateId.includes('result:simple'))).toBe(true)
+      expect(p.criteria.some(c=>c.templateId.includes('result:compuesto'))).toBe(true)
+      const q=propose('Calcula las integrales definidas e indefinidas sencillas indicadas.','lista-cotejo')
+      expect(q.criteria.some(c=>c.templateId.includes('result:definida'))).toBe(true)
+      expect(q.criteria.some(c=>c.templateId.includes('result:indefinida'))).toBe(true)
+    })
+    it('respeta grados y raíces, dominio y constante sin inventar valores ni herramientas',()=>{
+      expect(propose('Explica el teorema fundamental del álgebra.').criteria[0].description).toMatch(/multiplicidad/)
+      expect(propose('Explica las reglas de integración de la integral indefinida.').criteria[0].description).toMatch(/constante/)
+      expect(propose('Resulve la ecuación logarítmica dada.').criteria.map(c=>c.description).join(' ')).toMatch(/argumentos positivos/)
+    })
+  }
   if(grade===5){
     it('respeta operaciones negadas y una consigna con error habitual',()=>{
       const p=propose('No multipliquen matrices, pero explica sus dimensiones.')

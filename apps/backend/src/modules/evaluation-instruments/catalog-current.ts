@@ -79,6 +79,7 @@ import {evaluationCatalogV79} from './catalog-v79'
 import {evaluationCatalogV80} from './catalog-v80'
 import {evaluationCatalogV81} from './catalog-v81'
 import {evaluationCatalogV82} from './catalog-v82'
+import {evaluationCatalogV83} from './catalog-v83'
 import {commonMathModules} from '@aula/shared'
 import {frenchGradeOneModule, frenchGradeTwoModule, frenchGradeThreeModule, frenchGradeFourModule, frenchGradeFiveModule, frenchGradeSixModule} from '@aula/shared'
 import {englishGradeSixModule,englishGradeSixGrammar,englishGradeSixLexicon,englishGradeSixStrategies,englishGradeSixGenres} from '@aula/shared'
@@ -98,7 +99,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.83',
+  version: 'evaluation-2026.84',
   mathCommonModules: commonMathModules,
   frenchInteractionEvidencePolicy: 'EXPLICIT_QUESTIONS_RESPONSES_RESIDENCE_AND_EXCHANGED_ROLES_V1',
   frenchModules: [frenchGradeOneModule, frenchGradeTwoModule, frenchGradeThreeModule, frenchGradeFourModule, frenchGradeFiveModule, frenchGradeSixModule],
@@ -196,6 +197,7 @@ export function evaluationCatalogForVersion(version: string) {
   if(version===evaluationCatalogV80.version)return evaluationCatalogV80
   if(version===evaluationCatalogV81.version)return evaluationCatalogV81
   if(version===evaluationCatalogV82.version)return evaluationCatalogV82
+  if(version===evaluationCatalogV83.version)return evaluationCatalogV83
   if(version===evaluationCatalogV75.version)return evaluationCatalogV75
   if(version===evaluationCatalogV74.version)return evaluationCatalogV74
   if(version===evaluationCatalogV73.version)return evaluationCatalogV73

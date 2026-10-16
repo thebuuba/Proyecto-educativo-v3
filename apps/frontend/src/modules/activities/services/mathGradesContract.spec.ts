@@ -5,11 +5,12 @@ import {editableFallbackRecommendation,recommendationToFields} from './instrumen
 import {scoreInstrumentFields} from './instrumentScoring'
 import {appendInstrumentCriterion,completeInstrumentCriterion,nextCatalogCriterion} from './instrumentCriterionAddition'
 import {activityDefaultSuggestions} from '../utils/activityDefaultSuggestions'
+import sixthGrade from '../../../../../../data/evaluation-instruments/math-grade-6-contracts.json'
 import fifthGrade from '../../../../../../data/evaluation-instruments/math-grade-5-contracts.json'
 import fourthGrade from '../../../../../../data/evaluation-instruments/math-grade-4-contracts.json'
 import thirdGrade from '../../../../../../data/evaluation-instruments/math-grade-3-contracts.json'
 import topics from '../../../../../../data/evaluation-instruments/math-grade-2-contracts.json'
-for(const [grade,topicsForGrade] of [[2,topics],[3,thirdGrade],[4,fourthGrade],[5,fifthGrade]] as const){
+for(const [grade,topicsForGrade] of [[2,topics],[3,thirdGrade],[4,fourthGrade],[5,fifthGrade],[6,sixthGrade]] as const){
 const cases=topicsForGrade.flatMap(f=>[f,...(f.variants??[]).map(v=>({...v,id:f.id}))])
 const context={level:'SECONDARY' as const,grade,cycle:grade<=3?1:2,modalityCode:'academic',subjectCode:'MAT',subjectName:'Matemática',optativeExitName:null}
 describe(`Matemática ${grade}.º: paridad, formatos, edición y precisión`,()=>{

@@ -1,0 +1,377 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "base": "http://localhost:8787",
+  "grade": 6,
+  "verification": "AUTHENTICATED_HTTP_DB_AND_EDITOR_ADAPTERS_NOT_VISUAL",
+  "savedEvidence": [
+    {
+      "type": "rubrica",
+      "total": 20,
+      "activityId": "2833a133-8c5b-440d-9787-a407402d27d8",
+      "instrumentHash": "f95f23f54a9850639a89951d6072a7f644dc90fbbdb1eb419e2fadc6e6ba157f",
+      "snapshotId": "dd59fdc8-0f4d-41b6-84b9-4e1fe31e3fc3",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "e3fd0fca-ef3d-51c5-87a4-e146557288a6"
+      }
+    },
+    {
+      "type": "lista-cotejo",
+      "total": 17.35,
+      "activityId": "b7180da9-ba3e-43d2-a3d5-49e9f6fe012e",
+      "instrumentHash": "a49cf5d05134e2903e001eaec981f69794bb9ec59ccd5483eeb600038bcfd9cc",
+      "snapshotId": "91409680-1ff6-4308-a7fb-a7ac4b4d4102",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "e3fd0fca-ef3d-51c5-87a4-e146557288a6"
+      }
+    },
+    {
+      "type": "escala",
+      "total": 20,
+      "activityId": "20feab12-7f57-4e38-9977-fe24cfac0657",
+      "instrumentHash": "24ee92b3f8097bfcbbd9516be3208ac7635e53100a2e50bfbf93a2789404603a",
+      "snapshotId": "4a664bd1-cace-4a45-a2e8-6edc818c5a9b",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "e3fd0fca-ef3d-51c5-87a4-e146557288a6"
+      }
+    },
+    {
+      "type": "lista-ponderada",
+      "total": 17.35,
+      "activityId": "7bea9013-aade-4d76-8161-90cd27a876e8",
+      "instrumentHash": "9f30d0f97f2bfea16db975258631c2a2b67e2e0f4beab0c7208dd154c912dc88",
+      "snapshotId": "08e9aa71-b396-499b-a14e-a9db82792485",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+        "scopeId": "e3fd0fca-ef3d-51c5-87a4-e146557288a6"
+      }
+    }
+  ],
+  "timings": [
+    {
+      "path": "/health",
+      "status": 200,
+      "ms": 651
+    },
+    {
+      "path": "/auth/login",
+      "status": 201,
+      "ms": 3316
+    },
+    {
+      "path": "/health",
+      "status": 200,
+      "ms": 1099
+    },
+    {
+      "path": "/auth/login",
+      "status": 201,
+      "ms": 2102
+    },
+    {
+      "path": "/activities/center",
+      "status": 200,
+      "ms": 8950
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 6560
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 5500
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 6316
+    },
+    {
+      "path": "/activities?sectionSubjectId=ab5355e1-e69d-4449-92d1-dfdb3ae49277",
+      "status": 200,
+      "ms": 2220
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 5574
+    },
+    {
+      "path": "/activities?sectionSubjectId=ab5355e1-e69d-4449-92d1-dfdb3ae49277",
+      "status": 200,
+      "ms": 3168
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 5018
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 7554
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 7108
+    },
+    {
+      "path": "/activities?sectionSubjectId=ab5355e1-e69d-4449-92d1-dfdb3ae49277",
+      "status": 200,
+      "ms": 2575
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 5216
+    },
+    {
+      "path": "/activities?sectionSubjectId=ab5355e1-e69d-4449-92d1-dfdb3ae49277",
+      "status": 200,
+      "ms": 2011
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 8147
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 4991
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 5603
+    },
+    {
+      "path": "/activities?sectionSubjectId=ab5355e1-e69d-4449-92d1-dfdb3ae49277",
+      "status": 200,
+      "ms": 4470
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 6296
+    },
+    {
+      "path": "/activities?sectionSubjectId=ab5355e1-e69d-4449-92d1-dfdb3ae49277",
+      "status": 200,
+      "ms": 3760
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 6743
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 6184
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 6780
+    },
+    {
+      "path": "/activities?sectionSubjectId=ab5355e1-e69d-4449-92d1-dfdb3ae49277",
+      "status": 200,
+      "ms": 2949
+    },
+    {
+      "path": "/activities",
+      "status": 201,
+      "ms": 5679
+    },
+    {
+      "path": "/activities?sectionSubjectId=ab5355e1-e69d-4449-92d1-dfdb3ae49277",
+      "status": 200,
+      "ms": 2171
+    }
+  ],
+  "browser": "PENDING",
+  "finalBuildRecheck": {
+    "at": "2026-10-16T09:46:15.263Z",
+    "reopened": 4,
+    "generated": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "catalog": "evaluation-2026.84"
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "catalog": "evaluation-2026.84"
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "catalog": "evaluation-2026.84"
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "catalog": "evaluation-2026.84"
+      }
+    ],
+    "languageRegressions": [
+      {
+        "language": "FRA",
+        "catalog": "evaluation-2026.84",
+        "curriculumVersionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+        "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+      },
+      {
+        "language": "ING",
+        "catalog": "evaluation-2026.84",
+        "curriculumVersionId": null,
+        "scopeId": null
+      }
+    ]
+  },
+  "catalog": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.84",
+    "grade": 6,
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 16,
+    "preservedSnapshots": 66
+  },
+  "history": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 9,
+    "preservedSnapshots": 42,
+    "newReleases": 8,
+    "newSnapshots": 29
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-WzTnhmkS.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-WzTnhmkS.js",
+        "sha256": "07237130ce5da0c37c3c2c946b2e49268c4f6c5b0b41115b223050d5d236e45b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-CNfcO1hI.js",
+        "sha256": "84d09c8bdcceae58227f857b06db9bb24404aa74539e7de2ad4bf2074433d487",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-Bkd8Y_e0.js",
+        "sha256": "91b76f1b0e7e9e707c236c15b1f62dbbacdfdd1402b378335ef0b77f4609cd76",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-B8Ph1N1m.js",
+        "sha256": "57d47c3d377ef627469cbe6f549c1bd5f7c4ceaba7c5272e0687d336c825060c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-D8OlLd4b.js",
+        "sha256": "396143a8f770ee98079abc3296b022bcfce02c75f9e30712cff298a3addb7bbb",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "804aaf4abaed58a5ca316ab64ea2c3324dd97767e20d1b58b8c9e9b25aef87de",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "builds": [
+    {
+      "command": "pnpm --filter @aula/shared build",
+      "exit": 0,
+      "seconds": 2.147,
+      "log": ".wrangler/math-source/grade-6-shared-build.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "exit": 0,
+      "seconds": 9.798,
+      "log": ".wrangler/math-source/grade-6-backend-build.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "exit": 0,
+      "seconds": 12.844,
+      "log": ".wrangler/math-source/grade-6-frontend-build.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "exit": 0,
+      "seconds": 18.504,
+      "log": ".wrangler/math-source/grade-6-cloudflare-build.log"
+    }
+  ],
+  "visual": {
+    "grade": 6,
+    "project": "eolgunypmtgrsyrjzcld",
+    "account": "PERSONAL_DEVELOPMENT",
+    "activityId": "e975422b-c3ec-4f25-b118-923f06612e5f",
+    "initialStrategyVisible": true,
+    "initialScoreBlank": true,
+    "strategyOnlyInstrumentEqual": true,
+    "explicitTotals": [
+      20,
+      17.35
+    ],
+    "formatsInspected": [
+      "rubrica",
+      "lista-cotejo",
+      "escala",
+      "lista-ponderada"
+    ],
+    "formatSavedAndReopened": "lista-ponderada",
+    "completeOnlyEmpty": true,
+    "addMissingCriterion": true,
+    "redistributionConfirmed": true,
+    "exhaustionNotice": true,
+    "manualTextAndWeightsPreserved": true,
+    "weights": [
+      36.38,
+      36.35,
+      27.27
+    ],
+    "reopenedFieldsEqual": true,
+    "existingDraftsPreserved": true
+  }
+}

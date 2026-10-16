@@ -710,7 +710,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "rationals",
@@ -749,7 +749,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "absolute",
@@ -779,7 +779,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "percent",
@@ -814,7 +814,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "simple-interest",
@@ -847,7 +847,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "compound-interest",
@@ -879,7 +879,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "tax",
@@ -914,7 +914,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "economy",
@@ -948,7 +948,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "lines",
@@ -990,7 +990,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "angles",
@@ -1024,7 +1024,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "pythagoras",
@@ -1057,7 +1057,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "prisms",
@@ -1096,7 +1096,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "pyramids",
@@ -1134,7 +1134,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "capacity",
@@ -1168,7 +1168,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "units",
@@ -1207,7 +1207,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "mass",
@@ -1237,7 +1237,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "time",
@@ -1267,7 +1267,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "temperature",
@@ -1298,7 +1298,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "coordinates",
@@ -1329,7 +1329,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "statistics",
@@ -1369,7 +1369,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "central",
@@ -1401,7 +1401,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "probability",
@@ -1435,7 +1435,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-1.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         }
       ],
       "unassignedSourceRecords": [
@@ -1455,6 +1455,7 @@
           "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
         }
       ],
+      "visualVerification": null,
       "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PENDING"
     },
     {
@@ -2064,7 +2065,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "patterns",
@@ -2098,7 +2099,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "expressions",
@@ -2138,7 +2139,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "linear-equations",
@@ -2169,7 +2170,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "linear-inequalities",
@@ -2199,7 +2200,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "quadratics",
@@ -2230,7 +2231,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "quadratic-inequalities",
@@ -2260,7 +2261,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "planning",
@@ -2298,7 +2299,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "compound",
@@ -2329,7 +2330,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "geometry",
@@ -2366,7 +2367,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "coordinates",
@@ -2399,7 +2400,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "distance",
@@ -2430,7 +2431,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "heron",
@@ -2464,7 +2465,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "triangle",
@@ -2498,7 +2499,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "round-bodies",
@@ -2545,7 +2546,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "position",
@@ -2577,7 +2578,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "statistics",
@@ -2614,7 +2615,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "probability",
@@ -2650,7 +2651,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-2.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         }
       ],
       "unassignedSourceRecords": [
@@ -2662,7 +2663,7 @@
         {
           "id": "5b4ee04c-4f4d-570b-a591-682ea33670a2",
           "text": "Algebra:",
-          "reason": "REQUIRES_REVIEW_UNMAPPED"
+          "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
         },
         {
           "id": "46887995-da5b-5556-907e-841ddb327a44",
@@ -2670,7 +2671,13 @@
           "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
         }
       ],
-      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PENDING"
+      "visualVerification": {
+        "status": "PARTIAL_PERSONAL_BROWSER",
+        "formatsInspected": [],
+        "formatSavedAndReopened": null,
+        "reopenedFieldsEqual": null
+      },
+      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PARTIAL"
     },
     {
       "grade": 3,
@@ -3130,7 +3137,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "notable",
@@ -3165,7 +3172,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "factorization",
@@ -3212,7 +3219,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "logic",
@@ -3247,7 +3254,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "roots",
@@ -3283,7 +3290,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "rational-zeros",
@@ -3318,7 +3325,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "descartes",
@@ -3353,7 +3360,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "ruffini",
@@ -3388,7 +3395,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "equations",
@@ -3420,7 +3427,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "linear",
@@ -3457,7 +3464,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "systems",
@@ -3492,7 +3499,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "functions",
@@ -3531,7 +3538,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "absolute",
@@ -3566,7 +3573,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "statistics",
@@ -3598,7 +3605,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "dispersion",
@@ -3629,7 +3636,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "probability",
@@ -3660,7 +3667,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-3.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         }
       ],
       "unassignedSourceRecords": [
@@ -3670,7 +3677,18 @@
           "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
         }
       ],
-      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PENDING"
+      "visualVerification": {
+        "status": "PARTIAL_PERSONAL_BROWSER",
+        "formatsInspected": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "formatSavedAndReopened": "lista-ponderada",
+        "reopenedFieldsEqual": true
+      },
+      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PARTIAL"
     },
     {
       "grade": 4,
@@ -4142,7 +4160,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "lines",
@@ -4182,7 +4200,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "polygons",
@@ -4224,7 +4242,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "triangles",
@@ -4258,7 +4276,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "congruence",
@@ -4298,7 +4316,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "thales",
@@ -4329,7 +4347,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "menelaus",
@@ -4359,7 +4377,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "ceva",
@@ -4389,7 +4407,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "circumference",
@@ -4428,7 +4446,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "polyhedra",
@@ -4466,7 +4484,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "truncated",
@@ -4501,7 +4519,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "transformations",
@@ -4541,7 +4559,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "units",
@@ -4572,7 +4590,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "reservoir",
@@ -4602,7 +4620,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-4.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         }
       ],
       "unassignedSourceRecords": [
@@ -4612,7 +4630,18 @@
           "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
         }
       ],
-      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PENDING"
+      "visualVerification": {
+        "status": "PARTIAL_PERSONAL_BROWSER",
+        "formatsInspected": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "formatSavedAndReopened": "lista-cotejo",
+        "reopenedFieldsEqual": true
+      },
+      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PARTIAL"
     },
     {
       "grade": 5,
@@ -5103,7 +5132,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "circle",
@@ -5136,7 +5165,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "parabola",
@@ -5169,7 +5198,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "ellipse",
@@ -5202,7 +5231,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "hyperbola",
@@ -5235,7 +5264,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "conics",
@@ -5273,7 +5302,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "vectors",
@@ -5314,7 +5343,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "matrices",
@@ -5356,7 +5385,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "determinants",
@@ -5386,7 +5415,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "inverse",
@@ -5419,7 +5448,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "trig-history",
@@ -5448,7 +5477,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "trig-functions",
@@ -5484,7 +5513,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "sine-law",
@@ -5515,7 +5544,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "cosine-law",
@@ -5545,7 +5574,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "right-triangles",
@@ -5580,7 +5609,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "oblique-triangles",
@@ -5610,7 +5639,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "notable-angles",
@@ -5640,7 +5669,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "trig-graphs",
@@ -5670,7 +5699,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
           "id": "identities",
@@ -5704,7 +5733,7 @@
             }
           ],
           "provider": "packages/shared/src/secondary-math-grade-5.ts",
-          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         }
       ],
       "unassignedSourceRecords": [
@@ -5714,7 +5743,18 @@
           "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
         }
       ],
-      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PENDING"
+      "visualVerification": {
+        "status": "PARTIAL_PERSONAL_BROWSER",
+        "formatsInspected": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "formatSavedAndReopened": "escala",
+        "reopenedFieldsEqual": true
+      },
+      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PARTIAL"
     },
     {
       "grade": 6,
@@ -6283,175 +6323,804 @@
           "printedPage": "234"
         }
       ],
-      "topics": [],
-      "unassignedSourceRecords": [
+      "topics": [
         {
-          "id": "5c81c73f-0d08-5f2c-9f19-0867653f1da0",
-          "text": "• Teoría de ecuaciones: teorema\nfundamental del álgebra.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "roots",
+          "grade": 6,
+          "label": "teorema fundamental del álgebra",
+          "match": "teorema fundamental del algebra|(?:raiz|raices) de (?:una |la )?ecuacion",
+          "relation": "el grado de un polinomio no constante y el número de raíces complejas contadas con multiplicidad, sin suponer que todas sean reales o distintas",
+          "representation": "representa las raíces solicitadas respetando su multiplicidad y el dominio indicado",
+          "pages": [
+            233
+          ],
+          "sourceRecordIds": [
+            "5c81c73f-0d08-5f2c-9f19-0867653f1da0",
+            "18179fe9-7eff-548a-9c8c-e316210ea4b8",
+            "df951b6c-f4d1-5e8a-944e-bf8fa347b52b",
+            "00eefc2b-465d-57d7-abbb-24e50454bcbe",
+            "bbd6bb75-7015-5ac7-8b23-d714d17115f3"
+          ],
+          "families": [
+            {
+              "description": "Analiza las raíces de la ecuación mediante el teorema fundamental del álgebra.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Explica el teorema fundamental del álgebra aplicado a la ecuación dada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores al contar las raíces de la ecuación.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "bfbe10f9-b3e5-5a1e-8ba0-5d5e2469544e",
-          "text": "• Ecuaciones exponenciales y\nlogarítmicas. Inecuaciones\ncuadráticas. Sistemas de ecuaciones\ncuadráticas en dos variables.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "exponential",
+          "grade": 6,
+          "label": "ecuaciones exponenciales",
+          "match": "ecuacion(?:es)? exponencial(?:es)?",
+          "relation": "las propiedades de las potencias y las condiciones de la ecuación exponencial dada, conservando equivalencias y comprobando la admisibilidad de las soluciones",
+          "representation": "representa la relación exponencial solicitada conservando sus condiciones y dominio",
+          "pages": [
+            233
+          ],
+          "sourceRecordIds": [
+            "bfbe10f9-b3e5-5a1e-8ba0-5d5e2469544e",
+            "b89575f1-a779-50e5-b4c9-37f9471d99e1",
+            "df951b6c-f4d1-5e8a-944e-bf8fa347b52b",
+            "00eefc2b-465d-57d7-abbb-24e50454bcbe",
+            "bbd6bb75-7015-5ac7-8b23-d714d17115f3"
+          ],
+          "families": [
+            {
+              "description": "Resuelve las ecuaciones exponenciales dadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas del contexto con ecuaciones exponenciales.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica los errores de la ecuación exponencial resuelta.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "89e55439-b878-591f-ab3f-de64256d2958",
-          "text": "• Sistemas de inecuaciones\ncuadráticas y sus métodos de\nresolución.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "logarithmic",
+          "grade": 6,
+          "label": "ecuaciones logarítmicas",
+          "match": "ecuacion(?:es)? logaritmicas?",
+          "relation": "la base positiva distinta de uno, los argumentos positivos y las equivalencias de la ecuación logarítmica dada, descartando soluciones no admisibles",
+          "representation": "representa la relación logarítmica solicitada respetando el dominio y sus referencias",
+          "pages": [
+            233
+          ],
+          "sourceRecordIds": [
+            "bfbe10f9-b3e5-5a1e-8ba0-5d5e2469544e",
+            "b89575f1-a779-50e5-b4c9-37f9471d99e1",
+            "df951b6c-f4d1-5e8a-944e-bf8fa347b52b",
+            "00eefc2b-465d-57d7-abbb-24e50454bcbe"
+          ],
+          "families": [
+            {
+              "description": "Resuelve las ecuaciones logarítmicas dadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas con ecuaciones logarítmicas.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Comprueba las soluciones de la ecuación logarítmica dada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "0b127e5b-9a78-52ea-8178-bb3d7f8d5246",
-          "text": "• Sucesiones, Progresiones y\nFinanzas: sucesiones aritméticas y\ngeométricas, progresiones.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "quadratic-inequalities",
+          "grade": 6,
+          "label": "inecuaciones cuadráticas",
+          "match": "inecuacion(?:es)? cuadraticas?",
+          "relation": "los ceros, signos e intervalos de la expresión cuadrática y la inclusión o exclusión de extremos según la desigualdad solicitada",
+          "representation": "representa el conjunto solución de la inecuación cuadrática con los intervalos y extremos correspondientes",
+          "pages": [
+            233
+          ],
+          "exclude": "sistemas? de",
+          "sourceRecordIds": [
+            "bfbe10f9-b3e5-5a1e-8ba0-5d5e2469544e",
+            "89e55439-b878-591f-ab3f-de64256d2958",
+            "68b3d63b-9fce-5fd4-974e-14f45bcdc8d5",
+            "5d7eca80-27b2-5ca3-be87-816fe68aa86a",
+            "0ea4cdfb-8171-5cd5-94cd-3105cdea98ea",
+            "09cf369a-14c2-5eca-ac7c-3c9eac3f704f"
+          ],
+          "families": [
+            {
+              "description": "Resuelve las inecuaciones cuadráticas dadas por el método indicado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Representa gráficamente las inecuaciones cuadráticas proporcionadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Analiza y corrige los errores de las inecuaciones cuadráticas.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "8e38275a-5fe7-5b65-8654-cab745c60954",
-          "text": "• Valor actual a interés simple y\ncompuesto. Tarjeta de crédito,\ndiferencia entre saldo absoluto y\nsaldo insoluto.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "quadratic-systems",
+          "grade": 6,
+          "label": "sistemas de ecuaciones cuadráticas",
+          "match": "sistemas? de ecuaciones? cuadraticas?",
+          "relation": "los pares ordenados que satisfacen simultáneamente las ecuaciones cuadráticas dadas y su correspondencia con las intersecciones, sin suponer una solución única",
+          "representation": "representa las curvas y sus intersecciones solicitadas conservando las condiciones de ambas ecuaciones",
+          "pages": [
+            233
+          ],
+          "sourceRecordIds": [
+            "bfbe10f9-b3e5-5a1e-8ba0-5d5e2469544e",
+            "229779aa-d733-5ff1-9cd7-fdd95de70dcf"
+          ],
+          "families": [
+            {
+              "description": "Resuelve el sistema de ecuaciones cuadráticas en dos variables dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Representa gráficamente el sistema de ecuaciones cuadráticas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Comprueba las soluciones del sistema de ecuaciones cuadráticas.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "ca7350fb-dcc4-54ae-8fdb-d45ea65a3db4",
-          "text": "• Números Complejos: Números\ncomplejos en forma de par\nordenado, binómica, polar y\ntrigonométrica.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "inequality-systems",
+          "grade": 6,
+          "label": "sistemas de inecuaciones cuadráticas",
+          "match": "sistemas? de inecuaciones? cuadraticas?",
+          "relation": "la intersección de las regiones que satisfacen simultáneamente las inecuaciones cuadráticas dadas y el carácter incluido o excluido de sus fronteras",
+          "representation": "representa la región solución común de las inecuaciones solicitadas, distinguiendo sus fronteras",
+          "pages": [
+            233
+          ],
+          "sourceRecordIds": [
+            "89e55439-b878-591f-ab3f-de64256d2958",
+            "0ea4cdfb-8171-5cd5-94cd-3105cdea98ea",
+            "09cf369a-14c2-5eca-ac7c-3c9eac3f704f"
+          ],
+          "families": [
+            {
+              "description": "Resuelve el sistema de inecuaciones cuadráticas dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Representa gráficamente el sistema de inecuaciones cuadráticas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica la región solución del sistema de inecuaciones cuadráticas.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "1a9da404-85a0-5e24-92e1-acacf713774a",
-          "text": "• Trigonometría: Fórmulas de suma y\ndiferencia de ángulos.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "sequences",
+          "grade": 6,
+          "label": "sucesiones y progresiones",
+          "match": "sucesion(?:es)?|progresion(?:es)?",
+          "relation": "el índice, término y regla de formación de la sucesión solicitada, sin inferir una regla única a partir de pocos términos si no está determinada",
+          "representation": "representa únicamente los términos y relaciones de la sucesión que se solicitan",
+          "pages": [
+            233
+          ],
+          "exclude": "aritmetic|geometric|limite|derivad",
+          "sourceRecordIds": [
+            "0b127e5b-9a78-52ea-8178-bb3d7f8d5246",
+            "0666a9a1-55d2-5337-be9a-46c2506761e7",
+            "4cc1fce9-70f7-5ce7-959e-9d3d865217a6",
+            "4d1c9bac-8358-5ba7-b66f-cfb5d330f4f5",
+            "ec8bc54f-65d3-5cf9-b776-e6ade0f3fb80",
+            "7e2bf645-8eaa-5781-8262-abdd2726ec83",
+            "0ea4cdfb-8171-5cd5-94cd-3105cdea98ea",
+            "416d4f7f-6505-5398-9327-629a441b9e35"
+          ],
+          "families": [
+            {
+              "description": "Analiza la regla de las sucesiones dadas.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Resuelve las sucesiones con la regla proporcionada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica por qué los términos de la sucesión no determinan una regla única.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "15cfb6f0-f463-5634-a07b-d78688ca6d2e",
-          "text": "• Ángulo doble, triple y mitad.\nEcuaciones trigonométricas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "arithmetic",
+          "grade": 6,
+          "label": "sucesiones aritméticas",
+          "match": "(?:sucesion|progresion)(?:es)? (?:geometricas? y )?aritmeticas?",
+          "relation": "la diferencia constante, el índice inicial y los términos o suma de la progresión aritmética que se piden, sin confundir diferencia y razón",
+          "representation": "representa los términos solicitados de la sucesión aritmética conservando la diferencia y el índice inicial",
+          "pages": [
+            233
+          ],
+          "sourceRecordIds": [
+            "0b127e5b-9a78-52ea-8178-bb3d7f8d5246",
+            "4d1c9bac-8358-5ba7-b66f-cfb5d330f4f5",
+            "7e2bf645-8eaa-5781-8262-abdd2726ec83"
+          ],
+          "families": [
+            {
+              "description": "Calcula los términos de la sucesión aritmética dada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas de préstamos con sucesiones aritméticas.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica la diferencia constante de la progresión aritmética indicada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "dd27b223-050b-5abc-ba0d-96324d83401b",
-          "text": "• Limites, Derivadas e Integrales\nsimples.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "geometric",
+          "grade": 6,
+          "label": "sucesiones geométricas",
+          "match": "(?:sucesion|progresion)(?:es)? (?:aritmeticas? y )?geometricas?",
+          "relation": "la razón constante, el término inicial y los términos o suma de la progresión geométrica solicitada, considerando los casos particulares de la razón",
+          "representation": "representa los términos solicitados de la sucesión geométrica conservando razón e índice inicial",
+          "pages": [
+            233
+          ],
+          "sourceRecordIds": [
+            "0b127e5b-9a78-52ea-8178-bb3d7f8d5246",
+            "4d1c9bac-8358-5ba7-b66f-cfb5d330f4f5",
+            "7e2bf645-8eaa-5781-8262-abdd2726ec83"
+          ],
+          "families": [
+            {
+              "description": "Calcula los términos de la sucesión geométrica dada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas de préstamos con progresiones geométricas.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Compara las sucesiones aritméticas y geométricas dadas.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "0666a9a1-55d2-5337-be9a-46c2506761e7",
-          "text": "• Concepto matemático de límite de\nfunciones y sucesiones. Propiedades\nde los límites de funciones y\nsucesiones. Derivada de funciones",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "interest",
+          "grade": 6,
+          "label": "interés simple y compuesto",
+          "match": "interes simple|interes compuesto|intereses? simples? y compuestos?",
+          "relation": "el capital, la tasa y el tiempo proporcionados y la capitalización del régimen solicitado, usando unidades temporales compatibles sin inventar tasas ni condiciones",
+          "representation": "representa la evolución del capital pedida conservando el régimen, períodos y tasas proporcionados",
+          "pages": [
+            233
+          ],
+          "exclude": "valor actual|valor presente",
+          "sourceRecordIds": [
+            "8e38275a-5fe7-5b65-8654-cab745c60954",
+            "aa602a96-ba8a-5019-9096-0dfb9e019c43",
+            "d070f930-c511-5fa4-84aa-f228f7245a02",
+            "8501fdd5-3804-5630-9703-fedeb26a8f50",
+            "b7fc35d3-6798-5f7c-bb76-11f350d61842"
+          ],
+          "families": [
+            {
+              "description": "Calcula el interés simple y compuesto con los datos dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas del contexto con interés compuesto.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Compara el interés simple y compuesto de las situaciones dadas.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "4cc1fce9-70f7-5ce7-959e-9d3d865217a6",
-          "text": "• y sucesiones. Reglas de la derivada.\nIntegrales definidas e indefinidas\nque sean sencillas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "present-value",
+          "grade": 6,
+          "label": "valor actual",
+          "match": "valor actual|valor presente",
+          "relation": "el descuento al momento de referencia del monto futuro con la tasa, plazo y régimen simple o compuesto proporcionados, sin confundir valor actual y monto",
+          "representation": "representa los flujos y momentos de referencia del valor actual solicitados sin añadir pagos no proporcionados",
+          "pages": [
+            233
+          ],
+          "sourceRecordIds": [
+            "8e38275a-5fe7-5b65-8654-cab745c60954",
+            "81d287b2-354f-57a9-98f2-f2ccd5d02bd9",
+            "d070f930-c511-5fa4-84aa-f228f7245a02",
+            "8501fdd5-3804-5630-9703-fedeb26a8f50",
+            "b7fc35d3-6798-5f7c-bb76-11f350d61842"
+          ],
+          "families": [
+            {
+              "description": "Calcula el valor actual a interés simple con los datos dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas del valor actual a interés compuesto.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica los errores del cálculo del valor actual.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "18179fe9-7eff-548a-9c8c-e316210ea4b8",
-          "text": "• Análisis de las raíces de una ecuación a partir del teorema\nfundamental del álgebra.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "credit",
+          "grade": 6,
+          "label": "tarjeta de crédito y saldos",
+          "match": "tarjetas? de credito|saldo absoluto|saldo insoluto",
+          "relation": "la distinción entre saldo absoluto e insoluto, consumos, abonos, tasa, descuentos y plazos suministrados, aplicando los intereses solo a la base prevista por las condiciones del caso",
+          "representation": "organiza los consumos, pagos y saldos solicitados conservando fechas y condiciones proporcionadas",
+          "pages": [
+            233
+          ],
+          "sourceRecordIds": [
+            "8e38275a-5fe7-5b65-8654-cab745c60954",
+            "7e2bf645-8eaa-5781-8262-abdd2726ec83",
+            "d070f930-c511-5fa4-84aa-f228f7245a02",
+            "8501fdd5-3804-5630-9703-fedeb26a8f50",
+            "b7fc35d3-6798-5f7c-bb76-11f350d61842"
+          ],
+          "families": [
+            {
+              "description": "Analiza los intereses, descuentos y plazos de la tarjeta de crédito del caso ficticio dado.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Compara el saldo absoluto y el saldo insoluto de la tarjeta de crédito.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Resuelve problemas de tarjeta de crédito con las condiciones proporcionadas.",
+              "activity": "PROBLEM_SOLVING"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "68b3d63b-9fce-5fd4-974e-14f45bcdc8d5",
-          "text": "• Resolución de inecuaciones cuadráticas aplicando los\nmétodos analíticos y gráficos de solución.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "complex",
+          "grade": 6,
+          "label": "números complejos",
+          "match": "numeros? complejos?|forma (?:binomica|polar|trigonometrica)|par ordenado complejo",
+          "relation": "la correspondencia entre parte real e imaginaria, módulo y argumento de las formas solicitadas, considerando argumentos equivalentes y que el cero no tiene argumento definido",
+          "representation": "representa el complejo pedido conservando coordenadas, módulo y argumento cuando esté definido, según la forma solicitada",
+          "pages": [
+            233,
+            234
+          ],
+          "sourceRecordIds": [
+            "ca7350fb-dcc4-54ae-8fdb-d45ea65a3db4",
+            "eddab038-7a73-5b7a-bda4-97da9020a5af",
+            "fcc0049c-db73-5876-9531-67cbd2cd1bfe",
+            "57bbf8b3-4976-5baf-a941-35547b2a6c74",
+            "4e9baa7e-57bb-5eb2-80c4-d1df7af9bbf6",
+            "545f9784-4d09-5410-9d1c-619959c47627"
+          ],
+          "families": [
+            {
+              "description": "Identifica los números complejos en forma binómica, polar y trigonométrica dados.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Representa los números complejos dados como pares ordenados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Convierte el número complejo dado a forma binómica y polar.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas del contexto con números complejos.",
+              "activity": "PROBLEM_SOLVING"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "5d7eca80-27b2-5ca3-be87-816fe68aa86a",
-          "text": "• Resolución de sistemas de ecuaciones e inecuaciones\ncuadráticas en dos variables, usando métodos analíticos y\ngráficos.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "sum-difference",
+          "grade": 6,
+          "label": "suma y diferencia de ángulos",
+          "match": "suma y diferencia de angulos|suma de angulos|diferencia de angulos",
+          "relation": "los signos y productos de las fórmulas trigonométricas de suma o diferencia solicitadas y su dominio de validez",
+          "representation": "representa las relaciones de los ángulos solicitados conservando signos y referencias angulares",
+          "pages": [
+            233,
+            234
+          ],
+          "sourceRecordIds": [
+            "1a9da404-85a0-5e24-92e1-acacf713774a",
+            "f5cc25d9-4a4c-5ac7-86f4-a5f37ad552fe",
+            "67d0a3b9-da75-5e92-bd79-26e4f049ad0e",
+            "57bbf8b3-4976-5baf-a941-35547b2a6c74",
+            "4e9baa7e-57bb-5eb2-80c4-d1df7af9bbf6",
+            "545f9784-4d09-5410-9d1c-619959c47627"
+          ],
+          "families": [
+            {
+              "description": "Demuestra las fórmulas de suma y diferencia de ángulos indicadas.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Resuelve problemas con las funciones de suma de ángulos.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Analiza los errores de la fórmula de diferencia de ángulos.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "229779aa-d733-5ff1-9cd7-fdd95de70dcf",
-          "text": "• Comprobación de la solución de un sistema de ecuaciones\ncuadráticas en dos variables.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "double-angle",
+          "grade": 6,
+          "label": "ángulo doble",
+          "match": "angulo doble",
+          "relation": "la relación entre las funciones del ángulo y de su doble y las equivalencias válidas de la fórmula solicitada en su dominio",
+          "representation": "representa la relación del ángulo doble solicitada sin cambiar la referencia angular",
+          "pages": [
+            233,
+            234
+          ],
+          "sourceRecordIds": [
+            "15cfb6f0-f463-5634-a07b-d78688ca6d2e",
+            "f5cc25d9-4a4c-5ac7-86f4-a5f37ad552fe",
+            "67d0a3b9-da75-5e92-bd79-26e4f049ad0e"
+          ],
+          "families": [
+            {
+              "description": "Demuestra la fórmula del ángulo doble solicitada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Calcula el ángulo doble con los datos dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas con funciones del ángulo doble.",
+              "activity": "PROBLEM_SOLVING"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "b89575f1-a779-50e5-b4c9-37f9471d99e1",
-          "text": "• Uso de las ecuaciones exponenciales y logarítmicas\nen la resolución de problemas sin y con herramientas\ntecnológicas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "triple-angle",
+          "grade": 6,
+          "label": "ángulo triple",
+          "match": "angulo triple",
+          "relation": "las relaciones y signos de las funciones del ángulo triple solicitadas y su dominio de validez",
+          "representation": "representa las relaciones del ángulo triple pedidas conservando sus referencias",
+          "pages": [
+            233,
+            234
+          ],
+          "sourceRecordIds": [
+            "f5cc25d9-4a4c-5ac7-86f4-a5f37ad552fe",
+            "67d0a3b9-da75-5e92-bd79-26e4f049ad0e"
+          ],
+          "families": [
+            {
+              "description": "Demuestra la fórmula del ángulo triple indicada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Resuelve problemas con funciones del ángulo triple.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Analiza los errores de la fórmula del ángulo triple.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "4d1c9bac-8358-5ba7-b66f-cfb5d330f4f5",
-          "text": "• Resolución de problemas referidos a préstamos bancarios\ny de otros tipos aplicando sucesiones aritméticas y\ngeométricas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "half-angle",
+          "grade": 6,
+          "label": "ángulo mitad",
+          "match": "angulo mitad",
+          "relation": "las relaciones de las funciones del ángulo mitad solicitadas y el signo que corresponde al cuadrante, sin elegir una raíz arbitrariamente",
+          "representation": "representa las relaciones del ángulo mitad pedidas conservando cuadrante y referencia angular",
+          "pages": [
+            233,
+            234
+          ],
+          "sourceRecordIds": [
+            "f5cc25d9-4a4c-5ac7-86f4-a5f37ad552fe",
+            "67d0a3b9-da75-5e92-bd79-26e4f049ad0e"
+          ],
+          "families": [
+            {
+              "description": "Demuestra la fórmula del ángulo mitad indicada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Resuelve problemas con funciones del ángulo mitad.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica la elección del signo en el ángulo mitad dado.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "ec8bc54f-65d3-5cf9-b776-e6ade0f3fb80",
-          "text": "• Resolución de sucesiones sin y con herramientas\ntecnológicas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "trig-equations",
+          "grade": 6,
+          "label": "ecuaciones trigonométricas",
+          "match": "ecuacion(?:es)? trigonometricas?",
+          "relation": "el dominio, periodicidad y las soluciones generales o del intervalo solicitado de la ecuación trigonométrica, comprobando soluciones extrañas y sin omitir familias",
+          "representation": "representa las soluciones trigonométricas pedidas conservando intervalo, periodicidad y referencias angulares",
+          "pages": [
+            233,
+            234
+          ],
+          "sourceRecordIds": [
+            "15cfb6f0-f463-5634-a07b-d78688ca6d2e",
+            "3a8ac37a-4dca-5639-a098-cb6dcb1b6ed1",
+            "ef69274a-dc11-58cb-8bc7-4693e5395a71",
+            "31b0fe4c-b80d-52a8-bab3-c4ffbadaa8c7",
+            "57bbf8b3-4976-5baf-a941-35547b2a6c74",
+            "4e9baa7e-57bb-5eb2-80c4-d1df7af9bbf6",
+            "545f9784-4d09-5410-9d1c-619959c47627"
+          ],
+          "families": [
+            {
+              "description": "Resuelve las ecuaciones trigonométricas lineales y cuadráticas dadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas con ecuaciones trigonométricas.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Comprueba las soluciones de la ecuación trigonométrica dada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "aa602a96-ba8a-5019-9096-0dfb9e019c43",
-          "text": "• Resolución de problemas que impliquen cálculo de interés\nsimple y compuesto",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "trig-identities",
+          "grade": 6,
+          "label": "identidades trigonométricas",
+          "match": "identidad(?:es)? trigonometricas?",
+          "relation": "la equivalencia de las expresiones trigonométricas en su dominio común mediante transformaciones válidas, sin probar una identidad con un único valor",
+          "representation": "representa las relaciones trigonométricas solicitadas conservando el dominio de las expresiones",
+          "pages": [
+            233,
+            234
+          ],
+          "exclude": "ecuacion(?:es)? trigonometricas?",
+          "sourceRecordIds": [
+            "3a8ac37a-4dca-5639-a098-cb6dcb1b6ed1"
+          ],
+          "families": [
+            {
+              "description": "Aplica las identidades trigonométricas a los problemas dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Demuestra la identidad trigonométrica indicada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza y corrige los errores de la identidad trigonométrica.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "81d287b2-354f-57a9-98f2-f2ccd5d02bd9",
-          "text": "• Cálculo del valor actual en situaciones diversas del contexto\nde las finanzas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "limits",
+          "grade": 6,
+          "label": "límites de funciones y sucesiones",
+          "match": "limites?",
+          "relation": "el comportamiento de la función o sucesión al aproximarse al valor o índice indicado, las condiciones de sus propiedades y la existencia o no del límite, sin confundirlo con el valor de la función",
+          "representation": "representa el comportamiento de aproximación solicitado conservando las referencias y distinguiendo los límites laterales cuando corresponda",
+          "pages": [
+            233,
+            234
+          ],
+          "exclude": "derivad|deriva",
+          "sourceRecordIds": [
+            "dd27b223-050b-5abc-ba0d-96324d83401b",
+            "0666a9a1-55d2-5337-be9a-46c2506761e7",
+            "31b0fe4c-b80d-52a8-bab3-c4ffbadaa8c7",
+            "15d7b5ba-dd98-558b-bf35-af2043ed7a54",
+            "4754ff59-a85d-51bf-be0b-f376eb136070",
+            "1d5d083e-19a5-5866-a9dc-9e72a6682dac",
+            "bd9d997f-086c-5563-bb3c-330ecdf0aa75",
+            "96b6b826-4dee-57c6-8b59-1091a0b3c250"
+          ],
+          "families": [
+            {
+              "description": "Calcula los límites de las funciones dadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Analiza las propiedades de los límites de las sucesiones.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Resuelve problemas del contexto aplicando límites.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica por qué el límite no es el valor de la función del caso dado.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "7e2bf645-8eaa-5781-8262-abdd2726ec83",
-          "text": "• Análisis de situaciones diversas sobre el uso de tarjetas de\ncrédito en función de intereses generados, descuentos y\nplazos de pagos según los consumos realizados. -Resolución\nde problemas del contexto que impliquen sucesiones\naritméticas y geométricas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "derivatives",
+          "grade": 6,
+          "label": "derivadas sencillas",
+          "match": "derivadas?|derivacion|deriv(?:a|an|ar|en|e|aran)",
+          "relation": "la derivada como límite del cociente incremental o la regla de derivación solicitada, su dominio y la relación de tasa de cambio, sin confundir derivada y valor de la función",
+          "representation": "representa la tasa de cambio o tangente pedida con las referencias del caso, sin imponer una gráfica no solicitada",
+          "pages": [
+            233,
+            234
+          ],
+          "sourceRecordIds": [
+            "dd27b223-050b-5abc-ba0d-96324d83401b",
+            "0666a9a1-55d2-5337-be9a-46c2506761e7",
+            "4cc1fce9-70f7-5ce7-959e-9d3d865217a6",
+            "15d7b5ba-dd98-558b-bf35-af2043ed7a54",
+            "83a3d950-4c00-5335-9cfa-fecc1448be05",
+            "4754ff59-a85d-51bf-be0b-f376eb136070",
+            "1d5d083e-19a5-5866-a9dc-9e72a6682dac",
+            "bd9d997f-086c-5563-bb3c-330ecdf0aa75",
+            "96b6b826-4dee-57c6-8b59-1091a0b3c250"
+          ],
+          "families": [
+            {
+              "description": "Deriva las funciones algebraicas dadas mediante las reglas indicadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Calcula la derivada de la función mediante el concepto de límite.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Calcula las derivadas trigonométricas y trascendentes dadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas del contexto con derivadas.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Analiza y corrige los errores de las reglas de derivación.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         },
         {
-          "id": "eddab038-7a73-5b7a-bda4-97da9020a5af",
-          "text": "• Identificación de un número complejo en forma, binómica,\npolar y trigonométrica. Representación de manera gráfica\nde números complejos en forma binómica, polar y\ntrigonométrica",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "fcc0049c-db73-5876-9531-67cbd2cd1bfe",
-          "text": "• Resolución de problemas del contexto que impliquen\nnúmeros complejos en forma binómica, polar y\ntrigonométrica.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "f5cc25d9-4a4c-5ac7-86f4-a5f37ad552fe",
-          "text": "• Demostración de las fórmulas relativas al cálculo de las\nfunciones trigonométricas de la suma y diferencia de\nángulos, del ángulo doble, del ángulo triple y del ángulo\nmitad.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "3a8ac37a-4dca-5639-a098-cb6dcb1b6ed1",
-          "text": "• Uso de las identidades trigonométricas en la resolución de\nproblemas. Resolución de las ecuaciones trigonométricas\nsin y con herramientas tecnológicas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "ef69274a-dc11-58cb-8bc7-4693e5395a71",
-          "text": "• Aplicación de ecuaciones trigonométricas, en la resolución\nde problemas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "67d0a3b9-da75-5e92-bd79-26e4f049ad0e",
-          "text": "• Resolución de problemas aplicando las funciones\ntrigonométricas de la suma y diferencia de ángulos y las\nfunciones trigonométricas del ángulo doble, el ángulo\ntriple y el ángulo mitad.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "31b0fe4c-b80d-52a8-bab3-c4ffbadaa8c7",
-          "text": "• Resolución de ecuaciones trigonométricas lineales y\ncuadráticas. Identificación y análisis de las propiedades de\nlos límites.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "15d7b5ba-dd98-558b-bf35-af2043ed7a54",
-          "text": "• Cálculo de diferentes tipos de límites. Identificación y\nanálisis de las reglas de la derivada de una función. Cálculo\nde derivadas de funciones usando el concepto de límite.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "83a3d950-4c00-5335-9cfa-fecc1448be05",
-          "text": "• Cálculo de derivadas de funciones (algebraicas,\ntrigonométricas y trascendentes) usando las reglas de\nderivación.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "6376f11b-cede-5d0c-8055-fd0c6f6f596f",
-          "text": "• Identificación y análisis de las reglas de la integral definida e\nindefinida que sean sencillas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "0727b432-7e86-525a-84cd-37c48b783892",
-          "text": "• Cálculo de integrales (definidas e indefinidas) de funciones\n(algebraicas y trascendentes) usando las reglas de\nintegración.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "4754ff59-a85d-51bf-be0b-f376eb136070",
-          "text": "• Resolución problemas del contexto que involucren el uso\nde límites, derivadas e integrales definidas e indefinidas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "id": "integrals",
+          "grade": 6,
+          "label": "integrales sencillas",
+          "match": "integral(?:es)?|integracion|integr(?:a|an|ar|en|e|aran)",
+          "relation": "las reglas de integración solicitadas, la constante en la integral indefinida y los límites de integración en la definida, distinguiendo acumulación con signo y área cuando corresponda",
+          "representation": "representa la acumulación o relación de primitivas solicitada conservando límites, signo y condiciones del caso",
+          "pages": [
+            233,
+            234
+          ],
+          "sourceRecordIds": [
+            "dd27b223-050b-5abc-ba0d-96324d83401b",
+            "4cc1fce9-70f7-5ce7-959e-9d3d865217a6",
+            "6376f11b-cede-5d0c-8055-fd0c6f6f596f",
+            "0727b432-7e86-525a-84cd-37c48b783892",
+            "4754ff59-a85d-51bf-be0b-f376eb136070",
+            "1d5d083e-19a5-5866-a9dc-9e72a6682dac",
+            "bd9d997f-086c-5563-bb3c-330ecdf0aa75",
+            "96b6b826-4dee-57c6-8b59-1091a0b3c250"
+          ],
+          "families": [
+            {
+              "description": "Integra las funciones sencillas dadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Calcula las integrales definidas e indefinidas sencillas indicadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Identifica las reglas de la integral definida e indefinida dadas.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Resuelve problemas del contexto con integrales sencillas.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica los errores de la integral indefinida calculada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-6.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_SCOPE_IN_GRADE_REPORT"
         }
       ],
-      "status": "NOT_IMPLEMENTED"
+      "unassignedSourceRecords": [],
+      "visualVerification": {
+        "status": "PARTIAL_PERSONAL_BROWSER",
+        "formatsInspected": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "formatSavedAndReopened": "lista-ponderada",
+        "reopenedFieldsEqual": true
+      },
+      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PARTIAL"
     }
   ]
 }

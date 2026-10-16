@@ -2,7 +2,7 @@
 
 Fuente oficial: MINERD 2023, PDF 217, 218, 219; impresa = PDF menos uno. SHA-256 `80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58`.
 
-Estado: pruebas automáticas y HTTP/DB; visual pendiente. El inventario de fuente no acredita por sí solo un instrumento pertinente. Consultar el informe del grado y los instrumentos completos.
+Estado: pruebas automáticas y HTTP/DB; alcance visual en el informe del grado. El inventario de fuente no acredita por sí solo un instrumento pertinente. Consultar el informe del grado y los instrumentos completos.
 
 | Tema / proveedor | PDF | Consignas y familias verificables |
 |---|---|---|
@@ -89,4 +89,4 @@ Proveedor compartido: `packages/shared/src/secondary-math-grade-1.ts`, conectado
 - Geometría:: encabezado taxonómico, no desempeño independiente.
 - Medición: encabezado taxonómico, no desempeño independiente.
 
-La prueba visual del navegador personal sigue pendiente; no se borran cachés ni borradores. Los criterios evalúan solo acciones solicitadas, sin estética, rapidez o actitudes personales añadidas.
+El informe del grado distingue los recorridos visuales realizados de los pendientes; no se borran cachés ni borradores. Los criterios evalúan solo acciones solicitadas, sin estética, rapidez o actitudes personales añadidas.
