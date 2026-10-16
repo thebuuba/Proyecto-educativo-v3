@@ -1,5 +1,7 @@
 # Francés común — 2.º de secundaria
 
+Actualización posterior: cuatro formatos nuevos con versión/ámbito de fuente correctos quedaron verificados. El cotejo interrumpido se recuperó sobre el mismo registro después de inspección SQL/HTTP; su instrumento permanece idéntico. Los snapshots sin referencias de la ejecución inicial se conservan como historia. [Cierre de fuente](frances-fuente-development.md), [evidencia y hashes](frances-fuente-verificacion.json).
+
 ## Alcance y conexión
 
 Proveedor `frances-comunicacion-2`, catálogo `evaluation-2026.71`, exclusivamente en AulaBase Development `eolgunypmtgrsyrjzcld`. Fuente: MINERD 2023, PDF 185–188 / impresas 184–187, ámbito `d61f0959-332f-5a0e-8f5e-b1c05dcadae9`. [Matriz oficial y revisión visual](frances-matriz.json), [inventario](frances-inventario.md). Los criterios son adaptaciones de AulaBase, no instrumentos oficiales.

@@ -1,5 +1,7 @@
 # Francés común — 3.º de secundaria
 
+Actualización posterior: se verificaron cuatro formatos nuevos vinculados a la fuente francesa instalada en Development. Los snapshots iniciales descritos en este informe permanecen intactos y conservan sus referencias históricas nulas. [Cierre de fuente](frances-fuente-development.md), [evidencia y preservación](frances-fuente-verificacion.json).
+
 ## Alcance
 
 Proveedor `frances-comunicacion-3`, catálogo `evaluation-2026.72`. MINERD 2023, PDF 189–192 / impresas 188–191, ámbito común `06576745-46a4-56a3-9dc8-cff915975251`. [Inventario visual](frances-inventario.md) y [texto oficial separado de la cobertura](frances-matriz.json). Criterios adaptados por AulaBase.

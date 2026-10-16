@@ -1,5 +1,7 @@
 # Francés común — 1.º de secundaria
 
+Actualización posterior de procedencia: la fuente francesa ya está instalada en Development y cuatro formatos nuevos quedaron vinculados y verificados. Los snapshots iniciales de este informe se conservan sin reescritura; las referencias nulas descritas abajo corresponden a esa ejecución histórica. [Cierre de fuente y preservación](frances-fuente-development.md), [evidencia](frances-fuente-verificacion.json).
+
 ## Estado del bloque
 
 Proveedor conectado en código y catálogo `evaluation-2026.70`, instalado solo en AulaBase Development (`eolgunypmtgrsyrjzcld`). Verificado mediante automatización y HTTP/DB autenticados; recorrido QA visual pendiente por falta de navegador aislado. Rama: `amplia-instrumentos-secundaria`.

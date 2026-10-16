@@ -49,7 +49,7 @@ const request = async (path, input, attempt = 0) => {
   nextRequest = Date.now() + 900
   let response
   try {
-    response = await fetch(base + '/api/v1' + path, { method: input ? 'POST' : 'GET', headers: { 'Content-Type': 'application/json', ...(cookie ? { cookie } : {}) }, ...(input ? { body: JSON.stringify(input) } : {}), signal: AbortSignal.timeout(35000) })
+    response = await fetch(base + '/api/v1' + path, { method: input ? 'POST' : 'GET', headers: { 'Content-Type': 'application/json', ...(cookie ? { cookie } : {}) }, ...(input ? { body: JSON.stringify(input) } : {}), signal: AbortSignal.timeout(!input && path.startsWith('/activities?') ? 60000 : 35000) })
   } catch {
     transientFailures.push({ path, attempt, failure: 'CONNECTION_OR_TIMEOUT' })
     if (attempt < 2 && /^\/(?:health|activities\/center|evaluation-instruments\/(?:interpret|recommend)|activities\?)/.test(path)) {
@@ -76,8 +76,16 @@ try {
   const login = await request('/auth/login', { email: account.email, password: account.password })
   cookie = login.response.headers.getSetCookie().find(value => value.startsWith('aulabase_session='))?.split(';')[0]
   assert(cookie)
-  const center = (await request('/activities/center')).data
-  assert(center.sectionSubjects.some(subject => subject.id === context.sectionSubjectId))
+  let scopedHistory
+  if (sourceLinked) {
+    // Source reconciliation already has a verified assignment; check its known activity through the scoped API.
+    scopedHistory = (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data
+    const prior = JSON.parse(readFileSync(`.wrangler/french-source/grade-${grade}-http.json`, 'utf8'))
+    assert(scopedHistory.some(row => row.id === prior.savedEvidence[0].activityId))
+  } else {
+    const center = (await request('/activities/center')).data
+    assert(center.sectionSubjects.some(subject => subject.id === context.sectionSubjectId))
+  }
   console.log(JSON.stringify({ phase: 'authenticated-context', project, grade, sectionSubjectId: context.sectionSubjectId }))
   const fixtures = JSON.parse(readFileSync(`data/evaluation-instruments/french-grade-${grade}-contracts.json`, 'utf8'))
   const formats = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']
@@ -104,7 +112,7 @@ try {
   }
   const savedEvidence = resume ? progress.writes.map(row => row.verified) : [], examples = []
   if (resume) {
-    const existing = (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data
+    const existing = scopedHistory ?? (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data
     for (const saved of savedEvidence) {
       const activity = existing.find(row => row.id === saved.activityId); assert(activity)
       assert.equal(hash(definition(activity)), saved.instrumentHash)
