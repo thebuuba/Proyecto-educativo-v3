@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { useState, useEffect } from 'react'
 import { CircleCheck, Database, Download, FileArchive, LoaderCircle, Trash2 } from 'lucide-react'
 import {

@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { SettingsTabsNav } from './settings-tabs-nav'
 
 function SettingsPageHeader({ activeTab, title, description, actions }) {

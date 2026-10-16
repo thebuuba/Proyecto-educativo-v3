@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { CalendarDays, Camera, Crown } from 'lucide-react'
 import { Button, Avatar2, AvatarFallback2, AvatarImage2, Progress2 } from '../reference-ui'
 

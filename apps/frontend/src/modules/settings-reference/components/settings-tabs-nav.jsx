@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { BellRing, CreditCard, LockKeyhole, ShieldCheck, UserRound } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { cn } from '@/utils/cn'

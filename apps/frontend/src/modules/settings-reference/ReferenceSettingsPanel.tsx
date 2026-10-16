@@ -19,9 +19,6 @@ export function ReferenceSettingsPanel({ section }: { section: ReferenceSettings
   const Page = pages[section]
   return (
     <section className="settings-reference-workspace mx-auto min-w-0 w-full max-w-[1360px]">
-      {section !== 'cuenta' && <p className="mb-3 text-xs text-muted-foreground">
-        Vista de diseño · Datos de ejemplo de Polymet · Las acciones de esta vista son simuladas.
-      </p>}
       <Page />
     </section>
   )

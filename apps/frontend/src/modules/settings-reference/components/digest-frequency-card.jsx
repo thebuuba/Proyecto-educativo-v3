@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { CalendarRange, Inbox, Sunrise, Zap } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import { SettingsSectionCard } from './settings-section-card'

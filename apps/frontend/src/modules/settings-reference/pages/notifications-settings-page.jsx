@@ -1,81 +1,24 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
-import { useState, useEffect, useMemo } from 'react'
-import { Send } from 'lucide-react'
+import { Send, Bell, Clock, Mail } from 'lucide-react'
 import { Button } from '../reference-ui'
 import { SettingsPageHeader } from '../components/settings-page-header'
-import { notificationGroups } from '../data/settings-data'
-import { SettingsSaveBar } from '../components/settings-save-bar'
-import { NotificationChannelsMatrix } from '../components/notification-channels-matrix'
-import { QuietHoursCard } from '../components/quiet-hours-card'
-import { DigestFrequencyCard } from '../components/digest-frequency-card'
+import { SettingsSectionCard } from '../components/settings-section-card'
 
-var initialPrefs = {
-  groups: notificationGroups,
-  quiet: { enabled: true, from: '22:00', to: '07:30', days: ['L', 'M', 'X', 'J', 'V'] },
-  digest: 'daily',
-}
+// Catálogo de funciones, sin preferencias ni estados de entrega inventados.
+const categories = ['Clases en vivo', 'Tareas y entregas', 'Calificaciones', 'Contenido nuevo', 'Mensajes de profesores', 'Respuestas en foros', 'Alertas de seguridad', 'Pagos y facturas', 'Novedades y ofertas']
 function NotificationsSettingsPage() {
-  const [saved, setSaved] = useState(initialPrefs)
-  const [draft, setDraft] = useState(initialPrefs)
-  const [justSaved, setJustSaved] = useState(false)
-  const [testSent, setTestSent] = useState(false)
-  const dirty = useMemo(() => JSON.stringify(saved) !== JSON.stringify(draft), [saved, draft])
-  useEffect(() => {
-    if (!justSaved) return
-    const t = setTimeout(() => setJustSaved(false), 2500)
-    return () => clearTimeout(t)
-  }, [justSaved])
-  useEffect(() => {
-    if (!testSent) return
-    const t = setTimeout(() => setTestSent(false), 2500)
-    return () => clearTimeout(t)
-  }, [testSent])
-  return (
-    <div className="space-y-8">
-      <SettingsPageHeader
-        activeTab="notifications"
-        title="Notificaciones"
-        description="Decide cómo y cuándo quieres enterarte de tus clases, tareas, calificaciones y mensajes."
-        actions={
-          <Button
-            variant="outline"
-            className="h-11 rounded-xl border-transparent bg-card font-semibold shadow-xs"
-            onClick={() => setTestSent(true)}
-          >
-            <Send className="mr-2 h-4 w-4 text-primary" />
-            {testSent ? '¡Enviada!' : 'Enviar prueba'}
-          </Button>
-        }
-      />
-      <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_380px]">
-        <div className="min-w-0">
-          <NotificationChannelsMatrix
-            groups={draft.groups}
-            onChange={(groups) => setDraft((d) => ({ ...d, groups }))}
-          />
-        </div>
-        <div className="space-y-6">
-          <DigestFrequencyCard
-            value={draft.digest}
-            onChange={(digest) => setDraft((d) => ({ ...d, digest }))}
-          />
-          <QuietHoursCard
-            value={draft.quiet}
-            onChange={(quiet) => setDraft((d) => ({ ...d, quiet }))}
-          />
-        </div>
+  return <div className="space-y-8">
+    <SettingsPageHeader activeTab="notifications" title="Notificaciones" description="Consulta la disponibilidad de los canales y preferencias de tu cuenta."
+      actions={<Button variant="outline" disabled title="El envío de prueba aún no está disponible"><Send className="mr-2 h-4 w-4" />Enviar prueba</Button>} />
+    <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_380px]">
+      <SettingsSectionCard title="Qué quieres recibir" description="Las preferencias por categoría y canal aún no están disponibles." icon={<Bell className="h-5 w-5" />}>
+        <div className="overflow-x-auto"><table className="w-full text-left text-sm"><thead><tr className="border-b border-border"><th className="py-3 pr-3">Actividad</th>{['Email','Push','SMS'].map(c => <th className="px-2 py-3 text-center" key={c}>{c}</th>)}</tr></thead><tbody>{categories.map(label => <tr key={label} className="border-b border-border/60"><th scope="row" className="py-4 pr-3 font-medium">{label}</th>{['email','push','sms'].map(c => <td key={c} className="px-2 text-center text-muted-foreground"><span aria-label={`${label} por ${c}: no disponible`}>—</span></td>)}</tr>)}</tbody></table></div>
+        <p className="mt-4 text-xs text-muted-foreground">— indica que no hay una configuración consultable. No se han activado ni desactivado canales desde esta pantalla.</p>
+      </SettingsSectionCard>
+      <div className="space-y-6">
+        <SettingsSectionCard title="Frecuencia de resumen" icon={<Mail className="h-5 w-5" />}><p className="text-sm text-muted-foreground">El resumen de notificaciones aún no está disponible.</p></SettingsSectionCard>
+        <SettingsSectionCard title="Modo no molestar" icon={<Clock className="h-5 w-5" />}><p className="text-sm text-muted-foreground">La gestión de horarios de silencio aún no está disponible en este panel.</p></SettingsSectionCard>
       </div>
-      <SettingsSaveBar
-        visible={dirty}
-        saved={justSaved}
-        onDiscard={() => setDraft(saved)}
-        onSave={() => {
-          setSaved(draft)
-          setJustSaved(true)
-        }}
-      />
     </div>
-  )
+  </div>
 }
-
 export { NotificationsSettingsPage }

@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { Check, ChevronRight, ShieldCheck } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import { ProgressRing } from './progress-ring'

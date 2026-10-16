@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { useState, useMemo, Fragment } from 'react'
 import { Check, Eye, EyeOff, KeyRound, X } from 'lucide-react'
 import { cn } from '@/utils/cn'

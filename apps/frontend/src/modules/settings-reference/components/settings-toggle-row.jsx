@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { Lock } from 'lucide-react'
 import { Switch2 } from '../reference-ui'
 

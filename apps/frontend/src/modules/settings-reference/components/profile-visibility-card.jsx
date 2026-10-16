@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { Check, Eye, Globe, Lock, Users, X } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import { SettingsSectionCard } from './settings-section-card'

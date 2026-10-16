@@ -1,10 +1,11 @@
 import { render, screen, within } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { describe, expect, it, vi } from 'vitest'
 import { ReferenceSettingsPanel } from './ReferenceSettingsPanel'
 
-vi.mock('@/modules/auth/hooks/useAuth', () => ({ useAuth: () => ({ appUser: {id:'user-1'}, roles: [], refreshAuth: vi.fn() }) }))
+vi.mock('@/modules/auth/hooks/useAuth', () => ({ useAuth: () => ({ appUser: {id:'user-1',email:'ana@example.test',phone:null}, roles: [], refreshAuth: vi.fn() }) }))
+vi.mock('@/modules/auth/services/supabaseClient', () => ({supabase: {auth: {mfa: {listFactors: vi.fn().mockResolvedValue({data:{all:[]},error:null})}}}}))
+vi.mock('@/modules/billing/hooks/useBilling', () => ({useBilling: () => ({loading:false,error:null,refetch:vi.fn(),overview:{enabled:true,environment:'sandbox',access:{allowed:false,reason:'none',until:null},trial:null,grants:[],payments:[],documents:[],transfers:[],subscriptions:[],prices:[],notices:[],serverNow:'2026-10-15T12:00:00Z'}})}))
 
 vi.mock('./services/profileSettingsService', () => ({ getOwnProfileSettings: vi.fn().mockResolvedValue({
   id: 'user-1', fullName: 'Ana P?rez', email: 'ana@example.test', phone: null, avatarUrl: null,
@@ -14,8 +15,7 @@ vi.mock('./services/profileSettingsService', () => ({ getOwnProfileSettings: vi.
 }), updateOwnProfileSettings: vi.fn(), uploadOwnAvatar: vi.fn(), removeOwnAvatar: vi.fn() }))
 
 describe('copia completa del diseño de ajustes', () => {
-  it('conserva planes, indicadores, facturas, métodos, preferencias y actividad', async () => {
-    const user = userEvent.setup()
+  it('conserva las tarjetas de pagos sin inventar planes, saldo ni facturas', async () => {
     render(
       <MemoryRouter>
         <ReferenceSettingsPanel section="suscripcion" />
@@ -31,13 +31,10 @@ describe('copia completa del diseño de ajustes', () => {
     ]) {
       expect(screen.getByRole('heading', { name })).toBeInTheDocument()
     }
-    expect(screen.getByText('Cursos activos')).toBeInTheDocument()
-    expect(screen.getByText('Certificados')).toBeInTheDocument()
-    await user.click(screen.getByRole('button', { name: /Fallidas/ }))
-    expect(screen.getByText('FAC-2025-0541')).toBeInTheDocument()
-    expect(screen.queryByText('FAC-2025-0612')).not.toBeInTheDocument()
-    await user.click(screen.getByRole('button', { name: 'Descartar aviso' }))
-    expect(screen.queryByText(/No pudimos procesar tu pago/)).not.toBeInTheDocument()
+    expect(screen.getByText('No hay pagos ni documentos registrados.')).toBeInTheDocument()
+    expect(screen.getByText('No hay una suscripción registrada.')).toBeInTheDocument()
+    expect(screen.queryByText(/FAC-2025|4242|8810|45,50|Pro Estudiante|19,99/)).not.toBeInTheDocument()
+    expect(screen.queryByText(/Datos de ejemplo|acciones.*simuladas/)).not.toBeInTheDocument()
   })
 
   it('conserva los campos del perfil y las selecciones académicas de la referencia', async () => {
@@ -65,20 +62,34 @@ describe('copia completa del diseño de ajustes', () => {
     }
   })
 
-  it('mantiene la matriz de canales y permite cambiar las selecciones del prototipo', async () => {
-    const user = userEvent.setup()
+  it('mantiene la matriz sin simular preferencias guardadas ni envíos', async () => {
     render(
       <MemoryRouter>
         <ReferenceSettingsPanel section="notificaciones" />
       </MemoryRouter>,
     )
-    const control = screen.getByRole('switch', { name: 'Clases en vivo por Email' })
-    expect(control).toBeChecked()
-    await user.click(control)
-    expect(control).not.toBeChecked()
+    expect(screen.queryAllByRole('switch')).toHaveLength(0)
+    expect(screen.getByRole('button',{name:'Enviar prueba'})).toBeDisabled()
+    expect(screen.queryByText('¡Enviada!')).not.toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Modo no molestar' })).toBeInTheDocument()
     expect(
       within(screen.getByRole('navigation', { name: 'Secciones de ajustes' })).getAllByRole('link'),
     ).toHaveLength(5)
+  })
+
+  it('shows only actual recovery identity and no sample sessions or backup codes', async () => {
+    render(<MemoryRouter><ReferenceSettingsPanel section="seguridad" /></MemoryRouter>)
+    expect(await screen.findByText('Sin factores verificados')).toBeInTheDocument()
+    expect(screen.getByText('ana@example.test')).toBeInTheDocument()
+    expect(screen.queryByText(/MacBook|iPhone|Valencia|hace 3 meses|8 códigos|50%/)).not.toBeInTheDocument()
+    expect(screen.getByText('La lista de dispositivos aún no está disponible.')).toBeInTheDocument()
+  })
+
+  it('does not simulate privacy changes, exports or account deletion', async () => {
+    render(<MemoryRouter><ReferenceSettingsPanel section="privacidad" /></MemoryRouter>)
+    expect(screen.getByRole('button',{name:'Solicitar descarga'})).toBeDisabled()
+    expect(screen.getByRole('button',{name:'Eliminar mi cuenta'})).toBeDisabled()
+    expect(screen.queryAllByRole('switch')).toHaveLength(0)
+    expect(screen.queryByText(/12 ene 2025|Cumplimos con el RGPD|Te lo enviamos/)).not.toBeInTheDocument()
   })
 })

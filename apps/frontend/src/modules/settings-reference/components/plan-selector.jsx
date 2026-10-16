@@ -1,8 +1,8 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { Check, Sparkles } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import { Button, Badge } from '../reference-ui'
-import { formatCurrency } from '../data/billing-data'
+import { formatCurrency } from '../data/format-currency'
 
 function PlanSelector({ plans, currentPlanId, cycle, onCycleChange, onSelect }) {
   const currentIndex = plans.findIndex((p) => p.id === currentPlanId)

@@ -1,7 +1,7 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { Award, BookOpen, Crown } from 'lucide-react'
 import { ProgressRing } from './progress-ring'
-import { formatCurrency } from '../data/billing-data'
+import { formatCurrency } from '../data/format-currency'
 
 var usageIcons = {
   courses: {

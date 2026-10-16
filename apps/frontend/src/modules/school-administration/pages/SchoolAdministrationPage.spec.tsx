@@ -62,6 +62,8 @@ vi.mock('@/modules/settings-reference/services/profileSettingsService', () => ({
 }), updateOwnProfileSettings: vi.fn(), uploadOwnAvatar: vi.fn(), removeOwnAvatar: vi.fn() }))
 
 const auth = vi.hoisted(() => ({ canManage: true }))
+vi.mock('@/modules/billing/hooks/useBilling', () => ({useBilling: () => ({loading:false,error:null,refetch:vi.fn(),overview:{enabled:true,environment:'sandbox',access:{allowed:false,reason:'none',until:null},payments:[],documents:[],subscriptions:[],prices:[]}})}))
+vi.mock('@/modules/auth/services/supabaseClient', () => ({supabase:{auth:{mfa:{listFactors:vi.fn().mockResolvedValue({data:{all:[]},error:null})}}}}))
 
 vi.mock('@/modules/school-administration/hooks/useSchoolAdministration', () => ({
   useSchoolAdministration: () => state,
@@ -153,7 +155,7 @@ describe('panel de ajustes con el diseño de referencia', () => {
     await user.click(screen.getByRole('link', { name: 'Notificaciones' }))
     expect(screen.getByRole('heading', { name: 'Qué quieres recibir' })).toBeInTheDocument()
     await user.click(screen.getByRole('link', { name: 'Privacidad' }))
-    expect(screen.getByRole('button', { name: 'Eliminar mi cuenta' })).toBeEnabled()
+    expect(screen.getByRole('button', { name: 'Eliminar mi cuenta' })).toBeDisabled()
     expect(screen.queryByRole('link', { name: 'Centro educativo' })).not.toBeInTheDocument()
   })
 

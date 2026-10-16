@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { Bell, Check, Lock, Mail, MessageSquare } from 'lucide-react'
 import { cn } from '@/utils/cn'
 

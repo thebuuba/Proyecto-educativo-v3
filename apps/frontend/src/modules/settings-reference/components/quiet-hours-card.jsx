@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { Moon } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import { Input, Switch2, Label2 } from '../reference-ui'

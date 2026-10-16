@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { KeySquare, MessageSquareText, Shield, Smartphone } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import { Button, Switch2 } from '../reference-ui'

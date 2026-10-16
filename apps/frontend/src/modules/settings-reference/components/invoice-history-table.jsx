@@ -1,9 +1,9 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { useState, useMemo } from 'react'
 import { Award, BookOpen, Crown, Download, Receipt, RotateCw, Undo2 } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import { Button } from '../reference-ui'
-import { formatCurrency } from '../data/billing-data'
+import { formatCurrency } from '../data/format-currency'
 
 var typeMeta = {
   subscription: {

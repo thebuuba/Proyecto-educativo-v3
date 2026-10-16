@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { CircleCheck, Ellipsis, Plus, Wallet, Wifi } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import {
@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator2,
   DropdownMenuTrigger2,
 } from '../reference-ui'
-import { formatCurrency } from '../data/billing-data'
+import { formatCurrency } from '../data/format-currency'
 
 var brandBadge = {
   visa: 'bg-blue-600 text-white',

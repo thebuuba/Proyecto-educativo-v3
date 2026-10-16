@@ -1,4 +1,4 @@
-// Recovered from the user-provided Polymet design; layout and sample data preserved.
+// Layout adapted from the user-provided Polymet design.
 import { useState, useMemo } from 'react'
 import {
   ArrowUpRight,
@@ -10,7 +10,7 @@ import {
   Undo2,
 } from 'lucide-react'
 import { cn } from '@/utils/cn'
-import { formatCurrency } from '../data/billing-data'
+import { formatCurrency } from '../data/format-currency'
 
 var kindMeta = {
   payment: {
