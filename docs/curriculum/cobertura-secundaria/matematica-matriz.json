@@ -3022,100 +3022,541 @@
           "printedPage": "222"
         }
       ],
-      "topics": [],
+      "topics": [
+        {
+          "id": "polynomials",
+          "grade": 3,
+          "label": "polinomios y operaciones",
+          "match": "polinomios?|expresiones? algebraicas?",
+          "relation": "el grado, términos, coeficientes y equivalencia de la operación solicitada con polinomios",
+          "representation": "representa los términos y relaciones del polinomio indicado sin cambiar su valor",
+          "pages": [
+            222
+          ],
+          "exclude": "factoriz|raices|ceros|ruffini|descartes|factores de un polinomio|division sintetica",
+          "sourceRecordIds": [
+            "4b6fc78e-8724-5379-afab-c421059c513a",
+            "3fc6bf03-50fd-5941-9cbf-dc62636b1528",
+            "8c40adbb-8115-5eb7-94d4-ac6b6c1f1e11",
+            "e21587f7-bd06-5ff3-9bfb-2077b7f13ca1",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Calcula el valor numérico del polinomio dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Clasifica los polinomios por su grado y número de términos.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Divide los polinomios dados por un método válido.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Modeliza la situación dada con polinomios.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "notable",
+          "grade": 3,
+          "label": "productos y cocientes notables",
+          "match": "productos? notables?|cocientes? notables?|cuadrado de un binomio|cubo de un binomio|suma por la diferencia",
+          "relation": "la equivalencia entre la forma desarrollada y la expresión notable solicitada, distinguiendo términos y signos",
+          "representation": "representa las relaciones del producto o cociente notable pedido sin imponer un modelo no solicitado",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "de207654-66b9-56ee-8660-2c39be41c40f",
+            "e21587f7-bd06-5ff3-9bfb-2077b7f13ca1"
+          ],
+          "families": [
+            {
+              "description": "Calcula los productos notables indicados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica el cuadrado de un binomio.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores de los cocientes notables dados.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "factorization",
+          "grade": 3,
+          "label": "factorización",
+          "match": "factoriz\\w*|factor comun|diferencia de cuadrados|trinomio|suma de cubos|diferencia de cubos|completando cuadrados",
+          "relation": "la equivalencia entre el producto de factores y la expresión original, seleccionando un caso válido para la expresión dada",
+          "representation": "representa los factores pedidos conservando el producto equivalente a la expresión original",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "a691ff1c-b09d-5e6f-91af-d5cd7c992d4e",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Factoriza las expresiones dadas por factor común.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica la diferencia de cuadrados sin factorizar.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Factoriza por agrupación de términos las expresiones dadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Factoriza el trinomio cuadrado perfecto dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Factoriza la suma de cubos y la diferencia de cubos dadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Analiza los errores de la factorización dada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "logic",
+          "grade": 3,
+          "label": "conectivos lógicos y Venn-Euler",
+          "match": "conectivos? logicos?|venn|euler|lenguaje algebraico",
+          "relation": "el significado del conectivo o la relación entre los conjuntos solicitados y la conservación del significado al traducir",
+          "representation": "representa los conjuntos o relaciones lógicas pedidos sin añadir regiones ni relaciones no indicadas",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "de207654-66b9-56ee-8660-2c39be41c40f",
+            "e21587f7-bd06-5ff3-9bfb-2077b7f13ca1"
+          ],
+          "families": [
+            {
+              "description": "Construye el diagrama de Venn-Euler de los conjuntos dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Traduce al lenguaje algebraico usando los conectivos lógicos indicados.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Explica el significado de los conectivos lógicos dados.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "roots",
+          "grade": 3,
+          "label": "raíces y factores",
+          "match": "raices|ceros de un polinomio|factores de un polinomio",
+          "relation": "la relación entre una raíz, el cero del polinomio y el factor correspondiente al verificar la igualdad",
+          "representation": "representa las raíces o factores indicados sin cambiar la equivalencia del polinomio",
+          "pages": [
+            222
+          ],
+          "exclude": "descartes|ceros racionales",
+          "sourceRecordIds": [
+            "3fc6bf03-50fd-5941-9cbf-dc62636b1528",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Analiza las raíces del polinomio dado.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Comprueba las raíces indicadas del polinomio.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Explica la relación entre raíces y factores de un polinomio.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "rational-zeros",
+          "grade": 3,
+          "label": "teorema de los ceros racionales",
+          "match": "ceros racionales",
+          "relation": "la diferencia entre candidatos racionales obtenidos de los coeficientes y raíces comprobadas por sustitución",
+          "representation": "organiza los candidatos racionales pedidos distinguiéndolos de los ceros verificados",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "7d66177c-deaa-5aab-8960-eb1e5d435312",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Aplica el teorema de los ceros racionales al polinomio dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica el teorema de los ceros racionales.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores del teorema de los ceros racionales aplicado.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "descartes",
+          "grade": 3,
+          "label": "regla de los signos de Descartes",
+          "match": "descartes",
+          "relation": "los cambios de signo y las posibilidades de raíces reales según la regla, sin tratarlas como un recuento exacto garantizado",
+          "representation": "organiza los signos y posibilidades de raíces que permite la regla solicitada",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "cb5a5a8d-bc92-5acc-b972-251c4fe3570c",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Aplica la regla de los signos de Descartes al polinomio dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica las posibilidades de raíces según Descartes.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores de la regla de Descartes aplicada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "ruffini",
+          "grade": 3,
+          "label": "regla de Ruffini",
+          "match": "ruffini|division sintetica",
+          "relation": "la alineación de coeficientes, operaciones de división sintética y correspondencia de cociente y resto con la división original",
+          "representation": "organiza los coeficientes y pasos de Ruffini conservando sus posiciones, incluidos los coeficientes nulos",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "8839826f-dca4-5ec3-8b7c-3dfe804d422d",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Divide el polinomio dado mediante Ruffini.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica la división sintética sin efectuarla.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores de Ruffini y corrige el paso indicado.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "equations",
+          "grade": 3,
+          "label": "ecuaciones de primer y segundo grado",
+          "match": "ecuacion(?:es)? (?:de )?(?:primer(?: y segundo)?|segundo) grado|ecuacion(?:es)? cuadraticas?",
+          "relation": "las transformaciones equivalentes de la ecuación y las soluciones que satisfacen la igualdad original",
+          "representation": "representa la igualdad o soluciones solicitadas sin imponer un método único",
+          "pages": [
+            222
+          ],
+          "exclude": "inecuacion|sistema",
+          "sourceRecordIds": [
+            "c5ca3378-6b07-5549-9c96-d5be52ed3bda",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Resuelve ecuaciones de primer grado con los datos dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve la ecuación de segundo grado dada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica otro procedimiento válido para la ecuación cuadrática.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "linear",
+          "grade": 3,
+          "label": "ecuaciones e inecuaciones lineales",
+          "match": "(?:in)?ecuacion(?:es)? lineal(?:es)?|coeficientes racionales e irracionales",
+          "relation": "la equivalencia de las transformaciones y las soluciones de la igualdad o desigualdad lineal solicitada, distinguiendo el cambio de sentido cuando corresponde",
+          "representation": "representa el conjunto solución pedido respetando las condiciones y coeficientes indicados",
+          "pages": [
+            222
+          ],
+          "exclude": "sistema",
+          "sourceRecordIds": [
+            "8839826f-dca4-5ec3-8b7c-3dfe804d422d",
+            "4b276add-b1d2-5c58-ac6a-a7af8f6d087c",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Resuelve problemas con inecuaciones lineales de coeficientes racionales e irracionales.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica el conjunto solución de la inecuación lineal.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores de la ecuación lineal resuelta.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "systems",
+          "grade": 3,
+          "label": "sistemas lineales de dos incógnitas",
+          "match": "sistemas? de ecuacion(?:es)?|sistemas? lineal(?:es)?|dos incognitas",
+          "relation": "las soluciones comunes a ambas ecuaciones y la equivalencia del método elegido, admitiendo métodos válidos y casos sin solución o con infinitas soluciones",
+          "representation": "representa las ecuaciones o su intersección solo en el formato solicitado, distinguiendo los casos del sistema",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "4b276add-b1d2-5c58-ac6a-a7af8f6d087c",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Resuelve el sistema de ecuaciones lineales dado por un método válido.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Compara dos métodos válidos para el sistema lineal dado.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Representa el sistema de ecuaciones dado.",
+              "activity": "EXERCISE_SET"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "functions",
+          "grade": 3,
+          "label": "funciones algebraicas, exponenciales y logarítmicas",
+          "match": "funcion(?:es)?|dominio|rango de una funcion",
+          "relation": "la correspondencia entre entradas y salidas y las restricciones del dominio y rango de la función indicada",
+          "representation": "representa la función pedida conservando sus restricciones, entradas y salidas",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "e7ea2dcc-8931-57ba-9dfe-c4e02c8857b9",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Calcula el dominio y rango de la función algebraica dada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica las restricciones de la función logarítmica dada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Representa la función exponencial indicada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Interpreta la función algebraica en la situación dada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "absolute",
+          "grade": 3,
+          "label": "valor absoluto",
+          "match": "valor absoluto",
+          "relation": "el valor absoluto como distancia al cero y su diferencia respecto al signo del número real",
+          "representation": "representa la distancia al cero solicitada sin confundir número y valor absoluto",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "119a4c23-1eea-5c41-a41e-e0773918aff2",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Calcula el valor absoluto de los reales dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica el concepto de valor absoluto.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores del valor absoluto calculado.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "statistics",
+          "grade": 3,
+          "label": "datos agrupados y frecuencias",
+          "match": "estadistic\\w*|datos agrupados|tablas? de frecuencia|poligonos? de frecuencia",
+          "relation": "la conservación de los datos, intervalos y frecuencias en la tabla o gráfico solicitado",
+          "representation": "construye la tabla o gráfico pedido manteniendo intervalos y frecuencias de los datos proporcionados",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "272d346c-4175-5097-9c61-22f28f929e39",
+            "34840b83-5351-5689-a86b-c4a5f46b7ec3",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Recolecta y organiza los datos agrupados de la situación indicada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Construye el polígono de frecuencia de los datos dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Interpreta la tabla de frecuencia indicada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "dispersion",
+          "grade": 3,
+          "label": "medidas de dispersión",
+          "match": "dispersion|desviacion tipica|desviacion media|varianza|rango de (?:los )?datos",
+          "relation": "la variabilidad de los datos y la definición de la medida de dispersión solicitada, conservando la referencia y el divisor que corresponde al conjunto indicado",
+          "representation": "representa la dispersión pedida conservando los datos y la medida elegida",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "2d2e916e-8aaf-5b7c-adf6-aae21158dddc",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Calcula la desviación típica y varianza de los datos dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Interpreta la desviación media indicada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores del rango de los datos calculado.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "probability",
+          "grade": 3,
+          "label": "diagramas de árbol y probabilidad",
+          "match": "probabil\\w*|diagramas? de arbol",
+          "relation": "el espacio de resultados y la correspondencia entre las ramas y las probabilidades permitidas por el experimento indicado",
+          "representation": "construye el diagrama solicitado sin omitir ni duplicar resultados y conservando las probabilidades proporcionadas",
+          "pages": [
+            222
+          ],
+          "sourceRecordIds": [
+            "2d2e916e-8aaf-5b7c-adf6-aae21158dddc",
+            "550cd69b-1c02-52a8-98e7-7522efa361a2"
+          ],
+          "families": [
+            {
+              "description": "Construye el diagrama de árbol del experimento dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Calcula las probabilidades de los eventos indicados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica el diagrama de probabilidad dado.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-3.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        }
+      ],
       "unassignedSourceRecords": [
         {
           "id": "506ead04-2a73-56b4-a3ee-09267444fa49",
           "text": "Álgebra:",
           "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
-        },
-        {
-          "id": "4b6fc78e-8724-5379-afab-c421059c513a",
-          "text": "• Polinomios, clasificación y operatoria",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "a691ff1c-b09d-5e6f-91af-d5cd7c992d4e",
-          "text": "• Concepto de factorización y casos.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "de207654-66b9-56ee-8660-2c39be41c40f",
-          "text": "• Productos y cocientes notables.\nDiagrama de Venn Euler y conectivos\nlógicos.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "3fc6bf03-50fd-5941-9cbf-dc62636b1528",
-          "text": "• Propiedades de raíces y factores de un\npolinomio.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "c5ca3378-6b07-5549-9c96-d5be52ed3bda",
-          "text": "• Ecuaciones de primer y segundo\ngrado.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "7d66177c-deaa-5aab-8960-eb1e5d435312",
-          "text": "• Teorema de los ceros racionales.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "cb5a5a8d-bc92-5acc-b972-251c4fe3570c",
-          "text": "• Regla de los signos de Descartes.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "8839826f-dca4-5ec3-8b7c-3dfe804d422d",
-          "text": "• Regla de Ruffini, Ecuaciones e\ninecuaciones lineales con coeficientes\nracionales e irracionales.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "4b276add-b1d2-5c58-ac6a-a7af8f6d087c",
-          "text": "• Sistema de ecuaciones lineales con\ndos incógnitas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "e7ea2dcc-8931-57ba-9dfe-c4e02c8857b9",
-          "text": "• Concepto, dominio y rango de\nfunciones: (algebraica, exponencial y\nlogarítmica).",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "119a4c23-1eea-5c41-a41e-e0773918aff2",
-          "text": "• Valor absoluto.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "272d346c-4175-5097-9c61-22f28f929e39",
-          "text": "• Estadística",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "34840b83-5351-5689-a86b-c4a5f46b7ec3",
-          "text": "• Recolecta y organiza datos en tablas\nde frecuencias para datos agrupados.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "2d2e916e-8aaf-5b7c-adf6-aae21158dddc",
-          "text": "• Medidas de dispersión, diagramas de\nárbol y de probabilidades.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "8c40adbb-8115-5eb7-94d4-ac6b6c1f1e11",
-          "text": "Identificación de diferentes tipos de expresiones algebraicas y sus\ncaracterísticas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "e21587f7-bd06-5ff3-9bfb-2077b7f13ca1",
-          "text": "•Traducción de expresiones algebraicas, del lenguaje cotidiano al\nlenguaje algebraico y viceversa haciendo uso de conectivos lógicos.\nIdentificación del grado de un polinomio.\nCálculo del valor numérico de polinomios.\nClasificación de polinomios según el número de términos y su grado.\nIdentificación de polinomios especiales. Obtención de los resultados de\nlas operaciones con polinomios: adición, sustracción, multiplicación y\ndivisión (tradicional y sintética), Modelación y resolución de expresiones\nalgebraicas, basadas en situaciones problemáticas dadas.\nObtención de productos notables: cuadrado de un binomio, cubo de\nun binomio, producto de la suma por la diferencia de un binomio.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "550cd69b-1c02-52a8-98e7-7522efa361a2",
-          "text": "•Casos de factorización:\na) Factor común.\nb) Factor común por agrupación de términos.\nc) Diferencia de cuadrados.\nd) Trinomio cuadrado perfecto.\ne) Trinomio de la forma:\n(1) Por agrupación de términos.\n(2) Completando cuadrados.\ng) Suma de cubo.\nh) Diferencia de cubo.\ni) Factorización de polinomios de grado mayor que dos.\na. Aplicación del teorema de los ceros racionales.\nb. Aplicación de la regla de los signos de Descartes.\nc. Aplicación del teorema de Ruffini.\nResolución de ecuaciones de primer y segundo grado.\nAnálisis de las raíces o ceros de un polinomio.\nResolución de problemas que impliquen ecuaciones e inecuaciones\nlineales con coeficientes racionales e irracionales.\nResolución de situaciones que impliquen sistemas de ecuaciones\nlineales con en dos variables por diversos métodos de resolución.\nConceptualización de una función algebraica.\nAnálisis y cálculo de dominio y rango de una función algebraica.\nAnálisis del concepto de valor absoluto de números reales.\nCálculo de valor absoluto de números reales.\nRecolección y organización de datos agrupados en tablas y en gráficos.\nCálculo en forma elemental de medidas de dispersión: rango, desviación\ntípica, desviación media y varianza.\nConstrucción de diagramas de árbol y de probabilidad, polígono de\nfrecuencia.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
         }
       ],
-      "status": "NOT_IMPLEMENTED"
+      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PENDING"
     },
     {
       "grade": 4,
