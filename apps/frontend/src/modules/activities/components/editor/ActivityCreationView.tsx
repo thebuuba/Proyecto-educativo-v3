@@ -1,3 +1,4 @@
+import {resolveCommonScienceTask} from '@aula/shared'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -312,10 +313,11 @@ export function ActivityCreationView(props: {
           onChangeDraftRef.current(next)
         }
       }
-      // Recognized French and mathematics selections are deterministic locally. Recommendation resolves
+      // Recognized subject selections are deterministic locally. Recommendation resolves
       // the same authorized curriculum and validates its catalog on the server.
       if (resolveCommonFrenchTask(activityDraft.name, activityDescriptionText(activityDraft.description), props.instrumentAcademicContext)
-        || resolveCommonMathTask(activityDraft.name, activityDescriptionText(activityDraft.description), props.instrumentAcademicContext)) {
+        || resolveCommonMathTask(activityDraft.name, activityDescriptionText(activityDraft.description), props.instrumentAcademicContext)
+        || resolveCommonScienceTask(activityDraft.name, activityDescriptionText(activityDraft.description), props.instrumentAcademicContext)) {
         setInterpretation(null)
         return
       }

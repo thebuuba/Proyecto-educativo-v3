@@ -1,3 +1,4 @@
+import {resolveCommonScienceTask,commonScienceCriteria,adaptScienceScale} from '@aula/shared'
 import { resolveCommonFrenchTask, commonFrenchCriteria } from '@aula/shared'
 import {resolveCommonMathTask,commonMathCriteria,adaptMathScale} from '@aula/shared'
 import type { InstrumentRecommendation } from '@aula/shared'
@@ -42,6 +43,8 @@ export function preparationFingerprint(input: { name: string; description: strin
 export function editableFallbackRecommendation(input: { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: number; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
   const authorizedGrade=input.academicContext?commonSecondaryLanguageGrade(input.academicContext):input.secondaryLanguageGrade
   if(authorizedGrade)input={...input,secondaryLanguageGrade:authorizedGrade}
+  const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',input.academicContext)
+  if(commonScience)return adaptScienceScale(editableAuthoredRecommendation(commonScienceCriteria(commonScience),input,input.activityType??commonScience.activityType,`ciencias-naturaleza-comun-${commonScience.grade}`),input.description??'')
   const commonMath=resolveCommonMathTask(input.activityTitle,input.description??'',input.academicContext)
   if(commonMath)return adaptMathScale(editableAuthoredRecommendation(commonMathCriteria(commonMath),input,input.activityType??commonMath.activityType,`matematica-comun-${commonMath.grade}`),input.description??'')
   const french=resolveCommonFrenchTask(input.activityTitle,input.description??'',input.academicContext)

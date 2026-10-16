@@ -39,6 +39,26 @@ async function advance(ms: number) {
 }
 
 describe('automatic instrument preparation request lifecycle', () => {
+  it('Ciencias descarta la respuesta anterior y el título viejo al cambiar de contenido en el mismo borrador',async()=>{
+    const academic={level:'SECONDARY' as const,grade:1,subjectCode:'NAT-TU'}
+    const first='Explica las causas de los sismos.',latest='Compara energía renovable y no renovable.'
+    const build=(description:string)=>editableFallbackRecommendation({activityTitle:'Sismos',description,maxScore:20,instrumentType:'rubrica',participationMode:'INDIVIDUAL',academicContext:academic})
+    let finish!:(p:InstrumentRecommendation)=>void
+    const pending=new Promise<InstrumentRecommendation>(resolve=>{finish=resolve});let requests=0
+    const post=vi.spyOn(api,'post').mockImplementation(async(_path,body)=>{const input=body as {description:string};return(await(++requests===1?pending:build(input.description))) as never})
+    mount({name:'Sismos',description:first,pedagogicalActivityType:'',autoDetectedPedagogicalActivityType:true},academic)
+    await advance(500);await advance(1000)
+    expect(requests).toBe(1)
+    fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:latest}})
+    await advance(500);await advance(1000)
+    await act(async()=>{finish(build(first))});await advance(500);await advance(1000)
+    const draft=readActivityDrafts(context)[0].draft as ActivityDraft
+    expect(post.mock.calls.every(([path])=>path.endsWith('/recommend'))).toBe(true)
+    expect(draft.preparedRecommendation?.criteria.length).toBeGreaterThan(0)
+    expect(JSON.stringify(draft.preparedRecommendation?.criteria)).toMatch(/energía renovable/)
+    expect(JSON.stringify(draft.preparedRecommendation?.criteria)).not.toMatch(/sismo|terremoto/)
+    expect(draft.maxScore).toBe('')
+  })
   beforeEach(() => {
     vi.useFakeTimers()
     localStorage.clear()

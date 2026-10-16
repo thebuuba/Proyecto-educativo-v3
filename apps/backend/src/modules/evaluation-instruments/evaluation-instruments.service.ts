@@ -1,3 +1,4 @@
+import {resolveCommonScienceTask,commonScienceSelections} from '@aula/shared'
 import { resolveCommonFrenchTask, commonFrenchSelections } from '@aula/shared'
 import {resolveCommonMathTask,commonMathSelections} from '@aula/shared'
 import { BadRequestException, ForbiddenException, HttpException, Injectable, Logger, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
@@ -18,11 +19,12 @@ export class EvaluationInstrumentsService {
     try {deliveryConditions(input.description??'')}catch(error){if(error instanceof TaskRequirementError)throw new BadRequestException(error.message);throw error}
     const frenchTask=resolveCommonFrenchTask(input.activityTitle,input.description??'',resolved.context)
     const mathTask=resolveCommonMathTask(input.activityTitle,input.description??'',resolved.context)
+    const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',resolved.context)
     const englishTask=resolveCommonEnglishTask(input.activityTitle,input.description??'',resolved.context)
-    const scopedType = mathTask?.activityType??frenchTask?.activityType??englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
+    const scopedType = commonScience?.activityType??mathTask?.activityType??frenchTask?.activityType??englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
     const detected = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === scopedType)
       ?? detectActivityType(input.activityTitle, input.description ?? '', evaluationCatalogCurrent, false)
-    const selections = mathTask?commonMathSelections(mathTask,input.description??''):frenchTask?commonFrenchSelections(frenchTask,input.description??''):englishTask?commonEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '') : suggestedSelections(detected.id, resolved.context, input.description ?? '')
+    const selections = commonScience?commonScienceSelections(commonScience,input.description??''):mathTask?commonMathSelections(mathTask,input.description??''):frenchTask?commonFrenchSelections(frenchTask,input.description??''):englishTask?commonEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '') : suggestedSelections(detected.id, resolved.context, input.description ?? '')
     const type = input.pedagogicalActivityType ?? detected.id
     const ranked = rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
       resolved.resolution.scope, resolved.rows)
@@ -112,10 +114,11 @@ export class EvaluationInstrumentsService {
   }
 }
 
-function versionAllowsContext(version: { importMetadata?: unknown }, context: AcademicContext) {
+export function versionAllowsContext(version: { importMetadata?: unknown }, context: AcademicContext) {
   const metadata = version.importMetadata && typeof version.importMetadata === 'object' && !Array.isArray(version.importMetadata)
     ? version.importMetadata as Record<string, unknown> : {}
   if (metadata.commonOnly === true && context.optativeExitName) return false
+  if ('grades' in metadata && (!Array.isArray(metadata.grades) || !metadata.grades.includes(context.grade))) return false
   if (!('subjectCodes' in metadata)) return true // Historical complete catalogs retain their policy.
   const code = context.subjectCode.trim().toUpperCase() || (/frances|francais/.test((context.subjectName ?? '').normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()) ? 'FRA' : '')
   return Array.isArray(metadata.subjectCodes) && metadata.subjectCodes.some(value => typeof value === 'string' && value.toUpperCase() === code)

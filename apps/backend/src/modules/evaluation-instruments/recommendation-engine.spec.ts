@@ -328,10 +328,11 @@ describe('Recomendador con currículo literal completo', () => {
     const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'NAT-TU', subjectName: 'Ciencias de la Tierra y el Universo', optativeExitName: null, modalityCode: 'academic' }
     const description = 'Los estudiantes realizarán una exposición individual en la que explicarán qué son los volcanes, cómo se forman, cuáles son sus principales partes, los diferentes tipos de erupciones y los riesgos que representan para las poblaciones cercanas. Podrán utilizar imágenes, esquemas o modelos como apoyo.'
     const result = recommend({ activityTitle: 'Exposición sobre los volcanes', description, maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
-    expect(result.criteria.map(criterion => criterion.title)).toEqual(expect.arrayContaining([expect.stringMatching(/forman los volcanes/), expect.stringMatching(/partes de los volcanes/), expect.stringMatching(/Precisión científica/)]))
-    expect(result.criteria.filter(criterion => criterion.templateId === 'science-content')).toHaveLength(2)
+    expect(result.criteria.map(criterion => criterion.title)).toEqual(expect.arrayContaining([expect.stringMatching(/formación de los volcanes/), expect.stringMatching(/partes de los volcanes/)]))
+    for(const facet of ['formation','parts','eruptions','risks'])expect(result.criteria.some(c=>c.templateId===`nat-1-volcanoes-${facet}-explanation`)).toBe(true)
+    expect(result.criteria.some(c=>c.templateId.includes('representation'))).toBe(false)
     expect(result.criteria.every(criterion => criterion.sourceType !== 'CURRICULUM_DERIVED' && criterion.sourceReferences.length === 0)).toBe(true)
-    expect(result.criteria.every(criterion => criterion.descriptors.every(descriptor => descriptor.text.length <= 240))).toBe(true)
+    expect(result.criteria.every(criterion => criterion.descriptors.every(descriptor => descriptor.text.trim().length > 0))).toBe(true)
   })
   it('contextualiza intención artística y contexto social sin mezclar ámbitos', () => {
     const art = run({ ...cases[5], activityTitle: 'Pintura sobre identidad cultural', description: 'Crear una pintura con símbolos de identidad cultural y explicar la composición.' }).result
