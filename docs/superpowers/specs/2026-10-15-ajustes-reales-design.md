@@ -1,6 +1,6 @@
 # Ajustes reales conservando el diseño de Polymet
 
-Estado: propuesta para revisión del usuario. No implementada.
+Estado: propuesta aprobada por el usuario el 15 de octubre de 2026. Implementación pendiente del plan de cada entrega.
 
 ## Resultado solicitado
 

@@ -243,9 +243,11 @@ Cuando se migre un subcomponente heredado, retirar su regla localizada de compat
 
 ## Configuración
 
-- Organizar `/configuracion` en Centro educativo, Calendario, Usuarios, Cuenta e interfaz y Módulos; cada categoría usa tarjetas blancas y acciones semánticas compartidas.
+- `/configuracion` presenta las cinco pantallas completas de la referencia Polymet solicitada: Perfil, Seguridad, Notificaciones, Pagos y suscripciones y Privacidad. Centro educativo, Calendario, Usuarios y Módulos conservan sus accesos administrativos y permisos.
 - Mantener el margen del layout, títulos oscuros, campos y botones de acción redondos. `settings-design.css` solo ajusta la forma de controles dentro de `settings-workspace`; no introduce una paleta de compatibilidad.
-- Mostrar únicamente ajustes que tengan soporte real en las API o en las preferencias del navegador. Los roles, correo y estado de usuarios permanecen informativos.
+- `modules/settings-reference/` conserva las tarjetas y proporciones de Polymet. Perfil consume la identidad y preferencias persistidas en AulaBase, con carga de foto privada y guardado confirmado por servidor. Seguridad, Notificaciones, Pagos y Privacidad conservan temporalmente los ejemplos identificados como demostración hasta completar sus servicios.
+- `reference-settings.css` contiene la tipografía y las proporciones de esa referencia, limitadas a `settings-reference-workspace`. El fondo general y el layout de navegación pertenecen a AulaBase. No extender estos estilos a otros módulos.
+- La gestión real de pagos permanece disponible mediante el bloque «Gestionar los pagos de mi cuenta de AulaBase». Los datos personales y las preferencias reales siguen disponibles en `/perfil`.
 - Las preferencias personales también están disponibles en `/perfil`: menú lateral expandido y reducción de animaciones. Esta última se combina con la preferencia de movimiento del sistema operativo.
 - Mantener los enlaces antiguos a años y períodos y ofrecer accesos directos a los ajustes existentes de cada módulo.
 

@@ -1,4 +1,5 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { act, render, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { ApiError } from '@/services/apiClient'
 import { useAuth } from '../hooks/useAuth'
@@ -25,6 +26,10 @@ function Status() {
   const { isAuthenticated, loading } = useAuth()
   return <span>{loading ? 'cargando' : isAuthenticated ? 'autenticado' : 'sin sesión'}</span>
 }
+function ProfileDraft() {
+  const { loading, refreshAuth } = useAuth()
+  return loading ? <span>Cargando cuenta</span> : <div><input aria-label="Borrador" defaultValue="" /><button onClick={() => void refreshAuth({ background: true })}>Actualizar identidad</button></div>
+}
 
 describe('AuthProvider: sesión persistente', () => {
   beforeEach(() => {
@@ -32,6 +37,20 @@ describe('AuthProvider: sesión persistente', () => {
     localStorage.clear()
     mocks.onAuthStateChange.mockReturnValue({ data: { subscription: { unsubscribe: vi.fn() } } })
     mocks.getOnboardingStatus.mockResolvedValue({ complete: true })
+  })
+
+  it('refreshes identity in the background without unmounting an unsaved form', async () => {
+    const session = { appUser: {id:'user-1',fullName:'Ana',email:'ana@example.com',avatarUrl:null},roles:[],permissions:[],onboardingComplete:true }
+    mocks.getAuthBootstrap.mockResolvedValueOnce(session)
+    let complete!: (value: typeof session) => void
+    mocks.getAuthBootstrap.mockImplementationOnce(() => new Promise(resolve => { complete = resolve }))
+    const user = userEvent.setup()
+    render(<AuthProvider><ProfileDraft /></AuthProvider>)
+    await user.type(await screen.findByLabelText('Borrador'),'Sin guardar')
+    await user.click(screen.getByRole('button',{name:'Actualizar identidad'}))
+    expect(screen.getByLabelText('Borrador')).toHaveValue('Sin guardar')
+    await act(async () => complete({...session,appUser:{...session.appUser,fullName:'Ana Real'}}))
+    expect(screen.getByLabelText('Borrador')).toHaveValue('Sin guardar')
   })
 
   it('recrea la cookie del backend desde una sesión Supabase guardada', async () => {
