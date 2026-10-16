@@ -1,12 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import { detectTeachingStrategy } from '@aula/shared'
 import { recommend } from './recommendation-engine'
+import fourthGrade from '../../../../../data/evaluation-instruments/math-grade-4-contracts.json'
 import thirdGrade from '../../../../../data/evaluation-instruments/math-grade-3-contracts.json'
 import topics from '../../../../../data/evaluation-instruments/math-grade-2-contracts.json'
-for(const [grade,topicsForGrade] of [[2,topics],[3,thirdGrade]] as const){
+for(const [grade,topicsForGrade] of [[2,topics],[3,thirdGrade],[4,fourthGrade]] as const){
 const cases=topicsForGrade.flatMap(f=>[f,...(f.variants??[]).map(v=>({...v,id:f.id}))])
 
-const context = { level: 'SECONDARY' as const, grade, cycle: 1, modalityCode: 'academic', subjectCode: 'MAT', subjectName: 'Matemática', optativeExitName: null }
+const context = { level: 'SECONDARY' as const, grade, cycle: grade<=3?1:2, modalityCode: 'academic', subjectCode: 'MAT', subjectName: 'Matemática', optativeExitName: null }
 const propose = (description: string, format: 'rubrica'|'lista-cotejo'|'escala'|'lista-ponderada' = 'rubrica', maxScore = 20, activityTitle = 'Actividad') => recommend({ activityTitle, description, maxScore, preferredInstrumentType: format, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
 describe('Matemática común 2.º: contenido solicitado, acciones y formatos', () => {
   for (const f of cases) for (const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const) for (const total of [20,17.35]) it(`${f.id}/${format}/${total}`, () => {
@@ -21,6 +22,24 @@ describe('Matemática común 2.º: contenido solicitado, acciones y formatos', (
     expect(propose(f.description,format,total,'Ensayo de literatura inglesa').criteria).toEqual(p.criteria)
     expect(p.criteria.map(c=>c.description).join(' ')).not.toMatch(/rapidez|estética|caligrafía|participación|cartulina|datos ficticios/)
   })
+  if(grade===4){
+    it('el cotejo conserva ángulos y perímetro como resultados independientes',()=>{
+      const p=propose('Calcula los ángulos y perímetro de los polígonos dados.','lista-cotejo')
+      expect(p.criteria.some(c=>c.templateId.includes('result:angulos'))).toBe(true)
+      expect(p.criteria.some(c=>c.templateId.includes('result:perimetro'))).toBe(true)
+    })
+    it('un dibujo proporcionado no exige dibujar y explicar errores no duplica la explicación',()=>{
+      const p=propose('Explica los errores de los ángulos de la figura dibujada.')
+      expect(p.criteria).toHaveLength(1)
+      expect(p.criteria[0].templateId).toBe('mat-4-angles-error')
+      expect(p.activityType).toBe('ANALYSIS')
+    })
+    it('respeta una medida negada y una alternativa de construcción',()=>{
+      const p=propose('No midas los ángulos, pero explica su relación o construye los ángulos dados.')
+      expect(p.criteria).toHaveLength(1);expect(p.criteria[0].description).toMatch(/O BIEN/)
+      expect(p.criteria[0].description).not.toMatch(/Obtiene el resultado/)
+    })
+  }
   if(grade===3){
     it('Descartes no exige factorizar ni relacionar factores',()=>{
       expect(propose('Explica las posibilidades de raíces según Descartes.').criteria.every(c=>c.templateId.startsWith('mat-3-descartes-'))).toBe(true)

@@ -1,0 +1,397 @@
+[
+  {
+    "id": "angles",
+    "description": "Mide los ángulos indicados en la figura.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Construye los ángulos dados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Clasifica los ángulos de la figura proporcionada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Explica los errores de medición de ángulos dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lines",
+    "description": "Construye rectas paralelas, perpendiculares y transversales.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "representation"
+    ],
+    "variants": [
+      {
+        "description": "Interpreta las relaciones de rectas de la figura dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      },
+      {
+        "description": "Resuelve problemas de ángulos entre paralelas.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Justifica el postulado de rectas aplicado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "polygons",
+    "description": "Calcula las diagonales del polígono regular dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Calcula los ángulos y perímetro de los polígonos dados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Construye el polígono regular indicado.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de las diagonales del polígono dibujado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "triangles",
+    "description": "Resuelve problemas con ángulos interiores y exteriores de triángulos.",
+    "activity": "PROBLEM_SOLVING",
+    "requiredActions": [
+      "understanding",
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica la relación entre los lados y ángulos del triángulo.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores del teorema fundamental del triángulo aplicado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "congruence",
+    "description": "Justifica la congruencia de los triángulos por LLL, LAL o ALA cuando corresponda.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "explanation"
+    ],
+    "variants": [
+      {
+        "description": "Clasifica los casos de congruencia dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Representa un caso del criterio LAL con los datos dados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la congruencia indicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "thales",
+    "description": "Aplica el teorema de Thales a los segmentos dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica por qué se aplica Thales a la figura dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de las proporciones de Tales.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "menelaus",
+    "description": "Aplica el teorema de Menelao a la configuración dada.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica las condiciones del teorema de Menelao.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de Menelao en el caso proporcionado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ceva",
+    "description": "Aplica el teorema de Ceva a la figura dada.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica las condiciones de concurrencia según Ceva.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores del teorema de Ceva aplicado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "circumference",
+    "description": "Resuelve problemas sobre circunferencia con los datos dados.",
+    "activity": "PROBLEM_SOLVING",
+    "requiredActions": [
+      "understanding",
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Identifica los elementos de la circunferencia dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Explica las propiedades de las cuerdas indicadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Representa los radios y diámetros solicitados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "polyhedra",
+    "description": "Calcula el volumen de los poliedros dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Interpreta los datos de volumen de cuerpos proporcionados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      },
+      {
+        "description": "Investiga aplicaciones del volumen de cuerpos en el contexto indicado.",
+        "activity": "RESEARCH",
+        "requiredActions": [
+          "inquiry"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "truncated",
+    "description": "Calcula el área y volumen del cuerpo truncado dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Modeliza la situación proporcionada con un cuerpo truncado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "model"
+        ]
+      },
+      {
+        "description": "Explica el procedimiento del volumen de cuerpos truncados sin calcular resultados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "transformations",
+    "description": "Representa la traslación de la figura dada.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "representation"
+    ],
+    "variants": [
+      {
+        "description": "Clasifica las transformaciones geométricas indicadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Resuelve problemas del contexto con transformaciones geométricas.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Interpreta la rotación de la figura proporcionada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "units",
+    "description": "Convierte las unidades de medida indicadas.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Justifica las conversiones del sistema de medidas solicitado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de las conversiones dadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reservoir",
+    "description": "Elabora un proyecto de diseño de embalse con las dimensiones y restricciones dadas.",
+    "activity": "PROJECT",
+    "requiredActions": [
+      "model"
+    ],
+    "variants": [
+      {
+        "description": "Modeliza la capacidad del embalse con los datos disponibles.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "model"
+        ]
+      },
+      {
+        "description": "Analiza las limitaciones del diseño de embalse proporcionado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "analysis"
+        ]
+      }
+    ]
+  }
+]
