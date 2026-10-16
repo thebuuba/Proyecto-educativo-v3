@@ -8,7 +8,7 @@
 - [x] 2.º: temas/procedimientos y regresiones propias, variantes negativas/alternativas, pertinencia completa; release congelado/idempotente; QA y cierre por grado antes de avanzar.
 - [x] 3.º: mismo contrato, sin ampliar el texto de fórmulas ausentes de la fuente ni imponer un método único; QA/cierre.
 - [x] 4.º: geometría, representaciones/razonamiento solo cuando corresponden; QA/cierre.
-- [ ] 5.º: cónicas/vectores/matrices/trigonometría en su grado correcto; conservar historia y comportamientos útiles; QA/cierre.
+- [x] 5.º: cónicas/vectores/matrices/trigonometría en su grado correcto; conservar historia y comportamientos útiles; QA/cierre.
 - [ ] 6.º: álgebra, sucesiones/finanzas/complejos/trigonometría/cálculo simple documentados en el currículo común; QA/cierre.
 - [ ] Consolidado: cobertura real y exclusiones por tema, ejemplos completos, pruebas separadas, rendimiento/limitaciones y preservación histórica; Git sincronizado y árbol limpio. Detenerse.
 

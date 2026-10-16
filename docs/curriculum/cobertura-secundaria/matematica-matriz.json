@@ -5061,115 +5061,660 @@
           "printedPage": "231"
         }
       ],
-      "topics": [],
+      "topics": [
+        {
+          "id": "line",
+          "grade": 5,
+          "label": "ecuación de la recta",
+          "match": "rectas?|pendientes?",
+          "relation": "la pendiente, intersecciones y formas equivalentes de la ecuación de la recta indicadas, distinguiendo rectas verticales cuando corresponda",
+          "representation": "representa la recta pedida conservando la relación entre sus puntos, pendiente e intersecciones",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "8e11d811-d790-5ee6-8ff9-a59be7af955c",
+            "933606d4-e63e-598a-bc89-34d065394516",
+            "d31bf0f6-0298-50cb-8d7b-a54cf6b90113",
+            "cc47712f-730b-525d-83d0-65805f3f84a9",
+            "3fe53299-4921-5825-87e1-ea233bd298a7",
+            "1c5da8ea-7594-51ab-a3fb-fba843a9f0f4",
+            "ee999a7c-5a08-523e-a342-18e384e86b5c",
+            "8bcdf170-85e0-53df-983e-ece997231a2d",
+            "16ee203f-365a-5afd-9f91-6fefeac13af6",
+            "bde6726e-4d90-5f4d-b2ac-b3fac1963111"
+          ],
+          "families": [
+            {
+              "description": "Interpreta la ecuación de la recta dada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Calcula la pendiente de la recta indicada y explica el procedimiento.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Representa la recta con los datos proporcionados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Analiza los errores de la ecuación de la recta.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "circle",
+          "grade": 5,
+          "label": "circunferencia analítica",
+          "match": "circunferencia",
+          "relation": "el centro, radio y relación de distancias que definen la circunferencia de la consigna, vinculando sus elementos con su ecuación",
+          "representation": "representa la circunferencia solicitada respetando centro, radio y ecuación",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "8e11d811-d790-5ee6-8ff9-a59be7af955c",
+            "3fe53299-4921-5825-87e1-ea233bd298a7",
+            "ee999a7c-5a08-523e-a342-18e384e86b5c",
+            "16ee203f-365a-5afd-9f91-6fefeac13af6"
+          ],
+          "families": [
+            {
+              "description": "Resuelve problemas del contexto sobre la ecuación de la circunferencia.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Identifica el centro y radio de la circunferencia dada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Explica la ecuación de la circunferencia indicada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "parabola",
+          "grade": 5,
+          "label": "parábola y elementos",
+          "match": "parabolas?",
+          "relation": "la equidistancia entre foco y directriz, vértice y orientación de la parábola indicada y su correspondencia con la ecuación",
+          "representation": "representa la parábola indicada conservando vértice, orientación y elementos solicitados",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "8e11d811-d790-5ee6-8ff9-a59be7af955c",
+            "3fe53299-4921-5825-87e1-ea233bd298a7",
+            "ee999a7c-5a08-523e-a342-18e384e86b5c",
+            "16ee203f-365a-5afd-9f91-6fefeac13af6"
+          ],
+          "families": [
+            {
+              "description": "Resuelve problemas con la parábola dada.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Representa la parábola de la ecuación proporcionada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Analiza los errores al identificar foco y directriz de la parábola.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "ellipse",
+          "grade": 5,
+          "label": "elipse y elementos",
+          "match": "elipses?",
+          "relation": "la suma constante de distancias a los focos y las relaciones entre semiejes y focos de la elipse indicada, vinculadas a su ecuación",
+          "representation": "representa la elipse pedida conservando centro, ejes y elementos solicitados",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "8e11d811-d790-5ee6-8ff9-a59be7af955c",
+            "90231d6f-b9ec-589d-abf7-a00f53691335",
+            "49656459-57af-5376-a79a-0b8694b4c71d",
+            "58db7735-e0bd-50e0-bc21-951c9f89f07a"
+          ],
+          "families": [
+            {
+              "description": "Resuelve problemas de la elipse con los datos dados.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica los elementos de la elipse indicada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Representa la elipse de la ecuación dada.",
+              "activity": "EXERCISE_SET"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "hyperbola",
+          "grade": 5,
+          "label": "hipérbola y elementos",
+          "match": "hiperbolas?",
+          "relation": "la diferencia absoluta constante de distancias a los focos y las relaciones entre ejes, focos y asíntotas de la hipérbola indicada",
+          "representation": "representa la hipérbola conservando su orientación y los elementos solicitados",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "8e11d811-d790-5ee6-8ff9-a59be7af955c",
+            "90231d6f-b9ec-589d-abf7-a00f53691335",
+            "49656459-57af-5376-a79a-0b8694b4c71d",
+            "58db7735-e0bd-50e0-bc21-951c9f89f07a"
+          ],
+          "families": [
+            {
+              "description": "Resuelve problemas sobre la hipérbola indicada.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Interpreta las asíntotas de la hipérbola dada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores de la ecuación de la hipérbola.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "conics",
+          "grade": 5,
+          "label": "cónicas",
+          "match": "conicas?",
+          "relation": "las propiedades y elementos de cada cónica solicitada, distinguiendo las condiciones que caracterizan sus ecuaciones",
+          "representation": "representa únicamente las cónicas pedidas con los datos y referencias disponibles",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "4d8f09ca-20e9-5006-b43d-c7604fdebcf6",
+            "8e11d811-d790-5ee6-8ff9-a59be7af955c",
+            "7855860c-b968-540f-8348-0418c36091af",
+            "3fe53299-4921-5825-87e1-ea233bd298a7",
+            "90231d6f-b9ec-589d-abf7-a00f53691335",
+            "ee999a7c-5a08-523e-a342-18e384e86b5c",
+            "49656459-57af-5376-a79a-0b8694b4c71d",
+            "16ee203f-365a-5afd-9f91-6fefeac13af6",
+            "58db7735-e0bd-50e0-bc21-951c9f89f07a"
+          ],
+          "families": [
+            {
+              "description": "Compara las cónicas dadas según sus elementos.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Identifica las cónicas de las ecuaciones proporcionadas.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Modeliza la situación indicada mediante una cónica.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "vectors",
+          "grade": 5,
+          "label": "vectores",
+          "match": "vector(?:es)?|vectorial",
+          "relation": "la magnitud, dirección, sentido y componentes pertinentes del vector indicado, respetando las condiciones de la operación solicitada",
+          "representation": "representa el vector pedido conservando componentes, dirección y sentido según la notación solicitada",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "695b5f52-d00c-5414-825c-5b56f1a5a67e",
+            "cc1357a1-1e07-50d8-a3a6-15aae63ba41d",
+            "8fd748c6-6661-5c2c-8bef-7e3b0c8a82ac",
+            "67a50494-3443-57dd-8b88-38376c292b31",
+            "dc506264-93a2-5903-beca-eb1fd8c766a8",
+            "de4da380-4cb7-59a0-a590-9ed347eefacc",
+            "e98a9200-2637-500f-91c2-9ad76564dee0",
+            "22f1a0a2-2f37-5d4e-b4f4-b8e1af52da50"
+          ],
+          "families": [
+            {
+              "description": "Calcula la suma y resta de los vectores dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Clasifica y representa los vectores proporcionados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas del contexto con vectores.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Compara un vector y una matriz dados.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "matrices",
+          "grade": 5,
+          "label": "matrices y operaciones",
+          "match": "matri(?:z|ces)",
+          "relation": "el orden, posiciones de las entradas y compatibilidad de dimensiones de las matrices indicadas, distinguiendo las condiciones de cada operación y el orden de los factores",
+          "representation": "representa la matriz pedida respetando filas, columnas y posiciones de sus entradas",
+          "pages": [
+            231
+          ],
+          "exclude": "determinante|inversa",
+          "sourceRecordIds": [
+            "695b5f52-d00c-5414-825c-5b56f1a5a67e",
+            "cc1357a1-1e07-50d8-a3a6-15aae63ba41d",
+            "fc3e24c3-73b1-5e41-bfab-53b509a10271",
+            "b22f2e75-7004-5b6a-b1c2-98496b3e53ba",
+            "dc506264-93a2-5903-beca-eb1fd8c766a8",
+            "de4da380-4cb7-59a0-a590-9ed347eefacc",
+            "e98a9200-2637-500f-91c2-9ad76564dee0",
+            "22f1a0a2-2f37-5d4e-b4f4-b8e1af52da50"
+          ],
+          "families": [
+            {
+              "description": "Opera con las matrices dadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Identifica los tipos de matrices dados.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Resuelve problemas con matrices en el contexto indicado.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica por qué el producto de matrices no es conmutativo en el caso dado.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "determinants",
+          "grade": 5,
+          "label": "determinantes",
+          "match": "determinantes?",
+          "relation": "la condición de matriz cuadrada, el orden y las relaciones del determinante solicitado, sin confundir determinante y matriz",
+          "representation": "organiza la matriz cuadrada y los pasos de representación solicitados para su determinante",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "cc1357a1-1e07-50d8-a3a6-15aae63ba41d"
+          ],
+          "families": [
+            {
+              "description": "Calcula el determinante de la matriz dada.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica el procedimiento del determinante indicado.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores del determinante calculado.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "inverse",
+          "grade": 5,
+          "label": "matriz inversa",
+          "match": "inversa(?:s)?",
+          "relation": "la condición de matriz cuadrada no singular y la relación con la identidad que debe cumplir la inversa solicitada, reconociendo cuándo no existe",
+          "representation": "representa la matriz inversa pedida manteniendo el orden y las entradas correspondientes",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "cc1357a1-1e07-50d8-a3a6-15aae63ba41d",
+            "de4da380-4cb7-59a0-a590-9ed347eefacc",
+            "e98a9200-2637-500f-91c2-9ad76564dee0",
+            "22f1a0a2-2f37-5d4e-b4f4-b8e1af52da50"
+          ],
+          "families": [
+            {
+              "description": "Calcula la matriz inversa cuando exista.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Comprueba la matriz inversa mediante el producto indicado.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Explica por qué la matriz dada no tiene inversa.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "trig-history",
+          "grade": 5,
+          "label": "origen de la trigonometría",
+          "match": "(?:origen|historia|desarrollo(?: historico)?) de la trigonometria",
+          "relation": "el origen y desarrollo histórico de la trigonometría solicitados, relacionando las aportaciones con sus problemas matemáticos sin atribuciones inventadas",
+          "representation": "organiza la secuencia histórica solicitada conservando las referencias disponibles",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "054c948b-2332-5b1c-a550-7650cf838187",
+            "03469cb8-467e-55df-ba1a-439730d58cbc",
+            "525f5bb9-b00d-5c83-ab38-f22d86abac40",
+            "60cca32a-0aa9-53dc-a48a-4e9e7587c54e"
+          ],
+          "families": [
+            {
+              "description": "Investiga el origen de la trigonometría.",
+              "activity": "RESEARCH"
+            },
+            {
+              "description": "Explica el desarrollo de la trigonometría.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "trig-functions",
+          "grade": 5,
+          "label": "funciones trigonométricas",
+          "match": "funcion(?:es)? trigonometricas?|razones? trigonometricas?",
+          "relation": "las razones o valores de las funciones trigonométricas y su dominio pertinente para los ángulos proporcionados, distinguiendo unidades angulares y valores no definidos",
+          "representation": "representa las funciones trigonométricas pedidas respetando sus dominios y referencias angulares",
+          "pages": [
+            231
+          ],
+          "exclude": "notables?|especiales?|identidad",
+          "sourceRecordIds": [
+            "933606d4-e63e-598a-bc89-34d065394516",
+            "7475c0fc-dab0-5359-8dbd-ecf071c4c65e",
+            "ecb1e05b-e642-5e22-923a-51ca977d750e",
+            "03469cb8-467e-55df-ba1a-439730d58cbc",
+            "525f5bb9-b00d-5c83-ab38-f22d86abac40",
+            "60cca32a-0aa9-53dc-a48a-4e9e7587c54e"
+          ],
+          "families": [
+            {
+              "description": "Calcula las funciones trigonométricas de los ángulos dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas con funciones trigonométricas.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Interpreta los valores de las funciones trigonométricas indicadas.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "sine-law",
+          "grade": 5,
+          "label": "ley de los senos",
+          "match": "ley (?:del seno|de los senos)",
+          "relation": "la correspondencia entre lados y senos de ángulos opuestos, las condiciones del triángulo y la posible ambigüedad de los datos del caso solicitado",
+          "representation": "representa el triángulo pedido distinguiendo lados y ángulos opuestos para la ley de los senos",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "933606d4-e63e-598a-bc89-34d065394516",
+            "fe824bfb-0592-5ba4-9979-85f6259d8c54"
+          ],
+          "families": [
+            {
+              "description": "Aplica la ley de los senos al caso dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas de la vida diaria con la ley del seno.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica la ambigüedad del caso dado de la ley de los senos.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "cosine-law",
+          "grade": 5,
+          "label": "ley de los cosenos",
+          "match": "ley (?:del coseno|de los cosenos)",
+          "relation": "la relación entre el lado opuesto y el ángulo comprendido de la ley de los cosenos y la suficiencia de los datos proporcionados",
+          "representation": "representa el triángulo pedido conservando el ángulo comprendido y sus lados correspondientes",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "fe824bfb-0592-5ba4-9979-85f6259d8c54"
+          ],
+          "families": [
+            {
+              "description": "Aplica la ley de los cosenos al triángulo dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas con la ley del coseno.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Analiza los errores de la ley de los cosenos aplicada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "right-triangles",
+          "grade": 5,
+          "label": "triángulos rectángulos",
+          "match": "triangulos? rectangulos?",
+          "relation": "la identificación de hipotenusa y catetos respecto del ángulo de referencia, la razón pertinente y las unidades de los datos del triángulo rectángulo",
+          "representation": "representa el triángulo rectángulo solicitado manteniendo el ángulo recto y las correspondencias de lados",
+          "pages": [
+            231
+          ],
+          "exclude": "ley (?:del|de los)",
+          "sourceRecordIds": [
+            "933606d4-e63e-598a-bc89-34d065394516",
+            "cc47712f-730b-525d-83d0-65805f3f84a9",
+            "1c5da8ea-7594-51ab-a3fb-fba843a9f0f4",
+            "8bcdf170-85e0-53df-983e-ece997231a2d",
+            "bde6726e-4d90-5f4d-b2ac-b3fac1963111"
+          ],
+          "families": [
+            {
+              "description": "Resuelve el triángulo rectángulo dado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas de triángulos rectángulos.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Explica la razón utilizada en el triángulo rectángulo dado.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "oblique-triangles",
+          "grade": 5,
+          "label": "triángulos oblicuángulos",
+          "match": "triangulos? oblicuangulos?",
+          "relation": "las correspondencias de lados y ángulos y la suficiencia o ambigüedad de los datos del triángulo oblicuángulo, admitiendo métodos válidos",
+          "representation": "representa el triángulo oblicuángulo pedido conservando las medidas y relaciones disponibles",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "294ae8b2-0437-5a0c-975b-45fc0ed3df59"
+          ],
+          "families": [
+            {
+              "description": "Resuelve el triángulo oblicuángulo proporcionado.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Resuelve problemas de triángulos oblicuángulos.",
+              "activity": "PROBLEM_SOLVING"
+            },
+            {
+              "description": "Analiza los errores del triángulo oblicuángulo resuelto.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "notable-angles",
+          "grade": 5,
+          "label": "ángulos notables y especiales",
+          "match": "angulos? notables?|angulos? especiales?",
+          "relation": "las relaciones geométricas que justifican los valores trigonométricos de los ángulos notables o especiales pedidos, distinguiendo valores exactos y aproximados",
+          "representation": "representa los ángulos notables pedidos conservando las referencias y relaciones geométricas",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "7475c0fc-dab0-5359-8dbd-ecf071c4c65e"
+          ],
+          "families": [
+            {
+              "description": "Demuestra los valores de los ángulos notables indicados.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Calcula las razones de los ángulos especiales dados.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Explica los errores en los valores de los ángulos notables.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "trig-graphs",
+          "grade": 5,
+          "label": "gráficas trigonométricas",
+          "match": "sinusoides?|tangentoides?|grafica(?:s)? (?:del seno|del coseno|de la tangente)",
+          "relation": "la amplitud, período y desplazamientos que correspondan a la función solicitada y su dominio, distinguiendo las asíntotas y discontinuidades de la tangente",
+          "representation": "representa únicamente la gráfica trigonométrica solicitada conservando período, dominio, referencias y asíntotas cuando correspondan",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "5f4164bd-457b-594d-8b77-1ae81d8c667f"
+          ],
+          "families": [
+            {
+              "description": "Representa las sinusoides y tangentoides indicadas.",
+              "activity": "EXERCISE_SET"
+            },
+            {
+              "description": "Interpreta el período de la sinusoide dada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza los errores de la gráfica de la tangente.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        },
+        {
+          "id": "identities",
+          "grade": 5,
+          "label": "identidades trigonométricas pitagóricas",
+          "match": "identidad(?:es)? trigonometricas?(?: pitagoricas?)?|identidad(?:es)? pitagoricas?",
+          "relation": "la equivalencia de las expresiones en su dominio común mediante identidades pitagóricas válidas, sin sustituir la demostración por un solo ejemplo numérico",
+          "representation": "representa las relaciones solicitadas de las identidades pitagóricas conservando su dominio",
+          "pages": [
+            231
+          ],
+          "sourceRecordIds": [
+            "933606d4-e63e-598a-bc89-34d065394516",
+            "42c317f6-23c4-52bf-a975-e71965358144",
+            "1c5da8ea-7594-51ab-a3fb-fba843a9f0f4",
+            "8bcdf170-85e0-53df-983e-ece997231a2d",
+            "bde6726e-4d90-5f4d-b2ac-b3fac1963111"
+          ],
+          "families": [
+            {
+              "description": "Comprueba las identidades trigonométricas pitagóricas dadas.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Demuestra la identidad pitagórica indicada.",
+              "activity": "ANALYSIS"
+            },
+            {
+              "description": "Analiza y corrige los errores de la identidad trigonométrica dada.",
+              "activity": "ANALYSIS"
+            }
+          ],
+          "provider": "packages/shared/src/secondary-math-grade-5.ts",
+          "verification": "HTTP_DB_VERIFIED; VISUAL_PENDING"
+        }
+      ],
       "unassignedSourceRecords": [
-        {
-          "id": "4d8f09ca-20e9-5006-b43d-c7604fdebcf6",
-          "text": "Cónicas:",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "8e11d811-d790-5ee6-8ff9-a59be7af955c",
-          "text": "• Ecuaciones de las cónicas: recta,\ncircunferencia, parábola, elipse,\nhipérbola y sus elementos.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "695b5f52-d00c-5414-825c-5b56f1a5a67e",
-          "text": "Vectores y Matrices:",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "cc1357a1-1e07-50d8-a3a6-15aae63ba41d",
-          "text": "• Diferencia entre un vector y\nuna matriz, característica de\nuna matriz, tipos de matrices,\noperaciones entre matrices.\nDeterminantes. Matriz inversa.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
         {
           "id": "42773611-4831-5842-be4b-f22456150b1f",
           "text": "Trigonometría:",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "054c948b-2332-5b1c-a550-7650cf838187",
-          "text": "• Origen y desarrollo.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "933606d4-e63e-598a-bc89-34d065394516",
-          "text": "• Funciones trigonométricas.\nLey de los senos y cosenos,\nresolución de triángulos\nrectángulos y oblicuángulos.\nIdentidades trigonométricas\npitagóricas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "d31bf0f6-0298-50cb-8d7b-a54cf6b90113",
-          "text": "• Análisis e interpretación de la ecuación de la recta.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "7855860c-b968-540f-8348-0418c36091af",
-          "text": "• Resolución de problemas del contexto que impliquen\nlas cónicas y sus elementos.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "8fd748c6-6661-5c2c-8bef-7e3b0c8a82ac",
-          "text": "• Clasificación, notación y representación de vectores.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "fc3e24c3-73b1-5e41-bfab-53b509a10271",
-          "text": "• Identificación sobre los tipos de matrices.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "67a50494-3443-57dd-8b88-38376c292b31",
-          "text": "• Operaciones con vectores.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "b22f2e75-7004-5b6a-b1c2-98496b3e53ba",
-          "text": "• Operaciones con matrices.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "dc506264-93a2-5903-beca-eb1fd8c766a8",
-          "text": "• Resolución de problemas del contexto que impliquen\nvectores y matrices.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "fe824bfb-0592-5ba4-9979-85f6259d8c54",
-          "text": "• Aplicación de la ley del seno y ley del coseno a\nsituaciones de la vida diaria",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "cc47712f-730b-525d-83d0-65805f3f84a9",
-          "text": "• Resolución de triángulos rectángulos.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "294ae8b2-0437-5a0c-975b-45fc0ed3df59",
-          "text": "• Cálculo de y resolución de triángulos oblicuángulos.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "7475c0fc-dab0-5359-8dbd-ecf071c4c65e",
-          "text": "• Demostración de las funciones trigonométricas de\nángulos notables y especiales.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "5f4164bd-457b-594d-8b77-1ae81d8c667f",
-          "text": "• Representación gráfica de sinusoides, sinusoides y\ntangentoides.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "ecb1e05b-e642-5e22-923a-51ca977d750e",
-          "text": "• Resolución de problemas que implique funciones\ntrigonométricas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
-        },
-        {
-          "id": "42c317f6-23c4-52bf-a975-e71965358144",
-          "text": "• Comprobación de identidades trigonométricas\npitagóricas.",
-          "reason": "GRADE_NOT_IMPLEMENTED_YET"
+          "reason": "TAXONOMIC_HEADING_NOT_AN_INDEPENDENT_PERFORMANCE"
         }
       ],
-      "status": "NOT_IMPLEMENTED"
+      "status": "AUTOMATED_HTTP_DB_VERIFIED_VISUAL_PENDING"
     },
     {
       "grade": 6,

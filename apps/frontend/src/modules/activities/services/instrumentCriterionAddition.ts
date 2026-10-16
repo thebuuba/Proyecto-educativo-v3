@@ -132,6 +132,8 @@ export function matchingCatalogCriterion(candidates: RecommendationCriterion[], 
   const eligible = matches.filter(candidate=>nextCatalogCriterion([candidate],other,type,usedElsewhere))
   const exact = eligible.find(candidate=>candidate.templateId === template)
   if (exact) return exact
+  const exactTitles = title ? eligible.filter(candidate=>candidate.title.trim() === title) : []
+  if(exactTitles.length === 1)return exactTitles[0]
   return eligible.length === 1 ? eligible[0] : null
 }
 

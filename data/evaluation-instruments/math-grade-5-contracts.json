@@ -1,0 +1,508 @@
+[
+  {
+    "id": "line",
+    "description": "Interpreta la ecuación de la recta dada.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "interpretation"
+    ],
+    "variants": [
+      {
+        "description": "Calcula la pendiente de la recta indicada y explica el procedimiento.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result",
+          "explanation"
+        ]
+      },
+      {
+        "description": "Representa la recta con los datos proporcionados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la ecuación de la recta.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "circle",
+    "description": "Resuelve problemas del contexto sobre la ecuación de la circunferencia.",
+    "activity": "PROBLEM_SOLVING",
+    "requiredActions": [
+      "understanding",
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Identifica el centro y radio de la circunferencia dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Explica la ecuación de la circunferencia indicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "parabola",
+    "description": "Resuelve problemas con la parábola dada.",
+    "activity": "PROBLEM_SOLVING",
+    "requiredActions": [
+      "understanding",
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Representa la parábola de la ecuación proporcionada.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Analiza los errores al identificar foco y directriz de la parábola.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ellipse",
+    "description": "Resuelve problemas de la elipse con los datos dados.",
+    "activity": "PROBLEM_SOLVING",
+    "requiredActions": [
+      "understanding",
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica los elementos de la elipse indicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Representa la elipse de la ecuación dada.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hyperbola",
+    "description": "Resuelve problemas sobre la hipérbola indicada.",
+    "activity": "PROBLEM_SOLVING",
+    "requiredActions": [
+      "understanding",
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Interpreta las asíntotas de la hipérbola dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la ecuación de la hipérbola.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "conics",
+    "description": "Compara las cónicas dadas según sus elementos.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "comparison"
+    ],
+    "variants": [
+      {
+        "description": "Identifica las cónicas de las ecuaciones proporcionadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Modeliza la situación indicada mediante una cónica.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "model"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vectors",
+    "description": "Calcula la suma y resta de los vectores dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Clasifica y representa los vectores proporcionados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "concept",
+          "representation"
+        ]
+      },
+      {
+        "description": "Resuelve problemas del contexto con vectores.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Compara un vector y una matriz dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "comparison"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "matrices",
+    "description": "Opera con las matrices dadas.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Identifica los tipos de matrices dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Resuelve problemas con matrices en el contexto indicado.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica por qué el producto de matrices no es conmutativo en el caso dado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "determinants",
+    "description": "Calcula el determinante de la matriz dada.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica el procedimiento del determinante indicado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores del determinante calculado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "inverse",
+    "description": "Calcula la matriz inversa cuando exista.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Comprueba la matriz inversa mediante el producto indicado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "verification"
+        ]
+      },
+      {
+        "description": "Explica por qué la matriz dada no tiene inversa.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trig-history",
+    "description": "Investiga el origen de la trigonometría.",
+    "activity": "RESEARCH",
+    "requiredActions": [
+      "inquiry"
+    ],
+    "variants": [
+      {
+        "description": "Explica el desarrollo de la trigonometría.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trig-functions",
+    "description": "Calcula las funciones trigonométricas de los ángulos dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas con funciones trigonométricas.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Interpreta los valores de las funciones trigonométricas indicadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sine-law",
+    "description": "Aplica la ley de los senos al caso dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas de la vida diaria con la ley del seno.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica la ambigüedad del caso dado de la ley de los senos.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cosine-law",
+    "description": "Aplica la ley de los cosenos al triángulo dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas con la ley del coseno.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la ley de los cosenos aplicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "right-triangles",
+    "description": "Resuelve el triángulo rectángulo dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas de triángulos rectángulos.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica la razón utilizada en el triángulo rectángulo dado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "oblique-triangles",
+    "description": "Resuelve el triángulo oblicuángulo proporcionado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas de triángulos oblicuángulos.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Analiza los errores del triángulo oblicuángulo resuelto.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "notable-angles",
+    "description": "Demuestra los valores de los ángulos notables indicados.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "explanation"
+    ],
+    "variants": [
+      {
+        "description": "Calcula las razones de los ángulos especiales dados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica los errores en los valores de los ángulos notables.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trig-graphs",
+    "description": "Representa las sinusoides y tangentoides indicadas.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "representation"
+    ],
+    "variants": [
+      {
+        "description": "Interpreta el período de la sinusoide dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la gráfica de la tangente.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "identities",
+    "description": "Comprueba las identidades trigonométricas pitagóricas dadas.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "verification"
+    ],
+    "variants": [
+      {
+        "description": "Demuestra la identidad pitagórica indicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza y corrige los errores de la identidad trigonométrica dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error",
+          "correction"
+        ]
+      }
+    ]
+  }
+]

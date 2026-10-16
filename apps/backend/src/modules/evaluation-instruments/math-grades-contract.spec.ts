@@ -1,15 +1,16 @@
 import { describe, expect, it } from 'vitest'
 import { detectTeachingStrategy } from '@aula/shared'
 import { recommend } from './recommendation-engine'
+import fifthGrade from '../../../../../data/evaluation-instruments/math-grade-5-contracts.json'
 import fourthGrade from '../../../../../data/evaluation-instruments/math-grade-4-contracts.json'
 import thirdGrade from '../../../../../data/evaluation-instruments/math-grade-3-contracts.json'
 import topics from '../../../../../data/evaluation-instruments/math-grade-2-contracts.json'
-for(const [grade,topicsForGrade] of [[2,topics],[3,thirdGrade],[4,fourthGrade]] as const){
+for(const [grade,topicsForGrade] of [[2,topics],[3,thirdGrade],[4,fourthGrade],[5,fifthGrade]] as const){
 const cases=topicsForGrade.flatMap(f=>[f,...(f.variants??[]).map(v=>({...v,id:f.id}))])
 
 const context = { level: 'SECONDARY' as const, grade, cycle: grade<=3?1:2, modalityCode: 'academic', subjectCode: 'MAT', subjectName: 'Matemática', optativeExitName: null }
 const propose = (description: string, format: 'rubrica'|'lista-cotejo'|'escala'|'lista-ponderada' = 'rubrica', maxScore = 20, activityTitle = 'Actividad') => recommend({ activityTitle, description, maxScore, preferredInstrumentType: format, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
-describe('Matemática común 2.º: contenido solicitado, acciones y formatos', () => {
+describe(`Matemática común ${grade}.º: contenido solicitado, acciones y formatos`, () => {
   for (const f of cases) for (const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const) for (const total of [20,17.35]) it(`${f.id}/${format}/${total}`, () => {
     const p=propose(f.description,format,total)
     expect(p.activityType).toBe(f.activity)
@@ -22,6 +23,31 @@ describe('Matemática común 2.º: contenido solicitado, acciones y formatos', (
     expect(propose(f.description,format,total,'Ensayo de literatura inglesa').criteria).toEqual(p.criteria)
     expect(p.criteria.map(c=>c.description).join(' ')).not.toMatch(/rapidez|estética|caligrafía|participación|cartulina|datos ficticios/)
   })
+  if(grade===5){
+    it('respeta operaciones negadas y una consigna con error habitual',()=>{
+      const p=propose('No multipliquen matrices, pero explica sus dimensiones.')
+      expect(p.criteria.some(c=>c.templateId.endsWith('-calculation'))).toBe(false)
+      expect(propose('Resulve problemas con vectores.').activityType).toBe('PROBLEM_SOLVING')
+    })
+    it('comprobar identidades exige dominio y equivalencia, no un solo ejemplo',()=>{
+      const p=propose('Comprueba las identidades trigonométricas pitagóricas dadas.')
+      expect(p.criteria[0].description).toMatch(/dominio común/)
+      expect(p.criteria[0].description).toMatch(/un solo ejemplo/)
+    })
+    it('la gráfica proporcionada no obliga a dibujar y analizar/corregir conserva ambas acciones',()=>{
+      const graph=propose('Analiza los errores de la gráfica de la tangente.')
+      expect(graph.criteria.map(c=>c.templateId)).toEqual(['mat-5-trig-graphs-error'])
+      const identity=propose('Analiza y corrige los errores de la identidad trigonométrica dada.')
+      expect(identity.criteria.some(c=>c.templateId==='mat-5-identities-error')).toBe(true)
+      expect(identity.criteria.some(c=>c.templateId==='mat-5-identities-correction')).toBe(true)
+    })
+    it('distingue matriz inversa de operación genérica y conserva opciones',()=>{
+      expect(propose('Calcula la matriz inversa cuando exista.').criteria.every(c=>c.templateId.startsWith('mat-5-inverse-'))).toBe(true)
+      const p=propose('Explica la ley de los senos o representa la parábola dada. No calcules resultados.')
+      expect(p.criteria).toHaveLength(1);expect(p.criteria[0].description).toMatch(/O BIEN/)
+      expect(p.criteria[0].description).not.toMatch(/Obtiene el resultado/)
+    })
+  }
   if(grade===4){
     it('el cotejo conserva ángulos y perímetro como resultados independientes',()=>{
       const p=propose('Calcula los ángulos y perímetro de los polígonos dados.','lista-cotejo')

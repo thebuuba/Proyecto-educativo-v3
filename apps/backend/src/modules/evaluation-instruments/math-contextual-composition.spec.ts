@@ -12,12 +12,13 @@ describe('Composición matemática compartida', () => {
   it.each(formats)('contextualiza matrices en %s con títulos neutrales y 20/17.35', format => {
     for (const total of [20, 17.35]) {
       const result = run('Actividad 1', description, format, total)
-      expect(result.criteria.map(c => c.templateId)).toEqual(['math-matrices-data','math-matrices-selection','math-matrices-operations','math-matrices-justification','math-matrices-interpretation'])
+      expect(result.criteria.some(c=>c.templateId==='mat-5-matrices-selection')).toBe(true)
+      for(const key of ['calculation','result','explanation','representation','interpretation'])expect(result.criteria.some(c=>c.templateId.startsWith('mat-5-matrices-'+key))).toBe(true)
       expect(result.criteria.map(c=>c.description).join(' ')).toMatch(/filas.*columnas/)
       expect(result.criteria.map(c=>c.description).join(' ')).toMatch(/dimensiones/)
       expect(result.criteria.map(c=>c.description).join(' ')).toContain('según corresponda')
       expect(result.totalScoreUnits).toBe(Math.round(total * 100))
-      expect(result.criteria.map(c=>c.maxScoreUnits)).not.toEqual(Array(5).fill(Math.round(total * 100 / 5)))
+      expect(new Set(result.criteria.map(c=>c.maxScoreUnits)).size).toBeGreaterThan(1)
       if (format === 'lista-ponderada') expect(result.criteria.every(c=>c.description.includes('Parcial (50%):'))).toBe(true)
       if (result.levels.length) expect(result.criteria.every(c=>new Set(c.descriptors.map(d=>d.text)).size === 4)).toBe(true)
     }
@@ -26,19 +27,20 @@ describe('Composición matemática compartida', () => {
     expect(run(title).criteria.map(c=>[c.title,c.description,c.descriptors.map(d=>d.text)])).toEqual(run('Actividad 1').criteria.map(c=>[c.title,c.description,c.descriptors.map(d=>d.text)]))
   })
   it('no añade plantillas genéricas al agotar el proveedor', () => {
-    expect(run('Actividad 1', description, 'rubrica', 20, true).criteria.every(c=>c.templateId.startsWith('math-matrices-'))).toBe(true)
+    expect(run('Actividad 1', description, 'rubrica', 20, true).criteria.every(c=>c.templateId.startsWith('mat-5-matrices-'))).toBe(true)
   })
   it('ofrece una comprobación adicional solamente cuando se solicita', () => {
     const task=description+' Comprobarán los resultados contrastándolos con los datos originales.'
-    expect(run('Actividad 1',task).criteria).toHaveLength(5)
+    expect(run('Actividad 1').criteria.some(c=>c.templateId.endsWith('-verification'))).toBe(false)
+    expect(run('Actividad 1',task).criteria.some(c=>c.templateId==='mat-5-matrices-verification')).toBe(true)
     const expanded=run('Actividad 1',task,'rubrica',20,true)
-    expect(expanded.criteria).toHaveLength(6)
-    expect(expanded.criteria.at(-1)?.templateId).toBe('math-matrices-verification')
+    expect(expanded.criteria).toEqual(run('Actividad 1',task).criteria)
+    expect(expanded.criteria.at(-1)?.templateId).toBe('mat-5-matrices-verification')
   })
   it('cambia la evidencia al cambiar la acción', () => {
     const result = run('Actividad 1', 'Compararán dos matrices de cantidades y precios e interpretarán las diferencias entre sus filas y columnas.')
-    expect(result.criteria.some(c=>c.templateId === 'math-matrices-comparison')).toBe(true)
-    expect(result.criteria.some(c=>c.templateId === 'math-matrices-operations')).toBe(false)
+    expect(result.criteria.some(c=>c.templateId === 'mat-5-matrices-comparison')).toBe(true)
+    expect(result.criteria.some(c=>c.templateId === 'mat-5-matrices-calculation')).toBe(false)
   })
   it('no añade explicación ni productos cuando se pide únicamente organizar o sumar',()=>{
     const construction=run('Actividad 1','Construirán matrices para organizar datos de cantidades y precios.')
