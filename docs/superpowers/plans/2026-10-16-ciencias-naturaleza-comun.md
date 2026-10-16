@@ -61,8 +61,8 @@
 Para cada grado, repetir lectura visual y matriz → prueba roja → proveedor → revisión científica completa → pruebas focalizadas/regresiones → congelar/versionar/instalar idempotente → HTTP/DB → navegador cuatro formatos y tiempos → checks afectados/informe/commit/push. No conectar el siguiente grado antes de cerrar el anterior.
 
 - [x] 2.º: Ciencias de la Vida PDF296–299;30temas/68consignas/272instrumentos revisados, fuente/release87 idempotentes, HTTP/DB y navegador cuatro formatos, checks finales aprobados. Informe y evidencia por grado; consultar Git para el commit/push del cierre.
-- [ ] 3.º: fuente y componente pendientes de revisión visual.
-- [ ] 4.º: fuente y componente pendientes de revisión visual.
-- [ ] 5.º: fuente y componente pendientes de revisión visual.
-- [ ] 6.º: fuente y componente pendientes de revisión visual; preservar antecedente parcial de Ohm.
+- [x] 3.º: Ciencias Físicas PDF300–304;50grupos/103consignas/412instrumentos revisados, fuente/release88 idempotentes, HTTP/DB y navegador cuatro formatos, checks finales aprobados tras corregir radar. Latencia/contexto recuperado documentados sin dar la causa por resuelta. Consultar Git para commit/push de cierre.
+- [ ] 4.º: inventario visual PDF312–315/impresas311–314 realizado mientras la verificación3.º esperaba el entorno; Biología común. P1–P6 son referencias a procesos de312, no grados. Sin proveedor ni fuente instalada; no confundir inventario con cobertura.
+- [ ] 5.º: inventario visual PDF316–318/impresas315–317 realizado durante la espera de verificación3.º; Química común, P1–P6 son procesos. Sin proveedor ni fuente instalada, no es cobertura.
+- [ ] 6.º: inventario visual PDF319–322/impresas318–321 realizado durante espera de verificación3.º; Física común. Ohm figura en321; preservar su antecedente parcial. Sin proveedor común completo ni fuente instalada; inventario no es cobertura.
 - [ ] Consolidación final con cobertura real, límites, hashes y árbol; detenerse.

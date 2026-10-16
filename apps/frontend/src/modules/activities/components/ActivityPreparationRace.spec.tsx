@@ -42,6 +42,7 @@ describe('automatic instrument preparation request lifecycle', () => {
   for(const sample of [
     {grade:1,code:'NAT-TU',title:'Sismos',first:'Explica las causas de los sismos.',latest:'Compara energía renovable y no renovable.',expected:/energía renovable/,obsolete:/sismo|terremoto/},
     {grade:2,code:'NAT-VIDA',title:'Células',first:'Explica las partes y funciones de una célula.',latest:'Interpreta los datos proporcionados de fotosíntesis.',expected:/fotosíntesis/,obsolete:/célula|organelo/},
+    {grade:3,code:'NAT-FISICAS',title:'Densidad',first:'Calcula la densidad con masa y volumen dados.',latest:'Interpreta el circuito en serie proporcionado sin construirlo.',expected:/circuito/,obsolete:/densidad|volumen/},
   ])it(`Ciencias ${sample.grade} descarta la respuesta y el título anteriores en el mismo borrador`,async()=>{
     const academic={level:'SECONDARY' as const,grade:sample.grade,subjectCode:sample.code}
     const {first,latest}=sample

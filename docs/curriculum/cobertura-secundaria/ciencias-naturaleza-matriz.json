@@ -3297,7 +3297,7 @@
       "grade": 3,
       "scopeId": "f014e137-2f00-54b0-a405-86a04a4af403",
       "subject": "Ciencias de la Naturaleza",
-      "component": null,
+      "component": "Ciencias Físicas",
       "pdfPages": [
         300,
         301,
@@ -3306,8 +3306,8 @@
         304
       ],
       "visualReview": {
-        "status": "PENDING",
-        "method": null
+        "status": "REVIEWED",
+        "method": "Rendered PDF300,301,302,303,304; table columns, continuations and separate indicators checked. Source spelling retained."
       },
       "officialRecords": [
         {
@@ -4760,818 +4760,1213 @@
           "printedPage": "303"
         }
       ],
-      "topics": [],
+      "topics": [
+        {
+          "grade": 3,
+          "pages": [
+            300
+          ],
+          "id": "science-models",
+          "label": "modelos, leyes, teorías y evidencias científicas",
+          "match": "modelos,? (?:principios,? )?leyes|teorias cientificas|afirmacion sobre ciencias fisicas|naturaleza de la ciencia",
+          "relation": "la función explicativa y los límites de los modelos, leyes o teorías solicitados y su contraste con evidencias verificables",
+          "officialRecordIds": [
+            "29bf77df-8c7e-5cf9-8b72-fdf306ae7a6a",
+            "f6b46e95-3202-52e6-a6d5-48e6c9ce46f6",
+            "7daec5f5-70a9-5876-8725-6abbe2db3860",
+            "3ca8ee28-1722-5840-91dc-e5819791cfa1"
+          ],
+          "families": [
+            "Compara modelos, leyes y teorías científicas con los ejemplos proporcionados.",
+            "Argumenta por qué una afirmación sobre ciencias físicas necesita evidencias verificables."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300
+          ],
+          "id": "measurement",
+          "label": "medición, incertidumbre, estimación y unidades",
+          "match": "medicion\\w*|incertidumbre|estimacion|unidades y estandares|patrones estandar|orden de magnitud",
+          "relation": "la magnitud, el patrón o unidad y la resolución de la medición solicitada, distinguiendo valor medido, estimación e incertidumbre cuando correspondan",
+          "officialRecordIds": [
+            "219ea80d-4559-5bfa-8699-75357b0acc1f",
+            "206810bc-85f7-56e7-a208-d7b3e1a90c9c",
+            "7daec5f5-70a9-5876-8725-6abbe2db3860",
+            "7a3665ca-74b9-5be3-a902-8afcd3c3fd87",
+            "fe902352-b134-5f29-a219-1e15401ce308",
+            "2a742958-01f3-55ee-9dcb-53ec7650cf2b",
+            "3178a8fa-2b53-5e9f-8166-8062b6e297ce",
+            "3f8c88fe-e2a2-50d1-8bda-0e1d51bce307",
+            "e378e5fa-aef6-5016-a9fc-92e5cbcbc9ce",
+            "3673e37c-b310-528d-9873-2e9ada6559e9"
+          ],
+          "families": [
+            "Interpreta mediciones, incertidumbre y estimación con la tabla proporcionada.",
+            "Mide el tiempo y la longitud según el procedimiento y registra las mediciones con sus unidades indicadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300
+          ],
+          "id": "position",
+          "label": "posición, desplazamiento y trayectoria",
+          "match": "marco de referencia|posicion|desplazamiento|trayectoria|distancia y longitud",
+          "relation": "el marco de referencia y la diferencia entre posición, cambio de posición y longitud de la trayectoria solicitados",
+          "exclude": "trabajo mecanico",
+          "officialRecordIds": [
+            "37511792-84b2-502a-b868-804bf883430b",
+            "68872a71-4e43-5937-aaab-d22c30627d77",
+            "d1b8c338-af70-54dc-a23c-6c3e6afa6252",
+            "91b517e6-5e0e-50a8-a1ac-b399d544f653",
+            "3178a8fa-2b53-5e9f-8166-8062b6e297ce",
+            "89e30c1e-518f-5de7-afa8-8ba276376947",
+            "ef4ba206-6c7f-58cd-9fbb-94ca0f0def24",
+            "f5deee45-6e02-5b7f-ad60-74257e10af95",
+            "2fd202f6-a5d6-5468-87f4-408cbe05d553",
+            "e303ff3e-09ef-5814-a39f-3a7d39ee005a"
+          ],
+          "families": [
+            "Compara posición, desplazamiento y longitud de la trayectoria con el esquema proporcionado.",
+            "Calcula el desplazamiento con las posiciones inicial y final dadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300
+          ],
+          "id": "speed",
+          "label": "velocidad y rapidez",
+          "match": "velocidad|rapidez",
+          "relation": "el cociente entre recorrido y tiempo para rapidez o entre desplazamiento y tiempo para velocidad media, atendiendo a la dirección cuando se solicita",
+          "exclude": "aceleracion|sonido|luz|onda",
+          "officialRecordIds": [
+            "99c43e59-b82a-53e7-acae-f70ef5ea9feb",
+            "1da102e7-a5a5-5b38-87ec-99501d7bf889",
+            "77b70e48-7106-525e-bcae-58ae299cffd3",
+            "e378e5fa-aef6-5016-a9fc-92e5cbcbc9ce",
+            "3eb069c3-114e-5cef-adc1-b29b9b79cd7d",
+            "453f5df0-f4ad-5a0f-abdb-f5b7aa5519d3",
+            "61d36650-ba88-5c89-bcd8-94fc9effe57e"
+          ],
+          "families": [
+            "Interpreta la gráfica proporcionada de velocidad y rapidez.",
+            "Calcula la rapidez con la distancia y el tiempo dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300
+          ],
+          "id": "acceleration",
+          "label": "aceleración y cambio de velocidad",
+          "match": "aceleracion|cambio de velocidad|cambio de rapidez",
+          "relation": "el cambio de velocidad dividido por el intervalo de tiempo considerado, incluida la dirección cuando corresponda",
+          "officialRecordIds": [
+            "88457c00-7482-540b-bc2c-6a004f0bb65a",
+            "77b70e48-7106-525e-bcae-58ae299cffd3"
+          ],
+          "families": [
+            "Explica el cambio de velocidad y la aceleración del movimiento.",
+            "Calcula la aceleración con los valores de velocidad y tiempo proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300,
+            301,
+            303
+          ],
+          "id": "forces",
+          "label": "fuerzas y dinámica",
+          "match": "fuerzas?|dinamica|movimiento deportivo|fisica (?:a|en) los deportes",
+          "relation": "la interacción que origina la fuerza solicitada y su relación con el cambio de movimiento o la situación examinada",
+          "exclude": "presion|trabajo mecanico|empuje|pascal|arquimedes",
+          "officialRecordIds": [
+            "0a243264-71ad-5e21-8d7d-9f32c459008c",
+            "e378e5fa-aef6-5016-a9fc-92e5cbcbc9ce",
+            "ddf82294-272c-57f5-9901-1680950634de",
+            "4dec836e-d3b2-538b-b205-a563b726f6c7",
+            "7f620fd9-ebc5-5c71-8559-30fcdd7bbc89",
+            "6d0e182c-e5a6-5561-8f7a-ccb7af006ec4",
+            "6394a231-0a95-5d1c-8b7b-732e2e137be0",
+            "40efc4a6-3a0a-5d61-9290-f1758e306680",
+            "8f36786c-12ee-5f75-806e-86935bdd4ef7",
+            "fd31a0b1-9bc3-5e4e-ac05-4139c6aef061"
+          ],
+          "families": [
+            "Compara fuerzas eléctrica, magnética, gravitacional y nuclear con los casos proporcionados.",
+            "Interpreta las fuerzas del movimiento deportivo representado sin realizar la práctica."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300,
+            301
+          ],
+          "id": "gravitation",
+          "label": "gravitación y movimiento astronómico",
+          "match": "gravitacion|gravedad(?:es)?|planetas|movimientos en el sistema solar|galaxias",
+          "relation": "la interacción gravitatoria y su relación con el movimiento o los efectos de la gravedad examinados, sin confundir masa y peso",
+          "officialRecordIds": [
+            "023e3e0d-8d6c-534f-88a8-068aea780fe7",
+            "418e4d69-7962-5f7c-a61b-b3d377e93e9a",
+            "7f620fd9-ebc5-5c71-8559-30fcdd7bbc89",
+            "6394a231-0a95-5d1c-8b7b-732e2e137be0",
+            "0c3b8df0-e494-5c2c-8285-72f6ca8cfbe6"
+          ],
+          "families": [
+            "Explica la gravitación y el movimiento de los planetas.",
+            "Interpreta el modelo proporcionado de movimientos en el sistema solar y galaxias."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300
+          ],
+          "id": "momentum",
+          "label": "cantidad de movimiento y choques",
+          "match": "cantidad de movimiento|choques?",
+          "relation": "el producto de masa y velocidad y el intercambio de cantidad de movimiento en el sistema de choque delimitado",
+          "officialRecordIds": [
+            "1abf95bc-cafa-5dba-af51-59816095990a"
+          ],
+          "families": [
+            "Analiza la cantidad de movimiento y los choques con los datos proporcionados.",
+            "Explica las relaciones de cantidad de movimiento en el choque descrito sin realizar experimentos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "machines",
+          "label": "estructuras, máquinas y poleas",
+          "match": "estructuras,? maquinas|maquinas?|poleas?",
+          "relation": "la disposición y función de los elementos de la máquina o polea solicitada y la transmisión de fuerza o movimiento según su diseño",
+          "exclude": "cuerpo humano como maquina|dialisis",
+          "officialRecordIds": [
+            "2c965fb6-8424-5d55-bd25-9e01acafb935",
+            "ef4ba206-6c7f-58cd-9fbb-94ca0f0def24",
+            "81ba3d0a-d31d-517a-ab83-63b7dd0fd791",
+            "f5deee45-6e02-5b7f-ad60-74257e10af95",
+            "9cc894ca-a949-5caf-a9e1-8396c24b6012"
+          ],
+          "families": [
+            "Interpreta el modelo de máquina y polea proporcionado sin construir otro.",
+            "Construye la polea sencilla según el diseño proporcionado sin añadir materiales."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300
+          ],
+          "id": "matter-mixtures",
+          "label": "sustancias, mezclas y coloides",
+          "match": "sustancias,? mezclas|mezclas?|coloides?|miscibles?|emulsiones?|detergentes?",
+          "relation": "la composición y distribución de los componentes solicitados, distinguiendo sustancias y mezclas o las fases de los sistemas examinados",
+          "exclude": "separacion|filtracion|decantacion|destilacion|cromatografia|luces|pigmentos",
+          "officialRecordIds": [
+            "d8994de0-2142-5629-9834-c2825231a2fd",
+            "522d26f7-d94f-5561-baba-afd144dfbe03",
+            "a43b0a04-ff2d-546c-be45-a21ad6366950",
+            "3670ca25-1dc5-595c-834b-15bdaffbe5be",
+            "7e36d783-3435-5ccf-ba43-efe66397d84a"
+          ],
+          "families": [
+            "Clasifica sustancias, mezclas, soluciones y coloides con los ejemplos proporcionados.",
+            "Compara mezclas de líquidos miscibles e inmiscibles, emulsiones y detergentes con el texto dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300
+          ],
+          "id": "separation",
+          "label": "separación de mezclas",
+          "match": "separacion|filtracion|decantacion|evaporacion|destilacion|floculacion|cromatografia",
+          "relation": "la propiedad física de los componentes que permite la separación solicitada, sin atribuir una transformación química por el solo hecho de separarlos",
+          "officialRecordIds": [
+            "3670ca25-1dc5-595c-834b-15bdaffbe5be"
+          ],
+          "families": [
+            "Compara filtración, decantación, evaporación, destilación, floculación y cromatografía según las mezclas dadas.",
+            "Explica cómo realizar una separación de mezclas sin ejecutarla."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300
+          ],
+          "id": "physical-chemical-changes",
+          "label": "cambios físicos y químicos",
+          "match": "cambios? fisicos? y quimicos?|cambios? quimicos?",
+          "relation": "la conservación o modificación de la composición de las sustancias y las evidencias que permiten distinguir el cambio solicitado",
+          "exclude": "alimentos|farmacos",
+          "officialRecordIds": [
+            "c3dd47cb-3533-5aa4-a9bf-7bbaa7992f36",
+            "adbd409d-f7a2-5798-86bf-7473ed5d0fcb",
+            "375a28fc-4374-5200-89d4-c190827b0989"
+          ],
+          "families": [
+            "Distingue cambios físicos y químicos con las evidencias proporcionadas.",
+            "Realiza la práctica indicada de cambios físicos y químicos y registra las observaciones."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300,
+            301
+          ],
+          "id": "mechanical-energy",
+          "label": "energía cinética, potencial y trabajo mecánico",
+          "match": "energia cinetica|energia potencial|trabajo mecanico|conservacion de energia",
+          "relation": "la relación entre movimiento, posición, trabajo y transferencia o conservación de energía en el sistema delimitado y las condiciones del caso",
+          "exclude": "circuitos?",
+          "officialRecordIds": [
+            "043ebfd0-7929-5f5c-8fb1-3e7fe4149092",
+            "ef4ba206-6c7f-58cd-9fbb-94ca0f0def24",
+            "a34d6b6f-fa0f-5928-8026-c4e23177c188"
+          ],
+          "families": [
+            "Explica la conservación de energía cinética y potencial en el caso dado.",
+            "Calcula el trabajo mecánico con la fuerza y el desplazamiento proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "thermal-energy",
+          "label": "energía térmica",
+          "match": "energia termica|transferencia termica",
+          "relation": "la energía asociada al estado térmico y su transferencia en el sistema y las condiciones examinados",
+          "officialRecordIds": [
+            "eea2163e-2b17-5e7f-848b-316dac6f8509"
+          ],
+          "families": [
+            "Explica la energía térmica y su transferencia en el caso proporcionado.",
+            "Interpreta los datos proporcionados de energía térmica sin recolectar nuevos datos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300,
+            301
+          ],
+          "id": "solar-energy",
+          "label": "energía y radiación solar",
+          "match": "energia solar|radiacion solar|energia y radiacion (?:en el|del) sistema solar",
+          "relation": "la procedencia solar de la energía y sus transferencias o transformaciones examinadas sin confundirlas con el movimiento orbital",
+          "officialRecordIds": [
+            "6d0d04e0-2eab-5ceb-8444-acbd61afd816"
+          ],
+          "families": [
+            "Investiga en fuentes la energía y radiación del sistema solar.",
+            "Explica las transformaciones de energía solar descritas en el texto."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "matter-states",
+          "label": "estados y cambios de estado de la materia",
+          "match": "estados? de la materia|solidos,? liquidos y gases|cambios? de estado",
+          "relation": "las propiedades o transiciones del estado de agregación solicitado, sin confundir un cambio de estado con una nueva sustancia",
+          "exclude": "presion|densidad|gas ideal",
+          "officialRecordIds": [
+            "86864146-32a7-5d03-8ce7-55dfcf77508c",
+            "c4e9f736-f814-5189-8778-171c9a654ee2",
+            "52979822-3023-5a84-a4f7-d0bdd452b80e",
+            "f916a8fa-8f44-5bad-b24a-4f68e9bb87b0",
+            "bda8069a-320d-5a10-98f2-ebafd6424487",
+            "81417e6c-276a-532d-a6c8-5f649f6113e9"
+          ],
+          "families": [
+            "Compara propiedades de sólidos, líquidos y gases.",
+            "Ordena e identifica los cambios de estado de la materia en el esquema dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "pressure",
+          "label": "presión",
+          "match": "presion",
+          "relation": "la fuerza normal por unidad de área y la transmisión o variación de presión examinada según el medio y las condiciones del caso",
+          "exclude": "sanguinea|circulacion|gas ideal",
+          "officialRecordIds": [
+            "ddf82294-272c-57f5-9901-1680950634de",
+            "81417e6c-276a-532d-a6c8-5f649f6113e9",
+            "ddcc235b-c346-5961-bea5-67ed11ea404d"
+          ],
+          "families": [
+            "Explica la presión en sólidos, líquidos y gases con el modelo proporcionado.",
+            "Calcula la presión con la fuerza y el área dadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "density",
+          "label": "densidad",
+          "match": "densidad",
+          "relation": "el cociente entre masa y volumen en las condiciones especificadas, sin confundir densidad con peso o cantidad de materia",
+          "officialRecordIds": [
+            "ddf82294-272c-57f5-9901-1680950634de",
+            "bda8069a-320d-5a10-98f2-ebafd6424487"
+          ],
+          "families": [
+            "Calcula la densidad con la masa y el volumen proporcionados.",
+            "Interpreta los datos de densidad de los estados de la materia sin realizar mediciones."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "fluids",
+          "label": "empuje, Arquímedes, Pascal y vasos comunicantes",
+          "match": "empuje|boyante|arquimedes|pascal|vasos comunicantes|objeto en un fluido",
+          "relation": "la fuerza de empuje o transmisión de presión del fluido solicitada, distinguiendo las condiciones de aplicación de Arquímedes y Pascal",
+          "officialRecordIds": [
+            "ddf82294-272c-57f5-9901-1680950634de",
+            "d932122a-a7e8-5ff2-890c-772333853c95",
+            "8f36786c-12ee-5f75-806e-86935bdd4ef7",
+            "4486d6d9-db54-5f45-bf16-1d692bcba30b"
+          ],
+          "families": [
+            "Compara los principios de Arquímedes y Pascal y explica el empuje en el fluido del caso.",
+            "Interpreta los vasos comunicantes representados sin construirlos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300,
+            301
+          ],
+          "id": "material-properties",
+          "label": "propiedades de materiales y dureza",
+          "match": "propiedades (?:de la materia|fisicas|quimicas|mecanicas|opticas|termicas|electricas|magneticas)|dureza",
+          "relation": "la propiedad observable o medible del material solicitado y el criterio consistente con que se compara o clasifica",
+          "officialRecordIds": [
+            "82725e7a-6ad9-53a5-b661-e375eb279e86",
+            "2a3032b9-2c12-5f45-b34d-d31aecab6adb",
+            "3178a8fa-2b53-5e9f-8166-8062b6e297ce",
+            "414ed10e-cbcb-5505-88b4-acd2e7195894",
+            "903df942-9ae9-508d-9075-3cb3c89dfb69",
+            "4550a47c-cf12-5507-a11a-97ce7c7f296a"
+          ],
+          "families": [
+            "Clasifica propiedades mecánicas, ópticas, térmicas, eléctricas y magnéticas de los materiales dados.",
+            "Diseña una escala de dureza a partir de los resultados proporcionados sin realizar ensayos nuevos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "temperature-heat",
+          "label": "temperatura y calor",
+          "match": "temperatura|calor",
+          "relation": "la diferencia entre temperatura y energía transferida como calor en las condiciones examinadas",
+          "exclude": "gas ideal|calorias",
+          "officialRecordIds": [
+            "36684453-53f4-5604-96e7-bc329bca2eee",
+            "9ccc9860-7fab-514a-96f3-1af74df39c12"
+          ],
+          "families": [
+            "Explica la diferencia entre temperatura y calor.",
+            "Analiza los datos proporcionados de temperatura sin usar fuentes de calor."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "ideal-gas",
+          "label": "gas ideal",
+          "match": "gas ideal",
+          "relation": "la relación entre presión, volumen, temperatura y cantidad de gas del modelo ideal, reconociendo las condiciones que permanecen constantes",
+          "officialRecordIds": [
+            "457dd739-b3cc-557c-a1dd-e121da5c2831"
+          ],
+          "families": [
+            "Interpreta el modelo de gas ideal con los datos proporcionados.",
+            "Explica las relaciones de presión, volumen y temperatura en el gas ideal del caso."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "surface-capillarity",
+          "label": "tensión superficial y capilaridad",
+          "match": "tension superficial|capilaridad",
+          "relation": "la relación entre interacciones del líquido, superficie y contacto con el entorno que explica el fenómeno solicitado",
+          "officialRecordIds": [
+            "499beaf7-bce3-5fad-a0b9-d3aa17149108"
+          ],
+          "families": [
+            "Explica tensión superficial y capilaridad de los líquidos.",
+            "Realiza la práctica indicada de capilaridad y registra las observaciones sin añadir materiales."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "osmosis",
+          "label": "ósmosis",
+          "match": "osmosis",
+          "relation": "el movimiento neto de agua a través de una membrana selectiva según las condiciones del modelo, sin confundirlo con el transporte de cualquier soluto",
+          "officialRecordIds": [
+            "b5a7e056-1072-5617-9c7e-05f66532a83e"
+          ],
+          "families": [
+            "Explica la ósmosis con el modelo proporcionado.",
+            "Interpreta los datos de ósmosis sin realizar experimentos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "body-energy",
+          "label": "energía, metabolismo y termodinámica humana",
+          "match": "atp|adenosin|calorias|metabolismo humano|termodinamica en el (?:ser|cuerpo) humano|cuerpo humano como maquina|energia del cuerpo|energia y el cuerpo",
+          "relation": "las transformaciones y transferencias de energía del organismo solicitadas, distinguiendo energía química, trabajo y disipación sin tratar el cuerpo como un sistema perfectamente eficiente",
+          "officialRecordIds": [
+            "185fdd11-c494-5182-abe4-fdf127366a7c",
+            "f2c304ae-6fed-5295-8c15-10e45262479b",
+            "4dec836e-d3b2-538b-b205-a563b726f6c7",
+            "ef4ba206-6c7f-58cd-9fbb-94ca0f0def24",
+            "9ccc9860-7fab-514a-96f3-1af74df39c12",
+            "f5deee45-6e02-5b7f-ad60-74257e10af95"
+          ],
+          "families": [
+            "Explica las relaciones entre ATP, calorías, metabolismo humano y energía del cuerpo.",
+            "Analiza el modelo proporcionado del cuerpo humano como máquina y su eficiencia sin diagnosticar personas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301
+          ],
+          "id": "biophysical-systems",
+          "label": "principios físicos de circulación y diálisis",
+          "match": "circulacion|circulatorio|presion sanguinea|rinon artificial|dialisis|acumulacion de sangre|bombear la sangre|vasos sanguineos",
+          "relation": "el principio físico y su relación con el transporte o intercambio del sistema biológico o modelo proporcionado, sin inferir diagnósticos personales",
+          "officialRecordIds": [
+            "73374f00-f187-5e85-bbc3-4e5bcf8a9d21",
+            "4de9de64-541f-5b90-bac7-cb96937fe34f",
+            "ddcc235b-c346-5961-bea5-67ed11ea404d",
+            "81ba3d0a-d31d-517a-ab83-63b7dd0fd791"
+          ],
+          "families": [
+            "Interpreta el modelo de circulación y presión sanguínea proporcionado.",
+            "Investiga en fuentes los principios físicos del riñón artificial y la diálisis sin realizar procedimientos médicos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301,
+            302
+          ],
+          "id": "atomic-models",
+          "label": "modelos y partes del átomo",
+          "match": "modelos? atomic\\w*|partes del atomo|estructura e interacciones en la materia",
+          "relation": "la disposición y función de los componentes del modelo atómico solicitado y sus alcances o limitaciones según las evidencias estudiadas",
+          "officialRecordIds": [
+            "f5deee45-6e02-5b7f-ad60-74257e10af95",
+            "5180eda0-2301-58c1-87fa-e88ffceacf27",
+            "14d3fc0a-e2e2-5d13-b9ff-c8cfbd662fd9"
+          ],
+          "families": [
+            "Compara los modelos atómicos y las partes del átomo con las fuentes proporcionadas.",
+            "Representa el modelo atómico solicitado mediante dibujo o maqueta."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301,
+            302
+          ],
+          "id": "isotopes",
+          "label": "masa atómica e isótopos",
+          "match": "masa atomica|isotop\\w*",
+          "relation": "la identidad del elemento y la diferencia de masa entre sus isótopos, o la media ponderada por abundancia cuando se solicita calcular la masa atómica",
+          "officialRecordIds": [
+            "f5deee45-6e02-5b7f-ad60-74257e10af95",
+            "5cc0219c-0fe3-5a12-b82e-c7061045d8df"
+          ],
+          "families": [
+            "Explica masa atómica e isótopos con los ejemplos proporcionados.",
+            "Calcula la masa atómica con las abundancias y masas isotópicas dadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            301,
+            302
+          ],
+          "id": "periodic-table",
+          "label": "tabla periódica y elementos",
+          "match": "tabla periodica|propiedades periodicas|elementos quimicos",
+          "relation": "la organización de los elementos y las propiedades periódicas o composición elemental solicitadas, utilizando las referencias de la tabla estudiada",
+          "officialRecordIds": [
+            "f5deee45-6e02-5b7f-ad60-74257e10af95",
+            "52a57e24-ceee-53c0-8ae6-c35840c2eaaf"
+          ],
+          "families": [
+            "Interpreta propiedades periódicas y estructura de la tabla periódica.",
+            "Identifica los elementos químicos constituyentes de los seres vivos con la tabla proporcionada."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            302
+          ],
+          "id": "chemical-bonds",
+          "label": "enlaces químicos",
+          "match": "enlaces?(?: quimicos)?",
+          "relation": "las interacciones y distribución electrónica representadas en el tipo de enlace solicitado, distinguiendo el modelo y sus límites",
+          "officialRecordIds": [
+            "195aa666-3df7-5763-b7a5-83ee799dcd4a",
+            "73351e40-161c-5241-bbfc-cb9b670e8923"
+          ],
+          "families": [
+            "Compara los enlaces químicos con los modelos proporcionados.",
+            "Explica los enlaces químicos sin construir modelos adicionales."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            302
+          ],
+          "id": "chemical-reactions",
+          "label": "reacciones químicas y estequiometría",
+          "match": "reaccion\\w* quimic\\w*|estequiometria",
+          "relation": "la transformación de reactivos en productos y las proporciones de la reacción indicada, conservando átomos y carga cuando corresponda al problema",
+          "officialRecordIds": [
+            "d9df7846-e082-5171-830e-148607e1157b",
+            "87ea4e6d-df86-50eb-9cd8-705fc0e44cc0"
+          ],
+          "families": [
+            "Resuelve los cálculos de estequiometría con la reacción química y los datos proporcionados.",
+            "Interpreta la reacción química proporcionada sin ejecutar una práctica."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            302
+          ],
+          "id": "enzymes",
+          "label": "enzimas e interacciones químicas en seres vivos",
+          "match": "enzimas?|enzimatic\\w*|interacciones quimicas en los seres vivos",
+          "relation": "el papel catalítico de las enzimas o las interacciones químicas biológicas solicitadas, sin atribuir a un catalizador el cambio del balance global de la reacción",
+          "officialRecordIds": [
+            "89276b13-7292-506e-b278-04ebcd69a681",
+            "75257ebd-c05f-5828-b6e2-d430c743e9b9",
+            "c2f2cc69-819a-5b50-8d2d-38e8ceaa640c"
+          ],
+          "families": [
+            "Explica las enzimas y las interacciones químicas en los seres vivos.",
+            "Interpreta los resultados proporcionados de una reacción enzimática."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300,
+            302
+          ],
+          "id": "solutions",
+          "label": "soluciones, concentración y solubilidad",
+          "match": "soluciones?|concentracion|solubilidad",
+          "relation": "la proporción entre soluto y solución o el límite de disolución en las condiciones indicadas, distinguiendo concentración de solubilidad",
+          "exclude": "resolucion de problemas|busqueda de soluciones|diseno.*soluciones",
+          "officialRecordIds": [
+            "d8994de0-2142-5629-9834-c2825231a2fd",
+            "ec683ca6-d6e9-5078-8640-08eb129ed3dc",
+            "6cd45190-c2db-5806-96a0-f129b197c921",
+            "3e1e32da-0e0a-5e7d-812c-3a397df07cdf",
+            "63604489-40f7-5d39-bddb-1e4f6b1f8464",
+            "8195d65e-c2ae-55cf-be0c-376b568872ec"
+          ],
+          "families": [
+            "Calcula la concentración de la solución con los datos proporcionados.",
+            "Compara la solubilidad de las soluciones según las condiciones del texto."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            302
+          ],
+          "id": "acids-ph",
+          "label": "ácidos, bases, sales y pH",
+          "match": "acidos?|bases y sales|ph|sustancias comunes",
+          "relation": "las propiedades ácido-base o la interpretación del pH en las condiciones proporcionadas, sin confundir pH con cantidad total de sustancia",
+          "officialRecordIds": [
+            "1e846617-d731-597c-b760-9e4e76a30bff",
+            "ca5eacb6-27ee-5e0d-8e17-203b87880c71",
+            "b677a8a7-396f-5512-95b0-ad24a724dc7f",
+            "a08fd02c-9dd3-5651-8722-41095bda629c"
+          ],
+          "families": [
+            "Interpreta los datos proporcionados de pH de ácidos, bases y sales.",
+            "Explica la influencia del pH en los seres vivos sin realizar prácticas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            302,
+            303
+          ],
+          "id": "waves",
+          "label": "ondas y magnitudes ondulatorias",
+          "match": "movimiento ondulatorio|ondas?|longitud de onda|amplitud|frecuencia|periodo",
+          "relation": "la propagación de la perturbación y las relaciones entre longitud de onda, frecuencia, período o velocidad solicitadas, distinguiendo transporte de energía de transporte neto de materia",
+          "exclude": "comunicacion|ondas sonoras|reflexion|refraccion|difraccion|interferencia|resonancia|estacionarias",
+          "officialRecordIds": [
+            "27f93c9f-7528-5ca0-80de-081d6306c2a8",
+            "3eb069c3-114e-5cef-adc1-b29b9b79cd7d",
+            "667f1d81-580e-57d4-b701-60864522b973",
+            "2fd202f6-a5d6-5468-87f4-408cbe05d553",
+            "2db11734-ce51-534f-8658-a7efd5c5a1c8",
+            "d2d8831c-c4f8-546a-a81f-1b2ae781121e",
+            "8c1a159e-5d2e-5f06-b8fa-99376ba9bb41",
+            "791758d0-126a-515d-85ff-11fd9b3bcc0a",
+            "3673e37c-b310-528d-9873-2e9ada6559e9",
+            "6c3a5507-4e2b-5f27-9efe-61f00f5ed615"
+          ],
+          "families": [
+            "Compara ondas longitudinales y transversales con los esquemas proporcionados.",
+            "Calcula frecuencia y período con los datos de la onda dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            302
+          ],
+          "id": "wave-phenomena",
+          "label": "reflexión, refracción, difracción, interferencia y resonancia",
+          "match": "reflexion|refraccion|difraccion|interferencia|resonancia|estacionarias|direccion de la oscilacion",
+          "relation": "el comportamiento ondulatorio solicitado y las condiciones de su interacción con medios, límites u otras ondas",
+          "exclude": "colores|pigmentos|magnetica",
+          "officialRecordIds": [
+            "be42aff5-1e8b-57a6-b27f-d160299bc703",
+            "b20a6dd1-38aa-5559-87ab-30873173b707",
+            "667f1d81-580e-57d4-b701-60864522b973",
+            "c9c60133-7f47-5f42-8328-f102c0088ab0",
+            "2fd202f6-a5d6-5468-87f4-408cbe05d553",
+            "d5e2394a-786c-5978-93b4-a0c1f01eaf3a",
+            "d2d8831c-c4f8-546a-a81f-1b2ae781121e",
+            "477f8cce-68ba-5a57-9294-a7fb8bffccdb",
+            "e303ff3e-09ef-5814-a39f-3a7d39ee005a"
+          ],
+          "families": [
+            "Compara reflexión, refracción, difracción e interferencia de ondas con los modelos proporcionados.",
+            "Explica resonancia y ondas estacionarias sin construir un dispositivo."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            302
+          ],
+          "id": "sound",
+          "label": "sonido, audición y ecolocalización",
+          "match": "sonido|sonoras?|oido|audicion|ecolocalizacion|geolocalizacion|ultrasonido|sonar|radar|instrumentos musicales|timbre",
+          "relation": "la producción, propagación o percepción del sonido y las características o aplicaciones solicitadas, distinguiendo frecuencia, intensidad y timbre cuando se comparan",
+          "exclude": "sonografia",
+          "officialRecordIds": [
+            "1cf17553-c05c-51fc-b357-0ae2855f825d",
+            "453f5df0-f4ad-5a0f-abdb-f5b7aa5519d3",
+            "7e91215a-863a-521f-a66a-bc25a98182b2",
+            "8f376f23-01c1-53e0-8c82-73d9373e2c9e",
+            "791758d0-126a-515d-85ff-11fd9b3bcc0a",
+            "e36bb1b1-7623-5a29-acef-5d9f6e1a93e6",
+            "9b051f13-fdc0-508c-a57b-bd3e61d1b54a",
+            "477f8cce-68ba-5a57-9294-a7fb8bffccdb",
+            "08e7bb2c-d94b-565e-a2cc-45097993b541"
+          ],
+          "families": [
+            "Compara intensidad, tono, timbre y velocidad del sonido con los datos proporcionados.",
+            "Investiga fuentes sobre oído, audición, ecolocalización, ultrasonido, sonar y radar."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            302
+          ],
+          "id": "light-optics",
+          "label": "luz, visión e instrumentos ópticos",
+          "match": "luz|ojo|vision|espejos?|lentes?|dispositiv\\w* optic\\w*|instrumentos opticos|microscopio|telescopio|camara fotografica|polarizacion",
+          "relation": "la propagación o interacción de la luz y la función del modelo visual o dispositivo óptico solicitado, sin valorar decoración ni realizar inferencias clínicas",
+          "exclude": "colores|pigmentos|emision|absorcion|solar|velocidad de la luz",
+          "officialRecordIds": [
+            "bbea08d9-0a19-5fe3-9191-b99d0fb31b64",
+            "61d36650-ba88-5c89-bcd8-94fc9effe57e",
+            "30eb3ab9-cdd5-5ecc-8762-6009747fb16e",
+            "123e24a1-c368-5974-8d97-afc38add5512",
+            "957a5eb9-32fb-58a8-9bc8-4a003cb571d1",
+            "d88b9aeb-3adb-5504-9e60-8c4e47c64b31",
+            "477f8cce-68ba-5a57-9294-a7fb8bffccdb",
+            "abcce504-16b9-546f-af2c-5b575f178fb9",
+            "6068e9fd-1af1-5a87-b92c-21b8c771e288",
+            "54e24794-4043-5bab-bbad-8953fd2f42e4",
+            "09ec8d21-ddf7-547a-a045-c6334fd92c77",
+            "3673e37c-b310-528d-9873-2e9ada6559e9",
+            "3edc7d90-d416-5350-b0d6-362cde108128"
+          ],
+          "families": [
+            "Interpreta el modelo proporcionado del ojo, espejos y lentes.",
+            "Construye el dispositivo óptico sencillo solicitado según el diseño proporcionado.",
+            "Explica la propagación de la luz con el modelo proporcionado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            302
+          ],
+          "id": "light-colors",
+          "label": "colores, luces y pigmentos",
+          "match": "colores|luces y pigmentos|color del|color de los|dispersion",
+          "relation": "la interacción de la luz con las superficies o el medio y la mezcla aditiva o sustractiva solicitada, distinguiendo luz de pigmento",
+          "officialRecordIds": [
+            "c9c60133-7f47-5f42-8328-f102c0088ab0",
+            "7e36d783-3435-5ccf-ba43-efe66397d84a",
+            "09ec8d21-ddf7-547a-a045-c6334fd92c77"
+          ],
+          "families": [
+            "Explica reflexión, refracción y dispersión de los colores con las evidencias del texto.",
+            "Compara mezcla de luces y pigmentos con los casos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            302
+          ],
+          "id": "radiation",
+          "label": "espectro, emisión y aplicaciones de la radiación",
+          "match": "radiacion|espectro electromagnetico|velocidad de la luz|rayos x|rayos gamma|resonancia magnetica|sonografia|tomografia|trazadores|incandescencia|fluorescencia|fosforescencia|laseres|emision|absorcion de luz",
+          "relation": "la emisión, absorción o interacción de la radiación solicitada y los alcances de la aplicación descrita, distinguiendo radiación ionizante, no ionizante y ondas mecánicas cuando se comparan",
+          "exclude": "solar",
+          "officialRecordIds": [
+            "6d0d04e0-2eab-5ceb-8444-acbd61afd816",
+            "61d36650-ba88-5c89-bcd8-94fc9effe57e",
+            "30eb3ab9-cdd5-5ecc-8762-6009747fb16e",
+            "96e2a4f9-326c-5e2b-b0cc-1e6059e8b7c0",
+            "9a7b3ef6-51a6-5747-8824-c656d8048b44",
+            "477f8cce-68ba-5a57-9294-a7fb8bffccdb",
+            "abcce504-16b9-546f-af2c-5b575f178fb9",
+            "ebfdef4a-6c5f-5a48-b144-28de04580d68",
+            "1077d0ed-8576-5cda-a9b4-8da0497105f8",
+            "24a6753f-9062-553d-969d-ee52beea92fe",
+            "f9e41b25-9510-500b-ab62-2d1fe82fd493",
+            "466b3a05-aa04-5975-b781-3fdc220f1e60",
+            "e303ff3e-09ef-5814-a39f-3a7d39ee005a",
+            "f5e8ceea-2088-54e0-84d7-1cf2685692dd"
+          ],
+          "families": [
+            "Compara radiación ionizante y no ionizante y sus aplicaciones con las fuentes proporcionadas.",
+            "Investiga en fuentes rayos X, rayos gamma, resonancia magnética y sonografía sin realizar procedimientos médicos.",
+            "Explica emisión y absorción de luz, incandescencia, fluorescencia, fosforescencia y láseres con el texto dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            303
+          ],
+          "id": "electric-charge",
+          "label": "cargas y conductores eléctricos",
+          "match": "cargas?|induccion|frotamiento|conductores?|no conductores",
+          "relation": "la interacción o transferencia de carga y la respuesta de los materiales solicitados, distinguiendo electrización de creación de carga",
+          "exclude": "conservacion de carga.*circuitos?",
+          "officialRecordIds": [
+            "1c3ba88c-acc5-5c31-bb46-b39890b622ec",
+            "6a12e383-131f-5cec-a809-42adf61ee7ad",
+            "e3335485-47d7-574d-bcd5-64e842bff57e",
+            "879cc51a-bb00-58d9-87c6-18ce38a18ebc"
+          ],
+          "families": [
+            "Explica cargas eléctricas, inducción y frotamiento con el modelo dado.",
+            "Clasifica materiales conductores y no conductores con los resultados proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            303
+          ],
+          "id": "current-voltage",
+          "label": "corriente, voltaje, pilas y baterías",
+          "match": "corriente electrica|voltaje|pilas?|baterias?",
+          "relation": "la diferencia entre flujo de carga y diferencia de potencial y su relación con los elementos o la relación eléctrica proporcionada",
+          "officialRecordIds": [
+            "499beaf7-bce3-5fad-a0b9-d3aa17149108",
+            "67c09014-7e08-5508-b28f-b04fbcbf319b",
+            "66561733-acd9-52eb-9483-fbdbc3203a19"
+          ],
+          "families": [
+            "Explica corriente eléctrica, voltaje, pilas y baterías con el circuito proporcionado.",
+            "Calcula la corriente eléctrica con la relación y los datos del problema sin construir el circuito."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            303
+          ],
+          "id": "circuits",
+          "label": "circuitos en serie y paralelo",
+          "match": "circuitos?|sensores|dispositivos electricos",
+          "relation": "las conexiones y relaciones de carga, corriente o energía solicitadas en el circuito dado, distinguiendo serie y paralelo cuando se comparan",
+          "officialRecordIds": [
+            "71fcf5e0-feb9-5d51-aeef-fa440872c26f",
+            "879cc51a-bb00-58d9-87c6-18ce38a18ebc",
+            "9cc894ca-a949-5caf-a9e1-8396c24b6012"
+          ],
+          "families": [
+            "Interpreta los circuitos en serie y paralelo proporcionados sin construirlos.",
+            "Construye el circuito sencillo según el diseño y las precauciones indicadas sin añadir componentes.",
+            "Explica la conservación de carga y energía en los circuitos dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            303
+          ],
+          "id": "bioelectricity",
+          "label": "señales eléctricas del corazón y neuronas",
+          "match": "neuronas?|potenciales? de accion|electrocardiogra\\w*|electrocardiograma|actividad electrica|fibrilacion|desfibrilador",
+          "relation": "la conducción de señales o la actividad eléctrica representada del corazón o neuronas según el modelo proporcionado, sin inferir diagnósticos ni realizar intervenciones",
+          "officialRecordIds": [
+            "953c9eef-9713-5ec0-8543-bb5435537de2",
+            "56e9e4cb-81f4-5ada-b9a4-34ca4c2cbffc",
+            "7ad3b830-47d1-5af8-a452-9ccd221705d1",
+            "df613d57-e603-5616-a393-8a85acc70a45",
+            "eedcad6d-516b-5482-af29-0a5232cedcf3"
+          ],
+          "families": [
+            "Explica conducción de señales eléctricas por neuronas y potenciales de acción con el modelo dado.",
+            "Interpreta el electrocardiograma proporcionado y explica la actividad eléctrica del corazón sin diagnosticar personas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            303
+          ],
+          "id": "environment",
+          "label": "contaminación, clima y recursos naturales",
+          "match": "contaminacion|calentamiento global|cambio climatico|recursos naturales|invernadero|pesticidas|combustibles fosiles",
+          "relation": "la relación entre procesos físicos o químicos, evidencia ambiental y medidas justificadas en el caso solicitado, sin atribuir acciones de campo no realizadas",
+          "officialRecordIds": [
+            "93a3617d-6ca5-5f7e-81ae-092881e34cf8",
+            "94b2aa96-100a-5a82-a0ed-784515d00d2c",
+            "85df23a5-43d1-58ef-abfd-7c06b4dd465e",
+            "5593f64f-e489-5f80-b3b8-932a2751ef20"
+          ],
+          "families": [
+            "Argumenta medidas sobre contaminación, cambio climático y gestión de recursos naturales a partir del caso proporcionado.",
+            "Elabora un proyecto documental sobre gases de invernadero, pesticidas y combustibles fósiles sin recolectar muestras."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300,
+            303
+          ],
+          "id": "food-medicines",
+          "label": "conservación de alimentos y medicamentos",
+          "match": "alimentos|medicamentos|farmacos",
+          "relation": "los cambios, transferencias de energía o condiciones de conservación solicitados de alimentos o medicamentos según la fuente, sin prescribir tratamientos ni inventar prácticas",
+          "exclude": "calorias|metabolismo humano",
+          "officialRecordIds": [
+            "411b64ed-c4c4-5105-8efe-1a33f569eeb1",
+            "375a28fc-4374-5200-89d4-c190827b0989",
+            "9ccc9860-7fab-514a-96f3-1af74df39c12",
+            "f737f9a5-4270-5d13-b0f6-af1653ceb96a"
+          ],
+          "families": [
+            "Investiga fuentes sobre manipulación y conservación de alimentos y medicamentos sin prescribir tratamientos.",
+            "Explica las relaciones entre cambios químicos y energía en alimentos y fármacos según el texto dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            303
+          ],
+          "id": "communication-technology",
+          "label": "ciencias físicas y tecnología en salud o comunicación",
+          "match": "tecnologia de la comunicacion|fisica,? quimica e ingenieria en salud|fisica,? la quimica y la ingenieria en la salud",
+          "relation": "el principio físico o químico y las evidencias, alcances y límites de la aplicación tecnológica solicitada en comunicación o salud",
+          "officialRecordIds": [
+            "345d6ee7-15a8-58ba-8e1a-967d21863933",
+            "6c3a5507-4e2b-5f27-9efe-61f00f5ed615"
+          ],
+          "families": [
+            "Investiga fuentes sobre movimiento, ondas y tecnología de la comunicación.",
+            "Debate aplicaciones de la física, química e ingeniería en salud con las evidencias proporcionadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            300,
+            303
+          ],
+          "id": "energy-conservation",
+          "label": "transformaciones, conservación y uso eficiente de energía",
+          "match": "energia y conservacion|cambios de (?:la )?energia|conservacion de (?:la )?energia|energia y su utilizacion|uso eficiente de energia",
+          "relation": "las transferencias y transformaciones de energía del sistema solicitado y las medidas de uso eficiente justificadas con la evidencia disponible, sin confundir conservación con ausencia de disipación",
+          "exclude": "cinetica|potencial|circuito|mecanico",
+          "officialRecordIds": [
+            "f34d0646-6126-5464-927d-564365ab6d2f",
+            "3948f1f4-f64b-5678-a88d-851ecf118828",
+            "6cd45190-c2db-5806-96a0-f129b197c921",
+            "ef4ba206-6c7f-58cd-9fbb-94ca0f0def24",
+            "bdc85881-97d3-57f9-84db-49eeaeeef15b"
+          ],
+          "families": [
+            "Explica los cambios de la energía y su conservación en el sistema dado.",
+            "Argumenta medidas de uso eficiente de energía con las evidencias del caso."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            303
+          ],
+          "id": "electrical-safety",
+          "label": "seguridad y riesgos eléctricos",
+          "match": "seguridad y riesgos electricos|riesgos electricos|seguridad electrica",
+          "relation": "la relación entre el riesgo eléctrico identificado y las precauciones indicadas en la fuente o caso, sin ejecutar situaciones peligrosas ni añadir componentes",
+          "officialRecordIds": [
+            "2c845e20-c57b-598e-bed8-7ebfac51c72c"
+          ],
+          "families": [
+            "Identifica riesgos eléctricos con las imágenes proporcionadas sin ejecutar las situaciones.",
+            "Analiza la seguridad eléctrica del caso y las precauciones indicadas en el texto."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 3,
+          "pages": [
+            303
+          ],
+          "id": "natural-motion",
+          "label": "movimientos en fenómenos naturales",
+          "match": "movimientos? en (?:los )?fenomenos naturales|movimiento del fenomeno natural",
+          "relation": "los cambios de movimiento observables en el fenómeno natural solicitado y su interpretación mediante las condiciones y evidencias disponibles",
+          "officialRecordIds": [
+            "2d4b2c23-7904-5c44-919e-feb0d85133d5"
+          ],
+          "families": [
+            "Explica movimientos en fenómenos naturales con las evidencias del caso.",
+            "Interpreta el movimiento del fenómeno natural representado sin realizar una práctica."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-3.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        }
+      ],
       "unassignedSourceRecords": [
-        {
-          "id": "29bf77df-8c7e-5cf9-8b72-fdf306ae7a6a",
-          "text": "Naturaleza de la Ciencia",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "f6b46e95-3202-52e6-a6d5-48e6c9ce46f6",
-          "text": "• Modelos, principios, leyes y teorías\ncientíficas.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "219ea80d-4559-5bfa-8699-75357b0acc1f",
-          "text": "• Mediciones, incertidumbre y\nestimación.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "206810bc-85f7-56e7-a208-d7b3e1a90c9c",
-          "text": "• Unidades y estándares.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "37511792-84b2-502a-b868-804bf883430b",
-          "text": "Movimiento\nMarco de referencia",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "68872a71-4e43-5937-aaab-d22c30627d77",
-          "text": "• Posición",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "d1b8c338-af70-54dc-a23c-6c3e6afa6252",
-          "text": "• Desplazamiento",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "91b517e6-5e0e-50a8-a1ac-b399d544f653",
-          "text": "• Longitud de la trayectoria",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "99c43e59-b82a-53e7-acae-f70ef5ea9feb",
-          "text": "• Velocidad",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "1da102e7-a5a5-5b38-87ec-99501d7bf889",
-          "text": "• Rapidez",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "88457c00-7482-540b-bc2c-6a004f0bb65a",
-          "text": "• Aceleración",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "0a243264-71ad-5e21-8d7d-9f32c459008c",
-          "text": "• Fuerza",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "023e3e0d-8d6c-534f-88a8-068aea780fe7",
-          "text": "• Gravitación",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "1abf95bc-cafa-5dba-af51-59816095990a",
-          "text": "• Cantidad de movimiento y choques",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "82725e7a-6ad9-53a5-b661-e375eb279e86",
-          "text": "Propiedades de la materia",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "d8994de0-2142-5629-9834-c2825231a2fd",
-          "text": "• Materia: sustancias, mezclas,\nsoluciones y coloides",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "2a3032b9-2c12-5f45-b34d-d31aecab6adb",
-          "text": "• Propiedades Físicas y químicas",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "c3dd47cb-3533-5aa4-a9bf-7bbaa7992f36",
-          "text": "• Cambios físicos y químicos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "411b64ed-c4c4-5105-8efe-1a33f569eeb1",
-          "text": "• Alimentos y fármacos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "f34d0646-6126-5464-927d-564365ab6d2f",
-          "text": "Energía y conservación",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "043ebfd0-7929-5f5c-8fb1-3e7fe4149092",
-          "text": "• Energía cinética y potencial.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "3948f1f4-f64b-5678-a88d-851ecf118828",
-          "text": "• Cambios de la energía y su\nconservación",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "7daec5f5-70a9-5876-8725-6abbe2db3860",
-          "text": "Observación, formulación de preguntas, medición y\nexperimentación, análisis, discusión y evaluación de la\nnaturaleza de la ciencia:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "7a3665ca-74b9-5be3-a902-8afcd3c3fd87",
-          "text": "• Medición con diferentes patrones estándares y la consideración\nde las incertidumbres.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "fe902352-b134-5f29-a219-1e15401ce308",
-          "text": "• Estimación de situaciones y problemas cotidianos y\ncomprobación de s u orden de magnitud.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "2a742958-01f3-55ee-9dcb-53ec7650cf2b",
-          "text": "• Medición del tiempo, espacio y materia, utilizando diferentes\ninstrumentos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "3178a8fa-2b53-5e9f-8166-8062b6e297ce",
-          "text": "Observación, formulación de preguntas e hipótesis, planificación\ny ejecución de experimentos, registro de evidencias, diseño y\nconstrucción de modelos, simulación, discusión, evaluación;\nutilización de recursos (instrumentos, materiales, reactivos y\ndispositivos tecnológicos) para la medición, análisis y exposición\nde las propiedades de la materia:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ec683ca6-d6e9-5078-8640-08eb129ed3dc",
-          "text": "• Sistemas dispersos heterogéneos y soluciones.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "522d26f7-d94f-5561-baba-afd144dfbe03",
-          "text": "• Mezclas de líquidos miscibles y no miscibles.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "a43b0a04-ff2d-546c-be45-a21ad6366950",
-          "text": "• Emulsiones y detergentes.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "3670ca25-1dc5-595c-834b-15bdaffbe5be",
-          "text": "• Separación de mezclas mediante destilación, floculación,\nfiltración, decantación, evaporación y cromatografía.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "414ed10e-cbcb-5505-88b4-acd2e7195894",
-          "text": "• Propiedades Físicas y químicas de la materia.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "adbd409d-f7a2-5798-86bf-7473ed5d0fcb",
-          "text": "• Evidencias de la ocurrencia de cambios físicos y químicos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "375a28fc-4374-5200-89d4-c190827b0989",
-          "text": "• Cambios químicos asociados a la energía en fármacos y\nalimentos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "3f8c88fe-e2a2-50d1-8bda-0e1d51bce307",
-          "text": "• Diseño y construcción de experimentos, simulación, medición\ny utilización instrumentos, registro de datos y evaluación\nde la información, análisis de gráficas, tablas, esquemas e\ninterpretación del movimiento:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "89e30c1e-518f-5de7-afa8-8ba276376947",
-          "text": "• - Posición, desplazamiento, distancia y longitud entre dos\npuntos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "77b70e48-7106-525e-bcae-58ae299cffd3",
-          "text": "• Cambio de rapidez y dirección en el tiempo.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "e378e5fa-aef6-5016-a9fc-92e5cbcbc9ce",
-          "text": "• Movimientos según su velocidad. Gráficas de las variables\ncinemáticas.\nObservación, planteamiento del problema e hipótesis,\nplanificación y ejecución de experimentos, medición y registro\nde datos, diseño y construcción de modelos, uso de instrumentos\ny recursos tecnológicos, simulaciones, análisis y utilización de\ndistintas estrategias en la resolución de problemas de dinámica:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "eea2163e-2b17-5e7f-848b-316dac6f8509",
-          "text": "• Energía térmica",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "185fdd11-c494-5182-abe4-fdf127366a7c",
-          "text": "• Energía y el cuerpo humano",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "6d0d04e0-2eab-5ceb-8444-acbd61afd816",
-          "text": "• Energía y radiación en el sistema\nsolar",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "86864146-32a7-5d03-8ce7-55dfcf77508c",
-          "text": "• Estados de la materia",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ddf82294-272c-57f5-9901-1680950634de",
-          "text": "• Presión, densidad, fuerza boyante\n(empuje)",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "d932122a-a7e8-5ff2-890c-772333853c95",
-          "text": "• Principios de Arquímedes y de\nPascal",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "c4e9f736-f814-5189-8778-171c9a654ee2",
-          "text": "• Propiedades de sólidos, líquidos y\ngases",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "36684453-53f4-5604-96e7-bc329bca2eee",
-          "text": "• Temperatura y calor",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "457dd739-b3cc-557c-a1dd-e121da5c2831",
-          "text": "• Gas ideal",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "499beaf7-bce3-5fad-a0b9-d3aa17149108",
-          "text": "• Tensión superficial y capilaridad de\nlos líquidos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "52979822-3023-5a84-a4f7-d0bdd452b80e",
-          "text": "• Cambio de estado de la materia",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "b5a7e056-1072-5617-9c7e-05f66532a83e",
-          "text": "• Ósmosis",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "f2c304ae-6fed-5295-8c15-10e45262479b",
-          "text": "• Metabolismo humano",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "4dec836e-d3b2-538b-b205-a563b726f6c7",
-          "text": "• Nociones de termodinámica en el\nser humano",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "2c965fb6-8424-5d55-bd25-9e01acafb935",
-          "text": "• Diseño y construcción de estructuras, máquinas y poleas.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "418e4d69-7962-5f7c-a61b-b3d377e93e9a",
-          "text": "• Causas que expliquen el movimiento de los planetas.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "7f620fd9-ebc5-5c71-8559-30fcdd7bbc89",
-          "text": "• Diferentes tipos de fuerza: eléctrica, magnética, gravitacional y\nnuclear.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "6d0e182c-e5a6-5561-8f7a-ccb7af006ec4",
-          "text": "• Fuerzas que influyen en la dinámica de la atmósfera y las placas\ntectónicas.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "73374f00-f187-5e85-bbc3-4e5bcf8a9d21",
-          "text": "• Acumulación de sangre en las extremidades inferiores y dificultad\ndel corazón para bombear la sangre).",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "6394a231-0a95-5d1c-8b7b-732e2e137be0",
-          "text": "• Gravedades (g) de fuerza y efectos sobre el cuerpo humano.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "0c3b8df0-e494-5c2c-8285-72f6ca8cfbe6",
-          "text": "• Movimientos en el sistema solar y galaxias.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "40efc4a6-3a0a-5d61-9290-f1758e306680",
-          "text": "• Aplicaciones de la Física a los deportes.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "6cd45190-c2db-5806-96a0-f129b197c921",
-          "text": "Planificación y ejecución de experimentos, diseño y\nconstrucción de modelos, utilización de instrumentos y\nherramientas, simulaciones utilizando recursos tecnológicos e\ningeniería, registro y evaluación de datos e información, análisis\ny estrategias para la búsqueda de soluciones a problemas o\nfenómenos relacionados con energía y conservación:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ef4ba206-6c7f-58cd-9fbb-94ca0f0def24",
-          "text": "• Trabajo como cambio de energía. Energía asociada al\nmovimiento y a la posición (energía cinética y potencial).\nFuentes y transformación de la energía. Conservación de\nenergía: diseño y construcción de dispositivos o máquinas.\nManifestaciones de la energía. Adenosín trifosfato (ATP),\nmolécula de almacenamiento energética.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "9ccc9860-7fab-514a-96f3-1af74df39c12",
-          "text": "• Calorías y alimentos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "f916a8fa-8f44-5bad-b24a-4f68e9bb87b0",
-          "text": "• Observación, planificación y ejecución de experimentos,\nregistro y análisis (gráficas, datos e informaciones), utilización de\nrecursos (instrumentos, dispositivos y reactivos), simulaciones\nutilizando recursos tecnológicos e ingeniería, resolución y\nevaluación (procesos, instrumentos y estrategias apropiadas) en\nrelación a problemas que involucren los estados de la materia:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "bda8069a-320d-5a10-98f2-ebafd6424487",
-          "text": "• La densidad en los distintos estados de la materia.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "81417e6c-276a-532d-a6c8-5f649f6113e9",
-          "text": "• Presión en los sólidos, líquidos y gases.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "903df942-9ae9-508d-9075-3cb3c89dfb69",
-          "text": "• Propiedades de la materia (mecánicas, ópticas, térmicas, eléctricas,\nmagnéticas…).",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "4550a47c-cf12-5507-a11a-97ce7c7f296a",
-          "text": "• Desarrollo de una escala de dureza.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "8f36786c-12ee-5f75-806e-86935bdd4ef7",
-          "text": "• La fuerza sobre un objeto en un fluido.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "4486d6d9-db54-5f45-bf16-1d692bcba30b",
-          "text": "• Vasos comunicantes.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "4de9de64-541f-5b90-bac7-cb96937fe34f",
-          "text": "• Sistema circulatorio (vasos sanguíneos y tejidos de conducción).",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ddcc235b-c346-5961-bea5-67ed11ea404d",
-          "text": "• Presión sanguínea.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "81ba3d0a-d31d-517a-ab83-63b7dd0fd791",
-          "text": "• Riñón artificial o máquina de diálisis.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "a34d6b6f-fa0f-5928-8026-c4e23177c188",
-          "text": "• El cuerpo gasta energía cuando realiza trabajo mecánico.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "f5deee45-6e02-5b7f-ad60-74257e10af95",
-          "text": "• Salud Física y eficiencia del cuerpo humano como máquina.\nPlanteamiento del problema, formulación de preguntas e hipótesis,\ndiseño y construcción de modelos, simulaciones utilizando recursos\ntecnológicos e ingeniería, resolución de problemas (análisis, discusión\ny evaluación) y exposición de resultados con modelos, esquemas,\ndiagramas sobre la estructura e interacciones en la materia:\nRepresentación de los distintos modelos atómicos.\nMasa atómica e isótopos.\nElementos químicos primarios constituyentes de los seres vivos.\nPropiedades periódicas de los elementos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "5180eda0-2301-58c1-87fa-e88ffceacf27",
-          "text": "• Estructura e interacciones en la\nmateria",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "14d3fc0a-e2e2-5d13-b9ff-c8cfbd662fd9",
-          "text": "• Elementos, modelos atómicos, partes\ndel átomo",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "5cc0219c-0fe3-5a12-b82e-c7061045d8df",
-          "text": "• Masa atómica e isótopos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "52a57e24-ceee-53c0-8ae6-c35840c2eaaf",
-          "text": "• Tabla periódica: propiedades y su\nestructura",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "195aa666-3df7-5763-b7a5-83ee799dcd4a",
-          "text": "• Enlaces",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "d9df7846-e082-5171-830e-148607e1157b",
-          "text": "• Reacciones químicas",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "89276b13-7292-506e-b278-04ebcd69a681",
-          "text": "• Interacciones químicas en los seres\nvivos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "3e1e32da-0e0a-5e7d-812c-3a397df07cdf",
-          "text": "• Soluciones",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "1e846617-d731-597c-b760-9e4e76a30bff",
-          "text": "• Ácido, bases y sales",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "27f93c9f-7528-5ca0-80de-081d6306c2a8",
-          "text": "• Movimiento ondulatorio",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "3eb069c3-114e-5cef-adc1-b29b9b79cd7d",
-          "text": "• Longitud de onda, amplitud,\nfrecuencia, período y velocidad",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "be42aff5-1e8b-57a6-b27f-d160299bc703",
-          "text": "• Reflexión, refracción y difracción e\ninterferencia",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "b20a6dd1-38aa-5559-87ab-30873173b707",
-          "text": "• Transporte y dirección de la\noscilación",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "667f1d81-580e-57d4-b701-60864522b973",
-          "text": "• Frecuencia natural y resonancia",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "1cf17553-c05c-51fc-b357-0ae2855f825d",
-          "text": "• El sonido",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "453f5df0-f4ad-5a0f-abdb-f5b7aa5519d3",
-          "text": "• Intensidad, tono, timbre y velocidad",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "bbea08d9-0a19-5fe3-9191-b99d0fb31b64",
-          "text": "• La luz",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "61d36650-ba88-5c89-bcd8-94fc9effe57e",
-          "text": "• Espectro electromagnético y\nvelocidad de la luz",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "c9c60133-7f47-5f42-8328-f102c0088ab0",
-          "text": "• Colores: reflexión, refracción,\ndispersión y transmisión selectiva de\ncolores",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "30eb3ab9-cdd5-5ecc-8762-6009747fb16e",
-          "text": "• Excitación atómica. Emisión y\nabsorción de luz",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "96e2a4f9-326c-5e2b-b0cc-1e6059e8b7c0",
-          "text": "• Interacción de la radiación con los\nseres vivos (en la salud)",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "7e91215a-863a-521f-a66a-bc25a98182b2",
-          "text": "• El oído",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "123e24a1-c368-5974-8d97-afc38add5512",
-          "text": "• El ojo",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "9a7b3ef6-51a6-5747-8824-c656d8048b44",
-          "text": "• Aplicaciones médicas de la radiación",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "73351e40-161c-5241-bbfc-cb9b670e8923",
-          "text": "• Enlaces químicos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "87ea4e6d-df86-50eb-9cd8-705fc0e44cc0",
-          "text": "• Reacciones químicas. Estequiometria.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "75257ebd-c05f-5828-b6e2-d430c743e9b9",
-          "text": "• Enzimas y sus reacciones.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "c2f2cc69-819a-5b50-8d2d-38e8ceaa640c",
-          "text": "• Interacciones químicas en los seres vivos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "63604489-40f7-5d39-bddb-1e4f6b1f8464",
-          "text": "• Soluciones a diferentes concentraciones.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "8195d65e-c2ae-55cf-be0c-376b568872ec",
-          "text": "• Solubilidad de soluciones.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ca5eacb6-27ee-5e0d-8e17-203b87880c71",
-          "text": "• Ácido, bases y sales.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "b677a8a7-396f-5512-95b0-ad24a724dc7f",
-          "text": "• pH y sustancias comunes.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "a08fd02c-9dd3-5651-8722-41095bda629c",
-          "text": "• El pH. Su influencia en los seres vivos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "2fd202f6-a5d6-5468-87f4-408cbe05d553",
-          "text": "Observación, planteamiento del problema, formulación de\npreguntas, hipótesis, planificación y ejecución de experimentos,\nrecolección y registro de evidencias, diseño y construcción de\nmodelos, uso de instrumentos y herramientas, simulaciones\nutilizando recursos tecnológicos e ingeniería, resolución de\nproblemas, reflexión, análisis, discusión, evaluación y exposición\nde resultados, sobre el movimiento ondulatorio:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "2db11734-ce51-534f-8658-a7efd5c5a1c8",
-          "text": "• Ondas longitudinales y transversales",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "d5e2394a-786c-5978-93b4-a0c1f01eaf3a",
-          "text": "• Comprobación de reflexión, refracción, difracción e interferencia",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "d2d8831c-c4f8-546a-a81f-1b2ae781121e",
-          "text": "• Características de ondas viajeras y estacionarias",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "8c1a159e-5d2e-5f06-b8fa-99376ba9bb41",
-          "text": "• Onda en medio sólido y líquido (fenómenos: terremoto y tsunami)",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "8f376f23-01c1-53e0-8c82-73d9373e2c9e",
-          "text": "• Ecolocalización y geolocalización, ultrasonido, sonar, radar",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "791758d0-126a-515d-85ff-11fd9b3bcc0a",
-          "text": "• El oído y las ondas sonoras",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "e36bb1b1-7623-5a29-acef-5d9f6e1a93e6",
-          "text": "• El sonido y los seres vivos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "9b051f13-fdc0-508c-a57b-bd3e61d1b54a",
-          "text": "• Instrumentos musicales",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "957a5eb9-32fb-58a8-9bc8-4a003cb571d1",
-          "text": "• El ojo y la luz",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "d88b9aeb-3adb-5504-9e60-8c4e47c64b31",
-          "text": "• Espejo, lentes y la luz",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "477f8cce-68ba-5a57-9294-a7fb8bffccdb",
-          "text": "• Aplicaciones médicas: microscopio, rayos X, rayos gamma, imagen\npor resonancia magnética, imagen por ultrasonido",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "7e36d783-3435-5ccf-ba43-efe66397d84a",
-          "text": "• Colores: mezcla de luces y pigmentos",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "abcce504-16b9-546f-af2c-5b575f178fb9",
-          "text": "• Emisión y absorción de luz: incandescencia, fluorescencia,\nfosforescencia, láseres",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "6068e9fd-1af1-5a87-b92c-21b8c771e288",
-          "text": "• Polarización de la luz",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "54e24794-4043-5bab-bbad-8953fd2f42e4",
-          "text": "• Instrumentos ópticos (cámara fotográfica, microscopio, telescopio,\ndispositivos electrónicos).",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "09ec8d21-ddf7-547a-a045-c6334fd92c77",
-          "text": "• Explicación de los colores debido a la dispersión de la luz por\npartículas y absorción: arco iris, color de las nubes, color del cielo,\nagua verdosa, color de objetos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "3673e37c-b310-528d-9873-2e9ada6559e9",
-          "text": "• Ondas: diseño y construcción de dispositivos ópticos y medición\nsegún aplique.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
         {
           "id": "1710f71d-4736-54c1-9fb9-78d71fad9a02",
           "text": "Indagación en distintos medios sobre los diferentes aspectos\nrelacionados con:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "08e7bb2c-d94b-565e-a2cc-45097993b541",
-          "text": "• El mecanismo de la audición",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "3edc7d90-d416-5350-b0d6-362cde108128",
-          "text": "• El mecanismo de la visión",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "ebfdef4a-6c5f-5a48-b144-28de04580d68",
-          "text": "• Radiación en la materia",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "1077d0ed-8576-5cda-a9b4-8da0497105f8",
-          "text": "• Radiación ionizante y no ionizante",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "24a6753f-9062-553d-969d-ee52beea92fe",
-          "text": "• Trazadores",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "f9e41b25-9510-500b-ab62-2d1fe82fd493",
-          "text": "• Radiaciones y tratamiento de cáncer",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "466b3a05-aa04-5975-b781-3fdc220f1e60",
-          "text": "• Sonografía y los principios físicos asociados",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "e303ff3e-09ef-5814-a39f-3a7d39ee005a",
-          "text": "• Tomografía, rayos X\nObservación, planteamiento del problema, formulación de\npreguntas, hipótesis, planificación y ejecución de experimentos,\nrecolección y registro de evidencias, diseño y construcción de\nmodelos, uso de instrumentos y herramientas, simulaciones\nutilizando recursos tecnológicos e ingeniería, resolución de\nproblemas, reflexión, análisis, discusión, evaluación y exposición\nde resultados, sobre nociones de electricidad:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "1c3ba88c-acc5-5c31-bb46-b39890b622ec",
-          "text": "• Efectos debidos a la existencia de las cargas.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "6a12e383-131f-5cec-a809-42adf61ee7ad",
-          "text": "• Materiales conductores y no conductores.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "e3335485-47d7-574d-bcd5-64e842bff57e",
-          "text": "• Carga por inducción y frotamiento: como cargar cuerpos\neléctricamente.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "67c09014-7e08-5508-b28f-b04fbcbf319b",
-          "text": "• Corriente eléctrica.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "66561733-acd9-52eb-9483-fbdbc3203a19",
-          "text": "• Voltaje, pilas y baterías.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "71fcf5e0-feb9-5d51-aeef-fa440872c26f",
-          "text": "• Circuitos en serie y en paralelo.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "879cc51a-bb00-58d9-87c6-18ce38a18ebc",
-          "text": "• Conservación de carga o energía en los circuitos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "9cc894ca-a949-5caf-a9e1-8396c24b6012",
-          "text": "• Electricidad: diseño y construcción de circuitos simples,\nsensores, máquinas, materiales y dispositivos eléctricos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "953c9eef-9713-5ec0-8543-bb5435537de2",
-          "text": "• Actividad eléctrica en el corazón.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "2c845e20-c57b-598e-bed8-7ebfac51c72c",
-          "text": "• Seguridad y riesgos eléctricos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "56e9e4cb-81f4-5ada-b9a4-34ca4c2cbffc",
-          "text": "• Conducción de señales eléctricas por las neuronas.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "7ad3b830-47d1-5af8-a452-9ccd221705d1",
-          "text": "• Electrocardiógrafo y electrocardiograma.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "df613d57-e603-5616-a393-8a85acc70a45",
-          "text": "• Neuronas y potenciales de acción.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "eedcad6d-516b-5482-af29-0a5232cedcf3",
-          "text": "• Fibrilación ventricular y el desfibrilador.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "3ca8ee28-1722-5840-91dc-e5819791cfa1",
-          "text": "Investigaciones (utilización: procesos científicos, instrumentos\ny estrategias) en las que se manifiesten las aplicaciones, la\nnaturaleza de la ciencia, la ingeniería, la tecnología, la\nmatemática, y su relación con el desarrollo sostenible en temas\nde salud, medio ambiente, biotecnología, comunicación y\nenergía:",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "93a3617d-6ca5-5f7e-81ae-092881e34cf8",
-          "text": "• Contaminación ambiental del aire, su relación con el suelo, el agua\ny su gestión.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "94b2aa96-100a-5a82-a0ed-784515d00d2c",
-          "text": "• Calentamiento Global y Cambio Climático.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "85df23a5-43d1-58ef-abfd-7c06b4dd465e",
-          "text": "• Gestión de los recursos naturales.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "5593f64f-e489-5f80-b3b8-932a2751ef20",
-          "text": "• Química: gases de invernadero, cambio climático, pesticidas,\ncombustibles fósiles.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "f5e8ceea-2088-54e0-84d7-1cf2685692dd",
-          "text": "• Física: partículas, radiación y acústica. Utilización en aplicaciones\nen la salud.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "fd31a0b1-9bc3-5e4e-ac05-4139c6aef061",
-          "text": "• Dinámica del movimiento en los deportes.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "2d4b2c23-7904-5c44-919e-feb0d85133d5",
-          "text": "• Movimientos en los fenómenos naturales.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "bdc85881-97d3-57f9-84db-49eeaeeef15b",
-          "text": "• La energía y su utilización eficiente, racional y sostenible.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "345d6ee7-15a8-58ba-8e1a-967d21863933",
-          "text": "• La física, la química y la ingeniería en la salud.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "f737f9a5-4270-5d13-b0f6-af1653ceb96a",
-          "text": "• Manipulación y conservación de alimentos y medicamentos.",
-          "reason": "GRADE_PENDING_REVIEW"
-        },
-        {
-          "id": "6c3a5507-4e2b-5f27-9efe-61f00f5ed615",
-          "text": "• Movimiento y ondas: Tecnología de la comunicación.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         }
       ],
-      "instrumentReview": null,
-      "httpVerification": null,
-      "visualVerification": null,
-      "status": "NOT_IMPLEMENTED",
+      "instrumentReview": {
+        "grade": 3,
+        "status": "REVIEWED_DEFINED_FIXTURES",
+        "scope": "50 groups, 103 descriptions, 412 complete instrument variants; visually reviewed PDF300–304 and literal source columns/continuations",
+        "method": "Sequential review of every rubric criterion and its success/partial formulation, with shared progression rules checked in the provider. Inspected complete checklist, achievement-scale and partial-credit circuit construction examples. Scoring and parity contracts supplement scientific review rather than replace it.",
+        "corrections": [
+          "Measurements, designs and device construction have observable criteria without adding experiments",
+          "Interpretation of a provided circuit never requires construction",
+          "Graphs in feminine form are treated as data",
+          "Classification of mixtures does not duplicate its solution category",
+          "Light mixtures do not add material-mixture assessment",
+          "Comparisons include scientific relations; longitudinal/transverse waves and ionizing radiation are focused",
+          "Signals are not an instruction to identify or point",
+          "A supporting circuit does not force a second explanation",
+          "Energy conservation does not impose an efficiency proposal",
+          "Density, mean speed, acceleration and momentum specify the mathematical relation"
+        ],
+        "limits": [
+          "Defined deterministic descriptions, not arbitrary wording",
+          "Safety conditions are those explicitly indicated; no additional components, hazardous procedures or clinical interventions",
+          "The general research heading is a process menu, not another topic or a compulsory experiment",
+          "Full browser save/reopen checks are separate and recorded in the grade report"
+        ],
+        "instrumentArtifact": "ciencias-naturaleza-3-instrumentos.json",
+        "additionalScientificReview": "Radar-only tasks explicitly use electromagnetic waves; mixed sonar/radar comparisons distinguish mechanical from electromagnetic propagation. The shared curricular heading does not mean the same physical mechanism. Regression failed before the correction and passed afterward."
+      },
+      "httpVerification": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "savedAndReopened": 4
+      },
+      "visualVerification": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "allFieldsEqual": true
+      },
+      "status": "VERIFIED_DEFINED_PATTERNS",
       "exclusions": [
         "Optativas y contenidos atribuidos a otros grados.",
         "Actitudes personales y listados generales de procesos no se convierten en requisitos de cada actividad."
@@ -5581,7 +5976,7 @@
       "grade": 4,
       "scopeId": "2126f8f2-d70a-5c37-8542-f8d00957a51a",
       "subject": "Ciencias de la Naturaleza",
-      "component": null,
+      "component": "Biología",
       "pdfPages": [
         312,
         313,
@@ -5589,8 +5984,8 @@
         315
       ],
       "visualReview": {
-        "status": "PENDING",
-        "method": null
+        "status": "REVIEWED",
+        "method": "Rendered PDF312,313,314,315; table columns, continuations and separate indicators checked. Source spelling retained."
       },
       "officialRecords": [
         {
@@ -6943,667 +7338,667 @@
         {
           "id": "63dcd4e9-f1b4-54c9-a48b-b8ab548938d2",
           "text": "Célula",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d2283cee-dfd2-5fce-97de-56d98b159e32",
           "text": "• La célula",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "6aca24a5-e599-56b7-8e26-ef324e481bb5",
           "text": "• Membrana, citoplasma y núcleo\nOrganelos Celulares",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "8de8aef2-2640-53a9-8e3e-10282652baa6",
           "text": "• Tejidos: estructura y funciones\nPigmentos fotosintéticos Fotosíntesis\ny sus funciones Moléculas energéticas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1498b7dc-4f8e-5a62-bc9c-375709e76989",
           "text": "Genética",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "92ba4b55-9e4e-5146-83aa-d82f2fe5d4ea",
           "text": "• Herencia",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1f5d0e6a-5a67-5940-b522-608024216a44",
           "text": "• Segunda y tercera Ley de Mendel",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "60a63b1a-476e-5127-a654-3ba980155304",
           "text": "• Teoría cromosómica de la herencia",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c9a033c8-a7f9-5515-b9de-b86b6073c226",
           "text": "• Moléculas de ADN y ARN",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ce54f056-c14e-5a0a-84f4-57d217547e2d",
           "text": "• Código genético, Replicación del ADN",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "54a154e1-e52c-5750-a0d4-e5089befc831",
           "text": "• Producción de proteínas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "a78d33b9-ce39-5702-a8f4-5c803fa1d4d9",
           "text": "• Herencia en los humanos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "896ff5de-b2d5-5a4c-9008-b07f8f249b58",
           "text": "• Alelos múltiples, grupo sanguíneo",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "fa382393-cc53-5211-a040-a3d5e81f2c36",
           "text": "• Enfermedades hereditarias",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "992ddfb0-3c2d-5798-adec-d9fba5c0059c",
           "text": "• Herencia y medio ambiente",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "0a4956c8-c9ed-5904-81ad-b35ac81a2a12",
           "text": "• Ingeniería genética, ADN\nrecombinante",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d48126cf-dab9-50f9-892b-b63fb416e0da",
           "text": "Evolución",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "000f298f-3a57-57d1-b3ff-e1d1f642dec0",
           "text": "• Origen de la vida",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d585d3cb-e05b-5946-9ccb-edefbe0ba1b8",
           "text": "• La atmósfera primitiva",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "caa6a574-5145-5422-9eac-6b4370311e8b",
           "text": "• Primeros organismos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "cde47848-230d-52ed-aaa8-43e87bc6a468",
           "text": "• Pruebas de la evolución (datación de\nfósiles)",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "dbf57c01-7763-5224-956c-4a70a68870bf",
           "text": "• Teorías de la evolución. Adaptación,\ntipos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d87c193e-ce68-580a-8397-874d49945abc",
           "text": "• Eras y periodos geológicos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "e7d5285b-5b14-5447-a612-f927253639d4",
           "text": "• Teoría moderna de la evolución",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "a42a4ca0-b53b-521b-ad34-e173531691bb",
           "text": "• P1. Observación, planteamiento de problema.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "569e8693-43eb-5748-b46f-29f9aa38e741",
           "text": "• P2. Formulación de preguntas o hipótesis.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "5ad0064c-320b-581b-9cb1-e8da472ac1b8",
           "text": "• P3. Planificación y ejecución de experimentos, recolección y\nregistro de evidencias.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "a786a8d9-b980-5faf-8657-626cd5c4e44c",
           "text": "• P4. Diseño y construcción de modelos y simulaciones con la\nintegración de las Tics y la ingeniería.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "e10d8e75-dce0-5095-9563-330297f2ab51",
           "text": "• P5. Resolución de problema, Análisis, discusión, evaluación y\ncomunicación de los resultados.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d3b23c11-4163-58d2-b537-a76074117b6f",
           "text": "• P6. Proceso Epistemológico de las Ciencias Naturales.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "bc19631a-f2b2-5cf8-9688-f426712c0de7",
           "text": "Célula",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "e0c7f5d3-1dfe-5c6a-be88-bc5d86c7b384",
           "text": "• El microscopio y la consolidación de la teoría celular (P1).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "b0edc56a-b51f-5774-9451-4a39cda62029",
           "text": "• Células procariota y eucariota, vegetal y animal, su estructura\ny función de sus organelos (P2, P3, P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "7af17511-ecfc-507b-8d35-9133ada54cae",
           "text": "• Intercambio de sustancias a través de la membrana celular:\ndifusión ósmosis y transporte activo (P1, P3 y P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "de32fa0b-494e-51fd-80f1-77747f2147a2",
           "text": "• Especialización celular: formación de tejidos, órganos y\nsistemas de órganos (P1 hasta P6):",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "fda0c1f0-7e93-5335-ba77-8091b361bf89",
           "text": "• Trasplantes de órganos (P1, P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "9db9d1dc-aef5-5dfb-9671-41cf2cf326ef",
           "text": "• Energía celular (P1 hasta P4):",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "0c2d7136-ab4e-54c2-b8f3-294dc1e685f5",
           "text": "• Trifosfato de adenosina ATP.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "bbd55920-60ad-5905-8018-cb985f733d08",
           "text": "• Estructura de la mitocondria.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "6314a622-0f76-5af3-8254-8a838cb46205",
           "text": "• Tipos de respiración celular: aeróbica y anaeróbica,\nfermentación (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d3bdfe8f-281b-501f-b8ac-e2e28f4597b1",
           "text": "• Ecuación del proceso respiratorio.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "5b3402ed-fa5b-5b71-86c0-2011a8d3e423",
           "text": "• Factores necesarios para la fotosíntesis, estructura de los\ncloroplastos (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "351e49e0-79cb-5015-b9bb-a1af8e982266",
           "text": "• Reacciones químicas: fase luminosa y fase oscura (P2 hasta\nP5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "339aa3cd-e576-55a8-891b-a666a3f3b9e3",
           "text": "• Mitosis y meiosis, sus fases (P2 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "46a7d155-575d-5619-9104-b0625048d802",
           "text": "• Células madre (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "354a143d-efd9-5c16-99d3-2279bb2dfcd2",
           "text": "• Formación de las células sexuales: espermatogénesis y\novogénesis (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "8cf522b9-c085-54b7-ada5-b79fdc12f1d9",
           "text": "Biología Humana",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "8df1f45b-72be-5715-bdd0-adb78821c70d",
           "text": "• Sistemas reproductores masculino y\nfemenino.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "cfa4365e-d977-5297-b444-df0e0f0d5a1a",
           "text": "• Estructura y función de los sistemas del\ncuerpo",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "8202cc7a-12a0-5062-be5d-ab1dbf964046",
           "text": "• Humano.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "0b33f33e-4a5d-58e6-914b-9af0dbef4c4d",
           "text": "• Enfermedades de los sistemas.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "78fa90a1-4741-521d-9512-174d22403c2b",
           "text": "Ecología",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "4a0d7339-1324-590f-b3cb-e99fe3b59c2b",
           "text": "• El ecosistema",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "9cb15841-6aed-552b-b788-bdf737316214",
           "text": "• Factores del ambiente",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "9f072d11-44d2-5dfb-a66c-604c3a1f3eec",
           "text": "• Ciclo de la materia y el flujo de energía",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "b71e0422-d900-5a96-afd4-0124050b9654",
           "text": "• Relaciones entre especies",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "a60218a0-f411-5af8-b235-fdc55abc2a0d",
           "text": "• Poblaciones y comunidades",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "06f383b5-8a14-5d15-bcee-752f6e961382",
           "text": "• Los recursos naturales",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "bc8c1d50-fa78-5c5e-b223-befcdaa572ba",
           "text": "• Contaminación, tipos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "4853dddf-8d77-5b5b-8740-62952af463d2",
           "text": "• Zonas climáticas y biomas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "057f31d9-8c9c-5b93-8570-160942e1680d",
           "text": "• Cuidado e higiene personal",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "2567dc1e-4a43-5d80-8537-acbd5592c0ac",
           "text": "• Enfermedades causadas por agentes\nconstantes",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d2c80b99-0c79-51be-9502-8bf69a7632ca",
           "text": "Genética",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "6bc0546b-0bf3-5761-8ff4-812c9122694d",
           "text": "• Resultados de los experimentos de Mendel, segunda y\ntercera ley (P1 hasta P6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "a76b5900-58a6-5353-b254-ff5d43775843",
           "text": "• Problemas de probabilidad, basado en las Leyes de Mendel,\nutilizando el Cuadro de Punnett, bibliografía científica,\nmodelos, experimentos, informes, etc. (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1a26da75-e5cc-5e47-a306-10b0bd6a9751",
           "text": "• Principios básicos de la genética (P1).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c9155efd-c5ee-5be6-9b92-924e526e477f",
           "text": "• Cromosomas y genes (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "f414c99a-cd7e-5e42-8d1e-03f443294dbd",
           "text": "• Ácido desoxirribonucleico ADN y el ácido ribonucleico ARN\n(P1, P3 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "b45d1d61-2c9d-5bfa-a905-8f4fdd4eec8a",
           "text": "• Mutaciones en genes y cromosomas (P1).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "8e8f5f47-b5e4-5df9-b4f6-32f3ecc524c2",
           "text": "• Cromosomas ligados al sexo (P1, P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "febe8c4a-fea8-5114-b954-9e3ae814aa8b",
           "text": "• Enfermedades hereditarias (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "afc92944-e992-5020-baa3-b766cf4dd63a",
           "text": "• Desórdenes genéticos (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "2a09509b-8667-5575-8a1a-731a8dcf661e",
           "text": "Evolución",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "a2221cbc-e77f-5a9d-aea6-36e85c509df9",
           "text": "• La atmósfera primitiva, los primeros organismos (P1, P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "dc224e68-b935-5d1b-a3c1-61b84a445645",
           "text": "• Argumentos de las pruebas evolutivas: anatomía,",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "fbab0ed8-db2e-5798-ac06-af0dd6c1a248",
           "text": "• fisiología, embriología, bioquímica comparadas (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d6d230f8-6943-5795-a18c-1b19dc43ad1d",
           "text": "• Evolución de las especies (P1 hasta P4).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "41574d4e-28cb-5c55-9597-19ec5c5dea0b",
           "text": "• Convergencias y divergencias (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "9d7bb64c-6d7a-5a75-824d-f6697ed09e9b",
           "text": "• Teorías de Lamarck y Darwin (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "fc69a976-86ca-5147-a928-565256944c54",
           "text": "• Selección natural, la adaptación: tipos (P1, P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "eefba592-f1e6-5c5d-a64b-b97b067c79d7",
           "text": "Biología Humana",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "262f99d5-391d-5f46-a23c-03e2562198f1",
           "text": "• Estructura y función de los órganos reproductores en\nhumanos (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d08bb88c-2fc6-5bb8-88b3-9b0c4b1edd73",
           "text": "• Etapas de desarrollo de una nueva vida, desde la\nconcepción hasta el nacimiento (P1).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "990e2780-4089-56de-97c5-3d3122d6cfe0",
           "text": "• Cuidado que se requiere durante el embarazo en\nadolescentes, su responsabilidad como madre y padre (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "fd8664e3-ad8a-51cb-b45f-878be5178932",
           "text": "• Vida en pareja para la estabilidad emocional y educación de\nlos hijos e hijas (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "70a7de25-ed14-5a2e-bdde-e6fef55a18cb",
           "text": "• Diferentes métodos anticonceptivos (P 1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d35c879e-5c52-5837-9bef-442272113a1b",
           "text": "• Enfermedades de transmisión sexual VIH y Sida (P 1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "2d9ed08d-f8e7-58af-9afd-315779fb5c36",
           "text": "• Lactancia materna (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c40d0359-0e58-59f4-9132-d877a852cced",
           "text": "• Sistema Esquelético:",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "b62c54b6-669e-5bef-b612-eb47364ef1ca",
           "text": "• Estructura y función, tipos de huesos, su constitución,\nenfermedades más comunes y fracturas (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "7b7f7110-6a46-5f90-a1c3-8d5283803362",
           "text": "• Sistema Muscular: tipos de músculos, funciones (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ffa441ea-a8ca-5b5b-ba59-0d628f680467",
           "text": "• Lesiones frecuentes en los músculos (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "7c78edf7-7a31-52c9-9569-2fa38f1bc1da",
           "text": "• Sistema Digestivo: Digestión de los alimentos. Tipos de\nalimentos, función (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "3159ca4c-2157-590a-b207-865bb0ab948e",
           "text": "• Metabolismo, tipos (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "9bb0b473-34c8-5a53-98af-1dfcf4438332",
           "text": "• Papel de las enzimas en el proceso digestivo (P1, P2 y P3).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "a2538169-19bc-505e-8c25-652cbb253557",
           "text": "• Enfermedades más comunes del sistema digestivo (úlcera,\ngastroenteritis, colitis, apendicitis, gastritis (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1f9851ee-8ddb-59e8-901c-2d48c1146108",
           "text": "• Sistema Circulatorio: Estructura y función (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "549ae7de-9ca9-522d-83e3-d1bb12125061",
           "text": "• La sangre, su composición, función (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "fef00404-3271-534a-b4b0-3d71cd9db5fa",
           "text": "• Circulación de los nutrientes (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d31ce6cc-48b1-545d-8517-3a8530f22cac",
           "text": "• Enfermedades del Sistema Circulatorio: (hipertensión\narterial, soplo, infarto) (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "82667093-1f7b-5e66-a606-4ec63262651d",
           "text": "• Higiene de la circulación (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "9dc1afbd-8be6-55bf-a7ef-bb68b2deeb36",
           "text": "• Sistema Respiratorio: Estructura y función, Intercambio de\ngases en los pulmones (P1, P2 y P3).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "aa95741b-2188-587f-8694-9fc63aad734f",
           "text": "• Enfermedades más comunes (Asma, neumonía,\nhistoplasmosis, tuberculosis (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "bd842eae-b15d-55f7-8bcc-53afd1581585",
           "text": "• Sistema Excretor: Estructura y función (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d6f3f7cb-d50a-5c98-839c-034e3bbf79ec",
           "text": "• Formación de la orina (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "81d791d0-d008-548a-af87-5d70d375e6f7",
           "text": "• Enfermedades del sistema excretor: (cálculo, cistitis).\nhigiene del sistema excretor (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d8f0e707-1a9e-5f39-be93-32d087931ac4",
           "text": "• Sistema Nervioso y el hormonal (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1e103eb0-a518-582a-aeba-ea4a94b61f6d",
           "text": "• Estructura y función (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "690ffd39-9251-5299-8db2-8ae90c24ac41",
           "text": "• Impulso nervioso (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "62b402c7-30da-5a67-b8bc-01f1e36567dc",
           "text": "• Enfermedades del sistema nervioso: meningitis (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c162c215-d982-5a55-bb6c-ed5b79d94158",
           "text": "• Mecanismos para prevenir las enfermedades (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "97dc051f-055d-5669-9bf2-c4517048dfdf",
           "text": "• Anticuerpos y vacunas (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "39724cfc-28f9-5f95-9b82-24ffb37bfb66",
           "text": "• Tipos de inmunidad (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "70d1a9ba-00f6-5e23-a589-71942cc6e719",
           "text": "• Memoria inmunitaria (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "5584d1dd-c2b2-5070-bd0e-47b4a09cab00",
           "text": "Ecología",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "54a377da-ac17-531b-96a6-260030ac9dd0",
           "text": "• La ecología, su importancia (P1 hasta P6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "4893239d-f4e2-5f3d-803a-fa0fb5b2e764",
           "text": "• Componentes del ecosistema (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "86d6a414-b258-5ca3-9797-4739068ec537",
           "text": "• Poblaciones y comunidades (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ea998885-bef2-5248-94a1-d3ea77fc4b16",
           "text": "• Estructura y crecimiento de las poblaciones humanas (P1).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1c5af2a5-845b-59c0-a8de-d95feb8ee62c",
           "text": "• Factores bióticos y abióticos (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "3d87a830-9b28-5879-9041-da6f82e7eb9b",
           "text": "• Ciclos biogeoquímicos (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "add7e750-db1b-58d8-9767-3138604f57fd",
           "text": "• Pirámide ecológica (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d94af10a-e2b6-55a7-80bc-feac11e1cd77",
           "text": "• Relaciones simbióticas (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "17469f25-2ede-5345-a46d-d2e8cf4727c8",
           "text": "• Recursos naturales: tipos de recursos (P1, P2 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "277f0c1a-1ca4-52aa-b182-d6e692cd6664",
           "text": "• Producción y distribución: alimentos, sostenibilidad de\nalimentos (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "587cc889-4364-5089-8a4b-9eb2592620af",
           "text": "• Principales contaminantes del ambiente, efectos, causas y\nconsecuencias (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ff73474a-8c17-5c2b-af83-f37aec09696e",
           "text": "• Los efectos del cambio climático en la biodiversidad y el\nequilibrio ecológico (P1 hasta P6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "16733480-1bc9-58b0-a82a-9d7bf11a0144",
           "text": "• Sistema Binomial de Linneo (P1).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "4ed9dc63-5c00-5729-9211-029fb3bd6f22",
           "text": "• Clasificación moderna (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c59fcf9c-929d-560d-873a-55a103fa2c27",
           "text": "• Virus, estructura y función (P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ef7a31b8-209b-5443-8f4e-c0be3f075047",
           "text": "• Bacteria, Arqueo bacterias, protista, hongos, plantas, y\nanimales (estructuras y funciones) (P1 hasta P5)",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "bbe7f863-f817-5457-af6f-cc4f56cef3d9",
           "text": "Proyecto de investigación e innovación escolar",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ea019419-136c-56f1-b7d5-c8c17b368695",
           "text": "• En problemas ambientales, biotecnología o salud de\nimpacto personal, comunitario, regional o global (P1 hasta\nP6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         }
       ],
       "instrumentReview": null,
@@ -7613,21 +8008,25 @@
       "exclusions": [
         "Optativas y contenidos atribuidos a otros grados.",
         "Actitudes personales y listados generales de procesos no se convierten en requisitos de cada actividad."
+      ],
+      "sourceNotes": [
+        "P1–P6 remiten al menú de procesos de la primera página del grado, no a grados escolares.",
+        "Se conserva literalmente la fuente, incluidas erratas de los indicadores; el encabezado y el scope determinan componente y grado."
       ]
     },
     {
       "grade": 5,
       "scopeId": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
       "subject": "Ciencias de la Naturaleza",
-      "component": null,
+      "component": "Química",
       "pdfPages": [
         316,
         317,
         318
       ],
       "visualReview": {
-        "status": "PENDING",
-        "method": null
+        "status": "REVIEWED",
+        "method": "Rendered PDF316,317,318; table columns, continuations and separate indicators checked. Source spelling retained."
       },
       "officialRecords": [
         {
@@ -8602,412 +9001,412 @@
         {
           "id": "41ce5d13-5998-51d0-9748-989e13fa14f2",
           "text": "Teoría atómica moderna",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "0d1c1e07-8625-558b-b7e7-d4b31df7d0f6",
           "text": "• Niveles de energía Subniveles de\nenergía Números cuánticos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "dc875aa2-d3e6-5927-82eb-3a195f73e261",
           "text": "• Regla de Pauli Regla de Hund",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "889d4547-06d4-57f1-822e-f92f901ded1c",
           "text": "• Configuración electrónica",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "b30e28ef-ed15-5513-9a03-b945964555fd",
           "text": "Tabla periódica y Propiedades de los\nelementos químicos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "8a86c592-e79b-5a6c-9b02-971d0bee3ec1",
           "text": "• Grupos y períodos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "f2166ce5-932e-5f89-aa9f-98df0aa9592a",
           "text": "• Propiedades periódicas de los\nelementos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "32013cb1-28b6-5236-b3db-3a4f7fa8a36b",
           "text": "• No metales Metales",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "e5d1601a-ad73-5457-a648-209aa5db3fc1",
           "text": "• Metaloides",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "698a26c5-01cf-5944-a5a7-980c174de281",
           "text": "• Gases nobles",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "7079e06d-bc01-5e87-aeff-07925f92732a",
           "text": "Enlaces y estructuras químicas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "5a82e2a0-87ef-5df0-b13a-63f38753da19",
           "text": "• Resonancia Estructura de Lewis Regla\ndel octeto",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "66808754-ecd0-5ad8-9b11-6cfbe0c94752",
           "text": "• Fuerzas Intramoleculares e\nIntermoleculares",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "5ed373b1-6011-5cc2-9888-ee43490c2cf1",
           "text": "• P1. Observación, planteamiento de problema.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "6aaeb31f-1135-52fd-9144-91cd7265a42b",
           "text": "• P2. Formulación de preguntas o hipótesis.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "f3ec3ba8-bcc8-506d-ae73-59ce847a1d6e",
           "text": "• P3. Planificación y ejecución de experimentos, recolección y registro\nde evidencias.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "105cb170-4854-5fca-ac5f-00a553ffb38c",
           "text": "• P4. Diseño y construcción de modelos y simulaciones con la\nintegración de las Tics y la ingeniería.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "53048fed-d5d6-591c-971e-4ba17093b776",
           "text": "• P5. Resolución de problema, Análisis, discusión, evaluación y\ncomunicación de los resultados.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "7c9ff85f-40a9-59dd-8e0c-5cd065b99b88",
           "text": "• P6. Proceso Epistemológico de las Ciencias Naturales.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ecbf7e0e-0c6a-5a3a-8da3-4146c7881264",
           "text": "Teoría atómica moderna",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "8d71b0ba-4d85-5ac9-a343-ce3573a4bd8f",
           "text": "• Construcción de modelos de átomos usando la teoría atómica\nmoderna: Niveles de energía, orbitales, regla de Pauli, regla de Hund,\nconfiguración electrónica (P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "2cb59096-f411-5ebc-a173-56aa54325efe",
           "text": "• Predicción del comportamiento químico de los elementos, a partir de\nsu ubicación en la tabla periódica (P1 a P6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d240226d-8004-53da-993e-9b5a852053f9",
           "text": "• Relaciona los experimentos concretos que permitieron descubrir las\ndiferentes partículas subatómicas, dando cuenta de los avances de\nlos modelos atómicos a lo largo de la historia y relacionando con el\ncontexto de la época (P2 a P3).\nTabla periódica y Propiedades de los elementos químicos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c36135f5-97c4-500d-b238-520105b31b68",
           "text": "• Conductividad eléctrica y conductividad térmica metales, no metales\ny semiconductores (P1, P2, P3 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "fdf25064-bad8-5d9a-a354-88b9526369e5",
           "text": "• Propiedades, obtención, reacciones, aplicaciones y efectos en seres\nhumanos y medioambiente de: No metales (hidrógeno, oxígeno,\nnitrógeno, carbono, fósforo). Metales (plomo, mercurio, hierro, calcio,\nmagnesio, zinc, cobre, galio); Metaloides (silicio, germanio, arsénico);\ngases nobles (helio, neón, argón) (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "524f0f81-0ffb-550b-8a83-d055eb809f6c",
           "text": "• Relación entre las propiedades periódicas del átomo en la tabla\nperiódica: Radio atómico, electronegatividad, afinidad electrónica,\nenergía de ionización (P1hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "cae647d3-25f6-531f-808c-fc16ae1a6160",
           "text": "• Bloques s, p, d, f y sus aplicaciones (P1 hasta P5).\nEnlaces y estructuras químicas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c25e16cc-1f0f-5260-9e6e-968d3ad57cd0",
           "text": "• Aplicación de la estructura de Lewis y regla del octeto a distintos\ncompuestos químicos (P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "3e7d5671-2a09-5e90-a35f-d41df07d9cf4",
           "text": "• Utilización de la información de la tabla periódica sobre el número\natómico de los elementos, y las estructuras de Lewis para predecir el\ntipo y número de enlaces que se forman entre estos (P1 hasta P6)",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "0ff0f7ee-3d16-58e5-a5f5-cc01a1aec816",
           "text": "• Dibuja distintas estructuras resonantes de compuestos químicos (P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "f74d187c-ad98-51e5-870e-4e7ff3d6eda0",
           "text": "• Modelación de las fuerzas intramoleculares: Enlaces iónico y covalente\n(P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "59235eb1-437f-5c80-b802-4a964eb99fd7",
           "text": "• Termodinámica Termoquímica\nEntalpía",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c3af6355-5e1c-57a8-a6de-2d2f6369515b",
           "text": "• Energía libre Entropía",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "6f7bc3c5-9e12-5cb0-a047-7fd0e40f04c3",
           "text": "• Leyes del estado gaseoso",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "3c5eee5c-d634-5212-b327-e2254ca07144",
           "text": "Reacciones Químicas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "3c3050c4-8794-5b41-8b60-db05b833c01f",
           "text": "• Reacciones químicas Estequiometría\nde una reacción",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c433c7c8-4197-55e4-bfa6-7a2f1f4442ce",
           "text": "• Cinética y Equilibrio Químico",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "13cc78a6-9877-52a7-a732-aea37660b8e3",
           "text": "Química de los compuestos de\nc a r b o n o",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "5ed77ca3-abf2-52a5-946b-da1c648b530c",
           "text": "• Orbitales moleculares",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "4888ac45-49fa-521d-8c90-23003a210433",
           "text": "• Hibridación: sp1, sp2 y sp3",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "08299441-b9e0-5730-9e60-9358fbcfbac6",
           "text": "• Enlaces de los compuestos de\ncarbono",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "a0f679fd-d920-5b4f-84cd-6d098528488a",
           "text": "• Mecanismos de reacción en los\ngrupos funcionales",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ad1bb890-da9f-576c-8f0e-ef75b9c1f80a",
           "text": "• Biomolecular y bioquímica Lípidos.\nCarbohidratos. Proteínas Ácidos\nnucleicos (ADN y ARN Enzimas.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "2c530ee0-b2d9-54cc-8150-544fd170d15c",
           "text": "• Rutas metabólicas.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "09d92b7e-d602-5c96-a7c1-bfd05bbab348",
           "text": "• Geoquímica y astroquímica",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "300f0180-1121-531a-a85c-d8adbb87c6ab",
           "text": "• Composición de las capas de la tierra.\nMinerales y rocas.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "12caf5a8-4636-50bf-adf9-eeea7f41eaef",
           "text": "• Origen de los elementos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "f24a1e0b-5cf8-5628-9b3f-0a5fa84ba647",
           "text": "• Composición química de los\nplanetas, estrellas y otros sistemas\nastronómicos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1c8e2242-f482-5b29-bb33-7d6e6304da8c",
           "text": "• Fuerzas intermoleculares: puente de hidrógeno, fuerzas de Van der\nWaals y los cambios físicos (P3 y P4),",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "932fa3d0-cd3a-5a89-9103-8c2e01087a08",
           "text": "Termodinámica",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "0a6dda31-7a3c-5007-a47e-03dc16d4abea",
           "text": "• Reacciones exotérmicas y endotérmicas (P3, P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "3749f99e-6b49-5a57-abb6-6470beffd564",
           "text": "• Medición de la Entalpía de formación de un compuesto químico (P3\nhasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "5a166398-ec21-5b93-b566-a7c234c13e2f",
           "text": "• Medición de la Energía libre de Gibbs (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "344d1f84-74de-5404-9ce3-29978b65992f",
           "text": "• Ecuación de estado de gases ideales y reales (P1 hasta P5).\nReacciones Químicas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "0adadd1b-71ba-5540-a996-9f70a6498256",
           "text": "• Clasifica las reacciones de análisis, síntesis, sustitución y doble\nsustitución (P3 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "4e4d8ea6-8b4a-5433-bfd1-80908926d2e7",
           "text": "• Estequiometría de la reacción: Balanceo de reacciones químicas.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "07dbf48b-f3b4-5438-b957-a452c3edc829",
           "text": "• Ley de conservación de la masa. Reactivo limitante (P3 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ff78c505-2386-5258-8462-69becf21524b",
           "text": "• Principio Le Chatelier, factores que afectan el equilibrio Químico (P3\nhasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1dd11ad0-cdba-56e6-8b28-c9b784d9e9d7",
           "text": "• Cinética. Factores que afectan la cinética de la reacción. (P3 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "9630c709-1f2e-51ed-be7a-e2bb62274acb",
           "text": "• Energía de activación (P3 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "57ca9f6d-feab-5993-b9de-ab75f66acfb0",
           "text": "• Presencia de Catalizadores en una reacción (P3 y P4).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "490c5413-bb72-5fa8-82d3-882fd5753d33",
           "text": "• Química de los compuestos de carbono",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "4d2d3ea5-3774-5a45-8626-4dd052cdb126",
           "text": "• Hibridación: sp1, sp2 y sp3 (P3 y P4). Orbitales moleculares (P4).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "2e9b3ed7-c446-5573-a73f-0c5aa5e11582",
           "text": "• Enlace σ y π (P4).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "64e0ef04-a8eb-5f9a-b5d6-62c8794537d8",
           "text": "• Enlace simple, doble y triple (P3 y P4).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "e7a4e5a0-a406-5a15-a9fe-a82d6cd2867f",
           "text": "• Indagación sobre diversidad y propiedades de los compuestos de\ncarbono (P1 y P2).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "0e27a492-00f0-5b87-b065-d8b791095f7b",
           "text": "• Mecanismos de reacción en los grupos funcionales:",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c66b67fa-7b5c-5ca2-ae7e-98e592218980",
           "text": "• Sustitución nucleofílica (Sn1 y Sn2): Alcanos, Alcoholes, haluros de\nalquilo, Ácidos Carboxílicos y sus derivados (P3, P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ad668050-b163-56ed-bb1e-7af415b1d590",
           "text": "• Eliminación (E1 y E2): Alcoholes y derivados halogenados (P3, P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "41aae14c-077b-5eed-9d34-3a9dd3882b14",
           "text": "• Adición Electrofílica (AE): Alquenos, Alquinos, Aldehídos y Cetonas\n(P3, P4 y P5). Sustitución Electrofílica Aromática (SEA): Derivados del\nbenceno (P3, P4 y P5). Especies de resonancia (sistema aromático) (P3,\nP4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "2f27e8bf-2440-5d2a-bcdb-46354acd4b5d",
           "text": "Biomoléculas y bioquímica",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "36bdcfcb-a20d-590b-98ab-c0bd91f6ea36",
           "text": "• Identificación de Lípidos (P1, P3, P4 y P5). Caracterización de\nCarbohidratos (P1, P3, P4 y P5). Identificación de Proteínas (P1, P3, P4\ny P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "409d4d59-c7ac-5be5-850b-f7dbb61714f3",
           "text": "• Modelización de ácidos nucleicos (ADN y ARN) (P3, P4 y P5). Aplicaciones\nbiológicas de Enzimas (P3, P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "6dd825ad-413f-5c70-87f8-7e5cdd42e79f",
           "text": "• Inhibidores enzimáticos (P1, P3, P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "10ae59a0-d9a3-5478-a391-07efb5c2eb4f",
           "text": "• Rutas metabólicas (P3 y P4).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c3aa8d79-4df1-503d-a610-5734a52b51ff",
           "text": "Geoquímica y astroquímica",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "941f5e5c-3098-53e2-a184-cadd83d4a12a",
           "text": "• Composición de las capas de la tierra (P4 y P5). Minerales y rocas (P1,\nP4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "29f19cfd-8f15-5235-af8d-f51afa4d2924",
           "text": "• Datación de rocas y fósiles (P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "93ff25ec-59ae-50d0-9209-fb842ed4832b",
           "text": "• Indagación sobre gases de efecto invernadero (GEI) (P1, P3 y P4).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "3c650161-2c09-524a-b046-71d0b51d6259",
           "text": "• Indagación sobre Contaminación (lixiviación aguas subterráneas) (P1\nhasta P6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "052ec9d5-8510-54c1-8acf-2ed7875539c4",
           "text": "• Yacimientos de hidrocarburos (P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "f9d27ede-1cec-5168-8a24-8dfbd8ce1a5b",
           "text": "• Origen de los elementos (P4 y P5).\nIndagación sobre reacciones nucleares. Medicina nuclear. (P4 y P5).\nComposición química de los planetas y otros cuerpos celestes (P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         }
       ],
       "instrumentReview": null,
@@ -9017,13 +9416,17 @@
       "exclusions": [
         "Optativas y contenidos atribuidos a otros grados.",
         "Actitudes personales y listados generales de procesos no se convierten en requisitos de cada actividad."
+      ],
+      "sourceNotes": [
+        "P1–P6 remiten al menú de procesos de la primera página del grado, no a grados escolares.",
+        "Se conserva literalmente la fuente, incluidas erratas de los indicadores; el encabezado y el scope determinan componente y grado."
       ]
     },
     {
       "grade": 6,
       "scopeId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
       "subject": "Ciencias de la Naturaleza",
-      "component": null,
+      "component": "Física",
       "pdfPages": [
         319,
         320,
@@ -9031,8 +9434,8 @@
         322
       ],
       "visualReview": {
-        "status": "PENDING",
-        "method": null
+        "status": "REVIEWED",
+        "method": "Rendered PDF319,320,321,322; table columns, continuations and separate indicators checked. Source spelling retained."
       },
       "officialRecords": [
         {
@@ -10196,552 +10599,552 @@
         {
           "id": "14f669d6-1855-5141-b7bf-811cfa0e60f8",
           "text": "Movimiento y fuerzas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "9ccaedd7-712e-56d9-946c-1e652b4bdea6",
           "text": "• Movimiento en 2D.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "826b46f5-0e25-5088-bee2-8d300ab35288",
           "text": "• Leyes de Newton sobre el\nmovimiento de traslación.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "e11f3dd2-b5b6-53f4-aa21-52a02ed69bef",
           "text": "• Ley de gravitación y fuerzas variables.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "634637c4-a4cf-5e0d-909b-11c93f7d361a",
           "text": "• Elementos de geofísica: Gravedad,\nmareas terrestres. Forma de la tierra.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "b43d9b57-f347-5b30-9e08-04ca82366f55",
           "text": "• Cantidad de movimiento Lineal.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ae1012e6-2d87-57de-aa63-4904dfd550e5",
           "text": "• Leyes de Newton sobre el\nmovimiento de rotacional.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "2a30616b-4f56-5335-b179-bd211fae9de7",
           "text": "• Movimiento rotacional.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c952163f-b4c2-55ed-a226-7e10732761b8",
           "text": "• Cantidad de movimiento angular.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "e1d77b9a-fc6a-5562-84d2-a1bf3aa4db54",
           "text": "• Elementos de astrofísica: Nuestro\nsistema solar y nuestra galaxia.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "690b2e2e-2f20-51fa-b2a8-b0034d65244b",
           "text": "Conservación de la energía y de la\ncantidad de momento.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "2a80eab2-a527-597f-b8d5-cf813058d42c",
           "text": "• Variación de energía y trabajo",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "859d6779-ac02-573a-a158-d7dfbfcf39d5",
           "text": "• Diferentes tipos de Energía",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "cbd0445b-0ea5-577c-b7f7-73f1633f98ec",
           "text": "• Conservación de la energía",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "3a9621d5-b3fe-5d80-8d22-20d039dbabd6",
           "text": "• Conservación de las cantidades de\nmovimiento",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "38bf081c-06de-5eda-a836-3fe83c97360c",
           "text": "• Elementos de astrifisica: Nuestro\nuniverso, origen y evolución",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "67841e53-0c4f-5b00-97a4-9499d9dbae7f",
           "text": "Fluidos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "50b88ba6-5f7c-53c4-aefc-9956bb271c0c",
           "text": "• Presión y densidad",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "45f6ff6b-e2b4-5044-b1d3-cb9c13572079",
           "text": "• Principios en fluido",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "60a5afd4-6fa1-5c4e-a051-cce012ccd506",
           "text": "• Tensión superficial",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "4f27cb93-0ca9-5876-83e2-2a368679635d",
           "text": "• Elementos de astrofísica: tipos de\nplanetas y sistemas astronómicos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "6349580b-7888-5cf8-a751-1fddfe81dff6",
           "text": "• P1. Observación, planteamiento de problema. P2.\nFormulación de preguntas o hipótesis.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "dee3af06-6242-55b1-aeb8-309a835a1ab7",
           "text": "• P3. Planificación y ejecución de experimentos, recolección\ny registro de evidencias.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "707a11e6-ae84-5685-9ead-5d5da7644e05",
           "text": "• P4. Diseño y construcción de modelos y simulaciones\ncon la integración de las Tics y la ingeniería.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "2a1171e4-ff01-5644-9db4-99d0b8886cf6",
           "text": "• P5. Resolución de problema, Análisis, discusión,\nevaluación y comunicación de los resultados.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "06907604-8a2e-564f-a8ba-84f24894b2ab",
           "text": "• P6. Proceso Espitemológico de las Ciencias Naturales.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "a1906e59-621e-5377-a63b-50daa0d9b78d",
           "text": "Movimiento y fuerzas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "69acdd38-91e6-5199-8305-3d41386ab6c3",
           "text": "• Gráficas para el movimiento, a partir de experimentos (P1\nhasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "cedf6a7b-e31d-50a0-9e2b-9c42127a3430",
           "text": "• Proyectil y movimiento circular (P1, P3 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c7744c02-0306-5d0d-a587-0efa8b140474",
           "text": "• Relación entre masa, aceleración y fuerza (P1, P3 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "953a0319-b889-5887-8d93-467300ccc551",
           "text": "• Leyes de Newton: construcción de sistemas en marcos\nde referencia inercial, aplicaciones y estrategias para la\nsolución de problemas (P1 hasta P6)",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "a12b7ffd-fe89-5c2a-abea-47975c93dcac",
           "text": "• Fuerzas de fricción, Fuerza de gravedad, Fuerza normal,\nTensión, Fuerza neta, fuerza aplicada, fuerzas externas e\ninternas (P1, P3 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "5ce0fa35-2187-5988-8273-91204cb851e3",
           "text": "• Ley de gravitación universal (P1, P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "04cb79f3-7e0d-514d-8d23-e7de9cb4ddcc",
           "text": "• Ley de Hooke y aplicaciones (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1bb4a218-c7ce-5cac-ba68-c34901bf84ed",
           "text": "• Proyectos de indagación con las leyes de Newton (P1\nhasta P6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "6371ebc0-49a6-5ca7-b040-9a0daab3ce8e",
           "text": "Conservación de la energía y de la cantidad de\nmovimiento.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1b9a52a0-ec6d-5dcd-928a-d8096cb1f59b",
           "text": "• Energía: Diferentes tipos (Cinética de traslación y rotación,\ndiferentes tipos de energía potencial) su transformación y\naplicaciones (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "66c07d91-4be0-5171-8444-280bac9c3ead",
           "text": "• Cantidad de movimiento lineal y variación de la cantidad\nde movimiento (P1 hasta P6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "6693583c-8bff-5216-ba5c-de058b329de5",
           "text": "• Principios de conservación: energía y cantidad de\nmovimiento lineal y angular (P1 hasta P6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "9fb37c39-23b8-5883-b5cd-eaa846fbe956",
           "text": "• Choques: elásticos e inelásticos (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "549ddeca-9458-5a89-a4b8-3037a5d2fda3",
           "text": "• Eficiencia energética y aplicaciones en la industria,\ndeportes, salud, ingeniería, agricultura (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "cffefedf-cb11-5321-bc70-12d311bcdd2b",
           "text": "Calor y termodinámica",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "97d4bad9-c668-555b-87e6-2fe1a485f5c8",
           "text": "• Temperatura, calor y dilatación.\nTransferencia de calor.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ba26c6d6-b6e2-5334-b539-283f5e5fab8c",
           "text": "• Leyes de la Termodinámica.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "22d3d950-0cf2-520b-8767-8a6569b9f130",
           "text": "• Elementos de astrofísica: formación\nde nuestro planeta y ciclo de estrella.\nAgujero negro.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "95019cec-fc43-50ec-b3a3-592c776ea67f",
           "text": "Ondas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "833d9f96-a9a9-58e6-8e16-b8fe50e417c7",
           "text": "• Vibraciones y sus propiedades. Ondas\ny sus propiedades",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "baf4eaee-61b8-5132-b05b-1b43d9557951",
           "text": "• Ondas mecánicas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "66533efc-61af-53c6-b2c7-2c42d0f1b671",
           "text": "• Elementos de geofísica:",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ae522e11-a802-5c54-8bf7-02142d147698",
           "text": "• Estructura de nuestro planeta. Onda\nsísmica. Terremotos. Métodos de\nrefracción y reflexión sísmica",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "67d4a739-91da-5b26-beda-d79b3f605242",
           "text": "• Ondas electromagnéticas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "b5e62062-5655-5406-abec-d50cd5499917",
           "text": "• Espectro electromagnético",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "5653a039-f75a-5a64-aa14-a87f58bc13a4",
           "text": "• Propiedades de la Luz",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "77d38cc4-09f9-53cb-a889-58e3c6c0cc7e",
           "text": "• Elementos de astrofísica: el Sol\nRadiaciones y nuestro universo",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "361a0cff-7038-501a-ad31-9e6cb4157ab0",
           "text": "• Electricidad y magnetismo",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "3027c5b9-f590-5f43-b477-b33db3accf36",
           "text": "• Electrostática. Corriente eléctrica",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "debd0099-cecd-55bf-8514-7b7132f04ea6",
           "text": "• Circuitos y los principios de la\nconservación",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "87129f4d-1573-52fe-bdf2-53bbd4d55309",
           "text": "• Magnetismo",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ee8a9342-f135-5115-88b1-05cc3c953784",
           "text": "• Inducción electromagnética",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "73c8b3be-b217-5818-8767-c983de52d64d",
           "text": "• Elementos de geofísica: Magnetismo\nterrestre y efectos magnéticos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "f9955c13-aec5-5be2-bcf1-d8c6afb1f53f",
           "text": "• Propiedades eléctricas de las rocas",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "13c4fcfe-c656-50de-a93a-fb196cd2fd86",
           "text": "• Elementos de Astrofísica vinculado a\nelectricidad y magnetismo",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "e3071cca-9665-53c2-a7f3-e8a74863f948",
           "text": "Nociones de Física moderna",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1f38ccee-3d36-5edd-89a6-df015a7ef5ee",
           "text": "• Cinemática relativista",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "cdf40b8f-1a11-5d0c-9543-de2d61f3a49e",
           "text": "• Momento y energía relativista",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "73495285-7149-5f84-bc1a-92a771106a99",
           "text": "El átomo",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "20c7b046-4fa3-55d5-991f-fdc6065462f7",
           "text": "• Cuantización e incertidumbre",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "24593137-ad85-5e5f-9391-ffa5ee8eb657",
           "text": "• Radioactividad.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "d2b3d13a-2cf5-51ac-89bd-ac6e2765f350",
           "text": "• Fisión y fusión.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "81ca0be2-859b-5a1a-8109-fc7010524e86",
           "text": "• Elementos de geofísica: minerales\nradiactivos.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "0fd485cb-6368-5c22-8322-9e18ae015f59",
           "text": "• Elementos de astrofísica: Nuestro universo, origen y\nevolución (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "94ed0281-6db2-5236-8692-9e6fcbb41400",
           "text": "• Proyectos de indagación con la conservación (P1 hasta P6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "533b0402-43fe-5ae3-9b3e-e21d846c5ed4",
           "text": "Fluidos",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "34c83471-7cbe-5915-b002-82768d2fd26f",
           "text": "• Indagación de la densidad (P1, P3 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "671a5f92-327e-508f-b56d-694010f36283",
           "text": "• Relación entre presión, fuerza y (P1, P3 y P5). Presión en los\nfluidos (P1, P2 y P3).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "67701d87-df0a-5fa8-9d3c-9161aebba111",
           "text": "• Principios de Pascal, Arquímedes, Continuidad, Bernoulli y\nsus aplicaciones en medicinas, aviación y otras (P1 hasta\nP6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "7c531594-3fb2-5f04-b05c-8a55e4c306dc",
           "text": "• Movimiento de diferentes contaminantes en el subsuelo y\nel efecto de su densidad en su transportación en las aguas\nsubterráneas (P1, P3 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "81be8bf8-24bd-55c2-a777-675241c31491",
           "text": "• Elementos de astrofísica: formación de nuestro planeta y\nciclo de estrella. Agujero negro (P1-P6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "17b0c4cc-9c38-5c25-960a-b16d4ab89710",
           "text": "Calor y termodinámica",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "95264f59-e319-5e95-8831-55fc81347b81",
           "text": "• Relación entre temperatura y calor (P3 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "8af85fdd-e184-5a7b-8329-39fef1cdfc2a",
           "text": "• Ley cero de la termodinámica (P3 y P4).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "eaf9913d-e135-5bf0-84f7-badde4f33321",
           "text": "• Relación entre energía y calor (P1, P3 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "a9084c7a-381b-5098-ad90-c39db8b41829",
           "text": "• Dilatación de sólidos, líquidos y gases (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "3c331ec5-535f-55e9-8729-98dac30cee4b",
           "text": "• Energía interna. Relación entre movimiento de los átomos y\nmoléculas con la temperatura (P1, P2 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "b7c6de71-c982-5b1a-82ac-c05972dc5fb9",
           "text": "• Entropía (P1 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "b1de0886-47d4-553d-8afb-b032408d4053",
           "text": "• Aplicaciones: Máquina de vapor, motores de combustión\ninterna y energías alternas.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "6081564e-dad8-5f1f-8213-11799b6350ef",
           "text": "• Ciencias de la Tierra y el Espacio:",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "bb3c5a01-6350-5880-aba3-0803c69211b3",
           "text": "• Temperatura de las diferentes capas de la Tierra.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "0b6997a5-4fa2-5c54-8d50-bb7abfd99e79",
           "text": "• Relación entre profundidad y cambio de temperatura en el\ninterior de la Tierra.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "3d43f176-0eaf-5c4f-8851-b4f91febfb66",
           "text": "• El planeta Tierra como sistema termodinámico.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "971c1eb9-a50a-51d4-bd21-883d19a2ed90",
           "text": "• Mecanismo de transporte de calor en el interior de la tierra.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "01f74823-6968-5394-b563-87dcdca406da",
           "text": "• Movimiento armónico simple: relación entre fuerza,\nvelocidad y aceleración (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "1edbecf9-53e9-53d4-9a9a-9f626c7edade",
           "text": "• Relación entre frecuencia, longitud de onda y velocidad de\nla onda (P1 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "f46599fe-3c81-55d6-93d5-ae4689da23e6",
           "text": "• Resonancia y frecuencia (P1, P3 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "95fe6590-9ffc-550c-bafc-cd84781b8189",
           "text": "• Ondas y sus propiedades: propagación, efecto Doppler,\nabsorción, reflexión, refracción, interferencia, difracción,\npolarización y dispersión (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "cff6e5c4-d07b-5d89-89f3-079f95ea1ea8",
           "text": "• Ondas electromagnéticas y su espectro (P1 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "58b4bc44-9d02-5b22-bff4-4b1ba1ef7a26",
           "text": "• Luz: espejos, lentes y prismas (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "846c809d-c0ee-54d6-aaec-741774e9927a",
           "text": "• Aplicaciones de las ondas en Ciencias de la Tierra, la salud e\ningeniería (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "6f4d465e-7179-599c-84b6-8cf3c7897866",
           "text": "• Proyectos de indagación aplicando las propiedades de\nOnda.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "219e0c77-d89f-58cd-95c6-163e113f1d6d",
           "text": "• Uso de las ondas sísmicas para determinar la composición\ndel interior de la Tierra.",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "f2eaea5e-a8fc-57ba-9478-9c66321df7e6",
           "text": "• Electricidad y magnetismo",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "13081ea1-c530-512d-bf3e-c03a0bcf0c8a",
           "text": "• Electrostática: Ley de Coulomb y campo eléctrico,\nconductores y dieléctricos, carga por inducción y\npolarización, potencial eléctrico, condensadores (P1 hasta\nP5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "30945ae6-1caa-53b3-a1b0-5b1d6341b275",
           "text": "• Electricidad: corriente, resistencia, Ley de Ohm, potencia\neléctrica, fuerza electromotriz, circuitos eléctricos,\nresistencias en serie y paralelo, sus aplicaciones (P1 hasta\nP6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "13ed44cc-3c51-5439-a969-34db3b547f92",
           "text": "• Magnetismo: Campo magnético, fuerza magnética,\ncampo magnético generado por corriente, bobinas, fuerza\ndel campo magnético sobre corriente, Ley de Faraday, ley\nde Lenz, Fem Inducida, generadores y motores eléctricos,\ncorriente alterna (P1 hasta P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "ff5ee2e9-6c56-502e-9b5c-6117275b8b45",
           "text": "• Indagación en electromagnetismo y sus aplicaciones (P1\nhasta P6).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "c2e32670-9d33-5a1f-9662-0e95aadc0307",
           "text": "Nociones de Física Moderna",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "2d5da7e3-958f-581f-a621-5092efba4bc2",
           "text": "• Cuantización e incertidumbre: Las partes que componen\nel átomo. Modelos atómicos. Cuantización de la energía.\nAbsorción y emisión. Incertidumbre (P1, P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "9eab8ae3-4554-5eb4-bd2e-380479b1d9ba",
           "text": "• Relatividad: cinemática relativista, momento y energía\nrelativista,",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "25d800c2-712c-5627-a0c0-996cab4a43c0",
           "text": "• Efecto fotoeléctrico (P1, P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         },
         {
           "id": "63ed9dc3-e92a-5f40-b91a-1f0ef9815568",
           "text": "• Física Nuclear: Radiación ionizante y no ionizante. Isótopos\ny sus aplicaciones. Radioactividad y sus aplicaciones\nen salud, industria y agricultura. Reacciones nucleares.\nGeneración energética: fisión y fusión (P1, P4 y P5).",
-          "reason": "GRADE_PENDING_REVIEW"
+          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
         }
       ],
       "instrumentReview": null,
@@ -10751,6 +11154,10 @@
       "exclusions": [
         "Optativas y contenidos atribuidos a otros grados.",
         "Actitudes personales y listados generales de procesos no se convierten en requisitos de cada actividad."
+      ],
+      "sourceNotes": [
+        "P1–P6 remiten al menú de procesos de la primera página del grado, no a grados escolares.",
+        "Se conserva literalmente la fuente, incluidas erratas de los indicadores; el encabezado y el scope determinan componente y grado."
       ]
     }
   ]

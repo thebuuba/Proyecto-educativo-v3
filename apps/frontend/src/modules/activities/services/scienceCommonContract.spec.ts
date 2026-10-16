@@ -7,7 +7,8 @@ import {appendInstrumentCriterion,completeInstrumentCriterion,nextCatalogCriteri
 import {activityDefaultSuggestions} from '../utils/activityDefaultSuggestions'
 import topics from '../../../../../../data/evaluation-instruments/science-grade-1-contracts.json'
 import topicsTwo from '../../../../../../data/evaluation-instruments/science-grade-2-contracts.json'
-for(const {grade,code,fixtures} of [{grade:1,code:'NAT-TU',fixtures:topics},{grade:2,code:'NAT-VIDA',fixtures:topicsTwo}]){
+import topicsThree from '../../../../../../data/evaluation-instruments/science-grade-3-contracts.json'
+for(const {grade,code,fixtures} of [{grade:1,code:'NAT-TU',fixtures:topics},{grade:2,code:'NAT-VIDA',fixtures:topicsTwo},{grade:3,code:'NAT-FISICAS',fixtures:topicsThree}]){
 const cases=fixtures.flatMap(f=>[f,...(f.variants??[]).map(description=>({description,id:f.id}))])
 const context={level:'SECONDARY' as const,grade,cycle:1,modalityCode:'academic',subjectCode:code,subjectName:'Ciencias de la Naturaleza',optativeExitName:null}
 describe(`Ciencias ${grade}.º: paridad, formatos, edición y precisión`,()=>{

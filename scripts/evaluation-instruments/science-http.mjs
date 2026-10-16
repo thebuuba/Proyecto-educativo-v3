@@ -46,7 +46,13 @@ try{
   const center=(await request('/activities/center')).data;assert(center.sectionSubjects.some(s=>s.id===context.sectionSubjectId))
   console.log(JSON.stringify({phase:'authenticated-context',project,grade,sectionSubjectId:context.sectionSubjectId}))
   if(recheck){
-    const report=JSON.parse(readFileSync(resultFile,'utf8')),all=await activities()
+    const report=JSON.parse(readFileSync(resultFile,'utf8'))
+    if(report.finalBuildRecheck)report.previousBuildRechecks=[...report.previousBuildRechecks??[],report.finalBuildRecheck]
+    delete report.finalBuildRecheck
+    report.semanticControls=[]
+    report.recheckProgress={at:new Date().toISOString(),phase:'REOPENING',reopened:0,generated:[],languageRegressions:[]}
+    writeFileSync(resultFile,JSON.stringify(report,null,2)+'\n')
+    const all=await activities()
     for(const row of report.savedEvidence){const a=all.find(a=>a.id===row.activityId);assert(a);assert.equal(hash(definition(a)),row.instrumentHash);assert.equal(a.teachingStrategyId,'CASE_STUDY');assertSource(a.instrumentSnapshot)}
     const generated=[]
     report.recheckProgress={at:new Date().toISOString(),reopened:report.savedEvidence.length,generated,languageRegressions:[]}
@@ -59,24 +65,31 @@ try{
       generated.push({type,total,catalog:proposal.catalogVersion})
       saveReadProof()
     }
-    if(grade===1||grade===2){
+    if(grade===1||grade===2||grade===3){
       const controls=grade===1?[
         ['Formula preguntas investigables sobre los vientos.','-question',/-research$/],
         ['Explica el ciclo del agua o representa la estructura interna de la Tierra mediante un dibujo.','-alternative',null],
         ['Formulen una hipótesis sobre la erosión del suelo. Realicen la práctica indicada y registren las observaciones.','-experiment-procedure',/-research$/],
         ['Los estudiantes explicarán cómo realizar un experimento sobre erosión del suelo.','-explanation',/-experiment-procedure$|safety$/],
-      ]:[
+      ]:grade===2?[
         ['Explica las partes y funciones de una célula.','-functions',/-representation$/],
         ['Compara la metamorfosis de los seres vivos representados en las imágenes.','-comparison',/-representation$/],
         ['Resuelve los ejercicios de herencia mendeliana con los datos ficticios proporcionados.','-problem-reasoning',/-calculation$|result$/],
         ['Interpreta los datos proporcionados de fotosíntesis sin realizar experimentos.','-data-interpretation',/-experiment-procedure$|safety$/],
+      ]:[
+        ['Interpreta el circuito en serie construido por el docente sin realizar otra práctica.','-analysis',/-construction$|experiment|safety$/],
+        ['Construye el circuito sencillo según el diseño y las precauciones indicadas.','-construction',/-experiment-procedure$|experiment-record$/],
+        ['Compara mezcla de luces y pigmentos con los casos proporcionados.','-comparison',/-matter-mixtures-/],
+        ['Mide el tiempo según el procedimiento y registra las mediciones.','-measurement',/-experiment-procedure$/],
+        ['Explica cómo funciona el radar.','-explanation',null,/ondas electromagnéticas/],
       ]
       report.semanticControls=[]
-      for(const [description,required,forbidden] of controls){
+      for(const [description,required,forbidden,scientificEvidence] of controls){
         const input={sectionSubjectId:context.sectionSubjectId,activityTitle:'Un título antiguo de volcanes',description,competencyBlock:'b1',maxScore:17.35,participationMode:'INDIVIDUAL',preferredInstrumentType:'rubrica'}
         const p=(await request('/evaluation-instruments/recommend',input)).data;assertSource(p)
         assert(p.criteria.some(c=>c.templateId.endsWith(required)))
         if(forbidden)assert(!p.criteria.some(c=>forbidden.test(c.templateId)))
+        if(scientificEvidence)assert.match(JSON.stringify(p.criteria),scientificEvidence)
         if(required==='-alternative')assert.equal(p.criteria.length,1)
         assert.deepEqual(content(p),content(editableFallbackRecommendation({...input,instrumentType:'rubrica',academicContext:academic})))
         report.semanticControls.push({description,criteria:p.criteria.map(c=>c.templateId),catalog:p.catalogVersion});saveReadProof()
@@ -98,7 +111,18 @@ try{
       languageRegressions.push({language,catalog:p.catalogVersion,curriculumVersionId:p.curriculumVersionId,scopeId:p.curriculumScopeId})
       report.recheckProgress.languageRegressions=[...languageRegressions];saveReadProof()
     }
-    report.finalBuildRecheck={at:new Date().toISOString(),reopened:report.savedEvidence.length,generated,languageRegressions};writeFileSync(resultFile,JSON.stringify(report,null,2)+'\n')
+    const scienceRegressions=[]
+    for(let previous=1;previous<grade;previous++){
+      const ctx=JSON.parse(readFileSync(`.wrangler/science-source/grade-${previous}-context.json`,'utf8')),src=JSON.parse(readFileSync(`.wrangler/science-source/grade-${previous}-source-catalog.json`,'utf8'))
+      assert.equal(ctx.project,project);assert.equal(ctx.schoolId,context.schoolId)
+      const description=JSON.parse(readFileSync(`data/evaluation-instruments/science-grade-${previous}-contracts.json`,'utf8'))[0].description
+      const input={sectionSubjectId:ctx.sectionSubjectId,activityTitle:'Regresión QA Ciencias',description,competencyBlock:'b1',maxScore:17.35,participationMode:'INDIVIDUAL',preferredInstrumentType:'rubrica'}
+      const p=(await request('/evaluation-instruments/recommend',input)).data
+      assert.equal(p.curriculumVersionId,src.versionId);assert.equal(p.curriculumScopeId,src.metadata.scopeMap[previous].id);assert(p.criteria.some(c=>c.templateId.startsWith(`nat-${previous}-`)))
+      assert.deepEqual(content(p),content(editableFallbackRecommendation({...input,instrumentType:'rubrica',academicContext:{level:'SECONDARY',grade:previous,subjectCode:ctx.subjectCode}})))
+      scienceRegressions.push({grade:previous,catalog:p.catalogVersion,curriculumVersionId:p.curriculumVersionId,scopeId:p.curriculumScopeId})
+    }
+    report.finalBuildRecheck={at:new Date().toISOString(),reopened:report.savedEvidence.length,generated,languageRegressions,scienceRegressions};writeFileSync(resultFile,JSON.stringify(report,null,2)+'\n')
     console.log(JSON.stringify({phase:'recheck',grade,reopened:report.savedEvidence.length}));process.exitCode=0
   }else{
     for(const [index,type] of formats.entries()){
