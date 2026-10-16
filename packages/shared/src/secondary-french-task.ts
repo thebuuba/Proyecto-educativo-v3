@@ -3,7 +3,7 @@ import type { ContextualTopicCriterion } from './secondary-topic-criteria'
 export type FrenchMode = 'reading' | 'listening' | 'oral' | 'writing' | 'oral-interaction' | 'written-interaction' | 'unspecified'
 export type FrenchAction = { text: string; mode: FrenchMode; features: string[]; alternatives?: FrenchAction[] }
 export type FrenchTask = { grade: number; actions: FrenchAction[]; activityType: string; technique: string }
-export type FrenchFeature = { id: string; match: RegExp; criterion: (action: FrenchAction) => ContextualTopicCriterion }
+export type FrenchFeature = { id: string; match: RegExp; exclude?: RegExp; criterion: (action: FrenchAction) => ContextualTopicCriterion }
 export const normalizeFrenchTask = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[’‘]/g, "'")
 
 /** Examples, resource lists and excluded actions are not requests. Apostrophes in French words remain intact. */
@@ -12,7 +12,7 @@ export function frenchRequirementText(value: string) {
     .replace(/&nbsp;|&#160;/gi, ' ').replace(/[«“"][^»”"]*[»”"]/g, ''))
     .replace(/\b(?:recursos?|ressources|ejemplos?|exemples?)\s*:[^.;\n]*/g, '')
     .replace(/\b(?:no\s+(?:(?:se|deben?|hay que)\s+)?(?:\w+\s+)?|sin\s+)(?:present\w*|escrib\w*|redact\w*|dialog\w*|hag\w*|hagan|evalu\w*|exig\w*|inclu\w*|usar|utiliz\w*)\b[^.;\n]*/g, '')
-    .replace(/\b(?:ne\s+(?:\w+\s+){1,3}(?:pas|jamais)|sans\s+(?:ecrire|parler|presenter|dialoguer))\b[^.;\n]*/g, '')
+    .replace(/\b(?:ne\s+(?:\w+\s+){1,3}(?:pas|jamais)|sans\s+(?:ecrire|parler|presenter|dialoguer|dialogue|presentation orale))\b[^.;\n]*/g, '')
     .replace(/\b(?:como recurso|con apoyo de|a l'aide de)\b[^.;\n]*/g, '')
     .trim()
 }
@@ -21,7 +21,7 @@ export const frenchReceptive = (mode: FrenchMode) => mode === 'reading' || mode 
 export const frenchWritten = (mode: FrenchMode) => mode === 'writing' || mode === 'written-interaction'
 export const frenchOral = (mode: FrenchMode) => mode === 'oral' || mode === 'oral-interaction'
 export const frenchSource = (mode: FrenchMode) => mode === 'listening' ? 'mensaje escuchado' : 'texto leído'
-const actionVerb = '(?:lee|lean|leer(?:an)?|lisez|lire|lisent|escuch\\w*|ecoutez|ecouter|ecoutent|escrib\\w*|redact\\w*|ecrivez|ecrire|ecrivent|redigez|rediger|present\\w*|presentez|presenter|presentent|describ\\w*|decrivez|decrire|decrivent|convers\\w*|dialog\\w*|echangez|echanger|echangent|achetez|acheter|achetent|demandez|demander|solicita\\w*|exprimez|exprimer|expresa\\w*)'
+const actionVerb = '(?:lee|lean|leer(?:an)?|lisez|lire|lisent|escuch\\w*|ecoutez|ecouter|ecoutent|escrib\\w*|redact\\w*|ecrivez|ecrire|ecrivent|redigez|rediger|present\\w*|presentez|presenter|presentent|describ\\w*|decrivez|decrire|decrivent|convers\\w*|dialog\\w*|echangez|echanger|echangent|achetez|acheter|achetent|demandez|demander|solicita\\w*|exprimez|exprimer|expresa\\w*|invitez|inviter|acceptez|accepter|refusez|refuser|acepta\\w*|rechaz\\w*|invita\\w*|donnez|donner|prohibe\\w*|interdisez|interdire)'
 const independent = new RegExp(`(?:[.;\\n]\\s*|\\s+(?:y|et|luego|despues|puis|ensuite)\\s+)(?=(?:(?:luego|despues|puis|ensuite)[, ]+)?(?:(?:los estudiantes|cada estudiante|les eleves)\\s+)?${actionVerb}\\b)`, 'g')
 
 function modeOf(text: string): FrenchMode | null {
@@ -44,7 +44,7 @@ export function parseFrenchTask(title: string, description: string, grade: numbe
   const featureIds = (part: string) => {
     const content = part.replace(/\b(?:oral(?:ement|mente)?|par ecrit|por escrito|en frances|en francais)\b/g, ' ').replace(/\s+/g, ' ')
     const lexicalTask = /\b(?:escrib\w*|identifi\w*|ecri\w*|releve\w*|lisez|lee|lean)\s+(?:(?:el|un|le|du|des|les)\s+)?(?:vocabulario|lexico|terminos|vocabulaire|lexique|mots)\b/.test(content)
-    return features.filter(feature => (!lexicalTask || /^(?:lexicon|grammar)-/.test(feature.id)) && feature.match.test(content)).map(feature => feature.id)
+    return features.filter(feature => (!lexicalTask || /^(?:lexicon|grammar)-/.test(feature.id)) && feature.match.test(content) && !feature.exclude?.test(content)).map(feature => feature.id)
   }
   const single = (part: string): FrenchAction | null => {
     const mode = modeOf(part), ids = featureIds(part)

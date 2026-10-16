@@ -8,19 +8,21 @@ import { frenchDeliveryCriteria } from './secondary-french-delivery'
 import { frenchGradeTwoFeatures } from './secondary-french-grade-2'
 import { frenchGradeThreeFeatures } from './secondary-french-grade-3'
 import { frenchGradeFourFeatures } from './secondary-french-grade-4'
+import { frenchGradeFiveFeatures } from './secondary-french-grade-5'
 import { frenchOral, frenchWritten, frenchReceptive, frenchRequirementText, normalizeFrenchTask, parseFrenchTask, type FrenchAction, type FrenchTask, type FrenchFeature } from './secondary-french-task'
 export { frenchGradeOneModule } from './secondary-french-grade-1'
 export { frenchGradeTwoModule } from './secondary-french-grade-2'
 export { frenchGradeThreeModule } from './secondary-french-grade-3'
 export { frenchGradeFourModule } from './secondary-french-grade-4'
+export { frenchGradeFiveModule } from './secondary-french-grade-5'
 
 export function commonSecondaryFrench(context?: InstrumentAcademicContext | null) {
-  if (context?.level !== 'SECONDARY' || ![1, 2, 3, 4].includes(context.grade) || context.optativeExitName) return false
+  if (context?.level !== 'SECONDARY' || ![1, 2, 3, 4, 5].includes(context.grade) || context.optativeExitName) return false
   const code = context.subjectCode.trim().toUpperCase()
   return code === 'FRA' || (!code && /^(?:(?:lenguas? extranjeras? )?frances|francais)$/.test(normalizeFrenchTask(context.subjectName ?? '')))
 }
 const features = [...frenchGradeOneFeatures, ...frenchGradeOneGrammar, ...frenchGradeOneStrategies, ...frenchGradeOneGenres, ...frenchGradeOneLexicon]
-const gradeFeatures = (grade: number) => grade === 4 ? frenchGradeFourFeatures : grade === 3 ? frenchGradeThreeFeatures : grade === 2 ? frenchGradeTwoFeatures : features
+const gradeFeatures = (grade: number) => grade === 5 ? frenchGradeFiveFeatures : grade === 4 ? frenchGradeFourFeatures : grade === 3 ? frenchGradeThreeFeatures : grade === 2 ? frenchGradeTwoFeatures : features
 export function resolveCommonFrenchTask(title: string, description: string, context?: InstrumentAcademicContext | null): FrenchTask | null {
   return commonSecondaryFrench(context) ? parseFrenchTask(title, description, context!.grade, gradeFeatures(context!.grade)) : null
 }

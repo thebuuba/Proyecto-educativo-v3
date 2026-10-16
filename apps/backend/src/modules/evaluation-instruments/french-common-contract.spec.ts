@@ -4,8 +4,9 @@ import { evaluationCatalogForVersion } from './catalog-current'
 import grade2 from '../../../../../data/evaluation-instruments/french-grade-2-contracts.json'
 import grade3 from '../../../../../data/evaluation-instruments/french-grade-3-contracts.json'
 import grade4 from '../../../../../data/evaluation-instruments/french-grade-4-contracts.json'
+import grade5 from '../../../../../data/evaluation-instruments/french-grade-5-contracts.json'
 
-const grades = [{ grade: 2, fixtures: grade2, prior: 'evaluation-2026.70' }, { grade: 3, fixtures: grade3, prior: 'evaluation-2026.71' }, { grade: 4, fixtures: grade4, prior: 'evaluation-2026.72' }]
+const grades = [{ grade: 2, fixtures: grade2, prior: 'evaluation-2026.70' }, { grade: 3, fixtures: grade3, prior: 'evaluation-2026.71' }, { grade: 4, fixtures: grade4, prior: 'evaluation-2026.72' }, { grade: 5, fixtures: grade5, prior: 'evaluation-2026.73' }]
 const formats = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const
 for (const { grade, fixtures, prior } of grades) describe(`Francés común ${grade}.º: contenido y regresiones`, () => {
   const context = { level: 'SECONDARY' as const, grade, cycle: grade <= 3 ? 1 : 2, modalityCode: 'academic', subjectCode: 'FRA', subjectName: 'Francés', optativeExitName: null }
@@ -101,7 +102,29 @@ for (const { grade, fixtures, prior } of grades) describe(`Francés común ${gra
   if (grade >= 4) it('la escala de grado conserva evidencia contextual y la gramática no se confunde con frecuencia observada', () => {
     const p = recommend({ activityTitle: 'Actividad', description: fixtures.at(-1)!.description, preferredInstrumentType: 'escala', maxScore: 17.35, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
     expect(p.criteria.every(c => c.descriptors[0].text === c.progressionLevels?.[0] && !c.descriptors[0].text.includes('todos los aspectos del indicador'))).toBe(true)
-    const grammar = recommend({ activityTitle: 'Actividad', description: 'Identifica en el texto francés los adverbios de frecuencia.', preferredInstrumentType: 'escala', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    const grammar = recommend({ activityTitle: 'Actividad', description: grade === 4 ? 'Identifica en el texto francés los adverbios de frecuencia.' : fixtures.at(-1)!.description, preferredInstrumentType: 'escala', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
     expect(grammar.levels[0].label).not.toBe('Siempre')
+  })
+  if (grade === 5) for (const [description, id] of [
+    ['Donnez des instructions en français.', 'instructions'], ['Interdisez une action en français.', 'prohibition'],
+    ['Invitez un camarade en français.', 'invitation'], ['Rechaza por escrito una invitación en francés.', 'invitation-response'],
+    ['Identifica los pronombres interrogativos en el texto francés.', 'grammar-questions'],
+    ['Utiliza en francés las preposiciones solicitadas.', 'grammar-prepositions'],
+    ['Escribe en francés usando artículos contractos.', 'grammar-contracted'],
+    ['Utiliza pronombres de objeto directo en francés.', 'grammar-object-pronouns'],
+    ['Utiliza adjetivos calificativos en francés.', 'grammar-adjectives'],
+    ['Escribe en francés usando los conectores solicitados.', 'grammar-connectors'],
+    ['Escribe vocabulario de tradiciones en francés.', 'lexicon-traditions'],
+    ['Écrivez le vocabulaire des lieux en français.', 'lexicon-places'],
+    ['Escribe vocabulario de población en francés.', 'lexicon-population'],
+    ['Escribe vocabulario de rasgos de carácter en francés.', 'lexicon-character'],
+    ['Escribe vocabulario de invitaciones en francés.', 'lexicon-invitations'],
+  ]) it(`contenido específico: ${id}`, () => {
+    const p = recommend({ activityTitle: 'Actividad', description, maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(p.criteria.some(c => c.templateId === `fra-${grade}-${id}`)).toBe(true)
+  })
+  if (grade === 5) it('una respuesta no obliga a crear otra invitación y una conjunción no impone gramática', () => {
+    const p = recommend({ activityTitle: 'Actividad', description: 'Écrivez une réponse pour refuser une invitation en français, mais sans dialogue oral.', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
+    expect(p.criteria.map(c => c.templateId)).toEqual(['fra-5-invitation-response', 'fra-5-written'])
   })
 })

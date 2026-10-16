@@ -5941,22 +5941,29 @@
         ]
       },
       "coverage": {
-        "inventory": "VISUALLY_VERIFIED",
-        "implementation": "PENDING",
-        "providers": [],
-        "automated": "NOT_RUN",
-        "httpDatabase": "NOT_RUN",
-        "browser": "NOT_RUN",
-        "evidence": [],
+        "inventory": "VISUALLY_REVIEWED",
+        "implementation": "CONNECTED_DEFINED_PATTERNS",
+        "providers": [
+          "frances-comunicacion-5"
+        ],
+        "catalog": "evaluation-2026.74",
+        "automated": "PASSED: 584 backend French / 503 frontend French, including previous grades",
+        "httpDatabase": "PASSED: 0 interpretations, 0 matrix recommendations, 4 persistence recommendations, 4 formats saved/edited/reopened; final recheck 4",
+        "browser": "PENDING_ISOLATED_QA_BROWSER_UNAVAILABLE",
+        "evidence": [
+          "frances-5.md",
+          "frances-5-ejemplos.md",
+          "frances-5-verificacion.json"
+        ],
         "pending": [
-          "Implement and verify in grade order."
+          "Recorrido visual QA en sesión separada; patrones lingüísticos acotados, sin comprensión universal."
         ]
       },
       "pedagogicalInventory": {
         "document": "frances-inventario.md",
         "section": "Grado 5",
         "officialText": "officialRecords",
-        "adaptation": "Not implemented"
+        "adaptation": "Patrones acotados conectados; consultar frances-5.md y sus límites de verificación."
       }
     },
     {
