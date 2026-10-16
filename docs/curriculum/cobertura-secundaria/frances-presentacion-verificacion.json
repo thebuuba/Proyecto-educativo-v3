@@ -1,0 +1,563 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.76",
+  "base": "http://localhost:8787",
+  "verification": "AUTOMATED_DOM_AND_AUTHENTICATED_HTTP_DB; NOT_VISUAL_BROWSER",
+  "catalogInstallation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.76",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 8
+  },
+  "preservation": {
+    "preservedSnapshots": 38,
+    "preservedReleases": 8,
+    "addedSnapshots": 4,
+    "addedReleases": 1
+  },
+  "personalContext": {
+    "active": true,
+    "firstGradeValid": true,
+    "sameSchoolAsQA": false,
+    "session": "NOT_ACCESSED"
+  },
+  "automaticStrategy": {
+    "before": null,
+    "after": "SIMULATION"
+  },
+  "timings": {
+    "conditions": "HTTP totals and direct-service runs have different conditions. DB durations include pool/network/SQL/serialization; they are not pure SQL times. No subtraction between runs.",
+    "before": [
+      {
+        "mode": "HTTP_TOTAL_INCLUDES_NETWORK_AUTH_DB_CPU",
+        "path": "/auth/login",
+        "ms": 2912,
+        "status": 201
+      },
+      {
+        "mode": "DIRECT_SERVICE_DB_ROUNDTRIPS_INCLUDED",
+        "pass": 0,
+        "action": "interpret",
+        "ms": 8950,
+        "stages": [
+          {
+            "stage": "authorized-context",
+            "ms": 1068
+          },
+          {
+            "stage": "catalog-jsonb-validation",
+            "ms": 1710
+          },
+          {
+            "stage": "version-first",
+            "ms": 141
+          },
+          {
+            "stage": "scopes",
+            "ms": 49
+          },
+          {
+            "stage": "mappings",
+            "ms": 50
+          },
+          {
+            "stage": "elements-and-source-spans",
+            "ms": 5888
+          }
+        ]
+      },
+      {
+        "mode": "HTTP_TOTAL_INCLUDES_NETWORK_AUTH_DB_CPU",
+        "path": "/evaluation-instruments/interpret",
+        "ms": 9148,
+        "status": 200
+      },
+      {
+        "mode": "DIRECT_SERVICE_DB_ROUNDTRIPS_INCLUDED",
+        "pass": 0,
+        "action": "recommend",
+        "ms": 6135,
+        "stages": [
+          {
+            "stage": "authorized-context",
+            "ms": 1151
+          },
+          {
+            "stage": "catalog-jsonb-validation",
+            "ms": 873
+          },
+          {
+            "stage": "version-first",
+            "ms": 51
+          },
+          {
+            "stage": "scopes",
+            "ms": 83
+          },
+          {
+            "stage": "mappings",
+            "ms": 48
+          },
+          {
+            "stage": "elements-and-source-spans",
+            "ms": 3908
+          },
+          {
+            "stage": "composition-cpu",
+            "ms": 16
+          }
+        ]
+      },
+      {
+        "mode": "HTTP_TOTAL_INCLUDES_NETWORK_AUTH_DB_CPU",
+        "path": "/evaluation-instruments/recommend",
+        "ms": 7802,
+        "status": 200
+      },
+      {
+        "mode": "DIRECT_SERVICE_DB_ROUNDTRIPS_INCLUDED",
+        "pass": 1,
+        "action": "interpret",
+        "ms": 7897,
+        "stages": [
+          {
+            "stage": "authorized-context",
+            "ms": 481
+          },
+          {
+            "stage": "catalog-jsonb-validation",
+            "ms": 1210
+          },
+          {
+            "stage": "version-first",
+            "ms": 118
+          },
+          {
+            "stage": "scopes",
+            "ms": 48
+          },
+          {
+            "stage": "mappings",
+            "ms": 82
+          },
+          {
+            "stage": "elements-and-source-spans",
+            "ms": 5945
+          }
+        ]
+      },
+      {
+        "mode": "HTTP_TOTAL_INCLUDES_NETWORK_AUTH_DB_CPU",
+        "path": "/evaluation-instruments/interpret",
+        "ms": 9502,
+        "status": 200
+      },
+      {
+        "mode": "DIRECT_SERVICE_DB_ROUNDTRIPS_INCLUDED",
+        "pass": 1,
+        "action": "recommend",
+        "ms": 6666,
+        "stages": [
+          {
+            "stage": "authorized-context",
+            "ms": 736
+          },
+          {
+            "stage": "catalog-jsonb-validation",
+            "ms": 687
+          },
+          {
+            "stage": "version-first",
+            "ms": 479
+          },
+          {
+            "stage": "scopes",
+            "ms": 59
+          },
+          {
+            "stage": "mappings",
+            "ms": 65
+          },
+          {
+            "stage": "elements-and-source-spans",
+            "ms": 4623
+          },
+          {
+            "stage": "composition-cpu",
+            "ms": 11
+          }
+        ]
+      },
+      {
+        "mode": "HTTP_TOTAL_INCLUDES_NETWORK_AUTH_DB_CPU",
+        "path": "/evaluation-instruments/recommend",
+        "ms": 7913,
+        "status": 200
+      }
+    ],
+    "after": [
+      {
+        "mode": "HTTP_TOTAL_INCLUDES_NETWORK_AUTH_DB_CPU",
+        "path": "/auth/login",
+        "ms": 2419,
+        "status": 201
+      },
+      {
+        "mode": "DIRECT_SERVICE_DB_ROUNDTRIPS_INCLUDED",
+        "pass": 0,
+        "action": "interpret",
+        "ms": 43246,
+        "stages": [
+          {
+            "stage": "authorized-context",
+            "ms": 1481
+          },
+          {
+            "stage": "catalog-jsonb-validation",
+            "ms": 2909
+          },
+          {
+            "stage": "version-first",
+            "ms": 59
+          },
+          {
+            "stage": "scopes",
+            "ms": 62
+          },
+          {
+            "stage": "mappings",
+            "ms": 784
+          },
+          {
+            "stage": "elements-and-source-spans",
+            "ms": 37980
+          }
+        ]
+      },
+      {
+        "mode": "HTTP_TOTAL_INCLUDES_NETWORK_AUTH_DB_CPU",
+        "path": "/evaluation-instruments/interpret",
+        "ms": 9930,
+        "status": 200
+      },
+      {
+        "mode": "DIRECT_SERVICE_DB_ROUNDTRIPS_INCLUDED",
+        "pass": 0,
+        "action": "recommend",
+        "ms": 6644,
+        "stages": [
+          {
+            "stage": "authorized-context",
+            "ms": 988
+          },
+          {
+            "stage": "catalog-jsonb-validation",
+            "ms": 811
+          },
+          {
+            "stage": "version-first",
+            "ms": 53
+          },
+          {
+            "stage": "scopes",
+            "ms": 55
+          },
+          {
+            "stage": "mappings",
+            "ms": 1299
+          },
+          {
+            "stage": "elements-and-source-spans",
+            "ms": 3468
+          },
+          {
+            "stage": "composition-cpu",
+            "ms": 22
+          }
+        ]
+      },
+      {
+        "mode": "HTTP_TOTAL_INCLUDES_NETWORK_AUTH_DB_CPU",
+        "path": "/evaluation-instruments/recommend",
+        "ms": 6429,
+        "status": 200
+      },
+      {
+        "mode": "DIRECT_SERVICE_DB_ROUNDTRIPS_INCLUDED",
+        "pass": 1,
+        "action": "interpret",
+        "ms": 8194,
+        "stages": [
+          {
+            "stage": "authorized-context",
+            "ms": 1059
+          },
+          {
+            "stage": "catalog-jsonb-validation",
+            "ms": 1320
+          },
+          {
+            "stage": "version-first",
+            "ms": 137
+          },
+          {
+            "stage": "scopes",
+            "ms": 80
+          },
+          {
+            "stage": "mappings",
+            "ms": 855
+          },
+          {
+            "stage": "elements-and-source-spans",
+            "ms": 4812
+          }
+        ]
+      },
+      {
+        "mode": "HTTP_TOTAL_INCLUDES_NETWORK_AUTH_DB_CPU",
+        "path": "/evaluation-instruments/interpret",
+        "ms": 8768,
+        "status": 200
+      },
+      {
+        "mode": "DIRECT_SERVICE_DB_ROUNDTRIPS_INCLUDED",
+        "pass": 1,
+        "action": "recommend",
+        "ms": 10415,
+        "stages": [
+          {
+            "stage": "authorized-context",
+            "ms": 845
+          },
+          {
+            "stage": "catalog-jsonb-validation",
+            "ms": 2076
+          },
+          {
+            "stage": "version-first",
+            "ms": 70
+          },
+          {
+            "stage": "scopes",
+            "ms": 44
+          },
+          {
+            "stage": "mappings",
+            "ms": 2765
+          },
+          {
+            "stage": "elements-and-source-spans",
+            "ms": 4644
+          },
+          {
+            "stage": "composition-cpu",
+            "ms": 10
+          }
+        ]
+      },
+      {
+        "mode": "HTTP_TOTAL_INCLUDES_NETWORK_AUTH_DB_CPU",
+        "path": "/evaluation-instruments/recommend",
+        "ms": 10854,
+        "status": 200
+      }
+    ],
+    "curriculumComparison": [
+      {
+        "pass": 0,
+        "relationMs": 2855,
+        "joinedMs": 2854,
+        "elements": 176,
+        "exact": true
+      },
+      {
+        "pass": 1,
+        "relationMs": 2288,
+        "joinedMs": 1361,
+        "elements": 176,
+        "exact": true
+      }
+    ]
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-O0t-Eal6.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-O0t-Eal6.js",
+        "sha256": "ed1d833009434e3ebd8d4adbe110538f2257c6877fa66469093e56fef2bc5ab7",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-B2XxUJ0x.js",
+        "sha256": "b812f6d839697986cdf6146a3f150980220a375506c603b597be1bfa73e2aa64",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-COpy7xUJ.js",
+        "sha256": "2ce2602b263cfde8eb50998cbe4e2050ffa9e8ee319cda6181b4311b2c2ad54c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-BR1nGUo2.js",
+        "sha256": "d899a74f53c62267bb9513858682b181491b1a5c6dc41e5f87b7a333ae92f2e2",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-CG2VBqwJ.js",
+        "sha256": "2af456b7aa69de0b3ac8e48672f23229582d3142c296cf5b50c32816111101c2",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "4493ffc82a4057e8baba3d1059cb9ead5797e7f01157ac85323ce5dfa2f0d90f",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "savedEvidence": [
+    {
+      "type": "rubrica",
+      "total": 20,
+      "activityId": "0a28c8b1-9757-47a3-84c7-3458638614f8",
+      "instrumentId": "1a01b882-c7b5-4df8-a80e-7695366e47da",
+      "snapshotId": "e8583ed4-7853-4736-b276-fd714b232628",
+      "instrumentHash": "ee2ead5d06335688e2d106f4b8a7d323411c81fec9e973a0413e401532275d46",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+        "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0",
+        "status": "PUBLISHED"
+      }
+    },
+    {
+      "type": "lista-cotejo",
+      "total": 17.35,
+      "activityId": "a6bf6734-80b1-4033-abf0-63dec9fc0708",
+      "instrumentId": "36c44591-b0b8-4ba1-a5cd-52de17b0ca99",
+      "snapshotId": "a3964b8b-a3f8-43be-a6db-86a840bf8837",
+      "instrumentHash": "a60a675d20f412fcc2ebafc38c3b861e111c051d7d834e8be09c9427cedbd5de",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+        "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0",
+        "status": "PUBLISHED"
+      }
+    },
+    {
+      "type": "escala",
+      "total": 20,
+      "activityId": "3af5f05b-5f31-4112-9254-386edfb3ac79",
+      "instrumentId": "22decc62-a966-4857-a340-d9411382c604",
+      "snapshotId": "c94c0fa0-b65d-4362-b3bc-2577e4d8fefd",
+      "instrumentHash": "5957a37f7a477844e29d7349dff6f3476f70bc5c2b97abaa7603bab940d45a9f",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+        "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0",
+        "status": "PUBLISHED"
+      }
+    },
+    {
+      "type": "lista-ponderada",
+      "total": 17.35,
+      "activityId": "a8f9775f-605e-4e43-ba2c-c0ce46aae85d",
+      "instrumentId": "332ad9d9-01c7-4d46-b4c9-a9156481f7cd",
+      "snapshotId": "4dfc113e-e802-444b-9742-d57ea70fb027",
+      "instrumentHash": "94e708fdad563582454b31591592aafde11b0cfd98cb4546f8040feda3f32288",
+      "manualTextAndWeightsPreserved": true,
+      "strategyOnlyExact": true,
+      "curriculum": {
+        "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+        "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0",
+        "status": "PUBLISHED"
+      }
+    }
+  ],
+  "finalBuildRecheck": {
+    "generated": 2,
+    "reopened": 4,
+    "at": "2026-10-16T03:25:42.371Z",
+    "transientFailures": [],
+    "curriculumContexts": [
+      {
+        "activityId": "0a28c8b1-9757-47a3-84c7-3458638614f8",
+        "catalog": "evaluation-2026.76",
+        "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+        "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+      },
+      {
+        "activityId": "a6bf6734-80b1-4033-abf0-63dec9fc0708",
+        "catalog": "evaluation-2026.76",
+        "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+        "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+      },
+      {
+        "activityId": "3af5f05b-5f31-4112-9254-386edfb3ac79",
+        "catalog": "evaluation-2026.76",
+        "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+        "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+      },
+      {
+        "activityId": "a8f9775f-605e-4e43-ba2c-c0ce46aae85d",
+        "catalog": "evaluation-2026.76",
+        "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+        "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+      }
+    ]
+  },
+  "incidents": [
+    {
+      "kind": "ASSET_URL_RETURNED_HTML_AFTER_REBUILD",
+      "resolvedBy": "SINGLE_LOCAL_SERVER_RESTART_AND_HASH_VERIFICATION",
+      "historicalSelectorCause": "NOT_PROVEN"
+    },
+    {
+      "kind": "SCALE_SAVE_HTTP_500_TRANSACTION_EXPIRED",
+      "confirmedAbsentBy": "SQL_ID_AND_SCOPED_NAME",
+      "reusedCreationId": "3af5f05b-5f31-4112-9254-386edfb3ac79",
+      "recovered": true,
+      "timeoutIncreased": false
+    }
+  ],
+  "browser": "BLOCKED_USER_UNAVAILABLE",
+  "tests": {
+    "backend": {
+      "files": 97,
+      "passed": 37574
+    },
+    "frontend": {
+      "files": 125,
+      "passed": 38096
+    }
+  },
+  "builds": {
+    "backend": 0,
+    "frontend": 0,
+    "cloudflareDryRun": 0
+  }
+}

@@ -1,5 +1,7 @@
 # Francés común en Development — informe de cierre
 
+Intervención posterior: la corrección de «Nos presentamos en francés» usa catálogo `.76`. Consultar el [informe actual con causas, instrumentos, mediciones y límites](2026-10-15-frances-presentacion-correcciones.md). Este documento conserva el cierre histórico de `.75`.
+
 Fecha local: 15/10/2026. Rama `amplia-instrumentos-secundaria`. Alcance exclusivo: recuperación del creador/Development y Francés común; sin optativas ni otras asignaturas.
 
 ## Resultado y cobertura real

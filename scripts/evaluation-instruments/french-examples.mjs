@@ -3,8 +3,10 @@ import { readFileSync, writeFileSync } from 'node:fs'
 const require = createRequire(import.meta.url)
 const { recommend } = require('../../apps/backend/dist/modules/evaluation-instruments/recommendation-engine.js')
 const grade = Number(process.argv[2] ?? 1)
+const presentation = process.argv.includes('--presentation-regression')
+if (presentation && grade !== 1) throw Error('Presentation regression belongs to first grade')
 const context = { level: 'SECONDARY', grade, cycle: grade <= 3 ? 1 : 2, modalityCode: 'academic', subjectCode: 'FRA', subjectName: 'Francés', optativeExitName: null }
-const description = JSON.parse(readFileSync('data/evaluation-instruments/french-persistence-cases.json', 'utf8'))[grade]
+const description = presentation ? JSON.parse(readFileSync('data/evaluation-instruments/french-presentation-case.json', 'utf8')).description : JSON.parse(readFileSync('data/evaluation-instruments/french-persistence-cases.json', 'utf8'))[grade]
 if (!description) throw Error('No reviewed persistence case for this grade')
 const lines = [`# Francés ${grade}.º — cuatro instrumentos completos de ejemplo`, '', 'Adaptaciones evaluativas de AulaBase, no rúbricas oficiales de MINERD. Generadas con el motor compilado; la evidencia HTTP/DB y la visual se documentan por separado en el informe del grado.', '', '**Consigna:** ' + description, '', 'Puntaje de estos ejemplos: **17.35** (elección explícita para ilustrar el reparto; el creador comienza con puntuación pendiente). Las cantidades se reparten en centésimas. El título de la actividad no se inserta en los criterios.', '']
 const cell = text => String(text).replaceAll('|', '\\|').replaceAll('\n', ' ')
@@ -22,5 +24,6 @@ for (const format of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']) {
     else lines.push(`**Peso porcentual:** ${Math.round(c.maxScoreUnits / p.totalScoreUnits * 10000) / 100}%.`, '', '| Cumple | Parcial (50%) | No cumple |', '|---:|---:|---:|', `| ${c.maxScore} | ${Math.round(c.maxScoreUnits / 2) / 100} | 0 |`, '', 'El cumplimiento parcial corresponde a la evidencia descrita, no a un criterio adicional.', '')
   }
 }
-writeFileSync(`docs/curriculum/cobertura-secundaria/frances-${grade}-ejemplos.md`, lines.join('\n').trimEnd() + '\n')
-console.log(JSON.stringify({ grade, file: `frances-${grade}-ejemplos.md` }))
+const file = presentation ? 'frances-presentacion-corregida-ejemplos.md' : `frances-${grade}-ejemplos.md`
+writeFileSync(`docs/curriculum/cobertura-secundaria/${file}`, lines.join('\n').trimEnd() + '\n')
+console.log(JSON.stringify({ grade, file }))

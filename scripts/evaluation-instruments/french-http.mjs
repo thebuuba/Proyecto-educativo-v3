@@ -18,8 +18,11 @@ const recheck = process.argv.includes('--recheck')
 const representative = process.argv.includes('--representative')
 const persistenceOnly = process.argv.includes('--persistence-only')
 const sourceLinked = process.argv.includes('--source-linked')
+const presentation = process.argv.includes('--presentation-regression')
+assert(!presentation || grade === 1 && !sourceLinked, 'Presentation regression is restricted to French first grade')
+const presentationCase = JSON.parse(readFileSync('data/evaluation-instruments/french-presentation-case.json', 'utf8'))
 const resume = process.argv.includes('--resume-verified')
-const prefix = `.wrangler/french-source/grade-${grade}${sourceLinked ? '-linked' : ''}`
+const prefix = presentation ? '.wrangler/french-source/presentation-regression' : `.wrangler/french-source/grade-${grade}${sourceLinked ? '-linked' : ''}`
 const sourceCatalog = existsSync('.wrangler/french-source/source-catalog.json') ? JSON.parse(readFileSync('.wrangler/french-source/source-catalog.json', 'utf8')) : null
 if (sourceLinked) assert(sourceCatalog, 'Install reviewed source first')
 const assertCurriculum = proposal => {
@@ -31,9 +34,9 @@ const progressFile = `${prefix}-http-progress.json`
 if (!recheck && !resume) assert(!existsSync(progressFile) && !existsSync(`${prefix}-http.json`), 'Prior run exists: inspect its result; use --recheck for completed evidence, never repeat writes blindly')
 const progress = resume ? JSON.parse(readFileSync(progressFile, 'utf8')) : { grade, started: new Date().toISOString(), phase: 'READ_ONLY_GENERATION', writes: [] }
 if (resume) {
-  assert(sourceLinked && !recheck && !existsSync(`${prefix}-http.json`))
+  assert((sourceLinked || presentation) && !recheck && !existsSync(`${prefix}-http.json`))
   assert.equal(progress.grade, grade)
-  assert(progress.writes.length > 0 && progress.writes.every(row => row.verified && row.activityId === row.verified.activityId), 'Uncertain write: inspect the database before resuming')
+  assert(progress.writes.length > 0 && progress.writes.every(row => row.verified && row.activityId === row.verified.activityId || presentation && row.confirmedAbsent?.evidence === 'READ_ONLY_SQL_ID_AND_SCOPED_NAME_ABSENT'), 'Uncertain write: inspect the database before resuming')
   assert.equal(new Set(progress.writes.map(row => row.type)).size, progress.writes.length)
 }
 const checkpoint = () => writeFileSync(progressFile, JSON.stringify(progress, null, 2) + '\n')
@@ -77,25 +80,29 @@ try {
   cookie = login.response.headers.getSetCookie().find(value => value.startsWith('aulabase_session='))?.split(';')[0]
   assert(cookie)
   let scopedHistory
-  if (sourceLinked) {
+  if (sourceLinked || resume || presentation && recheck) {
     // Source reconciliation already has a verified assignment; check its known activity through the scoped API.
     scopedHistory = (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data
-    const prior = JSON.parse(readFileSync(`.wrangler/french-source/grade-${grade}-http.json`, 'utf8'))
-    assert(scopedHistory.some(row => row.id === prior.savedEvidence[0].activityId))
+    const known = resume ? progress.writes.find(row => row.verified)?.activityId : JSON.parse(readFileSync(presentation ? `${prefix}-http.json` : `.wrangler/french-source/grade-${grade}-http.json`, 'utf8')).savedEvidence[0].activityId
+    assert(known && scopedHistory.some(row => row.id === known))
   } else {
     const center = (await request('/activities/center')).data
     assert(center.sectionSubjects.some(subject => subject.id === context.sectionSubjectId))
   }
   console.log(JSON.stringify({ phase: 'authenticated-context', project, grade, sectionSubjectId: context.sectionSubjectId }))
-  const fixtures = JSON.parse(readFileSync(`data/evaluation-instruments/french-grade-${grade}-contracts.json`, 'utf8'))
+  const fixtures = presentation ? [{ id: 'presentation-regression', description: presentationCase.description, activity: 'ORAL_INTERACTION' }] : JSON.parse(readFileSync(`data/evaluation-instruments/french-grade-${grade}-contracts.json`, 'utf8'))
   const formats = ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']
   let generated = 0
   const academic = { level: 'SECONDARY', grade, subjectCode: 'FRA', subjectName: 'Francés' }
   for (const [fixtureIndex, f] of fixtures.entries()) {
-    if ((sourceLinked || persistenceOnly) && !recheck) continue // Four direct proposals; the complete language matrix is automated.
+    if ((sourceLinked || persistenceOnly || resume) && !recheck) continue // Four direct proposals; the complete language matrix is automated.
     if (recheck && fixtureIndex !== 0 && f.id !== 'mixta-independiente') continue
     const interpreted = (await request('/evaluation-instruments/interpret', { sectionSubjectId: context.sectionSubjectId, activityTitle: 'QA Francés · ' + f.id, description: f.description, competencyBlock: 'b1' })).data
     assert.equal(interpreted.suggestedActivityType, f.activity, f.id)
+    if (presentation) {
+      assert.equal(interpreted.suggestedInstrumentType, 'rubrica')
+      assert.equal(interpreted.suggestedEvaluationTechnique, 'observacion-directa')
+    }
     // Full Cartesian coverage is automated; HTTP exercises every case and total,
     // rotates the formats, then persists and reopens all four formats below.
     // Keep remote checks sequential: local Wrangler/DNS is intermittently unstable.
@@ -110,7 +117,7 @@ try {
     }
     console.log(JSON.stringify({ phase: 'generation', project, grade, case: f.id, verified: generated }))
   }
-  const savedEvidence = resume ? progress.writes.map(row => row.verified) : [], examples = []
+  const savedEvidence = resume ? progress.writes.filter(row => row.verified).map(row => row.verified) : [], examples = []
   if (resume) {
     const existing = scopedHistory ?? (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data
     for (const saved of savedEvidence) {
@@ -120,13 +127,14 @@ try {
       assertCurriculum(activity.instrumentSnapshot)
     }
   }
-  const description = JSON.parse(readFileSync('data/evaluation-instruments/french-persistence-cases.json', 'utf8'))[grade]
+  const description = presentation ? presentationCase.description : JSON.parse(readFileSync('data/evaluation-instruments/french-persistence-cases.json', 'utf8'))[grade]
   assert(description, 'No reviewed persistence case for grade')
   const detected = detectTeachingStrategy({ ...academic, description })
   assert.equal(detected.id, 'SIMULATION')
   for (const [index, type] of (recheck ? [] : formats).entries()) {
     if (savedEvidence.some(row => row.type === type)) continue
-    const total = index % 2 ? 17.35 : 20, name = `QA Francés ${grade}.º${sourceLinked ? ' fuente vinculada' : ''} · ${type} · ${randomUUID().slice(0, 8)}`
+    const planned = resume ? progress.writes.find(row => row.type === type && row.confirmedAbsent) : undefined
+    const total = index % 2 ? 17.35 : 20, name = planned?.name ?? `QA Francés ${grade}.º${presentation ? ' presentación corregida' : sourceLinked ? ' fuente vinculada' : ''} · ${type} · ${randomUUID().slice(0, 8)}`
     const proposal = (await request('/evaluation-instruments/recommend', { sectionSubjectId: context.sectionSubjectId, activityTitle: name, description, participationMode: 'INDIVIDUAL', maxScore: total, preferredInstrumentType: type, competencyBlock: 'b1' })).data
     assertCurriculum(proposal)
     assert.deepEqual(content(proposal), content(editableFallbackRecommendation({ activityTitle: name, description, participationMode: 'INDIVIDUAL', maxScore: total, instrumentType: type, academicContext: academic })), `Persistence service/local mismatch: ${grade}/${type}`)
@@ -141,10 +149,11 @@ try {
     fields = scoreInstrumentFields(rememberManualScoreWeights(fields, type), type, total, proposal)
     assert.deepEqual(validateInstrumentDefinition(type, fields, total), [])
     const snapshot = alignRecommendationWithFields(proposal, fields, total); assert(snapshot)
-    const input = { creationId: randomUUID(), sectionSubjectId: context.sectionSubjectId, schoolYearId: context.schoolYearId, academicPeriodId: context.academicPeriodId, competencyBlockId: 'b1', name, description, maxScore: total, activityType: 'individual', instrumentType: type, instrumentCriteria: fields, instrumentSnapshot: snapshot, pedagogicalActivityType: proposal.activityType, teachingStrategyId: detected.id, teachingStrategyOrigin: 'AUTO' }
-    progress.phase = 'SAVING'; progress.writes.push({ creationId: input.creationId, name, type }); checkpoint()
+    const input = { creationId: planned?.creationId ?? randomUUID(), sectionSubjectId: context.sectionSubjectId, schoolYearId: context.schoolYearId, academicPeriodId: context.academicPeriodId, competencyBlockId: 'b1', name, description, maxScore: total, activityType: 'individual', instrumentType: type, instrumentCriteria: fields, instrumentSnapshot: snapshot, pedagogicalActivityType: proposal.activityType, teachingStrategyId: detected.id, teachingStrategyOrigin: 'AUTO' }
+    const write = planned ?? { creationId: input.creationId, name, type }
+    progress.phase = 'SAVING'; if (!planned) progress.writes.push(write); checkpoint()
     const saved = (await request('/activities', input)).data
-    progress.writes.at(-1).activityId = saved.id; checkpoint()
+    write.activityId = saved.id; checkpoint()
     const reopen = async () => (await request(`/activities?sectionSubjectId=${context.sectionSubjectId}`)).data.find(activity => activity.id === saved.id)
     const original = await reopen(); assert(original)
     assert(original.instrumentId && original.instrumentSnapshotId && original.instrumentSnapshot)
@@ -154,7 +163,7 @@ try {
     assert.equal(original.teachingStrategyId, detected.id)
     assert.equal(original.instrumentCriteria[`${type}:description:0`], fields[`${type}:description:0`])
     const before = definition(original)
-    progress.writes.at(-1).originalInstrumentHash = hash(before); checkpoint()
+    write.originalInstrumentHash = hash(before); checkpoint()
     const { creationId, ...edit } = input
     const changed = (await request('/activities', { ...edit, id: saved.id, instrumentId: saved.instrumentId, teachingStrategyId: 'CASE_STUDY', teachingStrategyOrigin: 'MANUAL' })).data
     assert.equal(changed.teachingStrategyId, 'CASE_STUDY')
@@ -165,7 +174,7 @@ try {
     assert.equal(row.instrumentId, before.instrumentId); assert.equal(row.instrumentSnapshotId, before.snapshotId)
     assert.equal(row.teachingStrategyId, 'CASE_STUDY')
     savedEvidence.push({ type, total, activityId: saved.id, instrumentId: row.instrumentId, snapshotId: row.instrumentSnapshotId, instrumentHash: hash(before), manualTextAndWeightsPreserved: true, strategyOnlyExact: true, curriculum: { versionId: proposal.curriculumVersionId, scopeId: proposal.curriculumScopeId, status: proposal.internalTrace.curriculumStatus } })
-    progress.writes.at(-1).verified = savedEvidence.at(-1); checkpoint()
+    write.verified = savedEvidence.at(-1); checkpoint()
     examples.push({ type, description, total, catalog: proposal.catalogVersion, levels: proposal.levels, criteria: proposal.criteria.map(({ id, sourceReferences, ...criterion }) => criterion) })
     console.log(JSON.stringify({ phase: 'saved-and-reopened', grade, type, activityId: saved.id, instrumentUnchanged: true }))
   }

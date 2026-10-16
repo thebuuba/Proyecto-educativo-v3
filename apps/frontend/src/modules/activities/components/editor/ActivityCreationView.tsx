@@ -65,6 +65,7 @@ import type { EvaluationProfile, InstrumentAcademicContext } from '@aula/shared'
 import {
   InstrumentCapacityError,
   detectTeachingStrategy,
+  resolveCommonFrenchTask,
   resolveTeachingStrategy,
   TaskRequirementError,
   detectSecondaryLanguageActivity,
@@ -309,6 +310,12 @@ export function ActivityCreationView(props: {
           latestDraft.current = next
           onChangeDraftRef.current(next)
         }
+      }
+      // French selections are already deterministic locally. Recommendation resolves
+      // the same authorized curriculum and validates its catalog on the server.
+      if (resolveCommonFrenchTask(activityDraft.name, activityDescriptionText(activityDraft.description), props.instrumentAcademicContext)) {
+        setInterpretation(null)
+        return
       }
       interpretActivity(
         {

@@ -5,7 +5,7 @@ import { frenchRequirementText } from './secondary-french-task'
 /** The observable is stated once; scale cells express its frequency or degree. */
 export function adaptLanguageScale(proposal: InstrumentRecommendation, description: string, language?: 'fr'): InstrumentRecommendation {
   if(proposal.instrumentType!=='escala') return proposal
-  const authoredFrenchDegree = language === 'fr' && proposal.criteria.some(criterion => /^fra-[4-6]-/.test(criterion.templateId))
+  const authoredFrenchDegree = language === 'fr' && proposal.criteria.some(criterion => /^fra-[1-6]-/.test(criterion.templateId))
   const frequency = authoredFrenchDegree
     ? /\b(?:observ\w*|eval\w*|registr\w*|not\w*)\b[^.;]{0,70}\b(?:regularidad|frecuencia|regularite|frequence)\b/.test(frenchRequirementText(description))
     : /regularidad|frecuencia/.test(affirmativeLanguageTask(description)) || language === 'fr' && /\b(?:regularite|frequence)\b/.test(frenchRequirementText(description))

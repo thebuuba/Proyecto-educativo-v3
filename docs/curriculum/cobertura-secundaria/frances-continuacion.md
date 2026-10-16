@@ -1,5 +1,17 @@
 # Continuación — Francés común
 
+## Intervención posterior: presentación de 1.º
+
+Encargo adjunto `b59558ba-48ba-4658-bbd6-c6e383fd10b4`: corrección del caso «Nos presentamos en francés», sin ampliar cobertura. Inicio `07132f4f`; rama `amplia-instrumentos-secundaria`. Catálogo actual **evaluation-2026.76**, instalado únicamente en Development (`eolgunypmtgrsyrjzcld`), CREATED/UNCHANGED, ocho releases anteriores conservados en la instalación. `.75` quedó congelado.
+
+Se corrigieron simulación por acciones, residencia, preguntas/respuestas y ambos roles; escala específica en 1.º–3.º, interpretación francesa redundante y lectura paralela de ámbito/mappings. El selector único ya era incondicional; regresión de ruta real vacía/recuperada aprobada, desaparición visual no reproducida. [Informe actual y limitaciones](../../superpowers/reports/2026-10-15-frances-presentacion-correcciones.md), [cuatro instrumentos completos](frances-presentacion-corregida-ejemplos.md), [plan](../../superpowers/plans/2026-10-15-frances-presentacion-correcciones.md).
+
+Builds finales backend/frontend/Cloudflare aprobados; este último solo dry-run. Suites completas 37.574 backend y 38.096 frontend. Runtime final: entry `/assets/index-O0t-Eal6.js`, hashes iguales al build, PostgreSQL/Auth/Storage/frontend exclusivos de Development. Listener 41248, launcher 24116. No iniciar otro servidor sin comprobar procesos.
+
+La medición no prueba una mejora uniforme de latencia y la prueba visual personal sigue bloqueada. Tu cuenta existe y su contexto de Francés 1.º es válido; QA es otro centro. No cambiar la sesión personal ni borrar borradores. QA terminó los cuatro formatos: guardado/reapertura, texto y pesos manuales y cambio solo de estrategia con igualdad exacta del instrumento. La revalidación del build final comprobó interpretación, dos recomendaciones 20/17.35 y cuatro reaperturas intactas. [Evidencia](frances-presentacion-verificacion.json). Se conservan 38 snapshots y ocho releases anteriores; solo se añadieron cuatro snapshots QA y `.76`, sin migraciones SQL.
+
+El checkpoint `.wrangler/french-source/presentation-regression-http-progress.json` está COMPLETE: nunca borrarlo para repetir escrituras. La escala tuvo HTTP 500 por transacción expirada; SQL confirmó ausencia y se recuperó con el mismo ID, sin aumentar timeouts ni duplicar actividades. No quedan escrituras inciertas. La revisión de secretos/UTF-8 y diff pasó; commit/push final y hash se confirman en la entrega. **No hay otra asignatura autorizada; solo queda la prueba visual personal descrita en el informe.** Lo siguiente es la historia de los bloques anteriores.
+
 Encargo vigente: 15/10/2026, adjunto `d2d4353c-ff04-4737-bb10-eb95459fd213`. Autonomía autorizada, **sin subagentes**. Solo Development y Francés común, en orden por grado. [Plan](../../superpowers/plans/2026-10-15-frances-comun.md) y [especificación](../../superpowers/specs/2026-10-15-frances-comun-design.md).
 
 ## Último bloque verificado

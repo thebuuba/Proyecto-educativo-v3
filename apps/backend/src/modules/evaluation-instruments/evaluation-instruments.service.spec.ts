@@ -37,6 +37,17 @@ beforeEach(() => {
   mocks.curriculumElement.findMany.mockResolvedValue([])
 })
 describe('API service security and version policy', () => {
+  it('consulta ámbito y mappings independientes en paralelo después de autorizar y validar el catálogo', async () => {
+    let finish!: (value: typeof scope[]) => void
+    mocks.curriculumScope.findMany.mockImplementation(() => new Promise(resolve => { finish = resolve }))
+    const result = new EvaluationInstrumentsService().recommend(user, input)
+    try {
+      await vi.waitFor(() => expect(mocks.curriculumSubjectMapping.findMany).toHaveBeenCalled(), { timeout: 150 })
+    } finally { finish([scope]) }
+    await result
+    expect(mocks.sectionSubject.findFirst.mock.invocationCallOrder[0]).toBeLessThan(mocks.$queryRaw.mock.invocationCallOrder[0])
+    expect(mocks.$queryRaw.mock.invocationCallOrder[0]).toBeLessThan(mocks.curriculumScope.findMany.mock.invocationCallOrder[0])
+  })
   const frenchSource = { id: 'french-version', level: 'SECONDARY', status: 'PUBLISHED', importMetadata: { subjectCodes: ['FRA'], commonOnly: true } }
   const secondary = (code: string) => {
     const row = assignment()

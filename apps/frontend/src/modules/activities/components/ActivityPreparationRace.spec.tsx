@@ -1,6 +1,6 @@
-import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import type { InstrumentAcademicContext, InstrumentRecommendation } from '@aula/shared'
+import type { InstrumentAcademicContext, InstrumentRecommendation, InstrumentType } from '@aula/shared'
 import { api, ApiError } from '@/services/apiClient'
 import { ActivityEditorWorkspace } from './ActivityEditorWorkspace'
 import { newActivityDraft, type ActivityDraft } from './editor/editorModel'
@@ -46,6 +46,52 @@ describe('automatic instrument preparation request lifecycle', () => {
     cleanup()
     vi.useRealTimers()
     vi.restoreAllMocks()
+  })
+
+  it('prepara Francés reconocido con una sola solicitud, sin interpretación curricular redundante', async () => {
+    const academic = { level: 'SECONDARY' as const, grade: 1, subjectCode: 'FRA', subjectName: 'Francés' }
+    const french = 'En parejas, los estudiantes se saludarán en francés y realizarán un diálogo breve para preguntar y responder su nombre, edad y lugar de residencia. Luego intercambiarán los roles.'
+    const result = editableFallbackRecommendation({ activityTitle: 'Nos presentamos en francés', description: french, maxScore: 20, participationMode: 'GROUP', instrumentType: 'rubrica', academicContext: academic })
+    const post = vi.spyOn(api, 'post').mockImplementation(async path => (path.endsWith('/interpret') ? interpretation : result) as never)
+    mount({ name: 'Nos presentamos en francés', description: french, pedagogicalActivityType: '', autoDetectedPedagogicalActivityType: true }, academic)
+    expect(screen.getAllByRole('combobox', { name: 'Estrategia de enseñanza y aprendizaje' })).toHaveLength(1)
+    await advance(500)
+    await advance(1000)
+    expect(post.mock.calls.map(([path]) => path)).toEqual(['/evaluation-instruments/recommend'])
+    expect(screen.getByRole('combobox', { name: 'Estrategia de enseñanza y aprendizaje' })).toHaveTextContent('Simulación')
+    expect(screen.getByLabelText('Criterio 1')).toBeVisible()
+    expect(readActivityDrafts(context)[0].draft.maxScore).toBe('')
+  })
+
+  it('descarta la respuesta francesa anterior y conserva estrategia y formato manuales al cambiar la descripción', async () => {
+    const academic = { level: 'SECONDARY' as const, grade: 1, subjectCode: 'FRA', subjectName: 'Francés' }
+    const first = 'En parejas, realicen un diálogo en francés para preguntar y responder nombre, edad y residencia. Luego intercambiarán los roles.'
+    const latest = 'En parejas, realicen un diálogo en francés para preguntar y responder solo el nombre.'
+    const build = (description: string, instrumentType: InstrumentType) => editableFallbackRecommendation({ activityTitle: 'Diálogo', description, maxScore: 20, participationMode: 'GROUP', instrumentType, academicContext: academic })
+    let finish!: (p: InstrumentRecommendation) => void
+    const pending = new Promise<InstrumentRecommendation>(resolve => { finish = resolve })
+    let requests = 0
+    const post = vi.spyOn(api, 'post').mockImplementation(async (_path, body) => {
+      const input = body as { description: string; preferredInstrumentType?: InstrumentType }
+      return (await (++requests === 1 ? pending : build(input.description, input.preferredInstrumentType ?? 'rubrica'))) as never
+    })
+    mount({ name: 'Diálogo', description: first, pedagogicalActivityType: '', autoDetectedPedagogicalActivityType: true }, academic)
+    await advance(500); await advance(1000)
+    expect(requests).toBe(1)
+    fireEvent.change(screen.getByLabelText('Descripción de la actividad'), { target: { value: latest } })
+    fireEvent.click(screen.getByRole('combobox', { name: 'Estrategia de enseñanza y aprendizaje' }))
+    fireEvent.click(within(screen.getByRole('listbox', { name: 'Estrategia de enseñanza y aprendizaje' })).getByRole('option', { name: 'Debate' }))
+    fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), { target: { value: 'lista-cotejo' } })
+    await advance(500); await advance(1000)
+    await act(async () => { finish(build(first, 'rubrica')) })
+    await advance(1000)
+    expect(post.mock.calls.at(-1)?.[1]).toMatchObject({ description: latest, preferredInstrumentType: 'lista-cotejo' })
+    const draft = readActivityDrafts(context)[0].draft as ActivityDraft
+    expect(draft.teachingStrategyId).toBe('DEBATE')
+    expect(draft.teachingStrategyOrigin).toBe('MANUAL')
+    expect(draft.instrumentType).toBe('lista-cotejo')
+    expect(draft.preparedRecommendation?.criteria.map(c => c.description).join(' ')).not.toMatch(/residencia|edad/)
+    expect(draft.maxScore).toBe('')
   })
 
   it.each(['resolved', 'rejected'])('prepares the latest draft when a %s stale request outlasts the next debounce', async outcome => {

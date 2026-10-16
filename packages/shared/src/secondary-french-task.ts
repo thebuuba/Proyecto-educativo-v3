@@ -11,7 +11,7 @@ export function frenchRequirementText(value: string) {
   return normalizeFrenchTask(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi, '. ').replace(/<[^>]*>/g, ' ')
     .replace(/&nbsp;|&#160;/gi, ' ').replace(/[«“"][^»”"]*[»”"]/g, ''))
     .replace(/\b(?:recursos?|ressources|ejemplos?|exemples?)\s*:[^.;\n]*/g, '')
-    .replace(/\b(?:no\s+(?:(?:se|deben?|hay que)\s+)?(?:\w+\s+)?|sin\s+)(?:present\w*|escrib\w*|redact\w*|dialog\w*|hag\w*|hagan|evalu\w*|exig\w*|inclu\w*|usar|utiliz\w*)\b[^.;\n]*/g, '')
+    .replace(/\b(?:no\s+(?:(?:se|deben?|hay que)\s+)?(?:\w+\s+)?|sin\s+)(?:present\w*|escrib\w*|redact\w*|dialog\w*|pregunt\w*|respond\w*|formul\w*|represent\w*|intercambi\w*|altern\w*|hag\w*|hagan|evalu\w*|exig\w*|inclu\w*|usar|utiliz\w*)\b[^.;\n]*/g, '')
     .replace(/\b(?:ne\s+(?:\w+\s+){1,3}(?:pas|jamais)|sans\s+(?:ecrire|parler|presenter|dialoguer|dialogue|presentation orale))\b[^.;\n]*/g, '')
     .replace(/\b(?:como recurso|con apoyo de|a l'aide de)\b[^.;\n]*/g, '')
     .trim()

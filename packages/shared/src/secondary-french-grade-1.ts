@@ -7,6 +7,13 @@ export const frenchRow = (id: string, title: string, levels: Levels, weight = 4)
 const reading = (a: FrenchAction) => frenchReceptive(a.mode)
 const list = (items: string[]) => items.length < 2 ? items[0] : `${items.slice(0, -1).join(', ')} y ${items.at(-1)}`
 
+/** Only requested identification fields: residence is neither nationality nor a street address. */
+export function frenchPersonalFields(text: string) {
+  return [['name', 'el nombre', 'nombre|nom'], ['age', 'la edad', 'edad|age'], ['nationality', 'la nacionalidad', 'nacionalidad|nationalite'], ['occupation', 'la ocupación', 'ocupacion|profession|metier'], ['residence', 'el lugar de residencia', 'residencia|residence|habite\\w*']]
+    .filter(([, , match]) => new RegExp(`\\b(?:${match})\\b`).test(text)
+      && !new RegExp(`\\b(?:sin|no|ni|sans|pas de)\\s+(?:(?:el|la|su|sus|le|les|leur|lugar de|lieu de)\\s+)*(?:${match})\\b`).test(text))
+}
+
 /** AulaBase adaptations; select only the requested function, never all curricular traits. */
 export const frenchGradeOneFeatures: FrenchFeature[] = [
   { id: 'greetings', match: /\b(?:salud\w*|desp[ei]d\w*|salue\w*|salutations?|prendre conge|dites au revoir)\b/, criterion: a => {
@@ -32,19 +39,21 @@ export const frenchGradeOneFeatures: FrenchFeature[] = [
     'La respuesta cambia la acción solicitada o la petición que intenta comunicar.',
     'No se reconoce la petición ni una respuesta relacionada con la consigna.',
   ]) },
-  { id: 'personal', match: /\b(?:presentaci[oó]n (?:personal|de (?:un|una|el|la) (?:personaje|persona))|presentarse|presenten?se|presentate|vous presenter|se presenter|presentez-vous|informacion personal|informations? personnelles?|identite|nombre|nom|edad|age|nacionalidad|nationalite)\b/, criterion: a => {
-    const fields = [['nombre|nom', 'el nombre'], ['edad|age', 'la edad'], ['nacionalidad|nationalite', 'la nacionalidad'], ['ocupacion|profession|metier', 'la ocupación']].filter(([match]) => new RegExp(`\\b(?:${match})\\b`).test(a.text)).map(([, label]) => label)
+  { id: 'personal', match: /\b(?:presentaci[oó]n (?:personal|de (?:un|una|el|la) (?:personaje|persona))|presentarse|presenten?se|presentate|vous presenter|se presenter|presentez-vous|informacion personal|informations? personnelles?|identite|nombre|nom|edad|age|nacionalidad|nationalite|residencia|residence|habite\w*)\b/, criterion: a => {
+    const fields = frenchPersonalFields(a.text).map(([, label]) => label)
     const target = fields.length ? list(fields) : 'los datos de identificación solicitados'
+    const responds = a.mode.includes('interaction') && /\b(?:respond\w*|repond\w*)\b/.test(a.text)
+    const verb = responds ? 'Responde en francés las preguntas sobre' : 'Comunica en francés'
     const result = frenchRow('personal', 'Identificación de la persona', [
-      reading(a) ? `Identifica ${target} de la persona o personaje según el ${frenchSource(a.mode)} en francés.` : `Comunica en francés ${target} de la persona o personaje, sin confundir a quién corresponde cada dato.`,
+      reading(a) ? `Identifica ${target} de la persona o personaje según el ${frenchSource(a.mode)} en francés.` : `${verb} ${target} de la persona o personaje, sin confundir a quién corresponde cada dato.`,
       `Se reconocen ${target}; una referencia necesita precisión para atribuir el dato.`,
       `La información sobre ${target} es parcial: quedan datos incompletos o sin atribución clara.`,
-      'Atribuye los datos a otra persona o altera la identidad presentada.',
-      'No aporta datos que permitan identificar a la persona presentada.',
+      `Atribuye ${target} a otra persona o altera los datos solicitados.`,
+      `No aporta información reconocible sobre ${target} de la persona indicada.`,
     ])
     if (fields.length && !/\b(?:o|ou)\b/.test(a.text)) result.checklistParts = fields.map(field => {
-      const key: Record<string, string> = { 'el nombre': 'name', 'la edad': 'age', 'la nacionalidad': 'nationality', 'la ocupación': 'occupation' }
-      const levels: Levels = [reading(a) ? `Identifica ${field} de la persona según el ${frenchSource(a.mode)} en francés.` : `Comunica en francés ${field} de la persona indicada.`, `La información sobre ${field} es reconocible, aunque necesita precisión.`, `La información sobre ${field} es parcial y no permite identificar el dato por completo.`, `Atribuye ${field} a otra persona.`, `No aporta ${field} de la persona indicada.`]
+      const key: Record<string, string> = { 'el nombre': 'name', 'la edad': 'age', 'la nacionalidad': 'nationality', 'la ocupación': 'occupation', 'el lugar de residencia': 'residence' }
+      const levels: Levels = [reading(a) ? `Identifica ${field} de la persona según el ${frenchSource(a.mode)} en francés.` : `${verb} ${field} de la persona indicada.`, `La información sobre ${field} es reconocible, aunque necesita precisión.`, `La información sobre ${field} es parcial y no permite identificar el dato por completo.`, `Atribuye ${field} a otra persona.`, `No aporta ${field} de la persona indicada.`]
       return { key: key[field], observable: levels[0], progressionLevels: levels }
     })
     return result

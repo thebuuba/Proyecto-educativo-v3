@@ -70,6 +70,7 @@ function taskText(value: string) {
   return normalizeTeachingStrategyText(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ')
     .replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/gi,' ').replace(/&amp;/gi,'&')
     .replace(/(?:recursos?\s*:|como recurso|con apoyo de)[^.;\n]*/gi,'')
+    .replace(/\b(?:como ejemplo|por ejemplo|a modo de ejemplo)[^.;\n]*/gi,'')
     .split(/[.;\n]+/).filter(part=>! /\b(?:no|sin)\b/i.test(part)).join('. '))
 }
 export function detectTeachingStrategy(input: TeachingStrategyContext & {title?: string; description?: string; activityType?: string; participationMode?: string}) {
@@ -98,7 +99,12 @@ export function detectTeachingStrategy(input: TeachingStrategyContext & {title?:
   add('SYMPOSIUM',has(/(?:realiz\w*|organiz\w*|particip\w*).*simposio/)&&has(/expos\w*|perspectivas/),'Simposio con exposiciones complementarias.',2)
   add('FORUM',has(/(?:realiz\w*|organiz\w*|particip\w*).*foro/)&&has(/intercamb\w*|respond\w*|discut\w*/),'Foro de intercambio y respuestas.',2)
   add('WORKSHOP',has(/(?:realiz\w*|organiz\w*|particip\w*).*taller/)&&has(/practic\w*|elabor\w*/)&&has(/revis\w*|retroaliment\w*/),'Taller con práctica y revisión.',2)
-  add('SIMULATION',has(/simul\w*|juego de roles|role play/)&&has(/roles|decisiones|interaccion|practicar.*comunicacion/),'Práctica de interacción o decisiones simuladas.',2)
+  const enacted = has(/\b(?:simul(?:an|aran|ar|en|ez|er|ent|ons)|realiz\w*|represent\w*|practic\w*|dialog(?:an|aran|uen)|asum\w*|interpret\w*)\b/)
+  const complementary = has(/\bpregunt\w*\b/)&&has(/\brespond\w*\b/)
+    || has(/\buno\b.*\botro\b/)&&has(/entrevist\w*|vendedor|comprador|cliente|roles|papeles/)
+  const exchange = has(/\b(?:intercambi\w*|altern\w*|cambi\w*)\s+(?:(?:los|sus|de|ambos)\s+)?(?:roles|papeles)\b/)
+  add('SIMULATION',enacted && (has(/simul\w*|juego de roles|role play/)&&has(/roles|decisiones|interaccion|practicar.*comunicacion/)
+    || has(/dialog\w*|entrevist\w*|situacion/)&&complementary&&exchange),'Práctica de una situación con papeles complementarios e intercambio de roles.',2)
   candidates.sort((a,b)=>b.score-a.score)
   // A title supports an already evidenced candidate; it never creates one.
   const top=candidates.filter(c=>c.score===candidates[0]?.score)
