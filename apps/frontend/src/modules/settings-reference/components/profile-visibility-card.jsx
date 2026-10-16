@@ -7,7 +7,7 @@ var options3 = [
   {
     id: 'public',
     label: 'Público',
-    description: 'Cualquier persona, incluso fuera de EduNube',
+    description: 'Perfil visible fuera de AulaBase',
     icon: Globe,
     visibleTo: { teachers: true, classmates: true, everyone: true },
   },
@@ -32,7 +32,7 @@ var audiences = [
   { id: 'everyone', label: 'Cualquier persona' },
 ]
 function ProfileVisibilityCard({ value, onChange }) {
-  const current = options3.find((o) => o.id === value) ?? options3[1]
+  const current = options3.find((o) => o.id === value)
   return (
     <SettingsSectionCard
       title="Visibilidad del perfil"
@@ -53,6 +53,7 @@ function ProfileVisibilityCard({ value, onChange }) {
               type="button"
               role="radio"
               aria-checked={selected}
+              disabled={!onChange}
               onClick={() => onChange(o.id)}
               className={cn(
                 'flex flex-col items-start gap-3 rounded-2xl border p-4 text-left transition-all',
@@ -95,18 +96,18 @@ function ProfileVisibilityCard({ value, onChange }) {
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
           {audiences.map((a) => {
-            const ok = current.visibleTo[a.id]
+            const ok = current?.visibleTo[a.id]
             return (
               <span
                 key={a.id}
                 className={cn(
                   'inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-semibold',
-                  ok
+                  ok === undefined ? 'bg-card text-muted-foreground' : ok
                     ? 'bg-card text-foreground shadow-xs'
                     : 'bg-transparent text-muted-foreground line-through decoration-muted-foreground/50',
                 )}
               >
-                {ok ? (
+                {ok === undefined ? <span>—</span> : ok ? (
                   <Check className="h-3 w-3 text-emerald-500" strokeWidth={3} />
                 ) : (
                   <X className="h-3 w-3" />
@@ -116,6 +117,7 @@ function ProfileVisibilityCard({ value, onChange }) {
             )
           })}
         </div>
+        {!current && <p className="mt-3 text-xs text-muted-foreground">Visibilidad no disponible. No se ha seleccionado una opción.</p>}
       </div>
     </SettingsSectionCard>
   )

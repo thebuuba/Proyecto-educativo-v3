@@ -132,7 +132,10 @@ export function SchoolAdministrationPage() {
   )
   const personalPanel = personal ? (
     <div className="w-full min-w-0">
-      <ReferenceSettingsPanel section={category as ReferenceSettingsSection} />
+      <ReferenceSettingsPanel section={category as ReferenceSettingsSection} onManageBilling={() => {
+        setConnectedPaymentsOpen(true)
+        document.getElementById('connected-billing-management')?.scrollIntoView({ block: 'start' })
+      }} />
       <div className="mx-auto mt-10 max-w-[1360px] space-y-4 border-t border-border/70 pt-5">
         <div className="flex flex-wrap gap-3 text-sm">
           <Link className="text-primary-variant underline underline-offset-4" to="/perfil">
@@ -153,7 +156,7 @@ export function SchoolAdministrationPage() {
             : null}
         </div>
         {category === 'suscripcion' ? (
-          <details onToggle={(event) => setConnectedPaymentsOpen(event.currentTarget.open)}>
+          <details id="connected-billing-management" open={connectedPaymentsOpen} onToggle={(event) => setConnectedPaymentsOpen(event.currentTarget.open)}>
             <summary className="cursor-pointer text-sm font-medium text-foreground">
               Gestionar los pagos de mi cuenta de AulaBase
             </summary>

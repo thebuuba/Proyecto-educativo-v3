@@ -22,7 +22,7 @@ function SettingsToggleRow({ id, label, description, checked, onCheckedChange, i
           {description && <p className="text-xs text-muted-foreground">{description}</p>}
         </div>
       </div>
-      <Switch2 id={id} checked={checked} disabled={locked} onCheckedChange={onCheckedChange} />
+      <Switch2 id={id} aria-label={label} checked={checked} disabled={locked || !onCheckedChange} onCheckedChange={onCheckedChange} />
     </label>
   )
 }

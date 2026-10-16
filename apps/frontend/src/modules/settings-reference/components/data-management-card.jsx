@@ -1,5 +1,5 @@
 // Layout adapted from the user-provided Polymet design.
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { CircleCheck, Database, Download, FileArchive, LoaderCircle, Trash2 } from 'lucide-react'
 import {
   Button,
@@ -20,16 +20,12 @@ var CONFIRM_WORD = 'ELIMINAR'
 function DataManagementCard({ lastExport, onExport, onDeleteAccount }) {
   const [exportState, setExportState] = useState('idle')
   const [confirmText, setConfirmText] = useState('')
-  useEffect(() => {
-    if (exportState !== 'loading') return
-    const t = setTimeout(() => setExportState('ready'), 1800)
-    return () => clearTimeout(t)
-  }, [exportState])
+  const [exportError, setExportError] = useState('')
   return (
     <div className="space-y-6">
       <SettingsSectionCard
         title="Tus datos"
-        description="Descarga una copia de toda tu información en EduNube."
+        description={onExport ? 'Solicita una copia de tus datos personales.' : 'La exportación de datos personales aún no está disponible.'}
         icon={<Database className="h-5 w-5" />}
       >
         <div className="flex items-center gap-3 rounded-2xl border border-border p-4">
@@ -37,7 +33,7 @@ function DataManagementCard({ lastExport, onExport, onDeleteAccount }) {
             <FileArchive className="h-5 w-5" />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-semibold">{'Archivo .zip'}</p>
+            <p className="text-sm font-semibold">{'Archivo de datos personales'}</p>
             <p className="text-xs text-muted-foreground">
               {'Perfil, cursos, notas, certificados y mensajes'}
             </p>
@@ -46,11 +42,13 @@ function DataManagementCard({ lastExport, onExport, onDeleteAccount }) {
         <Button
           className="mt-3 h-11 w-full rounded-xl font-semibold"
           variant={exportState === 'ready' ? 'outline' : 'default'}
-          disabled={exportState === 'loading'}
-          onClick={() => {
-            if (exportState === 'ready') return
+          disabled={!onExport || exportState === 'loading'}
+          onClick={async () => {
+            if (!onExport || exportState === 'loading') return
             setExportState('loading')
-            onExport?.()
+            setExportError('')
+            try { await onExport(); setExportState('ready') }
+            catch { setExportState('idle'); setExportError('No se pudo preparar el archivo.') }
           }}
         >
           {exportState === 'loading' && <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />}
@@ -59,9 +57,10 @@ function DataManagementCard({ lastExport, onExport, onDeleteAccount }) {
           {exportState === 'loading'
             ? 'Preparando archivo…'
             : exportState === 'ready'
-              ? 'Te lo enviamos por email'
+              ? 'Archivo preparado'
               : 'Solicitar descarga'}
         </Button>
+        {exportError && <p role="alert" className="mt-2 text-xs text-destructive">{exportError}</p>}
         {lastExport && (
           <p className="mt-2 text-center text-xs text-muted-foreground">
             {'Última descarga: '}
@@ -78,7 +77,7 @@ function DataManagementCard({ lastExport, onExport, onDeleteAccount }) {
             <h2 className="text-lg font-bold tracking-tight">{'Eliminar cuenta'}</h2>
             <p className="mt-0.5 text-sm text-muted-foreground">
               {
-                'Se borrarán tu progreso, certificados y suscripción. Esta acción no se puede deshacer.'
+                onDeleteAccount ? 'Revisa el alcance y confirma la eliminación de tu cuenta.' : 'La eliminación de cuenta aún no está disponible en este panel.'
               }
             </p>
           </div>
@@ -87,6 +86,7 @@ function DataManagementCard({ lastExport, onExport, onDeleteAccount }) {
           <AlertDialogTrigger2 asChild={true}>
             <Button
               variant="outline"
+              disabled={!onDeleteAccount}
               className="mt-5 h-11 w-full rounded-xl border-destructive/30 bg-card font-semibold text-destructive hover:bg-destructive/10 hover:text-destructive"
             >
               {'Eliminar mi cuenta'}
@@ -111,7 +111,7 @@ function DataManagementCard({ lastExport, onExport, onDeleteAccount }) {
             <AlertDialogFooter>
               <AlertDialogCancel2 className="rounded-xl">{'Cancelar'}</AlertDialogCancel2>
               <AlertDialogAction2
-                disabled={confirmText !== CONFIRM_WORD}
+                disabled={!onDeleteAccount || confirmText !== CONFIRM_WORD}
                 className="rounded-xl bg-destructive text-destructive-foreground hover:bg-destructive/90"
                 onClick={onDeleteAccount}
               >

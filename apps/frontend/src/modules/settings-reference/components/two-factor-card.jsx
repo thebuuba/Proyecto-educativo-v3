@@ -15,7 +15,7 @@ var methods = [
   {
     id: 'sms',
     label: 'Mensaje SMS',
-    description: 'Código enviado a +34 ••• ••• 678',
+    description: 'Verificación mediante un teléfono autorizado',
     icon: MessageSquareText,
   },
   {
@@ -49,10 +49,11 @@ function TwoFactorCard({
                 : 'bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-400',
             )}
           >
-            {enabled ? 'Activada' : 'Desactivada'}
+            {enabled == null ? 'Sin consultar' : enabled ? 'Activada' : 'Desactivada'}
           </span>
           <Switch2
             checked={enabled}
+            disabled={!onEnabledChange}
             onCheckedChange={onEnabledChange}
             aria-label="Activar verificación en dos pasos"
           />
@@ -76,7 +77,7 @@ function TwoFactorCard({
               type="button"
               role="radio"
               aria-checked={selected}
-              disabled={!enabled}
+              disabled={!enabled || !onMethodChange}
               onClick={() => onMethodChange(m.id)}
               className={cn(
                 'relative flex flex-col items-start gap-3 rounded-2xl border p-4 text-left transition-all',
@@ -124,15 +125,13 @@ function TwoFactorCard({
         <div>
           <p className="text-sm font-semibold">{'Códigos de respaldo'}</p>
           <p className="text-xs text-muted-foreground">
-            {'Te quedan '}
-            {backupCodesLeft}
-            {' códigos de un solo uso por si pierdes tu dispositivo.'}
+            {backupCodesLeft == null ? 'No hay información de códigos de respaldo disponible.' : `Te quedan ${backupCodesLeft} códigos de un solo uso.`}
           </p>
         </div>
         <Button
           variant="outline"
           className="h-10 rounded-xl bg-card font-semibold"
-          disabled={!enabled}
+          disabled={!enabled || !onViewBackupCodes || backupCodesLeft == null}
           onClick={onViewBackupCodes}
         >
           {'Ver códigos'}

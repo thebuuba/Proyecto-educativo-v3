@@ -15,11 +15,11 @@ const pages = {
 
 export type ReferenceSettingsSection = keyof typeof pages
 
-export function ReferenceSettingsPanel({ section }: { section: ReferenceSettingsSection }) {
+export function ReferenceSettingsPanel({ section, onManageBilling }: { section: ReferenceSettingsSection; onManageBilling?: () => void }) {
   const Page = pages[section]
   return (
     <section className="settings-reference-workspace mx-auto min-w-0 w-full max-w-[1360px]">
-      <Page />
+      {section === 'suscripcion' ? <BillingSettingsPage onManage={onManageBilling} /> : <Page />}
     </section>
   )
 }

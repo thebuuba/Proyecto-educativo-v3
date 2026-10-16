@@ -1,3 +1,3 @@
 import type { ReactElement } from 'react'
 
-export declare function BillingSettingsPage(): ReactElement
+export declare function BillingSettingsPage(props?: { onManage?: () => void }): ReactElement

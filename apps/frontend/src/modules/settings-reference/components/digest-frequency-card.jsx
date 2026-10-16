@@ -8,13 +8,13 @@ var options2 = [
   {
     id: 'daily',
     label: 'Resumen diario',
-    description: 'Un email cada mañana a las 8:00',
+    description: 'Agrupar los avisos del día',
     icon: Sunrise,
   },
   {
     id: 'weekly',
     label: 'Resumen semanal',
-    description: 'Todos los lunes con tu progreso',
+    description: 'Agrupar los avisos de la semana',
     icon: CalendarRange,
   },
 ]
@@ -35,6 +35,7 @@ function DigestFrequencyCard({ value, onChange }) {
               type="button"
               role="radio"
               aria-checked={selected}
+              disabled={!onChange}
               onClick={() => onChange(o.id)}
               className={cn(
                 'flex w-full items-center gap-3 rounded-2xl border p-3 text-left transition-all',
@@ -69,6 +70,7 @@ function DigestFrequencyCard({ value, onChange }) {
           )
         })}
       </div>
+      {!onChange && <p className="mt-4 text-xs text-muted-foreground">El resumen de notificaciones aún no está disponible.</p>}
     </SettingsSectionCard>
   )
 }

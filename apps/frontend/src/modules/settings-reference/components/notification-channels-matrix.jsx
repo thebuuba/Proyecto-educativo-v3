@@ -48,6 +48,7 @@ function NotificationChannelsMatrix({ groups, onChange }) {
               <button
                 key={ch.id}
                 type="button"
+                disabled={!onChange}
                 onClick={() => toggleColumn(ch.id)}
                 title={on ? `Desactivar todo por ${ch.label}` : `Activar todo por ${ch.label}`}
                 className="flex flex-col items-center gap-1 rounded-xl bg-muted/70 py-2 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
@@ -82,10 +83,10 @@ function NotificationChannelsMatrix({ groups, onChange }) {
                       <button
                         key={ch.id}
                         type="button"
-                        role="switch"
-                        aria-checked={on}
-                        aria-label={`${cat.label} por ${ch.label}`}
-                        disabled={locked}
+                        role={on == null ? undefined : 'switch'}
+                        aria-checked={on == null ? undefined : on}
+                        aria-label={`${cat.label} por ${ch.label}${on == null ? ': no disponible' : ''}`}
+                        disabled={locked || !onChange || on == null}
                         onClick={() => toggle(cat.id, ch.id)}
                         className={cn(
                           'flex h-9 items-center justify-center gap-1.5 rounded-xl border text-xs font-semibold transition-all',
@@ -101,7 +102,7 @@ function NotificationChannelsMatrix({ groups, onChange }) {
                           <Check className="h-3.5 w-3.5" strokeWidth={3} />
                         ) : null}
                         <span className="sm:hidden">{ch.label}</span>
-                        <span className="hidden sm:inline">{on ? 'Sí' : 'No'}</span>
+                        <span className="hidden sm:inline">{on == null ? '—' : on ? 'Sí' : 'No'}</span>
                       </button>
                     )
                   })}
@@ -113,7 +114,7 @@ function NotificationChannelsMatrix({ groups, onChange }) {
       ))}
       <p className="flex items-center gap-1.5 border-t border-border/70 px-5 py-4 text-xs text-muted-foreground sm:px-6">
         <Lock className="h-3 w-3" />
-        {'Las alertas de seguridad y de pagos por email son obligatorias.'}
+        {onChange ? 'Las alertas de seguridad y de pagos por email son obligatorias.' : 'Preferencias no disponibles. No se ha establecido ningún canal desde este panel.'}
       </p>
     </section>
   )

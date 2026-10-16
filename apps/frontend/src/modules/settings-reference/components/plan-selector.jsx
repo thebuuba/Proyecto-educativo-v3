@@ -4,7 +4,7 @@ import { cn } from '@/utils/cn'
 import { Button, Badge } from '../reference-ui'
 import { formatCurrency } from '../data/format-currency'
 
-function PlanSelector({ plans, currentPlanId, cycle, onCycleChange, onSelect }) {
+function PlanSelector({ plans, currentPlanId, cycle, onCycleChange, onSelect, availableCycles = [] }) {
   const currentIndex = plans.findIndex((p) => p.id === currentPlanId)
   return (
     <section className="rounded-3xl bg-card p-5 shadow-xs sm:p-6">
@@ -12,7 +12,7 @@ function PlanSelector({ plans, currentPlanId, cycle, onCycleChange, onSelect }) 
         <div>
           <h2 className="text-xl font-bold tracking-tight">{'Planes de suscripción'}</h2>
           <p className="text-sm text-muted-foreground">
-            {'Cambia de plan cuando quieras. El importe se prorratea automáticamente.'}
+            {'Precios publicados por AulaBase. Revisa las condiciones antes de contratar.'}
           </p>
         </div>
         <div className="inline-flex items-center gap-1 self-start rounded-2xl bg-muted p-1">
@@ -20,6 +20,7 @@ function PlanSelector({ plans, currentPlanId, cycle, onCycleChange, onSelect }) 
             <button
               key={c}
               type="button"
+              disabled={!onCycleChange || !availableCycles.includes(c)}
               onClick={() => onCycleChange(c)}
               className={cn(
                 'flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-all',
@@ -29,19 +30,15 @@ function PlanSelector({ plans, currentPlanId, cycle, onCycleChange, onSelect }) 
               )}
             >
               {c === 'monthly' ? 'Mensual' : 'Anual'}
-              {c === 'yearly' && (
-                <span className="rounded-md bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-400">
-                  {'−20%'}
-                </span>
-              )}
             </button>
           ))}
         </div>
       </div>
+      {plans.length === 0 && <div className="mt-6 rounded-2xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">No hay precios disponibles para contratar.</div>}
       <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
         {plans.map((plan, index) => {
           const isCurrent = plan.id === currentPlanId
-          const price = cycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice
+          const price = plan.price ?? (cycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice)
           const isUpgrade = index > currentIndex
           return (
             <div
@@ -70,17 +67,17 @@ function PlanSelector({ plans, currentPlanId, cycle, onCycleChange, onSelect }) 
               <p className="mt-1 text-sm text-muted-foreground">{plan.description}</p>
               <div className="mt-4 flex items-baseline gap-1">
                 <span className="text-3xl font-extrabold tracking-tight">
-                  {price === 0 ? 'Gratis' : formatCurrency(price)}
+                  {plan.priceLabel ?? (price === 0 ? 'Gratis' : formatCurrency(price, plan.currency))}
                 </span>
                 {price > 0 && (
                   <span className="text-sm text-muted-foreground">
                     {'/'}
-                    {cycle === 'monthly' ? 'mes' : 'año'}
+                    {plan.intervalLabel ?? (cycle === 'monthly' ? 'mes' : 'año')}
                   </span>
                 )}
               </div>
               <ul className="mt-5 flex-1 space-y-2.5">
-                {plan.features.map((feature) => (
+                {(plan.features ?? []).map((feature) => (
                   <li key={feature} className="flex items-start gap-2.5 text-sm">
                     <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
                       <Check className="h-3 w-3" strokeWidth={3} />
@@ -92,10 +89,10 @@ function PlanSelector({ plans, currentPlanId, cycle, onCycleChange, onSelect }) 
               <Button
                 className="mt-6 h-11 w-full rounded-xl font-semibold"
                 variant={isCurrent ? 'outline' : isUpgrade ? 'default' : 'secondary'}
-                disabled={isCurrent}
+                disabled={isCurrent || !onSelect}
                 onClick={() => onSelect?.(plan.id)}
               >
-                {isCurrent ? 'Tu plan actual' : isUpgrade ? 'Mejorar plan' : 'Cambiar a este plan'}
+                {isCurrent ? 'Tu plan actual' : 'Gestionar plan'}
               </Button>
             </div>
           )

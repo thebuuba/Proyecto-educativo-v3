@@ -36,12 +36,16 @@ export function Badge({ variant: _variant, ...props }) {
   )
 }
 export function Switch2({ checked, onCheckedChange, className, ...props }) {
+  if (checked == null) return <button {...props} type="button" disabled
+    aria-label={`${props['aria-label'] ?? 'Estado'}: no disponible`}
+    className={cn('inline-flex h-6 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-muted text-xs text-muted-foreground', className)}>—</button>
   return (
     <input
       {...props}
       type="checkbox"
       role="switch"
       checked={checked}
+      disabled={props.disabled || !onCheckedChange}
       onChange={(event) => onCheckedChange?.(event.target.checked)}
       className={cn('reference-switch', className)}
     />

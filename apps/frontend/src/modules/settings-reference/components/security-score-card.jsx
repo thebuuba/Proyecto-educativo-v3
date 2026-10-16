@@ -5,9 +5,9 @@ import { ProgressRing } from './progress-ring'
 
 function SecurityScoreCard({ items, onItemClick }) {
   const done = items.filter((i) => i.done).length
-  const score = Math.round((done / items.length) * 100)
+  const score = items.length && items.every(i => typeof i.done === 'boolean') ? Math.round((done / items.length) * 100) : null
   const level =
-    score >= 100 ? 'Excelente' : score >= 75 ? 'Buena' : score >= 50 ? 'Mejorable' : 'Débil'
+    score === null ? 'Sin evaluar' : score >= 100 ? 'Excelente' : score >= 75 ? 'Buena' : score >= 50 ? 'Mejorable' : 'Débil'
   return (
     <section className="overflow-hidden rounded-3xl bg-card shadow-xs">
       <div className="relative bg-primary p-5 text-primary-foreground sm:p-6">
@@ -49,7 +49,7 @@ function SecurityScoreCard({ items, onItemClick }) {
                     : 'border-2 border-dashed border-amber-400',
                 )}
               >
-                {item.done && <Check className="h-3.5 w-3.5" strokeWidth={3} />}
+                {item.done == null ? '—' : item.done && <Check className="h-3.5 w-3.5" strokeWidth={3} />}
               </span>
               <span
                 className={cn(
@@ -61,7 +61,7 @@ function SecurityScoreCard({ items, onItemClick }) {
               </span>
               {!item.done && (
                 <span className="flex items-center text-xs font-bold text-primary">
-                  {'Activar'}
+                  {'Consultar'}
                   <ChevronRight className="h-3.5 w-3.5" />
                 </span>
               )}

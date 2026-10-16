@@ -59,7 +59,7 @@ function InvoiceHistoryTable({ invoices, onDownload, onRetry, onSeeAll }) {
         <h2 className="text-xl font-bold tracking-tight">{'Historial de facturas'}</h2>
         <button
           type="button"
-          onClick={onSeeAll}
+          onClick={() => { setFilter('all'); onSeeAll?.() }}
           className="text-sm font-semibold text-primary hover:underline"
         >
           {'Ver todo'}
@@ -103,7 +103,7 @@ function InvoiceHistoryTable({ invoices, onDownload, onRetry, onSeeAll }) {
             <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-primary">
               <Receipt className="h-6 w-6" />
             </span>
-            <p className="text-sm font-semibold">{'No hay facturas en esta categoría'}</p>
+            <p className="text-sm font-semibold">{invoices.length === 0 ? 'No hay pagos ni documentos registrados.' : 'No hay facturas en esta categoría'}</p>
             <p className="text-xs text-muted-foreground">
               {'Cuando se generen nuevos cobros aparecerán aquí.'}
             </p>
@@ -111,8 +111,8 @@ function InvoiceHistoryTable({ invoices, onDownload, onRetry, onSeeAll }) {
         ) : (
           <ul className="divide-y divide-border/60 md:divide-y-0">
             {filtered.map((invoice) => {
-              const type = typeMeta[invoice.type]
-              const status = statusMeta[invoice.status]
+              const type = typeMeta[invoice.type] ?? {icon:Receipt,tint:'bg-muted text-muted-foreground'}
+              const status = statusMeta[invoice.status] ?? {label:invoice.statusLabel ?? invoice.status,className:'bg-muted text-muted-foreground'}
               const Icon = type.icon
               const failed = invoice.status === 'failed'
               return (
@@ -157,7 +157,7 @@ function InvoiceHistoryTable({ invoices, onDownload, onRetry, onSeeAll }) {
                     )}
                   >
                     {invoice.type === 'refund' ? '+' : ''}
-                    {formatCurrency(invoice.amount)}
+                    {invoice.amountLabel ?? formatCurrency(invoice.amount, invoice.currency)}
                   </span>
                   <span className="flex items-center gap-2 text-xs text-muted-foreground md:block">
                     <span
@@ -177,6 +177,7 @@ function InvoiceHistoryTable({ invoices, onDownload, onRetry, onSeeAll }) {
                         variant="ghost"
                         className="h-8 rounded-lg px-2 text-xs font-semibold text-destructive hover:bg-destructive/10 hover:text-destructive"
                         onClick={() => onRetry?.(invoice)}
+                        disabled={!onRetry}
                       >
                         <RotateCw className="mr-1 h-3.5 w-3.5" />
                         {'Reintentar'}
@@ -189,6 +190,7 @@ function InvoiceHistoryTable({ invoices, onDownload, onRetry, onSeeAll }) {
                         className="h-8 w-8 rounded-lg text-muted-foreground hover:bg-accent hover:text-primary"
                         aria-label={`Descargar ${invoice.number}`}
                         onClick={() => onDownload?.(invoice)}
+                        disabled={!onDownload || !invoice.document}
                       >
                         <Download className="h-4 w-4" />
                       </Button>

@@ -9,7 +9,6 @@ import {
   DropdownMenuSeparator2,
   DropdownMenuTrigger2,
 } from '../reference-ui'
-import { formatCurrency } from '../data/format-currency'
 
 var brandBadge = {
   visa: 'bg-blue-600 text-white',
@@ -32,6 +31,7 @@ function BrandMark({ brand }) {
   )
 }
 function PaymentMethodsCard({ methods, walletCredits, onSetDefault, onRemove, onAdd, onTopUp }) {
+  methods = methods ?? []
   const primary = methods.find((m) => m.isDefault) ?? methods[0]
   return (
     <section className="space-y-5 rounded-3xl bg-card p-5 shadow-xs sm:p-6">
@@ -42,11 +42,17 @@ function PaymentMethodsCard({ methods, walletCredits, onSetDefault, onRemove, on
           variant="ghost"
           className="h-8 rounded-lg bg-accent px-3 text-xs font-semibold text-accent-foreground hover:bg-accent/80"
           onClick={onAdd}
+          disabled={!onAdd}
         >
           <Plus className="mr-1 h-3.5 w-3.5" />
           {'Añadir'}
         </Button>
       </div>
+      {!primary && <div data-testid="payment-card-empty" className="relative flex aspect-[1.7/1] flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-sky-500 to-blue-700 p-5 text-white shadow-xl shadow-primary/25">
+        <div aria-hidden="true" className="absolute -right-12 -top-16 h-44 w-44 rounded-full bg-white/10" />
+        <Wifi className="h-5 w-5 rotate-90 opacity-80" />
+        <div className="relative"><p className="text-sm font-semibold">Métodos gestionados por el proveedor</p><p className="mt-2 text-xs text-white/80">Los datos de tarjeta no están disponibles en este panel.</p></div>
+      </div>}
       {primary && primary.last4 && (
         <div className="relative aspect-[1.7/1] overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-sky-500 to-blue-700 p-5 text-white shadow-xl shadow-primary/25">
           <div
@@ -119,15 +125,15 @@ function PaymentMethodsCard({ methods, walletCredits, onSetDefault, onRemove, on
               </DropdownMenuTrigger2>
               <DropdownMenuContent2 align="end" className="rounded-xl">
                 <DropdownMenuItem2
-                  disabled={method.isDefault}
+                  disabled={method.isDefault || !onSetDefault}
                   onClick={() => onSetDefault?.(method.id)}
                 >
                   {'Usar como principal'}
                 </DropdownMenuItem2>
-                <DropdownMenuItem2>{'Editar datos'}</DropdownMenuItem2>
+                <DropdownMenuItem2 disabled>{'Editar datos'}</DropdownMenuItem2>
                 <DropdownMenuSeparator2 />
                 <DropdownMenuItem2
-                  disabled={method.isDefault}
+                  disabled={method.isDefault || !onRemove}
                   className="text-destructive focus:text-destructive"
                   onClick={() => onRemove?.(method.id)}
                 >
@@ -144,9 +150,10 @@ function PaymentMethodsCard({ methods, walletCredits, onSetDefault, onRemove, on
         </span>
         <div className="flex-1">
           <p className="text-xs text-muted-foreground">{'Saldo de la cuenta'}</p>
-          <p className="text-base font-extrabold tabular-nums">{formatCurrency(walletCredits)}</p>
+          <p className="text-base font-extrabold tabular-nums">{walletCredits?.amountLabel ?? '—'}</p>
+          {walletCredits == null && <p className="mt-1 text-xs text-muted-foreground">El monedero aún no está disponible.</p>}
         </div>
-        <Button size="sm" className="h-9 rounded-xl px-4 font-semibold" onClick={onTopUp}>
+        <Button size="sm" className="h-9 rounded-xl px-4 font-semibold" onClick={onTopUp} disabled={!onTopUp}>
           {'Recargar'}
         </Button>
       </div>

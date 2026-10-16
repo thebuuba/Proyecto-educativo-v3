@@ -51,10 +51,10 @@ function BillingActivityPanel({ groups, subscription, onOpen }) {
   const details = [
     { label: 'Plan', value: subscription.planName },
     { label: 'Miembro desde', value: subscription.startedAt },
-    { label: 'Ciclo', value: subscription.cycle === 'monthly' ? 'Mensual' : 'Anual' },
+    { label: 'Ciclo', value: subscription.cycle === 'monthly' ? 'Mensual' : subscription.cycle === 'yearly' ? 'Anual' : '—' },
     { label: 'Próximo cobro', value: subscription.nextBillingDate },
-    { label: 'Importe', value: formatCurrency(subscription.price) },
-    { label: 'Renovación', value: subscription.autoRenew ? 'Automática' : 'Manual' },
+    { label: 'Importe', value: subscription.priceLabel ?? formatCurrency(subscription.price, subscription.currency) },
+    { label: 'Renovación', value: subscription.autoRenew == null ? '—' : subscription.autoRenew ? 'Automática' : 'Sin renovación automática' },
   ]
   return (
     <aside className="flex h-full flex-col rounded-3xl bg-card p-5 shadow-xs sm:p-6">
@@ -63,6 +63,7 @@ function BillingActivityPanel({ groups, subscription, onOpen }) {
         <button
           type="button"
           onClick={onOpen}
+          disabled={!onOpen}
           aria-label="Abrir actividad completa"
           className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted text-muted-foreground transition-colors hover:bg-accent hover:text-primary"
         >
@@ -94,7 +95,7 @@ function BillingActivityPanel({ groups, subscription, onOpen }) {
               className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm odd:bg-muted/60"
             >
               <dt className="text-muted-foreground">{d.label}</dt>
-              <dd className="font-semibold">{d.value}</dd>
+              <dd className="font-semibold">{d.value ?? '—'}</dd>
             </div>
           ))}
         </dl>
@@ -103,8 +104,8 @@ function BillingActivityPanel({ groups, subscription, onOpen }) {
           <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-400">
             <CircleCheck className="h-5 w-5" />
           </span>
-          <p className="text-sm font-semibold">{'Todo en orden'}</p>
-          <p className="text-xs text-muted-foreground">{'No tienes pagos con incidencias.'}</p>
+          <p className="text-sm font-semibold">{tab === 'alerts' ? 'No hay alertas registradas.' : 'No hay movimientos de pago registrados.'}</p>
+          <p className="text-xs text-muted-foreground">{'Aquí aparecerá la actividad registrada de tu cuenta.'}</p>
         </div>
       ) : (
         <ol className="relative mt-6 space-y-6 before:absolute before:bottom-2 before:left-[7px] before:top-2 before:w-px before:bg-border">
@@ -166,9 +167,9 @@ function BillingActivityPanel({ groups, subscription, onOpen }) {
                           </span>
                         </div>
                         <p className="truncate text-xs text-muted-foreground">{item.description}</p>
-                        {item.amount !== undefined && (
+                        {(item.amountLabel || item.amount !== undefined) && (
                           <p className="mt-1 text-xs font-bold tabular-nums">
-                            {formatCurrency(item.amount)}
+                            {item.amountLabel ?? formatCurrency(item.amount, item.currency)}
                           </p>
                         )}
                       </div>

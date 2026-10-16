@@ -18,12 +18,16 @@ var deviceIcons = {
   tablet: Tablet,
 }
 function ActiveSessionsCard({ sessions, history, onRevoke, onRevokeAll }) {
+  const sessionsAvailable = Array.isArray(sessions)
+  const historyAvailable = Array.isArray(history)
+  sessions = sessions ?? []
+  history = history ?? []
   const others = sessions.filter((s) => !s.current).length
   return (
     <SettingsSectionCard
       id="sessions"
       title="Dispositivos conectados"
-      description={`${sessions.length} sesiones activas en tu cuenta`}
+      description={sessionsAvailable ? `${sessions.length} sesiones activas en tu cuenta` : 'La lista de dispositivos aún no está disponible.'}
       icon={<MonitorSmartphone className="h-5 w-5" />}
     >
       <ul className="space-y-2">
@@ -76,6 +80,7 @@ function ActiveSessionsCard({ sessions, history, onRevoke, onRevokeAll }) {
                   variant="ghost"
                   className="h-8 rounded-lg px-2.5 text-xs font-semibold text-destructive hover:bg-destructive/10 hover:text-destructive"
                   onClick={() => onRevoke(s.id)}
+                  disabled={!onRevoke}
                 >
                   {'Cerrar'}
                 </Button>
@@ -87,13 +92,14 @@ function ActiveSessionsCard({ sessions, history, onRevoke, onRevokeAll }) {
       <Button
         variant="outline"
         className="mt-3 h-10 w-full rounded-xl bg-card font-semibold"
-        disabled={others === 0}
+        disabled={!onRevokeAll || others === 0}
         onClick={onRevokeAll}
       >
         {'Cerrar sesión en los demás dispositivos'}
       </Button>
       <div className="mt-6">
         <p className="text-sm font-semibold">{'Actividad reciente'}</p>
+        {!historyAvailable && <p className="mt-3 text-xs text-muted-foreground">El historial de accesos aún no está disponible.</p>}
         <ol className="relative mt-3 space-y-4 before:absolute before:bottom-1 before:left-[13px] before:top-1 before:w-px before:bg-border">
           {history.map((e) => {
             const blocked = e.status === 'blocked'

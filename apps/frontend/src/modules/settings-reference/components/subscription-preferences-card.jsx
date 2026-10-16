@@ -25,26 +25,28 @@ function SubscriptionPreferencesCard({
   onRenewalRemindersChange,
   onPause,
   onCancel,
+  pending = false,
+  statusText,
 }) {
   const prefs = [
     {
       id: 'auto-renew',
       label: 'Renovación automática',
-      description: `Se cobrará el ${nextBillingDate}`,
+      description: autoRenew == null ? 'Sin estado de renovación disponible' : autoRenew ? `Fin del período: ${nextBillingDate ?? '—'}` : 'Sin renovación automática vigente',
       checked: autoRenew,
       onChange: onAutoRenewChange,
     },
     {
       id: 'receipts',
       label: 'Recibos por correo',
-      description: 'Recibe cada factura en tu email',
+      description: emailReceipts == null ? 'Preferencia no disponible' : 'Recibos comerciales por correo',
       checked: emailReceipts,
       onChange: onEmailReceiptsChange,
     },
     {
       id: 'reminders',
       label: 'Aviso antes de renovar',
-      description: 'Te avisamos 3 días antes del cobro',
+      description: renewalReminders == null ? 'Preferencia no disponible' : 'Avisos de renovación',
       checked: renewalReminders,
       onChange: onRenewalRemindersChange,
     },
@@ -63,17 +65,18 @@ function SubscriptionPreferencesCard({
               <p className="text-sm font-semibold">{p.label}</p>
               <p className="text-xs text-muted-foreground">{p.description}</p>
             </div>
-            <Switch2 id={p.id} checked={p.checked} onCheckedChange={p.onChange} />
+            <Switch2 id={p.id} aria-label={p.label} checked={p.checked} onCheckedChange={p.onChange} disabled={pending || !p.onChange} />
           </label>
         ))}
       </div>
+      {statusText && <p className="text-xs text-muted-foreground">{statusText}</p>}
       <div className="rounded-2xl border border-dashed border-destructive/30 bg-destructive/5 p-4">
         <p className="text-sm font-semibold">
           {'Gestionar '}
           {planName}
         </p>
         <p className="mt-0.5 text-xs text-muted-foreground">
-          {'Mantendrás el acceso a tus cursos hasta el final del periodo pagado.'}
+          {planName ? 'Consulta las condiciones y la cobertura vigente antes de gestionar tu suscripción.' : 'No hay una suscripción registrada.'}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           <Button
@@ -81,6 +84,7 @@ function SubscriptionPreferencesCard({
             size="sm"
             className="h-9 rounded-xl bg-card font-semibold"
             onClick={onPause}
+            disabled={!onPause || pending}
           >
             <CirclePause className="mr-1.5 h-4 w-4" />
             {'Pausar 1 mes'}
@@ -90,6 +94,7 @@ function SubscriptionPreferencesCard({
               <Button
                 variant="ghost"
                 size="sm"
+                disabled={!onCancel || pending}
                 className="h-9 rounded-xl font-semibold text-destructive hover:bg-destructive/10 hover:text-destructive"
               >
                 <CircleX className="mr-1.5 h-4 w-4" />
@@ -100,9 +105,7 @@ function SubscriptionPreferencesCard({
               <AlertDialogHeader>
                 <AlertDialogTitle2>{'¿Cancelar tu suscripción?'}</AlertDialogTitle2>
                 <AlertDialogDescription2>
-                  {'Perderás el acceso a tutorías en vivo y certificados a partir del'}{' '}
-                  {nextBillingDate}
-                  {'. Tu progreso en los cursos se conservará.'}
+                  {'Se detendrá la renovación automática. La cobertura actual seguirá vigente hasta el final del período informado por el servidor: '}{nextBillingDate ?? '—'}{'.'}
                 </AlertDialogDescription2>
               </AlertDialogHeader>
               <AlertDialogFooter>

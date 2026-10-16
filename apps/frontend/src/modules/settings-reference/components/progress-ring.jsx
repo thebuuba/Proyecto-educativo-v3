@@ -11,16 +11,17 @@ function ProgressRing({
   labelClassName,
   label,
 }) {
-  const clamped = Math.max(0, Math.min(100, value))
+  const clamped = Number.isFinite(value) ? Math.max(0, Math.min(100, value)) : null
   const radius = (size - stroke) / 2
   const circumference = 2 * Math.PI * radius
-  const offset = circumference - (clamped / 100) * circumference
+  const offset = circumference - ((clamped ?? 0) / 100) * circumference
   return (
     <div
       className={cn('relative inline-flex items-center justify-center', className)}
       style={{ width: size, height: size }}
       role="progressbar"
-      aria-valuenow={clamped}
+      aria-valuenow={clamped ?? undefined}
+      aria-valuetext={clamped === null ? 'Sin datos disponibles' : undefined}
       aria-valuemin={0}
       aria-valuemax={100}
     >
@@ -46,7 +47,7 @@ function ProgressRing({
         />
       </svg>
       <span className={cn('absolute text-xs font-bold tabular-nums', labelClassName)}>
-        {label ?? `${Math.round(clamped)}%`}
+        {label ?? (clamped === null ? '—' : `${Math.round(clamped)}%`)}
       </span>
     </div>
   )

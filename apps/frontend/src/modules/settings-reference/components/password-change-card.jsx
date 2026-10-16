@@ -18,7 +18,7 @@ var strengthMeta = [
   { label: 'Buena', bar: 'bg-sky-500', text: 'text-sky-600 dark:text-sky-400' },
   { label: 'Excelente', bar: 'bg-emerald-500', text: 'text-emerald-600 dark:text-emerald-400' },
 ]
-function PasswordInput({ id, value, onChange, placeholder }) {
+function PasswordInput({ id, value, onChange, placeholder, disabled }) {
   const [show, setShow] = useState(false)
   return (
     <div className="relative">
@@ -27,11 +27,13 @@ function PasswordInput({ id, value, onChange, placeholder }) {
         type={show ? 'text' : 'password'}
         value={value}
         placeholder={placeholder}
+        disabled={disabled}
         onChange={(e) => onChange(e.target.value)}
         className="h-11 rounded-xl border-transparent bg-muted/50 pr-11 focus-visible:bg-card"
       />
       <button
         type="button"
+        disabled={disabled}
         onClick={() => setShow((s) => !s)}
         aria-label={show ? 'Ocultar contraseña' : 'Mostrar contraseña'}
         className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground"
@@ -41,28 +43,31 @@ function PasswordInput({ id, value, onChange, placeholder }) {
     </div>
   )
 }
-function PasswordChangeCard({ lastChanged, onSubmit }) {
+function PasswordChangeCard({ lastChanged, onSubmit, onForgot, pendingReset = false }) {
   const [current, setCurrent] = useState('')
   const [next, setNext] = useState('')
   const [confirm, setConfirm] = useState('')
   const [success, setSuccess] = useState(false)
+  const [pending, setPending] = useState(false)
+  const [error, setError] = useState('')
   const passed = useMemo(() => rules.filter((r) => r.test(next)).length, [next])
   const strength = strengthMeta[next ? passed : 0]
   const mismatch = confirm.length > 0 && confirm !== next
   const canSubmit = current.length > 0 && passed === rules.length && confirm === next
-  const handleSubmit = () => {
-    if (!canSubmit) return
-    onSubmit?.(current, next)
-    setCurrent('')
-    setNext('')
-    setConfirm('')
-    setSuccess(true)
+  const handleSubmit = async () => {
+    if (!canSubmit || !onSubmit || pending) return
+    setPending(true); setError('')
+    try {
+      await onSubmit(current, next)
+      setCurrent(''); setNext(''); setConfirm(''); setSuccess(true)
+    } catch { setError('No se pudo actualizar la contraseña.') }
+    finally { setPending(false) }
   }
   return (
     <SettingsSectionCard
       id="password"
       title="Contraseña"
-      description={`Último cambio ${lastChanged}. Te recomendamos cambiarla cada 6 meses.`}
+      description={lastChanged ? `Último cambio: ${lastChanged}` : 'No hay una fecha de último cambio disponible.'}
       icon={<KeyRound className="h-5 w-5" />}
       footer={
         <Fragment>
@@ -72,12 +77,12 @@ function PasswordChangeCard({ lastChanged, onSubmit }) {
               {'Contraseña actualizada'}
             </p>
           )}
-          <Button variant="ghost" className="h-10 rounded-xl font-semibold">
+          <Button variant="ghost" className="h-10 rounded-xl font-semibold" onClick={onForgot} disabled={!onForgot || pendingReset}>
             {'¿Olvidaste tu contraseña?'}
           </Button>
           <Button
             className="h-10 rounded-xl px-5 font-semibold"
-            disabled={!canSubmit}
+            disabled={!canSubmit || !onSubmit || pending}
             onClick={handleSubmit}
           >
             {'Actualizar contraseña'}
@@ -85,12 +90,14 @@ function PasswordChangeCard({ lastChanged, onSubmit }) {
         </Fragment>
       }
     >
+      {error && <p role="alert" className="mb-4 text-sm text-destructive">{error}</p>}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         <div className="space-y-5">
           <div className="space-y-2">
             <Label2 htmlFor="current-password">{'Contraseña actual'}</Label2>
             <PasswordInput
               id="current-password"
+              disabled={!onSubmit || pending}
               value={current}
               onChange={(v) => {
                 setCurrent(v)
@@ -100,7 +107,7 @@ function PasswordChangeCard({ lastChanged, onSubmit }) {
           </div>
           <div className="space-y-2">
             <Label2 htmlFor="new-password">{'Nueva contraseña'}</Label2>
-            <PasswordInput id="new-password" value={next} onChange={setNext} />
+            <PasswordInput id="new-password" value={next} onChange={setNext} disabled={!onSubmit || pending} />
             <div className="flex gap-1.5 pt-1">
               {rules.map((r, i) => (
                 <span
@@ -116,7 +123,7 @@ function PasswordChangeCard({ lastChanged, onSubmit }) {
           </div>
           <div className="space-y-2">
             <Label2 htmlFor="confirm-password">{'Confirmar contraseña'}</Label2>
-            <PasswordInput id="confirm-password" value={confirm} onChange={setConfirm} />
+            <PasswordInput id="confirm-password" value={confirm} onChange={setConfirm} disabled={!onSubmit || pending} />
             {mismatch && (
               <p className="text-xs font-semibold text-destructive">
                 {'Las contraseñas no coinciden'}
@@ -147,7 +154,7 @@ function PasswordChangeCard({ lastChanged, onSubmit }) {
             })}
           </ul>
           <p className="mt-5 text-xs text-muted-foreground">
-            {'Al cambiarla, cerraremos la sesión en el resto de dispositivos.'}
+            {onSubmit ? 'Usa una contraseña diferente a las de tus otras cuentas.' : 'El cambio directo aún no está disponible. Usa «¿Olvidaste tu contraseña?» para solicitar un enlace seguro.'}
           </p>
         </div>
       </div>

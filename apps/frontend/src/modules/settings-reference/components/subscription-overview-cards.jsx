@@ -14,8 +14,8 @@ var usageIcons = {
   },
 }
 function SubscriptionOverviewCards({ subscription, usage }) {
-  const elapsed =
-    ((subscription.periodDays - subscription.daysLeft) / subscription.periodDays) * 100
+  const elapsed = subscription.periodDays > 0 && Number.isFinite(subscription.daysLeft)
+    ? ((subscription.periodDays - subscription.daysLeft) / subscription.periodDays) * 100 : null
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
       <div className="relative overflow-hidden rounded-3xl bg-primary p-5 text-primary-foreground shadow-xl shadow-primary/30 sm:col-span-2 xl:col-span-1">
@@ -35,8 +35,8 @@ function SubscriptionOverviewCards({ subscription, usage }) {
             <div>
               <p className="text-base font-bold">{subscription.planName}</p>
               <p className="text-sm text-primary-foreground/80">
-                {formatCurrency(subscription.price, subscription.currency)}
-                {' /'} {subscription.cycle === 'monthly' ? 'mes' : 'año'}
+                {subscription.priceLabel ?? formatCurrency(subscription.price, subscription.currency)}
+                {subscription.cycle && <> / {subscription.cycle === 'monthly' ? 'mes' : subscription.cycle === 'yearly' ? 'año' : subscription.cycle}</>}
               </p>
             </div>
           </div>
@@ -46,19 +46,18 @@ function SubscriptionOverviewCards({ subscription, usage }) {
             stroke={5}
             trackClassName="stroke-white/25"
             indicatorClassName="stroke-white"
-            label={`${subscription.daysLeft}d`}
+            label={Number.isFinite(subscription.daysLeft) ? `${subscription.daysLeft}d` : '—'}
             labelClassName="text-primary-foreground"
           />
         </div>
         <p className="relative mt-4 text-xs font-medium text-primary-foreground/85">
-          {'Próxima renovación · '}
-          {subscription.nextBillingDate}
+          {subscription.periodLabel ?? 'Próxima renovación'} · {subscription.nextBillingDate ?? '—'}
         </p>
       </div>
       {usage.map((stat) => {
         const meta = usageIcons[stat.id] ?? usageIcons.courses
         const Icon = meta.icon
-        const pct = (stat.used / stat.total) * 100
+        const pct = Number.isFinite(stat.used) && stat.total > 0 ? (stat.used / stat.total) * 100 : null
         return (
           <div
             key={stat.id}
@@ -73,9 +72,8 @@ function SubscriptionOverviewCards({ subscription, usage }) {
               <div>
                 <p className="text-base font-bold">{stat.label}</p>
                 <p className="text-sm text-muted-foreground">
-                  {stat.used}
-                  {' / '}
-                  {stat.total} {stat.unit}
+                  {stat.used ?? '—'}
+                  {Number.isFinite(stat.total) ? ` / ${stat.total}` : ''} {stat.unit}
                 </p>
               </div>
             </div>
