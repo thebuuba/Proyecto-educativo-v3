@@ -10819,8 +10819,16 @@
         ],
         "savedAndReopened": 4
       },
-      "visualVerification": null,
-      "status": "IMPLEMENTED_PENDING_VERIFICATION",
+      "visualVerification": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "allFieldsEqual": true
+      },
+      "status": "VERIFIED_DEFINED_PATTERNS",
       "exclusions": [
         "Optativas y contenidos atribuidos a otros grados.",
         "Actitudes personales y listados generales de procesos no se convierten en requisitos de cada actividad."

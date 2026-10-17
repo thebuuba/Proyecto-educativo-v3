@@ -1,6 +1,29 @@
 # Ciencias de la Naturaleza común: 5.º de secundaria
 
-Implementación en verificación, no cobertura final aprobada. Química es el componente común de quinto; no se incluyen optativas ni otra asignatura. Se continúa el trabajo independiente autorizado durante el bloqueo de sesión personal y del CLI documentado en cuarto.
+Estado final: **patrones definidos verificados**, incluidos los cuatro formatos con la cuenta personal de Development. Química es el componente común de quinto; no se incluyen optativas ni otra asignatura. Los apartados cronológicos inferiores conservan las incidencias y comprobaciones intermedias; el cierre siguiente establece los pendientes vigentes.
+
+## Cierre personal y comprobaciones finales
+
+Se generaron, editaron, guardaron una sola vez y reabrieron estos cuatro casos desde Cursos → Química, usando el runtime conjunto final de catálogo 92:
+
+| Formato | Actividad | Puntos | Comprobación de reapertura |
+| --- | --- | ---: | --- |
+| Rúbrica | Entalpía (`10e0a84e-ae09-4ac1-8fa9-9bd4ce1a551a`) | 20 | Editor: 37 campos idénticos |
+| Cotejo | Grupos funcionales (`95757211-9e68-41e2-a03c-76a806acf14f`) | 17,35 | Pestaña Instrumento: cinco valores del editor y definición completa idénticos a DB |
+| Escala | ADN y ARN (`96389f7a-45c3-4527-b5c4-5581937a3b75`) | 20 | Pestaña Instrumento: seis valores y 27 claves persistidas exactos |
+| Ponderada | Entalpía (`91c007d1-f326-4e1f-9805-f1f6b40ee590`) | 17,35 | Diez valores y 35 claves; pesos 41/19/40, puntos 7,11/3,30/6,94 |
+
+La pestaña Instrumento presenta actualmente la configuración como claves y valores: no se confunde esa reapertura con una tabla editable. La tabla completa sí se inspeccionó y editó antes de guardar; la rúbrica se reabrió además en el editor habitual. DB confirmó identidad de instrumento/snapshot, fuente de quinto, scope correcto y catálogo 92 para los cuatro casos. Los snapshots HTTP anteriores de catálogo 91 se conservan.
+
+Puntuación inicialmente vacía en cada creación, controles visibles y preparación sin anuncios. La pregunta/hipótesis con práctica de entalpía recomendó indagación; cambiar manualmente a Estudio de caso preservó todos los campos de cada instrumento. Completar el descriptor vacío de rúbrica conservó los otros 36 valores; en cotejo, ampliar la consigna y elegir Conservar instrumento actual preservó la edición manual, y Agregar criterio incorporó solo la comparación solicitada sin duplicar la identificación. Al cambiar modalidad después de editar se exigió revisar la preparación; se regeneró y restauró la edición comprobando igualdad antes de guardar.
+
+Comprobaciones conjuntas sobre el código final de sexto, que incluye quinto: backend **45.248/108 archivos**, frontend **45.637/131**, backend/frontend builds y **pnpm cloudflare:build** con salida 0. Cloudflare terminó naturalmente en 86.042 ms; los intentos anteriores interrumpidos no se reclasifican. HTTP/DB de quinto: cuatro guardados/reaperturas y cambio exclusivo de estrategia exacto; recheck catálogo 91 con cinco controles científicos y regresiones FRA/ING/MAT/Ciencias1–4 aprobados. Evidencia separada en [verificación](2026-10-16-ciencias-naturaleza-5-verificacion.json).
+
+Historia tras los cuatro casos personales: los 18 releases/73 snapshots iniciales y los 23/102 del inicio de quinto conservan sus huellas. Hay 7 releases/44 snapshots nuevos respecto al inicio del encargo; incluyen otros grados y QA, no solo quinto. No se reescribió el histórico.
+
+No queda bloqueo de acceso ni de build en este bloque. Persisten limitaciones observadas de latencia, timeout de la lista global de Actividades y DNS intermitente; los recorridos satisfactorios desde el curso no prueban que esas incidencias hayan desaparecido. Las comprobaciones acreditan las consignas definidas y los ejemplos revisados, no toda redacción posible.
+
+## Fuente, alcance y antecedentes de implementación
 
 MINERD 2023, PDF 316–318 / impresas 315–317: tres páginas inspeccionadas visualmente, 138 registros literales. La [matriz](../../curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json) separa conceptos/procedimientos, indicadores y adaptaciones. Trece encabezados o menús P1–P6 no se convierten en tareas adicionales. El texto oficial conserva «sp1» y la mención de alcanos junto a SN1/SN2; la adaptación usa sp y exige sustratos/grupos salientes compatibles, sin atribuir esos errores al desempeño del estudiante.
 
@@ -47,4 +70,4 @@ Recheck final con catálogo 91: cuatro recomendaciones, cuatro reaperturas exact
 
 Pendientes reales: recorrido personal visual y terminación del CLI Cloudflare. El timeout de conexión anterior queda documentado como incidencia recuperada, no como bloqueo vigente de PostgreSQL. No se presenta quinto como completamente aprobado mientras subsistan esos dos límites.
 
-Actualización del build conjunto final: `pnpm cloudflare:build` terminó naturalmente con salida 0 / 86.042 ms sobre catálogo92, que incluye quinto y las correcciones de persistencia. El CLI deja de ser bloqueo vigente; sus intentos interrumpidos no se reclasifican como aprobados. La sesión personal también se recuperó automáticamente y se retoman los recorridos visuales; no se sustituyen por QA HTTP.
+Actualización del build conjunto final: `pnpm cloudflare:build` terminó naturalmente con salida 0 / 86.042 ms sobre catálogo 92, que incluye quinto y las correcciones de persistencia. El CLI deja de ser bloqueo vigente; sus intentos interrumpidos no se reclasifican como aprobados. La sesión personal también se recuperó automáticamente y se retoman los recorridos visuales; no se sustituyen por QA HTTP.

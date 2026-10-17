@@ -7,8 +7,8 @@ Se conectaron los seis grados en código, exclusivamente para Ciencias de la Nat
 | 1.º | Ciencias de la Tierra y el Universo | 293–295 / 292–294 | 29 | 68 / 272 | Patrones definidos verificados, incluidos cuatro formatos visuales |
 | 2.º | Ciencias de la Vida | 296–299 / 295–298 | 30 | 68 / 272 | Patrones definidos verificados, incluidos cuatro formatos visuales |
 | 3.º | Ciencias Físicas | 300–304 / 299–303 | 50 | 103 / 412 | Patrones definidos verificados, incluidos cuatro formatos visuales |
-| 4.º | Biología | 312–315 / 311–314 | 48 | 104 / 416 | HTTP/DB cuatro formatos; recorrido personal parcial y CLI pendientes |
-| 5.º | Química | 316–318 / 315–317 | 51 | 102 / 408 | HTTP/DB cuatro formatos; navegador personal y CLI pendientes |
+| 4.º | Biología | 312–315 / 311–314 | 48 | 104 / 416 | Cuatro formatos personales reabiertos y contrastados con DB; build final aprobado |
+| 5.º | Química | 316–318 / 315–317 | 51 | 102 / 408 | Cuatro formatos personales reabiertos y contrastados con DB; build final aprobado |
 | 6.º | Física | 319–322 / 318–321 | 63 | 126 / 504 | HTTP/DB cuatro formatos y regresiones aprobados; recorrido personal en curso |
 
 959 registros literales y 271 grupos implementados. Los 2.284 instrumentos de ejemplo son adaptaciones de AulaBase, no instrumentos oficiales del MINERD. La [matriz](../../curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json) conserva texto fuente, páginas, enlaces, indicadores y exclusiones; los archivos `ciencias-naturaleza-N-revision.json` documentan pertinencia y correcciones. El número de ejemplos o pruebas no acredita cobertura universal de redacciones.
@@ -26,6 +26,8 @@ Pendientes y bloqueos: sesión personal en login tras error de perfil, requiere 
 Actualización final de las comprobaciones automáticas: backend **45.248/108**, frontend **45.637/131**, sus builds y **`pnpm cloudflare:build` aprobados**. Este último terminó naturalmente en 86.042 ms sobre catálogo92, sin despliegue; el CLI ya no es un bloqueo vigente. Catálogo92 y fuente6 instalados CREATED→UNCHANGED; guardado/reapertura/estrategia exacta de los cuatro formatos, cinco controles científicos y regresiones FRA/ING/MAT/Ciencias1–5 aprobados. Baseline6 de24releases/106snapshots e inicial18/73 intactos, un release y cuatro snapshots nuevos.
 
 La sesión personal se recuperó automáticamente al recargar, sin intervención de credenciales. El cotejo local de cuarto se reabrió exacto después de cambiar solo estrategia; la escala se creó con snapshot92. Se retoman los recorridos restantes desde curso/asignatura; no se presentan aún como terminados. La lista global de Actividades volvió a superar su timeout: limitación real de latencia separada del creador y los guardados comprobados. Las incidencias anteriores de conexión/CLI se conservan como antecedentes, no como bloqueos actuales.
+
+Cuarto cerró después los cuatro formatos visuales con la cuenta personal y comprobación DB. El cotejo original se revisó y reabrió con snapshot92, preservando sus cinco campos manuales; no se duplicó. Escala y ponderada reabiertas exactas; rúbrica90 anterior conservada. Evidencia publicada en `10adefb3`. Sexto automático publicado en `d93c24a59b47a7a3d9b2cf08c83ce3d8df93265c`; ambos pushes normales confirmados. Los recorridos personales5/6 continúan por separado.
 
 Historial publicado: primero `38bc31d29f3085579e786851823bc3aea70bb57a`; segundo `bad192bae40e435158137d19e3b83b73166ca4f1`; tercero `29a78352452b8aeb0f2aa4e909677389891cef6b`; cuarto `abe812eb03911e1fae6017ccb37610cb00759d12`; quinto `5010f9a60aed0821674bff27c2dde1e5604ab27f`. Push normal confirmado para esos bloques. Sexto y el estado final se actualizarán tras sus verificaciones. Rama `amplia-instrumentos-secundaria`; consultar Git para el hash del commit que contiene este informe.
 
