@@ -164,7 +164,10 @@ export class EvaluationInstrumentsService {
     const resolution = context && version ? resolveScope(context, scopes, mappings.map(m => m.scopeId)) : { status: context ? 'NO_PUBLISHED_VERSION' : 'INCOMPLETE_CONTEXT', scope: null, reason: 'Se requiere contexto estructurado y versión disponible.' }
     if (input.curriculumScopeId && input.curriculumScopeId !== resolution.scope?.id) throw new BadRequestException('El ámbito solicitado no corresponde al contexto autorizado.')
     const elements = resolution.scope ? await prisma.curriculumElement.findMany({ where: { scopeId: resolution.scope.id, versionId: resolution.scope.versionId }, select: { id: true, versionId: true, scopeId: true, elementType: true, originalText: true, normalizedText: true, sourceSpans: { select: { documentId: true, pdfPage: true, printedPage: true } } }, orderBy: { id: 'asc' } }) : []
-    const rows = elements.map(e => ({ elementId: e.id, versionId: e.versionId, scopeId: e.scopeId,
+    const metadata=version?.importMetadata
+    const excluded=metadata&&typeof metadata==='object'&&!Array.isArray(metadata)&&Array.isArray(metadata.excludedAssessmentElementIds)
+      ? new Set(metadata.excludedAssessmentElementIds.filter(id=>typeof id==='string')) : new Set<string>()
+    const rows = elements.filter(e=>!excluded.has(e.id)).map(e => ({ elementId: e.id, versionId: e.versionId, scopeId: e.scopeId,
       type: e.elementType, text: e.originalText, normalizedText: e.normalizedText,
       sources: e.sourceSpans.map(s => ({ documentId: s.documentId, pdfPage: s.pdfPage, printedPage: s.printedPage })) }))
     return { context, resolution, rows, version }

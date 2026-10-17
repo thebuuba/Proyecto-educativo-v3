@@ -51,6 +51,13 @@ const linked=new Set(topics.flatMap(t=>t.officialRecordCandidates))
 const matrix={source,grade:1,scopeId:scope.id,pdfPages:[244,245,246,247,248],printedPages:[243,244,245,246,247],sourceVisualReview:{status:'REVIEWED',pages:[244,245,246,247,248],method:'Full page render: concept/procedure columns, continuations and separate indicators.'},status:'PARTIAL_ACTIONS_PENDING_FULL_REVIEW',mappingPolicy:'Lexical candidates require semantic review; no inferred topic-indicator equivalence.',officialRecords:original.map(r=>({id:r.id,type:r.type,text:r.originalText,pdfPage:r.source.pdfPage,printedPage:r.source.printedPage})),topics,unmappedConceptsAndProcedures:original.filter(r=>['CONCEPT','PROCEDURE'].includes(r.type)&&!linked.has(r.id)).map(r=>({id:r.id,text:r.originalText,type:r.type,pdfPage:r.source.pdfPage,status:'PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION'})),implementedFamilies:cases.slice(socialGradeOneTopics.length),verification:{automatedFixtures:cases.length,fullInstrumentsGenerated:examples.length,fullReview:'PENDING',httpDb:'PENDING',browser:'PENDING'}}
 const output='docs/curriculum/cobertura-secundaria/'
 matrix.providerCatalog=evaluationCatalogCurrent.version
+const publicationPath='.wrangler/secondary-completion/MINERD_SECUNDARIA_2023_SOC_COMUN_G1_V1-source.json'
+if(existsSync(publicationPath)){
+ const publication=JSON.parse(readFileSync(publicationPath,'utf8'))
+ assert.equal(publication.project,'eolgunypmtgrsyrjzcld');assert.equal(publication.metadata.sourcePdfHash,source.sha256)
+ assert.equal(publication.elements,original.length)
+ matrix.sourcePublication={status:'PUBLISHED_LITERAL_SOURCE_NOT_COMPLETE_INSTRUMENT_COVERAGE',code:publication.code,versionId:publication.versionId,scopeId:publication.scopeId,records:publication.elements,excludedFromAssessment:publication.excludedFromAssessment,idempotentResult:publication.result}
+}
 writeFileSync('.wrangler/secondary-completion/expected-catalog.json',JSON.stringify(evaluationCatalogCurrent)+'\n')
 matrix.explicitExclusions=exclusions.records
 matrix.unmappedConceptsAndProcedures=matrix.unmappedConceptsAndProcedures.filter(r=>!excludedIds.has(r.id))

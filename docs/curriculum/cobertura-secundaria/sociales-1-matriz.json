@@ -2234,12 +2234,8 @@
     "browser": "PENDING",
     "httpEvidence": {
       "catalog": "evaluation-2026.96",
-      "sourceScope": "NOT_INSTALLED_YET",
+      "sourceScope": "8e6396f0-b49e-52fb-a8d9-fcd90a60518e",
       "formats": [
-        "rubrica",
-        "lista-cotejo",
-        "escala",
-        "lista-ponderada",
         "rubrica",
         "lista-cotejo",
         "escala",
@@ -2251,6 +2247,15 @@
     }
   },
   "providerCatalog": "evaluation-2026.96",
+  "sourcePublication": {
+    "status": "PUBLISHED_LITERAL_SOURCE_NOT_COMPLETE_INSTRUMENT_COVERAGE",
+    "code": "MINERD_SECUNDARIA_2023_SOC_COMUN_G1_V1",
+    "versionId": "fa677897-464e-50bc-bd9b-0b2a262db701",
+    "scopeId": "8e6396f0-b49e-52fb-a8d9-fcd90a60518e",
+    "records": 181,
+    "excludedFromAssessment": 8,
+    "idempotentResult": "UNCHANGED"
+  },
   "explicitExclusions": [
     {
       "id": "d62cd32d-2fc2-5533-8194-e0cb3cc20824",

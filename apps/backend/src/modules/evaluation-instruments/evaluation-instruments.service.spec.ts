@@ -73,6 +73,22 @@ describe('API service security and version policy', () => {
     row.subject.code = code; row.subject.name = code === 'FRA' ? 'Francés' : code === 'ING' ? 'Inglés' : 'Lengua Española'
     return row
   }
+  it('conserva la fuente literal pero excluye recursos y rasgos personales de los referentes evaluables',async()=>{
+    const row=secondary('SOC');row.grade.sequence=1;row.subject.name='Ciencias Sociales'
+    const socialScope={...scope,id:'social-scope',versionId:'social-version',grade:1,cycle:1,areaName:'Ciencias Sociales',subjectName:'Ciencias Sociales'}
+    mocks.sectionSubject.findFirst.mockResolvedValue(row)
+    mocks.curriculumVersion.findFirst.mockResolvedValue({id:'social-version',level:'SECONDARY',status:'PUBLISHED',importMetadata:{subjectCodes:['SOC'],grades:[1],commonOnly:true,excludedAssessmentElementIds:['personal-disposition']}})
+    mocks.curriculumScope.findMany.mockResolvedValue([socialScope])
+    mocks.curriculumElement.findMany.mockResolvedValue([
+      {id:'personal-disposition',versionId:'social-version',scopeId:socialScope.id,elementType:'PROCEDURE',originalText:'Demostración de interés por observar el espacio geográfico',normalizedText:'demostracion interes observar espacio geografico',sourceSpans:[]},
+      {id:'source-reliability',versionId:'social-version',scopeId:socialScope.id,elementType:'PROCEDURE',originalText:'Identificación de fuentes confiables para el estudio geográfico',normalizedText:'identificacion fuentes confiables estudio geografico',sourceSpans:[]},
+    ])
+    const service=new EvaluationInstrumentsService(),request={...input,curriculumVersionId:undefined,activityTitle:'Actividad',description:'Identifica las fuentes confiables para el estudio geográfico.'}
+    const interpreted=await service.interpret(user,request)
+    expect(interpreted.curriculumCandidates.some(c=>c.elementId==='personal-disposition')).toBe(false)
+    await expect(service.recommend(user,{...request,selectedCurriculumElementIds:['personal-disposition']})).rejects.toThrow('Elemento curricular ajeno al ámbito autorizado')
+    expect(mocks.curriculumElement.findMany).toHaveBeenCalled()
+  })
   for (const code of ['ING', 'LEN']) it(`una fuente exclusiva de Francés no cambia el contexto curricular de ${code}`, async () => {
     mocks.sectionSubject.findFirst.mockResolvedValue(secondary(code))
     mocks.curriculumVersion.findFirst.mockResolvedValue(frenchSource)

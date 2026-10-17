@@ -14,15 +14,19 @@ const qa=JSON.parse(readFileSync('.development-qa-account.local','utf8'))
 const require=createRequire(new URL('../../apps/backend/package.json',import.meta.url)),{prisma}=require('@aula/database')
 const catalog=require('../../apps/backend/dist/modules/evaluation-instruments/catalog-current.js').evaluationCatalogCurrent.version
 assert(/^evaluation-2026\.\d+$/.test(catalog))
-const runKey='social-1-'+catalog,base='http://localhost:8787',progressPath=path+runKey+'-http-progress.json'
+const sourceMode=process.argv.includes('--source')
+const source=sourceMode?JSON.parse(readFileSync(path+'MINERD_SECUNDARIA_2023_SOC_COMUN_G1_V1-source.json','utf8')):null
+if(source){assert.equal(source.project,project);assert.equal(source.code,'MINERD_SECUNDARIA_2023_SOC_COMUN_G1_V1')}
+const runKey='social-1-'+catalog+(source?'-source-'+source.versionId:''),base='http://localhost:8787',progressPath=path+runKey+'-http-progress.json'
 const progress=existsSync(progressPath)?JSON.parse(readFileSync(progressPath,'utf8')):{project,grade:1,writes:[],timings:[]}
 assert.equal(progress.project,project)
 const save=()=>writeFileSync(progressPath,JSON.stringify(progress,null,2)+'\n')
 let cookie
-const request=async(endpoint,input)=>{
+const request=async(endpoint,input,expectedStatus)=>{
  const start=performance.now(),response=await fetch(base+'/api/v1'+endpoint,{method:input?'POST':'GET',headers:{'content-type':'application/json',...(cookie?{cookie}:{})},...(input?{body:JSON.stringify(input)}:{}),signal:AbortSignal.timeout(30000)})
  progress.timings.push({endpoint,status:response.status,ms:performance.now()-start});save()
- assert(response.ok,endpoint+': HTTP '+response.status)
+ if(expectedStatus)assert.equal(response.status,expectedStatus)
+ else assert(response.ok,endpoint+': HTTP '+response.status)
  return{data:(await response.json()).data,response}
 }
 const canonical=v=>JSON.stringify(v,(_,x)=>x&&typeof x==='object'&&!Array.isArray(x)?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a.localeCompare(b))):x)
@@ -39,13 +43,16 @@ const descriptions=[
  'Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.',
  'Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.',
 ]
-const formats=['rubrica','lista-cotejo','escala','lista-ponderada','rubrica','lista-cotejo','escala','lista-ponderada']
+const formats=['rubrica','lista-cotejo','escala','lista-ponderada','rubrica','lista-cotejo','escala','lista-ponderada'].slice(0,sourceMode?4:8)
+const sourceRecords=sourceMode?JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/sociales-1-matriz.json','utf8')).officialRecords:[]
+const sourcePrefixes=['03c0f43b','20638a76','055ff3a5','01b7176c']
 try{
  const school=await prisma.school.findUniqueOrThrow({where:{id:context.schoolId}});assert.match(school.name,/ficticio QA Development/)
  const login=await request('/auth/login',{email:qa.email,password:qa.password})
  cookie=login.response.headers.getSetCookie().find(s=>s.startsWith('aulabase_session='))?.split(';')[0];assert(cookie)
  const center=(await request('/activities/center?contextOnly=true')).data
  assert(center.sectionSubjects.some(s=>s.id===context.sectionSubjectId))
+  if(source)await request('/evaluation-instruments/recommend',{sectionSubjectId:context.sectionSubjectId,activityTitle:'QA referente excluido',description:descriptions[0],competencyBlock:'b1',maxScore:20,preferredInstrumentType:'rubrica',participationMode:'INDIVIDUAL',curriculumVersionId:source.versionId,curriculumScopeId:source.scopeId,selectedCurriculumElementIds:[source.metadata.excludedAssessmentElementIds[0]]},400)
  const activities=async()=>(await request('/activities?sectionSubjectId='+context.sectionSubjectId)).data
  for(const [i,format] of formats.entries()){
   const caseKey=String(i)
@@ -59,8 +66,24 @@ try{
    const score=i%2?17.35:20,description=descriptions[i],name=`QA Sociales 1.º · ${format} · ${randomUUID().slice(0,8)}`
    const input={sectionSubjectId:context.sectionSubjectId,activityTitle:name,description,competencyBlock:'b1',maxScore:score,preferredInstrumentType:format,participationMode:'INDIVIDUAL'}
    const interpretation=(await request('/evaluation-instruments/interpret',{sectionSubjectId:context.sectionSubjectId,activityTitle:name,description,competencyBlock:'b1'})).data
+   if(source){
+    assert.equal(interpretation.curriculumVersionId,source.versionId)
+    assert.equal(interpretation.curriculumScopeId,source.scopeId)
+    assert(interpretation.curriculumCandidates.every(c=>!source.metadata.excludedAssessmentElementIds.includes(c.elementId)))
+    const record=sourceRecords.find(r=>r.id.startsWith(sourcePrefixes[i]));assert(record)
+    const importedId=source.elementIdMap[record.id];assert(importedId)
+    Object.assign(input,{curriculumVersionId:source.versionId,curriculumScopeId:source.scopeId,selectedCurriculumElementIds:[importedId]})
+   }
    const proposal=(await request('/evaluation-instruments/recommend',input)).data
    assert.equal(proposal.catalogVersion,catalog);assert(proposal.criteria.every(c=>c.templateId.startsWith('soc-1-')))
+   if(source){
+    assert.equal(proposal.curriculumVersionId,source.versionId);assert.equal(proposal.curriculumScopeId,source.scopeId)
+    assert.equal(proposal.selectedCurriculumElements.length,1)
+    const ref=proposal.selectedCurriculumElements[0]
+    assert.equal(ref.elementId,input.selectedCurriculumElementIds[0]);assert.equal(ref.scopeId,source.scopeId)
+    assert(ref.sources.every(s=>s.documentId===source.documentId&&[244,245,246,247,248].includes(s.pdfPage)))
+    assert(proposal.criteria.every(c=>!c.sourceReferences.length),'Adaptations are not literal official criteria')
+   }
    assert.equal(interpretation.suggestedActivityType,proposal.activityType)
    const local=editableFallbackRecommendation({...input,instrumentType:format,academicContext:{level:'SECONDARY',grade:1,subjectCode:'SOC',subjectName:'Ciencias Sociales'}})
    assert.deepEqual(content(proposal),content(local))
@@ -87,7 +110,7 @@ try{
   write.verified={format,score:write.input.maxScore,activityId:write.creationId,snapshotId:db.instrumentSnapshotId,strategyOnlyInstrumentUnchanged:true,manualTextPreserved:true,hash:write.originalHash};save()
   console.log(JSON.stringify({phase:'saved-reopened',format,grade:1}))
  }
- const result={project,grade:1,catalog,verification:'AUTHENTICATED_HTTP_DB_NOT_BROWSER',sourceScope:'NOT_INSTALLED_YET',samples:progress.writes.map(w=>w.verified),timings:progress.timings,browser:'PENDING'}
+ const result={project,grade:1,catalog,verification:'AUTHENTICATED_HTTP_DB_NOT_BROWSER',sourceScope:source?.scopeId??'NOT_INSTALLED_YET',curriculumVersionId:source?.versionId??null,samples:progress.writes.map(w=>w.verified),timings:progress.timings,browser:'PENDING'}
  writeFileSync(path+runKey+'-http.json',JSON.stringify(result,null,2)+'\n')
  writeFileSync(path+'social-1-http.json',JSON.stringify(result,null,2)+'\n')
 }finally{await prisma.$disconnect()}
