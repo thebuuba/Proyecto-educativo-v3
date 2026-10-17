@@ -741,7 +741,23 @@
       "GitHub Actions Deploy Cloudflare after successful main push CI"
     ],
     "manualDeployments": false,
-    "remoteCi": "Read actual PR check status before claiming success."
+    "remoteCi": "Read actual PR check status before claiming success.",
+    "firstMainMerge": {
+      "hash": "a050cc6c20b020987c1704fe5947309a438812d7",
+      "pullRequest": 58,
+      "mergedAt": "2026-10-17T19:01:51Z",
+      "requiredCi": {
+        "run": 39060130382,
+        "conclusion": "success"
+      },
+      "reviewThreadsResolved": 5,
+      "initialRefsIncluded": 75,
+      "allCurrentRefsIncluded": 77,
+      "localMainSynchronization": "0/0",
+      "workingTree": "clean"
+    },
+    "firstPushCiOmittedAccidentally": "Merge body quoted a skip instruction while saying it would not be used. GitHub interpreted the literal marker. External Cloudflare/Vercel integrations still triggered.",
+    "correction": "Additional documentation-only protected PR with a short merge message, no skip marker and no history rewrite. Monitor the existing authorized automatic workflows."
   },
   "limitations": [
     "No manual deployment, secret/Hyperdrive change, reset or data copying. No remote schema migration executed during preparation; the authorized automatic Production workflow may execute migrations after merge.",

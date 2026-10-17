@@ -23,6 +23,7 @@ Ejecución directa, sin subagentes. Solicitud: fusionar todas las ramas, resolve
 - [x] Comprobar que todas las referencias iniciales están incluidas en los padres de la integración final; repetir comprobación de ascendencia tras publicar main.
 - [x] Publicar la rama de integración y abrir PR #58 con CI normal.
 - [x] Resolver la restricción de despliegue: el usuario autorizó expresamente el efecto automático al fusionar; no se usará [skip ci].
-- [ ] Aprobar CI remoto y fusionar normalmente mediante PR protegido, conservar historial, supervisar automatizaciones y confirmar hash/sincronización en la entrega. Sin despliegues manuales ni cambios de secretos, Hyperdrive, workflows o protecciones.
+- [x] Aprobar CI remoto del commit 13ae3d5d (run 39060130382), resolver las cinco conversaciones comprobadas y fusionar PR #58. Main a050cc6c; 77 referencias incluidas y sincronización local/remota 0/0, árbol limpio al cerrar la fusión.
+- [ ] Completar el cierre documental mediante PR adicional: el cuerpo del primer commit de fusión contenía por error la instrucción literal de omisión de CI, aunque decía que no se usaría. Esto omitió el CI de push de GitHub; Workers Builds/Vercel sí se activaron. Publicar este cierre con mensaje breve sin esa instrucción, conservando historial y supervisando las automatizaciones autorizadas. Sin despliegues manuales ni cambios de secretos, Hyperdrive, workflows o protecciones. Confirmar hash final y resultados en la entrega.
 
 Las huellas, logs y resultados de comandos se conservan privadamente en .wrangler/integration-2026-10-17; el informe final publica solo evidencia sin credenciales.
