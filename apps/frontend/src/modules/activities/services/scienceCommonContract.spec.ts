@@ -9,9 +9,10 @@ import topics from '../../../../../../data/evaluation-instruments/science-grade-
 import topicsTwo from '../../../../../../data/evaluation-instruments/science-grade-2-contracts.json'
 import topicsThree from '../../../../../../data/evaluation-instruments/science-grade-3-contracts.json'
 import topicsFour from '../../../../../../data/evaluation-instruments/science-grade-4-contracts.json'
-for(const {grade,code,fixtures} of [{grade:1,code:'NAT-TU',fixtures:topics},{grade:2,code:'NAT-VIDA',fixtures:topicsTwo},{grade:3,code:'NAT-FISICAS',fixtures:topicsThree},{grade:4,code:'NAT-BIO',fixtures:topicsFour}]){
+import topicsFive from '../../../../../../data/evaluation-instruments/science-grade-5-contracts.json'
+for(const {grade,code,fixtures} of [{grade:1,code:'NAT-TU',fixtures:topics},{grade:2,code:'NAT-VIDA',fixtures:topicsTwo},{grade:3,code:'NAT-FISICAS',fixtures:topicsThree},{grade:4,code:'NAT-BIO',fixtures:topicsFour},{grade:5,code:'NAT-QUI',fixtures:topicsFive}]){
 const cases=fixtures.flatMap(f=>[f,...(f.variants??[]).map(description=>({description,id:f.id}))])
-const context={level:'SECONDARY' as const,grade,cycle:1,modalityCode:'academic',subjectCode:code,subjectName:'Ciencias de la Naturaleza',optativeExitName:null}
+const context={level:'SECONDARY' as const,grade,cycle:grade<=3?1:2,modalityCode:'academic',subjectCode:code,subjectName:'Ciencias de la Naturaleza',optativeExitName:null}
 describe(`Ciencias ${grade}.º: paridad, formatos, edición y precisión`,()=>{
   for(const f of cases)for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const score of [20,17.35])it(`${f.id}/${format}/${score}`,()=>{
     const input={activityTitle:'Actividad',description:f.description,maxScore:score,participationMode:'INDIVIDUAL' as const}

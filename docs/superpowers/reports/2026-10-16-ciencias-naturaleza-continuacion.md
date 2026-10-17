@@ -1,4 +1,17 @@
-﻿# Continuación: Ciencias de la Naturaleza común
+# Continuación: Ciencias de la Naturaleza común
+
+## Estado vigente: prevalece sobre las notas históricas inferiores
+
+- Rama amplia-instrumentos-secundaria. Cuarto publicado: abe812eb03911e1fae6017ccb37610cb00759d12, push normal confirmado. Recheck HTTP4 final aprobado y evidencia pública actualizada; no duplicar.
+- Quinto conectado: 51 grupos, 102 consignas, 408 instrumentos revisados; catálogo 91 y fuente G5 realmente instalados CREATED→UNCHANGED. Catálogos 90/91 congelados e inmutables. No modificar contenido instalado sin nueva versión.
+- Backend final 44.224/107, backend/frontend builds 0; frontend completo anterior 44.626/131 más 19 ciclos y 3.565 paridad posteriores aprobados. Siete regresiones nuevas de persistencia; 170 afectadas verdes. CLI final 11703/launcher13560 interrumpido tras731695ms; su árbol terminó, no aprobado.
+- Servidor final5 sesión86714, launcher35288, listener39820. Confirmar proceso antes de otro. Guard de configuración exclusivo Development eolgunypmtgrsyrjzcld; health y conciliación Prisma fallaron por timeout de conexión, no repetir escrituras a ciegas. Conector Supabase también falló transporte. No se atribuye todavía a pausa del proyecto ni se modifica configuración.
+- HTTP5 no activo: rúbrica e756418b-f523-4163-aa38-7c40419c1e70 y cotejo132d25b4-7286-4801-82b1-0da74d1a096f guardados/reabiertos/estrategia exacta. Escala8ee281a6-c05e-440b-872c-ac0d5f7ce7d7 **existe y se reabrió**; su actualización de estrategia500 precede al último arreglo, pendiente de repetir. Ponderada no creada. Reanudar checkpoint normal http5 solo tras lectura saludable, sin duplicar IDs; después recheck5 e historia.
+- La corrección final reutiliza contexto idéntico validado bajo bloqueo y relaciones inalteradas al responder metadatos. Conserva validación previa, validación autoritativa, atomicidad y snapshot. No aumenta timeout. Tiene pruebas, falta verificación HTTP final por conexión externa.
+- Runtime5 anterior verificado completo en grade-5-runtime-verified.json; conservar como evidencia histórica, no presentarlo como health final. Navegador personal en login; no credenciales cambiadas ni nuevos correos. Pendientes visuales4 escala/ponderada y cuatro formatos5. Guiones manuales publicados.
+- Sexto todavía no conectado/instalado: borradores63grupos/126consignas/1012tests rojos. PDF319–322/impresas318–321 inspeccionado visualmente. Esos tres archivos se excluyen del commit5. Continuar revisión independiente durante bloqueo externo; preservar antecedente Ohm sin reglas por títulos exactos.
+
+**Siguiente acción:** guardar bloque5 parcial con informe/evidencia/secretos/diff; push normal si la red responde. Después revisar y conectar sexto con catálogo92, pruebas y revisión completa. Recuperada la conexión, completar fuente/catálogo6 y HTTP5 antes de QA6. No declarar cobertura final por inventario, tests o bloqueo documentado.
 
 Encargo activo: adjunto `3a8f59da-f60e-4c77-89e3-8f76dce81769/Texto pegado.txt`. Terminar Ciencias común de 1.º a 6.º, consolidar y detenerse. Sin subagentes, producción, despliegue, main, reset, borrado previo, IA ni otras asignaturas. Conservar cuentas, borradores e instrumentos históricos.
 

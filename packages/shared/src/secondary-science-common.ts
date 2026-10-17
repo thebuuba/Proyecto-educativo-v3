@@ -6,16 +6,17 @@ import {commonScienceGradeOneTopics} from './secondary-science-grade-1'
 import {commonScienceGradeTwoTopics} from './secondary-science-grade-2'
 import {commonScienceGradeThreeTopics} from './secondary-science-grade-3'
 import {commonScienceGradeFourTopics} from './secondary-science-grade-4'
+import {commonScienceGradeFiveTopics} from './secondary-science-grade-5'
 import {resolveEvaluationTask} from './evaluation-task-contract'
 
-export const commonScienceTopicsByGrade:Record<number,CommonScienceTopic[]>={1:commonScienceGradeOneTopics,2:commonScienceGradeTwoTopics,3:commonScienceGradeThreeTopics,4:commonScienceGradeFourTopics}
+export const commonScienceTopicsByGrade:Record<number,CommonScienceTopic[]>={1:commonScienceGradeOneTopics,2:commonScienceGradeTwoTopics,3:commonScienceGradeThreeTopics,4:commonScienceGradeFourTopics,5:commonScienceGradeFiveTopics}
 export const commonScienceModules=Object.entries(commonScienceTopicsByGrade).map(([grade,topics])=>({id:`ciencias-naturaleza-comun-${grade}`,grade:Number(grade),topics,policy:'REQUESTED_SCIENTIFIC_ACTIONS_V1'}))
-const normalize=(s:string)=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
-const actionVerb='(?:explic\\w*|describ\\w*|observ\\w*|registr\\w*|identific\\w*|senal\\w*|rotul\\w*|clasific(?:a|an|ar|e|en|aran|ando)|orden\\w*|compar(?:a|an|ar|e|en|aran|ando)|contrast\\w*|analiz\\w*|interpret\\w*|calcul(?:a|an|ar|e|en|aran|ando)|resuel\\w*|resolv\\w*|resolver\\w*|formul\\w*|plante\\w*|realiz\\w*|ejecut\\w*|investig\\w*|consult\\w*|dibuj\\w*|represent\\w*|constru\\w*|elabor\\w*|redact\\w*|escrib\\w*|debat\\w*|argument\\w*|expon\\w*|present\\w*|recolect\\w*|recog\\w*|mid\\w*|medir\\w*|verific\\w*|comprob\\w*)'
+const normalize=(s:string)=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/[σπ]/g,symbol=>symbol==='σ'?'sigma':'pi')
+const actionVerb='(?:explic\\w*|describ\\w*|observ\\w*|registr\\w*|identific\\w*|senal\\w*|rotul\\w*|clasific(?:a|an|ar|e|en|aran|ando)|orden\\w*|compar(?:a|an|ar|e|en|aran|ando)|contrast\\w*|analiz\\w*|interpret\\w*|calcul(?:a|an|ar|e|en|aran|ando)|resuel\\w*|resolv\\w*|resolver\\w*|formul\\w*|plante\\w*|realiz\\w*|ejecut\\w*|investig\\w*|consult\\w*|dibuj\\w*|represent\\w*|constru\\w*|elabor\\w*|redact\\w*|escrib\\w*|debat\\w*|argument\\w*|expon\\w*|present\\w*|recolect\\w*|recog\\w*|mid\\w*|medir\\w*|verific\\w*|comprob\\w*|balance(?:a|an|ar|e|en|aran|ando)|caracteriz\\w*|predic(?:e|en|iendo)|predec(?:ir|ira|iran)|predig(?:a|an))'
 export function scienceRequirementText(value:string){
  return normalize(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' '))
   .replace(/\b(?:expliqu|clasifiqu|identifiqu|verifiqu|justifiqu)(?:e|en)\b/g,word=>word.replace('qu','c'))
-  .replace(/\b(?:realic|analic|organiz)(?:e|en)\b/g,word=>word.replace('ic','iz'))
+  .replace(/\b(?:realic|analic|organiz|caracteric)(?:e|en)\b/g,word=>word.replace('ic','iz'))
   .replace(/\b(?:recursos?|ejemplos?)\s*:[^.;\n]*/g,'')
   .replace(/\b(?:como recurso|como ejemplo|por ejemplo)[^.;\n]*/g,'')
   .replace(/\b(?:podran|pueden|puede|podra)\s+(?:utiliz\w*|usar\w*|apoy\w*)[^.;\n]*/g,'')
@@ -41,7 +42,31 @@ const represents=(text:string)=>/\b(?:(?:dibuj|represent|elabor)(?:a|an|ar|e|en|
 const constructsDevice=(text:string)=>/\bconstru(?:ye|yen|ir|ya|yan|iran|yendo)\b/.test(text)&&/circuito|polea|maquina|estructura|dispositivo|instrumento optico/.test(text)&&!cognitiveBefore(text,/\bconstru(?:ye|yen|ir|ya|yan|iran|yendo)\b/)
 const designs=(text:string)=>/\bdisen(?:a|an|ar|e|en|aran|ando)\b/.test(text)&&!cognitiveBefore(text,/\bdisen(?:a|an|ar|e|en|aran|ando)\b/)
 const oralRequested=(text:string)=>resolveEvaluationTask('',text).oral||/\b(?:expon\w*|exposicion|presentacion oral)\b/.test(text)
+const balances=(text:string)=>/\bbalance(?:a|an|ar|e|en|aran|ando)\b/.test(text)&&!cognitiveBefore(text,/\bbalance\w*\b/)
 function focusedTopic(t:CommonScienceTopic,text:string):CommonScienceTopic{
+ if(t.grade===5){
+  if(t.id==='element-families'){
+   const names=['no metales','metaloides','gases nobles','hidrogeno','oxigeno','nitrogeno','carbono','fosforo','plomo','mercurio','hierro','calcio','magnesio','zinc','cobre','galio','silicio','germanio','arsenico','helio','neon','argon'].filter(name=>new RegExp(`\\b${name}\\b`).test(text))
+   if(/\bmetales\b/.test(text.replace(/no metales/g,'')))names.unshift('metales')
+   if(names.length)return{...t,label:names.map(name=>({hidrogeno:'hidrógeno',oxigeno:'oxígeno',nitrogeno:'nitrógeno',fosforo:'fósforo',arsenico:'arsénico',neon:'neón'} as Record<string,string>)[name]??name).join(', ')}
+  }
+  if(t.id==='periodic-trends'){
+   const names=[['radio atomic\\w*','radio atómico'],['electronegatividad','electronegatividad'],['afinidad electronica','afinidad electrónica'],['energia de ionizacion','energía de ionización']].filter(([match])=>new RegExp(match).test(text)).map(([,label])=>label)
+   if(names.length)return{...t,label:names.join(' y ')}
+  }
+  if(t.id==='pauli-hund')return /pauli/.test(text)&&/hund/.test(text)?{...t,label:'reglas de Pauli y Hund'}:/pauli/.test(text)?{...t,label:'regla de Pauli',relation:'la exclusión de dos electrones con los mismos cuatro números cuánticos y la ocupación máxima de dos electrones de espines opuestos por orbital del modelo solicitado'}:{...t,label:'regla de Hund',relation:'la ocupación individual con espines paralelos de orbitales degenerados antes de aparear electrones en el estado fundamental del modelo solicitado'}
+  if(t.id==='functional-groups'&&!/mecanismo/.test(text))return{...t,label:'grupos funcionales',relation:'los átomos o enlaces que permiten reconocer el grupo funcional de la estructura solicitada, sin exigir reacciones ausentes'}
+  if(t.id==='gas-laws'&&/gas(?:es)? ideal/.test(text)!==/gas(?:es)? real/.test(text))return{...t,label:/gas(?:es)? ideal/.test(text)?'gas ideal':'gas real'}
+  if(t.id==='gibbs-entropy'&&/gibbs|energia libre/.test(text)!==/entropia/.test(text))return{...t,label:/entropia/.test(text)?'entropía':'energía libre de Gibbs'}
+  if(t.id==='stoichiometry')return{...t,label:balances(text)?'ecuaciones químicas':'cantidades estequiométricas'}
+  if(t.id==='aromatic-substitution'&&!/sustitucion|\bsea\b/.test(text))return{...t,label:'resonancia aromática',relation:'la distribución electrónica deslocalizada y las representaciones de la misma especie aromática, manteniendo conectividad y carga sin presentarlas como moléculas que alternan'}
+  if(t.id==='hybridization'){
+   const forms=[...new Set([...text.matchAll(/\bsp[123]?\b/g)].map(match=>match[0]==='sp1'?'sp':match[0]))]
+   return forms.length?{...t,label:`hibridación ${forms.join(' y ')}`,relation:`la combinación de orbitales y la geometría del modelo de hibridación ${forms.join(' y ')} solicitado, sin tratar los orbitales como trayectorias electrónicas`}:/hibridacion/.test(text)?{...t,label:'hibridación',relation:'la combinación de orbitales y la geometría de la hibridación del modelo solicitado, sin tratar los orbitales como trayectorias electrónicas'}:{...t,label:'orbitales moleculares',relation:'la combinación de orbitales atómicos y la distribución electrónica en los estados moleculares del modelo solicitado'}
+  }
+  if(t.id==='elimination'&&/\be1\b/.test(text)!==/\be2\b/.test(text))return{...t,label:/\be1\b/.test(text)?'eliminación E1':'eliminación E2'}
+  if(t.id==='nucleophilic-substitution'&&/\bsn1\b/.test(text)!==/\bsn2\b/.test(text))return{...t,label:/\bsn1\b/.test(text)?'sustitución SN1':'sustitución SN2'}
+ }
  if(t.grade===4){
   if(t.id==='cell-theory'&&!/teoria/.test(text))return{...t,label:'evidencias microscópicas de células',relation:'las características celulares reconocibles en las imágenes u observaciones microscópicas solicitadas y los límites de la evidencia disponible'}
   if(t.id==='cell-energy'&&!/mitocondria/.test(text))return{...t,label:'ATP y energía celular',relation:'la función del ATP en la transferencia de energía celular, sin equiparar la molécula con energía en sí misma'}
@@ -76,6 +101,7 @@ export function resolveCommonScienceTask(title:string,description:string,context
  const topics=commonScienceTopicsByGrade[context.grade];if(!topics)return null
  const text=scienceRequirementText(description.trim()||title)
  const find=(part:string)=>topics.filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(part)&&(!t.exclude||!new RegExp(t.exclude).test(part)))
+  .filter(t=>t.grade!==5||t.id!=='element-families'||!/puente de hidrogeno/.test(part))
   .filter(t=>t.id!=='ecosystems'||!/flujo de energia/.test(part)||/estructura|funcion|sucesion|componentes|interacciones/.test(part))
   .filter(t=>t.id!=='circuits'||!/corriente electrica|voltaje|pilas|baterias/.test(part)||/serie|paralelo|conexiones|conservacion|constru(?:ye|yen|ir|ya|yan)|(?:interpret\w*|analiz\w*)[^.;]*circuito/.test(part))
   .filter(t=>t.id!=='solutions'||!/mezcla|coloide/.test(part)||/concentracion|solubilidad/.test(part)).map(t=>focusedTopic(t,part))
@@ -85,8 +111,8 @@ export function resolveCommonScienceTask(title:string,description:string,context
  let previous=selected
  const actions=text.split(split).filter(Boolean).map(part=>{const own=find(part);previous=own.length?own:previous;return{text:part,topics:previous}})
  const designedProduct=actions.some(a=>constructsDevice(a.text)||designs(a.text))
- const cellModel=(context.grade===2||context.grade===4)&&actions.some(a=>represents(a.text)&&/maqueta|modelo/.test(a.text)&&!cognitiveBefore(a.text,/\b(?:dibuj\w*|represent\w*|constru\w*|elabor\w*)\b/))
- const activityType=actions.some(a=>procedure(a.text))?'LAB_PRACTICE':/\b(?:redact\w*|elabor\w*|escrib\w*)\b.*\binforme\b/.test(text)?'REPORT':investigates(text)?'RESEARCH':designedProduct||cellModel?'PROJECT':/\b(?:debat\w*|debate)\b/.test(text)?'DEBATE':oralRequested(text)?'ORAL_PRESENTATION':actions.some(a=>computes(a.text)||solves(a.text))?'EXERCISE_SET':/\b(?:elabor\w*|desarroll\w*)\b.*\bproyecto\b/.test(text)?'PROJECT':/\b(?:observ\w*|registr\w*)\b/.test(text)&&!explanation(text)?'OBSERVATION':actions.some(a=>compares(a.text)&&!contrastsHypothesis(a.text))?'COMPARISON':'ANALYSIS'
+ const cellModel=(context.grade===2||context.grade===4||context.grade===5)&&actions.some(a=>represents(a.text)&&/maqueta|modelo/.test(a.text)&&!cognitiveBefore(a.text,/\b(?:dibuj\w*|represent\w*|constru\w*|elabor\w*)\b/))
+ const activityType=actions.some(a=>procedure(a.text))?'LAB_PRACTICE':/\b(?:redact\w*|elabor\w*|escrib\w*)\b.*\binforme\b/.test(text)?'REPORT':investigates(text)?'RESEARCH':designedProduct||cellModel?'PROJECT':/\b(?:debat\w*|debate)\b/.test(text)?'DEBATE':oralRequested(text)?'ORAL_PRESENTATION':actions.some(a=>computes(a.text)||solves(a.text)||context.grade===5&&balances(a.text))?'EXERCISE_SET':/\b(?:elabor\w*|desarroll\w*)\b.*\bproyecto\b/.test(text)?'PROJECT':/\b(?:observ\w*|registr\w*)\b/.test(text)&&!explanation(text)?'OBSERVATION':actions.some(a=>compares(a.text)&&!contrastsHypothesis(a.text))?'COMPARISON':'ANALYSIS'
  const technique=activityType==='LAB_PRACTICE'||activityType==='OBSERVATION'?'observacion-sistematica':activityType==='DEBATE'?'debate':activityType==='ORAL_PRESENTATION'?'presentacion':activityType==='RESEARCH'||activityType==='PROJECT'?'proyecto':'analisis-producciones'
  return{grade:context.grade,actions,activityType,technique}
 }
@@ -136,6 +162,8 @@ function actionCriteria({text,topics}:Action):ContextualTopicCriterion[]{
   if(!data&&/\b(?:analiz\w*|interpret\w*)\b/.test(text))add('analysis',`Análisis de ${label}`,`Analiza la información proporcionada de ${label} y relaciona sus evidencias con ${relation}, distinguiendo lo que permite sostener de lo que queda sin determinar.`,`Reconoce información sobre ${label}, pero no conecta una evidencia necesaria con la relación estudiada.`,`El análisis de ${label} contradice la información proporcionada o le atribuye evidencias ausentes.`,4)
   if(!representation&&/^\s*(?:constru\w*|elabor\w*)\b/.test(text)&&/higrometro|filtro/.test(text))add('construction',`Funcionamiento del dispositivo de ${label}`,`Construye el dispositivo solicitado de ${label} conforme al diseño indicado y comprueba su respuesta en las condiciones propuestas, reconociendo ${relation}.`,`El dispositivo de ${label} conserva parte del diseño, pero una conexión o disposición impide relacionar su respuesta con el propósito indicado.`,`El dispositivo de ${label} no permite observar la respuesta prevista por el diseño indicado.`,4)
   if(/\b(?:elabor\w*|desarroll\w*)\b.*\bproyecto\b/.test(text))add('project',`Coherencia del proyecto de ${label}`,`El producto del proyecto relaciona su propósito de ${label}, la evidencia solicitada y la propuesta presentada, atendiendo a ${relation} sin atribuir acciones no realizadas.`,`El proyecto de ${label} presenta un producto, pero no vincula una decisión con la evidencia solicitada.`,`El producto del proyecto de ${label} no responde a su propósito o se apoya en evidencias inventadas.`,4)
+  if(t.grade===5&&t.id==='stoichiometry'&&balances(text))add('balancing',`Balanceo de ${label}`,`Ajusta los coeficientes estequiométricos de la ecuación solicitada para conservar el número de átomos de cada elemento, manteniendo fórmulas y subíndices de las sustancias y la carga cuando corresponda.`,`Ajusta parte de los coeficientes, pero queda un elemento sin conservar en la ecuación solicitada.`,`La ecuación no conserva los átomos o modifica fórmulas o subíndices de las sustancias para igualarlos.`,4)
+  if(t.grade===5&&/\b(?:predic(?:e|en|iendo)|predec(?:ir|ira|iran)|predig(?:a|an))\b/.test(text)&&!cognitiveBefore(text,/\b(?:predic|predec|predig)\w*\b/))add('prediction',`Predicción sobre ${label}`,`Predice el comportamiento solicitado de ${label} a partir de ${relation}, indicando las condiciones y límites que sustentan la inferencia sin exigir comprobación experimental.`,`Propone una predicción sobre ${label}, pero deja una condición o relación sin respaldo en la información disponible.`,`La predicción de ${label} contradice la relación científica o los datos proporcionados.`,4)
   if(computes(text)){
    add('calculation',`Procedimiento de cálculo de ${label}`,`Relaciona los datos y la incógnita de ${label} mediante ${relation} y realiza las operaciones solicitadas sin inventar valores ausentes.`,`Utiliza parte de los datos de ${label}, pero un paso no mantiene la relación necesaria para resolver la incógnita.`,`El procedimiento emplea una relación incompatible con los datos o la incógnita de ${label}.`,4)
    add('result',`Resultado de ${label}`,`Presenta un resultado coherente con las operaciones de ${label} y conserva las magnitudes y unidades que corresponden a los datos del enunciado.`,`El resultado de ${label} conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo.`,`El resultado de ${label} contradice el procedimiento o confunde magnitudes.`,2)
@@ -149,7 +177,7 @@ function actionCriteria({text,topics}:Action):ContextualTopicCriterion[]{
    // Safety only for an actual practice; no new materials or hazardous instructions.
    add('safety',`Seguridad durante la práctica de ${label}`,`Aplica las precauciones indicadas para la práctica de ${label} y comunica las incidencias observadas antes de continuar cuando exista un riesgo.`,`Aplica parte de las precauciones indicadas en la práctica de ${label}, pero necesita corregir una condición de riesgo.`,`Mantiene una condición de riesgo identificada en la práctica de ${label} sin aplicar la precaución indicada.`,2)
   }
-  if(/\b(?:observ\w*|registr\w*|describ\w*)\b/.test(text)&&!executing&&!data)add('observation',`Observación de ${label}`,`Describe o registra las características observadas de ${label}, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.`,`Registra parte de las características de ${label}, pero mezcla una inferencia con lo observado.`,`El registro de ${label} contradice la evidencia observada o aporta datos inventados.`)
+  if((/\b(?:observ\w*|registr\w*|describ\w*)\b/.test(text)||t.grade===5&&/\bcaracteriz\w*\b/.test(text))&&!executing&&!data)add('observation',`Observación de ${label}`,`Describe o registra las características observadas de ${label}, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.`,`Registra parte de las características de ${label}, pero mezcla una inferencia con lo observado.`,`El registro de ${label} contradice la evidencia observada o aporta datos inventados.`)
   if(investigates(text)&&!/^\s*(?:explic\w*|describ\w*)\b/.test(text))add('research',`Investigación de ${label}`,`Selecciona información verificable que responde a la investigación solicitada sobre ${label}, identifica su procedencia y distingue afirmaciones respaldadas de información insuficiente.`,`Reúne información de ${label}, pero una afirmación relevante carece de procedencia o respaldo verificable.`,`La información presentada sobre ${label} no responde a la investigación o contradice las fuentes examinadas.`,4)
   if(report)add('report',`Informe sobre ${label}`,`Organiza el informe solicitado de ${label} enlazando propósito, evidencia disponible e interpretación, distinguiendo procedimientos propios de datos o experiencias proporcionados.`,`El informe de ${label} presenta evidencia, pero no permite relacionar una interpretación con su procedencia.`,`El informe de ${label} atribuye procedimientos o resultados no realizados ni proporcionados.`,4)
   if(/\b(?:debat\w*|argument\w*)\b/.test(text))add('argument',`Argumentación sobre ${label}`,`Sustenta la postura solicitada sobre ${label} con evidencias pertinentes y distingue sus alcances de afirmaciones que la información disponible no permite sostener.`,`Presenta una postura sobre ${label}, pero parte de sus razones carece de respaldo pertinente.`,`La postura sobre ${label} se apoya en afirmaciones incompatibles con las evidencias examinadas.`,4)

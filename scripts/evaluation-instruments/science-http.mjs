@@ -19,6 +19,12 @@ const source=JSON.parse(readFileSync(`.wrangler/science-source/grade-${grade}-so
 const fixtures=JSON.parse(readFileSync(`data/evaluation-instruments/science-grade-${grade}-contracts.json`,'utf8'))
 const academic={level:'SECONDARY',grade,subjectCode:context.subjectCode,subjectName:'Ciencias de la Naturaleza'}
 const formats=['rubrica','lista-cotejo','escala','lista-ponderada'],base='http://localhost:8787'
+const sampleForFormat=index=>grade===5?{description:[
+ 'Formula una pregunta y una hipótesis sobre entalpía. Realiza la práctica indicada y registra las observaciones sin inventar resultados.',
+ 'Identifica los grupos funcionales en las estructuras proporcionadas.',
+ 'Observa los modelos de ADN y ARN proporcionados y registra con regularidad sus características químicas.',
+ 'Calcula la entalpía de formación con los datos dados y explica su signo. Asigna crédito parcial y pesos a procedimiento, resultado y explicación.',
+][index]}:fixtures[index%fixtures.length]
 const canonical=value=>value&&typeof value==='object'?Array.isArray(value)?value.map(canonical):Object.fromEntries(Object.keys(value).sort().map(key=>[key,canonical(value[key])])):value
 const hash=value=>createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex')
 const definition=a=>({instrumentId:a.instrumentId,snapshotId:a.instrumentSnapshotId,snapshot:a.instrumentSnapshot,criteria:a.instrumentCriteria,maxScore:a.maxScore,type:a.instrumentType,technique:a.evaluationTechnique})
@@ -59,13 +65,13 @@ try{
     const saveReadProof=()=>writeFileSync(resultFile,JSON.stringify(report,null,2)+'\n')
     saveReadProof()
     for(const [index,type] of formats.entries()){
-      const f=fixtures[index%fixtures.length],total=index%2?17.35:20,input={sectionSubjectId:context.sectionSubjectId,activityTitle:'Actividad QA final',description:f.description,competencyBlock:'b1',maxScore:total,preferredInstrumentType:type,participationMode:'INDIVIDUAL'}
+      const f=sampleForFormat(index),total=index%2?17.35:20,input={sectionSubjectId:context.sectionSubjectId,activityTitle:'Actividad QA final',description:f.description,competencyBlock:'b1',maxScore:total,preferredInstrumentType:type,participationMode:'INDIVIDUAL'}
       const proposal=(await request('/evaluation-instruments/recommend',input)).data;assertSource(proposal)
       assert.deepEqual(content(proposal),content(editableFallbackRecommendation({...input,instrumentType:type,academicContext:academic})))
       generated.push({type,total,catalog:proposal.catalogVersion})
       saveReadProof()
     }
-    if(grade>=1&&grade<=4){
+    if(grade>=1&&grade<=5){
       const controls=grade===1?[
         ['Formula preguntas investigables sobre los vientos.','-question',/-research$/],
         ['Explica el ciclo del agua o representa la estructura interna de la Tierra mediante un dibujo.','-alternative',null],
@@ -82,12 +88,18 @@ try{
         ['Compara mezcla de luces y pigmentos con los casos proporcionados.','-comparison',/-matter-mixtures-/],
         ['Mide el tiempo según el procedimiento y registra las mediciones.','-measurement',/-experiment-procedure$/],
         ['Explica cómo funciona el radar.','-explanation',null,/ondas electromagnéticas/],
-      ]:[
+      ]:grade===4?[
         ['Interpreta los resultados proporcionados de los experimentos de Mendel.','-data-interpretation',/experiment-procedure|safety$/],
         ['Analiza cistitis y cálculo renal con los casos ficticios proporcionados.','-analysis',/calculation$|result$/],
         ['Argumenta con pruebas evolutivas de anatomía, embriología y bioquímica comparadas proporcionadas.','-argument',/comparison$/],
         ['Explica sistema binomial de Linneo y clasificación moderna.','-explanation',/classification-classification$/],
         ['Interpreta la herencia ligada al sexo del caso ficticio sin solicitar datos familiares.','-analysis',/chromosomes-|data-interpretation$/],
+      ]:[
+        ['Balancea la ecuación química proporcionada sin modificar las fórmulas de las sustancias.','-balancing',/experiment|safety/,/coeficientes.*subíndices/],
+        ['Explica el puente de hidrógeno y las fuerzas de Van der Waals.','-explanation',/element-families-/],
+        ['Interpreta las especies de resonancia del sistema aromático proporcionado.','-analysis',null,/distribución electrónica deslocalizada/],
+        ['Calcula las cantidades estequiométricas con los datos dados, sin balancear otra ecuación.','-calculation',/balancing$/],
+        ['Explica la hibridación sp2 en el modelo dado.','-explanation',null,/hibridación sp2/],
       ]
       report.semanticControls=[]
       for(const [description,required,forbidden,scientificEvidence] of controls){
@@ -135,7 +147,7 @@ try{
       let write=progress.writes.find(row=>row.type===type)
       if(write?.verified){const a=(await activities()).find(a=>a.id===write.creationId);assert(a);assert.equal(hash(definition(a)),write.verified.instrumentHash);continue}
       if(!write){
-        const f=fixtures[index%fixtures.length],total=index%2?17.35:20,name=`QA Ciencias Naturaleza ${grade}.º · ${type} · ${randomUUID().slice(0,8)}`
+        const f=sampleForFormat(index),total=index%2?17.35:20,name=`QA Ciencias Naturaleza ${grade}.º · ${type} · ${randomUUID().slice(0,8)}`
         const input={sectionSubjectId:context.sectionSubjectId,activityTitle:name,description:f.description,competencyBlock:'b1'}
         const interpreted=(await request('/evaluation-instruments/interpret',input)).data;assert.equal(interpreted.suggestedActivityType,resolveCommonScienceTask(input.activityTitle,f.description,academic).activityType)
         const proposal=(await request('/evaluation-instruments/recommend',{...input,maxScore:total,participationMode:'INDIVIDUAL',preferredInstrumentType:type})).data
@@ -155,6 +167,10 @@ try{
           const key=type==='lista-ponderada'?'weight':'points'
           fields[`${type}:${key}:0`]=String(Math.round((Number(fields[`${type}:${key}:0`])-0.01)*100)/100)
           fields[`${type}:${key}:1`]=String(Math.round((Number(fields[`${type}:${key}:1`])+0.01)*100)/100)
+          if(grade===5&&type==='lista-ponderada'){
+            assert.equal(count,3)
+            for(const [i,weight] of [41,19,40].entries())fields[`${type}:weight:${i}`]=String(weight)
+          }
           fields=scoreInstrumentFields(rememberManualScoreWeights(fields,type),type,total,proposal)
         }
         assert.equal(nextCatalogCriterion(proposal.criteria,fields,type,proposal.criteria),null)

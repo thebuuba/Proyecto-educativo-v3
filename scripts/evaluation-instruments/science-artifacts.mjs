@@ -5,7 +5,7 @@ import {commonScienceTopicsByGrade} from '../../packages/shared/src/secondary-sc
 const rows=readFileSync('data/curriculum/secondary-2023.jsonl','utf8').trim().split('\n').map(JSON.parse)
 const source=rows.find(r=>r.kind==='document')
 assert.equal(createHash('sha256').update(readFileSync('apps/frontend/public/docs/adecuacion-curricular-nivel-secundario-2023.pdf')).digest('hex'),source.sha256)
-const norm=s=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/\s+/g,' ')
+const norm=s=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/[σπ]/g,symbol=>symbol==='σ'?'sigma':'pi').replace(/\s+/g,' ')
 const components=['Ciencias de la Tierra y el Universo','Ciencias de la Vida','Ciencias Físicas','Biología','Química','Física']
 const visuallyReviewedPages={1:[293,294,295],2:[296,297,298,299],3:[300,301,302,303,304],4:[312,313,314,315],5:[316,317,318],6:[319,320,321,322]}
 // Only source rows actually reviewed as headings/process menus get this exclusion.
@@ -15,6 +15,7 @@ const reviewedGeneralRows={
  2:['27f3ee3d-4126-58e6-875b-e0eff702ab6c','feafd909-2ad3-5652-ada5-71ba3ac88885','2e3df7fa-4d80-5634-96b4-e4becbb175de','637504dd-85d7-5cf1-b849-bcfbb6381677','f724a398-67d9-58a7-811d-d399c5d611d6'],
  3:['1710f71d-4736-54c1-9fb9-78d71fad9a02'],
  4:['a42a4ca0-b53b-521b-ad34-e173531691bb','569e8693-43eb-5748-b46f-29f9aa38e741','5ad0064c-320b-581b-9cb1-e8da472ac1b8','a786a8d9-b980-5faf-8657-626cd5c4e44c','e10d8e75-dce0-5095-9563-330297f2ab51','d3b23c11-4163-58d2-b537-a76074117b6f','8202cc7a-12a0-5062-be5d-ab1dbf964046','1e103eb0-a518-582a-aeba-ea4a94b61f6d'],
+ 5:['b30e28ef-ed15-5513-9a03-b945964555fd','7079e06d-bc01-5e87-aeff-07925f92732a','5ed373b1-6011-5cc2-9888-ee43490c2cf1','6aaeb31f-1135-52fd-9144-91cd7265a42b','f3ec3ba8-bcc8-506d-ae73-59ce847a1d6e','105cb170-4854-5fca-ac5f-00a553ffb38c','53048fed-d5d6-591c-971e-4ba17093b776','7c9ff85f-40a9-59dd-8e0c-5cd065b99b88','3c5eee5c-d634-5212-b327-e2254ca07144','13cc78a6-9877-52a7-a732-aea37660b8e3','09d92b7e-d602-5c96-a7c1-bfd05bbab348','2f27e8bf-2440-5d2a-bcdb-46354acd4b5d','c3aa8d79-4df1-503d-a610-5734a52b51ff'],
 }
 const output={source:{path:'apps/frontend/public/docs/adecuacion-curricular-nivel-secundario-2023.pdf',edition:2023,sha256:source.sha256,versionId:source.versionId},policy:'OFFICIAL_TEXT_SEPARATE_FROM_AULABASE_ADAPTATIONS; INVENTORY_IS_NOT_VERIFIED_COVERAGE',grades:[]}
 for(let grade=1;grade<=6;grade++){
@@ -23,7 +24,11 @@ for(let grade=1;grade<=6;grade++){
  const fixtures=existsSync(`data/evaluation-instruments/science-grade-${grade}-contracts.json`)?JSON.parse(readFileSync(`data/evaluation-instruments/science-grade-${grade}-contracts.json`,'utf8')):[]
  const reviewFile=`docs/curriculum/cobertura-secundaria/ciencias-naturaleza-${grade}-revision.json`
  const instrumentReview=existsSync(reviewFile)?JSON.parse(readFileSync(reviewFile,'utf8')):null
- const topics=(commonScienceTopicsByGrade[grade]??[]).map(t=>({...t,officialRecordIds:officialRecords.filter(r=>['CONCEPT','PROCEDURE'].includes(r.type)&&new RegExp(t.match).test(norm(r.text))).map(r=>r.id),families:fixtures.filter(f=>f.id===t.id).flatMap(f=>[f.description,...f.variants??[]]),provider:`packages/shared/src/secondary-science-grade-${grade}.ts`,instrumentReview:instrumentReview?.status??'PENDING_FULL_INSTRUMENT_REVIEW'}))
+ const topics=(commonScienceTopicsByGrade[grade]??[]).map(t=>({...t,
+  officialRecordIds:officialRecords.filter(r=>['CONCEPT','PROCEDURE'].includes(r.type)&&new RegExp(t.match).test(norm(r.text))).map(r=>r.id),
+  indicatorRecordIds:officialRecords.filter(r=>r.type==='ACHIEVEMENT_INDICATOR'&&new RegExp(t.match).test(norm(r.text))).map(r=>r.id),
+  families:fixtures.filter(f=>f.id===t.id).flatMap(f=>[f.description,...f.variants??[]]),
+  provider:`packages/shared/src/secondary-science-grade-${grade}.ts`,instrumentReview:instrumentReview?.status??'PENDING_FULL_INSTRUMENT_REVIEW'}))
  const linked=new Set(topics.flatMap(t=>t.officialRecordIds))
  const unassignedSourceRecords=officialRecords.filter(r=>['CONCEPT','PROCEDURE'].includes(r.type)&&!linked.has(r.id)).map(r=>({id:r.id,text:r.text,reason:reviewedGeneralRows[grade]?.includes(r.id)?'GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK':'PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW'}))
  const httpPath=`.wrangler/science-source/grade-${grade}-http.json`,visualPath=`.wrangler/science-source/grade-${grade}-visual.json`

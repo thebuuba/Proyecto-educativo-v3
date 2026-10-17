@@ -1078,8 +1078,10 @@ export class GradingService {
           await lockActivityForMutation(tx, schoolId, dto.id)
           existing = await tx.evaluationActivity.findFirst({ where: { id: dto.id, schoolId, status: 'ACTIVE' }, include: activityInclude })
           if (!existing) throw new NotFoundException('Evaluation activity not found')
-          await assertActivityContext(schoolId, existing.sectionSubjectId, existing.academicPeriodId, actorId, roles, tx)
-          const destination = await assertActivityContext(schoolId, dto.sectionSubjectId, dto.academicPeriodId, actorId, roles, tx)
+          const lockedContext = await assertActivityContext(schoolId, existing.sectionSubjectId, existing.academicPeriodId, actorId, roles, tx)
+          const destination = existing.sectionSubjectId === dto.sectionSubjectId && existing.academicPeriodId === dto.academicPeriodId
+            ? lockedContext
+            : await assertActivityContext(schoolId, dto.sectionSubjectId, dto.academicPeriodId, actorId, roles, tx)
           destinationSubject = destination.sectionSubject
           persistedSchoolYearId = dto.schoolYearId ?? destinationSubject.schoolYearId
           if (persistedSchoolYearId !== destinationSubject.schoolYearId) throw new BadRequestException('School year does not match section subject')
@@ -1097,8 +1099,8 @@ export class GradingService {
           if (!structural) {
             const saved = await tx.evaluationActivity.update({ where: { id: dto.id }, data: {
               ...activityData(schoolId, userId, dto, persistedSchoolYearId, persistedBlockWeights), createdBy: undefined,
-            }, include: activityInclude })
-            return mapEvaluationActivity(saved)
+            } })
+            return mapEvaluationActivity({ ...existing, ...saved })
           }
           if (existing.instrumentSnapshotId && !dto.instrumentSnapshot) throw new BadRequestException('La revisión requiere la definición del instrumento versionado.')
         }
@@ -1258,8 +1260,9 @@ export class GradingService {
       else await tx.teacherInstrumentPreference.create({ data: { schoolId, teacherId: userId, curriculumScopeId: proposal.curriculumScopeId,
         activityType: proposal.activityType, instrumentType: proposal.instrumentType, ...data } })
     }
-    const saved = await tx.evaluationActivity.findUnique({ where: { id: activity.id }, include: activityInclude })
-    return mapEvaluationActivity(saved)
+    // These rows were returned by the writes; rereading all relations prolongs the atomic transaction.
+    return mapEvaluationActivity({ ...activity, instrument, instrumentSnapshot: snapshot,
+      groups: teams.map(team => ({ courseTeamId: team.id })), _count: existing?._count ?? { gradesRecords: 0 } })
   }
 
   private async syncActivityTeams(

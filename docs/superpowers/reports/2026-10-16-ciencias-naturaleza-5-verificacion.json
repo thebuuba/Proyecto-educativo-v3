@@ -1,0 +1,369 @@
+{
+  "status": "IMPLEMENTED_PENDING_HTTP_PERSONAL_AND_CLI_VERIFICATION",
+  "project": "eolgunypmtgrsyrjzcld",
+  "grade": 5,
+  "catalog": "evaluation-2026.91",
+  "source": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_NAT_COMUN_G5_V1",
+    "versionId": "b5398277-4f03-589a-9fb7-20e9740d2c72",
+    "documentId": "958acc99-7779-56ab-b644-d059154a8219",
+    "metadata": {
+      "subjectCodes": [
+        "NAT",
+        "NAT-QUI"
+      ],
+      "grades": [
+        5
+      ],
+      "commonOnly": true,
+      "datasetDigest": "fb1797b70309a13b24765ccb453667ede347beaa063f2a5da0d8d5ac08efe40c",
+      "sourceVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "sourcePdfHash": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+      "scopeMap": {
+        "5": {
+          "sourceId": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
+          "id": "2b46e86d-75bd-58ce-b3ad-ce009c8bb90c"
+        }
+      },
+      "review": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json"
+    },
+    "scopes": 1,
+    "elements": 138,
+    "relations": 7,
+    "result": "UNCHANGED",
+    "preservedSnapshots": 102
+  },
+  "catalogInstall": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.91",
+    "grade": 5,
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 23,
+    "preservedSnapshots": 102
+  },
+  "checks": [
+    {
+      "command": "pnpm --filter backend test --exclude src/modules/evaluation-instruments/science-grade-6-contract.spec.ts",
+      "code": 0,
+      "ms": 11057,
+      "log": ".wrangler/science-source/grade-5-final-check-0.log",
+      "note": "Only the uncommitted next-grade red characterization tests are excluded; all tests in the fifth-grade commit are included."
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 5156,
+      "log": ".wrangler/science-source/grade-5-final-check-1.log"
+    },
+    {
+      "command": "pnpm --filter frontend exec vitest run",
+      "code": 0,
+      "ms": 80953,
+      "log": ".wrangler/science-source/grade-5-check-2.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 12621,
+      "log": ".wrangler/science-source/grade-5-final-check-3.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "code": 4294967295,
+      "ms": 731695,
+      "log": ".wrangler/science-source/grade-5-final-check-4.log"
+    }
+  ],
+  "backend": {
+    "files": 107,
+    "tests": 44224
+  },
+  "frontend": {
+    "files": 131,
+    "tests": 44626,
+    "note": "Subsequent race/parity checks passed separately; not counted in this earlier full suite."
+  },
+  "previousVerifiedRuntime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-BC-3mRGS.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-BC-3mRGS.js",
+        "sha256": "65f0eb6bdf67b892f751d14e1c34b68bacd04fe6328040d3150be396383099a6",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-CXut17Mg.js",
+        "sha256": "3de307313a1dc04da6c228d75349f5122e0f7dfa75e99abc9fd0a2fddc9f6fa0",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-Bvaeywms.js",
+        "sha256": "25830ef3298c2ae326493c2115509796c71cdd65d81a79d58a01c1e0334df017",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-Icn8O-Wu.js",
+        "sha256": "7b264cfac2ff2d2abfe9e8eaa6e1ef2b45c24f2a0d77edc3afa1985684967ce0",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-CgSS35yX.js",
+        "sha256": "77ce673fbd528bcbfa318b56684c8d01d9c7f1cdf5798de0863ba475547ac4f1",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "a63ee4d23f9e80ed5a3fa595dba4eafada665723803826a69edb2c2c00b45832",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "currentRuntime": {
+    "port": 8787,
+    "launcher": 35288,
+    "listener": 39820,
+    "status": "POSTGRES_CONNECTION_TIMEOUT",
+    "note": "Compiled final backend is served; final effective SQL health verification failed, so the earlier successful runtime check is not presented as current success."
+  },
+  "http": {
+    "savedEvidence": [
+      {
+        "type": "rubrica",
+        "activityId": "e756418b-f523-4163-aa38-7c40419c1e70",
+        "verified": true,
+        "snapshotId": null
+      },
+      {
+        "type": "lista-cotejo",
+        "activityId": "132d25b4-7286-4801-82b1-0da74d1a096f",
+        "verified": true,
+        "snapshotId": null
+      },
+      {
+        "type": "escala",
+        "activityId": "8ee281a6-c05e-440b-872c-ac0d5f7ce7d7",
+        "verified": false,
+        "snapshotId": null
+      }
+    ],
+    "timings": [
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 5212
+      },
+      {
+        "path": "/auth/login",
+        "status": 201,
+        "ms": 7185
+      },
+      {
+        "path": "/activities/center?contextOnly=true",
+        "status": 200,
+        "ms": 12396
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 35804
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 47688
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 27759
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 13454
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 21828
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 12187
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 27541
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 28741
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 27171
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 13747
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 23390
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 11447
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 43837
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 39484
+      },
+      {
+        "path": "/activities",
+        "status": 500,
+        "ms": 30463
+      },
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 2449
+      },
+      {
+        "path": "/auth/login",
+        "status": 201,
+        "ms": 7925
+      },
+      {
+        "path": "/activities/center?contextOnly=true",
+        "status": 200,
+        "ms": 5986
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 11145
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 11892
+      },
+      {
+        "path": "/activities",
+        "status": 500,
+        "ms": 30002
+      },
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 6668
+      },
+      {
+        "path": "/auth/login",
+        "status": 201,
+        "ms": 15388
+      },
+      {
+        "path": "/activities/center?contextOnly=true",
+        "status": 200,
+        "ms": 25654
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 30822
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 11380
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 20904
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 21577
+      },
+      {
+        "path": "/activities",
+        "status": 500,
+        "ms": 52964
+      }
+    ],
+    "note": "Rubric/checklist verified. Scale created once and reopened; strategy-only update failed before the latest fix. Weighted checklist not created. Resume checkpoint; do not duplicate IDs."
+  },
+  "generationTiming": {
+    "grade": 5,
+    "mode": "PURE_IN_PROCESS_RECOMMENDATION_SYNTHETIC_CONTEXT_NO_AUTH_DB_HTTP_OR_RENDER",
+    "samples": 200,
+    "p50Ms": 0.15459999999998786,
+    "p95Ms": 0.25950000000000273,
+    "maxMs": 1.6291999999999973
+  },
+  "historicalConservationBeforeLatestQa": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 6,
+    "newSnapshots": 29,
+    "gradeBaseline": {
+      "grade": 5,
+      "preservedReleases": 23,
+      "preservedSnapshots": 102,
+      "newReleases": 1,
+      "newSnapshots": 0
+    }
+  },
+  "browser": {
+    "status": "BLOCKED_PERSONAL_LOGIN",
+    "completedFormats": [],
+    "manualGuide": "2026-10-16-ciencias-naturaleza-5-prueba-manual.md"
+  },
+  "limitations": [
+    "Latest strategy-only transaction optimization has unit coverage but awaits real HTTP verification after Development PostgreSQL connection recovery.",
+    "Read-only Prisma reconciliation and Worker health both failed with connection timeouts after restarting final runtime. Supabase connector also failed at network transport; project status could not be confirmed.",
+    "Cloudflare dry-run did not terminate; interrupted after 731695 ms, not approved.",
+    "Full personal browser flows, private service-worker registrations, weighted HTTP save/reopen and final history recheck remain pending.",
+    "Pure generation timing excludes network/database/server rendering; HTTP timings are not decomposed."
+  ]
+}

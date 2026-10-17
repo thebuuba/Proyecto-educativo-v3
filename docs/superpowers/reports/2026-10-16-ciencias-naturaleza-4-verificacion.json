@@ -215,8 +215,109 @@
         }
       }
     ],
-    "finalBuildRecheck": null,
-    "semanticControls": []
+    "finalBuildRecheck": {
+      "at": "2026-10-17T00:26:27.144Z",
+      "reopened": 4,
+      "generated": [
+        {
+          "type": "rubrica",
+          "total": 20,
+          "catalog": "evaluation-2026.90"
+        },
+        {
+          "type": "lista-cotejo",
+          "total": 17.35,
+          "catalog": "evaluation-2026.90"
+        },
+        {
+          "type": "escala",
+          "total": 20,
+          "catalog": "evaluation-2026.90"
+        },
+        {
+          "type": "lista-ponderada",
+          "total": 17.35,
+          "catalog": "evaluation-2026.90"
+        }
+      ],
+      "languageRegressions": [
+        {
+          "language": "FRA",
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+        },
+        {
+          "language": "ING",
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": null,
+          "scopeId": null
+        },
+        {
+          "language": "MAT",
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+          "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+        }
+      ],
+      "scienceRegressions": [
+        {
+          "grade": 1,
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+          "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf"
+        },
+        {
+          "grade": 2,
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+          "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708"
+        },
+        {
+          "grade": 3,
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+          "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a"
+        }
+      ]
+    },
+    "semanticControls": [
+      {
+        "description": "Interpreta los resultados proporcionados de los experimentos de Mendel.",
+        "criteria": [
+          "nat-4-mendel-data-interpretation"
+        ],
+        "catalog": "evaluation-2026.90"
+      },
+      {
+        "description": "Analiza cistitis y cálculo renal con los casos ficticios proporcionados.",
+        "criteria": [
+          "nat-4-excretory-analysis"
+        ],
+        "catalog": "evaluation-2026.90"
+      },
+      {
+        "description": "Argumenta con pruebas evolutivas de anatomía, embriología y bioquímica comparadas proporcionadas.",
+        "criteria": [
+          "nat-4-evolution-evidence-argument"
+        ],
+        "catalog": "evaluation-2026.90"
+      },
+      {
+        "description": "Explica sistema binomial de Linneo y clasificación moderna.",
+        "criteria": [
+          "nat-4-classification-explanation"
+        ],
+        "catalog": "evaluation-2026.90"
+      },
+      {
+        "description": "Interpreta la herencia ligada al sexo del caso ficticio sin solicitar datos familiares.",
+        "criteria": [
+          "nat-4-genetic-variation-analysis"
+        ],
+        "catalog": "evaluation-2026.90"
+      }
+    ]
   },
   "browser": {
     "project": "eolgunypmtgrsyrjzcld",

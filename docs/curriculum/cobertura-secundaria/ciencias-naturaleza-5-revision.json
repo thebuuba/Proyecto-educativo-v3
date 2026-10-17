@@ -1,0 +1,29 @@
+{
+ "grade":5,
+ "status":"REVIEWED_DEFINED_FIXTURES",
+ "scope":"Química común, PDF316–318 / impresas315–317; 138 registros oficiales, 51 grupos, 102 consignas y 408 instrumentos de ejemplo",
+ "method":"Lectura visual de las tres páginas, columnas y continuaciones; lectura secuencial de títulos, condiciones de logro y parcial de las 102 consignas. Progresiones compartidas inspeccionadas; instrumentos completos de los cuatro formatos leídos para cálculo estequiométrico y balanceo. Revisión de prácticas, modelos y aplicaciones nucleares sin requisitos inventados. Los contratos y el inventario no sustituyen esta revisión.",
+ "corrections":[
+  "Balanceo explícito conserva átomos, fórmulas y subíndices; balanceo negado no añade una tarea",
+  "Predicción, caracterización y construcción de modelos se distinguen de interpretación y experimentación",
+  "Bloques y subniveles relacionados no duplican una explicación general de energía",
+  "Pauli aislado no exige Hund; elementos y propiedades mencionados aparecen concretamente en los criterios",
+  "Puente de hidrógeno no añade una tarea sobre hidrógeno elemental",
+  "Gas ideal, energía libre, hibridación y mecanismo específicos mantienen el alcance solicitado",
+  "Interpretar resonancia aromática no exige ejecutar ni explicar etapas de sustitución",
+  "Los símbolos oficiales σ y π se reconocen sin alterar el texto literal de la fuente",
+  "sp1 de la fuente se conserva literalmente en el inventario; la adaptación científica usa sp",
+  "La mención de alcanos junto a SN1/SN2 en la fuente no obliga a atribuir sustitución nucleofílica directa a un alcano sin grupo saliente",
+  "Catálisis no modifica la constante de equilibrio ni la diferencia energética entre reactivos y productos",
+  "Medicina nuclear se estudia documentalmente: no procedimientos clínicos ni manipulación radiactiva"
+ ],
+ "limits":[
+  "Patrones definidos, no cualquier formulación imaginable",
+  "Trece encabezados y menús de procesos explícitamente excluidos como tareas adicionales; P1–P6 no son grados",
+  "Sin síntesis, toma de muestras, mediciones, instrumentos ni cálculos ausentes de la consigna",
+  "No se exige confirmar hipótesis ni inventar resultados; las unidades corresponden a los datos del problema",
+  "HTTP/DB y navegador se acreditan por separado: esta revisión no los aprueba",
+  "Estas adaptaciones evaluativas de AulaBase no son rúbricas oficiales MINERD"
+ ],
+ "instrumentArtifact":"ciencias-naturaleza-5-instrumentos.json"
+}
