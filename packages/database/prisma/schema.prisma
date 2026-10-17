@@ -208,6 +208,20 @@ model AppUser {
   onboardingTourProgress        OnboardingTourProgress[]
   teacherInstrumentPreferences  TeacherInstrumentPreference[]
   trustedAuthDevices            TrustedAuthDevice[]
+  billingAccount                BillingAccount?
+  billingAdmin                  BillingAdmin?
+  billingAdminsGranted          BillingAdmin[]        @relation("BillingAdminGrantor")
+  billingAdminsRevoked          BillingAdmin[]        @relation("BillingAdminRevoker")
+  billingBankAccountsCreated    BillingBankAccount[]  @relation("BillingBankAccountCreator")
+  billingAuditEntries           BillingAuditLog[]     @relation("BillingAuditActor")
+  billingServicePeriodsGranted  BillingServicePeriod[] @relation("BillingServicePeriodGrantor")
+  billingTransfersReviewed      BillingTransferRequest[] @relation("BillingTransferReviewer")
+  billingBankMovementsRecorded  BillingBankMovement[] @relation("BillingBankMovementRecorder")
+  billingCourtesiesGranted      BillingCourtesy[]     @relation("BillingCourtesyGrantor")
+  billingCourtesiesRevoked      BillingCourtesy[]     @relation("BillingCourtesyRevoker")
+  billingSupportCases           BillingSupportCase[]  @relation("BillingSupportRequester")
+  billingSupportAssigned        BillingSupportCase[]  @relation("BillingSupportAssignee")
+  billingSupportMessages        BillingSupportMessage[] @relation("BillingSupportAuthor")
 
   @@map("app_users")
 }
@@ -869,6 +883,8 @@ model EvaluationActivity {
   instrumentId         String?      @map("instrument_id") @db.Uuid
   instrumentSnapshotId String?      @unique @map("instrument_snapshot_id") @db.Uuid
   pedagogicalActivityType String?   @map("pedagogical_activity_type")
+  teachingStrategyId   String?      @map("teaching_strategy_id")
+  teachingStrategyOrigin String    @default("UNKNOWN") @map("teaching_strategy_origin")
   competencyBlockId    String       @map("competency_block_id")
   competencyBlockWeights Json       @default("{}") @map("competency_block_weights")
   planningMoment       String?      @map("planning_moment")
@@ -1478,4 +1494,669 @@ model TeacherJournalStudent {
   @@id([entryId, studentId])
   @@index([studentId])
   @@map("teacher_journal_students")
+}
+
+// ---------------------------------------------------------------------------
+// Billing foundation. Money is stored as integer minor units (BigInt); the
+// commercial owner is AppUser.id, never School.id nor an editable email.
+// Tables are backend-only (RLS + explicit app_backend grants) and are managed
+// by migration 20261015141817_billing_foundation.sql. Partial unique indexes
+// used for external ids, idempotency and "one active subscription per account"
+// are created in SQL because Prisma cannot express them.
+// ---------------------------------------------------------------------------
+
+enum BillingEnvironment {
+  SANDBOX    @map("sandbox")
+  PRODUCTION @map("production")
+
+  @@map("billing_environment")
+}
+
+enum BillingProvider {
+  PADDLE @map("paddle")
+  MANUAL @map("manual")
+
+  @@map("billing_provider")
+}
+
+enum BillingPlanStatus {
+  DRAFT   @map("draft")
+  ACTIVE  @map("active")
+  RETIRED @map("retired")
+
+  @@map("billing_plan_status")
+}
+
+enum BillingPriceStatus {
+  DRAFT   @map("draft")
+  ACTIVE  @map("active")
+  RETIRED @map("retired")
+
+  @@map("billing_price_status")
+}
+
+enum BillingInterval {
+  MONTHLY @map("monthly")
+  ANNUAL  @map("annual")
+  CUSTOM  @map("custom")
+
+  @@map("billing_interval")
+}
+
+enum BillingAccountStatus {
+  ACTIVE    @map("active")
+  SUSPENDED @map("suspended")
+  CLOSED    @map("closed")
+
+  @@map("billing_account_status")
+}
+
+enum BillingSubscriptionStatus {
+  INCOMPLETE @map("incomplete")
+  TRIALING   @map("trialing")
+  ACTIVE     @map("active")
+  PAST_DUE   @map("past_due")
+  PAUSED     @map("paused")
+  CANCELED   @map("canceled")
+  EXPIRED    @map("expired")
+  UNKNOWN    @map("unknown")
+
+  @@map("billing_subscription_status")
+}
+
+enum BillingPaymentSource {
+  PROVIDER @map("provider")
+  TRANSFER @map("transfer")
+  MANUAL   @map("manual")
+
+  @@map("billing_payment_source")
+}
+
+enum BillingPaymentStatus {
+  PENDING            @map("pending")
+  SUCCEEDED          @map("succeeded")
+  FAILED             @map("failed")
+  REFUNDED           @map("refunded")
+  PARTIALLY_REFUNDED @map("partially_refunded")
+  DISPUTED           @map("disputed")
+  CANCELED           @map("canceled")
+
+  @@map("billing_payment_status")
+}
+
+enum BillingDocumentType {
+  INVOICE     @map("invoice")
+  RECEIPT     @map("receipt")
+  CREDIT_NOTE @map("credit_note")
+  DEBIT_NOTE  @map("debit_note")
+
+  @@map("billing_document_type")
+}
+
+enum BillingCoverageSource {
+  SUBSCRIPTION   @map("subscription")
+  TRANSFER       @map("transfer")
+  MANUAL_PAYMENT @map("manual_payment")
+  TRIAL          @map("trial")
+  COURTESY       @map("courtesy")
+  GRACE          @map("grace")
+
+  @@map("billing_coverage_source")
+}
+
+enum BillingTransferStatus {
+  PENDING      @map("pending")
+  UNDER_REVIEW @map("under_review")
+  APPROVED     @map("approved")
+  REJECTED     @map("rejected")
+  EXPIRED      @map("expired")
+  CANCELED     @map("canceled")
+
+  @@map("billing_transfer_status")
+}
+
+enum BillingTrialStatus {
+  ACTIVE    @map("active")
+  EXPIRED   @map("expired")
+  CONVERTED @map("converted")
+  CANCELED  @map("canceled")
+
+  @@map("billing_trial_status")
+}
+
+enum BillingCourtesyStatus {
+  ACTIVE  @map("active")
+  EXPIRED @map("expired")
+  REVOKED @map("revoked")
+
+  @@map("billing_courtesy_status")
+}
+
+enum BillingAdminStatus {
+  ACTIVE  @map("active")
+  REVOKED @map("revoked")
+
+  @@map("billing_admin_status")
+}
+
+enum BillingEventStatus {
+  RECEIVED   @map("received")
+  PROCESSING @map("processing")
+  PROCESSED  @map("processed")
+  FAILED     @map("failed")
+  IGNORED    @map("ignored")
+
+  @@map("billing_event_status")
+}
+
+enum BillingSupportCategory {
+  BILLING      @map("billing")
+  PAYMENT      @map("payment")
+  SUBSCRIPTION @map("subscription")
+  REFUND       @map("refund")
+  TECHNICAL    @map("technical")
+  OTHER        @map("other")
+
+  @@map("billing_support_category")
+}
+
+enum BillingSupportStatus {
+  OPEN                @map("open")
+  IN_PROGRESS         @map("in_progress")
+  WAITING_ON_CUSTOMER @map("waiting_on_customer")
+  RESOLVED            @map("resolved")
+  CLOSED              @map("closed")
+
+  @@map("billing_support_status")
+}
+
+enum BillingOutboxStatus {
+  PENDING @map("pending")
+  SENDING @map("sending")
+  SENT    @map("sent")
+  FAILED  @map("failed")
+
+  @@map("billing_outbox_status")
+}
+
+model BillingPlan {
+  id          String            @id @default(uuid()) @db.Uuid
+  code        String            @unique
+  name        String
+  description String?
+  status      BillingPlanStatus @default(DRAFT)
+  features    String[]          @default([])
+  trialDays   Int               @default(14) @map("trial_days")
+  graceDays   Int               @default(7) @map("grace_days")
+  isPublic    Boolean           @default(false) @map("is_public")
+  createdAt   DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime          @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  prices           BillingPrice[]
+  subscriptions    BillingSubscription[]
+  payments         BillingPayment[]
+  servicePeriods   BillingServicePeriod[]
+  trials           BillingTrial[]
+  courtesies       BillingCourtesy[]
+  transferRequests BillingTransferRequest[]
+
+  @@index([status])
+  @@map("billing_plans")
+}
+
+model BillingPrice {
+  id              String             @id @default(uuid()) @db.Uuid
+  planId          String             @map("plan_id") @db.Uuid
+  version         Int
+  currency        String             @db.Char(3)
+  amountMinor     BigInt             @map("amount_minor")
+  interval        BillingInterval    @default(MONTHLY)
+  intervalCount   Int                @default(1) @map("interval_count")
+  status          BillingPriceStatus @default(DRAFT)
+  provider        BillingProvider    @default(MANUAL)
+  providerPriceId String?            @map("provider_price_id")
+  isPublic        Boolean            @default(false) @map("is_public")
+  effectiveFrom   DateTime?          @map("effective_from") @db.Timestamptz(6)
+  effectiveTo     DateTime?          @map("effective_to") @db.Timestamptz(6)
+  createdAt       DateTime           @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt       DateTime           @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  plan             BillingPlan             @relation(fields: [planId], references: [id], onDelete: Cascade)
+  subscriptions    BillingSubscription[]
+  payments         BillingPayment[]
+  transferRequests BillingTransferRequest[]
+
+  @@unique([planId, version])
+  @@unique([id, planId], map: "billing_prices_id_plan_unique")
+  @@index([planId, status])
+  @@map("billing_prices")
+}
+
+model BillingAccount {
+  id          String               @id @default(uuid()) @db.Uuid
+  userId      String               @unique @map("user_id") @db.Uuid
+  status      BillingAccountStatus @default(ACTIVE)
+  countryCode String?              @map("country_code") @db.Char(2)
+  currency    String?              @db.Char(3)
+  provider    BillingProvider      @default(MANUAL)
+  sandbox     Boolean              @default(true)
+  createdAt   DateTime             @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime             @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  user              AppUser                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  providerCustomers BillingProviderCustomer[]
+  subscriptions     BillingSubscription[]
+  payments          BillingPayment[]
+  documents         BillingDocument[]
+  servicePeriods    BillingServicePeriod[]
+  transferRequests  BillingTransferRequest[]
+  bankMovements     BillingBankMovement[]
+  trial             BillingTrial?
+  courtesies        BillingCourtesy[]
+  supportCases      BillingSupportCase[]
+  outbox            BillingOutbox[]
+  auditEntries      BillingAuditLog[]
+
+  @@index([status])
+  @@map("billing_accounts")
+}
+
+model BillingProviderCustomer {
+  id                 String             @id @default(uuid()) @db.Uuid
+  accountId          String             @map("account_id") @db.Uuid
+  provider           BillingProvider
+  environment        BillingEnvironment @default(SANDBOX)
+  providerCustomerId String             @map("provider_customer_id")
+  createdAt          DateTime           @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt          DateTime           @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  account BillingAccount @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  @@unique([accountId, provider, environment])
+  @@unique([provider, environment, providerCustomerId])
+  @@map("billing_provider_customers")
+}
+
+model BillingSubscription {
+  id                   String                    @id @default(uuid()) @db.Uuid
+  accountId            String                    @map("account_id") @db.Uuid
+  planId               String                    @map("plan_id") @db.Uuid
+  priceId              String                    @map("price_id") @db.Uuid
+  provider             BillingProvider           @default(MANUAL)
+  environment          BillingEnvironment        @default(SANDBOX)
+  providerSubscriptionId String?                 @map("provider_subscription_id")
+  status               BillingSubscriptionStatus @default(INCOMPLETE)
+  providerStatus       String?                   @map("provider_status")
+  currentPeriodStart   DateTime?                 @map("current_period_start") @db.Timestamptz(6)
+  currentPeriodEnd     DateTime?                 @map("current_period_end") @db.Timestamptz(6)
+  cancelAtPeriodEnd    Boolean                   @default(false) @map("cancel_at_period_end")
+  startedAt            DateTime?                 @map("started_at") @db.Timestamptz(6)
+  endedAt              DateTime?                 @map("ended_at") @db.Timestamptz(6)
+  canceledAt           DateTime?                 @map("canceled_at") @db.Timestamptz(6)
+  metadata             Json                      @default("{}")
+  createdAt            DateTime                  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt            DateTime                  @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  account    BillingAccount     @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  plan       BillingPlan        @relation(fields: [planId], references: [id])
+  price      BillingPrice       @relation(fields: [priceId], references: [id])
+  payments   BillingPayment[]
+  documents  BillingDocument[]
+  trial      BillingTrial?
+
+  @@unique([id, accountId], map: "billing_subscriptions_id_account_unique")
+  @@index([accountId, status])
+  @@map("billing_subscriptions")
+}
+
+model BillingPayment {
+  id                  String               @id @default(uuid()) @db.Uuid
+  accountId           String               @map("account_id") @db.Uuid
+  subscriptionId      String?              @map("subscription_id") @db.Uuid
+  planId              String?              @map("plan_id") @db.Uuid
+  priceId             String?              @map("price_id") @db.Uuid
+  source              BillingPaymentSource
+  provider            BillingProvider      @default(MANUAL)
+  environment         BillingEnvironment   @default(SANDBOX)
+  providerPaymentId   String?              @map("provider_payment_id")
+  providerInvoiceId   String?              @map("provider_invoice_id")
+  amountMinor         BigInt               @map("amount_minor")
+  amountRefundedMinor BigInt               @default(0) @map("amount_refunded_minor")
+  currency            String               @db.Char(3)
+  status              BillingPaymentStatus @default(PENDING)
+  reference           String?
+  idempotencyKey      String?              @map("idempotency_key")
+  paidAt              DateTime?            @map("paid_at") @db.Timestamptz(6)
+  failedAt            DateTime?            @map("failed_at") @db.Timestamptz(6)
+  failureCode         String?              @map("failure_code")
+  metadata            Json                 @default("{}")
+  createdAt           DateTime             @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt           DateTime             @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  account          BillingAccount          @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  subscription     BillingSubscription?    @relation(fields: [subscriptionId], references: [id], onDelete: SetNull)
+  plan             BillingPlan?            @relation(fields: [planId], references: [id])
+  price            BillingPrice?           @relation(fields: [priceId], references: [id])
+  documents        BillingDocument[]
+  servicePeriods   BillingServicePeriod[]
+  transferRequests BillingTransferRequest[]
+
+  @@unique([id, accountId], map: "billing_payments_id_account_unique")
+  @@index([accountId, status, createdAt])
+  @@index([subscriptionId])
+  @@map("billing_payments")
+}
+
+model BillingDocument {
+  id                 String              @id @default(uuid()) @db.Uuid
+  accountId          String              @map("account_id") @db.Uuid
+  paymentId          String?             @map("payment_id") @db.Uuid
+  subscriptionId     String?             @map("subscription_id") @db.Uuid
+  documentType       BillingDocumentType @map("document_type")
+  number             String?
+  amountMinor        BigInt              @map("amount_minor")
+  currency           String              @db.Char(3)
+  storagePath        String?             @map("storage_path")
+  providerDocumentId String?             @map("provider_document_id")
+  environment        BillingEnvironment  @default(SANDBOX)
+  issuedAt           DateTime?           @map("issued_at") @db.Timestamptz(6)
+  createdAt          DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  account      BillingAccount       @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  payment      BillingPayment?      @relation(fields: [paymentId], references: [id], onDelete: SetNull)
+  subscription BillingSubscription? @relation(fields: [subscriptionId], references: [id], onDelete: SetNull)
+
+  @@index([accountId, issuedAt])
+  @@map("billing_documents")
+}
+
+model BillingServicePeriod {
+  id          String                @id @default(uuid()) @db.Uuid
+  accountId   String                @map("account_id") @db.Uuid
+  planId      String                @map("plan_id") @db.Uuid
+  paymentId   String?               @map("payment_id") @db.Uuid
+  source      BillingCoverageSource
+  startsAt    DateTime              @map("starts_at") @db.Timestamptz(6)
+  endsAt      DateTime              @map("ends_at") @db.Timestamptz(6)
+  grantedBy   String?               @map("granted_by") @db.Uuid
+  note        String?
+  createdAt   DateTime              @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime              @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  account          BillingAccount          @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  plan             BillingPlan             @relation(fields: [planId], references: [id])
+  payment          BillingPayment?         @relation(fields: [paymentId], references: [id], onDelete: SetNull)
+  grantor          AppUser?                @relation("BillingServicePeriodGrantor", fields: [grantedBy], references: [id], onDelete: SetNull)
+  transferRequests BillingTransferRequest[]
+  courtesies       BillingCourtesy[]
+
+  @@unique([id, accountId], map: "billing_service_periods_id_account_unique")
+  @@index([accountId, startsAt, endsAt])
+  @@map("billing_service_periods")
+}
+
+model BillingBankAccount {
+  id            String   @id @default(uuid()) @db.Uuid
+  label         String
+  bankName      String   @map("bank_name")
+  accountHolder String   @map("account_holder")
+  accountNumber String   @map("account_number")
+  currency      String   @db.Char(3)
+  isActive      Boolean  @default(false) @map("is_active")
+  createdBy     String?  @map("created_by") @db.Uuid
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  creator AppUser? @relation("BillingBankAccountCreator", fields: [createdBy], references: [id], onDelete: SetNull)
+
+  @@unique([currency, accountNumber])
+  @@index([isActive])
+  @@map("billing_bank_accounts")
+}
+
+model BillingTransferRequest {
+  id              String                @id @default(uuid()) @db.Uuid
+  accountId       String                @map("account_id") @db.Uuid
+  planId          String                @map("plan_id") @db.Uuid
+  priceId         String                @map("price_id") @db.Uuid
+  reference       String                @unique
+  customerReference String?             @map("customer_reference")
+  amountMinor     BigInt                @map("amount_minor")
+  currency        String                @db.Char(3)
+  status          BillingTransferStatus @default(PENDING)
+  receiptPath     String?               @map("receipt_path")
+  receiptMime     String?               @map("receipt_mime")
+  receiptSizeBytes BigInt?              @map("receipt_size_bytes")
+  reportedAt      DateTime?             @map("reported_at") @db.Timestamptz(6)
+  expiresAt       DateTime?             @map("expires_at") @db.Timestamptz(6)
+  reviewedBy      String?               @map("reviewed_by") @db.Uuid
+  reviewedAt      DateTime?             @map("reviewed_at") @db.Timestamptz(6)
+  rejectionReason String?               @map("rejection_reason")
+  paymentId       String?               @map("payment_id") @db.Uuid
+  servicePeriodId String?               @map("service_period_id") @db.Uuid
+  createdAt       DateTime              @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt       DateTime              @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  account       BillingAccount        @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  plan          BillingPlan           @relation(fields: [planId], references: [id])
+  price         BillingPrice          @relation(fields: [priceId], references: [id])
+  reviewer      AppUser?              @relation("BillingTransferReviewer", fields: [reviewedBy], references: [id], onDelete: SetNull)
+  payment       BillingPayment?       @relation(fields: [paymentId], references: [id], onDelete: SetNull)
+  servicePeriod BillingServicePeriod? @relation(fields: [servicePeriodId], references: [id], onDelete: SetNull)
+  bankMovement  BillingBankMovement?
+
+  @@unique([id, accountId], map: "billing_transfers_id_account_unique")
+  @@index([accountId, status, createdAt])
+  @@map("billing_transfer_requests")
+}
+
+model BillingBankMovement {
+  id                String   @id @default(uuid()) @db.Uuid
+  transferRequestId String   @unique @map("transfer_request_id") @db.Uuid
+  accountId         String   @map("account_id") @db.Uuid
+  bankReference     String   @map("bank_reference")
+  amountMinor       BigInt   @map("amount_minor")
+  currency          String   @db.Char(3)
+  receivedAt        DateTime @map("received_at") @db.Timestamptz(6)
+  recordedBy        String?  @map("recorded_by") @db.Uuid
+  reason            String?
+  createdAt         DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  transferRequest BillingTransferRequest @relation(fields: [transferRequestId], references: [id], onDelete: Restrict)
+  account         BillingAccount         @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  recorder        AppUser?               @relation("BillingBankMovementRecorder", fields: [recordedBy], references: [id], onDelete: SetNull)
+
+  @@unique([currency, bankReference])
+  @@index([receivedAt])
+  @@map("billing_bank_movements")
+}
+
+model BillingTrial {
+  id          String             @id @default(uuid()) @db.Uuid
+  accountId   String             @unique @map("account_id") @db.Uuid
+  planId      String             @map("plan_id") @db.Uuid
+  subscriptionId String?         @unique @map("subscription_id") @db.Uuid
+  status      BillingTrialStatus @default(ACTIVE)
+  startsAt    DateTime           @default(now()) @map("starts_at") @db.Timestamptz(6)
+  endsAt      DateTime           @map("ends_at") @db.Timestamptz(6)
+  endedAt     DateTime?          @map("ended_at") @db.Timestamptz(6)
+  convertedAt DateTime?          @map("converted_at") @db.Timestamptz(6)
+  createdAt   DateTime           @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime           @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  account BillingAccount @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  plan    BillingPlan    @relation(fields: [planId], references: [id])
+
+  subscription BillingSubscription? @relation(fields: [subscriptionId, accountId], references: [id, accountId], onDelete: Restrict, map: "billing_trials_subscription_owner_fk")
+
+  @@unique([subscriptionId, accountId], map: "billing_trials_subscription_id_account_id_key")
+  @@index([status, endsAt])
+  @@map("billing_trials")
+}
+
+model BillingCourtesy {
+  id               String                @id @default(uuid()) @db.Uuid
+  accountId        String                @map("account_id") @db.Uuid
+  planId           String                @map("plan_id") @db.Uuid
+  status           BillingCourtesyStatus @default(ACTIVE)
+  startsAt         DateTime              @map("starts_at") @db.Timestamptz(6)
+  endsAt           DateTime?             @map("ends_at") @db.Timestamptz(6)
+  reason           String
+  grantedBy        String                @map("granted_by") @db.Uuid
+  revokedAt        DateTime?             @map("revoked_at") @db.Timestamptz(6)
+  revokedBy        String?               @map("revoked_by") @db.Uuid
+  revocationReason String?               @map("revocation_reason")
+  servicePeriodId  String?               @map("service_period_id") @db.Uuid
+  createdAt        DateTime              @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime              @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  account       BillingAccount        @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  plan          BillingPlan           @relation(fields: [planId], references: [id])
+  grantor       AppUser               @relation("BillingCourtesyGrantor", fields: [grantedBy], references: [id], onDelete: Restrict)
+  revoker       AppUser?              @relation("BillingCourtesyRevoker", fields: [revokedBy], references: [id], onDelete: SetNull)
+  servicePeriod BillingServicePeriod? @relation(fields: [servicePeriodId], references: [id], onDelete: SetNull)
+
+  @@index([accountId, status])
+  @@map("billing_courtesies")
+}
+
+model BillingAdmin {
+  id        String             @id @default(uuid()) @db.Uuid
+  userId    String             @unique @map("user_id") @db.Uuid
+  status    BillingAdminStatus @default(ACTIVE)
+  grantedBy String?            @map("granted_by") @db.Uuid
+  grantedAt DateTime           @default(now()) @map("granted_at") @db.Timestamptz(6)
+  revokedAt DateTime?          @map("revoked_at") @db.Timestamptz(6)
+  revokedBy String?            @map("revoked_by") @db.Uuid
+  note      String?
+  createdAt DateTime           @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime           @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  user    AppUser  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  grantor AppUser? @relation("BillingAdminGrantor", fields: [grantedBy], references: [id], onDelete: SetNull)
+  revoker AppUser? @relation("BillingAdminRevoker", fields: [revokedBy], references: [id], onDelete: SetNull)
+
+  @@index([status])
+  @@map("billing_admins")
+}
+
+model BillingEvent {
+  id              String             @id @default(uuid()) @db.Uuid
+  provider        BillingProvider
+  environment     BillingEnvironment @default(SANDBOX)
+  providerEventId String             @map("provider_event_id")
+  eventType       String             @map("event_type")
+  status          BillingEventStatus @default(RECEIVED)
+  payload         Json
+  payloadHash     String?            @map("payload_hash")
+  signatureValid  Boolean?           @map("signature_valid")
+  attempts        Int                @default(0)
+  lastError       String?            @map("last_error")
+  receivedAt      DateTime           @default(now()) @map("received_at") @db.Timestamptz(6)
+  processedAt     DateTime?          @map("processed_at") @db.Timestamptz(6)
+  nextRetryAt     DateTime?          @map("next_retry_at") @db.Timestamptz(6)
+  createdAt       DateTime           @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt       DateTime           @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@unique([provider, environment, providerEventId])
+  @@index([status, nextRetryAt])
+  @@map("billing_events")
+}
+
+model BillingAuditLog {
+  id          String   @id @default(uuid()) @db.Uuid
+  accountId   String?  @map("account_id") @db.Uuid
+  actorUserId String?  @map("actor_user_id") @db.Uuid
+  actorType   String   @default("user") @map("actor_type")
+  action      String
+  entityType  String   @map("entity_type")
+  entityId    String?  @map("entity_id") @db.Uuid
+  beforeData  Json?    @map("before_data")
+  afterData   Json?    @map("after_data")
+  metadata    Json     @default("{}")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  account BillingAccount? @relation(fields: [accountId], references: [id], onDelete: SetNull)
+  actor   AppUser?        @relation("BillingAuditActor", fields: [actorUserId], references: [id], onDelete: SetNull)
+
+  @@index([accountId, createdAt])
+  @@index([entityType, entityId])
+  @@map("billing_audit_log")
+}
+
+model BillingSupportCase {
+  id               String                @id @default(uuid()) @db.Uuid
+  number           String                @unique
+  accountId        String?               @map("account_id") @db.Uuid
+  userId           String                @map("user_id") @db.Uuid
+  category         BillingSupportCategory
+  status           BillingSupportStatus  @default(OPEN)
+  subject          String
+  description      String?
+  paymentReference String?               @map("payment_reference")
+  assignedTo       String?               @map("assigned_to") @db.Uuid
+  lastMessageAt    DateTime?             @map("last_message_at") @db.Timestamptz(6)
+  resolvedAt       DateTime?             @map("resolved_at") @db.Timestamptz(6)
+  closedAt         DateTime?             @map("closed_at") @db.Timestamptz(6)
+  createdAt        DateTime              @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime              @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  account   BillingAccount?        @relation(fields: [accountId], references: [id], onDelete: SetNull)
+  requester AppUser                @relation("BillingSupportRequester", fields: [userId], references: [id], onDelete: Cascade)
+  assignee  AppUser?               @relation("BillingSupportAssignee", fields: [assignedTo], references: [id], onDelete: SetNull)
+  messages  BillingSupportMessage[]
+  outbox    BillingOutbox[]
+
+  @@index([userId, status])
+  @@index([status, createdAt])
+  @@map("billing_support_cases")
+}
+
+model BillingSupportMessage {
+  id           String   @id @default(uuid()) @db.Uuid
+  caseId       String   @map("case_id") @db.Uuid
+  authorUserId String?  @map("author_user_id") @db.Uuid
+  authorType   String   @default("user") @map("author_type")
+  body         String
+  isInternal   Boolean  @default(false) @map("is_internal")
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  case   BillingSupportCase @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  author AppUser?           @relation("BillingSupportAuthor", fields: [authorUserId], references: [id], onDelete: SetNull)
+
+  @@index([caseId, createdAt])
+  @@map("billing_support_messages")
+}
+
+model BillingOutbox {
+  id          String              @id @default(uuid()) @db.Uuid
+  accountId   String?             @map("account_id") @db.Uuid
+  caseId      String?             @map("case_id") @db.Uuid
+  channel     String              @default("email")
+  recipient   String?
+  template    String
+  payload     Json                @default("{}")
+  status      BillingOutboxStatus @default(PENDING)
+  attempts    Int                 @default(0)
+  lastError   String?             @map("last_error")
+  dedupeKey   String?             @map("dedupe_key")
+  scheduledAt DateTime            @default(now()) @map("scheduled_at") @db.Timestamptz(6)
+  sentAt      DateTime?           @map("sent_at") @db.Timestamptz(6)
+  createdAt   DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime            @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  account BillingAccount?     @relation(fields: [accountId], references: [id], onDelete: SetNull)
+  case    BillingSupportCase? @relation(fields: [caseId], references: [id], onDelete: SetNull)
+
+  @@index([status, scheduledAt])
+  @@map("billing_outbox")
+}
+
+// Activation is provisioned only by an authorized database operator, never by a school role.
+model BillingRuntimeSettings {
+  id            String   @id @default("commercial")
+  enforceAccess Boolean  @default(false) @map("enforce_access")
+  updatedAt     DateTime @default(now()) @map("updated_at") @db.Timestamptz(6)
+
+  @@map("billing_runtime_settings")
 }

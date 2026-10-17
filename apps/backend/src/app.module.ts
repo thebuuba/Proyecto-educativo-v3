@@ -28,6 +28,7 @@ import { ResourcesModule } from './modules/resources/resources.module'
 import { OnboardingModule } from './modules/onboarding/onboarding.module'
 import { backendEnvFilePaths } from './config/env-file-paths'
 import { EvaluationInstrumentsModule } from './modules/evaluation-instruments/evaluation-instruments.module'
+import { BillingModule } from './modules/billing/billing.module'
 
 /**
  * Configuración del módulo raíz.
@@ -59,6 +60,7 @@ import { EvaluationInstrumentsModule } from './modules/evaluation-instruments/ev
     ResourcesModule,
     OnboardingModule,
     EvaluationInstrumentsModule,
+    BillingModule,
   ],
   providers: [
     { provide: APP_GUARD, useClass: ThrottlerGuard },

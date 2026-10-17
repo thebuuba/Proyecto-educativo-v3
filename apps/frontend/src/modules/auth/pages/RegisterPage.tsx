@@ -3,6 +3,7 @@ import { useState, type FormEvent } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { FacebookIcon, GoogleIcon } from '@/components/auth/AuthIcons'
 import { Button } from '@/components/ui/Button'
+import { SubscriptionOfferSummary } from '@/modules/billing/components/SubscriptionOfferSummary'
 import { RegistrationLayout } from '@/modules/auth/components/RegistrationLayout'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { isValidPassword } from '@/modules/auth/utils/password'
@@ -84,6 +85,11 @@ export function RegisterPage() {
           Inicia sesión
         </Link>
       </p>
+      <section aria-label="Precio y prueba gratuita" className="mt-6 rounded-2xl border border-border p-4">
+        <p className="mb-2 text-sm font-semibold">Docente Completo</p>
+        <SubscriptionOfferSummary />
+        <Link to="/precios" className="mt-2 inline-flex min-h-11 items-center text-sm font-medium text-primary underline">Ver precios y condiciones</Link>
+      </section>
       <form noValidate onSubmit={submit} className="mt-8 space-y-5">
         {serverError && (
           <p role="alert" className="rounded-2xl bg-destructive/12 p-4 text-sm text-destructive">

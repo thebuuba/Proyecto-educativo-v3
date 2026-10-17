@@ -20,7 +20,7 @@ const steps = [
   ['Crea tu cuenta', 'Nombre, correo y contraseña.'],
   ['Confirma tu correo', 'Cuando te lo pidamos, abre el enlace que te enviamos.'],
   ['Configuración inicial', 'Tus datos como docente, tu centro y el año escolar.'],
-  ['Entra a la aplicación', 'Tus cursos, horario y registros te esperan.'],
+  ['Activa tu mes gratuito', 'En Ajustes, confirma la tarjeta, el precio y la renovación antes de iniciar la prueba.'],
 ]
 
 export function RegistrationLayout({
@@ -41,7 +41,7 @@ export function RegistrationLayout({
         </section>
         <aside
           aria-labelledby="flujo-title"
-          className="rounded-[28px] bg-primary p-6 text-primary-foreground shadow-lg sm:p-8"
+          className="rounded-[28px] bg-card p-6 text-foreground shadow-sm sm:p-8"
         >
           <div className="flex items-center gap-3">
             <GraduationCap className="size-7" />
@@ -58,13 +58,13 @@ export function RegistrationLayout({
                 aria-current={i === currentStep ? 'step' : undefined}
               >
                 <span
-                  className={`grid size-8 shrink-0 place-items-center rounded-full text-xs font-semibold ${i <= currentStep ? 'bg-card text-primary' : 'bg-white/20 text-white'}`}
+                  className={`grid size-8 shrink-0 place-items-center rounded-full text-xs font-semibold ${i <= currentStep ? 'bg-card text-primary' : 'bg-muted text-muted-foreground'}`}
                 >
                   {i < currentStep ? <Check size={16} /> : i + 1}
                 </span>
                 <div className={i > currentStep ? 'opacity-80' : ''}>
                   <p className="text-sm font-semibold">{title}</p>
-                  <p className="text-xs leading-relaxed text-white/90">{description}</p>
+                  <p className="text-xs leading-relaxed text-muted-foreground">{description}</p>
                 </div>
               </li>
             ))}
