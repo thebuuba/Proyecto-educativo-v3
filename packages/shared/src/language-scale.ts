@@ -32,7 +32,7 @@ export function adaptLanguageScale(proposal: InstrumentRecommendation, descripti
       // Degree of a requested revision needs its authored conditional evidence, not inferred edits.
       const selected=!frequency&&(authoredFrenchDegree || /^ing-[1-6]-strategy-revision(?:$|:)/.test(criterion.templateId))&&criterion.progressionLevels
         ? criterion.progressionLevels:progression
-      return {...criterion,progressionLevels:[...(criterion.progressionLevels ?? selected)],
+      return {...criterion,progressionLevels:[...selected],
         descriptors:criterion.descriptors.map((descriptor,index)=>({...descriptor,text:selected[indexes[index]]})),
       }
     }),

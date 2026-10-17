@@ -10,9 +10,11 @@ describe('Léxico común de segundo: familias de palabras y expresiones observab
   const description=mode==='reading'?`Leerán un mensaje en inglés e identificarán ${target}.`:mode==='explanation'?`Explicarán el significado de ${target} con ejemplos de un texto en inglés.`:`Escribirán un mensaje en inglés utilizando ${target}.`
   const p=propose(description,format,score),c=p.criteria.find(c=>c.templateId===`ing-2-lexicon-${f.id}`)
   expect(c).toBeDefined();expect(c!.progressionLevels).toHaveLength(5)
-  expect(c!.progressionLevels?.[0]).toContain(mode==='writing'?'Emplea':'Identifica')
-  expect(c!.progressionLevels?.[3]).toContain('mensaje')
-  expect(c!.progressionLevels?.[4]).toMatch(/^No /)
+  const evidence=format==='escala'?propose(description,'rubrica',score).criteria.find(item=>item.templateId===c!.templateId)!:c!
+  expect(evidence.progressionLevels?.[0]).toContain(mode==='writing'?'Emplea':'Identifica')
+  expect(evidence.progressionLevels?.[3]).toContain('mensaje')
+  if(format==='escala')expect(c!.descriptors[0].text).toBe(c!.progressionLevels?.[0])
+  expect(evidence.progressionLevels?.[4]).toMatch(/^No /)
   expect(p.criteria).toEqual(propose(description,format,score,'La célula').criteria)
   expect(p.criteria.reduce((n,c)=>n+c.maxScoreUnits,0)).toBe(Math.round(score*100))
   expect(JSON.stringify(p.criteria)).not.toMatch(/pronunciación nativa|posesiones reales|motivación para|ansiedad del/)

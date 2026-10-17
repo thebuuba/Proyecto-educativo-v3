@@ -1,4 +1,4 @@
-import { BadRequestException, ConflictException, Injectable, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
+import { BadRequestException, ConflictException, Injectable, Logger, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { prisma } from '@aula/database'
 import { randomUUID } from 'node:crypto'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
@@ -27,12 +27,30 @@ function storage() {
 
 @Injectable()
 export class BillingReceipts {
+  private readonly logger = new Logger(BillingReceipts.name)
+
+  private async removeObject(config: ReturnType<typeof storage>, path: string) {
+    try {
+      const response = await fetch(`${config.url}/storage/v1/object/${BUCKET}`, {
+        method: 'DELETE', headers: { ...config.headers, 'content-type': 'application/json' },
+        body: JSON.stringify({ prefixes: [path] }), signal: AbortSignal.timeout(10000), redirect: 'error',
+      })
+      if (!response.ok) throw new Error('Storage cleanup failed')
+    } catch {
+      // Retain the successful database result (or original transaction error).
+      this.logger.warn('No se pudo limpiar un comprobante privado; revisar almacenamiento y auditoría comercial.')
+    }
+  }
+
   async upload(user: AuthenticatedUser, transferId: string, file?: { buffer: Buffer; mimetype: string }) {
     requireBilling()
     if (!file?.buffer) throw new BadRequestException('Selecciona un comprobante.')
     const contentType = receiptContentType(file.buffer, file.mimetype)
     const config = storage()
-    return withBillingOwner(user.id, async (db, now) => {
+    let uploadedPath: string | undefined
+    let previousPath: string | undefined
+    try {
+    const result = await withBillingOwner(user.id, async (db, now) => {
       const account = await billingAccount(user.id, db)
       const transfer = await db.billingTransferRequest.findFirst({ where: { id: transferId, accountId: account.id } })
       if (!transfer) throw new NotFoundException('Solicitud no encontrada.')
@@ -43,6 +61,8 @@ export class BillingReceipts {
         body: new Uint8Array(file.buffer), signal: AbortSignal.timeout(10000), redirect: 'error',
       })
       if (!uploaded.ok) throw new ServiceUnavailableException('No se pudo guardar el comprobante privado.')
+      uploadedPath = path
+      if (transfer.receiptPath?.startsWith(`${account.id}/${transfer.id}/`) && !transfer.receiptPath.includes('..')) previousPath = transfer.receiptPath
       await db.billingTransferRequest.update({ where: { id: transfer.id }, data: {
         receiptPath: path, receiptMime: contentType, receiptSizeBytes: BigInt(file.buffer.length), reportedAt: now,
       } })
@@ -50,6 +70,13 @@ export class BillingReceipts {
         metadata: { path, previousPath: transfer.receiptPath, contentType, size: file.buffer.length } })
       return { stored: true, transferId: transfer.id, status: transfer.status.toLowerCase(), coverageGranted: false }
     })
+    // Wait for the entire owner transaction to commit before removing the old object.
+    if (previousPath) await this.removeObject(config, previousPath)
+    return result
+    } catch (error) {
+      if (uploadedPath) await this.removeObject(config, uploadedPath)
+      throw error
+    }
   }
 
   async download(user: AuthenticatedUser, transferId: string) {

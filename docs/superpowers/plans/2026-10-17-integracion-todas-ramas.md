@@ -18,7 +18,7 @@ Ejecución directa, sin subagentes. Solicitud: fusionar todas las ramas, resolve
 - [x] Resolver los ocho conflictos textuales de instrumentos conservando mejoras de main y del creador.
 - [x] Reproducir pérdida de catálogo original y colisión de releases; congelar linajes de main 46/47 y curricular 92. Instalar únicamente el catálogo 93 en Development mediante el mecanismo existente: CREATED y luego UNCHANGED; 25 releases anteriores y 121 snapshots conservados por huella.
 - [x] Reproducir pérdida de progresiones de Inglés al aplicar escala; conservar progresión original y adaptar solo la presentación. 3.011 pruebas afectadas aprobadas.
-- [x] Backend completo (45.526 pruebas), frontend completo (45.852), builds exigidos, Cloudflare dry-run y lint sin errores.
+- [x] Backend completo (45.542 pruebas), frontend completo (45.856), builds exigidos, Cloudflare dry-run y lint sin errores.
 - [x] Revisar seguridad de ejemplos, secretos excluidos, invariantes de DB/migraciones e identidad de releases históricos. Sin migraciones remotas durante la integración.
 - [x] Comprobar que todas las referencias iniciales están incluidas en los padres de la integración final; repetir comprobación de ascendencia tras publicar main.
 - [x] Publicar la rama de integración y abrir PR #58 con CI normal.

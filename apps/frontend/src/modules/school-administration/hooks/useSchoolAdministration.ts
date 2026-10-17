@@ -27,7 +27,7 @@ import type {
 } from '@/modules/school-administration/types'
 
 /** Hook principal para la gestión de configuración del centro */
-export function useSchoolAdministration() {
+export function useSchoolAdministration(enabled = true) {
   const { schoolId } = useAuth()
   const [profile, setProfile] = useState<SchoolProfile | null>(null)
   const [schoolYears, setSchoolYears] = useState<SchoolYearItem[]>([])
@@ -36,7 +36,11 @@ export function useSchoolAdministration() {
   const [error, setError] = useState<string | null>(null)
 
   const refetch = useCallback(async () => {
-    if (!schoolId) return
+    if (!enabled || !schoolId) {
+      setLoading(false)
+      setError(null)
+      return
+    }
     setLoading(true)
     setError(null)
 
@@ -59,7 +63,7 @@ export function useSchoolAdministration() {
     } finally {
       setLoading(false)
     }
-  }, [schoolId])
+  }, [schoolId, enabled])
 
   useEffect(() => {
     void refetch()

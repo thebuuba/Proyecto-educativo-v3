@@ -38,9 +38,9 @@ const moduleSettings = [
 ]
 
 export function SchoolAdministrationPage() {
-  const { profile, schoolYears, academicPeriods, loading, error, refetch, saveProfile, addSchoolYear, editSchoolYear, activateSchoolYear } = useSchoolAdministration()
   const { hasRole } = useAuth()
   const canManageSchool = hasRole(['admin'])
+  const { profile, schoolYears, academicPeriods, loading, error, refetch, saveProfile, addSchoolYear, editSchoolYear, activateSchoolYear } = useSchoolAdministration(canManageSchool)
   const [periodManagerOpen, setPeriodManagerOpen] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
   const location = useLocation()

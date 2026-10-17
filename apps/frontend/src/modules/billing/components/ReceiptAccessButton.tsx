@@ -27,14 +27,23 @@ export function ReceiptAccessButton({ transferId, size = 'sm' }: ReceiptAccessBu
   async function handleOpen() {
     setPending(true)
     setError(null)
+    const popup = window.open('about:blank', '_blank')
+    if (!popup) {
+      setError('Permite las ventanas emergentes para abrir el comprobante.')
+      setPending(false)
+      return
+    }
+    popup.opener = null
     try {
       const { url } = await getTransferReceipt(transferId)
       if (!isAuthorizedReceiptUrl(url)) {
         setError('El servidor devolvió una dirección de comprobante no autorizada.')
+        popup.close()
         return
       }
-      window.open(url, '_blank', 'noopener,noreferrer')
+      popup.location.replace(url)
     } catch (err) {
+      popup.close()
       setError(billingErrorMessage(err, 'No se pudo abrir el comprobante.'))
     } finally {
       setPending(false)

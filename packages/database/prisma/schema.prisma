@@ -1730,6 +1730,9 @@ model BillingPrice {
   @@unique([id, planId], map: "billing_prices_id_plan_unique")
   @@index([planId, status])
   @@map("billing_prices")
+  planSubscriptions BillingSubscription[] @relation("Integritybilling_subscription_price_plan_fk")
+  planPayments BillingPayment[] @relation("Integritybilling_payment_price_plan_fk")
+  planTransfers BillingTransferRequest[] @relation("Integritybilling_transfer_price_plan_fk")
 }
 
 model BillingAccount {
@@ -1807,6 +1810,9 @@ model BillingSubscription {
   @@unique([id, accountId], map: "billing_subscriptions_id_account_unique")
   @@index([accountId, status])
   @@map("billing_subscriptions")
+  pricePlan BillingPrice @relation("Integritybilling_subscription_price_plan_fk", fields: [priceId, planId], references: [id, planId], onDelete: NoAction, onUpdate: NoAction, map: "billing_subscription_price_plan_fk")
+  ownerPayments BillingPayment[] @relation("Integritybilling_payment_subscription_owner_fk")
+  ownerDocuments BillingDocument[] @relation("Integritybilling_document_subscription_owner_fk")
 }
 
 model BillingPayment {
@@ -1845,6 +1851,11 @@ model BillingPayment {
   @@index([accountId, status, createdAt])
   @@index([subscriptionId])
   @@map("billing_payments")
+  subscriptionOwner BillingSubscription? @relation("Integritybilling_payment_subscription_owner_fk", fields: [subscriptionId, accountId], references: [id, accountId], onDelete: NoAction, onUpdate: NoAction, map: "billing_payment_subscription_owner_fk")
+  pricePlan BillingPrice? @relation("Integritybilling_payment_price_plan_fk", fields: [priceId, planId], references: [id, planId], onDelete: NoAction, onUpdate: NoAction, map: "billing_payment_price_plan_fk")
+  ownerServicePeriods BillingServicePeriod[] @relation("Integritybilling_period_payment_owner_fk")
+  ownerTransfers BillingTransferRequest[] @relation("Integritybilling_transfer_payment_owner_fk")
+  ownerDocuments BillingDocument[] @relation("Integritybilling_document_payment_owner_fk")
 }
 
 model BillingDocument {
@@ -1868,6 +1879,8 @@ model BillingDocument {
 
   @@index([accountId, issuedAt])
   @@map("billing_documents")
+  paymentOwner BillingPayment? @relation("Integritybilling_document_payment_owner_fk", fields: [paymentId, accountId], references: [id, accountId], onDelete: NoAction, onUpdate: NoAction, map: "billing_document_payment_owner_fk")
+  subscriptionOwner BillingSubscription? @relation("Integritybilling_document_subscription_owner_fk", fields: [subscriptionId, accountId], references: [id, accountId], onDelete: NoAction, onUpdate: NoAction, map: "billing_document_subscription_owner_fk")
 }
 
 model BillingServicePeriod {
@@ -1893,6 +1906,8 @@ model BillingServicePeriod {
   @@unique([id, accountId], map: "billing_service_periods_id_account_unique")
   @@index([accountId, startsAt, endsAt])
   @@map("billing_service_periods")
+  paymentOwner BillingPayment? @relation("Integritybilling_period_payment_owner_fk", fields: [paymentId, accountId], references: [id, accountId], onDelete: NoAction, onUpdate: NoAction, map: "billing_period_payment_owner_fk")
+  ownerTransfers BillingTransferRequest[] @relation("Integritybilling_transfer_period_owner_fk")
 }
 
 model BillingBankAccount {
@@ -1948,6 +1963,10 @@ model BillingTransferRequest {
   @@unique([id, accountId], map: "billing_transfers_id_account_unique")
   @@index([accountId, status, createdAt])
   @@map("billing_transfer_requests")
+  pricePlan BillingPrice @relation("Integritybilling_transfer_price_plan_fk", fields: [priceId, planId], references: [id, planId], onDelete: NoAction, onUpdate: NoAction, map: "billing_transfer_price_plan_fk")
+  paymentOwner BillingPayment? @relation("Integritybilling_transfer_payment_owner_fk", fields: [paymentId, accountId], references: [id, accountId], onDelete: NoAction, onUpdate: NoAction, map: "billing_transfer_payment_owner_fk")
+  servicePeriodOwner BillingServicePeriod? @relation("Integritybilling_transfer_period_owner_fk", fields: [servicePeriodId, accountId], references: [id, accountId], onDelete: NoAction, onUpdate: NoAction, map: "billing_transfer_period_owner_fk")
+  ownerBankMovements BillingBankMovement[] @relation("Integritybilling_bank_movement_request_owner_fk")
 }
 
 model BillingBankMovement {
@@ -1969,6 +1988,7 @@ model BillingBankMovement {
   @@unique([currency, bankReference])
   @@index([receivedAt])
   @@map("billing_bank_movements")
+  transferRequestOwner BillingTransferRequest @relation("Integritybilling_bank_movement_request_owner_fk", fields: [transferRequestId, accountId], references: [id, accountId], onDelete: NoAction, onUpdate: NoAction, map: "billing_bank_movement_request_owner_fk")
 }
 
 model BillingTrial {

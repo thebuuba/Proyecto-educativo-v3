@@ -30,60 +30,60 @@
       "key": "backendtest",
       "command": "pnpm --filter backend test",
       "code": 0,
-      "ms": 38881,
+      "ms": 19087,
       "log": ".wrangler/integration-2026-10-17/backendtest.log"
     },
     {
       "key": "frontendtest",
       "command": "pnpm --filter frontend test --reporter=verbose",
       "code": 0,
-      "ms": 477845,
+      "ms": 279713,
       "log": ".wrangler/integration-2026-10-17/frontendtest.log"
     },
     {
       "key": "backendbuild",
       "command": "pnpm --filter backend build",
       "code": 0,
-      "ms": 18456,
+      "ms": 11502,
       "log": ".wrangler/integration-2026-10-17/backendbuild.log"
     },
     {
       "key": "frontendbuild",
       "command": "pnpm --filter frontend build",
       "code": 0,
-      "ms": 55995,
+      "ms": 26159,
       "log": ".wrangler/integration-2026-10-17/frontendbuild.log"
     },
     {
       "key": "cloudflare",
       "command": "pnpm cloudflare:build",
       "code": 0,
-      "ms": 59854,
+      "ms": 30129,
       "log": ".wrangler/integration-2026-10-17/cloudflare.log"
     },
     {
       "key": "backendlint",
       "command": "pnpm --filter backend lint",
       "code": 0,
-      "ms": 19078,
+      "ms": 9712,
       "log": ".wrangler/integration-2026-10-17/backendlint.log"
     },
     {
       "key": "frontendlint",
       "command": "pnpm --filter frontend lint",
       "code": 0,
-      "ms": 58771,
+      "ms": 31948,
       "log": ".wrangler/integration-2026-10-17/frontendlint.log"
     }
   ],
   "tests": {
     "backend": {
-      "files": 129,
-      "tests": 45526
+      "files": 131,
+      "tests": 45542
     },
     "frontend": {
-      "files": 164,
-      "tests": 45852
+      "files": 166,
+      "tests": 45856
     }
   },
   "development": {
@@ -118,7 +118,7 @@
     }
   },
   "secretsAudit": {
-    "filesInspected": 735,
+    "filesInspected": 740,
     "credentialMaterialFound": false,
     "privateFilesExcluded": true,
     "examplesChecked": [
@@ -747,5 +747,58 @@
     "No manual deployment, secret/Hyperdrive change, reset or data copying. No remote schema migration executed during preparation; the authorized automatic Production workflow may execute migrations after merge.",
     "Existing automatic deployments are explicitly authorized by the user for this merge.",
     "Automated suites and focused regressions do not replace every possible browser/payment-provider flow."
-  ]
+  ],
+  "localRuntime": {
+    "base": "http://localhost:8787",
+    "servedHtmlMatchesBuild": true,
+    "assets": [
+      {
+        "asset": "/assets/index-DJrdVzo5.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/rolldown-runtime-QTnfLwEv.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/icons-DmPKZ_NB.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/vendor-DLmIBSW3.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/cn-hZG6twJP.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/Button-BTgVqE4e.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/SemanticUI-DZO5duNW.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/Modal-BSkLj0du.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/index-CT14kIdm.css",
+        "matchesBuiltFile": true
+      }
+    ],
+    "billingUnauthenticatedStatus": 401,
+    "browserObservation": "Personal Development session: Subscription page loads, USD7.99 offer and sandbox operations disabled. Initial old runtime returned Cannot GET /api/v1/billing; targeted restart resolved it.",
+    "noStorageOrSessionCleared": true
+  },
+  "review": {
+    "originalBlockingConversations": 5,
+    "focusedFrontendTests": 13,
+    "focusedReceiptsTests": 8,
+    "schemaCorrespondenceTests": 11,
+    "allReproducedAndCorrected": true,
+    "sqlMigrationChanges": false
+  }
 }
