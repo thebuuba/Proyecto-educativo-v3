@@ -1,10 +1,12 @@
 # Continuación: Ciencias de la Naturaleza común
 
+**Última actualización:** cuarto cerrado visualmente y porDB en sus cuatro formatos; cotejo original445a19f5 ya remoto92, reapertura exacta, snapshota27988c4. grade-4-visual.json y grade-4-visual-db.json completos; matriz4VERIFIED_DEFINED_PATTERNS. Quinto: rúbrica personal Entalpía con completar descriptor vacío y 37campos preservados, estrategia automática indagación y manual Caso; POST de guardado enviado una vez, verificar resultado antes de repetir. El resto5/6visual pendiente. Avance privado personal-visual-progress.json; formulario actual current-personal-visual.json. Esto prevalece sobre las notas de proceso inferiores.
+
 ## Estado vigente
 
 Encargo activo: adjunto3a8f59da-f60e-4c77-89e3-8f76dce81769/Texto pegado.txt. Ciencias común1–6; sin subagentes, producción, despliegue, main, reset, borrados, usuarios copiados, IA ni otras asignaturas. No ampliar cobertura después de sexto. Conservar cuentas, borradores y snapshots.
 
-Rama amplia-instrumentos-secundaria. Publicados: primero38bc31d29f3085579e786851823bc3aea70bb57a, segundo bad192bae40e435158137d19e3b83b73166ca4f1, tercero29a78352452b8aeb0f2aa4e909677389891cef6b, cuartoabe812eb03911e1fae6017ccb37610cb00759d12, quinto5010f9a60aed0821674bff27c2dde1e5604ab27f. Push normal de esos bloques confirmado. Consultar Git antes de nuevos commits para no duplicarlos. Sexto se prepara para commit con verificaciones visuales todavía en curso.
+Rama amplia-instrumentos-secundaria. Publicados: primero38bc31d29f3085579e786851823bc3aea70bb57a, segundo bad192bae40e435158137d19e3b83b73166ca4f1, tercero29a78352452b8aeb0f2aa4e909677389891cef6b, cuartoabe812eb03911e1fae6017ccb37610cb00759d12, quinto5010f9a60aed0821674bff27c2dde1e5604ab27f. Push normal de esos bloques confirmado. Consultar Git antes de nuevos commits para no duplicarlos. Sexto publicado d93c24a59b47a7a3d9b2cf08c83ce3d8df93265c; push normal confirmado,0/0. Verificaciones visuales todavía en curso.
 
 271 grupos /571 consignas/2284 instrumentos de ejemplo;959 registros literales, sin pendientes de mapeo o exclusión de conceptos/procedimientos. Matriz/revisiones por grado distinguen adaptación y texto oficial. Los instrumentos se revisaron por pertinencia, no se aprueban por inventario.
 
@@ -12,7 +14,7 @@ Catálogo **evaluation-2026.92 realmente instalado** CREATED→UNCHANGED. Fuente
 
 Checks finales: backend45248/108, frontend45637/131, backend/frontend builds0, **pnpm cloudflare:build0/86042ms natural**. No se desplegó. Los CLI anteriores interrumpidos quedan como antecedentes; **ya no es bloqueo vigente**. Full suites incluyen seis grados y siete regresiones de persistencia. HTTP6 cuatro guardados/reaperturas/estrategia exacta, pesos41/19/40, recheck de cuatro recomendaciones92, cinco controles y FRA/ING/MAT/Ciencias1–5 aprobados. HTTP5 también finalizado/recheck91; no repetir creación. Historia inicial18releases/73snapshots y baseline6 de24/106 intactos, un release y cuatro snapshots QA6 nuevos al último chequeo (antes de los nuevos QA personales4).
 
-Runtime único: sesión74097, launcher19012, listener31764. Guard exclusivo Development eolgunypmtgrsyrjzcld; SQLapp_backend_local sin bypass, Auth/Storage200 y Vite comprobados. Entrada **/assets/index-BLaW9Yd6.js**, SHA HTTP/dist y DOM personal coinciden. No confundir runtime5/6 en .wrangler/french-source/runtime.json; hay copias estables grade-5/6-runtime-verified.json. Revisar procesos antes de otro build/servidor. Sin envíos HTTP QA activos.
+Runtime único: sesión30490, launcher34068, listener5232. Guard exclusivo Development eolgunypmtgrsyrjzcld; SQLapp_backend_local sin bypass, Auth/Storage200 y Vite comprobados. Entrada **/assets/index-BLaW9Yd6.js**, SHA HTTP/dist y DOM personal coinciden. No confundir runtime5/6 en .wrangler/french-source/runtime.json; hay copias estables grade-5/6-runtime-verified.json. Revisar procesos antes de otro build/servidor. Sin envíos HTTP QA activos.
 
 ## Verificación personal que sigue
 
@@ -26,3 +28,7 @@ La sesión personal **se recuperó automáticamente** tras recargar, sin cambiar
 Cuarto sigue parcial por cotejo local sin snapshot. Se puede probar un nuevo cotejo QA remoto preservando los originales o completar una revisión que conserve la edición, pero no reemplazar sus campos manuales a ciegas. No declarar VERIFIED si el control de identidad/snapshot no corresponde.
 
 **Siguiente acción:** conservar commit/push del bloque6 automático con pendientes explícitos; terminar reaperturas4, recorridos5/6 y registrar pruebas visuales/DB por separado. Repetir huellas después de las nuevas creaciones personales; actualizar matriz, informes, secretos/diff y commit/push de evidencia final. Al finalizar o ante un límite real, entregar diagnóstico de pendientes preciso y detenerse sin comenzar otra asignatura.
+
+Incidencia posterior: el runtime6 anterior terminó1 por DNS ENOTFOUND del pool Supabase durante la reapertura. DNS se recuperó; se levantó un único runtime nuevo (arriba) y se verificó otra vez SQL/Auth/Storage/Vite/assets idénticos. Logs anteriores preservados en grade-6-before-dns-runtime-*. La escala/ponderada4 ya están guardadas: no repetir POST.
+
+Actualización personal4: escala55c289bf y ponderada1e173242 ya reabiertas y comparadas exactas (progress actualizado). Cotejo original445a19f5 revisado mediante preparación remota92 y restauración comprobada de sus cinco campos manuales, guardado201 y snapshot a27988c4-f34d-4aaa-8c35-bcdb47243173 confirmado porDB; falta reapertura DOM de esa revisión. No duplicar ese guardado.

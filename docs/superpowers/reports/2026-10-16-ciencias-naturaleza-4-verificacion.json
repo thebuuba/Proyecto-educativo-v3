@@ -1,5 +1,5 @@
 {
-  "status": "IMPLEMENTED_PENDING_PERSONAL_AND_CLI_VERIFICATION",
+  "status": "VERIFIED_DEFINED_PATTERNS",
   "project": "eolgunypmtgrsyrjzcld",
   "grade": 4,
   "catalog": "evaluation-2026.90",
@@ -323,7 +323,8 @@
     "project": "eolgunypmtgrsyrjzcld",
     "grade": 4,
     "session": "personal Development",
-    "entry": "/assets/index-a58n98-U.js",
+    "entry": "/assets/index-BLaW9Yd6.js",
+    "status": "VERIFIED_DEFINED_VISUAL_CASES",
     "formats": [
       {
         "format": "rubrica",
@@ -475,14 +476,157 @@
             "label": "Puntos del criterio 6",
             "value": "3.65"
           }
-        ]
+        ],
+        "instrumentId": "8ab25ce2-6458-4845-bbb6-b55fe2df558e",
+        "snapshotId": "20f25185-1ec0-40b5-ac75-2245ad8eb440",
+        "catalog": "evaluation-2026.90"
       },
       {
-        "format": "lista-cotejo",
-        "activityId": "445a19f5-936b-4cda-9b0c-09d26c4d2c37",
-        "points": 20,
-        "fieldsEqual": true,
+        "grade": 4,
+        "format": "escala",
+        "name": "QA Ciencias 4 · Escala · Membrana",
+        "description": "Observa los modelos de membrana celular proporcionados y registra con regularidad las características observadas.",
+        "points": 17.35,
+        "startedAt": 1792201250379,
+        "blankScore": true,
+        "autoInstrument": "Tipo de instrumento\nEscala estimativa\nCambiar",
+        "autoStrategy": "Estrategia de enseñanza y aprendizaje\nSin estrategia\nSeleccionar",
+        "preparedObservedMs": 18472,
         "fields": [
+          {
+            "label": null,
+            "value": "Escala estimativa para QA Ciencias 4 · Escala · Membrana"
+          },
+          {
+            "label": "Indicador 1",
+            "value": "Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas. · QA"
+          },
+          {
+            "label": "Siempre del indicador 1",
+            "value": "En todas las oportunidades observadas."
+          },
+          {
+            "label": "Frecuentemente del indicador 1",
+            "value": "En la mayoría de las oportunidades observadas."
+          },
+          {
+            "label": "A veces del indicador 1",
+            "value": "En algunas oportunidades observadas."
+          },
+          {
+            "label": "Todavía no del indicador 1",
+            "value": "En ninguna oportunidad observada."
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=56cf1906-e246-4916-a9e7-081ee1dd0695&competencyBlockId=b4&returnCourseId=55aced96-10bb-4845-a660-d68c718e5d88&returnSubjectId=56cf1906-e246-4916-a9e7-081ee1dd0695&returnTab=actividades",
+        "activityId": "55c289bf-1dde-4cd1-a071-7da1783fc963",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "eb64c4fc-5a38-40f3-a912-832a32aa57d5",
+        "state": "REOPENED_EXACT_RENDERED_CONFIGURATION",
+        "fieldsEqual": true,
+        "renderedDefinition": {
+          "escala:title": "Escala estimativa para QA Ciencias 4 · Escala · Membrana",
+          "escala:points:0": "17.35",
+          "escala:criterion:0": "Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas. · QA",
+          "escala:level-name:1": "Todavía no",
+          "escala:level-name:2": "A veces",
+          "escala:level-name:3": "Frecuentemente",
+          "escala:level-name:4": "Siempre",
+          "escala:description:0": "Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.",
+          "escala:meta:prepared": "true",
+          "escala:criterion-id:0": "proposal:evaluation-2026.92:7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a:nat-4-membrane-transport-observation:0",
+          "escala:descriptor:0:1": "En ninguna oportunidad observada.",
+          "escala:descriptor:0:2": "En algunas oportunidades observadas.",
+          "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+          "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+          "escala:level-points:1": "0",
+          "escala:level-points:2": "1.3333333333333333",
+          "escala:level-points:3": "2.6666666666666665",
+          "escala:level-points:4": "4",
+          "escala:meta:levelCount": "4",
+          "escala:meta:scorePending": "false",
+          "escala:meta:scoreWeights": "[3]",
+          "escala:criterion-weight:0": "3",
+          "escala:meta:criteriaCount": "1",
+          "escala:meta:catalogVersion": "evaluation-2026.92",
+          "escala:criterion-evidence:0": "{\"title\":\"Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"description\":\"Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"progression\":[\"Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Registra parte de las características de transporte de membrana, pero mezcla una inferencia con lo observado.\",\"El registro de transporte de membrana contradice la evidencia observada o aporta datos inventados.\",\"No aporta evidencia verificable del desempeño solicitado sobre transporte de membrana.\"]}",
+          "escala:criterion-template:0": "nat-4-membrane-transport-observation",
+          "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+        },
+        "instrumentId": "dd8ca933-d79c-470f-b7c5-d418ed0651d1"
+      },
+      {
+        "grade": 4,
+        "format": "lista-ponderada",
+        "name": "QA Ciencias 4 · Ponderada · Mendel",
+        "description": "Calcula las probabilidades de herencia con el cuadro de Punnett proporcionado y explica el resultado. Asigna crédito parcial y pesos al procedimiento, resultado y explicación.",
+        "points": 17.35,
+        "startedAt": 1792201348105,
+        "blankScore": true,
+        "autoInstrument": "Tipo de instrumento\nLista ponderada\nCambiar",
+        "autoStrategy": "Estrategia de enseñanza y aprendizaje\nSin estrategia\nSeleccionar",
+        "fields": [
+          {
+            "label": null,
+            "value": "Lista ponderada para QA Ciencias 4 · Ponderada · Mendel"
+          },
+          {
+            "label": "Criterio 1",
+            "value": "Procedimiento de cálculo de segunda y tercera leyes de Mendel · QA"
+          },
+          {
+            "label": "Indicador del criterio 1",
+            "value": "Relaciona los datos y la incógnita de segunda y tercera leyes de Mendel mediante la segregación y distribución de alelos en el modelo del problema, usando la independencia solo cuando sus condiciones se cumplen, sin convertir probabilidades en resultados individuales seguros y realiza las operaciones solicitadas sin inventar valores ausentes. Parcial (50%): Utiliza parte de los datos de segunda y tercera leyes de Mendel, pero un paso no mantiene la relación necesaria para resolver la incógnita."
+          },
+          {
+            "label": null,
+            "value": "41"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Resultado de segunda y tercera leyes de Mendel"
+          },
+          {
+            "label": "Indicador del criterio 2",
+            "value": "Presenta un resultado coherente con las operaciones de segunda y tercera leyes de Mendel y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Parcial (50%): El resultado de segunda y tercera leyes de Mendel conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo."
+          },
+          {
+            "label": null,
+            "value": "19"
+          },
+          {
+            "label": "Criterio 3",
+            "value": "Explicación de segunda y tercera leyes de Mendel"
+          },
+          {
+            "label": "Indicador del criterio 3",
+            "value": "Explica la segregación y distribución de alelos en el modelo del problema, usando la independencia solo cuando sus condiciones se cumplen, sin convertir probabilidades en resultados individuales seguros con afirmaciones científicamente compatibles con la información disponible. Parcial (50%): Explica parte de segunda y tercera leyes de Mendel, pero deja sin relacionar un elemento necesario para entender el fenómeno."
+          },
+          {
+            "label": null,
+            "value": "40"
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=56cf1906-e246-4916-a9e7-081ee1dd0695&competencyBlockId=b4&returnCourseId=55aced96-10bb-4845-a660-d68c718e5d88&returnSubjectId=56cf1906-e246-4916-a9e7-081ee1dd0695&returnTab=actividades",
+        "activityId": "1e173242-3bcb-4ace-a5ec-b52c0f3a8039",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "7a36657a-fe53-4363-8a06-9d6a308c0f51",
+        "state": "REOPENED_EXACT",
+        "fieldsEqual": true,
+        "instrumentId": "e9c35874-8441-43e3-af07-fe3c03637feb"
+      },
+      {
+        "grade": 4,
+        "format": "lista-cotejo",
+        "name": "QA Ciencias 4 · Cotejo · Estructuras celulares",
+        "points": 20,
+        "fields": [
+          {
+            "label": null,
+            "value": "Lista de cotejo para QA Ciencias 4 · Cotejo · Estructuras celulares"
+          },
           {
             "label": "Criterio 1",
             "value": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. · QA"
@@ -500,118 +644,46 @@
             "value": "10"
           }
         ],
-        "snapshotId": null,
-        "origin": "LOCAL_FALLBACK_MANUAL"
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=56cf1906-e246-4916-a9e7-081ee1dd0695&academicPeriodId=fec939cd-a621-4a7e-af29-795e8d792c49&activityId=445a19f5-936b-4cda-9b0c-09d26c4d2c37",
+        "strategyFieldsEqual": true,
+        "manualRestoredExact": true,
+        "activityId": "445a19f5-936b-4cda-9b0c-09d26c4d2c37",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "a27988c4-f34d-4aaa-8c35-bcdb47243173",
+        "state": "REOPENED_EXACT_RENDERED_CONFIGURATION",
+        "fieldsEqual": true,
+        "renderedDefinition": {
+          "lista-cotejo:title": "Lista de cotejo para QA Ciencias 4 · Cotejo · Estructuras celulares",
+          "lista-cotejo:points:0": "10",
+          "lista-cotejo:points:1": "10",
+          "lista-cotejo:criterion:0": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. · QA",
+          "lista-cotejo:criterion:1": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible.",
+          "lista-cotejo:description:0": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas.",
+          "lista-cotejo:description:1": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible.",
+          "lista-cotejo:meta:prepared": "true",
+          "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.92:7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a:nat-4-cells-identification:0",
+          "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.92:7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a:nat-4-cells-comparison:1",
+          "lista-cotejo:meta:pointsMode": "individual",
+          "lista-cotejo:meta:scorePending": "false",
+          "lista-cotejo:meta:scoreWeights": "[3,3]",
+          "lista-cotejo:criterion-weight:0": "3",
+          "lista-cotejo:criterion-weight:1": "3",
+          "lista-cotejo:meta:criteriaCount": "2",
+          "lista-cotejo:meta:catalogVersion": "evaluation-2026.92",
+          "lista-cotejo:criterion-evidence:0": "{\"title\":\"Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas.\",\"description\":\"Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas.\",\"progression\":[\"Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas.\",\"Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Identifica parte de los elementos de célula animal y vegetal, pero confunde una característica que permite distinguirlos.\",\"Asigna nombres o características incompatibles con los elementos solicitados de célula animal y vegetal.\",\"No aporta evidencia verificable del desempeño solicitado sobre célula animal y vegetal.\"]}",
+          "lista-cotejo:criterion-evidence:1": "{\"title\":\"Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"description\":\"Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"progression\":[\"Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Describe los casos de célula animal y vegetal, pero compara con características distintas o deja sin justificar una diferencia.\",\"Atribuye semejanzas o diferencias a célula animal y vegetal que contradicen las características examinadas.\",\"No aporta evidencia verificable del desempeño solicitado sobre célula animal y vegetal.\"]}",
+          "lista-cotejo:criterion-template:0": "nat-4-cells-identification",
+          "lista-cotejo:criterion-template:1": "nat-4-cells-comparison"
+        },
+        "instrumentId": "e577386c-c795-45ce-8895-6a0350f7dde8"
       }
     ],
-    "contextRecovery": "Initial center304 at16051ms exceeded client timeout; Reintentar contexto center200 at13570ms recovered form",
-    "preparationUpperBoundMs": 40026,
-    "scoreInitiallyBlank": true,
-    "completeOnlyBlank": true,
-    "rubricStrategyOnlyExact": true,
-    "fourControlsVisibleFromEmpty": true,
-    "rubricPointSums": {
-      "at20": 2000,
-      "at1735": 1735
-    },
-    "exhaustionOffersManual": true,
-    "pendingCotejo": {
-      "name": "QA Ciencias 4 · Cotejo · Estructuras celulares",
-      "description": "Identifica estructuras de célula animal y vegetal en los modelos proporcionados. Compara sus funciones.",
-      "points": 20,
-      "fields": [
-        {
-          "label": "Criterio 1",
-          "value": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. · QA"
-        },
-        {
-          "label": null,
-          "value": "10"
-        },
-        {
-          "label": "Criterio 2",
-          "value": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible."
-        },
-        {
-          "label": null,
-          "value": "10"
-        }
-      ],
-      "state": "REOPENED_EXACT_LOCAL_NO_SNAPSHOT",
-      "activityDraftId": "779a4a8c-0a0b-438e-b7c0-8d7f8715374f",
-      "activityId": "445a19f5-936b-4cda-9b0c-09d26c4d2c37"
-    },
-    "manualReviewPreservedFields": true,
-    "additionPreservedFirstRow": true,
-    "additionRedistributionConfirmed": true,
-    "manualFallbackCotejo": {
-      "activityId": "445a19f5-936b-4cda-9b0c-09d26c4d2c37",
-      "points": 20,
-      "fieldsEqual": true,
-      "fields": [
-        {
-          "label": "Criterio 1",
-          "value": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. · QA"
-        },
-        {
-          "label": null,
-          "value": "10"
-        },
-        {
-          "label": "Criterio 2",
-          "value": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible."
-        },
-        {
-          "label": null,
-          "value": "10"
-        }
-      ],
-      "snapshotId": null,
-      "origin": "LOCAL_FALLBACK_MANUAL"
-    },
-    "cotejoSaveFailure": {
-      "status": 500,
-      "cause": "Prisma transaction expired at teacherInstrumentPreference.create after 26129 ms; prior activity preserved per read-only DB check",
-      "retryAfterFailure": true,
-      "attempts": [
-        {
-          "status": 500,
-          "ms": 26129
-        },
-        {
-          "status": 500,
-          "ms": 28250
-        }
-      ]
-    },
-    "remoteCotejo": {
-      "activityId": "9dbb4d7a-a9e7-4781-aa9a-1db91968faa0",
-      "state": "SAVED_REOPEN_BLOCKED_BY_CONTEXT_TIMEOUT",
-      "fields": [
-        {
-          "label": "Criterio 1",
-          "value": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. · QA"
-        },
-        {
-          "label": null,
-          "value": "10"
-        },
-        {
-          "label": "Criterio 2",
-          "value": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible."
-        },
-        {
-          "label": null,
-          "value": "10"
-        }
-      ],
-      "points": 20
-    },
-    "status": "PARTIAL_PERSONAL_SESSION_BLOCKED",
-    "pending": [
-      "Escala y ponderada personales: generación, edición, guardado y reapertura",
-      "Reapertura de la copia QA 9dbb4d7a-a9e7-4781-aa9a-1db91968faa0",
-      "Medir contexto ligero con sesión personal tras error de perfil; ahora exige contraseña"
+    "notes": [
+      "Rubric from earlier catalog90 retained without rewriting its snapshot.",
+      "Checklist upgraded to remote92 while retaining every manual visible field; original activity ID retained.",
+      "Scale/weighted created once, strategy-only fields unchanged and reopened exact.",
+      "Scale/checklist reopened via rendered configuration; weighted via editable form.",
+      "Global Activities list timeout and intermittent DNS outage observed separately."
     ]
   },
   "copyReadOnly": {
@@ -660,5 +732,57 @@
     "note": "Final combined build includes all Science grades and persistence corrections. Prior interrupted build observations remain historical."
   },
   "finalBuildStatus": "PASSED_IN_LATER_COMBINED_CATALOG_92_BUILD",
-  "personalSessionRecovered": true
+  "personalSessionRecovered": true,
+  "finalPersonalDbVerification": [
+    {
+      "activityId": "8dcc5dd0-be30-446d-a7bf-c282f6fd5364",
+      "format": "rubrica",
+      "instrumentId": "8ab25ce2-6458-4845-bbb6-b55fe2df558e",
+      "snapshotId": "20f25185-1ec0-40b5-ac75-2245ad8eb440",
+      "catalog": "evaluation-2026.90",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "55c289bf-1dde-4cd1-a071-7da1783fc963",
+      "format": "escala",
+      "instrumentId": "dd8ca933-d79c-470f-b7c5-d418ed0651d1",
+      "snapshotId": "eb64c4fc-5a38-40f3-a912-832a32aa57d5",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "1e173242-3bcb-4ace-a5ec-b52c0f3a8039",
+      "format": "lista-ponderada",
+      "instrumentId": "e9c35874-8441-43e3-af07-fe3c03637feb",
+      "snapshotId": "7a36657a-fe53-4363-8a06-9d6a308c0f51",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "445a19f5-936b-4cda-9b0c-09d26c4d2c37",
+      "format": "lista-cotejo",
+      "instrumentId": "e577386c-c795-45ce-8895-6a0350f7dde8",
+      "snapshotId": "a27988c4-f34d-4aaa-8c35-bcdb47243173",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    }
+  ],
+  "finalHistoricalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 7,
+    "newSnapshots": 40,
+    "gradeBaseline": {
+      "grade": 4,
+      "preservedReleases": 21,
+      "preservedSnapshots": 97,
+      "newReleases": 4,
+      "newSnapshots": 16
+    }
+  },
+  "limitations": [
+    "Historical CLI interruptions remain recorded; later combined catalog92 Cloudflare build passed naturally.",
+    "Global Activities timeout and intermittent Development DNS failure remain observed limitations, despite successful creator cases."
+  ]
 }
