@@ -27,7 +27,8 @@ describe('generic product criteria release', () => {
   it('resolves the historical release independently and adds the recovered product criteria only to the new release', () => {
     const previous = evaluationCatalogForVersion('evaluation-2026.46')!
     const current = evaluationCatalogForVersion('evaluation-2026.93')!
-    expect(current).toBe(evaluationCatalogCurrent)
+    expect(current).not.toBe(evaluationCatalogCurrent)
+    expect(current.version).toBe('evaluation-2026.93')
     expect(previous).not.toBe(current)
     for (const id of ['oral-mastery', 'oral-resources', 'oral-responses', 'debate-evidence', 'debate-response',
       'concept-hierarchy', 'concept-relations', 'project-product', 'project-process']) {
@@ -47,7 +48,7 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.93')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.94')
     expect(evaluationCatalogCurrent.scienceCommonModules.map(module => module.grade)).toEqual([1,2,3,4,5,6])
     expect(evaluationCatalogCurrent.mathCommonModules.map(module => module.grade)).toEqual([1,2,3,4,5,6])
     expect(evaluationCatalogCurrent.frenchModules.map(module => module.grade)).toEqual([1,2,3,4,5,6])

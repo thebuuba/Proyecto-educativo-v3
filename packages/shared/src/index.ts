@@ -7,6 +7,8 @@
  * @template T - Tipo de los datos contenidos en la respuesta.
  */
 export * from './profile-settings'
+export * from './secondary-social'
+export * from './secondary-social-grade-1'
 export type * from './instrument-recommendation'
 export * from './instrument-definition'
 export * from './secondary-language-topics'

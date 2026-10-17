@@ -1,0 +1,2188 @@
+{
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD",
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf"
+  },
+  "counts": {
+    "sourceScopes": 89,
+    "nonGradeHeaders": 17,
+    "gradeScopes": 72,
+    "commonGradeScopes": 54,
+    "optativeGradeScopes": 18
+  },
+  "policy": "INVENTORY_IS_NOT_VERIFIED_COVERAGE",
+  "reviewedGeneralPdfPages": [
+    48,
+    49,
+    55
+  ],
+  "scopes": [
+    {
+      "id": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+      "grade": 1,
+      "cycle": 1,
+      "area": "Lengua Española",
+      "subject": "Lengua Española",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "printedPages": [
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-language-topics.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/lengua-comun-1-6-informe-final.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+      "grade": 2,
+      "cycle": 1,
+      "area": "Lengua Española",
+      "subject": "Lengua Española",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        76,
+        77,
+        78,
+        79,
+        80,
+        81
+      ],
+      "printedPages": [
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-language-topics.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/lengua-comun-1-6-informe-final.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+      "grade": 3,
+      "cycle": 1,
+      "area": "Lengua Española",
+      "subject": "Lengua Española",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88
+      ],
+      "printedPages": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-language-topics.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/lengua-comun-1-6-informe-final.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Lengua Española",
+      "subject": "Lengua Española",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "printedPages": [
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-language-topics.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/lengua-comun-1-6-informe-final.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Lengua Española",
+      "subject": "Lengua Española",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112
+      ],
+      "printedPages": [
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-language-topics.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/lengua-comun-1-6-informe-final.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "6ad1b787-5408-5d4b-aa28-0895bebb30e8",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Lengua Española",
+      "subject": "Lengua Española",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121
+      ],
+      "printedPages": [
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-language-topics.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/lengua-comun-1-6-informe-final.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+      "grade": 1,
+      "cycle": 1,
+      "area": "Lenguas Extranjeras",
+      "subject": "Inglés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        134,
+        135,
+        136,
+        137,
+        138,
+        139
+      ],
+      "printedPages": [
+        133,
+        134,
+        135,
+        136,
+        137,
+        138
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-english.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ingles-2-6-informe-consolidado.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "7e4c1236-8f04-5817-b017-a9ace9edff5e",
+      "grade": 2,
+      "cycle": 1,
+      "area": "Lenguas Extranjeras",
+      "subject": "Inglés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        140,
+        141,
+        142,
+        143,
+        144,
+        145
+      ],
+      "printedPages": [
+        139,
+        140,
+        141,
+        142,
+        143,
+        144
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-english.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ingles-2-6-informe-consolidado.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "cc482480-0f08-5657-98aa-1afd28ecfa1a",
+      "grade": 3,
+      "cycle": 1,
+      "area": "Lenguas Extranjeras",
+      "subject": "Inglés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        146,
+        147,
+        148,
+        149,
+        150,
+        151
+      ],
+      "printedPages": [
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-english.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ingles-2-6-informe-consolidado.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Lenguas Extranjeras",
+      "subject": "Inglés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        158,
+        159,
+        160,
+        161,
+        162
+      ],
+      "printedPages": [
+        157,
+        158,
+        159,
+        160,
+        161
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-english.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ingles-2-6-informe-consolidado.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "73fa64a1-0c71-58a0-90c2-7df2f33b7a62",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Lenguas Extranjeras",
+      "subject": "Inglés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
+      ],
+      "printedPages": [
+        162,
+        163,
+        164,
+        165,
+        166,
+        167
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-english.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ingles-2-6-informe-consolidado.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Lenguas Extranjeras",
+      "subject": "Inglés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        169,
+        170,
+        171,
+        172,
+        173,
+        174
+      ],
+      "printedPages": [
+        168,
+        169,
+        170,
+        171,
+        172,
+        173
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-english.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ingles-2-6-informe-consolidado.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "ce0c7661-2119-5679-8fed-8e4507b92e17",
+      "grade": 1,
+      "cycle": 1,
+      "area": "Lenguas Extranjeras",
+      "subject": "Francés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        181,
+        182,
+        183,
+        184
+      ],
+      "printedPages": [
+        180,
+        181,
+        182,
+        183
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-french.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/frances-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "d61f0959-332f-5a0e-8f5e-b1c05dcadae9",
+      "grade": 2,
+      "cycle": 1,
+      "area": "Lenguas Extranjeras",
+      "subject": "Francés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        185,
+        186,
+        187,
+        188
+      ],
+      "printedPages": [
+        184,
+        185,
+        186,
+        187
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-french.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/frances-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "06576745-46a4-56a3-9dc8-cff915975251",
+      "grade": 3,
+      "cycle": 1,
+      "area": "Lenguas Extranjeras",
+      "subject": "Francés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        189,
+        190,
+        191,
+        192
+      ],
+      "printedPages": [
+        188,
+        189,
+        190,
+        191
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-french.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/frances-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "507fac2f-7254-5a1f-8374-a707c672a0bf",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Lenguas Extranjeras",
+      "subject": "Francés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        199,
+        200,
+        201,
+        202
+      ],
+      "printedPages": [
+        198,
+        199,
+        200,
+        201
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-french.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/frances-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "405bf920-4398-57c8-abb1-dbe48adb1b9a",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Lenguas Extranjeras",
+      "subject": "Francés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        203,
+        204,
+        205,
+        206
+      ],
+      "printedPages": [
+        202,
+        203,
+        204,
+        205
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-french.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/frances-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "d0978ec6-aa60-5592-b034-6f042269dba9",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Lenguas Extranjeras",
+      "subject": "Francés",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        207,
+        208,
+        209
+      ],
+      "printedPages": [
+        206,
+        207,
+        208
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-french.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/frances-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "38011b52-24a1-5f08-bd39-b69fc1bbff1a",
+      "grade": 1,
+      "cycle": 1,
+      "area": "Matemática",
+      "subject": "Matemática",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        217,
+        218,
+        219
+      ],
+      "printedPages": [
+        216,
+        217,
+        218
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-math-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/matematica-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "0f31b0b9-8970-5928-9c81-4299e0e9d4d9",
+      "grade": 2,
+      "cycle": 1,
+      "area": "Matemática",
+      "subject": "Matemática",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        220,
+        221
+      ],
+      "printedPages": [
+        219,
+        220
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-math-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/matematica-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "835fd983-ce0a-5475-a868-3bca14b2b853",
+      "grade": 3,
+      "cycle": 1,
+      "area": "Matemática",
+      "subject": "Matemática",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        222,
+        223
+      ],
+      "printedPages": [
+        221,
+        222
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-math-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/matematica-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "45886074-0e84-53aa-855c-dda46bec80cd",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Matemática",
+      "subject": "Matemática",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        229,
+        230
+      ],
+      "printedPages": [
+        228,
+        229
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-math-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/matematica-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "392f46f2-fbc7-5931-a290-c45a88a4f206",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Matemática",
+      "subject": "Matemática",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        231,
+        232
+      ],
+      "printedPages": [
+        230,
+        231
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-math-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/matematica-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "f1d980b5-b339-5fdd-b5a9-4f34a037359f",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Matemática",
+      "subject": "Matemática",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        233,
+        234,
+        235
+      ],
+      "printedPages": [
+        232,
+        233,
+        234
+      ],
+      "status": "IMPLEMENTED_WITH_EXISTING_EVIDENCE",
+      "provider": "packages/shared/src/secondary-math-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/matematica-continuacion.md",
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "be0adcd8-e2a0-5f4a-b169-b33213257c85",
+      "grade": 1,
+      "cycle": 1,
+      "area": "Ciencias Sociales",
+      "subject": "Ciencias Sociales",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        244,
+        245,
+        246,
+        247,
+        248
+      ],
+      "printedPages": [
+        243,
+        244,
+        245,
+        246,
+        247
+      ],
+      "status": "PARTIAL_ACTIONS_PENDING_FULL_REVIEW",
+      "provider": "packages/shared/src/secondary-social.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/sociales-1-matriz.json",
+      "currentRunVerification": "MATRIX_AND_FROZEN_RELEASE_RECHECKED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "e0ac8a6e-812c-50c6-b9eb-109b83d28dda",
+      "grade": 2,
+      "cycle": 1,
+      "area": "Ciencias Sociales",
+      "subject": "Ciencias Sociales",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        249,
+        250,
+        251,
+        252,
+        253
+      ],
+      "printedPages": [
+        248,
+        249,
+        250,
+        251,
+        252
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "a20024b4-dbfb-5d69-8a4c-40c94deb4889",
+      "grade": 3,
+      "cycle": 1,
+      "area": "Ciencias Sociales",
+      "subject": "Ciencias Sociales",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        254,
+        255,
+        256,
+        257
+      ],
+      "printedPages": [
+        253,
+        254,
+        255,
+        256
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "76b12132-2d05-56b0-94a4-0519de84651a",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Ciencias Sociales",
+      "subject": "Ciencias Sociales",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        264,
+        265,
+        266,
+        267,
+        268
+      ],
+      "printedPages": [
+        263,
+        264,
+        265,
+        266,
+        267
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "95643626-0072-5fc0-a2c9-a729ed720dea",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Ciencias Sociales",
+      "subject": "Ciencias Sociales",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275
+      ],
+      "printedPages": [
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "53a654b4-d709-5c0d-9faa-9586c1ee2f60",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Ciencias Sociales",
+      "subject": "Ciencias Sociales",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        276,
+        277,
+        278,
+        279,
+        280
+      ],
+      "printedPages": [
+        275,
+        276,
+        277,
+        278,
+        279
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "c5a4c8f1-9f67-5710-9998-1a631b7be48a",
+      "grade": 1,
+      "cycle": 1,
+      "area": "Ciencias de la Naturaleza",
+      "subject": "Ciencias de la Naturaleza",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        293,
+        294,
+        295
+      ],
+      "printedPages": [
+        292,
+        293,
+        294
+      ],
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "provider": "packages/shared/src/secondary-science-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json",
+      "currentRunVerification": "MATRIX_AND_FROZEN_RELEASE_RECHECKED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "grade": 2,
+      "cycle": 1,
+      "area": "Ciencias de la Naturaleza",
+      "subject": "Ciencias de la Naturaleza",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        296,
+        297,
+        298,
+        299
+      ],
+      "printedPages": [
+        295,
+        296,
+        297,
+        298
+      ],
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "provider": "packages/shared/src/secondary-science-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json",
+      "currentRunVerification": "MATRIX_AND_FROZEN_RELEASE_RECHECKED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "f014e137-2f00-54b0-a405-86a04a4af403",
+      "grade": 3,
+      "cycle": 1,
+      "area": "Ciencias de la Naturaleza",
+      "subject": "Ciencias de la Naturaleza",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        300,
+        301,
+        302,
+        303,
+        304
+      ],
+      "printedPages": [
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "provider": "packages/shared/src/secondary-science-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json",
+      "currentRunVerification": "MATRIX_AND_FROZEN_RELEASE_RECHECKED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "2126f8f2-d70a-5c37-8542-f8d00957a51a",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Ciencias de la Naturaleza",
+      "subject": "Ciencias de la Naturaleza",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        312,
+        313,
+        314,
+        315
+      ],
+      "printedPages": [
+        311,
+        312,
+        313,
+        314
+      ],
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "provider": "packages/shared/src/secondary-science-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json",
+      "currentRunVerification": "MATRIX_AND_FROZEN_RELEASE_RECHECKED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Ciencias de la Naturaleza",
+      "subject": "Ciencias de la Naturaleza",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        316,
+        317,
+        318
+      ],
+      "printedPages": [
+        315,
+        316,
+        317
+      ],
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "provider": "packages/shared/src/secondary-science-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json",
+      "currentRunVerification": "MATRIX_AND_FROZEN_RELEASE_RECHECKED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Ciencias de la Naturaleza",
+      "subject": "Ciencias de la Naturaleza",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        319,
+        320,
+        321,
+        322
+      ],
+      "printedPages": [
+        318,
+        319,
+        320,
+        321
+      ],
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "provider": "packages/shared/src/secondary-science-common.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json",
+      "currentRunVerification": "MATRIX_AND_FROZEN_RELEASE_RECHECKED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "5f147c31-c4c6-528b-ad69-9d88945fd21e",
+      "grade": 1,
+      "cycle": 1,
+      "area": "Educación Artística",
+      "subject": "Educación Artística",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        330,
+        331
+      ],
+      "printedPages": [
+        329,
+        330
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "1622c505-b860-50d1-9551-996b04e5c7ae",
+      "grade": 2,
+      "cycle": 1,
+      "area": "Educación Artística",
+      "subject": "Educación Artística",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        332,
+        333
+      ],
+      "printedPages": [
+        331,
+        332
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "ffa7fc07-03ae-596b-ab57-9e262c80bacb",
+      "grade": 3,
+      "cycle": 1,
+      "area": "Educación Artística",
+      "subject": "Educación Artística",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        334,
+        335
+      ],
+      "printedPages": [
+        333,
+        334
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "47d743d6-a842-5f05-843e-2855bf4bd5bb",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Educación Artística",
+      "subject": "Educación Artística",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        341,
+        342,
+        343
+      ],
+      "printedPages": [
+        340,
+        341,
+        342
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "73dc04d6-0e4f-58a4-bfd3-1fd75c8b98f3",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Educación Artística",
+      "subject": "Educación Artística",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        344,
+        345,
+        346
+      ],
+      "printedPages": [
+        343,
+        344,
+        345
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "c7ec8e2e-ae1c-5996-99e0-d249fdd6d649",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Educación Artística",
+      "subject": "Educación Artística",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        347,
+        348,
+        349
+      ],
+      "printedPages": [
+        346,
+        347,
+        348
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "d9cd49aa-e120-5c87-a84d-44e41e31f826",
+      "grade": 1,
+      "cycle": 1,
+      "area": "Educación Física",
+      "subject": "Educación Física",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        359,
+        360,
+        361
+      ],
+      "printedPages": [
+        358,
+        359,
+        360
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "bea155fb-1eef-52dd-80a2-e86992f1f72b",
+      "grade": 2,
+      "cycle": 1,
+      "area": "Educación Física",
+      "subject": "Educación Física",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        362,
+        363,
+        364
+      ],
+      "printedPages": [
+        361,
+        362,
+        363
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "37d383d7-b45c-56e0-af9b-497cf043b27c",
+      "grade": 3,
+      "cycle": 1,
+      "area": "Educación Física",
+      "subject": "Educación Física",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        365,
+        366,
+        367
+      ],
+      "printedPages": [
+        364,
+        365,
+        366
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "9a5674ad-6a36-5273-bbd6-01b461f1e651",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Educación Física",
+      "subject": "Educación Física",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        374,
+        375,
+        376
+      ],
+      "printedPages": [
+        373,
+        374,
+        375
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "a6108366-713c-572d-8ca4-96753f395e6b",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Educación Física",
+      "subject": "Educación Física",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        377,
+        378,
+        379
+      ],
+      "printedPages": [
+        376,
+        377,
+        378
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "0ed53f73-90ab-5bc7-8db8-0294b348f5be",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Educación Física",
+      "subject": "Educación Física",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        380,
+        381,
+        382
+      ],
+      "printedPages": [
+        379,
+        380,
+        381
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "5839ecc8-d722-53c6-82d7-f7f4f8106faf",
+      "grade": 1,
+      "cycle": 1,
+      "area": "Formación Integral Humana y Religiosa",
+      "subject": "Formación Integral Humana y Religiosa",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        392,
+        393,
+        394,
+        395,
+        396
+      ],
+      "printedPages": [
+        391,
+        392,
+        393,
+        394,
+        395
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "7046d495-351c-52ab-a193-fde308e0000f",
+      "grade": 2,
+      "cycle": 1,
+      "area": "Formación Integral Humana y Religiosa",
+      "subject": "Formación Integral Humana y Religiosa",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        397,
+        398,
+        399,
+        400
+      ],
+      "printedPages": [
+        396,
+        397,
+        398,
+        399
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "e115e5c8-e553-5613-bf39-2caea0bbbb7d",
+      "grade": 3,
+      "cycle": 1,
+      "area": "Formación Integral Humana y Religiosa",
+      "subject": "Formación Integral Humana y Religiosa",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        401,
+        402,
+        403,
+        404
+      ],
+      "printedPages": [
+        400,
+        401,
+        402,
+        403
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": null
+    },
+    {
+      "id": "3431ca5e-6382-512c-92de-ffbe18460796",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Formación Integral Humana y Religiosa",
+      "subject": "Formación Integral Humana y Religiosa",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        413,
+        414,
+        415,
+        416
+      ],
+      "printedPages": [
+        412,
+        413,
+        414,
+        415
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "4afe978a-b3d6-547d-a4fe-588ff505ff5e",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Formación Integral Humana y Religiosa",
+      "subject": "Formación Integral Humana y Religiosa",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        417,
+        418,
+        419,
+        420
+      ],
+      "printedPages": [
+        416,
+        417,
+        418,
+        419
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "2ed4e58c-1691-5efa-9d04-46b3a95c2834",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Formación Integral Humana y Religiosa",
+      "subject": "Formación Integral Humana y Religiosa",
+      "character": "COMMON",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        421,
+        422,
+        423,
+        424
+      ],
+      "printedPages": [
+        420,
+        421,
+        422,
+        423
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [],
+      "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
+    },
+    {
+      "id": "d619d96a-6e30-5201-8264-3bc09502e53e",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Lengua Española",
+      "subject": "Apreciación y Producción Literarias",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        427,
+        428,
+        429,
+        430,
+        431
+      ],
+      "printedPages": [
+        426,
+        427,
+        428,
+        429,
+        430
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "a4ba08bf-efdf-5ede-9710-5d1d7ea0c559",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Lengua Española",
+      "subject": "Apreciación y Producción Literarias",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        432,
+        433,
+        434,
+        435,
+        436
+      ],
+      "printedPages": [
+        431,
+        432,
+        433,
+        434,
+        435
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "6ebb8ac8-f9d0-5530-9c53-366f87055eee",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Lengua Española",
+      "subject": "Análisis y Producción de Textos Periodísticos y Publicitarios",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        437,
+        438,
+        439,
+        440,
+        441,
+        442,
+        443,
+        444
+      ],
+      "printedPages": [
+        436,
+        437,
+        438,
+        439,
+        440,
+        441,
+        442,
+        443
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "b2d7a388-b852-52a5-adf5-d78642f21f96",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Lenguas Extranjeras",
+      "subject": "Manejo de la información en inglés",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        445,
+        446,
+        447,
+        448,
+        449
+      ],
+      "printedPages": [
+        444,
+        445,
+        446,
+        447,
+        448
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "95d4757b-5e0a-5821-af62-37d031ccf922",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Lenguas Extranjeras",
+      "subject": "Apreciación de la Literatura Anglófona",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        450,
+        451,
+        452,
+        453,
+        454,
+        455
+      ],
+      "printedPages": [
+        449,
+        450,
+        451,
+        452,
+        453,
+        454
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "7e02a1ba-12f8-5862-81ff-0ad9bb34f8cc",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Lenguas Extranjeras",
+      "subject": "Análisis Crítico y Evaluación de Textos en Inglés",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        456,
+        457,
+        458,
+        459,
+        460
+      ],
+      "printedPages": [
+        455,
+        456,
+        457,
+        458,
+        459
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "e05229b2-4f79-5cf9-a57e-b0be79bb0cb7",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Lengua Española",
+      "subject": "Apreciación y Producción Literarias",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        462,
+        463,
+        464,
+        465,
+        466
+      ],
+      "printedPages": [
+        461,
+        462,
+        463,
+        464,
+        465
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "b1f1b6c5-3136-5287-8d68-e6171cd86a5f",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Lengua Española",
+      "subject": "Apreciación y Producción Literarias",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        467,
+        468,
+        469,
+        470,
+        471
+      ],
+      "printedPages": [
+        466,
+        467,
+        468,
+        469,
+        470
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "bd48332d-4af6-5d2d-a5cf-e3be5591436d",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Lengua Española",
+      "subject": "Análisis y Producción de Textos Científicos y Profesionales",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        472,
+        473,
+        474,
+        475,
+        476,
+        477,
+        478,
+        479,
+        480,
+        481
+      ],
+      "printedPages": [
+        471,
+        472,
+        473,
+        474,
+        475,
+        476,
+        477,
+        478,
+        479,
+        480
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "817c41b1-f690-5afe-bbf5-b438791bf45c",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Ciencias Sociales",
+      "subject": "Filosofía social y Pensamiento Dominicano",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        482,
+        483,
+        484
+      ],
+      "printedPages": [
+        481,
+        482,
+        483
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "3cfc3564-ea06-53a7-9906-2e7287fdbb44",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Ciencias Sociales",
+      "subject": "Geografía Humana y Demografía",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        485,
+        486,
+        487
+      ],
+      "printedPages": [
+        484,
+        485,
+        486
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "ec62cee2-b76d-5582-8cf1-7762b9e5b4fd",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Ciencias Sociales",
+      "subject": "Ciudadanía y Democracia Participativa",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        488,
+        489
+      ],
+      "printedPages": [
+        487,
+        488
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Matemática",
+      "subject": "Matemática Financiera y Tecnología",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Matemática y Tecnología",
+      "pdfPages": [
+        491,
+        492,
+        493
+      ],
+      "printedPages": [
+        490,
+        491,
+        492
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "87268d19-5d32-5426-9396-21ae21fc5bbd",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Matemática",
+      "subject": "Estadística Probabilidad y Tecnología",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Matemática y Tecnología",
+      "pdfPages": [
+        494,
+        495
+      ],
+      "printedPages": [
+        493,
+        494
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "09e061a8-e3e7-55d8-a7ce-c24364f19401",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Matemática",
+      "subject": "Tigonometría, Cálculo Diferencial y Tecnología",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Matemática y Tecnología",
+      "pdfPages": [
+        496,
+        497
+      ],
+      "printedPages": [
+        495,
+        496
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "5961a313-fc4c-5985-99bd-3e3bf539d5c1",
+      "grade": 4,
+      "cycle": 2,
+      "area": "Ciencias de la Naturaleza",
+      "subject": "Biología y Computación",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Ciencias y Tecnología",
+      "pdfPages": [
+        499,
+        500,
+        501,
+        502,
+        503,
+        504,
+        505
+      ],
+      "printedPages": [
+        498,
+        499,
+        500,
+        501,
+        502,
+        503,
+        504
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "f39c0cd4-85d9-5aeb-a1d2-74763bf455a9",
+      "grade": 5,
+      "cycle": 2,
+      "area": "Ciencias de la Naturaleza",
+      "subject": "Química y Computación",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Ciencias y Tecnología",
+      "pdfPages": [
+        506,
+        507,
+        508,
+        509,
+        510
+      ],
+      "printedPages": [
+        505,
+        506,
+        507,
+        508,
+        509
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    },
+    {
+      "id": "1941d633-9878-579b-9cc3-ae913a00dfda",
+      "grade": 6,
+      "cycle": 2,
+      "area": "Ciencias de la Naturaleza",
+      "subject": "Física y Computación",
+      "character": "OPTATIVE",
+      "modality": "Académica",
+      "exit": "Ciencias y Tecnología",
+      "pdfPages": [
+        511,
+        512,
+        513,
+        514,
+        515,
+        516,
+        517
+      ],
+      "printedPages": [
+        510,
+        511,
+        512,
+        513,
+        514,
+        515,
+        516
+      ],
+      "status": "PENDING",
+      "provider": null,
+      "evidence": null,
+      "currentRunVerification": "NOT_RETESTED",
+      "nonApplicable": [
+        1,
+        2,
+        3
+      ],
+      "notes": null
+    }
+  ],
+  "externalSourcesPending": [
+    {
+      "component": "Menciones Técnico-Profesionales",
+      "status": "OFFICIAL_DESIGNS_TO_LOCATE",
+      "reason": "El PDF 2023 remite a diseños propios (PDF55); no inventariados como optativas académicas."
+    },
+    {
+      "component": "Menciones de la modalidad Artes",
+      "status": "OFFICIAL_DESIGNS_TO_LOCATE",
+      "reason": "Música, Artes Visuales, Artes Escénicas y Artes Aplicadas no equivalen a Educación Artística común."
+    }
+  ]
+}
