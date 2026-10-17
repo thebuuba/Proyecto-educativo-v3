@@ -1,3 +1,4 @@
+import {chooseActivitySelection,activitySelectionName} from './activitySelectionTestUtils'
 import {fireEvent,render,screen,waitFor} from '@testing-library/react'
 import {beforeEach,describe,expect,it,vi} from 'vitest'
 import {ActivityEditorWorkspace} from './ActivityEditorWorkspace'
@@ -21,14 +22,14 @@ describe('Selector inglés: automático, manual y alternativa',()=>{
   })
   render(<ActivityEditorWorkspace initialDraft={{...newActivityDraft('b1'),name:'Actividad',activityType:'individual',instrumentType:'rubrica',autoSelectedInstrumentType:true}} sectionSubjectId="subject" instrumentAcademicContext={context} courseTitle="Inglés 1.º" periodShortName="P1" saving={false} onAddActivity={async a=>({...a,id:'saved'})} onUpdateActivity={async a=>a}/> )
   fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:base+purpose}})
-  await waitFor(()=>expect(screen.getByRole('combobox',{name:'Tipo de instrumento'})).toHaveValue(format),{timeout:5000})
+  await waitFor(()=>expect(screen.getByRole('button',{name:'Tipo de instrumento'})).toHaveTextContent(activitySelectionName(format)),{timeout:5000})
   await waitFor(()=>expect(screen.getByRole('button',{name:'Generar nuevo instrumento'})).toBeEnabled(),{timeout:5000})
-  expect(screen.getByRole('combobox',{name:'Tipo de actividad'})).toHaveValue('ORAL_INTERACTION')
+  expect(screen.getByRole('button',{name:'Tipo de actividad'})).toHaveTextContent(activitySelectionName('ORAL_INTERACTION'))
   expect(screen.getByRole('textbox',{name:/Valor en puntos/})).toHaveValue('')
-  fireEvent.change(screen.getByRole('combobox',{name:'Tipo de instrumento'}),{target:{value:'rubrica'}})
+  chooseActivitySelection('Tipo de instrumento', 'rubrica')
   await waitFor(()=>expect(screen.getByLabelText('Criterio 1')).toHaveValue('Información personal solicitada'),{timeout:5000})
   fireEvent.change(screen.getByLabelText('Descripción de la actividad'),{target:{value:base+purposes[1][0]}})
   await waitFor(()=>expect(screen.getByRole('button',{name:'Generar nuevo instrumento'})).toBeEnabled(),{timeout:5000})
-  expect(screen.getByRole('combobox',{name:'Tipo de instrumento'})).toHaveValue('rubrica')
+  expect(screen.getByRole('button',{name:'Tipo de instrumento'})).toHaveTextContent(activitySelectionName('rubrica'))
  },10000)
 })

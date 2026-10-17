@@ -1,0 +1,2693 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "scopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+  "grade": 6,
+  "cycle": 2,
+  "subject": "Inglés",
+  "character": "COMMON",
+  "pdfPages": [
+    169,
+    170,
+    171,
+    172,
+    173,
+    174
+  ],
+  "printedPages": [
+    168,
+    169,
+    170,
+    171,
+    172,
+    173
+  ],
+  "method": "Seis páginas renderizadas y cotejadas visualmente por columnas y continuaciones.",
+  "layoutNotes": [
+    "PDF172–173 continúan solo gramática; otras columnas vacías.",
+    "CONCEPT37 une encabezado y estructuras reales.44 es parte del diálogo continuado de43/45;45 contiene además estructuras nuevas.",
+    "PROCEDURE23 contiene planificación y lenguaje no verbal. No excluir ni reducir a un solo procedimiento.",
+    "Trece ámbitos,17 familias léxicas/cuatro intenciones expresivas; no copiar las22/siete de quinto.",
+    "Las listas de géneros coinciden con quinto, cotejadas por modalidad."
+  ],
+  "status": "VERIFIED_DEFINED_FAMILIES",
+  "records": [
+    {
+      "id": "2764a4fa-6e03-5dcb-8b89-b996bfac44f0",
+      "text": "Temas",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691000,
+      "type": "CONCEPT",
+      "index": 0,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "99e7fec8-cc6e-5079-9d2e-feab521d750b",
+      "text": "• Relaciones humanas y sociales",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691001,
+      "type": "CONCEPT",
+      "index": 1,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "c1f232e0-edec-53c8-b86b-aafbd422f499",
+      "text": "• Vivienda, entorno y ciudad",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691002,
+      "type": "CONCEPT",
+      "index": 2,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "7ce42885-31f4-5917-9baf-89280c03c08e",
+      "text": "• Escuela y educación",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691003,
+      "type": "CONCEPT",
+      "index": 3,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "7822b870-7c7d-5eea-aa1f-982d7fc15ad7",
+      "text": "• Actividades de la vida diaria",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691004,
+      "type": "CONCEPT",
+      "index": 4,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "039b026e-c53a-57b7-86d5-fe4d5ef7b3d5",
+      "text": "• Deporte, tiempo libre y\nrecreación",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691005,
+      "type": "CONCEPT",
+      "index": 5,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "09afbb7c-7ae1-5649-a0b4-53d99564c756",
+      "text": "• Manifestaciones artísticas y\nculturales",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691006,
+      "type": "CONCEPT",
+      "index": 6,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "e9baf7bb-ad2e-55af-a8fa-b17804463e5e",
+      "text": "• Alimentación",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691007,
+      "type": "CONCEPT",
+      "index": 7,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "28b1fb74-03d0-53f8-9e49-97b300f780dc",
+      "text": "• Salud y cuidados físicos",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691008,
+      "type": "CONCEPT",
+      "index": 8,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "23eefed0-60cb-5fff-bb7a-91a117e8c3d8",
+      "text": "• Bienes y servicios.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691009,
+      "type": "CONCEPT",
+      "index": 9,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "eb0303e7-0873-580d-8d53-697acfb50c71",
+      "text": "• Lengua y comunicación",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691010,
+      "type": "CONCEPT",
+      "index": 10,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "0d8b2626-112d-5cd8-948d-95cfb687f3dc",
+      "text": "• Ciencia y tecnología",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691011,
+      "type": "CONCEPT",
+      "index": 11,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "e7c9d559-16c3-5532-9b95-9971c417572f",
+      "text": "• Viajes y turismo",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691012,
+      "type": "CONCEPT",
+      "index": 12,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "91ec3984-a975-5641-99d0-fed052f4a057",
+      "text": "• Fenómeno naturales y\nmedioambiente",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1691013,
+      "type": "CONCEPT",
+      "index": 13,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito comunicativo; no criterio por su mera mención ni exigencia de datos privados o conocimiento especializado.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "FUNCTION_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "18b3ac26-014f-5057-b5d5-bbb2b2d976ab",
+      "text": "Vocabulario",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701000,
+      "type": "CONCEPT",
+      "index": 14,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "c832de67-5505-5a69-9a95-a7777c92c681",
+      "text": "•Arte: music, dancing, painting,\ntheater…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701001,
+      "type": "CONCEPT",
+      "index": 15,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-art"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "500a82ce-9f8d-5895-80e6-6a7949b3c226",
+      "text": "• Calificativos: marvelous, boring,\nspectacular, hardworking…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701002,
+      "type": "CONCEPT",
+      "index": 16,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-qualifiers"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "c4ee6772-2cb7-564b-a294-6f60707c82d0",
+      "text": "• Celebraciones: Christmas,\nT h a n k s g i v i n g …",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701003,
+      "type": "CONCEPT",
+      "index": 17,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-celebrations"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "0d5c0486-c7af-5e7b-8b15-d16c399ecc22",
+      "text": "• Civismo y ciudadanía: laws, res-\nponsibilities, human rights…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701004,
+      "type": "CONCEPT",
+      "index": 18,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-citizenship"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "0955aa14-b03e-53b4-a324-d840ecc2ad83",
+      "text": "• Comunicación: conference,\nnews, social media, TV…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701005,
+      "type": "CONCEPT",
+      "index": 19,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-communication"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "d4666842-f48d-5803-9b2a-39ca719d7225",
+      "text": "• Cultura: identity, diversity, tradi-\ntion, arts…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701006,
+      "type": "CONCEPT",
+      "index": 20,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-culture"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "f85f48be-80c9-58c1-8681-59da327abf50",
+      "text": "•Derecho de autor: copyright, pla-\ngiarism…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701007,
+      "type": "CONCEPT",
+      "index": 21,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-copyright"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "26a802bb-7a7e-5768-871a-cfb34a4e193c",
+      "text": "• Fenómenos naturales: hurricane,\nflood, earthquake…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701008,
+      "type": "CONCEPT",
+      "index": 22,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-natural-phenomena"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "fbe5938f-0423-580f-93d3-562940145307",
+      "text": "• Elementos de una narración:\nmain character, plot, setting… •",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701009,
+      "type": "CONCEPT",
+      "index": 23,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-narrative-elements"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "fda16c62-14a5-596a-a638-8ca7068e5520",
+      "text": "• Eventualidad: robbery, be fined,\nplane crash…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701010,
+      "type": "CONCEPT",
+      "index": 24,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-contingencies"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "cfa04c58-5ea8-5e95-ad8e-ae6e2d0c6e94",
+      "text": "• Géneros literarios: fable, drama,\nshort story, humor, fiction…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701011,
+      "type": "CONCEPT",
+      "index": 25,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-literary-genres"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "c38b8bc2-25af-585f-bde6-2cf958bb0d8c",
+      "text": "• Medio ambiente: global war-\nming, pollution…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701012,
+      "type": "CONCEPT",
+      "index": 26,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-environment"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "ce2958a7-6bc3-5c93-9b13-46e11cf91e4f",
+      "text": "• Ocupaciones: sales assistant,\noperator…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701013,
+      "type": "CONCEPT",
+      "index": 27,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-occupations"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "6eed28e3-6d9b-5ebc-a85b-93f75c051ab8",
+      "text": "• Reacciones: shocked, amazed,\nrelieved, embarrassed…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701014,
+      "type": "CONCEPT",
+      "index": 28,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-reactions"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "fb85ceec-3286-5ab0-8971-1ac62bd63c94",
+      "text": "• Relaciones: colleague, employee,\npartner…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701015,
+      "type": "CONCEPT",
+      "index": 29,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-relationships"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "14cf11ed-6348-519e-8c53-74cd4d80c371",
+      "text": "• Trabajo: application, résumé, in-\nterview, promotion…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701016,
+      "type": "CONCEPT",
+      "index": 30,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-work"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "98f3f6f8-d051-545a-985c-10faac140a36",
+      "text": "• Valores:love, freedom, peace, tru-\nth, hope…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701017,
+      "type": "CONCEPT",
+      "index": 31,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-values"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+      "text": "Expresiones",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701018,
+      "type": "CONCEPT",
+      "index": 32,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "93e8db23-5be5-51ff-90fd-d00d58c9334f",
+      "text": "•Opinar: I think…, I consider…, In\nmy view…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701019,
+      "type": "CONCEPT",
+      "index": 33,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-opinion"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "2247264c-db52-565f-bd00-35000ca07557",
+      "text": "•Expresar acuerdo y desacuerdo: I\nagree; I disagree; You’re right…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701020,
+      "type": "CONCEPT",
+      "index": 34,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-agreement"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "18f9be3a-afa4-5702-9c52-dbdebadf7407",
+      "text": "•Excusarse: I´m really sorry! I apo-\nlogize…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701021,
+      "type": "CONCEPT",
+      "index": 35,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-excuse"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "e04069fe-5948-56fc-8166-017da83a4ba2",
+      "text": "•Cambiar de tema: By the way…",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701022,
+      "type": "CONCEPT",
+      "index": 36,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecisiete familias y cuatro intenciones propias. Valores y reacciones son significados de ejemplos; no sentimientos o creencias personales puntuados.",
+      "providers": [
+        "ing-6-lexicon-change-topic"
+      ],
+      "verification": "english-grade-six-lexicon.spec.ts"
+    },
+    {
+      "id": "79db8e2a-5a50-5258-aa2e-b3e5dd3a84c2",
+      "text": "Gramática\nOraciones enunciativas (afirmati-\nvas y negativas), interrogativas y\nexclamativas.\nPresente simple para expresar\nideas sobre temas abstractos o\nculturales:\nThis movie portrays the lack of\nrespect for traditional values in\ntoday’s society.\nWhy do people celebrate\nT h a n k s g i v i n g ?\nVerbos causativos get, have,\nm a k e …",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1701023,
+      "type": "CONCEPT",
+      "index": 37,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto. Une encabezado Gramática con estructuras reales y causativos; no excluir el registro completo.",
+      "providers": [
+        "ing-6-feature-declarative",
+        "ing-6-feature-interrogative-sentences",
+        "ing-6-feature-exclamation",
+        "ing-6-feature-causatives",
+        "ing-6-feature-present-simple"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "60f4967e-95ed-5bc1-adbd-05ae6f415707",
+      "text": "You should get your car serviced at a garage. I\nhad her send the homework.\nPasado simple para narrar acontecimientos y\nexperiencias:\nI was so embarrassed because I spilled water on\nthe carpet.\nPresente perfecto para interactuar en una\nentrevista de trabajo:\nI’ve worked as a manager for ten years.\nPresente perfecto continuo para interactuar en\nentrevista de trabajo:\nWhat have you been doing lately?\nI’ve been working as a receptionist in a hotel in\nSanto Domingo.\nUsed to para comparar el pasado con el\npresente:\nI used to go to the school library every morning.\nBe used to, get used to para expresar costumbre,\nfamiliaridad o adaptación a algo o a alguien:\nI’m used to exercising every day.\nMy parents are getting used to new technologies.\nPresente perfecto y pasado simple para narrar\nacontecimientos y experiencias:\nI’ve just seen an accident. A car went through a\nred light and ran into a bus.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1711000,
+      "type": "CONCEPT",
+      "index": 38,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto. Registro compuesto/continuado: conservar todas las formas y funciones de su página.",
+      "providers": [
+        "ing-6-feature-causatives",
+        "ing-6-feature-past-simple",
+        "ing-6-feature-present-perfect",
+        "ing-6-feature-present-perfect-continuous",
+        "ing-6-feature-used-to",
+        "ing-6-feature-be-used-to",
+        "ing-6-feature-get-used-to"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "4a65e9b5-2332-52d5-8f61-00513e1e8a12",
+      "text": "Pasado simple y pasado continuo para narrar\nacontecimientos y experiencias:\nA very loud noise scared Mr. Jackson while he\nwas watching TV.\nPresente perfecto y presente perfecto continuo:\nI have improved my performance because I’ve\nbeen practicing all week long.\nI have been studying very hard, so I have learned\na lot.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1711001,
+      "type": "CONCEPT",
+      "index": 39,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-past-simple",
+        "ing-6-feature-present-perfect",
+        "ing-6-feature-present-perfect-continuous",
+        "ing-6-feature-past-continuous"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "99c7b729-da02-5bf0-8b31-765af77bf038",
+      "text": "Pasado simple y pasado perfecto para narrar\nacontecimientos y experiencias:\nMy father was very surprised by the Sears Tower\nin Chicago because he had never seen such a\ntall building.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1711002,
+      "type": "CONCEPT",
+      "index": 40,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-past-simple",
+        "ing-6-feature-past-perfect"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "bb5949d5-7a56-5e89-a17c-9f207e1fd512",
+      "text": "Pasado simple y pasado perfecto en voz pasiva\npara narrar acontecimientos y experiencias:\nThe old Yankee Stadium had already been\ndemolished when I got to New York.\nPresente simple con valor futuro para justificar\nacciones:\nI have an English class at 3:00, so I can’t attend\nthe meeting tomorrow.\nMust, may, could y might… para justificar\nacciones y ofrecer explicaciones:\nMaria didn’t come to the meeting. She could\nhave had a problem.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1711003,
+      "type": "CONCEPT",
+      "index": 41,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-past-simple",
+        "ing-6-feature-past-perfect",
+        "ing-6-feature-present-simple-future",
+        "ing-6-feature-modal-must",
+        "ing-6-feature-modal-may",
+        "ing-6-feature-modal-could",
+        "ing-6-feature-modal-might",
+        "ing-6-feature-passive",
+        "ing-6-feature-passive-past-perfect"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "d285d578-ba7a-5527-af11-696e11155aee",
+      "text": "Verbos seguidos del gerundio, infinitivo o por\ncualquiera de ellos:\nI remember locking the door as I left.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1711004,
+      "type": "CONCEPT",
+      "index": 42,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-verb-complements"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "278c0167-3a9b-5060-b615-e6b0f59f5804",
+      "text": "I remembered to lock the door as I left. I need to drink some\ncoffee.\nPhrasal verbs:\nFill out this application form, please. My business is picking\nup.\nMe too; not me; neither do I; so do I; I do too. :",
+      "pdfPage": 172,
+      "printedPage": "171",
+      "sourceOrder": 1721000,
+      "type": "CONCEPT",
+      "index": 43,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto. Registro compuesto/continuado: conservar todas las formas y funciones de su página.",
+      "providers": [
+        "ing-6-feature-verb-complements",
+        "ing-6-feature-phrasal-verbs",
+        "ing-6-feature-agreement-responses"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "839e9a8a-ec40-5f1e-ae77-42cd385ec77b",
+      "text": "• I really liked that movie!",
+      "pdfPage": 172,
+      "printedPage": "171",
+      "sourceOrder": 1721001,
+      "type": "CONCEPT",
+      "index": 44,
+      "decision": "CONNECTED_CONTINUATION_EXAMPLE_NOT_NEW_FAMILY",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-agreement-responses"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "f35f78fe-9681-58cf-b886-d68c0ed0747f",
+      "text": "•So did I!\nThere + modal + be:\nThere might be many interesting people there.\nCondicional cero (If /when + presente simple en la cláusula\ncondicional, y presente simple en la cláusula principal): When\nthe presentation is simple, people learn better.\nSegundo condicional (If + pasado simple en la cláusula\ncondicional y would / could/ might + forma base del verbo\nen la cláusula principal):\nIf I had the tools, I would help you.\nTercer condicional (If + pasado perfecto en la cláusula condicional\ny would/could/might + have en la claúsula principal):\nIf I had known, I would have dressed up for this party.\nIf I had taken the other road, I would have reached my\ndestination on time.",
+      "pdfPage": 172,
+      "printedPage": "171",
+      "sourceOrder": 1721002,
+      "type": "CONCEPT",
+      "index": 45,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto. Registro compuesto/continuado: conservar todas las formas y funciones de su página.",
+      "providers": [
+        "ing-6-feature-second-conditional",
+        "ing-6-feature-agreement-responses",
+        "ing-6-feature-there-modal-be",
+        "ing-6-feature-zero-conditional",
+        "ing-6-feature-third-conditional"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "59dd73e1-a6cf-5d98-b070-08da64004430",
+      "text": "Voz pasiva:\nThe Statue of Liberty is considered a symbol of democracy\nand freedom.\nThe game was put off because of rain.\nWearing a helmet while riding a motorcycle is advised.\nQuestion tags:",
+      "pdfPage": 172,
+      "printedPage": "171",
+      "sourceOrder": 1721003,
+      "type": "CONCEPT",
+      "index": 46,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto. Registro compuesto/continuado: conservar todas las formas y funciones de su página.",
+      "providers": [
+        "ing-6-feature-question-tags",
+        "ing-6-feature-passive"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "5d20974b-13bc-5744-a451-8910ed4cdded",
+      "text": "You spoke to the manager, didn´t you?\nI think I should fill out this form, shouldn’t I?\nReported speech para relatar acontecimientos y experiencias de\nforma detallada:\nEstela asked the man to throw away the broken glass.\n“Let’s go ahead!” He said enthusiastically.\nThe specialist confirmed that the picture was authentic.\nPreguntas indirectas y embedded questions:\nCan you explain what the main character did in the forest?\nI wonder why my skateboard isn’t rolling smoothly.\nOraciones enfáticas con it y wh• clefts:\nIt was the English teacher who assigned homework, not\nthe math teacher.\nWhat the volunteers will do is to plant trees along the river.\nGerundio en función de sustantivo:\nReading will help your kids grow smarter.\nOmisión del artículo:\nCuriosity is the mother of invention.\nGrados comparativo y superlativo del adjetivo:\nI think younger people are usually more active than older\nones. Which is the highest peak in the Caribbean?\nAdverbios y frases adverbiales de tiempo (now, yesterday\nmorning, until, before, after, as soon as …), de probabilidad\n(maybe, perhaps, probably…), de frecuencia (never,\nsometimes, always; twice a week…), de modo (quickly,\nproperly, carefully…) y de intensidad (very, pretty, enough,\ntoo…):\nWhile I was talking to them, I kept myself calm and friendly.\nMaybe you should explain it more slowly.",
+      "pdfPage": 172,
+      "printedPage": "171",
+      "sourceOrder": 1721004,
+      "type": "CONCEPT",
+      "index": 47,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto. Registro compuesto/continuado: conservar todas las formas y funciones de su página.",
+      "providers": [
+        "ing-6-feature-indirect-questions",
+        "ing-6-feature-zero-article",
+        "ing-6-feature-frequency-adverbs",
+        "ing-6-feature-question-tags",
+        "ing-6-feature-comparative",
+        "ing-6-feature-time-adverbs",
+        "ing-6-feature-manner-adverbs",
+        "ing-6-feature-reported-speech",
+        "ing-6-feature-it-cleft",
+        "ing-6-feature-wh-cleft",
+        "ing-6-feature-nominal-gerund",
+        "ing-6-feature-probability-adverbs",
+        "ing-6-feature-intensity-adverbs"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "06177ac4-e365-50c5-bd58-3bb7340afa83",
+      "text": "Uso de preposiciones:\nWhat is the reason for the new changes?\nThey applied for Dominican citizenship. We need to be\ngood at teamwork.\nPreposición al final de la oración:\nThose were the results we were waiting for. What’s the\nmovie about?\nPreposiciones de lugar (in, under, up, into, outside, inside,\npast, through…) y de tiempo (at, before, for, since, from,\nto, until, till…)\nThe two men jumped into a dark hidden pit.\nAt sunset, they arrived in a small isolated village.\nPronombres relativos (who, which, that…):\nErnest Hemingway, who is one of my favorite American\nwriters, lived in Cuba for many years.",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731000,
+      "type": "CONCEPT",
+      "index": 48,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto. Registro compuesto/continuado: conservar todas las formas y funciones de su página.",
+      "providers": [
+        "ing-6-feature-preposition-use",
+        "ing-6-feature-sentence-final-preposition",
+        "ing-6-feature-relative-pronouns",
+        "ing-6-feature-place-prepositions",
+        "ing-6-feature-time-prepositions"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "04f81d78-3042-5c8a-ba89-c2921d940051",
+      "text": "Omisión del pronombre relativo:\nThe pictures (that) we are going to see were taken by a\nfamous photographer.\nUso enfático de los pronombres reflexivos:\nHe took the picture himself.",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731001,
+      "type": "CONCEPT",
+      "index": 49,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto. Registro compuesto/continuado: conservar todas las formas y funciones de su página.",
+      "providers": [
+        "ing-6-feature-emphatic-reflexives",
+        "ing-6-feature-relative-omission"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "57ea9547-7c92-51fa-9aab-312e764a1df0",
+      "text": "Conectores y marcadores de:",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731002,
+      "type": "CONCEPT",
+      "index": 50,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "958c149f-1d1b-5eb3-a29a-7cfe1e25c6bd",
+      "text": "•Adición (and, besides, moreover, in addition…)",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731003,
+      "type": "CONCEPT",
+      "index": 51,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-addition-connectors"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "6723aafc-691d-57fc-8e07-fbc351a4d3bf",
+      "text": "•Causa y efecto (so, because, since, as, for…)",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731004,
+      "type": "CONCEPT",
+      "index": 52,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-cause-connectors"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "66d8cb81-7100-54f2-9375-10041553002f",
+      "text": "•Concesión (although, in spite of, even though, despite…)",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731005,
+      "type": "CONCEPT",
+      "index": 53,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-concession-connectors"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "280276a1-ef2d-5b35-81f9-e7ae75e351a9",
+      "text": "• Contraste (but, while, on the contrary, in contrast…)",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731006,
+      "type": "CONCEPT",
+      "index": 54,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-contrast-connectors"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "01124d60-f473-53a8-b550-6d23db3c4525",
+      "text": "•Correlación (either…or, neither…nor, not only…but\nalso…)",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731007,
+      "type": "CONCEPT",
+      "index": 55,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-correlative-connectors"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "9f714a41-b4e6-5c11-ab90-99be745e211a",
+      "text": "•Exclusión (except, except for, apart from, but…)",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731008,
+      "type": "CONCEPT",
+      "index": 56,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-exclusion-connectors"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "d73a8289-0b07-54e0-9b7e-3eaf3633f0ae",
+      "text": "•Finalidad (to, in order to, so that…)",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731009,
+      "type": "CONCEPT",
+      "index": 57,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-purpose-connectors"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "f60da131-ab6e-5d1d-88eb-19335c9f750d",
+      "text": "•Ilustración (for example, for instance, such as…)",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731010,
+      "type": "CONCEPT",
+      "index": 58,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-illustration-connectors"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "f62e6a6c-c0c8-5f78-94fb-8be95662f2f2",
+      "text": "•Secuenciación (first, second, next, finally…)",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731011,
+      "type": "CONCEPT",
+      "index": 59,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-sequence-connectors"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "5ee7d3a1-93c5-59ec-a1ec-5f2b3eda316c",
+      "text": "•Síntesis (in brief, in short…)",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731012,
+      "type": "CONCEPT",
+      "index": 60,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-summary-connectors"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "a490a1a7-dbae-5182-b880-45687d9d8bc7",
+      "text": "•Tiempo (when, while, until, before, after, as soon as…)",
+      "pdfPage": 173,
+      "printedPage": "172",
+      "sourceOrder": 1731013,
+      "type": "CONCEPT",
+      "index": 61,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Forma y propósito cotejados en sexto; mantener cada estructura de registros compuestos. Gramática o léxico como objeto de estudio no implica un segundo producto.",
+      "providers": [
+        "ing-6-feature-time-connectors"
+      ],
+      "verification": "english-grade-six-grammar.spec.ts"
+    },
+    {
+      "id": "8a0cdf2a-7a1d-5b69-ae90-98ea3a4bbb97",
+      "text": "Funcionales",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1692000,
+      "type": "PROCEDURE",
+      "index": 0,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "c1136846-6811-504b-a6be-a1f90de5e621",
+      "text": "• Comparar el pasado con el presente",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1692001,
+      "type": "PROCEDURE",
+      "index": 1,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de sexto, con razonamientos, hipótesis pasadas, comparación de épocas, adaptación/estado e interacción en perfil ficticio. No trasladar compra/consulta médica de quinto.",
+      "providers": [
+        "ing-6-past-present"
+      ],
+      "verification": "english-grade-six.spec.ts"
+    },
+    {
+      "id": "a49d850d-938a-5c28-b1f1-eff23cd95e60",
+      "text": "• Expresar ideas sobre temas abstractos o\nculturales.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1692002,
+      "type": "PROCEDURE",
+      "index": 2,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de sexto, con razonamientos, hipótesis pasadas, comparación de épocas, adaptación/estado e interacción en perfil ficticio. No trasladar compra/consulta médica de quinto.",
+      "providers": [
+        "ing-6-cultural-ideas"
+      ],
+      "verification": "english-grade-six.spec.ts"
+    },
+    {
+      "id": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+      "text": "• Solicitar y ofrecer razonamientos y\nexplicaciones.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1692003,
+      "type": "PROCEDURE",
+      "index": 3,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de sexto, con razonamientos, hipótesis pasadas, comparación de épocas, adaptación/estado e interacción en perfil ficticio. No trasladar compra/consulta médica de quinto.",
+      "providers": [
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations"
+      ],
+      "verification": "english-grade-six.spec.ts"
+    },
+    {
+      "id": "233aa80a-47af-5cef-91e1-ecbc98dc5364",
+      "text": "• Expresar costumbre, familiaridad o\nadaptación a algo o a alguien.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1692004,
+      "type": "PROCEDURE",
+      "index": 4,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de sexto, con razonamientos, hipótesis pasadas, comparación de épocas, adaptación/estado e interacción en perfil ficticio. No trasladar compra/consulta médica de quinto.",
+      "providers": [
+        "ing-6-habitual-state",
+        "ing-6-adaptation"
+      ],
+      "verification": "english-grade-six.spec.ts"
+    },
+    {
+      "id": "5af5f7e6-f899-54cf-8e4e-33b665f8a770",
+      "text": "• Hipotetizar sobre situaciones pasadas.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1692005,
+      "type": "PROCEDURE",
+      "index": 5,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de sexto, con razonamientos, hipótesis pasadas, comparación de épocas, adaptación/estado e interacción en perfil ficticio. No trasladar compra/consulta médica de quinto.",
+      "providers": [
+        "ing-6-past-hypothesis"
+      ],
+      "verification": "english-grade-six.spec.ts"
+    },
+    {
+      "id": "4ad89942-c988-5c90-a824-84296b80300d",
+      "text": "• Interactuar en entrevistas de trabajo.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1692006,
+      "type": "PROCEDURE",
+      "index": 6,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de sexto, con razonamientos, hipótesis pasadas, comparación de épocas, adaptación/estado e interacción en perfil ficticio. No trasladar compra/consulta médica de quinto.",
+      "providers": [
+        "ing-6-job-interview"
+      ],
+      "verification": "english-grade-six.spec.ts"
+    },
+    {
+      "id": "e1a63052-f434-5ca2-ac92-4325e6f5c55a",
+      "text": "• Narrar acontecimientos y experiencias de\nforma detallada",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1692007,
+      "type": "PROCEDURE",
+      "index": 7,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de sexto, con razonamientos, hipótesis pasadas, comparación de épocas, adaptación/estado e interacción en perfil ficticio. No trasladar compra/consulta médica de quinto.",
+      "providers": [
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "english-grade-six.spec.ts"
+    },
+    {
+      "id": "49f22f77-498e-5744-929c-2d64df2267fe",
+      "text": "Discursivos",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1692008,
+      "type": "PROCEDURE",
+      "index": 8,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "3aabbaf3-eb35-576d-8e91-cca1ab86753a",
+      "text": "• Comprensión de discursos orales tales como\nconversaciones, anuncios, avisos, mensajes,\ninstrucciones, pronósticos del tiempo,\nnoticias, canciones, poesías, descripciones,\nbiografías y narraciones.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1692009,
+      "type": "PROCEDURE",
+      "index": 9,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Cuatro listas cotejadas: recepción12/30, producción10/14; coinciden con quinto. Audiovisual solo por consigna explícita.",
+      "providers": [
+        "ing-6-genre-conversation",
+        "ing-6-genre-advertisement",
+        "ing-6-genre-notice",
+        "ing-6-genre-message",
+        "ing-6-genre-forecast",
+        "ing-6-genre-news",
+        "ing-6-genre-song",
+        "ing-6-genre-poem",
+        "ing-6-genre-description",
+        "ing-6-genre-biography",
+        "ing-6-genre-narrative",
+        "ing-6-genre-instructions"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "9f7f0156-e076-5014-a42f-c54648251ebf",
+      "text": "• Producción de discursos orales, tales como\nconversaciones, monólogos, canciones,\nrecetas, mensajes, noticias, presentaciones,\nargumentaciones, descripciones y\nnarraciones.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1692010,
+      "type": "PROCEDURE",
+      "index": 10,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Cuatro listas cotejadas: recepción12/30, producción10/14; coinciden con quinto. Audiovisual solo por consigna explícita.",
+      "providers": [
+        "ing-6-genre-conversation",
+        "ing-6-genre-recipe",
+        "ing-6-genre-message",
+        "ing-6-genre-news",
+        "ing-6-genre-song",
+        "ing-6-genre-description",
+        "ing-6-genre-narrative",
+        "ing-6-genre-monologue",
+        "ing-6-genre-presentation",
+        "ing-6-genre-argumentation"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "30de0692-edaa-5567-98a2-e2c232c12767",
+      "text": "• Comprensión de textos escritos en formato\nfísico, digital y virtual, tales como tarjetas,\nlistas, catálogos, diccionarios, facturas,\nanuncios, recetas, letreros, avisos, afiches,\nmensajes, correos electrónicos, instrucciones,\ncurriculum vitae, cartas, formularios,\nnoticias, horarios, agendas, menús, croquis,\ncuestionarios, folletos, canciones, poesías,\nhistorietas, guías turísticas, descripciones,\nbiografías y narraciones.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702000,
+      "type": "PROCEDURE",
+      "index": 11,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Cuatro listas cotejadas: recepción12/30, producción10/14; coinciden con quinto. Audiovisual solo por consigna explícita.",
+      "providers": [
+        "ing-6-genre-business-card",
+        "ing-6-genre-list",
+        "ing-6-genre-advertisement",
+        "ing-6-genre-recipe",
+        "ing-6-genre-sign",
+        "ing-6-genre-notice",
+        "ing-6-genre-poster",
+        "ing-6-genre-message",
+        "ing-6-genre-email",
+        "ing-6-genre-cv",
+        "ing-6-genre-letter",
+        "ing-6-genre-form",
+        "ing-6-genre-news",
+        "ing-6-genre-schedule",
+        "ing-6-genre-agenda",
+        "ing-6-genre-menu",
+        "ing-6-genre-map",
+        "ing-6-genre-questionnaire",
+        "ing-6-genre-brochure",
+        "ing-6-genre-song",
+        "ing-6-genre-poem",
+        "ing-6-genre-comic",
+        "ing-6-genre-tourist-guide",
+        "ing-6-genre-description",
+        "ing-6-genre-biography",
+        "ing-6-genre-narrative",
+        "ing-6-genre-catalog",
+        "ing-6-genre-dictionary",
+        "ing-6-genre-invoice",
+        "ing-6-genre-instructions"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "3eb2b826-eda8-53ed-8362-b0ccebfbc910",
+      "text": "• Producción de textos escritos en formato\nfísico, digital y virtual, tales como mensajes,\ncorreos electrónicos, cartas, curriculum vitae,\navisos, afiches, letreros, formularios, recetas,\ninstrucciones, cuestionarios, biografías,\nnarraciones y descripciones.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702001,
+      "type": "PROCEDURE",
+      "index": 12,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Cuatro listas cotejadas: recepción12/30, producción10/14; coinciden con quinto. Audiovisual solo por consigna explícita.",
+      "providers": [
+        "ing-6-genre-recipe",
+        "ing-6-genre-sign",
+        "ing-6-genre-notice",
+        "ing-6-genre-poster",
+        "ing-6-genre-message",
+        "ing-6-genre-email",
+        "ing-6-genre-cv",
+        "ing-6-genre-letter",
+        "ing-6-genre-form",
+        "ing-6-genre-questionnaire",
+        "ing-6-genre-description",
+        "ing-6-genre-biography",
+        "ing-6-genre-narrative",
+        "ing-6-genre-instructions"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "c411f48f-2e5c-5854-901b-6ba8b6d8680e",
+      "text": "Estratégicos\nComprensión oral",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702002,
+      "type": "PROCEDURE",
+      "index": 13,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "11864385-21cd-597a-be3f-2ecf5230d245",
+      "text": "• Anticipación del contenido del mensaje.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702003,
+      "type": "PROCEDURE",
+      "index": 14,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-anticipation"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "4c416817-9b3c-5e16-a1ef-5adfa56dc968",
+      "text": "• Uso del lenguaje no verbal de su interlocutor\npara comprender el mensaje.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702004,
+      "type": "PROCEDURE",
+      "index": 15,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-nonverbal-reception"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+      "text": "•Inferencia del significado de palabras y\nexpresiones a partir del contexto y los\nconocimientos previos.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702005,
+      "type": "PROCEDURE",
+      "index": 16,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-inference"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "785fca6a-22a9-5590-abb4-39cb740265ab",
+      "text": "• Solicitud de ayuda y repetición.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702006,
+      "type": "PROCEDURE",
+      "index": 17,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-help"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "780f08cb-b2d2-5352-b62d-2f049b114877",
+      "text": "• Indicación de l o que se comprende.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702007,
+      "type": "PROCEDURE",
+      "index": 18,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado. El espaciado extraído «l o» se cotejó visualmente como «lo»; la indicación es interpretable, a diferencia del fragmento excluido de segundo.",
+      "providers": [
+        "ing-6-strategy-understanding"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "e55c149b-b970-5d33-800d-2dbb86a0e6ac",
+      "text": "Producción oral",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702008,
+      "type": "PROCEDURE",
+      "index": 19,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+      "text": "•Reproducción y ensayo de palabras,\nexpresiones y pautas de entonación.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702009,
+      "type": "PROCEDURE",
+      "index": 20,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-rehearsal"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "9f2a79f9-2be5-5114-aa94-bbbce29590ce",
+      "text": "• Identificación de la situación de comunicación.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702010,
+      "type": "PROCEDURE",
+      "index": 21,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-situation"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "f88bf6bb-cd67-5ae4-90e3-ad39a7642055",
+      "text": "• Establecimiento de la intención comunicativa.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702011,
+      "type": "PROCEDURE",
+      "index": 22,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-communicative-purpose"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "f0b56380-43c2-579f-bee5-0ee6034eb5d7",
+      "text": "• Planificación del mensaje.• Uso del lenguaje\nno verbal para comunicarse.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702012,
+      "type": "PROCEDURE",
+      "index": 23,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado. Une planificación del mensaje y lenguaje no verbal; son dos procedimientos y dos evidencias cuando se solicitan.",
+      "providers": [
+        "ing-6-strategy-planning",
+        "ing-6-strategy-nonverbal-production"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "707a3817-5d64-5f25-b699-d3d0071e0fac",
+      "text": "Comprensión escrita",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702013,
+      "type": "PROCEDURE",
+      "index": 24,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "16aec2f2-5578-5bcc-a9c2-130ce4189f7c",
+      "text": "• Establecimiento del propósito de la lectura.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702014,
+      "type": "PROCEDURE",
+      "index": 25,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-reading-purpose"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "78c7779b-f999-5266-ad5d-5c41f2591a88",
+      "text": "• Formulación de hipótesis a partir de los\nconocimientos previos y los elementos\nparatextuales.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702015,
+      "type": "PROCEDURE",
+      "index": 26,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-hypothesis"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+      "text": "• Inferencia del significado de palabras y\nexpresiones a partir de las pistas textuales y\nlos conocimientos previos.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702016,
+      "type": "PROCEDURE",
+      "index": 27,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-inference"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "9273a1a4-f734-5577-8225-ce617f22510b",
+      "text": "• Subrayado, anotación y búsqueda de palabras\nen el diccionario y otras herramientas de\nconsulta.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702017,
+      "type": "PROCEDURE",
+      "index": 28,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-annotation",
+        "ing-6-strategy-dictionary"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+      "text": "• Identificación de las ideas principales y\nsecundarias del texto.",
+      "pdfPage": 170,
+      "printedPage": "169",
+      "sourceOrder": 1702018,
+      "type": "PROCEDURE",
+      "index": 29,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-main-secondary"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "825c0d94-5d2d-5ab6-a98b-2ea1f7635eb2",
+      "text": "Producción escrita",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712000,
+      "type": "PROCEDURE",
+      "index": 30,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+      "text": "• Establecimiento del propósito del mensaje y del\ntipo de texto que se va a producir.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712001,
+      "type": "PROCEDURE",
+      "index": 31,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-communicative-purpose",
+        "ing-6-strategy-text-type"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "abda43a4-731b-5563-a2d6-dcdc4768cbaa",
+      "text": "• Planificación y organización del mensaje.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712002,
+      "type": "PROCEDURE",
+      "index": 32,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-planning"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "47f1cf57-22e3-5b71-b85c-8b9a3c62194a",
+      "text": "• Utilización de estrategias compensatorias, tales\ncomo uso de sinónimos y comodines.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712003,
+      "type": "PROCEDURE",
+      "index": 33,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-compensation"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "f3d1680d-107c-5da7-b1f6-9d4eda821015",
+      "text": "• Uso del diccionario y otras herramientas de\nconsulta.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712004,
+      "type": "PROCEDURE",
+      "index": 34,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-dictionary"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "79c2843e-dcfe-5451-a384-565b1228b126",
+      "text": "• Revisión del sentido y de la corrección del\nmensaje.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712005,
+      "type": "PROCEDURE",
+      "index": 35,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-revision"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "60ff6037-f453-5d17-aaba-c1fcb98209ff",
+      "text": "Otros:",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712006,
+      "type": "PROCEDURE",
+      "index": 36,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "891521ec-b002-58c5-9a0a-b623e751cd1a",
+      "text": "• Utilización de asociaciones mentales y de la\nacción.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712007,
+      "type": "PROCEDURE",
+      "index": 37,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-association"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "62f9d609-330b-5550-aa50-d9b6fbd6d400",
+      "text": "• Automotivación y control del nivel de ansiedad.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712008,
+      "type": "PROCEDURE",
+      "index": 38,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, creatividad/innovación como rasgo interno y humildad no se puntúan. Las relaciones y organización del discurso se valoran en evidencias solicitadas.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "b43db538-8d14-5c0e-b714-90bd0a648632",
+      "text": "• Búsqueda de oportunidades de uso de la\nlengua.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712009,
+      "type": "PROCEDURE",
+      "index": 39,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-practice"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "04e9d72e-71f5-54ae-83c3-8b05ef1d6f97",
+      "text": "Sociolingüísticos y socioculturales",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712010,
+      "type": "PROCEDURE",
+      "index": 40,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no una fila de puntuación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "b763c7d0-1e1f-5f1e-9b39-2c01bd4cf4ec",
+      "text": "• Utilización de las normas de cortesía más\nimportantes.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712011,
+      "type": "PROCEDURE",
+      "index": 41,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-courtesy"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "7f54c008-09a1-5879-a2bb-afc4411b93d2",
+      "text": "• Empleo de un registro neutro en la realización\nde las diversas funciones comunicativas.",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712012,
+      "type": "PROCEDURE",
+      "index": 42,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-neutral-register"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "06e3db1b-e2b3-593e-ba4d-dc75382e965d",
+      "text": "• Comparación entre los siguientes aspectos de la\nRepública Dominicana y de otros países:",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712013,
+      "type": "PROCEDURE",
+      "index": 43,
+      "decision": "CONNECTED_CULTURAL_COMPARISON_SCOPE_INTRODUCTION",
+      "note": "Introduce cinco registros con componentes culturales propios. Solo aspectos pedidos de ejemplos proporcionados, sin generalizaciones ni datos privados.",
+      "providers": [
+        "ing-6-strategy-cultural-comparison"
+      ],
+      "verification": "STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "eaefe880-3d30-5b19-82f7-7e2ce5792298",
+      "text": "• Costumbres y tradiciones",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712014,
+      "type": "PROCEDURE",
+      "index": 44,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "654d5388-27ea-5cff-8058-74cc064f9b0f",
+      "text": "• Creencias y valores",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712015,
+      "type": "PROCEDURE",
+      "index": 45,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "7e088ab5-aa9d-5a85-8702-844bba10ad78",
+      "text": "• Manifestaciones artísticas",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712016,
+      "type": "PROCEDURE",
+      "index": 46,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "37e46c90-47f6-5ea0-b64b-71101c83b9b3",
+      "text": "• Situaciones problemáticas que afectan a los\njóvenes",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712017,
+      "type": "PROCEDURE",
+      "index": 47,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "4d0b4313-1669-56cd-b9d4-5b49b5b7216c",
+      "text": "• Cuidado del medioambiente",
+      "pdfPage": 171,
+      "printedPage": "170",
+      "sourceOrder": 1712018,
+      "type": "PROCEDURE",
+      "index": 48,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable y solicitada. Sexto indica lo comprendido; no obliga a indicar dudas ni hereda escucha atenta como registro separado.",
+      "providers": [
+        "ing-6-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-six-strategies-genres.spec.ts"
+    },
+    {
+      "id": "fa9aff9e-47fc-51f3-b4ea-640a1778a184",
+      "text": "• Motivación para aprender inglés.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693000,
+      "type": "ATTITUDE_VALUE",
+      "index": 0,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, creatividad/innovación como rasgo interno y humildad no se puntúan. Las relaciones y organización del discurso se valoran en evidencias solicitadas.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "243ec95c-62f0-540c-aee5-8c42eae5144a",
+      "text": "• Uso de las TIC de manera responsable en las actividades\ninformativas, formativas y recreativas que se realizan.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693001,
+      "type": "ATTITUDE_VALUE",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condiciones explícitas de comunicación, con datos de la tarea. Flexibilidad se observa en ajustar el mensaje; proyecto de vida en comunicar la información indicada, sin juzgar decisiones íntimas.",
+      "providers": [
+        "ing-6-context-ethical-ict"
+      ],
+      "verification": "english-grade-six-context-composition.spec.ts"
+    },
+    {
+      "id": "e8334894-34ad-581a-8104-baab951b8dd2",
+      "text": "• Cortesía, asertividad y honestidad al interactuar con las\ndemás personas.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693002,
+      "type": "ATTITUDE_VALUE",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condiciones explícitas de comunicación, con datos de la tarea. Flexibilidad se observa en ajustar el mensaje; proyecto de vida en comunicar la información indicada, sin juzgar decisiones íntimas.",
+      "providers": [
+        "ing-6-strategy-courtesy",
+        "ing-6-context-faithful-information"
+      ],
+      "verification": "english-grade-six-context-composition.spec.ts"
+    },
+    {
+      "id": "8c3be90a-c20a-5f21-851e-a356051eec9e",
+      "text": "• Flexibilidad ante los cambios.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693003,
+      "type": "ATTITUDE_VALUE",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condiciones explícitas de comunicación, con datos de la tarea. Flexibilidad se observa en ajustar el mensaje; proyecto de vida en comunicar la información indicada, sin juzgar decisiones íntimas.",
+      "providers": [
+        "ing-6-context-adapted-message"
+      ],
+      "verification": "english-grade-six-context-composition.spec.ts"
+    },
+    {
+      "id": "a6f1d57e-8555-5333-ab0a-4d81bc109a43",
+      "text": "• Respeto por las costumbres y tradiciones propias y las\nde los demás países.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693004,
+      "type": "ATTITUDE_VALUE",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condiciones explícitas de comunicación, con datos de la tarea. Flexibilidad se observa en ajustar el mensaje; proyecto de vida en comunicar la información indicada, sin juzgar decisiones íntimas.",
+      "providers": [
+        "ing-6-context-respect-differences"
+      ],
+      "verification": "english-grade-six-context-composition.spec.ts"
+    },
+    {
+      "id": "83feb7b6-9cac-56f4-b4ac-56b0af6e7128",
+      "text": "• Respeto por las diferencias relativas a género, edad,\nocupación, nacionalidad y capacidades personales.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693005,
+      "type": "ATTITUDE_VALUE",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condiciones explícitas de comunicación, con datos de la tarea. Flexibilidad se observa en ajustar el mensaje; proyecto de vida en comunicar la información indicada, sin juzgar decisiones íntimas.",
+      "providers": [
+        "ing-6-context-respect-differences"
+      ],
+      "verification": "english-grade-six-context-composition.spec.ts"
+    },
+    {
+      "id": "51579c72-e88e-553d-909a-929d675dce4f",
+      "text": "• Iniciativa creatividad y capacidad de innovación en los\námbitos personal y académico.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693006,
+      "type": "ATTITUDE_VALUE",
+      "index": 6,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, creatividad/innovación como rasgo interno y humildad no se puntúan. Las relaciones y organización del discurso se valoran en evidencias solicitadas.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "36c05cb3-45eb-5126-ac79-69e68cd28627",
+      "text": "• Humildad al narrar sus experiencias.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693007,
+      "type": "ATTITUDE_VALUE",
+      "index": 7,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, creatividad/innovación como rasgo interno y humildad no se puntúan. Las relaciones y organización del discurso se valoran en evidencias solicitadas.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "7d9dbe1d-b8a2-5b27-9a70-acf652a9c8b0",
+      "text": "• Cuidado del medio ambiente y de los recursos\nnaturales.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693008,
+      "type": "ATTITUDE_VALUE",
+      "index": 8,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condiciones explícitas de comunicación, con datos de la tarea. Flexibilidad se observa en ajustar el mensaje; proyecto de vida en comunicar la información indicada, sin juzgar decisiones íntimas.",
+      "providers": [
+        "ing-6-context-care"
+      ],
+      "verification": "english-grade-six-context-composition.spec.ts"
+    },
+    {
+      "id": "197ac3d6-0eec-5964-97ee-121047eab917",
+      "text": "• Trabajo en equipo de forma eficaz y eficiente.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693009,
+      "type": "ATTITUDE_VALUE",
+      "index": 9,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condiciones explícitas de comunicación, con datos de la tarea. Flexibilidad se observa en ajustar el mensaje; proyecto de vida en comunicar la información indicada, sin juzgar decisiones íntimas.",
+      "providers": [
+        "ing-6-context-team-contribution"
+      ],
+      "verification": "english-grade-six-context-composition.spec.ts"
+    },
+    {
+      "id": "64b6e281-294e-5885-9194-cac7e5a2e36f",
+      "text": "• Respeto a las normas de convivencia y de organización\nestablecidas en los diferentes espacios en que se\ndesenvuelve.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693010,
+      "type": "ATTITUDE_VALUE",
+      "index": 10,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condiciones explícitas de comunicación, con datos de la tarea. Flexibilidad se observa en ajustar el mensaje; proyecto de vida en comunicar la información indicada, sin juzgar decisiones íntimas.",
+      "providers": [
+        "ing-6-context-agreed-norms"
+      ],
+      "verification": "english-grade-six-context-composition.spec.ts"
+    },
+    {
+      "id": "2fd76194-5f9e-5ae9-b68a-c9748a712b47",
+      "text": "• Sentido crítico ante las informaciones que recibe.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693011,
+      "type": "ATTITUDE_VALUE",
+      "index": 11,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condiciones explícitas de comunicación, con datos de la tarea. Flexibilidad se observa en ajustar el mensaje; proyecto de vida en comunicar la información indicada, sin juzgar decisiones íntimas.",
+      "providers": [
+        "ing-6-context-critical-information"
+      ],
+      "verification": "english-grade-six-context-composition.spec.ts"
+    },
+    {
+      "id": "bf05760d-95df-5ea2-8a8a-e343b2de71f5",
+      "text": "• Definición de proyecto personal de vida.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1693012,
+      "type": "ATTITUDE_VALUE",
+      "index": 12,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condiciones explícitas de comunicación, con datos de la tarea. Flexibilidad se observa en ajustar el mensaje; proyecto de vida en comunicar la información indicada, sin juzgar decisiones íntimas.",
+      "providers": [
+        "ing-6-context-life-project"
+      ],
+      "verification": "english-grade-six-context-composition.spec.ts"
+    },
+    {
+      "id": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+      "text": "Se comunica en el idioma inglés de forma comprensible y con un discurso sostenido en el que, hipotetiza,\ncompara épocas, justifica su criterio y costumbres y expresa experiencias, en distintas situaciones de\ncomunicación sobre temas cotidianos, culturales o abstractos de su interés.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1696000,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 0,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en acciones y datos solicitados; no una fila genérica ni juicio de personalidad.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "755d48a3-f490-5111-ba13-c994ef5daa08",
+      "text": "Se comunica en el idioma inglés utilizando una estructura lógica y una presentación creativa del discurso para\ntratar temas abstractos o culturales de su interés, presentando informaciones, experiencias, razonamientos, y\njustificación de opinión de forma detallada y empleando estrategias de desempeño comunicativo.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1696001,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en acciones y datos solicitados; no una fila genérica ni juicio de personalidad.",
+      "providers": [
+        "ing-6-cultural-ideas",
+        "ing-6-reasoning",
+        "ing-6-written",
+        "ing-6-intelligibility"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "c4373871-043d-56ba-9977-c086b52f10c9",
+      "text": "Describe problemas y situaciones de su entorno inmediato o de temas que le son familiares, planteando\nrazonamientos e hipótesis, puntos de vista y acciones para su solución de forma comprensible, sencilla y\ndetallada en inglés oral y escrito.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1696002,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en acciones y datos solicitados; no una fila genérica ni juicio de personalidad.",
+      "providers": [
+        "ing-6-context-problem-description",
+        "ing-6-context-problem-solution",
+        "ing-6-reasoning",
+        "ing-6-past-hypothesis"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+      "text": "Se relaciona con las demás personas con cortesía, respeto y valoración crítica de las diferencias individuales y la\nidentidad social y cultural local y global, al interactuar en el idioma inglés, de forma oral y escrita.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1696003,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en acciones y datos solicitados; no una fila genérica ni juicio de personalidad.",
+      "providers": [
+        "ing-6-strategy-courtesy",
+        "ing-6-context-respect-differences",
+        "ing-6-context-critical-judgment"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "e5f1071b-9392-58f2-9e26-0278c619f708",
+      "text": "Se comunica en el idioma inglés de forma comprensible para expresar razonamientos, explicaciones y justificar\nsus aseveraciones sobre asuntos científicos y tecnológicos de su utilidad, en distintas situaciones cotidianas de\ncomunicación.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1696004,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en acciones y datos solicitados; no una fila genérica ni juicio de personalidad.",
+      "providers": [
+        "ing-6-explanations",
+        "ing-6-reasoning",
+        "ing-6-context-technical-language"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "4324f709-2832-5418-985a-b883a5b838b6",
+      "text": "Justifica acciones y puntos de vista en interacciones sencillas y comprensibles en inglés, ofreciendo información,\nrazonamientos y explicaciones relativas a estilos de vida saludables y cuidado del medioambiente, en distintas\nsituaciones de comunicación.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1696005,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en acciones y datos solicitados; no una fila genérica ni juicio de personalidad.",
+      "providers": [
+        "ing-6-reasoning",
+        "ing-6-context-care",
+        "ing-6-context-care-reasons",
+        "ing-6-context-care-choice"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+      "text": "Se comunica en el idioma inglés, con cortesía, honestidad y actitud de respeto, al compartir informaciones,\nexperiencias, razonamientos y puntos de vista.",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1696006,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en acciones y datos solicitados; no una fila genérica ni juicio de personalidad.",
+      "providers": [
+        "ing-6-strategy-courtesy",
+        "ing-6-context-faithful-information",
+        "ing-6-detailed-narrative",
+        "ing-6-reasoning"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "248e85f3-e71e-5ca7-81f8-a9f10e7061b7",
+      "text": "Comunicativa",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1695000,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 0,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "0b6b4a47-9477-5ca0-8f42-53bccd22ecc8",
+      "text": "Pensamiento Lógico,\nCreativo y Crítico",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1695001,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 1,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "e2785622-6eb8-5d0e-ab11-6087788d9771",
+      "text": "Resolución de Problemas",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1695002,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 2,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "307bd052-a26a-5d0a-8737-9988955d0969",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1695003,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 3,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "f9bdb577-69cc-5b7f-b722-1b2216e6fcf0",
+      "text": "Científicay Tecnológica",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1695004,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 4,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ed719bc4-5302-55b6-bacf-df7ab2ea4d7a",
+      "text": "Ambientaly de la Salud",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1695005,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 5,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "15ab6b51-8889-5c92-a566-3c4832235c12",
+      "text": "Desarrollo Personal y\nEspiritual",
+      "pdfPage": 169,
+      "printedPage": "168",
+      "sourceOrder": 1695006,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 6,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "a146e080-2a5f-522b-8f94-535bc1e4522e",
+      "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir del mensaje general y los detalles específicos de textos orales y\nescritos en lengua estándar que contienen información variada, experiencias, puntos de vista y razonamientos sobre la vida cotidiana,\ntemas laborales, culturales y abstractos de su interés, aunque en ocasiones requiera releer o que le repitan.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744000,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 0,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-past-present",
+        "ing-6-cultural-ideas",
+        "ing-6-ask-reasoning",
+        "ing-6-reasoning",
+        "ing-6-ask-explanations",
+        "ing-6-explanations",
+        "ing-6-habitual-state",
+        "ing-6-adaptation",
+        "ing-6-past-hypothesis",
+        "ing-6-job-interview",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "6cf24ed3-879b-5873-89fe-1f2ba72f46d2",
+      "text": "• Produce textos orales y escritos de estructura sencilla con detalles suficientes, en los que expresa informaciones, necesidades, puntos\nde vista, razonamientos y experiencias propias y de otras personas en situaciones de comunicación variadas, de forma sostenida en lo\noral y con algunos errores que no impiden la comprensión en lo escrito.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744001,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-written",
+        "ing-6-intelligibility"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "5643d0db-e0d5-5153-8c56-10327798a016",
+      "text": "• Interactúa de forma comprensible en distintas situaciones cotidianas de comunicación oral y escrita, sosteniendo el intercambio\nmediante estrategias de compensación y ejecución, para compartir informaciones, necesidades, experiencias, puntos de vista,\nrazonamientos propios y de otras personas dentro y fuera de su contexto inmediato.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744002,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-interaction",
+        "ing-6-strategy-compensation"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "12867625-d0d6-5744-bef7-79c003e33c26",
+      "text": "• Utiliza el pensamiento lógico•verbal para responder de forma adecuada a preguntas e indicaciones, a partir del mensaje general y\ndetalles específicos de textos orales y escritos sencillos, pero con extensión considerable, demostrando la capacidad para analizar de\nforma efectiva la información, razones y puntos de vista presentados.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744003,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-context-critical-information",
+        "ing-6-reasoning"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "f8cb7519-1bd0-5272-893f-a4ca21f22c2a",
+      "text": "• Produce textos escritos y discursos orales, utilizando elementos lógico•verbales básicos de forma efectiva y creativa para presentar\ninformación y contrastar puntos de vista, elementos, razonamientos e ideas en temas culturales de su interés.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744004,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-cultural-ideas",
+        "ing-6-past-present",
+        "ing-6-reasoning"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "34d8121d-1375-55fc-98b1-9392ee86e314",
+      "text": "• Interactúa de forma oral o escrita, utilizando los elementos lógico•verbales necesarios para estructurar, presentar y mantener el\nintercambio de forma creativa, compartiendo ideas, experiencias, razonamientos de forma detallada en aspectos de la vida diaria en\ntemas culturales que sean de su interés.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744005,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-interaction",
+        "ing-6-reasoning",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "4bdf57f0-a4c6-5f10-96c8-c080eaef71f1",
+      "text": "• Localiza y estructura información a partir de lectura de textos orales y escritos, sobre descripción de problemas relativos a su entorno\ncotidiano y temas que le son familiares, visualizando o ejecutando su resolución mediante la contraposición de puntos de vista,\nrazonamientos, planes, instrucciones, y experiencias propias y de otras personas.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744006,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-context-problem-information",
+        "ing-6-context-problem-solution"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "a35928e6-c0d5-5b4f-9a33-9f614c440648",
+      "text": "• Produce textos sencillos orales y escritos que describen y plantean problemas de su entorno inmediato y temas de su interés, aportando\nposibles soluciones de manera clara y comprensible, al justificar acciones y puntos de vista de manera adecuada.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744007,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 7,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-context-problem-description",
+        "ing-6-context-problem-solution",
+        "ing-6-reasoning"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+      "text": "• Interactúa de forma sostenida en inglés oral y escrito, sobre problemas y situaciones que le son familiares y temas culturales de su\ninterés, aclarando detalles y razonamientos que conducen a la resolución.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744008,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 8,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-interaction",
+        "ing-6-ask-explanations",
+        "ing-6-explanations"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "10443c10-9274-58a7-8b37-8c5f01702ec6",
+      "text": "• Comprende y valora las diferencias individuales y la identidad social y cultural propia y de otras personas, identificando elementos\ndetallados de varias perspectivas y razonamientos al interactuar.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744009,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 9,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-strategy-cultural-comparison",
+        "ing-6-context-respect-differences"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "5df905a8-f5cb-5e9a-b32d-0836713087db",
+      "text": "• Se expresa en forma oral y escrita valorando las diferencias y similitudes individuales y la identidad social y cultural propia y de otros\npaíses.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744010,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 10,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-strategy-cultural-comparison",
+        "ing-6-context-respect-differences"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+      "text": "• Emite y reflexiona sobre juicios de valor ante hechos de injusticia, discriminación e inequidad, mediante un discurso oral o texto escrito\nsencillo, pero comprensible.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744011,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 11,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-context-critical-judgment"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "f2df66d3-0294-57fe-89e4-3ed4d4c09a69",
+      "text": "• Identifica y utiliza información relevante, y es capaz de organizarla de forma adecuada para responder a preguntas e indicaciones\nsobre temas científicos y tecnológicos de forma presencial o virtual, utilizando un discurso sencillo.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744012,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 12,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-research",
+        "ing-6-context-source-information"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "87f687f7-824d-5dd3-bd19-11461c538356",
+      "text": "• Produce textos orales y escritos en inglés de forma estructurada y con un vocabulario técnico sencillo y comprensible sobre temas\ncientíficos y tecnológicos inherentes a su vida cotidiana o temas de su interés, compartiendo información en formato presencial,\ndigital o virtual.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744013,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 13,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-context-technical-language",
+        "ing-6-written",
+        "ing-6-intelligibility"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "8969f39a-e32c-52af-b08d-e146883feec2",
+      "text": "• Interactúa de forma sostenida en lo oral y con suficiente detalle en lo escrito con el propósito de opinar, explicar y justificar informaciones\ny puntos de vista sobre temas de carácter científico y tecnológico en espacios presenciales, digitales o virtuales.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744014,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 14,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-reasoning",
+        "ing-6-explanations",
+        "ing-6-context-technical-language",
+        "ing-6-interaction"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "2aa8a929-5a98-5f30-8432-2b1d7064cb7e",
+      "text": "• Valora los estilos de vida saludables y el cuidado del medioambiente, expuestos en el mensaje y los detalles de discursos orales o\nescritos de considerable extensión.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744015,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 15,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-context-care"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "32ce825e-6b83-55a9-95d2-a0b205df4c51",
+      "text": "• Muestra valoración por estilos de vida saludables y cuidado del medioambiente, justificando acciones y puntos de vista favorables en\nun discurso sencillo oral o escrito.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744016,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 16,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-context-care-reasons",
+        "ing-6-reasoning"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+      "text": "• Identifica y valora opciones que impactan el cuidado de la salud y el medioambiente, justificando acciones y razones de forma\ncomprensible en situaciones de interacción en inglés.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744017,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 17,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-context-care-choice",
+        "ing-6-context-care-reasons"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "326a4684-8cff-5b1f-abdf-5390c720ddae",
+      "text": "• Demuestra una comprensión justa de los deseos, aspiraciones, planes y experiencias personales propias y de otras personas en un\nplano de aceptación, cortesía, honestidad y respeto.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744018,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 18,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-context-wishes",
+        "ing-6-context-plans",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "ebb274cb-560b-5cd8-a268-949c33ede4c9",
+      "text": "• Exhibe una actitud y conducta cortés, respetuosa al expresar y justificar información, razonamientos y perspectivas.",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744019,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 19,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-strategy-courtesy",
+        "ing-6-reasoning"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    },
+    {
+      "id": "b8241bf8-4393-5447-b27e-832ac3923c7c",
+      "text": "• Interactúa de forma cortés, honesta y respetuosa al tratar informaciones, detalles de costumbres y experiencias pasadas, justificando\npuntos de vista propios y de otras personas",
+      "pdfPage": 174,
+      "printedPage": "173",
+      "sourceOrder": 1744020,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 20,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Evidencias de sexto, con juicio sustentado en hechos, relaciones, lenguaje técnico proporcionado y efectos dados; no evaluar creencias íntimas, elegibilidad laboral ni salud personal.",
+      "providers": [
+        "ing-6-strategy-courtesy",
+        "ing-6-context-faithful-information",
+        "ing-6-reasoning",
+        "ing-6-detailed-narrative"
+      ],
+      "verification": "SIXTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION"
+    }
+  ],
+  "applicationEvidence": [
+    "evidencias/ingles-6-integral-servicio.json",
+    "evidencias/ingles-6-seguimientos-servicio-63.json",
+    "evidencias/ingles-6-final-flujo-navegador.json",
+    "evidencias/ingles-6-final-persistencia.json",
+    "evidencias/lengua-historicos-evaluation-2026.63.json",
+    "ingles-6-ejemplos-finales.md",
+    "ingles-6-informe-final.md"
+  ]
+}

@@ -1,5 +1,5 @@
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
-type Genre={id:string;match:string;title:string;data:string;production:string;error:string;existingFunction?:string}
+export type Genre={id:string;match:string;title:string;data:string;production:string;error:string;existingFunction?:string}
 const genre=(id:string,match:string,title:string,data:string,production:string,error:string,existingFunction?:string):Genre=>({id,match,title,data,production,error,...(existingFunction?{existingFunction}:{})})
 /** Discursive examples in PDF134,136. Criteria address basic communication, not professional genre mastery. */
 export const englishGradeOneGenres:Genre[]=[
@@ -12,7 +12,7 @@ export const englishGradeOneGenres:Genre[]=[
  genre('notice','avisos?|notices?','Información del aviso','la información del aviso que permite comprender lo comunicado','Comunica en inglés la información del aviso necesaria para reconocer la situación anunciada.','cambia lo anunciado o a quién se dirige el aviso'),
  genre('poster','afiches?|carteles?|posters?','Mensaje del afiche','el mensaje central del afiche y la información solicitada','Dispone en inglés el mensaje central del afiche de forma legible y relacionada con su propósito comunicativo.','el mensaje dispuesto comunica un propósito diferente del solicitado'),
  genre('message','mensajes?|messages?','Propósito del mensaje','el propósito del mensaje y los datos solicitados para comprenderlo','Comunica en inglés las ideas necesarias para cumplir el propósito del mensaje en la situación acordada.','el contenido cambia la intención o el destinatario del mensaje'),
- genre('email','correos? electronicos?|e mails?|emails?','Comunicación por correo electrónico','el destinatario y propósito del correo y su información solicitada','Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.','dirige a otra persona información que no corresponde al propósito del correo'),
+ genre('email','correos?(?: electronicos?)?|e mails?|emails?','Comunicación por correo electrónico','el destinatario y propósito del correo y su información solicitada','Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado.','dirige a otra persona información que no corresponde al propósito del correo'),
  genre('cv','curriculum vitae|curriculum|cv','Perfil del currículum vitae','los datos de perfil solicitados en el currículum vitae','Organiza en inglés los datos de perfil solicitados de una persona real o ficticia para el currículum vitae acordado.','atribuye datos de perfil a otra persona o los ubica en un apartado diferente'),
  genre('letter','cartas?|letters?','Comunicación de la carta','el destinatario y propósito de la carta y la información solicitada','Relaciona el destinatario y propósito de la carta con un mensaje breve en inglés que permite comprender lo comunicado.','el mensaje se dirige a un destinatario o propósito diferente del acordado'),
  genre('form','formularios?|forms?','Información del formulario','los campos solicitados del formulario y los datos que contienen o requieren','Completa en inglés los campos solicitados con datos pertinentes de la persona o situación real o ficticia indicada.','sitúa los datos en campos que piden una información diferente'),
@@ -34,15 +34,53 @@ export const englishGradeOneGenres:Genre[]=[
  genre('audiovisual','produccion(?:es)? audiovisual(?:es)?|videos?','Mensaje de la producción audiovisual','la relación entre los recursos seleccionados y el mensaje audiovisual','Relaciona los recursos seleccionados con un mensaje en inglés comprensible para el destinatario acordado.','los recursos comunican ideas incompatibles con el mensaje solicitado'),
 ]
 
-export const requestedEnglishGenres=(text:string)=>englishGradeOneGenres.filter(g=>new RegExp(`\\b(?:${g.match})\\b`).test(text))
+export const requestedEnglishGenres=(text:string,genres=englishGradeOneGenres)=>genres.filter(g=>new RegExp(`\\b(?:${g.match})\\b`).test(text))
 
-export function englishGenreCriteria(text:string,mode:string,existing:ContextualTopicCriterion[]):ContextualTopicCriterion[]{
+/** Named data can be checked separately; correspondence, sequence and argument remain one performance. */
+function checklistGenreParts(genre:Genre,text:string,source:string,receptive:boolean):{parts?:ContextualTopicCriterion['checklistParts'];data:string}|undefined{
+ if(!receptive&&!['cv','form','business-card'].includes(genre.id))return undefined
+ const evidence=receptive?text.match(/\b(?:identific\w*|localiz\w*|reconoc\w*|extraer\w*)\s+([^.;]+)/)?.[1]
+  :text.match(/\b(?:inclu\w*|complet\w*|consign\w*|con)\s+([^.;]+)/)?.[1]
+ if(!evidence||/\b(?:relacion\w*|correspond\w*|compar\w*)\b/.test(evidence))return undefined
+ const fields:Record<string,[string,string,string][]>={
+  cv:[['experience','experiencia','la experiencia'],['capacities','capacidades|competencias','las capacidades'],['education','formacion|educacion','la formación']],
+  'business-card':[['name','nombre','el nombre'],['occupation','ocupacion|profesion','la ocupación'],['phone','telefono','el teléfono'],['email','correo electronico|email','el correo electrónico']],
+  form:[['name','nombre','el nombre'],['age','edad','la edad'],['phone','telefono','el teléfono'],['address','direccion','la dirección'],['email','correo electronico|email','el correo electrónico']],
+  invoice:[['issuer','emisor','el emisor'],['date','fecha','la fecha'],['total','total','el total']],
+  email:[['recipient','destinatarios?','el destinatario'],['purpose','proposito|intencion','el propósito']],
+  letter:[['recipient','destinatarios?','el destinatario'],['purpose','proposito|intencion','el propósito']],
+ }
+ const selected=(fields[genre.id]??[]).filter(([,pattern])=>new RegExp(`\\b(?:${pattern})\\b`).test(evidence))
+ if(!selected.length)return undefined
+ const positions=selected.map(([,pattern])=>evidence.match(new RegExp(`\\b(?:${pattern})\\b`))!)
+ const start=Math.min(...positions.map(m=>m.index!)),end=Math.max(...positions.map(m=>m.index!+m[0].length))
+ const reference=genre.id==='cv'?'del perfil indicado en el currículum vitae':genre.id==='form'?'del formulario':genre.id==='invoice'?'de la factura':genre.id==='letter'?'de la carta':genre.id==='email'?'del correo':'de la tarjeta de presentación'
+ if(/\bo\b/.test(evidence.slice(start,end)))return {data:`el dato solicitado de la alternativa elegida ${reference}`}
+ const labels=selected.map(([, ,label])=>label),data=(labels.length===1?labels[0]:labels.slice(0,-1).join(', ')+' y '+labels.at(-1))+' '+reference
+ const parts=selected.map(([key,,label])=>{
+  const target=`${label} ${reference}`
+  const levels:ContextualTopicCriterion['progressionLevels']=[
+   receptive?`Identifica ${target} en el ${source} en inglés.`:`Incluye en inglés ${target}, con datos de la persona o personaje indicado.`,
+   `Reconoce ${target}; una referencia necesita precisión.`,
+   `Recupera una parte de la información, pero deja sin identificar por completo ${target}.`,
+   `Atribuye ${label} a un referente diferente del indicado en la fuente.`,
+   `No aporta información reconocible para identificar ${target}.`,
+  ]
+  return {key,observable:levels[0],progressionLevels:levels}
+ })
+ return {data,parts}
+}
+
+export function englishGenreCriteria(text:string,mode:string,existing:ContextualTopicCriterion[],scope='ing-1',genres=englishGradeOneGenres,preserveRequestedData=false):ContextualTopicCriterion[]{
  const receptive=mode==='reading'||mode==='listening',source=mode==='listening'?'mensaje escuchado':'texto disponible'
- return requestedEnglishGenres(text).filter(g=>{
-  if(g.existingFunction&&existing.some(c=>c.templateId===`ing-1-${g.existingFunction}`))return false
+ return requestedEnglishGenres(text,genres).filter(g=>{
+  if(g.existingFunction&&existing.some(c=>c.templateId===`${scope}-${g.existingFunction}`))return false
   if(existing.length&&['message','conversation','schedule'].includes(g.id))return false
   // A text used to inspect a requested form or strategy is a source, not another deliverable.
-  if(receptive&&existing.some(c=>/ing-1-(?:feature|lexicon|strategy)-/.test(c.templateId)))return false
+  if(receptive&&existing.some(c=>new RegExp(`${scope}-(?:feature|lexicon|strategy)-`).test(c.templateId))){
+   const explicitData=preserveRequestedData&&/\b(?:identific\w*|localiz\w*|reconoc\w*)\b.*\b(?:destinatario|proposito|informacion|datos|actividades|horas?|precio|lugares?|acontecimientos|personajes)\b/.test(text)
+   if(!explicitData)return false
+  }
   return true
  }).map(original=>{
   let g=original
@@ -58,6 +96,8 @@ export function englishGenreCriteria(text:string,mode:string,existing:Contextual
     g={...g,data:`${recipient?'el destinatario':'el propósito'} ${sourceName}`,error:recipient?'atribuye el mensaje a un destinatario distinto del indicado':'atribuye al mensaje una intención contraria a la comunicada'}
    }
   }
+  const discrete=checklistGenreParts(g,text,source,receptive)
+  if(discrete)g={...g,data:discrete.data,...(!receptive?{production:`Incluye en inglés ${discrete.data}, con datos de la persona o personaje indicado.`}:{})}
   const levels:ContextualTopicCriterion['progressionLevels']=receptive?[
    `Identifica ${g.data} en el ${source} en inglés.`,
    `Reconoce ${g.data}; una referencia aislada necesita precisión.`,
@@ -71,6 +111,7 @@ export function englishGenreCriteria(text:string,mode:string,existing:Contextual
    `La producción cambia el sentido: ${g.error}.`,
    `No aporta una producción reconocible que comunique ${g.data}.`,
   ]
-  return {templateId:`ing-1-genre-${g.id}`,title:g.title,observable:levels[0],weight:4,progressionLevels:levels}
+  return {templateId:`${scope}-genre-${g.id}`,title:g.title,observable:levels[0],weight:4,progressionLevels:levels,
+   ...(discrete?.parts?{checklistParts:discrete.parts}:{})}
  })
 }

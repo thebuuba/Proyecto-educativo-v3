@@ -1,0 +1,1090 @@
+{
+  "verifiedAt": "2026-10-15T02:32:21.511Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "505566168ffdc2565ee69860928b6d7c31c555b1",
+      "dirty": false,
+      "startedAt": "2026-10-15T02:31:28.103Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.56"
+    }
+  },
+  "results": [
+    {
+      "grade": 3,
+      "input": {
+        "sectionSubjectId": "ff5ee0a7-9d3b-45db-b044-fc7a80151988",
+        "activityTitle": "Actividad",
+        "description": "Compararán en inglés las leyendas de los ejemplos proporcionados de República Dominicana y otros países.",
+        "maxScore": 20,
+        "preferredInstrumentType": "rubrica",
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.56",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "COMPARISON",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "cc482480-0f08-5657-98aa-1afd28ecfa1a",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.56:cc482480-0f08-5657-98aa-1afd28ecfa1a:ing-3-strategy-cultural-comparison:0",
+            "templateId": "ing-3-strategy-cultural-comparison",
+            "title": "Comparación cultural con ejemplos",
+            "description": "La comparación cultural relaciona las leyendas de los ejemplos de República Dominicana y del otro contexto mediante los ejemplos disponibles, sin generalizarlos a todas las personas.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La comparación cultural relaciona las leyendas de los ejemplos de República Dominicana y del otro contexto mediante los ejemplos disponibles, sin generalizarlos a todas las personas.",
+              "Relaciona los aspectos principales de ambos contextos; un ejemplo necesita precisión.",
+              "Menciona ejemplos de los contextos, pero no establece su semejanza o diferencia.",
+              "La comparación contradice los ejemplos o atribuye a todas las personas un rasgo de un caso particular.",
+              "No aporta una comparación reconocible entre las leyendas de los ejemplos de ambos contextos."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La comparación cultural relaciona las leyendas de los ejemplos de República Dominicana y del otro contexto mediante los ejemplos disponibles, sin generalizarlos a todas las personas.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los aspectos principales de ambos contextos; un ejemplo necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona ejemplos de los contextos, pero no establece su semejanza o diferencia.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una comparación reconocible entre las leyendas de los ejemplos de ambos contextos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-3",
+            "mode=comparison",
+            "functions=",
+            "coverage=DEFINED_COMMON_THIRD_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "b898ace9-300c-5498-948f-929b79038909",
+              "score": 61,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "b0bcbb3a-688d-5e10-a644-f7b19f0d3a1f",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bbeb9246-df88-5947-8333-86dac6c376f9",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0ca6f971-18ec-58c6-94a6-ff79a549bda8",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "106ef1b0-9f50-5cdf-8088-5bef095bd133",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d27b6745-09f1-5120-91d1-b4cb3269ca50",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e74ebf96-3578-5672-91d2-ab800e74146b",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eba6b3e4-dde8-5bc6-92c3-83cf2a2ec320",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ee4aaec7-f14a-5638-8c1a-6c3438b6bfd9",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8db85925-face-58a2-a91d-86a668067ba4",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "2f682e7d-240d-5666-b0cc-34a472aac822",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "35521798-90f6-5a93-954c-f4870a8bbe7c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4eac0e2b-3973-5369-b6f8-b8c30f0f91b9",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "64ed485d-4b0d-5de5-9ff6-84ec98f28899",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "849382c6-8065-5603-94d9-df5d2760cfb2",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8e200070-6122-514d-9cae-afcd24551ce7",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a91cf731-62cc-5bfd-8e48-20e866ecb6fd",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cfd1dc4d-8198-5f95-84c9-9d038083105d",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dbf38c34-d2b2-5614-bbff-971599d6126b",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f7cef052-dbe3-5d64-99e9-1d3c864113a6",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4ab5d6c0-dd9b-5b30-91a9-20b8adc8d6f8",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e7813c73-bc64-5648-abc9-3c8811e96501",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eedd0574-5c26-55bf-97b8-e9a5bfe8bf12",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "grade": 3,
+      "input": {
+        "sectionSubjectId": "ff5ee0a7-9d3b-45db-b044-fc7a80151988",
+        "activityTitle": "Actividad",
+        "description": "Compararán en inglés las advertencias de los ejemplos proporcionados de República Dominicana y otros países.",
+        "maxScore": 20,
+        "preferredInstrumentType": "rubrica",
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.56",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "COMPARISON",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "cc482480-0f08-5657-98aa-1afd28ecfa1a",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.56:cc482480-0f08-5657-98aa-1afd28ecfa1a:ing-3-strategy-cultural-comparison:0",
+            "templateId": "ing-3-strategy-cultural-comparison",
+            "title": "Comparación cultural con ejemplos",
+            "description": "La comparación cultural relaciona las advertencias de los ejemplos de República Dominicana y del otro contexto mediante los ejemplos disponibles, sin generalizarlos a todas las personas.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La comparación cultural relaciona las advertencias de los ejemplos de República Dominicana y del otro contexto mediante los ejemplos disponibles, sin generalizarlos a todas las personas.",
+              "Relaciona los aspectos principales de ambos contextos; un ejemplo necesita precisión.",
+              "Menciona ejemplos de los contextos, pero no establece su semejanza o diferencia.",
+              "La comparación contradice los ejemplos o atribuye a todas las personas un rasgo de un caso particular.",
+              "No aporta una comparación reconocible entre las advertencias de los ejemplos de ambos contextos."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La comparación cultural relaciona las advertencias de los ejemplos de República Dominicana y del otro contexto mediante los ejemplos disponibles, sin generalizarlos a todas las personas.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los aspectos principales de ambos contextos; un ejemplo necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona ejemplos de los contextos, pero no establece su semejanza o diferencia.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una comparación reconocible entre las advertencias de los ejemplos de ambos contextos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-3",
+            "mode=comparison",
+            "functions=",
+            "coverage=DEFINED_COMMON_THIRD_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "b898ace9-300c-5498-948f-929b79038909",
+              "score": 61,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "bbeb9246-df88-5947-8333-86dac6c376f9",
+              "score": 56,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b0bcbb3a-688d-5e10-a644-f7b19f0d3a1f",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0ca6f971-18ec-58c6-94a6-ff79a549bda8",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d27b6745-09f1-5120-91d1-b4cb3269ca50",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ee4aaec7-f14a-5638-8c1a-6c3438b6bfd9",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8e200070-6122-514d-9cae-afcd24551ce7",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "106ef1b0-9f50-5cdf-8088-5bef095bd133",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e74ebf96-3578-5672-91d2-ab800e74146b",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eba6b3e4-dde8-5bc6-92c3-83cf2a2ec320",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8db85925-face-58a2-a91d-86a668067ba4",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "2f682e7d-240d-5666-b0cc-34a472aac822",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3544e2c1-ffb5-5fcc-bf13-cdabcaac2e8c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "35521798-90f6-5a93-954c-f4870a8bbe7c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4eac0e2b-3973-5369-b6f8-b8c30f0f91b9",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "849382c6-8065-5603-94d9-df5d2760cfb2",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a91cf731-62cc-5bfd-8e48-20e866ecb6fd",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "cfd1dc4d-8198-5f95-84c9-9d038083105d",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "dbf38c34-d2b2-5614-bbff-971599d6126b",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f7cef052-dbe3-5d64-99e9-1d3c864113a6",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f8e8f502-adba-560f-8dd6-d4a12d50d0dc",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4ab5d6c0-dd9b-5b30-91a9-20b8adc8d6f8",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e7813c73-bc64-5648-abc9-3c8811e96501",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eedd0574-5c26-55bf-97b8-e9a5bfe8bf12",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "grade": 4,
+      "input": {
+        "sectionSubjectId": "3dc78449-550c-4773-bbfb-2fbc9c23af76",
+        "activityTitle": "Actividad",
+        "description": "Compararán en inglés las tradiciones de los ejemplos proporcionados de República Dominicana y otros países, que incluyen celebraciones.",
+        "maxScore": 20,
+        "preferredInstrumentType": "rubrica",
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.56",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "COMPARISON",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.56:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-strategy-cultural-comparison:0",
+            "templateId": "ing-4-strategy-cultural-comparison",
+            "title": "Comparación cultural con ejemplos",
+            "description": "La comparación cultural relaciona las tradiciones de los ejemplos proporcionados de República Dominicana y del otro contexto mediante los ejemplos disponibles, sin generalizarlos a todas las personas.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La comparación cultural relaciona las tradiciones de los ejemplos proporcionados de República Dominicana y del otro contexto mediante los ejemplos disponibles, sin generalizarlos a todas las personas.",
+              "Relaciona los aspectos principales de ambos contextos; un ejemplo necesita precisión.",
+              "Menciona ejemplos de los contextos, pero no establece su semejanza o diferencia.",
+              "La comparación contradice los ejemplos o atribuye a todas las personas un rasgo de un caso particular.",
+              "No aporta una comparación reconocible entre las tradiciones de los ejemplos proporcionados de ambos contextos."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La comparación cultural relaciona las tradiciones de los ejemplos proporcionados de República Dominicana y del otro contexto mediante los ejemplos disponibles, sin generalizarlos a todas las personas.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los aspectos principales de ambos contextos; un ejemplo necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona ejemplos de los contextos, pero no establece su semejanza o diferencia.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una comparación reconocible entre las tradiciones de los ejemplos proporcionados de ambos contextos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-4",
+            "mode=comparison",
+            "functions=",
+            "coverage=COMMON_FOURTH_GRADE_PROVIDERS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "37d6179b-a8a1-50d7-9e5c-98b1484806d5",
+              "score": 61,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "a0938bae-4c46-55e0-80bc-cc2b449d8358",
+              "score": 43,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c3ff652b-9259-592e-ad17-b6ab8cd2efc5",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f24652d1-8fd4-53cc-81eb-229acc24ea61",
+              "score": 33,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "623f2f4e-5006-5b7e-8484-f6b092dfc450",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b0bf3d5e-0f1a-5b63-92a3-2c9cd85ea588",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d0257dc9-8898-5537-9c4e-8dd44c9c0bb0",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f0a087c4-ab44-5283-95cb-9a7b01a3947a",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "fd6fd47e-0a8e-5901-8190-073633362b1f",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0f58e490-c64a-5f6b-a5dd-be0fcf39e51e",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2f41887f-d6d1-58f3-98a4-406c6dec9158",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "53675368-3ba3-5f50-9943-bfb6469046f8",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "621a2703-58da-5987-86fa-63035c17e993",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6f8e7a07-7557-5cf5-8d9b-e50c73382603",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bb1c6adb-248f-5f94-9d96-b7d483e224b0",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bce20a76-7a5c-5a9b-8b21-51c4cad7637a",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e9b7407f-2e85-54fb-a02d-9c66bdce21fa",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ]
+}

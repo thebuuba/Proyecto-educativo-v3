@@ -1,5 +1,5 @@
 import { IsArray, Matches, IsIn, IsNotEmpty, IsNumber, IsObject, IsOptional, IsString, IsUUID, Max, MaxLength, Min } from 'class-validator'
-import type { InstrumentRecommendation } from '@aula/shared'
+import { teachingStrategies, type TeachingStrategyOrigin, type InstrumentRecommendation } from '@aula/shared'
 import { evaluationCatalogCurrent } from '../../evaluation-instruments/catalog-current'
 
 export class SaveActivityDto {
@@ -75,6 +75,14 @@ export class SaveActivityDto {
   @IsOptional()
   @IsIn(evaluationCatalogCurrent.activityTypes.map(({ id }) => id))
   pedagogicalActivityType?: string
+
+  @IsOptional()
+  @IsIn(teachingStrategies.map(strategy => strategy.id))
+  teachingStrategyId?: string | null
+
+  @IsOptional()
+  @IsIn(['AUTO', 'MANUAL', 'UNKNOWN'])
+  teachingStrategyOrigin?: TeachingStrategyOrigin
 
   @IsOptional()
   @IsObject()

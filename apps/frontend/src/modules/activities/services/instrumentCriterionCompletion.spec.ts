@@ -64,8 +64,10 @@ describe('Completar solamente campos vacíos del criterio', () => {
   it('reconoce un nombre docente específico y rechaza una intención ambigua',()=>{
     const proposal=editableFallbackRecommendation({activityTitle:'Matrices',description:'Organizarán matrices de cantidades y precios y resolverán operaciones de suma y resta según corresponda. Explicarán el procedimiento e interpretarán los resultados.',academicContext:{level:'SECONDARY',grade:5,subjectCode:'MAT'},instrumentType:'rubrica',participationMode:'INDIVIDUAL',maxScore:20})
     const fields={'rubrica:meta:criteriaCount':'1','rubrica:criterion-id:0':'manual-one','rubrica:criterion:0':'Compatibilidad de dimensiones','rubrica:description:0':''}
-    expect(matchingCatalogCriterion(proposal.criteria,fields,'rubrica',0)?.templateId).toBe('math-matrices-selection')
+    expect(matchingCatalogCriterion(proposal.criteria,fields,'rubrica',0)?.templateId).toBe('mat-5-matrices-selection')
     expect(matchingCatalogCriterion(proposal.criteria,{...fields,'rubrica:criterion:0':'Matrices'},'rubrica',0)).toBeNull()
+    const exact=proposal.criteria.find(c=>c.templateId==='mat-5-matrices-selection')!
+    expect(matchingCatalogCriterion([exact,{...exact,id:'ambiguous',templateId:'ambiguous'}],fields,'rubrica',0)).toBeNull()
     const next=completeInstrumentCriterion(fields,'rubrica',0,proposal.criteria[1])
     expect(next['rubrica:criterion:0']).toBe('Compatibilidad de dimensiones')
   })
@@ -77,17 +79,18 @@ describe('Completar solamente campos vacíos del criterio', () => {
     expect(Array.from({length:6},(_,i)=>next[`rubrica:descriptor:${index}:${6-i}`])).toEqual(Array(6).fill(''))
   })
   it.each(formats)('usa el peso relativo de un candidato adicional en %s',type=>{
-    const input={activityTitle:'Matrices',description:'Construirán matrices de cantidades y precios. Resolverán suma, resta y multiplicación según corresponda, explicarán los procedimientos, interpretarán y comprobarán los resultados.',academicContext:{level:'SECONDARY' as const,grade:5,subjectCode:'MAT'},instrumentType:type,participationMode:'INDIVIDUAL' as const,maxScore:20}
+    const input={activityTitle:'Matrices',description:'Construirán matrices de cantidades y precios. Resolverán suma, resta y multiplicación según corresponda, explicarán los procedimientos, interpretarán los resultados.',academicContext:{level:'SECONDARY' as const,grade:5,subjectCode:'MAT'},instrumentType:type,participationMode:'INDIVIDUAL' as const,maxScore:20}
     const proposal=editableFallbackRecommendation(input)
-    const pool=editableFallbackRecommendation({...input,maxScore:100,includeAdditionalCandidates:true})
-    const candidate=pool.criteria.find(row=>row.templateId==='math-matrices-verification')!
+    const pool=editableFallbackRecommendation({...input,description:input.description+' Comprobarán los resultados.',maxScore:100,includeAdditionalCandidates:true})
+    const candidate=pool.criteria.find(row=>row.templateId==='mat-5-matrices-verification')!
     const fields=scoreInstrumentFields(recommendationToFields(proposal,'Matrices'),type,17.35,proposal)
     const next=appendInstrumentCriterion(fields,type,17.35,proposal,candidate)
     const last=proposal.criteria.length
-    if(type==='lista-ponderada') expect(Number(next.fields[`${type}:weight:${last}`])/Number(next.fields[`${type}:weight:0`])).toBeCloseTo(0.5,2)
+    const ratio=(candidate.relativeWeight??1)/(proposal.criteria[0].relativeWeight??1)
+    if(type==='lista-ponderada') expect(Number(next.fields[`${type}:weight:${last}`])/Number(next.fields[`${type}:weight:0`])).toBeCloseTo(ratio,2)
     else {
       const weights=JSON.parse(next.fields[`${type}:meta:scoreWeights`])
-      expect(weights[last]/weights[0]).toBeCloseTo(0.5,4)
+      expect(weights[last]/weights[0]).toBeCloseTo(ratio,4)
     }
     expect(Array.from({length:last+1},(_,index)=>Math.round(Number(next.fields[`${type}:points:${index}`])*100)).reduce((a,b)=>a+b,0)).toBe(1735)
   })

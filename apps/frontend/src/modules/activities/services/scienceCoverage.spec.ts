@@ -18,7 +18,7 @@ describe('Ciencias compartida con la alternativa local y el editor', () => {
       expect(activityDefaultSuggestions(title, description)?.activityType).toBe(fixture.expectedType)
       const result = editableFallbackRecommendation({activityTitle:title,description,academicContext:context,maxScore,instrumentType:format,participationMode:'INDIVIDUAL'})
       expect(result.criteria).toHaveLength(5)
-      expect(result.criteria.every(c=>c.templateId.startsWith(`science-${fixture.id}-`))).toBe(true)
+      expect(result.criteria.every(c=>c.templateId.startsWith(fixture.id==='cells'?'nat-2-cells-':`science-${fixture.id}-`))).toBe(true)
       const fields = recommendationToFields(result,title)
       if (format === 'lista-cotejo' || format === 'escala') expect(result.criteria[0].title).toBe(result.criteria[0].description)
       if (format === 'escala') expect(instrumentEvaluationConfiguration(format,fields,maxScore).criteria[0].descriptors).toEqual(result.criteria[0].descriptors.map(d=>d.text))

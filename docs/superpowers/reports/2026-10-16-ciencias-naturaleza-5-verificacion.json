@@ -1,0 +1,1087 @@
+{
+  "status": "VERIFIED_DEFINED_PATTERNS",
+  "project": "eolgunypmtgrsyrjzcld",
+  "grade": 5,
+  "catalog": "evaluation-2026.91",
+  "source": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_NAT_COMUN_G5_V1",
+    "versionId": "b5398277-4f03-589a-9fb7-20e9740d2c72",
+    "documentId": "958acc99-7779-56ab-b644-d059154a8219",
+    "metadata": {
+      "subjectCodes": [
+        "NAT",
+        "NAT-QUI"
+      ],
+      "grades": [
+        5
+      ],
+      "commonOnly": true,
+      "datasetDigest": "fb1797b70309a13b24765ccb453667ede347beaa063f2a5da0d8d5ac08efe40c",
+      "sourceVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "sourcePdfHash": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+      "scopeMap": {
+        "5": {
+          "sourceId": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
+          "id": "2b46e86d-75bd-58ce-b3ad-ce009c8bb90c"
+        }
+      },
+      "review": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json"
+    },
+    "scopes": 1,
+    "elements": 138,
+    "relations": 7,
+    "result": "UNCHANGED",
+    "preservedSnapshots": 102
+  },
+  "catalogInstall": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.91",
+    "grade": 5,
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 23,
+    "preservedSnapshots": 102
+  },
+  "sourceInstallObserved": [
+    "CREATED",
+    "UNCHANGED"
+  ],
+  "checks": [
+    {
+      "command": "pnpm --filter backend test --exclude src/modules/evaluation-instruments/science-grade-6-contract.spec.ts",
+      "code": 0,
+      "ms": 11057,
+      "log": ".wrangler/science-source/grade-5-final-check-0.log",
+      "note": "Only the uncommitted next-grade red characterization tests are excluded; all tests in the fifth-grade commit are included."
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 5156,
+      "log": ".wrangler/science-source/grade-5-final-check-1.log"
+    },
+    {
+      "command": "pnpm --filter frontend exec vitest run",
+      "code": 0,
+      "ms": 80953,
+      "log": ".wrangler/science-source/grade-5-check-2.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 12621,
+      "log": ".wrangler/science-source/grade-5-final-check-3.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "code": 4294967295,
+      "ms": 731695,
+      "log": ".wrangler/science-source/grade-5-final-check-4.log"
+    }
+  ],
+  "backend": {
+    "files": 107,
+    "tests": 44224
+  },
+  "frontend": {
+    "files": 131,
+    "tests": 44626
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-BC-3mRGS.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-BC-3mRGS.js",
+        "sha256": "65f0eb6bdf67b892f751d14e1c34b68bacd04fe6328040d3150be396383099a6",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-CXut17Mg.js",
+        "sha256": "3de307313a1dc04da6c228d75349f5122e0f7dfa75e99abc9fd0a2fddc9f6fa0",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-Bvaeywms.js",
+        "sha256": "25830ef3298c2ae326493c2115509796c71cdd65d81a79d58a01c1e0334df017",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-Icn8O-Wu.js",
+        "sha256": "7b264cfac2ff2d2abfe9e8eaa6e1ef2b45c24f2a0d77edc3afa1985684967ce0",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-CgSS35yX.js",
+        "sha256": "77ce673fbd528bcbfa318b56684c8d01d9c7f1cdf5798de0863ba475547ac4f1",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "a63ee4d23f9e80ed5a3fa595dba4eafada665723803826a69edb2c2c00b45832",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "generationTiming": {
+    "grade": 5,
+    "mode": "PURE_IN_PROCESS_RECOMMENDATION_SYNTHETIC_CONTEXT_NO_AUTH_DB_HTTP_OR_RENDER",
+    "samples": 200,
+    "p50Ms": 0.15459999999998786,
+    "p95Ms": 0.25950000000000273,
+    "maxMs": 1.6291999999999973
+  },
+  "http": {
+    "verification": "AUTHENTICATED_HTTP_DB_AND_EDITOR_ADAPTERS_NOT_VISUAL",
+    "savedEvidence": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "activityId": "e756418b-f523-4163-aa38-7c40419c1e70",
+        "instrumentHash": "68bf8cfb7fcc9dc7452f435347b4e31b515f318a4caa460ec9b1d72267450a28",
+        "snapshotId": "4edaffce-1c9a-40a7-b119-98499121af32",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "b5398277-4f03-589a-9fb7-20e9740d2c72",
+          "scopeId": "2b46e86d-75bd-58ce-b3ad-ce009c8bb90c"
+        }
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "activityId": "132d25b4-7286-4801-82b1-0da74d1a096f",
+        "instrumentHash": "a72a770ffc36e452fd08bc7e778eccf9a7821024eaa6fffb0aa11d66b256412d",
+        "snapshotId": "5f9552a2-cc1a-435d-8c43-efc8b6ca1b0f",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "b5398277-4f03-589a-9fb7-20e9740d2c72",
+          "scopeId": "2b46e86d-75bd-58ce-b3ad-ce009c8bb90c"
+        }
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "activityId": "8ee281a6-c05e-440b-872c-ac0d5f7ce7d7",
+        "instrumentHash": "b825ed012c396fd9cf74473ebbdedba643fd30608b703e83713b8fe5edecb50e",
+        "snapshotId": "4477cf83-e845-45f7-b93e-dad433736a2b",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "b5398277-4f03-589a-9fb7-20e9740d2c72",
+          "scopeId": "2b46e86d-75bd-58ce-b3ad-ce009c8bb90c"
+        }
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "activityId": "a9426545-03e9-4273-92d7-c0297a7081c9",
+        "instrumentHash": "8899fe09d2c0d07c93a16dbbc1663ca06688f10a5ffd55bd75a9484ef73ccd0c",
+        "snapshotId": "d41d698e-4bbb-4b8f-8a7c-d182f76c90a6",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "b5398277-4f03-589a-9fb7-20e9740d2c72",
+          "scopeId": "2b46e86d-75bd-58ce-b3ad-ce009c8bb90c"
+        }
+      }
+    ],
+    "finalBuildRecheck": {
+      "at": "2026-10-17T01:32:11.474Z",
+      "reopened": 4,
+      "generated": [
+        {
+          "type": "rubrica",
+          "total": 20,
+          "catalog": "evaluation-2026.91"
+        },
+        {
+          "type": "lista-cotejo",
+          "total": 17.35,
+          "catalog": "evaluation-2026.91"
+        },
+        {
+          "type": "escala",
+          "total": 20,
+          "catalog": "evaluation-2026.91"
+        },
+        {
+          "type": "lista-ponderada",
+          "total": 17.35,
+          "catalog": "evaluation-2026.91"
+        }
+      ],
+      "languageRegressions": [
+        {
+          "language": "FRA",
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+        },
+        {
+          "language": "ING",
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": null,
+          "scopeId": null
+        },
+        {
+          "language": "MAT",
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+          "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+        }
+      ],
+      "scienceRegressions": [
+        {
+          "grade": 1,
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+          "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf"
+        },
+        {
+          "grade": 2,
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+          "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708"
+        },
+        {
+          "grade": 3,
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+          "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a"
+        },
+        {
+          "grade": 4,
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+          "scopeId": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      ]
+    },
+    "semanticControls": [
+      {
+        "description": "Balancea la ecuación química proporcionada sin modificar las fórmulas de las sustancias.",
+        "criteria": [
+          "nat-5-stoichiometry-balancing"
+        ],
+        "catalog": "evaluation-2026.91"
+      },
+      {
+        "description": "Explica el puente de hidrógeno y las fuerzas de Van der Waals.",
+        "criteria": [
+          "nat-5-intermolecular-forces-explanation"
+        ],
+        "catalog": "evaluation-2026.91"
+      },
+      {
+        "description": "Interpreta las especies de resonancia del sistema aromático proporcionado.",
+        "criteria": [
+          "nat-5-aromatic-substitution-analysis"
+        ],
+        "catalog": "evaluation-2026.91"
+      },
+      {
+        "description": "Calcula las cantidades estequiométricas con los datos dados, sin balancear otra ecuación.",
+        "criteria": [
+          "nat-5-stoichiometry-calculation",
+          "nat-5-stoichiometry-result"
+        ],
+        "catalog": "evaluation-2026.91"
+      },
+      {
+        "description": "Explica la hibridación sp2 en el modelo dado.",
+        "criteria": [
+          "nat-5-hybridization-explanation"
+        ],
+        "catalog": "evaluation-2026.91"
+      }
+    ],
+    "initialTimings": [
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 5212
+      },
+      {
+        "path": "/auth/login",
+        "status": 201,
+        "ms": 7185
+      },
+      {
+        "path": "/activities/center?contextOnly=true",
+        "status": 200,
+        "ms": 12396
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 35804
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 47688
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 27759
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 13454
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 21828
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 12187
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 27541
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 28741
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 27171
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 13747
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 23390
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 11447
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 43837
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 39484
+      },
+      {
+        "path": "/activities",
+        "status": 500,
+        "ms": 30463
+      },
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 2449
+      },
+      {
+        "path": "/auth/login",
+        "status": 201,
+        "ms": 7925
+      },
+      {
+        "path": "/activities/center?contextOnly=true",
+        "status": 200,
+        "ms": 5986
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 11145
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 11892
+      },
+      {
+        "path": "/activities",
+        "status": 500,
+        "ms": 30002
+      },
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 6668
+      },
+      {
+        "path": "/auth/login",
+        "status": 201,
+        "ms": 15388
+      },
+      {
+        "path": "/activities/center?contextOnly=true",
+        "status": 200,
+        "ms": 25654
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 30822
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 11380
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 20904
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 21577
+      },
+      {
+        "path": "/activities",
+        "status": 500,
+        "ms": 52964
+      },
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 4537
+      },
+      {
+        "path": "/auth/login",
+        "status": 201,
+        "ms": 1529
+      },
+      {
+        "path": "/activities/center?contextOnly=true",
+        "status": 200,
+        "ms": 7881
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 7663
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 3842
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 4086
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 5498
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 12786
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 33419
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 21993
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 12226
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 9439
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 5374
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 7964
+      }
+    ]
+  },
+  "historicalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 6,
+    "newSnapshots": 33,
+    "gradeBaseline": {
+      "grade": 5,
+      "preservedReleases": 23,
+      "preservedSnapshots": 102,
+      "newReleases": 1,
+      "newSnapshots": 4
+    }
+  },
+  "secretsAudit": {
+    "filesInspected": 14,
+    "secretValuesFound": false,
+    "privateFilesExcluded": true
+  },
+  "browser": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "grade": 5,
+    "session": "personal Development",
+    "entry": "/assets/index-BLaW9Yd6.js",
+    "status": "VERIFIED_DEFINED_VISUAL_CASES",
+    "formats": [
+      {
+        "grade": 5,
+        "format": "rubrica",
+        "name": "QA Ciencias 5 · Rúbrica · Entalpía",
+        "description": "Formula una pregunta y una hipótesis sobre entalpía. Realiza el experimento indicado, registra observaciones y contrasta la hipótesis con las evidencias registradas.",
+        "points": 20,
+        "startedAt": 1792201985040,
+        "blankScore": true,
+        "autoInstrument": "Tipo de instrumento\nRúbrica\nCambiar",
+        "autoStrategy": "Estrategia de enseñanza y aprendizaje\nDescubrimiento e indagación\nCambiar",
+        "completionPreservedAllOtherFields": true,
+        "fields": [
+          {
+            "label": null,
+            "value": "Rúbrica para QA Ciencias 5 · Rúbrica · Entalpía"
+          },
+          {
+            "label": "Criterio 1",
+            "value": "Hipótesis sobre entalpía de formación · QA"
+          },
+          {
+            "label": "Destacado del criterio 1",
+            "value": "Formula una hipótesis contrastable sobre entalpía de formación, relacionando las condiciones y el posible efecto de forma compatible con la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas; se evalúa su planteamiento, sin exigir que se confirme."
+          },
+          {
+            "label": "Logrado del criterio 1",
+            "value": "Formula una hipótesis contrastable sobre entalpía de formación, relacionando las condiciones y el posible efecto de forma compatible con la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas; se evalúa su planteamiento, sin exigir que se confirme. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 1",
+            "value": "La hipótesis sobre entalpía de formación propone una relación, pero no permite reconocer qué evidencia la contrastaría."
+          },
+          {
+            "label": "Inicial del criterio 1",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre entalpía de formación."
+          },
+          {
+            "label": "Puntos del criterio 1",
+            "value": "3.16"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Pregunta sobre entalpía de formación"
+          },
+          {
+            "label": "Destacado del criterio 2",
+            "value": "Formula una pregunta investigable sobre entalpía de formación que delimita el fenómeno y la evidencia necesaria para responderla."
+          },
+          {
+            "label": "Logrado del criterio 2",
+            "value": "Formula una pregunta investigable sobre entalpía de formación que delimita el fenómeno y la evidencia necesaria para responderla. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 2",
+            "value": "La pregunta se relaciona con entalpía de formación, pero no delimita qué se pretende conocer."
+          },
+          {
+            "label": "Inicial del criterio 2",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre entalpía de formación."
+          },
+          {
+            "label": "Puntos del criterio 2",
+            "value": "3.16"
+          },
+          {
+            "label": "Criterio 3",
+            "value": "Procedimiento de la práctica de entalpía de formación"
+          },
+          {
+            "label": "Destacado del criterio 3",
+            "value": "Ejecuta el procedimiento indicado para estudiar entalpía de formación, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación."
+          },
+          {
+            "label": "Logrado del criterio 3",
+            "value": "Ejecuta el procedimiento indicado para estudiar entalpía de formación, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 3",
+            "value": "Ejecuta parte del procedimiento de entalpía de formación, pero omite una condición indicada que dificulta comparar observaciones."
+          },
+          {
+            "label": "Inicial del criterio 3",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre entalpía de formación."
+          },
+          {
+            "label": "Puntos del criterio 3",
+            "value": "4.21"
+          },
+          {
+            "label": "Criterio 4",
+            "value": "Registro de observaciones de entalpía de formación"
+          },
+          {
+            "label": "Destacado del criterio 4",
+            "value": "Registra fielmente las observaciones de la práctica de entalpía de formación, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados."
+          },
+          {
+            "label": "Logrado del criterio 4",
+            "value": "Registra fielmente las observaciones de la práctica de entalpía de formación, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 4",
+            "value": "Registra observaciones de entalpía de formación, pero omite información necesaria para relacionarlas con el procedimiento realizado."
+          },
+          {
+            "label": "Inicial del criterio 4",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre entalpía de formación."
+          },
+          {
+            "label": "Puntos del criterio 4",
+            "value": "3.16"
+          },
+          {
+            "label": "Criterio 5",
+            "value": "Seguridad durante la práctica de entalpía de formación"
+          },
+          {
+            "label": "Destacado del criterio 5",
+            "value": "Aplica las precauciones indicadas para la práctica de entalpía de formación y comunica las incidencias observadas antes de continuar cuando exista un riesgo."
+          },
+          {
+            "label": "Logrado del criterio 5",
+            "value": "Aplica las precauciones indicadas para la práctica de entalpía de formación y comunica las incidencias observadas antes de continuar cuando exista un riesgo. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 5",
+            "value": "Aplica parte de las precauciones indicadas en la práctica de entalpía de formación, pero necesita corregir una condición de riesgo."
+          },
+          {
+            "label": "Inicial del criterio 5",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre entalpía de formación."
+          },
+          {
+            "label": "Puntos del criterio 5",
+            "value": "2.1"
+          },
+          {
+            "label": "Criterio 6",
+            "value": "Contraste de hipótesis sobre entalpía de formación"
+          },
+          {
+            "label": "Destacado del criterio 6",
+            "value": "Contrasta la hipótesis de entalpía de formación con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación."
+          },
+          {
+            "label": "Logrado del criterio 6",
+            "value": "Contrasta la hipótesis de entalpía de formación con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 6",
+            "value": "Relaciona parte de las evidencias de entalpía de formación con la hipótesis, pero deja una inferencia sin respaldo."
+          },
+          {
+            "label": "Inicial del criterio 6",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre entalpía de formación."
+          },
+          {
+            "label": "Puntos del criterio 6",
+            "value": "4.21"
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=e3e6203d-acfa-487f-8a71-3491a66007d1&competencyBlockId=b4&returnCourseId=b2859920-b555-45f5-841a-c8332695b7ad&returnSubjectId=e3e6203d-acfa-487f-8a71-3491a66007d1&returnTab=actividades",
+        "explicitModeReviewRetainedAllFields": true,
+        "activityId": "10e0a84e-ae09-4ac1-8fa9-9bd4ce1a551a",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "b30fc1b4-e6ee-4d78-a15d-53fac038c04c",
+        "state": "REOPENED",
+        "fieldsEqual": true,
+        "reopenMethod": "editable form: all input/textarea labels and values equal",
+        "instrumentId": "b52fca13-a4cb-49ba-acae-6a9460710229"
+      },
+      {
+        "grade": 5,
+        "format": "lista-cotejo",
+        "name": "QA Ciencias 5 · Cotejo · Grupos funcionales",
+        "description": "Identifica los grupos funcionales en las estructuras proporcionadas. Compara sus estructuras usando los modelos proporcionados.",
+        "points": 17.35,
+        "blankScore": true,
+        "manualInstrument": true,
+        "keepPreservedAllFields": true,
+        "addedOnlyRequestedComparison": true,
+        "autoInstrument": "Lista de cotejo",
+        "autoStrategy": "Estrategia de enseñanza y aprendizaje\nSin estrategia\nSeleccionar",
+        "fields": [
+          {
+            "label": null,
+            "value": "Lista de cotejo para QA Ciencias 5 · Cotejo · Grupos funcionales"
+          },
+          {
+            "label": "Criterio 1",
+            "value": "Identifica los elementos solicitados de grupos funcionales por sus características observables o las referencias proporcionadas. · QA"
+          },
+          {
+            "label": null,
+            "value": "8.68"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Compara los casos solicitados de grupos funcionales mediante características científicas comunes coherentes con los átomos o enlaces que permiten reconocer el grupo funcional de la estructura solicitada, sin exigir reacciones ausentes, distinguiendo semejanzas y diferencias respaldadas por la información disponible."
+          },
+          {
+            "label": null,
+            "value": "8.67"
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=e3e6203d-acfa-487f-8a71-3491a66007d1&competencyBlockId=b4&returnCourseId=b2859920-b555-45f5-841a-c8332695b7ad&returnSubjectId=e3e6203d-acfa-487f-8a71-3491a66007d1&returnTab=actividades",
+        "activityId": "95757211-9e68-41e2-a03c-76a806acf14f",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "7ec56224-1666-419f-a203-626cff5d17f9",
+        "state": "REOPENED",
+        "renderedDefinition": {
+          "lista-cotejo:title": "Lista de cotejo para QA Ciencias 5 · Cotejo · Grupos funcionales",
+          "lista-cotejo:points:0": "8.68",
+          "lista-cotejo:points:1": "8.67",
+          "lista-cotejo:criterion:0": "Identifica los elementos solicitados de grupos funcionales por sus características observables o las referencias proporcionadas. · QA",
+          "lista-cotejo:criterion:1": "Compara los casos solicitados de grupos funcionales mediante características científicas comunes coherentes con los átomos o enlaces que permiten reconocer el grupo funcional de la estructura solicitada, sin exigir reacciones ausentes, distinguiendo semejanzas y diferencias respaldadas por la información disponible.",
+          "lista-cotejo:description:0": "Identifica los elementos solicitados de grupos funcionales por sus características observables o las referencias proporcionadas.",
+          "lista-cotejo:description:1": "Compara los casos solicitados de grupos funcionales mediante características científicas comunes coherentes con los átomos o enlaces que permiten reconocer el grupo funcional de la estructura solicitada, sin exigir reacciones ausentes, distinguiendo semejanzas y diferencias respaldadas por la información disponible.",
+          "lista-cotejo:meta:prepared": "true",
+          "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.92:2b46e86d-75bd-58ce-b3ad-ce009c8bb90c:nat-5-functional-groups-identification:0",
+          "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.92:2b46e86d-75bd-58ce-b3ad-ce009c8bb90c:nat-5-functional-groups-comparison:1",
+          "lista-cotejo:meta:pointsMode": "individual",
+          "lista-cotejo:meta:scorePending": "false",
+          "lista-cotejo:meta:scoreWeights": "[3,3]",
+          "lista-cotejo:criterion-weight:0": "3",
+          "lista-cotejo:criterion-weight:1": "3",
+          "lista-cotejo:meta:criteriaCount": "2",
+          "lista-cotejo:meta:catalogVersion": "evaluation-2026.92",
+          "lista-cotejo:criterion-evidence:0": "{\"title\":\"Identifica los elementos solicitados de grupos funcionales por sus características observables o las referencias proporcionadas.\",\"description\":\"Identifica los elementos solicitados de grupos funcionales por sus características observables o las referencias proporcionadas.\",\"progression\":[\"Identifica los elementos solicitados de grupos funcionales por sus características observables o las referencias proporcionadas.\",\"Identifica los elementos solicitados de grupos funcionales por sus características observables o las referencias proporcionadas. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Identifica parte de los elementos de grupos funcionales, pero confunde una característica que permite distinguirlos.\",\"Asigna nombres o características incompatibles con los elementos solicitados de grupos funcionales.\",\"No aporta evidencia verificable del desempeño solicitado sobre grupos funcionales.\"]}",
+          "lista-cotejo:criterion-evidence:1": "{\"title\":\"Compara los casos solicitados de grupos funcionales mediante características científicas comunes coherentes con los átomos o enlaces que permiten reconocer el grupo funcional de la estructura solicitada, sin exigir reacciones ausentes, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"description\":\"Compara los casos solicitados de grupos funcionales mediante características científicas comunes coherentes con los átomos o enlaces que permiten reconocer el grupo funcional de la estructura solicitada, sin exigir reacciones ausentes, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"progression\":[\"Compara los casos solicitados de grupos funcionales mediante características científicas comunes coherentes con los átomos o enlaces que permiten reconocer el grupo funcional de la estructura solicitada, sin exigir reacciones ausentes, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"Compara los casos solicitados de grupos funcionales mediante características científicas comunes coherentes con los átomos o enlaces que permiten reconocer el grupo funcional de la estructura solicitada, sin exigir reacciones ausentes, distinguiendo semejanzas y diferencias respaldadas por la información disponible. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Describe los casos de grupos funcionales, pero compara con características distintas o deja sin justificar una diferencia.\",\"Atribuye semejanzas o diferencias a grupos funcionales que contradicen las características examinadas.\",\"No aporta evidencia verificable del desempeño solicitado sobre grupos funcionales.\"]}",
+          "lista-cotejo:criterion-template:0": "nat-5-functional-groups-identification",
+          "lista-cotejo:criterion-template:1": "nat-5-functional-groups-comparison"
+        },
+        "fieldsEqual": true,
+        "reopenMethod": "activity Instrumento tab: rendered configuration compared with every captured editor value and persisted definition",
+        "instrumentId": "cde2ba89-3dfa-4287-be2a-313ffa1248fe"
+      },
+      {
+        "grade": 5,
+        "format": "escala",
+        "name": "QA Ciencias 5 · Escala · ADN y ARN",
+        "description": "Observa los modelos de ADN y ARN proporcionados y registra con regularidad sus características químicas.",
+        "points": 20,
+        "blankScore": true,
+        "fields": [
+          {
+            "label": null,
+            "value": "Escala estimativa para QA Ciencias 5 · Escala · ADN y ARN"
+          },
+          {
+            "label": "Indicador 1",
+            "value": "Describe y registra las características químicas observadas de ADN y ARN. QA"
+          },
+          {
+            "label": "Siempre del indicador 1",
+            "value": "En todas las oportunidades observadas."
+          },
+          {
+            "label": "Frecuentemente del indicador 1",
+            "value": "En la mayoría de las oportunidades observadas."
+          },
+          {
+            "label": "A veces del indicador 1",
+            "value": "En algunas oportunidades observadas."
+          },
+          {
+            "label": "Todavía no del indicador 1",
+            "value": "En ninguna oportunidad observada."
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=e3e6203d-acfa-487f-8a71-3491a66007d1&competencyBlockId=b4&returnCourseId=b2859920-b555-45f5-841a-c8332695b7ad&returnSubjectId=e3e6203d-acfa-487f-8a71-3491a66007d1&returnTab=actividades",
+        "activityId": "96389f7a-45c3-4527-b5c4-5581937a3b75",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "cd4d81df-70e3-4e6a-97f5-9961bb75b705",
+        "state": "REOPENED",
+        "renderedDefinition": {
+          "escala:title": "Escala estimativa para QA Ciencias 5 · Escala · ADN y ARN",
+          "escala:points:0": "20",
+          "escala:criterion:0": "Describe y registra las características químicas observadas de ADN y ARN. QA",
+          "escala:level-name:1": "Todavía no",
+          "escala:level-name:2": "A veces",
+          "escala:level-name:3": "Frecuentemente",
+          "escala:level-name:4": "Siempre",
+          "escala:description:0": "Describe o registra las características observadas de ADN y ARN, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.",
+          "escala:meta:prepared": "true",
+          "escala:criterion-id:0": "proposal:evaluation-2026.92:2b46e86d-75bd-58ce-b3ad-ce009c8bb90c:nat-5-nucleic-acids-observation:0",
+          "escala:descriptor:0:1": "En ninguna oportunidad observada.",
+          "escala:descriptor:0:2": "En algunas oportunidades observadas.",
+          "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+          "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+          "escala:level-points:1": "0",
+          "escala:level-points:2": "1.3333333333333333",
+          "escala:level-points:3": "2.6666666666666665",
+          "escala:level-points:4": "4",
+          "escala:meta:levelCount": "4",
+          "escala:meta:scorePending": "false",
+          "escala:meta:scoreWeights": "[3]",
+          "escala:criterion-weight:0": "3",
+          "escala:meta:criteriaCount": "1",
+          "escala:meta:catalogVersion": "evaluation-2026.92",
+          "escala:criterion-evidence:0": "{\"title\":\"Describe o registra las características observadas de ADN y ARN, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"description\":\"Describe o registra las características observadas de ADN y ARN, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"progression\":[\"Describe o registra las características observadas de ADN y ARN, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"Describe o registra las características observadas de ADN y ARN, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Registra parte de las características de ADN y ARN, pero mezcla una inferencia con lo observado.\",\"El registro de ADN y ARN contradice la evidencia observada o aporta datos inventados.\",\"No aporta evidencia verificable del desempeño solicitado sobre ADN y ARN.\"]}",
+          "escala:criterion-template:0": "nat-5-nucleic-acids-observation",
+          "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+        },
+        "fieldsEqual": true,
+        "reopenMethod": "activity Instrumento tab: rendered configuration compared with every captured editor value and persisted definition",
+        "instrumentId": "ae20511f-8f2b-411f-bae5-875a6545b406"
+      },
+      {
+        "grade": 5,
+        "format": "lista-ponderada",
+        "name": "QA Ciencias 5 · Ponderada · Entalpía",
+        "description": "Calcula la entalpía de reacción con los datos proporcionados y explica el signo del resultado. Asigna pesos al procedimiento, al cálculo y a la explicación, con crédito parcial.",
+        "points": 17.35,
+        "blankScore": true,
+        "fields": [
+          {
+            "label": null,
+            "value": "Lista ponderada para QA Ciencias 5 · Ponderada · Entalpía"
+          },
+          {
+            "label": "Criterio 1",
+            "value": "Procedimiento de cálculo de entalpía de reacción · QA"
+          },
+          {
+            "label": "Indicador del criterio 1",
+            "value": "Relaciona los datos y la incógnita de entalpía de formación mediante la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas y realiza las operaciones solicitadas sin inventar valores ausentes. Parcial (50%): Utiliza parte de los datos de entalpía de formación, pero un paso no mantiene la relación necesaria para resolver la incógnita."
+          },
+          {
+            "label": null,
+            "value": "41"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Resultado de entalpía de formación"
+          },
+          {
+            "label": "Indicador del criterio 2",
+            "value": "Presenta un resultado coherente con las operaciones de entalpía de formación y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Parcial (50%): El resultado de entalpía de formación conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo."
+          },
+          {
+            "label": null,
+            "value": "19"
+          },
+          {
+            "label": "Criterio 3",
+            "value": "Explicación de entalpía de formación"
+          },
+          {
+            "label": "Indicador del criterio 3",
+            "value": "Explica la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas con afirmaciones científicamente compatibles con la información disponible. Parcial (50%): Explica parte de entalpía de formación, pero deja sin relacionar un elemento necesario para entender el fenómeno."
+          },
+          {
+            "label": null,
+            "value": "40"
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=e3e6203d-acfa-487f-8a71-3491a66007d1&competencyBlockId=b4&returnCourseId=b2859920-b555-45f5-841a-c8332695b7ad&returnSubjectId=e3e6203d-acfa-487f-8a71-3491a66007d1&returnTab=actividades",
+        "activityId": "91c007d1-f326-4e1f-9805-f1f6b40ee590",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "0281a3eb-a99c-486f-947d-523149298ae2",
+        "state": "REOPENED",
+        "renderedDefinition": {
+          "lista-ponderada:title": "Lista ponderada para QA Ciencias 5 · Ponderada · Entalpía",
+          "lista-ponderada:points:0": "7.11",
+          "lista-ponderada:points:1": "3.3",
+          "lista-ponderada:points:2": "6.94",
+          "lista-ponderada:weight:0": "41",
+          "lista-ponderada:weight:1": "19",
+          "lista-ponderada:weight:2": "40",
+          "lista-ponderada:criterion:0": "Procedimiento de cálculo de entalpía de reacción · QA",
+          "lista-ponderada:criterion:1": "Resultado de entalpía de formación",
+          "lista-ponderada:criterion:2": "Explicación de entalpía de formación",
+          "lista-ponderada:indicator:0": "Relaciona los datos y la incógnita de entalpía de formación mediante la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas y realiza las operaciones solicitadas sin inventar valores ausentes. Parcial (50%): Utiliza parte de los datos de entalpía de formación, pero un paso no mantiene la relación necesaria para resolver la incógnita.",
+          "lista-ponderada:indicator:1": "Presenta un resultado coherente con las operaciones de entalpía de formación y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Parcial (50%): El resultado de entalpía de formación conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo.",
+          "lista-ponderada:indicator:2": "Explica la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas con afirmaciones científicamente compatibles con la información disponible. Parcial (50%): Explica parte de entalpía de formación, pero deja sin relacionar un elemento necesario para entender el fenómeno.",
+          "lista-ponderada:meta:partial": "true",
+          "lista-ponderada:description:0": "Relaciona los datos y la incógnita de entalpía de formación mediante la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas y realiza las operaciones solicitadas sin inventar valores ausentes. Parcial (50%): Utiliza parte de los datos de entalpía de formación, pero un paso no mantiene la relación necesaria para resolver la incógnita.",
+          "lista-ponderada:description:1": "Presenta un resultado coherente con las operaciones de entalpía de formación y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Parcial (50%): El resultado de entalpía de formación conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo.",
+          "lista-ponderada:description:2": "Explica la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas con afirmaciones científicamente compatibles con la información disponible. Parcial (50%): Explica parte de entalpía de formación, pero deja sin relacionar un elemento necesario para entender el fenómeno.",
+          "lista-ponderada:meta:prepared": "true",
+          "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.92:2b46e86d-75bd-58ce-b3ad-ce009c8bb90c:nat-5-enthalpy-calculation:0",
+          "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.92:2b46e86d-75bd-58ce-b3ad-ce009c8bb90c:nat-5-enthalpy-result:1",
+          "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.92:2b46e86d-75bd-58ce-b3ad-ce009c8bb90c:nat-5-enthalpy-explanation:2",
+          "lista-ponderada:meta:manualPoints": "true",
+          "lista-ponderada:meta:scorePending": "false",
+          "lista-ponderada:meta:scoreWeights": "[4,2,4]",
+          "lista-ponderada:criterion-weight:0": "4",
+          "lista-ponderada:criterion-weight:1": "2",
+          "lista-ponderada:criterion-weight:2": "4",
+          "lista-ponderada:meta:criteriaCount": "3",
+          "lista-ponderada:meta:catalogVersion": "evaluation-2026.92",
+          "lista-ponderada:criterion-evidence:0": "{\"title\":\"Procedimiento de cálculo de entalpía de formación\",\"description\":\"Relaciona los datos y la incógnita de entalpía de formación mediante la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas y realiza las operaciones solicitadas sin inventar valores ausentes. Parcial (50%): Utiliza parte de los datos de entalpía de formación, pero un paso no mantiene la relación necesaria para resolver la incógnita.\",\"progression\":[\"Relaciona los datos y la incógnita de entalpía de formación mediante la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas y realiza las operaciones solicitadas sin inventar valores ausentes.\",\"Relaciona los datos y la incógnita de entalpía de formación mediante la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas y realiza las operaciones solicitadas sin inventar valores ausentes. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Utiliza parte de los datos de entalpía de formación, pero un paso no mantiene la relación necesaria para resolver la incógnita.\",\"El procedimiento emplea una relación incompatible con los datos o la incógnita de entalpía de formación.\",\"No aporta evidencia verificable del desempeño solicitado sobre entalpía de formación.\"]}",
+          "lista-ponderada:criterion-evidence:1": "{\"title\":\"Resultado de entalpía de formación\",\"description\":\"Presenta un resultado coherente con las operaciones de entalpía de formación y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Parcial (50%): El resultado de entalpía de formación conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo.\",\"progression\":[\"Presenta un resultado coherente con las operaciones de entalpía de formación y conserva las magnitudes y unidades que corresponden a los datos del enunciado.\",\"Presenta un resultado coherente con las operaciones de entalpía de formación y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Presenta una imprecisión puntual que no cambia la relación principal.\",\"El resultado de entalpía de formación conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo.\",\"El resultado de entalpía de formación contradice el procedimiento o confunde magnitudes.\",\"No aporta evidencia verificable del desempeño solicitado sobre entalpía de formación.\"]}",
+          "lista-ponderada:criterion-evidence:2": "{\"title\":\"Explicación de entalpía de formación\",\"description\":\"Explica la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas con afirmaciones científicamente compatibles con la información disponible. Parcial (50%): Explica parte de entalpía de formación, pero deja sin relacionar un elemento necesario para entender el fenómeno.\",\"progression\":[\"Explica la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas con afirmaciones científicamente compatibles con la información disponible.\",\"Explica la variación de entalpía del proceso especificado y su signo respecto al sistema delimitado, utilizando las condiciones y referencias dadas con afirmaciones científicamente compatibles con la información disponible. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Explica parte de entalpía de formación, pero deja sin relacionar un elemento necesario para entender el fenómeno.\",\"La explicación de entalpía de formación contradice la relación científica estudiada.\",\"No aporta evidencia verificable del desempeño solicitado sobre entalpía de formación.\"]}",
+          "lista-ponderada:criterion-template:0": "nat-5-enthalpy-calculation",
+          "lista-ponderada:criterion-template:1": "nat-5-enthalpy-result",
+          "lista-ponderada:criterion-template:2": "nat-5-enthalpy-explanation"
+        },
+        "fieldsEqual": true,
+        "reopenMethod": "activity Instrumento tab: rendered configuration compared with every captured editor value and persisted definition",
+        "instrumentId": "8a50f788-8c55-4ffe-8890-1e7ddf3d1101"
+      }
+    ],
+    "notes": [
+      "Four formats generated, manually edited, saved once and reopened with exact visible values.",
+      "Strategy-only change preserves every captured instrument field.",
+      "Initial score blank; totals20/17.35 and weighted41/19/40 checked.",
+      "Reopening method is recorded per format; rendered configuration is compared with persisted definition."
+    ]
+  },
+  "limitations": [
+    "Verified defined requests and reviewed examples; no claim of interpreting every possible wording.",
+    "Intermittent Development DNS and global Activities list timeout were observed; successful course-based creator cases do not prove those incidents fixed."
+  ],
+  "laterCombinedBuild": {
+    "catalog": "evaluation-2026.92",
+    "command": "pnpm cloudflare:build",
+    "code": 0,
+    "ms": 86042,
+    "note": "Final combined build includes all Science grades and persistence corrections. Prior interrupted build observations remain historical."
+  },
+  "finalBuildStatus": "PASSED_IN_LATER_COMBINED_CATALOG_92_BUILD",
+  "personalSessionRecovered": true,
+  "finalPersonalDbVerification": [
+    {
+      "activityId": "10e0a84e-ae09-4ac1-8fa9-9bd4ce1a551a",
+      "format": "rubrica",
+      "instrumentId": "b52fca13-a4cb-49ba-acae-6a9460710229",
+      "snapshotId": "b30fc1b4-e6ee-4d78-a15d-53fac038c04c",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "95757211-9e68-41e2-a03c-76a806acf14f",
+      "format": "lista-cotejo",
+      "instrumentId": "cde2ba89-3dfa-4287-be2a-313ffa1248fe",
+      "snapshotId": "7ec56224-1666-419f-a203-626cff5d17f9",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "96389f7a-45c3-4527-b5c4-5581937a3b75",
+      "format": "escala",
+      "instrumentId": "ae20511f-8f2b-411f-bae5-875a6545b406",
+      "snapshotId": "cd4d81df-70e3-4e6a-97f5-9961bb75b705",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "91c007d1-f326-4e1f-9805-f1f6b40ee590",
+      "format": "lista-ponderada",
+      "instrumentId": "8a50f788-8c55-4ffe-8890-1e7ddf3d1101",
+      "snapshotId": "0281a3eb-a99c-486f-947d-523149298ae2",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    }
+  ],
+  "finalHistoricalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 7,
+    "newSnapshots": 44,
+    "gradeBaseline": {
+      "grade": 5,
+      "preservedReleases": 23,
+      "preservedSnapshots": 102,
+      "newReleases": 2,
+      "newSnapshots": 15
+    }
+  },
+  "finalCombinedChecks": [
+    {
+      "command": "pnpm --filter backend test",
+      "code": 0,
+      "ms": 14839,
+      "log": ".wrangler/science-source/grade-6-check-0.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 5933,
+      "log": ".wrangler/science-source/grade-6-check-1.log"
+    },
+    {
+      "command": "pnpm --filter frontend exec vitest run",
+      "code": 0,
+      "ms": 88598,
+      "log": ".wrangler/science-source/grade-6-check-2.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 16443,
+      "log": ".wrangler/science-source/grade-6-check-3.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "code": 0,
+      "ms": 86042,
+      "log": ".wrangler/science-source/grade-6-check-4.log"
+    }
+  ]
+}

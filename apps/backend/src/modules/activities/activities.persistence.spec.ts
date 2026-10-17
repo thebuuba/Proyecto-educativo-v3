@@ -150,6 +150,47 @@ describe('activity mutation context after waiting for the row lock', () => {
 })
 
 function controller() { return new ActivitiesController(new ActivitiesService(new GradingService())) }
+
+describe('estrategia principal persistida', () => {
+  it('permite cambiar estrategia de una actividad calificada sin tocar notas ni definición',async()=>{
+    const saved=await controller().save(user,dto)
+    db.state.grades.push({id:'grade-1',schoolId:user.schoolId,evaluationActivityId:saved.id,score:17})
+    const instruments=structuredClone(db.state.instruments),grades=structuredClone(db.state.grades)
+    const updated=await controller().save(user,{...dto,id:saved.id,instrumentId:saved.instrumentId,teachingStrategyId:'CASE_STUDY',teachingStrategyOrigin:'MANUAL'})
+    expect(updated.teachingStrategyId).toBe('CASE_STUDY')
+    expect(db.state.instruments).toEqual(instruments)
+    expect(db.state.grades).toEqual(grades)
+  })
+  it('guarda origen manual y conserva instrumento al editar solo estrategia y al reintentar', async () => {
+    const input = {...dto, creationId, teachingStrategyId:'CASE_STUDY', teachingStrategyOrigin:'MANUAL' as const}
+    const saved = await controller().save(user,input)
+    expect(saved).toMatchObject({teachingStrategyId:'CASE_STUDY',teachingStrategyOrigin:'MANUAL'})
+    expect((await controller().save(user,input)).id).toBe(saved.id)
+    const before=structuredClone(db.state.instruments)
+    const edited=await controller().save(user,{...dto,id:saved.id,instrumentId:saved.instrumentId,teachingStrategyId:'DEBATE',teachingStrategyOrigin:'MANUAL'})
+    expect(edited).toMatchObject({teachingStrategyId:'DEBATE',teachingStrategyOrigin:'MANUAL',instrumentId:saved.instrumentId})
+    expect(db.state.instruments).toEqual(before)
+    const omitted=await controller().save(user,{...dto,id:saved.id,instrumentId:saved.instrumentId})
+    expect(omitted.teachingStrategyId).toBe('DEBATE')
+  })
+  it('histórico ausente sigue desconocido; no infiere retroactivamente',async()=>{
+    const saved=await controller().save(user,{...dto,description:'Debaten posturas con argumentos.'})
+    expect(saved).toMatchObject({teachingStrategyId:null,teachingStrategyOrigin:'UNKNOWN'})
+  })
+  it.each([
+    {teachingStrategyId:'inventada',teachingStrategyOrigin:'MANUAL'},
+    {teachingStrategyId:'DEBATE',teachingStrategyOrigin:'MALFORMADO'},
+    {teachingStrategyId:null,teachingStrategyOrigin:'MANUAL'},
+  ])('rechaza valor inválido sin escrituras: %j',async selection=>{
+    await expect(controller().save(user,{...dto,...selection} as SaveActivityDto)).rejects.toMatchObject({status:400})
+    expect(db.state.activities).toHaveLength(0)
+    expect(db.state.instruments).toHaveLength(0)
+  })
+  it('rechaza técnica fuera del ámbito verificado',async()=>{
+    db.state.subjects[0].grade.academicLevel={code:'primario'}
+    await expect(controller().save(user,{...dto,teachingStrategyId:'FORUM',teachingStrategyOrigin:'MANUAL'})).rejects.toMatchObject({status:400})
+  })
+})
 function existing(overrides = {}) {
   db.state.activities.push({ id: 'activity-1', schoolId: 'school-1', schoolYearId: 'year-1', sectionSubjectId: 'ss-1',
     academicPeriodId: 'period-1', competencyBlockId: 'b1', competencyBlockWeights: { b1: 1 }, status: 'ACTIVE', createdBy: 'user-1', name: 'Proyecto', maxScore: 20, ...overrides })
@@ -243,6 +284,69 @@ describe('instrument validation and graded metadata', () => {
     expect(db.state.snapshots).toHaveLength(2)
   })
 
+  it.each(['individual', 'group'] as const)('devuelve las filas preparadas de %s sin releer todas sus relaciones dentro de la transacción', async mode => {
+    const request = { ...prepared(), activityType: mode, ...(mode === 'group' ? { teamIds: ['team-1'] } : {}) }
+    request.instrumentSnapshot!.participationMode = mode === 'group' ? 'GROUP' : 'INDIVIDUAL'
+    if (mode === 'group') db.state.teams.push({ id: 'team-1', schoolId: 'school-1', sectionSubjectId: 'ss-1', status: 'ACTIVE', name: 'A', members: [{ enrollmentId: 'student-1' }] })
+    const read = vi.spyOn(db.prisma.evaluationActivity, 'findUnique').mockRejectedValue(new Error('Transaction not found during redundant hydration'))
+    const saved = await controller().save(user, request)
+    expect(read).not.toHaveBeenCalled()
+    expect(saved).toMatchObject({ id: db.state.activities[0].id, instrumentId: db.state.instruments[0].id, instrumentSnapshotId: db.state.snapshots[0].id,
+      instrumentSnapshotVersion: 1, instrumentCriteria: request.instrumentCriteria, instrumentSnapshot: request.instrumentSnapshot, evaluatedCount: 0, teamIds: mode === 'group' ? ['team-1'] : [] })
+    expect(db.state.preferences).toHaveLength(1)
+    if (mode === 'group') expect(db.state.members[0].enrollmentId).toBe('student-1')
+  })
+
+  it('devuelve una revisión enlazada sin releer ni modificar su snapshot anterior', async () => {
+    const request = prepared(), original = await controller().save(user, request)
+    const prior = structuredClone(db.state.snapshots[0])
+    const next = structuredClone(request)
+    next.instrumentCriteria!['lista-cotejo:criterion:0'] = 'Criterio revisado'
+    next.instrumentSnapshot!.criteria[0].title = 'Criterio revisado'
+    const read = vi.spyOn(db.prisma.evaluationActivity, 'findUnique').mockRejectedValue(new Error('Transaction expired during redundant hydration'))
+    const saved = await controller().save(user, { ...next, id: original.id, instrumentId: original.instrumentId })
+    expect(read).not.toHaveBeenCalled()
+    expect(saved.instrumentSnapshotVersion).toBe(2)
+    expect(saved.instrumentCriteria).toEqual(next.instrumentCriteria)
+    expect(saved.instrumentSnapshot).toEqual(next.instrumentSnapshot)
+    expect(db.state.snapshots[1].previousSnapshotId).toBe(original.instrumentSnapshotId)
+    expect(db.state.snapshots[0]).toEqual(prior)
+  })
+
+  it('valida el contexto idéntico una vez después del bloqueo al cambiar solo estrategia', async () => {
+    const request = prepared(), original = await controller().save(user, request)
+    const read = vi.spyOn(db.prisma.sectionSubject, 'findFirst')
+    const saved = await controller().save(user, { ...request, id: original.id, instrumentId: original.instrumentId, teachingStrategyId: 'CASE_STUDY', teachingStrategyOrigin: 'MANUAL' })
+    expect(read).toHaveBeenCalledTimes(2) // Preflight and the authoritative check after locking.
+    expect(saved.instrumentSnapshotId).toBe(original.instrumentSnapshotId)
+    expect(saved.instrumentCriteria).toEqual(original.instrumentCriteria)
+    expect(saved.teachingStrategyId).toBe('CASE_STUDY')
+  })
+
+  it('valida ambos contextos después del bloqueo cuando cambia asignatura o período', async () => {
+    const request = prepared(), original = await controller().save(user, request)
+    db.state.subjects.push({ ...db.state.subjects[0], id: 'ss-target' })
+    db.state.periods.push({ ...db.state.periods[0], id: 'period-target' })
+    const read = vi.spyOn(db.prisma.sectionSubject, 'findFirst')
+    await controller().save(user, { ...request, id: original.id, instrumentId: original.instrumentId, sectionSubjectId: 'ss-target', academicPeriodId: 'period-target' })
+    expect(read.mock.calls.map((args: any) => args[0].where.id)).toEqual(['ss-target', 'ss-1', 'ss-target'])
+  })
+
+  it.each([0,1])('conserva instrumento, snapshot y %i calificaciones al actualizar solo estrategia sin recargar relaciones', async graded => {
+    const request = prepared(), original = await controller().save(user, request)
+    if (graded) db.state.grades.push({ schoolId: user.schoolId, evaluationActivityId: original.id, score: 12 })
+    const update = db.prisma.evaluationActivity.update
+    vi.spyOn(db.prisma.evaluationActivity, 'update').mockImplementation(async (args: any) => {
+      if (args.include) throw new Error('Transaction expired reloading unchanged relations')
+      return update(args)
+    })
+    const saved = await controller().save(user, { ...request, id: original.id, instrumentId: original.instrumentId, teachingStrategyId: 'CASE_STUDY', teachingStrategyOrigin: 'MANUAL' })
+    expect(saved).toMatchObject({ instrumentId: original.instrumentId, instrumentSnapshotId: original.instrumentSnapshotId,
+      instrumentCriteria: original.instrumentCriteria, instrumentSnapshot: original.instrumentSnapshot, evaluatedCount: graded, teachingStrategyId: 'CASE_STUDY' })
+    expect(db.state.instruments).toHaveLength(1)
+    expect(db.state.snapshots).toHaveLength(1)
+  })
+
   it('revalidates canonical snapshot data on creation retries', async () => {
     const request = { ...prepared(), creationId }
     await controller().save(user, request)
@@ -260,6 +364,19 @@ describe('instrument validation and graded metadata', () => {
 
   it('allows 20 criteria in versioned instruments', async () => {
     expect((await controller().save(user, prepared(20))).instrumentSnapshotVersion).toBe(1)
+  })
+
+  it('saves a prepared activity for an administrator when no teacher is assigned', async () => {
+    db.state.subjects[0].teacherId = null
+    db.state.subjects[0].teacher = null
+    const findTeacher = vi.spyOn(db.prisma.teacher, 'findFirst').mockImplementation(async ({ where }: any) => {
+      if (where.id === '') throw new Error('invalid input syntax for type uuid: ""')
+      return null
+    })
+    const saved = await controller().save({ ...user, roles: ['admin'] }, prepared())
+    expect(saved.instrumentSnapshotVersion).toBe(1)
+    expect(db.state.preferences).toHaveLength(0)
+    expect(findTeacher).not.toHaveBeenCalledWith(expect.objectContaining({ where: expect.objectContaining({ id: '' }) }))
   })
 
   it('allows versioned graded metadata but rejects changed scoring evidence', async () => {

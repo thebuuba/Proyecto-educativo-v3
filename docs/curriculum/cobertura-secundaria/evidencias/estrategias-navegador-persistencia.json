@@ -1,0 +1,54 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "7b6dd4b787dbcfefea5baf745d93162c9969fd5f",
+      "dirty": true,
+      "startedAt": "2026-10-15T10:59:53.929Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.69"
+    }
+  },
+  "browserActivities": [
+    {
+      "id": "4d24d6bb-fadb-482e-98d3-31827af4d997",
+      "name": "QA estrategia · caso y diálogo",
+      "teachingStrategyId": "DIALOGIC_INQUIRY",
+      "teachingStrategyOrigin": "MANUAL",
+      "planningId": null,
+      "maxScore": 20,
+      "instrumentId": "f132cf00-488e-452e-9caa-47b9f60a2d4e",
+      "snapshotId": "bb9d7a01-e4b5-4efd-8d58-eefadef92002",
+      "snapshotVersion": 1,
+      "definitionHash": "4f87b482a087b77d7c1b22a3a5b64a592511f88723ca62b5cefc3f7bd02bb17d"
+    },
+    {
+      "id": "d05d9b42-4d88-421c-96c8-8361969ab123",
+      "name": "QA estrategia · caso y diálogo copia",
+      "teachingStrategyId": "DIALOGIC_INQUIRY",
+      "teachingStrategyOrigin": "MANUAL",
+      "planningId": null,
+      "maxScore": 20,
+      "instrumentId": "0b4bbc22-d233-4eb4-a56f-57707d122dcc",
+      "snapshotId": "12ec9959-2206-4c54-b20f-a9127bdc3419",
+      "snapshotVersion": 1,
+      "definitionHash": "4f87b482a087b77d7c1b22a3a5b64a592511f88723ca62b5cefc3f7bd02bb17d"
+    },
+    {
+      "id": "d5b26b8b-5026-4cea-aeec-6a4ee9fcd08d",
+      "name": "QA estrategia · diálogo desde planificación",
+      "teachingStrategyId": "DIALOGIC_INQUIRY",
+      "teachingStrategyOrigin": "AUTO",
+      "planningId": "9fb71458-3b5c-4b40-a59a-11ddeb12d3b7",
+      "maxScore": 17.35,
+      "instrumentId": "5ee12e03-46a7-476e-b40f-0b8d6282a7fe",
+      "snapshotId": "972976db-7d2f-4c72-9295-5e91a2029c54",
+      "snapshotVersion": 1,
+      "definitionHash": "daffbc379606d312021b2192227001b2d8c86831f02eb1d522d77e930c1c0611"
+    }
+  ],
+  "visibleFieldsMatchPersistence": true,
+  "copyDefinitionIdentical": true,
+  "planningTextUnchanged": true,
+  "historicAbsentUnchanged": true
+}

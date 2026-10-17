@@ -1,0 +1,489 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "grade": 3,
+  "catalog": "evaluation-2026.88",
+  "source": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_NAT_COMUN_G3_V1",
+    "versionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+    "documentId": "30f42a72-1eab-5814-b08f-27f77ef33f3c",
+    "metadata": {
+      "subjectCodes": [
+        "NAT",
+        "NAT-FISICAS"
+      ],
+      "grades": [
+        3
+      ],
+      "commonOnly": true,
+      "datasetDigest": "48e7c0a330935f5ef3800470a9163ea60688bab126d359c010c707a80ebb9e79",
+      "sourceVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "sourcePdfHash": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+      "scopeMap": {
+        "3": {
+          "sourceId": "f014e137-2f00-54b0-a405-86a04a4af403",
+          "id": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a"
+        }
+      },
+      "review": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json"
+    },
+    "scopes": 1,
+    "elements": 207,
+    "relations": 7,
+    "result": "UNCHANGED",
+    "preservedSnapshots": 89
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-DlUYCCST.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-DlUYCCST.js",
+        "sha256": "a541a3db805a01f2e24b680282e05c5f9ae0c4f8c717c2db0dc712e93836ade9",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-zTTCRqRm.js",
+        "sha256": "edf1cd8526e1ec4f945766b004a700ef625c996def3cd902b4f2fd77a80f7388",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-CowB55yS.js",
+        "sha256": "df2634ee0f89a5331e0a647fcc26c45731429d2d198818ba5faeb196c6e01932",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-CESDKoGt.js",
+        "sha256": "b209ed8b4e763bec1f4879310bbe549bc25d68fb29bf9618e890a0e19c877083",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-DZ8st5Jg.js",
+        "sha256": "f1ed4bc434ce7d3da06ce63e78a959f3475e0a4ffbfbccbf5dc34055daa3aa09",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "e368308aa579034aba04cd2f5ef5d47d62a4e0ae4ab5ec2d4ff88523edaecbe0",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "generationTiming": {
+    "grade": 3,
+    "mode": "PURE_IN_PROCESS_RECOMMENDATION_SYNTHETIC_CONTEXT_NO_AUTH_DB_HTTP_OR_RENDER",
+    "samples": 200,
+    "p50Ms": 0.4882000000000062,
+    "p95Ms": 0.7549999999999955,
+    "maxMs": 1.148900000000026
+  },
+  "checks": [
+    {
+      "command": "pnpm --filter backend test",
+      "code": 0,
+      "ms": 14775,
+      "log": ".wrangler/science-source/grade-3-final-check-0.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 7317,
+      "log": ".wrangler/science-source/grade-3-final-check-1.log"
+    },
+    {
+      "command": "pnpm --filter frontend exec vitest run src/modules/activities/services/scienceCommonContract.spec.ts src/modules/activities/components/ActivityPreparationRace.spec.tsx",
+      "code": 0,
+      "ms": 5835,
+      "log": ".wrangler/science-source/grade-3-final-check-2.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 17891,
+      "log": ".wrangler/science-source/grade-3-final-check-3.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "code": 0,
+      "ms": 24696,
+      "log": ".wrangler/science-source/grade-3-final-check-4.log"
+    }
+  ],
+  "backend": {
+    "command": "pnpm --filter backend test",
+    "files": 104,
+    "tests": 42543
+  },
+  "frontend": {
+    "command": "pnpm --filter frontend exec vitest run src/modules/activities/services/scienceCommonContract.spec.ts src/modules/activities/components/ActivityPreparationRace.spec.tsx",
+    "files": 2,
+    "tests": 1932
+  },
+  "http": {
+    "verification": "AUTHENTICATED_HTTP_DB_AND_EDITOR_ADAPTERS_NOT_VISUAL",
+    "savedEvidence": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "activityId": "2d9e6d21-3f8e-42ba-8e84-bff1b7047d34",
+        "instrumentHash": "e3091ac0cd38324d6f67a5b9bae77f2f45d4bdb3bcff0c01c8f094d7b7dd9627",
+        "snapshotId": "d70b5767-0cac-4dfd-a2cc-3e73c0b3242e",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+          "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a"
+        }
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "activityId": "14a1fa5e-dfb6-4b2f-9376-ded5f25162fd",
+        "instrumentHash": "c7b450a366c56e79f0e7469a5647bced7fd6d9d20e510bf01a144ce7887b740c",
+        "snapshotId": "1fcd09f1-ec51-4518-8e19-5e3f50f5cc49",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+          "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a"
+        }
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "activityId": "4de99334-f9f6-42e1-b836-a4d0d2e43719",
+        "instrumentHash": "e824363305f9a608e38dd55089e1d061c68a51c35363a348ca54bb9243f126a5",
+        "snapshotId": "2f96a7ac-9a6e-43b7-8673-d83f5c30f854",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+          "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a"
+        }
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "activityId": "5887934c-994d-4b34-8988-5676fa0716b6",
+        "instrumentHash": "f7118ae526358b77bdbdf07b700814c3b3e5ab25ece30afe1b43348c14d01333",
+        "snapshotId": "38920020-db03-4bba-b098-e953a8ebbd88",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+          "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a"
+        }
+      }
+    ],
+    "finalBuildRecheck": {
+      "at": "2026-10-16T19:33:01.122Z",
+      "reopened": 4,
+      "generated": [
+        {
+          "type": "rubrica",
+          "total": 20,
+          "catalog": "evaluation-2026.88"
+        },
+        {
+          "type": "lista-cotejo",
+          "total": 17.35,
+          "catalog": "evaluation-2026.88"
+        },
+        {
+          "type": "escala",
+          "total": 20,
+          "catalog": "evaluation-2026.88"
+        },
+        {
+          "type": "lista-ponderada",
+          "total": 17.35,
+          "catalog": "evaluation-2026.88"
+        }
+      ],
+      "languageRegressions": [
+        {
+          "language": "FRA",
+          "catalog": "evaluation-2026.88",
+          "curriculumVersionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+        },
+        {
+          "language": "ING",
+          "catalog": "evaluation-2026.88",
+          "curriculumVersionId": null,
+          "scopeId": null
+        },
+        {
+          "language": "MAT",
+          "catalog": "evaluation-2026.88",
+          "curriculumVersionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+          "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+        }
+      ],
+      "scienceRegressions": [
+        {
+          "grade": 1,
+          "catalog": "evaluation-2026.88",
+          "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+          "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf"
+        },
+        {
+          "grade": 2,
+          "catalog": "evaluation-2026.88",
+          "curriculumVersionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+          "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708"
+        }
+      ]
+    },
+    "semanticControls": [
+      {
+        "description": "Interpreta el circuito en serie construido por el docente sin realizar otra práctica.",
+        "criteria": [
+          "nat-3-circuits-analysis"
+        ],
+        "catalog": "evaluation-2026.88"
+      },
+      {
+        "description": "Construye el circuito sencillo según el diseño y las precauciones indicadas.",
+        "criteria": [
+          "nat-3-circuits-construction",
+          "nat-3-circuits-construction-safety"
+        ],
+        "catalog": "evaluation-2026.88"
+      },
+      {
+        "description": "Compara mezcla de luces y pigmentos con los casos proporcionados.",
+        "criteria": [
+          "nat-3-light-colors-comparison"
+        ],
+        "catalog": "evaluation-2026.88"
+      },
+      {
+        "description": "Mide el tiempo según el procedimiento y registra las mediciones.",
+        "criteria": [
+          "nat-3-measurement-measurement",
+          "nat-3-measurement-observation"
+        ],
+        "catalog": "evaluation-2026.88"
+      },
+      {
+        "description": "Explica cómo funciona el radar.",
+        "criteria": [
+          "nat-3-sound-explanation"
+        ],
+        "catalog": "evaluation-2026.88"
+      }
+    ],
+    "firstRecommendationTimingsMs": [
+      9293,
+      10549,
+      6267,
+      6676
+    ],
+    "finalRecheckRecommendationTimings": [
+      {
+        "status": 200,
+        "ms": 19948
+      },
+      {
+        "status": 200,
+        "ms": 20280
+      },
+      {
+        "status": 200,
+        "ms": 31819
+      },
+      {
+        "status": 200,
+        "ms": 22183
+      },
+      {
+        "status": 500,
+        "ms": 21407
+      },
+      {
+        "status": 200,
+        "ms": 25121
+      },
+      {
+        "status": 200,
+        "ms": 21363
+      },
+      {
+        "status": 200,
+        "ms": 22957
+      },
+      {
+        "status": 200,
+        "ms": 21595
+      },
+      {
+        "status": 200,
+        "ms": 20644
+      },
+      {
+        "status": 200,
+        "ms": 29682
+      },
+      {
+        "status": 200,
+        "ms": 10764
+      },
+      {
+        "status": 200,
+        "ms": 24620
+      },
+      {
+        "status": 200,
+        "ms": 16100
+      },
+      {
+        "status": 200,
+        "ms": 11347
+      }
+    ]
+  },
+  "browser": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "grade": 3,
+    "session": "personal Development",
+    "emptySelectorsVisible": true,
+    "scoreInitiallyEmpty": true,
+    "silentPreparation": true,
+    "preparationUpperBoundMs": 30032,
+    "automaticStrategy": "INQUIRY",
+    "completionPreservedManualText": true,
+    "exhaustionNotice": true,
+    "strategyOnlyExact": true,
+    "appendRestoredOnlyMissing": true,
+    "scalePreparationUpperBoundMs": 29209,
+    "frequencyLabelsVerified": true,
+    "noStrategyFromCalculationOrGroup": true,
+    "weightedStrategyOnlyExact": true,
+    "browserEntry": [
+      "/assets/index-DlUYCCST.js",
+      "/registerSW.js"
+    ],
+    "contextTimeoutRecoveredAfterLocalRestart": true,
+    "formats": [
+      {
+        "activityId": "d2d42e85-0e69-451c-90d9-916a3c8928bc",
+        "format": "rubrica",
+        "points": 17.35,
+        "instrumentId": "658dc279-aba9-460e-86bc-0eb79f3230d5",
+        "snapshotId": "db6b3945-a210-4a81-8569-2e192bbd986b",
+        "catalog": "evaluation-2026.88",
+        "curriculumVersionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+        "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a",
+        "teachingStrategyId": "CASE_STUDY",
+        "fieldsHash": "def6d9db544590615f43a2c0bd0c11cbaa267ab3929c23212d02e41e270670bb",
+        "rows": 6
+      },
+      {
+        "activityId": "753cbbff-2b04-408c-9f42-b70d610c98a8",
+        "format": "lista-cotejo",
+        "points": 20,
+        "instrumentId": "f8b9ea1d-f3ef-4f62-834a-424517a4d2da",
+        "snapshotId": "dcfba799-b829-40d0-8831-52cff2a609ad",
+        "catalog": "evaluation-2026.88",
+        "curriculumVersionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+        "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a",
+        "teachingStrategyId": null,
+        "fieldsHash": "014e33b9e48fbc89c3f5dbe8f69ba06727375faf5871408efd64da3def9f275d",
+        "rows": 2
+      },
+      {
+        "activityId": "04fc0acb-efbc-486c-b71f-13d73ebac70b",
+        "format": "escala",
+        "points": 17.35,
+        "instrumentId": "28ce75c7-12b2-4a49-84e8-032a83938286",
+        "snapshotId": "0b64a75b-d37a-4eed-be0b-dd57a037e0db",
+        "catalog": "evaluation-2026.88",
+        "curriculumVersionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+        "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a",
+        "teachingStrategyId": null,
+        "fieldsHash": "cb90a028bbfeee6d61ee2b4423b6a1e5ea8edf33b5764e541cdf5a417dac0bf2",
+        "rows": 3
+      },
+      {
+        "activityId": "18721be9-b265-43b5-a06b-138f7781831c",
+        "format": "lista-ponderada",
+        "points": 17.35,
+        "instrumentId": "551b5b56-c106-477f-a5cc-aca3b88cbdb9",
+        "snapshotId": "60c405e0-e3a9-4960-9fc1-b634473f8ccb",
+        "catalog": "evaluation-2026.88",
+        "curriculumVersionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+        "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a",
+        "teachingStrategyId": "CASE_STUDY",
+        "fieldsHash": "938878934eee3f63bd15045f5136b854fc05bc88daadb98dc1ecb04f0f68d918",
+        "rows": 3
+      }
+    ],
+    "allTableFieldsEqual": true,
+    "screenshot": "assets/ciencias-naturaleza-3/ponderada-reabierta.jpg",
+    "finalBuildReopensExact": true
+  },
+  "historicalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 3,
+    "newSnapshots": 24,
+    "gradeBaseline": {
+      "grade": 3,
+      "preservedReleases": 20,
+      "preservedSnapshots": 89,
+      "newReleases": 1,
+      "newSnapshots": 8
+    }
+  },
+  "secretsAudit": {
+    "filesInspected": 18,
+    "secretValuesFound": false,
+    "privateFilesExcluded": true
+  },
+  "limits": [
+    "Defined wording patterns only, not every possible formulation",
+    "HTTP elapsed time includes local worker and remote Development dependencies; no independent database/render timing",
+    "Browser private service-worker registrations not audited; served assets/sw and browser entry checked",
+    "Only grades closed in the continuation file are verified; no optatives"
+  ],
+  "latencyReadOnly": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "firstConnectionAndQueryMs": 2611.8604,
+    "warmRoundTripMs": 151.45699999999988,
+    "role": "app_backend_local",
+    "sessions": [
+      {
+        "state": "active",
+        "wait_type": "none",
+        "sessions": 1
+      },
+      {
+        "state": "idle",
+        "wait_type": "Client",
+        "sessions": 6
+      }
+    ]
+  }
+}

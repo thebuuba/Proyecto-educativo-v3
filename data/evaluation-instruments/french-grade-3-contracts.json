@@ -1,0 +1,14 @@
+[
+  {"id":"clima-breve","description":"Describe por escrito el tiempo atmosférico en francés.","activity":"WRITTEN_PRODUCTION","contains":["weather","written"],"excludes":["oral","future"]},
+  {"id":"planes-frances","description":"Présentez oralement vos projets futurs en français.","activity":"ORAL_PRESENTATION","contains":["future","oral"],"excludes":["written","weather"]},
+  {"id":"curso-desarrollada","description":"Escribe en francés un mensaje sobre las actividades que se están llevando a cabo en el aula. Distingue qué hace cada personaje ahora. Revisa el borrador.","activity":"WRITTEN_PRODUCTION","contains":["ongoing","message","written","revision"],"excludes":["future","oral"]},
+  {"id":"ubicacion-mixta","description":"Décrivez par écrit où se trouve la bibliothèque, usando referencias espaciales en francés.","activity":"WRITTEN_PRODUCTION","contains":["location","written"],"excludes":["oral"]},
+  {"id":"lectura-direcciones","description":"Lisez les indications du chemin en français et localisez le lieu d'arrivée sur le croquis.","activity":"READING_COMPREHENSION","contains":["directions"],"excludes":["oral","written"]},
+  {"id":"escucha-clima","description":"Escucha en francés la descripción del clima e identifica las condiciones atmosféricas del lugar.","activity":"LISTENING_COMPREHENSION","contains":["weather"],"excludes":["oral","written"]},
+  {"id":"interaccion-oral","description":"En parejas, dialoguen en francés sobre sus planes futuros para las vacaciones.","activity":"ORAL_INTERACTION","contains":["future","interaction","oral"],"excludes":["written"]},
+  {"id":"interaccion-escrita","description":"Échangez des messages écrits en français sur les activités en cours.","activity":"WRITTEN_PRODUCTION","contains":["ongoing","interaction","written"],"excludes":["oral"]},
+  {"id":"mixta-independiente","description":"Lee en francés la descripción del tiempo atmosférico. Luego escribe en francés tus planes futuros.","activity":"WRITTEN_PRODUCTION","contains":["weather","future","written"],"excludes":["oral"]},
+  {"id":"negacion","description":"Écrivez vos projets futurs en français. Ne faites pas de dialogue oral.","activity":"WRITTEN_PRODUCTION","contains":["future","written"],"excludes":["oral","interaction"]},
+  {"id":"alternativa","description":"Describe las condiciones atmosféricas oralmente o por escrito en francés.","activity":"OTHER","contains":["alternative"],"excludes":["oral","written"]},
+  {"id":"gramatica-futuro","description":"Escribe tus planes futuros en francés usando el futuro próximo aller + infinitivo.","activity":"WRITTEN_PRODUCTION","contains":["future","grammar-near-future","written"],"excludes":["oral"]}
+]

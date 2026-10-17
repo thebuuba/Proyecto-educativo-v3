@@ -1,5 +1,97 @@
 # Continuación del encargo completo
 
+## Encargo vigente: Francés común — 15/10/2026
+
+El adjunto `d2d4353c-ff04-4737-bb10-eb95459fd213` autoriza cerrar Development y continuar autónomamente con Francés común, grado por grado, sin subagentes ni producción. Estado y siguiente acción: [frances-continuacion.md](frances-continuacion.md). Las órdenes de detenerse de los apartados siguientes pertenecen a encargos anteriores. Cierre Development publicado en `1db3e19`; build y destino exclusivo Development revalidados antes de comenzar el inventario francés.
+
+## Encargo vigente: estrategia de enseñanza y aprendizaje — 15/10/2026
+
+Adjunto c3aba48a. Implementación transversal del campo opcional en Actividades, catálogo compartido `teaching-strategies-2026.1` con16 entradas oficiales verificadas, automático/manual/desconocido, búsqueda y retorno automático. [Informe y evidencias](estrategias-informe.md). Base7b6dd4b, rama amplia-instrumentos-secundaria; sin subagentes. No amplía grados/asignaturas ni modifica matriz/inventario/revisión. Catálogo evaluativo69 permanece intacto.
+
+Migración nueva `20261015105401_activity_teaching_strategy.sql` aplicada solo a Supabase local, con registro transaccional; Prisma/tipos alineados. Se preservaron138 actividades/instrumentos/snapshots previos. Históricos null/UNKNOWN; Planificación conserva texto libre. HTTP12 contextos LEN/ING1.º–6.º; tres actividades reales Chrome guardadas/reabiertas (original, copia y entrada desde Planificación); edición solo de estrategia conserva exactamente instrumento/snapshot y manuales. Teclado/móvil/escritorio comprobados. Backend36.839/94, frontend37.464/120 y ocho pruebas dirigidas finales. Builds y revisión final documentados en el informe y cierre de Git en la entrega.
+
+Siguiente acción al recuperar: comprobar hash remoto y árbol, leer este informe. Encargo cerrado; detenerse, sin otro bloque curricular. Pendiente externo: aplicar esta nueva migración al entorno que se publique en un encargo futuro autorizado, nunca asumir que ya está en producción. Límites explícitos del detector/ámbitos en el informe. Las secciones siguientes son históricas.
+
+## Encargo vigente: consignas naturales y criterios — 15/10/2026
+
+Adjunto 50f00616-6622-4f7d-93f7-dbf4e5c7fea8 **cerrado en los patrones definidos**. Base publicada dc50778, rama amplia-instrumentos-secundaria. [Informe](consignas-informe.md), [instrumentos completos](consignas-ejemplos-completos.md). Se reprodujo My Future Plans en HTTP/Chrome .66 y se corrigieron los filtros gramaticales, modalidades coordinadas, condiciones de entrega, resolución local de grado, informes breves y feedback de Agregar/Completar. Catálogo final .69 local; .66/.67/.68 congelados y comparados íntegramente con la base. Suma/resta solo acción básica, sin ampliar Matemática.
+
+Plan: [consignas y criterios](../../superpowers/plans/2026-10-15-consignas-y-criterios.md). Backend36.796/93, frontend37.457/119, inventario/conciliación11; builds backend/frontend/Cloudflare dry-run aprobados. HTTP264 +4 interpretaciones +4 rechazos y8 comprobaciones de unidades. Tres CRUD reales con campos/snapshots iguales: dos de Inglés4(.67), uno de Lengua1(.69); otra prueba de Agregar queda solo como borrador ficticio. Los135 snapshots previos permanecen idénticos; ahora138=108+28+2. Matriz12 ámbitos/133 temas con seguimiento y límites, sin cambiar cierres ni otras áreas.
+
+No queda pendiente conocido en los casos exigidos. Instrucciones inglesas y requisitos de formato arbitrarios siguen fuera de garantía; informe y matriz lo explican. **Detenerse, sin otra asignatura**. Este cierre se publica mediante commit español/push normal; al recuperar comprobar Git, hash remoto y árbol antes de actuar. El proceso probado identifica dc50778 y dirty=true; no atribuirle retroactivamente el hash del commit de entrega. Sin subagentes, despliegue, main, reset ni cambios históricos. El estado siguiente es histórico.
+
+## Estado vigente: ajuste de calidad de Inglés común1.º–6.º — 15/10/2026
+
+Nuevo encargo del adjunto fdfa93c7-3ad4-4828-bb8b-4a75a3b5927b, posterior al cierre2–6. [Informe de calidad](ingles-calidad-informe.md), [instrumentos completos corregidos](ingles-calidad-ejemplos-completos.md). Corrección compartida de cotejo: datos independientes declarados, relaciones conservadas, peso/IDs y límite20 después de expandir; añadir/completar tras renombrar y duplicados del CV/formulario. Revisión observable admite mantener texto correcto sin cambios; progresiones/parcial adaptados a los cuatro formatos y sin fila si no se pide revisión.
+
+Catálogo final .66 instalado/cargado; .63/.64/.65 congelados. Backend36.753/92; frontend completo37.191/118 y277dirigidas tras la última alternativa; inventario/conciliación11. Builds backend/frontend y Cloudflare dry-run aprobados. HTTP240casos comunes +16funcionales1/2 y30recomendaciones naturales; seguimiento de alternativas por separado. Dos CRUD reales.65 reabiertos/cotejados de nuevo en.66 (CV17.35 y rúbrica de revisión20, manuales5/9/6); generación adicional de primero.66, sin atribuirle CRUD.
+
+Conciliación: antes133=103+28+2 y después135=105+28+2, conjuntos disjuntos; base108 solapada78+28+2. Consulta de tablas y IDs completa en el informe; cero versiones predecesoras en este conjunto local. Los133 snapshots/actividades anteriores permanecen idénticos; no se borraron ni reescribieron datos. Cierres y límites curriculares preservados, otras asignaturas sin tocar.
+
+El ajuste se publica en este commit; comprobar hash remoto/árbol al recuperar. El proceso probado registra75ed6e9 con cambios pendientes de este ajuste, no el hash del cierre atribuido retroactivamente. **Detenerse después de este ajuste**; sin otra asignatura, optativas, subagentes, IA de aplicación, dependencias, rediseño, main, despliegue ni reset. Siguiente pendiente: ninguno en los patrones definidos; cualquier ampliación requiere nuevo encargo. Las secciones siguientes son históricas.
+
+
+## Estado vigente: cierre de Inglés común2.º–6.º — 15/10/2026
+
+Encargo finalizado en sus familias y patrones definidos; **detenerse tras sexto**, sin iniciar otra asignatura ni optativas. [Informe consolidado](ingles-2-6-informe-consolidado.md), [cierre de sexto](ingles-6-informe-final.md), [cuatro instrumentos completos de sexto](ingles-6-ejemplos-finales.md). Fuente de sexto159 registros/16 grupos; once evidencias funcionales,58 familias gramaticales/134 formas,17 léxicas/cuatro expresivas,23 estrategias y géneros/contexto/composición verificados.
+
+Código de sexto publicado/ejecutado61e8a5a10b891da6874a9d3ab3eb77c4a6a226c1; catálogo local .63 instalado/cargado, .62 conservado. Backend36.689/91; frontend completo36.940/117 y6.140 específicas tras el ajuste final; builds backend/frontend/Cloudflare dry-run aprobados, inventario9. HTTP178+8selecciones+4rechazos/pools y88seguimientos (incluidos ocho de quinto). Cuatro CRUD cotidianos auténticos en Chrome .63, campos/IDs/puntos/pesos cotejados con snapshots, puntaje pendiente y manuales conservados;133 snapshots actuales/103 completos,108 de base y28 referencias intactas.
+
+Matriz y ledger cerrados con evidencia, exclusiones y límites explícitos; no se promete comprender cualquier redacción ni se marca completa otra asignatura. El cierre documental/evidencias se publica en este commit; al recuperar, comprobar hash remoto y árbol. El hash final y resultado del push se confirman en la entrega para no atribuirlos retroactivamente a las pruebas. Sin IA de aplicación, dependencias, rediseño, subagentes, main, despliegue, reset ni cambios históricos.
+
+Las secciones siguientes son **históricas** y no autorizan reabrir grados ni avanzar a otra asignatura. Para recuperar el trabajo, comprobar Git y leer este estado y el informe consolidado; no repetir suites completas si el motor sigue en61e8a5a. Siguiente pendiente: ninguno dentro del alcance definido; un nuevo bloque necesita un nuevo encargo.
+
+
+## Retomar sexto — 15/10/2026
+
+Quinto cerrado/publicado `45e5fdb18d5e0a691351c8070648eea559757743`, remoto igual y árbol limpio. Sexto parcial: fuente169–174 cotejada/159registros/16grupos, funciones11, gramática58/134, léxico17/expresiones4, estrategias23/géneros/contexto/composición conectados. [Punto de avance](ingles-6-punto-de-avance.md). .62 congelado; .63 solo código. Completar regresión/builds, instalación/HTTP/cuatro CRUD/snapshots/históricos y revisión antes de publicar el cierre. Seguimiento5: interactuar en consulta simulada reconocido, pendiente HTTP63. Detenerse tras sexto, sin otro bloque.
+
+
+## Quinto verificado — 15/10/2026
+
+Inglés común5.º verificado en sus familias y patrones definidos, catálogo local62;61 congelado. Fuente156/15; backend29.331/86, frontend6.140 final y regresión reciente12.020/5, inventario9/builds/diff. HTTP187+8+4cap en61 y40seguimientos62; cuatro CRUD auténticos en62 cotejados con snapshots,129actuales/99completos/base intacta. Código publicado1f1abf9; [informe final](ingles-5-informe-final.md), [instrumentos completos](ingles-5-ejemplos-finales.md). Publicar cierre y continuar sexto común PDF169–174, último bloque autorizado. No francés ni optativas. Los estados anteriores son históricos.
+
+
+## Retomar quinto — 15/10/2026
+
+Cuarto publicado en `6dc1e0b8cc3d160f016462bc451df4f3de25c701`, remoto comprobado y árbol limpio al cerrar. Quinto en ejecución: fuentePDF163–168 cotejada/156 registros/15 grupos, funciones12, gramática60/120 formas, léxico22/expresiones7, estrategias/géneros/contexto/composición conectados en código. Reproducción60 de doce casos sin proveedor propio guardada. `.60` congelado; `.61` en carga/verificación local. [Punto de avance](ingles-5-punto-de-avance.md). Faltan revisión integral final, HTTP/cuatro CRUD/snapshots/históricos y publicación. No iniciar sexto hasta cerrar quinto.
+
+
+## Estado vigente — 15/10/2026
+
+Inglés común4.º verificado en sus familias y patrones definidos: fuente162 registros/15 grupos, contexto e indicadores/composición conectados, cuatro formatos y CRUD auténticos cotejados con snapshots. Backend22.227/81, frontend9.868/5, HTTP172+8+4rechazos/4pools en58 y ocho seguimientos en60;125 snapshots/95 completos, base conservada. Builds obligatorios aprobados. [Informe final de cuarto](ingles-4-informe-final.md), [instrumentos completos](ingles-4-ejemplos-finales.md). .57/.58/.59 congelados; .60 instalado/cargado local. Publicar cierre, comprobar push y continuar quinto común PDF163–168; no sexto hasta cerrar quinto. Sin subagentes, francés, optativas, IA de aplicación, rediseño, main, producción ni reset.
+
+Las secciones siguientes conservan los puntos históricos; prevalece este estado y el informe final de cuarto.
+
+
+## Retomar aquí: Inglés común 2.º–6.º — 14/10/2026
+
+Retomar después del seguimiento: `505566168ffdc2565ee69860928b6d7c31c555b1` publicado, `.56` instalado/cargado y congelado. HTTP de subconjuntos culturales3/4 y generación real en Chrome3 aprobados;121 snapshots/91 completos/108 de base intactos. No hay pendiente conocido en ese seguimiento. **Próximo: contexto/indicadores y composición de cuarto**, creando `.57` a partir del `.56` congelado; después revisión integral/operaciones/HTTP/cuatro CRUD/snapshots antes de quinto. Cuarto no está cerrado. Las actualizaciones anteriores que dicen «instalar56» ya se completaron.
+
+Último bloque de cuarto: funciones/gramática/léxico/expresiones/estrategias/géneros conectados en código; fuente162/15, vocabulario15 e intenciones15 de13 registros, estrategias27 y listas por modalidad. Backend22.002/80; frontend9.596/2 (cuarto5.608+tercero3.988), inventario9 y builds aprobados. Publicar el bloque; instalar `.56` local y comprobar el seguimiento de tercero (leyendas/advertencias aisladas, sin exigir sus pares), además de históricos. Después contexto/indicadores y composición de cuarto, revisión integral/operaciones/HTTP/cuatro CRUD/snapshots. No iniciar quinto. `.56` aún no instalado; servicio `.55`. Prevalece este párrafo sobre los estados históricos siguientes.
+
+Estado posterior: tercero publicado `63bf1df746c58f74c9d395714ad41c03fa0fcd53`, hash remoto igual, árbol limpio al cerrar. Cuarto en ejecución, fuente158–162 visualmente cotejada/162 registros/15 grupos; funciones11 y gramática44/115 formas, backend19.936/78, frontend3.552 e inventario9, builds aprobados. [Punto de avance4](ingles-4-punto-de-avance.md). Próximo: léxico/expresiones, estrategias, géneros, contexto/indicadores y composición propios de cuarto; luego revisión/operaciones/HTTP/cuatro CRUD/snapshots/históricos. No iniciar quinto. `.55` congelado y cargado localmente, `.56` solo código sin instalar. Docker/Supabase recuperados sin reset. Las líneas siguientes conservan el cierre previo de tercero.
+
+Última actualización: segundo publicado7eb7e3b; tercero cerrado en familias definidas .55, con puntos previos publicadosbba48e5/0d3a7e2. [Informe final de tercero](ingles-3-informe-final.md), [instrumentos completos](ingles-3-ejemplos-finales.md). Fuente158 registros/15 grupos; backend15.240/76, frontend actual4.008/3 y regresión completa reciente18.792/114, inventario9 y builds aprobados. HTTP156+8+4 rechazos/4 conjuntos mayores que20, cinco CRUD auténticos y cuatro finales,121 snapshots/91 completos/108 de base intactos. .53/.54 congelados, .55 instalado local. Publicar el cierre de tercero y comprobar push; luego cuarto común PDF158–162/segundo ciclo. No iniciar quinto hasta cerrar cuarto. El detalle siguiente conserva puntos históricos; prevalecen esta actualización y el informe final de tercero. Las evidencias .55 registran0d3a7e2 con cambios pendientes: no atribuirles retroactivamente el hash del cierre.
+
+Alcance autorizado por adjunto `1297efcd-88c8-4e97-91b1-15282f03e099/Texto pegado.txt`; sin subagentes. [Estado vigente](avance.md), [plan](../../superpowers/plans/2026-10-14-ingles-comun-2-6.md). No usar las detenciones históricas como impedimento: el usuario autorizó esta ampliación después de ellas.
+
+Rama `amplia-instrumentos-secundaria`, base891ccca publicada, último punto de funciones `b769b19` y cierre de segundo .53. Catálogos .48–.52 congelados; .53 instalado/cargado local. Supabase54321 conserva datos, frontend5173/backend3000. Chrome habitual accesible y autenticado con cuenta ficticia; no cambiarlo al8787 de la captura ni al remoto. Credenciales, .env, cuentas y logs de arranque excluidos de Git y no deben imprimirse. Confirmar el commit de cierre y su push con Git; la evidencia HTTP/Chrome registra b769b19 más cambios pendientes, sin atribución retroactiva.
+
+Segundo está **verificado en sus familias y patrones definidos**. PDF140–145 y196 registros cotejados; páginas143/144 continúan gramática. Matriz con16 grupos de conceptos sin duplicación. La frase «Identificación de que se comprensión oral» se excluye expresamente como fragmento fuente ininterpretable: no se afirma implementarla ni se le asigna el sustituto de primero. Situación/intención siguen sus registros explícitos. Motivación, ansiedad y rasgos personales excluidos de calificaciones; las demás actitudes tienen evidencia comunicativa condicional.
+
+Nueve funciones,41 familias gramaticales/83 formas,27 léxicas/13 expresivas,22 estrategias y géneros por modalidad conectados; ocho condiciones observables y nueve contratos de composición. Backend10.210/71 y frontend específicas3.412 pasan; inventario9 y builds backend/frontend/Cloudflare dry-run aprobados. Se reutilizan regresiones recientes completas .49/específicas .50 con alcance explicado. El total ausente/cero no es válido en backend: pendiente se comprueba en frontend. Servicio y alternativa usan la misma resolución; primero conserva los valores predeterminados de sus helpers.
+
+HTTP final .53:158 casos, ocho recomendaciones, cuatro rechazos de exceso y cuatro conjuntos mayores que20. Chrome corrigió mediante TDD la revisión omitida, comprobar/comprar y duplicación experiencia/narración. Cuatro nuevos recorridos cotidianos editados/guardados/reabiertos, cotejados con snapshots/IDs/objetivos/textos/puntos; ponderada30/20/20/15/15% conservada al completar y reabrir.108 de base intactos;116 actuales;86 instrumentos completos verificados. [Informe](ingles-2-informe-final.md), [ejemplos completos](ingles-2-ejemplos-finales.md). Reiniciar Vite vació formularios de prueba no guardados, reintroducidos sin afirmar recuperación íntegra. Paráfrasis manuales no reconocidas se conservan con aviso; no se fuerzan coincidencias por ID.
+
+Retomar **Inglés común3.º parcial**. Segundo publicado en `7eb7e3b124c1442c896a5e9fdd481bc7fc45b3d5`, hash remoto comprobado. Fuente de tercero146–151 ya cotejada visualmente;158 registros/15 grupos, doce evidencias funcionales,52 familias gramaticales/105 formas y19 familias léxicas/cinco expresivas conectadas. Backend13.412/74, frontend de tercero3.000, regresión de segundo3.400 e inventario9 aprobados. .53 congelado y todavía cargado en runtime; .54 definido solo en código. [Punto de avance](ingles-3-punto-de-avance.md), [cotejo](ingles-3-cotejo-fuente.json). No atribuir HTTP/Chrome al código de tercero: aún no se han ejecutado.
+
+Siguiente: estrategias23 familias, géneros por modalidad (listas coinciden visualmente con segundo: recepción28/oral8/escrito11), contexto/indicadores y composición de tercero. La indicación de que se comprende sí es válida en PROCEDURE19. Comparaciones culturales: señales de advertencia/prohibición, ambiente, historias/leyendas y tradiciones; no heredar automáticamente los aspectos de segundo. Después revisión integral, capacidad/filas/pesos, instalar catálogo local, HTTP y cuatro CRUD auténticos con cotejo de snapshots/históricos. Fuente SHA80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58; ámbito `cc482480-0f08-5657-98aa-1afd28ecfa1a`, primer ciclo. No iniciar cuarto hasta cerrar tercero; después quinto/sexto. No Francés ni optativas.
+
+No IA de aplicación, dependencias, rediseño, main, producción, reset ni modificación de snapshots. Actualizar este punto después de cada bloque y publicar commits coherentes en español.
+
+Lo siguiente es historial.
+
 ## Encargo vigente: corrección transversal de criterios (.46)
 
 No continuar la ampliación curricular. Alcance cerrado al flujo de añadir/completar en Lengua común1.º–6.º e Inglés común1.º, cuatro formatos. [Informe](criterios-adicionales-informe.md), [matriz de40 familias/768 consignas](criterios-matriz-proveedores.md), [ejemplos completos](criterios-ejemplos-completos.md). Se mantienen todos los cierres/evidencias anteriores, registrando esta regresión adicional y su corrección.

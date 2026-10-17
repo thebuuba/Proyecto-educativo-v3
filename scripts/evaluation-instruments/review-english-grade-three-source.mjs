@@ -1,0 +1,87 @@
+import assert from 'node:assert/strict'
+import {readFileSync,writeFileSync} from 'node:fs'
+import {writeSecondaryInventory} from './secondary-inventory.mjs'
+const root='docs/curriculum/cobertura-secundaria/'
+const inventory=JSON.parse(readFileSync(root+'inventario.json','utf8'))
+const scope=inventory.scopes.find(s=>s.id==='cc482480-0f08-5657-98aa-1afd28ecfa1a')
+const closed=process.argv.includes('--close')
+assert.equal(scope.subject,'Inglés');assert.equal(scope.character,'COMMON');assert.equal(scope.grade,3)
+assert.deepEqual(scope.pdfPages,[146,147,148,149,150,151])
+const functions=JSON.parse(readFileSync('data/evaluation-instruments/english-grade-three-contracts.json','utf8'))
+const grammar=JSON.parse(readFileSync('data/evaluation-instruments/english-grade-three-grammar-contracts.json','utf8'))
+const lexicon=JSON.parse(readFileSync('data/evaluation-instruments/english-grade-three-lexicon-contracts.json','utf8'))
+const strategies=JSON.parse(readFileSync('data/evaluation-instruments/english-grade-three-strategy-contracts.json','utf8'))
+const genres=JSON.parse(readFileSync('data/evaluation-instruments/english-grade-three-genre-contracts.json','utf8'))
+const contexts=JSON.parse(readFileSync('data/evaluation-instruments/english-grade-three-context-contracts.json','utf8'))
+const contextual=(type,index)=>contexts.filter(f=>f.sourceTypes[type]?.includes(index)).map(f=>`ing-3-${f.id==='research'?'research':'context-'+f.id}`)
+const functional=functions.map(f=>`ing-3-${f.id}`)
+const specific=[functional,['ing-3-written','ing-3-intelligibility'],['ing-3-interaction','ing-3-written'],['ing-3-context-courtesy','ing-3-context-respect-differences','ing-3-strategy-cultural-comparison'],['ing-3-research','ing-3-explanations','ing-3-news','ing-3-instructions'],['ing-3-context-care','ing-3-warning','ing-3-prohibition'],['ing-3-context-courtesy','ing-3-context-faithful-information','ing-3-interaction']]
+const indicators=[functional,['ing-3-written','ing-3-intelligibility'],['ing-3-interaction','ing-3-written'],functional,['ing-3-written','ing-3-intelligibility'],['ing-3-interaction','ing-3-written'],['ing-3-context-problem-information'],['ing-3-opinion','ing-3-context-social-contribution'],['ing-3-interaction'],['ing-3-context-courtesy'],['ing-3-strategy-cultural-comparison'],['ing-3-explanations'],['ing-3-research'],['ing-3-opinion','ing-3-written','ing-3-intelligibility'],['ing-3-interaction','ing-3-written'],['ing-3-context-care'],['ing-3-context-care','ing-3-opinion'],['ing-3-context-care','ing-3-interaction'],['ing-3-context-courtesy'],['ing-3-context-social-contribution','ing-3-context-empathetic-response','ing-3-interaction'],['ing-3-context-courtesy']]
+const headings={CONCEPT:[0,13,33,36,54],PROCEDURE:[0,9,13,20,25,32,37,41,43]}
+const records=Object.entries(scope.elements).flatMap(([type,elements])=>elements.map((record,index)=>{
+ let decision='PENDING_EVALUATIVE_CONNECTION',note='Fuente visualmente cotejada; conexión y verificación evaluativa propias de tercero pendientes.',providers=[],verification='NOT_RUN'
+ if(headings[type]?.includes(index)){decision='SOURCE_HEADING_NOT_SEPARATE_CRITERION';note='Encabezado de organización; no convertirlo en una fila independiente.'}
+ else if(type==='PROCEDURE'&&index>=1&&index<=8){decision='CONNECTED_FUNCTION_CONTRACTS_GRADE_PARTIAL';providers=functions.filter(f=>f.sourceIndex===index).map(f=>`ing-3-${f.id}`);verification='english-grade-three.spec.ts';note='Función de tercero con contenido propio, cuatro formatos y20/17.35; falta cierre integral del grado.'}
+ else if(type==='CONCEPT'&&index===40){decision='CONTINUATION_NOT_NEW_FAMILY';providers=grammar.filter(f=>f.sourceIndices.includes(40)).map(f=>`ing-3-feature-${f.id}`);verification='GRAMMAR_MODAL_CONTRACTS';note='Ejemplos continuados de los modales del registro39, no una nueva lista de estructuras.'}
+ else if(type==='CONCEPT'&&grammar.some(f=>f.sourceIndices.includes(index))){decision='CONNECTED_GRAMMAR_DEFINED_CONTRACTS_GRADE_PARTIAL';providers=grammar.filter(f=>f.sourceIndices.includes(index)).map(f=>`ing-3-feature-${f.id}`);verification='english-grade-three-grammar.spec.ts';note='Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.'}
+ else if(type==='CONCEPT'&&lexicon.some(f=>f.sourceIndex===index)){decision='CONNECTED_LEXICON_DEFINED_CONTRACTS_GRADE_PARTIAL';providers=lexicon.filter(f=>f.sourceIndex===index).map(f=>`ing-3-lexicon-${f.id}`);verification='english-grade-three-lexicon.spec.ts';note='Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.'}
+ else if(type==='PROCEDURE'&&index===39||type==='ATTITUDE_VALUE'&&[0,3].includes(index)){decision='EXCLUDED_PERSONAL_TRAIT_SCORE';note='Motivación, ansiedad, dominio propio y autocontrol no se convierten en puntuaciones de personalidad.'}
+ else if(type==='CONCEPT'&&index>=1&&index<=12){decision='CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK';providers=functional;verification='FUNCTIONS_AND_CONTEXT_CONTRACTS';note='Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.'}
+ else if(type==='PROCEDURE'&&strategies.some(f=>f.sourceIndex===index)){decision='CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY';providers=[...new Set(strategies.filter(f=>f.sourceIndex===index).map(f=>`ing-3-strategy-${f.id}`))];verification='english-grade-three-strategies-genres.spec.ts';note='Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.'}
+ else if(type==='PROCEDURE'&&genres.some(f=>f.sourceIndices.includes(index))){decision='CONNECTED_MODALITY_SCOPED_GENRES';providers=genres.filter(f=>f.sourceIndices.includes(index)).map(f=>`ing-3-genre-${f.id}`);verification='english-grade-three-strategies-genres.spec.ts';note='Recepción28/oral8/escrita11 cotejadas independientemente; audiovisual solo como producto explícito. No sumar productos alternativos ni duplicar la evidencia funcional.'}
+ else if(type==='ATTITUDE_VALUE'){
+  decision='CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION';providers=contextual(type,index)
+  if(index===1)providers=['ing-3-interaction','ing-3-strategy-listening']
+  if(index===11)providers.push('ing-3-inference')
+  if(index===12)providers=['ing-3-inference','ing-3-context-courtesy']
+  verification='english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS';note='Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.'
+ }
+ else if(type==='SPECIFIC_COMPETENCY'){decision='CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE';providers=specific[index];verification='THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS';note='Competencia concretada en evidencias solicitadas, no una fila genérica de dominio, creatividad o valores personales.'}
+ else if(type==='FUNDAMENTAL_COMPETENCY'){decision='ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION';note='Organiza la competencia específica correspondiente; no se convierte en una puntuación independiente.'}
+ else if(type==='ACHIEVEMENT_INDICATOR'){decision='CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE';providers=indicators[index];verification='THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS';note='Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.'}
+ if(type==='CONCEPT'&&index===35)note+=' Registro compuesto: acuerdo/desacuerdo, reacción, solicitud de explicaciones y advertencia; separar las cuatro intenciones expresivas.'
+ if(type==='CONCEPT'&&[38,39,41,50,52,53,55,59,60].includes(index))note+=' Registro compuesto: mantener cada forma/función y su fuente, sin reducirlo a una sola estructura.'
+ if(type==='CONCEPT'&&index===57)note+=' Ejemplo que continúa los conectores de coordinación, no encabezado temático nuevo.'
+ if(type==='PROCEDURE'&&index===8)note+=' Registro compuesto: anuncios/noticias y comparación pasado/presente son funciones diferentes.'
+ if(type==='PROCEDURE'&&index===19)note+=' La fuente de tercero sí dice «Indicación de que se comprende»; no heredar la exclusión del fragmento indeterminado de segundo.'
+ if(closed){decision=decision.replace('_GRADE_PARTIAL','');note=note.replace('falta cierre integral del grado.','con revisión integral, HTTP y cuatro formatos persistidos.');}
+ return {...record,type,index,decision,note,providers,verification}
+}))
+assert.equal(records.length,158);assert.equal(new Set(records.map(r=>r.id)).size,158)
+assert(!records.some(r=>r.decision==='PENDING_EVALUATIVE_CONNECTION'),'Registro sin decisión')
+assert(records.filter(r=>r.decision.startsWith('CONNECTED')).every(r=>r.providers.length),'Conexión sin proveedor')
+const valid=new Set([...functional,'ing-3-written','ing-3-intelligibility','ing-3-interaction','ing-3-research',...grammar.map(f=>`ing-3-feature-${f.id}`),...lexicon.map(f=>`ing-3-lexicon-${f.id}`),...strategies.map(f=>`ing-3-strategy-${f.id}`),...genres.map(f=>`ing-3-genre-${f.id}`),...contexts.map(f=>`ing-3-${f.id==='research'?'research':'context-'+f.id}`)])
+assert(records.every(r=>r.providers.every(p=>valid.has(p))),'Proveedor inexistente')
+if(closed){
+ const http=JSON.parse(readFileSync(root+'evidencias/ingles-3-integral-servicio.json','utf8'))
+ const ui=JSON.parse(readFileSync(root+'evidencias/ingles-3-final-flujo-navegador.json','utf8'))
+ const persisted=JSON.parse(readFileSync(root+'evidencias/ingles-3-final-persistencia.json','utf8'))
+ assert.equal(http.health.development.catalogVersion,'evaluation-2026.55');assert.equal(http.results.length,156);assert.equal(http.selections.length,8);assert.equal(http.capacity.length,4)
+ assert.equal(ui.length,4);assert.equal(new Set(ui.map(a=>a.format)).size,4);assert(ui.every(a=>a.reopened&&a.savedHash))
+ assert.equal(persisted.activities.length,4)
+}
+const report={sourceSha256:inventory.source.sha256,scopeId:scope.id,subject:'Inglés',character:'COMMON',cycle:1,grade:3,pdfPages:scope.pdfPages,printedPages:[145,146,147,148,149,150],method:'Seis páginas renderizadas y cotejadas visualmente, incluidas continuaciones y columnas vacías.',layoutNotes:['PDF149–150 continúan gramática; columnas procedimental y actitudinal vacías.','Doce ámbitos cotidianos: el último une actividades sociales/culturales con viajes/turismo; no copiar los trece de segundo.','Vocabulario19 familias; expresiones5 intenciones, cuatro comprimidas en un registro.','Gramática52 familias en registros compuestos; coordinación y contraste tienen continuaciones de ejemplos.','Recepción28 géneros, producción oral8 y escrita11; listas distintas.'],status:'CONNECTED_DEFINED_FAMILIES_FINAL_REVIEW_PENDING',records}
+writeFileSync(root+'ingles-3-cotejo-fuente.json',JSON.stringify(report,null,2)+'\n')
+const review=JSON.parse(readFileSync(root+'revision.json','utf8'))
+assert.equal(review.sourceSha256,report.sourceSha256)
+const status={implementation:'CONNECTED_DEFINED_FAMILIES_FINAL_REVIEW_PENDING',automatedVerification:'FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS',manualVerification:'SOURCE_158_RECORDS_VISUALLY_REVIEWED',applicationVerification:'NOT_RUN',boundaryReview:'VISUALLY_REVIEWED_PDF_146_151',procedureAssociation:'SOURCE_LEDGER_WITH_CONDITIONAL_CONNECTIONS_AND_EXCLUSIONS',report:'ingles-3-punto-de-avance.md',catalogVersion:'evaluation-2026.54_CODE_NOT_INSTALLED',engineConnection:'COMMON_THIRD_GRADE_DEFINED_FAMILIES_REVIEW_PENDING',instrumentFormats:['rubrica','lista-cotejo','escala','lista-ponderada'],serviceVerification:'REPRODUCTION_53_GENERIC_BEFORE_INSTALL',interfaceVerification:'NOT_RUN',pending:'Conexiones en código; faltan revisión integral final, HTTP corregido, operaciones y cuatro CRUD autenticados/snapshots. No iniciar cuarto.'}
+if(closed){
+ report.status='VERIFIED_DEFINED_FAMILIES'
+ report.applicationEvidence=['evidencias/ingles-3-integral-servicio.json','evidencias/ingles-3-final-flujo-navegador.json','evidencias/ingles-3-final-persistencia.json','ingles-3-ejemplos-finales.md','ingles-3-informe-final.md']
+ writeFileSync(root+'ingles-3-cotejo-fuente.json',JSON.stringify(report,null,2)+'\n')
+ Object.assign(status,{implementation:'VERIFIED_DEFINED_FAMILIES',automatedVerification:'ALL_DEFINED_FAMILIES_FOUR_FORMATS',applicationVerification:'FOUR_EVERYDAY_FORMATS_GENERATED_EDITED_SAVED_REOPENED_SNAPSHOTS',report:'ingles-3-informe-final.md',catalogVersion:'evaluation-2026.55',engineConnection:'COMMON_THIRD_GRADE_DEFINED_FAMILIES',serviceVerification:'HTTP_156_FAMILIES_8_SELECTIONS_4_CAPACITY',interfaceVerification:'FOUR_FINAL_FORMATS_AUTHENTICATED_CRUD_AND_SNAPSHOTS',pending:'Sin pendientes conocidos en las familias y patrones definidos. No se garantiza cualquier redacción imaginable; audiovisual solo por consigna explícita y rasgos internos excluidos.'})
+}
+review.scopes=[...(review.scopes??[]).filter(s=>s.id!==scope.id),{id:scope.id,...status}]
+const concepts=scope.elements.CONCEPT
+const layout={scopeId:scope.id,provenance:'PDF_COLUMNS_VISUALLY_REVIEWED',headingIds:[concepts[0].id],groups:[
+ ...concepts.slice(1,13).map(c=>({id:c.id,title:c.text.replace(/^•\s*/,''),memberIds:[]})),
+ {id:concepts[13].id,title:'Vocabulario',memberIds:concepts.slice(14,33).map(c=>c.id)},
+ {id:concepts[33].id,title:'Expresiones',memberIds:concepts.slice(34,36).map(c=>c.id)},
+ {id:concepts[36].id,title:'Gramática: formas y usos',memberIds:concepts.slice(37).map(c=>c.id)},
+]}
+review.topicLayouts=[...(review.topicLayouts??[]).filter(l=>l.scopeId!==scope.id),layout]
+const old=new Set(scope.topics.map(t=>t.id));review.topics=review.topics.filter(t=>!old.has(t.id))
+for(const group of layout.groups)review.topics.push({id:group.id,...status})
+writeFileSync(root+'revision.json',JSON.stringify(review,null,2)+'\n')
+writeSecondaryInventory()
+console.log(JSON.stringify({scope:scope.id,records:records.length,groups:layout.groups.length,functions:functions.length,grammar:grammar.length,status:report.status}))

@@ -1,0 +1,19 @@
+{
+  "before": {
+    "hash": "f762d41df60e3643",
+    "envFiles": [
+      ".env",
+      ".env.example",
+      ".env.local"
+    ]
+  },
+  "after": {
+    "hash": "435783703b63f830",
+    "envFiles": [
+      ".env",
+      ".env.example",
+      ".env.local"
+    ]
+  },
+  "environmentFileAffectsCache": true
+}

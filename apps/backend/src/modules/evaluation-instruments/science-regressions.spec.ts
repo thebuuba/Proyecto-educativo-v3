@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { recommend, detectActivityType } from './recommendation-engine'
 import { resolveScope, type AcademicContext } from './curriculum-context'
+import {evaluationCatalogForVersion} from './catalog-current'
 
 const root = resolve(process.cwd(), '../..')
 const cases = JSON.parse(readFileSync(resolve(root, 'data/evaluation-instruments/science-regressions.json'), 'utf8'))
@@ -23,9 +24,15 @@ describe('Consignas científicas, ámbito real y cuatro instrumentos', () => {
       const result = recommend({ ...fixture, activityTitle: neutral ? 'Actividad de aprendizaje' : fixture.activityTitle, maxScore, participationMode: 'INDIVIDUAL', preferredInstrumentType: format }, context, resolution.scope, elements, resolution.status, 'DRAFT')
       expect(result.activityType).toBe(fixture.expectedType)
       expect(result.criteria).toHaveLength(5)
-      expect(result.criteria.every(c => c.templateId.startsWith(`science-${fixture.id}-`))).toBe(true)
+      expect(result.criteria.every(c => c.templateId.startsWith(fixture.id==='cells'?'nat-2-cells-':`science-${fixture.id}-`))).toBe(true)
       expect(result.criteria.reduce((sum,c)=>sum+c.maxScoreUnits,0)).toBe(Math.round(maxScore*100))
       expect(JSON.stringify(result.criteria)).not.toContain('Explica con precisión el contenido trabajado')
     })
   }
+  it('catálogo86 conserva el antecedente de células sin usar el proveedor nuevo de segundo',()=>{
+    const fixture=cases.find((c:{id:string})=>c.id==='cells')
+    const context:AcademicContext={level:'SECONDARY',cycle:1,grade:2,subjectCode:'NAT-VIDA',subjectName:'Ciencias de la Naturaleza',modalityCode:'academic',optativeExitName:null}
+    const p=recommend({...fixture,maxScore:20,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null,evaluationCatalogForVersion('evaluation-2026.86')!)
+    expect(p.criteria).toHaveLength(5);expect(p.criteria.every(c=>c.templateId.startsWith('science-cells-'))).toBe(true)
+  })
 })

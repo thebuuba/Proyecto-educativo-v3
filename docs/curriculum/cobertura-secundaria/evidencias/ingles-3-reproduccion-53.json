@@ -1,0 +1,908 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "b769b19d587b74030d6cb2dee6d87c77b3273ba8",
+      "dirty": true,
+      "startedAt": "2026-10-15T00:29:35.461Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.53"
+    }
+  },
+  "results": [
+    {
+      "description": "Dialogaran en ingles para expresar una opinion sobre una situacion proporcionada.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.53",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "cc482480-0f08-5657-98aa-1afd28ecfa1a",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.53:cc482480-0f08-5657-98aa-1afd28ecfa1a:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 526
+              },
+              {
+                "levelId": "L3",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 351
+              },
+              {
+                "levelId": "L2",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 175
+              },
+              {
+                "levelId": "L1",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.53:cc482480-0f08-5657-98aa-1afd28ecfa1a:language-coherence:1",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.53:cc482480-0f08-5657-98aa-1afd28ecfa1a:language-structure:2",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza el texto según las convenciones del género trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.53:cc482480-0f08-5657-98aa-1afd28ecfa1a:language-argument:3",
+            "templateId": "language-argument",
+            "title": "Argumentación",
+            "description": "Sustenta sus ideas con razones y evidencias pertinentes.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.53:cc482480-0f08-5657-98aa-1afd28ecfa1a:language-correctness:4",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "default:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [
+            {
+              "elementId": "8e200070-6122-514d-9cae-afcd24551ce7",
+              "score": 68,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=3/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a91cf731-62cc-5bfd-8e48-20e866ecb6fd",
+              "score": 68,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=3/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e7813c73-bc64-5648-abc9-3c8811e96501",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=3/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eedd0574-5c26-55bf-97b8-e9a5bfe8bf12",
+              "score": 66,
+              "topicCoverage": 0.5,
+              "reasons": [
+                "topicTokens=3/6",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2f682e7d-240d-5666-b0cc-34a472aac822",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "849382c6-8065-5603-94d9-df5d2760cfb2",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bbeb9246-df88-5947-8333-86dac6c376f9",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e70e0d07-e1b1-5cad-933f-9693186f1cae",
+              "score": 49,
+              "topicCoverage": 0.3333333333333333,
+              "reasons": [
+                "topicTokens=2/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3595c2b8-5b8c-588d-a754-e6a9c2a842a6",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6489845e-9790-5f53-bed1-0623f2fbb42d",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7fead579-6f14-53ad-8dc3-c96d758452c5",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9d920388-fd67-5751-8b37-823a8f490a82",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d27b6745-09f1-5120-91d1-b4cb3269ca50",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e74ebf96-3578-5672-91d2-ab800e74146b",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eba6b3e4-dde8-5bc6-92c3-83cf2a2ec320",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "edd1e2a8-8f93-5d12-b1dc-1fdc5744f6ad",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f8c34726-b015-5d85-9099-ca463df06ba3",
+              "score": 35,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "35521798-90f6-5a93-954c-f4870a8bbe7c",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8db85925-face-58a2-a91d-86a668067ba4",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f7cef052-dbe3-5d64-99e9-1d3c864113a6",
+              "score": 31,
+              "topicCoverage": 0.16666666666666666,
+              "reasons": [
+                "topicTokens=1/6",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Leeran una noticia breve en ingles. Luego escribiran un correo para expresar su opinion sobre el hecho.",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.53",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "cc482480-0f08-5657-98aa-1afd28ecfa1a",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.53:cc482480-0f08-5657-98aa-1afd28ecfa1a:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 526
+              },
+              {
+                "levelId": "L3",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 351
+              },
+              {
+                "levelId": "L2",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 175
+              },
+              {
+                "levelId": "L1",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.53:cc482480-0f08-5657-98aa-1afd28ecfa1a:language-coherence:1",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.53:cc482480-0f08-5657-98aa-1afd28ecfa1a:language-structure:2",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza el texto según las convenciones del género trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.53:cc482480-0f08-5657-98aa-1afd28ecfa1a:language-argument:3",
+            "templateId": "language-argument",
+            "title": "Argumentación",
+            "description": "Sustenta sus ideas con razones y evidencias pertinentes.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "Sustenta sus ideas con razones y evidencias pertinentes. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.53:cc482480-0f08-5657-98aa-1afd28ecfa1a:language-correctness:4",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "d27b6745-09f1-5120-91d1-b4cb3269ca50",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "06164c0c-d4ce-5bd0-b95b-e21f6439c222",
+              "score": 44,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "a91cf731-62cc-5bfd-8e48-20e866ecb6fd",
+              "score": 43,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2f682e7d-240d-5666-b0cc-34a472aac822",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "849382c6-8065-5603-94d9-df5d2760cfb2",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bbeb9246-df88-5947-8333-86dac6c376f9",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e7813c73-bc64-5648-abc9-3c8811e96501",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eedd0574-5c26-55bf-97b8-e9a5bfe8bf12",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f7cef052-dbe3-5d64-99e9-1d3c864113a6",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "76d6d946-3adc-5d5d-837b-24ecd54f2e44",
+              "score": 33,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "0ca6f971-18ec-58c6-94a6-ff79a549bda8",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3595c2b8-5b8c-588d-a754-e6a9c2a842a6",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eba6b3e4-dde8-5bc6-92c3-83cf2a2ec320",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ee4aaec7-f14a-5638-8c1a-6c3438b6bfd9",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8157cee7-99d4-5fa6-aebf-54fb92ae5db2",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "8e200070-6122-514d-9cae-afcd24551ce7",
+              "score": 29,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e70e0d07-e1b1-5cad-933f-9693186f1cae",
+              "score": 29,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "35521798-90f6-5a93-954c-f4870a8bbe7c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8db85925-face-58a2-a91d-86a668067ba4",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ]
+}

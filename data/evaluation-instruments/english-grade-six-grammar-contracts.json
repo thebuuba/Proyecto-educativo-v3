@@ -1,0 +1,670 @@
+[
+  {
+    "id": "declarative",
+    "sourceIndices": [
+      37
+    ],
+    "forms": [
+      "oraciones enunciativas",
+      "oraciones afirmativas",
+      "oraciones negativas",
+      "declarative sentences"
+    ],
+    "purpose": "afirmación"
+  },
+  {
+    "id": "interrogative-sentences",
+    "sourceIndices": [
+      37
+    ],
+    "forms": [
+      "oraciones interrogativas",
+      "preguntas directas",
+      "interrogative sentences"
+    ],
+    "purpose": "preguntar"
+  },
+  {
+    "id": "indirect-questions",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "preguntas indirectas",
+      "embedded questions",
+      "indirect questions",
+      "preguntas integradas"
+    ],
+    "purpose": "pregunta dentro"
+  },
+  {
+    "id": "zero-article",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "omisión del artículo",
+      "artículo cero",
+      "zero article"
+    ],
+    "purpose": "referencia general"
+  },
+  {
+    "id": "frequency-adverbs",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "adverbios de frecuencia",
+      "adverbs of frequency"
+    ],
+    "purpose": "frecuencia"
+  },
+  {
+    "id": "preposition-use",
+    "sourceIndices": [
+      48
+    ],
+    "forms": [
+      "uso de preposiciones",
+      "preposiciones solicitadas"
+    ],
+    "purpose": "relación"
+  },
+  {
+    "id": "sentence-final-preposition",
+    "sourceIndices": [
+      48
+    ],
+    "forms": [
+      "preposición al final de la oración",
+      "sentence final preposition"
+    ],
+    "purpose": "complemento"
+  },
+  {
+    "id": "exclamation",
+    "forms": [
+      "oraciones exclamativas",
+      "exclamatory sentences"
+    ],
+    "sourceIndices": [
+      37
+    ],
+    "purpose": "reacción"
+  },
+  {
+    "id": "question-tags",
+    "forms": [
+      "question tags"
+    ],
+    "sourceIndices": [
+      46,
+      47
+    ],
+    "purpose": "confirmación"
+  },
+  {
+    "id": "comparative",
+    "forms": [
+      "grado comparativo y superlativo",
+      "comparative",
+      "superlative"
+    ],
+    "sourceIndices": [
+      47
+    ],
+    "purpose": "comparación"
+  },
+  {
+    "id": "time-adverbs",
+    "forms": [
+      "adverbios de tiempo",
+      "adverbs of time"
+    ],
+    "sourceIndices": [
+      47
+    ],
+    "purpose": "cuándo"
+  },
+  {
+    "id": "manner-adverbs",
+    "forms": [
+      "adverbios de modo",
+      "adverbs of manner"
+    ],
+    "sourceIndices": [
+      47
+    ],
+    "purpose": "cómo"
+  },
+  {
+    "id": "relative-pronouns",
+    "forms": [
+      "pronombres relativos",
+      "relative pronouns"
+    ],
+    "sourceIndices": [
+      48
+    ],
+    "purpose": "referente"
+  },
+  {
+    "id": "contrast-connectors",
+    "forms": [
+      "conectores de contraste",
+      "contrast connectors"
+    ],
+    "sourceIndices": [
+      54
+    ],
+    "purpose": "contrastar"
+  },
+  {
+    "id": "concession-connectors",
+    "forms": [
+      "conectores de concesión",
+      "concession connectors"
+    ],
+    "sourceIndices": [
+      53
+    ],
+    "purpose": "concesión"
+  },
+  {
+    "id": "sequence-connectors",
+    "forms": [
+      "conectores de secuencia",
+      "sequence connectors"
+    ],
+    "sourceIndices": [
+      59
+    ],
+    "purpose": "orden"
+  },
+  {
+    "id": "time-connectors",
+    "forms": [
+      "conectores de tiempo",
+      "temporal connectors"
+    ],
+    "sourceIndices": [
+      61
+    ],
+    "purpose": "momentos"
+  },
+  {
+    "id": "causatives",
+    "sourceIndices": [
+      37,
+      38
+    ],
+    "forms": [
+      "verbos causativos",
+      "causative verbs",
+      "get, have y make"
+    ],
+    "purpose": "distinguir quién encarga o provoca la acción y quién la realiza o la recibe en la situación"
+  },
+  {
+    "id": "second-conditional",
+    "sourceIndices": [
+      45
+    ],
+    "forms": [
+      "segundo condicional",
+      "second conditional"
+    ],
+    "purpose": "relacionar una situación hipotética con su resultado posible sin presentarla como un hecho confirmado"
+  },
+  {
+    "id": "emphatic-reflexives",
+    "sourceIndices": [
+      49
+    ],
+    "forms": [
+      "uso enfático de los pronombres reflexivos",
+      "emphatic reflexive pronouns"
+    ],
+    "purpose": "destacar al referente que realiza la acción sin cambiar su identidad"
+  },
+  {
+    "id": "addition-connectors",
+    "sourceIndices": [
+      51
+    ],
+    "forms": [
+      "conectores de adición",
+      "addition connectors"
+    ],
+    "purpose": "añadir información relacionada con la idea anterior"
+  },
+  {
+    "id": "correlative-connectors",
+    "sourceIndices": [
+      55
+    ],
+    "forms": [
+      "conectores de correlación",
+      "correlative connectors"
+    ],
+    "purpose": "relacionar los elementos con la suma, alternativa o negación correlativa indicada"
+  },
+  {
+    "id": "illustration-connectors",
+    "sourceIndices": [
+      58
+    ],
+    "forms": [
+      "conectores de ilustración",
+      "illustration connectors"
+    ],
+    "purpose": "relacionar una idea con el ejemplo que permite ilustrarla"
+  },
+  {
+    "id": "present-simple",
+    "sourceIndices": [
+      37
+    ],
+    "forms": [
+      "presente simple",
+      "present simple",
+      "simple present"
+    ],
+    "purpose": "expresar ideas relacionadas con el tema abstracto o cultural indicado"
+  },
+  {
+    "id": "past-simple",
+    "sourceIndices": [
+      38,
+      39,
+      40,
+      41
+    ],
+    "forms": [
+      "pasado simple",
+      "past simple"
+    ],
+    "purpose": "narrar el acontecimiento terminado y su relación con otros hechos de la experiencia indicada"
+  },
+  {
+    "id": "present-perfect",
+    "sourceIndices": [
+      38,
+      39
+    ],
+    "forms": [
+      "presente perfecto",
+      "present perfect"
+    ],
+    "purpose": "relacionar la experiencia anterior del perfil o narración con su referencia presente"
+  },
+  {
+    "id": "present-perfect-continuous",
+    "sourceIndices": [
+      38,
+      39
+    ],
+    "forms": [
+      "presente perfecto continuo",
+      "present perfect continuous"
+    ],
+    "purpose": "comunicar la continuidad de la actividad del perfil o experiencia y su relación con el presente"
+  },
+  {
+    "id": "used-to",
+    "sourceIndices": [
+      38
+    ],
+    "forms": [
+      "used to"
+    ],
+    "purpose": "contrastar una costumbre pasada con la situación presente del referente"
+  },
+  {
+    "id": "be-used-to",
+    "sourceIndices": [
+      38
+    ],
+    "forms": [
+      "be used to"
+    ],
+    "purpose": "expresar la costumbre o familiaridad establecida del referente con la actividad o situación indicada"
+  },
+  {
+    "id": "get-used-to",
+    "sourceIndices": [
+      38
+    ],
+    "forms": [
+      "get used to"
+    ],
+    "purpose": "expresar el proceso de adaptación del referente a la actividad o situación nueva"
+  },
+  {
+    "id": "past-continuous",
+    "sourceIndices": [
+      39
+    ],
+    "forms": [
+      "pasado continuo",
+      "past continuous"
+    ],
+    "purpose": "situar la acción en desarrollo con la que se relaciona otro acontecimiento pasado de la narración"
+  },
+  {
+    "id": "past-perfect",
+    "sourceIndices": [
+      40,
+      41
+    ],
+    "forms": [
+      "pasado perfecto",
+      "past perfect"
+    ],
+    "purpose": "relacionar el acontecimiento anterior con otro hecho pasado de la narración"
+  },
+  {
+    "id": "present-simple-future",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "presente simple con valor futuro",
+      "present simple with future meaning"
+    ],
+    "purpose": "relacionar el compromiso o hecho programado con la justificación de una acción futura"
+  },
+  {
+    "id": "modal-must",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "must"
+    ],
+    "purpose": "justificar una conclusión o explicación mediante los indicios de la situación indicada"
+  },
+  {
+    "id": "modal-may",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "may"
+    ],
+    "purpose": "ofrecer una explicación posible compatible con los datos de la situación"
+  },
+  {
+    "id": "modal-could",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "could"
+    ],
+    "purpose": "relacionar una explicación o acción posible con los datos que permiten considerarla"
+  },
+  {
+    "id": "modal-might",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "might"
+    ],
+    "purpose": "expresar una explicación posible incierta relacionada con los indicios proporcionados"
+  },
+  {
+    "id": "verb-complements",
+    "sourceIndices": [
+      42,
+      43
+    ],
+    "forms": [
+      "verbos seguidos de gerundio",
+      "verbos seguidos de infinitivo",
+      "verbos que admiten infinitivo o gerundio",
+      "verb complements"
+    ],
+    "purpose": "conservar la relación entre el verbo y la acción de su complemento, distinguiendo el significado solicitado"
+  },
+  {
+    "id": "phrasal-verbs",
+    "sourceIndices": [
+      43
+    ],
+    "forms": [
+      "phrasal verbs",
+      "verbos frasales",
+      "fill out",
+      "pick up"
+    ],
+    "purpose": "relacionar el verbo y su partícula con el significado de la acción en el contexto indicado"
+  },
+  {
+    "id": "agreement-responses",
+    "sourceIndices": [
+      43,
+      44,
+      45
+    ],
+    "forms": [
+      "me too",
+      "not me",
+      "neither do I",
+      "so do I",
+      "I do too",
+      "so did I"
+    ],
+    "purpose": "relacionar el acuerdo o desacuerdo con la afirmación del interlocutor conservando su polaridad y referencia temporal"
+  },
+  {
+    "id": "there-modal-be",
+    "sourceIndices": [
+      45
+    ],
+    "forms": [
+      "there + modal + be",
+      "there might be",
+      "there could be",
+      "there must be",
+      "there may be"
+    ],
+    "purpose": "relacionar la existencia de un referente con el grado de posibilidad o certeza indicado"
+  },
+  {
+    "id": "zero-conditional",
+    "sourceIndices": [
+      45
+    ],
+    "forms": [
+      "condicional cero",
+      "zero conditional"
+    ],
+    "purpose": "relacionar la condición con el resultado habitual o general indicado"
+  },
+  {
+    "id": "third-conditional",
+    "sourceIndices": [
+      45
+    ],
+    "forms": [
+      "tercer condicional",
+      "third conditional"
+    ],
+    "purpose": "relacionar una condición pasada no cumplida con el resultado alternativo que habría sido posible"
+  },
+  {
+    "id": "passive",
+    "sourceIndices": [
+      41,
+      46
+    ],
+    "forms": [
+      "voz pasiva",
+      "passive voice"
+    ],
+    "purpose": "relacionar el hecho narrado o explicado con el referente que recibe la acción"
+  },
+  {
+    "id": "passive-past-perfect",
+    "sourceIndices": [
+      41
+    ],
+    "forms": [
+      "pasado perfecto en voz pasiva",
+      "past perfect passive"
+    ],
+    "purpose": "relacionar la acción recibida por el referente con su anterioridad a otro acontecimiento pasado"
+  },
+  {
+    "id": "reported-speech",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "reported speech",
+      "estilo indirecto",
+      "discurso indirecto"
+    ],
+    "purpose": "relatar de forma detallada lo comunicado conservando sus referentes, información y relaciones temporales"
+  },
+  {
+    "id": "it-cleft",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "oraciones enfáticas con it",
+      "it clefts",
+      "it cleft"
+    ],
+    "purpose": "destacar el elemento indicado de la afirmación sin cambiar el acontecimiento comunicado"
+  },
+  {
+    "id": "wh-cleft",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "oraciones enfáticas con wh",
+      "wh clefts",
+      "wh cleft"
+    ],
+    "purpose": "destacar la información indicada mediante una estructura con wh que conserva la afirmación"
+  },
+  {
+    "id": "nominal-gerund",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "gerundio en función de sustantivo",
+      "gerundio como sustantivo",
+      "nominal gerund"
+    ],
+    "purpose": "presentar la actividad como referente nominal de la afirmación indicada"
+  },
+  {
+    "id": "probability-adverbs",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "adverbios de probabilidad",
+      "adverbs of probability"
+    ],
+    "purpose": "comunicar el grado de posibilidad de la explicación o afirmación indicada"
+  },
+  {
+    "id": "intensity-adverbs",
+    "sourceIndices": [
+      47
+    ],
+    "forms": [
+      "adverbios de intensidad",
+      "adverbs of intensity"
+    ],
+    "purpose": "precisar la intensidad de la acción o característica comunicada"
+  },
+  {
+    "id": "place-prepositions",
+    "sourceIndices": [
+      48
+    ],
+    "forms": [
+      "preposiciones de lugar",
+      "prepositions of place"
+    ],
+    "purpose": "relacionar la ubicación o desplazamiento con la referencia espacial indicada"
+  },
+  {
+    "id": "time-prepositions",
+    "sourceIndices": [
+      48
+    ],
+    "forms": [
+      "preposiciones de tiempo",
+      "prepositions of time"
+    ],
+    "purpose": "relacionar el acontecimiento con el momento o duración indicados"
+  },
+  {
+    "id": "relative-omission",
+    "sourceIndices": [
+      49
+    ],
+    "forms": [
+      "omisión del pronombre relativo",
+      "omission of relative pronouns"
+    ],
+    "purpose": "conservar la relación con el antecedente cuando el pronombre relativo puede omitirse en la estructura indicada"
+  },
+  {
+    "id": "cause-connectors",
+    "sourceIndices": [
+      52
+    ],
+    "forms": [
+      "conectores de causa y efecto",
+      "conectores de causa",
+      "conectores de efecto",
+      "cause and effect connectors"
+    ],
+    "purpose": "relacionar el hecho con su causa o efecto según el sentido pedido"
+  },
+  {
+    "id": "exclusion-connectors",
+    "sourceIndices": [
+      56
+    ],
+    "forms": [
+      "conectores de exclusión",
+      "exclusion connectors"
+    ],
+    "purpose": "distinguir la excepción del conjunto o afirmación al que corresponde"
+  },
+  {
+    "id": "purpose-connectors",
+    "sourceIndices": [
+      57
+    ],
+    "forms": [
+      "conectores de finalidad",
+      "purpose connectors"
+    ],
+    "purpose": "relacionar la acción con la finalidad para la que se realiza"
+  },
+  {
+    "id": "summary-connectors",
+    "sourceIndices": [
+      60
+    ],
+    "forms": [
+      "conectores de síntesis",
+      "summary connectors"
+    ],
+    "purpose": "relacionar la síntesis con las ideas principales que resume"
+  }
+]

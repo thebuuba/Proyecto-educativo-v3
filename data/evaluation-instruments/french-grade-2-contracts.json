@@ -1,0 +1,14 @@
+[
+  {"id":"vivienda-breve","description":"Describe por escrito tu vivienda en francés.","activity":"WRITTEN_PRODUCTION","contains":["home","written"],"excludes":["oral","personal"]},
+  {"id":"preferencias-frances","description":"Présentez oralement vos goûts et préférences en français.","activity":"ORAL_PRESENTATION","contains":["preferences","oral"],"excludes":["written","home"]},
+  {"id":"identidad-desarrollada","description":"Escribe en francés un mensaje con la información personal de un personaje ficticio: nombre, edad y nacionalidad. Revisa el borrador.","activity":"WRITTEN_PRODUCTION","contains":["personal","message","written","revision"],"excludes":["oral"]},
+  {"id":"rutina-frances","description":"Décrivez par écrit votre routine quotidienne et les horaires en français.","activity":"WRITTEN_PRODUCTION","contains":["routine","written"],"excludes":["oral","preferences"]},
+  {"id":"lectura-vivienda","description":"Lisez la description du logement et relevez les pièces de la maison.","activity":"READING_COMPREHENSION","contains":["home"],"excludes":["oral","written"]},
+  {"id":"escucha-preferencias","description":"Escucha las preferencias del personaje en francés e identifica qué le gusta y qué no le gusta.","activity":"LISTENING_COMPREHENSION","contains":["preferences"],"excludes":["oral","written"]},
+  {"id":"interaccion-oral","description":"En parejas, dialoguen en francés para pedir y ofrecer información personal sobre edad y nacionalidad.","activity":"ORAL_INTERACTION","contains":["personal","interaction","oral"],"excludes":["written"]},
+  {"id":"interaccion-escrita","description":"Échangez des messages écrits en français sur vos goûts et préférences.","activity":"WRITTEN_PRODUCTION","contains":["preferences","interaction","written"],"excludes":["oral"]},
+  {"id":"mixta-independiente","description":"Lee en francés la descripción de una vivienda. Luego escribe en francés tus gustos musicales.","activity":"WRITTEN_PRODUCTION","contains":["home","preferences","written"],"excludes":["oral"]},
+  {"id":"negacion","description":"Écrivez votre routine quotidienne en français. Ne faites pas de dialogue oral.","activity":"WRITTEN_PRODUCTION","contains":["routine","written"],"excludes":["oral","interaction"]},
+  {"id":"alternativa","description":"Describe tu vivienda oralmente o por escrito en francés.","activity":"OTHER","contains":["alternative"],"excludes":["oral","written"]},
+  {"id":"mixto-gramatica","description":"Escribe tus preferencias en francés usando la negación ne…pas y los artículos partitivos.","activity":"WRITTEN_PRODUCTION","contains":["preferences","grammar-negation","grammar-partitives","written"],"excludes":["oral"]}
+]

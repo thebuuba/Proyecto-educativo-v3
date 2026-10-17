@@ -1,0 +1,3105 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "scopeId": "7e4c1236-8f04-5817-b017-a9ace9edff5e",
+  "subject": "Inglés",
+  "character": "COMMON",
+  "cycle": 1,
+  "grade": 2,
+  "pdfPages": [
+    140,
+    141,
+    142,
+    143,
+    144,
+    145
+  ],
+  "printedPages": [
+    139,
+    140,
+    141,
+    142,
+    143,
+    144
+  ],
+  "method": "Seis páginas renderizadas y revisadas visualmente: columnas, encabezados y continuaciones.",
+  "layoutNotes": [
+    "PDF143–144: continuaciones de gramática en la columna izquierda; columnas procedimental/actitudinal vacías.",
+    "Los temas cotidianos son ámbitos de comunicación; no generan filas por mencionar su nombre.",
+    "Géneros de recepción y producción tienen listas diferentes; no trasladar todos los productos de recepción a producción."
+  ],
+  "limitations": [
+    "Un fragmento oficial ininterpretable excluido expresamente; no se afirma resolverlo.",
+    "Cobertura de familias y patrones definidos; no de cualquier redacción imaginable.",
+    "Audiovisual procede de una consigna explícita, no de una lista curricular inventada."
+  ],
+  "status": "VERIFIED_DEFINED_FAMILIES_WITH_DOCUMENTED_SOURCE_EXCLUSION",
+  "records": [
+    {
+      "id": "a3fa1fef-ada2-58dd-98a8-583937514904",
+      "text": "Temas",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401000,
+      "type": "CONCEPT",
+      "index": 0,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ed5a15c5-84a2-56b3-9308-e0dd6d85b56b",
+      "text": "• Relaciones humanas y sociales",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401001,
+      "type": "CONCEPT",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-conversation",
+        "ing-2-states",
+        "ing-2-help"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "bd67c8db-ab79-5248-9a54-5f0750a39bc4",
+      "text": "• Actividades de la vida diaria",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401002,
+      "type": "CONCEPT",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-daily"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "0ca7cee4-4194-568c-b2fd-5c7552003719",
+      "text": "• Vivienda, entorno y ciudad",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401003,
+      "type": "CONCEPT",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-places",
+        "ing-2-lexicon-roads"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "bb5af495-1cbb-56ca-999c-8035c673ddeb",
+      "text": "•Escuela y educación",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401004,
+      "type": "CONCEPT",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-subjects",
+        "ing-2-lexicon-education"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "ea9b484f-9bb9-53ee-ba62-ae32651f02a3",
+      "text": "• Deporte, tiempo libre y recreación",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401005,
+      "type": "CONCEPT",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-leisure",
+        "ing-2-lexicon-sports"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "d9c12db0-1de4-5da2-9fc4-07117f0e5257",
+      "text": "• Alimentación",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401006,
+      "type": "CONCEPT",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-food"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "f15ce6fe-5322-5f7b-8364-833ec5b773f9",
+      "text": "• Salud y cuidados físicos",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401007,
+      "type": "CONCEPT",
+      "index": 7,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-states",
+        "ing-2-lexicon-ailments",
+        "ing-2-lexicon-medicines",
+        "ing-2-context-care"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "1925ecfe-18f3-515f-9047-0e843e4e9e54",
+      "text": "• Ciencia y tecnología",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401008,
+      "type": "CONCEPT",
+      "index": 8,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-technology",
+        "ing-2-help",
+        "ing-2-advice"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "46820447-0401-5f6c-957d-8e4c6cfc03e3",
+      "text": "• Lengua y comunicación",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401009,
+      "type": "CONCEPT",
+      "index": 9,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-strategy-dictionary",
+        "ing-2-strategy-revision"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "7281e275-ff2b-537e-9942-4baa9382440d",
+      "text": "• Clima, condiciones atmosféricas y\nmedioambiente",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401010,
+      "type": "CONCEPT",
+      "index": 10,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-weather-words",
+        "ing-2-context-care"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "1ac7716e-9711-5833-bdc6-ffd2a73e8608",
+      "text": "•Bienes y servicios",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401011,
+      "type": "CONCEPT",
+      "index": 11,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-shopping",
+        "ing-2-context-purchase-choice"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "a57ea7c7-eb6b-5881-9a57-c762d710d03e",
+      "text": "•Actividades sociales y culturales",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401012,
+      "type": "CONCEPT",
+      "index": 12,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "8c4396ff-c348-52ba-8453-cc45639ea089",
+      "text": "• Viajes y turismo",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401013,
+      "type": "CONCEPT",
+      "index": 13,
+      "decision": "CONNECTED_CONDITIONAL_COMMUNICATION_DOMAIN",
+      "note": "Ámbito cotidiano de comunicación, no una fila por mencionar un tema. Evaluación conectada mediante funciones, léxico o condiciones explícitas; no inventar una disciplina académica especializada ni requisitos privados.",
+      "providers": [
+        "ing-2-lexicon-transport",
+        "ing-2-plans"
+      ],
+      "verification": "FUNCTION_LEXICON_CONTEXT_STRATEGY_CONTRACTS"
+    },
+    {
+      "id": "bffcadc6-9a8d-56a8-87ab-bd99121220b2",
+      "text": "Vocabulario",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401014,
+      "type": "CONCEPT",
+      "index": 14,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "cd3ea2c3-5ff7-5c56-baee-b1b67cf438b0",
+      "text": "• Actividades de la vida diaria: go to\nschool, take the metro...",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401015,
+      "type": "CONCEPT",
+      "index": 15,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-daily"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "2bcfb8ef-a684-5f27-9360-b1e6dd196cf9",
+      "text": "• Actividades de tiempo libre y ocio:\nread, listen to music…",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401016,
+      "type": "CONCEPT",
+      "index": 16,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-leisure"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "49f7dd1c-5c0c-5928-8312-3ca8a24a1291",
+      "text": "• Asignaturas: English, geography,\nmath, PE…",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401017,
+      "type": "CONCEPT",
+      "index": 17,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-subjects"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "f4b745e5-b2e0-5aa6-b417-98d7523f53e0",
+      "text": "• Celebraciones: New Year, Mother’s\nDay, Independence Day…",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401018,
+      "type": "CONCEPT",
+      "index": 18,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-celebrations"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "cc67f623-2a66-5909-a71d-6c452165a798",
+      "text": "• Comidas y bebidas: bread, salad,\njuice, milk…",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1401019,
+      "type": "CONCEPT",
+      "index": 19,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-food"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "793cbabd-53ec-54ec-9ce9-4b6cbc66814c",
+      "text": "Vocabulario",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411000,
+      "type": "CONCEPT",
+      "index": 20,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "1dfc6c83-0d2e-5142-a07d-1592dbb0916a",
+      "text": "• Condiciones atmosféricas: rainy,\nsunny, cloudy, cold…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411001,
+      "type": "CONCEPT",
+      "index": 21,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-weather-words"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "f76df507-c63e-50d9-a9c3-c9493ac0dbd7",
+      "text": "• Deportes: basketball, volleyball,\nbowling…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411002,
+      "type": "CONCEPT",
+      "index": 22,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-sports"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "a2bf7b7b-6903-58a4-88e1-44144a2f8cfe",
+      "text": "• Dinero: credit card, cash, change,\ndollars, pesos",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411003,
+      "type": "CONCEPT",
+      "index": 23,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-money"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "65cc3397-c504-5df0-9908-a67bc95a5ccb",
+      "text": "• Dolencias y enfermedades:\nheadache, stomachache, cold…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411004,
+      "type": "CONCEPT",
+      "index": 24,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-ailments"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "23536f8c-47e1-5fa5-aeef-a50ac2af2a80",
+      "text": "• Educación: high school, seventh\ngrade, freshman …",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411005,
+      "type": "CONCEPT",
+      "index": 25,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-education"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "90d1c284-15de-5731-9917-d6db63ac1501",
+      "text": "• Establecimientos comerciales:\nbakery, restaurant, pharmacy...",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411006,
+      "type": "CONCEPT",
+      "index": 26,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-shops"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "1ac47bfe-4b56-5ab0-858b-5e02ce446e74",
+      "text": "• Estados de ánimo: excited,\nembarrassed, scared, surprised…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411007,
+      "type": "CONCEPT",
+      "index": 27,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-moods"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "9b14cf81-c1f6-5d52-ab09-d59cf9bbe5b2",
+      "text": "• Eventos de la vida: be born, have a\nbaby, start school…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411008,
+      "type": "CONCEPT",
+      "index": 28,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-life-events"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "26800733-77c9-562c-966d-e7c389a652c0",
+      "text": "• Formas de interacción: texting,\nvoice calls, chat…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411009,
+      "type": "CONCEPT",
+      "index": 29,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-interaction-channels"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "f4fda688-4d33-5605-840b-d4eee78f06f2",
+      "text": "• Lugares: park, fire station, hospital,\nbeach…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411010,
+      "type": "CONCEPT",
+      "index": 30,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-places"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "f77d36b0-006a-5f96-b7a3-78bdfe5d2896",
+      "text": "• Medicamentos: aspirin, antiacid,\neye drops…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411011,
+      "type": "CONCEPT",
+      "index": 31,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-medicines"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "1599baba-12e5-5f81-a6f2-2817936dbc61",
+      "text": "• Medios de transporte: metro, bus,\ntaxi, plane…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411012,
+      "type": "CONCEPT",
+      "index": 32,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-transport"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "7b2b40f3-11e1-524c-98de-40a4d3b1a8c9",
+      "text": "• Números cardinales: one, two…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411013,
+      "type": "CONCEPT",
+      "index": 33,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-cardinal"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "47937919-717f-5778-b2e5-eeffd254b0a4",
+      "text": "• Números ordinales: first, second,\nthird…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411014,
+      "type": "CONCEPT",
+      "index": 34,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-ordinal"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "29f444e7-894d-5e97-a2e3-fe82cd0902ae",
+      "text": "• Ocupaciones: florist, manager,\npharmacist…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411015,
+      "type": "CONCEPT",
+      "index": 35,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-jobs"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "7bb66e1f-2bac-50a4-af8e-98ff50a882a0",
+      "text": "• Partes del cuerpo: head, legs,\nm o u t h …",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411016,
+      "type": "CONCEPT",
+      "index": 36,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-body"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "b1de4f95-07ec-512a-ae29-f0bc3e148fc9",
+      "text": "• Puntos cardinales: east, west,\nn o r t h …",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411017,
+      "type": "CONCEPT",
+      "index": 37,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-compass"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "42fc8160-c137-534b-9476-922a970ce195",
+      "text": "• Relaciones humanas: friends,\nclassmates, relatives…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411018,
+      "type": "CONCEPT",
+      "index": 38,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-relationships"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "0e96bb59-5fc1-51ea-9653-dc7ce02826a2",
+      "text": "• Sensaciones Físicas: cold, hungry,\nthirsty, tired\n…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411019,
+      "type": "CONCEPT",
+      "index": 39,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-physical-sensations"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "0f3cd362-43ca-5c1e-af3e-78434713901a",
+      "text": "• Tallas: small (S), large (L),\nextra•large (XL)…",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411020,
+      "type": "CONCEPT",
+      "index": 40,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-sizes"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "680ecfa2-bf5c-59bc-9484-744492328fc0",
+      "text": "• Tecnología: video calls, tablets,\nsmart phones…\nVías: street, avenue, road,\nh i g h w a y …",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1411021,
+      "type": "CONCEPT",
+      "index": 41,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero. Registro compuesto: tecnología y vías; separar ambas familias léxicas.",
+      "providers": [
+        "ing-2-lexicon-technology",
+        "ing-2-lexicon-roads"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "d46327e3-353d-5343-bd04-e63f0464ef91",
+      "text": "Expresiones",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421000,
+      "type": "CONCEPT",
+      "index": 42,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "a197f58e-6963-590c-9987-711b1c5fe384",
+      "text": "• Cortesía: Excuse me; Thank you!",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421001,
+      "type": "CONCEPT",
+      "index": 43,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-courtesy"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "b1d3ba3a-af62-507c-b64f-52be867ecc9a",
+      "text": "• You’re welcome…",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421002,
+      "type": "CONCEPT",
+      "index": 44,
+      "decision": "CONTINUATION_NOT_NEW_FAMILY",
+      "note": "You’re welcome continúa las fórmulas de cortesía de la fila anterior; no constituye una nueva familia.",
+      "providers": [
+        "ing-2-lexicon-courtesy"
+      ],
+      "verification": "LEXICON_COURTESY_CONTRACTS"
+    },
+    {
+      "id": "7f677ffd-384a-5474-80d5-6d62563618a0",
+      "text": "• Captar la atención: Excuse me,\nm a’a m …",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421003,
+      "type": "CONCEPT",
+      "index": 45,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-attention"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "c4dbbb07-1e31-55fd-9f7a-a92389761468",
+      "text": "• Interrumpir con cortesía: Sorry to\ninterrupt you…",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421004,
+      "type": "CONCEPT",
+      "index": 46,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-interruption"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "2ae85c93-e07a-565d-9523-599da21f36e6",
+      "text": "• Pedir y dar la palabra: May I say\nsomething?...",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421005,
+      "type": "CONCEPT",
+      "index": 47,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-turns"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "b2321df7-c413-538b-b931-92006e635cca",
+      "text": "• Pedir que repitan: Pardon? Sorry?...",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421006,
+      "type": "CONCEPT",
+      "index": 48,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-repetition"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "6506c016-e4d2-59cc-94c1-a43df93eb38e",
+      "text": "•Disculparse:I’m sorry; I apologize…",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421007,
+      "type": "CONCEPT",
+      "index": 49,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-excuse"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "443ccfdc-9a9f-5f23-a26c-a789bde85a7d",
+      "text": "• Dudar: I’m not sure; maybe…",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421008,
+      "type": "CONCEPT",
+      "index": 50,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-uncertainty"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "b8f14799-878f-5bf0-98ba-be7335e89a35",
+      "text": "• Mostrar interés o empatía: What\nhappened? What’s wrong? Good for\nyou!",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421009,
+      "type": "CONCEPT",
+      "index": 51,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-empathy"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "6aa70f20-7391-5e32-b77c-314fd17dac60",
+      "text": "• Mostrar indiferencia o desinterés: I\ndon’t mind. I don’t care!",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421010,
+      "type": "CONCEPT",
+      "index": 52,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-indifference"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "e2953c97-bcf8-5002-91df-be072774e4d9",
+      "text": "• Mostrar acuerdo y desacuerdo: I\ndon’t agree; I agree…",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421011,
+      "type": "CONCEPT",
+      "index": 53,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-agreement"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "dfa4dfbf-91bc-5d33-a762-b87226cb586c",
+      "text": "• Fechas: September 12th, 2016.",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421012,
+      "type": "CONCEPT",
+      "index": 54,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-dates"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "a3650f34-0094-52e5-ade0-87e60b84348c",
+      "text": "•Hora: at 9:00 a.m., at noon, at 11:00\npm",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421013,
+      "type": "CONCEPT",
+      "index": 55,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero.",
+      "providers": [
+        "ing-2-lexicon-hours"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "77c9d689-9b36-5261-8ea7-d1214ac427fb",
+      "text": "• Deseos: I hope so! I hope not! I\nwish!\nGramática",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421014,
+      "type": "CONCEPT",
+      "index": 56,
+      "decision": "CONNECTED_EXPLICIT_LEXICON_OR_EXPRESSION",
+      "note": "Vocabulario o intención expresiva de segundo; recepción y uso contextualizados, cuatro formatos,20/17.35, negaciones y aislamiento respecto de primero. Expresiones de deseos y esperanzas con encabezado Gramática incrustado; separar etiqueta del contenido.",
+      "providers": [
+        "ing-2-lexicon-desire"
+      ],
+      "verification": "english-grade-two-lexicon.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "f434b944-6c3c-58db-8568-7f4574423a45",
+      "text": "• Presente simple para sostener una\nconversación:\nWhat do you do for a living? Hello,\nthis is Ethan.",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421015,
+      "type": "CONCEPT",
+      "index": 57,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-present-simple"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "350a364f-d68c-5b1c-8a8e-d2da2cf25bb8",
+      "text": "• Presente simple para referirse a\nactividades cotidianas:\nShe always picks up her kids at\nschool.",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421016,
+      "type": "CONCEPT",
+      "index": 58,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-present-simple"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "8040a7de-3874-50fd-aed0-31a5723a7d86",
+      "text": "• Presente simple de los verbos be,\nfeel, have, seem, look, hurt, ache …\npara describir estados anímicos y\nfísicos:\nShe looks tired and angry.",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421017,
+      "type": "CONCEPT",
+      "index": 59,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-present-simple"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "aadd83e1-fc02-5943-b192-fb7528d294bc",
+      "text": "• Presente simple de los verbos be,\nhave, want, need… en contexto de\ncompra:\nI need a pair of boots.",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421018,
+      "type": "CONCEPT",
+      "index": 60,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-present-simple"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "f7f2caae-2252-5752-9377-ea646f068a78",
+      "text": "• Pasado simple al narrar hechos y\nexperiencias:\nI lived in the US until I was seven.",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421019,
+      "type": "CONCEPT",
+      "index": 61,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-past-simple"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "c209bd7c-591d-59c1-adb9-ea9a0e49f27f",
+      "text": "• Pasado continuo al narrar hechos\ny experiencias, y describir estados\nanímicos y físicos:\nHe was coughing last night.",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421020,
+      "type": "CONCEPT",
+      "index": 62,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-past-continuous"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "380639cf-3149-5146-93d7-ecea67710dd0",
+      "text": "• Presente perfecto para narrar\nhechos y experiencias:\nI’ve seen the flamingos at Lago\nEnriquillo.",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1421021,
+      "type": "CONCEPT",
+      "index": 63,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-present-perfect"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "185b80c1-35f0-5862-a5a4-12aec86aae4c",
+      "text": "• Pasado continuo y pasado simple para\nnarrar hechos y experiencias:\nI was doing homework when she called.",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431000,
+      "type": "CONCEPT",
+      "index": 64,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-past-simple",
+        "ing-2-feature-past-continuous"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "8479cd14-bbb3-5cbe-bb99-7f3cd03b6eab",
+      "text": "• Will para acordar un encuentro y\ncomprar :\nI’ll be there at 6:00 pm.\nI’ll have a cheeseburger, please.",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431001,
+      "type": "CONCEPT",
+      "index": 65,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-will"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "263ce2a7-a44e-5066-94a7-a02c6a885e52",
+      "text": "• Be going to para expresar planes y\nacordar encuentros:\nI’m going to visit Grandma next week.\nAre you going to join me?",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431002,
+      "type": "CONCEPT",
+      "index": 66,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-going-to"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "22c3c034-591c-5afc-af57-3679236af764",
+      "text": "•Presente continuo para expresar planes\ne intenciones y acordar un encuentro:\nOur tech support is installing a new\nantivirus tomorrow.\nWhat time are we meeting for dinner?\nI’m looking for a yellow T•shirt.",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431003,
+      "type": "CONCEPT",
+      "index": 67,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-present-continuous"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "80bb9837-21be-587b-b488-2da3bef43b9b",
+      "text": "• There + be en pasado simple para\nnarrar\nhechos y experiencias:\nThere was an earthquake this morning.",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431004,
+      "type": "CONCEPT",
+      "index": 68,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-there-past"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "352e5a82-0289-5007-a7e8-ab15853f8d3f",
+      "text": "• Modo imperativo para dar consejos y\nsugerencias:\nDon’t eat junk food.",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431005,
+      "type": "CONCEPT",
+      "index": 69,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-imperative"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "de9c4398-da2f-5e96-aad2-a2bc743de0e8",
+      "text": "• Let’s para dar sugerencias:\nLet’s go out for pizza.",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431006,
+      "type": "CONCEPT",
+      "index": 70,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-lets"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "bc6fd400-cc5c-5cfa-ba36-079261868474",
+      "text": "• Want, hope y wish para expresar deseo\no interés:\nI hope to spend more time with my\nfamily.",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431007,
+      "type": "CONCEPT",
+      "index": 71,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-wishes"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "4bba1e27-e3db-54bc-82ac-8c0595f027be",
+      "text": "• Can, may y could para sostener una\nconversación:\nMay I speak to Rosa, please? Could you\nspeak louder, please?",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431008,
+      "type": "CONCEPT",
+      "index": 72,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-permission"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "285f907c-d651-5d8e-aeb9-3f3aba49ed54",
+      "text": "• Should para pedir y dar consejos y\nsugerencias:\nYou should drink more water.",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431009,
+      "type": "CONCEPT",
+      "index": 73,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-should"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "0b1a42fd-650b-539a-93cb-ce1c7df4410e",
+      "text": "• Condicional para dar consejos y\nsugerencias y expresar planes:\nIf you have a fever, you should see a\ndoctor. If I get home early today, I will\nbake a cake.",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431010,
+      "type": "CONCEPT",
+      "index": 74,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-conditional"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "f495da67-9031-5f64-92f1-4469aaa03818",
+      "text": "• Question tags:\nYou feel better, don’t you?\nShe visited her father last month, didn´t\nshe?",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431011,
+      "type": "CONCEPT",
+      "index": 75,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-question-tags"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "ffe38529-f293-56a4-ad03-da23c84bc43f",
+      "text": "• Voz pasiva del presente en contexto de\ncompras:\nThis device is made in the Dominican\nRepublic. he batteries are sold\nseparately.",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431012,
+      "type": "CONCEPT",
+      "index": 76,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-passive"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "702baa30-f852-5e5d-8569-e883e8ccca30",
+      "text": "• Oraciones exclamativas:\nHow nice! That’s great!",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431013,
+      "type": "CONCEPT",
+      "index": 77,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-exclamation"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "86052547-8691-5570-abc9-6a689858c427",
+      "text": "• Posesivo’s: This is Victor’s shirt.",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431014,
+      "type": "CONCEPT",
+      "index": 78,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-possessive-s"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "9504dd28-08c8-5561-9d47-69ed7de45fd8",
+      "text": "• Sustantivos contables y no contables:\nbooks, chairs; sugar, salad…",
+      "pdfPage": 143,
+      "printedPage": "142",
+      "sourceOrder": 1431015,
+      "type": "CONCEPT",
+      "index": 79,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-countability"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "ab22ae38-2762-5a66-ab6e-85143e8d27ac",
+      "text": "• Género: father, mother, king, queen…",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441000,
+      "type": "CONCEPT",
+      "index": 80,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-gender"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "04559fef-5a44-5a7f-8856-3714c7df594b",
+      "text": "• Número: girl, girls, man, men…\nArtículos definido (the) e indefinidos (a/an):\nThe pencil is on the table.\nI saw a rhino and an elephant at the zoo.\nGrados comparativo y superlativo del\nadjetivo:\nDo you have a smaller one? He´s my best\nfriend.",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441001,
+      "type": "CONCEPT",
+      "index": 81,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "providers": [
+        "ing-2-feature-articles",
+        "ing-2-feature-comparative",
+        "ing-2-feature-number"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "d81a9da3-6077-5b68-a55d-ecd4bf7921b6",
+      "text": "•Participio presente en función adjetiva:\nThe soccer game was boring.\nWe saw an exciting movie last night.",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441002,
+      "type": "CONCEPT",
+      "index": 82,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-present-participle"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "cf6b552a-108b-5971-a52e-3c1ed8a7fc16",
+      "text": "• Participio pasado en función adjetiva:\nThe injured patient is getting better.",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441003,
+      "type": "CONCEPT",
+      "index": 83,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-past-participle"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "3de7501c-0d4c-58d0-a3a8-c7998a570a1d",
+      "text": "• Pronombres Interrogativos: what, who,\nhow...\nHow do you spell your name, please?",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441004,
+      "type": "CONCEPT",
+      "index": 84,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-interrogative-pronouns"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "eecfacbe-4a53-5aca-baa4-ffebe3c406ae",
+      "text": "• How much /how many en contexto de\ncompra:\nHow much are those black shoes? How many\nbatteries do you need?",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441005,
+      "type": "CONCEPT",
+      "index": 85,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-how-much-many"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "c8a9932a-720e-5435-afc7-6808fe2a58bb",
+      "text": "• Why don’t/ Why not para sugerencias:\nWhy don’t we meet this weekend?",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441006,
+      "type": "CONCEPT",
+      "index": 86,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical.",
+      "providers": [
+        "ing-2-feature-why-suggestion"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "1e0f4eac-f8ea-5df5-9377-fd5f8e659e19",
+      "text": "Pronombres:\nObjeto: me, her, them… Would you call me\nlater, please?\nPosesivos: mine, yours, his, hers… These red\npens are mine.\nReflexivos: myself, yourself...\nHe cut himself while he was cooking.",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441007,
+      "type": "CONCEPT",
+      "index": 87,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "providers": [
+        "ing-2-feature-object-pronouns",
+        "ing-2-feature-possessive-pronouns",
+        "ing-2-feature-reflexive-pronouns"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "4a8903c6-3348-5d6d-9b0d-262bc38f632b",
+      "text": "• Adverbios de:\nTiempo: now, in the past, yet, already, still… I\nstill want to go there.\nFrecuencia: never, always; once a week, … I\nnever drink coffee at night.\nCantidad: most of, some of…",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441008,
+      "type": "CONCEPT",
+      "index": 88,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "providers": [
+        "ing-2-feature-time-adverbs",
+        "ing-2-feature-frequency-adverbs",
+        "ing-2-feature-quantity-adverbs"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "99bb98b0-f00d-5a0f-b097-22c6386775f0",
+      "text": "Most of my friends learned English in high\nschool.\nIntensidad: very, so, really, too The movie was\nreally boring.",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441009,
+      "type": "CONCEPT",
+      "index": 89,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "providers": [
+        "ing-2-feature-degree-adverbs",
+        "ing-2-feature-quantity-adverbs"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "01c4d772-9347-5866-be2a-bec54c6018e8",
+      "text": "•Preposiciones de:\nTiempo: in, on, at…\nI’ll meet you at 3:00 pm.\nDuración: since, for, ago, until… I lived there\nuntil 2014.",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441010,
+      "type": "CONCEPT",
+      "index": 90,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "providers": [
+        "ing-2-feature-time-prepositions",
+        "ing-2-feature-duration-prepositions"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "2e4629c6-b29a-5d3a-98ae-80f58b18c01f",
+      "text": "• Conectores de:\nCoordinación: and, or, but…\nWhat do you prefer, bananas or apples?\nTiempo: when/while…\nAvoid using your cell phone while you’re\ndriving.\nSecuencia: first, then, finally…\nFirst, we visited the Lincoln Memorial. Then\nwe spent two hours in the Smithsonian\nMuseum.\nCausalidad: because, so, then… He was\nhappy because he got all A’s.",
+      "pdfPage": 144,
+      "printedPage": "143",
+      "sourceOrder": 1441011,
+      "type": "CONCEPT",
+      "index": 91,
+      "decision": "CONNECTED_EXPLICIT_GRAMMAR_REQUIREMENT",
+      "note": "Formas, sinónimos y usos propios de segundo comprobados en reconocimiento, explicación y uso; cuatro formatos y20/17.35. No imponer todas las variantes ni activar palabras ambiguas fuera de un requisito gramatical. Registro compuesto o continuación: conservar cada estructura y su función; no contarlo como un único objetivo.",
+      "providers": [
+        "ing-2-feature-coordination-connectors",
+        "ing-2-feature-time-connectors",
+        "ing-2-feature-sequence-connectors",
+        "ing-2-feature-cause-connectors"
+      ],
+      "verification": "english-grade-two-grammar.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "0e7d2a8f-fb3c-52b8-8008-531ee044c2c0",
+      "text": "Funcionales",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402000,
+      "type": "PROCEDURE",
+      "index": 0,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "f6c63ae2-ce50-5868-b34a-9d9ca4ca65bd",
+      "text": "• Sostener una conversación",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402001,
+      "type": "PROCEDURE",
+      "index": 1,
+      "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
+      "providers": [
+        "ing-2-conversation"
+      ],
+      "verification": "FUNCTION_CONTRACTS_BACKEND_AND_FRONTEND"
+    },
+    {
+      "id": "80100718-62d8-543e-8cb5-4a26fd728c00",
+      "text": "•Intercambiar información sobre actividades cotidianas",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402002,
+      "type": "PROCEDURE",
+      "index": 2,
+      "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
+      "providers": [
+        "ing-2-daily"
+      ],
+      "verification": "FUNCTION_CONTRACTS_BACKEND_AND_FRONTEND"
+    },
+    {
+      "id": "472e9615-56a1-5001-a0ee-07d05c0a1a22",
+      "text": "• Describir estados anímicos y físicos",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402003,
+      "type": "PROCEDURE",
+      "index": 3,
+      "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
+      "providers": [
+        "ing-2-states"
+      ],
+      "verification": "FUNCTION_CONTRACTS_BACKEND_AND_FRONTEND"
+    },
+    {
+      "id": "2c39450d-64c8-5fe7-aefb-3eeace6fa83c",
+      "text": "•Solicitar y ofrecer ayuda",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402004,
+      "type": "PROCEDURE",
+      "index": 4,
+      "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
+      "providers": [
+        "ing-2-help"
+      ],
+      "verification": "FUNCTION_CONTRACTS_BACKEND_AND_FRONTEND"
+    },
+    {
+      "id": "a8287a1b-bed8-522d-b951-760c6023a67c",
+      "text": "• Comprar",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402005,
+      "type": "PROCEDURE",
+      "index": 5,
+      "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
+      "providers": [
+        "ing-2-shopping"
+      ],
+      "verification": "FUNCTION_CONTRACTS_BACKEND_AND_FRONTEND"
+    },
+    {
+      "id": "d674269b-f16a-5cc1-a644-ea4674ea2b1d",
+      "text": "• Expresar deseo o interés",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402006,
+      "type": "PROCEDURE",
+      "index": 6,
+      "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
+      "providers": [
+        "ing-2-wishes"
+      ],
+      "verification": "FUNCTION_CONTRACTS_BACKEND_AND_FRONTEND"
+    },
+    {
+      "id": "d7fd0b90-6bf7-573f-9eab-9aa4acf88658",
+      "text": "• Pedir y dar consejos y sugerencias",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402007,
+      "type": "PROCEDURE",
+      "index": 7,
+      "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
+      "providers": [
+        "ing-2-advice"
+      ],
+      "verification": "FUNCTION_CONTRACTS_BACKEND_AND_FRONTEND"
+    },
+    {
+      "id": "7ead8e87-2d49-5725-96b8-3cd4a5530d9d",
+      "text": "• Expresar planes y acordar un encuentro",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402008,
+      "type": "PROCEDURE",
+      "index": 8,
+      "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
+      "providers": [
+        "ing-2-plans"
+      ],
+      "verification": "FUNCTION_CONTRACTS_BACKEND_AND_FRONTEND"
+    },
+    {
+      "id": "fb3f3ba9-d65e-5b3e-b024-d2470ccbeaaa",
+      "text": "• Narrar hechos y experiencias",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402009,
+      "type": "PROCEDURE",
+      "index": 9,
+      "decision": "CONNECTED_FUNCTION_DEFINED_CONTRACTS",
+      "note": "Función propia del grado; contratos con cuatro formatos,20/17.35 y alternativa local. La acción determina recepción, producción o interacción; no se exige información privada.",
+      "providers": [
+        "ing-2-experience"
+      ],
+      "verification": "FUNCTION_CONTRACTS_BACKEND_AND_FRONTEND"
+    },
+    {
+      "id": "b9439885-8bc8-5fe2-ba7d-5076c65d3201",
+      "text": "Discursivos",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402010,
+      "type": "PROCEDURE",
+      "index": 10,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "673d8c1b-bfe1-5692-be21-c305bcd8a5fa",
+      "text": "• Comprensión de textos orales y escritos, tales\ncomo: conversaciones, tarjetas de presentación,\nlistas, anuncios, recetas, letreros, avisos, afiches,\nmensajes, correos electrónicos, currículum vitae,\ncartas, formularios, pronósticos del tiempo, noticias,\nhorarios, agendas, menús, croquis, cuestionarios,\nfolletos, canciones, poesías, historietas, guías\nturísticas, descripciones, biografías y narraciones.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402011,
+      "type": "PROCEDURE",
+      "index": 11,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Recepción28, producción oral8 y escrita11: respetar la lista de cada modalidad. No convertir fuentes de apoyo en productos, ni sumar correo/carta alternativos, ni duplicar acontecimientos de experiencia/narración.",
+      "providers": [
+        "ing-2-genre-conversation",
+        "ing-2-genre-business-card",
+        "ing-2-genre-list",
+        "ing-2-genre-advertisement",
+        "ing-2-genre-recipe",
+        "ing-2-genre-sign",
+        "ing-2-genre-notice",
+        "ing-2-genre-poster",
+        "ing-2-genre-message",
+        "ing-2-genre-email",
+        "ing-2-genre-cv",
+        "ing-2-genre-letter",
+        "ing-2-genre-form",
+        "ing-2-genre-forecast",
+        "ing-2-genre-news",
+        "ing-2-genre-schedule",
+        "ing-2-genre-agenda",
+        "ing-2-genre-menu",
+        "ing-2-genre-map",
+        "ing-2-genre-questionnaire",
+        "ing-2-genre-brochure",
+        "ing-2-genre-song",
+        "ing-2-genre-poem",
+        "ing-2-genre-comic",
+        "ing-2-genre-tourist-guide",
+        "ing-2-genre-description",
+        "ing-2-genre-biography",
+        "ing-2-genre-narrative"
+      ],
+      "verification": "english-grade-two-genres.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "387e915a-a6e6-5632-b21a-ce1b6f7a061c",
+      "text": "• Producción de discursos orales, tales como:\nconversaciones, canciones, recetas, mensajes,\nnoticias, descripciones, narraciones y monólogos.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402012,
+      "type": "PROCEDURE",
+      "index": 12,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Recepción28, producción oral8 y escrita11: respetar la lista de cada modalidad. No convertir fuentes de apoyo en productos, ni sumar correo/carta alternativos, ni duplicar acontecimientos de experiencia/narración.",
+      "providers": [
+        "ing-2-genre-conversation",
+        "ing-2-genre-recipe",
+        "ing-2-genre-message",
+        "ing-2-genre-news",
+        "ing-2-genre-song",
+        "ing-2-genre-description",
+        "ing-2-genre-narrative",
+        "ing-2-genre-monologue"
+      ],
+      "verification": "english-grade-two-genres.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "b1b1992f-cbfa-541b-8910-1dd825f27264",
+      "text": "• Producción de textos escritos: mensajes, correos\nelectrónicos, cartas, currículum vitae, avisos, afiches,\nletreros, formularios, cuestionarios, narraciones y\ndescripciones.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1402013,
+      "type": "PROCEDURE",
+      "index": 13,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Recepción28, producción oral8 y escrita11: respetar la lista de cada modalidad. No convertir fuentes de apoyo en productos, ni sumar correo/carta alternativos, ni duplicar acontecimientos de experiencia/narración.",
+      "providers": [
+        "ing-2-genre-sign",
+        "ing-2-genre-notice",
+        "ing-2-genre-poster",
+        "ing-2-genre-message",
+        "ing-2-genre-email",
+        "ing-2-genre-cv",
+        "ing-2-genre-letter",
+        "ing-2-genre-form",
+        "ing-2-genre-questionnaire",
+        "ing-2-genre-description",
+        "ing-2-genre-narrative"
+      ],
+      "verification": "english-grade-two-genres.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "be32956b-d8c5-5429-b086-2c10d0c9d4f3",
+      "text": "Estratégicos\nComprensión oral",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412000,
+      "type": "PROCEDURE",
+      "index": 14,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "de918786-ff34-50c4-af13-dec976470240",
+      "text": "• Anticipación del contenido del mensaje",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412001,
+      "type": "PROCEDURE",
+      "index": 15,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-anticipation"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "267b3256-bbbb-5998-aaa9-a6300c3dbd24",
+      "text": "• Escucha atenta",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412002,
+      "type": "PROCEDURE",
+      "index": 16,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-listening"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "35e98f9d-b3f5-500c-bdae-0f3d459c7741",
+      "text": "• Uso del lenguaje no verbal de su interlocutor/a para\ncomprender el mensaje",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412003,
+      "type": "PROCEDURE",
+      "index": 17,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-nonverbal-reception"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "f8451e45-1d6b-5395-a20e-9d94e237e1ac",
+      "text": "• Inferencia del significado de palabras y expresiones a\npartir del contexto y los conocimientos previos",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412004,
+      "type": "PROCEDURE",
+      "index": 18,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-inference"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "a0fb17f7-d348-5a14-bfc4-36c6e3800a1a",
+      "text": "• Solicitud de ayuda y repetición",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412005,
+      "type": "PROCEDURE",
+      "index": 19,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-help"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "10680af6-649d-5209-9333-5e0c7f15e099",
+      "text": "• Identificación de que se comprensión oral",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412006,
+      "type": "PROCEDURE",
+      "index": 20,
+      "decision": "EXCLUDED_UNINTERPRETABLE_SOURCE_FRAGMENT",
+      "note": "La fuente visible dice «Identificación de que se comprensión oral». No se afirma haber implementado su significado indeterminado ni se hereda el sustituto de primero. Intención y situación se cubren por sus registros explícitos. Limitación de la fuente conservada; requeriría una fe de erratas oficial para atribuirle otra habilidad.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "d359603a-1b47-5f62-ac01-705312e500c1",
+      "text": "Producción oral",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412007,
+      "type": "PROCEDURE",
+      "index": 21,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "175c8363-1d0c-57e8-b750-965b0b3967e8",
+      "text": "•Reproducción y ensayo de palabras, expresiones y\npautas de entonación",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412008,
+      "type": "PROCEDURE",
+      "index": 22,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-rehearsal"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "88b94970-51b8-5d77-beb2-27b8185f905a",
+      "text": "•Identificación de la situación de comunicación",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412009,
+      "type": "PROCEDURE",
+      "index": 23,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-situation"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "5e707f2d-2920-5f2d-869f-9bb7312fce38",
+      "text": "•Establecimiento de la intención comunicativa",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412010,
+      "type": "PROCEDURE",
+      "index": 24,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-communicative-purpose"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "8419ddae-f365-52eb-8275-33101cdee0da",
+      "text": "• Uso del lenguaje no verbal para comunicarse",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412011,
+      "type": "PROCEDURE",
+      "index": 25,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-nonverbal-production"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "a96a45c7-926e-550a-bef9-1ff4e8f0bff0",
+      "text": "Comprensión escrita",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412012,
+      "type": "PROCEDURE",
+      "index": 26,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "3db26ee5-5816-5c29-8fd8-4b8c2ccc81dc",
+      "text": "• Establecimiento del propósito de la lectura",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412013,
+      "type": "PROCEDURE",
+      "index": 27,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-reading-purpose"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "6f9414ba-b705-5d37-b3d0-3abf36620370",
+      "text": "• Formulación de hipótesis a partir de los\nconocimientos previos y los elementos paratextuales",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412014,
+      "type": "PROCEDURE",
+      "index": 28,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-hypothesis"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "a264e814-3718-508b-885b-a468a4a4b6a7",
+      "text": "• Identificación de la correspondencia entre la grafía y\nel sonido de las palabras",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412015,
+      "type": "PROCEDURE",
+      "index": 29,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-grapheme-phoneme"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "a093694c-81ec-5dd4-a4e1-40555ef06cd4",
+      "text": "• Inferencia del significado de palabras y expresiones\na partir de las pistas textuales y los conocimientos\nprevios",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412016,
+      "type": "PROCEDURE",
+      "index": 30,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-inference"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "34a87613-f853-55ff-8022-cdccd8be209a",
+      "text": "• Subrayado, anotación y búsqueda de palabras en el\ndiccionario y otras herramientas de consulta\nIdentificación de la intención comunicativa del texto",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412017,
+      "type": "PROCEDURE",
+      "index": 31,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-annotation",
+        "ing-2-strategy-dictionary",
+        "ing-2-strategy-text-intention"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "0e72fc0a-16b7-525e-af02-1c053b1a3c92",
+      "text": "Producción escrita",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412018,
+      "type": "PROCEDURE",
+      "index": 32,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "564191a0-3f4d-5227-a414-f457bd4bd695",
+      "text": "• Establecimiento del propósito del mensaje y del tipo\nde texto que se va a producir.",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412019,
+      "type": "PROCEDURE",
+      "index": 33,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-communicative-purpose",
+        "ing-2-strategy-text-type"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "ff2e5cf3-591b-519d-a415-0e90a55446e0",
+      "text": "• Planificación y organización del mensaje.",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412020,
+      "type": "PROCEDURE",
+      "index": 34,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-planning"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "724b5297-c249-5791-a44a-db8d2933d9c5",
+      "text": "• Uso del diccionario y otras herramientas de consulta.",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412021,
+      "type": "PROCEDURE",
+      "index": 35,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-dictionary"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "57f8915e-b3e6-50bf-98be-3ee64ca3db3b",
+      "text": "• Revisión del sentido y la corrección del mensaje.",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412022,
+      "type": "PROCEDURE",
+      "index": 36,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-revision"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "5590228e-99bf-51e5-9440-191e7a781586",
+      "text": "Otros:",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412023,
+      "type": "PROCEDURE",
+      "index": 37,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "8df241d7-9d19-58ec-ba43-156b0eaa172e",
+      "text": "• Utilización de asociaciones mentales y de la acción.",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412024,
+      "type": "PROCEDURE",
+      "index": 38,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-association"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "48e7feb1-5d6f-5a31-9720-774741b93a09",
+      "text": "• Automotivación y control del nivel de ansiedad.",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412025,
+      "type": "PROCEDURE",
+      "index": 39,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, autocontrol, humildad, identidad familiar o flexibilidad interna no son criterios de personalidad. Solo una acción comunicativa explícita y observable podrá evaluarse por otra familia.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "b8d17e29-f0dc-58ef-b709-66ad18b2d7f9",
+      "text": "• Búsqueda de oportunidades de uso de la lengua.",
+      "pdfPage": 141,
+      "printedPage": "140",
+      "sourceOrder": 1412026,
+      "type": "PROCEDURE",
+      "index": 40,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-practice"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "76714318-dcd0-5b15-8c71-d1c355a431ab",
+      "text": "Sociolingüísticos y socioculturales",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1422000,
+      "type": "PROCEDURE",
+      "index": 41,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "21e9c347-a885-52ba-a77a-0c9b2d0ac9f7",
+      "text": "• Utilización de fórmulas cotidianas de interacción\nsocial.",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1422001,
+      "type": "PROCEDURE",
+      "index": 42,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-social-formulas"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "4dbe2761-f4ad-5fc9-afcc-dbd382123180",
+      "text": "• Comparación entre los siguientes aspectos de la\nRepública Dominicana y de otros países:",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1422002,
+      "type": "PROCEDURE",
+      "index": 43,
+      "decision": "SOURCE_HEADING_NOT_A_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en un criterio independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "8782d028-25a4-5491-b7c2-97fdf194e5cf",
+      "text": "• Gestos que expresan estados anímicos y físicos",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1422003,
+      "type": "PROCEDURE",
+      "index": 44,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "847049a8-e5a1-59ba-9b4a-23ff4d48026e",
+      "text": "•Situaciones problemáticas que afectan a los\njóvenes",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1422004,
+      "type": "PROCEDURE",
+      "index": 45,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "a6146bc0-15ee-5d82-b480-3d14d7be7e18",
+      "text": "• Compras",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1422005,
+      "type": "PROCEDURE",
+      "index": 46,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "48132342-23ca-587f-a2e8-30bedfbc2823",
+      "text": "• Celebraciones",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1422006,
+      "type": "PROCEDURE",
+      "index": 47,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "48ea54b9-9b5f-5fef-aeab-394f3c5aa159",
+      "text": "• Actividades de tiempo libre",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1422007,
+      "type": "PROCEDURE",
+      "index": 48,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "25264153-07ad-589c-9b49-c27a1a3f96eb",
+      "text": "• Puntualidad",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1422008,
+      "type": "PROCEDURE",
+      "index": 49,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "865c714a-e9db-5114-beae-10edcfe6dd70",
+      "text": "• Lugares de interés",
+      "pdfPage": 142,
+      "printedPage": "141",
+      "sourceOrder": 1422009,
+      "type": "PROCEDURE",
+      "index": 50,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento observable solo cuando se solicita; respetar modalidad y aspectos culturales explícitos. La revisión de significado y corrección no se elimina por su redacción.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-two-strategies.spec.ts_AND_englishGradeTwoFullContract.spec.ts"
+    },
+    {
+      "id": "14edba6d-a755-5d4a-8359-479575af1727",
+      "text": "• Motivación para aprender inglés.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403000,
+      "type": "ATTITUDE_VALUE",
+      "index": 0,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, autocontrol, humildad, identidad familiar o flexibilidad interna no son criterios de personalidad. Solo una acción comunicativa explícita y observable podrá evaluarse por otra familia.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "3a16b112-e203-5275-823e-f6f92ad531ab",
+      "text": "• Cortesía y asertividad en la comunicación.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403001,
+      "type": "ATTITUDE_VALUE",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-courtesy"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "3d984018-6853-5cc5-896d-fa5c765e9079",
+      "text": "• Respeto por las diferencias en los modos de vida\nde las personas.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403002,
+      "type": "ATTITUDE_VALUE",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "01e9fa6d-9d18-5f4c-8ad7-059ceef41cd2",
+      "text": "• Respeto por las normas éticas de la interacción a\ntravés de las TIC.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403003,
+      "type": "ATTITUDE_VALUE",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-ethical-ict"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "d4875d7a-7acf-5b7c-af38-c270ff96b184",
+      "text": "• Uso juicioso del tiempo que se dedica a la\ninteracción a través de las TIC.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403004,
+      "type": "ATTITUDE_VALUE",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-agreed-time"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "56ea0f9a-0256-5ead-86f1-cd6a0d549cf7",
+      "text": "• Empatía por los sentimientos y necesidades de\nlos y las demás.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403005,
+      "type": "ATTITUDE_VALUE",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-empathetic-response"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "d48e8f08-83e8-5345-9a71-ec4e1515dc9a",
+      "text": "• Dominio propio y auto control.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403006,
+      "type": "ATTITUDE_VALUE",
+      "index": 6,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, autocontrol, humildad, identidad familiar o flexibilidad interna no son criterios de personalidad. Solo una acción comunicativa explícita y observable podrá evaluarse por otra familia.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "7576b8e7-390e-5f56-bd02-224f5a27d664",
+      "text": "• Tacto al ofrecer consejos.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403007,
+      "type": "ATTITUDE_VALUE",
+      "index": 7,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-courtesy"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "35af5738-8608-5ed6-84d3-ce36126a8355",
+      "text": "• Hábitos juiciosos de consumo.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403008,
+      "type": "ATTITUDE_VALUE",
+      "index": 8,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-purchase-choice"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "fbce4f44-5e97-5fa0-82d2-c120549d870f",
+      "text": "• Honestidad al interactuar con las demás\npersonas.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403009,
+      "type": "ATTITUDE_VALUE",
+      "index": 9,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-faithful-information"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "2f4bb071-569f-5f47-8d24-421a2b90abd2",
+      "text": "• Cumplimiento de los compromisos contraídos.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403010,
+      "type": "ATTITUDE_VALUE",
+      "index": 10,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-agreed-time"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "4a67b93b-b691-5d7b-9ad1-c4b980d9153a",
+      "text": "• Respeto por el tiempo de los demás.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403011,
+      "type": "ATTITUDE_VALUE",
+      "index": 11,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-agreed-time"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "56d19477-b93e-56f6-80e1-02fc7bdc9abc",
+      "text": "• Humildad al narrar sus experiencias.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403012,
+      "type": "ATTITUDE_VALUE",
+      "index": 12,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, autocontrol, humildad, identidad familiar o flexibilidad interna no son criterios de personalidad. Solo una acción comunicativa explícita y observable podrá evaluarse por otra familia.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "f47e98c2-045b-5e16-9311-cca314a12ef2",
+      "text": "• Valoración positiva de su origen familiar y social.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403013,
+      "type": "ATTITUDE_VALUE",
+      "index": 13,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, autocontrol, humildad, identidad familiar o flexibilidad interna no son criterios de personalidad. Solo una acción comunicativa explícita y observable podrá evaluarse por otra familia.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "716da879-a11e-52ef-b425-a7dc6247087b",
+      "text": "• Respeto por las costumbres y tradiciones\npropias y las de los demás países.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403014,
+      "type": "ATTITUDE_VALUE",
+      "index": 14,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "1245f84a-e93c-5a9e-85cd-9b3e2dc43ded",
+      "text": "• Cuidado del medioambiente y de los recursos\nnaturales.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403015,
+      "type": "ATTITUDE_VALUE",
+      "index": 15,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-context-care",
+        "ing-2-context-care"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "d48063fa-e402-5be1-929f-cf4f5548bb8d",
+      "text": "• Flexibilidad ante los cambios.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403016,
+      "type": "ATTITUDE_VALUE",
+      "index": 16,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, autocontrol, humildad, identidad familiar o flexibilidad interna no son criterios de personalidad. Solo una acción comunicativa explícita y observable podrá evaluarse por otra familia.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "48db6f5b-8fc4-5bea-80ca-afae551abe13",
+      "text": "• Solidaridad con quien necesita ayuda.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1403017,
+      "type": "ATTITUDE_VALUE",
+      "index": 17,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición explícita de un mensaje, personaje o situación ficticia/proporcionada. No puntuar creencias, empatía interna, salud, posesiones, privacidad ni hábitos reales; los compromisos, precios y restricciones deben venir de la consigna.",
+      "providers": [
+        "ing-2-help"
+      ],
+      "verification": "english-grade-two-context.spec.ts_AND_FUNCTION_HELP_CONTRACTS"
+    },
+    {
+      "id": "c345e381-5656-5012-9015-fd4a04aef6da",
+      "text": "Comprende y expresa ideas, sentimientos y valores culturales en distintas situaciones de comunicación,\nutilizando el idioma inglés de forma breve y sencilla con la finalidad de informar, ofrecer ayuda, sugerir,\ncomprar, describir planes futuros, y narrar experiencias, con relación a necesidades concretas y temas\ncotidianos.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1406000,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 0,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-conversation",
+        "ing-2-daily",
+        "ing-2-states",
+        "ing-2-help",
+        "ing-2-shopping",
+        "ing-2-wishes",
+        "ing-2-advice",
+        "ing-2-plans",
+        "ing-2-experience"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "010db75a-733f-53f8-bc02-f77b2e61b9ce",
+      "text": "Interactúa de forma oral y escrita en el idioma inglés empleando razonamiento lógico-verbal y estrategias\nde desempeño de manera creativa y crítica en distintas situaciones de comunicación donde narra\nexperiencias, da sugerencias y consejos y expresa planes en expresiones breves y sencillas.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1406001,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-interaction",
+        "ing-2-written",
+        "ing-2-intelligibility",
+        "ing-2-feature-sequence-connectors"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "8d162a2a-f8a9-5011-9fc8-a4348ba86549",
+      "text": "Interactúa en inglés ante diversas circunstancias y problemas comunes de su entorno inmediato en las que\nsolicita u ofrece ayuda, da consejos y sugerencias pertinentes y emplea estrategias de desempeño oral y\nescrito para lograr la claridad del mensaje, aunque el interlocutor deba hacer cierto esfuerzo oral y escrito\npara comprenderle.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1406002,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "b90dd6d6-437e-52af-96da-b3a16456a609",
+      "text": "Se comunica en el idioma inglés de forma breve y sencilla, con cortesía y respeto, reconociendo las\ndiferencias individuales más comunes, y la identidad social y cultural propias de la comunidad local y global.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1406003,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-context-respect-differences",
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "94810e21-74ef-56b1-9804-1dea5e5100c3",
+      "text": "Se comunica en el idioma inglés con el propósito de solicitar y ofrecer ayuda, expresar interés y dar\nsugerencias sobre asuntos científicos, tecnológicos y de otra índole, en situaciones inmediatas de\ncomunicación.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1406004,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-lexicon-technology"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "39f6627b-736e-56a3-9c4e-d9ddf71ff064",
+      "text": "Muestra preferencia por opciones que impactan positivamente la salud y el medio ambiente al interactuar\nen inglés sobre sus actividades cotidianas y en situaciones de compra, así como al describir estados\nanímicos y físicos.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1406005,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-care",
+        "ing-2-daily",
+        "ing-2-shopping",
+        "ing-2-states"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "20fb601f-680b-5df0-936a-772f84eb7dd9",
+      "text": "Interactúa en el idioma inglés, con cortesía, honestidad, actitud de respeto y aceptación al referirse a sí\nmismo/a y a las demás personas, al hacer sugerencias y al describir experiencias, planes, estados anímicos\ny físicos.",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1406006,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-context-faithful-information",
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "e37b9e09-9918-52b6-a5c6-8bb5d2a30be1",
+      "text": "Comunicativa",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1405000,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 0,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-conversation",
+        "ing-2-daily",
+        "ing-2-states",
+        "ing-2-help",
+        "ing-2-shopping",
+        "ing-2-wishes",
+        "ing-2-advice",
+        "ing-2-plans",
+        "ing-2-experience"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "beec6259-6ff4-5da6-bb84-3af1b9d61f62",
+      "text": "Pensamiento Lógico, Creativo y\nCrítico",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1405001,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-interaction",
+        "ing-2-written",
+        "ing-2-intelligibility",
+        "ing-2-feature-sequence-connectors"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "23102276-0602-506c-a321-a4f2344063c5",
+      "text": "Resolución de Problemas",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1405002,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "281ae4bc-f0de-5c0f-8e99-9fac99783f90",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1405003,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-context-respect-differences",
+        "ing-2-strategy-cultural-comparison"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "d86f2447-5b82-5951-9261-58b259890927",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1405004,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-lexicon-technology"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "1de9ca49-b369-599c-a3a5-8a8a10b4c48c",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1405005,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-care",
+        "ing-2-daily",
+        "ing-2-shopping",
+        "ing-2-states"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "1a4af663-2e2f-50ed-9ec3-88ace535c2bd",
+      "text": "Desarrollo Personal y Espiritual",
+      "pdfPage": 140,
+      "printedPage": "139",
+      "sourceOrder": 1405006,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_FRAMEWORK",
+      "note": "Marco de desempeño concretado por la función, acción, producto y requisitos de la consigna. No es una fila fija adicional ni una calificación de identidad, creatividad interna, personalidad o hábitos reales.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-context-faithful-information",
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "FUNCTION_GRAMMAR_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "f88f0d74-9450-570f-8ade-ed2cd0621617",
+      "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir de la escucha o lectura de textos breves y sencillos que contienen\ninformación sobre su entorno inmediato, actividades cotidianas, estados de salud, sentimientos, intereses, consejos, planes, sugerencias,\ny narraciones de experiencias.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454000,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 0,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-conversation",
+        "ing-2-daily",
+        "ing-2-states",
+        "ing-2-help",
+        "ing-2-shopping",
+        "ing-2-wishes",
+        "ing-2-advice",
+        "ing-2-plans",
+        "ing-2-experience",
+        "ing-2-genre-message"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "7e8ca7b1-c9ad-5484-a0c6-ca31b71f8abf",
+      "text": "• Produce textos breves y sencillos mediante una serie de frases y oraciones enlazadas por conectores básicos para compartir informaciones\npersonales y de su entorno inmediato, tales como experiencias, estados de salud, sentimientos, planes, consejos y sugerencias, con\npausas y reformulaciones en lo oral y con algunos errores básicos en lo escrito.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454001,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-written",
+        "ing-2-intelligibility",
+        "ing-2-feature-coordination-connectors"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "8f622c07-36dd-5657-b1fd-dcb16fd08204",
+      "text": "• Interactúa en forma oral o escrita a través de una serie de frases y oraciones sencillas, enlazadas por conectores, con el propósito\nde informar sobre actividades cotidianas, describir estados anímicos y físicos, solicitar ayuda, comprar, expresar deseo o interés, dar\nconsejos y sugerencias, expresar planes y narrar experiencias, aunque con algunos errores básicos.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454002,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-interaction",
+        "ing-2-written",
+        "ing-2-intelligibility"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "200bd7ff-5255-5b82-a348-b32bd17d035a",
+      "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir de textos orales y escritos breves y sencillos donde se presenta\ninformación variada y sugerencias sobre situaciones presentes, futuras y pasadas, comprendiendo de forma reflexiva y creativa la\nsecuencia y relación lógica de los elementos.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454003,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-experience",
+        "ing-2-plans",
+        "ing-2-feature-time-connectors",
+        "ing-2-strategy-inference"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "cbcfa1ea-82ca-5c8d-b926-a6a7b5549eb6",
+      "text": "• Produce textos orales y escritos breves y sencillos con claridad y creatividad, manteniendo una secuencia clara y ordenada de las ideas,\nmediante el uso de conectores lógicos básicos apropiados a la relación específica de las ideas, al tema y la situación.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454004,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-written",
+        "ing-2-intelligibility",
+        "ing-2-feature-sequence-connectors",
+        "ing-2-strategy-planning"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "70df5d8c-35b4-587e-83e8-8e96093a0e54",
+      "text": "• Interactúa en forma oral o escrita a través de una serie de oraciones breves y sencillas ordenadas de una forma lógica y presentadas de\nforma creativa en diferentes tipos de texto donde comparte experiencias, información, planes, sugerencias, y consejos.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454005,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-interaction",
+        "ing-2-experience",
+        "ing-2-plans",
+        "ing-2-advice"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "e35f0b25-71fc-5519-b0f8-c4003a9330a3",
+      "text": "• Responde de forma adecuada a preguntas e indicaciones sobre situaciones y problemas de su entorno inmediato y temas que le son\nfamiliares, a partir de textos orales y escritos breves y sencillos.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454006,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-genre-message"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "cc4d7fb7-36c7-5b2c-9ad5-5d800f9b2beb",
+      "text": "• Se comunica mediante textos orales y escritos de forma clara y comprensible, para comunicar problemas inmediatos propios, de otras\npersonas y del entorno cotidiano, así como para proponer consejos y sugerencias pertinentes, utilizando frases y oraciones breves y\nsencillas.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454007,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 7,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-advice",
+        "ing-2-written",
+        "ing-2-intelligibility"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "c215eb49-141e-5319-9a1c-29d843ca9afc",
+      "text": "• Interactúa de forma oral y escrita para solicitar o proveer información, ayuda, consejos y sugerencias sobre situaciones y problemas\nrelativos a actividades cotidianas, intereses y estados de ánimo, utilizando con claridad frases y oraciones breves y sencillas.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454008,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 8,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-advice",
+        "ing-2-daily",
+        "ing-2-states",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "3fbda16d-b92e-5183-9c8a-824d329ac532",
+      "text": "• Reconoce las diferencias individuales y la identidad social y cultural propia y de otros países como gestos, compras, celebraciones,\nactividades de tiempo libre, puntualidad y lugares de interés.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454009,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 9,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-strategy-cultural-comparison",
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "8efe2d8a-deaf-58d3-b4eb-610df6dcf588",
+      "text": "• Interactúa de forma breve y sencilla en el idioma inglés, con cortesía, asertividad y respeto.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454010,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 10,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "74754c61-ce1f-57d3-8ea6-3af771982634",
+      "text": "• Sostiene la conversación al interactuar en forma oral o escrita, utilizando frases y oraciones estratégicas para mantener la interacción de\nforma cortés y respetuosa a las diferencias de la cultura personal y de otras personas.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454011,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 11,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-conversation",
+        "ing-2-strategy-social-formulas",
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "5a627c47-e475-5308-bbb3-d6b686693f2e",
+      "text": "• Identifica información y la utiliza de forma adecuada para responder a preguntas e indicaciones sobre aspectos científicos y tecnológicos\npresentes en la descripción de actividades cotidianas, experiencias, sentimientos y dolencias propias y de otras personas.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454012,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 12,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-lexicon-technology",
+        "ing-2-genre-message",
+        "ing-2-context-faithful-information"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "354fde2a-229d-58a6-a6fe-89ee274d4b4f",
+      "text": "• Expresa ideas y sugerencias sobre aspectos de temas científicos, tecnológicos y de otra índole presentes en su entorno inmediato de\ninterés personal para referirse a la salud, estados de ánimo, deseos y experiencias pasadas, utilizando oraciones comunes breves y\nsencillas.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454013,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 13,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-advice",
+        "ing-2-states",
+        "ing-2-wishes",
+        "ing-2-experience",
+        "ing-2-lexicon-technology"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "8b5c661b-4157-5c86-a270-de4ddc428d20",
+      "text": "• Interactúa sobre temas científicos, tecnológicos y de otra índole con el propósito de pedir y dar consejos y sugerencias, de forma\npresencial o virtual, utilizando vocabulario común con frases y oraciones breves y sencillas.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454014,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 14,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-advice",
+        "ing-2-interaction",
+        "ing-2-context-ethical-ict",
+        "ing-2-lexicon-technology"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "28def97b-7fe2-505f-a8f1-1aaaaca74afd",
+      "text": "• Identifica las acciones que impactan positivamente la salud y el medio ambiente en las actividades cotidianas que se realizan en su\nentorno inmediato.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454015,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 15,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-care"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "980bba8a-b605-5460-94c3-4e3fad0c9d89",
+      "text": "• Describe información del estado de su entorno inmediato, presentando consejos, sugerencias y planes para cuidar el medioambiente,\nla salud propia y de otras personas.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454016,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 16,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-care",
+        "ing-2-advice",
+        "ing-2-plans"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "0ffa4a44-6542-5f2c-882a-10a347debf2f",
+      "text": "• Interactúa de forma adecuada en situaciones donde se promueve prácticas de hábitos saludables para las personas y amigables con el\nmedioambiente.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454017,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 17,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-care",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "8cfa42e9-7466-5f1a-819c-ef8218ea5a13",
+      "text": "• Muestra empatía por los sentimientos y necesidades de las demás personas.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454018,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 18,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-empathetic-response"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "0a26fb16-1f41-5249-9b8d-3d5180a4ed56",
+      "text": "• Muestra disposición para ayudar a las demás personas que lo necesitan, al interactuar con sus compañeros de forma colaborativa.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454019,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 19,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-help",
+        "ing-2-interaction"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "c574bb01-d136-5d02-9a84-a9d1c327a79d",
+      "text": "• Interactúa con cortesía, respeto y asertividad al referirse a sí mismo y a otras personas.",
+      "pdfPage": 145,
+      "printedPage": "144",
+      "sourceOrder": 1454020,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 20,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador de logro concretado por evidencias comunicativas solicitadas. No añadir filas genéricas ni puntuar disposiciones internas. Ciencia/tecnología son contexto del inglés básico; la información debe venir del texto o situación, sin exigir conocimientos especializados no pedidos.",
+      "providers": [
+        "ing-2-context-courtesy",
+        "ing-2-context-respect-differences"
+      ],
+      "verification": "FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    }
+  ]
+}

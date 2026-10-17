@@ -1,5 +1,15 @@
 # Corrección de Actividades e Instrumentos
 
+Estado vigente al 15/10/2026: localhost:8787 usa exclusivamente AulaBase Development (`eolgunypmtgrsyrjzcld`). La corrección del caso «Nos presentamos en francés» usa catálogo `.76`: estrategia por acciones, residencia, preguntas y ambos roles, conservando los patrones acotados de 1.º–6.º. [Informe actual, mediciones, instrumentos completos y límites](2026-10-15-frances-presentacion-correcciones.md). La prueba visual personal sigue pendiente por acceso al navegador. El [cierre anterior de cobertura](2026-10-15-frances-comun-development.md) corresponde a `.75`; las referencias posteriores a otra base describen historia, no la configuración local actual.
+
+Seguimiento15/10/2026: campo opcional Estrategia de enseñanza y aprendizaje, catálogo16 entradas y selección automática/manual/desconocida, persistencia completa y conservación exacta de instrumentos. Migración nueva local, tres CRUD Chrome,12 contextos HTTP y138 históricos preservados; sin ampliar cobertura curricular. [Informe y fuentes](../../curriculum/cobertura-secundaria/estrategias-informe.md). Las secciones posteriores conservan su alcance histórico.
+
+Seguimiento de consignas naturales,15/10/2026: formas futuras y modalidades coordinadas, condiciones de entrega/contradicciones, informes breves y Agregar/Completar con feedback persistente. Catálogo local.69; tres CRUD y135 históricos conservados; matriz con límites reales y sin ampliar asignaturas. [Informe final y evidencias](../../curriculum/cobertura-secundaria/consignas-informe.md), [instrumentos completos](../../curriculum/cobertura-secundaria/consignas-ejemplos-completos.md). Prevalece este seguimiento; lo siguiente conserva su fecha y alcance históricos.
+
+Seguimiento de calidad de Inglés1.º–6.º,15/10/2026: cotejos con datos independientes, revisión observable sin cambios forzados y conciliación135=105+28+2. Catálogo local.66; sin alterar históricos ni ampliar otra asignatura. [Informe y verificaciones](../../curriculum/cobertura-secundaria/ingles-calidad-informe.md).
+
+Continuidad al15/10/2026: el encargo posterior de Inglés común2.º–6.º terminó en las familias y patrones definidos, con catálogo local.63 y cuatro recorridos autenticados por grado. [Informe consolidado y límites](../../curriculum/cobertura-secundaria/ingles-2-6-informe-consolidado.md), [cierre de sexto](../../curriculum/cobertura-secundaria/ingles-6-informe-final.md). Rama actual `amplia-instrumentos-secundaria`; ejecución posterior sin subagentes. El informe del12/10 que sigue conserva su contexto histórico.
+
 Fecha: 12 de octubre de 2026. Cambios locales en la rama `instrumentos`, revisados por subagentes independientes. Los 18 requisitos del diseño quedaron cubiertos y sin hallazgos abiertos en la revisión final. Se aplicaron Superpowers, Ponytail, Graphify y UI/UX Pro Max.
 
 ## Resultado

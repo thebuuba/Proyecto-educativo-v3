@@ -1,0 +1,2648 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "scopeId": "cc482480-0f08-5657-98aa-1afd28ecfa1a",
+  "subject": "Inglés",
+  "character": "COMMON",
+  "cycle": 1,
+  "grade": 3,
+  "pdfPages": [
+    146,
+    147,
+    148,
+    149,
+    150,
+    151
+  ],
+  "printedPages": [
+    145,
+    146,
+    147,
+    148,
+    149,
+    150
+  ],
+  "method": "Seis páginas renderizadas y cotejadas visualmente, incluidas continuaciones y columnas vacías.",
+  "layoutNotes": [
+    "PDF149–150 continúan gramática; columnas procedimental y actitudinal vacías.",
+    "Doce ámbitos cotidianos: el último une actividades sociales/culturales con viajes/turismo; no copiar los trece de segundo.",
+    "Vocabulario19 familias; expresiones5 intenciones, cuatro comprimidas en un registro.",
+    "Gramática52 familias en registros compuestos; coordinación y contraste tienen continuaciones de ejemplos.",
+    "Recepción28 géneros, producción oral8 y escrita11; listas distintas."
+  ],
+  "status": "VERIFIED_DEFINED_FAMILIES",
+  "records": [
+    {
+      "id": "9100a22d-591e-5562-be04-9000308769d9",
+      "text": "Temas",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461000,
+      "type": "CONCEPT",
+      "index": 0,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "c1897bb0-cd33-5234-9c6d-43b9d5af81f3",
+      "text": "• Relaciones humanas y sociales",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461001,
+      "type": "CONCEPT",
+      "index": 1,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "f953f768-fc34-5ad5-8066-64a498826cb9",
+      "text": "• Actividades de la vida diaria",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461002,
+      "type": "CONCEPT",
+      "index": 2,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "7676f06d-7760-53ac-9ee8-fc796f4d746c",
+      "text": "• Vivienda, entorno y ciudad",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461003,
+      "type": "CONCEPT",
+      "index": 3,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "06a64620-8ba6-58d5-8dc6-b47503ee92b0",
+      "text": "• Escuela y educación",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461004,
+      "type": "CONCEPT",
+      "index": 4,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "c27d2e98-f595-5381-a418-bbf51ddd5ccc",
+      "text": "• Deporte, tiempo libre y recreación",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461005,
+      "type": "CONCEPT",
+      "index": 5,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "02750d39-aedf-5eff-a655-442e715f9fd2",
+      "text": "• Alimentación",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461006,
+      "type": "CONCEPT",
+      "index": 6,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "4d38e5d6-26d6-5650-95c6-c16eb8210bf9",
+      "text": "• Salud y cuidados físicos",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461007,
+      "type": "CONCEPT",
+      "index": 7,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "79b6a15a-175b-536a-95bb-780c37796096",
+      "text": "• Lengua y comunicación",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461008,
+      "type": "CONCEPT",
+      "index": 8,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "ca21b7dd-e1b6-5edc-a128-1d8be63a81eb",
+      "text": "• Ciencia y tecnología",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461009,
+      "type": "CONCEPT",
+      "index": 9,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "7c3dcdf8-c255-5bee-ac43-fbba54eeb069",
+      "text": "•Clima, condiciones atmosféricas y\nmedioambiente",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461010,
+      "type": "CONCEPT",
+      "index": 10,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "006d021a-571e-5938-b401-f6d5a244a2ad",
+      "text": "• Bienes y servicios",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461011,
+      "type": "CONCEPT",
+      "index": 11,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "4127f0d1-1f81-5db6-9d9b-d49c76d462e8",
+      "text": "• Actividades sociales y culturales:\nViajes y turismo",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461012,
+      "type": "CONCEPT",
+      "index": 12,
+      "decision": "CONTEXT_ONLY_EXPLICIT_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano de comunicación, no criterio por su mera mención. Requiere acción comunicativa explícita; no se exige información privada del estudiante.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "FUNCTIONS_AND_CONTEXT_CONTRACTS"
+    },
+    {
+      "id": "ab70133b-188f-5f7a-898f-27ce81ceafba",
+      "text": "Vocabulario",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461013,
+      "type": "CONCEPT",
+      "index": 13,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "28faccf7-cca5-55e4-92cf-0e9fe672efa0",
+      "text": "• Actividades diarias: clean the bedroom, do\nthe dishes…",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461014,
+      "type": "CONCEPT",
+      "index": 14,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-daily"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "5d7fd8ca-4cbd-56f4-97ba-c98419473792",
+      "text": "• Actividades escolares: do homework, make\na presentation...",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461015,
+      "type": "CONCEPT",
+      "index": 15,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-school-activities"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "7f3a8e92-8509-5d2c-b3f1-5e288d0683d7",
+      "text": "• Actividades de tiempo libre y ocio: play the\nguitar, throw a party…",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461016,
+      "type": "CONCEPT",
+      "index": 16,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-leisure"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "7dd54955-e984-543b-ad0d-4166743566e9",
+      "text": "•Celebraciones y festividades: Christmas,\nThanksgiving…",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461017,
+      "type": "CONCEPT",
+      "index": 17,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-celebrations"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "92845e6e-dda6-5b6c-a83f-16dd5e32f692",
+      "text": "• Condiciones atmosféricas: windy, snowy,\nsunny...",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1461018,
+      "type": "CONCEPT",
+      "index": 18,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-weather-words"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "649b728e-7cab-58e1-93ff-e9c8a116c785",
+      "text": "• Deportes: volleyball, baseball, soccer…",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471000,
+      "type": "CONCEPT",
+      "index": 19,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-sports"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "5446fe6d-0f77-5554-bccb-9bf1c9850c83",
+      "text": "• Escuela:report card, English class, principal’s\noffice…",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471001,
+      "type": "CONCEPT",
+      "index": 20,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-school"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "9d79c1d9-003c-56cf-8fca-56eb187c4f7b",
+      "text": "• Estados de ánimo: excited, happy, sad,\nangry...",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471002,
+      "type": "CONCEPT",
+      "index": 21,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-moods"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "f62973f7-d649-5608-9191-2a6b3998e6b0",
+      "text": "• Eventualidades: fail a test, hurt oneself, lose\none’s key...",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471003,
+      "type": "CONCEPT",
+      "index": 22,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-contingencies"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "fcc5075e-2338-55b2-9617-211452c58f60",
+      "text": "• Lugares: pizza joint, beach, river, restaurant,\ntheater…",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471004,
+      "type": "CONCEPT",
+      "index": 23,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-places"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "2d95e3ad-e4b7-5219-9371-8a8ea03647ea",
+      "text": "• Medio ambiente: pollution, global\nwarming, recycling…",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471005,
+      "type": "CONCEPT",
+      "index": 24,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-environment"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "7af50624-6774-54d8-9e6f-c143fe1dbbe6",
+      "text": "• Medios de comunicación: newspaper, TV,\nradio...",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471006,
+      "type": "CONCEPT",
+      "index": 25,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-media"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "ddfca7dd-da4c-59b8-8292-c1acc24337b8",
+      "text": "• Objetos del hogar y el entorno: key,\nhammer, stove, sofa...",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471007,
+      "type": "CONCEPT",
+      "index": 26,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-home-objects"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "0f745e33-df70-5a60-ba48-1c62bbc33438",
+      "text": "• Ocupaciones: manager, computer\na n a l y s t …",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471008,
+      "type": "CONCEPT",
+      "index": 27,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-jobs"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "2c1f1200-90ce-5e8a-b3a4-52102859708d",
+      "text": "• Problemáticas sociales: unemployment,\nviolence… \\",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471009,
+      "type": "CONCEPT",
+      "index": 28,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-social-problems"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "b12565f4-f123-5547-b451-d663b0cfd91d",
+      "text": "• Recetas de cocina: recipe, ingredient, chop...",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471010,
+      "type": "CONCEPT",
+      "index": 29,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-recipes"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "9e6de9f9-11e8-5802-8d52-36e028661784",
+      "text": "• Relaciones humanas: classmate, girlfriend,\ncoworker…",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471011,
+      "type": "CONCEPT",
+      "index": 30,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-relationships"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "4a5ee80e-224d-5d95-812a-7eb1841410d2",
+      "text": "• Señales de tránsito: Stop; No parking…",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471012,
+      "type": "CONCEPT",
+      "index": 31,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-traffic-signs"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "dc5636e8-4d9f-5cf1-873a-7c6a60e3764c",
+      "text": "•Tecnología: phablet, projector...",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471013,
+      "type": "CONCEPT",
+      "index": 32,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-technology"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "78871f33-550c-5a47-acfa-69d3bc1307dd",
+      "text": "Expresiones",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471014,
+      "type": "CONCEPT",
+      "index": 33,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "989b3941-fd00-5108-8bcd-3c88560605ce",
+      "text": "• Opinar:\nI believe…; I think …; I guess…; Maybe…",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471015,
+      "type": "CONCEPT",
+      "index": 34,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo.",
+      "providers": [
+        "ing-3-lexicon-opinion"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "16a77045-4b5e-5961-94d0-3a9f26094bbc",
+      "text": "• Mostrar acuerdo o desacuerdo:\nI agree with you; don’t agree; I disagree...\nReaccionar:\nAre you serious? That’s awful! Good for you!\nReally?\nSolicitar explicaciones:\nWhat happened? How come? What’s wrong?\nAdvertir:\nWatch out! Warning! Be careful!",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471016,
+      "type": "CONCEPT",
+      "index": 35,
+      "decision": "CONNECTED_LEXICON_DEFINED_CONTRACTS",
+      "note": "Diecinueve familias léxicas y cinco intenciones expresivas de tercero; reconocimiento, explicación y uso. No exigir información privada ni trasladar dinero/medicamentos/tallas de segundo. Registro compuesto: acuerdo/desacuerdo, reacción, solicitud de explicaciones y advertencia; separar las cuatro intenciones expresivas.",
+      "providers": [
+        "ing-3-lexicon-agreement",
+        "ing-3-lexicon-reaction",
+        "ing-3-lexicon-explanations",
+        "ing-3-lexicon-warning"
+      ],
+      "verification": "english-grade-three-lexicon.spec.ts"
+    },
+    {
+      "id": "24ec62f8-849a-5eda-9fa4-ae19da105892",
+      "text": "Gramática",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471017,
+      "type": "CONCEPT",
+      "index": 36,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "b4fc84e6-f032-5644-91d2-5cd53039b93b",
+      "text": "• Presente simple para solicitar y ofrecer\nindicaciones e instrucciones:\nWhere’s the pharmacy?\nHow do I turn on the computer? I live around\nthe corner.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471018,
+      "type": "CONCEPT",
+      "index": 37,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-present-simple"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "eedd0574-5c26-55bf-97b8-e9a5bfe8bf12",
+      "text": "• Presente simple para expresar opiniones:\nShe sings very well.\nI think my teacher is so kind and caring.\nPresente continuo para hacer anuncios y dar\nnoticias:\nGrandma is visiting us next Sunday. She’s\narriving in the morning.\nPasado simple para narrar historias y dar\nnoticias:\nMy team won the championship last night!\nUsed to para comparar hechos y situaciones\ndel pasado con el presente.\nI used to eat a lot of candy.\nThere used to be less pollution a few years\nago.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1471019,
+      "type": "CONCEPT",
+      "index": 38,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes. Registro compuesto: mantener cada forma/función y su fuente, sin reducirlo a una sola estructura.",
+      "providers": [
+        "ing-3-feature-present-simple",
+        "ing-3-feature-present-continuous",
+        "ing-3-feature-past-simple",
+        "ing-3-feature-used-to"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "e7813c73-bc64-5648-abc9-3c8811e96501",
+      "text": "Presente perfecto para dar noticias: Have you\never been to San Francisco? Emily has just\ngraduated from high school.\nPasado continuo y pasado simple para narrar\nhistorias:\nRosa arrived when they were leaving the\nplace.\nPasado simple y presente simple al comparar\nhechos y situaciones del pasado con el presente:\nThis river was crystal clear years ago, but\nnow it’s polluted.\nWill y be going to para hacer inferencias y\npredicciones:\nThe temperature will be around 32°F today.\nBertha will pass the test because she’s\nstudying very hard.\nMy team is going to win the World Cup next\nyear because it has the best players.\nThere + be para solicitar y ofrecer indicaciones y\nhacer anuncios y dar noticias:\nIs there a mall around here?\nThere’s going to be a talk on biodiversity next\nweek.\nThere has just been an earthquake.\nModo imperativo para ofrecer indicaciones y\nhacer prohibiciones:\nTurn right on Main Street. Please, do not\nenter!\nLet’s para ofrecer indicaciones y\nsugerencias:\nNow, let’s click on the tool bar. Let’s not go to\nthe beach.\nWhy don’t/ why not para hacer sugerencias:\nWhy not tell your mom about it?\nCan, should, must, may, might, have to, need\nto... para expresar opiniones, dar indicaciones y\nhacer sugerencias, prohibiciones e inferencias.",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1481000,
+      "type": "CONCEPT",
+      "index": 39,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes. Registro compuesto: mantener cada forma/función y su fuente, sin reducirlo a una sola estructura.",
+      "providers": [
+        "ing-3-feature-present-simple",
+        "ing-3-feature-past-simple",
+        "ing-3-feature-present-perfect",
+        "ing-3-feature-past-continuous",
+        "ing-3-feature-will",
+        "ing-3-feature-going-to",
+        "ing-3-feature-there-be",
+        "ing-3-feature-imperative",
+        "ing-3-feature-lets",
+        "ing-3-feature-why-suggestion",
+        "ing-3-feature-modal-can",
+        "ing-3-feature-modal-should",
+        "ing-3-feature-modal-must",
+        "ing-3-feature-modal-may",
+        "ing-3-feature-modal-might",
+        "ing-3-feature-modal-have-to",
+        "ing-3-feature-modal-need-to"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "fca3a28f-f5ee-56f4-b53d-8edab3b3f122",
+      "text": "Mary’s car is here, so she must be inside the\nbuilding.\nI think you should see a doctor.\nYou can’t use your cell phone in class.\nYou must take two of these pills every\nm o r n i n g.",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1481001,
+      "type": "CONCEPT",
+      "index": 40,
+      "decision": "CONTINUATION_NOT_NEW_FAMILY",
+      "note": "Ejemplos continuados de los modales del registro39, no una nueva lista de estructuras.",
+      "providers": [
+        "ing-3-feature-modal-can",
+        "ing-3-feature-modal-should",
+        "ing-3-feature-modal-must"
+      ],
+      "verification": "GRAMMAR_MODAL_CONTRACTS"
+    },
+    {
+      "id": "b0ae9076-8da1-5038-a5c9-7f3ad66f028c",
+      "text": "•Cláusulas adjetivas y sustantivas:\nThat’s the elementary school where I studied.\nI believe that soccer is an interesting sport.\nCondicional para ofrecer información y hacer\npredicciones:\nIf you are going to ride a motorcycle, you\nmust wear a helmet.If you miss more\nclasses, you will fail the course.\nQuestion tags:\nI don’t have to push the POWER button, do I?",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1481002,
+      "type": "CONCEPT",
+      "index": 41,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes. Registro compuesto: mantener cada forma/función y su fuente, sin reducirlo a una sola estructura.",
+      "providers": [
+        "ing-3-feature-adjective-clauses",
+        "ing-3-feature-noun-clauses",
+        "ing-3-feature-conditional",
+        "ing-3-feature-question-tags"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "4ab5d6c0-dd9b-5b30-91a9-20b8adc8d6f8",
+      "text": "• Voz pasiva del pasado para narrar historias: The\nDominican Independence was declared in\n1844.\nThe doors were opened, and we left the place.",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1481003,
+      "type": "CONCEPT",
+      "index": 42,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-passive-past"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "e5d30295-dfc7-5ab4-b79f-00b98912089c",
+      "text": "• Voz pasiva del presente y del pasado para\nsolicitar y ofrecer explicaciones y motivos:\nCoral reefs are affected because the oceans\nwere contaminated by oil spills.",
+      "pdfPage": 149,
+      "printedPage": "148",
+      "sourceOrder": 1491000,
+      "type": "CONCEPT",
+      "index": 43,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-passive-past",
+        "ing-3-feature-passive-present"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "f9774949-cb00-5a2a-ac95-a0b89aaa7c57",
+      "text": "• Me too; Me neither; So, did I; Neither do I…\npara coincidir y discrepar:\nI love merengue. Me too!",
+      "pdfPage": 149,
+      "printedPage": "148",
+      "sourceOrder": 1491001,
+      "type": "CONCEPT",
+      "index": 44,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-agreement-responses"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "be7c074b-984d-5bd4-b37f-8ffd25c5ccf7",
+      "text": "• Oraciones exclamativas:\nWhat great news! How wonderful!",
+      "pdfPage": 149,
+      "printedPage": "148",
+      "sourceOrder": 1491002,
+      "type": "CONCEPT",
+      "index": 45,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-exclamation"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "bbde0418-d360-5128-a306-9bf8e401feac",
+      "text": "• Sustantivos abstractos: love, happiness,\nmotherhood…",
+      "pdfPage": 149,
+      "printedPage": "148",
+      "sourceOrder": 1491003,
+      "type": "CONCEPT",
+      "index": 46,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-abstract-nouns"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "acf07f22-f239-577f-9238-96a848fa8c95",
+      "text": "• Gerundio en función de sujeto: Smoking\ncan cause cancer.",
+      "pdfPage": 149,
+      "printedPage": "148",
+      "sourceOrder": 1491004,
+      "type": "CONCEPT",
+      "index": 47,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-subject-gerund"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "f5cc3979-aac8-55f8-960f-36c2aa842452",
+      "text": "• Ausencia del artículo definido:\nWater pollution is a big issue nowadays.",
+      "pdfPage": 149,
+      "printedPage": "148",
+      "sourceOrder": 1491005,
+      "type": "CONCEPT",
+      "index": 48,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-zero-article"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "b88ff35c-6d7b-5ae8-a386-07a2eb705d35",
+      "text": "• Grados comparativo y superlativo del\nadjetivo: Computers used to be bigger.",
+      "pdfPage": 149,
+      "printedPage": "148",
+      "sourceOrder": 1491006,
+      "type": "CONCEPT",
+      "index": 49,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-comparative"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "c453c0f3-8550-5eaa-baa9-5692eb937a84",
+      "text": "• Participio presente y pasado en función\nadjetiva:\nThat book is interesting.\nMany countries are very interested in human\nrights.",
+      "pdfPage": 149,
+      "printedPage": "148",
+      "sourceOrder": 1491007,
+      "type": "CONCEPT",
+      "index": 50,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes. Registro compuesto: mantener cada forma/función y su fuente, sin reducirlo a una sola estructura.",
+      "providers": [
+        "ing-3-feature-present-participle",
+        "ing-3-feature-past-participle"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "66fba7e3-c5c4-538a-a872-d1b4a22a1e3f",
+      "text": "• Pronombres\nInterrogativos: what, why, how, how\ncome… How do I open this file?\nWhat do you think about recycling?",
+      "pdfPage": 149,
+      "printedPage": "148",
+      "sourceOrder": 1491008,
+      "type": "CONCEPT",
+      "index": 51,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-interrogative-pronouns"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "c6bea9a3-537f-56d5-89ab-3cea1e1881f1",
+      "text": "Objeto:\nMe, you, him, her, them … We need to talk\nto him.\nReflexivos: myself, yourself...\nBabies cannot take care of themselves.\nRelativos: that, who, which, whose…\nAlexander Fleming, who was a scientist,\ndiscovered penicillin in 1928.",
+      "pdfPage": 149,
+      "printedPage": "148",
+      "sourceOrder": 1491009,
+      "type": "CONCEPT",
+      "index": 52,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes. Registro compuesto: mantener cada forma/función y su fuente, sin reducirlo a una sola estructura.",
+      "providers": [
+        "ing-3-feature-object-pronouns",
+        "ing-3-feature-reflexive-pronouns",
+        "ing-3-feature-relative-pronouns"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "150e9a80-c6ed-5e4d-9038-030ea6a66fd5",
+      "text": "• Adverbios y frases adverbiales de:\nTi e m p o :\nearly, late, last week… I woke up l ate this\nmorning.\nDuración: since, for…\nShe has worked there since 2013.\nModo: badly, well…\nShe behaves very well at school\nIntensidad: very, quite, so, too… This city\nused to be very quiet.\nGrado:\nSo much, a lot…\nHe has a lot of friends.\nCerteza: maybe, perhaps, possibly,\ncertainly… Maybe they didn’t install the App\nthe right way.",
+      "pdfPage": 149,
+      "printedPage": "148",
+      "sourceOrder": 1491010,
+      "type": "CONCEPT",
+      "index": 53,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes. Registro compuesto: mantener cada forma/función y su fuente, sin reducirlo a una sola estructura.",
+      "providers": [
+        "ing-3-feature-time-adverbs",
+        "ing-3-feature-duration-adverbs",
+        "ing-3-feature-manner-adverbs",
+        "ing-3-feature-intensity-adverbs",
+        "ing-3-feature-degree-adverbs",
+        "ing-3-feature-certainty-adverbs"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "7aad5239-e69f-5f0b-bddd-ef07755bc192",
+      "text": "•Preposiciones de:",
+      "pdfPage": 150,
+      "printedPage": "149",
+      "sourceOrder": 1501000,
+      "type": "CONCEPT",
+      "index": 54,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "7cf63b0c-a40e-52bb-a35a-8039e9cea03c",
+      "text": "Tiempo: in, on, at…\nHurricane George hit Santo Domingo in\n1998.\nLugar: in, behind, near, next to… Please, sit\nnext to the window.",
+      "pdfPage": 150,
+      "printedPage": "149",
+      "sourceOrder": 1501001,
+      "type": "CONCEPT",
+      "index": 55,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes. Registro compuesto: mantener cada forma/función y su fuente, sin reducirlo a una sola estructura.",
+      "providers": [
+        "ing-3-feature-time-prepositions",
+        "ing-3-feature-place-prepositions"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "880b8097-5a10-5054-aaae-0030b56cb736",
+      "text": "•Conectores de: Coordinación: and, or,\nbut…",
+      "pdfPage": 150,
+      "printedPage": "149",
+      "sourceOrder": 1501002,
+      "type": "CONCEPT",
+      "index": 56,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-coordination-connectors"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "9ea35999-792b-5580-81c2-a0372e0d73e9",
+      "text": "I used to study late at night, but now I prefer\nto study in the morning.",
+      "pdfPage": 150,
+      "printedPage": "149",
+      "sourceOrder": 1501003,
+      "type": "CONCEPT",
+      "index": 57,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes. Ejemplo que continúa los conectores de coordinación, no encabezado temático nuevo.",
+      "providers": [
+        "ing-3-feature-coordination-connectors"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "f2974073-896d-5e36-a86b-57fa2dc71ab0",
+      "text": "Tiempo: before, after, when, while…\nJoe did\nthe laundry before he went to the mall.",
+      "pdfPage": 150,
+      "printedPage": "149",
+      "sourceOrder": 1501004,
+      "type": "CONCEPT",
+      "index": 58,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes.",
+      "providers": [
+        "ing-3-feature-time-connectors"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "cedb1d11-0d8d-5cdd-9d12-19a0dc284391",
+      "text": "Secuencia: first, second, then, next, finally, …\nFinally, we arrived home.\nCausa y consecuencia: so, therefore,\nbecause, then… I want to learn English, so\nI practice every day.\nFinalidad: to, in order to, so that…\nSophia registered in a language school to\nlearn Portuguese.\nContraste: but, however, nevertheless…",
+      "pdfPage": 150,
+      "printedPage": "149",
+      "sourceOrder": 1501005,
+      "type": "CONCEPT",
+      "index": 59,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes. Registro compuesto: mantener cada forma/función y su fuente, sin reducirlo a una sola estructura.",
+      "providers": [
+        "ing-3-feature-sequence-connectors",
+        "ing-3-feature-cause-connectors",
+        "ing-3-feature-purpose-connectors",
+        "ing-3-feature-contrast-connectors"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "90260c6f-d9c7-5aa1-8de8-1835059bb55a",
+      "text": "I understand your point of view; however, I\nbelieve he’s right.\nConcesión: although, even though…\nAlthough Charles was very tired, he\nco m p l e t e d\nthe project.",
+      "pdfPage": 150,
+      "printedPage": "149",
+      "sourceOrder": 1501006,
+      "type": "CONCEPT",
+      "index": 60,
+      "decision": "CONNECTED_GRAMMAR_DEFINED_CONTRACTS",
+      "note": "Requisitos gramaticales de tercero; reconocimiento, explicación y uso,52 familias/105 formas, cuatro formatos,20/17.35. No implica cobertura de los otros componentes. Registro compuesto: mantener cada forma/función y su fuente, sin reducirlo a una sola estructura.",
+      "providers": [
+        "ing-3-feature-contrast-connectors",
+        "ing-3-feature-concession-connectors"
+      ],
+      "verification": "english-grade-three-grammar.spec.ts"
+    },
+    {
+      "id": "cf2597d0-5ae3-569d-acff-49f4a7bd1929",
+      "text": "Funcionales",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1462000,
+      "type": "PROCEDURE",
+      "index": 0,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "90e61ed0-46dc-52db-af53-955b51704091",
+      "text": "• Solicitar y ofrecer explicaciones y\nmotivos",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1462001,
+      "type": "PROCEDURE",
+      "index": 1,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de tercero con contenido propio, cuatro formatos y20/17.35; con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-3-explanations"
+      ],
+      "verification": "english-grade-three.spec.ts"
+    },
+    {
+      "id": "e70e0d07-e1b1-5cad-933f-9693186f1cae",
+      "text": "• Expresar opiniones y sugerencias",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1462002,
+      "type": "PROCEDURE",
+      "index": 2,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de tercero con contenido propio, cuatro formatos y20/17.35; con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-3-opinion",
+        "ing-3-suggestion"
+      ],
+      "verification": "english-grade-three.spec.ts"
+    },
+    {
+      "id": "3544e2c1-ffb5-5fcc-bf13-cdabcaac2e8c",
+      "text": "• Hacer prohibiciones y advertencias",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1462003,
+      "type": "PROCEDURE",
+      "index": 3,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de tercero con contenido propio, cuatro formatos y20/17.35; con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-3-prohibition",
+        "ing-3-warning"
+      ],
+      "verification": "english-grade-three.spec.ts"
+    },
+    {
+      "id": "674c6524-e546-5511-9aa2-3eb9e6218b27",
+      "text": "•Solicitar y ofrecer indicaciones e\ninstrucciones",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1462004,
+      "type": "PROCEDURE",
+      "index": 4,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de tercero con contenido propio, cuatro formatos y20/17.35; con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-3-directions",
+        "ing-3-instructions"
+      ],
+      "verification": "english-grade-three.spec.ts"
+    },
+    {
+      "id": "ad923763-bc8a-505e-9d10-7d76776041fc",
+      "text": "• Narrar historias y secuenciar eventos.",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1462005,
+      "type": "PROCEDURE",
+      "index": 5,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de tercero con contenido propio, cuatro formatos y20/17.35; con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-3-narrative"
+      ],
+      "verification": "english-grade-three.spec.ts"
+    },
+    {
+      "id": "06c1da67-5496-5e51-8b6a-b026f951bc0d",
+      "text": "• Hacer inferencias",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1462006,
+      "type": "PROCEDURE",
+      "index": 6,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de tercero con contenido propio, cuatro formatos y20/17.35; con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-3-inference"
+      ],
+      "verification": "english-grade-three.spec.ts"
+    },
+    {
+      "id": "a1660d6d-e10c-528a-a738-b1725cac6fbb",
+      "text": "• Hacer predicciones",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1462007,
+      "type": "PROCEDURE",
+      "index": 7,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de tercero con contenido propio, cuatro formatos y20/17.35; con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-3-prediction"
+      ],
+      "verification": "english-grade-three.spec.ts"
+    },
+    {
+      "id": "8db85925-face-58a2-a91d-86a668067ba4",
+      "text": "• Hacer anuncios y dar noticias\nComparar hechos y situaciones del\npasado con el presente",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1462008,
+      "type": "PROCEDURE",
+      "index": 8,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Función de tercero con contenido propio, cuatro formatos y20/17.35; con revisión integral, HTTP y cuatro formatos persistidos. Registro compuesto: anuncios/noticias y comparación pasado/presente son funciones diferentes.",
+      "providers": [
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "english-grade-three.spec.ts"
+    },
+    {
+      "id": "54abc54e-951e-5bd0-b85d-9d49cb0d2efe",
+      "text": "Discursivos",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1462009,
+      "type": "PROCEDURE",
+      "index": 9,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "06164c0c-d4ce-5bd0-b95b-e21f6439c222",
+      "text": "• Comprensión de textos orales y\nescritos, tales como: conversaciones,\ntarjetas de presentación, listas,\nanuncios, recetas, letreros,\navisos, afiches, mensajes, correos\nelectrónicos, currículum vitae,\ncartas, formularios, pronósticos del\ntiempo, noticias, horarios, agendas,\nmenús, roquis, cuestionarios, folletos,\ncanciones, poesías, historietas, guías\nturísticas, descripciones, biografías y\nnarraciones.",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1462010,
+      "type": "PROCEDURE",
+      "index": 10,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Recepción28/oral8/escrita11 cotejadas independientemente; audiovisual solo como producto explícito. No sumar productos alternativos ni duplicar la evidencia funcional.",
+      "providers": [
+        "ing-3-genre-conversation",
+        "ing-3-genre-business-card",
+        "ing-3-genre-list",
+        "ing-3-genre-advertisement",
+        "ing-3-genre-recipe",
+        "ing-3-genre-sign",
+        "ing-3-genre-notice",
+        "ing-3-genre-poster",
+        "ing-3-genre-message",
+        "ing-3-genre-email",
+        "ing-3-genre-cv",
+        "ing-3-genre-letter",
+        "ing-3-genre-form",
+        "ing-3-genre-forecast",
+        "ing-3-genre-news",
+        "ing-3-genre-schedule",
+        "ing-3-genre-agenda",
+        "ing-3-genre-menu",
+        "ing-3-genre-map",
+        "ing-3-genre-questionnaire",
+        "ing-3-genre-brochure",
+        "ing-3-genre-song",
+        "ing-3-genre-poem",
+        "ing-3-genre-comic",
+        "ing-3-genre-tourist-guide",
+        "ing-3-genre-description",
+        "ing-3-genre-biography",
+        "ing-3-genre-narrative"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "8157cee7-99d4-5fa6-aebf-54fb92ae5db2",
+      "text": "• Producción de discursos orales, tales como:\nconversaciones, monólogos, canciones,\nrecetas, mensajes, noticias, descripciones y\nnarraciones.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472000,
+      "type": "PROCEDURE",
+      "index": 11,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Recepción28/oral8/escrita11 cotejadas independientemente; audiovisual solo como producto explícito. No sumar productos alternativos ni duplicar la evidencia funcional.",
+      "providers": [
+        "ing-3-genre-conversation",
+        "ing-3-genre-recipe",
+        "ing-3-genre-message",
+        "ing-3-genre-news",
+        "ing-3-genre-song",
+        "ing-3-genre-description",
+        "ing-3-genre-narrative",
+        "ing-3-genre-monologue"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "76d6d946-3adc-5d5d-837b-24ecd54f2e44",
+      "text": "• Producción de textos escritos, tales como:\nmensajes, correos electrónicos, cartas,\ncurrículum vitae, avisos, afiches, letreros,\nformularios, cuestionarios, descripciones y\nnarraciones.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472001,
+      "type": "PROCEDURE",
+      "index": 12,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Recepción28/oral8/escrita11 cotejadas independientemente; audiovisual solo como producto explícito. No sumar productos alternativos ni duplicar la evidencia funcional.",
+      "providers": [
+        "ing-3-genre-sign",
+        "ing-3-genre-notice",
+        "ing-3-genre-poster",
+        "ing-3-genre-message",
+        "ing-3-genre-email",
+        "ing-3-genre-cv",
+        "ing-3-genre-letter",
+        "ing-3-genre-form",
+        "ing-3-genre-questionnaire",
+        "ing-3-genre-description",
+        "ing-3-genre-narrative"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "fa328c42-1476-587c-b12a-d3f6e27faaa4",
+      "text": "Estratégicos\nComprensión oral",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472002,
+      "type": "PROCEDURE",
+      "index": 13,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "6628396b-d47a-562d-b49d-f8a0022f339c",
+      "text": "• Anticipación del contenido del mensaje.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472003,
+      "type": "PROCEDURE",
+      "index": 14,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-anticipation"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "a51d4a36-8efa-5583-9c42-c0fea73e1893",
+      "text": "•Escucha atenta.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472004,
+      "type": "PROCEDURE",
+      "index": 15,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-listening"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "4d27a2ed-d0c9-5842-b5f8-ffd4ee66b6c3",
+      "text": "• Uso del lenguaje no verbal de su interlocutor/a\nparacomprenderelmensaje.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472005,
+      "type": "PROCEDURE",
+      "index": 16,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-nonverbal-reception"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "5760aff7-4267-58aa-9d85-484f998734aa",
+      "text": "• Inferencia del significado de palabras y\nexpresiones a partir del contexto y los\nconocimientos previos.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472006,
+      "type": "PROCEDURE",
+      "index": 17,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-inference"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "94f631ca-538c-5ad7-bddd-4d54fffe32a6",
+      "text": "•Solicitud de ayuda y repetición.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472007,
+      "type": "PROCEDURE",
+      "index": 18,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-help"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "a8510643-00f3-5b24-a7a7-3df7758c7259",
+      "text": "•Indicación de que se comprende.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472008,
+      "type": "PROCEDURE",
+      "index": 19,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado. La fuente de tercero sí dice «Indicación de que se comprende»; no heredar la exclusión del fragmento indeterminado de segundo.",
+      "providers": [
+        "ing-3-strategy-understanding"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "47e5b7d6-0adc-5b35-a588-4b51839cad2f",
+      "text": "Producción oral",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472009,
+      "type": "PROCEDURE",
+      "index": 20,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "df552941-0c87-5240-a0ee-790891416ddc",
+      "text": "• Reproducción y ensayo de palabras,\nexpresiones y pautas de entonación.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472010,
+      "type": "PROCEDURE",
+      "index": 21,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-rehearsal"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "27f66a4c-b451-5751-9c09-a0e9c00d1c73",
+      "text": "•Identificacióndelasituacióndecomunicación.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472011,
+      "type": "PROCEDURE",
+      "index": 22,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-situation"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "0f6a6f10-e3e1-53da-a107-0a13d7684848",
+      "text": "• Establecimiento de la intención comunicativa.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472012,
+      "type": "PROCEDURE",
+      "index": 23,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-communicative-purpose"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "0c01d130-bbed-5032-9dbe-dd91dbb6ce77",
+      "text": "• Uso del lenguaje no verbal para comunicarse",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472013,
+      "type": "PROCEDURE",
+      "index": 24,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-nonverbal-production"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "53661f49-d2dd-5b38-bd76-2d577c30b66a",
+      "text": "Comprensión escrita",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472014,
+      "type": "PROCEDURE",
+      "index": 25,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "26807994-2fdb-5e0e-b6c0-c223682639f5",
+      "text": "• Establecimiento del propósito de la lectura.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472015,
+      "type": "PROCEDURE",
+      "index": 26,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-reading-purpose"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "bd2386fa-81c1-55bf-92b8-bc5e46748bec",
+      "text": "• Formulación de hipótesis a partir de los\nconocimientos previos y los elementos\nparatextuales.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472016,
+      "type": "PROCEDURE",
+      "index": 27,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-hypothesis"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "5472108f-ab03-5e13-b5a7-95c4714bf969",
+      "text": "• Identificación de la correspondencia entre la\ngrafía y el sonido de las palabras.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472017,
+      "type": "PROCEDURE",
+      "index": 28,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-grapheme-phoneme"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "539e11be-e490-5778-9901-548484da11bf",
+      "text": "• Inferencia del significado de palabras y\nexpresiones a partir de las pistas textuales y\nlos conocimientos previos.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472018,
+      "type": "PROCEDURE",
+      "index": 29,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-inference"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "cfd1dc4d-8198-5f95-84c9-9d038083105d",
+      "text": "• Subrayado, anotación y búsqueda de palabras\nen el diccionario y otras herramientas de\nconsulta.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472019,
+      "type": "PROCEDURE",
+      "index": 30,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-annotation",
+        "ing-3-strategy-dictionary"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "2d9574fd-d81f-56e5-988d-0d439afb9000",
+      "text": "• Identificación de la intención comunicativa\ndel texto.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472020,
+      "type": "PROCEDURE",
+      "index": 31,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-text-intention"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "2ff80af7-9ba2-5855-bfd0-bcda1df98934",
+      "text": "Producción escrita",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472021,
+      "type": "PROCEDURE",
+      "index": 32,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "1e321847-ff79-5505-8497-47122015d3da",
+      "text": "• Establecimiento del propósito del mensaje y\ndel tipo de texto a producir.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472022,
+      "type": "PROCEDURE",
+      "index": 33,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-communicative-purpose",
+        "ing-3-strategy-text-type"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "ee4cfe42-4369-57d1-b2ee-d22378f351b8",
+      "text": "• Planificación y organización del mensaje.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472023,
+      "type": "PROCEDURE",
+      "index": 34,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-planning"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "4eac0e2b-3973-5369-b6f8-b8c30f0f91b9",
+      "text": "• Uso del diccionario y otras herramientas de\nconsulta.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472024,
+      "type": "PROCEDURE",
+      "index": 35,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-dictionary"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "d7bb8d40-9571-568d-baad-6e2be0b6f033",
+      "text": "• Revisión del sentido y la corrección del\nmensaje.",
+      "pdfPage": 147,
+      "printedPage": "146",
+      "sourceOrder": 1472025,
+      "type": "PROCEDURE",
+      "index": 36,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-revision"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "dbf38c34-d2b2-5614-bbff-971599d6126b",
+      "text": "Otros:",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1482000,
+      "type": "PROCEDURE",
+      "index": 37,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "54e77782-edc9-5afc-87a4-df6d0c6446ce",
+      "text": "• Utilización de asociaciones mentales y de\nla acción.",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1482001,
+      "type": "PROCEDURE",
+      "index": 38,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-association"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "696354ba-60e2-5a0e-89a1-849b4ff2ccc7",
+      "text": "• Automotivación y control del nivel de\nansiedad.",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1482002,
+      "type": "PROCEDURE",
+      "index": 39,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, dominio propio y autocontrol no se convierten en puntuaciones de personalidad.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "b709a228-c578-5fa3-b363-96c7b9c3e429",
+      "text": "• Búsqueda de oportunidades de uso de la\nlengua.",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1482003,
+      "type": "PROCEDURE",
+      "index": 40,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-practice"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "67f9c97a-fe41-59a7-b3f9-d281ec20f5f3",
+      "text": "Sociolingüísticos y socioculturales",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1482004,
+      "type": "PROCEDURE",
+      "index": 41,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "0a67d6f4-425d-5339-9dc9-0fddddaae8bb",
+      "text": "• Utilización de fórmulas cotidianas de\ninteracción social.",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1482005,
+      "type": "PROCEDURE",
+      "index": 42,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-social-formulas"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "b898ace9-300c-5498-948f-929b79038909",
+      "text": "• Comparación entre los siguientes aspectos\nde la República Dominicana y de otros\npaíses:",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1482006,
+      "type": "PROCEDURE",
+      "index": 43,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado de organización; no convertirlo en una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "f8e8f502-adba-560f-8dd6-d4a12d50d0dc",
+      "text": "• Señales de advertencia y prohibición",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1482007,
+      "type": "PROCEDURE",
+      "index": 44,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "54774bcc-1e5c-5328-ae8b-3925aa0762e2",
+      "text": "• Cuidado del medio ambiente",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1482008,
+      "type": "PROCEDURE",
+      "index": 45,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "64ed485d-4b0d-5de5-9ff6-84ec98f28899",
+      "text": "• Historias y leyendas",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1482009,
+      "type": "PROCEDURE",
+      "index": 46,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "7cd97cb5-b869-5f59-abd0-12b10444c50d",
+      "text": "• Tradiciones",
+      "pdfPage": 148,
+      "printedPage": "147",
+      "sourceOrder": 1482010,
+      "type": "PROCEDURE",
+      "index": 47,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Procedimiento solicitado y observable, respetando modalidad. La comprensión expresada es válida en tercero. Los cuatro aspectos culturales son propios del grado.",
+      "providers": [
+        "ing-3-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-three-strategies-genres.spec.ts"
+    },
+    {
+      "id": "0a548451-40cf-5599-968f-059aee61073c",
+      "text": "• Motivación para aprender inglés",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463000,
+      "type": "ATTITUDE_VALUE",
+      "index": 0,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, dominio propio y autocontrol no se convierten en puntuaciones de personalidad.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "8fe32ffa-2b4f-5010-8b32-038b2d7ac284",
+      "text": "• Escucha atenta de las intervenciones de las demás per-\nsonas",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463001,
+      "type": "ATTITUDE_VALUE",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-interaction",
+        "ing-3-strategy-listening"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "c745b369-ce2e-532b-b483-1756be52cbfe",
+      "text": "• Empatía ante las situaciones que afectan a las demás\npersonas",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463002,
+      "type": "ATTITUDE_VALUE",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-context-empathetic-response"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "32e6847b-d666-51d1-9e51-b00d6f172ec4",
+      "text": "• Dominio propio y autocontrol",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463003,
+      "type": "ATTITUDE_VALUE",
+      "index": 3,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, dominio propio y autocontrol no se convierten en puntuaciones de personalidad.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "d2f5c559-2db3-51bf-abfc-4133f405b140",
+      "text": "• Asertividad al expresar opiniones",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463004,
+      "type": "ATTITUDE_VALUE",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-context-courtesy"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "f1bbcf96-1397-5d73-b6d5-5ae39642f633",
+      "text": "• Respeto al escuchar y expresar opiniones",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463005,
+      "type": "ATTITUDE_VALUE",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-context-courtesy"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "a9c624da-038e-5fc5-ae13-5cd427d7ddbd",
+      "text": "• Honestidad al interactuar con las demás personas",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463006,
+      "type": "ATTITUDE_VALUE",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-context-faithful-information"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "9b028aca-75cf-527a-8a6a-ddae4602744f",
+      "text": "• Respeto por las normas establecidas",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463007,
+      "type": "ATTITUDE_VALUE",
+      "index": 7,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-context-agreed-norms"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "f21566ad-6ee1-5edc-a35d-cbb0234dd1f9",
+      "text": "• Cortesía al expresar prohibiciones y advertencias",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463008,
+      "type": "ATTITUDE_VALUE",
+      "index": 8,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-context-courtesy"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "668cc35f-3bc7-5d50-b6b0-a5888a721d0b",
+      "text": "• Cortesía al pedir y recibir indicaciones e instrucciones",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463009,
+      "type": "ATTITUDE_VALUE",
+      "index": 9,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-context-courtesy"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "e01ec968-c5d7-5dfa-bb97-c3facf651857",
+      "text": "• Colaboración para resolver los problemas de la comu-\nnidad",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463010,
+      "type": "ATTITUDE_VALUE",
+      "index": 10,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-context-social-contribution"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "e26d9260-e035-5ae2-83c3-4ed242ee9e4e",
+      "text": "• Realización de inferencias libres de estereotipos",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463011,
+      "type": "ATTITUDE_VALUE",
+      "index": 11,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-context-respect-differences",
+        "ing-3-inference"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "d594bcba-1f23-5c88-92ce-e2676523aa7b",
+      "text": "• Tacto y responsabilidad al hacer inferencias",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463012,
+      "type": "ATTITUDE_VALUE",
+      "index": 12,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-inference",
+        "ing-3-context-courtesy"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "ba78a708-45a3-5abc-bcb7-ea935a2d6c64",
+      "text": "• Cuidado del medioambiente y sentido crítico ante los\nanuncios y predicciones",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1463013,
+      "type": "ATTITUDE_VALUE",
+      "index": 13,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Solo acciones comunicativas explícitas y condiciones de los personajes o ejemplos proporcionados. No evaluar empatía interna, honestidad como rasgo, hábitos reales ni conducta fuera de la tarea.",
+      "providers": [
+        "ing-3-context-critical-information",
+        "ing-3-context-care",
+        "ing-3-context-care"
+      ],
+      "verification": "english-grade-three-context-composition.spec.ts_AND_FUNCTION_CONTRACTS"
+    },
+    {
+      "id": "bbeb9246-df88-5947-8333-86dac6c376f9",
+      "text": "Comprende y expresa ideas, sentimientos y valores culturales en distintas situaciones de\ncomunicación concretas sobre temas cotidianos, utilizando el idioma inglés para explicar, sugerir,\nhacer prohibiciones y advertencias, dar instrucciones, dar noticias, secuenciar eventos, inferir,\npredecir y comparar.",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1466000,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 0,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en evidencias solicitadas, no una fila genérica de dominio, creatividad o valores personales.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "f7cef052-dbe3-5d64-99e9-1d3c864113a6",
+      "text": "Se comunica en el idioma inglés breve y sencillo en forma oral y escrita, mediante el razonamiento\ny la reflexión lógico-verbal con el propósito de estructurar mensajes coherentes que presenta de\nuna forma creativa, ejerciendo su pensamiento analítico.",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1466001,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en evidencias solicitadas, no una fila genérica de dominio, creatividad o valores personales.",
+      "providers": [
+        "ing-3-written",
+        "ing-3-intelligibility"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "a91cf731-62cc-5bfd-8e48-20e866ecb6fd",
+      "text": "Interactúa en inglés con el propósito de expresar opiniones, explicaciones y predicciones, así\ncomo dar sugerencias, indicaciones e instrucciones ante diversas circunstancias de su entorno\ninmediato, empleando estrategias de desempeño oral y escrito que permiten comprenderse con\nescucha y lectura atenta de su interlocutor.",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1466002,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en evidencias solicitadas, no una fila genérica de dominio, creatividad o valores personales.",
+      "providers": [
+        "ing-3-interaction",
+        "ing-3-written"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "35521798-90f6-5a93-954c-f4870a8bbe7c",
+      "text": "Se comunica de forma oral y escrita en el idioma inglés, participando con cortesía y respeto\nen intercambios sencillos, valorando las diferencias individuales y la identidad social y cultural\nbásicas, propias de la cultura local y global.",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1466003,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en evidencias solicitadas, no una fila genérica de dominio, creatividad o valores personales.",
+      "providers": [
+        "ing-3-context-courtesy",
+        "ing-3-context-respect-differences",
+        "ing-3-strategy-cultural-comparison"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "2f682e7d-240d-5666-b0cc-34a472aac822",
+      "text": "Interactúa en el idioma inglés con el propósito de solicitar y ofrecer explicaciones, opinar, dar\ninstrucciones y dar noticias sobre asuntos científicos, tecnológicos y de otra índole, en distintas\nsituaciones de comunicación.",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1466004,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en evidencias solicitadas, no una fila genérica de dominio, creatividad o valores personales.",
+      "providers": [
+        "ing-3-research",
+        "ing-3-explanations",
+        "ing-3-news",
+        "ing-3-instructions"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "8e200070-6122-514d-9cae-afcd24551ce7",
+      "text": "Muestra inclinación por estilos de vida saludables y cuidado del medio ambiente al interactuar\nen distintas situaciones de comunicación en el idioma inglés, donde se intercambia información\nsobre indicaciones, prohibiciones, advertencias, opiniones y sugerencias.",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1466005,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en evidencias solicitadas, no una fila genérica de dominio, creatividad o valores personales.",
+      "providers": [
+        "ing-3-context-care",
+        "ing-3-warning",
+        "ing-3-prohibition"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "849382c6-8065-5603-94d9-df5d2760cfb2",
+      "text": "Se comunica en el idioma inglés, con cortesía, honestidad, actitud de respeto y aceptación al\ncompartir información y expresar puntos de vista sobre hechos e informaciones que le son\nconocidas y de su interés.",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1466006,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Competencia concretada en evidencias solicitadas, no una fila genérica de dominio, creatividad o valores personales.",
+      "providers": [
+        "ing-3-context-courtesy",
+        "ing-3-context-faithful-information",
+        "ing-3-interaction"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "f8ecea0a-7c2f-5fc4-8447-bf94396232fb",
+      "text": "Comunicativa",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1465000,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 0,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica correspondiente; no se convierte en una puntuación independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "aacb53f5-1ca7-5447-8d42-b15a529b67f0",
+      "text": "Pensamiento Lógico, Creativo y Crítico",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1465001,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 1,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica correspondiente; no se convierte en una puntuación independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "21562bf1-b05b-51c5-b515-8513aa519ea8",
+      "text": "Resolución de Problemas",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1465002,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 2,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica correspondiente; no se convierte en una puntuación independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "da987b07-d560-5875-a516-d2a52bdca062",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1465003,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 3,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica correspondiente; no se convierte en una puntuación independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "002dbb56-150b-57eb-947e-775ee6ecd2ab",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1465004,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 4,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica correspondiente; no se convierte en una puntuación independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "e08c649f-bb5f-56ab-b303-19019658335a",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1465005,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 5,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica correspondiente; no se convierte en una puntuación independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "81fd40be-5b0c-5b50-b407-f0cb58fe8898",
+      "text": "Desarrollo Personal y Espiritual",
+      "pdfPage": 146,
+      "printedPage": "145",
+      "sourceOrder": 1465006,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 6,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica correspondiente; no se convierte en una puntuación independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ee4aaec7-f14a-5638-8c1a-6c3438b6bfd9",
+      "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir de la escucha y lectura de textos breves y sencillos cuya finalidad es\ndar explicaciones, opinar, sugerir, hacer prohibiciones y advertencias, dar instrucciones, dar noticias, narrar, inferir, predecir y comparar\nel pasado con el presente, siempre que se le hable de forma pausada y clara.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514000,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 0,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "0ca6f971-18ec-58c6-94a6-ff79a549bda8",
+      "text": "• Produce una serie de frases y oraciones enlazadas por conectores sencillos, aunque con pausas y reformulaciones en lo oral y algunos\nerrores básicos en lo escrito, con la intención de dar explicaciones, opinar, sugerir, hacer prohibiciones y advertencias, dar instrucciones,\ndar noticias, narrar, inferir, predecir y comparar el pasado con el presente.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514001,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-written",
+        "ing-3-intelligibility"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "d27b6745-09f1-5120-91d1-b4cb3269ca50",
+      "text": "• Interactúa oralmente y por escrito de forma breve y sencilla, con una creciente cantidad de vocabulario variado, contenido en una\nserie de frases y oraciones sencillas enlazadas con conectores, en situaciones de comunicación donde debe dar explicaciones, opinar,\nsugerir, hacer prohibiciones y advertencias, dar instrucciones, dar noticias, narrar, inferir, predecir y comparar el pasado con el presente.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514002,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-interaction",
+        "ing-3-written"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "591e3b27-dbbf-5ec2-8d73-3062d753faec",
+      "text": "• Responde de forma adecuada a preguntas, indicaciones y sus propios análisis, a partir de la escucha o lectura de textos breves y\nsencillos referentes a temas que le son familiares.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514003,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-explanations",
+        "ing-3-opinion",
+        "ing-3-suggestion",
+        "ing-3-prohibition",
+        "ing-3-warning",
+        "ing-3-directions",
+        "ing-3-instructions",
+        "ing-3-narrative",
+        "ing-3-inference",
+        "ing-3-prediction",
+        "ing-3-news",
+        "ing-3-past-present"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "edd1e2a8-8f93-5d12-b1dc-1fdc5744f6ad",
+      "text": "• Presenta información, ideas, análisis y puntos de vista sobre su contexto inmediato y situaciones cotidianas de forma creativa y crítica,\nen textos breves y sencillos que produce con la estructura lógico-verbal adecuada al contenido, el tipo de texto y la situación.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514004,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-written",
+        "ing-3-intelligibility"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "106ef1b0-9f50-5cdf-8088-5bef095bd133",
+      "text": "• Interactúa en forma oral o escrita a través de una serie de oraciones breves y sencillas secuenciadas de una forma lógica y presentadas\nde forma creativa en diferentes tipos de interacciones donde comparte información y puntos de vista sobre sí mismo y otros, su\nentorno cotidiano y temas que le son familiares.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514005,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-interaction",
+        "ing-3-written"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "6489845e-9790-5f53-bed1-0623f2fbb42d",
+      "text": "• Responde de forma adecuada a preguntas e indicaciones sobre situaciones y problemas de su entorno inmediato, a partir de textos\norales y escritos breves donde se comparte información y puntos de vista detallados sobre los mismos.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514006,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-context-problem-information"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "e74ebf96-3578-5672-91d2-ab800e74146b",
+      "text": "• Se expresa mediante textos orales y escritos para describir con suficiente nivel de detalle, problemas inmediatos propios, de otras\npersonas y del entorno cotidiano, así como para presentar información y puntos de vista pertinentes frente a la situación planteada.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514007,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 7,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-opinion",
+        "ing-3-context-social-contribution"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "f8c34726-b015-5d85-9099-ca463df06ba3",
+      "text": "• Interactúa de forma oral y escrita para solicitar o proveer información y puntos de vista con suficiente detalle sobre situaciones y\nproblemas relativos a actividades cotidianas y de su entorno inmediato, utilizando frases y oraciones breves.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514008,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 8,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-interaction"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "eba6b3e4-dde8-5bc6-92c3-83cf2a2ec320",
+      "text": "• Interactúa de forma directa y sencilla en el idioma inglés, con cortesía y respeto.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514009,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 9,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-context-courtesy"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "b0bcbb3a-688d-5e10-a644-f7b19f0d3a1f",
+      "text": "• Compara las diferencias individuales y la identidad social y cultural propia y de otros países, relativas a señales de advertencia, cuidado\ndel medioambiente, leyendas y tradiciones.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514010,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 10,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-strategy-cultural-comparison"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "7fead579-6f14-53ad-8dc3-c96d758452c5",
+      "text": "• Expresa explicaciones y motivos ante situaciones que no le permiten participar de su labor, empleando frases y oraciones sencillas.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514011,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 11,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-explanations"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "1d5a4150-a836-5610-9892-8dbde100d219",
+      "text": "• Localiza y sistematiza información a partir de la lectura o escucha de información contenida en temas científicos y tecnológicos\nrelativos a su entorno inmediato, siempre que traten temas que le son familiares.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514012,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 12,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-research"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "b55ffb3b-67a9-5679-8bd5-c5c63d431981",
+      "text": "• Expresa ideas e información y puntos de vista sobre temas científicos, tecnológicos y de otra índole, de forma presencial o virtual,\nutilizando vocabulario de uso común y oraciones orales o escritas.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514013,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 13,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-opinion",
+        "ing-3-written",
+        "ing-3-intelligibility"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "9cb3dee2-5a32-55ec-836c-a34a2ca4dc23",
+      "text": "• Interactúa en forma oral o escrita con el propósito de compartir información sobre temas científicos, tecnológicos y de otra índole, de\nforma presencial o virtual, utilizando vocabulario de uso común.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514014,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 14,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-interaction",
+        "ing-3-written"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "2fb95c43-d6a0-58c6-a0b1-8d320aab8d33",
+      "text": "• Reconoce las orientaciones relativas a mantener estilos de vida saludables y cuidado del medioambiente, a partir de la información\ncontenida en textos orales y escritos compuestos.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514015,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 15,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-context-care"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "04371600-b30e-5642-bacf-85227279036b",
+      "text": "• Ofrece información y puntos de vista sobre estilos de vida saludables y cuidado del medio ambiente tanto en forma oral como escrita,\nutilizando frases y oraciones breves y sencillas.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514016,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 16,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-context-care",
+        "ing-3-opinion"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "9d920388-fd67-5751-8b37-823a8f490a82",
+      "text": "• Interactúa en forma oral o escrita en situaciones donde se brinda información y puntos de vista relativos a estilos de vida saludables y\ncuidado del medioambiente, usando el vocabulario indicado.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514017,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 17,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-context-care",
+        "ing-3-interaction"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "5dec0320-fd04-5c2c-b590-e978af699aa0",
+      "text": "• Se comunica con asertividad, respetando los puntos de vista que ofrecen las demás personas.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514018,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 18,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-context-courtesy"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "7c863342-ab2a-5759-b269-48e10661e928",
+      "text": "• Trabaja en equipo de forma colaborativa, mostrando empatía, actitud de escucha y colaboración en las tareas que se emprenden.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514019,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 19,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-context-social-contribution",
+        "ing-3-context-empathetic-response",
+        "ing-3-interaction"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "3595c2b8-5b8c-588d-a754-e6a9c2a842a6",
+      "text": "• Interactúa con cortesía y respeto ante informaciones y puntos de vista que expresan los demás.",
+      "pdfPage": 151,
+      "printedPage": "150",
+      "sourceOrder": 1514020,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 20,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Indicador concretado mediante acciones comunicativas explícitas. Ciencia, salud y comunidad son contextos proporcionados: no exigir conocimientos especializados, experiencias privadas ni rasgos internos.",
+      "providers": [
+        "ing-3-context-courtesy"
+      ],
+      "verification": "THIRD_GRADE_FUNCTION_GRAMMAR_LEXICON_STRATEGY_GENRE_CONTEXT_COMPOSITION_CONTRACTS"
+    }
+  ],
+  "applicationEvidence": [
+    "evidencias/ingles-3-integral-servicio.json",
+    "evidencias/ingles-3-final-flujo-navegador.json",
+    "evidencias/ingles-3-final-persistencia.json",
+    "ingles-3-ejemplos-finales.md",
+    "ingles-3-informe-final.md"
+  ]
+}

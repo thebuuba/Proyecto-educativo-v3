@@ -1,0 +1,4926 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "75ed6e9dd5d217afccdab30c59df874fdea9b49a",
+      "dirty": true,
+      "startedAt": "2026-10-15T09:42:26.527Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.66"
+    }
+  },
+  "results": [
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y subrayarán o anotarán las expresiones solicitadas.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "rubrica"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selección de información pertinente",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Selecciona la información principal; una selección necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una selección reconocible de información pertinente.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y subrayarán o anotarán las expresiones solicitadas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "rubrica"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selección de información pertinente",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Selecciona la información principal; una selección necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una selección reconocible de información pertinente.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y subrayarán o anotarán las expresiones solicitadas.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-cotejo"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y subrayarán o anotarán las expresiones solicitadas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-cotejo"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y subrayarán o anotarán las expresiones solicitadas.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "escala"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y subrayarán o anotarán las expresiones solicitadas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "escala"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y subrayarán o anotarán las expresiones solicitadas.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-ponderada"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selección de información pertinente",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar. Parcial (50%): Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y subrayarán o anotarán las expresiones solicitadas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-ponderada"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selección de información pertinente",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar. Parcial (50%): Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y anotarán o subrayarán las expresiones solicitadas.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "rubrica"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selección de información pertinente",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Selecciona la información principal; una selección necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una selección reconocible de información pertinente.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y anotarán o subrayarán las expresiones solicitadas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "rubrica"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selección de información pertinente",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Selecciona la información principal; una selección necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una selección reconocible de información pertinente.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y anotarán o subrayarán las expresiones solicitadas.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-cotejo"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y anotarán o subrayarán las expresiones solicitadas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-cotejo"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y anotarán o subrayarán las expresiones solicitadas.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "escala"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y anotarán o subrayarán las expresiones solicitadas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "escala"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y anotarán o subrayarán las expresiones solicitadas.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-ponderada"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selección de información pertinente",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar. Parcial (50%): Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "792599e2-1e55-45a8-8bac-2d4e64060118",
+        "activityTitle": "Actividad",
+        "description": "Leerán un texto en inglés y anotarán o subrayarán las expresiones solicitadas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-ponderada"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.66",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.66:ae0c8305-150c-5996-ab4a-deb379827ea9:ing-6-strategy-annotation:0",
+            "templateId": "ing-6-strategy-annotation",
+            "title": "Selección de información pertinente",
+            "description": "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar. Parcial (50%): Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente del mensaje en inglés mediante la alternativa elegida: subrayar o anotar.",
+              "Selecciona la información principal; una selección necesita precisión.",
+              "Selecciona información aislada, pero omite datos necesarios para el propósito indicado.",
+              "La selección corresponde a información ajena al propósito de comprensión.",
+              "No aporta una selección reconocible de información pertinente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-6",
+            "mode=reading",
+            "functions=",
+            "coverage=DEFINED_COMMON_SIXTH_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "191e0090-bc42-5e37-9dc5-5096cfb93b9d",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "87f687f7-824d-5dd3-bd19-11461c538356",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "9005b6b3-780c-535f-bb46-91cdc035a77a",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "94fd98b6-e3fc-51a5-a897-cfcb69c084e6",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2ab16d25-9f0a-52f4-8ceb-051e76ddc7fc",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2bc9fcf4-d7ca-509e-b061-4dffcb02340a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3cc6ed11-8e1d-501f-a591-aafafcd0ce6a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "3eede96f-0853-5e3f-a0dd-e27bba7e462b",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4324f709-2832-5418-985a-b883a5b838b6",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "564442c5-8172-5c74-b9fb-9fb376d40c1f",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "6933b46a-da73-5fb0-be73-866d5f4cdae8",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "755d48a3-f490-5111-ba13-c994ef5daa08",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "785fca6a-22a9-5590-abb4-39cb740265ab",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7cf5b25f-857a-5929-a9d6-78a3cdc85a3a",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8bbab5a5-8bb9-58af-814d-c45d8ce94b7c",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b38630b4-1d66-51ee-a97d-f2bcb34cfff1",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c4373871-043d-56ba-9977-c086b52f10c9",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5f1071b-9392-58f2-9e26-0278c619f708",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8213d6bf-21bf-51d9-8068-ab9eda71ea0b",
+              "score": 26,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ]
+}

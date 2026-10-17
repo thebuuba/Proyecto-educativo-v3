@@ -1,4 +1,19 @@
-import { secondaryLanguageGradeTwoTopics, secondGradeNewsModule, secondaryScienceModules } from '@aula/shared'
+import { evaluationCatalogV92 } from './catalog-v92'
+import { evaluationCatalogMainV46 } from './catalog-main-v46'
+import { evaluationCatalogMainV47 } from './catalog-main-v47'
+import { evaluationCatalogV1 as evaluationCatalogOriginalV1 } from './catalog-original-v1'
+import { evaluationCatalogV2 } from './catalog-v2'
+import { productCriterionTemplates } from './catalog-product-criteria'
+import type { ActivityTypeEntry } from './catalog-v1'
+import {commonScienceModules} from '@aula/shared'
+import {evaluationCatalogV85} from './catalog-v85'
+import {evaluationCatalogV86} from './catalog-v86'
+import {evaluationCatalogV87} from './catalog-v87'
+import {evaluationCatalogV88} from './catalog-v88'
+import {evaluationCatalogV89} from './catalog-v89'
+import {evaluationCatalogV90} from './catalog-v90'
+import {evaluationCatalogV91} from './catalog-v91'
+import { secondaryLanguageGradeTwoTopics, secondGradeNewsModule, secondaryScienceModules,firstGradeReadingReportModule } from '@aula/shared'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { evaluationCatalogV8 } from './catalog-v8'
 import { evaluationCatalogV9 } from './catalog-v9'
@@ -42,22 +57,118 @@ import {evaluationCatalogV42} from './catalog-v42'
 import {evaluationCatalogV43} from './catalog-v43'
 import {evaluationCatalogV44} from './catalog-v44'
 import {evaluationCatalogV45} from './catalog-v45'
+import {evaluationCatalogV46} from './catalog-v46'
+import {evaluationCatalogV47} from './catalog-v47'
+import {evaluationCatalogV48} from './catalog-v48'
+import {evaluationCatalogV49} from './catalog-v49'
+import {evaluationCatalogV50} from './catalog-v50'
+import {evaluationCatalogV51} from './catalog-v51'
+import {evaluationCatalogV52} from './catalog-v52'
+import {evaluationCatalogV53} from './catalog-v53'
+import {evaluationCatalogV54} from './catalog-v54'
+import {evaluationCatalogV55} from './catalog-v55'
+import {evaluationCatalogV56} from './catalog-v56'
+import {evaluationCatalogV57} from './catalog-v57'
+import {evaluationCatalogV58} from './catalog-v58'
+import {evaluationCatalogV59} from './catalog-v59'
+import {evaluationCatalogV60} from './catalog-v60'
+import {evaluationCatalogV61} from './catalog-v61'
+import {evaluationCatalogV62} from './catalog-v62'
+import {evaluationCatalogV63} from './catalog-v63'
+import {evaluationCatalogV64} from './catalog-v64'
+import {evaluationCatalogV65} from './catalog-v65'
+import {evaluationCatalogV66} from './catalog-v66'
+import {evaluationCatalogV67} from './catalog-v67'
+import {evaluationCatalogV68} from './catalog-v68'
+import {evaluationCatalogV69} from './catalog-v69'
+import {evaluationCatalogV70} from './catalog-v70'
+import {evaluationCatalogV71} from './catalog-v71'
+import {evaluationCatalogV72} from './catalog-v72'
+import {evaluationCatalogV73} from './catalog-v73'
+import {evaluationCatalogV74} from './catalog-v74'
+import {evaluationCatalogV75} from './catalog-v75'
+import {evaluationCatalogV76} from './catalog-v76'
+import {evaluationCatalogV77} from './catalog-v77'
+import {evaluationCatalogV78} from './catalog-v78'
+import {evaluationCatalogV79} from './catalog-v79'
+import {evaluationCatalogV80} from './catalog-v80'
+import {evaluationCatalogV81} from './catalog-v81'
+import {evaluationCatalogV82} from './catalog-v82'
+import {evaluationCatalogV83} from './catalog-v83'
+import {evaluationCatalogV84} from './catalog-v84'
+import {commonMathModules} from '@aula/shared'
+import {frenchGradeOneModule, frenchGradeTwoModule, frenchGradeThreeModule, frenchGradeFourModule, frenchGradeFiveModule, frenchGradeSixModule} from '@aula/shared'
+import {englishGradeSixModule,englishGradeSixGrammar,englishGradeSixLexicon,englishGradeSixStrategies,englishGradeSixGenres} from '@aula/shared'
+import {englishGradeFiveModule,englishGradeFiveGrammar,englishGradeFiveLexicon,englishGradeFiveStrategies,englishGradeFiveGenres} from '@aula/shared'
+import {englishGradeFourModule,englishGradeFourGrammar,englishGradeFourLexicon,englishGradeFourStrategies,englishGradeFourGenres} from '@aula/shared'
+import {englishGradeThreeModule,englishGradeThreeGrammar,englishGradeThreeLexicon,englishGradeThreeStrategies,englishGradeThreeGenres} from '@aula/shared'
+import {englishGradeTwoModule,englishGradeTwoGrammar,englishGradeTwoLexicon,englishGradeTwoStrategies,englishGradeTwoGenres} from '@aula/shared'
 import {englishGradeOneGenres} from '@aula/shared'
 import {englishGradeOneStrategies} from '@aula/shared'
 import {englishGradeOneLexicon} from '@aula/shared'
 import {englishGradeOneGrammar} from '@aula/shared'
 import {englishGradeOneModule} from '@aula/shared'
-import type {ActivityTypeEntry} from './catalog-v1'
 import {secondaryLanguageGradeSixTopics,sixthGradeLanguageFeatures} from '@aula/shared'
 import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula/shared'
-import { productCriterionTemplates } from './catalog-product-criteria'
-import { evaluationCatalogV1 as evaluationCatalogOriginalV1 } from './catalog-original-v1'
-import { evaluationCatalogV2 } from './catalog-v2'
 
 /** New release; previous releases remain unchanged for existing snapshots. */
-export const evaluationCatalogV46 = {
-  ...evaluationCatalogV45,
-  version: 'evaluation-2026.46',
+export const evaluationCatalogCurrent = {
+  ...evaluationCatalogV68,
+  version: 'evaluation-2026.93',
+  activityTypes: (evaluationCatalogV92.activityTypes as ActivityTypeEntry[]).map(entry => ({
+    ...entry,
+    triggers: entry.id === 'WRITTEN_PRODUCTION' ? [...new Set([...entry.triggers, 'trabajo escrito', 'redactar'])]
+      : entry.id === 'PROJECT' ? [...new Set([...entry.triggers, 'cartel', 'modelo'])]
+        : entry.id === 'CONCEPT_MAP' ? [...new Set([...entry.triggers, 'esquema conceptual'])] : entry.triggers,
+  })),
+  criterionTemplates: [...evaluationCatalogV92.criterionTemplates, ...productCriterionTemplates],
+  scienceCommonModules:commonScienceModules,
+  mathCommonModules: commonMathModules,
+  frenchInteractionEvidencePolicy: 'EXPLICIT_QUESTIONS_RESPONSES_RESIDENCE_AND_EXCHANGED_ROLES_V1',
+  frenchModules: [frenchGradeOneModule, frenchGradeTwoModule, frenchGradeThreeModule, frenchGradeFourModule, frenchGradeFiveModule, frenchGradeSixModule],
+  firstGradeReadingReportModule,
+  readingReportSourcePolicy:'REQUESTED_SOURCE_WITHOUT_ASSUMED_LITERARY_TEXT_OR_RESEARCH_V1',
+  taskRequirementPolicy:'EXPLICIT_NATURAL_REQUESTS_MIXED_MODALITY_DELIVERY_V1',
+  englishChecklistEvidencePolicy:'EXPLICIT_FACTS_GENRES_AND_FUNCTIONAL_FIELDS_V4',
+  englishRevisionPolicy:'OBSERVABLE_CHECK_CORRECT_OR_UNCHANGED_V1',
+  englishGradeSixModule,
+  englishGradeSixGrammar,
+  englishGradeSixLexicon,
+  englishGradeSixStrategies,
+  englishGradeSixGenres,
+  englishUpperInteractionPolicy:'FINITE_INTERACT_AND_PERFORM_INTERVIEW_V1',
+  englishGradeFiveSuggestionPolicy:'AUTHORED_SUGGESTION_DESCRIPTORS_GRAMMATICAL_AGREEMENT_V1',
+  englishGradeFiveContextCompositionPolicy:'REQUESTED_CONJUNCTIONS_ALTERNATIVES_WISHES_PLANS_AND_HELP_V1',
+  englishGradeFiveModule,
+  englishGradeFiveGrammar,
+  englishGradeFiveLexicon,
+  englishGradeFiveStrategies,
+  englishGradeFiveGenres,
+  englishGradeFourDirectionsPolicy:'REQUEST_AND_DELIVER_PRESERVE_CONJUNCTION_V1',
+  englishGradeFourRequestPolicy:'ASK_ONLY_INSTRUCTIONS_DIRECTIONS_NO_UNREQUESTED_DELIVERY_V1',
+  englishGradeFourSolidarityPolicy:'REQUESTED_SUPPORTING_RESPONSE_NOT_PERSONAL_TRAIT_V1',
+  englishGradeFourInformationPolicy:'ASK_OFFER_ACTION_EXCLUDES_SOLICITADA_ADJECTIVE_V1',
+  englishGradeFourContextPolicy:'EXPLICIT_OBSERVABLE_CONTEXT_SOURCE_INFORMATION_NO_PRIVATE_TRAITS_V1',
+  englishGradeFourCompositionPolicy:'INDEPENDENT_ACTIONS_ONE_CHOSEN_ALTERNATIVE_SOURCE_FIELDS_WRITTEN_REPLY_V1',
+  englishActionDetectionPolicy:'FINITE_REQUESTED_ACTION_NOT_NOUN_OBJECT_V1',
+  englishSocialContributionPolicy:'TEAM_ONLY_WHEN_REQUESTED_V2',
+  englishGradeFourModule,
+  englishGradeFourGrammar,
+  englishGradeFourLexicon,
+  englishGradeFourStrategies,
+  englishGradeFourGenres,
+  englishGenreAlternativesPolicy:'ALL_CONTIGUOUS_ALTERNATIVES_ONE_SELECTED_PRODUCT_V2',
+  englishCulturalAspectsPolicy:'ONLY_REQUESTED_COMPONENTS_SCOPE_OWN_GRADE_V1',
+  englishGradeThreeComprehensionPolicy:'EXPLICIT_COMPREHENSION_AND_CLARIFICATION_BOTH_REQUIRED_V1',
+  englishGradeThreeModule,
+  englishGradeThreeGrammar,
+  englishGradeThreeLexicon,
+  englishGradeThreeStrategies,
+  englishGradeThreeGenres,
+  englishGradeTwoNarrativePolicy:'EXPERIENCE_EVENTS_ONCE_EXPLICIT_NARRATIVE_COMPONENTS_RETAINED_V1',
+  englishGradeTwoShoppingPolicy:'PURCHASE_VERB_FORMS_EXCLUDE_CHECK_AND_COMPREHEND_V1',
+  englishGradeTwoRevisionPolicy:'EXPLICIT_MEANING_CORRECTION_AND_REPLY_EVIDENCE_V1',
+  englishGradeTwoReceptionPolicy:'REQUESTED_MENU_PRODUCT_PRICE_NO_IMPLICIT_PURCHASE_V1',
   criterionCompletionPolicy:'EXPLICIT_MANUAL_ADDITION_EXHAUSTION_NO_BLANK_PROPOSAL_V1',
   englishGradeOneRequestedEvidencePolicy:'ACTIVITY_QUANTITY_TEMPORAL_EXPRESSIONS_ORAL_QUESTION_RESPONSE_V1',
   englishGradeOneContextPolicy:'EXPLICIT_OBSERVABLE_COMMUNICATION_NO_UNREQUESTED_CONDITIONS_V2',
@@ -74,12 +185,13 @@ export const evaluationCatalogV46 = {
   englishGradeOneGrammar,
   englishGradeOneGrammarPolicy:'ONLY_REQUESTED_FORMS_RECOGNITION_EXPLANATION_USE_V1',
   englishGradeOneModule,
-  activityTypes:[...evaluationCatalogV34.activityTypes,
-    {id:'ORAL_INTERACTION',family:'ORAL',evidence:['PERFORMANCE','KNOWLEDGE'],triggers:[]},
-    {id:'LISTENING_COMPREHENSION',family:'OBSERVATIONAL',evidence:['KNOWLEDGE','PERFORMANCE'],triggers:[]},
-    {id:'READING_COMPREHENSION',family:'WRITTEN',evidence:['KNOWLEDGE','PRODUCT'],triggers:[]},
-    {id:'AUDIOVISUAL_PRODUCTION',family:'PROJECT_BASED',evidence:['PRODUCT','KNOWLEDGE'],triggers:[]},
-  ] as ActivityTypeEntry[],
+  englishGradeTwoModule,
+  englishGradeTwoGrammar,
+  englishGradeTwoLexicon,
+  englishGradeTwoStrategies,
+  englishGradeTwoGenres,
+  englishGradeTwoEvidencePolicy:'COMMON_SCOPE_EXPLICIT_FORMS_ACTIONS_PRODUCTS_CONDITIONS_NO_TRAIT_SCORES_V1',
+  englishGradeTwoAlternativePolicy:'REQUESTED_ONE_OF_FORMS_OR_PRODUCTS_NOT_SIMULTANEOUS_REQUIREMENTS_V1',
   languageCompositionPolicy:'EXPLICIT_EVIDENCE_WITHOUT_DUPLICATE_RHYTHM_OR_PERFORMANCE_ORAL_V1',
   contextualModules:[...secondaryLanguageGradeTwoTopics,...secondaryLanguageGradeThreeTopics,...secondaryLanguageGradeFourTopics,...secondaryLanguageGradeFiveTopics,...secondaryLanguageGradeSixTopics],
   sixthGradeLanguageFeatures,
@@ -93,22 +205,58 @@ export const evaluationCatalogV46 = {
   secondGradeLanguageFeatures,
   secondGradeLanguagePolicy:'PROCEDURAL_DETAILS_COMPREHENSION_PRODUCTS_AND_FAMILIES_V2',
 }
-/** Recovered generic product criteria are a new release, preserving published snapshots. */
-export const evaluationCatalogCurrent = {
-  ...evaluationCatalogV46,
-  version: 'evaluation-2026.47',
-  activityTypes: evaluationCatalogV46.activityTypes.map(entry => ({
-    ...entry,
-    triggers: entry.id === 'WRITTEN_PRODUCTION' ? [...entry.triggers, 'trabajo escrito', 'redactar']
-      : entry.id === 'PROJECT' ? [...entry.triggers, 'cartel', 'modelo']
-        : entry.id === 'CONCEPT_MAP' ? [...entry.triggers, 'esquema conceptual'] : entry.triggers,
-  })),
-  criterionTemplates: [...evaluationCatalogV46.criterionTemplates, ...productCriterionTemplates],
-}
-export type EvaluationCatalog = typeof evaluationCatalogV1 & { englishGradeOneModule?:typeof englishGradeOneModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
-export function evaluationCatalogForVersion(version: string) {
-  if(version===evaluationCatalogOriginalV1.version)return evaluationCatalogOriginalV1
-  if(version===evaluationCatalogV2.version)return evaluationCatalogV2
+export type EvaluationCatalog = typeof evaluationCatalogV1 & { scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
+export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
+  if (version === evaluationCatalogOriginalV1.version) return evaluationCatalogOriginalV1
+  if (version === evaluationCatalogV2.version) return evaluationCatalogV2
+  if (version === evaluationCatalogMainV46.version && lineage === 'main') return evaluationCatalogMainV46
+  if (version === evaluationCatalogMainV47.version && lineage === 'main') return evaluationCatalogMainV47
+  if (version === evaluationCatalogV92.version) return evaluationCatalogV92
+  if(version===evaluationCatalogV90.version)return evaluationCatalogV90
+  if(version===evaluationCatalogV91.version)return evaluationCatalogV91
+  if(version===evaluationCatalogV89.version)return evaluationCatalogV89
+  if(version===evaluationCatalogV88.version)return evaluationCatalogV88
+  if(version===evaluationCatalogV87.version)return evaluationCatalogV87
+  if(version===evaluationCatalogV86.version)return evaluationCatalogV86
+  if(version===evaluationCatalogV85.version)return evaluationCatalogV85
+  if(version===evaluationCatalogV76.version)return evaluationCatalogV76
+  if(version===evaluationCatalogV77.version)return evaluationCatalogV77
+  if(version===evaluationCatalogV78.version)return evaluationCatalogV78
+  if(version===evaluationCatalogV79.version)return evaluationCatalogV79
+  if(version===evaluationCatalogV80.version)return evaluationCatalogV80
+  if(version===evaluationCatalogV81.version)return evaluationCatalogV81
+  if(version===evaluationCatalogV82.version)return evaluationCatalogV82
+  if(version===evaluationCatalogV84.version)return evaluationCatalogV84
+  if(version===evaluationCatalogV83.version)return evaluationCatalogV83
+  if(version===evaluationCatalogV75.version)return evaluationCatalogV75
+  if(version===evaluationCatalogV74.version)return evaluationCatalogV74
+  if(version===evaluationCatalogV73.version)return evaluationCatalogV73
+  if(version===evaluationCatalogV72.version)return evaluationCatalogV72
+  if(version===evaluationCatalogV71.version)return evaluationCatalogV71
+  if(version===evaluationCatalogV70.version)return evaluationCatalogV70
+  if(version===evaluationCatalogV69.version)return evaluationCatalogV69
+  if(version===evaluationCatalogV66.version)return evaluationCatalogV66
+  if(version===evaluationCatalogV67.version)return evaluationCatalogV67
+  if(version===evaluationCatalogV68.version)return evaluationCatalogV68
+  if(version===evaluationCatalogV65.version)return evaluationCatalogV65
+  if(version===evaluationCatalogV64.version)return evaluationCatalogV64
+  if(version===evaluationCatalogV63.version)return evaluationCatalogV63
+  if(version===evaluationCatalogV62.version)return evaluationCatalogV62
+  if(version===evaluationCatalogV61.version)return evaluationCatalogV61
+  if(version===evaluationCatalogV60.version)return evaluationCatalogV60
+  if(version===evaluationCatalogV59.version)return evaluationCatalogV59
+  if(version===evaluationCatalogV58.version)return evaluationCatalogV58
+  if(version===evaluationCatalogV57.version)return evaluationCatalogV57
+  if(version===evaluationCatalogV56.version)return evaluationCatalogV56
+  if(version===evaluationCatalogV55.version)return evaluationCatalogV55
+  if(version===evaluationCatalogV54.version)return evaluationCatalogV54
+  if(version===evaluationCatalogV53.version)return evaluationCatalogV53
+  if(version===evaluationCatalogV52.version)return evaluationCatalogV52
+  if(version===evaluationCatalogV51.version)return evaluationCatalogV51
+  if(version===evaluationCatalogV50.version)return evaluationCatalogV50
+  if(version===evaluationCatalogV49.version)return evaluationCatalogV49
+  if(version===evaluationCatalogV48.version)return evaluationCatalogV48
+  if(version===evaluationCatalogV47.version)return evaluationCatalogV47
   if(version===evaluationCatalogV46.version)return evaluationCatalogV46
   if(version===evaluationCatalogV45.version)return evaluationCatalogV45
   if(version===evaluationCatalogV44.version)return evaluationCatalogV44

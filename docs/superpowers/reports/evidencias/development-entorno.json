@@ -1,0 +1,30 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "base": "http://localhost:8787",
+  "postgres": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "role": "app_backend_local",
+    "inheritsBackend": true,
+    "bypassRls": false
+  },
+  "auth": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "health": 200
+  },
+  "storage": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "status": 200,
+    "buckets": [
+      "activity-description-images",
+      "subject-resources"
+    ]
+  },
+  "frontend": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "entry": "/assets/index-DRaZPRgF.js",
+    "productionProjectAbsent": true,
+    "serviceRoleKeyAbsent": true
+  },
+  "cliProject": "eolgunypmtgrsyrjzcld",
+  "healthStatus": 200
+}

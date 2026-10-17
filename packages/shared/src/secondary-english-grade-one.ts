@@ -8,6 +8,7 @@ import {requestedEnglishStrategies,englishStrategyCriteria} from './secondary-en
 import {requestedEnglishGenres,englishGenreCriteria} from './secondary-english-grade-one-genres'
 import {withoutResources} from './evaluation-task-text'
 import {englishContextCriteria} from './secondary-english-grade-one-context'
+import {englishProfileWithoutNarration} from './secondary-english-task-text'
 
 export const englishGradeOneModule={id:'ingles-comunicacion-1',grade:1,subjectCode:'ING',pdfPages:[134,135,136,137,138,139],policy:'COMMUNICATIVE_FUNCTION_MODALITY_V1'}
 
@@ -82,7 +83,7 @@ function resolveSingleEnglishAction(title:string,description:string,context?:Ins
  const evidenceText=(mode==='reading'||mode==='listening')?text.match(/\b(?:identific\w*|localiz\w*|reconoc\w*|analiz\w*)\s+(.+)/)?.[1]??text:text
  const functionText=evidenceText!==text&&(grammar.length||lexicon.length)?evidenceText:text
  const functions:FunctionId[]=[]
- if(/\b(?:informacion personal|nombre y edad|personal information|name and age)\b/.test(functionText))functions.push('personal')
+ if(/\b(?:informacion personal|nombre y edad|personal information|name and age)\b/.test(functionText)&&!genres.some(g=>['form','business-card','cv'].includes(g.id)))functions.push('personal')
  if(/\b(?:invit\w*|invitations?)\b/.test(functionText))functions.push('invitation')
  if(/\b(?:rutina|rutinas|actividades (?:cotidianas|diarias)|routine|daily activities)\b/.test(functionText))functions.push('routine')
  if(/\b(?:compar(?:a|an|ar|aran|ando|en|e|emos|acion|aciones)|compare|semejanzas|diferencias)\b/.test(functionText))functions.push('comparison')
@@ -91,7 +92,7 @@ function resolveSingleEnglishAction(title:string,description:string,context?:Ins
  if(/\b(?:gustos|preferencias|likes|dislikes|preferences)\b/.test(functionText))functions.push('preferences')
  if(/\b(?:repeticion|aclaracion|clarification|repeat)\b/.test(functionText))functions.push('clarification')
  if(/\b(?:clima|pronostico del tiempo|condiciones atmosfericas|weather|forecast)\b/.test(functionText))functions.push('weather')
- if(/\b(?:experiencia|experiencias|acontecimientos|experiences)\b/.test(functionText))functions.push('experience')
+ if(/\b(?:experiencia|experiencias|acontecimientos|experiences)\b/.test(functionText)&&!englishProfileWithoutNarration(text))functions.push('experience')
  if(/\b(?:opinion|opiniones|opinion[s]?)\b/.test(functionText))functions.push('opinion')
  if(!functions.length&&/\b(?:describ\w*|descrip\w*|describe)\b/.test(functionText))functions.push('description')
  if(strategies.some(f=>f.id==='cultural-comparison'))for(const id of ['comparison','preferences','weather','description'] as FunctionId[])if(functions.includes(id))functions.splice(functions.indexOf(id),1)
@@ -126,13 +127,26 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
    case 'personal':{
     const fields=[['nombre|name','nombre'],['edad|age','edad'],['nacionalidad|nationality','nacionalidad'],['ocupacion|occupation','ocupación']].filter(([pattern])=>new RegExp(`\\b(?:${pattern})\\b`).test(text)).map(([,name])=>name)
     const requested=fields.length?list(fields):'datos solicitados'
-    return row(id,'Información personal solicitada',[
+    const criterion=row(id,'Información personal solicitada',[
      receptive?`Identifica ${requested} de la persona o personaje a partir del ${source} en inglés.`:`Comunica en inglés ${requested} de la persona o personaje indicado, con frases breves que permiten reconocer los datos solicitados.`,
      `Se reconocen los datos principales de ${requested}; una referencia aislada necesita aclaración.`,
      `Se reconocen algunos datos de ${requested}, pero otros quedan incompletos o no se relacionan con la persona indicada.`,
      'Confunde los datos entre personas o personajes y cambia la identidad descrita.',
      'No aporta datos reconocibles de la persona o personaje indicado.',
     ])
+    const keys:Record<string,string>={nombre:'name',edad:'age',nacionalidad:'nationality',ocupación:'occupation'}
+    if(fields.length&&!/\bo\b/.test(text))criterion.checklistParts=fields.map(field=>{
+     const target=`${field==='nombre'?'el':'la'} ${field} de la persona o personaje indicado`
+     const progressionLevels:ContextualTopicCriterion['progressionLevels']=[
+      receptive?`Identifica ${target} a partir del ${source} en inglés.`:`Comunica en inglés ${target} de forma comprensible.`,
+      `Se reconoce ${target}; una referencia necesita precisión.`,
+      `Comunica parte del dato, pero deja sin precisar ${target}.`,
+      `Atribuye el dato a otra persona o personaje y cambia la información.`,
+      `No aporta información reconocible sobre ${target}.`,
+     ]
+     return {key:keys[field],observable:progressionLevels[0],progressionLevels}
+    })
+    return criterion
    }
    case 'invitation':{
     const responding=/\b(?:acept\w*|rechaz\w*|respond\w*|accept\w*|declin\w*)\b/.test(text)
@@ -246,7 +260,7 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
    }
   }
  })
- const grammar=requestedEnglishGrammar(task.evidenceText??text)
+ const grammar=requestedEnglishGrammar(`${task.evidenceText&&task.evidenceText!==text?'identificaran ':''}${task.evidenceText??text}`)
  result.push(...grammar.map(f=>englishGrammarCriterion(f,task.evidenceText??text,mode)))
  const strategies=englishStrategyCriteria(text,mode)
  const lexicon=requestedEnglishLexicon(task.evidenceText??text).filter(f=>f.id!=='translation'||!strategies.some(s=>s.templateId==='ing-1-strategy-help'))
@@ -269,7 +283,7 @@ export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCrite
   'Las respuestas cambian el sentido de lo dicho por el interlocutor e interrumpen el intercambio.',
   'No se aporta una respuesta reconocible a las intervenciones del interlocutor.',
  ],3))
- if(!receptive&&mode!=='audiovisual'&&(task.functions.length||mode==='oral'&&genres.length))result.push(mode==='writing'?row('written','Mensaje escrito comprensible',[
+ if(!receptive&&mode!=='audiovisual'&&(task.functions.length||mode==='oral'&&genres.length||/\bpresentacion (?:oral|por escrito)\b/.test(text)))result.push(mode==='writing'?row('written','Mensaje escrito comprensible',[
   'Enlaza frases breves en inglés que permiten comprender el mensaje escrito; los posibles errores básicos no impiden reconocer las ideas.',
   'Las ideas principales se comprenden; una unión de frases o un uso del vocabulario necesita revisión.',
   'Se comprenden frases aisladas, pero varias relaciones entre las ideas quedan ambiguas.',

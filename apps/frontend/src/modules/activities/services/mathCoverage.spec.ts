@@ -11,7 +11,7 @@ describe('Matemática contextual en la alternativa compartida',()=>{
   it.each(formats)('conserva evidencia, puntaje pendiente y decimales en %s',instrumentType=>{
     for(const task of tasks) {
       const proposal=editableFallbackRecommendation({activityTitle:'Actividad 1',description:task.description,academicContext:{level:'SECONDARY',grade:task.grade,subjectCode:'MAT'},instrumentType,participationMode:'INDIVIDUAL',maxScore:100})
-      expect(proposal.criteria.every(row=>row.templateId.startsWith(`math-${task.id}-`))).toBe(true)
+      expect(proposal.criteria.every(row=>row.templateId.startsWith(task.grade===5?'mat-5-matrices-':`math-${task.id}-`))).toBe(true)
       for(const total of [null,20,17.35]) {
         const fields=scoreInstrumentFields(recommendationToFields(proposal,'Actividad 1'),instrumentType,total,proposal)
         const count=proposal.criteria.length

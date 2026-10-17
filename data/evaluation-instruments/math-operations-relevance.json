@@ -1,0 +1,11 @@
+[
+  {"id":"plain","title":"Practicamos operaciones.","description":"Los estudiantes resolverán ejercicios de multiplicación, resta y división.","format":"lista-cotejo"},
+  {"id":"explain","title":"Practicamos operaciones.","description":"Los estudiantes resolverán ejercicios de multiplicación, resta y división y explicarán el procedimiento.","format":"rubrica"},
+  {"id":"methods","title":"Métodos.","description":"Los estudiantes justificarán diferentes métodos para resolver multiplicaciones, restas y divisiones.","format":"rubrica"},
+  {"id":"weighted","title":"Practicamos operaciones.","description":"Los estudiantes resolverán ejercicios de multiplicación, resta y división. Se asignarán puntos al procedimiento y al resultado.","format":"lista-ponderada"},
+  {"id":"temperature","title":"Temperatura.","description":"Los estudiantes resolverán un problema de temperatura con multiplicación, resta y división usando los datos proporcionados.","format":"lista-cotejo"},
+  {"id":"neutral-title","title":"Actividad.","description":"Los estudiantes resolverán ejercicios de multiplicación, resta y división.","format":"lista-cotejo"},
+  {"id":"old-temperature-title","title":"El termómetro y la temperatura.","description":"Los estudiantes resolverán ejercicios de multiplicación, resta y división.","format":"lista-cotejo"},
+  {"id":"incompatible-title","title":"Análisis literario de una novela.","description":"Los estudiantes resolverán ejercicios de multiplicación, resta y división.","format":"lista-cotejo"},
+  {"id":"observed","title":"Desempeño observado.","description":"Observa y registra el grado de autonomía al resolver multiplicaciones, restas y divisiones.","format":"escala"}
+]

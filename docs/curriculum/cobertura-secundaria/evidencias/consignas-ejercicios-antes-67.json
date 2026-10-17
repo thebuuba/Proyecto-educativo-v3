@@ -1,0 +1,155 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "dc50778c113161762b97ca4f4be56d2b1044929f",
+      "dirty": true,
+      "startedAt": "2026-10-15T10:10:40.269Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.67"
+    }
+  },
+  "input": {
+    "sectionSubjectId": "c0041878-b9b3-420f-90db-9530e13f3806",
+    "activityTitle": "Actividad",
+    "description": "Los estudiantes resuelven ejercicios de suma y resta",
+    "maxScore": 20,
+    "participationMode": "INDIVIDUAL"
+  },
+  "proposal": {
+    "kind": "RECOMMENDATION",
+    "catalogVersion": "evaluation-2026.67",
+    "instrumentType": "lista-cotejo",
+    "confidence": "LOW",
+    "activityType": "OTHER",
+    "evidenceTypes": [
+      "PERFORMANCE"
+    ],
+    "participationMode": "INDIVIDUAL",
+    "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "curriculumScopeId": "0f31b0b9-8970-5928-9c81-4299e0e9d4d9",
+    "selectedCurriculumElements": [],
+    "criteria": [
+      {
+        "id": "proposal:evaluation-2026.67:0f31b0b9-8970-5928-9c81-4299e0e9d4d9:math-procedure:0",
+        "templateId": "math-procedure",
+        "title": "Procedimiento matemático",
+        "description": "Aplica el procedimiento solicitado para resolver la situación con suma.",
+        "maxScore": 4.54,
+        "maxScoreUnits": 454,
+        "relativeWeight": 5,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "sourceReferences": [],
+        "descriptors": []
+      },
+      {
+        "id": "proposal:evaluation-2026.67:0f31b0b9-8970-5928-9c81-4299e0e9d4d9:math-reasoning:1",
+        "templateId": "math-reasoning",
+        "title": "Razonamiento y justificación",
+        "description": "Justifica la estrategia y relaciona los pasos con los datos.",
+        "maxScore": 4.54,
+        "maxScoreUnits": 454,
+        "relativeWeight": 5,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "sourceReferences": [],
+        "descriptors": []
+      },
+      {
+        "id": "proposal:evaluation-2026.67:0f31b0b9-8970-5928-9c81-4299e0e9d4d9:math-accuracy:2",
+        "templateId": "math-accuracy",
+        "title": "Exactitud",
+        "description": "Realiza los cálculos y usa las unidades con precisión.",
+        "maxScore": 3.64,
+        "maxScoreUnits": 364,
+        "relativeWeight": 4,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "sourceReferences": [],
+        "descriptors": []
+      },
+      {
+        "id": "proposal:evaluation-2026.67:0f31b0b9-8970-5928-9c81-4299e0e9d4d9:math-comprehension:3",
+        "templateId": "math-comprehension",
+        "title": "Comprensión del problema",
+        "description": "Identifica los datos y la pregunta de la situación con suma.",
+        "maxScore": 3.64,
+        "maxScoreUnits": 364,
+        "relativeWeight": 4,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "sourceReferences": [],
+        "descriptors": []
+      },
+      {
+        "id": "proposal:evaluation-2026.67:0f31b0b9-8970-5928-9c81-4299e0e9d4d9:math-interpretation:4",
+        "templateId": "math-interpretation",
+        "title": "Interpretación",
+        "description": "Interpreta y comprueba la respuesta en el contexto del problema.",
+        "maxScore": 3.64,
+        "maxScoreUnits": 364,
+        "relativeWeight": 4,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "sourceReferences": [],
+        "descriptors": []
+      }
+    ],
+    "levels": [],
+    "totalScore": 20,
+    "totalScoreUnits": 2000,
+    "scoreUnit": 0.01,
+    "internalTrace": {
+      "mappingStatus": "RESOLVED",
+      "reasons": [
+        "band=SECONDARY",
+        "discipline=math",
+        "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+        "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+      ],
+      "ruleId": "default",
+      "activityTypeOrigin": "DEFAULT",
+      "ranking": [
+        {
+          "elementId": "bb898d15-3835-5f2f-a42e-4bac57bb9361",
+          "score": 51,
+          "topicCoverage": 0.3333333333333333,
+          "reasons": [
+            "topicTokens=1/3",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "bea5de50-b32a-50aa-858c-6a1529ae7eaf",
+          "score": 51,
+          "topicCoverage": 0.3333333333333333,
+          "reasons": [
+            "topicTokens=1/3",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        },
+        {
+          "elementId": "de25cfff-d645-50f9-b73b-991ac0713525",
+          "score": 51,
+          "topicCoverage": 0.3333333333333333,
+          "reasons": [
+            "topicTokens=1/3",
+            "typeWeight=16",
+            "blockMatches=0",
+            "procedureMatches=0"
+          ]
+        }
+      ],
+      "curriculumStatus": "DRAFT",
+      "lowCurriculumConfidence": true,
+      "consideredTypes": [
+        "SPECIFIC_COMPETENCY",
+        "EVALUATION_CRITERION",
+        "ACHIEVEMENT_INDICATOR",
+        "CONCEPT",
+        "PROCEDURE",
+        "ATTITUDE_VALUE"
+      ]
+    }
+  }
+}

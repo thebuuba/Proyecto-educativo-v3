@@ -1,0 +1,16 @@
+{
+  "activityId": "4d24d6bb-fadb-482e-98d3-31827af4d997",
+  "before": {
+    "strategy": "CASE_STUDY",
+    "origin": "AUTO"
+  },
+  "after": {
+    "strategy": "DIALOGIC_INQUIRY",
+    "origin": "MANUAL"
+  },
+  "instrumentId": "f132cf00-488e-452e-9caa-47b9f60a2d4e",
+  "snapshotId": "bb9d7a01-e4b5-4efd-8d58-eefadef92002",
+  "hashBefore": "4f87b482a087b77d7c1b22a3a5b64a592511f88723ca62b5cefc3f7bd02bb17d",
+  "hashAfter": "4f87b482a087b77d7c1b22a3a5b64a592511f88723ca62b5cefc3f7bd02bb17d",
+  "equal": true
+}

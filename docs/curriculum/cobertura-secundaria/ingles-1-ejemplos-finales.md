@@ -1,5 +1,7 @@
 # Cuatro instrumentos completos de Inglés primero
 
+Rectificación de calidad,15/10/2026: los cierres curriculares se conservan, pero el cotejo de datos independientes y el criterio de revisión recibieron un ajuste posterior en.64–.66. Los ejemplos previos siguen siendo evidencia histórica; los corregidos, la conciliación de cantidades y las verificaciones nuevas están en el [informe de calidad de Inglés1–6](ingles-calidad-informe.md).
+
 Estos ejemplos se generaron, editaron, guardaron y reabrieron en el entorno local habitual. Corresponden a una consigna deliberadamente extensa de20 estructuras para comprobar el límite; no representan una exigencia curricular de evaluar todas las estructuras en cada actividad. Los cuatro formatos admiten elección docente explícita. [Snapshots y campos completos](evidencias/ingles-1-final-persistencia.json).
 
 ## ING 1 Cierre · capacidad y filas · cotejo

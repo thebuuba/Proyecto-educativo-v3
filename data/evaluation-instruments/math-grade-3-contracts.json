@@ -1,0 +1,442 @@
+[
+  {
+    "id": "polynomials",
+    "description": "Calcula el valor numérico del polinomio dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Clasifica los polinomios por su grado y número de términos.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Divide los polinomios dados por un método válido.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Modeliza la situación dada con polinomios.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "model"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "notable",
+    "description": "Calcula los productos notables indicados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica el cuadrado de un binomio.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de los cocientes notables dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "factorization",
+    "description": "Factoriza las expresiones dadas por factor común.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica la diferencia de cuadrados sin factorizar.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Factoriza por agrupación de términos las expresiones dadas.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Factoriza el trinomio cuadrado perfecto dado.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Factoriza la suma de cubos y la diferencia de cubos dadas.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la factorización dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "logic",
+    "description": "Construye el diagrama de Venn-Euler de los conjuntos dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "representation"
+    ],
+    "variants": [
+      {
+        "description": "Traduce al lenguaje algebraico usando los conectivos lógicos indicados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "translation"
+        ]
+      },
+      {
+        "description": "Explica el significado de los conectivos lógicos dados.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "roots",
+    "description": "Analiza las raíces del polinomio dado.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "analysis"
+    ],
+    "variants": [
+      {
+        "description": "Comprueba las raíces indicadas del polinomio.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "verification"
+        ]
+      },
+      {
+        "description": "Explica la relación entre raíces y factores de un polinomio.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rational-zeros",
+    "description": "Aplica el teorema de los ceros racionales al polinomio dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica el teorema de los ceros racionales.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores del teorema de los ceros racionales aplicado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "descartes",
+    "description": "Aplica la regla de los signos de Descartes al polinomio dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica las posibilidades de raíces según Descartes.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la regla de Descartes aplicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ruffini",
+    "description": "Divide el polinomio dado mediante Ruffini.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica la división sintética sin efectuarla.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de Ruffini y corrige el paso indicado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error",
+          "correction"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equations",
+    "description": "Resuelve ecuaciones de primer grado con los datos dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve la ecuación de segundo grado dada.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica otro procedimiento válido para la ecuación cuadrática.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "linear",
+    "description": "Resuelve problemas con inecuaciones lineales de coeficientes racionales e irracionales.",
+    "activity": "PROBLEM_SOLVING",
+    "requiredActions": [
+      "understanding",
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica el conjunto solución de la inecuación lineal.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la ecuación lineal resuelta.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "systems",
+    "description": "Resuelve el sistema de ecuaciones lineales dado por un método válido.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Compara dos métodos válidos para el sistema lineal dado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "comparison"
+        ]
+      },
+      {
+        "description": "Representa el sistema de ecuaciones dado.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "functions",
+    "description": "Calcula el dominio y rango de la función algebraica dada.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica las restricciones de la función logarítmica dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Representa la función exponencial indicada.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Interpreta la función algebraica en la situación dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "absolute",
+    "description": "Calcula el valor absoluto de los reales dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Explica el concepto de valor absoluto.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores del valor absoluto calculado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "statistics",
+    "description": "Recolecta y organiza los datos agrupados de la situación indicada.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "collection",
+      "organization"
+    ],
+    "variants": [
+      {
+        "description": "Construye el polígono de frecuencia de los datos dados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Interpreta la tabla de frecuencia indicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dispersion",
+    "description": "Calcula la desviación típica y varianza de los datos dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Interpreta la desviación media indicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "interpretation"
+        ]
+      },
+      {
+        "description": "Analiza los errores del rango de los datos calculado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "probability",
+    "description": "Construye el diagrama de árbol del experimento dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "representation"
+    ],
+    "variants": [
+      {
+        "description": "Calcula las probabilidades de los eventos indicados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica el diagrama de probabilidad dado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  }
+]

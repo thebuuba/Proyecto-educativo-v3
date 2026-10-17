@@ -1,0 +1,72 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "before": 64,
+  "after": 76,
+  "pending": [],
+  "method": "Each reviewed SQL file and its original version/statements registered in one transaction; compatibility rehearsal rolled back first.",
+  "applied": [
+    {
+      "file": "20260924201025_local_backend_role.sql",
+      "version": "20260924201025",
+      "registered": true
+    },
+    {
+      "file": "20260926022142_add_teacher_onboarding_context.sql",
+      "version": "20260926022142",
+      "registered": true
+    },
+    {
+      "file": "20260926034652_add_school_regional_and_district_details.sql",
+      "version": "20260926034652",
+      "registered": true
+    },
+    {
+      "file": "20260926215234_flexible_teacher_schedule.sql",
+      "version": "20260926215234",
+      "registered": true
+    },
+    {
+      "file": "20260927152600_add_schedule_gap_source.sql",
+      "version": "20260927152600",
+      "registered": true
+    },
+    {
+      "file": "20260927202613_curricular_catalog.sql",
+      "version": "20260927202613",
+      "registered": true
+    },
+    {
+      "file": "20260927221946_evaluation_recommendation_foundation.sql",
+      "version": "20260927221946",
+      "registered": true
+    },
+    {
+      "file": "20260927232654_phase_c_instrument_snapshots.sql",
+      "version": "20260927232654",
+      "registered": true
+    },
+    {
+      "file": "20261001141052_trusted_auth_devices.sql",
+      "version": "20261001141052",
+      "registered": true
+    },
+    {
+      "file": "20261001151414_backfill_legacy_schedule_structure.sql",
+      "version": "20261001151414",
+      "registered": true
+    },
+    {
+      "file": "20261012210038_instrument_snapshot_lineage.sql",
+      "version": "20261012210038",
+      "registered": true
+    },
+    {
+      "file": "20261015105401_activity_teaching_strategy.sql",
+      "version": "20261015105401",
+      "registered": true
+    }
+  ],
+  "productionModified": false,
+  "resetUsed": false,
+  "dbPushUsed": false
+}

@@ -1,0 +1,165 @@
+{
+  "recordedAt": "2026-10-15T21:15:08.285Z",
+  "catalog": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.72",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 4
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-Dzu8dxpu.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-Dzu8dxpu.js",
+        "sha256": "9d623ae55e532711c3826c7af4e5633d75bd52823e0583f4049437acfb57a1c8",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-DGz7Vpsy.js",
+        "sha256": "8556118cdd0a9c4e45c7f112c61130f2843d21113f3f72871521bbcce716e215",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-C7kYAUaH.js",
+        "sha256": "9f933650139f137d9d7216376c7451241d898d3fe1bc0739e894e1134ece206d",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-DK2y_joR.js",
+        "sha256": "894e114eb815344c873e7813a7e2aa8787eabff3811c0be4fe4446cc81f87040",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-D6YgG7Py.js",
+        "sha256": "f62ad5e2e6cfc5723f6352ab75dd2fbf6cdc2e0089eee0758ceb3fe24d3983c0",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "1c5b7ff87e2d79933dd5f3d19ea6b3e3e621732c1fe15434a12c8f4ef27b97a4",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "tests": {
+    "backendAll": 37194,
+    "backendFrench": 354,
+    "frontendFrench": 303
+  },
+  "http": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "grade": 3,
+    "subject": "FRA",
+    "verification": "AUTHENTICATED_HTTP_AND_DATABASE_NOT_BROWSER",
+    "interpreted": 12,
+    "generated": 24,
+    "savedEvidence": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "activityId": "d122dfa2-966d-4d68-b729-b150aedcbaff",
+        "instrumentId": "6491b601-ef31-4fea-b0ed-bc58ecc883b8",
+        "snapshotId": "11108cb0-1d90-4820-b9d9-78a38aad9ee5",
+        "instrumentHash": "486726f667420d02444d8f7cd9a2ae08ce351597e1ac9254d0a415813cae4ef4",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "activityId": "9fdb3519-d968-4765-9e41-c385a80e868b",
+        "instrumentId": "fe7e4095-97a7-43af-99ea-f76fc1c9452d",
+        "snapshotId": "e874b9c0-ad09-41c9-93c9-e491a31a70d1",
+        "instrumentHash": "b1610c21b17acbb143d9a9efebb352ee20ac8c6f1c159b714da2e2153c0d1910",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "activityId": "c2aca952-edde-41c9-955f-98c6c1ca4208",
+        "instrumentId": "3b56aa60-7c25-44ad-a320-8b905e50046d",
+        "snapshotId": "df9e812c-f8aa-43ef-9567-305c1842eb9b",
+        "instrumentHash": "ddb0f4ec9d32dbfba5f6d3cc1c10bd5bb995a2d4ef4236572e7e46af6d58c989",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "activityId": "96c8197a-7727-4d32-a3b9-09b7a3f1e823",
+        "instrumentId": "c2aff1f8-7432-4dac-995a-9fe98c990a10",
+        "snapshotId": "ced9c2dc-1dbe-4ac7-a4ec-34c21d8ec6af",
+        "instrumentHash": "f2239b9f7a5366e529fbec79a459983fff9953471935c2bee42a9d317b9d5518",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true
+      }
+    ],
+    "transientFailures": [],
+    "browser": "PENDING",
+    "finalBuildRecheck": {
+      "generated": 4,
+      "reopened": 4,
+      "at": "2026-10-15T21:15:08.168Z",
+      "transientFailures": [],
+      "curriculumContexts": [
+        {
+          "activityId": "d122dfa2-966d-4d68-b729-b150aedcbaff",
+          "catalog": "evaluation-2026.72",
+          "versionId": null,
+          "scopeId": null
+        },
+        {
+          "activityId": "9fdb3519-d968-4765-9e41-c385a80e868b",
+          "catalog": "evaluation-2026.72",
+          "versionId": null,
+          "scopeId": null
+        },
+        {
+          "activityId": "c2aca952-edde-41c9-955f-98c6c1ca4208",
+          "catalog": "evaluation-2026.72",
+          "versionId": null,
+          "scopeId": null
+        },
+        {
+          "activityId": "96c8197a-7727-4d32-a3b9-09b7a3f1e823",
+          "catalog": "evaluation-2026.72",
+          "versionId": null,
+          "scopeId": null
+        }
+      ]
+    }
+  },
+  "builds": [
+    "pnpm --filter backend build",
+    "pnpm --filter frontend build",
+    "pnpm cloudflare:build (dry-run)"
+  ],
+  "browser": {
+    "status": "PENDING",
+    "reason": "Chrome conserva la sesión personal; el navegador aislado para QA no está disponible. No se cambió la sesión ni se borraron borradores.",
+    "personalTabObservation": "DOM leído el 15/10/2026: script /assets/index-yWh82mQY.js, anterior a Francés; guardar ediciones pendientes y recargar antes de probar. Registro/caché de service worker no inspeccionados."
+  }
+}

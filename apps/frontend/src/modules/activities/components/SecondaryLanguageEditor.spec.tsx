@@ -1,3 +1,4 @@
+import {chooseActivitySelection,activitySelectionName} from './activitySelectionTestUtils'
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { ActivityEditorWorkspace, type ActivityEditorWorkspaceProps } from './ActivityEditorWorkspace'
@@ -68,15 +69,15 @@ describe('grade two restored editor integration with editable contextual alterna
       courseTitle={`${grade}.º · Lengua Española`} periodShortName="P1" saving={false}
       onAddActivity={onAdd} onUpdateActivity={async input => input}
     />)
-    await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de actividad' })).toHaveValue(activityType), { timeout: 5000 })
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Tipo de actividad' })).toHaveTextContent(activitySelectionName(activityType)), { timeout: 5000 })
     await waitFor(() => expect(screen.getAllByPlaceholderText(/^(?:1\. Criterio|Criterio 1|Criterio de evaluación|Indicador)$/)[0]).toBeVisible(), { timeout: 5000 })
     expect(screen.getByRole('textbox', { name: /Valor en puntos/ })).toHaveValue('')
-    expect(screen.getByRole('combobox', { name: /Técnica de evaluación/ })).toHaveValue(technique)
+    expect(screen.getByRole('button', { name: 'Técnica de evaluación' })).toHaveTextContent(activitySelectionName(technique))
     expect(screen.queryByRole('navigation', { name: 'Pasos de creación' })).not.toBeInTheDocument()
     fireEvent.change(screen.getByRole('textbox', { name: /Valor en puntos/ }), { target: { value: '17.35' } })
     for (const format of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada']) {
-      fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), { target: { value: format } })
-      await waitFor(() => expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue(format))
+      chooseActivitySelection('Tipo de instrumento', format)
+      await waitFor(() => expect(screen.getByRole('button', { name: 'Tipo de instrumento' })).toHaveTextContent(activitySelectionName(format)))
       await waitFor(() => expect(screen.getByRole('button', { name: 'Guardar' })).toBeEnabled())
       expect(screen.getAllByPlaceholderText(/^(?:1\. Criterio|Criterio 1|Criterio de evaluación|Indicador)$/)[0]).toBeVisible()
     }

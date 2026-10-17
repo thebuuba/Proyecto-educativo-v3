@@ -1,0 +1,187 @@
+{
+  "recordedAt": "2026-10-16T02:05:05.998Z",
+  "catalog": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.75",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 7
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-WQvv6nFI.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-WQvv6nFI.js",
+        "sha256": "4b6b4872c6e6bb2bdd0cf5f02c686b499595a1dbda4db1e28e69d86ac6529c6d",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-C52cqSPB.js",
+        "sha256": "1446d2adb693e2b2c7b9dea3d752781011f727cd166cf848e82bc79627e6a475",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-DbmSapRi.js",
+        "sha256": "c37250c81901b5fad17f0a01a700b6be8f3a24185023061afe2c235c54605c99",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-AEXTBwOl.js",
+        "sha256": "d2c506ea9b9110d599140a9882d512d277c2d852219a956749a90aef36427010",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-CJNZtuxv.js",
+        "sha256": "584e4fb8573c6c1a60a205efbfba2d7354b37e31aa31c9b7ab109f7438ca2608",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "dd34f4ca27489347ac71c3a860efb478d089c349a7301d9766321ebd03cbb0b7",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "tests": {
+    "backendAll": 37550,
+    "backendFrench": 703,
+    "frontendFrench": 611
+  },
+  "http": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "grade": 6,
+    "subject": "FRA",
+    "verification": "AUTHENTICATED_HTTP_AND_DATABASE_NOT_BROWSER",
+    "scoreCoverage": "FOUR_FORMATS_BOTH_TOTALS; LANGUAGE_MATRIX_AUTOMATED",
+    "interpreted": 0,
+    "generated": 0,
+    "persistenceRecommendations": 4,
+    "savedEvidence": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "activityId": "47bbb336-7629-48ec-b110-fa51a9fa7d92",
+        "instrumentId": "b7e54c8d-51c2-4a3f-959e-905c5b47704b",
+        "snapshotId": "ad9f7855-4b18-4f1d-b9d0-ea3d844ff566",
+        "instrumentHash": "731cd7e236d636a1d0ab423a169cb6f634456ecad56cc63eec5574125d05ccce",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "c035800a-97a2-5766-ae31-ee29b81bf72b",
+          "status": "PUBLISHED"
+        }
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "activityId": "99dc2553-bfbc-4363-b1ec-504bc0302f4f",
+        "instrumentId": "3b42061f-06d7-474c-8bcd-f17e824d75c0",
+        "snapshotId": "f78de6ab-32bd-4859-acac-2c7c902b1143",
+        "instrumentHash": "8aac6bdcb86656a95f8c65ce6c79a1c3334338db099f3f4065b009476118256b",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "c035800a-97a2-5766-ae31-ee29b81bf72b",
+          "status": "PUBLISHED"
+        }
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "activityId": "aae291f4-d9ba-48ce-a3ac-c1c25f1ce3e2",
+        "instrumentId": "6b5d447f-7aa5-48b7-a938-157c2ff5c948",
+        "snapshotId": "50187af2-2ca4-4715-a0a0-c224f121886a",
+        "instrumentHash": "18cbeb03d5b96c618f940b521e6ea5fab926314234b817db12b3863414d9eacc",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "c035800a-97a2-5766-ae31-ee29b81bf72b",
+          "status": "PUBLISHED"
+        }
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "activityId": "ba511e7f-1107-4810-b7d7-69a3a6d38ea7",
+        "instrumentId": "bb0dc58c-cc46-4dca-bdaa-99f38301dca3",
+        "snapshotId": "6aa9801f-e32f-441e-9ac0-7104e566e91a",
+        "instrumentHash": "01f4647b5d726350d5bb25942c1d64b9345ea88e390b07f517ab136e03d79b85",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "c035800a-97a2-5766-ae31-ee29b81bf72b",
+          "status": "PUBLISHED"
+        }
+      }
+    ],
+    "transientFailures": [],
+    "browser": "PENDING",
+    "finalBuildRecheck": {
+      "generated": 4,
+      "reopened": 4,
+      "at": "2026-10-16T02:05:05.878Z",
+      "transientFailures": [],
+      "curriculumContexts": [
+        {
+          "activityId": "47bbb336-7629-48ec-b110-fa51a9fa7d92",
+          "catalog": "evaluation-2026.75",
+          "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "c035800a-97a2-5766-ae31-ee29b81bf72b"
+        },
+        {
+          "activityId": "99dc2553-bfbc-4363-b1ec-504bc0302f4f",
+          "catalog": "evaluation-2026.75",
+          "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "c035800a-97a2-5766-ae31-ee29b81bf72b"
+        },
+        {
+          "activityId": "aae291f4-d9ba-48ce-a3ac-c1c25f1ce3e2",
+          "catalog": "evaluation-2026.75",
+          "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "c035800a-97a2-5766-ae31-ee29b81bf72b"
+        },
+        {
+          "activityId": "ba511e7f-1107-4810-b7d7-69a3a6d38ea7",
+          "catalog": "evaluation-2026.75",
+          "versionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "c035800a-97a2-5766-ae31-ee29b81bf72b"
+        }
+      ]
+    }
+  },
+  "builds": [
+    "pnpm --filter backend build",
+    "pnpm --filter frontend build",
+    "pnpm cloudflare:build (dry-run)"
+  ],
+  "browser": {
+    "status": "PENDING",
+    "reason": "Reintentado el 15/10/2026: controlador nativo sin pipe disponible (os error 2); navegador aislado IAB no disponible. Chrome conectado solo anuncia viewport, sin sesión QA aislada. No se cambió la sesión personal ni se borraron borradores.",
+    "personalTabObservation": "Observación anterior del DOM el 15/10/2026: script /assets/index-yWh82mQY.js. No es una medición actual de esa pestaña. Guardar ediciones pendientes y recargar antes de probar; registro/caché del service worker no inspeccionados."
+  }
+}

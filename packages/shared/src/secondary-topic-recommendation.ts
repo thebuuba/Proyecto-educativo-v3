@@ -5,6 +5,7 @@ import { detectTopicActivity } from './secondary-language-topics'
 import type { SecondaryLanguageTopic } from './secondary-topic-types'
 import { formatAuthoredCriteria } from './authored-instrument-format'
 import { adaptLanguageScale } from './language-scale'
+import {withDeliveryCriteria} from './task-delivery-requirements'
 
 export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTopic, input: {
   activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType
@@ -18,8 +19,8 @@ export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTop
 export function editableAuthoredRecommendation(authored: ContextualTopicCriterion[], input: {
   activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; includeAdditionalCandidates?: boolean
 }, activity: string, moduleName: string): InstrumentRecommendation {
+  authored = formatAuthoredCriteria(withDeliveryCriteria(authored,input.description??''), input.instrumentType)
   if (!input.includeAdditionalCandidates) assertInstrumentCapacity(authored.length)
-  authored = formatAuthoredCriteria(authored, input.instrumentType)
   const levels = input.instrumentType === 'rubrica' || input.instrumentType === 'escala'
     ? ['Destacado', 'Logrado', 'En proceso', 'Inicial'].map((label, index) => ({ id: `L${4 - index}`, label, proportion: (3 - index) / 3 })) : []
   const weights = authored.map(criterion => criterion.weight)
@@ -41,5 +42,5 @@ export function editableAuthoredRecommendation(authored: ContextualTopicCriterio
     internalTrace: { mappingStatus: 'FALLBACK', reasons: [`module=${moduleName}`, 'Adaptación evaluativa editable; no constituye aprobación curricular.'],
       ruleId: 'editable-topic', activityTypeOrigin: input.activityType ? 'EXPLICIT' : 'DETECTED', ranking: [], curriculumStatus: null, lowCurriculumConfidence: true, consideredTypes: [] },
   }
-  return /^(?:lengua-|novela-|ingles-)/.test(moduleName) ? adaptLanguageScale(proposal,input.description??'') : proposal
+  return /^(?:lengua-|novela-|ingles-|frances-)/.test(moduleName) ? adaptLanguageScale(proposal,input.description??'',moduleName.startsWith('frances-')?'fr':undefined) : proposal
 }

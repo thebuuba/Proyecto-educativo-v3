@@ -1,0 +1,14 @@
+[
+  {"id":"persona-breve","description":"Describe por escrito los rasgos físicos del personaje en francés.","activity":"WRITTEN_PRODUCTION","contains":["person-description","written"],"excludes":["oral","invitation"]},
+  {"id":"lugar-frances","description":"Présentez oralement la description d'un lieu en français.","activity":"ORAL_PRESENTATION","contains":["place-description","oral"],"excludes":["written","instructions"]},
+  {"id":"rutina-desarrollada","description":"Escribe en francés un mensaje sobre las actividades cotidianas de un personaje ficticio y sus horarios. Revisa el borrador.","activity":"WRITTEN_PRODUCTION","contains":["routine","message","written","revision"],"excludes":["oral","invitation"]},
+  {"id":"instrucciones-mixta","description":"Écrivez des instructions en français para preparar una receta dada.","activity":"WRITTEN_PRODUCTION","contains":["instructions","recipe","written"],"excludes":["oral","prohibition"]},
+  {"id":"lectura-invitacion","description":"Lisez une invitation en français et identifiez ce qui est proposé.","activity":"READING_COMPREHENSION","contains":["invitation"],"excludes":["oral","written","invitation-response"]},
+  {"id":"escucha-prohibicion","description":"Escucha en francés las prohibiciones de un lugar e identifica qué acciones no se permiten.","activity":"LISTENING_COMPREHENSION","contains":["prohibition"],"excludes":["oral","written","instructions"]},
+  {"id":"interaccion-oral","description":"En parejas, dialoguen en francés para hacer una invitación a una actividad recreativa.","activity":"ORAL_INTERACTION","contains":["invitation","interaction","oral"],"excludes":["written","invitation-response","leisure"]},
+  {"id":"interaccion-escrita","description":"Échangez des messages écrits en français pour accepter une invitation.","activity":"WRITTEN_PRODUCTION","contains":["invitation-response","message","interaction","written"],"excludes":["oral","invitation"]},
+  {"id":"mixta-independiente","description":"Lee en francés una invitación. Luego escribe en francés instrucciones para una actividad recreativa.","activity":"WRITTEN_PRODUCTION","contains":["invitation","instructions","leisure","written"],"excludes":["oral"]},
+  {"id":"negacion","description":"Écrivez une invitation en français. Ne faites pas de dialogue oral.","activity":"WRITTEN_PRODUCTION","contains":["invitation","written"],"excludes":["oral","interaction","invitation-response"]},
+  {"id":"alternativa","description":"Acceptez ou refusez une invitation en français.","activity":"OTHER","contains":["alternative"],"excludes":["oral","written","invitation-response"]},
+  {"id":"gramatica-imperativo","description":"Escribe instrucciones en francés usando el imperativo afirmativo.","activity":"WRITTEN_PRODUCTION","contains":["instructions","grammar-imperative","written"],"excludes":["oral","prohibition"]}
+]

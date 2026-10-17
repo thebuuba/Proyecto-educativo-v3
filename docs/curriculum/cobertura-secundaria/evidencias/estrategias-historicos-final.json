@@ -1,0 +1,53 @@
+{
+  "migration": [
+    {
+      "version": "20261015105401",
+      "name": "activity_teaching_strategy"
+    }
+  ],
+  "preserved": {
+    "evaluation_activities": 138,
+    "evaluation_instruments": 138,
+    "evaluation_instrument_snapshots": 138,
+    "planning_entries": 0
+  },
+  "counts": {
+    "evaluation_activities": 153,
+    "evaluation_instruments": 153,
+    "evaluation_instrument_snapshots": 141,
+    "planning_entries": 1
+  },
+  "historicUnknown": 138,
+  "policies": [
+    {
+      "policyname": "app_backend_full_access",
+      "roles": "{app_backend}",
+      "cmd": "ALL"
+    },
+    {
+      "policyname": "evaluation_activities_manage_related",
+      "roles": "{authenticated}",
+      "cmd": "ALL"
+    },
+    {
+      "policyname": "evaluation_activities_read_related",
+      "roles": "{authenticated}",
+      "cmd": "SELECT"
+    }
+  ],
+  "grants": [
+    {
+      "privilege_type": "DELETE"
+    },
+    {
+      "privilege_type": "INSERT"
+    },
+    {
+      "privilege_type": "SELECT"
+    },
+    {
+      "privilege_type": "UPDATE"
+    }
+  ],
+  "scope": "Authorized fictitious school only; before hashes exclude only the two new activity columns."
+}

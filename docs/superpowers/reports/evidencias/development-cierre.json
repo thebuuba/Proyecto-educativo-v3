@@ -1,0 +1,50 @@
+{
+  "verifiedAt": "2026-10-15T16:58:16.488Z",
+  "project": "eolgunypmtgrsyrjzcld",
+  "base": "http://localhost:8787",
+  "commands": [
+    {
+      "command": "pnpm cloudflare:build",
+      "exitCode": 0,
+      "buildTasksPassed": 4,
+      "remoteDeployment": false
+    },
+    {
+      "command": "pnpm --filter backend test",
+      "exitCode": 0,
+      "files": 94,
+      "testsPassed": 36840
+    },
+    {
+      "command": "pnpm --filter frontend test",
+      "exitCode": 0,
+      "files": 120,
+      "testsPassed": 37464
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "exitCode": 0
+    },
+    {
+      "command": "node --test scripts/cloudflare-development-environment.spec.mjs",
+      "exitCode": 0,
+      "testsPassed": 5
+    },
+    {
+      "command": "pnpm cloudflare:smoke http://localhost:8787",
+      "exitCode": 0
+    }
+  ],
+  "browserVisualCheck": {
+    "completed": false,
+    "reason": "Browser automation request-header policy service blocked by Cloudflare before tab access",
+    "manualSteps": "../2026-10-15-separacion-development.md#prueba-visual-manual-pendiente"
+  },
+  "authenticatedReopenAfterBuild": true,
+  "instrumentHashUnchanged": true,
+  "productionModified": false
+}

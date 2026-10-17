@@ -1,0 +1,37 @@
+{
+  "grade": 3,
+  "subject": "ING",
+  "description": "Compararán en inglés las leyendas de los ejemplos proporcionados de República Dominicana y otros países.",
+  "flow": "GENERATED_ONLY_NO_SAVE",
+  "serviceVerifiedSeparately": "ingles-cultural-subconjuntos-servicio-56.json",
+  "fields": [
+    {
+      "label": "Criterio 1",
+      "value": "Comparación cultural con ejemplos"
+    },
+    {
+      "label": "Destacado del criterio 1",
+      "value": "La comparación cultural relaciona las leyendas de los ejemplos de República Dominicana y del otro contexto mediante los ejemplos disponibles, sin generalizarlos a todas las personas."
+    },
+    {
+      "label": "Logrado del criterio 1",
+      "value": "Relaciona los aspectos principales de ambos contextos; un ejemplo necesita precisión."
+    },
+    {
+      "label": "En proceso del criterio 1",
+      "value": "Menciona ejemplos de los contextos, pero no establece su semejanza o diferencia."
+    },
+    {
+      "label": "Inicial del criterio 1",
+      "value": "No aporta una comparación reconocible entre las leyendas de los ejemplos de ambos contextos."
+    }
+  ],
+  "points": [
+    {
+      "label": "Puntos del criterio 1",
+      "value": "20"
+    }
+  ],
+  "activityType": "COMPARISON",
+  "instrument": "rubrica"
+}

@@ -17,7 +17,7 @@ import {
   competencyBlocks,
   type CompetencyBlockId,
 } from '@/modules/grading/utils/competencyGrades'
-import { type InstrumentRecommendation } from '@aula/shared'
+import { type InstrumentRecommendation, type TeachingStrategyOrigin } from '@aula/shared'
 
 export type ActivityDraft = {
   creationId?: string
@@ -44,6 +44,8 @@ export type ActivityDraft = {
   instrumentCompleted: boolean
   instrumentFields: Record<string, string>
   pedagogicalActivityType?: string
+  teachingStrategyId?: string | null
+  teachingStrategyOrigin?: TeachingStrategyOrigin
   autoDetectedPedagogicalActivityType?: boolean
   autoSelectedInstrumentType?: boolean
   selectedCurriculumElementIds?: string[]
@@ -181,6 +183,8 @@ export function validateActivityCompletion(draft: ActivityDraft): ActivityComple
 export function newActivityDraft(blockId: CompetencyBlockId): ActivityDraft {
   return {
     ...emptyActivityDraft,
+    teachingStrategyId: null,
+    teachingStrategyOrigin: 'AUTO',
     draftId: createDraftId(),
     creationId: crypto.randomUUID(),
     competencyBlockId: blockId,
@@ -204,6 +208,8 @@ export function normalizeStoredActivityDrafts(value: unknown): ActivityDraftsByB
         const restored = {
           ...emptyActivityDraft,
           ...draft,
+          teachingStrategyId: typeof draft.teachingStrategyId === 'string' ? draft.teachingStrategyId : null,
+          teachingStrategyOrigin: ['AUTO','MANUAL','UNKNOWN'].includes(draft.teachingStrategyOrigin ?? '') ? draft.teachingStrategyOrigin : 'UNKNOWN',
           draftId: typeof draft.draftId === 'string' ? draft.draftId : createDraftId(),
           competencyBlockId: block.id,
           competencyBlockWeights:
@@ -262,6 +268,7 @@ export function normalizeStoredActivityDrafts(value: unknown): ActivityDraftsByB
 
 export function isMeaningfulActivityDraft(draft: ActivityDraft) {
   return Boolean(
+    draft.teachingStrategyId ||
     draft.name.trim() ||
     draft.date ||
     activityDescriptionText(draft.description).trim() ||
@@ -290,6 +297,8 @@ export function activityToDraft(activity: Activity, duplicate = false): Activity
     instrumentId: duplicate ? undefined : activity.instrumentId,
     evaluationTechnique: activity.evaluationTechnique ?? '',
     pedagogicalActivityType: activity.pedagogicalActivityType ?? '',
+    teachingStrategyId: activity.teachingStrategyId ?? null,
+    teachingStrategyOrigin: activity.teachingStrategyOrigin ?? 'UNKNOWN',
     instrumentCompleted: Boolean(activity.instrumentType),
     instrumentFields: { ...activity.instrumentCriteria },
     preparedRecommendation: activity.instrumentSnapshot,
@@ -327,6 +336,8 @@ export function draftToActivity(
   if (!locked && draft.preparedRecommendation && !snapshot)
     throw new Error('Revisa la definición del instrumento antes de guardar.')
   const metadata = {
+    teachingStrategyId: draft.teachingStrategyId ?? null,
+    teachingStrategyOrigin: draft.teachingStrategyOrigin ?? 'UNKNOWN',
     name: draft.name.trim(),
     date: original ? original.date : draft.date,
     description: draft.description.trim(),

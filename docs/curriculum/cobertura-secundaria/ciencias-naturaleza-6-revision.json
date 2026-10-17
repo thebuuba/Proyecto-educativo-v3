@@ -1,0 +1,30 @@
+{
+ "grade":6,
+ "status":"REVIEWED_DEFINED_FIXTURES",
+ "scope":"Física común, PDF319–322 / impresas318–321; 165 registros oficiales, 63 grupos, 126 consignas y 504 instrumentos de ejemplo",
+ "method":"Inspección visual de cuatro páginas, columnas y continuaciones. Lectura secuencial de las 126 consignas con títulos y condiciones de logro; revisión de progresiones compartidas y casos parciales/erróneos. Lectura de instrumentos completos en cuatro formatos para cálculo de Ohm y construcción de circuitos. Contratos y paridad se registran aparte; no sustituyen la revisión de pertinencia.",
+ "corrections":[
+  "Marco inercial singular y plural, origen y la evolución del universo, condensador singular y choques con dos puntos se reconocen sin reglas por título exacto",
+  "Ley cero evalúa transitividad del equilibrio térmico sin imponer las demás leyes",
+  "Fuerza electromotriz es energía por carga; potencia es energía por tiempo; no se mezclan requisitos cuando se pide solo una",
+  "Continuidad aislada conserva masa; Bernoulli se delimita a sus hipótesis y no se exige al pedir solo continuidad",
+  "El sistema solar aislado no exige representar la galaxia",
+  "El movimiento microscópico relacionado con temperatura no añade transferencia de calor",
+  "Explicar Ohm no exige despejar ni calcular; calcular usa los datos proporcionados y el modelo óhmico",
+  "Se conserva el antecedente de cinco evidencias de Ohm solo cuando se piden sus acciones mixtas completas: cálculo, interpretación cotidiana y esquema",
+  "Interpretar un circuito proporcionado no exige construcción; construirlo respeta el diseño y precauciones indicadas sin agregar otra práctica",
+  "Predicción ondulatoria se sustenta en modelo y condiciones sin exigir medición o confirmación experimental",
+  "Incertidumbre cuántica se refiere a dispersiones de magnitudes conjugadas, no solo a defectos de medición",
+  "Doppler distingue frecuencia observada y propia; fotoeléctrico distingue umbral e intensidad; radiación no obliga a exposición ni procedimientos clínicos",
+  "Fuente literal conserva erratas Espitemológico/astrifísica y la frase incompleta de presión/fuerza; la adaptación no inventa una cita oficial corregida"
+ ],
+ "limits":[
+  "Patrones definidos, no cualquier redacción imaginable",
+  "Diecisiete encabezados y menús de procesos excluidos explícitamente como tareas adicionales; seis vínculos de texto fuente revisados manualmente sin ampliar el matcher",
+  "No se piden mediciones, construcción, toma de muestras, gráficos ni cálculos ausentes; no se atribuyen resultados inventados",
+  "El alcance del modelo y de los datos determina la relación científica aplicable; no se aplica Bernoulli, Newton u Ohm universalmente",
+  "HTTP/DB y navegador no se aprueban mediante esta revisión",
+  "Adaptaciones evaluativas de AulaBase, no rúbricas oficiales MINERD"
+ ],
+ "instrumentArtifact":"ciencias-naturaleza-6-instrumentos.json"
+}

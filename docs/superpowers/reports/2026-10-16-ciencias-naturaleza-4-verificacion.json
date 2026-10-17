@@ -1,0 +1,788 @@
+{
+  "status": "VERIFIED_DEFINED_PATTERNS",
+  "project": "eolgunypmtgrsyrjzcld",
+  "grade": 4,
+  "catalog": "evaluation-2026.90",
+  "source": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_NAT_COMUN_G4_V1",
+    "versionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+    "documentId": "bed6d6b0-91bf-521f-8ebb-460fae0a26f2",
+    "metadata": {
+      "subjectCodes": [
+        "NAT",
+        "NAT-BIO"
+      ],
+      "grades": [
+        4
+      ],
+      "commonOnly": true,
+      "datasetDigest": "e986532987c52d3181b4352e49eb005455b4fd8b57d330bc43aebb5693ee6581",
+      "sourceVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "sourcePdfHash": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+      "scopeMap": {
+        "4": {
+          "sourceId": "2126f8f2-d70a-5c37-8542-f8d00957a51a",
+          "id": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      },
+      "review": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json"
+    },
+    "scopes": 1,
+    "elements": 192,
+    "relations": 7,
+    "result": "UNCHANGED",
+    "preservedSnapshots": 97
+  },
+  "checks": [
+    {
+      "command": "pnpm --filter backend test",
+      "code": 0,
+      "ms": 11414,
+      "log": ".wrangler/science-source/grade-4-final-check-0.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 5369,
+      "log": ".wrangler/science-source/grade-4-final-check-1.log"
+    },
+    {
+      "command": "pnpm --filter frontend exec vitest run",
+      "code": 0,
+      "ms": 81414,
+      "log": ".wrangler/science-source/grade-4-context-check-2.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 12718,
+      "log": ".wrangler/science-source/grade-4-context-check-3.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "code": 4294967295,
+      "ms": 96708,
+      "log": ".wrangler/science-source/grade-4-context-cloudflare-terminal.log"
+    }
+  ],
+  "backend": {
+    "files": 106,
+    "tests": 43386
+  },
+  "frontend": {
+    "files": 131,
+    "tests": 43809
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-a58n98-U.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-a58n98-U.js",
+        "sha256": "12259a705ecb1e704f6629b4fe28a7a54e31bfbe878a0287252775bf6495ee12",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-DEWpgImz.js",
+        "sha256": "5fff419ac84fb9fad283106d54b551a30083441f8ea13b82f0508cafbb48a95e",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-DS3iaAA9.js",
+        "sha256": "c2e5b3d79273067b48fef2e7163285cded93273d229d9b357d450b2e81c753c3",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-DEnba6o_.js",
+        "sha256": "74d43f69e47decf8d0f045de83aab77266f2d4f9ce99047a3a5013a9598cbd71",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-CJOecucF.js",
+        "sha256": "6b5c6f68ae13fca3e98440f3d8a279561910cb422c452582e885ba63f3920e30",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "2e25e3d6f297f1ca1a149c2f6af28b3c0a34c27481bc12621b011f1972983434",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "generationTiming": {
+    "grade": 4,
+    "mode": "PURE_IN_PROCESS_RECOMMENDATION_SYNTHETIC_CONTEXT_NO_AUTH_DB_HTTP_OR_RENDER",
+    "samples": 200,
+    "p50Ms": 0.14859999999998763,
+    "p95Ms": 0.24449999999998795,
+    "maxMs": 0.39529999999999177
+  },
+  "latencyReadOnly": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "grade": 4,
+    "readOnly": true,
+    "catalog": "evaluation-2026.90",
+    "catalogJsonBytes": 733240,
+    "measures": [
+      {
+        "name": "Node PostgreSQL first connection and SELECT1",
+        "ms": 1877.9266
+      },
+      {
+        "name": "Node PostgreSQL warm SELECT1",
+        "ms": 241.2138
+      },
+      {
+        "name": "Node PostgreSQL full catalog equality, one boolean returned",
+        "ms": 6039.7399000000005
+      }
+    ],
+    "limits": "Node direct database, excludes Worker/Auth/context/recommendation/HTTP/render. Source inspection shows the Worker creates and disconnects a request-scoped Prisma client; connection overhead can recur, but these timings do not isolate the Worker delay."
+  },
+  "http": {
+    "verification": "AUTHENTICATED_HTTP_DB_AND_EDITOR_ADAPTERS_NOT_VISUAL",
+    "savedEvidence": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "activityId": "c754a2ad-667f-48f7-9d92-528cafdda93c",
+        "instrumentHash": "561c3f2e15768202b1efdc2ec914ae0bfe86baef58765841c6841e7038579793",
+        "snapshotId": "94db5436-5511-491a-9bbd-8032ad8144dc",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+          "scopeId": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "activityId": "2d099133-5482-4186-8637-f6ec2f9b4778",
+        "instrumentHash": "3f37f77d1680d6d2a49df8a69827394aaff444a7f8f4a97d4acf1d4b357e8d1e",
+        "snapshotId": "875f4bc8-bd4d-434c-b73a-0009af0175b6",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+          "scopeId": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "activityId": "44a0caf9-4e53-4663-86cf-49cd70180a55",
+        "instrumentHash": "ba6705a19910e1271eb8222a442b84250bdf24f6d8edb6e79155b57f6721c4bc",
+        "snapshotId": "7af6fa25-f1d0-4e09-878a-fd15d4f3d893",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+          "scopeId": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "activityId": "5c7f913b-8932-4144-8fe6-703cff3d3ef5",
+        "instrumentHash": "89785579a306f91815e55f992b8c31ef4f93f4f7dd598705e9884a72615feaf1",
+        "snapshotId": "6d0a6e64-58bc-4edf-9405-a24f811ff405",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+          "scopeId": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      }
+    ],
+    "finalBuildRecheck": {
+      "at": "2026-10-17T00:26:27.144Z",
+      "reopened": 4,
+      "generated": [
+        {
+          "type": "rubrica",
+          "total": 20,
+          "catalog": "evaluation-2026.90"
+        },
+        {
+          "type": "lista-cotejo",
+          "total": 17.35,
+          "catalog": "evaluation-2026.90"
+        },
+        {
+          "type": "escala",
+          "total": 20,
+          "catalog": "evaluation-2026.90"
+        },
+        {
+          "type": "lista-ponderada",
+          "total": 17.35,
+          "catalog": "evaluation-2026.90"
+        }
+      ],
+      "languageRegressions": [
+        {
+          "language": "FRA",
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+        },
+        {
+          "language": "ING",
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": null,
+          "scopeId": null
+        },
+        {
+          "language": "MAT",
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+          "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+        }
+      ],
+      "scienceRegressions": [
+        {
+          "grade": 1,
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+          "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf"
+        },
+        {
+          "grade": 2,
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+          "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708"
+        },
+        {
+          "grade": 3,
+          "catalog": "evaluation-2026.90",
+          "curriculumVersionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+          "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a"
+        }
+      ]
+    },
+    "semanticControls": [
+      {
+        "description": "Interpreta los resultados proporcionados de los experimentos de Mendel.",
+        "criteria": [
+          "nat-4-mendel-data-interpretation"
+        ],
+        "catalog": "evaluation-2026.90"
+      },
+      {
+        "description": "Analiza cistitis y cálculo renal con los casos ficticios proporcionados.",
+        "criteria": [
+          "nat-4-excretory-analysis"
+        ],
+        "catalog": "evaluation-2026.90"
+      },
+      {
+        "description": "Argumenta con pruebas evolutivas de anatomía, embriología y bioquímica comparadas proporcionadas.",
+        "criteria": [
+          "nat-4-evolution-evidence-argument"
+        ],
+        "catalog": "evaluation-2026.90"
+      },
+      {
+        "description": "Explica sistema binomial de Linneo y clasificación moderna.",
+        "criteria": [
+          "nat-4-classification-explanation"
+        ],
+        "catalog": "evaluation-2026.90"
+      },
+      {
+        "description": "Interpreta la herencia ligada al sexo del caso ficticio sin solicitar datos familiares.",
+        "criteria": [
+          "nat-4-genetic-variation-analysis"
+        ],
+        "catalog": "evaluation-2026.90"
+      }
+    ]
+  },
+  "browser": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "grade": 4,
+    "session": "personal Development",
+    "entry": "/assets/index-BLaW9Yd6.js",
+    "status": "VERIFIED_DEFINED_VISUAL_CASES",
+    "formats": [
+      {
+        "format": "rubrica",
+        "activityId": "8dcc5dd0-be30-446d-a7bf-c282f6fd5364",
+        "points": 17.35,
+        "fieldsEqual": true,
+        "fields": [
+          {
+            "label": "Criterio 1",
+            "value": "Hipótesis sobre ósmosis · QA"
+          },
+          {
+            "label": "Destacado del criterio 1",
+            "value": "Formula una hipótesis contrastable sobre ósmosis, relacionando las condiciones y el posible efecto de forma compatible con el movimiento neto de agua a través de una membrana selectivamente permeable según las condiciones del sistema estudiado; se evalúa su planteamiento, sin exigir que se confirme."
+          },
+          {
+            "label": "Logrado del criterio 1",
+            "value": "Formula una hipótesis contrastable sobre ósmosis, relacionando las condiciones y el posible efecto de forma compatible con el movimiento neto de agua a través de una membrana selectivamente permeable según las condiciones del sistema estudiado; se evalúa su planteamiento, sin exigir que se confirme. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 1",
+            "value": "La hipótesis sobre ósmosis propone una relación, pero no permite reconocer qué evidencia la contrastaría."
+          },
+          {
+            "label": "Inicial del criterio 1",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 1",
+            "value": "2.73"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Pregunta sobre ósmosis"
+          },
+          {
+            "label": "Destacado del criterio 2",
+            "value": "Formula una pregunta investigable sobre ósmosis que delimita el fenómeno y la evidencia necesaria para responderla."
+          },
+          {
+            "label": "Logrado del criterio 2",
+            "value": "Formula una pregunta investigable sobre ósmosis que delimita el fenómeno y la evidencia necesaria para responderla. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 2",
+            "value": "La pregunta se relaciona con ósmosis, pero no delimita qué se pretende conocer."
+          },
+          {
+            "label": "Inicial del criterio 2",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 2",
+            "value": "2.75"
+          },
+          {
+            "label": "Criterio 3",
+            "value": "Procedimiento de la práctica de ósmosis"
+          },
+          {
+            "label": "Destacado del criterio 3",
+            "value": "Ejecuta el procedimiento indicado para estudiar ósmosis, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación."
+          },
+          {
+            "label": "Logrado del criterio 3",
+            "value": "Ejecuta el procedimiento indicado para estudiar ósmosis, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 3",
+            "value": "Ejecuta parte del procedimiento de ósmosis, pero omite una condición indicada que dificulta comparar observaciones."
+          },
+          {
+            "label": "Inicial del criterio 3",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 3",
+            "value": "3.65"
+          },
+          {
+            "label": "Criterio 4",
+            "value": "Registro de observaciones de ósmosis"
+          },
+          {
+            "label": "Destacado del criterio 4",
+            "value": "Registra fielmente las observaciones de la práctica de ósmosis, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados."
+          },
+          {
+            "label": "Logrado del criterio 4",
+            "value": "Registra fielmente las observaciones de la práctica de ósmosis, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 4",
+            "value": "Registra observaciones de ósmosis, pero omite información necesaria para relacionarlas con el procedimiento realizado."
+          },
+          {
+            "label": "Inicial del criterio 4",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 4",
+            "value": "2.74"
+          },
+          {
+            "label": "Criterio 5",
+            "value": "Seguridad durante la práctica de ósmosis"
+          },
+          {
+            "label": "Destacado del criterio 5",
+            "value": "Aplica las precauciones indicadas para la práctica de ósmosis y comunica las incidencias observadas antes de continuar cuando exista un riesgo."
+          },
+          {
+            "label": "Logrado del criterio 5",
+            "value": "Aplica las precauciones indicadas para la práctica de ósmosis y comunica las incidencias observadas antes de continuar cuando exista un riesgo. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 5",
+            "value": "Aplica parte de las precauciones indicadas en la práctica de ósmosis, pero necesita corregir una condición de riesgo."
+          },
+          {
+            "label": "Inicial del criterio 5",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 5",
+            "value": "1.83"
+          },
+          {
+            "label": "Criterio 6",
+            "value": "Contraste de hipótesis sobre ósmosis"
+          },
+          {
+            "label": "Destacado del criterio 6",
+            "value": "Contrasta la hipótesis de ósmosis con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación."
+          },
+          {
+            "label": "Logrado del criterio 6",
+            "value": "Contrasta la hipótesis de ósmosis con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 6",
+            "value": "Relaciona parte de las evidencias de ósmosis con la hipótesis, pero deja una inferencia sin respaldo."
+          },
+          {
+            "label": "Inicial del criterio 6",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 6",
+            "value": "3.65"
+          }
+        ],
+        "instrumentId": "8ab25ce2-6458-4845-bbb6-b55fe2df558e",
+        "snapshotId": "20f25185-1ec0-40b5-ac75-2245ad8eb440",
+        "catalog": "evaluation-2026.90"
+      },
+      {
+        "grade": 4,
+        "format": "escala",
+        "name": "QA Ciencias 4 · Escala · Membrana",
+        "description": "Observa los modelos de membrana celular proporcionados y registra con regularidad las características observadas.",
+        "points": 17.35,
+        "startedAt": 1792201250379,
+        "blankScore": true,
+        "autoInstrument": "Tipo de instrumento\nEscala estimativa\nCambiar",
+        "autoStrategy": "Estrategia de enseñanza y aprendizaje\nSin estrategia\nSeleccionar",
+        "preparedObservedMs": 18472,
+        "fields": [
+          {
+            "label": null,
+            "value": "Escala estimativa para QA Ciencias 4 · Escala · Membrana"
+          },
+          {
+            "label": "Indicador 1",
+            "value": "Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas. · QA"
+          },
+          {
+            "label": "Siempre del indicador 1",
+            "value": "En todas las oportunidades observadas."
+          },
+          {
+            "label": "Frecuentemente del indicador 1",
+            "value": "En la mayoría de las oportunidades observadas."
+          },
+          {
+            "label": "A veces del indicador 1",
+            "value": "En algunas oportunidades observadas."
+          },
+          {
+            "label": "Todavía no del indicador 1",
+            "value": "En ninguna oportunidad observada."
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=56cf1906-e246-4916-a9e7-081ee1dd0695&competencyBlockId=b4&returnCourseId=55aced96-10bb-4845-a660-d68c718e5d88&returnSubjectId=56cf1906-e246-4916-a9e7-081ee1dd0695&returnTab=actividades",
+        "activityId": "55c289bf-1dde-4cd1-a071-7da1783fc963",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "eb64c4fc-5a38-40f3-a912-832a32aa57d5",
+        "state": "REOPENED_EXACT_RENDERED_CONFIGURATION",
+        "fieldsEqual": true,
+        "renderedDefinition": {
+          "escala:title": "Escala estimativa para QA Ciencias 4 · Escala · Membrana",
+          "escala:points:0": "17.35",
+          "escala:criterion:0": "Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas. · QA",
+          "escala:level-name:1": "Todavía no",
+          "escala:level-name:2": "A veces",
+          "escala:level-name:3": "Frecuentemente",
+          "escala:level-name:4": "Siempre",
+          "escala:description:0": "Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.",
+          "escala:meta:prepared": "true",
+          "escala:criterion-id:0": "proposal:evaluation-2026.92:7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a:nat-4-membrane-transport-observation:0",
+          "escala:descriptor:0:1": "En ninguna oportunidad observada.",
+          "escala:descriptor:0:2": "En algunas oportunidades observadas.",
+          "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+          "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+          "escala:level-points:1": "0",
+          "escala:level-points:2": "1.3333333333333333",
+          "escala:level-points:3": "2.6666666666666665",
+          "escala:level-points:4": "4",
+          "escala:meta:levelCount": "4",
+          "escala:meta:scorePending": "false",
+          "escala:meta:scoreWeights": "[3]",
+          "escala:criterion-weight:0": "3",
+          "escala:meta:criteriaCount": "1",
+          "escala:meta:catalogVersion": "evaluation-2026.92",
+          "escala:criterion-evidence:0": "{\"title\":\"Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"description\":\"Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"progression\":[\"Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"Describe o registra las características observadas de transporte de membrana, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Registra parte de las características de transporte de membrana, pero mezcla una inferencia con lo observado.\",\"El registro de transporte de membrana contradice la evidencia observada o aporta datos inventados.\",\"No aporta evidencia verificable del desempeño solicitado sobre transporte de membrana.\"]}",
+          "escala:criterion-template:0": "nat-4-membrane-transport-observation",
+          "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+        },
+        "instrumentId": "dd8ca933-d79c-470f-b7c5-d418ed0651d1"
+      },
+      {
+        "grade": 4,
+        "format": "lista-ponderada",
+        "name": "QA Ciencias 4 · Ponderada · Mendel",
+        "description": "Calcula las probabilidades de herencia con el cuadro de Punnett proporcionado y explica el resultado. Asigna crédito parcial y pesos al procedimiento, resultado y explicación.",
+        "points": 17.35,
+        "startedAt": 1792201348105,
+        "blankScore": true,
+        "autoInstrument": "Tipo de instrumento\nLista ponderada\nCambiar",
+        "autoStrategy": "Estrategia de enseñanza y aprendizaje\nSin estrategia\nSeleccionar",
+        "fields": [
+          {
+            "label": null,
+            "value": "Lista ponderada para QA Ciencias 4 · Ponderada · Mendel"
+          },
+          {
+            "label": "Criterio 1",
+            "value": "Procedimiento de cálculo de segunda y tercera leyes de Mendel · QA"
+          },
+          {
+            "label": "Indicador del criterio 1",
+            "value": "Relaciona los datos y la incógnita de segunda y tercera leyes de Mendel mediante la segregación y distribución de alelos en el modelo del problema, usando la independencia solo cuando sus condiciones se cumplen, sin convertir probabilidades en resultados individuales seguros y realiza las operaciones solicitadas sin inventar valores ausentes. Parcial (50%): Utiliza parte de los datos de segunda y tercera leyes de Mendel, pero un paso no mantiene la relación necesaria para resolver la incógnita."
+          },
+          {
+            "label": null,
+            "value": "41"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Resultado de segunda y tercera leyes de Mendel"
+          },
+          {
+            "label": "Indicador del criterio 2",
+            "value": "Presenta un resultado coherente con las operaciones de segunda y tercera leyes de Mendel y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Parcial (50%): El resultado de segunda y tercera leyes de Mendel conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo."
+          },
+          {
+            "label": null,
+            "value": "19"
+          },
+          {
+            "label": "Criterio 3",
+            "value": "Explicación de segunda y tercera leyes de Mendel"
+          },
+          {
+            "label": "Indicador del criterio 3",
+            "value": "Explica la segregación y distribución de alelos en el modelo del problema, usando la independencia solo cuando sus condiciones se cumplen, sin convertir probabilidades en resultados individuales seguros con afirmaciones científicamente compatibles con la información disponible. Parcial (50%): Explica parte de segunda y tercera leyes de Mendel, pero deja sin relacionar un elemento necesario para entender el fenómeno."
+          },
+          {
+            "label": null,
+            "value": "40"
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=56cf1906-e246-4916-a9e7-081ee1dd0695&competencyBlockId=b4&returnCourseId=55aced96-10bb-4845-a660-d68c718e5d88&returnSubjectId=56cf1906-e246-4916-a9e7-081ee1dd0695&returnTab=actividades",
+        "activityId": "1e173242-3bcb-4ace-a5ec-b52c0f3a8039",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "7a36657a-fe53-4363-8a06-9d6a308c0f51",
+        "state": "REOPENED_EXACT",
+        "fieldsEqual": true,
+        "instrumentId": "e9c35874-8441-43e3-af07-fe3c03637feb"
+      },
+      {
+        "grade": 4,
+        "format": "lista-cotejo",
+        "name": "QA Ciencias 4 · Cotejo · Estructuras celulares",
+        "points": 20,
+        "fields": [
+          {
+            "label": null,
+            "value": "Lista de cotejo para QA Ciencias 4 · Cotejo · Estructuras celulares"
+          },
+          {
+            "label": "Criterio 1",
+            "value": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. · QA"
+          },
+          {
+            "label": null,
+            "value": "10"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible."
+          },
+          {
+            "label": null,
+            "value": "10"
+          }
+        ],
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=56cf1906-e246-4916-a9e7-081ee1dd0695&academicPeriodId=fec939cd-a621-4a7e-af29-795e8d792c49&activityId=445a19f5-936b-4cda-9b0c-09d26c4d2c37",
+        "strategyFieldsEqual": true,
+        "manualRestoredExact": true,
+        "activityId": "445a19f5-936b-4cda-9b0c-09d26c4d2c37",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "a27988c4-f34d-4aaa-8c35-bcdb47243173",
+        "state": "REOPENED_EXACT_RENDERED_CONFIGURATION",
+        "fieldsEqual": true,
+        "renderedDefinition": {
+          "lista-cotejo:title": "Lista de cotejo para QA Ciencias 4 · Cotejo · Estructuras celulares",
+          "lista-cotejo:points:0": "10",
+          "lista-cotejo:points:1": "10",
+          "lista-cotejo:criterion:0": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. · QA",
+          "lista-cotejo:criterion:1": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible.",
+          "lista-cotejo:description:0": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas.",
+          "lista-cotejo:description:1": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible.",
+          "lista-cotejo:meta:prepared": "true",
+          "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.92:7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a:nat-4-cells-identification:0",
+          "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.92:7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a:nat-4-cells-comparison:1",
+          "lista-cotejo:meta:pointsMode": "individual",
+          "lista-cotejo:meta:scorePending": "false",
+          "lista-cotejo:meta:scoreWeights": "[3,3]",
+          "lista-cotejo:criterion-weight:0": "3",
+          "lista-cotejo:criterion-weight:1": "3",
+          "lista-cotejo:meta:criteriaCount": "2",
+          "lista-cotejo:meta:catalogVersion": "evaluation-2026.92",
+          "lista-cotejo:criterion-evidence:0": "{\"title\":\"Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas.\",\"description\":\"Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas.\",\"progression\":[\"Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas.\",\"Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Identifica parte de los elementos de célula animal y vegetal, pero confunde una característica que permite distinguirlos.\",\"Asigna nombres o características incompatibles con los elementos solicitados de célula animal y vegetal.\",\"No aporta evidencia verificable del desempeño solicitado sobre célula animal y vegetal.\"]}",
+          "lista-cotejo:criterion-evidence:1": "{\"title\":\"Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"description\":\"Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"progression\":[\"Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Describe los casos de célula animal y vegetal, pero compara con características distintas o deja sin justificar una diferencia.\",\"Atribuye semejanzas o diferencias a célula animal y vegetal que contradicen las características examinadas.\",\"No aporta evidencia verificable del desempeño solicitado sobre célula animal y vegetal.\"]}",
+          "lista-cotejo:criterion-template:0": "nat-4-cells-identification",
+          "lista-cotejo:criterion-template:1": "nat-4-cells-comparison"
+        },
+        "instrumentId": "e577386c-c795-45ce-8895-6a0350f7dde8"
+      }
+    ],
+    "notes": [
+      "Rubric from earlier catalog90 retained without rewriting its snapshot.",
+      "Checklist upgraded to remote92 while retaining every manual visible field; original activity ID retained.",
+      "Scale/weighted created once, strategy-only fields unchanged and reopened exact.",
+      "Scale/checklist reopened via rendered configuration; weighted via editable form.",
+      "Global Activities list timeout and intermittent DNS outage observed separately."
+    ]
+  },
+  "copyReadOnly": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "activityId": "9dbb4d7a-a9e7-4781-aa9a-1db91968faa0",
+    "instrumentId": "4bfce82e-5810-4e2e-95d6-ab9c988156ce",
+    "snapshotId": null,
+    "catalog": null,
+    "curriculumVersionId": null,
+    "scopeId": null,
+    "fieldsCatalog": "editable-fallback-v1",
+    "fieldsHash": "ec0e7f5d90869977f23a7c50e06777ca3b71b0a5e606b83e7c6cf3862ced56ba",
+    "rows": "2"
+  },
+  "historicalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 5,
+    "newSnapshots": 29,
+    "gradeBaseline": {
+      "grade": 4,
+      "preservedReleases": 21,
+      "preservedSnapshots": 97,
+      "newReleases": 2,
+      "newSnapshots": 5
+    }
+  },
+  "secretsAudit": {
+    "filesInspected": 32,
+    "secretValuesFound": false,
+    "privateFilesExcluded": true
+  },
+  "pending": [
+    "Personal Development session now requires password after profile load failure; scale/weighted and final context measurement not verified visually",
+    "Cloudflare dry-run generated assets then CLI failed to terminate in three attempts; commands interrupted, not passing",
+    "Updating a saved instrument with new snapshot failed twice after transaction expiry; prior data remained intact",
+    "Local checklist and its QA copy have editable-fallback-v1 fields and no remote snapshot; do not attribute remote provenance"
+  ],
+  "laterCombinedBuild": {
+    "catalog": "evaluation-2026.92",
+    "command": "pnpm cloudflare:build",
+    "code": 0,
+    "ms": 86042,
+    "note": "Final combined build includes all Science grades and persistence corrections. Prior interrupted build observations remain historical."
+  },
+  "finalBuildStatus": "PASSED_IN_LATER_COMBINED_CATALOG_92_BUILD",
+  "personalSessionRecovered": true,
+  "finalPersonalDbVerification": [
+    {
+      "activityId": "8dcc5dd0-be30-446d-a7bf-c282f6fd5364",
+      "format": "rubrica",
+      "instrumentId": "8ab25ce2-6458-4845-bbb6-b55fe2df558e",
+      "snapshotId": "20f25185-1ec0-40b5-ac75-2245ad8eb440",
+      "catalog": "evaluation-2026.90",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "55c289bf-1dde-4cd1-a071-7da1783fc963",
+      "format": "escala",
+      "instrumentId": "dd8ca933-d79c-470f-b7c5-d418ed0651d1",
+      "snapshotId": "eb64c4fc-5a38-40f3-a912-832a32aa57d5",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "1e173242-3bcb-4ace-a5ec-b52c0f3a8039",
+      "format": "lista-ponderada",
+      "instrumentId": "e9c35874-8441-43e3-af07-fe3c03637feb",
+      "snapshotId": "7a36657a-fe53-4363-8a06-9d6a308c0f51",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "445a19f5-936b-4cda-9b0c-09d26c4d2c37",
+      "format": "lista-cotejo",
+      "instrumentId": "e577386c-c795-45ce-8895-6a0350f7dde8",
+      "snapshotId": "a27988c4-f34d-4aaa-8c35-bcdb47243173",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    }
+  ],
+  "finalHistoricalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 7,
+    "newSnapshots": 40,
+    "gradeBaseline": {
+      "grade": 4,
+      "preservedReleases": 21,
+      "preservedSnapshots": 97,
+      "newReleases": 4,
+      "newSnapshots": 16
+    }
+  },
+  "limitations": [
+    "Historical CLI interruptions remain recorded; later combined catalog92 Cloudflare build passed naturally.",
+    "Global Activities timeout and intermittent Development DNS failure remain observed limitations, despite successful creator cases."
+  ]
+}
