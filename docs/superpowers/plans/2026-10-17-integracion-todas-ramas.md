@@ -20,7 +20,8 @@ Ejecución directa, sin subagentes. Solicitud: fusionar todas las ramas, resolve
 - [x] Reproducir pérdida de progresiones de Inglés al aplicar escala; conservar progresión original y adaptar solo la presentación. 3.011 pruebas afectadas aprobadas.
 - [x] Backend completo (45.526 pruebas), frontend completo (45.852), builds exigidos, Cloudflare dry-run y lint sin errores.
 - [x] Revisar seguridad de ejemplos, secretos excluidos, invariantes de DB/migraciones e identidad de releases históricos. Sin migraciones remotas durante la integración.
-- [ ] Comprobar que todas las referencias iniciales son antecesoras de la integración final.
-- [ ] Publicar la rama de integración, aprobar CI remoto y fusionar mediante PR protegido. El commit final de main lleva [skip ci] para impedir el despliegue automático; sin alterar workflows ni protecciones. Confirmar hash y sincronización en la entrega.
+- [x] Comprobar que todas las referencias iniciales están incluidas en los padres de la integración final; repetir comprobación de ascendencia tras publicar main.
+- [x] Publicar la rama de integración y abrir PR #58 con CI normal.
+- [ ] Aprobar CI remoto y fusionar mediante PR protegido. [skip ci] solo detiene GitHub Actions; Workers Builds y Vercel tienen automatizaciones independientes. Antes de fusionar, confirmar pausa de sus despliegues o autorización expresa del usuario para ese efecto. Sin alterar producción, workflows ni protecciones por cuenta propia. Confirmar hash y sincronización en la entrega.
 
 Las huellas, logs y resultados de comandos se conservan privadamente en .wrangler/integration-2026-10-17; el informe final publica solo evidencia sin credenciales.

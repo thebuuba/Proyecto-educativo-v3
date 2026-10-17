@@ -730,12 +730,19 @@
     }
   ],
   "publication": {
-    "method": "Protected pull request after required CI passes; merge commit [skip ci] prevents a new push CI from automatically migrating/deploying Production.",
-    "remoteCi": "Results are recorded in the PR and final delivery; no success inferred before completion."
+    "pullRequest": "https://github.com/thebuuba/Proyecto-educativo-v3/pull/58",
+    "integrationCommit": "c193224ce4259268e53c1b5d64fc9385ed3b46ef",
+    "method": "Protected PR after required CI passes. [skip ci] prevents only GitHub Actions push workflow, not independent provider automation.",
+    "externalAutomation": [
+      "Workers Builds: aula-base",
+      "Vercel"
+    ],
+    "blockingCondition": "Before merging main, confirm automatic deployments paused or explicit authorization for their effect. Local Cloudflare token received HTTP 403 reading build triggers; dashboard requires login.",
+    "remoteCi": "Read actual PR check status before claiming success."
   },
   "limitations": [
     "No Production deployment, secret/Hyperdrive change, schema migration, reset or data copying.",
-    "The automatic deployment remains configured for future ordinary main pushes.",
+    "Independent Workers Builds/Vercel automation must be accounted for before updating remote main.",
     "Automated suites and focused regressions do not replace every possible browser/payment-provider flow."
   ]
 }
