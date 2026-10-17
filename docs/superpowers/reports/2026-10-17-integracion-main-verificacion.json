@@ -732,17 +732,20 @@
   "publication": {
     "pullRequest": "https://github.com/thebuuba/Proyecto-educativo-v3/pull/58",
     "integrationCommit": "c193224ce4259268e53c1b5d64fc9385ed3b46ef",
-    "method": "Protected PR after required CI passes. [skip ci] prevents only GitHub Actions push workflow, not independent provider automation.",
+    "all75InitialReferencesVerifiedInCommit": "9b17f87fa2dd73c2b0a9460ab2252c65a60ecabe",
+    "method": "Normal protected PR merge after required CI passes. Preserve histories and monitor existing automatic deployments; no skip flag.",
+    "userAuthorization": "Autorizo el despliegue automático al fusionar",
     "externalAutomation": [
       "Workers Builds: aula-base",
-      "Vercel"
+      "Vercel",
+      "GitHub Actions Deploy Cloudflare after successful main push CI"
     ],
-    "blockingCondition": "Before merging main, confirm automatic deployments paused or explicit authorization for their effect. Local Cloudflare token received HTTP 403 reading build triggers; dashboard requires login.",
+    "manualDeployments": false,
     "remoteCi": "Read actual PR check status before claiming success."
   },
   "limitations": [
-    "No Production deployment, secret/Hyperdrive change, schema migration, reset or data copying.",
-    "Independent Workers Builds/Vercel automation must be accounted for before updating remote main.",
+    "No manual deployment, secret/Hyperdrive change, reset or data copying. No remote schema migration executed during preparation; the authorized automatic Production workflow may execute migrations after merge.",
+    "Existing automatic deployments are explicitly authorized by the user for this merge.",
     "Automated suites and focused regressions do not replace every possible browser/payment-provider flow."
   ]
 }

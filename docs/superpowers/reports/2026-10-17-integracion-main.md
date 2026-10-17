@@ -1,6 +1,6 @@
 # Integración de todas las ramas en main
 
-Solicitud del 17/10/2026: fusionar todas las ramas y resolver sus choques, conservando los cambios. Se mantiene la restricción de no modificar producción ni desplegar. El resultado se publica a través de PR protegido; su enlace, CI y hash final se confirman en la entrega.
+Solicitud del 17/10/2026: fusionar todas las ramas y resolver sus choques, conservando los cambios. Inicialmente se mantuvo el límite anterior de no desplegar. Tras detectar automatizaciones externas, el usuario autorizó expresamente «el despliegue automático al fusionar». La publicación sigue el PR protegido y la automatización existente, sin despliegues manuales ni cambios de secretos o Hyperdrive. Su enlace, CI y hash final se confirman en la entrega.
 
 ## Ramas y conservación
 
@@ -40,7 +40,7 @@ La preparación del catálogo agrega únicamente su release nuevo; no ejecuta el
 
 Se verificó el diff y la exclusión de secretos, respaldos y credenciales QA. Los ejemplos tienen credenciales vacías o placeholders. La coincidencia de patrón de Paddle en paddle-sandbox.spec.ts lleva el marcador TESTONLY y es un fixture; no una clave real. Logs, archivos privados y diagnósticos permanecen ignorados en .wrangler.
 
-## Publicación sin desplegar
+## Publicación y autorización de automatizaciones
 
 La integración está publicada en la [PR #58](https://github.com/thebuuba/Proyecto-educativo-v3/pull/58). main exige el check ci y PR, sin un mínimo de revisiones aprobatorias. El CI del PR se ejecuta normalmente; el job Deploy Cloudflare de GitHub Actions omite ese evento. Un commit final con [skip ci] evita otro CI de push y su despliegue encadenado, pero no controla las aplicaciones externas conectadas a Git. No se usa --admin, force push ni se cambia la protección o el workflow. [Alcance de la omisión de GitHub Actions](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs).
 
@@ -48,4 +48,6 @@ Durante el PR aparecieron además Workers Builds y Vercel, independientes de Git
 
 La credencial local pudo listar el Worker pero recibió 403 al consultar sus disparadores de builds; el navegador pide iniciar sesión. No se cambiaron permisos ni ajustes para superar esa limitación. Cloudflare documenta que un push a la rama de producción activa build y deploy; [skip ci] no demuestra que esa integración se detenga. [Control de ramas de Workers Builds](https://developers.cloudflare.com/workers/ci-cd/builds/build-branches/). Vercel también dispone de configuración independiente para activar despliegues por rama. [Configuración Git de Vercel](https://vercel.com/docs/project-configuration/git-configuration).
 
-La fusión remota queda condicionada a terminar CI y a confirmar una pausa de esos despliegues automáticos o recibir autorización explícita para su efecto. Se solicitó esa decisión al usuario, preservando su límite anterior de no desplegar. Las suites no acreditan todos los recorridos posibles de navegador o del proveedor de pagos. El estado final del PR, hash, sincronización y árbol se confirma en la entrega; no se afirma una fusión todavía pendiente.
+El usuario autorizó expresamente el despliegue automático al fusionar. Por ello se utiliza una fusión normal, sin [skip ci], tras completar el check requerido del PR. Se supervisan los despliegues disparados por la fusión; no se inicia ninguno manualmente ni se alteran secretos, Hyperdrive o protecciones. El workflow existente puede aplicar migraciones de producción: esta es una consecuencia de la automatización autorizada, no de la preparación del catálogo de Development. La consulta de deployments anterior a la fusión confirmó que el Worker activo seguía en el deployment del 14/10, sin cambios de tráfico por los checks de esta rama.
+
+Las suites no acreditan todos los recorridos posibles de navegador o del proveedor de pagos. El estado final del PR, hash, sincronización, árbol y automatizaciones se confirma en la entrega; no se afirma una fusión o despliegue todavía pendiente.
