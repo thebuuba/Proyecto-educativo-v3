@@ -1,3 +1,4 @@
+import {englishObjectiveId} from './english-quality-test-utils'
 import {describe,it,expect} from 'vitest'
 import {recommend} from './recommendation-engine'
 import fixtures from '../../../../../data/evaluation-instruments/english-grade-one-strategy-contracts.json'
@@ -25,7 +26,7 @@ describe('Estrategias observables de Inglés primero',()=>{
  })
  for(const f of fixtures)for(const preferredInstrumentType of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const maxScore of [20,17.35])it(`${f.id} ${preferredInstrumentType} ${maxScore}`,()=>{
   const p=recommend({activityTitle:'Actividad',description:f.description,maxScore,participationMode:'INDIVIDUAL',preferredInstrumentType},context,null,[],'UNMAPPED',null)
-  const row=p.criteria.find(c=>c.templateId===`ing-1-strategy-${f.id}`)
+  const row=p.criteria.find(c=>englishObjectiveId(c.templateId)===`ing-1-strategy-${f.id}`)
   expect(row).toBeDefined()
   expect(row!.description).toContain(f.meaning)
   expect(row!.progressionLevels?.length).toBe(5)

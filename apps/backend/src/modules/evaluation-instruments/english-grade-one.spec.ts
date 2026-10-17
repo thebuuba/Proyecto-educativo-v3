@@ -1,3 +1,4 @@
+import {englishObjectiveId} from './english-quality-test-utils'
 import {describe,it,expect} from 'vitest'
 import {recommend,suggestedSelections} from './recommendation-engine'
 import fixtures from '../../../../../data/evaluation-instruments/english-grade-one-contracts.json'
@@ -13,7 +14,7 @@ describe('Inglés común primero: función y modalidad comunicativa',()=>{
  })
  it('tiempo libre no introduce meteorología',()=>{
   const p=propose('Expresarán oralmente en inglés sus preferencias sobre actividades de tiempo libre.')
-  expect(p.criteria.map(c=>c.templateId)).toEqual(['ing-1-preferences','ing-1-intelligibility'])
+  expect([...new Set(p.criteria.map(c=>englishObjectiveId(c.templateId)))]).toEqual(['ing-1-preferences','ing-1-intelligibility'])
  })
  it('escribir una invitación no obliga a responderla',()=>{
   const p=propose('Escribirán en inglés una invitación a una celebración.')
@@ -35,7 +36,7 @@ describe('Inglés común primero: función y modalidad comunicativa',()=>{
  for(const f of fixtures)for(const format of formats)for(const total of [20,17.35])it(`${f.topic} ${format} ${total}`,()=>{
   const p=propose(f.description,format,total),text=JSON.stringify(p.criteria)
   expect(p.activityType).toBe(f.activity)
-  expect(p.criteria.map(c=>c.templateId)).toEqual(f.criteria.map(id=>`ing-1-${id}`))
+  expect([...new Set(p.criteria.map(c=>englishObjectiveId(c.templateId)))]).toEqual(f.criteria.map(id=>`ing-1-${id}`))
   for(const word of f.contains)expect(text).toContain(word)
   for(const word of f.excludes)expect(text.toLowerCase()).not.toContain(word.toLowerCase())
   expect(p.totalScoreUnits).toBe(Math.round(total*100))

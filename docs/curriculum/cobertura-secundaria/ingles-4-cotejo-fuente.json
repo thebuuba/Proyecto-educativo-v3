@@ -1,0 +1,2599 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "scopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+  "grade": 4,
+  "cycle": 2,
+  "subject": "Inglés",
+  "character": "COMMON",
+  "pdfPages": [
+    158,
+    159,
+    160,
+    161,
+    162
+  ],
+  "printedPages": [
+    157,
+    158,
+    159,
+    160,
+    161
+  ],
+  "method": "Cinco páginas renderizadas y cotejadas visualmente, incluidas columnas y continuaciones.",
+  "layoutNotes": [
+    "PDF161 continúa gramática con las otras columnas vacías.",
+    "CONCEPT43 combina encabezado y contenidos; conservar todas sus formas.",
+    "Comprensión oral12 y escrita30 géneros; producción oral10 y escrita14. No trasladar una lista a todas las modalidades.",
+    "Doce ámbitos cotidianos,15 familias de vocabulario y13 registros expresivos/15 intenciones; no copiar los de tercero."
+  ],
+  "status": "VERIFIED_DEFINED_FAMILIES",
+  "records": [
+    {
+      "id": "62783978-901b-57ac-b172-ad019a7bd286",
+      "text": "Temas",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581000,
+      "type": "CONCEPT",
+      "index": 0,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado organizativo, no una fila de calificación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "dc83133a-6e14-506a-bb5e-7197a5a5aa8a",
+      "text": "•Relaciones humanas y sociales",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581001,
+      "type": "CONCEPT",
+      "index": 1,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "66d8758d-d541-5fd1-a7fa-88de13256af9",
+      "text": "•Vivienda, entorno y ciudad",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581002,
+      "type": "CONCEPT",
+      "index": 2,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "a7067818-4f76-5add-805b-9008c3ef7406",
+      "text": "•Escuela y educación",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581003,
+      "type": "CONCEPT",
+      "index": 3,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "685999c2-9faa-5b71-a01d-9ed49a4d0c6f",
+      "text": "•Actividades de la vida diaria",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581004,
+      "type": "CONCEPT",
+      "index": 4,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "6ea740ea-4e93-59f1-86a2-fd0ba37fb7d5",
+      "text": "•Deporte, tiempo libre y recreación",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581005,
+      "type": "CONCEPT",
+      "index": 5,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "f18fc93c-14f9-5992-b54a-f6ec01436838",
+      "text": "•Alimentación",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581006,
+      "type": "CONCEPT",
+      "index": 6,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "938da500-ab70-5773-a6e9-9a9010715109",
+      "text": "•Salud y cuidados físicos",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581007,
+      "type": "CONCEPT",
+      "index": 7,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "626c2955-a5ff-5561-8ab8-2ee939287321",
+      "text": "•Bienes y servicios",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581008,
+      "type": "CONCEPT",
+      "index": 8,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "a8381eff-a1b0-52b1-8f6c-04eb86a478cb",
+      "text": "•Lengua y comunicación",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581009,
+      "type": "CONCEPT",
+      "index": 9,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "c1dc9e7a-e4c4-552f-9fd6-aeb587d12745",
+      "text": "•Ciencia y tecnología",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581010,
+      "type": "CONCEPT",
+      "index": 10,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "faee0ed8-81f1-5434-928b-62a8af98ac0a",
+      "text": "•Viajes y turismo",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581011,
+      "type": "CONCEPT",
+      "index": 11,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "53c204e8-688c-597e-8edb-03f7de585621",
+      "text": "•Fenómenos naturales y medioambiente",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581012,
+      "type": "CONCEPT",
+      "index": 12,
+      "decision": "CONTEXT_ONLY_COMMUNICATIVE_TASK",
+      "note": "Ámbito cotidiano, no criterio por su mención. Se requiere una acción comunicativa explícita; no exigir datos privados.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "85a234da-8c36-53e0-a79a-20d421917aa3",
+      "text": "Vocabulario",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581013,
+      "type": "CONCEPT",
+      "index": 13,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado organizativo, no una fila de calificación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "7a439b00-b3b4-5c04-9c78-8a0df144f228",
+      "text": "• Acontecimientos y celebraciones: have a\nbaby, wedding …",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581014,
+      "type": "CONCEPT",
+      "index": 14,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-events-celebrations"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "e4cc1138-2d68-5072-9f25-3ed9fc4ef650",
+      "text": "• Comunicación: on line, video conference,\nsocial media…",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581015,
+      "type": "CONCEPT",
+      "index": 15,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-communication"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "479c68ba-9bf7-5a99-b56f-d95a85914c8e",
+      "text": "• Deportes: hockey, cycling, ping•pong,\nbowling…",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581016,
+      "type": "CONCEPT",
+      "index": 16,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-sports"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "4dafa1ee-4d7d-5ec7-97e4-ec2577729b3b",
+      "text": "• Educación: high school, scholarship…",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581017,
+      "type": "CONCEPT",
+      "index": 17,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-education"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "f05d7197-00a0-59b3-98f8-4162be80f4e0",
+      "text": "• Equipos y utensilios de cocina: food\nprocessor, stove…",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581018,
+      "type": "CONCEPT",
+      "index": 18,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-kitchen-equipment"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "517af419-5cc1-52ca-af90-c85d8322738c",
+      "text": "• Eventualidades: lose a key, miss a class, get\nhurt…",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581019,
+      "type": "CONCEPT",
+      "index": 19,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-contingencies"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "76a1d934-daa0-50b7-9009-d81c0850be45",
+      "text": "• Experiencias personales: vacation, trip…",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581020,
+      "type": "CONCEPT",
+      "index": 20,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-experiences"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "75cf0881-0d87-5b13-ac01-db6848bb123f",
+      "text": "• Fenómenos naturales: hurricane, storm,\nearthquake…",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1581021,
+      "type": "CONCEPT",
+      "index": 21,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-natural-phenomena"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "acf88ad2-e2db-5bd4-939c-8935ba7ac5f8",
+      "text": "• Herramientas: drill, hammer, scissors, saw,\ns c r e w d r i v e r …",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591000,
+      "type": "CONCEPT",
+      "index": 22,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-tools"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "a1f05971-9b95-51fa-b8ef-91972d3afb05",
+      "text": "•Lugares: countryside, amusement park, summer\nca m p…",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591001,
+      "type": "CONCEPT",
+      "index": 23,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-places"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "a0c7eefb-2652-53ae-8162-65285a1def48",
+      "text": "• Medios de transporte: ship, subway, airplane,\nhelicopter…",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591002,
+      "type": "CONCEPT",
+      "index": 24,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-transport"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "591cfd49-075d-597d-a272-847e7247476c",
+      "text": "• Preparación de alimentos: boil, chop, cut, fry, grill,\nmix…",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591003,
+      "type": "CONCEPT",
+      "index": 25,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-food-preparation"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "d18c0601-f7a3-59ec-ab25-10cb59ba626e",
+      "text": "• Recreación: theater, concert, picnic…",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591004,
+      "type": "CONCEPT",
+      "index": 26,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-recreation"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "96aafe07-469c-5e3c-b716-75fb79dcedcc",
+      "text": "• Tecnología: hologram, 3D printer, live stream…",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591005,
+      "type": "CONCEPT",
+      "index": 27,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-technology"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "1220e6cd-cdd3-54ca-97be-b4263a8432bc",
+      "text": "• Viaje: travel, luggage, travel agency, board a plane …",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591006,
+      "type": "CONCEPT",
+      "index": 28,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-travel"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "91097732-340e-5896-a9e5-3cd58f56f37d",
+      "text": "Expresiones",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591007,
+      "type": "CONCEPT",
+      "index": 29,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado organizativo, no una fila de calificación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ea06ac5a-27b8-5b47-8aa4-8cd0cd6ca218",
+      "text": "• Atraer la atención de alguien: Excuse me, sir! Pardon\nme!..",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591008,
+      "type": "CONCEPT",
+      "index": 30,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-attention"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "75d2325a-518e-5cef-8c87-c0ca3eec049e",
+      "text": "• Animar a alguien:Welldone!Goodjob!Congratulations.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591009,
+      "type": "CONCEPT",
+      "index": 31,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-encouragement"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "c87db446-e57c-5657-ba95-a87976fae1f0",
+      "text": "• Expresar interés y asombro: Wow! Really? That sounds\nnice! . .",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591010,
+      "type": "CONCEPT",
+      "index": 32,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-interest",
+        "ing-4-lexicon-amazement"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "0bbd5075-350a-570f-aa80-2172213815c3",
+      "text": "• Mostrar empatía: Too bad!, How awful!..",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591011,
+      "type": "CONCEPT",
+      "index": 33,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-empathy"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "be48ad01-0a99-5524-a029-6fb828ac90e5",
+      "text": "• Pedir y dar opiniones: I think…, In my opinion…, I\nbelieve\n…",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591012,
+      "type": "CONCEPT",
+      "index": 34,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-ask-opinion",
+        "ing-4-lexicon-opinion"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "9fd6edd2-befa-5833-8ee6-3ac2eb2c9972",
+      "text": "• Expresar acuerdo y desacuerdo: I agree, I don’t think\nso…",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591013,
+      "type": "CONCEPT",
+      "index": 35,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-agreement"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "16b80f5d-1c08-57f0-b44f-3d5996afd430",
+      "text": "• Coincidir y discrepar: Me too, neither do I, I do too, so\nam I…",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591014,
+      "type": "CONCEPT",
+      "index": 36,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-coincidence"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "a8b7aee0-07d7-5cb0-be76-3154524ea649",
+      "text": "• Pedir repetición o aclaración: Pardon me? Excuse me?. .",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591015,
+      "type": "CONCEPT",
+      "index": 37,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-clarification"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "e20d6add-01e6-5cba-9576-0236d0c68579",
+      "text": "•Cambiar de tema: By the way…, anyway…",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591016,
+      "type": "CONCEPT",
+      "index": 38,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-change-topic"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "e820f928-f901-5c8a-a5e4-d742d2bd3492",
+      "text": "•Concluir una conversación: Nice talking to you!..",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591017,
+      "type": "CONCEPT",
+      "index": 39,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-close-conversation"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "8f7d33d0-39ad-58d0-ac8d-2188315c4829",
+      "text": "•Dar una noticia: Guess what? Did I tell you?..",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591018,
+      "type": "CONCEPT",
+      "index": 40,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-news"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "1f6c7517-9581-5479-80b9-4181faed00af",
+      "text": "•Excusarse: I’m sorry, I apologize…",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591019,
+      "type": "CONCEPT",
+      "index": 41,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-excuse"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "fce0fd78-a13a-545c-9f9c-4a425af67069",
+      "text": "•Felicitar: Congratulations! Happy anniversary!",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591020,
+      "type": "CONCEPT",
+      "index": 42,
+      "decision": "CONNECTED_LEXICON_CONTRACTS",
+      "note": "Quince familias de vocabulario y quince intenciones de trece registros expresivos; separar interés/asombro y pedir/dar opiniones. No convertir el análisis de expresiones en otro producto comunicativo ni exigir experiencias privadas.",
+      "providers": [
+        "ing-4-lexicon-congratulations"
+      ],
+      "verification": "english-grade-four-lexicon.spec.ts"
+    },
+    {
+      "id": "6f867b15-248b-5e95-995a-d858412015aa",
+      "text": "Gramática\nOraciones enunciativas (afirmativas y negativas),\ninterrogativas y exclamativas.\nPresente simple para pedir y dar opiniones e\ni n fo r m a c i ó n :\nWhat do you think?\nI think Helen is a very nice person.\nPresente continuo para expresar planes futuros:\nMargaret is visiting her parents in Panama next month.\nPasado simple para comunicar noticias y relatar\nexperiencias:\nGeorge finished the project successfully and got a\npromotion. Last Saturday, I went to the beach with my\nfamily.\nPresente perfecto para comunicar noticias y relatar\nexperiencias recientes:\nAlex has just gotten a better job.\nUsed to:\nI used to attend English classes every afternoon when I\nlived in my hometown.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591021,
+      "type": "CONCEPT",
+      "index": 43,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí. Contiene encabezado Gramática y múltiples contenidos reales: enunciativas, interrogativas, exclamativas y varios tiempos; no descartar como mero encabezado.",
+      "providers": [
+        "ing-4-feature-declarative",
+        "ing-4-feature-interrogative-sentences",
+        "ing-4-feature-present-simple",
+        "ing-4-feature-present-continuous",
+        "ing-4-feature-past-simple",
+        "ing-4-feature-present-perfect",
+        "ing-4-feature-used-to",
+        "ing-4-feature-exclamation"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "1fe7eaad-06f2-5ced-bc31-5d6369ccdd32",
+      "text": "Imperativo para dar instrucciones:\nWalk for three blocks and turn right. Plug in the PC, and\nturn it on.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1591022,
+      "type": "CONCEPT",
+      "index": 44,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí.",
+      "providers": [
+        "ing-4-feature-imperative"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "b0bd3457-cfb7-5b74-a726-c1dd6527f90b",
+      "text": "Presente simple y pasado simple para explicar\nproblemas y sus motivos:\nMy cell phone doesn’t ring for incoming calls\nbecause I dropped it and it broke.\nPasado simple y pasado continuo para explicar\nproblemas y sus motivos:\nThe accident happened because the driver got\ndistracted as he was talking on his cell phone.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1601000,
+      "type": "CONCEPT",
+      "index": 45,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí. Registro compuesto: conservar cada forma, función o ejemplo con su origen.",
+      "providers": [
+        "ing-4-feature-present-simple",
+        "ing-4-feature-past-simple",
+        "ing-4-feature-past-continuous"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "fadeb578-c7a4-598b-b774-3c2c5f6b63a0",
+      "text": "Futuro continuo para expresar planes futuros:\nI’ll be traveling to Canada next summer.\nBe + going to para hacer predicciones y\nanuncios, y expresar planes futuros:\nIt’s going to rain a lot because there are very dark\nclouds. I’m going to get married next month.\nWill para hacer predicciones:\nI will finish remodeling my house by this time\nnext month.\nHope, wish y would like… para expresar deseos:\nI would like to travel to Spain this year.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1601001,
+      "type": "CONCEPT",
+      "index": 46,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí. Registro compuesto: conservar cada forma, función o ejemplo con su origen.",
+      "providers": [
+        "ing-4-feature-future-continuous",
+        "ing-4-feature-going-to",
+        "ing-4-feature-will",
+        "ing-4-feature-hope",
+        "ing-4-feature-wish",
+        "ing-4-feature-would-like"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "45f36813-d768-5f19-958f-c61c2f65239f",
+      "text": "Verbos seguidos por infinitivo, gerundio, o por\ncualquiera de ellos:\nI decided to study medicine.\nI really enjoyed traveling around the island.\nI began playing /to play baseball when I was ten\nyears old.\nPhrasal verbs (turn up, fill out, get along with,\nlook after…):\nTurn the volume up. / Turn it up. They get along\nwell.\nThere + be para hacer anuncios, comunicar\nnoticias, y\nexplicar problemas y sus motivos:\nThere is going to be an open•house exhibition in\nthe mall this weekend.\nThere were forest fires in the National Park this\nmorning.\nThe traffic is slow because there has been a\nterrible accident on the highway.\nCondicional para dar instrucciones, hacer\npredicciones y explicar problemas y sus motivos\n(If/When + presente simple en la cláusula\ncondicional + presente simple en la cláusula\nprincipal):\nIf you press that key, the computer restarts.\nWhen you don’t study, you get bad grades.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1601002,
+      "type": "CONCEPT",
+      "index": 47,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí. Registro compuesto: conservar cada forma, función o ejemplo con su origen.",
+      "providers": [
+        "ing-4-feature-verb-complements",
+        "ing-4-feature-phrasal-verbs",
+        "ing-4-feature-there-be",
+        "ing-4-feature-conditional"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "542426d4-2bf1-5545-81e9-45e861ca791d",
+      "text": "Condicional para expresar deseos y planes\nfuturos (If\n/ When + presente simple en la cláusula\ncondicional+ futuro con will en la cláusula\nprincipal):\nIf I get that job, I will buy a new apartment.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1601003,
+      "type": "CONCEPT",
+      "index": 48,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí. Continúa el condicional con resultado futuro; distinguirlo del condicional de instrucciones del registro47.",
+      "providers": [
+        "ing-4-feature-conditional"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "c3ff652b-9259-592e-ad17-b6ab8cd2efc5",
+      "text": "Voz pasiva para pedir y dar información, comunicar\nnoticias, hacer predicciones y anuncios:\nA few endemic species are endangered.\nMany houses were destroyed by the tornado that hit our\nneighborhood.\nThat man will be fined because he broke the law.\nQuestion tags:\nWe know each other, don’t we? You are Eric, aren´t you?\nPreguntas indirectas y embedded questions:\nCan you show me how to fix it?\nI want to know why the Wi•Fi connection isn’t working.\nGerundios en función sustantiva:\nDancing is a very good activity for you to stay healthy.\nOmisión del artículo:\nLove is a wonderful thing.\nGrados comparativo y superlativo del adjetivo:\nWhich is more popular, soccer or baseball?\nI think baseball is the most popular sport in the\nDominican Republic.\nParticipio presente y participio pasado con función\nadjetiva:\nIt was an exciting tennis match. The excited fans cheered\nwildly.\nAdverbios de tiempo (when, ever, a few weeks ago …);\nde frecuencia (never, always, every year …); de modo\n(well, beautifully…):\nI believe my sister sings beautifully. The car doesn´t work\nproperly.",
+      "pdfPage": 161,
+      "printedPage": "160",
+      "sourceOrder": 1611000,
+      "type": "CONCEPT",
+      "index": 49,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí. Registro compuesto: conservar cada forma, función o ejemplo con su origen.",
+      "providers": [
+        "ing-4-feature-passive",
+        "ing-4-feature-indirect-questions",
+        "ing-4-feature-nominal-gerund",
+        "ing-4-feature-zero-article",
+        "ing-4-feature-frequency-adverbs",
+        "ing-4-feature-question-tags",
+        "ing-4-feature-comparative",
+        "ing-4-feature-present-participle",
+        "ing-4-feature-past-participle",
+        "ing-4-feature-time-adverbs",
+        "ing-4-feature-manner-adverbs"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "34de990e-e0e5-5e4b-b43b-270bfa290d49",
+      "text": "Uso de preposiciones:\nI need information about environmental issues. Can\nyou explain the procedure to me?\nShe is interested in archaeology. Mario is very good at\ncooking.",
+      "pdfPage": 161,
+      "printedPage": "160",
+      "sourceOrder": 1611001,
+      "type": "CONCEPT",
+      "index": 50,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí. Registro compuesto: conservar cada forma, función o ejemplo con su origen.",
+      "providers": [
+        "ing-4-feature-preposition-use"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "531c8db2-ac21-53dc-a3bd-21e459f744b0",
+      "text": "Preposiciones de lugar (on, between, in front of, across\n…) y de tiempo (since, for…):\nThe pharmacy is across the street. Sarah has worked\nthere since 2014. Preposición al final de la oración:\nEverybody knows the company I work for.\nPronombres interrogativos (what, who, where…),\nreflexivos (myself, yourself…) y relativos (who, that…):\nWhat happened to you?",
+      "pdfPage": 161,
+      "printedPage": "160",
+      "sourceOrder": 1611002,
+      "type": "CONCEPT",
+      "index": 51,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí. Registro compuesto: conservar cada forma, función o ejemplo con su origen.",
+      "providers": [
+        "ing-4-feature-time-prepositions",
+        "ing-4-feature-sentence-final-preposition",
+        "ing-4-feature-place-prepositions",
+        "ing-4-feature-interrogative-pronouns",
+        "ing-4-feature-reflexive-pronouns",
+        "ing-4-feature-relative-pronouns"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "b635ef01-6503-539d-886e-7bb305e86247",
+      "text": "Conectores y marcadores de:\nCausa y consecuencia: so, because, since…\nContraste y oposición: but, however…\nConcesión: even so, nevertheless… Finalidad: in order\nto, so that, to…",
+      "pdfPage": 161,
+      "printedPage": "160",
+      "sourceOrder": 1611003,
+      "type": "CONCEPT",
+      "index": 52,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí. Registro compuesto: conservar cada forma, función o ejemplo con su origen.",
+      "providers": [
+        "ing-4-feature-cause-connectors",
+        "ing-4-feature-contrast-connectors",
+        "ing-4-feature-concession-connectors",
+        "ing-4-feature-purpose-connectors"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "2e0d8a40-faab-503d-ad90-25cf3d58f8bf",
+      "text": "Secuencia: first, second, then…",
+      "pdfPage": 161,
+      "printedPage": "160",
+      "sourceOrder": 1611004,
+      "type": "CONCEPT",
+      "index": 53,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí.",
+      "providers": [
+        "ing-4-feature-sequence-connectors"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "d8c18557-e2d0-57cb-8aca-94d774176346",
+      "text": "Tiempo: after, once, when, while, as soon as…",
+      "pdfPage": 161,
+      "printedPage": "160",
+      "sourceOrder": 1611005,
+      "type": "CONCEPT",
+      "index": 54,
+      "decision": "CONNECTED_GRAMMAR_CONTRACTS",
+      "note": "44 familias/115 formas y alias de cuarto: reconocimiento, explicación, uso, comparación e investigación. No heredar los modales ni las cláusulas de tercero ausentes aquí.",
+      "providers": [
+        "ing-4-feature-time-connectors"
+      ],
+      "verification": "english-grade-four-grammar.spec.ts"
+    },
+    {
+      "id": "c590ea3f-216e-5d1b-b816-b8f41138f330",
+      "text": "Funcionales",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582000,
+      "type": "PROCEDURE",
+      "index": 0,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado organizativo, no una fila de calificación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "52308549-0bda-5083-a6d8-534739bdbd6d",
+      "text": "•Solicitar y ofrecer información",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582001,
+      "type": "PROCEDURE",
+      "index": 1,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Evidencias funcionales de cuarto con progresiones propias, cuatro formatos y20/17.35. Con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-4-information"
+      ],
+      "verification": "english-grade-four.spec.ts"
+    },
+    {
+      "id": "a11dde34-588f-5933-8419-8751230eb8f0",
+      "text": "•Hacer predicciones y anuncios",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582002,
+      "type": "PROCEDURE",
+      "index": 2,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Evidencias funcionales de cuarto con progresiones propias, cuatro formatos y20/17.35. Con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-4-prediction",
+        "ing-4-announcement"
+      ],
+      "verification": "english-grade-four.spec.ts"
+    },
+    {
+      "id": "16ef9496-a391-5ace-95aa-d5df17753f32",
+      "text": "•Explicar problemas y sus motivos",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582003,
+      "type": "PROCEDURE",
+      "index": 3,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Evidencias funcionales de cuarto con progresiones propias, cuatro formatos y20/17.35. Con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-4-problem-causes"
+      ],
+      "verification": "english-grade-four.spec.ts"
+    },
+    {
+      "id": "747fc437-0adb-55bb-b44d-8a05996a8427",
+      "text": "•Expresar deseos y planes futuros",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582004,
+      "type": "PROCEDURE",
+      "index": 4,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Evidencias funcionales de cuarto con progresiones propias, cuatro formatos y20/17.35. Con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-4-wishes",
+        "ing-4-plans"
+      ],
+      "verification": "english-grade-four.spec.ts"
+    },
+    {
+      "id": "2b3a5429-0b80-54a1-b65f-fef9ebe77db4",
+      "text": "•Comunicar noticias",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582005,
+      "type": "PROCEDURE",
+      "index": 5,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Evidencias funcionales de cuarto con progresiones propias, cuatro formatos y20/17.35. Con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-4-news"
+      ],
+      "verification": "english-grade-four.spec.ts"
+    },
+    {
+      "id": "592efde5-8241-58bb-b04c-91aeaa50f0ef",
+      "text": "•Relatar experiencias",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582006,
+      "type": "PROCEDURE",
+      "index": 6,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Evidencias funcionales de cuarto con progresiones propias, cuatro formatos y20/17.35. Con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-4-experience"
+      ],
+      "verification": "english-grade-four.spec.ts"
+    },
+    {
+      "id": "a5c837cc-55a6-5cf4-a19b-14670a2fa17a",
+      "text": "•Expresar opiniones",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582007,
+      "type": "PROCEDURE",
+      "index": 7,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Evidencias funcionales de cuarto con progresiones propias, cuatro formatos y20/17.35. Con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-4-opinion"
+      ],
+      "verification": "english-grade-four.spec.ts"
+    },
+    {
+      "id": "dee9eff2-864e-5415-b58e-5002b51648e9",
+      "text": "•Dar y pedir instrucciones",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582008,
+      "type": "PROCEDURE",
+      "index": 8,
+      "decision": "CONNECTED_FUNCTION_CONTRACTS",
+      "note": "Evidencias funcionales de cuarto con progresiones propias, cuatro formatos y20/17.35. Con revisión integral, HTTP y cuatro formatos persistidos.",
+      "providers": [
+        "ing-4-instructions",
+        "ing-4-directions"
+      ],
+      "verification": "english-grade-four.spec.ts"
+    },
+    {
+      "id": "bd98a5df-9887-5099-949e-463ce86021b0",
+      "text": "Discursivos",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582009,
+      "type": "PROCEDURE",
+      "index": 9,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado organizativo, no una fila de calificación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "fde0ce9d-284d-5ec3-ad69-49384cf325ee",
+      "text": "• Comprensión de discursos orales tales como\nconversaciones, anuncios, avisos, mensajes,\ninstrucciones, pronósticos del tiempo,\nnoticias, canciones, poesías, descripciones,\nbiografías y narraciones.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582010,
+      "type": "PROCEDURE",
+      "index": 10,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Listas cotejadas por modalidad: recepción oral12/escrita30, producción oral10/escrita14; audiovisual explícito. Respetar fuentes, productos y alternativas; no trasladar géneros entre listas.",
+      "providers": [
+        "ing-4-genre-conversation",
+        "ing-4-genre-advertisement",
+        "ing-4-genre-notice",
+        "ing-4-genre-message",
+        "ing-4-genre-forecast",
+        "ing-4-genre-news",
+        "ing-4-genre-song",
+        "ing-4-genre-poem",
+        "ing-4-genre-description",
+        "ing-4-genre-biography",
+        "ing-4-genre-narrative",
+        "ing-4-genre-instructions"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "0b69053d-83f9-5c64-83d9-4d5e0afd6d27",
+      "text": "• Producción de discursos orales, tales como\nconversaciones, monólogos, canciones,\nrecetas, mensajes, noticias, presentaciones,\nargumentaciones, descripciones y\nnarraciones.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1582011,
+      "type": "PROCEDURE",
+      "index": 11,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Listas cotejadas por modalidad: recepción oral12/escrita30, producción oral10/escrita14; audiovisual explícito. Respetar fuentes, productos y alternativas; no trasladar géneros entre listas.",
+      "providers": [
+        "ing-4-genre-conversation",
+        "ing-4-genre-recipe",
+        "ing-4-genre-message",
+        "ing-4-genre-news",
+        "ing-4-genre-song",
+        "ing-4-genre-description",
+        "ing-4-genre-narrative",
+        "ing-4-genre-monologue",
+        "ing-4-genre-presentation",
+        "ing-4-genre-argumentation"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "f0304f14-6368-56fb-b1ff-ee3b3c76e549",
+      "text": "• Comprensión de textos escritos\nen formato físico, digital y virtual,\ntales como tarjetas, listas, catálogos,\ndiccionarios, facturas, anuncios, recetas,\nletreros, avisos, afiches, mensajes,\ncorreos electrónicos, instrucciones,\ncurriculum vitae, cartas, formularios,\nnoticias, horarios, agendas, menús,\ncroquis, cuestionarios, folletos,\ncanciones, poesías, historietas, guías\nturísticas, descripciones, biografías y\nnarraciones.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592000,
+      "type": "PROCEDURE",
+      "index": 12,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Listas cotejadas por modalidad: recepción oral12/escrita30, producción oral10/escrita14; audiovisual explícito. Respetar fuentes, productos y alternativas; no trasladar géneros entre listas.",
+      "providers": [
+        "ing-4-genre-business-card",
+        "ing-4-genre-list",
+        "ing-4-genre-advertisement",
+        "ing-4-genre-recipe",
+        "ing-4-genre-sign",
+        "ing-4-genre-notice",
+        "ing-4-genre-poster",
+        "ing-4-genre-message",
+        "ing-4-genre-email",
+        "ing-4-genre-cv",
+        "ing-4-genre-letter",
+        "ing-4-genre-form",
+        "ing-4-genre-news",
+        "ing-4-genre-schedule",
+        "ing-4-genre-agenda",
+        "ing-4-genre-menu",
+        "ing-4-genre-map",
+        "ing-4-genre-questionnaire",
+        "ing-4-genre-brochure",
+        "ing-4-genre-song",
+        "ing-4-genre-poem",
+        "ing-4-genre-comic",
+        "ing-4-genre-tourist-guide",
+        "ing-4-genre-description",
+        "ing-4-genre-biography",
+        "ing-4-genre-narrative",
+        "ing-4-genre-catalog",
+        "ing-4-genre-dictionary",
+        "ing-4-genre-invoice",
+        "ing-4-genre-instructions"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "711629a9-c37e-524a-899a-a723be4c9dae",
+      "text": "• Producción de textos escritos en formato\nfísico, digital y virtual, tales como\nmensajes, correos electrónicos, cartas,\ncurriculum vitae, avisos, afiches, letreros,\nformularios, recetas, instrucciones,\ncuestionarios, biografías, narraciones y\ndescripciones.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592001,
+      "type": "PROCEDURE",
+      "index": 13,
+      "decision": "CONNECTED_MODALITY_SCOPED_GENRES",
+      "note": "Listas cotejadas por modalidad: recepción oral12/escrita30, producción oral10/escrita14; audiovisual explícito. Respetar fuentes, productos y alternativas; no trasladar géneros entre listas.",
+      "providers": [
+        "ing-4-genre-recipe",
+        "ing-4-genre-sign",
+        "ing-4-genre-notice",
+        "ing-4-genre-poster",
+        "ing-4-genre-message",
+        "ing-4-genre-email",
+        "ing-4-genre-cv",
+        "ing-4-genre-letter",
+        "ing-4-genre-form",
+        "ing-4-genre-questionnaire",
+        "ing-4-genre-description",
+        "ing-4-genre-biography",
+        "ing-4-genre-narrative",
+        "ing-4-genre-instructions"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "0a05443b-6101-5c4a-93be-8bcd8299987d",
+      "text": "Estratégicos\nComprensión oral",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592002,
+      "type": "PROCEDURE",
+      "index": 14,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado organizativo, no una fila de calificación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "026f1b85-b3e2-54f6-847d-3b464f123bda",
+      "text": "• Anticipación del contenido del mensaje.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592003,
+      "type": "PROCEDURE",
+      "index": 15,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-anticipation"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "2bd61b29-cf63-561f-96a5-438774203ddf",
+      "text": "• Escucha atenta.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592004,
+      "type": "PROCEDURE",
+      "index": 16,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-listening"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "1357b482-14e5-52ca-8234-7af1951c6ca5",
+      "text": "• Uso del lenguaje no verbal de su\ninterlocutor para comprender el\nmensaje.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592005,
+      "type": "PROCEDURE",
+      "index": 17,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-nonverbal-reception"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "baba5edd-12c3-5997-8354-2cc254b51358",
+      "text": "• Inferencia del significado de palabras y\nexpresiones a partir del contexto y los\nconocimientos previos.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592006,
+      "type": "PROCEDURE",
+      "index": 18,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-inference"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "7676f3b3-57a7-5d56-8d5a-822d7e928f65",
+      "text": "• Solicitud de repetición.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592007,
+      "type": "PROCEDURE",
+      "index": 19,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-help"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "4227a3e8-ad4e-5224-b9ed-1e853d2aa77a",
+      "text": "• Indicación de que se comprende o no.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592008,
+      "type": "PROCEDURE",
+      "index": 20,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-understanding"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "1803c055-9fa3-5abb-9372-6c6f285a25f3",
+      "text": "Producción oral",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592009,
+      "type": "PROCEDURE",
+      "index": 21,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado organizativo, no una fila de calificación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "7d7bc24c-b0b2-5f4d-9eea-2185ffb20a97",
+      "text": "• Reproducción y ensayo de palabras,\nexpresiones y pautas de entonación.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592010,
+      "type": "PROCEDURE",
+      "index": 22,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-rehearsal"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "e18c02c0-110e-5069-9410-d71e03ab784a",
+      "text": "• Identificación de la situación de\nc o m u n i c a c i ó n .",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592011,
+      "type": "PROCEDURE",
+      "index": 23,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-situation"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "4f5cae20-4d1a-5363-ba84-01fb00a1df0e",
+      "text": "• Establecimiento de la intención\ncomunicativa.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592012,
+      "type": "PROCEDURE",
+      "index": 24,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-communicative-purpose"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "9e174e34-95e2-58b4-8000-9dac886419cc",
+      "text": "• Planificación del mensaje.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592013,
+      "type": "PROCEDURE",
+      "index": 25,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-planning"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "d8235acf-90b8-5492-bd1c-30a6eb0521b9",
+      "text": "• Ensayo de nuevas combinaciones\ny expresiones y solicitud de\nre t ro a l i m e n t a c i ó n .",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592014,
+      "type": "PROCEDURE",
+      "index": 26,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-new-combinations",
+        "ing-4-strategy-feedback"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "e059b511-ce79-5870-a988-7bb5ebae4251",
+      "text": "• Uso del lenguaje no verbal para\ncomunicarse.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592015,
+      "type": "PROCEDURE",
+      "index": 27,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-nonverbal-production"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "470268b0-1ce6-5173-a7be-1728b39ae5cc",
+      "text": "Comprensión escrita",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592016,
+      "type": "PROCEDURE",
+      "index": 28,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado organizativo, no una fila de calificación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "38d16184-a8c0-566c-b568-fdb172f3a7aa",
+      "text": "• Establecimiento del propósito de la\nlectura.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592017,
+      "type": "PROCEDURE",
+      "index": 29,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-reading-purpose"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "5ce9e28a-18ff-50c7-a13e-1e02fb509f32",
+      "text": "• Formulación de hipótesis a partir\nde los conocimientos previos y los\nelementos paratextuales.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592018,
+      "type": "PROCEDURE",
+      "index": 30,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-hypothesis"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "909cb1b6-a377-5a09-8fc3-8b714b2a9c01",
+      "text": "• Identificación de la correspondencia\nentre la grafía y el sonido de las palabras.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1592019,
+      "type": "PROCEDURE",
+      "index": 31,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-grapheme-phoneme"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "562545e2-2cfb-5d93-9eff-2baba6ba27cf",
+      "text": "• Inferencia del significado de palabras y\nexpresiones a partir de las pistas textuales y los\nconocimientos previos.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602000,
+      "type": "PROCEDURE",
+      "index": 32,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-inference"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "0f58e490-c64a-5f6b-a5dd-be0fcf39e51e",
+      "text": "• Subrayado, anotación y búsqueda de palabras\nen el diccionario y otras herramientas de\nconsulta.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602001,
+      "type": "PROCEDURE",
+      "index": 33,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-annotation",
+        "ing-4-strategy-dictionary"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "208c64f2-62c3-5d3e-a0db-572f75927473",
+      "text": "• Identificación de l a idea principal y detalles\nespecíficos del texto.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602002,
+      "type": "PROCEDURE",
+      "index": 34,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-main-details"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "72d4893b-3a01-5e6c-ab21-0bfcb0e56d9f",
+      "text": "• Identificación de la intención comunicativa del\ntexto.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602003,
+      "type": "PROCEDURE",
+      "index": 35,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-text-intention"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "aa30be67-9dc7-5b94-9e3a-5aaba2846ed5",
+      "text": "Producción escrita",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602004,
+      "type": "PROCEDURE",
+      "index": 36,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado organizativo, no una fila de calificación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "c3c84eb6-fdc7-5bd3-82b9-a6f1493d1103",
+      "text": "• Establecimiento del propósito del mensaje y\ndel tipo de texto que se va a producir.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602005,
+      "type": "PROCEDURE",
+      "index": 37,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-communicative-purpose",
+        "ing-4-strategy-text-type"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "cac66804-b47e-5646-984e-8d333f837f44",
+      "text": "• Planificación y organización del mensaje.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602006,
+      "type": "PROCEDURE",
+      "index": 38,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-planning"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "6f8e7a07-7557-5cf5-8d9b-e50c73382603",
+      "text": "• Uso del diccionario y otras herramientas de\nconsulta.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602007,
+      "type": "PROCEDURE",
+      "index": 39,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-dictionary"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "a23c5b2f-5db3-5e26-ae02-3edc8af31d0f",
+      "text": "• Revisión del sentido y la corrección del mensaje.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602008,
+      "type": "PROCEDURE",
+      "index": 40,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-revision"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "2f41887f-d6d1-58f3-98a4-406c6dec9158",
+      "text": "Otros:",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602009,
+      "type": "PROCEDURE",
+      "index": 41,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado organizativo, no una fila de calificación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "8e620307-513e-5780-87a9-ce39482b5cf5",
+      "text": "• Utilización de asociaciones mentales y de la\nacción.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602010,
+      "type": "PROCEDURE",
+      "index": 42,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-association"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "51a30b25-02eb-5b34-a17a-d83cd531faf3",
+      "text": "• Automotivación y control del nivel de\nansiedad.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602011,
+      "type": "PROCEDURE",
+      "index": 43,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, autocontrol y humildad como rasgo interno no se convierten en puntuaciones personales.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "36cdeeb1-7cab-591e-ac97-998a21a917ee",
+      "text": "• Búsqueda de oportunidades de uso de la\nlengua.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602012,
+      "type": "PROCEDURE",
+      "index": 44,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-practice"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "dadd828b-90ac-5833-b404-689cc7b45893",
+      "text": "Sociolingüísticos y socioculturales",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602013,
+      "type": "PROCEDURE",
+      "index": 45,
+      "decision": "SOURCE_HEADING_NOT_SEPARATE_CRITERION",
+      "note": "Encabezado organizativo, no una fila de calificación.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "f49310d4-422f-50dc-90cd-04a738b455aa",
+      "text": "• Utilización de las normas de cortesía más\nimportantes.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602014,
+      "type": "PROCEDURE",
+      "index": 46,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-courtesy"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "8c26cbe3-b130-5328-9693-4a86640f17de",
+      "text": "• Empleo de un registro neutro en la realización\nde las diversas funciones comunicativas.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602015,
+      "type": "PROCEDURE",
+      "index": 47,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-neutral-register"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "37d6179b-a8a1-50d7-9e5c-98b1484806d5",
+      "text": "• Comparación entre los siguientes aspectos de\nla República Dominicana y de otros países:",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602016,
+      "type": "PROCEDURE",
+      "index": 48,
+      "decision": "CONNECTED_CULTURAL_COMPARISON_SCOPE_INTRODUCTION",
+      "note": "Introduce la comparación cultural de los siete aspectos siguientes; no es una fila adicional ni exige todos los aspectos a la vez.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "d7a07de3-c3b0-5008-b05b-a1ab75cd8df5",
+      "text": "• Medios de comunicación",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602017,
+      "type": "PROCEDURE",
+      "index": 49,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "621a2703-58da-5987-86fa-63035c17e993",
+      "text": "• Valores, tradiciones y creencias",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602018,
+      "type": "PROCEDURE",
+      "index": 50,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "83404c61-2f8f-5914-b6cd-d4cb66979019",
+      "text": "• Normas de cortesía",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602019,
+      "type": "PROCEDURE",
+      "index": 51,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "a1e26a88-302c-5ade-bba3-295c4fff347d",
+      "text": "• Actividades de tiempo libre",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602020,
+      "type": "PROCEDURE",
+      "index": 52,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "9e675000-3739-58eb-b3e6-fb2d7342927b",
+      "text": "• Atractivos turísticos",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602021,
+      "type": "PROCEDURE",
+      "index": 53,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "fa967b23-257d-5aae-a3e7-14a2278339d6",
+      "text": "• Situaciones problemáticas que afectan a los\njóvenes.",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602022,
+      "type": "PROCEDURE",
+      "index": 54,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "31783c5f-b62d-51a8-a130-88316509f4db",
+      "text": "•Cuidado del medio ambiente",
+      "pdfPage": 160,
+      "printedPage": "159",
+      "sourceOrder": 1602023,
+      "type": "PROCEDURE",
+      "index": 55,
+      "decision": "CONNECTED_EXPLICIT_OBSERVABLE_STRATEGY",
+      "note": "Estrategia observable solicitada, con modalidad y aspectos propios. Planificar oralmente no exige escritura; idea principal no exige detalles ausentes; no confundir reconocimiento de fórmulas con una acción de solicitarlas.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "english-grade-four-strategies-genres.spec.ts"
+    },
+    {
+      "id": "18d13313-e7a4-5f6e-bb76-944a73c7c907",
+      "text": "• Motivación para aprender inglés.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583000,
+      "type": "ATTITUDE_VALUE",
+      "index": 0,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, autocontrol y humildad como rasgo interno no se convierten en puntuaciones personales.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "8d27cd56-5a1a-5e24-a7c1-551a57b0816c",
+      "text": "• Respeto por las normas éticas de la interacción\na través de las TIC.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583001,
+      "type": "ATTITUDE_VALUE",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-context-ethical-ict"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "a9c831d7-6085-505e-9ece-2b64983761a2",
+      "text": "• Uso juicioso del tiempo que se dedica a la\ninteracción a través de las TIC.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583002,
+      "type": "ATTITUDE_VALUE",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-context-agreed-time"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "667f0c4a-b8d2-524e-8133-150ddecd4fe7",
+      "text": "• Cortesía y asertividad en la comunicación.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583003,
+      "type": "ATTITUDE_VALUE",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-strategy-courtesy"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "06ff686c-c90e-5d19-9336-5f89c1ca3011",
+      "text": "• Empatía y solidaridad ante las situaciones que\nafectan a las demás personas.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583004,
+      "type": "ATTITUDE_VALUE",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-context-empathetic-response"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "ed32970b-337e-5e2e-9bd6-fbea58923dd1",
+      "text": "• Dominio propio y autocontrol.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583005,
+      "type": "ATTITUDE_VALUE",
+      "index": 5,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, autocontrol y humildad como rasgo interno no se convierten en puntuaciones personales.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "3ee02fdd-f109-575e-98e5-79ced2689455",
+      "text": "• Respeto al escuchar y expresar opiniones.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583006,
+      "type": "ATTITUDE_VALUE",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-strategy-courtesy"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "bd29df73-0346-5b96-8ea1-e8f79b3cf76b",
+      "text": "•Honestidad al interactuar con las demás\npersonas.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583007,
+      "type": "ATTITUDE_VALUE",
+      "index": 7,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-context-faithful-information"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "75b46bde-cf0a-5072-90ee-174385986f98",
+      "text": "•Cortesía al dar y pedir indicaciones e\ni n s t r u c c i o n e s .",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583008,
+      "type": "ATTITUDE_VALUE",
+      "index": 8,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-strategy-courtesy"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "5c76ad9f-4791-5788-b6d8-efce2b7a67d8",
+      "text": "• Colaboración para resolver los problemas de la\ncomunidad.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583009,
+      "type": "ATTITUDE_VALUE",
+      "index": 9,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-context-social-contribution"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "346d6731-9d89-55a3-a239-8e93c05e4a5c",
+      "text": "• Cuidado del medio ambiente y de los recursos\nnaturales.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583010,
+      "type": "ATTITUDE_VALUE",
+      "index": 10,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-context-care"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "47a3e1d4-064b-57fb-add9-87a671e6d0ac",
+      "text": "• Sentido crítico ante los anuncios y predicciones.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583011,
+      "type": "ATTITUDE_VALUE",
+      "index": 11,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-context-critical-information"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "066b88eb-204d-58cc-ac22-07d490ff2771",
+      "text": "• Humildad al relatar sus experiencias",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583012,
+      "type": "ATTITUDE_VALUE",
+      "index": 12,
+      "decision": "EXCLUDED_PERSONAL_TRAIT_SCORE",
+      "note": "Motivación, ansiedad, autocontrol y humildad como rasgo interno no se convierten en puntuaciones personales.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "11523011-d3d9-52b4-a1aa-04a08a44560a",
+      "text": "• Respeto por las costumbres y tradiciones\npropias y las de los demás países.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1583013,
+      "type": "ATTITUDE_VALUE",
+      "index": 13,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-context-respect-differences"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "238b8a8e-083b-5fdd-a1f0-4e0d1f426f07",
+      "text": "• Respeto por las diferencias relativas a\ngénero, edad, ocupación, nacionalidad,\ncapacidades de las personas, entre otras.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1593000,
+      "type": "ATTITUDE_VALUE",
+      "index": 14,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-context-respect-differences"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "50b43fa7-6229-51db-8413-035d53551912",
+      "text": "• Planificación de las actividades que llevará\na cabo.",
+      "pdfPage": 159,
+      "printedPage": "158",
+      "sourceOrder": 1593001,
+      "type": "ATTITUDE_VALUE",
+      "index": 15,
+      "decision": "CONNECTED_CONDITIONAL_OBSERVABLE_COMMUNICATION",
+      "note": "Condición comunicativa explícita y observable de la tarea; no se califican rasgos internos, hábitos privados ni conducta fuera de ella.",
+      "providers": [
+        "ing-4-plans"
+      ],
+      "verification": "english-grade-four-context-composition.spec.ts"
+    },
+    {
+      "id": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+      "text": "Interactúa en el idioma inglés de forma sostenida y comprensible, utilizando una estructura\nsencilla del discurso en distintas situaciones de comunicación para informar, dar instrucciones,\nnarrar, opinar, expresar planes futuros y explicar problemas sobre aspectos de la vida diaria y\ntemas que le son familiares o de su interés.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1586000,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 0,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Evidencias solicitadas de cuarto; la competencia no se convierte en un criterio genérico independiente.",
+      "providers": [
+        "ing-4-information",
+        "ing-4-interaction",
+        "ing-4-intelligibility",
+        "ing-4-prediction",
+        "ing-4-intelligibility",
+        "ing-4-announcement",
+        "ing-4-written",
+        "ing-4-problem-causes",
+        "ing-4-intelligibility",
+        "ing-4-wishes",
+        "ing-4-written",
+        "ing-4-plans",
+        "ing-4-written",
+        "ing-4-news",
+        "ing-4-experience",
+        "ing-4-written",
+        "ing-4-opinion",
+        "ing-4-intelligibility",
+        "ing-4-instructions",
+        "ing-4-written",
+        "ing-4-directions",
+        "ing-4-interaction",
+        "ing-4-intelligibility"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "bce20a76-7a5c-5a9b-8b21-51c4cad7637a",
+      "text": "Interactúa de forma sencilla en el idioma inglés en distintas situaciones de comunicación sobre\ntemas habituales, utilizando una estructura lógica y creativa en el discurso donde se expresan\nopiniones, se hacen predicciones y se relatan experiencias, empleando estrategias de desempeño\ncomunicativo.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1586001,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Evidencias solicitadas de cuarto; la competencia no se convierte en un criterio genérico independiente.",
+      "providers": [
+        "ing-4-written",
+        "ing-4-intelligibility",
+        "ing-4-opinion"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "53675368-3ba3-5f50-9943-bfb6469046f8",
+      "text": "Describe situaciones y problemas de su entorno inmediato y su vida diaria de forma sencilla,\ndetallada y comprensible para facilitar la solución y el abordaje de éstos, compartiendo\ninformaciones, ideas, razonamientos y puntos de vista, motivos, planes e instrucciones en el\nidioma inglés.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1586002,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Evidencias solicitadas de cuarto; la competencia no se convierte en un criterio genérico independiente.",
+      "providers": [
+        "ing-4-context-problem-description",
+        "ing-4-context-problem-solution",
+        "ing-4-problem-causes"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "a0938bae-4c46-55e0-80bc-cc2b449d8358",
+      "text": "Se relaciona con las demás personas con cortesía, respeto e integridad, valorando las diferencias\nindividuales y la identidad social y cultural local y de otros países al comunicarse en el idioma\ninglés, de forma oral y escrita.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1586003,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Evidencias solicitadas de cuarto; la competencia no se convierte en un criterio genérico independiente.",
+      "providers": [
+        "ing-4-strategy-courtesy",
+        "ing-4-context-respect-differences"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "c2201e5a-bdef-51a5-9559-9d18fa4bacf7",
+      "text": "Localiza, organiza y comparte información pertinente en formato físico, digital o virtual sobre\ntemas de carácter científico y tecnológico propios de su contexto cotidiano o de situaciones de\nsu interés.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1586004,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Evidencias solicitadas de cuarto; la competencia no se convierte en un criterio genérico independiente.",
+      "providers": [
+        "ing-4-research",
+        "ing-4-context-source-information"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "e9b7407f-2e85-54fb-a02d-9c66bdce21fa",
+      "text": "Comunica preferencia de estilos de vida saludables y cuidado del medioambiente, en distintas\nsituaciones sencillas de comunicación en inglés oral y escrito.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1586005,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Evidencias solicitadas de cuarto; la competencia no se convierte en un criterio genérico independiente.",
+      "providers": [
+        "ing-4-context-care",
+        "ing-4-context-risk-care"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "bb1c6adb-248f-5f94-9d96-b7d483e224b0",
+      "text": "Se comunica en el idioma inglés con cortesía, honestidad y actitud de respeto al expresar o\nescuchar opiniones, deseos, relato de experiencias y planes futuros.",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1586006,
+      "type": "SPECIFIC_COMPETENCY",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_COMPETENCY_EVIDENCE",
+      "note": "Evidencias solicitadas de cuarto; la competencia no se convierte en un criterio genérico independiente.",
+      "providers": [
+        "ing-4-strategy-courtesy",
+        "ing-4-context-faithful-information",
+        "ing-4-opinion",
+        "ing-4-wishes",
+        "ing-4-plans",
+        "ing-4-experience"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "ef43141f-76fd-5ec9-a2eb-ce82c5193f72",
+      "text": "Comunicativa",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1585000,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 0,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no es una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "a6cf00c5-1074-5c99-aec1-bb9f9140447f",
+      "text": "Pensamiento Lógico, Crítico y Creativo",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1585001,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 1,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no es una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "5b325ee3-bcc0-593a-aeef-6f10f1eb70fe",
+      "text": "Resolución de Problemas",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1585002,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 2,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no es una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ca827a2a-a180-54a3-8645-5bc3653f1451",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1585003,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 3,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no es una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "ac3ad11a-26aa-5027-ae9d-67830d9b19bb",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1585004,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 4,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no es una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "f96283ed-4ea6-5998-903a-5579667d1767",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1585005,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 5,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no es una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "1927eee1-d784-5e65-b905-00faa66677a8",
+      "text": "Desarrollo Personal y Espiritual",
+      "pdfPage": 158,
+      "printedPage": "157",
+      "sourceOrder": 1585006,
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "index": 6,
+      "decision": "ORGANIZATIONAL_COMPETENCY_NOT_SEPARATE_CRITERION",
+      "note": "Organiza la competencia específica; no es una fila independiente.",
+      "providers": [],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "1e378491-4e54-5bd2-8f00-b70ddfcc6075",
+      "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir del mensaje general, las ideas principales y los detalles específicos de\ntextos escritos y de discursos orales articulados con claridad y en lengua estándar, cuya finalidad es informar, opinar, dar instrucciones,\ncomunicar noticias, narrar, expresar planes futuros, inferir, predecir y explicar problemas y sus motivos, referentes a situaciones de la\nvida diaria y a temas cotidianos o culturales y abstractos de su interés, aunque en ocasiones requiera releer o que le repitan.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624000,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 0,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-information",
+        "ing-4-interaction",
+        "ing-4-intelligibility",
+        "ing-4-prediction",
+        "ing-4-intelligibility",
+        "ing-4-announcement",
+        "ing-4-written",
+        "ing-4-problem-causes",
+        "ing-4-intelligibility",
+        "ing-4-wishes",
+        "ing-4-written",
+        "ing-4-plans",
+        "ing-4-written",
+        "ing-4-news",
+        "ing-4-experience",
+        "ing-4-written",
+        "ing-4-opinion",
+        "ing-4-intelligibility",
+        "ing-4-instructions",
+        "ing-4-written",
+        "ing-4-directions",
+        "ing-4-interaction",
+        "ing-4-intelligibility"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "084555fc-3c0c-5476-8bcf-d1ec6161ae1f",
+      "text": "• Produce discursos orales y escritos comprensibles, conformados por una estructura para informar y expresar, razonamientos,\nnecesidades y puntos de vista relativos a temas que le son familiares o de su interés, con pronunciación, fluidez y corrección aceptables\nen lo oral, y con vocabulario y expresiones familiares en lo escrito.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624001,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 1,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-written",
+        "ing-4-intelligibility"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "4589d1db-eec0-5859-a697-dff794f2747f",
+      "text": "• Interactúa de manera sostenida y con riqueza de vocabulario básico sobre temas cotidianos y de su interés, con la finalidad de informar,\nopinar, dar instrucciones, comunicar noticias, narrar, expresar planes futuros, inferir, predecir y explicar problemas y sus motivos, con\nsuficiente corrección como para que sean comprensibles en toda su extensión.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624002,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 2,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-interaction"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "23246e95-8c14-5aa1-9a78-65978a676c29",
+      "text": "• Responde de forma adecuada a preguntas e indicaciones utilizando el pensamiento lógico- verbal para comprender la relación de\nideas, informaciones, puntos de vista y razonamientos expresados en textos orales y escritos de variada extensión, que tratan temas\nde la vida diaria y aspectos culturales y abstractos de su interés.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624003,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 3,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-information",
+        "ing-4-interaction",
+        "ing-4-intelligibility",
+        "ing-4-prediction",
+        "ing-4-intelligibility",
+        "ing-4-announcement",
+        "ing-4-written",
+        "ing-4-problem-causes",
+        "ing-4-intelligibility",
+        "ing-4-wishes",
+        "ing-4-written",
+        "ing-4-plans",
+        "ing-4-written",
+        "ing-4-news",
+        "ing-4-experience",
+        "ing-4-written",
+        "ing-4-opinion",
+        "ing-4-intelligibility",
+        "ing-4-instructions",
+        "ing-4-written",
+        "ing-4-directions",
+        "ing-4-interaction",
+        "ing-4-intelligibility"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "eaa6d012-2f93-5034-a8e5-d2b8bfd0ec77",
+      "text": "• Produce textos escritos y discursos orales sencillos para presentar información y contrastar elementos, ideas, puntos de vista y\nrazonamientos en diversos temas cotidianos y culturales de su interés, utilizando razonamiento lógico-verbales básicos para estructurar\nsus mensajes y presentarlos de forma creativa y comprensible a través de diversos medios, recursos y estrategias.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624004,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 4,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-opinion"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "80f5108d-6127-5cd0-926d-dc3da189a3ab",
+      "text": "• Interactúa en forma oral o escrita manteniendo la conversación de forma sostenida, utilizando el pensamiento lógico-verbal y crítico\npara presentar, comprender y reaccionar ante ideas, informaciones, razonamientos y puntos de vista de forma clara y creativa.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624005,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 5,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-interaction"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "d0786f69-1071-57d5-acc4-2e45e5dd20f8",
+      "text": "• Responde de forma comprensible a preguntas, y problemas cotidianos o de su área de interés, partiendo de información contenida en\ntextos orales y escritos que describen ideas, razones, puntos de vista y experiencias al detalle de forma sencilla.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624006,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 6,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-context-problem-information"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "8411b792-ce82-5622-ab10-f8b420c212be",
+      "text": "• Plantea problemas de su entorno cotidiano al detalle, compartiendo información, ideas, razonamientos, explicaciones y puntos de\nvista para su solución a través de discursos orales y textos escritos sencillos comprensibles en toda su extensión.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624007,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 7,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-context-problem-description",
+        "ing-4-problem-causes"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "7c1f58e1-7b8a-5276-8656-e5592dda236e",
+      "text": "• Interactúa, tanto de manera oral como por escrito para describir problemas que se le presentan y plantear soluciones posibles,\nutilizando un discurso sencillo, pero crecientemente sostenido.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624008,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 8,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-context-problem-solution"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "f0a087c4-ab44-5283-95cb-9a7b01a3947a",
+      "text": "• Comprende y valora las diferencias individuales y la identidad social y cultural propia y de otras personas en las ideas que lee o escucha.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624009,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 9,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-strategy-cultural-comparison",
+        "ing-4-context-respect-differences"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "f24652d1-8fd4-53cc-81eb-229acc24ea61",
+      "text": "• Se expresa con cortesía, respeto y asertividad, en forma oral o escrita, valorando las diferencias individuales y la identidad social y\ncultural propia y de otros países.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624010,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 10,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-strategy-courtesy",
+        "ing-4-context-respect-differences"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "b0bf3d5e-0f1a-5b63-92a3-2c9cd85ea588",
+      "text": "• Interactúa de forma cortés, respetuosa y coherente en el idioma inglés, valorando de forma crítica las diferencias individuales y la\nidentidad social y cultural local y global.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624011,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 11,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-strategy-courtesy",
+        "ing-4-context-critical-information"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "58b77c5e-889f-5510-8fc4-298ca23071d3",
+      "text": "• Localiza y organiza información de carácter científico y tecnológico sobre temas propios de su contexto cotidiano o de situaciones de\nsu interés, para responder a preguntas e indicaciones de forma adecuada en formato físico digital o virtual.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624012,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 12,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-research"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "623f2f4e-5006-5b7e-8484-f6b092dfc450",
+      "text": "• Produce textos sencillos orales y escritos en el idioma inglés, compartiendo información comprensible en formato presencial, digital o\nvirtual de forma estructurada y con diversidad de vocabulario básico sobre situaciones, temas y acciones de carácter científico.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624013,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 13,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-context-source-information",
+        "ing-4-written",
+        "ing-4-intelligibility"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "d0257dc9-8898-5537-9c4e-8dd44c9c0bb0",
+      "text": "• Interactúa en el idioma inglés de forma sostenida, compartiendo información válida y confiable, y explicando y justificando puntos de\nvista, sobre temas de carácter científico y tecnológico, en espacios presenciales, digitales o virtuales.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624014,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 14,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-context-source-information",
+        "ing-4-interaction"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "0125b3e7-298c-5f88-ba9f-b5e77ff7c076",
+      "text": "• Identifica información, acciones y valores pertinentes para el cuidado de la salud y el medioambiente, a partir de la lectura o escucha\nde textos sobre temas que le son familiares o de su interés.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624015,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 15,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-context-care"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "439b1a4d-bce5-556f-89e8-bf04908acc5f",
+      "text": "• Describe situaciones de riesgo que perjudican tanto al ambiente como a la salud y provee información y puntos de vista para el\ncuidado propio, de las demás personas y de su entorno, utilizando un discurso sencillo en forma oral o escrita.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624016,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 16,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-context-risk-care"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "929f88f6-28d8-539b-a0c7-9638355c8961",
+      "text": "• Comparte información pertinente e indicaciones relativas a problemas prácticos en la salud y el cuidado del medioambiente,\ninteractuando con un discurso sencillo y comprensible de forma oral y escrita.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624017,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 17,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-context-care",
+        "ing-4-interaction"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "fd6fd47e-0a8e-5901-8190-073633362b1f",
+      "text": "• Muestra comprensión apreciativa y honesta de los deseos y aspiraciones, planes y experiencias personales propios y de otras personas.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624018,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 18,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-wishes",
+        "ing-4-plans",
+        "ing-4-experience"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "e5829fc8-0b88-5767-8122-a0bcfef7deab",
+      "text": "• Demuestra conducta cortés y respetuosa al expresar información, perspectivas, sugerencias, consejos e instrucciones tanto en forma\noral como escrita.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624019,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 19,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-strategy-courtesy",
+        "ing-4-opinion"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    },
+    {
+      "id": "1ef90b8b-2572-5df1-b535-086cb0662df5",
+      "text": "• Interactúa de forma cortés, honesta y respetuosa al tratar informaciones, detalles de costumbres y experiencias pasadas, justificando\npuntos de vista, consejos, sugerencia e instrucciones en forma oral o escrita.",
+      "pdfPage": 162,
+      "printedPage": "161",
+      "sourceOrder": 1624020,
+      "type": "ACHIEVEMENT_INDICATOR",
+      "index": 20,
+      "decision": "CONNECTED_CONDITIONAL_ACHIEVEMENT_EVIDENCE",
+      "note": "Acción y condiciones comunicativas solicitadas, sin exigir información privada ni conocimientos científicos especializados.",
+      "providers": [
+        "ing-4-strategy-courtesy",
+        "ing-4-context-faithful-information",
+        "ing-4-strategy-cultural-comparison"
+      ],
+      "verification": "FOURTH_GRADE_DEFINED_CONTENT_AND_COMPOSITION_CONTRACTS"
+    }
+  ],
+  "applicationEvidence": [
+    "evidencias/ingles-4-integral-servicio.json",
+    "evidencias/ingles-4-seguimientos-servicio-60.json",
+    "evidencias/ingles-4-final-flujo-navegador.json",
+    "evidencias/ingles-4-final-persistencia.json",
+    "ingles-4-ejemplos-finales.md",
+    "ingles-4-informe-final.md"
+  ]
+}

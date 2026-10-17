@@ -1,0 +1,11 @@
+[
+ {"id":"courtesy","description":"Dialogarán en inglés para solicitar ayuda con cortesía y asertividad.","sourceIndices":[1,7],"contains":"intención"},
+ {"id":"respect-differences","description":"Escribirán en inglés un mensaje sobre las costumbres de dos personajes sin estereotipos ni descalificaciones por sus modos de vida.","sourceIndices":[2,14],"contains":"personajes"},
+ {"id":"ethical-ict","description":"Escribirán en inglés un mensaje para un chat ficticio respetando las normas éticas de interacción y la privacidad de los datos proporcionados.","sourceIndices":[3],"contains":"datos"},
+ {"id":"agreed-time","description":"Dialogarán en inglés para acordar un encuentro, respetando los horarios y compromisos proporcionados para ambos personajes.","sourceIndices":[4,10,11],"contains":"horarios"},
+ {"id":"empathetic-response","description":"Dialogarán en inglés para responder con empatía a la necesidad que expresa un personaje.","sourceIndices":[5],"contains":"necesidad"},
+ {"id":"purchase-choice","description":"Dialogarán en inglés simulando una compra y justificarán la elección del producto con los precios y necesidades proporcionados.","sourceIndices":[8],"contains":"precios"},
+ {"id":"faithful-information","description":"Escribirán en inglés un mensaje comunicando fielmente la información proporcionada sin inventar datos.","sourceIndices":[9],"contains":"información"},
+ {"id":"care","description":"Presentarán oralmente en inglés consejos para cuidar el medioambiente y la salud de los personajes de una situación dada.","sourceIndices":[15],"contains":"medioambiente"},
+ {"id":"care","description":"Leerán en inglés un mensaje e identificarán las acciones para cuidar la salud y el medioambiente indicadas en el texto.","sourceIndices":[15],"contains":"Identifica"}
+]

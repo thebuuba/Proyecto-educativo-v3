@@ -23,8 +23,8 @@ export class ActivitiesController {
   }
 
   @Get('center')
-  getCenter(@CurrentUser() user: AuthenticatedUser) {
-    return this.activities.getCenter(user.schoolId, user.id, user.roles)
+  getCenter(@CurrentUser() user: AuthenticatedUser, @Query('contextOnly') contextOnly?: string) {
+    return this.activities.getCenter(user.schoolId, user.id, user.roles, contextOnly === 'true')
   }
 
   @Post()

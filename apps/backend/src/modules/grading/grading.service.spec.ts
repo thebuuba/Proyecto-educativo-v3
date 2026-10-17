@@ -62,6 +62,7 @@ describe('GradingService activity teams', () => {
       sectionSubjectId: 'ss-1', academicPeriodId: 'period-1', createdBy: 'user-1', status: 'ACTIVE',
       competencyBlockId: 'b1', competencyBlockWeights: { b1: 0.1666666666666667, b2: 5 / 6 },
       planningEntryId: null, planningMoment: null, pedagogicalActivityType: null, name: 'Actividad', maxScore: 20,
+      teachingStrategyId: null, teachingStrategyOrigin: 'UNKNOWN',
       description: '', activityType: 'individual', activityDate: null, evaluationTechnique: '', studentRole: '', teacherRole: '',
       evidenceInstructions: '', observations: '', resources: [], source: 'grading', groups: [], instrumentId: null,
     })

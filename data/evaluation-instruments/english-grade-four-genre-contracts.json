@@ -1,0 +1,424 @@
+[
+  {
+    "id": "conversation",
+    "label": "conversación",
+    "modes": [
+      "listening",
+      "oral",
+      "interaction"
+    ],
+    "sourceIndices": [
+      10,
+      11
+    ]
+  },
+  {
+    "id": "business-card",
+    "label": "tarjeta de presentación",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "list",
+    "label": "lista de productos",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "advertisement",
+    "label": "anuncio",
+    "modes": [
+      "reading",
+      "listening"
+    ],
+    "sourceIndices": [
+      10,
+      12
+    ]
+  },
+  {
+    "id": "recipe",
+    "label": "receta",
+    "modes": [
+      "reading",
+      "oral",
+      "writing"
+    ],
+    "sourceIndices": [
+      11,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "sign",
+    "label": "letrero",
+    "modes": [
+      "reading",
+      "writing"
+    ],
+    "sourceIndices": [
+      12,
+      13
+    ]
+  },
+  {
+    "id": "notice",
+    "label": "aviso",
+    "modes": [
+      "reading",
+      "listening",
+      "writing"
+    ],
+    "sourceIndices": [
+      10,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "poster",
+    "label": "afiche",
+    "modes": [
+      "reading",
+      "writing"
+    ],
+    "sourceIndices": [
+      12,
+      13
+    ]
+  },
+  {
+    "id": "message",
+    "label": "mensaje",
+    "modes": [
+      "reading",
+      "listening",
+      "oral",
+      "writing"
+    ],
+    "sourceIndices": [
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "email",
+    "label": "correo electrónico",
+    "modes": [
+      "reading",
+      "writing"
+    ],
+    "sourceIndices": [
+      12,
+      13
+    ]
+  },
+  {
+    "id": "cv",
+    "label": "currículum vitae de un personaje ficticio",
+    "modes": [
+      "reading",
+      "writing"
+    ],
+    "sourceIndices": [
+      12,
+      13
+    ]
+  },
+  {
+    "id": "letter",
+    "label": "carta",
+    "modes": [
+      "reading",
+      "writing"
+    ],
+    "sourceIndices": [
+      12,
+      13
+    ]
+  },
+  {
+    "id": "form",
+    "label": "formulario con datos ficticios",
+    "modes": [
+      "reading",
+      "writing"
+    ],
+    "sourceIndices": [
+      12,
+      13
+    ]
+  },
+  {
+    "id": "forecast",
+    "label": "pronóstico del tiempo",
+    "modes": [
+      "listening"
+    ],
+    "sourceIndices": [
+      10
+    ]
+  },
+  {
+    "id": "news",
+    "label": "noticia",
+    "modes": [
+      "reading",
+      "listening",
+      "oral"
+    ],
+    "sourceIndices": [
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "id": "schedule",
+    "label": "horario",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "agenda",
+    "label": "agenda",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "menu",
+    "label": "menú",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "map",
+    "label": "croquis",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "questionnaire",
+    "label": "cuestionario",
+    "modes": [
+      "reading",
+      "writing"
+    ],
+    "sourceIndices": [
+      12,
+      13
+    ]
+  },
+  {
+    "id": "brochure",
+    "label": "folleto",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "song",
+    "label": "canción",
+    "modes": [
+      "reading",
+      "listening",
+      "oral"
+    ],
+    "sourceIndices": [
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "id": "poem",
+    "label": "poesía",
+    "modes": [
+      "reading",
+      "listening"
+    ],
+    "sourceIndices": [
+      10,
+      12
+    ]
+  },
+  {
+    "id": "comic",
+    "label": "historieta",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "tourist-guide",
+    "label": "guía turística",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "description",
+    "label": "descripción",
+    "modes": [
+      "reading",
+      "listening",
+      "oral",
+      "writing"
+    ],
+    "sourceIndices": [
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "biography",
+    "label": "biografía",
+    "modes": [
+      "reading",
+      "listening",
+      "writing"
+    ],
+    "sourceIndices": [
+      10,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "narrative",
+    "label": "narración",
+    "modes": [
+      "reading",
+      "listening",
+      "oral",
+      "writing"
+    ],
+    "sourceIndices": [
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "monologue",
+    "label": "monólogo",
+    "modes": [
+      "oral"
+    ],
+    "sourceIndices": [
+      11
+    ]
+  },
+  {
+    "id": "audiovisual",
+    "label": "video",
+    "modes": [
+      "audiovisual"
+    ],
+    "sourceIndices": [],
+    "source": "EXPLICIT_TASK"
+  },
+  {
+    "id": "catalog",
+    "label": "catálogo",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "dictionary",
+    "label": "diccionario",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "invoice",
+    "label": "factura",
+    "modes": [
+      "reading"
+    ],
+    "sourceIndices": [
+      12
+    ]
+  },
+  {
+    "id": "instructions",
+    "label": "texto de instrucciones",
+    "modes": [
+      "reading",
+      "listening",
+      "writing"
+    ],
+    "sourceIndices": [
+      10,
+      12,
+      13
+    ]
+  },
+  {
+    "id": "presentation",
+    "label": "presentación",
+    "modes": [
+      "oral"
+    ],
+    "sourceIndices": [
+      11
+    ]
+  },
+  {
+    "id": "argumentation",
+    "label": "argumentación",
+    "modes": [
+      "oral"
+    ],
+    "sourceIndices": [
+      11
+    ]
+  }
+]

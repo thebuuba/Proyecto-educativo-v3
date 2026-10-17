@@ -1,5 +1,8 @@
+import {resolveCommonScienceTask,commonScienceCriteria,adaptScienceScale} from '@aula/shared'
+import { resolveCommonFrenchTask, commonFrenchCriteria } from '@aula/shared'
+import {resolveCommonMathTask,commonMathCriteria,adaptMathScale} from '@aula/shared'
 import type { InstrumentRecommendation } from '@aula/shared'
-import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,commonSecondaryLanguageGrade,resolveFirstGradeEnglishTask,firstGradeEnglishCriteria} from '@aula/shared'
+import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,commonSecondaryLanguageGrade,resolveCommonEnglishTask,commonEnglishCriteria,englishTaskGrade} from '@aula/shared'
 import { distributeScoreUnits, instrumentEvaluationConfiguration, validateInstrumentDefinition } from '@aula/shared'
 import { editableAuthoredRecommendation, editableSecondaryTopicRecommendation, findSecondaryLanguageTopic, secondGradeNewsCriteria, withoutResources } from '@aula/shared'
 import { findSecondaryScienceTopic, secondaryScienceCriteria, scientificTaskType, type InstrumentAcademicContext } from '@aula/shared'
@@ -49,8 +52,16 @@ export function preparationFingerprint(input: InstrumentPreparationContext & { n
 
 export function editableFallbackRecommendation(input: InstrumentPreparationContext & { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: number; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
   if (input.evidenceInstructions?.trim()) input = { ...input, description: [input.description, input.evidenceInstructions].filter(Boolean).join('\n') }
-  const english=resolveFirstGradeEnglishTask(input.activityTitle,input.description??'',input.academicContext)
-  if(english)return editableAuthoredRecommendation(firstGradeEnglishCriteria(english),input,input.activityType??english.activityType,'ingles-comunicacion-1')
+  const authorizedGrade=input.academicContext?commonSecondaryLanguageGrade(input.academicContext):input.secondaryLanguageGrade
+  if(authorizedGrade)input={...input,secondaryLanguageGrade:authorizedGrade}
+  const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',input.academicContext)
+  if(commonScience)return adaptScienceScale(editableAuthoredRecommendation(commonScienceCriteria(commonScience),input,input.activityType??commonScience.activityType,`ciencias-naturaleza-comun-${commonScience.grade}`),input.description??'')
+  const commonMath=resolveCommonMathTask(input.activityTitle,input.description??'',input.academicContext)
+  if(commonMath)return adaptMathScale(editableAuthoredRecommendation(commonMathCriteria(commonMath),input,input.activityType??commonMath.activityType,`matematica-comun-${commonMath.grade}`),input.description??'')
+  const french=resolveCommonFrenchTask(input.activityTitle,input.description??'',input.academicContext)
+  if(french)return editableAuthoredRecommendation(commonFrenchCriteria(french),input,input.activityType??french.activityType,`frances-comunicacion-${french.grade}`)
+  const english=resolveCommonEnglishTask(input.activityTitle,input.description??'',input.academicContext)
+  if(english)return editableAuthoredRecommendation(commonEnglishCriteria(english),input,input.activityType??english.activityType,`ingles-comunicacion-${englishTaskGrade(english)}`)
   const resolvedActivity=input.activityType??resolveEvaluationTask(input.activityTitle,input.description??'').action??'OTHER'
   const novel=secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',input.academicContext,resolvedActivity,input.includeAdditionalCandidates)
   if(novel.length&&!findSecondaryLanguageTopic(input.activityTitle,input.description??'',input.academicContext??null)) return editableAuthoredRecommendation(novel,input,resolvedActivity,'novela-analisis-fragmento-5')
@@ -99,7 +110,7 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
     const activity = input.activityType ?? detectSecondaryLanguageActivity(input.activityTitle,input.description ?? '',{level:'SECONDARY',grade:1,subjectCode:'LEN'}) ?? 'CALLIGRAM_CREATION'
     return editableAuthoredRecommendation(firstGradeCalligramCriteria(activity,input.description ?? ''),input,activity,'lengua-secundaria-1-caligrama')
   }
-  const actionCriteria=input.academicContext?.level==='SECONDARY'&&(input.academicContext.subjectCode==='LEN'||resolveEvaluationTask('',input.description??'').product)?actionContentCriteria(resolvedActivity,input.description??''):[]
+  const actionCriteria=input.academicContext?.level==='SECONDARY'&&(input.academicContext.subjectCode==='LEN'||input.academicContext.subjectCode==='MAT'&&resolvedActivity==='EXERCISE_SET'||resolveEvaluationTask('',input.description??'').product)?actionContentCriteria(resolvedActivity,input.description??''):[]
   if(actionCriteria.length) return editableAuthoredRecommendation(actionCriteria,input,resolvedActivity,'action-only')
   const calligram = input.secondaryLanguageGrade !== 1 && input.activityType !== 'REPORT' && (/caligrama/.test(text) || /(?:versos|palabras).*formando (?:la )?silueta/.test(text))
   const writingReport = input.activityType ? input.activityType === 'READING_REPORT_WRITING' : readingReport && /(?:redact|escrib|elabor|produc|cre)[a-záéíóú]*\s+(?:(?:un|el|su)\s+)?informe de lectura/.test(text)

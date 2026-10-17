@@ -1,0 +1,627 @@
+[
+  {
+    "id": "roots",
+    "description": "Analiza las raíces de la ecuación mediante el teorema fundamental del álgebra.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "analysis"
+    ],
+    "variants": [
+      {
+        "description": "Explica el teorema fundamental del álgebra aplicado a la ecuación dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza los errores al contar las raíces de la ecuación.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exponential",
+    "description": "Resuelve las ecuaciones exponenciales dadas.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas del contexto con ecuaciones exponenciales.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica los errores de la ecuación exponencial resuelta.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "logarithmic",
+    "description": "Resuelve las ecuaciones logarítmicas dadas.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas con ecuaciones logarítmicas.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Comprueba las soluciones de la ecuación logarítmica dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "verification"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "quadratic-inequalities",
+    "description": "Resuelve las inecuaciones cuadráticas dadas por el método indicado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Representa gráficamente las inecuaciones cuadráticas proporcionadas.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Analiza y corrige los errores de las inecuaciones cuadráticas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error",
+          "correction"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "quadratic-systems",
+    "description": "Resuelve el sistema de ecuaciones cuadráticas en dos variables dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Representa gráficamente el sistema de ecuaciones cuadráticas.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Comprueba las soluciones del sistema de ecuaciones cuadráticas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "verification"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "inequality-systems",
+    "description": "Resuelve el sistema de inecuaciones cuadráticas dado.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Representa gráficamente el sistema de inecuaciones cuadráticas.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Explica la región solución del sistema de inecuaciones cuadráticas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sequences",
+    "description": "Analiza la regla de las sucesiones dadas.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "analysis"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve las sucesiones con la regla proporcionada.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica por qué los términos de la sucesión no determinan una regla única.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "arithmetic",
+    "description": "Calcula los términos de la sucesión aritmética dada.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas de préstamos con sucesiones aritméticas.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica la diferencia constante de la progresión aritmética indicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "geometric",
+    "description": "Calcula los términos de la sucesión geométrica dada.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas de préstamos con progresiones geométricas.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Compara las sucesiones aritméticas y geométricas dadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "comparison"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "interest",
+    "description": "Calcula el interés simple y compuesto con los datos dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas del contexto con interés compuesto.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Compara el interés simple y compuesto de las situaciones dadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "comparison"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "present-value",
+    "description": "Calcula el valor actual a interés simple con los datos dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas del valor actual a interés compuesto.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica los errores del cálculo del valor actual.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "credit",
+    "description": "Analiza los intereses, descuentos y plazos de la tarjeta de crédito del caso ficticio dado.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "analysis"
+    ],
+    "variants": [
+      {
+        "description": "Compara el saldo absoluto y el saldo insoluto de la tarjeta de crédito.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "comparison"
+        ]
+      },
+      {
+        "description": "Resuelve problemas de tarjeta de crédito con las condiciones proporcionadas.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "complex",
+    "description": "Identifica los números complejos en forma binómica, polar y trigonométrica dados.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "concept"
+    ],
+    "variants": [
+      {
+        "description": "Representa los números complejos dados como pares ordenados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "representation"
+        ]
+      },
+      {
+        "description": "Convierte el número complejo dado a forma binómica y polar.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Resuelve problemas del contexto con números complejos.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sum-difference",
+    "description": "Demuestra las fórmulas de suma y diferencia de ángulos indicadas.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "explanation"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas con las funciones de suma de ángulos.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la fórmula de diferencia de ángulos.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "double-angle",
+    "description": "Demuestra la fórmula del ángulo doble solicitada.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "explanation"
+    ],
+    "variants": [
+      {
+        "description": "Calcula el ángulo doble con los datos dados.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Resuelve problemas con funciones del ángulo doble.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "triple-angle",
+    "description": "Demuestra la fórmula del ángulo triple indicada.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "explanation"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas con funciones del ángulo triple.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Analiza los errores de la fórmula del ángulo triple.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "half-angle",
+    "description": "Demuestra la fórmula del ángulo mitad indicada.",
+    "activity": "ANALYSIS",
+    "requiredActions": [
+      "explanation"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas con funciones del ángulo mitad.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica la elección del signo en el ángulo mitad dado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trig-equations",
+    "description": "Resuelve las ecuaciones trigonométricas lineales y cuadráticas dadas.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Resuelve problemas con ecuaciones trigonométricas.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Comprueba las soluciones de la ecuación trigonométrica dada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "verification"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trig-identities",
+    "description": "Aplica las identidades trigonométricas a los problemas dados.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Demuestra la identidad trigonométrica indicada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      },
+      {
+        "description": "Analiza y corrige los errores de la identidad trigonométrica.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error",
+          "correction"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "limits",
+    "description": "Calcula los límites de las funciones dadas.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Analiza las propiedades de los límites de las sucesiones.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "analysis"
+        ]
+      },
+      {
+        "description": "Resuelve problemas del contexto aplicando límites.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica por qué el límite no es el valor de la función del caso dado.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "explanation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "derivatives",
+    "description": "Deriva las funciones algebraicas dadas mediante las reglas indicadas.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Calcula la derivada de la función mediante el concepto de límite.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Calcula las derivadas trigonométricas y trascendentes dadas.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Resuelve problemas del contexto con derivadas.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Analiza y corrige los errores de las reglas de derivación.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error",
+          "correction"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "integrals",
+    "description": "Integra las funciones sencillas dadas.",
+    "activity": "EXERCISE_SET",
+    "requiredActions": [
+      "calculation",
+      "result"
+    ],
+    "variants": [
+      {
+        "description": "Calcula las integrales definidas e indefinidas sencillas indicadas.",
+        "activity": "EXERCISE_SET",
+        "requiredActions": [
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Identifica las reglas de la integral definida e indefinida dadas.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "concept"
+        ]
+      },
+      {
+        "description": "Resuelve problemas del contexto con integrales sencillas.",
+        "activity": "PROBLEM_SOLVING",
+        "requiredActions": [
+          "understanding",
+          "calculation",
+          "result"
+        ]
+      },
+      {
+        "description": "Explica los errores de la integral indefinida calculada.",
+        "activity": "ANALYSIS",
+        "requiredActions": [
+          "error"
+        ]
+      }
+    ]
+  }
+]

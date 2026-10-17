@@ -54,6 +54,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
   if (!module) return null
   const action = (value: string) => {
     const contract=resolveEvaluationTask('',value)
+    if(module==='READING_REPORT'&&contract.product==='REPORT')return 'READING_REPORT_WRITING'
     if(contract.product==='ANALYTICAL_TEXT'&&!contract.oral) return `${module}_ANALYSIS`
     if (module !== 'READING_REPORT' && contract.product === 'REPORT') return 'REPORT'
     if (/parafras|propias palabras|\bresum(?:iran|ir|e)\b|predicci|anticip|inferir|inferiran|reconstru(?:ir|iran|yan|yen|ye|ccion)/.test(value)
@@ -206,6 +207,22 @@ export { completeFirstGradeNewsCriteria as firstGradeNewsCriteria, completeFirst
 export { findSecondaryMathTopic, secondaryMathCriteria, secondaryMathModules } from './secondary-math'
 export {adaptLanguageScale} from './language-scale'
 export {commonFirstGradeEnglish,resolveFirstGradeEnglishTask,firstGradeEnglishCriteria,firstGradeEnglishSelections,englishGradeOneModule} from './secondary-english-grade-one'
+export {commonSecondGradeEnglish,resolveSecondGradeEnglishTask,secondGradeEnglishCriteria,secondGradeEnglishSelections,englishGradeTwoModule} from './secondary-english-grade-two'
+export {englishGradeTwoGrammar} from './secondary-english-grade-two-grammar'
+export {englishGradeTwoLexicon} from './secondary-english-grade-two-lexicon'
+export {englishGradeTwoStrategies} from './secondary-english-grade-two-strategies'
+export {englishGradeTwoGenres} from './secondary-english-grade-two-genres'
+export {commonThirdGradeEnglish,resolveThirdGradeEnglishTask,thirdGradeEnglishCriteria,thirdGradeEnglishSelections,englishGradeThreeModule} from './secondary-english-grade-three'
+export {englishGradeThreeStrategies} from './secondary-english-grade-three-strategies'
+export {englishGradeThreeGenres} from './secondary-english-grade-three-genres'
+export {commonFourthGradeEnglish,resolveFourthGradeEnglishTask,englishGradeFourModule} from './secondary-english-grade-four'
+export {englishGradeFourGrammar} from './secondary-english-grade-four-grammar'
+export {englishGradeFourLexicon} from './secondary-english-grade-four-lexicon'
+export {englishGradeFourStrategies} from './secondary-english-grade-four-strategies'
+export {englishGradeFourGenres} from './secondary-english-grade-four-genres'
+export {englishGradeThreeGrammar} from './secondary-english-grade-three-grammar'
+export {englishGradeThreeLexicon} from './secondary-english-grade-three-lexicon'
+export {commonSecondaryEnglish,resolveCommonEnglishTask,commonEnglishCriteria,commonEnglishSelections,englishTaskGrade} from './secondary-english'
 export {englishGradeOneGrammar} from './secondary-english-grade-one-grammar'
 export {englishGradeOneLexicon} from './secondary-english-grade-one-lexicon'
 export {englishGradeOneStrategies} from './secondary-english-grade-one-strategies'
@@ -231,3 +248,22 @@ export function addWeekdays(startDate: string, offset: number) {
   }
   return date.toISOString().slice(0, 10)
 }
+export { SUBSCRIPTION_OFFER } from './subscription-offer'
+
+export {englishGradeFiveModule,commonFifthGradeEnglish,resolveFifthGradeEnglishTask} from './secondary-english-grade-five'
+export {englishGradeFiveGrammar} from './secondary-english-grade-five-grammar'
+export {englishGradeFiveLexicon} from './secondary-english-grade-five-lexicon'
+export {englishGradeFiveStrategies} from './secondary-english-grade-five-strategies'
+export {englishGradeFiveGenres} from './secondary-english-grade-five-genres'
+export {englishGradeSixModule,commonSixthGradeEnglish,resolveSixthGradeEnglishTask} from './secondary-english-grade-six'
+export {englishGradeSixGrammar} from './secondary-english-grade-six-grammar'
+export {englishGradeSixLexicon} from './secondary-english-grade-six-lexicon'
+export {englishGradeSixStrategies} from './secondary-english-grade-six-strategies'
+export {englishGradeSixGenres} from './secondary-english-grade-six-genres'
+export {deliveryConditions,deliveryCriteria,withDeliveryCriteria,TaskRequirementError} from './task-delivery-requirements'
+export { teachingStrategies, teachingStrategyCatalogVersion, resolveTeachingStrategy, teachingStrategyAllowed, detectTeachingStrategy, normalizeTeachingStrategyText } from './teaching-strategies'
+export type { TeachingStrategy, TeachingStrategyOrigin, TeachingStrategyContext } from './teaching-strategies'
+
+export * from './secondary-french'
+export * from './secondary-math-common'
+export * from './secondary-science-common'

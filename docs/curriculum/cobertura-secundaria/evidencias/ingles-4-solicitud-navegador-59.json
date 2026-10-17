@@ -1,0 +1,85 @@
+{
+  "grade": 4,
+  "catalogVersion": "evaluation-2026.59",
+  "verification": "GENERATION_ONLY_NOT_ADDITIONAL_CRUD",
+  "description": "Dialogarán en inglés para solicitar instrucciones para una tarea escolar.",
+  "instrument": {
+    "fields": [
+      {
+        "label": "Criterio 1",
+        "value": "Solicitud pertinente de instrucciones"
+      },
+      {
+        "label": "Destacado del criterio 1",
+        "value": "Solicita en inglés instrucciones, precisando la tarea y los pasos que necesita aclarar en la situación proporcionada."
+      },
+      {
+        "label": "Logrado del criterio 1",
+        "value": "La solicitud se comprende y se relaciona con la situación; una referencia necesita precisión."
+      },
+      {
+        "label": "En proceso del criterio 1",
+        "value": "Formula una solicitud general sin precisar la información que necesita para continuar."
+      },
+      {
+        "label": "Inicial del criterio 1",
+        "value": "No se reconoce una solicitud pertinente de la información necesaria para la situación dada."
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Respuesta que sostiene el intercambio"
+      },
+      {
+        "label": "Destacado del criterio 2",
+        "value": "Relaciona su respuesta en inglés con lo dicho por el interlocutor y aporta información pertinente que permite sostener el intercambio."
+      },
+      {
+        "label": "Logrado del criterio 2",
+        "value": "La respuesta permite continuar el intercambio; una referencia necesita aclaración."
+      },
+      {
+        "label": "En proceso del criterio 2",
+        "value": "Responde a parte de la intervención y deja información necesaria sin relacionar."
+      },
+      {
+        "label": "Inicial del criterio 2",
+        "value": "No se reconoce una respuesta pertinente que permita continuar el intercambio."
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Discurso oral sostenido y comprensible"
+      },
+      {
+        "label": "Destacado del criterio 3",
+        "value": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada."
+      },
+      {
+        "label": "Logrado del criterio 3",
+        "value": "Las ideas principales se comprenden; una relación o expresión necesita aclaración."
+      },
+      {
+        "label": "En proceso del criterio 3",
+        "value": "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas."
+      },
+      {
+        "label": "Inicial del criterio 3",
+        "value": "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados."
+      }
+    ],
+    "points": [
+      {
+        "label": "Puntos del criterio 1",
+        "value": "8"
+      },
+      {
+        "label": "Puntos del criterio 2",
+        "value": "6"
+      },
+      {
+        "label": "Puntos del criterio 3",
+        "value": "6"
+      }
+    ],
+    "textPoints": []
+  }
+}

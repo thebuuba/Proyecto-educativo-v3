@@ -5,8 +5,8 @@ import type {
   SaveActivityInput,
 } from '@/modules/activities/types'
 
-export function getActivityCenter(): Promise<ActivityCenterWorkspace> {
-  return api.get<ActivityCenterWorkspace>('/activities/center')
+export function getActivityCenter(options?: { contextOnly?: boolean }): Promise<ActivityCenterWorkspace> {
+  return api.get<ActivityCenterWorkspace>(options?.contextOnly ? '/activities/center?contextOnly=true' : '/activities/center')
 }
 
 export function getActivities(
@@ -44,6 +44,8 @@ export function saveActivity(input: SaveActivityInput): Promise<Activity> {
     instrumentType: input.instrumentType,
     instrumentCriteria: input.instrumentCriteria,
     pedagogicalActivityType: input.pedagogicalActivityType,
+    teachingStrategyId: input.teachingStrategyId,
+    teachingStrategyOrigin: input.teachingStrategyOrigin,
     instrumentSnapshot: input.instrumentSnapshot,
     evaluationTechnique: input.evaluationTechnique,
     observations: input.observations,

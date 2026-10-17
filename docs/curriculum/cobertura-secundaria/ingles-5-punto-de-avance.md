@@ -1,0 +1,13 @@
+# Inglés común de quinto: revisión final pendiente
+
+Fuente PDF163–168, impresas162–167, ámbito73fa64a1-0c71-58a0-90c2-7df2f33b7a62. Seis páginas cotejadas visualmente,156 registros/15 grupos. Las dos últimas páginas de contenido continúan solo gramática; CONCEPT42/47 continúan ejemplos, y36/38 unen encabezados con contenido real. [Ledger](ingles-5-cotejo-fuente.json).
+
+Conectadas en código: doce evidencias funcionales,60 familias gramaticales/120 formas y alias,22 familias de vocabulario/siete intenciones expresivas, estrategias y géneros por modalidad, contexto/indicadores y siete consignas mixtas. Las listas de géneros coinciden exactamente con cuarto tras cotejo independiente: recepción12/30 y producción10/14. La compensación, ideas principales/secundarias y los cuatro aspectos culturales son propios de quinto; no se heredan grafía/sonido, retroalimentación o nuevas combinaciones de cuarto.
+
+Reproducción real .60 antes del proveedor: doce casos sin criterios de quinto. [Evidencia](evidencias/ingles-5-reproduccion-60.json). Pruebas rojas antes de conectar funciones97, gramática4.800, léxico1.160, estrategias/géneros792 y contexto/composición160. Corregidos en revisión: duplicación de solución en una reclamación; `can’t` confundido con `can`; perfecto continuo confundido con simple; planificación de un mensaje confundida con planes futuros; fecha de fuente convertida en fórmula comunicativa; análisis de adverbios convertido en otro producto. Se conservan los límites y operaciones transversales.
+
+**Estado parcial.** No declarar quinto completo por tener proveedores o filas. Faltan revisión final de contenido íntegro, HTTP de todas las familias, selección/operaciones y cuatro recorridos cotidianos autenticados de generación, edición, resumen, guardado y reapertura, cotejados con snapshots e históricos. La matriz conserva este estado. Sin iniciar sexto.
+
+Rama `amplia-instrumentos-secundaria`; cuarto publicado en `6dc1e0b8cc3d160f016462bc451df4f3de25c701`. Catálogo .60 congelado; .61 destinado a las conexiones de quinto. No modificar versiones anteriores, datos, diseño ni esquema; no IA, dependencias, subagentes, main, despliegue o reset.
+
+Comprobación de código: backend29.330/86 y212 de contexto tras el último ajuste; frontend12.020/5; inventario9 y builds. HTTP .61:187 familias, ocho selecciones y cuatro rechazos/conjuntos adicionales aprobados. La revisión de generación en Chrome detectó concordancia de sugerencia; .61 congelado y .62 corrige esa redacción y requisitos conjuntos/alternativos. Aún sin cuatro CRUD de quinto: continuar con .62 y cerrar antes de sexto.

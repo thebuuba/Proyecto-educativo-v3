@@ -1,0 +1,129 @@
+[
+  {
+    "subject": "ING",
+    "grade": 6,
+    "format": "lista-cotejo",
+    "name": "QA calidad · Experiencia y capacidades separadas · sexto",
+    "description": "Leerán en inglés un curriculum vitae e identificarán la experiencia y capacidades del perfil proporcionado de un personaje ficticio.",
+    "activityId": "16e7d658-bee1-4b11-b354-e12cdf042a2a",
+    "catalogVersion": "evaluation-2026.65",
+    "pointTotal": 17.35,
+    "formFields": [
+      {
+        "label": "Criterio 1",
+        "value": "Identifica la experiencia del perfil indicado en el currículum vitae en inglés. Ajuste manual del docente."
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Identifica las capacidades del perfil indicado en el currículum vitae en el texto disponible en inglés."
+      }
+    ],
+    "points": [
+      "8.68",
+      "8.67"
+    ],
+    "reopened": true,
+    "freshEditPageVerified": true,
+    "pendingPointsObserved": true,
+    "blankCriterionCompleted": true,
+    "manualTextAndPointsPreserved": true,
+    "summary": "Resumen de la actividad\nTítulo\nQA calidad · Experiencia y capacidades separadas · sexto\nBloques de competencias\nBloque 1\nTipo de actividad\nComprensión escrita\nModalidad\nIndividual\nTécnica de evaluación\nAnálisis de producciones\nTipo de instrumento\nLista de cotejo\nValor total\n17.35 puntos\nVer descripción\nVer instrumento\nVolver a editar\nConfirmar y guardar",
+    "savedHash": "1f96743db9858d35ef41e7ad0e13ff4cc8481d9faf77c1d7a912db7afdfa5865"
+  },
+  {
+    "subject": "ING",
+    "grade": 6,
+    "format": "rubrica",
+    "name": "QA calidad · Revisamos sin cambios innecesarios · sexto",
+    "description": "Escribirán en inglés un correo electrónico con un mensaje para un personaje ficticio. Revisarán el sentido y la corrección del texto.",
+    "activityId": "2139c7d2-dc5c-4596-9cda-aa737f650085",
+    "catalogVersion": "evaluation-2026.65",
+    "pointTotal": 20,
+    "formFields": [
+      {
+        "label": "Criterio 1",
+        "value": "Revisión observable del sentido y la escritura. Ajuste manual del docente."
+      },
+      {
+        "label": "Destacado del criterio 1",
+        "value": "En la revisión observable, comprueba el sentido y la corrección del mensaje en inglés; mantiene lo correcto y, cuando aparecen problemas durante la comprobación, los identifica y corrige sin alterar la intención."
+      },
+      {
+        "label": "Logrado del criterio 1",
+        "value": "Comprueba el sentido y la corrección; conserva lo correcto y corrige los problemas observados si los hay, aunque una comprobación necesita precisión."
+      },
+      {
+        "label": "En proceso del criterio 1",
+        "value": "La revisión observable comprueba solo parte del sentido o la corrección; quedan comprobaciones sin realizar o problemas observados sin resolver."
+      },
+      {
+        "label": "Inicial del criterio 1",
+        "value": "No se observa la comprobación solicitada; el producto final por sí solo no permite acreditar el proceso de revisión."
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Comunicación por correo electrónico"
+      },
+      {
+        "label": "Destacado del criterio 2",
+        "value": "Relaciona el destinatario y propósito del correo con un cuerpo breve en inglés que permite comprender lo comunicado."
+      },
+      {
+        "label": "Logrado del criterio 2",
+        "value": "La producción permite reconocer el destinatario y propósito del correo y su información solicitada; una relación necesita precisión."
+      },
+      {
+        "label": "En proceso del criterio 2",
+        "value": "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer el destinatario y propósito del correo y su información solicitada."
+      },
+      {
+        "label": "Inicial del criterio 2",
+        "value": "No aporta una producción reconocible que comunique el destinatario y propósito del correo y su información solicitada."
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Texto escrito estructurado y comprensible"
+      },
+      {
+        "label": "Destacado del criterio 3",
+        "value": "Organiza en inglés las ideas del texto con una estructura y relaciones que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo."
+      },
+      {
+        "label": "Logrado del criterio 3",
+        "value": "El texto se comprende; una relación entre ideas necesita revisión."
+      },
+      {
+        "label": "En proceso del criterio 3",
+        "value": "Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el texto."
+      },
+      {
+        "label": "Inicial del criterio 3",
+        "value": "No se reconoce un texto escrito relacionado con el propósito de la tarea."
+      }
+    ],
+    "points": [
+      {
+        "label": "Puntos del criterio 1",
+        "value": "5"
+      },
+      {
+        "label": "Puntos del criterio 2",
+        "value": "9"
+      },
+      {
+        "label": "Puntos del criterio 3",
+        "value": "6"
+      }
+    ],
+    "reopened": true,
+    "freshEditPageVerified": true,
+    "partialDescriptorCompleted": true,
+    "manualPoints": [
+      5,
+      9,
+      6
+    ],
+    "summary": "Resumen de la actividad\nTítulo\nQA calidad · Revisamos sin cambios innecesarios · sexto\nBloques de competencias\nBloque 1\nTipo de actividad\nProducción escrita\nModalidad\nIndividual\nTécnica de evaluación\nAnálisis de producciones\nTipo de instrumento\nRúbrica de evaluación\nValor total\n20 puntos\nVer descripción\nVer instrumento\nVolver a editar\nConfirmar y guardar",
+    "savedHash": "d0f124ab274a473496a758007e087c176d46fa34cdea1df9b40115ea07e891ad"
+  }
+]

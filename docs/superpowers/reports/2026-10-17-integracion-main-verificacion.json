@@ -1,0 +1,804 @@
+{
+  "date": "2026-10-17",
+  "sourceMain": "dfdee49835e35071c811f14216ea71b6c9bbf636",
+  "integrationBranch": "integracion/todas-ramas-2026-10-17",
+  "referencesChecked": 75,
+  "alreadyMergedAtStart": 72,
+  "independentTips": [
+    {
+      "ref": "refs/remotes/origin/amplia-instrumentos-secundaria",
+      "sha": "565650756a60ef6a9bcf353b8d54bebbdc7558e7",
+      "upstream": "",
+      "mergedIntoMain": false,
+      "uniqueCommits": 49
+    },
+    {
+      "ref": "refs/remotes/origin/feat/suscripciones-pagos-20261015",
+      "sha": "4945b9e006b5a82be2953185d7f5eb85af83e61e",
+      "upstream": "",
+      "mergedIntoMain": false,
+      "uniqueCommits": 44
+    }
+  ],
+  "mergeParents": [
+    "eab2aecd95080e4b6bfdc1cdb074bc91cbd8ad4a",
+    "565650756a60ef6a9bcf353b8d54bebbdc7558e7"
+  ],
+  "allInitialReferencesCovered": true,
+  "checks": [
+    {
+      "key": "backendtest",
+      "command": "pnpm --filter backend test",
+      "code": 0,
+      "ms": 19087,
+      "log": ".wrangler/integration-2026-10-17/backendtest.log"
+    },
+    {
+      "key": "frontendtest",
+      "command": "pnpm --filter frontend test --reporter=verbose",
+      "code": 0,
+      "ms": 279713,
+      "log": ".wrangler/integration-2026-10-17/frontendtest.log"
+    },
+    {
+      "key": "backendbuild",
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 11502,
+      "log": ".wrangler/integration-2026-10-17/backendbuild.log"
+    },
+    {
+      "key": "frontendbuild",
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 26159,
+      "log": ".wrangler/integration-2026-10-17/frontendbuild.log"
+    },
+    {
+      "key": "cloudflare",
+      "command": "pnpm cloudflare:build",
+      "code": 0,
+      "ms": 30129,
+      "log": ".wrangler/integration-2026-10-17/cloudflare.log"
+    },
+    {
+      "key": "backendlint",
+      "command": "pnpm --filter backend lint",
+      "code": 0,
+      "ms": 9712,
+      "log": ".wrangler/integration-2026-10-17/backendlint.log"
+    },
+    {
+      "key": "frontendlint",
+      "command": "pnpm --filter frontend lint",
+      "code": 0,
+      "ms": 31948,
+      "log": ".wrangler/integration-2026-10-17/frontendlint.log"
+    }
+  ],
+  "tests": {
+    "backend": {
+      "files": 131,
+      "tests": 45542
+    },
+    "frontend": {
+      "files": 166,
+      "tests": 45856
+    }
+  },
+  "development": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "role": {
+      "role": "app_backend_local",
+      "bypass": false
+    },
+    "frozen92MatchesInstalled": true,
+    "catalog93Installed": true,
+    "counts": {
+      "releases": 26,
+      "snapshots": 121
+    },
+    "billingAccountsTableExists": true,
+    "noDatabaseWrites": true,
+    "catalogInstallation": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "version": "evaluation-2026.93",
+      "operation": "Existing seedEvaluationCatalog with assertEvaluationCatalogTarget and developmentEnvironment guards",
+      "first": "CREATED",
+      "second": "UNCHANGED",
+      "previousReleasesPreserved": 25,
+      "previousSnapshotsPreserved": 121,
+      "after": {
+        "releases": 26,
+        "snapshots": 121
+      },
+      "schemaMigrationsApplied": 0,
+      "productionModified": false
+    }
+  },
+  "secretsAudit": {
+    "filesInspected": 740,
+    "credentialMaterialFound": false,
+    "privateFilesExcluded": true,
+    "examplesChecked": [
+      ".dev.vars.example",
+      ".env.billing-sandbox.example",
+      "apps/backend/.env.example"
+    ]
+  },
+  "refs": [
+    {
+      "ref": "refs/heads/Cursos",
+      "sha": "14f37ddba5a3584babe101a828b458a1c19f7e50",
+      "upstream": "refs/remotes/origin/Cursos",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/Natanael-inicio",
+      "sha": "7eda7dbb2cdde34507d2b2a9761c3ba5ee83578d",
+      "upstream": "refs/remotes/origin/Natanael-inicio",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/Planificacion-alexauris",
+      "sha": "c735a3157c7d329b8c167948da9e5ab3ff747f38",
+      "upstream": "refs/remotes/origin/Planificacion-alexauris",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/actualizacion-sin-cache-cloudflare",
+      "sha": "830b82a5e3c6e3bb179ff72b352f2b4b85f9ce5b",
+      "upstream": "refs/remotes/origin/actualizacion-sin-cache-cloudflare",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/agent/corregir-carga-perfil",
+      "sha": "c94463de183c4fb8546d5a8f922c8e48956fa68a",
+      "upstream": "refs/remotes/origin/agent/corregir-carga-perfil",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/agent/corrige-respuesta-deepseek",
+      "sha": "5d478e62b91fa06d4bf9835169d320044e396938",
+      "upstream": "refs/remotes/origin/agent/corrige-respuesta-deepseek",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/agent/integrar-matriz-curricular",
+      "sha": "25be49215d4c089bf77c0f2fdf92cfd4cafa241e",
+      "upstream": "refs/remotes/origin/agent/integrar-matriz-curricular",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/ajustes-post-redisenio",
+      "sha": "9560834fc66d59930939e20e3f3996852c7450ef",
+      "upstream": "refs/remotes/origin/ajustes-post-redisenio",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/amplia-instrumentos-secundaria",
+      "sha": "565650756a60ef6a9bcf353b8d54bebbdc7558e7",
+      "upstream": "refs/remotes/origin/amplia-instrumentos-secundaria",
+      "mergedIntoMain": false,
+      "uniqueCommits": 49,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/calificaciones",
+      "sha": "6af81085367a0591523b1b7fbb42d9c2a34510e7",
+      "upstream": "refs/remotes/origin/calificaciones",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/cambio-de-tipografia",
+      "sha": "0a2f6c935b63abbc86f485b1a171f8d9a01e3dc1",
+      "upstream": "refs/remotes/origin/cambio-de-tipografia",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/configuracion-inicial",
+      "sha": "ffb14ec6f280fc665b9eb20f991e968d1363e3b2",
+      "upstream": "refs/remotes/origin/configuracion-inicial",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/corrigiendo-errores",
+      "sha": "282f36e168dc2f41a028f8a7efa6a2e8eede4ee0",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/cursos-2.0",
+      "sha": "79ed2059e019a7c0d7a92f1bef12ee570db6bb37",
+      "upstream": "refs/remotes/origin/cursos-2.0",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/feat/ponderacion-competencias",
+      "sha": "f56461237774f055bda312b1117602a5472af0fb",
+      "upstream": "refs/remotes/origin/feat/ponderacion-competencias",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/feature/matriz-curricular-secundaria",
+      "sha": "cdf619c8a8443f4cdbae75d5ea0048c4a122efd7",
+      "upstream": "refs/remotes/origin/feature/matriz-curricular-secundaria",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/instrumentos",
+      "sha": "6dee60a46fc1790adbfbca928f029bf469e3b769",
+      "upstream": "refs/remotes/origin/instrumentos",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/instrumentos-evaluacion",
+      "sha": "592c0dfb4c6fa87ac20ac2b2612c91218f6c49ff",
+      "upstream": "refs/remotes/origin/instrumentos-evaluacion",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/main",
+      "sha": "05320d24b484673d08118916b8c56d2dc204cac1",
+      "upstream": "refs/remotes/origin/main",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/planificacion",
+      "sha": "acbd3e6e3c8214dadd8dc3076fea15228de6326b",
+      "upstream": "refs/remotes/origin/planificacion",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/prueba-de-diseno",
+      "sha": "e14ee617a97b269134f3c0394de54ecf2bf4a2cd",
+      "upstream": "refs/remotes/origin/prueba-de-diseno",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/prueba-de-diseno-al-inicio",
+      "sha": "b3bc53f8cfb1aba1362c4d17e044ddea1c78bba9",
+      "upstream": "refs/remotes/origin/prueba-de-diseno-al-inicio",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/reestructurando-horario",
+      "sha": "4f1adeb7925f4018f6224a7e013a577caaa7119d",
+      "upstream": "refs/remotes/origin/reestructurando-horario",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/reportes",
+      "sha": "331bd85535513d5e6008de1f6d58af2bc00c5faa",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/restaura-flujo-creador",
+      "sha": "1d3a99b24d19b819f24a58d678592662c13edd1a",
+      "upstream": "refs/remotes/origin/restaura-flujo-creador",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/trabajo-en-matricula-y-cursos",
+      "sha": "3b5f4a38d6c4b42723bb556edbcdbc899c93e54c",
+      "upstream": "refs/remotes/origin/trabajo-en-matricula-y-cursos",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/trabajo-nataneel-10-de-agosto",
+      "sha": "5d33b9cc775dad99216ded28e7cae162dd59bd8d",
+      "upstream": "refs/remotes/origin/trabajo-nataneel-10-de-agosto",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/trabajo/2026-09-24",
+      "sha": "2ed298d496e8924766439656a27a4d2671364a90",
+      "upstream": "refs/remotes/origin/trabajo/2026-09-24",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/heads/trabajo/post-pr-51",
+      "sha": "faf7ff9b23ec574f80ff015d82b6718626a1b3c5",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/Cursos",
+      "sha": "14f37ddba5a3584babe101a828b458a1c19f7e50",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/Login",
+      "sha": "e93c79edfd77214c8c8995b9ce6cd05d6044c9f9",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/actualizacion-sin-cache-cloudflare",
+      "sha": "830b82a5e3c6e3bb179ff72b352f2b4b85f9ce5b",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/agent/corregir-carga-perfil",
+      "sha": "c94463de183c4fb8546d5a8f922c8e48956fa68a",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/agent/corrige-respuesta-deepseek",
+      "sha": "5d478e62b91fa06d4bf9835169d320044e396938",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/agent/integrar-matriz-curricular",
+      "sha": "25be49215d4c089bf77c0f2fdf92cfd4cafa241e",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/ajustes-post-redisenio",
+      "sha": "9560834fc66d59930939e20e3f3996852c7450ef",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/amplia-instrumentos-secundaria",
+      "sha": "565650756a60ef6a9bcf353b8d54bebbdc7558e7",
+      "upstream": "",
+      "mergedIntoMain": false,
+      "uniqueCommits": 49,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/cambio-de-tipografia",
+      "sha": "0a2f6c935b63abbc86f485b1a171f8d9a01e3dc1",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/corrige-auth-cloudflare",
+      "sha": "8563567fe519db3272712b92940e853abd712145",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/desarrollo-supabase-local",
+      "sha": "7526c324abb50dc85c48e9145725e4ba82c366c0",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/etapa-de-velocidad-del-sistema",
+      "sha": "89a44bcb34b22b50425ab488e8f6d5a975c1dbd8",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/feat/actividades-multiples-bloques",
+      "sha": "93f03ef5fd38ce2d14a03553dd9cbceeda7a95b1",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/feat/estilo-panel-configuracion",
+      "sha": "eeb7a09c8972a2114488d6da9a012af0ef5061f5",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/feat/ponderacion-competencias",
+      "sha": "f56461237774f055bda312b1117602a5472af0fb",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/feat/sidebar-inicio-v2",
+      "sha": "4f139511a9e7abd823a6c21bb3c9259db4f3dec6",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/feat/suscripciones-pagos-20261015",
+      "sha": "4945b9e006b5a82be2953185d7f5eb85af83e61e",
+      "upstream": "",
+      "mergedIntoMain": false,
+      "uniqueCommits": 44,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/feat/web-publica-polymet",
+      "sha": "1495c86d7cf59844bbc5132878b3fb302fd71956",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/feature/matriz-curricular-secundaria",
+      "sha": "cdf619c8a8443f4cdbae75d5ea0048c4a122efd7",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/feature/paleta-definitiva-aulabase",
+      "sha": "2ac5c5fd4a64b8e2fdee069f1340ea72afafd744",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/feature/paleta-definitiva-integrada",
+      "sha": "7d828a36782ab62a4083db6531fd65924ea83252",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/fix/agenda-fin-semana",
+      "sha": "e277a65461a4c05be792068edbd6019ec0c07fd7",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/fix/configuracion-sin-hardcoding",
+      "sha": "dd52f0184bc215f5cc46e867cb76810dd4cb5a78",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/fix/instrumento-automatico",
+      "sha": "659f99bc86e16cd9dfb03dca3dd2483a269944b0",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/fix/reconciliar-migracion-produccion",
+      "sha": "1e1492d9a9efb019ac8661a6dd96ae4923f3d39b",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/fix/retirar-estudiantes-global",
+      "sha": "8a0d0eb1c39663fb22b4cee5dc9e8acb7db61faa",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/fusion-persistencia-sesion",
+      "sha": "4569c54a18d30e4e277f644350e010cec4d4cfd1",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/instrumentos",
+      "sha": "6dee60a46fc1790adbfbca928f029bf469e3b769",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/instrumentos-evaluacion",
+      "sha": "592c0dfb4c6fa87ac20ac2b2612c91218f6c49ff",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/integracion/busqueda-centros-relevante",
+      "sha": "0a188774e0322c9e0eeb68b725ff3d14bc64fcd6",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/integracion/main-2026-09-26",
+      "sha": "dc820fa65ccdaf542e7f6bd7076c7216c1a66f75",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/integracion/todas-ramas-2026-10-14",
+      "sha": "4eef36dbabb5e980248a31b6e0f25cfe6d3b3552",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/main",
+      "sha": "dfdee49835e35071c811f14216ea71b6c9bbf636",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/migracion-cloudflare-supabase",
+      "sha": "825f549804040d749427e32ccd5306f4f3472650",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/monitoriza-cloudflare",
+      "sha": "6256e96cf325b24deaf076d4e4337e6205c9e49f",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/optimizacion-y-diseno",
+      "sha": "3f9e3d65d687e0198caeac7cb3292f26dc644cfc",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/planificacion",
+      "sha": "acbd3e6e3c8214dadd8dc3076fea15228de6326b",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/planificaciones",
+      "sha": "8dc19ae7d86be3ce9d4b6115a78fd9755aa10385",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/prueba-de-diseno-al-inicio",
+      "sha": "b3bc53f8cfb1aba1362c4d17e044ddea1c78bba9",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/rediseno-3",
+      "sha": "4d797f6a951de9eccfc97c427b754de69cf34430",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/rediseno-de-inicio-y-sidebar",
+      "sha": "607621388a2a014932710f9ec0d86acaab23b7bf",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/reestructurando-horario",
+      "sha": "d0381a36046b2e0784883b5e9453ea230c064b15",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/restaura-flujo-creador",
+      "sha": "1d3a99b24d19b819f24a58d678592662c13edd1a",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/trabajo-nataneel-10-de-agosto",
+      "sha": "5d33b9cc775dad99216ded28e7cae162dd59bd8d",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/trabajo/2026-09-24",
+      "sha": "da98efa04cfc14e683267107ee13f0bf1f74df2a",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    },
+    {
+      "ref": "refs/remotes/origin/trabajo/continuacion-20261008",
+      "sha": "72543713f1fdbe5e06e26f6604c4b5e2f405d444",
+      "upstream": "",
+      "mergedIntoMain": true,
+      "uniqueCommits": 0,
+      "includedInMergeParents": true
+    }
+  ],
+  "publication": {
+    "pullRequest": "https://github.com/thebuuba/Proyecto-educativo-v3/pull/58",
+    "integrationCommit": "c193224ce4259268e53c1b5d64fc9385ed3b46ef",
+    "all75InitialReferencesVerifiedInCommit": "9b17f87fa2dd73c2b0a9460ab2252c65a60ecabe",
+    "method": "Normal protected PR merge after required CI passes. Preserve histories and monitor existing automatic deployments; no skip flag.",
+    "userAuthorization": "Autorizo el despliegue automático al fusionar",
+    "externalAutomation": [
+      "Workers Builds: aula-base",
+      "Vercel",
+      "GitHub Actions Deploy Cloudflare after successful main push CI"
+    ],
+    "manualDeployments": false,
+    "remoteCi": "Read actual PR check status before claiming success."
+  },
+  "limitations": [
+    "No manual deployment, secret/Hyperdrive change, reset or data copying. No remote schema migration executed during preparation; the authorized automatic Production workflow may execute migrations after merge.",
+    "Existing automatic deployments are explicitly authorized by the user for this merge.",
+    "Automated suites and focused regressions do not replace every possible browser/payment-provider flow."
+  ],
+  "localRuntime": {
+    "base": "http://localhost:8787",
+    "servedHtmlMatchesBuild": true,
+    "assets": [
+      {
+        "asset": "/assets/index-DJrdVzo5.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/rolldown-runtime-QTnfLwEv.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/icons-DmPKZ_NB.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/vendor-DLmIBSW3.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/cn-hZG6twJP.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/Button-BTgVqE4e.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/SemanticUI-DZO5duNW.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/Modal-BSkLj0du.js",
+        "matchesBuiltFile": true
+      },
+      {
+        "asset": "/assets/index-CT14kIdm.css",
+        "matchesBuiltFile": true
+      }
+    ],
+    "billingUnauthenticatedStatus": 401,
+    "browserObservation": "Personal Development session: Subscription page loads, USD7.99 offer and sandbox operations disabled. Initial old runtime returned Cannot GET /api/v1/billing; targeted restart resolved it.",
+    "noStorageOrSessionCleared": true
+  },
+  "review": {
+    "originalBlockingConversations": 5,
+    "focusedFrontendTests": 13,
+    "focusedReceiptsTests": 8,
+    "schemaCorrespondenceTests": 11,
+    "allReproducedAndCorrected": true,
+    "sqlMigrationChanges": false
+  }
+}

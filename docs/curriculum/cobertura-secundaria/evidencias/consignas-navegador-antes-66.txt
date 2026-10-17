@@ -1,0 +1,718 @@
+- complementary:
+  - link "Aula Base, inicio":
+    - /url: /inicio
+  - button "Expandir menú":
+  - navigation "Navegación principal":
+    - link "Inicio":
+      - /url: /inicio
+    - link "Cursos":
+      - /url: /cursos
+    - link "Horario":
+      - /url: /horario
+    - link "Asistencia":
+      - /url: /asistencia
+    - link "Evaluación":
+      - /url: /calificaciones
+    - link "Actividades":
+      - /url: /actividades
+    - link "Planificación":
+      - /url: /planificaciones
+    - link "Bitácora":
+      - /url: /bitacora
+    - link "Reportes":
+      - /url: /reportes
+  - link "Ajustes":
+    - /url: /perfil
+  - button "Cerrar sesión"
+- banner:
+  - searchbox "Buscar estudiantes, cursos, actividades"
+  - button "Notificaciones":
+  - button "Ayuda":
+  - button "Hola, Docente DOCENTE · QA P1 DF":
+    - generic: Hola, Docente
+    - generic: DOCENTE · QA P1
+    - generic: DF
+- main:
+  - status: Borrador guardado
+  - button "Volver a Actividades"
+  - generic: ›
+  - generic: Bloque 1
+  - generic: ›
+  - generic: Crear actividad
+  - paragraph: Bloque 1
+  - heading "Competencia Comunicativa" [level=2]
+  - paragraph: Competencia Comunicativa
+  - generic: Borrador autoguardado
+  - main:
+    - heading "Crear actividad" [level=2]
+    - paragraph: Completa la actividad y su instrumento como un único flujo.
+    - generic: Progreso de la actividad
+    - generic: 100%
+    - generic: 1. Bloques de competencias
+    - paragraph: Selecciona uno o varios bloques
+    - paragraph: El bloque desde el que abriste la actividad se mantiene como principal.
+    - checkbox "Bloque 1 Competencia Comunicativa Principal" [checked] [disabled]
+    - strong: Bloque 1
+    - generic: Competencia Comunicativa
+    - generic: Principal
+    - checkbox "Bloque 2 Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas"
+    - strong: Bloque 2
+    - generic: Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas
+    - checkbox "Bloque 3 Ética y Ciudadana y Desarrollo Personal y Espiritual"
+    - strong: Bloque 3
+    - generic: Ética y Ciudadana y Desarrollo Personal y Espiritual
+    - checkbox "Bloque 4 Científica y Tecnológica y Ambiental y de la Salud"
+    - strong: Bloque 4
+    - generic: Científica y Tecnológica y Ambiental y de la Salud
+    - generic: 2. Actividad
+    - text: Nombre de la actividad *
+    - textbox "Nombre de la actividad *":
+      - /placeholder: "Ej: Exposición oral sobre el cambio climático"
+      - text: My Future Plans (Mis planes para el futuro).
+    - combobox "Estilo de bloque":
+      - option "Párrafo" [selected]
+      - option "Subtítulo"
+      - option "Cita"
+    - combobox "Tamaño de letra":
+      - option "Mixto" [disabled]
+      - option "12"
+      - option "14" [selected]
+      - option "16"
+      - option "18"
+      - option "20"
+      - option "24"
+      - option "28"
+      - option "32"
+    - button "Negrita":
+    - button "Cursiva":
+    - button "Subrayado":
+    - button "Lista con viñetas":
+    - button "Lista numerada":
+    - button "Alinear a la izquierda":
+    - button "Centrar":
+    - button "Alinear a la derecha":
+    - button "Insertar o editar enlace":
+    - button "Subir imagen":
+    - button "Deshacer":
+    - button "Rehacer" [disabled]:
+    - button "Limpiar formato":
+    - button "Ampliar editor":
+    - generic "Descripción de la actividad" [active]:
+      - paragraph: Los estudiantes elaborarán una presentación oral y escrita en inglés sobre sus planes y metas para el futuro, utilizando las estructuras gramaticales will y going to. Describirán sus aspiraciones académicas, profesionales y personales mediante oraciones sencillas y coherentes. Finalmente, compartirán sus presentaciones con sus compañeros, fortaleciendo sus habilidades de expresión oral, escritura y comunicación en inglés.
+    - generic: 425 / 10.000 caracteres
+    - text: Tipo de actividad
+    - combobox "Tipo de actividad":
+      - option "Detectar automáticamente"
+      - option "Exposición"
+      - option "Presentación oral" [selected]
+      - option "Interacción oral"
+      - option "Producción audiovisual"
+      - option "Comprensión oral"
+      - option "Comprensión escrita"
+      - option "Debate"
+      - option "Experimento"
+      - option "Práctica de laboratorio"
+      - option "Producción escrita"
+      - option "Ensayo"
+      - option "Informe"
+      - option "Análisis"
+      - option "Comparación"
+      - option "Investigación"
+      - option "Proyecto"
+      - option "Resolución de problemas"
+      - option "Ejercicios"
+      - option "Mapa conceptual"
+      - option "Portafolio"
+      - option "Producción artística"
+      - option "Representación"
+      - option "Práctica motriz"
+      - option "Observación"
+      - option "Prueba"
+      - option "Otra actividad"
+    - generic: 3. Modalidad
+    - button "Individual Cada estudiante realiza la actividad de forma individual.":
+      - generic: Individual
+      - generic: Cada estudiante realiza la actividad de forma individual.
+    - button "Grupal La actividad se realiza en grupos de estudiantes.":
+      - generic: Grupal
+      - generic: La actividad se realiza en grupos de estudiantes.
+    - generic: 4. Evaluación
+    - text: Técnica de evaluación *
+    - combobox "Técnica de evaluación *":
+      - option "Seleccionar automáticamente"
+      - option "Observación directa"
+      - option "Observación sistemática"
+      - option "Preguntas orales"
+      - option "Diálogo reflexivo"
+      - option "Debate"
+      - option "Exposición"
+      - option "Presentación" [selected]
+      - option "Entrevista"
+      - option "Mesa redonda"
+      - option "Dramatización"
+      - option "Análisis de producciones"
+      - option "Portafolio"
+      - option "Diario reflexivo"
+      - option "Estudio de caso"
+      - option "Proyecto"
+      - option "Resolución de problemas"
+      - option "Mapa conceptual"
+      - option "Ensayo"
+      - option "Prueba escrita"
+      - option "Autoevaluación"
+      - option "Coevaluación"
+      - option "Heteroevaluación"
+    - text: Tipo de instrumento
+    - combobox "Tipo de instrumento":
+      - option "Seleccionar automáticamente"
+      - option "Rúbrica" [selected]
+      - option "Lista de cotejo"
+      - option "Escala estimativa"
+      - option "Lista ponderada"
+    - text: Valor en puntos *
+    - textbox "Valor en puntos * pts": "20"
+    - generic: pts
+    - generic: 5. Recursos
+    - generic: (Opcional)
+    - paragraph: Selecciona los recursos que utilizarás en esta actividad.
+    - textbox "Buscar o agregar recurso..."
+    - button "Mostrar recursos":
+    - button "Mis recursos 0 recursos personalizados":
+      - generic: Mis recursos
+      - generic: 0 recursos personalizados
+    - button "Agregar recurso personalizado":
+      - text: Agregar recurso personalizado
+    - heading "6. Instrumento completo · Rúbrica de evaluación" [level=3]
+    - button "Generar nuevo instrumento"
+    - button "Crear desde cero"
+    - paragraph: Instrumento seleccionado
+    - heading "Rúbrica de evaluación" [level=3]
+    - paragraph: Construye el instrumento que utilizarás para evaluar esta actividad.
+    - text: Título del instrumento
+    - textbox "Título del instrumento":
+      - /placeholder: Ej. Rúbrica de evaluación para la actividad
+      - text: Rúbrica para My Future Plans (Mis planes para el futuro).
+    - button "Vista previa":
+      - text: Vista previa
+    - paragraph: Actividad
+    - paragraph: 20 puntos
+    - paragraph: Criterios
+    - paragraph: "3"
+    - paragraph: Niveles
+    - paragraph: "4"
+    - paragraph: Puntuación configurada
+    - paragraph:
+      - text: 20/20 pts
+    - paragraph: Estado
+    - paragraph:
+      - text: Listo para revisar
+    - button "Añadir criterio manual"
+    - paragraph: Criterios y niveles de desempeño
+    - paragraph: Ajusta los puntos en la matriz; el total debe sumar 20.
+    - button "Texto compacto": A−
+    - button "Texto normal" [pressed]: A
+    - button "Texto grande": A+
+    - button "Alternar negrita": B
+    - button "Alinear a la izquierda" [pressed]:
+    - button "Centrar":
+    - button "Alinear a la derecha":
+    - button "Configurar niveles":
+      - text: Configurar niveles
+    - button "Agregar criterio":
+      - text: Agregar criterio
+    - table:
+      - rowgroup:
+        - 'row "Criterios de evaluación Destacado Valor relativo: 3 Eliminar nivel Destacado Logrado Valor relativo: 2 Eliminar nivel Logrado En proceso Valor relativo: 1 Eliminar nivel En proceso Inicial Valor relativo: 0 Eliminar nivel Inicial Puntaje por criterio"':
+          - columnheader "Criterios de evaluación"
+          - 'columnheader "Destacado Valor relativo: 3 Eliminar nivel Destacado"':
+            - generic: Destacado
+            - generic: "Valor relativo: 3"
+            - button "Eliminar nivel Destacado":
+          - 'columnheader "Logrado Valor relativo: 2 Eliminar nivel Logrado"':
+            - generic: Logrado
+            - generic: "Valor relativo: 2"
+            - button "Eliminar nivel Logrado":
+          - 'columnheader "En proceso Valor relativo: 1 Eliminar nivel En proceso"':
+            - generic: En proceso
+            - generic: "Valor relativo: 1"
+            - button "Eliminar nivel En proceso":
+          - 'columnheader "Inicial Valor relativo: 0 Eliminar nivel Inicial"':
+            - generic: Inicial
+            - generic: "Valor relativo: 0"
+            - button "Eliminar nivel Inicial":
+          - columnheader "Puntaje por criterio"
+          - columnheader
+      - rowgroup:
+        - row "1 Plan futuro relacionado con la situación Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada. El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión. Menciona una acción futura sin relacionar parte de la información solicitada del plan. No se reconoce un plan futuro relacionado con la situación solicitada. 7.27 Acciones de la fila":
+          - cell "1 Plan futuro relacionado con la situación":
+            - generic: "1"
+            - textbox "Criterio 1":
+              - /placeholder: Criterio de evaluación
+              - text: Plan futuro relacionado con la situación
+          - cell "Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada.":
+            - textbox "Destacado del criterio 1":
+              - /placeholder: ""
+              - text: Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada.
+          - cell "El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión.":
+            - textbox "Logrado del criterio 1":
+              - /placeholder: ""
+              - text: El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión.
+          - cell "Menciona una acción futura sin relacionar parte de la información solicitada del plan.":
+            - textbox "En proceso del criterio 1":
+              - /placeholder: ""
+              - text: Menciona una acción futura sin relacionar parte de la información solicitada del plan.
+          - cell "No se reconoce un plan futuro relacionado con la situación solicitada.":
+            - textbox "Inicial del criterio 1":
+              - /placeholder: ""
+              - text: No se reconoce un plan futuro relacionado con la situación solicitada.
+          - cell "7.27":
+            - spinbutton "Puntos del criterio 1": "7.27"
+          - cell "Acciones de la fila":
+            - button "Acciones de la fila":
+        - row "2 Ideas relacionadas en la presentación Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito. La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión. Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación. No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación. 7.27 Acciones de la fila":
+          - cell "2 Ideas relacionadas en la presentación":
+            - generic: "2"
+            - textbox "Criterio 2":
+              - /placeholder: Criterio de evaluación
+              - text: Ideas relacionadas en la presentación
+          - cell "Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito.":
+            - textbox "Destacado del criterio 2":
+              - /placeholder: ""
+              - text: Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito.
+          - cell "La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión.":
+            - textbox "Logrado del criterio 2":
+              - /placeholder: ""
+              - text: La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión.
+          - cell "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación.":
+            - textbox "En proceso del criterio 2":
+              - /placeholder: ""
+              - text: Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación.
+          - cell "No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación.":
+            - textbox "Inicial del criterio 2":
+              - /placeholder: ""
+              - text: No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación.
+          - cell "7.27":
+            - spinbutton "Puntos del criterio 2": "7.27"
+          - cell "Acciones de la fila":
+            - button "Acciones de la fila":
+        - row "3 Discurso oral sostenido y comprensible Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada. Las ideas principales se comprenden; una relación o expresión necesita aclaración. Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas. No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados. 5.46 Acciones de la fila":
+          - cell "3 Discurso oral sostenido y comprensible":
+            - generic: "3"
+            - textbox "Criterio 3":
+              - /placeholder: Criterio de evaluación
+              - text: Discurso oral sostenido y comprensible
+          - cell "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.":
+            - textbox "Destacado del criterio 3":
+              - /placeholder: ""
+              - text: Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.
+          - cell "Las ideas principales se comprenden; una relación o expresión necesita aclaración.":
+            - textbox "Logrado del criterio 3":
+              - /placeholder: ""
+              - text: Las ideas principales se comprenden; una relación o expresión necesita aclaración.
+          - cell "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.":
+            - textbox "En proceso del criterio 3":
+              - /placeholder: ""
+              - text: Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.
+          - cell "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.":
+            - textbox "Inicial del criterio 3":
+              - /placeholder: ""
+              - text: No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.
+          - cell "5.46":
+            - spinbutton "Puntos del criterio 3": "5.46"
+          - cell "Acciones de la fila":
+            - button "Acciones de la fila":
+    - paragraph: Puedes editar los puntos de cada criterio. Revisa que sumen el valor de la actividad.
+    - paragraph: "Puntuación máxima total: 20 / 20 pts"
+    - button "Guardar"
+  - complementary:
+    - heading "Tu progreso" [level=3]
+    - img "100% completado":
+      - generic: 100%
+    - paragraph: Actividad lista
+    - paragraph: Ya puedes revisar y guardar.
+    - paragraph: Elementos completados (7/7)
+    - button "✓ Bloques de competencias" [disabled]:
+      - generic: ✓
+      - generic: Bloques de competencias
+    - button "✓ Nombre de la actividad" [disabled]:
+      - generic: ✓
+      - generic: Nombre de la actividad
+    - button "✓ Valor de la actividad" [disabled]:
+      - generic: ✓
+      - generic: Valor de la actividad
+    - button "✓ Técnica de evaluación" [disabled]:
+      - generic: ✓
+      - generic: Técnica de evaluación
+    - button "✓ Instrumento completo" [disabled]:
+      - generic: ✓
+      - generic: Instrumento completo
+    - button "✓ Modalidad de la actividad" [disabled]:
+      - generic: ✓
+      - generic: Modalidad de la actividad
+    - button "✓ Descripción de la actividad" [disabled]:
+      - generic: ✓
+      - generic: Descripción de la actividad
+    - button "Cancelar":
+      - text: Cancelar
+    - paragraph: El borrador se ha guardado en este dispositivo.
+DESPUÉS DE AGREGAR
+- complementary:
+  - link "Aula Base, inicio":
+    - /url: /inicio
+  - button "Expandir menú":
+  - navigation "Navegación principal":
+    - link "Inicio":
+      - /url: /inicio
+    - link "Cursos":
+      - /url: /cursos
+    - link "Horario":
+      - /url: /horario
+    - link "Asistencia":
+      - /url: /asistencia
+    - link "Evaluación":
+      - /url: /calificaciones
+    - link "Actividades":
+      - /url: /actividades
+    - link "Planificación":
+      - /url: /planificaciones
+    - link "Bitácora":
+      - /url: /bitacora
+    - link "Reportes":
+      - /url: /reportes
+  - link "Ajustes":
+    - /url: /perfil
+  - button "Cerrar sesión"
+- banner:
+  - searchbox "Buscar estudiantes, cursos, actividades"
+  - button "Notificaciones":
+  - button "Ayuda":
+  - button "Hola, Docente DOCENTE · QA P1 DF":
+    - generic: Hola, Docente
+    - generic: DOCENTE · QA P1
+    - generic: DF
+- main:
+  - status: Borrador guardado
+  - button "Volver a Actividades"
+  - generic: ›
+  - generic: Bloque 1
+  - generic: ›
+  - generic: Crear actividad
+  - paragraph: Bloque 1
+  - heading "Competencia Comunicativa" [level=2]
+  - paragraph: Competencia Comunicativa
+  - generic: Borrador autoguardado
+  - status:
+    - generic: No hay otro criterio automático pertinente disponible. Puedes añadir un criterio manual.
+    - button "Cerrar aviso":
+  - main:
+    - heading "Crear actividad" [level=2]
+    - paragraph: Completa la actividad y su instrumento como un único flujo.
+    - generic: Progreso de la actividad
+    - generic: 100%
+    - generic: 1. Bloques de competencias
+    - paragraph: Selecciona uno o varios bloques
+    - paragraph: El bloque desde el que abriste la actividad se mantiene como principal.
+    - checkbox "Bloque 1 Competencia Comunicativa Principal" [checked] [disabled]
+    - strong: Bloque 1
+    - generic: Competencia Comunicativa
+    - generic: Principal
+    - checkbox "Bloque 2 Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas"
+    - strong: Bloque 2
+    - generic: Pensamiento Lógico, Creativo y Crítico y Resolución de Problemas
+    - checkbox "Bloque 3 Ética y Ciudadana y Desarrollo Personal y Espiritual"
+    - strong: Bloque 3
+    - generic: Ética y Ciudadana y Desarrollo Personal y Espiritual
+    - checkbox "Bloque 4 Científica y Tecnológica y Ambiental y de la Salud"
+    - strong: Bloque 4
+    - generic: Científica y Tecnológica y Ambiental y de la Salud
+    - generic: 2. Actividad
+    - text: Nombre de la actividad *
+    - textbox "Nombre de la actividad *":
+      - /placeholder: "Ej: Exposición oral sobre el cambio climático"
+      - text: My Future Plans (Mis planes para el futuro).
+    - combobox "Estilo de bloque":
+      - option "Párrafo" [selected]
+      - option "Subtítulo"
+      - option "Cita"
+    - combobox "Tamaño de letra":
+      - option "Mixto" [disabled]
+      - option "12"
+      - option "14" [selected]
+      - option "16"
+      - option "18"
+      - option "20"
+      - option "24"
+      - option "28"
+      - option "32"
+    - button "Negrita":
+    - button "Cursiva":
+    - button "Subrayado":
+    - button "Lista con viñetas":
+    - button "Lista numerada":
+    - button "Alinear a la izquierda":
+    - button "Centrar":
+    - button "Alinear a la derecha":
+    - button "Insertar o editar enlace":
+    - button "Subir imagen":
+    - button "Deshacer":
+    - button "Rehacer" [disabled]:
+    - button "Limpiar formato":
+    - button "Ampliar editor":
+    - generic "Descripción de la actividad":
+      - paragraph: Los estudiantes elaborarán una presentación oral y escrita en inglés sobre sus planes y metas para el futuro, utilizando las estructuras gramaticales will y going to. Describirán sus aspiraciones académicas, profesionales y personales mediante oraciones sencillas y coherentes. Finalmente, compartirán sus presentaciones con sus compañeros, fortaleciendo sus habilidades de expresión oral, escritura y comunicación en inglés.
+    - generic: 425 / 10.000 caracteres
+    - text: Tipo de actividad
+    - combobox "Tipo de actividad":
+      - option "Detectar automáticamente"
+      - option "Exposición"
+      - option "Presentación oral" [selected]
+      - option "Interacción oral"
+      - option "Producción audiovisual"
+      - option "Comprensión oral"
+      - option "Comprensión escrita"
+      - option "Debate"
+      - option "Experimento"
+      - option "Práctica de laboratorio"
+      - option "Producción escrita"
+      - option "Ensayo"
+      - option "Informe"
+      - option "Análisis"
+      - option "Comparación"
+      - option "Investigación"
+      - option "Proyecto"
+      - option "Resolución de problemas"
+      - option "Ejercicios"
+      - option "Mapa conceptual"
+      - option "Portafolio"
+      - option "Producción artística"
+      - option "Representación"
+      - option "Práctica motriz"
+      - option "Observación"
+      - option "Prueba"
+      - option "Otra actividad"
+    - generic: 3. Modalidad
+    - button "Individual Cada estudiante realiza la actividad de forma individual.":
+      - generic: Individual
+      - generic: Cada estudiante realiza la actividad de forma individual.
+    - button "Grupal La actividad se realiza en grupos de estudiantes.":
+      - generic: Grupal
+      - generic: La actividad se realiza en grupos de estudiantes.
+    - generic: 4. Evaluación
+    - text: Técnica de evaluación *
+    - combobox "Técnica de evaluación *":
+      - option "Seleccionar automáticamente"
+      - option "Observación directa"
+      - option "Observación sistemática"
+      - option "Preguntas orales"
+      - option "Diálogo reflexivo"
+      - option "Debate"
+      - option "Exposición"
+      - option "Presentación" [selected]
+      - option "Entrevista"
+      - option "Mesa redonda"
+      - option "Dramatización"
+      - option "Análisis de producciones"
+      - option "Portafolio"
+      - option "Diario reflexivo"
+      - option "Estudio de caso"
+      - option "Proyecto"
+      - option "Resolución de problemas"
+      - option "Mapa conceptual"
+      - option "Ensayo"
+      - option "Prueba escrita"
+      - option "Autoevaluación"
+      - option "Coevaluación"
+      - option "Heteroevaluación"
+    - text: Tipo de instrumento
+    - combobox "Tipo de instrumento":
+      - option "Seleccionar automáticamente"
+      - option "Rúbrica" [selected]
+      - option "Lista de cotejo"
+      - option "Escala estimativa"
+      - option "Lista ponderada"
+    - text: Valor en puntos *
+    - textbox "Valor en puntos * pts": "20"
+    - generic: pts
+    - generic: 5. Recursos
+    - generic: (Opcional)
+    - paragraph: Selecciona los recursos que utilizarás en esta actividad.
+    - textbox "Buscar o agregar recurso..."
+    - button "Mostrar recursos":
+    - button "Mis recursos 0 recursos personalizados":
+      - generic: Mis recursos
+      - generic: 0 recursos personalizados
+    - button "Agregar recurso personalizado":
+      - text: Agregar recurso personalizado
+    - heading "6. Instrumento completo · Rúbrica de evaluación" [level=3]
+    - button "Generar nuevo instrumento"
+    - button "Crear desde cero"
+    - paragraph: Instrumento seleccionado
+    - heading "Rúbrica de evaluación" [level=3]
+    - paragraph: Construye el instrumento que utilizarás para evaluar esta actividad.
+    - text: Título del instrumento
+    - textbox "Título del instrumento":
+      - /placeholder: Ej. Rúbrica de evaluación para la actividad
+      - text: Rúbrica para My Future Plans (Mis planes para el futuro).
+    - button "Vista previa":
+      - text: Vista previa
+    - paragraph: Actividad
+    - paragraph: 20 puntos
+    - paragraph: Criterios
+    - paragraph: "3"
+    - paragraph: Niveles
+    - paragraph: "4"
+    - paragraph: Puntuación configurada
+    - paragraph:
+      - text: 20/20 pts
+    - paragraph: Estado
+    - paragraph:
+      - text: Listo para revisar
+    - button "Añadir criterio manual"
+    - paragraph: Criterios y niveles de desempeño
+    - paragraph: Ajusta los puntos en la matriz; el total debe sumar 20.
+    - button "Texto compacto": A−
+    - button "Texto normal" [pressed]: A
+    - button "Texto grande": A+
+    - button "Alternar negrita": B
+    - button "Alinear a la izquierda" [pressed]:
+    - button "Centrar":
+    - button "Alinear a la derecha":
+    - button "Configurar niveles":
+      - text: Configurar niveles
+    - button "Agregar criterio":
+      - text: Agregar criterio
+    - table:
+      - rowgroup:
+        - 'row "Criterios de evaluación Destacado Valor relativo: 3 Eliminar nivel Destacado Logrado Valor relativo: 2 Eliminar nivel Logrado En proceso Valor relativo: 1 Eliminar nivel En proceso Inicial Valor relativo: 0 Eliminar nivel Inicial Puntaje por criterio"':
+          - columnheader "Criterios de evaluación"
+          - 'columnheader "Destacado Valor relativo: 3 Eliminar nivel Destacado"':
+            - generic: Destacado
+            - generic: "Valor relativo: 3"
+            - button "Eliminar nivel Destacado":
+          - 'columnheader "Logrado Valor relativo: 2 Eliminar nivel Logrado"':
+            - generic: Logrado
+            - generic: "Valor relativo: 2"
+            - button "Eliminar nivel Logrado":
+          - 'columnheader "En proceso Valor relativo: 1 Eliminar nivel En proceso"':
+            - generic: En proceso
+            - generic: "Valor relativo: 1"
+            - button "Eliminar nivel En proceso":
+          - 'columnheader "Inicial Valor relativo: 0 Eliminar nivel Inicial"':
+            - generic: Inicial
+            - generic: "Valor relativo: 0"
+            - button "Eliminar nivel Inicial":
+          - columnheader "Puntaje por criterio"
+          - columnheader
+      - rowgroup:
+        - row "1 Plan futuro relacionado con la situación Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada. El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión. Menciona una acción futura sin relacionar parte de la información solicitada del plan. No se reconoce un plan futuro relacionado con la situación solicitada. 7.27 Acciones de la fila":
+          - cell "1 Plan futuro relacionado con la situación":
+            - generic: "1"
+            - textbox "Criterio 1":
+              - /placeholder: Criterio de evaluación
+              - text: Plan futuro relacionado con la situación
+          - cell "Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada.":
+            - textbox "Destacado del criterio 1":
+              - /placeholder: ""
+              - text: Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada.
+          - cell "El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión.":
+            - textbox "Logrado del criterio 1":
+              - /placeholder: ""
+              - text: El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión.
+          - cell "Menciona una acción futura sin relacionar parte de la información solicitada del plan.":
+            - textbox "En proceso del criterio 1":
+              - /placeholder: ""
+              - text: Menciona una acción futura sin relacionar parte de la información solicitada del plan.
+          - cell "No se reconoce un plan futuro relacionado con la situación solicitada.":
+            - textbox "Inicial del criterio 1":
+              - /placeholder: ""
+              - text: No se reconoce un plan futuro relacionado con la situación solicitada.
+          - cell "7.27":
+            - spinbutton "Puntos del criterio 1": "7.27"
+          - cell "Acciones de la fila":
+            - button "Acciones de la fila":
+        - row "2 Ideas relacionadas en la presentación Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito. La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión. Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación. No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación. 7.27 Acciones de la fila":
+          - cell "2 Ideas relacionadas en la presentación":
+            - generic: "2"
+            - textbox "Criterio 2":
+              - /placeholder: Criterio de evaluación
+              - text: Ideas relacionadas en la presentación
+          - cell "Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito.":
+            - textbox "Destacado del criterio 2":
+              - /placeholder: ""
+              - text: Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito.
+          - cell "La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión.":
+            - textbox "Logrado del criterio 2":
+              - /placeholder: ""
+              - text: La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión.
+          - cell "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación.":
+            - textbox "En proceso del criterio 2":
+              - /placeholder: ""
+              - text: Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación.
+          - cell "No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación.":
+            - textbox "Inicial del criterio 2":
+              - /placeholder: ""
+              - text: No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación.
+          - cell "7.27":
+            - spinbutton "Puntos del criterio 2": "7.27"
+          - cell "Acciones de la fila":
+            - button "Acciones de la fila":
+        - row "3 Discurso oral sostenido y comprensible Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada. Las ideas principales se comprenden; una relación o expresión necesita aclaración. Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas. No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados. 5.46 Acciones de la fila":
+          - cell "3 Discurso oral sostenido y comprensible":
+            - generic: "3"
+            - textbox "Criterio 3":
+              - /placeholder: Criterio de evaluación
+              - text: Discurso oral sostenido y comprensible
+          - cell "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.":
+            - textbox "Destacado del criterio 3":
+              - /placeholder: ""
+              - text: Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.
+          - cell "Las ideas principales se comprenden; una relación o expresión necesita aclaración.":
+            - textbox "Logrado del criterio 3":
+              - /placeholder: ""
+              - text: Las ideas principales se comprenden; una relación o expresión necesita aclaración.
+          - cell "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.":
+            - textbox "En proceso del criterio 3":
+              - /placeholder: ""
+              - text: Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.
+          - cell "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.":
+            - textbox "Inicial del criterio 3":
+              - /placeholder: ""
+              - text: No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.
+          - cell "5.46":
+            - spinbutton "Puntos del criterio 3": "5.46"
+          - cell "Acciones de la fila":
+            - button "Acciones de la fila":
+    - paragraph: Puedes editar los puntos de cada criterio. Revisa que sumen el valor de la actividad.
+    - paragraph: "Puntuación máxima total: 20 / 20 pts"
+    - button "Guardar"
+  - complementary:
+    - heading "Tu progreso" [level=3]
+    - img "100% completado":
+      - generic: 100%
+    - paragraph: Actividad lista
+    - paragraph: Ya puedes revisar y guardar.
+    - paragraph: Elementos completados (7/7)
+    - button "✓ Bloques de competencias" [disabled]:
+      - generic: ✓
+      - generic: Bloques de competencias
+    - button "✓ Nombre de la actividad" [disabled]:
+      - generic: ✓
+      - generic: Nombre de la actividad
+    - button "✓ Valor de la actividad" [disabled]:
+      - generic: ✓
+      - generic: Valor de la actividad
+    - button "✓ Técnica de evaluación" [disabled]:
+      - generic: ✓
+      - generic: Técnica de evaluación
+    - button "✓ Instrumento completo" [disabled]:
+      - generic: ✓
+      - generic: Instrumento completo
+    - button "✓ Modalidad de la actividad" [disabled]:
+      - generic: ✓
+      - generic: Modalidad de la actividad
+    - button "✓ Descripción de la actividad" [disabled]:
+      - generic: ✓
+      - generic: Descripción de la actividad
+    - button "Cancelar":
+      - text: Cancelar
+    - paragraph: El borrador se ha guardado en este dispositivo.

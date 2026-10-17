@@ -9,8 +9,9 @@ import { diagnoseEvaluationCatalog, seedEvaluationCatalog } from './catalog-oper
 import grammar from '../../../../../data/evaluation-instruments/english-grade-one-grammar-contracts.json'
 
 const mocks = vi.hoisted(() => ({
+  $queryRaw: vi.fn(),
   sectionSubject: { findFirst: vi.fn() }, evaluationCatalogRelease: { findUnique: vi.fn(), create: vi.fn() },
-  curriculumVersion: { findUnique: vi.fn(), findFirst: vi.fn() }, curriculumScope: { findMany: vi.fn() },
+  curriculumVersion: { findUnique: vi.fn(), findFirst: vi.fn(), findMany: vi.fn() }, curriculumScope: { findMany: vi.fn() },
   curriculumSubjectMapping: { findMany: vi.fn() }, curriculumElement: { findMany: vi.fn() },
 }))
 vi.mock('@aula/database', () => ({ prisma: mocks }))
@@ -26,10 +27,12 @@ function assignment() {
 beforeEach(() => {
   vi.resetAllMocks()
   vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('External AI calls disabled in tests')))
+  mocks.$queryRaw.mockResolvedValue([{ identical: true }])
   mocks.sectionSubject.findFirst.mockResolvedValue(assignment())
   mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: evaluationCatalogCurrent })
   mocks.curriculumVersion.findUnique.mockResolvedValue({ id: input.curriculumVersionId, level: 'PRIMARY', status: 'DRAFT' })
   mocks.curriculumVersion.findFirst.mockResolvedValue(null)
+  mocks.curriculumVersion.findMany.mockResolvedValue([])
   mocks.curriculumScope.findMany.mockResolvedValue([scope])
   mocks.curriculumSubjectMapping.findMany.mockResolvedValue([])
   mocks.curriculumElement.findMany.mockResolvedValue([])
@@ -39,9 +42,9 @@ describe('API service security and version policy', () => {
   it('diagnoses and seeds the new release without replacing installed historical releases', async () => {
     mocks.evaluationCatalogRelease.findUnique.mockResolvedValueOnce(null).mockResolvedValueOnce(null)
     mocks.evaluationCatalogRelease.create.mockResolvedValue({})
-    expect(await diagnoseEvaluationCatalog(mocks as never)).toEqual({ version: 'evaluation-2026.47', status: 'MISSING' })
+    expect(await diagnoseEvaluationCatalog(mocks as never)).toEqual({ version: evaluationCatalogCurrent.version, status: 'MISSING' })
     expect(await seedEvaluationCatalog(mocks as never)).toBe('CREATED')
-    expect(mocks.evaluationCatalogRelease.create.mock.calls[0][0].data.version).toBe('evaluation-2026.47')
+    expect(mocks.evaluationCatalogRelease.create.mock.calls[0][0].data.version).toBe(evaluationCatalogCurrent.version)
   })
   it('interprets an unspecified task using the selected technique while keeping an explicit evidence action dominant', async () => {
     const service = new EvaluationInstrumentsService()
@@ -51,6 +54,63 @@ describe('API service security and version policy', () => {
     const detected = await service.interpret(user, { sectionSubjectId: input.sectionSubjectId, activityTitle: 'Actividad',
       description: 'Elaborarán un informe sobre la práctica motriz.', evaluationTechnique: 'debate' })
     expect(detected.suggestedActivityType).toBe('REPORT')
+  })
+  it('consulta ámbito y mappings independientes en paralelo después de autorizar y validar el catálogo', async () => {
+    let finish!: (value: typeof scope[]) => void
+    mocks.curriculumScope.findMany.mockImplementation(() => new Promise(resolve => { finish = resolve }))
+    const result = new EvaluationInstrumentsService().recommend(user, input)
+    try {
+      await vi.waitFor(() => expect(mocks.curriculumSubjectMapping.findMany).toHaveBeenCalled(), { timeout: 150 })
+    } finally { finish([scope]) }
+    await result
+    expect(mocks.sectionSubject.findFirst.mock.invocationCallOrder[0]).toBeLessThan(mocks.$queryRaw.mock.invocationCallOrder[0])
+    expect(mocks.$queryRaw.mock.invocationCallOrder[0]).toBeLessThan(mocks.curriculumScope.findMany.mock.invocationCallOrder[0])
+  })
+  const frenchSource = { id: 'french-version', level: 'SECONDARY', status: 'PUBLISHED', importMetadata: { subjectCodes: ['FRA'], commonOnly: true } }
+  const secondary = (code: string) => {
+    const row = assignment()
+    row.grade.sequence = 3; row.grade.academicLevel.code = 'secundario'; row.grade.academicCycle.code = 'secundario_primer_ciclo'
+    row.subject.code = code; row.subject.name = code === 'FRA' ? 'Francés' : code === 'ING' ? 'Inglés' : 'Lengua Española'
+    return row
+  }
+  for (const code of ['ING', 'LEN']) it(`una fuente exclusiva de Francés no cambia el contexto curricular de ${code}`, async () => {
+    mocks.sectionSubject.findFirst.mockResolvedValue(secondary(code))
+    mocks.curriculumVersion.findFirst.mockResolvedValue(frenchSource)
+    mocks.curriculumVersion.findMany.mockResolvedValue([frenchSource])
+    const result = await new EvaluationInstrumentsService().recommend(user, { ...input, curriculumVersionId: undefined })
+    expect(result.curriculumVersionId).toBeNull()
+  })
+  it('interpreta la acción científica indicada en la evidencia dedicada sin depender del título', async () => {
+    const row=secondary('NAT-FIS')
+    row.grade.sequence=6;row.grade.academicCycle.code='secundario_segundo_ciclo';row.subject.name='Ciencias de la Naturaleza: Física'
+    mocks.sectionSubject.findFirst.mockResolvedValue(row)
+    const result=await new EvaluationInstrumentsService().interpret(user,{sectionSubjectId:input.sectionSubjectId,activityTitle:'Actividad',description:'Usa la información proporcionada.',evidenceInstructions:'Calcula la corriente mediante la ley de Ohm con los datos proporcionados.'})
+    expect(result.suggestedActivityType).toBe('EXERCISE_SET')
+  })
+  it('mantiene una versión global anterior compatible con Inglés', async () => {
+    mocks.sectionSubject.findFirst.mockResolvedValue(secondary('ING'))
+    mocks.curriculumVersion.findFirst.mockResolvedValue(frenchSource)
+    mocks.curriculumVersion.findMany.mockResolvedValue([frenchSource, { id: 'global-version', level: 'SECONDARY', status: 'PUBLISHED' }])
+    const result = await new EvaluationInstrumentsService().recommend(user, { ...input, curriculumVersionId: undefined })
+    expect(result.curriculumVersionId).toBe('global-version')
+  })
+  it('selecciona la fuente francesa para Francés común', async () => {
+    mocks.sectionSubject.findFirst.mockResolvedValue(secondary('FRA'))
+    mocks.curriculumVersion.findFirst.mockResolvedValue(frenchSource)
+    const result = await new EvaluationInstrumentsService().recommend(user, { ...input, curriculumVersionId: undefined })
+    expect(result.curriculumVersionId).toBe('french-version')
+  })
+  it('rechaza forzar una fuente francesa en otra asignatura', async () => {
+    mocks.sectionSubject.findFirst.mockResolvedValue(secondary('ING'))
+    mocks.curriculumVersion.findUnique.mockResolvedValue(frenchSource)
+    await expect(new EvaluationInstrumentsService().recommend(user, input)).rejects.toThrow('Versión curricular incompatible')
+  })
+  it('no selecciona la fuente común para una salida optativa', async () => {
+    mocks.sectionSubject.findFirst.mockResolvedValue({ ...secondary('FRA'), curriculumContext: { optativeExitName: 'Humanidades' } })
+    mocks.curriculumVersion.findFirst.mockResolvedValue(frenchSource)
+    mocks.curriculumVersion.findMany.mockResolvedValue([frenchSource])
+    const result = await new EvaluationInstrumentsService().recommend(user, { ...input, curriculumVersionId: undefined })
+    expect(result.curriculumVersionId).toBeNull()
   })
   it('devuelve400 explicativo cuando no caben todos los requisitos, sin una propuesta truncada',async()=>{
     const row=assignment()
@@ -151,14 +211,22 @@ describe('API service security and version policy', () => {
       selectedCurriculumElementIds: ['f514ddf8-5fc0-5e85-a3d9-7ab344fea577'] })).rejects.toThrow('ajeno al ámbito')
   })
   it('catálogo ausente o alterado no se usa silenciosamente', async () => {
-    mocks.evaluationCatalogRelease.findUnique.mockResolvedValue(null)
+    mocks.$queryRaw.mockResolvedValue([])
     await expect(new EvaluationInstrumentsService().recommend(user, input)).rejects.toThrow('Falta instalar')
-    mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: {} })
+    mocks.$queryRaw.mockResolvedValue([{ identical: false }])
     await expect(new EvaluationInstrumentsService().recommend(user, input)).rejects.toThrow('difiere del seed')
   })
   it('convierte una tabla de catálogo ausente en 503 explícito', async () => {
-    mocks.evaluationCatalogRelease.findUnique.mockRejectedValue(Object.assign(new Error('relation does not exist'), { code: 'P2021' }))
+    mocks.$queryRaw.mockRejectedValue(Object.assign(new Error('relation does not exist'), { code: 'P2010', meta: { code: '42P01' } }))
     await expect(new EvaluationInstrumentsService().recommend(user, input)).rejects.toMatchObject({ status: 503 })
+  })
+  it('compara todo el payload mediante parámetros sin descargarlo por petición', async () => {
+    await new EvaluationInstrumentsService().recommend(user, input)
+    expect(mocks.evaluationCatalogRelease.findUnique).not.toHaveBeenCalled()
+    const [query, payload, version] = mocks.$queryRaw.mock.calls[0]
+    expect(query.join('?')).toContain('payload = ?::jsonb')
+    expect(JSON.parse(payload)).toEqual(evaluationCatalogCurrent)
+    expect(version).toBe(evaluationCatalogCurrent.version)
   })
   it('seed idempotente; no sobrescribe release diferente', async () => {
     expect(await seedEvaluationCatalog(mocks as never)).toBe('UNCHANGED')

@@ -13,6 +13,7 @@ import { SaveGradeDto } from './dto/save-grade.dto'
 import { SaveActivityDto } from '../activities/dto/save-activity.dto'
 import { evaluationCatalogForVersion } from '../evaluation-instruments/catalog-current'
 import { academicContext, resolveScope } from '../evaluation-instruments/curriculum-context'
+import { teachingStrategyAllowed } from '@aula/shared'
 
 export function __test__clearGradingCache() {
   optionCache.clear()
@@ -38,6 +39,8 @@ function mapEvaluationActivity(activity: any, profile?: EvaluationProfile) {
     evaluatedCount: activity._count?.gradesRecords ?? 0,
     instrumentSnapshot: activity.instrumentSnapshot?.payload ?? undefined,
     pedagogicalActivityType: activity.pedagogicalActivityType ?? undefined,
+    teachingStrategyId: activity.teachingStrategyId ?? null,
+    teachingStrategyOrigin: activity.teachingStrategyOrigin ?? 'UNKNOWN',
     instrumentCriteria: activity.instrument?.criteria && typeof activity.instrument.criteria === 'object'
       ? activity.instrument.criteria
       : {},
@@ -107,6 +110,17 @@ function validateActivityInput(dto: SaveActivityDto) {
     dto.source !== undefined && !['grading', 'planning'].includes(dto.source)) throw new BadRequestException('Modalidad, momento u origen no válido.')
   if (dto.date && (!/^\d{4}-\d{2}-\d{2}$/.test(dto.date) || !Number.isFinite(Date.parse(dto.date)) || new Date(dto.date).toISOString().slice(0, 10) !== dto.date)) {
     throw new BadRequestException('La fecha debe ser una fecha válida YYYY-MM-DD.')
+  }
+}
+
+function validateTeachingStrategy(dto: SaveActivityDto, sectionSubject: any) {
+  const origin = dto.teachingStrategyOrigin ?? 'UNKNOWN'
+  const levelCode = sectionSubject.grade?.academicLevel?.code
+  const level = levelCode === 'secundario' ? 'SECONDARY' : levelCode === 'primario' ? 'PRIMARY' : null
+  if (!['AUTO','MANUAL','UNKNOWN'].includes(origin) ||
+    (origin === 'MANUAL' && !dto.teachingStrategyId) ||
+    (dto.teachingStrategyId != null && !teachingStrategyAllowed(dto.teachingStrategyId, {level}))) {
+    throw new BadRequestException('La estrategia de enseñanza y aprendizaje no es válida para este contexto.')
   }
 }
 
@@ -352,6 +366,7 @@ function activityData(schoolId: string, userId: string, dto: SaveActivityDto, sc
   return {
     schoolId, schoolYearId, sectionSubjectId: dto.sectionSubjectId, academicPeriodId: dto.academicPeriodId,
     planningEntryId: dto.planningEntryId || null, pedagogicalActivityType: dto.pedagogicalActivityType ?? null,
+    teachingStrategyId: dto.teachingStrategyId ?? null, teachingStrategyOrigin: dto.teachingStrategyOrigin ?? 'UNKNOWN',
     competencyBlockId: dto.competencyBlockId, competencyBlockWeights, planningMoment: dto.planningMoment || null,
     name: dto.name.trim(), description: dto.description?.trim() ?? '', activityType: dto.activityType ?? 'individual',
     maxScore: dto.maxScore, activityDate: dto.date ? new Date(`${dto.date}T00:00:00.000Z`) : null,
@@ -953,9 +968,17 @@ export class GradingService {
     return activities.map((activity) => mapEvaluationActivity(activity))
   }
 
-  async getActivityCenter(schoolId: string, appUserId?: string, roles?: string[]) {
+  async getActivityCenter(schoolId: string, appUserId?: string, roles?: string[], contextOnly = false) {
     const sectionSubjectScope = activityActorScope(schoolId, appUserId, roles)
     const teacherOnly = 'teacher' in sectionSubjectScope
+    // The creator loads its activities separately by assignment and period.
+    if (contextOnly) {
+      const [sectionSubjects, academicPeriods] = await Promise.all([
+        this.loadSectionSubjects(schoolId, teacherOnly ? appUserId : undefined, true),
+        this.loadAcademicPeriods(schoolId, true),
+      ])
+      return { sectionSubjects, academicPeriods, activities: [] }
+    }
     const [sectionSubjects, academicPeriods, activities, enrollmentCounts] = await Promise.all([
       this.loadSectionSubjects(schoolId, teacherOnly ? appUserId : undefined, true),
       this.loadAcademicPeriods(schoolId, true),
@@ -1018,6 +1041,7 @@ export class GradingService {
     if (dto.id && dto.creationId) throw new BadRequestException('creationId solo se permite al crear una actividad.')
     const actorId = roles === undefined ? undefined : userId
     const { sectionSubject, academicPeriod } = await assertActivityContext(schoolId, dto.sectionSubjectId, dto.academicPeriodId, actorId, roles)
+    validateTeachingStrategy(dto, sectionSubject)
     const evaluationProfile = resolveEvaluationProfile(sectionSubject.grade?.academicLevel?.code)
     if (!isBlockInEvaluationProfile(evaluationProfile, dto.competencyBlockId)) {
       throw new BadRequestException('El bloque de competencias no es valido para el nivel academico')
@@ -1044,6 +1068,7 @@ export class GradingService {
       await assertPlanningEntryScope(schoolId, dto.planningEntryId, dto.sectionSubjectId, dto.academicPeriodId)
     }
     try {
+      // Remote round trips for context checks and writes can exceed Prisma's default 5 seconds.
       return await prisma.$transaction(async tx => {
         let existing: any = null
         let persistedSchoolYearId = schoolYearId
@@ -1053,13 +1078,16 @@ export class GradingService {
           await lockActivityForMutation(tx, schoolId, dto.id)
           existing = await tx.evaluationActivity.findFirst({ where: { id: dto.id, schoolId, status: 'ACTIVE' }, include: activityInclude })
           if (!existing) throw new NotFoundException('Evaluation activity not found')
-          await assertActivityContext(schoolId, existing.sectionSubjectId, existing.academicPeriodId, actorId, roles, tx)
-          const destination = await assertActivityContext(schoolId, dto.sectionSubjectId, dto.academicPeriodId, actorId, roles, tx)
+          const lockedContext = await assertActivityContext(schoolId, existing.sectionSubjectId, existing.academicPeriodId, actorId, roles, tx)
+          const destination = existing.sectionSubjectId === dto.sectionSubjectId && existing.academicPeriodId === dto.academicPeriodId
+            ? lockedContext
+            : await assertActivityContext(schoolId, dto.sectionSubjectId, dto.academicPeriodId, actorId, roles, tx)
           destinationSubject = destination.sectionSubject
           persistedSchoolYearId = dto.schoolYearId ?? destinationSubject.schoolYearId
           if (persistedSchoolYearId !== destinationSubject.schoolYearId) throw new BadRequestException('School year does not match section subject')
           const profile = resolveEvaluationProfile(destinationSubject.grade?.academicLevel?.code)
           dto = mergedActivityDto(dto, existing)
+          validateTeachingStrategy(dto, destinationSubject)
           persistedBlockWeights = validateCompetencyBlockWeights(profile, dto.competencyBlockId, dto.competencyBlockWeights)
           dto.schoolYearId = persistedSchoolYearId
           validateActivityInput(dto)
@@ -1071,8 +1099,8 @@ export class GradingService {
           if (!structural) {
             const saved = await tx.evaluationActivity.update({ where: { id: dto.id }, data: {
               ...activityData(schoolId, userId, dto, persistedSchoolYearId, persistedBlockWeights), createdBy: undefined,
-            }, include: activityInclude })
-            return mapEvaluationActivity(saved)
+            } })
+            return mapEvaluationActivity({ ...existing, ...saved })
           }
           if (existing.instrumentSnapshotId && !dto.instrumentSnapshot) throw new BadRequestException('La revisión requiere la definición del instrumento versionado.')
         }
@@ -1106,7 +1134,7 @@ export class GradingService {
         await this.syncActivityTeams(saved.id, schoolId, requestedTeams, tx)
         const refreshed = await tx.evaluationActivity.findUnique({ where: { id: saved.id }, include: activityInclude })
         return mapEvaluationActivity(refreshed)
-      })
+      }, { timeout: 20_000 })
     } catch (error) {
       // Concurrent retries race on the activity PK; the losing transaction rolls back its instrument.
       if (dto.creationId && (error as { code?: string }).code === 'P2002') {
@@ -1202,7 +1230,9 @@ export class GradingService {
   ) {
     const references = await this.validatePreparedActivity(dto, sectionSubject, tx)
     const proposal = dto.instrumentSnapshot!
-    const teacher = await tx.teacher.findFirst({ where: { id: sectionSubject.teacherId ?? '', userId, schoolId, status: 'ACTIVE' } })
+    const teacher = sectionSubject.teacherId
+      ? await tx.teacher.findFirst({ where: { id: sectionSubject.teacherId, userId, schoolId, status: 'ACTIVE' } })
+      : null
     // Administrative workflows may also create activities, but teacher preferences are private and only recorded for the assigned teacher.
     const instrument = await tx.evaluationInstrument.create({ data: {
       schoolId, name: evaluationInstrumentName(proposal.instrumentType), type: proposal.instrumentType,
@@ -1230,8 +1260,9 @@ export class GradingService {
       else await tx.teacherInstrumentPreference.create({ data: { schoolId, teacherId: userId, curriculumScopeId: proposal.curriculumScopeId,
         activityType: proposal.activityType, instrumentType: proposal.instrumentType, ...data } })
     }
-    const saved = await tx.evaluationActivity.findUnique({ where: { id: activity.id }, include: activityInclude })
-    return mapEvaluationActivity(saved)
+    // These rows were returned by the writes; rereading all relations prolongs the atomic transaction.
+    return mapEvaluationActivity({ ...activity, instrument, instrumentSnapshot: snapshot,
+      groups: teams.map(team => ({ courseTeamId: team.id })), _count: existing?._count ?? { gradesRecords: 0 } })
   }
 
   private async syncActivityTeams(

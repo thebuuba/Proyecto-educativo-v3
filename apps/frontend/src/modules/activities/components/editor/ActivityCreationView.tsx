@@ -1,4 +1,5 @@
 import { isMotionReduced } from '@/hooks/useInterfacePreferences'
+import {resolveCommonScienceTask} from '@aula/shared'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -65,6 +66,11 @@ import { cn } from '@/utils/cn'
 import type { EvaluationProfile, InstrumentAcademicContext } from '@aula/shared'
 import {
   InstrumentCapacityError,
+  detectTeachingStrategy,
+  resolveCommonFrenchTask,
+  resolveCommonMathTask,
+  resolveTeachingStrategy,
+  TaskRequirementError,
   detectSecondaryLanguageActivity,
   commonSecondaryLanguageGrade,
   firstSecondaryLanguageTechnique,
@@ -152,6 +158,9 @@ export function ActivityCreationView(props: {
   const competencyBlocks = useActivityEditorProfile().blocks
   const structuralLocked = props.structuralLocked ?? false
   const [fallbackNotice, setFallbackNotice] = useState('')
+  const [criterionNotice,setCriterionNotice]=useState('')
+  const [criterionNoticeError,setCriterionNoticeError]=useState(false)
+  useEffect(()=>setCriterionNotice(''),[activityDraft.draftId,activityDraft.description,activityDraft.instrumentType,sectionSubjectId,block.id])
   useEffect(() => {
     if (!fallbackNotice) return
     const timer = window.setTimeout(() => setFallbackNotice(''), 8000)
@@ -162,6 +171,17 @@ export function ActivityCreationView(props: {
     : firstSecondaryLanguage ? 1 : secondSecondaryLanguage ? 2 : null
   const latestDraft = useRef(activityDraft)
   latestDraft.current = activityDraft
+  const strategyContext = {level:academicContext?.level,grade:academicContext?.grade,subjectCode:academicContext?.subjectCode}
+  const detectedStrategy = activityDraft.teachingStrategyOrigin === 'AUTO'
+    ? detectTeachingStrategy({...strategyContext,title:activityDraft.name,description:activityDescriptionText(activityDraft.description)}).id
+    : activityDraft.teachingStrategyId
+  useEffect(()=>{
+    const current=latestDraft.current
+    if(current.teachingStrategyOrigin!=='AUTO'||(current.teachingStrategyId??null)===(detectedStrategy??null))return
+    const next={...current,teachingStrategyId:detectedStrategy??null}
+    latestDraft.current=next
+    onChangeDraft(next)
+  },[detectedStrategy,activityDraft.teachingStrategyOrigin,activityDraft.teachingStrategyId,onChangeDraft])
   const criterionContext = useRef([sectionSubjectId,academicContext,block.id])
   criterionContext.current = [sectionSubjectId,academicContext,block.id]
   const preparationContext = useRef('')
@@ -196,7 +216,7 @@ export function ActivityCreationView(props: {
   onChangeDraftRef.current = onChangeDraft
   const [interpretation, setInterpretation] = useState<ActivityInterpretation | null>(null)
   const [preparing, setPreparing] = useState(false)
-  const [regenerated, setRegenerated] = useState(false)
+  const [preparationRevision, retryPreparation] = useState(0)
   const preparingRequest = useRef(false)
   const preparationSequence = useRef(0)
   const mounted = useRef(true)
@@ -244,12 +264,19 @@ export function ActivityCreationView(props: {
       activityDraft.preparedRecommendation && activityDraft.preparedFingerprint !== fingerprint,
     )
   const savedSnapshot = structuralLocked
+  const initialInstrument = !activityDraft.preparedRecommendation &&
+    !activityDraft.manualInstrumentBlank && !activityDraft.preparedManuallyEdited
   const canKeepCurrentInstrument = (() => {
-    if (!stale || !editingActivityId || !activityDraft.preparedFingerprint) return false
+    if (!stale || (!editingActivityId && !activityDraft.preparedManuallyEdited) || !activityDraft.preparedFingerprint) return false
     try {
+      const previous = JSON.parse(activityDraft.preparedFingerprint)
+      const current = JSON.parse(fingerprint)
+      // Legacy drafts stored six fields; explicit review upgrades their fingerprint without replacing edits.
+      const end = previous.length === 6 ? 6 : undefined
+      // Reviewing text and inferred activity changes must still preserve format, participation and references.
       return (
-        JSON.stringify(JSON.parse(activityDraft.preparedFingerprint).slice(2)) ===
-        JSON.stringify(JSON.parse(fingerprint).slice(2))
+        JSON.stringify(previous.slice(3, end)) ===
+        JSON.stringify(current.slice(3, end))
       )
     } catch {
       return false
@@ -258,7 +285,11 @@ export function ActivityCreationView(props: {
   const manualPedagogicalType = activityDraft.autoDetectedPedagogicalActivityType
     ? ''
     : activityDraft.pedagogicalActivityType || ''
-  const interpretationContext = JSON.stringify(instrumentPreparationContext(activityDraft))
+  const interpretationContext = JSON.stringify({
+    ...instrumentPreparationContext(activityDraft),
+    // A suggested technique must not restart the interpretation that just suggested it.
+    evaluationTechnique: manualSelections.current.technique ? activityDraft.evaluationTechnique : undefined,
+  })
 
   useEffect(() => {
     if (!sectionSubjectId || !activityDraft.name.trim() || editingActivityId) {
@@ -312,6 +343,14 @@ export function ActivityCreationView(props: {
           latestDraft.current = next
           onChangeDraftRef.current(next)
         }
+      }
+      // Recognized subject selections are deterministic locally. Recommendation resolves
+      // the same authorized curriculum and validates its catalog on the server.
+      if (resolveCommonFrenchTask(activityDraft.name, activityDescriptionText(activityDraft.description), props.instrumentAcademicContext)
+        || resolveCommonMathTask(activityDraft.name, activityDescriptionText(activityDraft.description), props.instrumentAcademicContext)
+        || resolveCommonScienceTask(activityDraft.name, activityDescriptionText(activityDraft.description), props.instrumentAcademicContext)) {
+        setInterpretation(null)
+        return
       }
       const requestedFingerprint = preparationFingerprint(latestDraft.current)
       const requestedContext = preparationContext.current
@@ -522,10 +561,6 @@ export function ActivityCreationView(props: {
       const prepared = { ...next, preparedFingerprint: preparationFingerprint(next) }
       latestDraft.current = prepared
       onChangeDraft(prepared)
-      if (newGeneration) {
-        setRegenerated(true)
-        window.setTimeout(() => setRegenerated(false), 1800)
-      }
       setFailedInstrumentType('')
       setFallbackNotice('')
       if (activityChange) manualSelections.current.activity = Boolean(activityChange.type)
@@ -563,7 +598,15 @@ export function ActivityCreationView(props: {
     } finally {
       if (requestSequence === preparationSequence.current) {
         preparingRequest.current = false
-        if (mounted.current) setPreparing(false)
+        if (mounted.current) {
+          setPreparing(false)
+          // A newer draft's debounce may have elapsed while this request was in flight.
+          if (
+            requestedContext !== preparationContext.current ||
+            preparationFingerprint(latestDraft.current) !== requestedFingerprint ||
+            JSON.stringify([latestDraft.current.maxScore, latestDraft.current.instrumentFields]) !== requestedFields
+          ) retryPreparation(value => value + 1)
+        }
       }
     }
   }
@@ -592,11 +635,19 @@ export function ActivityCreationView(props: {
     activityDraft.preparedManuallyEdited,
     activityDraft.preparedRecommendation,
     stale,
+    preparationRevision,
   ])
 
   function requestInstrumentChange(instrumentType: string) {
-    if (instrumentType === activityDraft.instrumentType) return
     manualSelections.current.instrument = Boolean(instrumentType)
+    if (instrumentType === activityDraft.instrumentType) {
+      if (activityDraft.autoSelectedInstrumentType) {
+        const next={...latestDraft.current,autoSelectedInstrumentType:false}
+        latestDraft.current=next
+        onChangeDraft(next)
+      }
+      return
+    }
     if (activityDraft.preparedManuallyEdited) {
       setPendingInstrumentType(instrumentType || '__auto__')
       return
@@ -654,7 +705,8 @@ export function ActivityCreationView(props: {
     latestDraft.current = next
     onChangeDraft(next)
     onAdded()
-    if(!criterion)setFallbackNotice('Fila manual añadida: escribe su criterio y los campos del instrumento.')
+    setCriterionNotice(criterion?catalogVersion==='editable-fallback-v1'?'Criterio añadido con la alternativa local. Revisa la propuesta.':'Criterio añadido. Revisa la nueva fila.':'Fila manual añadida: escribe su criterio y los campos del instrumento.')
+    setCriterionNoticeError(false)
     if (criterion && ['rubrica','escala'].includes(type) && Number(result.fields[`${type}:meta:levelCount`]) > (criterion.progressionLevels?.length ?? criterion.descriptors.length))
       setFallbackNotice('Criterio añadido. La progresión de estos niveles requiere completar sus descriptores manualmente.')
   }
@@ -676,7 +728,8 @@ export function ActivityCreationView(props: {
     if (addingRequest.current || preparingRequest.current || structuralLocked || !activityDraft.instrumentType) return
     addingRequest.current = true
     setPreparationError('')
-    setFallbackNotice('')
+    setCriterionNotice('')
+    setCriterionNoticeError(false)
     if (rowId) setCompletingCriterionId(rowId)
     else setAddingCriterion(true)
     const current = latestDraft.current
@@ -708,7 +761,7 @@ export function ActivityCreationView(props: {
       catalogVersion=proposal.catalogVersion
     } catch (error) {
       if (error instanceof ApiError && error.status >= 400 && error.status < 500) {
-        if(mounted.current && criterionRequestSignature(latestDraft.current)===signature) setPreparationError(error.message)
+        if(mounted.current && criterionRequestSignature(latestDraft.current)===signature) {setCriterionNotice(error.message);setCriterionNoticeError(true)}
         return
       }
       const base = {
@@ -725,8 +778,10 @@ export function ActivityCreationView(props: {
       try { candidates = [0, 1].flatMap(
         (variation) => editableFallbackRecommendation({ ...base, variation }).criteria,
       ) } catch (localError) {
-        if(mounted.current && criterionRequestSignature(latestDraft.current)===signature)
-          setPreparationError(localError instanceof InstrumentCapacityError?localError.message:'No se pudo preparar un criterio. Conservamos tus campos; puedes reintentar o añadirlo manualmente.')
+        if(mounted.current && criterionRequestSignature(latestDraft.current)===signature){
+          setCriterionNotice(localError instanceof InstrumentCapacityError||localError instanceof TaskRequirementError?localError.message:'No se pudo preparar un criterio. Conservamos tus campos; puedes reintentar o añadirlo manualmente.')
+          setCriterionNoticeError(true)
+        }
         return
       }
       usedAlternative = current.preparedRecommendation?.catalogVersion !== 'editable-fallback-v1'
@@ -742,20 +797,20 @@ export function ActivityCreationView(props: {
     )
       return
     if (usedAlternative)
-      setFallbackNotice('El servicio no respondió. Revisa el criterio alternativo.')
+      setCriterionNotice('El servicio no respondió. Revisa el criterio alternativo.')
     if (rowId) {
       const row = Array.from({length:Number(current.instrumentFields[`${type}:meta:criteriaCount`])},(_,index)=>index)
         .find(index=>current.instrumentFields[`${type}:criterion-id:${index}`] === rowId)
       if (row === undefined) return
       const candidate = matchingCatalogCriterion(candidates,current.instrumentFields,type,row,current.preparedRecommendation?.criteria)
       if (!candidate) {
-        setFallbackNotice('No hay una propuesta suficientemente específica para este criterio. Puedes completarlo manualmente.')
+        setCriterionNotice('No hay una propuesta suficientemente específica para este criterio. Puedes completarlo manualmente.')
         return
       }
       const fields = completeInstrumentCriterion(current.instrumentFields,type,row,candidate)
       const contentChanged=Object.keys(fields).some(key=>/^.+:(?:criterion|description|indicator|descriptor):/.test(key)&&fields[key]!==current.instrumentFields[key])
       if(!contentChanged) {
-        setFallbackNotice('No hay campos pendientes con una propuesta disponible. Se conservaron tus textos.')
+        setCriterionNotice('No hay campos pendientes con una propuesta disponible. Se conservaron tus textos.')
         return
       }
       const prior = current.preparedRecommendation
@@ -766,8 +821,8 @@ export function ActivityCreationView(props: {
       latestDraft.current = next
       onChangeDraft(next)
       if (Number(fields[`${type}:meta:levelCount`]) > (candidate.progressionLevels?.length??candidate.descriptors.length) && ['rubrica','escala'].includes(type))
-        setFallbackNotice('Se completaron los textos disponibles. La progresión de estos niveles requiere edición manual.')
-      else setFallbackNotice(usedAlternative?'Criterio completado con la alternativa local. Revisa la propuesta; se conservaron tus textos y puntos.':'Criterio completado. Se conservaron tus textos y puntos.')
+        setCriterionNotice('Se completaron los textos disponibles. La progresión de estos niveles requiere edición manual.')
+      else setCriterionNotice(usedAlternative?'Criterio completado con la alternativa local. Revisa la propuesta; se conservaron tus textos y puntos.':'Criterio completado. Se conservaron tus textos y puntos.')
       return
     }
     const criterion = nextCatalogCriterion(
@@ -777,7 +832,7 @@ export function ActivityCreationView(props: {
       current.preparedRecommendation?.criteria,
     )
     if (!criterion) {
-      setFallbackNotice('No hay otro criterio automático pertinente disponible. Puedes añadir un criterio manual.')
+      setCriterionNotice('No hay otro criterio automático pertinente disponible. Puedes añadir un criterio manual.')
       return
     }
     if (
@@ -794,7 +849,7 @@ export function ActivityCreationView(props: {
     const current = latestDraft.current
     const type = current.instrumentType
     if(!criterionHasPendingContent(current.instrumentFields,type as InstrumentRecommendation['instrumentType'],row)) {
-      setFallbackNotice('Este criterio está completo; no hay campos pendientes. Se conservaron tus textos y puntos.')
+      setCriterionNotice('Este criterio está completo; no hay campos pendientes. Se conservaron tus textos y puntos.')
       return
     }
     const key = `${type}:criterion-id:${row}`
@@ -838,7 +893,7 @@ export function ActivityCreationView(props: {
       secondaryLanguageGrade: contextualLanguageGrade || undefined,
       academicContext: props.instrumentAcademicContext,
     }) } catch (error) {
-      if(!(error instanceof InstrumentCapacityError))throw error
+      if(!(error instanceof InstrumentCapacityError||error instanceof TaskRequirementError))throw error
       setPreparationError(error.message)
       setFallbackNotice('')
       return false
@@ -936,6 +991,11 @@ export function ActivityCreationView(props: {
     draft = {...latestDraft.current, ...Object.fromEntries(
       Object.entries(draft).filter(([key, value]) => value !== activityDraft[key as keyof ActivityDraft]),
     )}
+    if (!draft.evaluationTechnique && draft.autoSelectedEvaluationTechnique) {
+      const scopedType=contextualLanguageGrade?detectSecondaryLanguageActivity(draft.name,activityDescriptionText(draft.description),{level:'SECONDARY',grade:contextualLanguageGrade,subjectCode:'LEN'}):null
+      const automaticTechnique=scopedType?firstSecondaryLanguageTechnique(scopedType):activityDefaultSuggestions(draft.name,activityDescriptionText(draft.description),props.instrumentAcademicContext,committedScore.current)?.technique
+      if(automaticTechnique)draft={...draft,evaluationTechnique:automaticTechnique}
+    }
     const changedInstrument = draft.instrumentType !== activityDraft.instrumentType
     const changedPedagogicalType =
       draft.pedagogicalActivityType !== activityDraft.pedagogicalActivityType
@@ -951,11 +1011,11 @@ export function ActivityCreationView(props: {
       manualSelections.current.instrument = Boolean(
         draft.instrumentType && !draft.autoSelectedInstrumentType,
       )
-    if (changedPedagogicalType)
+    if (changedPedagogicalType || draft.autoDetectedPedagogicalActivityType !== activityDraft.autoDetectedPedagogicalActivityType)
       manualSelections.current.activity = Boolean(
         draft.pedagogicalActivityType && !draft.autoDetectedPedagogicalActivityType,
       )
-    if (draft.evaluationTechnique !== activityDraft.evaluationTechnique)
+    if (draft.evaluationTechnique !== activityDraft.evaluationTechnique || draft.autoSelectedEvaluationTechnique !== activityDraft.autoSelectedEvaluationTechnique)
       manualSelections.current.technique = Boolean(
         draft.evaluationTechnique && !draft.autoSelectedEvaluationTechnique,
       )
@@ -1143,6 +1203,7 @@ export function ActivityCreationView(props: {
           ) : null}
           <div>
             <ActivityDataSections
+              strategyContext={strategyContext}
               structuralLocked={structuralLocked}
               activityDraft={activityDraft}
               teams={teams}
@@ -1195,7 +1256,7 @@ export function ActivityCreationView(props: {
                     onClick={() => requestRegeneration()}
                     disabled={preparing}
                   >
-                    {preparing ? 'Preparando…' : 'Generar nuevo instrumento'}
+                    Generar nuevo instrumento
                   </Button>
                   <Button
                     type="button"
@@ -1210,21 +1271,16 @@ export function ActivityCreationView(props: {
             ) : null}
             {!preparationError &&
             !savedSnapshot &&
-            (activityDraft.preparedRecommendation ||
-              activityDraft.manualInstrumentBlank ||
-              activityDraft.preparedManuallyEdited) ? (
+            (!initialInstrument ||
+              (activityDraft.name.trim() && activityDescriptionText(activityDraft.description).trim())) ? (
               <div className="flex flex-wrap gap-2">
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => requestRegeneration()}
+                  onClick={() => initialInstrument ? void prepare() : requestRegeneration()}
                   disabled={preparing}
                 >
-                  {preparing
-                    ? 'Preparando…'
-                    : regenerated
-                      ? 'Instrumento preparado'
-                      : 'Generar nuevo instrumento'}
+                  {initialInstrument ? 'Preparar instrumento' : 'Generar nuevo instrumento'}
                 </Button>
                 {!activityDraft.manualInstrumentBlank ? (
                   <Button type="button" variant="ghost" onClick={requestInstrumentFromScratch}>
@@ -1271,7 +1327,7 @@ export function ActivityCreationView(props: {
               activityDraft.preparedRecommendation ||
               activityDraft.manualInstrumentBlank) &&
             (!activityDraft.autoSelectedInstrumentType || activityDraft.preparedRecommendation) ? (
-              <div>
+              <div role="region" aria-label="Instrumento y estado de criterios">
                 <InstrumentPreview
                   key={`${activityDraft.instrumentType}:${activityDraft.manualInstrumentBlank ? 'blank' : 'prepared'}:${activityDraft.instrumentFields[`${activityDraft.instrumentType}:meta:criteriaCount`] || ''}`}
                   accent={accent}
@@ -1292,6 +1348,9 @@ export function ActivityCreationView(props: {
                   }
                   skipDefaults={activityDraft.manualInstrumentBlank}
                   addingCriterion={addingCriterion}
+                  criterionNotice={criterionNotice}
+                  criterionNoticeError={criterionNoticeError}
+                  onDismissCriterionNotice={()=>setCriterionNotice('')}
                   onAddCriterion={requestAdditionalCriterion}
                   onCompleteCriterion={requestCriterionCompletion}
                   completingCriterionId={completingCriterionId}
@@ -1434,6 +1493,11 @@ export function ActivityCreationView(props: {
                     icon: <Users className="size-4" />,
                     label: 'Modalidad',
                     value: activityDraft.activityType === 'group' ? 'Grupal' : 'Individual',
+                  },
+                  {
+                    icon: <BookOpen className="size-4" />,
+                    label: 'Estrategia de enseñanza y aprendizaje',
+                    value: resolveTeachingStrategy(activityDraft.teachingStrategyId ?? '')?.name ?? 'Sin estrategia',
                   },
                   {
                     icon: <Target className="size-4" />,
@@ -1584,7 +1648,10 @@ export function ActivityCreationView(props: {
               }}>Cancelar</Button>
               <Button variant="outline" disabled={preparing} onClick={() => {
                 const current = latestDraft.current
-                const next = {...current, pedagogicalActivityType: pendingActivityType, autoDetectedPedagogicalActivityType: !pendingActivityType, preparedManuallyEdited: true}
+                const automaticType = contextualLanguageGrade
+                  ? detectSecondaryLanguageActivity(current.name,activityDescriptionText(current.description),{level:'SECONDARY',grade:contextualLanguageGrade,subjectCode:'LEN'})
+                  : activityDefaultSuggestions(current.name,activityDescriptionText(current.description),props.instrumentAcademicContext,committedScore.current)?.activityType
+                const next = {...current, pedagogicalActivityType: pendingActivityType || automaticType || current.pedagogicalActivityType, autoDetectedPedagogicalActivityType: !pendingActivityType, preparedManuallyEdited: true}
                 const kept = {...next, preparedFingerprint: preparationFingerprint(next)}
                 manualSelections.current.activity = Boolean(pendingActivityType)
                 latestDraft.current = kept

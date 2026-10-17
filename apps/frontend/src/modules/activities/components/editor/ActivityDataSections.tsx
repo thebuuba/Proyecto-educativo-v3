@@ -1,5 +1,7 @@
 import { Input } from '@/components/ui/Input'
-import { Select } from '@/components/ui/Select'
+import { ActivitySelectionField } from './ActivitySelectionField'
+import { TeachingStrategyField } from './TeachingStrategyField'
+import type { TeachingStrategyContext } from '@aula/shared'
 import { ResourcePicker } from '@/modules/activities/components/editor/ActivityResources'
 import {
   type ActivityCompletionTarget,
@@ -255,8 +257,10 @@ export function ActivityDataSections({
   firstSecondaryLanguage,
   secondSecondaryLanguage,
   structuralLocked = false,
+  strategyContext = {},
 }: {
   structuralLocked?: boolean
+  strategyContext?: TeachingStrategyContext
   activityDraft: ActivityDraft
   teams: CourseTeam[]
   accent: (typeof blockAccents)[number]
@@ -313,22 +317,18 @@ export function ActivityDataSections({
               onChange={(description) => onChangeDraft({ ...activityDraft, description })}
             />
           </div>
-          <label className="block space-y-1.5 text-sm font-bold">
-            Tipo de actividad
-            <Select
+          <ActivitySelectionField label="Tipo de actividad" icon={FileText}
               disabled={structuralLocked}
-              className="h-11"
               value={activityDraft.pedagogicalActivityType ?? ''}
-              onChange={(event) =>
+              automatic={Boolean(activityDraft.autoDetectedPedagogicalActivityType)}
+              onConfirm={(value) =>
                 onChangeDraft({
                   ...activityDraft,
-                  pedagogicalActivityType: event.target.value,
-                  autoDetectedPedagogicalActivityType: event.target.value === '',
+                  pedagogicalActivityType: value,
+                  autoDetectedPedagogicalActivityType: value === '',
                 })
               }
-            >
-              <option value="">Detectar automáticamente</option>
-              {Object.entries(pedagogicalActivityLabels)
+              options={Object.entries(pedagogicalActivityLabels)
                 .filter(([id]) =>
                   availablePedagogicalActivityType(
                     id,
@@ -336,13 +336,8 @@ export function ActivityDataSections({
                     Boolean(secondSecondaryLanguage),
                   ),
                 )
-                .map(([id, label]) => (
-                  <option key={id} value={id}>
-                    {label}
-                  </option>
-                ))}
-            </Select>
-          </label>
+                .map(([id, name]) => ({id,name}))}/>
+          <TeachingStrategyField draft={activityDraft} context={strategyContext} onChange={onChangeDraft}/>
         </div>
       </CreationFormSection>
 
@@ -479,48 +474,33 @@ export function ActivityDataSections({
         accent={accent}
       >
         <div className="grid gap-3 md:grid-cols-2">
-          <label
+          <div
             data-activity-required="evaluationTechnique"
             className={cn('space-y-1.5 text-sm font-bold', highlight('evaluationTechnique'))}
           >
-            Técnica de evaluación <span className="text-destructive">*</span>
-            <Select
-              className="h-11"
+            <ActivitySelectionField label="Técnica de evaluación" icon={Target}
               value={activityDraft.evaluationTechnique}
-              onChange={(event) =>
+              automatic={Boolean(activityDraft.autoSelectedEvaluationTechnique)}
+              onConfirm={(value) =>
                 onChangeDraft({
                   ...activityDraft,
-                  evaluationTechnique: event.target.value,
-                  autoSelectedEvaluationTechnique: event.target.value === '',
+                  evaluationTechnique: value,
+                  autoSelectedEvaluationTechnique: value === '',
                 })
               }
-            >
-              <option value="">Seleccionar automáticamente</option>
-              {evaluationTechniqueOptions.map(([value, label]) => (
-                <option key={value} value={value}>
-                  {label}
-                </option>
-              ))}
-            </Select>
-          </label>
-          <label
+              options={evaluationTechniqueOptions.map(([id,name])=>({id,name}))}/>
+          </div>
+          <div
             data-activity-required="instrumentType"
             className={cn('space-y-1.5 text-sm font-bold', highlight('instrumentType'))}
           >
-            Tipo de instrumento
-            <Select
+            <ActivitySelectionField label="Tipo de instrumento"
               disabled={structuralLocked}
-              className="h-11"
               value={activityDraft.instrumentType}
-              onChange={(event) => onInstrumentTypeChange?.(event.target.value)}
-            >
-              <option value="">Seleccionar automáticamente</option>
-              <option value="rubrica">Rúbrica</option>
-              <option value="lista-cotejo">Lista de cotejo</option>
-              <option value="escala">Escala estimativa</option>
-              <option value="lista-ponderada">Lista ponderada</option>
-            </Select>
-          </label>
+              automatic={Boolean(activityDraft.autoSelectedInstrumentType)}
+              onConfirm={value => onInstrumentTypeChange?.(value)}
+              options={[{id:'rubrica',name:'Rúbrica'},{id:'lista-cotejo',name:'Lista de cotejo'},{id:'escala',name:'Escala estimativa'},{id:'lista-ponderada',name:'Lista ponderada'}]}/>
+          </div>
           <label
             data-activity-required="maxScore"
             className={cn('space-y-1.5 text-sm font-bold', highlight('maxScore'))}

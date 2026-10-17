@@ -1,37 +1,22 @@
 import { spawnSync } from 'node:child_process'
-import { loadEnvFile } from 'node:process'
+import { readFileSync } from 'node:fs'
+import { parseEnv } from 'node:util'
+import { developmentEnvironment, developmentProjectRef } from './cloudflare-development-environment.mjs'
 
+let values
 try {
-  loadEnvFile('.dev.vars.local')
+  values = parseEnv(readFileSync('.dev.vars.local', 'utf8'))
 } catch (error) {
   if (error.code === 'ENOENT') {
     throw new Error(
-      'Falta .dev.vars.local; inicia Supabase local y copia .dev.vars.example con sus credenciales',
+      'Falta .dev.vars.local; configura las credenciales exclusivas de AulaBase Development siguiendo .dev.vars.example',
     )
   }
   throw error
 }
 
-const required = [
-  'DATABASE_URL',
-  'FRONTEND_URL',
-  'JWT_SECRET',
-  'SUPABASE_ANON_KEY',
-  'SUPABASE_SERVICE_ROLE_KEY',
-  'SUPABASE_URL',
-  'VITE_SUPABASE_ANON_KEY',
-  'VITE_SUPABASE_URL',
-]
-for (const name of required) {
-  if (!process.env[name]) {
-    throw new Error(`Falta ${name} en .dev.vars.local`)
-  }
-}
-
-const env = {
-  ...process.env,
-  CLOUDFLARE_HYPERDRIVE_LOCAL_CONNECTION_STRING_HYPERDRIVE: process.env.DATABASE_URL,
-}
+const env = developmentEnvironment(values, process.env)
+console.log(`Desarrollo local: AulaBase Development (${developmentProjectRef}); PostgreSQL, Auth, Storage y Vite verificados.`)
 const pnpmEntry = process.env.npm_execpath
 if (!pnpmEntry) {
   throw new Error('Ejecuta este script mediante pnpm cloudflare:dev')

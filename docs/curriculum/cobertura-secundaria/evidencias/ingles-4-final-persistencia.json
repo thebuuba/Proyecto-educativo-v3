@@ -1,0 +1,1830 @@
+{
+  "verifiedAt": "2026-10-15T04:39:22.768Z",
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "aae36ce73802376ae72e3820f9bbd2b017ce2b80",
+      "dirty": true,
+      "startedAt": "2026-10-15T04:38:31.326Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.58"
+    }
+  },
+  "activities": [
+    {
+      "id": "ce1f96fc-f914-4aa9-9018-b8771c8dc64c",
+      "name": "QA cierre · Noticia y exposición tecnológica · cuarto",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Investiguemos información sobre tecnología en los textos proporcionados. Los estudiantes investigarán información sobre tecnología en textos en inglés proporcionados y organizarán los datos según la pregunta de la tarea. Luego escribirán una noticia en inglés sobre la información recuperada. Finalmente la presentarán oralmente. Se valorará la calidad en varias dimensiones.</p>",
+      "instrumentType": "rubrica",
+      "instrumentId": "abd51aeb-b9c6-40d3-85ef-0e39c2f8c19e",
+      "instrumentSnapshotId": "089762d8-5793-4202-9452-592d7e7676b6",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-research:0",
+            "title": "Información tecnológica localizada y organizada. Ajuste manual del docente.",
+            "maxScore": 4.62,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-4-research",
+            "description": "Localiza y organiza información sobre la tecnología en los textos en inglés proporcionados, relacionando los datos con la pregunta o finalidad de la tarea.",
+            "descriptors": [
+              {
+                "text": "Localiza y organiza información sobre la tecnología en los textos en inglés proporcionados, relacionando los datos con la pregunta o finalidad de la tarea.",
+                "levelId": "L4",
+                "scoreUnits": 462
+              },
+              {
+                "text": "La información responde a la búsqueda principal; una relación entre los datos necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 308
+              },
+              {
+                "text": "Recupera datos aislados sin establecer las relaciones necesarias para responder a la búsqueda.",
+                "levelId": "L2",
+                "scoreUnits": 154
+              },
+              {
+                "text": "No aporta información reconocible relacionada con lo consultado y la búsqueda solicitada.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 462,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-news:1",
+            "title": "Acontecimiento y datos de la noticia",
+            "maxScore": 6.15,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-4-news",
+            "description": "Comunica en inglés el acontecimiento de la noticia, relacionando sus datos según la situación proporcionada.",
+            "descriptors": [
+              {
+                "text": "Comunica en inglés el acontecimiento de la noticia, relacionando sus datos según la situación proporcionada.",
+                "levelId": "L4",
+                "scoreUnits": 615
+              },
+              {
+                "text": "El acontecimiento y los datos principales se comprenden; una referencia necesita precisión.",
+                "levelId": "L3",
+                "scoreUnits": 410
+              },
+              {
+                "text": "Menciona datos aislados sin establecer qué acontecimiento se comunica.",
+                "levelId": "L2",
+                "scoreUnits": 205
+              },
+              {
+                "text": "No se reconoce una noticia relacionada con el acontecimiento y los datos proporcionados.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 615,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-written:2",
+            "title": "Mensaje escrito estructurado y comprensible",
+            "maxScore": 4.62,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-4-written",
+            "description": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.",
+            "descriptors": [
+              {
+                "text": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.",
+                "levelId": "L4",
+                "scoreUnits": 462
+              },
+              {
+                "text": "El mensaje escrito se comprende; una relación entre ideas necesita revisión.",
+                "levelId": "L3",
+                "scoreUnits": 308
+              },
+              {
+                "text": "Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.",
+                "levelId": "L2",
+                "scoreUnits": 154
+              },
+              {
+                "text": "No se reconoce un mensaje escrito relacionado con el propósito de la tarea.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 462,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-intelligibility:3",
+            "title": "Discurso oral sostenido y comprensible",
+            "maxScore": 4.61,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-4-intelligibility",
+            "description": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+            "descriptors": [
+              {
+                "text": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+                "levelId": "L4",
+                "scoreUnits": 461
+              },
+              {
+                "text": "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+                "levelId": "L3",
+                "scoreUnits": 307
+              },
+              {
+                "text": "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+                "levelId": "L2",
+                "scoreUnits": 154
+              },
+              {
+                "text": "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 461,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_rubrica",
+          "ranking": [
+            {
+              "score": 64,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "623f2f4e-5006-5b7e-8484-f6b092dfc450",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 60,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d0257dc9-8898-5537-9c4e-8dd44c9c0bb0",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "23246e95-8c14-5aa1-9a78-65978a676c29",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "d0786f69-1071-57d5-acc4-2e45e5dd20f8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 51,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "eaa6d012-2f93-5034-a8e5-d2b8bfd0ec77",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "8411b792-ce82-5622-ab10-f8b420c212be",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 47,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "58b77c5e-889f-5510-8fc4-298ca23071d3",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0125b3e7-298c-5f88-ba9f-b5e77ff7c076",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "53675368-3ba3-5f50-9943-bfb6469046f8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c2201e5a-bdef-51a5-9559-9d18fa4bacf7",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "1e378491-4e54-5bd2-8f00-b70ddfcc6075",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "80f5108d-6127-5cd0-926d-dc3da189a3ab",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "1ef90b8b-2572-5df1-b535-086cb0662df5",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "439b1a4d-bce5-556f-89e8-bf04908acc5f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "929f88f6-28d8-539b-a0c7-9638355c8961",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "e5829fc8-0b88-5767-8122-a0bcfef7deab",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=4",
+                "procedureMatches=0"
+              ],
+              "elementId": "e9b7407f-2e85-54fb-a02d-9c66bdce21fa",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "a0938bae-4c46-55e0-80bc-cc2b449d8358",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b0bf3d5e-0f1a-5b63-92a3-2c9cd85ea588",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "bb1c6adb-248f-5f94-9d96-b7d483e224b0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "bce20a76-7a5c-5a9b-8b21-51c4cad7637a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c3ff652b-9259-592e-ad17-b6ab8cd2efc5",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f0304f14-6368-56fb-b1ff-ee3b3c76e549",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-4",
+            "mode=oral",
+            "functions=news",
+            "coverage=COMMON_FOURTH_GRADE_PROVIDERS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.57",
+        "instrumentType": "rubrica",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_PRESENTATION",
+      "instrumentCriteria": {
+        "rubrica:title": "Rúbrica para QA cierre · Noticia y exposición tecnológica · cuarto",
+        "rubrica:points:0": "4.62",
+        "rubrica:points:1": "6.15",
+        "rubrica:points:2": "4.62",
+        "rubrica:points:3": "4.61",
+        "rubrica:criterion:0": "Información tecnológica localizada y organizada. Ajuste manual del docente.",
+        "rubrica:criterion:1": "Acontecimiento y datos de la noticia",
+        "rubrica:criterion:2": "Mensaje escrito estructurado y comprensible",
+        "rubrica:criterion:3": "Discurso oral sostenido y comprensible",
+        "rubrica:level-name:1": "Inicial",
+        "rubrica:level-name:2": "En proceso",
+        "rubrica:level-name:3": "Logrado",
+        "rubrica:level-name:4": "Destacado",
+        "rubrica:description:0": "Localiza y organiza información sobre la tecnología en los textos en inglés proporcionados, relacionando los datos con la pregunta o finalidad de la tarea.",
+        "rubrica:description:1": "Comunica en inglés el acontecimiento de la noticia, relacionando sus datos según la situación proporcionada.",
+        "rubrica:description:2": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.",
+        "rubrica:description:3": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+        "rubrica:meta:prepared": "true",
+        "rubrica:criterion-id:0": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-research:0",
+        "rubrica:criterion-id:1": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-news:1",
+        "rubrica:criterion-id:2": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-written:2",
+        "rubrica:criterion-id:3": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-intelligibility:3",
+        "rubrica:descriptor:0:1": "No aporta información reconocible relacionada con lo consultado y la búsqueda solicitada.",
+        "rubrica:descriptor:0:2": "Recupera datos aislados sin establecer las relaciones necesarias para responder a la búsqueda.",
+        "rubrica:descriptor:0:3": "La información responde a la búsqueda principal; una relación entre los datos necesita precisión.",
+        "rubrica:descriptor:0:4": "Localiza y organiza información sobre la tecnología en los textos en inglés proporcionados, relacionando los datos con la pregunta o finalidad de la tarea.",
+        "rubrica:descriptor:1:1": "No se reconoce una noticia relacionada con el acontecimiento y los datos proporcionados.",
+        "rubrica:descriptor:1:2": "Menciona datos aislados sin establecer qué acontecimiento se comunica.",
+        "rubrica:descriptor:1:3": "El acontecimiento y los datos principales se comprenden; una referencia necesita precisión.",
+        "rubrica:descriptor:1:4": "Comunica en inglés el acontecimiento de la noticia, relacionando sus datos según la situación proporcionada.",
+        "rubrica:descriptor:2:1": "No se reconoce un mensaje escrito relacionado con el propósito de la tarea.",
+        "rubrica:descriptor:2:2": "Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.",
+        "rubrica:descriptor:2:3": "El mensaje escrito se comprende; una relación entre ideas necesita revisión.",
+        "rubrica:descriptor:2:4": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.",
+        "rubrica:descriptor:3:1": "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.",
+        "rubrica:descriptor:3:2": "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+        "rubrica:descriptor:3:3": "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+        "rubrica:descriptor:3:4": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+        "rubrica:level-points:1": "0",
+        "rubrica:level-points:2": "1",
+        "rubrica:level-points:3": "2",
+        "rubrica:level-points:4": "3",
+        "rubrica:meta:levelCount": "4",
+        "rubrica:meta:manualPoints": "true",
+        "rubrica:meta:scorePending": "false",
+        "rubrica:meta:scoreWeights": "[3,4,3,3]",
+        "rubrica:criterion-weight:0": "3",
+        "rubrica:criterion-weight:1": "4",
+        "rubrica:criterion-weight:2": "3",
+        "rubrica:criterion-weight:3": "3",
+        "rubrica:meta:criteriaCount": "4",
+        "rubrica:meta:catalogVersion": "evaluation-2026.57",
+        "rubrica:criterion-evidence:0": "{\"title\":\"Información localizada y organizada según la búsqueda\",\"description\":\"Localiza y organiza información sobre la tecnología en los textos en inglés proporcionados, relacionando los datos con la pregunta o finalidad de la tarea.\",\"progression\":[\"Localiza y organiza información sobre la tecnología en los textos en inglés proporcionados, relacionando los datos con la pregunta o finalidad de la tarea.\",\"La información responde a la búsqueda principal; una relación entre los datos necesita precisión.\",\"Recupera datos aislados sin establecer las relaciones necesarias para responder a la búsqueda.\",\"Atribuye a lo consultado datos incompatibles con la información disponible o con la pregunta de la tarea.\",\"No aporta información reconocible relacionada con lo consultado y la búsqueda solicitada.\"]}",
+        "rubrica:criterion-evidence:1": "{\"title\":\"Acontecimiento y datos de la noticia\",\"description\":\"Comunica en inglés el acontecimiento de la noticia, relacionando sus datos según la situación proporcionada.\",\"progression\":[\"Comunica en inglés el acontecimiento de la noticia, relacionando sus datos según la situación proporcionada.\",\"El acontecimiento y los datos principales se comprenden; una referencia necesita precisión.\",\"Menciona datos aislados sin establecer qué acontecimiento se comunica.\",\"Cambia el acontecimiento o atribuye a la noticia datos incompatibles con la situación proporcionada.\",\"No se reconoce una noticia relacionada con el acontecimiento y los datos proporcionados.\"]}",
+        "rubrica:criterion-evidence:2": "{\"title\":\"Mensaje escrito estructurado y comprensible\",\"description\":\"Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.\",\"progression\":[\"Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.\",\"El mensaje escrito se comprende; una relación entre ideas necesita revisión.\",\"Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.\",\"La organización o las expresiones cambian el sentido del mensaje solicitado.\",\"No se reconoce un mensaje escrito relacionado con el propósito de la tarea.\"]}",
+        "rubrica:criterion-evidence:3": "{\"title\":\"Discurso oral sostenido y comprensible\",\"description\":\"Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.\",\"progression\":[\"Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.\",\"Las ideas principales se comprenden; una relación o expresión necesita aclaración.\",\"Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.\",\"La organización o las expresiones cambian el sentido de las ideas que se comunican.\",\"No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.\"]}",
+        "rubrica:criterion-template:0": "ing-4-research",
+        "rubrica:criterion-template:1": "ing-4-news",
+        "rubrica:criterion-template:2": "ing-4-written",
+        "rubrica:criterion-template:3": "ing-4-intelligibility",
+        "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+      },
+      "evaluationTechnique": "presentacion",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "22fb9eb3-c8c6-4d2a-8dbc-b534ed2c2a8e",
+      "name": "QA cierre · Consulta de factura · cuarto",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Leerán una factura en inglés e identificarán el emisor, la fecha y el total. Se comprobará la presencia de cada evidencia con sí o no.</p>",
+      "instrumentType": "lista-cotejo",
+      "instrumentId": "764dc73b-bf3b-46df-a8c1-841de315d142",
+      "instrumentSnapshotId": "d11629a0-c4da-45dd-b24e-dc441a24eb7f",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L2",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-genre-invoice:0",
+            "title": "Identifica el emisor, la fecha y el total de la factura en inglés. Ajuste manual del docente.",
+            "maxScore": 17.35,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-4-genre-invoice",
+            "description": "Identifica el emisor, la fecha, el total de la factura y sus referentes en el texto disponible en inglés.",
+            "descriptors": [
+              {
+                "text": "Identifica el emisor, la fecha, el total de la factura y sus referentes en el texto disponible en inglés.",
+                "levelId": "L2",
+                "scoreUnits": 1735
+              },
+              {
+                "text": "Identifica el emisor, la fecha, el total de la factura y sus referentes en el texto disponible en inglés.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 1735,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-cotejo",
+          "ranking": [
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "623f2f4e-5006-5b7e-8484-f6b092dfc450",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d0257dc9-8898-5537-9c4e-8dd44c9c0bb0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=4",
+                "procedureMatches=0"
+              ],
+              "elementId": "e9b7407f-2e85-54fb-a02d-9c66bdce21fa",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "a0938bae-4c46-55e0-80bc-cc2b449d8358",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b0bf3d5e-0f1a-5b63-92a3-2c9cd85ea588",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "bb1c6adb-248f-5f94-9d96-b7d483e224b0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "bce20a76-7a5c-5a9b-8b21-51c4cad7637a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "53675368-3ba3-5f50-9943-bfb6469046f8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "f0304f14-6368-56fb-b1ff-ee3b3c76e549",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-4",
+            "mode=reading",
+            "functions=",
+            "coverage=COMMON_FOURTH_GRADE_PROVIDERS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.57",
+        "instrumentType": "lista-cotejo",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "READING_COMPREHENSION",
+      "instrumentCriteria": {
+        "lista-cotejo:title": "Lista de cotejo para QA cierre · Consulta de factura · cuarto",
+        "lista-cotejo:points:0": "17.35",
+        "lista-cotejo:criterion:0": "Identifica el emisor, la fecha y el total de la factura en inglés. Ajuste manual del docente.",
+        "lista-cotejo:description:0": "Identifica el emisor, la fecha, el total de la factura y sus referentes en el texto disponible en inglés.",
+        "lista-cotejo:meta:prepared": "true",
+        "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-genre-invoice:0",
+        "lista-cotejo:meta:pointsMode": "individual",
+        "lista-cotejo:meta:scorePending": "false",
+        "lista-cotejo:meta:scoreWeights": "[4]",
+        "lista-cotejo:criterion-weight:0": "4",
+        "lista-cotejo:meta:criteriaCount": "1",
+        "lista-cotejo:meta:catalogVersion": "evaluation-2026.57",
+        "lista-cotejo:criterion-evidence:0": "{\"title\":\"Identifica el emisor, la fecha, el total de la factura y sus referentes en el texto disponible en inglés.\",\"description\":\"Identifica el emisor, la fecha, el total de la factura y sus referentes en el texto disponible en inglés.\",\"progression\":[\"Identifica el emisor, la fecha, el total de la factura y sus referentes en el texto disponible en inglés.\",\"Reconoce el emisor, la fecha, el total de la factura y sus referentes; una referencia aislada necesita precisión.\",\"Recupera datos aislados, pero no permite reconocer por completo el emisor, la fecha, el total de la factura y sus referentes.\",\"La interpretación altera la información: atribuye los datos de la factura a otro producto o referente.\",\"No aporta información reconocible sobre el emisor, la fecha, el total de la factura y sus referentes a partir del texto disponible.\"]}",
+        "lista-cotejo:criterion-template:0": "ing-4-genre-invoice"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "b742fee5-1478-4fb9-a7f8-8cbed565fc19",
+      "name": "QA cierre · Predicciones en intercambios · cuarto",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 20,
+      "description": "<p>Dialogarán en inglés durante tres intercambios breves para comunicar una predicción relacionada con los indicios de una situación proporcionada y responder a su compañero con cortesía. Se registrará la regularidad de cada indicador.</p>",
+      "instrumentType": "escala",
+      "instrumentId": "ace9eb07-4336-4d59-b075-2142f9af677e",
+      "instrumentSnapshotId": "f9a49cd1-aa50-4b8e-9d8e-1f2c9a68e9de",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Siempre",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Frecuentemente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "A veces",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Todavía no",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-prediction:0",
+            "title": "Comunica en inglés una predicción vinculada con los indicios proporcionados. Ajuste manual del docente.",
+            "maxScore": 6.15,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-4-prediction",
+            "description": "Comunica en inglés la predicción solicitada, vinculando el resultado posible con los indicios proporcionados y distinguiéndolo de un hecho confirmado.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 615
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 410
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 205
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 615,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-strategy-courtesy:1",
+            "title": "Comunica en inglés la intención solicitada con fórmulas de cortesía pertinentes para la situación, sin descalificar al interlocutor.",
+            "maxScore": 4.62,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-4-strategy-courtesy",
+            "description": "Comunica en inglés la intención solicitada con fórmulas de cortesía pertinentes para la situación, sin descalificar al interlocutor.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 462
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 308
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 154
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 462,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-interaction:2",
+            "title": "Relaciona su respuesta en inglés con lo dicho por el interlocutor y aporta información pertinente que permite sostener el intercambio.",
+            "maxScore": 4.62,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-4-interaction",
+            "description": "Relaciona su respuesta en inglés con lo dicho por el interlocutor y aporta información pertinente que permite sostener el intercambio.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 462
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 308
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 154
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 462,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-intelligibility:3",
+            "title": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+            "maxScore": 4.61,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-4-intelligibility",
+            "description": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+            "descriptors": [
+              {
+                "text": "En todas las oportunidades observadas.",
+                "levelId": "L4",
+                "scoreUnits": 461
+              },
+              {
+                "text": "En la mayoría de las oportunidades observadas.",
+                "levelId": "L3",
+                "scoreUnits": 307
+              },
+              {
+                "text": "En algunas de las oportunidades observadas.",
+                "levelId": "L2",
+                "scoreUnits": 154
+              },
+              {
+                "text": "En ninguna de las oportunidades observadas.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 461,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 20,
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_escala",
+          "ranking": [
+            {
+              "score": 62,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "a0938bae-4c46-55e0-80bc-cc2b449d8358",
+              "topicCoverage": 0.375
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "bce20a76-7a5c-5a9b-8b21-51c4cad7637a",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "45f36813-d768-5f19-958f-c61c2f65239f",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "1e378491-4e54-5bd2-8f00-b70ddfcc6075",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 39,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c3ff652b-9259-592e-ad17-b6ab8cd2efc5",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "23246e95-8c14-5aa1-9a78-65978a676c29",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "623f2f4e-5006-5b7e-8484-f6b092dfc450",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=4",
+                "procedureMatches=0"
+              ],
+              "elementId": "e9b7407f-2e85-54fb-a02d-9c66bdce21fa",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4589d1db-eec0-5859-a697-dff794f2747f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b0bf3d5e-0f1a-5b63-92a3-2c9cd85ea588",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "bb1c6adb-248f-5f94-9d96-b7d483e224b0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d0257dc9-8898-5537-9c4e-8dd44c9c0bb0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "53675368-3ba3-5f50-9943-bfb6469046f8",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "0b69053d-83f9-5c64-83d9-4d5e0afd6d27",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "1803c055-9fa3-5abb-9372-6c6f285a25f3",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "2b3a5429-0b80-54a1-b65f-fef9ebe77db4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "711629a9-c37e-524a-899a-a723be4c9dae",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "a11dde34-588f-5933-8419-8751230eb8f0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "aa30be67-9dc7-5b94-9e3a-5aaba2846ed5",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e059b511-ce79-5870-a988-7bb5ebae4251",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6f867b15-248b-5e95-995a-d858412015aa",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "dc83133a-6e14-506a-bb5e-7197a5a5aa8a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fadeb578-c7a4-598b-b774-3c2c5f6b63a0",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-4",
+            "mode=interaction",
+            "functions=prediction",
+            "coverage=COMMON_FOURTH_GRADE_PROVIDERS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.57",
+        "instrumentType": "escala",
+        "totalScoreUnits": 2000,
+        "curriculumScopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "ORAL_INTERACTION",
+      "instrumentCriteria": {
+        "escala:title": "Escala estimativa para QA cierre · Predicciones en intercambios · cuarto",
+        "escala:points:0": "6.15",
+        "escala:points:1": "4.62",
+        "escala:points:2": "4.62",
+        "escala:points:3": "4.61",
+        "escala:criterion:0": "Comunica en inglés una predicción vinculada con los indicios proporcionados. Ajuste manual del docente.",
+        "escala:criterion:1": "Comunica en inglés la intención solicitada con fórmulas de cortesía pertinentes para la situación, sin descalificar al interlocutor.",
+        "escala:criterion:2": "Relaciona su respuesta en inglés con lo dicho por el interlocutor y aporta información pertinente que permite sostener el intercambio.",
+        "escala:criterion:3": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+        "escala:level-name:1": "Todavía no",
+        "escala:level-name:2": "A veces",
+        "escala:level-name:3": "Frecuentemente",
+        "escala:level-name:4": "Siempre",
+        "escala:description:0": "Comunica en inglés la predicción solicitada, vinculando el resultado posible con los indicios proporcionados y distinguiéndolo de un hecho confirmado.",
+        "escala:description:1": "Comunica en inglés la intención solicitada con fórmulas de cortesía pertinentes para la situación, sin descalificar al interlocutor.",
+        "escala:description:2": "Relaciona su respuesta en inglés con lo dicho por el interlocutor y aporta información pertinente que permite sostener el intercambio.",
+        "escala:description:3": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+        "escala:meta:prepared": "true",
+        "escala:criterion-id:0": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-prediction:0",
+        "escala:criterion-id:1": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-strategy-courtesy:1",
+        "escala:criterion-id:2": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-interaction:2",
+        "escala:criterion-id:3": "proposal:evaluation-2026.57:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-intelligibility:3",
+        "escala:descriptor:0:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:0:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:1:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:1:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:1:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:1:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:2:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:2:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:2:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:2:4": "En todas las oportunidades observadas.",
+        "escala:descriptor:3:1": "En ninguna de las oportunidades observadas.",
+        "escala:descriptor:3:2": "En algunas de las oportunidades observadas.",
+        "escala:descriptor:3:3": "En la mayoría de las oportunidades observadas.",
+        "escala:descriptor:3:4": "En todas las oportunidades observadas.",
+        "escala:level-points:1": "0",
+        "escala:level-points:2": "1.3333333333333333",
+        "escala:level-points:3": "2.6666666666666665",
+        "escala:level-points:4": "4",
+        "escala:meta:levelCount": "4",
+        "escala:meta:scorePending": "false",
+        "escala:meta:scoreWeights": "[4,3,3,3]",
+        "escala:criterion-weight:0": "4",
+        "escala:criterion-weight:1": "3",
+        "escala:criterion-weight:2": "3",
+        "escala:criterion-weight:3": "3",
+        "escala:meta:criteriaCount": "4",
+        "escala:meta:catalogVersion": "evaluation-2026.57",
+        "escala:criterion-evidence:0": "{\"title\":\"Comunica en inglés la predicción solicitada, vinculando el resultado posible con los indicios proporcionados y distinguiéndolo de un hecho confirmado.\",\"description\":\"Comunica en inglés la predicción solicitada, vinculando el resultado posible con los indicios proporcionados y distinguiéndolo de un hecho confirmado.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:1": "{\"title\":\"Comunica en inglés la intención solicitada con fórmulas de cortesía pertinentes para la situación, sin descalificar al interlocutor.\",\"description\":\"Comunica en inglés la intención solicitada con fórmulas de cortesía pertinentes para la situación, sin descalificar al interlocutor.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:2": "{\"title\":\"Relaciona su respuesta en inglés con lo dicho por el interlocutor y aporta información pertinente que permite sostener el intercambio.\",\"description\":\"Relaciona su respuesta en inglés con lo dicho por el interlocutor y aporta información pertinente que permite sostener el intercambio.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-evidence:3": "{\"title\":\"Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.\",\"description\":\"Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.\",\"progression\":[\"En todas las oportunidades observadas.\",\"En la mayoría de las oportunidades observadas.\",\"En algunas de las oportunidades observadas.\",\"En pocas oportunidades observadas.\",\"En ninguna de las oportunidades observadas.\"]}",
+        "escala:criterion-template:0": "ing-4-prediction",
+        "escala:criterion-template:1": "ing-4-strategy-courtesy",
+        "escala:criterion-template:2": "ing-4-interaction",
+        "escala:criterion-template:3": "ing-4-intelligibility",
+        "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+      },
+      "evaluationTechnique": "observacion-directa",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    },
+    {
+      "id": "d7875b9c-60bf-4249-a8f2-910646cc778e",
+      "name": "QA cierre · Deseo o plan y revisión · cuarto",
+      "competencyBlockId": "b1",
+      "competencyBlockWeights": {
+        "b1": 1
+      },
+      "maxScore": 17.35,
+      "description": "<p>Escribirán en inglés un correo o una carta o un aviso para comunicar un deseo o un plan futuro de un personaje, eligiendo uno de los productos y una de las intenciones. Revisarán el sentido y la corrección del mensaje antes de entregarlo. Se distribuirán pesos entre los componentes verificables.</p>",
+      "instrumentType": "lista-ponderada",
+      "instrumentId": "8efa20d7-857f-46e7-985e-ddeb9c9d9373",
+      "instrumentSnapshotId": "7d92f161-de62-4d58-9b92-58a6519376f8",
+      "instrumentSnapshotVersion": 1,
+      "evaluatedCount": 0,
+      "instrumentSnapshot": {
+        "kind": "RECOMMENDATION",
+        "levels": [
+          {
+            "id": "L3",
+            "label": "Sí",
+            "proportion": 1
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.5
+          },
+          {
+            "id": "L1",
+            "label": "No",
+            "proportion": 0
+          }
+        ],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-wishes-or-plans:0",
+            "title": "Comunica el deseo o el plan elegido del personaje. Ajuste manual del docente.",
+            "maxScore": 6.94,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "templateId": "ing-4-wishes-or-plans",
+            "description": "Expresa en inglés los deseos o esperanzas del referente indicado, distinguiendo lo deseado de un resultado confirmado. / Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada. Se valora únicamente la alternativa elegida. Parcial (50%): Menciona resultados posibles, pero no precisa qué desea o espera el referente. / Menciona una acción futura sin relacionar parte de la información solicitada del plan. Se valora únicamente la alternativa elegida.",
+            "descriptors": [
+              {
+                "text": "Expresa en inglés los deseos o esperanzas del referente indicado, distinguiendo lo deseado de un resultado confirmado. / Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada. Se valora únicamente la alternativa elegida. Parcial (50%): Menciona resultados posibles, pero no precisa qué desea o espera el referente. / Menciona una acción futura sin relacionar parte de la información solicitada del plan. Se valora únicamente la alternativa elegida.",
+                "levelId": "L3",
+                "scoreUnits": 694
+              },
+              {
+                "text": "Expresa en inglés los deseos o esperanzas del referente indicado, distinguiendo lo deseado de un resultado confirmado. / Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada. Se valora únicamente la alternativa elegida. Parcial (50%): Menciona resultados posibles, pero no precisa qué desea o espera el referente. / Menciona una acción futura sin relacionar parte de la información solicitada del plan. Se valora únicamente la alternativa elegida.",
+                "levelId": "L2",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Expresa en inglés los deseos o esperanzas del referente indicado, distinguiendo lo deseado de un resultado confirmado. / Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada. Se valora únicamente la alternativa elegida. Parcial (50%): Menciona resultados posibles, pero no precisa qué desea o espera el referente. / Menciona una acción futura sin relacionar parte de la información solicitada del plan. Se valora únicamente la alternativa elegida.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 694,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-strategy-revision:1",
+            "title": "Revisión de sentido y escritura",
+            "maxScore": 3.47,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-4-strategy-revision",
+            "description": "Los cambios realizados resuelven los problemas de sentido o escritura identificados en el mensaje en inglés. Parcial (50%): Modifica partes del mensaje, pero mantiene problemas identificados que dificultan comprenderlo.",
+            "descriptors": [
+              {
+                "text": "Los cambios realizados resuelven los problemas de sentido o escritura identificados en el mensaje en inglés. Parcial (50%): Modifica partes del mensaje, pero mantiene problemas identificados que dificultan comprenderlo.",
+                "levelId": "L3",
+                "scoreUnits": 347
+              },
+              {
+                "text": "Los cambios realizados resuelven los problemas de sentido o escritura identificados en el mensaje en inglés. Parcial (50%): Modifica partes del mensaje, pero mantiene problemas identificados que dificultan comprenderlo.",
+                "levelId": "L2",
+                "scoreUnits": 174
+              },
+              {
+                "text": "Los cambios realizados resuelven los problemas de sentido o escritura identificados en el mensaje en inglés. Parcial (50%): Modifica partes del mensaje, pero mantiene problemas identificados que dificultan comprenderlo.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 347,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-genre-email-or-letter-or-notice:2",
+            "title": "Comunicación por correo electrónico o comunicación de la carta o información del aviso",
+            "maxScore": 4.34,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-4-genre-email-or-letter-or-notice",
+            "description": "Comunica en inglés la información solicitada en el producto elegido entre las alternativas indicadas, con un mensaje comprensible relacionado con el propósito de la tarea. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la información solicitada en el producto elegido.",
+            "descriptors": [
+              {
+                "text": "Comunica en inglés la información solicitada en el producto elegido entre las alternativas indicadas, con un mensaje comprensible relacionado con el propósito de la tarea. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la información solicitada en el producto elegido.",
+                "levelId": "L3",
+                "scoreUnits": 434
+              },
+              {
+                "text": "Comunica en inglés la información solicitada en el producto elegido entre las alternativas indicadas, con un mensaje comprensible relacionado con el propósito de la tarea. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la información solicitada en el producto elegido.",
+                "levelId": "L2",
+                "scoreUnits": 217
+              },
+              {
+                "text": "Comunica en inglés la información solicitada en el producto elegido entre las alternativas indicadas, con un mensaje comprensible relacionado con el propósito de la tarea. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la información solicitada en el producto elegido.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 434,
+            "relativeWeight": 4,
+            "sourceReferences": []
+          },
+          {
+            "id": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-written:3",
+            "title": "Mensaje escrito estructurado y comprensible",
+            "maxScore": 2.6,
+            "sourceType": "CONTEXTUALIZED",
+            "templateId": "ing-4-written",
+            "description": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo. Parcial (50%): Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.",
+            "descriptors": [
+              {
+                "text": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo. Parcial (50%): Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.",
+                "levelId": "L3",
+                "scoreUnits": 260
+              },
+              {
+                "text": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo. Parcial (50%): Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.",
+                "levelId": "L2",
+                "scoreUnits": 130
+              },
+              {
+                "text": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo. Parcial (50%): Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.",
+                "levelId": "L1",
+                "scoreUnits": 0
+              }
+            ],
+            "maxScoreUnits": 260,
+            "relativeWeight": 3,
+            "sourceReferences": []
+          }
+        ],
+        "scoreUnit": 0.01,
+        "confidence": "LOW",
+        "totalScore": 17.35,
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "internalTrace": {
+          "ruleId": "LANGUAGE_TASK_lista-ponderada",
+          "ranking": [
+            {
+              "score": 53,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "1e378491-4e54-5bd2-8f00-b70ddfcc6075",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 49,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "4589d1db-eec0-5859-a697-dff794f2747f",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "a0938bae-4c46-55e0-80bc-cc2b449d8358",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 45,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "bb1c6adb-248f-5f94-9d96-b7d483e224b0",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "53675368-3ba3-5f50-9943-bfb6469046f8",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 41,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "6f867b15-248b-5e95-995a-d858412015aa",
+              "topicCoverage": 0.25
+            },
+            {
+              "score": 37,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=2",
+                "procedureMatches=0"
+              ],
+              "elementId": "623f2f4e-5006-5b7e-8484-f6b092dfc450",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 35,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ],
+              "elementId": "711629a9-c37e-524a-899a-a723be4c9dae",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=4",
+                "procedureMatches=0"
+              ],
+              "elementId": "e9b7407f-2e85-54fb-a02d-9c66bdce21fa",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 33,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fd6fd47e-0a8e-5901-8190-073633362b1f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 32,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ],
+              "elementId": "f0304f14-6368-56fb-b1ff-ee3b3c76e549",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "b0bf3d5e-0f1a-5b63-92a3-2c9cd85ea588",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 31,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "d0257dc9-8898-5537-9c4e-8dd44c9c0bb0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "747fc437-0adb-55bb-b44d-8a05996a8427",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 29,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=1",
+                "procedureMatches=0"
+              ],
+              "elementId": "bce20a76-7a5c-5a9b-8b21-51c4cad7637a",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "2b3a5429-0b80-54a1-b65f-fef9ebe77db4",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "542426d4-2bf1-5545-81e9-45e861ca791d",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "e059b511-ce79-5870-a988-7bb5ebae4251",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 27,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "fadeb578-c7a4-598b-b774-3c2c5f6b63a0",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "45f36813-d768-5f19-958f-c61c2f65239f",
+              "topicCoverage": 0.125
+            },
+            {
+              "score": 25,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ],
+              "elementId": "c3ff652b-9259-592e-ad17-b6ab8cd2efc5",
+              "topicCoverage": 0.125
+            }
+          ],
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-4",
+            "mode=writing",
+            "functions=wishes,plans",
+            "coverage=COMMON_FOURTH_GRADE_PROVIDERS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "mappingStatus": "RESOLVED",
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "curriculumStatus": "DRAFT",
+          "activityTypeOrigin": "DETECTED",
+          "lowCurriculumConfidence": true
+        },
+        "catalogVersion": "evaluation-2026.58",
+        "instrumentType": "lista-ponderada",
+        "totalScoreUnits": 1735,
+        "curriculumScopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "selectedCurriculumElements": []
+      },
+      "pedagogicalActivityType": "WRITTEN_PRODUCTION",
+      "instrumentCriteria": {
+        "lista-ponderada:title": "Lista ponderada para QA cierre · Deseo o plan y revisión · cuarto",
+        "lista-ponderada:points:0": "6.94",
+        "lista-ponderada:points:1": "3.47",
+        "lista-ponderada:points:2": "4.34",
+        "lista-ponderada:points:3": "2.6",
+        "lista-ponderada:weight:0": "40",
+        "lista-ponderada:weight:1": "20",
+        "lista-ponderada:weight:2": "25",
+        "lista-ponderada:weight:3": "15",
+        "lista-ponderada:criterion:0": "Comunica el deseo o el plan elegido del personaje. Ajuste manual del docente.",
+        "lista-ponderada:criterion:1": "Revisión de sentido y escritura",
+        "lista-ponderada:criterion:2": "Comunicación por correo electrónico o comunicación de la carta o información del aviso",
+        "lista-ponderada:criterion:3": "Mensaje escrito estructurado y comprensible",
+        "lista-ponderada:indicator:0": "Expresa en inglés los deseos o esperanzas del referente indicado, distinguiendo lo deseado de un resultado confirmado. / Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada. Se valora únicamente la alternativa elegida. Parcial (50%): Menciona resultados posibles, pero no precisa qué desea o espera el referente. / Menciona una acción futura sin relacionar parte de la información solicitada del plan. Se valora únicamente la alternativa elegida.",
+        "lista-ponderada:indicator:1": "Los cambios realizados resuelven los problemas de sentido o escritura identificados en el mensaje en inglés. Parcial (50%): Modifica partes del mensaje, pero mantiene problemas identificados que dificultan comprenderlo.",
+        "lista-ponderada:indicator:2": "Comunica en inglés la información solicitada en el producto elegido entre las alternativas indicadas, con un mensaje comprensible relacionado con el propósito de la tarea. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la información solicitada en el producto elegido.",
+        "lista-ponderada:indicator:3": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo. Parcial (50%): Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.",
+        "lista-ponderada:meta:partial": "true",
+        "lista-ponderada:description:0": "Expresa en inglés los deseos o esperanzas del referente indicado, distinguiendo lo deseado de un resultado confirmado. / Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada. Se valora únicamente la alternativa elegida. Parcial (50%): Menciona resultados posibles, pero no precisa qué desea o espera el referente. / Menciona una acción futura sin relacionar parte de la información solicitada del plan. Se valora únicamente la alternativa elegida.",
+        "lista-ponderada:description:1": "Los cambios realizados resuelven los problemas de sentido o escritura identificados en el mensaje en inglés. Parcial (50%): Modifica partes del mensaje, pero mantiene problemas identificados que dificultan comprenderlo.",
+        "lista-ponderada:description:2": "Comunica en inglés la información solicitada en el producto elegido entre las alternativas indicadas, con un mensaje comprensible relacionado con el propósito de la tarea. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la información solicitada en el producto elegido.",
+        "lista-ponderada:description:3": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo. Parcial (50%): Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.",
+        "lista-ponderada:meta:prepared": "true",
+        "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-wishes-or-plans:0",
+        "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-strategy-revision:1",
+        "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-genre-email-or-letter-or-notice:2",
+        "lista-ponderada:criterion-id:3": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-written:3",
+        "lista-ponderada:meta:manualPoints": "true",
+        "lista-ponderada:meta:scorePending": "false",
+        "lista-ponderada:meta:scoreWeights": "[4,3,4,3]",
+        "lista-ponderada:criterion-weight:0": "4",
+        "lista-ponderada:criterion-weight:1": "3",
+        "lista-ponderada:criterion-weight:2": "4",
+        "lista-ponderada:criterion-weight:3": "3",
+        "lista-ponderada:meta:criteriaCount": "4",
+        "lista-ponderada:meta:catalogVersion": "evaluation-2026.58",
+        "lista-ponderada:criterion-evidence:0": "{\"title\":\"Deseos diferenciados de hechos confirmados o Plan futuro relacionado con la situación\",\"description\":\"Expresa en inglés los deseos o esperanzas del referente indicado, distinguiendo lo deseado de un resultado confirmado. / Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada. Se valora únicamente la alternativa elegida. Parcial (50%): Menciona resultados posibles, pero no precisa qué desea o espera el referente. / Menciona una acción futura sin relacionar parte de la información solicitada del plan. Se valora únicamente la alternativa elegida.\",\"progression\":[\"Expresa en inglés los deseos o esperanzas del referente indicado, distinguiendo lo deseado de un resultado confirmado. / Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada. Se valora únicamente la alternativa elegida.\",\"Se comprende lo deseado; una referencia al resultado esperado necesita precisión. / El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión. Se valora únicamente la alternativa elegida.\",\"Menciona resultados posibles, pero no precisa qué desea o espera el referente. / Menciona una acción futura sin relacionar parte de la información solicitada del plan. Se valora únicamente la alternativa elegida.\",\"Presenta como sucedido o confirmado un resultado que el referente solo desea o espera. / Cambia la acción o los datos del plan y comunica una situación futura diferente de la indicada. Se valora únicamente la alternativa elegida.\",\"No se reconocen deseos o esperanzas relacionados con la situación indicada. / No se reconoce un plan futuro relacionado con la situación solicitada. Se valora únicamente la alternativa elegida.\"]}",
+        "lista-ponderada:criterion-evidence:1": "{\"title\":\"Revisión de sentido y escritura\",\"description\":\"Los cambios realizados resuelven los problemas de sentido o escritura identificados en el mensaje en inglés. Parcial (50%): Modifica partes del mensaje, pero mantiene problemas identificados que dificultan comprenderlo.\",\"progression\":[\"Los cambios realizados resuelven los problemas de sentido o escritura identificados en el mensaje en inglés.\",\"Los cambios resuelven los problemas principales; una relación necesita revisión.\",\"Modifica partes del mensaje, pero mantiene problemas identificados que dificultan comprenderlo.\",\"Los cambios introducen contradicciones o alteran la idea que se quería comunicar.\",\"No aporta cambios relacionados con los problemas de revisión planteados.\"]}",
+        "lista-ponderada:criterion-evidence:2": "{\"title\":\"Comunicación por correo electrónico o comunicación de la carta o información del aviso\",\"description\":\"Comunica en inglés la información solicitada en el producto elegido entre las alternativas indicadas, con un mensaje comprensible relacionado con el propósito de la tarea. Parcial (50%): Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la información solicitada en el producto elegido.\",\"progression\":[\"Comunica en inglés la información solicitada en el producto elegido entre las alternativas indicadas, con un mensaje comprensible relacionado con el propósito de la tarea.\",\"La producción permite reconocer la información solicitada en el producto elegido; una relación necesita precisión.\",\"Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la información solicitada en el producto elegido.\",\"La producción cambia el sentido: la información cambia el propósito del producto elegido.\",\"No aporta una producción reconocible que comunique la información solicitada en el producto elegido.\"]}",
+        "lista-ponderada:criterion-evidence:3": "{\"title\":\"Mensaje escrito estructurado y comprensible\",\"description\":\"Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo. Parcial (50%): Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.\",\"progression\":[\"Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.\",\"El mensaje escrito se comprende; una relación entre ideas necesita revisión.\",\"Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.\",\"La organización o las expresiones cambian el sentido del mensaje solicitado.\",\"No se reconoce un mensaje escrito relacionado con el propósito de la tarea.\"]}",
+        "lista-ponderada:criterion-template:0": "ing-4-wishes-or-plans",
+        "lista-ponderada:criterion-template:1": "ing-4-strategy-revision",
+        "lista-ponderada:criterion-template:2": "ing-4-genre-email-or-letter-or-notice",
+        "lista-ponderada:criterion-template:3": "ing-4-written"
+      },
+      "evaluationTechnique": "analisis-producciones",
+      "resources": [],
+      "activityType": "individual",
+      "teamIds": [],
+      "planningMoment": "",
+      "source": "grading"
+    }
+  ]
+}

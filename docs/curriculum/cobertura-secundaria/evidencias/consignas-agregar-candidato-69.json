@@ -1,0 +1,288 @@
+{
+  "catalogVersion": "evaluation-2026.69",
+  "scope": "UNSAVED_FICTITIOUS_DRAFT_ONLY",
+  "before": {
+    "fields": [
+      {
+        "label": "Criterio 1",
+        "value": "Plan comunicado. Texto manual conservado."
+      },
+      {
+        "label": "Destacado del criterio 1",
+        "value": "Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada."
+      },
+      {
+        "label": "Logrado del criterio 1",
+        "value": "El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión."
+      },
+      {
+        "label": "En proceso del criterio 1",
+        "value": "Menciona una acción futura sin relacionar parte de la información solicitada del plan."
+      },
+      {
+        "label": "Inicial del criterio 1",
+        "value": "No se reconoce un plan futuro relacionado con la situación solicitada."
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Be going to"
+      },
+      {
+        "label": "Destacado del criterio 2",
+        "value": "Emplea be going to en el mensaje en inglés para comunicar un plan, anuncio o resultado futuro previsto a partir de la situación indicada."
+      },
+      {
+        "label": "Logrado del criterio 2",
+        "value": "La estructura permite comunicar un plan, anuncio o resultado futuro previsto a partir de la situación indicada; un uso aislado necesita revisión."
+      },
+      {
+        "label": "En proceso del criterio 2",
+        "value": "Incluye ejemplos de be going to, pero varios usos no permiten comunicar un plan, anuncio o resultado futuro previsto a partir de la situación indicada."
+      },
+      {
+        "label": "Inicial del criterio 2",
+        "value": "No aporta usos reconocibles de be going to para el propósito solicitado."
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Will"
+      },
+      {
+        "label": "Destacado del criterio 3",
+        "value": "Emplea will en el mensaje en inglés para comunicar la intención o decisión futura del referente en el plan solicitado."
+      },
+      {
+        "label": "Logrado del criterio 3",
+        "value": "La estructura permite comunicar la intención o decisión futura del referente en el plan solicitado; un uso aislado necesita revisión."
+      },
+      {
+        "label": "En proceso del criterio 3",
+        "value": "Incluye ejemplos de will, pero varios usos no permiten comunicar la intención o decisión futura del referente en el plan solicitado."
+      },
+      {
+        "label": "Inicial del criterio 3",
+        "value": "No aporta usos reconocibles de will para el propósito solicitado."
+      },
+      {
+        "label": "Criterio 4",
+        "value": "Ideas relacionadas en la presentación"
+      },
+      {
+        "label": "Destacado del criterio 4",
+        "value": "Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito."
+      },
+      {
+        "label": "Logrado del criterio 4",
+        "value": "La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión."
+      },
+      {
+        "label": "En proceso del criterio 4",
+        "value": "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación."
+      },
+      {
+        "label": "Inicial del criterio 4",
+        "value": "No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación."
+      },
+      {
+        "label": "Criterio 5",
+        "value": "Discurso oral sostenido y comprensible"
+      },
+      {
+        "label": "Destacado del criterio 5",
+        "value": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada."
+      },
+      {
+        "label": "Logrado del criterio 5",
+        "value": "Las ideas principales se comprenden; una relación o expresión necesita aclaración."
+      },
+      {
+        "label": "En proceso del criterio 5",
+        "value": "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas."
+      },
+      {
+        "label": "Inicial del criterio 5",
+        "value": "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados."
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Puntos del criterio 1",
+        "value": ""
+      },
+      {
+        "label": "Puntos del criterio 2",
+        "value": ""
+      },
+      {
+        "label": "Puntos del criterio 3",
+        "value": ""
+      },
+      {
+        "label": "Puntos del criterio 4",
+        "value": ""
+      },
+      {
+        "label": "Puntos del criterio 5",
+        "value": ""
+      }
+    ],
+    "weights": []
+  },
+  "after": {
+    "fields": [
+      {
+        "label": "Criterio 1",
+        "value": "Plan comunicado. Texto manual conservado."
+      },
+      {
+        "label": "Destacado del criterio 1",
+        "value": "Comunica en inglés la acción propuesta y la información solicitada del plan futuro solicitado, vinculándolos con la situación proporcionada."
+      },
+      {
+        "label": "Logrado del criterio 1",
+        "value": "El plan futuro se comprende; una referencia necesaria para realizarlo necesita precisión."
+      },
+      {
+        "label": "En proceso del criterio 1",
+        "value": "Menciona una acción futura sin relacionar parte de la información solicitada del plan."
+      },
+      {
+        "label": "Inicial del criterio 1",
+        "value": "No se reconoce un plan futuro relacionado con la situación solicitada."
+      },
+      {
+        "label": "Criterio 2",
+        "value": "Be going to"
+      },
+      {
+        "label": "Destacado del criterio 2",
+        "value": "Emplea be going to en el mensaje en inglés para comunicar un plan, anuncio o resultado futuro previsto a partir de la situación indicada."
+      },
+      {
+        "label": "Logrado del criterio 2",
+        "value": "La estructura permite comunicar un plan, anuncio o resultado futuro previsto a partir de la situación indicada; un uso aislado necesita revisión."
+      },
+      {
+        "label": "En proceso del criterio 2",
+        "value": "Incluye ejemplos de be going to, pero varios usos no permiten comunicar un plan, anuncio o resultado futuro previsto a partir de la situación indicada."
+      },
+      {
+        "label": "Inicial del criterio 2",
+        "value": "No aporta usos reconocibles de be going to para el propósito solicitado."
+      },
+      {
+        "label": "Criterio 3",
+        "value": "Will"
+      },
+      {
+        "label": "Destacado del criterio 3",
+        "value": "Emplea will en el mensaje en inglés para comunicar la intención o decisión futura del referente en el plan solicitado."
+      },
+      {
+        "label": "Logrado del criterio 3",
+        "value": "La estructura permite comunicar la intención o decisión futura del referente en el plan solicitado; un uso aislado necesita revisión."
+      },
+      {
+        "label": "En proceso del criterio 3",
+        "value": "Incluye ejemplos de will, pero varios usos no permiten comunicar la intención o decisión futura del referente en el plan solicitado."
+      },
+      {
+        "label": "Inicial del criterio 3",
+        "value": "No aporta usos reconocibles de will para el propósito solicitado."
+      },
+      {
+        "label": "Criterio 4",
+        "value": "Ideas relacionadas en la presentación"
+      },
+      {
+        "label": "Destacado del criterio 4",
+        "value": "Relaciona en inglés las ideas e información de la presentación con un orden que permite seguir el asunto y su propósito."
+      },
+      {
+        "label": "Logrado del criterio 4",
+        "value": "La producción permite reconocer las ideas e información solicitadas en la presentación; una relación necesita precisión."
+      },
+      {
+        "label": "En proceso del criterio 4",
+        "value": "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer las ideas e información solicitadas en la presentación."
+      },
+      {
+        "label": "Inicial del criterio 4",
+        "value": "No aporta una producción reconocible que comunique las ideas e información solicitadas en la presentación."
+      },
+      {
+        "label": "Criterio 5",
+        "value": "Discurso oral sostenido y comprensible"
+      },
+      {
+        "label": "Destacado del criterio 5",
+        "value": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada."
+      },
+      {
+        "label": "Logrado del criterio 5",
+        "value": "Las ideas principales se comprenden; una relación o expresión necesita aclaración."
+      },
+      {
+        "label": "En proceso del criterio 5",
+        "value": "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas."
+      },
+      {
+        "label": "Inicial del criterio 5",
+        "value": "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados."
+      },
+      {
+        "label": "Criterio 6",
+        "value": "Mensaje escrito estructurado y comprensible"
+      },
+      {
+        "label": "Destacado del criterio 6",
+        "value": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo."
+      },
+      {
+        "label": "Logrado del criterio 6",
+        "value": "El mensaje escrito se comprende; una relación entre ideas necesita revisión."
+      },
+      {
+        "label": "En proceso del criterio 6",
+        "value": "Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje."
+      },
+      {
+        "label": "Inicial del criterio 6",
+        "value": "No se reconoce un mensaje escrito relacionado con el propósito de la tarea."
+      }
+    ],
+    "numbers": [
+      {
+        "label": "Puntos del criterio 1",
+        "value": ""
+      },
+      {
+        "label": "Puntos del criterio 2",
+        "value": ""
+      },
+      {
+        "label": "Puntos del criterio 3",
+        "value": ""
+      },
+      {
+        "label": "Puntos del criterio 4",
+        "value": ""
+      },
+      {
+        "label": "Puntos del criterio 5",
+        "value": ""
+      },
+      {
+        "label": "Puntos del criterio 6",
+        "value": ""
+      }
+    ],
+    "weights": []
+  },
+  "manualContentPreserved": true,
+  "completeCandidateAppended": true,
+  "status": [
+    "Borrador guardado",
+    "Criterio añadido. Revisa la nueva fila."
+  ]
+}

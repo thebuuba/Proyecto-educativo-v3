@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { secondaryEvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
 import { api } from '@/services/apiClient'
 import { ActivityCreationView } from './ActivityCreationView'
+import { chooseActivitySelection } from '../activitySelectionTestUtils'
 import { newActivityDraft, type ActivityDraft } from './editorModel'
 import { editableFallbackRecommendation, preparationFingerprint, recommendationToFields } from '../../services/instrumentPreparation'
 
@@ -107,7 +108,7 @@ describe('contexto del editor modular para preparar instrumentos', () => {
       pedagogicalActivityType: 'OTHER', autoDetectedPedagogicalActivityType: true, evaluationTechnique: '', resources: ['Diapositivas'] }
     const props = editorProps({ ...original, preparedFingerprint: preparationFingerprint(original) })
     render(<ActivityCreationView {...props} />)
-    fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), { target: { value: 'escala' } })
+    chooseActivitySelection('Tipo de instrumento', 'escala')
     await screen.findByText(/Revisa el instrumento alternativo antes de guardar/)
     const recovered = props.onChangeDraft.mock.calls.find(([value]) => value.preparedRecommendation?.instrumentType === 'escala')?.[0]
     expect(recovered?.preparedRecommendation?.activityType).toBe('CONCEPT_MAP')

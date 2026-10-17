@@ -39,6 +39,14 @@ describe('ActivityCreator', () => {
   beforeEach(() => { auth.appUser.id = 'user1'; vi.mocked(saveActivity).mockReset(); vi.mocked(getActivities).mockResolvedValue([]); vi.mocked(getCourseTeams).mockResolvedValue([]) })
   const mountCreator = (query = 'sectionSubjectId=ss-1&academicPeriodId=period-1') => render(<MemoryRouter initialEntries={[`/actividades/crear?${query}`]}><ActivityCreator /></MemoryRouter>)
 
+  it('solicita solo contexto y carga las actividades una vez por su asignatura y período', async () => {
+    vi.mocked(getActivityCenter).mockClear()
+    mountCreator()
+    await screen.findByRole('textbox', { name: 'Nombre' })
+    expect(getActivityCenter).toHaveBeenCalledWith({ contextOnly: true })
+    expect(getActivities).toHaveBeenCalledWith({ sectionSubjectId: 'ss-1', academicPeriodId: 'period-1' })
+  })
+
   it('preserves editor values after failed save and reuses creation ID only until success', async () => {
     const sent: Array<{ creationId?: string }> = []
     vi.mocked(saveActivity).mockImplementation(async input => {

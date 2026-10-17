@@ -1,10 +1,14 @@
 import {affirmativeLanguageTask} from './language-feature-criteria'
 import type {InstrumentRecommendation} from './instrument-recommendation'
+import { frenchRequirementText } from './secondary-french-task'
 
 /** The observable is stated once; scale cells express its frequency or degree. */
-export function adaptLanguageScale(proposal: InstrumentRecommendation, description: string): InstrumentRecommendation {
+export function adaptLanguageScale(proposal: InstrumentRecommendation, description: string, language?: 'fr'): InstrumentRecommendation {
   if(proposal.instrumentType!=='escala') return proposal
-  const frequency=/regularidad|frecuencia/.test(affirmativeLanguageTask(description))
+  const authoredFrenchDegree = language === 'fr' && proposal.criteria.some(criterion => /^fra-[1-6]-/.test(criterion.templateId))
+  const frequency = authoredFrenchDegree
+    ? /\b(?:observ\w*|eval\w*|registr\w*|not\w*)\b[^.;]{0,70}\b(?:regularidad|frecuencia|regularite|frequence)\b/.test(frenchRequirementText(description))
+    : /regularidad|frecuencia/.test(affirmativeLanguageTask(description)) || language === 'fr' && /\b(?:regularite|frequence)\b/.test(frenchRequirementText(description))
   const labels=frequency
     ? ['Siempre','Frecuentemente','A veces','Rara vez','Todavía no']
     : ['Completo','Suficiente','Parcial','Incipiente','Aún no logrado']
@@ -24,8 +28,13 @@ export function adaptLanguageScale(proposal: InstrumentRecommendation, descripti
   const indexes=proposal.levels.length===4?[0,1,2,4]:[0,1,2,3,4]
   return {...proposal,
     levels:proposal.levels.map((level,index)=>({...level,label:labels[indexes[index]]})),
-    criteria:proposal.criteria.map(criterion=>({...criterion,progressionLevels:[...progression],
-      descriptors:criterion.descriptors.map((descriptor,index)=>({...descriptor,text:progression[indexes[index]]})),
-    })),
+    criteria:proposal.criteria.map(criterion=>{
+      // Degree of a requested revision needs its authored conditional evidence, not inferred edits.
+      const selected=!frequency&&(authoredFrenchDegree || /^ing-[1-6]-strategy-revision(?:$|:)/.test(criterion.templateId))&&criterion.progressionLevels
+        ? criterion.progressionLevels:progression
+      return {...criterion,progressionLevels:[...selected],
+        descriptors:criterion.descriptors.map((descriptor,index)=>({...descriptor,text:selected[indexes[index]]})),
+      }
+    }),
   }
 }

@@ -46,8 +46,8 @@ export function nextCatalogCriterion(candidates: RecommendationCriterion[], fiel
     && !Array.from({length:count},(_,index)=>fields[`${type}:criterion-template:${index}`]).includes(candidate.templateId)
     && !titles.some((title,index) => {
       const source = activeUsed.find(item=>item.id === fields[`${type}:criterion-id:${index}`])
-      // Distinct authored objectives can share words; edited/manual rows still use text matching.
-      if (source && source.templateId !== candidate.templateId && source.title === title && source.description === descriptions[index]) return false
+      // A renamed authored row keeps its objective while its evidence is unchanged; shared wording is not a duplicate.
+      if (source && source.templateId !== candidate.templateId && source.description === descriptions[index] && title !== candidate.title) return false
       return equivalent(title,candidate.title) || equivalent(descriptions[index],candidate.description)
     })) ?? null
 }
@@ -132,6 +132,8 @@ export function matchingCatalogCriterion(candidates: RecommendationCriterion[], 
   const eligible = matches.filter(candidate=>nextCatalogCriterion([candidate],other,type,usedElsewhere))
   const exact = eligible.find(candidate=>candidate.templateId === template)
   if (exact) return exact
+  const exactTitles = title ? eligible.filter(candidate=>candidate.title.trim() === title) : []
+  if(exactTitles.length === 1)return exactTitles[0]
   return eligible.length === 1 ? eligible[0] : null
 }
 

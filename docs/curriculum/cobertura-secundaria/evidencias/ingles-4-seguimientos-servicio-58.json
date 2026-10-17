@@ -1,0 +1,1577 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "aae36ce73802376ae72e3820f9bbd2b017ce2b80",
+      "dirty": true,
+      "startedAt": "2026-10-15T04:38:31.326Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.58"
+    }
+  },
+  "results": [
+    {
+      "input": {
+        "sectionSubjectId": "ff5ee0a7-9d3b-45db-b044-fc7a80151988",
+        "activityTitle": "Actividad",
+        "description": "Dialogarán en inglés para aportar una propuesta individual ante un problema comunitario ficticio, con los datos de la situación proporcionada.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.58",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "cc482480-0f08-5657-98aa-1afd28ecfa1a",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.58:cc482480-0f08-5657-98aa-1afd28ecfa1a:ing-3-context-social-contribution:0",
+            "templateId": "ing-3-context-social-contribution",
+            "title": "Aporte comunicativo ante el problema dado",
+            "description": "Aporta en inglés una propuesta relacionada con el problema proporcionado y con los datos de la situación, permitiendo continuar la búsqueda comunicativa de una solución.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Aporta en inglés una propuesta relacionada con el problema proporcionado y con los datos de la situación, permitiendo continuar la búsqueda comunicativa de una solución.",
+              "El aporte responde al problema principal; una relación con los datos de la situación necesita precisión.",
+              "Expresa una propuesta aislada sin relacionarla claramente con el problema y los datos proporcionados.",
+              "El aporte cambia el problema o contradice las condiciones proporcionadas para la situación.",
+              "No aporta una propuesta comunicativa reconocible relacionada con el problema de la tarea."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Aporta en inglés una propuesta relacionada con el problema proporcionado y con los datos de la situación, permitiendo continuar la búsqueda comunicativa de una solución.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L3",
+                "text": "El aporte responde al problema principal; una relación con los datos de la situación necesita precisión.",
+                "scoreUnits": 445
+              },
+              {
+                "levelId": "L2",
+                "text": "Expresa una propuesta aislada sin relacionarla claramente con el problema y los datos proporcionados.",
+                "scoreUnits": 222
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una propuesta comunicativa reconocible relacionada con el problema de la tarea.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.58:cc482480-0f08-5657-98aa-1afd28ecfa1a:ing-3-interaction:1",
+            "templateId": "ing-3-interaction",
+            "title": "Respuesta relacionada con el interlocutor",
+            "description": "Relaciona su intervención en inglés con lo dicho por el interlocutor y aporta información que permite continuar el intercambio.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona su intervención en inglés con lo dicho por el interlocutor y aporta información que permite continuar el intercambio.",
+              "La intervención corresponde a lo dicho; una referencia requiere aclaración para continuar.",
+              "Responde a una parte de la intervención y deja información relevante sin relacionar.",
+              "Interpreta otro asunto como objeto de la intervención y responde a una información diferente.",
+              "No aporta una intervención reconocible relacionada con lo dicho por el interlocutor."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona su intervención en inglés con lo dicho por el interlocutor y aporta información que permite continuar el intercambio.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L3",
+                "text": "La intervención corresponde a lo dicho; una referencia requiere aclaración para continuar.",
+                "scoreUnits": 445
+              },
+              {
+                "levelId": "L2",
+                "text": "Responde a una parte de la intervención y deja información relevante sin relacionar.",
+                "scoreUnits": 222
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una intervención reconocible relacionada con lo dicho por el interlocutor.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.58:cc482480-0f08-5657-98aa-1afd28ecfa1a:ing-3-intelligibility:2",
+            "templateId": "ing-3-intelligibility",
+            "title": "Mensaje oral enlazado y comprensible",
+            "description": "Comunica en inglés frases y oraciones enlazadas con conectores sencillos que permiten seguir el mensaje oral, con pausas y reformulaciones compatibles con su comprensión.",
+            "maxScore": 6.66,
+            "maxScoreUnits": 666,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica en inglés frases y oraciones enlazadas con conectores sencillos que permiten seguir el mensaje oral, con pausas y reformulaciones compatibles con su comprensión.",
+              "Las ideas principales se comprenden; una relación entre expresiones requiere aclaración.",
+              "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el mensaje quedan ambiguas.",
+              "Las expresiones elegidas cambian el sentido de las ideas que se pretende comunicar.",
+              "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica en inglés frases y oraciones enlazadas con conectores sencillos que permiten seguir el mensaje oral, con pausas y reformulaciones compatibles con su comprensión.",
+                "scoreUnits": 666
+              },
+              {
+                "levelId": "L3",
+                "text": "Las ideas principales se comprenden; una relación entre expresiones requiere aclaración.",
+                "scoreUnits": 444
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el mensaje quedan ambiguas.",
+                "scoreUnits": 222
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-3",
+            "mode=interaction",
+            "functions=",
+            "coverage=DEFINED_COMMON_THIRD_GRADE_PROVIDERS",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "35521798-90f6-5a93-954c-f4870a8bbe7c",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b0bcbb3a-688d-5e10-a644-f7b19f0d3a1f",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eba6b3e4-dde8-5bc6-92c3-83cf2a2ec320",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "2f682e7d-240d-5666-b0cc-34a472aac822",
+              "score": 29,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8e200070-6122-514d-9cae-afcd24551ce7",
+              "score": 29,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bbeb9246-df88-5947-8333-86dac6c376f9",
+              "score": 29,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "849382c6-8065-5603-94d9-df5d2760cfb2",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a91cf731-62cc-5bfd-8e48-20e866ecb6fd",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "f7cef052-dbe3-5d64-99e9-1d3c864113a6",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "3dc78449-550c-4773-bbfb-2fbc9c23af76",
+        "activityTitle": "Actividad",
+        "description": "Presentarán oralmente en inglés una conversación para comunicar la información solicitada.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.58",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-genre-conversation:0",
+            "templateId": "ing-4-genre-conversation",
+            "title": "Intercambio de la conversación",
+            "description": "Relaciona sus intervenciones en inglés con las de los interlocutores para mantener el intercambio acordado.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona sus intervenciones en inglés con las de los interlocutores para mantener el intercambio acordado.",
+              "La producción permite reconocer la relación entre las intervenciones de los interlocutores; una relación necesita precisión.",
+              "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la relación entre las intervenciones de los interlocutores.",
+              "La producción cambia el sentido: confunde quién interviene o a qué intervención responde.",
+              "No aporta una producción reconocible que comunique la relación entre las intervenciones de los interlocutores."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona sus intervenciones en inglés con las de los interlocutores para mantener el intercambio acordado.",
+                "scoreUnits": 1143
+              },
+              {
+                "levelId": "L3",
+                "text": "La producción permite reconocer la relación entre las intervenciones de los interlocutores; una relación necesita precisión.",
+                "scoreUnits": 762
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye datos o expresiones aislados, pero deja incompleta la relación necesaria para reconocer la relación entre las intervenciones de los interlocutores.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una producción reconocible que comunique la relación entre las intervenciones de los interlocutores.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-intelligibility:1",
+            "templateId": "ing-4-intelligibility",
+            "title": "Discurso oral sostenido y comprensible",
+            "description": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+              "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+              "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+              "La organización o las expresiones cambian el sentido de las ideas que se comunican.",
+              "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+                "scoreUnits": 857
+              },
+              {
+                "levelId": "L3",
+                "text": "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-4",
+            "mode=oral",
+            "functions=",
+            "coverage=COMMON_FOURTH_GRADE_PROVIDERS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "80f5108d-6127-5cd0-926d-dc3da189a3ab",
+              "score": 65,
+              "topicCoverage": 0.42857142857142855,
+              "reasons": [
+                "topicTokens=3/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "623f2f4e-5006-5b7e-8484-f6b092dfc450",
+              "score": 49,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d0257dc9-8898-5537-9c4e-8dd44c9c0bb0",
+              "score": 49,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eaa6d012-2f93-5034-a8e5-d2b8bfd0ec77",
+              "score": 49,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "52308549-0bda-5083-a6d8-534739bdbd6d",
+              "score": 45,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "53675368-3ba3-5f50-9943-bfb6469046f8",
+              "score": 45,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a0938bae-4c46-55e0-80bc-cc2b449d8358",
+              "score": 45,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c3ff652b-9259-592e-ad17-b6ab8cd2efc5",
+              "score": 43,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0b69053d-83f9-5c64-83d9-4d5e0afd6d27",
+              "score": 34,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "0125b3e7-298c-5f88-ba9f-b5e77ff7c076",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1e378491-4e54-5bd2-8f00-b70ddfcc6075",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1ef90b8b-2572-5df1-b535-086cb0662df5",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "23246e95-8c14-5aa1-9a78-65978a676c29",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "439b1a4d-bce5-556f-89e8-bf04908acc5f",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4589d1db-eec0-5859-a697-dff794f2747f",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "58b77c5e-889f-5510-8fc4-298ca23071d3",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7c1f58e1-7b8a-5276-8656-e5592dda236e",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8411b792-ce82-5622-ab10-f8b420c212be",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "929f88f6-28d8-539b-a0c7-9638355c8961",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b0bf3d5e-0f1a-5b63-92a3-2c9cd85ea588",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d0786f69-1071-57d5-acc4-2e45e5dd20f8",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5829fc8-0b88-5767-8122-a0bcfef7deab",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "fde0ce9d-284d-5ec3-ad69-49384cf325ee",
+              "score": 31,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "2b3a5429-0b80-54a1-b65f-fef9ebe77db4",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "3dc78449-550c-4773-bbfb-2fbc9c23af76",
+        "activityTitle": "Actividad",
+        "description": "Escribirán en inglés un mensaje para ofrecer información sobre los datos de la lectura.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.58",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-information:0",
+            "templateId": "ing-4-information",
+            "title": "Información vinculada con la pregunta",
+            "description": "Ofrece en inglés la información de la situación proporcionada, relacionando la pregunta y la respuesta con los datos necesarios para continuar el intercambio.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ofrece en inglés la información de la situación proporcionada, relacionando la pregunta y la respuesta con los datos necesarios para continuar el intercambio.",
+              "La pregunta y la información se relacionan; una referencia a los datos de la situación necesita precisión.",
+              "Comunica información aislada, pero deja sin relacionar parte de la pregunta o respuesta solicitada.",
+              "La pregunta o respuesta cambia la información o el referente de la situación proporcionada.",
+              "No se reconoce información pertinente para la pregunta o respuesta solicitada."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Ofrece en inglés la información de la situación proporcionada, relacionando la pregunta y la respuesta con los datos necesarios para continuar el intercambio.",
+                "scoreUnits": 1143
+              },
+              {
+                "levelId": "L3",
+                "text": "La pregunta y la información se relacionan; una referencia a los datos de la situación necesita precisión.",
+                "scoreUnits": 762
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica información aislada, pero deja sin relacionar parte de la pregunta o respuesta solicitada.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce información pertinente para la pregunta o respuesta solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-written:1",
+            "templateId": "ing-4-written",
+            "title": "Mensaje escrito estructurado y comprensible",
+            "description": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.",
+              "El mensaje escrito se comprende; una relación entre ideas necesita revisión.",
+              "Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.",
+              "La organización o las expresiones cambian el sentido del mensaje solicitado.",
+              "No se reconoce un mensaje escrito relacionado con el propósito de la tarea."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.",
+                "scoreUnits": 857
+              },
+              {
+                "levelId": "L3",
+                "text": "El mensaje escrito se comprende; una relación entre ideas necesita revisión.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce un mensaje escrito relacionado con el propósito de la tarea.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-4",
+            "mode=writing",
+            "functions=information",
+            "coverage=COMMON_FOURTH_GRADE_PROVIDERS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "0125b3e7-298c-5f88-ba9f-b5e77ff7c076",
+              "score": 49,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "623f2f4e-5006-5b7e-8484-f6b092dfc450",
+              "score": 49,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d0257dc9-8898-5537-9c4e-8dd44c9c0bb0",
+              "score": 49,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eaa6d012-2f93-5034-a8e5-d2b8bfd0ec77",
+              "score": 49,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "52308549-0bda-5083-a6d8-534739bdbd6d",
+              "score": 45,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "53675368-3ba3-5f50-9943-bfb6469046f8",
+              "score": 45,
+              "topicCoverage": 0.2857142857142857,
+              "reasons": [
+                "topicTokens=2/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "711629a9-c37e-524a-899a-a723be4c9dae",
+              "score": 34,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "1e378491-4e54-5bd2-8f00-b70ddfcc6075",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1ef90b8b-2572-5df1-b535-086cb0662df5",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "23246e95-8c14-5aa1-9a78-65978a676c29",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "439b1a4d-bce5-556f-89e8-bf04908acc5f",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "58b77c5e-889f-5510-8fc4-298ca23071d3",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "80f5108d-6127-5cd0-926d-dc3da189a3ab",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8411b792-ce82-5622-ab10-f8b420c212be",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "929f88f6-28d8-539b-a0c7-9638355c8961",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b0bf3d5e-0f1a-5b63-92a3-2c9cd85ea588",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d0786f69-1071-57d5-acc4-2e45e5dd20f8",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5829fc8-0b88-5767-8122-a0bcfef7deab",
+              "score": 32,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0b69053d-83f9-5c64-83d9-4d5e0afd6d27",
+              "score": 31,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "f0304f14-6368-56fb-b1ff-ee3b3c76e549",
+              "score": 31,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "026f1b85-b3e2-54f6-847d-3b464f123bda",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1357b482-14e5-52ca-8234-7af1951c6ca5",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "38d16184-a8c0-566c-b568-fdb172f3a7aa",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+              "score": 28,
+              "topicCoverage": 0.14285714285714285,
+              "reasons": [
+                "topicTokens=1/7",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "3dc78449-550c-4773-bbfb-2fbc9c23af76",
+        "activityTitle": "Actividad",
+        "description": "Presentarán oralmente en inglés los datos de una investigación tecnológica para ofrecer información al grupo.",
+        "maxScore": 20,
+        "participationMode": "INDIVIDUAL"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.58",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-information:0",
+            "templateId": "ing-4-information",
+            "title": "Información vinculada con la pregunta",
+            "description": "Ofrece en inglés la información de la situación proporcionada, relacionando la pregunta y la respuesta con los datos necesarios para continuar el intercambio.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ofrece en inglés la información de la situación proporcionada, relacionando la pregunta y la respuesta con los datos necesarios para continuar el intercambio.",
+              "La pregunta y la información se relacionan; una referencia a los datos de la situación necesita precisión.",
+              "Comunica información aislada, pero deja sin relacionar parte de la pregunta o respuesta solicitada.",
+              "La pregunta o respuesta cambia la información o el referente de la situación proporcionada.",
+              "No se reconoce información pertinente para la pregunta o respuesta solicitada."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Ofrece en inglés la información de la situación proporcionada, relacionando la pregunta y la respuesta con los datos necesarios para continuar el intercambio.",
+                "scoreUnits": 1143
+              },
+              {
+                "levelId": "L3",
+                "text": "La pregunta y la información se relacionan; una referencia a los datos de la situación necesita precisión.",
+                "scoreUnits": 762
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica información aislada, pero deja sin relacionar parte de la pregunta o respuesta solicitada.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce información pertinente para la pregunta o respuesta solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.58:011167a1-54f7-5915-9d75-5168ec1b0a97:ing-4-intelligibility:1",
+            "templateId": "ing-4-intelligibility",
+            "title": "Discurso oral sostenido y comprensible",
+            "description": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+              "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+              "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+              "La organización o las expresiones cambian el sentido de las ideas que se comunican.",
+              "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje; las pausas y reformulaciones no impiden comprender la información solicitada.",
+                "scoreUnits": 857
+              },
+              {
+                "levelId": "L3",
+                "text": "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-4",
+            "mode=oral",
+            "functions=information",
+            "coverage=COMMON_FOURTH_GRADE_PROVIDERS_PARTIAL",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "ENGLISH_COMMUNICATIVE_PURPOSE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "d0257dc9-8898-5537-9c4e-8dd44c9c0bb0",
+              "score": 60,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "58b77c5e-889f-5510-8fc4-298ca23071d3",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "623f2f4e-5006-5b7e-8484-f6b092dfc450",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "80f5108d-6127-5cd0-926d-dc3da189a3ab",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "eaa6d012-2f93-5034-a8e5-d2b8bfd0ec77",
+              "score": 45,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "52308549-0bda-5083-a6d8-534739bdbd6d",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "53675368-3ba3-5f50-9943-bfb6469046f8",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "c2201e5a-bdef-51a5-9559-9d18fa4bacf7",
+              "score": 41,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "0125b3e7-298c-5f88-ba9f-b5e77ff7c076",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1ef90b8b-2572-5df1-b535-086cb0662df5",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "23246e95-8c14-5aa1-9a78-65978a676c29",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "439b1a4d-bce5-556f-89e8-bf04908acc5f",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "7c1f58e1-7b8a-5276-8656-e5592dda236e",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "8411b792-ce82-5622-ab10-f8b420c212be",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "929f88f6-28d8-539b-a0c7-9638355c8961",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "b0bf3d5e-0f1a-5b63-92a3-2c9cd85ea588",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d0786f69-1071-57d5-acc4-2e45e5dd20f8",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e5829fc8-0b88-5767-8122-a0bcfef7deab",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "60e6750f-396f-5a96-ac3b-9fa8f9dce7a4",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a0938bae-4c46-55e0-80bc-cc2b449d8358",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bb1c6adb-248f-5f94-9d96-b7d483e224b0",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bce20a76-7a5c-5a9b-8b21-51c4cad7637a",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e9b7407f-2e85-54fb-a02d-9c66bdce21fa",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "34de990e-e0e5-5e4b-b43b-270bfa290d49",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ]
+}

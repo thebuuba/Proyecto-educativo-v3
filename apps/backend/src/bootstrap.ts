@@ -24,7 +24,8 @@ function loadEnvironment() {
 export async function createApplication(): Promise<INestApplication> {
   loadEnvironment()
   const { AppModule } = await import('./app.module.js')
-  const app = await NestFactory.create(AppModule)
+  // Paddle verifies the original bytes; JSON reserialization invalidates its signature.
+  const app = await NestFactory.create(AppModule, { rawBody: true })
 
   app.setGlobalPrefix('api/v1')
   app.use(helmet({

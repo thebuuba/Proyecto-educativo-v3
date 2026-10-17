@@ -5,6 +5,9 @@
  * como marcadores en modo diseño.
  */
 
+import { SUBSCRIPTION_OFFER } from '@aula/shared'
+import { formatOfferAmount } from '@/modules/billing/utils/offer'
+
 export interface LegalSection {
   id: string
   title: string
@@ -67,8 +70,9 @@ export const termsDoc: LegalDoc = {
       id: 'pagos',
       title: '6. Planes, pagos y renovación',
       paragraphs: [
-        'La contratación de planes de pago aún no está disponible. Cuando se habilite, esta sección detallará importes, moneda, impuestos, periodicidad, renovación, cancelación y reembolsos.',
-        '[Condiciones comerciales por definir].',
+        `La oferta individual Docente Completo es de ${formatOfferAmount(SUBSCRIPTION_OFFER)} al mes, con un mes natural gratuito y tarjeta obligatoria. La prueba comienza al completar el checkout y aceptar expresamente la renovación automática, no al crear la cuenta. El cargo es en USD y la referencia en DOP es solo informativa.`,
+        'Antes de confirmar se muestran el importe, la fecha del primer cobro y las condiciones. Puedes cancelar la renovación desde Ajustes → Suscripción y pagos; si cancelas antes del primer cobro, no se inicia el cargo mensual. La disponibilidad de contratación depende de las opciones habilitadas en tu cuenta.',
+        'Las transferencias requieren confirmación administrativa del ingreso y no autorizan débitos automáticos. Las cortesías se registran por separado. [Política de reembolsos y revisión legal pendientes].',
       ],
     },
     {

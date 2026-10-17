@@ -1,0 +1,1999 @@
+{
+  "health": {
+    "status": "ok",
+    "development": {
+      "commit": "dc50778c113161762b97ca4f4be56d2b1044929f",
+      "dirty": true,
+      "startedAt": "2026-10-15T10:32:24.253Z",
+      "supabaseOrigin": "http://127.0.0.1:54321",
+      "catalogVersion": "evaluation-2026.69"
+    }
+  },
+  "results": [
+    {
+      "input": {
+        "sectionSubjectId": "305ce106-0a22-47f8-9ca5-1457b785c77f",
+        "activityTitle": "Informe",
+        "description": "Hacen un informe de lectura de una noticia. Mínimo dos páginas y máximo tres ejemplos.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "rubrica"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.69",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-summary:0",
+            "templateId": "report-summary",
+            "title": "Resumen de la noticia leída",
+            "description": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+            "maxScore": 4.13,
+            "maxScoreUnits": 413,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+              "El resumen conserva las ideas principales; omite un detalle secundario.",
+              "Recupera hechos o ideas aislados, pero omite relaciones necesarias para comprender el texto.",
+              "El resumen altera hechos importantes o añade datos que no pertenecen al texto.",
+              "No presenta una síntesis reconocible del texto leído."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+                "scoreUnits": 413
+              },
+              {
+                "levelId": "L3",
+                "text": "El resumen conserva las ideas principales; omite un detalle secundario.",
+                "scoreUnits": 275
+              },
+              {
+                "levelId": "L2",
+                "text": "Recupera hechos o ideas aislados, pero omite relaciones necesarias para comprender el texto.",
+                "scoreUnits": 138
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una síntesis reconocible del texto leído.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-analysis:1",
+            "templateId": "report-analysis",
+            "title": "Interpretación del texto leído",
+            "description": "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído.",
+            "maxScore": 4.13,
+            "maxScoreUnits": 413,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído.",
+              "La interpretación se relaciona con el texto; un ejemplo necesita mayor explicación.",
+              "Propone una interpretación y menciona ejemplos sin explicar cómo la apoyan.",
+              "La interpretación contradice las acciones o información del texto.",
+              "No presenta una interpretación sustentada del texto."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído.",
+                "scoreUnits": 413
+              },
+              {
+                "levelId": "L3",
+                "text": "La interpretación se relaciona con el texto; un ejemplo necesita mayor explicación.",
+                "scoreUnits": 275
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone una interpretación y menciona ejemplos sin explicar cómo la apoyan.",
+                "scoreUnits": 138
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una interpretación sustentada del texto.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-structure:2",
+            "templateId": "report-structure",
+            "title": "Estructura del informe de lectura",
+            "description": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+            "maxScore": 3.3,
+            "maxScoreUnits": 330,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+              "Las partes del informe son reconocibles; una sección necesita desarrollo.",
+              "El resumen o análisis se presentan, pero faltan partes necesarias para relacionarlos.",
+              "La organización confunde el resumen con la interpretación o contradice la conclusión.",
+              "No organiza un informe de lectura reconocible."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+                "scoreUnits": 330
+              },
+              {
+                "levelId": "L3",
+                "text": "Las partes del informe son reconocibles; una sección necesita desarrollo.",
+                "scoreUnits": 220
+              },
+              {
+                "levelId": "L2",
+                "text": "El resumen o análisis se presentan, pero faltan partes necesarias para relacionarlos.",
+                "scoreUnits": 110
+              },
+              {
+                "levelId": "L1",
+                "text": "No organiza un informe de lectura reconocible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-coherence:3",
+            "templateId": "report-coherence",
+            "title": "Coherencia y recursos lingüísticos",
+            "description": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+              "La relación entre resumen y análisis se comprende; un enlace necesita precisión.",
+              "Presenta ideas aisladas y los conectores no aclaran su relación.",
+              "Las formas verbales o conectores cambian el sentido de los hechos o la interpretación.",
+              "No se reconoce una relación comprensible entre las ideas del informe."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L3",
+                "text": "La relación entre resumen y análisis se comprende; un enlace necesita precisión.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta ideas aisladas y los conectores no aclaran su relación.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce una relación comprensible entre las ideas del informe.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-revision:4",
+            "templateId": "report-revision",
+            "title": "Revisión y versión final",
+            "description": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+              "La versión final permite comprender el informe, con errores menores.",
+              "Conserva problemas de claridad, puntuación u ortografía que dificultan algunos pasajes.",
+              "Los errores de la versión final cambian datos importantes del texto o la interpretación.",
+              "La versión final no permite comprender el contenido del informe."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L3",
+                "text": "La versión final permite comprender el informe, con errores menores.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L2",
+                "text": "Conserva problemas de claridad, puntuación u ortografía que dificultan algunos pasajes.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L1",
+                "text": "La versión final no permite comprender el contenido del informe.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:delivery-format:5",
+            "templateId": "delivery-format",
+            "title": "Condiciones explícitas de entrega",
+            "description": "Cumple las 2 condiciones de entrega solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+            "maxScore": 0.83,
+            "maxScoreUnits": 83,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple las 2 condiciones de entrega solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+              "Cumple 1 de las 2 condiciones solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+              "Cumple algunas condiciones y deja otras sin cumplir; contrasta cada condición por separado: mínimo 2 páginas; máximo 3 ejemplos.",
+              "La entrega no permite comprobar el cumplimiento de las condiciones solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+              "No cumple las condiciones de entrega solicitadas: mínimo 2 páginas; máximo 3 ejemplos."
+            ],
+            "relativeWeight": 1,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple las 2 condiciones de entrega solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple 1 de las 2 condiciones solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+                "scoreUnits": 55
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunas condiciones y deja otras sin cumplir; contrasta cada condición por separado: mínimo 2 páginas; máximo 3 ejemplos.",
+                "scoreUnits": 28
+              },
+              {
+                "levelId": "L1",
+                "text": "No cumple las condiciones de entrega solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "score": 64,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 44,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ee0cfcaa-6207-53d0-91b0-4a41d350d96f",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "305ce106-0a22-47f8-9ca5-1457b785c77f",
+        "activityTitle": "Informe",
+        "description": "Hacen un informe de lectura de una noticia. Tres páginas y cinco páginas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "rubrica"
+      },
+      "error": {
+        "status": 400,
+        "body": {
+          "success": false,
+          "error": "Requisitos de entrega contradictorios: los límites de páginas no son compatibles. Revisa la consigna; se conservaron tus cambios.",
+          "statusCode": 400
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "305ce106-0a22-47f8-9ca5-1457b785c77f",
+        "activityTitle": "Informe",
+        "description": "Hacen un informe de lectura de una noticia. Mínimo dos páginas y máximo tres ejemplos.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-cotejo"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.69",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-summary:0",
+            "templateId": "report-summary",
+            "title": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+            "description": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+            "maxScore": 4.13,
+            "maxScoreUnits": 413,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+              "El resumen conserva las ideas principales; omite un detalle secundario.",
+              "Recupera hechos o ideas aislados, pero omite relaciones necesarias para comprender el texto.",
+              "El resumen altera hechos importantes o añade datos que no pertenecen al texto.",
+              "No presenta una síntesis reconocible del texto leído."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-analysis:1",
+            "templateId": "report-analysis",
+            "title": "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído.",
+            "description": "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído.",
+            "maxScore": 4.13,
+            "maxScoreUnits": 413,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído.",
+              "La interpretación se relaciona con el texto; un ejemplo necesita mayor explicación.",
+              "Propone una interpretación y menciona ejemplos sin explicar cómo la apoyan.",
+              "La interpretación contradice las acciones o información del texto.",
+              "No presenta una interpretación sustentada del texto."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-structure:2",
+            "templateId": "report-structure",
+            "title": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+            "description": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+            "maxScore": 3.31,
+            "maxScoreUnits": 331,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+              "Las partes del informe son reconocibles; una sección necesita desarrollo.",
+              "El resumen o análisis se presentan, pero faltan partes necesarias para relacionarlos.",
+              "La organización confunde el resumen con la interpretación o contradice la conclusión.",
+              "No organiza un informe de lectura reconocible."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-coherence:3",
+            "templateId": "report-coherence",
+            "title": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+            "description": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+              "La relación entre resumen y análisis se comprende; un enlace necesita precisión.",
+              "Presenta ideas aisladas y los conectores no aclaran su relación.",
+              "Las formas verbales o conectores cambian el sentido de los hechos o la interpretación.",
+              "No se reconoce una relación comprensible entre las ideas del informe."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-revision:4",
+            "templateId": "report-revision",
+            "title": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+            "description": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+              "La versión final permite comprender el informe, con errores menores.",
+              "Conserva problemas de claridad, puntuación u ortografía que dificultan algunos pasajes.",
+              "Los errores de la versión final cambian datos importantes del texto o la interpretación.",
+              "La versión final no permite comprender el contenido del informe."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:delivery-format:pages:5",
+            "templateId": "delivery-format:pages",
+            "title": "La entrega cumple la condición solicitada: mínimo 2 páginas.",
+            "description": "La entrega cumple la condición solicitada: mínimo 2 páginas.",
+            "maxScore": 0.41,
+            "maxScoreUnits": 41,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega cumple: mínimo 2 páginas.",
+              "Se comprueba el cumplimiento de: mínimo 2 páginas.",
+              "La entrega permite comprobar solo parte de: mínimo 2 páginas.",
+              "No se puede comprobar: mínimo 2 páginas.",
+              "La entrega no cumple: mínimo 2 páginas."
+            ],
+            "relativeWeight": 0.5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:delivery-format:quantity-ejemplo:6",
+            "templateId": "delivery-format:quantity-ejemplo",
+            "title": "La entrega cumple la condición solicitada: máximo 3 ejemplos.",
+            "description": "La entrega cumple la condición solicitada: máximo 3 ejemplos.",
+            "maxScore": 0.41,
+            "maxScoreUnits": 41,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega cumple: máximo 3 ejemplos.",
+              "Se comprueba el cumplimiento de: máximo 3 ejemplos.",
+              "La entrega permite comprobar solo parte de: máximo 3 ejemplos.",
+              "No se puede comprobar: máximo 3 ejemplos.",
+              "La entrega no cumple: máximo 3 ejemplos."
+            ],
+            "relativeWeight": 0.5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "score": 64,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 44,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ee0cfcaa-6207-53d0-91b0-4a41d350d96f",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "305ce106-0a22-47f8-9ca5-1457b785c77f",
+        "activityTitle": "Informe",
+        "description": "Hacen un informe de lectura de una noticia. Tres páginas y cinco páginas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-cotejo"
+      },
+      "error": {
+        "status": 400,
+        "body": {
+          "success": false,
+          "error": "Requisitos de entrega contradictorios: los límites de páginas no son compatibles. Revisa la consigna; se conservaron tus cambios.",
+          "statusCode": 400
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "305ce106-0a22-47f8-9ca5-1457b785c77f",
+        "activityTitle": "Informe",
+        "description": "Hacen un informe de lectura de una noticia. Mínimo dos páginas y máximo tres ejemplos.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "escala"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.69",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-summary:0",
+            "templateId": "report-summary",
+            "title": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+            "description": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+            "maxScore": 4.13,
+            "maxScoreUnits": 413,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 413
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 275
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 138
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-analysis:1",
+            "templateId": "report-analysis",
+            "title": "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído.",
+            "description": "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído.",
+            "maxScore": 4.13,
+            "maxScoreUnits": 413,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 413
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 275
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 138
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-structure:2",
+            "templateId": "report-structure",
+            "title": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+            "description": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+            "maxScore": 3.3,
+            "maxScoreUnits": 330,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 330
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 220
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 110
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-coherence:3",
+            "templateId": "report-coherence",
+            "title": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+            "description": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-revision:4",
+            "templateId": "report-revision",
+            "title": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+            "description": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:delivery-format:5",
+            "templateId": "delivery-format",
+            "title": "Cumple las 2 condiciones de entrega solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+            "description": "Cumple las 2 condiciones de entrega solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+            "maxScore": 0.83,
+            "maxScoreUnits": 83,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple todos los aspectos del indicador.",
+              "Cumple lo esencial del indicador; queda un aspecto por completar.",
+              "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+              "Inicia el desempeño sin completar sus aspectos esenciales.",
+              "No demuestra el desempeño descrito en el indicador."
+            ],
+            "relativeWeight": 1,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple todos los aspectos del indicador.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L3",
+                "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+                "scoreUnits": 55
+              },
+              {
+                "levelId": "L2",
+                "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+                "scoreUnits": 28
+              },
+              {
+                "levelId": "L1",
+                "text": "No demuestra el desempeño descrito en el indicador.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "score": 64,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 44,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ee0cfcaa-6207-53d0-91b0-4a41d350d96f",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "305ce106-0a22-47f8-9ca5-1457b785c77f",
+        "activityTitle": "Informe",
+        "description": "Hacen un informe de lectura de una noticia. Tres páginas y cinco páginas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "escala"
+      },
+      "error": {
+        "status": 400,
+        "body": {
+          "success": false,
+          "error": "Requisitos de entrega contradictorios: los límites de páginas no son compatibles. Revisa la consigna; se conservaron tus cambios.",
+          "statusCode": 400
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "305ce106-0a22-47f8-9ca5-1457b785c77f",
+        "activityTitle": "Informe",
+        "description": "Hacen un informe de lectura de una noticia. Mínimo dos páginas y máximo tres ejemplos.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-ponderada"
+      },
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.69",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+        "curriculumScopeId": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-summary:0",
+            "templateId": "report-summary",
+            "title": "Resumen de la noticia leída",
+            "description": "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido. Parcial (50%): Recupera hechos o ideas aislados, pero omite relaciones necesarias para comprender el texto.",
+            "maxScore": 4.13,
+            "maxScoreUnits": 413,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Sintetiza las ideas principales del texto leído y conserva sus relaciones sin alterar su sentido.",
+              "El resumen conserva las ideas principales; omite un detalle secundario.",
+              "Recupera hechos o ideas aislados, pero omite relaciones necesarias para comprender el texto.",
+              "El resumen altera hechos importantes o añade datos que no pertenecen al texto.",
+              "No presenta una síntesis reconocible del texto leído."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-analysis:1",
+            "templateId": "report-analysis",
+            "title": "Interpretación del texto leído",
+            "description": "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído. Parcial (50%): Propone una interpretación y menciona ejemplos sin explicar cómo la apoyan.",
+            "maxScore": 4.13,
+            "maxScoreUnits": 413,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Interpreta el sentido y las relaciones entre ideas del texto y sustenta su explicación con ejemplos pertinentes del texto leído.",
+              "La interpretación se relaciona con el texto; un ejemplo necesita mayor explicación.",
+              "Propone una interpretación y menciona ejemplos sin explicar cómo la apoyan.",
+              "La interpretación contradice las acciones o información del texto.",
+              "No presenta una interpretación sustentada del texto."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-structure:2",
+            "templateId": "report-structure",
+            "title": "Estructura del informe de lectura",
+            "description": "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe. Parcial (50%): El resumen o análisis se presentan, pero faltan partes necesarias para relacionarlos.",
+            "maxScore": 3.3,
+            "maxScoreUnits": 330,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza título, introducción, desarrollo y conclusión de acuerdo con el propósito del informe.",
+              "Las partes del informe son reconocibles; una sección necesita desarrollo.",
+              "El resumen o análisis se presentan, pero faltan partes necesarias para relacionarlos.",
+              "La organización confunde el resumen con la interpretación o contradice la conclusión.",
+              "No organiza un informe de lectura reconocible."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-coherence:3",
+            "templateId": "report-coherence",
+            "title": "Coherencia y recursos lingüísticos",
+            "description": "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación. Parcial (50%): Presenta ideas aisladas y los conectores no aclaran su relación.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona resumen y análisis con vocabulario adecuado, verbos consistentes y conectores de adición o ejemplificación.",
+              "La relación entre resumen y análisis se comprende; un enlace necesita precisión.",
+              "Presenta ideas aisladas y los conectores no aclaran su relación.",
+              "Las formas verbales o conectores cambian el sentido de los hechos o la interpretación.",
+              "No se reconoce una relación comprensible entre las ideas del informe."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:report-revision:4",
+            "templateId": "report-revision",
+            "title": "Revisión y versión final",
+            "description": "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe. Parcial (50%): Conserva problemas de claridad, puntuación u ortografía que dificultan algunos pasajes.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta una versión final legible, con claridad, puntuación y ortografía que permiten comprender el informe.",
+              "La versión final permite comprender el informe, con errores menores.",
+              "Conserva problemas de claridad, puntuación u ortografía que dificultan algunos pasajes.",
+              "Los errores de la versión final cambian datos importantes del texto o la interpretación.",
+              "La versión final no permite comprender el contenido del informe."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.69:26e3c2e5-8b54-5786-ae1e-a792fc287ecd:delivery-format:5",
+            "templateId": "delivery-format",
+            "title": "Condiciones explícitas de entrega",
+            "description": "Cumple las 2 condiciones de entrega solicitadas: mínimo 2 páginas; máximo 3 ejemplos. Parcial (50%): Cumple algunas condiciones y deja otras sin cumplir; contrasta cada condición por separado: mínimo 2 páginas; máximo 3 ejemplos.",
+            "maxScore": 0.83,
+            "maxScoreUnits": 83,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple las 2 condiciones de entrega solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+              "Cumple 1 de las 2 condiciones solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+              "Cumple algunas condiciones y deja otras sin cumplir; contrasta cada condición por separado: mínimo 2 páginas; máximo 3 ejemplos.",
+              "La entrega no permite comprobar el cumplimiento de las condiciones solicitadas: mínimo 2 páginas; máximo 3 ejemplos.",
+              "No cumple las condiciones de entrega solicitadas: mínimo 2 páginas; máximo 3 ejemplos."
+            ],
+            "relativeWeight": 1,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "REVIEWED_MAPPING_AND_STRUCTURED_CONTEXT"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+              "score": 64,
+              "topicCoverage": 0.375,
+              "reasons": [
+                "topicTokens=3/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=3"
+              ]
+            },
+            {
+              "elementId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "f539e8fd-f625-5294-96fb-285546e10b49",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+              "score": 47,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=2"
+              ]
+            },
+            {
+              "elementId": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+              "score": 44,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+              "score": 39,
+              "topicCoverage": 0.25,
+              "reasons": [
+                "topicTokens=2/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "ee0cfcaa-6207-53d0-91b0-4a41d350d96f",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+              "score": 30,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=1"
+              ]
+            },
+            {
+              "elementId": "1e8cd77f-d712-535e-b108-203a914fb39c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+              "score": 25,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=10",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "DRAFT",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "sectionSubjectId": "305ce106-0a22-47f8-9ca5-1457b785c77f",
+        "activityTitle": "Informe",
+        "description": "Hacen un informe de lectura de una noticia. Tres páginas y cinco páginas.",
+        "maxScore": 17.35,
+        "participationMode": "INDIVIDUAL",
+        "preferredInstrumentType": "lista-ponderada"
+      },
+      "error": {
+        "status": 400,
+        "body": {
+          "success": false,
+          "error": "Requisitos de entrega contradictorios: los límites de páginas no son compatibles. Revisa la consigna; se conservaron tus cambios.",
+          "statusCode": 400
+        }
+      }
+    }
+  ]
+}

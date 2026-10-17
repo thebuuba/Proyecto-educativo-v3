@@ -21,12 +21,16 @@ assert.equal(new Set(saved.map(a=>a.instrumentType)).size,expectedFormats)
 for(const evidence of ui) {
   const activity=saved.find(a=>a.name===evidence.name&&a.instrumentType===evidence.format)
   assert(activity)
+  if(subject==='ING'&&grade>=2){
+    assert(evidence.reopened,'The browser flow must include a real reopening')
+    assert.equal(evidence.activityId,activity.id,'The observed edit link must identify the saved activity')
+  }
   const proposal=activity.instrumentSnapshot
   assert.equal(proposal.catalogVersion,evidence.catalogVersion??'evaluation-2026.20')
   assert.equal(proposal.activityType,activity.pedagogicalActivityType)
   assert.equal(proposal.totalScoreUnits,Math.round(activity.maxScore*100))
   assert.equal(proposal.criteria.reduce((n,c)=>n+c.maxScoreUnits,0),proposal.totalScoreUnits)
-  if(run==='final'&&subject==='ING')for(const [index,criterion] of proposal.criteria.entries()){
+  if(subject==='ING'&&(run==='final'||grade>=2))for(const [index,criterion] of proposal.criteria.entries()){
     assert.equal(activity.instrumentCriteria[`${activity.instrumentType}:criterion-id:${index}`],criterion.id,'Editor/snapshot identity mismatch')
     assert.equal(activity.instrumentCriteria[`${activity.instrumentType}:criterion-template:${index}`],criterion.templateId,'Editor/snapshot objective mismatch')
     assert.equal(Math.round(Number(activity.instrumentCriteria[`${activity.instrumentType}:points:${index}`])*100),criterion.maxScoreUnits,'Editor/snapshot points mismatch')

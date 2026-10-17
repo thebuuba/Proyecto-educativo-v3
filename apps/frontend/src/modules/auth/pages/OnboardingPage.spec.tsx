@@ -1,11 +1,20 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { OnboardingPage, resolveCurrentSchoolYear } from './OnboardingPage'
 import type { SchoolResult } from '@/modules/auth/components/SchoolSearchInput'
 
 const completeOnboarding = vi.hoisted(() => vi.fn())
+const authState = vi.hoisted(() => ({
+  value: {
+    appUser: null as null,
+    isAuthenticated: false,
+    loading: false,
+    profileRequired: true,
+    onboardingComplete: false,
+  },
+}))
 const school = vi.hoisted(() => ({
   id: 'school-directory-id',
   name: 'Católico Cardenal Beras',
@@ -22,7 +31,7 @@ const school = vi.hoisted(() => ({
 }))
 
 vi.mock('@/modules/auth/hooks/useAuth', () => ({
-  useAuth: () => ({ appUser: null, completeOnboarding, isAuthenticated: false, loading: false, profileRequired: true, onboardingComplete: false }),
+  useAuth: () => ({ ...authState.value, completeOnboarding }),
 }))
 vi.mock('@/modules/auth/services/supabaseClient', () => ({ supabase: { auth: { getUser: vi.fn().mockResolvedValue({ data: { user: null } }) } } }))
 vi.mock('@/modules/auth/components/SchoolSearchInput', () => ({
@@ -30,8 +39,22 @@ vi.mock('@/modules/auth/components/SchoolSearchInput', () => ({
   formatSchoolLocation: (value: SchoolResult) => [value.district].filter(Boolean),
 }))
 
-function renderPage() {
-  return render(<MemoryRouter initialEntries={['/onboarding']}><OnboardingPage /></MemoryRouter>)
+function DestinationProbe() {
+  const { pathname, search } = useLocation()
+  return <p data-testid="destination">{`${pathname}${search}`}</p>
+}
+
+function renderPage(initialEntries: string[] = ['/onboarding']) {
+  return render(
+    <MemoryRouter initialEntries={initialEntries}>
+      <Routes>
+        <Route path="/onboarding" element={<OnboardingPage />} />
+        <Route path="/configuracion" element={<DestinationProbe />} />
+        <Route path="/inicio" element={<DestinationProbe />} />
+        <Route path="/registro" element={<DestinationProbe />} />
+      </Routes>
+    </MemoryRouter>,
+  )
 }
 
 function reachConfirmation() {
@@ -47,6 +70,13 @@ describe('OnboardingPage', () => {
     localStorage.clear()
     localStorage.setItem('aulabase:registration-name', 'Alexauris Diaz Diaz')
     completeOnboarding.mockReset().mockResolvedValue({})
+    authState.value = {
+      appUser: null,
+      isAuthenticated: false,
+      loading: false,
+      profileRequired: true,
+      onboardingComplete: false,
+    }
   })
 
   it('preloads the registration name instead of asking for an empty field', () => {
@@ -107,9 +137,9 @@ describe('OnboardingPage', () => {
 
   it('submits the directory school id and teacher context only from step 3', async () => {
     renderPage()
-    expect(screen.queryByRole('button', { name: 'Entrar a AulaBase' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Continuar a mi suscripción' })).not.toBeInTheDocument()
     reachConfirmation()
-    fireEvent.click(screen.getByRole('button', { name: 'Entrar a AulaBase' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Continuar a mi suscripción' }))
     await waitFor(() => expect(completeOnboarding).toHaveBeenCalledWith(expect.objectContaining({
       school: { id: 'school-directory-id', name: 'Católico Cardenal Beras' },
       teacherContext: { levels: ['secondary'], shifts: ['morning'], modalities: ['regular'] },
@@ -120,10 +150,49 @@ describe('OnboardingPage', () => {
     completeOnboarding.mockRejectedValueOnce(new Error('Error temporal')).mockResolvedValueOnce({})
     renderPage()
     reachConfirmation()
-    fireEvent.click(screen.getByRole('button', { name: 'Entrar a AulaBase' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Continuar a mi suscripción' }))
     expect(await screen.findByRole('alert')).toHaveTextContent('Error temporal')
     expect(screen.getByText('Revisa tu configuración')).toBeInTheDocument()
-    fireEvent.click(screen.getByRole('button', { name: 'Entrar a AulaBase' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Continuar a mi suscripción' }))
     await waitFor(() => expect(completeOnboarding).toHaveBeenCalledTimes(2))
+  })
+
+  it('lleva el onboarding nuevo a la suscripción con la bienvenida marcada', async () => {
+    renderPage()
+    reachConfirmation()
+    expect(screen.getAllByText(/US\$7\.99/).length).toBeGreaterThan(0)
+    expect(screen.getByText(/la prueba comienza al completar el checkout con tarjeta/i)).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Continuar a mi suscripción' }))
+    expect(await screen.findByText('Bienvenido')).toBeInTheDocument()
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('destination')).toHaveTextContent(
+          '/configuracion?tab=suscripcion&bienvenida=1',
+        ),
+      { timeout: 3000 },
+    )
+  })
+
+  it('conserva el destino de inicio cuando el onboarding se reabre con reset', async () => {
+    renderPage(['/onboarding?reset=1'])
+    reachConfirmation()
+    fireEvent.click(screen.getByRole('button', { name: 'Entrar a AulaBase' }))
+    await waitFor(
+      () => expect(screen.getByTestId('destination')).toHaveTextContent('/inicio'),
+      { timeout: 3000 },
+    )
+    expect(screen.getByTestId('destination')).not.toHaveTextContent('configuracion')
+  })
+
+  it('no reenvía a la suscripción a quien ya completó el onboarding', async () => {
+    authState.value = {
+      ...authState.value,
+      isAuthenticated: true,
+      profileRequired: false,
+      onboardingComplete: true,
+    }
+    renderPage()
+    expect(await screen.findByTestId('destination')).toHaveTextContent('/inicio')
+    expect(screen.getByTestId('destination')).not.toHaveTextContent('configuracion')
   })
 })

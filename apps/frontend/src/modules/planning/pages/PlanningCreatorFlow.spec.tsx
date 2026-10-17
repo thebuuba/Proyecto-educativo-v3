@@ -1,3 +1,4 @@
+import {chooseActivitySelection,activitySelectionName} from '@/modules/activities/components/activitySelectionTestUtils'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { MemoryRouter, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { beforeEach, expect, it, vi } from 'vitest'
@@ -28,7 +29,7 @@ vi.mock('@/services/apiClient', async (importOriginal) => {
     api: {
       ...original.api,
       get: vi.fn(async (path: string) =>
-        path === '/activities/center'
+        path === '/activities/center?contextOnly=true'
           ? {
               activities: [],
               sectionSubjects: [
@@ -157,6 +158,8 @@ it('creates from a real planning card and recovers its link and return destinati
     ...stored.draft,
     name: 'Actividad vinculada',
     description: 'Analizar el texto.',
+    teachingStrategyId: 'DEBATE',
+    teachingStrategyOrigin: 'MANUAL' as const,
     maxScore: '20',
     activityType: 'individual',
     evaluationTechnique: 'analisis-producciones',
@@ -199,6 +202,8 @@ it('creates from a real planning card and recovers its link and return destinati
     expect.objectContaining({
       planningEntryId: 'plan-1',
       source: 'planning',
+      teachingStrategyId: 'DEBATE',
+      teachingStrategyOrigin: 'MANUAL',
       sectionSubjectId: 'subject',
       academicPeriodId: 'period',
     }),
@@ -210,7 +215,7 @@ it('creates from a real planning card and recovers its link and return destinati
   fireEvent.click(screen.getByRole('button', { name: 'Crear otra' }))
   expect(screen.getByRole('textbox', { name: /Nombre de la actividad/ })).toHaveValue('')
   expect(screen.getByRole('textbox', { name: 'Descripción' })).toHaveValue('')
-  expect(screen.getByRole('combobox', { name: 'Tipo de instrumento' })).toHaveValue('')
+  expect(screen.getByRole('button', { name: 'Tipo de instrumento' })).toHaveTextContent(activitySelectionName(''))
   expect(screen.getByRole('button', { name: 'Volver a Planificación' })).toBeInTheDocument()
   fireEvent.change(screen.getByRole('textbox', { name: /Nombre de la actividad/ }), {
     target: { value: 'Segundo informe' },
@@ -222,15 +227,9 @@ it('creates from a real planning card and recovers its link and return destinati
     target: { value: '20' },
   })
   fireEvent.click(screen.getByRole('button', { name: /^Individual/ }))
-  fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de actividad' }), {
-    target: { value: 'REPORT' },
-  })
-  fireEvent.change(screen.getByRole('combobox', { name: /Técnica de evaluación/ }), {
-    target: { value: 'analisis-producciones' },
-  })
-  fireEvent.change(screen.getByRole('combobox', { name: 'Tipo de instrumento' }), {
-    target: { value: 'lista-cotejo' },
-  })
+  chooseActivitySelection('Tipo de actividad', 'REPORT')
+  chooseActivitySelection('Técnica de evaluación', 'analisis-producciones')
+  chooseActivitySelection('Tipo de instrumento', 'lista-cotejo')
   await waitFor(
     () =>
       expect(readActivityDrafts(stored.context)[0].draft).toMatchObject({

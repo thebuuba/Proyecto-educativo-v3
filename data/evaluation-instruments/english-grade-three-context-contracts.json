@@ -1,0 +1,13 @@
+[
+ {"id":"courtesy","sourceTypes":{"ATTITUDE_VALUE":[4,5,8,9],"ACHIEVEMENT_INDICATOR":[9,18,20]},"description":"Dialogarán en inglés para comunicar una advertencia con cortesía y respeto a la opinión del interlocutor."},
+ {"id":"empathetic-response","sourceTypes":{"ATTITUDE_VALUE":[2],"ACHIEVEMENT_INDICATOR":[19]},"description":"Dialogarán en inglés para ofrecer una sugerencia con empatía ante la necesidad comunicada por un personaje ficticio."},
+ {"id":"faithful-information","sourceTypes":{"ATTITUDE_VALUE":[6]},"description":"Escribirán en inglés una noticia conservando fielmente la información proporcionada, sin inventar datos."},
+ {"id":"agreed-norms","sourceTypes":{"ATTITUDE_VALUE":[7]},"description":"Dialogarán en inglés para expresar una opinión, respetando las normas del intercambio proporcionadas en la tarea."},
+ {"id":"social-contribution","sourceTypes":{"ATTITUDE_VALUE":[10],"ACHIEVEMENT_INDICATOR":[7,8,19]},"description":"Dialogarán en inglés para aportar una sugerencia sobre un problema comunitario de una situación ficticia, relacionándola con el problema proporcionado y la intervención del equipo."},
+ {"id":"respect-differences","sourceTypes":{"ATTITUDE_VALUE":[11],"ACHIEVEMENT_INDICATOR":[10]},"description":"Escribirán en inglés una inferencia sobre las costumbres de los personajes de los ejemplos proporcionados, sin estereotipos ni generalizaciones a todas las personas."},
+ {"id":"critical-information","sourceTypes":{"ATTITUDE_VALUE":[12,13],"ACHIEVEMENT_INDICATOR":[4,13]},"description":"Escribirán en inglés una predicción sobre una noticia proporcionada, distinguiendo los hechos confirmados de las inferencias y posibilidades."},
+ {"id":"care","sourceTypes":{"ATTITUDE_VALUE":[13],"ACHIEVEMENT_INDICATOR":[15,16,17]},"description":"Leerán en inglés un aviso e identificarán las acciones indicadas para cuidar la salud y el medioambiente de la situación proporcionada."},
+ {"id":"care","sourceTypes":{"ATTITUDE_VALUE":[13],"ACHIEVEMENT_INDICATOR":[15,16,17]},"description":"Escribirán en inglés una sugerencia para cuidar el medioambiente de una situación proporcionada."},
+ {"id":"research","sourceTypes":{"ACHIEVEMENT_INDICATOR":[12,13,14]},"description":"Investigarán información sobre tecnología en textos en inglés proporcionados y sistematizarán los datos para responder a la pregunta de la tarea."},
+ {"id":"problem-information","sourceTypes":{"ACHIEVEMENT_INDICATOR":[6,7,8]},"description":"Leerán en inglés un mensaje e identificarán el problema cotidiano del personaje y los datos solicitados para resolverlo."}
+]

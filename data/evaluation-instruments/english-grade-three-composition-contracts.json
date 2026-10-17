@@ -1,0 +1,7 @@
+[
+ {"id":"news-to-opinion-reply","description":"Leerán una noticia breve en inglés e identificarán el acontecimiento. Luego escribirán un correo en inglés para expresar su opinión sobre el hecho con una razón y responder al mensaje proporcionado. Finalmente revisarán el sentido y la corrección del mensaje escrito.","activity":"WRITTEN_PRODUCTION","criteria":["news","opinion","interaction","strategy-revision","written"]},
+ {"id":"instructions-presented","description":"Escribirán en inglés instrucciones para una tarea escolar y revisarán el mensaje escrito. Luego las presentarán oralmente.","activity":"ORAL_PRESENTATION","criteria":["instructions","strategy-revision","written","intelligibility"]},
+ {"id":"alternative-products","description":"Escribirán en inglés un correo o una carta para expresar una opinión sobre un texto proporcionado, para leer en la feria.","activity":"WRITTEN_PRODUCTION","criteria":["opinion","genre-email-or-letter","written"],"excluded":["genre-email","genre-letter"]},
+ {"id":"alternative-forms","description":"Escribirán una predicción en inglés utilizando will o going to, según la alternativa elegida.","activity":"WRITTEN_PRODUCTION","criteria":["prediction","feature-will-or-going-to","written"],"excluded":["feature-will","feature-going-to"]},
+ {"id":"explicit-video","description":"Crearán en inglés un video para comunicar una advertencia sobre un riesgo de una situación ficticia.","activity":"AUDIOVISUAL_PRODUCTION","criteria":["warning","genre-audiovisual"],"excluded":["intelligibility"]}
+]

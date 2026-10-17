@@ -1,0 +1,362 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "grade": 1,
+  "catalog": "evaluation-2026.86",
+  "source": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_NAT_COMUN_G1_V1",
+    "versionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+    "documentId": "69de4fa5-ab87-53e2-929e-e4b7947391a2",
+    "metadata": {
+      "subjectCodes": [
+        "NAT",
+        "NAT-TU"
+      ],
+      "grades": [
+        1
+      ],
+      "commonOnly": true,
+      "datasetDigest": "92e89351f951223cf7f0e6c3cb789e7ee81ac9fb02aa57aff74289a0b9b693e1",
+      "sourceVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "sourcePdfHash": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+      "scopeMap": {
+        "1": {
+          "sourceId": "c5a4c8f1-9f67-5710-9998-1a631b7be48a",
+          "id": "3f5745a4-bcd3-5936-98dd-e19cb65133bf"
+        }
+      },
+      "review": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json"
+    },
+    "scopes": 1,
+    "elements": 112,
+    "relations": 7,
+    "result": "UNCHANGED",
+    "preservedSnapshots": 80
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-CXmbawwO.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-CXmbawwO.js",
+        "sha256": "f0fd83d2cac4011560f378a767f1fd3bbd27cf17e868064f6f839e9cb395cbae",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-BbQxu88V.js",
+        "sha256": "1a8c81c82725dd6bffe7ab91f556e5b841c6b9917034877f74258a78da9b807f",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-B7yWMNkV.js",
+        "sha256": "f1d74e28d76c311a38f8681204d80c0456673fbef24dc9845164f22db670d099",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-CxVYAUdN.js",
+        "sha256": "c267bbc140fb67078c533f5deaa4a39eca6425f5981d019f43ccbb67bad82233",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-CchKRo6i.js",
+        "sha256": "2fca4d4735bb13147c6d628c4b999abb7d051f69c4b4c3f74b3cb2ae020e03d3",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "e09ed125ef6dcc87b5330deebb2f595e17ec7c74f002cda2dd66590a60b76f38",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "checks": [
+    {
+      "command": "pnpm --filter backend test",
+      "code": 0,
+      "ms": 14256,
+      "log": ".wrangler/science-source/final-check-0.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 7409,
+      "log": ".wrangler/science-source/final-check-1.log"
+    },
+    {
+      "command": "pnpm --filter frontend exec vitest run src/modules/activities/services/scienceCommonContract.spec.ts src/modules/activities/components/ActivityPreparationRace.spec.tsx",
+      "code": 0,
+      "ms": 6455,
+      "log": ".wrangler/science-source/final-check-2.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 18805,
+      "log": ".wrangler/science-source/final-check-3.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "code": 0,
+      "ms": 21734,
+      "log": ".wrangler/science-source/final-check-4.log"
+    }
+  ],
+  "earlierFullFrontend": {
+    "files": 130,
+    "tests": 41593,
+    "durationSeconds": 102.04,
+    "startLocal": "2026-10-16 14:04:40",
+    "scope": "Before final targeted corrections; final focused parity/lifecycle560 passed afterward"
+  },
+  "backendFinal": {
+    "files": 102,
+    "tests": 41155
+  },
+  "http": {
+    "verification": "AUTHENTICATED_HTTP_DB_AND_EDITOR_ADAPTERS_NOT_VISUAL",
+    "savedEvidence": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "activityId": "683d3dbd-130d-41a2-b7a5-4e88cd80125d",
+        "instrumentHash": "6244e5f0e06708f66a07c02814ae9cb769b577c9987e85ee210700a9ee384dab",
+        "snapshotId": "7216740e-7d83-40d2-84ca-54033aa64241",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+          "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf"
+        }
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "activityId": "09637808-fd4f-4da6-9011-e9891b80da39",
+        "instrumentHash": "6dda3fcfeb2eed8a29f2252df81a42e04bf8012be4af1cd1cf1c519cade8fc7b",
+        "snapshotId": "86e4f508-197a-4f8d-b3ae-acf2c762c53c",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+          "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf"
+        }
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "activityId": "9767faa0-5ea0-4557-bf64-b8b39700de69",
+        "instrumentHash": "b94f9bd8025c733b643334eb8df2014f8f12f39c9da7a4a560b5d498b33a9993",
+        "snapshotId": "bdbb0f38-7cbf-4825-9773-42ddc05409c3",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+          "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf"
+        }
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "activityId": "5b27826a-af73-4c67-99c1-a7e9dced56ab",
+        "instrumentHash": "b1550a14475d19312e492cf8092e3993af9b731333ebfb043f0aedb9982b23ee",
+        "snapshotId": "16d779c4-9d93-4022-97fa-1dae49043f21",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+          "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf"
+        }
+      }
+    ],
+    "finalBuildRecheck": {
+      "at": "2026-10-16T18:18:59.653Z",
+      "reopened": 4,
+      "generated": [
+        {
+          "type": "rubrica",
+          "total": 20,
+          "catalog": "evaluation-2026.86"
+        },
+        {
+          "type": "lista-cotejo",
+          "total": 17.35,
+          "catalog": "evaluation-2026.86"
+        },
+        {
+          "type": "escala",
+          "total": 20,
+          "catalog": "evaluation-2026.86"
+        },
+        {
+          "type": "lista-ponderada",
+          "total": 17.35,
+          "catalog": "evaluation-2026.86"
+        }
+      ],
+      "languageRegressions": [
+        {
+          "language": "FRA",
+          "catalog": "evaluation-2026.86",
+          "curriculumVersionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+        },
+        {
+          "language": "ING",
+          "catalog": "evaluation-2026.86",
+          "curriculumVersionId": null,
+          "scopeId": null
+        },
+        {
+          "language": "MAT",
+          "catalog": "evaluation-2026.86",
+          "curriculumVersionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+          "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+        }
+      ]
+    },
+    "semanticControls": [
+      {
+        "description": "Formula preguntas investigables sobre los vientos.",
+        "criteria": [
+          "nat-1-winds-question"
+        ],
+        "catalog": "evaluation-2026.86"
+      },
+      {
+        "description": "Explica el ciclo del agua o representa la estructura interna de la Tierra mediante un dibujo.",
+        "criteria": [
+          "nat-1-earth-structure-alternative"
+        ],
+        "catalog": "evaluation-2026.86"
+      },
+      {
+        "description": "Formulen una hipótesis sobre la erosión del suelo. Realicen la práctica indicada y registren las observaciones.",
+        "criteria": [
+          "nat-1-erosion-hypothesis",
+          "nat-1-erosion-experiment-procedure",
+          "nat-1-erosion-experiment-record",
+          "nat-1-erosion-safety"
+        ],
+        "catalog": "evaluation-2026.86"
+      },
+      {
+        "description": "Los estudiantes explicarán cómo realizar un experimento sobre erosión del suelo.",
+        "criteria": [
+          "nat-1-erosion-explanation"
+        ],
+        "catalog": "evaluation-2026.86"
+      }
+    ],
+    "firstRecommendationTimingsMs": [
+      6125,
+      8407,
+      6820,
+      6220
+    ]
+  },
+  "browser": {
+    "session": "PERSONAL_DEVELOPMENT_WITH_NEW_QA_ACTIVITIES",
+    "formats": [
+      {
+        "activityId": "1b33acaf-5409-4f84-8891-a05b8252c569",
+        "format": "rubrica",
+        "points": 17.35,
+        "instrumentId": "524dc967-7a66-42a5-a302-e65a60b65812",
+        "snapshotId": "4c460c09-e1c9-4397-8ecc-b38bf138e157",
+        "catalog": "evaluation-2026.86",
+        "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+        "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+        "teachingStrategyId": "EXPOSITORY",
+        "fieldsHash": "b7aabe0bc6636eb3efbd0a1843b1822afa96897684a97b29095f4650de7374c8",
+        "rows": 3
+      },
+      {
+        "activityId": "cb9d8594-bbd1-49bf-b8ea-92475cbb7262",
+        "format": "lista-cotejo",
+        "points": 20,
+        "instrumentId": "2467324b-8038-44fd-b9a2-fd7616da13a0",
+        "snapshotId": "cdc16cfd-f00e-4354-b349-5789a013288c",
+        "catalog": "evaluation-2026.86",
+        "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+        "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+        "teachingStrategyId": null,
+        "fieldsHash": "24e7ec3fb6666836a9f48cef355042951dab5ae9b2af89eaf0acd3f64d6ff172",
+        "rows": 1
+      },
+      {
+        "activityId": "605b7cce-9266-4058-8e16-9c97cb17a822",
+        "format": "escala",
+        "points": 17.35,
+        "instrumentId": "9e3a465b-dd5b-4379-b907-1aacb640eedd",
+        "snapshotId": "711568d0-641d-45bb-b4c8-861a81e7794b",
+        "catalog": "evaluation-2026.86",
+        "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+        "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+        "teachingStrategyId": null,
+        "fieldsHash": "e5d9799604722bcadd2edf2742869dbed5ff240579bcae472f1e20d942390dfa",
+        "rows": 1
+      },
+      {
+        "activityId": "3dcdd732-ca43-46b2-a678-32587f667328",
+        "format": "lista-ponderada",
+        "points": 17.35,
+        "instrumentId": "1b2c6fa9-851b-4d2b-94e3-1a5ed61733ed",
+        "snapshotId": "d705ae30-3c00-4378-bad0-c32762ee0101",
+        "catalog": "evaluation-2026.86",
+        "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+        "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+        "teachingStrategyId": "CASE_STUDY",
+        "fieldsHash": "3916b68d80052769a8d8423b979d8ad8ac4a3905901047a09c824b4413cdbf21",
+        "rows": 5
+      }
+    ],
+    "allTableFieldsEqual": true,
+    "completionPreservedManualText": true,
+    "exhaustionNotice": true,
+    "strategyOnlyExact": true,
+    "automaticStrategy": "INQUIRY",
+    "frequencyLabelsVerified": true,
+    "screenshot": "assets/ciencias-naturaleza-1/ponderada-reabierta.jpg",
+    "timingUpperBoundsMs": {
+      "rubric": 14089,
+      "frequencyScale": 8368
+    }
+  },
+  "historicalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 1,
+    "newSnapshots": 8
+  },
+  "secretsAudit": {
+    "filesInspected": 31,
+    "secretValuesFound": false,
+    "privateFilesExcluded": true
+  },
+  "limits": [
+    "Defined patterns only; not every possible wording",
+    "No independent separation of network/database/render time",
+    "Browser service-worker private registrations not audited; HTTP assets/sw and document entry checked",
+    "Grades2–6 pending; optatives and other subjects excluded"
+  ]
+}

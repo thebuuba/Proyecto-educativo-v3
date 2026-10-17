@@ -12,6 +12,7 @@ import { PageSkeleton } from '@/components/ui/PageSkeleton'
 import { AppLayout } from '@/layouts/AppLayout'
 import { RequireAuth } from '@/modules/auth/components/RequireAuth'
 import { appRoutes } from '@/routes/appRoutes'
+import type { UserRole } from '@/types/domain'
 import { getOAuthCallbackPath } from '@/utils/oauthCallback'
 
 // ponytail: named-export resolver for lazy()
@@ -46,10 +47,6 @@ const PaymentStatusPage = lazyPage(
   () => import('@/modules/promo/pages/CheckoutPage'),
   'PaymentStatusPage',
 )
-const SubscriptionPage = lazyPage(
-  () => import('@/modules/promo/pages/CheckoutPage'),
-  'SubscriptionPage',
-)
 const ResetPasswordPage = lazyPage(
   () => import('@/modules/auth/pages/ResetPasswordPage'),
   'ResetPasswordPage',
@@ -57,6 +54,32 @@ const ResetPasswordPage = lazyPage(
 
 /** Componente de carga mostrado durante la carga diferida de módulos. */
 const routeFallback = <PageSkeleton />
+
+/**
+ * La suscripción pertenece al titular autenticado, no a un rol escolar
+ * concreto, por lo que la ruta se protege sin limitar roles.
+ */
+const billingAllowedRoles: UserRole[] = [
+  'admin',
+  'director',
+  'coordinator',
+  'teacher',
+  'student',
+  'guardian',
+  'viewer',
+]
+
+/**
+ * Conserva el enlace antiguo `/cuenta/suscripcion` redirigiendo a la categoría
+ * de suscripción dentro de Configuración, sin perder los parámetros de
+ * recuperación (por ejemplo, de pagos vencidos).
+ */
+export function LegacySubscriptionRedirect() {
+  const { search } = useLocation()
+  const next = new URLSearchParams(search)
+  next.set('tab', 'suscripcion')
+  return <Navigate to={`/configuracion?${next.toString()}`} replace />
+}
 
 /**
  * Componente principal de la aplicación.
@@ -87,7 +110,6 @@ function App() {
         <Route path="/precios" element={<PricingPage />} />
         <Route path="/contratar" element={<BillingPreviewGate><CheckoutPage /></BillingPreviewGate>} />
         <Route path="/contratar/estado/:estado" element={<BillingPreviewGate><PaymentStatusPage /></BillingPreviewGate>} />
-        <Route path="/cuenta/suscripcion" element={<BillingPreviewGate><SubscriptionPage /></BillingPreviewGate>} />
         <Route path="/registro" element={<RegisterPage />} />
         <Route path="/registro/confirma-correo" element={<ConfirmEmailPage />} />
         <Route path="/configuracion/centro" element={<OnboardingPage />} />
@@ -112,6 +134,19 @@ function App() {
               />
             )
           })}
+          {/*
+            La suscripción se gestiona dentro de Configuración. Se conservan los
+            roles autenticados que ya accedían a esta ruta y la redirección
+            mantiene los parámetros de recuperación de pagos vencidos.
+          */}
+          <Route
+            path="cuenta/suscripcion"
+            element={
+              <RequireAuth allowedRoles={billingAllowedRoles}>
+                <LegacySubscriptionRedirect />
+              </RequireAuth>
+            }
+          />
           <Route path="*" element={<Navigate to="/inicio" replace />} />
         </Route>
       </Routes>

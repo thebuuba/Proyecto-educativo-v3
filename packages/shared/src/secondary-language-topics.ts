@@ -47,6 +47,7 @@ export function topicTaskMode(activity: string): TopicTaskMode {
 export function detectTopicActivity(title: string, description: string, topic: SecondaryLanguageTopic) {
   const task = affirmativeLanguageTask(withoutResources(description) || title)
   const contract=resolveEvaluationTask(title,task)
+  if(topic.id==='informe-de-lectura'&&contract.product==='REPORT'&&!contract.oral)return 'REPORT'
   if(topic.grade>=3&&/\b(?:debat\w*|debates?)\b/.test(task))return 'DEBATE'
   if(['entremes-teatral','monologo'].includes(topic.id)&&/\b(?:represent(?:ar\w*|an|a|en|ando)|dramatiz(?:ar\w*|an|a|en|ando)|actuar\w*|escenific(?:ar\w*|an|a|en|ando))\b/.test(task))return 'PERFORMANCE'
   if(contract.product==='ANALYTICAL_TEXT'&&!contract.oral) return topic.id==='guia-turistica'?'TOURIST_GUIDE_ANALYSIS':topic.id==='informe-de-lectura'?'READING_REPORT_ANALYSIS':'ANALYSIS'

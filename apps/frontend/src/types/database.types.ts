@@ -959,6 +959,8 @@ export type Database = {
       evaluation_activities: {
         Row: {
           pedagogical_activity_type: string | null
+          teaching_strategy_id: string | null
+          teaching_strategy_origin: string
           instrument_snapshot_id: string | null
           academic_period_id: string
           activity_date: string | null
@@ -989,6 +991,8 @@ export type Database = {
         }
         Insert: {
           pedagogical_activity_type?: string | null
+          teaching_strategy_id?: string | null
+          teaching_strategy_origin?: string
           instrument_snapshot_id?: string | null
           academic_period_id: string
           activity_date?: string | null
@@ -1019,6 +1023,8 @@ export type Database = {
         }
         Update: {
           pedagogical_activity_type?: string | null
+          teaching_strategy_id?: string | null
+          teaching_strategy_origin?: string
           instrument_snapshot_id?: string | null
           academic_period_id?: string
           activity_date?: string | null
@@ -2957,6 +2963,200 @@ export type Database = {
           },
         ]
       }
+      billing_runtime_settings: {
+        Row: { id: string; enforce_access: boolean; updated_at: string }
+        Insert: { id?: string; enforce_access?: boolean; updated_at?: string }
+        Update: { id?: string; enforce_access?: boolean; updated_at?: string }
+        Relationships: []
+      }
+      billing_plans: {
+        Row: { code: string; created_at: string; description: string | null; features: string[]; grace_days: number; id: string; is_public: boolean; name: string; status: Database["public"]["Enums"]["billing_plan_status"]; trial_days: number; updated_at: string }
+        Insert: { code: string; created_at?: string; description?: string | null; features?: string[]; grace_days?: number; id?: string; is_public?: boolean; name: string; status?: Database["public"]["Enums"]["billing_plan_status"]; trial_days?: number; updated_at?: string }
+        Update: { code?: string; created_at?: string; description?: string | null; features?: string[]; grace_days?: number; id?: string; is_public?: boolean; name?: string; status?: Database["public"]["Enums"]["billing_plan_status"]; trial_days?: number; updated_at?: string }
+        Relationships: []
+      }
+      billing_prices: {
+        Row: { amount_minor: number; created_at: string; currency: string; effective_from: string | null; effective_to: string | null; id: string; interval: Database["public"]["Enums"]["billing_interval"]; interval_count: number; is_public: boolean; plan_id: string; provider: Database["public"]["Enums"]["billing_provider"]; provider_price_id: string | null; status: Database["public"]["Enums"]["billing_price_status"]; updated_at: string; version: number }
+        Insert: { amount_minor: number; created_at?: string; currency: string; effective_from?: string | null; effective_to?: string | null; id?: string; interval?: Database["public"]["Enums"]["billing_interval"]; interval_count?: number; is_public?: boolean; plan_id: string; provider?: Database["public"]["Enums"]["billing_provider"]; provider_price_id?: string | null; status?: Database["public"]["Enums"]["billing_price_status"]; updated_at?: string; version: number }
+        Update: { amount_minor?: number; created_at?: string; currency?: string; effective_from?: string | null; effective_to?: string | null; id?: string; interval?: Database["public"]["Enums"]["billing_interval"]; interval_count?: number; is_public?: boolean; plan_id?: string; provider?: Database["public"]["Enums"]["billing_provider"]; provider_price_id?: string | null; status?: Database["public"]["Enums"]["billing_price_status"]; updated_at?: string; version?: number }
+        Relationships: [
+          { foreignKeyName: "billing_prices_plan_id_fkey"; columns: ["plan_id"]; isOneToOne: false; referencedRelation: "billing_plans"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_accounts: {
+        Row: { country_code: string | null; created_at: string; currency: string | null; id: string; provider: Database["public"]["Enums"]["billing_provider"]; sandbox: boolean; status: Database["public"]["Enums"]["billing_account_status"]; updated_at: string; user_id: string }
+        Insert: { country_code?: string | null; created_at?: string; currency?: string | null; id?: string; provider?: Database["public"]["Enums"]["billing_provider"]; sandbox?: boolean; status?: Database["public"]["Enums"]["billing_account_status"]; updated_at?: string; user_id: string }
+        Update: { country_code?: string | null; created_at?: string; currency?: string | null; id?: string; provider?: Database["public"]["Enums"]["billing_provider"]; sandbox?: boolean; status?: Database["public"]["Enums"]["billing_account_status"]; updated_at?: string; user_id?: string }
+        Relationships: [
+          { foreignKeyName: "billing_accounts_user_id_fkey"; columns: ["user_id"]; isOneToOne: true; referencedRelation: "app_users"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_provider_customers: {
+        Row: { account_id: string; created_at: string; environment: Database["public"]["Enums"]["billing_environment"]; id: string; provider: Database["public"]["Enums"]["billing_provider"]; provider_customer_id: string; updated_at: string }
+        Insert: { account_id: string; created_at?: string; environment?: Database["public"]["Enums"]["billing_environment"]; id?: string; provider: Database["public"]["Enums"]["billing_provider"]; provider_customer_id: string; updated_at?: string }
+        Update: { account_id?: string; created_at?: string; environment?: Database["public"]["Enums"]["billing_environment"]; id?: string; provider?: Database["public"]["Enums"]["billing_provider"]; provider_customer_id?: string; updated_at?: string }
+        Relationships: [
+          { foreignKeyName: "billing_provider_customers_account_id_fkey"; columns: ["account_id"]; isOneToOne: false; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_subscriptions: {
+        Row: { account_id: string; cancel_at_period_end: boolean; canceled_at: string | null; created_at: string; current_period_end: string | null; current_period_start: string | null; ended_at: string | null; environment: Database["public"]["Enums"]["billing_environment"]; id: string; metadata: Json; plan_id: string; price_id: string; provider: Database["public"]["Enums"]["billing_provider"]; provider_status: string | null; provider_subscription_id: string | null; started_at: string | null; status: Database["public"]["Enums"]["billing_subscription_status"]; updated_at: string }
+        Insert: { account_id: string; cancel_at_period_end?: boolean; canceled_at?: string | null; created_at?: string; current_period_end?: string | null; current_period_start?: string | null; ended_at?: string | null; environment?: Database["public"]["Enums"]["billing_environment"]; id?: string; metadata?: Json; plan_id: string; price_id: string; provider?: Database["public"]["Enums"]["billing_provider"]; provider_status?: string | null; provider_subscription_id?: string | null; started_at?: string | null; status?: Database["public"]["Enums"]["billing_subscription_status"]; updated_at?: string }
+        Update: { account_id?: string; cancel_at_period_end?: boolean; canceled_at?: string | null; created_at?: string; current_period_end?: string | null; current_period_start?: string | null; ended_at?: string | null; environment?: Database["public"]["Enums"]["billing_environment"]; id?: string; metadata?: Json; plan_id?: string; price_id?: string; provider?: Database["public"]["Enums"]["billing_provider"]; provider_status?: string | null; provider_subscription_id?: string | null; started_at?: string | null; status?: Database["public"]["Enums"]["billing_subscription_status"]; updated_at?: string }
+        Relationships: [
+          { foreignKeyName: "billing_subscription_price_plan_fk"; columns: ["price_id", "plan_id"]; isOneToOne: false; referencedRelation: "billing_prices"; referencedColumns: ["id", "plan_id"] },
+          { foreignKeyName: "billing_subscriptions_account_id_fkey"; columns: ["account_id"]; isOneToOne: false; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_subscriptions_plan_id_fkey"; columns: ["plan_id"]; isOneToOne: false; referencedRelation: "billing_plans"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_subscriptions_price_id_fkey"; columns: ["price_id"]; isOneToOne: false; referencedRelation: "billing_prices"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_payments: {
+        Row: { account_id: string; amount_minor: number; amount_refunded_minor: number; created_at: string; currency: string; environment: Database["public"]["Enums"]["billing_environment"]; failed_at: string | null; failure_code: string | null; id: string; idempotency_key: string | null; metadata: Json; paid_at: string | null; plan_id: string | null; price_id: string | null; provider: Database["public"]["Enums"]["billing_provider"]; provider_invoice_id: string | null; provider_payment_id: string | null; reference: string | null; source: Database["public"]["Enums"]["billing_payment_source"]; status: Database["public"]["Enums"]["billing_payment_status"]; subscription_id: string | null; updated_at: string }
+        Insert: { account_id: string; amount_minor: number; amount_refunded_minor?: number; created_at?: string; currency: string; environment?: Database["public"]["Enums"]["billing_environment"]; failed_at?: string | null; failure_code?: string | null; id?: string; idempotency_key?: string | null; metadata?: Json; paid_at?: string | null; plan_id?: string | null; price_id?: string | null; provider?: Database["public"]["Enums"]["billing_provider"]; provider_invoice_id?: string | null; provider_payment_id?: string | null; reference?: string | null; source: Database["public"]["Enums"]["billing_payment_source"]; status?: Database["public"]["Enums"]["billing_payment_status"]; subscription_id?: string | null; updated_at?: string }
+        Update: { account_id?: string; amount_minor?: number; amount_refunded_minor?: number; created_at?: string; currency?: string; environment?: Database["public"]["Enums"]["billing_environment"]; failed_at?: string | null; failure_code?: string | null; id?: string; idempotency_key?: string | null; metadata?: Json; paid_at?: string | null; plan_id?: string | null; price_id?: string | null; provider?: Database["public"]["Enums"]["billing_provider"]; provider_invoice_id?: string | null; provider_payment_id?: string | null; reference?: string | null; source?: Database["public"]["Enums"]["billing_payment_source"]; status?: Database["public"]["Enums"]["billing_payment_status"]; subscription_id?: string | null; updated_at?: string }
+        Relationships: [
+          { foreignKeyName: "billing_payment_price_plan_fk"; columns: ["price_id", "plan_id"]; isOneToOne: false; referencedRelation: "billing_prices"; referencedColumns: ["id", "plan_id"] },
+          { foreignKeyName: "billing_payment_subscription_owner_fk"; columns: ["subscription_id", "account_id"]; isOneToOne: false; referencedRelation: "billing_subscriptions"; referencedColumns: ["id", "account_id"] },
+          { foreignKeyName: "billing_payments_account_id_fkey"; columns: ["account_id"]; isOneToOne: false; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_payments_plan_id_fkey"; columns: ["plan_id"]; isOneToOne: false; referencedRelation: "billing_plans"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_payments_price_id_fkey"; columns: ["price_id"]; isOneToOne: false; referencedRelation: "billing_prices"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_payments_subscription_id_fkey"; columns: ["subscription_id"]; isOneToOne: false; referencedRelation: "billing_subscriptions"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_documents: {
+        Row: { account_id: string; amount_minor: number; created_at: string; currency: string; document_type: Database["public"]["Enums"]["billing_document_type"]; environment: Database["public"]["Enums"]["billing_environment"]; id: string; issued_at: string | null; number: string | null; payment_id: string | null; provider_document_id: string | null; storage_path: string | null; subscription_id: string | null }
+        Insert: { account_id: string; amount_minor: number; created_at?: string; currency: string; document_type: Database["public"]["Enums"]["billing_document_type"]; environment?: Database["public"]["Enums"]["billing_environment"]; id?: string; issued_at?: string | null; number?: string | null; payment_id?: string | null; provider_document_id?: string | null; storage_path?: string | null; subscription_id?: string | null }
+        Update: { account_id?: string; amount_minor?: number; created_at?: string; currency?: string; document_type?: Database["public"]["Enums"]["billing_document_type"]; environment?: Database["public"]["Enums"]["billing_environment"]; id?: string; issued_at?: string | null; number?: string | null; payment_id?: string | null; provider_document_id?: string | null; storage_path?: string | null; subscription_id?: string | null }
+        Relationships: [
+          { foreignKeyName: "billing_document_subscription_owner_fk"; columns: ["subscription_id", "account_id"]; isOneToOne: false; referencedRelation: "billing_subscriptions"; referencedColumns: ["id", "account_id"] },
+          { foreignKeyName: "billing_document_payment_owner_fk"; columns: ["payment_id", "account_id"]; isOneToOne: false; referencedRelation: "billing_payments"; referencedColumns: ["id", "account_id"] },
+          { foreignKeyName: "billing_documents_account_id_fkey"; columns: ["account_id"]; isOneToOne: false; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_documents_payment_id_fkey"; columns: ["payment_id"]; isOneToOne: false; referencedRelation: "billing_payments"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_documents_subscription_id_fkey"; columns: ["subscription_id"]; isOneToOne: false; referencedRelation: "billing_subscriptions"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_service_periods: {
+        Row: { account_id: string; created_at: string; ends_at: string; granted_by: string | null; id: string; note: string | null; payment_id: string | null; plan_id: string; source: Database["public"]["Enums"]["billing_coverage_source"]; starts_at: string; updated_at: string }
+        Insert: { account_id: string; created_at?: string; ends_at: string; granted_by?: string | null; id?: string; note?: string | null; payment_id?: string | null; plan_id: string; source: Database["public"]["Enums"]["billing_coverage_source"]; starts_at: string; updated_at?: string }
+        Update: { account_id?: string; created_at?: string; ends_at?: string; granted_by?: string | null; id?: string; note?: string | null; payment_id?: string | null; plan_id?: string; source?: Database["public"]["Enums"]["billing_coverage_source"]; starts_at?: string; updated_at?: string }
+        Relationships: [
+          { foreignKeyName: "billing_period_payment_owner_fk"; columns: ["payment_id", "account_id"]; isOneToOne: false; referencedRelation: "billing_payments"; referencedColumns: ["id", "account_id"] },
+          { foreignKeyName: "billing_service_periods_account_id_fkey"; columns: ["account_id"]; isOneToOne: false; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_service_periods_granted_by_fkey"; columns: ["granted_by"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_service_periods_payment_id_fkey"; columns: ["payment_id"]; isOneToOne: false; referencedRelation: "billing_payments"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_service_periods_plan_id_fkey"; columns: ["plan_id"]; isOneToOne: false; referencedRelation: "billing_plans"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_bank_accounts: {
+        Row: { account_holder: string; account_number: string; bank_name: string; created_at: string; created_by: string | null; currency: string; id: string; is_active: boolean; label: string; updated_at: string }
+        Insert: { account_holder: string; account_number: string; bank_name: string; created_at?: string; created_by?: string | null; currency: string; id?: string; is_active?: boolean; label: string; updated_at?: string }
+        Update: { account_holder?: string; account_number?: string; bank_name?: string; created_at?: string; created_by?: string | null; currency?: string; id?: string; is_active?: boolean; label?: string; updated_at?: string }
+        Relationships: [
+          { foreignKeyName: "billing_bank_accounts_created_by_fkey"; columns: ["created_by"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_transfer_requests: {
+        Row: { account_id: string; amount_minor: number; created_at: string; currency: string; customer_reference: string | null; expires_at: string | null; id: string; payment_id: string | null; plan_id: string; price_id: string; receipt_mime: string | null; receipt_path: string | null; receipt_size_bytes: number | null; reference: string; rejection_reason: string | null; reported_at: string | null; reviewed_at: string | null; reviewed_by: string | null; service_period_id: string | null; status: Database["public"]["Enums"]["billing_transfer_status"]; updated_at: string }
+        Insert: { account_id: string; amount_minor: number; created_at?: string; currency: string; customer_reference?: string | null; expires_at?: string | null; id?: string; payment_id?: string | null; plan_id: string; price_id: string; receipt_mime?: string | null; receipt_path?: string | null; receipt_size_bytes?: number | null; reference: string; rejection_reason?: string | null; reported_at?: string | null; reviewed_at?: string | null; reviewed_by?: string | null; service_period_id?: string | null; status?: Database["public"]["Enums"]["billing_transfer_status"]; updated_at?: string }
+        Update: { account_id?: string; amount_minor?: number; created_at?: string; currency?: string; customer_reference?: string | null; expires_at?: string | null; id?: string; payment_id?: string | null; plan_id?: string; price_id?: string; receipt_mime?: string | null; receipt_path?: string | null; receipt_size_bytes?: number | null; reference?: string; rejection_reason?: string | null; reported_at?: string | null; reviewed_at?: string | null; reviewed_by?: string | null; service_period_id?: string | null; status?: Database["public"]["Enums"]["billing_transfer_status"]; updated_at?: string }
+        Relationships: [
+          { foreignKeyName: "billing_transfer_period_owner_fk"; columns: ["service_period_id", "account_id"]; isOneToOne: false; referencedRelation: "billing_service_periods"; referencedColumns: ["id", "account_id"] },
+          { foreignKeyName: "billing_transfer_payment_owner_fk"; columns: ["payment_id", "account_id"]; isOneToOne: false; referencedRelation: "billing_payments"; referencedColumns: ["id", "account_id"] },
+          { foreignKeyName: "billing_transfer_price_plan_fk"; columns: ["price_id", "plan_id"]; isOneToOne: false; referencedRelation: "billing_prices"; referencedColumns: ["id", "plan_id"] },
+          { foreignKeyName: "billing_transfer_requests_account_id_fkey"; columns: ["account_id"]; isOneToOne: false; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_transfer_requests_payment_id_fkey"; columns: ["payment_id"]; isOneToOne: false; referencedRelation: "billing_payments"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_transfer_requests_plan_id_fkey"; columns: ["plan_id"]; isOneToOne: false; referencedRelation: "billing_plans"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_transfer_requests_price_id_fkey"; columns: ["price_id"]; isOneToOne: false; referencedRelation: "billing_prices"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_transfer_requests_reviewed_by_fkey"; columns: ["reviewed_by"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_transfer_requests_service_period_id_fkey"; columns: ["service_period_id"]; isOneToOne: false; referencedRelation: "billing_service_periods"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_bank_movements: {
+        Row: { account_id: string; amount_minor: number; bank_reference: string; created_at: string; currency: string; id: string; reason: string | null; received_at: string; recorded_by: string | null; transfer_request_id: string }
+        Insert: { account_id: string; amount_minor: number; bank_reference: string; created_at?: string; currency: string; id?: string; reason?: string | null; received_at: string; recorded_by?: string | null; transfer_request_id: string }
+        Update: { account_id?: string; amount_minor?: number; bank_reference?: string; created_at?: string; currency?: string; id?: string; reason?: string | null; received_at?: string; recorded_by?: string | null; transfer_request_id?: string }
+        Relationships: [
+          { foreignKeyName: "billing_bank_movement_request_owner_fk"; columns: ["transfer_request_id", "account_id"]; isOneToOne: false; referencedRelation: "billing_transfer_requests"; referencedColumns: ["id", "account_id"] },
+          { foreignKeyName: "billing_bank_movements_account_id_fkey"; columns: ["account_id"]; isOneToOne: false; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_bank_movements_recorded_by_fkey"; columns: ["recorded_by"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_bank_movements_transfer_request_id_fkey"; columns: ["transfer_request_id"]; isOneToOne: true; referencedRelation: "billing_transfer_requests"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_trials: {
+        Row: { subscription_id: string | null; account_id: string; converted_at: string | null; created_at: string; ended_at: string | null; ends_at: string; id: string; plan_id: string; starts_at: string; status: Database["public"]["Enums"]["billing_trial_status"]; updated_at: string }
+        Insert: { subscription_id?: string | null; account_id: string; converted_at?: string | null; created_at?: string; ended_at?: string | null; ends_at: string; id?: string; plan_id: string; starts_at?: string; status?: Database["public"]["Enums"]["billing_trial_status"]; updated_at?: string }
+        Update: { subscription_id?: string | null; account_id?: string; converted_at?: string | null; created_at?: string; ended_at?: string | null; ends_at?: string; id?: string; plan_id?: string; starts_at?: string; status?: Database["public"]["Enums"]["billing_trial_status"]; updated_at?: string }
+        Relationships: [
+          { foreignKeyName: "billing_trials_subscription_owner_fk"; columns: ["subscription_id", "account_id"]; isOneToOne: true; referencedRelation: "billing_subscriptions"; referencedColumns: ["id", "account_id"] },
+          { foreignKeyName: "billing_trials_account_id_fkey"; columns: ["account_id"]; isOneToOne: true; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_trials_plan_id_fkey"; columns: ["plan_id"]; isOneToOne: false; referencedRelation: "billing_plans"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_courtesies: {
+        Row: { account_id: string; created_at: string; ends_at: string | null; granted_by: string; id: string; plan_id: string; reason: string; revocation_reason: string | null; revoked_at: string | null; revoked_by: string | null; service_period_id: string | null; starts_at: string; status: Database["public"]["Enums"]["billing_courtesy_status"]; updated_at: string }
+        Insert: { account_id: string; created_at?: string; ends_at?: string | null; granted_by: string; id?: string; plan_id: string; reason: string; revocation_reason?: string | null; revoked_at?: string | null; revoked_by?: string | null; service_period_id?: string | null; starts_at: string; status?: Database["public"]["Enums"]["billing_courtesy_status"]; updated_at?: string }
+        Update: { account_id?: string; created_at?: string; ends_at?: string | null; granted_by?: string; id?: string; plan_id?: string; reason?: string; revocation_reason?: string | null; revoked_at?: string | null; revoked_by?: string | null; service_period_id?: string | null; starts_at?: string; status?: Database["public"]["Enums"]["billing_courtesy_status"]; updated_at?: string }
+        Relationships: [
+          { foreignKeyName: "billing_courtesies_account_id_fkey"; columns: ["account_id"]; isOneToOne: false; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_courtesies_granted_by_fkey"; columns: ["granted_by"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_courtesies_plan_id_fkey"; columns: ["plan_id"]; isOneToOne: false; referencedRelation: "billing_plans"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_courtesies_revoked_by_fkey"; columns: ["revoked_by"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_courtesies_service_period_id_fkey"; columns: ["service_period_id"]; isOneToOne: false; referencedRelation: "billing_service_periods"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_admins: {
+        Row: { created_at: string; granted_at: string; granted_by: string | null; id: string; note: string | null; revoked_at: string | null; revoked_by: string | null; status: Database["public"]["Enums"]["billing_admin_status"]; updated_at: string; user_id: string }
+        Insert: { created_at?: string; granted_at?: string; granted_by?: string | null; id?: string; note?: string | null; revoked_at?: string | null; revoked_by?: string | null; status?: Database["public"]["Enums"]["billing_admin_status"]; updated_at?: string; user_id: string }
+        Update: { created_at?: string; granted_at?: string; granted_by?: string | null; id?: string; note?: string | null; revoked_at?: string | null; revoked_by?: string | null; status?: Database["public"]["Enums"]["billing_admin_status"]; updated_at?: string; user_id?: string }
+        Relationships: [
+          { foreignKeyName: "billing_admins_granted_by_fkey"; columns: ["granted_by"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_admins_revoked_by_fkey"; columns: ["revoked_by"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_admins_user_id_fkey"; columns: ["user_id"]; isOneToOne: true; referencedRelation: "app_users"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_events: {
+        Row: { attempts: number; created_at: string; environment: Database["public"]["Enums"]["billing_environment"]; event_type: string; id: string; last_error: string | null; next_retry_at: string | null; payload: Json; payload_hash: string | null; processed_at: string | null; provider: Database["public"]["Enums"]["billing_provider"]; provider_event_id: string; received_at: string; signature_valid: boolean | null; status: Database["public"]["Enums"]["billing_event_status"]; updated_at: string }
+        Insert: { attempts?: number; created_at?: string; environment?: Database["public"]["Enums"]["billing_environment"]; event_type: string; id?: string; last_error?: string | null; next_retry_at?: string | null; payload: Json; payload_hash?: string | null; processed_at?: string | null; provider: Database["public"]["Enums"]["billing_provider"]; provider_event_id: string; received_at?: string; signature_valid?: boolean | null; status?: Database["public"]["Enums"]["billing_event_status"]; updated_at?: string }
+        Update: { attempts?: number; created_at?: string; environment?: Database["public"]["Enums"]["billing_environment"]; event_type?: string; id?: string; last_error?: string | null; next_retry_at?: string | null; payload?: Json; payload_hash?: string | null; processed_at?: string | null; provider?: Database["public"]["Enums"]["billing_provider"]; provider_event_id?: string; received_at?: string; signature_valid?: boolean | null; status?: Database["public"]["Enums"]["billing_event_status"]; updated_at?: string }
+        Relationships: []
+      }
+      billing_audit_log: {
+        Row: { account_id: string | null; action: string; actor_type: string; actor_user_id: string | null; after_data: Json | null; before_data: Json | null; created_at: string; entity_id: string | null; entity_type: string; id: string; metadata: Json }
+        Insert: { account_id?: string | null; action: string; actor_type?: string; actor_user_id?: string | null; after_data?: Json | null; before_data?: Json | null; created_at?: string; entity_id?: string | null; entity_type: string; id?: string; metadata?: Json }
+        Update: { account_id?: string | null; action?: string; actor_type?: string; actor_user_id?: string | null; after_data?: Json | null; before_data?: Json | null; created_at?: string; entity_id?: string | null; entity_type?: string; id?: string; metadata?: Json }
+        Relationships: [
+          { foreignKeyName: "billing_audit_log_account_id_fkey"; columns: ["account_id"]; isOneToOne: false; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_audit_log_actor_user_id_fkey"; columns: ["actor_user_id"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_support_cases: {
+        Row: { account_id: string | null; assigned_to: string | null; category: Database["public"]["Enums"]["billing_support_category"]; closed_at: string | null; created_at: string; description: string | null; id: string; last_message_at: string | null; number: string; payment_reference: string | null; resolved_at: string | null; status: Database["public"]["Enums"]["billing_support_status"]; subject: string; updated_at: string; user_id: string }
+        Insert: { account_id?: string | null; assigned_to?: string | null; category: Database["public"]["Enums"]["billing_support_category"]; closed_at?: string | null; created_at?: string; description?: string | null; id?: string; last_message_at?: string | null; number: string; payment_reference?: string | null; resolved_at?: string | null; status?: Database["public"]["Enums"]["billing_support_status"]; subject: string; updated_at?: string; user_id: string }
+        Update: { account_id?: string | null; assigned_to?: string | null; category?: Database["public"]["Enums"]["billing_support_category"]; closed_at?: string | null; created_at?: string; description?: string | null; id?: string; last_message_at?: string | null; number?: string; payment_reference?: string | null; resolved_at?: string | null; status?: Database["public"]["Enums"]["billing_support_status"]; subject?: string; updated_at?: string; user_id?: string }
+        Relationships: [
+          { foreignKeyName: "billing_support_cases_account_id_fkey"; columns: ["account_id"]; isOneToOne: false; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_support_cases_assigned_to_fkey"; columns: ["assigned_to"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_support_cases_user_id_fkey"; columns: ["user_id"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_support_messages: {
+        Row: { author_type: string; author_user_id: string | null; body: string; case_id: string; created_at: string; id: string; is_internal: boolean }
+        Insert: { author_type?: string; author_user_id?: string | null; body: string; case_id: string; created_at?: string; id?: string; is_internal?: boolean }
+        Update: { author_type?: string; author_user_id?: string | null; body?: string; case_id?: string; created_at?: string; id?: string; is_internal?: boolean }
+        Relationships: [
+          { foreignKeyName: "billing_support_messages_author_user_id_fkey"; columns: ["author_user_id"]; isOneToOne: false; referencedRelation: "app_users"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_support_messages_case_id_fkey"; columns: ["case_id"]; isOneToOne: false; referencedRelation: "billing_support_cases"; referencedColumns: ["id"] },
+        ]
+      }
+      billing_outbox: {
+        Row: { account_id: string | null; attempts: number; case_id: string | null; channel: string; created_at: string; dedupe_key: string | null; id: string; last_error: string | null; payload: Json; recipient: string | null; scheduled_at: string; sent_at: string | null; status: Database["public"]["Enums"]["billing_outbox_status"]; template: string; updated_at: string }
+        Insert: { account_id?: string | null; attempts?: number; case_id?: string | null; channel?: string; created_at?: string; dedupe_key?: string | null; id?: string; last_error?: string | null; payload?: Json; recipient?: string | null; scheduled_at?: string; sent_at?: string | null; status?: Database["public"]["Enums"]["billing_outbox_status"]; template: string; updated_at?: string }
+        Update: { account_id?: string | null; attempts?: number; case_id?: string | null; channel?: string; created_at?: string; dedupe_key?: string | null; id?: string; last_error?: string | null; payload?: Json; recipient?: string | null; scheduled_at?: string; sent_at?: string | null; status?: Database["public"]["Enums"]["billing_outbox_status"]; template?: string; updated_at?: string }
+        Relationships: [
+          { foreignKeyName: "billing_outbox_account_id_fkey"; columns: ["account_id"]; isOneToOne: false; referencedRelation: "billing_accounts"; referencedColumns: ["id"] },
+          { foreignKeyName: "billing_outbox_case_id_fkey"; columns: ["case_id"]; isOneToOne: false; referencedRelation: "billing_support_cases"; referencedColumns: ["id"] },
+        ]
+      }
     }
     Views: {
       student_final_grades: {
@@ -3123,6 +3323,25 @@ export type Database = {
     }
     Enums: {
       attendance_status: "present" | "absent" | "late" | "excused"
+      billing_account_status: "active" | "suspended" | "closed"
+      billing_admin_status: "active" | "revoked"
+      billing_courtesy_status: "active" | "expired" | "revoked"
+      billing_coverage_source: "subscription" | "transfer" | "manual_payment" | "trial" | "courtesy" | "grace"
+      billing_document_type: "invoice" | "receipt" | "credit_note" | "debit_note"
+      billing_environment: "sandbox" | "production"
+      billing_event_status: "received" | "processing" | "processed" | "failed" | "ignored"
+      billing_interval: "monthly" | "annual" | "custom"
+      billing_outbox_status: "pending" | "sending" | "sent" | "failed"
+      billing_payment_source: "provider" | "transfer" | "manual"
+      billing_payment_status: "pending" | "succeeded" | "failed" | "refunded" | "partially_refunded" | "disputed" | "canceled"
+      billing_plan_status: "draft" | "active" | "retired"
+      billing_price_status: "draft" | "active" | "retired"
+      billing_provider: "paddle" | "manual"
+      billing_subscription_status: "incomplete" | "trialing" | "active" | "past_due" | "paused" | "canceled" | "expired" | "unknown"
+      billing_support_category: "billing" | "payment" | "subscription" | "refund" | "technical" | "other"
+      billing_support_status: "open" | "in_progress" | "waiting_on_customer" | "resolved" | "closed"
+      billing_transfer_status: "pending" | "under_review" | "approved" | "rejected" | "expired" | "canceled"
+      billing_trial_status: "active" | "expired" | "converted" | "canceled"
       enrollment_status: "active" | "transferred" | "withdrawn" | "completed"
       grade_record_status: "draft" | "published" | "voided"
       record_status: "active" | "inactive" | "archived"
@@ -3258,6 +3477,25 @@ export const Constants = {
   public: {
     Enums: {
       attendance_status: ["present", "absent", "late", "excused"],
+      billing_account_status: ["active", "suspended", "closed"],
+      billing_admin_status: ["active", "revoked"],
+      billing_courtesy_status: ["active", "expired", "revoked"],
+      billing_coverage_source: ["subscription", "transfer", "manual_payment", "trial", "courtesy", "grace"],
+      billing_document_type: ["invoice", "receipt", "credit_note", "debit_note"],
+      billing_environment: ["sandbox", "production"],
+      billing_event_status: ["received", "processing", "processed", "failed", "ignored"],
+      billing_interval: ["monthly", "annual", "custom"],
+      billing_outbox_status: ["pending", "sending", "sent", "failed"],
+      billing_payment_source: ["provider", "transfer", "manual"],
+      billing_payment_status: ["pending", "succeeded", "failed", "refunded", "partially_refunded", "disputed", "canceled"],
+      billing_plan_status: ["draft", "active", "retired"],
+      billing_price_status: ["draft", "active", "retired"],
+      billing_provider: ["paddle", "manual"],
+      billing_subscription_status: ["incomplete", "trialing", "active", "past_due", "paused", "canceled", "expired", "unknown"],
+      billing_support_category: ["billing", "payment", "subscription", "refund", "technical", "other"],
+      billing_support_status: ["open", "in_progress", "waiting_on_customer", "resolved", "closed"],
+      billing_transfer_status: ["pending", "under_review", "approved", "rejected", "expired", "canceled"],
+      billing_trial_status: ["active", "expired", "converted", "canceled"],
       enrollment_status: ["active", "transferred", "withdrawn", "completed"],
       grade_record_status: ["draft", "published", "voided"],
       record_status: ["active", "inactive", "archived"],

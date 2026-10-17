@@ -1,0 +1,373 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "grade": 2,
+  "catalog": "evaluation-2026.87",
+  "source": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_NAT_COMUN_G2_V1",
+    "versionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+    "documentId": "c23c1cb9-8c5e-5c18-aa70-80be22e59416",
+    "metadata": {
+      "subjectCodes": [
+        "NAT",
+        "NAT-VIDA"
+      ],
+      "grades": [
+        2
+      ],
+      "commonOnly": true,
+      "datasetDigest": "e22038586bf505718fe4edd9fcda810408651aa6b31c2933666b20efbcf87fff",
+      "sourceVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "sourcePdfHash": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+      "scopeMap": {
+        "2": {
+          "sourceId": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+          "id": "2806efe2-03f8-53e8-b537-c2d07937e708"
+        }
+      },
+      "review": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json"
+    },
+    "scopes": 1,
+    "elements": 145,
+    "relations": 7,
+    "result": "UNCHANGED",
+    "preservedSnapshots": 81
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-CpR7JjpD.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-CpR7JjpD.js",
+        "sha256": "06aaba74a7f5808eb09b8239398c07e98bfb0e60a107f001dabf6c910bd68010",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-D7SnTjCI.js",
+        "sha256": "c954291346265ff67f695f7a8f394b9d70cf4b3d891cb8801606167c45bfeb74",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-R1dHym95.js",
+        "sha256": "606a4616e4673d8e3379cd9f8f1d3265686bea896bb5d06fa400ea1e5cc2197c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-BnWmJzDS.js",
+        "sha256": "6a687946593b71eb8c71f15e84ffa71fffbbd414fe784dca9953f2b8b2a6da96",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-CSna5tnh.js",
+        "sha256": "7ba0cae247a7ec82c0d2f9276fd8b768f6dc7db30df71b68ff07425149b8884e",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "74dd5ef99635c42fe7c71c581a9b7953b5c618fd0e96d11c16d7958efffd9d56",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "checks": [
+    {
+      "command": "pnpm --filter backend test",
+      "code": 0,
+      "ms": 17216,
+      "log": ".wrangler/science-source/grade-2-final-check-0.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 6335,
+      "log": ".wrangler/science-source/grade-2-final-check-1.log"
+    },
+    {
+      "command": "pnpm --filter frontend exec vitest run",
+      "code": 0,
+      "ms": 97129,
+      "log": ".wrangler/science-source/grade-2-final-check-2.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 14644,
+      "log": ".wrangler/science-source/grade-2-final-check-3.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "code": 0,
+      "ms": 22947,
+      "log": ".wrangler/science-source/grade-2-final-check-4.log"
+    }
+  ],
+  "backend": {
+    "files": 103,
+    "tests": 41710
+  },
+  "frontend": {
+    "files": 130,
+    "tests": 42139
+  },
+  "http": {
+    "verification": "AUTHENTICATED_HTTP_DB_AND_EDITOR_ADAPTERS_NOT_VISUAL",
+    "savedEvidence": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "activityId": "181e2323-a0d7-49dd-a8e9-25a1142ebbcd",
+        "instrumentHash": "086075aedcbb30215b3d065457e9cb11876312e4333a9bae599e532a7d38de2d",
+        "snapshotId": "0d6f7dd0-bd60-46dc-ab26-eb0fc058010e",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+          "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708"
+        }
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "activityId": "7b37e5ce-0c36-426a-bd7f-414743cb3ce7",
+        "instrumentHash": "8d6a387b267087005206c6def8fbb723048c0b09af55ddb34c22111c6a3898cb",
+        "snapshotId": "b9b02a90-72ee-4a53-9ab5-7d2c6e81b9af",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+          "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708"
+        }
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "activityId": "6680a19d-13c1-4d20-8acf-d5b453d86f0b",
+        "instrumentHash": "22438d4a0585cd5efe34924604cb3efbe657e44a34dda513b0b8b70ead33fadb",
+        "snapshotId": "fe7b7fef-d641-4952-ab84-c04f3b1af3e0",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+          "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708"
+        }
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "activityId": "d34f7a99-dc24-4e3b-9d5b-0667ec86d029",
+        "instrumentHash": "4868ce7d5319f52bb030cac2faad69f81fdd5787818dde0a134b61cc722d6602",
+        "snapshotId": "701f88a2-b491-4e85-8dbc-901521eed68d",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+          "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708"
+        }
+      }
+    ],
+    "finalBuildRecheck": {
+      "at": "2026-10-16T18:51:57.677Z",
+      "reopened": 4,
+      "generated": [
+        {
+          "type": "rubrica",
+          "total": 20,
+          "catalog": "evaluation-2026.87"
+        },
+        {
+          "type": "lista-cotejo",
+          "total": 17.35,
+          "catalog": "evaluation-2026.87"
+        },
+        {
+          "type": "escala",
+          "total": 20,
+          "catalog": "evaluation-2026.87"
+        },
+        {
+          "type": "lista-ponderada",
+          "total": 17.35,
+          "catalog": "evaluation-2026.87"
+        }
+      ],
+      "languageRegressions": [
+        {
+          "language": "FRA",
+          "catalog": "evaluation-2026.87",
+          "curriculumVersionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+        },
+        {
+          "language": "ING",
+          "catalog": "evaluation-2026.87",
+          "curriculumVersionId": null,
+          "scopeId": null
+        },
+        {
+          "language": "MAT",
+          "catalog": "evaluation-2026.87",
+          "curriculumVersionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+          "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+        }
+      ]
+    },
+    "semanticControls": [
+      {
+        "description": "Explica las partes y funciones de una célula.",
+        "criteria": [
+          "nat-2-cells-structures-explanation",
+          "nat-2-cells-functions"
+        ],
+        "catalog": "evaluation-2026.87"
+      },
+      {
+        "description": "Compara la metamorfosis de los seres vivos representados en las imágenes.",
+        "criteria": [
+          "nat-2-metamorphosis-comparison"
+        ],
+        "catalog": "evaluation-2026.87"
+      },
+      {
+        "description": "Resuelve los ejercicios de herencia mendeliana con los datos ficticios proporcionados.",
+        "criteria": [
+          "nat-2-mendel-problem-reasoning"
+        ],
+        "catalog": "evaluation-2026.87"
+      },
+      {
+        "description": "Interpreta los datos proporcionados de fotosíntesis sin realizar experimentos.",
+        "criteria": [
+          "nat-2-photosynthesis-data-interpretation"
+        ],
+        "catalog": "evaluation-2026.87"
+      }
+    ],
+    "firstRecommendationTimingsMs": [
+      6906,
+      6940,
+      9928,
+      9542
+    ]
+  },
+  "browser": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "grade": 2,
+    "session": "personal Development",
+    "preparationUpperBoundMs": 12345,
+    "emptySelectorsVisible": true,
+    "scoreInitiallyEmpty": true,
+    "silentPreparation": true,
+    "exhaustionNotice": true,
+    "completionPreservedManualText": true,
+    "strategyOnlyExact": true,
+    "appendRestoredOnlyMissing": true,
+    "frequencyLabelsVerified": true,
+    "scalePreparationUpperBoundMs": 11909,
+    "automaticStrategy": "INQUIRY",
+    "weightedStrategyOnlyExact": true,
+    "browserEntry": [
+      "/assets/index-CpR7JjpD.js",
+      "/registerSW.js"
+    ],
+    "formats": [
+      {
+        "activityId": "c3c05136-92dc-47b7-973c-feae7e37d8f3",
+        "format": "rubrica",
+        "points": 17.35,
+        "instrumentId": "af899a28-70ca-41f9-a788-f9f07583dd94",
+        "snapshotId": "57b4d839-3902-417d-a50b-f68bda6c67ee",
+        "catalog": "evaluation-2026.87",
+        "curriculumVersionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+        "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708",
+        "teachingStrategyId": "CASE_STUDY",
+        "fieldsHash": "fe35f1c2f3cd917e09467060f0c1284973c570feeafedf147b6e6c0dab6a90b2",
+        "rows": 2
+      },
+      {
+        "activityId": "e84ef930-b6b1-40b2-a3b0-73721aebc323",
+        "format": "lista-cotejo",
+        "points": 20,
+        "instrumentId": "c337694f-e912-40fd-b272-bee5c3e4fa5e",
+        "snapshotId": "7282ddce-3ab9-42ca-b57a-2b41a101493b",
+        "catalog": "evaluation-2026.87",
+        "curriculumVersionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+        "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708",
+        "teachingStrategyId": null,
+        "fieldsHash": "2f058db6b2119d3c0be1fbc6451cccdc3f2e65c93ae1f37d785438e2236560ba",
+        "rows": 2
+      },
+      {
+        "activityId": "dd0d88d9-41a8-4676-9f0e-df418bab6e35",
+        "format": "escala",
+        "points": 17.35,
+        "instrumentId": "abea0a6f-dc8e-4e4a-8b5c-c1d933c9c9fb",
+        "snapshotId": "1edd6776-3cea-4539-9136-5689117db3de",
+        "catalog": "evaluation-2026.87",
+        "curriculumVersionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+        "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708",
+        "teachingStrategyId": null,
+        "fieldsHash": "ced329d3967840c53885a6be14d653f7679afed780d2b989b07099998246d2ef",
+        "rows": 3
+      },
+      {
+        "activityId": "5bedc024-b7b2-495c-b7dc-9b8b4a386672",
+        "format": "lista-ponderada",
+        "points": 17.35,
+        "instrumentId": "faf236e7-7a75-43db-8daa-23de492c4d02",
+        "snapshotId": "ac0769db-811b-47d3-9b9b-96acb7d0e704",
+        "catalog": "evaluation-2026.87",
+        "curriculumVersionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+        "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708",
+        "teachingStrategyId": "CASE_STUDY",
+        "fieldsHash": "2758b139d80d0cdfb2e764265005283d4366c78480e5b2736f94d16288e5d3b6",
+        "rows": 6
+      }
+    ],
+    "allTableFieldsEqual": true,
+    "screenshot": "assets/ciencias-naturaleza-2/ponderada-reabierta.jpg"
+  },
+  "historicalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 2,
+    "newSnapshots": 16,
+    "gradeBaseline": {
+      "grade": 2,
+      "preservedReleases": 19,
+      "preservedSnapshots": 81,
+      "newReleases": 1,
+      "newSnapshots": 8
+    }
+  },
+  "secretsAudit": {
+    "filesInspected": 23,
+    "secretValuesFound": false,
+    "privateFilesExcluded": true
+  },
+  "limits": [
+    "Defined wording patterns only, not every possible formulation",
+    "HTTP elapsed time includes local worker and remote Development dependencies; no independent database/render timing",
+    "Browser private service-worker registrations not audited; served assets/sw and browser entry checked",
+    "Only grades closed in the continuation file are verified; no optatives"
+  ]
+}
