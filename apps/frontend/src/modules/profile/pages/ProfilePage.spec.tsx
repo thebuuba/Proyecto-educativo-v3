@@ -1,23 +1,24 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
+import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { ProfilePage } from './ProfilePage'
 
-const auth = vi.hoisted(() => ({ appUser: null as null | { id: string; fullName: string; email: string; phone: string; avatarUrl: string; schoolId: string; status: string }, roles: [], refreshAuth: vi.fn() }))
-vi.mock('@/modules/auth/hooks/useAuth', () => ({ useAuth: () => auth }))
-afterEach(() => { cleanup(); auth.appUser = null })
+vi.mock('@/modules/auth/hooks/useAuth', () => ({ useAuth: () => ({ appUser: null }) }))
 
-describe('perfil en configuración', () => {
-  it('carga los datos que llegan después del primer render y conserva las ediciones en un refresco', () => {
-    const { rerender } = render(<ProfilePage embedded />)
-    auth.appUser = { id: 'user-1', fullName: 'Ana Pérez', email: 'ana@aula.test', phone: '555', avatarUrl: '', schoolId: 'uuid-interno', status: 'active' }
-    rerender(<ProfilePage embedded />)
-    expect(screen.getByRole('textbox', { name: 'Nombre completo' })).toHaveValue('Ana Pérez')
-    fireEvent.change(screen.getByRole('textbox', { name: 'Nombre completo' }), { target: { value: 'Ana editada' } })
-    auth.appUser = { ...auth.appUser, fullName: 'Ana actualizada' }
-    rerender(<ProfilePage embedded />)
-    expect(screen.getByRole('textbox', { name: 'Nombre completo' })).toHaveValue('Ana editada')
-    expect(screen.getByRole('heading', { name: 'Preferencias de interfaz' })).toBeInTheDocument()
-    expect(screen.queryByRole('heading', { name: 'Perfil' })).not.toBeInTheDocument()
-    expect(screen.queryByText('uuid-interno')).not.toBeInTheDocument()
+function CurrentLocation() {
+  const { pathname, search } = useLocation()
+  return <p>{pathname}{search}</p>
+}
+
+afterEach(cleanup)
+
+describe('acceso al perfil', () => {
+  it('redirige la ruta antigua al nuevo perfil de Ajustes', () => {
+    render(<MemoryRouter initialEntries={['/perfil']}><Routes>
+      <Route path="/perfil" element={<ProfilePage />} />
+      <Route path="/configuracion" element={<CurrentLocation />} />
+    </Routes></MemoryRouter>)
+    expect(screen.getByText('/configuracion?tab=cuenta')).toBeInTheDocument()
+    expect(screen.queryByText('URL de avatar')).not.toBeInTheDocument()
   })
 })

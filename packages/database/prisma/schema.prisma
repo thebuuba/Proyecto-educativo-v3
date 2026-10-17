@@ -208,6 +208,7 @@ model AppUser {
   onboardingTourProgress        OnboardingTourProgress[]
   teacherInstrumentPreferences  TeacherInstrumentPreference[]
   trustedAuthDevices            TrustedAuthDevice[]
+  profileSettings               UserProfileSettings?
   billingAccount                BillingAccount?
   billingAdmin                  BillingAdmin?
   billingAdminsGranted          BillingAdmin[]        @relation("BillingAdminGrantor")
@@ -224,6 +225,24 @@ model AppUser {
   billingSupportMessages        BillingSupportMessage[] @relation("BillingSupportAuthor")
 
   @@map("app_users")
+}
+
+model UserProfileSettings {
+  userId         String   @id @map("user_id") @db.Uuid
+  publicName     String?  @map("public_name")
+  bio            String?
+  birthDate      DateTime? @map("birth_date") @db.Date
+  country        String?
+  city           String?
+  educationLevel String? @map("education_level")
+  language       String @default("es")
+  timezone       String @default("UTC")
+  interests      String[] @default([])
+  avatarPath     String? @map("avatar_path")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+  user AppUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@map("user_profile_settings")
 }
 
 model TrustedAuthDevice {

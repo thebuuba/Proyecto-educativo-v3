@@ -34,7 +34,7 @@ export type AuthContextValue = AuthState & {
   /** Cierra la sesión del usuario actual. */
   logout: () => Promise<void>
   /** Recarga el estado de autenticación desde el servidor. */
-  refreshAuth: () => Promise<void>
+  refreshAuth: (options?: { background?: boolean }) => Promise<void>
   /** Verifica si el usuario tiene al menos uno de los roles indicados. */
   hasRole: (roleKeys: UserRole[]) => boolean
   /** Verifica si el usuario tiene un permiso específico. */

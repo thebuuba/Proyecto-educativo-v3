@@ -177,9 +177,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, [applySession])
 
   /** Carga el estado de autenticación desde el servidor (perfil, roles, permisos). */
-  const loadAuthState = useCallback(async () => {
+  const loadAuthState = useCallback(async (options?: { background?: boolean }) => {
     const epoch = authEpoch.current
-    setState((current) => ({ ...current, loading: true }))
+    if (!options?.background) setState((current) => ({ ...current, loading: true }))
 
     try {
       const bootstrap = await getAuthBootstrap()
@@ -211,6 +211,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       })
     } catch (error) {
       if (epoch !== authEpoch.current) return
+      if (options?.background && !(error instanceof ApiError && error.status === 401)) throw error
       console.error(error)
       if (!await restoreFromSupabaseSession()) {
         if (error instanceof ApiError && error.status === 401) {
@@ -407,7 +408,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       finishOAuthCallback,
       completeOnboarding,
       logout,
-      refreshAuth: () => loadAuthState(),
+      refreshAuth: (options) => loadAuthState(options),
       hasRole: (roleKeys: UserRole[]) =>
         roles.some((role: Role) => roleKeys.includes(role.key)),
       hasPermission: (permissionKey: string) =>
