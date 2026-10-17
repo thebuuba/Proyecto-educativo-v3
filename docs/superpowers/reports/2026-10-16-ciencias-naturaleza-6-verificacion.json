@@ -1,5 +1,5 @@
 {
-  "status": "AUTOMATED_VERIFIED_PERSONAL_BROWSER_PENDING",
+  "status": "VERIFIED_DEFINED_PATTERNS",
   "project": "eolgunypmtgrsyrjzcld",
   "grade": 6,
   "catalog": "evaluation-2026.92",
@@ -479,13 +479,588 @@
     "privateFilesExcluded": true
   },
   "browser": {
-    "status": "PERSONAL_SESSION_RECOVERED_VISUAL_IN_PROGRESS",
-    "completedFormats": [],
-    "manualGuide": "2026-10-16-ciencias-naturaleza-6-prueba-manual.md"
+    "project": "eolgunypmtgrsyrjzcld",
+    "grade": 6,
+    "session": "personal Development",
+    "entry": "/assets/index-BLaW9Yd6.js",
+    "status": "VERIFIED_DEFINED_VISUAL_CASES",
+    "formats": [
+      {
+        "grade": 6,
+        "format": "rubrica",
+        "name": "QA Ciencias 6 · Rúbrica · Leyes de Newton",
+        "description": "Formula una pregunta y una hipótesis sobre las leyes de Newton. Realiza la práctica indicada, registra observaciones y contrasta la hipótesis con las evidencias registradas.",
+        "points": 20,
+        "blankScore": true,
+        "completedOnlyEmpty": true,
+        "completionIncompatibleRecovery": true,
+        "automaticStrategy": "No selection for práctica wording without explicit investigation/experiment; manual preserved",
+        "fields": [
+          {
+            "label": null,
+            "value": "Rúbrica para QA Ciencias 6 · Rúbrica · Leyes de Newton"
+          },
+          {
+            "label": "Criterio 1",
+            "value": "Hipótesis contrastable sobre leyes de Newton y fuerzas · QA"
+          },
+          {
+            "label": "Destacado del criterio 1",
+            "value": "Formula una hipótesis contrastable sobre leyes de Newton y fuerzas, relacionando las condiciones y el posible efecto de forma compatible con la relación vectorial entre fuerza neta, masa y aceleración del sistema delimitado, distinguiendo las fuerzas que actúan sobre cada cuerpo; se evalúa su planteamiento, sin exigir que se confirme."
+          },
+          {
+            "label": "Logrado del criterio 1",
+            "value": "Formula una hipótesis contrastable sobre leyes de Newton y fuerzas, relacionando las condiciones y el posible efecto de forma compatible con la relación vectorial entre fuerza neta, masa y aceleración del sistema delimitado, distinguiendo las fuerzas que actúan sobre cada cuerpo; se evalúa su planteamiento, sin exigir que se confirme. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 1",
+            "value": "La hipótesis sobre leyes de Newton y fuerzas propone una relación, pero no permite reconocer qué evidencia la contrastaría."
+          },
+          {
+            "label": "Inicial del criterio 1",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas."
+          },
+          {
+            "label": "Puntos del criterio 1",
+            "value": "3.16"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Pregunta sobre leyes de Newton y fuerzas"
+          },
+          {
+            "label": "Destacado del criterio 2",
+            "value": "Formula una pregunta investigable sobre leyes de Newton y fuerzas que delimita el fenómeno y la evidencia necesaria para responderla."
+          },
+          {
+            "label": "Logrado del criterio 2",
+            "value": "Formula una pregunta investigable sobre leyes de Newton y fuerzas que delimita el fenómeno y la evidencia necesaria para responderla. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 2",
+            "value": "La pregunta se relaciona con leyes de Newton y fuerzas, pero no delimita qué se pretende conocer."
+          },
+          {
+            "label": "Inicial del criterio 2",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas."
+          },
+          {
+            "label": "Puntos del criterio 2",
+            "value": "3.16"
+          },
+          {
+            "label": "Criterio 3",
+            "value": "Procedimiento de la práctica de leyes de Newton y fuerzas"
+          },
+          {
+            "label": "Destacado del criterio 3",
+            "value": "Ejecuta el procedimiento indicado para estudiar leyes de Newton y fuerzas, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación."
+          },
+          {
+            "label": "Logrado del criterio 3",
+            "value": "Ejecuta el procedimiento indicado para estudiar leyes de Newton y fuerzas, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 3",
+            "value": "Ejecuta parte del procedimiento de leyes de Newton y fuerzas, pero omite una condición indicada que dificulta comparar observaciones."
+          },
+          {
+            "label": "Inicial del criterio 3",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas."
+          },
+          {
+            "label": "Puntos del criterio 3",
+            "value": "4.21"
+          },
+          {
+            "label": "Criterio 4",
+            "value": "Registro de observaciones de leyes de Newton y fuerzas"
+          },
+          {
+            "label": "Destacado del criterio 4",
+            "value": "Registra fielmente las observaciones de la práctica de leyes de Newton y fuerzas, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados."
+          },
+          {
+            "label": "Logrado del criterio 4",
+            "value": "Registra fielmente las observaciones de la práctica de leyes de Newton y fuerzas, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 4",
+            "value": "Registra observaciones de leyes de Newton y fuerzas, pero omite información necesaria para relacionarlas con el procedimiento realizado."
+          },
+          {
+            "label": "Inicial del criterio 4",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas."
+          },
+          {
+            "label": "Puntos del criterio 4",
+            "value": "3.16"
+          },
+          {
+            "label": "Criterio 5",
+            "value": "Seguridad durante la práctica de leyes de Newton y fuerzas"
+          },
+          {
+            "label": "Destacado del criterio 5",
+            "value": "Aplica las precauciones indicadas para la práctica de leyes de Newton y fuerzas y comunica las incidencias observadas antes de continuar cuando exista un riesgo."
+          },
+          {
+            "label": "Logrado del criterio 5",
+            "value": "Aplica las precauciones indicadas para la práctica de leyes de Newton y fuerzas y comunica las incidencias observadas antes de continuar cuando exista un riesgo. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 5",
+            "value": "Aplica parte de las precauciones indicadas en la práctica de leyes de Newton y fuerzas, pero necesita corregir una condición de riesgo."
+          },
+          {
+            "label": "Inicial del criterio 5",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas."
+          },
+          {
+            "label": "Puntos del criterio 5",
+            "value": "2.1"
+          },
+          {
+            "label": "Criterio 6",
+            "value": "Contraste de hipótesis sobre leyes de Newton y fuerzas"
+          },
+          {
+            "label": "Destacado del criterio 6",
+            "value": "Contrasta la hipótesis de leyes de Newton y fuerzas con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación."
+          },
+          {
+            "label": "Logrado del criterio 6",
+            "value": "Contrasta la hipótesis de leyes de Newton y fuerzas con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 6",
+            "value": "Relaciona parte de las evidencias de leyes de Newton y fuerzas con la hipótesis, pero deja una inferencia sin respaldo."
+          },
+          {
+            "label": "Inicial del criterio 6",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas."
+          },
+          {
+            "label": "Puntos del criterio 6",
+            "value": "4.21"
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=b148f72b-8ed7-4aa9-b606-5bd085d5de0d&competencyBlockId=b4&returnCourseId=b7c4e44b-c755-4cfe-9cc2-cdb92f5e1ae6&returnSubjectId=b148f72b-8ed7-4aa9-b606-5bd085d5de0d&returnTab=actividades",
+        "activityId": "4f016a23-a615-40ad-98a1-c787a0eec1bc",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "2356f575-13c6-48ba-a95a-9847e59aa874",
+        "state": "REOPENED",
+        "renderedDefinition": {
+          "rubrica:title": "Rúbrica para QA Ciencias 6 · Rúbrica · Leyes de Newton",
+          "rubrica:points:0": "3.16",
+          "rubrica:points:1": "3.16",
+          "rubrica:points:2": "4.21",
+          "rubrica:points:3": "3.16",
+          "rubrica:points:4": "2.1",
+          "rubrica:points:5": "4.21",
+          "rubrica:criterion:0": "Hipótesis contrastable sobre leyes de Newton y fuerzas · QA",
+          "rubrica:criterion:1": "Pregunta sobre leyes de Newton y fuerzas",
+          "rubrica:criterion:2": "Procedimiento de la práctica de leyes de Newton y fuerzas",
+          "rubrica:criterion:3": "Registro de observaciones de leyes de Newton y fuerzas",
+          "rubrica:criterion:4": "Seguridad durante la práctica de leyes de Newton y fuerzas",
+          "rubrica:criterion:5": "Contraste de hipótesis sobre leyes de Newton y fuerzas",
+          "rubrica:level-name:1": "Inicial",
+          "rubrica:level-name:2": "En proceso",
+          "rubrica:level-name:3": "Logrado",
+          "rubrica:level-name:4": "Destacado",
+          "rubrica:description:0": "Formula una hipótesis contrastable sobre leyes de Newton y fuerzas, relacionando las condiciones y el posible efecto de forma compatible con la relación vectorial entre fuerza neta, masa y aceleración del sistema delimitado, distinguiendo las fuerzas que actúan sobre cada cuerpo; se evalúa su planteamiento, sin exigir que se confirme.",
+          "rubrica:description:1": "Formula una pregunta investigable sobre leyes de Newton y fuerzas que delimita el fenómeno y la evidencia necesaria para responderla.",
+          "rubrica:description:2": "Ejecuta el procedimiento indicado para estudiar leyes de Newton y fuerzas, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación.",
+          "rubrica:description:3": "Registra fielmente las observaciones de la práctica de leyes de Newton y fuerzas, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados.",
+          "rubrica:description:4": "Aplica las precauciones indicadas para la práctica de leyes de Newton y fuerzas y comunica las incidencias observadas antes de continuar cuando exista un riesgo.",
+          "rubrica:description:5": "Contrasta la hipótesis de leyes de Newton y fuerzas con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación.",
+          "rubrica:meta:prepared": "true",
+          "rubrica:criterion-id:0": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-newton-forces-hypothesis:0",
+          "rubrica:criterion-id:1": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-newton-forces-question:1",
+          "rubrica:criterion-id:2": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-newton-forces-experiment-procedure:2",
+          "rubrica:criterion-id:3": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-newton-forces-experiment-record:3",
+          "rubrica:criterion-id:4": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-newton-forces-safety:4",
+          "rubrica:criterion-id:5": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-newton-forces-hypothesis-evidence:5",
+          "rubrica:descriptor:0:1": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.",
+          "rubrica:descriptor:0:2": "La hipótesis sobre leyes de Newton y fuerzas propone una relación, pero no permite reconocer qué evidencia la contrastaría.",
+          "rubrica:descriptor:0:3": "Formula una hipótesis contrastable sobre leyes de Newton y fuerzas, relacionando las condiciones y el posible efecto de forma compatible con la relación vectorial entre fuerza neta, masa y aceleración del sistema delimitado, distinguiendo las fuerzas que actúan sobre cada cuerpo; se evalúa su planteamiento, sin exigir que se confirme. Presenta una imprecisión puntual que no cambia la relación principal.",
+          "rubrica:descriptor:0:4": "Formula una hipótesis contrastable sobre leyes de Newton y fuerzas, relacionando las condiciones y el posible efecto de forma compatible con la relación vectorial entre fuerza neta, masa y aceleración del sistema delimitado, distinguiendo las fuerzas que actúan sobre cada cuerpo; se evalúa su planteamiento, sin exigir que se confirme.",
+          "rubrica:descriptor:1:1": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.",
+          "rubrica:descriptor:1:2": "La pregunta se relaciona con leyes de Newton y fuerzas, pero no delimita qué se pretende conocer.",
+          "rubrica:descriptor:1:3": "Formula una pregunta investigable sobre leyes de Newton y fuerzas que delimita el fenómeno y la evidencia necesaria para responderla. Presenta una imprecisión puntual que no cambia la relación principal.",
+          "rubrica:descriptor:1:4": "Formula una pregunta investigable sobre leyes de Newton y fuerzas que delimita el fenómeno y la evidencia necesaria para responderla.",
+          "rubrica:descriptor:2:1": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.",
+          "rubrica:descriptor:2:2": "Ejecuta parte del procedimiento de leyes de Newton y fuerzas, pero omite una condición indicada que dificulta comparar observaciones.",
+          "rubrica:descriptor:2:3": "Ejecuta el procedimiento indicado para estudiar leyes de Newton y fuerzas, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación. Presenta una imprecisión puntual que no cambia la relación principal.",
+          "rubrica:descriptor:2:4": "Ejecuta el procedimiento indicado para estudiar leyes de Newton y fuerzas, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación.",
+          "rubrica:descriptor:3:1": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.",
+          "rubrica:descriptor:3:2": "Registra observaciones de leyes de Newton y fuerzas, pero omite información necesaria para relacionarlas con el procedimiento realizado.",
+          "rubrica:descriptor:3:3": "Registra fielmente las observaciones de la práctica de leyes de Newton y fuerzas, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados. Presenta una imprecisión puntual que no cambia la relación principal.",
+          "rubrica:descriptor:3:4": "Registra fielmente las observaciones de la práctica de leyes de Newton y fuerzas, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados.",
+          "rubrica:descriptor:4:1": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.",
+          "rubrica:descriptor:4:2": "Aplica parte de las precauciones indicadas en la práctica de leyes de Newton y fuerzas, pero necesita corregir una condición de riesgo.",
+          "rubrica:descriptor:4:3": "Aplica las precauciones indicadas para la práctica de leyes de Newton y fuerzas y comunica las incidencias observadas antes de continuar cuando exista un riesgo. Presenta una imprecisión puntual que no cambia la relación principal.",
+          "rubrica:descriptor:4:4": "Aplica las precauciones indicadas para la práctica de leyes de Newton y fuerzas y comunica las incidencias observadas antes de continuar cuando exista un riesgo.",
+          "rubrica:descriptor:5:1": "No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.",
+          "rubrica:descriptor:5:2": "Relaciona parte de las evidencias de leyes de Newton y fuerzas con la hipótesis, pero deja una inferencia sin respaldo.",
+          "rubrica:descriptor:5:3": "Contrasta la hipótesis de leyes de Newton y fuerzas con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación. Presenta una imprecisión puntual que no cambia la relación principal.",
+          "rubrica:descriptor:5:4": "Contrasta la hipótesis de leyes de Newton y fuerzas con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación.",
+          "rubrica:level-points:1": "0",
+          "rubrica:level-points:2": "1",
+          "rubrica:level-points:3": "2",
+          "rubrica:level-points:4": "3",
+          "rubrica:meta:levelCount": "4",
+          "rubrica:meta:scorePending": "false",
+          "rubrica:meta:scoreWeights": "[3,3,4,3,2,4]",
+          "rubrica:criterion-weight:0": "3",
+          "rubrica:criterion-weight:1": "3",
+          "rubrica:criterion-weight:2": "4",
+          "rubrica:criterion-weight:3": "3",
+          "rubrica:criterion-weight:4": "2",
+          "rubrica:criterion-weight:5": "4",
+          "rubrica:meta:criteriaCount": "6",
+          "rubrica:meta:catalogVersion": "evaluation-2026.92",
+          "rubrica:criterion-evidence:0": "{\"title\":\"Hipótesis contrastable sobre leyes de Newton y fuerzas · QA\",\"description\":\"Formula una hipótesis contrastable sobre leyes de Newton y fuerzas, relacionando las condiciones y el posible efecto de forma compatible con la relación vectorial entre fuerza neta, masa y aceleración del sistema delimitado, distinguiendo las fuerzas que actúan sobre cada cuerpo; se evalúa su planteamiento, sin exigir que se confirme.\",\"progression\":[\"Formula una hipótesis contrastable sobre leyes de Newton y fuerzas, relacionando las condiciones y el posible efecto de forma compatible con la relación vectorial entre fuerza neta, masa y aceleración del sistema delimitado, distinguiendo las fuerzas que actúan sobre cada cuerpo; se evalúa su planteamiento, sin exigir que se confirme.\",\"Formula una hipótesis contrastable sobre leyes de Newton y fuerzas, relacionando las condiciones y el posible efecto de forma compatible con la relación vectorial entre fuerza neta, masa y aceleración del sistema delimitado, distinguiendo las fuerzas que actúan sobre cada cuerpo; se evalúa su planteamiento, sin exigir que se confirme. Presenta una imprecisión puntual que no cambia la relación principal.\",\"La hipótesis sobre leyes de Newton y fuerzas propone una relación, pero no permite reconocer qué evidencia la contrastaría.\",\"La afirmación sobre leyes de Newton y fuerzas no es contrastable o no responde al fenómeno planteado.\",\"No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.\"]}",
+          "rubrica:criterion-evidence:1": "{\"title\":\"Pregunta sobre leyes de Newton y fuerzas\",\"description\":\"Formula una pregunta investigable sobre leyes de Newton y fuerzas que delimita el fenómeno y la evidencia necesaria para responderla.\",\"progression\":[\"Formula una pregunta investigable sobre leyes de Newton y fuerzas que delimita el fenómeno y la evidencia necesaria para responderla.\",\"Formula una pregunta investigable sobre leyes de Newton y fuerzas que delimita el fenómeno y la evidencia necesaria para responderla. Presenta una imprecisión puntual que no cambia la relación principal.\",\"La pregunta se relaciona con leyes de Newton y fuerzas, pero no delimita qué se pretende conocer.\",\"La pregunta no se relaciona con el fenómeno de leyes de Newton y fuerzas solicitado.\",\"No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.\"]}",
+          "rubrica:criterion-evidence:2": "{\"title\":\"Procedimiento de la práctica de leyes de Newton y fuerzas\",\"description\":\"Ejecuta el procedimiento indicado para estudiar leyes de Newton y fuerzas, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación.\",\"progression\":[\"Ejecuta el procedimiento indicado para estudiar leyes de Newton y fuerzas, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación.\",\"Ejecuta el procedimiento indicado para estudiar leyes de Newton y fuerzas, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Ejecuta parte del procedimiento de leyes de Newton y fuerzas, pero omite una condición indicada que dificulta comparar observaciones.\",\"Cambia condiciones esenciales de la práctica de leyes de Newton y fuerzas sin registrarlas, impidiendo relacionar el procedimiento con las observaciones.\",\"No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.\"]}",
+          "rubrica:criterion-evidence:3": "{\"title\":\"Registro de observaciones de leyes de Newton y fuerzas\",\"description\":\"Registra fielmente las observaciones de la práctica de leyes de Newton y fuerzas, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados.\",\"progression\":[\"Registra fielmente las observaciones de la práctica de leyes de Newton y fuerzas, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados.\",\"Registra fielmente las observaciones de la práctica de leyes de Newton y fuerzas, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Registra observaciones de leyes de Newton y fuerzas, pero omite información necesaria para relacionarlas con el procedimiento realizado.\",\"El registro de leyes de Newton y fuerzas no corresponde al procedimiento observado o sustituye los resultados por lo que esperaba obtener.\",\"No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.\"]}",
+          "rubrica:criterion-evidence:4": "{\"title\":\"Seguridad durante la práctica de leyes de Newton y fuerzas\",\"description\":\"Aplica las precauciones indicadas para la práctica de leyes de Newton y fuerzas y comunica las incidencias observadas antes de continuar cuando exista un riesgo.\",\"progression\":[\"Aplica las precauciones indicadas para la práctica de leyes de Newton y fuerzas y comunica las incidencias observadas antes de continuar cuando exista un riesgo.\",\"Aplica las precauciones indicadas para la práctica de leyes de Newton y fuerzas y comunica las incidencias observadas antes de continuar cuando exista un riesgo. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Aplica parte de las precauciones indicadas en la práctica de leyes de Newton y fuerzas, pero necesita corregir una condición de riesgo.\",\"Mantiene una condición de riesgo identificada en la práctica de leyes de Newton y fuerzas sin aplicar la precaución indicada.\",\"No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.\"]}",
+          "rubrica:criterion-evidence:5": "{\"title\":\"Contraste de hipótesis sobre leyes de Newton y fuerzas\",\"description\":\"Contrasta la hipótesis de leyes de Newton y fuerzas con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación.\",\"progression\":[\"Contrasta la hipótesis de leyes de Newton y fuerzas con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación.\",\"Contrasta la hipótesis de leyes de Newton y fuerzas con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Relaciona parte de las evidencias de leyes de Newton y fuerzas con la hipótesis, pero deja una inferencia sin respaldo.\",\"Sostiene o rechaza la hipótesis de leyes de Newton y fuerzas sin atender a las evidencias disponibles o cambia las observaciones para ajustarlas a lo esperado.\",\"No aporta evidencia verificable del desempeño solicitado sobre leyes de Newton y fuerzas.\"]}",
+          "rubrica:criterion-template:0": "nat-6-newton-forces-hypothesis",
+          "rubrica:criterion-template:1": "nat-6-newton-forces-question",
+          "rubrica:criterion-template:2": "nat-6-newton-forces-experiment-procedure",
+          "rubrica:criterion-template:3": "nat-6-newton-forces-experiment-record",
+          "rubrica:criterion-template:4": "nat-6-newton-forces-safety",
+          "rubrica:criterion-template:5": "nat-6-newton-forces-hypothesis-evidence",
+          "rubrica:meta:levelScoreWeights": "[3,2,1,0]"
+        },
+        "fieldsEqual": true,
+        "reopenMethod": "activity Instrumento tab: rendered configuration compared with every captured editor value and persisted definition",
+        "instrumentId": "f2d1dc02-13ee-4c57-8133-81093767ae97"
+      },
+      {
+        "grade": 6,
+        "format": "lista-cotejo",
+        "name": "QA Ciencias 6 · Cotejo · Átomo",
+        "description": "Identifica las partes del átomo en el esquema proporcionado. Compara dos modelos atómicos proporcionados.",
+        "points": 17.35,
+        "blankScore": true,
+        "keepFieldsEqual": true,
+        "addedOnlyRequestedComparison": true,
+        "fields": [
+          {
+            "label": null,
+            "value": "Lista de cotejo para QA Ciencias 6 · Cotejo · Átomo"
+          },
+          {
+            "label": "Criterio 1",
+            "value": "Identifica las partes del átomo en el esquema proporcionado. QA"
+          },
+          {
+            "label": null,
+            "value": "8.68"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Compara los casos solicitados de átomo y cuantización de energía mediante características científicas comunes coherentes con la estructura o los estados energéticos del modelo atómico solicitado y las transiciones permitidas cuando se pidan, sin presentar orbitales como órbitas clásicas, distinguiendo semejanzas y diferencias respaldadas por la información disponible."
+          },
+          {
+            "label": null,
+            "value": "8.67"
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=b148f72b-8ed7-4aa9-b606-5bd085d5de0d&competencyBlockId=b4&returnCourseId=b7c4e44b-c755-4cfe-9cc2-cdb92f5e1ae6&returnSubjectId=b148f72b-8ed7-4aa9-b606-5bd085d5de0d&returnTab=actividades",
+        "activityId": "92d09771-eb45-48c3-b946-6063af2d864f",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "eb1816d7-c9f9-4353-a8f6-cdaa440643d4",
+        "state": "REOPENED",
+        "renderedDefinition": {
+          "lista-cotejo:title": "Lista de cotejo para QA Ciencias 6 · Cotejo · Átomo",
+          "lista-cotejo:points:0": "8.68",
+          "lista-cotejo:points:1": "8.67",
+          "lista-cotejo:criterion:0": "Identifica las partes del átomo en el esquema proporcionado. QA",
+          "lista-cotejo:criterion:1": "Compara los casos solicitados de átomo y cuantización de energía mediante características científicas comunes coherentes con la estructura o los estados energéticos del modelo atómico solicitado y las transiciones permitidas cuando se pidan, sin presentar orbitales como órbitas clásicas, distinguiendo semejanzas y diferencias respaldadas por la información disponible.",
+          "lista-cotejo:description:0": "Identifica los elementos solicitados de átomo y cuantización de energía por sus características observables o las referencias proporcionadas.",
+          "lista-cotejo:description:1": "Compara los casos solicitados de átomo y cuantización de energía mediante características científicas comunes coherentes con la estructura o los estados energéticos del modelo atómico solicitado y las transiciones permitidas cuando se pidan, sin presentar orbitales como órbitas clásicas, distinguiendo semejanzas y diferencias respaldadas por la información disponible.",
+          "lista-cotejo:meta:prepared": "true",
+          "lista-cotejo:criterion-id:0": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-atomic-quantum-identification:0",
+          "lista-cotejo:criterion-id:1": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-atomic-quantum-comparison:1",
+          "lista-cotejo:meta:pointsMode": "individual",
+          "lista-cotejo:meta:scorePending": "false",
+          "lista-cotejo:meta:scoreWeights": "[3,3]",
+          "lista-cotejo:criterion-weight:0": "3",
+          "lista-cotejo:criterion-weight:1": "3",
+          "lista-cotejo:meta:criteriaCount": "2",
+          "lista-cotejo:meta:catalogVersion": "evaluation-2026.92",
+          "lista-cotejo:criterion-evidence:0": "{\"title\":\"Identifica los elementos solicitados de átomo y cuantización de energía por sus características observables o las referencias proporcionadas.\",\"description\":\"Identifica los elementos solicitados de átomo y cuantización de energía por sus características observables o las referencias proporcionadas.\",\"progression\":[\"Identifica los elementos solicitados de átomo y cuantización de energía por sus características observables o las referencias proporcionadas.\",\"Identifica los elementos solicitados de átomo y cuantización de energía por sus características observables o las referencias proporcionadas. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Identifica parte de los elementos de átomo y cuantización de energía, pero confunde una característica que permite distinguirlos.\",\"Asigna nombres o características incompatibles con los elementos solicitados de átomo y cuantización de energía.\",\"No aporta evidencia verificable del desempeño solicitado sobre átomo y cuantización de energía.\"]}",
+          "lista-cotejo:criterion-evidence:1": "{\"title\":\"Compara los casos solicitados de átomo y cuantización de energía mediante características científicas comunes coherentes con la estructura o los estados energéticos del modelo atómico solicitado y las transiciones permitidas cuando se pidan, sin presentar orbitales como órbitas clásicas, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"description\":\"Compara los casos solicitados de átomo y cuantización de energía mediante características científicas comunes coherentes con la estructura o los estados energéticos del modelo atómico solicitado y las transiciones permitidas cuando se pidan, sin presentar orbitales como órbitas clásicas, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"progression\":[\"Compara los casos solicitados de átomo y cuantización de energía mediante características científicas comunes coherentes con la estructura o los estados energéticos del modelo atómico solicitado y las transiciones permitidas cuando se pidan, sin presentar orbitales como órbitas clásicas, distinguiendo semejanzas y diferencias respaldadas por la información disponible.\",\"Compara los casos solicitados de átomo y cuantización de energía mediante características científicas comunes coherentes con la estructura o los estados energéticos del modelo atómico solicitado y las transiciones permitidas cuando se pidan, sin presentar orbitales como órbitas clásicas, distinguiendo semejanzas y diferencias respaldadas por la información disponible. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Describe los casos de átomo y cuantización de energía, pero compara con características distintas o deja sin justificar una diferencia.\",\"Atribuye semejanzas o diferencias a átomo y cuantización de energía que contradicen las características examinadas.\",\"No aporta evidencia verificable del desempeño solicitado sobre átomo y cuantización de energía.\"]}",
+          "lista-cotejo:criterion-template:0": "nat-6-atomic-quantum-identification",
+          "lista-cotejo:criterion-template:1": "nat-6-atomic-quantum-comparison"
+        },
+        "fieldsEqual": true,
+        "reopenMethod": "activity Instrumento tab: rendered configuration compared with every captured editor value and persisted definition",
+        "instrumentId": "250eb31f-4119-4c7a-a698-6df604f64510"
+      },
+      {
+        "grade": 6,
+        "format": "escala",
+        "name": "QA Ciencias 6 · Escala · Movimiento circular",
+        "description": "Observa el movimiento circular del modelo proporcionado y registra con regularidad sus características.",
+        "points": 20,
+        "blankScore": true,
+        "fields": [
+          {
+            "label": null,
+            "value": "Escala estimativa para QA Ciencias 6 · Escala · Movimiento circular"
+          },
+          {
+            "label": "Indicador 1",
+            "value": "Describe o registra las características observadas de movimiento circular, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas. QA"
+          },
+          {
+            "label": "Siempre del indicador 1",
+            "value": "En todas las oportunidades observadas."
+          },
+          {
+            "label": "Frecuentemente del indicador 1",
+            "value": "En la mayoría de las oportunidades observadas."
+          },
+          {
+            "label": "A veces del indicador 1",
+            "value": "En algunas oportunidades observadas."
+          },
+          {
+            "label": "Todavía no del indicador 1",
+            "value": "En ninguna oportunidad observada."
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=b148f72b-8ed7-4aa9-b606-5bd085d5de0d&competencyBlockId=b4&returnCourseId=b7c4e44b-c755-4cfe-9cc2-cdb92f5e1ae6&returnSubjectId=b148f72b-8ed7-4aa9-b606-5bd085d5de0d&returnTab=actividades",
+        "activityId": "c95a89ef-1124-4356-94ef-1c2f9c5a8c18",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "e54c47f1-fd4a-4ea9-8803-a809f68667ad",
+        "state": "REOPENED",
+        "renderedDefinition": {
+          "escala:title": "Escala estimativa para QA Ciencias 6 · Escala · Movimiento circular",
+          "escala:points:0": "20",
+          "escala:criterion:0": "Describe o registra las características observadas de movimiento circular, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas. QA",
+          "escala:level-name:1": "Todavía no",
+          "escala:level-name:2": "A veces",
+          "escala:level-name:3": "Frecuentemente",
+          "escala:level-name:4": "Siempre",
+          "escala:description:0": "Describe o registra las características observadas de movimiento circular, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.",
+          "escala:meta:prepared": "true",
+          "escala:criterion-id:0": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-circular-motion-observation:0",
+          "escala:descriptor:0:1": "En ninguna oportunidad observada.",
+          "escala:descriptor:0:2": "En algunas oportunidades observadas.",
+          "escala:descriptor:0:3": "En la mayoría de las oportunidades observadas.",
+          "escala:descriptor:0:4": "En todas las oportunidades observadas.",
+          "escala:level-points:1": "0",
+          "escala:level-points:2": "1.3333333333333333",
+          "escala:level-points:3": "2.6666666666666665",
+          "escala:level-points:4": "4",
+          "escala:meta:levelCount": "4",
+          "escala:meta:scorePending": "false",
+          "escala:meta:scoreWeights": "[3]",
+          "escala:criterion-weight:0": "3",
+          "escala:meta:criteriaCount": "1",
+          "escala:meta:catalogVersion": "evaluation-2026.92",
+          "escala:criterion-evidence:0": "{\"title\":\"Describe o registra las características observadas de movimiento circular, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"description\":\"Describe o registra las características observadas de movimiento circular, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"progression\":[\"Describe o registra las características observadas de movimiento circular, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas.\",\"Describe o registra las características observadas de movimiento circular, diferenciándolas de inferencias y manteniendo las condiciones expresamente solicitadas. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Registra parte de las características de movimiento circular, pero mezcla una inferencia con lo observado.\",\"El registro de movimiento circular contradice la evidencia observada o aporta datos inventados.\",\"No aporta evidencia verificable del desempeño solicitado sobre movimiento circular.\"]}",
+          "escala:criterion-template:0": "nat-6-circular-motion-observation",
+          "escala:meta:levelScoreWeights": "[4,2.6666666666666665,1.3333333333333333,0]"
+        },
+        "fieldsEqual": true,
+        "reopenMethod": "activity Instrumento tab: rendered configuration compared with every captured editor value and persisted definition",
+        "instrumentId": "e602631e-87f0-4a2b-81e1-3201d835510d"
+      },
+      {
+        "grade": 6,
+        "format": "lista-ponderada",
+        "name": "QA Ciencias 6 · Ponderada · Ley de Ohm",
+        "description": "Calcula la corriente eléctrica mediante la ley de Ohm con los datos proporcionados y explica el resultado, sin construir un circuito. Asigna pesos al procedimiento, al cálculo y a la explicación, con crédito parcial.",
+        "points": 17.35,
+        "blankScore": true,
+        "fields": [
+          {
+            "label": null,
+            "value": "Lista ponderada para QA Ciencias 6 · Ponderada · Ley de Ohm"
+          },
+          {
+            "label": "Criterio 1",
+            "value": "Procedimiento de cálculo de corriente con la ley de Ohm · QA"
+          },
+          {
+            "label": "Indicador del criterio 1",
+            "value": "Relaciona los datos y la incógnita de ley de Ohm mediante la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia y realiza las operaciones solicitadas sin inventar valores ausentes. Parcial (50%): Utiliza parte de los datos de ley de Ohm, pero un paso no mantiene la relación necesaria para resolver la incógnita."
+          },
+          {
+            "label": null,
+            "value": "41"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Resultado de ley de Ohm"
+          },
+          {
+            "label": "Indicador del criterio 2",
+            "value": "Presenta un resultado coherente con las operaciones de ley de Ohm y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Parcial (50%): El resultado de ley de Ohm conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo."
+          },
+          {
+            "label": null,
+            "value": "19"
+          },
+          {
+            "label": "Criterio 3",
+            "value": "Explicación de ley de Ohm"
+          },
+          {
+            "label": "Indicador del criterio 3",
+            "value": "Explica la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia con afirmaciones científicamente compatibles con la información disponible. Parcial (50%): Explica parte de ley de Ohm, pero deja sin relacionar un elemento necesario para entender el fenómeno."
+          },
+          {
+            "label": null,
+            "value": "40"
+          }
+        ],
+        "strategyFieldsEqual": true,
+        "url": "http://localhost:8787/actividades/crear?sectionSubjectId=b148f72b-8ed7-4aa9-b606-5bd085d5de0d&competencyBlockId=b4&returnCourseId=b7c4e44b-c755-4cfe-9cc2-cdb92f5e1ae6&returnSubjectId=b148f72b-8ed7-4aa9-b606-5bd085d5de0d&returnTab=actividades",
+        "activityId": "379ed8c9-8ef8-486b-9be3-6dc9f407b66f",
+        "catalog": "evaluation-2026.92",
+        "snapshotId": "5e48e754-1486-479f-af63-806bc2498706",
+        "state": "REOPENED",
+        "renderedDefinition": {
+          "lista-ponderada:title": "Lista ponderada para QA Ciencias 6 · Ponderada · Ley de Ohm",
+          "lista-ponderada:points:0": "7.11",
+          "lista-ponderada:points:1": "3.3",
+          "lista-ponderada:points:2": "6.94",
+          "lista-ponderada:weight:0": "41",
+          "lista-ponderada:weight:1": "19",
+          "lista-ponderada:weight:2": "40",
+          "lista-ponderada:criterion:0": "Procedimiento de cálculo de corriente con la ley de Ohm · QA",
+          "lista-ponderada:criterion:1": "Resultado de ley de Ohm",
+          "lista-ponderada:criterion:2": "Explicación de ley de Ohm",
+          "lista-ponderada:indicator:0": "Relaciona los datos y la incógnita de ley de Ohm mediante la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia y realiza las operaciones solicitadas sin inventar valores ausentes. Parcial (50%): Utiliza parte de los datos de ley de Ohm, pero un paso no mantiene la relación necesaria para resolver la incógnita.",
+          "lista-ponderada:indicator:1": "Presenta un resultado coherente con las operaciones de ley de Ohm y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Parcial (50%): El resultado de ley de Ohm conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo.",
+          "lista-ponderada:indicator:2": "Explica la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia con afirmaciones científicamente compatibles con la información disponible. Parcial (50%): Explica parte de ley de Ohm, pero deja sin relacionar un elemento necesario para entender el fenómeno.",
+          "lista-ponderada:meta:partial": "true",
+          "lista-ponderada:description:0": "Relaciona los datos y la incógnita de ley de Ohm mediante la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia y realiza las operaciones solicitadas sin inventar valores ausentes. Parcial (50%): Utiliza parte de los datos de ley de Ohm, pero un paso no mantiene la relación necesaria para resolver la incógnita.",
+          "lista-ponderada:description:1": "Presenta un resultado coherente con las operaciones de ley de Ohm y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Parcial (50%): El resultado de ley de Ohm conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo.",
+          "lista-ponderada:description:2": "Explica la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia con afirmaciones científicamente compatibles con la información disponible. Parcial (50%): Explica parte de ley de Ohm, pero deja sin relacionar un elemento necesario para entender el fenómeno.",
+          "lista-ponderada:meta:prepared": "true",
+          "lista-ponderada:criterion-id:0": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-ohm-calculation:0",
+          "lista-ponderada:criterion-id:1": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-ohm-result:1",
+          "lista-ponderada:criterion-id:2": "proposal:evaluation-2026.92:32bae97e-5fd2-5ae8-864e-c372574a32e3:nat-6-ohm-explanation:2",
+          "lista-ponderada:meta:manualPoints": "true",
+          "lista-ponderada:meta:scorePending": "false",
+          "lista-ponderada:meta:scoreWeights": "[4,2,4]",
+          "lista-ponderada:criterion-weight:0": "4",
+          "lista-ponderada:criterion-weight:1": "2",
+          "lista-ponderada:criterion-weight:2": "4",
+          "lista-ponderada:meta:criteriaCount": "3",
+          "lista-ponderada:meta:catalogVersion": "evaluation-2026.92",
+          "lista-ponderada:criterion-evidence:0": "{\"title\":\"Procedimiento de cálculo de ley de Ohm\",\"description\":\"Relaciona los datos y la incógnita de ley de Ohm mediante la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia y realiza las operaciones solicitadas sin inventar valores ausentes. Parcial (50%): Utiliza parte de los datos de ley de Ohm, pero un paso no mantiene la relación necesaria para resolver la incógnita.\",\"progression\":[\"Relaciona los datos y la incógnita de ley de Ohm mediante la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia y realiza las operaciones solicitadas sin inventar valores ausentes.\",\"Relaciona los datos y la incógnita de ley de Ohm mediante la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia y realiza las operaciones solicitadas sin inventar valores ausentes. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Utiliza parte de los datos de ley de Ohm, pero un paso no mantiene la relación necesaria para resolver la incógnita.\",\"El procedimiento emplea una relación incompatible con los datos o la incógnita de ley de Ohm.\",\"No aporta evidencia verificable del desempeño solicitado sobre ley de Ohm.\"]}",
+          "lista-ponderada:criterion-evidence:1": "{\"title\":\"Resultado de ley de Ohm\",\"description\":\"Presenta un resultado coherente con las operaciones de ley de Ohm y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Parcial (50%): El resultado de ley de Ohm conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo.\",\"progression\":[\"Presenta un resultado coherente con las operaciones de ley de Ohm y conserva las magnitudes y unidades que corresponden a los datos del enunciado.\",\"Presenta un resultado coherente con las operaciones de ley de Ohm y conserva las magnitudes y unidades que corresponden a los datos del enunciado. Presenta una imprecisión puntual que no cambia la relación principal.\",\"El resultado de ley de Ohm conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo.\",\"El resultado de ley de Ohm contradice el procedimiento o confunde magnitudes.\",\"No aporta evidencia verificable del desempeño solicitado sobre ley de Ohm.\"]}",
+          "lista-ponderada:criterion-evidence:2": "{\"title\":\"Explicación de ley de Ohm\",\"description\":\"Explica la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia con afirmaciones científicamente compatibles con la información disponible. Parcial (50%): Explica parte de ley de Ohm, pero deja sin relacionar un elemento necesario para entender el fenómeno.\",\"progression\":[\"Explica la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia con afirmaciones científicamente compatibles con la información disponible.\",\"Explica la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia con afirmaciones científicamente compatibles con la información disponible. Presenta una imprecisión puntual que no cambia la relación principal.\",\"Explica parte de ley de Ohm, pero deja sin relacionar un elemento necesario para entender el fenómeno.\",\"La explicación de ley de Ohm contradice la relación científica estudiada.\",\"No aporta evidencia verificable del desempeño solicitado sobre ley de Ohm.\"]}",
+          "lista-ponderada:criterion-template:0": "nat-6-ohm-calculation",
+          "lista-ponderada:criterion-template:1": "nat-6-ohm-result",
+          "lista-ponderada:criterion-template:2": "nat-6-ohm-explanation"
+        },
+        "fieldsEqual": true,
+        "reopenMethod": "editable form: all input/textarea labels and values equal",
+        "instrumentId": "ade7a953-f820-4431-8558-f0dc6fbb79d9"
+      }
+    ],
+    "notes": [
+      "Four formats generated, manually edited, saved once and reopened with exact visible values.",
+      "Strategy-only change preserves every captured instrument field.",
+      "Initial score blank; totals20/17.35 and weighted41/19/40 checked.",
+      "Reopening method is recorded per format; rendered configuration is compared with persisted definition."
+    ]
   },
   "limitations": [
-    "Defined wording patterns only; complete instrument review is recorded separately from automated contracts",
-    "HTTP elapsed times include local Worker and remote Development dependencies; no independent SQL/network/render attribution",
-    "Private browser service-worker registrations were not audited; served asset/sw hashes were checked"
+    "Verified defined requests and reviewed examples; no claim of interpreting every possible wording.",
+    "Intermittent Development DNS and global Activities list timeout were observed; successful course-based creator cases do not prove those incidents fixed."
+  ],
+  "finalPersonalDbVerification": [
+    {
+      "activityId": "4f016a23-a615-40ad-98a1-c787a0eec1bc",
+      "format": "rubrica",
+      "instrumentId": "f2d1dc02-13ee-4c57-8133-81093767ae97",
+      "snapshotId": "2356f575-13c6-48ba-a95a-9847e59aa874",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "92d09771-eb45-48c3-b946-6063af2d864f",
+      "format": "lista-cotejo",
+      "instrumentId": "250eb31f-4119-4c7a-a698-6df604f64510",
+      "snapshotId": "eb1816d7-c9f9-4353-a8f6-cdaa440643d4",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "c95a89ef-1124-4356-94ef-1c2f9c5a8c18",
+      "format": "escala",
+      "instrumentId": "e602631e-87f0-4a2b-81e1-3201d835510d",
+      "snapshotId": "e54c47f1-fd4a-4ea9-8803-a809f68667ad",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    },
+    {
+      "activityId": "379ed8c9-8ef8-486b-9be3-6dc9f407b66f",
+      "format": "lista-ponderada",
+      "instrumentId": "ade7a953-f820-4431-8558-f0dc6fbb79d9",
+      "snapshotId": "5e48e754-1486-479f-af63-806bc2498706",
+      "catalog": "evaluation-2026.92",
+      "fieldsMatch": true
+    }
+  ],
+  "finalHistoricalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 7,
+    "newSnapshots": 48,
+    "gradeBaseline": {
+      "grade": 6,
+      "preservedReleases": 24,
+      "preservedSnapshots": 106,
+      "newReleases": 1,
+      "newSnapshots": 15
+    }
+  },
+  "finalCombinedChecks": [
+    {
+      "command": "pnpm --filter backend test",
+      "code": 0,
+      "ms": 14839,
+      "log": ".wrangler/science-source/grade-6-check-0.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 5933,
+      "log": ".wrangler/science-source/grade-6-check-1.log"
+    },
+    {
+      "command": "pnpm --filter frontend exec vitest run",
+      "code": 0,
+      "ms": 88598,
+      "log": ".wrangler/science-source/grade-6-check-2.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 16443,
+      "log": ".wrangler/science-source/grade-6-check-3.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "code": 0,
+      "ms": 86042,
+      "log": ".wrangler/science-source/grade-6-check-4.log"
+    }
   ]
 }

@@ -62,10 +62,10 @@ Para cada grado, repetir lectura visual y matriz → prueba roja → proveedor �
 
 - [x] 2.º: Ciencias de la Vida PDF296–299;30temas/68consignas/272instrumentos revisados, fuente/release87 idempotentes, HTTP/DB y navegador cuatro formatos, checks finales aprobados. Informe y evidencia por grado; consultar Git para el commit/push del cierre.
 - [x] 3.º: Ciencias Físicas PDF300–304;50grupos/103consignas/412instrumentos revisados, fuente/release88 idempotentes, HTTP/DB y navegador cuatro formatos, checks finales aprobados tras corregir radar. Latencia/contexto recuperado documentados sin dar la causa por resuelta. Consultar Git para commit/push de cierre.
-- [ ] 4.º: Biología común, PDF312–315/impresas311–314. Fuente instalada y catálogo90 idempotentes; 48grupos/104consignas/416instrumentos revisados, contratos y HTTP/DB iniciales aprobados. Cierre visual y recheck final pendientes; no confundir implementación con verificación terminada. P1–P6 son procesos, no grados.
-- [ ] 5.º: inventario visual PDF316–318/impresas315–317 realizado durante la espera de verificación3.º; Química común, P1–P6 son procesos. Sin proveedor ni fuente instalada, no es cobertura.
-- [ ] 6.º: inventario visual PDF319–322/impresas318–321 realizado durante espera de verificación3.º; Física común. Ohm figura en321; preservar su antecedente parcial. Sin proveedor común completo ni fuente instalada; inventario no es cobertura.
-- [ ] Consolidación final con cobertura real, límites, hashes y árbol; detenerse.
+- [x] 4.º: Biología común, 48 grupos/104 consignas/416 instrumentos revisados; fuente/release idempotentes, HTTP/DB y cuatro formatos personales reabiertos exactos. Commit visual 10adefb3.
+- [x] 5.º: Química común, 51 grupos/102 consignas/408 instrumentos revisados; HTTP/DB y cuatro formatos personales completos. Commit visual 407ce8a0.
+- [x] 6.º: Física común, 63 grupos/126 consignas/504 instrumentos revisados; fuente/release 92 idempotentes, HTTP/DB y cuatro formatos personales completos; catálogo 91 congelado.
+- [x] Consolidación final con cobertura real, límites y evidencia; commit/push del cierre y árbol se confirman en Git y entrega. Detenerse.
 
 ### Hallazgo durante la verificación de 4.º
 

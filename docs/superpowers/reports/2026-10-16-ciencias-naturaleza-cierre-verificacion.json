@@ -1,0 +1,270 @@
+{
+  "status": "VERIFIED_DEFINED_PATTERNS_ALL_SIX_GRADES",
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.92",
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-BLaW9Yd6.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-BLaW9Yd6.js",
+        "sha256": "2922c752f2719b016c3bd0cb2284cfafc3fa0ded7688e116718367517503f320",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-CKhhfWm7.js",
+        "sha256": "f05bad5bbbd65bac41fe87d749df94e8866c305d8575da1a36e1a2b4309a07e9",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-C7mDMASA.js",
+        "sha256": "21cc089c4ced77f4ae2d2dae841638dcbf168348f7885b67ba0345021639cf11",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-CI8Dgvvv.js",
+        "sha256": "628056a2828f0e21d922640f39c4ff0cd11b5328a6ab989b309d753f9ec11ce0",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-USqr3Gsy.js",
+        "sha256": "75ad6a6b582dd6c1a00cb17815f1c78a14f6434c815282648978fbdaf2858402",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "f0bd11edfb582a7cb3febb0b302c59b88c725f18b58986f683550cb0bfc914b2",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "checks": [
+    {
+      "command": "pnpm --filter backend test",
+      "code": 0,
+      "ms": 14839,
+      "log": ".wrangler/science-source/grade-6-check-0.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 5933,
+      "log": ".wrangler/science-source/grade-6-check-1.log"
+    },
+    {
+      "command": "pnpm --filter frontend exec vitest run",
+      "code": 0,
+      "ms": 88598,
+      "log": ".wrangler/science-source/grade-6-check-2.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 16443,
+      "log": ".wrangler/science-source/grade-6-check-3.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "code": 0,
+      "ms": 86042,
+      "log": ".wrangler/science-source/grade-6-check-4.log"
+    }
+  ],
+  "historicalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 7,
+    "newSnapshots": 48,
+    "gradeBaseline": {
+      "grade": 6,
+      "preservedReleases": 24,
+      "preservedSnapshots": 106,
+      "newReleases": 1,
+      "newSnapshots": 15
+    }
+  },
+  "grades": [
+    {
+      "grade": 1,
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "topics": 29,
+      "http": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "savedAndReopened": 4
+      },
+      "visual": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "allFieldsEqual": true
+      },
+      "review": "REVIEWED_DEFINED_FIXTURES",
+      "unmapped": 0
+    },
+    {
+      "grade": 2,
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "topics": 30,
+      "http": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "savedAndReopened": 4
+      },
+      "visual": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "allFieldsEqual": true
+      },
+      "review": "REVIEWED_DEFINED_FIXTURES",
+      "unmapped": 0
+    },
+    {
+      "grade": 3,
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "topics": 50,
+      "http": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "savedAndReopened": 4
+      },
+      "visual": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "allFieldsEqual": true
+      },
+      "review": "REVIEWED_DEFINED_FIXTURES",
+      "unmapped": 0
+    },
+    {
+      "grade": 4,
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "topics": 48,
+      "http": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "savedAndReopened": 4
+      },
+      "visual": {
+        "formats": [
+          "rubrica",
+          "escala",
+          "lista-ponderada",
+          "lista-cotejo"
+        ],
+        "allFieldsEqual": true
+      },
+      "review": "REVIEWED_DEFINED_FIXTURES",
+      "unmapped": 0
+    },
+    {
+      "grade": 5,
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "topics": 51,
+      "http": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "savedAndReopened": 4
+      },
+      "visual": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "allFieldsEqual": true
+      },
+      "review": "REVIEWED_DEFINED_FIXTURES",
+      "unmapped": 0
+    },
+    {
+      "grade": 6,
+      "status": "VERIFIED_DEFINED_PATTERNS",
+      "topics": 63,
+      "http": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "savedAndReopened": 4
+      },
+      "visual": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "allFieldsEqual": true
+      },
+      "review": "REVIEWED_DEFINED_FIXTURES",
+      "unmapped": 0
+    }
+  ],
+  "limitations": [
+    "Intermittent Development pool DNS can terminate local runtime.",
+    "Global Activities list timeout observed; course-based cases passed.",
+    "Private browser service-worker registrations/cache not inspected.",
+    "Defined requests and reviewed instruments do not imply every possible wording."
+  ],
+  "secretsAudit": {
+    "filesInspected": 8,
+    "secretValuesFound": false,
+    "privateFilesExcluded": true
+  },
+  "browserEntryVerifiedByDom": "/assets/index-BLaW9Yd6.js"
+}
