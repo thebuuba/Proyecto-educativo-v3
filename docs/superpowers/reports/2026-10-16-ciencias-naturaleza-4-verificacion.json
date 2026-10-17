@@ -651,5 +651,14 @@
     "Cloudflare dry-run generated assets then CLI failed to terminate in three attempts; commands interrupted, not passing",
     "Updating a saved instrument with new snapshot failed twice after transaction expiry; prior data remained intact",
     "Local checklist and its QA copy have editable-fallback-v1 fields and no remote snapshot; do not attribute remote provenance"
-  ]
+  ],
+  "laterCombinedBuild": {
+    "catalog": "evaluation-2026.92",
+    "command": "pnpm cloudflare:build",
+    "code": 0,
+    "ms": 86042,
+    "note": "Final combined build includes all Science grades and persistence corrections. Prior interrupted build observations remain historical."
+  },
+  "finalBuildStatus": "PASSED_IN_LATER_COMBINED_CATALOG_92_BUILD",
+  "personalSessionRecovered": true
 }

@@ -1,4 +1,5 @@
 import type {InstrumentAcademicContext} from './secondary-science'
+import {secondaryScienceCriteria} from './secondary-science'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import type {InstrumentType,InstrumentRecommendation} from './instrument-recommendation'
 import type {CommonScienceTopic} from './secondary-science-common-types'
@@ -7,9 +8,10 @@ import {commonScienceGradeTwoTopics} from './secondary-science-grade-2'
 import {commonScienceGradeThreeTopics} from './secondary-science-grade-3'
 import {commonScienceGradeFourTopics} from './secondary-science-grade-4'
 import {commonScienceGradeFiveTopics} from './secondary-science-grade-5'
+import {commonScienceGradeSixTopics} from './secondary-science-grade-6'
 import {resolveEvaluationTask} from './evaluation-task-contract'
 
-export const commonScienceTopicsByGrade:Record<number,CommonScienceTopic[]>={1:commonScienceGradeOneTopics,2:commonScienceGradeTwoTopics,3:commonScienceGradeThreeTopics,4:commonScienceGradeFourTopics,5:commonScienceGradeFiveTopics}
+export const commonScienceTopicsByGrade:Record<number,CommonScienceTopic[]>={1:commonScienceGradeOneTopics,2:commonScienceGradeTwoTopics,3:commonScienceGradeThreeTopics,4:commonScienceGradeFourTopics,5:commonScienceGradeFiveTopics,6:commonScienceGradeSixTopics}
 export const commonScienceModules=Object.entries(commonScienceTopicsByGrade).map(([grade,topics])=>({id:`ciencias-naturaleza-comun-${grade}`,grade:Number(grade),topics,policy:'REQUESTED_SCIENTIFIC_ACTIONS_V1'}))
 const normalize=(s:string)=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/[σπ]/g,symbol=>symbol==='σ'?'sigma':'pi')
 const actionVerb='(?:explic\\w*|describ\\w*|observ\\w*|registr\\w*|identific\\w*|senal\\w*|rotul\\w*|clasific(?:a|an|ar|e|en|aran|ando)|orden\\w*|compar(?:a|an|ar|e|en|aran|ando)|contrast\\w*|analiz\\w*|interpret\\w*|calcul(?:a|an|ar|e|en|aran|ando)|resuel\\w*|resolv\\w*|resolver\\w*|formul\\w*|plante\\w*|realiz\\w*|ejecut\\w*|investig\\w*|consult\\w*|dibuj\\w*|represent\\w*|constru\\w*|elabor\\w*|redact\\w*|escrib\\w*|debat\\w*|argument\\w*|expon\\w*|present\\w*|recolect\\w*|recog\\w*|mid\\w*|medir\\w*|verific\\w*|comprob\\w*|balance(?:a|an|ar|e|en|aran|ando)|caracteriz\\w*|predic(?:e|en|iendo)|predec(?:ir|ira|iran)|predig(?:a|an))'
@@ -44,6 +46,15 @@ const designs=(text:string)=>/\bdisen(?:a|an|ar|e|en|aran|ando)\b/.test(text)&&!
 const oralRequested=(text:string)=>resolveEvaluationTask('',text).oral||/\b(?:expon\w*|exposicion|presentacion oral)\b/.test(text)
 const balances=(text:string)=>/\bbalance(?:a|an|ar|e|en|aran|ando)\b/.test(text)&&!cognitiveBefore(text,/\bbalance\w*\b/)
 function focusedTopic(t:CommonScienceTopic,text:string):CommonScienceTopic{
+ if(t.grade===6){
+  if(t.id==='ohm'&&!computes(text))return{...t,relation:'la relación V = I × R entre voltaje, corriente y resistencia del elemento óhmico bajo las condiciones del modelo solicitado, sin suponer comportamiento óhmico de cualquier dispositivo'}
+  if(t.id==='electric-power'&&!/electromotriz|\bfem\b/.test(text))return{...t,label:'potencia y energía eléctricas',relation:'la potencia como transferencia de energía por unidad de tiempo y su relación con las magnitudes eléctricas del sistema solicitado'}
+  if(t.id==='thermodynamic-laws'&&/ley cero/.test(text))return{...t,label:'ley cero de la termodinámica',relation:'la transitividad del equilibrio térmico entre los sistemas del caso y su relación con la temperatura, sin exigir procesos ausentes'}
+  if(t.id==='electric-power'&&/electromotriz|\bfem\b/.test(text)&&!/potencia|energia electrica/.test(text))return{...t,label:'fuerza electromotriz',relation:'la energía por unidad de carga que suministra la fuente en el modelo solicitado, sin tratarla como fuerza mecánica ni confundirla con tensión terminal en cualquier condición'}
+  if(t.id==='solar-galaxy'&&/sistema solar/.test(text)&&!/galaxia|via lactea/.test(text))return{...t,label:'sistema solar',relation:'la organización y las relaciones entre los cuerpos solicitados del sistema solar, respetando los límites y la escala del modelo indicado'}
+  if(t.id==='fluid-flow'&&/continuidad/.test(text)&&!/bernoulli/.test(text))return{...t,label:'continuidad del flujo',relation:'la conservación de masa en el flujo y su relación con densidad, área y velocidad bajo las condiciones del modelo solicitado'}
+  if(t.id==='fluid-flow'&&/bernoulli/.test(text)&&!/continuidad/.test(text))return{...t,label:'principio de Bernoulli',relation:'el balance de presión, energía cinética y energía potencial por unidad de volumen a lo largo de la línea de corriente bajo las hipótesis del modelo solicitado'}
+ }
  if(t.grade===5){
   if(t.id==='element-families'){
    const names=['no metales','metaloides','gases nobles','hidrogeno','oxigeno','nitrogeno','carbono','fosforo','plomo','mercurio','hierro','calcio','magnesio','zinc','cobre','galio','silicio','germanio','arsenico','helio','neon','argon'].filter(name=>new RegExp(`\\b${name}\\b`).test(text))
@@ -101,6 +112,7 @@ export function resolveCommonScienceTask(title:string,description:string,context
  const topics=commonScienceTopicsByGrade[context.grade];if(!topics)return null
  const text=scienceRequirementText(description.trim()||title)
  const find=(part:string)=>topics.filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(part)&&(!t.exclude||!new RegExp(t.exclude).test(part)))
+  .filter(t=>t.grade!==6||t.id!=='heat-temperature'||!/movimiento de atomos y moleculas/.test(part)||/calor|transferencia/.test(part))
   .filter(t=>t.grade!==5||t.id!=='element-families'||!/puente de hidrogeno/.test(part))
   .filter(t=>t.id!=='ecosystems'||!/flujo de energia/.test(part)||/estructura|funcion|sucesion|componentes|interacciones/.test(part))
   .filter(t=>t.id!=='circuits'||!/corriente electrica|voltaje|pilas|baterias/.test(part)||/serie|paralelo|conexiones|conservacion|constru(?:ye|yen|ir|ya|yan)|(?:interpret\w*|analiz\w*)[^.;]*circuito/.test(part))
@@ -163,7 +175,7 @@ function actionCriteria({text,topics}:Action):ContextualTopicCriterion[]{
   if(!representation&&/^\s*(?:constru\w*|elabor\w*)\b/.test(text)&&/higrometro|filtro/.test(text))add('construction',`Funcionamiento del dispositivo de ${label}`,`Construye el dispositivo solicitado de ${label} conforme al diseño indicado y comprueba su respuesta en las condiciones propuestas, reconociendo ${relation}.`,`El dispositivo de ${label} conserva parte del diseño, pero una conexión o disposición impide relacionar su respuesta con el propósito indicado.`,`El dispositivo de ${label} no permite observar la respuesta prevista por el diseño indicado.`,4)
   if(/\b(?:elabor\w*|desarroll\w*)\b.*\bproyecto\b/.test(text))add('project',`Coherencia del proyecto de ${label}`,`El producto del proyecto relaciona su propósito de ${label}, la evidencia solicitada y la propuesta presentada, atendiendo a ${relation} sin atribuir acciones no realizadas.`,`El proyecto de ${label} presenta un producto, pero no vincula una decisión con la evidencia solicitada.`,`El producto del proyecto de ${label} no responde a su propósito o se apoya en evidencias inventadas.`,4)
   if(t.grade===5&&t.id==='stoichiometry'&&balances(text))add('balancing',`Balanceo de ${label}`,`Ajusta los coeficientes estequiométricos de la ecuación solicitada para conservar el número de átomos de cada elemento, manteniendo fórmulas y subíndices de las sustancias y la carga cuando corresponda.`,`Ajusta parte de los coeficientes, pero queda un elemento sin conservar en la ecuación solicitada.`,`La ecuación no conserva los átomos o modifica fórmulas o subíndices de las sustancias para igualarlos.`,4)
-  if(t.grade===5&&/\b(?:predic(?:e|en|iendo)|predec(?:ir|ira|iran)|predig(?:a|an))\b/.test(text)&&!cognitiveBefore(text,/\b(?:predic|predec|predig)\w*\b/))add('prediction',`Predicción sobre ${label}`,`Predice el comportamiento solicitado de ${label} a partir de ${relation}, indicando las condiciones y límites que sustentan la inferencia sin exigir comprobación experimental.`,`Propone una predicción sobre ${label}, pero deja una condición o relación sin respaldo en la información disponible.`,`La predicción de ${label} contradice la relación científica o los datos proporcionados.`,4)
+  if((t.grade===5||t.grade===6)&&/\b(?:predic(?:e|en|iendo)|predec(?:ir|ira|iran)|predig(?:a|an))\b/.test(text)&&!cognitiveBefore(text,/\b(?:predic|predec|predig)\w*\b/))add('prediction',`Predicción sobre ${label}`,`Predice el comportamiento solicitado de ${label} a partir de ${relation}, indicando las condiciones y límites que sustentan la inferencia sin exigir comprobación experimental.`,`Propone una predicción sobre ${label}, pero deja una condición o relación sin respaldo en la información disponible.`,`La predicción de ${label} contradice la relación científica o los datos proporcionados.`,4)
   if(computes(text)){
    add('calculation',`Procedimiento de cálculo de ${label}`,`Relaciona los datos y la incógnita de ${label} mediante ${relation} y realiza las operaciones solicitadas sin inventar valores ausentes.`,`Utiliza parte de los datos de ${label}, pero un paso no mantiene la relación necesaria para resolver la incógnita.`,`El procedimiento emplea una relación incompatible con los datos o la incógnita de ${label}.`,4)
    add('result',`Resultado de ${label}`,`Presenta un resultado coherente con las operaciones de ${label} y conserva las magnitudes y unidades que corresponden a los datos del enunciado.`,`El resultado de ${label} conserva parte del procedimiento, pero una operación o unidad impide interpretarlo por completo.`,`El resultado de ${label} contradice el procedimiento o confunde magnitudes.`,2)
@@ -187,6 +199,13 @@ function actionCriteria({text,topics}:Action):ContextualTopicCriterion[]{
  return rows
 }
 export function commonScienceCriteria(task:CommonScienceTask){
+ const text=task.actions.map(a=>a.text).join('. ')
+ // Preserve the authored five-evidence antecedent only for its complete requested purpose.
+ if(task.grade===6&&task.actions.some(a=>a.topics.some(t=>t.id==='ohm'))
+  &&task.actions.every(a=>a.topics.every(t=>['ohm','circuits','current-resistance'].includes(t.id)))
+  &&task.actions.some(a=>computes(a.text))&&/voltaje/.test(text)&&/corriente/.test(text)&&/resistencia/.test(text)
+  &&/\b(?:analiz\w*|interpret\w*)\b[^.;]*cotidian/.test(text)
+  &&task.actions.some(a=>represents(a.text)&&/esquema/.test(a.text))&&!task.actions.some(a=>constructsDevice(a.text)||procedure(a.text)))return secondaryScienceCriteria('ohm',text)
  const actions=task.actions.map(a=>({...a,topics:a.topics.flatMap(t=>{
   const facets=t.facets?.filter(f=>new RegExp(f.match).test(a.text))
   return facets?.length?facets.map(f=>({...t,id:`${t.id}-${f.id}`,label:f.label,relation:f.relation,facets:undefined})):[t]

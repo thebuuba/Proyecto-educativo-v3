@@ -1,5 +1,5 @@
 {
-  "status": "IMPLEMENTED_PENDING_HTTP_PERSONAL_AND_CLI_VERIFICATION",
+  "status": "AUTOMATED_VERIFIED_PERSONAL_BROWSER_PENDING",
   "project": "eolgunypmtgrsyrjzcld",
   "grade": 5,
   "catalog": "evaluation-2026.91",
@@ -43,6 +43,10 @@
     "preservedReleases": 23,
     "preservedSnapshots": 102
   },
+  "sourceInstallObserved": [
+    "CREATED",
+    "UNCHANGED"
+  ],
   "checks": [
     {
       "command": "pnpm --filter backend test --exclude src/modules/evaluation-instruments/science-grade-6-contract.spec.ts",
@@ -82,10 +86,9 @@
   },
   "frontend": {
     "files": 131,
-    "tests": 44626,
-    "note": "Subsequent race/parity checks passed separately; not counted in this earlier full suite."
+    "tests": 44626
   },
-  "previousVerifiedRuntime": {
+  "runtime": {
     "project": "eolgunypmtgrsyrjzcld",
     "base": "http://localhost:8787",
     "postgres": {
@@ -140,35 +143,181 @@
     ],
     "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
   },
-  "currentRuntime": {
-    "port": 8787,
-    "launcher": 35288,
-    "listener": 39820,
-    "status": "POSTGRES_CONNECTION_TIMEOUT",
-    "note": "Compiled final backend is served; final effective SQL health verification failed, so the earlier successful runtime check is not presented as current success."
+  "generationTiming": {
+    "grade": 5,
+    "mode": "PURE_IN_PROCESS_RECOMMENDATION_SYNTHETIC_CONTEXT_NO_AUTH_DB_HTTP_OR_RENDER",
+    "samples": 200,
+    "p50Ms": 0.15459999999998786,
+    "p95Ms": 0.25950000000000273,
+    "maxMs": 1.6291999999999973
   },
   "http": {
+    "verification": "AUTHENTICATED_HTTP_DB_AND_EDITOR_ADAPTERS_NOT_VISUAL",
     "savedEvidence": [
       {
         "type": "rubrica",
+        "total": 20,
         "activityId": "e756418b-f523-4163-aa38-7c40419c1e70",
-        "verified": true,
-        "snapshotId": null
+        "instrumentHash": "68bf8cfb7fcc9dc7452f435347b4e31b515f318a4caa460ec9b1d72267450a28",
+        "snapshotId": "4edaffce-1c9a-40a7-b119-98499121af32",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "b5398277-4f03-589a-9fb7-20e9740d2c72",
+          "scopeId": "2b46e86d-75bd-58ce-b3ad-ce009c8bb90c"
+        }
       },
       {
         "type": "lista-cotejo",
+        "total": 17.35,
         "activityId": "132d25b4-7286-4801-82b1-0da74d1a096f",
-        "verified": true,
-        "snapshotId": null
+        "instrumentHash": "a72a770ffc36e452fd08bc7e778eccf9a7821024eaa6fffb0aa11d66b256412d",
+        "snapshotId": "5f9552a2-cc1a-435d-8c43-efc8b6ca1b0f",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "b5398277-4f03-589a-9fb7-20e9740d2c72",
+          "scopeId": "2b46e86d-75bd-58ce-b3ad-ce009c8bb90c"
+        }
       },
       {
         "type": "escala",
+        "total": 20,
         "activityId": "8ee281a6-c05e-440b-872c-ac0d5f7ce7d7",
-        "verified": false,
-        "snapshotId": null
+        "instrumentHash": "b825ed012c396fd9cf74473ebbdedba643fd30608b703e83713b8fe5edecb50e",
+        "snapshotId": "4477cf83-e845-45f7-b93e-dad433736a2b",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "b5398277-4f03-589a-9fb7-20e9740d2c72",
+          "scopeId": "2b46e86d-75bd-58ce-b3ad-ce009c8bb90c"
+        }
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "activityId": "a9426545-03e9-4273-92d7-c0297a7081c9",
+        "instrumentHash": "8899fe09d2c0d07c93a16dbbc1663ca06688f10a5ffd55bd75a9484ef73ccd0c",
+        "snapshotId": "d41d698e-4bbb-4b8f-8a7c-d182f76c90a6",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "b5398277-4f03-589a-9fb7-20e9740d2c72",
+          "scopeId": "2b46e86d-75bd-58ce-b3ad-ce009c8bb90c"
+        }
       }
     ],
-    "timings": [
+    "finalBuildRecheck": {
+      "at": "2026-10-17T01:32:11.474Z",
+      "reopened": 4,
+      "generated": [
+        {
+          "type": "rubrica",
+          "total": 20,
+          "catalog": "evaluation-2026.91"
+        },
+        {
+          "type": "lista-cotejo",
+          "total": 17.35,
+          "catalog": "evaluation-2026.91"
+        },
+        {
+          "type": "escala",
+          "total": 20,
+          "catalog": "evaluation-2026.91"
+        },
+        {
+          "type": "lista-ponderada",
+          "total": 17.35,
+          "catalog": "evaluation-2026.91"
+        }
+      ],
+      "languageRegressions": [
+        {
+          "language": "FRA",
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+        },
+        {
+          "language": "ING",
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": null,
+          "scopeId": null
+        },
+        {
+          "language": "MAT",
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+          "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+        }
+      ],
+      "scienceRegressions": [
+        {
+          "grade": 1,
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+          "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf"
+        },
+        {
+          "grade": 2,
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+          "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708"
+        },
+        {
+          "grade": 3,
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+          "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a"
+        },
+        {
+          "grade": 4,
+          "catalog": "evaluation-2026.91",
+          "curriculumVersionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+          "scopeId": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      ]
+    },
+    "semanticControls": [
+      {
+        "description": "Balancea la ecuación química proporcionada sin modificar las fórmulas de las sustancias.",
+        "criteria": [
+          "nat-5-stoichiometry-balancing"
+        ],
+        "catalog": "evaluation-2026.91"
+      },
+      {
+        "description": "Explica el puente de hidrógeno y las fuerzas de Van der Waals.",
+        "criteria": [
+          "nat-5-intermolecular-forces-explanation"
+        ],
+        "catalog": "evaluation-2026.91"
+      },
+      {
+        "description": "Interpreta las especies de resonancia del sistema aromático proporcionado.",
+        "criteria": [
+          "nat-5-aromatic-substitution-analysis"
+        ],
+        "catalog": "evaluation-2026.91"
+      },
+      {
+        "description": "Calcula las cantidades estequiométricas con los datos dados, sin balancear otra ecuación.",
+        "criteria": [
+          "nat-5-stoichiometry-calculation",
+          "nat-5-stoichiometry-result"
+        ],
+        "catalog": "evaluation-2026.91"
+      },
+      {
+        "description": "Explica la hibridación sp2 en el modelo dado.",
+        "criteria": [
+          "nat-5-hybridization-explanation"
+        ],
+        "catalog": "evaluation-2026.91"
+      }
+    ],
+    "initialTimings": [
       {
         "path": "/health",
         "status": 200,
@@ -328,42 +477,118 @@
         "path": "/activities",
         "status": 500,
         "ms": 52964
+      },
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 4537
+      },
+      {
+        "path": "/auth/login",
+        "status": 201,
+        "ms": 1529
+      },
+      {
+        "path": "/activities/center?contextOnly=true",
+        "status": 200,
+        "ms": 7881
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 7663
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 3842
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 4086
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 5498
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 12786
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 33419
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 21993
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 12226
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 9439
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 5374
+      },
+      {
+        "path": "/activities?sectionSubjectId=30bd873a-ad3d-4a7a-9ebc-002914f5a229",
+        "status": 200,
+        "ms": 7964
       }
-    ],
-    "note": "Rubric/checklist verified. Scale created once and reopened; strategy-only update failed before the latest fix. Weighted checklist not created. Resume checkpoint; do not duplicate IDs."
+    ]
   },
-  "generationTiming": {
-    "grade": 5,
-    "mode": "PURE_IN_PROCESS_RECOMMENDATION_SYNTHETIC_CONTEXT_NO_AUTH_DB_HTTP_OR_RENDER",
-    "samples": 200,
-    "p50Ms": 0.15459999999998786,
-    "p95Ms": 0.25950000000000273,
-    "maxMs": 1.6291999999999973
-  },
-  "historicalConservationBeforeLatestQa": {
+  "historicalConservation": {
     "project": "eolgunypmtgrsyrjzcld",
     "preservedReleases": 18,
     "preservedSnapshots": 73,
     "newReleases": 6,
-    "newSnapshots": 29,
+    "newSnapshots": 33,
     "gradeBaseline": {
       "grade": 5,
       "preservedReleases": 23,
       "preservedSnapshots": 102,
       "newReleases": 1,
-      "newSnapshots": 0
+      "newSnapshots": 4
     }
+  },
+  "secretsAudit": {
+    "filesInspected": 14,
+    "secretValuesFound": false,
+    "privateFilesExcluded": true
   },
   "browser": {
     "status": "BLOCKED_PERSONAL_LOGIN",
     "completedFormats": [],
+    "reason": "Personal session returned to login after profile load failure; password required, no credentials changed or new email sent",
     "manualGuide": "2026-10-16-ciencias-naturaleza-5-prueba-manual.md"
   },
   "limitations": [
-    "Latest strategy-only transaction optimization has unit coverage but awaits real HTTP verification after Development PostgreSQL connection recovery.",
-    "Read-only Prisma reconciliation and Worker health both failed with connection timeouts after restarting final runtime. Supabase connector also failed at network transport; project status could not be confirmed.",
-    "Cloudflare dry-run did not terminate; interrupted after 731695 ms, not approved.",
-    "Full personal browser flows, private service-worker registrations, weighted HTTP save/reopen and final history recheck remain pending.",
-    "Pure generation timing excludes network/database/server rendering; HTTP timings are not decomposed."
-  ]
+    "Defined wording patterns only; complete instrument review is recorded separately from automated contracts",
+    "HTTP elapsed times include local Worker and remote Development dependencies; no independent SQL/network/render attribution",
+    "Private browser service-worker registrations were not audited; served asset/sw hashes were checked",
+    "Personal visual flows not replaced by QA HTTP assertions",
+    "Cloudflare generated assets and announced dry-run exit but did not terminate; interrupted command is not passing"
+  ],
+  "laterCombinedBuild": {
+    "catalog": "evaluation-2026.92",
+    "command": "pnpm cloudflare:build",
+    "code": 0,
+    "ms": 86042,
+    "note": "Final combined build includes all Science grades and persistence corrections. Prior interrupted build observations remain historical."
+  },
+  "finalBuildStatus": "PASSED_IN_LATER_COMBINED_CATALOG_92_BUILD",
+  "personalSessionRecovered": true
 }

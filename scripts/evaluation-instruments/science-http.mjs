@@ -24,6 +24,11 @@ const sampleForFormat=index=>grade===5?{description:[
  'Identifica los grupos funcionales en las estructuras proporcionadas.',
  'Observa los modelos de ADN y ARN proporcionados y registra con regularidad sus características químicas.',
  'Calcula la entalpía de formación con los datos dados y explica su signo. Asigna crédito parcial y pesos a procedimiento, resultado y explicación.',
+][index]}:grade===6?{description:[
+ 'Formula una pregunta y una hipótesis sobre fuerzas y la masa. Realiza la práctica indicada de las leyes de Newton y registra las observaciones sin inventar resultados.',
+ 'Identifica las partes del átomo en el modelo proporcionado.',
+ 'Observa el movimiento circular del modelo dado y registra con regularidad las características observadas.',
+ 'Calcula la corriente con los datos de voltaje y resistencia dados mediante la ley de Ohm y explica la relación entre esas magnitudes. Asigna crédito parcial y pesos a procedimiento, resultado y explicación.',
 ][index]}:fixtures[index%fixtures.length]
 const canonical=value=>value&&typeof value==='object'?Array.isArray(value)?value.map(canonical):Object.fromEntries(Object.keys(value).sort().map(key=>[key,canonical(value[key])])):value
 const hash=value=>createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex')
@@ -71,7 +76,7 @@ try{
       generated.push({type,total,catalog:proposal.catalogVersion})
       saveReadProof()
     }
-    if(grade>=1&&grade<=5){
+    if(grade>=1&&grade<=6){
       const controls=grade===1?[
         ['Formula preguntas investigables sobre los vientos.','-question',/-research$/],
         ['Explica el ciclo del agua o representa la estructura interna de la Tierra mediante un dibujo.','-alternative',null],
@@ -94,12 +99,18 @@ try{
         ['Argumenta con pruebas evolutivas de anatomía, embriología y bioquímica comparadas proporcionadas.','-argument',/comparison$/],
         ['Explica sistema binomial de Linneo y clasificación moderna.','-explanation',/classification-classification$/],
         ['Interpreta la herencia ligada al sexo del caso ficticio sin solicitar datos familiares.','-analysis',/chromosomes-|data-interpretation$/],
-      ]:[
+      ]:grade===5?[
         ['Balancea la ecuación química proporcionada sin modificar las fórmulas de las sustancias.','-balancing',/experiment|safety/,/coeficientes.*subíndices/],
         ['Explica el puente de hidrógeno y las fuerzas de Van der Waals.','-explanation',/element-families-/],
         ['Interpreta las especies de resonancia del sistema aromático proporcionado.','-analysis',null,/distribución electrónica deslocalizada/],
         ['Calcula las cantidades estequiométricas con los datos dados, sin balancear otra ecuación.','-calculation',/balancing$/],
         ['Explica la hibridación sp2 en el modelo dado.','-explanation',null,/hibridación sp2/],
+      ]:[
+        ['Interpreta el circuito en serie proporcionado sin construirlo ni realizar otra práctica.','-analysis',/construction|safety|experiment/],
+        ['Explica la ley cero de la termodinámica.','-explanation',null,/transitividad del equilibrio térmico/],
+        ['Explica la fuerza electromotriz del modelo dado.','-explanation',null,/energía por unidad de carga/],
+        ['Explica el principio de incertidumbre con el modelo cuántico dado.','-explanation',/calculation|experiment/,/dispersiones de distribuciones/],
+        ['Predice el comportamiento de las ondas con el modelo dado, sin realizar experimentos ni medir.','-prediction',/experiment-procedure|safety/],
       ]
       report.semanticControls=[]
       for(const [description,required,forbidden,scientificEvidence] of controls){
@@ -167,7 +178,7 @@ try{
           const key=type==='lista-ponderada'?'weight':'points'
           fields[`${type}:${key}:0`]=String(Math.round((Number(fields[`${type}:${key}:0`])-0.01)*100)/100)
           fields[`${type}:${key}:1`]=String(Math.round((Number(fields[`${type}:${key}:1`])+0.01)*100)/100)
-          if(grade===5&&type==='lista-ponderada'){
+          if(grade>=5&&type==='lista-ponderada'){
             assert.equal(count,3)
             for(const [i,weight] of [41,19,40].entries())fields[`${type}:weight:${i}`]=String(weight)
           }

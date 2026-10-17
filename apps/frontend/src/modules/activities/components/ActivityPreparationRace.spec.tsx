@@ -45,6 +45,7 @@ describe('automatic instrument preparation request lifecycle', () => {
     {grade:3,code:'NAT-FISICAS',title:'Densidad',first:'Calcula la densidad con masa y volumen dados.',latest:'Interpreta el circuito en serie proporcionado sin construirlo.',expected:/circuito/,obsolete:/densidad|volumen/},
     {grade:4,code:'NAT-BIO',title:'Ósmosis',first:'Realiza la práctica indicada de ósmosis y registra observaciones.',latest:'Calcula las probabilidades de herencia con el cuadro de Punnett proporcionado.',expected:/Mendel/,obsolete:/ósmosis|membrana/},
     {grade:5,code:'NAT-QUI',title:'Modelos atómicos',first:'Construye un modelo atómico con las referencias dadas.',latest:'Interpreta los datos proporcionados de actividad enzimática sin realizar experimentos.',expected:/enzimas/,obsolete:/modelos atómicos|orbitales/},
+    {grade:6,code:'NAT-FIS',title:'Ley de Ohm',first:'Calcula la corriente con voltaje y resistencia dados mediante la ley de Ohm.',latest:'Explica el principio de incertidumbre con el modelo cuántico dado.',expected:/incertidumbre/,obsolete:/Ohm|voltaje|circuito/},
   ])it(`Ciencias ${sample.grade} descarta la respuesta y el título anteriores en el mismo borrador`,async()=>{
     const academic={level:'SECONDARY' as const,grade:sample.grade,subjectCode:sample.code}
     const {first,latest}=sample

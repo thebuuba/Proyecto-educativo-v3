@@ -10,7 +10,8 @@ import topicsTwo from '../../../../../../data/evaluation-instruments/science-gra
 import topicsThree from '../../../../../../data/evaluation-instruments/science-grade-3-contracts.json'
 import topicsFour from '../../../../../../data/evaluation-instruments/science-grade-4-contracts.json'
 import topicsFive from '../../../../../../data/evaluation-instruments/science-grade-5-contracts.json'
-for(const {grade,code,fixtures} of [{grade:1,code:'NAT-TU',fixtures:topics},{grade:2,code:'NAT-VIDA',fixtures:topicsTwo},{grade:3,code:'NAT-FISICAS',fixtures:topicsThree},{grade:4,code:'NAT-BIO',fixtures:topicsFour},{grade:5,code:'NAT-QUI',fixtures:topicsFive}]){
+import topicsSix from '../../../../../../data/evaluation-instruments/science-grade-6-contracts.json'
+for(const {grade,code,fixtures} of [{grade:1,code:'NAT-TU',fixtures:topics},{grade:2,code:'NAT-VIDA',fixtures:topicsTwo},{grade:3,code:'NAT-FISICAS',fixtures:topicsThree},{grade:4,code:'NAT-BIO',fixtures:topicsFour},{grade:5,code:'NAT-QUI',fixtures:topicsFive},{grade:6,code:'NAT-FIS',fixtures:topicsSix}]){
 const cases=fixtures.flatMap(f=>[f,...(f.variants??[]).map(description=>({description,id:f.id}))])
 const context={level:'SECONDARY' as const,grade,cycle:grade<=3?1:2,modalityCode:'academic',subjectCode:code,subjectName:'Ciencias de la Naturaleza',optativeExitName:null}
 describe(`Ciencias ${grade}.º: paridad, formatos, edición y precisión`,()=>{

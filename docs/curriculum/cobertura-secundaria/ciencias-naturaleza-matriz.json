@@ -10802,7 +10802,15 @@
         ],
         "instrumentArtifact": "ciencias-naturaleza-5-instrumentos.json"
       },
-      "httpVerification": null,
+      "httpVerification": {
+        "formats": [
+          "rubrica",
+          "lista-cotejo",
+          "escala",
+          "lista-ponderada"
+        ],
+        "savedAndReopened": 4
+      },
       "visualVerification": null,
       "status": "IMPLEMENTED_PENDING_VERIFICATION",
       "exclusions": [
@@ -11986,563 +11994,1486 @@
           "printedPage": "321"
         }
       ],
-      "topics": [],
+      "topics": [
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "motion-2d",
+          "label": "movimiento y trayectorias en 2D",
+          "match": "movimiento en 2d|proyectil\\w*|graficas? (?:para|del) (?:el )?movimiento",
+          "relation": "la relación entre posición, velocidad y aceleración en las componentes del modelo solicitado, delimitando referencia y condiciones sin inventar datos",
+          "exclude": "circular|rotacional|armonico",
+          "officialRecordIds": [
+            "9ccaedd7-712e-56d9-946c-1e652b4bdea6",
+            "69acdd38-91e6-5199-8305-3d41386ab6c3",
+            "cedf6a7b-e31d-50a0-9e2b-9c42127a3430"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Interpreta las gráficas del movimiento en 2D proporcionadas.",
+            "Calcula el alcance del proyectil con los datos y el modelo dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "circular-motion",
+          "label": "movimiento circular",
+          "match": "movimiento circular|centripet\\w*",
+          "relation": "el cambio de dirección de la velocidad y la aceleración del movimiento circular solicitado, sin confundir rapidez constante con aceleración nula",
+          "officialRecordIds": [
+            "cedf6a7b-e31d-50a0-9e2b-9c42127a3430"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica el movimiento circular del modelo dado.",
+            "Calcula la aceleración centrípeta con los datos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "newton-forces",
+          "label": "leyes de Newton y fuerzas",
+          "match": "leyes? de newton|fuerzas? (?:normal|de friccion|neta|aplicada|externa|interna)|fuerzas? normal|masa,? aceleracion|fuerzas? y la masa",
+          "relation": "la relación vectorial entre fuerza neta, masa y aceleración del sistema delimitado, distinguiendo las fuerzas que actúan sobre cada cuerpo",
+          "exclude": "referencia inercial(?:es)?|marcos? inerciales|rotacional|torque|aceleracion angular",
+          "officialRecordIds": [
+            "826b46f5-0e25-5088-bee2-8d300ab35288",
+            "ae1012e6-2d87-57de-aa63-4904dfd550e5",
+            "c7744c02-0306-5d0d-a587-0efa8b140474",
+            "953a0319-b889-5887-8d93-467300ccc551",
+            "a12b7ffd-fe89-5c2a-abea-47975c93dcac",
+            "1bb4a218-c7ce-5cac-ba68-c34901bf84ed"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Representa las fuerzas normal, fricción, tensión y gravedad en el diagrama del cuerpo dado.",
+            "Calcula la aceleración con las fuerzas y la masa dadas aplicando las leyes de Newton."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "inertial-frames",
+          "label": "marcos de referencia inerciales",
+          "match": "referencia inercial(?:es)?|marcos? inerciales",
+          "relation": "la descripción del movimiento y la aplicación de las leyes de Newton en el marco inercial solicitado, distinguiéndolo de un marco acelerado sin añadir fuerzas inexistentes al diagrama del cuerpo",
+          "officialRecordIds": [
+            "953a0319-b889-5887-8d93-467300ccc551"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Compara marcos de referencia inerciales en las situaciones dadas.",
+            "Explica cómo se aplican las leyes de Newton en un marco de referencia inercial."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "gravitation",
+          "label": "gravitación universal",
+          "match": "(?:ley de )?gravitacion(?: universal)?|fuerza gravitatoria",
+          "relation": "la interacción gravitatoria entre las masas y su dependencia con la separación según el modelo dado, sin confundir masa y peso",
+          "officialRecordIds": [
+            "e11f3dd2-b5b6-53f4-aa21-52a02ed69bef",
+            "5ce0fa35-2187-5988-8273-91204cb851e3"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica la ley de gravitación universal con el modelo proporcionado.",
+            "Calcula la fuerza gravitatoria con los datos dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "hooke",
+          "label": "ley de Hooke y elasticidad",
+          "match": "hooke|fuerza elastica|deformacion del resorte",
+          "relation": "la fuerza restauradora y la deformación respecto al equilibrio dentro del régimen elástico del modelo solicitado, reconociendo sus límites",
+          "officialRecordIds": [
+            "04cb79f3-7e0d-514d-8d23-e7de9cb4ddcc"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula la fuerza elástica con los datos y la ley de Hooke.",
+            "Interpreta la gráfica de deformación del resorte proporcionada sin realizar la práctica."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "rotation",
+          "label": "movimiento rotacional",
+          "match": "movimiento rotacional|torque|momento de fuerza|aceleracion angular|newton.*rotacional",
+          "relation": "la relación entre torque neto, distribución de masa y cambio del movimiento rotacional en el sistema dado, según el eje indicado",
+          "officialRecordIds": [
+            "ae1012e6-2d87-57de-aa63-4904dfd550e5",
+            "2a30616b-4f56-5335-b179-bd211fae9de7"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica el movimiento rotacional y el torque en el sistema dado.",
+            "Calcula la aceleración angular con los datos del problema."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "linear-momentum",
+          "label": "cantidad de movimiento lineal",
+          "match": "cantidad(?:es)? de movimiento(?!\\s+angular)|momento lineal|impulso",
+          "relation": "la relación vectorial entre masa, velocidad, impulso y variación de la cantidad de movimiento que corresponda a las condiciones solicitadas",
+          "exclude": "cantidades de movimiento angular",
+          "officialRecordIds": [
+            "b43d9b57-f347-5b30-9e08-04ca82366f55",
+            "3a9621d5-b3fe-5d80-8d22-20d039dbabd6",
+            "6371ebc0-49a6-5ca7-b040-9a0daab3ce8e",
+            "66c07d91-4be0-5171-8444-280bac9c3ead",
+            "6693583c-8bff-5216-ba5c-de058b329de5"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula la cantidad de movimiento lineal con los datos dados.",
+            "Interpreta el impulso y la variación del momento lineal en la tabla proporcionada."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "angular-momentum",
+          "label": "cantidad de movimiento angular",
+          "match": "cantidad de movimiento angular|momento angular",
+          "relation": "la cantidad de movimiento angular respecto al eje o punto indicado y su conservación cuando el torque externo neto es nulo",
+          "officialRecordIds": [
+            "c952163f-b4c2-55ed-a226-7e10732761b8"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica la conservación del momento angular en el sistema delimitado.",
+            "Calcula la cantidad de movimiento angular con los datos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "work-energy",
+          "label": "trabajo y energías mecánicas",
+          "match": "trabajo mecanico|trabajo de (?:la|una) fuerza|energia cinetica|energia potencial|tipos de energia|variacion de energia y trabajo|calcul\\w* (?:el )?trabajo",
+          "relation": "la transferencia por trabajo y la variación de la energía mecánica solicitada en el sistema delimitado, distinguiendo sus formas y condiciones",
+          "exclude": "electric|relativ|nuclear|fision|fusion",
+          "officialRecordIds": [
+            "2a80eab2-a527-597f-b8d5-cf813058d42c",
+            "859d6779-ac02-573a-a158-d7dfbfcf39d5",
+            "1b9a52a0-ec6d-5dcd-928a-d8096cb1f59b"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula el trabajo y la energía cinética de traslación con los datos dados.",
+            "Compara energía cinética de rotación y energía potencial en el modelo dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319,
+            320
+          ],
+          "id": "energy-conservation",
+          "label": "conservación de la energía",
+          "match": "conservacion de (?:la )?energia|conservacion energetica",
+          "relation": "el balance de transferencias y transformaciones energéticas del sistema delimitado, distinguiendo conservación y disipación sin exigir ausencia de pérdidas útiles",
+          "officialRecordIds": [
+            "690b2e2e-2f20-51fa-b2a8-b0034d65244b",
+            "cbd0445b-0ea5-577c-b7f7-73f1633f98ec",
+            "6371ebc0-49a6-5ca7-b040-9a0daab3ce8e",
+            "94ed0281-6db2-5236-8692-9e6fcbb41400"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Interpreta la conservación de la energía del sistema delimitado.",
+            "Realiza el experimento de conservación de energía indicado y registra los resultados, incluidos los inesperados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "collisions",
+          "label": "choques elásticos e inelásticos",
+          "match": "choques?(?::)? elastic\\w*|choques? inelastic\\w*|posteriores al choque",
+          "relation": "la conservación de cantidad de movimiento del sistema cuando corresponda y el comportamiento de la energía cinética en el tipo de choque indicado",
+          "officialRecordIds": [
+            "9fb37c39-23b8-5883-b5cd-eaa846fbe956"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Compara choques elásticos e inelásticos con los datos proporcionados.",
+            "Calcula las velocidades posteriores al choque con el modelo y las condiciones dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "efficiency",
+          "label": "eficiencia energética",
+          "match": "eficiencia energetica",
+          "relation": "la relación entre energía o potencia útil y suministrada en el sistema delimitado, distinguiendo eficiencia de conservación de la energía",
+          "officialRecordIds": [
+            "549ddeca-9458-5a89-a4b8-3037a5d2fda3"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula la eficiencia energética de la máquina con los datos dados.",
+            "Argumenta sobre aplicaciones de la eficiencia energética usando las evidencias proporcionadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "earth-gravity",
+          "label": "gravedad, mareas y forma terrestre",
+          "match": "gravedad terrestre|mareas? terrestres?|forma de la tierra|geofisic\\w* de gravedad",
+          "relation": "las evidencias y el modelo de gravedad, mareas o forma terrestre expresamente solicitados, sin reducir la forma terrestre a una esfera perfecta",
+          "officialRecordIds": [
+            "634637c4-a4cf-5e0d-909b-11c93f7d361a"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica las mareas terrestres y la forma de la Tierra con el modelo dado.",
+            "Interpreta los datos geofísicos de gravedad terrestre proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319
+          ],
+          "id": "solar-galaxy",
+          "label": "sistema solar y galaxia",
+          "match": "sistema solar|nuestra galaxia|via lactea",
+          "relation": "la organización y las escalas de los sistemas astronómicos solicitados, distinguiendo sistema planetario, estrella y galaxia",
+          "officialRecordIds": [
+            "e1d77b9a-fc6a-5562-84d2-a1bf3aa4db54"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Compara el sistema solar y nuestra galaxia en las escalas de los modelos dados.",
+            "Representa el sistema solar mediante dibujo o maqueta, sin exigir ambos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319,
+            320
+          ],
+          "id": "universe-evolution",
+          "label": "origen y evolución del universo",
+          "match": "origen y (?:la )?evolucion del universo|universo,? origen y evolucion|expansion del universo",
+          "relation": "las evidencias y el alcance del modelo cosmológico solicitado, distinguiendo expansión del espacio de una explosión dentro de un espacio previamente vacío",
+          "officialRecordIds": [
+            "38bf081c-06de-5eda-a836-3fe83c97360c",
+            "0fd485cb-6368-5c22-8322-9e18ae015f59"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Investiga el origen y la evolución del universo en las fuentes dadas.",
+            "Explica las evidencias sobre expansión del universo proporcionadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319,
+            320
+          ],
+          "id": "fluid-density-pressure",
+          "label": "presión y densidad de fluidos",
+          "match": "presion|densidad",
+          "relation": "la relación entre las magnitudes del fluido y las condiciones del sistema solicitado, distinguiendo densidad de cantidad total de material",
+          "exclude": "pascal|arquimedes|empuje|flotacion|bernoulli|continuidad|subterrane|contaminantes",
+          "officialRecordIds": [
+            "50b88ba6-5f7c-53c4-aefc-9956bb271c0c",
+            "34c83471-7cbe-5915-b002-82768d2fd26f",
+            "671a5f92-327e-508f-b56d-694010f36283",
+            "7c531594-3fb2-5f04-b05c-8a55e4c306dc"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula presión y densidad con los datos proporcionados.",
+            "Formula una hipótesis sobre la presión en fluidos sin realizar experimentos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "pascal",
+          "label": "principio de Pascal",
+          "match": "pascal|prensa hidraulica",
+          "relation": "la transmisión de una variación de presión en el fluido confinado del modelo dado y su relación con fuerza y área cuando se solicite",
+          "officialRecordIds": [
+            "67701d87-df0a-5fa8-9d3c-9161aebba111"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica el principio de Pascal en el modelo hidráulico dado.",
+            "Calcula la fuerza de la prensa hidráulica con los datos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "buoyancy",
+          "label": "empuje y principio de Arquímedes",
+          "match": "arquimedes|empuje|flotacion",
+          "relation": "el empuje asociado al peso del fluido desplazado y las condiciones de flotación del sistema solicitado, sin equiparar empuje y peso del cuerpo en todo caso",
+          "officialRecordIds": [
+            "67701d87-df0a-5fa8-9d3c-9161aebba111"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula el empuje con el principio de Arquímedes y los datos dados.",
+            "Interpreta los datos de flotación proporcionados sin recolectar muestras."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "fluid-flow",
+          "label": "continuidad y Bernoulli",
+          "match": "continuidad|bernoulli|velocidad de flujo",
+          "relation": "la conservación de masa o el balance energético del flujo solicitado bajo las hipótesis del modelo, sin aplicar Bernoulli fuera de sus condiciones",
+          "officialRecordIds": [
+            "67701d87-df0a-5fa8-9d3c-9161aebba111"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Interpreta la continuidad y Bernoulli en el modelo de fluido dado.",
+            "Calcula la velocidad de flujo con la ecuación de continuidad y los datos dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319,
+            320
+          ],
+          "id": "surface-tension",
+          "label": "tensión superficial",
+          "match": "tension superficial",
+          "relation": "las interacciones en la superficie del líquido y las evidencias del comportamiento solicitado, sin confundir tensión superficial y fuerza de tensión de una cuerda",
+          "officialRecordIds": [
+            "60a5afd4-6fa1-5c4e-a051-cce012ccd506"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica la tensión superficial en el caso descrito.",
+            "Compara los datos de tensión superficial proporcionados sin realizar la práctica."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "groundwater-transport",
+          "label": "transporte de contaminantes subterráneos",
+          "match": "contaminantes.*subsuelo|aguas? subterraneas?|transporte de contaminantes",
+          "relation": "la relación entre propiedades del contaminante, densidad y transporte en el medio del caso dado, reconociendo los límites de los datos sin exigir muestreo",
+          "officialRecordIds": [
+            "7c531594-3fb2-5f04-b05c-8a55e4c306dc"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Analiza el transporte de contaminantes en aguas subterráneas con los datos de densidad dados.",
+            "Diseña una propuesta sobre transporte de contaminantes en el subsuelo usando el caso proporcionado, sin muestrear."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            319,
+            320
+          ],
+          "id": "stars-planets",
+          "label": "formación de planetas y evolución estelar",
+          "match": "formacion de (?:nuestro planeta|planetas)|ciclo de (?:una )?estrella|tipos de planetas|sistemas astronomicos",
+          "relation": "las etapas o características del sistema planetario o estelar solicitado y las evidencias del modelo, sin atribuir el mismo ciclo a todas las estrellas",
+          "officialRecordIds": [
+            "4f27cb93-0ca9-5876-83e2-2a368679635d",
+            "22d3d950-0cf2-520b-8767-8a6569b9f130",
+            "81be8bf8-24bd-55c2-a777-675241c31491"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica la formación de planetas y el ciclo de una estrella con las fuentes dadas.",
+            "Compara tipos de planetas y sistemas astronómicos en los modelos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "black-holes",
+          "label": "agujeros negros",
+          "match": "agujeros? negros?",
+          "relation": "las características y evidencias del agujero negro estudiado, distinguiendo horizonte de sucesos de una superficie material sin atribuir observación directa de su interior",
+          "officialRecordIds": [
+            "22d3d950-0cf2-520b-8767-8a6569b9f130",
+            "81be8bf8-24bd-55c2-a777-675241c31491"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica las características de un agujero negro con el modelo dado.",
+            "Interpreta las evidencias sobre agujeros negros de las fuentes proporcionadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "heat-temperature",
+          "label": "calor y temperatura",
+          "match": "calor|temperatura",
+          "relation": "la transferencia de energía por diferencia de temperatura en el proceso dado, sin tratar calor como sustancia ni equiparar calor y temperatura",
+          "exclude": "termodinamica|dilatacion|energia interna|entropia|interior de la tierra|capas terrestres|maquina|motor|profundidad",
+          "officialRecordIds": [
+            "cffefedf-cb11-5321-bc70-12d311bcdd2b",
+            "97d4bad9-c668-555b-87e6-2fe1a485f5c8",
+            "17b0c4cc-9c38-5c25-960a-b16d4ab89710",
+            "95264f59-e319-5e95-8831-55fc81347b81",
+            "eaf9913d-e135-5bf0-84f7-badde4f33321",
+            "3c331ec5-535f-55e9-8729-98dac30cee4b",
+            "bb3c5a01-6350-5880-aba3-0803c69211b3",
+            "0b6997a5-4fa2-5c54-8d50-bb7abfd99e79",
+            "971c1eb9-a50a-51d4-bd21-883d19a2ed90"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Compara calor y temperatura en las situaciones proporcionadas.",
+            "Explica la transferencia de calor entre los cuerpos del caso dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "thermodynamic-laws",
+          "label": "leyes de la termodinámica",
+          "match": "ley cero|leyes? de la termodinamica",
+          "relation": "la ley termodinámica solicitada y las condiciones del sistema, distinguiendo equilibrio térmico, balance de energía y dirección de los procesos sin imponer todas las leyes",
+          "officialRecordIds": [
+            "ba26c6d6-b6e2-5334-b539-283f5e5fab8c",
+            "8af85fdd-e184-5a7b-8329-39fef1cdfc2a"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica la ley cero de la termodinámica en el caso dado.",
+            "Interpreta las leyes de la termodinámica en el sistema delimitado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "thermal-expansion",
+          "label": "dilatación térmica",
+          "match": "dilatacion",
+          "relation": "la variación dimensional del material con la temperatura bajo el modelo y las condiciones dados, sin confundir dilatación y cambio de fase",
+          "officialRecordIds": [
+            "97d4bad9-c668-555b-87e6-2fe1a485f5c8",
+            "a9084c7a-381b-5098-ad90-c39db8b41829"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula la dilatación térmica con los datos dados.",
+            "Compara la dilatación de sólidos, líquidos y gases con las evidencias proporcionadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "internal-energy",
+          "label": "energía interna",
+          "match": "energia interna|movimiento de atomos y moleculas",
+          "relation": "la energía microscópica del sistema y su relación con temperatura según el modelo indicado, sin atribuir igualdad de energía interna a cuerpos distintos por tener igual temperatura",
+          "officialRecordIds": [
+            "3c331ec5-535f-55e9-8729-98dac30cee4b"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica la relación entre energía interna y temperatura en el modelo dado.",
+            "Interpreta el movimiento de átomos y moléculas y su relación con la temperatura."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "entropy",
+          "label": "entropía",
+          "match": "entropia",
+          "relation": "los cambios de entropía del sistema y entorno delimitados y la dirección del proceso, sin afirmar que la entropía de cada subsistema siempre aumenta",
+          "officialRecordIds": [
+            "b7c6de71-c982-5b1a-82ac-c05972dc5fb9"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica la entropía del sistema y su entorno en el proceso descrito.",
+            "Interpreta los cambios de entropía con los datos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "heat-engines",
+          "label": "máquinas térmicas",
+          "match": "maquinas? termicas?|maquina de vapor|motores? de combustion interna",
+          "relation": "la transferencia y conversión de energía de la máquina térmica solicitada, distinguiendo trabajo útil y transferencias de calor sin asumir conversión íntegra en trabajo",
+          "officialRecordIds": [
+            "b1de0886-47d4-553d-8afb-b032408d4053"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica el funcionamiento de la máquina de vapor del esquema proporcionado.",
+            "Compara motores de combustión interna y otras máquinas térmicas usando las fuentes dadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "geothermal",
+          "label": "termodinámica terrestre",
+          "match": "calor en el interior de la tierra|temperatura de las.*capas|profundidad y temperatura|planeta tierra como sistema termodinamico",
+          "relation": "la relación entre profundidad, temperatura y transporte térmico del sistema terrestre solicitado, sustentada por las evidencias dadas sin inventar un gradiente universal",
+          "officialRecordIds": [
+            "bb3c5a01-6350-5880-aba3-0803c69211b3",
+            "3d43f176-0eaf-5c4f-8851-b4f91febfb66",
+            "971c1eb9-a50a-51d4-bd21-883d19a2ed90"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica el transporte de calor en el interior de la Tierra.",
+            "Interpreta la gráfica de profundidad y temperatura de las capas terrestres proporcionada."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "harmonic-motion",
+          "label": "movimiento armónico simple",
+          "match": "armonico simple|periodo de la oscilacion",
+          "relation": "la relación entre desplazamiento, fuerza restauradora, velocidad y aceleración del modelo de oscilación solicitado, distinguiendo sus fases sin equiparar máximos simultáneos",
+          "officialRecordIds": [
+            "01f74823-6968-5394-b563-87dcdca406da"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Interpreta fuerza, velocidad y aceleración en el movimiento armónico simple dado.",
+            "Calcula el período de la oscilación con el modelo y los datos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "waves-properties",
+          "label": "propiedades de ondas",
+          "match": "ondas?|vibraciones",
+          "relation": "la relación entre las propiedades ondulatorias solicitadas y las evidencias del modelo, distinguiendo frecuencia, longitud de onda y velocidad cuando se pida",
+          "exclude": "mecanic|electromagnet|doppler|resonancia|reflexion|refraccion|interferencia|difraccion|polarizacion|dispersion|absorcion|espejos?|lentes?|prismas?|sismic|solares?",
+          "officialRecordIds": [
+            "95019cec-fc43-50ec-b3a3-592c776ea67f",
+            "833d9f96-a9a9-58e6-8e16-b8fe50e417c7",
+            "baf4eaee-61b8-5132-b05b-1b43d9557951",
+            "ae522e11-a802-5c54-8bf7-02142d147698",
+            "67d4a739-91da-5b26-beda-d79b3f605242",
+            "1edbecf9-53e9-53d4-9a9a-9f626c7edade",
+            "95fe6590-9ffc-550c-bafc-cd84781b8189",
+            "cff6e5c4-d07b-5d89-89f3-079f95ea1ea8",
+            "846c809d-c0ee-54d6-aaec-741774e9927a",
+            "6f4d465e-7179-599c-84b6-8cf3c7897866",
+            "219e0c77-d89f-58cd-95c6-163e113f1d6d"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula la velocidad de onda con frecuencia y longitud de onda dadas.",
+            "Compara las propiedades de las ondas en los modelos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "mechanical-waves",
+          "label": "ondas mecánicas",
+          "match": "ondas? mecanicas?|longitudinales?|transversales?",
+          "relation": "la propagación de energía mediante perturbaciones del medio material y la orientación de la oscilación solicitada respecto a la propagación, sin transportar materia de forma neta con la onda",
+          "officialRecordIds": [
+            "baf4eaee-61b8-5132-b05b-1b43d9557951"
+          ],
+          "indicatorRecordIds": [
+            "7c71088b-cb0a-5b6c-8661-77618c472d57"
+          ],
+          "families": [
+            "Explica la propagación de ondas mecánicas en los medios indicados.",
+            "Compara ondas mecánicas longitudinales y transversales en los modelos dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "doppler",
+          "label": "efecto Doppler",
+          "match": "doppler",
+          "relation": "el cambio de frecuencia observado por movimiento relativo entre fuente y observador bajo las condiciones dadas, sin confundirlo con un cambio intrínseco de la frecuencia de la fuente",
+          "officialRecordIds": [
+            "95fe6590-9ffc-550c-bafc-cd84781b8189"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica el efecto Doppler en la situación descrita.",
+            "Interpreta la frecuencia observada por efecto Doppler con los datos dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "resonance",
+          "label": "resonancia",
+          "match": "resonancia",
+          "relation": "la respuesta del sistema a una excitación y su relación con la frecuencia natural y el amortiguamiento del modelo solicitado",
+          "officialRecordIds": [
+            "f46599fe-3c81-55d6-93d5-ae4689da23e6"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica la resonancia y su relación con la frecuencia del sistema dado.",
+            "Interpreta los datos de resonancia proporcionados sin construir un dispositivo."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "wave-interactions",
+          "label": "interacciones de ondas",
+          "match": "reflexion|refraccion|interferencia|difraccion|polarizacion|dispersion|absorcion",
+          "relation": "el mecanismo ondulatorio expresamente solicitado y las condiciones que explican las evidencias dadas, distinguiendo dirección, frecuencia y medio según corresponda",
+          "exclude": "sismic|electrostat|dielectr|carga por|cuant|atom|nuclear|fotoelectric",
+          "officialRecordIds": [
+            "ae522e11-a802-5c54-8bf7-02142d147698",
+            "5653a039-f75a-5a64-aa14-a87f58bc13a4",
+            "95fe6590-9ffc-550c-bafc-cd84781b8189",
+            "13081ea1-c530-512d-bf3e-c03a0bcf0c8a",
+            "2d5da7e3-958f-581f-a621-5092efba4bc2"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Compara reflexión y refracción de ondas en los casos dados.",
+            "Explica interferencia, difracción, polarización y dispersión en los modelos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "electromagnetic-spectrum",
+          "label": "ondas y espectro electromagnéticos",
+          "match": "ondas? electromagneticas?|espectro electromagnetico",
+          "relation": "la propagación electromagnética y las relaciones entre frecuencia, longitud de onda y región espectral solicitadas, sin exigir un medio material",
+          "officialRecordIds": [
+            "67d4a739-91da-5b26-beda-d79b3f605242",
+            "b5e62062-5655-5406-abec-d50cd5499917",
+            "cff6e5c4-d07b-5d89-89f3-079f95ea1ea8"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Ordena las regiones del espectro electromagnético según las referencias dadas.",
+            "Explica la propagación de ondas electromagnéticas sin exigir un medio material."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "geometric-optics",
+          "label": "óptica de espejos, lentes y prismas",
+          "match": "espejos?|lentes?|prismas?|esquema optico",
+          "relation": "los rayos, cambios de dirección e imágenes del elemento óptico solicitado según el modelo dado, sin atribuir todas las propiedades de una lente a un espejo",
+          "officialRecordIds": [
+            "5653a039-f75a-5a64-aa14-a87f58bc13a4",
+            "58b4bc44-9d02-5b22-bff4-4b1ba1ef7a26"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Interpreta rayos e imágenes en espejos, lentes y prismas del modelo dado.",
+            "Dibuja el esquema óptico de la lente indicada sin construir un instrumento."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "seismic-waves",
+          "label": "ondas sísmicas e interior terrestre",
+          "match": "sismic\\w*|terremotos|estructura interna terrestre",
+          "relation": "la propagación y las evidencias sísmicas utilizadas para inferir propiedades del interior terrestre, distinguiendo inferencia y observación directa",
+          "officialRecordIds": [
+            "ae522e11-a802-5c54-8bf7-02142d147698",
+            "219e0c77-d89f-58cd-95c6-163e113f1d6d"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Interpreta ondas sísmicas para inferir la estructura interna terrestre con los datos dados.",
+            "Compara reflexión y refracción sísmica en los modelos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "sun-radiation",
+          "label": "radiaciones del Sol",
+          "match": "radiaciones del sol|radiacion solar",
+          "relation": "las propiedades o aplicaciones de la radiación solar solicitadas y las evidencias que las sustentan, sin equiparar toda radiación solar con radiación ionizante",
+          "officialRecordIds": [
+            "77d38cc4-09f9-53cb-a889-58e3c6c0cc7e"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica las radiaciones del Sol con las fuentes dadas.",
+            "Investiga aplicaciones de la radiación solar en las fuentes documentales indicadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "electrostatics",
+          "label": "electrostática y ley de Coulomb",
+          "match": "electrostat\\w*|coulomb|campo electrico",
+          "relation": "la interacción entre cargas y la dirección del campo o fuerza del modelo solicitado, distinguiendo carga, campo y fuerza",
+          "exclude": "potencial|condensador|capacitan",
+          "officialRecordIds": [
+            "3027c5b9-f590-5f43-b477-b33db3accf36",
+            "13081ea1-c530-512d-bf3e-c03a0bcf0c8a"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula la fuerza electrostática con la ley de Coulomb y los datos dados.",
+            "Interpreta el campo eléctrico proporcionado sin construir un dispositivo."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "dielectrics",
+          "label": "conductores, dieléctricos e inducción de carga",
+          "match": "conductores?|dielectric\\w*|carga por induccion|polarizacion",
+          "relation": "la distribución o movilidad de las cargas en el material y el proceso electrostático solicitado, sin confundir polarización con transferencia neta de carga",
+          "exclude": "onda|luz|difraccion|refraccion",
+          "officialRecordIds": [
+            "95fe6590-9ffc-550c-bafc-cd84781b8189",
+            "13081ea1-c530-512d-bf3e-c03a0bcf0c8a"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Compara conductores y dieléctricos en los modelos dados.",
+            "Explica la carga por inducción y polarización en el caso proporcionado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "electric-potential",
+          "label": "potencial eléctrico",
+          "match": "potencial electric\\w*|diferencias? de potencial",
+          "relation": "la energía potencial por unidad de carga y la diferencia de potencial del modelo dado, sin confundir potencial con fuerza o corriente",
+          "officialRecordIds": [
+            "13081ea1-c530-512d-bf3e-c03a0bcf0c8a"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula el potencial eléctrico con los datos dados.",
+            "Interpreta las diferencias de potencial en el modelo electrostático proporcionado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "capacitors",
+          "label": "condensadores y capacitancia",
+          "match": "condensador(?:es)?|capacitancia",
+          "relation": "la relación entre carga, diferencia de potencial y capacitancia del condensador solicitado y sus condiciones, sin confundir almacenamiento de energía con creación de carga",
+          "officialRecordIds": [
+            "13081ea1-c530-512d-bf3e-c03a0bcf0c8a"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica el condensador eléctrico del esquema dado.",
+            "Calcula la capacitancia con los datos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            321
+          ],
+          "id": "ohm",
+          "label": "ley de Ohm",
+          "match": "ohm|voltaje.*corriente.*resistencia|corriente.*voltaje.*resistencia|corriente.*resistencia.*voltaje",
+          "relation": "la relación V = I × R para el elemento óhmico y las condiciones dadas, despejando la magnitud solicitada sin confundir voltaje, corriente y resistencia",
+          "officialRecordIds": [
+            "30945ae6-1caa-53b3-a1b0-5b1d6341b275"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula la corriente con voltaje y resistencia dados mediante la ley de Ohm.",
+            "Explica las relaciones entre voltaje, corriente y resistencia de la ley de Ohm sin construir un circuito."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320,
+            321
+          ],
+          "id": "current-resistance",
+          "label": "corriente y resistencia eléctricas",
+          "match": "corriente electric\\w*|resistencias? electric\\w*|corriente continua",
+          "relation": "el flujo de carga y la relación entre tensión y corriente del elemento solicitado, sin suponer resistencia constante para cualquier dispositivo",
+          "exclude": "ohm|serie|paralelo|potencia|electromotriz|alterna",
+          "officialRecordIds": [
+            "3027c5b9-f590-5f43-b477-b33db3accf36"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica corriente eléctrica y resistencia eléctrica en el modelo dado.",
+            "Compara las resistencias eléctricas de los materiales con los datos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            321
+          ],
+          "id": "electric-power",
+          "label": "potencia y fuerza electromotriz",
+          "match": "potencia electrica|energia electrica|fuerza electromotriz|\\bfem\\b",
+          "relation": "la magnitud eléctrica solicitada, distinguiendo potencia como transferencia de energía por tiempo y fuerza electromotriz como energía por carga, sin tratar esta última como fuerza mecánica",
+          "exclude": "induc",
+          "officialRecordIds": [
+            "30945ae6-1caa-53b3-a1b0-5b1d6341b275",
+            "13ed44cc-3c51-5439-a969-34db3b547f92"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Calcula la potencia eléctrica y la energía transferida con los datos dados.",
+            "Explica la fuerza electromotriz en la fuente eléctrica del modelo dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320,
+            321
+          ],
+          "id": "circuits",
+          "label": "circuitos eléctricos",
+          "match": "circuitos?|resistencias? en serie|resistencias? en paralelo",
+          "relation": "las conexiones y relaciones entre magnitudes del circuito solicitado, aplicando conservación de carga y energía sin exigir componentes adicionales",
+          "officialRecordIds": [
+            "debd0099-cecd-55bf-8514-7b7132f04ea6",
+            "30945ae6-1caa-53b3-a1b0-5b1d6341b275"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Interpreta resistencias en serie y paralelo en el circuito proporcionado sin construirlo.",
+            "Construye el circuito sencillo según el diseño y las precauciones indicadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            321
+          ],
+          "id": "magnetic-field-force",
+          "label": "campo y fuerza magnéticos",
+          "match": "campo magnetic\\w*|fuerza magnetic\\w*|bobinas?",
+          "relation": "el campo y la interacción magnética de las cargas o corrientes del modelo solicitado, respetando la orientación y condiciones dadas",
+          "exclude": "terrestre|cuerpos celestes|astrofisica",
+          "officialRecordIds": [
+            "13ed44cc-3c51-5439-a969-34db3b547f92"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Interpreta el campo magnético generado por corriente en la bobina del modelo dado.",
+            "Calcula la fuerza magnética con los datos y el modelo proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            321
+          ],
+          "id": "electromagnetic-induction",
+          "label": "inducción electromagnética",
+          "match": "faraday|lenz|induccion electromagnetica|electromotriz inducida|fem inducida",
+          "relation": "la variación del flujo magnético y la respuesta inducida según el modelo solicitado, respetando la ley de Lenz sin confundir campo constante con flujo constante en cualquier geometría",
+          "officialRecordIds": [
+            "ee8a9342-f135-5115-88b1-05cc3c953784",
+            "13ed44cc-3c51-5439-a969-34db3b547f92",
+            "ff5ee2e9-6c56-502e-9b5c-6117275b8b45"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica las leyes de Faraday y Lenz en la inducción electromagnética del caso dado.",
+            "Calcula la fuerza electromotriz inducida con los datos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            321
+          ],
+          "id": "ac-machines",
+          "label": "corriente alterna, generadores y motores",
+          "match": "corriente alterna|generadores?|motores? electric\\w*",
+          "relation": "las transformaciones electromecánicas o la variación temporal de corriente solicitadas según el dispositivo dado, distinguiendo motor y generador sin exigir construirlos",
+          "officialRecordIds": [
+            "13ed44cc-3c51-5439-a969-34db3b547f92"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Compara generadores y motores eléctricos en los modelos dados.",
+            "Interpreta los datos de corriente alterna del generador proporcionado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "geoelectric-magnetism",
+          "label": "propiedades eléctricas y magnetismo terrestres",
+          "match": "magnetismo terrestre|efectos magneticos|propiedades? electricas? de las rocas",
+          "relation": "las evidencias sobre el campo terrestre o las propiedades eléctricas de las rocas expresamente solicitadas, sin inferir composición única a partir de una sola medición",
+          "officialRecordIds": [
+            "73c8b3be-b217-5818-8767-c983de52d64d",
+            "f9955c13-aec5-5be2-bcf1-d8c6afb1f53f"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica el magnetismo terrestre y sus efectos con las fuentes dadas.",
+            "Interpreta las propiedades eléctricas de las rocas con los datos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "astromagnetism",
+          "label": "electromagnetismo en astrofísica",
+          "match": "astrofisica.*(?:electricidad|magnetismo)|electromagneticos? en astrofisica|magnetismo de cuerpos celestes",
+          "relation": "las interacciones electromagnéticas del fenómeno astronómico solicitado y el alcance de las evidencias o modelos dados, sin atribuir mediciones directas ausentes",
+          "officialRecordIds": [
+            "13c4fcfe-c656-50de-a93a-fb196cd2fd86"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Investiga fenómenos electromagnéticos en astrofísica usando fuentes verificables.",
+            "Interpreta el modelo de magnetismo de cuerpos celestes proporcionado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320,
+            321
+          ],
+          "id": "relativity",
+          "label": "cinemática, momento y energía relativistas",
+          "match": "relativ\\w*",
+          "relation": "las magnitudes y relaciones relativistas solicitadas según los marcos y condiciones del modelo, sin aplicar relaciones clásicas fuera de su régimen de validez",
+          "officialRecordIds": [
+            "1f38ccee-3d36-5edd-89a6-df015a7ef5ee",
+            "cdf40b8f-1a11-5d0c-9543-de2d61f3a49e",
+            "9eab8ae3-4554-5eb4-bd2e-380479b1d9ba"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica la cinemática relativista en el modelo dado.",
+            "Calcula momento y energía relativistas con los datos y condiciones proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320,
+            321
+          ],
+          "id": "atomic-quantum",
+          "label": "átomo y cuantización de energía",
+          "match": "partes del atomo|modelos? atomic\\w*|cuantizacion|absorcion y emision",
+          "relation": "la estructura o los estados energéticos del modelo atómico solicitado y las transiciones permitidas cuando se pidan, sin presentar orbitales como órbitas clásicas",
+          "exclude": "incertidumbre",
+          "officialRecordIds": [
+            "73495285-7149-5f84-bc1a-92a771106a99",
+            "20c7b046-4fa3-55d5-991f-fdc6065462f7",
+            "2d5da7e3-958f-581f-a621-5092efba4bc2"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica la cuantización de energía, absorción y emisión en el modelo atómico dado.",
+            "Representa las partes del átomo en el modelo solicitado sin añadir procesos ausentes."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320,
+            321
+          ],
+          "id": "uncertainty",
+          "label": "incertidumbre cuántica",
+          "match": "incertidumbre",
+          "relation": "la relación entre las dispersiones de distribuciones de las magnitudes conjugadas del estado cuántico solicitado, sin reducirla a una imperfección del instrumento o a perturbación clásica al medir",
+          "officialRecordIds": [
+            "20c7b046-4fa3-55d5-991f-fdc6065462f7",
+            "2d5da7e3-958f-581f-a621-5092efba4bc2"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica el principio de incertidumbre con el modelo cuántico dado.",
+            "Interpreta las distribuciones de posición y momento del modelo de incertidumbre proporcionado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            321
+          ],
+          "id": "photoelectric",
+          "label": "efecto fotoeléctrico",
+          "match": "fotoelectric\\w*",
+          "relation": "la relación entre frecuencia, energía del fotón y emisión electrónica en el caso dado, distinguiendo frecuencia umbral de intensidad de radiación",
+          "officialRecordIds": [
+            "25d800c2-712c-5627-a0c0-996cab4a43c0"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica el efecto fotoeléctrico con los datos del caso dado.",
+            "Interpreta el umbral de frecuencia fotoeléctrico en la gráfica proporcionada."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            321
+          ],
+          "id": "nuclear-radiation",
+          "label": "radiaciones ionizantes y no ionizantes",
+          "match": "radiacion\\w* ionizante|radiacion\\w* en salud|radiaciones? en salud|radiacion\\w* no ionizante",
+          "relation": "la capacidad de ionizar y los efectos o aplicaciones de la radiación solicitada según las evidencias dadas, sin exigir exposición ni procedimientos clínicos",
+          "officialRecordIds": [
+            "63ed9dc3-e92a-5f40-b91a-1f0ef9815568"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Compara radiación ionizante y no ionizante según las fuentes dadas.",
+            "Explica aplicaciones de radiaciones en salud e industria usando casos ficticios sin procedimientos clínicos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320,
+            321
+          ],
+          "id": "isotopes-decay",
+          "label": "isótopos y desintegración radiactiva",
+          "match": "isotop\\w*|radioactividad|radiactividad|desintegracion radiactiva",
+          "relation": "la identidad nuclear del isótopo o el proceso de desintegración solicitado, distinguiendo número de protones y neutrones y sin atribuir una desintegración a todo isótopo",
+          "exclude": "minerales? radiactiv",
+          "officialRecordIds": [
+            "24593137-ad85-5e5f-9391-ffa5ee8eb657",
+            "63ed9dc3-e92a-5f40-b91a-1f0ef9815568"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Explica los isótopos y sus aplicaciones en las fuentes dadas.",
+            "Interpreta la desintegración radiactiva del modelo proporcionado sin manipular materiales."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320,
+            321
+          ],
+          "id": "fission-fusion",
+          "label": "fisión y fusión nucleares",
+          "match": "fision|fusion nuclear|reacciones? nucleares?",
+          "relation": "la transformación nuclear solicitada y el balance de masa-energía del modelo dado, distinguiendo división y unión de núcleos sin afirmar que cualquier fusión libera energía",
+          "officialRecordIds": [
+            "d2b3d13a-2cf5-51ac-89bd-ac6e2765f350",
+            "63ed9dc3-e92a-5f40-b91a-1f0ef9815568"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Compara fisión y fusión nuclear en los modelos dados.",
+            "Explica la generación energética por fisión nuclear con las fuentes proporcionadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            320
+          ],
+          "id": "radioactive-minerals",
+          "label": "minerales radiactivos",
+          "match": "minerales? radiactiv\\w*",
+          "relation": "las características y evidencias del mineral radiactivo solicitado según las fuentes, sin exigir recolección, manipulación ni exposición",
+          "officialRecordIds": [
+            "81ca0be2-859b-5a1a-8109-fc7010524e86"
+          ],
+          "indicatorRecordIds": [],
+          "families": [
+            "Investiga minerales radiactivos usando las fuentes dadas sin recolectar muestras.",
+            "Interpreta las evidencias geofísicas de minerales radiactivos proporcionadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 6,
+          "pages": [
+            322
+          ],
+          "id": "school-research",
+          "label": "investigación escolar en física",
+          "match": "investigacion escolar en fisica|investigacion en fisica",
+          "relation": "la relación entre problema delimitado, evidencia verificable y propuesta de investigación física solicitada, distinguiendo evidencias propias y proporcionadas",
+          "officialRecordIds": [],
+          "indicatorRecordIds": [
+            "29d4cf58-6fb5-5abe-a684-4de50c5dedde"
+          ],
+          "families": [
+            "Diseña una investigación escolar en física con el problema delimitado.",
+            "Redacta el informe de investigación en física con los datos proporcionados sin atribuir experimentos propios."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-6.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        }
+      ],
       "unassignedSourceRecords": [
         {
           "id": "14f669d6-1855-5141-b7bf-811cfa0e60f8",
           "text": "Movimiento y fuerzas",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "9ccaedd7-712e-56d9-946c-1e652b4bdea6",
-          "text": "• Movimiento en 2D.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "826b46f5-0e25-5088-bee2-8d300ab35288",
-          "text": "• Leyes de Newton sobre el\nmovimiento de traslación.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "e11f3dd2-b5b6-53f4-aa21-52a02ed69bef",
-          "text": "• Ley de gravitación y fuerzas variables.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "634637c4-a4cf-5e0d-909b-11c93f7d361a",
-          "text": "• Elementos de geofísica: Gravedad,\nmareas terrestres. Forma de la tierra.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "b43d9b57-f347-5b30-9e08-04ca82366f55",
-          "text": "• Cantidad de movimiento Lineal.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "ae1012e6-2d87-57de-aa63-4904dfd550e5",
-          "text": "• Leyes de Newton sobre el\nmovimiento de rotacional.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "2a30616b-4f56-5335-b179-bd211fae9de7",
-          "text": "• Movimiento rotacional.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "c952163f-b4c2-55ed-a226-7e10732761b8",
-          "text": "• Cantidad de movimiento angular.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "e1d77b9a-fc6a-5562-84d2-a1bf3aa4db54",
-          "text": "• Elementos de astrofísica: Nuestro\nsistema solar y nuestra galaxia.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "690b2e2e-2f20-51fa-b2a8-b0034d65244b",
-          "text": "Conservación de la energía y de la\ncantidad de momento.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "2a80eab2-a527-597f-b8d5-cf813058d42c",
-          "text": "• Variación de energía y trabajo",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "859d6779-ac02-573a-a158-d7dfbfcf39d5",
-          "text": "• Diferentes tipos de Energía",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "cbd0445b-0ea5-577c-b7f7-73f1633f98ec",
-          "text": "• Conservación de la energía",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "3a9621d5-b3fe-5d80-8d22-20d039dbabd6",
-          "text": "• Conservación de las cantidades de\nmovimiento",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "38bf081c-06de-5eda-a836-3fe83c97360c",
-          "text": "• Elementos de astrifisica: Nuestro\nuniverso, origen y evolución",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "67841e53-0c4f-5b00-97a4-9499d9dbae7f",
           "text": "Fluidos",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "50b88ba6-5f7c-53c4-aefc-9956bb271c0c",
-          "text": "• Presión y densidad",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "45f6ff6b-e2b4-5044-b1d3-cb9c13572079",
           "text": "• Principios en fluido",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "60a5afd4-6fa1-5c4e-a051-cce012ccd506",
-          "text": "• Tensión superficial",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "4f27cb93-0ca9-5876-83e2-2a368679635d",
-          "text": "• Elementos de astrofísica: tipos de\nplanetas y sistemas astronómicos",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "6349580b-7888-5cf8-a751-1fddfe81dff6",
           "text": "• P1. Observación, planteamiento de problema. P2.\nFormulación de preguntas o hipótesis.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "dee3af06-6242-55b1-aeb8-309a835a1ab7",
           "text": "• P3. Planificación y ejecución de experimentos, recolección\ny registro de evidencias.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "707a11e6-ae84-5685-9ead-5d5da7644e05",
           "text": "• P4. Diseño y construcción de modelos y simulaciones\ncon la integración de las Tics y la ingeniería.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "2a1171e4-ff01-5644-9db4-99d0b8886cf6",
           "text": "• P5. Resolución de problema, Análisis, discusión,\nevaluación y comunicación de los resultados.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "06907604-8a2e-564f-a8ba-84f24894b2ab",
           "text": "• P6. Proceso Espitemológico de las Ciencias Naturales.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "a1906e59-621e-5377-a63b-50daa0d9b78d",
           "text": "Movimiento y fuerzas",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "69acdd38-91e6-5199-8305-3d41386ab6c3",
-          "text": "• Gráficas para el movimiento, a partir de experimentos (P1\nhasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "cedf6a7b-e31d-50a0-9e2b-9c42127a3430",
-          "text": "• Proyectil y movimiento circular (P1, P3 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "c7744c02-0306-5d0d-a587-0efa8b140474",
-          "text": "• Relación entre masa, aceleración y fuerza (P1, P3 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "953a0319-b889-5887-8d93-467300ccc551",
-          "text": "• Leyes de Newton: construcción de sistemas en marcos\nde referencia inercial, aplicaciones y estrategias para la\nsolución de problemas (P1 hasta P6)",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "a12b7ffd-fe89-5c2a-abea-47975c93dcac",
-          "text": "• Fuerzas de fricción, Fuerza de gravedad, Fuerza normal,\nTensión, Fuerza neta, fuerza aplicada, fuerzas externas e\ninternas (P1, P3 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "5ce0fa35-2187-5988-8273-91204cb851e3",
-          "text": "• Ley de gravitación universal (P1, P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "04cb79f3-7e0d-514d-8d23-e7de9cb4ddcc",
-          "text": "• Ley de Hooke y aplicaciones (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "1bb4a218-c7ce-5cac-ba68-c34901bf84ed",
-          "text": "• Proyectos de indagación con las leyes de Newton (P1\nhasta P6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "6371ebc0-49a6-5ca7-b040-9a0daab3ce8e",
-          "text": "Conservación de la energía y de la cantidad de\nmovimiento.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "1b9a52a0-ec6d-5dcd-928a-d8096cb1f59b",
-          "text": "• Energía: Diferentes tipos (Cinética de traslación y rotación,\ndiferentes tipos de energía potencial) su transformación y\naplicaciones (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "66c07d91-4be0-5171-8444-280bac9c3ead",
-          "text": "• Cantidad de movimiento lineal y variación de la cantidad\nde movimiento (P1 hasta P6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "6693583c-8bff-5216-ba5c-de058b329de5",
-          "text": "• Principios de conservación: energía y cantidad de\nmovimiento lineal y angular (P1 hasta P6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "9fb37c39-23b8-5883-b5cd-eaa846fbe956",
-          "text": "• Choques: elásticos e inelásticos (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "549ddeca-9458-5a89-a4b8-3037a5d2fda3",
-          "text": "• Eficiencia energética y aplicaciones en la industria,\ndeportes, salud, ingeniería, agricultura (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "cffefedf-cb11-5321-bc70-12d311bcdd2b",
-          "text": "Calor y termodinámica",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "97d4bad9-c668-555b-87e6-2fe1a485f5c8",
-          "text": "• Temperatura, calor y dilatación.\nTransferencia de calor.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "ba26c6d6-b6e2-5334-b539-283f5e5fab8c",
-          "text": "• Leyes de la Termodinámica.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "22d3d950-0cf2-520b-8767-8a6569b9f130",
-          "text": "• Elementos de astrofísica: formación\nde nuestro planeta y ciclo de estrella.\nAgujero negro.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "95019cec-fc43-50ec-b3a3-592c776ea67f",
-          "text": "Ondas",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "833d9f96-a9a9-58e6-8e16-b8fe50e417c7",
-          "text": "• Vibraciones y sus propiedades. Ondas\ny sus propiedades",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "baf4eaee-61b8-5132-b05b-1b43d9557951",
-          "text": "• Ondas mecánicas",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "66533efc-61af-53c6-b2c7-2c42d0f1b671",
           "text": "• Elementos de geofísica:",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "ae522e11-a802-5c54-8bf7-02142d147698",
-          "text": "• Estructura de nuestro planeta. Onda\nsísmica. Terremotos. Métodos de\nrefracción y reflexión sísmica",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "67d4a739-91da-5b26-beda-d79b3f605242",
-          "text": "• Ondas electromagnéticas",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "b5e62062-5655-5406-abec-d50cd5499917",
-          "text": "• Espectro electromagnético",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "5653a039-f75a-5a64-aa14-a87f58bc13a4",
-          "text": "• Propiedades de la Luz",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "77d38cc4-09f9-53cb-a889-58e3c6c0cc7e",
-          "text": "• Elementos de astrofísica: el Sol\nRadiaciones y nuestro universo",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "361a0cff-7038-501a-ad31-9e6cb4157ab0",
           "text": "• Electricidad y magnetismo",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "3027c5b9-f590-5f43-b477-b33db3accf36",
-          "text": "• Electrostática. Corriente eléctrica",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "debd0099-cecd-55bf-8514-7b7132f04ea6",
-          "text": "• Circuitos y los principios de la\nconservación",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "87129f4d-1573-52fe-bdf2-53bbd4d55309",
           "text": "• Magnetismo",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "ee8a9342-f135-5115-88b1-05cc3c953784",
-          "text": "• Inducción electromagnética",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "73c8b3be-b217-5818-8767-c983de52d64d",
-          "text": "• Elementos de geofísica: Magnetismo\nterrestre y efectos magnéticos",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "f9955c13-aec5-5be2-bcf1-d8c6afb1f53f",
-          "text": "• Propiedades eléctricas de las rocas",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "13c4fcfe-c656-50de-a93a-fb196cd2fd86",
-          "text": "• Elementos de Astrofísica vinculado a\nelectricidad y magnetismo",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "e3071cca-9665-53c2-a7f3-e8a74863f948",
           "text": "Nociones de Física moderna",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "1f38ccee-3d36-5edd-89a6-df015a7ef5ee",
-          "text": "• Cinemática relativista",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "cdf40b8f-1a11-5d0c-9543-de2d61f3a49e",
-          "text": "• Momento y energía relativista",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "73495285-7149-5f84-bc1a-92a771106a99",
-          "text": "El átomo",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "20c7b046-4fa3-55d5-991f-fdc6065462f7",
-          "text": "• Cuantización e incertidumbre",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "24593137-ad85-5e5f-9391-ffa5ee8eb657",
-          "text": "• Radioactividad.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d2b3d13a-2cf5-51ac-89bd-ac6e2765f350",
-          "text": "• Fisión y fusión.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "81ca0be2-859b-5a1a-8109-fc7010524e86",
-          "text": "• Elementos de geofísica: minerales\nradiactivos.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "0fd485cb-6368-5c22-8322-9e18ae015f59",
-          "text": "• Elementos de astrofísica: Nuestro universo, origen y\nevolución (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "94ed0281-6db2-5236-8692-9e6fcbb41400",
-          "text": "• Proyectos de indagación con la conservación (P1 hasta P6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "533b0402-43fe-5ae3-9b3e-e21d846c5ed4",
           "text": "Fluidos",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "34c83471-7cbe-5915-b002-82768d2fd26f",
-          "text": "• Indagación de la densidad (P1, P3 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "671a5f92-327e-508f-b56d-694010f36283",
-          "text": "• Relación entre presión, fuerza y (P1, P3 y P5). Presión en los\nfluidos (P1, P2 y P3).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "67701d87-df0a-5fa8-9d3c-9161aebba111",
-          "text": "• Principios de Pascal, Arquímedes, Continuidad, Bernoulli y\nsus aplicaciones en medicinas, aviación y otras (P1 hasta\nP6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "7c531594-3fb2-5f04-b05c-8a55e4c306dc",
-          "text": "• Movimiento de diferentes contaminantes en el subsuelo y\nel efecto de su densidad en su transportación en las aguas\nsubterráneas (P1, P3 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "81be8bf8-24bd-55c2-a777-675241c31491",
-          "text": "• Elementos de astrofísica: formación de nuestro planeta y\nciclo de estrella. Agujero negro (P1-P6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "17b0c4cc-9c38-5c25-960a-b16d4ab89710",
-          "text": "Calor y termodinámica",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "95264f59-e319-5e95-8831-55fc81347b81",
-          "text": "• Relación entre temperatura y calor (P3 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "8af85fdd-e184-5a7b-8329-39fef1cdfc2a",
-          "text": "• Ley cero de la termodinámica (P3 y P4).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "eaf9913d-e135-5bf0-84f7-badde4f33321",
-          "text": "• Relación entre energía y calor (P1, P3 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "a9084c7a-381b-5098-ad90-c39db8b41829",
-          "text": "• Dilatación de sólidos, líquidos y gases (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "3c331ec5-535f-55e9-8729-98dac30cee4b",
-          "text": "• Energía interna. Relación entre movimiento de los átomos y\nmoléculas con la temperatura (P1, P2 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "b7c6de71-c982-5b1a-82ac-c05972dc5fb9",
-          "text": "• Entropía (P1 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "b1de0886-47d4-553d-8afb-b032408d4053",
-          "text": "• Aplicaciones: Máquina de vapor, motores de combustión\ninterna y energías alternas.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "6081564e-dad8-5f1f-8213-11799b6350ef",
           "text": "• Ciencias de la Tierra y el Espacio:",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "bb3c5a01-6350-5880-aba3-0803c69211b3",
-          "text": "• Temperatura de las diferentes capas de la Tierra.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "0b6997a5-4fa2-5c54-8d50-bb7abfd99e79",
-          "text": "• Relación entre profundidad y cambio de temperatura en el\ninterior de la Tierra.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "3d43f176-0eaf-5c4f-8851-b4f91febfb66",
-          "text": "• El planeta Tierra como sistema termodinámico.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "971c1eb9-a50a-51d4-bd21-883d19a2ed90",
-          "text": "• Mecanismo de transporte de calor en el interior de la tierra.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "01f74823-6968-5394-b563-87dcdca406da",
-          "text": "• Movimiento armónico simple: relación entre fuerza,\nvelocidad y aceleración (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "1edbecf9-53e9-53d4-9a9a-9f626c7edade",
-          "text": "• Relación entre frecuencia, longitud de onda y velocidad de\nla onda (P1 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "f46599fe-3c81-55d6-93d5-ae4689da23e6",
-          "text": "• Resonancia y frecuencia (P1, P3 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "95fe6590-9ffc-550c-bafc-cd84781b8189",
-          "text": "• Ondas y sus propiedades: propagación, efecto Doppler,\nabsorción, reflexión, refracción, interferencia, difracción,\npolarización y dispersión (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "cff6e5c4-d07b-5d89-89f3-079f95ea1ea8",
-          "text": "• Ondas electromagnéticas y su espectro (P1 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "58b4bc44-9d02-5b22-bff4-4b1ba1ef7a26",
-          "text": "• Luz: espejos, lentes y prismas (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "846c809d-c0ee-54d6-aaec-741774e9927a",
-          "text": "• Aplicaciones de las ondas en Ciencias de la Tierra, la salud e\ningeniería (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "6f4d465e-7179-599c-84b6-8cf3c7897866",
-          "text": "• Proyectos de indagación aplicando las propiedades de\nOnda.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "219e0c77-d89f-58cd-95c6-163e113f1d6d",
-          "text": "• Uso de las ondas sísmicas para determinar la composición\ndel interior de la Tierra.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "f2eaea5e-a8fc-57ba-9478-9c66321df7e6",
           "text": "• Electricidad y magnetismo",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "13081ea1-c530-512d-bf3e-c03a0bcf0c8a",
-          "text": "• Electrostática: Ley de Coulomb y campo eléctrico,\nconductores y dieléctricos, carga por inducción y\npolarización, potencial eléctrico, condensadores (P1 hasta\nP5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "30945ae6-1caa-53b3-a1b0-5b1d6341b275",
-          "text": "• Electricidad: corriente, resistencia, Ley de Ohm, potencia\neléctrica, fuerza electromotriz, circuitos eléctricos,\nresistencias en serie y paralelo, sus aplicaciones (P1 hasta\nP6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "13ed44cc-3c51-5439-a969-34db3b547f92",
-          "text": "• Magnetismo: Campo magnético, fuerza magnética,\ncampo magnético generado por corriente, bobinas, fuerza\ndel campo magnético sobre corriente, Ley de Faraday, ley\nde Lenz, Fem Inducida, generadores y motores eléctricos,\ncorriente alterna (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "ff5ee2e9-6c56-502e-9b5c-6117275b8b45",
-          "text": "• Indagación en electromagnetismo y sus aplicaciones (P1\nhasta P6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "c2e32670-9d33-5a1f-9662-0e95aadc0307",
           "text": "Nociones de Física Moderna",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "2d5da7e3-958f-581f-a621-5092efba4bc2",
-          "text": "• Cuantización e incertidumbre: Las partes que componen\nel átomo. Modelos atómicos. Cuantización de la energía.\nAbsorción y emisión. Incertidumbre (P1, P4 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "9eab8ae3-4554-5eb4-bd2e-380479b1d9ba",
-          "text": "• Relatividad: cinemática relativista, momento y energía\nrelativista,",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "25d800c2-712c-5627-a0c0-996cab4a43c0",
-          "text": "• Efecto fotoeléctrico (P1, P4 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "63ed9dc3-e92a-5f40-b91a-1f0ef9815568",
-          "text": "• Física Nuclear: Radiación ionizante y no ionizante. Isótopos\ny sus aplicaciones. Radioactividad y sus aplicaciones\nen salud, industria y agricultura. Reacciones nucleares.\nGeneración energética: fisión y fusión (P1, P4 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         }
       ],
-      "instrumentReview": null,
+      "instrumentReview": {
+        "grade": 6,
+        "status": "REVIEWED_DEFINED_FIXTURES",
+        "scope": "Física común, PDF319–322 / impresas318–321; 165 registros oficiales, 63 grupos, 126 consignas y 504 instrumentos de ejemplo",
+        "method": "Inspección visual de cuatro páginas, columnas y continuaciones. Lectura secuencial de las 126 consignas con títulos y condiciones de logro; revisión de progresiones compartidas y casos parciales/erróneos. Lectura de instrumentos completos en cuatro formatos para cálculo de Ohm y construcción de circuitos. Contratos y paridad se registran aparte; no sustituyen la revisión de pertinencia.",
+        "corrections": [
+          "Marco inercial singular y plural, origen y la evolución del universo, condensador singular y choques con dos puntos se reconocen sin reglas por título exacto",
+          "Ley cero evalúa transitividad del equilibrio térmico sin imponer las demás leyes",
+          "Fuerza electromotriz es energía por carga; potencia es energía por tiempo; no se mezclan requisitos cuando se pide solo una",
+          "Continuidad aislada conserva masa; Bernoulli se delimita a sus hipótesis y no se exige al pedir solo continuidad",
+          "El sistema solar aislado no exige representar la galaxia",
+          "El movimiento microscópico relacionado con temperatura no añade transferencia de calor",
+          "Explicar Ohm no exige despejar ni calcular; calcular usa los datos proporcionados y el modelo óhmico",
+          "Se conserva el antecedente de cinco evidencias de Ohm solo cuando se piden sus acciones mixtas completas: cálculo, interpretación cotidiana y esquema",
+          "Interpretar un circuito proporcionado no exige construcción; construirlo respeta el diseño y precauciones indicadas sin agregar otra práctica",
+          "Predicción ondulatoria se sustenta en modelo y condiciones sin exigir medición o confirmación experimental",
+          "Incertidumbre cuántica se refiere a dispersiones de magnitudes conjugadas, no solo a defectos de medición",
+          "Doppler distingue frecuencia observada y propia; fotoeléctrico distingue umbral e intensidad; radiación no obliga a exposición ni procedimientos clínicos",
+          "Fuente literal conserva erratas Espitemológico/astrifísica y la frase incompleta de presión/fuerza; la adaptación no inventa una cita oficial corregida"
+        ],
+        "limits": [
+          "Patrones definidos, no cualquier redacción imaginable",
+          "Diecisiete encabezados y menús de procesos excluidos explícitamente como tareas adicionales; seis vínculos de texto fuente revisados manualmente sin ampliar el matcher",
+          "No se piden mediciones, construcción, toma de muestras, gráficos ni cálculos ausentes; no se atribuyen resultados inventados",
+          "El alcance del modelo y de los datos determina la relación científica aplicable; no se aplica Bernoulli, Newton u Ohm universalmente",
+          "HTTP/DB y navegador no se aprueban mediante esta revisión",
+          "Adaptaciones evaluativas de AulaBase, no rúbricas oficiales MINERD"
+        ],
+        "instrumentArtifact": "ciencias-naturaleza-6-instrumentos.json"
+      },
       "httpVerification": null,
       "visualVerification": null,
-      "status": "NOT_IMPLEMENTED",
+      "status": "IMPLEMENTED_PENDING_VERIFICATION",
       "exclusions": [
         "Optativas y contenidos atribuidos a otros grados.",
         "Actitudes personales y listados generales de procesos no se convierten en requisitos de cada actividad."

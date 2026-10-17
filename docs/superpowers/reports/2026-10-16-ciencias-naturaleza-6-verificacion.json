@@ -1,0 +1,491 @@
+{
+  "status": "AUTOMATED_VERIFIED_PERSONAL_BROWSER_PENDING",
+  "project": "eolgunypmtgrsyrjzcld",
+  "grade": 6,
+  "catalog": "evaluation-2026.92",
+  "source": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_NAT_COMUN_G6_V1",
+    "versionId": "6eceb230-a652-54ca-b2cf-dd3708e2c05a",
+    "documentId": "89e4a1be-2c7b-5bb7-9141-b11cba97c5f4",
+    "metadata": {
+      "subjectCodes": [
+        "NAT",
+        "NAT-FIS"
+      ],
+      "grades": [
+        6
+      ],
+      "commonOnly": true,
+      "datasetDigest": "0ff81bdfd3d63daf3e0b8760d8aeb900f83a034ec47e233368c61a3be4191aaf",
+      "sourceVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "sourcePdfHash": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+      "scopeMap": {
+        "6": {
+          "sourceId": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+          "id": "32bae97e-5fd2-5ae8-864e-c372574a32e3"
+        }
+      },
+      "review": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json"
+    },
+    "scopes": 1,
+    "elements": 165,
+    "relations": 7,
+    "result": "UNCHANGED",
+    "preservedSnapshots": 106
+  },
+  "catalogInstall": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.92",
+    "grade": 6,
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 24,
+    "preservedSnapshots": 106
+  },
+  "sourceInstallObserved": [
+    "CREATED",
+    "UNCHANGED"
+  ],
+  "checks": [
+    {
+      "command": "pnpm --filter backend test",
+      "code": 0,
+      "ms": 14839,
+      "log": ".wrangler/science-source/grade-6-check-0.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 5933,
+      "log": ".wrangler/science-source/grade-6-check-1.log"
+    },
+    {
+      "command": "pnpm --filter frontend exec vitest run",
+      "code": 0,
+      "ms": 88598,
+      "log": ".wrangler/science-source/grade-6-check-2.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 16443,
+      "log": ".wrangler/science-source/grade-6-check-3.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "code": 0,
+      "ms": 86042,
+      "log": ".wrangler/science-source/grade-6-check-4.log"
+    }
+  ],
+  "backend": {
+    "files": 108,
+    "tests": 45248
+  },
+  "frontend": {
+    "files": 131,
+    "tests": 45637
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-BLaW9Yd6.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-BLaW9Yd6.js",
+        "sha256": "2922c752f2719b016c3bd0cb2284cfafc3fa0ded7688e116718367517503f320",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-CKhhfWm7.js",
+        "sha256": "f05bad5bbbd65bac41fe87d749df94e8866c305d8575da1a36e1a2b4309a07e9",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-C7mDMASA.js",
+        "sha256": "21cc089c4ced77f4ae2d2dae841638dcbf168348f7885b67ba0345021639cf11",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-CI8Dgvvv.js",
+        "sha256": "628056a2828f0e21d922640f39c4ff0cd11b5328a6ab989b309d753f9ec11ce0",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-USqr3Gsy.js",
+        "sha256": "75ad6a6b582dd6c1a00cb17815f1c78a14f6434c815282648978fbdaf2858402",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "f0bd11edfb582a7cb3febb0b302c59b88c725f18b58986f683550cb0bfc914b2",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "generationTiming": {
+    "grade": 6,
+    "mode": "PURE_IN_PROCESS_RECOMMENDATION_SYNTHETIC_CONTEXT_NO_AUTH_DB_HTTP_OR_RENDER",
+    "samples": 200,
+    "p50Ms": 0.2639000000000067,
+    "p95Ms": 0.4843000000000188,
+    "maxMs": 2.6063000000000045
+  },
+  "http": {
+    "verification": "AUTHENTICATED_HTTP_DB_AND_EDITOR_ADAPTERS_NOT_VISUAL",
+    "savedEvidence": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "activityId": "6985a6e8-9ca6-485e-a8e0-129152a1f161",
+        "instrumentHash": "cc49b7ae431cbab3c25e41d4b502d1bf0623dc78c913e31b7aed23faeb55d55e",
+        "snapshotId": "63cd445b-b81a-4853-bb64-ca8e91e428f8",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "6eceb230-a652-54ca-b2cf-dd3708e2c05a",
+          "scopeId": "32bae97e-5fd2-5ae8-864e-c372574a32e3"
+        }
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "activityId": "837a7900-f8e1-468b-a7fe-8b566281cb9d",
+        "instrumentHash": "79b0e4af50a00bb6ac06580de13c06ea58581ee550a604b746326f17556ea23b",
+        "snapshotId": "052ec352-9c37-407f-b51d-6cd8198a4cf5",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "6eceb230-a652-54ca-b2cf-dd3708e2c05a",
+          "scopeId": "32bae97e-5fd2-5ae8-864e-c372574a32e3"
+        }
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "activityId": "5e189ccc-1272-4a7c-9d55-da37e488bc01",
+        "instrumentHash": "b9d1ca858556ddcd80c6ba859b94b0dc1e434a112815e832ac66e98d6dacc3d7",
+        "snapshotId": "fc31d62b-6f4d-46a2-801b-0cd3134f0cf5",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "6eceb230-a652-54ca-b2cf-dd3708e2c05a",
+          "scopeId": "32bae97e-5fd2-5ae8-864e-c372574a32e3"
+        }
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "activityId": "463da567-5879-40e7-b7ee-600367667827",
+        "instrumentHash": "a3bef51d9e0d41520b34f09c052a8f2e24b2b2b572655bee8613f403c42573fa",
+        "snapshotId": "456b1c27-f351-4abd-a48e-1493ef32a734",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "6eceb230-a652-54ca-b2cf-dd3708e2c05a",
+          "scopeId": "32bae97e-5fd2-5ae8-864e-c372574a32e3"
+        }
+      }
+    ],
+    "finalBuildRecheck": {
+      "at": "2026-10-17T01:40:07.091Z",
+      "reopened": 4,
+      "generated": [
+        {
+          "type": "rubrica",
+          "total": 20,
+          "catalog": "evaluation-2026.92"
+        },
+        {
+          "type": "lista-cotejo",
+          "total": 17.35,
+          "catalog": "evaluation-2026.92"
+        },
+        {
+          "type": "escala",
+          "total": 20,
+          "catalog": "evaluation-2026.92"
+        },
+        {
+          "type": "lista-ponderada",
+          "total": 17.35,
+          "catalog": "evaluation-2026.92"
+        }
+      ],
+      "languageRegressions": [
+        {
+          "language": "FRA",
+          "catalog": "evaluation-2026.92",
+          "curriculumVersionId": "de6de6bc-0d23-59da-917e-22cb92c0a3af",
+          "scopeId": "97aa9c84-cebb-57aa-8fa4-6f97b5c21ca0"
+        },
+        {
+          "language": "ING",
+          "catalog": "evaluation-2026.92",
+          "curriculumVersionId": null,
+          "scopeId": null
+        },
+        {
+          "language": "MAT",
+          "catalog": "evaluation-2026.92",
+          "curriculumVersionId": "5158ed7a-7297-5a1b-b624-6a2984e9f44c",
+          "scopeId": "a1b4e4f7-cee3-5070-937e-5677cbe3e5d5"
+        }
+      ],
+      "scienceRegressions": [
+        {
+          "grade": 1,
+          "catalog": "evaluation-2026.92",
+          "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+          "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf"
+        },
+        {
+          "grade": 2,
+          "catalog": "evaluation-2026.92",
+          "curriculumVersionId": "92ffa3d0-96a6-5d35-bcd2-b90cec35f014",
+          "scopeId": "2806efe2-03f8-53e8-b537-c2d07937e708"
+        },
+        {
+          "grade": 3,
+          "catalog": "evaluation-2026.92",
+          "curriculumVersionId": "3c6e1038-a19e-5d75-ae8f-ff8191ff7afd",
+          "scopeId": "096a33fc-0b8a-5ffc-9365-61f5cecfec9a"
+        },
+        {
+          "grade": 4,
+          "catalog": "evaluation-2026.92",
+          "curriculumVersionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+          "scopeId": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        },
+        {
+          "grade": 5,
+          "catalog": "evaluation-2026.92",
+          "curriculumVersionId": "b5398277-4f03-589a-9fb7-20e9740d2c72",
+          "scopeId": "2b46e86d-75bd-58ce-b3ad-ce009c8bb90c"
+        }
+      ]
+    },
+    "semanticControls": [
+      {
+        "description": "Interpreta el circuito en serie proporcionado sin construirlo ni realizar otra práctica.",
+        "criteria": [
+          "nat-6-circuits-analysis"
+        ],
+        "catalog": "evaluation-2026.92"
+      },
+      {
+        "description": "Explica la ley cero de la termodinámica.",
+        "criteria": [
+          "nat-6-thermodynamic-laws-explanation"
+        ],
+        "catalog": "evaluation-2026.92"
+      },
+      {
+        "description": "Explica la fuerza electromotriz del modelo dado.",
+        "criteria": [
+          "nat-6-electric-power-explanation"
+        ],
+        "catalog": "evaluation-2026.92"
+      },
+      {
+        "description": "Explica el principio de incertidumbre con el modelo cuántico dado.",
+        "criteria": [
+          "nat-6-uncertainty-explanation"
+        ],
+        "catalog": "evaluation-2026.92"
+      },
+      {
+        "description": "Predice el comportamiento de las ondas con el modelo dado, sin realizar experimentos ni medir.",
+        "criteria": [
+          "nat-6-waves-properties-prediction"
+        ],
+        "catalog": "evaluation-2026.92"
+      }
+    ],
+    "initialTimings": [
+      {
+        "path": "/health",
+        "status": 200,
+        "ms": 550
+      },
+      {
+        "path": "/auth/login",
+        "status": 201,
+        "ms": 1767
+      },
+      {
+        "path": "/activities/center?contextOnly=true",
+        "status": 200,
+        "ms": 2650
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 5713
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 6127
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 4689
+      },
+      {
+        "path": "/activities?sectionSubjectId=5dca73e3-49bf-4d4b-aecc-dfb95f4d2732",
+        "status": 200,
+        "ms": 2996
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 5588
+      },
+      {
+        "path": "/activities?sectionSubjectId=5dca73e3-49bf-4d4b-aecc-dfb95f4d2732",
+        "status": 200,
+        "ms": 4272
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 9141
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 8118
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 3830
+      },
+      {
+        "path": "/activities?sectionSubjectId=5dca73e3-49bf-4d4b-aecc-dfb95f4d2732",
+        "status": 200,
+        "ms": 3126
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 5027
+      },
+      {
+        "path": "/activities?sectionSubjectId=5dca73e3-49bf-4d4b-aecc-dfb95f4d2732",
+        "status": 200,
+        "ms": 2854
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 7079
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 5775
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 4286
+      },
+      {
+        "path": "/activities?sectionSubjectId=5dca73e3-49bf-4d4b-aecc-dfb95f4d2732",
+        "status": 200,
+        "ms": 4045
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 4259
+      },
+      {
+        "path": "/activities?sectionSubjectId=5dca73e3-49bf-4d4b-aecc-dfb95f4d2732",
+        "status": 200,
+        "ms": 3769
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 9717
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 4957
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 4048
+      },
+      {
+        "path": "/activities?sectionSubjectId=5dca73e3-49bf-4d4b-aecc-dfb95f4d2732",
+        "status": 200,
+        "ms": 4298
+      },
+      {
+        "path": "/activities",
+        "status": 201,
+        "ms": 3899
+      },
+      {
+        "path": "/activities?sectionSubjectId=5dca73e3-49bf-4d4b-aecc-dfb95f4d2732",
+        "status": 200,
+        "ms": 2192
+      }
+    ]
+  },
+  "historicalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 7,
+    "newSnapshots": 37,
+    "gradeBaseline": {
+      "grade": 6,
+      "preservedReleases": 24,
+      "preservedSnapshots": 106,
+      "newReleases": 1,
+      "newSnapshots": 4
+    }
+  },
+  "secretsAudit": {
+    "filesInspected": 19,
+    "secretValuesFound": false,
+    "privateFilesExcluded": true
+  },
+  "browser": {
+    "status": "PERSONAL_SESSION_RECOVERED_VISUAL_IN_PROGRESS",
+    "completedFormats": [],
+    "manualGuide": "2026-10-16-ciencias-naturaleza-6-prueba-manual.md"
+  },
+  "limitations": [
+    "Defined wording patterns only; complete instrument review is recorded separately from automated contracts",
+    "HTTP elapsed times include local Worker and remote Development dependencies; no independent SQL/network/render attribution",
+    "Private browser service-worker registrations were not audited; served asset/sw hashes were checked"
+  ]
+}
