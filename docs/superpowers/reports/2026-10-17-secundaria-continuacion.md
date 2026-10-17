@@ -4,7 +4,7 @@
 
 ## Estado vigente
 
-- Commits locales verificados: `be93440ccafa2d7c7d593c98af1fa5772dcb2fa3` y `6fc27c8b3d1d60721307e1c4b199e8b46cddc286`; base `15965f16796960db753814b03118a1b6823cc842`. Ver historial para el bloque posterior de fuente.
+- Commits locales verificados: `be93440ccafa2d7c7d593c98af1fa5772dcb2fa3`, `6fc27c8b3d1d60721307e1c4b199e8b46cddc286` y `970552872f9ef465d3eed0c538a9b2c504659539`; base `15965f16796960db753814b03118a1b6823cc842`. Publicación de fuente ya guardada; ver historial para el informe posterior de latencia.
 - Última área cerrada previamente: Naturales 1–6, 271 grupos/571 consignas/2.284 instrumentos de patrones definidos. No repetir su QA. Persisten las incidencias previas de DNS intermitente y lista global de Actividades.
 - Inventario: 72 ámbitos por grado,54 comunes y18 optativos académicos; otros17 scopes son encabezados. PDF2023 cotejado por SHA; PDF48,49,55 y Sociales1.º PDF244–248 revisadas visualmente. PDF249–253 renderizadas, sin revisión visual. Fuentes complementarias de Artes y el índice oficial Técnico Profesional localizados: `docs/curriculum/cobertura-secundaria/fuentes-complementarias.json`. Pendientes lectura visual, versiones y módulos por grado; no presentarlas como inexistentes ni como cobertura implementada.
 - Sociales1.º **parcial**: 31 grupos, 41 consignas y164 ejemplos. Revisados sustantivamente71 (31 rúbricas temáticas y diez familias en cuatro formatos), con huellas verificables;93 pendientes de revisión individual. Correspondencia semántica manual de113 registros conceptuales/procedimentales; ocho exclusiones justificadas, sin alterar el texto literal. Agrupar un procedimiento no prueba su implementación completa. Indicadores separados.
@@ -21,7 +21,7 @@
 
 ## Siguiente acción
 
-Guardar el bloque de publicación de fuente y continuar **Sociales1.º**. Investigar lecturas repetidas y conexiones en la latencia HTTP: con fuente, recomendación media12568ms; el sondeo Node separado midió conexión1760ms, lectura181 elementos757ms y roundtrip caliente43ms. No equivale a una petición completa. Evaluar únicamente cambios demostrados y seguros; mantener autorizaciones frescas, no cachear datos privados/sockets ni elevar timeouts.
+Continuar **Sociales1.º**. Investigación de latencia registrada en [informe](2026-10-17-sociales-1-latencia.md): se probaron reutilización de elementos públicos y de ámbitos, y se retiraron ambos prototipos al no confirmar mejora sostenida. No queda caché nueva. Servicio/pruebas iguales a97055287, Worker recompilado y backend45.622/135 aprobado. No repetir ese experimento. La latencia continúa pendiente de instrumentar por capas; no subir timeouts ni debilitar autorizaciones.
 
 Después completar variantes procedimentales (comprobación de hipótesis, silogismos, organizadores, diálogo socrático, investigación del contenido, GPS, cálculos de escala, regularidad observada y títulos sin descripción). Para ampliar módulos/política del catálogo, congelar96 y crear97 después de recompilar todo; no editar releases instalados. Quedan93 instrumentos para revisión individual. Probar navegador cuando el usuario autentique. No marcar el grado completo por agrupación de fuentes o tests aprobados.
 
