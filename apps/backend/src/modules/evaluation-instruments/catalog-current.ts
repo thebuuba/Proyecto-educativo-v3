@@ -1,4 +1,6 @@
 import {commonSocialModules} from '@aula/shared'
+import {evaluationCatalogV94} from './catalog-v94'
+import {evaluationCatalogV95} from './catalog-v95'
 import {evaluationCatalogV93} from './catalog-v93'
 import { evaluationCatalogV92 } from './catalog-v92'
 import { evaluationCatalogMainV46 } from './catalog-main-v46'
@@ -116,7 +118,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.94',
+  version: 'evaluation-2026.96',
   socialCommonModules:commonSocialModules,
   activityTypes: (evaluationCatalogV92.activityTypes as ActivityTypeEntry[]).map(entry => ({
     ...entry,
@@ -210,6 +212,8 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { socialCommonModules?:typeof commonSocialModules; scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
+  if(version===evaluationCatalogV95.version)return evaluationCatalogV95
+  if(version===evaluationCatalogV94.version)return evaluationCatalogV94
   if(version===evaluationCatalogV93.version)return evaluationCatalogV93
   if (version === evaluationCatalogOriginalV1.version) return evaluationCatalogOriginalV1
   if (version === evaluationCatalogV2.version) return evaluationCatalogV2

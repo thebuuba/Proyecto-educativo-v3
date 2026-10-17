@@ -12,7 +12,9 @@ const path='.wrangler/secondary-completion/',context=JSON.parse(readFileSync(pat
 assert.equal(context.project,project)
 const qa=JSON.parse(readFileSync('.development-qa-account.local','utf8'))
 const require=createRequire(new URL('../../apps/backend/package.json',import.meta.url)),{prisma}=require('@aula/database')
-const base='http://localhost:8787',progressPath=path+'social-1-http-progress.json'
+const catalog=require('../../apps/backend/dist/modules/evaluation-instruments/catalog-current.js').evaluationCatalogCurrent.version
+assert(/^evaluation-2026\.\d+$/.test(catalog))
+const runKey='social-1-'+catalog,base='http://localhost:8787',progressPath=path+runKey+'-http-progress.json'
 const progress=existsSync(progressPath)?JSON.parse(readFileSync(progressPath,'utf8')):{project,grade:1,writes:[],timings:[]}
 assert.equal(progress.project,project)
 const save=()=>writeFileSync(progressPath,JSON.stringify(progress,null,2)+'\n')
@@ -32,8 +34,12 @@ const descriptions=[
  'Ubica los lugares señalados en el mapa utilizando los puntos cardinales. Sin calcular escalas ni utilizar GPS.',
  'Compara liberalismo y conservadurismo en Europa e interpreta las perspectivas de los autores proporcionados.',
  'Elabora una línea de tiempo de la Revolución Francesa con los hechos y fechas indicados.',
+ 'Formula preguntas e hipótesis provisionales sobre la expansión colonial europea. No investigues nuevas fuentes.',
+ 'Identifica cuáles de las fuentes proporcionadas para el estudio geográfico son confiables y justifica tu selección.',
+ 'Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.',
+ 'Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.',
 ]
-const formats=['rubrica','lista-cotejo','escala','lista-ponderada']
+const formats=['rubrica','lista-cotejo','escala','lista-ponderada','rubrica','lista-cotejo','escala','lista-ponderada']
 try{
  const school=await prisma.school.findUniqueOrThrow({where:{id:context.schoolId}});assert.match(school.name,/ficticio QA Development/)
  const login=await request('/auth/login',{email:qa.email,password:qa.password})
@@ -42,13 +48,19 @@ try{
  assert(center.sectionSubjects.some(s=>s.id===context.sectionSubjectId))
  const activities=async()=>(await request('/activities?sectionSubjectId='+context.sectionSubjectId)).data
  for(const [i,format] of formats.entries()){
-  let write=progress.writes.find(w=>w.format===format)
+  const caseKey=String(i)
+  let write=progress.writes.find(w=>w.caseKey===caseKey)
+  if(write){
+   assert.equal(write.input.description,descriptions[i],'El fixture cambió: no reutilizar una escritura anterior para otra consigna')
+   assert.equal(write.format,format)
+   assert.equal(write.input.maxScore,i%2?17.35:20)
+  }
   if(!write){
    const score=i%2?17.35:20,description=descriptions[i],name=`QA Sociales 1.º · ${format} · ${randomUUID().slice(0,8)}`
    const input={sectionSubjectId:context.sectionSubjectId,activityTitle:name,description,competencyBlock:'b1',maxScore:score,preferredInstrumentType:format,participationMode:'INDIVIDUAL'}
    const interpretation=(await request('/evaluation-instruments/interpret',{sectionSubjectId:context.sectionSubjectId,activityTitle:name,description,competencyBlock:'b1'})).data
    const proposal=(await request('/evaluation-instruments/recommend',input)).data
-   assert.equal(proposal.catalogVersion,'evaluation-2026.94');assert(proposal.criteria.every(c=>c.templateId.startsWith('soc-1-')))
+   assert.equal(proposal.catalogVersion,catalog);assert(proposal.criteria.every(c=>c.templateId.startsWith('soc-1-')))
    assert.equal(interpretation.suggestedActivityType,proposal.activityType)
    const local=editableFallbackRecommendation({...input,instrumentType:format,academicContext:{level:'SECONDARY',grade:1,subjectCode:'SOC',subjectName:'Ciencias Sociales'}})
    assert.deepEqual(content(proposal),content(local))
@@ -57,7 +69,7 @@ try{
    const fields=scoreInstrumentFields(pending,format,score,proposal)
    fields[`${format}:criterion:0`]='Texto manual QA Sociales'
    assert.deepEqual(validateInstrumentDefinition(format,fields,score),[])
-   write={format,creationId:randomUUID(),input:{sectionSubjectId:context.sectionSubjectId,schoolYearId:context.schoolYearId,academicPeriodId:context.academicPeriodId,competencyBlockId:'b1',name,description,maxScore:score,activityType:'individual',instrumentType:format,instrumentCriteria:fields,instrumentSnapshot:alignRecommendationWithFields(proposal,fields,score),pedagogicalActivityType:proposal.activityType,teachingStrategyId:null,teachingStrategyOrigin:null}}
+   write={caseKey,format,creationId:randomUUID(),input:{sectionSubjectId:context.sectionSubjectId,schoolYearId:context.schoolYearId,academicPeriodId:context.academicPeriodId,competencyBlockId:'b1',name,description,maxScore:score,activityType:'individual',instrumentType:format,instrumentCriteria:fields,instrumentSnapshot:alignRecommendationWithFields(proposal,fields,score),pedagogicalActivityType:proposal.activityType,teachingStrategyId:null,teachingStrategyOrigin:null}}
    progress.writes.push(write);save()
   }
   const existing=await prisma.evaluationActivity.findUnique({where:{id:write.creationId},select:{schoolId:true,sectionSubjectId:true}})
@@ -75,6 +87,7 @@ try{
   write.verified={format,score:write.input.maxScore,activityId:write.creationId,snapshotId:db.instrumentSnapshotId,strategyOnlyInstrumentUnchanged:true,manualTextPreserved:true,hash:write.originalHash};save()
   console.log(JSON.stringify({phase:'saved-reopened',format,grade:1}))
  }
- const result={project,grade:1,catalog:'evaluation-2026.94',verification:'AUTHENTICATED_HTTP_DB_NOT_BROWSER',sourceScope:'NOT_INSTALLED_YET',samples:progress.writes.map(w=>w.verified),timings:progress.timings,browser:'PENDING'}
+ const result={project,grade:1,catalog,verification:'AUTHENTICATED_HTTP_DB_NOT_BROWSER',sourceScope:'NOT_INSTALLED_YET',samples:progress.writes.map(w=>w.verified),timings:progress.timings,browser:'PENDING'}
+ writeFileSync(path+runKey+'-http.json',JSON.stringify(result,null,2)+'\n')
  writeFileSync(path+'social-1-http.json',JSON.stringify(result,null,2)+'\n')
 }finally{await prisma.$disconnect()}

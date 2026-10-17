@@ -13,6 +13,10 @@ const samples=[
  ['perspectives','Compara liberalismo y conservadurismo en Europa e interpreta las perspectivas de los autores proporcionados.'],
  ['alternative','Elabora una línea de tiempo o un mapa sobre la expansión colonial europea.'],
  ['argument','Debate sobre los efectos sociales de la Segunda Revolución Industrial y justifica los argumentos con las fuentes proporcionadas.'],
+ ['questions-hypotheses','Formula preguntas e hipótesis provisionales sobre la expansión colonial europea. No investigues nuevas fuentes.'],
+ ['source-reliability','Identifica cuáles de las fuentes proporcionadas para el estudio geográfico son confiables y justifica tu selección.'],
+ ['historical-news','Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.'],
+ ['digital-prevention','Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.'],
  ...socialGradeOneTopics.map(t=>[t.id,`Explica ${t.label}.`]),
 ]
 const normalized=(p:ReturnType<typeof editableFallbackRecommendation>)=>({activity:p.activityType,type:p.instrumentType,levels:p.levels,criteria:p.criteria.map(({id,sourceReferences,sourceType,...c})=>c)})

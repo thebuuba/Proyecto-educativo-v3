@@ -1,0 +1,373 @@
+{
+  "catalog": "evaluation-2026.96",
+  "grade": 1,
+  "method": "CONTENT_REVIEW_NOT_BROWSER",
+  "reviewedAspects": [
+    "Exactitud disciplinar y fidelidad a la consigna",
+    "Ausencia de requisitos y temas vecinos no pedidos",
+    "Misma evidencia en la progresión de niveles",
+    "Separación de componentes en cotejo y decisiones parciales en ponderada"
+  ],
+  "limits": [
+    "31 rúbricas temáticas y diez familias en cuatro formatos; no revisión individual de los164 ejemplos.",
+    "La cobertura procedimental de la malla continúa parcial.",
+    "Los checks de puntos/paridad complementan la lectura; no la sustituyen."
+  ],
+  "items": [
+    {
+      "caseId": "geography",
+      "instrumentType": "rubrica",
+      "sha256": "b647860a3f998b2b35588515a2a883dad8530c960e52103e90599991699a100c"
+    },
+    {
+      "caseId": "earth",
+      "instrumentType": "rubrica",
+      "sha256": "2d84a5498f6107ea529e9d2fce2be76032f71777657138f6cb530ec44496f00c"
+    },
+    {
+      "caseId": "cartography",
+      "instrumentType": "rubrica",
+      "sha256": "5dc00fc502dfcb8ec742c772250d937f3bd3f82c3dbe7156b3b6a3f27c536c58"
+    },
+    {
+      "caseId": "orientation",
+      "instrumentType": "rubrica",
+      "sha256": "8d42537aed0e68091c7f6eb3cdfc0c8029bb84f930c4112cd821d7288a16ae9c"
+    },
+    {
+      "caseId": "scale",
+      "instrumentType": "rubrica",
+      "sha256": "a01ab419bc905e5ead2599d7b62fef3c9a5ebaa0ca7f0c4b83fbaa48eac28ac4"
+    },
+    {
+      "caseId": "gps",
+      "instrumentType": "rubrica",
+      "sha256": "44745747dbbfc6a5500af5c6d8a9ed62c9e82897a5aea76ef896b6cd76e54f01"
+    },
+    {
+      "caseId": "colonial-expansion",
+      "instrumentType": "rubrica",
+      "sha256": "82c58ff21d06b9d07f73645134af7c070da5c6e5d66952e637b4e46a00051847"
+    },
+    {
+      "caseId": "colonial-domination",
+      "instrumentType": "rubrica",
+      "sha256": "6e6f018929cd06c952401e855529d5da4a952cc3134cf16ddfbc7449590bd1e0"
+    },
+    {
+      "caseId": "triangular-trade",
+      "instrumentType": "rubrica",
+      "sha256": "890624df201db2841291ce53e727656524bc80ef0ebabfe296c27ebf1e6c5cf5"
+    },
+    {
+      "caseId": "colonial-caribbean",
+      "instrumentType": "rubrica",
+      "sha256": "383fedf72ab77f3f8b88d97472452c2586bb68fcf541fa2f3589689fd9024f59"
+    },
+    {
+      "caseId": "santo-domingo-colony",
+      "instrumentType": "rubrica",
+      "sha256": "4ca9ad9a40bc1eae331edbd23866dd7d8e0c01dbbb8644cfc7ca0f8a420eced4"
+    },
+    {
+      "caseId": "island-division",
+      "instrumentType": "rubrica",
+      "sha256": "b011a70c386133ae319fa3b635ad4cf8c354a870431cd7181c39b058f0396392"
+    },
+    {
+      "caseId": "french-revolution",
+      "instrumentType": "rubrica",
+      "sha256": "ce51afa2388837113f35b5e4f3174b146933b65f7301857e6021c1fe85b865ac"
+    },
+    {
+      "caseId": "bourgeois-revolutions",
+      "instrumentType": "rubrica",
+      "sha256": "92fa51224c660b3578b85dfc82db8ccd9128f6d4aab69fba3005545f74bdd32b"
+    },
+    {
+      "caseId": "feudal-states",
+      "instrumentType": "rubrica",
+      "sha256": "1b7601c933a221ddb5518bf5c57318bb9fd06cc449feea50f0aafe316534a338"
+    },
+    {
+      "caseId": "political-currents",
+      "instrumentType": "rubrica",
+      "sha256": "666f70fae4371f5b1687a398131722525df7bda67607cd742ffe11000060ad8d"
+    },
+    {
+      "caseId": "industrialization",
+      "instrumentType": "rubrica",
+      "sha256": "7601c72aa1f19f5b3a743404958d8b17ef2ac322d09cb120a077c44287af14a2"
+    },
+    {
+      "caseId": "labor-movement",
+      "instrumentType": "rubrica",
+      "sha256": "80028745a13844b9543ab30078408b99afc0e00b3e1bd2481d17c69cff35bba8"
+    },
+    {
+      "caseId": "women-rights",
+      "instrumentType": "rubrica",
+      "sha256": "430073e6371092185d729834f7eeda5258d8e8d03be139e6504dd5f760daae3b"
+    },
+    {
+      "caseId": "independence",
+      "instrumentType": "rubrica",
+      "sha256": "e5558ea4d4a332c8056616b3787c4958f235c437532d78aba3760cfca71548d8"
+    },
+    {
+      "caseId": "nationalism",
+      "instrumentType": "rubrica",
+      "sha256": "dcf2adb64efdc343b9c5d899a50edacdbf497fa1c309d455d6b72bc0d71f57ba"
+    },
+    {
+      "caseId": "culture",
+      "instrumentType": "rubrica",
+      "sha256": "b555f3e2edd179c7babfe6db87c70455c71b5acf52c61d698ee91958376de3a3"
+    },
+    {
+      "caseId": "human-rights",
+      "instrumentType": "rubrica",
+      "sha256": "747dab6fd65d0cea1d1ad3ac1d1bbbbf10721bbcaf91bc72418fe36caf7edda8"
+    },
+    {
+      "caseId": "constitution",
+      "instrumentType": "rubrica",
+      "sha256": "76c78b785c0ca897ce4a610f9d55ab0292dc00ef6ab49dcd5be74f0e0131cd41"
+    },
+    {
+      "caseId": "peace",
+      "instrumentType": "rubrica",
+      "sha256": "cdcfc987ecf67cbb51e8d071f392b34cf62be49aef194388be94cf312725c09d"
+    },
+    {
+      "caseId": "national-symbols",
+      "instrumentType": "rubrica",
+      "sha256": "daf0e754012127d70fe885f30b411a3e1b98fb11ed0f707f5523dd22065f836e"
+    },
+    {
+      "caseId": "road-safety",
+      "instrumentType": "rubrica",
+      "sha256": "1e711a63971c3812ba1d2df3616220e08641037bf46c96f3f978658259ad7f15"
+    },
+    {
+      "caseId": "taxes",
+      "instrumentType": "rubrica",
+      "sha256": "6efbd702e2d1e9300160040dbba6d22bc9011471fef6710e7adc3a6cea630819"
+    },
+    {
+      "caseId": "environment",
+      "instrumentType": "rubrica",
+      "sha256": "214eee7dcc29a9e5c713a229007747471e287af2a6c1b3ee65061c3ee42ba9bc"
+    },
+    {
+      "caseId": "personal-safety",
+      "instrumentType": "rubrica",
+      "sha256": "fefeec000ebff7ea80ba65e1468ef299a7af85b6b763a9c2b132a1eae03b7c08"
+    },
+    {
+      "caseId": "digital-safety",
+      "instrumentType": "rubrica",
+      "sha256": "8556f98f736cec7d3865be299fc007d64cd0959cb5eff38a70c169a590be430b"
+    },
+    {
+      "caseId": "causal",
+      "instrumentType": "rubrica",
+      "sha256": "a739b7b3a2308b15020837c4c13fea8713c3e6cbf344f47ec2a9312898dcf463"
+    },
+    {
+      "caseId": "causal",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9b4fee7e98e6b5b86fd5b0955db98ee22b2bfd7211475ef4c86bd8fd40ec2720"
+    },
+    {
+      "caseId": "causal",
+      "instrumentType": "escala",
+      "sha256": "dfcb6d1c6f8a1b0673dd9b277bf50886acf1cf720f16cc75dfc759e06a639ab4"
+    },
+    {
+      "caseId": "causal",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f0f2cf88d2f37fc293b1f854a2ddab1f1e191b33104c4bd243ec1c099477499f"
+    },
+    {
+      "caseId": "chronology",
+      "instrumentType": "rubrica",
+      "sha256": "e74cd86b8264bd6de2bc462e726df3d28e983870a7f5f7a53d725db4d2ad27f5"
+    },
+    {
+      "caseId": "chronology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "73e46d3585c1ad840a395cd57d116471ef9c663bfdde0473be25bb1b31c8ff8c"
+    },
+    {
+      "caseId": "chronology",
+      "instrumentType": "escala",
+      "sha256": "1b237f783a5b3f45531358119df42a7cdd4b3e0141923cc18eb6f927dc8858de"
+    },
+    {
+      "caseId": "chronology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f97b34b845e263623e88f21c3196108628711701fa877d7ce1422e13e6e7f0cc"
+    },
+    {
+      "caseId": "spatial",
+      "instrumentType": "rubrica",
+      "sha256": "45e79310bb10f0bc45af18bf33c6ecace3b7f6dbe7cfc396bd45d21d17d9009a"
+    },
+    {
+      "caseId": "spatial",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2b599d31dc539042bfbc0a2de450fa3777f8e2573455bd0cea47f1fa30d6c5c6"
+    },
+    {
+      "caseId": "spatial",
+      "instrumentType": "escala",
+      "sha256": "71cca05f4257eec5b005364a170dc879595d09e5b213a5f294bea0ed4d4c8d22"
+    },
+    {
+      "caseId": "spatial",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f5634341a5047ae9d61ad5fba4f808bb303e25d8cf3a6983e5f39303781703e0"
+    },
+    {
+      "caseId": "perspectives",
+      "instrumentType": "rubrica",
+      "sha256": "969ba27f2875d75a51f38d677aaf5b44a4146c43543ef124138f1bfea31adb26"
+    },
+    {
+      "caseId": "perspectives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "64f322fc9dcdbd10f43dc208881f7e3a6ca3ffaff4b564b9a27771213ba74f6f"
+    },
+    {
+      "caseId": "perspectives",
+      "instrumentType": "escala",
+      "sha256": "f53c7941ac210667b21e73d83431a8ea5d6acdb173c9d6b9f6aa7a38696d39e4"
+    },
+    {
+      "caseId": "perspectives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c2e36781de8c11d5abc19bab1a5ece4a74df3a4272c0a290eff2e75498feb609"
+    },
+    {
+      "caseId": "alternative",
+      "instrumentType": "rubrica",
+      "sha256": "2711a3eb66cf504a12851f4c6758eff26e6147ace0ee1d6a6db14d9cbb3c37b4"
+    },
+    {
+      "caseId": "alternative",
+      "instrumentType": "lista-cotejo",
+      "sha256": "00e007e64fd04b0c2d1c56c443a2bb887d8eaf132091371da0bfd6e5537dee96"
+    },
+    {
+      "caseId": "alternative",
+      "instrumentType": "escala",
+      "sha256": "b87de12b301e8bfb2edc82210cd5790a5cda5f066a195f5102ef61fc9ead4e01"
+    },
+    {
+      "caseId": "alternative",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3ee8c9f57da8e92212075f467e69049251d66b698bc6e62a41de648a99ff94b8"
+    },
+    {
+      "caseId": "argument",
+      "instrumentType": "rubrica",
+      "sha256": "31cb8bbbcd6aba5ecfb508fa073fbd98e359e095f355f54ff5d6a507e7a4ea23"
+    },
+    {
+      "caseId": "argument",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8e528d54c7b6c074899af43b4c1b72bbc6bc3b16fbf0ac1572e92abfadcf11fa"
+    },
+    {
+      "caseId": "argument",
+      "instrumentType": "escala",
+      "sha256": "6f4a9b16671aaedc39be2c66e35e6b5c7f93b5794cd1974251ae692f78e65d5a"
+    },
+    {
+      "caseId": "argument",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ab83db1f64c6625dfb8bd4464ad579ef296171623378667e974b33d656da8c56"
+    },
+    {
+      "caseId": "questions-hypotheses",
+      "instrumentType": "rubrica",
+      "sha256": "9369e5e1f1c83e742a3110e6347d95b749cc6027c37166373e7acdf388f07ece"
+    },
+    {
+      "caseId": "questions-hypotheses",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b1ae479d39ddaf68bbe18f803701fab7f13a8aa87a9d18599ebd046a7a26c6ad"
+    },
+    {
+      "caseId": "questions-hypotheses",
+      "instrumentType": "escala",
+      "sha256": "e91d3f31f64cd061be691457267a56669c756c610920285d2aab4480afc40a6d"
+    },
+    {
+      "caseId": "questions-hypotheses",
+      "instrumentType": "lista-ponderada",
+      "sha256": "29cbea02293a4d318d82d5e1b4a6120523ae67a3234123f1a303d50b27d2e1ec"
+    },
+    {
+      "caseId": "source-reliability",
+      "instrumentType": "rubrica",
+      "sha256": "42bad93a3d3fc5c7bb4886b689ae713cdf707d82573674bd496ee5fd819c79be"
+    },
+    {
+      "caseId": "source-reliability",
+      "instrumentType": "lista-cotejo",
+      "sha256": "54087934f9b37ec9c86468e569f02c654d2af7454e0e769da40dd6387b1528c9"
+    },
+    {
+      "caseId": "source-reliability",
+      "instrumentType": "escala",
+      "sha256": "c1dc2a777fd1781a24b45421e644812ee0a6443df2698693221ac43fa02f32d7"
+    },
+    {
+      "caseId": "source-reliability",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4fdea75b228c7b52f662a08d4976b660d363875f151123cac4fa750f9f133d8b"
+    },
+    {
+      "caseId": "historical-news",
+      "instrumentType": "rubrica",
+      "sha256": "796c9b1951bf6b353a2977f3c66ae0a90300431e5f87c8b36e312b11afa5109a"
+    },
+    {
+      "caseId": "historical-news",
+      "instrumentType": "lista-cotejo",
+      "sha256": "14c5bb488c7e2c16d6133a43da32a66007e6b25b408fd528f0c934278113f643"
+    },
+    {
+      "caseId": "historical-news",
+      "instrumentType": "escala",
+      "sha256": "7f4a7249d0eb32a6f3ac6afbe80a73e97dc92ae8b8583cac92fc3a35faa44c51"
+    },
+    {
+      "caseId": "historical-news",
+      "instrumentType": "lista-ponderada",
+      "sha256": "63bdc30fe412dba64bdad9914d5532fa48162569e98e87b6c986fddc8b52c7e1"
+    },
+    {
+      "caseId": "digital-prevention",
+      "instrumentType": "rubrica",
+      "sha256": "f7533ad67a46724c0bfca58431acd18faa8c5169c86f96bee6abe8841b8d52b5"
+    },
+    {
+      "caseId": "digital-prevention",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b8e8ed37924607dbdffeaa508c08ca80e70aa2f7f9bec659f7ca308f2d712dfc"
+    },
+    {
+      "caseId": "digital-prevention",
+      "instrumentType": "escala",
+      "sha256": "b2fad996c56f777e448bfa75de5529c44f5272a50642364441826c21cd8bf364"
+    },
+    {
+      "caseId": "digital-prevention",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4b2f15f1be68ffe4a86dc7873dfc6e9c5e1400024a89dd815b476e76e0322da3"
+    }
+  ]
+}

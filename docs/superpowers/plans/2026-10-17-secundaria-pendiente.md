@@ -31,7 +31,7 @@ Consigna corta frente a título incompatible; acciones independientes y negadas;
 - [x] Separar los 17 encabezados sin grado de los 72 ámbitos por grado (54 comunes y 18 optativos académicos).
 - [x] Cotejar visualmente PDF48,49,55 y conservar la procedencia del inventario.
 - [x] Confirmar catálogo servido, disponibilidad de localhost y preservación de históricos actuales.
-- [ ] Guardar auditoría y continuación mediante commit local; push pendiente por instrucción del usuario.
+- [x] Guardar auditoría y continuación mediante commit local `be93440c`; push pendiente por instrucción del usuario.
 
 Archivos: `scripts/evaluation-instruments/secondary-master-inventory.mjs`, `docs/curriculum/cobertura-secundaria/secundaria-inventario-maestro.{json,md}`, informe y continuación de este encargo. La comprobación del script debe rechazar un PDF con hash distinto y scopes duplicados.
 

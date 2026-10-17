@@ -1313,7 +1313,7 @@
       "id": "geography",
       "grade": 1,
       "label": "estudio de la geografía",
-      "match": "geografia|ciencias auxiliares",
+      "match": "geografia|geografic[a-z]*|ciencias auxiliares",
       "relation": "el espacio geográfico y las relaciones entre actividades humanas y medio, distinguiendo las ramas solicitadas",
       "pages": [
         244
@@ -1328,6 +1328,19 @@
         "7b337e68-d2da-5675-9941-7b3a73c89be4",
         "6aaf8bbb-00fc-58de-a894-d3b5a39ff0b7",
         "31433627-c2e1-5e78-95d2-d10654b930d7",
+        "7fef597a-d8d1-548c-85a7-42f2c3eeffe2",
+        "72eb1a95-a108-5a48-9213-0ed0897a2258",
+        "13492377-3336-500e-8318-7a15a3f79258",
+        "ad118fd7-aaf6-5f4b-b64e-7810ff69e291",
+        "eb21df53-968a-59a2-9a7f-948e7053704f",
+        "82e2ea35-3c54-5018-b86d-5af5e441cbc8"
+      ],
+      "reviewedOfficialRecordIds": [
+        "e6d09ffb-9931-5477-81f1-b0bb12696439",
+        "7b337e68-d2da-5675-9941-7b3a73c89be4",
+        "6aaf8bbb-00fc-58de-a894-d3b5a39ff0b7",
+        "31433627-c2e1-5e78-95d2-d10654b930d7",
+        "7fef597a-d8d1-548c-85a7-42f2c3eeffe2",
         "72eb1a95-a108-5a48-9213-0ed0897a2258",
         "ad118fd7-aaf6-5f4b-b64e-7810ff69e291",
         "eb21df53-968a-59a2-9a7f-948e7053704f",
@@ -1338,7 +1351,7 @@
       "id": "earth",
       "grade": 1,
       "label": "la Tierra en el sistema solar",
-      "match": "sistema solar|origen (?:del planeta|de la tierra)|movimientos de la tierra",
+      "match": "sistema solar|origen (?:del planeta|de la tierra)|movimientos de la tierra|nuevos planetas",
       "relation": "la ubicación de la Tierra y los movimientos o modelos explicativos efectivamente estudiados",
       "pages": [
         244,
@@ -1355,14 +1368,24 @@
         "3e114852-6b03-54a4-be83-10e58cf13877",
         "af03dcd5-2eda-57cc-b2ae-a6998ad5b5aa",
         "d4c4d412-e7f9-59dd-9f71-f2a10f2724ae",
-        "3c435ce0-3055-5aa6-b8e8-8b10c89225aa"
+        "3c435ce0-3055-5aa6-b8e8-8b10c89225aa",
+        "fbdfa31c-f1a7-5bd8-9ac8-361f7be63e02"
+      ],
+      "reviewedOfficialRecordIds": [
+        "e230c75c-b394-556e-a310-b7435c9dcb4a",
+        "5f1f4b25-c561-5c9a-8daf-8823de2cae54",
+        "3e114852-6b03-54a4-be83-10e58cf13877",
+        "af03dcd5-2eda-57cc-b2ae-a6998ad5b5aa",
+        "d4c4d412-e7f9-59dd-9f71-f2a10f2724ae",
+        "3c435ce0-3055-5aa6-b8e8-8b10c89225aa",
+        "fbdfa31c-f1a7-5bd8-9ac8-361f7be63e02"
       ]
     },
     {
       "id": "cartography",
       "grade": 1,
       "label": "mapas y planos",
-      "match": "mapas?|planos?|cartografia|cartografic[a-z]*",
+      "match": "mapas?|planos?|cartografia|cartografic[a-z]*|representaciones de la tierra",
       "relation": "la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano",
       "pages": [
         244,
@@ -1378,10 +1401,20 @@
         "5d973fca-bb41-50c6-84d9-b1e2682264ca",
         "86812f13-7914-5352-9e86-b0370ddb1e44",
         "13492377-3336-500e-8318-7a15a3f79258",
+        "92d70e5e-6d8b-58c0-a86f-6464a0bb4642",
         "1187ff12-263b-51bf-a06d-6541b2526ab0",
         "ffb83a20-ed75-5627-8338-90e8089fca7d",
         "a544031a-545d-525c-81a8-1becf18a49bb",
         "4f6fc294-9545-52e2-9b6d-c5970aa94d67"
+      ],
+      "reviewedOfficialRecordIds": [
+        "57977d88-510e-5268-8713-27691b00d424",
+        "5d973fca-bb41-50c6-84d9-b1e2682264ca",
+        "86812f13-7914-5352-9e86-b0370ddb1e44",
+        "13492377-3336-500e-8318-7a15a3f79258",
+        "92d70e5e-6d8b-58c0-a86f-6464a0bb4642",
+        "ffb83a20-ed75-5627-8338-90e8089fca7d",
+        "a544031a-545d-525c-81a8-1becf18a49bb"
       ]
     },
     {
@@ -1406,6 +1439,14 @@
         "1187ff12-263b-51bf-a06d-6541b2526ab0",
         "bf008362-a8a7-557d-a68b-bb56676fad78",
         "ab8cb6f7-913d-5bb4-8a11-532045b3129b"
+      ],
+      "reviewedOfficialRecordIds": [
+        "20638a76-bbc7-51c1-b0f4-60b1d97c6f61",
+        "dd7e043a-1bff-5fc1-8b17-229a0870854d",
+        "563373eb-54e5-587f-9e76-f21ca6419291",
+        "bf008362-a8a7-557d-a68b-bb56676fad78",
+        "ab8cb6f7-913d-5bb4-8a11-532045b3129b",
+        "1187ff12-263b-51bf-a06d-6541b2526ab0"
       ]
     },
     {
@@ -1427,6 +1468,11 @@
         "dd7e043a-1bff-5fc1-8b17-229a0870854d",
         "9dd394f4-51c6-5db2-a2a7-d3578cef60ca",
         "bf008362-a8a7-557d-a68b-bb56676fad78"
+      ],
+      "reviewedOfficialRecordIds": [
+        "dd7e043a-1bff-5fc1-8b17-229a0870854d",
+        "bf008362-a8a7-557d-a68b-bb56676fad78",
+        "9dd394f4-51c6-5db2-a2a7-d3578cef60ca"
       ]
     },
     {
@@ -1444,6 +1490,9 @@
       ],
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
+        "02d4d793-0f6c-5fa5-81b2-b0c4d8dccf73"
+      ],
+      "reviewedOfficialRecordIds": [
         "02d4d793-0f6c-5fa5-81b2-b0c4d8dccf73"
       ]
     },
@@ -1468,16 +1517,22 @@
         "5fbaa909-a9af-589b-a571-08eede5e23f6",
         "c68b813b-dbd9-52a8-95d8-d0ab9ffc5af9",
         "881dcbff-c4b5-5e2d-ab8a-3bf3429f4188"
+      ],
+      "reviewedOfficialRecordIds": [
+        "03c0f43b-e613-5deb-be1a-606d8acf6c37",
+        "c2b86351-bca0-54ab-ab54-b7086bdf5ea3",
+        "5fbaa909-a9af-589b-a571-08eede5e23f6"
       ]
     },
     {
       "id": "colonial-domination",
       "grade": 1,
       "label": "colonialismo y esclavitud",
-      "match": "colonialismo|esclavitud|esclaviz[a-z]*|prejuicio (?:racial|de color)|explotacion colonial",
+      "match": "colonialismo|esclavitud|esclaviz[a-z]*|prejuicio (?:racial|de color)|explotacion (?:colonial|humana)|modelo colonial",
       "relation": "las relaciones de dominación y explotación colonial y las respuestas de las poblaciones sometidas, sin justificar la deshumanización",
       "pages": [
-        245
+        245,
+        246
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
@@ -1486,7 +1541,16 @@
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
         "ddcb9f36-aab5-5057-96c1-bcbaa366edc1",
-        "4f6fc294-9545-52e2-9b6d-c5970aa94d67"
+        "97ff4060-dede-5fcb-9bac-0408f56e0967",
+        "4f6fc294-9545-52e2-9b6d-c5970aa94d67",
+        "66a4f07c-f701-522b-bc4c-87d8a072e5d5"
+      ],
+      "reviewedOfficialRecordIds": [
+        "ddcb9f36-aab5-5057-96c1-bcbaa366edc1",
+        "97ff4060-dede-5fcb-9bac-0408f56e0967",
+        "42118d35-816c-5b79-98de-923b536d9a46",
+        "4f6fc294-9545-52e2-9b6d-c5970aa94d67",
+        "66a4f07c-f701-522b-bc4c-87d8a072e5d5"
       ]
     },
     {
@@ -1504,6 +1568,12 @@
       ],
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
+        "25c02a0d-17d3-5dcd-bd77-6fd8f728066b",
+        "b9dc317e-1c75-5433-b0e0-ed40e78c57ef",
+        "a1e0aaad-b1c7-5b06-a578-575c5550f7c5",
+        "5097177d-ed6e-57fb-836b-82e554673109"
+      ],
+      "reviewedOfficialRecordIds": [
         "25c02a0d-17d3-5dcd-bd77-6fd8f728066b",
         "b9dc317e-1c75-5433-b0e0-ed40e78c57ef",
         "a1e0aaad-b1c7-5b06-a578-575c5550f7c5",
@@ -1529,13 +1599,19 @@
         "08954cd6-7f16-573e-9e50-6ec7555dd2c4",
         "c68b813b-dbd9-52a8-95d8-d0ab9ffc5af9",
         "ada6e5ea-8141-5a00-b962-b76f1b1a3c8c"
+      ],
+      "reviewedOfficialRecordIds": [
+        "7c2ba066-9296-5f2a-94cb-585ad7658368",
+        "08954cd6-7f16-573e-9e50-6ec7555dd2c4",
+        "c68b813b-dbd9-52a8-95d8-d0ab9ffc5af9",
+        "ada6e5ea-8141-5a00-b962-b76f1b1a3c8c"
       ]
     },
     {
       "id": "santo-domingo-colony",
       "grade": 1,
       "label": "colonia de Santo Domingo",
-      "match": "colonizacion.*santo domingo|colonia de santo domingo|produccion agricola|encomiendas?|hato ganadero|bucaneros|filibusteros|corsarios|pirateria|devastaciones|despoblacion.*banda norte|siglo (?:xvi|xvii).*santo domingo",
+      "match": "colonizacion.*santo domingo|colonia de santo domingo|colonia espanola|produccion agricola|encomiendas?|hato ganadero|bucaneros|filibusteros|corsarios|pirateria|devastaciones|despoblacion.*banda norte|siglo (?:xvi|xvii).*santo domingo|santo domingo.*siglos? (?:xvi|xvii)",
       "relation": "las relaciones entre producción, trabajo, población y poder en Santo Domingo durante el período colonial solicitado",
       "pages": [
         245,
@@ -1553,10 +1629,31 @@
         "a1e0aaad-b1c7-5b06-a578-575c5550f7c5",
         "68cdd882-5bdf-56e7-bfc5-168a0b8a2987",
         "42118d35-816c-5b79-98de-923b536d9a46",
+        "15ca9d3e-63aa-532a-b1a3-08b7e727711e",
         "5097177d-ed6e-57fb-836b-82e554673109",
+        "b4eb2326-3d24-5007-b45d-90e637aa3073",
+        "ecb96808-4ebf-5bb2-b3ba-613e3d0564af",
         "b2a0518d-1461-5ffd-b070-f288e568d25d",
         "8e7bf8dd-39ca-5809-a94d-52c94bbb90c3",
         "fd9b0e44-5cfa-527b-ae4b-b81e004c40fb"
+      ],
+      "reviewedOfficialRecordIds": [
+        "18ea85a4-fa18-50e8-952e-0768dccad8d9",
+        "b9dc317e-1c75-5433-b0e0-ed40e78c57ef",
+        "455dc191-6fa8-5c0f-9b6b-9d334cee57aa",
+        "881dcbff-c4b5-5e2d-ab8a-3bf3429f4188",
+        "a1e0aaad-b1c7-5b06-a578-575c5550f7c5",
+        "68cdd882-5bdf-56e7-bfc5-168a0b8a2987",
+        "42118d35-816c-5b79-98de-923b536d9a46",
+        "15ca9d3e-63aa-532a-b1a3-08b7e727711e",
+        "5097177d-ed6e-57fb-836b-82e554673109",
+        "ecb96808-4ebf-5bb2-b3ba-613e3d0564af",
+        "b2a0518d-1461-5ffd-b070-f288e568d25d",
+        "8e7bf8dd-39ca-5809-a94d-52c94bbb90c3",
+        "8646ec16-81b2-5dd5-8b90-82a55f5ae6e0",
+        "fd9b0e44-5cfa-527b-ae4b-b81e004c40fb",
+        "f0556291-27c5-513e-a7c6-13da3443ea58",
+        "b595be1c-fa9c-591a-8d11-f8dc6adcda75"
       ]
     },
     {
@@ -1575,6 +1672,9 @@
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
         "b4eb2326-3d24-5007-b45d-90e637aa3073"
+      ],
+      "reviewedOfficialRecordIds": [
+        "b4eb2326-3d24-5007-b45d-90e637aa3073"
       ]
     },
     {
@@ -1592,6 +1692,9 @@
       ],
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
+        "01b7176c-5625-5604-b244-9164e85d0432"
+      ],
+      "reviewedOfficialRecordIds": [
         "01b7176c-5625-5604-b244-9164e85d0432"
       ]
     },
@@ -1614,6 +1717,12 @@
         "6c4f76e8-b332-5fdd-aefc-d5b8675356b9",
         "f0556291-27c5-513e-a7c6-13da3443ea58",
         "b595be1c-fa9c-591a-8d11-f8dc6adcda75"
+      ],
+      "reviewedOfficialRecordIds": [
+        "344ef9ea-1dda-5651-8e53-381a80d124f5",
+        "6c4f76e8-b332-5fdd-aefc-d5b8675356b9",
+        "f0556291-27c5-513e-a7c6-13da3443ea58",
+        "b595be1c-fa9c-591a-8d11-f8dc6adcda75"
       ]
     },
     {
@@ -1632,6 +1741,9 @@
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
         "1c969f72-75f8-5e9f-9544-52513b5732f3"
+      ],
+      "reviewedOfficialRecordIds": [
+        "1c969f72-75f8-5e9f-9544-52513b5732f3"
       ]
     },
     {
@@ -1649,6 +1761,10 @@
       ],
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
+        "055ff3a5-47ef-5fbe-84f8-29feeb8b27dc",
+        "8e55e1da-0cd8-553b-a014-a3d7e35cf557"
+      ],
+      "reviewedOfficialRecordIds": [
         "055ff3a5-47ef-5fbe-84f8-29feeb8b27dc",
         "8e55e1da-0cd8-553b-a014-a3d7e35cf557"
       ]
@@ -1671,6 +1787,11 @@
         "8ae98a08-c10b-5a21-8e3d-df3eed94c2e9",
         "dea7c50b-e41e-54ef-a389-32325182887f",
         "4ef14a94-942f-5488-baa1-44f1a0e78175"
+      ],
+      "reviewedOfficialRecordIds": [
+        "8ae98a08-c10b-5a21-8e3d-df3eed94c2e9",
+        "dea7c50b-e41e-54ef-a389-32325182887f",
+        "4ef14a94-942f-5488-baa1-44f1a0e78175"
       ]
     },
     {
@@ -1688,6 +1809,10 @@
       ],
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
+        "b666dfce-777a-5659-8535-b197290bc7d2",
+        "2deb7052-ce29-5db8-9347-22e55b2fe985"
+      ],
+      "reviewedOfficialRecordIds": [
         "b666dfce-777a-5659-8535-b197290bc7d2",
         "2deb7052-ce29-5db8-9347-22e55b2fe985"
       ]
@@ -1708,6 +1833,9 @@
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
         "d2ce2e7d-52e6-587a-8a31-1e0f1812193b"
+      ],
+      "reviewedOfficialRecordIds": [
+        "d2ce2e7d-52e6-587a-8a31-1e0f1812193b"
       ]
     },
     {
@@ -1726,6 +1854,9 @@
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
         "32057b95-adae-53bd-b70a-e97c93293fac"
+      ],
+      "reviewedOfficialRecordIds": [
+        "32057b95-adae-53bd-b70a-e97c93293fac"
       ]
     },
     {
@@ -1743,6 +1874,15 @@
       ],
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
+        "ec3c21c8-8c45-55bd-953a-5c3bd082a968",
+        "6c4f76e8-b332-5fdd-aefc-d5b8675356b9",
+        "c34e3011-e4de-5a30-8456-fc99b77ebd33",
+        "2079e4e6-c14c-56be-b8b0-c7695833a4cf",
+        "4ef14a94-942f-5488-baa1-44f1a0e78175",
+        "cbea1f92-5e41-55da-859a-889de759b040",
+        "7065df66-7d68-58ec-9c8c-ef4ace311627"
+      ],
+      "reviewedOfficialRecordIds": [
         "ec3c21c8-8c45-55bd-953a-5c3bd082a968",
         "6c4f76e8-b332-5fdd-aefc-d5b8675356b9",
         "c34e3011-e4de-5a30-8456-fc99b77ebd33",
@@ -1769,6 +1909,10 @@
       "officialRecordCandidates": [
         "2079e4e6-c14c-56be-b8b0-c7695833a4cf",
         "6e865235-9ce6-5265-8d71-33ecf4d46ac0"
+      ],
+      "reviewedOfficialRecordIds": [
+        "2079e4e6-c14c-56be-b8b0-c7695833a4cf",
+        "6e865235-9ce6-5265-8d71-33ecf4d46ac0"
       ]
     },
     {
@@ -1789,6 +1933,10 @@
       "officialRecordCandidates": [
         "19848fad-74a1-5720-b3ee-f9e6ccbbd9ec",
         "859485fb-37ed-562a-8c26-44e85b624eba"
+      ],
+      "reviewedOfficialRecordIds": [
+        "859485fb-37ed-562a-8c26-44e85b624eba",
+        "19848fad-74a1-5720-b3ee-f9e6ccbbd9ec"
       ]
     },
     {
@@ -1814,13 +1962,23 @@
         "96e668e3-ea82-57c1-b935-bfa2591dd889",
         "a07d32e4-20ff-5c9a-b6e1-1d0870d90593",
         "33fa1c91-15f6-5d94-bd3f-c54f3d89bfdc"
+      ],
+      "reviewedOfficialRecordIds": [
+        "859485fb-37ed-562a-8c26-44e85b624eba",
+        "6adc9675-1d63-5ebb-ab59-f15206390943",
+        "2ff0ad60-fdb8-59f1-9ae8-170359f6342d",
+        "51965dac-25b8-5b5f-b775-cd1fedc7204b",
+        "47486361-d32f-5a98-b360-26cde339a355",
+        "96e668e3-ea82-57c1-b935-bfa2591dd889",
+        "a07d32e4-20ff-5c9a-b6e1-1d0870d90593",
+        "33fa1c91-15f6-5d94-bd3f-c54f3d89bfdc"
       ]
     },
     {
       "id": "peace",
       "grade": 1,
       "label": "diálogo y cultura de paz",
-      "match": "cultura de paz|solucion.*conflicto|convivencia|dialogo|decisiones consensuadas",
+      "match": "cultura de paz|solucion.*conflicto|situaciones conflictivas|alternativas de soluciones|convivencia|dialogo|decisiones consensuadas",
       "relation": "la identificación de un conflicto y de alternativas dialogadas que atiendan los derechos de las partes, sin calificar la personalidad",
       "pages": [
         247
@@ -1837,6 +1995,20 @@
         "d169ebbb-2fb8-5ff1-a314-077f1520e8b5",
         "8bee0e8a-e54b-59d9-bb18-9f2921be33c4",
         "33fa1c91-15f6-5d94-bd3f-c54f3d89bfdc",
+        "99cd3791-91b6-505c-86da-42e7fdd2f9a8",
+        "001cd2be-c5a6-594c-b980-418f5c8fdf26",
+        "efc775b7-70ae-500c-a101-8226873cacfb",
+        "c235c6c1-1392-51e0-bcb8-414771729538"
+      ],
+      "reviewedOfficialRecordIds": [
+        "61b85984-082f-521e-bdcb-45578d0251b4",
+        "242d9bcc-d9cc-5351-81a0-146b78396445",
+        "d169ebbb-2fb8-5ff1-a314-077f1520e8b5",
+        "8bee0e8a-e54b-59d9-bb18-9f2921be33c4",
+        "33fa1c91-15f6-5d94-bd3f-c54f3d89bfdc",
+        "99cd3791-91b6-505c-86da-42e7fdd2f9a8",
+        "001cd2be-c5a6-594c-b980-418f5c8fdf26",
+        "efc775b7-70ae-500c-a101-8226873cacfb",
         "c235c6c1-1392-51e0-bcb8-414771729538"
       ]
     },
@@ -1858,13 +2030,18 @@
         "95d32ce2-7959-5476-bd2d-cb1825cf3002",
         "ee9264a3-b520-5ad4-863e-1a089cb63fe5",
         "eb83d16e-7065-5aec-ba0a-f181dc5cc316"
+      ],
+      "reviewedOfficialRecordIds": [
+        "95d32ce2-7959-5476-bd2d-cb1825cf3002",
+        "ee9264a3-b520-5ad4-863e-1a089cb63fe5",
+        "eb83d16e-7065-5aec-ba0a-f181dc5cc316"
       ]
     },
     {
       "id": "road-safety",
       "grade": 1,
       "label": "educación vial",
-      "match": "educacion vial|seguridad vial|transito|peatones|ciclistas",
+      "match": "educacion vial|seguridad vial|problemas viales|transito|peatones|ciclistas",
       "relation": "las reglas y decisiones de seguridad vial aplicables a los roles y situaciones indicados",
       "pages": [
         247
@@ -1876,6 +2053,12 @@
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
         "857e5d58-29b3-55c1-a0aa-6ccad653879c",
+        "dc09e438-4237-5f84-b576-2dbdbf38cf57",
+        "7cd2d18e-ca09-52f4-9588-9f832ea65226"
+      ],
+      "reviewedOfficialRecordIds": [
+        "857e5d58-29b3-55c1-a0aa-6ccad653879c",
+        "dc09e438-4237-5f84-b576-2dbdbf38cf57",
         "7cd2d18e-ca09-52f4-9588-9f832ea65226"
       ]
     },
@@ -1894,6 +2077,10 @@
       ],
       "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
       "officialRecordCandidates": [
+        "27c0da90-2f5c-568e-84d4-3961ccff3e2f",
+        "27dabcfb-1edc-5338-9183-bf23a3ff7596"
+      ],
+      "reviewedOfficialRecordIds": [
         "27c0da90-2f5c-568e-84d4-3961ccff3e2f",
         "27dabcfb-1edc-5338-9183-bf23a3ff7596"
       ]
@@ -1922,158 +2109,62 @@
         "cb2b7734-f111-5da7-8875-61be9cb885d5",
         "7a24d777-7180-5e73-8308-2cce1a194ef3",
         "ab0e3c0f-b8a1-55ec-8c5a-1fdd87cf5e98"
+      ],
+      "reviewedOfficialRecordIds": [
+        "a6f6f874-a92f-5837-9c00-bc0e5915f4ca",
+        "39113a4b-ffc8-5dfc-a8b2-2cd44d9d8da5",
+        "0f636ef6-2d64-54fd-9fba-1a240469e804",
+        "27dabcfb-1edc-5338-9183-bf23a3ff7596",
+        "b460b134-d28c-5275-9048-191e95026aa2",
+        "cb2b7734-f111-5da7-8875-61be9cb885d5",
+        "7a24d777-7180-5e73-8308-2cce1a194ef3",
+        "ab0e3c0f-b8a1-55ec-8c5a-1fdd87cf5e98"
+      ]
+    },
+    {
+      "id": "personal-safety",
+      "grade": 1,
+      "label": "prevención de riesgos a la integridad física",
+      "match": "integridad fisica",
+      "relation": "los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas",
+      "pages": [
+        247
+      ],
+      "provider": "packages/shared/src/secondary-social.ts",
+      "familiesImplemented": [
+        "EXPLANATION"
+      ],
+      "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
+      "officialRecordCandidates": [
+        "a98b8713-3095-580c-8aee-2feb972fdb7b"
+      ],
+      "reviewedOfficialRecordIds": [
+        "a98b8713-3095-580c-8aee-2feb972fdb7b"
+      ]
+    },
+    {
+      "id": "digital-safety",
+      "grade": 1,
+      "label": "protección personal en medios digitales",
+      "match": "redes sociales|medios digitales|seguridad digital",
+      "relation": "los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias",
+      "pages": [
+        247
+      ],
+      "provider": "packages/shared/src/secondary-social.ts",
+      "familiesImplemented": [
+        "EXPLANATION"
+      ],
+      "instrumentReview": "PENDING_INDIVIDUAL_REVIEW",
+      "officialRecordCandidates": [
+        "670335d5-80d4-592b-a0c4-51f5b183612e"
+      ],
+      "reviewedOfficialRecordIds": [
+        "670335d5-80d4-592b-a0c4-51f5b183612e"
       ]
     }
   ],
-  "unmappedConceptsAndProcedures": [
-    {
-      "id": "7fef597a-d8d1-548c-85a7-42f2c3eeffe2",
-      "text": "Identificación de fuentes confiables para el estudio\ngeográfico.",
-      "type": "PROCEDURE",
-      "pdfPage": 244,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "d62cd32d-2fc2-5533-8194-e0cb3cc20824",
-      "text": "• Seterra (https://www.geoguessr.com/seterra/es)",
-      "type": "PROCEDURE",
-      "pdfPage": 244,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "74d6cccf-efbf-5729-b43c-a4f1d204a81e",
-      "text": "• Testeando (https://www.testeando.es/La• Tierra - y - el -\nuniverso - ggaansym)",
-      "type": "PROCEDURE",
-      "pdfPage": 244,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "dbc7f644-cb8a-56a3-ac3a-d85f4ec08e3c",
-      "text": "• Juegos Geográficos. (https://world- geography games.\ncom/es/ index.html)",
-      "type": "PROCEDURE",
-      "pdfPage": 244,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "7a199806-5364-5b7f-9e6c-e9d46fa1a43d",
-      "text": "• Global Forest Watch (https://www.globalforestwatch.\norg/)",
-      "type": "PROCEDURE",
-      "pdfPage": 244,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "92d70e5e-6d8b-58c0-a86f-6464a0bb4642",
-      "text": "Uso de las distintas representaciones de la Tierra.",
-      "type": "PROCEDURE",
-      "pdfPage": 244,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "10a9b571-234c-534c-bc98-b35a313f332d",
-      "text": "Historia Universal:",
-      "type": "CONCEPT",
-      "pdfPage": 245,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "a4047743-b74a-5966-9513-534056e62344",
-      "text": "•Demostración de interés en observar su espacio geográfico\nde forma crítica y científica.",
-      "type": "PROCEDURE",
-      "pdfPage": 245,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "fbdfa31c-f1a7-5bd8-9ac8-361f7be63e02",
-      "text": "• Explicación de las implicaciones de descubrimientos de\nnuevos planetas.",
-      "type": "PROCEDURE",
-      "pdfPage": 245,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "97ff4060-dede-5fcb-9bac-0408f56e0967",
-      "text": "• Realización de análisis crítico sobre el trato a los pobladores\nde los continentes sometidos al modelo colonial.",
-      "type": "PROCEDURE",
-      "pdfPage": 245,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "15ca9d3e-63aa-532a-b1a3-08b7e727711e",
-      "text": "• Construcción de organizadores gráficos sobre la decadencia\nde la colonia española durante el siglo XVI y el impacto en\nla población.",
-      "type": "PROCEDURE",
-      "pdfPage": 245,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "047e53d4-797b-587b-b97d-c61225d202b6",
-      "text": "Nuevas ideas políticas:",
-      "type": "CONCEPT",
-      "pdfPage": 246,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "ecb96808-4ebf-5bb2-b3ba-613e3d0564af",
-      "text": "• Descripción de las condiciones de vida de la\npoblación de la isla de Santo Domingo en los\nsiglos XVII y XVIII.",
-      "type": "PROCEDURE",
-      "pdfPage": 246,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "66a4f07c-f701-522b-bc4c-87d8a072e5d5",
-      "text": "• Análisis, mediante cineforums, videos y películas,\nsobre el valor de la lucha contra la explotación\nhumana durante la época colonial.",
-      "type": "PROCEDURE",
-      "pdfPage": 246,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "93715e06-1bd6-5d4d-bce8-0bd034a02b9a",
-      "text": "• Respeto a su persona y a los demás",
-      "type": "CONCEPT",
-      "pdfPage": 247,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "99cd3791-91b6-505c-86da-42e7fdd2f9a8",
-      "text": "• Presentación de propuestas de solución en\nsituaciones conflictivas.",
-      "type": "PROCEDURE",
-      "pdfPage": 247,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "001cd2be-c5a6-594c-b980-418f5c8fdf26",
-      "text": "• Identificación de alternativas de soluciones.",
-      "type": "PROCEDURE",
-      "pdfPage": 247,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "efc775b7-70ae-500c-a101-8226873cacfb",
-      "text": "• Realización de consulta en la escuela y la\ncomunidad para solucionar situaciones\nconflictivas.",
-      "type": "PROCEDURE",
-      "pdfPage": 247,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "dc09e438-4237-5f84-b576-2dbdbf38cf57",
-      "text": "• Presentación de propuesta de solución a\nproblemas viales que afectan la seguridad de\nla ciudadanía.",
-      "type": "PROCEDURE",
-      "pdfPage": 247,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "a98b8713-3095-580c-8aee-2feb972fdb7b",
-      "text": "• Identificación de situaciones que ponen en riesgo\nsu integridad física y la de los demás.",
-      "type": "PROCEDURE",
-      "pdfPage": 247,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    },
-    {
-      "id": "670335d5-80d4-592b-a0c4-51f5b183612e",
-      "text": "• Uso cauteloso de redes sociales y medios digitales\nque pueden poner en riesgo su integridad personal.",
-      "type": "PROCEDURE",
-      "pdfPage": 247,
-      "status": "PENDING_MAPPING_OR_JUSTIFIED_EXCLUSION"
-    }
-  ],
+  "unmappedConceptsAndProcedures": [],
   "implementedFamilies": [
     {
       "id": "causal",
@@ -2104,18 +2195,51 @@
       "id": "argument",
       "description": "Debate sobre los efectos sociales de la Segunda Revolución Industrial y justifica los argumentos con las fuentes proporcionadas.",
       "family": "DEBATE"
+    },
+    {
+      "id": "questions-hypotheses",
+      "description": "Formula preguntas e hipótesis provisionales sobre la expansión colonial europea. No investigues nuevas fuentes.",
+      "family": "QUESTIONS_HYPOTHESES"
+    },
+    {
+      "id": "source-reliability",
+      "description": "Identifica cuáles de las fuentes proporcionadas para el estudio geográfico son confiables y justifica tu selección.",
+      "family": "SOURCE_RELIABILITY"
+    },
+    {
+      "id": "historical-news",
+      "description": "Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.",
+      "family": "HISTORICAL_NEWS"
+    },
+    {
+      "id": "digital-prevention",
+      "description": "Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.",
+      "family": "DIGITAL_PREVENTION"
     }
   ],
   "verification": {
-    "automatedFixtures": 35,
-    "fullInstrumentsGenerated": 140,
-    "fullReview": "PENDING",
+    "automatedFixtures": 41,
+    "fullInstrumentsGenerated": 164,
+    "fullReview": {
+      "reviewedWithMatchingDigest": 71,
+      "pending": 93,
+      "method": "CONTENT_REVIEW_NOT_BROWSER",
+      "limits": [
+        "31 rúbricas temáticas y diez familias en cuatro formatos; no revisión individual de los164 ejemplos.",
+        "La cobertura procedimental de la malla continúa parcial.",
+        "Los checks de puntos/paridad complementan la lectura; no la sustituyen."
+      ]
+    },
     "httpDb": "AUTHENTICATED_FOUR_FORMATS_SAVED_REOPENED",
     "browser": "PENDING",
     "httpEvidence": {
-      "catalog": "evaluation-2026.94",
+      "catalog": "evaluation-2026.96",
       "sourceScope": "NOT_INSTALLED_YET",
       "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada",
         "rubrica",
         "lista-cotejo",
         "escala",
@@ -2125,5 +2249,63 @@
       "manualTextPreserved": true,
       "browser": "PENDING_PERSONAL_ACCOUNT_LOGIN"
     }
-  }
+  },
+  "providerCatalog": "evaluation-2026.96",
+  "explicitExclusions": [
+    {
+      "id": "d62cd32d-2fc2-5533-8194-e0cb3cc20824",
+      "pdfPage": 244,
+      "reason": "SUGGESTED_RESOURCE",
+      "explanation": "Seterra es un recurso sugerido, no una actividad ni un tema obligatorio. No exigir utilizarlo si la consigna no lo solicita."
+    },
+    {
+      "id": "74d6cccf-efbf-5729-b43c-a4f1d204a81e",
+      "pdfPage": 244,
+      "reason": "SUGGESTED_RESOURCE",
+      "explanation": "Testeando es un recurso sugerido; conservar su transcripción literal sin convertir el enlace en un desempeño."
+    },
+    {
+      "id": "dbc7f644-cb8a-56a3-ac3a-d85f4ec08e3c",
+      "pdfPage": 244,
+      "reason": "SUGGESTED_RESOURCE",
+      "explanation": "Juegos Geográficos es un recurso sugerido, aunque su nombre coincida con el patrón del tema geografía."
+    },
+    {
+      "id": "7a199806-5364-5b7f-9e6c-e9d46fa1a43d",
+      "pdfPage": 244,
+      "reason": "SUGGESTED_RESOURCE",
+      "explanation": "Global Forest Watch es una herramienta sugerida; no exigir acceso a ella ni cuentas personales."
+    },
+    {
+      "id": "10a9b571-234c-534c-bc98-b35a313f332d",
+      "pdfPage": 245,
+      "reason": "GROUP_HEADING",
+      "explanation": "Historia Universal agrupa los contenidos coloniales siguientes; no corresponde a un tema adicional con instrumento propio."
+    },
+    {
+      "id": "047e53d4-797b-587b-b97d-c61225d202b6",
+      "pdfPage": 246,
+      "reason": "GROUP_HEADING",
+      "explanation": "Nuevas ideas políticas es un encabezado, desarrollado en las independencias y el nacionalismo; conservar esas correspondencias sin duplicar un tema."
+    },
+    {
+      "id": "a4047743-b74a-5966-9513-534056e62344",
+      "pdfPage": 245,
+      "reason": "PERSONAL_DISPOSITION",
+      "explanation": "Demostrar interés no se califica como rasgo personal; observar e interpretar el espacio sí puede evaluarse cuando la consigna lo pide."
+    },
+    {
+      "id": "93715e06-1bd6-5d4d-bce8-0bd034a02b9a",
+      "pdfPage": 247,
+      "reason": "PERSONAL_DISPOSITION",
+      "explanation": "No inferir respeto o moralidad de la persona. La argumentación de derechos y las decisiones ante un caso se evalúan como acciones observables cuando se solicitan."
+    }
+  ],
+  "semanticMappingReview": "REVIEWED_SOURCE_GROUPS_PROCEDURAL_COVERAGE_STILL_PARTIAL",
+  "semanticMappingLimits": [
+    "Grouping a procedural record under its content does not establish implementation of every product or action in that record.",
+    "Mixed extraction records retain their complete literal text and may require more than one independent action contract.",
+    "The separate achievement indicators remain literal; no automatic topic-indicator equivalence is approved.",
+    "Hypothesis checking, syllogisms, graphic organizers, brainstorms, socratic dialogue and other procedural variants still need explicit contract review."
+  ]
 }

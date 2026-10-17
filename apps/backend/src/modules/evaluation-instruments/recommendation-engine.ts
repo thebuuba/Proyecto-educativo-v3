@@ -243,7 +243,8 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const frenchTask=catalog.frenchModules?.some(module=>module.grade===context?.grade)?resolveCommonFrenchTask(input.activityTitle,input.description??'',context):null
   const mathTask=catalog.mathCommonModules?.some(module=>module.grade===context?.grade)?resolveCommonMathTask(input.activityTitle,input.description??'',context):null
   const commonScience=catalog.scienceCommonModules?.some(module=>module.grade===context?.grade)?resolveCommonScienceTask(input.activityTitle,input.description??'',context):null
-  const socialTask=catalog.socialCommonModules?.some(m=>m.grade===context?.grade)?resolveCommonSocialTask(input.activityTitle,input.description??'',context):null
+  const socialModule=catalog.socialCommonModules?.find(m=>m.grade===context?.grade)
+  const socialTask=socialModule?resolveCommonSocialTask(input.activityTitle,input.description??'',context,socialModule.topics):null
   const scopedType = socialTask?.activityType??commonScience?.activityType??mathTask?.activityType??frenchTask?.activityType??englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', context)
   const detectedByCatalog = catalog.activityTypes.find(entry => entry.id === scopedType)
     ?? detectActivityType(input.activityTitle, input.description ?? '', catalog, false, input.evaluationTechnique)

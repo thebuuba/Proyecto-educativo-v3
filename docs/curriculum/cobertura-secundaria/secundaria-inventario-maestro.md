@@ -79,4 +79,4 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Química y Computación | 5 | Ciencias y Tecnología | 506, 507, 508, 509, 510 | PENDING |
 | Física y Computación | 6 | Ciencias y Tecnología | 511, 512, 513, 514, 515, 516, 517 | PENDING |
 
-No se promete cobertura universal: las áreas implementadas conservan los límites y muestras de sus informes. Las menciones Técnico-Profesionales y Artes requieren localizar fuentes oficiales complementarias. No se duplican como optativas las áreas comunes.
+No se promete cobertura universal: las áreas implementadas conservan los límites y muestras de sus informes. Las fuentes oficiales complementarias de Técnico-Profesional y Artes se localizaron y constan en fuentes-complementarias.json; su revisión y cobertura siguen pendientes. No se duplican como optativas las áreas comunes.

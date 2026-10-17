@@ -797,53 +797,15 @@
     ],
     "criteria": [
       {
-        "templateId": "soc-1-cartography-interpretation",
-        "title": "Comprensión de mapas y planos",
-        "description": "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-        "maxScore": 8.68,
-        "maxScoreUnits": 868,
-        "sourceType": "ACTIVITY_TEMPLATE",
-        "progressionLevels": [
-          "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-          "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
-          "Reconoce información pertinente de mapas y planos, pero una relación del caso queda sin explicar.",
-          "La explicación de mapas y planos confunde los hechos, conceptos o contexto que se deben interpretar.",
-          "No aporta evidencia del desempeño solicitado sobre mapas y planos."
-        ],
-        "relativeWeight": 4,
-        "descriptors": [
-          {
-            "levelId": "L4",
-            "text": "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-            "scoreUnits": 868
-          },
-          {
-            "levelId": "L3",
-            "text": "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
-            "scoreUnits": 579
-          },
-          {
-            "levelId": "L2",
-            "text": "Reconoce información pertinente de mapas y planos, pero una relación del caso queda sin explicar.",
-            "scoreUnits": 289
-          },
-          {
-            "levelId": "L1",
-            "text": "No aporta evidencia del desempeño solicitado sobre mapas y planos.",
-            "scoreUnits": 0
-          }
-        ]
-      },
-      {
         "templateId": "soc-1-scale-interpretation",
         "title": "Comprensión de escalas cartográficas",
-        "description": "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-        "maxScore": 8.67,
-        "maxScoreUnits": 867,
+        "description": "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
         "sourceType": "ACTIVITY_TEMPLATE",
         "progressionLevels": [
-          "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-          "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
           "Reconoce información pertinente de escalas cartográficas, pero una relación del caso queda sin explicar.",
           "La explicación de escalas cartográficas confunde los hechos, conceptos o contexto que se deben interpretar.",
           "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
@@ -852,18 +814,18 @@
         "descriptors": [
           {
             "levelId": "L4",
-            "text": "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-            "scoreUnits": 867
+            "text": "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+            "scoreUnits": 1735
           },
           {
             "levelId": "L3",
-            "text": "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
-            "scoreUnits": 578
+            "text": "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
           },
           {
             "levelId": "L2",
             "text": "Reconoce información pertinente de escalas cartográficas, pero una relación del caso queda sin explicar.",
-            "scoreUnits": 289
+            "scoreUnits": 578
           },
           {
             "levelId": "L1",
@@ -883,32 +845,15 @@
     "levels": [],
     "criteria": [
       {
-        "templateId": "soc-1-cartography-interpretation",
-        "title": "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-        "description": "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-        "maxScore": 8.68,
-        "maxScoreUnits": 868,
-        "sourceType": "ACTIVITY_TEMPLATE",
-        "progressionLevels": [
-          "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-          "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
-          "Reconoce información pertinente de mapas y planos, pero una relación del caso queda sin explicar.",
-          "La explicación de mapas y planos confunde los hechos, conceptos o contexto que se deben interpretar.",
-          "No aporta evidencia del desempeño solicitado sobre mapas y planos."
-        ],
-        "relativeWeight": 4,
-        "descriptors": []
-      },
-      {
         "templateId": "soc-1-scale-interpretation",
-        "title": "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-        "description": "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-        "maxScore": 8.67,
-        "maxScoreUnits": 867,
+        "title": "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "description": "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
         "sourceType": "ACTIVITY_TEMPLATE",
         "progressionLevels": [
-          "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-          "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
           "Reconoce información pertinente de escalas cartográficas, pero una relación del caso queda sin explicar.",
           "La explicación de escalas cartográficas confunde los hechos, conceptos o contexto que se deben interpretar.",
           "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
@@ -948,53 +893,15 @@
     ],
     "criteria": [
       {
-        "templateId": "soc-1-cartography-interpretation",
-        "title": "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-        "description": "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-        "maxScore": 8.68,
-        "maxScoreUnits": 868,
-        "sourceType": "ACTIVITY_TEMPLATE",
-        "progressionLevels": [
-          "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-          "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
-          "Reconoce información pertinente de mapas y planos, pero una relación del caso queda sin explicar.",
-          "La explicación de mapas y planos confunde los hechos, conceptos o contexto que se deben interpretar.",
-          "No aporta evidencia del desempeño solicitado sobre mapas y planos."
-        ],
-        "relativeWeight": 4,
-        "descriptors": [
-          {
-            "levelId": "L4",
-            "text": "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-            "scoreUnits": 868
-          },
-          {
-            "levelId": "L3",
-            "text": "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
-            "scoreUnits": 579
-          },
-          {
-            "levelId": "L2",
-            "text": "Reconoce información pertinente de mapas y planos, pero una relación del caso queda sin explicar.",
-            "scoreUnits": 289
-          },
-          {
-            "levelId": "L1",
-            "text": "No aporta evidencia del desempeño solicitado sobre mapas y planos.",
-            "scoreUnits": 0
-          }
-        ]
-      },
-      {
         "templateId": "soc-1-scale-interpretation",
-        "title": "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-        "description": "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-        "maxScore": 8.67,
-        "maxScoreUnits": 867,
+        "title": "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "description": "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
         "sourceType": "ACTIVITY_TEMPLATE",
         "progressionLevels": [
-          "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-          "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
           "Reconoce información pertinente de escalas cartográficas, pero una relación del caso queda sin explicar.",
           "La explicación de escalas cartográficas confunde los hechos, conceptos o contexto que se deben interpretar.",
           "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
@@ -1003,18 +910,18 @@
         "descriptors": [
           {
             "levelId": "L4",
-            "text": "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-            "scoreUnits": 867
+            "text": "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+            "scoreUnits": 1735
           },
           {
             "levelId": "L3",
-            "text": "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
-            "scoreUnits": 578
+            "text": "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
           },
           {
             "levelId": "L2",
             "text": "Reconoce información pertinente de escalas cartográficas, pero una relación del caso queda sin explicar.",
-            "scoreUnits": 289
+            "scoreUnits": 578
           },
           {
             "levelId": "L1",
@@ -1034,32 +941,15 @@
     "levels": [],
     "criteria": [
       {
-        "templateId": "soc-1-cartography-interpretation",
-        "title": "Comprensión de mapas y planos",
-        "description": "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Parcial (50%): Reconoce información pertinente de mapas y planos, pero una relación del caso queda sin explicar.",
-        "maxScore": 8.68,
-        "maxScoreUnits": 868,
-        "sourceType": "ACTIVITY_TEMPLATE",
-        "progressionLevels": [
-          "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-          "Explica la representación del espacio mediante los elementos cartográficos solicitados y la diferencia de propósito entre mapa y plano utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
-          "Reconoce información pertinente de mapas y planos, pero una relación del caso queda sin explicar.",
-          "La explicación de mapas y planos confunde los hechos, conceptos o contexto que se deben interpretar.",
-          "No aporta evidencia del desempeño solicitado sobre mapas y planos."
-        ],
-        "relativeWeight": 4,
-        "descriptors": []
-      },
-      {
         "templateId": "soc-1-scale-interpretation",
         "title": "Comprensión de escalas cartográficas",
-        "description": "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Parcial (50%): Reconoce información pertinente de escalas cartográficas, pero una relación del caso queda sin explicar.",
-        "maxScore": 8.67,
-        "maxScoreUnits": 867,
+        "description": "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Parcial (50%): Reconoce información pertinente de escalas cartográficas, pero una relación del caso queda sin explicar.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
         "sourceType": "ACTIVITY_TEMPLATE",
         "progressionLevels": [
-          "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
-          "Explica la relación de escala entre distancias representadas y reales; la proyección de Mercator y la escala son conceptos distintos utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica la relación entre distancias representadas y reales mediante la escala solicitada y sus unidades utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
           "Reconoce información pertinente de escalas cartográficas, pero una relación del caso queda sin explicar.",
           "La explicación de escalas cartográficas confunde los hechos, conceptos o contexto que se deben interpretar.",
           "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
@@ -5678,6 +5568,390 @@
     ]
   },
   {
+    "id": "personal-safety",
+    "description": "Explica prevención de riesgos a la integridad física.",
+    "family": "EXPLANATION",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-personal-safety-interpretation",
+        "title": "Comprensión de prevención de riesgos a la integridad física",
+        "description": "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de prevención de riesgos a la integridad física, pero una relación del caso queda sin explicar.",
+          "La explicación de prevención de riesgos a la integridad física confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre prevención de riesgos a la integridad física."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Reconoce información pertinente de prevención de riesgos a la integridad física, pero una relación del caso queda sin explicar.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre prevención de riesgos a la integridad física.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "personal-safety",
+    "description": "Explica prevención de riesgos a la integridad física.",
+    "family": "EXPLANATION",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-personal-safety-interpretation",
+        "title": "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "description": "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de prevención de riesgos a la integridad física, pero una relación del caso queda sin explicar.",
+          "La explicación de prevención de riesgos a la integridad física confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre prevención de riesgos a la integridad física."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "personal-safety",
+    "description": "Explica prevención de riesgos a la integridad física.",
+    "family": "EXPLANATION",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-personal-safety-interpretation",
+        "title": "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "description": "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de prevención de riesgos a la integridad física, pero una relación del caso queda sin explicar.",
+          "La explicación de prevención de riesgos a la integridad física confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre prevención de riesgos a la integridad física."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Reconoce información pertinente de prevención de riesgos a la integridad física, pero una relación del caso queda sin explicar.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre prevención de riesgos a la integridad física.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "personal-safety",
+    "description": "Explica prevención de riesgos a la integridad física.",
+    "family": "EXPLANATION",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-personal-safety-interpretation",
+        "title": "Comprensión de prevención de riesgos a la integridad física",
+        "description": "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Parcial (50%): Reconoce información pertinente de prevención de riesgos a la integridad física, pero una relación del caso queda sin explicar.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos a la integridad física de las personas en el caso indicado y las decisiones de prevención, sin pedir experiencias privadas utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de prevención de riesgos a la integridad física, pero una relación del caso queda sin explicar.",
+          "La explicación de prevención de riesgos a la integridad física confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre prevención de riesgos a la integridad física."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "digital-safety",
+    "description": "Explica protección personal en medios digitales.",
+    "family": "EXPLANATION",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-digital-safety-interpretation",
+        "title": "Comprensión de protección personal en medios digitales",
+        "description": "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+          "La explicación de protección personal en medios digitales confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "digital-safety",
+    "description": "Explica protección personal en medios digitales.",
+    "family": "EXPLANATION",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-digital-safety-interpretation",
+        "title": "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "description": "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+          "La explicación de protección personal en medios digitales confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "digital-safety",
+    "description": "Explica protección personal en medios digitales.",
+    "family": "EXPLANATION",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-digital-safety-interpretation",
+        "title": "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "description": "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+          "La explicación de protección personal en medios digitales confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "digital-safety",
+    "description": "Explica protección personal en medios digitales.",
+    "family": "EXPLANATION",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-digital-safety-interpretation",
+        "title": "Comprensión de protección personal en medios digitales",
+        "description": "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Parcial (50%): Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos de exposición de información en medios digitales y las medidas de protección aplicables al caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+          "La explicación de protección personal en medios digitales confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
     "id": "causal",
     "description": "Analiza las causas y consecuencias de la expansión colonial europea usando las fuentes proporcionadas.",
     "family": "CAUSAL_ANALYSIS",
@@ -7263,6 +7537,1028 @@
           "Presenta una afirmación sobre Segunda Revolución Industrial, pero una razón no se vincula con la evidencia utilizada.",
           "Sustituye el argumento por afirmaciones sin respaldo o por una postura impuesta ajena al análisis.",
           "No aporta evidencia del desempeño solicitado sobre Segunda Revolución Industrial."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "questions-hypotheses",
+    "description": "Formula preguntas e hipótesis provisionales sobre la expansión colonial europea. No investigues nuevas fuentes.",
+    "family": "QUESTIONS_HYPOTHESES",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-colonial-expansion-question",
+        "title": "Preguntas sobre expansión colonial europea",
+        "description": "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles.",
+          "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Formula una pregunta pertinente, pero su delimitación impide relacionarla con los hechos o fuentes indicados.",
+          "Formula preguntas ajenas al problema o que no pueden contrastarse con la información disponible.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles.",
+            "scoreUnits": 744
+          },
+          {
+            "levelId": "L3",
+            "text": "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 496
+          },
+          {
+            "levelId": "L2",
+            "text": "Formula una pregunta pertinente, pero su delimitación impide relacionarla con los hechos o fuentes indicados.",
+            "scoreUnits": 248
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre expansión colonial europea.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-colonial-expansion-hypothesis",
+        "title": "Hipótesis sobre expansión colonial europea",
+        "description": "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+          "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+          "Presenta una opinión como hecho comprobado o una hipótesis incompatible con los hechos conocidos.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+            "scoreUnits": 991
+          },
+          {
+            "levelId": "L3",
+            "text": "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 661
+          },
+          {
+            "levelId": "L2",
+            "text": "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+            "scoreUnits": 330
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre expansión colonial europea.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "questions-hypotheses",
+    "description": "Formula preguntas e hipótesis provisionales sobre la expansión colonial europea. No investigues nuevas fuentes.",
+    "family": "QUESTIONS_HYPOTHESES",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-colonial-expansion-question",
+        "title": "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles.",
+        "description": "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles.",
+          "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Formula una pregunta pertinente, pero su delimitación impide relacionarla con los hechos o fuentes indicados.",
+          "Formula preguntas ajenas al problema o que no pueden contrastarse con la información disponible.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-colonial-expansion-hypothesis",
+        "title": "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+        "description": "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+          "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+          "Presenta una opinión como hecho comprobado o una hipótesis incompatible con los hechos conocidos.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "questions-hypotheses",
+    "description": "Formula preguntas e hipótesis provisionales sobre la expansión colonial europea. No investigues nuevas fuentes.",
+    "family": "QUESTIONS_HYPOTHESES",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-colonial-expansion-question",
+        "title": "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles.",
+        "description": "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles.",
+          "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Formula una pregunta pertinente, pero su delimitación impide relacionarla con los hechos o fuentes indicados.",
+          "Formula preguntas ajenas al problema o que no pueden contrastarse con la información disponible.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles.",
+            "scoreUnits": 744
+          },
+          {
+            "levelId": "L3",
+            "text": "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 496
+          },
+          {
+            "levelId": "L2",
+            "text": "Formula una pregunta pertinente, pero su delimitación impide relacionarla con los hechos o fuentes indicados.",
+            "scoreUnits": 248
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre expansión colonial europea.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-colonial-expansion-hypothesis",
+        "title": "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+        "description": "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+          "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+          "Presenta una opinión como hecho comprobado o una hipótesis incompatible con los hechos conocidos.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+            "scoreUnits": 991
+          },
+          {
+            "levelId": "L3",
+            "text": "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 661
+          },
+          {
+            "levelId": "L2",
+            "text": "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+            "scoreUnits": 330
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre expansión colonial europea.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "questions-hypotheses",
+    "description": "Formula preguntas e hipótesis provisionales sobre la expansión colonial europea. No investigues nuevas fuentes.",
+    "family": "QUESTIONS_HYPOTHESES",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-colonial-expansion-question",
+        "title": "Preguntas sobre expansión colonial europea",
+        "description": "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles. Parcial (50%): Formula una pregunta pertinente, pero su delimitación impide relacionarla con los hechos o fuentes indicados.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles.",
+          "Formula preguntas delimitadas y pertinentes sobre expansión colonial europea que permiten buscar una respuesta mediante los hechos o fuentes disponibles. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Formula una pregunta pertinente, pero su delimitación impide relacionarla con los hechos o fuentes indicados.",
+          "Formula preguntas ajenas al problema o que no pueden contrastarse con la información disponible.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-colonial-expansion-hypothesis",
+        "title": "Hipótesis sobre expansión colonial europea",
+        "description": "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Parcial (50%): La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+          "Plantea una explicación provisional sobre expansión colonial europea y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+          "Presenta una opinión como hecho comprobado o una hipótesis incompatible con los hechos conocidos.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "source-reliability",
+    "description": "Identifica cuáles de las fuentes proporcionadas para el estudio geográfico son confiables y justifica tu selección.",
+    "family": "SOURCE_RELIABILITY",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-geography-source-reliability",
+        "title": "Confiabilidad de las fuentes sobre estudio de la geografía",
+        "description": "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.",
+          "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Distingue fuentes pertinentes, pero la justificación de una selección no se vincula con evidencias de su procedencia o respaldo.",
+          "Considera confiable una fuente por su apariencia o popularidad sin comprobar su procedencia ni respaldo.",
+          "No aporta evidencia del desempeño solicitado sobre estudio de la geografía."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Distingue fuentes pertinentes, pero la justificación de una selección no se vincula con evidencias de su procedencia o respaldo.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre estudio de la geografía.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "source-reliability",
+    "description": "Identifica cuáles de las fuentes proporcionadas para el estudio geográfico son confiables y justifica tu selección.",
+    "family": "SOURCE_RELIABILITY",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-geography-source-reliability",
+        "title": "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.",
+        "description": "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.",
+          "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Distingue fuentes pertinentes, pero la justificación de una selección no se vincula con evidencias de su procedencia o respaldo.",
+          "Considera confiable una fuente por su apariencia o popularidad sin comprobar su procedencia ni respaldo.",
+          "No aporta evidencia del desempeño solicitado sobre estudio de la geografía."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "source-reliability",
+    "description": "Identifica cuáles de las fuentes proporcionadas para el estudio geográfico son confiables y justifica tu selección.",
+    "family": "SOURCE_RELIABILITY",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-geography-source-reliability",
+        "title": "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.",
+        "description": "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.",
+          "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Distingue fuentes pertinentes, pero la justificación de una selección no se vincula con evidencias de su procedencia o respaldo.",
+          "Considera confiable una fuente por su apariencia o popularidad sin comprobar su procedencia ni respaldo.",
+          "No aporta evidencia del desempeño solicitado sobre estudio de la geografía."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Distingue fuentes pertinentes, pero la justificación de una selección no se vincula con evidencias de su procedencia o respaldo.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre estudio de la geografía.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "source-reliability",
+    "description": "Identifica cuáles de las fuentes proporcionadas para el estudio geográfico son confiables y justifica tu selección.",
+    "family": "SOURCE_RELIABILITY",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-geography-source-reliability",
+        "title": "Confiabilidad de las fuentes sobre estudio de la geografía",
+        "description": "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado. Parcial (50%): Distingue fuentes pertinentes, pero la justificación de una selección no se vincula con evidencias de su procedencia o respaldo.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.",
+          "Distingue la confiabilidad de las fuentes proporcionadas sobre estudio de la geografía justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Distingue fuentes pertinentes, pero la justificación de una selección no se vincula con evidencias de su procedencia o respaldo.",
+          "Considera confiable una fuente por su apariencia o popularidad sin comprobar su procedencia ni respaldo.",
+          "No aporta evidencia del desempeño solicitado sobre estudio de la geografía."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "historical-news",
+    "description": "Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.",
+    "family": "HISTORICAL_NEWS",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-bourgeois-revolutions-news-structure",
+        "title": "Organización de la noticia sobre revoluciones burguesas",
+        "description": "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes.",
+          "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La noticia presenta los hechos, pero un componente solicitado no cumple su función informativa.",
+          "Los componentes no permiten reconocer el acontecimiento o presentan como hechos afirmaciones incompatibles con las fuentes.",
+          "No aporta evidencia del desempeño solicitado sobre revoluciones burguesas."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "La noticia presenta los hechos, pero un componente solicitado no cumple su función informativa.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre revoluciones burguesas.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "historical-news",
+    "description": "Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.",
+    "family": "HISTORICAL_NEWS",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-bourgeois-revolutions-news-structure:titular",
+        "title": "Incluye titular que identifica el acontecimiento central sin alterar los hechos sobre revoluciones burguesas.",
+        "description": "Incluye titular que identifica el acontecimiento central sin alterar los hechos sobre revoluciones burguesas.",
+        "maxScore": 5.79,
+        "maxScoreUnits": 579,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "El componente titular cumple su función informativa.",
+          "El componente titular cumple su función, con una precisión secundaria incompleta.",
+          "El componente titular está presente, pero su función queda parcialmente resuelta.",
+          "El componente titular presenta información incompatible con el acontecimiento.",
+          "No incluye el componente titular solicitado."
+        ],
+        "relativeWeight": 1,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-bourgeois-revolutions-news-structure:entrada",
+        "title": "Incluye entrada que resume los datos esenciales del acontecimiento sobre revoluciones burguesas.",
+        "description": "Incluye entrada que resume los datos esenciales del acontecimiento sobre revoluciones burguesas.",
+        "maxScore": 5.78,
+        "maxScoreUnits": 578,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "El componente entrada cumple su función informativa.",
+          "El componente entrada cumple su función, con una precisión secundaria incompleta.",
+          "El componente entrada está presente, pero su función queda parcialmente resuelta.",
+          "El componente entrada presenta información incompatible con el acontecimiento.",
+          "No incluye el componente entrada solicitado."
+        ],
+        "relativeWeight": 1,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-bourgeois-revolutions-news-structure:cuerpo",
+        "title": "Incluye cuerpo que desarrolla los hechos con un orden histórico comprensible sobre revoluciones burguesas.",
+        "description": "Incluye cuerpo que desarrolla los hechos con un orden histórico comprensible sobre revoluciones burguesas.",
+        "maxScore": 5.78,
+        "maxScoreUnits": 578,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "El componente cuerpo cumple su función informativa.",
+          "El componente cuerpo cumple su función, con una precisión secundaria incompleta.",
+          "El componente cuerpo está presente, pero su función queda parcialmente resuelta.",
+          "El componente cuerpo presenta información incompatible con el acontecimiento.",
+          "No incluye el componente cuerpo solicitado."
+        ],
+        "relativeWeight": 1,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "historical-news",
+    "description": "Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.",
+    "family": "HISTORICAL_NEWS",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-bourgeois-revolutions-news-structure",
+        "title": "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes.",
+        "description": "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes.",
+          "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La noticia presenta los hechos, pero un componente solicitado no cumple su función informativa.",
+          "Los componentes no permiten reconocer el acontecimiento o presentan como hechos afirmaciones incompatibles con las fuentes.",
+          "No aporta evidencia del desempeño solicitado sobre revoluciones burguesas."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "La noticia presenta los hechos, pero un componente solicitado no cumple su función informativa.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre revoluciones burguesas.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "historical-news",
+    "description": "Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.",
+    "family": "HISTORICAL_NEWS",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-bourgeois-revolutions-news-structure",
+        "title": "Organización de la noticia sobre revoluciones burguesas",
+        "description": "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes. Parcial (50%): La noticia presenta los hechos, pero un componente solicitado no cumple su función informativa.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes.",
+          "Organiza la noticia histórica sobre revoluciones burguesas con los componentes solicitados (titular, entrada, cuerpo), diferenciando información de los hechos y atribuciones de las fuentes. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La noticia presenta los hechos, pero un componente solicitado no cumple su función informativa.",
+          "Los componentes no permiten reconocer el acontecimiento o presentan como hechos afirmaciones incompatibles con las fuentes.",
+          "No aporta evidencia del desempeño solicitado sobre revoluciones burguesas."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "digital-prevention",
+    "description": "Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.",
+    "family": "DIGITAL_PREVENTION",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-digital-safety-interpretation",
+        "title": "Comprensión de protección personal en medios digitales",
+        "description": "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+          "La explicación de protección personal en medios digitales confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+            "scoreUnits": 868
+          },
+          {
+            "levelId": "L3",
+            "text": "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 579
+          },
+          {
+            "levelId": "L2",
+            "text": "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-digital-safety-proposal",
+        "title": "Propuesta sobre protección personal en medios digitales",
+        "description": "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.",
+          "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La propuesta atiende parte del problema, pero una acción no se relaciona con sus condiciones.",
+          "La propuesta no responde al problema indicado o desconoce los derechos examinados.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.",
+            "scoreUnits": 867
+          },
+          {
+            "levelId": "L3",
+            "text": "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L2",
+            "text": "La propuesta atiende parte del problema, pero una acción no se relaciona con sus condiciones.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "digital-prevention",
+    "description": "Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.",
+    "family": "DIGITAL_PREVENTION",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-digital-safety-interpretation",
+        "title": "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "description": "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+          "La explicación de protección personal en medios digitales confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-digital-safety-proposal",
+        "title": "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.",
+        "description": "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.",
+          "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La propuesta atiende parte del problema, pero una acción no se relaciona con sus condiciones.",
+          "La propuesta no responde al problema indicado o desconoce los derechos examinados.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "digital-prevention",
+    "description": "Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.",
+    "family": "DIGITAL_PREVENTION",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-digital-safety-interpretation",
+        "title": "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "description": "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+          "La explicación de protección personal en medios digitales confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+            "scoreUnits": 868
+          },
+          {
+            "levelId": "L3",
+            "text": "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 579
+          },
+          {
+            "levelId": "L2",
+            "text": "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-digital-safety-proposal",
+        "title": "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.",
+        "description": "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.",
+          "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La propuesta atiende parte del problema, pero una acción no se relaciona con sus condiciones.",
+          "La propuesta no responde al problema indicado o desconoce los derechos examinados.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.",
+            "scoreUnits": 867
+          },
+          {
+            "levelId": "L3",
+            "text": "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L2",
+            "text": "La propuesta atiende parte del problema, pero una acción no se relaciona con sus condiciones.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "digital-prevention",
+    "description": "Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.",
+    "family": "DIGITAL_PREVENTION",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-digital-safety-interpretation",
+        "title": "Comprensión de protección personal en medios digitales",
+        "description": "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Parcial (50%): Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.",
+          "Explica los riesgos de exponer información en medios digitales y sus consecuencias en el caso ficticio, sin divulgar datos o cuentas propias utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce información pertinente de protección personal en medios digitales, pero una relación del caso queda sin explicar.",
+          "La explicación de protección personal en medios digitales confunde los hechos, conceptos o contexto que se deben interpretar.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-digital-safety-proposal",
+        "title": "Propuesta sobre protección personal en medios digitales",
+        "description": "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas. Parcial (50%): La propuesta atiende parte del problema, pero una acción no se relaciona con sus condiciones.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.",
+          "Propone una respuesta al problema indicado de protección personal en medios digitales y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La propuesta atiende parte del problema, pero una acción no se relaciona con sus condiciones.",
+          "La propuesta no responde al problema indicado o desconoce los derechos examinados.",
+          "No aporta evidencia del desempeño solicitado sobre protección personal en medios digitales."
         ],
         "relativeWeight": 4,
         "descriptors": []

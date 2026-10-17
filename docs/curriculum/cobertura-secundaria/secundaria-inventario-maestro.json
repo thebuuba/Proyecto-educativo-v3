@@ -766,7 +766,7 @@
       "status": "PARTIAL_ACTIONS_PENDING_FULL_REVIEW",
       "provider": "packages/shared/src/secondary-social.ts",
       "evidence": "docs/curriculum/cobertura-secundaria/sociales-1-matriz.json",
-      "currentRunVerification": "MATRIX_AND_FROZEN_RELEASE_RECHECKED",
+      "currentRunVerification": "AUTHENTICATED_FOUR_FORMATS_SAVED_REOPENED",
       "nonApplicable": [],
       "notes": null
     },
@@ -2176,13 +2176,14 @@
   "externalSourcesPending": [
     {
       "component": "Menciones Técnico-Profesionales",
-      "status": "OFFICIAL_DESIGNS_TO_LOCATE",
+      "status": "OFFICIAL_FAMILY_INDEX_LOCATED_PROGRAM_DESIGNS_PENDING_REVIEW",
       "reason": "El PDF 2023 remite a diseños propios (PDF55); no inventariados como optativas académicas."
     },
     {
       "component": "Menciones de la modalidad Artes",
-      "status": "OFFICIAL_DESIGNS_TO_LOCATE",
+      "status": "OFFICIAL_DOCUMENTS_LOCATED_REVIEW_PENDING",
       "reason": "Música, Artes Visuales, Artes Escénicas y Artes Aplicadas no equivalen a Educación Artística común."
     }
-  ]
+  ],
+  "complementarySources": "docs/curriculum/cobertura-secundaria/fuentes-complementarias.json"
 }
