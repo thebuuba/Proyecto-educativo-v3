@@ -6,6 +6,7 @@
  * @description Envoltorio genérico de respuesta API.
  * @template T - Tipo de los datos contenidos en la respuesta.
  */
+export * from './profile-settings'
 export type * from './instrument-recommendation'
 export * from './instrument-definition'
 export * from './secondary-language-topics'
