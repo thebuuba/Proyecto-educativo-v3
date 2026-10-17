@@ -7,6 +7,7 @@ import { LoginPage } from './LoginPage'
 import { ApiError } from '@/services/apiClient'
 
 const mocks = vi.hoisted(() => ({
+  setRememberSessionEnabled: vi.fn(),
   login: vi.fn(),
   loginWithProvider: vi.fn(),
   requestMagicLink: vi.fn(),
@@ -28,6 +29,8 @@ vi.mock('@/modules/auth/services/authService', () => ({
   createAulaSession: mocks.createAulaSession,
 }))
 vi.mock('@/modules/auth/services/supabaseClient', () => ({
+  isRememberSessionEnabled: () => false,
+  setRememberSessionEnabled: mocks.setRememberSessionEnabled,
   supabase: { auth: { getUser: mocks.getUser, getSession: mocks.getSession, mfa: { listFactors: mocks.listFactors, challengeAndVerify: mocks.challengeAndVerify } } },
 }))
 
@@ -122,4 +125,14 @@ describe('LoginPage', () => {
     expect(mocks.createAulaSession).toHaveBeenCalledWith('aal2-token')
     expect(mocks.refreshAuth).toHaveBeenCalled()
   })
+})
+
+
+it('permite optar explícitamente por recordar la sesión', async () => {
+  localStorage.clear()
+  render(<MemoryRouter><LoginPage /></MemoryRouter>)
+  const checkbox = screen.getByRole('checkbox', { name: /Recordar sesión/ })
+  expect(checkbox).not.toBeChecked()
+  await userEvent.setup().click(checkbox)
+  expect(mocks.setRememberSessionEnabled).toHaveBeenCalledWith(true)
 })

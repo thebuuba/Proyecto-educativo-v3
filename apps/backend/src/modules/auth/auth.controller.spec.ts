@@ -52,4 +52,16 @@ describe('AuthController: emisión de sesión', () => {
     await expect(controller.register({} as never, response as never)).rejects.toThrow('Usa el registro web')
     expect(response.cookie).not.toHaveBeenCalled()
   })
+  it.each([undefined, 'false', 'true'])('respeta Recordar=%s en login alternativo y onboarding', async (remember) => {
+    trust.isDeviceTrustEnabled.mockReturnValue(false)
+    const controller = new AuthController(authService as never)
+    await controller.login({ email: 'test@example.invalid', password: 'test' }, request as never, response as never, remember)
+    const options = response.cookie.mock.calls.at(-1)![2]
+    expect(options.httpOnly).toBe(true)
+    expect(options.sameSite).toBe('lax')
+    expect(Boolean(options.maxAge)).toBe(remember === 'true')
+    await controller.completeOnboarding('Bearer token', {} as never, request as never, response as never, remember)
+    expect(Boolean(response.cookie.mock.calls.at(-1)![2].maxAge)).toBe(remember === 'true')
+  })
+
 })
