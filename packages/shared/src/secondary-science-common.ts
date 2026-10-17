@@ -5,12 +5,13 @@ import type {CommonScienceTopic} from './secondary-science-common-types'
 import {commonScienceGradeOneTopics} from './secondary-science-grade-1'
 import {commonScienceGradeTwoTopics} from './secondary-science-grade-2'
 import {commonScienceGradeThreeTopics} from './secondary-science-grade-3'
+import {commonScienceGradeFourTopics} from './secondary-science-grade-4'
 import {resolveEvaluationTask} from './evaluation-task-contract'
 
-export const commonScienceTopicsByGrade:Record<number,CommonScienceTopic[]>={1:commonScienceGradeOneTopics,2:commonScienceGradeTwoTopics,3:commonScienceGradeThreeTopics}
+export const commonScienceTopicsByGrade:Record<number,CommonScienceTopic[]>={1:commonScienceGradeOneTopics,2:commonScienceGradeTwoTopics,3:commonScienceGradeThreeTopics,4:commonScienceGradeFourTopics}
 export const commonScienceModules=Object.entries(commonScienceTopicsByGrade).map(([grade,topics])=>({id:`ciencias-naturaleza-comun-${grade}`,grade:Number(grade),topics,policy:'REQUESTED_SCIENTIFIC_ACTIONS_V1'}))
 const normalize=(s:string)=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
-const actionVerb='(?:explic\\w*|describ\\w*|observ\\w*|registr\\w*|identific\\w*|senal\\w*|rotul\\w*|clasific\\w*|orden\\w*|compar\\w*|contrast\\w*|analiz\\w*|interpret\\w*|calcul\\w*|resuel\\w*|resolv\\w*|resolver\\w*|formul\\w*|plante\\w*|realiz\\w*|ejecut\\w*|investig\\w*|consult\\w*|dibuj\\w*|represent\\w*|constru\\w*|elabor\\w*|redact\\w*|escrib\\w*|debat\\w*|argument\\w*|expon\\w*|present\\w*|recolect\\w*|recog\\w*|mid\\w*|medir\\w*|verific\\w*|comprob\\w*)'
+const actionVerb='(?:explic\\w*|describ\\w*|observ\\w*|registr\\w*|identific\\w*|senal\\w*|rotul\\w*|clasific(?:a|an|ar|e|en|aran|ando)|orden\\w*|compar(?:a|an|ar|e|en|aran|ando)|contrast\\w*|analiz\\w*|interpret\\w*|calcul(?:a|an|ar|e|en|aran|ando)|resuel\\w*|resolv\\w*|resolver\\w*|formul\\w*|plante\\w*|realiz\\w*|ejecut\\w*|investig\\w*|consult\\w*|dibuj\\w*|represent\\w*|constru\\w*|elabor\\w*|redact\\w*|escrib\\w*|debat\\w*|argument\\w*|expon\\w*|present\\w*|recolect\\w*|recog\\w*|mid\\w*|medir\\w*|verific\\w*|comprob\\w*)'
 export function scienceRequirementText(value:string){
  return normalize(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' '))
   .replace(/\b(?:expliqu|clasifiqu|identifiqu|verifiqu|justifiqu)(?:e|en)\b/g,word=>word.replace('qu','c'))
@@ -18,6 +19,7 @@ export function scienceRequirementText(value:string){
   .replace(/\b(?:recursos?|ejemplos?)\s*:[^.;\n]*/g,'')
   .replace(/\b(?:como recurso|como ejemplo|por ejemplo)[^.;\n]*/g,'')
   .replace(/\b(?:podran|pueden|puede|podra)\s+(?:utiliz\w*|usar\w*|apoy\w*)[^.;\n]*/g,'')
+  .replace(/\b(?:no\s+(?:(?:se|deben?)\s+)?|sin\s+)(?:solicitar|pedir|requerir)\b[^.;\n]*/g,'')
   .replace(/\b(?:no|sin)\s+(?:celula\s+)?(?:animal|vegetal)\b/g,'')
   .replace(new RegExp(`\\b(?:no\\s+(?:(?:se|deben?|es necesario|hay que)\\s+)?|sin\\s+)${actionVerb}[^.;\\n]*`,'g'),'').trim()
 }
@@ -29,9 +31,9 @@ const cognitiveBefore=(text:string,action:RegExp)=>{
  return operation>=0&&cognitive>=0&&cognitive<operation
 }
 const solves=(text:string)=>/\b(?:resuel\w*|resolv\w*|resolver\w*)\b/.test(text)&&!cognitiveBefore(text,/\b(?:resuel\w*|resolv\w*|resolver\w*)\b/)
-const computes=(text:string)=>(/\bcalcul\w*\b/.test(text)||solves(text)&&/\b(?:calculos?|operaciones|numericos?|probabilidad|porcentajes?|densidad|voltaje|corriente|resistencia|ohm)\b/.test(text))&&!cognitiveBefore(text,/\b(?:calcul\w*|resuel\w*|resolv\w*|resolver\w*)\b/)
+const computes=(text:string)=>(/\bcalcul(?:a|an|ar|e|en|aran|ando)\b/.test(text)||solves(text)&&/\b(?:calculos?|operaciones|numericos?|probabilidad|porcentajes?|densidad|voltaje|corriente|resistencia|ohm)\b/.test(text))&&!cognitiveBefore(text,/\b(?:calcul(?:a|an|ar|e|en|aran|ando)|resuel\w*|resolv\w*|resolver\w*)\b/)
 const investigates=(text:string)=>/\b(?:investig(?:a|an|ar|ue|uen|aran|ando)|consult\w*)\b|\bproyecto de investigacion\b/.test(text)
-const compares=(text:string)=>/\b(?:compar\w*|contrast(?:a|an|ar|e|en|aran|ando)|distingu(?:e|en|ir|ira|iran|iendo)|disting(?:a|an))\b/.test(text)
+const compares=(text:string)=>/\b(?:compar(?:a|an|ar|e|en|aran|ando)|contrast(?:a|an|ar|e|en|aran|ando)|distingu(?:e|en|ir|ira|iran|iendo)|disting(?:a|an))\b|\b(?:realiz\w*|elabor\w*|present\w*|redact\w*)\s+(?:una?\s+)?comparacion\b/.test(text)
 const identifies=(text:string)=>/\b(?:(?:identific|senal|rotul)(?:a|an|ar|e|en|aran|ando))\b/.test(text)
 const contrastsHypothesis=(text:string)=>compares(text)&&/hipotesis/.test(text)
 const procedure=(text:string)=>!cognitiveBefore(text,/\b(?:realiz\w*|ejecut\w*|desarroll\w*)\b/)&&/\b(?:realiz\w*|ejecut\w*|desarroll\w*)\b(?:(?!\b(?:exposicion|informe|presentacion|sobre)\b)[^.;])*\b(?:practica|experimento|experiencia experimental)\b/.test(text)
@@ -40,13 +42,21 @@ const constructsDevice=(text:string)=>/\bconstru(?:ye|yen|ir|ya|yan|iran|yendo)\
 const designs=(text:string)=>/\bdisen(?:a|an|ar|e|en|aran|ando)\b/.test(text)&&!cognitiveBefore(text,/\bdisen(?:a|an|ar|e|en|aran|ando)\b/)
 const oralRequested=(text:string)=>resolveEvaluationTask('',text).oral||/\b(?:expon\w*|exposicion|presentacion oral)\b/.test(text)
 function focusedTopic(t:CommonScienceTopic,text:string):CommonScienceTopic{
+ if(t.grade===4){
+  if(t.id==='cell-theory'&&!/teoria/.test(text))return{...t,label:'evidencias microscópicas de células',relation:'las características celulares reconocibles en las imágenes u observaciones microscópicas solicitadas y los límites de la evidencia disponible'}
+  if(t.id==='cell-energy'&&!/mitocondria/.test(text))return{...t,label:'ATP y energía celular',relation:'la función del ATP en la transferencia de energía celular, sin equiparar la molécula con energía en sí misma'}
+  if(t.id==='photosynthesis'&&!/fase|oscura|luminosa/.test(text))return{...t,relation:'la transformación de materia y energía durante la fotosíntesis y su relación con los factores o estructuras expresamente solicitados'}
+  if(t.id==='membrane-transport'&&/osmosis/.test(text)&&!/difusion|activo/.test(text))return{...t,label:'ósmosis',relation:'el movimiento neto de agua a través de una membrana selectivamente permeable según las condiciones del sistema estudiado'}
+  if(t.id==='genetic-variation'&&/ligad[oa]s? al sexo/.test(text))return{...t,label:'herencia ligada al sexo',relation:'la transmisión de los alelos ligados a cromosomas sexuales en el modelo del caso ficticio solicitado, sin inferir información familiar personal'}
+  if(t.id==='classification'&&!/clasific|binomial|linneo|taxonom/.test(text))return{...t,label:'organismos solicitados',relation:'las estructuras y funciones solicitadas de los organismos del modelo o fuente, distinguiendo los grupos presentes sin imponer una clasificación adicional'}
+ }
  if(t.id==='sound'&&/radar/.test(text))return /sonar|ultrasonido|sonido|oido|audicion|ecolocal/.test(text)
   ?{...t,label:'sonido y localización por ondas',relation:'las ondas mecánicas del sonido y sonar frente a las ondas electromagnéticas del radar en los sistemas solicitados, sin confundir sus mecanismos de propagación y detección'}
   :{...t,label:'radar',relation:'la emisión y recepción de ondas electromagnéticas para la detección o localización descrita, según el modelo proporcionado'}
  if(t.id==='energy-conservation'&&!/eficien|sosten|utiliz|racional/.test(text))return{...t,relation:'las transferencias y transformaciones de energía del sistema delimitado, conservando el balance energético sin confundir conservación con ausencia de disipación'}
  if(t.id==='waves'&&/longitudinal|transversal/.test(text))return{...t,relation:'la orientación de la oscilación respecto a la dirección de propagación, distinguiendo orientación paralela y perpendicular en las ondas solicitadas'}
  if(t.id==='radiation'&&/ionizante/.test(text))return{...t,relation:'la energía de la radiación y su capacidad de producir ionización, distinguiendo los tipos estudiados sin equiparar no ionizante con ausencia de efectos'}
- if(t.id==='immunity'&&!/alerg|asma|autoinmun|deficiencia|alteracion|enfermedad/.test(text))return{...t,relation:'la función de defensa del sistema inmunológico y las relaciones entre sus componentes solicitados'}
+ if(t.grade!==4&&t.id==='immunity'&&!/alerg|asma|autoinmun|deficiencia|alteracion|enfermedad/.test(text))return{...t,relation:'la función de defensa del sistema inmunológico y las relaciones entre sus componentes solicitados'}
  if(t.id==='mendel'&&/aportes|trabajos|historia/.test(text))return{...t,label:'aportes de Gregorio Mendel',relation:'los aportes documentados de Gregorio Mendel y su relación con el estudio de la herencia'}
  if(t.id==='nucleic-acids'){
   const dna=/\badn\b|desoxirribonucleico|doble helice/.test(text),rna=/\barn\b|(?<!desoxir)ribonucleico/.test(text)
@@ -75,7 +85,7 @@ export function resolveCommonScienceTask(title:string,description:string,context
  let previous=selected
  const actions=text.split(split).filter(Boolean).map(part=>{const own=find(part);previous=own.length?own:previous;return{text:part,topics:previous}})
  const designedProduct=actions.some(a=>constructsDevice(a.text)||designs(a.text))
- const cellModel=context.grade===2&&actions.some(a=>represents(a.text)&&/maqueta|modelo/.test(a.text)&&!cognitiveBefore(a.text,/\b(?:dibuj\w*|represent\w*|constru\w*|elabor\w*)\b/))
+ const cellModel=(context.grade===2||context.grade===4)&&actions.some(a=>represents(a.text)&&/maqueta|modelo/.test(a.text)&&!cognitiveBefore(a.text,/\b(?:dibuj\w*|represent\w*|constru\w*|elabor\w*)\b/))
  const activityType=actions.some(a=>procedure(a.text))?'LAB_PRACTICE':/\b(?:redact\w*|elabor\w*|escrib\w*)\b.*\binforme\b/.test(text)?'REPORT':investigates(text)?'RESEARCH':designedProduct||cellModel?'PROJECT':/\b(?:debat\w*|debate)\b/.test(text)?'DEBATE':oralRequested(text)?'ORAL_PRESENTATION':actions.some(a=>computes(a.text)||solves(a.text))?'EXERCISE_SET':/\b(?:elabor\w*|desarroll\w*)\b.*\bproyecto\b/.test(text)?'PROJECT':/\b(?:observ\w*|registr\w*)\b/.test(text)&&!explanation(text)?'OBSERVATION':actions.some(a=>compares(a.text)&&!contrastsHypothesis(a.text))?'COMPARISON':'ANALYSIS'
  const technique=activityType==='LAB_PRACTICE'||activityType==='OBSERVATION'?'observacion-sistematica':activityType==='DEBATE'?'debate':activityType==='ORAL_PRESENTATION'?'presentacion':activityType==='RESEARCH'||activityType==='PROJECT'?'proyecto':'analisis-producciones'
  return{grade:context.grade,actions,activityType,technique}
@@ -118,7 +128,7 @@ function actionCriteria({text,topics}:Action):ContextualTopicCriterion[]{
   if(deviceConstruction&&!executing&&/precaucion|seguridad|riesgo/.test(text))add('construction-safety',`Precauciones de construcción sobre ${label}`,`Aplica las precauciones de construcción indicadas para ${label} y comunica incidencias que impidan continuar de forma segura.`,`Aplica parte de las precauciones de ${label}, pero necesita corregir una condición indicada.`,`Mantiene una condición de riesgo identificada sin aplicar las precauciones indicadas.`,2)
   if(contrastsHypothesis(text))add('hypothesis-evidence',`Contraste de hipótesis sobre ${label}`,`Contrasta la hipótesis de ${label} con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación.`,`Relaciona parte de las evidencias de ${label} con la hipótesis, pero deja una inferencia sin respaldo.`,`Sostiene o rechaza la hipótesis de ${label} sin atender a las evidencias disponibles o cambia las observaciones para ajustarlas a lo esperado.`,4)
   if(identifies(text))add('identification',`Identificación de ${label}`,`Identifica los elementos solicitados de ${label} por sus características observables o las referencias proporcionadas.`,`Identifica parte de los elementos de ${label}, pero confunde una característica que permite distinguirlos.`,`Asigna nombres o características incompatibles con los elementos solicitados de ${label}.`)
-  if(/\bclasific\w*\b/.test(text))add('classification',`Clasificación de ${label}`,`Agrupa los elementos solicitados de ${label} aplicando de forma consistente la característica científica que define cada categoría.`,`Clasifica parte de ${label}, pero cambia de característica entre categorías.`,`La clasificación de ${label} contradice las características de los elementos.`)
+  if(/\bclasific(?:a|an|ar|e|en|aran|ando)\b/.test(text))add('classification',`Clasificación de ${label}`,`Agrupa los elementos solicitados de ${label} aplicando de forma consistente la característica científica que define cada categoría.`,`Clasifica parte de ${label}, pero cambia de característica entre categorías.`,`La clasificación de ${label} contradice las características de los elementos.`)
   if(/\borden\w*\b/.test(text))add('sequence',`Secuencia de ${label}`,`Ordena los elementos o etapas solicitados de ${label}, manteniendo ${relation} y la correspondencia con las referencias proporcionadas.`,`Ordena parte de ${label}, pero una transición no mantiene la relación científica solicitada.`,`La secuencia de ${label} contradice el orden o la integración de los elementos del modelo estudiado.`)
   if(representation)add('representation',`Representación de ${label}`,`${alternative?'En la alternativa elegida, dibujo o maqueta, representa':'Representa'} los elementos solicitados de ${label} y sus relaciones científicas, conservando ${relation}; los rótulos o referencias permiten reconocerlos sin valorar destreza artística.`,`La representación permite reconocer parte de ${label}, pero omite o confunde una relación solicitada.`,`La representación de ${label} altera la ubicación o relación científica de los elementos solicitados.`,4)
   const dataSource=/\b(?:obtenid\w*|registrad\w*|recolectad\w*|recogid\w*)\b/.test(text)?'datos registrados':/\b(?:proporcionad\w*|dados?|tabla|grafic[ao])\b/.test(text)?'datos proporcionados':'datos disponibles'

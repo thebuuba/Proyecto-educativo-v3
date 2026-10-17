@@ -14,6 +14,7 @@ const reviewedGeneralRows={
  1:['f163ce34-b263-5dae-8ee9-0285488e7e69','332006c3-e04f-5bad-9e12-e6eba38416fb','492634b8-4f82-58c3-8740-bfb9eecff055','091272e5-3959-5814-b98a-13a4bc1496cd','783566de-dbd6-5811-a657-136cc89368ae'],
  2:['27f3ee3d-4126-58e6-875b-e0eff702ab6c','feafd909-2ad3-5652-ada5-71ba3ac88885','2e3df7fa-4d80-5634-96b4-e4becbb175de','637504dd-85d7-5cf1-b849-bcfbb6381677','f724a398-67d9-58a7-811d-d399c5d611d6'],
  3:['1710f71d-4736-54c1-9fb9-78d71fad9a02'],
+ 4:['a42a4ca0-b53b-521b-ad34-e173531691bb','569e8693-43eb-5748-b46f-29f9aa38e741','5ad0064c-320b-581b-9cb1-e8da472ac1b8','a786a8d9-b980-5faf-8657-626cd5c4e44c','e10d8e75-dce0-5095-9563-330297f2ab51','d3b23c11-4163-58d2-b537-a76074117b6f','8202cc7a-12a0-5062-be5d-ab1dbf964046','1e103eb0-a518-582a-aeba-ea4a94b61f6d'],
 }
 const output={source:{path:'apps/frontend/public/docs/adecuacion-curricular-nivel-secundario-2023.pdf',edition:2023,sha256:source.sha256,versionId:source.versionId},policy:'OFFICIAL_TEXT_SEPARATE_FROM_AULABASE_ADAPTATIONS; INVENTORY_IS_NOT_VERIFIED_COVERAGE',grades:[]}
 for(let grade=1;grade<=6;grade++){

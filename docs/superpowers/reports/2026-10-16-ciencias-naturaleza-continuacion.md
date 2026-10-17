@@ -1,50 +1,64 @@
-# Continuación: Ciencias de la Naturaleza común
+﻿# Continuación: Ciencias de la Naturaleza común
 
-Encargo activo: adjunto `3a8f59da-f60e-4c77-89e3-8f76dce81769/Texto pegado.txt`. Continuar1.º→6.º sin preguntas entre bloques y detenerse al consolidar Ciencias. Sin subagentes. Plan `docs/superpowers/plans/2026-10-16-ciencias-naturaleza-comun.md`.
+Encargo activo: adjunto `3a8f59da-f60e-4c77-89e3-8f76dce81769/Texto pegado.txt`. Terminar Ciencias común de 1.º a 6.º, consolidar y detenerse. Sin subagentes, producción, despliegue, main, reset, borrado previo, IA ni otras asignaturas. Conservar cuentas, borradores e instrumentos históricos.
 
-## Bloques cerrados y Git
+## Git y bloques
 
-Rama `amplia-instrumentos-secundaria`, base inicial `adb5a30728cbec08016a014bc8c4c8f3f6f53cdc`.
+Rama `amplia-instrumentos-secundaria`. Consultar Git antes de nuevos commits/pushes; no duplicar los existentes.
 
-- 1.º: `38bc31d29f3085579e786851823bc3aea70bb57a`, publicado. Tierra/Universo, PDF293–295,112registros,29temas/68consignas/272instrumentos, catálogo86.
-- 2.º: `bad192bae40e435158137d19e3b83b73166ca4f1`, publicado. Ciencias de la Vida, PDF296–299,145registros,30temas/68consignas/272instrumentos, catálogo87.
-- 3.º: este archivo acompaña su cierre; consultar Git/remoto para confirmar hash/push, no duplicarlos. Ciencias Físicas, PDF300–304/impresas299–303,207registros/7relaciones,50grupos/103consignas/412instrumentos. Catálogo88 instaladoCREATED→UNCHANGED y87 congelado. Fuente3 `MINERD_SECUNDARIA_2023_NAT_COMUN_G3_V1`, versión `3c6e1038-a19e-5d75-ae8f-ff8191ff7afd`, scope `096a33fc-0b8a-5ffc-9365-61f5cecfec9a`, idempotente. Sin esquema.
+- 1.º publicado: `38bc31d29f3085579e786851823bc3aea70bb57a`, catálogo 86; 29 temas / 68 consignas / 272 instrumentos y cuatro formatos verificados.
+- 2.º publicado: `bad192bae40e435158137d19e3b83b73166ca4f1`, catálogo 87; 30 temas / 68 consignas / 272 instrumentos y cuatro formatos verificados.
+- 3.º publicado: `29a78352452b8aeb0f2aa4e909677389891cef6b`, catálogo 88; 50 grupos / 103 consignas / 412 instrumentos y cuatro formatos verificados.
+- 4.º implementado y parcialmente verificado. Se prepara commit de preservación con los pendientes explícitos; confirmar hash/push en Git. No declarar cierre visual completo ni Cloudflare aprobado.
+- 5.º/6.º: inventario visual existente; sin proveedor ni fuente instalada. La excepción autorizada para bloqueos permite continuar tareas independientes sin presentar cuarto como terminado.
 
-Informes y pruebas por grado: `docs/superpowers/reports/2026-10-16-ciencias-naturaleza-N{.md,-verificacion.json}`. Matriz, revisión y ejemplos completos en `docs/curriculum/cobertura-secundaria/ciencias-naturaleza-*`.
+## Entorno efectivo y procesos
 
-## Evidencia3.º
+Destino exclusivo `eolgunypmtgrsyrjzcld`. PostgreSQL `app_backend_local` sin bypass RLS, Auth 200, Storage 200 y Vite Development verificados tras el último build. Producción `vqrptqffeezqacwtmlqq` intacta. Credenciales privadas ignoradas; no imprimirlas ni cambiarlas.
 
-- Backend final42.543/104archivos; frontend focalizado1.932/2(paridad/scoring de1.º–3.º y17pruebas de ciclo); buildsbackend/frontend/Cloudflare aprobados tras corregir radar. Cloudflare únicamente dry-run. Última suite frontend completa:42.139/130 al cerrar2.º, sin atribuirla al código3.º. Logs/checks ignorados `grade-3-checks.json`.
-- Se revisaron las evidencias/progresiones y transformaciones de cuatro formatos. Correcciones con casos rojos: medición/diseño/construcción sin imponer experimentos, gráficos femeninos, mezcla de luces frente a sustancias, soluciones no duplicadas, señales no significa señalar, circuito de apoyo no añade otra explicación, conservación no impone eficiencia, comparaciones científicas concretas, ondas longitudinales/transversales y radar/sonar. Radar usa ondas electromagnéticas, sonar mecánicas. No cambió el payload instalado ni se reescribieron instrumentos.
-- HTTP/DBQA cuatro formatos guardados/reabiertos; recheck final `2026-10-16T19:33:01.122Z`,4regeneraciones/5controlessemánticos/FRAINGMAT/Ciencias1y2 aprobados. CuentaQA y contextos ignorados. NO repetir creaciones: `grade-3-http-progress.json`, resultado `grade-3-http.json`. Nuevo script archiva el recheck anterior y elimina el estado final antiguo al iniciar otro; nunca inferir aprobación solo porque exista un JSON previo.
-- Navegador personalDevelopment cuatro formatos generados/editados/guardados/reabiertos con todos los campos idénticos. Rúbrica `d2d42e85-0e69-451c-90d9-916a3c8928bc`(6filas), cotejo `753cbbff-2b04-408c-9f42-b70d610c98a8`(2), escala `04fc0acb-efbc-486c-b71f-13d73ebac70b`(3), ponderada `18721be9-b265-43b5-a06b-138f7781831c`(3). También rúbrica/cotejo se reabrieron de solo lectura en assets finales tras el ajuste de radar. DB confirmó catálogo88/fuente3/scope3 e identidades para los cuatro. `.wrangler/science-source/grade-3-visual{,-db}.json` y captura en informe3.
-- Cuatro controles visibles desde vacío, puntaje vacío,20/17.35 exactos, preparación silenciosa; completar conservó título compatible/puntos, añadir repuso solo el candidato faltante con confirmación de redistribución y agotamiento útil. INQUIRY fundamentada, sin forzar estrategia por cálculo/grupo. ManualCASE_STUDY conservó exactamente tabla/pesos; ponderada41/19/40→7.11/3.30/6.94.
-- Huellas:20releases/89snapshots anteriores a3.º intactos, ahora21/97,8QA nuevos. Línea inicial18/73 intacta. Baseline individual desde2.º en `grade-N-history-before.json`. No se tocaron cuentas/borradores previos.
+Servidor actual: sesión 90443, lanzador 41996, listener 896 al comprobar. Logs `grade-4-runtime-{out,err}.log`. Revisar listener/cadena antes de otro servidor. Entrada final `/assets/index-a58n98-U.js`: dist/HTTP/DOM y SHA de assets/sw comprobados. No borrar caché o almacenamiento. Registraciones privadas completas del service worker no auditadas.
 
-## Entorno, procesos y limitación real
+Tres intentos finales de `pnpm cloudflare:build` generaron assets y anunciaron fin del dry-run, pero el CLI no terminó. Se detuvo solo cada árbol verificado. Logs `grade-4-context-check-4.log`, `grade-4-context-cloudflare-retry.log`, `grade-4-context-cloudflare-terminal.log`; último 96.708 ms, código 4294967295 por interrupción. El tercero usó terminal y tampoco terminó; detener esbuild residual no cerró el CLI. Causa sin aislar. No editar Wrangler/dependencias ni presentar el build anterior como prueba del estado final.
 
-Development exclusivo `eolgunypmtgrsyrjzcld`, PostgreSQL `app_backend_local` sin bypass, Auth/Storage200 y ViteDev. Entrada final `/assets/index-DlUYCCST.js` comprobada dist/HTTP/DOM, assets/`sw.js` porSHA256. No limpiar caché/almacenamiento. Variables/QA/respaldos y `.wrangler` ignorados; nunca imprimir secretos.
+## Cuarto: implementación y evidencia
 
-Servidor actual lanzador9536, listener3564 al comprobar; logs `grade-3-recovery-runtime-{out,err}.log`. Consultar cadena real antes de reiniciar, no dos servidores. Todos los tests/builds/HTTP del bloque terminaron. Detener solo cadena comprobada para recompilar: watchers pueden bloquear PDFs en Windows. `pnpm cloudflare:dev` validaDev y recompila.
+Biología común, PDF 312–315 / impresas 311–314; 192 registros literales. 48 grupos / 104 consignas / 416 instrumentos revisados. Ocho fragmentos o menús generales con exclusión explícita, sin pendientes de mapeo. P1–P6 son procesos, no grados.
 
-Hubo timeout de contexto(center24.578ms), recomendaciones20–32s y un500 por timeout de conexiónPG. Recheck terminó aprobado con recuperación existente. Tras terminarlo se reinició solo Wrangler local y «Reintentar contexto» recuperó el creador. No aumentar timeouts ni declarar resuelta la causa: sigue latencia elevada. Node sololectura: primera conexión/consulta2612ms, siguiente151ms,1activa/6idle,sin bloqueos observados. Generación pura200muestras:p500.4882ms/p950.755ms, sinAuth/DB/HTTP/render. UI cotas30.032/29.209ms, no medidas exactas de render. Evitar superponer HTTP y navegador en próximos bloques para medir con menos concurrencia. No se auditó toda registración privadaSW.
+Fuente `MINERD_SECUNDARIA_2023_NAT_COMUN_G4_V1`, versión `760c88fb-6b46-51ef-8195-d9ae0ac2d872`, scope `7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a`: CREATED→UNCHANGED. Catálogo 90 instalado idempotentemente; 88 y 89 congelados. El 89 se instaló realmente y debe conservarse. Sin migraciones de esquema.
 
-Chrome1, pestaña1796703004, variablesCUA `scienceBrowser`/`scienceTab`. Última página:cotejo3 guardado/reabierto, sin cambios. `scienceThreeVisual` y archivos conservan evidencia. Leer documentaciónCUA al reanudar. No tocar borradores personales antiguos de Francés/Matemática.
+Correcciones científicas y de interpretación descritas en revisión/informe 4: duplicaciones celulares, negaciones, sustantivos confundidos con acciones, foco ATP/fotosíntesis, estructuras frente a clasificación, observación microscópica sin teoría obligatoria y maqueta frente a modelo proporcionado.
 
-## Siguiente acción concreta: 4.º
+Dos arreglos del creador:
 
-Confirmar Git/push del cierre3.º. Las fuentes4.º–6.º YA fueron inspeccionadas visualmente durante esperas, sin conectarlas ni instalarlas:
+- Reconocer explícitamente la revisión de borradores manuales ampliados aunque cambie el tipo pedagógico inferido; mantener modalidad, formato y referencias compatibles. Ocho controles nuevos y 98 regresiones focalizadas aprobados; caso personal reproducido y guardado/reabierto exactamente.
+- Solicitar `/activities/center?contextOnly=true`: evita consultar instrumentos/snapshots/conteos del centro que el creador no consume. Conserva permisos y carga actividades por asignatura/período como antes. Centro general sin cambios. Pruebas rojas antes del arreglo; 144 backend / 17 frontend focalizadas verdes. Simuladores de estrategia y Planificación actualizados. El efecto sobre la latencia personal sigue sin comprobarse.
 
-- 4.º Biología, PDF312–315/impresas311–314,192registros, scope original `2126f8f2-d70a-5c37-8542-f8d00957a51a`,NAT-BIO.
-- 5.º Química, PDF316–318/impresas315–317,138registros, scope `259be83a-7b0a-5eb0-9d42-f4976fde6041`,NAT-QUI.
-- 6.º Física, PDF319–322/impresas318–321,165registros, scope `01b2fa59-0542-551c-95df-8e3ffc4873ed`,NAT-FIS. Ohm está en321, conservar su antecedente parcial y sus snapshots.
+Checks finales: backend 43.386 / 106 archivos y build 0; frontend completo 43.809 / 131 archivos y build 0 (12.718 ms). Manifest `grade-4-checks.json`: Cloudflare interrumpido, no todo aprobado. No repetir suites completas sin cambio o fallo que lo justifique.
 
-P1–P6 son referencias a procesos de la primera página del grado, NOgrados. Se conservan erratas de indicadores literalmente; el encabezado/scope atribuye el componente. OptativasPDF499–517 excluidas. Inventario4.º–6.º NOes cobertura: la matriz los marcaNOT_IMPLEMENTED.
+Conservación histórica: huellas de 18 releases / 73 snapshots iniciales y 21 / 97 anteriores a cuarto intactas. Resultado 23 / 102: dos releases y cinco snapshots nuevos en cuarto. Los cotejos locales no crean snapshots remotos.
 
-Empezar proveedor4.º/pruebas rojas desde los textos y páginas renderizadas; 4.º incluye célula/transporte/respiración/fotosíntesis/mitosis/meiosis, genética, evolución, sistemas humanos y ecología. No convertir actitudes, vida familiar o diagnósticos personales en evaluación. Reutilizar motor compartido; no imponer materiales, experimentos, fuentes o productos ausentes. Congelar88 con build vigente ANTES de avanzar89; nunca sobrescribir congelados/releases existentes.
+## HTTP y sesión personal: no confundir
 
-Por grado: revisión científica de instrumentos completos→paridad/formato20/17.35/lifecycle/regresiones→fuente/release idempotentes→HTTP/DB y navegador cuatro formatos→informe/checks/diff/secretos/commit español/push normal. Continuar5.º/6.º sin preguntas, consolidar y detenerse. Si falla acceso, documentar y continuar tareas independientes sin fingir aprobación visual.
+HTTP inicial de cuarto completo: cuatro formatos guardados, reabiertos y estrategia exclusiva exacta. IDs: rúbrica `c754a2ad-667f-48f7-9d92-528cafdda93c`; cotejo `2d099133-5482-4186-8637-f6ec2f9b4778`; escala `44a0caf9-4e53-4663-86cf-49cd70180a55`; ponderada `5c7f913b-8932-4144-8fe6-703cff3d3ef5`. Se reconciliaron checkpoints antes de repetir escrituras; snapshots iniciales 89/90 conservados.
 
-Scripts `run-science.mjs`: `review N`, `artifacts`, `source-catalog N --install`, `development install|context|history N`, `http N [--recheck]`. Helpers ignorados: `checks.mjs`(adaptar prefijo por grado), `verify-grade-visual.mjs N assignment catalog`, `publish-grade.mjs N`, `run-measure.mjs N`, `find-personal-science.mjs N`. Compilar shared/backend antes de helpersNode(NodeusaDIST, VitestSRC). Imports arriba. Artefactos ya reconocen todas las revisiones visuales, pero solo aprueban exclusiones generales porID explícito1.º–3.º; revisar los nuevos registros sin mapa, nunca convertirlos automáticamente en encabezados. EstadoVERIFIED requiere revisión de instrumentos, fuentes mapeadas y HTTP+4visuales.
+Recheck final 90 en curso, sesión **40977**: `node scripts/evaluation-instruments/run-science.mjs http 4 --recheck`. Revisar antes de otro recheck. Solo lectura/recomendaciones, sin creaciones nuevas. Intento anterior 42283 terminó por dos timeouts de 65 s del centro completo (respuestas 125.464 / 109.009 ms). Guion ahora usa contexto ligero: carga autenticada confirmada (18.937 ms), cuatro reaperturas por hash aprobadas y primeras recomendaciones 90 respondieron 200. Consultar resultado final y regresiones; no asumir aprobación.
 
-Límites: soloDevelopment; sin producción/Hyperdrive/secretos, deploy, main, resets, force-push, borrado de datos previos, esquema remoto, copia de cuentas/datos, IA, dependencias, subagentes u otras asignaturas. Mantener editor vertical/selectores/modales, silencio, puntaje vacío, manuales/pesos, recuperación e identidad/snapshot. Son adaptacionesAulaBase, no rúbricasMINERD ni garantía de toda redacción.
+Chrome 1, pestaña `1796703038`, bindings `scienceBrowser`, `scienceTab`, `scienceFs`, `scienceFourVisual`. Ahora está en login tras «No se pudo cargar tu perfil»; continuar como cuenta recordada lleva a contraseña. No cambiar credenciales ni enviar otro correo durante la ausencia. Captura privada `grade-4-personal-access-blocked.jpg` contiene correo personal: no Git. No sustituir prueba personal por QA.
+
+Contexto personal de cuarto: asignatura `56cf1906-e246-4916-a9e7-081ee1dd0695`, período `fec939cd-a621-4a7e-af29-795e8d792c49`. QA: asignatura `d693f69c-42e2-4e6c-b594-eb027d70a275`, escuela `bc96bc29-98f2-4e80-84d9-506126e20a4c`; credenciales/contexto ignorados.
+
+- Rúbrica personal `8dcc5dd0-be30-446d-a7bf-c282f6fd5364`: 17,35 puntos, seis filas / 36 campos idénticos al reabrir; DB confirma catálogo 90/fuente/scope de cuarto y snapshot `20f25185-1ec0-40b5-ac75-2245ad8eb440`. Cuatro controles, puntaje vacío/20/17,35, estrategia automática y manual exacta, completar solo vacío y agotamiento manual verificados. Se canceló eliminar fila; ninguna borrada.
+- Cotejo personal `445a19f5-936b-4cda-9b0c-09d26c4d2c37`: identificación editada + comparación añadida con redistribución 10+10; revisión reconocida sin alterar tabla, guardado y reapertura de cuatro campos idénticos. Origen local manual `editable-fallback-v1`, snapshot null. No atribuir procedencia remota 90.
+- Actualizar ese cotejo con una nueva recomendación falló dos veces (26.129 / 28.250 ms): transacción Prisma inexistente al crear preferencia docente, con límite de 20 s. DB confirmó original intacto. Pendiente real, sin aumentar timeout.
+- Copia QA `9dbb4d7a-a9e7-4781-aa9a-1db91968faa0` guardada: duplicar utiliza la actividad persistida anterior, por lo que también es local/snapshot null (DB confirmado). Reapertura bloqueada por contexto; no afirmar aprobada.
+- Escala y ponderada personales pendientes por login. Guion manual 4 conserva consignas y controles de 17,35/pesos 41/19/40. `grade-4-visual-partial.json` y progress conservan dos formatos; no crear `grade-4-visual.json` con cuatro aprobados ficticios. No relajar el verificador completo.
+
+Generación pura: 200 muestras, p50 0,149 / p95 0,244 / máximo 0,395 ms. Node DB: primer SELECT 1.877,93 ms; caliente 241,21 ms; igualdad de catálogo de 733.240 bytes 6.039,74 ms. No aísla SQL/red/Worker. Perfil 28–30 s, sesión 16–17 s, recomendaciones 13–35 s. Coste del cliente Prisma por petición aún sin cuantificar. No ocultar latencia con banners/timeouts. DNS ENOTFOUND previo distinto, logs archivados; anteriores al ajuste de contexto en `grade-4-before-context-runtime-*`.
+
+## Siguiente acción
+
+Revisar recheck 40977; actualizar evidencia sin repetir escrituras. Publicar evidencia parcial de cuarto con historia/checks/rendimiento/secretos, revisar diff y hacer commit español/push normal de preservación, explicitando pendientes. Después continuar tareas independientes de quinto y sexto por la excepción autorizada de bloqueo. Reanudar pruebas personales cuando vuelva el acceso. No comenzar otra asignatura.
+
+Quinto: Química, PDF 316–318 / impresas 315–317, 138 registros; scope original `259be83a-7b0a-5eb0-9d42-f4976fde6041`, NAT-QUI. Sexto: Física, PDF 319–322 / impresas 318–321, 165 registros; scope `01b2fa59-0542-551c-95df-8e3ffc4873ed`, NAT-FIS, Ohm en 321. Render/textos privados `pages/N.{png,txt}`, ya inspeccionados visualmente; repasar literal y columnas antes del proveedor. Sin fuentes/proveedores 5–6 todavía. Congelar catálogo 90 compilado antes de cambiar a 91.
+
+Scripts seguros: run-science review/artifacts/source-catalog/development/http, freeze-french-release, verify-development-runtime. `publish-grade.mjs` exige cuatro formatos personales y Cloudflare 0: no usarlo para fingir cierre de cuarto. Nuevo `publish-grade-4-partial.mjs` publica evidencia explícitamente parcial. Helpers antiguos prepare/refine/finalize/update-continuation-4 pueden sobrescribir revisiones: no ejecutarlos.

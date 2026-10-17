@@ -29,7 +29,7 @@ vi.mock('@/services/apiClient', async (importOriginal) => {
     api: {
       ...original.api,
       get: vi.fn(async (path: string) =>
-        path === '/activities/center'
+        path === '/activities/center?contextOnly=true'
           ? {
               activities: [],
               sectionSubjects: [

@@ -3,10 +3,17 @@ import { readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { api } from '@/services/apiClient'
-import { saveActivity } from './activitiesService'
+import { getActivityCenter, saveActivity } from './activitiesService'
 import { activityToDraft, draftToActivity } from '../components/editor/editorModel'
 
-vi.mock('@/services/apiClient', () => ({ api: { post: vi.fn() } }))
+vi.mock('@/services/apiClient', () => ({ api: { post: vi.fn(), get: vi.fn() } }))
+
+it('mantiene el centro completo y solicita el contexto ligero solo de forma explícita', async () => {
+  await getActivityCenter()
+  expect(api.get).toHaveBeenLastCalledWith('/activities/center')
+  await getActivityCenter({ contextOnly: true })
+  expect(api.get).toHaveBeenLastCalledWith('/activities/center?contextOnly=true')
+})
 
 // Compile the actual backend DTO and catalog with its decorator settings, not a copied whitelist.
 const backendRequire = createRequire(resolve('../backend/package.json'))

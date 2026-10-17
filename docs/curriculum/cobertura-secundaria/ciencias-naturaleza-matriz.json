@@ -7333,678 +7333,1129 @@
           "printedPage": "314"
         }
       ],
-      "topics": [],
+      "topics": [
+        {
+          "grade": 4,
+          "pages": [
+            313
+          ],
+          "id": "body-systems",
+          "label": "organización y sistemas del cuerpo humano",
+          "match": "sistemas del cuerpo|biologia humana|enfermedades de los sistemas",
+          "relation": "la integración de las estructuras y funciones de los sistemas humanos solicitados o su alteración en el modelo o caso ficticio, sin diagnosticar personas",
+          "officialRecordIds": [
+            "8cf522b9-c085-54b7-ada5-b79fdc12f1d9",
+            "cfa4365e-d977-5297-b444-df0e0f0d5a1a",
+            "0b33f33e-4a5d-58e6-914b-9af0dbef4c4d",
+            "eefba592-f1e6-5c5d-a64b-b97b067c79d7"
+          ],
+          "families": [
+            "Explica la relación entre estructura y función de los sistemas del cuerpo humano.",
+            "Analiza las enfermedades de los sistemas del cuerpo con el caso ficticio dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "cell-theory",
+          "label": "microscopio y teoría celular",
+          "match": "microscop\\w*|teoria celular",
+          "relation": "las evidencias obtenidas mediante microscopía y su relación con la teoría celular, según las fuentes o imágenes estudiadas",
+          "officialRecordIds": [
+            "e0c7f5d3-1dfe-5c6a-be88-bc5d86c7b384"
+          ],
+          "families": [
+            "Explica la contribución del microscopio a la teoría celular.",
+            "Observa las imágenes microscópicas proporcionadas y describe sus evidencias celulares."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "cells",
+          "label": "organización celular",
+          "match": "celulas?|organizacion celular|procariot\\w*|eucariot\\w*|organel\\w*|organul\\w*|citoplasma|nucleo",
+          "relation": "la organización y las relaciones entre las estructuras y funciones celulares solicitadas",
+          "exclude": "teoria celular|microscop|madre|mitosis|meiosis|especializacion|gametogenesis|espermatogenesis|ovogenesis|celulas sexuales|respiracion celular|energia celular|membrana",
+          "officialRecordIds": [
+            "63dcd4e9-f1b4-54c9-a48b-b8ab548938d2",
+            "d2283cee-dfd2-5fce-97de-56d98b159e32",
+            "6aca24a5-e599-56b7-8e26-ef324e481bb5",
+            "bc19631a-f2b2-5cf8-9688-f426712c0de7",
+            "e0c7f5d3-1dfe-5c6a-be88-bc5d86c7b384",
+            "b0edc56a-b51f-5774-9451-4a39cda62029",
+            "7af17511-ecfc-507b-8d35-9133ada54cae",
+            "de32fa0b-494e-51fd-80f1-77747f2147a2",
+            "9db9d1dc-aef5-5dfb-9671-41cf2cf326ef",
+            "6314a622-0f76-5af3-8254-8a838cb46205",
+            "46a7d155-575d-5619-9104-b0625048d802",
+            "354a143d-efd9-5c16-99d3-2279bb2dfcd2"
+          ],
+          "families": [
+            "Explica las partes y funciones de una célula eucariota.",
+            "Compara célula animal y vegetal.",
+            "Representa la célula animal mediante dibujo o maqueta, sin elaborar ambos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "membrane-transport",
+          "label": "transporte de membrana",
+          "match": "membrana|difusion|osmosis|transporte activo",
+          "relation": "el intercambio de sustancias según el gradiente y la participación de energía en el transporte solicitado, sin confundir difusión, ósmosis y transporte activo",
+          "officialRecordIds": [
+            "6aca24a5-e599-56b7-8e26-ef324e481bb5",
+            "7af17511-ecfc-507b-8d35-9133ada54cae"
+          ],
+          "families": [
+            "Compara difusión, ósmosis y transporte activo con los esquemas dados.",
+            "Realiza la práctica de ósmosis según el procedimiento indicado y registra observaciones.",
+            "Formula una pregunta y una hipótesis sobre ósmosis. Realiza la práctica indicada y contrasta la hipótesis con las evidencias registradas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "tissues",
+          "label": "especialización celular, tejidos, órganos y sistemas",
+          "match": "especializacion celular|tejidos?|sistemas? de organos",
+          "relation": "la especialización de las células y la integración de los tejidos, órganos y sistemas solicitados en sus funciones",
+          "officialRecordIds": [
+            "8de8aef2-2640-53a9-8e3e-10282652baa6",
+            "de32fa0b-494e-51fd-80f1-77747f2147a2"
+          ],
+          "families": [
+            "Explica la especialización celular y la formación de tejidos, órganos y sistemas de órganos.",
+            "Identifica tejidos en las imágenes dadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "transplants",
+          "label": "trasplantes de órganos",
+          "match": "trasplantes?",
+          "relation": "la relación entre la función del órgano, la compatibilidad y los límites o cuestiones bioéticas examinados en las fuentes, sin prescribir decisiones clínicas",
+          "officialRecordIds": [
+            "fda0c1f0-7e93-5335-ba77-8091b361bf89"
+          ],
+          "families": [
+            "Debate sobre trasplantes de órganos con las evidencias y los casos ficticios proporcionados.",
+            "Investiga en fuentes los trasplantes de órganos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "cell-energy",
+          "label": "energía celular, ATP y mitocondria",
+          "match": "energia celular|atp|trifosfato|mitocondria",
+          "relation": "la transferencia de energía mediante ATP y las funciones mitocondriales solicitadas, sin equiparar la molécula con energía en sí misma",
+          "officialRecordIds": [
+            "9db9d1dc-aef5-5dfb-9671-41cf2cf326ef",
+            "0c2d7136-ab4e-54c2-b8f3-294dc1e685f5",
+            "bbd55920-60ad-5905-8018-cb985f733d08"
+          ],
+          "families": [
+            "Explica la relación entre ATP y energía celular.",
+            "Identifica la estructura de la mitocondria en el modelo dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "cell-respiration",
+          "label": "respiración celular y fermentación",
+          "match": "respiracion celular|aerobic\\w*|anaerobic\\w*|fermentacion|proceso respiratorio",
+          "relation": "la transformación de materia y transferencia de energía en la vía estudiada, distinguiendo respiración celular y fermentación sin confundirlas con ventilación pulmonar",
+          "officialRecordIds": [
+            "6314a622-0f76-5af3-8254-8a838cb46205",
+            "d3bdfe8f-281b-501f-b8ac-e2e28f4597b1"
+          ],
+          "families": [
+            "Compara respiración celular aeróbica y fermentación con las fuentes dadas.",
+            "Interpreta la ecuación proporcionada del proceso respiratorio."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "photosynthesis",
+          "label": "fotosíntesis, pigmentos y cloroplastos",
+          "match": "fotosintesis|fotosintet\\w*|cloroplast\\w*|fase luminosa|fase oscura",
+          "relation": "la transformación de materia y energía y las funciones de pigmentos, cloroplastos o fases solicitadas; la fase llamada oscura no exige oscuridad",
+          "officialRecordIds": [
+            "8de8aef2-2640-53a9-8e3e-10282652baa6",
+            "5b3402ed-fa5b-5b71-86c0-2011a8d3e423",
+            "351e49e0-79cb-5015-b9bb-a1af8e982266"
+          ],
+          "families": [
+            "Explica los factores necesarios para la fotosíntesis.",
+            "Compara fase luminosa y fase oscura de la fotosíntesis con el esquema dado.",
+            "Redacta un informe de la práctica de fotosíntesis con los datos proporcionados, sin realizar otro experimento."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "cell-division",
+          "label": "mitosis y meiosis",
+          "match": "mitosis|meiosis",
+          "relation": "la distribución cromosómica y las etapas de la división solicitada, distinguiendo conservación de dotación en mitosis y reducción en meiosis",
+          "officialRecordIds": [
+            "339aa3cd-e576-55a8-891b-a666a3f3b9e3"
+          ],
+          "families": [
+            "Compara mitosis y meiosis.",
+            "Ordena las fases de meiosis en el esquema dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "stem-cells",
+          "label": "células madre",
+          "match": "celulas? madre",
+          "relation": "la autorrenovación y diferenciación de las células madre y los alcances de la aplicación solicitada según las fuentes",
+          "officialRecordIds": [
+            "46a7d155-575d-5619-9104-b0625048d802"
+          ],
+          "families": [
+            "Explica las características de las células madre.",
+            "Argumenta sobre una aplicación de células madre usando la fuente proporcionada."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "gametogenesis",
+          "label": "formación de gametos",
+          "match": "gametogenesis|espermatogenesis|ovogenesis|celulas sexuales",
+          "relation": "la formación y maduración de los gametos solicitados, relacionando división celular y diferenciación sin equiparar los dos procesos",
+          "officialRecordIds": [
+            "354a143d-efd9-5c16-99d3-2279bb2dfcd2"
+          ],
+          "families": [
+            "Compara espermatogénesis y ovogénesis con los esquemas proporcionados.",
+            "Ordena la formación de las células sexuales en el modelo dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312,
+            313
+          ],
+          "id": "mendel",
+          "label": "segunda y tercera leyes de Mendel",
+          "match": "mendel\\w*|punnett|probabilidad.*herencia",
+          "relation": "la segregación y distribución de alelos en el modelo del problema, usando la independencia solo cuando sus condiciones se cumplen, sin convertir probabilidades en resultados individuales seguros",
+          "officialRecordIds": [
+            "1f5d0e6a-5a67-5940-b522-608024216a44",
+            "6bc0546b-0bf3-5761-8ff4-812c9122694d",
+            "a76b5900-58a6-5353-b254-ff5d43775843"
+          ],
+          "families": [
+            "Interpreta los resultados proporcionados de los experimentos de Mendel.",
+            "Calcula las probabilidades de herencia con el cuadro de Punnett y los genotipos proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312,
+            313
+          ],
+          "id": "chromosomes",
+          "label": "cromosomas y genes",
+          "match": "cromosom\\w*|genes?|principios basicos de la genetica|herencia",
+          "relation": "la localización de genes en cromosomas y su participación en la herencia según el modelo solicitado, sin tratar toda característica como determinada por un solo gen",
+          "exclude": "mendel|punnett|probabilidad|alelos multiples|grupo sanguine|mutaci|ligad[oa]s? al sexo|enfermedad|desorden|herencia y medio ambiente|teoria moderna",
+          "officialRecordIds": [
+            "1498b7dc-4f8e-5a62-bc9c-375709e76989",
+            "92ba4b55-9e4e-5146-83aa-d82f2fe5d4ea",
+            "60a63b1a-476e-5127-a654-3ba980155304",
+            "ce54f056-c14e-5a0a-84f4-57d217547e2d",
+            "a78d33b9-ce39-5702-a8f4-5c803fa1d4d9",
+            "992ddfb0-3c2d-5798-adec-d9fba5c0059c",
+            "0a4956c8-c9ed-5904-81ad-b35ac81a2a12",
+            "354a143d-efd9-5c16-99d3-2279bb2dfcd2",
+            "d2c80b99-0c79-51be-9502-8bf69a7632ca",
+            "1a26da75-e5cc-5e47-a306-10b0bd6a9751",
+            "c9155efd-c5ee-5be6-9b92-924e526e477f",
+            "b45d1d61-2c9d-5bfa-a905-8f4fdd4eec8a",
+            "8e8f5f47-b5e4-5df9-b4f6-32f3ecc524c2",
+            "afc92944-e992-5020-baa3-b766cf4dd63a"
+          ],
+          "families": [
+            "Explica la teoría cromosómica de la herencia.",
+            "Identifica genes y cromosomas en el esquema dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312,
+            313
+          ],
+          "id": "nucleic-acids",
+          "label": "ADN y ARN",
+          "match": "adn|arn|desoxirribonucleico|ribonucleico",
+          "relation": "las estructuras y funciones de los ácidos nucleicos solicitados en el almacenamiento o expresión de la información genética",
+          "exclude": "replicacion|codigo genetico|produccion de proteinas|sintesis de proteinas|recombinante",
+          "officialRecordIds": [
+            "c9a033c8-a7f9-5515-b9de-b86b6073c226",
+            "ce54f056-c14e-5a0a-84f4-57d217547e2d",
+            "0a4956c8-c9ed-5904-81ad-b35ac81a2a12",
+            "f414c99a-cd7e-5e42-8d1e-03f443294dbd"
+          ],
+          "families": [
+            "Compara ADN y ARN.",
+            "Representa la estructura del ADN mediante el modelo solicitado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "genetic-expression",
+          "label": "código genético, replicación y proteínas",
+          "match": "codigo genetico|replicacion|produccion de proteinas|sintesis de proteinas",
+          "relation": "la correspondencia de la información genética y su uso en el proceso solicitado, distinguiendo replicación del ADN y producción de proteínas",
+          "officialRecordIds": [
+            "ce54f056-c14e-5a0a-84f4-57d217547e2d",
+            "54a154e1-e52c-5750-a0d4-e5089befc831"
+          ],
+          "families": [
+            "Explica la producción de proteínas usando el código genético proporcionado.",
+            "Ordena la replicación del ADN en el esquema dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "blood-groups",
+          "label": "alelos múltiples y grupos sanguíneos",
+          "match": "alelos multiples|grupos? sanguine\\w*",
+          "relation": "el modelo de alelos múltiples o codominancia del sistema sanguíneo indicado, sin inferir compatibilidad transfusional o parentescos personales",
+          "officialRecordIds": [
+            "896ff5de-b2d5-5a4c-9008-b07f8f249b58"
+          ],
+          "families": [
+            "Calcula probabilidades de grupo sanguíneo con los genotipos ficticios y el modelo ABO dados.",
+            "Explica alelos múltiples con los grupos sanguíneos del caso ficticio."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312,
+            313
+          ],
+          "id": "genetic-variation",
+          "label": "mutaciones, herencia humana y ambiente",
+          "match": "mutacion\\w*|herencia humana|herencia en los humanos|herencia y medio ambiente|ligad[oa]s? al sexo|enfermedades? hereditari\\w*|desordenes? genetic\\w*",
+          "relation": "la variación genética y la influencia del ambiente en el caso estudiado, sin afirmar que toda mutación causa enfermedad ni inferir diagnósticos o historias familiares personales",
+          "officialRecordIds": [
+            "a78d33b9-ce39-5702-a8f4-5c803fa1d4d9",
+            "fa382393-cc53-5211-a040-a3d5e81f2c36",
+            "992ddfb0-3c2d-5798-adec-d9fba5c0059c",
+            "b45d1d61-2c9d-5bfa-a905-8f4fdd4eec8a",
+            "8e8f5f47-b5e4-5df9-b4f6-32f3ecc524c2",
+            "febe8c4a-fea8-5114-b954-9e3ae814aa8b",
+            "afc92944-e992-5020-baa3-b766cf4dd63a"
+          ],
+          "families": [
+            "Analiza mutaciones en genes y cromosomas con los casos ficticios dados.",
+            "Explica herencia y medio ambiente con las fuentes proporcionadas.",
+            "Interpreta la herencia ligada al sexo del caso ficticio sin solicitar datos familiares."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "genetic-engineering",
+          "label": "ingeniería genética y ADN recombinante",
+          "match": "ingenieria genetica|adn recombinante",
+          "relation": "la modificación o combinación de información genética de la aplicación examinada y sus alcances, límites y evidencias, sin exigir intervenciones biológicas",
+          "officialRecordIds": [
+            "0a4956c8-c9ed-5904-81ad-b35ac81a2a12"
+          ],
+          "families": [
+            "Investiga en fuentes ingeniería genética y ADN recombinante.",
+            "Debate sobre ingeniería genética con argumentos de las fuentes dadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312,
+            313
+          ],
+          "id": "life-origin",
+          "label": "origen de la vida y primeros organismos",
+          "match": "origen de la vida|atmosfera primitiva|primeros organismos",
+          "relation": "las hipótesis y evidencias estudiadas sobre condiciones primitivas y primeros organismos, distinguiendo reconstrucciones científicas de observaciones directas",
+          "officialRecordIds": [
+            "000f298f-3a57-57d1-b3ff-e1d1f642dec0",
+            "d585d3cb-e05b-5946-9ccb-edefbe0ba1b8",
+            "caa6a574-5145-5422-9eac-6b4370311e8b",
+            "a2221cbc-e77f-5a9d-aea6-36e85c509df9"
+          ],
+          "families": [
+            "Explica las hipótesis del origen de la vida y la atmósfera primitiva.",
+            "Interpreta el modelo dado de los primeros organismos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312,
+            313
+          ],
+          "id": "evolution-evidence",
+          "label": "pruebas de evolución y fósiles",
+          "match": "pruebas? (?:de la evolucion|evolutivas?)|evidencias? evolutivas?|fosil\\w*|anatomia|embriologia|bioquimica comparada",
+          "relation": "las evidencias comparativas o fósiles solicitadas y sus límites para inferir relaciones e historia evolutiva",
+          "exclude": "eras? (?:y periodos )?geologic|periodos geologic",
+          "officialRecordIds": [
+            "cde47848-230d-52ed-aaa8-43e87bc6a468",
+            "dc224e68-b935-5d1b-a3c1-61b84a445645",
+            "fbab0ed8-db2e-5798-ac06-af0dd6c1a248"
+          ],
+          "families": [
+            "Argumenta con pruebas evolutivas de anatomía, embriología y bioquímica comparadas proporcionadas.",
+            "Interpreta la datación de fósiles con los datos dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312,
+            313
+          ],
+          "id": "evolution-theories",
+          "label": "teorías evolutivas y adaptación",
+          "match": "evolucion|evolutiv\\w*|lamarck|darwin|seleccion natural|adaptacion|convergencia|divergencia",
+          "relation": "los mecanismos evolutivos o explicaciones históricas solicitados y las evidencias que los sustentan, sin atribuir adaptación heredable a necesidades individuales",
+          "exclude": "pruebas? (?:de la evolucion|evolutivas?)|evidencias? evolutivas?|fosil|anatomia|embriologia|bioquimica comparada",
+          "officialRecordIds": [
+            "d48126cf-dab9-50f9-892b-b63fb416e0da",
+            "cde47848-230d-52ed-aaa8-43e87bc6a468",
+            "dbf57c01-7763-5224-956c-4a70a68870bf",
+            "e7d5285b-5b14-5447-a612-f927253639d4",
+            "2a09509b-8667-5575-8a1a-731a8dcf661e",
+            "dc224e68-b935-5d1b-a3c1-61b84a445645",
+            "d6d230f8-6943-5795-a18c-1b19dc43ad1d",
+            "41574d4e-28cb-5c55-9597-19ec5c5dea0b",
+            "9d7bb64c-6d7a-5a75-824d-f6697ed09e9b",
+            "fc69a976-86ca-5147-a928-565256944c54"
+          ],
+          "families": [
+            "Compara las teorías de Lamarck, Darwin y la teoría moderna de la evolución.",
+            "Explica selección natural y adaptación con el caso dado.",
+            "Compara convergencia y divergencia evolutivas con los modelos dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312
+          ],
+          "id": "geological-time",
+          "label": "eras y periodos geológicos",
+          "match": "eras? (?:y periodos )?geologic\\w*|periodos geologic\\w*",
+          "relation": "la secuencia y escala temporal de los intervalos geológicos solicitados y su relación con las evidencias biológicas disponibles",
+          "officialRecordIds": [
+            "d87c193e-ce68-580a-8397-874d49945abc"
+          ],
+          "families": [
+            "Ordena eras y periodos geológicos en la escala temporal proporcionada.",
+            "Explica la relación de los fósiles dados con las eras geológicas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313
+          ],
+          "id": "reproductive-system",
+          "label": "sistemas reproductores humanos",
+          "match": "sistemas? reproductores?|organos reproductores?|reproductores? (?:masculino|femenino)",
+          "relation": "la relación entre estructuras y funciones reproductoras del modelo humano solicitado, sin requerir información íntima personal",
+          "officialRecordIds": [
+            "8df1f45b-72be-5715-bdd0-adb78821c70d",
+            "262f99d5-391d-5f46-a23c-03e2562198f1"
+          ],
+          "families": [
+            "Identifica órganos de los sistemas reproductores masculino y femenino en el modelo dado.",
+            "Explica la función de los órganos reproductores humanos."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313
+          ],
+          "id": "development",
+          "label": "desarrollo, embarazo, nacimiento y lactancia",
+          "match": "concepcion|nacimiento|embarazo|lactancia|desarrollo de una nueva vida|vida en pareja",
+          "relation": "los procesos de desarrollo o cuidados sustentados por las fuentes del caso ficticio, sin valorar decisiones familiares ni solicitar experiencias personales",
+          "officialRecordIds": [
+            "d08bb88c-2fc6-5bb8-88b3-9b0c4b1edd73",
+            "990e2780-4089-56de-97c5-3d3122d6cfe0",
+            "fd8664e3-ad8a-51cb-b45f-878be5178932",
+            "2d9ed08d-f8e7-58af-9afd-315779fb5c36"
+          ],
+          "families": [
+            "Ordena el desarrollo desde la concepción hasta el nacimiento con las imágenes dadas.",
+            "Analiza cuidados durante el embarazo en adolescentes y lactancia materna con el caso ficticio proporcionado.",
+            "Argumenta sobre apoyos para el cuidado y educación de hijos del caso ficticio de vida en pareja."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313,
+            314
+          ],
+          "id": "sexual-health",
+          "label": "anticoncepción e infecciones de transmisión sexual",
+          "match": "anticonceptiv\\w*|transmision sexual|vih|sida",
+          "relation": "los mecanismos preventivos o de transmisión solicitados y los límites de la información proporcionada, sin diagnosticar ni exigir divulgación de conductas personales",
+          "officialRecordIds": [
+            "70a7de25-ed14-5a2e-bdde-e6fef55a18cb",
+            "d35c879e-5c52-5837-9bef-442272113a1b",
+            "ff73474a-8c17-5c2b-af83-f37aec09696e"
+          ],
+          "families": [
+            "Compara métodos anticonceptivos con las fuentes proporcionadas.",
+            "Explica transmisión y prevención del VIH y sida según el texto dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313
+          ],
+          "id": "skeletal",
+          "label": "sistema esquelético y huesos",
+          "match": "esquelet\\w*|huesos?|fracturas?",
+          "relation": "la estructura, constitución y función de los huesos o la alteración del sistema esquelético examinados en el modelo o caso ficticio",
+          "officialRecordIds": [
+            "c40d0359-0e58-59f4-9132-d877a852cced",
+            "b62c54b6-669e-5bef-b612-eb47364ef1ca"
+          ],
+          "families": [
+            "Clasifica tipos de huesos según las imágenes proporcionadas.",
+            "Explica estructura, función y fracturas del sistema esquelético con el caso ficticio dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313
+          ],
+          "id": "muscular",
+          "label": "sistema muscular",
+          "match": "muscul\\w*",
+          "relation": "la relación entre el tipo, estructura y función del músculo o la lesión descritos en el modelo o caso ficticio, sin prescribir ejercicios terapéuticos",
+          "officialRecordIds": [
+            "7b7f7110-6a46-5f90-a1c3-8d5283803362",
+            "ffa441ea-a8ca-5b5b-ba59-0d628f680467"
+          ],
+          "families": [
+            "Compara tipos de músculos y sus funciones.",
+            "Analiza la lesión muscular del caso ficticio proporcionado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313
+          ],
+          "id": "digestive",
+          "label": "digestión y sistema digestivo",
+          "match": "digestiv\\w*|digestion|ulcera|gastroenteritis|colitis|apendicitis|gastritis|tipos de alimentos",
+          "relation": "la transformación de alimentos y la función de las estructuras o alteraciones digestivas solicitadas en el modelo o caso ficticio, sin diagnosticar a personas",
+          "exclude": "enzimas?",
+          "officialRecordIds": [
+            "7c78edf7-7a31-52c9-9569-2fa38f1bc1da",
+            "9bb0b473-34c8-5a53-98af-1dfcf4438332",
+            "a2538169-19bc-505e-8c25-652cbb253557"
+          ],
+          "families": [
+            "Explica digestión de alimentos y funciones del sistema digestivo.",
+            "Analiza gastritis y gastroenteritis del caso ficticio proporcionado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313
+          ],
+          "id": "metabolism",
+          "label": "metabolismo y enzimas",
+          "match": "metabolismo|enzimas?",
+          "relation": "las transformaciones metabólicas solicitadas y la función catalítica de las enzimas cuando corresponda, sin confundir catalizador con reactivo consumido",
+          "officialRecordIds": [
+            "3159ca4c-2157-590a-b207-865bb0ab948e",
+            "9bb0b473-34c8-5a53-98af-1dfcf4438332"
+          ],
+          "families": [
+            "Compara tipos de metabolismo con el texto proporcionado.",
+            "Explica el papel de las enzimas en la digestión."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313
+          ],
+          "id": "circulatory",
+          "label": "sistema circulatorio y sangre",
+          "match": "circulator\\w*|circulacion|sangre|hipertension|soplo|infarto",
+          "relation": "la relación entre las estructuras circulatorias, los componentes sanguíneos y el transporte solicitado o la alteración del caso ficticio, sin emitir diagnósticos",
+          "officialRecordIds": [
+            "1f9851ee-8ddb-59e8-901c-2d48c1146108",
+            "549ae7de-9ca9-522d-83e3-d1bb12125061",
+            "fef00404-3271-534a-b4b0-3d71cd9db5fa",
+            "d31ce6cc-48b1-545d-8517-3a8530f22cac",
+            "82667093-1f7b-5e66-a606-4ec63262651d"
+          ],
+          "families": [
+            "Explica composición y función de la sangre y circulación de nutrientes.",
+            "Analiza hipertensión arterial y cuidados de la circulación con el caso ficticio dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            312,
+            313
+          ],
+          "id": "respiratory",
+          "label": "sistema respiratorio e intercambio gaseoso",
+          "match": "sistema respiratorio|intercambio de gases|pulmon\\w*|asma|neumonia|histoplasmosis|tuberculosis",
+          "relation": "el intercambio de gases y la función o alteración respiratoria solicitados, distinguiendo ventilación de respiración celular, sin prescribir tratamientos",
+          "officialRecordIds": [
+            "6aca24a5-e599-56b7-8e26-ef324e481bb5",
+            "9dc1afbd-8be6-55bf-a7ef-bb68b2deeb36",
+            "aa95741b-2188-587f-8694-9fc63aad734f"
+          ],
+          "families": [
+            "Explica el intercambio de gases en los pulmones.",
+            "Compara asma, neumonía, histoplasmosis y tuberculosis con las fuentes dadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            314
+          ],
+          "id": "excretory",
+          "label": "sistema excretor y orina",
+          "match": "excretor\\w*|orina|cistitis|calculo renal",
+          "relation": "la formación de orina y la función o alteración de las estructuras excretoras solicitadas en el modelo o caso ficticio, sin prescribir cuidados clínicos",
+          "officialRecordIds": [
+            "bd842eae-b15d-55f7-8bcc-53afd1581585",
+            "d6f3f7cb-d50a-5c98-839c-034e3bbf79ec",
+            "81d791d0-d008-548a-af87-5d70d375e6f7"
+          ],
+          "families": [
+            "Explica formación de la orina y función del sistema excretor.",
+            "Analiza cistitis y cálculo renal con los casos ficticios proporcionados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            314
+          ],
+          "id": "nervous-hormonal",
+          "label": "sistemas nervioso y hormonal",
+          "match": "nervioso|hormonal|impulso nervioso|meningitis",
+          "relation": "la transmisión o regulación solicitada y las relaciones entre las estructuras nerviosas u hormonales del modelo o caso ficticio, sin diagnosticar",
+          "officialRecordIds": [
+            "d8f0e707-1a9e-5f39-be93-32d087931ac4",
+            "690ffd39-9251-5299-8db2-8ae90c24ac41",
+            "62b402c7-30da-5a67-b8bc-01f1e36567dc"
+          ],
+          "families": [
+            "Compara sistema nervioso y hormonal con los esquemas dados.",
+            "Explica el impulso nervioso según el modelo proporcionado.",
+            "Analiza meningitis con la fuente y el caso ficticio dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            314
+          ],
+          "id": "immunity",
+          "label": "inmunidad, anticuerpos y vacunas",
+          "match": "inmun\\w*|anticuerpos?|vacunas?",
+          "relation": "la respuesta de defensa solicitada y las relaciones entre anticuerpos, vacunación o memoria inmunitaria cuando correspondan, sin equiparar todos los tipos de inmunidad",
+          "officialRecordIds": [
+            "97dc051f-055d-5669-9bf2-c4517048dfdf",
+            "39724cfc-28f9-5f95-9b82-24ffb37bfb66",
+            "70d1a9ba-00f6-5e23-a589-71942cc6e719"
+          ],
+          "families": [
+            "Compara tipos de inmunidad con los casos ficticios dados.",
+            "Explica anticuerpos, vacunas y memoria inmunitaria con las fuentes dadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313,
+            314
+          ],
+          "id": "prevention",
+          "label": "higiene y prevención de enfermedades",
+          "match": "higiene|prevencion de enfermedades|prevenir las enfermedades|agentes constantes|cuidado e higiene",
+          "relation": "la relación entre el mecanismo preventivo, el agente o riesgo señalado y la evidencia de las fuentes, sin evaluar hábitos privados ni obediencia",
+          "officialRecordIds": [
+            "057f31d9-8c9c-5b93-8570-160942e1680d",
+            "2567dc1e-4a43-5d80-8537-acbd5592c0ac",
+            "82667093-1f7b-5e66-a606-4ec63262651d",
+            "81d791d0-d008-548a-af87-5d70d375e6f7",
+            "c162c215-d982-5a55-bb6c-ed5b79d94158"
+          ],
+          "families": [
+            "Explica mecanismos para prevenir las enfermedades con la fuente proporcionada.",
+            "Analiza cuidado e higiene personal y enfermedades causadas por agentes del caso ficticio."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313,
+            314
+          ],
+          "id": "ecosystems",
+          "label": "ecosistemas y factores ambientales",
+          "match": "ecosistema\\w*|ecologia|factores del ambiente|bioticos?|abioticos?",
+          "relation": "las relaciones entre los componentes bióticos y abióticos del ecosistema solicitado y su funcionamiento, sin exigir observaciones de campo no realizadas",
+          "officialRecordIds": [
+            "78fa90a1-4741-521d-9512-174d22403c2b",
+            "4a0d7339-1324-590f-b3cb-e99fe3b59c2b",
+            "9cb15841-6aed-552b-b788-bdf737316214",
+            "5584d1dd-c2b2-5070-bd0e-47b4a09cab00",
+            "54a377da-ac17-531b-96a6-260030ac9dd0",
+            "4893239d-f4e2-5f3d-803a-fa0fb5b2e764",
+            "1c5af2a5-845b-59c0-a8de-d95feb8ee62c"
+          ],
+          "families": [
+            "Explica componentes del ecosistema y factores bióticos y abióticos.",
+            "Observa las imágenes proporcionadas y registra componentes del ecosistema sin realizar salida de campo."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313,
+            314
+          ],
+          "id": "populations",
+          "label": "poblaciones y comunidades",
+          "match": "poblacion\\w*|comunidades?",
+          "relation": "la estructura, variación o crecimiento de las poblaciones y su relación con las comunidades según los datos solicitados, sin equiparar población con comunidad",
+          "officialRecordIds": [
+            "a60218a0-f411-5af8-b235-fdc55abc2a0d",
+            "86d6a414-b258-5ca3-9797-4739068ec537",
+            "ea998885-bef2-5248-94a1-d3ea77fc4b16"
+          ],
+          "families": [
+            "Compara poblaciones y comunidades.",
+            "Interpreta datos proporcionados de crecimiento de poblaciones humanas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313,
+            314
+          ],
+          "id": "matter-cycles",
+          "label": "ciclos de materia y biogeoquímicos",
+          "match": "ciclo\\w* (?:de la materia|biogeoquimic\\w*)",
+          "relation": "la circulación de materia entre los componentes del ciclo solicitado, distinguiendo reciclaje de materia y transferencia de energía",
+          "officialRecordIds": [
+            "9f072d11-44d2-5dfb-a66c-604c3a1f3eec",
+            "3d87a830-9b28-5879-9041-da6f82e7eb9b"
+          ],
+          "families": [
+            "Representa un ciclo biogeoquímico con el esquema solicitado.",
+            "Explica el ciclo de la materia con las fuentes proporcionadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313,
+            314
+          ],
+          "id": "food-energy",
+          "label": "flujo de energía y pirámides ecológicas",
+          "match": "flujo de energia|piramide\\w* ecologic\\w*",
+          "relation": "la transferencia de energía o la magnitud representada por la pirámide solicitada, distinguiendo energía, biomasa y número de organismos cuando corresponda",
+          "officialRecordIds": [
+            "9f072d11-44d2-5dfb-a66c-604c3a1f3eec",
+            "add7e750-db1b-58d8-9767-3138604f57fd"
+          ],
+          "families": [
+            "Interpreta la pirámide ecológica proporcionada.",
+            "Explica el flujo de energía en el ecosistema del modelo dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313,
+            314
+          ],
+          "id": "symbiosis",
+          "label": "relaciones entre especies y simbiosis",
+          "match": "relaciones entre especies|simbiot\\w*|simbiosis",
+          "relation": "los efectos de la interacción sobre las especies participantes del caso, distinguiendo las modalidades examinadas sin atribuir intenciones humanas",
+          "officialRecordIds": [
+            "b71e0422-d900-5a96-afd4-0124050b9654",
+            "d94af10a-e2b6-55a7-80bc-feac11e1cd77"
+          ],
+          "families": [
+            "Clasifica relaciones simbióticas con los casos proporcionados.",
+            "Compara relaciones entre especies con las fuentes dadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313,
+            314
+          ],
+          "id": "resources",
+          "label": "recursos naturales",
+          "match": "recursos naturales",
+          "relation": "la clasificación y relación entre el uso de recursos y su renovación o conservación según las condiciones del caso",
+          "officialRecordIds": [
+            "06f383b5-8a14-5d15-bcee-752f6e961382",
+            "17469f25-2ede-5345-a46d-d2e8cf4727c8"
+          ],
+          "families": [
+            "Clasifica recursos naturales con los casos proporcionados.",
+            "Argumenta sobre uso de recursos naturales con las evidencias dadas."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            314
+          ],
+          "id": "food-sustainability",
+          "label": "producción, distribución y sostenibilidad de alimentos",
+          "match": "produccion y distribucion|sostenibilidad de alimentos|produccion de alimentos",
+          "relation": "las relaciones entre producción, distribución y sostenibilidad alimentaria del caso solicitado, distinguiendo acceso a alimentos y cantidad producida",
+          "officialRecordIds": [
+            "277f0c1a-1ca4-52aa-b182-d6e692cd6664"
+          ],
+          "families": [
+            "Analiza producción y distribución de alimentos con las fuentes dadas.",
+            "Diseña una propuesta de sostenibilidad de alimentos para el caso proporcionado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313,
+            314
+          ],
+          "id": "pollution",
+          "label": "contaminación ambiental",
+          "match": "contaminacion|contaminantes",
+          "relation": "la relación entre fuentes contaminantes, medio afectado y efectos sustentados por las evidencias del caso, sin exigir muestreos adicionales",
+          "officialRecordIds": [
+            "bc8c1d50-fa78-5c5e-b223-befcdaa572ba",
+            "587cc889-4364-5089-8a4b-9eb2592620af"
+          ],
+          "families": [
+            "Analiza causas y consecuencias de contaminación ambiental con los datos proporcionados.",
+            "Clasifica tipos de contaminación con los ejemplos dados."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            313,
+            314
+          ],
+          "id": "climate-biomes",
+          "label": "zonas climáticas, biomas y cambio climático",
+          "match": "zonas climaticas|biomas?|cambio climatico|equilibrio ecologico",
+          "relation": "las condiciones climáticas, biomas o efectos del cambio climático solicitados y su relación con biodiversidad o equilibrio del sistema según las fuentes, sin inferir una tendencia de un dato aislado",
+          "officialRecordIds": [
+            "4853dddf-8d77-5b5b-8740-62952af463d2",
+            "ff73474a-8c17-5c2b-af83-f37aec09696e"
+          ],
+          "families": [
+            "Compara zonas climáticas y biomas con los mapas proporcionados.",
+            "Interpreta los datos proporcionados del efecto del cambio climático en la biodiversidad."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            314
+          ],
+          "id": "classification",
+          "label": "biodiversidad y clasificación de organismos",
+          "match": "clasificacion moderna|sistema binomial|linneo|biodiversidad|bacteria\\w*|arqueo\\w*|protista\\w*|hongos?|plantas?|animales?",
+          "relation": "las características estructurales y funcionales o relaciones que sustentan la clasificación solicitada, distinguiendo nomenclatura binomial y categorías taxonómicas",
+          "exclude": "celula animal|celula vegetal|celulas? madre|cambio climatico|equilibrio ecologico",
+          "officialRecordIds": [
+            "ff73474a-8c17-5c2b-af83-f37aec09696e",
+            "16733480-1bc9-58b0-a82a-9d7bf11a0144",
+            "4ed9dc63-5c00-5729-9211-029fb3bd6f22",
+            "ef7a31b8-209b-5443-8f4e-c0be3f075047"
+          ],
+          "families": [
+            "Clasifica bacterias, arqueobacterias, protistas, hongos, plantas y animales con la clave dada.",
+            "Explica sistema binomial de Linneo y clasificación moderna.",
+            "Explica las estructuras y funciones de hongos con el modelo dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            314
+          ],
+          "id": "viruses",
+          "label": "estructura y función de virus",
+          "match": "virus",
+          "relation": "la organización acelular y la dependencia de células hospedadoras de los virus examinados, sin equipararlos con bacterias",
+          "officialRecordIds": [
+            "c59fcf9c-929d-560d-873a-55a103fa2c27"
+          ],
+          "families": [
+            "Identifica estructuras de virus en el esquema dado.",
+            "Explica función de las estructuras del virus del modelo dado."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        },
+        {
+          "grade": 4,
+          "pages": [
+            314
+          ],
+          "id": "school-research",
+          "label": "investigación e innovación escolar",
+          "match": "biotecnolog\\w*|innovacion escolar|investigacion escolar|salud de impacto",
+          "relation": "la relación entre el problema delimitado, la evidencia y la propuesta de investigación o innovación escolar solicitada, sin atribuir implementaciones ni resultados no realizados",
+          "officialRecordIds": [
+            "bbe7f863-f817-5457-af6f-cc4f56cef3d9",
+            "ea019419-136c-56f1-b7d5-c8c17b368695"
+          ],
+          "families": [
+            "Diseña un proyecto de investigación escolar sobre biotecnología con las condiciones proporcionadas.",
+            "Investiga en fuentes una innovación escolar sobre salud de impacto comunitario."
+          ],
+          "provider": "packages/shared/src/secondary-science-grade-4.ts",
+          "instrumentReview": "REVIEWED_DEFINED_FIXTURES"
+        }
+      ],
       "unassignedSourceRecords": [
-        {
-          "id": "63dcd4e9-f1b4-54c9-a48b-b8ab548938d2",
-          "text": "Célula",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d2283cee-dfd2-5fce-97de-56d98b159e32",
-          "text": "• La célula",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "6aca24a5-e599-56b7-8e26-ef324e481bb5",
-          "text": "• Membrana, citoplasma y núcleo\nOrganelos Celulares",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "8de8aef2-2640-53a9-8e3e-10282652baa6",
-          "text": "• Tejidos: estructura y funciones\nPigmentos fotosintéticos Fotosíntesis\ny sus funciones Moléculas energéticas",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "1498b7dc-4f8e-5a62-bc9c-375709e76989",
-          "text": "Genética",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "92ba4b55-9e4e-5146-83aa-d82f2fe5d4ea",
-          "text": "• Herencia",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "1f5d0e6a-5a67-5940-b522-608024216a44",
-          "text": "• Segunda y tercera Ley de Mendel",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "60a63b1a-476e-5127-a654-3ba980155304",
-          "text": "• Teoría cromosómica de la herencia",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "c9a033c8-a7f9-5515-b9de-b86b6073c226",
-          "text": "• Moléculas de ADN y ARN",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "ce54f056-c14e-5a0a-84f4-57d217547e2d",
-          "text": "• Código genético, Replicación del ADN",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "54a154e1-e52c-5750-a0d4-e5089befc831",
-          "text": "• Producción de proteínas",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "a78d33b9-ce39-5702-a8f4-5c803fa1d4d9",
-          "text": "• Herencia en los humanos",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "896ff5de-b2d5-5a4c-9008-b07f8f249b58",
-          "text": "• Alelos múltiples, grupo sanguíneo",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "fa382393-cc53-5211-a040-a3d5e81f2c36",
-          "text": "• Enfermedades hereditarias",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "992ddfb0-3c2d-5798-adec-d9fba5c0059c",
-          "text": "• Herencia y medio ambiente",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "0a4956c8-c9ed-5904-81ad-b35ac81a2a12",
-          "text": "• Ingeniería genética, ADN\nrecombinante",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d48126cf-dab9-50f9-892b-b63fb416e0da",
-          "text": "Evolución",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "000f298f-3a57-57d1-b3ff-e1d1f642dec0",
-          "text": "• Origen de la vida",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d585d3cb-e05b-5946-9ccb-edefbe0ba1b8",
-          "text": "• La atmósfera primitiva",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "caa6a574-5145-5422-9eac-6b4370311e8b",
-          "text": "• Primeros organismos",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "cde47848-230d-52ed-aaa8-43e87bc6a468",
-          "text": "• Pruebas de la evolución (datación de\nfósiles)",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "dbf57c01-7763-5224-956c-4a70a68870bf",
-          "text": "• Teorías de la evolución. Adaptación,\ntipos",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d87c193e-ce68-580a-8397-874d49945abc",
-          "text": "• Eras y periodos geológicos",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "e7d5285b-5b14-5447-a612-f927253639d4",
-          "text": "• Teoría moderna de la evolución",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
         {
           "id": "a42a4ca0-b53b-521b-ad34-e173531691bb",
           "text": "• P1. Observación, planteamiento de problema.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "569e8693-43eb-5748-b46f-29f9aa38e741",
           "text": "• P2. Formulación de preguntas o hipótesis.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "5ad0064c-320b-581b-9cb1-e8da472ac1b8",
           "text": "• P3. Planificación y ejecución de experimentos, recolección y\nregistro de evidencias.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "a786a8d9-b980-5faf-8657-626cd5c4e44c",
           "text": "• P4. Diseño y construcción de modelos y simulaciones con la\nintegración de las Tics y la ingeniería.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "e10d8e75-dce0-5095-9563-330297f2ab51",
           "text": "• P5. Resolución de problema, Análisis, discusión, evaluación y\ncomunicación de los resultados.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "d3b23c11-4163-58d2-b537-a76074117b6f",
           "text": "• P6. Proceso Epistemológico de las Ciencias Naturales.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "bc19631a-f2b2-5cf8-9688-f426712c0de7",
-          "text": "Célula",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "e0c7f5d3-1dfe-5c6a-be88-bc5d86c7b384",
-          "text": "• El microscopio y la consolidación de la teoría celular (P1).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "b0edc56a-b51f-5774-9451-4a39cda62029",
-          "text": "• Células procariota y eucariota, vegetal y animal, su estructura\ny función de sus organelos (P2, P3, P4 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "7af17511-ecfc-507b-8d35-9133ada54cae",
-          "text": "• Intercambio de sustancias a través de la membrana celular:\ndifusión ósmosis y transporte activo (P1, P3 y P4 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "de32fa0b-494e-51fd-80f1-77747f2147a2",
-          "text": "• Especialización celular: formación de tejidos, órganos y\nsistemas de órganos (P1 hasta P6):",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "fda0c1f0-7e93-5335-ba77-8091b361bf89",
-          "text": "• Trasplantes de órganos (P1, P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "9db9d1dc-aef5-5dfb-9671-41cf2cf326ef",
-          "text": "• Energía celular (P1 hasta P4):",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "0c2d7136-ab4e-54c2-b8f3-294dc1e685f5",
-          "text": "• Trifosfato de adenosina ATP.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "bbd55920-60ad-5905-8018-cb985f733d08",
-          "text": "• Estructura de la mitocondria.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "6314a622-0f76-5af3-8254-8a838cb46205",
-          "text": "• Tipos de respiración celular: aeróbica y anaeróbica,\nfermentación (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d3bdfe8f-281b-501f-b8ac-e2e28f4597b1",
-          "text": "• Ecuación del proceso respiratorio.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "5b3402ed-fa5b-5b71-86c0-2011a8d3e423",
-          "text": "• Factores necesarios para la fotosíntesis, estructura de los\ncloroplastos (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "351e49e0-79cb-5015-b9bb-a1af8e982266",
-          "text": "• Reacciones químicas: fase luminosa y fase oscura (P2 hasta\nP5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "339aa3cd-e576-55a8-891b-a666a3f3b9e3",
-          "text": "• Mitosis y meiosis, sus fases (P2 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "46a7d155-575d-5619-9104-b0625048d802",
-          "text": "• Células madre (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "354a143d-efd9-5c16-99d3-2279bb2dfcd2",
-          "text": "• Formación de las células sexuales: espermatogénesis y\novogénesis (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "8cf522b9-c085-54b7-ada5-b79fdc12f1d9",
-          "text": "Biología Humana",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "8df1f45b-72be-5715-bdd0-adb78821c70d",
-          "text": "• Sistemas reproductores masculino y\nfemenino.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "cfa4365e-d977-5297-b444-df0e0f0d5a1a",
-          "text": "• Estructura y función de los sistemas del\ncuerpo",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "8202cc7a-12a0-5062-be5d-ab1dbf964046",
           "text": "• Humano.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "0b33f33e-4a5d-58e6-914b-9af0dbef4c4d",
-          "text": "• Enfermedades de los sistemas.",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "78fa90a1-4741-521d-9512-174d22403c2b",
-          "text": "Ecología",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "4a0d7339-1324-590f-b3cb-e99fe3b59c2b",
-          "text": "• El ecosistema",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "9cb15841-6aed-552b-b788-bdf737316214",
-          "text": "• Factores del ambiente",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "9f072d11-44d2-5dfb-a66c-604c3a1f3eec",
-          "text": "• Ciclo de la materia y el flujo de energía",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "b71e0422-d900-5a96-afd4-0124050b9654",
-          "text": "• Relaciones entre especies",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "a60218a0-f411-5af8-b235-fdc55abc2a0d",
-          "text": "• Poblaciones y comunidades",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "06f383b5-8a14-5d15-bcee-752f6e961382",
-          "text": "• Los recursos naturales",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "bc8c1d50-fa78-5c5e-b223-befcdaa572ba",
-          "text": "• Contaminación, tipos",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "4853dddf-8d77-5b5b-8740-62952af463d2",
-          "text": "• Zonas climáticas y biomas",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "057f31d9-8c9c-5b93-8570-160942e1680d",
-          "text": "• Cuidado e higiene personal",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "2567dc1e-4a43-5d80-8537-acbd5592c0ac",
-          "text": "• Enfermedades causadas por agentes\nconstantes",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d2c80b99-0c79-51be-9502-8bf69a7632ca",
-          "text": "Genética",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "6bc0546b-0bf3-5761-8ff4-812c9122694d",
-          "text": "• Resultados de los experimentos de Mendel, segunda y\ntercera ley (P1 hasta P6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "a76b5900-58a6-5353-b254-ff5d43775843",
-          "text": "• Problemas de probabilidad, basado en las Leyes de Mendel,\nutilizando el Cuadro de Punnett, bibliografía científica,\nmodelos, experimentos, informes, etc. (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "1a26da75-e5cc-5e47-a306-10b0bd6a9751",
-          "text": "• Principios básicos de la genética (P1).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "c9155efd-c5ee-5be6-9b92-924e526e477f",
-          "text": "• Cromosomas y genes (P1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "f414c99a-cd7e-5e42-8d1e-03f443294dbd",
-          "text": "• Ácido desoxirribonucleico ADN y el ácido ribonucleico ARN\n(P1, P3 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "b45d1d61-2c9d-5bfa-a905-8f4fdd4eec8a",
-          "text": "• Mutaciones en genes y cromosomas (P1).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "8e8f5f47-b5e4-5df9-b4f6-32f3ecc524c2",
-          "text": "• Cromosomas ligados al sexo (P1, P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "febe8c4a-fea8-5114-b954-9e3ae814aa8b",
-          "text": "• Enfermedades hereditarias (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "afc92944-e992-5020-baa3-b766cf4dd63a",
-          "text": "• Desórdenes genéticos (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "2a09509b-8667-5575-8a1a-731a8dcf661e",
-          "text": "Evolución",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "a2221cbc-e77f-5a9d-aea6-36e85c509df9",
-          "text": "• La atmósfera primitiva, los primeros organismos (P1, P4 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "dc224e68-b935-5d1b-a3c1-61b84a445645",
-          "text": "• Argumentos de las pruebas evolutivas: anatomía,",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "fbab0ed8-db2e-5798-ac06-af0dd6c1a248",
-          "text": "• fisiología, embriología, bioquímica comparadas (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d6d230f8-6943-5795-a18c-1b19dc43ad1d",
-          "text": "• Evolución de las especies (P1 hasta P4).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "41574d4e-28cb-5c55-9597-19ec5c5dea0b",
-          "text": "• Convergencias y divergencias (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "9d7bb64c-6d7a-5a75-824d-f6697ed09e9b",
-          "text": "• Teorías de Lamarck y Darwin (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "fc69a976-86ca-5147-a928-565256944c54",
-          "text": "• Selección natural, la adaptación: tipos (P1, P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "eefba592-f1e6-5c5d-a64b-b97b067c79d7",
-          "text": "Biología Humana",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "262f99d5-391d-5f46-a23c-03e2562198f1",
-          "text": "• Estructura y función de los órganos reproductores en\nhumanos (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d08bb88c-2fc6-5bb8-88b3-9b0c4b1edd73",
-          "text": "• Etapas de desarrollo de una nueva vida, desde la\nconcepción hasta el nacimiento (P1).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "990e2780-4089-56de-97c5-3d3122d6cfe0",
-          "text": "• Cuidado que se requiere durante el embarazo en\nadolescentes, su responsabilidad como madre y padre (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "fd8664e3-ad8a-51cb-b45f-878be5178932",
-          "text": "• Vida en pareja para la estabilidad emocional y educación de\nlos hijos e hijas (P1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "70a7de25-ed14-5a2e-bdde-e6fef55a18cb",
-          "text": "• Diferentes métodos anticonceptivos (P 1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d35c879e-5c52-5837-9bef-442272113a1b",
-          "text": "• Enfermedades de transmisión sexual VIH y Sida (P 1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "2d9ed08d-f8e7-58af-9afd-315779fb5c36",
-          "text": "• Lactancia materna (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "c40d0359-0e58-59f4-9132-d877a852cced",
-          "text": "• Sistema Esquelético:",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "b62c54b6-669e-5bef-b612-eb47364ef1ca",
-          "text": "• Estructura y función, tipos de huesos, su constitución,\nenfermedades más comunes y fracturas (P1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "7b7f7110-6a46-5f90-a1c3-8d5283803362",
-          "text": "• Sistema Muscular: tipos de músculos, funciones (P1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "ffa441ea-a8ca-5b5b-ba59-0d628f680467",
-          "text": "• Lesiones frecuentes en los músculos (P1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "7c78edf7-7a31-52c9-9569-2fa38f1bc1da",
-          "text": "• Sistema Digestivo: Digestión de los alimentos. Tipos de\nalimentos, función (P1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "3159ca4c-2157-590a-b207-865bb0ab948e",
-          "text": "• Metabolismo, tipos (P1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "9bb0b473-34c8-5a53-98af-1dfcf4438332",
-          "text": "• Papel de las enzimas en el proceso digestivo (P1, P2 y P3).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "a2538169-19bc-505e-8c25-652cbb253557",
-          "text": "• Enfermedades más comunes del sistema digestivo (úlcera,\ngastroenteritis, colitis, apendicitis, gastritis (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "1f9851ee-8ddb-59e8-901c-2d48c1146108",
-          "text": "• Sistema Circulatorio: Estructura y función (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "549ae7de-9ca9-522d-83e3-d1bb12125061",
-          "text": "• La sangre, su composición, función (P1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "fef00404-3271-534a-b4b0-3d71cd9db5fa",
-          "text": "• Circulación de los nutrientes (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d31ce6cc-48b1-545d-8517-3a8530f22cac",
-          "text": "• Enfermedades del Sistema Circulatorio: (hipertensión\narterial, soplo, infarto) (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "82667093-1f7b-5e66-a606-4ec63262651d",
-          "text": "• Higiene de la circulación (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "9dc1afbd-8be6-55bf-a7ef-bb68b2deeb36",
-          "text": "• Sistema Respiratorio: Estructura y función, Intercambio de\ngases en los pulmones (P1, P2 y P3).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "aa95741b-2188-587f-8694-9fc63aad734f",
-          "text": "• Enfermedades más comunes (Asma, neumonía,\nhistoplasmosis, tuberculosis (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "bd842eae-b15d-55f7-8bcc-53afd1581585",
-          "text": "• Sistema Excretor: Estructura y función (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d6f3f7cb-d50a-5c98-839c-034e3bbf79ec",
-          "text": "• Formación de la orina (P1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "81d791d0-d008-548a-af87-5d70d375e6f7",
-          "text": "• Enfermedades del sistema excretor: (cálculo, cistitis).\nhigiene del sistema excretor (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d8f0e707-1a9e-5f39-be93-32d087931ac4",
-          "text": "• Sistema Nervioso y el hormonal (P1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         },
         {
           "id": "1e103eb0-a518-582a-aeba-ea4a94b61f6d",
           "text": "• Estructura y función (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "690ffd39-9251-5299-8db2-8ae90c24ac41",
-          "text": "• Impulso nervioso (P1 y P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "62b402c7-30da-5a67-b8bc-01f1e36567dc",
-          "text": "• Enfermedades del sistema nervioso: meningitis (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "c162c215-d982-5a55-bb6c-ed5b79d94158",
-          "text": "• Mecanismos para prevenir las enfermedades (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "97dc051f-055d-5669-9bf2-c4517048dfdf",
-          "text": "• Anticuerpos y vacunas (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "39724cfc-28f9-5f95-9b82-24ffb37bfb66",
-          "text": "• Tipos de inmunidad (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "70d1a9ba-00f6-5e23-a589-71942cc6e719",
-          "text": "• Memoria inmunitaria (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "5584d1dd-c2b2-5070-bd0e-47b4a09cab00",
-          "text": "Ecología",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "54a377da-ac17-531b-96a6-260030ac9dd0",
-          "text": "• La ecología, su importancia (P1 hasta P6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "4893239d-f4e2-5f3d-803a-fa0fb5b2e764",
-          "text": "• Componentes del ecosistema (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "86d6a414-b258-5ca3-9797-4739068ec537",
-          "text": "• Poblaciones y comunidades (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "ea998885-bef2-5248-94a1-d3ea77fc4b16",
-          "text": "• Estructura y crecimiento de las poblaciones humanas (P1).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "1c5af2a5-845b-59c0-a8de-d95feb8ee62c",
-          "text": "• Factores bióticos y abióticos (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "3d87a830-9b28-5879-9041-da6f82e7eb9b",
-          "text": "• Ciclos biogeoquímicos (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "add7e750-db1b-58d8-9767-3138604f57fd",
-          "text": "• Pirámide ecológica (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "d94af10a-e2b6-55a7-80bc-feac11e1cd77",
-          "text": "• Relaciones simbióticas (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "17469f25-2ede-5345-a46d-d2e8cf4727c8",
-          "text": "• Recursos naturales: tipos de recursos (P1, P2 y P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "277f0c1a-1ca4-52aa-b182-d6e692cd6664",
-          "text": "• Producción y distribución: alimentos, sostenibilidad de\nalimentos (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "587cc889-4364-5089-8a4b-9eb2592620af",
-          "text": "• Principales contaminantes del ambiente, efectos, causas y\nconsecuencias (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "ff73474a-8c17-5c2b-af83-f37aec09696e",
-          "text": "• Los efectos del cambio climático en la biodiversidad y el\nequilibrio ecológico (P1 hasta P6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "16733480-1bc9-58b0-a82a-9d7bf11a0144",
-          "text": "• Sistema Binomial de Linneo (P1).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "4ed9dc63-5c00-5729-9211-029fb3bd6f22",
-          "text": "• Clasificación moderna (P1 hasta P5).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "c59fcf9c-929d-560d-873a-55a103fa2c27",
-          "text": "• Virus, estructura y función (P2).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "ef7a31b8-209b-5443-8f4e-c0be3f075047",
-          "text": "• Bacteria, Arqueo bacterias, protista, hongos, plantas, y\nanimales (estructuras y funciones) (P1 hasta P5)",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "bbe7f863-f817-5457-af6f-cc4f56cef3d9",
-          "text": "Proyecto de investigación e innovación escolar",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
-        },
-        {
-          "id": "ea019419-136c-56f1-b7d5-c8c17b368695",
-          "text": "• En problemas ambientales, biotecnología o salud de\nimpacto personal, comunitario, regional o global (P1 hasta\nP6).",
-          "reason": "PENDING_TOPIC_MAPPING_OR_EXCLUSION_REVIEW"
+          "reason": "GENERAL_HEADING_OR_PROCESS_MENU_NOT_AN_EXTRA_TASK"
         }
       ],
-      "instrumentReview": null,
+      "instrumentReview": {
+        "grade": 4,
+        "status": "REVIEWED_DEFINED_FIXTURES",
+        "scope": "48 grupos, 104 consignas y 416 instrumentos completos; Biología común, PDF312–315 / impresas311–314, 192 registros literales",
+        "method": "Lectura secuencial de criterios y formulaciones de logro/parcial de las 104 consignas; progresiones compartidas inspeccionadas. Revisión completa de los cuatro formatos para herencia mendeliana y de las evidencias de práctica, estructuras celulares y salud. Contratos de puntuación/paridad complementan la revisión científica.",
+        "corrections": [
+          "Teoría celular, células madre y transporte no duplican organización celular",
+          "ATP sin mitocondria y factores de fotosíntesis sin fases mantienen el foco solicitado",
+          "Herencia ligada al sexo no añade cromosomas genéricos ni recoge información familiar negada",
+          "Cálculo renal, bioquímica comparada y clasificación moderna no son acciones de calcular, comparar o clasificar",
+          "Se conserva la acción nominal realizar una comparación del antecedente celular de segundo",
+          "Enzimas en digestión no añade otra explicación general del sistema digestivo",
+          "Datación de fósiles se distingue de tareas sobre eras geológicas",
+          "Explicar estructuras y funciones de organismos no exige clasificarlos",
+          "La memoria inmunitaria, los anticuerpos y vacunas conservan la relación científica de cuarto"
+        ],
+        "limits": [
+          "Patrones definidos, no toda redacción imaginable",
+          "P1–P6 son un menú de procesos, no tareas obligatorias ni grados",
+          "Humano. continúa sistemas del cuerpo; Estructura y función continúa sistema nervioso y hormonal: fragmentos conservados literalmente, sin duplicar requisitos",
+          "Datos de salud y genética se trabajan con modelos, fuentes o casos ficticios; sin diagnóstico, datos íntimos o hábitos privados",
+          "Sin prácticas, materiales ni cálculos adicionales; hipótesis no tiene que confirmarse",
+          "El navegador y la persistencia real se registran por separado; este archivo no los aprueba"
+        ],
+        "instrumentArtifact": "ciencias-naturaleza-4-instrumentos.json"
+      },
       "httpVerification": null,
       "visualVerification": null,
-      "status": "NOT_IMPLEMENTED",
+      "status": "IMPLEMENTED_PENDING_VERIFICATION",
       "exclusions": [
         "Optativas y contenidos atribuidos a otros grados.",
         "Actitudes personales y listados generales de procesos no se convierten en requisitos de cada actividad."

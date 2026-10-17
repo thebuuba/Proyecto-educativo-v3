@@ -246,11 +246,12 @@ export function ActivityCreationView(props: {
   const initialInstrument = !activityDraft.preparedRecommendation &&
     !activityDraft.manualInstrumentBlank && !activityDraft.preparedManuallyEdited
   const canKeepCurrentInstrument = (() => {
-    if (!stale || !editingActivityId || !activityDraft.preparedFingerprint) return false
+    if (!stale || (!editingActivityId && !activityDraft.preparedManuallyEdited) || !activityDraft.preparedFingerprint) return false
     try {
+      // Reviewing text and inferred activity changes must still preserve format, participation and references.
       return (
-        JSON.stringify(JSON.parse(activityDraft.preparedFingerprint).slice(2)) ===
-        JSON.stringify(JSON.parse(fingerprint).slice(2))
+        JSON.stringify(JSON.parse(activityDraft.preparedFingerprint).slice(3)) ===
+        JSON.stringify(JSON.parse(fingerprint).slice(3))
       )
     } catch {
       return false

@@ -49,7 +49,7 @@ function ScopedActivityCreator({ schoolId, userId }: { schoolId: string; userId:
     let active = true
     setWorkspaceLoading(true)
     setWorkspaceError(null)
-    getActivityCenter()
+    getActivityCenter({ contextOnly: true })
       .then((result) => { if (active) setWorkspace(result) })
       .catch((reason) => { if (active) setWorkspaceError(reason instanceof Error ? reason.message : 'No se pudo cargar el contexto de la actividad.') })
       .finally(() => { if (active) setWorkspaceLoading(false) })

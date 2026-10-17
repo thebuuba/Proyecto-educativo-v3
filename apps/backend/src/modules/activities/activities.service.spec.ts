@@ -19,7 +19,7 @@ describe('ActivitiesService', () => {
     await service.remove('school-1', 'activity-1', 'user-1', ['teacher'])
 
     expect(grading.getActivities).toHaveBeenCalledWith('school-1', { sectionSubjectId: 'ss-1' }, 'user-1', ['teacher'])
-    expect(grading.getActivityCenter).toHaveBeenCalledWith('school-1', 'user-1', ['teacher'])
+    expect(grading.getActivityCenter).toHaveBeenCalledWith('school-1', 'user-1', ['teacher'], false)
     expect(saved).toEqual({ id: 'activity-1' })
     expect(grading.linkActivityToPlanning).toHaveBeenCalledWith('school-1', 'activity-1', { planningEntryId: null }, 'user-1', ['teacher'])
     expect(grading.deleteActivity).toHaveBeenCalledWith('school-1', 'activity-1', 'user-1', ['teacher'])

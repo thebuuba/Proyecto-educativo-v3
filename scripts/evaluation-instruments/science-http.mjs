@@ -43,7 +43,7 @@ try{
   const health=await request('/health');assert(health.response.headers.get('content-security-policy').includes(project))
   const login=await request('/auth/login',{email:account.email,password:account.password})
   cookie=login.response.headers.getSetCookie().find(c=>c.startsWith('aulabase_session='))?.split(';')[0];assert(cookie)
-  const center=(await request('/activities/center')).data;assert(center.sectionSubjects.some(s=>s.id===context.sectionSubjectId))
+  const center=(await request('/activities/center?contextOnly=true')).data;assert(center.sectionSubjects.some(s=>s.id===context.sectionSubjectId));assert.deepEqual(center.activities,[])
   console.log(JSON.stringify({phase:'authenticated-context',project,grade,sectionSubjectId:context.sectionSubjectId}))
   if(recheck){
     const report=JSON.parse(readFileSync(resultFile,'utf8'))
@@ -65,7 +65,7 @@ try{
       generated.push({type,total,catalog:proposal.catalogVersion})
       saveReadProof()
     }
-    if(grade===1||grade===2||grade===3){
+    if(grade>=1&&grade<=4){
       const controls=grade===1?[
         ['Formula preguntas investigables sobre los vientos.','-question',/-research$/],
         ['Explica el ciclo del agua o representa la estructura interna de la Tierra mediante un dibujo.','-alternative',null],
@@ -76,12 +76,18 @@ try{
         ['Compara la metamorfosis de los seres vivos representados en las imágenes.','-comparison',/-representation$/],
         ['Resuelve los ejercicios de herencia mendeliana con los datos ficticios proporcionados.','-problem-reasoning',/-calculation$|result$/],
         ['Interpreta los datos proporcionados de fotosíntesis sin realizar experimentos.','-data-interpretation',/-experiment-procedure$|safety$/],
-      ]:[
+      ]:grade===3?[
         ['Interpreta el circuito en serie construido por el docente sin realizar otra práctica.','-analysis',/-construction$|experiment|safety$/],
         ['Construye el circuito sencillo según el diseño y las precauciones indicadas.','-construction',/-experiment-procedure$|experiment-record$/],
         ['Compara mezcla de luces y pigmentos con los casos proporcionados.','-comparison',/-matter-mixtures-/],
         ['Mide el tiempo según el procedimiento y registra las mediciones.','-measurement',/-experiment-procedure$/],
         ['Explica cómo funciona el radar.','-explanation',null,/ondas electromagnéticas/],
+      ]:[
+        ['Interpreta los resultados proporcionados de los experimentos de Mendel.','-data-interpretation',/experiment-procedure|safety$/],
+        ['Analiza cistitis y cálculo renal con los casos ficticios proporcionados.','-analysis',/calculation$|result$/],
+        ['Argumenta con pruebas evolutivas de anatomía, embriología y bioquímica comparadas proporcionadas.','-argument',/comparison$/],
+        ['Explica sistema binomial de Linneo y clasificación moderna.','-explanation',/classification-classification$/],
+        ['Interpreta la herencia ligada al sexo del caso ficticio sin solicitar datos familiares.','-analysis',/chromosomes-|data-interpretation$/],
       ]
       report.semanticControls=[]
       for(const [description,required,forbidden,scientificEvidence] of controls){

@@ -1,0 +1,346 @@
+[
+  {
+    "id": "cell-theory",
+    "description": "Explica la contribución del microscopio a la teoría celular.",
+    "variants": [
+      "Observa las imágenes microscópicas proporcionadas y describe sus evidencias celulares."
+    ]
+  },
+  {
+    "id": "cells",
+    "description": "Explica las partes y funciones de una célula eucariota.",
+    "variants": [
+      "Compara célula animal y vegetal.",
+      "Representa la célula animal mediante dibujo o maqueta, sin elaborar ambos."
+    ]
+  },
+  {
+    "id": "membrane-transport",
+    "description": "Compara difusión, ósmosis y transporte activo con los esquemas dados.",
+    "variants": [
+      "Realiza la práctica de ósmosis según el procedimiento indicado y registra observaciones.",
+      "Formula una pregunta y una hipótesis sobre ósmosis. Realiza la práctica indicada y contrasta la hipótesis con las evidencias registradas."
+    ]
+  },
+  {
+    "id": "tissues",
+    "description": "Explica la especialización celular y la formación de tejidos, órganos y sistemas de órganos.",
+    "variants": [
+      "Identifica tejidos en las imágenes dadas."
+    ]
+  },
+  {
+    "id": "transplants",
+    "description": "Debate sobre trasplantes de órganos con las evidencias y los casos ficticios proporcionados.",
+    "variants": [
+      "Investiga en fuentes los trasplantes de órganos."
+    ]
+  },
+  {
+    "id": "cell-energy",
+    "description": "Explica la relación entre ATP y energía celular.",
+    "variants": [
+      "Identifica la estructura de la mitocondria en el modelo dado."
+    ]
+  },
+  {
+    "id": "cell-respiration",
+    "description": "Compara respiración celular aeróbica y fermentación con las fuentes dadas.",
+    "variants": [
+      "Interpreta la ecuación proporcionada del proceso respiratorio."
+    ]
+  },
+  {
+    "id": "photosynthesis",
+    "description": "Explica los factores necesarios para la fotosíntesis.",
+    "variants": [
+      "Compara fase luminosa y fase oscura de la fotosíntesis con el esquema dado.",
+      "Redacta un informe de la práctica de fotosíntesis con los datos proporcionados, sin realizar otro experimento."
+    ]
+  },
+  {
+    "id": "cell-division",
+    "description": "Compara mitosis y meiosis.",
+    "variants": [
+      "Ordena las fases de meiosis en el esquema dado."
+    ]
+  },
+  {
+    "id": "stem-cells",
+    "description": "Explica las características de las células madre.",
+    "variants": [
+      "Argumenta sobre una aplicación de células madre usando la fuente proporcionada."
+    ]
+  },
+  {
+    "id": "gametogenesis",
+    "description": "Compara espermatogénesis y ovogénesis con los esquemas proporcionados.",
+    "variants": [
+      "Ordena la formación de las células sexuales en el modelo dado."
+    ]
+  },
+  {
+    "id": "mendel",
+    "description": "Interpreta los resultados proporcionados de los experimentos de Mendel.",
+    "variants": [
+      "Calcula las probabilidades de herencia con el cuadro de Punnett y los genotipos proporcionados."
+    ]
+  },
+  {
+    "id": "chromosomes",
+    "description": "Explica la teoría cromosómica de la herencia.",
+    "variants": [
+      "Identifica genes y cromosomas en el esquema dado."
+    ]
+  },
+  {
+    "id": "nucleic-acids",
+    "description": "Compara ADN y ARN.",
+    "variants": [
+      "Representa la estructura del ADN mediante el modelo solicitado."
+    ]
+  },
+  {
+    "id": "genetic-expression",
+    "description": "Explica la producción de proteínas usando el código genético proporcionado.",
+    "variants": [
+      "Ordena la replicación del ADN en el esquema dado."
+    ]
+  },
+  {
+    "id": "blood-groups",
+    "description": "Calcula probabilidades de grupo sanguíneo con los genotipos ficticios y el modelo ABO dados.",
+    "variants": [
+      "Explica alelos múltiples con los grupos sanguíneos del caso ficticio."
+    ]
+  },
+  {
+    "id": "genetic-variation",
+    "description": "Analiza mutaciones en genes y cromosomas con los casos ficticios dados.",
+    "variants": [
+      "Explica herencia y medio ambiente con las fuentes proporcionadas.",
+      "Interpreta la herencia ligada al sexo del caso ficticio sin solicitar datos familiares."
+    ]
+  },
+  {
+    "id": "genetic-engineering",
+    "description": "Investiga en fuentes ingeniería genética y ADN recombinante.",
+    "variants": [
+      "Debate sobre ingeniería genética con argumentos de las fuentes dadas."
+    ]
+  },
+  {
+    "id": "life-origin",
+    "description": "Explica las hipótesis del origen de la vida y la atmósfera primitiva.",
+    "variants": [
+      "Interpreta el modelo dado de los primeros organismos."
+    ]
+  },
+  {
+    "id": "evolution-evidence",
+    "description": "Argumenta con pruebas evolutivas de anatomía, embriología y bioquímica comparadas proporcionadas.",
+    "variants": [
+      "Interpreta la datación de fósiles con los datos dados."
+    ]
+  },
+  {
+    "id": "evolution-theories",
+    "description": "Compara las teorías de Lamarck, Darwin y la teoría moderna de la evolución.",
+    "variants": [
+      "Explica selección natural y adaptación con el caso dado.",
+      "Compara convergencia y divergencia evolutivas con los modelos dados."
+    ]
+  },
+  {
+    "id": "geological-time",
+    "description": "Ordena eras y periodos geológicos en la escala temporal proporcionada.",
+    "variants": [
+      "Explica la relación de los fósiles dados con las eras geológicas."
+    ]
+  },
+  {
+    "id": "reproductive-system",
+    "description": "Identifica órganos de los sistemas reproductores masculino y femenino en el modelo dado.",
+    "variants": [
+      "Explica la función de los órganos reproductores humanos."
+    ]
+  },
+  {
+    "id": "development",
+    "description": "Ordena el desarrollo desde la concepción hasta el nacimiento con las imágenes dadas.",
+    "variants": [
+      "Analiza cuidados durante el embarazo en adolescentes y lactancia materna con el caso ficticio proporcionado.",
+      "Argumenta sobre apoyos para el cuidado y educación de hijos del caso ficticio de vida en pareja."
+    ]
+  },
+  {
+    "id": "sexual-health",
+    "description": "Compara métodos anticonceptivos con las fuentes proporcionadas.",
+    "variants": [
+      "Explica transmisión y prevención del VIH y sida según el texto dado."
+    ]
+  },
+  {
+    "id": "skeletal",
+    "description": "Clasifica tipos de huesos según las imágenes proporcionadas.",
+    "variants": [
+      "Explica estructura, función y fracturas del sistema esquelético con el caso ficticio dado."
+    ]
+  },
+  {
+    "id": "muscular",
+    "description": "Compara tipos de músculos y sus funciones.",
+    "variants": [
+      "Analiza la lesión muscular del caso ficticio proporcionado."
+    ]
+  },
+  {
+    "id": "digestive",
+    "description": "Explica digestión de alimentos y funciones del sistema digestivo.",
+    "variants": [
+      "Analiza gastritis y gastroenteritis del caso ficticio proporcionado."
+    ]
+  },
+  {
+    "id": "metabolism",
+    "description": "Compara tipos de metabolismo con el texto proporcionado.",
+    "variants": [
+      "Explica el papel de las enzimas en la digestión."
+    ]
+  },
+  {
+    "id": "circulatory",
+    "description": "Explica composición y función de la sangre y circulación de nutrientes.",
+    "variants": [
+      "Analiza hipertensión arterial y cuidados de la circulación con el caso ficticio dado."
+    ]
+  },
+  {
+    "id": "respiratory",
+    "description": "Explica el intercambio de gases en los pulmones.",
+    "variants": [
+      "Compara asma, neumonía, histoplasmosis y tuberculosis con las fuentes dadas."
+    ]
+  },
+  {
+    "id": "excretory",
+    "description": "Explica formación de la orina y función del sistema excretor.",
+    "variants": [
+      "Analiza cistitis y cálculo renal con los casos ficticios proporcionados."
+    ]
+  },
+  {
+    "id": "nervous-hormonal",
+    "description": "Compara sistema nervioso y hormonal con los esquemas dados.",
+    "variants": [
+      "Explica el impulso nervioso según el modelo proporcionado.",
+      "Analiza meningitis con la fuente y el caso ficticio dados."
+    ]
+  },
+  {
+    "id": "immunity",
+    "description": "Compara tipos de inmunidad con los casos ficticios dados.",
+    "variants": [
+      "Explica anticuerpos, vacunas y memoria inmunitaria con las fuentes dadas."
+    ]
+  },
+  {
+    "id": "prevention",
+    "description": "Explica mecanismos para prevenir las enfermedades con la fuente proporcionada.",
+    "variants": [
+      "Analiza cuidado e higiene personal y enfermedades causadas por agentes del caso ficticio."
+    ]
+  },
+  {
+    "id": "ecosystems",
+    "description": "Explica componentes del ecosistema y factores bióticos y abióticos.",
+    "variants": [
+      "Observa las imágenes proporcionadas y registra componentes del ecosistema sin realizar salida de campo."
+    ]
+  },
+  {
+    "id": "populations",
+    "description": "Compara poblaciones y comunidades.",
+    "variants": [
+      "Interpreta datos proporcionados de crecimiento de poblaciones humanas."
+    ]
+  },
+  {
+    "id": "matter-cycles",
+    "description": "Representa un ciclo biogeoquímico con el esquema solicitado.",
+    "variants": [
+      "Explica el ciclo de la materia con las fuentes proporcionadas."
+    ]
+  },
+  {
+    "id": "food-energy",
+    "description": "Interpreta la pirámide ecológica proporcionada.",
+    "variants": [
+      "Explica el flujo de energía en el ecosistema del modelo dado."
+    ]
+  },
+  {
+    "id": "symbiosis",
+    "description": "Clasifica relaciones simbióticas con los casos proporcionados.",
+    "variants": [
+      "Compara relaciones entre especies con las fuentes dadas."
+    ]
+  },
+  {
+    "id": "resources",
+    "description": "Clasifica recursos naturales con los casos proporcionados.",
+    "variants": [
+      "Argumenta sobre uso de recursos naturales con las evidencias dadas."
+    ]
+  },
+  {
+    "id": "food-sustainability",
+    "description": "Analiza producción y distribución de alimentos con las fuentes dadas.",
+    "variants": [
+      "Diseña una propuesta de sostenibilidad de alimentos para el caso proporcionado."
+    ]
+  },
+  {
+    "id": "pollution",
+    "description": "Analiza causas y consecuencias de contaminación ambiental con los datos proporcionados.",
+    "variants": [
+      "Clasifica tipos de contaminación con los ejemplos dados."
+    ]
+  },
+  {
+    "id": "climate-biomes",
+    "description": "Compara zonas climáticas y biomas con los mapas proporcionados.",
+    "variants": [
+      "Interpreta los datos proporcionados del efecto del cambio climático en la biodiversidad."
+    ]
+  },
+  {
+    "id": "classification",
+    "description": "Clasifica bacterias, arqueobacterias, protistas, hongos, plantas y animales con la clave dada.",
+    "variants": [
+      "Explica sistema binomial de Linneo y clasificación moderna.",
+      "Explica las estructuras y funciones de hongos con el modelo dado."
+    ]
+  },
+  {
+    "id": "viruses",
+    "description": "Identifica estructuras de virus en el esquema dado.",
+    "variants": [
+      "Explica función de las estructuras del virus del modelo dado."
+    ]
+  },
+  {
+    "id": "school-research",
+    "description": "Diseña un proyecto de investigación escolar sobre biotecnología con las condiciones proporcionadas.",
+    "variants": [
+      "Investiga en fuentes una innovación escolar sobre salud de impacto comunitario."
+    ]
+  },
+  {
+    "id": "body-systems",
+    "description": "Explica la relación entre estructura y función de los sistemas del cuerpo humano.",
+    "variants": [
+      "Analiza las enfermedades de los sistemas del cuerpo con el caso ficticio dado."
+    ]
+  }
+]

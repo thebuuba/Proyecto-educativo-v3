@@ -17,7 +17,7 @@ vi.mock('@/services/apiClient', async (importOriginal) => {
     api: {
       ...original.api,
       get: vi.fn(async (path: string) => {
-        if (path === '/activities/center') return {
+        if (path === '/activities/center?contextOnly=true') return {
           sectionSubjects: [{
             id: 'english', schoolYearId: 'year', gradeName: '6.º', gradeSequence: 6,
             sectionName: 'A', subjectName: 'Inglés', subjectCode: 'ING',

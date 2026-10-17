@@ -2,6 +2,8 @@ import {commonScienceModules} from '@aula/shared'
 import {evaluationCatalogV85} from './catalog-v85'
 import {evaluationCatalogV86} from './catalog-v86'
 import {evaluationCatalogV87} from './catalog-v87'
+import {evaluationCatalogV88} from './catalog-v88'
+import {evaluationCatalogV89} from './catalog-v89'
 import { secondaryLanguageGradeTwoTopics, secondGradeNewsModule, secondaryScienceModules,firstGradeReadingReportModule } from '@aula/shared'
 import { evaluationCatalogV1 } from './catalog-v1'
 import { evaluationCatalogV8 } from './catalog-v8'
@@ -104,7 +106,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.88',
+  version: 'evaluation-2026.90',
   scienceCommonModules:commonScienceModules,
   mathCommonModules: commonMathModules,
   frenchInteractionEvidencePolicy: 'EXPLICIT_QUESTIONS_RESPONSES_RESIDENCE_AND_EXCHANGED_ROLES_V1',
@@ -196,6 +198,8 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string) {
+  if(version===evaluationCatalogV89.version)return evaluationCatalogV89
+  if(version===evaluationCatalogV88.version)return evaluationCatalogV88
   if(version===evaluationCatalogV87.version)return evaluationCatalogV87
   if(version===evaluationCatalogV86.version)return evaluationCatalogV86
   if(version===evaluationCatalogV85.version)return evaluationCatalogV85

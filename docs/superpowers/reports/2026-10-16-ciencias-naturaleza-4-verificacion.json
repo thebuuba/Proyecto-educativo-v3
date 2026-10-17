@@ -1,0 +1,554 @@
+{
+  "status": "IMPLEMENTED_PENDING_PERSONAL_AND_CLI_VERIFICATION",
+  "project": "eolgunypmtgrsyrjzcld",
+  "grade": 4,
+  "catalog": "evaluation-2026.90",
+  "source": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_NAT_COMUN_G4_V1",
+    "versionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+    "documentId": "bed6d6b0-91bf-521f-8ebb-460fae0a26f2",
+    "metadata": {
+      "subjectCodes": [
+        "NAT",
+        "NAT-BIO"
+      ],
+      "grades": [
+        4
+      ],
+      "commonOnly": true,
+      "datasetDigest": "e986532987c52d3181b4352e49eb005455b4fd8b57d330bc43aebb5693ee6581",
+      "sourceVersionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+      "sourcePdfHash": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+      "scopeMap": {
+        "4": {
+          "sourceId": "2126f8f2-d70a-5c37-8542-f8d00957a51a",
+          "id": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      },
+      "review": "docs/curriculum/cobertura-secundaria/ciencias-naturaleza-matriz.json"
+    },
+    "scopes": 1,
+    "elements": 192,
+    "relations": 7,
+    "result": "UNCHANGED",
+    "preservedSnapshots": 97
+  },
+  "checks": [
+    {
+      "command": "pnpm --filter backend test",
+      "code": 0,
+      "ms": 11414,
+      "log": ".wrangler/science-source/grade-4-final-check-0.log"
+    },
+    {
+      "command": "pnpm --filter backend build",
+      "code": 0,
+      "ms": 5369,
+      "log": ".wrangler/science-source/grade-4-final-check-1.log"
+    },
+    {
+      "command": "pnpm --filter frontend exec vitest run",
+      "code": 0,
+      "ms": 81414,
+      "log": ".wrangler/science-source/grade-4-context-check-2.log"
+    },
+    {
+      "command": "pnpm --filter frontend build",
+      "code": 0,
+      "ms": 12718,
+      "log": ".wrangler/science-source/grade-4-context-check-3.log"
+    },
+    {
+      "command": "pnpm cloudflare:build",
+      "code": 4294967295,
+      "ms": 96708,
+      "log": ".wrangler/science-source/grade-4-context-cloudflare-terminal.log"
+    }
+  ],
+  "backend": {
+    "files": 106,
+    "tests": 43386
+  },
+  "frontend": {
+    "files": 131,
+    "tests": 43809
+  },
+  "runtime": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-a58n98-U.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-a58n98-U.js",
+        "sha256": "12259a705ecb1e704f6629b4fe28a7a54e31bfbe878a0287252775bf6495ee12",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-DEWpgImz.js",
+        "sha256": "5fff419ac84fb9fad283106d54b551a30083441f8ea13b82f0508cafbb48a95e",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-DS3iaAA9.js",
+        "sha256": "c2e5b3d79273067b48fef2e7163285cded93273d229d9b357d450b2e81c753c3",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-DEnba6o_.js",
+        "sha256": "74d43f69e47decf8d0f045de83aab77266f2d4f9ce99047a3a5013a9598cbd71",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/src-CJOecucF.js",
+        "sha256": "6b5c6f68ae13fca3e98440f3d8a279561910cb422c452582e885ba63f3920e30",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "2e25e3d6f297f1ca1a149c2f6af28b3c0a34c27481bc12621b011f1972983434",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "generationTiming": {
+    "grade": 4,
+    "mode": "PURE_IN_PROCESS_RECOMMENDATION_SYNTHETIC_CONTEXT_NO_AUTH_DB_HTTP_OR_RENDER",
+    "samples": 200,
+    "p50Ms": 0.14859999999998763,
+    "p95Ms": 0.24449999999998795,
+    "maxMs": 0.39529999999999177
+  },
+  "latencyReadOnly": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "grade": 4,
+    "readOnly": true,
+    "catalog": "evaluation-2026.90",
+    "catalogJsonBytes": 733240,
+    "measures": [
+      {
+        "name": "Node PostgreSQL first connection and SELECT1",
+        "ms": 1877.9266
+      },
+      {
+        "name": "Node PostgreSQL warm SELECT1",
+        "ms": 241.2138
+      },
+      {
+        "name": "Node PostgreSQL full catalog equality, one boolean returned",
+        "ms": 6039.7399000000005
+      }
+    ],
+    "limits": "Node direct database, excludes Worker/Auth/context/recommendation/HTTP/render. Source inspection shows the Worker creates and disconnects a request-scoped Prisma client; connection overhead can recur, but these timings do not isolate the Worker delay."
+  },
+  "http": {
+    "verification": "AUTHENTICATED_HTTP_DB_AND_EDITOR_ADAPTERS_NOT_VISUAL",
+    "savedEvidence": [
+      {
+        "type": "rubrica",
+        "total": 20,
+        "activityId": "c754a2ad-667f-48f7-9d92-528cafdda93c",
+        "instrumentHash": "561c3f2e15768202b1efdc2ec914ae0bfe86baef58765841c6841e7038579793",
+        "snapshotId": "94db5436-5511-491a-9bbd-8032ad8144dc",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+          "scopeId": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      },
+      {
+        "type": "lista-cotejo",
+        "total": 17.35,
+        "activityId": "2d099133-5482-4186-8637-f6ec2f9b4778",
+        "instrumentHash": "3f37f77d1680d6d2a49df8a69827394aaff444a7f8f4a97d4acf1d4b357e8d1e",
+        "snapshotId": "875f4bc8-bd4d-434c-b73a-0009af0175b6",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+          "scopeId": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      },
+      {
+        "type": "escala",
+        "total": 20,
+        "activityId": "44a0caf9-4e53-4663-86cf-49cd70180a55",
+        "instrumentHash": "ba6705a19910e1271eb8222a442b84250bdf24f6d8edb6e79155b57f6721c4bc",
+        "snapshotId": "7af6fa25-f1d0-4e09-878a-fd15d4f3d893",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+          "scopeId": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      },
+      {
+        "type": "lista-ponderada",
+        "total": 17.35,
+        "activityId": "5c7f913b-8932-4144-8fe6-703cff3d3ef5",
+        "instrumentHash": "89785579a306f91815e55f992b8c31ef4f93f4f7dd598705e9884a72615feaf1",
+        "snapshotId": "6d0a6e64-58bc-4edf-9405-a24f811ff405",
+        "manualTextAndWeightsPreserved": true,
+        "strategyOnlyExact": true,
+        "curriculum": {
+          "versionId": "760c88fb-6b46-51ef-8195-d9ae0ac2d872",
+          "scopeId": "7c38f47b-f6c1-5c6e-b63a-08ba93bbc31a"
+        }
+      }
+    ],
+    "finalBuildRecheck": null,
+    "semanticControls": []
+  },
+  "browser": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "grade": 4,
+    "session": "personal Development",
+    "entry": "/assets/index-a58n98-U.js",
+    "formats": [
+      {
+        "format": "rubrica",
+        "activityId": "8dcc5dd0-be30-446d-a7bf-c282f6fd5364",
+        "points": 17.35,
+        "fieldsEqual": true,
+        "fields": [
+          {
+            "label": "Criterio 1",
+            "value": "Hipótesis sobre ósmosis · QA"
+          },
+          {
+            "label": "Destacado del criterio 1",
+            "value": "Formula una hipótesis contrastable sobre ósmosis, relacionando las condiciones y el posible efecto de forma compatible con el movimiento neto de agua a través de una membrana selectivamente permeable según las condiciones del sistema estudiado; se evalúa su planteamiento, sin exigir que se confirme."
+          },
+          {
+            "label": "Logrado del criterio 1",
+            "value": "Formula una hipótesis contrastable sobre ósmosis, relacionando las condiciones y el posible efecto de forma compatible con el movimiento neto de agua a través de una membrana selectivamente permeable según las condiciones del sistema estudiado; se evalúa su planteamiento, sin exigir que se confirme. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 1",
+            "value": "La hipótesis sobre ósmosis propone una relación, pero no permite reconocer qué evidencia la contrastaría."
+          },
+          {
+            "label": "Inicial del criterio 1",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 1",
+            "value": "2.73"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Pregunta sobre ósmosis"
+          },
+          {
+            "label": "Destacado del criterio 2",
+            "value": "Formula una pregunta investigable sobre ósmosis que delimita el fenómeno y la evidencia necesaria para responderla."
+          },
+          {
+            "label": "Logrado del criterio 2",
+            "value": "Formula una pregunta investigable sobre ósmosis que delimita el fenómeno y la evidencia necesaria para responderla. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 2",
+            "value": "La pregunta se relaciona con ósmosis, pero no delimita qué se pretende conocer."
+          },
+          {
+            "label": "Inicial del criterio 2",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 2",
+            "value": "2.75"
+          },
+          {
+            "label": "Criterio 3",
+            "value": "Procedimiento de la práctica de ósmosis"
+          },
+          {
+            "label": "Destacado del criterio 3",
+            "value": "Ejecuta el procedimiento indicado para estudiar ósmosis, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación."
+          },
+          {
+            "label": "Logrado del criterio 3",
+            "value": "Ejecuta el procedimiento indicado para estudiar ósmosis, manteniendo las condiciones especificadas y registrando cambios o incidencias que afectan la comparación. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 3",
+            "value": "Ejecuta parte del procedimiento de ósmosis, pero omite una condición indicada que dificulta comparar observaciones."
+          },
+          {
+            "label": "Inicial del criterio 3",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 3",
+            "value": "3.65"
+          },
+          {
+            "label": "Criterio 4",
+            "value": "Registro de observaciones de ósmosis"
+          },
+          {
+            "label": "Destacado del criterio 4",
+            "value": "Registra fielmente las observaciones de la práctica de ósmosis, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados."
+          },
+          {
+            "label": "Logrado del criterio 4",
+            "value": "Registra fielmente las observaciones de la práctica de ósmosis, incluidos resultados inesperados, distinguiendo lo observado de su interpretación, sin inventar resultados. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 4",
+            "value": "Registra observaciones de ósmosis, pero omite información necesaria para relacionarlas con el procedimiento realizado."
+          },
+          {
+            "label": "Inicial del criterio 4",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 4",
+            "value": "2.74"
+          },
+          {
+            "label": "Criterio 5",
+            "value": "Seguridad durante la práctica de ósmosis"
+          },
+          {
+            "label": "Destacado del criterio 5",
+            "value": "Aplica las precauciones indicadas para la práctica de ósmosis y comunica las incidencias observadas antes de continuar cuando exista un riesgo."
+          },
+          {
+            "label": "Logrado del criterio 5",
+            "value": "Aplica las precauciones indicadas para la práctica de ósmosis y comunica las incidencias observadas antes de continuar cuando exista un riesgo. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 5",
+            "value": "Aplica parte de las precauciones indicadas en la práctica de ósmosis, pero necesita corregir una condición de riesgo."
+          },
+          {
+            "label": "Inicial del criterio 5",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 5",
+            "value": "1.83"
+          },
+          {
+            "label": "Criterio 6",
+            "value": "Contraste de hipótesis sobre ósmosis"
+          },
+          {
+            "label": "Destacado del criterio 6",
+            "value": "Contrasta la hipótesis de ósmosis con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación."
+          },
+          {
+            "label": "Logrado del criterio 6",
+            "value": "Contrasta la hipótesis de ósmosis con las evidencias registradas y determina qué respaldan, contradicen o dejan sin resolver, reconociendo resultados inesperados y limitaciones sin exigir su confirmación. Presenta una imprecisión puntual que no cambia la relación principal."
+          },
+          {
+            "label": "En proceso del criterio 6",
+            "value": "Relaciona parte de las evidencias de ósmosis con la hipótesis, pero deja una inferencia sin respaldo."
+          },
+          {
+            "label": "Inicial del criterio 6",
+            "value": "No aporta evidencia verificable del desempeño solicitado sobre ósmosis."
+          },
+          {
+            "label": "Puntos del criterio 6",
+            "value": "3.65"
+          }
+        ]
+      },
+      {
+        "format": "lista-cotejo",
+        "activityId": "445a19f5-936b-4cda-9b0c-09d26c4d2c37",
+        "points": 20,
+        "fieldsEqual": true,
+        "fields": [
+          {
+            "label": "Criterio 1",
+            "value": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. · QA"
+          },
+          {
+            "label": null,
+            "value": "10"
+          },
+          {
+            "label": "Criterio 2",
+            "value": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible."
+          },
+          {
+            "label": null,
+            "value": "10"
+          }
+        ],
+        "snapshotId": null,
+        "origin": "LOCAL_FALLBACK_MANUAL"
+      }
+    ],
+    "contextRecovery": "Initial center304 at16051ms exceeded client timeout; Reintentar contexto center200 at13570ms recovered form",
+    "preparationUpperBoundMs": 40026,
+    "scoreInitiallyBlank": true,
+    "completeOnlyBlank": true,
+    "rubricStrategyOnlyExact": true,
+    "fourControlsVisibleFromEmpty": true,
+    "rubricPointSums": {
+      "at20": 2000,
+      "at1735": 1735
+    },
+    "exhaustionOffersManual": true,
+    "pendingCotejo": {
+      "name": "QA Ciencias 4 · Cotejo · Estructuras celulares",
+      "description": "Identifica estructuras de célula animal y vegetal en los modelos proporcionados. Compara sus funciones.",
+      "points": 20,
+      "fields": [
+        {
+          "label": "Criterio 1",
+          "value": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. · QA"
+        },
+        {
+          "label": null,
+          "value": "10"
+        },
+        {
+          "label": "Criterio 2",
+          "value": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible."
+        },
+        {
+          "label": null,
+          "value": "10"
+        }
+      ],
+      "state": "REOPENED_EXACT_LOCAL_NO_SNAPSHOT",
+      "activityDraftId": "779a4a8c-0a0b-438e-b7c0-8d7f8715374f",
+      "activityId": "445a19f5-936b-4cda-9b0c-09d26c4d2c37"
+    },
+    "manualReviewPreservedFields": true,
+    "additionPreservedFirstRow": true,
+    "additionRedistributionConfirmed": true,
+    "manualFallbackCotejo": {
+      "activityId": "445a19f5-936b-4cda-9b0c-09d26c4d2c37",
+      "points": 20,
+      "fieldsEqual": true,
+      "fields": [
+        {
+          "label": "Criterio 1",
+          "value": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. · QA"
+        },
+        {
+          "label": null,
+          "value": "10"
+        },
+        {
+          "label": "Criterio 2",
+          "value": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible."
+        },
+        {
+          "label": null,
+          "value": "10"
+        }
+      ],
+      "snapshotId": null,
+      "origin": "LOCAL_FALLBACK_MANUAL"
+    },
+    "cotejoSaveFailure": {
+      "status": 500,
+      "cause": "Prisma transaction expired at teacherInstrumentPreference.create after 26129 ms; prior activity preserved per read-only DB check",
+      "retryAfterFailure": true,
+      "attempts": [
+        {
+          "status": 500,
+          "ms": 26129
+        },
+        {
+          "status": 500,
+          "ms": 28250
+        }
+      ]
+    },
+    "remoteCotejo": {
+      "activityId": "9dbb4d7a-a9e7-4781-aa9a-1db91968faa0",
+      "state": "SAVED_REOPEN_BLOCKED_BY_CONTEXT_TIMEOUT",
+      "fields": [
+        {
+          "label": "Criterio 1",
+          "value": "Identifica los elementos solicitados de célula animal y vegetal por sus características observables o las referencias proporcionadas. · QA"
+        },
+        {
+          "label": null,
+          "value": "10"
+        },
+        {
+          "label": "Criterio 2",
+          "value": "Compara los casos solicitados de célula animal y vegetal mediante características científicas comunes coherentes con la organización y las relaciones entre las estructuras y funciones solicitadas de célula animal y vegetal, distinguiendo semejanzas y diferencias respaldadas por la información disponible."
+        },
+        {
+          "label": null,
+          "value": "10"
+        }
+      ],
+      "points": 20
+    },
+    "status": "PARTIAL_PERSONAL_SESSION_BLOCKED",
+    "pending": [
+      "Escala y ponderada personales: generación, edición, guardado y reapertura",
+      "Reapertura de la copia QA 9dbb4d7a-a9e7-4781-aa9a-1db91968faa0",
+      "Medir contexto ligero con sesión personal tras error de perfil; ahora exige contraseña"
+    ]
+  },
+  "copyReadOnly": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "activityId": "9dbb4d7a-a9e7-4781-aa9a-1db91968faa0",
+    "instrumentId": "4bfce82e-5810-4e2e-95d6-ab9c988156ce",
+    "snapshotId": null,
+    "catalog": null,
+    "curriculumVersionId": null,
+    "scopeId": null,
+    "fieldsCatalog": "editable-fallback-v1",
+    "fieldsHash": "ec0e7f5d90869977f23a7c50e06777ca3b71b0a5e606b83e7c6cf3862ced56ba",
+    "rows": "2"
+  },
+  "historicalConservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "preservedReleases": 18,
+    "preservedSnapshots": 73,
+    "newReleases": 5,
+    "newSnapshots": 29,
+    "gradeBaseline": {
+      "grade": 4,
+      "preservedReleases": 21,
+      "preservedSnapshots": 97,
+      "newReleases": 2,
+      "newSnapshots": 5
+    }
+  },
+  "secretsAudit": {
+    "filesInspected": 32,
+    "secretValuesFound": false,
+    "privateFilesExcluded": true
+  },
+  "pending": [
+    "Personal Development session now requires password after profile load failure; scale/weighted and final context measurement not verified visually",
+    "Cloudflare dry-run generated assets then CLI failed to terminate in three attempts; commands interrupted, not passing",
+    "Updating a saved instrument with new snapshot failed twice after transaction expiry; prior data remained intact",
+    "Local checklist and its QA copy have editable-fallback-v1 fields and no remote snapshot; do not attribute remote provenance"
+  ]
+}

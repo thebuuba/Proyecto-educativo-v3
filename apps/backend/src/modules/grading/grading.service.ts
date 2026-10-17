@@ -968,9 +968,17 @@ export class GradingService {
     return activities.map((activity) => mapEvaluationActivity(activity))
   }
 
-  async getActivityCenter(schoolId: string, appUserId?: string, roles?: string[]) {
+  async getActivityCenter(schoolId: string, appUserId?: string, roles?: string[], contextOnly = false) {
     const sectionSubjectScope = activityActorScope(schoolId, appUserId, roles)
     const teacherOnly = 'teacher' in sectionSubjectScope
+    // The creator loads its activities separately by assignment and period.
+    if (contextOnly) {
+      const [sectionSubjects, academicPeriods] = await Promise.all([
+        this.loadSectionSubjects(schoolId, teacherOnly ? appUserId : undefined, true),
+        this.loadAcademicPeriods(schoolId, true),
+      ])
+      return { sectionSubjects, academicPeriods, activities: [] }
+    }
     const [sectionSubjects, academicPeriods, activities, enrollmentCounts] = await Promise.all([
       this.loadSectionSubjects(schoolId, teacherOnly ? appUserId : undefined, true),
       this.loadAcademicPeriods(schoolId, true),

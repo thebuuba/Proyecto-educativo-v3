@@ -17,8 +17,8 @@ export class ActivitiesService {
     return this.grading.getActivities(schoolId, filters, userId, roles)
   }
 
-  getCenter(schoolId: string, userId: string, roles: string[]) {
-    return this.grading.getActivityCenter(schoolId, userId, roles)
+  getCenter(schoolId: string, userId: string, roles: string[], contextOnly = false) {
+    return this.grading.getActivityCenter(schoolId, userId, roles, contextOnly)
   }
 
   save(schoolId: string, userId: string, dto: SaveActivityDto, roles: string[]) {
