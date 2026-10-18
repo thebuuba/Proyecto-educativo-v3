@@ -1,0 +1,1229 @@
+{
+  "grade": 5,
+  "scopeId": "a6108366-713c-572d-8ca4-96753f395e6b",
+  "sourcePdfPages": [
+    377,
+    378,
+    379
+  ],
+  "policy": "REPRESENTATIVE_TASKS_NOT_FULL_COMPOUND_ROW_COVERAGE",
+  "cases": [
+    {
+      "id": "capacities",
+      "topicIds": [
+        "physical-condition-explanation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica la función de fuerza y resistencia en los ejemplos adaptados dados. No se pide velocidad ni flexibilidad ni comparar personas.",
+      "sourceRecordIds": [
+        "4fadab65",
+        "37154070"
+      ],
+      "required": "fuerza.*resistencia",
+      "forbidden": "velocidad|flexibilidad",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "coordination",
+      "topicIds": [
+        "physical-condition-explanation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica la coordinación y la reacción de los ejemplos adaptados proporcionados. No se pide fuerza ni velocidad ni calificar cuerpos.",
+      "sourceRecordIds": [
+        "eb35b824"
+      ],
+      "required": "coordinación.*reacción",
+      "forbidden": "fuerza|velocidad",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "circuit-plan",
+      "topicIds": [
+        "circuit-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el circuito adaptado relacionando las estaciones de fuerza y velocidad con el orden y las pausas ya fijadas en la ficha docente. No añadas dosis nuevas ni lo ejecutes.",
+      "sourceRecordIds": [
+        "c81dff16"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "flexibility-check",
+      "topicIds": [
+        "flexibility-observation"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica el cumplimiento de las acciones de flexibilidad activa adaptadas usando la ficha y registro proporcionados. No se pide flexibilidad pasiva ni medir cuerpos.",
+      "sourceRecordIds": [
+        "f6314117"
+      ],
+      "required": "flexibilidad activa",
+      "forbidden": "pasiva",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "motor-variation",
+      "topicIds": [
+        "motor-variation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Combina los giros y desplazamientos adaptados variando sentido y centro de gravedad según las señales proporcionadas. No se piden saltos ni velocidad.",
+      "sourceRecordIds": [
+        "a202952a"
+      ],
+      "required": "sentido.*centro de gravedad",
+      "forbidden": "saltos|velocidad",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "equilibrium",
+      "topicIds": [
+        "equilibrium-observation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el equilibrio estático del referente adaptado relacionando base de sustentación y altura con los apoyos dados. No se pide equilibrio dinámico ni ejecutar la maniobra.",
+      "sourceRecordIds": [
+        "0abdf171"
+      ],
+      "required": "base de sustentación.*altura",
+      "forbidden": "dinámic|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "orientation-no-tools",
+      "topicIds": [
+        "spatial-orientation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Realiza la orientación espacial del trayecto adaptado dado usando objetos y puntos cardinales según las señales y apoyos proporcionados. No utilices mapa ni brújula ni GPS.",
+      "sourceRecordIds": [
+        "942a4496"
+      ],
+      "required": "puntos cardinales",
+      "forbidden": "mapa|brújula|GPS",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "compass",
+      "topicIds": [
+        "compass-orientation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Realiza la orientación con brújula no convencional del trayecto adaptado dado según puntos cardinales y referencias proporcionadas. No se pide GPS ni elaborar otro instrumento.",
+      "sourceRecordIds": [
+        "2bef3d27",
+        "ca371f93"
+      ],
+      "required": "brújula no convencional",
+      "forbidden": "GPS",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "gps",
+      "topicIds": [
+        "gps-orientation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las referencias GPS de la orientación del trayecto dado mediante sus coordenadas ficticias y puntos cardinales proporcionados. No solicites ubicación personal ni uses brújula.",
+      "sourceRecordIds": [
+        "2bef3d27",
+        "ca371f93"
+      ],
+      "required": "GPS",
+      "forbidden": "brújula",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "camping-concept",
+      "topicIds": [
+        "camping-concept"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica las modalidades de acampada mediante los referentes proporcionados. No se pide realizar una excursión.",
+      "sourceRecordIds": [
+        "37ddc0cb"
+      ],
+      "required": "acampada",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "shelter-plan",
+      "topicIds": [
+        "shelter-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el modelo de refugio con los recursos, esquema y condiciones supervisadas proporcionadas. No se pide casa de campaña ni construirlo todavía.",
+      "sourceRecordIds": [
+        "eb87fbaa"
+      ],
+      "required": "Planifica.*refugio",
+      "forbidden": "casa de campaña|^Construye",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "shelter-assembly",
+      "topicIds": [
+        "shelter-assembly"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Construye e instala el modelo de refugio de la simulación supervisada siguiendo el esquema y recursos ya dados. No se pide casa de campaña ni una salida real.",
+      "sourceRecordIds": [
+        "eb87fbaa"
+      ],
+      "required": "Construye e instala.*refugio",
+      "forbidden": "casa de campaña",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "hiking-plan",
+      "topicIds": [
+        "hiking-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el trayecto de senderismo adaptado del caso con las referencias y condiciones de seguridad proporcionadas. No se pide acampada ni realizar el recorrido todavía.",
+      "sourceRecordIds": [
+        "37ddc0cb",
+        "31366105",
+        "54d34afc",
+        "bf362ffe"
+      ],
+      "required": "Planifica.*senderismo",
+      "forbidden": "acampada|^Recorre|simulad",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "hiking-practice",
+      "topicIds": [
+        "hiking-practice"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Recorre el trayecto de senderismo adaptado siguiendo las señales y condiciones supervisadas proporcionadas, con los apoyos acordados. No añadas distancias nuevas.",
+      "sourceRecordIds": [
+        "31366105",
+        "54d34afc"
+      ],
+      "required": "Recorre.*senderismo",
+      "forbidden": "60 metros|600 metros",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "knots",
+      "topicIds": [
+        "camping-knots"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Elabora el nudo vuelta de cota simple en el modelo de cabuyería siguiendo la ficha y condiciones supervisadas dadas, sin personas ni cargas. No se pide nudo cabestrillo ni inventar instrucciones.",
+      "sourceRecordIds": [
+        "77379d92",
+        "1fe42230"
+      ],
+      "required": "vuelta de cota simple",
+      "forbidden": "cabestrillo",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "risk",
+      "topicIds": [
+        "risk-prevention-case"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la prevención de riesgos del campismo en el caso proporcionado justificando las decisiones con la ficha dada. No se pide aplicar maniobras de primeros auxilios.",
+      "sourceRecordIds": [
+        "3f5cfafc",
+        "cc9e713c",
+        "3aaccb6b"
+      ],
+      "required": "riesgos",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "first-aid",
+      "topicIds": [
+        "first-aid-reference"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica el cumplimiento del protocolo de primeros auxilios proporcionado mediante el registro del caso dado. No inventes maniobras ni diagnósticos ni intervengas con una persona.",
+      "sourceRecordIds": [
+        "3f5cfafc",
+        "cc9e713c",
+        "3aaccb6b"
+      ],
+      "required": "protocolo.*primeros auxilios",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "athletics-history",
+      "topicIds": [
+        "athletics-history"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta los hechos históricos del atletismo del ámbito local asignado relacionando personajes, fechas y evidencias de las fuentes proporcionadas. No sustituyas el ámbito por historia internacional.",
+      "sourceRecordIds": [
+        "15a2f63e"
+      ],
+      "required": "atletismo",
+      "forbidden": "internacional",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "athletics-rules",
+      "topicIds": [
+        "athletics-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica si las decisiones del registro de atletismo cumplen las reglas elementales proporcionadas. No se pide ejecutar pruebas.",
+      "sourceRecordIds": [
+        "cc05bc86",
+        "70e370fa"
+      ],
+      "required": "Verifica.*reglas",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "relay",
+      "topicIds": [
+        "athletic-relay"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta la carrera de relevos adaptada según las señales, intercambios y condiciones supervisadas proporcionadas. No se piden vallas ni comparar rapidez personal.",
+      "sourceRecordIds": [
+        "cc05bc86",
+        "cd96df4a",
+        "a3c83c09",
+        "819564e0"
+      ],
+      "required": "relevos",
+      "forbidden": "vallas",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "hurdles",
+      "topicIds": [
+        "athletic-hurdles"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la técnica de carrera con vallas del referente adaptado dado relacionando sus fases con las evidencias proporcionadas. No se pide ejecutar ni diseñar alturas.",
+      "sourceRecordIds": [
+        "cc05bc86",
+        "cd96df4a",
+        "a3c83c09"
+      ],
+      "required": "vallas",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "high-jump",
+      "topicIds": [
+        "athletic-high-jump"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el salto alto modalidad tijera adaptado según las señales, apoyos y condiciones supervisadas proporcionadas. No añadas alturas ni maniobras nuevas.",
+      "sourceRecordIds": [
+        "cc05bc86",
+        "a3c83c09",
+        "2250d4bb"
+      ],
+      "required": "salto alto.*tijera",
+      "forbidden": "salto largo",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "javelin",
+      "topicIds": [
+        "athletic-javelin"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las fases del lanzamiento de jabalina del referente técnico proporcionado relacionándolas con sus evidencias. No se pide lanzar ni generar instrucciones operativas.",
+      "sourceRecordIds": [
+        "cc05bc86",
+        "cd96df4a",
+        "a3c83c09"
+      ],
+      "required": "jabalina",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "walking",
+      "topicIds": [
+        "athletic-walk-run"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta la caminata atlética adaptada siguiendo las señales y condiciones supervisadas dadas con los apoyos permitidos. No se pide carrera ni fijar distancia.",
+      "sourceRecordIds": [
+        "2250d4bb"
+      ],
+      "required": "caminata",
+      "forbidden": "carrera|60 metros|600 metros",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "starts",
+      "topicIds": [
+        "athletic-starts"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara las salidas atléticas alta y agachada de los referentes proporcionados según sus posiciones y señales. No se pide ejecutarlas.",
+      "sourceRecordIds": [
+        "2250d4bb"
+      ],
+      "required": "alta.*agachada",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "long-jump",
+      "topicIds": [
+        "athletic-long-jump"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el salto largo modalidad colgante del referente adaptado dado según sus fases y apoyos proporcionados. No se pide modalidad natural ni ejecutar.",
+      "sourceRecordIds": [
+        "2250d4bb"
+      ],
+      "required": "salto largo.*colgante",
+      "forbidden": "natural|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "athletics-adaptation",
+      "topicIds": [
+        "athletic-adaptation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las adaptaciones de las reglas de atletismo del caso concreto proporcionado según sus recursos y condiciones de participación. Compara las alternativas dadas y justifica la decisión elegida. No infieras diagnósticos.",
+      "sourceRecordIds": [
+        "c5c49252"
+      ],
+      "required": "adaptaciones.*atletismo",
+      "forbidden": "diagnostica",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "paralympic",
+      "topicIds": [
+        "paralympic-history"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los hechos y características del atletismo paralímpico del ámbito asignado mediante las evidencias de las fuentes proporcionadas. No se pide un diagnóstico.",
+      "sourceRecordIds": [
+        "f7cac443",
+        "15a2f63e"
+      ],
+      "required": "paralímpico",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "baseball-local",
+      "topicIds": [
+        "baseball-history"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga la historia de los clubes y equipos de béisbol de la comunidad asignada mediante las fuentes proporcionadas. No se pide softbol ni historia internacional.",
+      "sourceRecordIds": [
+        "11de4324",
+        "962eda27"
+      ],
+      "required": "béisbol.*comunidad|comunidad.*béisbol",
+      "forbidden": "softbol|internacional",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "baseball-biography",
+      "topicIds": [
+        "baseball-biography"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta los aportes biográficos de atletas dominicanos de softbol del ámbito local asignado mediante las fuentes proporcionadas. No se pide béisbol ni opiniones sobre prestigio personal.",
+      "sourceRecordIds": [
+        "4870637f",
+        "0f9712b6"
+      ],
+      "required": "softbol",
+      "forbidden": "béisbol",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "baseball-rules",
+      "topicIds": [
+        "baseball-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica si las decisiones del caso de softbol cumplen las reglas proporcionadas justificando cada marca con las evidencias del registro. No se pide béisbol ni jugar.",
+      "sourceRecordIds": [
+        "0dadf5a6",
+        "66d34ecd",
+        "70e370fa"
+      ],
+      "required": "softbol",
+      "forbidden": "béisbol",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "baseball-five",
+      "topicIds": [
+        "baseball-five-rules"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara las reglas del béisbol convencional y béisbol 5 mediante las semejanzas y diferencias de los referentes proporcionados. No se pide softbol ni ejecutar juego.",
+      "sourceRecordIds": [
+        "0dadf5a6"
+      ],
+      "required": "convencional.*5",
+      "forbidden": "softbol|^Juega",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "baseball-positions",
+      "topicIds": [
+        "baseball-positions"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica las posiciones defensivas de béisbol relacionando sus asignaciones numéricas con las funciones y ubicaciones del referente proporcionado. No se pide clasificar personas por capacidad natural.",
+      "sourceRecordIds": [
+        "5fe6b02e"
+      ],
+      "required": "numéric",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "fielding",
+      "topicIds": [
+        "baseball-fielding"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Fildea el rolling de la tarea adaptada de béisbol con tiro a la base expresamente elegida según las señales, posición y apoyos proporcionados. No se pide fly ni inventar distancias.",
+      "sourceRecordIds": [
+        "cbd844c9",
+        "45caad49",
+        "9f7e45c8"
+      ],
+      "required": "rolling.*tiro.*base",
+      "forbidden": "fly|flay",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "throwing",
+      "topicIds": [
+        "baseball-throwing"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el tiro a corta distancia de béisbol hacia la referencia señalada según las condiciones supervisadas proporcionadas. No se pide larga distancia ni nueva medida.",
+      "sourceRecordIds": [
+        "ab824da6"
+      ],
+      "required": "corta distancia",
+      "forbidden": "larga distancia",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "pitcher",
+      "topicIds": [
+        "baseball-pitcher"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el tiro en recta entre el box y el home plate del referente de béisbol dado relacionando dirección y evidencias proporcionadas. No se pide ejecutar lanzamientos.",
+      "sourceRecordIds": [
+        "ab824da6"
+      ],
+      "required": "box.*home plate",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "batting",
+      "topicIds": [
+        "baseball-batting"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el bateo adaptado de béisbol usando el móvil y el implemento expresamente dados según las señales y condiciones supervisadas proporcionadas. No se pide corrido de bases.",
+      "sourceRecordIds": [
+        "8e5b705b",
+        "5fb6c0cb",
+        "69850c94"
+      ],
+      "required": "bateo.*móvil.*implemento",
+      "forbidden": "corrido de bases",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "base-running",
+      "topicIds": [
+        "base-running"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Corre las bases de béisbol de la situación adaptada dada siguiendo las señales y decisiones expresamente proporcionadas. No se pide batear ni ganar.",
+      "sourceRecordIds": [
+        "8e5b705b",
+        "5fb6c0cb"
+      ],
+      "required": "bases",
+      "forbidden": "bateo|outs|marcador",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "offensive-reference",
+      "topicIds": [
+        "baseball-offensive-reference"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el agarre del bate y la colocación en la caja de bateo del referente de béisbol dado según sus señales. No se pide zona de strikes ni ejecutar bateo.",
+      "sourceRecordIds": [
+        "8e5b705b"
+      ],
+      "required": "agarre.*caja de bateo",
+      "forbidden": "strikes|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "double-play",
+      "topicIds": [
+        "baseball-double-play"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el doble play adaptado de béisbol de la situación dada relacionando recepción, tiro y decisiones con las señales y apoyos proporcionados. No se pide inventar otra jugada.",
+      "sourceRecordIds": [
+        "8dd2d040"
+      ],
+      "required": "doble play",
+      "forbidden": "^Analiza",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "baseball-game",
+      "topicIds": [
+        "baseball-game"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Juega el juego popular adaptado al béisbol 5 dado aplicando las reglas y decisiones ofensivas y defensivas proporcionadas con los apoyos acordados. No se pide softbol ni ganar.",
+      "sourceRecordIds": [
+        "528c4d66",
+        "59d37b11",
+        "66d34ecd",
+        "68309b2a"
+      ],
+      "required": "Juega.*béisbol 5",
+      "forbidden": "softbol|^Verifica",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "baseball-tactics",
+      "topicIds": [
+        "baseball-tactics"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve la situación defensiva de béisbol del caso dado justificando la decisión según posiciones, alternativas y reglamento proporcionados. No se pide ofensiva ni jugar.",
+      "sourceRecordIds": [
+        "59d37b11",
+        "68309b2a"
+      ],
+      "required": "Resuelve.*defensiva",
+      "forbidden": "ofensiv|^Juega",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "endings-importance",
+      "topicIds": [
+        "chess-endings-importance"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica la importancia del dominio de los finales de ajedrez mediante las posiciones y ejemplos proporcionados. No se pide jugar ni puntuar inteligencia.",
+      "sourceRecordIds": [
+        "cd03a545"
+      ],
+      "required": "finales",
+      "forbidden": "^Juega",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "endings-classification",
+      "topicIds": [
+        "chess-endings-classification"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Clasifica los finales de ajedrez básicos y medios de las posiciones proporcionadas justificando sus diferencias mediante las piezas y jugadas dadas. No se pide apertura.",
+      "sourceRecordIds": [
+        "9d9afa6d"
+      ],
+      "required": "básic.*medio",
+      "forbidden": "apertura",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "endings-problem",
+      "topicIds": [
+        "chess-ending-problem"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve el problema del final de ajedrez de rey y peón contra rey justificando las jugadas con la posición y reglas dadas. No se pide dama contra peón ni ganar una partida.",
+      "sourceRecordIds": [
+        "d7ca6b0d",
+        "5ca8c9fd"
+      ],
+      "required": "rey y peón contra rey",
+      "forbidden": "dama",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "endings-basic",
+      "topicIds": [
+        "chess-basic-ending"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la partida de ajedrez con final de nivel básico relacionando las jugadas y decisiones con la posición proporcionada. No se pide final medio ni aperturas.",
+      "sourceRecordIds": [
+        "b74e0d8a",
+        "ec610e8a"
+      ],
+      "required": "básico",
+      "forbidden": "medio|apertura",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "endings-medium",
+      "topicIds": [
+        "chess-medium-ending"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la partida de ajedrez con final de nivel medio relacionando las jugadas y decisiones con la posición proporcionada. No se pide final básico.",
+      "sourceRecordIds": [
+        "912b4c33",
+        "ac64ebef"
+      ],
+      "required": "medio",
+      "forbidden": "básico",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "endings-game",
+      "topicIds": [
+        "chess-ending-game"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Juega la partida adaptada de ajedrez aplicando las técnicas de finales expresamente dadas según la posición y reglas proporcionadas. No se exige ganar ni apertura nueva.",
+      "sourceRecordIds": [
+        "bc209837"
+      ],
+      "required": "Juega.*finales",
+      "forbidden": "apertura",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "martial-history",
+      "topicIds": [
+        "martial-history"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta los hechos históricos de las artes marciales adaptadas del ámbito local asignado según fechas y fuentes proporcionadas. No se pide combate ni historia internacional.",
+      "sourceRecordIds": [
+        "15a2f63e"
+      ],
+      "required": "marciales.*local",
+      "forbidden": "internacional|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "martial-norms",
+      "topicIds": [
+        "martial-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las normas de conducta de artes marciales del caso proporcionado relacionando acciones observables y reglas dadas con la situación cotidiana descrita. No infieras moralidad ni obediencia privada.",
+      "sourceRecordIds": [
+        "dadc26a1",
+        "214b26bc",
+        "639b9330",
+        "3cc3f2cd"
+      ],
+      "required": "normas.*marciales",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "martial-score",
+      "topicIds": [
+        "martial-scoring"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Interpreta el sistema de puntuación de combate de artes marciales del registro proporcionado relacionando cada decisión con los valores y reglas dados. No inventes otro sistema.",
+      "sourceRecordIds": [
+        "ebea24b3",
+        "7f331799",
+        "08e35c1e"
+      ],
+      "required": "puntuación.*valores",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "martial-kata",
+      "topicIds": [
+        "martial-kata"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta la kata básica adaptada según posiciones, secuencia y apoyos de la ficha supervisada proporcionada. No se pide poomsae ni combate ni añadir maniobras.",
+      "sourceRecordIds": [
+        "db4cdf8a",
+        "58847e8a",
+        "f008f79a"
+      ],
+      "required": "kata",
+      "forbidden": "poomsae|combate",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "martial-attacks",
+      "topicIds": [
+        "martial-attacks"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta la combinación de ataques y contraataques de artes marciales en la simulación supervisada según señales, secuencia y apoyos expresamente proporcionados. No añadas golpes o instrucciones nuevas.",
+      "sourceRecordIds": [
+        "69cae1c2",
+        "5778ff97"
+      ],
+      "required": "ataques.*contraataques",
+      "forbidden": "^Analiza",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "martial-defense",
+      "topicIds": [
+        "martial-defense"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las decisiones de defensa personal de artes marciales del referente de agresión simulada según alternativas y condiciones proporcionadas. No se pide ejecutar técnicas ni generar instrucciones operativas.",
+      "sourceRecordIds": [
+        "2429d504",
+        "1dbb95ac",
+        "e91b3568"
+      ],
+      "required": "defensa personal",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "martial-fundamentals",
+      "topicIds": [
+        "martial-fundamentals"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta los desplazamientos adaptados de artes marciales según las señales, referentes y condiciones supervisadas proporcionadas. No se piden patadas ni puños ni agarres ni proyecciones ni caídas ni combates.",
+      "sourceRecordIds": [
+        "db01e9e4"
+      ],
+      "required": "desplazamientos",
+      "forbidden": "patadas|puños|agarres|proyecciones|caídas|combates",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "care-frequency",
+      "topicIds": [
+        "care-frequency"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "description": "Registra la frecuencia del cuidado acordado de materiales y espacio durante las oportunidades observadas de la actividad física según el registro dado. No se evalúa intención privada.",
+      "sourceRecordIds": [
+        "77878e7e"
+      ],
+      "required": "oportunidades",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "cooperation-frequency",
+      "topicIds": [
+        "tactical-cooperation"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "description": "Registra la frecuencia de propuestas pertinentes y cumplimiento de acuerdos técnicos concretos durante las oportunidades observadas del trabajo colectivo. No infieras perseverancia o esfuerzo privado.",
+      "sourceRecordIds": [
+        "0ac15375",
+        "31e9de72",
+        "571aae4d"
+      ],
+      "required": "propuestas|acuerdos",
+      "forbidden": "perseverancia",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "fair-play",
+      "topicIds": [
+        "fair-play-verification"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica el cumplimiento de las reglas de juego limpio y turnos del registro de actividad deportiva proporcionado. No puntúes personalidad ni adhesión interna.",
+      "sourceRecordIds": [
+        "bbfc2f0f",
+        "9be26b57",
+        "12794c19"
+      ],
+      "required": "Verifica.*reglas",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "hygiene",
+      "topicIds": [
+        "hygiene-verification"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica el cumplimiento de las acciones de higiene de materiales expresamente acordadas mediante el registro proporcionado. No solicites hábitos íntimos ni datos personales.",
+      "sourceRecordIds": [
+        "34176f12"
+      ],
+      "required": "higiene.*materiales",
+      "forbidden": "íntimos",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "progress",
+      "topicIds": [
+        "motor-progress-record"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la progresión motriz del registro de actividad física proporcionado relacionando los cambios documentados con las acciones y condiciones dadas. No compares cuerpos ni capacidad natural.",
+      "sourceRecordIds": [
+        "c5daac39",
+        "a08151f9",
+        "515a0008",
+        "bdbd9765"
+      ],
+      "required": "progresión",
+      "forbidden": "talento|apariencia",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "wellbeing",
+      "topicIds": [
+        "wellbeing-reference"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica la relación entre actividad física y bienestar mediante las evidencias de los referentes proporcionados. No recomiendes dieta ni ejercicio personal ni diagnostiques.",
+      "sourceRecordIds": [
+        "d839e370",
+        "b76d0713"
+      ],
+      "required": "bienestar",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "endings-choice",
+      "topicIds": [
+        "chess-ending-problem"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve el problema del final de ajedrez elegido entre rey y peón contra rey o dama contra peón justificando las jugadas con la posición dada. No se exigen ambos.",
+      "sourceRecordIds": [
+        "d7ca6b0d"
+      ],
+      "required": "elegid.*rey y peón contra rey.*o.*dama contra peón",
+      "forbidden": "rey y peón contra rey y dama",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "martial-kata-choice",
+      "topicIds": [
+        "martial-kata"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta la kata o poomsae básica expresamente elegida siguiendo las posiciones, secuencia y condiciones supervisadas proporcionadas. No se exigen ambas ni combate.",
+      "sourceRecordIds": [
+        "db4cdf8a",
+        "58847e8a",
+        "f008f79a"
+      ],
+      "required": "elegid.*kata.*o.*poomsae",
+      "forbidden": "kata y poomsae|combate",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "fielding-choice",
+      "topicIds": [
+        "baseball-fielding"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Fildea el rolling o fly expresamente elegido de béisbol con tiro a la base dada según las señales y apoyos proporcionados. No se exigen ambos batazos.",
+      "sourceRecordIds": [
+        "45caad49"
+      ],
+      "required": "elegid.*rolling.*o.*fly",
+      "forbidden": "rolling y fly",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "double-play-plan",
+      "topicIds": [
+        "baseball-double-play"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el doble play adaptado de béisbol relacionando posiciones, orden y decisiones con el caso proporcionado. No se pide ejecutarlo todavía.",
+      "sourceRecordIds": [
+        "8dd2d040"
+      ],
+      "required": "Planifica.*doble play",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "relay-plan",
+      "topicIds": [
+        "athletic-relay"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la carrera de relevos adaptada relacionando el orden y los intercambios con las señales y condiciones ya proporcionadas. No se pide ejecutar ni asignar distancias.",
+      "sourceRecordIds": [
+        "cd96df4a",
+        "a3c83c09"
+      ],
+      "required": "Planifica.*relevos",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "baseball-tactics-offensive",
+      "topicIds": [
+        "baseball-tactics"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve la situación ofensiva de béisbol 5 del caso dado justificando la decisión según posiciones y alternativas proporcionadas. No se pide defensiva ni añadir reglamento.",
+      "sourceRecordIds": [
+        "68309b2a"
+      ],
+      "required": "Resuelve.*ofensiva",
+      "forbidden": "defensiv|reglamento",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "knots-analysis",
+      "topicIds": [
+        "camping-knots"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el nudo cabestrillo del modelo de cabuyería según las relaciones de la ficha proporcionada. No se pide vuelta de cota simple ni elaborarlo.",
+      "sourceRecordIds": [
+        "77379d92",
+        "1fe42230"
+      ],
+      "required": "cabestrillo",
+      "forbidden": "vuelta de cota simple|^Elabora",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "shelter-choice",
+      "topicIds": [
+        "shelter-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el modelo de casa de campaña o refugio según el esquema, recursos y condiciones supervisadas proporcionadas. No se exigen ambos modelos ni construir todavía.",
+      "sourceRecordIds": [
+        "eb87fbaa"
+      ],
+      "required": "elegid.*casa de campaña.*o.*refugio",
+      "forbidden": "casa de campaña y refugio",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "base-running-explanation",
+      "topicIds": [
+        "base-running"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica corrido de bases de béisbol.",
+      "sourceRecordIds": [
+        "8e5b705b",
+        "5fb6c0cb"
+      ],
+      "required": "bases",
+      "forbidden": "outs|marcador",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "equilibrium-explanation",
+      "topicIds": [
+        "equilibrium-observation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica equilibrio y base de sustentación.",
+      "sourceRecordIds": [
+        "0abdf171"
+      ],
+      "required": "base de sustentación",
+      "forbidden": "plano|altura",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "fielding-and-bases",
+      "topicIds": [
+        "baseball-fielding",
+        "base-running"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Fildea el rolling de béisbol con tiro a la base dada según las señales y condiciones supervisadas proporcionadas. Luego corre las bases de béisbol siguiendo las señales y decisiones dadas. No se pide fly ni bateo.",
+      "sourceRecordIds": [
+        "45caad49",
+        "5fb6c0cb"
+      ],
+      "required": "rolling.*bases",
+      "forbidden": "fly|bateo|outs|marcador",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas",
+      "criterionCount": 2
+    }
+  ]
+}

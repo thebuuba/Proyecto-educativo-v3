@@ -6,13 +6,14 @@ import {physicalGradeOneTopics} from './secondary-physical-grade-1'
 import {physicalGradeTwoTopics} from './secondary-physical-grade-2'
 import {physicalGradeThreeTopics} from './secondary-physical-grade-3'
 import {physicalGradeFourTopics} from './secondary-physical-grade-4'
+import {physicalGradeFiveTopics} from './secondary-physical-grade-5'
 
 type PhysicalPurpose='ANALYSIS'|'COMPARISON'|'RESEARCH'|'REPORT'|'PLAN'|'PERFORMANCE'|'PRODUCTION'|'PROBLEM_SOLVING'|'OBSERVATION'|'VERIFICATION'|'DEBATE'|'PRESENTATION'
 type PhysicalEvidence={id?:string;title:string;success:string;sufficient:string;partial:string;error:string;absent?:string}
 export type PhysicalTopic={id:string;grade:number;label:string;match:string;excludeWhen?:string;relation:string;pdfPages:number[];sourceRecordIds:string[];primaryPurpose:PhysicalPurpose;evidence:(PhysicalEvidence&{id:string;plan?:PhysicalEvidence;variants?:Partial<Record<PhysicalPurpose,PhysicalEvidence>>})[]}
 type PhysicalAction={text:string;topics:PhysicalTopic[];purpose:PhysicalPurpose}
 export type CommonPhysicalTask={grade:number;text:string;actions:PhysicalAction[];activityType:string;technique:string}
-export const commonPhysicalModules=[{id:'educacion-fisica-comun-1',grade:1,topics:physicalGradeOneTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-2',grade:2,topics:physicalGradeTwoTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-3',grade:3,topics:physicalGradeThreeTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-4',grade:4,topics:physicalGradeFourTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'}]
+export const commonPhysicalModules=[{id:'educacion-fisica-comun-1',grade:1,topics:physicalGradeOneTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-2',grade:2,topics:physicalGradeTwoTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-3',grade:3,topics:physicalGradeThreeTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-4',grade:4,topics:physicalGradeFourTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-5',grade:5,topics:physicalGradeFiveTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'}]
 
 const normalize=(value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
 const action='(?:(?:analiz|compar|contrast|explic|identific|interpret|verific|comprueb|registr|organiz|recopil|investig|indag|debat|expon|present|resuelv|ejecut|realiz|recorr|juega|combin|represent|improvis|particip|facilit|cre|constru|instal|filde|corre|elabor|disen|planific|propon|observ|ubic|relacion|justific|sustent)[a-z]*|clasifica|clasifiquen|selecciona|seleccionen|reproduce|reproduzcan|conduce|conduzcan|recepciona|recepcionen|valora|valoren)'
@@ -42,6 +43,13 @@ function selectedTopics(text:string,available:PhysicalTopic[]){
   if(has('basketball-adapted-rules')||has('basketball-three-on-three'))topics=topics.filter(t=>t.id!=='basketball-rules')
   if(has('basketball-game'))topics=topics.filter(t=>t.id!=='basketball-three-on-three')
   for(const family of ['basketball','handball'])if(topics.some(t=>t.id.startsWith(family+'-')&&t.id!==family+'-rules')&&!/^(?:explica|interpreta|analiza)\s+(?:las\s+)?reglas|^(?:verifica|comprueba|registra)\b/.test(text))topics=topics.filter(t=>t.id!==family+'-rules')
+ }
+ if(topics.some(t=>t.grade===5)){
+  if(has('shelter-plan'))topics=topics.filter(t=>t.id!=='shelter-assembly')
+  if(has('baseball-fielding')||has('baseball-double-play')||has('baseball-pitcher'))topics=topics.filter(t=>t.id!=='baseball-throwing')
+  if(has('baseball-offensive-reference'))topics=topics.filter(t=>t.id!=='baseball-batting')
+  if(has('baseball-five-rules'))topics=topics.filter(t=>t.id!=='baseball-rules')
+  if(has('baseball-game')||has('baseball-tactics'))topics=topics.filter(t=>!['baseball-rules','baseball-five-rules'].includes(t.id))
  }
  return topics
 }
@@ -99,6 +107,77 @@ function contextualTopic(topic:PhysicalTopic,text:string):PhysicalTopic{
  const select=(options:[string,string][])=>options.filter(([pattern])=>new RegExp(`\\b(?:${pattern})\\b`).test(text)).map(([,label])=>label)
  const join=(parts:string[])=>parts.length<2?parts[0]:parts.slice(0,-1).join(', ')+' y '+parts.at(-1)
  let evidence=topic.evidence.map(e=>({...e}))
+ if(topic.grade===5){
+  evidence=evidence.map(e=>({...e,absent:'No aporta evidencia del desempeño expresamente solicitado.'}))
+  const choice=(parts:string[])=>parts.length>1&&/\bo\b/.test(text)?'la opción elegida entre '+parts.join(' o '):parts.length?join(parts):'la opción expresamente elegida'
+  const update=(success:string,relation?:string)=>{evidence=evidence.map(e=>({...e,success}));if(relation)topic={...topic,relation}}
+  if(topic.id==='compass-orientation'&&/no convencional/.test(text))evidence=evidence.map(e=>({...e,variants:{...e.variants,PERFORMANCE:{...e,...e.variants?.PERFORMANCE,success:'Realiza la orientación con la brújula no convencional del trayecto adaptado siguiendo los puntos cardinales y referencias proporcionadas con los apoyos permitidos.'}}}))
+  if(topic.id==='flexibility-observation')update(`Verifica el cumplimiento de las acciones de flexibilidad ${choice(select([['activa','activa'],['pasiva','pasiva']]))} adaptadas contrastando el registro con la ficha docente proporcionada, sin medir amplitud corporal ni añadir maniobras.`)
+  if(topic.id==='equilibrium-observation'){
+   const parts=select([['base de sustentacion','base de sustentación'],['apoyos','apoyos'],['altura','altura'],['planos?','plano'],['niveles','niveles'],['estatico','equilibrio estático'],['dinamico','equilibrio dinámico']]),target=parts.length?join(parts):'las condiciones expresamente dadas'
+   update(`Analiza el equilibrio del referente adaptado relacionando ${target} con las evidencias de la ficha proporcionada, sin exigir ejecución.`,`la relación entre ${target} y el equilibrio del referente adaptado proporcionado`)
+  }
+  if(topic.id==='shelter-plan'||topic.id==='shelter-assembly'){
+   const target=choice(select([['casas? de campana','casa de campaña'],['refugios?','refugio']]))
+   topic={...topic,label:'modelo de '+target,relation:`la relación entre el modelo de ${target}, sus recursos y condiciones dados`}
+   update(topic.id==='shelter-plan'?`Planifica el modelo de ${target} relacionando esquema, recursos y condiciones supervisadas proporcionadas, sin exigir construcción.`:`${/constru/.test(text)&&/instal/.test(text)?'Construye e instala':/instal/.test(text)?'Instala':'Construye'} el modelo de ${target} siguiendo el esquema, recursos y condiciones supervisadas proporcionadas.`)
+  }
+  if(topic.id==='camping-knots'){
+   const parts=select([['vuelta de cota simple','vuelta de cota simple'],['cabestrillo','cabestrillo']]),target=parts.length?'el nudo '+choice(parts):'los nudos y amarres expresamente dados',relation=`la relación entre ${target} y las condiciones de la ficha de cabuyería proporcionada`
+   topic={...topic,label:target.replace(/^(?:el|los) /,''),relation};update(`Elabora ${target} en el modelo de cabuyería según la ficha y condiciones supervisadas dadas, sin personas ni cargas y sin inventar instrucciones.`)
+  }
+  if(topic.id==='athletic-high-jump'||topic.id==='athletic-long-jump'){
+   const parts=select([['tijera','tijera'],['natural','natural'],['colgante','colgante']]),target=parts.length?'modalidad '+choice(parts):'de la modalidad expresamente dada',high=topic.id==='athletic-high-jump',name=high?'salto alto':'salto largo'
+   topic={...topic,label:name+' '+target,relation:`la relación entre las fases del ${name} ${target} y las evidencias del referente adaptado proporcionado`}
+   update(high?`Ejecuta el salto alto ${target} adaptado según las señales y condiciones supervisadas proporcionadas con los apoyos permitidos, sin fijar alturas.`:`Analiza el salto largo ${target} relacionando fases y apoyos con las evidencias del referente adaptado proporcionado, sin exigir ejecución.`)
+  }
+  if(topic.id==='athletic-walk-run'){
+   const target=choice(select([['caminata','caminata'],['carrera','carrera']]))
+   topic={...topic,label:target+' atlética adaptada',relation:`la relación entre ${target}, sus señales y las condiciones adaptadas proporcionadas`}
+   update(`Ejecuta ${/^(?:caminata|carrera)$/.test(target)?'la '+target:target} de la tarea atlética adaptada siguiendo las señales y condiciones supervisadas dadas con los apoyos permitidos, sin comparar rapidez personal.`)
+  }
+  if(['baseball-history','baseball-rules','baseball-biography','baseball-game'].includes(topic.id)){
+   const sport=choice(select([['beisbol(?: convencional)?(?!\\s*5)','béisbol'],['beisbol\\s*5','béisbol 5'],['softbol','softbol']])),scope=/comunidad/.test(text)?'de la comunidad asignada':/local/.test(text)?'del ámbito local asignado':'del ámbito expresamente asignado'
+   const label=topic.id==='baseball-history'?'historia de '+sport:topic.id==='baseball-biography'?'aportes biográficos de atletas de '+sport:topic.id==='baseball-rules'?'reglas de '+sport:'juego adaptado de '+sport
+   topic={...topic,label,relation:`la relación entre las evidencias de ${label} ${scope} y las referencias proporcionadas`}
+   if(topic.id==='baseball-history'){
+    const success=`Investiga la historia de los clubes y equipos de ${sport} ${scope} relacionando hechos y aportes con las evidencias de las fuentes proporcionadas.`
+    evidence=evidence.map(e=>({...e,success:`Presenta los hechos históricos de ${sport} ${scope} relacionando personajes, fechas y evidencias de las fuentes proporcionadas.`,variants:{...e.variants,RESEARCH:{...e,...e.variants?.RESEARCH,success}}}))
+   }else update(topic.id==='baseball-rules'?`Verifica si las decisiones del caso de ${sport} cumplen las reglas proporcionadas justificando cada marca con las evidencias del registro.`:topic.id==='baseball-biography'?`Presenta los aportes biográficos de atletas dominicanos de ${sport} ${scope} relacionándolos con las evidencias de las fuentes proporcionadas.`:`Juega la situación adaptada de ${sport} aplicando las reglas y decisiones ofensivas y defensivas proporcionadas con los apoyos acordados, sin evaluar ganar.`)
+  }
+  if(topic.id==='baseball-five-rules')update('Compara las reglas del béisbol convencional y béisbol 5 relacionando semejanzas y diferencias con las decisiones de la situación proporcionada.')
+  if(topic.id==='baseball-fielding'){
+   const target=choice(select([['rolling','rolling'],['fly|flay','fly']])),throwing=/tiro/.test(text)?' con tiro a la base expresamente dada':''
+   topic={...topic,label:'fildeo de '+target,relation:`la relación entre el fildeo de ${target}${throwing} y las señales de la tarea adaptada proporcionada`}
+   update(`Fildea ${target}${throwing} de la tarea adaptada de béisbol según las señales, posición y condiciones supervisadas proporcionadas con los apoyos permitidos.`)
+  }
+  if(topic.id==='baseball-throwing'){
+   const target=choice(select([['corta distancia','corta distancia'],['larga distancia','larga distancia']]))
+   update(`Ejecuta el tiro a ${target} de béisbol hacia la referencia señalada según las condiciones supervisadas proporcionadas, sin fijar distancias nuevas.`)
+  }
+  if(topic.id==='base-running')update('Corre las bases de béisbol de la situación adaptada dada siguiendo las señales y decisiones expresamente proporcionadas con los apoyos permitidos.','la relación entre las decisiones del corrido de bases y las señales y condiciones expresamente proporcionadas')
+  if(topic.id==='baseball-offensive-reference'){
+   const target=choice(select([['agarre del bate','el agarre del bate'],['caja de bateo','la colocación en la caja de bateo'],['zona de strikes','la zona de strikes']]))
+   update(`Analiza ${target} del referente de béisbol relacionándolo con las señales y evidencias proporcionadas, sin exigir ejecución.`)
+  }
+  if(topic.id==='baseball-tactics'){
+   const target=choice(select([['ofensiva','ofensiva'],['defensiva','defensiva']])),sport=/beisbol\s*5/.test(text)?'béisbol 5':'béisbol',references=/reglas|reglamento/.test(text)?'posiciones, alternativas y reglamento proporcionados':'posiciones y alternativas proporcionadas'
+   update(`Resuelve la situación ${target} de ${sport} del caso dado justificando la decisión según ${references}.`)
+  }
+  if(topic.id==='chess-ending-problem'){
+   const parts=select([['rey y peon contra rey','rey y peón contra rey'],['dama contra peon','dama contra peón']]),target=parts.length?'de '+choice(parts):'expresamente elegido'
+   topic={...topic,relation:`la relación entre las piezas del final ${target} y las jugadas justificadas de la posición dada`};update(`Resuelve el problema del final de ajedrez ${target} justificando las jugadas con la posición y reglas proporcionadas.`)
+  }
+  if(topic.id==='martial-history')update(`Presenta los hechos históricos de las artes marciales ${/adaptadas/.test(text)?'adaptadas ':''}${/local/.test(text)?'del ámbito local asignado':'del ámbito expresamente asignado'} relacionando fechas, personajes y evidencias de las fuentes proporcionadas.`)
+  if(topic.id==='martial-kata'){
+   const target=choice(select([['kata','kata'],['poomsae','poomsae']]))
+   topic={...topic,label:target+' básica adaptada',relation:`la relación entre posiciones, secuencia y apoyos de ${target} y el referente dado`};update(`Ejecuta la secuencia básica adaptada de ${target} según las posiciones y condiciones supervisadas proporcionadas con los apoyos permitidos, sin añadir maniobras.`)
+  }
+  if(topic.id==='martial-fundamentals'){
+   const target=choice(select([['posiciones','posiciones'],['desplazamientos','desplazamientos'],['bloqueos','bloqueos'],['patadas','patadas'],['puno','puño'],['agarres','agarres'],['proyecciones','proyecciones'],['caidas','caídas'],['defensas','defensas'],['combates','combates']]))
+   update(`Ejecuta ${target} adaptados de artes marciales según las señales y condiciones supervisadas proporcionadas con los apoyos permitidos, sin añadir maniobras.`)
+  }
+ }
  if(topic.grade===4){
   evidence=evidence.map(e=>({...e,absent:'No aporta evidencia del desempeño expresamente solicitado.'}))
   const choice=(parts:string[])=>parts.length>1&&/\bo\b/.test(text)&&/elegid|seleccion/.test(text)?'la opción elegida entre '+parts.join(' o '):parts.length?join(parts):'la opción expresamente elegida'
@@ -289,7 +368,7 @@ function contextualTopic(topic:PhysicalTopic,text:string):PhysicalTopic{
  }
  if(topic.id==='physical-condition-explanation'){
   const parts=select([['fuerza rapida','fuerza rápida'],['velocidad de reaccion','velocidad de reacción'],['traslacion','traslación'],['gestual','velocidad gestual'],['flexibilidad','flexibilidad'],['resistencia aerobica','resistencia aeróbica'],['coordinacion','coordinación'],['equilibrio','equilibrio'],['orientacion','orientación'],...(topic.grade===3?[['velocidad maxima','velocidad máxima'],['aciclica','velocidad acíclica'],['resistencia anaerobica','resistencia anaeróbica']] as [string,string][]:[])]),contrast=/diferenci|compar|contrast/.test(text)
-  const chosenParts=topic.grade===4?select([['fuerza','fuerza'],['velocidad','velocidad'],['flexibilidad','flexibilidad'],['resistencia','resistencia'],['equilibrio','equilibrio'],['coordinacion','coordinación'],['orientacion','orientación'],['diferenciacion','diferenciación'],['reaccion','reacción'],['adaptacion','adaptación'],['ritmo','ritmo']]):parts
+  const chosenParts=[4,5].includes(topic.grade)?select([['fuerza','fuerza'],['velocidad','velocidad'],['flexibilidad','flexibilidad'],['resistencia','resistencia'],['equilibrio','equilibrio'],['coordinacion','coordinación'],['orientacion','orientación'],['diferenciacion','diferenciación'],['reaccion','reacción'],['adaptacion','adaptación'],['ritmo','ritmo']]):parts
   const target=chosenParts.length?join(chosenParts):'las capacidades físicas expresamente asignadas'
   evidence=evidence.map(e=>({...e,success:`Explica ${contrast?'las diferencias entre':'la función de'} ${target} mediante evidencias de los ejemplos adaptados proporcionados, sin clasificar cuerpos o personas.`,...(!contrast?{sufficient:'La función de la capacidad se sustenta; una relación secundaria con el ejemplo queda poco precisada.',partial:'Reconoce la capacidad pertinente, pero su función no se vincula con la acción del ejemplo dado.'}:{})}))
  }

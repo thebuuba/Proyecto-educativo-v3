@@ -1,4 +1,5 @@
 import {commonPhysicalModules} from '@aula/shared'
+import {evaluationCatalogV115} from './catalog-v115'
 import {evaluationCatalogV114} from './catalog-v114'
 import {evaluationCatalogV113} from './catalog-v113'
 import {evaluationCatalogV112} from './catalog-v112'
@@ -139,7 +140,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.115',
+  version: 'evaluation-2026.116',
   physicalCommonModules:commonPhysicalModules,
   artCommonModules: commonArtModules,
   socialCommonModules:commonSocialModules,
@@ -235,6 +236,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { physicalCommonModules?:typeof commonPhysicalModules; artCommonModules?:typeof commonArtModules; socialCommonModules?:typeof commonSocialModules; scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
+  if(version===evaluationCatalogV115.version)return evaluationCatalogV115
   if(version===evaluationCatalogV114.version)return evaluationCatalogV114
   if(version===evaluationCatalogV113.version)return evaluationCatalogV113
   if(version===evaluationCatalogV112.version)return evaluationCatalogV112

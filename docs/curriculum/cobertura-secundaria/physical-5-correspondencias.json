@@ -1,0 +1,255 @@
+{
+  "grade": 5,
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "scopeId": "a6108366-713c-572d-8ca4-96753f395e6b",
+  "usefulConceptualProceduralRows": 55,
+  "topicRecords": {
+    "circuit-plan": [
+      "c81dff16-3ba7-53cc-b403-bb9429e3414a"
+    ],
+    "flexibility-observation": [
+      "f6314117-cd8b-5900-8353-ab8ccab088b1"
+    ],
+    "motor-variation": [
+      "a202952a-487e-5cfc-bf07-bf463a51c697"
+    ],
+    "equilibrium-observation": [
+      "0abdf171-7e98-561d-a638-254be2d5b997"
+    ],
+    "compass-orientation": [
+      "2bef3d27-363b-54ea-8a65-f6c7b427ab08",
+      "ca371f93-e826-580a-9700-b4234647aac8"
+    ],
+    "gps-orientation": [
+      "2bef3d27-363b-54ea-8a65-f6c7b427ab08",
+      "ca371f93-e826-580a-9700-b4234647aac8"
+    ],
+    "camping-concept": [
+      "37ddc0cb-f749-5b7b-9cce-9ada6a7fedfc"
+    ],
+    "shelter-plan": [
+      "eb87fbaa-8796-59f2-99f5-e94091153244"
+    ],
+    "shelter-assembly": [
+      "eb87fbaa-8796-59f2-99f5-e94091153244"
+    ],
+    "hiking-plan": [
+      "37ddc0cb-f749-5b7b-9cce-9ada6a7fedfc",
+      "31366105-9603-514d-99c4-f6fb15cbdd17",
+      "54d34afc-ac5e-5697-9e75-e5706ca5e6ef",
+      "bf362ffe-98b9-5f3a-b481-f0cc7ae2adea"
+    ],
+    "hiking-practice": [
+      "31366105-9603-514d-99c4-f6fb15cbdd17",
+      "54d34afc-ac5e-5697-9e75-e5706ca5e6ef"
+    ],
+    "risk-prevention-case": [
+      "3f5cfafc-45b4-5fa6-8457-11ef8d88ecee",
+      "cc9e713c-f51a-56d5-a83b-35b45ccaea87",
+      "3aaccb6b-0653-58c2-83e7-b85f16a15d27"
+    ],
+    "first-aid-reference": [
+      "3f5cfafc-45b4-5fa6-8457-11ef8d88ecee",
+      "cc9e713c-f51a-56d5-a83b-35b45ccaea87",
+      "3aaccb6b-0653-58c2-83e7-b85f16a15d27"
+    ],
+    "athletics-history": [
+      "15a2f63e-6d67-54b4-9ac3-48988bbdd97d"
+    ],
+    "athletics-rules": [
+      "cc05bc86-171b-58c1-911d-2fb4529e0541",
+      "70e370fa-0f66-50e7-a5f8-24d9f8199625"
+    ],
+    "athletic-walk-run": [
+      "2250d4bb-f502-5896-a352-f6638790ed34"
+    ],
+    "athletic-starts": [
+      "2250d4bb-f502-5896-a352-f6638790ed34"
+    ],
+    "athletic-adaptation": [
+      "c5c49252-0d4a-5f4e-91fd-4b0ef31faf2b"
+    ],
+    "paralympic-history": [
+      "f7cac443-29a9-5ecc-9cf4-8513d2f81af5",
+      "15a2f63e-6d67-54b4-9ac3-48988bbdd97d"
+    ],
+    "baseball-history": [
+      "11de4324-96e9-57f7-ad27-388c9ae33faf",
+      "962eda27-ed14-564e-9022-511677fdd22b"
+    ],
+    "baseball-rules": [
+      "0dadf5a6-b8f6-5aad-a9f4-a6b70e415434",
+      "66d34ecd-406f-5186-8a5e-1bf6d5c2ebe9",
+      "70e370fa-0f66-50e7-a5f8-24d9f8199625"
+    ],
+    "baseball-five-rules": [
+      "0dadf5a6-b8f6-5aad-a9f4-a6b70e415434"
+    ],
+    "baseball-fielding": [
+      "cbd844c9-ddbc-5234-bdff-ddb602668674",
+      "45caad49-0600-5522-ab07-37eecda1581f",
+      "9f7e45c8-120a-539c-ba4a-d58460a3abae",
+      "5fb6c0cb-997a-5bf4-9209-c6a51c28cd85"
+    ],
+    "baseball-throwing": [
+      "ab824da6-73c3-5939-be4d-0c64c226d4c6"
+    ],
+    "baseball-batting": [
+      "8e5b705b-29cd-5f48-8a48-d2fded978602",
+      "5fb6c0cb-997a-5bf4-9209-c6a51c28cd85",
+      "69850c94-f20e-5d32-9bd0-0927ae2f5a8a"
+    ],
+    "base-running": [
+      "8e5b705b-29cd-5f48-8a48-d2fded978602",
+      "5fb6c0cb-997a-5bf4-9209-c6a51c28cd85",
+      "45caad49-0600-5522-ab07-37eecda1581f"
+    ],
+    "martial-history": [
+      "15a2f63e-6d67-54b4-9ac3-48988bbdd97d"
+    ],
+    "martial-fundamentals": [
+      "db01e9e4-7a98-5f9f-957a-a2362cac7ef2"
+    ],
+    "care-frequency": [
+      "77878e7e-25ed-5862-b8f3-7c0680ff1fa3"
+    ],
+    "tactical-cooperation": [
+      "0ac15375-09da-591f-8e37-3d4779d4b87e",
+      "31e9de72-ae90-5446-a9e0-06c9046279af",
+      "571aae4d-1483-558d-a7aa-14dbd3f155be"
+    ],
+    "motor-progress-record": [
+      "c5daac39-136e-5690-818c-8e93036b7412",
+      "a08151f9-e3f4-5b8b-8e64-ac5ed2e5c8ac",
+      "515a0008-2396-5de9-a199-13ed3e4f4064",
+      "bdbd9765-6134-5b1b-8220-42a8918f1b05"
+    ],
+    "physical-condition-explanation": [
+      "4fadab65-f0ed-5c60-bb31-80159c9bfbb8",
+      "37154070-19cf-516f-9416-4aaebb124a0e",
+      "eb35b824-e885-566f-81e7-ece820c4d954"
+    ],
+    "spatial-orientation": [
+      "942a4496-ec8d-54f7-b0af-4ee8b8792ffd"
+    ],
+    "wellbeing-reference": [
+      "d839e370-3925-51ae-a201-68e678d43779",
+      "b76d0713-fff9-5c14-a8dd-5c186415a8d2"
+    ],
+    "camping-knots": [
+      "77379d92-4dd7-5bb0-aa74-bddcf526abfa",
+      "1fe42230-3fed-5e92-aee2-c711a6b07cee"
+    ],
+    "athletic-relay": [
+      "cc05bc86-171b-58c1-911d-2fb4529e0541",
+      "cd96df4a-9297-50d7-86ab-a95efc65f54f",
+      "a3c83c09-cc5e-5452-9e8b-4b90b7d55482",
+      "819564e0-6788-5e09-891e-dc7898d74a8d"
+    ],
+    "athletic-hurdles": [
+      "cc05bc86-171b-58c1-911d-2fb4529e0541",
+      "cd96df4a-9297-50d7-86ab-a95efc65f54f",
+      "a3c83c09-cc5e-5452-9e8b-4b90b7d55482"
+    ],
+    "athletic-high-jump": [
+      "cc05bc86-171b-58c1-911d-2fb4529e0541",
+      "a3c83c09-cc5e-5452-9e8b-4b90b7d55482",
+      "2250d4bb-f502-5896-a352-f6638790ed34"
+    ],
+    "athletic-javelin": [
+      "cc05bc86-171b-58c1-911d-2fb4529e0541",
+      "cd96df4a-9297-50d7-86ab-a95efc65f54f",
+      "a3c83c09-cc5e-5452-9e8b-4b90b7d55482"
+    ],
+    "athletic-long-jump": [
+      "2250d4bb-f502-5896-a352-f6638790ed34"
+    ],
+    "baseball-biography": [
+      "4870637f-b6a7-5c7b-8788-5e671f29a3bc",
+      "0f9712b6-c71c-5daa-90a4-bfaf991495d2"
+    ],
+    "baseball-positions": [
+      "5fe6b02e-774b-5d25-949a-e4c66ffc87b1"
+    ],
+    "baseball-pitcher": [
+      "ab824da6-73c3-5939-be4d-0c64c226d4c6"
+    ],
+    "baseball-offensive-reference": [
+      "8e5b705b-29cd-5f48-8a48-d2fded978602"
+    ],
+    "baseball-double-play": [
+      "8dd2d040-a859-5c9b-a4d3-bc1a729ac86b"
+    ],
+    "baseball-game": [
+      "528c4d66-8b11-588e-a7f1-b6ed5e983c55",
+      "59d37b11-9020-572d-a130-d73cd6d15768",
+      "66d34ecd-406f-5186-8a5e-1bf6d5c2ebe9",
+      "68309b2a-3db6-5df6-ab13-909bbe463fe2"
+    ],
+    "baseball-tactics": [
+      "59d37b11-9020-572d-a130-d73cd6d15768",
+      "68309b2a-3db6-5df6-ab13-909bbe463fe2"
+    ],
+    "chess-endings-importance": [
+      "cd03a545-8b1f-5889-9604-ed83b20bb24d"
+    ],
+    "chess-endings-classification": [
+      "9d9afa6d-b64b-5e4e-817d-0cf0a5c9ba58"
+    ],
+    "chess-ending-problem": [
+      "d7ca6b0d-b323-51ca-bcde-697335e23ad5",
+      "5ca8c9fd-bbdd-58df-945c-3e7476731958"
+    ],
+    "chess-basic-ending": [
+      "b74e0d8a-f7d7-5626-baa3-2436df129b20",
+      "ec610e8a-934f-5963-a30e-e4e02292b654"
+    ],
+    "chess-medium-ending": [
+      "912b4c33-2f2b-5cda-86f6-fa368b6f5246",
+      "ac64ebef-e074-5c37-a49f-431161076ee6"
+    ],
+    "chess-ending-game": [
+      "bc209837-c00e-5107-b024-71f5549a56d8"
+    ],
+    "martial-rules": [
+      "dadc26a1-bd70-5c64-9f56-0f1550f46737",
+      "214b26bc-8dbe-5277-8e57-7a15d3bd8718",
+      "639b9330-73ed-59bd-8191-6585c8bf0b06",
+      "3cc3f2cd-f880-5da8-8ac1-516eae3d4016"
+    ],
+    "martial-scoring": [
+      "ebea24b3-4bd7-5fad-b4f0-afd23a8f6f2c",
+      "7f331799-a209-5884-867a-776788b45977",
+      "08e35c1e-2b35-5d44-882f-61622c0e37e9"
+    ],
+    "martial-kata": [
+      "db4cdf8a-d46c-5605-96ac-14c8622b4cd7",
+      "58847e8a-51a0-5f3a-ad2c-369c18f1b666",
+      "f008f79a-12ed-57ac-9f38-98b6e4904970"
+    ],
+    "martial-attacks": [
+      "69cae1c2-585d-568c-8bd5-9b791ac59a33",
+      "5778ff97-b7d9-5bfd-9dbb-a9c8e1de35d9"
+    ],
+    "martial-defense": [
+      "2429d504-6c4d-5151-8c54-7441974fe963",
+      "1dbb95ac-807f-564c-b50d-ae7803da666c",
+      "e91b3568-57f0-5106-b559-16becec06ef3"
+    ],
+    "fair-play-verification": [
+      "bbfc2f0f-9ffb-5700-a60c-110bcd2ce39e",
+      "9be26b57-0bf2-5086-9090-863223c2dd7d",
+      "12794c19-5a39-56a9-ba99-ac549da2e2fb"
+    ],
+    "hygiene-verification": [
+      "34176f12-b609-5deb-94ed-8ac5b78ab2ca"
+    ]
+  },
+  "notes": [
+    "4fadab65/37154070 y c5daac39/a08151f9 son continuaciones conservadas, no criterios independientes.",
+    "P378 bajo Ajedrez incluye conductas marciales214b26bc y campismo eb87fbaa/2bef3d27/1fe42230/cc9e713c/54d34afc; asociación pedagógica por léxico, sin reescribir procedencia.",
+    "Duplicados de kata58847e8a/f008f79a, puntuación7f331799/08e35c1e y defensa1dbb95ac/e91b3568 conservados sin duplicar criterios.",
+    "2250d4bb añade variantes atléticas a las filas conceptuales; procedencia explícita, sin imponer distancias ni dosis.",
+    "571aae4d se enlaza con acuerdos y roles concretos pedidos, sin puntuar esfuerzo privado."
+  ]
+}

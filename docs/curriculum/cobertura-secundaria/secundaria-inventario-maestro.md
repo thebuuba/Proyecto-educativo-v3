@@ -52,7 +52,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Educación Física | 2 | Común | 362, 363, 364 | REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE |
 | Educación Física | 3 | Común | 365, 366, 367 | REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE |
 | Educación Física | 4 | Común | 374, 375, 376 | REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE |
-| Educación Física | 5 | Común | 377, 378, 379 | PENDING |
+| Educación Física | 5 | Común | 377, 378, 379 | REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE |
 | Educación Física | 6 | Común | 380, 381, 382 | PENDING |
 | Formación Integral Humana y Religiosa | 1 | Común | 392, 393, 394, 395, 396 | PENDING |
 | Formación Integral Humana y Religiosa | 2 | Común | 397, 398, 399, 400 | PENDING |

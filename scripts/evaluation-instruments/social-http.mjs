@@ -13,7 +13,7 @@ assert(Number.isInteger(grade)&&grade>=1&&grade<=6)
 const gradeName=['','one','two','three','four','five','six'][grade]
 const subjectFlag=process.argv.indexOf('--subject'),subjectCode=subjectFlag<0?'SOC':process.argv[subjectFlag+1]
 assert(['SOC','ART','EFI'].includes(subjectCode),'Solo se admiten los ámbitos comunes revisados')
-assert(subjectCode!=='EFI'||[1,2,3,4].includes(grade),'EFI requiere un grado con contratos y fuente revisados')
+assert(subjectCode!=='EFI'||[1,2,3,4,5].includes(grade),'EFI requiere un grado con contratos y fuente revisados')
 const family=subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
 const path='.wrangler/secondary-completion/',context=JSON.parse(readFileSync(path+`${family}-${grade}-context.json`,'utf8'))
 assert.equal(context.project,project)

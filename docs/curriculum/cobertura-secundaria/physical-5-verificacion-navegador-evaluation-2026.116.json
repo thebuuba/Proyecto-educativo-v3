@@ -1,0 +1,53 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.116",
+  "grade": 5,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 5,
+    "cycle": 2,
+    "subjectCode": "EFI",
+    "optativeExitName": null
+  },
+  "format": "lista-ponderada",
+  "inspectedFormats": [
+    "lista-ponderada"
+  ],
+  "savedAndReopenedFormats": [
+    "lista-ponderada"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "PROJECT_BASED",
+  "manualInstrumentChosenDuringPendingPreparation": true,
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "353929bc19c6d41b1f107b5428ec5e53",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "353929bc19c6d41b1f107b5428ec5e53",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "58ddb8cf-b76f-4c76-b7c7-ec5de0a9b499",
+      "format": "lista-ponderada",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-B0jOXgbs.js",
+  "servedAssetSha256": "60173ad248f8a93b89c0e9b308a3bc3b3fc66716e6f7475715201af766c902f0",
+  "limits": [
+    "Una muestra QA identificable en 5.º A secundaria/Educación Física con la cuenta personal; sin notas, equipos nuevos ni clase física real. No todos los temas o combinaciones.",
+    "Caso concreto de adaptaciones de reglas de atletismo con datos, alternativas y decisión justificada: CASE_STUDY automático. Individual explícito y puntos inicialmente vacíos.",
+    "La elección explícita de ponderada durante una preparación pendiente se conservó. Se leyeron el indicador completo y su crédito parcial, el peso100% y total17.35; captura visual del instrumento. No se afirma rúbrica completa visual de este grado.",
+    "PROJECT_BASED manual comprueba persistencia, no recomendación pedagógica. Huella READ ONLY de definición completa, snapshot, técnica, puntos e identificadores idéntica.",
+    "Reapertura mediante Cursos/asignatura/Editar y href observado. Cargas transitorias provocaron límites de localizador de3s; la vista terminó correctamente sin modificación de código ni duplicar guardados. No se afirma corregir un fallo nuevo de carga.",
+    "No correos ni cambios de contraseña, borrado de caché, SW, almacenamiento o borradores. DOM confirmó asset/registerSW.js y HTTP assets/sw.js=dist. Internals del SW no inspeccionados ni restauración automática de todos los borradores acreditada.",
+    "Persisten límites anteriores de Actividades global/Ver actividad. Las12muestras HTTP/DB separadas cubren los cuatro formatos y20/17.35; no todas las combinaciones de cada tema."
+  ]
+}
