@@ -1,0 +1,54 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.112",
+  "grade": 1,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "EFI",
+    "optativeExitName": null
+  },
+  "format": "lista-ponderada",
+  "inspectedFormats": [
+    "rubrica",
+    "lista-ponderada"
+  ],
+  "savedAndReopenedFormats": [
+    "lista-ponderada"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "PROJECT_BASED",
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "210d7e00086fde14844d779fab32e303",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "210d7e00086fde14844d779fab32e303",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "61873ab8-285a-4dc0-afe0-ba1ebe5d814c",
+      "format": "lista-ponderada",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-ItJ7hWjJ.js",
+  "servedAssetSha256": "6e58c649e4569c28a801971fefa27b3da5e83e44f0221c186b44641011903e90",
+  "limits": [
+    "Una muestra QA identificable en1.ºA/Educación Física de la cuenta personal, sin notas ni ejecución física de clase; no todos los temas o combinaciones.",
+    "El caso concreto con datos, alternativas y decisión justificada seleccionó CASE_STUDY automáticamente. Modalidad individual explícita, sin equipos nuevos.",
+    "Rúbrica completa inspeccionada por DOM; lista ponderada completa con parcial50%,17.35puntos,100% y texto manual guardada y reabierta visualmente. Doce muestras HTTP/DB separadas verificaron cuatro formatos20/17.35.",
+    "PROJECT_BASED manual prueba persistencia, no recomendación pedagógica. Huella READ ONLY incluye definición completa, snapshot, técnica, puntos e identificadores.",
+    "Al cambiar formato y escribir puntos inmediatamente hubo una plantilla temporal vacía antes de llegar la respuesta válida. Se comprobó que terminó: no se acreditó un bloqueo persistente ni se hizo un arreglo para esa hipótesis. Se ampliaron pruebas de tres formatos, puntuaciones iniciales vacías/20 y respuesta/error tardíos;44casos aprobados.",
+    "No se borraron borradores, cachés, almacenamiento ni SW; no correos ni cambios de contraseña. DOM confirmó script actual/registerSW.js; guardHTTP confirmó assets/sw.js iguales a dist. Internals del SW no inspeccionados.",
+    "Se reabrió desde Cursos/asignatura/Editar y luego con su enlace observado. Persisten límites previos de Actividades global/Ver actividad; no se acredita restauración automática de todos los borradores.",
+    "No prescripciones de ejercicio/dieta ni maniobras operacionales nuevas; no valoración de capacidad natural, discapacidad o información privada."
+  ]
+}

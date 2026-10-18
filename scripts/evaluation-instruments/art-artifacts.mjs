@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
-import { commonArtModules } from '../../packages/shared/src/index.ts'
+import { commonArtModules,commonPhysicalModules } from '../../packages/shared/src/index.ts'
 import {
   editableFallbackRecommendation,
   recommendationToFields,
@@ -10,12 +10,15 @@ import { scoreInstrumentFields } from '../../apps/frontend/src/modules/activitie
 import { validateInstrumentDefinition } from '../../packages/shared/src/index.ts'
 import { evaluationCatalogCurrent } from '../../apps/backend/src/modules/evaluation-instruments/catalog-current.ts'
 
+const subjectFlag=process.argv.indexOf('--subject'),subjectCode=subjectFlag<0?'ART':process.argv[subjectFlag+1]
+assert(['ART','EFI'].includes(subjectCode),'Área común con fuente y proveedor explícitos requerida')
+const physical=subjectCode==='EFI',family=physical?'physical':'art',fileStem=physical?'physical':'artistica',templatePrefix=physical?'efi':'art',subjectName=physical?'Educación Física':'Educación Artística'
 const flag = process.argv.indexOf('--grade'),
   grade = flag < 0 ? 1 : Number(process.argv[flag + 1])
-assert([1,2,3,4,5,6].includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
-const pdfPages = grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : grade === 5 ? [344,345,346] : [347,348,349]
+assert((physical?[1]:[1,2,3,4,5,6]).includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
+const pdfPages = physical ? [359,360,361] : grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : grade === 5 ? [344,345,346] : [347,348,349]
 const gradeName = ['', 'one', 'two', 'three', 'four', 'five', 'six'][grade]
-const module = commonArtModules.find((row) => row.grade === grade)
+const module = (physical?commonPhysicalModules:commonArtModules).find((row) => row.grade === grade)
 assert(module, 'Grado con proveedor conectado requerido')
 const directory = 'docs/curriculum/cobertura-secundaria/'
 const records = readFileSync('data/curriculum/secondary-2023.jsonl', 'utf8')
@@ -34,17 +37,21 @@ assert.equal(
 const scope = records.find(
   (row) =>
     row.kind === 'scope' &&
-    row.subjectName === 'Educación Artística' &&
+    row.subjectName === subjectName &&
     row.grade === grade &&
     !row.optativeExitName,
 )
 const literal = records.filter((row) => row.kind === 'element' && row.scopeKey === scope.stableKey)
 const mapping = JSON.parse(
-  readFileSync(directory + `artistica-${grade}-correspondencias.json`, 'utf8'),
+  readFileSync(directory + `${fileStem}-${grade}-correspondencias.json`, 'utf8'),
 )
 assert.equal(mapping.scopeId, scope.id)
 assert.equal(mapping.sourceSha256, source.sha256)
-const exclusions = (grade === 1 ? [
+const exclusions = (physical ? [
+  ...['30f04f76','7a6eeb3e','e0ddee18','cff05e33','b40ad2e6','c7b8407a','d86ce6e6','a2fa9de0','1c7a91bf','d69d0d85','3e01de7d','2ab97f2c','41ae5100','e4561e74','2a6cb6c3','919bfeb3','4240375e','e042fcac','68f82dc8'].map(prefix=>({prefix,reason:'PURE_HEADING',explanation:'Organizador de contenidos, sin desempeño independiente. Los deportes optativos dentro de EFI no son salidas académicas adicionales.'})),
+  ...['dd8e23a1','7417b621','7e6b6e07'].map(prefix=>({prefix,reason:'PRIVATE_ENJOYMENT',explanation:'El disfrute o identidad internos no se infieren ni puntúan; las acciones del juego se observan cuando se solicitan.'})),
+  ...['64c80440','8c5a6dd6'].map(prefix=>({prefix,reason:'PRIVATE_TRAIT',explanation:'La perseverancia interna no se puntúa como rasgo; se evalúan propuestas, decisiones o acciones expresamente solicitadas.'})),
+] : grade === 1 ? [
   {
     prefix: '03bf6274',
     reason: 'PURE_HEADING',
@@ -99,7 +106,7 @@ assert(
     .every((row) => mapped.has(row.id) || exclusions.some((item) => item.id === row.id)),
 )
 const contracts = JSON.parse(
-  readFileSync(`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`, 'utf8'),
+  readFileSync(`data/evaluation-instruments/${family}-grade-${gradeName}-contracts.json`, 'utf8'),
 )
 assert.equal(contracts.grade, grade)
 for (const task of contracts.cases)
@@ -126,8 +133,8 @@ assert.equal(
 const context = {
   level: 'SECONDARY',
   grade,
-  subjectCode: 'ART',
-  subjectName: 'Educación Artística',
+  subjectCode,
+  subjectName,
   modalityCode: null,
   optativeExitName: null,
 }
@@ -144,7 +151,7 @@ for (const task of cases)
     })
     assert(
       proposal.criteria.length &&
-        proposal.criteria.every((row) => row.templateId.startsWith(`art-${grade}-`)),
+        proposal.criteria.every((row) => row.templateId.startsWith(`${templatePrefix}-${grade}-`)),
       task.id,
     )
     const fields = scoreInstrumentFields(
@@ -166,7 +173,7 @@ for (const task of cases)
       criteria: proposal.criteria.map(({ id, sourceReferences, sourceType, ...row }) => row),
     })
   }
-const reviewedPath = directory + `artistica-${grade}-revision-instrumentos.json`
+const reviewedPath = directory + `${fileStem}-${grade}-revision-instrumentos.json`
 const digest = (value) => createHash('sha256').update(JSON.stringify(value)).digest('hex')
 const review = existsSync(reviewedPath)
   ? JSON.parse(readFileSync(reviewedPath, 'utf8'))
@@ -192,7 +199,7 @@ const matrix = {
       'Complete rendered pages: competency and content columns, then all achievement indicators.',
   },
   status: reviewed.length === examples.length ? 'CONNECTED_REPRESENTATIVE_INSTRUMENTS_REVIEWED_RUNTIME_PENDING' : 'CONNECTED_SOURCE_AND_CONTRACTS_FULL_INSTRUMENT_REVIEW_AND_RUNTIME_PENDING',
-  provider: 'packages/shared/src/secondary-art.ts',
+  provider: `packages/shared/src/secondary-${family}.ts`,
   providerCatalog: evaluationCatalogCurrent.version,
   officialRecords: literal.map((row) => ({
     id: row.id,
@@ -223,14 +230,14 @@ const matrix = {
     'No hay ejecución real de clase o visita acreditada por esta matriz.',
   ],
 }
-const sourcePublicationPath = `.wrangler/secondary-completion/MINERD_SECUNDARIA_2023_ART_COMUN_G${grade}_V1-source.json`
+const sourcePublicationPath = `.wrangler/secondary-completion/MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1-source.json`
 if (existsSync(sourcePublicationPath)) {
   const publication = JSON.parse(readFileSync(sourcePublicationPath, 'utf8'))
   assert.equal(publication.project, 'eolgunypmtgrsyrjzcld')
   assert.equal(publication.elements, literal.length)
   matrix.sourcePublication = { project: publication.project, code: publication.code, versionId: publication.versionId, scopeId: publication.scopeId, result: publication.result, sourceRowsAndSpansMatched: true }
 }
-const httpPath = `.wrangler/secondary-completion/art-${grade}-http.json`
+const httpPath = `.wrangler/secondary-completion/${family}-${grade}-http.json`
 if (existsSync(httpPath)) {
   const http = JSON.parse(readFileSync(httpPath, 'utf8'))
   assert.equal(http.project, 'eolgunypmtgrsyrjzcld')
@@ -240,7 +247,7 @@ if (existsSync(httpPath)) {
   matrix.verification.httpDb = 'AUTHENTICATED_FOUR_FORMATS_SAVED_REOPENED'
   matrix.verification.httpEvidence = { catalog: http.catalog, sourceScope: http.sourceScope, samples: http.samples.length, formats: [...new Set(http.samples.map(sample => sample.format))] }
 }
-const browserPath = directory + `artistica-${grade}-verificacion-navegador-${matrix.providerCatalog}.json`
+const browserPath = directory + `${fileStem}-${grade}-verificacion-navegador-${matrix.providerCatalog}.json`
 if (existsSync(browserPath)) {
   const browser = JSON.parse(readFileSync(browserPath, 'utf8'))
   assert.equal(browser.grade, grade)
@@ -251,10 +258,10 @@ if (existsSync(browserPath)) {
   if (matrix.verification.httpDb === 'AUTHENTICATED_FOUR_FORMATS_SAVED_REOPENED' && reviewed.length === examples.length) matrix.status = 'REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE'
 }
 writeFileSync(
-  directory + `artistica-${grade}-instrumentos.json`,
+  directory + `${fileStem}-${grade}-instrumentos.json`,
   JSON.stringify(examples, null, 2) + '\n',
 )
-writeFileSync(directory + `artistica-${grade}-matriz.json`, JSON.stringify(matrix, null, 2) + '\n')
+writeFileSync(directory + `${fileStem}-${grade}-matriz.json`, JSON.stringify(matrix, null, 2) + '\n')
 console.log(
   JSON.stringify({
     grade,

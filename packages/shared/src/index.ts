@@ -277,3 +277,5 @@ export {socialGradeFiveTopics} from './secondary-social-grade-5'
 export {socialGradeSixTopics} from './secondary-social-grade-6'
 export { commonArtModules, resolveCommonArtTask, commonArtCriteria, commonArtSelections, adaptArtScale } from './secondary-art'
 export { artGradeOneTopics } from './secondary-art-grade-1'
+
+export {commonPhysicalModules,resolveCommonPhysicalTask,commonPhysicalCriteria,commonPhysicalSelections,adaptPhysicalScale} from './secondary-physical'

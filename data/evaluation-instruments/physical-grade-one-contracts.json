@@ -1,0 +1,1219 @@
+{
+  "grade": 1,
+  "scopeId": "d9cd49aa-e120-5c87-a84d-44e41e31f826",
+  "sourcePdfPages": [
+    359,
+    360,
+    361
+  ],
+  "policy": "REPRESENTATIVE_TASKS_NOT_FULL_COMPOUND_ROW_COVERAGE",
+  "cases": [
+    {
+      "id": "movement-rhythm",
+      "description": "Combina los movimientos adaptados dados siguiendo el ritmo folclórico elegido y las señales acordadas. No se pide bailar otros estilos ni valorar apariencia corporal.",
+      "sourceRecordIds": [
+        "41cf5901",
+        "cd7e86c2",
+        "2e4d311d"
+      ],
+      "focus": "Ritmo y secuencia observables, medio elegido",
+      "topicIds": [
+        "movement-rhythm"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "free-improvisation",
+      "description": "Improvisa una secuencia breve de movimientos seguros en el espacio adaptado dado, relacionando las respuestas y variaciones elegidas. No se evalúa extroversión ni espontaneidad como rasgo personal.",
+      "sourceRecordIds": [
+        "a0dcf1c9",
+        "f94730cd"
+      ],
+      "focus": "Improvisación y coherencia de respuesta",
+      "topicIds": [
+        "free-improvisation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "expressive-situation",
+      "description": "Representa mediante movimiento la circunstancia ficticia dada utilizando gesto, ritmo y postura según el guion. No reveles emociones propias ni experiencias privadas.",
+      "sourceRecordIds": [
+        "0bd3dadf",
+        "f94730cd"
+      ],
+      "focus": "Comunicación del personaje, no emoción interna",
+      "topicIds": [
+        "expressive-situation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "expressive-control",
+      "description": "Ejecuta la secuencia expresiva adaptada dada relacionando tensión, relajación y claridad del mensaje acordado, con apoyos permitidos. No se evalúa belleza corporal.",
+      "sourceRecordIds": [
+        "92fca148"
+      ],
+      "focus": "Control expresivo en condiciones explícitas",
+      "topicIds": [
+        "expressive-control"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "general-gymnastics-rules",
+      "description": "Analiza el cumplimiento de las reglas de gimnasia general proporcionadas en el registro ficticio de la secuencia. Sustenta cada decisión sin inventar reglas vigentes.",
+      "sourceRecordIds": [
+        "314eb64e"
+      ],
+      "focus": "Reglas dadas frente a entrenamiento",
+      "topicIds": [
+        "general-gymnastics-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "dance-elements",
+      "description": "Ejecuta las marchas y movimientos de brazos de la secuencia de danza adaptada dada, relacionando ritmo, dirección y apoyos permitidos. No se piden saltos ni giros adicionales.",
+      "sourceRecordIds": [
+        "7accce58",
+        "799d283c"
+      ],
+      "focus": "Solo elementos elegidos",
+      "topicIds": [
+        "dance-elements"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "implement-handling",
+      "description": "Observa el referente de manipulación del implemento ligero dado y explica el agarre y su relación con el movimiento según la ficha. No realices inversiones ni acrobacias.",
+      "sourceRecordIds": [
+        "702b7c4c",
+        "dae24a1e"
+      ],
+      "focus": "Análisis del referente distinto de ejecución",
+      "topicIds": [
+        "implement-handling"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "divergent-movement",
+      "description": "Crea dos variantes seguras de movimiento con el implemento ligero elegido relacionando uso del espacio y propósito del juego adaptado. No se exige otro implemento.",
+      "sourceRecordIds": [
+        "245a6d32"
+      ],
+      "focus": "Variantes pertinentes, no talento innato",
+      "topicIds": [
+        "divergent-movement"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "gymnastics-sequence-plan",
+      "description": "Elabora el plan de una composición gimnástica adaptada con los movimientos, formaciones y transformaciones proporcionados. Relaciona secuencia, espacio y recurso elegido; no la ejecutes aún.",
+      "sourceRecordIds": [
+        "f8842e65",
+        "893eebf0",
+        "3de07083"
+      ],
+      "focus": "Plan frente a producción/ejecución",
+      "topicIds": [
+        "gymnastics-sequence"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "gymnastics-sequence",
+      "description": "Ejecuta la secuencia gimnástica adaptada dada relacionando orden, transiciones y formaciones acordadas con apoyos permitidos. No se piden aparatos ni acrobacias.",
+      "sourceRecordIds": [
+        "f8842e65",
+        "3de07083"
+      ],
+      "focus": "Transiciones y secuencia observables",
+      "topicIds": [
+        "gymnastics-sequence"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "circuit-plan",
+      "description": "Organiza el circuito adaptado según las estaciones, acciones y pausas ya fijadas en la ficha docente. Explica su orden sin prescribir intensidad o tiempos nuevos ni ejecutarlo.",
+      "sourceRecordIds": [
+        "e12183bb",
+        "b3c5294e"
+      ],
+      "focus": "Organización de datos dados, no dosis de ejercicio",
+      "topicIds": [
+        "circuit-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "flexibility-observation",
+      "description": "Registra el cumplimiento de las acciones de flexibilidad activa expresamente adaptadas en la ficha docente a partir del vídeo dado. No midas amplitud corporal ni realices estiramientos pasivos.",
+      "sourceRecordIds": [
+        "e6046f2e"
+      ],
+      "focus": "Cumplimiento del referente, no amplitud natural",
+      "topicIds": [
+        "flexibility-observation"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "continuous-activity-record",
+      "description": "Organiza el registro ficticio proporcionado de actividad continua según inicio, pausas y final indicados. No fijes duración nueva ni califiques resistencia personal.",
+      "sourceRecordIds": [
+        "87b31f29"
+      ],
+      "focus": "Registro dado sin prescripción ni ranking",
+      "topicIds": [
+        "continuous-activity-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "motor-variation",
+      "description": "Ejecuta la secuencia motriz adaptada dada cambiando dirección y velocidad según las señales y apoyos acordados. No se pide saltar ni variar la altura.",
+      "sourceRecordIds": [
+        "f4d28cea"
+      ],
+      "focus": "Solo parámetros solicitados",
+      "topicIds": [
+        "motor-variation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "equilibrium-observation",
+      "description": "Analiza el equilibrio del referente ficticio según base de sustentación, apoyos y plano señalados en la ficha. No realices elevaciones ni reduzcas tus apoyos.",
+      "sourceRecordIds": [
+        "a5950938"
+      ],
+      "focus": "Análisis de evidencia y adaptaciones",
+      "topicIds": [
+        "equilibrium-observation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "spatial-orientation",
+      "description": "Ubica los puntos señalados del recorrido adaptado utilizando el mapa y los puntos cardinales dados. Explica direcciones relativas sin usar GPS ni brújula obligatoriamente.",
+      "sourceRecordIds": [
+        "7fbdc113"
+      ],
+      "focus": "Orientación y recurso elegido",
+      "topicIds": [
+        "spatial-orientation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "traditional-games-research",
+      "description": "Investiga el origen y las variantes del juego tradicional dominicano elegido usando las fuentes proporcionadas y comparte hallazgos sustentados. No entrevistes personas ni reveles datos propios.",
+      "sourceRecordIds": [
+        "52222e4a",
+        "c78151cf",
+        "ea25b676"
+      ],
+      "focus": "Fuente y variantes culturales, no identidad personal",
+      "topicIds": [
+        "traditional-games-research"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "regional-games-record",
+      "description": "Recopila los juegos populares de los pueblos o regiones expresamente dados en las fichas, relacionando procedencia y variantes documentadas. No inventes origen ni recorras comunidades.",
+      "sourceRecordIds": [
+        "e3a64078"
+      ],
+      "focus": "Organización por localidad dada",
+      "topicIds": [
+        "regional-games-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "game-types-record",
+      "description": "Organiza el registro de juegos colaborativos y competitivos de las fichas según su propósito y reglas dadas. No se requieren dinámicas grupales adicionales ni contactos reales.",
+      "sourceRecordIds": [
+        "9620a25f"
+      ],
+      "focus": "Categorías elegidas, sin acumular variantes",
+      "topicIds": [
+        "game-types-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "game-performance",
+      "description": "Participa en el juego tradicional adaptado elegido aplicando las reglas, turnos y acciones acordadas con apoyos permitidos. No se evalúa ganar ni superioridad física.",
+      "sourceRecordIds": [
+        "5f81a596",
+        "ff4bab6a"
+      ],
+      "focus": "Acciones y decisiones, no resultado competitivo",
+      "topicIds": [
+        "game-performance"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "warmup-observation",
+      "description": "Registra la frecuencia de cumplimiento de las acciones de calentamiento general y específico ya indicadas en la ficha docente durante las oportunidades observadas. No prescribas ejercicios nuevos.",
+      "sourceRecordIds": [
+        "457eb924",
+        "d6575c21"
+      ],
+      "focus": "Frecuencia real distinta de ausencia de datos",
+      "topicIds": [
+        "warmup-observation"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION"
+    },
+    {
+      "id": "given-nutrition-record",
+      "description": "Organiza la información alimentaria y de hidratación del caso ficticio usando exclusivamente la ficha proporcionada. Relaciona las acciones dadas con sus evidencias, sin recomendar dietas ni pedir datos propios.",
+      "sourceRecordIds": [
+        "7e35829a",
+        "668aebce"
+      ],
+      "focus": "Información dada, privacidad y ausencia de prescripción",
+      "topicIds": [
+        "given-nutrition-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "calorie-case-analysis",
+      "description": "Comprueba los valores calóricos del caso ficticio con la tabla y los requerimientos ya proporcionados según edad y actividad. Muestra las operaciones pedidas sin estimar necesidades de una persona real ni elaborar dietas.",
+      "sourceRecordIds": [
+        "dda803e7",
+        "d5b170d7",
+        "b2ec6307"
+      ],
+      "focus": "Cálculo sobre datos dados, no recomendaciones médicas",
+      "topicIds": [
+        "calorie-case-analysis"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "activity-obesity-debate",
+      "description": "Debate las relaciones entre actividad física y obesidad del caso ficticio mediante las evidencias y límites de la ficha dada. Responde a otra interpretación sin estigmatizar cuerpos ni afirmar causalidad no acreditada.",
+      "sourceRecordIds": [
+        "d81c1f9e"
+      ],
+      "focus": "Argumentación con límites, no apariencia o adhesión",
+      "topicIds": [
+        "activity-obesity-debate"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE"
+    },
+    {
+      "id": "chess-tactic-concept",
+      "description": "Explica la clavada y el doble ataque de las posiciones de ajedrez dadas relacionando piezas, amenazas y restricciones. No añadas otras tácticas.",
+      "sourceRecordIds": [
+        "9d428f1c"
+      ],
+      "focus": "Tácticas explícitas del referente",
+      "topicIds": [
+        "chess-tactic-concept"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "chess-problem",
+      "description": "Resuelve el problema de ajedrez a dos jugadas de la posición proporcionada, justificando la táctica y las respuestas legales previstas. No se pide problema a una y tres jugadas también.",
+      "sourceRecordIds": [
+        "cd32a06e",
+        "da4f7bd1"
+      ],
+      "focus": "Secuencia legal con respuesta del oponente",
+      "topicIds": [
+        "chess-problem"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING"
+    },
+    {
+      "id": "chess-game-analysis",
+      "description": "Analiza la posición crítica de la partida de ajedrez proporcionada identificando la táctica de defensa y sustentando sus efectos en la secuencia dada. No juegues otra partida.",
+      "sourceRecordIds": [
+        "b06ef448",
+        "f60711e5"
+      ],
+      "focus": "Análisis distinto de ejecución",
+      "topicIds": [
+        "chess-game-analysis"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "chess-notation",
+      "description": "Registra las jugadas de la partida de ajedrez simulada utilizando la notación proporcionada y explica la táctica aplicada en la posición indicada. No se evalúa ganar.",
+      "sourceRecordIds": [
+        "59ec0de4",
+        "49ffecdc"
+      ],
+      "focus": "Notación y decisión táctica",
+      "topicIds": [
+        "chess-notation"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "basketball-history",
+      "description": "Expone los hechos y personajes del baloncesto dominicano expresamente asignados mediante evidencias de las fuentes dadas y su ubicación temporal. No investigues otros países.",
+      "sourceRecordIds": [
+        "5491fcea",
+        "ed0ee3a6",
+        "a95f5b5f"
+      ],
+      "focus": "Historia por ámbito solicitado",
+      "topicIds": [
+        "basketball-history"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION"
+    },
+    {
+      "id": "basketball-rules",
+      "description": "Verifica si las decisiones del caso ficticio de baloncesto cumplen las reglas proporcionadas, justificando las marcas con el registro. No asumas un reglamento actual distinto.",
+      "sourceRecordIds": [
+        "149a922f"
+      ],
+      "focus": "Reglas del caso y evidencia",
+      "topicIds": [
+        "basketball-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "basketball-posture",
+      "description": "Ejecuta las posiciones fundamentales de baloncesto adaptadas dadas respondiendo a las señales de desplazamiento acordadas, con los apoyos permitidos. No se evalúa apariencia corporal ni talla.",
+      "sourceRecordIds": [
+        "137f277f"
+      ],
+      "focus": "Posiciones y transiciones según adaptación",
+      "topicIds": [
+        "basketball-posture"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "basketball-fundamentals",
+      "description": "Ejecuta pases de pecho y recepciones de baloncesto en la tarea adaptada dada, relacionando dirección, control y decisión según las señales. No se piden tiros, dribles ni rebotes.",
+      "sourceRecordIds": [
+        "8dab4e78",
+        "41ffb066"
+      ],
+      "focus": "Solo técnica explícita, sin doble penalización",
+      "topicIds": [
+        "basketball-fundamentals"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "basketball-adapted-rules",
+      "description": "Analiza las adaptaciones de las reglas del baloncesto del caso ficticio según participación, recursos y necesidades ya descritos. Sustenta cómo conservan el propósito del juego sin evaluar diagnósticos.",
+      "sourceRecordIds": [
+        "ff8e3767"
+      ],
+      "focus": "Reglas adaptadas, no discapacidad como déficit",
+      "topicIds": [
+        "basketball-adapted-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "basketball-wheelchair",
+      "description": "Analiza las decisiones de pase y recepción del referente de baloncesto en silla de ruedas según las reglas adaptadas dadas. No ejecutes transferencias ni maniobras nuevas con la silla.",
+      "sourceRecordIds": [
+        "bd70a8ce"
+      ],
+      "focus": "Decisión técnica contextual sin guía física riesgosa",
+      "topicIds": [
+        "basketball-wheelchair"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "basketball-three-on-three",
+      "description": "Compara las reglas del baloncesto convencional y 3x3 proporcionadas para la situación de juego dada, relacionando decisiones y evidencias. No impongas reglamentos externos.",
+      "sourceRecordIds": [
+        "026ca3ba"
+      ],
+      "focus": "Comparación de variantes proporcionadas",
+      "topicIds": [
+        "basketball-three-on-three"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON"
+    },
+    {
+      "id": "artistic-gymnastics-history",
+      "description": "Investiga los hechos históricos de la gimnasia artística expresamente asignados mediante fuentes y referencias dadas, distinguiendo evidencia e inferencia. No ejecutes acrobacias.",
+      "sourceRecordIds": [
+        "3d3928d0",
+        "a95f5b5f"
+      ],
+      "focus": "Historia distinta de rutina corporal",
+      "topicIds": [
+        "artistic-gymnastics-history"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "artistic-gymnastics-rules",
+      "description": "Interpreta el código de puntuación de gimnasia artística proporcionado aplicándolo al registro ficticio dado y sustentando cada decisión. No se presenta como reglamento vigente universal.",
+      "sourceRecordIds": [
+        "216afdc2",
+        "37ddabd8"
+      ],
+      "focus": "Interpretación y aplicación de código dado",
+      "topicIds": [
+        "artistic-gymnastics-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "apparatus-reference-analysis",
+      "description": "Analiza la secuencia del referente gimnástico en el aparato asignado mediante las fases y condiciones adaptadas expresamente dadas. No intentes acrobacias ni uses aparatos sin supervisión.",
+      "sourceRecordIds": [
+        "7a2f34e1",
+        "860a4c73"
+      ],
+      "focus": "Observación analítica, sin instrucciones operacionales peligrosas",
+      "topicIds": [
+        "apparatus-reference-analysis"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "handball-history",
+      "description": "Expone la historia del balonmano local expresamente asignada relacionando hechos, personajes y fechas con las fuentes dadas. No se piden reglamentos ni ejecución técnica.",
+      "sourceRecordIds": [
+        "adf0a324",
+        "24ce2d7b"
+      ],
+      "focus": "Historia y alcance local",
+      "topicIds": [
+        "handball-history"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION"
+    },
+    {
+      "id": "handball-rules",
+      "description": "Verifica el cumplimiento de las reglas de balonmano proporcionadas en las acciones del caso ficticio, justificando las decisiones con sus evidencias. No añadas reglas actuales no documentadas.",
+      "sourceRecordIds": [
+        "24ce2d7b"
+      ],
+      "focus": "Reglas distintas de historia de fila compuesta",
+      "topicIds": [
+        "handball-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "handball-posture",
+      "description": "Ejecuta las posiciones fundamentales de balonmano adaptadas dadas relacionando ubicación y respuesta a las señales con los apoyos permitidos. No se pide salto ni contacto.",
+      "sourceRecordIds": [
+        "d48387fa"
+      ],
+      "focus": "Posiciones y apoyos sin penalizar adaptación",
+      "topicIds": [
+        "handball-posture"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "handball-fundamentals",
+      "description": "Ejecuta pases y recepciones de balonmano de la tarea adaptada dada, relacionando control, dirección y decisión según las señales. No se piden bloqueos, bote ni lanzamientos.",
+      "sourceRecordIds": [
+        "bcc82a8d",
+        "41ffb066"
+      ],
+      "focus": "Solo fundamentos solicitados",
+      "topicIds": [
+        "handball-fundamentals"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "handball-adapted-rules",
+      "description": "Analiza las adaptaciones del reglamento de balonmano del caso ficticio según recursos, participación y necesidades descritos, justificando decisiones sin inferir diagnósticos.",
+      "sourceRecordIds": [
+        "d2335405"
+      ],
+      "focus": "Adaptaciones de contexto",
+      "topicIds": [
+        "handball-adapted-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "handball-wheelchair",
+      "description": "Analiza la decisión de ataque o defensa elegida del referente de balonmano en silla de ruedas según las reglas adaptadas proporcionadas. No realices maniobras ni transferencias físicas.",
+      "sourceRecordIds": [
+        "9b9784b7"
+      ],
+      "focus": "Análisis del referente y alternativa elegida",
+      "topicIds": [
+        "handball-wheelchair"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "technique-comparison",
+      "description": "Compara los tipos de pases de baloncesto de los referentes proporcionados usando dirección, recepción y situación de uso. No compares dribles ni tiros.",
+      "sourceRecordIds": [
+        "6747055f"
+      ],
+      "focus": "Solo familia de técnica pedida",
+      "topicIds": [
+        "technique-comparison"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON"
+    },
+    {
+      "id": "adapted-variant",
+      "description": "Propón una variante de pase de balonmano para el caso adaptado dado, relacionando reglas, recursos y propósito del juego sin exigir ejecución todavía.",
+      "sourceRecordIds": [
+        "d027555e"
+      ],
+      "focus": "Propuesta táctica viable en condiciones dadas",
+      "topicIds": [
+        "adapted-variant"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "tactical-cooperation",
+      "description": "Registra la frecuencia con que se proponen soluciones y se cumplen los acuerdos técnicos en la tarea colectiva de ajedrez observada. No evalúes liderazgo innato ni simpatía.",
+      "sourceRecordIds": [
+        "2da7433e",
+        "61ae4f0d"
+      ],
+      "focus": "Acciones concretas separadas, no personalidad",
+      "topicIds": [
+        "tactical-cooperation"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION"
+    },
+    {
+      "id": "physical-condition-explanation",
+      "description": "Explica las diferencias entre fuerza rápida, coordinación y equilibrio a partir de los ejemplos adaptados proporcionados. No midas tu rendimiento ni clasifiques cuerpos.",
+      "sourceRecordIds": [
+        "b3c5294e",
+        "7f2a69f9"
+      ],
+      "focus": "Conceptos motrices mediante referentes",
+      "topicIds": [
+        "physical-condition-explanation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "care-frequency",
+      "description": "Registra por separado la frecuencia de cuidado de materiales y del espacio en el juego adaptado observado según los acuerdos dados. No infieras higiene privada ni salud personal.",
+      "sourceRecordIds": [
+        "82e70eec",
+        "34c5f5c6"
+      ],
+      "focus": "Frecuencias separadas y ausencia de registro",
+      "topicIds": [
+        "care-frequency"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION"
+    },
+    {
+      "id": "game-facilitation",
+      "description": "Facilita el juego tradicional adaptado elegido comunicando las reglas y organizando turnos con los apoyos acordados. No se evalúa carisma ni liderazgo innato.",
+      "sourceRecordIds": [
+        "52222e4a",
+        "5f81a596"
+      ],
+      "focus": "Animación como acciones de facilitación observables",
+      "topicIds": [
+        "game-facilitation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE"
+    },
+    {
+      "id": "motor-progress-record",
+      "description": "Analiza el registro ficticio de progresión motriz proporcionado comparando el cumplimiento de las acciones adaptadas y las condiciones registradas en dos momentos. No clasifiques personas por fuerza, rapidez ni capacidad natural.",
+      "sourceRecordIds": [
+        "b3c5294e",
+        "7f2a69f9"
+      ],
+      "focus": "Progresión de acciones según condiciones, sin ranking corporal",
+      "topicIds": [
+        "motor-progress-record"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "dance-turns-only",
+      "description": "Ejecuta los giros y equilibrios de la secuencia de danza adaptada dada según las señales y apoyos acordados. No se piden marchas ni movimientos de brazos.",
+      "topicIds": [
+        "dance-elements"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "799d283c"
+      ],
+      "required": "giros|equilibrios",
+      "forbidden": "marchas|brazos",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "basketball-shoot-only",
+      "description": "Ejecuta los tiros estáticos de baloncesto de la tarea adaptada dada según dirección y apoyos acordados. No se piden pases ni recepciones.",
+      "topicIds": [
+        "basketball-fundamentals"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "8dab4e78"
+      ],
+      "required": "tiros",
+      "forbidden": "pases|recepciones",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "handball-dribble-only",
+      "description": "Ejecuta el bote de balonmano de la tarea adaptada dada respondiendo a las señales con los apoyos permitidos. No se piden pases ni recepciones.",
+      "topicIds": [
+        "handball-fundamentals"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "bcc82a8d"
+      ],
+      "required": "bote",
+      "forbidden": "pases|recepciones",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "comparison-dribbles-only",
+      "description": "Compara los tipos de dribles de baloncesto de los referentes proporcionados según dirección y situación de uso. No compares pases ni recepciones.",
+      "topicIds": [
+        "technique-comparison"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "6747055f"
+      ],
+      "required": "dribles",
+      "forbidden": "pases|recepciones",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "hydration-only",
+      "description": "Organiza la información de hidratación del caso ficticio utilizando solo la ficha proporcionada. No añadas información alimentaria ni recomiendes ingesta personal.",
+      "topicIds": [
+        "given-nutrition-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "sourceRecordIds": [
+        "668aebce"
+      ],
+      "required": "hidratación",
+      "forbidden": "alimentaria",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "warmup-general-only",
+      "description": "Registra la frecuencia con que se cumplen las acciones de calentamiento general ya fijadas en la ficha docente durante las oportunidades observadas. No se pide calentamiento específico.",
+      "topicIds": [
+        "warmup-observation"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "sourceRecordIds": [
+        "457eb924"
+      ],
+      "required": "general",
+      "forbidden": "específico",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "care-space-only",
+      "description": "Registra la frecuencia de cuidado del espacio durante el juego adaptado observado según los acuerdos dados. No se pide cuidado de materiales.",
+      "topicIds": [
+        "care-frequency"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "sourceRecordIds": [
+        "82e70eec"
+      ],
+      "required": "espacio",
+      "forbidden": "materiales",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "basketball-chosen-technique",
+      "description": "Ejecuta pases o recepciones de baloncesto según la técnica elegida para la tarea adaptada dada, relacionando dirección, control y apoyos acordados. No se requieren ambas técnicas.",
+      "topicIds": [
+        "basketball-fundamentals"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "8dab4e78"
+      ],
+      "required": "elegid",
+      "forbidden": "pases y recepciones",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "aerobic-endurance-only",
+      "description": "Explica la resistencia aeróbica mediante las evidencias de los ejemplos adaptados proporcionados. No midas tu rendimiento ni clasifiques personas.",
+      "topicIds": [
+        "physical-condition-explanation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b3c5294e"
+      ],
+      "required": "capacidades|resistencia",
+      "forbidden": "fuerza rápida y coordinación",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "expressive-real-context",
+      "description": "Representa mediante movimiento la circunstancia del guion dado utilizando gesto, ritmo y postura según los apoyos acordados. No se pide una situación ficticia ni revelar vivencias.",
+      "topicIds": [
+        "expressive-situation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "0bd3dadf"
+      ],
+      "required": "circunstancia",
+      "forbidden": "ficticia",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "rules-brief",
+      "description": "Explica reglas de gimnasia general.",
+      "topicIds": [
+        "general-gymnastics-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "314eb64e"
+      ],
+      "required": "Explica",
+      "forbidden": "acciones registradas|decisión|cumplimiento",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "flexibility-brief",
+      "description": "Explica acciones de flexibilidad adaptadas.",
+      "topicIds": [
+        "flexibility-observation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e6046f2e"
+      ],
+      "required": "flexibilidad",
+      "forbidden": "capacidades físicas",
+      "focus": "Alcance solicitado y alternativas",
+      "criterionCount": 1
+    },
+    {
+      "id": "expression-brief",
+      "description": "Explica representación corporal de una circunstancia.",
+      "topicIds": [
+        "expressive-situation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0bd3dadf"
+      ],
+      "required": "circunstancia",
+      "forbidden": "guion",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "expressive-control-brief",
+      "description": "Explica tensión y relajación expresivas.",
+      "topicIds": [
+        "expressive-control"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "92fca148"
+      ],
+      "required": "tensión|relajación",
+      "forbidden": "postura",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "basketball-rules-brief",
+      "description": "Explica reglas de baloncesto.",
+      "topicIds": [
+        "basketball-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "149a922f"
+      ],
+      "required": "Explica",
+      "forbidden": "decisiones registradas|cumplimiento",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "handball-rules-brief",
+      "description": "Explica reglas de balonmano.",
+      "topicIds": [
+        "handball-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "24ce2d7b"
+      ],
+      "required": "Explica",
+      "forbidden": "acciones registradas|cumplimiento",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "gymnastics-code-brief",
+      "description": "Explica código de puntuación gimnástica dado.",
+      "topicIds": [
+        "artistic-gymnastics-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "216afdc2"
+      ],
+      "required": "código",
+      "forbidden": "acciones registradas|aplica",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "technique-comparison-brief",
+      "description": "Explica comparación de técnicas deportivas.",
+      "topicIds": [
+        "technique-comparison"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6747055f"
+      ],
+      "required": "técnicas",
+      "forbidden": "recepción",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "implement-practice",
+      "description": "Ejecuta la manipulación del implemento ligero indicado relacionando agarre y control según las condiciones adaptadas dadas y los apoyos permitidos. No se piden acrobacias.",
+      "topicIds": [
+        "implement-handling"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "702b7c4c"
+      ],
+      "required": "Manipula|Ejecuta",
+      "forbidden": "^Explica|Analiza",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "flexibility-practice",
+      "description": "Ejecuta las acciones de flexibilidad activa adaptadas dadas según las señales y apoyos acordados. No realices estiramientos pasivos ni midas amplitud corporal.",
+      "topicIds": [
+        "flexibility-observation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "e6046f2e"
+      ],
+      "required": "Ejecuta|Realiza",
+      "forbidden": "Identifica|referente cumple",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "circuit-practice",
+      "description": "Ejecuta el circuito adaptado siguiendo las estaciones, acciones y pausas ya fijadas en la ficha docente y los apoyos acordados. No prescribas intensidad o tiempos nuevos.",
+      "topicIds": [
+        "circuit-plan"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "e12183bb"
+      ],
+      "required": "Ejecuta|Realiza",
+      "forbidden": "Planifica",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "continuous-practice",
+      "description": "Realiza la actividad continua adaptada según el inicio, las pausas y el final indicados en la ficha docente, con los apoyos acordados. No se asigna una duración nueva ni se compara resistencia personal.",
+      "topicIds": [
+        "continuous-activity-record"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "87b31f29"
+      ],
+      "required": "Realiza|Ejecuta",
+      "forbidden": "Organiza el registro",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "spatial-practice",
+      "description": "Recorre el recorrido adaptado dado respondiendo a las referencias y direcciones del mapa y los puntos cardinales señalados, con los apoyos permitidos. No uses GPS ni brújula adicionales.",
+      "topicIds": [
+        "spatial-orientation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "7fbdc113"
+      ],
+      "required": "Recorre|Ejecuta",
+      "forbidden": "^Ubica|Explica",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "basketball-wheelchair-practice",
+      "description": "Ejecuta los pases y recepciones de baloncesto en silla de ruedas expresamente adaptados según las señales y reglas proporcionadas, con los apoyos permitidos. No realices transferencias ni maniobras nuevas.",
+      "topicIds": [
+        "basketball-wheelchair"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "bd70a8ce"
+      ],
+      "required": "Ejecuta",
+      "forbidden": "Analiza|referente",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "handball-wheelchair-practice",
+      "description": "Ejecuta las acciones de ataque elegidas de balonmano en silla de ruedas según las condiciones y reglas adaptadas proporcionadas, con los apoyos permitidos. No se pide defensa adicional ni transferencias.",
+      "topicIds": [
+        "handball-wheelchair"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "9b9784b7"
+      ],
+      "required": "Ejecuta",
+      "forbidden": "Analiza|referente",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "basketball-three-on-three-practice",
+      "description": "Juega la situación adaptada de baloncesto 3x3 aplicando las reglas y decisiones expresamente proporcionadas con los apoyos acordados. No se compara el reglamento de baloncesto convencional.",
+      "topicIds": [
+        "basketball-three-on-three"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "026ca3ba"
+      ],
+      "required": "Aplica|Juega",
+      "forbidden": "Compara|convencional",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "apparatus-practice",
+      "description": "Ejecuta la secuencia gimnástica adaptada del aparato asignado según las fases, transiciones y condiciones ya proporcionadas por el docente, con los apoyos y supervisión acordados. No inventes maniobras nuevas.",
+      "topicIds": [
+        "apparatus-reference-analysis"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "7a2f34e1"
+      ],
+      "required": "Ejecuta",
+      "forbidden": "Analiza|referente",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "chess-gameplay",
+      "description": "Juega la partida de ajedrez adaptada según las reglas dadas utilizando la notación proporcionada y justificando la táctica elegida en la posición indicada. No se evalúa ganar.",
+      "topicIds": [
+        "chess-notation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "59ec0de4"
+      ],
+      "required": "Juega|Aplica",
+      "forbidden": "Registra las jugadas de la partida simulada",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "compare-postures",
+      "description": "Compara las posiciones fundamentales de baloncesto de los referentes proporcionados según ubicación y respuesta a las señales dadas. No las ejecutes.",
+      "topicIds": [
+        "basketball-posture"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "137f277f"
+      ],
+      "required": "Compara",
+      "forbidden": "Ejecuta",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "plan-game-facilitation",
+      "description": "Diseña un plan de facilitación del juego tradicional adaptado elegido, relacionando reglas comunicadas, turnos y apoyos previstos. No facilites el juego todavía.",
+      "topicIds": [
+        "game-facilitation"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "52222e4a"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Facilita",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "record-technical-actions",
+      "description": "Organiza el registro proporcionado de los pases y recepciones de balonmano relacionando control, dirección y condiciones de la tarea adaptada dada. No ejecutes las técnicas.",
+      "topicIds": [
+        "handball-fundamentals"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "sourceRecordIds": [
+        "bcc82a8d"
+      ],
+      "required": "Registra|Organiza",
+      "forbidden": "Ejecuta",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "research-basketball-history",
+      "description": "Investiga la historia del baloncesto del ámbito local asignado mediante las fuentes proporcionadas, relacionando hechos, personajes y fechas sustentados. No realices una exposición adicional.",
+      "topicIds": [
+        "basketball-history"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "5491fcea"
+      ],
+      "required": "Investiga",
+      "forbidden": "^Presenta",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "create-gymnastics-plan",
+      "description": "Crea un plan de composición gimnástica adaptada con los movimientos, formaciones y transformaciones proporcionados. No ejecutes la secuencia todavía.",
+      "topicIds": [
+        "gymnastics-sequence"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "f8842e65"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Ejecuta",
+      "focus": "Alcance solicitado y alternativas"
+    },
+    {
+      "id": "create-game-facilitation-plan",
+      "description": "Crea un plan de facilitación del juego tradicional adaptado elegido, relacionando reglas comunicadas, turnos y apoyos previstos. No facilites el juego todavía.",
+      "topicIds": [
+        "game-facilitation"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "52222e4a"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Facilita",
+      "focus": "Alcance solicitado y alternativas"
+    }
+  ]
+}

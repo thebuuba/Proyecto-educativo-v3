@@ -12,8 +12,9 @@ const gradeFlag=process.argv.indexOf('--grade'),grade=gradeFlag<0?1:Number(proce
 assert(Number.isInteger(grade)&&grade>=1&&grade<=6)
 const gradeName=['','one','two','three','four','five','six'][grade]
 const subjectFlag=process.argv.indexOf('--subject'),subjectCode=subjectFlag<0?'SOC':process.argv[subjectFlag+1]
-assert(['SOC','ART'].includes(subjectCode),'Solo se admiten los ámbitos comunes SOC y ART revisados')
-const family=subjectCode==='ART'?'art':'social',fileStem=subjectCode==='ART'?'artistica':'sociales',qaLabel=subjectCode==='ART'?'Artística':'Sociales',subjectName=subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=subjectCode==='ART'?'art':'soc'
+assert(['SOC','ART','EFI'].includes(subjectCode),'Solo se admiten los ámbitos comunes revisados')
+assert(subjectCode!=='EFI'||grade===1,'EFI requiere un grado con contratos y fuente revisados')
+const family=subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
 const path='.wrangler/secondary-completion/',context=JSON.parse(readFileSync(path+`${family}-${grade}-context.json`,'utf8'))
 assert.equal(context.project,project)
 assert.equal(context.grade,grade)
@@ -35,16 +36,16 @@ const media=[
  {description:'Realiza un panel o una infografía sobre la expansión colonial en el Caribe.',sourceRecordIds:['c68b813b']},
  {description:'Redacta una noticia sobre las Revoluciones burguesas con titular, entrada, cuerpo, una foto proporcionada y pie de foto. Usa conectores de orden y temporales.',sourceRecordIds:['f0556291']},
 ]
-const contractPath=subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
+const contractPath=subjectCode==='EFI'?`data/evaluation-instruments/physical-grade-${gradeName}-contracts.json`:subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
 const allContracts=mediaMode?[...media,...media]:JSON.parse(readFileSync(contractPath,'utf8')).cases
 const casesFlag=process.argv.indexOf('--cases'),selectedIds=casesFlag<0?null:process.argv[casesFlag+1]?.split(',')
 if(selectedIds){
  assert(selectedIds.length&&new Set(selectedIds).size===selectedIds.length,'Identifica muestras distintas')
- assert((proceduralMode||productMode)&&(grade>1||subjectCode==='ART'),'La selección explícita requiere contratos procedimentales o de productos por grado')
+ assert((proceduralMode||productMode)&&(grade>1||subjectCode!=='SOC'),'La selección explícita requiere contratos procedimentales o de productos por grado')
  assert(selectedIds.every(id=>allContracts.some(c=>c.id===id)),'Hay una consigna desconocida')
 }
 const procedural=selectedIds?selectedIds.map(id=>allContracts.find(c=>c.id===id)):allContracts
-if(subjectCode==='ART')assert(sourceMode&&productMode&&selectedIds&&!mediaMode&&!proceduralMode,'ART requiere fuente publicada y muestras explícitas de contratos revisados')
+if(subjectCode!=='SOC')assert(sourceMode&&productMode&&selectedIds&&!mediaMode&&!proceduralMode,'El área requiere fuente publicada y muestras explícitas de contratos revisados')
 const source=sourceMode?JSON.parse(readFileSync(path+`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1-source.json`,'utf8')):null
 if(source){assert.equal(source.project,project);assert.equal(source.code,`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`)}
 const selectionKey=selectedIds?'-sample-'+createHash('sha256').update(selectedIds.join(',')).digest('hex').slice(0,12):''
