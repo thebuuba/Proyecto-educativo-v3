@@ -7,6 +7,7 @@ import { formatAmount, formatDate, formatDateTime, accessDescriptor } from '@/mo
 import { FeedbackBanner } from '@/components/ui/SemanticUI'
 import { getOwnProfileSettings } from '../services/profileSettingsService'
 import { Button } from '../reference-ui'
+import { SettingsTabsNav } from '../components/settings-tabs-nav'
 import { SubscriptionOverviewCards } from '../components/subscription-overview-cards'
 import { InvoiceHistoryTable } from '../components/invoice-history-table'
 import { PlanSelector } from '../components/plan-selector'
@@ -78,6 +79,7 @@ function BillingSettingsPage({ onManage } = {}) {
       <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Configuración</h1>
       <Button variant="outline" className="h-11 rounded-xl border-transparent bg-card font-semibold shadow-xs" onClick={() => exportDocuments()} disabled={loading || Boolean(error) || documents.length === 0}><Download className="mr-2 h-4 w-4 text-primary" />Exportar documentos</Button>
     </div>
+    <SettingsTabsNav activeId="billing" />
     {loading ? <p role="status">Cargando tus pagos…</p> : error ? <FeedbackBanner tone="danger" role="alert">{error}<Button variant="ghost" className="ml-2" onClick={() => void refetch()}>Reintentar</Button></FeedbackBanner> : !overview ? <FeedbackBanner>No se recibió información de pagos.</FeedbackBanner> : <>
       {actionError && <FeedbackBanner tone="danger" role="alert">{actionError}</FeedbackBanner>}
       {!overview.enabled && <FeedbackBanner>El servicio de pagos no está habilitado en este entorno.</FeedbackBanner>}
