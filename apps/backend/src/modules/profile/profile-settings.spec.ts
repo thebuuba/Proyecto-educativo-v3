@@ -40,6 +40,18 @@ describe('real profile settings', () => {
     expect(result.stats.map(s => s.value)).toEqual([null, null, null])
   })
 
+  it('can complete the profile using only fields still available in the form', async () => {
+    db.appUser.findFirst.mockResolvedValue({ ...record(), phone: '8095551234', avatarUrl: '/api/v1/profile/avatar?v=test',
+      profileSettings: { publicName: 'ana', bio: 'Docente', birthDate: new Date('1999-04-18'), country: 'DO',
+        city: 'Santo Domingo', educationLevel: 'university', interests: [] } })
+    expect((await new ProfileService().getSettings(user)).completeness).toBe(100)
+  })
+
+  it('ignores retired interests when calculating completeness', async () => {
+    db.appUser.findFirst.mockResolvedValue({ ...record(), profileSettings: { interests: ['Python'] } })
+    expect((await new ProfileService().getSettings(user)).completeness).toBe(11)
+  })
+
   it('saves only allowed fields transactionally and preserves civil dates', async () => {
     await new ProfileService().updateSettings(user, { fullName: ' Ana ', preferences: { birthDate: '1999-04-18', bio: null }, roles: ['admin'], userId: 'other' } as never)
     expect(db.$transaction).toHaveBeenCalled()

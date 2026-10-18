@@ -38,13 +38,13 @@ export class ProfileService {
       } } } }),
     } }) : null
     const completed = [account.fullName, account.phone, account.avatarUrl, preferences.publicName, preferences.bio,
-      preferences.birthDate, preferences.country, preferences.city, preferences.educationLevel, preferences.interests.length]
+      preferences.birthDate, preferences.country, preferences.city, preferences.educationLevel]
     return {
       id: account.id, fullName: account.fullName, email: account.email, phone: account.phone, avatarUrl: account.avatarUrl,
       createdAt: account.createdAt.toISOString(), roles: user.roles, institution: account.school.name,
       academicIdentifier: teacher ? { label: 'Código docente', value: teacher.employeeCode }
         : student ? { label: 'Matrícula', value: student.studentCode } : null,
-      preferences, completeness: completed.filter(Boolean).length * 10,
+      preferences, completeness: Math.round(completed.filter(Boolean).length / completed.length * 100),
       stats: [{ id: 'courses', label: teacher ? 'Cursos asignados' : 'Cursos activos', value: courseCount },
         { id: 'hours', label: 'Horas registradas', value: null }, { id: 'certs', label: 'Certificados', value: null }],
     }

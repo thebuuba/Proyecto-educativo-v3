@@ -59,8 +59,7 @@ function ProfileIdentityCard({
         <div className="mt-4">
           <h2 className="text-xl font-extrabold tracking-tight">{name}</h2>
           <p className="text-sm text-muted-foreground">
-            {'@'}
-            {username}
+            {username ? `@${username}` : 'Completa tu nombre público'}
           </p>
           <p className="mt-2 flex items-center gap-1.5 text-xs text-muted-foreground">
             <CalendarDays className="h-3.5 w-3.5" />
@@ -71,7 +70,7 @@ function ProfileIdentityCard({
         <div className="mt-5 grid grid-cols-3 gap-2">
           {stats.map((s) => (
             <div key={s.id} className="rounded-2xl bg-muted/70 px-2 py-3 text-center">
-              <p className="text-lg font-extrabold tabular-nums">{s.value}</p>
+              <p className={`${s.value === 'No disponible' || s.value === 'No aplica' ? 'text-xs' : 'text-lg tabular-nums'} font-semibold`}>{s.value}</p>
               <p className="text-[11px] leading-tight text-muted-foreground">{s.label}</p>
             </div>
           ))}
@@ -86,7 +85,7 @@ function ProfileIdentityCard({
           </div>
           <Progress2 value={completeness} className="mt-2.5 h-2 bg-muted" />
           <p className="mt-2 text-xs text-muted-foreground">
-            {'Completa tus datos personales para mejorar tu perfil. — indica un dato todavía no registrado.'}
+            {'El porcentaje refleja tus datos guardados y tu foto. Horas y certificados aún no están disponibles.'}
           </p>
         </div>
         <div className="mt-5 flex gap-2">

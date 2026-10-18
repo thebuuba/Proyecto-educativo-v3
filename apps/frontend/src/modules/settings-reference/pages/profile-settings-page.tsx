@@ -85,9 +85,9 @@ export function ProfileSettingsPage() {
       }} />
     <div className="grid grid-cols-1 gap-8 xl:grid-cols-[360px_minmax(0,1fr)]">
       <div className="xl:sticky xl:top-28 xl:self-start">
-        <ProfileIdentityCard name={draft.fullName} username={draft.preferences.publicName || 'Completa tu nombre público'}
+        <ProfileIdentityCard name={draft.fullName} username={draft.preferences.publicName?.trim() || ''}
           avatarUrl={draft.avatarUrl} role={draft.roles.map(r => ({ teacher: 'Docente', admin: 'Administrador', student: 'Estudiante', guardian: 'Tutor' }[r] ?? r)).join(' · ')}
-          memberSince={memberSince} stats={saved.stats.map(s => ({ ...s, value: s.value === null ? '—' : String(s.value) }))}
+          memberSince={memberSince} stats={saved.stats.map(s => ({ ...s, value: s.value === null ? (s.id === 'courses' ? 'No aplica' : 'No disponible') : String(s.value) }))}
           completeness={saved.completeness} pending={pending} onChangePhoto={() => fileInput.current?.click()} onRemovePhoto={() => void mutate(removeOwnAvatar, true)} />
       </div>
       <fieldset disabled={pending} className="min-w-0 space-y-6">
