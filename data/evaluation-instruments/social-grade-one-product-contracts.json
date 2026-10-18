@@ -1,0 +1,306 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 1,
+  "subjectCode": "SOC",
+  "cases": [
+    {
+      "id": "inquiry",
+      "sourceRecordIds": [
+        "13492377-3336-500e-8318-7a15a3f79258"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "INQUIRY",
+      "description": "Indaga en las fuentes proporcionadas sobre los elementos que componen los distintos mapas. No busques nuevas páginas.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "absent": "entrevista|trabajo de campo|nuevas páginas"
+    },
+    {
+      "id": "brainstorm",
+      "sourceRecordIds": [
+        "dea7c50b-e41e-54ef-a389-32325182887f"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "BRAINSTORM",
+      "description": "Socializa mediante una lluvia de ideas los cambios económicos y sociales de la Segunda Revolución Industrial, relacionando las ideas con los hechos estudiados. No califiques la extroversión ni cuentes intervenciones.",
+      "requiredKeys": [
+        "ideas",
+        "ideas-relations"
+      ],
+      "absent": "extroversión|número de intervenciones|cantidad de intervenciones"
+    },
+    {
+      "id": "panel",
+      "sourceRecordIds": [
+        "c68b813b-dbd9-52a8-95d8-d0ab9ffc5af9"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "HISTORICAL_PANEL",
+      "description": "Presenta un panel sobre los procesos de expansión colonialista en el Caribe y responde a preguntas utilizando las evidencias proporcionadas. No hagas infografías ni dramatizaciones.",
+      "requiredKeys": [
+        "panel-contribution",
+        "panel-response"
+      ],
+      "absent": "infografía|acciones del rol|talento actoral"
+    },
+    {
+      "id": "infographic",
+      "sourceRecordIds": [
+        "c68b813b-dbd9-52a8-95d8-d0ab9ffc5af9"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "HISTORICAL_INFOGRAPHIC",
+      "description": "Elabora una infografía sobre la expansión colonial en el Caribe relacionando actores, lugares y períodos con los hechos proporcionados. No hagas una exposición oral.",
+      "requiredKeys": [
+        "visual-information",
+        "visual-relations"
+      ],
+      "absent": "exposición oral|materiales costosos|talento artístico"
+    },
+    {
+      "id": "historical-role",
+      "sourceRecordIds": [
+        "b2a0518d-1461-5ffd-b070-f288e568d25d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "HISTORICAL_ROLE",
+      "description": "Simula una situación sobre la piratería en Santo Domingo durante el siglo XVII. Representa las decisiones de un habitante ficticio de acuerdo con el contexto y las fuentes proporcionadas. No representes violencia ni califiques el acento.",
+      "requiredKeys": [
+        "historical-role",
+        "historical-context"
+      ],
+      "absent": "reglas de seguridad vial|acento|talento actoral|personalidad"
+    },
+    {
+      "id": "historical-comic",
+      "sourceRecordIds": [
+        "8e7bf8dd-39ca-5809-a94d-52c94bbb90c3"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "HISTORICAL_COMIC",
+      "description": "Caracteriza y diferencia a bucaneros, filibusteros, corsarios y engagés mediante un cómic basado en el material histórico proporcionado. Sin actuar ni evaluar la calidad artística del dibujo.",
+      "requiredKeys": [
+        "comparison",
+        "visual-historical"
+      ],
+      "absent": "acciones del rol|talento artístico|caligrafía"
+    },
+    {
+      "id": "brochure",
+      "sourceRecordIds": [
+        "c235c6c1-1392-51e0-bcb8-414771729538"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PEACE_BROCHURE",
+      "description": "Elabora un brochure dirigido a estudiantes sobre la cultura de paz y alternativas dialogadas para resolver el conflicto ficticio proporcionado. No realices entrevistas ni recojas datos privados.",
+      "requiredKeys": [
+        "audience-message",
+        "action-guidance"
+      ],
+      "absent": "realiza entrevistas|datos privados|personalidad"
+    },
+    {
+      "id": "consultation",
+      "sourceRecordIds": [
+        "efc775b7-70ae-500c-a101-8226873cacfb"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROVIDED_CONSULTATION",
+      "description": "Consulta las respuestas anónimas proporcionadas sobre un conflicto escolar, sintetiza las necesidades expresadas y propone alternativas de solución dialogada. No hagas nuevas consultas ni entrevistas.",
+      "requiredKeys": [
+        "consultation-evidence",
+        "proposal"
+      ],
+      "absent": "realiza entrevistas|consulta presencial|trabajo de campo"
+    },
+    {
+      "id": "news-connectors",
+      "sourceRecordIds": [
+        "f0556291-27c5-513e-a7c6-13da3443ea58"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "NEWS_CONNECTORS",
+      "description": "Redacta una noticia histórica sobre las Revoluciones burguesas con titular, entrada y cuerpo. Usa conectores de orden y temporales para presentar los hechos. Sin fotografías ni pie de foto.",
+      "requiredKeys": [
+        "news-structure",
+        "news-connectors"
+      ],
+      "absent": "fotografía|pie de foto|caligrafía"
+    },
+    {
+      "id": "tax-project",
+      "sourceRecordIds": [
+        "27dabcfb-1edc-5338-9183-bf23a3ff7596"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "TAX_PROJECT",
+      "description": "Realiza un proyecto sobre los beneficios del pago de impuestos para los servicios públicos. Explica su propósito, plantea acciones con los recursos ficticios proporcionados e indica cómo comprobar su realización. No ejecutes gastos ni cobros reales.",
+      "requiredKeys": [
+        "project-purpose",
+        "project-actions",
+        "project-follow-up"
+      ],
+      "absent": "cobra impuestos|gastos reales|contribución económica personal"
+    },
+    {
+      "id": "freed-person",
+      "sourceRecordIds": [
+        "f0556291-27c5-513e-a7c6-13da3443ea58"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "FREED_PERSON_ANALYSIS",
+      "description": "Analiza el surgimiento del liberto durante el siglo XVIII y su evolución hacia el campesinado. Usa las fuentes históricas proporcionadas. No redactes noticias.",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "absent": "noticia|reglas del rol"
+    },
+    {
+      "id": "synoptic",
+      "sourceRecordIds": [
+        "8e55e1da-0cd8-553b-a014-a3d7e35cf557"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "SYNOPTIC_CHART",
+      "description": "Elabora un cuadro sinóptico que organice y relacione los principios del liberalismo y el conservadurismo en Europa. No hagas una exposición oral.",
+      "requiredKeys": [
+        "organizer-relations"
+      ],
+      "absent": "exposición oral|decoración|caligrafía"
+    },
+    {
+      "id": "illustrated-account",
+      "sourceRecordIds": [
+        "fd9b0e44-5cfa-527b-ae4b-b81e004c40fb"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "ILLUSTRATED_ACCOUNT",
+      "description": "Describe de forma ilustrada la vida en el hato ganadero y su impacto en el mundo rural del siglo XVIII. Usa las imágenes proporcionadas, sin calificar habilidad para dibujar.",
+      "requiredKeys": [
+        "interpretation",
+        "visual-historical"
+      ],
+      "absent": "talento artístico|habilidad para dibujar|caligrafía"
+    },
+    {
+      "id": "audiovisual-analysis",
+      "sourceRecordIds": [
+        "66a4f07c-f701-522b-bc4c-87d8a072e5d5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "AUDIOVISUAL_ANALYSIS",
+      "description": "Analiza en el video proporcionado la lucha contra la explotación humana durante la época colonial, relacionando sus afirmaciones con las evidencias históricas. No representes personajes.",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "absent": "acciones del rol|talento actoral|adhesión personal"
+    },
+    {
+      "id": "dependency-indicator",
+      "sourceRecordIds": [
+        "705b95e7-8b14-57e5-a366-4b40ef5d9674"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "family": "INDICATOR_ANCHORED_ADAPTATION",
+      "description": "Analiza la teoría de la dependencia para explicar el desarrollo económico y social de América Latina, contrastando sus argumentos con el caso proporcionado.",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "absent": "sistema solar|puntualidad"
+    },
+    {
+      "id": "thirteen-colonies-indicator",
+      "sourceRecordIds": [
+        "cd15cf11-1728-560b-a1cf-5e80765b885a"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "family": "INDICATOR_ANCHORED_ADAPTATION",
+      "description": "Explica la influencia de la independencia de las trece colonias de Norteamérica en los procesos de independencia latinoamericanos, usando los casos proporcionados.",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "absent": "caligrafía|puntualidad"
+    },
+    {
+      "id": "web-search",
+      "sourceRecordIds": [
+        "ad118fd7-aaf6-5f4b-b64e-7810ff69e291"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "SOURCE_SEARCH",
+      "description": "Busca páginas web confiables para el estudio de la geografía. Explica cómo identificas su procedencia y pertinencia.",
+      "requiredKeys": [
+        "sources"
+      ],
+      "absent": "entrevistas|trabajo de campo|espacio geográfico|ramas solicitadas|actividades humanas"
+    },
+    {
+      "id": "spatial-use",
+      "sourceRecordIds": [
+        "1187ff12-263b-51bf-a06d-6541b2526ab0"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "SPATIAL_REFERENCE_USE",
+      "description": "Utiliza los puntos cardinales del mapa para expresar la posición de los lugares señalados. Sin usar GPS ni estudiar Mercator.",
+      "requiredKeys": [
+        "orientation"
+      ],
+      "absent": "GPS|Mercator|caligrafía"
+    },
+    {
+      "id": "solar-observation",
+      "sourceRecordIds": [
+        "d4c4d412-e7f9-59dd-9f71-f2a10f2724ae"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "REPRESENTATION_OBSERVATION",
+      "description": "Observa los astros y planetas de la representación proporcionada del sistema solar. No hagas dibujos ni un informe.",
+      "requiredKeys": [
+        "social-observation"
+      ],
+      "absent": "producto solicitado|informe|dibujo"
+    },
+    {
+      "id": "recycling-proposal",
+      "sourceRecordIds": [
+        "ab0e3c0f-b8a1-55ec-8c5a-1fdd87cf5e98"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "RECYCLING_PROPOSAL",
+      "description": "Presenta una propuesta de reciclaje para el caso escolar proporcionado, explicando cómo sus acciones atienden el problema. Sin recaudar dinero ni ejecutar actividades reales.",
+      "requiredKeys": [
+        "proposal"
+      ],
+      "absent": "recauda|actividades reales|calentamiento global|contaminación|causas o repercusiones sociales"
+    },
+    {
+      "id": "conflict-alternatives",
+      "sourceRecordIds": [
+        "001cd2be-c5a6-594c-b980-418f5c8fdf26"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "CONFLICT_ALTERNATIVES",
+      "description": "Identifica alternativas de solución dialogada para el conflicto escolar ficticio, atendiendo las condiciones y los derechos de las partes. No elijas una postura política.",
+      "requiredKeys": [
+        "alternatives"
+      ],
+      "absent": "postura política|preferencia política|personalidad"
+    },
+    {
+      "id": "climate-dramatization",
+      "sourceRecordIds": [
+        "cb2b7734-f111-5da7-8875-61be9cb885d5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "CLIMATE_SCENARIO",
+      "description": "Dramatiza una situación que muestre las causas del calentamiento global según los hechos proporcionados. Sin calificar talento actoral ni representar roles de tránsito.",
+      "requiredKeys": [
+        "scenario-content"
+      ],
+      "absent": "reglas de seguridad|acciones del rol|tránsito|talento actoral"
+    }
+  ]
+}

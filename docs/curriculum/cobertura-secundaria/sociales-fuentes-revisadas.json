@@ -1,0 +1,225 @@
+{
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD",
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf"
+  },
+  "method": "HUMAN_READ_RENDERED_PAGES_NOT_EXTRACTION_ONLY",
+  "policy": "SOURCE_REVIEW_IS_NOT_IMPLEMENTATION_OR_INSTRUMENT_VERIFICATION",
+  "grades": [
+    {
+      "grade": 1,
+      "canonicalScopeId": "be0adcd8-e2a0-5f4a-b169-b33213257c85",
+      "pdfPages": [
+        244,
+        245,
+        246,
+        247,
+        248
+      ],
+      "printedPages": [
+        243,
+        244,
+        245,
+        246,
+        247
+      ],
+      "visualReview": "REVIEWED_FULL_PAGE_COLUMNS_AND_CONTINUATIONS",
+      "indicatorPages": [
+        248
+      ],
+      "literalCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 52,
+        "PROCEDURE": 69,
+        "ATTITUDE_VALUE": 25,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "implementationStatus": "PARTIAL_PROVIDER_98_HTTP_VERIFIED",
+      "notes": [
+        "Dos adaptaciones del98 se anclan en indicadores: dependencia y trece colonias. No son nuevos conceptos literales."
+      ]
+    },
+    {
+      "grade": 2,
+      "canonicalScopeId": "e0ac8a6e-812c-50c6-b9eb-109b83d28dda",
+      "pdfPages": [
+        249,
+        250,
+        251,
+        252,
+        253
+      ],
+      "printedPages": [
+        248,
+        249,
+        250,
+        251,
+        252
+      ],
+      "visualReview": "REVIEWED_FULL_PAGE_COLUMNS_AND_CONTINUATIONS",
+      "indicatorPages": [
+        253
+      ],
+      "literalCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 64,
+        "PROCEDURE": 65,
+        "ATTITUDE_VALUE": 32,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "implementationStatus": "PENDING",
+      "notes": [
+        "Conceptos y procedimientos249–252; indicadores253. Diferenciar climogramas, pirámides, censos y rutas migratorias de una descripción geográfica general."
+      ]
+    },
+    {
+      "grade": 3,
+      "canonicalScopeId": "a20024b4-dbfb-5d69-8a4c-40c94deb4889",
+      "pdfPages": [
+        254,
+        255,
+        256,
+        257
+      ],
+      "printedPages": [
+        253,
+        254,
+        255,
+        256
+      ],
+      "visualReview": "REVIEWED_FULL_PAGE_COLUMNS_AND_CONTINUATIONS",
+      "indicatorPages": [
+        257
+      ],
+      "literalCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 48,
+        "PROCEDURE": 53,
+        "ATTITUDE_VALUE": 17,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "implementationStatus": "PENDING",
+      "notes": [
+        "Conceptos y procedimientos254–256; indicadores257. La tabla254 ubica planteamientos sociales en un bloque sobre origen geológico: mantener el literal y revisar la agrupación semántica; no asociar automáticamente ideologías con tectónica."
+      ]
+    },
+    {
+      "grade": 4,
+      "canonicalScopeId": "76b12132-2d05-56b0-94a4-0519de84651a",
+      "pdfPages": [
+        264,
+        265,
+        266,
+        267,
+        268
+      ],
+      "printedPages": [
+        263,
+        264,
+        265,
+        266,
+        267
+      ],
+      "visualReview": "REVIEWED_FULL_PAGE_COLUMNS_AND_CONTINUATIONS",
+      "indicatorPages": [
+        268
+      ],
+      "literalCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 69,
+        "PROCEDURE": 77,
+        "ATTITUDE_VALUE": 60,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "implementationStatus": "PENDING",
+      "notes": [
+        "Conceptos y procedimientos264–267; indicadores268. Las áreas protegidas y el estilo de vida saludable también aparecen en indicadores separados."
+      ]
+    },
+    {
+      "grade": 5,
+      "canonicalScopeId": "95643626-0072-5fc0-a2c9-a729ed720dea",
+      "pdfPages": [
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275
+      ],
+      "printedPages": [
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274
+      ],
+      "visualReview": "REVIEWED_FULL_PAGE_COLUMNS_AND_CONTINUATIONS",
+      "indicatorPages": [
+        275
+      ],
+      "literalCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 91,
+        "PROCEDURE": 91,
+        "ATTITUDE_VALUE": 59,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "implementationStatus": "PENDING",
+      "notes": [
+        "Conceptos y procedimientos269–274; indicadores275. El encabezado sobre siglosXV–XVI se repite en270–271: no duplicar tema por la repetición.",
+        "Hay procedimientos sobre1916–1924 e indicadores hasta1965, aunque la columna conceptual de Segunda República termina en1916; conservar cada tipo y su presencia real."
+      ]
+    },
+    {
+      "grade": 6,
+      "canonicalScopeId": "53a654b4-d709-5c0d-9faa-9586c1ee2f60",
+      "pdfPages": [
+        276,
+        277,
+        278,
+        279,
+        280
+      ],
+      "printedPages": [
+        275,
+        276,
+        277,
+        278,
+        279
+      ],
+      "visualReview": "REVIEWED_FULL_PAGE_COLUMNS_AND_CONTINUATIONS",
+      "indicatorPages": [
+        280
+      ],
+      "literalCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 86,
+        "PROCEDURE": 80,
+        "ATTITUDE_VALUE": 33,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "implementationStatus": "PENDING",
+      "notes": [
+        "Conceptos y procedimientos276–279; indicadores280. Distinguir isla de Santo Domingo del enfoque territorial dominicano del grado6.",
+        "Las leyes y referencias a actualidad se conservan como texto curricular2023; revisar su precisión si se añaden afirmaciones vigentes, sin presentar el literal como asesoría legal."
+      ]
+    }
+  ]
+}

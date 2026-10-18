@@ -5,10 +5,17 @@ import {commonSocialSelections,resolveCommonSocialTask} from '@aula/shared'
 const context={level:'SECONDARY' as const,grade:1,cycle:1,subjectCode:'SOC',subjectName:'Ciencias Sociales',modalityCode:'academic',optativeExitName:null}
 describe('procedimientos específicos de Sociales primero: evidencia y límites',()=>{
  const proposalFor=(description:string)=>recommend({activityTitle:'Actividad',description,maxScore:20,participationMode:'INDIVIDUAL',preferredInstrumentType:'rubrica'},context,null,[],'UNMAPPED',null)
+ it('contrastar una hipótesis con evidencias no exige comparar casos distintos',()=>{
+  const proposal=proposalFor('Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas.')
+  expect(proposal.criteria.some(c=>c.templateId.endsWith('-hypothesis-evidence'))).toBe(true)
+  expect(proposal.criteria.some(c=>c.templateId.endsWith('-comparison'))).toBe(false)
+  expect(proposal.criteria.some(c=>c.templateId.endsWith('-hypothesis'))).toBe(false)
+ })
  it('evalúa los recursos coloniales investigados y no solo el contexto general',()=>{
   const proposal=proposalFor(contracts.cases.find(c=>c.id==='historical-research')!.description)
   expect(proposal.criteria.find(c=>c.templateId.endsWith('-research-content'))?.description).toMatch(/recursos naturales.*continentes colonizados/i)
   expect(proposal.criteria.some(c=>c.templateId.endsWith('-interpretation'))).toBe(false)
+  expect(proposal.criteria.some(c=>c.templateId.endsWith('-representation'))).toBe(false)
  })
  it('no confunde la escala evaluativa con escalas cartográficas',()=>{
   const proposal=proposalFor(contracts.cases.find(c=>c.id==='observed-frequency')!.description)

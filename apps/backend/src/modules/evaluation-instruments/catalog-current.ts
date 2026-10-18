@@ -1,4 +1,5 @@
 import {commonSocialModules} from '@aula/shared'
+import {evaluationCatalogV97} from './catalog-v97'
 import {evaluationCatalogV96} from './catalog-v96'
 import {evaluationCatalogV94} from './catalog-v94'
 import {evaluationCatalogV95} from './catalog-v95'
@@ -119,7 +120,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.97',
+  version: 'evaluation-2026.98',
   socialCommonModules:commonSocialModules,
   activityTypes: (evaluationCatalogV92.activityTypes as ActivityTypeEntry[]).map(entry => ({
     ...entry,
@@ -213,6 +214,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { socialCommonModules?:typeof commonSocialModules; scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
+  if(version===evaluationCatalogV97.version)return evaluationCatalogV97
   if(version===evaluationCatalogV96.version)return evaluationCatalogV96
   if(version===evaluationCatalogV95.version)return evaluationCatalogV95
   if(version===evaluationCatalogV94.version)return evaluationCatalogV94

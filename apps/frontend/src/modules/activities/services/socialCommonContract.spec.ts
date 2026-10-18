@@ -6,8 +6,11 @@ import {scoreInstrumentFields} from './instrumentScoring'
 import {activityDefaultSuggestions} from '../utils/activityDefaultSuggestions'
 import {completeInstrumentCriterion,nextCatalogCriterion} from './instrumentCriterionAddition'
 import proceduralContracts from '../../../../../../data/evaluation-instruments/social-grade-one-procedural-contracts.json'
+import productContracts from '../../../../../../data/evaluation-instruments/social-grade-one-product-contracts.json'
 const context={level:'SECONDARY' as const,grade:1,cycle:1,subjectCode:'SOC',subjectName:'Ciencias Sociales',modalityCode:'academic',optativeExitName:null}
 const samples=[
+ ['alternative-media','Realiza un panel o una infografía sobre la expansión colonial en el Caribe.'],
+ ['positive-news-media','Redacta una noticia sobre las Revoluciones burguesas con titular, entrada, cuerpo, una foto proporcionada y pie de foto. Usa conectores de orden y temporales.'],
  ['causal','Analiza las causas y consecuencias de la expansión colonial europea usando las fuentes proporcionadas.'],
  ['chronology','Elabora una línea de tiempo de la Revolución Francesa con los hechos y fechas indicados.'],
  ['spatial','Ubica los lugares señalados en el mapa utilizando los puntos cardinales. Sin calcular escalas ni utilizar GPS.'],
@@ -19,6 +22,7 @@ const samples=[
  ['historical-news','Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.'],
  ['digital-prevention','Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.'],
  ...proceduralContracts.cases.map(c=>[c.id,c.description]),
+ ...productContracts.cases.map(c=>[c.id,c.description]),
  ...socialGradeOneTopics.map(t=>[t.id,`Explica ${t.label}.`]),
 ]
 const normalized=(p:ReturnType<typeof editableFallbackRecommendation>)=>({activity:p.activityType,type:p.instrumentType,levels:p.levels,criteria:p.criteria.map(({id,sourceReferences,sourceType,...c})=>c)})
