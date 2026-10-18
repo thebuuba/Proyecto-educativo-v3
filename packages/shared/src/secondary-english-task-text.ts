@@ -5,7 +5,7 @@ import type {InstrumentAcademicContext} from './secondary-science'
 /** Negation is removed before punctuation normalization, preserving the next
  * affirmative clause. Resources are not independent assessed actions. */
 export const englishRequirementSource=(description:string)=>withoutResources(description).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
- .replace(/\bno (?:(?:se|deben?|debera\w*) )?(?:evalu\w*|calific\w*|exig\w*|requer\w*|us\w*|utiliz\w*|emple\w*|respond\w*)\b[^.;]*/g,'')
+ .replace(/\bno (?:(?:se|deben?|debera\w*) )?(?:evalu\w*|calific\w*|exig\w*|requer\w*|us\w*|utiliz\w*|emple\w*|respond\w*|formul\w*|intercambi\w*|entrevist\w*)\b[^.;]*/g,'')
 export const affirmativeScopedEnglishTask=(description:string)=>affirmativeLanguageTask(englishRequirementSource(description))
 export const englishProfileWithoutNarration=(text:string)=>/\b(?:curriculum(?: vitae)?|cv)\b/.test(text)&&!/\b(?:narr\w*|relat\w*|secuencia de acontecimientos)\b/.test(text)
 export function commonEnglishGrade(context:InstrumentAcademicContext|null|undefined,grade:number){

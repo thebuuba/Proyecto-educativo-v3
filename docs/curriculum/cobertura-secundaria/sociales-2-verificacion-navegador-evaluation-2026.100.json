@@ -1,0 +1,38 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.100",
+  "grade": 2,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "format": "lista-ponderada",
+  "inspectedFormats": ["rubrica", "escala", "lista-ponderada", "lista-cotejo"],
+  "savedAndReopenedFormats": ["lista-ponderada", "lista-cotejo"],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisibleFromEmptyForm": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "INQUIRY",
+  "argumentNoLongerAbsorbedByStatisticalEvidence": true,
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "e3608fcd081a1d69cdc1772b4084e0fe",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "e3608fcd081a1d69cdc1772b4084e0fe",
+  "activities": [
+    {"id": "12380d71-da51-4471-ae1c-5ac4b2f0d52c", "format": "lista-ponderada", "criteria": 3, "score": 17.35},
+    {"id": "c52d0b3d-770c-4462-a2f1-d69620ccafb7", "format": "lista-cotejo", "criteria": 3, "score": 17.35}
+  ],
+  "pendingRequestRegression": {
+    "reproducedBeforeFix": "Confirmar ponderada mientras otra preparación estaba activa conservaba la escala anterior sin aviso.",
+    "afterFix": "Con Generar nuevo instrumento y Guardar deshabilitados por preparación activa, se confirmó cotejo. La respuesta final conservó cotejo, tres criterios y17.35; se guardó y reabrió.",
+    "automaticReturnAndBothResponseOrders": "AUTOMATED_COMPONENT_TESTS_NOT_BROWSER"
+  },
+  "servedAsset": "/assets/index-DWyZMmhA.js",
+  "servedAssetSha256": "32f8233d037e68fb9fb3c94b545ad325121513c30468d6c6706dd2d893445a03",
+  "limits": [
+    "Pruebas visuales de un caso de seguridad vial en dos actividades QA nuevas; no todos los temas y propósitos del grado.",
+    "Se inspeccionaron rúbrica y escala antes de elegir ponderada; se guardaron y reabrieron ponderada y cotejo. No afirmar guardado visual de los otros dos formatos en100.",
+    "La prueba99 permanece separada y su instrumento conserva la huella a8b64949f942c91851083c39b25f8806.",
+    "No se borraron caché, service worker, almacenamiento ni borradores previos. No se inspeccionaron internals del service worker.",
+    "Se usó Cursos→asignatura→Actividades. La lista global con timeout y el detalle con claves internas siguen documentados."
+  ]
+}

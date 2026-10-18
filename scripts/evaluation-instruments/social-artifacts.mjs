@@ -39,7 +39,8 @@ const indicatorReviewed=new Map(Object.entries(semantic.indicatorTopicRecords??{
 })]))
 for(const record of original.filter(r=>['CONCEPT','PROCEDURE'].includes(r.type)))assert(classified.has(record.id)||excludedIds.has(record.id),'Unreviewed source record '+record.id)
 const normalize=s=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/\s+/g,' ')
-const procedural=grade===1?JSON.parse(readFileSync('data/evaluation-instruments/social-grade-one-procedural-contracts.json','utf8')):{sourceSha256:source.sha256,cases:[]}
+const proceduralPath=`data/evaluation-instruments/social-grade-${gradeName}-procedural-contracts.json`
+const procedural=existsSync(proceduralPath)?JSON.parse(readFileSync(proceduralPath,'utf8')):{sourceSha256:source.sha256,cases:[]}
 const products=JSON.parse(readFileSync(grade===1?'data/evaluation-instruments/social-grade-one-product-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}-contracts.json`,'utf8'))
 assert.equal(procedural.sourceSha256,source.sha256)
 assert.equal(products.sourceSha256,source.sha256)
@@ -61,7 +62,7 @@ const firstGradeCases=grade===1?[
  {id:'digital-prevention',description:'Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.',family:'DIGITAL_PREVENTION'},
  ...procedural.cases,
 ]:[]
-const cases=[...socialTopics.map(t=>({id:t.id,description:`Explica ${t.label}.`,family:'EXPLANATION'})),...firstGradeCases,...products.cases]
+const cases=[...socialTopics.map(t=>({id:t.id,description:`Explica ${t.label}.`,family:'EXPLANATION'})),...(grade===1?firstGradeCases:procedural.cases),...products.cases]
 assert.equal(new Set(cases.map(c=>c.id)).size,cases.length,'Las consignas tienen identificadores únicos')
 const context={level:'SECONDARY',grade,subjectCode:'SOC',subjectName:'Ciencias Sociales',optativeExitName:null}
 const examples=cases.flatMap(c=>['rubrica','lista-cotejo','escala','lista-ponderada'].map(instrumentType=>{
@@ -118,7 +119,8 @@ matrix.verification.currentCatalogHttpRuns=readdirSync('.wrangler/secondary-comp
  assert(run.samples.every(s=>s.strategyOnlyInstrumentUnchanged&&s.manualTextPreserved))
  return{evidence:name,samples:run.samples.length,sourceScope:run.sourceScope,formats:[...new Set(run.samples.map(s=>s.format))],verification:run.verification}
 })
-const browserPath=output+`sociales-${grade}-verificacion-navegador.json`
+const currentBrowserPath=output+`sociales-${grade}-verificacion-navegador-${matrix.providerCatalog}.json`
+const browserPath=existsSync(currentBrowserPath)?currentBrowserPath:output+`sociales-${grade}-verificacion-navegador.json`
 if(existsSync(browserPath)){
  const browser=JSON.parse(readFileSync(browserPath,'utf8'));assert.equal(browser.grade,grade)
  assert(browser.savedAndReopenedAfterManualStrategy&&browser.existingDraftsPreserved)

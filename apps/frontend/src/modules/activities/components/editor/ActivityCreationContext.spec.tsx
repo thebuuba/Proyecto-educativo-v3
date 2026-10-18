@@ -35,6 +35,65 @@ const expectedContext = { evaluationTechnique: 'analisis-producciones', evidence
 beforeEach(() => { vi.restoreAllMocks(); localStorage.clear() })
 
 describe('contexto del editor modular para preparar instrumentos', () => {
+  it.each(['older-first', 'newer-first'] as const)('conserva la selección manual confirmada durante una preparación: %s', async order => {
+    const original = draft()
+    let finishOlder!: (proposal: InstrumentRecommendation) => void
+    let finishNewer!: (proposal: InstrumentRecommendation) => void
+    const older = new Promise<InstrumentRecommendation>(resolve => { finishOlder = resolve })
+    const newer = new Promise<InstrumentRecommendation>(resolve => { finishNewer = resolve })
+    const post = vi.spyOn(api, 'post')
+      .mockImplementationOnce(async () => await older as never)
+      .mockImplementationOnce(async () => await newer as never)
+    const props = editorProps(original)
+    render(<ActivityCreationView {...props} />)
+    fireEvent.click(screen.getByRole('button', { name: 'Generar nuevo instrumento' }))
+    await waitFor(() => expect(post).toHaveBeenCalledTimes(1))
+    chooseActivitySelection('Tipo de instrumento', 'lista-ponderada')
+    await waitFor(() => expect(post).toHaveBeenCalledTimes(2))
+    expect(post.mock.calls[1][1]).toMatchObject({ preferredInstrumentType: 'lista-ponderada' })
+    const selected = editableFallbackRecommendation({ activityTitle: original.name, description: original.description,
+      maxScore: 20, instrumentType: 'lista-ponderada', participationMode: 'INDIVIDUAL' })
+    props.onChangeDraft.mockClear()
+    if (order === 'older-first') {
+      await act(async () => { finishOlder(original.preparedRecommendation!); await older })
+      expect(props.onChangeDraft).not.toHaveBeenCalled()
+      expect(screen.getByRole('button', { name: 'Guardar' })).toBeDisabled()
+    }
+    await act(async () => { finishNewer(selected); await newer })
+    await waitFor(() => expect(props.onChangeDraft).toHaveBeenCalled())
+    const committed = props.onChangeDraft.mock.lastCall![0]
+    expect(committed.instrumentType).toBe('lista-ponderada')
+    expect(committed.autoSelectedInstrumentType).toBe(false)
+    expect(committed.maxScore).toBe('20')
+    props.onChangeDraft.mockClear()
+    if (order === 'newer-first') await act(async () => { finishOlder(original.preparedRecommendation!); await older })
+    expect(props.onChangeDraft).not.toHaveBeenCalled()
+  })
+  it('permite volver a automático durante una preparación manual y descarta el error anterior', async () => {
+    const original = draft()
+    let failOlder!: (error: Error) => void
+    let finishAutomatic!: (proposal: InstrumentRecommendation) => void
+    const older = new Promise<InstrumentRecommendation>((_, reject) => { failOlder = reject })
+    const automatic = new Promise<InstrumentRecommendation>(resolve => { finishAutomatic = resolve })
+    const post = vi.spyOn(api, 'post')
+      .mockImplementationOnce(async () => await older as never)
+      .mockImplementationOnce(async () => await automatic as never)
+    const props = editorProps(original)
+    render(<ActivityCreationView {...props} />)
+    chooseActivitySelection('Tipo de instrumento', 'lista-ponderada')
+    await waitFor(() => expect(post).toHaveBeenCalledTimes(1))
+    chooseActivitySelection('Tipo de instrumento', '')
+    await waitFor(() => expect(post).toHaveBeenCalledTimes(2))
+    expect(post.mock.calls[1][1]).toMatchObject({ preferredInstrumentType: undefined })
+    props.onChangeDraft.mockClear()
+    await act(async () => { failOlder(new Error('respuesta anterior fallida')); await older.catch(() => undefined) })
+    expect(props.onChangeDraft).not.toHaveBeenCalled()
+    expect(screen.queryByText(/El servicio no respondió/)).not.toBeInTheDocument()
+    const selected = editableFallbackRecommendation({ activityTitle: original.name, description: original.description,
+      maxScore: 20, instrumentType: 'escala', participationMode: 'INDIVIDUAL' })
+    await act(async () => { finishAutomatic(selected); await automatic })
+    await waitFor(() => expect(props.onChangeDraft.mock.lastCall?.[0]).toMatchObject({ instrumentType: 'escala', autoSelectedInstrumentType: true }))
+  })
   it('envía la evidencia dedicada y distingue organización de participación en la interpretación', async () => {
     const post = vi.spyOn(api, 'post').mockResolvedValue({ curriculumCandidates: [] } as never)
     render(<ActivityCreationView {...editorProps({ ...draft(), preparedManuallyEdited: true })} editingActivityId={null} />)

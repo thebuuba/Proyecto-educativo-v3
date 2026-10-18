@@ -457,7 +457,9 @@ export function ActivityCreationView(props: {
     newGeneration = false,
     activityChange?: { type: string },
   ) {
-    if (preparingRequest.current) return
+    // A confirmed manual choice supersedes an in-flight preparation. The new
+    // sequence below prevents the older response/finally from replacing it.
+    if (preparingRequest.current && !preferredType && !forceAutomatic) return
     if (!sectionSubjectId) {
       setPreparationError(
         'No se pudo identificar la asignatura. Vuelve a seleccionarla e inténtalo de nuevo.',

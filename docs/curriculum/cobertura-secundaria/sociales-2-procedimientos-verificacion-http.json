@@ -1,0 +1,162 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.100",
+  "verification": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "coverage": {
+    "availableContracts": 58,
+    "selectedCaseIds": [
+      "personal-road-case-justification",
+      "seismic-source-credibility",
+      "weather-instrument-recording",
+      "historical-source-purpose",
+      "climogram-construction",
+      "census-map-data",
+      "war-russian-research-hypotheses",
+      "national-symbol-model",
+      "hypothesis-discussion",
+      "ecological-educational-proposal",
+      "war-us-expository-article",
+      "financial-power-research"
+    ],
+    "limits": "Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación."
+  },
+  "sourceScope": "0457e061-5d8d-5db1-b6d9-dfdd17bb4d55",
+  "curriculumVersionId": "ff5db50d-0340-599f-b306-5efccc060a1b",
+  "samples": [
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "3614363d-e452-44bb-a9e6-657231f6abf9",
+      "snapshotId": "b117695e-b473-4821-8604-6d4a7407739b",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "4289a65eec5e2d6a810e47ce9600d43a5acd35a7ae1a2f9bfe053f74d1878f4f"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "c28c42f4-3b62-4f49-a3b2-773f7e28f9c0",
+      "snapshotId": "36ff2a32-b163-4812-8985-fe3f490bb22a",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "c385f524dc9bc6aeda8a613306505603bfdac548662b46263e4ece556da5ee11"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "68415a7d-97c2-47c3-81cf-0c3924717d0d",
+      "snapshotId": "2fecdbe1-4d53-4a34-9338-f429e970df51",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "c6c2e8f633723b8fc2bba177f011b7a2c80b2883894b43fe189d7c0d2c5fc253"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "16b45f78-ed6d-479d-bad3-8404eefc5bb2",
+      "snapshotId": "59c319ba-0fb5-4ac8-96be-c609e6b662e6",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b61048df01c15d9e8cf37b1d336ae05bd98f7dffa261c4124d11fd7feae733c0"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "e9532fa5-cad4-48ad-9ddc-9ed5e95bcf19",
+      "snapshotId": "6992f9f2-b6fd-4732-af69-47e590233096",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "93b4fa4fe6b4cb6ebb2966d2b4bc7775845c9c22a3e008e31e95b156adb532eb"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "3913dabf-fc7f-4095-a36b-a151186d8e26",
+      "snapshotId": "54b83081-4ffe-4997-8eb0-e30075779bda",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "2e71f4ece962f5650ba72300f7cfeb1fe43143c50a55a280ac0cd2f7f8cfbea8"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "88bd5d82-07f9-44b0-a8d5-af4f25a1c43f",
+      "snapshotId": "f9b1b776-9d9f-43e3-96ed-b41fb71d32af",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "0af0d536436bc3249c8f181699a2f33db5c8902a30f50876d80eedf1e3ff764b"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "3110b0b7-3063-44b6-9aa1-950e827cf5b8",
+      "snapshotId": "fdadbb8b-7d78-4be9-8cbd-9f895fd4149d",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "6964ee896767b43548a3245a878c42d46abe7d76daabf4f691c08901391d45d4"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "813735a9-446a-4d33-8802-a995fcacaab8",
+      "snapshotId": "e166dc6e-3b43-4f58-bb47-d4b3595f21fa",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "f4eec22d5c404e2c262b741cf423d7bb997f14e90e743c3c17c043f2e6b2f28d"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "aa6be646-17b1-4863-b995-bce33a492070",
+      "snapshotId": "8590411d-9d31-48ef-8398-66786dd07690",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "de68ec1e2e31cf84ff38d9d8b60397ea0040196382333036ad9ba8817005f0ef"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "cd3fdb83-8b31-423f-b106-2f58d2dd2603",
+      "snapshotId": "c71253ea-58c6-419f-ab4e-df72e20585f1",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b8d21c5b4a925d73e35e3e64fd90770b8d5665d1432e178d305dca6120cc8bbc"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "f18d7bc6-1b4b-441c-ae70-d8634d743de3",
+      "snapshotId": "95f280e8-7047-41bd-ae56-092b83565bde",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "3ac218cfbef70e2d60f438891c49198b69712faa28c8fe6c99814ffb1e641ba3"
+    }
+  ],
+  "timings": {
+    "interpretation": {
+      "count": 12,
+      "minMs": 4340,
+      "medianMs": 6312,
+      "maxMs": 7164
+    },
+    "recommendation": {
+      "count": 12,
+      "minMs": 4852,
+      "medianMs": 7598,
+      "maxMs": 14566
+    },
+    "activityWrites": {
+      "count": 24,
+      "minMs": 3317,
+      "medianMs": 4588,
+      "maxMs": 6518
+    }
+  },
+  "excludedReferenceStatus": 400,
+  "limits": [
+    "Doce muestras autenticadas; no todas las combinaciones de las58 consignas con formato y puntuación.",
+    "La revisión completa de480 ejemplos y las pruebas de código son evidencias separadas.",
+    "Los tiempos incluyen red, autorización, Worker y DB; no se atribuyen a una capa sin instrumentación adicional.",
+    "Los criterios son adaptaciones y no referencias literales individuales; no se modificó el alineador de atribución."
+  ]
+}

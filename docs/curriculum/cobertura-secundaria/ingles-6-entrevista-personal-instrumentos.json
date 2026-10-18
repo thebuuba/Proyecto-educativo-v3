@@ -1,0 +1,556 @@
+[
+  {
+    "id": "personal-job-interview",
+    "catalog": "evaluation-2026.100",
+    "title": "Una entrevista de trabajo en inglés.",
+    "description": "En parejas, los estudiantes realizarán una entrevista de trabajo simulada en inglés. Uno entrevistará y el otro responderá sobre la experiencia y las capacidades de un personaje ficticio. Luego intercambiarán los roles.",
+    "instrumentType": "rubrica",
+    "criteria": [
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-job-interview:0",
+        "templateId": "ing-6-job-interview",
+        "title": "Respuestas relacionadas con el perfil de la entrevista simulada",
+        "description": "Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad.",
+        "maxScore": 4.96,
+        "maxScoreUnits": 496,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad.",
+          "Las respuestas se relacionan con el personaje y las preguntas; una referencia a la experiencia o las capacidades necesita precisión.",
+          "Comunica datos aislados del perfil sin relacionarlos claramente con las preguntas de la entrevista.",
+          "Las respuestas atribuyen al personaje experiencias o capacidades incompatibles con la situación representada.",
+          "No se reconocen respuestas relacionadas con las preguntas y el perfil de la entrevista simulada."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad.",
+            "scoreUnits": 496
+          },
+          {
+            "levelId": "L3",
+            "text": "Las respuestas se relacionan con el personaje y las preguntas; una referencia a la experiencia o las capacidades necesita precisión.",
+            "scoreUnits": 331
+          },
+          {
+            "levelId": "L2",
+            "text": "Comunica datos aislados del perfil sin relacionarlos claramente con las preguntas de la entrevista.",
+            "scoreUnits": 165
+          },
+          {
+            "levelId": "L1",
+            "text": "No se reconocen respuestas relacionadas con las preguntas y el perfil de la entrevista simulada.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-job-interview-questions:1",
+        "templateId": "ing-6-job-interview-questions",
+        "title": "Preguntas pertinentes en el rol de entrevistador",
+        "description": "Formula preguntas en inglés sobre la experiencia y las capacidades del personaje entrevistado, de modo que el interlocutor pueda responder dentro de la simulación solicitada.",
+        "maxScore": 4.95,
+        "maxScoreUnits": 495,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Formula preguntas en inglés sobre la experiencia y las capacidades del personaje entrevistado, de modo que el interlocutor pueda responder dentro de la simulación solicitada.",
+          "Las preguntas se relacionan con el personaje y la entrevista; una referencia necesita precisión para que el interlocutor pueda responder.",
+          "Formula preguntas generales que dejan sin consultar parte de la experiencia o las capacidades solicitadas.",
+          "Las preguntas cambian el asunto de la entrevista o no permiten una respuesta relacionada con el personaje representado.",
+          "No se reconocen preguntas pertinentes en inglés cuando asume el rol de entrevistador."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Formula preguntas en inglés sobre la experiencia y las capacidades del personaje entrevistado, de modo que el interlocutor pueda responder dentro de la simulación solicitada.",
+            "scoreUnits": 495
+          },
+          {
+            "levelId": "L3",
+            "text": "Las preguntas se relacionan con el personaje y la entrevista; una referencia necesita precisión para que el interlocutor pueda responder.",
+            "scoreUnits": 330
+          },
+          {
+            "levelId": "L2",
+            "text": "Formula preguntas generales que dejan sin consultar parte de la experiencia o las capacidades solicitadas.",
+            "scoreUnits": 165
+          },
+          {
+            "levelId": "L1",
+            "text": "No se reconocen preguntas pertinentes en inglés cuando asume el rol de entrevistador.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-interaction:2",
+        "templateId": "ing-6-interaction",
+        "title": "Respuesta que sostiene el intercambio",
+        "description": "Relaciona su respuesta en inglés con lo comunicado por el interlocutor y aporta información pertinente que permite continuar el intercambio solicitado.",
+        "maxScore": 3.72,
+        "maxScoreUnits": 372,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Relaciona su respuesta en inglés con lo comunicado por el interlocutor y aporta información pertinente que permite continuar el intercambio solicitado.",
+          "La respuesta permite continuar el intercambio; una referencia necesita aclaración.",
+          "Responde a parte de la intervención y deja información necesaria sin relacionar.",
+          "Responde a otro asunto y cambia el sentido de la intervención del interlocutor.",
+          "No aporta una respuesta pertinente reconocible para continuar el intercambio."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Relaciona su respuesta en inglés con lo comunicado por el interlocutor y aporta información pertinente que permite continuar el intercambio solicitado.",
+            "scoreUnits": 372
+          },
+          {
+            "levelId": "L3",
+            "text": "La respuesta permite continuar el intercambio; una referencia necesita aclaración.",
+            "scoreUnits": 248
+          },
+          {
+            "levelId": "L2",
+            "text": "Responde a parte de la intervención y deja información necesaria sin relacionar.",
+            "scoreUnits": 124
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta una respuesta pertinente reconocible para continuar el intercambio.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-intelligibility:3",
+        "templateId": "ing-6-intelligibility",
+        "title": "Discurso oral sostenido y comprensible",
+        "description": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje solicitado; las pausas y reformulaciones no impiden comprenderlo.",
+        "maxScore": 3.72,
+        "maxScoreUnits": 372,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje solicitado; las pausas y reformulaciones no impiden comprenderlo.",
+          "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+          "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+          "La organización o las expresiones cambian el sentido del mensaje comunicado.",
+          "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje solicitado; las pausas y reformulaciones no impiden comprenderlo.",
+            "scoreUnits": 372
+          },
+          {
+            "levelId": "L3",
+            "text": "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+            "scoreUnits": 248
+          },
+          {
+            "levelId": "L2",
+            "text": "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+            "scoreUnits": 124
+          },
+          {
+            "levelId": "L1",
+            "text": "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ],
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ]
+  },
+  {
+    "id": "personal-job-interview",
+    "catalog": "evaluation-2026.100",
+    "title": "Una entrevista de trabajo en inglés.",
+    "description": "En parejas, los estudiantes realizarán una entrevista de trabajo simulada en inglés. Uno entrevistará y el otro responderá sobre la experiencia y las capacidades de un personaje ficticio. Luego intercambiarán los roles.",
+    "instrumentType": "lista-cotejo",
+    "criteria": [
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-job-interview:0",
+        "templateId": "ing-6-job-interview",
+        "title": "Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad.",
+        "description": "Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad.",
+        "maxScore": 4.96,
+        "maxScoreUnits": 496,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad.",
+          "Las respuestas se relacionan con el personaje y las preguntas; una referencia a la experiencia o las capacidades necesita precisión.",
+          "Comunica datos aislados del perfil sin relacionarlos claramente con las preguntas de la entrevista.",
+          "Las respuestas atribuyen al personaje experiencias o capacidades incompatibles con la situación representada.",
+          "No se reconocen respuestas relacionadas con las preguntas y el perfil de la entrevista simulada."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-job-interview-questions:1",
+        "templateId": "ing-6-job-interview-questions",
+        "title": "Formula preguntas en inglés sobre la experiencia y las capacidades del personaje entrevistado, de modo que el interlocutor pueda responder dentro de la simulación solicitada.",
+        "description": "Formula preguntas en inglés sobre la experiencia y las capacidades del personaje entrevistado, de modo que el interlocutor pueda responder dentro de la simulación solicitada.",
+        "maxScore": 4.95,
+        "maxScoreUnits": 495,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Formula preguntas en inglés sobre la experiencia y las capacidades del personaje entrevistado, de modo que el interlocutor pueda responder dentro de la simulación solicitada.",
+          "Las preguntas se relacionan con el personaje y la entrevista; una referencia necesita precisión para que el interlocutor pueda responder.",
+          "Formula preguntas generales que dejan sin consultar parte de la experiencia o las capacidades solicitadas.",
+          "Las preguntas cambian el asunto de la entrevista o no permiten una respuesta relacionada con el personaje representado.",
+          "No se reconocen preguntas pertinentes en inglés cuando asume el rol de entrevistador."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-interaction:2",
+        "templateId": "ing-6-interaction",
+        "title": "Relaciona su respuesta en inglés con lo comunicado por el interlocutor y aporta información pertinente que permite continuar el intercambio solicitado.",
+        "description": "Relaciona su respuesta en inglés con lo comunicado por el interlocutor y aporta información pertinente que permite continuar el intercambio solicitado.",
+        "maxScore": 3.72,
+        "maxScoreUnits": 372,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Relaciona su respuesta en inglés con lo comunicado por el interlocutor y aporta información pertinente que permite continuar el intercambio solicitado.",
+          "La respuesta permite continuar el intercambio; una referencia necesita aclaración.",
+          "Responde a parte de la intervención y deja información necesaria sin relacionar.",
+          "Responde a otro asunto y cambia el sentido de la intervención del interlocutor.",
+          "No aporta una respuesta pertinente reconocible para continuar el intercambio."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-intelligibility:3",
+        "templateId": "ing-6-intelligibility",
+        "title": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje solicitado; las pausas y reformulaciones no impiden comprenderlo.",
+        "description": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje solicitado; las pausas y reformulaciones no impiden comprenderlo.",
+        "maxScore": 3.72,
+        "maxScoreUnits": 372,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje solicitado; las pausas y reformulaciones no impiden comprenderlo.",
+          "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+          "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+          "La organización o las expresiones cambian el sentido del mensaje comunicado.",
+          "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      }
+    ],
+    "levels": []
+  },
+  {
+    "id": "personal-job-interview",
+    "catalog": "evaluation-2026.100",
+    "title": "Una entrevista de trabajo en inglés.",
+    "description": "En parejas, los estudiantes realizarán una entrevista de trabajo simulada en inglés. Uno entrevistará y el otro responderá sobre la experiencia y las capacidades de un personaje ficticio. Luego intercambiarán los roles.",
+    "instrumentType": "escala",
+    "criteria": [
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-job-interview:0",
+        "templateId": "ing-6-job-interview",
+        "title": "Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad.",
+        "description": "Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad.",
+        "maxScore": 4.96,
+        "maxScoreUnits": 496,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Cumple todos los aspectos del indicador.",
+          "Cumple lo esencial del indicador; queda un aspecto por completar.",
+          "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+          "Inicia el desempeño sin completar sus aspectos esenciales.",
+          "No demuestra el desempeño descrito en el indicador."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Cumple todos los aspectos del indicador.",
+            "scoreUnits": 496
+          },
+          {
+            "levelId": "L3",
+            "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+            "scoreUnits": 331
+          },
+          {
+            "levelId": "L2",
+            "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+            "scoreUnits": 165
+          },
+          {
+            "levelId": "L1",
+            "text": "No demuestra el desempeño descrito en el indicador.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-job-interview-questions:1",
+        "templateId": "ing-6-job-interview-questions",
+        "title": "Formula preguntas en inglés sobre la experiencia y las capacidades del personaje entrevistado, de modo que el interlocutor pueda responder dentro de la simulación solicitada.",
+        "description": "Formula preguntas en inglés sobre la experiencia y las capacidades del personaje entrevistado, de modo que el interlocutor pueda responder dentro de la simulación solicitada.",
+        "maxScore": 4.95,
+        "maxScoreUnits": 495,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Cumple todos los aspectos del indicador.",
+          "Cumple lo esencial del indicador; queda un aspecto por completar.",
+          "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+          "Inicia el desempeño sin completar sus aspectos esenciales.",
+          "No demuestra el desempeño descrito en el indicador."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Cumple todos los aspectos del indicador.",
+            "scoreUnits": 495
+          },
+          {
+            "levelId": "L3",
+            "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+            "scoreUnits": 330
+          },
+          {
+            "levelId": "L2",
+            "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+            "scoreUnits": 165
+          },
+          {
+            "levelId": "L1",
+            "text": "No demuestra el desempeño descrito en el indicador.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-interaction:2",
+        "templateId": "ing-6-interaction",
+        "title": "Relaciona su respuesta en inglés con lo comunicado por el interlocutor y aporta información pertinente que permite continuar el intercambio solicitado.",
+        "description": "Relaciona su respuesta en inglés con lo comunicado por el interlocutor y aporta información pertinente que permite continuar el intercambio solicitado.",
+        "maxScore": 3.72,
+        "maxScoreUnits": 372,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Cumple todos los aspectos del indicador.",
+          "Cumple lo esencial del indicador; queda un aspecto por completar.",
+          "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+          "Inicia el desempeño sin completar sus aspectos esenciales.",
+          "No demuestra el desempeño descrito en el indicador."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Cumple todos los aspectos del indicador.",
+            "scoreUnits": 372
+          },
+          {
+            "levelId": "L3",
+            "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+            "scoreUnits": 248
+          },
+          {
+            "levelId": "L2",
+            "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+            "scoreUnits": 124
+          },
+          {
+            "levelId": "L1",
+            "text": "No demuestra el desempeño descrito en el indicador.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-intelligibility:3",
+        "templateId": "ing-6-intelligibility",
+        "title": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje solicitado; las pausas y reformulaciones no impiden comprenderlo.",
+        "description": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje solicitado; las pausas y reformulaciones no impiden comprenderlo.",
+        "maxScore": 3.72,
+        "maxScoreUnits": 372,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Cumple todos los aspectos del indicador.",
+          "Cumple lo esencial del indicador; queda un aspecto por completar.",
+          "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+          "Inicia el desempeño sin completar sus aspectos esenciales.",
+          "No demuestra el desempeño descrito en el indicador."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Cumple todos los aspectos del indicador.",
+            "scoreUnits": 372
+          },
+          {
+            "levelId": "L3",
+            "text": "Cumple lo esencial del indicador; queda un aspecto por completar.",
+            "scoreUnits": 248
+          },
+          {
+            "levelId": "L2",
+            "text": "Cumple algunos aspectos del indicador y deja otros sin realizar.",
+            "scoreUnits": 124
+          },
+          {
+            "levelId": "L1",
+            "text": "No demuestra el desempeño descrito en el indicador.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ],
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ]
+  },
+  {
+    "id": "personal-job-interview",
+    "catalog": "evaluation-2026.100",
+    "title": "Una entrevista de trabajo en inglés.",
+    "description": "En parejas, los estudiantes realizarán una entrevista de trabajo simulada en inglés. Uno entrevistará y el otro responderá sobre la experiencia y las capacidades de un personaje ficticio. Luego intercambiarán los roles.",
+    "instrumentType": "lista-ponderada",
+    "criteria": [
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-job-interview:0",
+        "templateId": "ing-6-job-interview",
+        "title": "Respuestas relacionadas con el perfil de la entrevista simulada",
+        "description": "Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad. Parcial (50%): Comunica datos aislados del perfil sin relacionarlos claramente con las preguntas de la entrevista.",
+        "maxScore": 4.96,
+        "maxScoreUnits": 496,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad.",
+          "Las respuestas se relacionan con el personaje y las preguntas; una referencia a la experiencia o las capacidades necesita precisión.",
+          "Comunica datos aislados del perfil sin relacionarlos claramente con las preguntas de la entrevista.",
+          "Las respuestas atribuyen al personaje experiencias o capacidades incompatibles con la situación representada.",
+          "No se reconocen respuestas relacionadas con las preguntas y el perfil de la entrevista simulada."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-job-interview-questions:1",
+        "templateId": "ing-6-job-interview-questions",
+        "title": "Preguntas pertinentes en el rol de entrevistador",
+        "description": "Formula preguntas en inglés sobre la experiencia y las capacidades del personaje entrevistado, de modo que el interlocutor pueda responder dentro de la simulación solicitada. Parcial (50%): Formula preguntas generales que dejan sin consultar parte de la experiencia o las capacidades solicitadas.",
+        "maxScore": 4.95,
+        "maxScoreUnits": 495,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Formula preguntas en inglés sobre la experiencia y las capacidades del personaje entrevistado, de modo que el interlocutor pueda responder dentro de la simulación solicitada.",
+          "Las preguntas se relacionan con el personaje y la entrevista; una referencia necesita precisión para que el interlocutor pueda responder.",
+          "Formula preguntas generales que dejan sin consultar parte de la experiencia o las capacidades solicitadas.",
+          "Las preguntas cambian el asunto de la entrevista o no permiten una respuesta relacionada con el personaje representado.",
+          "No se reconocen preguntas pertinentes en inglés cuando asume el rol de entrevistador."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-interaction:2",
+        "templateId": "ing-6-interaction",
+        "title": "Respuesta que sostiene el intercambio",
+        "description": "Relaciona su respuesta en inglés con lo comunicado por el interlocutor y aporta información pertinente que permite continuar el intercambio solicitado. Parcial (50%): Responde a parte de la intervención y deja información necesaria sin relacionar.",
+        "maxScore": 3.72,
+        "maxScoreUnits": 372,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Relaciona su respuesta en inglés con lo comunicado por el interlocutor y aporta información pertinente que permite continuar el intercambio solicitado.",
+          "La respuesta permite continuar el intercambio; una referencia necesita aclaración.",
+          "Responde a parte de la intervención y deja información necesaria sin relacionar.",
+          "Responde a otro asunto y cambia el sentido de la intervención del interlocutor.",
+          "No aporta una respuesta pertinente reconocible para continuar el intercambio."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      },
+      {
+        "id": "proposal:evaluation-2026.100:fallback:ing-6-intelligibility:3",
+        "templateId": "ing-6-intelligibility",
+        "title": "Discurso oral sostenido y comprensible",
+        "description": "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje solicitado; las pausas y reformulaciones no impiden comprenderlo. Parcial (50%): Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+        "maxScore": 3.72,
+        "maxScoreUnits": 372,
+        "sourceType": "CONTEXTUALIZED",
+        "sourceReferences": [],
+        "progressionLevels": [
+          "Comunica en inglés un discurso sencillo y sostenido que enlaza las ideas para seguir el mensaje solicitado; las pausas y reformulaciones no impiden comprenderlo.",
+          "Las ideas principales se comprenden; una relación o expresión necesita aclaración.",
+          "Se comprenden expresiones aisladas, pero varias relaciones necesarias para seguir el discurso quedan ambiguas.",
+          "La organización o las expresiones cambian el sentido del mensaje comunicado.",
+          "No se reconoce un mensaje oral relacionado con el propósito solicitado con los apoyos acordados."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      }
+    ],
+    "levels": []
+  }
+]

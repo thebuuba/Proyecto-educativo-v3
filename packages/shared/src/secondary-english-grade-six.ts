@@ -6,7 +6,7 @@ import {requestedGradeSixLexicon,gradeSixLexicalCriterion,withoutGradeSixLexical
 import {gradeSixStrategyCriteria} from './secondary-english-grade-six-strategies'
 import {gradeSixGenreCriteria} from './secondary-english-grade-six-genres'
 import {gradeSixContextCriteria} from './secondary-english-grade-six-context'
-export const englishGradeSixModule={id:'ingles-comunicacion-6',grade:6,subjectCode:'ING',pdfPages:[169,170,171,172,173,174],policy:'COMMON_SIXTH_GRADE_DEFINED_FAMILIES_REVIEW_PENDING_V1'}
+export const englishGradeSixModule={id:'ingles-comunicacion-6',grade:6,subjectCode:'ING',pdfPages:[169,170,171,172,173,174],policy:'COMMON_SIXTH_GRADE_DEFINED_FAMILIES_REVIEW_PENDING_V2'}
 const row=(id:string,title:string,levels:Parameters<typeof upperEnglishRow>[3])=>upperEnglishRow('ing-6',id,title,levels)
 const asks=/\b(?:solicit(?:ar(?:an)?|an|en|ando)|pedir(?:an)?|pid(?:an|en))\b/
 const offers=/\b(?:ofrec(?:er(?:an)?|en|iendo)|dar(?:an)?|dan|den|comunic(?:ar(?:an)?|an|en)|expres(?:ar(?:an)?|an|en))\b/
@@ -96,13 +96,16 @@ export function sixthGradeEnglishContent(task:UpperEnglishEvidence){
     'Presenta como ocurrido el resultado hipotético o invierte la relación entre condición pasada y resultado.',
     'No se reconoce una hipótesis sobre la condición pasada y el resultado alternativo solicitados.',
    ])
-   case 'job-interview':return row(id,'Respuestas relacionadas con el perfil de la entrevista simulada',[
-    receptive?`Relaciona las preguntas y respuestas de la entrevista del ${source} en inglés con el perfil proporcionado del personaje.`:'Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y capacidades solicitadas con los datos de la ficha del personaje ficticio.',
-    'Las respuestas se relacionan con el perfil y las preguntas; una referencia a la ficha necesita precisión.',
+   case 'job-interview':{
+    const withSheet=/\bficha\b/.test(task.requirementText)
+    return row(id,'Respuestas relacionadas con el perfil de la entrevista simulada',[
+    receptive?`Relaciona las preguntas y respuestas de la entrevista del ${source} en inglés con el perfil proporcionado del personaje.`:withSheet?'Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y capacidades solicitadas con los datos de la ficha del personaje ficticio.':'Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad.',
+    withSheet?'Las respuestas se relacionan con el perfil y las preguntas; una referencia a la ficha necesita precisión.':'Las respuestas se relacionan con el personaje y las preguntas; una referencia a la experiencia o las capacidades necesita precisión.',
     'Comunica datos aislados del perfil sin relacionarlos claramente con las preguntas de la entrevista.',
-    'Las respuestas atribuyen al personaje experiencias o capacidades incompatibles con su ficha.',
+    withSheet?'Las respuestas atribuyen al personaje experiencias o capacidades incompatibles con su ficha.':'Las respuestas atribuyen al personaje experiencias o capacidades incompatibles con la situación representada.',
     'No se reconocen respuestas relacionadas con las preguntas y el perfil de la entrevista simulada.',
    ])
+   }
    case 'detailed-narrative':return row(id,'Detalles y secuencia de los acontecimientos narrados',[
     receptive?`Relaciona los acontecimientos, referentes y detalles solicitados de la narración del ${source} en inglés para seguir su secuencia.`:'Narra en inglés los acontecimientos y experiencias indicados con los detalles proporcionados, enlazando hechos, referentes y secuencia para seguir lo ocurrido.',
     'Los acontecimientos y detalles principales se comprenden en su secuencia; una relación necesita precisión.',
@@ -118,6 +121,13 @@ export function sixthGradeEnglishContent(task:UpperEnglishEvidence){
   if(group.length===1){const {id,match,...criterion}=group[0];return criterion}
   return row(group.map(c=>c.id).join('-or-'),group.map(c=>c.title).join(' o '),[0,1,2,3,4].map(i=>group.map(c=>c.progressionLevels![i]).join(' / ')+' Se valora únicamente la alternativa elegida.') as Parameters<typeof row>[2])
  })
+ if(!receptive&&combined.some(c=>c.templateId==='ing-6-job-interview')&&/\bentrevist(?:ara(?:n)?|an|en)\b|\bintercambi[a-z]*\b[^.;]*\broles\b/.test(task.requirementText))combined.push(row('job-interview-questions','Preguntas pertinentes en el rol de entrevistador',[
+  'Formula preguntas en inglés sobre la experiencia y las capacidades del personaje entrevistado, de modo que el interlocutor pueda responder dentro de la simulación solicitada.',
+  'Las preguntas se relacionan con el personaje y la entrevista; una referencia necesita precisión para que el interlocutor pueda responder.',
+  'Formula preguntas generales que dejan sin consultar parte de la experiencia o las capacidades solicitadas.',
+  'Las preguntas cambian el asunto de la entrevista o no permiten una respuesta relacionada con el personaje representado.',
+  'No se reconocen preguntas pertinentes en inglés cuando asume el rol de entrevistador.',
+ ]))
  combined.push(...requestedGradeSixGrammar(task.requirementText).map(f=>gradeSixGrammarCriterion(f,task.requirementText,mode)))
  combined.push(...requestedGradeSixLexicon(task.requirementText).map(f=>gradeSixLexicalCriterion(f,task.requirementText,mode)))
  combined.push(...gradeSixStrategyCriteria(task.requirementText,mode))

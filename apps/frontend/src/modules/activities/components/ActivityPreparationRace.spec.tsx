@@ -311,7 +311,9 @@ describe('automatic instrument preparation request lifecycle', () => {
     const draft = readActivityDrafts(context)[0].draft as ActivityDraft
     expect(draft.preparedRecommendation?.instrumentType).toBe('lista-cotejo')
     expect(draft.autoSelectedInstrumentType).toBe(false)
-    expect(draft.preparedRecommendation?.criteria.some(criterion => criterion.title === 'Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y capacidades solicitadas con los datos de la ficha del personaje ficticio.')).toBe(true)
+    expect(draft.preparedRecommendation?.criteria.some(criterion => criterion.title === 'Responde en inglés a las preguntas de la entrevista de trabajo simulada, relacionando la experiencia y las capacidades solicitadas con el personaje ficticio representado en la actividad.')).toBe(true)
+    expect(draft.preparedRecommendation?.criteria.some(criterion => criterion.templateId === 'ing-6-job-interview-questions')).toBe(true)
+    expect(JSON.stringify(draft.preparedRecommendation?.criteria)).not.toMatch(/ficha/i)
     expect(draft.maxScore).toBe('')
     expect(draft.instrumentFields['lista-cotejo:meta:scorePending']).toBe('true')
     expect(draft.preparedRecommendation?.totalScoreUnits).toBe(0)

@@ -1,0 +1,40 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.100",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "subject": "Inglés",
+  "grade": 6,
+  "activityId": "78c41a95-cf08-4822-a5a4-fff3460e63a1",
+  "activityName": "QA Development · Una entrevista de trabajo en inglés.",
+  "checks": {
+    "strategyVisibleFromEmptyForm": true,
+    "automaticStrategy": "SIMULATION",
+    "automaticInstrumentRendered": "rubrica",
+    "manualInstrumentRendered": "lista-cotejo",
+    "initialScoreBlank": true,
+    "explicitScore": 20,
+    "criterionCount": 4,
+    "interviewerQuestionsPresent": true,
+    "unrequestedCharacterSheetAbsent": true,
+    "savedAndReopened": true,
+    "manualStrategy": "DRAMATIZATION",
+    "reloadedAfterStrategySave": true,
+    "strategyOnlyInstrumentSnapshotIdsScoreTechniqueExactlyUnchanged": true
+  },
+  "readOnlyDatabaseProof": {
+    "instrumentHashBefore": "2853fc4b29610e97d726e7a24ff199fd",
+    "instrumentHashAfter": "2853fc4b29610e97d726e7a24ff199fd",
+    "catalog": "evaluation-2026.100"
+  },
+  "initialServedAsset": "/assets/index-B80s0KvH.js",
+  "servedAsset": "/assets/index-DWyZMmhA.js",
+  "servedAssetSha256": "32f8233d037e68fb9fb3c94b545ad325121513c30468d6c6706dd2d893445a03",
+  "reopenedWithFinalCreatorFix": true,
+  "limitations": [
+    "Solo se guardó y modificó la nueva actividad identificada como QA. La actividad original del usuario permaneció intacta.",
+    "La modalidad grupal no tiene equipos activos. El guardado sin equipos fue posible; no se crearon equipos ni se reorganizaron estudiantes.",
+    "El formulario QA sin guardar no se restauró al recargar. Se recuperó exclusivamente esa prueba desde su texto conocido. No se borró almacenamiento ni se tocaron otros borradores.",
+    "No se inspeccionaron internals del service worker. Se confirmó el nuevo script mediante DOM y sus bytes servidos frente al compilado.",
+    "Rúbrica se comprobó visualmente antes de seleccionar cotejo. Escala y ponderada del caso se comprobaron con instrumentos completos y automatización, no mediante este recorrido de navegador."
+  ]
+}

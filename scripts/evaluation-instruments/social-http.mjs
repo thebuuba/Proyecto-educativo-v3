@@ -26,16 +26,24 @@ assert([productMode,proceduralMode,mediaMode].filter(Boolean).length<=1,'Selecci
 assert(!proceduralMode||sourceMode,'Los procedimientos nuevos se verifican con la fuente publicada')
 assert(!productMode||sourceMode,'Los productos nuevos se verifican con la fuente publicada')
 assert(!mediaMode||sourceMode,'Los medios alternativos se verifican con la fuente publicada')
-assert(grade===1||sourceMode&&productMode,'Los grados siguientes requieren contratos explícitos y fuente publicada')
+assert(grade===1||sourceMode&&(productMode||proceduralMode),'Los grados siguientes requieren contratos explícitos y fuente publicada')
 const media=[
  {description:'Realiza un panel o una infografía sobre la expansión colonial en el Caribe.',sourceRecordIds:['c68b813b']},
  {description:'Redacta una noticia sobre las Revoluciones burguesas con titular, entrada, cuerpo, una foto proporcionada y pie de foto. Usa conectores de orden y temporales.',sourceRecordIds:['f0556291']},
 ]
-const contractPath=grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}-contracts.json`
-const procedural=mediaMode?[...media,...media]:JSON.parse(readFileSync(contractPath,'utf8')).cases
+const contractPath=grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
+const allContracts=mediaMode?[...media,...media]:JSON.parse(readFileSync(contractPath,'utf8')).cases
+const casesFlag=process.argv.indexOf('--cases'),selectedIds=casesFlag<0?null:process.argv[casesFlag+1]?.split(',')
+if(selectedIds){
+ assert(selectedIds.length&&new Set(selectedIds).size===selectedIds.length,'Identifica muestras distintas')
+ assert(proceduralMode&&grade>1,'La selección explícita requiere un checkpoint procedimental por grado')
+ assert(selectedIds.every(id=>allContracts.some(c=>c.id===id)),'Hay una consigna desconocida')
+}
+const procedural=selectedIds?selectedIds.map(id=>allContracts.find(c=>c.id===id)):allContracts
 const source=sourceMode?JSON.parse(readFileSync(path+`MINERD_SECUNDARIA_2023_SOC_COMUN_G${grade}_V1-source.json`,'utf8')):null
 if(source){assert.equal(source.project,project);assert.equal(source.code,`MINERD_SECUNDARIA_2023_SOC_COMUN_G${grade}_V1`)}
-const runKey=`social-${grade}-`+catalog+(source?'-source-'+source.versionId:'')+(proceduralMode?'-procedural':productMode?'-products':mediaMode?'-media':''),base='http://localhost:8787',progressPath=path+runKey+'-http-progress.json'
+const selectionKey=selectedIds?'-sample-'+createHash('sha256').update(selectedIds.join(',')).digest('hex').slice(0,12):''
+const runKey=`social-${grade}-`+catalog+(source?'-source-'+source.versionId:'')+(proceduralMode?'-procedural':productMode?'-products':mediaMode?'-media':'')+selectionKey,base='http://localhost:8787',progressPath=path+runKey+'-http-progress.json'
 const progress=existsSync(progressPath)?JSON.parse(readFileSync(progressPath,'utf8')):{project,grade,writes:[],timings:[]}
 assert.equal(progress.project,project)
 assert.equal(progress.grade,grade)
@@ -62,10 +70,11 @@ const descriptions=proceduralMode||productMode||mediaMode?procedural.map(c=>c.de
  'Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.',
  'Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.',
 ]
-const formats=productMode||mediaMode?procedural.map((_,i)=>['rubrica','lista-cotejo','escala','lista-ponderada'][i%4]):proceduralMode?['rubrica','lista-cotejo','escala','lista-ponderada','lista-cotejo','rubrica','lista-ponderada','escala']:['rubrica','lista-cotejo','escala','lista-ponderada','rubrica','lista-cotejo','escala','lista-ponderada'].slice(0,sourceMode?4:8)
+const formats=productMode||mediaMode||proceduralMode&&grade>1?procedural.map((_,i)=>['rubrica','lista-cotejo','escala','lista-ponderada'][i%4]):proceduralMode?['rubrica','lista-cotejo','escala','lista-ponderada','lista-cotejo','rubrica','lista-ponderada','escala']:['rubrica','lista-cotejo','escala','lista-ponderada','rubrica','lista-cotejo','escala','lista-ponderada'].slice(0,sourceMode?4:8)
 const matrix=sourceMode?JSON.parse(readFileSync(`docs/curriculum/cobertura-secundaria/sociales-${grade}-matriz.json`,'utf8')):null
 const sourceRecords=matrix?.officialRecords??[]
 const sourcePrefixes=proceduralMode||productMode||mediaMode?procedural.map(c=>c.sourceRecordIds[0]):['03c0f43b','20638a76','055ff3a5','01b7176c']
+const scoreFor=i=>selectedIds?Math.floor(i/4)%2?17.35:20:i%2?17.35:20
 try{
  const school=await prisma.school.findUniqueOrThrow({where:{id:context.schoolId}});assert.match(school.name,/ficticio QA Development/)
  const login=await request('/auth/login',{email:qa.email,password:qa.password})
@@ -80,10 +89,10 @@ try{
   if(write){
    assert.equal(write.input.description,descriptions[i],'El fixture cambió: no reutilizar una escritura anterior para otra consigna')
    assert.equal(write.format,format)
-   assert.equal(write.input.maxScore,i%2?17.35:20)
+   assert.equal(write.input.maxScore,scoreFor(i))
   }
   if(!write){
-   const score=i%2?17.35:20,description=descriptions[i],name=`QA Sociales ${grade}.º · ${format} · ${randomUUID().slice(0,8)}`
+   const score=scoreFor(i),description=descriptions[i],name=`QA Sociales ${grade}.º · ${format} · ${randomUUID().slice(0,8)}`
    const input={sectionSubjectId:context.sectionSubjectId,activityTitle:name,description,competencyBlock:'b1',maxScore:score,preferredInstrumentType:format,participationMode:'INDIVIDUAL'}
    const interpretation=(await request('/evaluation-instruments/interpret',{sectionSubjectId:context.sectionSubjectId,activityTitle:name,description,competencyBlock:'b1'})).data
    if(source){
@@ -130,7 +139,7 @@ try{
   write.verified={format,score:write.input.maxScore,activityId:write.creationId,snapshotId:db.instrumentSnapshotId,strategyOnlyInstrumentUnchanged:true,manualTextPreserved:true,hash:write.originalHash};save()
   console.log(JSON.stringify({phase:'saved-reopened',format,grade}))
  }
- const result={project,grade,catalog,verification:'AUTHENTICATED_HTTP_DB_NOT_BROWSER',sourceScope:source?.scopeId??'NOT_INSTALLED_YET',curriculumVersionId:source?.versionId??null,samples:progress.writes.map(w=>w.verified),timings:progress.timings,browser:'PENDING'}
+ const result={project,grade,catalog,verification:'AUTHENTICATED_HTTP_DB_NOT_BROWSER',coverage:{availableContracts:allContracts.length,selectedCaseIds:selectedIds??null,limits:'Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación.'},sourceScope:source?.scopeId??'NOT_INSTALLED_YET',curriculumVersionId:source?.versionId??null,samples:progress.writes.map(w=>w.verified),timings:progress.timings,browser:'PENDING'}
  writeFileSync(path+runKey+'-http.json',JSON.stringify(result,null,2)+'\n')
  writeFileSync(path+`social-${grade}-http.json`,JSON.stringify(result,null,2)+'\n')
 }finally{await prisma.$disconnect()}

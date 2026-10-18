@@ -1425,7 +1425,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -1436,7 +1437,7 @@
         "0284fd61-7062-5e8e-a3bb-c2079fc2d744",
         "85b5dd02-2e6a-59be-9d66-b074a1fc5a16"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 8
     },
     {
       "id": "tectonics",
@@ -1471,7 +1472,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -1486,7 +1488,7 @@
         "836d0cd6-f7e5-5c99-b986-5f241a278cd1",
         "41b25a2d-c991-5748-b904-79cdc3d38135"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 12
     },
     {
       "id": "geological-faults",
@@ -1524,7 +1526,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -1547,7 +1550,7 @@
         "8b0d8f9c-4848-5a34-8a93-0e057133841d",
         "bb55104d-734f-5485-980a-f42661d16eb6"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 16
     },
     {
       "id": "volcanism",
@@ -1561,7 +1564,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -1575,7 +1579,7 @@
         "91317625-0a29-5eb7-a046-3c51ac8f8668",
         "8b0d8f9c-4848-5a34-8a93-0e057133841d"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 8
     },
     {
       "id": "climate",
@@ -1590,6 +1594,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "CLIMOGRAM_COMPARISON"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
@@ -1618,7 +1623,7 @@
         "73d2ac4c-828b-520e-a295-a654530eb2ef",
         "1dd04437-45c3-5b0c-9816-69d9b6fd1639"
       ],
-      "reviewedRepresentativeExamples": 8
+      "reviewedRepresentativeExamples": 28
     },
     {
       "id": "weather-instruments",
@@ -1632,6 +1637,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "WEATHER_RECORD_READING"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
@@ -1641,7 +1647,7 @@
       "reviewedOfficialRecordIds": [
         "8a8674d9-ed57-538a-8ce3-733736a34cee"
       ],
-      "reviewedRepresentativeExamples": 8
+      "reviewedRepresentativeExamples": 12
     },
     {
       "id": "water",
@@ -1701,7 +1707,7 @@
       "id": "disaster-risk",
       "grade": 2,
       "label": "riesgo y prevención de desastres",
-      "match": "desastres?|fenomenos naturales|mapas? de emergencia|planes? preventivos?|prevencion de danos|acciones? preventivas?",
+      "match": "desastres?|fenomenos naturales|mapas? de emergencia|planes? preventivos?|plan preventivo|prevencion de danos|acciones? preventivas?",
       "relation": "las relaciones entre el fenómeno, la exposición, las condiciones del caso y la prevención expresamente estudiada",
       "pages": [
         249,
@@ -1710,6 +1716,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "EMERGENCY_MAP",
         "NATURAL_PHENOMENA_CLASSIFICATION"
       ],
@@ -1729,6 +1736,29 @@
         "2e1106d7-d00d-58ba-ab00-86c322e9ec80",
         "8b0d8f9c-4848-5a34-8a93-0e057133841d"
       ],
+      "reviewedRepresentativeExamples": 20
+    },
+    {
+      "id": "historical-sources",
+      "grade": 2,
+      "label": "importancia de las fuentes históricas",
+      "match": "fuentes historicas",
+      "relation": "la aportación de las fuentes históricas al conocimiento de los fenómenos estudiados, distinguiendo testimonios e interpretaciones posteriores",
+      "pages": [
+        249
+      ],
+      "provider": "packages/shared/src/secondary-social.ts",
+      "familiesImplemented": [
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
+      ],
+      "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
+      "officialRecordCandidates": [
+        "bb55104d-734f-5485-980a-f42661d16eb6"
+      ],
+      "reviewedOfficialRecordIds": [
+        "bb55104d-734f-5485-980a-f42661d16eb6"
+      ],
       "reviewedRepresentativeExamples": 12
     },
     {
@@ -1743,6 +1773,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "DEMOGRAPHIC_GRAPH"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
@@ -1764,13 +1795,13 @@
         "3fd6f282-4999-585e-9f9a-3f9a8c7b3178",
         "30e95617-ccc5-5c5e-a16d-e02663c84592"
       ],
-      "reviewedRepresentativeExamples": 8
+      "reviewedRepresentativeExamples": 12
     },
     {
       "id": "population-structure",
       "grade": 2,
       "label": "estructura y dinámica de la población",
-      "match": "piramides? de edades|piramides? poblacionales|dinamica de la poblacion|crecimiento poblacional|estructura de la poblacion",
+      "match": "piramides? de edades|piramides? poblacionales|dinamica de la poblacion|crecimiento poblacional|crecimiento de la poblacion|estructura de la poblacion",
       "relation": "las diferencias de estructura o crecimiento de la población representadas en los datos, distinguiendo observación e interpretación",
       "pages": [
         250
@@ -1778,10 +1809,12 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "POPULATION_PYRAMID"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
+        "1dd04437-45c3-5b0c-9816-69d9b6fd1639",
         "7db7d336-78e6-59ae-bc83-c3873d6f89db",
         "74f10621-172f-5549-a155-f596a51566b6",
         "ad1e6528-8ae3-5a70-98b0-dc02043687ee"
@@ -1792,7 +1825,7 @@
         "ad1e6528-8ae3-5a70-98b0-dc02043687ee",
         "1dd04437-45c3-5b0c-9816-69d9b6fd1639"
       ],
-      "reviewedRepresentativeExamples": 8
+      "reviewedRepresentativeExamples": 16
     },
     {
       "id": "census",
@@ -1805,7 +1838,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -1816,7 +1850,7 @@
         "a52f2f6e-fffd-5deb-9cd4-573fbf916b4f",
         "57279306-e4a0-5aa5-aa3b-f50849def554"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 8
     },
     {
       "id": "migration",
@@ -1830,6 +1864,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "MIGRATION_FLOW_MAP"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
@@ -1845,7 +1880,7 @@
         "2a352230-cb7f-5a22-9caf-022b6f548b9f",
         "ed301d26-9686-5085-84ec-09982d8fd8a2"
       ],
-      "reviewedRepresentativeExamples": 8
+      "reviewedRepresentativeExamples": 12
     },
     {
       "id": "human-impact",
@@ -1858,7 +1893,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -1876,7 +1912,7 @@
         "1dd04437-45c3-5b0c-9816-69d9b6fd1639",
         "be616eca-1c37-523d-9227-8bf5cb5c16d9"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 20
     },
     {
       "id": "imperialism",
@@ -1889,7 +1925,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -1916,7 +1953,7 @@
         "cdae62c6-68a3-57f5-844c-732fe3640c4c",
         "03c7f4c7-4f16-57f1-a780-59d698be4ed8"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 24
     },
     {
       "id": "transport-canals",
@@ -1956,6 +1993,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "HISTORICAL_CAUSAL_SOURCES",
         "TREATY_CONTEXT"
       ],
@@ -1978,7 +2016,7 @@
         "bc9d1d4c-dcdd-5469-aedd-f5eecc12d65a",
         "eaf52705-ee51-55ea-8600-69806101f244"
       ],
-      "reviewedRepresentativeExamples": 12
+      "reviewedRepresentativeExamples": 20
     },
     {
       "id": "russian-revolution",
@@ -1991,7 +2029,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -2002,7 +2041,7 @@
         "3cdf5cbf-72e3-5704-abb5-09a5095645f7",
         "f8b6fe1c-fbec-560f-9642-96b64c89e2ff"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 8
     },
     {
       "id": "us-economic-rise",
@@ -2016,7 +2055,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -2029,7 +2069,7 @@
         "217e46b9-0e40-50fc-93f6-8cfb836e07c2",
         "bc9d1d4c-dcdd-5469-aedd-f5eecc12d65a"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 12
     },
     {
       "id": "great-depression",
@@ -2065,7 +2105,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -2078,7 +2119,7 @@
         "5d7b01ea-ebb0-5647-b28f-1889e68c2221",
         "c504a3b6-d83d-53c8-897b-4238ff69bb11"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 12
     },
     {
       "id": "war-dominican-economy",
@@ -2092,6 +2133,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "CONCEPT_ANCHORED_ADAPTATION"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
@@ -2105,7 +2147,7 @@
         "eaf52705-ee51-55ea-8600-69806101f244",
         "bc9d1d4c-dcdd-5469-aedd-f5eecc12d65a"
       ],
-      "reviewedRepresentativeExamples": 8
+      "reviewedRepresentativeExamples": 24
     },
     {
       "id": "north-south",
@@ -2120,6 +2162,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "DEVELOPMENT_INDICATORS",
         "DEVELOPMENT_LINKS"
       ],
@@ -2144,7 +2187,7 @@
         "ad1e6528-8ae3-5a70-98b0-dc02043687ee",
         "acf6ddfc-e4e9-5848-b1e8-397ba81f013c"
       ],
-      "reviewedRepresentativeExamples": 12
+      "reviewedRepresentativeExamples": 24
     },
     {
       "id": "antillanism",
@@ -2181,7 +2224,7 @@
       "id": "dominican-society",
       "grade": 2,
       "label": "sociedad y economía dominicanas del siglo XIX y comienzos del XX",
-      "match": "sociedad dominicana|economia dominicana|capitalismo dependiente|modernidad|urbanizacion|republica.*1900",
+      "match": "sociedad dominicana|economia dominicana|capitalismo dependiente|modernidad|urbanizacion|republica.*1900|gobiernos[^.;]*republica dominicana|dictaduras[^.;]*republica dominicana",
       "relation": "las relaciones entre cambios económicos, sociales, políticos o culturales dominicanos en el período expresamente solicitado",
       "pages": [
         251
@@ -2189,6 +2232,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "ECONOMIC_POSTER"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
@@ -2216,7 +2260,7 @@
         "2ae053e2-25bf-5404-8619-c4224c8d8584",
         "4403ded4-4c7a-578b-93c4-a111735e2e52"
       ],
-      "reviewedRepresentativeExamples": 8
+      "reviewedRepresentativeExamples": 24
     },
     {
       "id": "dominican-state",
@@ -2229,7 +2273,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -2239,7 +2284,7 @@
       "reviewedOfficialRecordIds": [
         "0fac3843-300a-5ef6-9d97-dab844be871e"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 12
     },
     {
       "id": "democracy",
@@ -2254,6 +2299,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "DEMOCRATIC_PROJECT"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
@@ -2271,7 +2317,7 @@
         "ceb43859-233b-523d-833a-731d628365bc",
         "008eeb32-3f88-584b-887a-6311f1a07928"
       ],
-      "reviewedRepresentativeExamples": 8
+      "reviewedRepresentativeExamples": 20
     },
     {
       "id": "human-rights",
@@ -2284,7 +2330,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -2295,7 +2342,7 @@
         "65337813-a974-5636-9453-b6295d729225",
         "571cbef1-7e7c-5174-9dda-f603d5d9a829"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 8
     },
     {
       "id": "peace",
@@ -2309,6 +2356,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "CONFLICT_HYPOTHESIS"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
@@ -2328,7 +2376,7 @@
         "dbc04dc6-22d8-5c30-8ded-3bd93b3f2ffc",
         "3318d242-9b45-5215-b072-1886a1935406"
       ],
-      "reviewedRepresentativeExamples": 8
+      "reviewedRepresentativeExamples": 16
     },
     {
       "id": "national-symbols",
@@ -2341,7 +2389,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -2351,7 +2400,7 @@
         "9727ae6e-e3d7-5224-aeea-cb26f4813807",
         "1d2cbcb2-a3de-58b3-898e-0cba30fb57dc"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 8
     },
     {
       "id": "road-safety",
@@ -2366,6 +2415,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "ROAD_STATISTICAL_ANALYSIS"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
@@ -2377,7 +2427,7 @@
         "39b52db4-5275-5346-a3c6-fe8e8b9784dc",
         "b44c4108-02d5-58de-aa49-8fed74cd4412"
       ],
-      "reviewedRepresentativeExamples": 8
+      "reviewedRepresentativeExamples": 12
     },
     {
       "id": "taxes",
@@ -2391,7 +2441,8 @@
       ],
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
-        "EXPLANATION"
+        "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
       "officialRecordCandidates": [
@@ -2402,7 +2453,7 @@
         "7f47fc73-ecbc-5c46-bf46-dee74289092f",
         "07264203-b758-5222-b401-d7ca764705f0"
       ],
-      "reviewedRepresentativeExamples": 4
+      "reviewedRepresentativeExamples": 8
     },
     {
       "id": "environmental-agreements",
@@ -2417,6 +2468,7 @@
       "provider": "packages/shared/src/secondary-social.ts",
       "familiesImplemented": [
         "EXPLANATION",
+        "PROCEDURAL_ACTION_CONTRAST",
         "ENVIRONMENTAL_MEASURES"
       ],
       "instrumentReview": "REPRESENTATIVE_EXAMPLES_REVIEWED_NOT_COMPLETE_PROCEDURAL_COVERAGE",
@@ -2435,7 +2487,7 @@
         "cae9d9f7-5daa-523d-aff1-9cfa65f75075",
         "552f72f7-33bf-5e2a-a523-250b935389f8"
       ],
-      "reviewedRepresentativeExamples": 8
+      "reviewedRepresentativeExamples": 16
     },
     {
       "id": "pollution",
@@ -2506,6 +2558,866 @@
   ],
   "unmappedConceptsAndProcedures": [],
   "implementedFamilies": [
+    {
+      "id": "personal-road-case-justification",
+      "sourceRecordIds": [
+        "b44c4108-02d5-58de-aa49-8fed74cd4412"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza los datos de accidentes de tránsito proporcionados en el caso ficticio y compara las frecuencias registradas para explicar los hallazgos sobre seguridad vial. Propone alternativas para el caso concreto y justifica tu recomendación con los datos dados. No recopiles información personal ni ejecutes acciones reales.",
+      "requiredKeys": [
+        "statistical-series",
+        "proposal",
+        "argument"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "geomorphic-map",
+      "sourceRecordIds": [
+        "85b5dd02-2e6a-59be-9d66-b074a1fc5a16"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Identifica los fenómenos geomorfológicos señalados en el mapa físico mundial proporcionado, usando sus referencias espaciales. No dibujes un mapa nuevo.",
+      "requiredKeys": [
+        "map-feature-identification"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "relief-source-use",
+      "sourceRecordIds": [
+        "836d0cd6-f7e5-5c99-b986-5f241a278cd1"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Explica las formas de relieve de los continentes y de la isla de Santo Domingo utilizando las informaciones proporcionadas en fuentes diversas. Distingue qué información respalda cada explicación.",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "geological-formation-research",
+      "sourceRecordIds": [
+        "41b25a2d-c991-5748-b904-79cdc3d38135"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Investiga la formación de la estructura geológica de los continentes y de la isla de Santo Domingo en las fuentes proporcionadas. Expón los hallazgos y su procedencia.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "seismic-source-credibility",
+      "sourceRecordIds": [
+        "25aa4965-7ac2-5938-8114-4caa27a664a5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Evalúa la confiabilidad de las fuentes proporcionadas sobre los movimientos sísmicos y justifica cuáles respaldan las explicaciones científicas examinadas. No hagas un experimento.",
+      "requiredKeys": [
+        "source-reliability"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "volcanic-seismic-zones",
+      "sourceRecordIds": [
+        "91317625-0a29-5eb7-a046-3c51ac8f8668"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza en los mapas proporcionados las zonas volcánicas y las de mayor movimiento sísmico en el mundo. Relaciona su distribución con la información de las fuentes dadas.",
+      "requiredKeys": [
+        "spatial-distribution",
+        "source-evidence"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "seismic-prevention-proposal",
+      "sourceRecordIds": [
+        "a296d1f4-78ae-5c22-856f-0af8d86ae9b9"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Investiga las indicaciones del Instituto Sismológico de la UASD proporcionadas para el caso de movimientos sísmicos y propone acciones preventivas compatibles con esas indicaciones. No realices una evacuación.",
+      "requiredKeys": [
+        "sources",
+        "prevention-fit"
+      ],
+      "absent": "causas y efectos",
+      "requiredTopic": null
+    },
+    {
+      "id": "atmospheric-prevention-plan",
+      "sourceRecordIds": [
+        "2e1106d7-d00d-58ba-ab00-86c322e9ec80"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Elabora un plan preventivo para el fenómeno atmosférico del caso ficticio a partir de las orientaciones del COE proporcionadas. Indica acciones y responsables según las condiciones dadas. No ejecutes el plan.",
+      "requiredKeys": [
+        "prevention-plan",
+        "plan-roles"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "weather-instrument-recording",
+      "sourceRecordIds": [
+        "8a8674d9-ed57-538a-8ce3-733736a34cee"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Utiliza el pluviómetro y el anemómetro disponibles según las instrucciones de manejo proporcionadas. Registra las mediciones con sus magnitudes y unidades e interpreta los registros. No compres materiales.",
+      "requiredKeys": [
+        "weather-handling",
+        "weather-recording",
+        "weather-reading"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "historical-source-purpose",
+      "sourceRecordIds": [
+        "bb55104d-734f-5485-980a-f42661d16eb6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Explica la importancia de las fuentes históricas para reconstruir los fenómenos estudiados, distinguiendo testimonios de interpretaciones posteriores. No investigues nuevas fuentes.",
+      "requiredKeys": [
+        "historical-source-purpose"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "climate-factor-research",
+      "sourceRecordIds": [
+        "fa44369e-4a8d-5bbe-b9d3-9ef30e0b34d9"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Investiga los tipos de clima y sus factores geográficos en las fuentes proporcionadas. Explica cómo los factores se relacionan con el clima de los lugares indicados.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "climogram-construction",
+      "sourceRecordIds": [
+        "f93d4793-fa63-5723-9d3b-f084bb15392b"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Construye los climogramas de las dos ciudades usando los datos mensuales de temperatura y precipitación proporcionados y compáralos. No añadas otras ciudades.",
+      "requiredKeys": [
+        "climogram-construction",
+        "climate-comparison"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "climate-vegetation-maps",
+      "sourceRecordIds": [
+        "b8216113-7532-5663-94ed-08a8d868ae6e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Compara los mapas de clima y vegetación de la República Dominicana y de las Antillas proporcionados, relacionando sus zonas y leyendas. No elabores mapas nuevos.",
+      "requiredKeys": [
+        "map-comparison",
+        "map-legend"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "regional-climate-research",
+      "sourceRecordIds": [
+        "73d2ac4c-828b-520e-a295-a654530eb2ef"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Investiga el cambio climático en la República Dominicana y las Antillas a partir de las fuentes proporcionadas, delimitando los lugares y períodos de los hallazgos.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "climate-population-research",
+      "sourceRecordIds": [
+        "1dd04437-45c3-5b0c-9816-69d9b6fd1639"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Investiga la variación climática y su incidencia en el crecimiento de la población humana usando las fuentes proporcionadas. Distingue los datos observados de las explicaciones que proponen las fuentes.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "population-world-map",
+      "sourceRecordIds": [
+        "7db7d336-78e6-59ae-bc83-c3873d6f89db"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Interpreta en el mapamundi proporcionado la dinámica de la población según su leyenda y sus referencias temporales. No infieras la situación de personas concretas.",
+      "requiredKeys": [
+        "population-map-reading",
+        "map-legend"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "census-map-data",
+      "sourceRecordIds": [
+        "57279306-e4a0-5aa5-aa3b-f50849def554"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Interpreta los mapas y datos estadísticos proporcionados del censo de población de la República Dominicana, distinguiendo valores, períodos y zonas representadas. No realices un censo.",
+      "requiredKeys": [
+        "census-map-data"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "migration-source-causes",
+      "sourceRecordIds": [
+        "ed301d26-9686-5085-84ec-09982d8fd8a2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza en las fuentes confiables proporcionadas las causas y razones de la migración humana en los casos descritos. No solicites información migratoria personal.",
+      "requiredKeys": [
+        "causes",
+        "source-evidence"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "warming-research-project",
+      "sourceRecordIds": [
+        "75c71aea-8b17-51dd-9090-6d826d48d8ca"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Realiza un proyecto de investigación sobre el calentamiento global con las fuentes proporcionadas. Formula una pregunta y presenta hallazgos respaldados por ellas. No hagas trabajo de campo.",
+      "requiredKeys": [
+        "research-content",
+        "sources",
+        "question"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "human-impact-hypothesis",
+      "sourceRecordIds": [
+        "37194410-3c0b-5648-ad8d-202e428abda3"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Formula una hipótesis sencilla sobre el impacto de la acción humana en el planeta Tierra a partir del caso proporcionado, distinguiendo datos e inferencias. No presentes una conclusión comprobada.",
+      "requiredKeys": [
+        "hypothesis"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "environmental-protocols",
+      "sourceRecordIds": [
+        "bb691ded-dea0-5c34-aaf8-d8afc82b17c7"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza las legislaciones y protocolos internacionales sobre la preservación del planeta Tierra incluidos en los documentos proporcionados. Explica sus alcances y límites para el caso indicado.",
+      "requiredKeys": [
+        "environmental-measures"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "warming-world-effects",
+      "sourceRecordIds": [
+        "be616eca-1c37-523d-9227-8bf5cb5c16d9"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza los efectos del calentamiento global en el mundo con las fuentes proporcionadas. No expliques imperialismo ni revoluciones.",
+      "requiredKeys": [
+        "consequences",
+        "source-evidence"
+      ],
+      "absent": "imperialismo|revoluci[oó]n",
+      "requiredTopic": null
+    },
+    {
+      "id": "imperialism-explained-stance",
+      "sourceRecordIds": [
+        "be616eca-1c37-523d-9227-8bf5cb5c16d9"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Explica el concepto de imperialismo y argumenta tu interpretación del caso de expansión imperialista proporcionado. No expreses adhesión a una ideología ni describas una revolución no indicada.",
+      "requiredKeys": [
+        "interpretation",
+        "argument"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "powers-world-space",
+      "sourceRecordIds": [
+        "966d0c37-e014-55eb-b9d3-474fdfad5165"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Interpreta el espacio mundial representado en el mapa como escenario de confrontación de las grandes potencias por el poder económico, usando las fuentes del período indicado.",
+      "requiredKeys": [
+        "spatial-power",
+        "source-evidence"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "financial-power-research",
+      "sourceRecordIds": [
+        "3fdb4f8f-9758-5c07-abc2-127733a164ab"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Investiga el impacto del complejo financiero de las grandes potencias en los casos históricos indicados, contrastando las fuentes proporcionadas. No investigues finanzas personales.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "north-south-scheme",
+      "sourceRecordIds": [
+        "acf6ddfc-e4e9-5848-b1e8-397ba81f013c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Elabora un esquema que represente las relaciones e intercambios entre los países desarrollados y subdesarrollados de los casos proporcionados. Explica el significado de las conexiones. No dibujes gráficas estadísticas.",
+      "requiredKeys": [
+        "organizer-relations"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "war-russian-research-hypotheses",
+      "sourceRecordIds": [
+        "f8b6fe1c-fbec-560f-9642-96b64c89e2ff"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Investiga en las fuentes dadas las causas de la Primera Guerra Mundial y de la Revolución Rusa. Formula hipótesis provisionales diferenciadas para cada proceso histórico y distingue datos de inferencias.",
+      "requiredKeys": [
+        "research-content",
+        "sources",
+        "hypothesis"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "fascist-movements-analysis",
+      "sourceRecordIds": [
+        "5d7b01ea-ebb0-5647-b28f-1889e68c2221"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza los movimientos fascistas en Europa del período estudiado a partir de las fuentes proporcionadas. No expreses adhesión personal.",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "fascism-origins-end",
+      "sourceRecordIds": [
+        "c504a3b6-d83d-53c8-897b-4238ff69bb11"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Explica los factores que originaron el fascismo y su fin con los hechos del período proporcionado. No confundas causas y consecuencias.",
+      "requiredKeys": [
+        "causes",
+        "consequences"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "war-us-expository-article",
+      "sourceRecordIds": [
+        "217e46b9-0e40-50fc-93f6-8cfb836e07c2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Redacta un artículo expositivo sobre las implicaciones de la Primera Guerra Mundial y el afianzamiento económico de Estados Unidos, usando las fuentes proporcionadas y distinguiendo ambos procesos. No redactes una noticia.",
+      "requiredKeys": [
+        "expository-content",
+        "source-evidence"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "economic-article-topic-selection",
+      "sourceRecordIds": [
+        "bc9d1d4c-dcdd-5469-aedd-f5eecc12d65a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Identifica y justifica una temática para un artículo sobre la explotación bananera en Centroamérica, Sudamérica y el Caribe a partir de las opciones y fuentes dadas. No redactes todavía el artículo.",
+      "requiredKeys": [
+        "topic-selection"
+      ],
+      "absent": "economía dominicana|Primera Guerra Mundial",
+      "requiredTopic": null
+    },
+    {
+      "id": "regional-war-research",
+      "sourceRecordIds": [
+        "eaf52705-ee51-55ea-8600-69806101f244"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Investiga en las fuentes proporcionadas el impacto de la Primera Guerra Mundial en el sistema económico de la República Dominicana. Formula una hipótesis provisional compatible con los hechos del caso.",
+      "requiredKeys": [
+        "research-content",
+        "sources",
+        "hypothesis"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "north-south-research",
+      "sourceRecordIds": [
+        "71ad4641-fd58-5a61-a2d9-b030081cac39"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Investiga las diferencias económicas, sociales y políticas entre los países del Norte y del Sur indicados, usando las fuentes proporcionadas. No añadas indicadores sin datos.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "mineral-resource-studies",
+      "sourceRecordIds": [
+        "d7a3bfe7-e5ec-568e-8efe-e8cee9324400"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Compara las investigaciones históricas proporcionadas sobre extracción de recursos mineros en los pueblos del Sur para los pueblos del Norte durante el siglo XX, distinguiendo sus evidencias y conclusiones. No realices una investigación de campo.",
+      "requiredKeys": [
+        "comparison",
+        "source-evidence"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "north-south-population-graphs",
+      "sourceRecordIds": [
+        "ad1e6528-8ae3-5a70-98b0-dc02043687ee"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Compara los gráficos estadísticos del crecimiento poblacional de los países del Norte y del Sur proporcionados, conservando las unidades y períodos y explicando los hallazgos respaldados.",
+      "requiredKeys": [
+        "statistical-series"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "dominican-society-characterization",
+      "sourceRecordIds": [
+        "776ab820-8090-5a5e-b5aa-aa4f7d759d82"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Caracteriza la sociedad dominicana de la segunda mitad del siglo XIX y principios del XX en los aspectos económicos, políticos y sociales indicados en las fuentes proporcionadas. No cambies de período.",
+      "requiredKeys": [
+        "characterization",
+        "source-evidence"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "governments-dictatorships",
+      "sourceRecordIds": [
+        "65bdf697-5ee1-5779-a4b0-49d92a434298"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Compara gobiernos y dictaduras de la República Dominicana en los casos del período estudiado mediante las características políticas proporcionadas. No defiendas una postura política personal.",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "dependent-capitalism",
+      "sourceRecordIds": [
+        "1ee01663-ea58-5a0a-80c3-4c8dd71fd4e5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Explica las relaciones entre capitalismo dependiente, modernidad y urbanización en la sociedad dominicana del período indicado, con las fuentes proporcionadas. No evalúes hábitos personales.",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "imperialism-dominican-impact",
+      "sourceRecordIds": [
+        "03c7f4c7-4f16-57f1-a780-59d698be4ed8"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza críticamente el impacto de la expansión imperialista en la República Dominicana entre 1886 y 1914 a partir de las fuentes proporcionadas. No añadas otras regiones ni períodos.",
+      "requiredKeys": [
+        "consequences",
+        "source-evidence"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "dominican-social-changes",
+      "sourceRecordIds": [
+        "2ae053e2-25bf-5404-8619-c4224c8d8584"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza los cambios sociales, culturales y políticos de la sociedad dominicana durante la primera mitad del siglo XIX según las fuentes proporcionadas. No añadas procesos de 1900.",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "absent": "1900|comienzos del XX",
+      "requiredTopic": null
+    },
+    {
+      "id": "state-origin-timeline",
+      "sourceRecordIds": [
+        "4403ded4-4c7a-578b-93c4-a111735e2e52"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Elabora una línea de tiempo con los principales acontecimientos de la primera mitad del siglo XIX que dieron origen al Estado dominicano y un organizador gráfico con sus relaciones, usando los hechos y fechas proporcionados. No añadas hechos posteriores.",
+      "requiredKeys": [
+        "sequence",
+        "organizer-relations"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "state-origin-understanding",
+      "sourceRecordIds": [
+        "0fac3843-300a-5ef6-9d97-dab844be871e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Explica los procesos históricos que dieron origen a la formación del Estado dominicano, distinguiendo sus relaciones en los casos estudiados. No elabores una línea de tiempo.",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "democratic-contributions",
+      "sourceRecordIds": [
+        "48c0bee8-d08b-5991-b740-ba7ab4d83303"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Identifica los aportes del modelo democrático al desarrollo de la sociedad en los casos proporcionados y justifica cada aporte con los hechos examinados. No expreses preferencias partidarias.",
+      "requiredKeys": [
+        "identification",
+        "argument"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "democracy-authoritarian-contrast",
+      "sourceRecordIds": [
+        "ceb43859-233b-523d-833a-731d628365bc"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Compara las ventajas y límites de los sistemas democráticos frente a los autoritarios en los casos proporcionados, distinguiendo las normas y las prácticas. No manifiestes adhesión personal.",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "constitutional-rule-of-law",
+      "sourceRecordIds": [
+        "008eeb32-3f88-584b-887a-6311f1a07928"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza las características del Estado de derecho en los artículos proporcionados de la Constitución dominicana y explica su aplicación al caso. No atribuyas una norma que no aparece en el texto.",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "tax-information-analysis",
+      "sourceRecordIds": [
+        "07264203-b758-5222-b401-d7ca764705f0"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza críticamente la información de educación tributaria proporcionada, distinguiendo obligaciones, recursos públicos y servicios del caso y justificando tus conclusiones. No calcules impuestos reales.",
+      "requiredKeys": [
+        "interpretation",
+        "argument"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "national-symbol-model",
+      "sourceRecordIds": [
+        "1d2cbcb2-a3de-58b3-898e-0cba30fb57dc"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Crea una maqueta o un dibujo de los símbolos patrios indicados y explica su significado con las referencias históricas proporcionadas. No se califican sentimientos personales ni materiales costosos.",
+      "requiredKeys": [
+        "alternative"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "human-rights-incident",
+      "sourceRecordIds": [
+        "571cbef1-7e7c-5174-9dda-f603d5d9a829"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza críticamente la situación ficticia de irrespeto a los derechos humanos proporcionada y argumenta qué derechos están implicados con las normas dadas. No reveles vivencias personales.",
+      "requiredKeys": [
+        "interpretation",
+        "argument"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "dialogic-procedures",
+      "sourceRecordIds": [
+        "cdafd2f0-d755-5ae0-a102-89360de27e98"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Identifica procedimientos dialógicos para solucionar el conflicto escolar ficticio proporcionado y justifica su pertinencia para las partes. No hagas una mediación real.",
+      "requiredKeys": [
+        "alternatives",
+        "argument"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "hypothesis-discussion",
+      "sourceRecordIds": [
+        "3318d242-9b45-5215-b072-1886a1935406"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Presenta y discute con tus compañeros la hipótesis sobre la solución del conflicto social ficticio, usando los hechos del caso y respondiendo a las objeciones. No califiques las creencias privadas de nadie.",
+      "requiredKeys": [
+        "hypothesis-discussion"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "environmental-duty-proposal",
+      "sourceRecordIds": [
+        "cae9d9f7-5daa-523d-aff1-9cfa65f75075"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Elabora una propuesta para la protección ambiental que relacione las acciones con los deberes indicados y las condiciones del caso ficticio. No ejecutes gastos ni campañas.",
+      "requiredKeys": [
+        "proposal"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "ecological-educational-proposal",
+      "sourceRecordIds": [
+        "552f72f7-33bf-5e2a-a523-250b935389f8"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Investiga en las fuentes confiables proporcionadas y presenta una propuesta ecológica y educativa para la acción por el clima y la sostenibilidad local del caso ficticio. Relaciona los hallazgos con las acciones propuestas. No recopiles datos personales.",
+      "requiredKeys": [
+        "research-content",
+        "sources",
+        "proposal"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "fertility-life-expectancy-graph",
+      "sourceRecordIds": [
+        "30e95617-ccc5-5c5e-a16d-e02663c84592"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Representa gráficamente las series de fecundidad y esperanza de vida de la República Dominicana proporcionadas, conservando valores, unidades y períodos. No añadas datos de natalidad ni mortalidad.",
+      "requiredKeys": [
+        "statistical-series"
+      ],
+      "absent": "caligrafía|materiales costosos obligatorios|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "powers-conflict-period",
+      "sourceRecordIds": [
+        "cdae62c6-68a3-57f5-844c-732fe3640c4c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Analiza los enfrentamientos de las grandes potencias por el dominio político y económico durante la primera mitad del siglo XX usando las fuentes proporcionadas. No añadas una guerra que no aparece en el caso.",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "absent": "Primera Guerra Mundial|Segunda Guerra Mundial",
+      "requiredTopic": null
+    },
+    {
+      "id": "article-us-canada-role",
+      "sourceRecordIds": [
+        "bc9d1d4c-dcdd-5469-aedd-f5eecc12d65a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Identifica y justifica una temática para un artículo sobre el papel de Estados Unidos y Canadá en la Primera Guerra Mundial entre 1917 y 1918, con las opciones y fuentes proporcionadas. No redactes todavía el artículo.",
+      "requiredKeys": [
+        "topic-selection",
+        "argument"
+      ],
+      "absent": "afianzamiento económico|economía dominicana",
+      "requiredTopic": null
+    },
+    {
+      "id": "article-agricultural-growth",
+      "sourceRecordIds": [
+        "bc9d1d4c-dcdd-5469-aedd-f5eecc12d65a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Identifica y justifica una temática para un artículo sobre el auge de la explotación agrícola en los casos proporcionados. No añadas una guerra ni otro país.",
+      "requiredKeys": [
+        "topic-selection",
+        "argument"
+      ],
+      "absent": "economía dominicana|Primera Guerra Mundial",
+      "requiredTopic": null
+    },
+    {
+      "id": "article-mining-control",
+      "sourceRecordIds": [
+        "bc9d1d4c-dcdd-5469-aedd-f5eecc12d65a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Identifica y justifica una temática para un artículo sobre el control de las explotaciones mineras en los casos proporcionados. No redactes todavía el artículo.",
+      "requiredKeys": [
+        "topic-selection",
+        "argument"
+      ],
+      "absent": "economía dominicana|Primera Guerra Mundial",
+      "requiredTopic": null
+    },
+    {
+      "id": "historical-sources-contrast",
+      "sourceRecordIds": [
+        "bb55104d-734f-5485-980a-f42661d16eb6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "PROCEDURAL_ACTION_CONTRAST",
+      "description": "Compara las fuentes históricas proporcionadas sobre el fenómeno estudiado, distinguiendo qué sostiene cada una y sus contextos. Sin explicar su importancia general ni investigar nuevas fuentes.",
+      "requiredKeys": [
+        "comparison",
+        "source-evidence"
+      ],
+      "absent": "importancia de las fuentes históricas",
+      "requiredTopic": null
+    },
     {
       "id": "fault-map",
       "sourceRecordIds": [
@@ -2841,14 +3753,14 @@
     }
   ],
   "verification": {
-    "automatedFixtures": 61,
-    "fullInstrumentsGenerated": 244,
+    "automatedFixtures": 120,
+    "fullInstrumentsGenerated": 480,
     "fullReview": {
-      "reviewedWithMatchingDigest": 244,
+      "reviewedWithMatchingDigest": 480,
       "pending": 0,
       "method": "CONTENT_REVIEW_DEDUPLICATED_TEXT_AND_EACH_FORMAT_STRUCTURE_NOT_BROWSER",
       "limits": [
-        "61 consignas representativas:38 explicaciones de grupo y23 contratos concretos.244 variantes leídas; no equivalen a ejecutar todas las acciones de cada registro curricular compuesto.",
+        "120 consignas representativas:39 explicaciones de grupo,23 contratos anteriores y58 contrastes procedimentales nuevos.480 variantes leídas; no equivalen a ejecutar todas las acciones de cada registro curricular compuesto.",
         "La clasificación de126 registros conceptuales/procedimentales y dos indicadores separados acredita correspondencia semántica, no cobertura procedimental exhaustiva.",
         "Pendientes variantes de trabajo de campo, manejo real de aparatos, todas las representaciones escénicas y los restantes formatos visuales personales. La rúbrica representativa tiene registro separado.",
         "Las comprobaciones de paridad, puntos e historial complementan la revisión; no la sustituyen."
@@ -2856,20 +3768,20 @@
     },
     "httpDb": "AUTHENTICATED_FOUR_FORMATS_SAVED_REOPENED",
     "browser": {
-      "status": "VISUAL_REPRESENTATIVE_PERSONAL_ACCOUNT_SAVED_REOPENED",
-      "catalog": "evaluation-2026.99",
-      "evidence": "docs/curriculum/cobertura-secundaria/sociales-2-verificacion-navegador.json",
-      "format": "rubrica",
+      "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+      "catalog": "evaluation-2026.100",
+      "evidence": "docs/curriculum/cobertura-secundaria/sociales-2-verificacion-navegador-evaluation-2026.100.json",
+      "format": "lista-ponderada",
       "limits": [
-        "One representative rubric flow in the personal context; not four visual formats or complete procedural coverage.",
-        "The new road-safety description also requested a separate justification. Release99 omitted that criterion; reproduced locally and pending a new release, never an overwrite of99.",
-        "The global Activities list timed out. The subject route loaded, saved and reopened successfully.",
-        "The subject detail Instrument tab exposed raw field keys; the creator/editor rendered the rubric correctly. Presentation in that detail remains pending.",
-        "The loaded DOM script matched the current build; active service-worker internals were not inspected or modified."
+        "Pruebas visuales de un caso de seguridad vial en dos actividades QA nuevas; no todos los temas y propósitos del grado.",
+        "Se inspeccionaron rúbrica y escala antes de elegir ponderada; se guardaron y reabrieron ponderada y cotejo. No afirmar guardado visual de los otros dos formatos en100.",
+        "La prueba99 permanece separada y su instrumento conserva la huella a8b64949f942c91851083c39b25f8806.",
+        "No se borraron caché, service worker, almacenamiento ni borradores previos. No se inspeccionaron internals del service worker.",
+        "Se usó Cursos→asignatura→Actividades. La lista global con timeout y el detalle con claves internas siguen documentados."
       ]
     },
     "httpEvidence": {
-      "catalog": "evaluation-2026.99",
+      "catalog": "evaluation-2026.100",
       "sourceScope": "0457e061-5d8d-5db1-b6d9-dfdd17bb4d55",
       "formats": [
         "rubrica",
@@ -2883,27 +3795,16 @@
         "rubrica",
         "lista-cotejo",
         "escala",
-        "lista-ponderada",
-        "rubrica",
-        "lista-cotejo",
-        "escala",
-        "lista-ponderada",
-        "rubrica",
-        "lista-cotejo",
-        "escala",
-        "lista-ponderada",
-        "rubrica",
-        "lista-cotejo",
-        "escala"
+        "lista-ponderada"
       ],
       "strategyOnlyInstrumentUnchanged": true,
       "manualTextPreserved": true,
-      "browser": "VISUAL_REPRESENTATIVE_PERSONAL_ACCOUNT_SAVED_REOPENED"
+      "browser": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT"
     },
     "currentCatalogHttpRuns": [
       {
-        "evidence": "social-2-evaluation-2026.99-source-ff5db50d-0340-599f-b306-5efccc060a1b-products-http.json",
-        "samples": 23,
+        "evidence": "social-2-evaluation-2026.100-source-ff5db50d-0340-599f-b306-5efccc060a1b-procedural-sample-c7f6a81e5c12-http.json",
+        "samples": 12,
         "sourceScope": "0457e061-5d8d-5db1-b6d9-dfdd17bb4d55",
         "formats": [
           "rubrica",
@@ -2915,7 +3816,7 @@
       }
     ]
   },
-  "providerCatalog": "evaluation-2026.99",
+  "providerCatalog": "evaluation-2026.100",
   "sourcePublication": {
     "status": "PUBLISHED_LITERAL_SOURCE_NOT_COMPLETE_INSTRUMENT_COVERAGE",
     "code": "MINERD_SECUNDARIA_2023_SOC_COMUN_G2_V1",
@@ -2946,13 +3847,6 @@
     }
   ],
   "lexicallyUnmatchedReviewedRecords": [
-    {
-      "id": "bb55104d-734f-5485-980a-f42661d16eb6",
-      "text": "• Reconocimiento de la importancia de las fuentes históricas\nen los fenómenos estudiados.",
-      "type": "PROCEDURE",
-      "pdfPage": 249,
-      "status": "SEMANTIC_GROUP_LINK_NOT_AUTOMATIC_ACTION_COVERAGE"
-    },
     {
       "id": "ebc7f84c-3d57-5910-9fe1-23b8d89f6cbc",
       "text": "• Planes y tratados",

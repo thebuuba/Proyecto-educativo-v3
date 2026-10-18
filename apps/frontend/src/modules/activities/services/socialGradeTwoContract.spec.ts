@@ -1,12 +1,13 @@
 import {describe,it,expect} from 'vitest'
 import {socialGradeTwoTopics,resolveCommonSocialTask,validateInstrumentDefinition} from '@aula/shared'
 import contracts from '../../../../../../data/evaluation-instruments/social-grade-two-contracts.json'
+import procedural from '../../../../../../data/evaluation-instruments/social-grade-two-procedural-contracts.json'
 import {recommend} from '../../../../../backend/src/modules/evaluation-instruments/recommendation-engine'
 import {editableFallbackRecommendation,recommendationToFields} from './instrumentPreparation'
 import {scoreInstrumentFields} from './instrumentScoring'
 import {completeInstrumentCriterion,nextCatalogCriterion} from './instrumentCriterionAddition'
 const context={level:'SECONDARY' as const,grade:2,cycle:1,subjectCode:'SOC',subjectName:'Ciencias Sociales',modalityCode:'academic',optativeExitName:null}
-const samples=[...socialGradeTwoTopics.map(t=>({id:t.id,description:`Explica ${t.label}.`,topicId:t.id})),...contracts.cases.map(c=>({...c,topicId:null}))]
+const samples=[...socialGradeTwoTopics.map(t=>({id:t.id,description:`Explica ${t.label}.`,topicId:t.id})),...[...contracts.cases,...procedural.cases].map(c=>({...c,topicId:null}))]
 const content=(p:ReturnType<typeof editableFallbackRecommendation>)=>({activity:p.activityType,type:p.instrumentType,levels:p.levels,criteria:p.criteria.map(({id,sourceReferences,sourceType,...c})=>c)})
 describe('Sociales segundo: instrumento completo y controles compartidos',()=>{
  for(const task of samples)for(const instrumentType of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const maxScore of [20,17.35])it(`${task.id}/${instrumentType}/${maxScore}`,()=>{
