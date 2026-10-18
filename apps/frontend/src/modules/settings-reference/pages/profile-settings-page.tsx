@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ProfilePreferences, ProfileSettings, UpdateProfileSettingsInput } from '@aula/shared'
-import { ExternalLink } from 'lucide-react'
-import { Button } from '../reference-ui'
 import { FeedbackBanner } from '@/components/ui/SemanticUI'
 import { useAuth } from '@/modules/auth/hooks/useAuth'
 import { SettingsPageHeader } from '../components/settings-page-header'
@@ -75,8 +73,7 @@ export function ProfileSettingsPage() {
     country: draft.preferences.country ?? '', city: draft.preferences.city ?? '', educationLevel: draft.preferences.educationLevel ?? '' }
   const memberSince = new Intl.DateTimeFormat('es', { month: 'short', year: 'numeric', timeZone: saved.preferences.timezone }).format(new Date(saved.createdAt)).replace('.', '')
   return <div className="space-y-8">
-    <SettingsPageHeader activeTab="profile" title="Perfil" description="Gestiona tu información personal y académica."
-      actions={<Button variant="outline" className="h-11 rounded-xl border-transparent bg-card font-semibold shadow-xs" disabled title="Disponible al conectar la visibilidad de perfiles"><ExternalLink className="mr-2 h-4 w-4 text-primary" />Ver perfil público · Próximamente</Button>} />
+    <SettingsPageHeader activeTab="profile" title="Perfil" description="Gestiona tu información personal y académica." />
     {error && <FeedbackBanner tone="danger" role="alert">{error}</FeedbackBanner>}
     {notice && <FeedbackBanner tone="info" role="status">{notice}</FeedbackBanner>}
     <input ref={fileInput} aria-label="Archivo de foto" type="file" accept="image/png,image/jpeg,image/webp" className="sr-only" disabled={pending}
@@ -95,7 +92,7 @@ export function ProfileSettingsPage() {
       </div>
       <fieldset disabled={pending} className="min-w-0 space-y-6">
         <PersonalInfoForm values={values} onChange={update} />
-        <AcademicInfoCard values={values} onChange={update} onInterestsChange={(interests: string[]) => update('interests', interests)} />
+        <AcademicInfoCard values={values} onChange={update} />
       </fieldset>
     </div>
     <SettingsSaveBar visible={dirty} saved={justSaved} pending={pending} onDiscard={() => { setDraft(saved); setError('') }} onSave={() => void mutate(() => updateOwnProfileSettings(inputOf(draft)))} />
