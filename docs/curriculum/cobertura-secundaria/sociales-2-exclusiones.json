@@ -1,0 +1,25 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 2,
+  "policy": "KEEP_LITERAL_SOURCE_EXCLUDE_ONLY_AS_INDEPENDENT_ASSESSED_TOPIC",
+  "records": [
+    {
+      "id": "eec0722c-1335-5809-9b11-f12b966ff911",
+      "pdfPage": 249,
+      "reason": "GROUP_HEADING",
+      "explanation": "Encabezado general de geografía y contexto de la Tierra; no crear otro tema independiente de los conceptos específicos siguientes."
+    },
+    {
+      "id": "e9ce1b1c-95d4-5f3c-8727-1d8dea0608b2",
+      "pdfPage": 251,
+      "reason": "GROUP_HEADING",
+      "explanation": "Educación ciudadana agrupa los contenidos de democracia, derechos, símbolos y convivencia."
+    },
+    {
+      "id": "91858913-66bf-5afd-92ce-a81b8a021ceb",
+      "pdfPage": 252,
+      "reason": "PERSONAL_DISPOSITION",
+      "explanation": "El homenaje o sentimiento patriótico no se califica como adhesión personal; los conocimientos y representaciones observables de los símbolos se evalúan cuando se piden."
+    }
+  ]
+}

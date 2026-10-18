@@ -270,3 +270,4 @@ export type { TeachingStrategy, TeachingStrategyOrigin, TeachingStrategyContext 
 export * from './secondary-french'
 export * from './secondary-math-common'
 export * from './secondary-science-common'
+export {socialGradeTwoTopics} from './secondary-social-grade-2'

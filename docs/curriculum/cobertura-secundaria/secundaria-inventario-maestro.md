@@ -31,7 +31,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Matemática | 5 | Común | 231, 232 | IMPLEMENTED_WITH_EXISTING_EVIDENCE |
 | Matemática | 6 | Común | 233, 234, 235 | IMPLEMENTED_WITH_EXISTING_EVIDENCE |
 | Ciencias Sociales | 1 | Común | 244, 245, 246, 247, 248 | PARTIAL_VARIANTS_AND_PERSONAL_VISUAL_PENDING |
-| Ciencias Sociales | 2 | Común | 249, 250, 251, 252, 253 | PENDING |
+| Ciencias Sociales | 2 | Común | 249, 250, 251, 252, 253 | PARTIAL_VARIANTS_AND_PERSONAL_VISUAL_PENDING |
 | Ciencias Sociales | 3 | Común | 254, 255, 256, 257 | PENDING |
 | Ciencias Sociales | 4 | Común | 264, 265, 266, 267, 268 | PENDING |
 | Ciencias Sociales | 5 | Común | 269, 270, 271, 272, 273, 274, 275 | PENDING |

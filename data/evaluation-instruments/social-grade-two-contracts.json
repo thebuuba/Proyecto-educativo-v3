@@ -1,0 +1,340 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 2,
+  "subjectCode": "SOC",
+  "cases": [
+    {
+      "id": "fault-map",
+      "sourceRecordIds": [
+        "ab956a09-06d8-5ad1-8bd8-8e96d55d03c0"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "MAP_LEGEND",
+      "description": "Interpreta la leyenda del mapa de fallas geológicas proporcionado para distinguir las zonas señaladas. No calcules escalas ni utilices GPS.",
+      "requiredKeys": [
+        "map-legend"
+      ],
+      "absent": "GPS|Mercator|cálculo de escala",
+      "requiredTopic": null
+    },
+    {
+      "id": "climograms",
+      "sourceRecordIds": [
+        "f93d4793-fa63-5723-9d3b-f084bb15392b"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "CLIMOGRAM_COMPARISON",
+      "description": "Compara los climogramas proporcionados usando las temperaturas y precipitaciones mensuales para explicar sus diferencias de clima. No añadas datos de otras ciudades.",
+      "requiredKeys": [
+        "climogram-reading",
+        "climate-comparison"
+      ],
+      "absent": "otras ciudades|decoración|caligrafía",
+      "requiredTopic": null
+    },
+    {
+      "id": "weather-records",
+      "sourceRecordIds": [
+        "8a8674d9-ed57-538a-8ce3-733736a34cee"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "WEATHER_RECORD_READING",
+      "description": "Interpreta los registros proporcionados de pluviómetro y anemómetro, distinguiendo la magnitud y la unidad de cada medición. No compres ni manejes aparatos.",
+      "requiredKeys": [
+        "weather-reading"
+      ],
+      "absent": "compra|maneja aparatos|experimento obligatorio",
+      "requiredTopic": null
+    },
+    {
+      "id": "demographic-series",
+      "sourceRecordIds": [
+        "30e95617-ccc5-5c5e-a16d-e02663c84592"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "DEMOGRAPHIC_GRAPH",
+      "description": "Representa gráficamente las series de natalidad y mortalidad proporcionadas, conservando valores, unidades y períodos. No obtengas datos de tu familia.",
+      "requiredKeys": [
+        "statistical-series"
+      ],
+      "absent": "datos de tu familia|fecundidad obligatoria|encuesta personal",
+      "requiredTopic": null
+    },
+    {
+      "id": "population-pyramids",
+      "sourceRecordIds": [
+        "74f10621-172f-5549-a155-f596a51566b6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "POPULATION_PYRAMID",
+      "description": "Compara las dos pirámides de edades proporcionadas, interpretando los grupos de edad y la estructura de la población. No infieras la situación de una persona concreta.",
+      "requiredKeys": [
+        "age-structure",
+        "population-comparison"
+      ],
+      "absent": "persona concreta|rasgos personales|encuesta familiar",
+      "requiredTopic": null
+    },
+    {
+      "id": "migration-map",
+      "sourceRecordIds": [
+        "2a352230-cb7f-5a22-9caf-022b6f548b9f"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "MIGRATION_FLOW_MAP",
+      "description": "Representa en el mapamundi las rutas migratorias dadas, indicando origen, destino, dirección del flujo y leyenda. Sin entrevistas ni información personal.",
+      "requiredKeys": [
+        "migration-flow",
+        "map-legend"
+      ],
+      "absent": "entrevista|situación migratoria personal|datos privados",
+      "requiredTopic": null
+    },
+    {
+      "id": "development-indicators",
+      "sourceRecordIds": [
+        "2a352230-cb7f-5a22-9caf-022b6f548b9f"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "DEVELOPMENT_INDICATORS",
+      "description": "Compara los indicadores económicos del desarrollo con el IDH en la tabla proporcionada, explicando sus magnitudes y los límites de la comparación. No supongas que ingreso e IDH significan lo mismo.",
+      "requiredKeys": [
+        "development-indicators"
+      ],
+      "absent": "ingreso e IDH son iguales|riqueza personal",
+      "requiredTopic": null
+    },
+    {
+      "id": "war-causes",
+      "sourceRecordIds": [
+        "cdae62c6-68a3-57f5-844c-732fe3640c4c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "HISTORICAL_CAUSAL_SOURCES",
+      "description": "Analiza las causas y consecuencias de la Primera Guerra Mundial utilizando las fuentes proporcionadas. No elabores un mapa.",
+      "requiredKeys": [
+        "causes",
+        "consequences",
+        "source-evidence"
+      ],
+      "absent": "Segunda Guerra Mundial|elabora un mapa|caligrafía",
+      "requiredTopic": null
+    },
+    {
+      "id": "canal-routes",
+      "sourceRecordIds": [
+        "f8b6fe1c-fbec-560f-9642-96b64c89e2ff"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "TRANSPORT_ROUTES",
+      "description": "Analiza cómo los canales de Suez y Panamá modificaron las rutas de transporte y los intercambios según los mapas históricos proporcionados. No calcules escalas ni uses GPS.",
+      "requiredKeys": [
+        "transport-routes"
+      ],
+      "absent": "1897|GPS|Mercator",
+      "requiredTopic": null
+    },
+    {
+      "id": "treaties",
+      "sourceRecordIds": [
+        "30dd991f-4471-5601-bdde-bff570c9bf24"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "TREATY_CONTEXT",
+      "description": "Compara los tratados proporcionados anteriores y posteriores a la Primera Guerra Mundial, relacionando sus disposiciones con el contexto de cada período. Sin defender una postura política.",
+      "requiredKeys": [
+        "treaty-context"
+      ],
+      "absent": "postura política|adhesión personal|Segunda Guerra Mundial",
+      "requiredTopic": null
+    },
+    {
+      "id": "antillanist-perspectives",
+      "sourceRecordIds": [
+        "8c58f9b2-eb50-5322-becf-1ba585ff03ea"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "HISTORICAL_PERSPECTIVES",
+      "description": "Interpreta las perspectivas de José Martí y Eugenio María de Hostos sobre el antillanismo frente al expansionismo usando los textos proporcionados. No expreses adhesión personal.",
+      "requiredKeys": [
+        "perspectives"
+      ],
+      "absent": "debe apoyar|adhesión personal obligatoria|posición correcta del estudiante",
+      "requiredTopic": null
+    },
+    {
+      "id": "economic-poster",
+      "sourceRecordIds": [
+        "d8322885-1b58-5dcf-9061-6056b86f7818"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "ECONOMIC_POSTER",
+      "description": "Elabora un afiche sobre las características de la economía dominicana a principios del siglo XX, relacionando la información y los recursos visuales proporcionados. No hagas exposición oral.",
+      "requiredKeys": [
+        "visual-information",
+        "visual-relations"
+      ],
+      "absent": "exposición oral|talento artístico|materiales costosos",
+      "requiredTopic": null
+    },
+    {
+      "id": "democratic-project",
+      "sourceRecordIds": [
+        "4789b282-3013-5464-9555-7d95800b4c5d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "DEMOCRATIC_PROJECT",
+      "description": "Elabora un proyecto sobre el Estado de derecho y la solución democrática del conflicto ficticio. Explica su propósito y plantea acciones compatibles con las condiciones proporcionadas. No hagas consultas reales.",
+      "requiredKeys": [
+        "project-purpose",
+        "project-actions"
+      ],
+      "absent": "consulta presencial|postura política correcta|recogida de datos privados",
+      "requiredTopic": null
+    },
+    {
+      "id": "road-statistics",
+      "sourceRecordIds": [
+        "b44c4108-02d5-58de-aa49-8fed74cd4412"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "ROAD_STATISTICAL_ANALYSIS",
+      "description": "Analiza los datos de accidentes de tránsito proporcionados y compara las frecuencias registradas para explicar los hallazgos sobre seguridad vial. No observes la conducta de estudiantes.",
+      "requiredKeys": [
+        "statistical-series"
+      ],
+      "absent": "personalidad|aplica las reglas indicadas en todas|conducta del estudiante",
+      "requiredTopic": null
+    },
+    {
+      "id": "environmental-measures",
+      "sourceRecordIds": [
+        "a7bd15a7-d457-5a4a-9cda-a4f6798755fa"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "ENVIRONMENTAL_MEASURES",
+      "description": "Analiza las medidas de protección ambiental de las Naciones Unidas descritas en el documento proporcionado y propone acciones para el caso ficticio. No ejecutes gastos ni campañas reales.",
+      "requiredKeys": [
+        "environmental-measures",
+        "proposal"
+      ],
+      "absent": "gastos reales|ejecuta una campaña|contribución económica",
+      "requiredTopic": null
+    },
+    {
+      "id": "emergency-map",
+      "sourceRecordIds": [
+        "7ef3e59f-e8c6-586c-bce3-ac680fb4e78d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "EMERGENCY_MAP",
+      "description": "Interpreta la leyenda del mapa de emergencia proporcionado y propone acciones preventivas compatibles con las indicaciones oficiales del caso. No realices evacuaciones ni simulacros.",
+      "requiredKeys": [
+        "map-legend",
+        "prevention-fit"
+      ],
+      "absent": "realiza una evacuación|ejecuta un simulacro|calidad artística",
+      "requiredTopic": null
+    },
+    {
+      "id": "modern-postmodern-argument",
+      "sourceRecordIds": [
+        "c92c1391-787e-5d10-9d69-ef26a8844c5e"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "family": "INDICATOR_ANCHORED_ADAPTATION",
+      "description": "Explica las características de la cultura moderna y postmoderna estudiadas y argumenta sobre sus diferencias usando las fuentes proporcionadas. No defiendas creencias privadas.",
+      "requiredKeys": [
+        "interpretation",
+        "argument"
+      ],
+      "absent": "creencias privadas|adhesión personal obligatoria",
+      "requiredTopic": null
+    },
+    {
+      "id": "decolonization-maps",
+      "sourceRecordIds": [
+        "c5b778f8-a098-5d62-a219-c76238be0457"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "family": "INDICATOR_ANCHORED_ADAPTATION",
+      "description": "Compara los cambios históricos y espaciales del neocolonialismo y la descolonización en los mapas proporcionados, relacionando cada cambio con su contexto. No añadas una guerra no incluida en los mapas.",
+      "requiredKeys": [
+        "historical-map-change"
+      ],
+      "absent": "Segunda Guerra Mundial obligatoria|caligrafía",
+      "requiredTopic": null
+    },
+    {
+      "id": "developed-country-links",
+      "sourceRecordIds": [
+        "acf6ddfc-e4e9-5848-b1e8-397ba81f013c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "DEVELOPMENT_LINKS",
+      "description": "Compara las relaciones e intercambios entre los países desarrollados y subdesarrollados en el esquema proporcionado. No añadas datos de otros países.",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "absent": "datos de otros países",
+      "requiredTopic": "north-south"
+    },
+    {
+      "id": "caribbean-sovereignty",
+      "sourceRecordIds": [
+        "98a0150b-0d04-5f4f-ab09-1528e223660f"
+      ],
+      "sourceRecordType": "CONCEPT",
+      "family": "CONCEPT_ANCHORED_ADAPTATION",
+      "description": "Explica las luchas por la independencia y la soberanía de los países caribeños en los casos proporcionados. No compares autores.",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "absent": "diferenciando autores|compara autores",
+      "requiredTopic": "antillanism"
+    },
+    {
+      "id": "regional-war-impact",
+      "sourceRecordIds": [
+        "5954e7bf-596b-55f5-889d-dfe105f66b40"
+      ],
+      "sourceRecordType": "CONCEPT",
+      "family": "CONCEPT_ANCHORED_ADAPTATION",
+      "description": "Explica el impacto de la Primera Guerra Mundial en la República Dominicana a partir del caso económico proporcionado. No expliques todos los cambios mundiales.",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "absent": "todos los cambios mundiales",
+      "requiredTopic": "war-dominican-economy"
+    },
+    {
+      "id": "natural-classification",
+      "sourceRecordIds": [
+        "8b0d8f9c-4848-5a34-8a93-0e057133841d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "NATURAL_PHENOMENA_CLASSIFICATION",
+      "description": "Investiga en las fuentes proporcionadas las características de los fenómenos naturales y clasifica los casos según las categorías indicadas. No propongas prevención ni planes de emergencia.",
+      "requiredKeys": [
+        "phenomenon-classification",
+        "sources"
+      ],
+      "absent": "planes preventivos|acciones preventivas|indicaciones oficiales para la prevención",
+      "requiredTopic": "disaster-risk"
+    },
+    {
+      "id": "conflict-hypothesis",
+      "sourceRecordIds": [
+        "dbc04dc6-22d8-5c30-8ded-3bd93b3f2ffc"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "family": "CONFLICT_HYPOTHESIS",
+      "description": "Formula una hipótesis sencilla sobre las causas del conflicto social ficticio descrito, diferenciando datos e inferencias. No propongas todavía soluciones.",
+      "requiredKeys": [
+        "hypothesis"
+      ],
+      "absent": "alternativas dialogadas|propuesta de solución",
+      "requiredTopic": "peace"
+    }
+  ]
+}

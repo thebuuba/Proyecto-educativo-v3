@@ -1,0 +1,1240 @@
+{
+  "catalog": "evaluation-2026.99",
+  "grade": 2,
+  "method": "CONTENT_REVIEW_DEDUPLICATED_TEXT_AND_EACH_FORMAT_STRUCTURE_NOT_BROWSER",
+  "reviewedAspects": [
+    "Lectura de consignas, títulos, evidencias y progresiones completas; textos idénticos entre formatos leídos una vez y contrastados con la estructura de cada variante.",
+    "Pertinencia geográfica, histórica, demográfica y ciudadana; distinguir interpretación, comparación, investigación y productos solicitados.",
+    "No imponer mapas, documentos, productos, creencias privadas, datos personales ni comparaciones que la consigna no solicita.",
+    "Separar lectura de leyenda y construcción; evitar duplicar acciones en un mismo proyecto de democracia y paz.",
+    "Niveles graduados sobre la misma evidencia; cotejo sin descriptores, escala de grado y ponderada con crédito parcial explícito."
+  ],
+  "limits": [
+    "61 consignas representativas:38 explicaciones de grupo y23 contratos concretos.244 variantes leídas; no equivalen a ejecutar todas las acciones de cada registro curricular compuesto.",
+    "La clasificación de126 registros conceptuales/procedimentales y dos indicadores separados acredita correspondencia semántica, no cobertura procedimental exhaustiva.",
+    "Pendientes variantes de trabajo de campo, manejo real de aparatos, todas las representaciones escénicas y los restantes formatos visuales personales. La rúbrica representativa tiene registro separado.",
+    "Las comprobaciones de paridad, puntos e historial complementan la revisión; no la sustituyen."
+  ],
+  "items": [
+    {
+      "caseId": "geomorphology",
+      "instrumentType": "rubrica",
+      "sha256": "c210ab1956fb4526d7305e4406f98dce2b5c145bf0abe95d1ca5655a685eefbb"
+    },
+    {
+      "caseId": "geomorphology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "581e65affe0e0ee46df908cd06c7d1f305d29a0a2f98647a835bd7bc9a242fe9"
+    },
+    {
+      "caseId": "geomorphology",
+      "instrumentType": "escala",
+      "sha256": "4aa08f64fefa7e9fa95d0436f0661b337d8994a16ab1aaaf6f656286e02b7f99"
+    },
+    {
+      "caseId": "geomorphology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cc9fce8e91f8dc313f4d5461e8f27253983fb5bdc913b2aecee8077ae2b926fe"
+    },
+    {
+      "caseId": "tectonics",
+      "instrumentType": "rubrica",
+      "sha256": "a36b47a751aefc24fa6c0af01ce97e1ce122d09ef19a9f10a9b0068a3a98aca0"
+    },
+    {
+      "caseId": "tectonics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "45d9254106fcc7e6a1433ee88f86f6b8bc776289b3d04bcb600989f538a3b73c"
+    },
+    {
+      "caseId": "tectonics",
+      "instrumentType": "escala",
+      "sha256": "1e7eb93d57193d5e4b3a5094996ef511aea0b1145a35326a124917e90d0b5012"
+    },
+    {
+      "caseId": "tectonics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1045914b8436bf1e128a4d3a3b63cb1f1ff929aefb27c7fd1985f0edbeb701e5"
+    },
+    {
+      "caseId": "relief",
+      "instrumentType": "rubrica",
+      "sha256": "9ee83ca6f86ea6f1b0e6aa472e34418476c85ee0a9695531e4a2b0d4a93642aa"
+    },
+    {
+      "caseId": "relief",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e936cd0c8db989ea94b881be3834e1206541e2937c1b5b2f7b01e42117292e33"
+    },
+    {
+      "caseId": "relief",
+      "instrumentType": "escala",
+      "sha256": "78f79f422fb78599452dc934ab7fd0951481b0e8ad2229209312da4a29c00028"
+    },
+    {
+      "caseId": "relief",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8526dab59ac4971d3b713ec5ea21e77a8c73b37a1d9b53b3631451fd03840314"
+    },
+    {
+      "caseId": "geological-faults",
+      "instrumentType": "rubrica",
+      "sha256": "6152267acaa3559d2a908acf3ab457345022615f1701f49ffafe56a5bc33a93c"
+    },
+    {
+      "caseId": "geological-faults",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d3af6364e9c8f211a144aef95685c7dc9479b7b7428f636d4356681a63933bd3"
+    },
+    {
+      "caseId": "geological-faults",
+      "instrumentType": "escala",
+      "sha256": "6f0cea9ea820d6439c267f339bf34e254f4c5d0e172883e24cbb3e916c4b0e59"
+    },
+    {
+      "caseId": "geological-faults",
+      "instrumentType": "lista-ponderada",
+      "sha256": "74befc6311276b50dea6b9b64a8f5038f584ec72596b02367318515ea9f8f1a8"
+    },
+    {
+      "caseId": "seismic",
+      "instrumentType": "rubrica",
+      "sha256": "4d2883a9f6c4e62dbc9d06cd8457405df12fba62c8ccd48797fb900ea97a7fb2"
+    },
+    {
+      "caseId": "seismic",
+      "instrumentType": "lista-cotejo",
+      "sha256": "81b1edbbf3adc6dd71eb7879ac7902c1a24e892f12c3d157490bbff3d39f3d8a"
+    },
+    {
+      "caseId": "seismic",
+      "instrumentType": "escala",
+      "sha256": "8805c8f0f29d8ac7c9cbd5cede559d078d0f6296fc659aa366f81a074f15c836"
+    },
+    {
+      "caseId": "seismic",
+      "instrumentType": "lista-ponderada",
+      "sha256": "23fcf5c1069770f6669a08758b98ca36fa899efc81695521388f0b4aeadd84c8"
+    },
+    {
+      "caseId": "volcanism",
+      "instrumentType": "rubrica",
+      "sha256": "ea92dd548fe2e2c73a6d65158a01127900af35420bd18fef7dd680ee9878957e"
+    },
+    {
+      "caseId": "volcanism",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0d3bc96709d881439e0d14678ab129b3a3881f7ae411c858b2bdff9ea89d6ca4"
+    },
+    {
+      "caseId": "volcanism",
+      "instrumentType": "escala",
+      "sha256": "28a5a99d0b45a7d6735554c1c94e9943fc6de225cd3914b7f6de3442ec26061f"
+    },
+    {
+      "caseId": "volcanism",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2d1c74e273795e4557c2db4a15ad6730338876c39f8a6d6516f2ab0e1cb19004"
+    },
+    {
+      "caseId": "climate",
+      "instrumentType": "rubrica",
+      "sha256": "285f1c06eaedef24c0d45fd3119639701bcce14e10ea30dbe6f99a9b8a371b9d"
+    },
+    {
+      "caseId": "climate",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bd43c7fac782a0b8d2bf79726c7c8ccfa8d05f1ae937d65c776dacae876b24c7"
+    },
+    {
+      "caseId": "climate",
+      "instrumentType": "escala",
+      "sha256": "f3b958cd55a50f608807cd51df9caea28291abc6225c83d1303a804d601bc61e"
+    },
+    {
+      "caseId": "climate",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b85e73aff5d4b8bd3fd330d2decac64ff6387321d47796594ebf20f77f6d65b6"
+    },
+    {
+      "caseId": "weather-instruments",
+      "instrumentType": "rubrica",
+      "sha256": "93cdd6968161d0dc3eb141711950c4dd62aa975a9d7c708c4867c8dfad9bcaf7"
+    },
+    {
+      "caseId": "weather-instruments",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cf359aa153588a6188ebd99fcd6d2ab34d5de8ee3691871545f2715b127c41f6"
+    },
+    {
+      "caseId": "weather-instruments",
+      "instrumentType": "escala",
+      "sha256": "cc5a7a1c2780b0d909c397da4553dd1c3bd1ed8644b61a108dac9e27d6097f4a"
+    },
+    {
+      "caseId": "weather-instruments",
+      "instrumentType": "lista-ponderada",
+      "sha256": "08753ce680f077d9c9260b57bf4b2250105bd43cda2dbfdb532ce14aadceebcf"
+    },
+    {
+      "caseId": "water",
+      "instrumentType": "rubrica",
+      "sha256": "d5c873427ad07972512a5644254d18fa5f3831b0bd57de59e16b2970a192f231"
+    },
+    {
+      "caseId": "water",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d121317ff56710a80b5a0b442bbe970ecc8e4ede0f32e5f6003972ab00e90a83"
+    },
+    {
+      "caseId": "water",
+      "instrumentType": "escala",
+      "sha256": "3f95f074ccae5ae05983a63379c9c817ee4a57a3571b81fcc58df914cdc73180"
+    },
+    {
+      "caseId": "water",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6b227853fee9ce8886d857409a2f57a5974d66177043f5871012083ab160c109"
+    },
+    {
+      "caseId": "atmospheric-hazards",
+      "instrumentType": "rubrica",
+      "sha256": "d1a963894d9e79c7ba80701ddc9ef8dd97324cccc6c6302321b1107926e55e28"
+    },
+    {
+      "caseId": "atmospheric-hazards",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ac9dea81df056599220fca41483852df798701ac511ce39270a2d518d1403283"
+    },
+    {
+      "caseId": "atmospheric-hazards",
+      "instrumentType": "escala",
+      "sha256": "b8276ee606023c3e5a356ac82450ce7cfa32b990629b5248e597d4dd46468891"
+    },
+    {
+      "caseId": "atmospheric-hazards",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a45a37379db448c3a2d21c95e85dd11aa8d7e2961df32b14017ff029f69c7544"
+    },
+    {
+      "caseId": "disaster-risk",
+      "instrumentType": "rubrica",
+      "sha256": "ef850ce2d3c0cc1e1df41e708b29279ce366b95fc32e7d6ca8231d45b6edcf90"
+    },
+    {
+      "caseId": "disaster-risk",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8f4628068618bc24936a87ea28e677c8eba4b5e72acbfd76e405d404367ad90d"
+    },
+    {
+      "caseId": "disaster-risk",
+      "instrumentType": "escala",
+      "sha256": "31d82d5a4459f9cdf52eb134dd1e492806f8c8fb03acde77da9bd329f2f259a2"
+    },
+    {
+      "caseId": "disaster-risk",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8ad27ecdacc39270625901f3606775f0c10c73aae1b20add1d5ecaa56e0be4b0"
+    },
+    {
+      "caseId": "demographic-rates",
+      "instrumentType": "rubrica",
+      "sha256": "ab5a034b4e3dddf8479b082867b5b17cc60af5bf24a8e94769881860424b12b7"
+    },
+    {
+      "caseId": "demographic-rates",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fb735f6db7bdb6b6eec8855521881390471d2bcf97392eeb4610a92625adc93c"
+    },
+    {
+      "caseId": "demographic-rates",
+      "instrumentType": "escala",
+      "sha256": "773008e56b6e213ade74722fc690360b285e44205f0504c86e5cfdbebe5e38f6"
+    },
+    {
+      "caseId": "demographic-rates",
+      "instrumentType": "lista-ponderada",
+      "sha256": "316d16b97f8f8e15f7db74d09c134846c7fc41d55fca50a46f4e970afdc80b8d"
+    },
+    {
+      "caseId": "population-structure",
+      "instrumentType": "rubrica",
+      "sha256": "2849c53d0de83775d05aba010c589f5c80ae59ff99160bcc243cc968c4ac07b5"
+    },
+    {
+      "caseId": "population-structure",
+      "instrumentType": "lista-cotejo",
+      "sha256": "211c790a1b0ca0c4ede38b4b110828d4506b1df905fdaf2d1ed738a48c7d41fc"
+    },
+    {
+      "caseId": "population-structure",
+      "instrumentType": "escala",
+      "sha256": "c49f703b74949fca5a853b31f0d1d129f8f5f85c0b33108bcfa16001742aea33"
+    },
+    {
+      "caseId": "population-structure",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8f9e56c5fdf35139279876c5d3e96a23b15b8a3990007e5d0e2be7c08d4220f2"
+    },
+    {
+      "caseId": "census",
+      "instrumentType": "rubrica",
+      "sha256": "72c18ddb8f5a38c20be5b77327fb27603c06687a1e9ee0260c44a896445a4682"
+    },
+    {
+      "caseId": "census",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d4ed466b1222e7a243b083a4cb884fdd0a7b99695ecf86f3f283bd33fa38eae2"
+    },
+    {
+      "caseId": "census",
+      "instrumentType": "escala",
+      "sha256": "110b278d9600a8ec89bc256a6014001ee8f19c987f68631e6b260c02e5f34ba1"
+    },
+    {
+      "caseId": "census",
+      "instrumentType": "lista-ponderada",
+      "sha256": "89efa086bfbdd0e30a23f371ee377827b09f97b223eaa0f75dafc1d244c0505c"
+    },
+    {
+      "caseId": "migration",
+      "instrumentType": "rubrica",
+      "sha256": "f913dfcdf67bf8dc0e237de0a9016960fafa365a836772844142555b94c393fd"
+    },
+    {
+      "caseId": "migration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6dd8aa14acddd8c8c3991db3ddbfb7c3ea5b283f3c76922c277211a8d17f37b0"
+    },
+    {
+      "caseId": "migration",
+      "instrumentType": "escala",
+      "sha256": "d5583b041a410be2006c4181f121ebc2499177645fc1a3250ba78bda06c53a94"
+    },
+    {
+      "caseId": "migration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ddd8d1c059fbfbcad7fba32193eaa36d33f503341450b65ef400d0f3dbacd117"
+    },
+    {
+      "caseId": "human-impact",
+      "instrumentType": "rubrica",
+      "sha256": "dc6878f24bb025a50560134d0395204e6cb807a2b1944e65b341665a1f5b6a14"
+    },
+    {
+      "caseId": "human-impact",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b5bff020f5b7df6371e45d6fbe72047ca4f8d6bb35df99a4abf9c79e21dbe6dc"
+    },
+    {
+      "caseId": "human-impact",
+      "instrumentType": "escala",
+      "sha256": "04f021fc439843256089e18fbfe5fd91dcd7280bace659a26722128734cc6c20"
+    },
+    {
+      "caseId": "human-impact",
+      "instrumentType": "lista-ponderada",
+      "sha256": "243eb93009e0dad99cf204ce2be6fd1e0dbc59fca5f8220010266e507f76051e"
+    },
+    {
+      "caseId": "imperialism",
+      "instrumentType": "rubrica",
+      "sha256": "00132346472fbf790b9bc127051d32a22be5a3a915efc2a873ff1a8f40200fef"
+    },
+    {
+      "caseId": "imperialism",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d3f9b8dea7d57e29fee3fa0c793a2181e1eb4f7f78b7dae1f12eb05396eab83d"
+    },
+    {
+      "caseId": "imperialism",
+      "instrumentType": "escala",
+      "sha256": "f7675f5f8f4ae86f245b322a784dc5e756ad415dd5609c3da9f0c1860747ca03"
+    },
+    {
+      "caseId": "imperialism",
+      "instrumentType": "lista-ponderada",
+      "sha256": "77dd3e85fadf16fb2085d442d0d3c715fd6912fa6d48b26d367f038ae043980d"
+    },
+    {
+      "caseId": "transport-canals",
+      "instrumentType": "rubrica",
+      "sha256": "49b6377a097b166de2444789d949c84474ec145340a006409ac59f2cf4009fb0"
+    },
+    {
+      "caseId": "transport-canals",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2b235fef788c164193918f35c073cb755eeefb3c9a87713e8c400cfc405a0f65"
+    },
+    {
+      "caseId": "transport-canals",
+      "instrumentType": "escala",
+      "sha256": "1b2591d0b723864e599fd45e04d49a825ae05c1265e869ce528d01d097b01724"
+    },
+    {
+      "caseId": "transport-canals",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c8a619ba74ee9a039d6fb10208809ffc28c8b63c36d6978bdc50078043613bca"
+    },
+    {
+      "caseId": "first-world-war",
+      "instrumentType": "rubrica",
+      "sha256": "0b7432cb6400d3d3f87aa0eae70ba362bda9f8b8c27eda033f48446d8a04adeb"
+    },
+    {
+      "caseId": "first-world-war",
+      "instrumentType": "lista-cotejo",
+      "sha256": "35df720cf6c52d167c8b51c0b652904f4c6e9f77c6de4e53c48515412a19820c"
+    },
+    {
+      "caseId": "first-world-war",
+      "instrumentType": "escala",
+      "sha256": "32b3bd84640d01824e6abb419a3cd6620a96dedc195ddb953bf5a0e3a89f2b52"
+    },
+    {
+      "caseId": "first-world-war",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f54c04ee11c28a86a1e90331efce33b57ebce5068005c42472946743b1d9ba9b"
+    },
+    {
+      "caseId": "russian-revolution",
+      "instrumentType": "rubrica",
+      "sha256": "dccf50881e542caf594893fa8ca10c4457bb4253a86e03fbcad6e985a65523e6"
+    },
+    {
+      "caseId": "russian-revolution",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a26440c5231af4900b3fb90fe2c4d1ca7cc52f673b0e59ce3c90938a4855213a"
+    },
+    {
+      "caseId": "russian-revolution",
+      "instrumentType": "escala",
+      "sha256": "a50715a37499783bd95a057fbb2bcfd7ab5fcdda1a4e80c482da2d27cd52120a"
+    },
+    {
+      "caseId": "russian-revolution",
+      "instrumentType": "lista-ponderada",
+      "sha256": "847f4e8fa49b5766a4abbb0593f284fdcceef6c340e20747a7fbd154ff510619"
+    },
+    {
+      "caseId": "us-economic-rise",
+      "instrumentType": "rubrica",
+      "sha256": "f4efafd933bf6672a9dc0b4048ca91de783753697e3f15c34074ca3fd80f0d89"
+    },
+    {
+      "caseId": "us-economic-rise",
+      "instrumentType": "lista-cotejo",
+      "sha256": "abec4f0742de6d1080780c7caa6a027119ee6a46154541a09617acf4dfc77dad"
+    },
+    {
+      "caseId": "us-economic-rise",
+      "instrumentType": "escala",
+      "sha256": "cdea666890db5b9579aa8711fa07af39c13db62339a932fcc930ffb54f20166f"
+    },
+    {
+      "caseId": "us-economic-rise",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0164dd1c417c69c234e4892978331b3cf6c67a1b502d7442a790c6bfe93bb787"
+    },
+    {
+      "caseId": "great-depression",
+      "instrumentType": "rubrica",
+      "sha256": "3d10c5f5b6da8d8e8a99b21dc5a0fea6c1bcb43951ad4e9d7cb257d9b87d2438"
+    },
+    {
+      "caseId": "great-depression",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fcc5fb5f6c9f6ec01164968f85b290dae76c5212f57e6ae356c2a38f5b07ff32"
+    },
+    {
+      "caseId": "great-depression",
+      "instrumentType": "escala",
+      "sha256": "0aeaca3866e58c0faa9244756124051457890424f6c404626be9c050646b664c"
+    },
+    {
+      "caseId": "great-depression",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ee976421a76a1d90d1a9b88eac49d42654358baeb1bf8a1923c3a314e681ada7"
+    },
+    {
+      "caseId": "fascism",
+      "instrumentType": "rubrica",
+      "sha256": "a09b672594798125cbb8db9cc7151c5716f7a2aa8dd8c6191be5f52f2327ecf1"
+    },
+    {
+      "caseId": "fascism",
+      "instrumentType": "lista-cotejo",
+      "sha256": "62046737e24fe2193eb80c454af1b91108103f55e4a9bc164a86009073021721"
+    },
+    {
+      "caseId": "fascism",
+      "instrumentType": "escala",
+      "sha256": "63406e21af45283977876342c221042d22abddb1f2f6e181ae57c0749e159619"
+    },
+    {
+      "caseId": "fascism",
+      "instrumentType": "lista-ponderada",
+      "sha256": "99eca6f8d8e6ec7fc424d7bad8cccd81f8c15131d0e826e55bd1f7786cfaf93c"
+    },
+    {
+      "caseId": "war-dominican-economy",
+      "instrumentType": "rubrica",
+      "sha256": "e3c5b37679ba13b0f911fea2c29e5654fe98ee900d9e531aab3600df1a65f852"
+    },
+    {
+      "caseId": "war-dominican-economy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3aabc0a66f6d22aebee576e4e261732eedf956b9256ced125f8ed62cf5c0cf7f"
+    },
+    {
+      "caseId": "war-dominican-economy",
+      "instrumentType": "escala",
+      "sha256": "9d8c0cc4c3e3b98383e08d0db1298705a1d3603e6d0ddd5a497c48558dff8840"
+    },
+    {
+      "caseId": "war-dominican-economy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f67f205e387987e615ea6f20651638c653e689521d7ca27d6ade8879da15f07f"
+    },
+    {
+      "caseId": "north-south",
+      "instrumentType": "rubrica",
+      "sha256": "6e2bcd4c0f10de9f42492f0fc2dcf22065e60001723e847bb40aaf5adec7aff0"
+    },
+    {
+      "caseId": "north-south",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c1c1f42cd9ec30d2078d33efdc3b136cb0fbb617edd1ad69132e2da2649f4ff5"
+    },
+    {
+      "caseId": "north-south",
+      "instrumentType": "escala",
+      "sha256": "935d7b67730068b872af7508072be78c6e2129808675c040338d902faad820a9"
+    },
+    {
+      "caseId": "north-south",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b17af9b4fdbd6b72412d6378a67b740f1167001adb3d8048e6faf7b20110f977"
+    },
+    {
+      "caseId": "antillanism",
+      "instrumentType": "rubrica",
+      "sha256": "6c5354e4d3a2d2417585f79126ba1dd76116dc2352aed2db3f9dae1485d35051"
+    },
+    {
+      "caseId": "antillanism",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e7224dfeb5b04e3b3b1e98cfb283a149f431fe2ab25a9c0245813e20084fe382"
+    },
+    {
+      "caseId": "antillanism",
+      "instrumentType": "escala",
+      "sha256": "3e6662430215fb7972ebd9ab15fcd034298b135aad77cdae527f076d496767ef"
+    },
+    {
+      "caseId": "antillanism",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b7c7c15c5e46d2f94a4861a10e5421fc00589891aaeb46d2ca382484827785f1"
+    },
+    {
+      "caseId": "dominican-society",
+      "instrumentType": "rubrica",
+      "sha256": "e32d09758a56b4dfa5ba9874247b0f28f21f0bc36d68185964db6da703a28088"
+    },
+    {
+      "caseId": "dominican-society",
+      "instrumentType": "lista-cotejo",
+      "sha256": "193180885576e66ab1ab984b4b26eb20f83faa65e59ed62d693eb9c736760fa7"
+    },
+    {
+      "caseId": "dominican-society",
+      "instrumentType": "escala",
+      "sha256": "7e2af248d0cb685b39e86a7d310708c6f065880556444bf89282fd22fb31191f"
+    },
+    {
+      "caseId": "dominican-society",
+      "instrumentType": "lista-ponderada",
+      "sha256": "978065be9f2050ae02bb837572cd40ea53814ed1513e1634f2f77851685592d0"
+    },
+    {
+      "caseId": "dominican-state",
+      "instrumentType": "rubrica",
+      "sha256": "3db9988e4ebea3c1af26e14e0e22c3115acbbd87286b7f3dfb7cce1cc466f105"
+    },
+    {
+      "caseId": "dominican-state",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a2441313528276b8adebe372fea0e1762e09974fc6162de091021a6b4880da7d"
+    },
+    {
+      "caseId": "dominican-state",
+      "instrumentType": "escala",
+      "sha256": "a36ca94f6aafe97f3ef7507cf99188bb8d92b2b963a608e2a74fbec94b997dd1"
+    },
+    {
+      "caseId": "dominican-state",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d3a38820f1972d8152be1ecfcf7d3fc1908caa93cc0d19b1e0413c426781dbc4"
+    },
+    {
+      "caseId": "democracy",
+      "instrumentType": "rubrica",
+      "sha256": "5e186fd86966b344cd96b287506faf043117927b5cf9f903f7fbc4601fa0c003"
+    },
+    {
+      "caseId": "democracy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "08347aa177c16203465b4bf17779e0e1e540174ff5880a7f6597a136d4f953fe"
+    },
+    {
+      "caseId": "democracy",
+      "instrumentType": "escala",
+      "sha256": "16a0c69c30db2a570347093f259b381ae557fd73b449977d9356d4f3d4b5a1be"
+    },
+    {
+      "caseId": "democracy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "37385580c235cafa2354fc6760ba6bc9b9d07afaa966eb23043926862a5637a3"
+    },
+    {
+      "caseId": "human-rights",
+      "instrumentType": "rubrica",
+      "sha256": "5c59f5381724ff5d91216b71c833eedb2009e27b58f876b7877bbdc47168aefb"
+    },
+    {
+      "caseId": "human-rights",
+      "instrumentType": "lista-cotejo",
+      "sha256": "72522a8ceb2bdbe928a76be7da61cc45c176d84cd65f831486da0aa8c5cb7ca0"
+    },
+    {
+      "caseId": "human-rights",
+      "instrumentType": "escala",
+      "sha256": "7936e25c5516e19baec9313b60fd89e1432c5af74df0ed08a32f3fdb30481fd3"
+    },
+    {
+      "caseId": "human-rights",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e0c889f2ba14b012ddb8215d2b30c7f577d5b6fa637a2acb4e4fec191ee73038"
+    },
+    {
+      "caseId": "peace",
+      "instrumentType": "rubrica",
+      "sha256": "ff61a73100880f36ea62b9eecc6baa1248f16266df8e3ac28b6bdadc36137aab"
+    },
+    {
+      "caseId": "peace",
+      "instrumentType": "lista-cotejo",
+      "sha256": "33b3653406e74a2faca4902f4aebbb51ec8a9cfbd6f693b6b2007a1848c33986"
+    },
+    {
+      "caseId": "peace",
+      "instrumentType": "escala",
+      "sha256": "11af63e6dacd8c26fc2b638d01afeff3db3b34cc77cc546c8e9f4b2201b0f6e7"
+    },
+    {
+      "caseId": "peace",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a0dcfdc1342b50be2840ce32f2a5e777b52e5c04a29b21fecd36348246c9c6a7"
+    },
+    {
+      "caseId": "national-symbols",
+      "instrumentType": "rubrica",
+      "sha256": "b7fb7abd8bbe320de0a3d115e5eb7d13c72ee60391e04c5da8d3f2982377e0a7"
+    },
+    {
+      "caseId": "national-symbols",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0226a0831539ecece50655ad5d2165dc7c30c3f7d1fc0fd8b96da29cb2e0f10d"
+    },
+    {
+      "caseId": "national-symbols",
+      "instrumentType": "escala",
+      "sha256": "6bdba5907eccf48fcd6becaf59ac4b12158ee9a6037466850c10d8981bf59213"
+    },
+    {
+      "caseId": "national-symbols",
+      "instrumentType": "lista-ponderada",
+      "sha256": "26c18543ebb82b420373fe0c7e431e79b0ee211876c77f700ddcf82d5248122e"
+    },
+    {
+      "caseId": "road-safety",
+      "instrumentType": "rubrica",
+      "sha256": "c7576352b23a8f5d156fc60f2851636533563c9662e4921cc46601686b38ae5d"
+    },
+    {
+      "caseId": "road-safety",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a1053bc3a710f7205f18b8368ac4524a44a19ce6380050c27762f21b6fbb4825"
+    },
+    {
+      "caseId": "road-safety",
+      "instrumentType": "escala",
+      "sha256": "8711820199d8d7ebd9a19751469812f94c762e16f08f81b980a33436ec2bfcb2"
+    },
+    {
+      "caseId": "road-safety",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b467a6072fe2779afaa59e28676c8d915a068a25d55637ed8aff549cc33c8a94"
+    },
+    {
+      "caseId": "taxes",
+      "instrumentType": "rubrica",
+      "sha256": "c83e03241a05a14e6dde5311b976bc3ec04acc95a3b82cd82f6b39ff87e1f2cb"
+    },
+    {
+      "caseId": "taxes",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3793f38a50dea8d441839753949cf9d068b23d406e851e11e96977af17519814"
+    },
+    {
+      "caseId": "taxes",
+      "instrumentType": "escala",
+      "sha256": "4c4478b659a771558d490605cbd45ff1df226543272c67838d3a424e0cbe440c"
+    },
+    {
+      "caseId": "taxes",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b360050a7322c0eacd4b2aa22d6b3b92fa2469bf5ec1c99ddeaeea5c8b139e58"
+    },
+    {
+      "caseId": "environmental-agreements",
+      "instrumentType": "rubrica",
+      "sha256": "001c1f64d1f335ed96f6717a7a8ca20829c68027d5b06ea74aac2e7e7cf5c74f"
+    },
+    {
+      "caseId": "environmental-agreements",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d4e50ec9652e7f7e7a34002f1d54f5c0d23103cb42eb6fb71dd6fbd1a109ba29"
+    },
+    {
+      "caseId": "environmental-agreements",
+      "instrumentType": "escala",
+      "sha256": "8d070c7f4e637d397e5cfe19b3e50630a87ec7e92d8960e30ff4a30038bb31e9"
+    },
+    {
+      "caseId": "environmental-agreements",
+      "instrumentType": "lista-ponderada",
+      "sha256": "de85edc49b705b708508cf7680702e00c996ff167fb09ac1593765951958a1b9"
+    },
+    {
+      "caseId": "pollution",
+      "instrumentType": "rubrica",
+      "sha256": "5fb5364b032d4c18d476222b8ce6911f3104145f4b4374f0c0587831bbcb13d7"
+    },
+    {
+      "caseId": "pollution",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7775d4d16c3897cd135c073b450221510a5a213734aaac69e3afc3efed0f86e5"
+    },
+    {
+      "caseId": "pollution",
+      "instrumentType": "escala",
+      "sha256": "b8ad4b150a1fcac1b02b07f14432bd9af785cf1ab2bca947fe4104ec2e67aaf7"
+    },
+    {
+      "caseId": "pollution",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ed1870d52dcf40446053a10c44e2c2fc56df954a739a9e66045979040c88cca2"
+    },
+    {
+      "caseId": "modern-postmodern",
+      "instrumentType": "rubrica",
+      "sha256": "b1e6bae9225b715af7400fa1af2ba9264d91025603d324fcedd2006877cbae3d"
+    },
+    {
+      "caseId": "modern-postmodern",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6e07e0fc9e6a7359bbb93633ba83e4b73992f25b8fea17b8fcb87058eafce2c3"
+    },
+    {
+      "caseId": "modern-postmodern",
+      "instrumentType": "escala",
+      "sha256": "79b49529e0b2b556717ff2194e176a5a4323eccb60e7f0b808488aaaf53e7a11"
+    },
+    {
+      "caseId": "modern-postmodern",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eef47dbe41f542110e18326890ef2d89699089430db1ed411e5d7b9d7ab2559b"
+    },
+    {
+      "caseId": "decolonization",
+      "instrumentType": "rubrica",
+      "sha256": "a9f376293c6c635543034c36a632fd403cd1fa4c98d27a34df09fb473e11ad0e"
+    },
+    {
+      "caseId": "decolonization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b3adf693687bc0e8a3306cc512d9435c708483b515be37231ff09d6711f8f565"
+    },
+    {
+      "caseId": "decolonization",
+      "instrumentType": "escala",
+      "sha256": "4b0e503d054941eb12f37690880adb8e8b1fbfb14d90dbb01dc680d61ea52dee"
+    },
+    {
+      "caseId": "decolonization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "328c73afbe2a69d7a60fb3e3b8b82ac45eeac10d5bf5973b76a57c42364f2f9a"
+    },
+    {
+      "caseId": "fault-map",
+      "instrumentType": "rubrica",
+      "sha256": "93b841400a887037633830dee7b68d51f69743242ddfc2cdc0052f8412370f89"
+    },
+    {
+      "caseId": "fault-map",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b5ce8144cffc78cb72ecef782de73987406e930715a75fc9637ff132a45df2f1"
+    },
+    {
+      "caseId": "fault-map",
+      "instrumentType": "escala",
+      "sha256": "63bb253c86924696772b1e41ed3e5604d143fc466fbe3cd0370317242ff0e865"
+    },
+    {
+      "caseId": "fault-map",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4b392f0239b818307cfc518d5ca8ea46ea144039de793706ef88efc4724f14ba"
+    },
+    {
+      "caseId": "climograms",
+      "instrumentType": "rubrica",
+      "sha256": "a3dec41c3c31e9b59501db283c3112b98c85994db454da45424e5c7ba23618b6"
+    },
+    {
+      "caseId": "climograms",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3989e5c6979ac5d8080ea7c8d48699043b0583d974c3a5c78353f48d02df0811"
+    },
+    {
+      "caseId": "climograms",
+      "instrumentType": "escala",
+      "sha256": "f2882fc9390fb59c6b097002dff8e1b2855b8f7451f1ffca5f73e0ca3c2afe4e"
+    },
+    {
+      "caseId": "climograms",
+      "instrumentType": "lista-ponderada",
+      "sha256": "61444e0b686ecb3e6949e3676b16e72698195c691aba6f0ac5637685a02f7ba0"
+    },
+    {
+      "caseId": "weather-records",
+      "instrumentType": "rubrica",
+      "sha256": "869284948e2b9a029d7391b76c2bf886f18a6368a47c8f1ac7b592f56603081a"
+    },
+    {
+      "caseId": "weather-records",
+      "instrumentType": "lista-cotejo",
+      "sha256": "74390688efd4fa8c093be5a5eaea73912feed36f7f4f6983dd41abb9b5428102"
+    },
+    {
+      "caseId": "weather-records",
+      "instrumentType": "escala",
+      "sha256": "3713fb84bbeefe36e92a3bef3ddb3f65658551e0aa2399ffd2d0b88f434a6dc7"
+    },
+    {
+      "caseId": "weather-records",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d6bc23f1d82fc2d4be36cbac89f7e34af015964c8ed39e6b0bf8dbb6236e796b"
+    },
+    {
+      "caseId": "demographic-series",
+      "instrumentType": "rubrica",
+      "sha256": "a14cd6db88ef8f060002c55dab1f37127817b70a5ed5a1cdc0557e4e229621cd"
+    },
+    {
+      "caseId": "demographic-series",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fbdb8658997a6e95c13ca9d84aa0f83dd56f5652dbc11b3cdf1278bd23d16220"
+    },
+    {
+      "caseId": "demographic-series",
+      "instrumentType": "escala",
+      "sha256": "7351dc61af5e5109a4edda2ca97bad6c133d5fc00ef2fd95f6bad861cc521a5a"
+    },
+    {
+      "caseId": "demographic-series",
+      "instrumentType": "lista-ponderada",
+      "sha256": "827504f433b0d34b3319a6e6a427f295623a8c911f6cc69a571a800d27c4c95e"
+    },
+    {
+      "caseId": "population-pyramids",
+      "instrumentType": "rubrica",
+      "sha256": "cdf187c9c0f92e6f6c020e45104a7c1927f2b1a4afc060110c6ebfa6bc5f8e53"
+    },
+    {
+      "caseId": "population-pyramids",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7ddf855af34860f937383f35676cfd201746163565c11ca49b4a8f4b728072e6"
+    },
+    {
+      "caseId": "population-pyramids",
+      "instrumentType": "escala",
+      "sha256": "36cc39479c6bf000745006beb0484961eed7bfd899219ef48532e275dd228fbc"
+    },
+    {
+      "caseId": "population-pyramids",
+      "instrumentType": "lista-ponderada",
+      "sha256": "65a27460776d5260de4c3adfb2b4b3cf1b0bf7f730fc691fd70c70b74a3cacee"
+    },
+    {
+      "caseId": "migration-map",
+      "instrumentType": "rubrica",
+      "sha256": "bfec6c790bfb09bea150ffef76ee54db16a60f655c9e89e8b08ab6601c70d4e2"
+    },
+    {
+      "caseId": "migration-map",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b2b65a29c5b710c0607936dbf195573035e4c14dc34d74564db81e16a346dd4e"
+    },
+    {
+      "caseId": "migration-map",
+      "instrumentType": "escala",
+      "sha256": "7b03fe835a1ddb827f97e784c2653e40c7a7f423bd2352273532226a3dd885a3"
+    },
+    {
+      "caseId": "migration-map",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8ff379bb4d35b061291140d8bb11748dffa69eef99ad6f8839875eb38fa1a806"
+    },
+    {
+      "caseId": "development-indicators",
+      "instrumentType": "rubrica",
+      "sha256": "716a727b9f12bd56c060be5100582fcdb2e03607929c11963671604a25ba3fab"
+    },
+    {
+      "caseId": "development-indicators",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e325a19850991cb5f50e74f2d09f2020b725dcaea0715f64570dcecd43029cb3"
+    },
+    {
+      "caseId": "development-indicators",
+      "instrumentType": "escala",
+      "sha256": "1287721c13878f567591682eef0d1065c9ac551137849eeca5071f9cb1e5338f"
+    },
+    {
+      "caseId": "development-indicators",
+      "instrumentType": "lista-ponderada",
+      "sha256": "47a2efd88199ebd9b21fa349357dc6ad04e79524afb289ad94ebef3188691e26"
+    },
+    {
+      "caseId": "war-causes",
+      "instrumentType": "rubrica",
+      "sha256": "228b8f8af412b7177c367bc5138f982873cf0601f65c07abd8191169fcc93244"
+    },
+    {
+      "caseId": "war-causes",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f468c57a56d29b508446a1e992ab812622624db7308cccd94c827a80de12be06"
+    },
+    {
+      "caseId": "war-causes",
+      "instrumentType": "escala",
+      "sha256": "3e9c8b3e049b90abfb1080f485b956e14f1a42f1e88aee7e10172203da6d5adc"
+    },
+    {
+      "caseId": "war-causes",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c6b7767cdcac83d85ff5592b9937bc6bdf562f6731cce4a0efadbd99209823d2"
+    },
+    {
+      "caseId": "canal-routes",
+      "instrumentType": "rubrica",
+      "sha256": "2430786ac7b6e1c513bb1e37e8715b9ba0ccae19b0783c8b6db09c8660e8f571"
+    },
+    {
+      "caseId": "canal-routes",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d999c8a1bcc11d34bf4fb3239173cf72073783d3c339b86557a30fb842c5a175"
+    },
+    {
+      "caseId": "canal-routes",
+      "instrumentType": "escala",
+      "sha256": "0577f29265067bc2ea70b1c8ea86ce09cdf3f6e455a68f88205eb4248a6dea42"
+    },
+    {
+      "caseId": "canal-routes",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0685c101559dfa736f99da9d78500c17cd43f7f66efaf445da0f5f61158606ea"
+    },
+    {
+      "caseId": "treaties",
+      "instrumentType": "rubrica",
+      "sha256": "f853f20b0f60b62f7ef94cdc31b74a4fb8e928563761729db07d6a9b6950f1d2"
+    },
+    {
+      "caseId": "treaties",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bdb808e71a32d2b897ba63702f7e914dc4650aed244deb95823ee05deb556aa7"
+    },
+    {
+      "caseId": "treaties",
+      "instrumentType": "escala",
+      "sha256": "ff7520b3beb1f34fd41bf05ca81a9fa57207361ed21b4e55e674f3f477129824"
+    },
+    {
+      "caseId": "treaties",
+      "instrumentType": "lista-ponderada",
+      "sha256": "24d5531ac58d8e293de01be9aac13577b088bf492a0e94153233dee38ca936cd"
+    },
+    {
+      "caseId": "antillanist-perspectives",
+      "instrumentType": "rubrica",
+      "sha256": "73594d39a5e9c546db2316afe8ae43336d49aba3343eb44e8197faa40b6a39a5"
+    },
+    {
+      "caseId": "antillanist-perspectives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "94cd23f7ed405a7ff408612ee5c505b5aef4fd66e075ce536ce9ab565d4c5693"
+    },
+    {
+      "caseId": "antillanist-perspectives",
+      "instrumentType": "escala",
+      "sha256": "b1b8e18892e47bc292c046726607c17ad7cbd21c8c2bd4f639aa852638d1d476"
+    },
+    {
+      "caseId": "antillanist-perspectives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eae3af37971596e48b0d3b638e412998002e718b6be68fa5295fd89dbdbd64ab"
+    },
+    {
+      "caseId": "economic-poster",
+      "instrumentType": "rubrica",
+      "sha256": "23c188c530c07c939edb577c89a7b70b1f0736f5be0dbe09ed4e4e69a0739424"
+    },
+    {
+      "caseId": "economic-poster",
+      "instrumentType": "lista-cotejo",
+      "sha256": "761d1376101a288fd652dee1f75735a319a39dc63b36ec27b8b084344f67b265"
+    },
+    {
+      "caseId": "economic-poster",
+      "instrumentType": "escala",
+      "sha256": "a2e3eb4619fc5e69f55d1299d95cc4ae24423dfd8f717eb47b3286be475ec80f"
+    },
+    {
+      "caseId": "economic-poster",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6335a2effe71fad5b6ed2417ba9983688eca92c5973b086ac11877968c15a5aa"
+    },
+    {
+      "caseId": "democratic-project",
+      "instrumentType": "rubrica",
+      "sha256": "06cf10eacf1d0f14abb4cc263dd6b31343ed3b2992e1a44e0c75cd459c08112d"
+    },
+    {
+      "caseId": "democratic-project",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ac83b37a52c4d3a2e083a0dfb458c114c9b5999e5f5a284c9ddd39537fe2fd42"
+    },
+    {
+      "caseId": "democratic-project",
+      "instrumentType": "escala",
+      "sha256": "ecc7725c14320fbba8c55a82e1a2879496aeecfaf8876e9462eb312662d89de2"
+    },
+    {
+      "caseId": "democratic-project",
+      "instrumentType": "lista-ponderada",
+      "sha256": "23535127e177fb13cbd19aac5234d189ee782ab27943887f3d235b9d7e99aa90"
+    },
+    {
+      "caseId": "road-statistics",
+      "instrumentType": "rubrica",
+      "sha256": "61f6ec68104373c35ea2750956f24ea1307ba0fc0e9f320e2d6fb4d0939849c1"
+    },
+    {
+      "caseId": "road-statistics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1063410c6bc8f503d0598dcb12541f73643294cc52be67c259256289212058d5"
+    },
+    {
+      "caseId": "road-statistics",
+      "instrumentType": "escala",
+      "sha256": "6dc197e5270b173e016233f76cf72c90c0addafa5dd3463bb3597c90e8962a61"
+    },
+    {
+      "caseId": "road-statistics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bf687a0bc4f6d2ed44a19e89c683868109966747816f7154d502836c21c5555b"
+    },
+    {
+      "caseId": "environmental-measures",
+      "instrumentType": "rubrica",
+      "sha256": "7c7aeadd2fade71a12097f14676cce68a1f553af734137a8c705281fd526b459"
+    },
+    {
+      "caseId": "environmental-measures",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9b9976cd9c5522ae57694c7c7c5a69e79e4b866e61c7eeebe20f4fd5e6ac2e9a"
+    },
+    {
+      "caseId": "environmental-measures",
+      "instrumentType": "escala",
+      "sha256": "c6bc4c1924812279a3550cd35a976c9b3b63e90830a343e5e4989d8b81971152"
+    },
+    {
+      "caseId": "environmental-measures",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4ff0dce5c7d844df3d6401646135cc81ab1fbea5600dc7387b1e6350994a8a56"
+    },
+    {
+      "caseId": "emergency-map",
+      "instrumentType": "rubrica",
+      "sha256": "43fcfda6bab17006c033bf0b6402b5ca26c1dd9f809bbdf658be04ea5811f9a4"
+    },
+    {
+      "caseId": "emergency-map",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4eaa00b1c115dc25becdd2f31d21c9817704803617fe6c88890658148cb4d109"
+    },
+    {
+      "caseId": "emergency-map",
+      "instrumentType": "escala",
+      "sha256": "28c2f066c80ebf911cde56fc4189bdb60944cea6f05498b5cc2bc1d9012d82f5"
+    },
+    {
+      "caseId": "emergency-map",
+      "instrumentType": "lista-ponderada",
+      "sha256": "652c32c18a1a38ae99354d3796d75c9c30ee75b17a5ff2f3dc18d322bf05d434"
+    },
+    {
+      "caseId": "modern-postmodern-argument",
+      "instrumentType": "rubrica",
+      "sha256": "5ef6860e22c24bcc91b7f9c123929b189a4f079134cf53160651d178a0894d45"
+    },
+    {
+      "caseId": "modern-postmodern-argument",
+      "instrumentType": "lista-cotejo",
+      "sha256": "af0d2f634bd4a196e6b8eac06749720d349689a571064f95a6b376d54deebec8"
+    },
+    {
+      "caseId": "modern-postmodern-argument",
+      "instrumentType": "escala",
+      "sha256": "7aed2aae7918cdc5bcfb0f9dfb9616746601b1b7281c81c756259993e4180bfc"
+    },
+    {
+      "caseId": "modern-postmodern-argument",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1dd7c32b577449dd36b7fa6e165926397f0e3b68258cce6ce5255574e32d5b49"
+    },
+    {
+      "caseId": "decolonization-maps",
+      "instrumentType": "rubrica",
+      "sha256": "242252cef9234effed8d784f931ac51769764bffe3458ac9884a7c4f513158cc"
+    },
+    {
+      "caseId": "decolonization-maps",
+      "instrumentType": "lista-cotejo",
+      "sha256": "41eee938de3babfc6d96a52787b7a56cea62d6a03a017f5a4d7a6d6662d50013"
+    },
+    {
+      "caseId": "decolonization-maps",
+      "instrumentType": "escala",
+      "sha256": "29e781016d44a8241d3a54c6f46eb3932d08e9dda957012caf4e899d54781671"
+    },
+    {
+      "caseId": "decolonization-maps",
+      "instrumentType": "lista-ponderada",
+      "sha256": "36f4b2bf6c5c7fffbbbdf84806cef1b30226c323819982c7034b040a34009b7d"
+    },
+    {
+      "caseId": "developed-country-links",
+      "instrumentType": "rubrica",
+      "sha256": "2717e662ece4b2187e125f3f8d494b21e2f360b22e2577f2ea72f5ab717ff63b"
+    },
+    {
+      "caseId": "developed-country-links",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b56da29431db48b690a5eac998804079c5bfeb6d53633a4a3466474ff50a273a"
+    },
+    {
+      "caseId": "developed-country-links",
+      "instrumentType": "escala",
+      "sha256": "7a4a11dedd7cc2f01be3fddc4c75523cbf847a74517733e73f5c760eafcbf7b9"
+    },
+    {
+      "caseId": "developed-country-links",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5b1cd3754beb386f5c4d62dc5505aac9bbb269c2124afcc3f65e6aebaf737799"
+    },
+    {
+      "caseId": "caribbean-sovereignty",
+      "instrumentType": "rubrica",
+      "sha256": "d975c8883a7e62b23ce305192fc2c8c22f692b2bdb8551de2f272627f9758608"
+    },
+    {
+      "caseId": "caribbean-sovereignty",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6f901556cbe01adbe2326cdc2ce66f134cfb1147eee416a2a47c33833751320e"
+    },
+    {
+      "caseId": "caribbean-sovereignty",
+      "instrumentType": "escala",
+      "sha256": "e3509e80ace8d8a7a983f1c7900ab4f246873fab2fa1ae587aa3b53b92b439d3"
+    },
+    {
+      "caseId": "caribbean-sovereignty",
+      "instrumentType": "lista-ponderada",
+      "sha256": "82aebb97cdb21422c0bd957c6721a563804a6ce10a60a0a173542fc63d0dee66"
+    },
+    {
+      "caseId": "regional-war-impact",
+      "instrumentType": "rubrica",
+      "sha256": "6ae3a13945fdc14d05b2d1ac7d09e699a168185fc99d9414afda57d8830cf9d0"
+    },
+    {
+      "caseId": "regional-war-impact",
+      "instrumentType": "lista-cotejo",
+      "sha256": "08a63ef0c9cfdc3bb406bd60ab857ab7b56a60404f9090b6ad27a9212100fb65"
+    },
+    {
+      "caseId": "regional-war-impact",
+      "instrumentType": "escala",
+      "sha256": "37b4a2a99cd467dff5a09d7954696c926e00da4d912e175a834f23428171deab"
+    },
+    {
+      "caseId": "regional-war-impact",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7b6d13e5b82f089f8f58b9689008e78102baeffdff214cfc5af5cb3cee2c5672"
+    },
+    {
+      "caseId": "natural-classification",
+      "instrumentType": "rubrica",
+      "sha256": "6fe25c7018c36647279ee03579c59ace42b00694fec4cbb8d0e3c4ae2805657d"
+    },
+    {
+      "caseId": "natural-classification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4d2f300d94e0610670b3d3e749f83b7b68e580838e3b931c07789fc4ef1694c7"
+    },
+    {
+      "caseId": "natural-classification",
+      "instrumentType": "escala",
+      "sha256": "1f5c16ea984c7351f86d33ea82a55a2cc09040f62abc4c10736e5b630541be14"
+    },
+    {
+      "caseId": "natural-classification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d1ac283100af0f7b35675ddbc62a9a05e82b79b7e051ef5d770d2dc1205d940a"
+    },
+    {
+      "caseId": "conflict-hypothesis",
+      "instrumentType": "rubrica",
+      "sha256": "88eed54997f81a348e9c4880cfc6569e89d545704d98b778179896723b25026f"
+    },
+    {
+      "caseId": "conflict-hypothesis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "54248bdcb4676ccb2ceb3fc7c864c06ced64146fa6c61f80dc23256c6b01c7f2"
+    },
+    {
+      "caseId": "conflict-hypothesis",
+      "instrumentType": "escala",
+      "sha256": "935a2c5bb9cc7ebcb7a5f0ee8e3d367cf720c707a2c367aaed9d3e01fdc334af"
+    },
+    {
+      "caseId": "conflict-hypothesis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "effb0d6d3c2c467ce53c3c98006542fa280c91ae7e101fd6c5bf09d6abc45067"
+    }
+  ]
+}

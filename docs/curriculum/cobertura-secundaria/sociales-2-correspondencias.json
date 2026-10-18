@@ -1,0 +1,246 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 2,
+  "method": "MANUAL_SOURCE_TO_TOPIC_REVIEW_NOT_PROCEDURAL_COVERAGE",
+  "prefixPolicy": "Each prefix resolves to a unique original ID. Mixed source rows may map to multiple topics; original text remains intact.",
+  "topicRecords": {
+    "geomorphology": [
+      "0284fd61",
+      "85b5dd02"
+    ],
+    "tectonics": [
+      "a9b67238"
+    ],
+    "relief": [
+      "4f9f7440",
+      "0334078d",
+      "836d0cd6",
+      "41b25a2d"
+    ],
+    "geological-faults": [
+      "dc16cedc",
+      "ab956a09"
+    ],
+    "seismic": [
+      "adfe3bb6",
+      "f2c932b2",
+      "bc7a8d06",
+      "88c7ec3f",
+      "25aa4965",
+      "91317625",
+      "a296d1f4",
+      "8b0d8f9c",
+      "bb55104d"
+    ],
+    "volcanism": [
+      "d149b380",
+      "ee1dbc78",
+      "91317625",
+      "8b0d8f9c"
+    ],
+    "climate": [
+      "222b3032",
+      "cdef02f1",
+      "d552f68c",
+      "e259c2bd",
+      "0829f511",
+      "fa44369e",
+      "f93d4793",
+      "b8216113",
+      "73d2ac4c",
+      "1dd04437"
+    ],
+    "weather-instruments": [
+      "8a8674d9"
+    ],
+    "water": [
+      "2a8ea203"
+    ],
+    "atmospheric-hazards": [
+      "3aa07ce8",
+      "d930e175",
+      "92ac5ee1",
+      "2e1106d7",
+      "8b0d8f9c"
+    ],
+    "disaster-risk": [
+      "2a1dad95",
+      "a296d1f4",
+      "7ef3e59f",
+      "2e1106d7",
+      "8b0d8f9c"
+    ],
+    "demographic-rates": [
+      "29d3bd49",
+      "b89b518a",
+      "8edadfa3",
+      "44ab9d2e",
+      "bbcb187c",
+      "3fd6f282",
+      "30e95617"
+    ],
+    "population-structure": [
+      "7db7d336",
+      "74f10621",
+      "ad1e6528",
+      "1dd04437"
+    ],
+    "census": [
+      "a52f2f6e",
+      "57279306"
+    ],
+    "migration": [
+      "8e91dee1",
+      "36ae040c",
+      "2a352230",
+      "ed301d26"
+    ],
+    "human-impact": [
+      "d912797c",
+      "75c71aea",
+      "37194410",
+      "73d2ac4c",
+      "1dd04437",
+      "be616eca"
+    ],
+    "imperialism": [
+      "d912797c",
+      "c0c2c593",
+      "a64dde5c",
+      "7181a92b",
+      "be616eca",
+      "966d0c37",
+      "3fdb4f8f",
+      "cdae62c6",
+      "03c7f4c7"
+    ],
+    "transport-canals": [
+      "8c4ea7dc",
+      "f8b6fe1c"
+    ],
+    "first-world-war": [
+      "80e87162",
+      "ebc7f84c",
+      "f8b6fe1c",
+      "30dd991f",
+      "217e46b9",
+      "bc9d1d4c",
+      "eaf52705"
+    ],
+    "russian-revolution": [
+      "3cdf5cbf",
+      "f8b6fe1c"
+    ],
+    "us-economic-rise": [
+      "80e87162",
+      "217e46b9",
+      "bc9d1d4c"
+    ],
+    "great-depression": [
+      "5829b240",
+      "80e87162"
+    ],
+    "fascism": [
+      "01e08c5e",
+      "5d7b01ea",
+      "c504a3b6"
+    ],
+    "war-dominican-economy": [
+      "5954e7bf",
+      "eaf52705",
+      "bc9d1d4c"
+    ],
+    "north-south": [
+      "6ee20e0c",
+      "4e509240",
+      "57c608cb",
+      "a64dde5c",
+      "2a352230",
+      "71ad4641",
+      "d7a3bfe7",
+      "ad1e6528",
+      "acf6ddfc"
+    ],
+    "antillanism": [
+      "e21ac14e",
+      "55e2a7b3",
+      "7181a92b",
+      "98a0150b",
+      "8c58f9b2"
+    ],
+    "dominican-society": [
+      "f0d38648",
+      "b5530324",
+      "5b60abb7",
+      "53a81909",
+      "c415c347",
+      "776ab820",
+      "65bdf697",
+      "1ee01663",
+      "03c7f4c7",
+      "d8322885",
+      "2ae053e2",
+      "4403ded4"
+    ],
+    "dominican-state": [
+      "0fac3843"
+    ],
+    "democracy": [
+      "f050bbe4",
+      "4789b282",
+      "48c0bee8",
+      "ceb43859",
+      "008eeb32"
+    ],
+    "human-rights": [
+      "65337813",
+      "571cbef1"
+    ],
+    "peace": [
+      "922529dc",
+      "c1e0c447",
+      "4789b282",
+      "cdafd2f0",
+      "dbc04dc6",
+      "3318d242"
+    ],
+    "national-symbols": [
+      "9727ae6e",
+      "1d2cbcb2"
+    ],
+    "road-safety": [
+      "39b52db4",
+      "b44c4108"
+    ],
+    "taxes": [
+      "7f47fc73",
+      "07264203"
+    ],
+    "environmental-agreements": [
+      "4eff7280",
+      "816017d8",
+      "bb691ded",
+      "a7bd15a7",
+      "cae9d9f7",
+      "552f72f7"
+    ],
+    "pollution": [
+      "8c2a4cce"
+    ]
+  },
+  "indicatorTopicRecords": {
+    "modern-postmodern": [
+      "c92c1391"
+    ],
+    "decolonization": [
+      "c5b778f8"
+    ]
+  },
+  "limits": [
+    "A group mapping does not prove every product or action in a composite row.",
+    "Indicators remain a distinct source type; no automatic concept-indicator equivalence.",
+    "Cross-cutting natural-phenomena classification needs separate action review; do not treat all phenomena as disasters.",
+    "Do not impose the Suez1897 mention as an inauguration date or link hurricane formation to plate tectonics.",
+    "Field consultation, ceremonies and other variants require observable evidence without private beliefs or personal data."
+  ]
+}

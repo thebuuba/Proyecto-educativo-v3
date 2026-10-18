@@ -793,10 +793,10 @@
         251,
         252
       ],
-      "status": "PENDING",
-      "provider": null,
-      "evidence": null,
-      "currentRunVerification": "NOT_RETESTED",
+      "status": "PARTIAL_VARIANTS_AND_PERSONAL_VISUAL_PENDING",
+      "provider": "packages/shared/src/secondary-social.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/sociales-2-matriz.json",
+      "currentRunVerification": "AUTHENTICATED_FOUR_FORMATS_SAVED_REOPENED",
       "nonApplicable": [],
       "notes": null
     },

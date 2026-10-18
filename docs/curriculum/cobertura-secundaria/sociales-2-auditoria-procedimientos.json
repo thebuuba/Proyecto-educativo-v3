@@ -1,0 +1,570 @@
+{
+  "grade": 2,
+  "catalog": "evaluation-2026.99",
+  "method": "MANUAL_ACTION_AUDIT_AFTER_SOURCE_AND_INSTRUMENT_READING",
+  "policy": "CONTRACT_ANCHOR_IS_NOT_FULL_PROCEDURAL_COVERAGE",
+  "summary": {
+    "literalProcedureRows": 65,
+    "rowsWithExplicitContractAnchor": 18,
+    "excludedAsIndependentPersonalDisposition": 1
+  },
+  "records": [
+    {
+      "id": "85b5dd02-2e6a-59be-9d66-b074a1fc5a16",
+      "pdfPage": 249,
+      "literalText": "Identificación de fenómenos geomorfológicos en mapa fí-\nsico mundial.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "836d0cd6-f7e5-5c99-b986-5f241a278cd1",
+      "pdfPage": 249,
+      "literalText": "• Uso adecuado de las informaciones levantadas en fuentes\ndiversas sobre las formas o unidades de relieve de los\ncontinentes y de la isla de Santo Domingo.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "41b25a2d-c991-5748-b904-79cdc3d38135",
+      "pdfPage": 249,
+      "literalText": "• Investigación utilizando fuentes diversas sobre la formación de\nla estructura geológica de los continentes y de la isla de Santo\nDomingo.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "ab956a09-06d8-5ad1-8bd8-8e96d55d03c0",
+      "pdfPage": 249,
+      "literalText": "• Análisis de mapas de fallas geológicas de los continentes y de la\nisla de Santo Domingo.",
+      "explicitContractIds": [
+        "fault-map"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "La muestra lee la leyenda; no acredita cualquier análisis de distribución de fallas por continente/isla."
+    },
+    {
+      "id": "25aa4965-7ac2-5938-8114-4caa27a664a5",
+      "pdfPage": 249,
+      "literalText": "Análisis de fuentes seguras y confiables sobre explicaciones\ncientíficas acerca de los movimientos sísmicos.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "91317625-0a29-5eb7-a046-3c51ac8f8668",
+      "pdfPage": 249,
+      "literalText": "• Analiza en fuentes de información y mapas de zonas volcánicas\ny de mayor movimiento sísmico en el mundo.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "a296d1f4-78ae-5c22-856f-0af8d86ae9b9",
+      "pdfPage": 249,
+      "literalText": "• Propuesta de acciones de prevención de daños personales en\ncasos de movimientos sísmicos, investigando en el Instituto\nSismológico de la UASD.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "7ef3e59f-e8c6-586c-bce3-ac680fb4e78d",
+      "pdfPage": 249,
+      "literalText": "• Análisis e interpretación de leyendas en mapas de emergencia.",
+      "explicitContractIds": [
+        "emergency-map"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Contrato representativo del propósito indicado; no acredita automáticamente todas sus variantes."
+    },
+    {
+      "id": "2e1106d7-d00d-58ba-ab00-86c322e9ec80",
+      "pdfPage": 249,
+      "literalText": "• Elaboración de planes preventivos de daños personales por\nfenómenos atmosféricos, a través de consultas en el Centro\nde Operaciones de Emergencia (COE): Defensa Civil, ONAMET,\nCAASD, Ministerio de Salud Pública, Cruz Roja Dominicana,\nMinisterios de Defensa, Policía Nacional, Corporación\nDominicana de Empresas Eléctricas Estatales.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "8a8674d9-ed57-538a-8ce3-733736a34cee",
+      "pdfPage": 249,
+      "literalText": "• Manejo e interpretación de distintos instrumentos\nmeteorológicos: termómetro de máxima y mínima,\npluviómetros, higrómetro, anemómetro y veleta, entre otros.",
+      "explicitContractIds": [
+        "weather-records"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Lectura de registros proporcionados; manejo real y registro de aparatos pendientes."
+    },
+    {
+      "id": "8b0d8f9c-4848-5a34-8a93-0e057133841d",
+      "pdfPage": 249,
+      "literalText": "Investigación en fuente segura sobre fenómenos naturales\ny sus distintas clasificaciones.",
+      "explicitContractIds": [
+        "natural-classification"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Contrato representativo del propósito indicado; no acredita automáticamente todas sus variantes."
+    },
+    {
+      "id": "bb55104d-734f-5485-980a-f42661d16eb6",
+      "pdfPage": 249,
+      "literalText": "• Reconocimiento de la importancia de las fuentes históricas\nen los fenómenos estudiados.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "fa44369e-4a8d-5bbe-b9d3-9ef30e0b34d9",
+      "pdfPage": 250,
+      "literalText": "Investigación en fuentes seguras y confiables sobre los tipos\nde clima y sus distintos factores geográficos.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "f93d4793-fa63-5723-9d3b-f084bb15392b",
+      "pdfPage": 250,
+      "literalText": "• Realización y comparación de climogramas de distintos\npaíses, provincias o ciudades.",
+      "explicitContractIds": [
+        "climograms"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Comparación de climogramas proporcionados verificada; construcción desde datos pendiente."
+    },
+    {
+      "id": "b8216113-7532-5663-94ed-08a8d868ae6e",
+      "pdfPage": 250,
+      "literalText": "• Comparación de mapa de climas y vegetación de la\nRepública Dominicana y de las Antillas.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "73d2ac4c-828b-520e-a295-a654530eb2ef",
+      "pdfPage": 250,
+      "literalText": "• Investigación sobre el cambio climático en República\nDominicana y en las Antillas.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "1dd04437-45c3-5b0c-9816-69d9b6fd1639",
+      "pdfPage": 250,
+      "literalText": "• Realización de investigación sobre la variación climática y su\nincidencia en el crecimiento de la población humana.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "7db7d336-78e6-59ae-bc83-c3873d6f89db",
+      "pdfPage": 250,
+      "literalText": "Interpretación en mapamundi sobre la dinámica de la\npoblación.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "74f10621-172f-5549-a155-f596a51566b6",
+      "pdfPage": 250,
+      "literalText": "• Comparación de similitudes y diferencias entre pirámides de\nedades.",
+      "explicitContractIds": [
+        "population-pyramids"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Contrato representativo del propósito indicado; no acredita automáticamente todas sus variantes."
+    },
+    {
+      "id": "30e95617-ccc5-5c5e-a16d-e02663c84592",
+      "pdfPage": 250,
+      "literalText": "• Realización gráfica sobre la fecundidad, natalidad, mortalidad\ny esperanza de vida en la República Dominicana.",
+      "explicitContractIds": [
+        "demographic-series"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Natalidad/mortalidad representadas; variantes explícitas de fecundidad y esperanza de vida pendientes."
+    },
+    {
+      "id": "57279306-e4a0-5aa5-aa3b-f50849def554",
+      "pdfPage": 250,
+      "literalText": "• Interpretación de mapas y datos estadísticos de censos de la\npoblación en la República Dominicana.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "2a352230-cb7f-5a22-9caf-022b6f548b9f",
+      "pdfPage": 250,
+      "literalText": "• Comparación de los indicadores económicos del desarrollo\ncon el índice de desarrollo humano (IDH).\nRepresentación sobre un mapamundi, de las principales\nrutas de migración humana.",
+      "explicitContractIds": [
+        "migration-map",
+        "development-indicators"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "IDH y rutas tienen contratos separados; una fila compuesta no se reduce a una sola actividad."
+    },
+    {
+      "id": "ed301d26-9686-5085-84ec-09982d8fd8a2",
+      "pdfPage": 250,
+      "literalText": "• Análisis de fuentes confiables sobre las distintas causas y\nrazones que originan la migración humana.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "75c71aea-8b17-51dd-9090-6d826d48d8ca",
+      "pdfPage": 250,
+      "literalText": "• Realización de proyectos de investigación sobre el\ncalentamiento global.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "37194410-3c0b-5648-ad8d-202e428abda3",
+      "pdfPage": 250,
+      "literalText": "• Formulación de hipótesis sencillas sobre el impacto de la\nacción humana en el Planeta Tierra.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "bb691ded-dea0-5c34-aaf8-d8afc82b17c7",
+      "pdfPage": 250,
+      "literalText": "• Análisis de legislaciones y protocolos internacionales sobre la\npreservación del planeta Tierra.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "be616eca-1c37-523d-9227-8bf5cb5c16d9",
+      "pdfPage": 250,
+      "literalText": "• Análisis de los efectos del calentamiento global en el mundo.\nExplicación de los conceptos imperialismo y Revolución,\nplanteando su punto de vista.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "966d0c37-e014-55eb-b9d3-474fdfad5165",
+      "pdfPage": 250,
+      "literalText": "• Interpretación del espacio mundial como escenario de\nconfrontación de las grandes potencias por el poder\neconómico.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "3fdb4f8f-9758-5c07-abc2-127733a164ab",
+      "pdfPage": 250,
+      "literalText": "• Investigación utilizando fuentes diversas sobre el impacto del\ncomplejo financiero de las grandes potencias.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "cdae62c6-68a3-57f5-844c-732fe3640c4c",
+      "pdfPage": 250,
+      "literalText": "• Análisis de los enfrentamientos de las grandes potencias\npor el dominio político y económico en la primera mitad del\nsiglo XX.",
+      "explicitContractIds": [
+        "war-causes"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Caso de Primera Guerra Mundial; no acredita todos los enfrentamientos de potencias de la primera mitad del sigloXX."
+    },
+    {
+      "id": "acf6ddfc-e4e9-5848-b1e8-397ba81f013c",
+      "pdfPage": 250,
+      "literalText": "• Elaboración de esquemas donde se grafiquen las relaciones\ne intercambios entre países desarrollados y los países\nsubdesarrollados.",
+      "explicitContractIds": [
+        "developed-country-links"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Compara un esquema proporcionado; construcción del esquema de intercambios pendiente."
+    },
+    {
+      "id": "f8b6fe1c-fbec-560f-9642-96b64c89e2ff",
+      "pdfPage": 250,
+      "literalText": "• Utilización de mapamundi para ilustrar los cambios de rutas\ndel transporte marítimo de tropas. Implicaciones comerciales\nde los canales de Suez (1897) y Panamá (1914).\nInvestigación, utilizando procedimientos básicos de las\nciencias sociales, y formulación de hipótesis sobre las\ncausas que dieron origen a la Primera Guerra Mundial y la\nRevolución Rusa.",
+      "explicitContractIds": [
+        "canal-routes"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Rutas y canales muestreados; hipótesis y procedimientos de investigación sobre guerra/Revolución rusa pendientes."
+    },
+    {
+      "id": "30dd991f-4471-5601-bdde-bff570c9bf24",
+      "pdfPage": 250,
+      "literalText": "• Análisis de tratados firmados durante y después de la Primera\nGuerra Mundial.",
+      "explicitContractIds": [
+        "treaties"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Contrato representativo del propósito indicado; no acredita automáticamente todas sus variantes."
+    },
+    {
+      "id": "5d7b01ea-ebb0-5647-b28f-1889e68c2221",
+      "pdfPage": 250,
+      "literalText": "• Análisis de los movimientos fascistas en Europa.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "c504a3b6-d83d-53c8-897b-4238ff69bb11",
+      "pdfPage": 250,
+      "literalText": "• Explicación de los factores que originaron el fascismo y su fin.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "217e46b9-0e40-50fc-93f6-8cfb836e07c2",
+      "pdfPage": 250,
+      "literalText": "• Redacción de un artículo expositivo sobre las implicaciones de\nla Primera Guerra Mundial y el afianzamiento económico de\nEstados Unidos.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "bc9d1d4c-dcdd-5469-aedd-f5eecc12d65a",
+      "pdfPage": 251,
+      "literalText": "• Identificación de temáticas para el artículo referente a:\nExplotación bananera en Centroamérica, Sudamérica y el\nCaribe; papel de Estados Unidos y Canadá en la Primera\nGuerra Mundial (1917 - 1918); auge de la explotación\nagrícola; Control de las explotaciones mineras.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "eaf52705-ee51-55ea-8600-69806101f244",
+      "pdfPage": 251,
+      "literalText": "• Investigación utilizando procedimientos básicos de las\nciencias sociales, y formulación de hipótesis, acerca de\nla Primera Guerra Mundial y su impacto hacia el sistema\neconómico de la República Dominicana.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "71ad4641-fd58-5a61-a2d9-b030081cac39",
+      "pdfPage": 251,
+      "literalText": "• Investigación en fuentes seguras y confiables sobre las\ndiferencias económicas, sociales y políticas entre los países\ndel Norte y el Sur.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "d7a3bfe7-e5ec-568e-8efe-e8cee9324400",
+      "pdfPage": 251,
+      "literalText": "• Comparación de investigaciones históricas sobre extracción\nde recursos mineros en los pueblos del Sur para los pueblos\ndel Norte durante el siglo XX.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "ad1e6528-8ae3-5a70-98b0-dc02043687ee",
+      "pdfPage": 251,
+      "literalText": "• Comparación de gráficos estadísticos sobre el crecimiento\npoblacional de los países del Norte y del Sur.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "8c58f9b2-eb50-5322-becf-1ba585ff03ea",
+      "pdfPage": 251,
+      "literalText": "• Interpretación del Antillanismo y el antimperialismo como\nrespuesta al expansionismo (José Martí, Eugenio María de\nHostos, José Diego, Américo Lugo, Manuel González Prada y\nJosé Carlos Mariátegui.",
+      "explicitContractIds": [
+        "antillanist-perspectives"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Contrato representativo del propósito indicado; no acredita automáticamente todas sus variantes."
+    },
+    {
+      "id": "776ab820-8090-5a5e-b5aa-aa4f7d759d82",
+      "pdfPage": 251,
+      "literalText": "• Caracterización de la sociedad dominicana durante la\nsegunda mitad del siglo XIX y principio del siglo XX, en los\naspectos económicos, políticos y sociales:",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "65bdf697-5ee1-5779-a4b0-49d92a434298",
+      "pdfPage": 251,
+      "literalText": "• Gobiernos y dictaduras",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "1ee01663-ea58-5a0a-80c3-4c8dd71fd4e5",
+      "pdfPage": 251,
+      "literalText": "• El capitalismo dependiente, modernidad y urbanización",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "03c7f4c7-4f16-57f1-a780-59d698be4ed8",
+      "pdfPage": 251,
+      "literalText": "• Análisis crítico del impacto de la expansión imperialista en la\nRepública Dominicana, 1886 - 1914.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "d8322885-1b58-5dcf-9061-6056b86f7818",
+      "pdfPage": 251,
+      "literalText": "• Elaboración de un afiche sobre las características de la\neconomía dominicana a principios del siglo XX.",
+      "explicitContractIds": [
+        "economic-poster"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Contrato representativo del propósito indicado; no acredita automáticamente todas sus variantes."
+    },
+    {
+      "id": "2ae053e2-25bf-5404-8619-c4224c8d8584",
+      "pdfPage": 251,
+      "literalText": "• Análisis de los cambios sociales culturales y políticos de la\nsociedad dominicana en la primera mitad del siglo XIX.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "4403ded4-4c7a-578b-93c4-a111735e2e52",
+      "pdfPage": 251,
+      "literalText": "• Elaboración de organizadores gráficos y líneas de tiempo son\nlos principales acontecimientos de la primera mitad del siglo\nXIX.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "0fac3843-300a-5ef6-9d97-dab844be871e",
+      "pdfPage": 251,
+      "literalText": "• Comprensión de los procesos históricos que dieron origen a\nla formación del Estado dominicano.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "4789b282-3013-5464-9555-7d95800b4c5d",
+      "pdfPage": 251,
+      "literalText": "Elaboración de propuestas sobre las implicaciones de un\nEstado de derecho en la solución de conflictos, la cultura de\npaz y la vida democrática.",
+      "explicitContractIds": [
+        "democratic-project"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Proyecto ficticio de democracia/paz; ampliar contraste con propuesta directa sin imponer fases de proyecto."
+    },
+    {
+      "id": "48c0bee8-d08b-5991-b740-ba7ab4d83303",
+      "pdfPage": 251,
+      "literalText": "• Reconocimiento de los aportes del modelo democrático al\ndesarrollo de la sociedad.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "ceb43859-233b-523d-833a-731d628365bc",
+      "pdfPage": 251,
+      "literalText": "• Identificación de las ventajas de los sistemas democráticos\nen contraposición a los autoritarios.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "008eeb32-3f88-584b-887a-6311f1a07928",
+      "pdfPage": 251,
+      "literalText": "Análisis de las características del Estado de derecho en la\nConstitución dominicana.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "b44c4108-02d5-58de-aa49-8fed74cd4412",
+      "pdfPage": 251,
+      "literalText": "• Realización de investigación estadística sobre accidentes de\ntránsito en la localidad, provincia, país o región, analizando\nsus causas, consecuencias y presentando hallazgos para\nconcienciar sobre la importancia de la seguridad vial.",
+      "explicitContractIds": [
+        "road-statistics"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Datos estadísticos proporcionados; no se ejecutó investigación de campo ni levantamiento de datos personales."
+    },
+    {
+      "id": "07264203-b758-5222-b401-d7ca764705f0",
+      "pdfPage": 251,
+      "literalText": "• Realización de análisis crítico sobre información de\neducación tributaria.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "1d2cbcb2-a3de-58b3-898e-0cba30fb57dc",
+      "pdfPage": 252,
+      "literalText": "• Creación de representaciones visuales impactantes, como\nmaquetas, dibujos o pinturas, que capturen la esencia de los\nsímbol os patrios y reflejen su significado.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "91858913-66bf-5afd-92ce-a81b8a021ceb",
+      "pdfPage": 252,
+      "literalText": "• Participación activamente en ceremonias oficiales tanto en la\ncomunidad como en la escuela, contribuyendo al homenaje\ny respeto hacia los símbolos patrios.",
+      "explicitContractIds": [],
+      "status": "EXCLUDED_PERSONAL_ADHERENCE_NOT_LITERAL_DELETION",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "571cbef1-7e7c-5174-9dda-f603d5d9a829",
+      "pdfPage": 252,
+      "literalText": "• Análisis críticos de situaciones que muestran irrespeto a los\nvalores humanos.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "cdafd2f0-d755-5ae0-a102-89360de27e98",
+      "pdfPage": 252,
+      "literalText": "• Identificación de procedimientos dialógicos para solucionar\nproblemas.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "dbc04dc6-22d8-5c30-8ded-3bd93b3f2ffc",
+      "pdfPage": 252,
+      "literalText": "• Formulación de hipótesis sencillas sobre un problema\ngenerado por conflictos sociales, económicos, políticos,\nculturales o espaciales que ponen en riesgo a su habitante.",
+      "explicitContractIds": [
+        "conflict-hypothesis"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Contrato representativo del propósito indicado; no acredita automáticamente todas sus variantes."
+    },
+    {
+      "id": "3318d242-9b45-5215-b072-1886a1935406",
+      "pdfPage": 252,
+      "literalText": "• Presentación y discusión de sus hipótesis con sus\ncompañeros sobre solución de conflicto y cultura de paz.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "a7bd15a7-d457-5a4a-9cda-a4f6798755fa",
+      "pdfPage": 252,
+      "literalText": "Elaboración de proyectos de investigaciones personales\ny grupales sobre las medidas adoptadas por la Naciones\nUnidas para la protección al medioambiente.",
+      "explicitContractIds": [
+        "environmental-measures"
+      ],
+      "status": "SAMPLED_VARIANT_FURTHER_ACTION_AUDIT_REQUIRED",
+      "limits": "Análisis de documento y propuesta ficticia; fases de proyecto de investigación personal/grupal pendientes."
+    },
+    {
+      "id": "cae9d9f7-5daa-523d-aff1-9cfa65f75075",
+      "pdfPage": 252,
+      "literalText": "• Elaboración de propuestas para la protección ambiental ante\nel cumplimento de nuestros deberes.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    },
+    {
+      "id": "552f72f7-33bf-5e2a-a523-250b935389f8",
+      "pdfPage": 252,
+      "literalText": "• Levantamiento de informaciones en fuentes confiables para\npresentar propuesta ecológica y educativa como medio de\nacción por el clima, sostenibilidad local y la preservación del\nplaneta tierra.",
+      "explicitContractIds": [],
+      "status": "NO_EXPLICIT_PROCEDURAL_CONTRACT_YET",
+      "limits": "La explicación de un grupo o su correspondencia semántica no acredita la acción procedimental de esta fila."
+    }
+  ]
+}

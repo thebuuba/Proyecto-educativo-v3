@@ -1,0 +1,32 @@
+{
+  "grade": 2,
+  "catalog": "evaluation-2026.99",
+  "status": "VISUAL_REPRESENTATIVE_PERSONAL_ACCOUNT_SAVED_REOPENED",
+  "account": "PERSONAL_DEVELOPMENT_IDENTITY_CONFIRMED_IN_PROFILE_UI",
+  "route": "Cursos → 2.º A → Ciencias Sociales → Actividades → Crear → Guardar → Editar",
+  "format": "rubrica",
+  "score": 17.35,
+  "initialScoreBlank": true,
+  "strategyVisibleFromEmpty": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "INQUIRY",
+  "manualOriginReopened": "MANUAL",
+  "automaticInstrumentPreparedWithoutBanner": true,
+  "manualCriterionTextPreserved": true,
+  "scoreDistribution": [8.68, 8.67],
+  "savedAndReopenedAfterManualStrategy": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "a8b64949f942c91851083c39b25f8806",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "a8b64949f942c91851083c39b25f8806",
+  "fingerprintIncludes": ["instrument row and IDs", "complete snapshot row and payload", "criteria", "maximum score", "evaluation technique"],
+  "loadedScript": "/assets/index-C8A0HueY.js",
+  "compiledAndServedScriptSha256": "45c5a94393326b194e385d9dc21956e1d578daf0af5bb444a70c9b28bdf9cfd1",
+  "existingDraftsPreserved": true,
+  "storageCacheAndServiceWorkerNotCleared": true,
+  "limits": [
+    "One representative rubric flow in the personal context; not four visual formats or complete procedural coverage.",
+    "The new road-safety description also requested a separate justification. Release99 omitted that criterion; reproduced locally and pending a new release, never an overwrite of99.",
+    "The global Activities list timed out. The subject route loaded, saved and reopened successfully.",
+    "The subject detail Instrument tab exposed raw field keys; the creator/editor rendered the rubric correctly. Presentation in that detail remains pending.",
+    "The loaded DOM script matched the current build; active service-worker internals were not inspected or modified."
+  ]
+}

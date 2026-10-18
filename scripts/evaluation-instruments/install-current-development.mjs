@@ -25,7 +25,7 @@ try{
  const checkpoint=directory+'history-before-'+requestedVersion+'.json'
  if(!existsSync(checkpoint))writeFileSync(checkpoint,JSON.stringify({project,...await fingerprint()},null,2)+'\n')
  const baseline=JSON.parse(readFileSync(checkpoint,'utf8'));assert.equal(baseline.project,project)
- for(const version of ['evaluation-2026.94','evaluation-2026.95','evaluation-2026.96','evaluation-2026.97']){
+ for(const version of ['evaluation-2026.94','evaluation-2026.95','evaluation-2026.96','evaluation-2026.97','evaluation-2026.98']){
   const old=await prisma.evaluationCatalogRelease.findUniqueOrThrow({where:{version}})
   assert(isDeepStrictEqual(old.payload,JSON.parse(JSON.stringify(evaluationCatalogForVersion(version)))),'No coincide el catálogo histórico congelado')
  }

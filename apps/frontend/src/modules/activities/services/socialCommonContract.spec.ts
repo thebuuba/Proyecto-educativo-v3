@@ -49,6 +49,6 @@ describe('Sociales primero: motor, alternativa y controles conservados',()=>{
   })
  }
  it('no extiende la cobertura a primaria, otro grado ni una salida optativa',()=>{
-  for(const academicContext of [{...context,level:'PRIMARY' as const},{...context,grade:2},{...context,subjectCode:'OPT-HCS-SOC'},{...context,optativeExitName:'Humanidades y Ciencias Sociales'}])expect(resolveCommonSocialTask('','Analiza la Revolución Francesa.',academicContext)).toBeNull()
+  for(const academicContext of [{...context,level:'PRIMARY' as const},{...context,grade:3},{...context,subjectCode:'OPT-HCS-SOC'},{...context,optativeExitName:'Humanidades y Ciencias Sociales'}])expect(resolveCommonSocialTask('','Analiza la Revolución Francesa.',academicContext)).toBeNull()
  })
 })
