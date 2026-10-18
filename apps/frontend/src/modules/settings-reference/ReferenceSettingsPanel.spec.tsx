@@ -64,7 +64,10 @@ describe('copia completa del diseño de ajustes', () => {
       expect(screen.getByLabelText(name, { exact: true })).toBeInTheDocument()
     }
     expect(screen.getByRole('heading', { name: 'Perfil académico' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Diseño UX' })).toBeEnabled()
+    expect(screen.queryByText('Áreas de interés')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Diseño UX' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Ver perfil público · Próximamente' })).not.toBeInTheDocument()
+    expect(within(screen.getByRole('navigation', { name: 'Secciones de ajustes' })).getAllByRole('link')).toHaveLength(5)
     for (const name of ['País', 'Nivel educativo', 'Idioma de la plataforma', 'Zona horaria']) {
       expect(screen.getByRole('combobox', { name })).toBeInTheDocument()
     }
