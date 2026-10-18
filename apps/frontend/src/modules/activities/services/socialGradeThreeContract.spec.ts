@@ -28,6 +28,6 @@ describe('Sociales tercero: instrumento completo y controles compartidos',()=>{
  it('mantiene el límite de nivel, grado no implementado y optativa',()=>{
   const description='Compara las dictaduras de los casos de América proporcionados.'
   expect(resolveCommonSocialTask('',description,context)).not.toBeNull()
-  for(const c of [{...context,level:'PRIMARY' as const},{...context,grade:5},{...context,subjectCode:'OPT-HCS-SOC'},{...context,optativeExitName:'Humanidades'}])expect(resolveCommonSocialTask('',description,c)).toBeNull()
+  for(const c of [{...context,level:'PRIMARY' as const},{...context,grade:6},{...context,subjectCode:'OPT-HCS-SOC'},{...context,optativeExitName:'Humanidades'}])expect(resolveCommonSocialTask('',description,c)).toBeNull()
  })
 })

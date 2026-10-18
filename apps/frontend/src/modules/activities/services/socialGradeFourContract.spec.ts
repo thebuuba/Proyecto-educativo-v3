@@ -28,6 +28,6 @@ describe('Sociales cuarto: instrumento completo y controles compartidos',()=>{
  it('mantiene el límite de nivel, grado no implementado y optativa',()=>{
   const description='Analiza las fuentes proporcionadas sobre la Revolución China.'
   expect(resolveCommonSocialTask('',description,context)).not.toBeNull()
-  for(const c of [{...context,level:'PRIMARY' as const},{...context,grade:5},{...context,subjectCode:'OPT-HCS-SOC'},{...context,optativeExitName:'Humanidades'}])expect(resolveCommonSocialTask('',description,c)).toBeNull()
+  for(const c of [{...context,level:'PRIMARY' as const},{...context,grade:6},{...context,subjectCode:'OPT-HCS-SOC'},{...context,optativeExitName:'Humanidades'}])expect(resolveCommonSocialTask('',description,c)).toBeNull()
  })
 })

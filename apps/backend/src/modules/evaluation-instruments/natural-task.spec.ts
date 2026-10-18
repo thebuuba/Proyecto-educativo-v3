@@ -2,11 +2,22 @@ import {describe,it,expect} from 'vitest'
 import {recommend} from './recommendation-engine'
 import {explicitEnglishFeatureRequest} from '../../../../../packages/shared/src/english-feature-request'
 import {requestedEnglishGrammar} from '../../../../../packages/shared/src/secondary-english-grade-one-grammar'
+import {deliveryConditions} from '@aula/shared'
 
 export const futureDescription='Los estudiantes elaborarán una presentación oral y escrita en inglés sobre sus planes y metas para el futuro, utilizando las estructuras gramaticales will y going to. Describirán sus aspiraciones académicas, profesionales y personales mediante oraciones sencillas y coherentes. Finalmente, compartirán sus presentaciones con sus compañeros, fortaleciendo sus habilidades de expresión oral, escritura y comunicación en inglés.'
 const formats=['rubrica','lista-cotejo','escala','lista-ponderada'] as const
 const propose=(description:string,grade=4,subjectCode='ING',format:typeof formats[number]='rubrica',maxScore=20)=>recommend({activityTitle:'Actividad',description,maxScore,participationMode:'INDIVIDUAL',preferredInstrumentType:format},{level:'SECONDARY',grade,cycle:grade<4?1:2,subjectCode,subjectName:subjectCode==='LEN'?'Lengua Española':'Inglés',optativeExitName:null},null,[],'UNMAPPED',null)
 describe('Consignas naturales y condiciones explícitas',()=>{
+ for(const description of ['Relaciona las secciones con los hechos e interpretaciones.','Analiza las secciones del documento proporcionado.','Relaciona las secciones de tu informe con los hechos proporcionados.','Analiza las secciones de un informe proporcionado.'])it(`mencionar secciones no impone otra entrega: ${description}`,()=>{
+  expect(deliveryConditions(description)).toEqual([])
+ })
+ for(const description of ['Incluye las secciones: introducción, desarrollo y conclusión.','El informe tendrá secciones de introducción, desarrollo y conclusión.','Apartados: introducción, desarrollo y conclusión.','Incluye las secciones introducción, desarrollo y conclusión.','Secciones de introducción, desarrollo y conclusión.'])it(`conserva la lista explícita de secciones: ${description}`,()=>{
+  expect(deliveryConditions(description)).toContainEqual({key:'sections',label:'apartados solicitados: introduccion, desarrollo y conclusion'})
+ })
+ it('analizar un informe proporcionado no añade una condición de entrega',()=>{
+  const p=propose('Analiza las secciones de un informe proporcionado sobre la ocupación haitiana de 1822–1844.',5,'SOC')
+  expect(p.criteria.some(c=>c.templateId.startsWith('delivery-'))).toBe(false)
+ })
  it('reconoce la solicitud literal de una sola forma',()=>{
   expect(explicitEnglishFeatureRequest('leeran un texto en ingles e identificaran will','\\b(?:will|(?:be )?going to)\\b','will|going to')).toBe(true)
   expect(requestedEnglishGrammar('leeran un texto en ingles e identificaran will').map(f=>f.id)).toContain('future')

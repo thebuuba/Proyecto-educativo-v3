@@ -1,0 +1,1294 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 5,
+  "scopeId": "95643626-0072-5fc0-a2c9-a729ed720dea",
+  "policy": "PARTIAL_CONTRACT_PREPARATION_NOT_COVERAGE",
+  "cases": [
+    {
+      "id": "island-position-discussion",
+      "description": "Discute las ventajas y desventajas de la posición, localización, área, límites y superficie de la isla de Santo Domingo en el caso y mapas proporcionados. Distingue la isla de República Dominicana. No impongas una postura patriótica.",
+      "family": "GUIDED_DISCUSSION",
+      "requiredKeys": [
+        "discussion"
+      ],
+      "sourceRecordIds": [
+        "73ada413-09cc-5d30-b875-f862810d1699"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "island-risk-map",
+      "description": "Identifica las zonas de riesgo de la isla de Santo Domingo ante los fenómenos naturales indicados en los mapas del ejercicio, relacionando exposición y condiciones del territorio. No predigas desastres ni recopiles ubicaciones personales.",
+      "family": "RISK_MAP_READING",
+      "requiredKeys": [
+        "risk-location"
+      ],
+      "sourceRecordIds": [
+        "9cc384c1-76fb-5baa-bda8-bd023a0a7413",
+        "7df564ac-8657-5388-86a3-d8c1526ec1ee"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "geomorphology-source-research",
+      "description": "Investiga la historia de la geomorfología de la isla de Santo Domingo en las fuentes primarias y secundarias proporcionadas, justificando su confiabilidad con procedencia, contexto y respaldo. No busques otras páginas.",
+      "family": "DOCUMENT_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "source-reliability"
+      ],
+      "sourceRecordIds": [
+        "df64f124-92ba-5312-9ddf-15f7e1c676d7"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "island-geological-processes",
+      "description": "Identifica los procesos geológicos de formación y evolución de la isla de Santo Domingo en las evidencias proporcionadas y explica su relación con la actividad sísmica y volcánica regional y los impactos en población e infraestructura del caso. No inventes actividad actual ni pronostiques erupciones.",
+      "family": "GEOLOGICAL_PROCESS_ANALYSIS",
+      "requiredKeys": [
+        "geological-evidence",
+        "population-impact"
+      ],
+      "sourceRecordIds": [
+        "f7ee1960-54c9-53aa-b34c-a46e27e5b4d7"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "geomorphology-environment-relations",
+      "description": "Analiza la influencia de las características geomorfológicas de la isla de Santo Domingo en el clima, vegetación e hidrografía de los casos proporcionados. No atribuyas determinismo ni relaciones sin respaldo.",
+      "family": "SPATIAL_RELATION_ANALYSIS",
+      "requiredKeys": [
+        "geomorphological-relations"
+      ],
+      "sourceRecordIds": [
+        "9cf033ea-3437-5546-b75d-10e43f50359d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "geological-map-infographic",
+      "description": "Elabora una infografía sobre los períodos geológicos de la isla de Santo Domingo expresamente indicados, relacionando los textos y mapas proporcionados con su relieve interno y costero. No dibujes otro mapa ni añadas todas las eras geológicas.",
+      "family": "INFOGRAPHIC_WITH_MAP",
+      "requiredKeys": [
+        "visual-information",
+        "visual-relations"
+      ],
+      "sourceRecordIds": [
+        "33938f16-ae82-534e-874f-15ffba00e1f8"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "mountain-resource-research",
+      "description": "Investiga en las fuentes proporcionadas la situación de los sistemas montañosos dominicanos indicados respecto de la explotación de sus recursos, distinguiendo hechos, impactos e inferencias. No visites las zonas ni recopiles datos privados.",
+      "family": "RESOURCE_USE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "e2b9fdb5-7215-5ee0-8075-f56bb2289a0b"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "island-coordinate-location",
+      "description": "Utiliza el sistema de coordenadas, meridianos y paralelos del globo proporcionado para ubicar y orientar la isla de Santo Domingo, manteniendo sus referencias. No calcules husos horarios ni exijas otro aparato.",
+      "family": "COORDINATE_LOCATION",
+      "requiredKeys": [
+        "coordinate-location"
+      ],
+      "sourceRecordIds": [
+        "3473920e-9a66-5220-b980-c29b57b15cfa"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "water-resource-map-sources",
+      "description": "Localiza y ubica los recursos hídricos de la isla de Santo Domingo indicados en el mapa y sintetiza la información proporcionada sobre su situación en la fecha del ejercicio. No afirmes datos actuales ni inventes caudales.",
+      "family": "WATER_RESOURCE_LOCATION",
+      "requiredKeys": [
+        "location",
+        "water-status"
+      ],
+      "sourceRecordIds": [
+        "0dcaf39a-c6da-5009-a59e-a71bab01605c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "climatic-ecological-characterization",
+      "description": "Investiga en las fuentes dadas las zonas climáticas, ecológicas y los ecosistemas costeros y marinos de la isla expresamente indicados y caracteriza sus relaciones con los espacios examinados. No añadas otras regiones ni midas parámetros ambientales.",
+      "family": "CLIMATE_ECOSYSTEM_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "10aebb0b-3a95-591f-967d-2b9a1288d71d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "rainfall-map-comparison",
+      "description": "Consulta la información meteorológica proporcionada, interpreta los mapas de precipitación y compara el régimen de lluvias de la comunidad ficticia con el de otra zona similar del ejercicio, conservando períodos, unidades y leyendas. No consultes el tiempo actual.",
+      "family": "METEOROLOGICAL_MAP_COMPARISON",
+      "requiredKeys": [
+        "precipitation-reading",
+        "comparison"
+      ],
+      "sourceRecordIds": [
+        "f272de0b-55da-50e0-9ccc-6be6efb40f50"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "mountain-climate-soil-relations",
+      "description": "Identifica los sistemas montañosos, la diversificación climática y la variación de los suelos de la isla solicitados en los materiales y explica su influencia en la biodiversidad y actividades humanas del caso. No impongas todos los sistemas de la isla.",
+      "family": "MOUNTAIN_CLIMATE_SOIL_RELATIONS",
+      "requiredKeys": [
+        "spatial-relations"
+      ],
+      "sourceRecordIds": [
+        "db529104-1464-5132-9fa1-9eec076d6b4e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "valley-plain-comparison",
+      "description": "Compara los valles, llanuras y regiones especiales indicados de la isla de Santo Domingo mediante dimensiones comunes y explica su importancia en agricultura, ganadería e industria con los datos del ejercicio. No añadas otros territorios.",
+      "family": "VALLEY_PLAIN_COMPARISON",
+      "requiredKeys": [
+        "comparison",
+        "productive-relations"
+      ],
+      "sourceRecordIds": [
+        "8350e98d-d1de-52fa-a7a5-3183883f6aa5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "coastal-ecosystem-relations",
+      "description": "Describe los ecosistemas costeros y marinos solicitados de la isla y su relación con pesca, turismo y conservación de la biodiversidad mediante las evidencias dadas. No inventes mediciones ni exijas viajar a la costa.",
+      "family": "ECOSYSTEM_DESCRIPTION",
+      "requiredKeys": [
+        "ecosystem-relations"
+      ],
+      "sourceRecordIds": [
+        "3fe4b99d-fab6-5fbf-b7de-3e9b5e190899"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "basin-water-agriculture",
+      "description": "Identifica las cuencas hidrográficas de la isla indicadas en los mapas y explica su importancia en gestión del agua y producción agrícola con los hechos dados. No inventes caudales.",
+      "family": "BASIN_IDENTIFICATION",
+      "requiredKeys": [
+        "basin-location",
+        "water-use"
+      ],
+      "sourceRecordIds": [
+        "d338becc-e47d-5240-8777-90b55c5457f5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "marine-fluvial-runoff-impact",
+      "description": "Analiza las aguas marinas, formas fluviales y escorrentía superficial de los espacios de la isla indicados, explicando sus impactos ambientales y sobre la infraestructura con los datos proporcionados. No extrapoles mediciones a otros lugares.",
+      "family": "HYDROGRAPHIC_IMPACT_ANALYSIS",
+      "requiredKeys": [
+        "hydrographic-relations",
+        "consequences"
+      ],
+      "sourceRecordIds": [
+        "7c1fc0b6-ab64-5f06-b586-cfe7b8ca50c3"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "aquifer-oral-presentation",
+      "description": "Organiza y presenta oralmente la evolución del sistema acuífero de la isla indicada en los materiales, diferenciando aguas superficiales y subterráneas y relacionándolas con usos agrícolas, industriales y humanos. No hagas análisis de calidad del agua.",
+      "family": "AQUIFER_ORAL_PRESENTATION",
+      "requiredKeys": [
+        "aquifer-relations",
+        "oral"
+      ],
+      "sourceRecordIds": [
+        "b5afe8f5-a155-58da-ad54-078d9b446fd3"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "economic-sectors-presentation",
+      "description": "Organiza y presenta oralmente las actividades económicas primarias, secundarias y terciarias y los sistemas de producción e intercambios comerciales de los casos de la isla proporcionados. Distingue los sectores y sus relaciones sin inventar datos comerciales.",
+      "family": "ECONOMIC_ORAL_PRESENTATION",
+      "requiredKeys": [
+        "economic-relations",
+        "oral"
+      ],
+      "sourceRecordIds": [
+        "a140d016-d808-5ef3-8963-2bfef452b1af"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "border-trade-history-research",
+      "description": "Investiga la historia del sistema comercial fronterizo de la isla en las fuentes dadas y explica su impacto económico en los períodos solicitados. No estudies todos los conceptos históricos del currículo ni consultes precios actuales.",
+      "family": "BORDER_TRADE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "d542f9f9-ecfd-54c7-b703-064ef17a6df0"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "historical-concept-research",
+      "description": "Investiga los significados de encomienda y mestizaje en los documentos del período colonial proporcionados y explica sus relaciones en el caso. No añadas el resto de conceptos de la lista curricular.",
+      "family": "CONCEPT_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "d542f9f9-ecfd-54c7-b703-064ef17a6df0"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "historical-economic-map-research",
+      "description": "Investiga las actividades económicas de la isla expresamente indicadas desde el siglo XV al XIX utilizando las fuentes y mapas proporcionados, conservando las leyendas, espacios y períodos de cada representación. No inventes datos ni dibujes otro mapa.",
+      "family": "HISTORICAL_ECONOMIC_MAPS",
+      "requiredKeys": [
+        "research-content",
+        "map-evidence",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "5bbf347a-3b95-53e8-8c3e-a9434ff456ad"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "historical-research-plan",
+      "description": "Elabora el plan de un proyecto de investigación sobre el período de la historia dominicana indicado y su relación con los conceptos del ejercicio: formula la pregunta, delimita espacio y tiempo y propone fuentes y pasos viables. No presentes hallazgos como obtenidos ni ejecutes entrevistas.",
+      "family": "RESEARCH_PROJECT_PLAN",
+      "requiredKeys": [
+        "research-question",
+        "research-scope",
+        "research-method"
+      ],
+      "sourceRecordIds": [
+        "62812706-4a7c-5990-a527-3b5f05abb8e5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "historical-period-event-comparison",
+      "description": "Compara los eventos y procesos de los dos períodos dominicanos indicados con dimensiones comunes y explica su impacto social y cultural según las fuentes dadas. No impongas todos los períodos de la historia.",
+      "family": "HISTORICAL_PERIOD_COMPARISON",
+      "requiredKeys": [
+        "comparison",
+        "consequences"
+      ],
+      "sourceRecordIds": [
+        "a72df7a7-e68c-525f-aad5-15b4c7802bf3"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "cultural-legacy-presentation",
+      "description": "Organiza y presenta oralmente los elementos tangibles e intangibles del legado aborigen, africano y español indicados en los materiales, explicando procedencias e interacciones históricas. No jerarquices culturas ni exijas experiencias familiares.",
+      "family": "CULTURAL_HERITAGE_PRESENTATION",
+      "requiredKeys": [
+        "heritage-relations",
+        "oral"
+      ],
+      "sourceRecordIds": [
+        "6419c48f-1093-5cfd-addd-c0796f8801a3",
+        "b5855c3f-8c05-5838-9a30-a23c59a150d5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "colonial-resistance-sociodrama",
+      "description": "Representa en un sociodrama las formas de resistencia a la explotación colonial de los grupos indicados en el caso histórico proporcionado. Conserva actores, condiciones y evidencias y distingue la escenificación ficticia de los hechos. No dramatices vivencias privadas.",
+      "family": "HISTORICAL_SOCIODRAMA",
+      "requiredKeys": [
+        "historical-role",
+        "historical-context"
+      ],
+      "sourceRecordIds": [
+        "d5bbf830-847e-5a89-a5d2-1e7693d118c7",
+        "9ad0d348-be15-5fe4-9caa-ebaa0fed560e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "identity-historical-timeline",
+      "description": "Elabora una línea de tiempo de los momentos proporcionados de formación histórica de la identidad dominicana, conservando fechas, secuencias y contexto. No califiques patriotismo ni reveles identidad privada.",
+      "family": "HISTORICAL_IDENTITY_TIMELINE",
+      "requiredKeys": [
+        "sequence"
+      ],
+      "sourceRecordIds": [
+        "229d5691-6de3-561a-8727-e57e57c863be"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "historical-belonging-discussion",
+      "description": "Discute los aspectos de los momentos históricos que contribuyeron a la identidad nacional según las fuentes dadas, distinguiendo explicaciones y evidencias. No exijas adhesión a una identidad ni sentimientos patrióticos.",
+      "family": "HISTORICAL_IDENTITY_DISCUSSION",
+      "requiredKeys": [
+        "discussion"
+      ],
+      "sourceRecordIds": [
+        "be0e9f4d-47c1-568b-bbf9-cc98d553a69b"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "historical-source-recovery",
+      "description": "Identifica las obras y documentos sobre el período dominicano solicitado en los registros proporcionados de AGN, Clío y Memoria de Quisqueya, justificando su pertinencia y procedencia. No exijas acceder a todos los repositorios ni contratar bases de pago.",
+      "family": "DIGITAL_SOURCE_RECOVERY",
+      "requiredKeys": [
+        "digital-source-recovery"
+      ],
+      "sourceRecordIds": [
+        "1b48c5b5-c46f-5a26-8ac1-d02fc862a566"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "historical-state-of-art",
+      "description": "Elabora un estado del arte del período dominicano indicado con los documentos escritos proporcionados: relaciona preguntas, enfoques, hallazgos y límites de los autores. No hagas una lista bibliográfica sin relacionar sus aportes ni presentes una investigación propia.",
+      "family": "STATE_OF_ART",
+      "requiredKeys": [
+        "state-of-art-relations",
+        "source-attribution"
+      ],
+      "sourceRecordIds": [
+        "c68bc34b-0449-51db-807c-9ad5e97d3180"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "aboriginal-provenance-organizer",
+      "description": "Elabora un cuadro sinóptico de los primeros grupos preagrícolas y agrícolas que habitaron la isla, relacionando procedencia, características y aportes indicados en las fuentes. No los jerarquices ni impongas todos los rasgos de la cultura taína.",
+      "family": "ABORIGINAL_GROUP_ORGANIZER",
+      "requiredKeys": [
+        "organizer-relations"
+      ],
+      "sourceRecordIds": [
+        "a70fc05a-299d-594d-a5c0-478840749235"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "conqueror-arrival-factors",
+      "description": "Identifica los factores que posibilitaron la llegada de los conquistadores a la isla de Santo Domingo y explica su relación con los hechos proporcionados. No atribuyas causas sin evidencia.",
+      "family": "CONQUEST_FACTORS",
+      "requiredKeys": [
+        "causes"
+      ],
+      "sourceRecordIds": [
+        "687cf08b-40e7-59b5-b7c0-4c7f324fc37b"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "devastation-map-causes",
+      "description": "Analiza los mapas proporcionados de las Devastaciones de Osorio, relacionando lugares y cambios con las razones e implicaciones del hecho en su período. No dibujes otro mapa ni atribuyas a sus símbolos información ausente.",
+      "family": "HISTORICAL_MAP_CAUSES",
+      "requiredKeys": [
+        "historical-map-reading",
+        "causes",
+        "consequences"
+      ],
+      "sourceRecordIds": [
+        "99a24c30-9b3d-574e-81e7-73c40f839d88",
+        "64c5911e-9311-5886-8405-6e9c55b92462"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "colonial-partition-source-selection",
+      "description": "Selecciona las fuentes confiables proporcionadas para explicar la división de la isla de Santo Domingo en dos colonias, sus causas y los tratados europeos indicados, justificando procedencia, contexto y respaldo. No investigues fronteras actuales.",
+      "family": "SOURCE_SELECTION",
+      "requiredKeys": [
+        "source-reliability"
+      ],
+      "sourceRecordIds": [
+        "244802ab-acf7-5d74-bcff-5e638d134847",
+        "520fdf5c-df60-550e-ada7-43f0e76b4d32"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "colonial-partition-causality",
+      "description": "Analiza las causas y consecuencias de la división de la isla en dos colonias y los tratados firmados por las potencias europeas indicados en las fuentes. No afirmes vigencia actual ni añadas otros tratados.",
+      "family": "COLONIAL_PARTITION_ANALYSIS",
+      "requiredKeys": [
+        "causes",
+        "consequences",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "6cdc6e21-99c2-55cb-b483-112e96fcf7ee"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "colonial-enlightenment-influence",
+      "description": "Analiza la influencia de las ideas ilustradas y burguesas en los casos de las colonias de Santo Domingo proporcionados, relacionando propuestas, actores y hechos. No exijas adhesión filosófica.",
+      "family": "IDEA_INFLUENCE_ANALYSIS",
+      "requiredKeys": [
+        "idea-influence"
+      ],
+      "sourceRecordIds": [
+        "e96ffaea-6a17-5fee-99c0-60e2eb5f540c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "seventeenth-eighteenth-change-factors",
+      "description": "Identifica los factores de cambios políticos, económicos, sociales, culturales y espaciales de la isla en los siglos XVII y XVIII indicados en las fuentes. Relaciona cada factor con el cambio que respalda. No añadas cambios de otros siglos.",
+      "family": "HISTORICAL_CHANGE_FACTORS",
+      "requiredKeys": [
+        "causes"
+      ],
+      "sourceRecordIds": [
+        "64c5911e-9311-5886-8405-6e9c55b92462"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "french-haitian-revolution-impact",
+      "description": "Presenta oralmente el impacto de las revoluciones francesa y haitiana en las colonias de Santo Domingo indicado en las fuentes, distinguiendo actores, procesos y evidencias. No añadas todas las revoluciones burguesas.",
+      "family": "REVOLUTION_IMPACT_PRESENTATION",
+      "requiredKeys": [
+        "revolution-impact",
+        "oral"
+      ],
+      "sourceRecordIds": [
+        "9bd5882c-9f6d-5484-b59d-cabcd68bbce8"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "eastern-governments-timeline",
+      "description": "Elabora una línea de tiempo de los gobiernos y acontecimientos de la parte oriental de Santo Domingo entre 1801 y 1809 indicados en los materiales, identificando dominio haitiano, francés y Reconquista según sus períodos. No añadas 1822 ni toda la historia de la isla.",
+      "family": "EASTERN_GOVERNMENT_TIMELINE",
+      "requiredKeys": [
+        "sequence"
+      ],
+      "sourceRecordIds": [
+        "aad8a1a2-780d-5c6b-b785-c3abe9471fe4",
+        "aa9f28cd-3983-544c-813c-c42833c41ad3"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "spain-boba-reflective-journal",
+      "description": "Elabora un diario reflexivo sobre los acontecimientos de 1809–1821 de España Boba proporcionados: organiza entradas que relacionen hechos, preguntas e interpretaciones respaldadas. No cuentes vivencias privadas ni presentes pensamientos ficticios de personajes como documentos históricos.",
+      "family": "HISTORICAL_REFLECTIVE_JOURNAL",
+      "requiredKeys": [
+        "historical-journal",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "212f622b-ba27-53bc-8e7e-8a4f2772d522"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "france-spain-comparative-text-chart",
+      "description": "Produce un texto y un cuadro comparativo sobre las características económicas y sociales de la Era de Francia y España Boba indicadas en las fuentes; relaciona los sectores que apoyaron cada dominación. No añadas otras épocas ni exijas una postura política personal.",
+      "family": "COMPARATIVE_TEXT_AND_CHART",
+      "requiredKeys": [
+        "comparative-text",
+        "comparison"
+      ],
+      "sourceRecordIds": [
+        "25b73387-a8ee-5535-8d56-73cce68ecb0e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "ephemeral-independence-concept",
+      "description": "Explica el proceso y significado de la Independencia Efímera de José Núñez de Cáceres según los hechos dados, distinguiéndola de la independencia de 1844. No impongas todos los procesos independentistas.",
+      "family": "HISTORICAL_CONCEPT_EXPLANATION",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "686715ad-2801-54bf-8c10-90a40995dcbd"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "eastern-period-school-newspaper",
+      "description": "Elabora un periódico escolar sobre los acontecimientos de la parte oriental de Santo Domingo entre 1800 y 1821 expresamente indicados con las fuentes proporcionadas. No redactes noticias actuales ni inventes imágenes o entrevistas.",
+      "family": "HISTORICAL_SCHOOL_NEWSPAPER",
+      "requiredKeys": [
+        "school-newspaper-content"
+      ],
+      "sourceRecordIds": [
+        "57ba6ceb-dcd9-5994-a01f-48c61fe0b31f"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "haitian-occupation-reading-report",
+      "description": "Elabora un informe de lectura del dominio haitiano de 1822–1844 con los textos proporcionados, seleccionando uno de los esquemas dados y relacionando las secciones con los hechos e interpretaciones. No impongas otro esquema ni investigues fuera del material.",
+      "family": "READING_REPORT_OUTLINE",
+      "requiredKeys": [
+        "report-content",
+        "report-structure",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "1897cbd7-f490-50b7-a9d4-7ae254e8aa23",
+        "d22372b7-c851-526c-82e0-5140d9cac603"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "haitian-occupation-audiovisual-evidence",
+      "description": "Analiza el documental y el video proporcionados sobre la ocupación haitiana de 1822–1844, localizando las afirmaciones y evidencias de las escenas examinadas y sus límites. No exijas producir otra película ni atribuyas todo lo escenificado a hechos comprobados.",
+      "family": "AUDIOVISUAL_SOURCE_ANALYSIS",
+      "requiredKeys": [
+        "audiovisual-evidence"
+      ],
+      "sourceRecordIds": [
+        "80a1cd32-778d-56b9-9d7a-740316d5267f"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "boyer-measure-synthesis",
+      "description": "Sintetiza las medidas del gobierno de Boyer indicadas en los libros y revistas proporcionados, conservando su procedencia, contexto y alcance. No añadas medidas de otros gobiernos ni compares todos los autores si no se solicita.",
+      "family": "HISTORICAL_SOURCE_SYNTHESIS",
+      "requiredKeys": [
+        "information-synthesis"
+      ],
+      "sourceRecordIds": [
+        "3dd744bf-d58b-5a61-bc07-a637af62d6ce"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "boyer-support-opposition",
+      "description": "Identifica los sectores a favor y en contra del gobierno de Boyer en los textos del ejercicio, relacionando sus posiciones con las razones y condiciones indicadas. No juzgues nacionalidades actuales.",
+      "family": "HISTORICAL_POSITION_IDENTIFICATION",
+      "requiredKeys": [
+        "sector-positions"
+      ],
+      "sourceRecordIds": [
+        "057f2013-7594-525a-97cc-948cc3a5a986"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "boyer-regime-crisis",
+      "description": "Identifica los factores de la crisis del régimen de Boyer y explica su relación con los hechos dados. No confundas factores con consecuencias ni añadas otros gobiernos.",
+      "family": "REGIME_CRISIS_FACTORS",
+      "requiredKeys": [
+        "causes"
+      ],
+      "sourceRecordIds": [
+        "d79c6447-4be6-539d-8045-13340688097a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "occupation-drafts-revision",
+      "description": "Redacta al menos dos borradores del informe de lectura sobre la ocupación haitiana de 1822–1844 con los textos dados y corrígelos antes de la entrega final, explicando los cambios de contenido y atribución. Conserva las versiones para su revisión. No valores la rapidez o caligrafía.",
+      "family": "TWO_DRAFTS_AND_REVISION",
+      "requiredKeys": [
+        "report-content",
+        "draft-revision"
+      ],
+      "sourceRecordIds": [
+        "aaaf8643-6f11-59e5-b10d-35c68b903449",
+        "58f63742-ce6f-5e7f-b3dc-2e8899c8c7f5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "independence-antecedent-synthesis",
+      "description": "Sistematiza los antecedentes y acontecimientos de la independencia dominicana indicados en las fuentes mediante un esquema con relaciones históricas explicadas. No impongas un relato patriótico ni hechos posteriores.",
+      "family": "INDEPENDENCE_ANTECEDENTS",
+      "requiredKeys": [
+        "organizer-relations"
+      ],
+      "sourceRecordIds": [
+        "96602882-c70a-575c-b0b1-84c14004e925",
+        "1aacab44-e161-5be8-8baa-6f0d05b4a5b7"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "trinitaria-historical-role",
+      "description": "Analiza la formación y función de la Trinitaria en el movimiento de independencia con las fuentes proporcionadas, diferenciando hechos y atribuciones. No añadas sociedades secretas ajenas al caso.",
+      "family": "HISTORICAL_ORGANIZATION_ANALYSIS",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "7fd2bc8f-b043-572c-b67c-a4c4f4f6adf5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "duarte-alliance-exclusion",
+      "description": "Analiza el papel de Duarte y el movimiento nacionalista en los casos de alianza y exclusión proporcionados, relacionando actores, decisiones y condiciones históricas. No califiques adhesión patriótica.",
+      "family": "NATIONALIST_MOVEMENT_ANALYSIS",
+      "requiredKeys": [
+        "nationalist-relations"
+      ],
+      "sourceRecordIds": [
+        "7b64e490-7708-559c-986b-28238d33ab9a",
+        "4dc3b938-c0ea-5aab-82d8-ff0c96b44efa"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "liberal-conservative-identification",
+      "description": "Identifica las posiciones de liberales y conservadores dominicanos de los textos históricos dados, distinguiendo actores y contextos. No exijas preferencias políticas personales ni añadas constituciones ausentes.",
+      "family": "POLITICAL_POSITION_IDENTIFICATION",
+      "requiredKeys": [
+        "identification"
+      ],
+      "sourceRecordIds": [
+        "d6e5de4a-46c4-5a7b-a511-5a3504c50dd3"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "popular-independence-participation",
+      "description": "Analiza la participación popular en el proceso de independencia dominicana mediante los hechos y fuentes dados, distinguiendo actores, aportes y límites de la información. No presupongas unanimidad o adhesión personal.",
+      "family": "POPULAR_PARTICIPATION_ANALYSIS",
+      "requiredKeys": [
+        "participation-relations",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "869a79cf-46da-5378-87be-57ae97b9d9b2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "women-independence-role-simulation",
+      "description": "Simula el rol histórico de una mujer en la independencia dominicana según el caso y evidencias proporcionados, representando decisiones compatibles con sus condiciones y distinguiendo escenificación de hechos. No inventes testimonios ni uses vivencias privadas.",
+      "family": "HISTORICAL_ROLE_SIMULATION",
+      "requiredKeys": [
+        "historical-role",
+        "historical-context"
+      ],
+      "sourceRecordIds": [
+        "7b3547f9-ab07-5ed3-8072-3a7141da136f"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "second-republic-process-analysis",
+      "description": "Analiza y sistematiza los procesos de la Segunda República expresamente solicitados con las fuentes proporcionadas, relacionando hechos y condiciones. No añadas todos sus gobiernos ni la intervención de 1916 si no se pide.",
+      "family": "SECOND_REPUBLIC_PROCESS_ANALYSIS",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "1d06d9c2-0ae9-5039-87c0-b16c665c900b",
+        "0f81a5e3-4cbb-5f69-88d7-325976d4f35b"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "santana-baez-conflict-analysis",
+      "description": "Analiza los conflictos internos entre Pedro Santana y Buenaventura Báez de los casos y fuentes dados, distinguiendo sus posiciones, hechos y condiciones. No juzgues preferencias políticas actuales.",
+      "family": "POLITICAL_CONFLICT_ANALYSIS",
+      "requiredKeys": [
+        "political-conflict",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "7a848c57-7c70-523b-9f7f-f98f8fe1a9b8"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "first-republic-timeline",
+      "description": "Elabora una línea de tiempo de los acontecimientos de 1844–1861 expresamente indicados de la Primera República, conservando secuencia y referencias. No añadas la Restauración.",
+      "family": "FIRST_REPUBLIC_TIMELINE",
+      "requiredKeys": [
+        "sequence"
+      ],
+      "sourceRecordIds": [
+        "431d5248-18fd-5206-b526-ffaedc2be714"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "liberal-conservative-debate",
+      "description": "Debate las posiciones liberales y conservadoras dominicanas del caso histórico dado, defendiendo argumentos y respondiendo a las réplicas con sus documentos. No exijas adhesión política ni consenso.",
+      "family": "HISTORICAL_POSITION_DEBATE",
+      "requiredKeys": [
+        "argument",
+        "response"
+      ],
+      "sourceRecordIds": [
+        "1f6d1cd4-b719-5f8f-b322-d155faa32424"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "first-republic-economic-political-schema",
+      "description": "Elabora un esquema de las características económicas, políticas y sociales de la Primera República expresamente indicadas y explica sus conexiones con los hechos dados. No analices la anexión si no se solicita.",
+      "family": "FIRST_REPUBLIC_ORGANIZER",
+      "requiredKeys": [
+        "organizer-relations"
+      ],
+      "sourceRecordIds": [
+        "e9a2a613-235e-56a8-8a5b-4ae1ea502b46"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "annexation-spain-factors",
+      "description": "Analiza los factores que provocaron la anexión de República Dominicana a España con las fuentes del ejercicio, relacionando condiciones y decisiones. No atribuyas a todos los actores la misma posición ni juzgues nacionalidades actuales.",
+      "family": "ANNEXATION_FACTORS",
+      "requiredKeys": [
+        "causes",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "e9a2a613-235e-56a8-8a5b-4ae1ea502b46"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "antiannexation-text-reading",
+      "description": "Interpreta los textos proporcionados sobre la resistencia dominicana a la anexión a España, diferenciando afirmaciones, contexto y evidencias. No redactes testimonios ficticios como documentos auténticos.",
+      "family": "RESISTANCE_TEXT_ANALYSIS",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "1acfa2e1-875c-5713-b5e9-69a4c5056c9f"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "restoration-timeline",
+      "description": "Elabora una línea de tiempo de los acontecimientos históricos de la Restauración de 1861–1865 indicados en las fuentes, manteniendo secuencia y períodos. No añadas hechos de 1916.",
+      "family": "RESTORATION_TIMELINE",
+      "requiredKeys": [
+        "sequence"
+      ],
+      "sourceRecordIds": [
+        "308914cc-ded6-5e8d-820e-c41da70c60f7"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "first-republic-government-research",
+      "description": "Investiga los gobiernos de la Primera República expresamente indicados en las fuentes y relaciona sus decisiones con las condiciones del período. No estudies además la Segunda República.",
+      "family": "FIRST_REPUBLIC_GOVERNMENT_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "e207b8b1-a272-5140-a7d2-860a8e0aa851"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "second-republic-government-research",
+      "description": "Investiga los gobiernos de la Segunda República expresamente indicados en las fuentes y relaciona sus decisiones con las condiciones del período. No estudies además la Primera República.",
+      "family": "SECOND_REPUBLIC_GOVERNMENT_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "e207b8b1-a272-5140-a7d2-860a8e0aa851"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "democratic-state-obstacles",
+      "description": "Identifica y analiza los problemas internos y externos del siglo XIX y principios del XX que limitaron la creación de un Estado democrático dominicano en los casos y fuentes dados. No añadas un diagnóstico político actual.",
+      "family": "HISTORICAL_DEMOCRATIC_STATE_ANALYSIS",
+      "requiredKeys": [
+        "democratic-obstacles",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "2de8eb1e-c9bf-5b4c-a6c2-6706af03fa00"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "nineteenth-modernity-monograph",
+      "description": "Investiga la vida social, modernidad y urbanización del siglo XIX dominicano en las fuentes proporcionadas y elabora una monografía que relacione sus rasgos y contextos. No recopiles experiencias familiares ni estudies ciudades actuales.",
+      "family": "HISTORICAL_MONOGRAPH",
+      "requiredKeys": [
+        "monograph-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "1a0d1cc6-58f7-50b1-9a8b-a13f411ac1a4"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "second-republic-government-action-timeline",
+      "description": "Elabora una línea de tiempo de las acciones políticas, sociales y económicas de los gobiernos de la Segunda República expresamente indicados, conservando fechas, actores y conexiones. No atribuyas medidas de otros gobiernos.",
+      "family": "GOVERNMENT_ACTION_TIMELINE",
+      "requiredKeys": [
+        "sequence"
+      ],
+      "sourceRecordIds": [
+        "4745501e-5c22-5ff0-9bee-f780946e2e83"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "historical-government-critical-evaluation",
+      "description": "Evalúa críticamente los gobiernos dominicanos del siglo XIX y principios del XX expresamente indicados y su impacto en el caso posterior proporcionado, utilizando criterios y evidencias. No juzgues preferencias partidarias ni inventes efectos actuales.",
+      "family": "HISTORICAL_GOVERNMENT_EVALUATION",
+      "requiredKeys": [
+        "government-evaluation"
+      ],
+      "sourceRecordIds": [
+        "92d2e0d1-66c6-50ba-a731-0ec91b7dcc6e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "caudillismo-dictatorship-comparison",
+      "description": "Compara los caudillismos y dictaduras de la Segunda República indicados mediante dimensiones comunes y los contextos y evidencias de las fuentes. No añadas regímenes del siglo XXI.",
+      "family": "HISTORICAL_REGIME_COMPARISON",
+      "requiredKeys": [
+        "comparison",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "9ddce893-f5bb-5242-9e41-02e98326c3d2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "occupation-1916-comic",
+      "description": "Elabora un cómic sobre el impacto de la intervención norteamericana de 1916–1924 expresamente indicado con las fuentes dadas, relacionando escenas, diálogos y hechos. No inventes testimonios auténticos ni exijas otros medios.",
+      "family": "HISTORICAL_COMIC",
+      "requiredKeys": [
+        "visual-historical"
+      ],
+      "sourceRecordIds": [
+        "98c1dc30-6865-5db4-8e44-a7bfdb351d82",
+        "03afa1d5-26eb-535c-a6a3-fe314d29d5e6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "occupation-1916-meme",
+      "description": "Elabora un meme sobre el impacto de la intervención de 1916–1924 en el caso proporcionado, relacionando texto e imagen con los hechos y distinguiendo el recurso expresivo de la evidencia histórica. No ataques nacionalidades actuales ni exijas otro producto.",
+      "family": "HISTORICAL_MEME",
+      "requiredKeys": [
+        "visual-historical"
+      ],
+      "sourceRecordIds": [
+        "98c1dc30-6865-5db4-8e44-a7bfdb351d82",
+        "03afa1d5-26eb-535c-a6a3-fe314d29d5e6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "occupation-1916-collage-alternative",
+      "description": "Elabora un collage o un cómic sobre el impacto de la intervención norteamericana de 1916–1924 en el caso con los recursos dados. Conserva el contenido histórico en el medio elegido. No exijas ambos productos ni materiales costosos.",
+      "family": "ALTERNATIVE_VISUAL_PRODUCT",
+      "requiredKeys": [
+        "alternative"
+      ],
+      "sourceRecordIds": [
+        "98c1dc30-6865-5db4-8e44-a7bfdb351d82",
+        "03afa1d5-26eb-535c-a6a3-fe314d29d5e6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "occupation-1916-wall-newspaper",
+      "description": "Elabora un periódico mural sobre el impacto de la intervención de 1916–1924 en el caso con las fuentes y recursos dados, organizando las informaciones y relaciones visuales solicitadas. No redactes noticias actuales ni exijas otros productos.",
+      "family": "HISTORICAL_WALL_NEWSPAPER",
+      "requiredKeys": [
+        "wall-newspaper-content",
+        "visual-relations"
+      ],
+      "sourceRecordIds": [
+        "98c1dc30-6865-5db4-8e44-a7bfdb351d82",
+        "03afa1d5-26eb-535c-a6a3-fe314d29d5e6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "occupation-1916-short-video",
+      "description": "Elabora un corto audiovisual sobre el impacto de la intervención de 1916–1924 indicado con los textos e imágenes proporcionados, relacionando la secuencia y el contenido. No exijas filmaciones de campo ni testimonios de personas reales.",
+      "family": "HISTORICAL_SHORT_VIDEO",
+      "requiredKeys": [
+        "multimedia-content",
+        "multimedia-relations"
+      ],
+      "sourceRecordIds": [
+        "98c1dc30-6865-5db4-8e44-a7bfdb351d82",
+        "03afa1d5-26eb-535c-a6a3-fe314d29d5e6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "occupation-1916-news-simulation",
+      "description": "Simula un noticiero histórico sobre el impacto de la intervención de 1916–1924 con los hechos y fuentes proporcionados, diferenciando información, atribuciones y escenificación. No presentes el ejercicio como una emisión actual ni inventes testimonios reales.",
+      "family": "HISTORICAL_NEWS_SIMULATION",
+      "requiredKeys": [
+        "historical-news-content",
+        "historical-news-delivery"
+      ],
+      "sourceRecordIds": [
+        "98c1dc30-6865-5db4-8e44-a7bfdb351d82",
+        "03afa1d5-26eb-535c-a6a3-fe314d29d5e6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "occupation-1916-reportage",
+      "description": "Redacta un reportaje sobre el impacto de la intervención norteamericana de 1916–1924 expresamente indicado con las fuentes proporcionadas, relacionando hechos, contextos y atribuciones. No inventes entrevistas ni exijas investigar fuera del material.",
+      "family": "HISTORICAL_REPORTAGE",
+      "requiredKeys": [
+        "reportage-content",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "98c1dc30-6865-5db4-8e44-a7bfdb351d82",
+        "03afa1d5-26eb-535c-a6a3-fe314d29d5e6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "constitution-structure-analysis",
+      "description": "Analiza la estructura de la Constitución dominicana proporcionada para el ejercicio y explica las funciones y relaciones de sus partes según el texto. No inventes artículos ni afirmes vigencia actual.",
+      "family": "CONSTITUTION_STRUCTURE_ANALYSIS",
+      "requiredKeys": [
+        "constitutional-structure"
+      ],
+      "sourceRecordIds": [
+        "fbaebc41-244d-5ac4-a37c-8bda4c14473b"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "rule-of-law-implications",
+      "description": "Analiza las implicaciones de un Estado de derecho en el caso ficticio dominicano con las disposiciones y hechos dados. Distingue texto normativo e interpretación. No resuelvas un litigio real ni juzgues nacionalidades.",
+      "family": "RULE_OF_LAW_ANALYSIS",
+      "requiredKeys": [
+        "rule-of-law-relations"
+      ],
+      "sourceRecordIds": [
+        "fdfa6a3a-e936-5bed-929b-fe9819485b73"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "constitutional-influence-comparison",
+      "description": "Explica la influencia de las constituciones estadounidense y francesa democrático-liberales en las disposiciones dominicanas históricas proporcionadas, localizando sus semejanzas y límites de atribución. No infieras influencia solo por coincidencia de palabras.",
+      "family": "CONSTITUTIONAL_INFLUENCE_ANALYSIS",
+      "requiredKeys": [
+        "constitutional-influence"
+      ],
+      "sourceRecordIds": [
+        "c6e46b84-a76a-54f7-be6e-7374a68a2159"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "national-identity-debate",
+      "description": "Debate posturas sobre la importancia histórica de la identidad nacional dominicana en el caso ficticio, argumentando y respondiendo a las réplicas con los hechos y fuentes dados. No exijas patriotismo o una identidad privada determinada.",
+      "family": "IDENTITY_DEBATE",
+      "requiredKeys": [
+        "argument",
+        "response"
+      ],
+      "sourceRecordIds": [
+        "aecd2d8f-82fa-52f7-8aa0-7dba95deaace"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "national-identity-roundtable",
+      "description": "Participa en una mesa redonda moderada sobre los procesos de identidad nacional dominicana indicados, aportando razones y respondiendo a preguntas con las evidencias del ejercicio. No fuerces acuerdo ni divulgación de vivencias privadas.",
+      "family": "IDENTITY_ROUNDTABLE",
+      "requiredKeys": [
+        "roundtable"
+      ],
+      "sourceRecordIds": [
+        "aecd2d8f-82fa-52f7-8aa0-7dba95deaace"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "national-symbol-multimedia",
+      "description": "Elabora una presentación multimedia sobre los valores representados por los símbolos patrios indicados con los textos e imágenes proporcionados, relacionando significado y recursos visuales. No ejecutes voluntariado real ni califiques adhesión patriótica.",
+      "family": "CIVIC_MULTIMEDIA",
+      "requiredKeys": [
+        "multimedia-content",
+        "multimedia-relations"
+      ],
+      "sourceRecordIds": [
+        "22b42a57-29ae-5593-99bb-19480603d901"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "traffic-anonymized-case",
+      "description": "Analiza el caso ficticio concreto de accidente de tránsito proporcionado con sus hechos y normas, identifica las causas respaldadas y propone medidas preventivas viables. Justifica una decisión entre las alternativas dadas. No recopiles datos de víctimas ni predigas accidentes.",
+      "family": "TRAFFIC_CASE_PREVENTION",
+      "requiredKeys": [
+        "traffic-case",
+        "causes",
+        "proposal",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "babc309f-de45-5703-9f36-894d8659a3de"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "environmental-sustainability-proposal",
+      "description": "Presenta propuestas de sostenibilidad ambiental para el caso de recursos naturales indicado y explica cómo responden a sus problemas y condiciones con los datos dados. No presentes la planificación como ejecutada.",
+      "family": "ENVIRONMENTAL_PROPOSAL",
+      "requiredKeys": [
+        "proposal"
+      ],
+      "sourceRecordIds": [
+        "462f9392-ac3b-5c62-88fe-af1ce4df66bb"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "environmental-law-document-analysis",
+      "description": "Analiza las disposiciones de protección ambiental expresamente proporcionadas y relaciona su alcance con los hechos del caso ficticio. No inventes vigencia, sanciones u obligaciones ausentes.",
+      "family": "ENVIRONMENTAL_LAW_DOCUMENT",
+      "requiredKeys": [
+        "environmental-law-evidence"
+      ],
+      "sourceRecordIds": [
+        "133b704f-ea97-55a5-90bf-ec65e4ddb48e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "everyday-dialogue-reasons",
+      "description": "Participa en un diálogo sobre la situación cotidiana ficticia de convivencia indicada, expresa tu punto de vista y responde a las razones de las otras partes. No negocies acuerdos ni reveles experiencias privadas.",
+      "family": "EVERYDAY_DIALOGUE",
+      "requiredKeys": [
+        "dialogue-contributions"
+      ],
+      "sourceRecordIds": [
+        "542e6fef-3e47-5b93-a080-0b0b623ac7cb"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "life-road-project",
+      "description": "Elabora un proyecto para proteger la vida de las personas en las vías públicas de la comunidad ficticia: explica propósito, acciones, recursos dados y evidencias de seguimiento. No ejecutes intervenciones reales ni califiques moralidad privada.",
+      "family": "LIFE_PROTECTION_PROJECT_PLAN",
+      "requiredKeys": [
+        "project-purpose",
+        "project-actions",
+        "project-follow-up"
+      ],
+      "sourceRecordIds": [
+        "fdfe6bca-9a51-5221-a811-eb15b85ec6f6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "community-road-campaign-simulation",
+      "description": "Participa en la campaña escolar simulada de educación vial del caso, comunicando las orientaciones dadas y respondiendo las preguntas de los destinatarios ficticios. No salgas a la vía pública ni contactes a otras personas.",
+      "family": "SIMULATED_CAMPAIGN_PARTICIPATION",
+      "requiredKeys": [
+        "campaign-participation"
+      ],
+      "sourceRecordIds": [
+        "c2a57570-4606-506c-aef5-c6659f2a7144"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "values-peace-educational-campaign",
+      "description": "Presenta el mensaje y las acciones de una campaña educativa simulada sobre respeto de los valores humanos y cultura de paz para el caso ficticio indicado. Explica su pertinencia para los destinatarios. No califiques la supuesta moralidad de las personas.",
+      "family": "EDUCATIONAL_CAMPAIGN_PLAN",
+      "requiredKeys": [
+        "campaign-message",
+        "campaign-actions"
+      ],
+      "sourceRecordIds": [
+        "4ea0fa31-ce94-5806-9e10-171fefc92cb1"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "natural-resource-impact-evaluation",
+      "description": "Evalúa el impacto de la deforestación y el uso de petroquímicos de los espacios naturales indicados con los criterios y datos proporcionados, relacionando acciones y cambios. No inventes mediciones ni diagnósticos sanitarios.",
+      "family": "NATURAL_RESOURCE_IMPACT_EVALUATION",
+      "requiredKeys": [
+        "environmental-impact"
+      ],
+      "sourceRecordIds": [
+        "81456542-59cf-5055-a383-e0e0e9447535"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "risk-protected-scientific-source-check",
+      "description": "Verifica el carácter científico de las fuentes proporcionadas sobre zonas de riesgo y áreas protegidas mediante autoría, método, evidencias y límites expresados. No afirmes confiabilidad por apariencia ni atribuyas categorías legales actuales.",
+      "family": "SCIENTIFIC_SOURCE_VERIFICATION",
+      "requiredKeys": [
+        "scientific-source-evidence"
+      ],
+      "sourceRecordIds": [
+        "0b7280cb-bdce-5eed-a5e9-a9b2b4b885a4"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "road-tax-project-plan",
+      "description": "Elabora un proyecto educativo vial y tributario para el caso ficticio: explica propósito, acciones diferenciadas, recursos dados y evidencias de seguimiento. No calcules impuestos personales ni ejecutes una campaña real.",
+      "family": "ROAD_TAX_CIVIC_PROJECT",
+      "requiredKeys": [
+        "project-purpose",
+        "project-actions",
+        "project-follow-up"
+      ],
+      "sourceRecordIds": [
+        "d631972a-5137-5e53-82c7-21bf4f840070"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "liberal-conservative-constitutional-comparison",
+      "description": "Compara las constituciones liberales y conservadoras de los siglos XIX y XX expresamente proporcionadas mediante dimensiones comunes y su contexto histórico. No impongas todas las constituciones ni afirmes vigencia actual.",
+      "family": "HISTORICAL_CONSTITUTIONAL_COMPARISON",
+      "requiredKeys": [
+        "constitutional-comparison"
+      ],
+      "sourceRecordIds": [
+        "37a68760-21c0-55b8-949c-23dd0062cfcc"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    }
+  ]
+}

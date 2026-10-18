@@ -1,0 +1,26 @@
+{
+  "catalog": "evaluation-2026.103",
+  "grade": 5,
+  "project": "eolgunypmtgrsyrjzcld",
+  "status": "BLOCKED_PERSONAL_AUTHENTICATION_REQUIRED",
+  "observed": [
+    "Recarga normal final de la pestaña existente de localhost:8787/login; carga /assets/index-BAfenZTA.js.",
+    "La página reconoce la cuenta personal previamente autorizada.",
+    "Continuar con la cuenta recordada abre el campo Contraseña y Entrar; no acredita una sesión autenticada."
+  ],
+  "creatorLoadVerified": false,
+  "savedAndReopenedVerified": false,
+  "newPersonalActivityCreated": false,
+  "limits": [
+    "No se introdujo una contraseña ni se solicitó otro correo.",
+    "No se borraron datos, borradores, caché, almacenamiento ni service workers.",
+    "Las pruebas autenticadas HTTP/DB con QA se registran por separado y no sustituyen la prueba visual personal."
+  ],
+  "manualSteps": [
+    "Autenticar la cuenta propia de Development en localhost:8787.",
+    "Entrar por Cursos y Ciencias Sociales de quinto, y crear una actividad de prueba identificada como QA.",
+    "Introducir una consigna del archivo social-grade-five-contracts.json; comprobar estrategia visible, automático/manual e instrumento completo sin anuncios de preparación ni puntos predeterminados.",
+    "Elegir el formato y 17.35, editar un texto y guardar; reabrir conservando formato, texto, pesos y puntuación.",
+    "Cambiar únicamente la estrategia, guardar y reabrir; comprobar que el instrumento conserva exactamente los criterios, niveles y puntuación."
+  ]
+}

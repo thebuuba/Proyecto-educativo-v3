@@ -43,7 +43,9 @@ export function deliveryConditions(description:string):Condition[]{
  const cover=/\b(?:con|inclu\w*|lleva\w*|debe llevar) (?:una )?portada\b/.test(text.replace(/\bno\s+[^.;]*/g,''))
  if(noCover&&cover)throw new TaskRequirementError('se exige y se excluye la portada')
  if(noCover||cover)add('cover',noCover?'sin portada':'incluye portada')
- const sections=text.match(/\b(?:apartados|secciones)\s*(?:de\s*|:)?\s*([^.;]+)/)
+ const sections=text.match(/\b(?:apartados|secciones)\s*:\s*([^.;]+)/)
+  ??text.match(/(?:^|[.;]\s*)(?:apartados|secciones)\s+de\s+([^.;]+)/)
+  ??text.match(/\b(?:inclu[a-z]*|con|tendra|contendra|debe tener|debe contener)\s+(?:(?:los|las)\s+)?(?:apartados|secciones)\s+(?:de\s+)?([^.;]+)/)
  if(sections){const content=sections[1].trim();if(content)add('sections',`apartados solicitados: ${content}`)}
  const quantities=new Map<string,{unit:string;min:number[];max:number[];exact:number[]}>()
  for(const m of text.matchAll(new RegExp(`\\b(${number})\\s+(ejemplos?|parrafos?|oraciones?|fuentes?|citas?|imagenes?|apartados?)\\b`,'g'))){

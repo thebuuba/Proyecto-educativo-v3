@@ -1,9 +1,9 @@
 import type {SocialTopic} from './secondary-social-grade-1'
 import {thirdGradeCreatesProduct} from './secondary-social-advanced-evidence'
 type Add=(key:string,title:string,success:string,partial:string,error:string,weight?:number)=>unknown
-/** Evidencias de las consignas de cuarto; formato, progresión y puntuación permanecen compartidos. */
+/** Evidencias geográficas y cívicas compartidas; formato, progresión y puntuación permanecen comunes. */
 export function addFourthGradeSocialEvidence(topic:SocialTopic,text:string,label:string,add:Add):boolean{
- if(topic.grade!==4)return false
+ if(![4,5].includes(topic.grade))return false
  const creating=thirdGradeCreatesProduct(text)
  if(topic.id==='political-geography'&&/\binfluencia\b/.test(text)&&/decisiones internacionales/.test(text)){
   add('causes','Factores geográficos y decisiones internacionales','Explica la influencia de los factores geográficos en las decisiones internacionales de los casos indicados, vinculando condiciones y hechos sin atribuir una causa única o determinismo geográfico sin evidencia.','Relaciona factores y decisiones pertinentes, pero una conexión no queda respaldada por los hechos del caso.','Presenta la geografía como causa única inevitable o atribuye a una decisión factores incompatibles con los hechos.',4);return true

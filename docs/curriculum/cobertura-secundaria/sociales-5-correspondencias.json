@@ -1,0 +1,416 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 5,
+  "scopeId": "95643626-0072-5fc0-a2c9-a729ed720dea",
+  "method": "MANUAL_SEMANTIC_SOURCE_GROUPING_NOT_FULL_ACTION_COVERAGE",
+  "topicRecords": {
+    "island-geomorphology": [
+      "8665da3e",
+      "df64f124",
+      "9cf033ea",
+      "33938f16"
+    ],
+    "island-geological-evolution": [
+      "2e8ea974",
+      "f7ee1960"
+    ],
+    "island-coordinates": [
+      "3b35ac0b",
+      "3473920e"
+    ],
+    "island-position": [
+      "a73bd723",
+      "73ada413"
+    ],
+    "island-boundaries": [
+      "54f11f04"
+    ],
+    "political-administration": [
+      "c02f8c70"
+    ],
+    "risk-zones": [
+      "9cc384c1",
+      "7df564ac"
+    ],
+    "mountain-systems": [
+      "013fcc70",
+      "e2b9fdb5",
+      "db529104"
+    ],
+    "island-climate": [
+      "013fcc70",
+      "10aebb0b",
+      "f272de0b",
+      "db529104"
+    ],
+    "island-soils": [
+      "013fcc70",
+      "db529104"
+    ],
+    "valleys-plains": [
+      "55c5d092",
+      "8350e98d"
+    ],
+    "coastal-marine-ecosystems": [
+      "4a698cd9",
+      "10aebb0b",
+      "3fe4b99d"
+    ],
+    "hydrographic-basins": [
+      "e825dfaf",
+      "d338becc",
+      "0dcaf39a"
+    ],
+    "marine-fluvial-runoff": [
+      "38dee3ed",
+      "7c1fc0b6"
+    ],
+    "aquifer-system": [
+      "763e7253",
+      "b5afe8f5"
+    ],
+    "drought-agriculture": [
+      "4d59f387"
+    ],
+    "border-trade-history": [
+      "8514036a",
+      "d542f9f9"
+    ],
+    "economic-sectors": [
+      "0997b239",
+      "a140d016",
+      "5bbf347a"
+    ],
+    "production-trade": [
+      "ce4bdd84",
+      "a140d016",
+      "d542f9f9",
+      "5bbf347a"
+    ],
+    "historical-periods": [
+      "2cf8d0d8",
+      "eac72eea",
+      "62812706",
+      "a72df7a7",
+      "229d5691",
+      "1b48c5b5",
+      "c68bc34b"
+    ],
+    "historical-concepts": [
+      "9b8b5405",
+      "d89ece5b",
+      "d542f9f9",
+      "62812706"
+    ],
+    "aboriginal-groups": [
+      "be78b60e",
+      "18811996",
+      "a70fc05a"
+    ],
+    "taino-culture": [
+      "1c484146",
+      "a70fc05a"
+    ],
+    "aboriginal-agriculture": [
+      "90c9de92",
+      "a70fc05a"
+    ],
+    "hunting-gathering": [
+      "48f8ae62",
+      "a70fc05a"
+    ],
+    "aboriginal-political-organization": [
+      "46d17bd8",
+      "a70fc05a"
+    ],
+    "cultural-legacy": [
+      "6419c48f",
+      "b5855c3f"
+    ],
+    "conquest-colonization": [
+      "37111740",
+      "7956a38b",
+      "f9f475e3",
+      "687cf08b"
+    ],
+    "colonial-economic-models": [
+      "79d156b5",
+      "ec016257"
+    ],
+    "spanish-colonial-model": [
+      "19e873f4"
+    ],
+    "colonial-resistance": [
+      "ab7b1097",
+      "cb266cd9",
+      "d5bbf830",
+      "9ad0d348"
+    ],
+    "sixteenth-century-decline": [
+      "2270a71d"
+    ],
+    "devastations": [
+      "8a112e69",
+      "99a24c30",
+      "64c5911e"
+    ],
+    "seventeenth-century-crisis": [
+      "ab591898",
+      "85c55d9f",
+      "64c5911e"
+    ],
+    "colonial-partition": [
+      "0cad159e",
+      "244802ab",
+      "6cdc6e21",
+      "520fdf5c"
+    ],
+    "historical-belonging": [
+      "3af05876",
+      "be0e9f4d",
+      "229d5691"
+    ],
+    "enlightenment-colonies": [
+      "46841ddf",
+      "e96ffaea",
+      "9bd5882c"
+    ],
+    "eighteenth-century-recovery": [
+      "e24318c6",
+      "64c5911e"
+    ],
+    "eastern-island-1801-1822": [
+      "5096c0f2",
+      "aad8a1a2",
+      "aa9f28cd",
+      "57ba6ceb"
+    ],
+    "napoleonic-context": [
+      "bf6b42d0",
+      "9bd5882c"
+    ],
+    "dessalines-government": [
+      "b6927a10",
+      "aad8a1a2",
+      "aa9f28cd"
+    ],
+    "reconquest": [
+      "110e136f",
+      "aad8a1a2",
+      "aa9f28cd"
+    ],
+    "spain-boba": [
+      "81ef2db3",
+      "212f622b",
+      "25b73387",
+      "57ba6ceb"
+    ],
+    "cadiz-constitution": [
+      "166347ee"
+    ],
+    "ephemeral-independence": [
+      "3f720793",
+      "686715ad"
+    ],
+    "haitian-occupation": [
+      "e5e2b92f",
+      "74464201",
+      "1897cbd7",
+      "d22372b7",
+      "80a1cd32",
+      "aaaf8643",
+      "58f63742"
+    ],
+    "boyer-government": [
+      "08501e96",
+      "3dd744bf",
+      "057f2013",
+      "d79c6447"
+    ],
+    "eastern-opposition": [
+      "5a412556",
+      "057f2013"
+    ],
+    "independence-movement": [
+      "d3ab0afb",
+      "96602882",
+      "1aacab44",
+      "7fd2bc8f",
+      "7b64e490",
+      "4dc3b938",
+      "869a79cf"
+    ],
+    "independence-figures": [
+      "38566183",
+      "7b3547f9"
+    ],
+    "independence-proclamation": [
+      "4d858853",
+      "96602882"
+    ],
+    "first-constitution": [
+      "2da40dac"
+    ],
+    "first-republic": [
+      "017708ea",
+      "e9a2a613",
+      "431d5248",
+      "e207b8b1"
+    ],
+    "first-republic-governments": [
+      "c8d50bd3",
+      "e207b8b1"
+    ],
+    "haitian-invasions": [
+      "3492986b"
+    ],
+    "santana-baez-conflict": [
+      "af3553d3",
+      "7a848c57"
+    ],
+    "monetary-deficit": [
+      "c8a83d5f"
+    ],
+    "revolution-1857-moca": [
+      "b6aba6c9"
+    ],
+    "annexation-spain": [
+      "f914f93f",
+      "e9a2a613"
+    ],
+    "antiannexation-resistance": [
+      "13728c21",
+      "1acfa2e1"
+    ],
+    "restoration-war": [
+      "104f9e1b",
+      "278e9163",
+      "308914cc"
+    ],
+    "restoration-government": [
+      "a951e4c3"
+    ],
+    "second-republic": [
+      "0084e97f",
+      "1d06d9c2",
+      "0f81a5e3",
+      "2de8eb1e",
+      "92d2e0d1"
+    ],
+    "regional-political-struggles": [
+      "fb9c71f4"
+    ],
+    "red-blue-governments": [
+      "4d127a1a",
+      "e207b8b1",
+      "4745501e"
+    ],
+    "later-annexation-projects": [
+      "c96a88f3"
+    ],
+    "unionist-movement": [
+      "67df6924"
+    ],
+    "political-anarchy": [
+      "c80addf3"
+    ],
+    "second-republic-economy": [
+      "b30713b6"
+    ],
+    "nineteenth-century-modernity": [
+      "1a0d1cc6"
+    ],
+    "caudillismo-dictatorships": [
+      "b30713b6",
+      "9ddce893",
+      "92d2e0d1"
+    ],
+    "occupation-1916-1924": [
+      "b30713b6",
+      "98c1dc30",
+      "03afa1d5"
+    ],
+    "liberal-conservative": [
+      "d89ece5b",
+      "d6e5de4a",
+      "1f6d1cd4"
+    ],
+    "dominican-state": [
+      "c68d476d",
+      "2de8eb1e"
+    ],
+    "dominican-constitutions": [
+      "b605fa57",
+      "fbaebc41"
+    ],
+    "constitutional-influences": [
+      "9aa1a32f",
+      "c6e46b84"
+    ],
+    "rule-of-law": [
+      "fdfa6a3a",
+      "b605fa57"
+    ],
+    "national-identity": [
+      "aecd2d8f",
+      "3af05876",
+      "be0e9f4d"
+    ],
+    "national-symbols": [
+      "59a50652",
+      "22b42a57"
+    ],
+    "road-safety": [
+      "0b50f1bf",
+      "babc309f",
+      "fdfe6bca",
+      "c2a57570"
+    ],
+    "vulnerability-reforms": [
+      "e8cad0a3"
+    ],
+    "peace": [
+      "e74c2f56",
+      "4ea0fa31"
+    ],
+    "dialogue": [
+      "22df72e2",
+      "542e6fef"
+    ],
+    "protection-of-life": [
+      "4cd408ce",
+      "fdfe6bca"
+    ],
+    "violence-vulnerability": [
+      "2e4a775d"
+    ],
+    "environmental-sustainability": [
+      "462f9392"
+    ],
+    "environmental-laws": [
+      "133b704f"
+    ]
+  },
+  "indicatorTopicRecords": {
+    "natural-resource-impact": [
+      "81456542"
+    ],
+    "scientific-risk-protected-sources": [
+      "0b7280cb"
+    ],
+    "road-tax-projects": [
+      "d631972a"
+    ],
+    "constitutional-comparison": [
+      "37a68760"
+    ]
+  },
+  "limits": [
+    "Mapear cada registro no acredita todas las acciones, productos, períodos o condiciones de una fila compuesta.",
+    "La isla de Santo Domingo, sus dos estados y República Dominicana son ámbitos distintos; una consigna no impone todos ellos.",
+    "El encabezado XV–XVI repetido y los procedimientos repetidos de sociodrama y patrimonio se conservan sin duplicar desempeños.",
+    "La columna conceptual termina la Segunda República en1916; los procedimientos incluyen1916–1924. El indicador4857e6ad imprime1916–1865, confirmado en la imagenPDF275: se conserva el literal, sin convertirlo en1965 ni inventar cronología.",
+    "No se interpreta preocupación por violencia, pertenencia o patriotismo como rasgo moral o sentimiento obligatorio del estudiante.",
+    "Los casos, mapas, normas y datos proporcionados deben limitar las inferencias; las consignas QA no acreditan investigación de campo, voluntariado real, campañas ejecutadas o acceso a otros repositorios."
+  ]
+}

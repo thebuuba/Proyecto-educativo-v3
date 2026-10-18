@@ -1,0 +1,49 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 5,
+  "policy": "KEEP_LITERAL_SOURCE_EXCLUDE_ONLY_AS_INDEPENDENT_ASSESSED_TOPIC",
+  "records": [
+    {
+      "id": "ff7c57ac-f444-56b1-8226-ba225fe2604e",
+      "pdfPage": 269,
+      "reason": "GROUP_HEADING",
+      "explanation": "Encabezado geográfico del grado; sus contenidos se vinculan a los grupos específicos sin otra evaluación independiente."
+    },
+    {
+      "id": "40274182-b3b3-59d6-8058-07e5910b5526",
+      "pdfPage": 269,
+      "reason": "GROUP_HEADING",
+      "explanation": "Geografía Política organiza los contenidos siguientes; no es otra asignatura o tarea."
+    },
+    {
+      "id": "0bf93b8e-ac4b-5e12-9833-43733dfb8157",
+      "pdfPage": 269,
+      "reason": "GROUP_HEADING",
+      "explanation": "Geografía Física organiza la columna; sus fenómenos se conservan por separado."
+    },
+    {
+      "id": "bb94f4a0-68ed-5323-a272-646db2ccf137",
+      "pdfPage": 270,
+      "reason": "GROUP_HEADING",
+      "explanation": "Geografía Hidrográfica agrupa recursos, cuencas y acuíferos; no añade otro producto."
+    },
+    {
+      "id": "ab463fed-91dc-5f11-ba9a-69c2bc16d9a8",
+      "pdfPage": 270,
+      "reason": "GROUP_HEADING",
+      "explanation": "Geografía económica organiza sectores, producción y comercio, sin criterio adicional."
+    },
+    {
+      "id": "f12ee0b7-45e3-55c8-95b5-53669e2157f6",
+      "pdfPage": 272,
+      "reason": "GROUP_HEADING",
+      "explanation": "Educación ciudadana organiza los contenidos cívicos siguientes."
+    },
+    {
+      "id": "220093ae-8e79-5850-840f-9492f12d04af",
+      "pdfPage": 274,
+      "reason": "PRIVATE_DISPOSITION_NOT_ASSESSED",
+      "explanation": "Preocupación por la violencia expresa una disposición privada, aunque el tipo literal sea PROCEDURE. Se conserva la fuente y se evalúan acciones, análisis o propuestas explícitos, sin inferir moralidad o sentimientos."
+    }
+  ]
+}

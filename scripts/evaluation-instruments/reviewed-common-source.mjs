@@ -4,6 +4,7 @@ import {readFileSync,writeFileSync,mkdirSync} from 'node:fs'
 import {createRequire} from 'node:module'
 import {parseEnv} from 'node:util'
 import {developmentEnvironment,developmentProjectRef as project} from '../cloudflare-development-environment.mjs'
+import {readDevelopmentHistory} from './development-history.mjs'
 
 // One literal, visually reviewed common grade. No catalog seed or school/account writes.
 const [subjectCode,gradeText,matrixPath]=process.argv.slice(2),grade=Number(gradeText)
@@ -41,10 +42,7 @@ if(!process.argv.includes('--install')){console.log(JSON.stringify(manifest,null
 Object.assign(process.env,developmentEnvironment(parseEnv(readFileSync('.dev.vars.local','utf8'))))
 const require=createRequire(new URL('../../apps/backend/package.json',import.meta.url)),{prisma}=require('@aula/database')
 const normalize=value=>value?.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()??null
-const fingerprints=()=>prisma.$transaction(async db=>{
- await db.$executeRawUnsafe('SET TRANSACTION READ ONLY')
- return{releases:await db.$queryRawUnsafe('SELECT version,md5(payload::text) AS hash FROM evaluation_catalog_releases ORDER BY version'),snapshots:await db.$queryRawUnsafe('SELECT id::text,md5(to_jsonb(s)::text) AS hash FROM evaluation_instrument_snapshots s ORDER BY id')}
-})
+const fingerprints=readDevelopmentHistory
 try{
  const before=await fingerprints(),existing=await prisma.curriculumVersion.findUnique({where:{code},include:{documents:true}})
  let result='UNCHANGED'
