@@ -5,6 +5,7 @@ import { withoutResources } from './evaluation-task-text'
 import { artGradeOneTopics } from './secondary-art-grade-1'
 import { artGradeTwoTopics } from './secondary-art-grade-2'
 import { artGradeThreeTopics } from './secondary-art-grade-3'
+import { artGradeFourTopics } from './secondary-art-grade-4'
 
 type ArtEvidenceText = {
   title: string
@@ -64,10 +65,11 @@ export const commonArtModules = [
     policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1',
   },
   { id: 'educacion-artistica-comun-3', grade: 3, topics: artGradeThreeTopics, policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1' },
+  { id: 'educacion-artistica-comun-4', grade: 4, topics: artGradeFourTopics, policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1' },
 ]
 const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
 const endings = '(?:a|an|ar|ara|aran|ando|e|en)'
-const actionVerbs = `(?:analiz|analic|explic|expliqu|identific|identifiqu|diferenci|compar|contrast|cre|realiz|construy|estiliz|disen|adapt|organiz|elabor|utiliz|interpret|represent|argument|valor|explor|registr|verific|comprueb|marc|investig|improvis|present|musicaliz|seleccion)${endings}|constru(?:ye|yen|ir|ira|iran|yendo)|comp(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)|prop(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)`
+const actionVerbs = `(?:analiz|analic|explic|expliqu|identific|identifiqu|diferenci|compar|contrast|cre|realiz|construy|estiliz|disen|adapt|organiz|elabor|utiliz|interpret|represent|argument|valor|explor|registr|verific|comprueb|marc|investig|improvis|present|musicaliz|seleccion|expon|reproduc|describ)${endings}|constru(?:ye|yen|ir|ira|iran|yendo)|comp(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)|prop(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)`
 function requestedArtText(value: string) {
   return normalize(
     withoutResources(
@@ -123,21 +125,24 @@ function modeFor(text: string, topics: ArtTopic[]): ArtMode {
   if (/^(?:compar|contrast|diferenci)/.test(firstAction)) return 'COMPARISON'
   if (/^investig/.test(firstAction)) return 'REPORT'
   if (/^explor/.test(firstAction) && topics.some(topic => topic.id === 'expression-exploration')) return 'PERFORMANCE'
-  if (/^(?:analiz|analic|explic|expliqu|identifi|argument|valor)/.test(firstAction))
+  if (/^explor/.test(firstAction) && topics.some(topic => topic.grade === 4 && topic.id === 'origin-dance')) return 'PERFORMANCE'
+  if (/^(?:analiz|analic|explic|expliqu|identifi|argument|valor|describ)/.test(firstAction))
     return 'ANALYSIS'
   if (/^construye e interpreta\b/.test(text) && topics.some((topic) => topic.id === 'character'))
     return 'PERFORMANCE'
   if (
-    topics.some((topic) => ['group-agreements', 'art-safety', 'artistic-collaboration'].includes(topic.id)) &&
+    topics.some((topic) => ['group-agreements', 'art-safety', 'artistic-collaboration', 'rhythm-coordination'].includes(topic.id)) &&
     /regularidad|frecuencia/.test(text)
   )
     return 'OBSERVATION'
   if (/propuesta coreografica|propon recorridos|explora[a-z]* las posibilidades|plan de/.test(text))
     return 'PLAN'
+  if (topics.some(topic => topic.grade === 4 && topic.id === 'serial-production') && /propuesta/.test(text)) return 'PLAN'
   if (topics.some((topic) => ['portfolio', 'creative-portfolio'].includes(topic.id))) return 'REPORT'
   if (topics.some((topic) => topic.id === 'diary')) return 'REFLECTION'
-  if (/^(?:improvis|present)/.test(firstAction)) return 'PERFORMANCE'
-  if (/^(?:interpret|represent)/.test(firstAction) && topics.some(topic => ['stage-direction', 'musical-fragment', 'shadow-theatre', 'black-theatre', 'web-stage'].includes(topic.id))) return 'PERFORMANCE'
+  if (/^(?:improvis|present|expon)/.test(firstAction)) return 'PERFORMANCE'
+  if (topics.some(topic => topic.grade === 4 && ['origin-dance','theatrical-comedy','palos-congos-salves','popular-dance','latin-rhythm-reproduction'].includes(topic.id))) return 'PERFORMANCE'
+  if (/^(?:interpret|represent)/.test(firstAction) && topics.some(topic => ['stage-direction', 'musical-fragment', 'shadow-theatre', 'black-theatre', 'web-stage', 'popular-performance'].includes(topic.id))) return 'PERFORMANCE'
   if (
     /^(?:interpret|represent)/.test(firstAction) &&
     /voz|himno|flauta|instrumental|danza|personaje|situacion ficticia|vocalmente|pieza musical/.test(text)
@@ -169,6 +174,10 @@ export function resolveCommonArtTask(
     .split(new RegExp(`[.;\\n]+|\\s+(?:y|luego|despues)\\s+(?=(?:${actionVerbs})\\b)`))
     .map((part) => part.trim())
     .filter(Boolean)
+  for (let i = 0; i + 1 < clauses.length; i++) {
+    if (/^investig(?:a|an|ar|ara|aran)$/.test(clauses[i]) && /^analiz/.test(clauses[i + 1]))
+      clauses.splice(i, 2, `${clauses[i]} y ${clauses[i + 1]}`)
+  }
   const actions: ArtAction[] = []
   for (const clause of clauses) {
     const own = selectedTopics(clause, available)
@@ -198,7 +207,7 @@ export function resolveCommonArtTask(
     ).values(),
   ]
   const mode = actions[0].mode
-  const researching = mode === 'REPORT' && topics.some(topic => topic.id === 'musical-research')
+  const researching = mode === 'REPORT' && topics.some(topic => topic.id === 'musical-research' || topic.grade === 4 && ['scene-context','art-exponents-research'].includes(topic.id))
   const activityType = researching ? 'RESEARCH' : (
     {
       ANALYSIS: 'ANALYSIS',
@@ -245,6 +254,11 @@ function criterion(
 
 function contextualArtTopic(topic: ArtTopic, text: string): ArtTopic {
   let result = topic
+  const brief = text.replace(/[.\s]+$/, '') === `explica ${normalize(topic.label)}`
+  if (topic.grade === 4 && topic.id === 'regional-visual-art' && !brief && !/aportes|trascend/.test(text)) result = {
+    ...result,
+    relation: result.relation.replace('recursos estéticos, contexto documentado y aportes', 'recursos estéticos y contexto documentado'),
+  }
   if (topic.grade === 3 && topic.id === 'photo-series' && !/serie|texto|historia|relato/.test(text)) result = {
     ...result,
     label: 'fotografía artística',
@@ -283,7 +297,6 @@ function contextualArtTopic(topic: ArtTopic, text: string): ArtTopic {
       partial: evidence.partial.replace('para el mensaje', 'para la organización de la obra'),
     })),
   }
-  const brief = text.replace(/[.\s]+$/, '') === `explica ${normalize(topic.label)}`
   if (brief && topic.grade >= 2) result = {
     ...result,
     relation: result.relation
@@ -445,12 +458,14 @@ export function commonArtCriteria(task: CommonArtTask): ContextualTopicCriterion
               ? [['tecnica', 'técnica'], ['soporte', 'soporte']].filter(([match]) => new RegExp(`\\b${match}\\b`).test(action.text)).map(([,label]) => label)
               : topic.grade === 3 && topic.id === 'photo-series'
                 ? [['orden', 'orden'], ['relacion con (?:el )?texto', 'relación con el texto']].filter(([match]) => new RegExp(`\\b(?:${match})\\b`).test(action.text)).map(([,label]) => label)
-                : []
+                : topic.grade === 4 && topic.id === 'craft-accessory'
+                  ? [['forma','forma'],['funcion','función']].filter(([match]) => new RegExp(`\\b${match}\\b`).test(action.text)).map(([,label])=>label)
+                  : []
         return (terms.length ? terms : ['los requisitos expresamente dados']).map((term, index) =>
           criterion(topic, action.mode, {
             id: `requirement-${index}`,
             title: `Verificación de ${term}`,
-            success: `Identifica correctamente si el ${(topic.grade === 2 && topic.id === 'painting') || (topic.grade === 3 && topic.id === 'photo-series') ? 'producto' : 'dibujo o producto'} proporcionado cumple el requisito de ${term} expresamente pedido.`,
+            success: `Identifica correctamente si el ${(topic.grade === 2 && topic.id === 'painting') || (topic.grade === 3 && topic.id === 'photo-series') || (topic.grade === 4 && topic.id === 'craft-accessory') ? 'producto' : 'dibujo o producto'} proporcionado cumple el requisito de ${term} expresamente pedido.`,
             sufficient: `La respuesta identifica el cumplimiento de ${term}, aunque una marca secundaria queda poco clara sin cambiar el resultado reconocible.`,
             partial: `La respuesta sobre el requisito de ${term} es ambigua y no permite determinar con claridad el cumplimiento observado.`,
             error: `La respuesta atribuye al producto un cumplimiento de ${term} incompatible con lo que contiene.`,
@@ -458,6 +473,7 @@ export function commonArtCriteria(task: CommonArtTask): ContextualTopicCriterion
         )
       }
       if (action.mode === 'ANALYSIS' || action.mode === 'COMPARISON') {
+        if (topic.grade === 4 && /^argument[a-z]*\b/.test(action.text) && topic.id === 'heritage-form-content') return topic.evidence.map(evidence => criterion(topic, action.mode, evidence))
         if (topic.grade === 3 && /^argument[a-z]*\b/.test(action.text) && ['web-diffusion','arts-health','heritage-art'].includes(topic.id)) return topic.evidence.map(evidence => criterion(topic, action.mode, evidence))
         if (topic.grade === 2 && /^argument[a-z]*\b/.test(action.text)) {
           const decision = /alternativa de conservacion/.test(action.text)

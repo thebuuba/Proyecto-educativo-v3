@@ -2,6 +2,7 @@ import {commonSocialModules} from '@aula/shared'
 import { commonArtModules } from '@aula/shared'
 import { evaluationCatalogV106 } from './catalog-v106'
 import { evaluationCatalogV107 } from './catalog-v107'
+import { evaluationCatalogV108 } from './catalog-v108'
 import { evaluationCatalogV105 } from './catalog-v105'
 import {evaluationCatalogV104} from './catalog-v104'
 import {evaluationCatalogV103} from './catalog-v103'
@@ -131,7 +132,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.108',
+  version: 'evaluation-2026.109',
   artCommonModules: commonArtModules,
   socialCommonModules:commonSocialModules,
   activityTypes: (evaluationCatalogV92.activityTypes as ActivityTypeEntry[]).map(entry => ({
@@ -226,6 +227,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { artCommonModules?:typeof commonArtModules; socialCommonModules?:typeof commonSocialModules; scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
+  if (version === evaluationCatalogV108.version) return evaluationCatalogV108
   if (version === evaluationCatalogV107.version) return evaluationCatalogV107
   if (version === evaluationCatalogV106.version) return evaluationCatalogV106
   if (version === evaluationCatalogV105.version) return evaluationCatalogV105

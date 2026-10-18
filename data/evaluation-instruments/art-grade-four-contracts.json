@@ -1,0 +1,763 @@
+{
+  "grade": 4,
+  "scopeId": "47d743d6-a842-5f05-843e-2855bf4bd5bb",
+  "sourcePdfPages": [
+    341,
+    342,
+    343
+  ],
+  "policy": "REPRESENTATIVE_TASKS_NOT_FULL_COMPOUND_ROW_COVERAGE",
+  "cases": [
+    {
+      "id": "regional-visual-art",
+      "description": "Compara las obras visuales caribeñas y latinoamericanas proporcionadas según sus recursos estéticos y contexto documentado. No dibujes otra obra.",
+      "sourceRecordIds": [
+        "20c6966b",
+        "22bfd01b"
+      ],
+      "reviewFocus": "Contraste sustentado, no lista de autores ni producción impuesta",
+      "topicIds": [
+        "regional-visual-art"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "forbidden": "aportes"
+    },
+    {
+      "id": "visual-syncretism",
+      "description": "Crea una obra visual que integre los dos referentes culturales proporcionados mediante decisiones expresivas reconocibles. Explica la relación entre sus elementos sin revelar identidad privada.",
+      "sourceRecordIds": [
+        "1e37cab4",
+        "e1d9b5fa",
+        "74d06854"
+      ],
+      "reviewFocus": "Integración y explicación, no adhesión cultural ni dos obras",
+      "topicIds": [
+        "visual-syncretism"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "syncretism-analysis",
+      "description": "Analiza cómo la obra dominicana o caribeña dada integra elementos de dos culturas, usando evidencias del referente proporcionado. No describas tu origen familiar.",
+      "sourceRecordIds": [
+        "6a7bcd5f"
+      ],
+      "reviewFocus": "Interpretación de elementos y relaciones, sin atribución privada",
+      "topicIds": [
+        "visual-syncretism"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "modern-social-art",
+      "description": "Analiza los aspectos sociales de la obra moderna proporcionada relacionando decisiones visuales y contexto documentado. No asumas emociones del público sin datos.",
+      "sourceRecordIds": [
+        "224628e0",
+        "405f9a92"
+      ],
+      "reviewFocus": "Recursos y sentido social con evidencias",
+      "topicIds": [
+        "modern-social-art"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "color-social-message",
+      "description": "Explica cómo el color contribuye al discurso social de la obra dominicana proporcionada. Usa relaciones visibles y los datos contextuales dados. No pintes una nueva obra.",
+      "sourceRecordIds": [
+        "5b884eea",
+        "b8f4814d"
+      ],
+      "reviewFocus": "Color como recurso, no producción ni teoría tonal completa",
+      "topicIds": [
+        "color-social-message"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "dominican-artists",
+      "description": "Expone las relaciones entre componentes culturales y las obras de artistas dominicanos proporcionadas, identificando sus representantes según las fuentes. No se pide una biografía completa.",
+      "sourceRecordIds": [
+        "d9fafa10",
+        "0d05a3d6"
+      ],
+      "reviewFocus": "Expone oralmente lo pedido, sin biografía ni obra nueva",
+      "topicIds": [
+        "dominican-artists"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "cultural-references",
+      "description": "Analiza los referentes culturales en los lenguajes visuales y audiovisuales de las obras dominicanas y caribeñas dadas. No califiques pertenencia cultural.",
+      "sourceRecordIds": [
+        "4ff76197"
+      ],
+      "reviewFocus": "Recursos y referentes documentados",
+      "topicIds": [
+        "cultural-references"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "artistic-recreation",
+      "description": "Crea una recreación visual del tema o imagen del artista proporcionado mediante la técnica disponible elegida. Relaciona apropiación y transformación sin copiar literalmente ni exigir todos los referentes.",
+      "sourceRecordIds": [
+        "255cc1c7",
+        "dc114356"
+      ],
+      "reviewFocus": "Transformación y referente, alternativas de tema/imagen/técnica",
+      "topicIds": [
+        "artistic-recreation"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "palos-congos-salves",
+      "description": "Representa el fragmento dado de palos o atabales con movimientos adaptados y pulso acordado. No interpretes también congos y salves ni realices prácticas religiosas.",
+      "sourceRecordIds": [
+        "6307cf81",
+        "85275728"
+      ],
+      "reviewFocus": "Actuación elegida, sin fe ni las tres manifestaciones acumuladas",
+      "topicIds": [
+        "palos-congos-salves"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "caribbean-dramaturgy",
+      "description": "Representa el fragmento de dramaturgia dominicana o caribeña proporcionado relacionando acciones, personaje y elementos culturales de la escena ficticia. No reveles experiencias privadas.",
+      "sourceRecordIds": [
+        "0beee178",
+        "95d8875f"
+      ],
+      "reviewFocus": "Actuación escénica, no proyecto escrito",
+      "topicIds": [
+        "caribbean-dramaturgy"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "scene-context",
+      "description": "Investiga los grupos, técnicas o cultores del teatro y danza dominicanos y caribeños expresamente asignados, relacionando propuestas y contexto histórico con las fuentes disponibles. No contactes personas.",
+      "sourceRecordIds": [
+        "c76336f2",
+        "c7d0fbea"
+      ],
+      "reviewFocus": "Investigación acotada, no todos los representantes",
+      "topicIds": [
+        "scene-context"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "popular-dance",
+      "description": "Interpreta el fragmento de merengue proporcionado relacionando pulso, secuencia y desplazamientos adaptados. No interpretes también bachata, son y salsa.",
+      "sourceRecordIds": [
+        "6c6a2316",
+        "3b63eeef"
+      ],
+      "reviewFocus": "Secuencia motriz y música, no apariencia ni repertorio completo",
+      "topicIds": [
+        "popular-dance"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "theatrical-comedy",
+      "description": "Realiza el montaje de la comedia teatral breve ficticia dada con los recursos disponibles. Relaciona acciones, ritmo escénico y sentido cómico sin ridiculizar identidades reales.",
+      "sourceRecordIds": [
+        "3b63eeef"
+      ],
+      "reviewFocus": "Actuación cómica distinta de danza",
+      "topicIds": [
+        "theatrical-comedy"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "origin-dance",
+      "description": "Explora los movimientos y practica la secuencia adaptada de la danza originaria latinoamericana proporcionada, relacionando pulso y organización espacial con su referente. No reproduzcas ceremonias religiosas.",
+      "sourceRecordIds": [
+        "43dddff5",
+        "5ec11eba"
+      ],
+      "reviewFocus": "Exploración y desempeño adaptado, no plan ni rito",
+      "topicIds": [
+        "origin-dance"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "vocal-popular-song",
+      "description": "Interpreta vocalmente el fragmento de canción popular dominicana o caribeña dado, relacionando ritmo, fraseo y sentido. No se exige ejecutar también flauta ni percusión.",
+      "sourceRecordIds": [
+        "48ecc915"
+      ],
+      "reviewFocus": "Vocalidad elegida, sin instrumentos acumulados",
+      "topicIds": [
+        "popular-performance"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "instrumental-popular-rhythm",
+      "description": "Interpreta con la flauta dulce disponible el fragmento popular dominicano dado, relacionando ritmo y melodía según el modelo. No se exige cantar ni usar percusión adicional.",
+      "sourceRecordIds": [
+        "48ecc915"
+      ],
+      "reviewFocus": "Interpretación instrumental específica",
+      "topicIds": [
+        "popular-performance"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "popular-music-analysis",
+      "description": "Compara los fragmentos de música popular dominicana y caribeña proporcionados según sus rasgos sonoros y contexto documentado. No compongas otra canción.",
+      "sourceRecordIds": [
+        "0fef135f",
+        "0aec4cc5"
+      ],
+      "reviewFocus": "Comparación sin gustos ni composición",
+      "topicIds": [
+        "popular-music"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON"
+    },
+    {
+      "id": "latin-music-context",
+      "description": "Explica las relaciones entre géneros, formas, compositores e intérpretes latinoamericanos de los ejemplos y fuentes dados. No memorices una lista completa ni reveles preferencias privadas.",
+      "sourceRecordIds": [
+        "e3b157d4"
+      ],
+      "reviewFocus": "Conocimiento contextual y relaciones",
+      "topicIds": [
+        "latin-music-context"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "dominican-music",
+      "description": "Analiza cómo se relacionan género, autoría e interpretación en el fragmento musical dominicano dado usando las fuentes proporcionadas. No interpretes otra pieza.",
+      "sourceRecordIds": [
+        "2897f612"
+      ],
+      "reviewFocus": "Análisis específico, no interpretación",
+      "topicIds": [
+        "dominican-music"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "heritage-music-research",
+      "description": "Investiga y analiza las obras musicales patrimoniales asignadas relacionando recursos, contexto y aportes con las fuentes disponibles. No realices visitas ni entrevistas.",
+      "sourceRecordIds": [
+        "003f1f01",
+        "63d47851"
+      ],
+      "reviewFocus": "Investigación y análisis sin portafolio obligatorio",
+      "topicIds": [
+        "musical-research"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "song-from-analysis",
+      "description": "Crea una canción a partir del análisis de la melodía y el ritmo proporcionados, transformando recursos reconocibles según la intención ficticia acordada. No copies literalmente la canción modelo.",
+      "sourceRecordIds": [
+        "a235c69b"
+      ],
+      "reviewFocus": "Análisis como insumo y transformación sonora",
+      "topicIds": [
+        "song-from-analysis"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "latin-rhythm-reproduction",
+      "description": "Reproduce el ritmo latinoamericano dado utilizando el cuerpo o un instrumento disponible a elección, manteniendo el pulso y la secuencia acordados. No se pide utilizar todos los medios ni reproducir una melodía adicional.",
+      "sourceRecordIds": [
+        "0d77519a"
+      ],
+      "reviewFocus": "Solo ritmo expresamente pedido, adaptación y alternativa",
+      "topicIds": [
+        "latin-rhythm-reproduction"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "cultural-dialogue-creation",
+      "description": "Crea una propuesta artística que dialogue entre los referentes dominicano y caribeño dados, relacionando sus recursos con la intención ficticia acordada. No impongas una postura cultural.",
+      "sourceRecordIds": [
+        "b6ae20f6"
+      ],
+      "reviewFocus": "Diálogo expresivo sin adhesión",
+      "topicIds": [
+        "cultural-dialogue-creation"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "craft-accessory",
+      "description": "Diseña y construye el accesorio artesanal de uso ficticio solicitado con materiales seguros disponibles, relacionando forma, función y acabado requerido. No se pide adquirir materiales ni usar herramientas calientes.",
+      "sourceRecordIds": [
+        "349f3d60",
+        "5104d7d3"
+      ],
+      "reviewFocus": "Producto elegido y uso, sin compra ni todas las artesanías",
+      "topicIds": [
+        "craft-accessory"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "craft-market-plan",
+      "description": "Elabora un plan de muestra escolar simulada del producto artesanal dado, relacionando presentación, público, recursos y promoción. No vendas, publiques ni organices un mercado real.",
+      "sourceRecordIds": [
+        "0d0b4f25"
+      ],
+      "reviewFocus": "Plan viable, sin ventas efectivas",
+      "topicIds": [
+        "craft-market-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "serial-production",
+      "description": "Elabora una propuesta de producción en serie del objeto artesanal ficticio dado, relacionando modelo, secuencia y condiciones de repetición con recursos disponibles. No fabriques todavía la serie.",
+      "sourceRecordIds": [
+        "202a12ef"
+      ],
+      "reviewFocus": "Plan de repetición distinto de obra única",
+      "topicIds": [
+        "serial-production"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "cultural-industries",
+      "description": "Analiza el caso ficticio proporcionado de una industria cultural, relacionando creación, producción, circulación y público según las fuentes dadas. No abras un negocio.",
+      "sourceRecordIds": [
+        "66dce3ce"
+      ],
+      "reviewFocus": "Relaciones del circuito cultural, sin emprendimiento ejecutado",
+      "topicIds": [
+        "cultural-industries"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "safe-craft-technique",
+      "description": "Crea el modelo de cerámica solicitado con el material seguro disponible, relacionando forma, unión y función dadas. No se exige joyería, pirograbado, horno ni otros productos.",
+      "sourceRecordIds": [
+        "ae8ec20f"
+      ],
+      "reviewFocus": "Alternativa técnica segura, sin todas las ramas",
+      "topicIds": [
+        "safe-craft-technique"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "evidenceIds": [
+        "ceramic-form"
+      ]
+    },
+    {
+      "id": "costumbrista-art",
+      "description": "Describe las características del arte costumbrista dominicano o caribeño de los ejemplos dados usando evidencias de las obras y sus contextos. No inventes costumbres de personas reales.",
+      "sourceRecordIds": [
+        "89f94310"
+      ],
+      "reviewFocus": "Descripción disciplinar, no crear obra ni juicio cultural",
+      "topicIds": [
+        "costumbrista-art"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "popular-art-contrast",
+      "description": "Identifica y explica similitudes y diferencias entre las manifestaciones de arte popular dominicano y caribeño proporcionadas con evidencias. No califiques gustos personales.",
+      "sourceRecordIds": [
+        "c8c2f28f",
+        "f7af1069"
+      ],
+      "reviewFocus": "Indicadores duplicados literales, una evidencia",
+      "topicIds": [
+        "popular-art-contrast"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "collective-creation-plan",
+      "description": "Diseña un plan de creación artística colectiva para el caso ficticio dado, relacionando roles, acuerdos, recursos y secuencia de tareas. No se exige ejecutarlo todavía.",
+      "sourceRecordIds": [
+        "0fbb1c5a"
+      ],
+      "reviewFocus": "Coordinación propuesta sin desempeño ya observado",
+      "topicIds": [
+        "collective-creation-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "public-art",
+      "description": "Describe las características e implicaciones del arte público del caso proporcionado, relacionando obra, espacio y público con las evidencias dadas. No intervengas un espacio real.",
+      "sourceRecordIds": [
+        "54e498a7"
+      ],
+      "reviewFocus": "Arte público contextual sin intervención",
+      "topicIds": [
+        "public-art"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "environment-art-project",
+      "description": "Elabora un plan de proyecto que resignifique aspectos de la obra del artesano dominicano proporcionada para comunicar el cuidado ambiental en el caso ficticio dado. Relaciona referente, recursos y acciones previstas. No lo ejecutes ni prometas efectos de salud.",
+      "sourceRecordIds": [
+        "463e4c86"
+      ],
+      "reviewFocus": "Plan y resignificación, no resultados efectivos",
+      "topicIds": [
+        "environment-art-project"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "social-art-proposal",
+      "description": "Crea una propuesta artística para comunicar una idea ambiental del caso ficticio dado mediante los recursos disponibles. No se exige abordar también todos los temas políticos, religiosos, raciales o personales.",
+      "sourceRecordIds": [
+        "6f646678"
+      ],
+      "reviewFocus": "Idea seleccionada, sin todas las problemáticas ni datos privados",
+      "topicIds": [
+        "social-art-proposal"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "rhythm-coordination",
+      "description": "Registra la frecuencia con que se coordina el pulso y la secuencia adaptada acordados en las oportunidades observadas de la producción escénica. No evalúes apariencia corporal ni diagnósticos.",
+      "sourceRecordIds": [
+        "5afafbf7"
+      ],
+      "reviewFocus": "Acción observada y adaptada, Nunca explícito",
+      "topicIds": [
+        "rhythm-coordination"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION"
+    },
+    {
+      "id": "school-art-exhibition",
+      "description": "Presenta la obra artística ya creada en la muestra escolar simulada acordada relacionando sus recursos con el propósito de presentación. No se exige crear otra obra ni participar en un festival externo.",
+      "sourceRecordIds": [
+        "88718414"
+      ],
+      "reviewFocus": "Presentación del producto existente",
+      "topicIds": [
+        "school-art-exhibition"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "heritage-form-content",
+      "description": "Argumenta el aporte de la obra patrimonial dominicana o caribeña dada mediante relaciones de forma y contenido con evidencias de las fuentes. No se exige admiración ni adhesión personal.",
+      "sourceRecordIds": [
+        "46114729"
+      ],
+      "reviewFocus": "Argumentación observable, no admiración",
+      "topicIds": [
+        "heritage-form-content"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "jewelry-model",
+      "description": "Crea un modelo de joyería ficticia con los materiales seguros disponibles. Relaciona forma y cierres con las condiciones de uso dadas. No se exige metal precioso, calor ni compra.",
+      "topicIds": [
+        "safe-craft-technique"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "ae8ec20f"
+      ],
+      "forbidden": "horno|cer[aá]mica|cocci[oó]n",
+      "evidenceIds": [
+        "jewelry-use"
+      ]
+    },
+    {
+      "id": "floral-composition",
+      "description": "Realiza una composición floral con materiales simulados seguros, relacionando distribución, sostén y propósito de la muestra ficticia. No se exigen flores naturales ni compra.",
+      "topicIds": [
+        "safe-craft-technique"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "ae8ec20f"
+      ],
+      "forbidden": "horno|cocci[oó]n|cierres de joyer",
+      "evidenceIds": [
+        "floral-support"
+      ]
+    },
+    {
+      "id": "furniture-model",
+      "description": "Construye una maqueta de mueblería con materiales ligeros disponibles para representar estructura, uniones y función del mueble dado. No se exige un mueble real ni soportar personas.",
+      "topicIds": [
+        "safe-craft-technique"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "ae8ec20f"
+      ],
+      "forbidden": "horno|cocci[oó]n|carga de personas",
+      "evidenceIds": [
+        "furniture-structure"
+      ]
+    },
+    {
+      "id": "leatherwork-prototype",
+      "description": "Elabora un prototipo de talabartería con cartón en lugar de cuero, relacionando patrón, uniones y uso ficticio dados. No se exige cuero real, compra ni herramientas cortantes.",
+      "topicIds": [
+        "safe-craft-technique"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "ae8ec20f"
+      ],
+      "forbidden": "horno|cocci[oó]n|cuero obligatorio",
+      "evidenceIds": [
+        "leatherwork-pattern"
+      ]
+    },
+    {
+      "id": "pyrography-simulation",
+      "description": "Realiza una simulación de pirograbado mediante dibujo, relacionando trazo, contraste y soporte elegidos con el motivo dado. No uses calor ni herramientas calientes.",
+      "topicIds": [
+        "safe-craft-technique"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "ae8ec20f"
+      ],
+      "forbidden": "horno|cocci[oó]n|calentamiento|quemar",
+      "evidenceIds": [
+        "pyrography-design"
+      ]
+    },
+    {
+      "id": "melody-reproduction",
+      "description": "Reproduce la melodía latinoamericana proporcionada con el medio sonoro disponible elegido, siguiendo las relaciones entre sonidos del modelo. No se pide reproducir un patrón rítmico adicional ni usar todos los medios.",
+      "topicIds": [
+        "latin-rhythm-reproduction"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "0d77519a"
+      ],
+      "forbidden": "secuencia r[ií]tmica|pulso",
+      "criterionCount": 1
+    },
+    {
+      "id": "rhythm-melody-reproduction",
+      "description": "Reproduce el ritmo y la melodía latinoamericanos dados mediante el instrumento disponible elegido, manteniendo ambas secuencias del modelo. No se exige cantar ni añadir instrumentos.",
+      "topicIds": [
+        "latin-rhythm-reproduction"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "0d77519a"
+      ],
+      "criterionCount": 2
+    },
+    {
+      "id": "comedy-plan",
+      "description": "Diseña un plan de montaje de la comedia teatral ficticia dada, relacionando acciones, entradas, recursos y sentido cómico. No representes todavía el fragmento.",
+      "topicIds": [
+        "theatrical-comedy"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "3b63eeef"
+      ],
+      "forbidden": "representaci[oó]n ejecutada"
+    },
+    {
+      "id": "popular-dance-plan",
+      "description": "Elabora un plan de danza popular de merengue relacionando pulso, secuencia y desplazamientos adaptados con el fragmento dado. No ejecutes todavía la danza.",
+      "topicIds": [
+        "popular-dance"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "3b63eeef"
+      ],
+      "forbidden": "danza ejecutada"
+    },
+    {
+      "id": "palos-plan",
+      "description": "Diseña un plan de representación del fragmento de palos o atabales dado, relacionando pulso, secuencia y movimientos adaptados con los recursos disponibles. No lo interpretes todavía ni practiques ritos.",
+      "topicIds": [
+        "palos-congos-salves"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "85275728"
+      ],
+      "forbidden": "representaci[oó]n ejecutada"
+    },
+    {
+      "id": "percussion-rhythm",
+      "description": "Interpreta el ritmo popular dominicano dado con un instrumento de percusión disponible elegido, manteniendo pulso y entradas. No se pide melodía, canto ni flauta.",
+      "topicIds": [
+        "popular-performance"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "48ecc915"
+      ],
+      "forbidden": "melod[ií]a|vocal|flauta",
+      "criterionCount": 1
+    },
+    {
+      "id": "craft-requirements",
+      "description": "Verifica si el accesorio artesanal proporcionado cumple los requisitos explícitos de forma y función dados en la ficha. No evalúes belleza, talento ni calidad del material comprado.",
+      "topicIds": [
+        "craft-accessory"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "349f3d60"
+      ],
+      "criterionCount": 2
+    },
+    {
+      "id": "weighted-recreation",
+      "description": "Crea una recreación visual del referente dado mediante la técnica segura disponible, relacionando transformación y recursos. Usa una lista ponderada con crédito parcial por los componentes acordados. No copies literalmente la obra.",
+      "topicIds": [
+        "artistic-recreation"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "255cc1c7"
+      ]
+    },
+    {
+      "id": "artistic-instrument",
+      "description": "Crea el instrumento sonoro sencillo requerido para la obra ficticia con los materiales seguros proporcionados, relacionando uniones, producción de sonido y función en la propuesta. No compres materiales ni fabriques otros accesorios.",
+      "topicIds": [
+        "artistic-instrument"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "5104d7d3"
+      ]
+    },
+    {
+      "id": "visual-exponents-research",
+      "description": "Investiga los principales exponentes del arte dominicano y caribeño asignados, relacionando sus propuestas visuales con el contexto histórico y la actualidad mediante las fuentes dadas. No realices entrevistas ni reveles historias familiares.",
+      "topicIds": [
+        "art-exponents-research"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "c7d0fbea",
+        "20c6966b"
+      ]
+    },
+    {
+      "id": "song-melody-only",
+      "description": "Crea una canción a partir del análisis de la melodía proporcionada, transformando sus relaciones sonoras según el mensaje ficticio acordado. No se pide trabajar un ritmo adicional.",
+      "topicIds": [
+        "song-from-analysis"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "a235c69b"
+      ],
+      "forbidden": "ritmo",
+      "criterionCount": 1
+    },
+    {
+      "id": "song-rhythm-only",
+      "description": "Crea una canción a partir del análisis del ritmo proporcionado, transformando el patrón según el mensaje ficticio acordado. No se pide trabajar una melodía adicional.",
+      "topicIds": [
+        "song-from-analysis"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "a235c69b"
+      ],
+      "forbidden": "melod[ií]a",
+      "criterionCount": 1
+    },
+    {
+      "id": "origin-dance-exploration",
+      "description": "Explora las posibilidades de movimiento de la danza de pueblos originarios proporcionada, practicando su secuencia y el pulso mediante adaptaciones sentadas. No diseñes un plan ni reproduzcas ceremonias religiosas.",
+      "topicIds": [
+        "origin-dance"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "5ec11eba"
+      ]
+    }
+  ]
+}

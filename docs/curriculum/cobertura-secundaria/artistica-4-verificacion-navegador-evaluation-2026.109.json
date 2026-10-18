@@ -1,0 +1,53 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.109",
+  "grade": 4,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 4,
+    "cycle": 2,
+    "subjectCode": "ART",
+    "optativeExitName": null
+  },
+  "format": "lista-ponderada",
+  "inspectedFormats": [
+    "rubrica",
+    "lista-ponderada"
+  ],
+  "savedAndReopenedFormats": [
+    "lista-ponderada"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "DRAMATIZATION",
+  "manualStrategy": "PROJECT_BASED",
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "e33b8a48d677f6a32137361c5d0e35e2",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "e33b8a48d677f6a32137361c5d0e35e2",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "ee43ccc3-f803-44ac-9c84-2cbd991aa1d6",
+      "format": "lista-ponderada",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-D-Q4onV9.js",
+  "servedAssetSha256": "5d8e098f01f755355e09c39000711e9c137f59597f6fe396baf154d79afeef86",
+  "limits": [
+    "Una muestra QA identificable en4.ºA/Artística de la cuenta personal, sin notas ni ejecución real de aula. No acredita todos los temas ni combinaciones.",
+    "Dramatización explícita con personajes ficticios, diálogo y guion seleccionó DRAMATIZATION automáticamente. Se mantuvo el detector; no se amplió para forzar esta selección.",
+    "Se inspeccionaron rúbrica y lista ponderada; solo ponderada se guardó/reabrió visualmente. Doce muestras HTTP/DB con cuenta QA distinta verificaron cuatro formatos con20/17.35.",
+    "PROJECT_BASED manual solo prueba persistencia, no recomendación pedagógica para esta consigna. Huella READ ONLY incluye instrumento completo, snapshot, técnica, puntos e identificadores.",
+    "No se borraron borradores, cachés, almacenamiento o SW ni se enviaron correos/cambiaron contraseñas. DOM/HTTP confirmaron asset actual/registerSW.js y sw.js igual a dist; internals del SW no inspeccionados.",
+    "Recorrido por Cursos/asignatura/Editar y reapertura final por ese enlace observado. Persisten límites previos de Actividades global/Ver actividad.",
+    "Intermitencia DNS previa documentada en108; no se cambió infraestructura, proyectos, secretos o datos para ejecutar109."
+  ]
+}
