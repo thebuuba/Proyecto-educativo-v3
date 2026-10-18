@@ -1,0 +1,53 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.114",
+  "grade": 3,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 3,
+    "cycle": 1,
+    "subjectCode": "EFI",
+    "optativeExitName": null
+  },
+  "format": "lista-cotejo",
+  "inspectedFormats": [
+    "rubrica",
+    "lista-cotejo"
+  ],
+  "savedAndReopenedFormats": [
+    "lista-cotejo"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "PROJECT_BASED",
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "259a35da955f28b6ee75ee8794050e74",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "259a35da955f28b6ee75ee8794050e74",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "2502dff3-9c94-4283-b576-7f1b3cb41369",
+      "format": "lista-cotejo",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-OeU1W1Ug.js",
+  "servedAssetSha256": "bae89eb1753053061c90915c9e8d956c9df8ff3f8f2c1576b0ba3a13d28f216f",
+  "limits": [
+    "Una muestra QA identificable en 3.º A secundaria/Educación Física de la cuenta personal, sin notas ni ejecución física de clase; no todos los temas o combinaciones.",
+    "Caso concreto de adaptaciones técnicas del voleibol sentado con datos, alternativas y decisión justificada: CASE_STUDY automático. Modalidad individual explícita, sin equipos nuevos.",
+    "Rúbrica completa inspeccionada por DOM; lista de cotejo completa con 17.35 puntos y texto manual guardada y reabierta visualmente. Doce muestras HTTP/DB separadas verificaron cuatro formatos y 20/17.35 puntos.",
+    "PROJECT_BASED manual prueba persistencia, no recomendación pedagógica. La huella READ ONLY incluye definición completa, snapshot, técnica, puntos e identificadores.",
+    "No se borraron borradores, caché, almacenamiento ni SW; no correos ni cambios de contraseña. DOM confirmó script actual/registerSW.js y HTTP confirmó assets/sw.js iguales a dist. Internals del SW no inspeccionados.",
+    "Reapertura desde Cursos/asignatura/Editar y enlace observado. Persisten límites previos de Actividades global/Ver actividad; no se acredita restauración automática de todos los borradores.",
+    "Sin dosis de ejercicio/dieta, diagnósticos, datos privados ni maniobras operacionales nuevas. No valoración de capacidad natural, apariencia o discapacidad."
+  ]
+}

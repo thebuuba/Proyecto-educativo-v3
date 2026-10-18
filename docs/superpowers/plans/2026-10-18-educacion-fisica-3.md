@@ -1,0 +1,19 @@
+# Educación Física de 3.º: plan de implementación
+
+Ejecución individual con el plan maestro de secundaria y TDD. Mantener esta rama; sin subagentes, push, main, producción, despliegues, nuevas cuentas, esquema, resets o borrados. El usuario autorizó continuar sin preguntas entre grados. Base `b6a241644890cfb006b858c074fd878de43dd3ef`. El catálogo 113 se congeló una sola vez y se cotejó READ ONLY contra Development antes de ampliar el código; no sobrescribirlo.
+
+Fuente MINERD 2023, PDF 365–367, impresas 364–366, SHA-256 `80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58`. Las tres páginas ya se renderizaron a 1800 px y se leyeron visualmente completas. Ámbito `37d383d7-b45c-56e0-af9b-497cf043b27c`: 20 conceptos, 30 procedimientos, 10 actitudes, 21 indicadores y 14 competencias. Son 37 filas útiles C/P: 11 conceptos y 26 procedimientos. No repetir la lectura sin cambio de fuente.
+
+Se excluyen nueve encabezados conceptuales, cuatro procedimentales y la perseverancia interna. Se conservan la continuación de voleibol sentado, las filas compuestas y el literal sobre roles concretos sin calificar la valoración privada del esfuerzo. La participación/opinión repetida no crea criterios duplicados. Deportes de raqueta optativos dentro de EFI no equivalen a salidas académicas.
+
+Arquitectura: metadata de grado en `secondary-physical-grade-3.ts`, registro en el proveedor compartido y catálogo 114. Reutilizar formateador y conexiones existentes; conservar exactamente los módulos anteriores. Fuente literal separada de las adaptaciones de AulaBase. No crear motores nuevos ni dependencias.
+
+- [x] Escribir contratos rojos de capacidades, circuitos, carrera continua, variaciones/equilibrio, orientación, salud por referentes, voleibol, fútbol, aperturas de ajedrez y deportes de raqueta. Contrastar acciones, títulos incompatibles, alternativas, negaciones, modalidades y apoyos pedidos; cuatro formatos, 20/17,35 puntos y puntuación pendiente.
+- [x] Conectar metadata y corregir únicamente carencias demostradas. Diferenciar explicación, verificación, plan, producción, práctica adaptada, registro, historia e investigación. Conservar el contexto real o simulado de la consigna y sus recursos explícitos.
+- [x] Mapear las 37 filas útiles y exclusiones. Generar y leer todos los instrumentos completos con progresiones, puntuaciones y parcial ponderado; registrar huellas tras leer, sin declarar cobertura por conteos.
+- [x] Verificar exactos los instrumentos completos anteriores de EFI de 1.º–2.º, Sociales y Artística. Fuente, notas, matriz e inventario deben distinguir preparación, conexión y ejecución comprobada.
+- [x] Antes de escribir dist, comprobar y detener solo el Worker propio. Ejecutar backend test/build, frontend build, cloudflare:build, frontend afectado y lint. No generar Prisma con instaladores o helpers Prisma activos.
+- [x] Publicar la fuente e instalar 114 solo en Development, con idempotencia e historial preservado. Comprobar PG/Auth/Storage/frontend y assets efectivos. Doce muestras HTTP y recorrido personal real, con guardado/reapertura y estrategia sola conservando exactamente el instrumento.
+- [x] Actualizar informe y continuación; revisar diff, secretos y UTF-8; commit español local, sin push. Continuar con 4.º sin preguntas rutinarias.
+
+Condiciones: los tiempos de carrera y circuito del PDF son referencias curriculares, no dosis automáticas. La consigna fija variante, condiciones, apoyos y supervisión. No nuevas excursiones, maniobras físicas, cabezazos, tratamientos o consejos médicos generados. Salud e imagen corporal se analizan mediante referentes proporcionados; no se califican apariencia, autoestima, capacidad natural, discapacidad, identidad, fe, emociones o hábitos privados. En ajedrez se evalúan decisiones de posiciones dadas, sin inferir inteligencia o personalidad. Se conserva el creador vertical, preparación silenciosa, selección manual y puntos pendientes.

@@ -1,0 +1,17 @@
+# Educación Física de 3.º: revisión de la fuente
+
+Fuente MINERD 2023, PDF 365–367, impresas 364–366. SHA-256 `80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58`. Las tres páginas se renderizaron a 1800 px y se leyeron visualmente completas. Ámbito `37d383d7-b45c-56e0-af9b-497cf043b27c`: 20 conceptos, 30 procedimientos, 10 actitudes, 21 indicadores y 14 competencias.
+
+Se contrastaron capacidades físicas, circuitos, flexibilidad, carrera continua, variaciones motrices y equilibrio; orientación con mapa, brújula y GPS, carreras con balizas y tarjetas; efectos de actividad física y bienestar mediante referentes dados; voleibol convencional, arena y sentado; fútbol 11, 5 en grama, futsal, arena y adaptaciones con cascabeles; aperturas de ajedrez y deportes de raqueta. La variante y los recursos de cada actividad son los expresamente solicitados.
+
+Se conservan 37 filas útiles C/P: 11 conceptos y 26 procedimientos. Se excluyen nueve encabezados conceptuales, cuatro procedimentales y una disposición de perseverancia interna. La continuación técnica del voleibol sentado y las filas compuestas de fútbol y voleibol no son encabezados. El literal sobre roles concretos permanece separado de la valoración privada del esfuerzo. La participación/opinión duplicada no produce criterios repetidos.
+
+Los deportes de raqueta descritos como optativos dentro de Educación Física pertenecen a este ámbito; no son salidas académicas ni otras asignaturas. Sus referentes incluyen bádminton, tenis de mesa y tenis, sin exigir las tres disciplinas en cada actividad. Se distinguen explicación, análisis, comparación, investigación, presentación, plan, producción de un esquema, práctica adaptada, registro, verificación y frecuencia observada. Un esquema de apertura de ajedrez se trata como producto analizable mediante un tipo de actividad existente.
+
+Los 52 temas y 72 contratos específicos, más 52 explicaciones breves, producen 124 consignas representativas y 496 instrumentos de cuatro formatos. Se leyeron completos, con progresiones, puntuaciones y parcial ponderado, y se registraron sus huellas finales. Esto acredita los ejemplos, no todas las combinaciones de las filas compuestas ni una clase ejecutada. Los criterios son adaptaciones pedagógicas de AulaBase separadas del literal oficial.
+
+Las alternativas conservan una elección cuando así se solicita. Las acciones independientes mantienen sus criterios. Se separan explicación de reglas y verificación de registros, planificación y ejecución, apertura única y tipos alternativos, conducción lineal y obstáculos, y orientación con o sin mapa. Las frecuencias distinguen «Nunca» de la ausencia de registro. No se imponen modalidades o materiales excluidos.
+
+Los tiempos de carrera y circuito del PDF son referencias curriculares, no dosis automáticas. Las condiciones, apoyos, reglas y supervisión son los proporcionados. No se generan excursiones, maniobras peligrosas, instrucciones nuevas para cabezazos, tratamientos, diagnósticos o recomendaciones personales. Salud e imagen corporal se analizan con referentes dados; no se puntúan apariencia, autoestima, capacidad natural, discapacidad, identidad, fe, emociones, personalidad o hábitos privados. Las decisiones de ajedrez no diagnostican inteligencia.
+
+La publicación, instalación, pruebas HTTP y recorrido personal se acreditan por separado en el informe y la matriz. Esta nota de fuente no demuestra por sí sola la ejecución del catálogo candidato.

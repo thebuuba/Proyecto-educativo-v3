@@ -1,0 +1,196 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "scopeId": "37d383d7-b45c-56e0-af9b-497cf043b27c",
+  "grade": 3,
+  "topicRecords": {
+    "physical-condition-explanation": [
+      "3006588f-6a06-5631-9f1d-4b5aa7e7318b"
+    ],
+    "circuit-plan": [
+      "0cf01e93-3987-5b12-a223-a70f23521653"
+    ],
+    "flexibility-observation": [
+      "9807829f-dce0-5d51-9f7f-f63ec511b719"
+    ],
+    "motor-variation": [
+      "35e04d4b-d064-5cac-b3f1-190e8ea9cd60"
+    ],
+    "equilibrium-observation": [
+      "6331f88c-e0bc-5449-b9f6-c987ba6ffe90"
+    ],
+    "care-frequency": [
+      "e5b3f395-569e-58ed-a570-7d301d637665"
+    ],
+    "tactical-cooperation": [
+      "e900ea46-32c9-5d75-bd77-e67796281ede",
+      "7f223771-e3a4-585b-9fd3-cd4fe9993db9"
+    ],
+    "motor-progress-record": [
+      "499b3928-a488-51f1-a8dc-2fa9c72857fa"
+    ],
+    "continuous-running": [
+      "1825db3e-53e0-562d-80e8-01427b712a30"
+    ],
+    "spatial-orientation": [
+      "b87dfc34-b085-589f-ab55-af87a8169994"
+    ],
+    "compass-orientation": [
+      "693cea6d-5e7b-5c75-873d-c97495524f34",
+      "b87dfc34-b085-589f-ab55-af87a8169994"
+    ],
+    "gps-orientation": [
+      "b87dfc34-b085-589f-ab55-af87a8169994"
+    ],
+    "orientation-race": [
+      "693cea6d-5e7b-5c75-873d-c97495524f34",
+      "492d89a9-b833-5002-ab26-fad7e12a73e8"
+    ],
+    "orientation-rules": [
+      "693cea6d-5e7b-5c75-873d-c97495524f34"
+    ],
+    "orientation-history": [
+      "157aece8-0670-5309-a167-99cf8c75b68c"
+    ],
+    "wellbeing-reference": [
+      "ef1d5b6e-7749-5d06-a379-6c0e2083d61b",
+      "4d986105-77d6-5068-b5c3-9fb0a924247d",
+      "37f78100-3853-5cbb-b871-e607e9c3e085"
+    ],
+    "volleyball-history": [
+      "de437244-d7b8-5bc6-9c75-314e0a3dec51",
+      "95e78887-ae9f-5871-81e7-0e6767681240"
+    ],
+    "volleyball-rules": [
+      "bc72d162-e802-5728-8c7e-a6f5475d5ac7",
+      "1233e2b4-d443-59d7-ae02-48f791e9cd15"
+    ],
+    "volleyball-postures": [
+      "de437244-d7b8-5bc6-9c75-314e0a3dec51",
+      "636af9d6-6f96-5676-bd7b-c0167b6cf6da"
+    ],
+    "volleyball-displacements": [
+      "de437244-d7b8-5bc6-9c75-314e0a3dec51"
+    ],
+    "volleyball-pass": [
+      "636af9d6-6f96-5676-bd7b-c0167b6cf6da",
+      "5d73ef6a-0630-545d-ba74-2c06c414aeca"
+    ],
+    "volleyball-attack": [
+      "ae0e53eb-24f8-5ccc-9a79-39a216213ef1",
+      "69b4510f-ff0d-5449-957f-b4a3e043436c"
+    ],
+    "volleyball-reception": [
+      "08005e54-aa3d-5f78-9f48-447f67b12f35"
+    ],
+    "volleyball-block": [
+      "08005e54-aa3d-5f78-9f48-447f67b12f35",
+      "e1314cf9-ad20-5d62-be63-766ad8cfab87"
+    ],
+    "volleyball-defence": [
+      "de437244-d7b8-5bc6-9c75-314e0a3dec51",
+      "08005e54-aa3d-5f78-9f48-447f67b12f35"
+    ],
+    "volleyball-game": [
+      "472e9822-b1c8-5f8b-b449-855a6f0a2611",
+      "107d3115-dbe8-56c2-b39a-f234cc20cd1a"
+    ],
+    "volleyball-serve": [
+      "de437244-d7b8-5bc6-9c75-314e0a3dec51",
+      "472e9822-b1c8-5f8b-b449-855a6f0a2611"
+    ],
+    "volleyball-seated": [
+      "1233e2b4-d443-59d7-ae02-48f791e9cd15",
+      "492d89a9-b833-5002-ab26-fad7e12a73e8"
+    ],
+    "football-history": [
+      "2b18eaff-d547-5886-a27b-d8ba358019c5",
+      "4e275183-394d-54b3-a41d-4d00bd5b98b9"
+    ],
+    "football-rules": [
+      "962ed019-2bba-538a-965d-149fe4093768",
+      "2b18eaff-d547-5886-a27b-d8ba358019c5",
+      "3db475cd-7750-5fe4-b5c0-d2a80ac465f5"
+    ],
+    "football-positions": [
+      "2cf305b5-7587-5e80-90e2-326ddd15bbe5",
+      "75c339c5-4b9e-5858-bf71-9c106f854fc8"
+    ],
+    "football-conduction": [
+      "7e9729bf-7498-50fd-b8dd-5226f7693282",
+      "261577e6-8b9c-57d6-a6d8-4dbb90e4fa58"
+    ],
+    "football-pass": [
+      "b86648af-6fe2-5664-bace-0ce61e85e93e",
+      "c74d1408-f8b2-526a-a77a-f0feb095ee9c"
+    ],
+    "football-reception": [
+      "ba4e0dfb-d85a-53d8-a09b-94ae32f0772e",
+      "26075342-cbeb-56f9-a504-1ece633dbc57"
+    ],
+    "football-shot": [
+      "3db475cd-7750-5fe4-b5c0-d2a80ac465f5",
+      "17544931-3bc6-55a3-acc3-e6ef8c48ffbf",
+      "962ed019-2bba-538a-965d-149fe4093768"
+    ],
+    "football-header-reference": [
+      "41f915d4-39df-5d0a-9cea-7435a721584e"
+    ],
+    "football-attack-defence": [
+      "d7faa4c6-7d4b-5e01-a9db-dd2aa0ab636d"
+    ],
+    "football-game": [
+      "d7faa4c6-7d4b-5e01-a9db-dd2aa0ab636d",
+      "492d89a9-b833-5002-ab26-fad7e12a73e8"
+    ],
+    "football-arena": [
+      "ccd38f0a-fdc9-5096-87b9-ec01d46742f2"
+    ],
+    "football-adaptation": [
+      "492d89a9-b833-5002-ab26-fad7e12a73e8"
+    ],
+    "chess-opening-types": [
+      "bb9e4d49-28dc-5416-a149-9d6ccc594014",
+      "ba1433d1-2004-53fb-b4a4-1e41d29e3806"
+    ],
+    "chess-transposition": [
+      "9f7847e9-62b6-5baa-be4d-6753285e3077"
+    ],
+    "chess-reproduction": [
+      "2c7032f9-7ab5-5bca-bc7b-db8fdc26137b"
+    ],
+    "chess-opening-game": [
+      "e1f1a2da-0258-5919-9c1b-01c90421f441"
+    ],
+    "chess-irregular-game": [
+      "f65b4548-87a3-5822-9bb6-1afcd4ecf30d"
+    ],
+    "chess-scheme": [
+      "9f7847e9-62b6-5baa-be4d-6753285e3077",
+      "4728285f-0c75-5bee-a41a-38864739cd4f",
+      "c682e76c-2f1e-59e4-9238-dab7a1b56260"
+    ],
+    "chess-repertoire": [
+      "a2ee1259-a0ea-5ea0-bf1f-98e3f2bd0c57",
+      "e81ed832-1e7b-50f4-8844-80c6ae2de94d"
+    ],
+    "racket-history": [
+      "600fe734-c44b-595d-adf4-386463f8cf30",
+      "157aece8-0670-5309-a167-99cf8c75b68c"
+    ],
+    "racket-positions": [
+      "987901f7-4d25-5843-a913-46960ab7355f",
+      "d05d7d6f-1fe6-55a7-a27a-1a8762546c0c"
+    ],
+    "racket-displacements": [
+      "987901f7-4d25-5843-a913-46960ab7355f"
+    ],
+    "racket-technique": [
+      "987901f7-4d25-5843-a913-46960ab7355f",
+      "e1523b84-0123-50c4-9d18-bb5becc90568"
+    ],
+    "racket-tactics": [
+      "987901f7-4d25-5843-a913-46960ab7355f",
+      "e1523b84-0123-50c4-9d18-bb5becc90568"
+    ]
+  }
+}
