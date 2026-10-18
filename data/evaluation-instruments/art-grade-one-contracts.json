@@ -1,0 +1,513 @@
+{
+  "grade": 1,
+  "subjectCode": "ART",
+  "sourceScopeId": "5f147c31-c4c6-528b-ad69-9d88945fd21e",
+  "sourcePdfPages": [
+    330,
+    331
+  ],
+  "policy": "REPRESENTATIVE_TASKS_NOT_ALL_VARIANTS_OF_COMPOUND_SOURCE_ROWS",
+  "cases": [
+    {
+      "id": "two-dimensional-drawing",
+      "description": "Crea una obra bidimensional con puntos, líneas y planos de color para comunicar una idea ficticia. Sin representar volumen ni hacer una escultura.",
+      "sourceRecordIds": [
+        "b024a412",
+        "964fa3b7"
+      ],
+      "topicIds": [
+        "drawing"
+      ],
+      "purpose": "PRODUCTION",
+      "forbidden": "escultura|tridimensional|realismo fotográfico"
+    },
+    {
+      "id": "three-dimensional-alternative-material",
+      "description": "Realiza una figura tridimensional con barro o materiales reciclados disponibles, mostrando volumen y estabilidad. Puedes escoger uno de esos materiales; no necesitas comprarlos.",
+      "sourceRecordIds": [
+        "ad549a33"
+      ],
+      "topicIds": [
+        "three-dimensional"
+      ],
+      "purpose": "PRODUCTION",
+      "forbidden": "todos los materiales|compra|fotográfico"
+    },
+    {
+      "id": "form-stylization",
+      "description": "Estiliza una figura cotidiana en un dibujo: simplifica sus formas conservando rasgos reconocibles y explica tus decisiones. No copies una fotografía de manera realista.",
+      "sourceRecordIds": [
+        "b3d4b4ed"
+      ],
+      "topicIds": [
+        "stylization"
+      ],
+      "purpose": "PRODUCTION"
+    },
+    {
+      "id": "dimension-classification",
+      "description": "Compara los ejemplos artísticos proporcionados y diferencia sus elementos bidimensionales y tridimensionales. Identifica las artes a las que corresponden. No crees una obra nueva.",
+      "sourceRecordIds": [
+        "58dfdb4e"
+      ],
+      "topicIds": [
+        "dimensions"
+      ],
+      "purpose": "COMPARISON",
+      "forbidden": "crea una obra|realiza una escultura"
+    },
+    {
+      "id": "color-wheel-and-tonal-scale",
+      "description": "Realiza un círculo cromático y una escala tonal según el modelo de color dado. Distingue las relaciones de color del cambio de claridad en la escala.",
+      "sourceRecordIds": [
+        "eefb0aaa",
+        "06391674"
+      ],
+      "topicIds": [
+        "color"
+      ],
+      "purpose": "PRODUCTION"
+    },
+    {
+      "id": "light-shadow-analysis",
+      "description": "Analiza las luces y sombras del dibujo proporcionado y explica cómo ayudan a percibir el volumen. Sin dibujar otra versión ni fotografiar objetos.",
+      "sourceRecordIds": [
+        "60ea6d6e"
+      ],
+      "topicIds": [
+        "light-shadow"
+      ],
+      "purpose": "ANALYSIS",
+      "forbidden": "fotografía|crea otro dibujo"
+    },
+    {
+      "id": "composition-analysis",
+      "description": "Explica cómo se relacionan los elementos de la composición visual proporcionada. Sustenta la explicación en sus posiciones y relaciones, sin calificar si es bonita o fea.",
+      "sourceRecordIds": [
+        "21e4898d"
+      ],
+      "topicIds": [
+        "composition"
+      ],
+      "purpose": "ANALYSIS"
+    },
+    {
+      "id": "fictional-bodily-language",
+      "description": "Representa una situación ficticia de encuentro mediante gestos, palabras, acciones y movimientos del cuerpo. Relaciona los recursos corporales con el mensaje acordado. No reveles vivencias privadas.",
+      "sourceRecordIds": [
+        "9d0d7681",
+        "6aa4df13"
+      ],
+      "topicIds": [
+        "bodily-language"
+      ],
+      "purpose": "PERFORMANCE",
+      "forbidden": "experiencias íntimas|personalidad|apariencia corporal"
+    },
+    {
+      "id": "dramatic-scene-composition",
+      "description": "Compón una escena breve de teatro con espacio, personajes, tiempo y conflicto ficticios relacionados. Entrega solo la propuesta escrita; no es necesario representarla.",
+      "sourceRecordIds": [
+        "e134f5f1",
+        "a2160b27"
+      ],
+      "topicIds": [
+        "dramatic-structure"
+      ],
+      "purpose": "PRODUCTION",
+      "forbidden": "ante el público|actuación ejecutada"
+    },
+    {
+      "id": "character-performance",
+      "description": "Construye e interpreta un personaje ficticio usando gestos y acciones coherentes con su objetivo dentro de la escena dada. No se pide vestuario ni maquillaje.",
+      "sourceRecordIds": [
+        "6d8ddf76"
+      ],
+      "topicIds": [
+        "character"
+      ],
+      "purpose": "PERFORMANCE",
+      "forbidden": "maquillaje|vestuario"
+    },
+    {
+      "id": "collective-choreography-plan",
+      "description": "En equipo, compongan una danza breve y registren los patrones rítmicos, el diseño del espacio y las transiciones de movimiento. Es una propuesta coreográfica, sin ejecutarla todavía.",
+      "sourceRecordIds": [
+        "084924f7",
+        "019b7653"
+      ],
+      "topicIds": [
+        "choreography"
+      ],
+      "purpose": "PLAN",
+      "forbidden": "ejecuta la danza|representación realizada"
+    },
+    {
+      "id": "adapted-dance-performance",
+      "description": "Interpreta la secuencia de danza dada siguiendo sus patrones rítmicos y recorridos. Realiza los movimientos sentado según la adaptación acordada y sin saltos.",
+      "sourceRecordIds": [
+        "019b7653",
+        "b2c699b6"
+      ],
+      "topicIds": [
+        "choreography"
+      ],
+      "purpose": "PERFORMANCE",
+      "forbidden": "saltos|altura|resistencia física|apariencia corporal"
+    },
+    {
+      "id": "dance-space-exploration",
+      "description": "Explora las posibilidades del espacio físico dado para convertirlo en espacio escénico de danza. Propón recorridos y ubicaciones que permitan los movimientos acordados con seguridad. No ejecutes la danza.",
+      "sourceRecordIds": [
+        "bed3687c",
+        "88ce2e33"
+      ],
+      "topicIds": [
+        "dance-space"
+      ],
+      "purpose": "PLAN"
+    },
+    {
+      "id": "scenic-object-function",
+      "description": "Explica la función de los espacios y objetos en la representación escénica proporcionada, relacionándolos con las acciones de los personajes. No fabriques una escenografía.",
+      "sourceRecordIds": [
+        "8eab9952"
+      ],
+      "topicIds": [
+        "scenic-objects"
+      ],
+      "purpose": "ANALYSIS",
+      "forbidden": "fabrica|compra"
+    },
+    {
+      "id": "vocal-hymn-interpretation",
+      "description": "Interpreta con la voz el himno escolar indicado aplicando respiración, articulación y emisión vocal cuidadas. No se evalúan sentimientos patrióticos ni canto profesional.",
+      "sourceRecordIds": [
+        "64728828",
+        "b3fc01f9"
+      ],
+      "topicIds": [
+        "vocal-technique"
+      ],
+      "purpose": "PERFORMANCE",
+      "forbidden": "patriotismo|profesional|potencia vocal"
+    },
+    {
+      "id": "recorder-hymn-interpretation",
+      "description": "Interpreta el fragmento del himno dado en flauta dulce aplicando respiración, entonación, postura adaptada y emisión instrumental. Sin cantarlo ni comprar un instrumento.",
+      "sourceRecordIds": [
+        "64728828",
+        "d336b6f0"
+      ],
+      "topicIds": [
+        "recorder"
+      ],
+      "purpose": "PERFORMANCE",
+      "forbidden": "dicción|articulación de palabras|compra"
+    },
+    {
+      "id": "melody-creation-alternative-medium",
+      "description": "Construye una melodía propia utilizando tu voz o los objetos sonoros disponibles. Organiza motivos y frases reconocibles; escoge uno de esos medios. No se pide notación musical ni grabación.",
+      "sourceRecordIds": [
+        "6fad8717",
+        "a4553bbf"
+      ],
+      "topicIds": [
+        "melody"
+      ],
+      "purpose": "PRODUCTION",
+      "forbidden": "grabación|notación|todos los instrumentos"
+    },
+    {
+      "id": "melodic-structure-analysis",
+      "description": "Identifica motivos, frases y semifrases en la canción popular proporcionada y explica cómo se relacionan en su estructura melódica. No compongas otra canción.",
+      "sourceRecordIds": [
+        "a4553bbf"
+      ],
+      "topicIds": [
+        "melody"
+      ],
+      "purpose": "ANALYSIS"
+    },
+    {
+      "id": "daily-use-craft",
+      "description": "Crea una pieza artesanal con materiales disponibles que responda a la necesidad cotidiana ficticia indicada. Relaciona su forma, uniones y función con esa necesidad. No compres materiales costosos.",
+      "sourceRecordIds": [
+        "28709913",
+        "a103e393"
+      ],
+      "topicIds": [
+        "craft"
+      ],
+      "purpose": "PRODUCTION",
+      "forbidden": "materiales costosos|compra|lujo"
+    },
+    {
+      "id": "textile-adaptation",
+      "description": "Diseña y adapta el textil dado para el uso indicado, explicando cómo forma, color y uniones responden a su función. No se califica el cuerpo ni las medidas personales de nadie.",
+      "sourceRecordIds": [
+        "0fd2c1fd",
+        "067a2a1b"
+      ],
+      "topicIds": [
+        "textile"
+      ],
+      "purpose": "PRODUCTION",
+      "forbidden": "apariencia corporal|cuerpo ideal"
+    },
+    {
+      "id": "graphic-design",
+      "description": "Diseña una pieza gráfica para comunicar el mensaje ficticio dado. Organiza texto, imágenes y espacio de acuerdo con su función y legibilidad; sin comprar programas.",
+      "sourceRecordIds": [
+        "45a6484c",
+        "0bb85add"
+      ],
+      "topicIds": [
+        "graphic-design"
+      ],
+      "purpose": "PRODUCTION"
+    },
+    {
+      "id": "design-elements-explanation",
+      "description": "Explica los elementos de diseño en la pieza proporcionada, relacionando forma, distribución y función. No construyas otro producto.",
+      "sourceRecordIds": [
+        "0bb85add"
+      ],
+      "topicIds": [
+        "design"
+      ],
+      "purpose": "ANALYSIS"
+    },
+    {
+      "id": "creative-portfolio-or-report",
+      "description": "Organiza un portafolio o un informe creativo con las propuestas artísticas investigadas que se proporcionan. Selecciona uno de los formatos y relaciona ejemplos, técnicas y terminología artística. No realices otra investigación ni presentes ambos productos.",
+      "sourceRecordIds": [
+        "b836956d"
+      ],
+      "topicIds": [
+        "portfolio"
+      ],
+      "purpose": "REPORT",
+      "forbidden": "ambos productos|busca nuevas fuentes"
+    },
+    {
+      "id": "artistic-diary-binding",
+      "description": "Diseña y encuaderna un álbum para usarlo como diario artístico. Sus páginas deben mantenerse unidas y ser utilizables para registrar las reflexiones sobre técnicas. No se exige decoración costosa.",
+      "sourceRecordIds": [
+        "48a5c910"
+      ],
+      "topicIds": [
+        "diary-binding"
+      ],
+      "purpose": "PRODUCTION"
+    },
+    {
+      "id": "artistic-diary-process",
+      "description": "Elabora un diario artístico con reflexiones sobre las técnicas aplicadas y las decisiones de tu proceso durante el período indicado. Usa ejemplos de los trabajos; no reveles sentimientos íntimos ni recibas una nota por tu personalidad.",
+      "sourceRecordIds": [
+        "40634266",
+        "407d3431"
+      ],
+      "topicIds": [
+        "diary"
+      ],
+      "purpose": "REFLECTION",
+      "forbidden": "autenticidad emocional|personalidad|intimidad"
+    },
+    {
+      "id": "communicative-signs",
+      "description": "Utiliza signos y símbolos en una producción artística para comunicar el mensaje ficticio acordado y explica la relación entre las elecciones y ese mensaje.",
+      "sourceRecordIds": [
+        "8e5269c6"
+      ],
+      "topicIds": [
+        "signs-symbols"
+      ],
+      "purpose": "PRODUCTION"
+    },
+    {
+      "id": "genre-style-comparison",
+      "description": "Compara las dos expresiones artísticas dadas de distintos géneros y estilos. Sustenta semejanzas y diferencias con sus recursos observables, sin decidir cuál cultura es superior.",
+      "sourceRecordIds": [
+        "c68a16ee"
+      ],
+      "topicIds": [
+        "genre-style"
+      ],
+      "purpose": "COMPARISON"
+    },
+    {
+      "id": "work-appreciation",
+      "description": "Valora la obra proporcionada usando los criterios semióticos y estéticos dados. Relaciona tus argumentos con signos, recursos y contexto observables, sin imponer el gusto personal del evaluador.",
+      "sourceRecordIds": [
+        "df0e348f",
+        "889221f3"
+      ],
+      "topicIds": [
+        "appreciation"
+      ],
+      "purpose": "ANALYSIS"
+    },
+    {
+      "id": "national-cultural-influences",
+      "description": "Argumenta sobre las influencias culturales de la expresión artística nacional dada utilizando las evidencias proporcionadas. Distingue esas relaciones de una jerarquía entre culturas.",
+      "sourceRecordIds": [
+        "95289a7a"
+      ],
+      "topicIds": [
+        "cultural-influences"
+      ],
+      "purpose": "ANALYSIS"
+    },
+    {
+      "id": "technology-in-art",
+      "description": "Crea una composición artística con la herramienta digital disponible para el mensaje dado. Explica la función de los recursos tecnológicos que realmente utilizaste. Sin instalar programas de pago.",
+      "sourceRecordIds": [
+        "77af8f8c"
+      ],
+      "topicIds": [
+        "art-technology"
+      ],
+      "purpose": "PRODUCTION"
+    },
+    {
+      "id": "accessible-material-environmental-message",
+      "description": "Crea una obra con materiales del medio y de fácil acceso para comunicar el mensaje dado de cuidado de la salud personal y ambiental. Relaciona su uso con la función expresiva, sin afirmar efectos médicos ni exigir materiales nuevos.",
+      "sourceRecordIds": [
+        "d56b33f6",
+        "1e6a34b2"
+      ],
+      "topicIds": [
+        "environmental-art"
+      ],
+      "purpose": "PRODUCTION"
+    },
+    {
+      "id": "observed-group-agreements",
+      "description": "Durante la creación artística grupal, registra con qué regularidad cada participante cumple su rol y los acuerdos concretos establecidos para el trabajo. Evalúa las acciones observadas, no la personalidad ni la supuesta moralidad.",
+      "sourceRecordIds": [
+        "cb8593dd"
+      ],
+      "topicIds": [
+        "group-agreements"
+      ],
+      "purpose": "OBSERVATION",
+      "preferred": "escala"
+    },
+    {
+      "id": "virtual-art-visit-analysis",
+      "description": "Analiza la manifestación artística de la visita virtual proporcionada mediante ejemplos de sus lenguajes y recursos. No se califica haber viajado ni se exige una visita física.",
+      "sourceRecordIds": [
+        "252728d0",
+        "04e8f35a"
+      ],
+      "topicIds": [
+        "art-visit"
+      ],
+      "purpose": "ANALYSIS"
+    },
+    {
+      "id": "vocal-technique-explanation",
+      "description": "Explica la función de postura, respiración, articulación y dicción en la emisión de la voz hablada y cantada. No cantes ni actúes.",
+      "sourceRecordIds": [
+        "b3fc01f9"
+      ],
+      "topicIds": [
+        "vocal-technique"
+      ],
+      "purpose": "ANALYSIS",
+      "forbidden": "interpretación ejecutada|canta"
+    },
+    {
+      "id": "independent-creation-and-comparison",
+      "description": "Crea un dibujo con puntos y líneas para el mensaje ficticio dado. Luego compara las expresiones artísticas proporcionadas de distintos géneros y estilos con ejemplos observables. No crees una segunda obra.",
+      "sourceRecordIds": [
+        "b024a412",
+        "c68a16ee"
+      ],
+      "topicIds": [
+        "drawing",
+        "genre-style"
+      ],
+      "topicModes": {
+        "drawing": "production",
+        "genre-style": "comparison"
+      },
+      "purpose": "PRODUCTION"
+    },
+    {
+      "id": "explain-melody-creation-without-creating",
+      "description": "Explica cómo se crea una melodía mediante motivos y frases en el ejemplo dado. No compongas ni interpretes otra melodía.",
+      "sourceRecordIds": [
+        "a4553bbf"
+      ],
+      "topicIds": [
+        "melody"
+      ],
+      "purpose": "ANALYSIS",
+      "forbidden": "semifrases"
+    },
+    {
+      "id": "analyze-textile-design-nouns",
+      "description": "Analiza el diseño y adaptación de textiles del material dado, relacionando forma y función. No diseñes ni adaptes otra pieza.",
+      "sourceRecordIds": [
+        "067a2a1b",
+        "0fd2c1fd"
+      ],
+      "topicIds": [
+        "textile"
+      ],
+      "purpose": "ANALYSIS",
+      "forbidden": "color|uniones"
+    },
+    {
+      "id": "drawing-requirements-only",
+      "description": "Con la lista de requisitos dada, verifica si el dibujo proporcionado incluye los puntos y las líneas pedidos. Marca cada requisito cumplido sin valorar calidad o estilo.",
+      "sourceRecordIds": [
+        "964fa3b7"
+      ],
+      "topicIds": [
+        "drawing"
+      ],
+      "purpose": "VERIFICATION",
+      "preferred": "lista-cotejo"
+    },
+    {
+      "id": "weighted-graphic-components",
+      "description": "Diseña una pieza gráfica para el mensaje ficticio dado con crédito parcial y pesos por componente. No entregues un informe adicional.",
+      "sourceRecordIds": [
+        "45a6484c"
+      ],
+      "topicIds": [
+        "graphic-design"
+      ],
+      "purpose": "PRODUCTION",
+      "preferred": "lista-ponderada",
+      "forbidden": "textos|imágenes|texto e imagen"
+    },
+    {
+      "id": "point-only-explanation",
+      "description": "Explica la función del punto en el dibujo. Sin estudiar líneas, planos, volumen ni color.",
+      "sourceRecordIds": [
+        "964fa3b7"
+      ],
+      "topicIds": [
+        "drawing"
+      ],
+      "purpose": "ANALYSIS",
+      "forbidden": "líneas|planos|volumen|color"
+    },
+    {
+      "id": "diary-function-without-personal-work",
+      "description": "Explica la función del diario artístico reflexivo. No elabores un diario ni analices trabajos personales.",
+      "sourceRecordIds": [
+        "40634266"
+      ],
+      "topicIds": [
+        "diary"
+      ],
+      "purpose": "ANALYSIS",
+      "forbidden": "proceso artístico documentado|trabajos del período|sus trabajos|su diario"
+    }
+  ]
+}

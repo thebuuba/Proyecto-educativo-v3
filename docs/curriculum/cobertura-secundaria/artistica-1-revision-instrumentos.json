@@ -1,0 +1,2028 @@
+{
+  "grade": 1,
+  "catalog": "evaluation-2026.106",
+  "method": "CONTENT_REVIEW_EACH_CASE_AND_FORMAT_WITH_EXACT_TEXT_REFERENCES",
+  "limits": [
+    "Solo cuentan los ejemplos leídos con huella vigente; no aprobar por inventario o pruebas.",
+    "Las referencias T/P del lector abrevian exclusivamente texto literalmente idéntico ya mostrado en el mismo caso. Se inspeccionan todos los formatos, sus filas, niveles y asignaciones.",
+    "Los patrones no cubren todas las variantes de filas compuestas ni acreditan actividades reales de aula."
+  ],
+  "items": [
+    {
+      "caseId": "dimensions",
+      "instrumentType": "rubrica",
+      "sha256": "2e14c748a75d8704f47e4fa32f4a94479edcd6a10d4ec0ea09e7166dbda25b25",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "dimensions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "aeda0cb7efe914732755871199382da4a3fec0fcc98d13b4121a3b2b430825b0",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "dimensions",
+      "instrumentType": "escala",
+      "sha256": "ed43561fb195e6d15755e25583e0a0eee4547d23acbca2b12d844560e59d3b75",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "dimensions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "59a085ba3e975b7f0a9bbbf3e89d02a8070e4c359bf7a9936c55834296040460",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "drawing",
+      "instrumentType": "rubrica",
+      "sha256": "9c4e065e8fbd9f1bb68e3231f8f555fde37809d2b16d1f831d445d6aeb0a0743",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "drawing",
+      "instrumentType": "lista-cotejo",
+      "sha256": "471b3b166911b5e2d59aa0ecc6409b1e218425058edff596136f61fecd46fdc4",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "drawing",
+      "instrumentType": "escala",
+      "sha256": "51045d4d585fd664261cc9e791c91a4818734b64c1017eb584a7c43a9443dcc6",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "drawing",
+      "instrumentType": "lista-ponderada",
+      "sha256": "60f09fe8767c02b1e403df873d57575f38096b1d54a144e6348125c78f806a85",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "three-dimensional",
+      "instrumentType": "rubrica",
+      "sha256": "40e47eaf07544b6668d9c1d59e1c5ea2bab030006a92db5ef6b871f7264afd6d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "three-dimensional",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ff95c6fc61297ed85c621f67582ad4ba5192e332d20f9db0492ce51fdc3de3d0",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "three-dimensional",
+      "instrumentType": "escala",
+      "sha256": "2b0a24116b8a716636c8694fa1c46a014984fdeddb8a5df2c69a6d90aeba7a18",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "three-dimensional",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3b1660df0d584909a4e2e4e14597d61504a2e4f03ee707f05205fba410e8a273",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "stylization",
+      "instrumentType": "rubrica",
+      "sha256": "6b40eb798a109d9d52364a91267ccea49e466a1f4de02f1a60b80d9f5fc515d2",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "stylization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cf4a9e1e05ba6a8dab88a26b102f05b067c9f375f59edf8ee9611ae1364fc62c",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "stylization",
+      "instrumentType": "escala",
+      "sha256": "ecd447831ca86b657009f33ad7a2969597cd4586b1c8c5e2c56286f84f2a4176",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "stylization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2aeb6d229857039c45b0315142506e8bebf75d029f062ce0c409c7c80122f86b",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "light-shadow",
+      "instrumentType": "rubrica",
+      "sha256": "dc31b31ee35f8bc7143e422da463f186491caaf271b2f14a1410ee1a3fc754ba",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "light-shadow",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8b60fcc5f7d67c424f17bf050ac4b36b0b98639744a6a7ba61b9b217e6ccb417",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "light-shadow",
+      "instrumentType": "escala",
+      "sha256": "d005beae3b10e650c804f14d5d0b1133ff091a9e77057f6a5083b674cc19b67d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "light-shadow",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0c90d7a10cd87985ee463109643ddd96cd3201fd71cca40c35f06b8282b28507",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "color",
+      "instrumentType": "rubrica",
+      "sha256": "9782d3453d86617310414fe1ac1fa55cde518036466070221a08e343fdef7627",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "color",
+      "instrumentType": "lista-cotejo",
+      "sha256": "428bbb9af5a8173617ecc00f68981f95cc47ff5cd838a36a63e70ee28da389b7",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "color",
+      "instrumentType": "escala",
+      "sha256": "ca10bb335d5fedccc278c9debfcd8a4620d4f95fe4c640e6b5ed6be16a97bfa8",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "color",
+      "instrumentType": "lista-ponderada",
+      "sha256": "44a1dfeb42f57993acdec1cca8df750c5d57c2ca078e75615dfcde37bcedd42c",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "composition",
+      "instrumentType": "rubrica",
+      "sha256": "c89fd2af013e18145e12ef42fc7205cce0ce9a5f69c7f5a4da6b672ba73a0805",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "composition",
+      "instrumentType": "lista-cotejo",
+      "sha256": "336f8d5453b168c74ee34764aad0d2d0e2030efa1853e28e565cb4e648ed44c0",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "composition",
+      "instrumentType": "escala",
+      "sha256": "21fbeaa5d47b96c032d75281eb0ccfc4d8272201e66d0ed82e0d72137e38ae0e",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "composition",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1e395e691be6c0cc96401607972ea4a48a48f7a141cffda5f5821cd8b19106b1",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "bodily-language",
+      "instrumentType": "rubrica",
+      "sha256": "33bd1319944b10ccca246cc8305744f2486b7c581b8fe53d4e98b0c17fe45b82",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "bodily-language",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1972de5def2c488e3c46b7710cd6c6eca8511ac1d0ac26c77250a81a47779c07",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "bodily-language",
+      "instrumentType": "escala",
+      "sha256": "9a2d2783572dab8e9b24d42bdeda4324820071f16e8c2d7d519b2cdee9a580d6",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "bodily-language",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ceae23b062023b91f503f972a7c911557eddcdbc3500a0d8fc09957cf671e8e2",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "dramatic-structure",
+      "instrumentType": "rubrica",
+      "sha256": "c496edfba2b274c0d6a603afb2b06712a8eb8a343dbb856cbeba3c2bfa03772e",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "dramatic-structure",
+      "instrumentType": "lista-cotejo",
+      "sha256": "55e78a93ded6cf33ae6208ef940cca8874e668c37b888acbb16b7bd17b585648",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "dramatic-structure",
+      "instrumentType": "escala",
+      "sha256": "0ba52aca81fc74c8eb2d4394e02f7c6f1e23a07ca52ee903202f71f0d8790e15",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "dramatic-structure",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d6cdf29f968376c07097684ae9567ee650d3c6bca30668165ec1a45a93e6fbd3",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "character",
+      "instrumentType": "rubrica",
+      "sha256": "19b6b899604d2d8711833a15a0648afcd45a6072488165fbb1126c20eac1846d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "character",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2acd14cc3de7094c2433c5801b553f6c714cb25df65eb8d563d4b68a0d847e83",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "character",
+      "instrumentType": "escala",
+      "sha256": "d4c52074d928fbf5d3f291af9323fef58547f39104a6a10ab74d3c3e60b6c033",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "character",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3eeb064539b6623c72bca920b9ede9e47781d30e2055c506ffba4cf9d4173f3a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "choreography",
+      "instrumentType": "rubrica",
+      "sha256": "e484a6068c6ca8e2ae40e4b9d740587528cca8c3ea2e4b8dbf16b3dc9fb1ed5c",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "choreography",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2acc331022969500d259dad724d5d4e2ba3932604eee6592b2954f5469902592",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "choreography",
+      "instrumentType": "escala",
+      "sha256": "fa7d10d72e8fcd7f4a3cf7aa79775fa5595f7500e8e17a5c9976403d670b44b9",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "choreography",
+      "instrumentType": "lista-ponderada",
+      "sha256": "16ab41259dd96646f51222e41873de50816b5a1a9ddcc10ed369c88b7af4fb19",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "dance-space",
+      "instrumentType": "rubrica",
+      "sha256": "0e97e527f652fb24b57599a5de9d746e770463239554a409963550a7cc41dfba",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "dance-space",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d4c5c3c3c2760afb875bbd89a9e52b23a264f1299a29d014ca706bd39fac5b52",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "dance-space",
+      "instrumentType": "escala",
+      "sha256": "2a0b251588b8d12141141ffdde70df6e1995a44d25ace3cda6a1eb20872eef3b",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "dance-space",
+      "instrumentType": "lista-ponderada",
+      "sha256": "efa1584a7784052e27fac7d4fe01d1e649e46b82a7188348c590e813b27e0b1e",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "scenic-objects",
+      "instrumentType": "rubrica",
+      "sha256": "edc147c78b02ff6b98491695f41e2d362b2c0755f10e782c4da38e1de5e6fa6f",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "scenic-objects",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9db07f6ed76353b9e2aa2e8ace2dbe1a7bdcd15da8d41cfa60fb7a0a6705e799",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "scenic-objects",
+      "instrumentType": "escala",
+      "sha256": "9c4fd20e6012b39e8d053b841815fff34479ca25c412a3ff2ba5ce05cb583fcb",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "scenic-objects",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e2c2b505fc7c373c343f685ac7fda0f03e06d3d5c0a6026a0b002f882424487b",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "vocal-technique",
+      "instrumentType": "rubrica",
+      "sha256": "55313b2308b7d0193c83343b16c76c33dfb6008e7134134649ec3b4963e0a768",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "vocal-technique",
+      "instrumentType": "lista-cotejo",
+      "sha256": "02eabdf08fe45f08d961f00811fbac9dc03e16ea838d55195d175bac967e4365",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "vocal-technique",
+      "instrumentType": "escala",
+      "sha256": "a797550d5c968afab7717f8f55ca90b3749ca0cc14ddbadb13d7a28d9647cf9a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "vocal-technique",
+      "instrumentType": "lista-ponderada",
+      "sha256": "73f99c6467e2a00aaadc4de334ad37bc7f81df7742d8fca20afe9d21966168d1",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "recorder",
+      "instrumentType": "rubrica",
+      "sha256": "24a9da76025029b4d038d509c5177d26650ab8ffef40b283769bd9e832353a24",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "recorder",
+      "instrumentType": "lista-cotejo",
+      "sha256": "51ab2b145b6cfed4c5695a790291eea4e002d1a71f98868e4a8a33cfe610b01d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "recorder",
+      "instrumentType": "escala",
+      "sha256": "080c0fb888ebd4d5ff0948696f435a3b2b045e490429d7cd989b707d98f3bc6f",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "recorder",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2ecddcb4be2cf788bbf19a260e1f25e0a670d3b8e11818785e62ca343bd4bb02",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "melody",
+      "instrumentType": "rubrica",
+      "sha256": "cc7a783635ec6498ddaa575aad28c871fab888864310d853e1774c4d01c7d83d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "melody",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4dd6f71bd351fb184cc61cce1a777ab09ad303f00904707deb787be6b70dc94a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "melody",
+      "instrumentType": "escala",
+      "sha256": "194dfaeb2f0188506f35b12d764f50090c2b7a9dd21fd598202378aecd55f656",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "melody",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9122eaa7349e18ea8209373f04c83a0dd550f515750bdb346068001ee798eef1",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "craft",
+      "instrumentType": "rubrica",
+      "sha256": "a7ab5a746beab88fb9eda222838d9b948ca9743c17ef556224032de519bdf89a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "craft",
+      "instrumentType": "lista-cotejo",
+      "sha256": "51933a02b3782da66d93d6aa6f7c8367e29fd057a19f95cfb107e2b13e5c94c6",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "craft",
+      "instrumentType": "escala",
+      "sha256": "be13b1f2e44212ecd3926ec99368942664459f66b71a0fbd7428d79760f2a28e",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "craft",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f58e98f741e3259ff848e974cdbedc19164d593d3e7623b05a37f39f240c09cf",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "textile",
+      "instrumentType": "rubrica",
+      "sha256": "72dbb5d42262916d0525b3addcc786211025f9c3ed93a105427d1f631e37a3c6",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "textile",
+      "instrumentType": "lista-cotejo",
+      "sha256": "38c40c3a1e29cc23eb50a55bfda2aaff29abd8a002776aa28737eb6ed8672e69",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "textile",
+      "instrumentType": "escala",
+      "sha256": "e3217f03bde6b3e9ef4fd30fcc86064454363c4c37172746bb17dfb05f7466c9",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "textile",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7fc3012f29c765e584fd3240bf92f594062e7a087ef20671551f14e8fec4c5bf",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "graphic-design",
+      "instrumentType": "rubrica",
+      "sha256": "c3349ed393f4ea8a3f8fd677d1ccdf9127361862fbe3da296306a1791aa4fe53",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "graphic-design",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a2c31d63a0bc01a926212643d757fa1dedf910cf9ac28737085fc9795d70bb6f",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "graphic-design",
+      "instrumentType": "escala",
+      "sha256": "e64f5f9c7e3db48cc3b88a8a653b7ea4642a68713c52bfbe8c39b7487e519881",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "graphic-design",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ac0607051d6d8f8f3b37dbc2e4cbc621cc54227689e79361b10e7a30ce7bab52",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "design",
+      "instrumentType": "rubrica",
+      "sha256": "c146190b1f53a575f6aef5159d5d7d69879da0d85ced0f77037188abcf43f777",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "design",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b9f376ab5bf1833cf663db82f6494b92aeae89c92759b58bb84f61d5aa63bb63",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "design",
+      "instrumentType": "escala",
+      "sha256": "9519fe90a0b70f4106acfd22dd4e4e95852efe414f0475986322880b69f12501",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "design",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9671bf90bd8389d7d534f4aae91da86282acb3cf65857cf5d8ba967666082f54",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "diary-binding",
+      "instrumentType": "rubrica",
+      "sha256": "f5078fbaf3d7006a3705c2ffbe37917dba3dc9318aaaedc5398ff293c5dd5ae8",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "diary-binding",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4e8d91e3bbd1bab03e36c62e55afa9de8c2ee0304f72b136be09085abefda14b",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "diary-binding",
+      "instrumentType": "escala",
+      "sha256": "2cd0a7524a26da81e66a1da7dee6dbc781ebe40b69857aea01066c046df3e9c8",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "diary-binding",
+      "instrumentType": "lista-ponderada",
+      "sha256": "98198f08a5ac35fcb9b57f27e239b76bcd758845af2ed8ec62671132220cbd76",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "portfolio",
+      "instrumentType": "rubrica",
+      "sha256": "d704371f95e71edcc5d7b2969dd98516fab114cc75b9869d0f77ce7a42d92bdb",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "portfolio",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6d3f25e6f6232a3adff32f0ae838bb29bc704944a902a107a95f289fd092dba2",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "portfolio",
+      "instrumentType": "escala",
+      "sha256": "f6ef9044b9ebb6f9b8ad9a7f24091035977743749a4d6a810137a078f729f3eb",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "portfolio",
+      "instrumentType": "lista-ponderada",
+      "sha256": "567e554a404e9899e4911f84f2570fb36c153b3995e41d5dec9cb6ba000712c2",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "diary",
+      "instrumentType": "rubrica",
+      "sha256": "26308cb5763cb64b130751ef4fd3fe419f178405a88d6072309e224af5fc3a87",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "diary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "573c56298eb699a5f0b92480b50399a0dfcf03e482828f2fd2582c644bfa4613",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "diary",
+      "instrumentType": "escala",
+      "sha256": "e558899fafd938fc0a6aa57105595f7e612809ec53268db730811d35795f2ebc",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "diary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "18e71fe9e2e0f6d25369202a00e753ad72f393d854e3fb363396ef9d2fe61802",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "signs-symbols",
+      "instrumentType": "rubrica",
+      "sha256": "502b55d69a3039847851b6c9dde21a663abc786f81de9113acae94ddd5019fd2",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "signs-symbols",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a0c848fbbea50a081b847772c749a622531eedfcf8143c3cecfc98de476dcc71",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "signs-symbols",
+      "instrumentType": "escala",
+      "sha256": "be934797954d73659d026bfee23f2171a9a2e177db8db2c83450285faee2cf19",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "signs-symbols",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f9aecb5bcd803f3d317a7581f439e261b5691f36194324618ad5c1a7f9dbb47c",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "genre-style",
+      "instrumentType": "rubrica",
+      "sha256": "6397d825148f5104092d17bd47b04b69fcc793334e290f7d26a35a0f9a681d55",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "genre-style",
+      "instrumentType": "lista-cotejo",
+      "sha256": "94c4faf72fb8e497d985fb6e2f1f4983e23147a57d43efe1e172768a5fcc25ce",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "genre-style",
+      "instrumentType": "escala",
+      "sha256": "ee6bdc43ba54a2f521b6174f1c185177f2f558de229d1419707afdfb26681d08",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "genre-style",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a3a7ed3d91be09d8d5f6afe382f93bc21db73bfa0dac435c30a0fa293e55bc87",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "appreciation",
+      "instrumentType": "rubrica",
+      "sha256": "8641efcb3c714bb47cd04bee6f9944030af5b5a6a3a45ad50b2e5f77ffac7c13",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "appreciation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2f0f0d1b319bc041e07f2cb311a8fb7246f357c26900e504ae681152cb794a1b",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "appreciation",
+      "instrumentType": "escala",
+      "sha256": "e19664dcdfa516f567bce1ef20e89619fbd78ccebd3c1356d0ee3344861c36d7",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "appreciation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cdc7918ff73c425356a928f3e87b17659a20d9a27a479cf43e872f3c72337cb3",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "cultural-influences",
+      "instrumentType": "rubrica",
+      "sha256": "aa6bab28b8a1000bfac9cb1500f0ea3a852a277940ae002790edf1a666db9cfb",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "cultural-influences",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9c28acde89053d9aa697f4d43cd22894e1e6c6e072863fdec24ea89c53097a28",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "cultural-influences",
+      "instrumentType": "escala",
+      "sha256": "353a6057ad8a481c208006aafcd0e20e2724dc5ef684d1863c37436c23077773",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "cultural-influences",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9c02b3a5719937e79dd6dd54dd0444031edac6c78bc58845cc9e5b63750b4e8e",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "art-technology",
+      "instrumentType": "rubrica",
+      "sha256": "1ab641d30be10304ca3c87f4d27efc1d2ceb2f21fa30a14c74a540bb2590c808",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "art-technology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0ce59c95214fb1233956632feb6db632de31a7855c32722a77341a4e08c7f77a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "art-technology",
+      "instrumentType": "escala",
+      "sha256": "54b29a725d7d9ad45c3d49eb0feba2013af025c6d07e43dee607d66d2383b421",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "art-technology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "05e1fd66fa9115a6495a0e6e596285712006a6ddd35814cd23b9d55c3b3ea043",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "environmental-art",
+      "instrumentType": "rubrica",
+      "sha256": "1ccc29e8c5f1f0e1d00d4f54a973a94fa6ad09746eca96ec29a03d81dbd75445",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "environmental-art",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f2d534bd9f2464ae5c59f04701e07ff4aab1692e037bfc5adb20d5e3eb945640",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "environmental-art",
+      "instrumentType": "escala",
+      "sha256": "084638eea16abefdf6215ba57ef0fc73a8c29e4ceaa95f95a06fd142fbb7fac7",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "environmental-art",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f2e61acaf2b8e1876aa0812e676342efd0b6fb6434782c7e95efc73d6500697b",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "group-agreements",
+      "instrumentType": "rubrica",
+      "sha256": "123412609b8e86cd6719de1de6c42f838fdc095c6916972f3d386ca0751c4bb1",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "group-agreements",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ffa4687f242996c8036299d28491775bc0604ecbb9360cc09e8917f721d867e8",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "group-agreements",
+      "instrumentType": "escala",
+      "sha256": "78383064f5a93930b10d281e2027917d3df692667520969b20931f16fc597b12",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "group-agreements",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4d686084a45e69c72d35fb5c8feb26156c3fcace1be75468d87a686db3d411d6",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "art-visit",
+      "instrumentType": "rubrica",
+      "sha256": "f646b2218a4685c7fa56c2e7af6f4450635db8b089a8bbc806db9e3154b3afcd",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "art-visit",
+      "instrumentType": "lista-cotejo",
+      "sha256": "174dd273a2c0c5153ee0c897062f3a1186e17dd8a33f3a7ce36cf7df094eaa34",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "art-visit",
+      "instrumentType": "escala",
+      "sha256": "7ac4a753a853c546403075e16d77ad2b9440d3d935be3880f07df21496bc568c",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "art-visit",
+      "instrumentType": "lista-ponderada",
+      "sha256": "853cba9450721310070b22d3e626312256ebb286c91741c0b9a28fbf712da468",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:three-dimensional-alternative-material",
+      "instrumentType": "rubrica",
+      "sha256": "3ff3b55ca45e9012fef3dcc50854703b269372577d1a815d2e9e0bba4cf13afa",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:three-dimensional-alternative-material",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4cc8e263d53ea40b0e596f7098dec5a8ae49f910badc29ce5a7f0bef3f2c471e",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:three-dimensional-alternative-material",
+      "instrumentType": "escala",
+      "sha256": "2e493087f4f7574ceb2cfc0c2a247326d93152c427b98acf221b1db8d34feef3",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:three-dimensional-alternative-material",
+      "instrumentType": "lista-ponderada",
+      "sha256": "247677f6da3a2be86e4a6d10b3c61a1fe3138e05877baee1b809e0939bfe7b17",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:form-stylization",
+      "instrumentType": "rubrica",
+      "sha256": "29178a061d7d5b0e399b91751b22051bf790671e8920492d8562b0efa3719029",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:form-stylization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "499caa3c028b2f08cb03747b05b46120f23b6095a664c41a8c107c340bf81c9b",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:form-stylization",
+      "instrumentType": "escala",
+      "sha256": "c4ac6585bfe86e805e20945f9f29e008dab823a7efb3d9989b7659e97abd266d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:form-stylization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bfa3a58e20a97dc2fb12ab7aeae2b0fa8067664bc49d0cf017374eb5dbcbd28f",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dimension-classification",
+      "instrumentType": "rubrica",
+      "sha256": "a7b45f4b635f157e0392d684018bdbea639a023a2cc38287c74987f3bf81bae1",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dimension-classification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d2daeb3c98f514b3cb9f7d4daaebffa8b2099d8f3b384fc0cc50758fae946e21",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dimension-classification",
+      "instrumentType": "escala",
+      "sha256": "bad1afd1f21d16969a26aa2d6aaf63151b6257de8f99967068832fa636b5a1e5",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dimension-classification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "44bb2d1490737a6f50e96dec1dc531fc9866d21bc790c51032d93a1bf4cb13ce",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:color-wheel-and-tonal-scale",
+      "instrumentType": "rubrica",
+      "sha256": "7f4274e09d855c8d22eda6153a7a04932fa4328cd95e07d9c684dc6e7b3acfb4",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:color-wheel-and-tonal-scale",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8804916ac2071617e8cb8ad700700500e736b38a972b406976843fefeaffea58",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:color-wheel-and-tonal-scale",
+      "instrumentType": "escala",
+      "sha256": "af7929abc4254a244f39a8e0996a42f47bddf3524b0d1754a764fe9482d0a361",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:color-wheel-and-tonal-scale",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8357b3426fa956c38268336a0c057cba5f38faddda882125e2848c2ac799664d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:light-shadow-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "985cd0b46ef65d206deca5fa7875d562545a861c727576812ebd4aac3a442b07",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:light-shadow-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "721be05f85f9cc84aa2117352c39a003b5edc65273c8f08c28e099940fd755c7",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:light-shadow-analysis",
+      "instrumentType": "escala",
+      "sha256": "150fd4bd55020d936bf9349fa5731567106d43a580ad073daf3488f59b4b7922",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:light-shadow-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3c8d94cbdc28c4ef03b1566484a1b4449f4197328ea247a7c5b6e7ac617638c0",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:composition-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "3837feb785c50714be63fd831283f500526103365046f62450135860047585d6",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:composition-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "61808fb1d0403c7ee66cff6a4987f98da95e683c12b3d96f6ab090a5000f88f5",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:composition-analysis",
+      "instrumentType": "escala",
+      "sha256": "2f37a373b543d51a578ae0f4197e6e21a5615629550cadfee46ef5c5df121735",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:composition-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bc8c6a831300a6383133424fa071d9db95b590555a6e780e49eff8b3548caa27",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:fictional-bodily-language",
+      "instrumentType": "rubrica",
+      "sha256": "69164fbed976805af9387df19ad13ff53155b82adf7ee4f73b5fad8933ac3edb",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:fictional-bodily-language",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ba6ed112a0378829ee1050ccc7cf6d8900442ede6fc663ac63b27627d8b08e31",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:fictional-bodily-language",
+      "instrumentType": "escala",
+      "sha256": "0a49c11fa208911f4919f479f8bff9d752a42ccdbb11b581f07144427bc4626d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:fictional-bodily-language",
+      "instrumentType": "lista-ponderada",
+      "sha256": "115cf55e6340c0dc91d83acfbc38ca1d020ee7e9ec6ec3bbca5335b3c831bcce",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dramatic-scene-composition",
+      "instrumentType": "rubrica",
+      "sha256": "3cec678c6b0258795e676d2ef53c9cf0b051622bba200b5ce3c94bbfd1215b70",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dramatic-scene-composition",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1555060dac7bccc4d049603fa3d94911cd46aa6158f332c568af3bf7929da160",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dramatic-scene-composition",
+      "instrumentType": "escala",
+      "sha256": "4a4272525c3655e6bed114a435a6e45fda4125bb9d41f3de8e79c337019da460",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dramatic-scene-composition",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3506ee768206d3f2f8a68ab275742b7c639d5d31a40b688840d4e3d437fc815b",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:character-performance",
+      "instrumentType": "rubrica",
+      "sha256": "ca6f46c026b9c98bb7d6667420bdf183da99c2afa60a600bdd67e6acd6fd5399",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:character-performance",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7fe4308a54a78755d3d5704734b270b9d5c8a0cd31ffda02cb67a55c8b0b0165",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:character-performance",
+      "instrumentType": "escala",
+      "sha256": "9a02be78f685fe62f8c6223d24ba3b4888df9b9a8f30723f3e4add9711d162a5",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:character-performance",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cab4001fb43f1b6e3e13b77175d11338f4dd1fcdaab9f5994ea66df065a3b1f5",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:collective-choreography-plan",
+      "instrumentType": "rubrica",
+      "sha256": "5eea9ebb591b43d19f29bcf3b33103cfb418bd826c56b82d467bc92815113168",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:collective-choreography-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "45f770be98eee37e2569775c60bfa417e864643728c3a31d2efeb537bda96a60",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:collective-choreography-plan",
+      "instrumentType": "escala",
+      "sha256": "2fda5408903c9a7fa6b51f12130f65f08efadecc2b6da09f8ea9b574a4c78044",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:collective-choreography-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "94418bf33baf1f02e40316adfe939c268f3950fb5175f414235e6b1068ddd866",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:adapted-dance-performance",
+      "instrumentType": "rubrica",
+      "sha256": "0473cc180ada9896f56faa94fdc6cd64c3a063e44be0a7802c0ae4151a920755",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:adapted-dance-performance",
+      "instrumentType": "lista-cotejo",
+      "sha256": "521d716928d4c5be363a089ec59e4bdc37bd622c3020bd84651f14fe61e4c755",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:adapted-dance-performance",
+      "instrumentType": "escala",
+      "sha256": "6556318a5d02c690dcb47d1e47999acbca5c2c2e091bf19944449ff038e5a57f",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:adapted-dance-performance",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7f49438f717212f49fe53d846db3b958f62cdf4b9e9a8ccb544655b5605215a5",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dance-space-exploration",
+      "instrumentType": "rubrica",
+      "sha256": "31f4fd309e261afbdc94f98834b2a892b170ea6b7595e59aea2133fd24ccd8d3",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dance-space-exploration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3e75af672d4fb91a4d1d14667e3d3a3f271d90e7cafe01d42c065a0149db7f04",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dance-space-exploration",
+      "instrumentType": "escala",
+      "sha256": "4b921fc2e6f8a81f077ef723c0b45feba84ca2e5e2496b9ca6f68fa54c17e3f3",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:dance-space-exploration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8e2cc8a3faa0241255f4b91aae2303949aec799c75961a018ba30906c0ed36da",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:scenic-object-function",
+      "instrumentType": "rubrica",
+      "sha256": "c3717d27d551f53c2f12a3ac720b795f706a8822f5756c9fdf9c8c978a1e4ec7",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:scenic-object-function",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a427b59f3eee536009abd9403bfa3b4bc40d86feb976defbbfac9f1fa3fd2b14",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:scenic-object-function",
+      "instrumentType": "escala",
+      "sha256": "0718300b5610f3f8bcefbc83b1bd6b1bad9963f5b039fa47870261996de15700",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:scenic-object-function",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2b337f70ac8eebd81159140d4b7b303b7c32a7e9f2473ae180f1eaf7ff20feb3",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:vocal-hymn-interpretation",
+      "instrumentType": "rubrica",
+      "sha256": "636108fdb6cdff367a6a72d76efcc59c52c07e0a0fb8acdd62b0552b016839ab",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:vocal-hymn-interpretation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a26f76d1bdcc5d4b00243bf1094cc8448471ddac81a3f67a172cfedc5eb85f0f",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:vocal-hymn-interpretation",
+      "instrumentType": "escala",
+      "sha256": "7684fd2e0bb8be248e8afb9850ba011d8daa62bbf5261da1c8e420f8e738ed2c",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:vocal-hymn-interpretation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b161a0fb799fd352433cfa49cd882745feebadc017cc98c5d407a674144f99ed",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:recorder-hymn-interpretation",
+      "instrumentType": "rubrica",
+      "sha256": "7295c3814f9413854c5a20c4c3f81b58a5f97a0d82f2960868abb4fc402eb1f5",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:recorder-hymn-interpretation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b6e64b682af5591e80c208480bdaf1a1c6d1e1ffe074ea585a2e5d68a9ff889a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:recorder-hymn-interpretation",
+      "instrumentType": "escala",
+      "sha256": "4987de093d09d9f4171e9e4e79865aae629688713710cbed99c67d443115cf2d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:recorder-hymn-interpretation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fb30f97a1592908d3c98c08638593fd55d656df728bd68fdc2ea67a45259db25",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:daily-use-craft",
+      "instrumentType": "rubrica",
+      "sha256": "3bfdf473c53b07c09fa1d7762b168c361336ead79593f7951eea75e7c0e00e85",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:daily-use-craft",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4b393b246c2cb84e50210091201070ed7836156742d29d068e502ae10e818b95",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:daily-use-craft",
+      "instrumentType": "escala",
+      "sha256": "020e20472c5942224e373941c99d3f26cfd6bdfaa1e34fdc96b64adbd76c3d07",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:daily-use-craft",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c2a1f9feb03c0642ca40e337818df7058c336c9e8fbf6e17703ed5fdc2f87702",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:textile-adaptation",
+      "instrumentType": "rubrica",
+      "sha256": "d92904f21e3de22696dae97dd9c244dc15f2132e1f6f317f1bf3965e254238a3",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:textile-adaptation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3c8f7fc96d883dfa4425d4b60c306d11791bbe05fe4753b48549fb8823a47beb",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:textile-adaptation",
+      "instrumentType": "escala",
+      "sha256": "14cdfafc01a2b3b4e8dd93d8043abafc9c3e01c9b67652dd9eac742846d9d469",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:textile-adaptation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cc2d09d924aa2f50e54ffb93525d81d9f72fc834f201f5e8f9beb6b8e8a4d2a0",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:design-elements-explanation",
+      "instrumentType": "rubrica",
+      "sha256": "17a2e26b5510bc7e82d10635ef1fe5e24a51ab07049c8ae43a27938e80d70e80",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:design-elements-explanation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d1599eb000a22da293ed4a127c6e5fe607b8f3169630c4a71b421956c0380107",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:design-elements-explanation",
+      "instrumentType": "escala",
+      "sha256": "ac2d9d23a78df1de7ef650fc83782ea9a5792ff129c7f60c043844230d5307e7",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:design-elements-explanation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2b9d16114bbbfefa4ab0f1adbea7fa28ca52732b4a0f699d23d950bf1031f90c",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:creative-portfolio-or-report",
+      "instrumentType": "rubrica",
+      "sha256": "999c8e62c4dd9968fcba3907c4a327d7acd7795b855fb12621b04a402384b3d6",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:creative-portfolio-or-report",
+      "instrumentType": "lista-cotejo",
+      "sha256": "13b34916288686296b4550aff397865189b065bfcda098abfc6fb18c952d206a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:creative-portfolio-or-report",
+      "instrumentType": "escala",
+      "sha256": "44c039d88133126178d444f31401ec3c2745217c60f87869d0b866360e481239",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:creative-portfolio-or-report",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ae75b145de0a83a87afdc12d540a1d32147e2df67fedacd9842a0d546f03855a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:artistic-diary-binding",
+      "instrumentType": "rubrica",
+      "sha256": "9af09377f91785c26fecc2ded0f2df6d4694fc04a43c5e98d0c391b8cdbf89ba",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:artistic-diary-binding",
+      "instrumentType": "lista-cotejo",
+      "sha256": "791c78217abbae493b8e5d28daf99550d59b3208638389df81c0d67d8a2917fa",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:artistic-diary-binding",
+      "instrumentType": "escala",
+      "sha256": "e7d4ffe411eaa87f5c8da27267863e3c835bf11c5cb3075a38616ed64eca8c56",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:artistic-diary-binding",
+      "instrumentType": "lista-ponderada",
+      "sha256": "72a1d05622f511ae1e06e5d882999c24a23ac653abfe600ed0154a16bf489a62",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:artistic-diary-process",
+      "instrumentType": "rubrica",
+      "sha256": "69734d9b44993af16d15785c74ce469c8b79c92e5732b03dd7acb1f07b7c6602",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:artistic-diary-process",
+      "instrumentType": "lista-cotejo",
+      "sha256": "13dc94f7e2c54aebcd4b804609a7789082fa11e5a6c219e4ec80baf290b6a278",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:artistic-diary-process",
+      "instrumentType": "escala",
+      "sha256": "c5e1fffa27bf65b971d1ba018e597e8c07f9149d4c1fbfb6becc1bc9f1365169",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:artistic-diary-process",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ddd267e034dd5995dda33255e0b1bbfee81902f73d19b05b12465ca67004db93",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:communicative-signs",
+      "instrumentType": "rubrica",
+      "sha256": "15c269fe2d031627ab0c31f03605db1d95b262f6f12614b2dd79c6f99524ae56",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:communicative-signs",
+      "instrumentType": "lista-cotejo",
+      "sha256": "700bdc9b6ad1da1ac309dc920f9364b16f980ff32d660f599b4e51fe32c145ec",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:communicative-signs",
+      "instrumentType": "escala",
+      "sha256": "7e7333b9e88a436b1f79fa43822c969a36804b5f6b622ef8c7ee6b79e5655751",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:communicative-signs",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2becba4d8c2ed5a7ee63a9e0364cd93167b40487347e322d8510adb80cab7cda",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:genre-style-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "579b1b50e4886cddd0d1b0dff84e8ce0a192deda6aabdfdda19af09e150e4b87",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:genre-style-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f7babe06ec7cedca535235f637e6feff2cef4108ed98d6e167aaf795f8c83466",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:genre-style-comparison",
+      "instrumentType": "escala",
+      "sha256": "2cae0dd1b44d5afb3f26f5f2fcbf46cb7817657bdaa2220a73660351f7847f7c",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:genre-style-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4cfe3d6111c010dc0fdc8a87640cf637840def0c2937fde0d3a923dc6aba4a29",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:national-cultural-influences",
+      "instrumentType": "rubrica",
+      "sha256": "265ef25650f78514db3a66d91c758b558a14dd83aa648a56b72569164748be83",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:national-cultural-influences",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f3244adcb51717589b6b678df6b7f8ed99461241a5aa44410fbc2c1430b8e08b",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:national-cultural-influences",
+      "instrumentType": "escala",
+      "sha256": "afc315aa722eb5059ea05a3779f443084bcd79e8798a43626308913f737ee290",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:national-cultural-influences",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dee1955692474c3f9fc10229b4d8c8ddca055968c5543fa6ddce58f3de195fe5",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:technology-in-art",
+      "instrumentType": "rubrica",
+      "sha256": "23d13ebbff41250cc31eb65c253c625c9b22b88876181b2ec596bd7fa20e102e",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:technology-in-art",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7eaa85a1be3a57959b11012a8f59c469d85afc5a65b464705d325dec5ad69bb1",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:technology-in-art",
+      "instrumentType": "escala",
+      "sha256": "0ab6f12038ee44cbcddf34e4dac450301cdcb95959429990fdefe8d824694541",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:technology-in-art",
+      "instrumentType": "lista-ponderada",
+      "sha256": "318131d61e985c3117ec861e9ea0ec10036bd5a561bdd46abc64ef58814f4acf",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:accessible-material-environmental-message",
+      "instrumentType": "rubrica",
+      "sha256": "f16252a3b1fe1840a4779b30e8f622b806056299091c80681485eba60d40c8b9",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:accessible-material-environmental-message",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f5496cd74ce9a5e87220cb9e51c3e3b92554b548733d3f507e1557834ceecdef",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:accessible-material-environmental-message",
+      "instrumentType": "escala",
+      "sha256": "83291deb8f54ede44922c5e8d5af4e8f2e07639e15ab120737af771918e6e6f0",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:accessible-material-environmental-message",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f8982295a2e8ff7f7fff8f3dbc578631e1b011d153794575b171c7a09e849a1a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:observed-group-agreements",
+      "instrumentType": "rubrica",
+      "sha256": "f753487d0af5c344e8cc438b12ea434d6c23441322c846f2b093da5f7cd51c8a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:observed-group-agreements",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c736f1e5ae567e3e5606b7e42672f4322f3381a47cd4934442371053fa9aa93f",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:observed-group-agreements",
+      "instrumentType": "escala",
+      "sha256": "41391f544a263b8bab866dcd32b019b354670e0cf85689d7f5664a0bd49394c6",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:observed-group-agreements",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a3a6b879d1a5a7cde6e767908af0a7295440ba8200622a8a631951ef7ec8b296",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:work-appreciation",
+      "instrumentType": "rubrica",
+      "sha256": "1c1d952af7e7b5268ad68e6a67c0553c01a0cbfe4a9a9bf6ce437b24d40e0b4a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:work-appreciation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7297d98c2ffc6811831f67f634854f1a74f929e69e2696ea657389effe975df3",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:work-appreciation",
+      "instrumentType": "escala",
+      "sha256": "37b46fb6d7b6da99bb4e04df29098b667e019a1e8b12ae1c528a62d627ce47e1",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:work-appreciation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "047e0c6495cd1f2c30ca865f4514b8474b6dbcfaf80e13c72842f6c79eb92d4d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:virtual-art-visit-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "965fc79ada78a32c6f361f3178e98c8ade7a3bfee911cbb780d95bcbcd62db02",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:virtual-art-visit-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fabded2a8aeb7032ddca9b41d34c5dd979e5feda7a63abf1714352fa970f416a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:virtual-art-visit-analysis",
+      "instrumentType": "escala",
+      "sha256": "2bebee4f011528b04d6a14f8a75a34909dcf222199f358effd5bbadc2059125c",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:virtual-art-visit-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a8571f7b72d1a8d87c6bc51eb6d34775109cdeb352a859ad34621185adde8b98",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:vocal-technique-explanation",
+      "instrumentType": "rubrica",
+      "sha256": "39618b77c5265847faff028ee9fc21998a5431c5029a97814e1e6f4904f792c7",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:vocal-technique-explanation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5ada5efe06d9dcc808e3943fb54d9ae0c0cb5cf8c4ae187bf748b8a1ee334cdc",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:vocal-technique-explanation",
+      "instrumentType": "escala",
+      "sha256": "cef0bf7de72c135fc052044d66645cab87e864e0f95127395a4b4194068a52b7",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:vocal-technique-explanation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "072e1b454c4c4052dc66ef8b690ee1292da246926c36521508f4eab692155359",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:two-dimensional-drawing",
+      "instrumentType": "rubrica",
+      "sha256": "704bb23ca0a2c60388f11fcf9ebcac50a660237bced203ffb7a8584c22e90317",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:two-dimensional-drawing",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3c1cdb801fc63cc64589ec14f77b8ce8a8eb46abb68ac77a7e858fed3985e4a3",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:two-dimensional-drawing",
+      "instrumentType": "escala",
+      "sha256": "2249cf5b93a3cc9c0ff25cdcc87ac5f13061ba674a97b9d49e2049dc4878995d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:two-dimensional-drawing",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eaba6d97213e5e891a275fb5f30d263ffb9d8f93c5ea801594593842ffe57dbb",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:melody-creation-alternative-medium",
+      "instrumentType": "rubrica",
+      "sha256": "3137ecbfa65f6ecf9ae49a8e53bf04d6f204e72d58dfa0d70b905051c4c1196c",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:melody-creation-alternative-medium",
+      "instrumentType": "lista-cotejo",
+      "sha256": "dcd4ff907270895b4549419263e4f276fd3e73b1a6d0fe819251d7059f8325f5",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:melody-creation-alternative-medium",
+      "instrumentType": "escala",
+      "sha256": "7d7119974eac31028895a1fd5d3852490407b64bbdd7c78129ba72bdc64ddc9d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:melody-creation-alternative-medium",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2b98b59f8351649e8e5321dacde04abacaf79122292a9a85efbada26e1b284f0",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:melodic-structure-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "b119bc38087e2dd1395c8c7e7236987e5c70269cc28888ca8595d1c6cef992c9",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:melodic-structure-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ba287e73602262402cfe83f12fba1afa4cf29784e28122f2acf966481395c045",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:melodic-structure-analysis",
+      "instrumentType": "escala",
+      "sha256": "d7873d9e23c1e155ff7edccb776011fe0e886b288006ef91eb1d2dbd6d5ff322",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:melodic-structure-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "711759af94fbee793b31fc3ce776147ee3039c017a5b1cb8318474cf823fa4dc",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:independent-creation-and-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "30b0cd5a3885035081436967dfaab83dcb4e0104364c27265c9a8adfb45ab519",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:independent-creation-and-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "88260b38e7ab99f4a19e520d59109a0bd3c21dd999f23f25a9a6d6f6bad1b5f6",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:independent-creation-and-comparison",
+      "instrumentType": "escala",
+      "sha256": "2fa89c7ce33c3125f0f26a57e863079c93fbfc39d7f2074ad885f4bf588f8db0",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:independent-creation-and-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7aba71528990685f72da2852923524c0e4868d184d4cdcd483e6d8e6de745e5a",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:explain-melody-creation-without-creating",
+      "instrumentType": "rubrica",
+      "sha256": "789efe9a3382dd3a4c0dbbe2d5523c300ef0355ae4e6916ef3ea36917a3245f6",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:explain-melody-creation-without-creating",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1c7fc6706c035ce071fa9ff1f1453e424eae8094d954f0ba2ddfae4b9eb41ba3",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:explain-melody-creation-without-creating",
+      "instrumentType": "escala",
+      "sha256": "ba7dfe20f1ede411d40e124ed4a26d8f36ac8aa0884ca6dc7f19ba5664156b53",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:explain-melody-creation-without-creating",
+      "instrumentType": "lista-ponderada",
+      "sha256": "407f2a193dc880dbee621934ada42a48aff7124645c6c0474be67c6eb65fd657",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:drawing-requirements-only",
+      "instrumentType": "rubrica",
+      "sha256": "979ed2a73f43c1e90817078c811a7550774b84096a72611cbca7b5ae1f0751e0",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:drawing-requirements-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2c0b5d923fcfaef03fa1e064c3e097095ea6a6621395e00ba0d8ca82bafc0d56",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:drawing-requirements-only",
+      "instrumentType": "escala",
+      "sha256": "5ecef027112c2fb7e030b4155767867c7e5a995886c7b4097a9a58e9f0501972",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:drawing-requirements-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "35f7165297b3347d498a714ebafc0383b01edcbf15ecb1160e2acd7612ef115d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:graphic-design",
+      "instrumentType": "rubrica",
+      "sha256": "8883967ec13a8488bf55280de70436bc16ec5d116d74ea39476baed58db5ad72",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:graphic-design",
+      "instrumentType": "lista-cotejo",
+      "sha256": "60ee41e89dc196f5c7b4d7b98ced7dec1e986a50bd84ce06c552b0a248524596",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:graphic-design",
+      "instrumentType": "escala",
+      "sha256": "45a1c935b4169a8487a8f65658ea9b5d0ef503fb315a0b3c75d7bb2188f83ef0",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:graphic-design",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8c7423886ac396c7da8cec9c9697241d52be9b7c4733a5fa27e63d7e28ba26d4",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:analyze-textile-design-nouns",
+      "instrumentType": "rubrica",
+      "sha256": "e5cf7c1eea43f4fc9a60745fe4d30300f094c0469257f31a187c2bbd96aa63bf",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:analyze-textile-design-nouns",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d54d186904dd9b17c81b5b90987ad1c77c00f656c90182ad406b1b2e38746673",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:analyze-textile-design-nouns",
+      "instrumentType": "escala",
+      "sha256": "475f84a0f8cc8de3291868d9fd5b4a94a0126bddc0084980135922bfba0bb947",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:analyze-textile-design-nouns",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d1cf7b0906c5b7613ed1150d0610169e0df7b24ea76a9f39b33ad3c6a24bca82",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:weighted-graphic-components",
+      "instrumentType": "rubrica",
+      "sha256": "5833fd4e2ac07cdcfb77289b8702f93d0103346d14238d737bb244165cf33d76",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:weighted-graphic-components",
+      "instrumentType": "lista-cotejo",
+      "sha256": "43766c43bcb7b73c00f77e57142ca2a5be4fcc8ecd90762c22be1774e8d109d7",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:weighted-graphic-components",
+      "instrumentType": "escala",
+      "sha256": "eb80e6da9c31932ff85130f1a05b6c030c97b4572a58bf7e009a71c5e1c37a78",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:weighted-graphic-components",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b84e7ae5b86023683adf1bdbb5cca119d777a93724691321aa1c120c2713c240",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:point-only-explanation",
+      "instrumentType": "rubrica",
+      "sha256": "4ef8078736c3720668bfe678360d9f8163befa18cb2ebcd0784f3e207835839b",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:point-only-explanation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b9945e08012b010bdde2b55ffe060891d176461c7c6eea429f569a35c89a2f9f",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:point-only-explanation",
+      "instrumentType": "escala",
+      "sha256": "bfa2ca7d5bd12c985dee7fddc775af8368b51275344daf0e068a8bb328b4edbb",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:point-only-explanation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d6c86009111848317f8e15b102c58abe9d51c9a244407763e8540737bb4a294d",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:diary-function-without-personal-work",
+      "instrumentType": "rubrica",
+      "sha256": "25ba38897ad4ae35ff924a768140390713fc1b5351df1e6253aca1997324fd40",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:diary-function-without-personal-work",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7316cdf96a6431e361e6235fcb0b5f3e5cdd8ab9390596920ebb8f3bbdfb71c2",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:diary-function-without-personal-work",
+      "instrumentType": "escala",
+      "sha256": "3e09ab5d201ef4f9c28f0f5078467e4ab995d18c1c57e687f9278206415291e5",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    },
+    {
+      "caseId": "case:diary-function-without-personal-work",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9b508bda6c731362325d64d6e9b5fdf80cfb311cc76954a261495c4a78f5a8b9",
+      "status": "CONTENT_AND_FORMAT_REVIEWED",
+      "reviewer": "SINGLE_AUTHOR_NO_SUBAGENTS"
+    }
+  ]
+}

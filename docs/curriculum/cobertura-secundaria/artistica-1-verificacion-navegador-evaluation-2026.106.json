@@ -1,0 +1,49 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.106",
+  "grade": 1,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "subjectCode": "ART",
+    "optativeExitName": null
+  },
+  "format": "rubrica",
+  "inspectedFormats": [
+    "rubrica"
+  ],
+  "savedAndReopenedFormats": [
+    "rubrica"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "DRAMATIZATION",
+  "manualStrategy": "PROJECT_BASED",
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "16ad41ec7dfa88d37ff3a43f2c8d62c2",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "16ad41ec7dfa88d37ff3a43f2c8d62c2",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "0c771605-0564-47df-8401-6fee7bb2612d",
+      "format": "rubrica",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-BjEBh24L.js",
+  "servedAssetSha256": "2347fd75e55334377094c5849d7cebbfb292eb0e4b5f1217dc7ba6471fcee691",
+  "limits": [
+    "Una muestra QA identificable en el curso habitual1.ºA/Artística de la cuenta personal, sin calificar estudiantes. No acredita todos los temas ni una representación real en aula.",
+    "Se inspeccionó, guardó y reabrió rúbrica. Los cuatro formatos y20/17.35 se verificaron por HTTP/DB con la cuenta QA en su centro ficticio separado.",
+    "La estrategia automática se fundamenta en la dramatización explícita con personajes y roles. La selección manual Aprendizaje basado en proyectos prueba persistencia, no una recomendación pedagógica para esta consigna.",
+    "No se borraron borradores, almacenamiento, caché ni service worker. Los internals del service worker no se inspeccionaron; DOM/HTTP confirmaron el asset nuevo y HTTP comparó sw.js con dist.",
+    "La huella nativa READ ONLY incluye instrumento completo, snapshot, puntos, técnica y ambos identificadores. La edición manual y17.35 se conservaron exactamente."
+  ]
+}

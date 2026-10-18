@@ -11,9 +11,13 @@ Object.assign(process.env,developmentEnvironment(parseEnv(readFileSync('.dev.var
 const gradeFlag=process.argv.indexOf('--grade'),grade=gradeFlag<0?1:Number(process.argv[gradeFlag+1])
 assert(Number.isInteger(grade)&&grade>=1&&grade<=6)
 const gradeName=['','one','two','three','four','five','six'][grade]
-const path='.wrangler/secondary-completion/',context=JSON.parse(readFileSync(path+`social-${grade}-context.json`,'utf8'))
+const subjectFlag=process.argv.indexOf('--subject'),subjectCode=subjectFlag<0?'SOC':process.argv[subjectFlag+1]
+assert(['SOC','ART'].includes(subjectCode),'Solo se admiten los ámbitos comunes SOC y ART revisados')
+const family=subjectCode==='ART'?'art':'social',fileStem=subjectCode==='ART'?'artistica':'sociales',qaLabel=subjectCode==='ART'?'Artística':'Sociales',subjectName=subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=subjectCode==='ART'?'art':'soc'
+const path='.wrangler/secondary-completion/',context=JSON.parse(readFileSync(path+`${family}-${grade}-context.json`,'utf8'))
 assert.equal(context.project,project)
 assert.equal(context.grade,grade)
+assert.equal(context.subjectCode,subjectCode)
 const qa=JSON.parse(readFileSync('.development-qa-account.local','utf8'))
 const require=createRequire(new URL('../../apps/backend/package.json',import.meta.url)),{prisma}=require('@aula/database')
 const catalog=require('../../apps/backend/dist/modules/evaluation-instruments/catalog-current.js').evaluationCatalogCurrent.version
@@ -31,19 +35,20 @@ const media=[
  {description:'Realiza un panel o una infografía sobre la expansión colonial en el Caribe.',sourceRecordIds:['c68b813b']},
  {description:'Redacta una noticia sobre las Revoluciones burguesas con titular, entrada, cuerpo, una foto proporcionada y pie de foto. Usa conectores de orden y temporales.',sourceRecordIds:['f0556291']},
 ]
-const contractPath=grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
+const contractPath=subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
 const allContracts=mediaMode?[...media,...media]:JSON.parse(readFileSync(contractPath,'utf8')).cases
 const casesFlag=process.argv.indexOf('--cases'),selectedIds=casesFlag<0?null:process.argv[casesFlag+1]?.split(',')
 if(selectedIds){
  assert(selectedIds.length&&new Set(selectedIds).size===selectedIds.length,'Identifica muestras distintas')
- assert((proceduralMode||productMode)&&grade>1,'La selección explícita requiere contratos procedimentales o de productos por grado')
+ assert((proceduralMode||productMode)&&(grade>1||subjectCode==='ART'),'La selección explícita requiere contratos procedimentales o de productos por grado')
  assert(selectedIds.every(id=>allContracts.some(c=>c.id===id)),'Hay una consigna desconocida')
 }
 const procedural=selectedIds?selectedIds.map(id=>allContracts.find(c=>c.id===id)):allContracts
-const source=sourceMode?JSON.parse(readFileSync(path+`MINERD_SECUNDARIA_2023_SOC_COMUN_G${grade}_V1-source.json`,'utf8')):null
-if(source){assert.equal(source.project,project);assert.equal(source.code,`MINERD_SECUNDARIA_2023_SOC_COMUN_G${grade}_V1`)}
+if(subjectCode==='ART')assert(sourceMode&&productMode&&selectedIds&&!mediaMode&&!proceduralMode,'ART requiere fuente publicada y muestras explícitas de contratos revisados')
+const source=sourceMode?JSON.parse(readFileSync(path+`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1-source.json`,'utf8')):null
+if(source){assert.equal(source.project,project);assert.equal(source.code,`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`)}
 const selectionKey=selectedIds?'-sample-'+createHash('sha256').update(selectedIds.join(',')).digest('hex').slice(0,12):''
-const runKey=`social-${grade}-`+catalog+(source?'-source-'+source.versionId:'')+(proceduralMode?'-procedural':productMode?'-products':mediaMode?'-media':'')+selectionKey,base='http://localhost:8787',progressPath=path+runKey+'-http-progress.json'
+const runKey=`${family}-${grade}-`+catalog+(source?'-source-'+source.versionId:'')+(proceduralMode?'-procedural':productMode?'-products':mediaMode?'-media':'')+selectionKey,base='http://localhost:8787',progressPath=path+runKey+'-http-progress.json'
 const progress=existsSync(progressPath)?JSON.parse(readFileSync(progressPath,'utf8')):{project,grade,writes:[],timings:[]}
 assert.equal(progress.project,project)
 assert.equal(progress.grade,grade)
@@ -71,7 +76,7 @@ const descriptions=proceduralMode||productMode||mediaMode?procedural.map(c=>c.de
  'Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.',
 ]
 const formats=productMode||mediaMode||proceduralMode&&grade>1?procedural.map((_,i)=>['rubrica','lista-cotejo','escala','lista-ponderada'][i%4]):proceduralMode?['rubrica','lista-cotejo','escala','lista-ponderada','lista-cotejo','rubrica','lista-ponderada','escala']:['rubrica','lista-cotejo','escala','lista-ponderada','rubrica','lista-cotejo','escala','lista-ponderada'].slice(0,sourceMode?4:8)
-const matrix=sourceMode?JSON.parse(readFileSync(`docs/curriculum/cobertura-secundaria/sociales-${grade}-matriz.json`,'utf8')):null
+const matrix=sourceMode?JSON.parse(readFileSync(`docs/curriculum/cobertura-secundaria/${fileStem}-${grade}-matriz.json`,'utf8')):null
 const sourceRecords=matrix?.officialRecords??[]
 const sourcePrefixes=proceduralMode||productMode||mediaMode?procedural.map(c=>c.sourceRecordIds[0]):['03c0f43b','20638a76','055ff3a5','01b7176c']
 const scoreFor=i=>selectedIds?Math.floor(i/4)%2?17.35:20:i%2?17.35:20
@@ -92,7 +97,7 @@ try{
    assert.equal(write.input.maxScore,scoreFor(i))
   }
   if(!write){
-   const score=scoreFor(i),description=descriptions[i],name=`QA Sociales ${grade}.º · ${format} · ${randomUUID().slice(0,8)}`
+   const score=scoreFor(i),description=descriptions[i],name=`QA ${qaLabel} ${grade}.º · ${format} · ${randomUUID().slice(0,8)}`
    const input={sectionSubjectId:context.sectionSubjectId,activityTitle:name,description,competencyBlock:'b1',maxScore:score,preferredInstrumentType:format,participationMode:'INDIVIDUAL'}
    const interpretation=(await request('/evaluation-instruments/interpret',{sectionSubjectId:context.sectionSubjectId,activityTitle:name,description,competencyBlock:'b1'})).data
    if(source){
@@ -104,7 +109,7 @@ try{
     Object.assign(input,{curriculumVersionId:source.versionId,curriculumScopeId:source.scopeId,selectedCurriculumElementIds:[importedId]})
    }
    const proposal=(await request('/evaluation-instruments/recommend',input)).data
-   assert.equal(proposal.catalogVersion,catalog);assert(proposal.criteria.every(c=>c.templateId.startsWith(`soc-${grade}-`)))
+   assert.equal(proposal.catalogVersion,catalog);assert(proposal.criteria.every(c=>c.templateId.startsWith(`${templatePrefix}-${grade}-`)))
    if(source){
     assert.equal(proposal.curriculumVersionId,source.versionId);assert.equal(proposal.curriculumScopeId,source.scopeId)
     assert.equal(proposal.selectedCurriculumElements.length,1)
@@ -114,12 +119,12 @@ try{
     assert(proposal.criteria.every(c=>!c.sourceReferences.length),'Adaptations are not literal official criteria')
    }
    assert.equal(interpretation.suggestedActivityType,proposal.activityType)
-   const local=editableFallbackRecommendation({...input,instrumentType:format,academicContext:{level:'SECONDARY',grade,subjectCode:'SOC',subjectName:'Ciencias Sociales'}})
+   const local=editableFallbackRecommendation({...input,instrumentType:format,academicContext:{level:'SECONDARY',grade,subjectCode,subjectName}})
    assert.deepEqual(content(proposal),content(local))
    const pending=scoreInstrumentFields(recommendationToFields(proposal,name),format,null,proposal)
    assert.equal(pending[`${format}:points:0`],'')
    const fields=scoreInstrumentFields(pending,format,score,proposal)
-   fields[`${format}:criterion:0`]='Texto manual QA Sociales'
+   fields[`${format}:criterion:0`]=`Texto manual QA ${qaLabel}`
    assert.deepEqual(validateInstrumentDefinition(format,fields,score),[])
    write={caseKey,format,creationId:randomUUID(),input:{sectionSubjectId:context.sectionSubjectId,schoolYearId:context.schoolYearId,academicPeriodId:context.academicPeriodId,competencyBlockId:'b1',name,description,maxScore:score,activityType:'individual',instrumentType:format,instrumentCriteria:fields,instrumentSnapshot:alignRecommendationWithFields(proposal,fields,score),pedagogicalActivityType:proposal.activityType,teachingStrategyId:null,teachingStrategyOrigin:null}}
    progress.writes.push(write);save()
@@ -141,5 +146,5 @@ try{
  }
  const result={project,grade,catalog,verification:'AUTHENTICATED_HTTP_DB_NOT_BROWSER',coverage:{availableContracts:allContracts.length,selectedCaseIds:selectedIds??null,limits:'Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación.'},sourceScope:source?.scopeId??'NOT_INSTALLED_YET',curriculumVersionId:source?.versionId??null,samples:progress.writes.map(w=>w.verified),timings:progress.timings,browser:'PENDING'}
  writeFileSync(path+runKey+'-http.json',JSON.stringify(result,null,2)+'\n')
- writeFileSync(path+`social-${grade}-http.json`,JSON.stringify(result,null,2)+'\n')
+ writeFileSync(path+`${family}-${grade}-http.json`,JSON.stringify(result,null,2)+'\n')
 }finally{await prisma.$disconnect()}

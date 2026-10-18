@@ -10,7 +10,9 @@ describe('Sociales sexto: territorio, población, economía e historia dominican
   const old=evaluationCatalogForVersion('evaluation-2026.104')!
   expect(old.socialCommonModules!.map(m=>m.grade)).toEqual([1,2,3,4,5,6])
   expect(old.socialCommonModules![5].topics.find(t=>t.id==='conflict-solutions')!.match).not.toContain('conflicto academico')
-  expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.105')
+  const corrected=evaluationCatalogForVersion('evaluation-2026.105')!
+  expect(corrected.socialCommonModules![5].topics.find(t=>t.id==='conflict-solutions')!.match).toContain('conflicto academico')
+  expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.106')
  })
  it('conserva la instrucción de ponderación posterior al contenido no democrático',()=>{
   const description='Describe las prácticas no democráticas del caso mediante una lista ponderada.'

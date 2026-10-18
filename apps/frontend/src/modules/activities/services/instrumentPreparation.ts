@@ -1,3 +1,4 @@
+import { resolveCommonArtTask, commonArtCriteria, adaptArtScale } from '@aula/shared'
 import {resolveCommonSocialTask,commonSocialCriteria,adaptSocialScale} from '@aula/shared'
 import {resolveCommonScienceTask,commonScienceCriteria,adaptScienceScale} from '@aula/shared'
 import { resolveCommonFrenchTask, commonFrenchCriteria } from '@aula/shared'
@@ -55,6 +56,8 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
   if (input.evidenceInstructions?.trim()) input = { ...input, description: [input.description, input.evidenceInstructions].filter(Boolean).join('\n') }
   const authorizedGrade=input.academicContext?commonSecondaryLanguageGrade(input.academicContext):input.secondaryLanguageGrade
   if(authorizedGrade)input={...input,secondaryLanguageGrade:authorizedGrade}
+  const art = resolveCommonArtTask(input.activityTitle, input.description ?? '', input.academicContext)
+  if (art) return adaptArtScale(editableAuthoredRecommendation(commonArtCriteria(art), input, input.activityType ?? art.activityType, `educacion-artistica-comun-${art.grade}`), art)
   const social=resolveCommonSocialTask(input.activityTitle,input.description??'',input.academicContext)
   if(social)return adaptSocialScale(editableAuthoredRecommendation(commonSocialCriteria(social),input,input.activityType??social.activityType,`ciencias-sociales-comun-${social.grade}`))
   const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',input.academicContext)
