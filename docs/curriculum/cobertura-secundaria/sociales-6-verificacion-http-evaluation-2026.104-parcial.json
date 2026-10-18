@@ -1,0 +1,39 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "grade": 6,
+  "catalog": "evaluation-2026.104",
+  "status": "PARTIAL_STOPPED_FOR_PERSONAL_WORDING_CORRECTION",
+  "samples": [
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "85f6bb18-a19f-471e-98b5-0ce334338df3",
+      "snapshotId": "0ebeb263-5933-4466-82fb-3b3749e9ad5f",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "a887ebd53f1be7d8af240d6d315558e4856cdc1ddf324cbdff183ce9ac700da8"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "7c4ed8ee-34d5-4cc1-950e-57b9be6af1c8",
+      "snapshotId": "7c901fce-8ed2-4315-89ce-5ca12d1fe5f6",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "75a9106c56e7aa978832978a78989ff13d11ae88523d4e77798b9c785b20a085"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "a073d437-3f37-4a95-a4ef-6a62e9845ed2",
+      "snapshotId": "11abac6e-7b2a-4e20-bf85-51c1bbc31667",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "1432f9f73815ab2cb89bafa1e496c2d64d3b4f125ecb6f773869cb3357bc2743"
+    }
+  ],
+  "limits": [
+    "Se detuvo únicamente el runner propio40080 al descubrir una consigna personal no reconocida; no se borraron actividades ni se completaron las12muestras previstas.",
+    "Los tres guardados/reaperturas verificados se conservan; el checkpoint privado mantiene IDs deterministas. No atribuirlos a105."
+  ]
+}

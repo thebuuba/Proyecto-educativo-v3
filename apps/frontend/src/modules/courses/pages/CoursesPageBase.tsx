@@ -93,6 +93,7 @@ import { Select } from '@/components/ui/Select'
 import { Modal } from '@/components/ui/Modal'
 
 import { useAuth } from '@/modules/auth/hooks/useAuth'
+import { ActivityDraftsPanel } from '@/modules/activities/components/ActivityDraftsPanel'
 import { SectionForm } from '@/modules/courses/components/SectionForm'
 import { SubjectAssignmentForm } from '@/modules/courses/components/SubjectAssignmentForm'
 import { TeacherAssignmentForm } from '@/modules/courses/components/TeacherAssignmentForm'
@@ -1835,6 +1836,7 @@ function SubjectDetailView({
           students={overview.gradingStudents}
           teams={overview.teams}
           assignmentId={item.assignment?.id ?? null}
+          schoolYearId={schoolYearId}
           courseId={item.id}
           courseLabel={courseLabel}
           subjectName={item.subjectName}
@@ -2062,7 +2064,7 @@ function DetailTab({ active, icon, label, muted, badge, count, onClick }: { acti
 
 type SubjectActivityStatus = 'pending' | 'partial' | 'graded'
 
-export function SubjectActivitiesTab({ activities, activityId, academicPeriods, selectedAcademicPeriodId, records, students, teams, assignmentId, courseId, courseLabel, subjectName, onCreate, onActivityChange }: {
+export function SubjectActivitiesTab({ activities, activityId, academicPeriods, selectedAcademicPeriodId, records, students, teams, assignmentId, schoolYearId, courseId, courseLabel, subjectName, onCreate, onActivityChange }: {
   activities: GradingActivity[]
   activityId: string | null
   academicPeriods: AcademicPeriodOpt[]
@@ -2071,6 +2073,7 @@ export function SubjectActivitiesTab({ activities, activityId, academicPeriods, 
   students: StudentGradeRow[]
   teams: CourseTeam[]
   assignmentId: string | null
+  schoolYearId?: string | null
   courseId: string
   courseLabel: string
   subjectName: string
@@ -2101,6 +2104,18 @@ export function SubjectActivitiesTab({ activities, activityId, academicPeriods, 
 
   return <section className="space-y-4" aria-labelledby="subject-activities-title">
     <SubjectTabHeader title="Actividades" description="Encuentra, crea y da seguimiento a las actividades evaluables." context={<>{courseLabel} · {subjectName}<span className="subject-context-period">{period?.name ?? 'Período actual'} · período actual</span></>} actions={<Button onClick={onCreate}><Plus className="size-4" /> Crear actividad</Button>} />
+    {schoolYearId ? <ActivityDraftsPanel
+      scope={{ schoolYearId, sectionSubjectId: assignmentId }}
+      resolveHref={(draft) => draft.draft.draftId ? `/actividades/crear?${new URLSearchParams({
+        sectionSubjectId: assignmentId,
+        academicPeriodId: draft.context.academicPeriodId,
+        competencyBlockId: draft.blockId,
+        activityDraftId: draft.draft.draftId,
+        returnCourseId: courseId,
+        returnSubjectId: assignmentId,
+        returnTab: 'actividades',
+      }).toString()}` : null}
+    /> : null}
     <div className="subject-toolbar">
       <div className="subject-filter-chips">{([['all', 'Todas'], ['pending', 'Pendientes'], ['partial', 'Parcialmente calificadas'], ['graded', 'Calificadas']] as const).map(([value, label]) => <button key={value} type="button" aria-pressed={status === value} onClick={() => setStatus(value)}>{label}<span>{value === 'all' ? activities.length : activities.filter(activity => activityMeta(activity).state === value).length}</span></button>)}</div>
       <label className="subject-search"><Search /><input aria-label="Buscar actividad" placeholder="Buscar por nombre o descripción..." value={query} onChange={event => setQuery(event.target.value)} /></label>

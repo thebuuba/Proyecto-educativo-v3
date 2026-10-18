@@ -1,0 +1,1279 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 6,
+  "scopeId": "53a654b4-d709-5c0d-9faa-9586c1ee2f60",
+  "policy": "REPRESENTATIVE_REQUESTED_ACTIONS_NOT_ALL_PROCEDURAL_VARIANTS",
+  "cases": [
+    {
+      "id": "dominican-position-source-analysis",
+      "family": "GEOGRAPHIC_SOURCE_ANALYSIS",
+      "description": "Analiza las informaciones y mapas proporcionados sobre posición, ubicación, límites, área y superficie de República Dominicana, explicando ventajas y desventajas respaldadas. Distingue el país de toda la isla. No inventes límites ni exijas una postura patriótica.",
+      "requiredKeys": [
+        "spatial-scope",
+        "geographic-evidence"
+      ],
+      "sourceRecordIds": [
+        "e39f6a0f-a1d0-55ae-9184-0fe43675d5a8"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "boundary-information-verification",
+      "family": "BOUNDARY_SOURCE_VERIFICATION",
+      "description": "Comprueba las afirmaciones dadas sobre fronteras marítimas, costeras y territoriales dominicanas con los mapas y documentos proporcionados y explica sus efectos políticos y económicos en el caso ficticio. No resuelvas una controversia territorial real ni inventes vigencia.",
+      "requiredKeys": [
+        "boundary-evidence",
+        "consequences"
+      ],
+      "sourceRecordIds": [
+        "8aa286cc-83ed-54e6-8aff-9c09407d3a44"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "administrative-division-research",
+      "family": "ADMINISTRATIVE_RESEARCH",
+      "description": "Investiga las regiones, provincias y municipios dominicanos expresamente indicados en las fuentes dadas y explica su relación con el desarrollo del caso. No incluyas las divisiones del otro Estado de la isla ni inventes estadísticas actuales.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "e280a1a2-1bb1-5d9f-8610-92af26946f23"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "mountain-climate-soil-source-critique",
+      "family": "PHYSICAL_GEOGRAPHY_CRITIQUE",
+      "description": "Analiza críticamente la información impresa y digital proporcionada sobre montañas, diversificación climática y variación de suelos de República Dominicana, relacionando sus afirmaciones y evidencias con los espacios indicados. No impongas otras regiones o mediciones.",
+      "requiredKeys": [
+        "physical-relations",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "af8f2358-64e0-51b6-9158-4848845a47d4"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "valley-plain-map-reading",
+      "family": "MAP_READING",
+      "description": "Interpreta los mapas de los valles, llanuras y regiones especiales dominicanas indicados, conservando leyendas y referencias para explicar sus relaciones con los usos del territorio del caso. No dibujes otro mapa.",
+      "requiredKeys": [
+        "spatial-evidence"
+      ],
+      "sourceRecordIds": [
+        "321353f0-afab-57df-b143-a5f3cc5d1941"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "coastal-relief-ecosystem-study",
+      "family": "COASTAL_STUDY",
+      "description": "Estudia los datos y mapas proporcionados de playas, bahías, ensenadas y ecosistemas costeros y marinos dominicanos, explicando sus características y relaciones con los usos del caso. No viajes a la costa ni inventes mediciones.",
+      "requiredKeys": [
+        "coastal-relations"
+      ],
+      "sourceRecordIds": [
+        "376aa32b-4061-59bf-8c1b-56be91191628"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "agroforestry-classification-research",
+      "family": "AGROFORESTRY_RESEARCH",
+      "description": "Recopila información en las fuentes dadas sobre los sistemas agroforestales dominicanos solicitados y explica su clasificación según composición, estructura y función. No recopiles datos de fincas reales.",
+      "requiredKeys": [
+        "research-content",
+        "agroforestry-classification"
+      ],
+      "sourceRecordIds": [
+        "eb93f9ba-3112-5876-a98f-a0b97670cb2f"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "agroforestry-development-advantages",
+      "family": "AGROFORESTRY_ANALYSIS",
+      "description": "Identifica las ventajas de los sistemas agroforestales indicados para el desarrollo económico y explica cómo se implementaron en los casos dominicanos proporcionados. No supongas que se aplican igual en todo el país.",
+      "requiredKeys": [
+        "agroforestry-development"
+      ],
+      "sourceRecordIds": [
+        "745c9651-6523-5658-b728-e1246c839ba6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "environmental-norm-source-verification",
+      "family": "NORM_SOURCE_VERIFICATION",
+      "description": "Comprueba la información proporcionada sobre áreas protegidas y la referencia curricular sobre energías renovables contrastándola con los documentos del ejercicio, conservando autoría, fecha y alcance. No certifiques vigencia legal ni corrijas silenciosamente sus referencias.",
+      "requiredKeys": [
+        "norm-source-verification"
+      ],
+      "sourceRecordIds": [
+        "e60f1c02-1858-5fcb-93d8-9d377639d16a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "environmental-project-step-selection",
+      "family": "ENVIRONMENT_PROJECT_PLAN",
+      "description": "Selecciona y justifica los pasos de un proyecto de protección ambiental para el caso dominicano ficticio y relaciona las acciones previstas con sus condiciones políticas y económicas y la conservación examinada. No presentes actividades como ejecutadas.",
+      "requiredKeys": [
+        "project-steps",
+        "project-justification"
+      ],
+      "sourceRecordIds": [
+        "f786cab4-d595-598c-9f86-0b2dc36151c1"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "protected-system-discussion",
+      "family": "PROTECTED_SYSTEM_DISCUSSION",
+      "description": "Discute los alcances y limitaciones del sistema de áreas protegidas en los documentos y casos dados, sustentando sus razones con evidencias. No afirmes que todo el sistema es eficaz ni atribuyas vigencia actual al material.",
+      "requiredKeys": [
+        "discussion"
+      ],
+      "sourceRecordIds": [
+        "703dce14-293a-5e02-b26d-a09aa8d6f4a0"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "environmental-action-design",
+      "family": "ENVIRONMENT_ACTION_DESIGN",
+      "description": "Elabora una actividad escolar simulada a favor del medio ambiente y las áreas protegidas del caso: explica propósito, acciones y recursos dados, sin organizar visitas o contactos externos.",
+      "requiredKeys": [
+        "project-purpose",
+        "project-actions"
+      ],
+      "sourceRecordIds": [
+        "43c556f7-c70e-5eaf-980f-dab4d692019c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "geographic-digital-repositories",
+      "family": "REPOSITORY_USE",
+      "description": "Utiliza los registros proporcionados de repositorios geográficos, demográficos, históricos y económicos para seleccionar información pertinente al caso y hacer reconocible su procedencia y fecha. No exijas abrir otros sitios ni acceder a servicios de pago.",
+      "requiredKeys": [
+        "repository-selection"
+      ],
+      "sourceRecordIds": [
+        "b4d3e26b-a5ff-5391-89f6-3e6ca0c3aa44"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "global-environment-information-collection",
+      "family": "ENVIRONMENT_SOURCE_COLLECTION",
+      "description": "Recopila y sintetiza información confiable de las fuentes dadas sobre los problemas globales que deterioran el medio ambiente, explicando sus relaciones con el caso. No inventes datos actuales ni hagas una investigación de campo.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "e769bbbf-c968-58d4-83ce-f13923f30f19"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "population-problem-debate",
+      "family": "POPULATION_PROBLEM_DEBATE",
+      "description": "Debate las explicaciones del desempleo, hacinamiento y marginalidad en el caso dominicano ficticio proporcionado, utilizando sus datos y respondiendo a las réplicas. No atribuyas rasgos morales a las personas ni recopiles experiencias privadas.",
+      "requiredKeys": [
+        "argument",
+        "response"
+      ],
+      "sourceRecordIds": [
+        "4873784a-61e5-59f0-b6c6-315b7dd17984"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "population-problem-roundtable",
+      "family": "POPULATION_PROBLEM_ROUNDTABLE",
+      "description": "Participa en una mesa redonda sobre desempleo y hacinamiento del caso ficticio, aportando razones y respondiendo preguntas con las evidencias dadas. No exijas consenso ni datos familiares.",
+      "requiredKeys": [
+        "roundtable"
+      ],
+      "sourceRecordIds": [
+        "4873784a-61e5-59f0-b6c6-315b7dd17984"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "national-official-source-identification",
+      "family": "OFFICIAL_SOURCE_IDENTIFICATION",
+      "description": "Identifica las fuentes oficiales nacionales cuantitativas y cualitativas de los registros proporcionados y explica su pertinencia y alcance para la consulta del ejercicio. No exijas consultar todas las instituciones ni supongas que oficial significa infalible.",
+      "requiredKeys": [
+        "official-source-selection"
+      ],
+      "sourceRecordIds": [
+        "351562ad-a07f-53b4-91c9-f9595f8d73e3"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "international-source-selection",
+      "family": "INTERNATIONAL_SOURCE_SELECTION",
+      "description": "Selecciona información pertinente en los registros proporcionados de organismos internacionales para el caso socioeconómico indicado, conservando procedencia, fecha, unidades y límites de comparabilidad. No consultes precios o estadísticas actuales.",
+      "requiredKeys": [
+        "international-source-selection"
+      ],
+      "sourceRecordIds": [
+        "652111f8-1d2a-58eb-b984-8fed73a90ffb"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "water-access-project-plan",
+      "family": "WATER_PROJECT_PLAN",
+      "description": "Selecciona los pasos de un proyecto sobre acceso al agua del caso ficticio, relacionando deforestación, sequía, distribución, acopio, riego, contaminación o desperdicio expresamente examinados con acciones y evidencias previstas. No inventes caudales ni afirmes ejecución.",
+      "requiredKeys": [
+        "project-purpose",
+        "project-actions",
+        "project-follow-up"
+      ],
+      "sourceRecordIds": [
+        "6fb040ce-2ba0-5ce9-a3f1-1a2c624fb736"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "source-similarity-report",
+      "family": "SIMILARITY_REVIEW",
+      "description": "Analiza el informe antiplagio proporcionado del estudio geográfico y sus fuentes, localizando coincidencias y problemas de atribución y proponiendo correcciones. No uses el porcentaje como prueba de veracidad o autoría ni exijas contratar otra herramienta.",
+      "requiredKeys": [
+        "similarity-context",
+        "attribution-correction"
+      ],
+      "sourceRecordIds": [
+        "bd6c66b1-d7f4-5f26-a5d4-5c71eb09b81b"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "natural-resource-document-search",
+      "family": "RESOURCE_DOCUMENT_RESEARCH",
+      "description": "Realiza una búsqueda documental en los registros dados sobre los recursos agrícolas, ganaderos, forestales y mineros dominicanos expresamente solicitados y sintetiza sus hallazgos y procedencia. No investigues predios reales ni exijas todos los recursos del país.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "380f4008-9a86-512c-90da-8b0af1dd1275"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "agrochemical-forestry-mining-risk",
+      "family": "RESOURCE_IMPACT_ANALYSIS",
+      "description": "Analiza los agroquímicos y las actividades forestales y mineras indicados en el caso y sus riesgos sanitarios y ambientales según los datos proporcionados. Distingue evidencias y relaciones inciertas. No emitas diagnósticos ni inventes mediciones.",
+      "requiredKeys": [
+        "resource-impact"
+      ],
+      "sourceRecordIds": [
+        "074519a2-69b9-5e4c-9408-be501f8b0dab"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "rural-urban-exodus-case",
+      "family": "URBAN_GROWTH_CASE",
+      "description": "Analiza el caso ficticio del aumento de la población urbana dominicana por éxodo del campo a la ciudad, relacionando movimientos, condiciones y evidencias dadas. No culpes a la población migrante ni recopiles historias familiares.",
+      "requiredKeys": [
+        "urban-migration-relations"
+      ],
+      "sourceRecordIds": [
+        "d58e3300-acd6-5d00-af34-6874dc818275"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "dominican-world-migration-analysis",
+      "family": "MIGRATION_RELATION_ANALYSIS",
+      "description": "Analiza los movimientos de población dominicana y mundial del material proporcionado, conservando flujos, fechas y espacios al relacionarlos. No inventes cifras actuales ni atribuyas comportamientos a nacionalidades.",
+      "requiredKeys": [
+        "migration-relations"
+      ],
+      "sourceRecordIds": [
+        "e92a7a57-5707-5db3-998a-637326967742"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "demographic-rate-calculation",
+      "family": "DEMOGRAPHIC_CALCULATION",
+      "description": "Aplica las fórmulas de tasas de natalidad y mortalidad indicadas a los datos ficticios de nacimientos, defunciones y población del mismo período. Explica unidades, base de cálculo y significado sin confundir tasas con conteos. No recopiles datos personales.",
+      "requiredKeys": [
+        "rate-calculation",
+        "rate-interpretation"
+      ],
+      "sourceRecordIds": [
+        "31f52857-cec1-56a9-b0de-2ed75c492e52"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "migration-rule-reading",
+      "family": "MIGRATION_NORM_READING",
+      "description": "Identifica las disposiciones migratorias expresamente proporcionadas y explica su alcance en el caso ficticio, distinguiendo texto e interpretación. No decidas la situación legal de una persona ni inventes requisitos vigentes.",
+      "requiredKeys": [
+        "migration-norm-evidence"
+      ],
+      "sourceRecordIds": [
+        "09d5f94c-ae13-5c26-af54-8be0440c607e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "agricultural-system-comparison",
+      "family": "AGRICULTURE_COMPARATIVE_CHART",
+      "description": "Elabora un cuadro comparativo de agricultura de conucos, agropecuaria extensiva y agricultura intensiva de los casos dominicanos dados mediante dimensiones comunes y evidencias. No jerarquices a las personas productoras ni inventes rendimientos.",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "sourceRecordIds": [
+        "16e514aa-729a-5660-9387-62f2a57b578e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "population-pyramid-statistical-reading",
+      "family": "POPULATION_PYRAMID_ANALYSIS",
+      "description": "Analiza la pirámide poblacional dominicana proporcionada, relacionando edades y distribución con sus escalas, porcentajes, fecha y límites. No deduzcas natalidad o mortalidad exactas solo de su forma ni inventes un pronóstico.",
+      "requiredKeys": [
+        "population-pyramid-evidence"
+      ],
+      "sourceRecordIds": [
+        "511b9b1c-df6b-557b-83bf-0ad79badad5d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "supply-demand-impact",
+      "family": "SUPPLY_DEMAND_ANALYSIS",
+      "description": "Explica el impacto de los cambios de oferta y demanda en los casos económicos ficticios dados, diferenciando movimientos y sus supuestos mediante la información proporcionada. No recomiendes inversiones ni inventes precios actuales.",
+      "requiredKeys": [
+        "supply-demand-relations"
+      ],
+      "sourceRecordIds": [
+        "2649aec1-5fca-55cc-bce1-2713eb1f0545"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "economic-sector-impact",
+      "family": "ECONOMIC_SECTOR_RELATIONS",
+      "description": "Explica el impacto de los sectores primario, secundario y terciario en los casos dominicanos proporcionados, relacionando actividades y condiciones sin confundir producción y participación sectorial. No inventes porcentajes.",
+      "requiredKeys": [
+        "economic-relations"
+      ],
+      "sourceRecordIds": [
+        "4f3928c0-f9bb-50cf-adf2-5a054f3123af"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "border-market-research",
+      "family": "BORDER_MARKET_RESEARCH",
+      "description": "Investiga en las fuentes dadas los aportes económicos y desventajas de los mercados fronterizos indicados y explica las relaciones con la seguridad del caso. No generalices riesgos a una nacionalidad ni recopiles datos de comerciantes.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "f042ffe6-91aa-5332-acd6-42dd8b78719c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "border-agricultural-production-analysis",
+      "family": "BORDER_PRODUCTION_ANALYSIS",
+      "description": "Analiza los tipos de producción agrícola de las provincias fronterizas dominicanas indicadas y su impacto en el desarrollo local con los datos del ejercicio. No añadas otras provincias ni inventes rendimientos.",
+      "requiredKeys": [
+        "productive-relations"
+      ],
+      "sourceRecordIds": [
+        "d52e84b5-3dc6-56c1-995f-cc5339dfc97f"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "development-theory-comparison",
+      "family": "DEVELOPMENT_THEORY_COMPARISON",
+      "description": "Compara los planteamientos de desarrollo y subdesarrollo de los textos dados mediante criterios comunes, distinguiendo argumentos y condiciones de los casos. No jerarquices culturas ni impongas una adhesión teórica.",
+      "requiredKeys": [
+        "comparison",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "06dcbf1c-6399-5776-a63e-7189b07b62e7"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "sugar-sector-twentieth-century",
+      "family": "SUGAR_SECTOR_ANALYSIS",
+      "description": "Explica la incidencia del sector azucarero dominicano en el siglo XX expresamente examinada, relacionando hechos, actores y evidencias del material. No extrapoles a otros períodos ni inventes datos actuales.",
+      "requiredKeys": [
+        "sugar-sector-relations"
+      ],
+      "sourceRecordIds": [
+        "b0c7c8a3-e34b-5930-a29c-109a17476570"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "socioeconomic-survey-methods",
+      "family": "SOCIAL_RESEARCH_DESIGN",
+      "description": "Diseña una entrevista, encuesta o sondeo simulado para el problema socioeconómico ficticio indicado: relaciona preguntas, propósito, selección de participantes ficticios y forma prevista de registrar respuestas. No contactes personas ni recopiles datos privados.",
+      "requiredKeys": [
+        "research-method-design"
+      ],
+      "sourceRecordIds": [
+        "d14a9d89-952d-5346-bf4a-a9282ce57a4e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "economic-sector-characterization",
+      "family": "SECTOR_CHARACTERIZATION",
+      "description": "Caracteriza los sectores económicos dominicanos de los datos proporcionados y sus relaciones, conservando fecha y alcance. No supongas que la fecha del material es el presente ni inventes estadísticas.",
+      "requiredKeys": [
+        "economic-relations"
+      ],
+      "sourceRecordIds": [
+        "54385153-7cbb-5bb2-b40a-dbaf0ca637a4"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "migration-situation-analysis",
+      "family": "MIGRATION_SITUATION_ANALYSIS",
+      "description": "Analiza la situación migratoria del caso ficticio dominicano mediante sus fuentes y datos, distinguiendo flujos, condiciones, derechos e inferencias. No diagnostiques personas reales ni atribuyas hechos a nacionalidades enteras.",
+      "requiredKeys": [
+        "migration-relations"
+      ],
+      "sourceRecordIds": [
+        "d2fac1d1-8763-5adb-8cd4-063181c39a0a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "natural-hazard-risk-identification",
+      "family": "RISK_IDENTIFICATION",
+      "description": "Identifica las zonas de riesgo de República Dominicana indicadas ante el fenómeno natural del caso, relacionando peligro, exposición y vulnerabilidad con los mapas dados. No predigas desastres ni recopiles ubicaciones personales.",
+      "requiredKeys": [
+        "risk-location"
+      ],
+      "sourceRecordIds": [
+        "5498aeb6-87a8-589e-accb-16b01c612562"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "risk-vulnerability-presentation",
+      "family": "RISK_PRESENTATION",
+      "description": "Presenta oralmente las zonas de riesgo y vulnerabilidad dominicanas indicadas en los mapas del ejercicio y explica sus condiciones y límites con las evidencias dadas. No inventes pronósticos ni visitas.",
+      "requiredKeys": [
+        "risk-location",
+        "oral"
+      ],
+      "sourceRecordIds": [
+        "03460e8d-6327-5f46-a280-ee21f3bfee98"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "economic-theory-social-incidence",
+      "family": "ECONOMIC_THEORY_ANALYSIS",
+      "description": "Analiza las teorías económicas expresamente indicadas y su incidencia social en los textos y casos proporcionados, relacionando supuestos, propuestas y evidencias sin exigir adhesión. No inventes impactos actuales.",
+      "requiredKeys": [
+        "theory-relations"
+      ],
+      "sourceRecordIds": [
+        "04b0f9ac-6208-5dd6-b732-26772ee2636c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "history-geography-repository-recovery",
+      "family": "DOCUMENT_RECOVERY",
+      "description": "Utiliza los registros proporcionados del Archivo General de la Nación, Clío, EME-EME y el repositorio geográfico del ejercicio para identificar y seleccionar documentos pertinentes al tema dado, justificando procedencia y alcance. No exijas consultar todos los sitios ni contratar accesos.",
+      "requiredKeys": [
+        "repository-selection"
+      ],
+      "sourceRecordIds": [
+        "04b0f9ac-6208-5dd6-b732-26772ee2636c",
+        "2514a4e4-312d-53aa-abd5-e0ed879d3f08"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "occupation-crisis-dictatorship-source-reading",
+      "family": "HISTORICAL_SOURCE_ANALYSIS",
+      "description": "Analiza las informaciones proporcionadas sobre ocupación estadounidense de 1916–1924, crisis de 1929 y dictadura de Trujillo expresamente solicitadas, diferenciando períodos y evidencias sin confundir sus procesos. No impongas toda la historia dominicana.",
+      "requiredKeys": [
+        "historical-relations",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "f4a1507c-32ea-50dc-a3ee-de70b32490a6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "trujillo-foreign-policy-evaluation",
+      "family": "FOREIGN_POLICY_EVALUATION",
+      "description": "Evalúa la política internacional de Trujillo en el Caribe y Latinoamérica antes y durante la Guerra Fría en los casos dados, utilizando criterios y evidencias del material. No impongas una postura actual ni inventes hechos.",
+      "requiredKeys": [
+        "foreign-policy-evaluation"
+      ],
+      "sourceRecordIds": [
+        "84ba2430-879f-539b-a515-8c7883f06f88"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "dictatorship-resistance-exhibition",
+      "family": "RESISTANCE_EXHIBITION",
+      "description": "Elabora una exposición visual de las formas de lucha y resistencia a la dictadura indicadas, relacionando los textos e imágenes proporcionados con actores, condiciones y hechos. No recrees violencia ni inventes testimonios.",
+      "requiredKeys": [
+        "visual-information",
+        "visual-relations"
+      ],
+      "sourceRecordIds": [
+        "c8a9e648-d485-5274-8323-ceefe1122271"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "regime-duration-factor-selection",
+      "family": "REGIME_FACTOR_SELECTION",
+      "description": "Selecciona los factores de la larga duración del régimen de Trujillo que respaldan las fuentes y explica sus relaciones con las condiciones indicadas. No conviertas duración en aprobación moral ni añadas causas sin respaldo.",
+      "requiredKeys": [
+        "regime-duration-factors"
+      ],
+      "sourceRecordIds": [
+        "6b6c72e4-75a8-5fad-8b0d-9a6749f4faca"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "dictatorship-end-factor-discrimination",
+      "family": "REGIME_END_ANALYSIS",
+      "description": "Distingue los factores de crisis del régimen y de su final en 1961 mediante las fuentes dadas, relacionando actores y condiciones sin confundirlos con efectos posteriores. No impongas todos los procesos de 1961–1963.",
+      "requiredKeys": [
+        "regime-end-factors"
+      ],
+      "sourceRecordIds": [
+        "6b6c72e4-75a8-5fad-8b0d-9a6749f4faca"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "trujillo-interim-government-analysis",
+      "family": "INTERIM_GOVERNMENT_ANALYSIS",
+      "description": "Analiza las características económicas, políticas y sociales de los gobiernos interinos de la época trujillista expresamente indicados en los documentos, conservando sus fechas y atribuciones. No atribuyas todas las decisiones al mismo actor ni inventes gobiernos.",
+      "requiredKeys": [
+        "interim-government-relations"
+      ],
+      "sourceRecordIds": [
+        "d963eb4f-6ef8-5665-91ef-48ea7fae51cf"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "democratic-social-movement-analysis",
+      "family": "SOCIAL_MOVEMENT_ANALYSIS",
+      "description": "Analiza los aportes de los movimientos sociales dados antes y después del final de la dictadura, distinguiendo sus actores, condiciones y evidencias. No presupongas unanimidad ni exijas adhesión personal.",
+      "requiredKeys": [
+        "social-movement-relations"
+      ],
+      "sourceRecordIds": [
+        "d963eb4f-6ef8-5665-91ef-48ea7fae51cf"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "trujillismo-legacy-debate",
+      "family": "HISTORICAL_LEGACY_DEBATE",
+      "description": "Debate los remanentes del trujillismo planteados en el caso y textos proporcionados, sosteniendo y revisando razones con evidencias y respondiendo réplicas. No impongas una preferencia partidaria ni atribuyas conductas a personas reales.",
+      "requiredKeys": [
+        "argument",
+        "response"
+      ],
+      "sourceRecordIds": [
+        "177bed43-61f9-5888-9d35-9fb1cb3c7fb2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "political-party-table",
+      "family": "POLITICAL_PARTY_TABLE",
+      "description": "Elabora un cuadro de los partidos políticos dominicanos desde 1960 expresamente incluidos en los registros del ejercicio, conservando nombres, períodos y relaciones solicitadas. No inventes partidos actuales ni califiques preferencias personales.",
+      "requiredKeys": [
+        "party-table"
+      ],
+      "sourceRecordIds": [
+        "90d140c5-d228-5170-bb97-9c46420cd9c1"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "dictatorship-coup-april-causality",
+      "family": "HISTORICAL_CAUSALITY",
+      "description": "Analiza los acontecimientos dados que condujeron al final de la dictadura, al golpe a Bosch y a la Guerra de Abril, relacionando causas, decisiones y evidencias sin tratar los tres hechos como simultáneos. No inventes una cadena causal única.",
+      "requiredKeys": [
+        "historical-causality"
+      ],
+      "sourceRecordIds": [
+        "58592a80-db81-546e-af20-03589533351a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "nation-project-opinion-article",
+      "family": "NATION_PROJECT_OPINION",
+      "description": "Redacta un artículo de opinión sobre el proyecto de nación entre liberalismo y conservadurismo del caso histórico dado, sosteniendo una postura razonada con las fuentes. No exijas adhesión política ni envíes el texto a un medio.",
+      "requiredKeys": [
+        "argumentative-text",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "c2f5f5d8-bb1b-5f30-a1b7-642f373bb6e2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "april-revolution-dramatization",
+      "family": "HISTORICAL_DRAMATIZATION",
+      "description": "Dramatiza el caso histórico proporcionado de la Revolución de Abril y la intervención de 1965, representando causas, sectores involucrados e impactos compatibles con sus evidencias. Distingue la escenificación de los hechos. No recrees violencia ni inventes testimonios auténticos.",
+      "requiredKeys": [
+        "historical-role",
+        "historical-context"
+      ],
+      "sourceRecordIds": [
+        "062be8ad-2373-5c6b-8d1b-3839ee4bd441"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "april-vulnerable-sectors-report",
+      "family": "HISTORICAL_RESEARCH_REPORT",
+      "description": "Investiga en las fuentes dadas los sectores vulnerables y las posiciones golpistas y constitucionalistas de Abril expresamente indicados y presenta un informe que relacione actores, condiciones y evidencias. No recopiles vivencias privadas ni atribuyas a todos la misma posición.",
+      "requiredKeys": [
+        "report-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "082ae763-8272-5585-9aa6-a89854cefa59"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "balaguer-arrival-hypothesis",
+      "family": "HISTORICAL_HYPOTHESIS",
+      "description": "Plantea una hipótesis provisional sobre la llegada de Balaguer al poder en 1966, distinguiendo los hechos proporcionados de lo que faltaría contrastar. No declares la explicación comprobada ni inventes entrevistas.",
+      "requiredKeys": [
+        "hypothesis"
+      ],
+      "sourceRecordIds": [
+        "082ae763-8272-5585-9aa6-a89854cefa59"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "godoy-government-processes",
+      "family": "TRANSITION_GOVERNMENT_ANALYSIS",
+      "description": "Explica los procesos del gobierno de Godoy expresamente indicados en los textos históricos proporcionados, conservando sus actores, período y atribuciones. No confundas ese gobierno con el de Reconstrucción Nacional ni corrijas silenciosamente la denominación conceptual del currículo.",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "8f1f017d-f97a-5998-ac97-5ac23396a32a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "balaguer-twelve-years-discussion",
+      "family": "TWELVE_YEARS_DISCUSSION",
+      "description": "Discute las características políticas, económicas y sociales de los doce años de Balaguer expresamente examinadas, relacionando condiciones de vida, política internacional, corrupción o represión con las evidencias dadas. No impongas todas las dimensiones ni una adhesión partidaria.",
+      "requiredKeys": [
+        "discussion"
+      ],
+      "sourceRecordIds": [
+        "b276af3d-cfe1-580c-af26-b7089482a355"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "government-1978-2000-comparison",
+      "family": "GOVERNMENT_COMPARISON",
+      "description": "Compara los gobiernos dominicanos de 1978–2000 indicados mediante dimensiones comunes de estilo político, medidas económicas, política internacional, logros y errores sustentados en las fuentes dadas. No añadas gobiernos posteriores ni valores preferencias personales.",
+      "requiredKeys": [
+        "government-comparison"
+      ],
+      "sourceRecordIds": [
+        "343af34a-7519-5654-b82d-626c23c3a33f"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "government-since-1978-critique",
+      "family": "GOVERNMENT_CRITIQUE",
+      "description": "Evalúa críticamente los gobiernos surgidos desde 1978 que el material del ejercicio indica, mediante sus criterios políticos, sociales y económicos y evidencias. Conserva la fecha y alcance del material sin inventar hechos actuales.",
+      "requiredKeys": [
+        "government-evaluation"
+      ],
+      "sourceRecordIds": [
+        "3682b885-5196-5ddc-b84a-249f3d420de3"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "society-twenty-first-characterization",
+      "family": "CONTEMPORARY_SOCIETY_CHARACTERIZATION",
+      "description": "Describe las características de la sociedad dominicana del siglo XXI examinadas en los materiales: economía, gobiernos, vida social y cultural, avances heredados y temas pendientes. Relaciona cada dimensión con sus datos y fecha. No inventes una actualización ni recopiles información familiar.",
+      "requiredKeys": [
+        "society-relations"
+      ],
+      "sourceRecordIds": [
+        "3682b885-5196-5ddc-b84a-249f3d420de3",
+        "d1efbd42-6863-5bb3-823e-fcac698d4bed",
+        "b7d615f7-7c63-56b8-bad9-eb85809c46ee",
+        "4aa1b06a-abf1-5187-ab91-cc0103580a28",
+        "681814f4-9fc3-50de-997d-49a8562912df",
+        "9d09952a-374c-5aa3-bbcf-373c1cdbf295"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "constitutional-change-comparison",
+      "family": "CONSTITUTIONAL_CHANGE_COMPARISON",
+      "description": "Compara los cambios de las constituciones dominicanas de 1963–2010 expresamente proporcionadas mediante dimensiones comunes y sus textos históricos. No impongas todas las constituciones ni afirmes vigencia actual.",
+      "requiredKeys": [
+        "constitutional-comparison"
+      ],
+      "sourceRecordIds": [
+        "9d09952a-374c-5aa3-bbcf-373c1cdbf295"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "national-international-solution-project",
+      "family": "CIVIC_PROJECT_PLAN",
+      "description": "Elabora un proyecto de solución al problema nacional o internacional ficticio indicado: explica propósito, acciones, recursos dados y evidencias de seguimiento. No presentes ejecución real ni inventes contactos con instituciones.",
+      "requiredKeys": [
+        "project-purpose",
+        "project-actions",
+        "project-follow-up"
+      ],
+      "sourceRecordIds": [
+        "297d5a87-5512-52db-8551-56a63535fd11"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "identity-historical-reflection-analysis",
+      "family": "IDENTITY_SOURCE_ANALYSIS",
+      "description": "Analiza el contexto histórico de las reflexiones sobre identidad dominicana de los textos dados, relacionando autores, argumentos y condiciones. No evalúes la identidad privada ni exijas patriotismo.",
+      "requiredKeys": [
+        "perspectives",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "2083d074-5ed2-5bd8-bf70-961772f6b063"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "national-symbol-figure-research",
+      "family": "SYMBOL_FIGURE_RESEARCH",
+      "description": "Investiga en las fuentes dadas las personalidades históricas expresamente indicadas en la creación y desarrollo de los símbolos patrios, conservando hechos, autoría y contexto. No inventes biografías ni exijas adhesión patriótica.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "8e9883a8-a07f-5746-976a-e0fd72fb37fa"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "sovereignty-identity-creative-alternative",
+      "family": "CULTURAL_CREATION_ALTERNATIVE",
+      "description": "Crea un poema, una canción o una composición literaria, a elección, sobre la importancia de soberanía e identidad nacional del caso histórico trabajado, relacionando las decisiones expresivas con su sentido. No exijas las tres formas ni califiques talento avanzado o sentimientos patrióticos.",
+      "requiredKeys": [
+        "cultural-alternative"
+      ],
+      "sourceRecordIds": [
+        "abd3580e-00c1-5a0b-8e41-e10d8becac4e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "national-symbol-cultural-fair-plan",
+      "family": "CULTURAL_FAIR_PLAN",
+      "description": "Organiza el plan de una exposición o feria cultural escolar, a elección, sobre historia y significado de los emblemas nacionales indicados, relacionando contenidos, estaciones y recursos dados. No ejecutes una feria real ni exijas materiales costosos.",
+      "requiredKeys": [
+        "cultural-fair-plan"
+      ],
+      "sourceRecordIds": [
+        "c895b4de-bf76-51e6-9536-9df9ceffda24"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "duarte-nation-constitution-analysis",
+      "family": "DUARTE_PROJECT_ANALYSIS",
+      "description": "Explica el proyecto de nación de Duarte y su relación con la Constitución según los documentos del ejercicio, distinguiendo propuestas, condiciones e interpretación histórica. No atribuyas vigencia actual ni exijas adhesión.",
+      "requiredKeys": [
+        "duarte-project-relations"
+      ],
+      "sourceRecordIds": [
+        "dfdaac26-0302-534d-a25d-f7aa75aaaecd"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "bosch-liberal-democratic-project",
+      "family": "BOSCH_PROJECT_ANALYSIS",
+      "description": "Explica los planteamientos del proyecto liberal democrático de Bosch expresamente indicados y sus relaciones con el caso y texto proporcionados. No conviertas el proyecto en una evaluación de todos sus gobiernos ni impongas una preferencia partidaria.",
+      "requiredKeys": [
+        "political-project-relations"
+      ],
+      "sourceRecordIds": [
+        "4274a005-e488-5ea3-941c-22df8816f32a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "conservative-neoliberalism-analysis",
+      "family": "POLITICAL_THEORY_ANALYSIS",
+      "description": "Explica los planteamientos de neoliberalismo conservador de los textos dados, relacionando sus propuestas y supuestos con el caso examinado. No exijas adhesión ideológica ni inventes efectos actuales.",
+      "requiredKeys": [
+        "theory-relations"
+      ],
+      "sourceRecordIds": [
+        "6ad9391c-ac6d-551c-9582-67b3daf5f0c8"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "democracy-project-reflection",
+      "family": "DEMOCRATIC_PROJECT_REFLECTION",
+      "description": "Analiza el proyecto nacional y Estado democrático del caso ficticio y explica cómo sus prácticas se relacionan con la democracia como forma de vida social mediante los hechos dados. No califiques la supuesta moralidad ni preferencias políticas privadas.",
+      "requiredKeys": [
+        "democratic-project-relations"
+      ],
+      "sourceRecordIds": [
+        "4d234d5e-6459-55df-9afe-88e810352ebf",
+        "5bc8ba95-44a0-5239-8b1d-c386746ccdb8"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "democratic-government-function-simulation",
+      "family": "GOVERNMENT_ROLE_SIMULATION",
+      "description": "Simula las acciones y funciones democráticas del rol de gobierno nacional o local indicado, manteniendo competencias, reglas y límites del caso ficticio. No exijas ambos niveles ni atribuyas facultades ausentes.",
+      "requiredKeys": [
+        "government-role"
+      ],
+      "sourceRecordIds": [
+        "c976a6d8-faa4-5f1e-8efe-ae60f227aab2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "equality-inclusion-case-identification",
+      "family": "EQUALITY_CASE_IDENTIFICATION",
+      "description": "Identifica situaciones de igualdad, diversidad, inclusión y exclusión en los casos ficticios proporcionados, explicando las evidencias y condiciones que permiten distinguirlas. No indagues vivencias privadas ni atribuyas características a grupos enteros.",
+      "requiredKeys": [
+        "equality-evidence"
+      ],
+      "sourceRecordIds": [
+        "95ba423d-b5ea-55f9-bbad-fd14ffc26b25"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "democratic-practice-argument",
+      "family": "DEMOCRATIC_PRACTICE_ARGUMENT",
+      "description": "Caracteriza y argumenta sobre las prácticas democráticas y no democráticas de los casos nacionales y municipales ficticios dados, relacionando criterios, hechos y razones. No impongas unanimidad ni una postura partidaria.",
+      "requiredKeys": [
+        "democratic-practice-relations",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "e055765b-0327-53ac-aa14-c24e1b52dad6",
+        "cd28101c-c88f-5556-8a7c-c2c9e2107bb2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "legal-order-social-project-distinction",
+      "family": "NORM_PROJECT_DISTINCTION",
+      "description": "Distingue el ordenamiento jurídico y los proyectos sociales expresados en los documentos proporcionados, relacionando sus disposiciones, propósitos y contextos sin confundir norma y aspiración. No resuelvas un litigio real ni inventes vigencia.",
+      "requiredKeys": [
+        "norm-project-distinction"
+      ],
+      "sourceRecordIds": [
+        "114d65bf-5615-5352-8636-73644442f99d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "conflict-solution-proposal",
+      "family": "CONFLICT_PROPOSAL",
+      "description": "Elabora propuestas de solución para el conflicto ficticio indicado, relacionando necesidades, derechos, acciones y condiciones del caso y explicando su viabilidad. No fuerces acuerdo ni reveles experiencias familiares.",
+      "requiredKeys": [
+        "proposal"
+      ],
+      "sourceRecordIds": [
+        "13a28020-fefb-5345-85fa-8289a089a25d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "road-tax-norm-project",
+      "family": "ROAD_TAX_PROJECT",
+      "description": "Elabora un proyecto educativo para el cumplimiento de las normas viales y tributarias proporcionadas en el caso ficticio, diferenciando propósito, acciones y seguimiento previsto. No calcules impuestos personales ni ejecutes intervenciones reales.",
+      "requiredKeys": [
+        "project-purpose",
+        "project-actions",
+        "project-follow-up"
+      ],
+      "sourceRecordIds": [
+        "9848e813-56e3-5eed-a4a6-b448324d71cb"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "road-awareness-campaign-simulation",
+      "family": "ROAD_CAMPAIGN_SIMULATION",
+      "description": "Simula una campaña de concienciación vial para los destinatarios ficticios del caso escolar, comunicando las orientaciones dadas y respondiendo sus preguntas. No salgas al tránsito real ni contactes a otras personas.",
+      "requiredKeys": [
+        "campaign-communication"
+      ],
+      "sourceRecordIds": [
+        "9b600e67-fe54-5545-b479-001ef3165088"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "universal-value-convivence-analysis",
+      "family": "CONVIVENCE_ANALYSIS",
+      "description": "Analiza la importancia de los valores universales expresamente indicados para la convivencia del caso ficticio, relacionando decisiones, condiciones y derechos con las evidencias dadas. No califiques fe, sentimientos o supuesta moralidad personal.",
+      "requiredKeys": [
+        "convivence-relations"
+      ],
+      "sourceRecordIds": [
+        "0a9549af-4856-59b1-b5f1-0e63d19523af"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "historical-map-1916-1930",
+      "family": "HISTORICAL_MAP_READING",
+      "description": "Analiza los mapas e informaciones históricas proporcionados sobre ocupación de 1916–1924 y cambios de 1924–1930 expresamente indicados, conservando referencias, períodos y límites de sus evidencias. No dibujes otro mapa ni añadas la dictadura posterior.",
+      "requiredKeys": [
+        "historical-map-evidence"
+      ],
+      "sourceRecordIds": [
+        "f12a13a9-9bd2-51ef-8179-68871379f11f"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "national-history-timeline",
+      "family": "NATIONAL_HISTORY_TIMELINE",
+      "description": "Elabora una línea de tiempo de los acontecimientos dominicanos desde 1916 hasta la fecha del material expresamente incluidos en los registros del ejercicio. Conserva secuencia, simultaneidad y referencias. No inventes una lista de gobiernos actuales ni exijas todos los hechos del período.",
+      "requiredKeys": [
+        "sequence"
+      ],
+      "sourceRecordIds": [
+        "7aea14fb-77b0-56ed-923b-31692d0e867c"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "historian-text-comparison",
+      "family": "HISTORIAN_COMPARISON",
+      "description": "Compara críticamente los textos de historiadores proporcionados sobre los períodos dominicanos indicados mediante dimensiones sociales, políticas y económicas comunes, conservando autores, contextos y evidencias. No impongas todos los períodos ni una interpretación obligatoria.",
+      "requiredKeys": [
+        "historian-comparison"
+      ],
+      "sourceRecordIds": [
+        "2e6aff33-7886-578b-a9da-ea984529a07d"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "supply-demand-graph-statistics",
+      "family": "ECONOMIC_GRAPH_ANALYSIS",
+      "description": "Analiza los gráficos y datos estadísticos de oferta y demanda dominicanos del período dado, conservando ejes, unidades, curvas y supuestos para explicar sus cambios. No inventes precios actuales ni recomiendes inversiones.",
+      "requiredKeys": [
+        "supply-demand-graph"
+      ],
+      "sourceRecordIds": [
+        "74b7c141-138e-5d97-aeb2-d94f8cd8a084"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "national-account-study-comparison",
+      "family": "NATIONAL_ACCOUNTS_COMPARISON",
+      "description": "Compara los estudios proporcionados sobre Producto Nacional Bruto y Producto Interior Neto, conservando sus definiciones, magnitudes, unidades y períodos al valorar la relación con el equilibrio monetario del caso. No sustituyas Interior por Nacional ni inventes cifras.",
+      "requiredKeys": [
+        "national-account-comparison"
+      ],
+      "sourceRecordIds": [
+        "f372a708-71a5-5327-82c6-a50f382d9e21"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "post-1961-source-evolution",
+      "family": "HISTORICAL_EVOLUTION_ANALYSIS",
+      "description": "Utiliza las fuentes sociales, políticas y económicas proporcionadas para analizar la evolución dominicana desde 1961 hasta la fecha del material en los aspectos solicitados, relacionando cambios y continuidades con sus evidencias. No actualices hechos sin fuentes.",
+      "requiredKeys": [
+        "historical-evolution"
+      ],
+      "sourceRecordIds": [
+        "dd02b352-f730-5973-abab-a564cb375f52"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "population-development-essay-alternative",
+      "family": "GROWTH_DEVELOPMENT_WRITING",
+      "description": "Redacta un ensayo o una monografía, a elección, sobre las implicaciones del crecimiento poblacional y económico y las variantes de desarrollo dominicano desde 1950 examinadas en los datos dados. Relaciona hechos, argumentos y alcance. No exijas ambos textos ni una teoría obligatoria.",
+      "requiredKeys": [
+        "growth-development-text"
+      ],
+      "sourceRecordIds": [
+        "a71b5289-0a6d-5e3b-aa33-dc76fb10f447"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "coup-triumvirate-april-balaguer-relations",
+      "family": "TRANSITION_RELATIONS_ANALYSIS",
+      "description": "Analiza la relación entre el golpe a Bosch, el Triunvirato y Abril de 1965 y su impacto en los doce años de Balaguer según las fuentes dadas, distinguiendo sucesión, causas y consecuencias respaldadas. No inventes una explicación causal única.",
+      "requiredKeys": [
+        "transition-relations"
+      ],
+      "sourceRecordIds": [
+        "0d107052-1b3a-55a3-8bae-69ee90cbed98"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "environment-climate-project",
+      "family": "ENVIRONMENT_CLIMATE_PROJECT",
+      "description": "Elabora un proyecto para el problema global ficticio de deterioro ambiental y cambio climático indicado: relaciona propósito, acciones, recursos dados y evidencias previstas con sus condiciones. No inventes mediciones ni afirmes ejecución.",
+      "requiredKeys": [
+        "project-purpose",
+        "project-actions",
+        "project-follow-up"
+      ],
+      "sourceRecordIds": [
+        "cec64882-4a0f-5426-ab25-93730ece13cd"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "water-access-argument",
+      "family": "WATER_ACCESS_ARGUMENT",
+      "description": "Argumenta oralmente sobre los desafíos de acceso al agua expresamente examinados en los datos del caso, relacionando deforestación, sequía, distribución, riego, contaminación o desperdicio cuando correspondan. No exijas todos los problemas ni inventes caudales.",
+      "requiredKeys": [
+        "argument",
+        "oral"
+      ],
+      "sourceRecordIds": [
+        "9034bbe4-fdc9-5058-83a3-1578d1021d2c",
+        "0b985350-e668-546c-b32b-3c6408f4175d"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "migration-study-synthesis-proposal",
+      "family": "MIGRATION_DATA_SYNTHESIS",
+      "description": "Sintetiza los datos anónimos y ficticios de encuestas y estudios migratorios proporcionados y propone soluciones viables para las condiciones del caso, conservando procedencia, fecha y límites de sus inferencias. No recopiles datos propios ni discrimines nacionalidades.",
+      "requiredKeys": [
+        "migration-data-synthesis",
+        "proposal"
+      ],
+      "sourceRecordIds": [
+        "d548226d-db60-5202-81ac-c6849e8c23fa"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "duarte-project-comparison",
+      "family": "CONSTITUTIONAL_PROJECT_COMPARISON",
+      "description": "Compara el proyecto constitucional de Duarte y los proyectos liberales y conservadores del siglo XIX expresamente proporcionados mediante dimensiones comunes, vinculando sus propuestas con las condiciones e impactos sociales y económicos dados. No impongas otros textos ni vigencia actual.",
+      "requiredKeys": [
+        "constitutional-project-comparison"
+      ],
+      "sourceRecordIds": [
+        "6fda3de8-b8cf-59dc-a3d7-778c573bb9a4",
+        "621842dc-99aa-5ed9-b019-3d6aec88130f"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "identity-reading-summary",
+      "family": "IDENTITY_READING_SUMMARY",
+      "description": "Elabora un resumen de las fuentes dadas sobre identidad dominicana desde el siglo XIX hasta la fecha del material, relacionando ideas principales y proyectos de nación con su procedencia. No reveles identidad privada ni exijas adhesión patriótica.",
+      "requiredKeys": [
+        "identity-summary",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "1cacf6d7-cab9-5aba-878a-48347ab51de3"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "school-civic-campaign-design",
+      "family": "CIVIC_CAMPAIGN_PLAN",
+      "description": "Diseña una campaña escolar simulada sobre los derechos, normas constitucionales o símbolos patrios expresamente indicados para el destinatario ficticio del caso, relacionando mensaje, acciones y recursos dados. No exijas todos los temas ni ejecutes contactos externos.",
+      "requiredKeys": [
+        "campaign-message",
+        "campaign-actions"
+      ],
+      "sourceRecordIds": [
+        "e60d21f1-e605-5d36-8475-d2c2b9f316a4"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "collaborative-conflict-negotiation",
+      "family": "COLLABORATIVE_NEGOTIATION",
+      "description": "Participa en el diálogo constructivo y negociación colaborativa del conflicto académico ficticio: expresa razones, reformula las necesidades de las otras partes y registra acuerdos o desacuerdos justificados con los criterios dados. No impongas consenso ni uses vivencias privadas.",
+      "requiredKeys": [
+        "dialogue-contributions",
+        "negotiation-alternatives"
+      ],
+      "sourceRecordIds": [
+        "b59e5586-93e0-5e46-be87-cb6ac1a04a4f"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    },
+    {
+      "id": "academic-conflict-natural-wording",
+      "family": "CONFLICT_PROPOSAL",
+      "description": "Analiza el caso ficticio de un conflicto académico y elabora propuestas de solución, relacionando necesidades, derechos, acciones y condiciones del caso. Justifica la decisión elegida y explica su viabilidad. No uses vivencias privadas ni impongas consenso.",
+      "requiredKeys": [
+        "proposal",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "13a28020-fefb-5345-85fa-8289a089a25d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "caligrafía|portada obligatoria|visita obligatoria|datos personales reales"
+    }
+  ]
+}

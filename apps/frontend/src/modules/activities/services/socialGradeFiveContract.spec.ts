@@ -28,6 +28,6 @@ describe('Sociales quinto: instrumento completo y controles compartidos',()=>{
  it('mantiene el límite de nivel, grado no implementado y optativa',()=>{
   const description='Analiza las causas de la división de la isla de Santo Domingo en dos colonias con las fuentes dadas.'
   expect(resolveCommonSocialTask('',description,context)).not.toBeNull()
-  for(const c of [{...context,level:'PRIMARY' as const},{...context,grade:6},{...context,subjectCode:'OPT-HCS-SOC'},{...context,optativeExitName:'Humanidades'}])expect(resolveCommonSocialTask('',description,c)).toBeNull()
+  for(const c of [{...context,level:'PRIMARY' as const},{...context,grade:7},{...context,subjectCode:'OPT-HCS-SOC'},{...context,optativeExitName:'Humanidades'}])expect(resolveCommonSocialTask('',description,c)).toBeNull()
  })
 })

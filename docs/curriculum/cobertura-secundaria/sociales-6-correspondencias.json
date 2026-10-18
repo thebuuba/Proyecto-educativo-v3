@@ -1,0 +1,438 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 6,
+  "scopeId": "53a654b4-d709-5c0d-9faa-9586c1ee2f60",
+  "method": "MANUAL_SEMANTIC_SOURCE_GROUPING_NOT_FULL_ACTION_COVERAGE",
+  "topicRecords": {
+    "dominican-position": [
+      "86acb921",
+      "e39f6a0f"
+    ],
+    "dominican-boundaries": [
+      "c1b85455",
+      "8aa286cc"
+    ],
+    "political-administration": [
+      "d46f51a9",
+      "e280a1a2"
+    ],
+    "mountains-climate-soils": [
+      "87c8e8e7",
+      "af8f2358"
+    ],
+    "valleys-plains": [
+      "8050f38f",
+      "321353f0"
+    ],
+    "coastal-relief": [
+      "c7321f9f",
+      "376aa32b"
+    ],
+    "coastal-marine-ecosystems": [
+      "e9b9f81f",
+      "376aa32b"
+    ],
+    "agroforestry-systems": [
+      "42e1e600",
+      "eb93f9ba",
+      "745c9651"
+    ],
+    "protected-areas-system": [
+      "af2db69e",
+      "e60f1c02",
+      "703dce14",
+      "43c556f7"
+    ],
+    "protected-areas-law": [
+      "976832ad",
+      "e60f1c02"
+    ],
+    "renewable-energy-norms": [
+      "70f793cb",
+      "e60f1c02"
+    ],
+    "environmental-project": [
+      "f786cab4",
+      "43c556f7",
+      "297d5a87"
+    ],
+    "hydrographic-basins": [
+      "bec1abc5"
+    ],
+    "marine-fluvial-runoff": [
+      "8e08673d"
+    ],
+    "aquifer-system": [
+      "5953e6a3"
+    ],
+    "drought-agriculture": [
+      "84cd1c0b"
+    ],
+    "digital-repositories": [
+      "b4d3e26b",
+      "04b0f9ac",
+      "2514a4e4"
+    ],
+    "national-official-sources": [
+      "351562ad"
+    ],
+    "international-official-sources": [
+      "652111f8"
+    ],
+    "population-problems": [
+      "4873784a"
+    ],
+    "water-access": [
+      "6fb040ce",
+      "fe0337d7"
+    ],
+    "source-similarity-review": [
+      "bd6c66b1"
+    ],
+    "natural-resource-research": [
+      "380f4008"
+    ],
+    "agrochemical-impact": [
+      "41972723",
+      "074519a2"
+    ],
+    "forestry-mining-impact": [
+      "2f63d0b0",
+      "074519a2",
+      "380f4008"
+    ],
+    "demographic-rates": [
+      "365500d3",
+      "31f52857"
+    ],
+    "demographic-evolution": [
+      "4df6d424"
+    ],
+    "urban-rural-growth": [
+      "95236162",
+      "d58e3300"
+    ],
+    "population-pyramid": [
+      "9813aba1",
+      "511b9b1c"
+    ],
+    "migration-movements": [
+      "d4f9b4af",
+      "e92a7a57",
+      "d2fac1d1"
+    ],
+    "migration-norms": [
+      "09d5f94c"
+    ],
+    "agricultural-systems": [
+      "16e514aa"
+    ],
+    "economic-sectors": [
+      "6588ee77",
+      "4f3928c0",
+      "54385153"
+    ],
+    "transport-production-trade": [
+      "7042b0ce"
+    ],
+    "export-products": [
+      "321d739c"
+    ],
+    "border-markets": [
+      "03ba1d3d",
+      "f042ffe6"
+    ],
+    "modern-dominican-trade": [
+      "2a170619"
+    ],
+    "economic-policy-sovereignty": [
+      "23a6aa27"
+    ],
+    "cooperatives": [
+      "142da12f"
+    ],
+    "insurance-reinsurance": [
+      "142da12f"
+    ],
+    "pension-system": [
+      "142da12f"
+    ],
+    "national-products": [
+      "15fc703e"
+    ],
+    "supply-demand": [
+      "05fc3b62",
+      "2649aec1"
+    ],
+    "public-external-sector": [
+      "ed9610c8"
+    ],
+    "international-debt": [
+      "76cd5dc1"
+    ],
+    "development-underdevelopment": [
+      "80804cf8",
+      "06dcbf1c"
+    ],
+    "economic-theories": [
+      "04b0f9ac"
+    ],
+    "border-agricultural-production": [
+      "d52e84b5"
+    ],
+    "sugar-sector": [
+      "b0c7c8a3"
+    ],
+    "social-survey-methods": [
+      "d14a9d89"
+    ],
+    "risk-zones": [
+      "5498aeb6",
+      "03460e8d"
+    ],
+    "occupation-1916-1924": [
+      "dc4d18f8",
+      "f4a1507c"
+    ],
+    "vasquez-government": [
+      "39ed1731"
+    ],
+    "political-crisis-1928": [
+      "af086950"
+    ],
+    "economic-crisis-1929": [
+      "27115ddc",
+      "f4a1507c"
+    ],
+    "trujillo-dictatorship": [
+      "27115ddc",
+      "f3e198ff",
+      "f4a1507c"
+    ],
+    "trujillo-monopoly": [
+      "b1204587"
+    ],
+    "propaganda-disinformation": [
+      "3e918954"
+    ],
+    "state-violence-1937": [
+      "9170e2cd"
+    ],
+    "cultural-religious-policy": [
+      "ad3cab18"
+    ],
+    "trujillo-foreign-policy": [
+      "d39f47ee",
+      "84ba2430"
+    ],
+    "trujillo-interim-governments": [
+      "49d544b6",
+      "d963eb4f"
+    ],
+    "dictatorship-resistance": [
+      "1c096ae3",
+      "c8a9e648"
+    ],
+    "regime-duration": [
+      "6b6c72e4"
+    ],
+    "dictatorship-end": [
+      "1fc69825",
+      "6b6c72e4",
+      "58592a80"
+    ],
+    "democratic-struggles": [
+      "1fc69825",
+      "53fa463f",
+      "d963eb4f"
+    ],
+    "trujillismo-legacy": [
+      "177bed43"
+    ],
+    "political-parties": [
+      "90d140c5"
+    ],
+    "bosch-government": [
+      "7dee0cbb",
+      "58592a80"
+    ],
+    "coup-1963": [
+      "2a318e1f",
+      "58592a80"
+    ],
+    "triumvirate": [
+      "973bc11b"
+    ],
+    "april-revolution-1965": [
+      "21f9d172",
+      "58592a80",
+      "062be8ad",
+      "082ae763"
+    ],
+    "national-reconstruction-government": [
+      "9b7d5673"
+    ],
+    "political-economic-changes-1966-2004": [
+      "464add00"
+    ],
+    "godoy-government": [
+      "8fa9b840",
+      "8f1f017d"
+    ],
+    "balaguer-twelve-years": [
+      "518e2dd8",
+      "b276af3d",
+      "082ae763"
+    ],
+    "political-alternation-1978": [
+      "37416751",
+      "343af34a"
+    ],
+    "guzman-government": [
+      "37416751"
+    ],
+    "jorge-blanco-government": [
+      "f415e846"
+    ],
+    "majluta-government": [
+      "208fbe6c"
+    ],
+    "global-context-1989": [
+      "d0357877"
+    ],
+    "environmental-degradation": [
+      "fede43ab",
+      "fe0337d7",
+      "e769bbbf"
+    ],
+    "party-governments-2000-2010": [
+      "755db07d"
+    ],
+    "governments-since-1978": [
+      "343af34a",
+      "3682b885"
+    ],
+    "society-twenty-first-century": [
+      "3682b885",
+      "d1efbd42",
+      "b7d615f7",
+      "4aa1b06a",
+      "681814f4",
+      "9d09952a"
+    ],
+    "constitutional-changes-1963-2010": [
+      "59bae1cc",
+      "9d09952a"
+    ],
+    "national-project-solutions": [
+      "297d5a87"
+    ],
+    "national-identity": [
+      "c4da6c9a",
+      "f60212c2",
+      "2083d074"
+    ],
+    "national-symbols": [
+      "610f04db",
+      "8e9883a8",
+      "c895b4de"
+    ],
+    "sovereignty-identity-creation": [
+      "abd3580e"
+    ],
+    "duarte-constitutional-project": [
+      "31b82630",
+      "dfdaac26"
+    ],
+    "nation-project-ideologies": [
+      "c2f5f5d8"
+    ],
+    "bosch-democratic-project": [
+      "7dee0cbb",
+      "4274a005"
+    ],
+    "conservative-neoliberalism": [
+      "6ad9391c"
+    ],
+    "democracy-national-project": [
+      "0b799268",
+      "4d234d5e",
+      "5bc8ba95"
+    ],
+    "democratic-government-simulation": [
+      "c976a6d8"
+    ],
+    "equality-diversity-inclusion": [
+      "95ba423d"
+    ],
+    "democratic-practices": [
+      "e055765b",
+      "cd28101c"
+    ],
+    "legal-social-projects": [
+      "114d65bf"
+    ],
+    "conflict-solutions": [
+      "36651508",
+      "6a24168c",
+      "e745f952",
+      "13a28020"
+    ],
+    "universal-values": [
+      "e745f952",
+      "0a9549af"
+    ],
+    "road-safety": [
+      "77f64cd8",
+      "c6ba9f49",
+      "9848e813",
+      "9b600e67"
+    ],
+    "tax-education": [
+      "8864a43b",
+      "9848e813"
+    ],
+    "social-family-violence": [
+      "5ad67915"
+    ]
+  },
+  "indicatorTopicRecords": {
+    "historical-sequence": [
+      "7aea14fb"
+    ],
+    "historian-comparison": [
+      "2e6aff33"
+    ],
+    "historical-evolution-since-1961": [
+      "dd02b352"
+    ],
+    "national-accounts-comparison": [
+      "f372a708"
+    ],
+    "growth-development-analysis": [
+      "a71b5289"
+    ],
+    "migration-solutions": [
+      "d548226d"
+    ],
+    "nation-projects-comparison": [
+      "6fda3de8",
+      "621842dc"
+    ],
+    "civic-campaign": [
+      "e60d21f1"
+    ],
+    "dialogue-negotiation": [
+      "b59e5586"
+    ]
+  },
+  "limits": [
+    "Grupos semánticos no acreditan todas las acciones y condiciones de filas compuestas; conservar tipos literales e indicadores separados.",
+    "República Dominicana e isla de Santo Domingo no son espacios equivalentes ni se imponen ambos por contexto.",
+    "Los encabezados no son otros desempeños; las enumeraciones de sociedad del sigloXXI dependen de su enunciado y las repeticiones democráticas no duplican criterios.",
+    "Ley67-00 y el nombre conceptual GodoCáceres coinciden con imágenes277/278; se conserva el literal sin afirmar vigencia ni corregir silenciosamente. El procedimiento solicita gobierno deGodoy.",
+    "ProductoNacionalBruto/Neto conceptual y ProductoNacionalBruto/InteriorNeto del indicador se conservan como objetos distintos.",
+    "Hasta la actualidad es un alcance curricular, no permiso para inventar gobiernos, estadísticas, normas, precios o efectos actuales.",
+    "No se califican preocupación, patriotismo, identidad privada, fe, moralidad o experiencias familiares; casos y datos QA no acreditan campo, campañas, encuestas o contacto real."
+  ]
+}
