@@ -42,7 +42,8 @@ describe('copia completa del diseño de ajustes', () => {
     expect(screen.getByRole('button',{name:'Reciente'})).toBeInTheDocument()
     expect(screen.getByRole('button',{name:'Detalles'})).toBeInTheDocument()
     expect(screen.getByTestId('payment-card-empty')).toBeInTheDocument()
-    expect(screen.getByRole('button',{name:'Recargar'})).toBeDisabled()
+    expect(screen.queryByRole('button',{name:'Recargar'})).not.toBeInTheDocument()
+    expect(screen.getByRole('button',{name:'Gestionar método de pago'})).toBeDisabled()
   })
 
   it('conserva los campos del perfil y las selecciones académicas de la referencia', async () => {

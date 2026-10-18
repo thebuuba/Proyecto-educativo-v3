@@ -53,9 +53,9 @@ function SubscriptionPreferencesCard({
   ]
   return (
     <section className="space-y-5 rounded-3xl bg-card p-5 shadow-xs sm:p-6">
-      <h2 className="text-lg font-bold tracking-tight">{'Preferencias de suscripción'}</h2>
+      <h2 className="text-lg font-semibold tracking-tight">{'Preferencias de suscripción'}</h2>
       <div className="space-y-1">
-        {prefs.map((p) => (
+        {prefs.filter(p => p.checked != null || p.onChange).map((p) => (
           <label
             key={p.id}
             htmlFor={p.id}
@@ -79,7 +79,7 @@ function SubscriptionPreferencesCard({
           {planName ? 'Consulta las condiciones y la cobertura vigente antes de gestionar tu suscripción.' : 'No hay una suscripción registrada.'}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Button
+          {onPause && <Button
             variant="outline"
             size="sm"
             className="h-9 rounded-xl bg-card font-semibold"
@@ -88,8 +88,8 @@ function SubscriptionPreferencesCard({
           >
             <CirclePause className="mr-1.5 h-4 w-4" />
             {'Pausar 1 mes'}
-          </Button>
-          <AlertDialog2>
+          </Button>}
+          {onCancel && <AlertDialog2>
             <AlertDialogTrigger2 asChild={true}>
               <Button
                 variant="ghost"
@@ -98,12 +98,12 @@ function SubscriptionPreferencesCard({
                 className="h-9 rounded-xl font-semibold text-destructive hover:bg-destructive/10 hover:text-destructive"
               >
                 <CircleX className="mr-1.5 h-4 w-4" />
-                {'Cancelar suscripción'}
+                {'Cancelar renovación'}
               </Button>
             </AlertDialogTrigger2>
             <AlertDialogContent2 className="rounded-3xl">
               <AlertDialogHeader>
-                <AlertDialogTitle2>{'¿Cancelar tu suscripción?'}</AlertDialogTitle2>
+                <AlertDialogTitle2>{'¿Cancelar la renovación?'}</AlertDialogTitle2>
                 <AlertDialogDescription2>
                   {'Se detendrá la renovación automática. La cobertura actual seguirá vigente hasta el final del período informado por el servidor: '}{nextBillingDate ?? '—'}{'.'}
                 </AlertDialogDescription2>
@@ -120,7 +120,7 @@ function SubscriptionPreferencesCard({
                 </AlertDialogAction2>
               </AlertDialogFooter>
             </AlertDialogContent2>
-          </AlertDialog2>
+          </AlertDialog2>}
         </div>
       </div>
     </section>

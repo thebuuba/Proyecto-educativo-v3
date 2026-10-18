@@ -8,29 +8,29 @@ import { formatCurrency } from '../data/format-currency'
 var typeMeta = {
   subscription: {
     icon: Crown,
-    tint: 'bg-sky-100 text-sky-600 dark:bg-sky-500/15 dark:text-sky-400',
+    tint: 'bg-primary/10 text-primary',
   },
   course: {
     icon: BookOpen,
-    tint: 'bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-400',
+    tint: 'bg-warning/15 text-foreground',
   },
   certificate: {
     icon: Award,
-    tint: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-400',
+    tint: 'bg-success/10 text-foreground',
   },
   refund: {
     icon: Undo2,
-    tint: 'bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-400',
+    tint: 'bg-muted text-muted-foreground',
   },
 }
 var statusMeta = {
   paid: {
     label: 'Pagada',
-    className: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-400',
+    className: 'bg-success/10 text-foreground',
   },
   pending: {
     label: 'Pendiente',
-    className: 'bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-400',
+    className: 'bg-warning/15 text-foreground',
   },
   failed: {
     label: 'Fallida',
@@ -38,7 +38,7 @@ var statusMeta = {
   },
   refunded: {
     label: 'Reembolsada',
-    className: 'bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-400',
+    className: 'bg-muted text-muted-foreground',
   },
 }
 var filters = [
@@ -56,7 +56,7 @@ function InvoiceHistoryTable({ invoices, onDownload, onRetry, onSeeAll }) {
   return (
     <section className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h2 className="text-xl font-bold tracking-tight">{'Historial de facturas'}</h2>
+        <h2 className="text-xl font-semibold tracking-tight">{'Historial de facturas'}</h2>
         <button
           type="button"
           onClick={() => { setFilter('all'); onSeeAll?.() }}
@@ -83,7 +83,7 @@ function InvoiceHistoryTable({ invoices, onDownload, onRetry, onSeeAll }) {
                 )}
               >
                 {f.label}
-                <span className="ml-1.5 rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-bold text-muted-foreground">
+                <span className="ml-1.5 rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-semibold text-muted-foreground">
                   {count}
                 </span>
               </button>
@@ -152,7 +152,7 @@ function InvoiceHistoryTable({ invoices, onDownload, onRetry, onSeeAll }) {
                   </span>
                   <span
                     className={cn(
-                      'text-right text-sm font-bold tabular-nums',
+                      'text-right text-sm font-semibold tabular-nums',
                       invoice.type === 'refund' && 'text-violet-600 dark:text-violet-400',
                     )}
                   >
@@ -162,7 +162,7 @@ function InvoiceHistoryTable({ invoices, onDownload, onRetry, onSeeAll }) {
                   <span className="flex items-center gap-2 text-xs text-muted-foreground md:block">
                     <span
                       className={cn(
-                        'inline-flex rounded-lg px-2 py-1 text-[11px] font-bold',
+                        'inline-flex rounded-lg px-2 py-1 text-[11px] font-semibold',
                         status.className,
                       )}
                     >

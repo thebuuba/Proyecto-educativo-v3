@@ -171,9 +171,11 @@ describe('panel de ajustes con el diseño de referencia', () => {
       ]) {
         expect(screen.queryByRole('link', { name })).not.toBeInTheDocument()
       }
-      expect(
-        screen.queryByRole('heading', { name: 'Configuraci\u00f3n', hidden: true }),
-      ).not.toBeInTheDocument()
+      if (section === 'suscripcion') {
+        expect(screen.getByRole('heading', { name: 'Configuraci\u00f3n' })).toBeInTheDocument()
+      } else {
+        expect(screen.queryByRole('heading', { name: 'Configuraci\u00f3n', hidden: true })).not.toBeInTheDocument()
+      }
       expect(useSchoolAdministration).not.toHaveBeenCalled()
     },
   )
@@ -202,11 +204,11 @@ describe('panel de ajustes con el diseño de referencia', () => {
         <SchoolAdministrationPage />
       </MemoryRouter>,
     )
-    expect(screen.getByRole('heading', { name: 'Pagos y suscripciones' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Configuraci\u00f3n' })).toBeInTheDocument()
     await user.click(screen.getByRole('link', { name: 'Perfil' }))
     expect(await screen.findByLabelText('Nombre completo', { exact: true })).toBeInTheDocument()
     await user.click(screen.getByRole('link', { name: 'Seguridad' }))
-    expect(screen.getByRole('heading', { name: 'Dispositivos conectados' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Recuperaci\u00f3n y alertas' })).toBeInTheDocument()
     await user.click(screen.getByRole('link', { name: 'Notificaciones' }))
     expect(screen.getByRole('heading', { name: 'Qué quieres recibir' })).toBeInTheDocument()
     await user.click(screen.getByRole('link', { name: 'Privacidad' }))
@@ -214,19 +216,17 @@ describe('panel de ajustes con el diseño de referencia', () => {
     expect(screen.queryByRole('link', { name: 'Centro educativo' })).not.toBeInTheDocument()
   })
 
-  it('conserva la gestión conectada de los pagos al abrirla expresamente', async () => {
+  it('integra los pagos sin desplegable ni panel antiguo de suscripción', async () => {
     state.loading = true
     state.profile = null
-    const user = userEvent.setup()
     render(
       <MemoryRouter initialEntries={['/configuracion?tab=suscripcion']}>
         <SchoolAdministrationPage />
       </MemoryRouter>,
     )
     expect(screen.queryByTestId('billing-page')).not.toBeInTheDocument()
-    await user.click(screen.getByText('Gestionar los pagos de mi cuenta de AulaBase'))
-    expect(await screen.findByTestId('billing-page')).toHaveTextContent(
-      'Suscripción integrada (embedded)',
-    )
+    expect(screen.getByRole('heading', { name: 'Planes de suscripción' })).toBeInTheDocument()
+    expect(screen.queryByText('Gestionar los pagos de mi cuenta de AulaBase')).not.toBeInTheDocument()
+    expect(document.querySelector('#connected-billing-management')).toBeNull()
   })
 })

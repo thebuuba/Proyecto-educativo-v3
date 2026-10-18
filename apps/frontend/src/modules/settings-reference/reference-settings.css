@@ -11,6 +11,11 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+.settings-reference-workspace .billing-settings-workspace,
+.settings-reference-workspace .billing-settings-workspace :is(h1, h2, h3) {
+  font-family: 'Poppins', sans-serif;
+}
+
 .settings-reference-workspace > :last-child {
   min-width: 0;
 }

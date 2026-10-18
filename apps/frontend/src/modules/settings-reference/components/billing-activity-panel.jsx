@@ -15,24 +15,24 @@ import { formatCurrency } from '../data/format-currency'
 var kindMeta = {
   payment: {
     icon: CircleCheck,
-    tint: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-400',
+    tint: 'bg-success/10 text-foreground',
   },
   renewal: {
     icon: RefreshCw,
-    tint: 'bg-sky-100 text-sky-600 dark:bg-sky-500/15 dark:text-sky-400',
+    tint: 'bg-primary/10 text-primary',
   },
   upgrade: {
     icon: ArrowUpRight,
-    tint: 'bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-400',
+    tint: 'bg-muted text-muted-foreground',
   },
   coupon: {
     icon: TicketPercent,
-    tint: 'bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-400',
+    tint: 'bg-warning/15 text-foreground',
   },
   failed: { icon: TriangleAlert, tint: 'bg-destructive/10 text-destructive' },
   refund: {
     icon: Undo2,
-    tint: 'bg-blue-100 text-blue-600 dark:bg-blue-500/15 dark:text-blue-400',
+    tint: 'bg-primary/10 text-primary',
   },
 }
 var tabs = [
@@ -52,19 +52,19 @@ function BillingActivityPanel({ groups, subscription, onOpen }) {
     { label: 'Plan', value: subscription.planName },
     { label: 'Miembro desde', value: subscription.startedAt },
     { label: 'Ciclo', value: subscription.cycle === 'monthly' ? 'Mensual' : subscription.cycle === 'yearly' ? 'Anual' : '—' },
-    { label: 'Próximo cobro', value: subscription.nextBillingDate },
+    { label: subscription.periodLabel ?? 'Fin de cobertura', value: subscription.nextBillingDate },
     { label: 'Importe', value: subscription.priceLabel ?? formatCurrency(subscription.price, subscription.currency) },
     { label: 'Renovación', value: subscription.autoRenew == null ? '—' : subscription.autoRenew ? 'Automática' : 'Sin renovación automática' },
   ]
   return (
     <aside className="flex h-full flex-col rounded-3xl bg-card p-5 shadow-xs sm:p-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-bold tracking-tight">{'Actividad'}</h2>
+        <h2 className="text-lg font-semibold tracking-tight">{'Actividad'}</h2>
         <button
           type="button"
           onClick={onOpen}
           disabled={!onOpen}
-          aria-label="Abrir actividad completa"
+          aria-label="Ver historial de pagos"
           className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted text-muted-foreground transition-colors hover:bg-accent hover:text-primary"
         >
           <ChevronRight className="h-4 w-4" />
@@ -101,7 +101,7 @@ function BillingActivityPanel({ groups, subscription, onOpen }) {
         </dl>
       ) : visibleGroups.length === 0 ? (
         <div className="mt-10 flex flex-col items-center gap-2 text-center">
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-400">
+          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-success/10 text-foreground">
             <CircleCheck className="h-5 w-5" />
           </span>
           <p className="text-sm font-semibold">{tab === 'alerts' ? 'No hay alertas registradas.' : 'No hay movimientos de pago registrados.'}</p>
@@ -168,7 +168,7 @@ function BillingActivityPanel({ groups, subscription, onOpen }) {
                         </div>
                         <p className="truncate text-xs text-muted-foreground">{item.description}</p>
                         {(item.amountLabel || item.amount !== undefined) && (
-                          <p className="mt-1 text-xs font-bold tabular-nums">
+                          <p className="mt-1 text-xs font-semibold tabular-nums">
                             {item.amountLabel ?? formatCurrency(item.amount, item.currency)}
                           </p>
                         )}
