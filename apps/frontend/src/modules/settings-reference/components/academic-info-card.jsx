@@ -1,6 +1,5 @@
 // Layout adapted from the user-provided Polymet design.
-import { Check, GraduationCap } from 'lucide-react'
-import { cn } from '@/utils/cn'
+import { GraduationCap } from 'lucide-react'
 import {
   Input,
   Label2,
@@ -11,22 +10,14 @@ import {
   SelectValue2,
 } from '../reference-ui'
 import { SettingsSectionCard } from './settings-section-card'
-import { allInterests, educationLevels, languages, timezones } from '../data/profile-catalogs'
+import { educationLevels, languages, timezones } from '../data/profile-catalogs'
 
 var fieldClass = 'h-11 rounded-xl bg-muted/50 border-transparent focus-visible:bg-card'
-function AcademicInfoCard({ values, onChange, onInterestsChange, maxInterests = 5 }) {
-  const toggleInterest = (interest) => {
-    const selected = values.interests.includes(interest)
-    if (selected) {
-      onInterestsChange(values.interests.filter((i) => i !== interest))
-    } else if (values.interests.length < maxInterests) {
-      onInterestsChange([...values.interests, interest])
-    }
-  }
+function AcademicInfoCard({ values, onChange }) {
   return (
     <SettingsSectionCard
       title="Perfil académico"
-      description="Tu institución, preferencias e intereses académicos."
+      description="Tu institución y preferencias académicas."
       icon={<GraduationCap className="h-5 w-5" />}
     >
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -95,41 +86,6 @@ function AcademicInfoCard({ values, onChange, onInterestsChange, maxInterests = 
               ))}
             </SelectContent2>
           </Select2>
-        </div>
-      </div>
-      <div className="mt-6">
-        <div className="flex items-center justify-between">
-          <p className="text-sm font-semibold">{'Áreas de interés'}</p>
-          <span className="text-xs text-muted-foreground">
-            {values.interests.length}
-            {'/'}
-            {maxInterests}
-            {' seleccionadas'}
-          </span>
-        </div>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {allInterests.map((interest) => {
-            const selected = values.interests.includes(interest)
-            const disabled = !selected && values.interests.length >= maxInterests
-            return (
-              <button
-                key={interest}
-                type="button"
-                disabled={disabled}
-                onClick={() => toggleInterest(interest)}
-                aria-pressed={selected}
-                className={cn(
-                  'flex items-center gap-1.5 rounded-xl border px-3 py-2 text-xs font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-40',
-                  selected
-                    ? 'border-primary bg-primary text-primary-foreground shadow-md shadow-primary/20'
-                    : 'border-border bg-card text-foreground/80 hover:border-primary/40',
-                )}
-              >
-                {selected && <Check className="h-3 w-3" strokeWidth={3} />}
-                {interest}
-              </button>
-            )
-          })}
         </div>
       </div>
     </SettingsSectionCard>

@@ -22,6 +22,8 @@ describe('perfil conectado', () => {
     expect(await screen.findByLabelText('Nombre completo')).toHaveValue('Ana Pérez')
     expect(screen.getByLabelText('Fecha de nacimiento')).toHaveValue('1999-04-18')
     expect(screen.getByLabelText('Institución educativa')).toHaveValue('Escuela real')
+    expect(screen.queryByText('Áreas de interés')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Ver perfil público · Próximamente' })).not.toBeInTheDocument()
     expect(screen.getByLabelText('Correo electrónico')).toHaveAttribute('readonly')
     expect(screen.queryByText('Verificado')).not.toBeInTheDocument()
     expect(screen.queryByText(/Ilham|Valencia|248/)).not.toBeInTheDocument()
