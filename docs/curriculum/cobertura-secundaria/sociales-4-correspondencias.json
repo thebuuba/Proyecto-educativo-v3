@@ -1,0 +1,349 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 4,
+  "scopeId": "76b12132-2d05-56b0-94a4-0519de84651a",
+  "method": "MANUAL_SEMANTIC_SOURCE_GROUPING_NOT_FULL_ACTION_COVERAGE",
+  "topicRecords": {
+    "social-methods": [
+      "94fb8f39"
+    ],
+    "solar-system": [
+      "1957cf7c"
+    ],
+    "earth-structure": [
+      "c5306ea6",
+      "5b08be68",
+      "fd08c6ca"
+    ],
+    "earth-shape": [
+      "03fb4897",
+      "b156ff64"
+    ],
+    "earth-movements": [
+      "e5824567"
+    ],
+    "earth-representation": [
+      "ae1a8bb1",
+      "24d07684"
+    ],
+    "coordinates": [
+      "ea84c0a3"
+    ],
+    "map-elements": [
+      "81505e1a"
+    ],
+    "time-zones": [
+      "7c748ec3",
+      "5629381a"
+    ],
+    "continental-drift": [
+      "8c071251",
+      "b45382b1",
+      "cf2f7687"
+    ],
+    "tectonic-plates": [
+      "82cdfe90",
+      "b41b50b9"
+    ],
+    "continental-relief": [
+      "aeff5048",
+      "b41b50b9"
+    ],
+    "seismic-volcanic": [
+      "459659ee",
+      "84754308"
+    ],
+    "hydric-resources": [
+      "5ccfb8e9",
+      "be86b5c9"
+    ],
+    "water-cycle": [
+      "a55c4376",
+      "45dbe278"
+    ],
+    "ocean-currents": [
+      "762e80f0",
+      "c74e42cb"
+    ],
+    "rivers-lakes": [
+      "705b57df",
+      "f7408495"
+    ],
+    "winds": [
+      "f9e68691"
+    ],
+    "continental-climate": [
+      "bd82b2ba",
+      "1aca13b0"
+    ],
+    "natural-regions": [
+      "017123ac",
+      "8e3bb4ec"
+    ],
+    "political-geography": [
+      "e7d1b5ee",
+      "8d46458b",
+      "be001522",
+      "0eaa8d26"
+    ],
+    "continents-position": [
+      "c03da3ef",
+      "c34da71d",
+      "efa35992",
+      "025ea4bb"
+    ],
+    "boundaries": [
+      "fc75816d",
+      "d6007971",
+      "7b1629f8"
+    ],
+    "geopolitical-order": [
+      "ca761d98",
+      "4316ad1e",
+      "2b436bcb"
+    ],
+    "spatial-networks": [
+      "ca761d98",
+      "6f38ea5f"
+    ],
+    "economic-activities": [
+      "eed02692",
+      "de86038c",
+      "2b436bcb"
+    ],
+    "agriculture-livestock": [
+      "46970014"
+    ],
+    "fishing": [
+      "5ea21290"
+    ],
+    "mining-industries": [
+      "adbe9a77"
+    ],
+    "economic-blocs": [
+      "f774be8c",
+      "d02a846f"
+    ],
+    "human-impact": [
+      "d5b1e177",
+      "bfec5e76"
+    ],
+    "climate-change": [
+      "0644ff4f",
+      "0d71cc53"
+    ],
+    "kyoto-agreements": [
+      "e6ad86ac",
+      "3b9f7472"
+    ],
+    "history-science": [
+      "4ad39448",
+      "0d71cc53"
+    ],
+    "historical-periods": [
+      "1021af68"
+    ],
+    "hominization": [
+      "4ad39448",
+      "fbc6b01a",
+      "d02cfda6",
+      "c6005a96",
+      "13da6062",
+      "ef892446"
+    ],
+    "prehistory": [
+      "72015ea2",
+      "330ba8a7"
+    ],
+    "civilizations": [
+      "5eef07a9",
+      "9434f1c9",
+      "95d2dd99",
+      "2dcd331f"
+    ],
+    "american-civilizations": [
+      "261b3867"
+    ],
+    "medieval-europe": [
+      "cb3b8d13",
+      "2dcd331f"
+    ],
+    "early-modern-europe": [
+      "3e66cb1a"
+    ],
+    "renaissance": [
+      "d6f22093",
+      "d6fe7184",
+      "a0a635b5",
+      "afb5c891"
+    ],
+    "absolutism": [
+      "d6f22093",
+      "d6fe7184",
+      "afb5c891"
+    ],
+    "reformation": [
+      "d6f22093",
+      "d6fe7184",
+      "a0a635b5",
+      "afb5c891"
+    ],
+    "expansion-capitalism": [
+      "9cc74a1f",
+      "1df29abf"
+    ],
+    "societies-sixteenth-century": [
+      "9cc74a1f"
+    ],
+    "enlightenment": [
+      "0e64c72a",
+      "0acc72ee"
+    ],
+    "bourgeois-revolutions": [
+      "d30e04ba",
+      "c9b6576f"
+    ],
+    "industrial-revolution": [
+      "d6f22093",
+      "26aa20ff",
+      "c9b6576f"
+    ],
+    "french-revolution": [
+      "d6f22093",
+      "26aa20ff",
+      "c9b6576f"
+    ],
+    "us-independence": [
+      "c00edcf2",
+      "4620da21",
+      "4dcbcb01"
+    ],
+    "haitian-revolution": [
+      "83aa6d32",
+      "8b649bba"
+    ],
+    "santo-domingo-revolutions": [
+      "c91b5976"
+    ],
+    "imperialism-colonialism": [
+      "f09b8bd4"
+    ],
+    "american-independence": [
+      "b486723d",
+      "6091906e"
+    ],
+    "american-postindependence": [
+      "9fbeaf4d"
+    ],
+    "liberal-conservative": [
+      "22483710",
+      "1c488171"
+    ],
+    "dominican-independence-ideas": [
+      "14dcc25c"
+    ],
+    "second-industrial": [
+      "9c58320e"
+    ],
+    "decolonization": [
+      "ba48a1a7",
+      "1a5f8027"
+    ],
+    "chinese-revolution": [
+      "1a5f8027"
+    ],
+    "cuban-revolution": [
+      "ba48a1a7",
+      "1a5f8027"
+    ],
+    "soviet-end": [
+      "ba48a1a7",
+      "1a5f8027"
+    ],
+    "europe-eighteenth-nineteenth": [
+      "b68afb79",
+      "2a799c55"
+    ],
+    "digital-history-sources": [
+      "4926bc0d"
+    ],
+    "constitution": [
+      "e83567ec",
+      "14f50959"
+    ],
+    "sovereignty": [
+      "67cfd2c8"
+    ],
+    "national-identity": [
+      "90bbf2aa",
+      "6cd810d7",
+      "46aedbf6"
+    ],
+    "human-rights": [
+      "72f04bc9",
+      "187e1ca3",
+      "7a8bb4a6",
+      "98c2f2c7",
+      "5473a316"
+    ],
+    "rule-of-law-powers": [
+      "79bb0be4",
+      "baafe23a"
+    ],
+    "peace": [
+      "4f5ff2a6",
+      "51fba137",
+      "ac719cae",
+      "ee953dc8",
+      "7dff73a4",
+      "09fd117d"
+    ],
+    "dialogue": [
+      "3189adf9"
+    ],
+    "personal-respect": [
+      "bce9551a",
+      "d23734bd"
+    ],
+    "national-symbols": [
+      "f81cc7e8",
+      "ac28fe25"
+    ],
+    "road-safety": [
+      "b8188d3f",
+      "52fff05c",
+      "ee953dc8",
+      "edae2b35",
+      "c8371833"
+    ],
+    "taxes": [
+      "eafd1fb3",
+      "52fff05c",
+      "ee953dc8",
+      "a4fda421",
+      "19238268"
+    ],
+    "community-surveys": [
+      "b2c06cd7"
+    ],
+    "healthy-lifestyle": [
+      "920a87eb"
+    ],
+    "american-peopling": [
+      "e4ef6b53"
+    ]
+  },
+  "indicatorTopicRecords": {
+    "protected-areas": [
+      "1c9b4b9b"
+    ]
+  },
+  "limits": [
+    "Los143registros C/P mapeados conservan tipos y literal; su agrupación no demuestra todas las acciones de cada fila compuesta.",
+    "El encabezado mixto de historia y hominización y las filas que mezclan clima e historia o civilizaciones y Edad Media pueden enlazar grupos distintos sin recortar el literal.",
+    "Usos de horario y otros errores literales permanecen en la fuente; la adaptación usa husos horarios, sin reescribir la extracción.",
+    "La comparación de creacionismo y evolución distingue el carácter de sus explicaciones y evidencias; no califica fe o creencias privadas ni equipara sus bases empíricas.",
+    "Símbolos, identidad, respeto y convivencia se limitan a conocimiento y aportes observables solicitados; no se puntúa adhesión patriótica o supuesta moralidad.",
+    "Campañas, sondeos e interacción con instituciones requieren consignas y condiciones explícitas; las muestras ficticias no acreditan ejecución real ni autorizan contactos externos."
+  ]
+}

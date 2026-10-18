@@ -1,0 +1,1466 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 4,
+  "scopeId": "76b12132-2d05-56b0-94a4-0519de84651a",
+  "policy": "ONE_EXPLICIT_SAMPLE_IS_NOT_FULL_PROCEDURAL_COVERAGE",
+  "cases": [
+    {
+      "id": "social-information-synthesis",
+      "description": "Recolecta, analiza y sintetiza la información geográfica y social del conjunto de documentos proporcionados, relacionando los hallazgos y sus límites mediante el método indicado. No obtengas datos personales.",
+      "family": "SOCIAL_METHODS",
+      "requiredKeys": [
+        "information-synthesis"
+      ],
+      "sourceRecordIds": [
+        "94fb8f39-ccbb-5021-9b77-01ac3a4d2d6d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "solar-system-research",
+      "description": "Investiga en las fuentes confiables proporcionadas los planetas del sistema solar, conservando las características solicitadas y la procedencia de la información. No añadas astrología.",
+      "family": "SOURCE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "1957cf7c-10a9-5dc8-87e0-fa91e9665845"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "earth-layer-rock-sources",
+      "description": "Analiza las fuentes proporcionadas sobre las características de la capa terrestre y los tipos de rocas indicados. Distingue sus evidencias de inferencias no respaldadas. No hagas experimentos de laboratorio.",
+      "family": "SOURCE_ANALYSIS",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "fd08c6ca-4457-5c7a-b160-e40b92b131f5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "earth-shape-hypothesis",
+      "description": "Formula una hipótesis provisional sobre la forma de la Tierra a partir de las observaciones proporcionadas y distingue lo que falta contrastar. No la presentes como comprobada.",
+      "family": "PROVISIONAL_HYPOTHESIS",
+      "requiredKeys": [
+        "hypothesis"
+      ],
+      "sourceRecordIds": [
+        "b156ff64-a187-5ad4-adf5-baa8c53e5645"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "time-zone-source-history",
+      "description": "Compara las fuentes históricas proporcionadas sobre los husos horarios, diferenciando sus afirmaciones, evidencias y contextos. No calcules diferencias horarias.",
+      "family": "SOURCE_COMPARISON",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "sourceRecordIds": [
+        "5629381a-228a-59be-aad7-32e34e23887e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "geographic-representation-reading",
+      "description": "Interpreta el mapa y las otras representaciones de la Tierra proporcionadas utilizando sus leyendas, orientación y referencias. No dibujes otro mapa.",
+      "family": "MAP_READING",
+      "requiredKeys": [
+        "map-reading"
+      ],
+      "sourceRecordIds": [
+        "24d07684-ef86-5bca-b753-e7815fbabb34"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "continental-drift-sources",
+      "description": "Analiza las teorías de la deriva continental en las fuentes proporcionadas, relacionando sus fundamentos y evidencias. No añadas corrientes políticas.",
+      "family": "SOURCE_ANALYSIS",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "cf2f7687-3d3a-5546-a3fa-96f0f36d7d9a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "plates-direction-map",
+      "description": "Analiza los mapas y fuentes proporcionados sobre las placas tectónicas, interpretando sus movimientos y direcciones mediante las flechas y referencias dadas. No atribuyas huracanes al desplazamiento de las placas.",
+      "family": "TECTONIC_MAP_READING",
+      "requiredKeys": [
+        "tectonic-map-reading"
+      ],
+      "sourceRecordIds": [
+        "b41b50b9-55ca-5de3-8c96-f4b4fe17092a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "continental-relief-research",
+      "description": "Investiga en grupo las principales formas de relieve de los continentes indicadas en las fuentes proporcionadas y presenta sus hallazgos por separado. No recopiles datos de campo.",
+      "family": "GROUP_SOURCE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "b41b50b9-55ca-5de3-8c96-f4b4fe17092a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "seismic-volcanic-map",
+      "description": "Analiza los mapas de las zonas de actividad volcánica y sísmica frecuente proporcionados, relacionando la distribución y la frecuencia con sus leyendas y períodos. No predigas fechas de terremotos.",
+      "family": "SPATIAL_FREQUENCY_READING",
+      "requiredKeys": [
+        "seismic-spatial-pattern"
+      ],
+      "sourceRecordIds": [
+        "84754308-c5d9-5eac-bca8-1d208591eac0"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "continental-water-map",
+      "description": "Analiza los mapas y fuentes proporcionados sobre los recursos hídricos de los continentes, interpretando sus distribuciones y referencias espaciales. No inventes caudales.",
+      "family": "HYDRIC_MAP_READING",
+      "requiredKeys": [
+        "hydric-map-reading"
+      ],
+      "sourceRecordIds": [
+        "be86b5c9-6427-5c41-a451-69da4f2cebf7"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "hydrological-research-comparison",
+      "description": "Compara las investigaciones proporcionadas sobre los ciclos hidrológicos, distinguiendo sus explicaciones, evidencias y límites. No realices otro experimento.",
+      "family": "SOURCE_COMPARISON",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "sourceRecordIds": [
+        "45dbe278-6164-5bac-b1a1-d398674a6c24"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "ocean-current-research",
+      "description": "Investiga en grupo las corrientes marinas de los continentes indicados en las fuentes dadas y presenta los hallazgos por separado con su procedencia reconocible. No exijas viajar a la costa.",
+      "family": "GROUP_SOURCE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "c74e42cb-c87c-5da0-9cbb-afddeaa82edc"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "rivers-lakes-map",
+      "description": "Elabora un mapa de los principales ríos y lagos del mundo indicados en las fuentes, utilizando leyenda y referencias espaciales. No construyas una maqueta.",
+      "family": "HYDROGRAPHIC_MAP_PRODUCTION",
+      "requiredKeys": [
+        "location"
+      ],
+      "sourceRecordIds": [
+        "f7408495-3d2c-5b1c-9bcd-6e6079b382a1"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "rivers-lakes-model",
+      "description": "Elabora una maqueta de los principales ríos y lagos del mundo solicitados, conservando sus posiciones y relaciones espaciales según las referencias proporcionadas. No compres materiales costosos ni traces otro mapa.",
+      "family": "SPATIAL_MODEL",
+      "requiredKeys": [
+        "spatial-model"
+      ],
+      "sourceRecordIds": [
+        "f7408495-3d2c-5b1c-9bcd-6e6079b382a1"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "climate-hydrographic-reading",
+      "description": "Analiza el clima de las regiones indicadas utilizando los mapas climáticos e hidrográficos proporcionados, relacionando sus zonas y leyendas. No inventes mediciones.",
+      "family": "CLIMATE_MAP_READING",
+      "requiredKeys": [
+        "climate-map-relations"
+      ],
+      "sourceRecordIds": [
+        "1aca13b0-5e95-5dd7-8d58-967d6adb5f45"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "climate-change-information",
+      "description": "Recolecta y sintetiza la información proporcionada sobre el cambio climático como fenómeno geográfico mundial, distinguiendo evidencias e inferencias. No hagas una encuesta personal.",
+      "family": "INFORMATION_COLLECTION",
+      "requiredKeys": [
+        "information-synthesis"
+      ],
+      "sourceRecordIds": [
+        "0644ff4f-0f90-50e4-95e0-054fb2ceffd4"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "natural-region-sources",
+      "description": "Interpreta las fuentes proporcionadas sobre las regiones naturales del mundo, relacionando sus características con los espacios indicados. No estudies otra región.",
+      "family": "SOURCE_INTERPRETATION",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "8e3bb4ec-1f4b-5a28-84d7-80f25186fe55"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "political-geography-concept",
+      "description": "Explica el concepto de geografía política y su relación con la política internacional mediante los ejemplos proporcionados. No expreses adhesión partidaria.",
+      "family": "CONCEPTUAL_EXPLANATION",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "8d46458b-dc14-53f7-8a1f-9210f63a91a9"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "political-geography-decisions",
+      "description": "Analiza la influencia de la geografía política en las decisiones internacionales de los casos proporcionados, relacionando factores y hechos. No atribuyas una causa única sin evidencia.",
+      "family": "CAUSAL_ANALYSIS",
+      "requiredKeys": [
+        "causes"
+      ],
+      "sourceRecordIds": [
+        "be001522-0cc4-5b24-ae21-e4b39a0d98ac"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "political-geography-challenges",
+      "description": "Identifica los desafíos de la geografía política en los casos y fuentes proporcionados para el ejercicio. No afirmes que sean noticias actuales.",
+      "family": "PROVIDED_CHALLENGE_IDENTIFICATION",
+      "requiredKeys": [
+        "identification"
+      ],
+      "sourceRecordIds": [
+        "0eaa8d26-35b6-509d-8e14-0344fbfbfb34"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "continent-distribution-presentation",
+      "description": "Presenta oralmente la distribución y posición de los continentes mediante el mapa proporcionado y sus referencias espaciales. No dibujes otro mapa.",
+      "family": "ORAL_SPATIAL_PRESENTATION",
+      "requiredKeys": [
+        "map-reading",
+        "oral"
+      ],
+      "sourceRecordIds": [
+        "efa35992-eec6-5708-b0c3-43054a9a3d41"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "continental-position-influence",
+      "description": "Analiza la influencia de la posición geográfica de los continentes en la economía, política y cultura de los casos indicados, con los hechos proporcionados. No supongas determinismo geográfico.",
+      "family": "CAUSAL_ANALYSIS",
+      "requiredKeys": [
+        "causes"
+      ],
+      "sourceRecordIds": [
+        "025ea4bb-d388-506f-a425-0c3d4ae042ae"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "boundary-conflict-case",
+      "description": "Analiza el caso ficticio concreto del conflicto de fronteras marítimas y territoriales con los hechos y mapas proporcionados, y justifica una decisión entre las alternativas dadas. No decidas un litigio real.",
+      "family": "INTERNATIONAL_BOUNDARY_CASE",
+      "requiredKeys": [
+        "boundary-case",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "d6007971-7b7b-53ff-9353-c1c469dae498"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "boundary-stability-analysis",
+      "description": "Analiza la relación entre el respeto de las fronteras y la estabilidad y paz mundial en los casos proporcionados. No juzgues nacionalidades ni patriotismo.",
+      "family": "CAUSAL_ANALYSIS",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "7b1629f8-3dd0-5345-9301-120b0f671237"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "geopolitical-order-presentation",
+      "description": "Presenta oralmente el concepto de orden geopolítico y su relación con la organización del espacio geográfico con los ejemplos dados. No añadas todos los países del mundo.",
+      "family": "ORAL_CONCEPTUAL_PRESENTATION",
+      "requiredKeys": [
+        "oral"
+      ],
+      "sourceRecordIds": [
+        "4316ad1e-255a-567f-910b-739ecf36a085"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "spatial-network-analysis",
+      "description": "Analiza cómo las redes de transporte, comunicación y comercio articulan los espacios geográficos de los casos proporcionados, utilizando sus conexiones y flujos. No diseñes una infraestructura nueva.",
+      "family": "NETWORK_ANALYSIS",
+      "requiredKeys": [
+        "spatial-network-relations"
+      ],
+      "sourceRecordIds": [
+        "6f38ea5f-035d-5a96-a8a8-3ed5cb60eb6c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "geopolitical-development-case",
+      "description": "Analiza el caso de ordenamiento geopolítico del país indicado y su relación con el desarrollo económico en las fuentes proporcionadas. No añadas un ranking de países.",
+      "family": "PROVIDED_COUNTRY_CASE",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "2b436bcb-e566-523c-9c20-f11bb19e5189"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "continental-economy-research",
+      "description": "Investiga las actividades económicas de los continentes indicados en las fuentes confiables dadas, relacionando actividades, espacios e información del caso. No hagas encuestas comerciales.",
+      "family": "SOURCE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "2b436bcb-e566-523c-9c20-f11bb19e5189"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "human-action-research",
+      "description": "Investiga en las páginas web proporcionadas las consecuencias de la acción humana sobre la naturaleza, distinguiendo su procedencia y sus evidencias. No visites otros sitios ni recopiles datos privados.",
+      "family": "SOURCE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "bfec5e76-3e7e-5a2d-9635-03a20335bf17"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "economic-bloc-information",
+      "description": "Busca información cuantitativa y cualitativa sobre los bloques económicos del mundo en las páginas proporcionadas, conservando valores, unidades, períodos y procedencia. No consultes datos actuales ni hagas conversiones monetarias.",
+      "family": "QUANTITATIVE_QUALITATIVE_SOURCES",
+      "requiredKeys": [
+        "quantitative-qualitative-information"
+      ],
+      "sourceRecordIds": [
+        "d02a846f-7a09-5304-87e2-fe15eb9c8801"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "kyoto-agreement-analysis",
+      "description": "Analiza el Protocolo de Kioto y los otros acuerdos proporcionados sobre cambio climático, explicando sus alcances y los argumentos de los países indicados ante su aceptación. No atribuyas vigencia actual ni obligaciones ausentes del documento.",
+      "family": "PROVIDED_AGREEMENT_ANALYSIS",
+      "requiredKeys": [
+        "agreement-evidence"
+      ],
+      "sourceRecordIds": [
+        "3b9f7472-c55e-5ebe-af0b-8030db0e465f"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "climate-actions-evaluation",
+      "description": "Recolecta y evalúa las informaciones proporcionadas sobre acciones frente al cambio climático en el mundo, el país y la localidad ficticia, mediante los criterios dados y sus evidencias. No presentes una acción prevista como realizada.",
+      "family": "MULTISCALE_ACTION_EVALUATION",
+      "requiredKeys": [
+        "climate-action-evaluation"
+      ],
+      "sourceRecordIds": [
+        "0d71cc53-ae55-5a9b-9dc1-e2d893398f71"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "history-science-sources",
+      "description": "Investiga la historia como ciencia, su importancia y sus fuentes primarias, secundarias y terciarias en los documentos proporcionados, distinguiendo su procedencia y alcance. No uses esas categorías como una jerarquía automática de veracidad.",
+      "family": "SOURCE_TYPES_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "0d71cc53-ae55-5a9b-9dc1-e2d893398f71"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "historical-stage-research",
+      "description": "Investiga las etapas de la historia en las fuentes web proporcionadas, conservando las periodizaciones y sus contextos. No impongas una división universal sin reconocer su alcance.",
+      "family": "SOURCE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "1021af68-84e6-55ec-8965-af7343aa195b"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "hominization-socialization",
+      "description": "Socializa las ideas sobre el proceso de hominización mediante los hallazgos proporcionados e intercambia explicaciones con tus compañeros. No juzgues sus creencias.",
+      "family": "IDEA_EXCHANGE",
+      "requiredKeys": [
+        "ideas-exchange"
+      ],
+      "sourceRecordIds": [
+        "fbc6b01a-187b-5a77-879c-ac31e3766b56"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "human-evolution-organizer",
+      "description": "Elabora un esquema de las especies principales de la evolución humana indicadas en las fuentes, explicando sus relaciones y distinguiendo ramificación de una escalera lineal de progreso. No jerarquices personas actuales.",
+      "family": "CONCEPTUAL_ORGANIZER",
+      "requiredKeys": [
+        "organizer-relations"
+      ],
+      "sourceRecordIds": [
+        "d02cfda6-500c-50c0-94e9-f7db87722578"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "human-origins-source-contrast",
+      "description": "Contrasta las fuentes proporcionadas que explican el origen de la humanidad, distinguiendo sus afirmaciones, evidencias y contextos. No califiques la fe personal.",
+      "family": "SOURCE_COMPARISON",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "sourceRecordIds": [
+        "c6005a96-3c13-550e-8a1f-ac341337ad89"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "prehistoric-stages-identification",
+      "description": "Identifica las etapas de la prehistoria de la humanidad y los cambios indicados en las fuentes, situando sus características en la periodización proporcionada. No atribuyas las mismas fechas a todos los espacios.",
+      "family": "PERIOD_CHARACTERISTICS",
+      "requiredKeys": [
+        "identification"
+      ],
+      "sourceRecordIds": [
+        "330ba8a7-3735-5d6c-8ea0-38466e5590c3"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "civilization-map-reading",
+      "description": "Analiza los mapas de las civilizaciones antiguas y modernas de Oriente y Occidente proporcionados, identificando los espacios y períodos de los procesos representados. No dibujes otro mapa.",
+      "family": "HISTORICAL_MAP_READING",
+      "requiredKeys": [
+        "historical-map-reading"
+      ],
+      "sourceRecordIds": [
+        "9434f1c9-7a54-5fee-97d0-c4568d593229"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "american-civilization-research",
+      "description": "Investiga en las fuentes indicadas los pueblos y civilizaciones de América solicitados, distinguiendo sus espacios, períodos y contextos. No los jerarquices por preferencias culturales.",
+      "family": "SOURCE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "261b3867-6944-5178-a913-cf2eeceb4a9b"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "modern-civilization-newspaper",
+      "description": "Elabora un periódico escolar sobre las civilizaciones modernas de Oriente y Occidente indicadas con las fuentes proporcionadas. No redactes noticias actuales ni impongas imágenes o entrevistas.",
+      "family": "SCHOOL_NEWSPAPER",
+      "requiredKeys": [
+        "school-newspaper-content"
+      ],
+      "sourceRecordIds": [
+        "95d2dd99-66a8-507d-84ee-9a2c6a3f9d5b"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "civilization-comparison",
+      "description": "Compara las civilizaciones antiguas y modernas de Oriente y Occidente indicadas mediante dimensiones culturales, políticas y económicas comunes y las fuentes proporcionadas. No añadas la Edad Media europea.",
+      "family": "HISTORICAL_COMPARISON",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "sourceRecordIds": [
+        "2dcd331f-ac49-59f6-b256-e48b40e0e7a6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "medieval-guided-discussion",
+      "description": "Discute de forma guiada la economía, la vida social y política, los avances tecnológicos y científicos y las dificultades de la Edad Media europea según las fuentes dadas. Responde a las preguntas del intercambio. No confundas esos contextos con sociedades actuales.",
+      "family": "GUIDED_HISTORICAL_DISCUSSION",
+      "requiredKeys": [
+        "discussion"
+      ],
+      "sourceRecordIds": [
+        "2dcd331f-ac49-59f6-b256-e48b40e0e7a6"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "early-modern-thematic-report",
+      "description": "Elabora un informe temático sobre el Renacimiento y el Absolutismo europeo con la recopilación hemerográfica y la bibliografía limitada proporcionadas. Relaciona las evidencias con los aspectos solicitados. No investigues la Reforma si no aparece en el caso.",
+      "family": "THEMATIC_REPORT",
+      "requiredKeys": [
+        "report-content",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "d6fe7184-09ce-568d-be04-46685b021fcc"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "renaissance-reformation-significance",
+      "description": "Explica la importancia del Renacimiento y la Reforma en los contextos históricos proporcionados. No califiques adhesiones religiosas.",
+      "family": "HISTORICAL_EXPLANATION",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "a0a635b5-9881-520e-bf56-8419d1c50599"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "european-expansion-capitalism",
+      "description": "Analiza el impacto de la expansión europea de finales del siglo XV en el capitalismo preindustrial con las fuentes dadas. No atribuyas causalidad sin respaldo.",
+      "family": "CAUSAL_ANALYSIS",
+      "requiredKeys": [
+        "consequences"
+      ],
+      "sourceRecordIds": [
+        "1df29abf-fc14-5b96-b66b-ec0eceec7d5c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "reformation-thematic-report",
+      "description": "Elabora un informe temático sobre la Reforma protestante con la bibliografía proporcionada, delimitando el período y explicando los hechos y sus fuentes. No investigues el Renacimiento o Absolutismo si no se solicitan.",
+      "family": "THEMATIC_REPORT",
+      "requiredKeys": [
+        "report-content",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "afb5c891-a328-5d42-9ed6-9b88d0584b28"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "enlightenment-impact",
+      "description": "Explica el impacto de la Ilustración en los procesos y contextos indicados con las fuentes dadas. No impongas una postura filosófica al estudiante.",
+      "family": "HISTORICAL_EXPLANATION",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "0acc72ee-86cd-5b3e-9f08-4d0749d66c31"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "bourgeois-revolution-impact",
+      "description": "Analiza el impacto de las Revoluciones burguesas, Industrial y francesa, en los contextos y fuentes proporcionados. No añadas otra revolución.",
+      "family": "CAUSAL_ANALYSIS",
+      "requiredKeys": [
+        "consequences"
+      ],
+      "sourceRecordIds": [
+        "c9b6576f-5ad1-5190-b8de-425dc78ca7e4"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "us-independence-factors",
+      "description": "Identifica los factores que propiciaron la independencia de Estados Unidos según las fuentes dadas y explica su relación con los hechos. No confundas causas y efectos.",
+      "family": "CAUSAL_IDENTIFICATION",
+      "requiredKeys": [
+        "causes"
+      ],
+      "sourceRecordIds": [
+        "4620da21-850e-56a7-9735-8bb9f036d989"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "us-independence-contributions",
+      "description": "Explica los aportes de la Independencia de Estados Unidos indicados en las fuentes y sus límites históricos. No exijas adhesión patriótica.",
+      "family": "HISTORICAL_EXPLANATION",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "4dcbcb01-23e2-5514-8470-ffcbb1557bc9"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "haitian-revolution-contributions",
+      "description": "Analiza los aportes de la Revolución haitiana en América Latina según los contextos y fuentes proporcionados, contrastando afirmaciones y evidencias. No afirmes precedencias sin respaldo ni juzgues nacionalidades.",
+      "family": "HISTORICAL_ANALYSIS",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "8b649bba-e80a-5406-9be3-85561d0b35f4"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "europe-eighteenth-nineteenth-changes",
+      "description": "Explica los cambios económicos, políticos y sociales de Europa entre finales del siglo XVIII y el siglo XIX indicados en las fuentes dadas. No añadas procesos del siglo XX.",
+      "family": "HISTORICAL_EXPLANATION",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "b68afb79-85e3-5e75-8199-d41f841853fc"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "american-independence-achievements",
+      "description": "Identifica los movimientos independentistas de América y sus logros expresamente indicados en las fuentes. No asumas un proceso uniforme para todos los países.",
+      "family": "HISTORICAL_IDENTIFICATION",
+      "requiredKeys": [
+        "identification"
+      ],
+      "sourceRecordIds": [
+        "6091906e-1947-56ae-be65-5d2aaeb3f6b2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "liberal-conservative-ideas",
+      "description": "Identifica las ideas liberales y conservadoras en los textos y contextos proporcionados, sin atribuir a sus autores posturas ausentes. No califiques preferencias políticas personales.",
+      "family": "POLITICAL_IDEA_IDENTIFICATION",
+      "requiredKeys": [
+        "identification"
+      ],
+      "sourceRecordIds": [
+        "1c488171-7762-5d35-86f5-e6a97a92a501"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "nineteenth-century-timeline",
+      "description": "Elabora una línea de tiempo de los acontecimientos del siglo XIX indicados en las fuentes, distinguiendo simultaneidad y sucesión. No añadas hechos de otro siglo.",
+      "family": "CHRONOLOGY",
+      "requiredKeys": [
+        "sequence"
+      ],
+      "sourceRecordIds": [
+        "2a799c55-73ce-51bc-bd82-302c8b5f8c18"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "chinese-revolution-text",
+      "description": "Analiza los textos proporcionados sobre la Revolución China en sus períodos y contextos indicados. No investigues la Revolución cubana ni el bloque soviético.",
+      "family": "HISTORICAL_TEXT_ANALYSIS",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "1a5f8027-a037-5288-8488-a9f70de4b454"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "decolonization-text",
+      "description": "Analiza los textos proporcionados de los movimientos de liberación en el Tercer Mundo y la independencia de África, conservando sus contextos y evidencias. No añadas otros procesos.",
+      "family": "HISTORICAL_TEXT_ANALYSIS",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "1a5f8027-a037-5288-8488-a9f70de4b454"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "cuban-revolution-text",
+      "description": "Analiza los textos proporcionados sobre la Revolución cubana y los procesos solicitados. No investigues la Revolución China ni la desintegración soviética ni expreses adhesión política.",
+      "family": "HISTORICAL_TEXT_ANALYSIS",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "1a5f8027-a037-5288-8488-a9f70de4b454"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "soviet-disintegration-text",
+      "description": "Analiza los textos proporcionados sobre la desintegración del bloque soviético, distinguiendo sus hechos y contextos. No califiques adhesión ideológica.",
+      "family": "HISTORICAL_TEXT_ANALYSIS",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "1a5f8027-a037-5288-8488-a9f70de4b454"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "digital-historical-recovery",
+      "description": "Localiza y selecciona información histórica del siglo XX en los registros proporcionados de AGN y Biblioteca Digital Dominicana, justificando la procedencia y pertinencia de cada documento. No exijas usar todos los repositorios citados ni contratar acceso a bases de pago.",
+      "family": "DIGITAL_SOURCE_RECOVERY",
+      "requiredKeys": [
+        "digital-source-recovery"
+      ],
+      "sourceRecordIds": [
+        "4926bc0d-e217-57c8-93c9-6328d2033479"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "constitution-brochure",
+      "description": "Elabora un folleto sobre la Constitución dominicana para el destinatario indicado con los artículos proporcionados para el ejercicio. No inventes disposiciones ni afirmes su vigencia actual.",
+      "family": "CIVIC_BROCHURE",
+      "requiredKeys": [
+        "audience-message"
+      ],
+      "sourceRecordIds": [
+        "14f50959-8b13-53f4-bb6b-c431f0a571c8"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "road-tax-proposals",
+      "description": "Propone soluciones diferenciadas para los problemas viales y tributarios del caso ficticio, explicando cómo responden a las condiciones y derechos indicados. No calcules obligaciones tributarias personales.",
+      "family": "CIVIC_PROPOSALS",
+      "requiredKeys": [
+        "proposal"
+      ],
+      "sourceRecordIds": [
+        "52fff05c-fdc6-58b0-94ab-1673324ac82c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "human-rights-debate",
+      "description": "Debate las posturas opuestas sobre el caso ficticio de derechos humanos proporcionado, defendiendo argumentos y respondiendo a las réplicas mediante sus hechos y documentos. No juzgues creencias privadas.",
+      "family": "RIGHTS_DEBATE",
+      "requiredKeys": [
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "187e1ca3-2879-5680-bd15-0bfe87806a83"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "human-rights-case",
+      "description": "Analiza el caso ficticio concreto de derechos humanos con los hechos proporcionados y justifica una decisión entre las alternativas dadas. No investigues víctimas reales.",
+      "family": "RIGHTS_CASE_ANALYSIS",
+      "requiredKeys": [
+        "rights-case",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "187e1ca3-2879-5680-bd15-0bfe87806a83"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "state-power-simulation",
+      "description": "Simula la situación ficticia donde intervienen los poderes del Estado según las funciones y límites indicados en los documentos, representando las decisiones del rol asignado. No inventes poderes ausentes ni estudies un litigio real.",
+      "family": "CIVIC_ROLE_SIMULATION",
+      "requiredKeys": [
+        "state-role",
+        "state-limits"
+      ],
+      "sourceRecordIds": [
+        "baafe23a-f4a4-57e9-b962-e70fb95ddcf2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "rights-violation-identification",
+      "description": "Identifica las situaciones de vulneración de derechos humanos en los casos ficticios proporcionados y relaciona los hechos con los derechos indicados. No recopiles experiencias personales.",
+      "family": "RIGHTS_CASE_IDENTIFICATION",
+      "requiredKeys": [
+        "rights-identification"
+      ],
+      "sourceRecordIds": [
+        "7a8bb4a6-1720-5945-b459-c2f7a5d3b7bc"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "rights-forum",
+      "description": "Realiza un foro sobre las situaciones ficticias de irrespeto a los derechos humanos, intercambiando opiniones fundamentadas y respondiendo a los aportes con los hechos dados. No publiques el intercambio fuera del aula.",
+      "family": "CIVIC_FORUM",
+      "requiredKeys": [
+        "forum-contributions"
+      ],
+      "sourceRecordIds": [
+        "98c2f2c7-3f38-5ac5-805a-267acb9993c4"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "rights-convention-essay",
+      "description": "Redacta un ensayo argumentativo sobre los convenios de derechos humanos de la niñez, la mujer y los inmigrantes proporcionados para el ejercicio, vinculando sus disposiciones con el caso ficticio. No atribuyas tratados o vigencia no comprobados.",
+      "family": "PROVIDED_CONVENTION_ESSAY",
+      "requiredKeys": [
+        "convention-evidence",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "5473a316-afd3-569a-94cd-5fc8f775fdf1"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "rights-convention-monograph",
+      "description": "Elabora una monografía corta sobre los convenios de derechos de la niñez proporcionados, delimitando sus disposiciones y contextos. No recopiles datos de menores.",
+      "family": "SHORT_MONOGRAPH",
+      "requiredKeys": [
+        "monograph-content",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "5473a316-afd3-569a-94cd-5fc8f775fdf1"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "rights-convention-reading-report",
+      "description": "Elabora un informe de lectura de los acuerdos de derechos de las mujeres proporcionados para el ejercicio, distinguiendo lo que dicen y tu interpretación de su alcance en el caso ficticio. No añadas otras normas.",
+      "family": "READING_REPORT",
+      "requiredKeys": [
+        "report-content",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "5473a316-afd3-569a-94cd-5fc8f775fdf1"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "anonymous-survey-report",
+      "description": "Elabora un informe temático a partir de los resultados anónimos de los sondeos y pequeñas encuestas proporcionados de la comunidad ficticia, interpretando sus datos y límites de representación. No realices otra encuesta ni identifiques personas.",
+      "family": "PROVIDED_SURVEY_REPORT",
+      "requiredKeys": [
+        "survey-evidence",
+        "report-content"
+      ],
+      "sourceRecordIds": [
+        "b2c06cd7-3094-5cb6-9060-9999876083be"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "national-monument-presentation",
+      "description": "Investiga y presenta oralmente los monumentos y lugares emblemáticos de la nación indicados con las fuentes dadas, distinguiendo su historia y significado cultural. No exijas visitar los lugares ni revelar ubicaciones personales.",
+      "family": "CULTURAL_SOURCE_RESEARCH_PRESENTATION",
+      "requiredKeys": [
+        "research-content",
+        "sources",
+        "oral"
+      ],
+      "sourceRecordIds": [
+        "46aedbf6-e7b6-55fb-9bdd-9c626220752c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "symbol-community-contribution",
+      "description": "Participa en la actividad comunitaria simulada sobre los símbolos patrios, explicando la historia y el significado de los símbolos indicados con las referencias proporcionadas. No califiques sentimientos patrióticos ni obediencia personal.",
+      "family": "OBSERVABLE_CULTURAL_CONTRIBUTION",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "ac28fe25-ad8a-511b-8c4d-88ad54271bd4"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "civic-coexistence-proposals",
+      "description": "Presenta propuestas de convivencia y cultura de paz para las problemáticas viales, tributarias y de violencia del caso ficticio, justificando cómo atienden sus condiciones y derechos. No investigues delitos ni personas reales.",
+      "family": "COEXISTENCE_PROPOSALS",
+      "requiredKeys": [
+        "proposal"
+      ],
+      "sourceRecordIds": [
+        "ee953dc8-fb10-55eb-a344-cb6e40086012"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "traffic-incidence-research",
+      "description": "Investiga en las fuentes y datos proporcionados la incidencia de accidentes de tránsito, conservando períodos, unidades y límites de los datos. No investigues víctimas ni atribuyas causas no respaldadas.",
+      "family": "ROAD_SOURCE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "edae2b35-11f7-5c9d-83b3-79d6fb2b427a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "peace-campaign-message",
+      "description": "Elabora el mensaje y las acciones de una campaña escolar simulada sobre valores y convivencia pacífica para el conflicto ficticio indicado, relacionando destinatarios, condiciones y derechos. No ejecutes una campaña real ni califiques moralidad privada.",
+      "family": "PEACE_CAMPAIGN_PLAN",
+      "requiredKeys": [
+        "campaign-message",
+        "campaign-actions"
+      ],
+      "sourceRecordIds": [
+        "7dff73a4-4cdd-53ec-b7ea-7db664869e8d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "tax-investment-identification",
+      "description": "Identifica los renglones de inversión del Estado en el extracto presupuestario proporcionado y relaciona las partidas con los servicios indicados y el uso de los impuestos. No inventes valores ni calcules obligaciones personales.",
+      "family": "PROVIDED_PUBLIC_BUDGET",
+      "requiredKeys": [
+        "budget-evidence"
+      ],
+      "sourceRecordIds": [
+        "a4fda421-cf13-5c4f-9584-4c4e177371c2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "hominization-theory-comparison",
+      "description": "Compara las teorías sobre el proceso de hominización indicadas en las fuentes, relacionando sus explicaciones, evidencias y límites. No jerarquices culturas o personas actuales.",
+      "family": "EXPLANATION_COMPARISON",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "sourceRecordIds": [
+        "13da6062-33e2-5461-bda9-b81faac99816"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "creation-evolution-implications",
+      "description": "Analiza las implicaciones de las explicaciones creacionistas y evolucionistas proporcionadas sobre el origen humano, distinguiendo su carácter, sus preguntas y sus bases de justificación. No califiques fe personal ni presentes creencias como resultados empíricos.",
+      "family": "EPISTEMIC_EXPLANATION_ANALYSIS",
+      "requiredKeys": [
+        "epistemic-explanations"
+      ],
+      "sourceRecordIds": [
+        "ef892446-62b1-54f0-bc9a-3116d5f2c2ad"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "american-peopling-classification",
+      "description": "Clasifica las teorías del poblamiento de América proporcionadas mediante sus propuestas y evidencias. No añadas teorías ausentes ni atribuyas certeza a una hipótesis sin respaldo.",
+      "family": "EXPLANATION_CLASSIFICATION",
+      "requiredKeys": [
+        "classification"
+      ],
+      "sourceRecordIds": [
+        "e4ef6b53-0084-5fe4-af78-2946b6010f32"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "healthy-lifestyle-proposal",
+      "description": "Propone un estilo de vida saludable para el caso ficticio con las orientaciones educativas proporcionadas, explicando su viabilidad en las condiciones indicadas. No diagnostiques personas ni prescribas dietas o tratamientos.",
+      "family": "PROVIDED_HEALTHY_LIFESTYLE_PLAN",
+      "requiredKeys": [
+        "healthy-proposal"
+      ],
+      "sourceRecordIds": [
+        "920a87eb-19ad-5a75-9e83-afd4fe043fb0"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "interpersonal-respect-proposal",
+      "description": "Propone acciones de respeto entre las personas para la situación ficticia, explicando cómo atienden sus necesidades y derechos. No puntúes la supuesta moralidad del estudiante.",
+      "family": "OBSERVABLE_RESPECT_PROPOSAL",
+      "requiredKeys": [
+        "proposal"
+      ],
+      "sourceRecordIds": [
+        "d23734bd-d5c4-5c6f-9821-428ff1ac0c84"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "coexistence-proposal",
+      "description": "Propone alternativas de convivencia para el conflicto ficticio indicado y explica su viabilidad mediante los derechos y condiciones del caso. No fuerces consenso.",
+      "family": "COEXISTENCE_PROPOSAL",
+      "requiredKeys": [
+        "proposal"
+      ],
+      "sourceRecordIds": [
+        "09fd117d-bdf5-58c8-994d-21a7d205d5c5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "interactive-road-talk-plan",
+      "description": "Organiza un plan de charla interactiva de educación vial con los recursos y la demostración práctica simulada proporcionados: define propósito, secuencia y preguntas de intercambio. No contactes instituciones ni invites personas ni ejecutes maniobras en tránsito real.",
+      "family": "INTERACTIVE_TALK_PLAN",
+      "requiredKeys": [
+        "interactive-talk-plan",
+        "demonstration-plan"
+      ],
+      "sourceRecordIds": [
+        "c8371833-a687-5a79-aa65-eba2b82adac5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "tax-education-debate",
+      "description": "Debate posturas opuestas del caso ficticio sobre educación tributaria, argumentando con los datos y documentos proporcionados y respondiendo réplicas. No uses impuestos personales.",
+      "family": "TAX_DEBATE",
+      "requiredKeys": [
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "19238268-5474-5574-8895-278e9379a255"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "tax-education-case",
+      "description": "Analiza el caso ficticio concreto de educación tributaria con los hechos dados y justifica una decisión entre las alternativas de uso de impuestos proporcionadas. No calcules obligaciones personales.",
+      "family": "TAX_CASE",
+      "requiredKeys": [
+        "tax-case",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "19238268-5474-5574-8895-278e9379a255"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "protected-area-identification",
+      "description": "Identifica las reservas naturales del país y del mundo que los documentos proporcionados clasifican como áreas protegidas, relacionando sus nombres, ubicaciones y categorías. No afirmes categorías legales vigentes sin comprobarlas.",
+      "family": "PROVIDED_PROTECTED_AREAS",
+      "requiredKeys": [
+        "identification"
+      ],
+      "sourceRecordIds": [
+        "1c9b4b9b-06ec-5f51-8e85-74cbb9bfc614"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "hominization-monograph",
+      "description": "Elabora una monografía sobre las teorías de la hominización y la evolución humana indicadas en las fuentes, conservando su carácter explicativo, evidencias y límites. No valores creencias privadas.",
+      "family": "SHORT_MONOGRAPH",
+      "requiredKeys": [
+        "monograph-content",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "34e94b93-a17a-5ad9-8659-f1fab6951f22"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "historical-period-timeline",
+      "description": "Elabora una línea del tiempo de las etapas de la historia y los acontecimientos proporcionados, conservando la periodización y referencias espaciales del ejercicio. No impongas esa periodización a todos los pueblos.",
+      "family": "PERIOD_CHRONOLOGY",
+      "requiredKeys": [
+        "sequence"
+      ],
+      "sourceRecordIds": [
+        "bddbc060-210c-5f26-8e11-9a67956ca92f"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "historical-age-synoptic-chart",
+      "description": "Elabora un cuadro sinóptico comparativo de las edades Antigua, Media, Moderna y Contemporánea indicadas, relacionando sus procesos, espacios y sistemas económicos con las fuentes proporcionadas. No representes sus fronteras temporales como universales.",
+      "family": "COMPARATIVE_ORGANIZER",
+      "requiredKeys": [
+        "comparison",
+        "organizer-relations"
+      ],
+      "sourceRecordIds": [
+        "f2be35c9-9900-5812-8a5f-0d398e210dd7"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "modern-europe-critical-analysis",
+      "description": "Analiza los cambios políticos, económicos y culturales de la Edad Moderna europea indicados en las fuentes y evalúa su impacto en los casos históricos dados. No estudies todos los procesos de la modernidad a la vez.",
+      "family": "CAUSAL_HISTORICAL_ANALYSIS",
+      "requiredKeys": [
+        "consequences"
+      ],
+      "sourceRecordIds": [
+        "ecea39a4-0e74-56ca-bcae-68de3f091a30"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "history-similarity-report",
+      "description": "Analiza el informe antiplagio proporcionado de un texto sobre la hominización y sus fuentes, revisando las coincidencias en contexto y proponiendo correcciones de atribución. No tomes el porcentaje como prueba de plagio ni autenticidad histórica ni instales programas.",
+      "family": "PROVIDED_SIMILARITY_REPORT",
+      "requiredKeys": [
+        "similarity-context",
+        "attribution-correction"
+      ],
+      "sourceRecordIds": [
+        "962eef48-cc87-5b44-aace-bf4f113a6bc1"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "water-human-impact",
+      "description": "Explica los impactos de la acción humana en las fuentes hídricas del mundo y de República Dominicana indicados con los datos proporcionados. No inventes análisis de calidad del agua.",
+      "family": "HYDRIC_IMPACT_EXPLANATION",
+      "requiredKeys": [
+        "hydric-impact"
+      ],
+      "sourceRecordIds": [
+        "1d3f5d13-0b2a-5936-b38c-13a4b7ae8209"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "global-warming-roundtable",
+      "description": "Participa en una mesa redonda moderada sobre las implicaciones del calentamiento global, intercambiando perspectivas y respondiendo a las preguntas con las evidencias proporcionadas. No fuerces adhesión a una postura.",
+      "family": "MODERATED_ROUNDTABLE",
+      "requiredKeys": [
+        "roundtable"
+      ],
+      "sourceRecordIds": [
+        "5853ac90-411b-5376-a548-529780423bba"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "road-accident-project",
+      "description": "Elabora un proyecto para reducir los accidentes de tránsito y proteger los derechos de los peatones en la comunidad ficticia: explica propósito, acciones, recursos dados y evidencias de seguimiento. No ejecutes intervenciones reales.",
+      "family": "ROAD_PROJECT_PLAN",
+      "requiredKeys": [
+        "project-purpose",
+        "project-actions",
+        "project-follow-up"
+      ],
+      "sourceRecordIds": [
+        "105ae142-7d39-5565-a49c-accda71ce98e"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "rights-campaign-proposal",
+      "description": "Propone un mensaje y acciones de campaña escolar sobre los derechos humanos indicados en los documentos y el caso ficticio, explicando su pertinencia para el destinatario. No ejecutes una campaña real ni impongas adhesión política.",
+      "family": "RIGHTS_CAMPAIGN_PROPOSAL",
+      "requiredKeys": [
+        "campaign-message",
+        "campaign-actions"
+      ],
+      "sourceRecordIds": [
+        "f1b52081-2bd5-5f1a-84c7-0426a1579df4"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "road-rule-campaign",
+      "description": "Elabora el mensaje y las acciones de una campaña escolar simulada de educación vial que explique las normas proporcionadas y su aplicación al caso. No salgas a la vía pública ni inventes obligaciones.",
+      "family": "ROAD_CAMPAIGN_PLAN",
+      "requiredKeys": [
+        "campaign-message",
+        "campaign-actions"
+      ],
+      "sourceRecordIds": [
+        "3d5ea183-f8d8-5355-91a8-df3d3d277114"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "healthy-lifestyle-benefits",
+      "description": "Describe las ventajas sociales y para el Estado de las acciones de estilo de vida saludable indicadas en el material educativo, explicando las relaciones respaldadas por sus datos. No diagnostiques al estudiante.",
+      "family": "EDUCATIONAL_HEALTH_EXPLANATION",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "8b49fca0-e2b5-52d7-8ddb-c48409684b3d"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "peaceful-dialogue-consensus",
+      "description": "Participa en un diálogo sobre el conflicto ficticio expresando y fundamentando tu punto de vista, reformulando las razones de las otras partes y examinando alternativas mediante los criterios dados. Registra acuerdos y desacuerdos justificados. No fuerces consenso ni reveles vivencias privadas.",
+      "family": "OBSERVABLE_DIALOGUE",
+      "requiredKeys": [
+        "dialogue-contributions",
+        "negotiation-alternatives"
+      ],
+      "sourceRecordIds": [
+        "f34f6982-e7a6-5656-97de-6db070963786"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "sixteenth-century-china",
+      "description": "Explica los procesos de China hasta el siglo XVI. No estudies otros países.",
+      "family": "CONCEPTUAL_SOCIAL_HISTORY",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "9cc74a1f-ca7a-5ee6-81ff-77de53565843"
+      ],
+      "sourceRecordType": "CONCEPT",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "sixteenth-century-india",
+      "description": "Explica los procesos de India hasta el siglo XVI. No estudies otros países.",
+      "family": "CONCEPTUAL_SOCIAL_HISTORY",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "9cc74a1f-ca7a-5ee6-81ff-77de53565843"
+      ],
+      "sourceRecordType": "CONCEPT",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "sixteenth-century-islam",
+      "description": "Explica los procesos del islam hasta el siglo XVI. No estudies otras sociedades.",
+      "family": "CONCEPTUAL_SOCIAL_HISTORY",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "9cc74a1f-ca7a-5ee6-81ff-77de53565843"
+      ],
+      "sourceRecordType": "CONCEPT",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "sixteenth-century-africa",
+      "description": "Explica los procesos de África hasta el siglo XVI. No estudies otros espacios.",
+      "family": "CONCEPTUAL_SOCIAL_HISTORY",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "9cc74a1f-ca7a-5ee6-81ff-77de53565843"
+      ],
+      "sourceRecordType": "CONCEPT",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "sixteenth-century-russia",
+      "description": "Explica los procesos de Rusia hasta el siglo XVI. No estudies otros países.",
+      "family": "CONCEPTUAL_SOCIAL_HISTORY",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "9cc74a1f-ca7a-5ee6-81ff-77de53565843"
+      ],
+      "sourceRecordType": "CONCEPT",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "dialogue-viewpoint-only",
+      "description": "Participa en un diálogo de convivencia expresando tu punto de vista sobre el asunto indicado. No negocies alternativas ni registres acuerdos.",
+      "family": "OBSERVABLE_DIALOGUE",
+      "requiredKeys": [
+        "dialogue-contributions"
+      ],
+      "sourceRecordIds": [
+        "f34f6982-e7a6-5656-97de-6db070963786"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "campaign-actions-only",
+      "description": "Propone las acciones de una campaña escolar simulada de educación vial para los destinatarios y condiciones del caso. No elabores mensajes ni carteles.",
+      "family": "ROAD_CAMPAIGN_PLAN",
+      "requiredKeys": [
+        "campaign-actions"
+      ],
+      "sourceRecordIds": [
+        "3d5ea183-f8d8-5355-91a8-df3d3d277114"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    },
+    {
+      "id": "road-talk-without-demonstration",
+      "description": "Organiza un plan de charla interactiva de educación vial para los destinatarios indicados: define propósito, secuencia y preguntas de intercambio. No incluyas una demostración ni exijas recursos externos.",
+      "family": "INTERACTIVE_TALK_PLAN",
+      "requiredKeys": [
+        "interactive-talk-plan"
+      ],
+      "sourceRecordIds": [
+        "c8371833-a687-5a79-aa65-eba2b82adac5"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|contratar un servicio de pago obligatorio"
+    }
+  ]
+}

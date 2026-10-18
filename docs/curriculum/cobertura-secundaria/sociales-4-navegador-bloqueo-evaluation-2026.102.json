@@ -1,0 +1,19 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.102",
+  "grade": 4,
+  "status": "BLOCKED_PERSONAL_AUTHENTICATION_AFTER_RELOAD",
+  "completedPersonalCreatorFlow": false,
+  "savedAndReopenedFormats": [],
+  "observed": [
+    "La pestaña personal mostraba la actividad guardada de Sociales3.º antes de navegar.",
+    "La navegación intentó importar CoursesPage y LoginPage de un build anterior y mostró el límite de error.",
+    "Una recarga normal cargó /assets/index-C-RgeTzP.js de102 y el acceso pidió autenticación.",
+    "Continuar como la cuenta personal abrió el formulario con la contraseña vacía; no se introdujeron credenciales ni se solicitaron otros enlaces."
+  ],
+  "servedAssetSha256": "58fed31008f691143d039a5c7b17ebe7e8e90f0a98801524c51688ebb4c71416",
+  "storageOrServiceWorkerCleared": false,
+  "serviceWorkerInternalsInspected": false,
+  "personalFourthGradeActivitiesCreated": 0,
+  "limits": "No se acreditan estrategia automática/manual, instrumento, guardado o reapertura visuales de4.º. Las pruebasHTTP pertenecen al centro ficticioQA y no sustituyen la cuenta personal."
+}
