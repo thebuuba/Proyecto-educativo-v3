@@ -7,6 +7,7 @@ import { artGradeTwoTopics } from './secondary-art-grade-2'
 import { artGradeThreeTopics } from './secondary-art-grade-3'
 import { artGradeFourTopics } from './secondary-art-grade-4'
 import { artGradeFiveTopics } from './secondary-art-grade-5'
+import { artGradeSixTopics } from './secondary-art-grade-6'
 
 type ArtEvidenceText = {
   title: string
@@ -68,6 +69,7 @@ export const commonArtModules = [
   { id: 'educacion-artistica-comun-3', grade: 3, topics: artGradeThreeTopics, policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1' },
   { id: 'educacion-artistica-comun-4', grade: 4, topics: artGradeFourTopics, policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1' },
   { id: 'educacion-artistica-comun-5', grade: 5, topics: artGradeFiveTopics, policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1' },
+  { id: 'educacion-artistica-comun-6', grade: 6, topics: artGradeSixTopics, policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1' },
 ]
 const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
 const endings = '(?:a|an|ar|ara|aran|ando|e|en)'
@@ -98,6 +100,8 @@ function selectedTopics(text: string, available: ArtTopic[]) {
   )
   const contains = (id: string) => topics.some((topic) => topic.id === id)
   if (contains('chosen-avant-garde')) topics = topics.filter(topic => !['cubism-work','pointillism-work','symbolism-work'].includes(topic.id))
+  if (contains('public-art-access') || contains('public-art-presentation')) topics = topics.filter(topic => topic.id !== 'public-art')
+  if (contains('dance-theatre-research')) topics = topics.filter(topic => topic.id !== 'dance-theatre')
   if ((contains('photo-series') || contains('photo-report') || contains('photo-tone')) && !/\bilustracion[a-z]*\b/.test(text))
     topics = topics.filter(topic => topic.id !== 'illustration')
   if (contains('photo-report')) topics = topics.filter(topic => topic.id !== 'photo-series')
@@ -132,6 +136,14 @@ function modeFor(text: string, topics: ArtTopic[]): ArtMode {
     if (topics.some(topic => ['visual-sign-interpretation','stage-appreciation-report','music-history-listening','dominican-symphonic-listening'].includes(topic.id)) && /^(?:interpret|redact|escuch)/.test(firstAction)) return 'ANALYSIS'
     if (topics.some(topic => topic.id === 'art-residue-observation') && /frecuencia|regularidad/.test(text)) return 'OBSERVATION'
     if (topics.some(topic => ['visual-art-history','virtual-exhibition','stage-history-folder','copyright-application','heritage-object-record','artwork-classification','art-history-portfolio','research-systematization'].includes(topic.id)) && /^(?:elabor|realiz|organiz|registr|cre|sistematiz)/.test(firstAction)) return 'REPORT'
+  }
+  if (topics.some(topic => topic.grade === 6)) {
+    if (/^planific/.test(firstAction)) return 'PLAN'
+    if (/^(?:disen[a-z]*|elabor[a-z]*|cre[a-z]*|organiz[a-z]*)\s+(?:un |el )?plan\b/.test(text)) return 'PLAN'
+    if (/^(?:cre|constru|realiz|elabor)/.test(firstAction) && /segun (?:el )?plan\b/.test(text)) return 'PRODUCTION'
+    if (topics.some(topic => ['art-safety-observation','collective-agreements'].includes(topic.id)) && /frecuencia|regularidad/.test(text)) return 'OBSERVATION'
+    if (topics.some(topic => ['music-work-registration','heritage-object-record'].includes(topic.id)) && /^(?:organiz|elabor|registr)/.test(firstAction)) return 'REPORT'
+    if (topics.some(topic => ['street-theatre','sociodrama'].includes(topic.id)) && /^represent/.test(firstAction)) return 'PERFORMANCE'
   }
   if (/^investig/.test(firstAction)) return 'REPORT'
   if (/^explor/.test(firstAction) && topics.some(topic => topic.id === 'expression-exploration')) return 'PERFORMANCE'
@@ -217,8 +229,9 @@ export function resolveCommonArtTask(
     ).values(),
   ]
   const mode = actions[0].mode
-  const researching = mode === 'REPORT' && topics.some(topic => topic.id === 'musical-research' || topic.grade === 4 && ['scene-context','art-exponents-research'].includes(topic.id) || topic.grade === 5 && ['artistic-research-method','avant-garde-documentation','artistic-proposal-research','western-theatre-history','dominican-stage-history','copyright-research','history-period-research','style-context-research'].includes(topic.id))
-  const activityType = researching ? 'RESEARCH' : (
+  const researching = mode === 'REPORT' && topics.some(topic => topic.id === 'musical-research' || topic.grade === 4 && ['scene-context','art-exponents-research'].includes(topic.id) || topic.grade === 5 && ['artistic-research-method','avant-garde-documentation','artistic-proposal-research','western-theatre-history','dominican-stage-history','copyright-research','history-period-research','style-context-research'].includes(topic.id) || topic.grade === 6 && ['dance-theatre-research','copyright-research','technique-style-research'].includes(topic.id))
+  const writingArt = mode === 'PRODUCTION' && topics.some(topic => topic.grade === 6 && topic.id === 'artistic-text')
+  const activityType = writingArt ? 'WRITTEN_PRODUCTION' : researching ? 'RESEARCH' : (
     {
       ANALYSIS: 'ANALYSIS',
       COMPARISON: 'COMPARISON',
@@ -265,7 +278,7 @@ function criterion(
 function contextualArtTopic(topic: ArtTopic, text: string): ArtTopic {
   let result = topic
   const brief = text.replace(/[.\s]+$/, '') === `explica ${normalize(topic.label)}`
-  if (topic.grade === 5 && !brief) {
+  if (topic.grade >= 5 && !brief) {
     const terms = (options: [string,string][]) => options.filter(([pattern]) => new RegExp(`\\b(?:${pattern})\\b`).test(text)).map(([,label]) => label)
     if (topic.id === 'artistic-language-resources') {
       const parts = terms([['espacio','espacio'],['soporte','soporte'],['color','color'],['textura','textura'],['tiempo','tiempo'],['dimensiones','dimensiones']])
@@ -305,6 +318,50 @@ function contextualArtTopic(topic: ArtTopic, text: string): ArtTopic {
       const chosen = /por genero o por autor/.test(text)?'el criterio elegido de género o autor':/por autor/.test(text)?'autor':/por genero/.test(text)?'género':'el criterio expresamente elegido'
       result = {...result,evidence:result.evidence.map(e=>({...e,title:`Clasificación según ${chosen}`,success:`Organiza los registros de obras según ${chosen}, sustentando la clasificación y los datos contextuales expresamente pedidos en las fuentes dadas.`}))}
     }
+    if (topic.grade === 6 && topic.id === 'music-work-registration') {
+      const chosen = /genero o autor/.test(text)?'el criterio elegido de género o autor':/por autor/.test(text)?'autor':/por genero/.test(text)?'género':'el criterio elegido'
+      const contexts = terms([['epoca','época'],['lugar','lugar']])
+      result = {...result,evidence:result.evidence.map(e=>({...e,title:`Registros según ${chosen}`,success:`Organiza los registros de las obras musicales según ${chosen}, sustentando la atribución${contexts.length?' y los datos de '+contexts.join(' y '):''} en las evidencias de las fichas proporcionadas.`}))}
+    }
+    if (topic.grade === 6 && topic.id === 'art-safety-observation') {
+      const parts = terms([['materiales','materiales'],['espacio','espacio']])
+      if (parts.length) result = {...result,evidence:parts.map((field,index)=>({
+        id:`observed-care-${index}`,title:`Frecuencia de cuidado de ${field}`,
+        success:`Cumple las acciones concretas de cuidado de ${field} expresamente acordadas en todas las oportunidades observadas.`,
+        sufficient:`Cumple las acciones concretas de cuidado de ${field} acordadas en casi todas las oportunidades observadas.`,
+        partial:`Cumple las acciones concretas de cuidado de ${field} acordadas en algunas oportunidades observadas.`,
+        error:`Cumple las acciones concretas de cuidado de ${field} acordadas en pocas oportunidades observadas.`,
+        absent:`No cumple las acciones concretas de cuidado de ${field} acordadas en las oportunidades observadas; no equivale a ausencia de registro.`,
+      }))}
+    }
+    if (topic.grade === 6 && topic.id === 'public-art' && /impacto|efectos/.test(text)) result = {
+      ...result,relation:'las relaciones entre ideas, recursos formales y efectos documentados de la manifestación de arte público examinada, diferenciando evidencias e inferencias sobre el público',
+    }
+    if (topic.grade === 6 && topic.id === 'kinetic-sculpture' && !/expresiv|sentido|proposito/.test(text)) result = {
+      ...result,evidence:result.evidence.map(e=>({...e,success:e.success.replace('con el propósito expresivo dado','con la función de movimiento expresamente dada')})),
+    }
+    if (topic.grade === 6 && topic.id === 'anthropological-theatre') {
+      const parts = terms([['mitos?','mitos'],['creencias?','creencias'],['normas?','normas'],['valores?','valores']])
+      if (parts.length) {
+        const selected = parts.length === 1 ? parts[0] : parts.slice(0,-1).join(', ')+' y '+parts.at(-1)
+        result = {...result,relation:`la representación de ${selected} y sus relaciones con las evidencias escénicas de la obra examinada, sin atribuir rasgos privados a las personas`}
+      }
+    }
+  }
+  if (topic.grade === 6) {
+    const clean = (value: string) => value
+      .replace(/\bfictici[oa]s?\b/g, /fictici/.test(text) ? '$&' : '')
+      .replace(/\bsimulad[oa]s?\b/g, /simulad|simulacion/.test(text) ? '$&' : '')
+      .replace(/\s+([.,;:])/g, '$1')
+      .replace(/\s+/g, ' ').trim()
+    const cleanEvidence = (e: ArtEvidenceText): ArtEvidenceText => ({
+      ...e, title: clean(e.title), success: clean(e.success),
+      sufficient: e.sufficient && clean(e.sufficient), partial: clean(e.partial), error: clean(e.error),
+      absent: e.absent && clean(e.absent),
+    })
+    result = {...result,label:clean(result.label),relation:clean(result.relation),evidence:result.evidence.map(e=>({
+      ...e,...cleanEvidence(e),...(e.plan?{plan:cleanEvidence(e.plan)}:{}),...(e.performance?{performance:cleanEvidence(e.performance)}:{}),
+    }))}
   }
   if (topic.grade === 4 && topic.id === 'regional-visual-art' && !brief && !/aportes|trascend/.test(text)) result = {
     ...result,
@@ -496,8 +553,8 @@ export function commonArtCriteria(task: CommonArtTask): ContextualTopicCriterion
     const requested = action.topics.flatMap((originalTopic) => {
       const topic = contextualArtTopic(originalTopic, action.text)
       if (action.mode === 'VERIFICATION') {
-        if (topic.grade === 5 && ['copyright-application','art-health-practices'].includes(topic.id)) {
-          const options = topic.id === 'copyright-application' ? [['autoria','autoría'],['fuente','fuente original']] : [['uso seguro','uso seguro del recurso'],['pausas','pausas acordadas']]
+        if (topic.grade >= 5 && ['copyright-application','art-health-practices','stilt-safety-check','craft-accessory'].includes(topic.id)) {
+          const options = topic.id === 'copyright-application' ? [['autoria','autoría'],['fuente','fuente original']] : topic.id === 'stilt-safety-check' ? [['espacio','espacio despejado'],['supervision','supervisión acordada']] : topic.id === 'craft-accessory' ? [['forma','forma'],['funcion','función']] : [['uso seguro','uso seguro del recurso'],['pausas','pausas acordadas']]
           const parts = options.filter(([pattern])=>new RegExp(`\\b${pattern}\\b`).test(action.text)).map(([,label])=>label)
           return (parts.length?parts:['la medida expresamente dada']).map((term,index)=>criterion(topic,action.mode,{
             id:`requirement-${index}`,title:`Verificación de ${term}`,
@@ -535,6 +592,7 @@ export function commonArtCriteria(task: CommonArtTask): ContextualTopicCriterion
         )
       }
       if (action.mode === 'ANALYSIS' || action.mode === 'COMPARISON') {
+        if (topic.grade === 6 && topic.id === 'public-art-access' && /^argument/.test(action.text)) return topic.evidence.map(e=>criterion(topic,action.mode,e))
         if (topic.grade === 5 && topic.id === 'aesthetic-position' && /^argument/.test(action.text)) return topic.evidence.filter(e=>!e.when||new RegExp(e.when).test(action.text)).map(e=>criterion(topic,action.mode,e))
         if (topic.grade === 4 && /^argument[a-z]*\b/.test(action.text) && topic.id === 'heritage-form-content') return topic.evidence.map(evidence => criterion(topic, action.mode, evidence))
         if (topic.grade === 3 && /^argument[a-z]*\b/.test(action.text) && ['web-diffusion','arts-health','heritage-art'].includes(topic.id)) return topic.evidence.map(evidence => criterion(topic, action.mode, evidence))

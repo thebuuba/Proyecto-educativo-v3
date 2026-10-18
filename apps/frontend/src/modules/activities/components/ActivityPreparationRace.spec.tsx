@@ -5,7 +5,8 @@ import type { InstrumentAcademicContext, InstrumentRecommendation, InstrumentTyp
 import { api, ApiError } from '@/services/apiClient'
 import { ActivityEditorWorkspace } from './ActivityEditorWorkspace'
 import { newActivityDraft, type ActivityDraft } from './editor/editorModel'
-import { editableFallbackRecommendation } from '../services/instrumentPreparation'
+import { editableFallbackRecommendation, preparationFingerprint, recommendationToFields } from '../services/instrumentPreparation'
+import { scoreInstrumentFields, scoreRecommendation } from '../services/instrumentScoring'
 import { readActivityDrafts } from '../utils/activityDraftStorage'
 
 vi.mock('@/modules/grading/components/ActivityDescriptionEditor', () => ({
@@ -39,6 +40,37 @@ async function advance(ms: number) {
 }
 
 describe('automatic instrument preparation request lifecycle', () => {
+  for (const initialScore of ['', '20']) for (const outcome of ['resolved', 'rejected'] as const) it(`conserva el formato confirmado al escribir puntos durante su preparación (${initialScore || 'pendiente'}/${outcome})`, async () => {
+    const automatic = editableFallbackRecommendation({activityTitle:'Informe',description,maxScore:20,instrumentType:'rubrica',participationMode:'INDIVIDUAL'})
+    const fields = scoreInstrumentFields(recommendationToFields(automatic,'Informe'),'rubrica',initialScore ? 20 : null,automatic)
+    const initial = {...newActivityDraft('b1'),name:'Informe',description,pedagogicalActivityType:'REPORT' as const,maxScore:initialScore,instrumentType:'rubrica',autoSelectedInstrumentType:true,preparedRecommendation:scoreRecommendation(automatic,fields,initialScore ? 20 : null),instrumentFields:fields}
+    let finish!: (p: InstrumentRecommendation) => void, fail!: (error: Error) => void
+    const pending = new Promise<InstrumentRecommendation>((resolve,reject)=>{finish=resolve;fail=reject})
+    let requests=0
+    const post=vi.spyOn(api,'post').mockImplementation(async(path,body)=>{
+      if(path.endsWith('/interpret'))return interpretation as never
+      const input=body as {preferredInstrumentType?: InstrumentType;maxScore:number}
+      if(++requests===1)return await pending as never
+      return editableFallbackRecommendation({activityTitle:'Informe',description,maxScore:input.maxScore,instrumentType:input.preferredInstrumentType??'rubrica',participationMode:'INDIVIDUAL'}) as never
+    })
+    mount({...initial,preparedFingerprint:preparationFingerprint(initial)})
+    chooseActivitySelection('Tipo de instrumento','escala')
+    expect(requests).toBe(1)
+    fireEvent.change(screen.getByRole('textbox',{name:/Valor en puntos/}),{target:{value:'17.35'}})
+    await advance(1000)
+    await act(async()=>{
+      if(outcome==='resolved')finish(editableFallbackRecommendation({activityTitle:'Informe',description,maxScore:20,instrumentType:'escala',participationMode:'INDIVIDUAL'}))
+      else fail(new ApiError(503,'Servicio no disponible'))
+    })
+    await advance(2000)
+    const draft=readActivityDrafts(context)[0].draft as ActivityDraft
+    expect(draft.instrumentType).toBe('escala')
+    expect(draft.autoSelectedInstrumentType).toBe(false)
+    expect(draft.maxScore).toBe('17.35')
+    expect(draft.preparedRecommendation?.instrumentType).toBe('escala')
+    expect(draft.preparedRecommendation?.totalScoreUnits).toBe(1735)
+    expect(post.mock.calls.filter(([path])=>path.endsWith('/recommend')).every(([,body])=>(body as {preferredInstrumentType?:string}).preferredInstrumentType==='escala')).toBe(true)
+  })
   for(const sample of [
     {grade:1,code:'NAT-TU',title:'Sismos',first:'Explica las causas de los sismos.',latest:'Compara energía renovable y no renovable.',expected:/energía renovable/,obsolete:/sismo|terremoto/},
     {grade:2,code:'NAT-VIDA',title:'Células',first:'Explica las partes y funciones de una célula.',latest:'Interpreta los datos proporcionados de fotosíntesis.',expected:/fotosíntesis/,obsolete:/célula|organelo/},

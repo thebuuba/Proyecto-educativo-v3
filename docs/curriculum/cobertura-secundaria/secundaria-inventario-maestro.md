@@ -47,7 +47,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Educación Artística | 3 | Común | 334, 335 | REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE |
 | Educación Artística | 4 | Común | 341, 342, 343 | REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE |
 | Educación Artística | 5 | Común | 344, 345, 346 | REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE |
-| Educación Artística | 6 | Común | 347, 348, 349 | PENDING |
+| Educación Artística | 6 | Común | 347, 348, 349 | REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE |
 | Educación Física | 1 | Común | 359, 360, 361 | PENDING |
 | Educación Física | 2 | Común | 362, 363, 364 | PENDING |
 | Educación Física | 3 | Común | 365, 366, 367 | PENDING |

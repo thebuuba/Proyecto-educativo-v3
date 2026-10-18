@@ -1,0 +1,840 @@
+{
+  "grade": 6,
+  "scopeId": "c7ec8e2e-ae1c-5996-99e0-d249fdd6d649",
+  "sourcePdfPages": [
+    347,
+    348,
+    349
+  ],
+  "policy": "REPRESENTATIVE_TASKS_NOT_FULL_COMPOUND_ROW_COVERAGE",
+  "cases": [
+    {
+      "id": "public-art-analysis",
+      "description": "Analiza las ideas y recursos formales de la obra de arte público proporcionada, relacionando decisiones y efectos documentados con evidencias. No infieras la opinión de todo el público.",
+      "sourceRecordIds": [
+        "b62394b2",
+        "f784af33",
+        "9f1048e9"
+      ],
+      "reviewFocus": "Efecto acreditado distinto de conciencia privada",
+      "topicIds": [
+        "public-art"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "mural-plan",
+      "description": "Diseña un plan de mural colectivo para el espacio escolar simulado dado. Relaciona idea, composición a escala, recursos disponibles y roles previstos. No pintes una pared real.",
+      "sourceRecordIds": [
+        "2451efb1",
+        "8c12d4c7",
+        "61363eba"
+      ],
+      "reviewFocus": "Plan frente a producción y autorización externa",
+      "topicIds": [
+        "mural"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "mural-production",
+      "description": "Crea el mural colectivo en el soporte portátil proporcionado, relacionando composición a escala, recursos y el mensaje social ficticio acordado. No intervengas muros ajenos.",
+      "sourceRecordIds": [
+        "61363eba",
+        "123014c6",
+        "4acde849"
+      ],
+      "reviewFocus": "Composición y escala del soporte pedido, no tamaño obligatorio",
+      "topicIds": [
+        "mural"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "kinetic-sculpture",
+      "description": "Construye una maqueta segura de escultura cinética con materiales ligeros disponibles, relacionando movimiento, uniones y sentido de la propuesta. No se exige motor ni compra.",
+      "sourceRecordIds": [
+        "3c7cf38a"
+      ],
+      "reviewFocus": "Movimiento y estructura observables",
+      "topicIds": [
+        "kinetic-sculpture"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "graffiti-production",
+      "description": "Crea un grafiti colectivo en el soporte simulado dado para el entorno comunitario ficticio, relacionando letras, recursos visuales y mensaje. No lo publiques ni intervengas espacio real.",
+      "sourceRecordIds": [
+        "ef63ce7e",
+        "f1fb56ce"
+      ],
+      "reviewFocus": "Grafiti como recurso expresivo, sin vandalismo o acciones externas",
+      "topicIds": [
+        "graffiti"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "public-art-access",
+      "description": "Argumenta una alternativa de acceso al arte público del caso ficticio con razones y evidencias de las condiciones dadas. No supongas permisos ni apoyo de toda la comunidad.",
+      "sourceRecordIds": [
+        "5eebc1a3"
+      ],
+      "reviewFocus": "Acceso y condiciones, no adhesión",
+      "topicIds": [
+        "public-art-access"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "collective-stage-plan",
+      "description": "Elabora el plan de creación colectiva de la escena de teatro elegida para el espacio simulado dado. Relaciona roles, acuerdos y recursos; no se pide danza, títeres y pantomima a la vez.",
+      "sourceRecordIds": [
+        "743ce2f9",
+        "02af933c"
+      ],
+      "reviewFocus": "Medio elegido y acuerdos observables",
+      "topicIds": [
+        "collective-stage"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "dance-theatre-analysis",
+      "description": "Analiza la relación de gesto, texto y movimiento de la pieza de danza-teatro proporcionada usando evidencias del fragmento. No montes otra pieza.",
+      "sourceRecordIds": [
+        "88032a45"
+      ],
+      "reviewFocus": "Tres componentes pedidos, sin montaje",
+      "topicIds": [
+        "dance-theatre"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "dance-theatre-research",
+      "description": "Investiga la pieza de danza-teatro asignada mediante fuentes y el registro audiovisual dados. Sustenta sus recursos y participa en el vídeo fórum ficticio según los argumentos documentados. No reveles vivencias.",
+      "sourceRecordIds": [
+        "ad46818f"
+      ],
+      "reviewFocus": "Investigación y diálogo delimitados",
+      "topicIds": [
+        "dance-theatre-research"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "dance-theatre-montage",
+      "description": "Crea y representa una pieza de danza-teatro ficticia relacionando gesto, texto y movimiento del guion con los recursos disponibles y adaptaciones acordadas.",
+      "sourceRecordIds": [
+        "aeacbdfc"
+      ],
+      "reviewFocus": "Montaje distinto de análisis",
+      "topicIds": [
+        "dance-theatre"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "street-theatre",
+      "description": "Representa la escena de teatro de calle ficticia en el espacio escolar simulado, relacionando acciones, público previsto y recursos adaptados. No uses zancos.",
+      "sourceRecordIds": [
+        "33d1c7d7"
+      ],
+      "reviewFocus": "Sin zancos obligatorios por título compuesto",
+      "topicIds": [
+        "street-theatre"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "forbidden": "zancos"
+    },
+    {
+      "id": "stilt-construction-model",
+      "description": "Construye un modelo de zancos de mesa sin uso corporal con materiales seguros dados. Relaciona uniones, apoyo y función representada. No te subas al modelo ni realices pruebas con personas.",
+      "sourceRecordIds": [
+        "d3106aeb"
+      ],
+      "reviewFocus": "Modelo sin carga corporal y construcción separada de uso",
+      "topicIds": [
+        "stilt-construction-model"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "forbidden": "sube al modelo|soporta personas|prueba corporal"
+    },
+    {
+      "id": "stilt-safety-check",
+      "description": "Verifica si el plan simulado de uso de zancos cumple los requisitos de espacio despejado y supervisión dados en la ficha. No ejecutes la actividad ni evalúes apariencia corporal.",
+      "sourceRecordIds": [
+        "d3106aeb",
+        "31063a31"
+      ],
+      "reviewFocus": "Requisitos explícitos, no prescripción de práctica",
+      "topicIds": [
+        "stilt-safety-check"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "social-theatre-analysis",
+      "description": "Analiza cómo el teatro del fragmento ficticio comunica la problemática social dada mediante acciones y recursos identificables. No se exige apoyar su postura.",
+      "sourceRecordIds": [
+        "0c8bd964",
+        "4394517a"
+      ],
+      "reviewFocus": "Mensaje y recursos, no conciencia interna",
+      "topicIds": [
+        "social-theatre-analysis"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "anthropological-theatre",
+      "description": "Analiza la representación de mitos, creencias, normas y valores del grupo ficticio en la obra de teatro antropológico latinoamericano proporcionada. Distingue evidencia escénica e inferencias sin declarar tu fe o familia.",
+      "sourceRecordIds": [
+        "b39c74d6"
+      ],
+      "reviewFocus": "Comprensión cultural sin evaluar creencias privadas",
+      "topicIds": [
+        "anthropological-theatre"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "required": "mitos, creencias, normas y valores",
+      "forbidden": "su fe personal|su familia|su identidad privada"
+    },
+    {
+      "id": "cultural-management",
+      "description": "Diseña el plan de gestión de un festival ficticio de danza o teatro según el medio elegido, relacionando programación, espacio y recursos disponibles. No contactes salas ni contrates servicios.",
+      "sourceRecordIds": [
+        "fc9e9641"
+      ],
+      "reviewFocus": "Gestión simulada y medio elegido",
+      "topicIds": [
+        "cultural-management"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "art-project-results",
+      "description": "Presenta resultados de la producción artística ya realizada relacionando decisiones logísticas, creativas y evidencias del producto según el formato elegido. No inventes resultados ni exijas venta real.",
+      "sourceRecordIds": [
+        "bc18a2ff",
+        "5c640d0e"
+      ],
+      "reviewFocus": "Resultados reales del trabajo dado frente a plan",
+      "topicIds": [
+        "art-project-results"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "stage-enterprise-plan",
+      "description": "Elabora el plan de proyecto escénico emprendedor de una comparsa ficticia relacionando propósito, secuencia, roles y recursos seguros disponibles. No se pide realizar también maquillaje, festival y otras presentaciones.",
+      "sourceRecordIds": [
+        "61a601a7",
+        "05fa15cb"
+      ],
+      "reviewFocus": "Lista de alternativas, duplicado literal sin doble puntuación",
+      "topicIds": [
+        "stage-enterprise-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "forbidden": "maquillaje|festival obligatorio"
+    },
+    {
+      "id": "multidisciplinary-project-plan",
+      "description": "Diseña un plan artístico multidisciplinario de teatro y creación visual para la problemática escolar ficticia dada. Relaciona los dos lenguajes elegidos, acciones y recursos previstos. No ejecutes el proyecto ni exijas otros lenguajes.",
+      "sourceRecordIds": [
+        "b69a9248",
+        "db5ed17d",
+        "71bbd8ea",
+        "ac82758b"
+      ],
+      "reviewFocus": "Integración pedida, sin todos los medios acumulados",
+      "topicIds": [
+        "multidisciplinary-project-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "school-art-exhibition",
+      "description": "Organiza la muestra escolar simulada de Educación Artística relacionando obras visuales y presentación musical expresamente elegidas con programación, público y recursos disponibles. No publiques imágenes ni requieras evento externo.",
+      "sourceRecordIds": [
+        "e29e45ac",
+        "1500f30f",
+        "1e7c0c20"
+      ],
+      "reviewFocus": "Muestra simulada y lenguajes seleccionados",
+      "topicIds": [
+        "school-art-exhibition"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "craft-accessory",
+      "description": "Elabora el accesorio artesanal de uso personal ficticio con el material reciclado seguro dado. Relaciona forma, uniones y función sin exigir compra ni valorar gustos.",
+      "sourceRecordIds": [
+        "3e99c64c",
+        "5758cc09"
+      ],
+      "reviewFocus": "Uso y técnica del recurso elegido",
+      "topicIds": [
+        "craft-accessory"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "collective-improvisation",
+      "description": "Improvisa en grupo la escena teatral del tema, género y estilo ficticios dados, relacionando propuestas, respuestas y uso del espacio adaptado. No se pide improvisar danza también.",
+      "sourceRecordIds": [
+        "1ffbaa95",
+        "80dfd450"
+      ],
+      "reviewFocus": "Respuesta y acuerdos, no talento o extroversión",
+      "topicIds": [
+        "collective-improvisation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "forbidden": "danza obligatoria"
+    },
+    {
+      "id": "sociodrama",
+      "description": "Representa el sociodrama ficticio del problema social dado, relacionando roles, acciones y posiciones con el guion y recursos adaptados. No se evalúa adherir a una posición.",
+      "sourceRecordIds": [
+        "e7e87227"
+      ],
+      "reviewFocus": "Contenido social y roles, no postura personal",
+      "topicIds": [
+        "sociodrama"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "political-parody",
+      "description": "Crea una parodia de la situación política ficticia proporcionada, relacionando transformación, contraste y mensaje sustentado sin ataques personales ni referencias privadas. No se exige sociodrama adicional.",
+      "sourceRecordIds": [
+        "e7e87227",
+        "6555a5d9"
+      ],
+      "reviewFocus": "Parodia distinta de sociodrama",
+      "topicIds": [
+        "political-parody"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "forbidden": "sociodrama adicional"
+    },
+    {
+      "id": "copyright-research",
+      "description": "Investiga leyes, entidades y procesos de derechos autorales en las artes según las fuentes dadas, señalando jurisdicción, fecha y alcance. No presentes el currículo de 2023 como prueba de vigencia legal actual.",
+      "sourceRecordIds": [
+        "994d9065"
+      ],
+      "reviewFocus": "Temporalidad y fuentes, sin asesoría legal",
+      "topicIds": [
+        "copyright-research"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH",
+      "forbidden": "ley vigente garantizada|asesoría legal"
+    },
+    {
+      "id": "music-work-registration",
+      "description": "Organiza el registro de las obras musicales y sus compositores asignados según el criterio de género o autor elegido, relacionando época y lugar documentados. No uses ambos criterios obligatoriamente.",
+      "sourceRecordIds": [
+        "fecf5616"
+      ],
+      "reviewFocus": "Clasificación elegida y procedencia documentada",
+      "topicIds": [
+        "music-work-registration"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "heritage-registration",
+      "description": "Elabora el registro del objeto patrimonial proporcionado en el formato físico o digital elegido, relacionando autoría, procedencia, técnica y tema con sus evidencias e identificando datos no determinados.",
+      "sourceRecordIds": [
+        "8b2a2098"
+      ],
+      "reviewFocus": "No inventar datos ni exigir todos los formatos",
+      "topicIds": [
+        "heritage-object-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "music-enterprise-plan",
+      "description": "Diseña un plan de iniciativa musical ficticia según propósito, público y recursos disponibles. No se exige fundar una academia ni vender o contratar servicios.",
+      "sourceRecordIds": [
+        "6cc576c3"
+      ],
+      "reviewFocus": "Emprendimiento simulado sin obligación financiera",
+      "topicIds": [
+        "music-enterprise-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "music-cultural-project",
+      "description": "Crea el proyecto cultural musical de ambientación ficticia acordado mediante el recurso sonoro disponible elegido, relacionando música, público y secuencia. No se exige grabación, academia y agrupación a la vez.",
+      "sourceRecordIds": [
+        "32e923fe"
+      ],
+      "reviewFocus": "Tipo de proyecto elegido, no acumulación",
+      "topicIds": [
+        "music-cultural-project"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "forbidden": "academia obligatoria|agrupación obligatoria"
+    },
+    {
+      "id": "craft-market-plan",
+      "description": "Elabora un plan de muestra artesanal nacional ficticia relacionando selección de productos, promoción, público y recursos disponibles. No realices venta ni viajes.",
+      "sourceRecordIds": [
+        "679b26ba"
+      ],
+      "reviewFocus": "Mercado como contexto, no transacción real",
+      "topicIds": [
+        "craft-market-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "artistic-language-description",
+      "description": "Describe los elementos del lenguaje visual expresamente asignados de la obra artesanal dada con evidencias identificables. No analices sonidos, gestos ni otros lenguajes.",
+      "sourceRecordIds": [
+        "84ef39da"
+      ],
+      "reviewFocus": "Solo medio pedido",
+      "topicIds": [
+        "artistic-language-description"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "forbidden": "sonidos|gestos|movimientos"
+    },
+    {
+      "id": "simulated-work-promotion",
+      "description": "Crea una simulación de promoción de la obra artística ficticia dada en el medio elegido, relacionando mensaje, público y recursos sin publicación externa.",
+      "sourceRecordIds": [
+        "daa730ed"
+      ],
+      "reviewFocus": "Promoción observable simulada",
+      "topicIds": [
+        "simulated-work-promotion"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "artistic-text",
+      "description": "Crea el texto para la pieza escénica de la problemática social ficticia dada, relacionando voces, secuencia y mensaje acordado. No reveles inquietudes privadas ni compongas una pieza musical adicional.",
+      "sourceRecordIds": [
+        "199590ea"
+      ],
+      "reviewFocus": "Texto y medio elegido sin intimidad",
+      "topicIds": [
+        "artistic-text"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "forbidden": "pieza musical adicional"
+    },
+    {
+      "id": "genre-style-analysis",
+      "description": "Identifica las características del género y estilo expresamente dados en la obra artística proporcionada mediante evidencias del referente. No investigues otros estilos.",
+      "sourceRecordIds": [
+        "5396b780"
+      ],
+      "reviewFocus": "Identificación sustentada",
+      "topicIds": [
+        "genre-style-analysis"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "social-improvement-proposal",
+      "description": "Crea una propuesta visual sobre la mejora social del caso ficticio mediante recursos y razones identificables, sin exponer víctimas ni calificar adhesión a una postura.",
+      "sourceRecordIds": [
+        "129b23f7"
+      ],
+      "reviewFocus": "Representación y sustento, no conciencia privada",
+      "topicIds": [
+        "social-improvement-proposal"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "technique-style-research",
+      "description": "Investiga la relación entre la técnica artística asignada y el surgimiento o evolución del estilo dado mediante evidencias de las fuentes proporcionadas. No afirmes causalidad sin sustento.",
+      "sourceRecordIds": [
+        "194eccc8"
+      ],
+      "reviewFocus": "Técnica y cambio de estilo con límites de evidencia",
+      "topicIds": [
+        "technique-style-research"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "public-art-presentation",
+      "description": "Presenta el análisis del arte público dado mediante el medio elegido, relacionando ideas, técnicas y evidencias sin exigir gustos compartidos ni publicación.",
+      "sourceRecordIds": [
+        "46d7930e"
+      ],
+      "reviewFocus": "Socializar argumentos observables sin adhesión",
+      "topicIds": [
+        "public-art-presentation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "art-safety-observation",
+      "description": "Registra la frecuencia de cumplimiento de las acciones concretas de cuidado de materiales y del espacio acordadas durante la actividad artística observada. No infieras salud privada ni capacidad corporal.",
+      "sourceRecordIds": [
+        "31063a31"
+      ],
+      "reviewFocus": "Frecuencia y acciones independientes",
+      "topicIds": [
+        "art-safety-observation"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION"
+    },
+    {
+      "id": "collective-health-message",
+      "description": "Crea una pieza visual sobre la acción de salud colectiva ficticia dada usando solo las recomendaciones de la ficha proporcionada, relacionando recursos y claridad del mensaje. No des diagnósticos ni inventes consejos sanitarios.",
+      "sourceRecordIds": [
+        "ecbf50c1"
+      ],
+      "reviewFocus": "Comunicación de ficha dada, no guía médica",
+      "topicIds": [
+        "collective-health-message"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "forbidden": "diagnostica|recomienda tratamientos|garantiza prevención"
+    },
+    {
+      "id": "collective-agreements",
+      "description": "Registra la frecuencia con que se aportan propuestas y se cumplen los acuerdos concretos de la creación artística grupal observada. No evalúes extroversión, liderazgo innato ni personalidad.",
+      "sourceRecordIds": [
+        "207a82b0"
+      ],
+      "reviewFocus": "Acciones observadas, no proactividad interna",
+      "topicIds": [
+        "collective-agreements"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION"
+    },
+    {
+      "id": "art-work-opportunities",
+      "description": "Analiza las posibles fuentes de trabajo artístico y artesanal del caso ficticio, relacionando técnica, función y condiciones documentadas sin prometer ingresos ni exigir contratación.",
+      "sourceRecordIds": [
+        "eb055861"
+      ],
+      "reviewFocus": "Fuentes y condiciones, no promesa de empleo",
+      "topicIds": [
+        "art-work-opportunities"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "public-art-ideas-only",
+      "description": "Analiza las ideas y técnicas visibles del arte público del referente dado. No se pide estudiar su impacto ni entrevistar al público.",
+      "topicIds": [
+        "public-art"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b62394b2",
+        "9f1048e9"
+      ],
+      "forbidden": "impacto|entrevista|efectos",
+      "required": "ideas"
+    },
+    {
+      "id": "kinetic-movement-analysis",
+      "description": "Analiza el movimiento de la escultura cinética del vídeo dado y su relación con la organización de la obra. No construyas una maqueta ni evalúes uniones o materiales.",
+      "topicIds": [
+        "kinetic-sculpture"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3c7cf38a"
+      ],
+      "forbidden": "construye|uniones|materiales",
+      "required": "movimiento"
+    },
+    {
+      "id": "craft-form-function-check",
+      "description": "Verifica si el accesorio artesanal proporcionado cumple los requisitos explícitos de forma y función de la ficha. No evalúes belleza ni precio.",
+      "topicIds": [
+        "craft-accessory"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5758cc09",
+        "3e99c64c"
+      ],
+      "required": "función",
+      "criterionCount": 2
+    },
+    {
+      "id": "safe-materials-only",
+      "description": "Registra la frecuencia con que se cumplen las acciones de cuidado de materiales acordadas durante la actividad artística. No se pide evaluar el espacio ni zancos.",
+      "topicIds": [
+        "art-safety-observation"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "sourceRecordIds": [
+        "31063a31"
+      ],
+      "forbidden": "zancos|espacio",
+      "required": "materiales",
+      "criterionCount": 1
+    },
+    {
+      "id": "music-author-classification",
+      "description": "Organiza el registro de las obras musicales proporcionadas por autor según las fichas dadas. No se pide género, época ni lugar.",
+      "topicIds": [
+        "music-work-registration"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "sourceRecordIds": [
+        "fecf5616"
+      ],
+      "forbidden": "género|época|lugar",
+      "required": "autor",
+      "criterionCount": 1
+    },
+    {
+      "id": "heritage-author-only",
+      "description": "Elabora el registro de autoría del objeto patrimonial dado, identificando atribución documentada y autoría no determinada. No se piden técnica, tema ni procedencia.",
+      "topicIds": [
+        "heritage-object-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "sourceRecordIds": [
+        "8b2a2098"
+      ],
+      "forbidden": "técnica|tema|procedencia",
+      "required": "autoría",
+      "criterionCount": 1
+    },
+    {
+      "id": "theatrical-improvisation-plan",
+      "description": "Elabora el plan de improvisación teatral colectiva del tema, género y estilo dados, relacionando propuestas, respuestas y espacio previstos. No representes aún la escena.",
+      "topicIds": [
+        "collective-improvisation"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "1ffbaa95"
+      ],
+      "forbidden": "escena ejecutada",
+      "required": "plan"
+    },
+    {
+      "id": "dance-improvisation",
+      "description": "Improvisa en grupo una secuencia de danza del tema y estilo dados, relacionando propuestas, respuestas y uso del espacio adaptado. No se pide texto ni diálogo teatral.",
+      "topicIds": [
+        "collective-improvisation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "1ffbaa95"
+      ],
+      "forbidden": "diálogo|texto teatral",
+      "required": "movimiento"
+    },
+    {
+      "id": "weighted-kinetic",
+      "description": "Construye una maqueta de escultura cinética con materiales ligeros seguros dados, relacionando movimiento y uniones. Utiliza lista ponderada con crédito parcial para los componentes acordados. No se exige motor.",
+      "topicIds": [
+        "kinetic-sculpture"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "3c7cf38a"
+      ],
+      "forbidden": "propósito expresivo",
+      "required": "movimiento"
+    },
+    {
+      "id": "multidisciplinary-production",
+      "description": "Crea la propuesta artística multidisciplinaria de teatro y creación visual para la problemática escolar ficticia dada. Relaciona ambos lenguajes elegidos y las evidencias del producto con los recursos disponibles. No añadas música o danza.",
+      "topicIds": [
+        "multidisciplinary-project-plan"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "b69a9248",
+        "db5ed17d"
+      ],
+      "forbidden": "música|danza",
+      "required": "lenguajes"
+    },
+    {
+      "id": "graffiti-analysis",
+      "description": "Analiza cómo los recursos del grafiti proporcionado comunican el mensaje del referente. No crees otro grafiti ni intervengas una pared.",
+      "topicIds": [
+        "graffiti"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ef63ce7e"
+      ],
+      "forbidden": "crea un grafiti|pinta una pared",
+      "required": "mensaje"
+    },
+    {
+      "id": "sociodrama-plan",
+      "description": "Diseña el plan del sociodrama de la problemática ficticia dada, relacionando roles, acciones y guion previstos. No lo representes todavía ni añadas parodia.",
+      "topicIds": [
+        "sociodrama"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "e7e87227"
+      ],
+      "forbidden": "parodia|representación ejecutada",
+      "required": "plan"
+    },
+    {
+      "id": "mural-from-provided-plan",
+      "description": "Crea el mural en el soporte portátil dado según el plan de composición proporcionado, relacionando recursos visuales y el mensaje ficticio acordado. No diseñes un plan nuevo ni pintes una pared real.",
+      "topicIds": [
+        "mural"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "2451efb1",
+        "61363eba"
+      ],
+      "forbidden": "^Planifica",
+      "required": "mensaje",
+      "criterionCount": 1
+    },
+    {
+      "id": "public-art-brief",
+      "description": "Explica ideas y técnicas del arte público.",
+      "topicIds": [
+        "public-art"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b62394b2",
+        "9f1048e9"
+      ],
+      "forbidden": "efectos|impacto",
+      "required": "ideas"
+    },
+    {
+      "id": "mural-real-context",
+      "description": "Crea el mural colectivo en el soporte portátil del centro, relacionando composición a escala, recursos y el mensaje social acordado. No se pide una simulación.",
+      "topicIds": [
+        "mural"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "2451efb1",
+        "61363eba"
+      ],
+      "forbidden": "fictici|simulad",
+      "required": "mensaje"
+    },
+    {
+      "id": "festival-real-plan",
+      "description": "Diseña un plan de gestión del festival de teatro del centro, relacionando programación, espacio y recursos disponibles. No se pide simular el evento ni contratar servicios.",
+      "topicIds": [
+        "cultural-management"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "fc9e9641"
+      ],
+      "forbidden": "fictici|simulad",
+      "required": "programación",
+      "criterionCount": 1
+    },
+    {
+      "id": "music-enterprise-brief",
+      "description": "Explica iniciativas y emprendimiento musical.",
+      "topicIds": [
+        "music-enterprise-plan"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6cc576c3"
+      ],
+      "forbidden": "fictici|simulad",
+      "required": "propósito"
+    },
+    {
+      "id": "anthropological-norms-only",
+      "description": "Analiza las normas representadas en la obra de teatro antropológico dada usando evidencias escénicas. No analices mitos, creencias ni valores privados.",
+      "topicIds": [
+        "anthropological-theatre"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b39c74d6"
+      ],
+      "forbidden": "mitos|creencias|valores",
+      "required": "normas"
+    }
+  ]
+}

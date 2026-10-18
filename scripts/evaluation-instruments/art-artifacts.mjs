@@ -12,9 +12,9 @@ import { evaluationCatalogCurrent } from '../../apps/backend/src/modules/evaluat
 
 const flag = process.argv.indexOf('--grade'),
   grade = flag < 0 ? 1 : Number(process.argv[flag + 1])
-assert([1,2,3,4,5].includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
-const pdfPages = grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : [344,345,346]
-const gradeName = ['', 'one', 'two', 'three', 'four', 'five'][grade]
+assert([1,2,3,4,5,6].includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
+const pdfPages = grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : grade === 5 ? [344,345,346] : [347,348,349]
+const gradeName = ['', 'one', 'two', 'three', 'four', 'five', 'six'][grade]
 const module = commonArtModules.find((row) => row.grade === grade)
 assert(module, 'Grado con proveedor conectado requerido')
 const directory = 'docs/curriculum/cobertura-secundaria/'
@@ -74,10 +74,13 @@ const exclusions = (grade === 1 ? [
 ] : grade === 4 ? [
   ...['2b1efffa','9c92a778','d7edba97','168e84e8'].map(prefix => ({ prefix, reason: 'PURE_HEADING', explanation: 'Encabezado de lenguaje artístico, sin desempeño independiente.' })),
   { prefix: 'c5defbd4', reason: 'PRIVATE_IDENTITY', explanation: 'El fortalecimiento de identidad personal y social no se infiere ni se puntúa; las decisiones de obras y referentes se evalúan cuando son expresamente solicitadas.' },
-] : [
+] : grade === 5 ? [
   ...['dfa76b3f','8f68133b','bafda287','35f1fc12'].map(prefix => ({ prefix, reason: 'PURE_HEADING', explanation: 'Encabezado de columna, sin desempeño independiente. El literal Educación Artística en la posición musical se conserva sin crear otra asignatura.' })),
   { prefix: '22b54a35', reason: 'PRIVATE_ENJOYMENT', explanation: 'El disfrute musical privado no se infiere ni se puntúa; se observan relaciones y evidencias musicales cuando se solicitan.' },
   { prefix: 'e48036a0', reason: 'PRIVATE_ENJOYMENT', explanation: 'El deleite privado ante signos y símbolos no se puntúa; la interpretación y creación simbólicas se observan en evidencias de las obras.' },
+] : [
+  ...['aecd5c4d','e171542f','6cfc7d6e','004ad150'].map(prefix => ({ prefix, reason: 'PURE_HEADING', explanation: 'Encabezado de lenguaje artístico, sin desempeño independiente.' })),
+  { prefix: '4a6d338e', reason: 'PRIVATE_ENJOYMENT', explanation: 'La apertura a disfrutar o valorar expresiones artísticas no se infiere ni se puntúa como disposición interna; se observan decisiones y argumentos de las obras cuando se solicitan.' },
 ]).map(({ prefix, ...row }) => {
   const original = literal.find((item) => item.id.startsWith(prefix))
   assert(original)

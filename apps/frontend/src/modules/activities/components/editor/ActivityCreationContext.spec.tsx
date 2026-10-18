@@ -1,4 +1,5 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { useState } from 'react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { secondaryEvaluationProfile, type InstrumentRecommendation } from '@aula/shared'
 import { api } from '@/services/apiClient'
@@ -166,7 +167,11 @@ describe('contexto del editor modular para preparar instrumentos', () => {
     const original = { ...draft(), description: 'Aplicar lo aprendido.', evidenceInstructions: 'Entregar un mapa conceptual.',
       pedagogicalActivityType: 'OTHER', autoDetectedPedagogicalActivityType: true, evaluationTechnique: '', resources: ['Diapositivas'] }
     const props = editorProps({ ...original, preparedFingerprint: preparationFingerprint(original) })
-    render(<ActivityCreationView {...props} />)
+    function ControlledEditor() {
+      const [current, setCurrent] = useState(props.activityDraft)
+      return <ActivityCreationView {...props} activityDraft={current} onChangeDraft={next => { props.onChangeDraft(next); setCurrent(next) }} />
+    }
+    render(<ControlledEditor />)
     chooseActivitySelection('Tipo de instrumento', 'escala')
     await screen.findByText(/Revisa el instrumento alternativo antes de guardar/)
     const recovered = props.onChangeDraft.mock.calls.find(([value]) => value.preparedRecommendation?.instrumentType === 'escala')?.[0]

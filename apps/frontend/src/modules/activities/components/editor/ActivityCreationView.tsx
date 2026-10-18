@@ -666,6 +666,10 @@ export function ActivityCreationView(props: {
       const next = {...latestDraft.current,autoSelectedInstrumentType:true}
       latestDraft.current = next
       onChangeDraft(next)
+    } else {
+      // Persist the confirmed choice before the request. A concurrent score
+      // edit can invalidate its response; the retry must retain this format.
+      handleDraftChange({...latestDraft.current,instrumentType,autoSelectedInstrumentType:false})
     }
     void prepare(instrumentType || undefined, false, !instrumentType)
   }
@@ -1348,7 +1352,7 @@ export function ActivityCreationView(props: {
                       ? 0
                       : (validActivityScore(activityDraft.maxScore) ?? 0)
                   }
-                  skipDefaults={activityDraft.manualInstrumentBlank}
+                  skipDefaults={activityDraft.manualInstrumentBlank || (preparing && !activityDraft.preparedRecommendation)}
                   addingCriterion={addingCriterion}
                   criterionNotice={criterionNotice}
                   criterionNoticeError={criterionNoticeError}

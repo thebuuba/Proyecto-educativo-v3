@@ -1,0 +1,54 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.111",
+  "grade": 6,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 6,
+    "cycle": 2,
+    "subjectCode": "ART",
+    "optativeExitName": null
+  },
+  "format": "escala",
+  "inspectedFormats": [
+    "rubrica",
+    "escala"
+  ],
+  "savedAndReopenedFormats": [
+    "escala"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "DRAMATIZATION",
+  "manualStrategy": "PROJECT_BASED",
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "10846350af9c4275512860dd0f836fcb",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "10846350af9c4275512860dd0f836fcb",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "9026a889-f53a-4f56-b4ca-35ea48cd2fdb",
+      "format": "escala",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-2-eupFKH.js",
+  "servedAssetSha256": "4fae951c2901d425ea4e93622fa0cf76661e7e77fa04ab18c88da65a7dec25f5",
+  "limits": [
+    "Una muestra QA identificable en6.ºA/Artística de la cuenta personal, sin notas ni ejecución real de aula; no todos los temas o combinaciones.",
+    "El sociodrama ficticio con personajes, roles y diálogos seleccionó DRAMATIZATION automáticamente. Modalidad individual explícita para evaluar la evidencia de cada participante; no se crearon equipos.",
+    "Rúbrica completa inspeccionada por DOM; escala guardada y reabierta visualmente. Doce muestras HTTP/DB con QA separada verificaron los cuatro formatos con20/17.35.",
+    "PROJECT_BASED manual solo prueba persistencia, no recomendación pedagógica. Huella READ ONLY incluye instrumento completo, snapshot, técnica, puntos e identificadores.",
+    "No se borraron borradores, cachés, almacenamiento ni SW, ni se enviaron correos o cambiaron contraseñas. DOM y HTTP confirmaron asset actual/registerSW.js y sw.js igual a dist; internalsSW no inspeccionados.",
+    "Durante el primer arranque111 hubo ENOTFOUND del pooler y el Worker terminó; el reinicio local y Reintentar contexto/equipos recuperaron el flujo sin cambiar configuración. No se acredita solución definitiva de la intermitencia DNS.",
+    "Se utilizó Cursos/asignatura/Editar y el enlace observado para la reapertura final. Persisten los límites previos de Actividades global/Ver actividad.",
+    "La recarga después del rebuild abrió el creador vacío; no se acredita restauración automática del borrador. Se reintrodujo solo la muestra QA conocida. El borrador QA anterior seguía visible con Continuar y se conservó, sin borrar almacenamiento ni tocar borradores ajenos."
+  ]
+}

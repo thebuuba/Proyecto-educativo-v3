@@ -1,0 +1,17 @@
+# Educación Artística de 6.º — fuente y alcance
+
+Fuente MINERD 2023, SHA256 `80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58`. PDF 347–349 (impresas 346–348), leída visualmente completa: columnas, continuaciones, competencias e indicadores. Ámbito `c7ec8e2e-ae1c-5996-99e0-d249fdd6d649`: 92 registros, 21 conceptos, 20 procedimientos, 16 actitudes, 21 indicadores y 14 competencias. Los 17 conceptos útiles y 20 procedimientos tienen correspondencia explícita con 39 grupos de temas.
+
+Los cuatro encabezados se conservan literalmente, incluido el de Artes Aplicadas con su viñeta. No se convierten en temas evaluables. Se preservan las filas repetidas de proyectos emprendedores, exposiciones y proyectos multidisciplinarios sin duplicar criterios. El indicador de disfrute interno `4a6d338e` tiene exclusión explícita; las demás actitudes contextualizan acciones solicitadas, sin puntuar personalidad, fe, salud privada, adhesión o conciencia interna.
+
+Se distinguen arte público, mural, escultura cinética, grafiti y acceso; creación colectiva, danza teatro, teatro callejero, zancos, conciencia social y teatro antropológico; gestión y proyectos culturales; emprendimiento musical, autoría y documentación; artes aplicadas, accesorios y muestras artesanales. Los indicadores incorporan análisis del lenguaje artístico, promoción, textos, estilos, investigación técnica, presentación, propuestas sociales, cuidado observable y oportunidades de trabajo.
+
+Los planes no equivalen a productos terminados ni a resultados. La investigación de un plan proporcionado no exige elaborar otro. Los registros musicales y patrimoniales solo solicitan los campos pedidos y admiten autoría no determinada. La improvisación de danza no impone diálogo teatral. Los medios y lenguajes alternativos no se acumulan. La frecuencia de cuidado y de acuerdos separa acciones observables, y Nunca no equivale a falta de registro.
+
+Los zancos se trabajan mediante modelo de mesa sin carga corporal o análisis de requisitos dados; no se genera una guía de entrenamiento físico. No se exigen intervenciones en paredes o espacios públicos, compras, ventas, viajes, contratación ni contactos reales. El contexto ficticio o simulado se conserva cuando se solicita; no se impone a un mural portátil o festival del centro. La salud colectiva se limita a comunicar la ficha dada, sin diagnósticos ni consejos nuevos. Los derechos se estudian con fuentes, jurisdicción, fecha y alcance proporcionados, sin asumir vigencia jurídica actual.
+
+En teatro antropológico se analizan los mitos, creencias, normas o valores representados que la consigna solicite; no se atribuyen creencias al estudiante. Las propuestas sociales y las posturas artísticas se sustentan en evidencias, sin exigir acuerdo personal.
+
+59 consignas específicas y 39 explicaciones breves producen 392 instrumentos completos. Se leyeron todas sus filas, progresiones, formatos y puntos; las 392 huellas coinciden. Esto acredita patrones representativos y su pertinencia, no todas las combinaciones curriculares ni una clase ejecutada. Los criterios son adaptaciones de AulaBase, separados del literal oficial.
+
+Catálogo111 instalado CREATED/UNCHANGED y servido exclusivamente en Development. Doce muestras HTTP y recorrido personal con escala17.35, texto manual y estrategia sola exactos. Ver [informe de cierre](2026-10-18-artistica-6-cierre.md) para resultados y límites; no repetir instalación ni creaciones QA.
