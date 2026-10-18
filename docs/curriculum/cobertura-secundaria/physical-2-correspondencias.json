@@ -1,0 +1,189 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "scopeId": "bea155fb-1eef-52dd-80a2-e86992f1f72b",
+  "grade": 2,
+  "topicRecords": {
+    "physical-condition-explanation": [
+      "1d32e8a8-f597-5d67-99ab-25813d249441"
+    ],
+    "circuit-plan": [
+      "ec0f5e0b-c56a-5d66-881a-c5ae0ace7422"
+    ],
+    "flexibility-observation": [
+      "ec0f5e0b-c56a-5d66-881a-c5ae0ace7422"
+    ],
+    "motor-variation": [
+      "ec0f5e0b-c56a-5d66-881a-c5ae0ace7422"
+    ],
+    "equilibrium-observation": [
+      "ec0f5e0b-c56a-5d66-881a-c5ae0ace7422"
+    ],
+    "warmup-observation": [
+      "2222311b-0643-5f28-83d8-e6c69fe44e25"
+    ],
+    "given-nutrition-record": [
+      "2222311b-0643-5f28-83d8-e6c69fe44e25"
+    ],
+    "care-frequency": [
+      "db28b9b1-9681-5bd8-8314-f71cbf84b41d"
+    ],
+    "tactical-cooperation": [
+      "2453faf4-669f-5de0-801f-f7ffce1c9f46",
+      "759efad0-6f5e-5ed9-be81-7dbe751666d4"
+    ],
+    "motor-progress-record": [
+      "ef8f80ee-c5f6-594f-8a7f-bf1ee3e98c62"
+    ],
+    "spatial-orientation": [
+      "ec0f5e0b-c56a-5d66-881a-c5ae0ace7422",
+      "df4fe997-43d5-547a-aaee-394d6fbaf1dc"
+    ],
+    "compass-orientation": [
+      "f0c02134-f712-55fd-8336-d6a0cab55169",
+      "df4fe997-43d5-547a-aaee-394d6fbaf1dc"
+    ],
+    "gps-orientation": [
+      "ec0f5e0b-c56a-5d66-881a-c5ae0ace7422",
+      "df4fe997-43d5-547a-aaee-394d6fbaf1dc"
+    ],
+    "camping-concept": [
+      "f0c02134-f712-55fd-8336-d6a0cab55169"
+    ],
+    "shelter-plan": [
+      "f0c02134-f712-55fd-8336-d6a0cab55169",
+      "f26855c1-11a4-54e3-9c01-ad61ec1c83de"
+    ],
+    "shelter-assembly": [
+      "f26855c1-11a4-54e3-9c01-ad61ec1c83de"
+    ],
+    "hiking-plan": [
+      "f0c02134-f712-55fd-8336-d6a0cab55169",
+      "dd4b5315-031a-5739-8ac0-fc08b3fd11ce"
+    ],
+    "hiking-practice": [
+      "dd4b5315-031a-5739-8ac0-fc08b3fd11ce"
+    ],
+    "hydration-pulse-record": [
+      "62a12730-c006-5c33-a5ea-de89ec8b0bc9"
+    ],
+    "diet-rest-case": [
+      "2222311b-0643-5f28-83d8-e6c69fe44e25",
+      "306cbee8-d65a-5c93-b0b9-502379dcfab5"
+    ],
+    "risk-prevention-case": [
+      "a2c0597d-3936-5757-acee-f7e7d8becbeb"
+    ],
+    "first-aid-reference": [
+      "a2c0597d-3936-5757-acee-f7e7d8becbeb"
+    ],
+    "athletics-history": [
+      "dea958c1-6490-5e95-8d0d-73e19316bd3e",
+      "d7c302a2-e64f-5a87-92b0-655437ee4ff2"
+    ],
+    "athletics-rules": [
+      "dea958c1-6490-5e95-8d0d-73e19316bd3e",
+      "b586470f-e217-56c7-95cd-194af97b44e7"
+    ],
+    "athletic-walk-run": [
+      "a6d8a048-c594-55c3-92be-63b358346d93",
+      "391bd27b-a0b3-59a9-b4ef-6b1455e9727b"
+    ],
+    "athletic-starts": [
+      "a6d8a048-c594-55c3-92be-63b358346d93"
+    ],
+    "athletic-jumps": [
+      "a6d8a048-c594-55c3-92be-63b358346d93"
+    ],
+    "athletic-implements": [
+      "f9c2b4b3-24a7-596d-af6b-fe1e478f43b7"
+    ],
+    "athletic-adaptation": [
+      "5359e501-7298-5ec8-9a60-3a2a770bac09"
+    ],
+    "paralympic-history": [
+      "3747a3b8-4e66-5d5e-a2ba-c5c92b024813",
+      "d7c302a2-e64f-5a87-92b0-655437ee4ff2"
+    ],
+    "chess-strategy-concept": [
+      "f6c11c97-5039-5d75-8749-9577f76a2b13"
+    ],
+    "chess-piece-value": [
+      "f6c11c97-5039-5d75-8749-9577f76a2b13"
+    ],
+    "chess-pawn-structure": [
+      "f6c11c97-5039-5d75-8749-9577f76a2b13"
+    ],
+    "chess-position-analysis": [
+      "f0714e96-05bd-535f-91cf-f48425b76b2e"
+    ],
+    "chess-plan": [
+      "f6c11c97-5039-5d75-8749-9577f76a2b13"
+    ],
+    "chess-gameplay": [
+      "d7dc5502-4298-5d9b-a75f-de48a5cc2a76"
+    ],
+    "chess-notation": [
+      "d7dc5502-4298-5d9b-a75f-de48a5cc2a76"
+    ],
+    "baseball-history": [
+      "8fe5285b-692c-574b-9d8c-ab9382b97c27",
+      "6f30a124-ce07-5316-befa-a9a93ded600e"
+    ],
+    "baseball-rules": [
+      "8fe5285b-692c-574b-9d8c-ab9382b97c27",
+      "6f30a124-ce07-5316-befa-a9a93ded600e"
+    ],
+    "baseball-five-rules": [
+      "6f30a124-ce07-5316-befa-a9a93ded600e"
+    ],
+    "baseball-positions": [
+      "8fe5285b-692c-574b-9d8c-ab9382b97c27"
+    ],
+    "baseball-fielding": [
+      "6f30a124-ce07-5316-befa-a9a93ded600e",
+      "a6c5b1da-27e1-5aba-b43a-60016fd03e4c"
+    ],
+    "baseball-throwing": [
+      "456fdf2a-8056-505d-a3cf-4adcd5bb2e85",
+      "f5a84e79-cfab-5527-b943-3878206aed5e"
+    ],
+    "baseball-pitcher": [
+      "6f30a124-ce07-5316-befa-a9a93ded600e",
+      "9731854f-fe05-5660-8369-fb335af1a79c"
+    ],
+    "baseball-batting": [
+      "6f30a124-ce07-5316-befa-a9a93ded600e",
+      "2ddc6d7c-bad1-5d5e-a55f-595e9581bbf9"
+    ],
+    "base-running": [
+      "6f30a124-ce07-5316-befa-a9a93ded600e",
+      "4aeba39e-c3bb-5195-9010-297230084ac8"
+    ],
+    "martial-history": [
+      "5f6c706d-7d63-5e51-beb2-18070ab1fff5",
+      "bf5dee58-4d5e-5b18-8241-2fa9826ed9a3"
+    ],
+    "martial-rules": [
+      "5f6c706d-7d63-5e51-beb2-18070ab1fff5",
+      "bf5dee58-4d5e-5b18-8241-2fa9826ed9a3"
+    ],
+    "martial-equipment": [
+      "5f6c706d-7d63-5e51-beb2-18070ab1fff5"
+    ],
+    "martial-fundamentals": [
+      "bf5dee58-4d5e-5b18-8241-2fa9826ed9a3",
+      "d2120587-d8c6-5cf8-ad9a-0a480b579245"
+    ],
+    "martial-risk-case": [
+      "bf5dee58-4d5e-5b18-8241-2fa9826ed9a3",
+      "926b0590-bbc5-512a-882c-f7785af86f06"
+    ],
+    "martial-adaptation": [
+      "957cd1b0-7c54-571b-9777-67e878e920e5",
+      "bf5dee58-4d5e-5b18-8241-2fa9826ed9a3"
+    ],
+    "chess-king-edge": [
+      "f6c11c97-5039-5d75-8749-9577f76a2b13"
+    ]
+  }
+}

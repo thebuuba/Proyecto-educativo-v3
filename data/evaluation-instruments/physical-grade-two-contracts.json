@@ -1,0 +1,1270 @@
+{
+  "grade": 2,
+  "scopeId": "bea155fb-1eef-52dd-80a2-e86992f1f72b",
+  "sourcePdfPages": [
+    362,
+    363,
+    364
+  ],
+  "policy": "REPRESENTATIVE_TASKS_NOT_FULL_COMPOUND_ROW_COVERAGE",
+  "cases": [
+    {
+      "id": "physical-condition-explanation",
+      "description": "Explica las diferencias entre fuerza rápida, velocidad de reacción y coordinación utilizando las evidencias de los ejemplos adaptados proporcionados. No midas capacidades personales.",
+      "topicIds": [
+        "physical-condition-explanation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1d32e8a8"
+      ],
+      "required": "fuerza rápida|reacción",
+      "forbidden": "clasifica cuerpos",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "circuit-plan",
+      "description": "Planifica el circuito adaptado relacionando estaciones, acciones y pausas ya fijadas en la ficha docente con los apoyos permitidos. No prescribas nuevos tiempos ni lo ejecutes todavía.",
+      "topicIds": [
+        "circuit-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "ec0f5e0b"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Ejecuta",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "circuit-performance",
+      "description": "Ejecuta el circuito adaptado siguiendo las estaciones, acciones y pausas ya proporcionadas con los apoyos acordados. No añadas intensidad ni duración nuevas.",
+      "topicIds": [
+        "circuit-plan"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "ec0f5e0b"
+      ],
+      "required": "Ejecuta",
+      "forbidden": "^Planifica",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "flexibility-verification",
+      "description": "Verifica el cumplimiento de las condiciones adaptadas de flexibilidad activa y pasiva expresamente dadas mediante el registro ficticio proporcionado. No midas amplitud corporal.",
+      "topicIds": [
+        "flexibility-observation"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ec0f5e0b"
+      ],
+      "required": "Verifica|Identifica",
+      "forbidden": "ranking",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "flexibility-practice",
+      "description": "Ejecuta las acciones de flexibilidad activa adaptadas de la ficha docente según las señales y apoyos dados. No realices estiramientos pasivos adicionales.",
+      "topicIds": [
+        "flexibility-observation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "ec0f5e0b"
+      ],
+      "required": "Ejecuta",
+      "forbidden": "^Verifica",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "motor-variation",
+      "description": "Combina los desplazamientos y giros adaptados dados variando dirección y sentido según las señales acordadas. No se piden saltos ni evaluar rapidez natural.",
+      "topicIds": [
+        "motor-variation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "ec0f5e0b"
+      ],
+      "required": "dirección",
+      "forbidden": "saltos|velocidad",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "equilibrium-reference",
+      "description": "Analiza el equilibrio del referente adaptado relacionando base de sustentación y altura con las condiciones proporcionadas. No compares cuerpos ni ejecutes la maniobra.",
+      "topicIds": [
+        "equilibrium-observation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ec0f5e0b"
+      ],
+      "required": "base de sustentación",
+      "forbidden": "Ejecuta",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "spatial-map",
+      "description": "Interpreta el recorrido del mapa proporcionado relacionando puntos cardinales y referencias del trayecto adaptado. No utilices brújula ni GPS.",
+      "topicIds": [
+        "spatial-orientation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ec0f5e0b",
+        "df4fe997"
+      ],
+      "required": "mapa",
+      "forbidden": "GPS|brújula",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "compass-reference",
+      "description": "Explica las decisiones de orientación con brújula del referente proporcionado relacionando puntos cardinales y referencias dadas. No utilices GPS ni realices un recorrido nuevo.",
+      "topicIds": [
+        "compass-orientation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f0c02134",
+        "df4fe997"
+      ],
+      "required": "brújula",
+      "forbidden": "GPS",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "gps-reference",
+      "description": "Analiza las referencias de orientación GPS del registro simulado proporcionado para justificar las decisiones del trayecto dado. No compartas ubicación personal ni utilices brújula.",
+      "topicIds": [
+        "gps-orientation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ec0f5e0b",
+        "df4fe997"
+      ],
+      "required": "GPS",
+      "forbidden": "brújula",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "camping-concept",
+      "description": "Explica las modalidades de acampada y sus condiciones usando las situaciones y recursos del referente proporcionado. No organices una excursión real.",
+      "topicIds": [
+        "camping-concept"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f0c02134"
+      ],
+      "required": "acampada",
+      "forbidden": "convoca",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "shelter-plan",
+      "description": "Crea un plan de instalación de la casa de campaña o refugio elegido con los recursos y condiciones expresamente proporcionados. No construyas ambos ni realices una salida real.",
+      "topicIds": [
+        "shelter-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "f0c02134",
+        "f26855c1"
+      ],
+      "required": "Planifica|elegid",
+      "forbidden": "ambos obligatorios",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "shelter-assembly",
+      "description": "Construye e instala el modelo de casa de campaña elegido siguiendo el esquema, recursos y condiciones de la simulación supervisada dada. No se pide un refugio adicional ni pernoctar.",
+      "topicIds": [
+        "shelter-assembly"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "f26855c1"
+      ],
+      "required": "Construye|Instala",
+      "forbidden": "pernocta",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "hiking-plan",
+      "description": "Diseña un plan de senderismo para el caso simulado dado relacionando trayecto, referencias, recursos y acuerdos proporcionados. No realices el recorrido todavía.",
+      "topicIds": [
+        "hiking-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "f0c02134",
+        "dd4b5315"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Recorre",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "hiking-practice",
+      "description": "Recorre el trayecto adaptado de senderismo de la simulación supervisada siguiendo referencias y acuerdos ya proporcionados, con los apoyos permitidos. No se prescribe una excursión nueva.",
+      "topicIds": [
+        "hiking-practice"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "dd4b5315"
+      ],
+      "required": "Recorre",
+      "forbidden": "^Planifica",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "warmup-observation",
+      "description": "Registra por separado la frecuencia con que se cumplen las acciones de preparación general y específica ya fijadas en la ficha docente durante las oportunidades observadas. No infieras hábitos privados.",
+      "topicIds": [
+        "warmup-observation"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "sourceRecordIds": [
+        "2222311b"
+      ],
+      "required": "oportunidades observadas",
+      "forbidden": "ausencia de registro como nunca",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "evidenceIds": [
+        "observed-general",
+        "observed-specific"
+      ]
+    },
+    {
+      "id": "nutrition-record",
+      "description": "Organiza la información alimentaria e hidratación del caso ficticio usando exclusivamente los datos de la ficha dada. No recomiendes ingesta personal.",
+      "topicIds": [
+        "given-nutrition-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "sourceRecordIds": [
+        "2222311b"
+      ],
+      "required": "Organiza",
+      "forbidden": "debes consumir",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "hydration-pulse-record",
+      "description": "Organiza el registro ficticio de hidratación y pulsaciones según los momentos y condiciones de actividad ya proporcionados. No solicites mediciones ni datos de salud personales.",
+      "topicIds": [
+        "hydration-pulse-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "sourceRecordIds": [
+        "62a12730"
+      ],
+      "required": "registro",
+      "forbidden": "diagnostica",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "diet-rest-case",
+      "description": "Analiza la relación entre alimentación y descanso del caso ficticio a partir de las acciones, condiciones y fichas proporcionadas. No elabores una dieta ni recomendaciones personales.",
+      "topicIds": [
+        "diet-rest-case"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2222311b",
+        "306cbee8"
+      ],
+      "required": "alimentación|descanso",
+      "forbidden": "recomienda ingerir",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "risk-prevention-case",
+      "description": "Analiza los factores de riesgo del caso simulado de campismo con la ficha de prevención proporcionada y justifica las decisiones documentadas. No realices intervenciones físicas.",
+      "topicIds": [
+        "risk-prevention-case"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a2c0597d"
+      ],
+      "required": "riesgo|prevención",
+      "forbidden": "ejecuta maniobras",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "first-aid-reference",
+      "description": "Verifica si las decisiones del registro ficticio de primeros auxilios corresponden al protocolo docente expresamente proporcionado, justificándolas con sus evidencias. No ejecutes técnicas ni añadas indicaciones médicas.",
+      "topicIds": [
+        "first-aid-reference"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a2c0597d"
+      ],
+      "required": "protocolo",
+      "forbidden": "realiza compresiones",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "athletics-history",
+      "description": "Expone los hechos y personajes del atletismo del ámbito nacional asignado relacionando fechas y evidencias de las fuentes dadas. No investigues todos los países.",
+      "topicIds": [
+        "athletics-history"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "sourceRecordIds": [
+        "dea958c1",
+        "d7c302a2"
+      ],
+      "required": "Presenta|Expone",
+      "forbidden": "todo el mundo",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "athletics-rules",
+      "description": "Verifica si las decisiones del caso ficticio de atletismo cumplen las reglas proporcionadas y justifica cada marca con el registro. No asumas otro reglamento vigente.",
+      "topicIds": [
+        "athletics-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dea958c1",
+        "b586470f"
+      ],
+      "required": "reglas",
+      "forbidden": "reglamento universal",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "athletic-walk-run",
+      "description": "Ejecuta la caminata o carrera expresamente elegida de la tarea atlética adaptada siguiendo las señales y condiciones ya dadas, con los apoyos permitidos. No se exigen ambas ni se compara rapidez personal.",
+      "topicIds": [
+        "athletic-walk-run"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "a6d8a048",
+        "391bd27b"
+      ],
+      "required": "elegid",
+      "forbidden": "caminata y carrera obligatorias",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "athletic-starts",
+      "description": "Compara las salidas alta y agachada de los referentes atléticos proporcionados relacionando posición y respuesta con las señales dadas. No las ejecutes.",
+      "topicIds": [
+        "athletic-starts"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "a6d8a048"
+      ],
+      "required": "Compara",
+      "forbidden": "^Ejecuta",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "athletic-jumps",
+      "description": "Ejecuta el salto adaptado expresamente elegido de la ficha docente según las fases y condiciones supervisadas dadas, con los apoyos permitidos. No se piden otras modalidades ni medir altura corporal.",
+      "topicIds": [
+        "athletic-jumps"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "a6d8a048"
+      ],
+      "required": "elegid",
+      "forbidden": "récord personal",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "athletic-implements",
+      "description": "Ejecuta el gesto de lanzamiento adaptado con el implemento no convencional elegido según las fases, señales y condiciones supervisadas dadas. No improvises otra maniobra ni se evalúa distancia máxima.",
+      "topicIds": [
+        "athletic-implements"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "f9c2b4b3"
+      ],
+      "required": "implemento",
+      "forbidden": "máxima distancia alcanzada",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "athletic-adaptation",
+      "description": "Analiza las adaptaciones de las reglas de atletismo del caso dado relacionando recursos y condiciones de participación con las evidencias proporcionadas. No infieras diagnósticos.",
+      "topicIds": [
+        "athletic-adaptation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5359e501"
+      ],
+      "required": "adaptaciones",
+      "forbidden": "déficit personal",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "paralympic-history",
+      "description": "Investiga la historia del atletismo paralímpico del ámbito asignado mediante los hechos, fechas y fuentes proporcionados, distinguiendo evidencia e inferencia. No evalúes diagnósticos de deportistas.",
+      "topicIds": [
+        "paralympic-history"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "3747a3b8",
+        "d7c302a2"
+      ],
+      "required": "Investiga",
+      "forbidden": "diagnostica",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "chess-strategy-concept",
+      "description": "Explica la estrategia de ajedrez relacionando objetivo, decisiones y restricciones del ejemplo proporcionado. No juegues una partida adicional.",
+      "topicIds": [
+        "chess-strategy-concept"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f6c11c97"
+      ],
+      "required": "estrategia",
+      "forbidden": "Juega",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "chess-piece-value",
+      "description": "Compara el valor relativo de las piezas de ajedrez en las posiciones proporcionadas justificando sus diferencias según las restricciones dadas. No puntúes ganar la partida.",
+      "topicIds": [
+        "chess-piece-value"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "f6c11c97"
+      ],
+      "required": "valor relativo",
+      "forbidden": "ganador",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "chess-pawn-structure",
+      "description": "Analiza los peones aislados y doblados de la posición de ajedrez dada relacionando su estructura con las decisiones del referente. No se piden peones pasados ni retrasados.",
+      "topicIds": [
+        "chess-pawn-structure"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f6c11c97"
+      ],
+      "required": "aislados|doblados",
+      "forbidden": "pasados|retrasados",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "chess-position-analysis",
+      "description": "Analiza las estrategias de defensa de la posición crítica de ajedrez proporcionada justificando efectos y restricciones según la secuencia dada. No juegues una partida nueva.",
+      "topicIds": [
+        "chess-position-analysis"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f0714e96"
+      ],
+      "required": "defensa|posición",
+      "forbidden": "Juega",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "chess-plan",
+      "description": "Crea un plan de ajedrez para la posición proporcionada relacionando objetivo, puntos fuertes y débiles y respuestas previstas según las reglas dadas. No ejecutes otra partida.",
+      "topicIds": [
+        "chess-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "f6c11c97"
+      ],
+      "required": "Planifica",
+      "forbidden": "Juega",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "chess-gameplay",
+      "description": "Juega la partida adaptada de ajedrez según las reglas dadas utilizando la notación proporcionada y justificando la estrategia elegida en la posición indicada. No se evalúa ganar.",
+      "topicIds": [
+        "chess-gameplay"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "d7dc5502"
+      ],
+      "required": "Juega",
+      "forbidden": "vencer al compañero",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "chess-notation",
+      "description": "Registra las jugadas de la partida de ajedrez proporcionada con la notación dada y relaciona la estrategia elegida con la posición indicada. No juegues otra partida.",
+      "topicIds": [
+        "chess-notation"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "sourceRecordIds": [
+        "d7dc5502"
+      ],
+      "required": "Registra",
+      "forbidden": "Juega",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "baseball-history",
+      "description": "Expone los hechos y personajes del softbol del ámbito local asignado relacionando fechas y evidencias de las fuentes proporcionadas. No añadas historia del béisbol ni otros ámbitos.",
+      "topicIds": [
+        "baseball-history"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "sourceRecordIds": [
+        "8fe5285b",
+        "6f30a124"
+      ],
+      "required": "softbol",
+      "forbidden": "béisbol y softbol",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "baseball-rules",
+      "description": "Verifica si las decisiones del caso ficticio de béisbol cumplen las reglas expresamente proporcionadas, justificando cada marca con el registro. No apliques otro reglamento.",
+      "topicIds": [
+        "baseball-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8fe5285b",
+        "6f30a124"
+      ],
+      "required": "reglas",
+      "forbidden": "reglamento universal",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "baseball-five-rules",
+      "description": "Compara las reglas de béisbol y béisbol 5 expresamente proporcionadas relacionando semejanzas y diferencias con las decisiones de la situación dada. No impongas reglas externas.",
+      "topicIds": [
+        "baseball-five-rules"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "6f30a124"
+      ],
+      "required": "5",
+      "forbidden": "reglamento actual universal",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "baseball-positions",
+      "description": "Analiza las posiciones infielder y outfielder del referente de béisbol relacionando ubicación y función defensiva con las evidencias proporcionadas. No ejecutes el fildeo.",
+      "topicIds": [
+        "baseball-positions"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8fe5285b"
+      ],
+      "required": "infielder|outfielder",
+      "forbidden": "Ejecuta",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "baseball-fielding",
+      "description": "Fildea el batazo de rolling elegido del referente adaptado de béisbol según posición y condiciones supervisadas dadas, con los apoyos permitidos. No se pide flay ni lanzamiento adicional.",
+      "topicIds": [
+        "baseball-fielding"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "6f30a124",
+        "a6c5b1da"
+      ],
+      "required": "rolling",
+      "forbidden": "flay|fly",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "baseball-throwing",
+      "description": "Realiza el tiro adaptado de béisbol hacia la referencia expresamente indicada según dirección y condiciones supervisadas dadas. No se evalúa la máxima distancia ni se pide fildeo.",
+      "topicIds": [
+        "baseball-throwing"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "456fdf2a",
+        "f5a84e79"
+      ],
+      "required": "tiro",
+      "forbidden": "máxima distancia alcanzada",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "baseball-pitcher",
+      "description": "Ejecuta la mecánica adaptada de lanzador de lado de béisbol según las fases, señales y condiciones supervisadas dadas. No se pide lanzamiento de frente ni velocidad máxima.",
+      "topicIds": [
+        "baseball-pitcher"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "6f30a124",
+        "9731854f"
+      ],
+      "required": "de lado",
+      "forbidden": "de frente",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "baseball-batting",
+      "description": "Ejecuta el bateo adaptado según la localización y las condiciones supervisadas de la tarea de béisbol proporcionada, con los apoyos permitidos. No se pide fildeo ni correr las bases.",
+      "topicIds": [
+        "baseball-batting"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "6f30a124",
+        "2ddc6d7c"
+      ],
+      "required": "bateo",
+      "forbidden": "fildeo",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "base-running",
+      "description": "Corre las bases de la situación adaptada de béisbol relacionando las decisiones con los outs, compañeros en base y marcador ya proporcionados, con los apoyos permitidos. No se evalúa rapidez natural.",
+      "topicIds": [
+        "base-running"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "6f30a124",
+        "4aeba39e"
+      ],
+      "required": "bases",
+      "forbidden": "rapidez máxima",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "martial-history",
+      "description": "Expone los hechos históricos de las artes marciales del ámbito asignado relacionando fechas y personajes con las fuentes dadas. No ejecutes técnicas.",
+      "topicIds": [
+        "martial-history"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "sourceRecordIds": [
+        "5f6c706d",
+        "bf5dee58"
+      ],
+      "required": "históric",
+      "forbidden": "Ejecuta",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "martial-rules",
+      "description": "Verifica si las decisiones del registro ficticio de artes marciales cumplen las reglas proporcionadas justificando las marcas con sus evidencias. No realices combate ni asumas reglas externas.",
+      "topicIds": [
+        "martial-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5f6c706d",
+        "bf5dee58"
+      ],
+      "required": "reglas",
+      "forbidden": "realiza combate",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "martial-equipment",
+      "description": "Analiza la función del equipamiento de artes marciales expresamente asignado en el referente según las condiciones de uso proporcionadas. No compres materiales ni realices pruebas de contacto.",
+      "topicIds": [
+        "martial-equipment"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5f6c706d"
+      ],
+      "required": "equipamiento",
+      "forbidden": "^Compra|debes comprar",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "martial-fundamentals-reference",
+      "description": "Analiza los fundamentos de las artes marciales expresamente elegidos del referente relacionando fases y función con las condiciones dadas. No ejecutes maniobras ni contacto físico.",
+      "topicIds": [
+        "martial-fundamentals"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "bf5dee58",
+        "d2120587"
+      ],
+      "required": "fundamentos",
+      "forbidden": "^Ejecuta",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "martial-fundamentals-practice",
+      "description": "Ejecuta las acciones básicas de artes marciales expresamente adaptadas y supervisadas según las señales y condiciones proporcionadas, con los apoyos permitidos. No improvises nuevas maniobras ni se evalúa ganar.",
+      "topicIds": [
+        "martial-fundamentals"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "bf5dee58",
+        "d2120587"
+      ],
+      "required": "Ejecuta",
+      "forbidden": "^Analiza",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "martial-risk-case",
+      "description": "Analiza las decisiones defensivas del caso simulado de artes marciales con la ficha de prevención de riesgos proporcionada y justifica su relación con las condiciones dadas. No ejecutes técnicas ofensivas ni un combate.",
+      "topicIds": [
+        "martial-risk-case"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "bf5dee58",
+        "926b0590"
+      ],
+      "required": "decisiones|riesgo",
+      "forbidden": "ejecuta patadas",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "martial-adaptation",
+      "description": "Analiza las adaptaciones de los elementos y reglas de artes marciales del caso dado relacionando recursos y participación con las necesidades ya descritas. No infieras diagnósticos ni penalices apoyos.",
+      "topicIds": [
+        "martial-adaptation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "957cd1b0",
+        "bf5dee58"
+      ],
+      "required": "adaptaciones",
+      "forbidden": "déficit personal",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "care-frequency",
+      "description": "Registra por separado la frecuencia de cuidado de los materiales y del espacio en la simulación de campismo observada según los acuerdos dados. No infieras higiene privada.",
+      "topicIds": [
+        "care-frequency"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "sourceRecordIds": [
+        "db28b9b1"
+      ],
+      "required": "oportunidades observadas",
+      "forbidden": "ausencia de registro como nunca",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "tactical-cooperation",
+      "description": "Registra por separado la frecuencia de propuestas de solución y cumplimiento de acuerdos técnicos en la tarea colectiva de béisbol observada. No evalúes liderazgo innato.",
+      "topicIds": [
+        "tactical-cooperation"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "sourceRecordIds": [
+        "2453faf4",
+        "759efad0"
+      ],
+      "required": "oportunidades observadas",
+      "forbidden": "carisma",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "evidenceIds": [
+        "observed-proposals",
+        "observed-agreements"
+      ]
+    },
+    {
+      "id": "motor-progress-record",
+      "description": "Analiza el registro ficticio de progresión motriz comparando las acciones adaptadas y condiciones documentadas en los dos momentos proporcionados. No clasifiques personas por capacidad natural.",
+      "topicIds": [
+        "motor-progress-record"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ef8f80ee"
+      ],
+      "required": "condiciones",
+      "forbidden": "ranking",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "base-running-brief-execution",
+      "description": "Corre las bases de la situación adaptada dada siguiendo las señales y condiciones acordadas. No se evalúa rapidez natural.",
+      "topicIds": [
+        "base-running"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "4aeba39e"
+      ],
+      "required": "Corre",
+      "forbidden": "rapidez máxima",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "baseball-history-only",
+      "description": "Expone los hechos y personajes del béisbol del ámbito local asignado relacionando fechas y evidencias de las fuentes dadas. No se pide historia del softbol.",
+      "topicIds": [
+        "baseball-history"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "sourceRecordIds": [
+        "8fe5285b",
+        "6f30a124"
+      ],
+      "required": "béisbol",
+      "forbidden": "softbol",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "softball-rules-only",
+      "description": "Verifica si las decisiones del caso ficticio de softbol cumplen las reglas proporcionadas justificando cada marca con el registro. No se pide reglamento de béisbol.",
+      "topicIds": [
+        "baseball-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8fe5285b",
+        "6f30a124"
+      ],
+      "required": "softbol",
+      "forbidden": "béisbol",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "baseball-fly-only",
+      "description": "Fildea el batazo de flay expresamente elegido en la tarea adaptada de béisbol según posición y condiciones supervisadas dadas. No se pide rolling ni tiro adicional.",
+      "topicIds": [
+        "baseball-fielding"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "a6c5b1da"
+      ],
+      "required": "flay|fly",
+      "forbidden": "rolling",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "pitcher-front-only",
+      "description": "Ejecuta la mecánica adaptada de lanzador de frente de béisbol según las fases y condiciones supervisadas dadas. No se pide lanzamiento de lado.",
+      "topicIds": [
+        "baseball-pitcher"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "9731854f"
+      ],
+      "required": "de frente",
+      "forbidden": "de lado",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "chess-passed-only",
+      "description": "Analiza los peones pasados de la posición de ajedrez proporcionada relacionando su estructura y decisiones con las evidencias dadas. No se piden peones aislados ni doblados.",
+      "topicIds": [
+        "chess-pawn-structure"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f6c11c97"
+      ],
+      "required": "pasados",
+      "forbidden": "aislados|doblados",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "baseball-outfielder-only",
+      "description": "Analiza la posición outfielder del referente de béisbol relacionando ubicación y función con las evidencias proporcionadas. No se pide la posición infielder.",
+      "topicIds": [
+        "baseball-positions"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8fe5285b"
+      ],
+      "required": "outfielder",
+      "forbidden": "infielder",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "rest-only",
+      "description": "Analiza el descanso del caso ficticio relacionando las acciones y condiciones documentadas con la ficha dada. No se pide alimentación ni una dieta.",
+      "topicIds": [
+        "diet-rest-case"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2222311b"
+      ],
+      "required": "descanso",
+      "forbidden": "alimentación|dieta personal",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "refuge-model-only",
+      "description": "Construye e instala el modelo de refugio expresamente elegido siguiendo esquema, recursos y condiciones de la simulación supervisada dada. No se pide casa de campaña.",
+      "topicIds": [
+        "shelter-assembly"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "f26855c1"
+      ],
+      "required": "refugio",
+      "forbidden": "casa de campaña",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "athletics-walk-only",
+      "description": "Ejecuta la caminata atlética adaptada dada siguiendo señales y condiciones supervisadas proporcionadas, con los apoyos permitidos. No se pide carrera.",
+      "topicIds": [
+        "athletic-walk-run"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "sourceRecordIds": [
+        "a6d8a048"
+      ],
+      "required": "caminata",
+      "forbidden": "carrera",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "chess-king-edge",
+      "description": "Analiza la posición del rey en la banda del tablero de ajedrez proporcionado relacionando restricciones y posibilidades con las evidencias dadas. No juegues una partida.",
+      "topicIds": [
+        "chess-king-edge"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f6c11c97"
+      ],
+      "required": "banda",
+      "forbidden": "Juega",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados"
+    },
+    {
+      "id": "nutrition-brief-both",
+      "description": "Explica información alimentaria e hidratación del caso.",
+      "topicIds": [
+        "given-nutrition-record"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2222311b"
+      ],
+      "required": "información alimentaria y la hidratación",
+      "forbidden": "alimentarias o|alimentaria o",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "hydration-brief-only",
+      "description": "Explica la hidratación del caso utilizando las evidencias de la ficha proporcionada. No se pide alimentación.",
+      "topicIds": [
+        "given-nutrition-record"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2222311b"
+      ],
+      "required": "hidratación",
+      "forbidden": "alimentari|alimentación",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "care-brief-context",
+      "description": "Explica cuidado observable de materiales y espacio.",
+      "topicIds": [
+        "care-frequency"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "db28b9b1"
+      ],
+      "required": "cuidado",
+      "forbidden": "juego",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "cooperation-brief-context",
+      "description": "Explica colaboración en soluciones técnico tácticas.",
+      "topicIds": [
+        "tactical-cooperation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2453faf4"
+      ],
+      "required": "propuestas|solución",
+      "forbidden": "observad[ao]",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "hydration-record-brief-context",
+      "description": "Explica registro de hidratación y pulsaciones.",
+      "topicIds": [
+        "hydration-pulse-record"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "62a12730"
+      ],
+      "required": "registro",
+      "forbidden": "fictici|simulad",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "nutrition-real-record",
+      "description": "Organiza la información alimentaria e hidratación del caso real proporcionado utilizando únicamente la ficha dada. No solicites datos personales.",
+      "topicIds": [
+        "given-nutrition-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "sourceRecordIds": [
+        "2222311b"
+      ],
+      "required": "caso proporcionado|caso real",
+      "forbidden": "fictici|simulad",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "rest-real-case",
+      "description": "Analiza el descanso del caso real proporcionado relacionando sus acciones y condiciones documentadas con la ficha dada. No se pide alimentación.",
+      "topicIds": [
+        "diet-rest-case"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2222311b"
+      ],
+      "required": "descanso",
+      "forbidden": "fictici|simulad|alimentación",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "first-aid-protocol-brief",
+      "description": "Explica protocolo proporcionado de primeros auxilios.",
+      "topicIds": [
+        "first-aid-reference"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a2c0597d"
+      ],
+      "required": "protocolo",
+      "forbidden": "registro|decisiones",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "athletics-rules-brief",
+      "description": "Explica reglas de atletismo.",
+      "topicIds": [
+        "athletics-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dea958c1"
+      ],
+      "required": "reglas",
+      "forbidden": "registro|decisiones",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "baseball-rules-brief",
+      "description": "Explica reglas de béisbol o softbol.",
+      "topicIds": [
+        "baseball-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8fe5285b"
+      ],
+      "required": "reglas",
+      "forbidden": "registro|decisiones",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "martial-rules-brief",
+      "description": "Explica reglas de artes marciales.",
+      "topicIds": [
+        "martial-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5f6c706d"
+      ],
+      "required": "reglas",
+      "forbidden": "registro|decisiones",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "baseball-rule-brief-only",
+      "description": "Explica reglas de béisbol. No se pide softbol.",
+      "topicIds": [
+        "baseball-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8fe5285b"
+      ],
+      "required": "béisbol",
+      "forbidden": "softbol|registro|decisiones",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "walk-brief-only",
+      "description": "Explica la caminata atlética adaptada proporcionada. No se pide carrera.",
+      "topicIds": [
+        "athletic-walk-run"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a6d8a048"
+      ],
+      "required": "caminata",
+      "forbidden": "carrera",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "softball-history-brief-only",
+      "description": "Explica la historia del softbol a partir de las fuentes dadas. No se pide béisbol.",
+      "topicIds": [
+        "baseball-history"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8fe5285b"
+      ],
+      "required": "softbol",
+      "forbidden": "béisbol",
+      "focus": "Evidencia del desempeño pedido; condiciones, adaptaciones y recursos proporcionados",
+      "narrowedEvidence": true
+    }
+  ]
+}

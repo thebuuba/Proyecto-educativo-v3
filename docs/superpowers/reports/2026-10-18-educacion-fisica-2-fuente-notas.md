@@ -1,0 +1,15 @@
+# Educación Física de 2.º: revisión de la fuente
+
+Fuente MINERD 2023, PDF 362–364, páginas impresas 361–363. SHA-256 `80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58`. Las tres páginas se renderizaron y leyeron visualmente completas. Ámbito `bea155fb-1eef-52dd-80a2-e86992f1f72b`: 19 conceptos, seis filas de procedimientos con 19 acciones numeradas agrupadas, 10 actitudes, 21 indicadores y 14 competencias.
+
+Se contrastaron capacidades y circuitos adaptados, flexibilidad, variaciones motrices, equilibrio, campismo y modelos de alojamiento, senderismo y orientación con mapa/brújula/GPS, fichas de alimentación, hidratación, pulsaciones y descanso; atletismo y sus adaptaciones e historia paralímpica; estrategia, piezas, peones, posiciones, planes, partidas, notación y rey en la banda del ajedrez; béisbol, softbol y béisbol 5; artes marciales y adaptaciones. Se distinguen explicación, comparación, investigación, plan, producción, ejecución adaptada, registro, verificación y observación.
+
+Las correspondencias conservan 15 filas útiles C/P: diez conceptos y cinco filas de procedimientos. No se excluyen filas con desempeños porque contengan encabezados internos. Las acciones de orientación repetidas bajo dos rótulos permanecen en el literal y no producen criterios duplicados. Se excluyen nueve encabezados conceptuales, uno procedimental y dos disposiciones de perseverancia interna. «Deportes optativos» dentro de Educación Física no equivale a salidas académicas ni a otras asignaturas.
+
+Los 53 temas y 80 contratos específicos, más 53 explicaciones breves, producen 133 consignas representativas y 532 instrumentos de cuatro formatos. Se leyeron completos, con progresiones, puntuación y parcial de la lista ponderada, y se registraron las huellas de su contenido final. Esto acredita estos ejemplos, no toda variante de las filas compuestas ni una clase ejecutada. Las fuentes literales permanecen separadas de las adaptaciones pedagógicas de AulaBase.
+
+La descripción conserva las acciones, modalidades, recursos, alternativas y negaciones solicitados. Se separan preparación general/específica, materiales/espacio y propuestas/acuerdos. Una explicación de reglas o protocolo no fuerza verificar un registro; el contexto real o simulado lo fija la consigna. Las frecuencias distinguen «Nunca» de la ausencia de registro.
+
+Las actividades utilizan fichas, protocolos, reglas, condiciones, apoyos y supervisión proporcionados. No añaden dosis de ejercicio, dietas personales, diagnósticos, datos privados, excursiones nuevas o instrucciones peligrosas. Se evalúan las acciones y decisiones pedidas, sin puntuar capacidad natural, apariencia corporal, discapacidad, fe, identidad, emociones, disfrute o personalidad. Los apoyos permitidos no se penalizan. El reglamento proporcionado no se presenta como reglamento vigente universal.
+
+La publicación en Development, la instalación, las pruebas HTTP y el recorrido personal se acreditan por separado en el informe del bloque y su matriz. Esta nota de fuente no demuestra por sí sola su ejecución.

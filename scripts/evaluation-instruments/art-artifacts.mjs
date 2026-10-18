@@ -15,8 +15,8 @@ assert(['ART','EFI'].includes(subjectCode),'Área común con fuente y proveedor 
 const physical=subjectCode==='EFI',family=physical?'physical':'art',fileStem=physical?'physical':'artistica',templatePrefix=physical?'efi':'art',subjectName=physical?'Educación Física':'Educación Artística'
 const flag = process.argv.indexOf('--grade'),
   grade = flag < 0 ? 1 : Number(process.argv[flag + 1])
-assert((physical?[1]:[1,2,3,4,5,6]).includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
-const pdfPages = physical ? [359,360,361] : grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : grade === 5 ? [344,345,346] : [347,348,349]
+assert((physical?[1,2]:[1,2,3,4,5,6]).includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
+const pdfPages = physical ? grade===1?[359,360,361]:[362,363,364] : grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : grade === 5 ? [344,345,346] : [347,348,349]
 const gradeName = ['', 'one', 'two', 'three', 'four', 'five', 'six'][grade]
 const module = (physical?commonPhysicalModules:commonArtModules).find((row) => row.grade === grade)
 assert(module, 'Grado con proveedor conectado requerido')
@@ -47,10 +47,13 @@ const mapping = JSON.parse(
 )
 assert.equal(mapping.scopeId, scope.id)
 assert.equal(mapping.sourceSha256, source.sha256)
-const exclusions = (physical ? [
+const exclusions = (physical ? grade===1 ? [
   ...['30f04f76','7a6eeb3e','e0ddee18','cff05e33','b40ad2e6','c7b8407a','d86ce6e6','a2fa9de0','1c7a91bf','d69d0d85','3e01de7d','2ab97f2c','41ae5100','e4561e74','2a6cb6c3','919bfeb3','4240375e','e042fcac','68f82dc8'].map(prefix=>({prefix,reason:'PURE_HEADING',explanation:'Organizador de contenidos, sin desempeño independiente. Los deportes optativos dentro de EFI no son salidas académicas adicionales.'})),
   ...['dd8e23a1','7417b621','7e6b6e07'].map(prefix=>({prefix,reason:'PRIVATE_ENJOYMENT',explanation:'El disfrute o identidad internos no se infieren ni puntúan; las acciones del juego se observan cuando se solicitan.'})),
   ...['64c80440','8c5a6dd6'].map(prefix=>({prefix,reason:'PRIVATE_TRAIT',explanation:'La perseverancia interna no se puntúa como rasgo; se evalúan propuestas, decisiones o acciones expresamente solicitadas.'})),
+] : [
+  ...['6ac11444','ca4c0a9a','465409d0','2ec45171','af737c88','2dc248af','14d52317','695c549e','7f1d8672','7057ad78'].map(prefix=>({prefix,reason:'PURE_HEADING',explanation:'Organizador sin desempeño independiente. Las filas con acciones agrupadas permanecen completas; los deportes optativos dentro de EFI no son salidas académicas.'})),
+  ...['926b4598','c5ffa50f'].map(prefix=>({prefix,reason:'PRIVATE_TRAIT',explanation:'No se califica perseverancia interna; las decisiones o propuestas observables se evalúan solo cuando se piden expresamente.'})),
 ] : grade === 1 ? [
   {
     prefix: '03bf6274',

@@ -1,0 +1,53 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.113",
+  "grade": 2,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 2,
+    "cycle": 1,
+    "subjectCode": "EFI",
+    "optativeExitName": null
+  },
+  "format": "escala",
+  "inspectedFormats": [
+    "rubrica",
+    "escala"
+  ],
+  "savedAndReopenedFormats": [
+    "escala"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "PROJECT_BASED",
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "2f773e4d45ce6ad0ff9738a9e5731c93",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "2f773e4d45ce6ad0ff9738a9e5731c93",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "901878f1-ad63-4cd9-bf92-4c65a27b6e06",
+      "format": "escala",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-DgLpND5i.js",
+  "servedAssetSha256": "418324b4a53bae6d8d3209c9e6a90a588411188c662f7f62c397d1c3d6b352fe",
+  "limits": [
+    "Una muestra QA identificable en 2.º A secundaria/Educación Física de la cuenta personal, sin notas ni ejecución física de clase; no todos los temas o combinaciones.",
+    "Caso concreto de adaptaciones de reglas de atletismo con datos, alternativas y decisión justificada: CASE_STUDY automático. Modalidad individual explícita, sin equipos nuevos.",
+    "Rúbrica completa inspeccionada por DOM; escala completa con 17.35 puntos y texto manual guardada y reabierta visualmente. Doce muestras HTTP/DB separadas verificaron cuatro formatos y 20/17.35 puntos.",
+    "PROJECT_BASED manual prueba persistencia, no recomendación pedagógica. La huella READ ONLY incluye definición completa, snapshot, técnica, puntos e identificadores.",
+    "No se borraron borradores, caché, almacenamiento ni SW; no correos ni cambios de contraseña. DOM confirmó script actual/registerSW.js y HTTP confirmó assets/sw.js iguales a dist. Internals del SW no inspeccionados.",
+    "Reapertura desde Cursos/asignatura/Editar y enlace observado. Persisten límites previos de Actividades global/Ver actividad; no se acredita restauración automática de todos los borradores.",
+    "Sin dosis de ejercicio/dieta, diagnósticos, datos privados ni maniobras operacionales nuevas. No valoración de capacidad natural, apariencia o discapacidad."
+  ]
+}
