@@ -1,0 +1,52 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.115",
+  "grade": 4,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 4,
+    "cycle": 2,
+    "subjectCode": "EFI",
+    "optativeExitName": null
+  },
+  "format": "rubrica",
+  "inspectedFormats": [
+    "rubrica"
+  ],
+  "savedAndReopenedFormats": [
+    "rubrica"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "PROJECT_BASED",
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "bf20677ee103b392ca6a117d39e7ca3b",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "bf20677ee103b392ca6a117d39e7ca3b",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "ee6db485-2068-4479-90e7-22e58c1cf58e",
+      "format": "rubrica",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-DY5soF84.js",
+  "servedAssetSha256": "6cb9c8fa04de8c597146d0447a74ca4982cabe282129dbbdbdcf12012918f024",
+  "limits": [
+    "Una muestra QA identificable en 4.º A secundaria/Educación Física de la cuenta personal, sin notas ni ejecución física de clase; no todos los temas o combinaciones.",
+    "Caso concreto de adaptaciones de reglas de baloncesto con datos, alternativas y decisión justificada: CASE_STUDY automático. Modalidad individual explícita, sin equipos nuevos.",
+    "Rúbrica completa inspeccionada por DOM y visualmente con 17.35 puntos y texto manual guardada y reabierta visualmente. Doce muestras HTTP/DB separadas verificaron cuatro formatos y 20/17.35 puntos.",
+    "PROJECT_BASED manual prueba persistencia, no recomendación pedagógica. La huella READ ONLY incluye definición completa, snapshot, técnica, puntos e identificadores.",
+    "No se borraron borradores, caché, almacenamiento ni SW; no correos ni cambios de contraseña. DOM confirmó script actual/registerSW.js y HTTP confirmó assets/sw.js iguales a dist. Internals del SW no inspeccionados.",
+    "Reapertura desde Cursos/asignatura/Editar y enlace observado. Persisten límites previos de Actividades global/Ver actividad; no se acredita restauración automática de todos los borradores.",
+    "Sin dosis de ejercicio/dieta, diagnósticos, datos privados ni maniobras operacionales nuevas. No valoración de capacidad natural, apariencia o discapacidad."
+  ]
+}

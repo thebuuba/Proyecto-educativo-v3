@@ -1,0 +1,126 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.115",
+  "grade": 4,
+  "sourceVersionId": "bef074f3-f1cc-512a-b284-434f3097af5e",
+  "samples": [
+    {
+      "caseId": "postural-expression-choice",
+      "format": "rubrica",
+      "maxScore": 20,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 6345
+    },
+    {
+      "caseId": "postural-expression-choice",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 5125
+    },
+    {
+      "caseId": "postural-expression-choice",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 6789
+    },
+    {
+      "caseId": "postural-expression-choice",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 6111
+    },
+    {
+      "caseId": "postural-expression-choice",
+      "format": "escala",
+      "maxScore": 20,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 8203
+    },
+    {
+      "caseId": "postural-expression-choice",
+      "format": "escala",
+      "maxScore": 17.35,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 4602
+    },
+    {
+      "caseId": "postural-expression-choice",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 5269
+    },
+    {
+      "caseId": "postural-expression-choice",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 5230
+    },
+    {
+      "caseId": "basketball-defense-choice",
+      "format": "rubrica",
+      "maxScore": 20,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 5832
+    },
+    {
+      "caseId": "basketball-defense-choice",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 5843
+    },
+    {
+      "caseId": "basketball-defense-choice",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 6091
+    },
+    {
+      "caseId": "basketball-defense-choice",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 5854
+    },
+    {
+      "caseId": "basketball-defense-choice",
+      "format": "escala",
+      "maxScore": 20,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 7755
+    },
+    {
+      "caseId": "basketball-defense-choice",
+      "format": "escala",
+      "maxScore": 17.35,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 5141
+    },
+    {
+      "caseId": "basketball-defense-choice",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 7772
+    },
+    {
+      "caseId": "basketball-defense-choice",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "status": "AUTHENTICATED_RECOMMENDATION_PARITY_CHOICE_PRESERVED",
+      "ms": 8307
+    }
+  ],
+  "newActivities": 0,
+  "newSnapshots": 0,
+  "limits": [
+    "Solo recomendaciones autenticadas de las dos alternativas corregidas en cuatro formatos y20/17.35; no acredita nuevas actividades guardadas ni clase real.",
+    "Guardado/reapertura verificados por separado en12muestrasHTTP y una personal; esas muestras conservan los mismos instrumentos después del ajuste."
+  ]
+}

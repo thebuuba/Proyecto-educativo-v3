@@ -5,16 +5,17 @@ import {withoutResources} from './evaluation-task-text'
 import {physicalGradeOneTopics} from './secondary-physical-grade-1'
 import {physicalGradeTwoTopics} from './secondary-physical-grade-2'
 import {physicalGradeThreeTopics} from './secondary-physical-grade-3'
+import {physicalGradeFourTopics} from './secondary-physical-grade-4'
 
 type PhysicalPurpose='ANALYSIS'|'COMPARISON'|'RESEARCH'|'REPORT'|'PLAN'|'PERFORMANCE'|'PRODUCTION'|'PROBLEM_SOLVING'|'OBSERVATION'|'VERIFICATION'|'DEBATE'|'PRESENTATION'
 type PhysicalEvidence={id?:string;title:string;success:string;sufficient:string;partial:string;error:string;absent?:string}
 export type PhysicalTopic={id:string;grade:number;label:string;match:string;excludeWhen?:string;relation:string;pdfPages:number[];sourceRecordIds:string[];primaryPurpose:PhysicalPurpose;evidence:(PhysicalEvidence&{id:string;plan?:PhysicalEvidence;variants?:Partial<Record<PhysicalPurpose,PhysicalEvidence>>})[]}
 type PhysicalAction={text:string;topics:PhysicalTopic[];purpose:PhysicalPurpose}
 export type CommonPhysicalTask={grade:number;text:string;actions:PhysicalAction[];activityType:string;technique:string}
-export const commonPhysicalModules=[{id:'educacion-fisica-comun-1',grade:1,topics:physicalGradeOneTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-2',grade:2,topics:physicalGradeTwoTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-3',grade:3,topics:physicalGradeThreeTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'}]
+export const commonPhysicalModules=[{id:'educacion-fisica-comun-1',grade:1,topics:physicalGradeOneTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-2',grade:2,topics:physicalGradeTwoTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-3',grade:3,topics:physicalGradeThreeTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-4',grade:4,topics:physicalGradeFourTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'}]
 
 const normalize=(value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
-const action='(?:(?:analiz|compar|contrast|explic|identific|interpret|verific|comprueb|registr|organiz|recopil|investig|indag|debat|expon|present|resuelv|ejecut|realiz|recorr|juega|combin|represent|improvis|particip|facilit|cre|constru|instal|filde|corre|elabor|disen|planific|propon|observ|ubic|relacion|justific|sustent)[a-z]*|clasifica|clasifiquen|selecciona|seleccionen|reproduce|reproduzcan|conduce|conduzcan|recepciona|recepcionen)'
+const action='(?:(?:analiz|compar|contrast|explic|identific|interpret|verific|comprueb|registr|organiz|recopil|investig|indag|debat|expon|present|resuelv|ejecut|realiz|recorr|juega|combin|represent|improvis|particip|facilit|cre|constru|instal|filde|corre|elabor|disen|planific|propon|observ|ubic|relacion|justific|sustent)[a-z]*|clasifica|clasifiquen|selecciona|seleccionen|reproduce|reproduzcan|conduce|conduzcan|recepciona|recepcionen|valora|valoren)'
 function requestedText(value:string){
  return normalize(withoutResources(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ')))
   .replace(new RegExp(`\\b(?:no(?!\\s+convencional(?:es)?\\b)|sin)\\b[^.;\\n]*?(?=[.;\\n]|\\s+(?:pero|y)\\s+(?:${action})\\b|$)`,'g'),'').trim()
@@ -34,6 +35,14 @@ function selectedTopics(text:string,available:PhysicalTopic[]){
  if(has('game-facilitation'))topics=topics.filter(t=>t.id!=='game-performance')
  if(has('apparatus-reference-analysis'))topics=topics.filter(t=>t.id!=='gymnastics-sequence')
  if(has('chess-problem')||has('chess-game-analysis')||has('chess-notation'))topics=topics.filter(t=>t.id!=='chess-tactic-concept')
+ if(topics.some(t=>t.grade===4)){
+  if(has('postural-expression'))topics=topics.filter(t=>t.id!=='postural-execution')
+  if(has('gymnastics-sequence'))topics=topics.filter(t=>t.id!=='movement-rhythm')
+  if(has('movement-rhythm'))topics=topics.filter(t=>t.id!=='physical-condition-explanation')
+  if(has('basketball-adapted-rules')||has('basketball-three-on-three'))topics=topics.filter(t=>t.id!=='basketball-rules')
+  if(has('basketball-game'))topics=topics.filter(t=>t.id!=='basketball-three-on-three')
+  for(const family of ['basketball','handball'])if(topics.some(t=>t.id.startsWith(family+'-')&&t.id!==family+'-rules')&&!/^(?:explica|interpreta|analiza)\s+(?:las\s+)?reglas|^(?:verifica|comprueba|registra)\b/.test(text))topics=topics.filter(t=>t.id!==family+'-rules')
+ }
  return topics
 }
 function purposeFor(text:string,topics:PhysicalTopic[]):PhysicalPurpose{
@@ -90,6 +99,67 @@ function contextualTopic(topic:PhysicalTopic,text:string):PhysicalTopic{
  const select=(options:[string,string][])=>options.filter(([pattern])=>new RegExp(`\\b(?:${pattern})\\b`).test(text)).map(([,label])=>label)
  const join=(parts:string[])=>parts.length<2?parts[0]:parts.slice(0,-1).join(', ')+' y '+parts.at(-1)
  let evidence=topic.evidence.map(e=>({...e}))
+ if(topic.grade===4){
+  evidence=evidence.map(e=>({...e,absent:'No aporta evidencia del desempeño expresamente solicitado.'}))
+  const choice=(parts:string[])=>parts.length>1&&/\bo\b/.test(text)&&/elegid|seleccion/.test(text)?'la opción elegida entre '+parts.join(' o '):parts.length?join(parts):'la opción expresamente elegida'
+  const replaceSuccess=(success:string)=>{evidence=evidence.map(e=>({...e,success}))}
+  if(topic.id==='warmup-observation'){
+   const hasGeneral=/general/.test(text),hasSpecific=/especific[oa]/.test(text)
+   if(hasGeneral!==hasSpecific)evidence=evidence.filter(e=>e.id===(hasGeneral?'general':'specific'))
+  }
+  if(topic.id==='flexibility-observation'){
+   const parts=select([['activa','activa'],['pasiva','pasiva']])
+   if(parts.length)replaceSuccess(`Verifica el cumplimiento de las acciones de flexibilidad ${join(parts)} adaptadas contrastando el registro con la ficha docente proporcionada, sin medir amplitud corporal ni añadir maniobras.`)
+  }
+  if(topic.id==='equilibrium-observation'){
+   const parts=select([['base de sustentacion','base de sustentación'],['apoyos','apoyos'],['altura','altura'],['planos?','plano'],['niveles','niveles']]),selected=parts.length?join(parts):'las condiciones expresamente dadas'
+   replaceSuccess(`Analiza el equilibrio del referente adaptado relacionando ${selected} con las evidencias de la ficha proporcionada, sin exigir ejecutar la maniobra.`)
+  }
+  if(topic.id==='postural-expression'){
+   const parts=select([['abiertas','abiertas'],['cerradas','cerradas'],['atras','hacia atrás'],['delante','hacia delante']]),selected=parts.length>1&&/\bo\b/.test(text)&&/elegid|seleccion/.test(text)?'la opción elegida entre posturas '+parts.join(' o '):'las posturas '+(parts.length?join(parts):'expresamente elegidas')
+   topic={...topic,relation:`la relación entre las señales de ${selected} y la intención representada en el referente dado`}
+   replaceSuccess(`Interpreta la expresión corporal de ${selected} relacionando sus señales observables con la intención representada en el referente proporcionado.`)
+  }
+  if(topic.id==='gymnastics-modalities'||topic.id==='gymnastics-sequence'){
+   const parts=select([['ritmica|ritmicos','rítmica'],['artistica|artisticos','artística'],['acrobatica|acrobaticos','acrobática']]),selected=parts.length?choice(parts):'expresamente asignada'
+   if(topic.id==='gymnastics-modalities')replaceSuccess(`Compara las modalidades de gimnasia ${selected} relacionando sus características con las evidencias de los referentes proporcionados.`)
+   else replaceSuccess(`Crea la composición de gimnasia ${selected} adaptada con los movimientos expresamente dados relacionando secuencia, espacio y ritmo según las condiciones supervisadas proporcionadas.`)
+  }
+  if(topic.id==='cardiovascular-reference'){
+   const selected=choice(select([['aerobicos','aeróbicos'],['zumba','zumba']]))
+   replaceSuccess(`Explica las características de ${selected} mediante las evidencias de los referentes cardiovasculares proporcionados.`)
+  }
+  if(topic.id==='basketball-screen'){
+   const selected=choice(select([['indirecto','el bloqueo indirecto'],['directo','el bloqueo directo']]))
+   replaceSuccess(`Analiza ${selected} del referente de baloncesto relacionando posiciones y decisiones con las evidencias proporcionadas.`)
+  }
+  if(topic.id==='basketball-wheelchair'){
+   const parts=select([['pase','pase'],['recepcion','recepción'],['drible|dribleo','drible'],['tiro','tiro'],['finta','finta'],['desplazamiento','desplazamiento']]),selected=parts.length?'las decisiones de '+choice(parts):'las decisiones expresamente solicitadas'
+   replaceSuccess(`Analiza ${selected} del referente de baloncesto en silla de ruedas relacionando reglas adaptadas y participación con las evidencias proporcionadas, sin exigir ejecutar maniobras.`)
+  }
+  for(const sport of ['basketball','handball'])if(topic.id===sport+'-tactics'){
+   const parts=select([['ofensiva','ofensiva'],['defensiva','defensiva']]),selected=parts.length?choice(parts):'expresamente asignada',name=sport==='basketball'?'baloncesto':'balonmano'
+   const references=/reglas|reglamento/.test(text)?'las alternativas, posiciones y reglas proporcionadas':'las alternativas y posiciones proporcionadas'
+   replaceSuccess(`Resuelve la situación táctica ${selected} de ${name} del caso dado justificando la decisión según ${references}.`)
+  }
+  if(topic.id==='basketball-defense'){
+   const shapes=select([['2-1-2','2-1-2'],['2-3','2-3'],['3-2','3-2']]),parts=select([['individual','la defensa individual'],['zonal','la defensa zonal'+(shapes.length?' '+join(shapes):'')]]),selected=parts.length>1&&/\bo\b/.test(text)&&/elegid|seleccion/.test(text)?'la defensa elegida entre '+parts.map(p=>p.replace(/^la defensa /,'')).join(' o '):parts.length?join(parts):'la defensa expresamente elegida'
+   evidence=evidence.map(e=>({...e,success:`Compara ${selected} de baloncesto relacionando principios y posiciones con los referentes dados.`,variants:{...e.variants,PERFORMANCE:{...e,...e.variants?.PERFORMANCE,title:'Defensa según la referencia dada',success:`Ejecuta ${selected} adaptada de baloncesto según las señales y condiciones supervisadas proporcionadas.`}}}))
+  }
+  if(topic.id==='chess-variants'){
+   const selected=/mas de dos variantes/.test(text)?'más de dos variantes':/dos variantes/.test(text)?'dos variantes':/una sola variante/.test(text)?'una sola variante':'las variantes expresamente solicitadas'
+   replaceSuccess(`Resuelve el problema de ajedrez de la posición dada calculando ${selected} y justificando las jugadas con las reglas proporcionadas.`)
+  }
+  if(topic.id==='basketball-game'){
+   const selected=/3\s*(?:x|contra)\s*3/.test(text)?'baloncesto 3x3':/convencional/.test(text)?'baloncesto convencional':'baloncesto de la variante expresamente dada'
+   replaceSuccess(`Juega la situación adaptada de ${selected} aplicando las reglas y decisiones ofensivas y defensivas proporcionadas con los apoyos acordados, sin evaluar ganar.`)
+  }
+  if(topic.id==='chess-position-advantage'){
+   const parts=select([['material','la ventaja material'],['espacio','la ventaja de espacio'],['tiempo','la ventaja de tiempo'],['coordinacion','la ventaja de coordinación de piezas'],['amenazas','la ventaja por creación de amenazas']]),selected=parts.length>1&&/\bo\b/.test(text)&&/elegid|seleccion/.test(text)?'la opción elegida entre '+parts.join(' o '):parts.length?join(parts):'la ventaja expresamente elegida'
+   topic={...topic,relation:`la relación entre ${selected} de ajedrez y las evidencias de la posición dada`}
+   replaceSuccess(`Analiza ${selected} de la posición de ajedrez dada justificándola con las piezas y evidencias proporcionadas.`)
+  }
+ }
  if(topic.grade===3){
   const absent='No aporta evidencia del desempeño expresamente solicitado.'
   if(topic.id==='football-conduction'){
@@ -219,7 +289,8 @@ function contextualTopic(topic:PhysicalTopic,text:string):PhysicalTopic{
  }
  if(topic.id==='physical-condition-explanation'){
   const parts=select([['fuerza rapida','fuerza rápida'],['velocidad de reaccion','velocidad de reacción'],['traslacion','traslación'],['gestual','velocidad gestual'],['flexibilidad','flexibilidad'],['resistencia aerobica','resistencia aeróbica'],['coordinacion','coordinación'],['equilibrio','equilibrio'],['orientacion','orientación'],...(topic.grade===3?[['velocidad maxima','velocidad máxima'],['aciclica','velocidad acíclica'],['resistencia anaerobica','resistencia anaeróbica']] as [string,string][]:[])]),contrast=/diferenci|compar|contrast/.test(text)
-  const target=parts.length?join(parts):'las capacidades físicas expresamente asignadas'
+  const chosenParts=topic.grade===4?select([['fuerza','fuerza'],['velocidad','velocidad'],['flexibilidad','flexibilidad'],['resistencia','resistencia'],['equilibrio','equilibrio'],['coordinacion','coordinación'],['orientacion','orientación'],['diferenciacion','diferenciación'],['reaccion','reacción'],['adaptacion','adaptación'],['ritmo','ritmo']]):parts
+  const target=chosenParts.length?join(chosenParts):'las capacidades físicas expresamente asignadas'
   evidence=evidence.map(e=>({...e,success:`Explica ${contrast?'las diferencias entre':'la función de'} ${target} mediante evidencias de los ejemplos adaptados proporcionados, sin clasificar cuerpos o personas.`,...(!contrast?{sufficient:'La función de la capacidad se sustenta; una relación secundaria con el ejemplo queda poco precisada.',partial:'Reconoce la capacidad pertinente, pero su función no se vincula con la acción del ejemplo dado.'}:{})}))
  }
  if(topic.id==='expressive-situation'&&!/fictici/.test(text))evidence=evidence.map(e=>({...e,success:e.success.replace('circunstancia ficticia','circunstancia')}))

@@ -1,0 +1,1127 @@
+{
+  "grade": 4,
+  "scopeId": "9a5674ad-6a36-5273-bbd6-01b461f1e651",
+  "sourcePdfPages": [
+    374,
+    375,
+    376
+  ],
+  "policy": "REPRESENTATIVE_TASKS_NOT_FULL_COMPOUND_ROW_COVERAGE",
+  "cases": [
+    {
+      "id": "capacities",
+      "topicIds": [
+        "physical-condition-explanation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica la función de fuerza y resistencia en los ejemplos adaptados dados. No se piden velocidad ni flexibilidad ni comparar personas.",
+      "sourceRecordIds": [
+        "d263f8bd",
+        "f6e8dfb0"
+      ],
+      "required": "fuerza.*resistencia",
+      "forbidden": "velocidad|flexibilidad",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "circuit-plan",
+      "topicIds": [
+        "circuit-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el circuito adaptado relacionando las estaciones de fuerza y velocidad con el orden y las pausas ya fijadas en la ficha docente. No añadas dosis nuevas ni lo ejecutes.",
+      "sourceRecordIds": [
+        "e668f5e1"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "flexibility-check",
+      "topicIds": [
+        "flexibility-observation"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica el cumplimiento de las acciones de flexibilidad activa adaptadas utilizando la ficha y registro dados. No se pide modalidad pasiva ni medir cuerpos.",
+      "sourceRecordIds": [
+        "5194dca1"
+      ],
+      "required": "flexibilidad activa",
+      "forbidden": "pasiva",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "continuous-record",
+      "topicIds": [
+        "continuous-activity-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "description": "Registra la actividad continua del caso proporcionado relacionando las acciones con los tiempos ya dados. No asignes duración nueva ni datos personales.",
+      "sourceRecordIds": [
+        "5f7d9a80"
+      ],
+      "required": "Registra",
+      "forbidden": "pausas|inicio|final|7 a 11|siete a once|fictici|simulad",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "motor-variation",
+      "topicIds": [
+        "motor-variation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Combina los giros y desplazamientos adaptados variando dirección y centro de gravedad según las señales proporcionadas. No se piden saltos ni velocidad.",
+      "sourceRecordIds": [
+        "da3b71a7"
+      ],
+      "required": "dirección.*centro de gravedad",
+      "forbidden": "saltos|velocidad",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "equilibrium",
+      "topicIds": [
+        "equilibrium-observation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el equilibrio del referente adaptado relacionando base de sustentación y altura con los apoyos dados. No ejecutes la maniobra.",
+      "sourceRecordIds": [
+        "90071f34"
+      ],
+      "required": "base de sustentación.*altura",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "orientation-no-tools",
+      "topicIds": [
+        "spatial-orientation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Realiza la orientación espacial del trayecto adaptado dado usando objetos y puntos cardinales según las señales y apoyos proporcionados. No utilices mapa ni brújula ni GPS.",
+      "sourceRecordIds": [
+        "2fbf1427"
+      ],
+      "required": "puntos cardinales",
+      "forbidden": "mapa|brújula|GPS",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "rhythm",
+      "topicIds": [
+        "movement-rhythm"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Combina los movimientos adaptados dados ajustando el ritmo a la música proporcionada. No se pide crear otra composición.",
+      "sourceRecordIds": [
+        "1ccf45a3",
+        "5164ac19"
+      ],
+      "required": "ritmo",
+      "forbidden": "^Planifica",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "posture",
+      "topicIds": [
+        "postural-execution"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta los movimientos adaptados cuidando la postura según el referente y apoyos dados. No compares cuerpos ni capacidad natural.",
+      "sourceRecordIds": [
+        "c5a67623",
+        "1ccf45a3"
+      ],
+      "required": "postura",
+      "forbidden": "apariencia|talento",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "postural-expression",
+      "topicIds": [
+        "postural-expression"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Interpreta la expresión corporal de las posturas abiertas del referente dado relacionando sus señales con la intención representada. No se piden posturas cerradas ni emociones privadas.",
+      "sourceRecordIds": [
+        "4e728082"
+      ],
+      "required": "abiertas",
+      "forbidden": "cerradas|privadas",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "gymnastics-composition",
+      "topicIds": [
+        "gymnastics-sequence"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Crea una composición gimnástica adaptada con los movimientos rítmicos y artísticos ya proporcionados, relacionando secuencia, espacio y ritmo según condiciones supervisadas. No añadas acrobacias nuevas ni aparatos.",
+      "sourceRecordIds": [
+        "1d417605",
+        "de9135f9"
+      ],
+      "required": "composición",
+      "forbidden": "aparatos|^Investiga",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "gymnastics-plan",
+      "topicIds": [
+        "gymnastics-sequence"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la composición gimnástica adaptada relacionando movimientos, orden, planos y niveles ya proporcionados. No ejecutes la secuencia todavía.",
+      "sourceRecordIds": [
+        "501235b5"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Ejecuta|^Crea",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "gymnastics-modalities",
+      "topicIds": [
+        "gymnastics-modalities"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara las modalidades de gimnasia rítmica y artística mediante las características de los referentes dados. No se pide acrobática.",
+      "sourceRecordIds": [
+        "1ccf45a3",
+        "2114ae5e"
+      ],
+      "required": "rítmica.*artística",
+      "forbidden": "acrobática",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "apparatus-research",
+      "topicIds": [
+        "gymnastics-apparatus-research"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga las características del uso de aparatos de gimnasia artística masculina y femenina mediante las fuentes proporcionadas. No ejecutes maniobras.",
+      "sourceRecordIds": [
+        "b786f9be",
+        "f7e0c8c7"
+      ],
+      "required": "fuentes.*aparatos|aparatos.*fuentes",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "gymnastics-terms",
+      "topicIds": [
+        "gymnastics-terminology"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica la terminología de los elementos gimnásticos del referente dado relacionando cada término con sus características observables. No se pide ejecutar los elementos.",
+      "sourceRecordIds": [
+        "9e63d1ec"
+      ],
+      "required": "término",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "gymnastics-combination",
+      "topicIds": [
+        "gymnastics-combination"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Crea combinaciones de movimientos gimnásticos adaptados a partir de los elementos ya proporcionados y condiciones supervisadas. No introduzcas movimientos nuevos de riesgo.",
+      "sourceRecordIds": [
+        "c1f0b4e1"
+      ],
+      "required": "combinaciones",
+      "forbidden": "^Investiga",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "gymnastics-series",
+      "topicIds": [
+        "gymnastics-series"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Crea una serie de movimientos gimnásticos adaptados usando los elementos y transiciones dados según las condiciones supervisadas. No añadas acrobacias nuevas.",
+      "sourceRecordIds": [
+        "d7199853",
+        "0ee707ff",
+        "285cf13e"
+      ],
+      "required": "serie",
+      "forbidden": "^Investiga",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "fitness",
+      "topicIds": [
+        "fitness-reference"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica los efectos del fitness sobre salud y bienestar mediante las relaciones de los referentes proporcionados. No recomiendes ejercicio personal ni diagnostiques.",
+      "sourceRecordIds": [
+        "e4094ed4",
+        "8589deb0"
+      ],
+      "required": "bienestar",
+      "forbidden": "^Ejecuta|dieta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "cardiovascular",
+      "topicIds": [
+        "cardiovascular-reference"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica las características de zumba y aeróbicos mediante los referentes cardiovasculares proporcionados. No asignes intensidad ni duración ni rutinas personales.",
+      "sourceRecordIds": [
+        "3774171f",
+        "c8a9d1fe"
+      ],
+      "required": "zumba.*aeróbicos|aeróbicos.*zumba",
+      "forbidden": "7 a 11|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "warmup",
+      "topicIds": [
+        "warmup-observation"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica por separado el calentamiento general y específico del registro dado según la ficha docente. No diseñes una dosis nueva.",
+      "sourceRecordIds": [
+        "50b63ef0"
+      ],
+      "required": "Verifica|Identifica",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural",
+      "criterionCount": 2,
+      "evidenceIds": [
+        "general",
+        "specific"
+      ]
+    },
+    {
+      "id": "basketball-local",
+      "topicIds": [
+        "basketball-local-research"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los aportes de baloncestistas, clubes e instituciones de la comunidad mediante las fuentes proporcionadas. No sustituyas el ámbito local por historia internacional.",
+      "sourceRecordIds": [
+        "d6d83845",
+        "d4bbe84b",
+        "f691a5cc"
+      ],
+      "required": "comunidad",
+      "forbidden": "internacional",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-rules",
+      "topicIds": [
+        "basketball-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica las reglas del baloncesto convencional relacionando sus funciones con ejemplos proporcionados. No se pide baloncesto 3x3 ni jugar.",
+      "sourceRecordIds": [
+        "06490636",
+        "a450e010"
+      ],
+      "required": "reglas",
+      "forbidden": "3x3|^Juega",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-technique",
+      "topicIds": [
+        "basketball-fundamentals"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta los pases adaptados de baloncesto de la tarea dada según referencias, señales y apoyos proporcionados. No se piden drible ni tiros.",
+      "sourceRecordIds": [
+        "5d965b28",
+        "faf01292"
+      ],
+      "required": "pases",
+      "forbidden": "drible|tiros",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-possession",
+      "topicIds": [
+        "basketball-possession"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la ofensiva de posesión de baloncesto del caso dado relacionando decisiones y posiciones con las alternativas proporcionadas. No se pide contraataque ni ejecutar el juego.",
+      "sourceRecordIds": [
+        "cd29e975",
+        "faf01292"
+      ],
+      "required": "Planifica.*posesión",
+      "forbidden": "contraataque|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-counterattack",
+      "topicIds": [
+        "basketball-counterattack"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el contraataque sencillo adaptado de baloncesto de la situación dada según señales, posiciones y apoyos proporcionados. No se pide ofensiva de posesión.",
+      "sourceRecordIds": [
+        "cd29e975",
+        "4faa5235"
+      ],
+      "required": "contraataque",
+      "forbidden": "posesión",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-screen",
+      "topicIds": [
+        "basketball-screen"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el bloqueo indirecto del referente de baloncesto relacionando posiciones y decisiones con las evidencias dadas. No se pide bloqueo directo ni ejecutarlo.",
+      "sourceRecordIds": [
+        "3dc958d9",
+        "b5a25357"
+      ],
+      "required": "indirecto",
+      "forbidden": "bloqueo directo|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-defense",
+      "topicIds": [
+        "basketball-defense"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara la defensa individual y zonal 2-3 de baloncesto relacionando principios y posiciones con los referentes dados. No se pide 2-1-2 ni 3-2.",
+      "sourceRecordIds": [
+        "566adecd",
+        "5236f48e",
+        "98cb3809"
+      ],
+      "required": "individual.*zonal",
+      "forbidden": "2-1-2|3-2",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-tactics",
+      "topicIds": [
+        "basketball-tactics"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve la situación táctica ofensiva de baloncesto del caso dado relacionando alternativas y decisión con las posiciones y reglas proporcionadas. No juegues otra situación.",
+      "sourceRecordIds": [
+        "5d965b28",
+        "e4e6d8e7",
+        "9f3be3e2"
+      ],
+      "required": "Resuelve.*ofensiva",
+      "forbidden": "^Juega",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-adaptation",
+      "topicIds": [
+        "basketball-adapted-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las adaptaciones de las reglas de baloncesto del caso concreto dado según recursos y participación. Compara las alternativas dadas y justifica la decisión. No infieras diagnósticos.",
+      "sourceRecordIds": [
+        "371177ef"
+      ],
+      "required": "adaptaciones",
+      "forbidden": "diagnóstico personal",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-wheelchair",
+      "topicIds": [
+        "basketball-wheelchair"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las decisiones de pase del referente de baloncesto en silla de ruedas relacionando reglas adaptadas y participación con las evidencias dadas. No ejecutes maniobras de silla ni se piden tiros.",
+      "sourceRecordIds": [
+        "865a7c83"
+      ],
+      "required": "pase.*silla de ruedas",
+      "forbidden": "tiros|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-three",
+      "topicIds": [
+        "basketball-three-on-three"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica si las decisiones del registro de baloncesto 3x3 cumplen el reglamento dado usando sus evidencias. No se pide otra modalidad ni jugar.",
+      "sourceRecordIds": [
+        "0e3d115b",
+        "0d4342ae"
+      ],
+      "required": "3x3",
+      "forbidden": "convencional|^Juega",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "gymnastics-event",
+      "topicIds": [
+        "gymnastics-events"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica los eventos de gimnasia artística mediante las características de los referentes proporcionados. No se pide historia ni ejecutar aparatos.",
+      "sourceRecordIds": [
+        "2114ae5e"
+      ],
+      "required": "eventos",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "gymnastics-code",
+      "topicIds": [
+        "artistic-gymnastics-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Interpreta el código de puntuación de gimnasia artística relacionando las reglas y valores dados con las evidencias del referente. No inventes otro código.",
+      "sourceRecordIds": [
+        "80cbf71b"
+      ],
+      "required": "puntuación",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "apparatus-reference",
+      "topicIds": [
+        "apparatus-reference-analysis"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el agarre del referente técnico de gimnasia artística en el aparato expresamente elegido relacionando movimiento y condiciones proporcionadas. No ejecutes acrobacias ni se exigen todos los aparatos.",
+      "sourceRecordIds": [
+        "2114ae5e",
+        "f580ec52",
+        "1d9fa7a8"
+      ],
+      "required": "agarre",
+      "forbidden": "^Ejecuta|todos los aparatos",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-local",
+      "topicIds": [
+        "handball-local-research"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los aportes de personajes e instituciones de balonmano del entorno nacional y local usando las fuentes proporcionadas. No se pide baloncesto.",
+      "sourceRecordIds": [
+        "f691a5cc"
+      ],
+      "required": "balonmano",
+      "forbidden": "baloncesto",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-positions",
+      "topicIds": [
+        "handball-positions"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica las posiciones de los jugadores de balonmano relacionando funciones y ubicación con las referencias dadas. No infieras capacidad natural.",
+      "sourceRecordIds": [
+        "a0e43f5f"
+      ],
+      "required": "posiciones",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-technique",
+      "topicIds": [
+        "handball-fundamentals"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta los pases adaptados de balonmano de la tarea dada según señales y apoyos proporcionados. No se piden drible ni lanzamientos.",
+      "sourceRecordIds": [
+        "863ea105",
+        "1ebb6295"
+      ],
+      "required": "pases",
+      "forbidden": "drible|lanzamientos",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-possession",
+      "topicIds": [
+        "handball-possession"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la ofensiva de posesión de balonmano del caso dado relacionando decisiones y posiciones con las alternativas proporcionadas. No se pide contraataque ni jugar.",
+      "sourceRecordIds": [
+        "36f86e89",
+        "1ebb6295"
+      ],
+      "required": "Planifica.*posesión",
+      "forbidden": "contraataque|^Juega",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-counterattack",
+      "topicIds": [
+        "handball-counterattack"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el contraataque sencillo adaptado de balonmano de la situación dada según señales, posiciones y apoyos proporcionados. No se pide ofensiva de posesión.",
+      "sourceRecordIds": [
+        "36f86e89",
+        "fcee3f90"
+      ],
+      "required": "contraataque",
+      "forbidden": "posesión",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-defense",
+      "topicIds": [
+        "handball-defense"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica las acciones defensivas del equipo de balonmano del caso dado relacionando posiciones y acuerdos con las evidencias proporcionadas. No se pide ofensiva ni jugar.",
+      "sourceRecordIds": [
+        "ff913b61",
+        "1ebb6295"
+      ],
+      "required": "Planifica.*defensiv",
+      "forbidden": "ofensiv|^Juega",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-tactics",
+      "topicIds": [
+        "handball-tactics"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve la situación táctica ofensiva y defensiva de balonmano del caso dado justificando la decisión según posiciones, reglas y alternativas proporcionadas. No se pide baloncesto.",
+      "sourceRecordIds": [
+        "863ea105",
+        "05446020"
+      ],
+      "required": "Resuelve",
+      "forbidden": "baloncesto",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-rules",
+      "topicIds": [
+        "handball-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica si las decisiones del registro de balonmano cumplen las reglas dadas mediante sus evidencias. No juegues una situación nueva.",
+      "sourceRecordIds": [
+        "007c1ef7",
+        "974b3a78"
+      ],
+      "required": "Verifica",
+      "forbidden": "^Juega",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-adaptation",
+      "topicIds": [
+        "handball-adapted-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las adaptaciones del reglamento de balonmano relacionando recursos y participación con las necesidades del caso proporcionado. No infieras diagnósticos.",
+      "sourceRecordIds": [
+        "e0329548"
+      ],
+      "required": "adaptaciones",
+      "forbidden": "diagnóstico personal",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "chess-variants",
+      "topicIds": [
+        "chess-variants"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve el problema de ajedrez de la posición dada calculando una sola variante y justificando las jugadas con las reglas proporcionadas. No se piden dos ni más variantes.",
+      "sourceRecordIds": [
+        "121234dc",
+        "eb111b62",
+        "3023a241",
+        "0a27d587"
+      ],
+      "required": "una sola variante",
+      "forbidden": "dos variantes|más de dos",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "chess-advantage",
+      "topicIds": [
+        "chess-position-advantage"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la ventaja material de la posición de ajedrez dada justificándola con las piezas y evidencias proporcionadas. No se pide ventaja de espacio ni tiempo ni amenazas.",
+      "sourceRecordIds": [
+        "a60b96e2",
+        "416de9b4",
+        "0066021c"
+      ],
+      "required": "material",
+      "forbidden": "ventaja de espacio|ventaja de tiempo|amenazas",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "care-frequency",
+      "topicIds": [
+        "care-frequency"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "description": "Registra por separado la frecuencia de cuidado de materiales y espacio según los acuerdos de la tarea observada. No infieras hábitos privados.",
+      "sourceRecordIds": [
+        "7fcd0b61"
+      ],
+      "required": "oportunidades observadas",
+      "forbidden": "ausencia de registro como nunca",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural",
+      "evidenceIds": [
+        "observed-materials",
+        "observed-space"
+      ]
+    },
+    {
+      "id": "cooperation-frequency",
+      "topicIds": [
+        "tactical-cooperation"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "description": "Registra por separado la frecuencia de propuestas de solución y cumplimiento de acuerdos técnicos de la tarea colectiva observada. No evalúes personalidad.",
+      "sourceRecordIds": [
+        "8187526f",
+        "1e0676fc",
+        "02e0a923"
+      ],
+      "required": "oportunidades observadas",
+      "forbidden": "carisma",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural",
+      "evidenceIds": [
+        "observed-proposals",
+        "observed-agreements"
+      ]
+    },
+    {
+      "id": "basketball-rules-check",
+      "topicIds": [
+        "basketball-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica si el registro de decisiones de baloncesto convencional cumple las reglas proporcionadas. No se pide explicación general ni jugar.",
+      "sourceRecordIds": [
+        "06490636",
+        "faf01292"
+      ],
+      "required": "Verifica",
+      "forbidden": "^Explica|^Juega",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-screen-direct",
+      "topicIds": [
+        "basketball-screen"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el bloqueo directo del referente de baloncesto relacionando posiciones y decisiones con las evidencias dadas. No se pide bloqueo indirecto ni ejecutarlo.",
+      "sourceRecordIds": [
+        "3dc958d9",
+        "b5a25357"
+      ],
+      "required": "bloqueo directo",
+      "forbidden": "indirecto|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-defense-zonal",
+      "topicIds": [
+        "basketball-defense"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta la defensa zonal 3-2 adaptada de baloncesto según las señales y condiciones supervisadas dadas. No se pide defensa individual ni 2-3.",
+      "sourceRecordIds": [
+        "98cb3809"
+      ],
+      "required": "zonal.*3-2",
+      "forbidden": "individual|2-3",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-technique-alternative",
+      "topicIds": [
+        "basketball-fundamentals"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta los pases o tiros adaptados de baloncesto expresamente elegidos según las condiciones supervisadas dadas. No se exigen ambos ni drible.",
+      "sourceRecordIds": [
+        "faf01292"
+      ],
+      "required": "elegid.*pases.*o.*tiros",
+      "forbidden": "drible",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "chess-two",
+      "topicIds": [
+        "chess-variants"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve el problema de ajedrez de la posición dada calculando dos variantes y justificando las jugadas proporcionadas. No se piden más variantes.",
+      "sourceRecordIds": [
+        "eb111b62"
+      ],
+      "required": "dos variantes",
+      "forbidden": "una sola variante|más de dos",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "chess-many",
+      "topicIds": [
+        "chess-variants"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve el problema de ajedrez de la posición dada calculando más de dos variantes y justificando las jugadas con las reglas proporcionadas.",
+      "sourceRecordIds": [
+        "3023a241"
+      ],
+      "required": "más de dos variantes",
+      "forbidden": "una sola variante",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "chess-advantage-choice",
+      "topicIds": [
+        "chess-position-advantage"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la ventaja material o de espacio expresamente elegida de la posición de ajedrez dada justificándola con las evidencias proporcionadas. No se exigen ambas ni ventaja de tiempo.",
+      "sourceRecordIds": [
+        "a60b96e2",
+        "416de9b4"
+      ],
+      "required": "elegid.*material.*o.*espacio",
+      "forbidden": "ventaja de tiempo",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "orientation-plan",
+      "topicIds": [
+        "spatial-orientation"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la orientación espacial del trayecto adaptado relacionando objetos y puntos cardinales dados con el orden previsto. No se pide mapa ni brújula ni GPS ni ejecutar el recorrido.",
+      "sourceRecordIds": [
+        "2fbf1427"
+      ],
+      "required": "Planifica",
+      "forbidden": "mapa|brújula|GPS|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "postural-expression-closed",
+      "topicIds": [
+        "postural-expression"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Interpreta la expresión corporal de las posturas cerradas del referente proporcionado según sus señales y la intención representada. No se piden posturas abiertas ni emociones privadas.",
+      "sourceRecordIds": [
+        "4e728082"
+      ],
+      "required": "cerradas",
+      "forbidden": "abiertas|privadas",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "gymnastics-only-artistic",
+      "topicIds": [
+        "gymnastics-sequence"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Crea una composición de gimnasia artística adaptada usando las secuencias y condiciones supervisadas dadas. No se pide gimnasia rítmica ni acrobática ni aparatos.",
+      "sourceRecordIds": [
+        "1d417605"
+      ],
+      "required": "composición.*artística",
+      "forbidden": "rítmica|acrobática|aparatos",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-three-analysis",
+      "topicIds": [
+        "basketball-three-on-three"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica las reglas de baloncesto 3x3 relacionando sus funciones con las situaciones dadas. No se pide baloncesto convencional ni ejecutar el juego.",
+      "sourceRecordIds": [
+        "0d4342ae"
+      ],
+      "required": "3x3",
+      "forbidden": "convencional|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-technique-alternative",
+      "topicIds": [
+        "handball-fundamentals"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta los pases o lanzamientos adaptados de balonmano expresamente elegidos según las señales y apoyos dados. No se exigen ambos ni drible.",
+      "sourceRecordIds": [
+        "1ebb6295"
+      ],
+      "required": "elegid.*pases.*o.*lanzamientos",
+      "forbidden": "drible",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-game",
+      "topicIds": [
+        "basketball-game"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Juega la situación adaptada de baloncesto 3x3 dada aplicando las reglas y decisiones ofensivas y defensivas expresamente proporcionadas con los apoyos acordados. No se pide baloncesto convencional ni ganar.",
+      "sourceRecordIds": [
+        "faf01292",
+        "02e0a923"
+      ],
+      "required": "Juega.*3x3",
+      "forbidden": "convencional|^Verifica",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-game",
+      "topicIds": [
+        "handball-game"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Juega la situación adaptada de balonmano dada aplicando las reglas y decisiones ofensivas y defensivas expresamente proporcionadas con los apoyos acordados. No se pide baloncesto ni ganar.",
+      "sourceRecordIds": [
+        "007c1ef7",
+        "1ebb6295",
+        "02e0a923"
+      ],
+      "required": "Juega.*balonmano",
+      "forbidden": "baloncesto|^Verifica",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "apparatus-performance",
+      "topicIds": [
+        "gymnastics-apparatus-performance"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta los elementos técnicos adaptados de gimnasia artística en el aparato expresamente elegido siguiendo las señales, agarres, apoyos y supervisión ya proporcionados. No añadas acrobacias nuevas ni se exigen todos los aparatos.",
+      "sourceRecordIds": [
+        "f580ec52",
+        "1d9fa7a8"
+      ],
+      "required": "Ejecuta.*aparato",
+      "forbidden": "^Analiza|todos los aparatos",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "chess-value",
+      "topicIds": [
+        "chess-position-advantage"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Valora la ventaja de tiempo de la posición de ajedrez dada justificándola con las jugadas y evidencias proporcionadas. No se pide ventaja material ni espacio ni amenazas.",
+      "sourceRecordIds": [
+        "a60b96e2",
+        "416de9b4",
+        "0066021c"
+      ],
+      "required": "ventaja.*tiempo",
+      "forbidden": "material|espacio|amenazas",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "handball-tactics-offensive",
+      "topicIds": [
+        "handball-tactics"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve la situación táctica ofensiva de balonmano del caso dado justificando la decisión según las alternativas y posiciones proporcionadas. No se pide defensa ni baloncesto.",
+      "sourceRecordIds": [
+        "05446020"
+      ],
+      "required": "Resuelve.*ofensiva",
+      "forbidden": "defensiv|baloncesto|reglas",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "postural-expression-choice",
+      "topicIds": [
+        "postural-expression"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Interpreta la expresión corporal de las posturas abiertas o cerradas expresamente elegidas del referente dado según sus señales. No se exigen ambas ni emociones privadas.",
+      "sourceRecordIds": [
+        "4e728082"
+      ],
+      "required": "elegid.*abiertas.*o.*cerradas",
+      "forbidden": "abiertas y cerradas|privadas",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    },
+    {
+      "id": "basketball-defense-choice",
+      "topicIds": [
+        "basketball-defense"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta la defensa individual o zonal expresamente elegida de baloncesto según las señales y condiciones supervisadas dadas. No se exigen ambas ni un sistema numérico nuevo.",
+      "sourceRecordIds": [
+        "98cb3809"
+      ],
+      "required": "elegid.*individual.*o.*zonal",
+      "forbidden": "individual y.*zonal|2-1-2|2-3|3-2",
+      "narrowedEvidence": true,
+      "focus": "Acciones, modalidad y recursos pedidos; sin imponer otras variantes ni valorar capacidad natural"
+    }
+  ]
+}
