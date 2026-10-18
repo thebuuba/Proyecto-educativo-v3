@@ -22,7 +22,7 @@ describe('copia completa del diseño de ajustes', () => {
       </MemoryRouter>,
     )
     for (const name of [
-      'Pagos y suscripciones',
+      'Configuración',
       'Historial de facturas',
       'Planes de suscripción',
       'Métodos de pago',
@@ -89,26 +89,28 @@ describe('copia completa del diseño de ajustes', () => {
     ).toHaveLength(5)
   })
 
-  it('shows only actual recovery identity and no sample sessions or backup codes', async () => {
+  it('conserva recuperación y seguridad sin mostrar las tarjetas retiradas', async () => {
     render(<MemoryRouter><ReferenceSettingsPanel section="seguridad" /></MemoryRouter>)
-    expect(await screen.findByText('Sin factores verificados')).toBeInTheDocument()
     expect(screen.getByText('ana@example.test')).toBeInTheDocument()
-    expect(screen.queryByText(/MacBook|iPhone|Valencia|hace 3 meses|8 códigos|50%/)).not.toBeInTheDocument()
-    expect(screen.getByText('La lista de dispositivos aún no está disponible.')).toBeInTheDocument()
+    expect(screen.getByRole('heading', {name:'Recuperación y alertas'})).toBeInTheDocument()
+    expect(screen.queryByText('Dispositivos conectados')).not.toBeInTheDocument()
+    expect(screen.queryByText('Actividad reciente')).not.toBeInTheDocument()
+    expect(screen.queryByText('Verificación en dos pasos')).not.toBeInTheDocument()
+    expect(screen.queryByText('Sin factores verificados')).not.toBeInTheDocument()
     expect(screen.getByLabelText('Contraseña actual')).toBeDisabled()
     expect(screen.getByLabelText('Nueva contraseña')).toBeDisabled()
-    expect(screen.getByRole('radio',{name:/App de autenticación/})).toBeDisabled()
-    expect(screen.getByRole('button',{name:'Ver códigos'})).toBeDisabled()
     expect(screen.getByRole('progressbar')).not.toHaveAttribute('aria-valuenow')
+    expect(within(screen.getByRole('navigation', {name:'Secciones de ajustes'})).getAllByRole('link')).toHaveLength(5)
   })
 
-  it('does not simulate privacy changes, exports or account deletion', async () => {
+  it('conserva controles de datos y pestañas sin mostrar opciones de privacidad retiradas', async () => {
     render(<MemoryRouter><ReferenceSettingsPanel section="privacidad" /></MemoryRouter>)
+    expect(screen.getByRole('heading', {name:'Uso de datos'})).toBeInTheDocument()
+    expect(screen.queryByRole('heading', {name:'Actividad en la comunidad'})).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', {name:'Visibilidad del perfil'})).not.toBeInTheDocument()
     expect(screen.getByRole('button',{name:'Solicitar descarga'})).toBeDisabled()
     expect(screen.getByRole('button',{name:'Eliminar mi cuenta'})).toBeDisabled()
-    expect(screen.getByRole('radio',{name:/Público/})).toBeDisabled()
-    expect(screen.getByRole('radio',{name:/Compañeros/})).not.toBeChecked()
-    expect(screen.getByRole('button',{name:'Aparecer en rankings: no disponible'})).toBeDisabled()
     expect(screen.queryByText(/12 ene 2025|Cumplimos con el RGPD|Te lo enviamos/)).not.toBeInTheDocument()
+    expect(within(screen.getByRole('navigation', {name:'Secciones de ajustes'})).getAllByRole('link')).toHaveLength(5)
   })
 })
