@@ -60,4 +60,4 @@ La web principal, `main`, las credenciales Live y la configuración del backend 
 
 Las renovaciones por calendario, recuperación de una renovación fallida y reembolsos del proveedor requieren escenarios adicionales de Sandbox; sus reglas locales ya tienen cobertura automatizada con proveedor simulado. No se presentan como verificados con dinero real ni como autorización para lanzar Live.
 
-Capturas locales, sin secretos: `output/screenshots/paddle-sandbox-checkout.png`, `paddle-sandbox-alta-completada.png`, `aulabase-sandbox-prueba-activa.png` y `paddle-sandbox-reenvio-201.png`. Los logs y auxiliares de aceptación permanecen en `.opencode/` y no se incluyen en Git.
+Las capturas locales de aceptación, sin secretos, se archivaron fuera del repositorio durante la limpieza del 18/10/2026. Los logs y auxiliares de aceptación permanecen en `.opencode/` y no se incluyen en Git.

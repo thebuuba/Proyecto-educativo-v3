@@ -1091,10 +1091,3 @@ export class BillingEventsService {
     return createPaddleSandboxClient({ apiKey, webhookSecret })
   }
 }
-
-// ---------------------------------------------------------------------------
-// Defensive: keep a reference to the raw enum map so a future schema change is
-// caught at compile time instead of silently comparing raw lower-case values.
-// ---------------------------------------------------------------------------
-
-export type BillingEventStatusName = (typeof EVENT_STATUS_MAP)[string]

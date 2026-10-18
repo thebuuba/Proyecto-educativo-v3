@@ -15,7 +15,6 @@ export function assertInstrumentCapacity(criterionCount: number) {
 }
 export const INSTRUMENT_MIN_LEVELS = 2
 export const INSTRUMENT_MAX_LEVELS = 6
-export const INSTRUMENT_NO_APPLY_SELECTION = -1
 export type InstrumentEvaluationConfiguration = {
   criteria: { id?: string; title: string; description: string; maximum: number; descriptors?: string[] }[]
   levels: { label: string; points: number }[]

@@ -320,19 +320,6 @@ export class PlanningService {
     })
   }
 
-  /*
-    NOTE: Legacy list endpoint retained for compatibility.
-  */
-  findEntriesRaw(schoolId: string, sectionSubjectId?: string, academicPeriodId?: string) {
-    const where: any = { schoolId }
-    if (sectionSubjectId) where.sectionSubjectId = sectionSubjectId
-    if (academicPeriodId) where.academicPeriodId = academicPeriodId
-    return prisma.planningEntry.findMany({
-      where,
-      orderBy: { sequence: 'asc' },
-    })
-  }
-
   /** Crea una nueva entrada de planificación validando las referencias */
   async createEntry(schoolId: string, dto: CreatePlanningEntryDto) {
     await this.validateEntryContext(schoolId, dto.sectionSubjectId, dto.academicPeriodId, dto)

@@ -229,7 +229,6 @@ export {englishGradeOneLexicon} from './secondary-english-grade-one-lexicon'
 export {englishGradeOneStrategies} from './secondary-english-grade-one-strategies'
 export {englishGradeOneGenres} from './secondary-english-grade-one-genres'
 export {firstGradeLanguageCompletionFeatures} from './language-procedure-completion'
-export type EntityStatus = 'active' | 'inactive'
 
 export function splitFullName(fullName: string, lastNameFallback = 'Sin apellido') {
   const parts = fullName.trim().split(/\s+/).filter(Boolean)

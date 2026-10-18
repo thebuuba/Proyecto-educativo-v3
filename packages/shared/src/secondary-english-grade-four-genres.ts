@@ -1,5 +1,5 @@
 import {englishGradeTwoGenres,gradeTwoGenreCriteria} from './secondary-english-grade-two-genres'
-import {requestedEnglishGenres,type Genre} from './secondary-english-grade-one-genres'
+import type {Genre} from './secondary-english-grade-one-genres'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 const listen=new Set(['conversation','advertisement','notice','message','instructions','forecast','news','song','poem','description','biography','narrative'])
 const read=new Set(['business-card','list','catalog','dictionary','invoice','advertisement','recipe','sign','notice','poster','message','email','instructions','cv','letter','form','news','schedule','agenda','menu','map','questionnaire','brochure','song','poem','comic','tourist-guide','description','biography','narrative'])
@@ -16,7 +16,6 @@ const added:Genre[]=[
 /** Lists independently checked in PDF158–159: oral reception12/written30,
  * oral production10/written14. AV remains an explicit requested product. */
 export const englishGradeFourGenres=[...englishGradeTwoGenres,...added].map(g=>({...g,...(g.id==='email'?{match:'correos?(?: electronicos?)?|e mails?|emails?'}:{}),modes:[...(read.has(g.id)?['reading']:[]),...(listen.has(g.id)?['listening']:[]),...(oral.has(g.id)?['oral']:[]),...(write.has(g.id)?['writing']:[]),...(g.id==='conversation'?['interaction']:[]),...(g.id==='audiovisual'?['audiovisual']:[])],source:g.id==='audiovisual'?'EXPLICIT_TASK' as const:'CURRICULUM' as const}))
-export const requestedGradeFourGenres=(text:string,mode?:string)=>requestedEnglishGenres(text,englishGradeFourGenres.filter(g=>!mode||g.modes.includes(['analysis','comparison','research'].includes(mode)?'reading':mode)))
 export function gradeFourGenreCriteria(text:string,mode:string,existing:ContextualTopicCriterion[]){
  const genres=englishGradeFourGenres.filter(g=>{
   if(g.id==='news'&&existing.some(c=>c.templateId==='ing-4-news'))return false

@@ -42,8 +42,10 @@ apps/backend/uploads/
 .worktrees/
 
 # Graphify generated metadata
-graphify-out/*
-!graphify-out/graph.json
+/graphify-out/
+
+# Informes y capturas locales
+/output/
 
 # Supabase local CLI state
 supabase/.temp/

@@ -35,7 +35,7 @@ La oferta ya estaba centralizada en US$7.99, pero la portada y el registro no la
 - `pnpm cloudflare:build`: código 0, cuatro tareas correctas y `wrangler deploy --dry-run`; sin despliegue. Se detuvo únicamente el backend local verificado para liberar la DLL de Prisma y se restauró después; `/api/v1/health` devolvió 200.
 - ESLint sobre los componentes y datos modificados: código 0.
 - Chrome: portada anónima → precios → registro comprobado sin crear una cuenta; Precios → gestionar suscripción comprobado con la sesión local existente y llegada a la pestaña correcta de Ajustes. Precio y referencia visibles; contratación con tarjeta no disponible en esa cuenta.
-- Evidencia visual local: `output/screenshots/flujo-suscripcion-local.png`. No contiene datos de estudiantes ni credenciales.
+- La evidencia visual local del flujo, sin datos de estudiantes ni credenciales, se archivó fuera del repositorio durante la limpieza del 18/10/2026.
 
 ## Límites y pendientes
 
@@ -54,7 +54,7 @@ El propietario pidió recuperar el diseño anterior de las tarjetas de precios y
 - `pnpm --filter frontend build`: código 0. El primer intento detectó una opción `exact` no admitida por el tipo de Testing Library; se sustituyó por una expresión regular anclada y se repitieron prueba y compilación.
 - ESLint de la página y su prueba: código 0.
 - `pnpm cloudflare:build`: código 0, cuatro tareas correctas y dry-run sin despliegue. El backend local se detuvo para liberar Prisma y se restauró después.
-- Chrome local: una tarjeta Docente con US$7.99, sin Centro/Institucional ni tabla; desplegable de moneda abierto y cerrado correctamente, mostrando tasa y fecha. Captura: `output/screenshots/precios-docente-diseno-anterior.png`.
+- Chrome local: una tarjeta Docente con US$7.99, sin Centro/Institucional ni tabla; desplegable de moneda abierto y cerrado correctamente, mostrando tasa y fecha. La captura se archivó fuera del repositorio durante la limpieza del 18/10/2026.
 - La revisión delegada a OpenCode volvió a fallar por error de servicio (`err_e410d38c`); no produjo cambios ni aprobación de revisión. El agente principal revisó el resultado.
 
 Este ajuste se aplica a localhost y a la rama de trabajo. No publica la web principal ni activa cobros.
@@ -63,7 +63,7 @@ Este ajuste se aplica a localhost y a la rama de trabajo. No publica la web prin
 
 El propietario pidió una presentación comercial más atractiva. La tarjeta Docente destaca el mes gratuito antes del precio y usa un botón azul «Probar un mes gratis» que enlaza a `/registro`. El precio sigue siendo US$7.99 mensuales después del mes gratis; se explican tarjeta obligatoria, referencia DOP y renovación automática. «Primero crearás tu cuenta» aclara el siguiente paso sin atribuir activación al enlace.
 
-La prueba del CTA falló antes del cambio y pasó después. Suite de promoción: 3 archivos y 4 pruebas, código 0; backend: 85 archivos y 6.648 pruebas, código 0. Compilaciones independientes de backend y frontend y lint de la página/prueba: código 0. Se conserva la configuración de pagos sin cambios. Evidencia visual local: `output/screenshots/precios-probar-gratis.png`.
+La prueba del CTA falló antes del cambio y pasó después. Suite de promoción: 3 archivos y 4 pruebas, código 0; backend: 85 archivos y 6.648 pruebas, código 0. Compilaciones independientes de backend y frontend y lint de la página/prueba: código 0. Se conserva la configuración de pagos sin cambios. La evidencia visual local del CTA se archivó fuera del repositorio durante la limpieza del 18/10/2026.
 
 OpenCode no pudo completar la revisión de solo lectura por un error de servicio (`err_3947cba4`); el principal revisó el diff. No se habilitaron cobros ni se publicaron cambios en la web principal.
 
