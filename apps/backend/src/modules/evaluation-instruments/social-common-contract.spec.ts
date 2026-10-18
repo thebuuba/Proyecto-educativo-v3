@@ -125,11 +125,12 @@ describe('Sociales primero: hechos, espacio, fuentes y argumentos solicitados',(
    expect(p.criteria.every(c=>c.templateId.startsWith(`soc-1-${topic}-`))).toBe(true)
   })
  }
- it('conserva el95 realmente instalado con29 grupos y avanza el proveedor corregido a96',async()=>{
+ it('conserva los95 y96 realmente instalados al ampliar el proveedor actual',async()=>{
   const {evaluationCatalogForVersion,evaluationCatalogCurrent}=await import('./catalog-current')
   const actual95=evaluationCatalogForVersion('evaluation-2026.95')!
   expect(actual95).toEqual({...evaluationCatalogForVersion('evaluation-2026.94'),version:'evaluation-2026.95'})
-  expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.96')
+  expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.97')
+  expect(evaluationCatalogForVersion('evaluation-2026.96')!.socialCommonModules![0].topics).toHaveLength(31)
   expect(evaluationCatalogCurrent.socialCommonModules[0].topics).toHaveLength(31)
  })
 })

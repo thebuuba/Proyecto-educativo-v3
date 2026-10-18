@@ -1500,7 +1500,7 @@
       "id": "colonial-expansion",
       "grade": 1,
       "label": "expansión colonial europea",
-      "match": "expansion colonial|expansion europea|territorios conquistados",
+      "match": "expansion colonial(?:ista)?|expansion europea|territorios conquistados|continentes colonizados",
       "relation": "los procesos de ocupación colonial, sus actores, espacios y períodos, diferenciando las condiciones de las sociedades implicadas",
       "pages": [
         245
@@ -1514,6 +1514,7 @@
         "03c0f43b-e613-5deb-be1a-606d8acf6c37",
         "7c2ba066-9296-5f2a-94cb-585ad7658368",
         "08954cd6-7f16-573e-9e50-6ec7555dd2c4",
+        "c2b86351-bca0-54ab-ab54-b7086bdf5ea3",
         "5fbaa909-a9af-589b-a571-08eede5e23f6",
         "c68b813b-dbd9-52a8-95d8-d0ab9ffc5af9",
         "881dcbff-c4b5-5e2d-ab8a-3bf3429f4188"
@@ -2215,17 +2216,119 @@
       "id": "digital-prevention",
       "description": "Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.",
       "family": "DIGITAL_PREVENTION"
+    },
+    {
+      "id": "hypothesis-check",
+      "sourceRecordIds": [
+        "af03dcd5-2eda-57cc-b2ae-a6998ad5b5aa"
+      ],
+      "family": "HYPOTHESIS_CHECK",
+      "description": "Formula y comprueba una hipótesis sobre el origen del planeta Tierra a partir de las evidencias proporcionadas. No realices experimentos.",
+      "requiredKeys": [
+        "hypothesis",
+        "hypothesis-evidence"
+      ],
+      "absent": "experimento|laboratorio|trabajo de campo"
+    },
+    {
+      "id": "syllogism",
+      "sourceRecordIds": [
+        "7a24d777-7180-5e73-8308-2cce1a194ef3"
+      ],
+      "family": "SYLLOGISM",
+      "description": "Elabora un silogismo sobre el calentamiento global con premisa universal, premisa particular y conclusión. No hagas una exposición oral.",
+      "requiredKeys": [
+        "premises",
+        "inference"
+      ],
+      "absent": "exposición oral|declamación|caligrafía"
+    },
+    {
+      "id": "scale-calculation",
+      "sourceRecordIds": [
+        "a544031a-545d-525c-81a8-1becf18a49bb"
+      ],
+      "family": "MAP_SCALE_APPLICATION_ADAPTATION",
+      "description": "Calcula la distancia real entre los lugares indicados del mapa a partir de su escala numérica y expresa el resultado con las unidades proporcionadas. No estudies la proyección de Mercator ni utilices GPS.",
+      "requiredKeys": [
+        "scale-calculation",
+        "scale-units"
+      ],
+      "absent": "Mercator|GPS|caligrafía"
+    },
+    {
+      "id": "gps-record",
+      "sourceRecordIds": [
+        "02d4d793-0f6c-5fa5-81b2-b0c4d8dccf73"
+      ],
+      "family": "GPS_RECORD_INTERPRETATION",
+      "description": "Interpreta las coordenadas del registro GPS proporcionado y ubica el lugar en el mapa. No uses tu teléfono ni tu ubicación real.",
+      "requiredKeys": [
+        "gps-position"
+      ],
+      "absent": "tu teléfono|tu ubicación real|compra|descarga una aplicación"
+    },
+    {
+      "id": "graphic-organizer",
+      "sourceRecordIds": [
+        "a1e0aaad-b1c7-5b06-a578-575c5550f7c5"
+      ],
+      "family": "GRAPHIC_ORGANIZER",
+      "description": "Elabora un organizador gráfico que relacione los modelos de producción de la colonia de Santo Domingo con los cambios en su población. No agregues dibujos decorativos.",
+      "requiredKeys": [
+        "organizer-relations"
+      ],
+      "absent": "decoración|originalidad artística|caligrafía"
+    },
+    {
+      "id": "socratic-dialogue",
+      "sourceRecordIds": [
+        "8646ec16-81b2-5dd5-8b90-82a55f5ae6e0"
+      ],
+      "family": "SOCRATIC_DIALOGUE",
+      "description": "Realiza un diálogo socrático sobre los grupos que interactuaron en Santo Domingo durante el siglo XVII: preguntas abiertas, respuestas fundamentadas y revisión de ideas. Sin representar personajes ni defender una postura impuesta.",
+      "requiredKeys": [
+        "dialogue-questions",
+        "dialogue-response"
+      ],
+      "absent": "debe apoyar|adhesión personal|acciones del rol|acento"
+    },
+    {
+      "id": "historical-research",
+      "sourceRecordIds": [
+        "c2b86351-bca0-54ab-ab54-b7086bdf5ea3"
+      ],
+      "family": "HISTORICAL_RESEARCH_CONTENT_AND_SOURCES",
+      "description": "Investiga los recursos naturales de los continentes colonizados entre los siglos XV y XVIII y explica su relación con la expansión colonial europea; utiliza las fuentes bibliográficas proporcionadas. No busques nuevas páginas ni realices trabajo de campo.",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "absent": "contaminación|calentamiento global|encuestas|trabajo de campo|nuevas páginas"
+    },
+    {
+      "id": "observed-frequency",
+      "sourceRecordIds": [
+        "7cd2d18e-ca09-52f4-9588-9f832ea65226"
+      ],
+      "family": "OBSERVED_FREQUENCY",
+      "description": "Durante la simulación de seguridad vial, observa y registra con qué regularidad cada estudiante aplica las reglas de su rol. La escala debe valorar el cumplimiento observado. No califiques la personalidad ni la calidad de un informe.",
+      "requiredKeys": [
+        "observed-conduct"
+      ],
+      "absent": "personalidad|apariencia corporal|calidad de un informe|realiza las acciones del rol",
+      "frequencyScale": true
     }
   ],
   "verification": {
-    "automatedFixtures": 41,
-    "fullInstrumentsGenerated": 164,
+    "automatedFixtures": 49,
+    "fullInstrumentsGenerated": 196,
     "fullReview": {
-      "reviewedWithMatchingDigest": 71,
-      "pending": 93,
+      "reviewedWithMatchingDigest": 196,
+      "pending": 0,
       "method": "CONTENT_REVIEW_NOT_BROWSER",
       "limits": [
-        "31 rúbricas temáticas y diez familias en cuatro formatos; no revisión individual de los164 ejemplos.",
+        "196 ejemplos leídos en los cuatro formatos para49 consignas; esto no prueba cobertura de todos los procedimientos del grado.",
         "La cobertura procedimental de la malla continúa parcial.",
         "Los checks de puntos/paridad complementan la lectura; no la sustituyen."
       ]
@@ -2233,20 +2336,24 @@
     "httpDb": "AUTHENTICATED_FOUR_FORMATS_SAVED_REOPENED",
     "browser": "PENDING",
     "httpEvidence": {
-      "catalog": "evaluation-2026.96",
+      "catalog": "evaluation-2026.97",
       "sourceScope": "8e6396f0-b49e-52fb-a8d9-fcd90a60518e",
       "formats": [
         "rubrica",
         "lista-cotejo",
         "escala",
-        "lista-ponderada"
+        "lista-ponderada",
+        "lista-cotejo",
+        "rubrica",
+        "lista-ponderada",
+        "escala"
       ],
       "strategyOnlyInstrumentUnchanged": true,
       "manualTextPreserved": true,
       "browser": "PENDING_PERSONAL_ACCOUNT_LOGIN"
     }
   },
-  "providerCatalog": "evaluation-2026.96",
+  "providerCatalog": "evaluation-2026.97",
   "sourcePublication": {
     "status": "PUBLISHED_LITERAL_SOURCE_NOT_COMPLETE_INSTRUMENT_COVERAGE",
     "code": "MINERD_SECUNDARIA_2023_SOC_COMUN_G1_V1",
@@ -2311,6 +2418,6 @@
     "Grouping a procedural record under its content does not establish implementation of every product or action in that record.",
     "Mixed extraction records retain their complete literal text and may require more than one independent action contract.",
     "The separate achievement indicators remain literal; no automatic topic-indicator equivalence is approved.",
-    "Hypothesis checking, syllogisms, graphic organizers, brainstorms, socratic dialogue and other procedural variants still need explicit contract review."
+    "Release97 adds reviewed hypothesis checking, syllogisms, graphic organizers, socratic dialogue, scale calculation adaptations, provided GPS records, historical research and observed frequency. This does not cover every procedural variant: brainstorms, panels, infographics, brochures, explicit community consultations, comics and historical role representations remain to be checked individually."
   ]
 }

@@ -8564,5 +8564,2339 @@
         "descriptors": []
       }
     ]
+  },
+  {
+    "id": "hypothesis-check",
+    "sourceRecordIds": [
+      "af03dcd5-2eda-57cc-b2ae-a6998ad5b5aa"
+    ],
+    "family": "HYPOTHESIS_CHECK",
+    "description": "Formula y comprueba una hipótesis sobre el origen del planeta Tierra a partir de las evidencias proporcionadas. No realices experimentos.",
+    "requiredKeys": [
+      "hypothesis",
+      "hypothesis-evidence"
+    ],
+    "absent": "experimento|laboratorio|trabajo de campo",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-earth-hypothesis",
+        "title": "Hipótesis sobre el origen de la Tierra",
+        "description": "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+          "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+          "Presenta una opinión como hecho comprobado o una hipótesis incompatible con los hechos conocidos.",
+          "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+            "scoreUnits": 868
+          },
+          {
+            "levelId": "L3",
+            "text": "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 579
+          },
+          {
+            "levelId": "L2",
+            "text": "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-earth-hypothesis-evidence",
+        "title": "Contraste de la hipótesis sobre el origen de la Tierra",
+        "description": "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.",
+          "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Relaciona la hipótesis con evidencias pertinentes, pero deja sin justificar cómo afectan a la conclusión.",
+          "Declara comprobada o refutada la hipótesis sin relacionarla con las evidencias disponibles.",
+          "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.",
+            "scoreUnits": 867
+          },
+          {
+            "levelId": "L3",
+            "text": "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L2",
+            "text": "Relaciona la hipótesis con evidencias pertinentes, pero deja sin justificar cómo afectan a la conclusión.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hypothesis-check",
+    "sourceRecordIds": [
+      "af03dcd5-2eda-57cc-b2ae-a6998ad5b5aa"
+    ],
+    "family": "HYPOTHESIS_CHECK",
+    "description": "Formula y comprueba una hipótesis sobre el origen del planeta Tierra a partir de las evidencias proporcionadas. No realices experimentos.",
+    "requiredKeys": [
+      "hypothesis",
+      "hypothesis-evidence"
+    ],
+    "absent": "experimento|laboratorio|trabajo de campo",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-earth-hypothesis",
+        "title": "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+        "description": "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+          "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+          "Presenta una opinión como hecho comprobado o una hipótesis incompatible con los hechos conocidos.",
+          "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-earth-hypothesis-evidence",
+        "title": "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.",
+        "description": "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.",
+          "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Relaciona la hipótesis con evidencias pertinentes, pero deja sin justificar cómo afectan a la conclusión.",
+          "Declara comprobada o refutada la hipótesis sin relacionarla con las evidencias disponibles.",
+          "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "hypothesis-check",
+    "sourceRecordIds": [
+      "af03dcd5-2eda-57cc-b2ae-a6998ad5b5aa"
+    ],
+    "family": "HYPOTHESIS_CHECK",
+    "description": "Formula y comprueba una hipótesis sobre el origen del planeta Tierra a partir de las evidencias proporcionadas. No realices experimentos.",
+    "requiredKeys": [
+      "hypothesis",
+      "hypothesis-evidence"
+    ],
+    "absent": "experimento|laboratorio|trabajo de campo",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-earth-hypothesis",
+        "title": "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+        "description": "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+          "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+          "Presenta una opinión como hecho comprobado o una hipótesis incompatible con los hechos conocidos.",
+          "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+            "scoreUnits": 868
+          },
+          {
+            "levelId": "L3",
+            "text": "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 579
+          },
+          {
+            "levelId": "L2",
+            "text": "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-earth-hypothesis-evidence",
+        "title": "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.",
+        "description": "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.",
+          "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Relaciona la hipótesis con evidencias pertinentes, pero deja sin justificar cómo afectan a la conclusión.",
+          "Declara comprobada o refutada la hipótesis sin relacionarla con las evidencias disponibles.",
+          "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.",
+            "scoreUnits": 867
+          },
+          {
+            "levelId": "L3",
+            "text": "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L2",
+            "text": "Relaciona la hipótesis con evidencias pertinentes, pero deja sin justificar cómo afectan a la conclusión.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hypothesis-check",
+    "sourceRecordIds": [
+      "af03dcd5-2eda-57cc-b2ae-a6998ad5b5aa"
+    ],
+    "family": "HYPOTHESIS_CHECK",
+    "description": "Formula y comprueba una hipótesis sobre el origen del planeta Tierra a partir de las evidencias proporcionadas. No realices experimentos.",
+    "requiredKeys": [
+      "hypothesis",
+      "hypothesis-evidence"
+    ],
+    "absent": "experimento|laboratorio|trabajo de campo",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-earth-hypothesis",
+        "title": "Hipótesis sobre el origen de la Tierra",
+        "description": "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Parcial (50%): La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.",
+          "Plantea una explicación provisional sobre el origen de la Tierra y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.",
+          "Presenta una opinión como hecho comprobado o una hipótesis incompatible con los hechos conocidos.",
+          "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-earth-hypothesis-evidence",
+        "title": "Contraste de la hipótesis sobre el origen de la Tierra",
+        "description": "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible. Parcial (50%): Relaciona la hipótesis con evidencias pertinentes, pero deja sin justificar cómo afectan a la conclusión.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.",
+          "Contrasta la hipótesis sobre el origen de la Tierra con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Relaciona la hipótesis con evidencias pertinentes, pero deja sin justificar cómo afectan a la conclusión.",
+          "Declara comprobada o refutada la hipótesis sin relacionarla con las evidencias disponibles.",
+          "No aporta evidencia del desempeño solicitado sobre la Tierra en el sistema solar."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "syllogism",
+    "sourceRecordIds": [
+      "7a24d777-7180-5e73-8308-2cce1a194ef3"
+    ],
+    "family": "SYLLOGISM",
+    "description": "Elabora un silogismo sobre el calentamiento global con premisa universal, premisa particular y conclusión. No hagas una exposición oral.",
+    "requiredKeys": [
+      "premises",
+      "inference"
+    ],
+    "absent": "exposición oral|declamación|caligrafía",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-environment-premises",
+        "title": "Premisas sobre el calentamiento global",
+        "description": "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas.",
+          "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Distingue las dos premisas, pero una cambia el alcance o un término del planteamiento.",
+          "Confunde las premisas o usa términos incompatibles entre ellas.",
+          "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas.",
+            "scoreUnits": 868
+          },
+          {
+            "levelId": "L3",
+            "text": "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 579
+          },
+          {
+            "levelId": "L2",
+            "text": "Distingue las dos premisas, pero una cambia el alcance o un término del planteamiento.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-environment-inference",
+        "title": "Conclusión del silogismo sobre el calentamiento global",
+        "description": "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas.",
+          "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La conclusión se relaciona con las premisas, pero un cambio de término impide justificar la inferencia.",
+          "La conclusión no se sigue de las premisas o introduce una afirmación ajena a ellas.",
+          "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas.",
+            "scoreUnits": 867
+          },
+          {
+            "levelId": "L3",
+            "text": "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L2",
+            "text": "La conclusión se relaciona con las premisas, pero un cambio de término impide justificar la inferencia.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syllogism",
+    "sourceRecordIds": [
+      "7a24d777-7180-5e73-8308-2cce1a194ef3"
+    ],
+    "family": "SYLLOGISM",
+    "description": "Elabora un silogismo sobre el calentamiento global con premisa universal, premisa particular y conclusión. No hagas una exposición oral.",
+    "requiredKeys": [
+      "premises",
+      "inference"
+    ],
+    "absent": "exposición oral|declamación|caligrafía",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-environment-premises",
+        "title": "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas.",
+        "description": "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas.",
+          "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Distingue las dos premisas, pero una cambia el alcance o un término del planteamiento.",
+          "Confunde las premisas o usa términos incompatibles entre ellas.",
+          "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-environment-inference",
+        "title": "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas.",
+        "description": "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas.",
+          "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La conclusión se relaciona con las premisas, pero un cambio de término impide justificar la inferencia.",
+          "La conclusión no se sigue de las premisas o introduce una afirmación ajena a ellas.",
+          "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "syllogism",
+    "sourceRecordIds": [
+      "7a24d777-7180-5e73-8308-2cce1a194ef3"
+    ],
+    "family": "SYLLOGISM",
+    "description": "Elabora un silogismo sobre el calentamiento global con premisa universal, premisa particular y conclusión. No hagas una exposición oral.",
+    "requiredKeys": [
+      "premises",
+      "inference"
+    ],
+    "absent": "exposición oral|declamación|caligrafía",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-environment-premises",
+        "title": "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas.",
+        "description": "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas.",
+          "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Distingue las dos premisas, pero una cambia el alcance o un término del planteamiento.",
+          "Confunde las premisas o usa términos incompatibles entre ellas.",
+          "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas.",
+            "scoreUnits": 868
+          },
+          {
+            "levelId": "L3",
+            "text": "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 579
+          },
+          {
+            "levelId": "L2",
+            "text": "Distingue las dos premisas, pero una cambia el alcance o un término del planteamiento.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-environment-inference",
+        "title": "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas.",
+        "description": "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas.",
+          "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La conclusión se relaciona con las premisas, pero un cambio de término impide justificar la inferencia.",
+          "La conclusión no se sigue de las premisas o introduce una afirmación ajena a ellas.",
+          "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas.",
+            "scoreUnits": 867
+          },
+          {
+            "levelId": "L3",
+            "text": "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L2",
+            "text": "La conclusión se relaciona con las premisas, pero un cambio de término impide justificar la inferencia.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syllogism",
+    "sourceRecordIds": [
+      "7a24d777-7180-5e73-8308-2cce1a194ef3"
+    ],
+    "family": "SYLLOGISM",
+    "description": "Elabora un silogismo sobre el calentamiento global con premisa universal, premisa particular y conclusión. No hagas una exposición oral.",
+    "requiredKeys": [
+      "premises",
+      "inference"
+    ],
+    "absent": "exposición oral|declamación|caligrafía",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-environment-premises",
+        "title": "Premisas sobre el calentamiento global",
+        "description": "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas. Parcial (50%): Distingue las dos premisas, pero una cambia el alcance o un término del planteamiento.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas.",
+          "Distingue la premisa universal y la particular sobre el calentamiento global, manteniendo los términos y el alcance de las afirmaciones proporcionadas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Distingue las dos premisas, pero una cambia el alcance o un término del planteamiento.",
+          "Confunde las premisas o usa términos incompatibles entre ellas.",
+          "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-environment-inference",
+        "title": "Conclusión del silogismo sobre el calentamiento global",
+        "description": "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas. Parcial (50%): La conclusión se relaciona con las premisas, pero un cambio de término impide justificar la inferencia.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas.",
+          "Deriva una conclusión que se sigue de las dos premisas sobre el calentamiento global, diferenciando la validez de la inferencia de la veracidad de sus premisas. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La conclusión se relaciona con las premisas, pero un cambio de término impide justificar la inferencia.",
+          "La conclusión no se sigue de las premisas o introduce una afirmación ajena a ellas.",
+          "No aporta evidencia del desempeño solicitado sobre impacto social de problemas ambientales."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "scale-calculation",
+    "sourceRecordIds": [
+      "a544031a-545d-525c-81a8-1becf18a49bb"
+    ],
+    "family": "MAP_SCALE_APPLICATION_ADAPTATION",
+    "description": "Calcula la distancia real entre los lugares indicados del mapa a partir de su escala numérica y expresa el resultado con las unidades proporcionadas. No estudies la proyección de Mercator ni utilices GPS.",
+    "requiredKeys": [
+      "scale-calculation",
+      "scale-units"
+    ],
+    "absent": "Mercator|GPS|caligrafía",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-scale-scale-calculation",
+        "title": "Cálculo de distancias con escala",
+        "description": "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados.",
+          "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Plantea correctamente la relación de escala, pero un error de cálculo altera el resultado.",
+          "Invierte la relación de escala o utiliza datos que no corresponden al mapa.",
+          "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados.",
+            "scoreUnits": 991
+          },
+          {
+            "levelId": "L3",
+            "text": "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 661
+          },
+          {
+            "levelId": "L2",
+            "text": "Plantea correctamente la relación de escala, pero un error de cálculo altera el resultado.",
+            "scoreUnits": 330
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre escalas cartográficas.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-scale-scale-units",
+        "title": "Unidades del resultado",
+        "description": "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado.",
+          "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "El resultado conserva la magnitud, pero la unidad o una conversión queda incompleta.",
+          "La unidad o la conversión cambia la magnitud y hace incompatible el resultado.",
+          "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado.",
+            "scoreUnits": 744
+          },
+          {
+            "levelId": "L3",
+            "text": "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 496
+          },
+          {
+            "levelId": "L2",
+            "text": "El resultado conserva la magnitud, pero la unidad o una conversión queda incompleta.",
+            "scoreUnits": 248
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre escalas cartográficas.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "scale-calculation",
+    "sourceRecordIds": [
+      "a544031a-545d-525c-81a8-1becf18a49bb"
+    ],
+    "family": "MAP_SCALE_APPLICATION_ADAPTATION",
+    "description": "Calcula la distancia real entre los lugares indicados del mapa a partir de su escala numérica y expresa el resultado con las unidades proporcionadas. No estudies la proyección de Mercator ni utilices GPS.",
+    "requiredKeys": [
+      "scale-calculation",
+      "scale-units"
+    ],
+    "absent": "Mercator|GPS|caligrafía",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-scale-scale-calculation",
+        "title": "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados.",
+        "description": "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados.",
+          "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Plantea correctamente la relación de escala, pero un error de cálculo altera el resultado.",
+          "Invierte la relación de escala o utiliza datos que no corresponden al mapa.",
+          "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-scale-scale-units",
+        "title": "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado.",
+        "description": "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado.",
+          "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "El resultado conserva la magnitud, pero la unidad o una conversión queda incompleta.",
+          "La unidad o la conversión cambia la magnitud y hace incompatible el resultado.",
+          "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "scale-calculation",
+    "sourceRecordIds": [
+      "a544031a-545d-525c-81a8-1becf18a49bb"
+    ],
+    "family": "MAP_SCALE_APPLICATION_ADAPTATION",
+    "description": "Calcula la distancia real entre los lugares indicados del mapa a partir de su escala numérica y expresa el resultado con las unidades proporcionadas. No estudies la proyección de Mercator ni utilices GPS.",
+    "requiredKeys": [
+      "scale-calculation",
+      "scale-units"
+    ],
+    "absent": "Mercator|GPS|caligrafía",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-scale-scale-calculation",
+        "title": "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados.",
+        "description": "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados.",
+          "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Plantea correctamente la relación de escala, pero un error de cálculo altera el resultado.",
+          "Invierte la relación de escala o utiliza datos que no corresponden al mapa.",
+          "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados.",
+            "scoreUnits": 991
+          },
+          {
+            "levelId": "L3",
+            "text": "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 661
+          },
+          {
+            "levelId": "L2",
+            "text": "Plantea correctamente la relación de escala, pero un error de cálculo altera el resultado.",
+            "scoreUnits": 330
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre escalas cartográficas.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-scale-scale-units",
+        "title": "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado.",
+        "description": "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado.",
+          "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "El resultado conserva la magnitud, pero la unidad o una conversión queda incompleta.",
+          "La unidad o la conversión cambia la magnitud y hace incompatible el resultado.",
+          "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado.",
+            "scoreUnits": 744
+          },
+          {
+            "levelId": "L3",
+            "text": "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 496
+          },
+          {
+            "levelId": "L2",
+            "text": "El resultado conserva la magnitud, pero la unidad o una conversión queda incompleta.",
+            "scoreUnits": 248
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre escalas cartográficas.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "scale-calculation",
+    "sourceRecordIds": [
+      "a544031a-545d-525c-81a8-1becf18a49bb"
+    ],
+    "family": "MAP_SCALE_APPLICATION_ADAPTATION",
+    "description": "Calcula la distancia real entre los lugares indicados del mapa a partir de su escala numérica y expresa el resultado con las unidades proporcionadas. No estudies la proyección de Mercator ni utilices GPS.",
+    "requiredKeys": [
+      "scale-calculation",
+      "scale-units"
+    ],
+    "absent": "Mercator|GPS|caligrafía",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-scale-scale-calculation",
+        "title": "Cálculo de distancias con escala",
+        "description": "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados. Parcial (50%): Plantea correctamente la relación de escala, pero un error de cálculo altera el resultado.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados.",
+          "Aplica la relación de escala del mapa a la distancia indicada y obtiene una distancia real consistente con los datos proporcionados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Plantea correctamente la relación de escala, pero un error de cálculo altera el resultado.",
+          "Invierte la relación de escala o utiliza datos que no corresponden al mapa.",
+          "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-scale-scale-units",
+        "title": "Unidades del resultado",
+        "description": "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado. Parcial (50%): El resultado conserva la magnitud, pero la unidad o una conversión queda incompleta.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado.",
+          "Expresa la distancia real en las unidades solicitadas, conservando la equivalencia al convertirlas y haciendo reconocible el resultado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "El resultado conserva la magnitud, pero la unidad o una conversión queda incompleta.",
+          "La unidad o la conversión cambia la magnitud y hace incompatible el resultado.",
+          "No aporta evidencia del desempeño solicitado sobre escalas cartográficas."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "gps-record",
+    "sourceRecordIds": [
+      "02d4d793-0f6c-5fa5-81b2-b0c4d8dccf73"
+    ],
+    "family": "GPS_RECORD_INTERPRETATION",
+    "description": "Interpreta las coordenadas del registro GPS proporcionado y ubica el lugar en el mapa. No uses tu teléfono ni tu ubicación real.",
+    "requiredKeys": [
+      "gps-position"
+    ],
+    "absent": "tu teléfono|tu ubicación real|compra|descarga una aplicación",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-gps-gps-position",
+        "title": "Interpretación del registro GPS",
+        "description": "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa.",
+          "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce las coordenadas, pero una referencia o su traslado al mapa altera parcialmente la posición.",
+          "Confunde las referencias o ubica un lugar incompatible con las coordenadas proporcionadas.",
+          "No aporta evidencia del desempeño solicitado sobre posicionamiento global."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Reconoce las coordenadas, pero una referencia o su traslado al mapa altera parcialmente la posición.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre posicionamiento global.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gps-record",
+    "sourceRecordIds": [
+      "02d4d793-0f6c-5fa5-81b2-b0c4d8dccf73"
+    ],
+    "family": "GPS_RECORD_INTERPRETATION",
+    "description": "Interpreta las coordenadas del registro GPS proporcionado y ubica el lugar en el mapa. No uses tu teléfono ni tu ubicación real.",
+    "requiredKeys": [
+      "gps-position"
+    ],
+    "absent": "tu teléfono|tu ubicación real|compra|descarga una aplicación",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-gps-gps-position",
+        "title": "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa.",
+        "description": "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa.",
+          "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce las coordenadas, pero una referencia o su traslado al mapa altera parcialmente la posición.",
+          "Confunde las referencias o ubica un lugar incompatible con las coordenadas proporcionadas.",
+          "No aporta evidencia del desempeño solicitado sobre posicionamiento global."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "gps-record",
+    "sourceRecordIds": [
+      "02d4d793-0f6c-5fa5-81b2-b0c4d8dccf73"
+    ],
+    "family": "GPS_RECORD_INTERPRETATION",
+    "description": "Interpreta las coordenadas del registro GPS proporcionado y ubica el lugar en el mapa. No uses tu teléfono ni tu ubicación real.",
+    "requiredKeys": [
+      "gps-position"
+    ],
+    "absent": "tu teléfono|tu ubicación real|compra|descarga una aplicación",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-gps-gps-position",
+        "title": "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa.",
+        "description": "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa.",
+          "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce las coordenadas, pero una referencia o su traslado al mapa altera parcialmente la posición.",
+          "Confunde las referencias o ubica un lugar incompatible con las coordenadas proporcionadas.",
+          "No aporta evidencia del desempeño solicitado sobre posicionamiento global."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Reconoce las coordenadas, pero una referencia o su traslado al mapa altera parcialmente la posición.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre posicionamiento global.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gps-record",
+    "sourceRecordIds": [
+      "02d4d793-0f6c-5fa5-81b2-b0c4d8dccf73"
+    ],
+    "family": "GPS_RECORD_INTERPRETATION",
+    "description": "Interpreta las coordenadas del registro GPS proporcionado y ubica el lugar en el mapa. No uses tu teléfono ni tu ubicación real.",
+    "requiredKeys": [
+      "gps-position"
+    ],
+    "absent": "tu teléfono|tu ubicación real|compra|descarga una aplicación",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-gps-gps-position",
+        "title": "Interpretación del registro GPS",
+        "description": "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa. Parcial (50%): Reconoce las coordenadas, pero una referencia o su traslado al mapa altera parcialmente la posición.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa.",
+          "Interpreta los valores y referencias del registro GPS proporcionado para ubicar el lugar indicado, manteniendo la correspondencia entre coordenadas y posición en el mapa. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Reconoce las coordenadas, pero una referencia o su traslado al mapa altera parcialmente la posición.",
+          "Confunde las referencias o ubica un lugar incompatible con las coordenadas proporcionadas.",
+          "No aporta evidencia del desempeño solicitado sobre posicionamiento global."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "graphic-organizer",
+    "sourceRecordIds": [
+      "a1e0aaad-b1c7-5b06-a578-575c5550f7c5"
+    ],
+    "family": "GRAPHIC_ORGANIZER",
+    "description": "Elabora un organizador gráfico que relacione los modelos de producción de la colonia de Santo Domingo con los cambios en su población. No agregues dibujos decorativos.",
+    "requiredKeys": [
+      "organizer-relations"
+    ],
+    "absent": "decoración|originalidad artística|caligrafía",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-santo-domingo-colony-organizer-relations",
+        "title": "Relaciones en el organizador de colonia de Santo Domingo",
+        "description": "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace.",
+          "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Incluye los conceptos pertinentes, pero un enlace no expresa la relación histórica o espacial solicitada.",
+          "Los enlaces alteran las relaciones solicitadas o presentan conceptos aislados que no permiten interpretarlas.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Incluye los conceptos pertinentes, pero un enlace no expresa la relación histórica o espacial solicitada.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "graphic-organizer",
+    "sourceRecordIds": [
+      "a1e0aaad-b1c7-5b06-a578-575c5550f7c5"
+    ],
+    "family": "GRAPHIC_ORGANIZER",
+    "description": "Elabora un organizador gráfico que relacione los modelos de producción de la colonia de Santo Domingo con los cambios en su población. No agregues dibujos decorativos.",
+    "requiredKeys": [
+      "organizer-relations"
+    ],
+    "absent": "decoración|originalidad artística|caligrafía",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-santo-domingo-colony-organizer-relations",
+        "title": "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace.",
+        "description": "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace.",
+          "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Incluye los conceptos pertinentes, pero un enlace no expresa la relación histórica o espacial solicitada.",
+          "Los enlaces alteran las relaciones solicitadas o presentan conceptos aislados que no permiten interpretarlas.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "graphic-organizer",
+    "sourceRecordIds": [
+      "a1e0aaad-b1c7-5b06-a578-575c5550f7c5"
+    ],
+    "family": "GRAPHIC_ORGANIZER",
+    "description": "Elabora un organizador gráfico que relacione los modelos de producción de la colonia de Santo Domingo con los cambios en su población. No agregues dibujos decorativos.",
+    "requiredKeys": [
+      "organizer-relations"
+    ],
+    "absent": "decoración|originalidad artística|caligrafía",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-santo-domingo-colony-organizer-relations",
+        "title": "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace.",
+        "description": "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace.",
+          "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Incluye los conceptos pertinentes, pero un enlace no expresa la relación histórica o espacial solicitada.",
+          "Los enlaces alteran las relaciones solicitadas o presentan conceptos aislados que no permiten interpretarlas.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Incluye los conceptos pertinentes, pero un enlace no expresa la relación histórica o espacial solicitada.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "graphic-organizer",
+    "sourceRecordIds": [
+      "a1e0aaad-b1c7-5b06-a578-575c5550f7c5"
+    ],
+    "family": "GRAPHIC_ORGANIZER",
+    "description": "Elabora un organizador gráfico que relacione los modelos de producción de la colonia de Santo Domingo con los cambios en su población. No agregues dibujos decorativos.",
+    "requiredKeys": [
+      "organizer-relations"
+    ],
+    "absent": "decoración|originalidad artística|caligrafía",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-santo-domingo-colony-organizer-relations",
+        "title": "Relaciones en el organizador de colonia de Santo Domingo",
+        "description": "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace. Parcial (50%): Incluye los conceptos pertinentes, pero un enlace no expresa la relación histórica o espacial solicitada.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace.",
+          "Organiza los conceptos y hechos solicitados de colonia de Santo Domingo con conexiones explícitas y compatibles con las relaciones entre los modelos de producción y los cambios de población en la colonia de Santo Domingo, de modo que puede reconocerse qué relación expresa cada enlace. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Incluye los conceptos pertinentes, pero un enlace no expresa la relación histórica o espacial solicitada.",
+          "Los enlaces alteran las relaciones solicitadas o presentan conceptos aislados que no permiten interpretarlas.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "socratic-dialogue",
+    "sourceRecordIds": [
+      "8646ec16-81b2-5dd5-8b90-82a55f5ae6e0"
+    ],
+    "family": "SOCRATIC_DIALOGUE",
+    "description": "Realiza un diálogo socrático sobre los grupos que interactuaron en Santo Domingo durante el siglo XVII: preguntas abiertas, respuestas fundamentadas y revisión de ideas. Sin representar personajes ni defender una postura impuesta.",
+    "requiredKeys": [
+      "dialogue-questions",
+      "dialogue-response"
+    ],
+    "absent": "debe apoyar|adhesión personal|acciones del rol|acento",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-santo-domingo-colony-dialogue-questions",
+        "title": "Preguntas del diálogo sobre colonia de Santo Domingo",
+        "description": "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo.",
+          "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Formula preguntas pertinentes, pero una no permite profundizar en las ideas del caso.",
+          "Las preguntas no examinan las ideas del caso o se limitan a exigir una respuesta prefijada.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo.",
+            "scoreUnits": 744
+          },
+          {
+            "levelId": "L3",
+            "text": "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 496
+          },
+          {
+            "levelId": "L2",
+            "text": "Formula preguntas pertinentes, pero una no permite profundizar en las ideas del caso.",
+            "scoreUnits": 248
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-santo-domingo-colony-dialogue-response",
+        "title": "Respuestas razonadas sobre colonia de Santo Domingo",
+        "description": "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones.",
+          "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Responde con razones pertinentes, pero no resuelve una contradicción señalada en el diálogo.",
+          "Las respuestas eluden las preguntas o mantienen afirmaciones incompatibles con las evidencias examinadas.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones.",
+            "scoreUnits": 991
+          },
+          {
+            "levelId": "L3",
+            "text": "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 661
+          },
+          {
+            "levelId": "L2",
+            "text": "Responde con razones pertinentes, pero no resuelve una contradicción señalada en el diálogo.",
+            "scoreUnits": 330
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "socratic-dialogue",
+    "sourceRecordIds": [
+      "8646ec16-81b2-5dd5-8b90-82a55f5ae6e0"
+    ],
+    "family": "SOCRATIC_DIALOGUE",
+    "description": "Realiza un diálogo socrático sobre los grupos que interactuaron en Santo Domingo durante el siglo XVII: preguntas abiertas, respuestas fundamentadas y revisión de ideas. Sin representar personajes ni defender una postura impuesta.",
+    "requiredKeys": [
+      "dialogue-questions",
+      "dialogue-response"
+    ],
+    "absent": "debe apoyar|adhesión personal|acciones del rol|acento",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-santo-domingo-colony-dialogue-questions",
+        "title": "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo.",
+        "description": "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo.",
+          "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Formula preguntas pertinentes, pero una no permite profundizar en las ideas del caso.",
+          "Las preguntas no examinan las ideas del caso o se limitan a exigir una respuesta prefijada.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-santo-domingo-colony-dialogue-response",
+        "title": "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones.",
+        "description": "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones.",
+          "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Responde con razones pertinentes, pero no resuelve una contradicción señalada en el diálogo.",
+          "Las respuestas eluden las preguntas o mantienen afirmaciones incompatibles con las evidencias examinadas.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "socratic-dialogue",
+    "sourceRecordIds": [
+      "8646ec16-81b2-5dd5-8b90-82a55f5ae6e0"
+    ],
+    "family": "SOCRATIC_DIALOGUE",
+    "description": "Realiza un diálogo socrático sobre los grupos que interactuaron en Santo Domingo durante el siglo XVII: preguntas abiertas, respuestas fundamentadas y revisión de ideas. Sin representar personajes ni defender una postura impuesta.",
+    "requiredKeys": [
+      "dialogue-questions",
+      "dialogue-response"
+    ],
+    "absent": "debe apoyar|adhesión personal|acciones del rol|acento",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-santo-domingo-colony-dialogue-questions",
+        "title": "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo.",
+        "description": "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo.",
+          "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Formula preguntas pertinentes, pero una no permite profundizar en las ideas del caso.",
+          "Las preguntas no examinan las ideas del caso o se limitan a exigir una respuesta prefijada.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo.",
+            "scoreUnits": 744
+          },
+          {
+            "levelId": "L3",
+            "text": "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 496
+          },
+          {
+            "levelId": "L2",
+            "text": "Formula preguntas pertinentes, pero una no permite profundizar en las ideas del caso.",
+            "scoreUnits": 248
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-santo-domingo-colony-dialogue-response",
+        "title": "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones.",
+        "description": "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones.",
+          "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Responde con razones pertinentes, pero no resuelve una contradicción señalada en el diálogo.",
+          "Las respuestas eluden las preguntas o mantienen afirmaciones incompatibles con las evidencias examinadas.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones.",
+            "scoreUnits": 991
+          },
+          {
+            "levelId": "L3",
+            "text": "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 661
+          },
+          {
+            "levelId": "L2",
+            "text": "Responde con razones pertinentes, pero no resuelve una contradicción señalada en el diálogo.",
+            "scoreUnits": 330
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "socratic-dialogue",
+    "sourceRecordIds": [
+      "8646ec16-81b2-5dd5-8b90-82a55f5ae6e0"
+    ],
+    "family": "SOCRATIC_DIALOGUE",
+    "description": "Realiza un diálogo socrático sobre los grupos que interactuaron en Santo Domingo durante el siglo XVII: preguntas abiertas, respuestas fundamentadas y revisión de ideas. Sin representar personajes ni defender una postura impuesta.",
+    "requiredKeys": [
+      "dialogue-questions",
+      "dialogue-response"
+    ],
+    "absent": "debe apoyar|adhesión personal|acciones del rol|acento",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-santo-domingo-colony-dialogue-questions",
+        "title": "Preguntas del diálogo sobre colonia de Santo Domingo",
+        "description": "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo. Parcial (50%): Formula preguntas pertinentes, pero una no permite profundizar en las ideas del caso.",
+        "maxScore": 7.44,
+        "maxScoreUnits": 744,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo.",
+          "Formula preguntas abiertas que examinan los supuestos y las relaciones históricas del caso de colonia de Santo Domingo, retomando las ideas expresadas en el diálogo. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Formula preguntas pertinentes, pero una no permite profundizar en las ideas del caso.",
+          "Las preguntas no examinan las ideas del caso o se limitan a exigir una respuesta prefijada.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-santo-domingo-colony-dialogue-response",
+        "title": "Respuestas razonadas sobre colonia de Santo Domingo",
+        "description": "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones. Parcial (50%): Responde con razones pertinentes, pero no resuelve una contradicción señalada en el diálogo.",
+        "maxScore": 9.91,
+        "maxScoreUnits": 991,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones.",
+          "Responde a las preguntas con razones y evidencias del caso de colonia de Santo Domingo y revisa una explicación cuando se muestran límites o contradicciones. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Responde con razones pertinentes, pero no resuelve una contradicción señalada en el diálogo.",
+          "Las respuestas eluden las preguntas o mantienen afirmaciones incompatibles con las evidencias examinadas.",
+          "No aporta evidencia del desempeño solicitado sobre colonia de Santo Domingo."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "historical-research",
+    "sourceRecordIds": [
+      "c2b86351-bca0-54ab-ab54-b7086bdf5ea3"
+    ],
+    "family": "HISTORICAL_RESEARCH_CONTENT_AND_SOURCES",
+    "description": "Investiga los recursos naturales de los continentes colonizados entre los siglos XV y XVIII y explica su relación con la expansión colonial europea; utiliza las fuentes bibliográficas proporcionadas. No busques nuevas páginas ni realices trabajo de campo.",
+    "requiredKeys": [
+      "research-content",
+      "sources"
+    ],
+    "absent": "contaminación|calentamiento global|encuestas|trabajo de campo|nuevas páginas",
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-colonial-expansion-research-content",
+        "title": "Contenido investigado de expansión colonial europea",
+        "description": "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.",
+          "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Presenta hallazgos pertinentes, pero una relación del contenido o su contexto queda sin explicar.",
+          "Los hallazgos confunden hechos o corresponden a un espacio o período ajeno al solicitado.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.",
+            "scoreUnits": 868
+          },
+          {
+            "levelId": "L3",
+            "text": "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 579
+          },
+          {
+            "levelId": "L2",
+            "text": "Presenta hallazgos pertinentes, pero una relación del contenido o su contexto queda sin explicar.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre expansión colonial europea.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-colonial-expansion-sources",
+        "title": "Fuentes sobre expansión colonial europea",
+        "description": "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.",
+          "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La información es pertinente, pero una fuente no puede identificarse o su respaldo no se explica.",
+          "Utiliza información sin procedencia reconocible o incompatible con el objeto de investigación.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.",
+            "scoreUnits": 867
+          },
+          {
+            "levelId": "L3",
+            "text": "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L2",
+            "text": "La información es pertinente, pero una fuente no puede identificarse o su respaldo no se explica.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre expansión colonial europea.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "historical-research",
+    "sourceRecordIds": [
+      "c2b86351-bca0-54ab-ab54-b7086bdf5ea3"
+    ],
+    "family": "HISTORICAL_RESEARCH_CONTENT_AND_SOURCES",
+    "description": "Investiga los recursos naturales de los continentes colonizados entre los siglos XV y XVIII y explica su relación con la expansión colonial europea; utiliza las fuentes bibliográficas proporcionadas. No busques nuevas páginas ni realices trabajo de campo.",
+    "requiredKeys": [
+      "research-content",
+      "sources"
+    ],
+    "absent": "contaminación|calentamiento global|encuestas|trabajo de campo|nuevas páginas",
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-colonial-expansion-research-content",
+        "title": "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.",
+        "description": "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.",
+          "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Presenta hallazgos pertinentes, pero una relación del contenido o su contexto queda sin explicar.",
+          "Los hallazgos confunden hechos o corresponden a un espacio o período ajeno al solicitado.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-colonial-expansion-sources",
+        "title": "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.",
+        "description": "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.",
+          "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La información es pertinente, pero una fuente no puede identificarse o su respaldo no se explica.",
+          "Utiliza información sin procedencia reconocible o incompatible con el objeto de investigación.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "historical-research",
+    "sourceRecordIds": [
+      "c2b86351-bca0-54ab-ab54-b7086bdf5ea3"
+    ],
+    "family": "HISTORICAL_RESEARCH_CONTENT_AND_SOURCES",
+    "description": "Investiga los recursos naturales de los continentes colonizados entre los siglos XV y XVIII y explica su relación con la expansión colonial europea; utiliza las fuentes bibliográficas proporcionadas. No busques nuevas páginas ni realices trabajo de campo.",
+    "requiredKeys": [
+      "research-content",
+      "sources"
+    ],
+    "absent": "contaminación|calentamiento global|encuestas|trabajo de campo|nuevas páginas",
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-colonial-expansion-research-content",
+        "title": "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.",
+        "description": "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.",
+          "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Presenta hallazgos pertinentes, pero una relación del contenido o su contexto queda sin explicar.",
+          "Los hallazgos confunden hechos o corresponden a un espacio o período ajeno al solicitado.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.",
+            "scoreUnits": 868
+          },
+          {
+            "levelId": "L3",
+            "text": "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 579
+          },
+          {
+            "levelId": "L2",
+            "text": "Presenta hallazgos pertinentes, pero una relación del contenido o su contexto queda sin explicar.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre expansión colonial europea.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "soc-1-colonial-expansion-sources",
+        "title": "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.",
+        "description": "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.",
+          "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La información es pertinente, pero una fuente no puede identificarse o su respaldo no se explica.",
+          "Utiliza información sin procedencia reconocible o incompatible con el objeto de investigación.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.",
+            "scoreUnits": 867
+          },
+          {
+            "levelId": "L3",
+            "text": "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L2",
+            "text": "La información es pertinente, pero una fuente no puede identificarse o su respaldo no se explica.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No aporta evidencia del desempeño solicitado sobre expansión colonial europea.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "historical-research",
+    "sourceRecordIds": [
+      "c2b86351-bca0-54ab-ab54-b7086bdf5ea3"
+    ],
+    "family": "HISTORICAL_RESEARCH_CONTENT_AND_SOURCES",
+    "description": "Investiga los recursos naturales de los continentes colonizados entre los siglos XV y XVIII y explica su relación con la expansión colonial europea; utiliza las fuentes bibliográficas proporcionadas. No busques nuevas páginas ni realices trabajo de campo.",
+    "requiredKeys": [
+      "research-content",
+      "sources"
+    ],
+    "absent": "contaminación|calentamiento global|encuestas|trabajo de campo|nuevas páginas",
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-colonial-expansion-research-content",
+        "title": "Contenido investigado de expansión colonial europea",
+        "description": "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados. Parcial (50%): Presenta hallazgos pertinentes, pero una relación del contenido o su contexto queda sin explicar.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.",
+          "Expone los hallazgos sobre los recursos naturales de los continentes colonizados y su relación con la expansión colonial europea en el período solicitado, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "Presenta hallazgos pertinentes, pero una relación del contenido o su contexto queda sin explicar.",
+          "Los hallazgos confunden hechos o corresponden a un espacio o período ajeno al solicitado.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      },
+      {
+        "templateId": "soc-1-colonial-expansion-sources",
+        "title": "Fuentes sobre expansión colonial europea",
+        "description": "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado. Parcial (50%): La información es pertinente, pero una fuente no puede identificarse o su respaldo no se explica.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.",
+          "Selecciona información pertinente sobre expansión colonial europea y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado. Una precisión secundaria queda incompleta, sin alterar la relación principal.",
+          "La información es pertinente, pero una fuente no puede identificarse o su respaldo no se explica.",
+          "Utiliza información sin procedencia reconocible o incompatible con el objeto de investigación.",
+          "No aporta evidencia del desempeño solicitado sobre expansión colonial europea."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "observed-frequency",
+    "sourceRecordIds": [
+      "7cd2d18e-ca09-52f4-9588-9f832ea65226"
+    ],
+    "family": "OBSERVED_FREQUENCY",
+    "description": "Durante la simulación de seguridad vial, observa y registra con qué regularidad cada estudiante aplica las reglas de su rol. La escala debe valorar el cumplimiento observado. No califiques la personalidad ni la calidad de un informe.",
+    "requiredKeys": [
+      "observed-conduct"
+    ],
+    "absent": "personalidad|apariencia corporal|calidad de un informe|realiza las acciones del rol",
+    "frequencyScale": true,
+    "instrumentType": "rubrica",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-road-safety-observed-conduct",
+        "title": "Cumplimiento observado en educación vial",
+        "description": "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas durante la situación propuesta.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en casi todas las oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en algunas oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en pocas oportunidades observadas.",
+          "No aplica las reglas indicadas de educación vial en ninguna de las oportunidades observadas."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Aplica las reglas indicadas de educación vial en casi todas las oportunidades observadas.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Aplica las reglas indicadas de educación vial en algunas oportunidades observadas.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aplica las reglas indicadas de educación vial en ninguna de las oportunidades observadas.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "observed-frequency",
+    "sourceRecordIds": [
+      "7cd2d18e-ca09-52f4-9588-9f832ea65226"
+    ],
+    "family": "OBSERVED_FREQUENCY",
+    "description": "Durante la simulación de seguridad vial, observa y registra con qué regularidad cada estudiante aplica las reglas de su rol. La escala debe valorar el cumplimiento observado. No califiques la personalidad ni la calidad de un informe.",
+    "requiredKeys": [
+      "observed-conduct"
+    ],
+    "absent": "personalidad|apariencia corporal|calidad de un informe|realiza las acciones del rol",
+    "frequencyScale": true,
+    "instrumentType": "lista-cotejo",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-road-safety-observed-conduct",
+        "title": "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas durante la situación propuesta.",
+        "description": "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas durante la situación propuesta.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en casi todas las oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en algunas oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en pocas oportunidades observadas.",
+          "No aplica las reglas indicadas de educación vial en ninguna de las oportunidades observadas."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
+  },
+  {
+    "id": "observed-frequency",
+    "sourceRecordIds": [
+      "7cd2d18e-ca09-52f4-9588-9f832ea65226"
+    ],
+    "family": "OBSERVED_FREQUENCY",
+    "description": "Durante la simulación de seguridad vial, observa y registra con qué regularidad cada estudiante aplica las reglas de su rol. La escala debe valorar el cumplimiento observado. No califiques la personalidad ni la calidad de un informe.",
+    "requiredKeys": [
+      "observed-conduct"
+    ],
+    "absent": "personalidad|apariencia corporal|calidad de un informe|realiza las acciones del rol",
+    "frequencyScale": true,
+    "instrumentType": "escala",
+    "score": 17.35,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Siempre",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Casi siempre",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "A veces",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Nunca",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "soc-1-road-safety-observed-conduct",
+        "title": "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas durante la situación propuesta.",
+        "description": "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas durante la situación propuesta.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en casi todas las oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en algunas oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en pocas oportunidades observadas.",
+          "No aplica las reglas indicadas de educación vial en ninguna de las oportunidades observadas."
+        ],
+        "relativeWeight": 4,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas.",
+            "scoreUnits": 1735
+          },
+          {
+            "levelId": "L3",
+            "text": "Aplica las reglas indicadas de educación vial en casi todas las oportunidades observadas.",
+            "scoreUnits": 1157
+          },
+          {
+            "levelId": "L2",
+            "text": "Aplica las reglas indicadas de educación vial en algunas oportunidades observadas.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L1",
+            "text": "No aplica las reglas indicadas de educación vial en ninguna de las oportunidades observadas.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "observed-frequency",
+    "sourceRecordIds": [
+      "7cd2d18e-ca09-52f4-9588-9f832ea65226"
+    ],
+    "family": "OBSERVED_FREQUENCY",
+    "description": "Durante la simulación de seguridad vial, observa y registra con qué regularidad cada estudiante aplica las reglas de su rol. La escala debe valorar el cumplimiento observado. No califiques la personalidad ni la calidad de un informe.",
+    "requiredKeys": [
+      "observed-conduct"
+    ],
+    "absent": "personalidad|apariencia corporal|calidad de un informe|realiza las acciones del rol",
+    "frequencyScale": true,
+    "instrumentType": "lista-ponderada",
+    "score": 17.35,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "soc-1-road-safety-observed-conduct",
+        "title": "Cumplimiento observado en educación vial",
+        "description": "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas durante la situación propuesta. Parcial (50%): Aplica las reglas indicadas de educación vial en algunas oportunidades observadas.",
+        "maxScore": 17.35,
+        "maxScoreUnits": 1735,
+        "sourceType": "ACTIVITY_TEMPLATE",
+        "progressionLevels": [
+          "Aplica las reglas indicadas de educación vial en todas las oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en casi todas las oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en algunas oportunidades observadas.",
+          "Aplica las reglas indicadas de educación vial en pocas oportunidades observadas.",
+          "No aplica las reglas indicadas de educación vial en ninguna de las oportunidades observadas."
+        ],
+        "relativeWeight": 4,
+        "descriptors": []
+      }
+    ]
   }
 ]

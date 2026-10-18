@@ -28,6 +28,9 @@ const reviewed=new Map(Object.entries(semantic.topicRecords).map(([topic,prefixe
 const classified=new Set([...reviewed.values()].flat())
 for(const record of original.filter(r=>['CONCEPT','PROCEDURE'].includes(r.type)))assert(classified.has(record.id)||excludedIds.has(record.id),'Unreviewed source record '+record.id)
 const normalize=s=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/\s+/g,' ')
+const procedural=JSON.parse(readFileSync('data/evaluation-instruments/social-grade-one-procedural-contracts.json','utf8'))
+assert.equal(procedural.sourceSha256,source.sha256)
+for(const task of procedural.cases)for(const id of task.sourceRecordIds)assert(original.some(r=>r.id===id&&r.type==='PROCEDURE'),'El procedimiento debe pertenecer al ámbito literal revisado')
 const cases=[...socialGradeOneTopics.map(t=>({id:t.id,description:`Explica ${t.label}.`,family:'EXPLANATION'})),
  {id:'causal',description:'Analiza las causas y consecuencias de la expansión colonial europea usando las fuentes proporcionadas.',family:'CAUSAL_ANALYSIS'},
  {id:'chronology',description:'Elabora una línea de tiempo de la Revolución Francesa con los hechos y fechas indicados.',family:'TIMELINE'},
@@ -39,6 +42,7 @@ const cases=[...socialGradeOneTopics.map(t=>({id:t.id,description:`Explica ${t.l
  {id:'source-reliability',description:'Identifica cuáles de las fuentes proporcionadas para el estudio geográfico son confiables y justifica tu selección.',family:'SOURCE_RELIABILITY'},
  {id:'historical-news',description:'Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.',family:'HISTORICAL_NEWS'},
  {id:'digital-prevention',description:'Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.',family:'DIGITAL_PREVENTION'},
+ ...procedural.cases,
 ]
 const context={level:'SECONDARY',grade:1,subjectCode:'SOC',subjectName:'Ciencias Sociales',optativeExitName:null}
 const examples=cases.flatMap(c=>['rubrica','lista-cotejo','escala','lista-ponderada'].map(instrumentType=>{

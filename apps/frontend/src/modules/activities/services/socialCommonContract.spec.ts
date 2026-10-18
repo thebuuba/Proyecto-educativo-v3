@@ -5,6 +5,7 @@ import {editableFallbackRecommendation,recommendationToFields} from './instrumen
 import {scoreInstrumentFields} from './instrumentScoring'
 import {activityDefaultSuggestions} from '../utils/activityDefaultSuggestions'
 import {completeInstrumentCriterion,nextCatalogCriterion} from './instrumentCriterionAddition'
+import proceduralContracts from '../../../../../../data/evaluation-instruments/social-grade-one-procedural-contracts.json'
 const context={level:'SECONDARY' as const,grade:1,cycle:1,subjectCode:'SOC',subjectName:'Ciencias Sociales',modalityCode:'academic',optativeExitName:null}
 const samples=[
  ['causal','Analiza las causas y consecuencias de la expansión colonial europea usando las fuentes proporcionadas.'],
@@ -17,6 +18,7 @@ const samples=[
  ['source-reliability','Identifica cuáles de las fuentes proporcionadas para el estudio geográfico son confiables y justifica tu selección.'],
  ['historical-news','Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.'],
  ['digital-prevention','Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.'],
+ ...proceduralContracts.cases.map(c=>[c.id,c.description]),
  ...socialGradeOneTopics.map(t=>[t.id,`Explica ${t.label}.`]),
 ]
 const normalized=(p:ReturnType<typeof editableFallbackRecommendation>)=>({activity:p.activityType,type:p.instrumentType,levels:p.levels,criteria:p.criteria.map(({id,sourceReferences,sourceType,...c})=>c)})

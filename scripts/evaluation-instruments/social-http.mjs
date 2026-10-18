@@ -15,9 +15,12 @@ const require=createRequire(new URL('../../apps/backend/package.json',import.met
 const catalog=require('../../apps/backend/dist/modules/evaluation-instruments/catalog-current.js').evaluationCatalogCurrent.version
 assert(/^evaluation-2026\.\d+$/.test(catalog))
 const sourceMode=process.argv.includes('--source')
+const proceduralMode=process.argv.includes('--procedural')
+assert(!proceduralMode||sourceMode,'Los procedimientos nuevos se verifican con la fuente publicada')
+const procedural=JSON.parse(readFileSync('data/evaluation-instruments/social-grade-one-procedural-contracts.json','utf8')).cases
 const source=sourceMode?JSON.parse(readFileSync(path+'MINERD_SECUNDARIA_2023_SOC_COMUN_G1_V1-source.json','utf8')):null
 if(source){assert.equal(source.project,project);assert.equal(source.code,'MINERD_SECUNDARIA_2023_SOC_COMUN_G1_V1')}
-const runKey='social-1-'+catalog+(source?'-source-'+source.versionId:''),base='http://localhost:8787',progressPath=path+runKey+'-http-progress.json'
+const runKey='social-1-'+catalog+(source?'-source-'+source.versionId:'')+(proceduralMode?'-procedural':''),base='http://localhost:8787',progressPath=path+runKey+'-http-progress.json'
 const progress=existsSync(progressPath)?JSON.parse(readFileSync(progressPath,'utf8')):{project,grade:1,writes:[],timings:[]}
 assert.equal(progress.project,project)
 const save=()=>writeFileSync(progressPath,JSON.stringify(progress,null,2)+'\n')
@@ -33,7 +36,7 @@ const canonical=v=>JSON.stringify(v,(_,x)=>x&&typeof x==='object'&&!Array.isArra
 const hash=v=>createHash('sha256').update(canonical(v)).digest('hex')
 const definition=a=>({instrumentId:a.instrumentId,snapshotId:a.instrumentSnapshotId,snapshot:a.instrumentSnapshot,criteria:a.instrumentCriteria,maxScore:a.maxScore,type:a.instrumentType,technique:a.evaluationTechnique})
 const content=p=>({activity:p.activityType,type:p.instrumentType,levels:p.levels,criteria:p.criteria.map(({id,sourceReferences,sourceType,...c})=>c)})
-const descriptions=[
+const descriptions=proceduralMode?procedural.map(c=>c.description):[
  'Analiza las causas y consecuencias de la expansión colonial europea usando las fuentes proporcionadas.',
  'Ubica los lugares señalados en el mapa utilizando los puntos cardinales. Sin calcular escalas ni utilizar GPS.',
  'Compara liberalismo y conservadurismo en Europa e interpreta las perspectivas de los autores proporcionados.',
@@ -43,9 +46,9 @@ const descriptions=[
  'Redacta una noticia sobre las revoluciones burguesas. Incluye titular, entrada y cuerpo. Sin fotografías ni pie de foto.',
  'Analiza los riesgos de compartir información personal en redes sociales y propone medidas de protección para el caso ficticio. No compartas datos propios.',
 ]
-const formats=['rubrica','lista-cotejo','escala','lista-ponderada','rubrica','lista-cotejo','escala','lista-ponderada'].slice(0,sourceMode?4:8)
+const formats=proceduralMode?['rubrica','lista-cotejo','escala','lista-ponderada','lista-cotejo','rubrica','lista-ponderada','escala']:['rubrica','lista-cotejo','escala','lista-ponderada','rubrica','lista-cotejo','escala','lista-ponderada'].slice(0,sourceMode?4:8)
 const sourceRecords=sourceMode?JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/sociales-1-matriz.json','utf8')).officialRecords:[]
-const sourcePrefixes=['03c0f43b','20638a76','055ff3a5','01b7176c']
+const sourcePrefixes=proceduralMode?procedural.map(c=>c.sourceRecordIds[0]):['03c0f43b','20638a76','055ff3a5','01b7176c']
 try{
  const school=await prisma.school.findUniqueOrThrow({where:{id:context.schoolId}});assert.match(school.name,/ficticio QA Development/)
  const login=await request('/auth/login',{email:qa.email,password:qa.password})
