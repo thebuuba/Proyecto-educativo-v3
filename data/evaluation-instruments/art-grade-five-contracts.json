@@ -1,0 +1,825 @@
+{
+  "grade": 5,
+  "scopeId": "73dc04d6-0e4f-58a4-bfd3-1fd75c8b98f3",
+  "sourcePdfPages": [
+    344,
+    345,
+    346
+  ],
+  "policy": "REPRESENTATIVE_TASKS_NOT_FULL_COMPOUND_ROW_COVERAGE",
+  "cases": [
+    {
+      "id": "visual-art-history",
+      "description": "Elabora una línea de tiempo con los hitos de las artes visuales de los periodos expresamente dados, relacionando fecha, obra y contexto con las fuentes proporcionadas. No investigues otros periodos.",
+      "sourceRecordIds": [
+        "3ab26e6e"
+      ],
+      "reviewFocus": "Secuencia histórica, sin épocas adicionales",
+      "topicIds": [
+        "visual-art-history"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "avant-garde-documentation",
+      "description": "Investiga y documenta los representantes de las vanguardias del siglo XX expresamente asignados, relacionando conceptos, ideas y obras con su importancia local y trascendencia documentada. No se exige investigar todas las disciplinas.",
+      "sourceRecordIds": [
+        "3577e856",
+        "c335866a"
+      ],
+      "reviewFocus": "Investigación y atribución de fuentes, sin todas las áreas acumuladas",
+      "topicIds": [
+        "avant-garde-documentation"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "artistic-research-method",
+      "description": "Diseña un plan de investigación de la propuesta artística dada, relacionando preguntas, método, fuentes y técnicas previstas. No presentes resultados todavía ni realices visitas.",
+      "sourceRecordIds": [
+        "260a7ce2",
+        "967121f5"
+      ],
+      "reviewFocus": "Plan metodológico distinto de hallazgos",
+      "topicIds": [
+        "artistic-research-method"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "artistic-proposal-research",
+      "description": "Investiga la propuesta artística asignada mediante las fuentes bibliográficas y la visita virtual proporcionadas, relacionando evidencias, decisiones y conclusiones. No realices una visita física ni contactes personas.",
+      "sourceRecordIds": [
+        "967121f5"
+      ],
+      "reviewFocus": "Investigación con recursos elegidos, sin campo obligatorio",
+      "topicIds": [
+        "artistic-proposal-research"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "virtual-exhibition",
+      "description": "Realiza la visita virtual de la exposición proporcionada y registra observaciones de las obras expresamente asignadas con evidencias identificables. No se exige visita presencial ni fotografías de personas.",
+      "sourceRecordIds": [
+        "b6dd0cc4"
+      ],
+      "reviewFocus": "Observación y documentación de visita virtual elegida",
+      "topicIds": [
+        "virtual-exhibition"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "artistic-language-resources",
+      "description": "Analiza cómo se relacionan espacio, soporte, color y textura en la obra artística o artesanal dada. Usa evidencias del referente sin crear otra obra.",
+      "sourceRecordIds": [
+        "91819b24"
+      ],
+      "reviewFocus": "Recursos expresamente pedidos, sin todos los lenguajes",
+      "topicIds": [
+        "artistic-language-resources"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "visual-sign-interpretation",
+      "description": "Interpreta los signos y símbolos de la obra visual proporcionada relacionando recursos visibles y significados sustentados. No infieras emociones privadas del autor o público.",
+      "sourceRecordIds": [
+        "427e96e1",
+        "5d57d4ae",
+        "063c6a88"
+      ],
+      "reviewFocus": "Semiótica con evidencia, sin estados internos",
+      "topicIds": [
+        "visual-sign-interpretation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "symbolic-visual-work",
+      "description": "Crea una obra visual para comunicar la idea ficticia acordada usando los signos y símbolos dados. Relaciona recursos visuales y significado sin revelar vivencias privadas.",
+      "sourceRecordIds": [
+        "37562bf6",
+        "2ed257f4",
+        "73a9a50c"
+      ],
+      "reviewFocus": "Codificación elegida, no todas las artes",
+      "topicIds": [
+        "symbolic-visual-work"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "criterionCount": 1
+    },
+    {
+      "id": "avant-garde-project-plan",
+      "description": "Elabora un plan de proyecto de creación artística basado en la vanguardia del siglo XX asignada. Relaciona concepto, técnica, referente cultural, recursos y acciones previstos. No ejecutes el proyecto todavía.",
+      "sourceRecordIds": [
+        "14899bd0",
+        "2f04594d"
+      ],
+      "reviewFocus": "Plan viable y referente, sin producto ya ejecutado",
+      "topicIds": [
+        "avant-garde-project"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT"
+    },
+    {
+      "id": "avant-garde-project",
+      "description": "Realiza el proyecto artístico acordado transformando conceptos, técnicas y referentes de la vanguardia del siglo XX dada. Relaciona decisiones y evidencias del producto sin exigir otras vanguardias.",
+      "sourceRecordIds": [
+        "14899bd0",
+        "2f04594d"
+      ],
+      "reviewFocus": "Ejecución del proyecto elegido, sin acumulación de estilos",
+      "topicIds": [
+        "avant-garde-project"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "cubism-work",
+      "description": "Crea una obra inspirada en el cubismo relacionando la síntesis de la forma y las decisiones expresivas según los rasgos del referente proporcionado. No se exige puntillismo ni simbolismo.",
+      "sourceRecordIds": [
+        "7369d87b"
+      ],
+      "reviewFocus": "Síntesis formal y referente cubista dados",
+      "topicIds": [
+        "cubism-work"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "forbidden": "puntill|simbolismo"
+    },
+    {
+      "id": "pointillism-work",
+      "description": "Crea una obra inspirada en el puntillismo mediante la organización de puntos y color indicada en el referente dado. No se exige realizar también cubismo o simbolismo.",
+      "sourceRecordIds": [
+        "7369d87b"
+      ],
+      "reviewFocus": "Recursos de punto y color expresamente pedidos",
+      "topicIds": [
+        "pointillism-work"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "forbidden": "cubismo|simbolismo"
+    },
+    {
+      "id": "symbolism-work",
+      "description": "Crea una obra inspirada en el simbolismo relacionando ideas y recursos simbólicos del referente dado con el mensaje ficticio acordado. No reveles estados internos ni copies la obra literalmente.",
+      "sourceRecordIds": [
+        "7369d87b"
+      ],
+      "reviewFocus": "Símbolo, idea y referente, sin intimidad",
+      "topicIds": [
+        "symbolism-work"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "forbidden": "cubismo|puntill"
+    },
+    {
+      "id": "western-theatre-history",
+      "description": "Investiga los hitos de la historia del teatro occidental en los periodos expresamente dados, relacionando obras, figuras y contexto con fuentes. No investigues todas las épocas.",
+      "sourceRecordIds": [
+        "121bab66",
+        "c51b71bf"
+      ],
+      "reviewFocus": "Historia acotada, sin representar una obra",
+      "topicIds": [
+        "western-theatre-history"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "dance-history",
+      "description": "Compara los referentes dados del ballet y de la danza moderna según los recursos y contextos documentados. No interpretes una danza.",
+      "sourceRecordIds": [
+        "99e292dc"
+      ],
+      "reviewFocus": "Contraste histórico-estético, no desempeño corporal",
+      "topicIds": [
+        "dance-history"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON"
+    },
+    {
+      "id": "dominican-stage-history",
+      "description": "Documenta las obras, agrupaciones o figuras dominicanas expresamente asignadas del teatro y la danza, relacionando época, contexto y aportes con fuentes dadas. No realices entrevistas.",
+      "sourceRecordIds": [
+        "c143271c"
+      ],
+      "reviewFocus": "Representantes y fuentes, sin repertorio exhaustivo",
+      "topicIds": [
+        "dominican-stage-history"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "stage-history-folder",
+      "description": "Organiza una carpeta física o digital con los elementos, personajes y figuras asignados de la historia del teatro y danza occidentales. Relaciona evidencias y contextos sin elaborar ambos formatos.",
+      "sourceRecordIds": [
+        "c51b71bf"
+      ],
+      "reviewFocus": "Organización documental del material, alternativa física/digital",
+      "topicIds": [
+        "stage-history-folder"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "classical-stage-repertoire",
+      "description": "Analiza las relaciones entre repertorio, dramaturgia y figuras relevantes de la obra clásica escénica proporcionada según las fuentes. No representes otra obra ni confundas su permanencia con la época del Clasicismo musical.",
+      "sourceRecordIds": [
+        "c571c88a"
+      ],
+      "reviewFocus": "Obra clásica duradera, no identidad con un periodo musical",
+      "topicIds": [
+        "classical-stage-repertoire"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "stage-appreciation-report",
+      "description": "Redacta el reporte crítico de teatro o danza del fragmento audiovisual proporcionado, relacionando recursos formales, signos y sentido con evidencias dadas. No se exige asistencia en vivo ni autógrafos reales.",
+      "sourceRecordIds": [
+        "3041de52",
+        "3fc53d5e",
+        "018c7114"
+      ],
+      "reviewFocus": "Análisis y reporte, sin prueba de asistencia obligatoria",
+      "topicIds": [
+        "stage-appreciation-report"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "forbidden": "autógrafo obligatorio|asistencia presencial obligatoria"
+    },
+    {
+      "id": "stage-semiotics",
+      "description": "Analiza cómo gesto y movimiento contribuyen al significado de la escena ficticia proporcionada, usando evidencias observables. No infieras personalidad ni emociones privadas del intérprete.",
+      "sourceRecordIds": [
+        "5b99e730"
+      ],
+      "reviewFocus": "Relaciones semióticas de recursos dados",
+      "topicIds": [
+        "stage-semiotics"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "music-history-listening",
+      "description": "Escucha el fragmento musical proporcionado e identifica sus características según los criterios y datos históricos dados. No compongas otra pieza ni inventes su periodo.",
+      "sourceRecordIds": [
+        "15606978",
+        "42d572b3"
+      ],
+      "reviewFocus": "Audición y características, sin teoría completa de todas las épocas",
+      "topicIds": [
+        "music-history-listening"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "dominican-symphonic-listening",
+      "description": "Escucha el fragmento sinfónico dominicano proporcionado y relaciona sus rasgos con el compositor o compositora y la época según las fuentes dadas. No interpretes otra obra.",
+      "sourceRecordIds": [
+        "4fb1754f",
+        "bbf80d2c"
+      ],
+      "reviewFocus": "Identificación sustentada, no prueba memorística de todo el repertorio",
+      "topicIds": [
+        "dominican-symphonic-listening"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "contemporary-music-contrast",
+      "description": "Compara el fragmento de música contemporánea proporcionado con los ejemplos dados del Clasicismo y Romanticismo, relacionando los recursos rítmicos, melódicos y armónicos solicitados con evidencias escuchadas. No compongas otra pieza.",
+      "sourceRecordIds": [
+        "63250486",
+        "0a808f5f"
+      ],
+      "reviewFocus": "Contraste de tres ejemplos expresamente solicitados",
+      "topicIds": [
+        "contemporary-music-contrast"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON"
+    },
+    {
+      "id": "contemporary-classicism-only",
+      "description": "Compara el fragmento musical contemporáneo y el del Clasicismo proporcionados según los recursos sonoros de la ficha. No se pide analizar Romanticismo ni componer otra obra.",
+      "sourceRecordIds": [
+        "0a808f5f"
+      ],
+      "reviewFocus": "Solo dos referentes elegidos",
+      "topicIds": [
+        "contemporary-music-contrast"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "forbidden": "Romanticismo"
+    },
+    {
+      "id": "music-aesthetic-semiotic",
+      "description": "Analiza las relaciones entre forma, agógica y dinámica del fragmento musical proporcionado y su sentido según los criterios dados para la época y estilo. No declares gustos personales.",
+      "sourceRecordIds": [
+        "8a910983",
+        "10672f1c"
+      ],
+      "reviewFocus": "Forma/tiempo/dinámica y sentido pedidos",
+      "topicIds": [
+        "music-aesthetic-semiotic"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "costume-history",
+      "description": "Analiza la función del vestuario de la obra y época proporcionadas, relacionando forma, recursos y contexto documentado. No se exige confeccionar ropa ni evaluar cuerpos.",
+      "sourceRecordIds": [
+        "3685b8f8"
+      ],
+      "reviewFocus": "Vestuario en contexto, sin producción o apariencia corporal",
+      "topicIds": [
+        "costume-history"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "forbidden": "confecciona|coser|apariencia corporal"
+    },
+    {
+      "id": "copyright-research",
+      "description": "Investiga las leyes, entidades y procesos de derechos autorales de las artes según las fuentes proporcionadas, identificando jurisdicción, fecha y alcance. No afirmes que el material de 2023 demuestra por sí solo la ley vigente.",
+      "sourceRecordIds": [
+        "558d3edf",
+        "b35ba154",
+        "b2a09489"
+      ],
+      "reviewFocus": "Investigación documental con alcance temporal, sin asesoría legal",
+      "topicIds": [
+        "copyright-research"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH",
+      "forbidden": "ley vigente garantizada|asesoría legal"
+    },
+    {
+      "id": "copyright-application",
+      "description": "Registra la obra propia o ajena del ejemplo y cita autoría y fuente original según los requerimientos dados en la ficha. Distingue procedencia, permiso y atribución sin publicar la obra ni asumir permisos ausentes.",
+      "sourceRecordIds": [
+        "1f172bb0",
+        "15b76c06"
+      ],
+      "reviewFocus": "Aplicación de requisitos dados, sin legalidad presumida",
+      "topicIds": [
+        "copyright-application"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "heritage-object-record",
+      "description": "Elabora el registro del objeto patrimonial proporcionado, relacionando autoría, procedencia temporal y espacial, técnica y tema con sus evidencias. Identifica los datos no determinados sin inventarlos.",
+      "sourceRecordIds": [
+        "df0e31fd",
+        "e5abbe39"
+      ],
+      "reviewFocus": "Metadatos con trazabilidad, ausencia distinta de error",
+      "topicIds": [
+        "heritage-object-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "artwork-classification",
+      "description": "Organiza el registro de las obras proporcionadas por género o por autor según el criterio elegido, contextualizando época y lugar con las fuentes. No se exige clasificar de ambas formas ni investigar otras obras.",
+      "sourceRecordIds": [
+        "93ceb13c"
+      ],
+      "reviewFocus": "Criterio de clasificación elegido, no acumulación",
+      "topicIds": [
+        "artwork-classification"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "artistic-synthesis",
+      "description": "Analiza la síntesis de forma, materiales y color de la obra visual dada relacionando recursos e idea sustentada. No añadas movimientos, sonidos ni gestos de otros lenguajes.",
+      "sourceRecordIds": [
+        "0872296c"
+      ],
+      "reviewFocus": "Síntesis del medio visual pedido",
+      "topicIds": [
+        "artistic-synthesis"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "forbidden": "gestos|movimientos|sonidos"
+    },
+    {
+      "id": "dominican-folklore-elements",
+      "description": "Identifica los elementos folclóricos de las obras dominicanas proporcionadas usando evidencias visuales y fuentes contextuales dadas. No describas tu identidad o familia.",
+      "sourceRecordIds": [
+        "27ef1f9d"
+      ],
+      "reviewFocus": "Identificación de evidencias, sin pertenencia",
+      "topicIds": [
+        "dominican-folklore-elements"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "avant-garde-learning-presentation",
+      "description": "Presenta los aprendizajes sobre la vanguardia del siglo XX asignada mediante el formato disponible elegido, relacionando ejemplos y conceptos con fuentes. No se evalúa talento innato ni se exige otra obra.",
+      "sourceRecordIds": [
+        "4bfcb15c"
+      ],
+      "reviewFocus": "Presentación del aprendizaje, sin originalidad como atributo",
+      "topicIds": [
+        "avant-garde-learning-presentation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE"
+    },
+    {
+      "id": "simulated-event-diffusion",
+      "description": "Crea una simulación de difusión del evento artístico ficticio dado mediante el medio disponible elegido, relacionando mensaje, público y recursos. No publiques ni uses datos personales reales.",
+      "sourceRecordIds": [
+        "9d01d350"
+      ],
+      "reviewFocus": "Difusión simulada, no acción externa",
+      "topicIds": [
+        "simulated-event-diffusion"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION"
+    },
+    {
+      "id": "history-period-research",
+      "description": "Investiga las características artísticas de los periodos antiguo y medieval asignados, relacionando obras y contexto con las fuentes dadas. No se exige investigar Renacimiento, modernidad y contemporaneidad.",
+      "sourceRecordIds": [
+        "0f91b02b"
+      ],
+      "reviewFocus": "Intervalo solicitado, sin toda la historia",
+      "topicIds": [
+        "history-period-research"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "style-context-research",
+      "description": "Investiga los aspectos contextuales que propician el estilo artístico dado, relacionando afirmaciones, obras y evidencias de las fuentes proporcionadas. No expliques otros estilos.",
+      "sourceRecordIds": [
+        "d4613b42"
+      ],
+      "reviewFocus": "Investigación contextual delimitada",
+      "topicIds": [
+        "style-context-research"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH"
+    },
+    {
+      "id": "art-history-portfolio",
+      "description": "Crea un portafolio físico o digital con los aprendizajes y reflexiones sobre los maestros o personajes de la historia de las artes expresamente asignados. Sustenta relaciones con evidencias sin elaborar ambos formatos ni revelar intimidad.",
+      "sourceRecordIds": [
+        "9de799a6"
+      ],
+      "reviewFocus": "Organización y reflexión disciplinar, sin vivencias privadas",
+      "topicIds": [
+        "art-history-portfolio"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "forbidden": "revela su intimidad|ambos formatos"
+    },
+    {
+      "id": "research-systematization",
+      "description": "Sistematiza la investigación artística ya realizada usando el método acordado, relacionando preguntas, evidencias, resultados y conclusiones en el formato de presentación elegido. No inventes una investigación nueva.",
+      "sourceRecordIds": [
+        "756b4755"
+      ],
+      "reviewFocus": "Resultados y método del trabajo dado, no nuevo levantamiento",
+      "topicIds": [
+        "research-systematization"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO"
+    },
+    {
+      "id": "ecological-art-project-plan",
+      "description": "Elabora un plan de proyecto artístico que comunique cuidado ecológico mediante uso, reúso o reciclaje del material seguro disponible elegido. Relaciona recursos y acciones previstas; no lo ejecutes ni compres materiales.",
+      "sourceRecordIds": [
+        "cb30d48b"
+      ],
+      "reviewFocus": "Plan y medio elegido, sin todas las técnicas o resultados ejecutados",
+      "topicIds": [
+        "ecological-art-project-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "forbidden": "proyecto ejecutado|compra obligatoria"
+    },
+    {
+      "id": "art-residue-observation",
+      "description": "Registra la frecuencia con que se aplican las acciones concretas de cuidado visual, sonoro y de residuos expresamente acordadas durante la producción artística observada. No infieras conciencia interna ni diagnósticos.",
+      "sourceRecordIds": [
+        "d2e19649"
+      ],
+      "reviewFocus": "Acciones observables, Nunca distinto de falta de datos",
+      "topicIds": [
+        "art-residue-observation"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "criterionCount": 3
+    },
+    {
+      "id": "art-health-practices",
+      "description": "Verifica si la producción artística del caso proporcionado cumple las medidas explícitas de uso seguro del recurso y pausas acordadas. No evalúes salud mental, apariencia ni garantías terapéuticas.",
+      "sourceRecordIds": [
+        "ef534f07"
+      ],
+      "reviewFocus": "Requisitos dados, sin diagnóstico",
+      "topicIds": [
+        "art-health-practices"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "aesthetic-position",
+      "description": "Argumenta la postura estética elegida sobre la obra proporcionada con razones y evidencias, respondiendo a la postura distinta del caso ficticio sin ataques personales. No se exige compartir gustos ni aprobar la postura ajena.",
+      "sourceRecordIds": [
+        "92a9f983",
+        "9b21e5fa"
+      ],
+      "reviewFocus": "Argumentación y respuesta observable, no acuerdo ni simpatía",
+      "topicIds": [
+        "aesthetic-position"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "forbidden": "comparte los gustos|acepta la postura ajena"
+    },
+    {
+      "id": "historical-heritage-contribution",
+      "description": "Explica los aportes de la obra histórica proporcionada al patrimonio artístico usando evidencias de las fuentes dadas. No se exige admiración, disfrute ni adhesión cultural.",
+      "sourceRecordIds": [
+        "c1bc9fc0",
+        "b58d5ae6"
+      ],
+      "reviewFocus": "Aporte documentado, duplicado literal sin doble puntuación",
+      "topicIds": [
+        "historical-heritage-contribution"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS"
+    },
+    {
+      "id": "contemporary-romanticism-only",
+      "description": "Compara la música contemporánea y el Romanticismo de los fragmentos dados según sus recursos sonoros. No incluyas Clasicismo.",
+      "topicIds": [
+        "contemporary-music-contrast"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "0a808f5f"
+      ],
+      "forbidden": "Clasicismo",
+      "required": "Romanticismo"
+    },
+    {
+      "id": "visual-color-only",
+      "description": "Analiza el color en el lenguaje de la obra visual proporcionada. No se pide textura, soporte, espacio ni tiempo.",
+      "topicIds": [
+        "artistic-language-resources"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "91819b24"
+      ],
+      "forbidden": "textura|soporte|espacio|tiempo",
+      "required": "color"
+    },
+    {
+      "id": "music-dynamic-only",
+      "description": "Analiza la dinámica del fragmento musical dado según la ficha de su época. No analices forma ni agógica.",
+      "topicIds": [
+        "music-aesthetic-semiotic"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8a910983",
+        "10672f1c"
+      ],
+      "forbidden": "agógica|forma musical",
+      "required": "dinámica"
+    },
+    {
+      "id": "heritage-author-only",
+      "description": "Elabora el registro de autoría del objeto patrimonial proporcionado, diferenciando atribución sustentada y autoría no determinada. No se piden técnica, tema ni procedencia.",
+      "topicIds": [
+        "heritage-object-record"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "sourceRecordIds": [
+        "df0e31fd",
+        "e5abbe39"
+      ],
+      "forbidden": "técnica|tema|procedencia",
+      "required": "autoría",
+      "criterionCount": 1
+    },
+    {
+      "id": "classification-author-only",
+      "description": "Organiza el registro de las obras por autor según las fichas proporcionadas. No se exige clasificación por género ni otras obras.",
+      "topicIds": [
+        "artwork-classification"
+      ],
+      "purpose": "REPORT",
+      "activityType": "PORTFOLIO",
+      "sourceRecordIds": [
+        "93ceb13c"
+      ],
+      "forbidden": "por género",
+      "required": "autor"
+    },
+    {
+      "id": "aesthetic-argument-only",
+      "description": "Argumenta tu postura estética sobre la obra con razones y evidencias de sus recursos. No se pide responder a otra postura ni compartir gustos.",
+      "topicIds": [
+        "aesthetic-position"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "92a9f983"
+      ],
+      "forbidden": "responde|postura distinta",
+      "required": "razones"
+    },
+    {
+      "id": "research-plan-only",
+      "description": "Planifica la investigación artística de la obra dada indicando preguntas, fuentes y método previstos. No presentes resultados ni conclusiones.",
+      "topicIds": [
+        "artistic-research-method"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "260a7ce2",
+        "967121f5"
+      ],
+      "forbidden": "resultados obtenidos|conclusiones obtenidas",
+      "required": "previst"
+    },
+    {
+      "id": "copyright-attribution-check",
+      "description": "Verifica si el registro de la obra artística cumple los requisitos explícitos de autoría y fuente original de la ficha. No se pide evaluar permisos ni legislación.",
+      "topicIds": [
+        "copyright-application"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1f172bb0",
+        "15b76c06"
+      ],
+      "forbidden": "permiso|legislaci",
+      "required": "fuente",
+      "criterionCount": 2
+    },
+    {
+      "id": "weighted-avant-garde",
+      "description": "Crea una obra inspirada en el cubismo según el referente dado mediante una lista ponderada con crédito parcial para las relaciones de forma y recursos acordadas. No se pide puntillismo ni simbolismo.",
+      "topicIds": [
+        "cubism-work"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "7369d87b"
+      ],
+      "forbidden": "puntill|simbolismo",
+      "required": "forma"
+    },
+    {
+      "id": "stage-theatre-only",
+      "description": "Investiga la historia del teatro occidental en el periodo asignado mediante las fuentes dadas. No se pide historia de la danza.",
+      "topicIds": [
+        "western-theatre-history"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "121bab66",
+        "c51b71bf"
+      ],
+      "forbidden": "ballet|danza moderna",
+      "required": "teatro"
+    },
+    {
+      "id": "chosen-vanguard-alternative",
+      "description": "Crea una obra inspirada en el cubismo o el puntillismo, según el estilo elegido y el referente proporcionado. No se exige realizar ambos estilos.",
+      "topicIds": [
+        "chosen-avant-garde"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "ARTISTIC_PRODUCTION",
+      "sourceRecordIds": [
+        "7369d87b"
+      ],
+      "forbidden": "ambos estilos|las dos obras",
+      "required": "elegido",
+      "criterionCount": 1
+    },
+    {
+      "id": "research-method-report",
+      "description": "Investiga los métodos y técnicas de investigación artística según las fuentes dadas, relacionando pregunta, método y evidencias. No diseñes un plan nuevo.",
+      "topicIds": [
+        "artistic-research-method"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "260a7ce2"
+      ],
+      "forbidden": "resultados obtenidos",
+      "required": "método"
+    },
+    {
+      "id": "separate-visual-and-costume",
+      "description": "Analiza el color en el lenguaje de la obra visual proporcionada. Luego analiza la función del vestuario dado en su contexto documentado. No crees otra obra.",
+      "topicIds": [
+        "artistic-language-resources",
+        "costume-history"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "91819b24",
+        "3685b8f8"
+      ]
+    },
+    {
+      "id": "analysis-of-research-plan",
+      "description": "Analiza el plan de investigación artística proporcionado, relacionando pregunta, método y fuentes con sus decisiones previstas. No diseñes otro plan ni ejecutes la investigación.",
+      "topicIds": [
+        "artistic-research-method"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "260a7ce2",
+        "967121f5"
+      ],
+      "forbidden": "^Planifica",
+      "required": "método"
+    },
+    {
+      "id": "research-of-given-plan",
+      "description": "Investiga el plan de investigación artística del ejemplo según las fuentes dadas, relacionando pregunta y método con las evidencias documentales. No diseñes un plan nuevo.",
+      "topicIds": [
+        "artistic-research-method"
+      ],
+      "purpose": "REPORT",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "260a7ce2",
+        "967121f5"
+      ],
+      "forbidden": "^Planifica",
+      "required": "método"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import { artGradeOneTopics } from './secondary-art-grade-1'
 import { artGradeTwoTopics } from './secondary-art-grade-2'
 import { artGradeThreeTopics } from './secondary-art-grade-3'
 import { artGradeFourTopics } from './secondary-art-grade-4'
+import { artGradeFiveTopics } from './secondary-art-grade-5'
 
 type ArtEvidenceText = {
   title: string
@@ -66,10 +67,11 @@ export const commonArtModules = [
   },
   { id: 'educacion-artistica-comun-3', grade: 3, topics: artGradeThreeTopics, policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1' },
   { id: 'educacion-artistica-comun-4', grade: 4, topics: artGradeFourTopics, policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1' },
+  { id: 'educacion-artistica-comun-5', grade: 5, topics: artGradeFiveTopics, policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1' },
 ]
 const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
 const endings = '(?:a|an|ar|ara|aran|ando|e|en)'
-const actionVerbs = `(?:analiz|analic|explic|expliqu|identific|identifiqu|diferenci|compar|contrast|cre|realiz|construy|estiliz|disen|adapt|organiz|elabor|utiliz|interpret|represent|argument|valor|explor|registr|verific|comprueb|marc|investig|improvis|present|musicaliz|seleccion|expon|reproduc|describ)${endings}|constru(?:ye|yen|ir|ira|iran|yendo)|comp(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)|prop(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)`
+const actionVerbs = `(?:analiz|analic|explic|expliqu|identific|identifiqu|diferenci|compar|contrast|cre|realiz|construy|estiliz|disen|adapt|organiz|elabor|utiliz|interpret|represent|argument|valor|explor|registr|verific|comprueb|marc|investig|improvis|present|musicaliz|seleccion|expon|reproduc|describ|document|redact|escuch|sistematiz|planific)${endings}|constru(?:ye|yen|ir|ira|iran|yendo)|comp(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)|prop(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)`
 function requestedArtText(value: string) {
   return normalize(
     withoutResources(
@@ -95,6 +97,7 @@ function selectedTopics(text: string, available: ArtTopic[]) {
       text.includes(normalize(topic.label)) || new RegExp(`\\b(?:${topic.match})\\b`).test(text),
   )
   const contains = (id: string) => topics.some((topic) => topic.id === id)
+  if (contains('chosen-avant-garde')) topics = topics.filter(topic => !['cubism-work','pointillism-work','symbolism-work'].includes(topic.id))
   if ((contains('photo-series') || contains('photo-report') || contains('photo-tone')) && !/\bilustracion[a-z]*\b/.test(text))
     topics = topics.filter(topic => topic.id !== 'illustration')
   if (contains('photo-report')) topics = topics.filter(topic => topic.id !== 'photo-series')
@@ -123,6 +126,13 @@ function modeFor(text: string, topics: ArtTopic[]): ArtMode {
   if (/^(?:verific|comprueb|marc)/.test(firstAction) && /requisitos|cumpl/.test(text))
     return 'VERIFICATION'
   if (/^(?:compar|contrast|diferenci)/.test(firstAction)) return 'COMPARISON'
+  if (topics.some(topic => topic.grade === 5)) {
+    if (/^planific/.test(firstAction)) return 'PLAN'
+    if (/^document/.test(firstAction)) return 'REPORT'
+    if (topics.some(topic => ['visual-sign-interpretation','stage-appreciation-report','music-history-listening','dominican-symphonic-listening'].includes(topic.id)) && /^(?:interpret|redact|escuch)/.test(firstAction)) return 'ANALYSIS'
+    if (topics.some(topic => topic.id === 'art-residue-observation') && /frecuencia|regularidad/.test(text)) return 'OBSERVATION'
+    if (topics.some(topic => ['visual-art-history','virtual-exhibition','stage-history-folder','copyright-application','heritage-object-record','artwork-classification','art-history-portfolio','research-systematization'].includes(topic.id)) && /^(?:elabor|realiz|organiz|registr|cre|sistematiz)/.test(firstAction)) return 'REPORT'
+  }
   if (/^investig/.test(firstAction)) return 'REPORT'
   if (/^explor/.test(firstAction) && topics.some(topic => topic.id === 'expression-exploration')) return 'PERFORMANCE'
   if (/^explor/.test(firstAction) && topics.some(topic => topic.grade === 4 && topic.id === 'origin-dance')) return 'PERFORMANCE'
@@ -207,7 +217,7 @@ export function resolveCommonArtTask(
     ).values(),
   ]
   const mode = actions[0].mode
-  const researching = mode === 'REPORT' && topics.some(topic => topic.id === 'musical-research' || topic.grade === 4 && ['scene-context','art-exponents-research'].includes(topic.id))
+  const researching = mode === 'REPORT' && topics.some(topic => topic.id === 'musical-research' || topic.grade === 4 && ['scene-context','art-exponents-research'].includes(topic.id) || topic.grade === 5 && ['artistic-research-method','avant-garde-documentation','artistic-proposal-research','western-theatre-history','dominican-stage-history','copyright-research','history-period-research','style-context-research'].includes(topic.id))
   const activityType = researching ? 'RESEARCH' : (
     {
       ANALYSIS: 'ANALYSIS',
@@ -255,6 +265,47 @@ function criterion(
 function contextualArtTopic(topic: ArtTopic, text: string): ArtTopic {
   let result = topic
   const brief = text.replace(/[.\s]+$/, '') === `explica ${normalize(topic.label)}`
+  if (topic.grade === 5 && !brief) {
+    const terms = (options: [string,string][]) => options.filter(([pattern]) => new RegExp(`\\b(?:${pattern})\\b`).test(text)).map(([,label]) => label)
+    if (topic.id === 'artistic-language-resources') {
+      const parts = terms([['espacio','espacio'],['soporte','soporte'],['color','color'],['textura','textura'],['tiempo','tiempo'],['dimensiones','dimensiones']])
+      if (parts.length) result = {...result,relation:`las relaciones de ${parts.join(', ')} con la organización de la obra artística o artesanal examinada, sustentadas en evidencias del referente`}
+    }
+    if (topic.id === 'music-aesthetic-semiotic') {
+      const parts = terms([['forma','forma musical'],['agogica','agógica'],['dinamica','dinámica']])
+      if (parts.length) result = {...result,relation:`las relaciones de ${parts.join(', ')} con el sentido del fragmento musical y los criterios de época y estilo expresamente dados, sustentadas en evidencias audibles`}
+    }
+    if (topic.id === 'contemporary-music-contrast') {
+      const periods = terms([['clasicismo','Clasicismo'],['romanticismo','Romanticismo']])
+      const resources = terms([['ritmicos?','rítmicos'],['melodicos?','melódicos'],['armonicos?','armónicos']])
+      result = {...result,relation:`las relaciones entre los recursos ${resources.length?resources.join(', '):'sonoros expresamente solicitados'} de la música contemporánea y ${periods.length?periods.join(' y '):'los periodos elegidos'}, sustentadas en evidencias de los fragmentos escuchados`}
+    }
+    if (topic.id === 'heritage-object-record') {
+      const fields = terms([['autoria','autoría'],['procedencia','procedencia temporal y espacial'],['tecnica','técnica'],['tema','tema']])
+      if (fields.length) result = {...result,evidence:fields.map((field,index)=>({
+        id:`metadata-${index}`,title:`Registro de ${field}`,
+        success:`Registra ${field} del objeto patrimonial según las evidencias proporcionadas, diferenciando información documentada y dato no determinado sin inventar su contenido.`,
+        sufficient:`El dato de ${field} y su sustento se reconocen; una referencia secundaria queda poco precisada.`,
+        partial:`Presenta un dato pertinente de ${field}, pero no permite relacionarlo con la evidencia ni reconocer su indeterminación.`,
+        error:`Inventa el dato de ${field} o lo presenta de modo incompatible con las evidencias del objeto.`,
+      }))}
+    }
+    if (topic.id === 'art-residue-observation' && /frecuencia|regularidad/.test(text)) {
+      const parts = terms([['visual','visual'],['sonoro','sonoro'],['residuos','de residuos']])
+      if (parts.length) result = {...result,evidence:parts.map((field,index)=>({
+        id:`observed-care-${index}`,title:`Frecuencia de cuidado ${field}`,
+        success:`Aplica las acciones concretas de cuidado ${field} expresamente acordadas en todas las oportunidades observadas.`,
+        sufficient:`Aplica las acciones concretas de cuidado ${field} acordadas en casi todas las oportunidades observadas.`,
+        partial:`Aplica las acciones concretas de cuidado ${field} acordadas en algunas oportunidades observadas.`,
+        error:`Aplica las acciones concretas de cuidado ${field} acordadas en pocas oportunidades observadas.`,
+        absent:`No aplica las acciones concretas de cuidado ${field} acordadas en las oportunidades observadas; no equivale a ausencia de registro.`,
+      }))}
+    }
+    if (topic.id === 'artwork-classification') {
+      const chosen = /por genero o por autor/.test(text)?'el criterio elegido de género o autor':/por autor/.test(text)?'autor':/por genero/.test(text)?'género':'el criterio expresamente elegido'
+      result = {...result,evidence:result.evidence.map(e=>({...e,title:`Clasificación según ${chosen}`,success:`Organiza los registros de obras según ${chosen}, sustentando la clasificación y los datos contextuales expresamente pedidos en las fuentes dadas.`}))}
+    }
+  }
   if (topic.grade === 4 && topic.id === 'regional-visual-art' && !brief && !/aportes|trascend/.test(text)) result = {
     ...result,
     relation: result.relation.replace('recursos estéticos, contexto documentado y aportes', 'recursos estéticos y contexto documentado'),
@@ -445,6 +496,17 @@ export function commonArtCriteria(task: CommonArtTask): ContextualTopicCriterion
     const requested = action.topics.flatMap((originalTopic) => {
       const topic = contextualArtTopic(originalTopic, action.text)
       if (action.mode === 'VERIFICATION') {
+        if (topic.grade === 5 && ['copyright-application','art-health-practices'].includes(topic.id)) {
+          const options = topic.id === 'copyright-application' ? [['autoria','autoría'],['fuente','fuente original']] : [['uso seguro','uso seguro del recurso'],['pausas','pausas acordadas']]
+          const parts = options.filter(([pattern])=>new RegExp(`\\b${pattern}\\b`).test(action.text)).map(([,label])=>label)
+          return (parts.length?parts:['la medida expresamente dada']).map((term,index)=>criterion(topic,action.mode,{
+            id:`requirement-${index}`,title:`Verificación de ${term}`,
+            success:`Identifica con evidencias si el caso proporcionado cumple el requisito explícito de ${term} de la ficha.`,
+            sufficient:`La verificación de ${term} se reconoce; una marca secundaria queda poco clara sin alterar el resultado.`,
+            partial:`La respuesta sobre ${term} es ambigua y no permite determinar el cumplimiento del requisito.`,
+            error:`Atribuye al caso un cumplimiento de ${term} incompatible con sus evidencias.`,
+          }))
+        }
         const terms =
           topic.id === 'drawing'
             ? [
@@ -473,6 +535,7 @@ export function commonArtCriteria(task: CommonArtTask): ContextualTopicCriterion
         )
       }
       if (action.mode === 'ANALYSIS' || action.mode === 'COMPARISON') {
+        if (topic.grade === 5 && topic.id === 'aesthetic-position' && /^argument/.test(action.text)) return topic.evidence.filter(e=>!e.when||new RegExp(e.when).test(action.text)).map(e=>criterion(topic,action.mode,e))
         if (topic.grade === 4 && /^argument[a-z]*\b/.test(action.text) && topic.id === 'heritage-form-content') return topic.evidence.map(evidence => criterion(topic, action.mode, evidence))
         if (topic.grade === 3 && /^argument[a-z]*\b/.test(action.text) && ['web-diffusion','arts-health','heritage-art'].includes(topic.id)) return topic.evidence.map(evidence => criterion(topic, action.mode, evidence))
         if (topic.grade === 2 && /^argument[a-z]*\b/.test(action.text)) {

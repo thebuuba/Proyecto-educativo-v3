@@ -12,9 +12,9 @@ import { evaluationCatalogCurrent } from '../../apps/backend/src/modules/evaluat
 
 const flag = process.argv.indexOf('--grade'),
   grade = flag < 0 ? 1 : Number(process.argv[flag + 1])
-assert([1,2,3,4].includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
-const pdfPages = grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : [341,342,343]
-const gradeName = ['', 'one', 'two', 'three', 'four'][grade]
+assert([1,2,3,4,5].includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
+const pdfPages = grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : [344,345,346]
+const gradeName = ['', 'one', 'two', 'three', 'four', 'five'][grade]
 const module = commonArtModules.find((row) => row.grade === grade)
 assert(module, 'Grado con proveedor conectado requerido')
 const directory = 'docs/curriculum/cobertura-secundaria/'
@@ -71,9 +71,13 @@ const exclusions = (grade === 1 ? [
   ...['541d41bb','ed32be0b','f9362901','c3bf9f72'].map(prefix => ({ prefix, reason: 'PURE_HEADING', explanation: 'Encabezado de lenguaje artístico, sin desempeño independiente.' })),
   { prefix: '7060b34d', reason: 'PRIVATE_LEISURE', explanation: 'No se puntúa el entretenimiento de los momentos de ocio privado.' },
   { prefix: '95944dbb', reason: 'PRIVATE_ENJOYMENT', explanation: 'Disfrutar la programación artística no es un desempeño verificable ni un atributo personal puntuable.' },
-] : [
+] : grade === 4 ? [
   ...['2b1efffa','9c92a778','d7edba97','168e84e8'].map(prefix => ({ prefix, reason: 'PURE_HEADING', explanation: 'Encabezado de lenguaje artístico, sin desempeño independiente.' })),
   { prefix: 'c5defbd4', reason: 'PRIVATE_IDENTITY', explanation: 'El fortalecimiento de identidad personal y social no se infiere ni se puntúa; las decisiones de obras y referentes se evalúan cuando son expresamente solicitadas.' },
+] : [
+  ...['dfa76b3f','8f68133b','bafda287','35f1fc12'].map(prefix => ({ prefix, reason: 'PURE_HEADING', explanation: 'Encabezado de columna, sin desempeño independiente. El literal Educación Artística en la posición musical se conserva sin crear otra asignatura.' })),
+  { prefix: '22b54a35', reason: 'PRIVATE_ENJOYMENT', explanation: 'El disfrute musical privado no se infiere ni se puntúa; se observan relaciones y evidencias musicales cuando se solicitan.' },
+  { prefix: 'e48036a0', reason: 'PRIVATE_ENJOYMENT', explanation: 'El deleite privado ante signos y símbolos no se puntúa; la interpretación y creación simbólicas se observan en evidencias de las obras.' },
 ]).map(({ prefix, ...row }) => {
   const original = literal.find((item) => item.id.startsWith(prefix))
   assert(original)

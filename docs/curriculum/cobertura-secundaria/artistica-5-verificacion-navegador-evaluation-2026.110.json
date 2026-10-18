@@ -1,0 +1,52 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.110",
+  "grade": 5,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 5,
+    "cycle": 2,
+    "subjectCode": "ART",
+    "optativeExitName": null
+  },
+  "format": "lista-cotejo",
+  "inspectedFormats": [
+    "rubrica",
+    "lista-cotejo"
+  ],
+  "savedAndReopenedFormats": [
+    "lista-cotejo"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "PROJECT_BASED",
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "fdf26ba218d74b1fc3a3420000bcaa21",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "fdf26ba218d74b1fc3a3420000bcaa21",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "75260ee2-6037-465f-b52f-aeba533b84d4",
+      "format": "lista-cotejo",
+      "criteria": 2,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-tgdjnn29.js",
+  "servedAssetSha256": "613cbc2ce85128ce50e8ab7ded949675e2dbd6f224a0da15a5660c32bd4ebd29",
+  "limits": [
+    "Una muestra QA identificable en5.ºA/Artística de la cuenta personal, sin notas ni ejecución real de aula; no todos los temas o combinaciones.",
+    "El caso ficticio concreto con datos, alternativas y decisión justificada seleccionó CASE_STUDY automáticamente. El detector no se amplió para forzarlo.",
+    "Rúbrica completa inspeccionada por DOM; cotejo guardado y reabierto visualmente. Doce muestras HTTP/DB con QA separada verificaron los cuatro formatos con20/17.35.",
+    "PROJECT_BASED manual solo prueba persistencia, no recomendación pedagógica. Huella READ ONLY incluye instrumento completo, snapshot, técnica, puntos e identificadores.",
+    "No se borraron borradores, cachés, almacenamiento ni SW, ni se enviaron correos o cambiaron contraseñas. DOM y HTTP confirmaron asset actual/registerSW.js y sw.js igual a dist; internalsSW no inspeccionados.",
+    "Se utilizó Cursos/asignatura/Editar y el enlace observado para la reapertura final. Persisten los límites previos de Actividades global/Ver actividad."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.110",
+  "verification": "AUTHENTICATED_RECOMMENDATIONS_NO_ACTIVITY_WRITES",
+  "cases": [
+    {
+      "caseId": "analysis-of-research-plan",
+      "format": "rubrica",
+      "status": 200,
+      "activityType": "ANALYSIS",
+      "serviceAndLocalExactlyEqual": true,
+      "ms": 5205
+    },
+    {
+      "caseId": "analysis-of-research-plan",
+      "format": "lista-cotejo",
+      "status": 200,
+      "activityType": "ANALYSIS",
+      "serviceAndLocalExactlyEqual": true,
+      "ms": 5344
+    },
+    {
+      "caseId": "analysis-of-research-plan",
+      "format": "escala",
+      "status": 200,
+      "activityType": "ANALYSIS",
+      "serviceAndLocalExactlyEqual": true,
+      "ms": 6513
+    },
+    {
+      "caseId": "analysis-of-research-plan",
+      "format": "lista-ponderada",
+      "status": 200,
+      "activityType": "ANALYSIS",
+      "serviceAndLocalExactlyEqual": true,
+      "ms": 4482
+    },
+    {
+      "caseId": "research-of-given-plan",
+      "format": "rubrica",
+      "status": 200,
+      "activityType": "RESEARCH",
+      "serviceAndLocalExactlyEqual": true,
+      "ms": 4764
+    },
+    {
+      "caseId": "research-of-given-plan",
+      "format": "lista-cotejo",
+      "status": 200,
+      "activityType": "RESEARCH",
+      "serviceAndLocalExactlyEqual": true,
+      "ms": 5813
+    },
+    {
+      "caseId": "research-of-given-plan",
+      "format": "escala",
+      "status": 200,
+      "activityType": "RESEARCH",
+      "serviceAndLocalExactlyEqual": true,
+      "ms": 5508
+    },
+    {
+      "caseId": "research-of-given-plan",
+      "format": "lista-ponderada",
+      "status": 200,
+      "activityType": "RESEARCH",
+      "serviceAndLocalExactlyEqual": true,
+      "ms": 5281
+    }
+  ],
+  "activityWrites": 0
+}
