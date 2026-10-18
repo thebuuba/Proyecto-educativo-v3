@@ -4,6 +4,8 @@ import { detectTeachingStrategy, teachingStrategies, resolveTeachingStrategy, te
 describe('estrategia pedagógica independiente', () => {
   const cases = [
     ['Analizan un caso real con datos concretos y justifican una decisión.', 'CASE_STUDY'],
+    ['Analizan el caso concreto con los datos proporcionados y justifican la alternativa de conservación elegida.', 'CASE_STUDY'],
+    ['Justifican una alternativa de conservación con razones.', null],
     ['Plantean preguntas, buscan información y contrastan explicaciones.', 'INQUIRY'],
     ['Dialogan mediante preguntas abiertas guiadas por el docente.', 'DIALOGIC_INQUIRY'],
     ['Identifican una necesidad de la comunidad, planifican, investigan y elaboran un producto para atenderla.', 'PROJECT_BASED'],

@@ -49,6 +49,9 @@ export function deliveryConditions(description:string):Condition[]{
  if(sections){const content=sections[1].trim();if(content)add('sections',`apartados solicitados: ${content}`)}
  const quantities=new Map<string,{unit:string;min:number[];max:number[];exact:number[]}>()
  for(const m of text.matchAll(new RegExp(`\\b(${number})\\s+(ejemplos?|parrafos?|oraciones?|fuentes?|citas?|imagenes?|apartados?)\\b`,'g'))){
+  const clauseBefore=text.slice(0,m.index).split(/[.;]/).at(-1)??'',after=text.slice(m.index!+m[0].length)
+  // Analizar insumos numerados ya dados no exige producir otra entrega con esa cantidad.
+  if(/^\s+(?:proporcionad[oa]s?|dad[oa]s?)\b/.test(after)&&/\b(?:analiz|analic|compar|contrast|explic|expliqu|identific|identifiqu|le)[a-z]*\b/.test(clauseBefore)&&!/\b(?:inclu|entreg|anad|incorpor)[a-z]*\b/.test(clauseBefore))continue
   const prefix=text.slice(Math.max(0,m.index!-12),m.index)
   const qualifier=prefix.match(/\b(minimo|maximo)\s*$/)?.[1]
   const key=m[2].replace(/s$/,''),group=quantities.get(key)??{unit:m[2],min:[],max:[],exact:[]}

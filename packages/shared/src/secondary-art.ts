@@ -3,6 +3,7 @@ import type { InstrumentRecommendation, InstrumentType } from './instrument-reco
 import type { ContextualTopicCriterion } from './secondary-topic-criteria'
 import { withoutResources } from './evaluation-task-text'
 import { artGradeOneTopics } from './secondary-art-grade-1'
+import { artGradeTwoTopics } from './secondary-art-grade-2'
 
 type ArtEvidenceText = {
   title: string
@@ -55,10 +56,16 @@ export const commonArtModules = [
     topics: artGradeOneTopics,
     policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1',
   },
+  {
+    id: 'educacion-artistica-comun-2',
+    grade: 2,
+    topics: artGradeTwoTopics,
+    policy: 'REQUESTED_ARTISTIC_EVIDENCE_V1',
+  },
 ]
 const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
 const endings = '(?:a|an|ar|ara|aran|ando|e|en)'
-const actionVerbs = `(?:analiz|analic|explic|expliqu|identific|identifiqu|diferenci|compar|contrast|cre|realiz|construy|estiliz|disen|adapt|organiz|elabor|utiliz|interpret|represent|argument|valor|explor|registr|verific|comprueb|marc)${endings}|constru(?:ye|yen|ir|ira|iran|yendo)|comp(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)|prop(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)`
+const actionVerbs = `(?:analiz|analic|explic|expliqu|identific|identifiqu|diferenci|compar|contrast|cre|realiz|construy|estiliz|disen|adapt|organiz|elabor|utiliz|interpret|represent|argument|valor|explor|registr|verific|comprueb|marc|investig|improvis|present)${endings}|constru(?:ye|yen|ir|ira|iran|yendo)|comp(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)|prop(?:on|one|onen|oner|ondra|ondran|onga|ongan|oniendo)`
 function requestedArtText(value: string) {
   return normalize(
     withoutResources(
@@ -85,6 +92,10 @@ function selectedTopics(text: string, available: ArtTopic[]) {
   )
   const contains = (id: string) => topics.some((topic) => topic.id === id)
   if (contains('recorder')) topics = topics.filter((topic) => topic.id !== 'vocal-technique')
+  if (contains('character-motifs')) topics = topics.filter(topic => topic.id !== 'musical-story')
+  if (contains('musical-research') || contains('musical-fragment') || contains('scenic-model')) topics = topics.filter(topic => topic.id !== 'musical-theatre')
+  if (contains('artistic-argument')) topics = topics.filter(topic => topic.id !== 'painting')
+  if (contains('music-function')) topics = topics.filter(topic => topic.id !== 'operatic-genres')
   if (contains('diary-binding')) topics = topics.filter((topic) => topic.id !== 'diary')
   if (contains('drawing') && !/compar|diferenci/.test(text))
     topics = topics.filter((topic) => topic.id !== 'dimensions')
@@ -101,12 +112,14 @@ function modeFor(text: string, topics: ArtTopic[]): ArtMode {
   if (/^(?:verific|comprueb|marc)/.test(firstAction) && /requisitos|cumpl/.test(text))
     return 'VERIFICATION'
   if (/^(?:compar|contrast|diferenci)/.test(firstAction)) return 'COMPARISON'
+  if (/^investig/.test(firstAction)) return 'REPORT'
+  if (/^explor/.test(firstAction) && topics.some(topic => topic.id === 'expression-exploration')) return 'PERFORMANCE'
   if (/^(?:analiz|analic|explic|expliqu|identifi|argument|valor)/.test(firstAction))
     return 'ANALYSIS'
   if (/^construye e interpreta\b/.test(text) && topics.some((topic) => topic.id === 'character'))
     return 'PERFORMANCE'
   if (
-    topics.some((topic) => topic.id === 'group-agreements') &&
+    topics.some((topic) => ['group-agreements', 'art-safety'].includes(topic.id)) &&
     /regularidad|frecuencia/.test(text)
   )
     return 'OBSERVATION'
@@ -114,9 +127,10 @@ function modeFor(text: string, topics: ArtTopic[]): ArtMode {
     return 'PLAN'
   if (topics.some((topic) => topic.id === 'portfolio')) return 'REPORT'
   if (topics.some((topic) => topic.id === 'diary')) return 'REFLECTION'
+  if (/^(?:improvis|present)/.test(firstAction)) return 'PERFORMANCE'
   if (
     /^(?:interpret|represent)/.test(firstAction) &&
-    /voz|himno|flauta|instrumental|danza|personaje|situacion ficticia/.test(text)
+    /voz|himno|flauta|instrumental|danza|personaje|situacion ficticia|vocalmente|pieza musical/.test(text)
   )
     return 'PERFORMANCE'
   return 'PRODUCTION'
@@ -174,7 +188,8 @@ export function resolveCommonArtTask(
     ).values(),
   ]
   const mode = actions[0].mode
-  const activityType = (
+  const researching = mode === 'REPORT' && topics.some(topic => topic.id === 'musical-research')
+  const activityType = researching ? 'RESEARCH' : (
     {
       ANALYSIS: 'ANALYSIS',
       COMPARISON: 'COMPARISON',
@@ -190,7 +205,7 @@ export function resolveCommonArtTask(
   const technique =
     mode === 'OBSERVATION' || mode === 'PERFORMANCE'
       ? 'observacion-sistematica'
-      : mode === 'REPORT'
+      : mode === 'REPORT' && !researching
         ? 'portafolio'
         : 'analisis-producciones'
   return { grade: context.grade!, text, topics, actions, mode, activityType, technique }
@@ -220,7 +235,47 @@ function criterion(
 
 function contextualArtTopic(topic: ArtTopic, text: string): ArtTopic {
   let result = topic
+  if (topic.grade === 2 && topic.id === 'art-technology' && !/mensaje|para comunicar|idea ficticia/.test(text)) result = {
+    ...result,
+    evidence: result.evidence.map(evidence => ({
+      ...evidence,
+      success: evidence.success.replace('a las decisiones y al mensaje acordados', 'a las decisiones artísticas solicitadas'),
+      sufficient: evidence.sufficient?.replace('al mensaje principal', 'a las decisiones principales').replace('sin impedir su comunicación', 'sin impedir el resultado previsto'),
+      partial: evidence.partial.replace('con el mensaje o con', 'con'),
+    })),
+  }
+  if (topic.grade === 2 && topic.id === 'shared-elements') {
+    const elements = ['armonia','movimiento','matices','intensidad','volumen','contraste','composicion','ritmo'].filter(element => new RegExp(`\\b${element}\\b`).test(text))
+    if (elements.length) {
+      const labels = elements.map(element => element === 'armonia' ? 'armonía' : element === 'composicion' ? 'composición' : element)
+      // Conservar el orden de la consigna permite referir sus elementos sin añadir los vecinos.
+      labels.sort((a,b) => text.indexOf(normalize(a))-text.indexOf(normalize(b)))
+      const selected = labels.length === 1 ? labels[0] : labels.slice(0,-1).join(', ')+' y '+labels.at(-1)
+      result = { ...result, label: `${selected} entre lenguajes artísticos`, relation: `la función de ${selected} en los lenguajes artísticos de los ejemplos dados, relacionando sus recursos sin equiparar literalmente medios visuales y sonoros` }
+    }
+  }
+  if (topic.grade === 2 && topic.id === 'operatic-genres' && /audicion/.test(text) && !/contexto|exponentes|compositor|interpretes/.test(text)) result = {
+    ...result,
+    label: 'rasgos de la audición operística',
+    relation: 'los rasgos vocales y musicales que permiten reconocer el género en la audición proporcionada, vinculando cada identificación con evidencias escuchadas',
+  }
+  if (topic.grade === 2 && topic.id === 'painting' && !/mensaje|para comunicar|idea ficticia/.test(text)) result = {
+    ...result,
+    evidence: result.evidence.map(evidence => ({
+      ...evidence,
+      success: evidence.success.replace('contribuya al mensaje acordado', 'sea reconocible en la obra'),
+      sufficient: evidence.sufficient?.replace('El mensaje y la técnica se reconocen', 'La organización visual y la técnica se reconocen'),
+      partial: evidence.partial.replace('para el mensaje', 'para la organización de la obra'),
+    })),
+  }
   const brief = text.replace(/[.\s]+$/, '') === `explica ${normalize(topic.label)}`
+  if (brief && topic.grade === 2) result = {
+    ...result,
+    relation: result.relation
+      .replace(/\bexpresamente\s+(?=examinad|dad|proporcionad|comparad|elegid|usad|solicitad|trabajad)/g, '')
+      .replace('en el caso examinado', 'con ejemplos de objetos o prácticas')
+      .replace('conservando las adaptaciones dadas', 'reconociendo posibilidades de adaptación del movimiento'),
+  }
   if (brief) {
     result = {
       ...result,
@@ -371,12 +426,14 @@ export function commonArtCriteria(task: CommonArtTask): ContextualTopicCriterion
               ]
                 .filter(([match]) => new RegExp(`\\b(?:${match})\\b`).test(action.text))
                 .map(([, label]) => label)
-            : []
+            : topic.grade === 2 && topic.id === 'painting'
+              ? [['tecnica', 'técnica'], ['soporte', 'soporte']].filter(([match]) => new RegExp(`\\b${match}\\b`).test(action.text)).map(([,label]) => label)
+              : []
         return (terms.length ? terms : ['los requisitos expresamente dados']).map((term, index) =>
           criterion(topic, action.mode, {
             id: `requirement-${index}`,
             title: `Verificación de ${term}`,
-            success: `Identifica correctamente si el dibujo o producto proporcionado cumple el requisito de ${term} expresamente pedido.`,
+            success: `Identifica correctamente si el ${topic.grade === 2 && topic.id === 'painting' ? 'producto' : 'dibujo o producto'} proporcionado cumple el requisito de ${term} expresamente pedido.`,
             sufficient: `La respuesta identifica el cumplimiento de ${term}, aunque una marca secundaria queda poco clara sin cambiar el resultado reconocible.`,
             partial: `La respuesta sobre el requisito de ${term} es ambigua y no permite determinar con claridad el cumplimiento observado.`,
             error: `La respuesta atribuye al producto un cumplimiento de ${term} incompatible con lo que contiene.`,
@@ -384,6 +441,25 @@ export function commonArtCriteria(task: CommonArtTask): ContextualTopicCriterion
         )
       }
       if (action.mode === 'ANALYSIS' || action.mode === 'COMPARISON') {
+        if (topic.grade === 2 && /^argument[a-z]*\b/.test(action.text)) {
+          const decision = /alternativa de conservacion/.test(action.text)
+          const target = topic.id === 'artistic-argument' ? 'la elección de los elementos artísticos de la obra' : `una afirmación sobre ${topic.label}`
+          return [criterion(topic, action.mode, {
+            id: 'argument', title: topic.id === 'artistic-argument' ? 'Razones de la elección artística' : `Argumentación de ${topic.label}`,
+            success: decision
+              ? `Justifica la alternativa de conservación elegida para el patrimonio del caso con razones y evidencias vinculadas con su significado, función y condiciones dadas.`
+              : `Sostiene ${target} con razones vinculadas con los criterios dados y con evidencias reconocibles de la obra o del caso examinado.`,
+            sufficient: decision
+              ? 'La alternativa se sostiene en razones y evidencias del caso patrimonial; una relación secundaria con sus condiciones queda poco precisada sin cambiar la justificación central.'
+              : 'La afirmación se sostiene con razones y evidencias pertinentes; una relación secundaria con los criterios dados queda poco precisada.',
+            partial: decision
+              ? 'Propone una alternativa pertinente, pero una razón no se vincula con las evidencias o las condiciones del caso patrimonial.'
+              : 'Presenta una afirmación y razones, pero una de ellas no se relaciona con los criterios o las evidencias de la obra.',
+            error: decision
+              ? 'La alternativa contradice las evidencias o las condiciones del caso patrimonial, o se presenta sin razones que la sostengan.'
+              : 'Las razones contradicen la obra o el caso, o sustituyen las evidencias por juicios sobre las personas.',
+          })]
+        }
         const comparison = action.mode === 'COMPARISON'
         return [
           criterion(topic, action.mode, {

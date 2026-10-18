@@ -1129,10 +1129,10 @@
         331,
         332
       ],
-      "status": "PENDING",
-      "provider": null,
-      "evidence": null,
-      "currentRunVerification": "NOT_RETESTED",
+      "status": "REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE",
+      "provider": "packages/shared/src/secondary-art.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/artistica-2-matriz.json",
+      "currentRunVerification": "AUTHENTICATED_FOUR_FORMATS_SAVED_REOPENED",
       "nonApplicable": [],
       "notes": null
     },

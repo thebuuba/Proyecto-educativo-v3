@@ -84,7 +84,7 @@ export function detectTeachingStrategy(input: TeachingStrategyContext & {title?:
   // Describing a strategy as a text's subject is not evidence of applying it.
   if(!text || /\b(?:leen|leer|resumen|resumir|definicion)\b.*\b(?:sobre|definicion de)\b.*(?:aprendizaje basado|estrategia|debate|sociodrama)/.test(text))
     return {id:null,confidence:'NONE' as const,reasons:[] as string[],catalogVersion:teachingStrategyCatalogVersion}
-  add('CASE_STUDY',has(/\bcaso\b/)&&has(/\b(?:real|concreto|datos|hechos)\b/)&&has(/decisi\w*|recomenda\w*|alternativas/)&&has(/justific\w*|razon\w*|fundament\w*/),'Caso con evidencia y decisión fundamentada.',3)
+  add('CASE_STUDY',has(/\bcaso\b/)&&has(/\b(?:real|concreto|datos|hechos)\b/)&&has(/decisi\w*|recomenda\w*|alternativas?/)&&has(/justific\w*|razon\w*|fundament\w*/),'Caso con evidencia y decisión fundamentada.',3)
   add('PROJECT_BASED',has(/necesidad|problema.*(?:comunidad|entorno|real)/)&&has(/planific\w*|plane\w*/)&&has(/investig\w*/)&&has(/producto|elabor\w*|implement\w*|intervencion/),'Necesidad, planificación, investigación y resultado.',3)
   add('PROBLEM_BASED',has(/problema.*(?:vida|cotidian\w*|real|comunidad)/)&&has(/hipotesis|preguntas/)&&has(/investig\w*|recopil\w*/)&&has(/soluci\w*|alternativas/),'Problema como punto de partida con investigación de soluciones.',2)
   add('DIALOGIC_INQUIRY',has(/dialog\w*/)&&has(/preguntas.*(?:abiertas|guiadas)|socratic\w*/),'Diálogo reflexivo guiado por preguntas.',2)

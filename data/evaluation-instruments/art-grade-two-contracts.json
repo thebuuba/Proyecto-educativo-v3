@@ -1,0 +1,582 @@
+{
+  "grade": 2,
+  "scopeId": "1622c505-b860-50d1-9551-996b04e5c7ae",
+  "sourcePdfPages": [
+    332,
+    333
+  ],
+  "policy": "REPRESENTATIVE_TASKS_NOT_FULL_COMPOUND_ROW_COVERAGE",
+  "cases": [
+    {
+      "id": "painting-material-technique",
+      "description": "Crea una pintura con la técnica y los materiales disponibles que elijas, para comunicar una idea ficticia acordada. No se pide realismo ni compra de materiales.",
+      "topicIds": [
+        "painting"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "6e84e604",
+        "65d4fdeb"
+      ],
+      "forbidden": "realismo fotográfico|compra de materiales"
+    },
+    {
+      "id": "painting-explanation",
+      "description": "Explica cómo se relacionan los materiales y la técnica de pintura en los dos ejemplos proporcionados. No realices una pintura.",
+      "topicIds": [
+        "painting"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "6e84e604"
+      ]
+    },
+    {
+      "id": "mobile-sculpture",
+      "description": "Elabora una escultura móvil con materiales reutilizados disponibles, relacionando forma, equilibrio y movimiento con una temática popular inspirada en el patrimonio tangible proporcionado. No debes investigar nuevas fuentes.",
+      "topicIds": [
+        "sculpture",
+        "heritage"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "995ebc75",
+        "ec60b93a"
+      ]
+    },
+    {
+      "id": "sculpture-modeling",
+      "description": "Construye una escultura mediante modelado con el material disponible elegido. Sin mecanismos móviles ni alambre.",
+      "topicIds": [
+        "sculpture"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "ec60b93a",
+        "c2f972f5"
+      ],
+      "forbidden": "alambre|equilibrio móvil|mecanismos móviles"
+    },
+    {
+      "id": "engraving-monotype",
+      "description": "Realiza una monotipia con una matriz y materiales seguros proporcionados, relacionando la huella impresa con la organización visual elegida. No se pide xilografía ni usar herramientas cortantes.",
+      "topicIds": [
+        "engraving"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "28a7dfa3"
+      ],
+      "forbidden": "herramientas cortantes|talla en madera"
+    },
+    {
+      "id": "engraving-comparison",
+      "description": "Compara las huellas de xilografía y monotipia de las imágenes proporcionadas, explicando la relación entre matriz, procedimiento y resultado. No elabores un grabado.",
+      "topicIds": [
+        "engraving"
+      ],
+      "purpose": "COMPARISON",
+      "sourceRecordIds": [
+        "28a7dfa3"
+      ]
+    },
+    {
+      "id": "heritage-argument",
+      "description": "Argumenta sobre el significado y la función del patrimonio artístico material e inmaterial en el caso concreto proporcionado. Usa evidencias del caso para justificar una alternativa de conservación. No reveles identidad ni creencias privadas.",
+      "topicIds": [
+        "heritage"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "9ea7e6e7",
+        "78096436"
+      ]
+    },
+    {
+      "id": "interpretive-style",
+      "description": "Compara los estilos interpretativos de teatro y danza en los fragmentos proporcionados, relacionando recursos expresivos con las convenciones de cada propuesta.",
+      "topicIds": [
+        "interpretive-styles"
+      ],
+      "purpose": "COMPARISON",
+      "sourceRecordIds": [
+        "1e9a444e"
+      ]
+    },
+    {
+      "id": "dance-context",
+      "description": "Explica las diferencias contextuales y estéticas entre ballet, danza moderna, posmoderna, contemporánea y folklórica de los ejemplos proporcionados. No ejecutes una danza.",
+      "topicIds": [
+        "dance-styles"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "262c8de6",
+        "215072b8"
+      ]
+    },
+    {
+      "id": "urban-dance-performance",
+      "description": "Interpreta una pequeña rutina de danza urbana con los patrones y el espacio acordados. Adapta los movimientos a una ejecución sentada; no se evalúan flexibilidad avanzada ni apariencia corporal.",
+      "topicIds": [
+        "urban-dance"
+      ],
+      "purpose": "PERFORMANCE",
+      "sourceRecordIds": [
+        "1bdf796c",
+        "b34ecce2"
+      ],
+      "forbidden": "apariencia corporal|flexibilidad avanzada|salto obligatorio"
+    },
+    {
+      "id": "urban-dance-plan",
+      "description": "Diseña un plan de rutina de danza urbana, relacionando secuencia, ritmo y recorridos en el espacio acordado. No ejecutes la rutina.",
+      "topicIds": [
+        "urban-dance"
+      ],
+      "purpose": "PLAN",
+      "sourceRecordIds": [
+        "1bdf796c"
+      ]
+    },
+    {
+      "id": "theatrical-production",
+      "description": "Representa una pieza teatral breve con personajes, conflicto, tiempo, espacio y recursos técnicos acordados, manteniendo la relación de las acciones con la dramaturgia dada. No se pide vestuario nuevo.",
+      "topicIds": [
+        "stage-direction"
+      ],
+      "purpose": "PERFORMANCE",
+      "sourceRecordIds": [
+        "bf5b7374",
+        "a5d537d2"
+      ]
+    },
+    {
+      "id": "theatrical-plan",
+      "description": "Elabora un plan de montaje teatral breve, relacionando dramaturgia, personajes, conflicto, tiempo, espacio y recursos disponibles. No representes la obra todavía.",
+      "topicIds": [
+        "stage-direction"
+      ],
+      "purpose": "PLAN",
+      "sourceRecordIds": [
+        "bf5b7374"
+      ]
+    },
+    {
+      "id": "theatre-traditions",
+      "description": "Compara realismo teatral, teatro épico y antropología teatral usando los fragmentos y notas proporcionados. Relaciona las convenciones con sus contextos; no elijas una tradición como superior.",
+      "topicIds": [
+        "theatre-traditions"
+      ],
+      "purpose": "COMPARISON",
+      "sourceRecordIds": [
+        "02059180"
+      ]
+    },
+    {
+      "id": "expression-exploration",
+      "description": "Explora diversas formas de expresión en teatro y danza mediante dos propuestas corporales breves con los recursos disponibles. Registra sus diferencias expresivas sin revelar vivencias íntimas.",
+      "topicIds": [
+        "expression-exploration"
+      ],
+      "purpose": "PERFORMANCE",
+      "sourceRecordIds": [
+        "e9b0dc00"
+      ],
+      "forbidden": "situación ficticia|escena dada"
+    },
+    {
+      "id": "musical-theatre-history",
+      "description": "Explica la historia y los principales exponentes del teatro musical según las fuentes proporcionadas. No investigues fuentes nuevas ni representes una obra.",
+      "topicIds": [
+        "musical-theatre"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "5a8fcc34"
+      ]
+    },
+    {
+      "id": "broadway-research",
+      "description": "Investiga montajes de Broadway en la República Dominicana: formula una pregunta, consulta fuentes accesibles e identifica sus datos, contrasta la información pertinente y comunica los resultados documentados. No inventes testimonios.",
+      "topicIds": [
+        "musical-research"
+      ],
+      "purpose": "REPORT",
+      "sourceRecordIds": [
+        "c42387fe"
+      ]
+    },
+    {
+      "id": "scenic-model",
+      "description": "Construye una maqueta o un prototipo del espacio para el fragmento de teatro musical proporcionado, mostrando las relaciones de ubicación y función de sus elementos. No representes el fragmento ni hagas ambos productos.",
+      "topicIds": [
+        "scenic-model"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "2172242a"
+      ]
+    },
+    {
+      "id": "musical-fragment-performance",
+      "description": "Representa un fragmento de teatro musical con los personajes, acciones y música acordados. No construyas una maqueta ni un prototipo.",
+      "topicIds": [
+        "musical-fragment"
+      ],
+      "purpose": "PERFORMANCE",
+      "sourceRecordIds": [
+        "2172242a"
+      ]
+    },
+    {
+      "id": "urban-music-performance",
+      "description": "Interpreta vocalmente una melodía y un ritmo urbanos del fragmento dado, conservando la relación rítmica y expresiva. No se pide ejecución instrumental.",
+      "topicIds": [
+        "urban-music"
+      ],
+      "purpose": "PERFORMANCE",
+      "sourceRecordIds": [
+        "c0861860",
+        "18d70cb3"
+      ],
+      "forbidden": "ejecución instrumental obligatoria"
+    },
+    {
+      "id": "social-song-listening",
+      "description": "Analiza las audiciones proporcionadas de canto lírico y popular nacional de distintas épocas. Relaciona los recursos vocales con las temáticas sociales y las evidencias escuchadas, sin exigir adhesión a sus mensajes.",
+      "topicIds": [
+        "social-singing"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "854b8aa3",
+        "9ab8f289"
+      ]
+    },
+    {
+      "id": "opera-listening",
+      "description": "Identifica en la audición operística proporcionada las características del género y sus recursos vocales y musicales. No se exige asistir a un espectáculo ni cantar.",
+      "topicIds": [
+        "operatic-genres"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "b53967ef",
+        "dd15a9c8"
+      ],
+      "forbidden": "contexto|exponentes|compositor|escénic"
+    },
+    {
+      "id": "operatic-comparison",
+      "description": "Compara ópera, opereta, zarzuela y revista musical con las fuentes dadas, relacionando características, contexto y exponentes sin confundir compositor e intérprete.",
+      "topicIds": [
+        "operatic-genres"
+      ],
+      "purpose": "COMPARISON",
+      "sourceRecordIds": [
+        "dd15a9c8"
+      ]
+    },
+    {
+      "id": "musical-story",
+      "description": "Elabora un cuento musical ficticio, incorporando sonidos instrumentales o del ambiente disponibles que se relacionen con los sucesos narrados. No se exige usar ambos medios.",
+      "topicIds": [
+        "musical-story"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "d6b582ba",
+        "26120ba2"
+      ]
+    },
+    {
+      "id": "character-motifs",
+      "description": "Crea motivos musicales para representar los personajes y elementos del cuento musical dado. Relaciona cada motivo con su función en el relato. No redactes otro cuento.",
+      "topicIds": [
+        "character-motifs"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "4e47da3f"
+      ]
+    },
+    {
+      "id": "dominican-musical-works",
+      "description": "Identifica obras musicales dominicanas de los géneros proporcionados y distingue sus compositores e intérpretes usando los datos y audiciones dados. No se evalúa fe ni preferencia musical.",
+      "topicIds": [
+        "dominican-musical-works"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "2764027b"
+      ]
+    },
+    {
+      "id": "musical-improvisation",
+      "description": "Improvisa una respuesta musical breve a partir de la pauta rítmica dada y los medios sonoros disponibles. Conserva su relación con la pauta; no se pide composición escrita ni virtuosismo.",
+      "topicIds": [
+        "music-making"
+      ],
+      "purpose": "PERFORMANCE",
+      "sourceRecordIds": [
+        "fa72e000",
+        "168a0010"
+      ],
+      "forbidden": "virtuosismo|partitura obligatoria"
+    },
+    {
+      "id": "musical-creation",
+      "description": "Crea una propuesta musical breve con los recursos disponibles y la pauta dada. No la interpretes ni improvises ante público.",
+      "topicIds": [
+        "music-making"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "fa72e000"
+      ]
+    },
+    {
+      "id": "music-screen-function",
+      "description": "Explica la función de la música en el teatro, la revista musical y el cine a partir de los fragmentos proporcionados, relacionándola con acciones y sentido de las escenas.",
+      "topicIds": [
+        "music-function"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "b82c19bc"
+      ]
+    },
+    {
+      "id": "shared-art-elements",
+      "description": "Compara el ritmo y el contraste entre las imágenes y audiciones proporcionadas. No se pide analizar armonía, matices ni volumen.",
+      "topicIds": [
+        "shared-elements"
+      ],
+      "purpose": "COMPARISON",
+      "sourceRecordIds": [
+        "9d1d7901"
+      ],
+      "forbidden": "armonía|matices|volumen"
+    },
+    {
+      "id": "textile-organic-print",
+      "description": "Elabora un estampado textil con uno de los tintes orgánicos seguros proporcionados, relacionando la huella y el soporte sin dañar la naturaleza. No recolectes especies ni uses todos los tintes.",
+      "topicIds": [
+        "textile-print"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "6e5deec5",
+        "0f8663e5"
+      ]
+    },
+    {
+      "id": "textile-texture",
+      "description": "Crea una textura textil con bordado o materiales disponibles, relacionando el procedimiento con el efecto táctil y visual previsto. No se exige realizar las dos técnicas.",
+      "topicIds": [
+        "textile-textures"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "92516ddd",
+        "6e5deec5"
+      ]
+    },
+    {
+      "id": "fashion-function",
+      "description": "Analiza el valor artístico y funcional del diseño textil y de moda en el ejemplo proporcionado. Explica las decisiones de forma y uso; no evalúes cuerpos ni marcas.",
+      "topicIds": [
+        "fashion-function"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "07064e41"
+      ]
+    },
+    {
+      "id": "costume-adaptation",
+      "description": "Adapta un vestuario existente para el personaje del proyecto teatral dado, relacionando sus modificaciones con el rol y el movimiento requerido. No compres una prenda nueva ni uses maquillaje.",
+      "topicIds": [
+        "costume"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "8fd1a3a9"
+      ]
+    },
+    {
+      "id": "decorative-arts",
+      "description": "Elabora una propuesta de artes decorativas para el objeto proporcionado, relacionando el recurso visual elegido con su uso. No debe perder su función.",
+      "topicIds": [
+        "decorative-arts"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "13571b18"
+      ]
+    },
+    {
+      "id": "interior-proposal",
+      "description": "Diseña un plan de interiores para el espacio ficticio dado, relacionando distribución, uso y recursos visuales según las condiciones de accesibilidad indicadas. No se pide ejecutar obras de construcción.",
+      "topicIds": [
+        "interior-design"
+      ],
+      "purpose": "PLAN",
+      "sourceRecordIds": [
+        "9d4f95cf",
+        "dcce5856"
+      ]
+    },
+    {
+      "id": "built-environment",
+      "description": "Compara las funciones de arquitectura, jardinería y urbanismo en las propuestas del entorno proporcionadas. No diseñes ni construyas otro espacio.",
+      "topicIds": [
+        "built-environment"
+      ],
+      "purpose": "COMPARISON",
+      "sourceRecordIds": [
+        "5a773ec4"
+      ]
+    },
+    {
+      "id": "artistic-presentation",
+      "description": "Presenta la obra artística dada en la actividad escolar acordada, relacionando la organización del espacio y los recursos con su comunicación al público. No se exige trasladarse fuera de la escuela.",
+      "topicIds": [
+        "artistic-presentation"
+      ],
+      "purpose": "PERFORMANCE",
+      "sourceRecordIds": [
+        "a3a185ec"
+      ]
+    },
+    {
+      "id": "popular-dominican-art",
+      "description": "Identifica características del arte popular dominicano de distintas épocas en las imágenes proporcionadas, relacionando recursos y contexto sin calificar adhesión cultural.",
+      "topicIds": [
+        "popular-dominican-art"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "60988312",
+        "7540a09e"
+      ]
+    },
+    {
+      "id": "recycled-art",
+      "description": "Crea una pieza artesanal con recursos naturales desechados disponibles, relacionando las transformaciones con una función artística acordada. No recolectes materiales vivos ni compres insumos.",
+      "topicIds": [
+        "recycled-art"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "e8de677d",
+        "477594c5"
+      ]
+    },
+    {
+      "id": "art-safety-observation",
+      "description": "Registra la frecuencia con que se cumplen las acciones de seguridad acordadas al usar los materiales de la creación artística: proteger el espacio y manejar el recurso según las instrucciones dadas. No infieras personalidad ni estado de salud.",
+      "topicIds": [
+        "art-safety"
+      ],
+      "purpose": "OBSERVATION",
+      "sourceRecordIds": [
+        "82a71ba8"
+      ]
+    },
+    {
+      "id": "technology-art",
+      "description": "Crea una obra artística con el recurso tecnológico disponible elegido, relacionando su función con el mensaje acordado. No se exige equipo de pago ni usar todas las herramientas.",
+      "topicIds": [
+        "art-technology"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "3bf7dd9a"
+      ]
+    },
+    {
+      "id": "artistic-argument",
+      "description": "Argumenta la elección de los elementos artísticos de la obra proporcionada con criterios técnicos dados y evidencias de la obra. No califiques gustos ni personalidad.",
+      "topicIds": [
+        "artistic-argument"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "a60008f8",
+        "a1de755d"
+      ]
+    },
+    {
+      "id": "context-inspired-creation",
+      "description": "Crea una obra inspirada en imágenes, sonoridades, costumbres o relatos del contexto proporcionado, vinculando el referente elegido con las decisiones expresivas. No debes emplear todos los referentes.",
+      "topicIds": [
+        "context-creation"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "19512bcf"
+      ]
+    },
+    {
+      "id": "art-requirements-check",
+      "description": "Verifica si la pintura proporcionada cumple los requisitos explícitos de técnica y soporte que aparecen en la ficha. No evalúes belleza ni talento.",
+      "topicIds": [
+        "painting"
+      ],
+      "purpose": "VERIFICATION",
+      "sourceRecordIds": [
+        "320778b0",
+        "6e84e604"
+      ]
+    },
+    {
+      "id": "weighted-musical-story",
+      "description": "Elabora un cuento musical con componentes narrativos y sonoros relacionados. Usa una lista ponderada con crédito parcial por los componentes solicitados.",
+      "topicIds": [
+        "musical-story"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "d6b582ba"
+      ]
+    },
+    {
+      "id": "painting-no-message",
+      "description": "Crea una pintura con la técnica y los materiales disponibles que elijas. No se solicita un mensaje ni una idea comunicativa.",
+      "topicIds": [
+        "painting"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "6e84e604"
+      ],
+      "forbidden": "mensaje|comunicativ"
+    },
+    {
+      "id": "musical-interpretation",
+      "description": "Interpreta una pieza musical dada con los medios sonoros disponibles, manteniendo sus relaciones rítmicas y expresivas. No improvises ni crees otra pieza.",
+      "topicIds": [
+        "music-making"
+      ],
+      "purpose": "PERFORMANCE",
+      "sourceRecordIds": [
+        "fa72e000"
+      ],
+      "forbidden": "improvisa|crea otra"
+    },
+    {
+      "id": "technology-no-message",
+      "description": "Crea una obra artística con el recurso tecnológico disponible elegido, relacionando su función con las decisiones artísticas solicitadas. No se pide un mensaje.",
+      "topicIds": [
+        "art-technology"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "3bf7dd9a"
+      ],
+      "forbidden": "mensaje|comunicaci"
+    }
+  ]
+}

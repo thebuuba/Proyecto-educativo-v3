@@ -1,0 +1,51 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.107",
+  "grade": 2,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 2,
+    "subjectCode": "ART",
+    "optativeExitName": null
+  },
+  "format": "lista-cotejo",
+  "inspectedFormats": [
+    "rubrica",
+    "lista-cotejo"
+  ],
+  "savedAndReopenedFormats": [
+    "lista-cotejo"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "PROJECT_BASED",
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "draftRecoveryFromSubjectVerified": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "95725066d6bdec48f7dd85114d26b142",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "95725066d6bdec48f7dd85114d26b142",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "0c7c9b41-fec1-4174-b6bd-138d51579ace",
+      "format": "lista-cotejo",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-CyOkNw5H.js",
+  "servedAssetSha256": "6404c33a3ac917100861570d316c4ea55da56486b59baa566c8c225c42aae31d",
+  "limits": [
+    "Una muestra QA identificable en2.ºA/Artística de la cuenta personal, sin calificar estudiantes. No acredita todos los temas ni actividad de aula ejecutada.",
+    "El detector omitía Estudio de caso cuando la alternativa aparecía en singular. Reproducción visual y test rojo; corrección acotada alternativas?, manteniendo caso/datos/justificación y prueba negativa de palabra aislada. El mismo borrador y la misma consigna seleccionaron CASE_STUDY automáticamente tras recompilar.",
+    "El borrador se recuperó desde el panel de la asignatura tras la recarga. No se borraron otros borradores, almacenamiento, caché o service worker. Los internals del service worker no se inspeccionaron; DOM/HTTP confirmaron el asset final y sw.js igual a dist.",
+    "Se inspeccionaron rúbrica y cotejo; solo cotejo se guardó/reabrió visualmente. Los cuatro formatos20/17.35 se verificaron por HTTP/DB antes del ajuste puntual del detector; los instrumentos y el payload107 no cambiaron por ese ajuste y no se duplicaron las muestras.",
+    "La selección manual PROJECT_BASED solo comprueba persistencia; no se presenta como sugerencia pedagógica para el caso. La huella READ ONLY incluye instrumento completo, snapshot, técnica, puntuación e identificadores."
+  ]
+}

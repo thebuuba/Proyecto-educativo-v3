@@ -1,0 +1,2074 @@
+{
+  "grade": 2,
+  "method": "FULL_ROWS_LEVELS_AND_FORMATS_READ_WITH_EXACT_TEXT_REFERENCES",
+  "sourcePdfPages": [
+    332,
+    333
+  ],
+  "items": [
+    {
+      "caseId": "painting",
+      "instrumentType": "rubrica",
+      "sha256": "dcfef1cd363cd32b954fd4680e2cfad61a0c853e7b8e19acdc24af39c74a17ce",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "painting",
+      "instrumentType": "lista-cotejo",
+      "sha256": "54a53ac932a46d126677bc17b8c10d5fc222cc3b0740b57207a6ebb2729b2d9e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "painting",
+      "instrumentType": "escala",
+      "sha256": "26708b0c83dfbcd26376b32c18616e5cad393d1135429ca4bb9e2cb785023188",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "painting",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5876a3f5e64aabc1d4d5500fb57b846e55ec074dce0a09fb24fc37ec7d048c3e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "sculpture",
+      "instrumentType": "rubrica",
+      "sha256": "f9b516287284664501e172c207527e0090efeb87818c2cc7ddfe7ede86e8acf6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "sculpture",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4c9964a5f71732891564e3710ec607db539cb0a3d8be08b3446d6517ca7f02b5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "sculpture",
+      "instrumentType": "escala",
+      "sha256": "05bd2a7f496881289debdbf4c9d1c014f5490509d3f9b4613b743d5b36eed733",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "sculpture",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d6dab6462f5300ba5603fc18fa3e9540167adfcd7654e6fa4ce1c7e93d71a870",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "engraving",
+      "instrumentType": "rubrica",
+      "sha256": "42c0c3d516e0514e79ae98f1a1373e39ad01569c3ee50b246af03e23db502c09",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "engraving",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f745ee6fe4098884222e79a05ddfeb919b2d627aa8b16b8c676e26825065c17d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "engraving",
+      "instrumentType": "escala",
+      "sha256": "cde50ccbbd36c58f4789b2cd644fd2395d1f4d2477f6996dbba842659be3dab3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "engraving",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d06ef93b50e3d2a3edad064426d957f9f7dc4f48056dc81dba94d88a3ba018f9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "heritage",
+      "instrumentType": "rubrica",
+      "sha256": "026010ee8fedb74f16eee7672a36325c3d9963afe0d2ee518bf4784457f91951",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "heritage",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fca53b9aa5073f0c1f50fc57d71db51baea69bbf0c40f236eaf0ecbea59b7576",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "heritage",
+      "instrumentType": "escala",
+      "sha256": "d7b0fb361eea14207332d2185764dc6fd76e1aec3d7e787ff5b97aa4c268c8f7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "heritage",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b2f259b47794504813363db02a4bcdece4d76251a877ac677b91cf4d6031aa51",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "interpretive-styles",
+      "instrumentType": "rubrica",
+      "sha256": "17ee0cd14b58515a541e87f830f3acc3de8c2ff76bb9e25e7c361b274871d945",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "interpretive-styles",
+      "instrumentType": "lista-cotejo",
+      "sha256": "18dcd17386f8ad9681adee34966398be278327ea6bc9ba0e4a2e8acd11833533",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "interpretive-styles",
+      "instrumentType": "escala",
+      "sha256": "1092c8f77020b8a9d2e98e3873dc19dae8b82a55791259c1cda1a518bcd8cc33",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "interpretive-styles",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e847927694d5a26d2887bc422f3efed19b74669040c84433732db4a0fd173849",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "dance-styles",
+      "instrumentType": "rubrica",
+      "sha256": "1cd195b342edfb26c2047e302ffe542791e5912bdc7ff921c4be2e9c4ef42793",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "dance-styles",
+      "instrumentType": "lista-cotejo",
+      "sha256": "12e9a38c0ca3e654828dc24b2d2eac6adfe207b86d834904958b8b09b7f8f3d8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "dance-styles",
+      "instrumentType": "escala",
+      "sha256": "f9e12da5c2541768a3dd346504f1bffdfdce731cc10b39aa0130ded066ac1ac3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "dance-styles",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d31b8bcdb7c66779d18eb37e7e6352fc106e8430ca665df21c56c54cafc3171b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "urban-dance",
+      "instrumentType": "rubrica",
+      "sha256": "d819fe317c00adf4f14abeddb64c5ca2e632fa3cba898462ad8005b54d413caf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "urban-dance",
+      "instrumentType": "lista-cotejo",
+      "sha256": "41e88e086e80416dd8bed4c4ea3f21431d5ea40f9aa1dae3ae653d8711b893c1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "urban-dance",
+      "instrumentType": "escala",
+      "sha256": "f29a43fe708f221ea6ab9db24a4bc5fd08f2d399769346eec0b65a584324c4ea",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "urban-dance",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a727b2e061e3a306832ba86668b9db3d75c277a3f5c46103b8374126f6637f7b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "stage-direction",
+      "instrumentType": "rubrica",
+      "sha256": "27e5dab795eae0057e6c8297b82c7fd7d77bb0feb43e6392c3f8af1398800a55",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "stage-direction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5065bfa953de8a7d18361aca1dbb4b372c15ae62588e0443469c80aacd5f40d5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "stage-direction",
+      "instrumentType": "escala",
+      "sha256": "b2d1caee27f14d87d6a048e1dba62780f403fefdae2e814cb7ed6e87a3d430bc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "stage-direction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "35cc485008d07202c905fe79000222140e1707bee3616e19517643c188a05e2b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "theatre-traditions",
+      "instrumentType": "rubrica",
+      "sha256": "aaa6615a699d0cc8896f8e1662b69fb5d9857701e556e93f46967f8f51702414",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "theatre-traditions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ee9b328cb408f229993e459235a0197a1c44aba0ff292e59cff4bd21198b5aa0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "theatre-traditions",
+      "instrumentType": "escala",
+      "sha256": "49791bc3a638ca1122cf786b6d9068723358cd07cdcb5bb00a88ac16e0a2d4ab",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "theatre-traditions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f16b64a74a3016162bcbe7b75df93376c4941a8bb47489d239e0724410d4cf16",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "expression-exploration",
+      "instrumentType": "rubrica",
+      "sha256": "7be74cbebe7d8a90a308cbb8ac8d0fa3754eb365dc968c102affe10a9d86d434",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "expression-exploration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3d13a82a278924e8f26f0f49709cd629f8a5be520cb7a9b33fefc79f03d2158b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "expression-exploration",
+      "instrumentType": "escala",
+      "sha256": "2718d89a4b44067c3c05bb6fb4f6698f2c16f3ce5990f2b53bbdd3cd2a1b5a0d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "expression-exploration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7fd10c58f6c16e03d72f72b57519e0fd9411c3904506c4726efcb3e572a644f7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-theatre",
+      "instrumentType": "rubrica",
+      "sha256": "f0cb8641c73d55db21699c7ee2771d97fb4334aeb71bb3e670d0ea4c69d7b6e7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-theatre",
+      "instrumentType": "lista-cotejo",
+      "sha256": "55bc07146f7049d50b08991b5dd12e2bafdd5ea8fabc60b7ed3648873498a930",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-theatre",
+      "instrumentType": "escala",
+      "sha256": "c6d7657624081061e719a51881db205b61cb3589d692197b49fafcf70394c43a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-theatre",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2c01a65a10b8287d6d6d4af1727fb074987ad6298e6cbb094b43742b6c9f0d45",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-research",
+      "instrumentType": "rubrica",
+      "sha256": "7c9b8a2fbc4548ed76983161e096013350b3f37e700e90db9849b7bef6ea9f38",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-research",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e44d505380bbfc3f12e4a8f43d78f56974e3b0b4d0385d70dae67572f97d1949",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-research",
+      "instrumentType": "escala",
+      "sha256": "bc507c9dcd17593a818e94b56e4531e04c7c4d8868c76e187f60974075b611f3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-research",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8153b9644328d7bb293daf92d17a826ddebcb243f449d5719f3745c60562014c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "scenic-model",
+      "instrumentType": "rubrica",
+      "sha256": "721acccd5520c84e80f2669804d1f1cfe35c20b32ce25c5fb4b5d681bea09f2d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "scenic-model",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6dbef5a12b61c566cd9e23ca7339140c6fc91a76e57cce94c5d42aef68cf118d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "scenic-model",
+      "instrumentType": "escala",
+      "sha256": "5cb340a4f99aa0a1508b333a9a6f07fc52f683b4f3b4ee1c96fce6e7d009b953",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "scenic-model",
+      "instrumentType": "lista-ponderada",
+      "sha256": "620387ff607beaa8dc7e40bcd03b13f47a78bcd5baed7aa5e0e34c615325e66c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-fragment",
+      "instrumentType": "rubrica",
+      "sha256": "c55f96af41ad0af8fa11542b77054364bc69c7e84d8ecc2c34185aeb7e02b828",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-fragment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "709deb2aa3204277fe5d15d9c2692b1a16a02f0100436cc2f71c7de7dc519f16",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-fragment",
+      "instrumentType": "escala",
+      "sha256": "3cf3f9145d14fa41cfc6932276720750aae31a19bcec44cf16518077c5a2bbed",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-fragment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "add696027b14ad6b0a9a86c9dd4c1ace0ef595766b522522b72e42227e8090eb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "urban-music",
+      "instrumentType": "rubrica",
+      "sha256": "d83c8b32b0b79dc939597dbcef0d58c8c06d1062166da9da95930dec2420b364",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "urban-music",
+      "instrumentType": "lista-cotejo",
+      "sha256": "84cdb1d10697e776823021674fe96f72d812aa7bbb38bf7e4ef3232435b410b6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "urban-music",
+      "instrumentType": "escala",
+      "sha256": "75e504b7b27c038bc77cff0ac2ee8032223f8a2808b2ccee8bc6fa0d71d0373f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "urban-music",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1dcd2e424fab80320efeed388a3d00e95e7fff4a6f916200b5bdf2f382cab323",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "social-singing",
+      "instrumentType": "rubrica",
+      "sha256": "8d6fe00c1a2398ed368823e4634e74c346e37ce034212f0b1b9c4b7dfb31f972",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "social-singing",
+      "instrumentType": "lista-cotejo",
+      "sha256": "baceb3e191e01815ddc016fe23681fffe35184884a82c518500d7df9d27fa2d3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "social-singing",
+      "instrumentType": "escala",
+      "sha256": "293fb54b93757dbd1b1277d610e2ded5dc77be02ec1c1620bb4601117a6b4008",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "social-singing",
+      "instrumentType": "lista-ponderada",
+      "sha256": "60e3bdfacda0b20b0f9920b074b915318ed744a71dc3913e198e6b4c260d1875",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "operatic-genres",
+      "instrumentType": "rubrica",
+      "sha256": "d54b8f123caba1854371c5f46904c9db272da347c7a6f42314d4bf42ca6ea0b1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "operatic-genres",
+      "instrumentType": "lista-cotejo",
+      "sha256": "43a00a383fbb6023f5b76601eaea417e69047319f922f538c7930740ba7f4e26",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "operatic-genres",
+      "instrumentType": "escala",
+      "sha256": "a828427910c57e5d47acd606fd596a929964b8164e23fbe7c334993c197d9ff2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "operatic-genres",
+      "instrumentType": "lista-ponderada",
+      "sha256": "32849d8af378b88f5d6e2ce8f002bfe284af0b6605b24b3987ebb5beefd629d1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-story",
+      "instrumentType": "rubrica",
+      "sha256": "07a25314caaadf6b03d1f8cb30cdb9f053e5b9e3fb36c0b7924937773abd24a3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-story",
+      "instrumentType": "lista-cotejo",
+      "sha256": "712aa5077f56622659d2cec44ef52b7a3126cb00429f16f3675bfdc6e7d17f4a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-story",
+      "instrumentType": "escala",
+      "sha256": "1c7d68c3ced7581b1ec501940b9d72a874558abea4e22e8ec009a186098134eb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "musical-story",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b6d25344c8d9ff1932712f9ce7f957e93d667f3a8de582a5aefd89a2ab0fc406",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "character-motifs",
+      "instrumentType": "rubrica",
+      "sha256": "8d3e6604086f59fc65b1f0fa7d428c7322423a582b32f7257790195b34422078",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "character-motifs",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8de22c45d65d521a3e8ced4741d894a8943ec672cd1f10c99971cf9edf970e79",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "character-motifs",
+      "instrumentType": "escala",
+      "sha256": "325c4b24af61c8a303ceb3c6d597a73c09a2d104abf6f716e036ef837912856e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "character-motifs",
+      "instrumentType": "lista-ponderada",
+      "sha256": "24a3ddf5193bef9688a8691d07270347c7be103f14a0f9e32fe51c74251ce824",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "dominican-musical-works",
+      "instrumentType": "rubrica",
+      "sha256": "d99528b687a3bd7da018e328ca451409368913599f985a223df3e35c51d6da48",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "dominican-musical-works",
+      "instrumentType": "lista-cotejo",
+      "sha256": "190482ce185299eea86f2a3df3465e090f89903d200a6caae38bedb12f19a213",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "dominican-musical-works",
+      "instrumentType": "escala",
+      "sha256": "a713d345818155a6a750f8dab8dfb1d3b1efd9e98bb59707e6ea308066af7efb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "dominican-musical-works",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6c9f1bdf84ffb8177280da0017589145650fc949ab54fb7894e0d01cd8734469",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "music-making",
+      "instrumentType": "rubrica",
+      "sha256": "67ae28a9802a665ee671e07c6405c15a76d8e900b066d26b021670c5a16dd20c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "music-making",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e0633c5eca11d759a2afa90ad7f1d5fec32fcc0ed89297db5979fccad4ffaa22",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "music-making",
+      "instrumentType": "escala",
+      "sha256": "912dcb6087c34d8366069fb2a24a719c1ae4e847ca3ddf0e030e0bdc5d78bf54",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "music-making",
+      "instrumentType": "lista-ponderada",
+      "sha256": "402911396ae9792fa285f404ac03bacf1f84b0bc33dd8f21339ab48b3df56234",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "music-function",
+      "instrumentType": "rubrica",
+      "sha256": "8f55c12f1139825f637a3df9318ed1fbfd4e1ae737e0ee22cb038005808cd999",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "music-function",
+      "instrumentType": "lista-cotejo",
+      "sha256": "12828a7f4b1d1d09d0a310ed548778c30df0868b21a63b6b479463b5181535c6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "music-function",
+      "instrumentType": "escala",
+      "sha256": "87af9dda3f80f4774ef13cb0714de014fa32a94fd1e913679b6fa6025960f10a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "music-function",
+      "instrumentType": "lista-ponderada",
+      "sha256": "77029b4416fe4e7f66d19de4efb77df24f7fc934e70451d95fbccb8814e0b408",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "shared-elements",
+      "instrumentType": "rubrica",
+      "sha256": "e6f42ba61235767dd91f5cab2777b71acbf4930c061a1b7de241beeec1741a80",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "shared-elements",
+      "instrumentType": "lista-cotejo",
+      "sha256": "30d3ea3ffba2bb56a3f64596b0376f0d5275b539756fa6ee08e3baf4611bb080",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "shared-elements",
+      "instrumentType": "escala",
+      "sha256": "bd9f140ec868c0466e03d381a2481d2df67443fbe459e586e47e6edb83d8aeb1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "shared-elements",
+      "instrumentType": "lista-ponderada",
+      "sha256": "caecf7cd14cdbf347085bab2b673e92c1d23e89f24d8fc55c7f8be45100e6a8e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "textile-print",
+      "instrumentType": "rubrica",
+      "sha256": "71fe705b877add211b71c6e0a25d6bea92122758ae43e0f89eef0cff7cc6093b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "textile-print",
+      "instrumentType": "lista-cotejo",
+      "sha256": "aee2de88726d52f3cbb8a447d92daf29c2123e1e63d7c0d38a9b78a58ce3683c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "textile-print",
+      "instrumentType": "escala",
+      "sha256": "884cc718f3b153aeab1bdfe6d087762b7e0458f5edee2638fed9226745202a30",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "textile-print",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8cdb06a4457cd694c83429ceabc94a914e1ca586545986f0b93e178bd31fba4f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "textile-textures",
+      "instrumentType": "rubrica",
+      "sha256": "54a9a9b56196f558ae97b781627931c97ab7ecf07ec3b5aec3d38d3d22975d80",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "textile-textures",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b561a2d917e46e3daa157ef8e2dd7295fb6114d303c48249e441be54677c61e6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "textile-textures",
+      "instrumentType": "escala",
+      "sha256": "102e6fa0abd5717d7be95932f44ba099e39db7f2145f834a9840cd8dc3c6d40e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "textile-textures",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cbcdd45b01cb249473be5820d40d6e43186603e3babd6d3c9743d2e867763876",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "fashion-function",
+      "instrumentType": "rubrica",
+      "sha256": "ab24affb1f113a4ba469834c4fb44718766ae714fd0e9f33630a84e8f0f1d8d2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "fashion-function",
+      "instrumentType": "lista-cotejo",
+      "sha256": "43bd276c09a731e2e99db1ea4afa9b70e772988046175508a39e6e8bdf8e3fc9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "fashion-function",
+      "instrumentType": "escala",
+      "sha256": "9876e77d656d605d7bdb2136f3d0db830a58f5b440a5e36ee5cacbd26099ab03",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "fashion-function",
+      "instrumentType": "lista-ponderada",
+      "sha256": "aeb8ce95843a0c3c4ad4aae081436691fbde64a76409139e5789887d49b94c2a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "costume",
+      "instrumentType": "rubrica",
+      "sha256": "678216af49fbd745de959baedc2e4b8540265e898c762acb38259c71add78d6a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "costume",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f90e303e96e56bbad67f27073bd3c0928f1ab37df946f48e831fcc5ec8d89867",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "costume",
+      "instrumentType": "escala",
+      "sha256": "017aa67ee8555ca6700d8cb722957504e76b6036d0baa2ae046fc2be2e61fff0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "costume",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d1c1996fd9eb23a9a3c9db92d50d5ca05173f9e8846915bf8632311f428854fa",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "decorative-arts",
+      "instrumentType": "rubrica",
+      "sha256": "8fc40e05b00b0dc24ed5ec10fd27ee7df95e361c4c206f9f52b09e7dccb2677b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "decorative-arts",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5b2bf988f562ba0e204c4d86322e7c9a497542f352ceb70a874d2142d97689e4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "decorative-arts",
+      "instrumentType": "escala",
+      "sha256": "4f929160be43a24e8ce39ad7151bded057aa835836e165551d96f55084f0e352",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "decorative-arts",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0313b18dc646cc5e3e68be6ddb394bd272851f85b96e91f2d0f7f20dffe7bf29",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "interior-design",
+      "instrumentType": "rubrica",
+      "sha256": "8e09cbb93d28a790ab7f01fc8a70c0b281d6f3b3a6e3a060cbac82bb572d96a8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "interior-design",
+      "instrumentType": "lista-cotejo",
+      "sha256": "edae7eb8447923acc35079b5d9a91f82838b4bda89489ec8a6117af861489bc8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "interior-design",
+      "instrumentType": "escala",
+      "sha256": "6d4b93db2db3ff6c850f8b8e3ac6e7af10707175cf8fd02b40596c455ad65623",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "interior-design",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a8a8eb5546f475947e3351ad1dd2ebdef62a9c3c8474f723cc02b722d1e2fe15",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "built-environment",
+      "instrumentType": "rubrica",
+      "sha256": "23776c45055d7e971e4429aca2a9483551e5f941c4fa69f3ea6f9f450921be3e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "built-environment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "18e2395ee6bbd34b42d27896b47439865b006e718cbf53edca5b6b12d4c3153b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "built-environment",
+      "instrumentType": "escala",
+      "sha256": "9e4ec46e569557501e919696552fa5999194879c8f75daf23e6073ad0b9eaa11",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "built-environment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8e9bf1417d5a9ad65ca1fd0d525d42f641bf791f449c8c3455f4f10144994b15",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "artistic-presentation",
+      "instrumentType": "rubrica",
+      "sha256": "36f758a31ab371a19c39fb50d3441fcf1c49636249ef870dc988d75501d3c03f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "artistic-presentation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e9954f71001bd55477c244062075507db8e91b2c4eba769a3a75d43183a31ca5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "artistic-presentation",
+      "instrumentType": "escala",
+      "sha256": "539f365a329fae07059127e282e48770baa6f5fa2c886e3e96f25864e749cff8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "artistic-presentation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b8bc4d2eccdee99dc6a422b4762556e009481faa38fcf3f2be749df2c2dc60e4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "popular-dominican-art",
+      "instrumentType": "rubrica",
+      "sha256": "23945d0ec4d76dc7799152e1a7b0afd66cbd89c76b0b5e4e6681b95c11d01f46",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "popular-dominican-art",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9a4d64e3db82f08c3bfe3cc704cf08a51732e31e9032276c7969a46f81dc5561",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "popular-dominican-art",
+      "instrumentType": "escala",
+      "sha256": "93d4879747aad85ddec151fb18de6ac40dfab368e4c1b91b793f3cc7f8bbd641",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "popular-dominican-art",
+      "instrumentType": "lista-ponderada",
+      "sha256": "96a2a5bc358ed60af6b3e81951a0cc2552015a5123744adb6f5a21de2494e86c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "recycled-art",
+      "instrumentType": "rubrica",
+      "sha256": "bd192d486d47d6cf91c7e2f4fd31e9257ca776a95b414b74722e95c531922907",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "recycled-art",
+      "instrumentType": "lista-cotejo",
+      "sha256": "92c1791c52c87fe1f950ec05af4741ea662dac852cb2307e40566538121aa3dd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "recycled-art",
+      "instrumentType": "escala",
+      "sha256": "b34940118256d68e9fcd9709e18d5639f05de91f6b792d4d95caef1fe514a8fc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "recycled-art",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d07372fa7a1add0d5bc50611cdb29b55f14e38b577cd35a47fa446c002bc3127",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "art-safety",
+      "instrumentType": "rubrica",
+      "sha256": "199e3481bf7b8a20d8fd0502f1be63fcc952945652b4d9ce961aebe63a9062a2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "art-safety",
+      "instrumentType": "lista-cotejo",
+      "sha256": "341cdd05d5a7e51d6b8062870e34b40b8e77add4433ce1777ca272cb2f28e05d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "art-safety",
+      "instrumentType": "escala",
+      "sha256": "000e287ae143c0f35b4921abf50ae5cd9f13c9553caaa1a04f74afa098d9dec5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "art-safety",
+      "instrumentType": "lista-ponderada",
+      "sha256": "08f2a42b19d5b00478e1377d77e5f0a5e13e9b227025194ec8b2224128f01395",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "art-technology",
+      "instrumentType": "rubrica",
+      "sha256": "d969783eae51c09781518a1b301e527a7d697a710ba994c219e6e4c09e40e73f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "art-technology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ede875c8783ee71a844f75c0f46ef08b185cb63b5b4e90a1da22e6e7952149ef",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "art-technology",
+      "instrumentType": "escala",
+      "sha256": "93ac32741e678ecf4c025131dc8dd172c8692e70ea5e00dd73feb553d4f0629e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "art-technology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b2075d6398cafeeac6cb0e8839954fe549d78e0aec72abcc92b469b359e1c1b4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "artistic-argument",
+      "instrumentType": "rubrica",
+      "sha256": "29e3a1bf4aceaf59618b78f36aac053160b3e5985f022e0abb5b1ab508c7d941",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "artistic-argument",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f6352096904048c4c2873640563852ba58d5e03c351ff226633a64445d32e766",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "artistic-argument",
+      "instrumentType": "escala",
+      "sha256": "7835b8b09e3ed534884172eedcad4e319ce7fe17174411d7083e97f6f5c07da6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "artistic-argument",
+      "instrumentType": "lista-ponderada",
+      "sha256": "940983c1c7afa64b32dd04a926b4ae39a1e3b3700353159b477cdea6c92bcdd5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "context-creation",
+      "instrumentType": "rubrica",
+      "sha256": "a9ba06c33fd3fa0db46820bd9fd26ca082cbd2a2ed5a1fd0315bb0ee6be45183",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "context-creation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9304ead1a407f7385ec0cc7bc7aaa9f47514bf6cbb33485bdab61577954c9bb8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "context-creation",
+      "instrumentType": "escala",
+      "sha256": "c9d8c14d284d30a1bf94b4b2594a0255073b1e5e4bb9dd5d18b0d4b332597c92",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "context-creation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6361754c83b494c4260f5ee242698d4ee2b5d9609ddc5e1ee411c39a06a1b148",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-material-technique",
+      "instrumentType": "rubrica",
+      "sha256": "2f1f7b1b060d47dbf0eb84e6f5551b977d0b003baaebb0a95e0f925966f9f84b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-material-technique",
+      "instrumentType": "lista-cotejo",
+      "sha256": "44d0a33c7ff00a56c54227485a5ebd3167dba084ad14ee812d91759067ce1eaf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-material-technique",
+      "instrumentType": "escala",
+      "sha256": "04248449997f6b4d2d2145ef635cd9eb970e7b95274f46d07684020d65bd606c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-material-technique",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e4d660ffe9832b8cef7fa386a493517051b9bafb4996e1a1bd120ad36e696118",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-explanation",
+      "instrumentType": "rubrica",
+      "sha256": "c6a2e1582f319672bfecf0305445e8433a1ced8664d6e904f94b2f16d6dbb3d4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-explanation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e028223e24841e9c339bb17f236b20d8c60ca2aedd870671bcc855d514be751c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-explanation",
+      "instrumentType": "escala",
+      "sha256": "6c5461c45f8dbb46e58c615cf99c9426ca328269e7e47a6f705639961030b01e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-explanation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5f503438b940dcf9cecc25490ffebec7c105bf781649bd37eeb3a0319b8fde8d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mobile-sculpture",
+      "instrumentType": "rubrica",
+      "sha256": "efec5c5245f8415c8cdac5dacb62a56cb884239e54db448f89bf4b3dfbeb869d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mobile-sculpture",
+      "instrumentType": "lista-cotejo",
+      "sha256": "78ec8e0be7d51a5b5daece9361630d821f0ca49ee2c0be94b231539fc225c584",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mobile-sculpture",
+      "instrumentType": "escala",
+      "sha256": "6c563e4ebd36ea3b3ac5568959ef4b74a66410008300f247a3b1a7fe6e9c418e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mobile-sculpture",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e8433a83a19a46064865ca2eccffa384d384e4b9553703ab815760704dd8c026",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:sculpture-modeling",
+      "instrumentType": "rubrica",
+      "sha256": "3cab2a1e08e88be63d0b26f569e6245217718b500de38b6261a70efcced6dc11",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:sculpture-modeling",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6df9b055e836376fc39702302fa3ba9714127c030205c8401d08511a6d3d2d11",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:sculpture-modeling",
+      "instrumentType": "escala",
+      "sha256": "a78fff428ef2e6947ad59b3e0904b8118058ef7d58d1cfef10d83c6a5c1f37ac",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:sculpture-modeling",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bb5e6fc17fbe7902e649886e2c5f6b684b362a61e6f9e7fcba4b81914bf20bec",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:engraving-monotype",
+      "instrumentType": "rubrica",
+      "sha256": "08533a3a20d9ed41fc821a2e44e4a901adc4a8391c2e627c85f2a211e781ee13",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:engraving-monotype",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c63cb7459f21b63a9cd0d0583e3daaf839be4e3751db213d0267bd457b41a96c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:engraving-monotype",
+      "instrumentType": "escala",
+      "sha256": "676f428ba85e7f8d5672b44ad8000ff248b8f04184e4243f2ed1273001faf82c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:engraving-monotype",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b50dcfb5753eb98ab5f3a7630e1e5c59d768cb4a1e2bb944d9625da1f07a7e39",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:engraving-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "82a568ea99e72a3fe632eea8bf1a748543d51b4b5c787a278d70ca0fa99c04d4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:engraving-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8020f9feb7d283c85ac4ba85df2c28b9ea50abd134616a5eb93158e87da503e2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:engraving-comparison",
+      "instrumentType": "escala",
+      "sha256": "1619aa9d7570a8c589936593c2ab8bfc12de154ef2c5eaadf29a129927e811fe",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:engraving-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e9ab33af3f2dc83f9edb14da4ebd25623de2918c0d60d2fbda0cc0e3eb25ce53",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:heritage-argument",
+      "instrumentType": "rubrica",
+      "sha256": "1485672123c7dc1ea84b41adb728a8f7a1f2df40cdf74e9f6d35103a87ca533a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:heritage-argument",
+      "instrumentType": "lista-cotejo",
+      "sha256": "98f562bcf6e5333236aab509b9305ce0f28f1a3d49608862caa946caedbbd7cf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:heritage-argument",
+      "instrumentType": "escala",
+      "sha256": "b087a034958e32454c18f777240269c8955146d0a865145539e9df87884eb2d7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:heritage-argument",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cfe512fda1d7ce1e34b6f0621a39c6a3919c863f7454573955105d9fef6371d5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:interpretive-style",
+      "instrumentType": "rubrica",
+      "sha256": "77b9758dba4ef30cbe063be395dd7ee4ba5bd3cb545f75297ded7138b82e8e6f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:interpretive-style",
+      "instrumentType": "lista-cotejo",
+      "sha256": "01a5bf9aac65a4aeca585f0211c6805cd20b1a85bb9b6a30c2b8fb23e1775d83",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:interpretive-style",
+      "instrumentType": "escala",
+      "sha256": "418b1ee44cb6e39d580103a8c1e5e5bdfc337ebf1518f721760cd4a10a589eac",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:interpretive-style",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b1f7cc3ea3b3fe15dcda158711068c0d1236bfaf5d80e0e7f0b7e27c76aef405",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:dance-context",
+      "instrumentType": "rubrica",
+      "sha256": "4513f1bb738e236cde85219705d17b83e63e3c75ded8a182e437024a99e8c67c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:dance-context",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7bf4c1e2c737f0b71fe7c354d3373c536a4edd337c382235a30cedc8159cf045",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:dance-context",
+      "instrumentType": "escala",
+      "sha256": "3b2b010d29bf3e79c43eb6b8f86155d75474d2500721b01f35e26e3ec93fa56a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:dance-context",
+      "instrumentType": "lista-ponderada",
+      "sha256": "650b3a476af5ec25619327116887673b38163ce1ff28ef3357227f2f98360fb7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-dance-performance",
+      "instrumentType": "rubrica",
+      "sha256": "f6069bd27576881f24d0693742ce48b73f32c55ede28ac9a3a05a11b99646822",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-dance-performance",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b0adbf3d9291dfbd3fcdc0ed226c02e2a3117b8530c688f579f0f08bb8b50885",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-dance-performance",
+      "instrumentType": "escala",
+      "sha256": "9ba09623ea225fd293924b4d929f9ed05cb533b92eb8d724578d193c953f18ab",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-dance-performance",
+      "instrumentType": "lista-ponderada",
+      "sha256": "83d2b297bf5e50d22483d128c88f639bff04461c7c4a4deda1718a7f034b424f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-dance-plan",
+      "instrumentType": "rubrica",
+      "sha256": "ee10e88dd492fea19127131914d6fe50090c6d2f00c90ff0b14386d9a1fb8f4e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-dance-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4371277396230b57093e72f43c04b15973975e71f53dd702df657b87dde0890c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-dance-plan",
+      "instrumentType": "escala",
+      "sha256": "e86db6dbd547721e097890af30ff02fa5130ce827d5403aab2cddc4883262484",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-dance-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "35c4d69c448ef9b319978a7f98ebe6e68140e295e6d30f8ecb7a85b4285baa7e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatrical-production",
+      "instrumentType": "rubrica",
+      "sha256": "7fa0e59d075f4fda130bb7c84914874930bf256df651b1f8df5766dcec8f5ba5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatrical-production",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6ed6df6c892d26fc4db171560ded22aaf1adb02692acbdb5c4d6895dc2db44b0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatrical-production",
+      "instrumentType": "escala",
+      "sha256": "62fb9746d5c9e7a78f56efee14b4b749d7bde014881b852f79b2f06bfde8e9f9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatrical-production",
+      "instrumentType": "lista-ponderada",
+      "sha256": "81533f7a6907808d8ab8d460536fe7570fe282ede7c8a2329654dad6d77480e4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatrical-plan",
+      "instrumentType": "rubrica",
+      "sha256": "6cd35c00ff95f304e61bec73ea8accb494c65a81f5ab53d0d59d9f1392e3b6d3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatrical-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "31ffeb396c2dc02d8b98c4de9fa1f6e3b037d1abc132c48c1871f712378ff33e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatrical-plan",
+      "instrumentType": "escala",
+      "sha256": "f583bf32db472d7c187104ba0c7174d78e3b20400e43414de8cdef1f07a3735d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatrical-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cc43131ac0aa758493d72d32514b12a6f010c818091fed98f2b37d33f3d5129f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatre-traditions",
+      "instrumentType": "rubrica",
+      "sha256": "99243772697c36dc54a38ea7a66896aa65f62946d7e886530157a23507ec5f42",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatre-traditions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b618b475e4bf044c6f1caeebab36cf55434b542b534eb22c58970e50eb93f536",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatre-traditions",
+      "instrumentType": "escala",
+      "sha256": "cfad850ef43f98f7ec98181c854f01136625c6f9bb6da9a12f83e2d225a20316",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:theatre-traditions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bb279e2183d1b5fefd597e5c7636ea43d7d5db15d11a4e1bb835bbc449eeca7d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-theatre-history",
+      "instrumentType": "rubrica",
+      "sha256": "dffb07e889ba433b069c66407c8cf535f65ced61b03d8c011e8f2301d09b9f9e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-theatre-history",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e00a9981befd4a29671941ec5ff0a049a9420f03f90976209bf4a13df8cef57a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-theatre-history",
+      "instrumentType": "escala",
+      "sha256": "a62e98dedbe2b8afeb4e18dcdf1ff556ff902ac4690c441dfd9517a52d172aa8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-theatre-history",
+      "instrumentType": "lista-ponderada",
+      "sha256": "78a13cb13c814a5d305a61cfce4f48ab2a8e130ae695c9f02abc92f2120e7475",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:broadway-research",
+      "instrumentType": "rubrica",
+      "sha256": "12d1b5b02c39aba389fbf9aa5f76b9f8a8e0041ab68768e23cf5361297e2bb04",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:broadway-research",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5f1497341b80fbe3a4c8f6cf952429e1c697dd194332ac6609f3ac60d99d53a0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:broadway-research",
+      "instrumentType": "escala",
+      "sha256": "267f7f575c02e1164e8dd5644fdf77b785a7013722929fc65e8720c9e588ad3a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:broadway-research",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8d75e10b47d038060642b874ffc3b2212f699d817967ad0b9918f4b2f01275fc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:scenic-model",
+      "instrumentType": "rubrica",
+      "sha256": "f5f707333a268a492ffb096c9bd7fea2240425f220c1c6aba272073c2df6aa01",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:scenic-model",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f51c102b431f96009f1dcc7a555c554112aaa56eb91f9bb037c879bb16cc4d81",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:scenic-model",
+      "instrumentType": "escala",
+      "sha256": "7629b3bfb0d56aff1ff182639174bf27b29f9e2bb04f12ef1d50cc4f04e6fbdc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:scenic-model",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fe475fd15f66fa6ddf673c7677c269dd6b9d1e3172fb7de8a959d1c0c6bd22d7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:expression-exploration",
+      "instrumentType": "rubrica",
+      "sha256": "dc39381df2dc3d617fd468a981c61453a65c0457b3d538404df14bfdce5f5ca0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:expression-exploration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "75c0153c5277d8aac97241bee118ad7478625170517090eb162106033df9500e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:expression-exploration",
+      "instrumentType": "escala",
+      "sha256": "c5ca1e822160e5644dcace415a06f797d63557645799df0fae38774b674aaa8c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:expression-exploration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3b0f635a3080345b716edb76b78396595df4376966ece07d8e11bc60b034ad16",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-fragment-performance",
+      "instrumentType": "rubrica",
+      "sha256": "c4a73312d59db71c509ecf6a776cf15b886cb370db00c2bfb8b1ab11e623f0e0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-fragment-performance",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4f1c411b25f768421fb750fb04e1181dcf00682fd96f5e3bd35b1cec2420006a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-fragment-performance",
+      "instrumentType": "escala",
+      "sha256": "86629583312ad2394030c43a4d2e3b7cf5273cbbd94b776a64c28d19f6258184",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-fragment-performance",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1b020e1ac2eeee9d93585ff16aa90deeb4213ab73113ecb1119994e98d5aa5b3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-music-performance",
+      "instrumentType": "rubrica",
+      "sha256": "c2aacfcbb41d32a98afee1ef64260bbaa144e01f110bcdd343923fcb9d0e7f2c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-music-performance",
+      "instrumentType": "lista-cotejo",
+      "sha256": "83be4b63492d7ec032640be8ece99e89ff66012a48b7d4565a867f78b79435f5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-music-performance",
+      "instrumentType": "escala",
+      "sha256": "f597a9e4954b2f8c03eda5e656699fca6575b1a4d629e5fc388519ee75561c92",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:urban-music-performance",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3f1d178f30e4e77d87c772092ef5171be6e7d4d3d40fc50dc719282a4ad24083",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:social-song-listening",
+      "instrumentType": "rubrica",
+      "sha256": "c7ce93915307ad335a83e83e9c70695bf458eb1fb8b2271568614acf26a250c0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:social-song-listening",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e3c2d7c9665eb24b9b4b75dc53ef96525b113cd396b3a54594ba4a0f99a67949",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:social-song-listening",
+      "instrumentType": "escala",
+      "sha256": "3d2cfd1dfbc87f59a0f3d94939347568f85f1248ba1b1600b7f50aa0490cefcd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:social-song-listening",
+      "instrumentType": "lista-ponderada",
+      "sha256": "66ee3896e29f456b2c68454673f53f22bc674fb2daa44eec7ea9b6a8560fe8ed",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:opera-listening",
+      "instrumentType": "rubrica",
+      "sha256": "adb78c2440fd1d8ed56339f970433361a42c9f52d973467434ed7f31e4e3ff66",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:opera-listening",
+      "instrumentType": "lista-cotejo",
+      "sha256": "33f5479f18b2f697c0a8d52eabdec06f0b6e2f25ea339f588ffc67e7a13f6bba",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:opera-listening",
+      "instrumentType": "escala",
+      "sha256": "9c884e9cde5445b4c790d8270180eee69ac80f3979f2737cca5088643b596895",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:opera-listening",
+      "instrumentType": "lista-ponderada",
+      "sha256": "07762652dc18d2a9453daad1cabb270c4963524147b398c01d46be6048cda7e9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:operatic-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "a8159b23f5d8a53ec03c65c8ca9d7aa8f5d0075b110efe32c599bbf5dd609c10",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:operatic-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a659a699f76f25c2c77fae4dea58eccc9f4cde1136dcec4c018032221a7c55fd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:operatic-comparison",
+      "instrumentType": "escala",
+      "sha256": "a28ef6bb38efdd2eb3d22d769ddf84f8608552a2a55de8d493b9e7057096f310",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:operatic-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5075a437495d0c2ed60b58430abed759c1f63802a385ac28f5f416d10dc2e05f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-story",
+      "instrumentType": "rubrica",
+      "sha256": "31d39ca5b24d24a50efee4229c72aa7a1cb6d5e20b8f171c1e3ed7a947ea90ae",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-story",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cf1128042491cff3b0aa127b41bcbe3159d6f16a39319260007c3392789aa173",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-story",
+      "instrumentType": "escala",
+      "sha256": "6c6471c32e8ebbf7bf9e8e2b58e1357f4b2bc0f4f62a22866de592ec8698fde2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-story",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2bfff27e3d2d5f14637750164616c8f220e152b5f9f10e0a30bcf5d6314297ae",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:character-motifs",
+      "instrumentType": "rubrica",
+      "sha256": "3d40d03e35e5fa73eb2c50b649ba15d884956bce8f16c36ee82b493607930948",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:character-motifs",
+      "instrumentType": "lista-cotejo",
+      "sha256": "11e1de802337748e8c672edc09a2d917948557b6e299dda4d772a496726ccbd6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:character-motifs",
+      "instrumentType": "escala",
+      "sha256": "0137869dfd9e45f307a301a2edddfea548499bccb174c8edbe44f92a02e6e769",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:character-motifs",
+      "instrumentType": "lista-ponderada",
+      "sha256": "56739938584c5c5fcb5040babf092098100351643550da60e138e1fd061f775f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:dominican-musical-works",
+      "instrumentType": "rubrica",
+      "sha256": "d7fac3b570ed90e0927670c2793edf7266ae91b6589ab2f8d08ecbbfc067fc4b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:dominican-musical-works",
+      "instrumentType": "lista-cotejo",
+      "sha256": "de05992a965d75ca626121447a467bc57b284d4908c82c7f05948b3ac97155ce",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:dominican-musical-works",
+      "instrumentType": "escala",
+      "sha256": "20dee526d9bc11c89a1a36455d92e51e696dfc47f2cd8dfbca26dc966b0b172d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:dominican-musical-works",
+      "instrumentType": "lista-ponderada",
+      "sha256": "31e7a5f8e1801e3fdbedfaa5ab4c8e4adc2bd515d39ee0b114b15e83c2f814ea",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-improvisation",
+      "instrumentType": "rubrica",
+      "sha256": "8ab2421bedfcc184e049a98837db87a823ca30ae1a147ec75d5e2ae98c6d4802",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-improvisation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8c437c2017bf0c91f0a1cd183d70a44a382e43cc2864a6986b3ca31997c37e8e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-improvisation",
+      "instrumentType": "escala",
+      "sha256": "c37a2276b0332f446d9dca3acb2f8dd280396ae936848b4908d4b8039682cbd7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-improvisation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "68b6bb259996b2bcfdc888c84ccc450d92c0d5b1cfc8ba6b5fda46498dd25d49",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-creation",
+      "instrumentType": "rubrica",
+      "sha256": "e27e2200f66bb83a7bf48c2ae4e960d710d09f2d354cbd88e47bcbf87c74b8fa",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-creation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "85625aaf74538c0a9ffa830e7fcdb36720bed6cc61d2321ca651f0a7fe2bb52a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-creation",
+      "instrumentType": "escala",
+      "sha256": "9e35a7127338fc3bf3100861a02f3c379c7c5e305fcae8e9aefecbdc7b9a31d3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-creation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9855b8c6f84f57714f2a4dba05d44a94339ff7c6cf432039e5e2d0132e4de4c4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:music-screen-function",
+      "instrumentType": "rubrica",
+      "sha256": "49085eae4e08438400fef9238d62cb449d2c9db8c2a6f511a77933930cf3ac94",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:music-screen-function",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ae62b45179eeae12bf3d278410b42aa7f1b5a34204c6c560a3c3e4057503df02",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:music-screen-function",
+      "instrumentType": "escala",
+      "sha256": "6604c1fcebd3a4e334a70f59c460939e9812d8023ff8d4433079799022329ec5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:music-screen-function",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e6d1d941745567a9ead028ff65c41af92fd84429f289c4e0c005d508d898fea3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:shared-art-elements",
+      "instrumentType": "rubrica",
+      "sha256": "b1aaaeffc9755e3ef58614efc0c4a09d2f3a3b26a6b97660ddde7f2210491d59",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:shared-art-elements",
+      "instrumentType": "lista-cotejo",
+      "sha256": "08161827bb83927d2f5e9e5258d8629dfc9783e10027ddbea8dc720d882e89d0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:shared-art-elements",
+      "instrumentType": "escala",
+      "sha256": "03c874337595b146f9b90c23960f3aa352952ded13d5656141fdf5f49c0ff3e9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:shared-art-elements",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1d99c4cdf2c8465d6d1e70366bfd27c0753afb0eb43dc7044cd328f0cb266a77",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:textile-organic-print",
+      "instrumentType": "rubrica",
+      "sha256": "494ea8c0c949e2e1f353d28dc267e1690be3a8e73b73c4f4a66efefe9eb96669",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:textile-organic-print",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d869298acb1610914993f8253f875d52dd351b3ac9c8a57914bbb061e23eeb6f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:textile-organic-print",
+      "instrumentType": "escala",
+      "sha256": "72e1b5aef523c6a23170d4d696199862b2d9dc1bc86fda7e8b955a84a6017609",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:textile-organic-print",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c55324a523f680389208330c16fd8d58a512395523e9c1109fbcc17b16850914",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:textile-texture",
+      "instrumentType": "rubrica",
+      "sha256": "74be6c55a480672a8837dad2a7cc2fc3fc0e83eb26ad3ec1a40ef53c79e90f0c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:textile-texture",
+      "instrumentType": "lista-cotejo",
+      "sha256": "848f0b533928a2b74ea47e474b28bf7f1a1e553f5713094cc99bfa49e7258de9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:textile-texture",
+      "instrumentType": "escala",
+      "sha256": "6f5e6eb29692dc6337ebc7013bd0ff04aabafa9ef5831d57b405dc863182140f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:textile-texture",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ef17ec8da49c38de0f4e7d4eb1f648d3710b39e8f39b2a250013ffb7d9be00ae",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:fashion-function",
+      "instrumentType": "rubrica",
+      "sha256": "305f1395caa69a19df6dc0da30b3e3c78963811b5d6ad82784f241f5cdbaada9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:fashion-function",
+      "instrumentType": "lista-cotejo",
+      "sha256": "146ee60848717e08244bc0c130d54766e1da2a2b775d56e8fdd0b7f25def8422",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:fashion-function",
+      "instrumentType": "escala",
+      "sha256": "c878340c7f77a9fa713a0f23f71ed3968dcad3dc9ec2cf22efad0c48b3807d45",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:fashion-function",
+      "instrumentType": "lista-ponderada",
+      "sha256": "73ba3a1b1a0db6446d16cecfa6577a53eca291231ddf517eb3dac8e598fea21e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:costume-adaptation",
+      "instrumentType": "rubrica",
+      "sha256": "1ece43777a7c472a802bebc22c8bb562d8a79dd6a8b07c66dbc6a85d8b1c07ce",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:costume-adaptation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7f7f6bbfe8b66a3d1269459e1ce111e1a1ed245fd5cea132736beb90c9e8e6fd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:costume-adaptation",
+      "instrumentType": "escala",
+      "sha256": "b02862c24e5685142461df67fe4ed88f5bf04ac0b05705526fab746075d69a13",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:costume-adaptation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4ae138f574cb00372c8675cb514ffb6e7efb2e5326afe5fe8ec835a1965a5d89",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-interpretation",
+      "instrumentType": "rubrica",
+      "sha256": "66dce90182326a599d0b09ef91ebc6a4f0cb90236559adafcb8103856edec2c1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-interpretation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "512b8388d4734dca06f6e74edc1ee1c281ed59f9afa5c22d5f8727661c75d97e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-interpretation",
+      "instrumentType": "escala",
+      "sha256": "cdb58e1c9f0b951d188d0a55a51b83e93a705d2e19197673bb06343fbfca3a5d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:musical-interpretation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e3ddae8a70bd50282b29bae9cdeff99410dc63ac40251bd40a185a250a9248bb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:decorative-arts",
+      "instrumentType": "rubrica",
+      "sha256": "49e99db05443482f5ecd3c1516a570c36e5a8a53dab54c85fed5fda864ec7b0e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:decorative-arts",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8ab256f5a8cf3bb1acd93775c3defc8188054197ade6f8ed966d63fd121fbc45",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:decorative-arts",
+      "instrumentType": "escala",
+      "sha256": "a0a5f6150a76af89dd5e9bb689a48d6a77a58ef133e7cc9ce1bf4a8759a5b6f9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:decorative-arts",
+      "instrumentType": "lista-ponderada",
+      "sha256": "335ce08962f60b84d3fa9ca2844c582c20b33f6d91241e4a2d1922b037c339ce",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:interior-proposal",
+      "instrumentType": "rubrica",
+      "sha256": "3495f20f4b760afb5b233bd3c758bef268a7944b0cb308c15828885d0394b120",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:interior-proposal",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b72baed5a0c5411feee8371e081351f685bf98eddfa63dea864cfeb32e178f3b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:interior-proposal",
+      "instrumentType": "escala",
+      "sha256": "641c36d3c2c7935efde8d7cc2dbce69a07a3408e8933b12e46c8ecede429a069",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:interior-proposal",
+      "instrumentType": "lista-ponderada",
+      "sha256": "39850689be58f1edb3b5fcde4a3c305eb2ba6de6410c7531385c6e81a34a9db2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:built-environment",
+      "instrumentType": "rubrica",
+      "sha256": "059cb046802dbe8a0c8e75dce0c42dcdad9b9e12419cd7a491c4fb4c46de6651",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:built-environment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "db96f362c0c06263ba0765188ed821b10dcd37edab77a027a78d9d15034ff64a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:built-environment",
+      "instrumentType": "escala",
+      "sha256": "3a65c973374723da8bd75483c36fa15ad2e52a16d9bcddebf2ac35cdc519db5a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:built-environment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "00ab679b3f642aafd11bc42028481817cd206d99444385cb52487c764f2878ce",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:artistic-presentation",
+      "instrumentType": "rubrica",
+      "sha256": "e6361616f4682e8c9d44d9101220e8ae77dd66011ca2029ae5434f42e6150e8d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:artistic-presentation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2643fb3dc42e417d841a2d23aec115bc21a493367bc15a699bcebf0f12fac5e6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:artistic-presentation",
+      "instrumentType": "escala",
+      "sha256": "3c54cb76099636fc1677dce4b319c45c0e3de3ec0314bce153029dcf49e8ba99",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:artistic-presentation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5122eeccdd650e17ba4bf5c0f050904795db0c42b1ab7c8f0618aad21c939fa5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:popular-dominican-art",
+      "instrumentType": "rubrica",
+      "sha256": "36fa9cafe1c7bfc28d39f0160783a9aae16642c220041dfe871c24bda3d9c37b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:popular-dominican-art",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d3214e9e988d3c1b918ea62cc7a4e875d3d60dee34ad5aea0673566d1a0f704c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:popular-dominican-art",
+      "instrumentType": "escala",
+      "sha256": "275849a0d75c09981cce0cf6886106decfe275fd110fb1f258a79755767883b5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:popular-dominican-art",
+      "instrumentType": "lista-ponderada",
+      "sha256": "951c99c0fdcbd1b1d250a116b2847582222decce9e1721ef877ba81ddcf598e4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:recycled-art",
+      "instrumentType": "rubrica",
+      "sha256": "a385d299e381849f3175820869c87e82ddcd3fe0b2fadf613341c98156282ef8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:recycled-art",
+      "instrumentType": "lista-cotejo",
+      "sha256": "98a2e5a359c79c0b416ad91aae2d66217ddbd1fe7657de08bedf82de3d8a42bb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:recycled-art",
+      "instrumentType": "escala",
+      "sha256": "44b031e47d5093e1fb071a03af28e77108f59a71cfe97d91e1329b06ec06bdaf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:recycled-art",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a6e3aeeb19534a59563e0473bc449b93c69f7dae2020168c20f3ca29c16e9fc6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:art-safety-observation",
+      "instrumentType": "rubrica",
+      "sha256": "58c31dbd64046946c4256caab0d51f59223f27e294746500e891b9ab23609230",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:art-safety-observation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e22cf006b0158eb6e25dbc19b995a2fa1e53b26708d5637b94809ec9a544816c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:art-safety-observation",
+      "instrumentType": "escala",
+      "sha256": "e67180a8d6e715019f81b91a62a22b1931ca8a140e90a773bc77b739ef9eee5a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:art-safety-observation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d90f05e581fcb8bd1aaea37ce7ea4da48d9b7d1cec6a22d1b09d8401efee3367",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:technology-art",
+      "instrumentType": "rubrica",
+      "sha256": "23b53807b872b23594fe2a09af56ed2a7f7233dc5d0065d9985397e83e3d0876",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:technology-art",
+      "instrumentType": "lista-cotejo",
+      "sha256": "03a2909c6fb98dd2c9552eadfdfc3d65750594fe1aa5c779ce6ce6a79587a05b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:technology-art",
+      "instrumentType": "escala",
+      "sha256": "da02482875b0ecb2d936cf85fca006b7089f2921b89dbdf56cfe7e3e127fd899",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:technology-art",
+      "instrumentType": "lista-ponderada",
+      "sha256": "def0ac24afb535e32adca1588f84c89a5de11473ff9f6246717b8cdddd2a8b5e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:artistic-argument",
+      "instrumentType": "rubrica",
+      "sha256": "6fd2003f69156524f65211264bc0c8fd941d722a0b5b44cd147de8f4ee93d1df",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:artistic-argument",
+      "instrumentType": "lista-cotejo",
+      "sha256": "09df0bfe77c2195c0527f1b78c3d8a323024303935967543a707610fa2d5d223",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:artistic-argument",
+      "instrumentType": "escala",
+      "sha256": "e9dccb766a51e84d811c4fde39e101e8e195cf89271f9741a4e945cf8de49c53",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:artistic-argument",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6c7e16f84bd5d748e4f1e2cdb578a2fa58612dbdb465a43d4dca4473a4a970d3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:context-inspired-creation",
+      "instrumentType": "rubrica",
+      "sha256": "1bdd8f3ee46eb28d656dada3e59c0d48398c6bd7184caa402e60fb72b06fca73",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:context-inspired-creation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "79a88978cef7c55b28a58543c7cb68bd9376ed36c3670c688a91f82248a56047",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:context-inspired-creation",
+      "instrumentType": "escala",
+      "sha256": "5952849b044b18dbb3c7d5bf74b491ae0ab84a6353d4516ab15ad3df406fa944",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:context-inspired-creation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "24032c4923c3866e45bd0d1ee91c3a6f4f3cd1739566ce77ebc6cfa63882d6cb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:art-requirements-check",
+      "instrumentType": "rubrica",
+      "sha256": "f111ac6f9298a0878a61d73071ee4fbb458a0ee38f1b76a6c747c06ac337a5b4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:art-requirements-check",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4edc297ba44289c5f4d99ce5398f8c2d5e1f02d88b75ce0e8ad2acd224cd331c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:art-requirements-check",
+      "instrumentType": "escala",
+      "sha256": "e5b503d3e3d2f0ec2d83f108d29f8183e15baa868c169bb3ab3a7ec61fb36ff0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:art-requirements-check",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2ec622427c88328caf304c63123264506364fc5724efd7736cfd3a90548a7a84",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:weighted-musical-story",
+      "instrumentType": "rubrica",
+      "sha256": "2acfa61f20a018ab656074eeb87b772a0dfd83a21f5050e642645ea5000b584f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:weighted-musical-story",
+      "instrumentType": "lista-cotejo",
+      "sha256": "72c4326ce81d5f9d3868d76dea6e7024727713f4772e4b77b4b7d7a0088980a5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:weighted-musical-story",
+      "instrumentType": "escala",
+      "sha256": "cb19d54c2ad18f03df905adee541b991ae599e6489cb9bef5d15948c8a3a711c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:weighted-musical-story",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e0e3ed427a71758e37b57388fb3a6da25506f6c320163bc30698331edd841b4e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-no-message",
+      "instrumentType": "rubrica",
+      "sha256": "b5ab394cb7111abaf6f8484a166e5d3f3e0026f607d355f60716f9b5418c31ad",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-no-message",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b8fb6d9d3f52c1f5dd2fc55e5e8285bcbcfe8471052db70a3d0859991bb41c4f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-no-message",
+      "instrumentType": "escala",
+      "sha256": "e69d971d889130e90004bd4de766e7150830d324c7ed6a621c72dfd8725d0f2f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:painting-no-message",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0ca63464b40ba6dcaccf185c2a9ed2d81e257e26d399523644fc12c083a06b55",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:technology-no-message",
+      "instrumentType": "rubrica",
+      "sha256": "b15aaf216be97159889f2d4d784c72285ffcfc243088e4c547c4121ec12d2df6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:technology-no-message",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b1c2642c4deb014f6a3f4eb8df458ccb8f90bddabce76e39f0fe8c81bbd9e032",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:technology-no-message",
+      "instrumentType": "escala",
+      "sha256": "568f82991ff2f50e0ed25b1642da8a51886c5a6cbac282567aba33f3d1f1934d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:technology-no-message",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f3853afee3a05e22dfeeb40e5fbdb1962ef83f582e9d93a4c6a7f68607221efb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    }
+  ]
+}

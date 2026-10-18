@@ -1,5 +1,6 @@
 import {commonSocialModules} from '@aula/shared'
 import { commonArtModules } from '@aula/shared'
+import { evaluationCatalogV106 } from './catalog-v106'
 import { evaluationCatalogV105 } from './catalog-v105'
 import {evaluationCatalogV104} from './catalog-v104'
 import {evaluationCatalogV103} from './catalog-v103'
@@ -129,7 +130,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.106',
+  version: 'evaluation-2026.107',
   artCommonModules: commonArtModules,
   socialCommonModules:commonSocialModules,
   activityTypes: (evaluationCatalogV92.activityTypes as ActivityTypeEntry[]).map(entry => ({
@@ -224,6 +225,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { artCommonModules?:typeof commonArtModules; socialCommonModules?:typeof commonSocialModules; scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
+  if (version === evaluationCatalogV106.version) return evaluationCatalogV106
   if (version === evaluationCatalogV105.version) return evaluationCatalogV105
   if(version===evaluationCatalogV104.version)return evaluationCatalogV104
   if(version===evaluationCatalogV103.version)return evaluationCatalogV103

@@ -12,11 +12,9 @@ import { evaluationCatalogCurrent } from '../../apps/backend/src/modules/evaluat
 
 const flag = process.argv.indexOf('--grade'),
   grade = flag < 0 ? 1 : Number(process.argv[flag + 1])
-assert.equal(
-  grade,
-  1,
-  'Este autor de artefactos solo tiene revisadas las anclas de fuente y exclusiones del grado1; no reutilizarlas para otro grado.',
-)
+assert([1,2].includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
+const pdfPages = grade === 1 ? [330,331] : [332,333]
+const gradeName = grade === 1 ? 'one' : 'two'
 const module = commonArtModules.find((row) => row.grade === grade)
 assert(module, 'Grado con proveedor conectado requerido')
 const directory = 'docs/curriculum/cobertura-secundaria/'
@@ -46,7 +44,7 @@ const mapping = JSON.parse(
 )
 assert.equal(mapping.scopeId, scope.id)
 assert.equal(mapping.sourceSha256, source.sha256)
-const exclusions = [
+const exclusions = (grade === 1 ? [
   {
     prefix: '03bf6274',
     reason: 'PURE_HEADING',
@@ -64,7 +62,12 @@ const exclusions = [
     explanation:
       'No se califica capacidad imaginativa ni preferencia por la originalidad; se observan decisiones de síntesis y transformación del producto pedido.',
   },
-].map(({ prefix, ...row }) => {
+] : [
+  { prefix: 'da7ef7d0', reason: 'PURE_HEADING', explanation: 'Encabezado Artes Visuales; no desempeño independiente.' },
+  { prefix: '8a98d0d0', reason: 'PRIVATE_CAPACITY', explanation: 'Capacidad imaginativa y valoración de originalidad no son atributos privados puntuables; se observan decisiones del producto pedido.' },
+  { prefix: '8b3358e3', reason: 'PRIVATE_LEISURE', explanation: 'No se puntúa el entretenimiento del estudiante en su ocio privado.' },
+  { prefix: '1812e660', reason: 'PRIVATE_CAPACITY', explanation: 'No se infiere capacidad creativa propia o ajena; se analizan evidencias y decisiones de obras concretas.' },
+]).map(({ prefix, ...row }) => {
   const original = literal.find((item) => item.id.startsWith(prefix))
   assert(original)
   return {
@@ -82,7 +85,7 @@ assert(
     .every((row) => mapped.has(row.id) || exclusions.some((item) => item.id === row.id)),
 )
 const contracts = JSON.parse(
-  readFileSync('data/evaluation-instruments/art-grade-one-contracts.json', 'utf8'),
+  readFileSync(`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`, 'utf8'),
 )
 assert.equal(contracts.grade, grade)
 for (const task of contracts.cases)
@@ -166,11 +169,11 @@ const matrix = {
   source,
   grade,
   scopeId: scope.id,
-  pdfPages: [330, 331],
-  printedPages: [329, 330],
+  pdfPages,
+  printedPages: pdfPages.map(page => page - 1),
   sourceVisualReview: {
     status: 'REVIEWED',
-    pages: [330, 331],
+    pages: pdfPages,
     method:
       'Complete rendered pages: competency and content columns, then all achievement indicators.',
   },
