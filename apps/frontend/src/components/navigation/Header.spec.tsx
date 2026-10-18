@@ -37,6 +37,18 @@ describe('Búsqueda de la cabecera', () => {
     },
   )
 
+
+  it('muestra el avatar de usuario circular en la cabecera sin cambiar su tamaño', () => {
+    render(
+      <MemoryRouter initialEntries={['/inicio']}>
+        <Header onOpenSidebar={vi.fn()} onToggleSidebar={vi.fn()} isSidebarExpanded />
+      </MemoryRouter>,
+    )
+    const avatar = screen.getByText('US')
+    expect(avatar).toHaveClass('rounded-full', 'size-10', 'overflow-hidden')
+    expect(avatar).not.toHaveClass('rounded-xl')
+  })
+
   it('conserva el filtrado de Cursos desde la barra compartida', async () => {
     const user = userEvent.setup()
     const onSearch = vi.fn()
