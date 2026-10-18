@@ -219,7 +219,7 @@ export function Header({ onOpenSidebar, isSidebarExpanded, onToggleSidebar }: He
                 </span>
               </span>
 
-              <span className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-primary text-sm font-bold text-primary-foreground ring-2 ring-card">
+              <span className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary text-sm font-bold text-primary-foreground ring-2 ring-card">
                 {appUser?.avatarUrl ? (
                   <img
                     src={appUser.avatarUrl}
