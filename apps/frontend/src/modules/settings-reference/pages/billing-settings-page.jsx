@@ -74,7 +74,8 @@ function BillingSettingsPage({ onManage } = {}) {
     finally { cancelPending.current=false;setPending(false) }
   }
   return <div className="space-y-8">
-    <div className="flex justify-end">
+    <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Configuración</h1>
       <Button variant="outline" className="h-11 rounded-xl border-transparent bg-card font-semibold shadow-xs" onClick={() => exportDocuments()} disabled={loading || Boolean(error) || documents.length === 0}><Download className="mr-2 h-4 w-4 text-primary" />Exportar documentos</Button>
     </div>
     {loading ? <p role="status">Cargando tus pagos…</p> : error ? <FeedbackBanner tone="danger" role="alert">{error}<Button variant="ghost" className="ml-2" onClick={() => void refetch()}>Reintentar</Button></FeedbackBanner> : !overview ? <FeedbackBanner>No se recibió información de pagos.</FeedbackBanner> : <>
