@@ -249,7 +249,7 @@ describe('Sociales cuarto: contratos de geografía universal, historia y ciudada
   const frozen=evaluationCatalogForVersion('evaluation-2026.101')!
   expect(frozen.socialCommonModules!.map(m=>m.grade)).toEqual([1,2,3])
   expect(frozen.socialCommonModules![2].topics).toHaveLength(46)
-  expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.107')
+  expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.108')
  })
  for(const task of contracts.cases)for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const maxScore of [20,17.35])it(`${task.id}/${format}/${maxScore}`,()=>{
   const proposal=recommend({activityTitle:'Título antiguo de biología',description:task.description,maxScore,participationMode:'INDIVIDUAL',preferredInstrumentType:format},context,null,[],'UNMAPPED',null)

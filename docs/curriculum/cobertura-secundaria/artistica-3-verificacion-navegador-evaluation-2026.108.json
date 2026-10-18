@@ -1,0 +1,52 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.108",
+  "grade": 3,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 3,
+    "subjectCode": "ART",
+    "optativeExitName": null
+  },
+  "format": "escala",
+  "inspectedFormats": [
+    "rubrica",
+    "escala"
+  ],
+  "savedAndReopenedFormats": [
+    "escala"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "DRAMATIZATION",
+  "manualStrategy": "PROJECT_BASED",
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "11ea28b6b31da8b587aefad6b74ca33b",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "11ea28b6b31da8b587aefad6b74ca33b",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "8271f179-b182-407c-b486-1060e1cad634",
+      "format": "escala",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-BcP9YExX.js",
+  "servedAssetSha256": "9c6d9405ce4ef38ed7e3f5b46dcec1f215557d319302aea9f8c183db5139ab46",
+  "limits": [
+    "Una muestra QA identificable en3.ºA/Artística de la cuenta personal, sin calificar estudiantes. No acredita todos los temas ni actividad real de aula.",
+    "La primera consigna mencionaba dramatización sin personajes/roles/diálogo; se mantuvo Sin estrategia según las condiciones conservadoras del detector. La consigna de prueba añadió personajes ficticios que dialogan según un guion; entonces DRAMATIZATION apareció automáticamente. No se modificó el detector para forzar esta sugerencia.",
+    "Se inspeccionaron rúbrica y escala; solo escala se guardó/reabrió visualmente. Cuatro formatos20/17.35 se verificaron por HTTP/DB con una cuenta QA distinta.",
+    "PROJECT_BASED manual comprueba persistencia, no recomendación pedagógica para esta consigna. Huella READ ONLY incluye instrumento completo, snapshot, técnica, puntos e identificadores.",
+    "Dos arranques locales se cerraron por ENOTFOUND del pooler; se conservó el borrador y se recuperó una única instancia tras comprobar DNS/puerto libre, sin cambiar configuración ni credenciales. El primer runnerHTTP no escribió actividades; el siguiente reutilizó su checkpoint.",
+    "No se borraron borradores, cachés, almacenamiento o SW, ni se reenviaron enlaces o cambiaron contraseñas. DOM/HTTP confirmaron assets actuales y sw.js igual a dist; internals del service worker no inspeccionados.",
+    "Recorrido por Cursos/asignatura/Editar y reapertura final por ese enlace conocido. Persisten límites previos de Actividades global/Ver actividad."
+  ]
+}

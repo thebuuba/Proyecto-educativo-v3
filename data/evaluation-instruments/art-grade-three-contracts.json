@@ -1,0 +1,644 @@
+{
+  "grade": 3,
+  "scopeId": "ffa7fc07-03ae-596b-ab57-9e262c80bacb",
+  "sourcePdfPages": [
+    334,
+    335
+  ],
+  "policy": "REPRESENTATIVE_TASKS_NOT_FULL_COMPOUND_ROW_COVERAGE",
+  "cases": [
+    {
+      "id": "artistic-photo-series",
+      "description": "Realiza una serie de fotografías de objetos o escenas ficticias que ilustre la secuencia del texto dado. Relaciona encuadre, orden y sentido. No fotografíes caras ni datos personales.",
+      "sourceRecordIds": [
+        "df00a3ee",
+        "78e5bc56"
+      ],
+      "topicIds": [
+        "photo-series"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Secuencia visual no fotorreportaje inventado; no cámara de pago ni rasgos íntimos."
+    },
+    {
+      "id": "photo-tone-analysis",
+      "description": "Analiza la escala tonal de la fotografía proporcionada, relacionando luz, sombra y organización del volumen visible. No tomes otra fotografía.",
+      "sourceRecordIds": [
+        "20e25c8b"
+      ],
+      "topicIds": [
+        "photo-tone"
+      ],
+      "purpose": "ANALYSIS",
+      "reviewFocus": "Solo análisis tonal; no producción, color o cámara extra."
+    },
+    {
+      "id": "photo-report",
+      "description": "Elabora un fotorreportaje del acontecimiento ficticio proporcionado usando las imágenes y datos dados. Relaciona orden, pies y evidencia sin inventar hechos. No visites un lugar ni publiques fotos.",
+      "sourceRecordIds": [
+        "a511f217",
+        "530714d8"
+      ],
+      "topicIds": [
+        "photo-report"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Registro periodístico con evidencia, separado de serie narrativa artística."
+    },
+    {
+      "id": "dominican-caribbean-film",
+      "description": "Analiza la película dominicana o caribeña proporcionada, relacionando la problemática representada con recursos temáticos y técnicos observables. No reveles experiencias familiares.",
+      "sourceRecordIds": [
+        "52b0d8da",
+        "022c6960"
+      ],
+      "topicIds": [
+        "regional-film"
+      ],
+      "purpose": "ANALYSIS",
+      "reviewFocus": "Una película alternativa; sin exigir preferencias o adhesión."
+    },
+    {
+      "id": "film-screening-plan",
+      "description": "Elabora un plan de muestra escolar de cine con los cortos disponibles. Justifica selección, orden, recursos y condiciones del público. No organices todavía un evento ni contactes otras personas.",
+      "sourceRecordIds": [
+        "a499507f",
+        "ffafec41"
+      ],
+      "topicIds": [
+        "film-screening"
+      ],
+      "purpose": "PLAN",
+      "reviewFocus": "Plan ≠ evento ejecutado; no exigir cortos y largos y documentales todos."
+    },
+    {
+      "id": "fiction-short",
+      "description": "Crea un corto de ficción sobre un problema social ficticio mediante las tecnologías disponibles. Relaciona secuencia audiovisual, acciones y mensaje. No presentes sus hechos como documentación real.",
+      "sourceRecordIds": [
+        "a02f5e11"
+      ],
+      "topicIds": [
+        "fiction-short"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Ficción sin exigir entrevistas, fuentes de documental o publicación."
+    },
+    {
+      "id": "documentary-short",
+      "description": "Realiza un corto documental con las imágenes, testimonios simulados identificados y datos proporcionados sobre el caso social. Distingue evidencia e interpretación y relaciona montaje y mensaje. No inventes hechos ni grabes personas reales.",
+      "sourceRecordIds": [
+        "a02f5e11"
+      ],
+      "topicIds": [
+        "documentary-short"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Documental evidencia; no ficción presentada como real."
+    },
+    {
+      "id": "shadow-theatre-performance",
+      "description": "Representa la escena ficticia dada mediante teatro de sombras con las siluetas y luces seguras proporcionadas, relacionando proyección, movimiento y sentido. No uses luz ultravioleta.",
+      "sourceRecordIds": [
+        "edabaee9",
+        "6773b203"
+      ],
+      "topicIds": [
+        "shadow-theatre"
+      ],
+      "purpose": "PERFORMANCE",
+      "reviewFocus": "Sombras ≠ teatro negro; sin materiales costosos ni intimidad."
+    },
+    {
+      "id": "black-theatre-plan",
+      "description": "Diseña un plan de montaje de teatro negro con los recursos seguros especificados. Relaciona visibilidad, ocultamiento, objetos y acciones sin exigir una representación ejecutada.",
+      "sourceRecordIds": [
+        "edabaee9",
+        "6773b203"
+      ],
+      "topicIds": [
+        "black-theatre"
+      ],
+      "purpose": "PLAN",
+      "reviewFocus": "Plan técnico y expresivo; no confundir siluetas y proyección con ocultamiento."
+    },
+    {
+      "id": "shadow-theatre-objects",
+      "description": "Construye un muñeco o un objeto para el teatro de sombras del fragmento dado usando los materiales seguros disponibles. Relaciona silueta, articulación y función. No construyas ambos productos ni el espacio completo.",
+      "sourceRecordIds": [
+        "37169566"
+      ],
+      "topicIds": [
+        "stage-objects"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Partes técnicas solo expresas; no montaje o recitación extra."
+    },
+    {
+      "id": "video-dance",
+      "description": "Realiza una videodanza breve relacionando movimiento y encuadre según la secuencia ficticia acordada. Adapta la danza a ejecución sentada. No publiques ni filmes datos personales.",
+      "sourceRecordIds": [
+        "530cfe6b",
+        "789bac58"
+      ],
+      "topicIds": [
+        "video-dance"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Cámara-movimiento pertinente; sin apariencia/virtuosismo."
+    },
+    {
+      "id": "dance-in-audiovisual-media",
+      "description": "Compara la función de la cámara y del movimiento en el videoclip y la videodanza proporcionados. No filmes otra obra.",
+      "sourceRecordIds": [
+        "1199f4c7"
+      ],
+      "topicIds": [
+        "dance-audiovisual"
+      ],
+      "purpose": "COMPARISON",
+      "reviewFocus": "Comparación sin producir, no exigir cine si no está pedido."
+    },
+    {
+      "id": "web-inspired-stage",
+      "description": "Representa un fragmento teatral inspirado en el montaje web proporcionado, adaptando acciones y recursos al espacio disponible. Explica la referencia utilizada sin copiarlo literalmente. No publiques el resultado.",
+      "sourceRecordIds": [
+        "88ca97f9",
+        "5ea0dade"
+      ],
+      "topicIds": [
+        "web-stage"
+      ],
+      "purpose": "PERFORMANCE",
+      "reviewFocus": "Adaptación de un referente dado, sin buscar otro ni exigir todas las artes."
+    },
+    {
+      "id": "stage-appreciation",
+      "description": "Analiza los fragmentos audiovisuales de teatro y danza proporcionados, relacionando sus recursos con el sentido expresivo. No se exige asistencia presencial ni juicio sobre gustos.",
+      "sourceRecordIds": [
+        "fa45b35d"
+      ],
+      "topicIds": [
+        "stage-appreciation"
+      ],
+      "purpose": "ANALYSIS",
+      "reviewFocus": "Apreciación temática/técnica por evidencia, no disfrute privado."
+    },
+    {
+      "id": "musical-communication",
+      "description": "Crea una respuesta musical para comunicar la idea ficticia acordada usando voz, cuerpo, instrumento o sonidos del ambiente disponibles. No se exige utilizar todos los medios ni revelar sentimientos privados.",
+      "sourceRecordIds": [
+        "8ffcf1f1",
+        "350141d8"
+      ],
+      "topicIds": [
+        "musical-language"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Comunicación musical, alternativas respetadas y privacidad."
+    },
+    {
+      "id": "image-musicalization",
+      "description": "Musicaliza la secuencia de imágenes proporcionada relacionando entradas, ritmo y carácter sonoro con su sentido. No crees otras imágenes ni representes una escena.",
+      "sourceRecordIds": [
+        "7d467f0d",
+        "35a42d92",
+        "0c7c37e5"
+      ],
+      "topicIds": [
+        "musicalization"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Música y referentevisual concreto; sin proyecto adicional."
+    },
+    {
+      "id": "film-music-analysis",
+      "description": "Analiza el tema musical del fragmento cinematográfico dado y relaciona sus recursos sonoros con las acciones y el sentido de la escena. No compongas otra música.",
+      "sourceRecordIds": [
+        "463d4b1d"
+      ],
+      "topicIds": [
+        "music-function"
+      ],
+      "purpose": "ANALYSIS",
+      "reviewFocus": "Audición/función musical no producción ni géneros no pedidos."
+    },
+    {
+      "id": "ambient-programming",
+      "description": "Selecciona y programa música para el espacio público ficticio descrito, relacionando secuencia, público, volumen permitido y función. Entrega una simulación; no reproduzcas música en un espacio real.",
+      "sourceRecordIds": [
+        "3396ccdc",
+        "7a6829f2"
+      ],
+      "topicIds": [
+        "ambient-programming"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Programa ≠ concierto ejecutado; volumen solo pedido; sin permiso externo."
+    },
+    {
+      "id": "social-song-analysis",
+      "description": "Analiza el mensaje del himno o canción social proporcionado, relacionando recursos musicales y verbales con evidencias del fragmento. No se exige adhesión política ni emocional.",
+      "sourceRecordIds": [
+        "42f52ff2",
+        "0904b2b7"
+      ],
+      "topicIds": [
+        "social-song"
+      ],
+      "purpose": "ANALYSIS",
+      "reviewFocus": "Una alternativa no ambos; análisis de mensaje sin calificar creencias."
+    },
+    {
+      "id": "social-song-creation",
+      "description": "Crea una canción de contenido social sobre el caso ficticio dado. Relaciona mensaje, letra y recursos musicales elegidos. No se exige compartir una experiencia personal ni apoyar una postura predeterminada.",
+      "sourceRecordIds": [
+        "baea648b"
+      ],
+      "topicIds": [
+        "social-song"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Canción como integración musical/verbal, sin manifiesto político."
+    },
+    {
+      "id": "illustration",
+      "description": "Crea una ilustración que sintetice las relaciones centrales del texto proporcionado mediante decisiones visuales. No copies cada oración ni añadas información contradictoria.",
+      "sourceRecordIds": [
+        "549864e5"
+      ],
+      "topicIds": [
+        "illustration"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Síntesis visual con referente; no pintura genérica."
+    },
+    {
+      "id": "industrial-design",
+      "description": "Diseña una propuesta de objeto de uso común relacionando forma, materiales disponibles, función y condiciones de uso dadas. No fabriques un objeto final ni impongas una marca.",
+      "sourceRecordIds": [
+        "d51b6c79"
+      ],
+      "topicIds": [
+        "industrial-design"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Diseño industrial ≠ dibujo ornamental; propuesta sin fabricación."
+    },
+    {
+      "id": "creative-portfolio",
+      "description": "Organiza un portafolio o informe creativo de las propuestas artísticas investigadas, relacionando evidencias, técnicas, decisiones y terminología. No se exige elaborar ambos formatos ni todas las disciplinas.",
+      "sourceRecordIds": [
+        "13438001"
+      ],
+      "topicIds": [
+        "creative-portfolio"
+      ],
+      "purpose": "REPORT",
+      "reviewFocus": "Alternativas, investigación ya realizada no nueva; formato público no obligatorio."
+    },
+    {
+      "id": "simulated-art-promotion",
+      "description": "Elabora una simulación de publicación para promover la obra y el evento ficticios con la plataforma disponible. Relaciona mensaje, público y recursos; no publiques ni uses datos personales reales.",
+      "sourceRecordIds": [
+        "3780ea6b",
+        "3200fba5"
+      ],
+      "topicIds": [
+        "artistic-promotion"
+      ],
+      "purpose": "PRODUCTION",
+      "reviewFocus": "Simulación no publicación efectiva; no exigir cuentas nuevas."
+    },
+    {
+      "id": "web-diffusion-argument",
+      "description": "Argumenta la importancia y los límites de la web en la difusión artística usando las fuentes proporcionadas. Relaciona acceso, público y medios con evidencias; no se exige crear una cuenta ni publicar.",
+      "sourceRecordIds": [
+        "26a7ffd5"
+      ],
+      "topicIds": [
+        "web-diffusion"
+      ],
+      "purpose": "ANALYSIS",
+      "reviewFocus": "Argumentos con evidencia, no acciones externas."
+    },
+    {
+      "id": "arts-health-argument",
+      "description": "Argumenta sobre los aportes y límites de las artes para la salud física y mental de intérpretes y audiencia según las fuentes dadas. Distingue sus afirmaciones de diagnósticos o garantías terapéuticas.",
+      "sourceRecordIds": [
+        "97b2d47e"
+      ],
+      "topicIds": [
+        "arts-health"
+      ],
+      "purpose": "ANALYSIS",
+      "reviewFocus": "Conocimiento/argumentación; no recomendaciones médicas o diagnósticos."
+    },
+    {
+      "id": "art-social-impact",
+      "description": "Analiza el contenido y el impacto social atribuidos a la obra proporcionada, contrastando afirmaciones con evidencias del caso. No infieras emociones de la audiencia sin datos.",
+      "sourceRecordIds": [
+        "c39f23e3",
+        "9745120f",
+        "b48bc818"
+      ],
+      "topicIds": [
+        "social-impact"
+      ],
+      "purpose": "ANALYSIS",
+      "reviewFocus": "Impacto argumentado no medido por supuesto, sin investigación de campo nueva."
+    },
+    {
+      "id": "photo-tone-production",
+      "description": "Realiza una fotografía de objetos ficticios usando la luz y la sombra para organizar una escala tonal reconocible. No se pide edición digital ni fotografía de personas.",
+      "topicIds": [
+        "photo-tone"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "df00a3ee",
+        "20e25c8b"
+      ],
+      "forbidden": "edición digital obligatoria|personas identificables|secuencia narrativa|texto dado"
+    },
+    {
+      "id": "photo-series-analysis",
+      "description": "Analiza cómo la serie fotográfica proporcionada ilustra los sucesos del texto dado mediante encuadre y orden. No tomes ni edites fotos.",
+      "topicIds": [
+        "photo-series"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "78e5bc56"
+      ]
+    },
+    {
+      "id": "photo-report-analysis",
+      "description": "Analiza el fotorreportaje proporcionado, distinguiendo lo documentado en las imágenes y pies de las interpretaciones del relato. No elabores un reportaje nuevo.",
+      "topicIds": [
+        "photo-report"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "a511f217"
+      ]
+    },
+    {
+      "id": "film-screening-execution",
+      "description": "Organiza la muestra escolar de los cortos proporcionados siguiendo el programa y las condiciones de acceso acordadas. Verifica la relación entre selección, orden y recursos disponibles. No se exige organizar también un festival.",
+      "topicIds": [
+        "film-screening"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "ffafec41"
+      ]
+    },
+    {
+      "id": "fiction-short-plan",
+      "description": "Elabora un plan de corto de ficción mediante una secuencia de escenas, recursos y mensaje social ficticio acordados. No filmes todavía.",
+      "topicIds": [
+        "fiction-short"
+      ],
+      "purpose": "PLAN",
+      "sourceRecordIds": [
+        "a02f5e11"
+      ],
+      "forbidden": "filmación realizada|grabación ejecutada"
+    },
+    {
+      "id": "documentary-evidence",
+      "description": "Analiza el corto documental proporcionado, relacionando sus afirmaciones con imágenes y datos identificables. Distingue hechos, reconstrucciones e interpretación. No lo conviertas en un corto de ficción.",
+      "topicIds": [
+        "documentary-short"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "a02f5e11"
+      ]
+    },
+    {
+      "id": "black-theatre-performance",
+      "description": "Representa la escena ficticia dada mediante teatro negro utilizando los recursos seguros y el sistema de visibilidad y ocultamiento acordados. No se pide teatro de sombras ni usar todas las técnicas.",
+      "topicIds": [
+        "black-theatre"
+      ],
+      "purpose": "PERFORMANCE",
+      "sourceRecordIds": [
+        "6773b203"
+      ]
+    },
+    {
+      "id": "shadow-theatre-plan",
+      "description": "Diseña un plan de teatro de sombras con siluetas, luz y superficie de proyección proporcionadas, relacionando posición y movimiento con la acción de la escena. No representes la obra todavía.",
+      "topicIds": [
+        "shadow-theatre"
+      ],
+      "purpose": "PLAN",
+      "sourceRecordIds": [
+        "6773b203"
+      ]
+    },
+    {
+      "id": "video-dance-plan",
+      "description": "Diseña un plan de videodanza que relacione encuadres, desplazamientos adaptados y secuencia temporal. No filmes ni ejecutes la danza.",
+      "topicIds": [
+        "video-dance"
+      ],
+      "purpose": "PLAN",
+      "sourceRecordIds": [
+        "789bac58"
+      ]
+    },
+    {
+      "id": "video-dance-analysis",
+      "description": "Analiza la relación entre cámara y movimiento en la videodanza proporcionada, usando evidencias de encuadre y secuencia. No evalúes apariencia corporal.",
+      "topicIds": [
+        "video-dance"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "530cfe6b"
+      ]
+    },
+    {
+      "id": "musical-language-analysis",
+      "description": "Explica cómo los recursos del lenguaje musical comunican la idea ficticia en el fragmento dado. No infieras sentimientos privados ni compongas otra pieza.",
+      "topicIds": [
+        "musical-language"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "8ffcf1f1"
+      ]
+    },
+    {
+      "id": "music-appreciation",
+      "description": "Analiza la obra musical de la audición proporcionada usando los criterios técnicos y expresivos dados. No se exige asistir a una presentación en vivo ni declarar una preferencia.",
+      "topicIds": [
+        "musical-appreciation"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "28449e1c"
+      ]
+    },
+    {
+      "id": "ambient-programming-analysis",
+      "description": "Compara las dos programaciones de música ambiental proporcionadas, relacionando selección, orden y función con el público y el espacio descritos. No produzcas otra programación.",
+      "topicIds": [
+        "ambient-programming"
+      ],
+      "purpose": "COMPARISON",
+      "sourceRecordIds": [
+        "7a6829f2"
+      ]
+    },
+    {
+      "id": "illustration-analysis",
+      "description": "Compara las ilustraciones proporcionadas según cómo sintetizan el contenido del texto dado mediante decisiones visuales. No dibujes otra ilustración.",
+      "topicIds": [
+        "illustration"
+      ],
+      "purpose": "COMPARISON",
+      "sourceRecordIds": [
+        "549864e5"
+      ]
+    },
+    {
+      "id": "industrial-model",
+      "description": "Construye una maqueta del diseño industrial dado para comprobar las relaciones de forma, material y uso expresamente indicadas. No fabriques el objeto definitivo ni compres materiales.",
+      "topicIds": [
+        "industrial-design"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "d51b6c79",
+        "ecbb1b4d"
+      ]
+    },
+    {
+      "id": "artistic-integration",
+      "description": "Crea una propuesta que integre la imagen y el sonido disponibles, relacionando los recursos de ambas disciplinas con el mensaje ficticio acordado. No se exige incorporar danza ni teatro.",
+      "topicIds": [
+        "art-integration"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "b1c56da7"
+      ]
+    },
+    {
+      "id": "contextual-art-analysis",
+      "description": "Analiza los elementos identitarios representados en las obras proporcionadas, relacionando símbolos y contexto con evidencias visuales. No describas tu identidad ni califiques pertenencia cultural.",
+      "topicIds": [
+        "identity-in-art"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "ffc02472"
+      ]
+    },
+    {
+      "id": "collaborative-art-observation",
+      "description": "Registra la frecuencia con que cada rol realiza las acciones y acuerdos de la creación artística grupal expresamente dados. No infieras personalidad ni evalúes simpatía.",
+      "topicIds": [
+        "artistic-collaboration"
+      ],
+      "purpose": "OBSERVATION",
+      "sourceRecordIds": [
+        "ac46a190"
+      ]
+    },
+    {
+      "id": "popular-manifestation",
+      "description": "Explica las características de la manifestación artística popular de los ejemplos dados, relacionando sus recursos y contexto. No inventes una obra nueva.",
+      "topicIds": [
+        "popular-art"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "e4290c77"
+      ]
+    },
+    {
+      "id": "heritage-art-contribution",
+      "description": "Argumenta los aportes de la obra de una época pasada al patrimonio artístico según las fuentes dadas, relacionando rasgos y contribuciones con evidencias. No se exige admiración ni adhesión personal.",
+      "topicIds": [
+        "heritage-art"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "6d7eb815"
+      ]
+    },
+    {
+      "id": "social-context-creation",
+      "description": "Crea una propuesta artística de contenido social a partir del análisis del caso ficticio proporcionado, relacionando decisiones expresivas y evidencias de sus necesidades. No uses testimonios reales privados.",
+      "topicIds": [
+        "social-context-creation"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "f5212985",
+        "8499298e"
+      ]
+    },
+    {
+      "id": "art-technology",
+      "description": "Crea una obra con la herramienta tecnológica disponible elegida, relacionando su función con las decisiones expresivas pedidas. No se exige una plataforma nueva ni equipo de pago.",
+      "topicIds": [
+        "art-technology"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "34a09704"
+      ]
+    },
+    {
+      "id": "photo-requirements",
+      "description": "Verifica si la serie fotográfica proporcionada cumple los requisitos explícitos de orden y relación con el texto dados en la ficha. No evalúes talento ni belleza.",
+      "topicIds": [
+        "photo-series"
+      ],
+      "purpose": "VERIFICATION",
+      "sourceRecordIds": [
+        "78e5bc56"
+      ]
+    },
+    {
+      "id": "weighted-video-dance",
+      "description": "Realiza una videodanza con componentes de movimiento y encuadre relacionados. Usa una lista ponderada con crédito parcial por los componentes acordados. No se exige publicarla.",
+      "topicIds": [
+        "video-dance"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "789bac58"
+      ]
+    },
+    {
+      "id": "single-artistic-photo",
+      "description": "Crea una fotografía artística de objetos ficticios relacionando encuadre y organización visual con la idea acordada. No se pide una serie ni un texto narrativo.",
+      "topicIds": [
+        "photo-series"
+      ],
+      "purpose": "PRODUCTION",
+      "sourceRecordIds": [
+        "df00a3ee"
+      ],
+      "forbidden": "orden de las fotografías|secuencia del texto"
+    },
+    {
+      "id": "artistic-photo-explanation",
+      "description": "Explica la función del encuadre y la organización visual en la fotografía artística proporcionada. No se pide una serie ni narrar una historia.",
+      "topicIds": [
+        "photo-series"
+      ],
+      "purpose": "ANALYSIS",
+      "sourceRecordIds": [
+        "df00a3ee"
+      ],
+      "forbidden": "serie|texto|narrativ"
+    }
+  ]
+}

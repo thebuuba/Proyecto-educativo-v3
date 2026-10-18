@@ -12,9 +12,9 @@ import { evaluationCatalogCurrent } from '../../apps/backend/src/modules/evaluat
 
 const flag = process.argv.indexOf('--grade'),
   grade = flag < 0 ? 1 : Number(process.argv[flag + 1])
-assert([1,2].includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
-const pdfPages = grade === 1 ? [330,331] : [332,333]
-const gradeName = grade === 1 ? 'one' : 'two'
+assert([1,2,3].includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
+const pdfPages = grade === 1 ? [330,331] : grade === 2 ? [332,333] : [334,335]
+const gradeName = grade === 1 ? 'one' : grade === 2 ? 'two' : 'three'
 const module = commonArtModules.find((row) => row.grade === grade)
 assert(module, 'Grado con proveedor conectado requerido')
 const directory = 'docs/curriculum/cobertura-secundaria/'
@@ -62,11 +62,15 @@ const exclusions = (grade === 1 ? [
     explanation:
       'No se califica capacidad imaginativa ni preferencia por la originalidad; se observan decisiones de síntesis y transformación del producto pedido.',
   },
-] : [
+] : grade === 2 ? [
   { prefix: 'da7ef7d0', reason: 'PURE_HEADING', explanation: 'Encabezado Artes Visuales; no desempeño independiente.' },
   { prefix: '8a98d0d0', reason: 'PRIVATE_CAPACITY', explanation: 'Capacidad imaginativa y valoración de originalidad no son atributos privados puntuables; se observan decisiones del producto pedido.' },
   { prefix: '8b3358e3', reason: 'PRIVATE_LEISURE', explanation: 'No se puntúa el entretenimiento del estudiante en su ocio privado.' },
   { prefix: '1812e660', reason: 'PRIVATE_CAPACITY', explanation: 'No se infiere capacidad creativa propia o ajena; se analizan evidencias y decisiones de obras concretas.' },
+] : [
+  ...['541d41bb','ed32be0b','f9362901','c3bf9f72'].map(prefix => ({ prefix, reason: 'PURE_HEADING', explanation: 'Encabezado de lenguaje artístico, sin desempeño independiente.' })),
+  { prefix: '7060b34d', reason: 'PRIVATE_LEISURE', explanation: 'No se puntúa el entretenimiento de los momentos de ocio privado.' },
+  { prefix: '95944dbb', reason: 'PRIVATE_ENJOYMENT', explanation: 'Disfrutar la programación artística no es un desempeño verificable ni un atributo personal puntuable.' },
 ]).map(({ prefix, ...row }) => {
   const original = literal.find((item) => item.id.startsWith(prefix))
   assert(original)

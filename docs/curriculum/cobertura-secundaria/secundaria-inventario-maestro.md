@@ -44,7 +44,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Ciencias de la Naturaleza | 6 | Común | 319, 320, 321, 322 | VERIFIED_DEFINED_PATTERNS |
 | Educación Artística | 1 | Común | 330, 331 | REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE |
 | Educación Artística | 2 | Común | 332, 333 | REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE |
-| Educación Artística | 3 | Común | 334, 335 | PENDING |
+| Educación Artística | 3 | Común | 334, 335 | REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE |
 | Educación Artística | 4 | Común | 341, 342, 343 | PENDING |
 | Educación Artística | 5 | Común | 344, 345, 346 | PENDING |
 | Educación Artística | 6 | Común | 347, 348, 349 | PENDING |
