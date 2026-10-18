@@ -36,7 +36,7 @@ const allContracts=mediaMode?[...media,...media]:JSON.parse(readFileSync(contrac
 const casesFlag=process.argv.indexOf('--cases'),selectedIds=casesFlag<0?null:process.argv[casesFlag+1]?.split(',')
 if(selectedIds){
  assert(selectedIds.length&&new Set(selectedIds).size===selectedIds.length,'Identifica muestras distintas')
- assert(proceduralMode&&grade>1,'La selección explícita requiere un checkpoint procedimental por grado')
+ assert((proceduralMode||productMode)&&grade>1,'La selección explícita requiere contratos procedimentales o de productos por grado')
  assert(selectedIds.every(id=>allContracts.some(c=>c.id===id)),'Hay una consigna desconocida')
 }
 const procedural=selectedIds?selectedIds.map(id=>allContracts.find(c=>c.id===id)):allContracts

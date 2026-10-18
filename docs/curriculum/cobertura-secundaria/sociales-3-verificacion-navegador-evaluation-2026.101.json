@@ -1,0 +1,44 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.101",
+  "grade": 3,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "format": "escala",
+  "inspectedFormats": [
+    "rubrica",
+    "escala"
+  ],
+  "savedAndReopenedFormats": [
+    "escala"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisibleFromEmptyForm": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "PROJECT_BASED",
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "7a0c3e4aaa8654410519168a5fa3b39e",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "7a0c3e4aaa8654410519168a5fa3b39e",
+  "activities": [
+    {
+      "id": "ab8ee5cd-fafc-40a9-b7ef-c5e2b5f2c0ba",
+      "format": "escala",
+      "criteria": 5,
+      "score": 17.35,
+      "competencyBlock": "b3"
+    }
+  ],
+  "servedAsset": "/assets/index-UTZZ-Zd5.js",
+  "servedAssetSha256": "d774d30104e49f7e43d74305e446b531f1cb62023feed80742a5fe86f9298d20",
+  "limits": [
+    "Recorrido visual de una muestra QA identificable en la cuenta personal y su curso habitual de3.º; no todos los temas o familias del grado.",
+    "La consigna inicial de planificación recomendó Proyecto y rúbrica, con Sin estrategia por no describir el ciclo completo de ABProyectos. Al añadir explícitamente análisis del caso concreto y decisión justificada, se sugirió Estudio de caso. No se modificó el detector ni se infirió una estrategia solo por la palabra proyecto.",
+    "Se inspeccionó la rúbrica de cinco criterios y se seleccionó manualmente escala. Solo la escala se guardó y reabrió visualmente en101; los otros formatos se verificaron mediante HTTP/DB y pruebas automáticas.",
+    "El texto manual del primer indicador, los cinco indicadores, cuatro niveles y17.35 se conservaron tras guardar, reabrir y cambiar solo la estrategia.",
+    "Se conservaron caché, service worker, almacenamiento y borradores previos. No se inspeccionaron internals del service worker ni se prueba aquí recuperación de un borrador nuevo sin guardar al recargar.",
+    "Se accedió por Cursos→asignatura→Actividades. Ver actividad dirigió a la lista global ya documentada; se reabrió desde la asignatura sin modificar ese flujo."
+  ]
+}

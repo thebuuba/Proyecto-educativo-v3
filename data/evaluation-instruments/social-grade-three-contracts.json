@@ -1,0 +1,1033 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 3,
+  "scopeId": "a20024b4-dbfb-5d69-8a4c-40c94deb4889",
+  "policy": "ONE_EXPLICIT_SAMPLE_IS_NOT_FULL_PROCEDURAL_COVERAGE",
+  "cases": [
+    {
+      "id": "american-peopling-sources",
+      "description": "Explica los antecedentes históricos del poblamiento de América en los casos y las fuentes proporcionados, distinguiendo evidencias e hipótesis. No añadas datos de otros períodos.",
+      "family": "CONCEPT_SOURCE_EXPLANATION",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "6b79201b-8e73-564c-adeb-d9440ccc9ab6"
+      ],
+      "sourceRecordType": "CONCEPT",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "economic-activities-comparison",
+      "description": "Compara las actividades económicas indicadas de Brasil y México mediante las dimensiones y fuentes proporcionadas. No investigues la formación de Brasil.",
+      "family": "CONCEPT_COMPARISON",
+      "requiredKeys": [
+        "comparison",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "8c1cedb8-f78b-5b03-976b-c6d706032a06"
+      ],
+      "sourceRecordType": "CONCEPT",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "natural-resource-impacts",
+      "description": "Compara las consecuencias socioambientales y económicas de la explotación de los recursos naturales en los casos dados de República Dominicana y América Latina, y propone una alternativa sostenible respaldada por sus condiciones. No ejecutes intervenciones reales.",
+      "family": "INDICATOR_IMPACT_COMPARISON",
+      "requiredKeys": [
+        "comparison",
+        "proposal"
+      ],
+      "sourceRecordIds": [
+        "c698495b-fc78-5127-a281-dfb513eef148"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "populism-brazil-argentina",
+      "description": "Compara el populismo de Getulio Vargas en Brasil y Juan Domingo Perón en Argentina con las dimensiones y fuentes proporcionadas. No expliques la formación de Brasil ni expreses adhesión a sus líderes.",
+      "family": "CONCEPT_COMPARISON",
+      "requiredKeys": [
+        "comparison",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "fd127f77-1062-586a-b886-19fb562245ee"
+      ],
+      "sourceRecordType": "CONCEPT",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "expansion-reliable-pages",
+      "description": "Selecciona cuáles fuentes impresas y páginas digitales proporcionadas sobre el Gran Garrote y la Guerra Hispano-Cubana-Americana son confiables y justifica tu selección con autoría, procedencia y respaldo. No publiques datos personales.",
+      "family": "INDICATOR_SOURCE_RELIABILITY",
+      "requiredKeys": [
+        "source-reliability"
+      ],
+      "sourceRecordIds": [
+        "0e6aaebc-4695-5a5f-9006-96dfc7bc8db9"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "american-hydrographic-map",
+      "description": "Interpreta los mapas proporcionados de las cuencas hidrográficas, ríos y lagos de América, utilizando las leyendas para relacionar las zonas y conexiones indicadas. No dibujes otro mapa ni calcules superficies.",
+      "family": "INDICATOR_MAP_READING",
+      "requiredKeys": [
+        "hydrographic-map-reading"
+      ],
+      "sourceRecordIds": [
+        "83a12a39-3f0f-5579-8b12-ce6c93ff3d8d"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "american-geological-origin",
+      "description": "Explica las teorías sobre el origen geológico del continente americano con las evidencias proporcionadas. No añadas corrientes políticas.",
+      "family": "GEOLOGICAL_EXPLANATION",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "abaf3dcf-1644-5cb1-b3d4-10a7c03f7b71"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "geological-theory-discussion",
+      "description": "Compara y discute con tus compañeros las teorías geológicas sobre el origen del continente americano a partir de las evidencias dadas. Responde a las objeciones del caso. No defiendas una ideología.",
+      "family": "THEORY_DISCUSSION",
+      "requiredKeys": [
+        "comparison",
+        "discussion"
+      ],
+      "sourceRecordIds": [
+        "2608fcd1-dc3b-5a71-8e8f-e90a02d9023d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "social-thought-sources",
+      "description": "Interpreta los planteamientos liberales, positivistas, socialistas, marxistas y de la teoría crítica en los textos proporcionados, diferenciando los autores y sus contextos. No los uses para explicar las placas tectónicas.",
+      "family": "SOCIAL_THEORY_INTERPRETATION",
+      "requiredKeys": [
+        "perspectives",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "83cac220-39fd-5ae5-83d0-97469d846c38"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "seismic-theory-classification",
+      "description": "Clasifica las teorías sobre los movimientos sísmicos en América mediante los fundamentos y evidencias proporcionados. No clasifiques personas ni sus creencias.",
+      "family": "THEORY_CLASSIFICATION",
+      "requiredKeys": [
+        "classification"
+      ],
+      "sourceRecordIds": [
+        "b3190beb-c4e0-529c-a276-8065a2f46786"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "geography-conceptual-ideas",
+      "description": "Elabora tus propias ideas conceptuales de geografía física, humana y económica del continente americano, explicando el objeto de cada campo con los ejemplos dados. Sin hacer una infografía.",
+      "family": "CONCEPTUAL_EXPLANATION",
+      "requiredKeys": [
+        "conceptual-explanation"
+      ],
+      "sourceRecordIds": [
+        "044956ea-3187-5dd3-8401-b232d0ac2da4"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "geography-concepts-research",
+      "description": "Investiga en las fuentes proporcionadas los conceptos de geografía física, humana y económica del continente americano y distingue su objeto de estudio. No recopiles datos personales.",
+      "family": "RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "d82172d4-d630-57c9-8e38-c17471415a20"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "geography-branches-research",
+      "description": "Investiga las principales ramas de la geografía física, humana y económica de América en las fuentes indicadas y relaciona cada una con su objeto. No inventes ramas ausentes de los textos.",
+      "family": "RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "0d0f1ba5-ba25-5f4b-a366-5d681826e135"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "american-climate-vegetation",
+      "description": "Analiza la variación del clima y la vegetación entre las regiones de América representadas en los mapas proporcionados, usando las leyendas y referencias espaciales. No añadas datos de otros continentes.",
+      "family": "SPATIAL_ANALYSIS",
+      "requiredKeys": [
+        "map-comparison"
+      ],
+      "sourceRecordIds": [
+        "c7dbe8b5-3530-5b2d-9381-38d2b2f80b38"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "population-production-monograph",
+      "description": "Elabora una monografía sobre el crecimiento poblacional de América y sus modelos productivos con las fuentes proporcionadas, delimitando los períodos y relacionando ambos procesos. No hagas encuestas personales.",
+      "family": "MONOGRAPH",
+      "requiredKeys": [
+        "monograph-content",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "b91adc6c-1769-5504-b1ba-697c92ff521a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "prehispanic-theories",
+      "description": "Explica las teorías sobre las sociedades prehispánicas de América mediante las evidencias y contextos proporcionados. No las valores por preferencias culturales personales.",
+      "family": "HISTORICAL_EXPLANATION",
+      "requiredKeys": [
+        "interpretation"
+      ],
+      "sourceRecordIds": [
+        "91e4ae2e-2457-57bf-9195-058ea11e1a41"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "colonial-societies-discussion",
+      "description": "Discute con tus compañeros las características de las sociedades coloniales de la América hispana con los hechos de las fuentes proporcionadas y responde a las objeciones indicadas. No representes una adhesión política.",
+      "family": "HISTORICAL_DISCUSSION",
+      "requiredKeys": [
+        "discussion"
+      ],
+      "sourceRecordIds": [
+        "3600c822-e532-5e8b-8596-16f4bd83f449"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "brazil-development-research",
+      "description": "Investiga la formación y el desarrollo de Brasil en las fuentes dadas, ajustando los hallazgos a sus períodos y contextos. Sin añadir otros países.",
+      "family": "RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "30eae8c4-1c77-543f-9181-076779f1cbd8"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "american-production-models",
+      "description": "Investiga en distintas fuentes los modelos de producción del continente americano indicados, diferenciando los hallazgos de tus inferencias. No estudies un modelo ausente de los casos.",
+      "family": "RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "476b494c-4fac-5915-a0e9-fa3f559107ef"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "industrial-nature-impact",
+      "description": "Analiza los efectos del crecimiento industrial en la naturaleza en los casos de América proporcionados y justifica los hallazgos con las evidencias dadas. No agregues otros procesos sin datos.",
+      "family": "CAUSAL_ANALYSIS",
+      "requiredKeys": [
+        "consequences",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "b7d85411-0d9c-5e4f-b6e9-215e839ce99d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "pollution-studies",
+      "description": "Interpreta los planteamientos de los autores y los estudios sobre contaminación ambiental en América proporcionados, distinguiendo sus afirmaciones y evidencias. No exijas una postura personal.",
+      "family": "SOURCE_INTERPRETATION",
+      "requiredKeys": [
+        "perspectives",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "7cb3664d-5381-5f28-bf80-fbaa44f0b8db"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "urban-nature-studies",
+      "description": "Consulta los estudios proporcionados sobre los efectos del crecimiento urbano en la naturaleza en América y sintetiza los hallazgos respaldados, distinguiendo datos e inferencias. No realices trabajo de campo.",
+      "family": "SOURCE_CONSULTATION",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "760540a9-dfbd-54b7-ab39-2d02fcbe6097"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "us-expansion-research",
+      "description": "Investiga el expansionismo estadounidense en América entre 1900 y1930 en las fuentes proporcionadas. No confundas las fechas de origen de las doctrinas con su aplicación posterior.",
+      "family": "RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "298eb64b-d10a-5262-88bb-a014d148881c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "spanish-empire-caribbean-sources",
+      "description": "Consulta fuentes históricas sobre el fin del imperio español en las Antillas y las intervenciones de Estados Unidos en el Caribe entre 1895 y1898. No añadas intervenciones posteriores.",
+      "family": "HISTORICAL_SOURCE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "41c347ae-dd4d-5393-bfb8-e450bbb97e31"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "hegemony-summary",
+      "description": "Elabora un resumen de la hegemonía estadounidense en América y el Caribe durante el siglo XX con los hechos y las fuentes indicados. No redactes un ensayo de opinión.",
+      "family": "HISTORICAL_SUMMARY",
+      "requiredKeys": [
+        "summary-content"
+      ],
+      "sourceRecordIds": [
+        "afad6c18-1813-5b59-83e7-88629139c1cb"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "hegemony-essay",
+      "description": "Redacta un ensayo sobre la hegemonía estadounidense en América y el Caribe durante el siglo XX y argumenta tus conclusiones con las fuentes proporcionadas. No expreses adhesión personal.",
+      "family": "HISTORICAL_ESSAY",
+      "requiredKeys": [
+        "argumentative-text",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "afad6c18-1813-5b59-83e7-88629139c1cb"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "monroe-destiny-policy",
+      "description": "Analiza el uso de la Doctrina Monroe y el Destino Manifiesto en los gobiernos de Roosevelt y Wilson según las fuentes dadas. No atribuyas a esos gobiernos el origen de ambas doctrinas.",
+      "family": "POLICY_ANALYSIS",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "c6e7f0f2-602f-54b5-b332-57fcf3492084"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "puerto-rico-transfer-brochure",
+      "description": "Elabora un folleto sobre el traspaso colonial de Puerto Rico a Estados Unidos para el destinatario indicado, usando las fuentes proporcionadas. No añadas otro territorio.",
+      "family": "HISTORICAL_BROCHURE",
+      "requiredKeys": [
+        "audience-message"
+      ],
+      "sourceRecordIds": [
+        "c620fc11-4b36-59f1-856c-59d9e2751284"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "occupation-resistance-article",
+      "description": "Elabora un artículo científico de historia sobre las implicaciones de los movimientos de resistencia a la ocupación militar indicados: cacoísmo, gavilleros dominicanos, movimiento nacionalista de Puerto Rico, Sandino y Farabundo Martí. Sustenta el análisis con las fuentes proporcionadas. No hagas experimentos ni expreses adhesión política.",
+      "family": "HISTORICAL_ARTICLE",
+      "requiredKeys": [
+        "historical-article-content",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "4ab385f5-8355-5e92-ac04-e9b4dd61b292"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "mexican-revolution-newspaper",
+      "description": "Elabora un periódico escolar sobre la Revolución mexicana de 1910 a 1917 con las fuentes proporcionadas. Relaciona el papel de Madero, Pancho Villa y Emiliano Zapata con los planes de Ayala y San Luis de Potosí indicados. No añadas imágenes ni noticias actuales.",
+      "family": "SCHOOL_NEWSPAPER",
+      "requiredKeys": [
+        "school-newspaper-content"
+      ],
+      "sourceRecordIds": [
+        "89739c62-ccad-5b25-aee1-3bc72e80760d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "panama-separation-hypothesis",
+      "description": "Formula una hipótesis transitoria sobre las implicaciones de la construcción del Canal de Panamá y la separación de Panamá de Colombia con los hechos del caso. No la presentes como comprobada.",
+      "family": "HYPOTHESIS",
+      "requiredKeys": [
+        "hypothesis"
+      ],
+      "sourceRecordIds": [
+        "8158978f-80c8-5cd5-b856-3a28ced2d0cf"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "panama-nicaragua-interventions",
+      "description": "Compara las intervenciones militares de Estados Unidos en Panamá en1903 y en Nicaragua entre 1912 y1933 según las fuentes proporcionadas, conservando los contextos de cada caso. Sin añadir otras intervenciones.",
+      "family": "HISTORICAL_COMPARISON",
+      "requiredKeys": [
+        "comparison",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "574c5ee5-67ac-5535-89a6-78829058df55"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "dollar-diplomacy-argument",
+      "description": "Redacta un texto argumentativo sobre la diplomacia del dólar en los casos históricos proporcionados, sustentando la afirmación con razones y evidencias. No opines sobre finanzas personales.",
+      "family": "ARGUMENTATIVE_TEXT",
+      "requiredKeys": [
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "50257d43-4681-5d38-97d5-0c5a857fd105"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "millions-depression-hypothesis",
+      "description": "Formula hipótesis sobre la relación entre la danza de los millones de 1919 y la crisis mundial de 1929, distinguiendo datos y explicaciones provisionales de los casos dados. No supongas una causalidad comprobada.",
+      "family": "HYPOTHESIS",
+      "requiredKeys": [
+        "hypothesis"
+      ],
+      "sourceRecordIds": [
+        "b9888b28-3034-5467-a69d-9fbc09b7c677"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "depression-authors-comparison",
+      "description": "Compara las informaciones publicadas por los autores proporcionados sobre la extensión de la crisis de 1929 a la década de 1930 en Estados Unidos y otros países de América, distinguiendo sus evidencias y conclusiones. No investigues nuevas fuentes.",
+      "family": "SOURCE_COMPARISON",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "sourceRecordIds": [
+        "2490b5b6-bf77-5c6f-ba46-632d50bd623a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "spanish-civil-war-research",
+      "description": "Investiga la Guerra Civil Española y su impacto en América Latina entre 1936 y1939 en las fuentes seguras indicadas. No añadas la Primera Guerra Mundial.",
+      "family": "RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "1fd493ce-072f-527f-8d90-8708a1110a21"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "war-crisis-research-plan",
+      "description": "Organiza un plan de investigación sobre la crisis económica durante la Segunda Guerra Mundial de 1939 a 1945: delimita la pregunta y las fuentes que consultarías. No presentes hallazgos como ya obtenidos.",
+      "family": "RESEARCH_PLAN",
+      "requiredKeys": [
+        "research-plan-question",
+        "research-plan-sources"
+      ],
+      "sourceRecordIds": [
+        "2cb9482c-e251-567b-ae5f-83524dec44dd"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "world-war-antecedents",
+      "description": "Investiga en las fuentes confiables proporcionadas los antecedentes que dieron lugar a la Segunda Guerra Mundial. No desarrolles sus consecuencias ni la posguerra.",
+      "family": "RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "db599354-6c3b-58b9-9550-1b79028b775c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "war-deficit-graphs",
+      "description": "Analiza los gráficos estadísticos proporcionados sobre el déficit económico de los países participantes en la Segunda Guerra Mundial, conservando las unidades y períodos de los valores. No estimes datos ausentes.",
+      "family": "STATISTICAL_READING",
+      "requiredKeys": [
+        "statistical-series"
+      ],
+      "sourceRecordIds": [
+        "bb31a973-d1fd-5316-a847-0d66050aed24"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "world-war-multimedia",
+      "description": "Crea una presentación multimedia sobre los eventos históricos, sociales, políticos y económicos de la Segunda Guerra Mundial y sus líderes clave indicados en las fuentes dadas. Relaciona los textos e imágenes proporcionados sin inventar acontecimientos. No compres software.",
+      "family": "HISTORICAL_MULTIMEDIA",
+      "requiredKeys": [
+        "historical-multimedia-content",
+        "multimedia-relations"
+      ],
+      "sourceRecordIds": [
+        "f0db2add-265b-538d-aaa5-c8330c12f7fb"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "dictatorship-comparison",
+      "description": "Compara las dictaduras de Iberoamérica y el Caribe del siglo XX en los casos proporcionados mediante dimensiones políticas comunes. No compares creencias privadas.",
+      "family": "POLITICAL_COMPARISON",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "sourceRecordIds": [
+        "812ee3ca-68e4-57d7-8377-6947c5fa3648"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "postwar-dictators-research",
+      "description": "Investiga las dictaduras y los caudillismos surgidos después de la Segunda Guerra Mundial en las fuentes seguras indicadas. No expreses adhesión a sus líderes.",
+      "family": "RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "7c2d9bfb-4b44-5ee4-ac6e-099acd7be35c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "dictatorship-causes-effects",
+      "description": "Analiza las causas y consecuencias de las dictaduras iberoamericanas de los casos proporcionados, diferenciando antecedentes y efectos con sus contextos. No juzgues la personalidad del estudiante.",
+      "family": "CAUSAL_ANALYSIS",
+      "requiredKeys": [
+        "causes",
+        "consequences"
+      ],
+      "sourceRecordIds": [
+        "a69f0fad-6e55-534b-bcd8-2b3d6a9e23ac"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "postwar-us-hegemony",
+      "description": "Investiga el fin de la Segunda Guerra Mundial y la hegemonía de Estados Unidos en las fuentes proporcionadas, conservando sus contextos de posguerra. No añadas el Gran Garrote.",
+      "family": "RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "769cf9d0-74b4-5aad-8add-735eb25bbc9e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "dominican-war-economy-infographic",
+      "description": "Elabora una infografía sobre la economía dominicana durante la Segunda Guerra Mundial y las medidas adoptadas por Trujillo que aparecen en las fuentes proporcionadas. Relaciona textos e imágenes sin expresar adhesión personal.",
+      "family": "HISTORICAL_INFOGRAPHIC",
+      "requiredKeys": [
+        "visual-information",
+        "visual-relations"
+      ],
+      "sourceRecordIds": [
+        "a1d06ffc-8afe-586a-aadf-dd5a926be947"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "dominican-war-coldwar-organizer",
+      "description": "Elabora un mapa conceptual sobre el impacto de la Segunda Guerra Mundial y la Guerra Fría en la República Dominicana con los hechos dados y explica el significado de sus conexiones. No traces un mapa geográfico.",
+      "family": "HISTORICAL_ORGANIZER",
+      "requiredKeys": [
+        "organizer-relations"
+      ],
+      "sourceRecordIds": [
+        "554b1b1e-d974-50eb-9fc1-a209451e5c0d"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "postwar-changes-timeline",
+      "description": "Elabora una línea de tiempo de los cambios económicos y sociales ocurridos entre 1945 y1960 con los hechos y fechas proporcionados. No añadas hechos de 1990.",
+      "family": "CHRONOLOGY",
+      "requiredKeys": [
+        "sequence"
+      ],
+      "sourceRecordIds": [
+        "8beefdcb-6bb3-5ddb-8133-22c561db2e70"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "cuban-impact-newspaper",
+      "description": "Elabora un periódico escolar sobre el impacto de la Revolución cubana en Latinoamérica y la República Dominicana usando las fuentes proporcionadas. No redactes noticias actuales ni manifiestos de adhesión.",
+      "family": "SCHOOL_NEWSPAPER",
+      "requiredKeys": [
+        "school-newspaper-content"
+      ],
+      "sourceRecordIds": [
+        "2856aa23-12f3-547d-93e2-699cb8d35672"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "coldwar-end-research",
+      "description": "Investiga el fin de la Guerra Fría y la caída del socialismo en las fuentes seguras proporcionadas, diferenciando hechos, actores y explicaciones de sus contextos. No añadas corrientes filosóficas como causa automática.",
+      "family": "RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "07b925b5-b98f-5193-a7ba-c3dc3a8b662e"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "coldwar-mural-roundtable",
+      "description": "Elabora un mural y participa en una mesa redonda sobre la incidencia de la Guerra Fría en América Latina. Usa las evidencias proporcionadas y responde a las preguntas del intercambio. No exijas materiales costosos.",
+      "family": "MULTIPLE_HISTORICAL_PRODUCTS",
+      "requiredKeys": [
+        "visual-information",
+        "roundtable"
+      ],
+      "sourceRecordIds": [
+        "227fe9e2-2aaa-564c-96cd-a6163a1e3451"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "coldwar-end-chart",
+      "description": "Elabora un cuadro comparativo de los factores que propiciaron el fin de la Guerra Fría y la caída del socialismo en los casos dados. Distingue los hechos y períodos de cada proceso sin expresar adhesión personal.",
+      "family": "CAUSAL_COMPARISON_CHART",
+      "requiredKeys": [
+        "comparison"
+      ],
+      "sourceRecordIds": [
+        "86c764a6-aaf2-50f9-8b2a-cb2e61d1ce58"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "universal-rights-declaration",
+      "description": "Explica la Declaración Universal de los Derechos Humanos de 1948 en el contexto de la ONU y su alcance en los artículos proporcionados. No atribuyas un derecho ausente del texto.",
+      "family": "HISTORICAL_RIGHTS_EXPLANATION",
+      "requiredKeys": [
+        "interpretation",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "52ff13ca-8c4d-58f8-8d06-095115ac09ba"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "symbol-history-research",
+      "description": "Investiga la historia y el significado de los símbolos patrios indicados con las fuentes proporcionadas. No califiques sentimientos patrióticos ni el canto del himno.",
+      "family": "HISTORICAL_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "afe7aa08-81a9-54f6-bd80-62aaeeee00d2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "symbol-memory-game",
+      "description": "Elabora un juego didáctico de memoria sobre la historia y los rasgos de los símbolos patrios indicados, usando las referencias proporcionadas. No se valoran sentimientos personales ni materiales costosos.",
+      "family": "DIDACTIC_GAME",
+      "requiredKeys": [
+        "symbol-game-content"
+      ],
+      "sourceRecordIds": [
+        "afe7aa08-81a9-54f6-bd80-62aaeeee00d2"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "symbol-cultural-presentation",
+      "description": "Presenta oralmente el significado cultural de la bandera, el escudo y el himno nacional según las referencias históricas proporcionadas. No interpretes el himno ni demuestres adhesión personal.",
+      "family": "CULTURAL_PRESENTATION",
+      "requiredKeys": [
+        "interpretation",
+        "oral"
+      ],
+      "sourceRecordIds": [
+        "b9c80a3e-b82f-598d-8b19-895129a4083c"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "governance-development-research",
+      "description": "Investiga y presenta oralmente los hallazgos sobre gobernanza, desarrollo económico y democracia en América y el Caribe en las fuentes dadas. No califiques preferencias partidarias.",
+      "family": "CIVIC_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources",
+        "oral"
+      ],
+      "sourceRecordIds": [
+        "fb32c61e-bbeb-53c7-a998-68304f92d58a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "local-conflict-research-plan",
+      "description": "Elabora un plan de investigación de los conflictos generados por el incumplimiento de los valores humanos y sociales en el entorno ficticio indicado: delimita una pregunta y las fuentes anónimas que consultarías. No recopiles vivencias privadas ni presentes hallazgos como realizados.",
+      "family": "SOCIAL_RESEARCH_PLAN",
+      "requiredKeys": [
+        "research-plan-question",
+        "research-plan-sources"
+      ],
+      "sourceRecordIds": [
+        "49d08b37-e96c-5732-a612-cc77a6e11c3a"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "state-violence-prevention",
+      "description": "Investiga en las fuentes proporcionadas los organismos del Estado encargados de prevenir la violencia y el narcotráfico en la República Dominicana, diferenciando sus funciones en el caso ficticio. No identifiques personas reales ni investigues delitos.",
+      "family": "CIVIC_SOURCE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "8212d471-228b-56ba-8d13-9122404c0753"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "traffic-law-source-research",
+      "description": "Investiga las normas que regulan el tránsito en la República Dominicana en los documentos proporcionados para el ejercicio y explica su alcance en el caso. No inventes números de leyes ni afirmes su vigencia sin comprobarla.",
+      "family": "CIVIC_SOURCE_RESEARCH",
+      "requiredKeys": [
+        "research-content",
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "4f362c29-ec2f-5d79-a8f0-276327032194"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "road-campaign-print-alternative",
+      "description": "Elabora en equipo un cartel o un folleto para una campaña de educación vial que explique las normas proporcionadas al destinatario indicado. Se valora únicamente la alternativa elegida. No ejecutes una campaña real.",
+      "family": "CAMPAIGN_ALTERNATIVE",
+      "requiredKeys": [
+        "alternative"
+      ],
+      "sourceRecordIds": [
+        "a2f5d636-8c81-5dd5-bac0-aa9dc4bef064"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "road-campaign-video",
+      "description": "Crea en equipo un vídeo para una campaña de educación vial que comunique las normas proporcionadas al destinatario indicado, relacionando imágenes y mensaje. No publiques datos personales ni compres equipos.",
+      "family": "CAMPAIGN_VIDEO",
+      "requiredKeys": [
+        "campaign-message",
+        "multimedia-relations"
+      ],
+      "sourceRecordIds": [
+        "a2f5d636-8c81-5dd5-bac0-aa9dc4bef064"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "budget-tax-essay",
+      "description": "Revisa el extracto del Presupuesto Nacional proporcionado y redacta un ensayo argumentativo sobre el uso de los impuestos, relacionando las partidas y los servicios indicados con sus evidencias. No calcules impuestos personales.",
+      "family": "BUDGET_ARGUMENTATIVE_ESSAY",
+      "requiredKeys": [
+        "budget-evidence",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "35ec8bf6-a63d-507a-8871-b67c23170ff9"
+      ],
+      "sourceRecordType": "PROCEDURE",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "american-relief-map",
+      "description": "Identifica en los mapas proporcionados de América las grandes líneas de relieve, fallas geológicas y fosas tectónicas indicadas, usando sus referencias y leyendas. No inventes procesos atmosféricos.",
+      "family": "INDICATOR_MAP_READING",
+      "requiredKeys": [
+        "map-feature-identification"
+      ],
+      "sourceRecordIds": [
+        "43d77db1-1f9f-54f3-a86e-dbed8bac5d0d"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "geological-opinion-article",
+      "description": "Analiza las teorías del origen geológico de América mediante un artículo de opinión que argumente sus conclusiones con las evidencias proporcionadas. No sustituya la geología por teorías políticas.",
+      "family": "INDICATOR_ARGUMENTATIVE_ARTICLE",
+      "requiredKeys": [
+        "argumentative-text",
+        "argument"
+      ],
+      "sourceRecordIds": [
+        "69c39f55-5518-57d5-be1c-772f7b5e5d60"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "antiplagiarism-report",
+      "description": "Analiza el informe antiplagio proporcionado de un texto sobre la Segunda Guerra Mundial y sus fuentes: verifica las coincidencias en su contexto y propone correcciones de atribución. No consideres que el porcentaje demuestra plagio ni autenticidad histórica. No instales programas ni envíes textos a servicios externos.",
+      "family": "PROVIDED_SIMILARITY_REPORT",
+      "requiredKeys": [
+        "similarity-context",
+        "attribution-correction"
+      ],
+      "sourceRecordIds": [
+        "c99808f6-829d-5649-b3dd-6c0b52061754"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "constitutional-government",
+      "description": "Analiza los artículos de la Constitución de la República Dominicana proporcionados para el ejercicio sobre las características de nuestro gobierno, relacionando sus disposiciones con el caso ficticio. No inventes artículos ni afirmes su vigencia actual.",
+      "family": "PROVIDED_CONSTITUTIONAL_ARTICLES",
+      "requiredKeys": [
+        "constitutional-evidence"
+      ],
+      "sourceRecordIds": [
+        "009c385a-1f61-5fbd-ba8b-8356b08c4d2d"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "peace-project",
+      "description": "Elabora un proyecto de cultura de paz para el conflicto ficticio indicado: explica el propósito, las acciones, los recursos proporcionados y las evidencias de seguimiento que permitirían comprobar su realización. No presentes la planificación como ejecutada ni investigues vivencias privadas.",
+      "family": "PEACE_PROJECT_PLAN",
+      "requiredKeys": [
+        "project-purpose",
+        "project-actions",
+        "project-follow-up"
+      ],
+      "sourceRecordIds": [
+        "058dbd98-b785-5e9b-a322-117f1919bd05"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "collaborative-negotiation",
+      "description": "Participa en un diálogo constructivo y una negociación colaborativa sobre el conflicto ficticio indicado, reformulando las razones expresadas por las partes y examinando alternativas con los criterios dados. Registra acuerdos y desacuerdos justificados. No fuerces un acuerdo ni reveles vivencias privadas.",
+      "family": "OBSERVABLE_DIALOGUE_NEGOTIATION",
+      "requiredKeys": [
+        "dialogue-contributions",
+        "negotiation-alternatives"
+      ],
+      "sourceRecordIds": [
+        "fcf89104-6055-5821-bcef-0ab3fb73fdde"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "environmental-functional-letter",
+      "description": "Redacta una carta argumentativa dirigida al concejo municipal ficticio sobre las consecuencias de la contaminación ambiental en el caso proporcionado, con razones respaldadas por sus evidencias, y propone una solución viable para mitigarlas. No envíes la carta ni exijas una postura personal.",
+      "family": "FUNCTIONAL_ARGUMENTATIVE_LETTER",
+      "requiredKeys": [
+        "functional-message",
+        "argument",
+        "proposal"
+      ],
+      "sourceRecordIds": [
+        "6c134d42-3453-5ea1-8557-868dd2c4710b"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "urban-consequences-strategies",
+      "description": "Compara críticamente las consecuencias del crecimiento urbano en las regiones indicadas, relacionando sus factores y transformaciones espaciales con los datos proporcionados, y propone estrategias de gestión sostenible de las ciudades respaldadas por las condiciones de cada caso. No ejecutes intervenciones reales.",
+      "family": "URBAN_COMPARISON_AND_STRATEGIES",
+      "requiredKeys": [
+        "comparison",
+        "proposal"
+      ],
+      "sourceRecordIds": [
+        "6e32494a-87f2-5a80-b0fd-903cd79f21b5"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "geography-fields-infographic",
+      "description": "Elabora una infografía sobre la geografía física, humana y económica de América con los conceptos y ejemplos proporcionados, relacionando los textos y recursos visuales. No compres materiales.",
+      "family": "GEOGRAPHICAL_INFOGRAPHIC",
+      "requiredKeys": [
+        "visual-information",
+        "visual-relations"
+      ],
+      "sourceRecordIds": [
+        "2990036c-73cd-5a07-b903-a275bad2b97d"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "historical-society-maps",
+      "description": "Analiza los mapas históricos proporcionados de las sociedades prehispánicas y de las sociedades coloniales de América, utilizando sus leyendas y períodos para interpretar los procesos representados. No dibujes otro mapa ni inventes límites ausentes.",
+      "family": "HISTORICAL_MAP_READING",
+      "requiredKeys": [
+        "historical-map-reading"
+      ],
+      "sourceRecordIds": [
+        "123320e2-7ccb-5bdc-ba1f-b1c3c082aaa4"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "war-territorial-maps",
+      "description": "Analiza los mapas de la división de territorios como consecuencia de la Segunda Guerra Mundial proporcionados, conservando las fechas y leyendas indicadas para interpretar los cambios espaciales. No dibujes otro mapa ni agregues fronteras actuales.",
+      "family": "HISTORICAL_TERRITORIAL_MAP_READING",
+      "requiredKeys": [
+        "historical-map-reading"
+      ],
+      "sourceRecordIds": [
+        "123320e2-7ccb-5bdc-ba1f-b1c3c082aaa4"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "governance-democratic-proposal",
+      "description": "Propone acciones que promuevan la gobernanza, el desarrollo económico y la democracia como Estado de derecho en el caso ficticio, explicando su viabilidad con las condiciones y derechos indicados. No valores preferencias partidarias.",
+      "family": "DEMOCRATIC_GOVERNANCE_PROPOSAL",
+      "requiredKeys": [
+        "proposal"
+      ],
+      "sourceRecordIds": [
+        "254406fd-6d1d-5f33-b0e9-3b8767a624ed"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    },
+    {
+      "id": "dictatorships-human-rights",
+      "description": "Compara las dictaduras iberoamericanas de los casos proporcionados, relacionando sus sistemas de gobierno y las vulneraciones de derechos humanos indicadas con las fuentes dadas. No juzgues las creencias del estudiante.",
+      "family": "POLITICAL_AND_RIGHTS_COMPARISON",
+      "requiredKeys": [
+        "comparison",
+        "source-evidence"
+      ],
+      "sourceRecordIds": [
+        "e9c537c0-af84-5731-8bdf-635a802f2431"
+      ],
+      "sourceRecordType": "ACHIEVEMENT_INDICATOR",
+      "absent": "debe profesar|fidelidad ideológica obligatoria|comprar materiales obligatoriamente|experimento de laboratorio obligatorio"
+    }
+  ]
+}

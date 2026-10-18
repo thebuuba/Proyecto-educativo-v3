@@ -128,6 +128,7 @@ if(existsSync(browserPath)){
  matrix.verification.browser={status:browser.catalog===matrix.providerCatalog?browser.status:'PREVIOUS_CATALOG_ONLY_CURRENT_PENDING',catalog:browser.catalog,evidence:browserPath,format:browser.format,limits:browser.limits}
  if(matrix.verification.httpEvidence)matrix.verification.httpEvidence.browser=matrix.verification.browser.status
 }
+if(matrix.verification.httpDb==='AUTHENTICATED_FOUR_FORMATS_SAVED_REOPENED'&&matrix.verification.browser?.catalog===matrix.providerCatalog&&matrix.verification.fullReview?.pending===0)matrix.status='REPRESENTATIVE_VARIANTS_HTTP_PERSONAL_VERIFIED_NOT_FULL_PROCEDURAL_COVERAGE'
 writeFileSync(output+`sociales-${grade}-matriz.json`,JSON.stringify(matrix,null,2)+'\n')
 writeFileSync(output+`sociales-${grade}-instrumentos.json`,JSON.stringify(examples,null,2)+'\n')
 const selected=examples.filter(e=>e.id==='causal'||e.id==='chronology'||e.id==='spatial'||e.id==='perspectives'||e.id==='argument'||e.id==='alternative')

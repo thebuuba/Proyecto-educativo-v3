@@ -1,0 +1,212 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "grade": 3,
+  "scopeId": "a20024b4-dbfb-5d69-8a4c-40c94deb4889",
+  "method": "MANUAL_SEMANTIC_SOURCE_GROUPING_NOT_FULL_ACTION_COVERAGE",
+  "topicRecords": {
+    "american-geology": [
+      "999a7b7e",
+      "d6a9c900",
+      "abaf3dcf",
+      "2608fcd1",
+      "b3190beb"
+    ],
+    "american-relief": [
+      "d6a9c900",
+      "cb3ae1ac",
+      "1be65149"
+    ],
+    "american-water": [
+      "080eea18"
+    ],
+    "american-climate": [
+      "8a95359f",
+      "c7dbe8b5"
+    ],
+    "geography-fields": [
+      "80e969a1",
+      "7993236f",
+      "fab31c52",
+      "044956ea",
+      "d82172d4",
+      "0d0f1ba5"
+    ],
+    "american-peopling": [
+      "6b79201b"
+    ],
+    "population-structure": [
+      "6b79201b",
+      "1e7bcd13",
+      "b91adc6c"
+    ],
+    "urban-rural": [
+      "c2d725b7",
+      "760540a9"
+    ],
+    "production-models": [
+      "b4a4c1e9",
+      "476b494c",
+      "b91adc6c"
+    ],
+    "economic-activities": [
+      "8c1cedb8"
+    ],
+    "industrial-impact": [
+      "c81c8134",
+      "b7d85411"
+    ],
+    "pollution": [
+      "47f0924c",
+      "7cb3664d"
+    ],
+    "natural-resources": [
+      "4fca5575",
+      "35a2b1bd"
+    ],
+    "prehispanic-societies": [
+      "9cc0aa44",
+      "91e4ae2e"
+    ],
+    "colonial-societies": [
+      "018facb6",
+      "3600c822"
+    ],
+    "brazil": [
+      "b8b6265c",
+      "30eae8c4"
+    ],
+    "social-theories": [
+      "83cac220"
+    ],
+    "us-expansion": [
+      "8fb6c276",
+      "59c867c9",
+      "298eb64b",
+      "afad6c18"
+    ],
+    "big-stick": [
+      "3532ce29"
+    ],
+    "monroe-destiny": [
+      "b4ef6fa2",
+      "c6e7f0f2"
+    ],
+    "spanish-empire-end": [
+      "8c404082",
+      "41c347ae"
+    ],
+    "puerto-rico-transfer": [
+      "c620fc11"
+    ],
+    "us-interventions": [
+      "8949fa3b",
+      "41c347ae",
+      "574c5ee5"
+    ],
+    "occupation-resistance": [
+      "0720a839",
+      "4ab385f5"
+    ],
+    "mexican-revolution": [
+      "89739c62"
+    ],
+    "panama-canal-separation": [
+      "8158978f"
+    ],
+    "dollar-diplomacy": [
+      "50257d43"
+    ],
+    "great-depression": [
+      "57fbbd14",
+      "b9888b28",
+      "2490b5b6"
+    ],
+    "spanish-civil-war": [
+      "196b8549",
+      "1fd493ce"
+    ],
+    "world-war-two": [
+      "db599354",
+      "f0db2add"
+    ],
+    "world-war-two-economy": [
+      "a5a2caf0",
+      "2cb9482c",
+      "bb31a973"
+    ],
+    "dictatorships": [
+      "39edef34",
+      "2531484f",
+      "812ee3ca",
+      "7c2d9bfb",
+      "a69f0fad"
+    ],
+    "populism": [
+      "39edef34",
+      "fd127f77"
+    ],
+    "postwar-hegemony": [
+      "e352f241",
+      "769cf9d0"
+    ],
+    "postwar-changes": [
+      "54639671",
+      "8beefdcb"
+    ],
+    "cuban-revolution": [
+      "5435758a",
+      "2856aa23"
+    ],
+    "dominican-war-coldwar": [
+      "8739dd99",
+      "a1d06ffc",
+      "554b1b1e"
+    ],
+    "coldwar-end": [
+      "1f1e0409",
+      "07b925b5",
+      "86c764a6"
+    ],
+    "coldwar-latin-america": [
+      "227fe9e2"
+    ],
+    "human-rights": [
+      "3a636420",
+      "52ff13ca"
+    ],
+    "governance-democracy": [
+      "3a636420",
+      "fb32c61e"
+    ],
+    "national-symbols": [
+      "21efe2f5",
+      "afe7aa08",
+      "b9c80a3e"
+    ],
+    "peace": [
+      "f58181a0",
+      "49d08b37"
+    ],
+    "violence-prevention": [
+      "a40f5f0f",
+      "8212d471"
+    ],
+    "road-safety": [
+      "8f7a005b",
+      "4f362c29",
+      "a2f5d636"
+    ],
+    "taxes": [
+      "cd39a4ce",
+      "35ec8bf6"
+    ]
+  },
+  "indicatorTopicRecords": {},
+  "limits": [
+    "La correspondencia de98registros conceptuales/procedimentales no acredita automáticamente todas sus acciones ni instrumentos.",
+    "Tres encabezados permanecen en la fuente literal y se excluyen solo como temas evaluables independientes.",
+    "El procedimiento83cac220 se agrupa como corrientes sociales de pensamiento; no se convierte en teoría geológica ni se exige adhesión ideológica.",
+    "Los procedimientos compuestos conservan su literal y pueden enlazar varios grupos; no recortar su texto para imponer una única actividad.",
+    "Los indicadores y actitudes/valores mantienen sus tipos. No se convierten intereses, sentimientos o preferencias políticas en puntuación personal."
+  ]
+}

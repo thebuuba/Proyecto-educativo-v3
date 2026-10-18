@@ -1,0 +1,539 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "grade": 3,
+  "catalog": "evaluation-2026.101",
+  "verification": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "coverage": {
+    "availableContracts": 75,
+    "selectedCaseIds": [
+      "geological-theory-discussion",
+      "natural-resource-impacts",
+      "constitutional-government",
+      "road-campaign-video",
+      "antiplagiarism-report",
+      "collaborative-negotiation",
+      "world-war-multimedia",
+      "population-production-monograph",
+      "environmental-functional-letter",
+      "urban-consequences-strategies",
+      "historical-society-maps",
+      "budget-tax-essay"
+    ],
+    "limits": "Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación."
+  },
+  "sourceScope": "66633476-0ab4-5bc6-803a-a21f825889cd",
+  "curriculumVersionId": "aba3dd3d-8ea0-5ae8-9c44-9aeb07df08f6",
+  "samples": [
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "5380ef5d-a318-41de-9ce7-9b3f7bdb9dd8",
+      "snapshotId": "9fd80335-ffcd-4ccb-bb52-134b0383012c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "44c0a0c201652868ef8a82d88546ae1c5a550d51e08f8ac893075cda22c84e49"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "f3da12d4-d1d4-4784-9fda-591fe04791d6",
+      "snapshotId": "2bb3c19d-674b-4ab9-9cd9-b0e3918f7de4",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "2656b231036fc8e65edff9d29815a4e0bb41cb90f4b550fc8bf9857f3750b69c"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "99eacfd6-1302-401b-83bc-f3ae562f2453",
+      "snapshotId": "bac10303-3ad2-4f71-871d-edb7fbbfb454",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "8579acaf019ed23b2c1961a22e397b70772e43b7049abb43f39d073ab053bef3"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "a4d44dca-e167-4869-a148-18d200e283b2",
+      "snapshotId": "147bcb75-8b0a-4813-846c-525040491add",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "1647eb738d351bab66be8e1d884c9b389e93572d9fe2e720b798de5876dfb573"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "007fe8d3-db6b-4d59-bd09-a95e486ac63b",
+      "snapshotId": "451344b9-2b92-4967-8d0e-a2dd4ae5b431",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "ada0cf69d0fc26d16e15c56419023140d2deac093261a044f79825a5e38e3c86"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "fe1c6cff-3fea-411b-ae9b-7cdf4eab0801",
+      "snapshotId": "a0797837-033a-44fa-b4dd-e1f12ee3354f",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "6c3d3ce17815f174972cfddd0518957ecb230c4c50f81ed51b619938c0535acf"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "6c27611e-8e72-4d3b-b4eb-6a9f374bea56",
+      "snapshotId": "3c34e8a2-4995-4e28-9464-ce4187a6a7fa",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "34f01077b4ff22fbb299deb9972f7a7637a6d8a033fe63d460b5446e8f9b10e3"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "cf71d062-4395-48e6-b526-a64c2fa917f8",
+      "snapshotId": "3fcec440-6ce2-4397-92c7-d9840a456bd3",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "fa47bb85d12b0d0c3135955daaee4af257e9a67a364f2f8663bd3a6bf25a6edb"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "e3a442c6-1da7-4715-858e-0c327d7500a7",
+      "snapshotId": "44a82055-dbaa-48f8-b514-6e568d05053c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "c0d03a45c02f0e58f740bcc112d84c252373a9551ea0d9f4eb914065c4434d3b"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "ba66f478-a060-440c-8b67-3244e85519e7",
+      "snapshotId": "07ddd8b7-4fb2-4c5b-9f53-5bb601828bc1",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "9cc4ce95a885749e8675d70b9396804f666a1bfd6faa2e5c3a032bec9b1be5e8"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "d108360d-f0ad-482c-b403-f4ad65a7f099",
+      "snapshotId": "20015861-07b5-4725-b260-eb55e9282738",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "ec9b8e5efaa57b052b6c53647a0686c3105ff29da5b5a38021e65b320f731090"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "d37212d0-75c6-49b6-9d18-db012633b2e0",
+      "snapshotId": "517d5c8e-a7d7-4d0a-87a0-5ee168bf5802",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "6554927f622691f8ca3942b37abdda6d8176d0f4f2f2a9532a026bd4d8461128"
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 5385.4893999999995
+    },
+    {
+      "endpoint": "/activities/center?contextOnly=true",
+      "status": 200,
+      "ms": 3521.2919
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 400,
+      "ms": 5539.563
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 4656.732800000002
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 5179.858700000001
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5106.2042
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 3170.554100000001
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4610.610100000005
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 2699.3343999999997
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7029.339099999997
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 4814.413399999998
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4910.1558
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 2355.6045000000013
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3795.798499999997
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 2898.295300000005
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7272.515100000004
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 6871.257400000002
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5529.603999999992
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 2674.9519
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3638.593200000003
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 3116.8464999999997
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 9445.032200000001
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 5986.2834
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5685.608399999997
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 6698.5638000000035
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3326.76890000001
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 3029.8705999999947
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 16448.398199999996
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 4706.545799999993
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4190.3627999999735
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 4411.050900000002
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4334.5124999999825
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 3036.0850999999966
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 6375.3609
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 7091.787400000001
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5014.033100000001
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 4703.050199999998
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4055.3864000000176
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 2144.779200000019
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 6282.308799999999
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 6417.27370000002
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4031.9591000000073
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 5463.442099999986
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3949.70180000001
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 6963.598700000002
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7298.4054999999935
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 6839.309600000008
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4441.6651999999885
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 5619.195100000012
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4187.959000000003
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 4010.6389999999665
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 4666.516999999993
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 4427.784700000018
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4457.231800000009
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 3588.012800000026
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4393.639099999971
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 5725.739900000044
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7524.90889999998
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9366.720700000005
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4855.465499999991
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 2581.389099999971
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3216.8647000000346
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 2351.1945000000414
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 5325.060599999968
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 6137.2199000000255
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5111.248100000026
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 5016.256699999969
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4615.724499999953
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 4549.625400000019
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 6983.8515999999945
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 5787.887900000031
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4281.361399999994
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 6250.369600000035
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3829.270900000003
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=6110ba58-bd1b-4c2b-af9a-cc4d4d365088",
+      "status": 200,
+      "ms": 5636.841300000029
+    }
+  ],
+  "browser": "PERSONAL_REPRESENTATIVE_SEPARATE_EVIDENCE",
+  "timingSummary": {
+    "interpretation": {
+      "samples": 12,
+      "medianMs": 7007,
+      "minMs": 4657,
+      "maxMs": 16448
+    },
+    "recommendation": {
+      "samples": 12,
+      "medianMs": 6062,
+      "minMs": 4428,
+      "maxMs": 9367
+    },
+    "save": {
+      "samples": 24,
+      "medianMs": 4364,
+      "minMs": 3217,
+      "maxMs": 5686
+    }
+  },
+  "limits": [
+    "Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación.",
+    "Las muestras son diferentes de las de2.º: estos tiempos describen la ejecución, sin atribuir una regresión o mejora causal entre grados.",
+    "Los criterios adaptados mantienen sourceReferences vacías; la selección oficial y el scope identifican el contexto de recomendación. Al alinear un snapshot editado se eliminan selecciones sin criterio literal correspondiente. No afirmar atribución literal individual de estos criterios."
+  ]
+}

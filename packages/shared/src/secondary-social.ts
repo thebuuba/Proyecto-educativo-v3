@@ -3,10 +3,12 @@ import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import type {InstrumentType,InstrumentRecommendation} from './instrument-recommendation'
 import {socialGradeOneTopics,type SocialTopic} from './secondary-social-grade-1'
 import {socialGradeTwoTopics} from './secondary-social-grade-2'
+import {socialGradeThreeTopics} from './secondary-social-grade-3'
 import {addSecondGradeSocialEvidence} from './secondary-social-grade-2-evidence'
+import {addThirdGradeSocialEvidence,thirdGradeCreatesProduct} from './secondary-social-grade-3-evidence'
 import {withoutResources} from './evaluation-task-text'
 
-export const commonSocialModules=[{id:'ciencias-sociales-comun-1',grade:1,topics:socialGradeOneTopics,policy:'REQUESTED_SOCIAL_EVIDENCE_V4'},{id:'ciencias-sociales-comun-2',grade:2,topics:socialGradeTwoTopics,policy:'REQUESTED_SOCIAL_EVIDENCE_V2'}]
+export const commonSocialModules=[{id:'ciencias-sociales-comun-1',grade:1,topics:socialGradeOneTopics,policy:'REQUESTED_SOCIAL_EVIDENCE_V4'},{id:'ciencias-sociales-comun-2',grade:2,topics:socialGradeTwoTopics,policy:'REQUESTED_SOCIAL_EVIDENCE_V2'},{id:'ciencias-sociales-comun-3',grade:3,topics:socialGradeThreeTopics,policy:'REQUESTED_SOCIAL_EVIDENCE_V1'}]
 const normalize=(s:string)=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
 const verbs=`(?:${['analiz','analic','interpret','explic','expliqu','compar(?!t)','contrast','identific','identifiqu','describ','ubic','ubiqu','localiz','orden','elabor','constru','redact','investig','consult','debat','argument','justific','justifiqu','propon','propong','present','expon','registr','represent','simul','formul','comprob','comprueb','indag','indagu','diferenci','produc','observ','caracteriz','discut','evalu','valor','calcul','realiz','respond','particip','dramatiz','dramatic','socializ','socialic','busc','busqu','recolect','sintetiz','sintetic','plante','indic(?!ador)','indiqu','utiliz','utilic','emple','us(?:a|e)','clasifi(?:ca(?!cion)|que)','cre(?:a(?!cion|dor|tiv)|e)'].map(v=>v+'[a-z]*').join('|')})`
 /** Preserve clause boundaries: a negative requirement cannot suppress a later positive action. */
@@ -18,9 +20,14 @@ function requestedText(value:string){
 type SocialAction={text:string;topics:SocialTopic[]}
 export type CommonSocialTask={grade:number;actions:SocialAction[];activityType:string;technique:string}
 const has=(text:string,action:string)=>new RegExp(`\\b(?:${action})[a-z]*\\b`).test(text)
+const selects=(text:string)=>/\bseleccion(?:a|an|ar|ara|aran|e|en|ando)\b/.test(text)
 const compares=(text:string,grade=1)=>{
- const actions=grade===2?text.replace(/\bdiferencias\b|\b(?:distinguiendo|diferenciando)\s+(?:datos|hechos)\s+(?:e|y|de)\s+(?:inferencias|interpretaciones)\b/g,''):text
- if(grade===2&&!has(actions,'compar(?!t)|contrast')&&/\b(?:distingue|distinguiendo|diferenciando)\s+(?:(?:los?|las?|sus)\s+)?(?:que informacion|datos|hechos|valores|normas|obligaciones|testimonios|ambos procesos|sus relaciones)/.test(actions))return false
+ const actions=grade>=2?text.replace(/\bdiferencias\b|\b(?:distinguiendo|diferenciando)\s+(?:datos|hechos)\s+(?:e|y|de)\s+(?:inferencias|interpretaciones)\b/g,''):text
+ if(grade===3&&!has(actions,'compar(?!t)|contrast')&&/\b(?:distingue|distinguiendo|diferenciando)\s+(?:los\s+)?hallazgos\s+de\s+(?:(?:tus|sus|las)\s+)?inferencias\b/.test(actions))return false
+ if(grade===3&&!has(actions,'compar(?!t)|contrast')&&/\b(?:distingue|distinguiendo|diferenciando)\s+(?:los\s+)?antecedentes\s+y\s+(?:los\s+)?efectos\b/.test(actions))return false
+ if(grade===3&&!has(actions,'compar(?!t)|contrast')&&/\b(?:distingue|distinguiendo|diferenciando)\s+(?:sus|las) funciones\b/.test(actions))return false
+ if(grade===3&&!has(actions,'compar(?!t)|contrast')&&/\b(?:distingue|distinguiendo|diferenciando)\s+(?:(?:los?|las?|sus)\s+)?(?:afirmaciones|evidencias|autores|contextos)\b/.test(actions))return false
+ if(grade>=2&&!has(actions,'compar(?!t)|contrast')&&/\b(?:distingue|distinguiendo|diferenciando)\s+(?:(?:los?|las?|sus)\s+)?(?:que informacion|datos|hechos|valores|normas|obligaciones|testimonios|ambos procesos|sus relaciones)/.test(actions))return false
  return has(actions,'compar(?!t)|distingu|diferenci')||has(actions,'contrast')&&!/hipotesis|argumentos? con (?:el|un|las?) (?:caso|evidencia)/.test(actions)
 }
 const oral=(text:string)=>/\boralmente\b|\bexpon[a-z]*\b|\bexposicion\b/.test(text)
@@ -35,6 +42,14 @@ const productAlternatives=(text:string)=>text.split(/\s+o\s+(?:bien\s+)?(?=(?:un
 const observedFrequency=(text:string)=>/frecuencia|regularidad/.test(text)&&has(text,'observ|registr')&&/reglas|cumplimiento|conducta|comportamiento/.test(text)
 function matches(text:string,topics:SocialTopic[]){
  let selected=topics.filter(t=>text.includes(normalize(t.label))||new RegExp(`\\b(?:${t.match})\\b`).test(text))
+ if(selected.some(t=>t.grade===3)){
+  const includes=(id:string)=>selected.some(t=>t.id===id)
+  if(includes('dominican-war-coldwar')&&!/contexto mundial|impacto mundial|impacto global|otros paises|en el mundo/.test(text))selected=selected.filter(t=>!['world-war-two','world-war-two-economy','coldwar-latin-america'].includes(t.id))
+  if(includes('world-war-two-economy')&&!/antecedentes|acontecimientos|eventos historicos|lideres/.test(text))selected=selected.filter(t=>t.id!=='world-war-two')
+  if(includes('dictatorships')&&/(?:despues de|tras) la segunda guerra mundial/.test(text))selected=selected.filter(t=>t.id!=='world-war-two')
+  if(includes('postwar-hegemony'))selected=selected.filter(t=>!['world-war-two','us-expansion'].includes(t.id))
+  if(includes('coldwar-end')&&!/(?:incidencia|repercusiones)[^.;]*america latina|durante la guerra fria/.test(text))selected=selected.filter(t=>t.id!=='coldwar-latin-america')
+ }
  if(selected.some(t=>t.grade===2&&t.id==='war-dominican-economy'))selected=selected.filter(t=>!['first-world-war','dominican-society'].includes(t.id))
  if(selected.some(t=>t.grade===2&&t.id==='us-economic-rise')&&/tematica/.test(text)&&/estados unidos y canada/.test(text))selected=selected.filter(t=>t.id!=='first-world-war')
  if(selected.some(t=>t.grade===2&&t.id==='human-impact')&&/cambio climatico/.test(text)&&!/tipos de clima|factores geograficos|climogramas?/.test(text))selected=selected.filter(t=>t.id!=='climate')
@@ -53,9 +68,10 @@ function matches(text:string,topics:SocialTopic[]){
  return thematic&&has(text,'elabor|represent|constru|ubic|ubiqu|localiz')?selected.filter(t=>t.id!=='cartography'):selected
 }
 function splitActions(text:string,grade:number){
- const parts=text.split(new RegExp(`(?:[.;\\n]+\\s*|\\s+(?:y|e|luego|despues)\\s+)(?=(?:(?:los estudiantes|cada estudiante)\\s+)?${verbs}\\b)`)).filter(Boolean)
+ const activeVerbs=grade===3?`(?:${verbs.replace('explic[a-z]*','explic(?!acion)[a-z]*')}|seleccion(?:a|an|ar|ara|aran|e|en|ando))`:verbs
+ const parts=text.split(new RegExp(`(?:[.;\\n]+\\s*|\\s+(?:y|e|luego|despues)\\s+)(?=(?:(?:los estudiantes|cada estudiante)\\s+)?${activeVerbs}\\b)`)).filter(Boolean)
  // Coordinated verbs can share one object: «formula y comprueba una hipótesis».
- const bareAction=grade===2?`^(?:(?:los estudiantes|cada estudiante)\\s+)?${verbs}\\s*$`:`(?:^|\\s)${verbs}\\s*$`
+ const bareAction=grade>=2?`^(?:(?:los estudiantes|cada estudiante)\\s+)?${activeVerbs}\\s*$`:`(?:^|\\s)${verbs}\\s*$`
  for(let i=parts.length-2;i>=0;i--)if(new RegExp(bareAction).test(parts[i]))parts.splice(i,2,parts[i]+' y '+parts[i+1])
  return parts.reduce<string[]>((actions,part)=>{
   const previous=actions.at(-1)
@@ -76,10 +92,18 @@ function splitActions(text:string,grade:number){
    ||/climogram/.test(previous)&&/^compar(?:a|e)los\b/.test(part)
    ||actions.some(researches)&&/^present[a-z]* hallazgos/.test(part)
    ||/documentos?|protocolos|legislaciones|medidas ambientales/.test(previous)&&/^expli(?:ca|que)[a-z]* (?:sus?|los) alcances/.test(part)
+   ||grade===3&&researches(previous)&&/normas|documentos/.test(previous)&&/^expli(?:ca|que)[a-z]* su alcance\b/.test(part)
    ||/esquema|organizador/.test(previous)&&/^expli(?:ca|que)[a-z]* el significado de (?:las )?conexiones/.test(part)
+   ||grade===3&&/mapa conceptual/.test(previous)&&/^expli(?:ca|que)[a-z]* el significado de (?:sus|las) conexiones/.test(part)
    ||/grafic/.test(previous)&&/^expli[a-z]* los hallazgos/.test(part)
    ||/hipotesis/.test(previous)&&has(previous,'discut')&&/^respond[a-z]* a las objeciones/.test(part)
    ||researches(previous)&&/^present[a-z]* una propuesta ecologica/.test(part)
+   ||grade===3&&has(previous,'discut')&&/^respond[a-z]* a las objeciones/.test(part)
+   ||grade===3&&researches(previous)&&/^sinteti[a-z]* los hallazgos/.test(part)
+   ||grade===3&&/fuentes/.test(previous)&&/confiab|credib/.test(previous)&&/^justifi(?:ca|que)[a-z]* (?:tu|su|la) seleccion (?:con|mediante|a partir de)/.test(part)
+   ||grade===3&&/mesa redonda/.test(previous)&&has(previous,'particip')&&(/^(?:usa|utiliza|emplea)[a-z]* (?:las )?evidencias/.test(part)||/^respond[a-z]* a las preguntas/.test(part))
+   ||grade===3&&/informe antiplagio/.test(previous)&&/^propon[a-z]* correcciones de atribucion/.test(part)
+   ||grade===3&&/negociacion colaborativa/.test(previous)&&/^registr[a-z]* acuerdos/.test(part)
   )
   if(linked)actions[actions.length-1]+=' y '+part
   else actions.push(part)
@@ -90,7 +114,7 @@ export function resolveCommonSocialTask(title:string,description:string,context?
  if(context?.level!=='SECONDARY'||context.optativeExitName||context.subjectCode.trim().toUpperCase()!=='SOC')return null
  const topics=(providedTopics??commonSocialModules.find(m=>m.grade===context.grade)?.topics??[]).filter(t=>t.grade===context.grade)
  const text=requestedText(description||title),selected=matches(text,topics)
- if(!selected.length||!new RegExp(`\\b${verbs}\\b`).test(text))return null
+ if(!selected.length||!new RegExp(`\\b${verbs}\\b`).test(text)&&!(context.grade===3&&selects(text)))return null
  let previous:SocialTopic[]=selected
  const actions=splitActions(text,context.grade).map(text=>{
   let own=matches(text,topics)
@@ -102,12 +126,24 @@ export function resolveCommonSocialTask(title:string,description:string,context?
  const expositoryArticle=context.grade===2&&/articulo expositivo/.test(text)&&has(text,'redact')
  const hypothesisDiscussion=context.grade===2&&/hipotesis/.test(text)&&has(text,'discut')
  const weatherHandling=context.grade===2&&selected.some(t=>t.id==='weather-instruments')&&has(text,'utiliz|maneja|emplea')&&/instrucciones|manejo/.test(text)
- const activityType=alternativeProduct?'PROJECT':expositoryArticle?'WRITTEN_PRODUCTION':hypothesisDiscussion?'ORAL_INTERACTION':weatherHandling?'PERFORMANCE':observedFrequency(text)?'OBSERVATION':/dialogo socratico|lluvia de ideas|\bpanel\b/.test(text)?'ORAL_INTERACTION':has(text,'debat')?'DEBATE':oral(text)?'ORAL_PRESENTATION':researches(text)?'RESEARCH':/linea de tiempo|\bproyecto\b/.test(text)?'PROJECT':performs(text)?'PERFORMANCE':compares(text,context.grade)?'COMPARISON':/\b(?:elabor[a-z]*|redact[a-z]*)\b[^.;]*\binforme\b/.test(text)?'REPORT':'ANALYSIS'
+ let activityType=alternativeProduct?'PROJECT':expositoryArticle?'WRITTEN_PRODUCTION':hypothesisDiscussion?'ORAL_INTERACTION':weatherHandling?'PERFORMANCE':observedFrequency(text)?'OBSERVATION':/dialogo socratico|lluvia de ideas|\bpanel\b/.test(text)?'ORAL_INTERACTION':has(text,'debat')?'DEBATE':oral(text)?'ORAL_PRESENTATION':researches(text)?'RESEARCH':/linea de tiempo|\bproyecto\b/.test(text)?'PROJECT':performs(text)?'PERFORMANCE':compares(text,context.grade)?'COMPARISON':/\b(?:elabor[a-z]*|redact[a-z]*)\b[^.;]*\binforme\b/.test(text)?'REPORT':'ANALYSIS'
+ if(context.grade===3){
+  if(has(text,'discut')||/mesa redonda|dialogo constructivo|negociacion colaborativa/.test(text)&&has(text,'particip'))activityType='ORAL_INTERACTION'
+  else if(thirdGradeCreatesProduct(text)){
+   if(/monografia/.test(text))activityType='REPORT'
+   else if(/articulo|periodico escolar|carta argumentativa/.test(text))activityType='WRITTEN_PRODUCTION'
+   else if(/ensayo/.test(text))activityType='ESSAY'
+   else if(/presentacion multimedia|video/.test(text))activityType='PROJECT'
+  }
+ }
  const technique=activityType==='DEBATE'?'debate':activityType==='ORAL_PRESENTATION'?'presentacion':['PERFORMANCE','OBSERVATION'].includes(activityType)?'observacion-sistematica':context.grade===2&&activityType==='ORAL_INTERACTION'?'observacion-directa':'analisis-producciones'
  return{grade:context.grade!,actions,activityType,technique}
 }
 type Levels=ContextualTopicCriterion['progressionLevels']
 function requestedRelation(topic:SocialTopic,text:string){
+ if(topic.grade===3&&topic.id==='dominican-war-coldwar'&&/segunda guerra mundial/.test(text)&&!/guerra fria/.test(text))return /economia/.test(text)?'los efectos de la Segunda Guerra Mundial en la economía dominicana y las medidas expresamente examinadas, con sus hechos y condiciones históricas':'el impacto en República Dominicana de la Segunda Guerra Mundial expresamente examinado y sus condiciones históricas'
+ if(topic.grade===3&&topic.id==='world-war-two-economy'&&/crisis/.test(text)&&!/deficit/.test(text))return 'las características y relaciones de la crisis económica durante la Segunda Guerra Mundial en los países y períodos indicados'
+ if(topic.grade===3&&topic.id==='world-war-two-economy'&&/deficit/.test(text)&&!/crisis/.test(text))return 'el significado y las relaciones del déficit económico durante la Segunda Guerra Mundial en los países y períodos indicados'
  if(topic.grade===2&&topic.id==='dominican-society'&&/capitalismo dependiente/.test(text))return 'las relaciones entre capitalismo dependiente, modernidad y urbanización en la sociedad dominicana del período indicado'
  if(topic.grade===2&&topic.id==='democracy'&&/aportes del modelo democratico/.test(text))return 'los aportes del modelo democrático al desarrollo de la sociedad respaldados por los hechos de los casos examinados'
  if(topic.grade===2&&topic.id==='democracy'&&/articulos/.test(text)&&/constitucion/.test(text))return 'las características del Estado de derecho en los artículos constitucionales proporcionados y su aplicación al caso, sin atribuir normas ausentes'
@@ -157,6 +193,11 @@ function criterion(topic:SocialTopic,key:string,title:string,success:string,part
  return{templateId:`soc-${topic.grade}-${topic.id}-${key}`,title,observable:success,progressionLevels,weight}
 }
 function requestedLabel(topic:SocialTopic,text:string){
+ if(topic.grade===3&&topic.id==='human-rights'&&/vulneraciones/.test(text)&&!/declaracion universal/.test(text))return 'vulneraciones de derechos humanos en los casos examinados'
+ if(topic.grade===3&&topic.id==='dominican-war-coldwar'&&/segunda guerra mundial/.test(text)&&!/guerra fria/.test(text))return /economia/.test(text)?'economía dominicana durante la Segunda Guerra Mundial':'Segunda Guerra Mundial en República Dominicana'
+ if(topic.grade===3&&topic.id==='world-war-two-economy'&&/crisis/.test(text)&&!/deficit/.test(text))return 'crisis económica durante la Segunda Guerra Mundial'
+ if(topic.grade===3&&topic.id==='world-war-two-economy'&&/deficit/.test(text)&&!/crisis/.test(text))return 'déficit económico durante la Segunda Guerra Mundial'
+ if(topic.grade===3&&topic.id==='natural-resources'&&!/republica dominicana/.test(text))return 'recursos naturales en los espacios indicados'
  if(topic.grade===2&&topic.id==='north-south'&&/extraccion de recursos mineros/.test(text))return 'extracción de recursos mineros en los pueblos del Sur para los del Norte durante el siglo XX'
  if(topic.grade===2&&topic.id==='dominican-society'&&/gobiernos y dictaduras/.test(text))return 'gobiernos y dictaduras de la República Dominicana en el período estudiado'
  if(topic.grade===2&&topic.id==='dominican-society'&&/capitalismo dependiente/.test(text))return 'capitalismo dependiente, modernidad y urbanización en la sociedad dominicana del período indicado'
@@ -199,18 +240,18 @@ function actionCriteria(action:SocialAction):ContextualTopicCriterion[]{
   const branches=alternatives.map((part,i)=>actionCriteria({text:i?text.slice(0,text.search(new RegExp(`\\b${verbs}\\b`))+text.match(new RegExp(`\\b${verbs}\\b`))![0].length)+' '+part:part,topics}))
   const levels=[0,1,2,3,4].map(i=>{
    const texts=branches.map(b=>b.map(c=>c.progressionLevels[i]).join(' '))
-   return `En la alternativa elegida: ${(topics[0].grade===2?[...new Set(texts)]:texts).join(' O BIEN: ')}`
+   return `En la alternativa elegida: ${(topics[0].grade>=2?[...new Set(texts)]:texts).join(' O BIEN: ')}`
   }) as Levels
   return[{templateId:`soc-${topics[0].grade}-${topics[0].id}-alternative`,title:'Producto alternativo solicitado',observable:levels[0],progressionLevels:levels,weight:4}]
  }
  const rows:ContextualTopicCriterion[]=[]
  for(const topic of topics){
   const label=requestedLabel(topic,text),relation=requestedRelation(topic,text),analyzes=has(text,'analiz|analic|interpret'),explains=has(text,'explic|expliqu|describ'),comparison=compares(text,topic.grade)
-  const add=(key:string,title:string,success:string,partial:string,error:string,weight=3)=>rows.push(criterion(topic.grade===2?{...topic,label}:topic,key,title,success,partial,error,weight))
+  const add=(key:string,title:string,success:string,partial:string,error:string,weight=3)=>rows.push(criterion(topic.grade>=2?{...topic,label}:topic,key,title,success,partial,error,weight))
   const addSources=()=>add('sources',`Fuentes sobre ${label}`,`Selecciona información pertinente sobre ${label} y hace reconocible su procedencia, valorando autoría, contexto y respaldo para el propósito solicitado.`,`La información es pertinente, pero una fuente no puede identificarse o su respaldo no se explica.`,`Utiliza información sin procedencia reconocible o incompatible con el objeto de investigación.`,4)
   const addSourceEvidence=()=>add('source-evidence',`Evidencias de las fuentes sobre ${label}`,`Relaciona sus interpretaciones de ${label} con evidencias localizables en las fuentes indicadas y distingue lo que afirman de sus propias inferencias.`,`Usa información de las fuentes, pero una inferencia sobre ${label} queda sin evidencia localizable.`,`Atribuye a las fuentes afirmaciones ausentes o interpreta evidencias incompatibles con su contexto.`,4)
   const addArgument=()=>add('argument',`Argumentación sobre ${label}`,`Sostiene una afirmación sobre ${label} mediante razones y ${topic.grade===2&&/normas dadas/.test(text)?'las normas proporcionadas':'evidencias pertinentes al caso'}, separando hechos y valoraciones sin exigir una postura predeterminada.`,`Presenta una afirmación sobre ${label}, pero una razón no se vincula con la evidencia utilizada.`,`Sustituye el argumento por afirmaciones sin respaldo o por una postura impuesta ajena al análisis.`,4)
-  const sourceAssessment=/fuentes/.test(text)&&/confiab|credib/.test(text)&&has(text,'identific|identifiqu|evalu|valor|justific|justifiqu')
+  const sourceAssessment=/fuentes/.test(text)&&/confiab|credib/.test(text)&&(has(text,'identific|identifiqu|evalu|valor|justific|justifiqu')||topic.grade===3&&selects(text))
   if(sourceAssessment){
    add('source-reliability',`Confiabilidad de las fuentes sobre ${label}`,`Distingue la confiabilidad de las fuentes proporcionadas sobre ${label} justificando su selección con autoría, procedencia, contexto y respaldo verificable para el propósito indicado.`,`Distingue fuentes pertinentes, pero la justificación de una selección no se vincula con evidencias de su procedencia o respaldo.`,`Considera confiable una fuente por su apariencia o popularidad sin comprobar su procedencia ni respaldo.`,4)
    continue
@@ -256,9 +297,11 @@ function actionCriteria(action:SocialAction):ContextualTopicCriterion[]{
    rows.at(-1)!.progressionLevels=[`Aplica las reglas indicadas de ${label} en todas las oportunidades observadas.`,`Aplica las reglas indicadas de ${label} en casi todas las oportunidades observadas.`,`Aplica las reglas indicadas de ${label} en algunas oportunidades observadas.`,`Aplica las reglas indicadas de ${label} en pocas oportunidades observadas.`,`No aplica las reglas indicadas de ${label} en ninguna de las oportunidades observadas.`]
    continue
   }
-  if(addSecondGradeSocialEvidence(topic,text,label,add)){
-   if(researches(text))addSources()
-   if(!researches(text)&&topic.id!=='historical-sources'&&/fuentes/.test(text)&&has(text,'analiz|analic|interpret|redact'))addSourceEvidence()
+  if(addSecondGradeSocialEvidence(topic,text,label,add)||addThirdGradeSocialEvidence(topic,text,label,add)){
+   const researchPlan=topic.grade===3&&/plan de investigacion|organiza[a-z]* (?:una )?investigacion/.test(text)
+   if(researches(text)&&!researchPlan)addSources()
+   const attributionInReport=topic.grade===3&&/informe antiplagio/.test(text)
+   if(!researches(text)&&!attributionInReport&&topic.id!=='historical-sources'&&/fuentes/.test(text)&&(has(text,'analiz|analic|interpret|redact')||topic.grade===3&&/articulo cientifico|monografia/.test(text)))addSourceEvidence()
    if(argues(text))addArgument()
    continue
   }
@@ -285,8 +328,11 @@ function actionCriteria(action:SocialAction):ContextualTopicCriterion[]{
    add('organizer-relations',`Relaciones en el organizador de ${label}`,`Organiza los conceptos y hechos solicitados de ${label} con conexiones explícitas y compatibles con ${relation}, de modo que puede reconocerse qué relación expresa cada enlace.`,`Incluye los conceptos pertinentes, pero un enlace no expresa la relación histórica o espacial solicitada.`,`Los enlaces alteran las relaciones solicitadas o presentan conceptos aislados que no permiten interpretarlas.`,4)
    if(!/linea de tiempo/.test(text))continue
   }
-  if(has(text,'formul|elabor')&&/preguntas?/.test(text))add('question',`Preguntas sobre ${label}`,`Formula preguntas delimitadas y pertinentes sobre ${label} que permiten buscar una respuesta mediante los hechos o fuentes disponibles.`,`Formula una pregunta pertinente, pero su delimitación impide relacionarla con los hechos o fuentes indicados.`,`Formula preguntas ajenas al problema o que no pueden contrastarse con la información disponible.`,3)
-  if(/hipotesis/.test(text)&&has(text,'formul|elabor'))add('hypothesis',`Hipótesis sobre ${label}`,`Plantea una explicación provisional sobre ${label} y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.`,`La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.`,`Presenta una opinión como hecho comprobado o una hipótesis incompatible con los hechos conocidos.`,4)
+  const directInquiry=(object:string)=>new RegExp(`\\b(?:formul|elabor|plante)[a-z]*\\s+(?:(?:una?|unas|unos|dos|varias|varios|sus?|las?|los|tu)\\s+)?${object}\\b`).test(text)
+  const makesQuestion=topic.grade===3?directInquiry('preguntas?'):has(text,'formul|elabor')&&/preguntas?/.test(text)
+  const makesHypothesis=topic.grade===3?directInquiry('hipotesis'):/hipotesis/.test(text)&&has(text,'formul|elabor')
+  if(makesQuestion)add('question',`Preguntas sobre ${label}`,`Formula preguntas delimitadas y pertinentes sobre ${label} que permiten buscar una respuesta mediante los hechos o fuentes disponibles.`,`Formula una pregunta pertinente, pero su delimitación impide relacionarla con los hechos o fuentes indicados.`,`Formula preguntas ajenas al problema o que no pueden contrastarse con la información disponible.`,3)
+  if(makesHypothesis)add('hypothesis',`Hipótesis sobre ${label}`,`Plantea una explicación provisional sobre ${label} y distingue los hechos conocidos de lo que deberá contrastarse con las evidencias indicadas, sin presentarla como conclusión comprobada.`,`La hipótesis se relaciona con el tema, pero no distingue con claridad su carácter provisional o la evidencia necesaria.`,`Presenta una opinión como hecho comprobado o una hipótesis incompatible con los hechos conocidos.`,4)
   if(/hipotesis/.test(text)&&has(text,'comprob|comprueb|contrast'))add('hypothesis-evidence',`Contraste de la hipótesis sobre ${label}`,`Contrasta la hipótesis sobre ${label} con las evidencias proporcionadas e indica si estas la respaldan, limitan o contradicen, ajustando la conclusión al alcance de la información disponible.`,`Relaciona la hipótesis con evidencias pertinentes, pero deja sin justificar cómo afectan a la conclusión.`,`Declara comprobada o refutada la hipótesis sin relacionarla con las evidencias disponibles.`,4)
   const news=/noticia/.test(text)&&has(text,'redact|produc|elabor')
   const newsParts=['titular','entrada','entradilla','copete','cuerpo','foto','pie de foto'].filter(part=>part==='foto'?/\bfoto(?:grafias?)?\b/.test(text.replace(/\bpie de foto\b/g,'')):new RegExp(`\\b${part}\\b`).test(text))
@@ -306,14 +352,16 @@ function actionCriteria(action:SocialAction):ContextualTopicCriterion[]{
   if(analyzes&&/causas?|factores|motivos/.test(text))add('causes',`Causas de ${label}`,`Explica los factores solicitados de ${label} relacionando las condiciones del contexto con los hechos y distinguiendo evidencia de una suposición.`,`Menciona factores de ${label}, pero no explica una relación causal necesaria.`,`Presenta como causa de ${label} un hecho posterior o una afirmación sin relación con el caso.`,4)
   if(analyzes&&/consecuencias?|repercusiones|efectos|impacto/.test(text))add('consequences',`Consecuencias de ${label}`,`Explica los efectos solicitados de ${label} indicando qué cambia y para qué actores o espacios, con respaldo en la información disponible.`,`Menciona efectos de ${label}, pero deja sin explicar qué cambia o quiénes se ven afectados.`,`Confunde las consecuencias de ${label} con sus antecedentes o atribuye efectos incompatibles con los hechos.`,4)
   if(comparison){
-   const sourceComparison=topic.grade===2&&/compar[a-z]* (?:las )?(?:investigaciones historicas|fuentes)|contrast[a-z]* (?:las )?fuentes/.test(text)
+   const sourceComparison=topic.grade>=2&&/compar[a-z]* (?:las )?(?:investigaciones historicas|fuentes|informaciones publicadas)|contrast[a-z]* (?:las )?fuentes/.test(text)
    add('comparison',`${sourceComparison?'Contraste de fuentes sobre':'Comparación de'} ${label}`,sourceComparison?`Compara las afirmaciones, evidencias y conclusiones de las investigaciones o fuentes proporcionadas sobre ${label}, considerando sus contextos y distinguiendo acuerdos y discrepancias respaldados por la información.`:`Compara los casos solicitados de ${label} mediante dimensiones comunes, distinguiendo semejanzas y diferencias respaldadas por sus contextos.`,sourceComparison?'Reconoce acuerdos o diferencias, pero una evidencia o conclusión no se relaciona con su fuente y contexto.':`Describe los casos de ${label}, pero usa dimensiones diferentes o deja una diferencia sin respaldo.`,sourceComparison?'Atribuye a las fuentes afirmaciones ausentes o compara información de contextos incompatibles sin reconocer sus límites.':`Atribuye a los casos de ${label} semejanzas o diferencias que contradicen la información examinada.`,4)
   }
   if(analyzes&&/perspectivas|posturas|autores|interpretaciones/.test(text))add('perspectives',`Perspectivas sobre ${label}`,`Interpreta las perspectivas de los autores indicados sobre ${label}, diferenciando sus afirmaciones y contextos.`,`Reconoce las perspectivas de ${label}, pero atribuye sin precisión una afirmación a su autor o contexto.`,`Confunde las posturas de los autores o sustituye su interpretación por una afirmación ajena a las fuentes.`,4)
   const proposalText=topic.grade===2?text.replace(/\bque proponen? las fuentes\b/g,''):text
   const proposing=has(proposalText,'propon|propong')||/propuesta/.test(proposalText)&&has(proposalText,'present|elabor|formul')
-  const specific=chronology||mapping||comparison||proposing||topic.id==='peace'&&/alternativas/.test(text)||/hipotesis|preguntas?/.test(text)||analyzes&&/causas?|factores|motivos|consecuencias?|repercusiones|efectos|impacto|perspectivas|posturas|autores|interpretaciones/.test(text)
-  if((analyzes||explains)&&!specific&&!researches(text))add('interpretation',`Comprensión de ${label}`,`Explica ${relation} utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.`,`Reconoce información pertinente de ${label}, pero una relación del caso queda sin explicar.`,`La explicación de ${label} confunde los hechos, conceptos o contexto que se deben interpretar.`,4)
+  const inquiry=topic.grade===3?makesQuestion||makesHypothesis||/hipotesis/.test(text)&&has(text,'comprob|comprueb|contrast'):/hipotesis|preguntas?/.test(text)
+  const specific=chronology||mapping||comparison||proposing||topic.id==='peace'&&/alternativas/.test(text)||inquiry||analyzes&&/causas?|factores|motivos|consecuencias?|repercusiones|efectos|impacto|perspectivas|posturas|autores|interpretaciones/.test(text)
+  const analysisInText=topic.grade===3&&rows.some(r=>r.templateId===`soc-3-${topic.id}-argumentative-text`||r.templateId===`soc-3-${topic.id}-functional-message`)
+  if((analyzes||explains)&&!specific&&!researches(text)&&!analysisInText)add('interpretation',`Comprensión de ${label}`,`Explica ${relation} utilizando los hechos o conceptos solicitados y diferenciando la información del caso de su interpretación.`,`Reconoce información pertinente de ${label}, pero una relación del caso queda sin explicar.`,`La explicación de ${label} confunde los hechos, conceptos o contexto que se deben interpretar.`,4)
   if(has(text,'identific|identifiqu')&&!specific&&!researches(text))add('identification',`Identificación de ${label}`,`Identifica los hechos, conceptos o elementos solicitados de ${label} con características compatibles con ${relation}.`,`Identifica parte de los elementos solicitados, pero una característica no permite distinguirlos.`,`Asigna nombres o características incompatibles con los elementos que se deben identificar.`,3)
   if(has(text,'observ')&&!researches(text))add('social-observation',`Observación de ${label}`,`Reconoce en la representación o situación observada las características indicadas de ${label}, distinguiendo la información visible de sus inferencias y conservando ${relation}.`,`Reconoce información de la representación, pero una característica se confunde con una inferencia no respaldada.`,`Atribuye a la representación características ausentes o incompatibles con lo observado.`,3)
   if(topic.id==='peace'&&/alternativas/.test(text)&&has(text,'identific|identifiqu'))add('alternatives','Alternativas para el conflicto','Identifica alternativas dialogadas que responden a las condiciones del conflicto proporcionado y respetan los derechos de las partes.','Reconoce alternativas pertinentes, pero una no atiende una condición del conflicto.','Presenta alternativas ajenas al conflicto o incompatibles con los derechos de las partes.',4)
@@ -321,10 +369,13 @@ function actionCriteria(action:SocialAction):ContextualTopicCriterion[]{
    if(!searchesSources(text))add('research-content',`Contenido investigado de ${label}`,`Expone los hallazgos sobre ${relation}, distinguiendo datos de inferencias y ajustándolos al espacio y período solicitados.`,`Presenta hallazgos pertinentes, pero una relación del contenido o su contexto queda sin explicar.`,`Los hallazgos confunden hechos o corresponden a un espacio o período ajeno al solicitado.`,4)
    addSources()
   }
-  if(!(topic.grade===2&&researches(text))&&(analyzes||topic.grade===2&&(explains||has(text,'caracteriz')||comparison))&&/fuentes|video|pelicula|documental|documentos?|textos?|articulos? proporcionados|normas dadas|investigaciones historicas/.test(text))addSourceEvidence()
+  const sourceEvidenceRequested=topic.grade===3
+   ?/\b(?:fuentes?|videos?|peliculas?|documental(?:es)?|documentos?|textos?|articulos? proporcionados|normas dadas|investigaciones historicas|estudios)\b/.test(text)
+   :/fuentes|video|pelicula|documental|documentos?|textos?|articulos? proporcionados|normas dadas|investigaciones historicas/.test(text)
+  if(!(topic.grade>=2&&researches(text))&&(analyzes||topic.grade>=2&&(explains||has(text,'caracteriz')||comparison))&&sourceEvidenceRequested)addSourceEvidence()
   if(topic.grade===2&&has(text,'caracteriz'))add('characterization',`Caracterización de ${label}`,`Caracteriza los aspectos expresamente solicitados de ${label}, relacionando sus rasgos con los hechos y el contexto del período indicado.`,`Describe rasgos pertinentes, pero un aspecto solicitado queda sin relacionar con el contexto.`,`Atribuye a la sociedad características incompatibles con el período o sustituye los rasgos por juicios personales.`,4)
   if(/comic|pantomima|titeres|ilustrad/.test(text))add('visual-historical',`Representación del contenido de ${label}`,`Relaciona el contenido y las escenas o imágenes del medio elegido con ${relation}, distinguiendo los hechos estudiados de los recursos de representación.`,`La representación permite reconocer el contenido, pero una escena o imagen cambia una relación histórica solicitada.`,`Las escenas o imágenes atribuyen hechos o funciones incompatibles con el contexto estudiado.`,3)
-  if(argues(text))addArgument()
+  if(argues(text)||topic.grade===3&&thirdGradeCreatesProduct(text)&&/texto argumentativo|ensayo argumentativo|articulo de opinion|carta argumentativa/.test(text))addArgument()
   if(proposing)add('proposal',`Propuesta sobre ${label}`,`Propone una respuesta al problema indicado sobre ${label} y explica cómo sus acciones atienden las condiciones y derechos de las personas implicadas.`,`La propuesta atiende parte del problema, pero una acción no se relaciona con sus condiciones.`,`La propuesta no responde al problema indicado o desconoce los derechos examinados.`,4)
   if(oral(text))add('oral',`Explicación oral de ${label}`,`Presenta oralmente el contenido solicitado de ${label} con relaciones comprensibles entre las ideas y referencias al caso, sin valorar acento o rasgos personales.`,`La presentación permite reconocer el contenido, pero una relación entre las ideas queda poco clara.`,`La presentación no permite reconocer las relaciones solicitadas del contenido.`,3)
   if(performs(text)){
@@ -344,7 +395,7 @@ export function commonSocialCriteria(task:CommonSocialTask):ContextualTopicCrite
 }
 export function commonSocialSelections(task:CommonSocialTask,description:string){
  const text=requestedText(description||task.actions.map(a=>a.text).join('. '))
- const progressiveQuality=has(text,'analiz|analic|interpret|explic|expliqu|compar(?!t)|contrast|argument|justific|justifiqu|debat|investig|propon|propong')||['ORAL_PRESENTATION','ORAL_INTERACTION','REPORT','WRITTEN_PRODUCTION'].includes(task.activityType)
+ const progressiveQuality=has(text,'analiz|analic|interpret|explic|expliqu|compar(?!t)|contrast|argument|justific|justifiqu|debat|investig|propon|propong')||['ORAL_PRESENTATION','ORAL_INTERACTION','REPORT','WRITTEN_PRODUCTION'].includes(task.activityType)||task.grade===3&&thirdGradeCreatesProduct(text)&&/monografia|articulo|periodico escolar|presentacion multimedia|video|ensayo/.test(text)
  const suggestedInstrumentType:InstrumentType=/credito parcial|ponderada|pesos por|puntos por/.test(text)?'lista-ponderada':observedFrequency(text)?'escala':progressiveQuality?'rubrica':'lista-cotejo'
  return{suggestedInstrumentType,suggestedEvaluationTechnique:task.technique}
 }
