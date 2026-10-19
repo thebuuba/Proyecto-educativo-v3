@@ -1,3 +1,4 @@
+import {optativeHcsLenFive} from './secondary-optative-hcs-len-5'
 import {optativeHcsLenFour} from './secondary-optative-hcs-len-4'
 import type {InstrumentAcademicContext} from './secondary-science'
 import type {SecondaryLanguageTopic,TopicDimension} from './secondary-topic-types'
@@ -18,9 +19,9 @@ export type OptativeLanguageGenre={id:string;label:string;match:string;sourceRec
 export type OptativeLanguageModule={id:string;grade:number;subjectCode:string;subjectName:string;optativeExitName:string;modalityCodes:string[];sourceScopeId:string;pdfPages:number[];topics:OptativeLanguageGenre[]}
 type OptativeAction={text:string;genre:OptativeLanguageGenre;activityType:string;plan:boolean;revision:boolean}
 export type OptativeLanguageTask={module:OptativeLanguageModule;actions:OptativeAction[];activityType:string;technique:string}
-export const optativeLanguageModules=[optativeHlmLenFour,optativeHlmLenFive,optativeHlmLenSix,optativeHcsLenFour]
+export const optativeLanguageModules=[optativeHlmLenFour,optativeHlmLenFive,optativeHlmLenSix,optativeHcsLenFour,optativeHcsLenFive]
 const normalize=(value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
-const verbs='(?![a-z]*(?:ando|iendo)\\b)(?:analiz|interpret|explic|describ|identific|clasific|compar|contrast|escuch|anticip|le(?:e|er)|infier|infer|parafras|resum|recit|declam|narr|cuent|contar|redact|escrib|cre(?:a(?!cion)|e)|compon|elabor|planific|revis|corrig|corrij|investig|present|expon|evalu|debat|subray|disen(?:a|en))[a-z]*'
+const verbs='(?!presente (?:del|de los|en el|narrativo)\\b)(?![a-z]*(?:ando|iendo)\\b)(?:analiz|interpret|explic|describ|identific|clasific|compar|contrast|escuch|anticip|le(?:e|er)|lea(?:n|mos)?\\b|public(?:a(?:n|ra(?:n)?)?|ar)\\b|publiqu(?:e|en|emos)\\b|infier|infer|parafras|resum|recit|declam|narr|cuent|contar|redact|escrib|cre(?:a(?!cion)|e)|compon|elabor|planific|revis|corrig|corrij|investig|present|expon|evalu|debat|subray|disen(?:a|en))[a-z]*'
 function requestedText(value:string){
  return normalize(withoutResources(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ')))
   .replace(new RegExp(`\\b(?:no|sin)\\b[^.;\\n]*?(?=[.;\\n]|\\s+(?:y|pero)\\s+${verbs}\\b|$)`,'g'),'').trim()
@@ -44,14 +45,14 @@ export function resolveOptativeLanguageTask(title:string,description:string,cont
   if(prior?.revision&&/^present[a-z]*\b.*(?:cambios|version revisada)/.test(text)){prior.text+='. '+text;continue}
   const genre=explicit??prior?.genre;if(!genre)continue
   const plan=/^planific|^(?:elabor|disen)[a-z]*\s+(?:un\s+)?plan\b/.test(text),revision=/^(?:revis|corrig|corrij)/.test(text)
-  const activityType=plan||revision||/^disen(?:a|en)/.test(text)?'WRITTEN_PRODUCTION':detectTopicActivity('',text,languageTopic(genre,module.grade,module.subjectCode))
+  const activityType=plan||revision||/^(?:disen(?:a|en)|public|publiqu)/.test(text)?'WRITTEN_PRODUCTION':detectTopicActivity('',text,languageTopic(genre,module.grade,module.subjectCode))
   actions.push({text,genre,activityType,plan,revision})
  }
  if(!actions.length)return null
  const requested=actions.filter((action,i)=>{
   const next=actions[i+1]
   const receptionOnly=/^(?:escuch|le(?:e|an|er))\w*\b/.test(action.text)&&!action.genre.features.some(f=>new RegExp(f.match).test(action.text))&&!/anticip|resum|parafras|infier|predic|proposito|intencion|significado/.test(action.text)
-  return !(receptionOnly&&next?.activityType==='ANALYSIS'&&next.genre.id===action.genre.id)
+  return !(receptionOnly&&next&&['ANALYSIS','COMPARISON'].includes(next.activityType)&&next.genre.id===action.genre.id)
  })
  const activityType=requested[0].activityType
  return{module,actions:requested,activityType,technique:activityType==='ORAL_PRESENTATION'?'presentacion':activityType==='DEBATE'?'debate':'analisis-producciones'}
@@ -79,12 +80,27 @@ export function optativeLanguageCriteria(task:OptativeLanguageTask):ContextualTo
    'No localiza ejemplos reconocibles del recurso solicitado en el texto disponible.',
   ]}))
   if(action.plan){
-   const components=(genre.planningComponents??(genre.id==='poesia-romantica'?[['intencion','la intención'],['tema','el tema'],['estrofa|forma','la forma elegida']]:[['sucesos|acciones','los sucesos'],['personajes','los personajes'],['lugar','el lugar'],['tiempo','el tiempo']])).filter(([pattern])=>new RegExp(pattern).test(text)).map(([,label])=>label)
+   const historical=genre.id==='novela-historica'?(genre.planningComponents??[]).filter(([pattern])=>['epoca','personaje destacado','hecho historico'].includes(pattern)).flatMap(([pattern,name])=>{const m=new RegExp(pattern).exec(text);return m?[{name,index:m.index,end:m.index+m[0].length}]:[]}).sort((a,b)=>a.index-b.index):[]
+   const references=new Set(historical.map(r=>r.name))
+   const components=(genre.planningComponents??(genre.id==='poesia-romantica'?[['intencion','la intención'],['tema','el tema'],['estrofa|forma','la forma elegida']]:[['sucesos|acciones','los sucesos'],['personajes','los personajes'],['lugar','el lugar'],['tiempo','el tiempo']])).filter(([pattern])=>new RegExp(pattern).test(text)).map(([,label])=>label).filter(label=>!references.has(label))
+   if(historical.length&&!components.length){
+    const target=historical.length>1&&/\bo\b/.test(text.slice(historical[0].index,historical.at(-1)!.end))?'el referente elegido entre '+historical.map(r=>r.name).join(' o '):historical.map(r=>r.name).join(' y ')
+    return [{templateId:prefix+'-procedure-outline',title:'Planificación del referente histórico',weight:3,
+     observable:`Delimita en el plan ${target} que servirá de base a la novela histórica, con las referencias proporcionadas.`,
+     progressionLevels:[
+      `El plan delimita ${target} de forma reconocible y compatible con las referencias proporcionadas.`,
+      `Se reconoce en el plan ${target}; una precisión necesita aclararse con las referencias disponibles.`,
+      `Menciona ${target}, pero no permite reconocer cómo se empleará como base del texto.`,
+      `El plan incluye una caracterización incompatible con las referencias proporcionadas para ${target}.`,
+      `No presenta en el plan una delimitación reconocible que permita identificar ${target}.`,
+     ]}]
+   }
+   if(historical.length)components.push(historical.length>1&&/\bo\b/.test(text.slice(historical[0].index,historical.at(-1)!.end))?'el referente elegido entre '+historical.map(r=>r.name).join(' o '):historical.map(r=>r.name).join(' y '))
    if(genre.id==='epopeya'&&/\b(?:verso|prosa)\b/.test(text))components.push(/\bverso\b/.test(text)&&/\bprosa\b/.test(text)?'la forma elegida entre verso o prosa':/\bverso\b/.test(text)?'la forma en verso':'la forma en prosa')
    const plan=components.length?'la relación entre '+components.join(' y '):genre.planningComponents?genre.profile.plan:'los componentes expresamente pedidos y sus relaciones'
    return languageWritingProcedures(text,base,genre.profile.genre,plan).map(r=>({...r,templateId:r.templateId.replace(base,prefix)}))
   }
-  if(action.revision||focused||features.length&&['ANALYSIS','COMPARISON'].includes(activityType))topic.dimensions=topic.dimensions.filter(d=>d.id==='meaning'&&/intencion/.test(text)&&!action.revision)
+  if(action.revision||/^(?:public|publiqu)/.test(text)||focused||features.length&&['ANALYSIS','COMPARISON'].includes(activityType))topic.dimensions=topic.dimensions.filter(d=>d.id==='meaning'&&/intencion/.test(text)&&!action.revision)
   const profile={...genre.profile,revisionRequested:action.revision,verifyPrediction:/\bcomprueb[a-z]*\b/.test(text),oralCreation:activityType==='ORAL_PRESENTATION'&&(/^(?:narr|cuent|contar|relat)/.test(text)||/^(?:present|expon)[a-z]*\b.*\bque (?:has|han|hemos) (?:preparado|redactado|creado)\b/.test(text))}
   let rows=composeLanguageCriteria(topic,activityType,text,profile,features)
   if(activityType==='ANALYSIS')rows=rows.map(r=>{

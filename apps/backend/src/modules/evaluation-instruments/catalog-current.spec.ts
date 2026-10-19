@@ -48,13 +48,15 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.130')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.131')
     const frozen126=evaluationCatalogForVersion('evaluation-2026.126')
     expect(frozen126.optativeEnglishModules).toBeUndefined()
     expect(evaluationCatalogCurrent.optativeLanguageModules.slice(0,3)).toEqual(frozen126.optativeLanguageModules)
     const frozen129=evaluationCatalogForVersion('evaluation-2026.129')!
     expect(frozen129.optativeLanguageModules).toHaveLength(3)
-    expect(evaluationCatalogCurrent.optativeLanguageModules.map(m=>m.subjectCode)).toEqual(['OPT-HLM-LEN-4','OPT-HLM-LEN-5','OPT-HLM-LEN-6','OPT-HCS-LEN-4'])
+    expect(evaluationCatalogCurrent.optativeLanguageModules.map(m=>m.subjectCode)).toEqual(['OPT-HLM-LEN-4','OPT-HLM-LEN-5','OPT-HLM-LEN-6','OPT-HCS-LEN-4','OPT-HCS-LEN-5'])
+    const frozen130=evaluationCatalogForVersion('evaluation-2026.130')!
+    expect(evaluationCatalogCurrent.optativeLanguageModules.slice(0,4)).toEqual(frozen130.optativeLanguageModules)
     expect(evaluationCatalogCurrent.optativeEnglishModules.map(m=>m.subjectCode)).toEqual(['OPT-HLM-ING-4','OPT-HLM-ING-5','OPT-HLM-ING-6'])
     const frozen128=evaluationCatalogForVersion('evaluation-2026.128')!
     expect(frozen128.optativeEnglishModules!.map(m=>m.subjectCode)).toEqual(['OPT-HLM-ING-4','OPT-HLM-ING-5'])

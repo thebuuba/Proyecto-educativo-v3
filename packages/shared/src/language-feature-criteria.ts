@@ -71,7 +71,7 @@ export function explicitWritingProcess(description: string, scope: string, genre
       'No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada.',
     ],
   })
-  if (/\bpublic(?:ar|aran|acion|an|a)\b|\bdifund\w*/.test(task)) rows.push({
+  if (/\b(?:public(?:ar|aran|acion|an|a)|publiqu(?:e|en|emos))\b|\bdifund\w*/.test(task)) rows.push({
     templateId:`${scope}-process-publication`,title:'Publicación para el destinatario',weight:2,
     observable:`Dispone la versión final de ${genre} en el medio solicitado, con texto legible y una organización accesible al destinatario.`,
     progressionLevels:[

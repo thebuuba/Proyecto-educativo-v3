@@ -1,0 +1,54 @@
+{
+  "catalog": "evaluation-2026.131",
+  "baseline": "evaluation-2026.130",
+  "commonEnglishIdentical": 15176,
+  "scopes": [
+    {
+      "subject": "OPT-HLM-LEN-4",
+      "definitions": 280,
+      "identical": 280,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HLM-LEN-5",
+      "definitions": 268,
+      "identical": 268,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HLM-LEN-6",
+      "definitions": 420,
+      "identical": 420,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HLM-ING-4",
+      "definitions": 1532,
+      "identical": 1532,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HLM-ING-5",
+      "definitions": 2200,
+      "identical": 2200,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HLM-ING-6",
+      "definitions": 2092,
+      "identical": 2092,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HCS-LEN-4",
+      "definitions": 304,
+      "identical": 304,
+      "documentedCorrections": 0
+    }
+  ],
+  "hcsFourReviewedFullDefinitionsExact": 312,
+  "historicalSnapshotsChanged": false,
+  "limits": [
+    "Comparación de artefactos y contratos previos; no nuevos recorridos visuales completos de todos los ámbitos anteriores."
+  ]
+}

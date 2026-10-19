@@ -1,0 +1,642 @@
+{
+  "grade": 5,
+  "subjectCode": "OPT-HCS-LEN-5",
+  "subjectName": "Apreciación y Producción Literarias",
+  "optativeExitName": "Humanidades y Ciencias Sociales",
+  "modalityCode": "academic",
+  "scopeId": "b1f1b6c5-3136-5287-8d68-e6171cd86a5f",
+  "cases": [
+    {
+      "id": "concept-16",
+      "description": "Analiza únicamente la función y la estructura en el fragmento de novela histórica proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b73d624c-3285-5f38-986d-de3bf05faa6e"
+      ]
+    },
+    {
+      "id": "concept-17",
+      "description": "Analiza únicamente las secuencias narrativas, descriptivas y dialogadas en el fragmento de novela histórica proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e99a89c9-5846-536e-9ccb-a24dc82081e2"
+      ]
+    },
+    {
+      "id": "concept-18",
+      "description": "Analiza únicamente los conectores temporales, causales, consecutivos, espaciales y de orden en el fragmento de novela histórica proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7d2a0178-a647-5c24-9b0c-e8ec37d8a77b"
+      ],
+      "forbidden": "orden narrativo|disposición|duración narrativa"
+    },
+    {
+      "id": "concept-19",
+      "description": "Analiza únicamente los verbos en pasado en el fragmento de novela histórica proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a783728e-fac5-53c1-b867-fbcad7c33d57"
+      ]
+    },
+    {
+      "id": "concept-20",
+      "description": "Analiza únicamente el tema en el fragmento de novela histórica proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "cb21e4f2-be52-5862-83e5-337c3d05bd11"
+      ]
+    },
+    {
+      "id": "concept-21",
+      "description": "Analiza únicamente el orden, la frecuencia y la duración del tiempo narrativo en el fragmento de novela histórica proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6abff723-b0a3-584d-a048-88524472f4de"
+      ]
+    },
+    {
+      "id": "concept-22",
+      "description": "Analiza únicamente los adjetivos en el fragmento de novela histórica proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ca34fd1f-f67a-5fa4-b02d-86a0eadad5e3"
+      ]
+    },
+    {
+      "id": "concept-23",
+      "description": "Analiza únicamente el narrador en el fragmento de novela histórica proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b5cf2af6-7c0f-57fb-939c-14d2efc2d5eb"
+      ]
+    },
+    {
+      "id": "concept-24",
+      "description": "Analiza únicamente los personajes en el fragmento de novela histórica proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d1df0d32-15fd-5086-b208-6f92405656c2"
+      ]
+    },
+    {
+      "id": "concept-25",
+      "description": "Analiza únicamente los actantes en el fragmento de novela histórica proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2d612bea-bd59-5a66-b3be-3a8c0a3860c9"
+      ]
+    },
+    {
+      "id": "concept-47",
+      "description": "Analiza únicamente la función y la estructura en el fragmento de novela social proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a3b3ed47-f763-51a4-9187-e0a0ab61613b"
+      ]
+    },
+    {
+      "id": "concept-48",
+      "description": "Analiza únicamente los personajes en el fragmento de novela social proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "095d0dd1-e3e3-5f34-8ea7-3d0d9cd559b7"
+      ]
+    },
+    {
+      "id": "concept-49",
+      "description": "Analiza únicamente el ambiente en el fragmento de novela social proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c66c2573-8d19-5535-84d0-3c12d56563ba"
+      ]
+    },
+    {
+      "id": "concept-50",
+      "description": "Analiza únicamente las secuencias narrativas, descriptivas y dialogadas en el fragmento de novela social proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0b098237-1a58-5141-ac4d-40811aa44df6"
+      ]
+    },
+    {
+      "id": "concept-51",
+      "description": "Analiza únicamente los conectores temporales, causales y consecutivos en el fragmento de novela social proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1b2daea9-5c73-54c7-9e10-add0a16635d6"
+      ]
+    },
+    {
+      "id": "concept-52",
+      "description": "Analiza únicamente los verbos en pasado en el fragmento de novela social proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "beab2755-caa6-5660-96a6-bd9ca2ff1016"
+      ]
+    },
+    {
+      "id": "concept-53",
+      "description": "Analiza únicamente los verbos en presente en el fragmento de novela social proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a7918997-4513-5153-849c-2e556cad84c0"
+      ]
+    },
+    {
+      "id": "concept-54",
+      "description": "Analiza únicamente el orden cronológico o anacrónico y la frecuencia narrativa en el fragmento de novela social proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9d04a75f-f6a6-54eb-a9bb-b8180506d6db"
+      ]
+    },
+    {
+      "id": "concept-55",
+      "description": "Analiza únicamente los adjetivos en el fragmento de novela social proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4833edf2-a9ef-5a44-bf47-3aa740a209cd"
+      ]
+    },
+    {
+      "id": "concept-56",
+      "description": "Analiza únicamente la actancia de los personajes en el fragmento de novela social proporcionado. No se pide crear otro relato ni publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "692c32da-a7c6-5f75-9850-a8dac64a1451"
+      ]
+    },
+    {
+      "id": "historical-prediction-listening",
+      "description": "Anticipa el contenido de la novela histórica a partir del título dado y explica los indicios de tu predicción. No se pide comprobarla todavía.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f8eb2a0f-b04b-5ea2-b25c-945c97cf1545"
+      ]
+    },
+    {
+      "id": "historical-listening",
+      "description": "Escucha la novela histórica proporcionada y distingue únicamente quién narra y qué personajes hablan en el pasaje. No se pide escribir otro relato.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8682946f-0a61-5465-9f55-a806bdd0d8a3"
+      ],
+      "required": "narrador"
+    },
+    {
+      "id": "historical-causality",
+      "description": "Infiere las motivaciones y la causalidad de las acciones de la novela histórica escuchada con los pasajes disponibles. No se pide inventar una historia.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4ea65c3d-c83e-5827-982f-27d4369656e8"
+      ]
+    },
+    {
+      "id": "historical-oral-plan",
+      "description": "Planifica la narración oral de una novela histórica: intención, sucesos, personajes, lugar y tiempo del caso ficticio dado. No se pide narrar todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "34ed101d-baee-525b-856c-053b4f770d83"
+      ]
+    },
+    {
+      "id": "historical-oral-chronology",
+      "description": "Narra oralmente la novela histórica solicitada con orden cronológico y conectores causales. No se pide analizarla por escrito.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "552a51e5-0d92-5cfe-badc-d5e7c195712c"
+      ]
+    },
+    {
+      "id": "historical-oral",
+      "description": "Narra oralmente la novela histórica del caso ficticio dado con inicio, progresión y cierre. No se pide otra versión escrita.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "2ed6bf6d-6157-56e9-83d9-24ef0c2e4196"
+      ]
+    },
+    {
+      "id": "historical-reading-prediction",
+      "description": "Anticipa el contenido de la novela histórica a partir del título proporcionado y comprueba la predicción después de leerla.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a8b8aa71-c6ca-5f2b-b7df-5573c9068ad3"
+      ]
+    },
+    {
+      "id": "historical-facts-fiction",
+      "description": "Distingue únicamente los hechos históricos documentados y los hechos de ficción de la novela histórica con los referentes proporcionados. No se pide investigar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a74a0230-038b-5e1a-928e-9f5547fd5a30"
+      ]
+    },
+    {
+      "id": "historical-paraphrase",
+      "description": "Parafrasea las acciones principales de la novela histórica proporcionada con tus propias palabras, conservando su sentido. No se pide una experiencia personal.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "964b4968-a70d-5481-9473-4105e881d6a7"
+      ]
+    },
+    {
+      "id": "historical-writing-plan",
+      "description": "Planifica una novela histórica con los sucesos, personajes y el hecho histórico de base proporcionado. No se pide investigar datos nuevos ni escribir capítulos.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "37c092c6-168e-5aff-9608-e9b7c0d662ce"
+      ]
+    },
+    {
+      "id": "historical-writing-voices",
+      "description": "Escribe el fragmento de novela histórica solicitado con diálogo en estilo directo y voces diferenciadas. No se pide escribir una obra completa ni publicarla.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "d98e3393-a5c9-5824-99a4-b5f747972fcf"
+      ]
+    },
+    {
+      "id": "historical-writing-tenses",
+      "description": "Escribe el fragmento de novela histórica solicitado con pasado narrativo y presente del diálogo, conservando los referentes dados. No se pide ilustrarlo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "11651691-56aa-549d-974c-18339035c43d"
+      ],
+      "forbidden": "Identifica|ejemplos presentes|Localiza y caracteriza"
+    },
+    {
+      "id": "historical-revision",
+      "description": "Revisa el borrador de novela histórica y muestra las correcciones de secuencia y puntuación señaladas. No se pide publicar ni ilustrar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "69b4887a-1ffc-5ce7-b76e-dec90ae7c8e5"
+      ]
+    },
+    {
+      "id": "social-prediction-listening",
+      "description": "Anticipa el contenido de la novela social a partir del título dado y explica los indicios de la predicción. No se pide otra novela.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5e4c98a7-65bb-519a-824b-47dce36e9607"
+      ]
+    },
+    {
+      "id": "social-listening",
+      "description": "Escucha la novela social proporcionada y distingue únicamente quién narra y qué personajes hablan en los pasajes señalados. No se pide analizar rasgos de los personajes.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8a20dd58-a439-5596-834f-80564e335046"
+      ],
+      "required": "narrador"
+    },
+    {
+      "id": "social-causality",
+      "description": "Infiere únicamente las motivaciones y la relación causal entre las acciones de la novela social proporcionada. No se pide narrar otra historia.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8bc1425b-c39e-5914-af03-064e3c72e59a"
+      ]
+    },
+    {
+      "id": "social-oral",
+      "description": "Narra oralmente la novela social ficticia solicitada con orden cronológico y conectores causales. No se pide una confesión personal.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "51c0b0bc-dda5-5712-b5eb-df8c0e35fe17"
+      ]
+    },
+    {
+      "id": "social-reading-prediction",
+      "description": "Anticipa el contenido de la novela social a partir del título proporcionado y comprueba la predicción después de leerla.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9adb7f8e-102f-5a4a-ace9-d5952d92fd7c"
+      ]
+    },
+    {
+      "id": "social-reading-voices",
+      "description": "Analiza únicamente el narrador de la novela social proporcionada con evidencias del pasaje. No se pide analizar personajes ni ambiente.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e0952b90-901c-5ece-8612-1d52a3ee7273"
+      ]
+    },
+    {
+      "id": "social-vocabulary",
+      "description": "Infiere únicamente el significado de las palabras desconocidas de la novela social con indicios del contexto dado. No se pide resumirla.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "84954dd2-8cad-5489-ad7f-736ec8e985cd"
+      ]
+    },
+    {
+      "id": "social-writing-plan",
+      "description": "Planifica la novela social del caso ficticio dado: intención, sucesos, personajes, lugar y tiempo. No se pide redactar los capítulos.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "f482a1bb-f3d3-59f2-a09a-19d4c8d55a59"
+      ]
+    },
+    {
+      "id": "social-writing-voices",
+      "description": "Escribe el fragmento de novela social solicitado con diálogos en estilo directo y voces diferenciadas. No se pide ilustración ni publicación externa.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "156d9259-fc29-5d29-976a-a179aaa57c8b"
+      ]
+    },
+    {
+      "id": "social-revision",
+      "description": "Revisa únicamente la ortografía del borrador de novela social proporcionado y presenta los cambios. No se pide revisar contenido ni publicar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "e3f14291-ff07-52a8-bd02-3af4dbd74f3d"
+      ]
+    },
+    {
+      "id": "historical-reference-or",
+      "description": "Planifica únicamente la época o el hecho histórico de base de una novela histórica, a elección, con los referentes dados. No se piden ambos.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "37c092c6-168e-5aff-9608-e9b7c0d662ce"
+      ],
+      "required": "época.*o.*hecho histórico",
+      "forbidden": "época y.*hecho histórico|Enumera componentes|organiza sus relaciones|conexión entre sus componentes|la relación entre"
+    },
+    {
+      "id": "historical-reference-epoch",
+      "description": "Planifica únicamente la época de base de la novela histórica con los referentes proporcionados. No se pide un personaje destacado ni un hecho histórico adicional.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "37c092c6-168e-5aff-9608-e9b7c0d662ce"
+      ],
+      "required": "época",
+      "forbidden": "personaje destacado|hecho histórico|Enumera componentes|organiza sus relaciones|conexión entre sus componentes|la relación entre"
+    },
+    {
+      "id": "historical-reference-person",
+      "description": "Planifica únicamente el personaje destacado de base para la novela histórica con los referentes dados. No se pide otra época ni investigar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "37c092c6-168e-5aff-9608-e9b7c0d662ce"
+      ],
+      "required": "personaje destacado",
+      "forbidden": "época|Enumera componentes|organiza sus relaciones|conexión entre sus componentes|la relación entre"
+    },
+    {
+      "id": "historical-recognize-adjectives",
+      "description": "Identifica únicamente los adjetivos de la novela histórica proporcionada. No se pide explicar su función.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ca34fd1f-f67a-5fa4-b02d-86a0eadad5e3"
+      ],
+      "required": "adjetiv",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "historical-frequency-only",
+      "description": "Analiza únicamente la frecuencia narrativa de la novela histórica proporcionada. No se pide frecuencia de conducta ni duración de la lectura.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6abff723-b0a3-584d-a048-88524472f4de"
+      ],
+      "required": "frecuencia"
+    },
+    {
+      "id": "historical-sequences-or",
+      "description": "Identifica únicamente las secuencias narrativas o dialogadas de la novela histórica proporcionada, a elección. No se piden ambas ni descriptivas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e99a89c9-5846-536e-9ccb-a24dc82081e2"
+      ],
+      "required": "narrativa.*o.*dialogada",
+      "forbidden": "descriptiva"
+    },
+    {
+      "id": "historical-comparison",
+      "description": "Compara únicamente el narrador de los dos fragmentos de novela histórica proporcionados. No se pide comparar personajes ni ambiente.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "b5cf2af6-7c0f-57fb-939c-14d2efc2d5eb"
+      ],
+      "required": "narrador",
+      "forbidden": "rasgos y acciones"
+    },
+    {
+      "id": "historical-read-then-analyze",
+      "description": "Lean la novela histórica proporcionada y analicen únicamente el narrador con los pasajes dados. No se pide escribir otro relato.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a74a0230-038b-5e1a-928e-9f5547fd5a30"
+      ],
+      "required": "narrador",
+      "forbidden": "relaciones causales|motivaciones"
+    },
+    {
+      "id": "historical-write-publish",
+      "description": "Escribe el fragmento de novela histórica del caso dado y publica la versión final en el mural de la clase. No se pide una cuenta externa ni una investigación nueva.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "69b4887a-1ffc-5ce7-b76e-dec90ae7c8e5"
+      ],
+      "required": "medio solicitado"
+    },
+    {
+      "id": "historical-publish-only",
+      "description": "Publica únicamente la versión final de la novela histórica proporcionada en el mural de la clase. No se pide reescribir los sucesos ni investigar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "69b4887a-1ffc-5ce7-b76e-dec90ae7c8e5"
+      ],
+      "required": "medio solicitado",
+      "forbidden": "relaciones causales|motivaciones"
+    },
+    {
+      "id": "historical-no-publish",
+      "description": "Revisa únicamente la puntuación de la novela histórica proporcionada. No se pide publicar, ilustrar ni añadir contenido.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "69b4887a-1ffc-5ce7-b76e-dec90ae7c8e5"
+      ],
+      "required": "puntuación",
+      "forbidden": "publica|contenido|organización"
+    },
+    {
+      "id": "social-order-or",
+      "description": "Analiza únicamente el orden cronológico o anacrónico de la novela social proporcionada, a elección. No se piden ambos ni frecuencia.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9d04a75f-f6a6-54eb-a9bb-b8180506d6db"
+      ],
+      "required": "cronológico.*o.*anacrónico",
+      "forbidden": "frecuencia"
+    },
+    {
+      "id": "social-connectors-or",
+      "description": "Identifica únicamente los conectores temporales o causales de la novela social proporcionada, a elección. No se piden ambos ni una explicación de su función.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1b2daea9-5c73-54c7-9e10-add0a16635d6"
+      ],
+      "required": "temporales.*o.*causales",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "social-actants-or",
+      "description": "Identifica únicamente el actante agente o el actante paciente de la novela social proporcionada, a elección. No se piden ambos ni otros roles.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "692c32da-a7c6-5f75-9850-a8dac64a1451"
+      ],
+      "required": "agente.*o.*paciente",
+      "forbidden": "beneficiario|cómplice|ayudante|oponente|aliado"
+    },
+    {
+      "id": "social-actants-and",
+      "description": "Identifica únicamente el actante agente y el actante paciente de la novela social proporcionada. No se pide explicar ni analizar otros roles.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "692c32da-a7c6-5f75-9850-a8dac64a1451"
+      ],
+      "required": "agente.*paciente",
+      "forbidden": "beneficiario|cómplice|ayudante|oponente|aliado"
+    },
+    {
+      "id": "social-setting-only",
+      "description": "Analiza únicamente el ambiente de la novela social proporcionada con los datos del relato. No se pide expresar una ideología propia.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c66c2573-8d19-5535-84d0-3c12d56563ba"
+      ],
+      "required": "ambiente",
+      "forbidden": "adhesión|ideología"
+    },
+    {
+      "id": "social-individual",
+      "description": "De manera individual, el estudiante escribirá el fragmento de novela social del caso ficticio dado. No se pide publicar ni ilustrar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "156d9259-fc29-5d29-976a-a179aaa57c8b"
+      ]
+    },
+    {
+      "id": "social-group",
+      "description": "En parejas, los estudiantes escribirán un fragmento de novela social con los personajes ficticios dados. No se pide una experiencia verdadera ni publicar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "156d9259-fc29-5d29-976a-a179aaa57c8b"
+      ],
+      "participationMode": "GROUP"
+    },
+    {
+      "id": "social-independent",
+      "description": "Analiza el narrador de la novela social proporcionada. Luego escribe otro fragmento de novela social del caso ficticio dado. No se pide publicar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "156d9259-fc29-5d29-976a-a179aaa57c8b"
+      ]
+    },
+    {
+      "id": "social-negative-positive",
+      "description": "Sin narrar ni publicar, pero identifica únicamente los adjetivos de la novela social proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4833edf2-a9ef-5a44-bf47-3aa740a209cd"
+      ],
+      "required": "adjetiv",
+      "forbidden": "Explica|función|publica"
+    },
+    {
+      "id": "social-paraphrase",
+      "description": "Resume las acciones principales de la novela social proporcionada con tus propias palabras. No se pide escribir otra historia.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "84954dd2-8cad-5489-ad7f-736ec8e985cd"
+      ],
+      "required": "propias palabras|paráfrasis"
+    },
+    {
+      "id": "social-actant-agente",
+      "description": "Identifica únicamente el actante agente de la novela social proporcionada. No se pide explicar su función ni analizar todos los roles.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "692c32da-a7c6-5f75-9850-a8dac64a1451"
+      ],
+      "required": "agente"
+    },
+    {
+      "id": "social-actant-paciente",
+      "description": "Identifica únicamente el actante paciente de la novela social proporcionada. No se pide explicar su función ni analizar todos los roles.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "692c32da-a7c6-5f75-9850-a8dac64a1451"
+      ],
+      "required": "paciente"
+    },
+    {
+      "id": "social-actant-beneficiario",
+      "description": "Identifica únicamente el actante beneficiario de la novela social proporcionada. No se pide explicar su función ni analizar todos los roles.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "692c32da-a7c6-5f75-9850-a8dac64a1451"
+      ],
+      "required": "beneficiario"
+    },
+    {
+      "id": "social-actant-complice",
+      "description": "Identifica únicamente el actante cómplice de la novela social proporcionada. No se pide explicar su función ni analizar todos los roles.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "692c32da-a7c6-5f75-9850-a8dac64a1451"
+      ],
+      "required": "cómplice"
+    },
+    {
+      "id": "social-actant-ayudante",
+      "description": "Identifica únicamente el actante ayudante de la novela social proporcionada. No se pide explicar su función ni analizar todos los roles.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "692c32da-a7c6-5f75-9850-a8dac64a1451"
+      ],
+      "required": "ayudante"
+    },
+    {
+      "id": "social-actant-oponente",
+      "description": "Identifica únicamente el actante oponente de la novela social proporcionada. No se pide explicar su función ni analizar todos los roles.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "692c32da-a7c6-5f75-9850-a8dac64a1451"
+      ],
+      "required": "oponente"
+    },
+    {
+      "id": "social-actant-aliado",
+      "description": "Identifica únicamente el actante aliado de la novela social proporcionada. No se pide explicar su función ni analizar todos los roles.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "692c32da-a7c6-5f75-9850-a8dac64a1451"
+      ],
+      "required": "aliado"
+    },
+    {
+      "id": "historical-read-then-compare",
+      "description": "Lean la novela histórica proporcionada y comparen únicamente los narradores de los dos pasajes dados. No se pide reescribir ni publicar.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "a74a0230-038b-5e1a-928e-9f5547fd5a30"
+      ],
+      "required": "narrador"
+    },
+    {
+      "id": "historical-publish-plural",
+      "description": "Publiquen únicamente la versión final de la novela histórica proporcionada en el mural de la clase. No se pide reescribir los sucesos ni investigar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "69b4887a-1ffc-5ce7-b76e-dec90ae7c8e5"
+      ],
+      "required": "medio solicitado",
+      "forbidden": "relaciones causales|motivaciones"
+    }
+  ]
+}

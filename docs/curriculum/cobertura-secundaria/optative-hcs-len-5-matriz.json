@@ -1,0 +1,2354 @@
+{
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD"
+  },
+  "grade": 5,
+  "subjectCode": "OPT-HCS-LEN-5",
+  "subjectName": "Apreciación y Producción Literarias",
+  "optativeExitName": "Humanidades y Ciencias Sociales",
+  "modalityCode": "academic",
+  "scopeId": "b1f1b6c5-3136-5287-8d68-e6171cd86a5f",
+  "pdfPages": [
+    467,
+    468,
+    469,
+    470,
+    471
+  ],
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      467,
+      468,
+      469,
+      470,
+      471
+    ],
+    "pageEvidence": [
+      {
+        "number": 467,
+        "printed": 466,
+        "imageSha256": "3fbce83c1642ab7ef86429b908f9674ce44dab4ba762dd41a5b6878622b1e23f"
+      },
+      {
+        "number": 468,
+        "printed": 467,
+        "imageSha256": "8e338f83a16e8cfafcb8a5c08b1bd5b0a1c4de6e8272906e27ee0b413bda7ea3"
+      },
+      {
+        "number": 469,
+        "printed": 468,
+        "imageSha256": "903ee7213c5041265e028009e135dcb1f9630f07f2053f7252d2466439df3705"
+      },
+      {
+        "number": 470,
+        "printed": 469,
+        "imageSha256": "5c0c3030ecf26e851a7ef6573dc2d0aca69e532653b9785fcf5c398af4d4e9d4"
+      },
+      {
+        "number": 471,
+        "printed": 470,
+        "imageSha256": "1c2d555add1ca756b6d66b8b7788fd32d99bbfdaf05581404f77e7fdc288cc8c"
+      }
+    ],
+    "reviewedCompetenciesAndIndicators": true
+  },
+  "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED",
+  "provider": "packages/shared/src/secondary-optative-language.ts",
+  "providerCatalog": "evaluation-2026.131",
+  "officialRecords": [
+    {
+      "id": "328e2209-35de-5c12-aaa8-5c4913c19947",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Se comunica con seguridad a través de producciones literarias específicas en espacios determinados,\ndemostrando conocimiento de la función y características de esos géneros, así como de los autores\nrepresentativos.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "7bddf1ea-aef7-5a46-938b-370b0f71fa85",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Comunicativa",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "4cce3dc6-9406-560a-bd65-a19eb506a146",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Produce textos narrativos específicos a partir de su función y características, para el abordaje de temas\nsociales sobre la realidad y de su vida personal, creando nuevos conocimientos de forma crítica.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "8438fc6d-7d0c-5b77-9e8c-5a93bc7489ba",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Pensamiento Lógico, Creativo\nCrítico",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "31c9ed97-b77c-5f31-8cf6-a5433b789458",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Elabora textos literarios determinados sobre problemas de su vida familiar, estudiantil y social, como punto\nde partida para proponer posibles soluciones, demostrando mayores niveles de criticidad.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "fd9ccd04-5032-58e6-8d04-2d74969af811",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Resolución de Problemas",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "b72b2c6f-7f8b-5f87-a78b-7d755ed20941",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Evidencia nuevas relaciones sociales en su entorno y fuera de este, mediante producciones literarias\nespecíficas, valorando hechos y tradiciones históricas dominicanas y de otras naciones",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "6c1c62c4-5036-585d-9629-caf664deaff3",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "740d6552-85c7-5247-9d92-774cf25f70bf",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Produce textos literarios narrativos específicos, expresando conocimiento de procesos investigativos ,\ncientíficos y del uso de tecnologías, según sus condiciones.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "d826264d-06ef-568f-a011-4bbd2e3905d4",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "626a2e43-be36-5af8-b814-76c499b021c0",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Demuestra experiencia sobre temas y situaciones relacionados con salud y medioambiente, mediante\nproducciones literarias especiales, en las que propone posibles soluciones.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "0c3fe9ed-599b-5682-84cf-85ef31881cd6",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "58accf4f-725b-529a-a250-1b8a3f095a14",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Produce textos literarios específicos para la promoción de valores universales, buenas relaciones humanas y\nel respeto a la dignidad.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "0e220162-7154-5248-a542-8e0d74bf9e32",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Desarrollo Personal y\nEspiritual",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "c0cb7a75-986e-5f8c-a080-e6c09bc17b84",
+      "type": "CONCEPT",
+      "text": "La novela histórica",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "b73d624c-3285-5f38-986d-de3bf05faa6e",
+      "type": "CONCEPT",
+      "text": "• Función y estructura",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "e99a89c9-5846-536e-9ccb-a24dc82081e2",
+      "type": "CONCEPT",
+      "text": "• Secuencias narrativas,\ndescriptivas y dialogadas.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "7d2a0178-a647-5c24-9b0c-e8ec37d8a77b",
+      "type": "CONCEPT",
+      "text": "• Conectores temporales,\ncausales, consecutivos,\nespaciales, de orden",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "a783728e-fac5-53c1-b867-fbcad7c33d57",
+      "type": "CONCEPT",
+      "text": "• Verbos en pasado",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "cb21e4f2-be52-5862-83e5-337c3d05bd11",
+      "type": "CONCEPT",
+      "text": "• Temas de la novela histórica",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "6abff723-b0a3-584d-a048-88524472f4de",
+      "type": "CONCEPT",
+      "text": "• Tiempo narrativo: orden,\nfrecuencia, duración.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "ca34fd1f-f67a-5fa4-b02d-86a0eadad5e3",
+      "type": "CONCEPT",
+      "text": "• Adjetivos",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "b5cf2af6-7c0f-57fb-939c-14d2efc2d5eb",
+      "type": "CONCEPT",
+      "text": "• El narrador",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "d1df0d32-15fd-5086-b208-6f92405656c2",
+      "type": "CONCEPT",
+      "text": "• Los personajes",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "2d612bea-bd59-5a66-b3be-3a8c0a3860c9",
+      "type": "CONCEPT",
+      "text": "• Los actantes",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "dbe84d97-c7e6-55f0-9bfb-6be2354d9db4",
+      "type": "PROCEDURE",
+      "text": "Comprensión oral (escuchar)",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "f8eb2a0f-b04b-5ea2-b25c-945c97cf1545",
+      "type": "PROCEDURE",
+      "text": "• Escucha atenta de novelas históricas acordes con la\nedad e intereses; anticipación del contenido de la novela\nhistórica a partir del título y otras marcas textuales.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "8682946f-0a61-5465-9f55-a806bdd0d8a3",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la estructura de la novela, de los verbos en\npasado y presente, de los conectores, de los adjetivos, de\nla distinción entre narrador y personajes, la clasificación\ny la actancia de los personajes y de las fórmulas de inicio\ny de cierre, para comprender su contenido.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "4ea65c3d-c83e-5827-982f-27d4369656e8",
+      "type": "PROCEDURE",
+      "text": "• Realización de las inferencias necesarias para\ncomprender el sentido global de la novela que escucha,\nrelacionadas con las motivaciones e intenciones de las\nacciones de los personajes, los temas y las características\nde la novela histórica, así como sobre el significado de\nlas palabras cuyo significado desconoce; identificación\nde las acciones realizadas por los personajes de la\nnovela e inferencias sobre la relación de causalidad\nentre ellas; paráfrasis de las acciones principales de la\nnovela, usando el vocabulario apropiado y mediante\nsinónimos y otros recursos.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "47dee8ad-3a33-5a0b-9bc5-e213ae70e1e2",
+      "type": "PROCEDURE",
+      "text": "Producción oral (hablar)",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "34ed101d-baee-525b-856c-053b4f770d83",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de\nla novela histórica; selección del o los sucesos, los\npersonajes, el lugar y el tiempo adecuados a la\nintención de la historia que va a narrar; descripción de\nlos personajes con vocabulario apropiado, utilizando\nadjetivos que los caractericen.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "552a51e5-0d92-5cfe-badc-d5e7c195712c",
+      "type": "PROCEDURE",
+      "text": "• Organización cronológica de los sucesos en la novela\nhistórica; utilización de la clasificación y actancia de los\npersonajes para dar vida a los mismos; conectores\ncausales, de orden y continuidad para dar coherencia\ny cohesión al esquema de dicha novela.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "fab353af-f09e-5a81-95a7-584cbf7d1d5a",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al escuchar novelas históricas.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "ba31a88f-c8de-5f5a-9dba-22aac942e976",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la función lúdica y estética de la\nlengua.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "1e69527f-0d25-5813-805a-ab91f57acf65",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés y curiosidad por realizar predicciones de\nnovelas que escucha.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "7b57413b-2fd0-5f4f-a7ab-053755d0558a",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la importancia de reconocer los\nsentimientos y motivaciones de los personajes.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "1bbbaeeb-0d51-5e86-972c-f2b7a778d046",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al leer novelas históricas de diversos\nautores.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "f69b58ce-78d8-5912-86d5-b17c731be392",
+      "type": "ATTITUDE_VALUE",
+      "text": "• -Disfrute al escribir novelas históricas.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "331d864c-5cf2-59e4-8e76-423950831e5c",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Creatividad e imaginación al escribir novelas e\nilustrarlas.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "2c17581d-22ea-532f-87f1-8679eef2acc5",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al escuchar novelas sociales.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "73813ccd-57a3-5f49-97fd-6d4a84e7c3dc",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la función lúdica y estética de la\nlengua.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "31f6e45c-e88b-5735-a77b-01289f209baf",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés y curiosidad por realizar predicciones de\nnovelas que escucha.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "58e7b371-de57-5937-8de4-088cad869529",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de los fenómenos sociales y humanos\nexpresados en la novela.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "afde69a2-290a-5bce-b3d8-cd17b1c0eccf",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al leer novelas sociales de diversos\nautores.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "5b958a02-6274-5a72-8363-3a4a5d5b7d0d",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al escribir novelas sociales.",
+      "pdfPage": 467,
+      "printedPage": "466"
+    },
+    {
+      "id": "627a6101-42de-5663-aa9f-a1b9c5225777",
+      "type": "CONCEPT",
+      "text": "La novela social",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "a3b3ed47-f763-51a4-9187-e0a0ab61613b",
+      "type": "CONCEPT",
+      "text": "• Función y estructura",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "095d0dd1-e3e3-5f34-8ea7-3d0d9cd559b7",
+      "type": "CONCEPT",
+      "text": "• Personajes",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "c66c2573-8d19-5535-84d0-3c12d56563ba",
+      "type": "CONCEPT",
+      "text": "• Ambiente",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "0b098237-1a58-5141-ac4d-40811aa44df6",
+      "type": "CONCEPT",
+      "text": "• Secuencias narrativas,\ndescriptivas y dialogadas",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "1b2daea9-5c73-54c7-9e10-add0a16635d6",
+      "type": "CONCEPT",
+      "text": "• Conectores temporales, causales\ny consecutivos.",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "beab2755-caa6-5660-96a6-bd9ca2ff1016",
+      "type": "CONCEPT",
+      "text": "• Verbos en pasado",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "a7918997-4513-5153-849c-2e556cad84c0",
+      "type": "CONCEPT",
+      "text": "• Verbos en presente",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "9d04a75f-f6a6-54eb-a9bb-b8180506d6db",
+      "type": "CONCEPT",
+      "text": "• Tiempo narrativo: orden\n(cronológico o anacrónico),\nfrecuencia.",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "4833edf2-a9ef-5a44-bf47-3aa740a209cd",
+      "type": "CONCEPT",
+      "text": "• Adjetivos",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "692c32da-a7c6-5f75-9850-a8dac64a1451",
+      "type": "CONCEPT",
+      "text": "• Tipos de actantes (agente,\npaciente, beneficiario, cómplice,\nayudante, oponente, aliado).",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "2ed6bf6d-6157-56e9-83d9-24ef0c2e4196",
+      "type": "PROCEDURE",
+      "text": "• Utilización del vocabulario apropiado en función de\nla intención comunicativa y de los interlocutores;\nmarcas de inicio, progresión y cierre; inclusión de\nlas características de la novela histórica al producir\noralmente su trama.\nComprensión escrita (leer)",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "a8b8aa71-c6ca-5f2b-b7df-5573c9068ad3",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de un propósito para la lectura de la\nnovela histórica; anticipación del contenido de la novela\na partir del título, las Imágenes y otras marcas textuales.",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "a74a0230-038b-5e1a-928e-9f5547fd5a30",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la estructura de la novela histórica de los\nconectores, de los verbos en pasado y presente, de los\nadjetivos, de la distinción entre narrador y personajes, de\nlas fórmulas de inicio y de cierre y de las características;\nidentificación y clasificación de los personajes y su\nactancia para la comprensión de sus acciones, los\nhechos históricos reales de los hechos de ficción o\nimaginados, las distintas voces (narrador y personajes)\nque intervienen en este tipo de novela histórica, para\nsu comprensión.",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "964b4968-a70d-5481-9473-4105e881d6a7",
+      "type": "PROCEDURE",
+      "text": "• Realización de las inferencias necesarias para\ncomprender el sentido global de la novela histórica que\nlee, sobre las motivaciones e intenciones de las acciones\nde los personajes, los temas de la novela, el significado\nde las palabras cuyo significado desconoce; paráfrasis\nde las acciones principales de la novela, usando el\nvocabulario apropiado y mediante sinónimos y otros\nrecursos.",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "f490fe56-ced5-5c43-9cb8-dc8a74ac7b0e",
+      "type": "PROCEDURE",
+      "text": "Producción escrita (escribir)",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "37c092c6-168e-5aff-9608-e9b7c0d662ce",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de\nla novela histórica que se escribirá colectivamente;\nselección del o los sucesos, los personajes, el lugar, las\nacciones y el tiempo, la época, personaje destacado\no hecho histórico en los que se basará la novela;\ndescripción de los personajes y ambiente del cuento\nen los diferentes momentos y con el vocabulario\napropiado.",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "d98e3393-a5c9-5824-99a4-b5f747972fcf",
+      "type": "PROCEDURE",
+      "text": "• Utilización de fórmulas de inicio y de cierre de los\ncapítulos, adjetivos para describir a los personajes de\nla novela histórica que produce, las distintas voces\n(narrador y personajes) en el capítulo que escribe,\nvocabulario apropiado en función de la intención\ncomunicativa y de los interlocutores; inclusión de\ndiálogos de los personajes que escribe en estilo directo.",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "11651691-56aa-549d-974c-18339035c43d",
+      "type": "PROCEDURE",
+      "text": "• Organización cronológica de los sucesos y utilización\ndel tiempo verbal pasado para narrar las acciones de los\npersonajes, del tiempo verbal presente para escribir los\ndiálogos, elementos descriptivos para crear suspenso en\nla narración; inclusión de las características de la novela\nhistórica; uso de los signos de puntuación (coma, punto,\ndos puntos, raya) para segmentar y organizar el escrito.",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "69b4887a-1ffc-5ce7-b76e-dec90ae7c8e5",
+      "type": "PROCEDURE",
+      "text": "• Escritura del o los borradores de la novela ajustándose a\nla intención, los elementos seleccionados y la estructura\n(inicio, nudo y desenlace); revisión y corrección del o los\nborradores con ayuda del docente y los compañeros;\nedición y publicación de la novela histórica, apoyándose\nen medios y recursos tecnológicos y convencionales.",
+      "pdfPage": 468,
+      "printedPage": "467"
+    },
+    {
+      "id": "2c3b46f1-e940-5545-a8bf-a151af4b0bda",
+      "type": "PROCEDURE",
+      "text": "Comprensión oral (escuchar)",
+      "pdfPage": 469,
+      "printedPage": "468"
+    },
+    {
+      "id": "5e4c98a7-65bb-519a-824b-47dce36e9607",
+      "type": "PROCEDURE",
+      "text": "• Escucha atenta de novelas sociales acordes con la edad\ne intereses; anticipación del contenido a partir del título\ny otras marcas textuales.",
+      "pdfPage": 469,
+      "printedPage": "468"
+    },
+    {
+      "id": "8a20dd58-a439-5596-834f-80564e335046",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la estructura de la novela, de los verbos en\npasado y presente, de los conectores, de los adjetivos, de\nla distinción entre narrador y personajes, la clasificación\ny la actancia de los personajes, de las fórmulas de inicio\ny de cierre y las características de la novela social.",
+      "pdfPage": 469,
+      "printedPage": "468"
+    },
+    {
+      "id": "8bc1425b-c39e-5914-af03-064e3c72e59a",
+      "type": "PROCEDURE",
+      "text": "• Realización de las inferencias necesarias para\ncomprender el sentido global de la novela que\nescucha, relacionadas con las motivaciones e\nintenciones de las acciones de los personajes, los temas\nde la novela; identificación de las acciones realizadas\npor los personajes e inferencias sobre la relación de\ncausalidad; paráfrasis de las acciones principales de la\nnovela, usando el vocabulario apropiado y mediante\nsinónimos y otros recursos.\nProducción oral (hablar)",
+      "pdfPage": 469,
+      "printedPage": "468"
+    },
+    {
+      "id": "51c0b0bc-dda5-5712-b5eb-df8c0e35fe17",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de\nla novela social; selección del o los sucesos, los\npersonajes, el lugar y el tiempo adecuados a la\nintención de la historia que va a narrar; descripción\nde los personajes de la novela social con vocabulario\napropiado, utilizando adjetivos que los caractericen;\norganización cronológica de los sucesos en la novela\nsocial; utilización de la clasificación y actancia de los\npersonajes para dar vida a los mismos; conectores\ncausales de orden y continuidad para dar coherencia\ny cohesión al esquema de la novela, vocabulario\napropiado en función de la intención comunicativa\ny de los interlocutores, marcas de inicio, progresión\ny cierre; inclusión de las características de la novela\nsocial y de sus temáticas para narrar oralmente su\ntrama.\nComprensión escrita (leer)",
+      "pdfPage": 469,
+      "printedPage": "468"
+    },
+    {
+      "id": "9adb7f8e-102f-5a4a-ace9-d5952d92fd7c",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de un propósito para la lectura de la\nnovela social; anticipación del contenido a partir del\ntítulo, las Imágenes y otras marcas textuales.",
+      "pdfPage": 469,
+      "printedPage": "468"
+    },
+    {
+      "id": "e0952b90-901c-5ece-8612-1d52a3ee7273",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la estructura de la novela social, conectores,\nverbos en pasado y presente, adjetivos, distinción entre\nnarrador y personajes, las fórmulas de inicio y de cierre\ny de las características, para comprender su contenido.",
+      "pdfPage": 469,
+      "printedPage": "468"
+    },
+    {
+      "id": "84954dd2-8cad-5489-ad7f-736ec8e985cd",
+      "type": "PROCEDURE",
+      "text": "• Realización de las inferencias necesarias para\ncomprender el sentido global de la novela social que\nlee sobre las motivaciones e intenciones de las acciones\nde los personajes, los temas de la novela, el significado\nde las palabras cuyo significado desconoce;\nIdentificación y clasificación de los personajes y\nsu actancia para la comprensión de sus acciones;\nidentificación de las distintas voces (narrador y\npersonajes) que intervienen, para su comprensión;\nparáfrasis de las acciones principales, usando el\nvocabulario apropiado, sinónimos y otros recursos.",
+      "pdfPage": 469,
+      "printedPage": "468"
+    },
+    {
+      "id": "6fe13304-18e7-5058-a7a4-20862fa71efc",
+      "type": "PROCEDURE",
+      "text": "Producción escrita (escribir)",
+      "pdfPage": 470,
+      "printedPage": "469"
+    },
+    {
+      "id": "f482a1bb-f3d3-59f2-a09a-19d4c8d55a59",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de la\nnovela social que se escribirá colectivamente; selección\ndel o los sucesos, los personajes, el lugar, las acciones y\nel tiempo; descripción de los personajes y ambiente del\ncuento en los diferentes momentos y con el vocabulario\napropiado; utilización de fórmulas de inicio y de cierre\nde los capítulos.",
+      "pdfPage": 470,
+      "printedPage": "469"
+    },
+    {
+      "id": "156d9259-fc29-5d29-976a-a179aaa57c8b",
+      "type": "PROCEDURE",
+      "text": "• Utilización de adjetivos para describir a los personajes,\ninclusión de diálogos de los personajes en estilo\ndirecto, de distintas voces (narrador y personajes) en el\ncapítulo que escribe, vocabulario apropiado en función\nde la intención comunicativa y de los interlocutores;\norganización cronológica de los sucesos y utilización\ndel tiempo verbal pasado para narrar las acciones de\nlos personajes, tiempo verbal presente para escribir los\ndiálogos; inclusión de las características de la novela\nsocial, los signos de puntuación (coma, punto, dos\npuntos, raya) para segmentar y organizar el escrito.",
+      "pdfPage": 470,
+      "printedPage": "469"
+    },
+    {
+      "id": "e3f14291-ff07-52a8-bd02-3af4dbd74f3d",
+      "type": "PROCEDURE",
+      "text": "• Escritura del o los borradores ajustándose a la intención,\nlos elementos seleccionados y la estructura (inicio,\nnudo y desenlace); revisión y corrección del o los\nborradores con ayuda del docente y los compañeros;\nedición y publicación de la novela social, apoyándose\nen recurso y medios variados, incluyendo los que\nproporcionan las TIC.",
+      "pdfPage": 470,
+      "printedPage": "469"
+    },
+    {
+      "id": "c03adc3a-3d29-557f-bddd-40bd35c29eb3",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Demuestra habilidades comunicativas mediante el uso de textos literarios narrativos (novelas históricas y novelas sociales), para el\ndesenvolvimiento en situaciones variadas, haciendo uso de recursos tecnológicos, entre otros.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "9f937935-04f3-5545-b7c3-a59407d81d09",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Emplea producciones literarias específicas para comunicarse entre compañeros, familiares y la sociedad en general, usando de manera\nresponsable variadas herramientas tecnológicas, así como otros medios y recursos.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "6ea6bc28-6ed0-5ff5-b131-cf26b8de91eb",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos literarios seleccionados para comunicar temas, problemas o situaciones de nivel local, nacional e internacional,\nexponiendo sus pensamientos, sentimientos y propuestas de acciones.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "26826a17-1759-5bd0-a309-dec9b1c13f1c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Analiza los textos narrativos seleccionados, para su conocimiento, dominio y uso en el desarrollo de temas sociales.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "035885ae-a067-53f7-baec-a13b518b2d25",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Demuestra habilidades derivadas de la apreciación y producción de los textos literarios específicos, tomando en cuenta temas del\nentorno escolar, familiar, comunitario, nacional y del mundo, promoviendo nuevos conocimientos.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "cb39e277-222e-5d54-91f4-2c017a50f8f9",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza el procesamiento de representaciones mentales, datos e informaciones para la construcción de nuevos conocimientos, a partir\nde textos narrativos seleccionados que apoyan juicios y puntos de vista.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "300107b1-3ffb-5493-a1f5-158078ee076b",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Describe distintos problemas sociales, a través de los textos literarios determinados, para su comprensión y propuesta de soluciones\nposibles.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "7b08aef4-5516-54d1-a57c-730a32447edd",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza textos literarios definidos que contienen informaciones que apoyan la solución de problemas de su entorno y fuera de este.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "f46f176a-8d85-56de-bdea-4bed71a9d18e",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Presenta textos narrativos especiales sobre conclusiones y recomendaciones de estudios realizados, proponiendo soluciones a\nproblemas de su vida social.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "ab615990-712c-51c8-906c-81c3538019dc",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Caracteriza nuevas relaciones culturales en ámbitos diversos, mediante textos literarios narrativos especiales, valorando lo natural y\nlo sociocultural.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "3b7592ee-12ad-5576-a09b-9ca2cec6b572",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza los textos literarios seleccionados en la elaboración de proyectos que apoyan y valoran las buenas prácticas de ciudadanía.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "71b8d299-fe7f-501f-a934-5235ebdc81d0",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Promueve, a través de producciones literarias especificadas, prácticas de ciudadanía con mayor rigor en los entornos variados,\ntomando en cuenta los valores universales.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "0bd2901c-e72a-5772-8577-627f9c0b91ac",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Identifica investigaciones sobre temas comunitarios a través de textos literarios específicos, en demostración de conocimientos y\ndestrezas lingüísticas, así como del uso de herramientas tecnológicas.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "0eb5b7df-c557-5093-93dc-cab5635a2b1b",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Presenta, mediante textos literarios seleccionados, hallazgos científicos y tecnológicos, poniendo en práctica sus conocimientos sobre\ninvestigación.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "d3c29fe4-d9b5-50f2-a51f-01d2488ebb0a",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Elabora textos literarios sugeridos a través de plataformas variadas, para la publicación de investigaciones científicas de distintos\námbitos, en demostración de conocimiento y habilidades en el uso de la lengua.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "96cd5246-4893-5d2f-a1ec-d047e26def65",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Determina textos literarios especiales, para la caracterización de temas o problemas comunitarios de salud, medioambiente,\nalimentación, entre otros, proponiendo soluciones.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "fb782439-442a-5e77-a7bf-cb7783c2258f",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Plantea soluciones pertinentes a problemas comunitarios, mediante producciones de textos literarios específicos.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "27f7e259-0786-5bb5-b027-aa39d3506df4",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos literarios seleccionados para promover acción sobre la preservación de la salud y el cuidado de los recursos naturales.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "20f98d5f-3745-5efc-9a7e-bbf19b1b3ada",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Se comprende a sí mismo/a y a los demás y se expresa a través de un género textual, acorde con las situaciones que se presentan en\nun contexto social determinado.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "473fd409-4099-5211-9825-a8cb749067ba",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos literarios para cultivar valores universales y reforzar la dimensión humanista, para el desarrollo físico y espiritual.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    },
+    {
+      "id": "1e2af20a-ac4e-5ad5-8149-29a30e4b451c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Valora y promueve el uso de la lengua para canalizar emociones y sentimientos, mediante lecturas y escrituras reflexivas, fortaleciendo\nlas relaciones humanas y el respeto a la dignidad.",
+      "pdfPage": 471,
+      "printedPage": "470"
+    }
+  ],
+  "genres": [
+    {
+      "id": "novela-historica",
+      "label": "novela histórica",
+      "match": "novelas?(?: breves?)? historic",
+      "sourceRecordIds": [
+        "b73d624c-3285-5f38-986d-de3bf05faa6e"
+      ],
+      "pdfPages": [
+        467,
+        468
+      ],
+      "profile": {
+        "genre": "novela histórica",
+        "target": "los sucesos, las voces y los referentes históricos expresamente trabajados en el texto dado",
+        "plan": "la intención, los sucesos, personajes, lugar, tiempo y referentes expresamente pedidos"
+      },
+      "planningComponents": [
+        [
+          "intencion",
+          "la intención"
+        ],
+        [
+          "sucesos|acciones",
+          "los sucesos"
+        ],
+        [
+          "personajes",
+          "los personajes"
+        ],
+        [
+          "lugar|ambiente",
+          "el lugar"
+        ],
+        [
+          "tiempo",
+          "el tiempo"
+        ],
+        [
+          "perspectiva|punto de vista|voz",
+          "la perspectiva narrativa"
+        ],
+        [
+          "epoca",
+          "la época"
+        ],
+        [
+          "personaje destacado",
+          "el personaje destacado"
+        ],
+        [
+          "hecho historico",
+          "el hecho histórico"
+        ]
+      ],
+      "features": [
+        {
+          "id": "novel-structure",
+          "match": "funcion|estructura",
+          "name": "la función y estructura solicitadas",
+          "function": "relacionar la organización del relato con su propósito",
+          "error": "se atribuye a una parte una función incompatible con el pasaje",
+          "sourceRecordIds": [
+            "b73d624c-3285-5f38-986d-de3bf05faa6e"
+          ],
+          "terms": [
+            [
+              "funcion",
+              "la función"
+            ],
+            [
+              "estructura",
+              "la estructura"
+            ]
+          ]
+        },
+        {
+          "id": "narrative-time",
+          "match": "tiempo narrativo|frecuencia|duracion|(?<!de )\\borden\\b(?! (?:anacronico|cronologico))",
+          "name": "el tiempo narrativo solicitado",
+          "function": "relacionar la disposición, repetición o extensión de los acontecimientos con el pasaje",
+          "error": "se confunde el tiempo de los hechos con su disposición o extensión en el relato",
+          "sourceRecordIds": [
+            "6abff723-b0a3-584d-a048-88524472f4de"
+          ],
+          "terms": [
+            [
+              "(?<!de )\\borden\\b(?! (?:cronologico|anacronico))",
+              "el orden narrativo"
+            ],
+            [
+              "frecuencia",
+              "la frecuencia narrativa"
+            ],
+            [
+              "duracion",
+              "la duración narrativa"
+            ]
+          ]
+        },
+        {
+          "id": "narrator",
+          "match": "narrador|voces|(?<!estilo del )\\bautor\\b|quien narra|quien cuenta",
+          "name": "la voz narrativa solicitada",
+          "function": "distinguir el papel y la perspectiva solicitados según las marcas disponibles en el pasaje",
+          "error": "se atribuye a una voz una intervención o información incompatible con el pasaje",
+          "sourceRecordIds": [
+            "b5cf2af6-7c0f-57fb-939c-14d2efc2d5eb"
+          ],
+          "terms": [
+            [
+              "autor",
+              "el autor"
+            ],
+            [
+              "narrador omnisciente",
+              "el narrador omnisciente"
+            ],
+            [
+              "narrador testigo",
+              "el narrador testigo"
+            ],
+            [
+              "narrador(?! (?:omnisciente|testigo))|quien narra|quien cuenta",
+              "el narrador"
+            ],
+            [
+              "voces",
+              "las voces narrativas"
+            ],
+            [
+              "personajes?",
+              "los personajes"
+            ]
+          ]
+        },
+        {
+          "id": "novel-sequences",
+          "match": "secuencias?",
+          "name": "las secuencias expresamente pedidas",
+          "function": "relacionar la narración, descripción o diálogo solicitado con su papel en el pasaje",
+          "error": "se clasifica una secuencia por un rasgo ausente",
+          "sourceRecordIds": [
+            "e99a89c9-5846-536e-9ccb-a24dc82081e2"
+          ],
+          "terms": [
+            [
+              "narrativas?",
+              "la secuencia narrativa"
+            ],
+            [
+              "descriptivas?",
+              "la secuencia descriptiva"
+            ],
+            [
+              "dialogadas?",
+              "la secuencia dialogada"
+            ]
+          ]
+        },
+        {
+          "id": "novel-connectors",
+          "match": "conectores",
+          "name": "los conectores solicitados",
+          "function": "enlazar las acciones conservando la relación expresamente pedida",
+          "error": "el conector invierte una relación entre los sucesos",
+          "sourceRecordIds": [
+            "7d2a0178-a647-5c24-9b0c-e8ec37d8a77b"
+          ],
+          "terms": [
+            [
+              "temporales",
+              "los conectores temporales"
+            ],
+            [
+              "causales",
+              "los conectores causales"
+            ],
+            [
+              "consecutivos",
+              "los conectores consecutivos"
+            ],
+            [
+              "espaciales",
+              "los conectores espaciales"
+            ],
+            [
+              "de orden",
+              "los conectores de orden"
+            ]
+          ]
+        },
+        {
+          "id": "novel-characters",
+          "match": "analiz[a-z]*\\s+(?:unicamente\\s+)?(?:los )?personajes|(?:caracteriza|describ)[a-z]*[^.;]*personajes|rasgos de (?:los )?personajes",
+          "name": "los personajes solicitados",
+          "function": "relacionar sus rasgos y acciones con los pasajes disponibles",
+          "error": "se atribuye a un personaje una acción o un rasgo ajeno",
+          "sourceRecordIds": [
+            "d1df0d32-15fd-5086-b208-6f92405656c2"
+          ]
+        },
+        {
+          "id": "novel-actants",
+          "match": "actan",
+          "name": "la actancia solicitada",
+          "function": "relacionar el papel de los personajes con sus acciones en el relato",
+          "error": "se confunde el papel actancial con el nombre del personaje",
+          "sourceRecordIds": [
+            "2d612bea-bd59-5a66-b3be-3a8c0a3860c9"
+          ]
+        },
+        {
+          "id": "novel-themes",
+          "match": "\\btemas?\\b",
+          "name": "el tema solicitado",
+          "function": "relacionar las ideas del relato con sus episodios",
+          "error": "se atribuye al relato un tema sin apoyo textual",
+          "sourceRecordIds": [
+            "cb21e4f2-be52-5862-83e5-337c3d05bd11"
+          ]
+        },
+        {
+          "id": "motivations",
+          "match": "motivaciones|intenciones de (?:los )?personajes",
+          "name": "las motivaciones solicitadas de los personajes",
+          "function": "inferir las razones de sus acciones mediante los pasajes disponibles",
+          "error": "se atribuye al personaje una intención sin apoyo en el pasaje",
+          "sourceRecordIds": [
+            "4ea65c3d-c83e-5827-982f-27d4369656e8"
+          ]
+        },
+        {
+          "id": "causality",
+          "match": "causalidad|relacion(?:es)? causal(?:es)?",
+          "name": "las relaciones causales solicitadas",
+          "function": "relacionar un suceso con otro según el relato",
+          "error": "se presenta como causa un hecho posterior o ajeno al suceso",
+          "sourceRecordIds": [
+            "4ea65c3d-c83e-5827-982f-27d4369656e8"
+          ]
+        },
+        {
+          "id": "novel-chronology",
+          "match": "cronologic|anacron",
+          "name": "el orden narrativo solicitado",
+          "function": "conservar la relación entre la secuencia narrada y los acontecimientos",
+          "error": "se invierte la relación temporal solicitada",
+          "sourceRecordIds": [
+            "552a51e5-0d92-5cfe-badc-d5e7c195712c"
+          ],
+          "terms": [
+            [
+              "anacron",
+              "el orden anacrónico"
+            ],
+            [
+              "(?<!ana)cronologic",
+              "el orden cronológico"
+            ]
+          ]
+        },
+        {
+          "id": "novel-vocabulary",
+          "match": "vocabulario|lexico|palabras desconocidas",
+          "name": "el vocabulario contextual solicitado",
+          "function": "conservar el significado de las palabras en el pasaje",
+          "error": "se elige una acepción incompatible con el contexto",
+          "sourceRecordIds": [
+            "4ea65c3d-c83e-5827-982f-27d4369656e8"
+          ]
+        },
+        {
+          "id": "dialogue",
+          "match": "dialogos?|estilo directo",
+          "name": "el diálogo solicitado",
+          "function": "distinguir las intervenciones y su sentido en el relato",
+          "error": "se atribuye una intervención al personaje equivocado",
+          "sourceRecordIds": [
+            "d98e3393-a5c9-5824-99a4-b5f747972fcf"
+          ]
+        },
+        {
+          "id": "punctuation",
+          "match": "puntuacion|\\bcoma\\b|dos puntos|\\braya\\b",
+          "name": "la puntuación solicitada",
+          "function": "delimitar los sucesos y las intervenciones sin alterar su sentido",
+          "error": "el signo cambia quién habla o la relación entre los sucesos",
+          "sourceRecordIds": [
+            "11651691-56aa-549d-974c-18339035c43d"
+          ]
+        },
+        {
+          "id": "narrative-tenses",
+          "match": "tiempos? verbales|\\bpasado\\b|\\bpresente\\b",
+          "name": "los tiempos verbales solicitados",
+          "function": "distinguir el tiempo de las acciones y las intervenciones según el pasaje",
+          "error": "un cambio temporal contradice la relación entre los sucesos",
+          "sourceRecordIds": [
+            "a783728e-fac5-53c1-b867-fbcad7c33d57",
+            "11651691-56aa-549d-974c-18339035c43d"
+          ],
+          "terms": [
+            [
+              "pasado",
+              "el pasado narrativo"
+            ],
+            [
+              "presente",
+              "el presente del diálogo"
+            ]
+          ]
+        },
+        {
+          "id": "suspense",
+          "match": "suspens",
+          "name": "los recursos de suspense solicitados",
+          "function": "administrar la información y la expectativa del pasaje",
+          "error": "se atribuye suspense a información que contradice la escena",
+          "sourceRecordIds": [
+            "11651691-56aa-549d-974c-18339035c43d"
+          ]
+        },
+        {
+          "id": "chapter-boundaries",
+          "match": "capitulos|marcas de inicio|inicio.*(?:cierre|progresion)",
+          "name": "las marcas de inicio, progresión o cierre solicitadas",
+          "function": "delimitar el desarrollo de los episodios para que pueda seguirse el relato",
+          "error": "el límite de un episodio interrumpe una relación necesaria",
+          "sourceRecordIds": [
+            "2ed6bf6d-6157-56e9-83d9-24ef0c2e4196"
+          ],
+          "terms": [
+            [
+              "inicio",
+              "el inicio"
+            ],
+            [
+              "progresion",
+              "la progresión"
+            ],
+            [
+              "cierre",
+              "el cierre"
+            ],
+            [
+              "capitulos",
+              "los límites entre capítulos"
+            ]
+          ]
+        },
+        {
+          "id": "novel-plot",
+          "match": "\\btrama\\b",
+          "name": "la trama solicitada",
+          "function": "relacionar los sucesos y sus conexiones según el pasaje",
+          "error": "se añade o se invierte un suceso y cambia el sentido de la trama",
+          "sourceRecordIds": [
+            "4ea65c3d-c83e-5827-982f-27d4369656e8"
+          ]
+        },
+        {
+          "id": "novel-setting",
+          "match": "\\bambiente\\b|atmosfera",
+          "name": "el ambiente y la atmósfera solicitados",
+          "function": "situar los sucesos según los rasgos espaciales y sensoriales disponibles en el pasaje",
+          "error": "se atribuye al pasaje un espacio o una atmósfera incompatible con sus referencias",
+          "sourceRecordIds": [
+            "37c092c6-168e-5aff-9608-e9b7c0d662ce"
+          ],
+          "terms": [
+            [
+              "\\bambiente\\b",
+              "el ambiente"
+            ],
+            [
+              "atmosfera",
+              "la atmósfera"
+            ]
+          ]
+        },
+        {
+          "id": "novel-adjectives",
+          "match": "adjetiv",
+          "name": "la adjetivación solicitada",
+          "function": "caracterizar personajes o espacios según el pasaje",
+          "error": "se atribuye un rasgo incompatible con el elemento descrito",
+          "sourceRecordIds": [
+            "ca34fd1f-f67a-5fa4-b02d-86a0eadad5e3"
+          ]
+        },
+        {
+          "id": "historical-facts-fiction",
+          "match": "hechos (?:historicos )?(?:reales|documentados|de ficcion)|hechos? (?:de )?ficcion",
+          "name": "los hechos documentados o ficticios solicitados",
+          "function": "distinguir lo documentado de lo ficcional con los referentes proporcionados",
+          "error": "se presenta como documentado un hecho que los referentes dados muestran como ficcional",
+          "sourceRecordIds": [
+            "a74a0230-038b-5e1a-928e-9f5547fd5a30"
+          ],
+          "terms": [
+            [
+              "(?:hechos (?:historicos )?)?(?:reales|documentados)",
+              "los hechos documentados"
+            ],
+            [
+              "ficcion|ficcional",
+              "los hechos de ficción"
+            ]
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "plot",
+          "title": "Relaciones entre los sucesos",
+          "production": "Enlaza los sucesos del relato solicitado de modo que puedan seguirse las acciones y sus relaciones causales.",
+          "analysis": "Explica las relaciones entre los sucesos del relato mediante los pasajes proporcionados.",
+          "comparison": "Compara las relaciones entre los sucesos de los relatos con evidencias de los pasajes dados.",
+          "evidence": [
+            "Se siguen las relaciones principales; una transición necesita explicarse.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se invierte una relación causal o se añade un hecho incompatible con el relato.",
+            "No presenta relaciones reconocibles entre los sucesos solicitados."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "characters",
+          "title": "Personajes y acciones",
+          "production": "Hace reconocibles los personajes mediante sus acciones y relaciones en la narración solicitada.",
+          "analysis": "Explica las acciones y motivaciones de los personajes mediante episodios del relato.",
+          "comparison": "Contrasta acciones y motivaciones de los personajes con episodios de ambos relatos.",
+          "evidence": [
+            "Las acciones permiten reconocer a los personajes; una motivación requiere precisión.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye a un personaje una acción o motivación incompatible con el pasaje.",
+            "No aporta evidencia reconocible de las acciones y relaciones de los personajes."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "narrator",
+          "title": "Voz narrativa",
+          "production": "Emplea una voz narrativa que permite reconocer quién cuenta los sucesos y conserva su perspectiva.",
+          "analysis": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+          "comparison": "Contrasta las voces narrativas y sus perspectivas mediante evidencias de los relatos.",
+          "evidence": [
+            "Se reconoce quién narra; una referencia requiere distinguir mejor su perspectiva.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye al narrador una voz o información incompatible con su perspectiva.",
+            "No permite reconocer la voz y perspectiva narrativas solicitadas."
+          ],
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "novela-social",
+      "label": "novela social",
+      "match": "novelas?(?: breves?)? social(?:es)?",
+      "sourceRecordIds": [
+        "a3b3ed47-f763-51a4-9187-e0a0ab61613b"
+      ],
+      "pdfPages": [
+        468,
+        469,
+        470
+      ],
+      "profile": {
+        "genre": "novela social",
+        "target": "los sucesos, las voces y las situaciones sociales del mundo narrado del pasaje",
+        "plan": "la intención, los sucesos, personajes, lugar, tiempo y referentes expresamente pedidos"
+      },
+      "planningComponents": [
+        [
+          "intencion",
+          "la intención"
+        ],
+        [
+          "sucesos|acciones",
+          "los sucesos"
+        ],
+        [
+          "personajes",
+          "los personajes"
+        ],
+        [
+          "lugar|ambiente",
+          "el lugar"
+        ],
+        [
+          "tiempo",
+          "el tiempo"
+        ],
+        [
+          "perspectiva|punto de vista|voz",
+          "la perspectiva narrativa"
+        ]
+      ],
+      "features": [
+        {
+          "id": "novel-structure",
+          "match": "funcion|estructura",
+          "name": "la función y estructura solicitadas",
+          "function": "relacionar la organización del relato con su propósito",
+          "error": "se atribuye a una parte una función incompatible con el pasaje",
+          "sourceRecordIds": [
+            "a3b3ed47-f763-51a4-9187-e0a0ab61613b"
+          ],
+          "terms": [
+            [
+              "funcion",
+              "la función"
+            ],
+            [
+              "estructura",
+              "la estructura"
+            ]
+          ]
+        },
+        {
+          "id": "narrative-time",
+          "match": "tiempo narrativo|frecuencia|(?<!de )\\borden\\b(?! (?:anacronico|cronologico))",
+          "name": "el tiempo narrativo solicitado",
+          "function": "relacionar la disposición o repetición de los acontecimientos con el pasaje",
+          "error": "se confunde el orden de los hechos con su disposición o repetición en el relato",
+          "sourceRecordIds": [
+            "9d04a75f-f6a6-54eb-a9bb-b8180506d6db"
+          ],
+          "terms": [
+            [
+              "(?<!de )\\borden\\b(?! (?:cronologico|anacronico))",
+              "el orden narrativo"
+            ],
+            [
+              "frecuencia",
+              "la frecuencia narrativa"
+            ]
+          ]
+        },
+        {
+          "id": "narrator",
+          "match": "narrador|voces|(?<!estilo del )\\bautor\\b|quien narra|quien cuenta",
+          "name": "la voz narrativa solicitada",
+          "function": "distinguir el papel y la perspectiva solicitados según las marcas disponibles en el pasaje",
+          "error": "se atribuye a una voz una intervención o información incompatible con el pasaje",
+          "sourceRecordIds": [
+            "84954dd2-8cad-5489-ad7f-736ec8e985cd"
+          ],
+          "terms": [
+            [
+              "autor",
+              "el autor"
+            ],
+            [
+              "narrador omnisciente",
+              "el narrador omnisciente"
+            ],
+            [
+              "narrador testigo",
+              "el narrador testigo"
+            ],
+            [
+              "narrador(?! (?:omnisciente|testigo))|quien narra|quien cuenta",
+              "el narrador"
+            ],
+            [
+              "voces",
+              "las voces narrativas"
+            ],
+            [
+              "personajes?",
+              "los personajes"
+            ]
+          ]
+        },
+        {
+          "id": "novel-sequences",
+          "match": "secuencias?",
+          "name": "las secuencias expresamente pedidas",
+          "function": "relacionar la narración, descripción o diálogo solicitado con su papel en el pasaje",
+          "error": "se clasifica una secuencia por un rasgo ausente",
+          "sourceRecordIds": [
+            "0b098237-1a58-5141-ac4d-40811aa44df6"
+          ],
+          "terms": [
+            [
+              "narrativas?",
+              "la secuencia narrativa"
+            ],
+            [
+              "descriptivas?",
+              "la secuencia descriptiva"
+            ],
+            [
+              "dialogadas?",
+              "la secuencia dialogada"
+            ]
+          ]
+        },
+        {
+          "id": "novel-connectors",
+          "match": "conectores",
+          "name": "los conectores solicitados",
+          "function": "enlazar las acciones conservando la relación expresamente pedida",
+          "error": "el conector invierte una relación entre los sucesos",
+          "sourceRecordIds": [
+            "1b2daea9-5c73-54c7-9e10-add0a16635d6",
+            "51c0b0bc-dda5-5712-b5eb-df8c0e35fe17"
+          ],
+          "terms": [
+            [
+              "temporales",
+              "los conectores temporales"
+            ],
+            [
+              "causales",
+              "los conectores causales"
+            ],
+            [
+              "consecutivos",
+              "los conectores consecutivos"
+            ],
+            [
+              "de orden",
+              "los conectores de orden"
+            ]
+          ]
+        },
+        {
+          "id": "novel-characters",
+          "match": "analiz[a-z]*\\s+(?:unicamente\\s+)?(?:los )?personajes|(?:caracteriza|describ)[a-z]*[^.;]*personajes|rasgos de (?:los )?personajes",
+          "name": "los personajes solicitados",
+          "function": "relacionar sus rasgos y acciones con los pasajes disponibles",
+          "error": "se atribuye a un personaje una acción o un rasgo ajeno",
+          "sourceRecordIds": [
+            "095d0dd1-e3e3-5f34-8ea7-3d0d9cd559b7"
+          ]
+        },
+        {
+          "id": "novel-actants",
+          "match": "actan",
+          "name": "la actancia solicitada",
+          "function": "relacionar el papel de los personajes con sus acciones en el relato",
+          "error": "se confunde el papel actancial con el nombre del personaje",
+          "sourceRecordIds": [
+            "692c32da-a7c6-5f75-9850-a8dac64a1451"
+          ],
+          "terms": [
+            [
+              "\\bagente\\b",
+              "el actante agente"
+            ],
+            [
+              "\\bpaciente\\b",
+              "el actante paciente"
+            ],
+            [
+              "beneficiario",
+              "el actante beneficiario"
+            ],
+            [
+              "complice",
+              "el actante cómplice"
+            ],
+            [
+              "ayudante",
+              "el actante ayudante"
+            ],
+            [
+              "oponente",
+              "el actante oponente"
+            ],
+            [
+              "aliado",
+              "el actante aliado"
+            ]
+          ]
+        },
+        {
+          "id": "novel-themes",
+          "match": "\\btemas?\\b",
+          "name": "el tema solicitado",
+          "function": "relacionar las ideas del relato con sus episodios",
+          "error": "se atribuye al relato un tema sin apoyo textual",
+          "sourceRecordIds": [
+            "8bc1425b-c39e-5914-af03-064e3c72e59a"
+          ]
+        },
+        {
+          "id": "motivations",
+          "match": "motivaciones|intenciones de (?:los )?personajes",
+          "name": "las motivaciones solicitadas de los personajes",
+          "function": "inferir las razones de sus acciones mediante los pasajes disponibles",
+          "error": "se atribuye al personaje una intención sin apoyo en el pasaje",
+          "sourceRecordIds": [
+            "8bc1425b-c39e-5914-af03-064e3c72e59a"
+          ]
+        },
+        {
+          "id": "causality",
+          "match": "causalidad|relacion(?:es)? causal(?:es)?",
+          "name": "las relaciones causales solicitadas",
+          "function": "relacionar un suceso con otro según el relato",
+          "error": "se presenta como causa un hecho posterior o ajeno al suceso",
+          "sourceRecordIds": [
+            "8bc1425b-c39e-5914-af03-064e3c72e59a"
+          ]
+        },
+        {
+          "id": "novel-chronology",
+          "match": "cronologic|anacron",
+          "name": "el orden narrativo solicitado",
+          "function": "conservar la relación entre la secuencia narrada y los acontecimientos",
+          "error": "se invierte la relación temporal solicitada",
+          "sourceRecordIds": [
+            "9d04a75f-f6a6-54eb-a9bb-b8180506d6db"
+          ],
+          "terms": [
+            [
+              "anacron",
+              "el orden anacrónico"
+            ],
+            [
+              "(?<!ana)cronologic",
+              "el orden cronológico"
+            ]
+          ]
+        },
+        {
+          "id": "novel-vocabulary",
+          "match": "vocabulario|lexico|palabras desconocidas",
+          "name": "el vocabulario contextual solicitado",
+          "function": "conservar el significado de las palabras en el pasaje",
+          "error": "se elige una acepción incompatible con el contexto",
+          "sourceRecordIds": [
+            "84954dd2-8cad-5489-ad7f-736ec8e985cd"
+          ]
+        },
+        {
+          "id": "dialogue",
+          "match": "dialogos?|estilo directo",
+          "name": "el diálogo solicitado",
+          "function": "distinguir las intervenciones y su sentido en el relato",
+          "error": "se atribuye una intervención al personaje equivocado",
+          "sourceRecordIds": [
+            "156d9259-fc29-5d29-976a-a179aaa57c8b"
+          ]
+        },
+        {
+          "id": "punctuation",
+          "match": "puntuacion|\\bcoma\\b|dos puntos|\\braya\\b",
+          "name": "la puntuación solicitada",
+          "function": "delimitar los sucesos y las intervenciones sin alterar su sentido",
+          "error": "el signo cambia quién habla o la relación entre los sucesos",
+          "sourceRecordIds": [
+            "156d9259-fc29-5d29-976a-a179aaa57c8b"
+          ]
+        },
+        {
+          "id": "narrative-tenses",
+          "match": "tiempos? verbales|\\bpasado\\b|\\bpresente\\b",
+          "name": "los tiempos verbales solicitados",
+          "function": "distinguir el tiempo de las acciones y las intervenciones según el pasaje",
+          "error": "un cambio temporal contradice la relación entre los sucesos",
+          "sourceRecordIds": [
+            "beab2755-caa6-5660-96a6-bd9ca2ff1016",
+            "a7918997-4513-5153-849c-2e556cad84c0"
+          ],
+          "terms": [
+            [
+              "pasado",
+              "el pasado narrativo"
+            ],
+            [
+              "presente",
+              "el presente del diálogo"
+            ]
+          ]
+        },
+        {
+          "id": "chapter-boundaries",
+          "match": "capitulos|marcas de inicio|inicio.*(?:cierre|progresion)",
+          "name": "las marcas de inicio, progresión o cierre solicitadas",
+          "function": "delimitar el desarrollo de los episodios para que pueda seguirse el relato",
+          "error": "el límite de un episodio interrumpe una relación necesaria",
+          "sourceRecordIds": [
+            "51c0b0bc-dda5-5712-b5eb-df8c0e35fe17"
+          ],
+          "terms": [
+            [
+              "inicio",
+              "el inicio"
+            ],
+            [
+              "progresion",
+              "la progresión"
+            ],
+            [
+              "cierre",
+              "el cierre"
+            ],
+            [
+              "capitulos",
+              "los límites entre capítulos"
+            ]
+          ]
+        },
+        {
+          "id": "novel-plot",
+          "match": "\\btrama\\b",
+          "name": "la trama solicitada",
+          "function": "relacionar los sucesos y sus conexiones según el pasaje",
+          "error": "se añade o se invierte un suceso y cambia el sentido de la trama",
+          "sourceRecordIds": [
+            "8bc1425b-c39e-5914-af03-064e3c72e59a"
+          ]
+        },
+        {
+          "id": "novel-setting",
+          "match": "\\bambiente\\b|atmosfera",
+          "name": "el ambiente y la atmósfera solicitados",
+          "function": "situar los sucesos según los rasgos espaciales y sensoriales disponibles en el pasaje",
+          "error": "se atribuye al pasaje un espacio o una atmósfera incompatible con sus referencias",
+          "sourceRecordIds": [
+            "c66c2573-8d19-5535-84d0-3c12d56563ba"
+          ],
+          "terms": [
+            [
+              "\\bambiente\\b",
+              "el ambiente"
+            ],
+            [
+              "atmosfera",
+              "la atmósfera"
+            ]
+          ]
+        },
+        {
+          "id": "novel-adjectives",
+          "match": "adjetiv",
+          "name": "la adjetivación solicitada",
+          "function": "caracterizar personajes o espacios según el pasaje",
+          "error": "se atribuye un rasgo incompatible con el elemento descrito",
+          "sourceRecordIds": [
+            "4833edf2-a9ef-5a44-bf47-3aa740a209cd"
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "plot",
+          "title": "Relaciones entre los sucesos",
+          "production": "Enlaza los sucesos del relato solicitado de modo que puedan seguirse las acciones y sus relaciones causales.",
+          "analysis": "Explica las relaciones entre los sucesos del relato mediante los pasajes proporcionados.",
+          "comparison": "Compara las relaciones entre los sucesos de los relatos con evidencias de los pasajes dados.",
+          "evidence": [
+            "Se siguen las relaciones principales; una transición necesita explicarse.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se invierte una relación causal o se añade un hecho incompatible con el relato.",
+            "No presenta relaciones reconocibles entre los sucesos solicitados."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "characters",
+          "title": "Personajes y acciones",
+          "production": "Hace reconocibles los personajes mediante sus acciones y relaciones en la narración solicitada.",
+          "analysis": "Explica las acciones y motivaciones de los personajes mediante episodios del relato.",
+          "comparison": "Contrasta acciones y motivaciones de los personajes con episodios de ambos relatos.",
+          "evidence": [
+            "Las acciones permiten reconocer a los personajes; una motivación requiere precisión.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye a un personaje una acción o motivación incompatible con el pasaje.",
+            "No aporta evidencia reconocible de las acciones y relaciones de los personajes."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "narrator",
+          "title": "Voz narrativa",
+          "production": "Emplea una voz narrativa que permite reconocer quién cuenta los sucesos y conserva su perspectiva.",
+          "analysis": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+          "comparison": "Contrasta las voces narrativas y sus perspectivas mediante evidencias de los relatos.",
+          "evidence": [
+            "Se reconoce quién narra; una referencia requiere distinguir mejor su perspectiva.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye al narrador una voz o información incompatible con su perspectiva.",
+            "No permite reconocer la voz y perspectiva narrativas solicitadas."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "social-world",
+          "title": "Situaciones del mundo narrado",
+          "production": "Relaciona las acciones de los personajes con la situación social ficticia solicitada, conservando las condiciones del mundo narrado.",
+          "analysis": "Explica las relaciones entre las acciones y la situación social del mundo narrado con evidencias del pasaje.",
+          "comparison": "Contrasta las relaciones entre acciones y situaciones sociales de los mundos narrados con evidencias de los textos dados.",
+          "evidence": [
+            "La relación con la situación social se reconoce; una referencia requiere precisión.",
+            "Menciona acciones y situaciones, pero no establece una relación necesaria entre ellas.",
+            "Atribuye al pasaje una condición o una acción social incompatible con sus referencias.",
+            "No presenta una relación reconocible entre las acciones y la situación del mundo narrado."
+          ],
+          "weight": 4
+        }
+      ]
+    }
+  ],
+  "contents": [
+    {
+      "id": "source-16",
+      "label": "la función y la estructura",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "b73d624c-3285-5f38-986d-de3bf05faa6e"
+      ],
+      "caseIds": [
+        "concept-16"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-17",
+      "label": "las secuencias narrativas, descriptivas y dialogadas",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "e99a89c9-5846-536e-9ccb-a24dc82081e2"
+      ],
+      "caseIds": [
+        "concept-17",
+        "historical-sequences-or"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-18",
+      "label": "los conectores temporales, causales, consecutivos, espaciales y de orden",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "7d2a0178-a647-5c24-9b0c-e8ec37d8a77b"
+      ],
+      "caseIds": [
+        "concept-18"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-19",
+      "label": "los verbos en pasado",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "a783728e-fac5-53c1-b867-fbcad7c33d57"
+      ],
+      "caseIds": [
+        "concept-19"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-20",
+      "label": "el tema",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "cb21e4f2-be52-5862-83e5-337c3d05bd11"
+      ],
+      "caseIds": [
+        "concept-20"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-21",
+      "label": "el orden, la frecuencia y la duración del tiempo narrativo",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "6abff723-b0a3-584d-a048-88524472f4de"
+      ],
+      "caseIds": [
+        "concept-21",
+        "historical-frequency-only"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-22",
+      "label": "los adjetivos",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "ca34fd1f-f67a-5fa4-b02d-86a0eadad5e3"
+      ],
+      "caseIds": [
+        "concept-22",
+        "historical-recognize-adjectives"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-23",
+      "label": "el narrador",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "b5cf2af6-7c0f-57fb-939c-14d2efc2d5eb"
+      ],
+      "caseIds": [
+        "concept-23",
+        "historical-comparison"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-24",
+      "label": "los personajes",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "d1df0d32-15fd-5086-b208-6f92405656c2"
+      ],
+      "caseIds": [
+        "concept-24"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-25",
+      "label": "los actantes",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "2d612bea-bd59-5a66-b3be-3a8c0a3860c9"
+      ],
+      "caseIds": [
+        "concept-25"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-27",
+      "label": "historical-prediction-listening",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "f8eb2a0f-b04b-5ea2-b25c-945c97cf1545"
+      ],
+      "caseIds": [
+        "historical-prediction-listening"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-28",
+      "label": "historical-listening",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "8682946f-0a61-5465-9f55-a806bdd0d8a3"
+      ],
+      "caseIds": [
+        "historical-listening"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-29",
+      "label": "historical-causality",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "4ea65c3d-c83e-5827-982f-27d4369656e8"
+      ],
+      "caseIds": [
+        "historical-causality"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-31",
+      "label": "historical-oral-plan",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "34ed101d-baee-525b-856c-053b4f770d83"
+      ],
+      "caseIds": [
+        "historical-oral-plan"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-32",
+      "label": "historical-oral-chronology",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "552a51e5-0d92-5cfe-badc-d5e7c195712c"
+      ],
+      "caseIds": [
+        "historical-oral-chronology"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-47",
+      "label": "la función y la estructura",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "a3b3ed47-f763-51a4-9187-e0a0ab61613b"
+      ],
+      "caseIds": [
+        "concept-47"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-48",
+      "label": "los personajes",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "095d0dd1-e3e3-5f34-8ea7-3d0d9cd559b7"
+      ],
+      "caseIds": [
+        "concept-48"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-49",
+      "label": "el ambiente",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "c66c2573-8d19-5535-84d0-3c12d56563ba"
+      ],
+      "caseIds": [
+        "concept-49",
+        "social-setting-only"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-50",
+      "label": "las secuencias narrativas, descriptivas y dialogadas",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "0b098237-1a58-5141-ac4d-40811aa44df6"
+      ],
+      "caseIds": [
+        "concept-50"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-51",
+      "label": "los conectores temporales, causales y consecutivos",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "1b2daea9-5c73-54c7-9e10-add0a16635d6"
+      ],
+      "caseIds": [
+        "concept-51",
+        "social-connectors-or"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-52",
+      "label": "los verbos en pasado",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "beab2755-caa6-5660-96a6-bd9ca2ff1016"
+      ],
+      "caseIds": [
+        "concept-52"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-53",
+      "label": "los verbos en presente",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "a7918997-4513-5153-849c-2e556cad84c0"
+      ],
+      "caseIds": [
+        "concept-53"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-54",
+      "label": "el orden cronológico o anacrónico y la frecuencia narrativa",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "9d04a75f-f6a6-54eb-a9bb-b8180506d6db"
+      ],
+      "caseIds": [
+        "concept-54",
+        "social-order-or"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-55",
+      "label": "los adjetivos",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "4833edf2-a9ef-5a44-bf47-3aa740a209cd"
+      ],
+      "caseIds": [
+        "concept-55",
+        "social-negative-positive"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-56",
+      "label": "la actancia de los personajes",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "692c32da-a7c6-5f75-9850-a8dac64a1451"
+      ],
+      "caseIds": [
+        "concept-56",
+        "social-actants-or",
+        "social-actants-and",
+        "social-actant-agente",
+        "social-actant-paciente",
+        "social-actant-beneficiario",
+        "social-actant-complice",
+        "social-actant-ayudante",
+        "social-actant-oponente",
+        "social-actant-aliado"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-57",
+      "label": "historical-oral",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "2ed6bf6d-6157-56e9-83d9-24ef0c2e4196"
+      ],
+      "caseIds": [
+        "historical-oral"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-58",
+      "label": "historical-reading-prediction",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "a8b8aa71-c6ca-5f2b-b7df-5573c9068ad3"
+      ],
+      "caseIds": [
+        "historical-reading-prediction"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-59",
+      "label": "historical-facts-fiction",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "a74a0230-038b-5e1a-928e-9f5547fd5a30"
+      ],
+      "caseIds": [
+        "historical-facts-fiction",
+        "historical-read-then-analyze",
+        "historical-read-then-compare"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-60",
+      "label": "historical-paraphrase",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "964b4968-a70d-5481-9473-4105e881d6a7"
+      ],
+      "caseIds": [
+        "historical-paraphrase"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-62",
+      "label": "historical-writing-plan",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "37c092c6-168e-5aff-9608-e9b7c0d662ce"
+      ],
+      "caseIds": [
+        "historical-writing-plan",
+        "historical-reference-or",
+        "historical-reference-epoch",
+        "historical-reference-person"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-63",
+      "label": "historical-writing-voices",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "d98e3393-a5c9-5824-99a4-b5f747972fcf"
+      ],
+      "caseIds": [
+        "historical-writing-voices"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-64",
+      "label": "historical-writing-tenses",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "11651691-56aa-549d-974c-18339035c43d"
+      ],
+      "caseIds": [
+        "historical-writing-tenses"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-65",
+      "label": "historical-revision",
+      "genre": "HISTORICAL_NOVEL",
+      "sourceRecordIds": [
+        "69b4887a-1ffc-5ce7-b76e-dec90ae7c8e5"
+      ],
+      "caseIds": [
+        "historical-revision",
+        "historical-write-publish",
+        "historical-publish-only",
+        "historical-no-publish",
+        "historical-publish-plural"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-67",
+      "label": "social-prediction-listening",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "5e4c98a7-65bb-519a-824b-47dce36e9607"
+      ],
+      "caseIds": [
+        "social-prediction-listening"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-68",
+      "label": "social-listening",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "8a20dd58-a439-5596-834f-80564e335046"
+      ],
+      "caseIds": [
+        "social-listening"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-69",
+      "label": "social-causality",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "8bc1425b-c39e-5914-af03-064e3c72e59a"
+      ],
+      "caseIds": [
+        "social-causality"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-70",
+      "label": "social-oral",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "51c0b0bc-dda5-5712-b5eb-df8c0e35fe17"
+      ],
+      "caseIds": [
+        "social-oral"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-71",
+      "label": "social-reading-prediction",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "9adb7f8e-102f-5a4a-ace9-d5952d92fd7c"
+      ],
+      "caseIds": [
+        "social-reading-prediction"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-72",
+      "label": "social-reading-voices",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "e0952b90-901c-5ece-8612-1d52a3ee7273"
+      ],
+      "caseIds": [
+        "social-reading-voices"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-73",
+      "label": "social-vocabulary",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "84954dd2-8cad-5489-ad7f-736ec8e985cd"
+      ],
+      "caseIds": [
+        "social-vocabulary",
+        "social-paraphrase"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-75",
+      "label": "social-writing-plan",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "f482a1bb-f3d3-59f2-a09a-19d4c8d55a59"
+      ],
+      "caseIds": [
+        "social-writing-plan"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-76",
+      "label": "social-writing-voices",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "156d9259-fc29-5d29-976a-a179aaa57c8b"
+      ],
+      "caseIds": [
+        "social-writing-voices",
+        "social-individual",
+        "social-group",
+        "social-independent"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    },
+    {
+      "id": "source-77",
+      "label": "social-revision",
+      "genre": "SOCIAL_NOVEL",
+      "sourceRecordIds": [
+        "e3f14291-ff07-52a8-bd02-3af4dbd74f3d"
+      ],
+      "caseIds": [
+        "social-revision"
+      ],
+      "adaptation": "Solo acciones y rasgos expresamente pedidos, con evidencia del texto y referentes dados; sin vida privada, ideología, investigación externa o publicación universal."
+    }
+  ],
+  "explicitExclusions": [
+    {
+      "id": "c0cb7a75-986e-5f8c-a080-e6c09bc17b84",
+      "reason": "ORGANIZATIONAL_HEADING",
+      "explanation": "Encabezado de género o modalidad; no constituye una tarea independiente."
+    },
+    {
+      "id": "dbe84d97-c7e6-55f0-9bfb-6be2354d9db4",
+      "reason": "ORGANIZATIONAL_HEADING",
+      "explanation": "Encabezado de género o modalidad; no constituye una tarea independiente."
+    },
+    {
+      "id": "47dee8ad-3a33-5a0b-9bc5-e213ae70e1e2",
+      "reason": "ORGANIZATIONAL_HEADING",
+      "explanation": "Encabezado de género o modalidad; no constituye una tarea independiente."
+    },
+    {
+      "id": "fab353af-f09e-5a81-95a7-584cbf7d1d5a",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "ba31a88f-c8de-5f5a-9dba-22aac942e976",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "1e69527f-0d25-5813-805a-ab91f57acf65",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "7b57413b-2fd0-5f4f-a7ab-053755d0558a",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "1bbbaeeb-0d51-5e86-972c-f2b7a778d046",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "f69b58ce-78d8-5912-86d5-b17c731be392",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "331d864c-5cf2-59e4-8e76-423950831e5c",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "2c17581d-22ea-532f-87f1-8679eef2acc5",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "73813ccd-57a3-5f49-97fd-6d4a84e7c3dc",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "31f6e45c-e88b-5735-a77b-01289f209baf",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "58e7b371-de57-5937-8de4-088cad869529",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "afde69a2-290a-5bce-b3d8-cd17b1c0eccf",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "5b958a02-6274-5a72-8363-3a4a5d5b7d0d",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "No puntuar disfrute, valoración íntima/estética, interés, curiosidad, creatividad, imaginación ni adhesión a fenómenos sociales. Las acciones textuales se adaptan desde C/P explícitos."
+    },
+    {
+      "id": "627a6101-42de-5663-aa9f-a1b9c5225777",
+      "reason": "ORGANIZATIONAL_HEADING",
+      "explanation": "Encabezado de género o modalidad; no constituye una tarea independiente."
+    },
+    {
+      "id": "f490fe56-ced5-5c43-9cb8-dc8a74ac7b0e",
+      "reason": "ORGANIZATIONAL_HEADING",
+      "explanation": "Encabezado de género o modalidad; no constituye una tarea independiente."
+    },
+    {
+      "id": "2c3b46f1-e940-5545-a8bf-a151af4b0bda",
+      "reason": "ORGANIZATIONAL_HEADING",
+      "explanation": "Encabezado de género o modalidad; no constituye una tarea independiente."
+    },
+    {
+      "id": "6fe13304-18e7-5058-a7a4-20862fa71efc",
+      "reason": "ORGANIZATIONAL_HEADING",
+      "explanation": "Encabezado de género o modalidad; no constituye una tarea independiente."
+    }
+  ],
+  "verification": {
+    "automatedFixtures": 75,
+    "fullInstrumentsGenerated": 300,
+    "fullReview": {
+      "reviewedWithMatchingDigest": 300,
+      "pending": 0
+    },
+    "httpDb": "AUTHENTICATED_32_SAMPLES_FOUR_FORMATS_20_AND_17_35_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+    "browser": "PERSONAL_DEVELOPMENT_QA_CONTEXT_FULL_FLOW_VERIFIED",
+    "testCounts": {
+      "backend": 78118,
+      "backendFiles": 170,
+      "frontendActivities": 77745,
+      "frontendFiles": 106,
+      "wholeFrontendSuite": false
+    },
+    "timingsMs": {
+      "interpret": 4619,
+      "recommend": 4540,
+      "writes": 3576
+    },
+    "priorScopeRegressions": "optative-hcs-len-5-regresiones-previas.json",
+    "report": "docs/superpowers/reports/2026-10-19-optativa-hcs-literatura-5.md"
+  },
+  "limits": [
+    "2 géneros, con 43 contenidos y procedimientos adaptados; no equivalen a ese número de temas independientes.",
+    "Autores y obras son referencias opcionales, no requisitos simultáneos.",
+    "Las adaptaciones de AulaBase no son transcripciones de indicadores oficiales.",
+    "Las muestras no acreditan todas las variantes de cada fila curricular ni ejecución real de clase."
+  ],
+  "sourcePublication": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_OPT_HCS_LEN_5_V1",
+    "versionId": "88d673d1-1ed6-5d3b-b0be-dd040739c775",
+    "scopeId": "fed52190-9ca6-5b82-abc0-539b59faf895",
+    "result": "UNCHANGED",
+    "elements": 98,
+    "excludedFromAssessment": 20,
+    "sourceRowsAndSpansMatched": true
+  }
+}

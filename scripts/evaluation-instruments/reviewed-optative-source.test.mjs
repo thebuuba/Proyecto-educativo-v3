@@ -3,6 +3,16 @@ import {spawnSync} from 'node:child_process'
 import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
 const script='scripts/evaluation-instruments/reviewed-common-source.mjs',matrix='docs/curriculum/cobertura-secundaria/optative-hlm-len-4-matriz.json'
+test('Literatura HCS quinto conserva98registros,20exclusiones y43anclas adaptables sin conectar sexto',()=>{
+ const path='docs/curriculum/cobertura-secundaria/optative-hcs-len-5-matriz.json',run=spawnSync(process.execPath,[script,'OPT-HCS-LEN-5','5',path,'--optative'],{encoding:'utf8'})
+ assert.equal(run.status,0,run.stderr);const manifest=JSON.parse(run.stdout)
+ assert.equal(manifest.project,'eolgunypmtgrsyrjzcld');assert.equal(manifest.elements,98);assert.equal(manifest.excludedFromAssessment,20)
+ assert.equal(manifest.code,'MINERD_SECUNDARIA_2023_OPT_HCS_LEN_5_V1');assert.deepEqual(manifest.metadata.grades,[5]);assert.deepEqual(manifest.metadata.optativeExitNames,['Humanidades y Ciencias Sociales'])
+ const matrix=JSON.parse(readFileSync(path,'utf8')),fixture=JSON.parse(readFileSync('data/evaluation-instruments/optative-hcs-len-five-contracts.json','utf8')),ids=new Set(matrix.officialRecords.map(r=>r.id)),excluded=new Set(matrix.explicitExclusions.map(r=>r.id))
+ assert.equal(matrix.contents.length,43);assert.equal(matrix.officialRecords.filter(r=>r.type==='ACHIEVEMENT_INDICATOR').length,21)
+ for(const task of fixture.cases)for(const id of task.sourceRecordIds){assert(ids.has(id),task.id);assert(!excluded.has(id),task.id)}
+ for(const args of [['OPT-HCS-LEN-5','4',path,'--optative'],['OPT-HCS-LEN-6','6',path,'--optative'],['OPT-HLM-LEN-5','5',path,'--optative'],['OPT-HCS-LEN-5','5',path]])assert.notEqual(spawnSync(process.execPath,[script,...args],{encoding:'utf8'}).status,0)
+})
 test('Literatura HCS cuarto conserva101registros y19exclusiones en su salida propia',()=>{
  const path='docs/curriculum/cobertura-secundaria/optative-hcs-len-4-matriz.json',run=spawnSync(process.execPath,[script,'OPT-HCS-LEN-4','4',path,'--optative'],{encoding:'utf8'})
  assert.equal(run.status,0,run.stderr);const manifest=JSON.parse(run.stdout)
