@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&display=swap');
+
+/*
+ * Tema aislado de la portada pública reconstruida de Polymet.
+ *
+ * Todos los tokens viven bajo `.promo-polymet`, nunca en `:root` ni en `body`,
+ * para no alterar la aplicación autenticada ni las demás páginas públicas.
+ * Los valores son el tema claro del diseño original, expresados como HSL
+ * completos y enlazados al contrato de Tailwind 4 del proyecto:
+ * `primary-foreground` consume `--on-primary`, `secondary` consume
+ * `--secondary-container`, etc. El archivo no incluye directivas de Tailwind ni
+ * un tema oscuro global.
+ */
+.promo-polymet {
+  /* Radios originales de Polymet, adaptados a los tokens de Tailwind 4. */
+  --radius-sm: 0.625rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.125rem;
+  --radius-2xl: 1.375rem;
+  --radius-3xl: 1.5rem;
+
+  /* Superficies y texto. */
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(214 42% 15%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(214 42% 15%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(214 42% 15%);
+
+  /* Acción e información. */
+  --primary: hsl(207 80% 56%);
+  --on-primary: hsl(0 0% 100%);
+  --primary-container: hsl(207 85% 94%);
+  --on-primary-container: hsl(209 75% 40%);
+
+  /* Superficie secundaria suave. */
+  --secondary: hsl(210 60% 96%);
+  --on-secondary: hsl(211 70% 38%);
+  --secondary-container: hsl(210 60% 96%);
+  --on-secondary-container: hsl(211 70% 38%);
+
+  --muted: hsl(213 40% 96%);
+  --muted-foreground: hsl(214 16% 46%);
+  --accent: hsl(207 85% 94%);
+  --accent-foreground: hsl(209 75% 40%);
+
+  --destructive: hsl(0 78% 62%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  --border: hsl(213 30% 91%);
+  --input: hsl(213 30% 91%);
+  --ring: hsl(207 80% 56%);
+
+  --surface: hsl(0 0% 100%);
+  --on-surface: hsl(214 42% 15%);
+  --surface-variant: hsl(213 40% 96%);
+  --on-surface-variant: hsl(214 16% 46%);
+
+  /* Contrato Tailwind 4: utilidades como `bg-primary` o `text-muted-foreground`
+     consumen estas variables de tema. Se declaran en el mismo ámbito para que
+     la sustitución se resuelva con los tokens de arriba. */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-secondary: var(--secondary-container);
+  --color-secondary-foreground: var(--on-secondary-container);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  --color-surface-variant: var(--surface-variant);
+  --color-on-surface-variant: var(--on-surface-variant);
+
+  /* Tipografía original, aislada de Poppins. Los pesos 700/800 solo aplican
+     al contenido de esta portada. */
+  --font-sans: 'Plus Jakarta Sans', Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 800;
+
+  font-family: var(--font-sans);
+}
+
+/* El Button compartido conserva sus tamaños en el resto de la aplicación. */
+.promo-polymet .polymet-menu-toggle {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+.promo-polymet .promo-product-preview {
+  max-width: 120rem;
+}

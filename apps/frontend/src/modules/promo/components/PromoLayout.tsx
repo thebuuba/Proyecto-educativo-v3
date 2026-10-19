@@ -59,7 +59,7 @@ export function PromoLayout({ children }: { children: ReactNode }) {
   }, [location.pathname, location.hash])
   return (
     <div className="promo-motion min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-40 border-b border-border bg-card/95 backdrop-blur-md">
+      <header className="relative z-40 pt-4 sm:pt-6">
         <div className="flex h-16 w-full items-center justify-between gap-4 px-4 sm:px-6 lg:h-[72px] lg:px-[4vw]">
           <Link to="/" className="flex items-center gap-2.5" aria-label="Aula Base, inicio">
             <span className="grid size-9 place-items-center rounded-xl bg-primary text-primary-foreground">
@@ -73,9 +73,7 @@ export function PromoLayout({ children }: { children: ReactNode }) {
                 key={item.to}
                 to={item.to}
                 end={item.to === '/'}
-                className={({ isActive }) =>
-                  `rounded-full px-3.5 py-2 text-sm font-medium hover:bg-muted ${isActive && !item.to.includes('#') ? 'bg-accent text-accent-foreground' : 'text-muted-foreground'}`
-                }
+                className="px-3.5 py-2 text-sm font-medium text-foreground underline-offset-4 hover:underline"
               >
                 {item.label}
               </NavLink>
@@ -84,7 +82,7 @@ export function PromoLayout({ children }: { children: ReactNode }) {
           <div className="hidden items-center gap-2 sm:flex">
             <Link
               to="/login"
-              className="rounded-full px-4 py-2.5 text-sm font-medium hover:bg-muted"
+              className="px-4 py-2.5 text-sm font-medium text-foreground underline-offset-4 hover:underline"
             >
               Iniciar sesión
             </Link>
@@ -106,7 +104,7 @@ export function PromoLayout({ children }: { children: ReactNode }) {
           </button>
         </div>
         {menuOpen && (
-          <nav aria-label="Móvil" className="border-t border-border bg-card px-4 py-3 lg:hidden">
+          <nav aria-label="Móvil" className="px-4 py-3 lg:hidden">
             {nav.map((item) => (
               <Link
                 key={item.to}
