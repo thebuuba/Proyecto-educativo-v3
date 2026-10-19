@@ -1,0 +1,29 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.119",
+  "grade": 2,
+  "status": "BLOCKED_PERSONAL_SESSION_EXPIRED_LOGIN_REQUIRED",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "servedAsset": "/assets/index-DtLJVIy2.js",
+  "servedAssetMatchesBuild": true,
+  "observed": [
+    "La edición previamente guardada de FHR1 estaba visible antes de recargar.",
+    "Una recarga normal cargó el entry119 y redirigió a login.",
+    "Continuar como Alexauris abrió un formulario con contraseña vacía. No se ingresaron credenciales."
+  ],
+  "notVerified": [
+    "Formulario vacío personal2.º/FHR",
+    "Estrategia automática/manual e instrumento completo en ese contexto personal",
+    "Guardado y reapertura personal2.º",
+    "Huella personal2.º tras cambiar únicamente estrategia"
+  ],
+  "existingDraftsAndStorageNotCleared": true,
+  "newEmailsOrPasswordChanges": false,
+  "manualSteps": [
+    "Iniciar sesión con una cuenta propia de Development en localhost:8787.",
+    "Abrir Cursos,2.º de secundaria,FHR,Bloque1,crear actividad; comprobar estrategia visible y puntos inicialmente vacíos.",
+    "Introducir una consigna documentada de2.º; esperar el instrumento completo, seleccionar manualmente rúbrica y asignar17.35 puntos explícitos.",
+    "Editar un criterio, guardar y reabrir desde la misma asignatura.",
+    "Cambiar exclusivamente estrategia, guardar y reabrir; comparar criterio, niveles, ponderación, puntos e identificadores. No generar otro instrumento."
+  ]
+}

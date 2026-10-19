@@ -1,56 +1,40 @@
 # Continuación del encargo integral de secundaria
 
+## Trabajo actual — continuar FHR3; FHR2 técnico verificado, personal pendiente
 
+Rama ampliacion-de-instrumentos-2. Bloque2 se guarda en commit español «Amplía FHR de segundo y verifica sus instrumentos»; obtenerhash de gitlog al retomar, no duplicar. Base4b54efe07b4197c163e7e5d5efa9b333e19874b3(FHR1). Antesdelcommit2:26delante/0detrás porrefs locales sinfetch. NO PUSH hasta revisar integraciones; no producción/main/deploy/subagentes/cuentas/borrados/reset/cambiosdeintegraciones. Encargo integral sigue abierto, sinconfirmacionesrutinarias.
 
-## Trabajo actual: FHR de 2.º, después del cierre de FHR1
+FHR2:informe2026-10-18-fhr-2-cierre.md/plan2(notavisu pendiente)/notasfuente/matriz404SHA/HTTP12/browserbloqueado.46temas/67C/P,55contratos+46breves=101consignas/404instrumentos YA leídoscompletos,404SHAcoincidentes/0pendientes. FuentePDF397–400 YA leída y26Aindividuales:22exclusionesprivadas,4anclas narración/contexto explícitos. No repetir fuente/lecturas salvohuellacambiada. Las regresiones de Describe/Relata/Narra/Escenifica,plurales/objetosporfase/alternativas/nombreJesús se corrigieron conrojo→verde. Sin UI/deps/schema/migracionesnuevos.
 
+119fuente=manifest=compiled=DB,installerCREATED/UNCHANGED51releases/416snapshots anteriores exactos. FuenteMINERD_SECUNDARIA_2023_FHR_COMUN_G2_V1,versióndaab5b58-04ab-5eb9-b6f1-bf014098cf86,CREATED/UNCHANGED128elementos/22exclusiones. QA escuela/cursoexistentes0cuentasnuevas. HTTP12muestras/4formatos20/17.35/local/manuales/fuente/excluido400/guardar/reabrir/estrategiasolaexacta. Historialfinal52releases/428snapshots:12QA,nuevospersonales2=0. Preserve-history119 READONLYconserva51/416anteriores.
 
+Controlesfinales119:backend57544/157archivos0,frontendafectado7577/21archivos0(no suite completa),shared/backend/frontend/cloudflare dryrun0,lints0errores/16warnings previos,inventario9/0. final-checks119 ylineage119 conservan todos118+504FHR1+Sociales/Artística/EFI1–6 completos. Muestra personalFHR1reconsultadaREADONLYhash597e86d455c03f045d161b9b9e163e8c exacto;NO --baseline de nuevo.
 
-FHR común de 1.º está verificada en Development. Informe `2026-10-18-fhr-1-cierre.md`, plan1 marcado, notas de fuente, correspondencias, matriz, 504 instrumentos/huellas y evidencia HTTP/navegador. Commit del bloque: «Amplía FHR de primero y alinea la interpretación del creador»; obtener su hash de git log tras confirmar, sin duplicarlo. Base59c69418ea76946e32d7c753524ac055ac1beb5f, rama ampliacion-de-instrumentos-2. No push, por instrucción vigente; refs locales antes del commit:25 delante/0 detrás. No producción, main, despliegues, cambios de integraciones/permisos, cuentas nuevas, borrados o subagentes.
+Workeractuallauncher17864/sesión57433,cmd.exe /d /c pnpm.cmd exec wrangler dev --local --env-file .dev.vars.local,runtime.json.11276/sesión60518terminó1porDNSENOTFOUNDdelpooler;HTTPinicialECONNRESETantesdemuestras. Logsconservadosruntime-119-dns-incident-{out,err}.log. DNSrespondióyreinicio119guardPGapp_backend_local sinBYPASSRLS/AuthStorage200/ViteDevelopment eolgunypmtgrsyrjzcld. runtime-119-restart-verified.json,entry/assets/index-DtLJVIy2.js SHA26ab72d8c6d4be63dae88efd60f440e1924c8eb74a89bf1bc26ce0ed22927c9f=dist,sw.js=dist. Sinconfigcambiada ni afirmación de DNSresuelto permanentemente. Installer/publicador/context/HTTP2YAterminados,NOduplicar. No generarPrisma conhelperPrisma/instalador/HTTPactivo.
 
-Siguiente: ejecutar docs/superpowers/plans/2026-10-18-fhr-2.md y después FHR3–6, optativas/modalidades y cierre consolidado. Las pruebas personales de Sociales1/2/4/5 siguen pendientes para ese cierre. No pedir confirmaciones rutinarias; el encargo integral continúa abierto.
+Personal2 BLOQUEADO:reloadnormaldel119redirigiólogin;ContinuarcomoAlexaurispidecontraseñavacía. Browser1/socialCloseTab1796703141/socialCloseBrowser,marcadoHandoff. No credenciales ingresadas/nuevosemails/passwordchanges/cacheSWstorageborrados. Recorrido2(no verificado) ypasosmanuales endocs/curriculum/cobertura-secundaria/fhr-2-verificacion-navegador-evaluation-2026.119.json. No sustituir porQA. Retomarcuandohaysesión,continuarindependientesmientras.
 
-### Estado efectivo y procesos
+Siguiente:plan2026-10-18-fhr-3.md. FHR3NOproveedorconectado. fhr-three-specs.mjs50temas/74C/Psinomisiones;author-fhr-three-contracts.mjs + fhr-three-contract-additions.txt generan56casos+2independientes. REDconfirmado0/450porgradoausente;sesión57197YAterminó1esperado. PrimerpreflightteníaPOSTERinexistente,corregidoaPROJECTmural/WRITTEN_PRODUCTIONcartelantesdelREDconfirmado. Backend/frontendtests3 yfixture3 públicos SINCOMMIT, no mezclados conbloque2. author-fhr-three-topics.mjs listoSINejecutar:50temas74C/P27A(23privadasexcluidas,4contextuales). Verificartrasconectar antesdegenerarinstrumentos.
 
+**Frozen119 YA creado UNA VEZ** ycomparadoREADONLYcontraDB:catalog-v119.ts yfhr-three-base-119.json. NOrepetirfreeze119/sobrescribirbase. Frozen118/base118tambiénintactos. Frozen119 pertenecebloque3(no2). Lospreparadoresprepare-freeze-119/fix-fhr-three-preflight-types/prepare-fhr-three-contract-author NOsonidempotentes. Congelado3listo;preparar120individual despuésdeconectar3/rojo→verde.
 
+FuentesFHR3–6 TODAS YAleídasvisualcompletas;notasfhr-three/four/five/six-source-reviewed.md ylit/scope/PNG/TXTprivados. No repetirrender.3PDF401–404,21C53P27A21I14comp;errataSegundoCiclo,contextorealprimerociclo.4PDF413–416,27C64P24A21I14comp,agruparfragmentos415.5PDF417–420,24C52P25A21I14comp,duplicados98d77692/96224cd3,a4aafa14/93261729sincriteriodoble.6PDF421–424,28C52P23A21I14comp,viñetasvacíasnoanclas. Preparación no catálogo/fuenteQAHTTP3–6. Después optativas/modalidades yconsolidadoinclpersonalesSociales1/2/4/5.
 
-Catálogo fuente=manifiesto=compilado=DB evaluation-2026.118. Guard exclusivo Development eolgunypmtgrsyrjzcld: PG app_backend_local sin BYPASSRLS, Auth/Storage200, variables ViteDev. Entry /assets/index-BejOpiFC.js, SHA d86a884bfb36b03370728be50191512d60c635b83f2c7edcd42f39e4ac58032e=dist ysw.js=dist. DOM confirmó ese entry/registerSW.js después del build final. La pestaña retenía entry117 y falló importar CoursesPage; una recarga normal recuperó sesión yassets finales sin limpiar almacenamiento, caché, SW o borradores. No se afirma inspección de internalsSW ni resolución definitiva de DNS anterior.
-
-Worker propio único launcher42688, sesión17241, cmd.exe /d /c pnpm.cmd exec wrangler dev --local --env-file .dev.vars.local, activo en118. Verificar comando y árbol antes de detenerlo para dist. No Prisma generate con instalador/HTTP/helperPrisma activo. Installer118/sesión78212 terminó0 CREATED/UNCHANGED; fuente/contextoFHR1/sesión27292 terminó0; buildfinal12335 terminó0; suitebackendfinal59109 terminó0; lint21111 terminó0. HTTP inicial11734 terminó1 por fallo real interpret y se reanudó desde checkpoint8484, YA terminó0 con12 muestras. Ningún build/test/instalador/HTTP pendiente conocido. No repetir esas escrituras.
-
-Frozen117 YA existe y coincide conDB; no recrear ni sobrescribir fhr-one-base-117.json. **Frozen118 todavía NO existe**: antes de119, congelar118 instalado una sola vez READ ONLY y conservar base118 inmutable. No reutilizar autores/captures/cierres de1.º que cambien versión o continuación al implementar2.º.
-
-### Evidencia cerrada de FHR1
-
-
-
-Fuente PDF392–396/impresas391–395 visual completa:146registros24C/53P/34A/21I/14competencias;77C/P útiles,58temas,24Aprivadas excluidas,10anclas contextuales observables expresas.68contratos+58breves=126consignas/504instrumentos completos,504SHA coincidentes/0pendientes. Fuente publicada MINERD_SECUNDARIA_2023_FHR_COMUN_G1_V1, versión92e96411-2f22-5400-9cbe-ee674a9e0cc2, CREATED/UNCHANGED146/24. Escuela/cursoQA existentes,0cuentas nuevas.
-
-Backend final57001/156archivos0; frontend afectado7136/20archivos0 (no suite completa); FHRfocal612 y servicio118. Shared/backend/frontend/cloudflare dryrun0; código final del servicio incluido en último build. Lints0/16warnings previos frontend; inventario9. final-checks-118.json, lineage-118.json y runtime-118-final-verified.json contienen controles. Solo fhrCommonModules+versión cambian respecto117; todos los instrumentos completos/niveles Sociales/Artística/EFI1–6 idénticos, incluidos632EFI6.
-
-HTTP12muestras/4formatos/20y17.35: human-rights,community-choice,religions-elements,dialogue-frequency,work-verification,adolescent-composition,environment-plan,environment-execution,jesus-events-video,dialogue-panel-plan,life-project-plan,work-reflection. Puntos pendientes, local/manuales, fuente/excluido400, guardar/reabrir y estrategia sola exactos. Primer falloOTHER vsPORTFOLIO reveló interpret sinFHR; regresión53fallos→118pruebasarchivo0, suitefinal57001. Checkpoint evitó duplicar primera muestra. Medianas agregadas6237/5771/4447ms interpretación/recomendación/escrituras, incluyen diagnóstico/reanudación; no atribuir mejora causal.
-
-Historial final51catálogos/416snapshots;50/403 anteriores intactos.12QA+1personal nuevos. Cambiar estrategia sola no creó snapshot. Comparación íntegra de Sociales1–6,Artística1–6 yEFI1–6 preservada.
-
-### Personal FHR1: baseline protegido
+### FHR1 cerrado: evidencia que no debe repetirse
 
 
 
-Actividad ebbb9d17-112d-4f14-b135-d8b2d1d2b8bd; título QA Development · Dignidad y derechos en un caso · 1.º. Curso3c5dbf8e-9fb3-464c-aaca-c95a36d326ee,subject1b7b97d7-dfcb-48e5-9342-ca9f36d03571,b1,1.ºA/FHR/ciclo1. Baseline YA creado UNA VEZ: NO --baseline de nuevo. Plain personal-fhr-one-readonly.mjs seguro. Instrument18e0fc78-b3d8-463c-82b5-a0a4f1d54638,snapshot44897d74-f548-4b60-9919-b94c404f0886; hash597e86d455c03f045d161b9b9e163e8c antes/después exacto. Cat118/lista-ponderada17.35/PROJECT_BASED-MANUAL, inicialCASE_STUDY-AUTO.
+Informe2026-10-18-fhr-1-cierre.md/plan1marcado/notasfuente/matriz504SHA/HTTP12/navegadorpersonal. FuenteMINERD_SECUNDARIA_2023_FHR_COMUN_G1_V1 versión92e96411-2f22-5400-9cbe-ee674a9e0cc2 CREATED/UNCHANGED146/24. Catálogo118CREATED/UNCHANGED,51releases/416snapshots tras12QA+1personal;50/403 previos exactos. FHR1fullbackend57001/156archivos0,frontendafectado7136/20archivos0,builds4/rootdryrun0,lints0/16warnings previos,inventario9. ElbuginterpretOTHER/PORTFOLIOse corrigiócon68casosservicio. Guardia118 PGapp_backend_local noBYPASSRLS/AuthStorage200/ViteDev. Asset/index-BejOpiFC.js SHAd86a884bfb36b03370728be50191512d60c635b83f2c7edcd42f39e4ac58032e=dist ySW=dist. Unarecarganormal recuperóentry118trasimportfallocaché117, no se limpióalmacenamiento.
 
-Recorrido real completo: controles desde vacío/puntosvacíos, título/descripción, estrategiaauto, ponderadamanual durantepreparación,Individual/17.35 explícitos,1criterio100%/parcial50%, textoQAmanual, guardar→reabrir, SOLOestrategiaPROJECT→guardar→segunda reapertura trasbuildfinal. Fulltextos DOM ycaptura visual inspeccionados. Plantilla temporal5filasvacías terminó sola en1criterio, sin repetir preparación ni guardado. No afirmar fallo persistente corregido. No notas/equipos/cuentas/emails/passwords/borrados. PROJECTmanual prueba persistencia, no recomendación pedagógica. HTMLvisibleen descripción tabla ylímitesActividadesglobal/Verprevios quedan fuera.
+Personal1/FHRbaselineYAcreada UNA VEZ: NO --baselineotra vez. Actividad ebbb9d17-112d-4f14-b135-d8b2d1d2b8bd/subject1b7b97d7-dfcb-48e5-9342-ca9f36d03571/course3c5dbf8e-9fb3-464c-aaca-c95a36d326ee/b1. Hash597e86d455c03f045d161b9b9e163e8c exactoantes/después,instr18e0fc78-b3d8-463c-82b5-a0a4f1d54638/snap44897d74-f548-4b60-9919-b94c404f0886;cat118/ponderada17.35/PROJECTmanual,inicialCASEauto. Dosguardados/dosreaperturas/instrumento1criterio100%+parcial50%+QAmanual. Plainpersonal-fhr-one-readonly.mjsseguro. Browser socialCloseBrowser/socialCloseTab1796703141, fhrOnePersonalEditUrl,fhrOneFinalScreenshot Uint8Array; tabmarkedDeliverable. Trascompactcua.rewriteDocumentation. No tocarbaselinesEFI1–6/Art1–6/Social3/6/Inglés6.
 
-Browser bindings socialCloseBrowser/socialCloseTab1796703141, sesión nombrada 📚 FHR de primero; fhrOnePersonalEditUrl observado para edición final, fhrOneFinalScreenshot Uint8Array ytab marcadoDeliverable. Después de compactar llamar cua.rewriteDocumentation. No reabrir/copiar muestras previas ni sobrescribir baseline EFI1–6/Art1–6/Social3y6/Inglés6.
-
-### Preparación independiente para continuar
+### Preparación para grados siguientes
 
 
 
-FHR2 fuente PDF397–400 ya leída. Scope7046d495-351c-52ab-a193-fde308e0000f,128registros22C45P26A21I14comp; notas/literales privadas y fhr-two-design-preflight.md. Plan2 preparado, todavía sin proveedor/publicación119. Diseño preliminar45temas+1narración, revisar todas67C/P+26A. Parser1 no reconoce Describe/Relata/Narra: escribir regresiones de2.º antes de ampliar. fd56d4e9 A narrativa observable; no excluirla. Lista preliminar4A contextuales y22privadas necesita validación. ConservarcitasJuan3:10/2Tes2:17–17 e«imparto».
+FHR3PDF401–404 YAleído,notasfhr-three-source-reviewed.md,scopee115e5c8-e553-5613-bf39-2caea0bbbb7d/136registros21C53P27A21I14comp. CabeceraSegundoCiclo/3erGradoeserrata:contextorealprimerciclo. FHR4PDF413–416 YAleído,notasfhr-four-source-reviewed.md,scope3431ca5e-6382-512c-92de-ffbe18460796/150registros27C64P24A21I14comp. ViñetasPDF415fragmentadas seagrupan5b0c/9130/a845/6761,56f6/166d,3d43/f865,5f4d/f7ee,NO temasindependientes. NO repetirPNG/lectura; lectura noimplementación. FHR5–6nofuenteleídaaún. DespuésFHR2–6, ámbitosoptativos/modalidades ycierreconsolidado(inclpersonalesSociales1/2/4/5).
 
-FHR3 fuente PDF401–404 ya leída ynotada: scopee115e5c8-e553-5613-bf39-2caea0bbbb7d,136registros21C53P27A21I14comp. CabeceraSegundoCiclo junto3erGrado eserrata:contextorealprimerciclo. FHR4PDF413–416 tambiénleída:scope3431ca5e-6382-512c-92de-ffbe18460796,150registros27C64P24A21I14comp. Notas privadasfhr-three/four-source-reviewed.md yPNG/TXT. ViñetasrotasPDF415 seagrupan enanclas5b0c/9130/a845/6761;56f6/166d;3d43/f865;5f4d/f7ee, no temasindependientes. No repetir renders ni declararimplementación porlectura. FHR5–6 todavía noleída.
-
-Los datos debajo son antecedentes, no estado operativo actual.
+Debajo solo antecedentes, no estadoactual.
 
 
 

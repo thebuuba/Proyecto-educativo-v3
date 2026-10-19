@@ -1,0 +1,2436 @@
+{
+  "grade": 2,
+  "method": "FULL_ROWS_LEVELS_AND_FORMATS_READ_WITH_EXACT_TEXT_REFERENCES",
+  "sourcePdfPages": [
+    397,
+    398,
+    399,
+    400
+  ],
+  "items": [
+    {
+      "caseId": "life-stages",
+      "instrumentType": "rubrica",
+      "sha256": "e5239e5f10089090b7824cf5f3e0d8a3a1f5ddb6f793df82624be0f1b4942d8d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-stages",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f52d928ab784dc08f2238270ea8dc64dfcec7c5938ec3e53d67bb4607a733d9c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-stages",
+      "instrumentType": "escala",
+      "sha256": "ac5bdf1c493c21a7e31d884986683a443e197623a727a49a9f93f9efa4602607",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-stages",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6b8c95e84a1f8bf361537024f975f4fc900001fade52da779bc1302a1a311f8c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-dignity",
+      "instrumentType": "rubrica",
+      "sha256": "0ecf2fa3ac5794ccf358c9846483788817256c3854a2b099bb7f14e9fdb30aa1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-dignity",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8c7cc8bf5f6b7d489ba8c178129d97f82e271dfb0dab1e564343e389b0a51b75",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-dignity",
+      "instrumentType": "escala",
+      "sha256": "5aef22d27948ddc2b95c5fc6a98e20cb54cd5aff76781030f7eb3b25df9317dc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-dignity",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8a3f24775955f6438ff47d4359193b71f23ceb918b33274522ff59d255ebb9b3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "image-god",
+      "instrumentType": "rubrica",
+      "sha256": "f6c0e52d681dfbb450e79a99d310a42b79142f34422614dfdaf052d06169a5bb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "image-god",
+      "instrumentType": "lista-cotejo",
+      "sha256": "602b8309ec0620b4ec0056175b6d4a1c1b8c42ce7ff434a8f77d8f403600573e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "image-god",
+      "instrumentType": "escala",
+      "sha256": "1127650c01421ab0afa937fb843187515592254b9dc2844689955bf3ddc70f74",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "image-god",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d52be6d622df49ca9275785345173f3dfffcaceb81fbc0f8376359bbd5a484bc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "religious-origins",
+      "instrumentType": "rubrica",
+      "sha256": "9d6f4fe0d44e4981e8569ee46e6016cb950d12c14f93d5296d19ad1d63dd61e6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "religious-origins",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a6b133e4991a3a0c948a74b1eb90a667adfbbd5170163e1ce8b08ec8ba34549a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "religious-origins",
+      "instrumentType": "escala",
+      "sha256": "a6d176325ecac73229e78e7afcb12ea7587c05c11f7aebdded5c26969982d359",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "religious-origins",
+      "instrumentType": "lista-ponderada",
+      "sha256": "57ecb146ac8f6f2003ac449b50cab9a8cc5361fc969548994fea3c2cdd4a8c70",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-care",
+      "instrumentType": "rubrica",
+      "sha256": "dfef1ae82b97ed2b19701cb11760296cfab4fa778a9762640d782f5ce36f1df4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-care",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4ddd709e80218baafa8a6c227c02b022c8b8efd7d03f808f80d0803bb00a384a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-care",
+      "instrumentType": "escala",
+      "sha256": "5ccb44b3a2b564dd185d584f398a990a9af9333988e90c48f5950c05da016f33",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-care",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eee66a572c3825293694aa9e00d7ff9fdffec03e5035d84f240176d013747883",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-art",
+      "instrumentType": "rubrica",
+      "sha256": "af9aab74dc82f3522a7a971517e570950f4942751e9541333ef638dc587679ae",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-art",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fa9116f4781a494fc4ec0d827cafd8db37a0ce981ca41f6b05d446132c1a89dd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-art",
+      "instrumentType": "escala",
+      "sha256": "2c3f9ff44da911132d13f02e2b4463fd0c7259ca90fd622a3712fc99464351c0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "life-art",
+      "instrumentType": "lista-ponderada",
+      "sha256": "01b27ae8a3fe7e271f3fc5aeabf512ff21b6349d945bfd22e21d98a620d45564",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-classification",
+      "instrumentType": "rubrica",
+      "sha256": "b42e8383ada936b5a921827fc5b58422162d61b87f602121486102382e3e86c6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-classification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "88301335790c312560b607e429d02f7c8b4d14acbe251945d2ffc567403ea01b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-classification",
+      "instrumentType": "escala",
+      "sha256": "c9ac7eeb446e2131ac27f024185d99cca8176d1046cb6f6400ada13c9212d432",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-classification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "af1133607e7089d0614189b4f29ef1fe7428ed1016cf0e505a4cbbf2d276f044",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-goals",
+      "instrumentType": "rubrica",
+      "sha256": "7c03156b986a0e2e284b84eafff0a4b7896837031024fce8e62314cd722504db",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-goals",
+      "instrumentType": "lista-cotejo",
+      "sha256": "115df4c5261203315f498406241e16155dfe919432d840ed7ce8f2cbb60dbc48",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-goals",
+      "instrumentType": "escala",
+      "sha256": "0692573a5c8ad2c449a007b3c53994501bff63ff3824eb3d48a84e2146930cac",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-goals",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e670ed012f825f1766d19385e6457d6833cedfc33544d99c86a67cc7116a3df6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-benefits",
+      "instrumentType": "rubrica",
+      "sha256": "b5c81b1f1af4424fa4484381c3c196455df15fed463889987a8db3ee722986c2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-benefits",
+      "instrumentType": "lista-cotejo",
+      "sha256": "dc9eb48023b35deac7f37ab96ab8426a693367bd5db0af4950e1365a9bf927b4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-benefits",
+      "instrumentType": "escala",
+      "sha256": "877c0d557c1fbaeb925a9d60ab926b1148476ff4c1aab2be0ab02504cb42bd02",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-benefits",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a03b31a5b6f20dbd34329a327c04a920e6dc69cf68a63fc68e90dc21fa99bb3f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-tree",
+      "instrumentType": "rubrica",
+      "sha256": "5aec0587fec04e476996213bf86227c04098fba7f66e4f90db7e4344ca803c18",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-tree",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5de6b4cef44ea2d30c2a8dd693bed2e7bd244a36904a589c323bdc7c34d676d4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-tree",
+      "instrumentType": "escala",
+      "sha256": "7c27aa620816223fc0c7d47e73279b4589f7a6ea682a6955f9b45b39c6ede2be",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-tree",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e3f175676e2a6621a5d2a447eb3cb01018cd793da201f2e120d55da36ba2429a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-dramatization",
+      "instrumentType": "rubrica",
+      "sha256": "c7ac27e6b5f7b2478360eb0306e01b3441e92772bb7dc590b3fc20a623c52ae2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-dramatization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b8b9b95a31800a097cec6236a22f110f459d30274bad5ec64d507c7297ee81f6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-dramatization",
+      "instrumentType": "escala",
+      "sha256": "91fa81ad3919808c8792251f19f4247b8847c48e15752594801f389822cf763f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-dramatization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0dc19dd1a8535ac9e390b996ea9e2f162f4dfaa76b26e035be00f5303b0bca55",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-celebration",
+      "instrumentType": "rubrica",
+      "sha256": "fcfce586d4c82aabc4e8c7392387ac011def69b8b787159d69df6b2cd163c943",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-celebration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "43b2fafbd8e47521bce7533381f1cbd45ce9110113d2aa3b8eda2aa941c49b7c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-celebration",
+      "instrumentType": "escala",
+      "sha256": "e86dcc4d297340eeffc27c4ac445182a4aeebd4ffb910fd1599df1d28333bf6b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "work-celebration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "19d12bfa0c09e7d1c7760074cc2cefd27009808601baa17978e8ae02612e8cb6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-description",
+      "instrumentType": "rubrica",
+      "sha256": "0b7c9a3b920c25f75bbe4e179f8bab6516fe203e693fe2060bc89d9229878e5d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-description",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3b12996c5eba920281d4dd8d190c121cc20940e20c5e64e1763b845b908ad9f1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-description",
+      "instrumentType": "escala",
+      "sha256": "59054ce32ecfba3305602a193d68c07aa0f628d8fed9aa67691f2668490283a3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-description",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8e6f9e6de0f15a55eebc990b7c5800a7c115ef86b97603ad131ff2514514b2ca",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-types",
+      "instrumentType": "rubrica",
+      "sha256": "2eb595589708b0dec465cab6b50a1832eb3148ea3db7f48b5a3f276d2d6886a3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-types",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6504206fc573c62ca18994a23e3e18a3e2022f7c8ee73da7b03792b20700f69b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-types",
+      "instrumentType": "escala",
+      "sha256": "2931a411a0fe5a49af4fa5132e1c610ee15132786f7120279c7f6bc20037fc2b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-types",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2c821ded505aec82a884ec1484f27b227fa0be6041d2efe644576de7be82e2db",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-roles",
+      "instrumentType": "rubrica",
+      "sha256": "c077f8661bfdafb1c9b50189f03a65a58e347d908956267ed8b2e8e3dfd961e9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-roles",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4f081c58719d215c21ecc9bab75feef2df431b280a88956ab93a7dc6074fc5d6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-roles",
+      "instrumentType": "escala",
+      "sha256": "89515565c5917723435e289f2fd428a06aa2d570353043b1b79000311b593563",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-roles",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8fa298640d1435c77c1cb3c380885d258de5970bc8d9922f6b5d995d35d1ac01",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-rights",
+      "instrumentType": "rubrica",
+      "sha256": "cb697e9ca9c8d52d21c683c41a11b8b41006e45fd60c1cef3efdc57040f5e7eb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-rights",
+      "instrumentType": "lista-cotejo",
+      "sha256": "27832976f96d1066b288c32f82891b2e0247cdb7c275420e2c8fdf15456756a5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-rights",
+      "instrumentType": "escala",
+      "sha256": "6a5b160492bed24bd315f5f87f88fcd75af03cc7a1b76aa864c6c7c1af2a7f2a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-rights",
+      "instrumentType": "lista-ponderada",
+      "sha256": "478f0b1bead79ecbf4e169521d15080baa9f9db92c2a0ae1ed0cf7c82dbb26f1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-culture",
+      "instrumentType": "rubrica",
+      "sha256": "8f32412a69dc06f5aff30230fcb2e7f64aab4686c462036c59658152035c46d9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-culture",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c623ae1a3ff8d5b777d7af0353729b8ef155de811be27c2e45fb714936adfec7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-culture",
+      "instrumentType": "escala",
+      "sha256": "3c11865fb0af2abf27254f92761cca3b9e37ccac1507334bada4c575818aaff0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-culture",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b1923fa2ebffcc8b1c7ee765947436bf8249fb3e16d201db70ca1bbba9465291",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-biblical",
+      "instrumentType": "rubrica",
+      "sha256": "ffa20fdba00ed67a48ef12df3ea0b27816db3da4b575b9dbd8e16a03f2f20f6e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-biblical",
+      "instrumentType": "lista-cotejo",
+      "sha256": "85b3ae51ae9d61c69f3c1a2ba329303721e9968bc573732eb07d3df62c134255",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-biblical",
+      "instrumentType": "escala",
+      "sha256": "66073cdb80c32f3cd15b1c301987aadf752bdf1f6fd69bef2bdd38b2ac294bcb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-biblical",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6daa83831c8d93c7ba87f5f19f807aa6e18a20ded84874179136d6baa2851ab6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-album",
+      "instrumentType": "rubrica",
+      "sha256": "59723e5dab5e8958616231f8aa873d22c66eba5f6ece430e6f342cdce2e0d345",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-album",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a346d14b65a2855cc831924a1e925ed4a85cd4bf8d6ca81c811338626d0061c5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-album",
+      "instrumentType": "escala",
+      "sha256": "33b5eab2e0af63c1ab7ebf6de5ffc6977a96e6da80af7cd1b533cf55df749c8d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-album",
+      "instrumentType": "lista-ponderada",
+      "sha256": "029f2459d51428f6f56d5fad374983abd16bd5435182d72fe009dd36b9f194a6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-values",
+      "instrumentType": "rubrica",
+      "sha256": "668d4ff62177e4b0c30d6782d7f45dab94c2ae50ac5f62f458f4b8e76ed901d4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-values",
+      "instrumentType": "lista-cotejo",
+      "sha256": "88b69dda032bdb0888bd4fce7358674b49b29408bf0bb9f851af6243c030802a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-values",
+      "instrumentType": "escala",
+      "sha256": "95001c9df6761da4e149e2ba39e33045e183d29bc1f7cf15a4fc326b6ddeac68",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-values",
+      "instrumentType": "lista-ponderada",
+      "sha256": "656e7dbbebe3839417fb19940fe802620796d6ffaec0354ed30f12d804e08e47",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-colloquium",
+      "instrumentType": "rubrica",
+      "sha256": "54b6ceb8528217ad400c30393825490ad1b0e631dabc4e029253262fa7433106",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-colloquium",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bfd2ccc6c6aee929a2280b6ec3051adecbbe757b3c20918d1452ca05baf49077",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-colloquium",
+      "instrumentType": "escala",
+      "sha256": "3b010f43c07ab57dc842e7781269eda674d37d7fb488b3a5121acbf4c6e6858d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "family-colloquium",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d7987280218289b78bbce3116c720912d3aaf0fa6339411668c7890081aaae47",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-parables",
+      "instrumentType": "rubrica",
+      "sha256": "c7490b7287644e56fcdffdbcb0206d8b95811e5e57c240a573fe8d94bd0903bf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-parables",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5f844672a4925904cc140b1d22c6eebcdda68248529686d8b33b2a9b8d8d8d7a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-parables",
+      "instrumentType": "escala",
+      "sha256": "5e09e3ec86ecf20c0cfc8babe95942c1d7acba185be5559ce34ff5329d663985",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-parables",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7aa478b398ac684e1897eebeee5f34f361fe4d105dc4e7d772507e95305b6ca6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-mission",
+      "instrumentType": "rubrica",
+      "sha256": "5f6e4516c4140d6af424f16824cfa2fa6b98a8a9fc7293b79bfe829a424d424c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-mission",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bbc5d2aa1c8c08a4d305902044725e9c02735d5486947d0d5ac5c2e6b20b1e10",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-mission",
+      "instrumentType": "escala",
+      "sha256": "52b56574d06d80a22f8afc8cea1d93fb9c819091c663cb45a59a776e6be28c22",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-mission",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4f2873d1daeebb93a5368f703706ab18d893b9f19a893f07a8387f48ffcb9d79",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-mission-narrative",
+      "instrumentType": "rubrica",
+      "sha256": "082d34c081fa7dc1d8d125f247acef602d903c9d9c284e5541feb64c5a64fc3e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-mission-narrative",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5e7589cb1ab0556c9581bf82c1917653771beafc6f408922ffea87a7d69e91ae",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-mission-narrative",
+      "instrumentType": "escala",
+      "sha256": "dc3cc7d3ac621ff16ab2e528d215b35a59ed9a757f6fe44748c4d2fcd8686fa2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-mission-narrative",
+      "instrumentType": "lista-ponderada",
+      "sha256": "44cda9c8c469657933f1b5a28c46b24ae1e4a3bcbb0e5458461ba14b07459fc9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-interviews",
+      "instrumentType": "rubrica",
+      "sha256": "1ee1b0e499b44c6e71d2eb571d87577fd09cd5f899519a3580427fa70557dd9d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-interviews",
+      "instrumentType": "lista-cotejo",
+      "sha256": "46bb76ec61ca9780d4fd29947988a6379f1c38f759d87236a612db885eb7eef4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-interviews",
+      "instrumentType": "escala",
+      "sha256": "6a1f7c940c32c189bb8f086295e944c2cc46e775249c18006606277083faf225",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-interviews",
+      "instrumentType": "lista-ponderada",
+      "sha256": "28acfc8e048728fbc18a8c960d9ce8f8f9053d7de34ba649cc2a85e1cec0d9e7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "god-love",
+      "instrumentType": "rubrica",
+      "sha256": "03fba39732759f9a183ca4d1642a6f2a846d62732b07041b4aa4b4b1d73d7d90",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "god-love",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7e0ff4cf2fe027deb32a0fdb37980471cf930426b5155c61d422cef7fcca86d0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "god-love",
+      "instrumentType": "escala",
+      "sha256": "3ee12948655a728ea5c27fe96ead9f06acddc3ad1046b77914d80797bcc902e3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "god-love",
+      "instrumentType": "lista-ponderada",
+      "sha256": "978a98d37e5c7d65093a782788fd7cbf7db2d1f3b4afb5a2ff54f1166903a664",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-treatment",
+      "instrumentType": "rubrica",
+      "sha256": "df59625fdd400ced707fd1d4a5240ceb9641c5d10d4caf541e1436fe554bd280",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-treatment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b25b0d32cb664183c6d2a8c7f0b21d3e8a47b6a016d05bd30eb217dad00b0498",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-treatment",
+      "instrumentType": "escala",
+      "sha256": "c8308657e189efc7b05e98c99c1723eae676c7381a6e0e32ef6de1b9184b0ef2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-treatment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fc33aaa3aa161ea71ef5231912d6cde2d55624a81fe49476091487ff36ae3804",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-passion",
+      "instrumentType": "rubrica",
+      "sha256": "e7ae11f39522ad099028595a2dda70152ae2be3a87f44fbf1159dcae2d5d1be4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-passion",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ea0b20b9f63405671b99e04d373dca0437df9ccd750ae0fee5ae1f42d9e11aba",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-passion",
+      "instrumentType": "escala",
+      "sha256": "fdb5ea05d096ed8904443313dccb6a340b4ca8608949aea04805b0e6de52923c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "jesus-passion",
+      "instrumentType": "lista-ponderada",
+      "sha256": "37fbfa17d659cc9060bdf07e362e5bf0e9ea2de25b9c0083c680451eb5fa797a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-artifacts",
+      "instrumentType": "rubrica",
+      "sha256": "7991f3aeda80ded96d13bfce22bddb6bdc0d0c537281b3e831f1ea3dfc0317ee",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-artifacts",
+      "instrumentType": "lista-cotejo",
+      "sha256": "48632a7352e8b2ff48af9d22bd10dedd25bbe5db5ba1a48442b9904656cec5c8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-artifacts",
+      "instrumentType": "escala",
+      "sha256": "03ea8ba563456c80399aaceab0c7a3c93c177cbf2bd9a2d7057954586ccebfde",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-artifacts",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3c9d28909680b3914f395fb09c1ad88c4f72c165345027138309e572c38e69ff",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-inventions",
+      "instrumentType": "rubrica",
+      "sha256": "a5bae5b4e17677c1894dfc05ac197dff2449be0490cb44b056494c0e20f84c56",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-inventions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4d1b9f51b0b008aedb1b205d51f21fba62a6daeabfe68c70bfec90024fbe0ac0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-inventions",
+      "instrumentType": "escala",
+      "sha256": "748c7b0aa2c1b71fb466f32e260d0431826a79c545637d9f0d17a249333cd18b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-inventions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "18c36bc3d6f0b4b2fc62545753b04ea04c23e75e1a7edc59aead9db51e66d17e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "covid-science",
+      "instrumentType": "rubrica",
+      "sha256": "29da364d93a3eab06201e6d81de0be4ad9b3739d3f59ab6de614c569d994b015",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "covid-science",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3d9419f7183302cd810497404ec53f9758899ebf340e5a4dfed53dea07bb9cca",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "covid-science",
+      "instrumentType": "escala",
+      "sha256": "99d16ad33cc386df0088e2f83f8a89249e838f2aa06adddbae8fa759a162643c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "covid-science",
+      "instrumentType": "lista-ponderada",
+      "sha256": "64eb6988bfa1eaad0e06c44c2750ecab863f2ffcd9ebeee581a4a4eb83433246",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "passion-interview",
+      "instrumentType": "rubrica",
+      "sha256": "3b2eea1fb038e04cdbcadfefe5dae8c0ed2d009784bf4a2614679884e59dc0e2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "passion-interview",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a1ebf018c2ce17281a06f9e75dbb714a3c52d31441fe41eb61d365194bc3b7f0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "passion-interview",
+      "instrumentType": "escala",
+      "sha256": "f8ada1c97c70b1eb724adcf79ec10553a2c8216d37de8805b6815afc7b1f912b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "passion-interview",
+      "instrumentType": "lista-ponderada",
+      "sha256": "caa7479bf489ae5901d83e94158d6a08d098d2a0cbd4e4694c59241fc70c94f4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "bioethics",
+      "instrumentType": "rubrica",
+      "sha256": "b9aaa2ddd3597968a1723a08c546d80d6399e263c3ed0297794e706cc0bade11",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "bioethics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "525aff40985ec625dd6e1241ead76db2926112de5d20f0612ccbfb7a020cbd87",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "bioethics",
+      "instrumentType": "escala",
+      "sha256": "1b66b4f2e06d1c2686754fe98005a63daf6203314aa0a77a162d916340c5fbaa",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "bioethics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bf0b64c15161ca8642765d51cfaad94661f77bca2819e4f0794fe6ed1848a846",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-fair",
+      "instrumentType": "rubrica",
+      "sha256": "8cabc733f9b6ef88aa44cea66fd93b19689c453e15aacc8fc4920b7c3920204d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-fair",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f70c6436d733cc033040a7da23da4c1a3b3281729f2182d375334adf5f09312d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-fair",
+      "instrumentType": "escala",
+      "sha256": "2f6a40130e28f0206fa4bfad53edf235b7b7944b376863ad7c5985563e75a3b4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "science-fair",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b2c2d40d40a724f2e6b6b774da950a6b4b07717e69c95ed5d9b3f86384d5e138",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "environment-sustainability",
+      "instrumentType": "rubrica",
+      "sha256": "979b1241a0d6993e29f92f3f43dcb70244e8274866763e86a69db94df1d085d8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "environment-sustainability",
+      "instrumentType": "lista-cotejo",
+      "sha256": "944a59687002b40d12146fc6fb88f705da8d02c8638e42c6aaae5a88583afd88",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "environment-sustainability",
+      "instrumentType": "escala",
+      "sha256": "67c79ec789aed84bf82c651df9fe69856b23a5f0f1eaf7045524bc286eeff220",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "environment-sustainability",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7bbd98d7cb202cc0130722f9e07b2dbfb63c0184c8fa225e4290a8176086148f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "laudato-care",
+      "instrumentType": "rubrica",
+      "sha256": "550cb2af7216406ac5a353b7b4b9a6bfcc5447f67a6acec9f19332a68841abaf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "laudato-care",
+      "instrumentType": "lista-cotejo",
+      "sha256": "44af67cd04c5da8743813bb8b9dc30565d21ccf018bdadef117c910cbe6e6054",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "laudato-care",
+      "instrumentType": "escala",
+      "sha256": "e5a22ee24b1ae2702d0bfd1c1c56cc3f64c9f5b97a33d6063ef5702e15ce3ef2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "laudato-care",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ca8ca075a6f3472669cf558b8e8670fffc208dc285886de5914ffbd45a04214b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "resource-management",
+      "instrumentType": "rubrica",
+      "sha256": "fb38bacdd22ecd6695aba214025862a53a9aa305224a2710859ffd96d451b9f1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "resource-management",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2b7fb74f43e0b7f5fd4290c46eb37254012bddb3c4c1af1aa28fb25425e30ff8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "resource-management",
+      "instrumentType": "escala",
+      "sha256": "c1e3aef7f9796266eaf73a7305f227817cc6bef75043ec552a699b6e891d2097",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "resource-management",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ca5fbd73557a0cf2c27b1f537c604bd9308e4e68f0d63b46d8d66dc2c9897cbc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "environment-values",
+      "instrumentType": "rubrica",
+      "sha256": "fcdb465aa0def9c9e001a29e4555d580bf92d695f69237fef66e5711e0ae9f9d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "environment-values",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9af39f0377f6e21cffed825eac389b34af940f6cf13a8c342305d59274d1af18",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "environment-values",
+      "instrumentType": "escala",
+      "sha256": "d46e841716586aa72a61620c91c9d47e1201116d5d203fbbc05d513688f343c8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "environment-values",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2bed2d1e9425c3816d7c06dd5085a2f2edb27a93147e6ff196c0c8e940071339",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "integral-ecology",
+      "instrumentType": "rubrica",
+      "sha256": "cbe9cf4e90c47dcfd4ddfd529e6a0afc2c2fc849e8413ce49c2f5ec0b76205e2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "integral-ecology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8bbe90d42907c3a041720352c3875f43b98b9dd9490d79f3a90bcb31d4e16163",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "integral-ecology",
+      "instrumentType": "escala",
+      "sha256": "07e9908070ab3b9ca6c0901bc3312acc6c2b51f60e8a27bbaf47c127f4247ce0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "integral-ecology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ed606b37cc061b7a9c4da86d2416442e9c69942bf28a26efbda809ade0b3dfc1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-description",
+      "instrumentType": "rubrica",
+      "sha256": "a2315d5426a3ffdff835d7270b889650184d206024d584b3057df8b0e4041953",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-description",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3168e597c5745bee407bc095d81c3f8ddc8dc0285014fa7197fd14c5f8f5ae6a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-description",
+      "instrumentType": "escala",
+      "sha256": "0572865335e485cff07c083c9a7b737c096311e98bc9ae75c449f42e046ad4c0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-description",
+      "instrumentType": "lista-ponderada",
+      "sha256": "24cbe663cf62338f7a45ad62d95c19833c77840838f6f530ad7a8e4d3a3f243a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "3398dbaec43b1eb0b0a2c7d2e13c48c34b25ca2a0a45d832889afb0aedcec0b4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e438c4e2fc5c9d4b86ae4a5dce7fd8f3fc39077be86ce2559ec289e8e581a5ab",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-comparison",
+      "instrumentType": "escala",
+      "sha256": "89cbcfa256c633e289562bf993f57b09de004bff1164724d7f385e037861bdc0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d1c94cdbd321540ff0a82fb416ee252c437e9b849902d395780bfa4a0db263e1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "affective-development",
+      "instrumentType": "rubrica",
+      "sha256": "e0207b770983a5f6a5edc4d10a30e618709c2d957ba2458f982d10e17a8cef26",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "affective-development",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3227ce0ce386a80edb996ac555b58477041bc341ff619befaee39865901ca4ff",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "affective-development",
+      "instrumentType": "escala",
+      "sha256": "a4b36200e1870a3eeb4770d7c4a7a6e468b1de368d2afa15e8303eb50163c5d4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "affective-development",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d73529b794c9b5e2aee44e1a46dec3b088b048fb715ef3c2990113dc6e8be0f4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-integrity",
+      "instrumentType": "rubrica",
+      "sha256": "155543b4ab475e6ac02832ea4051e0fc032da5685cbda7577e46ed88e7515923",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-integrity",
+      "instrumentType": "lista-cotejo",
+      "sha256": "00f588600f74b926fcf9a32903589d10c30d9aa8ee58e7751828a10b905a32ca",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-integrity",
+      "instrumentType": "escala",
+      "sha256": "5d0b47248be6ec15e59b2ddf5b37f5fa9c214b0bc346b566a49a888db1436f9d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "adolescent-integrity",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0bc7c8ca80c64d4ef696332152c91bab727fe30cfb1fa293aaab99bf61d215fd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "religious-composition",
+      "instrumentType": "rubrica",
+      "sha256": "a55731974f2657682d08ddaed32e79b8f060b43622281a4957e948b95b837708",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "religious-composition",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5c33d8efd04d4f2ae31c6f3405d4927bc1f9252244413b0861228b72ed786875",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "religious-composition",
+      "instrumentType": "escala",
+      "sha256": "e9c97050361e1c76882211473a8097f09cefdf07000f5353da166d02d20eb03a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "religious-composition",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b1991699dd5653d4ec8326cc190273c1e555a5c2b1a54175fa0977681d8c9bc7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "decision-elements",
+      "instrumentType": "rubrica",
+      "sha256": "a8014d896aaffaa01f6f916274e1bb62fbf60b6d78d7f2d2fe8609deb286bebf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "decision-elements",
+      "instrumentType": "lista-cotejo",
+      "sha256": "931bc1ca3d36083b58a7b9cdd42c2087c69b6a42e19efdfe9ded066ce33e4d57",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "decision-elements",
+      "instrumentType": "escala",
+      "sha256": "d41eaf377a0684864765cef5a236441d44bbf34a989cd65188c8bcb0bac13284",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "decision-elements",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4ca3646b622643983ff7f73de1143d09d43e708f79aff32c6a98b23dd08d17e8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "hasty-decisions",
+      "instrumentType": "rubrica",
+      "sha256": "e993959cdad337f21461a05b91c90d4c9306c49bfdb1297a1557f6f0af089007",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "hasty-decisions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3f96268690aa1ec2d87a410b8592e0373f4bcfe1e792b4017e1f10718fde02df",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "hasty-decisions",
+      "instrumentType": "escala",
+      "sha256": "7d844975aaf132b02926c6d721b6301fb23272667b920f7c98079cedf3ceb535",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "hasty-decisions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ddb7127d99e76e4f4113769f6d09a0c9f8612133e0d1d317a074f00f9c9833a2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-stages",
+      "instrumentType": "rubrica",
+      "sha256": "2641c4b764033462a7823f76f33351c5faed913ac238a6141ebcf3b4375ab9c2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-stages",
+      "instrumentType": "lista-cotejo",
+      "sha256": "10872482b092c47db43bede5d74c286ed4549c1722fb00ec245db5ecc7d5b211",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-stages",
+      "instrumentType": "escala",
+      "sha256": "09547588551b1247dac7b79166a1ca4bb3b10ac90c1ba48f082d9cc9087861c6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-stages",
+      "instrumentType": "lista-ponderada",
+      "sha256": "30fad83e9c13bafb03c27799207b763f74efc903c1fd037aca417ae7ea1e0a9d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-dignity",
+      "instrumentType": "rubrica",
+      "sha256": "db947bcd3add12812e7255ec0b721bc57b6d309fa11442470df29c8c3bd8ea94",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-dignity",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fab0ec77c998413c4bf4e7dc754cd70ebc3497d22717f87b0a89036c604ff8ef",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-dignity",
+      "instrumentType": "escala",
+      "sha256": "d27514e4426c264eb9f1f83598c4391a151b0fc7ac090aa3c63cb9140ccf8c13",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-dignity",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2a1569759a38ba189e6ca68583474ee320c3ccc9331086c0a1ea1f8d0e1b613f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:image-god",
+      "instrumentType": "rubrica",
+      "sha256": "e9903e10b5703ec1928267c6c65aca15fd474bc5276abb304487b863d1c8fbc0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:image-god",
+      "instrumentType": "lista-cotejo",
+      "sha256": "46f55868cb8e816b456413c21040633688094483b2e4257d0ccdc32863ea0c0d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:image-god",
+      "instrumentType": "escala",
+      "sha256": "943caabf7c0514628450ae47fb1b63f72b7d99512016d8be3398a8a691116863",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:image-god",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bf0095e5088ed96cf72b9aef64d3501e42fc2d6b81b3aa9f7ad1c6c8c4435da6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:religious-origins",
+      "instrumentType": "rubrica",
+      "sha256": "1905a7771b3a21962796891ab89a6bd569848384ea58e078cde2956fe105d689",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:religious-origins",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f1fa957ed5500c1643bf54d2cb2ad5022c07cd517e7339d001fbf958a2932f48",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:religious-origins",
+      "instrumentType": "escala",
+      "sha256": "26e1824b4098cf5b604e2c1e5edaf38fd054da77f0bd538d16cc4948c2e922cf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:religious-origins",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ed0ea69d9ccb7b0c28bc8435d6fa9ffadc4e5565a1668430c690f26f9dfe681b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-care",
+      "instrumentType": "rubrica",
+      "sha256": "84bddcb538f4c999889ab22d58d10596774bf428bfc7fa8201b27787f4f8a838",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-care",
+      "instrumentType": "lista-cotejo",
+      "sha256": "52ee15086f4aa8e3ed476137cf1dffbb7e8bec65cb2a61d5b8278cebbf76690f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-care",
+      "instrumentType": "escala",
+      "sha256": "7f08fcdcc0d89fa53f066bff76f91008e2b2a407a853b65ee131dbd348494d89",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-care",
+      "instrumentType": "lista-ponderada",
+      "sha256": "50d4b2ab4d9a09b6ef8a5a6a50806c6259a1d01640ace3c376e562c0ec9658e5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-art",
+      "instrumentType": "rubrica",
+      "sha256": "8b32821647a16df20d83dbaa8724d7a23137689a11d8287066db8670716ce846",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-art",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f5f265331e3ae5bc4e1ce9a1823bb21b7c07c897a5952b8aea51a56a76378110",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-art",
+      "instrumentType": "escala",
+      "sha256": "a9ac90f013774f0aaf5816de3b040f3e417ac7ca03a4e01650ba0cb2e53adad8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-art",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cc5fa6b69e32ed6c7152b5ccfe6b74a47b9e5274a9c1ebaec2f84d14f11d2a74",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-classification",
+      "instrumentType": "rubrica",
+      "sha256": "9ad8e5e415d52d2139f858b4ab6a072d177d4b667957a8dc5ef898940b9f9fc1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-classification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c4273a6a89b0b5ca3fee719e1e7d4810babcbf69f172dd82197c3b25e8acaf24",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-classification",
+      "instrumentType": "escala",
+      "sha256": "ae559353cf1e9275eeeafb5d2b3886e2256c045fd8b8ed235608312bbab8567a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-classification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "34564f219a9dbb497f17e927d131f3d93666f4f828db092d617f05b9f587eaff",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-goals",
+      "instrumentType": "rubrica",
+      "sha256": "c265e7232e1e1a2bc3d7caa33f4446004415714ee20b4a26ae15d20f0a3088a3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-goals",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fd47d26c5aa21b85b154872c94a1117b0bb430762b40ed2b4ebcca113b48f63c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-goals",
+      "instrumentType": "escala",
+      "sha256": "a63969ae277b0f98a12ccb29b6d784e12b9c49e10a40e619e7555adb4086dc0b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-goals",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4210ced66202bbbf8489557cd5a9e1b0d0d6aac65469d7df5bdf0b1bad1bb4e9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-benefits",
+      "instrumentType": "rubrica",
+      "sha256": "86819e31619bec3b974bef94e744d367fb271956a051e17e67bba02534ce9a35",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-benefits",
+      "instrumentType": "lista-cotejo",
+      "sha256": "67eb585bd201ea666c5654643450abdbeb579333cf46c96481e528acc609d06d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-benefits",
+      "instrumentType": "escala",
+      "sha256": "c6bcf61844e4f6f1551654ee41a0d729095b274bb8b982f55df085420597cf99",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-benefits",
+      "instrumentType": "lista-ponderada",
+      "sha256": "be22b73685d68ff65ba4a862b7f09eb7949f369e4056f871f89bf78e9484aa21",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-tree",
+      "instrumentType": "rubrica",
+      "sha256": "068135a9bf3db8c9607167778d8cf774d99713102693c8b76a6c8d4eadd5fa0c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-tree",
+      "instrumentType": "lista-cotejo",
+      "sha256": "769d86ef2fe75a950f1437ad5c7dbd00847562e971f3f5f22bea093c7d4c8761",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-tree",
+      "instrumentType": "escala",
+      "sha256": "ebd6371571044d2cef41b5caceca4cd29c3674b159c724d691b43f8696c8644c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-tree",
+      "instrumentType": "lista-ponderada",
+      "sha256": "731421c6727322ec8e63cd4f0dee08715a0c27741eac3fee5461c7684da0a721",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-dramatization",
+      "instrumentType": "rubrica",
+      "sha256": "7de5112ce167c0b847f2c7d9c42dbecd5be17e67020f879a025f41dc80762952",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-dramatization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d3b253d7c63922a6a6092d8e4dbefbd30b10c63c7e4c900d47007d068acd5f93",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-dramatization",
+      "instrumentType": "escala",
+      "sha256": "762a72677caee4594be240243727672e6689e6d2fcf54541c6fc95b09234e7d0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-dramatization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2c637633c5e80105c6294dc7e8cfa6b958d0b49cb976b9fa498e369e9cd99aba",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-celebration",
+      "instrumentType": "rubrica",
+      "sha256": "cf86b1d1bf4d9891d1ce56ec09eb22c76ae258bcfc3c85ad2fc9fb14ec1dfea5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-celebration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1361d98f0fdfae5a7600e6eeb93d90458623e4a6a5f0152dc9e6be155d69ecfd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-celebration",
+      "instrumentType": "escala",
+      "sha256": "8f98c37df5bf5faefe4e2afb38d57c796394ee61c087f3b544460e62f569d17a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-celebration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ad6ac0f2073aa1b18817cb5c5663ef05dca5e62a910d9a00ab00ae1fa18443f2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-description",
+      "instrumentType": "rubrica",
+      "sha256": "74c19ea39066c932ebdde8c0fa4597c768cdd5a606af6af5e173d65e58afd64c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-description",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8ca0481ec6ea4dacd59a702ef19079497c2193d131a12c99dde0080b741fc373",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-description",
+      "instrumentType": "escala",
+      "sha256": "b7d3946ab931001a33d8f934ba3f32413584f46da12697408ca31ddba79c7026",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-description",
+      "instrumentType": "lista-ponderada",
+      "sha256": "07e7f8a17b985453f490cd390dc5a4865c38e2e2d25beee0c362db4c88f51359",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-types",
+      "instrumentType": "rubrica",
+      "sha256": "9f9857b67766f921f901852b5bf2ed229e714a1eb2673d882d21a77749a125b0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-types",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4b937a9a37c012ee3ae8fb91d1ec5192164ea838345ce24f9a5e204c6457b0fb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-types",
+      "instrumentType": "escala",
+      "sha256": "279facfbdbe34fa9b26301faef344df9801b3645390e4d7529f3df41af64444a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-types",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2f5e23a0d6d242b30d0bd21b61894686943c33b22dc49b63d77495235c01c779",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-roles",
+      "instrumentType": "rubrica",
+      "sha256": "080a8464b013091205df696283583d7d0fdedc8e2064c9b6dfd624b830976485",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-roles",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5f653f03c88d3dc89e374a63c6dc5d3e03064bbbce142c77a1f85b920166b0c8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-roles",
+      "instrumentType": "escala",
+      "sha256": "8b9576a7afded3962754169dca9c617607658a42e88bfc1e3b4fe904d454af73",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-roles",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7a6f142dbb3954c3c2d1da3cd1f9c0b4e7d8ad7a24849a1d1e09ac95096d3745",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-rights",
+      "instrumentType": "rubrica",
+      "sha256": "ecf3bc90a62ed8da26e3f3f1bcf3fc01ec4f967805953df92056b270684e9753",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-rights",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2028de360132a92bf10d39ebe891eeed957c679d963f5e5fbf6fa12d26dfcb5e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-rights",
+      "instrumentType": "escala",
+      "sha256": "3945c2f8161c10cddca0991006ebbf2f83681be61c2cef8e85cb6cc94babf73d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-rights",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8acff75f1cdbf1d2a5de68c93c5440a32333871d532ae5483fc415a2890dc1a5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-culture",
+      "instrumentType": "rubrica",
+      "sha256": "a5bda6474b687d1da28242bf3416767037cb6daf6c83a8fdc3968e00e326e146",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-culture",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0c3e6080663762b650830b7093d551288d884e0e1bb1c7ae5f30e816aef34009",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-culture",
+      "instrumentType": "escala",
+      "sha256": "01f99e91305218d076eb1113927a39960c79cd0401c2b7325629212970fe45f3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-culture",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6b5a344a68428521d8d3b197b6f567e26e3783c693a7fc7e1f9ddf79f9914f34",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-biblical",
+      "instrumentType": "rubrica",
+      "sha256": "14532c3e72d8a28fb7e8cfccbe4a302b1fb0b426fe2ea2cce1633d3af5afcdc5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-biblical",
+      "instrumentType": "lista-cotejo",
+      "sha256": "38885ea19c0cd7eab466ac9546bb65f1d70c024bda4e99cfd44a62871cc01d53",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-biblical",
+      "instrumentType": "escala",
+      "sha256": "53c009a973b353543290b222de577a48c1db7074f1abe42871c31c84a21d9a29",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-biblical",
+      "instrumentType": "lista-ponderada",
+      "sha256": "92242caf7541ee058d0a33f139eeacc4c73de22101484b014303cf4971ea7e1c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-album",
+      "instrumentType": "rubrica",
+      "sha256": "72726bf8f9c3708fc885fa6ac717881e2a6dd1e06dc9f6b1182fdaf54da665e0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-album",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3df7645d58b4d32487839e916710fee47c6e20f163cc879de1a3491c73298e2c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-album",
+      "instrumentType": "escala",
+      "sha256": "a7f9b673615bf12f577faebb6c8b5e595ab02621da0a7fe4406cf33fc85c3abb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-album",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bc498c47ac2d32064754b1686d910a8520fa7ff1532f93381bb965f2fe3c58e0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-values",
+      "instrumentType": "rubrica",
+      "sha256": "bdf2fb94189797ec59b41cf32304fddd546a2f34d16241fdea4f14ba83065616",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-values",
+      "instrumentType": "lista-cotejo",
+      "sha256": "20a5930db4c774472a8aab1e4e816921cb669e78672f2cf297ee88b5271636af",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-values",
+      "instrumentType": "escala",
+      "sha256": "811b5a28d5a39b8faadc3be67bcb98c236bc62265f9aecdb2d082ef926028cf4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-values",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6e9c0de8b4ab26a3142cf9e5be1280cc20e586342c52bc63b6b0b8c099bb951e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-colloquium",
+      "instrumentType": "rubrica",
+      "sha256": "7b5827b366b828c24fe223e67dd35ef3274a0f3461bf75c40f1ee297b86bff9f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-colloquium",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5003af2d479f49f5b136af6821575b91be6d20e14c84abfe5f339c2fb509f1c2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-colloquium",
+      "instrumentType": "escala",
+      "sha256": "dcfc2aca08c671ffc28b57eac5ede18e635432252702059d4ae81938fe9c0008",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-colloquium",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4ff3ab4f2b7ca7133f237af54335bf7986d8c6ccb0405193de7e8378277fa048",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-parables",
+      "instrumentType": "rubrica",
+      "sha256": "e5ddcbbf7ec97d1820c34aef4e8cda64c1c6b25b2dcfdb4f00190544f9a499d2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-parables",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f0a10209388c701c5f5bc82774051ce5ecb21880977dc9caf81610a332bf9860",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-parables",
+      "instrumentType": "escala",
+      "sha256": "5c73aa9512af203ab13a2d3308df70628b9749aee6fdc88a13b8f8c298720c7c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-parables",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ead3274149d179d5129a4566b1086b5ff881b5936b6a5fb672dd6350d29a300a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-mission",
+      "instrumentType": "rubrica",
+      "sha256": "5d57227a57c0ca08115b07554db3e434a350392ace0205cf098c08aab134f495",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-mission",
+      "instrumentType": "lista-cotejo",
+      "sha256": "84e1ab0e55fd84879316f7b9132709e92681a9bb6e025dd50eea5f8545e08326",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-mission",
+      "instrumentType": "escala",
+      "sha256": "4dde8e8ca1e30b929a3ea6edcf8876731fa4b84970c567df795e6ea713c2405d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-mission",
+      "instrumentType": "lista-ponderada",
+      "sha256": "601754d62905a755a2149fc504835f35c3b2cc0c43712eb843fe4784cb1e9fb2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-mission-narrative",
+      "instrumentType": "rubrica",
+      "sha256": "2088766c0dd251350aba54efa753f57d82b3c020f5a695b87cf31318a7638192",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-mission-narrative",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c967e3d289c43e1d8e563b3a9c84b88332237e7102a0c64ce2895992d0c86aac",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-mission-narrative",
+      "instrumentType": "escala",
+      "sha256": "87dfa04b80691e245d52733b6b38625c0398b794db221afc53fc9a28b26849d6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-mission-narrative",
+      "instrumentType": "lista-ponderada",
+      "sha256": "705d7a6ad80190ae4cc858daa5ac73718daf19eac0034f0e625b6332c207c172",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-interviews",
+      "instrumentType": "rubrica",
+      "sha256": "eed99f929acd3f292b42e8120682e376336d44b7cf4dfec7ba6ffb1010319574",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-interviews",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f806c3340ddf3108abd910f2df5db1ab7852a2352a157673428007e4ba7b693d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-interviews",
+      "instrumentType": "escala",
+      "sha256": "8dc32fd0d11cf319f15463f256ad80b1008182130427063db3608adce8ffdb06",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-interviews",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fba0dcf2c0d7cfe9fbcfcda974f3e344e690cb163e090c24ce8db2c437d4cc56",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:god-love",
+      "instrumentType": "rubrica",
+      "sha256": "c0374f550c78d2d00a06851f92285913727d376f0ede66100887cb6da89417fb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:god-love",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c4f72e5eb478309d14a92c7e1a554ce9d0e9c671905992752126f54b178a5c61",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:god-love",
+      "instrumentType": "escala",
+      "sha256": "c1260b0b62e5b1465b921e146e84ac1a84cc5bf45786dae899eb5aeb74d5c6d1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:god-love",
+      "instrumentType": "lista-ponderada",
+      "sha256": "34d93385801ceb696bb927bc3405a589e69b46e46221df0d1e4bfd10b187bc17",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-treatment",
+      "instrumentType": "rubrica",
+      "sha256": "0c88e6cfc92dc0ce3ecb3344f6d192cc013a61a019a7641e09c4321c5451711e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-treatment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "32f0480d4011a769b44ee787ede5d8dfb1c21db4b8e25f072c3fe1c5514774df",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-treatment",
+      "instrumentType": "escala",
+      "sha256": "a6700bea031df8204007c8eb0c92b3091dfe1c3e00c1a65eec28fe20025c5716",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-treatment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cd8aaab18fce76f34000e45c1702671b57f093c0aac8175392d06e84bf240ea3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-passion",
+      "instrumentType": "rubrica",
+      "sha256": "6defa887929cf5169dc8bd15c21a86f2f8a6555331de501200976123cc5737ac",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-passion",
+      "instrumentType": "lista-cotejo",
+      "sha256": "eca72427dfdabe4b62e080566d950227014428e28f9d514d7026ec4aa52c90fd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-passion",
+      "instrumentType": "escala",
+      "sha256": "7a4cc553c60a6461f6b258aa7ed95efdcc451c130ec15a5c3b21df3c0a1ab8e2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:jesus-passion",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3826117c793020c7b07b41f491b396c4f57180ba51d3e0d64705051d95d86058",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:passion-interview",
+      "instrumentType": "rubrica",
+      "sha256": "88a8895fe872467352443c2c072abfa60872dbaa2f90b8891781f0b5a84af6b6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:passion-interview",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3bd11eec81430781b266a9adf1e4adf43aca15eb48a61452690563cc8cfb4423",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:passion-interview",
+      "instrumentType": "escala",
+      "sha256": "92c4a47b8ae13f0bee18655db1dc023f3a0cb30df71f0b4bd0fd5b7ba142a357",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:passion-interview",
+      "instrumentType": "lista-ponderada",
+      "sha256": "318c03169734b63a0d2b85fce015a7b62cf7a70bfc74a0deb818c2a5481b3194",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-artifacts",
+      "instrumentType": "rubrica",
+      "sha256": "5ae3f969d5bf75f2bbc0b292b0b253ff21264fded332c31387a7e35451ee695c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-artifacts",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7229c68f5b5c6a7a34f5b164b130189d0aa9c65d61d5bdf51e00de80c421566e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-artifacts",
+      "instrumentType": "escala",
+      "sha256": "84d35d89be1e618d652954caae9c1e46a859a9f12deb888d309bf9734557041d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-artifacts",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a8cd2f9237f0cb618df6dec6b14607e9828137f85788ed54be72dcb3fdda22e9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-inventions",
+      "instrumentType": "rubrica",
+      "sha256": "bab0945f24552850b2ce65c042710d88cf5ef6478b2c977b97888e1aab9566c4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-inventions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5e09c305cd3bdf82e06f4f7baf80ff87dbe0ffad54df440167ae285c9e5202ec",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-inventions",
+      "instrumentType": "escala",
+      "sha256": "9f4779ea58d5177048b5c923dbabf967f0ff269132e01fba4939c86618a85b38",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-inventions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f3bb29f44d819eac9690004730527ddec8b22ceaeecc8aae692fe984e72b6064",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:covid-science",
+      "instrumentType": "rubrica",
+      "sha256": "58d9147b839aef64888bddfc406334b136f5831654f7f97eedbc5ca91345e9fe",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:covid-science",
+      "instrumentType": "lista-cotejo",
+      "sha256": "90568faa87b2b263551a579cfd550ff11fa7bb6066221a60ea1ecb4bb74d1285",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:covid-science",
+      "instrumentType": "escala",
+      "sha256": "3cf4c42f6e7eefaf14360055be916ad67efd93dd6d7fe27d2ac75019bf3fe4bd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:covid-science",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fca8be980eba8c02d2c876b75a69b3d1c1a7149a9894261cc62a5065d818340b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:bioethics",
+      "instrumentType": "rubrica",
+      "sha256": "2b7de08059794c7f9a818be72ed49f9890cf6d8a28479f9bc5f7e9ce76a0f1b2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:bioethics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "50a9f0fe22cdaa40d172635b812f6079e91f218ff4275f399bf2c03eb83318d8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:bioethics",
+      "instrumentType": "escala",
+      "sha256": "73aa5adb4d88d00032933365cb86975db126fbf44026f799df817fb80d661b71",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:bioethics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3b1d086e80314416b2589d2588045ed7343b5a9e4a75dfe642d330ac19bef102",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-fair",
+      "instrumentType": "rubrica",
+      "sha256": "f6ce2c0578937291af900595782b2959768e0bc11c5676dd41aa37c247c8999c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-fair",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f47aa41c22c786b7eafc954b52909fce394dd7714cf3b69528b8f6da0f2e2767",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-fair",
+      "instrumentType": "escala",
+      "sha256": "cb92d60356d33cbf4fd9a28acf5eeae7116a5d1c67e59472c8bf647324815737",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:science-fair",
+      "instrumentType": "lista-ponderada",
+      "sha256": "76c3a93131fa19f702de35e0ec9981092d6433b498fa0836809bc3ff0bbb5671",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:environment-sustainability",
+      "instrumentType": "rubrica",
+      "sha256": "169b529b0cec83702ee210f3b7ca2029a90693698c1cf869924c9289daa68a93",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:environment-sustainability",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e9336345286f20275d38ccd225f09787b6a2ef770d34c8256914c2261dd137ef",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:environment-sustainability",
+      "instrumentType": "escala",
+      "sha256": "bb1227e92c41d064e9636cfcfc7fe277d0212024ed6e9f286d80d6eb1d1e5775",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:environment-sustainability",
+      "instrumentType": "lista-ponderada",
+      "sha256": "939a3ac9b5dee5d8f8c02fefaafc3095e73b3a0cb6d21f0f0c2038d92340ede6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:laudato-care",
+      "instrumentType": "rubrica",
+      "sha256": "a9b56396962498ab8e84c1d4b0dba51d04e0cd5aca389023026a6cdbc314686e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:laudato-care",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9684f15afc360c0ef9c3425cbf2a36add15104f048a14ceabf22d01cf03e668d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:laudato-care",
+      "instrumentType": "escala",
+      "sha256": "f01a51a30af8d8b5f89311bab6603f605b2d8d21351f7bcb3f0ea3f7d492c722",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:laudato-care",
+      "instrumentType": "lista-ponderada",
+      "sha256": "aef93fb32dffe379582384eaba39f924d49016c07f3f0e8d51599218269e67aa",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:resource-management",
+      "instrumentType": "rubrica",
+      "sha256": "5407c80c68337214f3d260edc17b4bb0fdd99c3180ad0cc9da68f8a5f0a7406f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:resource-management",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5fd32257ec45625f87ac65d83aadb03c098ab6ea3185e5acd29ad9395aac9d85",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:resource-management",
+      "instrumentType": "escala",
+      "sha256": "0875cb54a486081f1ac47c01f0d1efec8f4cb81aa2d305415fa0e12ca93aef36",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:resource-management",
+      "instrumentType": "lista-ponderada",
+      "sha256": "414f514614218262f7c780798d0889f642b4fe37f2f2ca5bb9aed3d37cfbe205",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:environment-values",
+      "instrumentType": "rubrica",
+      "sha256": "b14ea47eb227121dfdcc0118a77bd393a61d463fb161b8a67a0b7fc4a28c7756",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:environment-values",
+      "instrumentType": "lista-cotejo",
+      "sha256": "72bf3908a2c7be66ab2be750de26d7a313d8a32a9aea12c465f9d6894f87ef67",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:environment-values",
+      "instrumentType": "escala",
+      "sha256": "662f3bc6809cfebd37a910681d2b6bc1284980237c12e51cb1016917ef531a25",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:environment-values",
+      "instrumentType": "lista-ponderada",
+      "sha256": "854d214f295d7943efc8c8025ec473a7be4d21aca32a7b3609fcb1c7e8047634",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:integral-ecology",
+      "instrumentType": "rubrica",
+      "sha256": "97b6f24b7809ff8da57edafa50c7698ca40359433bee772a1bf75c95602d8cdd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:integral-ecology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "af57998b4dee426199369811f2ab6be6c92b85a94142a4797137bd6c283fc7d3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:integral-ecology",
+      "instrumentType": "escala",
+      "sha256": "4fcf3698854478fbcfc4d40b3025962cf8ec08cb4a7563017fa1ddf6b33c3898",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:integral-ecology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dfc7f26229b039343053b4abbc6b834de9b081cb583b461bd6a96205443a9559",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-description",
+      "instrumentType": "rubrica",
+      "sha256": "f7933f299c5fbf02d1d8aafe8bcdb65e781249017bcf94067cccfb3d62376fd0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-description",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fea9a946c0eb59f6520c341e8bbcf3e7716d3016c0958865df25591c95dfed1b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-description",
+      "instrumentType": "escala",
+      "sha256": "a851c9b1420a6f58a9d810b9c95ebb4d4e07e7b12b87d899a724974a61eda3e3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-description",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8f51ce63505da1dcaea3f3e039ac1084c2eb6ec39c3066659afd3cddbabd6efd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "48d4b67d3e3ce9635edffd6ca69cd6de90ec83eff2c26492e34e94129f72effc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "df9b5fe8ad4fcf3594ee0b4f0a8174db672652ea9936d65c98bec77f98607ba0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-comparison",
+      "instrumentType": "escala",
+      "sha256": "6efe4c5059c494fb88f24b303365a067f04c9fbefc104b57e747d972cb08dca3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4858fdb49d71a26b10d410ea8f9c80432548d69d3d535cc62cb518d7c1af7fa9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:affective-development",
+      "instrumentType": "rubrica",
+      "sha256": "78bcf17824735e37c2be4c1177bc8ad29f7d2c75af1fb973df1cd63a1dec83ab",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:affective-development",
+      "instrumentType": "lista-cotejo",
+      "sha256": "97991681c2a0e80caa34888bc1ea2c7d4313f0aceff0705c244a44092eaa6cf3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:affective-development",
+      "instrumentType": "escala",
+      "sha256": "c79f527798294f447431d5ef108bc1298b49c75934df988e5bf11d887648718e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:affective-development",
+      "instrumentType": "lista-ponderada",
+      "sha256": "24e00e5ec04d05eb0d3a56ac1984314706115c000f31c6bafbd5ced3f61a7b7e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-integrity",
+      "instrumentType": "rubrica",
+      "sha256": "91e344e71647d2188c0ace276cc92fc481775158a228b78672109482bd7baca3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-integrity",
+      "instrumentType": "lista-cotejo",
+      "sha256": "99f306cb2725d3da945fb55306e1acdd689cbee01072bd552af6ba2d8e055c12",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-integrity",
+      "instrumentType": "escala",
+      "sha256": "6e3160131c9c4e1060ba155a3b5070eef746534657a72cd6383d714a5dff6fc7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-integrity",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a2556b60f8e94cacd06838de01aa0c6c4097c8083b19e20c04f683542a5b9005",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:religious-composition",
+      "instrumentType": "rubrica",
+      "sha256": "467c0e3051a43fc71e06b82d1c3938e435bf7b5ee659b9ea398a3336c6f96e39",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:religious-composition",
+      "instrumentType": "lista-cotejo",
+      "sha256": "139e76968ab2e7ce1382fe9c925dbafe944b51a9d6e9f6703cb60a439294fb05",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:religious-composition",
+      "instrumentType": "escala",
+      "sha256": "e0298f3cdb7faa20ff917d049463e7496b8d04b4ff45aff12a5b966098eac48a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:religious-composition",
+      "instrumentType": "lista-ponderada",
+      "sha256": "12f1dad627e878abc2197f38ba62669514cb99deaee364f0f2d36cd11b00b137",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:decision-elements",
+      "instrumentType": "rubrica",
+      "sha256": "b7fa0a8f4053dbf76b48e67b1f01cb32ab4aaafa6d399cd0b26fd368b2defe81",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:decision-elements",
+      "instrumentType": "lista-cotejo",
+      "sha256": "487c5c0c9f3af4646dbf3d4109146c0ff08f7706e9c2825d23e2bc3edf39273d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:decision-elements",
+      "instrumentType": "escala",
+      "sha256": "9b6cd182cc3a5d86d42a283638f4b0aec46ac5e928158d413826ab71b32a4b72",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:decision-elements",
+      "instrumentType": "lista-ponderada",
+      "sha256": "37d819841f60966e511b3d1354163e9fed79f1aed0bdb769811e3693d583ed1c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:hasty-decisions",
+      "instrumentType": "rubrica",
+      "sha256": "3495eeaaeac34e15bab5c669835d4c38796df4a4a748b75dd13f269b5b1e3640",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:hasty-decisions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "55aec3c06c420523ab3953eabcfc2255b33f982da5a2b76631897086ae95f8c9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:hasty-decisions",
+      "instrumentType": "escala",
+      "sha256": "c03a909b55a185888f3828b6bc627b89ef3f4294bc135e3fbc80428b5f14223c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:hasty-decisions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "32df126f7292808ca3587d46ab132434272b3ab8fd8cdef853a16539618b899a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-tree-present",
+      "instrumentType": "rubrica",
+      "sha256": "3126b527db454caa4d3efcc1afefdf09e4f09e56f17909f559bc3b4f453c141a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-tree-present",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7f9ff30abf87efaa21fdd89b9e5417b17d779cc75ddc994c32a661366bd46f6d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-tree-present",
+      "instrumentType": "escala",
+      "sha256": "183f6e8d54651609bec1129a5e0bf973d157c3e7fe7f7f814bca8f38af0bffbf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:work-tree-present",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b49de648869819e5a7c6019d0f6599b78acd26ab0a0eaedb4864ef7203cf3fd8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:parables-identify",
+      "instrumentType": "rubrica",
+      "sha256": "61c33c32a139c7a2d77eaf6818e2371ed7eb286ae853fcc57ca60713a08d2c9d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:parables-identify",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b577aada0a8b6aacd01b9ee5c9d4d21f5cee5c51655352ba7fdda40d8a33c03a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:parables-identify",
+      "instrumentType": "escala",
+      "sha256": "6361a5639751d28ea910fd04f0db17a8ebfc928b92bb6c7eef290469acb53332",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:parables-identify",
+      "instrumentType": "lista-ponderada",
+      "sha256": "397e30f01798a155d2b64004702c1dbd807db80ab8cc4dc37ccc0a5671ce3127",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-types-compare",
+      "instrumentType": "rubrica",
+      "sha256": "7b3e8fab09d7fc6650acd49ffdff5dbebf3f2e0eda58a16e2dfe4f853f453d3f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-types-compare",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8998e755107e5f5d20ad3081c6745e773e5fa4d39f71df292bcc735becc5191e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-types-compare",
+      "instrumentType": "escala",
+      "sha256": "5fa1c6add4a95223eb27e496431a0978171747b3b48a177c4421cf1204a5d1c7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-types-compare",
+      "instrumentType": "lista-ponderada",
+      "sha256": "89cc386e622b4130e9be322b6f3f436224ffb53cb68d9d3715c0f3c419b7656a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mission-stages-compare",
+      "instrumentType": "rubrica",
+      "sha256": "e9a544c5088cffcbf18ebfde84845c75d0ae17b1211015966251f5f660f41768",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mission-stages-compare",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cd9d23e0ef4c051823ca0478e9ab21a9f0fa1e56b7496e21bbd26849d36446a4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mission-stages-compare",
+      "instrumentType": "escala",
+      "sha256": "4a285841a033d3db34238a5bd45695cbd728a5253a60d1474de10a3ff1c0b92c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mission-stages-compare",
+      "instrumentType": "lista-ponderada",
+      "sha256": "838a6eb1e92f02d8a20d51572ee355d891bfc4f572ecf5c9f2c5bc6a68dde265",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mission-narration",
+      "instrumentType": "rubrica",
+      "sha256": "638842f30b097b3bcac0b930f1ec6d827de545b786baa0efede1f7f69cfdbd22",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mission-narration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5c8981e3093e15c57ecdd66f8ec35015da19647c7bcec22fe817206c52bb8b25",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mission-narration",
+      "instrumentType": "escala",
+      "sha256": "7fc11d775aa500b8e3a9283cb3f8dd416b165a029196ad965da7d154008b44a7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:mission-narration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3e878fb3d4d996881860ad0ca066199f2d9450570983e4f07deb5c93c7991f82",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:bioethics-verification",
+      "instrumentType": "rubrica",
+      "sha256": "7fd6e18969567a70f85d65aad95203cca120f81db76f40a5688b17659c361789",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:bioethics-verification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d266da8923896f104ec962f546dd692e1261bc931aa010a5a66ed1a2496d2b5d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:bioethics-verification",
+      "instrumentType": "escala",
+      "sha256": "563421ba506bad4e2373d27fa9dfabd6343a24ff2e3a142d36f916aa6d2a49fc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:bioethics-verification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "82c714c4c62d4466e806fce07bbe012e2adab4b48a844cee1ef4a73493c739f5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-social-description",
+      "instrumentType": "rubrica",
+      "sha256": "4af8b3804ba791167ebcae023833bd8c0f82479e590d69a6e170530b129574a6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-social-description",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1e8efd7e9f62d61a25db5f101a320f0267a889afd1384730586aa9e3e947a573",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-social-description",
+      "instrumentType": "escala",
+      "sha256": "60019c2fbfa3ca1900bf17be0449705374214e45ef2b919a90033150ae99685c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:adolescent-social-description",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fd26ffc4c7d22afecd530557a19a782c49a853ec41eda74e193dff85fab9afc6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-album-review-only",
+      "instrumentType": "rubrica",
+      "sha256": "5dbab8214cce45d6992ee69e34468d459f9843fdd65f23aa6981fb18b12017c3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-album-review-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "088312e460cedbe26b54382613cb811f87ccba21ac36ad2df234d8e486ecfa9d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-album-review-only",
+      "instrumentType": "escala",
+      "sha256": "6dbae4c8afb33efa99ab265bee72732484dce9d43f59d2405cde39fb98881cb3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:family-album-review-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "71706be5d682efee9455fbc3dce28850f8634b6b80a8c25eb6c442a05113d1df",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-art-scientific-only",
+      "instrumentType": "rubrica",
+      "sha256": "e3267cb982e0c7319b30746f88f7b4ee972c2150fe7da94c0ef6badf0dfcb4c8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-art-scientific-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f05b865e718572343ee87225dd034cd4f8c095ef59443d432e43aa96beb2f0b0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-art-scientific-only",
+      "instrumentType": "escala",
+      "sha256": "9a4e90ab2c0efe7cf541a25b8a4462cbabc7e87dd2460e20e5eb85e678808c16",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:life-art-scientific-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c56681a89db217a84ca76d7b33bb6ceeb6ed99a39ed59ebad79097ea19ff7463",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    }
+  ]
+}

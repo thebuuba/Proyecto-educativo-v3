@@ -1,0 +1,811 @@
+{
+  "grade": 2,
+  "scopeId": "7046d495-351c-52ab-a193-fde308e0000f",
+  "sourcePdfPages": [
+    397,
+    398,
+    399,
+    400
+  ],
+  "policy": "OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH",
+  "cases": [
+    {
+      "id": "life-stages",
+      "topicIds": [
+        "life-stages"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Describe las características de las etapas de la vida humana mediante los referentes educativos proporcionados. No se piden datos corporales propios ni comparar personas.",
+      "sourceRecordIds": [
+        "1ef7820d",
+        "fcc10fd9"
+      ],
+      "required": "Describe",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-dignity",
+      "topicIds": [
+        "life-dignity"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el respeto a la vida y la dignidad de la persona según los artículos 3 de la Declaración Universal y 37 y 38 de la Constitución proporcionados. No se pide asesoría jurídica vigente.",
+      "sourceRecordIds": [
+        "add87da8",
+        "c0772aad"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "image-god",
+      "topicIds": [
+        "image-god"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Argumenta sobre la imagen y semejanza de Dios atribuida al ser humano en los textos de Génesis y Salmo proporcionados, contrastando interpretaciones y evidencias. No se evalúa adhesión religiosa.",
+      "sourceRecordIds": [
+        "31a75187"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "religious-origins",
+      "topicIds": [
+        "religious-origins"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara el origen y el valor de la vida según la visión de las grandes religiones de los referentes proporcionados. No declares superior ninguna creencia.",
+      "sourceRecordIds": [
+        "3b7e4a78",
+        "7836f2c7"
+      ],
+      "required": "Compara",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-care",
+      "topicIds": [
+        "life-care"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica las acciones de cuidado y protección de la vida en familia, escuela y comunidad del referente proporcionado justificando con sus evidencias. No se piden hábitos privados.",
+      "sourceRecordIds": [
+        "72fa7db9"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-art",
+      "topicIds": [
+        "life-art"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta la producción artística proporcionada sobre razones éticas, morales, religiosas y científicas que defienden la dignidad de la vida, explicando sus evidencias. No se califica fe ni talento artístico.",
+      "sourceRecordIds": [
+        "c7caacc1"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-classification",
+      "topicIds": [
+        "work-classification"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Clasifica el trabajo del registro sociocultural proporcionado justificando sus características. No se piden empleo ni ingresos de tu familia.",
+      "sourceRecordIds": [
+        "7ca8fe91",
+        "a73fb046"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-goals",
+      "topicIds": [
+        "work-goals"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los logros de metas laborales de personas descritas en las fuentes proporcionadas, relacionando condiciones, acciones y resultados. No infieras honestidad o perseverancia privada ni entrevistes familiares.",
+      "sourceRecordIds": [
+        "828d5d82",
+        "effa0980"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-benefits",
+      "topicIds": [
+        "work-benefits"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga la importancia, beneficios y dificultades del trabajo y su relación con el bienestar según los referentes proporcionados. No se requieren experiencias laborales privadas.",
+      "sourceRecordIds": [
+        "9bedc594",
+        "9e4cf4f3"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-tree",
+      "topicIds": [
+        "work-tree"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "CONCEPT_MAP",
+      "description": "Construye el árbol de valores del trabajo humano mediante las relaciones de los referentes proporcionados. No se pide exponerlo ni demostrar virtud personal.",
+      "sourceRecordIds": [
+        "2b3fdffd"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-dramatization",
+      "topicIds": [
+        "work-dramatization"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Dramatiza el caso proporcionado de una persona que alcanzó sus metas laborales, haciendo reconocibles sus acciones, decisiones y resultados. No reveles experiencias familiares.",
+      "sourceRecordIds": [
+        "6012245f"
+      ],
+      "required": "Escenifica|Representa|Dramatiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-celebration",
+      "topicIds": [
+        "work-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración de producciones y aprendizajes sobre el trabajo con los recursos y condiciones proporcionados. No se pide realizarla ni se evalúa oración, silencio o adhesión.",
+      "sourceRecordIds": [
+        "e1fb0572"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-description",
+      "topicIds": [
+        "family-description"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Describe la realidad familiar del referente proporcionado relacionando sus características y evidencias. No se pide historia familiar propia ni datos íntimos.",
+      "sourceRecordIds": [
+        "c5634e99"
+      ],
+      "required": "Describe",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-types",
+      "topicIds": [
+        "family-types"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los tipos y características de familias de los referentes proporcionados, justificando con sus evidencias. No jerarquices familias ni solicites datos privados.",
+      "sourceRecordIds": [
+        "7db6ad7f",
+        "96a2572b"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-roles",
+      "topicIds": [
+        "family-roles"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Realiza la mesa redonda sobre los problemas y roles de la familia del caso proporcionado, contrastando alternativas con evidencias. No se evalúa obediencia ni moralidad privada.",
+      "sourceRecordIds": [
+        "74c5ca91",
+        "c71fb43e"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-rights",
+      "topicIds": [
+        "family-rights"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica los derechos de la familia del artículo 55 numerales 1 al 13 de la Constitución proporcionada, diferenciando norma y evidencia. No se pide asesoría jurídica vigente.",
+      "sourceRecordIds": [
+        "a4234858"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-culture",
+      "topicIds": [
+        "family-culture"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza los elementos culturales y sociales de la familia dominicana de los referentes proporcionados. No solicites creencias ni prácticas privadas.",
+      "sourceRecordIds": [
+        "eaec3971",
+        "6b0e3e4b"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-biblical",
+      "topicIds": [
+        "family-biblical"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Expone las características, trato y amor de la familia descritos en los textos bíblicos proporcionados de Mateo, Efesios, Proverbios y Corintios. No se califica la familia del estudiante.",
+      "sourceRecordIds": [
+        "e17182de"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-album",
+      "topicIds": [
+        "family-album"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PORTFOLIO",
+      "description": "Construye el álbum familiar del referente con las fotografías y la reseña biográfica proporcionadas, justificando su organización. No se piden fotos propias ni entrevistas reales.",
+      "sourceRecordIds": [
+        "38dc9c5b"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-values",
+      "topicIds": [
+        "family-values"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Realiza la mesa redonda sobre valores familiares de los referentes dominicanos, sustentando y contrastando argumentos. No se evalúan espiritualidad o virtudes privadas.",
+      "sourceRecordIds": [
+        "b0c288b7",
+        "82496629"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-colloquium",
+      "topicIds": [
+        "family-colloquium"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el coloquio sobre soluciones a dificultades y conflictos familiares usando los referentes proporcionados. No se pide contactar a madres o padres ni realizarlo todavía.",
+      "sourceRecordIds": [
+        "0e51b460"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-parables",
+      "topicIds": [
+        "jesus-parables"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Escenifica los valores y acciones de Jesús de Nazaret en las parábolas proporcionadas de Lucas, Marcos y Mateo. No se pide profesar una fe.",
+      "sourceRecordIds": [
+        "e470e794"
+      ],
+      "required": "Escenifica|Representa|Dramatiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-mission",
+      "topicIds": [
+        "jesus-mission"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora el cuadro comparativo de las etapas de la misión de Jesús de Nazaret mediante los referentes proporcionados. No se pide realizar una puesta en común.",
+      "sourceRecordIds": [
+        "07d944f7"
+      ],
+      "required": "Elabora.*cuadro comparativo",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-mission-narrative",
+      "topicIds": [
+        "jesus-mission-narrative"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Relata los momentos claves de la misión de Jesús de Nazaret según los textos proporcionados, sustentando su secuencia con evidencias. No se evalúa creencia privada.",
+      "sourceRecordIds": [
+        "fd56d4e9"
+      ],
+      "required": "Relata.*momentos claves",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-interviews",
+      "topicIds": [
+        "jesus-interviews"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica las entrevistas a líderes religiosos sobre la misión y valores de Jesús de Nazaret en la sociedad actual, mediante los referentes proporcionados. No se pide contactar personas ni realizarlas.",
+      "sourceRecordIds": [
+        "8daf9264"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "god-love",
+      "topicIds": [
+        "god-love"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta el amor de Dios descrito por los textos proporcionados de Juan, Oseas, Juan y Tesalonicenses, explicando sus evidencias. No se pide gratitud ni adhesión.",
+      "sourceRecordIds": [
+        "4d13cac6",
+        "d247c2ac"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-treatment",
+      "topicIds": [
+        "jesus-treatment"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Representa el trato de Jesús de Nazaret hacia las personas en los textos proporcionados, haciendo reconocibles acciones y decisiones. No se califica moralidad personal.",
+      "sourceRecordIds": [
+        "e81fd0fb",
+        "ffebc986"
+      ],
+      "required": "Escenifica|Representa|Dramatiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-passion",
+      "topicIds": [
+        "jesus-passion"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Realiza el panel sobre juicio, crucifixión, muerte, sepultura y resurrección de Jesús de Nazaret mediante los referentes proporcionados. No se exige fe ni rituales.",
+      "sourceRecordIds": [
+        "99a6fa94",
+        "1c61ed2e"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "passion-interview",
+      "topicIds": [
+        "passion-interview"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora el guion de entrevista sobre el significado de la pasión, muerte y resurrección de Jesús para el referente proporcionado. No se pide entrevistar familiares ni revelar su fe.",
+      "sourceRecordIds": [
+        "4d313297"
+      ],
+      "required": "Elabora.*Jesús de Nazaret",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "science-artifacts",
+      "topicIds": [
+        "science-artifacts"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los artefactos tecnológicos e inventos científicos y sus beneficios mediante las fuentes proporcionadas. No se pide construir ni comprar objetos.",
+      "sourceRecordIds": [
+        "efba2497"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "science-inventions",
+      "topicIds": [
+        "science-inventions"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta las características de inventos científicos y tecnológicos y sus aportes al cuidado de vida y entorno según las fuentes proporcionadas. No se requieren objetos nuevos.",
+      "sourceRecordIds": [
+        "169d306c",
+        "7fa77ae4"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "covid-science",
+      "topicIds": [
+        "covid-science"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la contribución de las ciencias y tecnologías ante la pandemia de Covid 19 y sus impactos mediante los referentes proporcionados. No se pide consejo médico ni datos de salud propios.",
+      "sourceRecordIds": [
+        "79563e36",
+        "286d15bf"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "bioethics",
+      "topicIds": [
+        "bioethics"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga la bioética y su aporte al uso de las ciencias y tecnologías en los ámbitos personal, educativo y social de los referentes proporcionados. No se califica moralidad privada.",
+      "sourceRecordIds": [
+        "12cc07f3",
+        "65998773"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "science-fair",
+      "topicIds": [
+        "science-fair"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la feria científica y tecnológica para presentar las producciones dadas con sus condiciones y recursos. No se pide realizarla ni se evalúa gratitud a Dios.",
+      "sourceRecordIds": [
+        "d65fb5b2"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "environment-sustainability",
+      "topicIds": [
+        "environment-sustainability"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica la importancia del cuidado y sostenibilidad del entorno natural como casa común según los referentes proporcionados. No se piden hábitos privados.",
+      "sourceRecordIds": [
+        "1dbd639b",
+        "562a8ef8",
+        "ebe3d5fa"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "laudato-care",
+      "topicIds": [
+        "laudato-care"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta las acciones que favorecen y desfavorecen el cuidado del entorno natural según el texto de Laudato Si proporcionado. No se exige adhesión religiosa.",
+      "sourceRecordIds": [
+        "2295f74c"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "resource-management",
+      "topicIds": [
+        "resource-management"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Debate la gestión y preservación de recursos naturales y sus efectos en nuevas generaciones mediante los referentes proporcionados. No se pide información doméstica privada.",
+      "sourceRecordIds": [
+        "be54d537"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "environment-values",
+      "topicIds": [
+        "environment-values"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los valores culturales, espirituales y axiológicos en el cuidado del entorno natural según los referentes proporcionados. No se califica adhesión o gratitud.",
+      "sourceRecordIds": [
+        "b5c9b393"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "integral-ecology",
+      "topicIds": [
+        "integral-ecology"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Representa la situación proporcionada que muestra la necesidad de una ecología integral para sostener el entorno natural. No se piden datos familiares ni acciones peligrosas.",
+      "sourceRecordIds": [
+        "9346a44e",
+        "017529b6"
+      ],
+      "required": "Escenifica|Representa|Dramatiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "adolescent-description",
+      "topicIds": [
+        "adolescent-description"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Describe las características adolescentes del referente educativo proporcionado y sus relaciones con intereses, comportamientos y decisiones. No se pide describir tu cuerpo, intimidad o creencias.",
+      "sourceRecordIds": [
+        "cba1c202",
+        "efa5df22"
+      ],
+      "required": "Describe",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "adolescent-comparison",
+      "topicIds": [
+        "adolescent-comparison"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara intereses, comportamientos y valores en relación con cambios adolescentes de los referentes educativos proporcionados. No se piden experiencias privadas ni comparar cuerpos reales.",
+      "sourceRecordIds": [
+        "6a9bb7c2",
+        "6e8084d6"
+      ],
+      "required": "Compara",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "affective-development",
+      "topicIds": [
+        "affective-development"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga el desarrollo afectivo-sexual y su importancia durante la adolescencia mediante los referentes educativos proporcionados. No se piden prácticas privadas ni datos íntimos.",
+      "sourceRecordIds": [
+        "ccd8dc0d"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "adolescent-integrity",
+      "topicIds": [
+        "adolescent-integrity"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Argumenta sobre el derecho a la integridad física de los adolescentes según el artículo 12 de la Ley 136-03 y documentos proporcionados. No se pide asesoría jurídica actual ni testimonios personales.",
+      "sourceRecordIds": [
+        "09111bc6"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "religious-composition",
+      "topicIds": [
+        "religious-composition"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Redacta la composición sobre vivencia religiosa adolescente y sus aportes al desarrollo humano y espiritual del referente proporcionado. No se evalúa fe propia ni sinceridad.",
+      "sourceRecordIds": [
+        "ba4dea60"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "decision-elements",
+      "topicIds": [
+        "decision-elements"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica los elementos esenciales para tomar decisiones acertadas durante la adolescencia según el caso proporcionado. No se califica confianza o personalidad privada.",
+      "sourceRecordIds": [
+        "123e5e3d",
+        "4bf36aec"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "hasty-decisions",
+      "topicIds": [
+        "hasty-decisions"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica las causas y consecuencias de decisiones apresuradas durante la adolescencia en los ámbitos del caso proporcionado. No se pide revelar decisiones personales.",
+      "sourceRecordIds": [
+        "4f606262"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-tree-present",
+      "topicIds": [
+        "work-tree"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta el árbol de valores del trabajo humano proporcionado explicando sus relaciones y evidencias. No se pide construir otro árbol.",
+      "sourceRecordIds": [
+        "2b3fdffd"
+      ],
+      "required": "Presenta.*árbol",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Revela"
+    },
+    {
+      "id": "parables-identify",
+      "topicIds": [
+        "jesus-parables"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica los valores y acciones de Jesús en las parábolas proporcionadas, justificando con sus episodios. No se pide escenificarlas.",
+      "sourceRecordIds": [
+        "e470e794"
+      ],
+      "required": "Identifica.*parábolas",
+      "forbidden": "Escenifica|Dramatiza|^Profesa"
+    },
+    {
+      "id": "family-types-compare",
+      "topicIds": [
+        "family-types"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara los tipos y características de familias de los referentes proporcionados según sus contextos y evidencias. No jerarquices familias.",
+      "sourceRecordIds": [
+        "7db6ad7f",
+        "96a2572b"
+      ],
+      "required": "Compara.*familias",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Revela"
+    },
+    {
+      "id": "mission-stages-compare",
+      "topicIds": [
+        "jesus-mission"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara las etapas de la misión de Jesús de Nazaret según los referentes proporcionados. No se pide elaborar un cuadro ni presentar otro producto.",
+      "sourceRecordIds": [
+        "07d944f7"
+      ],
+      "required": "Compara las etapas",
+      "forbidden": "Elabora|cuadro comparativo|^Profesa"
+    },
+    {
+      "id": "mission-narration",
+      "topicIds": [
+        "jesus-mission-narrative"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Narra los momentos claves de la misión de Jesús de Nazaret según los textos proporcionados, relacionando secuencia y episodios. No se evalúa fe personal.",
+      "sourceRecordIds": [
+        "fd56d4e9"
+      ],
+      "required": "Narra.*momentos claves",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Revela"
+    },
+    {
+      "id": "bioethics-verification",
+      "topicIds": [
+        "bioethics"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica el cumplimiento de los criterios de bioética en el uso de ciencias y tecnologías expresamente acordados en el registro proporcionado. No infieras moralidad privada.",
+      "sourceRecordIds": [
+        "12cc07f3",
+        "65998773"
+      ],
+      "required": "Verifica.*criterios de bioética",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Revela"
+    },
+    {
+      "id": "adolescent-social-description",
+      "topicIds": [
+        "adolescent-description"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Describe las características sociales de los adolescentes del referente proporcionado y sus relaciones expresamente documentadas. No se piden rasgos físicos ni cognitivos ni emocionales ni espirituales ni datos íntimos.",
+      "sourceRecordIds": [
+        "cba1c202",
+        "efa5df22"
+      ],
+      "required": "Describe.*sociales",
+      "forbidden": "físic|cognitiv|emocional|espiritual|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "family-album-review-only",
+      "topicIds": [
+        "family-album"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PORTFOLIO",
+      "description": "Construye el álbum familiar del referente con la reseña biográfica proporcionada. No se piden fotografías ni imágenes nuevas ni datos privados.",
+      "sourceRecordIds": [
+        "38dc9c5b"
+      ],
+      "required": "Elabora.*reseña",
+      "forbidden": "fotograf|imágenes|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "life-art-scientific-only",
+      "topicIds": [
+        "life-art"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta la producción artística proporcionada sobre razones científicas que defienden la dignidad de la vida, justificando con sus evidencias. No se piden razones éticas ni morales ni religiosas ni otros productos.",
+      "sourceRecordIds": [
+        "c7caacc1"
+      ],
+      "required": "Presenta.*razones científicas",
+      "forbidden": "éticas|morales|religiosas|^Profesa",
+      "narrowedEvidence": true
+    }
+  ]
+}
