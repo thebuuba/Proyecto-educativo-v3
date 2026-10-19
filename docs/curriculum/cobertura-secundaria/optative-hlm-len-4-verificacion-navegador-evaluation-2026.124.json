@@ -1,0 +1,29 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.124",
+  "grade": 4,
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "status": "BLOCKED_PERSONAL_LOGIN_REQUIRED",
+  "servedAsset": "/assets/index-CwIb-Xds.js",
+  "servedAssetMatchesBuild": true,
+  "observed": [
+    "Recarga normal recibió entry final y registerSW.js; login ofrece Continuar como Alexauris.",
+    "Continuar como Alexauris solicitó contraseña en la comprobación de acceso; no se introdujeron credenciales."
+  ],
+  "notVerified": [
+    "Creador vacío personal con esta optativa",
+    "Estrategia automática/manual e instrumento completo en el contexto personal",
+    "Guardar/reabrir personal",
+    "Instrumento personal exacto al cambiar únicamente estrategia"
+  ],
+  "existingDraftsAndStorageNotCleared": true,
+  "newEmailsOrPasswordChanges": false,
+  "manualSteps": [
+    "Iniciar sesión con la cuenta propia de Development en localhost:8787.",
+    "Abrir cuarto de secundaria, modalidad académica, salida Humanidades y Lenguas Modernas y Apreciación y Producción Literarias (OPT-HLM-LEN-4).",
+    "Comprobar cuatro controles y puntos vacíos. Recitar un poema dado debe producir instrumento completo sin exigir análisis escrito.",
+    "Identificar únicamente metáfora y comparación debe sugerir cotejo y separar dos evidencias. Se puede elegir rúbrica manualmente.",
+    "Asignar17.35, editar una fila, guardar y reabrir; cambiar solo estrategia y comprobar mismos instrumento/snapshot/criterios/pesos/puntos.",
+    "Probar revisión de solo ortografía sin contenido, publicación o recitación no pedidos."
+  ]
+}

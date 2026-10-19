@@ -6,10 +6,12 @@ import {parseEnv} from 'node:util'
 import {developmentEnvironment,developmentProjectRef as project} from '../cloudflare-development-environment.mjs'
 import {readDevelopmentHistory} from './development-history.mjs'
 
-// One literal, visually reviewed common grade. No catalog seed or school/account writes.
+// One literal, visually reviewed scope. Optatives require explicit selection; no school/account writes.
 const [subjectCode,gradeText,matrixPath]=process.argv.slice(2),grade=Number(gradeText)
 const subjects={SOC:'Ciencias Sociales',ART:'Educación Artística',EFI:'Educación Física',FHR:'Formación Integral Humana y Religiosa'}
-assert(subjectCode in subjects&&Number.isInteger(grade)&&grade>=1&&grade<=6,'Código común y grado explícitos requeridos')
+const optative=process.argv.includes('--optative'),optatives={'OPT-HLM-LEN-4':{grade:4,name:'Apreciación y Producción Literarias',exit:'Humanidades y Lenguas Modernas'}}
+const selected=optative?optatives[subjectCode]:null
+assert((optative?selected&&selected.grade===grade:subjectCode in subjects)&&Number.isInteger(grade)&&grade>=1&&grade<=6,'Código y grado revisados explícitamente requeridos; las optativas necesitan --optative')
 assert(matrixPath?.startsWith('docs/curriculum/cobertura-secundaria/')&&matrixPath.endsWith('.json'),'Matriz curricular explícita requerida')
 const matrix=JSON.parse(readFileSync(matrixPath,'utf8')),rows=readFileSync('data/curriculum/secondary-2023.jsonl','utf8').trim().split('\n').map(JSON.parse)
 const source=rows.find(r=>r.kind==='document'),digest=value=>createHash('sha256').update(value).digest('hex')
@@ -17,7 +19,8 @@ assert.equal(digest(readFileSync('apps/frontend/public/docs/adecuacion-curricula
 assert.equal(matrix.source.sha256,source.sha256);assert.equal(matrix.grade,grade)
 assert.equal(matrix.sourceVisualReview.status,'REVIEWED')
 const scope=rows.find(r=>r.kind==='scope'&&r.id===matrix.scopeId)
-assert(scope);assert.equal(scope.grade,grade);assert.equal(scope.subjectName,subjects[subjectCode]);assert.equal(scope.optativeExitName,null)
+assert(scope);assert.equal(scope.grade,grade);assert.equal(scope.subjectName,selected?.name??subjects[subjectCode]);assert.equal(scope.optativeExitName,selected?.exit??null)
+if(optative){assert.equal(scope.modalityName,'Académica');assert.equal(matrix.subjectCode,subjectCode);assert.equal(matrix.optativeExitName,selected.exit);assert.equal(matrix.modalityCode,'academic')}
 const elements=rows.filter(r=>r.kind==='element'&&r.scopeKey===scope.stableKey),ids=new Set(elements.map(r=>r.id))
 const relations=rows.filter(r=>r.kind==='relation'&&ids.has(r.fromId)&&ids.has(r.toId))
 assert.equal(elements.length,matrix.officialRecords.length)
@@ -29,14 +32,14 @@ for(const row of elements){
 const excluded=matrix.explicitExclusions??[]
 assert.equal(new Set(excluded.map(r=>r.id)).size,excluded.length)
 for(const row of excluded)assert(ids.has(row.id)&&row.reason&&row.explanation)
-const code=`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`
+const code=optative?`MINERD_SECUNDARIA_2023_${subjectCode.replaceAll('-','_')}_V1`:`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`
 const id=(kind,original)=>{
  const b=createHash('sha1').update(Buffer.from('6ba7b8119dad11d180b400c04fd430c8','hex')).update(`${code}/${kind}/${original}`).digest().subarray(0,16)
  b[6]=(b[6]&15)|80;b[8]=(b[8]&63)|128
  const h=b.toString('hex');return `${h.slice(0,8)}-${h.slice(8,12)}-${h.slice(12,16)}-${h.slice(16,20)}-${h.slice(20)}`
 }
 const versionId=id('version',source.versionId),documentId=id('document',source.id),scopeId=id('scope',scope.id)
-const metadata={subjectCodes:[subjectCode],grades:[grade],commonOnly:true,datasetDigest:digest(JSON.stringify({source,scopes:[scope],elements,relations})),sourceVersionId:source.versionId,sourcePdfHash:source.sha256,scopeMap:{[grade]:{sourceId:scope.id,id:scopeId}},review:matrixPath,reviewKind:'LITERAL_SOURCE_AND_SCOPE_NOT_COMPLETE_INSTRUMENT_COVERAGE',excludedAssessmentElementIds:excluded.map(r=>id('element',r.id))}
+const metadata={subjectCodes:[subjectCode],grades:[grade],commonOnly:!optative,...(optative?{optativeExitNames:[selected.exit],modalityCodes:['academic','general']} : {}),datasetDigest:digest(JSON.stringify({source,scopes:[scope],elements,relations})),sourceVersionId:source.versionId,sourcePdfHash:source.sha256,scopeMap:{[grade]:{sourceId:scope.id,id:scopeId}},review:matrixPath,reviewKind:'LITERAL_SOURCE_AND_SCOPE_NOT_COMPLETE_INSTRUMENT_COVERAGE',excludedAssessmentElementIds:excluded.map(r=>id('element',r.id))}
 const manifest={project,code,versionId,documentId,scopeId,metadata,elementIdMap:Object.fromEntries(elements.map(r=>[r.id,id('element',r.id)])),elements:elements.length,relations:relations.length,excludedFromAssessment:excluded.length}
 if(!process.argv.includes('--install')){console.log(JSON.stringify(manifest,null,2));process.exit(0)}
 Object.assign(process.env,developmentEnvironment(parseEnv(readFileSync('.dev.vars.local','utf8'))))
@@ -54,7 +57,7 @@ try{
    await tx.curriculumVersion.create({data:{id:versionId,code,level:'SECONDARY',editionYear:2023,status:'DRAFT',importMetadata:metadata}})
    const {kind,url,...document}=source
    await tx.curriculumDocument.create({data:{...document,id:documentId,versionId}})
-   await tx.curriculumScope.create({data:{id:scopeId,versionId,stableKey:scope.stableKey,cycle:scope.cycle,grade,areaName:scope.areaName,subjectName:scope.subjectName,modalityName:scope.modalityName,optativeExitName:null,assignmentSourcePdfPage:scope.assignmentSourcePdfPage,areaSearch:normalize(scope.areaName),subjectSearch:normalize(scope.subjectName)}})
+   await tx.curriculumScope.create({data:{id:scopeId,versionId,stableKey:scope.stableKey,cycle:scope.cycle,grade,areaName:scope.areaName,subjectName:scope.subjectName,modalityName:scope.modalityName,optativeExitName:scope.optativeExitName,assignmentSourcePdfPage:scope.assignmentSourcePdfPage,areaSearch:normalize(scope.areaName),subjectSearch:normalize(scope.subjectName)}})
    await tx.curriculumElement.createMany({data:elements.map(r=>({id:id('element',r.id),versionId,scopeId,stableKey:r.stableKey,elementType:r.type,originalText:r.originalText,normalizedText:r.normalizedText,reviewStatus:'REVIEWED',sourceOrder:r.sourceOrder}))})
    if(relations.length)await tx.curriculumElementRelation.createMany({data:relations.map(r=>({versionId,fromElementId:id('element',r.fromId),toElementId:id('element',r.toId),relationType:r.type}))})
    await tx.curriculumSourceSpan.createMany({data:elements.map(r=>({versionId,elementId:id('element',r.id),documentId,pdfPage:r.source.pdfPage,printedPage:r.source.printedPage,sectionName:r.source.sectionName,boundingBox:r.source.boundingBox??undefined}))})

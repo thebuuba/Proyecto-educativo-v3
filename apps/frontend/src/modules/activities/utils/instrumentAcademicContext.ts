@@ -12,5 +12,6 @@ export function instrumentAcademicContext(subject?: SectionSubjectOption | null)
   if (!Number.isInteger(grade) || grade < 1 || grade > 6) return null
   const subjectName=subject.subjectName.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().trim()
   const subjectCode=subject.subjectCode?.trim().toUpperCase() || (subjectName==='lengua espanola'?'LEN':'')
-  return { level:secondary?'SECONDARY':'PRIMARY', grade, subjectCode, subjectName: subject.subjectName }
+  return { level:secondary?'SECONDARY':'PRIMARY', grade, subjectCode, subjectName: subject.subjectName,
+    modalityCode:subject.modalityCode??null,optativeExitName:subject.optativeExitName??null }
 }

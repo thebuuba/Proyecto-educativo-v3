@@ -1,5 +1,6 @@
 import {resolveCommonPhysicalTask,commonPhysicalSelections} from '@aula/shared'
 import {resolveCommonFhrTask,commonFhrSelections} from '@aula/shared'
+import {resolveOptativeLanguageTask,optativeLanguageSelections} from '@aula/shared'
 import { resolveCommonArtTask, commonArtSelections } from '@aula/shared'
 import {resolveCommonSocialTask,commonSocialSelections} from '@aula/shared'
 import {resolveCommonScienceTask,commonScienceSelections} from '@aula/shared'
@@ -14,6 +15,8 @@ const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '
 
 /** Immediate defaults from the teacher's task, using only options already offered by the creator. */
 export function activityDefaultSuggestions(title: string, description: string, context?: InstrumentAcademicContext | null, maxScore?: number | null): ActivityDefaults | null {
+  const optative=resolveOptativeLanguageTask(title,description,context)
+  if(optative)return{activityType:optative.activityType,technique:optative.technique,instrument:optativeLanguageSelections(optative).suggestedInstrumentType}
   const fhr=resolveCommonFhrTask(title,description,context)
   if(fhr)return{activityType:fhr.activityType,technique:fhr.technique,instrument:commonFhrSelections(fhr).suggestedInstrumentType}
   const physical=resolveCommonPhysicalTask(title,description,context)

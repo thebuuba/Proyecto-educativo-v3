@@ -11,6 +11,8 @@ export type SectionSubjectOption = {
   academicLevelSequence?: number | null
   academicLevelId?: string | null
   academicLevelCode?: string | null
+  modalityCode?: string | null
+  optativeExitName?: string | null
   evaluationProfile?: EvaluationProfile
   sectionId?: string
   schoolYearId?: string

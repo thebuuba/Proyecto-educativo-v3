@@ -12,10 +12,11 @@ const gradeFlag=process.argv.indexOf('--grade'),grade=gradeFlag<0?1:Number(proce
 assert(Number.isInteger(grade)&&grade>=1&&grade<=6)
 const gradeName=['','one','two','three','four','five','six'][grade]
 const subjectFlag=process.argv.indexOf('--subject'),subjectCode=subjectFlag<0?'SOC':process.argv[subjectFlag+1]
-assert(['SOC','ART','EFI','FHR'].includes(subjectCode),'Solo se admiten los ámbitos comunes revisados')
+const optative=subjectCode==='OPT-HLM-LEN-4'
+assert(['SOC','ART','EFI','FHR'].includes(subjectCode)||optative&&grade===4,'Solo se admiten ámbitos revisados explícitamente')
 assert(subjectCode!=='EFI'||[1,2,3,4,5,6].includes(grade),'EFI requiere un grado con contratos y fuente revisados')
 assert(subjectCode!=='FHR'||[1,2,3,4,5,6].includes(grade),'FHR requiere grado y contratos revisados')
-const family=subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=subjectCode==='FHR'?'FHR':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=subjectCode==='FHR'?'Formación Integral Humana y Religiosa':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
+const family=optative?'optative-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=optative?family:subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=optative?'Optativa HLM Literatura':subjectCode==='FHR'?'FHR':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=optative?'Apreciación y Producción Literarias':subjectCode==='FHR'?'Formación Integral Humana y Religiosa':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=optative?'opt-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
 const path='.wrangler/secondary-completion/',context=JSON.parse(readFileSync(path+`${family}-${grade}-context.json`,'utf8'))
 assert.equal(context.project,project)
 assert.equal(context.grade,grade)
@@ -37,7 +38,7 @@ const media=[
  {description:'Realiza un panel o una infografía sobre la expansión colonial en el Caribe.',sourceRecordIds:['c68b813b']},
  {description:'Redacta una noticia sobre las Revoluciones burguesas con titular, entrada, cuerpo, una foto proporcionada y pie de foto. Usa conectores de orden y temporales.',sourceRecordIds:['f0556291']},
 ]
-const contractPath=subjectCode==='FHR'?`data/evaluation-instruments/fhr-grade-${gradeName}-contracts.json`:subjectCode==='EFI'?`data/evaluation-instruments/physical-grade-${gradeName}-contracts.json`:subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
+const contractPath=optative?'data/evaluation-instruments/optative-hlm-len-four-contracts.json':subjectCode==='FHR'?`data/evaluation-instruments/fhr-grade-${gradeName}-contracts.json`:subjectCode==='EFI'?`data/evaluation-instruments/physical-grade-${gradeName}-contracts.json`:subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
 const allContracts=mediaMode?[...media,...media]:JSON.parse(readFileSync(contractPath,'utf8')).cases
 const casesFlag=process.argv.indexOf('--cases'),selectedIds=casesFlag<0?null:process.argv[casesFlag+1]?.split(',')
 if(selectedIds){
@@ -47,8 +48,9 @@ if(selectedIds){
 }
 const procedural=selectedIds?selectedIds.map(id=>allContracts.find(c=>c.id===id)):allContracts
 if(subjectCode!=='SOC')assert(sourceMode&&productMode&&selectedIds&&!mediaMode&&!proceduralMode,'El área requiere fuente publicada y muestras explícitas de contratos revisados')
-const source=sourceMode?JSON.parse(readFileSync(path+`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1-source.json`,'utf8')):null
-if(source){assert.equal(source.project,project);assert.equal(source.code,`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`)}
+const sourceCode=optative?'MINERD_SECUNDARIA_2023_OPT_HLM_LEN_4_V1':`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`
+const source=sourceMode?JSON.parse(readFileSync(path+sourceCode+'-source.json','utf8')):null
+if(source){assert.equal(source.project,project);assert.equal(source.code,sourceCode)}
 const selectionKey=selectedIds?'-sample-'+createHash('sha256').update(selectedIds.join(',')).digest('hex').slice(0,12):''
 const runKey=`${family}-${grade}-`+catalog+(source?'-source-'+source.versionId:'')+(proceduralMode?'-procedural':productMode?'-products':mediaMode?'-media':'')+selectionKey,base='http://localhost:8787',progressPath=path+runKey+'-http-progress.json'
 const progress=existsSync(progressPath)?JSON.parse(readFileSync(progressPath,'utf8')):{project,grade,writes:[],timings:[]}
@@ -88,6 +90,7 @@ try{
  cookie=login.response.headers.getSetCookie().find(s=>s.startsWith('aulabase_session='))?.split(';')[0];assert(cookie)
  const center=(await request('/activities/center?contextOnly=true')).data
  assert(center.sectionSubjects.some(s=>s.id===context.sectionSubjectId))
+ if(optative){const served=center.sectionSubjects.find(s=>s.id===context.sectionSubjectId);assert.equal(served.modalityCode,'academic');assert.equal(served.optativeExitName,'Humanidades y Lenguas Modernas');assert.equal(served.subjectCode,subjectCode)}
   if(source)await request('/evaluation-instruments/recommend',{sectionSubjectId:context.sectionSubjectId,activityTitle:'QA referente excluido',description:descriptions[0],competencyBlock:'b1',maxScore:20,preferredInstrumentType:'rubrica',participationMode:'INDIVIDUAL',curriculumVersionId:source.versionId,curriculumScopeId:source.scopeId,selectedCurriculumElementIds:[source.metadata.excludedAssessmentElementIds[0]]},400)
  const activities=async()=>(await request('/activities?sectionSubjectId='+context.sectionSubjectId)).data
  for(const [i,format] of formats.entries()){
@@ -110,6 +113,12 @@ try{
     const importedId=source.elementIdMap[record.id];assert(importedId)
     Object.assign(input,{curriculumVersionId:source.versionId,curriculumScopeId:source.scopeId,selectedCurriculumElementIds:[importedId]})
    }
+   if(optative&&procedural[i]?.id==='poetry-figures-only'){
+    const {preferredInstrumentType,...automaticInput}=input
+    const automatic=(await request('/evaluation-instruments/recommend',automaticInput)).data
+    assert.equal(automatic.instrumentType,'lista-cotejo');assert.equal(automatic.criteria.length,2)
+    assert(automatic.criteria.every(r=>!/explica|función/.test(r.description)))
+   }
    const proposal=(await request('/evaluation-instruments/recommend',input)).data
    assert.equal(proposal.catalogVersion,catalog);assert(proposal.criteria.every(c=>c.templateId.startsWith(`${templatePrefix}-${grade}-`)))
    if(source){
@@ -121,7 +130,7 @@ try{
     assert(proposal.criteria.every(c=>!c.sourceReferences.length),'Adaptations are not literal official criteria')
    }
    assert.equal(interpretation.suggestedActivityType,proposal.activityType)
-   const local=editableFallbackRecommendation({...input,instrumentType:format,academicContext:{level:'SECONDARY',grade,subjectCode,subjectName}})
+   const local=editableFallbackRecommendation({...input,instrumentType:format,academicContext:{level:'SECONDARY',grade,subjectCode,subjectName,...(optative?{modalityCode:context.modalityCode,optativeExitName:context.optativeExitName}:{})}})
    assert.deepEqual(content(proposal),content(local))
    const pending=scoreInstrumentFields(recommendationToFields(proposal,name),format,null,proposal)
    assert.equal(pending[`${format}:points:0`],'')

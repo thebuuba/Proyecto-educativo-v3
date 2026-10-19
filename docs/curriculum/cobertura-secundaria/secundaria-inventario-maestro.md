@@ -60,7 +60,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Formación Integral Humana y Religiosa | 4 | Común | 413, 414, 415, 416 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Formación Integral Humana y Religiosa | 5 | Común | 417, 418, 419, 420 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Formación Integral Humana y Religiosa | 6 | Común | 421, 422, 423, 424 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
-| Apreciación y Producción Literarias | 4 | Humanidades y Lenguas Modernas | 427, 428, 429, 430, 431 | PENDING |
+| Apreciación y Producción Literarias | 4 | Humanidades y Lenguas Modernas | 427, 428, 429, 430, 431 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Apreciación y Producción Literarias | 5 | Humanidades y Lenguas Modernas | 432, 433, 434, 435, 436 | PENDING |
 | Análisis y Producción de Textos Periodísticos y Publicitarios | 6 | Humanidades y Lenguas Modernas | 437, 438, 439, 440, 441, 442, 443, 444 | PENDING |
 | Manejo de la información en inglés | 4 | Humanidades y Lenguas Modernas | 445, 446, 447, 448, 449 | PENDING |
@@ -80,3 +80,5 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Física y Computación | 6 | Ciencias y Tecnología | 511, 512, 513, 514, 515, 516, 517 | PENDING |
 
 No se promete cobertura universal: las áreas implementadas conservan los límites y muestras de sus informes. Las fuentes oficiales complementarias de Técnico-Profesional y Artes se localizaron y constan en fuentes-complementarias.json; su revisión y cobertura siguen pendientes. No se duplican como optativas las áreas comunes.
+
+Las18 mallas optativas académicas se leyeron visualmente completas; páginas, conteos y huellas constan en [optativas-fuentes-revisadas.json](optativas-fuentes-revisadas.json). La lectura de fuente se registra separadamente de la implementación y la verificación de instrumentos de cada ámbito.

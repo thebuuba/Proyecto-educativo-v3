@@ -1,0 +1,721 @@
+{
+  "grade": 4,
+  "subjectCode": "OPT-HLM-LEN-4",
+  "subjectName": "Apreciación y Producción Literarias",
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "modalityCode": "academic",
+  "scopeId": "d619d96a-6e30-5201-8264-3bc09502e53e",
+  "cases": [
+    {
+      "id": "heroic-tone",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente tono heroico de poesía romántica en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6034bd4f-a1be-5dc4-b20f-160fa50c1546"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "intimist-tone",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente tono intimista de poesía romántica en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "03e51df1-c36e-564f-8c15-8bd3f008b4d2"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "poetry-adjectives",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente adjetivación en poesía romántica en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "83d9262c-45af-5416-8c80-bbe7f1021046"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "poetry-vocabulary",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente vocabulario contextual de poesía romántica en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e20e89e7-8207-5ba5-a48c-7d28f2c00055"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "poetry-figures",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente figuras literarias en poesía romántica en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dcd26e81-3aa6-5267-b09c-53cd7bd437b6"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "poetry-exclamations",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente interjecciones, exclamaciones e interrogaciones retóricas en poesía romántica en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a64d7279-4bcf-5f0e-b7d6-b2d9caf9fd7f"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "poetry-themes",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente temas de poesía romántica en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f73b5b5c-4039-531c-b432-545d721d831d"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-structure",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente función y estructura de novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "360bde91-5faf-59ae-bfa6-5afeddcde9cf"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-protagonist",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente protagonista de novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0d4f7d90-5e8e-520f-8ceb-8208d6ea4a29"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-adventures",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente aventuras de la novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b49ede02-c784-5d7d-9956-1166a69d8b0d"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-characters",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente personajes de novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "531ce83c-7a45-575f-8800-047aaef3cdba"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-adjectives",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente adjetivación en novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "18e2b296-3044-5955-a4c0-7d3073160974"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-actants",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente actantes de novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8e6f8005-f5cc-5642-ae39-1417b4abe224"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-narrator",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente tipos de narrador de novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6cf4ede5-ee0d-5973-aa2e-82f02465b762"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-themes",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente temas de novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1798770d-23a6-59e7-95b7-6ac663547b5b"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-sequences",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente secuencias narrativas, descriptivas y dialogadas de novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0e750be7-7ec5-5f26-b878-41c898395d0e"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-setting",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente ambiente de novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1204691b-89ce-59cf-86e4-3836b912a18d"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-plot",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente trama de novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d24c6637-e5b3-5a5d-92d1-062db748f416"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-chronology",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente orden cronológico de novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b55ea4a0-d2ee-56cf-a5d7-47b8609b025f"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "novel-connectors",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente conectores temporales, causales y consecutivos de novela de viajes y aventuras en el texto proporcionado. No se pide escribir otro texto ni recitarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f0375fb2-422f-5f57-a4c4-43810a53f585"
+      ],
+      "focusOnly": true
+    },
+    {
+      "id": "poetry-listening",
+      "genre": "poesia-romantica",
+      "description": "Escucha la poesía romántica proporcionada e identifica la intención comunicativa y el significado de las palabras desconocidas a partir del contexto. No se pide recitar ni escribir otro poema.",
+      "activityType": "ANALYSIS",
+      "required": "intención|propósito.*significado|contexto",
+      "sourceRecordIds": [
+        "3cecde79-bfe4-5ec7-be4f-1a709b8cdcc4"
+      ]
+    },
+    {
+      "id": "poetry-oral-paraphrase",
+      "genre": "poesia-romantica",
+      "description": "Parafrasea oralmente el sentido global de la poesía romántica escuchada con tus propias palabras. No se pide recitarla de memoria ni componer otra.",
+      "activityType": "ANALYSIS",
+      "required": "propias palabras|paráfrasis.*sentido",
+      "sourceRecordIds": [
+        "23c42a8f-5112-59eb-ab9a-187d3676605f"
+      ]
+    },
+    {
+      "id": "poetry-recitation",
+      "genre": "poesia-romantica",
+      "description": "Recita el poema romántico proporcionado, conservando sus versos y comunicando su intención mediante la entonación. No se pide memorizarlo ni escribir otro.",
+      "activityType": "ORAL_PRESENTATION",
+      "required": "Recita.*entonación|expresión",
+      "sourceRecordIds": [
+        "01cdcde0-ba26-547f-8a51-7ef923f51890"
+      ]
+    },
+    {
+      "id": "poetry-recitation-voice",
+      "genre": "poesia-romantica",
+      "description": "Recita el poema romántico proporcionado utilizando los cambios de voz y los gestos solicitados para expresar su sentido. No se califica sinceridad ni emociones privadas.",
+      "activityType": "ORAL_PRESENTATION",
+      "required": "voz|entonación.*gest",
+      "sourceRecordIds": [
+        "96043175-af78-5ab9-816f-f1aad09b9f1a"
+      ]
+    },
+    {
+      "id": "poetry-reading-prediction",
+      "genre": "poesia-romantica",
+      "description": "Anticipa el contenido de la poesía romántica a partir del título proporcionado y comprueba la predicción después de leerla. No se pide crear otra poesía.",
+      "activityType": "ANALYSIS",
+      "required": "predicción.*contrasta|comprueba|confirma",
+      "sourceRecordIds": [
+        "495ec7ab-8395-50a7-a9db-482a354b9ff7"
+      ]
+    },
+    {
+      "id": "poetry-style-inference",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente las figuras literarias y el significado de las palabras desconocidas de la poesía romántica a partir del contexto proporcionado. No se pide rima ni recitación.",
+      "activityType": "ANALYSIS",
+      "required": "figuras|recursos.*contexto",
+      "sourceRecordIds": [
+        "3e179522-217a-5e0d-adfc-6ff6fcd88479"
+      ]
+    },
+    {
+      "id": "poetry-writing",
+      "genre": "poesia-romantica",
+      "description": "Planifica el poema romántico que escribirás: intención, tema y estrofa elegida según las condiciones dadas. No se pide redactar el poema ni publicarlo todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "required": "plan|previst.*intención|tema",
+      "sourceRecordIds": [
+        "59f8fa38-16ce-535a-9df5-6027c038984c"
+      ]
+    },
+    {
+      "id": "poetry-draft-revision",
+      "genre": "poesia-romantica",
+      "description": "Revisa el borrador del poema romántico proporcionado y muestra los cambios de vocabulario y ortografía pedidos en la versión revisada. No se pide publicarlo ni recitarlo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "required": "cambios|revisión.*borrador",
+      "sourceRecordIds": [
+        "9e421d39-c92b-5a76-92d4-2ec3d674e4fe"
+      ]
+    },
+    {
+      "id": "novel-listening",
+      "genre": "novela-viajes-aventuras",
+      "description": "Escucha el fragmento de la novela de viajes y aventuras y distingue únicamente quién narra y qué personajes hablan en los pasajes señalados. No se pide escribir ni narrar otra historia.",
+      "activityType": "ANALYSIS",
+      "required": "narrador|voces.*personajes",
+      "sourceRecordIds": [
+        "bcaf0604-b5a1-5b9b-ab2f-763611ddf92b"
+      ]
+    },
+    {
+      "id": "novel-listening-inference",
+      "genre": "novela-viajes-aventuras",
+      "description": "Infiere las motivaciones y la relación causal entre las acciones de los personajes de la novela de viajes y aventuras escuchada, apoyándote en los pasajes dados. No se pide crear otra novela.",
+      "activityType": "ANALYSIS",
+      "required": "motiv.*caus|acciones",
+      "sourceRecordIds": [
+        "cf307889-6541-5fa4-843c-60a727bf7897"
+      ]
+    },
+    {
+      "id": "novel-oral-paraphrase",
+      "genre": "novela-viajes-aventuras",
+      "description": "Resume oralmente las acciones principales de la novela de viajes y aventuras escuchada, conservando su orden. No se pide inventar episodios ni contar una experiencia propia.",
+      "activityType": "ANALYSIS",
+      "required": "sentido|acciones.*propias palabras|paráfrasis|resumen",
+      "sourceRecordIds": [
+        "7b8f531c-998c-59fe-afc8-9f277eb3e20c"
+      ]
+    },
+    {
+      "id": "novel-oral-planning",
+      "genre": "novela-viajes-aventuras",
+      "description": "Planifica la narración oral de una novela de viajes y aventuras para el caso ficticio dado, indicando sucesos, personajes, lugar y tiempo. No se pide realizar la narración todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "required": "plan|previst.*sucesos|acciones",
+      "sourceRecordIds": [
+        "b9561c63-8822-58e4-88e5-b7369a8b2e91"
+      ]
+    },
+    {
+      "id": "novel-oral-narration",
+      "genre": "novela-viajes-aventuras",
+      "description": "Narra oralmente la trama de la novela de viajes y aventuras ficticia, conectando sus sucesos y describiendo los personajes según el plan proporcionado. No se pide escribir otra versión.",
+      "activityType": "ORAL_PRESENTATION",
+      "required": "Narra|narra|producción oral.*personajes|acciones",
+      "sourceRecordIds": [
+        "aebe8784-885f-56ea-bfae-9220cce63fa2"
+      ]
+    },
+    {
+      "id": "novel-reading-prediction",
+      "genre": "novela-viajes-aventuras",
+      "description": "Anticipa el contenido de la novela de viajes y aventuras únicamente a partir del título dado y explica los indicios de tu predicción. No se pide leer otro texto ni comprobarla todavía.",
+      "activityType": "ANALYSIS",
+      "required": "predicción.*indicio",
+      "sourceRecordIds": [
+        "893b3197-8c38-5277-ae80-4dae097967be"
+      ]
+    },
+    {
+      "id": "novel-reading-inference",
+      "genre": "novela-viajes-aventuras",
+      "description": "Infiere el tema y las motivaciones de los personajes de la novela de viajes y aventuras leída a partir de sus acciones. No se pide una historia nueva.",
+      "activityType": "ANALYSIS",
+      "required": "tema.*motiv",
+      "sourceRecordIds": [
+        "1aadf631-190b-5082-85ee-bbc197718733"
+      ]
+    },
+    {
+      "id": "novel-reading-characters",
+      "genre": "novela-viajes-aventuras",
+      "description": "Clasifica los personajes de la novela de viajes y aventuras por su actancia y justifica las relaciones con las acciones del texto dado. No se pide reescribir la novela.",
+      "activityType": "ANALYSIS",
+      "required": "personajes.*actan|función",
+      "sourceRecordIds": [
+        "d6fc6b72-bee1-5bf5-98d0-ff1b33d93ff0"
+      ]
+    },
+    {
+      "id": "novel-reading-summary",
+      "genre": "novela-viajes-aventuras",
+      "description": "Resume por escrito las acciones principales de la novela de viajes y aventuras leída con tus propias palabras, sin añadir hechos nuevos.",
+      "activityType": "ANALYSIS",
+      "required": "propias palabras|paráfrasis.*sentido|acciones",
+      "sourceRecordIds": [
+        "9b80e19a-9150-5f81-9a33-ee11b8432a64"
+      ]
+    },
+    {
+      "id": "novel-writing-planning",
+      "genre": "novela-viajes-aventuras",
+      "description": "Planifica una novela de viajes y aventuras: sucesos, personajes, lugar y tiempo del caso ficticio proporcionado. No se pide redactar los capítulos ni publicarlos todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "required": "plan|previst.*sucesos|acciones",
+      "sourceRecordIds": [
+        "ab7d64e0-e359-5299-96e0-c2ee7c25db32"
+      ]
+    },
+    {
+      "id": "novel-writing-voices",
+      "genre": "novela-viajes-aventuras",
+      "description": "Escribe el fragmento de novela de viajes y aventuras solicitado, con diálogos en estilo directo, voces diferenciadas y conectores temporales. No se pide ilustrarlo ni publicarlo ni escribir una novela completa.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "required": "diálogo|voces.*conectores",
+      "sourceRecordIds": [
+        "eb607999-2063-522f-8329-03d226041abc"
+      ]
+    },
+    {
+      "id": "novel-draft-revision",
+      "genre": "novela-viajes-aventuras",
+      "description": "Revisa el borrador de la novela de viajes y aventuras proporcionado y muestra los cambios que resuelven los problemas de secuencia y puntuación señalados. No se pide publicar ni ilustrar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "required": "cambios|revisión.*borrador",
+      "sourceRecordIds": [
+        "7957a517-f395-5a70-aeae-dba60ecb7666"
+      ]
+    },
+    {
+      "id": "optional-ab0c58cb",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente el tema del poema romántico proporcionado, tomado del referente «Friedrich Hölderlin». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ab0c58cb-8bd9-53ab-98f3-5eec4ccc552a"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-8684fbf9",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente el tema del poema romántico proporcionado, tomado del referente «Lord Byron». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8684fbf9-532b-5e5f-868a-c3d41cc1c578"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-89f978d3",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente el tema del poema romántico proporcionado, tomado del referente «José de Espronceda». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "89f978d3-a034-55d9-b0b7-aad605c02f8a"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-45974ef4",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente el tema del poema romántico proporcionado, tomado del referente «Víctor Hugo». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "45974ef4-7a55-5848-b993-35da7313be8b"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-c073af4b",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente el tema del poema romántico proporcionado, tomado del referente «Rosalía de Castro». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c073af4b-c62a-511f-9e52-654e9bb223a1"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-790cb00a",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente el tema del poema romántico proporcionado, tomado del referente «Gustavo Adolfo Bécquer». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "790cb00a-a6cf-5b40-b580-af0ad207c7ff"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-8068ab42",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente el tema del poema romántico proporcionado, tomado del referente «Walt Whitman». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8068ab42-79a0-5a28-a151-96425f53f77e"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-2d166775",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente el tema del poema romántico proporcionado, tomado del referente «Henry Wadsworth Longfellow». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2d166775-a29e-52c3-9db3-61b67040d6f4"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-815c44d8",
+      "genre": "poesia-romantica",
+      "description": "Analiza únicamente el tema del poema romántico proporcionado, tomado del referente «Ralph Waldo Emerson». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "815c44d8-c0a8-5ec4-afc9-d5cbd6a67ce1"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-65388a52",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente el tema del fragmento de novela de viajes y aventuras proporcionado, tomado del referente «Robinson Crusoe, Daniel Defoe». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "65388a52-9140-556b-b210-8837cdfdbabb"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-781532e7",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente el tema del fragmento de novela de viajes y aventuras proporcionado, tomado del referente «La isla del tesoro, John\nStevenson». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "781532e7-1055-54e2-8688-182ef3dd3b7a"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-29d1fa7a",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente el tema del fragmento de novela de viajes y aventuras proporcionado, tomado del referente «El viejo y el mar, Hemingway». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "29d1fa7a-78e8-5fc6-967f-93e1765b9c3a"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-d6954d7c",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente el tema del fragmento de novela de viajes y aventuras proporcionado, tomado del referente «Moby Dick, Herman Melville». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d6954d7c-353a-5b37-a3a2-751b523dd38f"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-0cfc54a0",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente el tema del fragmento de novela de viajes y aventuras proporcionado, tomado del referente «La reina de África, Cecil Scott\nForester». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0cfc54a0-a6c5-5b90-bb6a-1be70e73e357"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "optional-22545167",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente el tema del fragmento de novela de viajes y aventuras proporcionado, tomado del referente «10,000 leguas de viaje\nsubmarino, Julio Verne». No se piden otras obras ni autores ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "22545167-e05a-5223-9a15-13987fab7b47"
+      ],
+      "focusOnly": true,
+      "required": "tema"
+    },
+    {
+      "id": "poetry-brief",
+      "genre": "poesia-romantica",
+      "description": "Analiza el poema romántico proporcionado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c73c6a1e-4889-5a45-89c6-d2a848c16072"
+      ]
+    },
+    {
+      "id": "novel-brief",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza la novela de viajes y aventuras proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a834c29e-852e-5027-80b2-ef555240f55a"
+      ]
+    },
+    {
+      "id": "poetry-writing-result",
+      "genre": "poesia-romantica",
+      "description": "Escribe el poema romántico ficticio solicitado para comunicar la intención y el tema dados. No se pide plan ni borrador ni publicación ni experiencias íntimas.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "59f8fa38-16ce-535a-9df5-6027c038984c"
+      ]
+    },
+    {
+      "id": "novel-writing-result",
+      "genre": "novela-viajes-aventuras",
+      "description": "Escribe la novela breve de viajes y aventuras del caso ficticio dado, enlazando los sucesos y las acciones de los personajes. No se pide plan ni publicación ni ilustración.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "ab7d64e0-e359-5299-96e0-c2ee7c25db32"
+      ]
+    },
+    {
+      "id": "novel-telling-cuenta",
+      "genre": "novela-viajes-aventuras",
+      "description": "Cuenta oralmente la novela de viajes y aventuras ficticia según el plan proporcionado. No se pide un análisis escrito.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "aebe8784-885f-56ea-bfae-9220cce63fa2"
+      ]
+    },
+    {
+      "id": "poetry-comparison",
+      "genre": "poesia-romantica",
+      "description": "Compara el tema y las imágenes de los dos poemas románticos proporcionados, sustentando semejanzas y diferencias con los versos. No se pide escribir un poema.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "3e179522-217a-5e0d-adfc-6ff6fcd88479"
+      ]
+    },
+    {
+      "id": "novel-comparison",
+      "genre": "novela-viajes-aventuras",
+      "description": "Compara únicamente los narradores de las dos novelas de viajes y aventuras proporcionadas. No se pide comparar trama, personajes o ambiente.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "6cf4ede5-ee0d-5973-aa2e-82f02465b762"
+      ]
+    },
+    {
+      "id": "poetry-rhyme-alternative",
+      "genre": "poesia-romantica",
+      "description": "Escribe el poema romántico solicitado con rima asonante o consonante, a tu elección. No se piden ambas ni una métrica concreta.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "59f8fa38-16ce-535a-9df5-6027c038984c"
+      ],
+      "required": "asonante.*o.*consonante",
+      "forbidden": "asonante y consonante"
+    },
+    {
+      "id": "poetry-form-alternative",
+      "genre": "poesia-romantica",
+      "description": "Escribe un poema romántico en forma de romance o de silva, a tu elección. No se piden las dos formas ni otras estrofas.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "59f8fa38-16ce-535a-9df5-6027c038984c"
+      ],
+      "required": "romance.*o.*silva",
+      "forbidden": "romance y silva|octava|octavilla|sextina"
+    },
+    {
+      "id": "poetry-figures-only",
+      "genre": "poesia-romantica",
+      "description": "Identifica únicamente la metáfora y la comparación en el poema romántico proporcionado. No se piden otras figuras ni rima ni una composición nueva.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dcd26e81-3aa6-5267-b09c-53cd7bd437b6"
+      ],
+      "required": "metáfora.*comparación",
+      "forbidden": "epíteto|hipérbaton|hipérbole|antítesis|paralelismo|anáfora|ironía|rima"
+    },
+    {
+      "id": "poetry-negative-then-positive",
+      "genre": "poesia-romantica",
+      "description": "Sin recitar ni publicar, pero analiza únicamente las metáforas de la poesía romántica proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dcd26e81-3aa6-5267-b09c-53cd7bd437b6"
+      ],
+      "required": "metáfora",
+      "forbidden": "recit|publica"
+    },
+    {
+      "id": "novel-narrator-only",
+      "genre": "novela-viajes-aventuras",
+      "description": "Analiza únicamente el narrador del fragmento de novela de viajes y aventuras. No se piden tema, ambiente ni personajes.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6cf4ede5-ee0d-5973-aa2e-82f02465b762"
+      ],
+      "onlyEvidence": "narrator"
+    },
+    {
+      "id": "poetry-revision-no-publication",
+      "genre": "poesia-romantica",
+      "description": "Corrige únicamente la ortografía del borrador de poema romántico proporcionado y presenta los cambios. No se pide publicar ni recitar ni analizar las figuras.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "9e421d39-c92b-5a76-92d4-2ec3d674e4fe"
+      ],
+      "required": "cambios|corrección|revisión",
+      "forbidden": "publica|recit|figuras"
+    },
+    {
+      "id": "poetry-group-natural",
+      "genre": "poesia-romantica",
+      "description": "En parejas, los estudiantes recitarán el poema romántico proporcionado, conservando su sentido y entonación. No se pide memorizarlo.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "01cdcde0-ba26-547f-8a51-7ef923f51890"
+      ]
+    },
+    {
+      "id": "novel-individual-natural",
+      "genre": "novela-viajes-aventuras",
+      "description": "De manera individual, el estudiante escribirá el fragmento de novela de viajes y aventuras solicitado, desarrollando los sucesos y personajes dados. No se pide publicación ni ilustración.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "eb607999-2063-522f-8329-03d226041abc"
+      ]
+    }
+  ]
+}

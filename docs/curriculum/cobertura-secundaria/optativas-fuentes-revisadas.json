@@ -1,0 +1,797 @@
+{
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "source": "Adecuación curricular del nivel secundario, MINERD2023",
+  "status": "EIGHTEEN_COMPLETE_SOURCE_SCOPES_READ_NOT_EIGHTEEN_IMPLEMENTED",
+  "method": "Lectura visual completa de tablas, continuaciones de columnas, competencias y todos los indicadores; imágenes con huellas. Los contenidos y denominaciones importados conservan sus literales.",
+  "limits": [
+    "La presencia por grado y salida no equivale a proveedor conectado ni instrumentos completos revisados.",
+    "Códigos P6, fragmentos y duplicados se conservan sin completar fases o afirmaciones ausentes.",
+    "Indicadores que añaden conceptos deben mapearse además de las columnas C/P.",
+    "Los componentes de computación y la IA como tema curricular no autorizan añadir IA al generador ni dependencias/servicios pagos.",
+    "Las menciones de Artes y Técnico-Profesional requieren sus propios diseños especializados: este registro no las acredita."
+  ],
+  "scopes": [
+    {
+      "scopeId": "d619d96a-6e30-5201-8264-3bc09502e53e",
+      "grade": 4,
+      "subject": "Apreciación y Producción Literarias",
+      "optativeExitName": "Humanidades y Lenguas Modernas",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 427,
+          "printed": 426,
+          "imageSha256": "360d45c497e92b48d3532d0577370792e730ff3497df44174948c9b50ae6e7dc"
+        },
+        {
+          "number": 428,
+          "printed": 427,
+          "imageSha256": "03726ee69b1a3a7e155a450104e546393cf5b21da0010ac847e020f83ab8ee0b"
+        },
+        {
+          "number": 429,
+          "printed": 428,
+          "imageSha256": "709479fbb4ad700025cb07853575fe36028783a10ec9ebb0130b070f860f0bfa"
+        },
+        {
+          "number": 430,
+          "printed": 429,
+          "imageSha256": "3660eea65f3769ce8c4f51e70b4d7c9249b8ec7f774c0eaff16eb352c61270fa"
+        },
+        {
+          "number": 431,
+          "printed": 430,
+          "imageSha256": "fa8084f9b83fd96ec0c3166b7b6e22e7fc5f3bc74764cfeb56639ffd6b4e5809"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 39,
+        "PROCEDURE": 28,
+        "ATTITUDE_VALUE": 13,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "a4ba08bf-efdf-5ede-9710-5d1d7ea0c559",
+      "grade": 5,
+      "subject": "Apreciación y Producción Literarias",
+      "optativeExitName": "Humanidades y Lenguas Modernas",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 432,
+          "printed": 431,
+          "imageSha256": "2b129e878fdb51b0b8ce9ffd67927c0c93fbaa6c7978667422bb59fd3fbc7e52"
+        },
+        {
+          "number": 433,
+          "printed": 432,
+          "imageSha256": "58be1487354c811b787f6b561db56fba6fab4e6450718c67a436fa94089630e8"
+        },
+        {
+          "number": 434,
+          "printed": 433,
+          "imageSha256": "d8f59609a8f6f7879372b318409f74f0f3c0ed2af980ed31eb8f696d70f507bb"
+        },
+        {
+          "number": 435,
+          "printed": 434,
+          "imageSha256": "ad7521c00455933f77eb6a1081a7564f1b1aa5ab720ddee3ff408654bf7895c1"
+        },
+        {
+          "number": 436,
+          "printed": 435,
+          "imageSha256": "22b4b3bff5e1332a331ec5a797cd8d83d652709222d7dea842285f0171e15110"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 27,
+        "PROCEDURE": 27,
+        "ATTITUDE_VALUE": 13,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "6ebb8ac8-f9d0-5530-9c53-366f87055eee",
+      "grade": 6,
+      "subject": "Análisis y Producción de Textos Periodísticos y Publicitarios",
+      "optativeExitName": "Humanidades y Lenguas Modernas",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 437,
+          "printed": 436,
+          "imageSha256": "581427c601c3e533780735fa04f85ed3e9a1461d6b7bce40c43a5fd5d1101b8e"
+        },
+        {
+          "number": 438,
+          "printed": 437,
+          "imageSha256": "ed6978b755e0778d674140b9ce79d5ac73d6979ef3364f9eb84053c08d89aa99"
+        },
+        {
+          "number": 439,
+          "printed": 438,
+          "imageSha256": "c5baf90d027b65ca43f0446ad53debc8ae33c1758d8c72e29224ca0c87a965fc"
+        },
+        {
+          "number": 440,
+          "printed": 439,
+          "imageSha256": "9019a9937205ad07734e62165b5e4d6e96ebd2dd8f599da8e879bf40a0803739"
+        },
+        {
+          "number": 441,
+          "printed": 440,
+          "imageSha256": "dd46e1c9cc87fbdc2afb8a1245185b859101bc3d91be46eb111210bf413fc5b8"
+        },
+        {
+          "number": 442,
+          "printed": 441,
+          "imageSha256": "c5239a33024756823934eb16bac7e09a9afa41e06c9531d329622860183b8e82"
+        },
+        {
+          "number": 443,
+          "printed": 442,
+          "imageSha256": "05da9e681c1ba672f3a9a7fc83948cd7f89ca0bcdc7fc0b79f793299b226ebcd"
+        },
+        {
+          "number": 444,
+          "printed": 443,
+          "imageSha256": "cba8b552eafe3fa871ea9350ad2f793f753c9b95b756b8f12aa796b2d90e9641"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 51,
+        "PROCEDURE": 60,
+        "ATTITUDE_VALUE": 16,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "b2d7a388-b852-52a5-adf5-d78642f21f96",
+      "grade": 4,
+      "subject": "Manejo de la información en inglés",
+      "optativeExitName": "Humanidades y Lenguas Modernas",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 445,
+          "printed": 444,
+          "imageSha256": "b87b0787a54fafab662e3e5b488bfeff2adc5b7f9708504f24bafd092c482511"
+        },
+        {
+          "number": 446,
+          "printed": 445,
+          "imageSha256": "1e7913a410bce3db8331cfbeec225f1aa2a6ade53509bfba8af03f05b6b3c941"
+        },
+        {
+          "number": 447,
+          "printed": 446,
+          "imageSha256": "2cbf1ea56faf48272db7a4b1f95b08ef4575e7aaeabcbc818093a89e4a3d8172"
+        },
+        {
+          "number": 448,
+          "printed": 447,
+          "imageSha256": "9806d191f9e8f93c9eccca49714d8022c978e5c4a7f4d869faf21dd38ec040eb"
+        },
+        {
+          "number": 449,
+          "printed": 448,
+          "imageSha256": "b9e42098cc08b9669cbe72d5bddfe63ba843235812dfbfe3927ec6bf269833a1"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 80,
+        "PROCEDURE": 56,
+        "ATTITUDE_VALUE": 17,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "95d4757b-5e0a-5821-af62-37d031ccf922",
+      "grade": 5,
+      "subject": "Apreciación de la Literatura Anglófona",
+      "optativeExitName": "Humanidades y Lenguas Modernas",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 450,
+          "printed": 449,
+          "imageSha256": "ee9581e1ecbe66fa3ab6471b5d01c3f703997f3310ad6f423ed5a035a1d50e20"
+        },
+        {
+          "number": 451,
+          "printed": 450,
+          "imageSha256": "36ba9ba18cd0bde135a5120c6d4fb2131f6dae0bbd56ead51a202addc04e9fa5"
+        },
+        {
+          "number": 452,
+          "printed": 451,
+          "imageSha256": "e887ad33b2c3df08daa8ef255974be5dde9fd87fe5ceefa313d90365c991c5b2"
+        },
+        {
+          "number": 453,
+          "printed": 452,
+          "imageSha256": "f7e182700ac22369c13aec652d8430179f3fddfcb6af0d335c560a4b1755a4b4"
+        },
+        {
+          "number": 454,
+          "printed": 453,
+          "imageSha256": "f9dc10c285d235e478122a6bc3162bb554161512bbc77a1b47a9a5d83165b233"
+        },
+        {
+          "number": 455,
+          "printed": 454,
+          "imageSha256": "4170753ae7c2ab3040563e7e291a9331bb142f85a456743fc0b48a1054531436"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 113,
+        "PROCEDURE": 42,
+        "ATTITUDE_VALUE": 15,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "7e02a1ba-12f8-5862-81ff-0ad9bb34f8cc",
+      "grade": 6,
+      "subject": "Análisis Crítico y Evaluación de Textos en Inglés",
+      "optativeExitName": "Humanidades y Lenguas Modernas",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 456,
+          "printed": 455,
+          "imageSha256": "a8520235300f6c1b5d81ce6fd9752ef7de1b4002f5bf1503e5dd100d7ccb4968"
+        },
+        {
+          "number": 457,
+          "printed": 456,
+          "imageSha256": "bd146c76261eeadb2713bf5f1bba8fc9c34fcbdcad1d9ff278953630a7cdf5d5"
+        },
+        {
+          "number": 458,
+          "printed": 457,
+          "imageSha256": "16896aca7ff367f128aa033ce6ef31fa970105de8cd6c5ac6bd735d8824c3cf2"
+        },
+        {
+          "number": 459,
+          "printed": 458,
+          "imageSha256": "b1163823f84392e1343d385239653a8b17f8e70daaab310ccf63869a75f23770"
+        },
+        {
+          "number": 460,
+          "printed": 459,
+          "imageSha256": "217168470c484434a9e6f836c4f63a6b7f147d0d2a466a72eff458c4b99649e9"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 96,
+        "PROCEDURE": 49,
+        "ATTITUDE_VALUE": 13,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "e05229b2-4f79-5cf9-a57e-b0be79bb0cb7",
+      "grade": 4,
+      "subject": "Apreciación y Producción Literarias",
+      "optativeExitName": "Humanidades y Ciencias Sociales",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 462,
+          "printed": 461,
+          "imageSha256": "30b6f01060f9079a5f05c56c5addb838f0a74f44cf5be3663641f8f353853674"
+        },
+        {
+          "number": 463,
+          "printed": 462,
+          "imageSha256": "c65179ebe9f3f781f3fa589f23b44f2a2631119248a19a653e0fc93028b2868f"
+        },
+        {
+          "number": 464,
+          "printed": 463,
+          "imageSha256": "0c9550c00017a92b1c523415bfc142df8e021088780977296a104c258cda5008"
+        },
+        {
+          "number": 465,
+          "printed": 464,
+          "imageSha256": "f2463498476a5cf60c0a7e7e1a4dd41aefcc90e527c500806338aa09d23bc43b"
+        },
+        {
+          "number": 466,
+          "printed": 465,
+          "imageSha256": "1125273a8812c8fcf5eda25771a6fd2527fe299d1d75f95456c2ed6b0c9936a1"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 28,
+        "PROCEDURE": 28,
+        "ATTITUDE_VALUE": 10,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "b1f1b6c5-3136-5287-8d68-e6171cd86a5f",
+      "grade": 5,
+      "subject": "Apreciación y Producción Literarias",
+      "optativeExitName": "Humanidades y Ciencias Sociales",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 467,
+          "printed": 466,
+          "imageSha256": "3fbce83c1642ab7ef86429b908f9674ce44dab4ba762dd41a5b6878622b1e23f"
+        },
+        {
+          "number": 468,
+          "printed": 467,
+          "imageSha256": "8e338f83a16e8cfafcb8a5c08b1bd5b0a1c4de6e8272906e27ee0b413bda7ea3"
+        },
+        {
+          "number": 469,
+          "printed": 468,
+          "imageSha256": "903ee7213c5041265e028009e135dcb1f9630f07f2053f7252d2466439df3705"
+        },
+        {
+          "number": 470,
+          "printed": 469,
+          "imageSha256": "5c0c3030ecf26e851a7ef6573dc2d0aca69e532653b9785fcf5c398af4d4e9d4"
+        },
+        {
+          "number": 471,
+          "printed": 470,
+          "imageSha256": "1c2d555add1ca756b6d66b8b7788fd32d99bbfdaf05581404f77e7fdc288cc8c"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 22,
+        "PROCEDURE": 28,
+        "ATTITUDE_VALUE": 13,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "bd48332d-4af6-5d2d-a5cf-e3be5591436d",
+      "grade": 6,
+      "subject": "Análisis y Producción de Textos Científicos y Profesionales",
+      "optativeExitName": "Humanidades y Ciencias Sociales",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 472,
+          "printed": 471,
+          "imageSha256": "8e25d9eca3fea8237cbdf4bbfea84c20922f0cb265b137e564b63d6a3df72cb3"
+        },
+        {
+          "number": 473,
+          "printed": 472,
+          "imageSha256": "8ffdc25229dec127313abc9a518887d635cebd21d2f8272f144163135c8b5ebb"
+        },
+        {
+          "number": 474,
+          "printed": 473,
+          "imageSha256": "e7116aad80f5ec232c506450a211e16cbfb8d0c5b08a1153d19ac5c844712095"
+        },
+        {
+          "number": 475,
+          "printed": 474,
+          "imageSha256": "e4dfe741510c730f8220b6dabd8afa4347b9ae514bd60cf15b6794d8abc7263b"
+        },
+        {
+          "number": 476,
+          "printed": 475,
+          "imageSha256": "6e60988dde44d31340e2dbff5b03993958af889dceae9a8165d96cd49726793f"
+        },
+        {
+          "number": 477,
+          "printed": 476,
+          "imageSha256": "874e948fab189a7daf11f292d070056a9150eb6c929ea08d48d7575356155119"
+        },
+        {
+          "number": 478,
+          "printed": 477,
+          "imageSha256": "f13b457e8a4182b053cd23d55b11044da532c75c7e5fdffd20aef25af45b563e"
+        },
+        {
+          "number": 479,
+          "printed": 478,
+          "imageSha256": "12b21c109d96134d060976ae00d5d97bd7194ffdd13148705ac09f42c0dcec6c"
+        },
+        {
+          "number": 480,
+          "printed": 479,
+          "imageSha256": "9f744c2073c6e61852bb146a3bcb6284b6ca4414956f9418684d66fd8fb7ce9e"
+        },
+        {
+          "number": 481,
+          "printed": 480,
+          "imageSha256": "f972d2608a32d7826747806c56e8b0c1ce97e8cd3fd99af5673e0e9ca39d5b28"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 52,
+        "PROCEDURE": 72,
+        "ATTITUDE_VALUE": 27,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "817c41b1-f690-5afe-bbf5-b438791bf45c",
+      "grade": 4,
+      "subject": "Filosofía social y Pensamiento Dominicano",
+      "optativeExitName": "Humanidades y Ciencias Sociales",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 482,
+          "printed": 481,
+          "imageSha256": "4eaf2de1343f90481831f4046002312e3d2788de2199dcdf333699b49b3ee73b"
+        },
+        {
+          "number": 483,
+          "printed": 482,
+          "imageSha256": "748cea718167f52879512d9e993cd9fc789a0928bf1cadd94f67fdaba2ec7eff"
+        },
+        {
+          "number": 484,
+          "printed": 483,
+          "imageSha256": "6a762080bf0c8d289153724954bf0ea1b643e56ca2986b7de1a57f128290b697"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 31,
+        "PROCEDURE": 25,
+        "ATTITUDE_VALUE": 22,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "3cfc3564-ea06-53a7-9906-2e7287fdbb44",
+      "grade": 5,
+      "subject": "Geografía Humana y Demografía",
+      "optativeExitName": "Humanidades y Ciencias Sociales",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 485,
+          "printed": 484,
+          "imageSha256": "5cf98946487c8d04ffffcc367cd518358add1d6fdb88046b2b105c701de766a2"
+        },
+        {
+          "number": 486,
+          "printed": 485,
+          "imageSha256": "8ed0f213d499278c401f944775ca0a926352a2e71b42a2b5991b47fded3bb94b"
+        },
+        {
+          "number": 487,
+          "printed": 486,
+          "imageSha256": "2d07b89fd6f6f4c74337a17f6cb3af6e7ee8c1a827250c9b85671d1e3174c206"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 44,
+        "PROCEDURE": 36,
+        "ATTITUDE_VALUE": 21,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "ec62cee2-b76d-5582-8cf1-7762b9e5b4fd",
+      "grade": 6,
+      "subject": "Ciudadanía y Democracia Participativa",
+      "optativeExitName": "Humanidades y Ciencias Sociales",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 488,
+          "printed": 487,
+          "imageSha256": "ffebbe46f6cf2c0f096bb52100f2b9b05ebfea01cceac1ee0999d2f5443cd899"
+        },
+        {
+          "number": 489,
+          "printed": 488,
+          "imageSha256": "bd8b02107da6abf47f1bf396f316a8274b90d7ac6e940f1809b99171096f7f1e"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 20,
+        "PROCEDURE": 25,
+        "ATTITUDE_VALUE": 17,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+      "grade": 4,
+      "subject": "Matemática Financiera y Tecnología",
+      "optativeExitName": "Matemática y Tecnología",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 491,
+          "printed": 490,
+          "imageSha256": "53552261ba1bb88dd4ef85c8637b263afe67c05e18f39ec18d6c64d599459134"
+        },
+        {
+          "number": 492,
+          "printed": 491,
+          "imageSha256": "8cdf03d87a0bcc42b2f7737440c7b221f691af83bd9ed07a636cbc5bee246054"
+        },
+        {
+          "number": 493,
+          "printed": 492,
+          "imageSha256": "6171df9c73d690c4d7d6767116a00609dd4d27e2a21eb7716ac9fb31095da336"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 26,
+        "PROCEDURE": 25,
+        "ATTITUDE_VALUE": 12,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "87268d19-5d32-5426-9396-21ae21fc5bbd",
+      "grade": 5,
+      "subject": "Estadística Probabilidad y Tecnología",
+      "optativeExitName": "Matemática y Tecnología",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 494,
+          "printed": 493,
+          "imageSha256": "8069333f713dfdbb6a53a1536111da715f7eb79be8d95fabb63d8c5b6667937d"
+        },
+        {
+          "number": 495,
+          "printed": 494,
+          "imageSha256": "a527f3fd99c304c7514799013ef2d0219069465cd9e1febc4a1174663394be5d"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 23,
+        "PROCEDURE": 20,
+        "ATTITUDE_VALUE": 6,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "09e061a8-e3e7-55d8-a7ce-c24364f19401",
+      "grade": 6,
+      "subject": "Tigonometría, Cálculo Diferencial y Tecnología",
+      "optativeExitName": "Matemática y Tecnología",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 496,
+          "printed": 495,
+          "imageSha256": "60fdd8f4f1f7187ddb37211a8fdbbaf9729ec8994d2bcb6060d16bcdcfa17c17"
+        },
+        {
+          "number": 497,
+          "printed": 496,
+          "imageSha256": "9e676f06cf2112339e72b4a3dbdc23328deb258270b8e23cedded87b70246372"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 6,
+        "PROCEDURE": 9,
+        "ATTITUDE_VALUE": 7,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "5961a313-fc4c-5985-99bd-3e3bf539d5c1",
+      "grade": 4,
+      "subject": "Biología y Computación",
+      "optativeExitName": "Ciencias y Tecnología",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 499,
+          "printed": 498,
+          "imageSha256": "35a19684be71e2c377da4e7a432d2a9c1634bef7ab08a6bd6ed8db6c73c4293c"
+        },
+        {
+          "number": 500,
+          "printed": 499,
+          "imageSha256": "435b85d3937b37fded22037e07c43b0a2764d47e4838712d6b2709dde12fce7a"
+        },
+        {
+          "number": 501,
+          "printed": 500,
+          "imageSha256": "6a7d93cfa8e0dc3649398475d78194195d94b1bd6758194c3f047584bc356e69"
+        },
+        {
+          "number": 502,
+          "printed": 501,
+          "imageSha256": "b7a4d9632507847e33f42405bf2be8ce306782605ca904ccaebf225a9bd34cf1"
+        },
+        {
+          "number": 503,
+          "printed": 502,
+          "imageSha256": "a79c0208060fee2aa48508ee6d4dfee0f96782f97d854b4c21f1d58df6ce4176"
+        },
+        {
+          "number": 504,
+          "printed": 503,
+          "imageSha256": "5e905f3f80cb6af4c2f3f7221dfc2666408713b935332d392b47677fbba13425"
+        },
+        {
+          "number": 505,
+          "printed": 504,
+          "imageSha256": "f7699693543eec4e58698ec1141bced7a9d2528a4032c7a82f86dbea7bddfb1a"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 161,
+        "PROCEDURE": 124,
+        "ATTITUDE_VALUE": 9,
+        "ACHIEVEMENT_INDICATOR": 44
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "f39c0cd4-85d9-5aeb-a1d2-74763bf455a9",
+      "grade": 5,
+      "subject": "Química y Computación",
+      "optativeExitName": "Ciencias y Tecnología",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 506,
+          "printed": 505,
+          "imageSha256": "a2484edacf3d809c1ff727e961d7e0093cd946bb46242820041429616023212d"
+        },
+        {
+          "number": 507,
+          "printed": 506,
+          "imageSha256": "8a6c1ca6258a3ed682cf8e0b8600a623a7e3239107c5e042e8826386b99bd7c5"
+        },
+        {
+          "number": 508,
+          "printed": 507,
+          "imageSha256": "bdc7eaee916e75cc286e99b3bc9a11f4bc5f6833803b56c73a3a06d2e8cbbdc0"
+        },
+        {
+          "number": 509,
+          "printed": 508,
+          "imageSha256": "94bcc2b254723903906c7778202abc33f2544ee07c541b4e4519ee9ade78ee7a"
+        },
+        {
+          "number": 510,
+          "printed": 509,
+          "imageSha256": "cf050344307bb7276687eaaf858d785984612c36acc6dbe214f57182294d4ee9"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 65,
+        "PROCEDURE": 58,
+        "ATTITUDE_VALUE": 14,
+        "ACHIEVEMENT_INDICATOR": 37
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    },
+    {
+      "scopeId": "1941d633-9878-579b-9cc3-ae913a00dfda",
+      "grade": 6,
+      "subject": "Física y Computación",
+      "optativeExitName": "Ciencias y Tecnología",
+      "modalityName": "Académica",
+      "pages": [
+        {
+          "number": 511,
+          "printed": 510,
+          "imageSha256": "9cc3f18e147324b71f61ace6fc2f591c80723f126222a47ed640260b3fe48cfe"
+        },
+        {
+          "number": 512,
+          "printed": 511,
+          "imageSha256": "a2316e72810a0df6f977a302ca2dacbe250f3ab8c0eede2fdc334013b7bdacdc"
+        },
+        {
+          "number": 513,
+          "printed": 512,
+          "imageSha256": "73cf4403c7850130be4bc24afd6be5d1ec1396df8a67bc02e23da72d753392b2"
+        },
+        {
+          "number": 514,
+          "printed": 513,
+          "imageSha256": "3267d02e01cc4863d0fcdfc4ed36bc1219240468a78a782fc7dc8fc41dcf323e"
+        },
+        {
+          "number": 515,
+          "printed": 514,
+          "imageSha256": "fefadfd88334e136dba1071603c94b5e3611fddbbb7dc49fdf41728db6961446"
+        },
+        {
+          "number": 516,
+          "printed": 515,
+          "imageSha256": "ecf31cdf96fab70f642099b358dacbcca53eaae3df8ed4cffb3208fb6b112e3d"
+        },
+        {
+          "number": 517,
+          "printed": 516,
+          "imageSha256": "0c4df65641611b8147057eb9da7650a216c7c02ee1d0f585d00ee2a3e8b1c87e"
+        }
+      ],
+      "officialRecordCounts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 135,
+        "PROCEDURE": 113,
+        "ATTITUDE_VALUE": 9,
+        "ACHIEVEMENT_INDICATOR": 36
+      },
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implementationNotInferredFromSourceReview": true
+    }
+  ]
+}

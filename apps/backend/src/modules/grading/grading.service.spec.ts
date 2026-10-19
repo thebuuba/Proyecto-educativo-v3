@@ -355,6 +355,16 @@ describe('GradingService optimized workspaces', () => {
     __test__clearGradingCache()
   })
 
+  it('entrega la modalidad y salida efectivas de la asignatura al creador', async () => {
+    mocks.prisma.sectionSubject.findMany.mockResolvedValue([{
+      id:'optative',sectionId:'section-4',schoolYearId:'year-1',subject:{name:'Apreciación y Producción Literarias',code:'OPT-HLM-LEN-4'},section:{name:'A'},
+      grade:{name:'4.º',sequence:4,level:'Secundario',academicLevel:{id:'secondary',name:'Secundario',sequence:2,code:'secundario'},defaultModality:{code:'academic'}},
+      curriculumContext:{optativeExitName:'Humanidades y Lenguas Modernas'},schoolYear:{name:'2026-2027'},
+    }])
+    const result=await new GradingService().getSectionSubjects('school-1','teacher-1',['teacher'])
+    expect(result).toEqual([expect.objectContaining({id:'optative',subjectCode:'OPT-HLM-LEN-4',modalityCode:'academic',optativeExitName:'Humanidades y Lenguas Modernas'})])
+  })
+
   it('loads section subjects with their relations in a single query', async () => {
     mocks.prisma.sectionSubject.findMany.mockResolvedValue([
       {

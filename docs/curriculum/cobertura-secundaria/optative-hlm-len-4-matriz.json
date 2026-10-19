@@ -1,0 +1,2071 @@
+{
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD"
+  },
+  "grade": 4,
+  "subjectCode": "OPT-HLM-LEN-4",
+  "subjectName": "Apreciación y Producción Literarias",
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "modalityCode": "academic",
+  "scopeId": "d619d96a-6e30-5201-8264-3bc09502e53e",
+  "pdfPages": [
+    427,
+    428,
+    429,
+    430,
+    431
+  ],
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      427,
+      428,
+      429,
+      430,
+      431
+    ],
+    "imageEvidence": [
+      {
+        "number": 427,
+        "printed": 426,
+        "imageSha256": "360d45c497e92b48d3532d0577370792e730ff3497df44174948c9b50ae6e7dc"
+      },
+      {
+        "number": 428,
+        "printed": 427,
+        "imageSha256": "03726ee69b1a3a7e155a450104e546393cf5b21da0010ac847e020f83ab8ee0b"
+      },
+      {
+        "number": 429,
+        "printed": 428,
+        "imageSha256": "709479fbb4ad700025cb07853575fe36028783a10ec9ebb0130b070f860f0bfa"
+      },
+      {
+        "number": 430,
+        "printed": 429,
+        "imageSha256": "3660eea65f3769ce8c4f51e70b4d7c9249b8ec7f774c0eaff16eb352c61270fa"
+      },
+      {
+        "number": 431,
+        "printed": 430,
+        "imageSha256": "fa8084f9b83fd96ec0c3166b7b6e22e7fc5f3bc74764cfeb56639ffd6b4e5809"
+      }
+    ],
+    "method": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS"
+  },
+  "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING",
+  "provider": "packages/shared/src/secondary-optative-language.ts",
+  "providerCatalog": "evaluation-2026.124",
+  "officialRecords": [
+    {
+      "id": "81188c6f-8e77-5fbc-a33c-8a72c14086e2",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Comunica sus producciones literarias específicas, tales como poesías románticas, novelas de viajes y aventuras\nen situaciones diversas, a través de recursos tecnológicos y de otros tipos, evidenciado dominio, apreciación y\ncreatividad en el empleo de esos textos.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "5eaf9f5f-b027-5e97-8641-dbfc991ddf72",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Comunicativa",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "23cced27-2c58-5d6a-8e6e-e72a3d741ff5",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Utiliza textos narrativos y poéticos específicos, en la apreciación y producción literarias, para abordar temas\nsociales de la realidad, creando nuevos conocimientos.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "cab6ae13-2612-544c-b8d9-26376fac23c3",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Pensamiento Lógico,\nCreativo y Crítico",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "7745d257-eee9-54d1-99ce-23320ccd140f",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Define temas y problemas de su vida estudiantil, familiar y social, a través de una producción literaria\ndeterminada, como punto de partida para aportar posibles soluciones.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "832b74b1-7d44-5e28-aa94-e27694e88389",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Resolución de Problemas",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "864b7280-b1df-5ab6-ba8d-39b7f58dca0c",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Manifiesta nuevas relaciones socioculturales en entornos diversos, a través de producciones literarias,\nvalorando hechos y tradiciones históricas.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "26fee28a-352d-5f45-9a71-9413472fdcb3",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "3a4feb3a-0c1d-5b63-9dca-8278e262d661",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Manifiesta conocimientos de procesos investigativos científicos, a través de textos literarios específicos y del\nuso de tecnologías, según su capacidad y necesidades contextuales.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "9354d6aa-b0e1-5bc2-a455-1d11a68e4975",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "69528855-6ce5-55d8-b4a9-c48bf333e1f4",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Demuestra experiencia sobre situaciones relacionadas con salud, medioambiente y la comunidad, mediante\nla apreciación y producción de géneros literarios especiales, usando medios y recursos variados.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "0d44a534-3087-558d-a085-8bbb292b7a03",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "5257629b-b9f5-54c2-988f-71deaf6be230",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Promueve valores espirituales a través de producciones de modelos literarios propuestos, para la comprensión\nde sí mismo, de los demás y expresar su percepción del mundo en general.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "3fbde3fb-27f1-5328-97d1-6ebeb6ece91a",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Desarrollo Personal y\nEspiritual",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "c73c6a1e-4889-5a45-89c6-d2a848c16072",
+      "type": "CONCEPT",
+      "text": "Poesía romántica",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "6034bd4f-a1be-5dc4-b20f-160fa50c1546",
+      "type": "CONCEPT",
+      "text": "• Narrativa de tono heroico.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "03e51df1-c36e-564f-8c15-8bd3f008b4d2",
+      "type": "CONCEPT",
+      "text": "• Poesía romántica lírica de\ntono intimista.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "83d9262c-45af-5416-8c80-bbe7f1021046",
+      "type": "CONCEPT",
+      "text": "• La adjetivación",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "e20e89e7-8207-5ba5-a48c-7d28f2c00055",
+      "type": "CONCEPT",
+      "text": "• Vocabulario",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "dcd26e81-3aa6-5267-b09c-53cd7bd437b6",
+      "type": "CONCEPT",
+      "text": "• Figuras literarias (epíteto,\nhipérbaton, hipérbole,\nantítesis, paralelismo, anáfora,\nironía, comparaciones y\nmetáforas).",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "a64d7279-4bcf-5f0e-b7d6-b2d9caf9fd7f",
+      "type": "CONCEPT",
+      "text": "• Interjecciones, exclamaciones\ne interrogaciones retóricas.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "f73b5b5c-4039-531c-b432-545d721d831d",
+      "type": "CONCEPT",
+      "text": "• Temas de la poesía romántica.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "2ee9d3a9-17f4-56f5-a7ab-2aca6a70b8f4",
+      "type": "PROCEDURE",
+      "text": "Comprensión oral (escuchar)",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "3cecde79-bfe4-5ec7-be4f-1a709b8cdcc4",
+      "type": "PROCEDURE",
+      "text": "• Anticipación del contenido de la poesía\nromántica a partir del título; escucha atenta de\npoesías románticas de autores representativos\ndel movimiento; reconocimiento de la\nintención comunicativa del autor y de los\nsentimientos que expresa; comprensión e\ninferencias de los significados, explícitos e\nimplícitos y de las emociones que provocan\nla poesía romántica escuchada, así como de\nsignificado de las palabras que desconoce,\nsegún el contexto; identificación de los\ncambios y matices de voz y entonación, según\nla temática y los sentimientos que la poesía\nromántica evoca.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "ba0d65a7-590d-5afe-84c8-033d4bcafeec",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al escuchar poesías románticas líricas y\nnarrativas seleccionadas.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "b8af1320-8f2a-591f-98b8-29fc97103d65",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la función lúdica y estética de la lengua.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "1b9cbf37-e888-57e0-9de3-b369466f7ae1",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la poesía romántica como expresión\nque permite comprender y analizar los sentimientos\nhumanos.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "7f83dd4e-c7b8-5359-a84a-e462530df37e",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al recitar poesías románticas líricas y narrativas.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "83c3f377-fb55-564e-997f-ca7bc4c3bf45",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Manifestación de respeto y empatía por los\nsentimientos y opiniones expresados por los demás\nsobre la poesía romántica leída.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "f4ed7f74-29f4-50cf-919c-1ff58f361649",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al producir poemas románticos de carácter\nlírico narrativo.",
+      "pdfPage": 427,
+      "printedPage": "426"
+    },
+    {
+      "id": "dab969df-a5bb-5697-9154-fd9bd5ebfe63",
+      "type": "CONCEPT",
+      "text": "• Autores sugeridos:",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "ab0c58cb-8bd9-53ab-98f3-5eec4ccc552a",
+      "type": "CONCEPT",
+      "text": "• Friedrich Hölderlin",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "8684fbf9-532b-5e5f-868a-c3d41cc1c578",
+      "type": "CONCEPT",
+      "text": "• Lord Byron",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "89f978d3-a034-55d9-b0b7-aad605c02f8a",
+      "type": "CONCEPT",
+      "text": "• José de Espronceda",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "45974ef4-7a55-5848-b993-35da7313be8b",
+      "type": "CONCEPT",
+      "text": "• Víctor Hugo",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "c073af4b-c62a-511f-9e52-654e9bb223a1",
+      "type": "CONCEPT",
+      "text": "• Rosalía de Castro",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "790cb00a-a6cf-5b40-b580-af0ad207c7ff",
+      "type": "CONCEPT",
+      "text": "• Gustavo Adolfo Bécquer",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "8068ab42-79a0-5a28-a151-96425f53f77e",
+      "type": "CONCEPT",
+      "text": "• Walt Whitman",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "2d166775-a29e-52c3-9db3-61b67040d6f4",
+      "type": "CONCEPT",
+      "text": "• Henry Wadsworth Longfellow",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "815c44d8-c0a8-5ec4-afc9-d5cbd6a67ce1",
+      "type": "CONCEPT",
+      "text": "• Ralph Waldo Emerson",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "23c42a8f-5112-59eb-ab9a-187d3676605f",
+      "type": "PROCEDURE",
+      "text": "• Uso de la estructura de la poesía romántica, de\nla rima y el ritmo y las figuras literarias presentes\npara comprender sus significados explícitos\ne implícitos y disfrutar de las emociones que\nprovoca; paráfrasis oral del sentido global de\nla poesía romántica, utilizando el vocabulario\nadecuado a este tipo de texto.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "96d0a8f1-519a-527a-8a56-622a6f270592",
+      "type": "PROCEDURE",
+      "text": "Producción oral (hablar)",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "01cdcde0-ba26-547f-8a51-7ef923f51890",
+      "type": "PROCEDURE",
+      "text": "• Selección de poesías románticas de autores\nrepresentativos de este tipo de poema;\nverbalización de las figuras literarias, la rima, el\nritmo y los versos de la poesía romántica, usando\nla entonación y el lenguaje gestual acordes\na la intención comunicativa, el tema y a los\nsentimientos que se quieren expresar.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "96043175-af78-5ab9-816f-f1aad09b9f1a",
+      "type": "PROCEDURE",
+      "text": "• Utilización de cambios de voz y entonación,\natendiendo a los sentimientos que la poesía\nromántica evoca; adecuación del lenguaje\ngestual y corporal con la intención comunicativa\ny los sentimientos que evoca el texto.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "6a339005-c377-5280-ad50-0ae746d30332",
+      "type": "PROCEDURE",
+      "text": "Comprensión escrita (leer)",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "495ec7ab-8395-50a7-a9db-482a354b9ff7",
+      "type": "PROCEDURE",
+      "text": "• Anticipación del contenido de la poesía\nromántica, a partir del título y otras marcas\ntextuales y paratextuales; establecimiento de un\npropósito para la lectura de la poesía romántica;\nreconocimiento de la intención comunicativa del\nautor y de los sentimientos que el texto evoca.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "3e179522-217a-5e0d-adfc-6ff6fcd88479",
+      "type": "PROCEDURE",
+      "text": "• Uso de la estructura de la poesía romántica\npara comprender su contenido; identificación\ny análisis de los recursos estilísticos para valorar\nla riqueza creativa y expresiva de la poesía\nromántica; comprensión e inferencias de los\nsignificados, explícitos e implícitos que presenta\nla poesía romántica a partir de los elementos\nconnotativos y denotativos, así como del\nsignificado de las palabras que desconoce del\ncontexto; tica, utilizando el vocabulario adecuado\npara este tipo de texto.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "e3ef009f-5aa4-5a75-bba3-cf70b9456fe9",
+      "type": "PROCEDURE",
+      "text": "Producción escrita (escribir)",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "59f8fa38-16ce-535a-9df5-6027c038984c",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de\nla poesía romántica que va a producir por escrito;\nselección del tema, personaje, hecho o situación\nque enfocará en la elaboración de la poesía\nromántica; uso de algunos de los diferentes tipos\nde estrofas en el poema romántico que escribe:\nel romance, la octava real, la octavilla, la silva\ny la sextina; paráfrasis del sentido global de la\npoesía románla rima asonante y consonante y de\nversos octosílabos, endecasílabos, heptasílabos y\nalejandrinos para escribir el poema; vocabulario\napropiado a su intención comunicativa y a\nlos sentimientos que se quieren evocar con\nla poesía romántica; recursos literarios que\ndemanda la poesía romántica según el tema, los\nsentimientos, la creatividad y el ritmo.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "0f079385-10c5-5cd3-a95c-d166625dc39f",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al escuchar novelas de aventuras que fomentan\nsu imaginación y creatividad.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "3779be30-5dcd-5120-9d52-a63377d51860",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la función lúdica y estética de la lengua.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "d2cd29bb-400a-5917-a820-1e2c68ab36f9",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés y curiosidad por realizar predicciones de novelas\nde viajes y aventuras que escucha.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "9449596b-220c-52c1-9a2a-6a2ae7e078ed",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la importancia de reconocer las acciones y\nmotivaciones de los personajes.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "d2bfe4eb-9ae4-5024-8d0d-eec10c8221fa",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la aventura, la exploración y los desafíos\ncomo elementos importantes en la vida de los seres\nhumanos.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "53f374eb-6c66-5293-9fce-8f6c6b995af1",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Respeto y empatía por los problemas y situaciones que\nle suceden a los personajes.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "4e089397-0b6f-5e82-8c6a-599ad403f35d",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Creatividad e imaginación al producir grupalmente una\nnovela breve de viajes y aventuras.",
+      "pdfPage": 428,
+      "printedPage": "427"
+    },
+    {
+      "id": "a834c29e-852e-5027-80b2-ef555240f55a",
+      "type": "CONCEPT",
+      "text": "• La novela de viajes y aventuras",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "360bde91-5faf-59ae-bfa6-5afeddcde9cf",
+      "type": "CONCEPT",
+      "text": "• Función y estructura",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "0d4f7d90-5e8e-520f-8ceb-8208d6ea4a29",
+      "type": "CONCEPT",
+      "text": "• El protagonista",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "b49ede02-c784-5d7d-9956-1166a69d8b0d",
+      "type": "CONCEPT",
+      "text": "• Distinción de las aventuras",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "531ce83c-7a45-575f-8800-047aaef3cdba",
+      "type": "CONCEPT",
+      "text": "• Los personajes",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "18e2b296-3044-5955-a4c0-7d3073160974",
+      "type": "CONCEPT",
+      "text": "• Los adjetivos",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "8e6f8005-f5cc-5642-ae39-1417b4abe224",
+      "type": "CONCEPT",
+      "text": "• Los actantes",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "6cf4ede5-ee0d-5973-aa2e-82f02465b762",
+      "type": "CONCEPT",
+      "text": "• El narrador: tipos",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "1798770d-23a6-59e7-95b7-6ac663547b5b",
+      "type": "CONCEPT",
+      "text": "• Temas de la novela",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "0e750be7-7ec5-5f26-b878-41c898395d0e",
+      "type": "CONCEPT",
+      "text": "• Secuencias narrativas,\ndescriptivas y dialogadas.",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "1204691b-89ce-59cf-86e4-3836b912a18d",
+      "type": "CONCEPT",
+      "text": "• Ambiente de la historia",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "d24c6637-e5b3-5a5d-92d1-062db748f416",
+      "type": "CONCEPT",
+      "text": "• La trama",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "b55ea4a0-d2ee-56cf-a5d7-47b8609b025f",
+      "type": "CONCEPT",
+      "text": "• Orden cronológico de la\nnarración.",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "f0375fb2-422f-5f57-a4c4-43810a53f585",
+      "type": "CONCEPT",
+      "text": "• Conectores temporales,\ncausales y consecutivos.",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "1bc119f8-f54e-54f6-9fc6-526740017724",
+      "type": "CONCEPT",
+      "text": "• Obras y autores sugeridos:",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "65388a52-9140-556b-b210-8837cdfdbabb",
+      "type": "CONCEPT",
+      "text": "• Robinson Crusoe, Daniel Defoe",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "781532e7-1055-54e2-8688-182ef3dd3b7a",
+      "type": "CONCEPT",
+      "text": "• La isla del tesoro, John\nStevenson",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "29d1fa7a-78e8-5fc6-967f-93e1765b9c3a",
+      "type": "CONCEPT",
+      "text": "• El viejo y el mar, Hemingway",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "d6954d7c-353a-5b37-a3a2-751b523dd38f",
+      "type": "CONCEPT",
+      "text": "• Moby Dick, Herman Melville",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "0cfc54a0-a6c5-5b90-bb6a-1be70e73e357",
+      "type": "CONCEPT",
+      "text": "• La reina de África, Cecil Scott\nForester",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "22545167-e05a-5223-9a15-13987fab7b47",
+      "type": "CONCEPT",
+      "text": "• 10,000 leguas de viaje\nsubmarino, Julio Verne",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "9e421d39-c92b-5a76-92d4-2ec3d674e4fe",
+      "type": "PROCEDURE",
+      "text": "• Escritura de borradores de poesía romántica\natendiendo a la emoción y el sentimiento que se\nquiere expresar, a la intención comunicativa, la\nestructura, los recursos estilísticos, el vocabulario\ny la corrección ortográfica; edición y publicación\nde poesía romántica en los murales del aula y en\nlos diferentes blogs de los grupos.",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "4e563768-1525-5995-b0d2-6306af11cc53",
+      "type": "PROCEDURE",
+      "text": "Comprensión oral (escuchar)",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "bcaf0604-b5a1-5b9b-ab2f-763611ddf92b",
+      "type": "PROCEDURE",
+      "text": "• Escucha atenta de novelas de viajes y aventuras\nacordes con la edad e intereses; anticipación\ndel contenido de la novela de viajes y aventuras,\na partir del título y otras marcas textuales;\nutilización de la estructura de la novela (inicio,\nnudo, desenlace) de los verbos en pasado y\npresente, de los conectores, de los adjetivos, de\nla distinción entre narrador y personajes y de las\nfórmulas de inicio y cierre, para comprender su\ncontenido; distinción entre el autor, narrador y los\npersonajes para comprender la trama relatada en\nla novela.",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "cf307889-6541-5fa4-843c-60a727bf7897",
+      "type": "PROCEDURE",
+      "text": "• Identificación de los temas de la novela, las\nacciones de los personajes de la novela y\nrealización de inferencias necesarias relacionadas\ncon causalidad, las motivaciones e intenciones\nde las acciones, los tipos de actantes para analizar\nlos personajes y comprender sus actuaciones,\nlos temas tratados en la novela, el significado de\npalabras desconocidas del contexto.",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "7b8f531c-998c-59fe-afc8-9f277eb3e20c",
+      "type": "PROCEDURE",
+      "text": "• Utilización del orden cronológico de la narración\npara comprender la trama de la novela; paráfrasis\nde las acciones principales de la novela de viajes\ny aventuras, usando el vocabulario apropiado y\nmediante el uso de sinónimos y otros recursos;\nresumen del contenido de la novela de viajes\ny aventuras que escucha, apoyándose en el\nnarrador, los personajes, las acciones, el ambiente\ny la atmósfera, el o los temas y los diálogos de los\npersonajes, el tipo de narrador y el orden de la\nnarración.",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "5b9baea1-b98d-5cf1-b979-88f905df5191",
+      "type": "PROCEDURE",
+      "text": "Producción oral (hablar)",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "b9561c63-8822-58e4-88e5-b7369a8b2e91",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de\nla novela de viajes y aventuras; selección del o los\nsucesos, los personajes, el lugar y el tiempo en la\nintención de la historia que va a narrar; el punto de\nvista o voz narrativa en la novela; descripción de los\npersonajes de la novela de viajes y aventuras con\nvocabulario apropiado, utilizando adjetivos que los\ncaractericen.",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "aebe8784-885f-56ea-bfae-9220cce63fa2",
+      "type": "PROCEDURE",
+      "text": "• Organización cronológica de los sucesos en la\nnovela de viajes y aventuras; utilización de la\nclasificación y actancia de los personajes para dar\nvida a los mismos, de conectores causales, de orden\ny continuidad para dar coherencia y cohesión\nal esquema de la novela, vocabulario apropiado\nen función de la intención comunicativa y de los\ninterlocutores, marcas de inicio, progresión y cierre\nen la trama de la novela de viajes y aventuras;\npresentación oral de la trama de la novela de viajes\ny aventuras.",
+      "pdfPage": 429,
+      "printedPage": "428"
+    },
+    {
+      "id": "8235cd69-6156-5e09-b182-00db03f79ff3",
+      "type": "PROCEDURE",
+      "text": "Comprensión escrita (leer)",
+      "pdfPage": 430,
+      "printedPage": "429"
+    },
+    {
+      "id": "893b3197-8c38-5277-ae80-4dae097967be",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de un propósito para la lectura\nde novelas de viajes y aventuras; anticipación del\ncontenido de la novela de viajes y aventuras, a\npartir del título y otras",
+      "pdfPage": 430,
+      "printedPage": "429"
+    },
+    {
+      "id": "1aadf631-190b-5082-85ee-bbc197718733",
+      "type": "PROCEDURE",
+      "text": "• Realización de inferencias necesarias para\ncomprender el sentido global de la novela de\nviajes y aventuras que lee y del significado de\npalabras que desconoce del contexto, de los\ntemas tratados en la novela, las motivaciones e\nintenciones de los personajes.",
+      "pdfPage": 430,
+      "printedPage": "429"
+    },
+    {
+      "id": "d6fc6b72-bee1-5bf5-98d0-ff1b33d93ff0",
+      "type": "PROCEDURE",
+      "text": "• Identificación y clasificación de los personajes y\nsu actancia para la comprensión de sus acciones;\nutilización del orden cronológico de la narración\npara comprender la novela de aventuras;\nparáfrasis de las acciones principales de la novela\nde viajes y aventuras, usando el vocabulario\napropiado y mediante el uso de sinónimo y otros\nrecursos.",
+      "pdfPage": 430,
+      "printedPage": "429"
+    },
+    {
+      "id": "9b80e19a-9150-5f81-9a33-ee11b8432a64",
+      "type": "PROCEDURE",
+      "text": "• Resumen del contenido de la novela de viajes y\naventuras que lee, apoyándose en el narrador, los\npersonajes, las acciones, el ambiente, la atmosfera,\nel o los temas y los diálogos de los personajes, el\ntipo de narrador y el orden de la narración.",
+      "pdfPage": 430,
+      "printedPage": "429"
+    },
+    {
+      "id": "3a603217-6e16-5fe0-b113-92b0df41ccc1",
+      "type": "PROCEDURE",
+      "text": "Producción escrita (escribir)",
+      "pdfPage": 430,
+      "printedPage": "429"
+    },
+    {
+      "id": "ab7d64e0-e359-5299-96e0-c2ee7c25db32",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de\nla novela de viajes y aventuras que se escribirá\ncolectivamente; selección del o los sucesos, los\npersonajes, el lugar, las acciones y el tiempo;\ndescripción de los personajes y ambiente de\nla novela en los diferentes momentos y con\nel vocabulario apropiado, marcas textuales;\nutilización de la estructura de la novela (inicio,\nnudo, desenlace) de los verbos en pasado y\npresente, de los conectores, de los adjetivos, de\nla distinción entre narrador y personajes y de las\nfórmulas de inicio y cierre, para comprender su\ncontenido.",
+      "pdfPage": 430,
+      "printedPage": "429"
+    },
+    {
+      "id": "eb607999-2063-522f-8329-03d226041abc",
+      "type": "PROCEDURE",
+      "text": "• Utilización de fórmulas de inicio y de cierre de\nlos capítulos, de adjetivos para describir a los\npersonajes de la novela de viajes y aventuras que\nproduce; inclusión de diálogos de los personajes\nque escribe en estilo directo; distintas voces\n(narrador y personajes) en la novela que escribe;\nvocabulario apropiado en función de la intención\ncomunicativa y de los interlocutores; organización\ncronológica de los sucesos y utilización del\ntiempo verbal pasado para narrar las acciones\nde los personajes, tiempo verbal presente para\nescribir los diálogos, elementos descriptivos para\ncrear suspenso en la narración, los signos de\npuntuación (coma, punto, dos puntos, raya) para\nsegmentar y organizar el escrito.",
+      "pdfPage": 430,
+      "printedPage": "429"
+    },
+    {
+      "id": "7957a517-f395-5a70-aeae-dba60ecb7666",
+      "type": "PROCEDURE",
+      "text": "• Escritura del o los borradores de la novela\najustándose a la intención, la estructura y las\ncaracterísticas de la novela de viajes y aventuras;\nrevisión y corrección del o los borradores con\nayuda del docente y los compañeros; edición y\npublicación de la novela de viajes y aventuras en\nformato físico, digital o virtual, a través de medios\ny recursos tecnológicos o convencionales",
+      "pdfPage": 430,
+      "printedPage": "429"
+    },
+    {
+      "id": "e7628c42-a987-5e1f-964c-4f6ebdd48e5c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Evidencia destrezas comunicativas a través de poesías románticas, novelas de viajes y aventuras que produce, demostrando\ndesenvolvimiento en situaciones variadas, mediante el uso de tecnologías y recursos.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "7489d533-3a25-53ad-afd7-c1770b04909e",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza las producciones literarias específicas, en la comunicación entre compañeros de clase, familiares y sociedad en general,\nusando de manera responsable variadas herramientas tecnológicas y otros medios.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "509e37de-7964-591b-98b1-58ee22d758b5",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Promueve los textos literarios producidos, para comunicar temas y situaciones a nivel local, nacional y fuera de estos,\nmanifestando sus pensamientos, sentimientos y propuestas de acciones.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "6bc6a252-7680-5ef3-a23a-40feb22b0a6a",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Usa producciones narrativas y poéticas específicas, sobre temas sociales del contexto local y nacional, demostrando dominio\ninferencial en sus manifestaciones.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "2568709e-323f-5fe8-9246-cfd761d30d77",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Evidencia habilidades inferenciales, derivadas de la apreciación y producción de textos literarios específicos, tomando en\ncuenta temas del entorno escolar, familiar, comunitario, nacional y del mundo, para promover nuevos conocimientos.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "12a5d654-554d-58bb-8ecb-9b7460877361",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Maneja informaciones de textos narrativos y poéticos específicos, que apoyan los juicios y puntos de vista del pensamiento\nestructurado, según las conclusiones y respetando las posiciones ajenas.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "24c85150-0a2c-50fe-ba0c-061460942180",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Conoce problemas relacionados con su vida social, a través de textos literarios determinados, para su comprensión y búsqueda\nde posibles soluciones.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "4e4e319c-a066-5943-aea9-2187115d22a7",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos literarios definidos con informaciones que apoyan la solución de problemas de su entorno comunitario y fuera\nde mismo.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "f2b20fa7-ba20-594f-8c60-8e8db5ea2042",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Usa textos como poesías y narrativos definidos, para la presentación de conclusiones y recomendaciones de estudios\nrealizados, que proponen posibles soluciones de problemas de la comunidad.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "7b347f07-a2e1-5d62-97da-0acdcf5d9838",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Caracteriza nuevas relaciones socioculturales de ámbitos diversos, mediante textos literarios sugeridos, en valoración de lo\nnatural y social.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "312d544b-278a-5eeb-809e-bbe893ee1ebd",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Promueve prácticas sociales de ciudadanía en el entorno local, nacional e internacional, comparándolas con valores universales,\na través de producciones literarias seleccionadas.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "06743aa9-2ab9-5481-95e0-652a6b4f5c44",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Usa textos literarios determinados en la elaboración de proyectos que apoyan y valoran las prácticas ciudadanas y la solución\nde los problemas que afectan la comunidad.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "5251febc-4abf-5574-a9e8-6045e9da82fd",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Sistematiza investigaciones sobre temas comunitarios, haciendo uso de textos literarios adecuados y a través de herramientas\ntecnológicas, demostrando conocimientos y destrezas lingüísticas y manejo de recursos.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "c94f575e-5ffa-58db-be0b-8a881a65342d",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Divulga mediante textos literarios seleccionados, hallazgos científicos, sociales y tecnológicos de diferentes ámbitos,\nevidenciando conocimientos en el uso de la lengua.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "15a5e924-6029-595e-86ad-d848863ed1e7",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Usa textos literarios sugeridos para la publicación de investigaciones del ámbito escolar y comunitario, apoyándose en medios\ny recursos variados, en demostración de conocimiento investigativo y habilidades lingüísticas.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "12a99361-6ed7-523a-9a86-fe2cea45da9e",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza textos literarios seleccionados para caracterizar temas o problemas sobre salud, medioambiente, alimentación, entre\notros que afectan la comunidad en que se desenvuelve, proponiendo soluciones.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "dfb1b2b2-60a1-5754-bf07-bba6c2244505",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos, tales como poesías románticas, novelas de viajes y aventuras, para promover temas y problemas de salud y\nambiente, alimentación, entre otros, aportando soluciones pertinentes.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "ee440df0-2f53-57d4-80a1-b8c6c53eb7f6",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Promueve el buen comportamiento de los seres humanos y la puesta en práctica de acciones para preservar la salud, el\ncuidado de los recursos naturales, los ecosistemas, mediante producciones literarias seleccionadas.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "039e740d-9d03-586c-b1d8-93e1d242a0d3",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Evidencia compromiso con su persona y las que lo rodean, a través producciones literarias especiales, para una mejor\ncomprensión de la realidad.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "c7305c5d-01ef-5a91-898a-83b8b1721729",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos literarios especiales, para el cultivo de valores, refuerzo de la dimensión humanista y el fortalecimiento físico-\nespiritual.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    },
+    {
+      "id": "036a0ad5-a1a4-59a7-9cc1-66e9997a9cd3",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Promueve emociones, sentimientos y valores espirituales, a través de textos literarios específicos, apoyando las relaciones\nhumanas y el respeto a la dignidad.",
+      "pdfPage": 431,
+      "printedPage": "430"
+    }
+  ],
+  "genres": [
+    {
+      "id": "poesia-romantica",
+      "label": "poesía romántica",
+      "match": "poesias? romanticas?|poemas? romanticos?",
+      "sourceRecordIds": [
+        "c73c6a1e-4889-5a45-89c6-d2a848c16072"
+      ],
+      "pdfPages": [
+        427,
+        428,
+        429
+      ],
+      "profile": {
+        "genre": "poema romántico",
+        "target": "el tema, la intención y la organización de los versos del poema",
+        "plan": "la relación entre intención, tema y forma expresamente elegida"
+      },
+      "features": [
+        {
+          "id": "heroic-tone",
+          "match": "tono heroico|narrativa.*heroic",
+          "name": "el tono heroico",
+          "function": "caracterizar las acciones y la voz narrativa del poema",
+          "error": "se atribuye un tono incompatible con los versos",
+          "sourceRecordIds": [
+            "6034bd4f-a1be-5dc4-b20f-160fa50c1546"
+          ]
+        },
+        {
+          "id": "intimist-tone",
+          "match": "tono intimista|liric.*intimist",
+          "name": "el tono intimista",
+          "function": "relacionar la voz lírica con los sentidos del poema",
+          "error": "se confunde la voz del poema con una confesión del estudiante",
+          "sourceRecordIds": [
+            "03e51df1-c36e-564f-8c15-8bd3f008b4d2"
+          ]
+        },
+        {
+          "id": "poetry-adjectives",
+          "match": "adjetiv",
+          "name": "la adjetivación",
+          "function": "precisar las imágenes y el sentido del poema",
+          "error": "se atribuye al adjetivo una imagen incompatible con el verso",
+          "sourceRecordIds": [
+            "83d9262c-45af-5416-8c80-bbe7f1021046"
+          ]
+        },
+        {
+          "id": "poetry-vocabulary",
+          "match": "vocabulario|lexico|palabras desconocidas",
+          "name": "el vocabulario contextual",
+          "function": "conservar el sentido de las palabras en los versos",
+          "error": "se elige un significado incompatible con el contexto",
+          "sourceRecordIds": [
+            "e20e89e7-8207-5ba5-a48c-7d28f2c00055"
+          ]
+        },
+        {
+          "id": "poetry-figures",
+          "match": "figuras|recursos (?:literarios|estilisticos|retoricos)|epiteto|hiperbaton|hiperbole|antitesis|paralelismo|anafora|ironia|comparacion|metafora",
+          "name": "los recursos literarios expresamente trabajados",
+          "function": "relacionar las imágenes y los recursos con el sentido del poema",
+          "error": "se identifica un recurso inexistente o se le atribuye un efecto contrario al verso",
+          "sourceRecordIds": [
+            "dcd26e81-3aa6-5267-b09c-53cd7bd437b6"
+          ],
+          "terms": [
+            [
+              "epiteto",
+              "el epíteto"
+            ],
+            [
+              "hiperbaton",
+              "el hipérbaton"
+            ],
+            [
+              "hiperbole",
+              "la hipérbole"
+            ],
+            [
+              "antitesis",
+              "la antítesis"
+            ],
+            [
+              "paralelismo",
+              "el paralelismo"
+            ],
+            [
+              "anafora",
+              "la anáfora"
+            ],
+            [
+              "ironia",
+              "la ironía"
+            ],
+            [
+              "comparacion",
+              "la comparación"
+            ],
+            [
+              "metafora",
+              "la metáfora"
+            ]
+          ]
+        },
+        {
+          "id": "poetry-exclamations",
+          "match": "interjecciones|exclamaciones|interrogaciones retoricas",
+          "name": "los recursos expresivos expresamente pedidos",
+          "function": "relacionar la voz y la intención con la expresión del verso",
+          "error": "se confunde una pregunta literal con una interrogación retórica",
+          "sourceRecordIds": [
+            "a64d7279-4bcf-5f0e-b7d6-b2d9caf9fd7f"
+          ],
+          "terms": [
+            [
+              "interjecciones",
+              "las interjecciones"
+            ],
+            [
+              "exclamaciones",
+              "las exclamaciones"
+            ],
+            [
+              "interrogaciones retoricas",
+              "las interrogaciones retóricas"
+            ]
+          ]
+        },
+        {
+          "id": "poetry-themes",
+          "match": "temas?",
+          "name": "el tema",
+          "function": "relacionar las ideas e imágenes con el sentido del poema",
+          "error": "se atribuye un tema sin apoyo en los versos",
+          "sourceRecordIds": [
+            "f73b5b5c-4039-531c-b432-545d721d831d"
+          ]
+        },
+        {
+          "id": "poetic-form",
+          "match": "estrofas|romance|octava real|octavilla|silva|sextina",
+          "name": "la estrofa expresamente elegida",
+          "function": "organizar los versos según la forma solicitada",
+          "error": "la organización contradice la forma elegida",
+          "sourceRecordIds": [
+            "59f8fa38-16ce-535a-9df5-6027c038984c"
+          ],
+          "terms": [
+            [
+              "romance",
+              "el romance"
+            ],
+            [
+              "octava real",
+              "la octava real"
+            ],
+            [
+              "octavilla",
+              "la octavilla"
+            ],
+            [
+              "silva",
+              "la silva"
+            ],
+            [
+              "sextina",
+              "la sextina"
+            ]
+          ]
+        },
+        {
+          "id": "rhyme",
+          "match": "rima|asonante|consonante",
+          "name": "la rima expresamente pedida",
+          "function": "relacionar las coincidencias sonoras con la forma elegida",
+          "error": "se atribuye una coincidencia sonora que no existe",
+          "sourceRecordIds": [
+            "59f8fa38-16ce-535a-9df5-6027c038984c"
+          ],
+          "terms": [
+            [
+              "asonante",
+              "la rima asonante"
+            ],
+            [
+              "consonante",
+              "la rima consonante"
+            ]
+          ]
+        },
+        {
+          "id": "meter",
+          "match": "metrica|octosilab|endecasilab|heptasilab|alejandrin",
+          "name": "la medida de verso expresamente pedida",
+          "function": "ajustar los versos al cómputo solicitado",
+          "error": "el cómputo no corresponde a los versos presentados",
+          "sourceRecordIds": [
+            "59f8fa38-16ce-535a-9df5-6027c038984c"
+          ],
+          "terms": [
+            [
+              "octosilab",
+              "el verso octosílabo"
+            ],
+            [
+              "endecasilab",
+              "el verso endecasílabo"
+            ],
+            [
+              "heptasilab",
+              "el verso heptasílabo"
+            ],
+            [
+              "alejandrin",
+              "el verso alejandrino"
+            ]
+          ]
+        },
+        {
+          "id": "nonverbal",
+          "match": "gestos|gestual|corporal",
+          "name": "los gestos solicitados",
+          "function": "hacer reconocible la intención de los versos con los apoyos acordados",
+          "error": "el gesto o apoyo comunica una intención contraria al verso",
+          "sourceRecordIds": [
+            "96043175-af78-5ab9-816f-f1aad09b9f1a"
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "meaning",
+          "title": "Sentido e intención del poema",
+          "production": "Desarrolla el tema y la intención del poema romántico mediante una voz y un vocabulario coherentes con la situación comunicativa solicitada.",
+          "analysis": "Explica el sentido y la intención del poema romántico apoyándose en sus versos.",
+          "comparison": "Contrasta el sentido y la intención de los poemas románticos mediante sus versos.",
+          "evidence": [
+            "El sentido y la intención se reconocen; una relación entre ideas e imágenes necesita aclararse.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye al poema un sentido que contradice sus versos.",
+            "No aporta evidencia reconocible del sentido y la intención del poema."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "organization",
+          "title": "Organización de los versos",
+          "production": "Organiza los versos y estrofas para que pueda seguirse el desarrollo del tema solicitado.",
+          "analysis": "Relaciona la organización de los versos y estrofas con el desarrollo del sentido del poema.",
+          "comparison": "Compara cómo la organización de los versos contribuye al sentido en los poemas dados.",
+          "evidence": [
+            "Puede seguirse el desarrollo; una transición entre versos requiere precisión.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "El orden de los versos cambia el sentido o rompe una relación necesaria.",
+            "No presenta una organización reconocible del poema solicitado."
+          ],
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "novela-viajes-aventuras",
+      "label": "novela de viajes y aventuras",
+      "match": "novelas?(?: breves?)? de (?:viajes? y )?aventuras?",
+      "sourceRecordIds": [
+        "a834c29e-852e-5027-80b2-ef555240f55a"
+      ],
+      "pdfPages": [
+        429,
+        430
+      ],
+      "profile": {
+        "genre": "novela de viajes y aventuras",
+        "target": "los sucesos, las acciones de los personajes y la voz narrativa del pasaje solicitado",
+        "plan": "la relación entre sucesos, personajes, lugar y tiempo expresamente pedidos"
+      },
+      "features": [
+        {
+          "id": "novel-structure",
+          "match": "funcion|estructura",
+          "name": "la función y estructura solicitadas",
+          "function": "relacionar la organización de los sucesos con el propósito del relato",
+          "error": "se atribuye a una parte una función que contradice los sucesos",
+          "sourceRecordIds": [
+            "360bde91-5faf-59ae-bfa6-5afeddcde9cf"
+          ]
+        },
+        {
+          "id": "novel-protagonist",
+          "match": "protagonista",
+          "name": "el protagonista",
+          "function": "relacionar sus acciones con el desarrollo de la aventura",
+          "error": "se atribuye al protagonista la acción de otro personaje",
+          "sourceRecordIds": [
+            "0d4f7d90-5e8e-520f-8ceb-8208d6ea4a29"
+          ]
+        },
+        {
+          "id": "novel-adventures",
+          "match": "aventuras? de (?:la )?novela|distincion de (?:las )?aventuras",
+          "name": "las aventuras del relato",
+          "function": "distinguir los episodios y sus relaciones en el texto",
+          "error": "se añade una aventura que no pertenece al texto",
+          "sourceRecordIds": [
+            "b49ede02-c784-5d7d-9956-1166a69d8b0d"
+          ]
+        },
+        {
+          "id": "novel-characters",
+          "match": "personajes",
+          "name": "los personajes",
+          "function": "relacionar sus rasgos y acciones en la aventura",
+          "error": "se atribuye un rasgo o una acción al personaje equivocado",
+          "sourceRecordIds": [
+            "531ce83c-7a45-575f-8800-047aaef3cdba"
+          ]
+        },
+        {
+          "id": "novel-adjectives",
+          "match": "adjetiv",
+          "name": "la adjetivación",
+          "function": "caracterizar personajes o espacios según el pasaje solicitado",
+          "error": "se atribuye un rasgo incompatible con el personaje o espacio",
+          "sourceRecordIds": [
+            "18e2b296-3044-5955-a4c0-7d3073160974"
+          ]
+        },
+        {
+          "id": "novel-actants",
+          "match": "actan",
+          "name": "la actancia de los personajes",
+          "function": "explicar la función de sus acciones en las relaciones del relato",
+          "error": "se confunde el papel actancial con el nombre del personaje",
+          "sourceRecordIds": [
+            "8e6f8005-f5cc-5642-ae39-1417b4abe224"
+          ]
+        },
+        {
+          "id": "narrator",
+          "match": "narrador|voces|quien narra|quien cuenta",
+          "name": "el narrador y las voces expresamente trabajadas",
+          "function": "distinguir quién cuenta los hechos y desde qué perspectiva",
+          "error": "se atribuye al narrador la voz de un personaje o una información inaccesible",
+          "sourceRecordIds": [
+            "6cf4ede5-ee0d-5973-aa2e-82f02465b762"
+          ]
+        },
+        {
+          "id": "novel-themes",
+          "match": "temas?",
+          "name": "el tema",
+          "function": "relacionar las acciones con las ideas del relato",
+          "error": "se atribuye un tema sin apoyo en los episodios",
+          "sourceRecordIds": [
+            "1798770d-23a6-59e7-95b7-6ac663547b5b"
+          ]
+        },
+        {
+          "id": "novel-sequences",
+          "match": "secuencias?",
+          "name": "las secuencias expresamente pedidas",
+          "function": "relacionar narración, descripción o diálogo con su función en el pasaje",
+          "error": "se clasifica una secuencia por un rasgo que no contiene",
+          "sourceRecordIds": [
+            "0e750be7-7ec5-5f26-b878-41c898395d0e"
+          ],
+          "terms": [
+            [
+              "narrativas",
+              "la secuencia narrativa"
+            ],
+            [
+              "descriptivas",
+              "la secuencia descriptiva"
+            ],
+            [
+              "dialogadas",
+              "la secuencia dialogada"
+            ]
+          ]
+        },
+        {
+          "id": "novel-setting",
+          "match": "ambiente|espacio|lugar",
+          "name": "el ambiente solicitado",
+          "function": "situar las acciones y su relación con el espacio del relato",
+          "error": "se atribuye una acción a un lugar incompatible con el pasaje",
+          "sourceRecordIds": [
+            "1204691b-89ce-59cf-86e4-3836b912a18d"
+          ]
+        },
+        {
+          "id": "novel-plot",
+          "match": "trama",
+          "name": "la trama",
+          "function": "relacionar los sucesos y sus conexiones causales",
+          "error": "se invierte una causa o se añade un suceso ajeno al relato",
+          "sourceRecordIds": [
+            "d24c6637-e5b3-5a5d-92d1-062db748f416"
+          ]
+        },
+        {
+          "id": "novel-chronology",
+          "match": "cronologic|orden.*(?:narracion|sucesos)",
+          "name": "el orden cronológico solicitado",
+          "function": "relacionar los acontecimientos y su secuencia",
+          "error": "se invierte un acontecimiento y cambia su relación con los demás",
+          "sourceRecordIds": [
+            "b55ea4a0-d2ee-56cf-a5d7-47b8609b025f"
+          ]
+        },
+        {
+          "id": "novel-connectors",
+          "match": "conectores",
+          "name": "los conectores expresamente pedidos",
+          "function": "enlazar las acciones conservando sus relaciones",
+          "error": "el conector invierte una causa o una relación temporal",
+          "sourceRecordIds": [
+            "f0375fb2-422f-5f57-a4c4-43810a53f585"
+          ],
+          "terms": [
+            [
+              "temporales",
+              "los conectores temporales"
+            ],
+            [
+              "causales",
+              "los conectores causales"
+            ],
+            [
+              "consecutivos",
+              "los conectores consecutivos"
+            ]
+          ]
+        },
+        {
+          "id": "dialogue",
+          "match": "dialogos?|estilo directo",
+          "name": "el diálogo en estilo directo solicitado",
+          "function": "distinguir las intervenciones de los personajes y conservar su sentido",
+          "error": "se atribuye una intervención al personaje equivocado",
+          "sourceRecordIds": [
+            "eb607999-2063-522f-8329-03d226041abc"
+          ]
+        },
+        {
+          "id": "punctuation",
+          "match": "puntuacion|\\bcoma\\b|dos puntos|\\braya\\b",
+          "name": "la puntuación expresamente pedida",
+          "function": "delimitar las acciones y las intervenciones sin cambiar su sentido",
+          "error": "el signo cambia quién habla o la relación entre las acciones",
+          "sourceRecordIds": [
+            "eb607999-2063-522f-8329-03d226041abc"
+          ]
+        },
+        {
+          "id": "narrative-tenses",
+          "match": "tiempos? verbales|pasado|presente",
+          "name": "los tiempos verbales expresamente pedidos",
+          "function": "distinguir el tiempo de las acciones y del diálogo solicitado",
+          "error": "un cambio temporal contradice la relación entre los sucesos",
+          "sourceRecordIds": [
+            "eb607999-2063-522f-8329-03d226041abc"
+          ],
+          "terms": [
+            [
+              "pasado",
+              "el pasado narrativo"
+            ],
+            [
+              "presente",
+              "el presente del diálogo"
+            ]
+          ]
+        },
+        {
+          "id": "suspense",
+          "match": "suspens",
+          "name": "los recursos descriptivos de suspense solicitados",
+          "function": "administrar la información y la expectativa del pasaje",
+          "error": "se atribuye suspense a información que contradice la escena",
+          "sourceRecordIds": [
+            "eb607999-2063-522f-8329-03d226041abc"
+          ]
+        },
+        {
+          "id": "motivations",
+          "match": "motivaciones|intenciones de (?:los )?personajes",
+          "name": "las motivaciones de los personajes",
+          "function": "inferir las razones de sus acciones mediante los pasajes proporcionados",
+          "error": "se atribuye al personaje una intención sin apoyo en el pasaje",
+          "sourceRecordIds": [
+            "1aadf631-190b-5082-85ee-bbc197718733"
+          ]
+        },
+        {
+          "id": "causality",
+          "match": "causalidad|relacion(?:es)? causal(?:es)?",
+          "name": "las relaciones causales de las acciones",
+          "function": "explicar cómo un suceso contribuye a otro según el relato",
+          "error": "se presenta como causa una acción posterior o ajena al suceso",
+          "sourceRecordIds": [
+            "cf307889-6541-5fa4-843c-60a727bf7897"
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "plot",
+          "title": "Relaciones entre los sucesos",
+          "production": "Enlaza los sucesos del relato solicitado de modo que puedan seguirse las acciones y sus relaciones causales.",
+          "analysis": "Explica las relaciones entre los sucesos del relato mediante los pasajes proporcionados.",
+          "comparison": "Compara las relaciones entre los sucesos de los relatos con evidencias de los pasajes dados.",
+          "evidence": [
+            "Se siguen las relaciones principales; una transición necesita explicarse.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se invierte una relación causal o se añade un hecho incompatible con el relato.",
+            "No presenta relaciones reconocibles entre los sucesos solicitados."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "characters",
+          "title": "Personajes y acciones",
+          "production": "Hace reconocibles los personajes mediante sus acciones y relaciones en la aventura solicitada.",
+          "analysis": "Explica las acciones y motivaciones de los personajes mediante episodios del relato.",
+          "comparison": "Contrasta acciones y motivaciones de los personajes con episodios de ambos relatos.",
+          "evidence": [
+            "Las acciones permiten reconocer a los personajes; una motivación requiere precisión.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye a un personaje una acción o motivación incompatible con el pasaje.",
+            "No aporta evidencia reconocible de las acciones y relaciones de los personajes."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "narrator",
+          "title": "Voz narrativa",
+          "production": "Emplea una voz narrativa que permite reconocer quién cuenta los sucesos y conserva su perspectiva.",
+          "analysis": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+          "comparison": "Contrasta las voces narrativas y sus perspectivas mediante evidencias de los relatos.",
+          "evidence": [
+            "Se reconoce quién narra; una referencia requiere distinguir mejor su perspectiva.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye al narrador una voz o información incompatible con su perspectiva.",
+            "No permite reconocer la voz y perspectiva narrativas solicitadas."
+          ],
+          "weight": 4
+        }
+      ]
+    }
+  ],
+  "contents": [
+    {
+      "id": "heroic-tone",
+      "sourceRecordIds": [
+        "6034bd4f-a1be-5dc4-b20f-160fa50c1546"
+      ],
+      "label": "tono heroico de poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ANALYSIS",
+      "pdfPage": 427
+    },
+    {
+      "id": "intimist-tone",
+      "sourceRecordIds": [
+        "03e51df1-c36e-564f-8c15-8bd3f008b4d2"
+      ],
+      "label": "tono intimista de poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ANALYSIS",
+      "pdfPage": 427
+    },
+    {
+      "id": "poetry-adjectives",
+      "sourceRecordIds": [
+        "83d9262c-45af-5416-8c80-bbe7f1021046"
+      ],
+      "label": "adjetivación en poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ANALYSIS",
+      "pdfPage": 427
+    },
+    {
+      "id": "poetry-vocabulary",
+      "sourceRecordIds": [
+        "e20e89e7-8207-5ba5-a48c-7d28f2c00055"
+      ],
+      "label": "vocabulario contextual de poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ANALYSIS",
+      "pdfPage": 427
+    },
+    {
+      "id": "poetry-figures",
+      "sourceRecordIds": [
+        "dcd26e81-3aa6-5267-b09c-53cd7bd437b6"
+      ],
+      "label": "figuras literarias en poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ANALYSIS",
+      "pdfPage": 427
+    },
+    {
+      "id": "poetry-exclamations",
+      "sourceRecordIds": [
+        "a64d7279-4bcf-5f0e-b7d6-b2d9caf9fd7f"
+      ],
+      "label": "interjecciones, exclamaciones e interrogaciones retóricas en poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ANALYSIS",
+      "pdfPage": 427
+    },
+    {
+      "id": "poetry-themes",
+      "sourceRecordIds": [
+        "f73b5b5c-4039-531c-b432-545d721d831d"
+      ],
+      "label": "temas de poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ANALYSIS",
+      "pdfPage": 427
+    },
+    {
+      "id": "novel-structure",
+      "sourceRecordIds": [
+        "360bde91-5faf-59ae-bfa6-5afeddcde9cf"
+      ],
+      "label": "función y estructura de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-protagonist",
+      "sourceRecordIds": [
+        "0d4f7d90-5e8e-520f-8ceb-8208d6ea4a29"
+      ],
+      "label": "protagonista de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-adventures",
+      "sourceRecordIds": [
+        "b49ede02-c784-5d7d-9956-1166a69d8b0d"
+      ],
+      "label": "aventuras de la novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-characters",
+      "sourceRecordIds": [
+        "531ce83c-7a45-575f-8800-047aaef3cdba"
+      ],
+      "label": "personajes de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-adjectives",
+      "sourceRecordIds": [
+        "18e2b296-3044-5955-a4c0-7d3073160974"
+      ],
+      "label": "adjetivación en novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-actants",
+      "sourceRecordIds": [
+        "8e6f8005-f5cc-5642-ae39-1417b4abe224"
+      ],
+      "label": "actantes de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-narrator",
+      "sourceRecordIds": [
+        "6cf4ede5-ee0d-5973-aa2e-82f02465b762"
+      ],
+      "label": "tipos de narrador de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-themes",
+      "sourceRecordIds": [
+        "1798770d-23a6-59e7-95b7-6ac663547b5b"
+      ],
+      "label": "temas de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-sequences",
+      "sourceRecordIds": [
+        "0e750be7-7ec5-5f26-b878-41c898395d0e"
+      ],
+      "label": "secuencias narrativas, descriptivas y dialogadas de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-setting",
+      "sourceRecordIds": [
+        "1204691b-89ce-59cf-86e4-3836b912a18d"
+      ],
+      "label": "ambiente de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-plot",
+      "sourceRecordIds": [
+        "d24c6637-e5b3-5a5d-92d1-062db748f416"
+      ],
+      "label": "trama de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-chronology",
+      "sourceRecordIds": [
+        "b55ea4a0-d2ee-56cf-a5d7-47b8609b025f"
+      ],
+      "label": "orden cronológico de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-connectors",
+      "sourceRecordIds": [
+        "f0375fb2-422f-5f57-a4c4-43810a53f585"
+      ],
+      "label": "conectores temporales, causales y consecutivos de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "poetry-listening",
+      "sourceRecordIds": [
+        "3cecde79-bfe4-5ec7-be4f-1a709b8cdcc4"
+      ],
+      "label": "comprensión de poesía romántica escuchada",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ANALYSIS",
+      "pdfPage": 427
+    },
+    {
+      "id": "poetry-oral-paraphrase",
+      "sourceRecordIds": [
+        "23c42a8f-5112-59eb-ab9a-187d3676605f"
+      ],
+      "label": "paráfrasis oral de poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ANALYSIS",
+      "pdfPage": 428
+    },
+    {
+      "id": "poetry-recitation",
+      "sourceRecordIds": [
+        "01cdcde0-ba26-547f-8a51-7ef923f51890"
+      ],
+      "label": "recitación de poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ORAL",
+      "pdfPage": 428
+    },
+    {
+      "id": "poetry-recitation-voice",
+      "sourceRecordIds": [
+        "96043175-af78-5ab9-816f-f1aad09b9f1a"
+      ],
+      "label": "voz, entonación y gesto en recitación romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ORAL",
+      "pdfPage": 428
+    },
+    {
+      "id": "poetry-reading-prediction",
+      "sourceRecordIds": [
+        "495ec7ab-8395-50a7-a9db-482a354b9ff7"
+      ],
+      "label": "anticipación e intención en lectura de poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ANALYSIS",
+      "pdfPage": 428
+    },
+    {
+      "id": "poetry-style-inference",
+      "sourceRecordIds": [
+        "3e179522-217a-5e0d-adfc-6ff6fcd88479"
+      ],
+      "label": "recursos y significados en lectura de poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "ANALYSIS",
+      "pdfPage": 428
+    },
+    {
+      "id": "poetry-writing",
+      "sourceRecordIds": [
+        "59f8fa38-16ce-535a-9df5-6027c038984c"
+      ],
+      "label": "planificación y escritura de poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "PRODUCTION",
+      "pdfPage": 428
+    },
+    {
+      "id": "poetry-draft-revision",
+      "sourceRecordIds": [
+        "9e421d39-c92b-5a76-92d4-2ec3d674e4fe"
+      ],
+      "label": "borrador, revisión y entrega de poesía romántica",
+      "genre": "ROMANTIC_POETRY",
+      "family": "PRODUCTION",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-listening",
+      "sourceRecordIds": [
+        "bcaf0604-b5a1-5b9b-ab2f-763611ddf92b"
+      ],
+      "label": "comprensión de novela de viajes y aventuras escuchada",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-listening-inference",
+      "sourceRecordIds": [
+        "cf307889-6541-5fa4-843c-60a727bf7897"
+      ],
+      "label": "temas, causalidad y motivaciones en novela escuchada",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-oral-paraphrase",
+      "sourceRecordIds": [
+        "7b8f531c-998c-59fe-afc8-9f277eb3e20c"
+      ],
+      "label": "cronología, paráfrasis y resumen de novela escuchada",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-oral-planning",
+      "sourceRecordIds": [
+        "b9561c63-8822-58e4-88e5-b7369a8b2e91"
+      ],
+      "label": "planificación de narración oral de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ORAL",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-oral-narration",
+      "sourceRecordIds": [
+        "aebe8784-885f-56ea-bfae-9220cce63fa2"
+      ],
+      "label": "narración oral de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ORAL",
+      "pdfPage": 429
+    },
+    {
+      "id": "novel-reading-prediction",
+      "sourceRecordIds": [
+        "893b3197-8c38-5277-ae80-4dae097967be"
+      ],
+      "label": "propósito y anticipación desde título de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 430
+    },
+    {
+      "id": "novel-reading-inference",
+      "sourceRecordIds": [
+        "1aadf631-190b-5082-85ee-bbc197718733"
+      ],
+      "label": "inferencias, temas y motivaciones de novela leída",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 430
+    },
+    {
+      "id": "novel-reading-characters",
+      "sourceRecordIds": [
+        "d6fc6b72-bee1-5bf5-98d0-ff1b33d93ff0"
+      ],
+      "label": "personajes, actancia, cronología y paráfrasis de novela leída",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 430
+    },
+    {
+      "id": "novel-reading-summary",
+      "sourceRecordIds": [
+        "9b80e19a-9150-5f81-9a33-ee11b8432a64"
+      ],
+      "label": "resumen de novela de viajes y aventuras leída",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "ANALYSIS",
+      "pdfPage": 430
+    },
+    {
+      "id": "novel-writing-planning",
+      "sourceRecordIds": [
+        "ab7d64e0-e359-5299-96e0-c2ee7c25db32"
+      ],
+      "label": "planificación de novela de viajes y aventuras escrita",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "PRODUCTION",
+      "pdfPage": 430
+    },
+    {
+      "id": "novel-writing-voices",
+      "sourceRecordIds": [
+        "eb607999-2063-522f-8329-03d226041abc"
+      ],
+      "label": "escritura de voces, diálogo, secuencia y suspense de novela",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "PRODUCTION",
+      "pdfPage": 430
+    },
+    {
+      "id": "novel-draft-revision",
+      "sourceRecordIds": [
+        "7957a517-f395-5a70-aeae-dba60ecb7666"
+      ],
+      "label": "borrador, revisión y entrega de novela de viajes y aventuras",
+      "genre": "TRAVEL_ADVENTURE_NOVEL",
+      "family": "PRODUCTION",
+      "pdfPage": 430
+    }
+  ],
+  "explicitExclusions": [
+    {
+      "id": "c73c6a1e-4889-5a45-89c6-d2a848c16072",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    },
+    {
+      "id": "2ee9d3a9-17f4-56f5-a7ab-2aca6a70b8f4",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    },
+    {
+      "id": "ba0d65a7-590d-5afe-84c8-033d4bcafeec",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Disfrutar de la escucha es una disposición privada, no una evidencia puntuable."
+    },
+    {
+      "id": "b8af1320-8f2a-591f-98b8-29fc97103d65",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "La valoración lúdica o estética no se presume ni se califica como gusto personal."
+    },
+    {
+      "id": "1b9cbf37-e888-57e0-9de3-b369466f7ae1",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "La valoración de sentimientos no exige revelar sentimientos propios ni adhesión estética."
+    },
+    {
+      "id": "7f83dd4e-c7b8-5359-a84a-e462530df37e",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "El disfrute al recitar no se confunde con la ejecución observable de la recitación."
+    },
+    {
+      "id": "83c3f377-fb55-564e-997f-ca7bc4c3bf45",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza turnos y respuestas respetuosas expresamente pedidos; no se evalúa empatía privada."
+    },
+    {
+      "id": "f4ed7f74-29f4-50cf-919c-1ff58f361649",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "El disfrute al escribir no se confunde con decisiones expresivas observables."
+    },
+    {
+      "id": "dab969df-a5bb-5697-9154-fd9bd5ebfe63",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    },
+    {
+      "id": "ab0c58cb-8bd9-53ab-98f3-5eec4ccc552a",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "8684fbf9-532b-5e5f-868a-c3d41cc1c578",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "89f978d3-a034-55d9-b0b7-aad605c02f8a",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "45974ef4-7a55-5848-b993-35da7313be8b",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "c073af4b-c62a-511f-9e52-654e9bb223a1",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "790cb00a-a6cf-5b40-b580-af0ad207c7ff",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "8068ab42-79a0-5a28-a151-96425f53f77e",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "2d166775-a29e-52c3-9db3-61b67040d6f4",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "815c44d8-c0a8-5ec4-afc9-d5cbd6a67ce1",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "96d0a8f1-519a-527a-8a56-622a6f270592",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    },
+    {
+      "id": "6a339005-c377-5280-ad50-0ae746d30332",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    },
+    {
+      "id": "e3ef009f-5aa4-5a75-bba3-cf70b9456fe9",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    },
+    {
+      "id": "0f079385-10c5-5cd3-a95c-d166625dc39f",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "El disfrute o imaginación al escuchar no son rasgos personales puntuables."
+    },
+    {
+      "id": "3779be30-5dcd-5120-9d52-a63377d51860",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "La valoración estética queda fuera de la puntuación como disposición privada."
+    },
+    {
+      "id": "d2cd29bb-400a-5917-a820-1e2c68ab36f9",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Interés y curiosidad no se deducen de las predicciones formuladas."
+    },
+    {
+      "id": "9449596b-220c-52c1-9a2a-6a2ae7e078ed",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Se puede analizar acciones y motivaciones sin calificar su valoración privada."
+    },
+    {
+      "id": "d2bfe4eb-9ae4-5024-8d0d-eec10c8221fa",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "La valoración de aventuras como ideal de vida no es requisito del análisis narrativo."
+    },
+    {
+      "id": "53f374eb-6c66-5293-9fce-8f6c6b995af1",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No se califica empatía íntima hacia personajes ni se pide experiencia personal."
+    },
+    {
+      "id": "4e089397-0b6f-5e82-8c6a-599ad403f35d",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Se evalúan decisiones textuales solicitadas, no creatividad como rasgo; grupo solo si se pide."
+    },
+    {
+      "id": "a834c29e-852e-5027-80b2-ef555240f55a",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    },
+    {
+      "id": "1bc119f8-f54e-54f6-9fc6-526740017724",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    },
+    {
+      "id": "65388a52-9140-556b-b210-8837cdfdbabb",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "781532e7-1055-54e2-8688-182ef3dd3b7a",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "29d1fa7a-78e8-5fc6-967f-93e1765b9c3a",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "d6954d7c-353a-5b37-a3a2-751b523dd38f",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "0cfc54a0-a6c5-5b90-bb6a-1be70e73e357",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "22545167-e05a-5223-9a15-13987fab7b47",
+      "reason": "OPTIONAL_REFERENCE_NOT_REQUIRED_AUTHOR",
+      "explanation": "Referencia sugerida: no exigir todos los autores u obras."
+    },
+    {
+      "id": "4e563768-1525-5995-b0d2-6306af11cc53",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    },
+    {
+      "id": "5b9baea1-b98d-5cf1-b979-88f905df5191",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    },
+    {
+      "id": "8235cd69-6156-5e09-b182-00db03f79ff3",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    },
+    {
+      "id": "3a603217-6e16-5fe0-b113-92b0df41ccc1",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Organiza género, referencias o modalidad de comunicación; no genera criterio independiente."
+    }
+  ],
+  "verification": {
+    "automatedFixtures": 72,
+    "fullInstrumentsGenerated": 288,
+    "fullReview": {
+      "reviewedWithMatchingDigest": 288,
+      "pending": 0
+    },
+    "httpDb": "AUTHENTICATED_13_SAMPLES_FOUR_FORMATS_20_AND_17_35_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+    "browser": "PERSONAL_SESSION_EXPIRED_LOGIN_REQUIRED",
+    "testCounts": {
+      "backend": 62058,
+      "backendFiles": 162,
+      "frontendAffected": 11311,
+      "frontendFiles": 27,
+      "wholeFrontendSuite": false
+    },
+    "timingsMs": {
+      "interpret": 5998,
+      "recommend": 5460,
+      "writes": 4226
+    },
+    "report": "docs/superpowers/reports/2026-10-19-optativa-hlm-literatura-4.md"
+  },
+  "limits": [
+    "Dos géneros, con contenidos y procedimientos adaptados: no cuarenta temas independientes.",
+    "Autores y obras son referencias opcionales, no requisitos simultáneos.",
+    "Las adaptaciones de AulaBase no son transcripciones de indicadores oficiales.",
+    "Las muestras no acreditan todas las variantes de cada fila curricular ni ejecución real de clase."
+  ],
+  "sourcePublication": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_OPT_HLM_LEN_4_V1",
+    "versionId": "78377c1a-3d59-51dd-8003-68d06194285c",
+    "scopeId": "41ab0555-56ab-58d3-94fb-fb553c5f0624",
+    "result": "UNCHANGED",
+    "elements": 115,
+    "excludedFromAssessment": 40,
+    "sourceRowsAndSpansMatched": true
+  }
+}

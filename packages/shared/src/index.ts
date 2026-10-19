@@ -280,3 +280,4 @@ export { artGradeOneTopics } from './secondary-art-grade-1'
 
 export {commonPhysicalModules,resolveCommonPhysicalTask,commonPhysicalCriteria,commonPhysicalSelections,adaptPhysicalScale} from './secondary-physical'
 export {commonFhrModules,resolveCommonFhrTask,commonFhrCriteria,commonFhrSelections,adaptFhrScale} from './secondary-fhr'
+export {optativeLanguageModules,resolveOptativeLanguageTask,optativeLanguageCriteria,optativeLanguageSelections,adaptOptativeLanguageScale} from './secondary-optative-language'

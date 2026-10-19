@@ -12,4 +12,13 @@ describe('contexto del creador para Lengua común de los seis grados',()=>{
   expect(commonSecondaryLanguageGrade(instrumentAcademicContext({...subject,subjectCode:'LEN-OPT'}))).toBeNull()
   expect(commonSecondaryLanguageGrade(instrumentAcademicContext({...subject,subjectCode:undefined,subjectName:'Lengua Española optativa'}))).toBeNull()
  })
+ it('conserva modalidad y salida configuradas para la optativa',()=>{
+  const option={...subject,gradeSequence:10,subjectCode:'OPT-HLM-LEN-4',subjectName:'Apreciación y Producción Literarias',modalityCode:'academic',optativeExitName:'Humanidades y Lenguas Modernas'}
+  expect(instrumentAcademicContext(option)).toMatchObject({level:'SECONDARY',grade:4,subjectCode:'OPT-HLM-LEN-4',modalityCode:'academic',optativeExitName:'Humanidades y Lenguas Modernas'})
+ })
+ it('no infiere modalidad académica por el nombre o código optativo',()=>{
+  const option={...subject,gradeSequence:4,subjectCode:'OPT-HLM-LEN-4',subjectName:'Apreciación y Producción Literarias'}
+  expect(instrumentAcademicContext(option)).toMatchObject({modalityCode:null,optativeExitName:null})
+  expect(instrumentAcademicContext({...option,modalityCode:'technical_professional',optativeExitName:'Humanidades y Ciencias Sociales'})).toMatchObject({modalityCode:'technical_professional',optativeExitName:'Humanidades y Ciencias Sociales'})
+ })
 })

@@ -21,11 +21,11 @@ export function thirdGradeLanguageCriteria(topic:SecondaryLanguageTopic,activity
 }
 
 /** Shared action/procedure composition; every grade supplies its own source-backed profile. */
-export function composeLanguageCriteria(topic:SecondaryLanguageTopic,activity:string,description:string,p:{genre:string;target:string;plan:string},availableFeatures:LanguageFeature[]):Criterion[] {
+export function composeLanguageCriteria(topic:SecondaryLanguageTopic,activity:string,description:string,p:{genre:string;target:string;plan:string;oralCreation?:boolean;revisionRequested?:boolean;verifyPrediction?:boolean},availableFeatures:LanguageFeature[]):Criterion[] {
  const task=affirmativeLanguageTask(description),scope=`len-${topic.grade}-${topic.id}`,mode=topicTaskMode(activity)
  const reciting=mode==='ORAL'&&/recit|declam/.test(task)
  const narrating=mode==='ORAL'&&/narr\w*.*oralmente/.test(task)
- const oralCreation=mode==='ORAL'&&(/produc\w*|elabor\w*|realiz\w*.*entrevista/.test(task)||narrating
+ const oralCreation=mode==='ORAL'&&(p.oralCreation===true||/produc\w*|elabor\w*|realiz\w*.*entrevista/.test(task)||narrating
   ||topic.grade>=4&&['discurso-agradecimiento','discurso-recibimiento-despedida','discurso-graduacion','informe-investigacion','instructivo','reportaje','monologo'].includes(topic.id)&&/present\w*\s+oralmente/.test(task)&&!/analisis|analiz|interpret|comentario|leido/.test(task))
  const producing=topic.id!=='novela'&&(mode==='PRODUCTION'||mode==='REPORT'&&['informe-experimento','informe-investigacion'].includes(topic.id)||oralCreation)
  // Rhythm is already assessed by recitation-expression; retain distinct requested forms such as rhyme.
@@ -53,7 +53,7 @@ export function composeLanguageCriteria(topic:SecondaryLanguageTopic,activity:st
   rows.push(...features.map(f=>languageFeatureCriterion(f,scope,p.genre,mode==='COMPARISON'?'comparison':reciting?'recitation':oralCreation?'oral-production':producing?'production':'analysis')))
  }
  if(!producing&&mode!=='COMPARISON'&&!reciting) {
-  const reading=languageReadingProcedures(description,scope,p.genre,p.target)
+  const reading=languageReadingProcedures(description,scope,p.genre,p.target,p.verifyPrediction)
   if(reading.length){
    if(!/identific|analiz|interpret|estructura|tesis|conflicto/.test(task))rows=rows.filter(r=>r.templateId.includes('-feature-'))
    rows.push(...reading)
@@ -61,7 +61,7 @@ export function composeLanguageCriteria(topic:SecondaryLanguageTopic,activity:st
  }
  if(producing){
   if(/planific/.test(task)&&!/redact|escrib|produc|elabor/.test(task))rows=rows.filter(r=>r.templateId.includes('-feature-'))
-  rows.push(...languageWritingProcedures(description,scope,p.genre,p.plan),...explicitWritingProcess(description,scope,p.genre))
+  rows.push(...languageWritingProcedures(description,scope,p.genre,p.plan),...explicitWritingProcess(description,scope,p.genre,p.revisionRequested))
  }
  if(/diccionario/.test(task))rows.push(criterion(scope,'procedure-dictionary','Comprobación del significado',[
   `Selecciona en el diccionario una acepción compatible con el pasaje de ${p.genre} y explica qué indicios permiten elegirla.`,

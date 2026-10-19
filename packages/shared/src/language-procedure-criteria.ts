@@ -42,7 +42,7 @@ const outline:Record<string,string>={
   caligrama:'la distribución de los versos y su relación con la figura',
 }
 
-export function languageReadingProcedures(description:string,scope:string,genre:string,target=content[genre]):ContextualTopicCriterion[] {
+export function languageReadingProcedures(description:string,scope:string,genre:string,target=content[genre],verifyPrediction=false):ContextualTopicCriterion[] {
   const task=affirmativeLanguageTask(description), rows:ContextualTopicCriterion[]=[]
   if(genre==='guía turística'&&/reconstru/.test(task)&&/grafic|tecnologic/.test(task)) rows.push({
     templateId:'guide-procedure-reconstruction',title:'Reconstrucción del sentido de la guía',weight:4,
@@ -67,7 +67,7 @@ export function languageReadingProcedures(description:string,scope:string,genre:
     ],
   })
   if(/anticip|predicci/.test(task)) {
-    const verify=/comprob|contrast|verific|evalu\w*.*predicci/.test(task)
+    const verify=verifyPrediction||/comprob|contrast|verific|evalu\w*.*predicci/.test(task)
     rows.push({
     templateId:`${scope}-procedure-prediction`,title:verify?'Anticipación y comprobación del contenido':'Anticipación del contenido',weight:3,
     observable:verify?`Formula una predicción sobre ${target} a partir de indicios textuales o paratextuales y la contrasta con la lectura posterior.`:`Formula una predicción sobre ${target} y explica qué indicios textuales o paratextuales permiten anticiparla.`,

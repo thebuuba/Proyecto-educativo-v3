@@ -475,6 +475,7 @@ export class GradingService {
         sectionId: true,
         schoolYearId: true,
         subject: { select: { name: true, code: true } },
+        curriculumContext: { select: { optativeExitName: true } },
         section: { select: { name: true } },
         grade: {
           select: {
@@ -482,6 +483,7 @@ export class GradingService {
             sequence: true,
             level: true,
             academicLevel: { select: { id: true, code: true, name: true, sequence: true } },
+            defaultModality: { select: { code: true } },
           },
         },
         schoolYear: { select: { name: true } },
@@ -500,6 +502,8 @@ export class GradingService {
         academicLevelSequence: item.grade.academicLevel?.sequence ?? null,
         academicLevelId: item.grade.academicLevel?.id ?? null,
         academicLevelCode: item.grade.academicLevel?.code ?? null,
+        modalityCode: item.grade.defaultModality?.code ?? null,
+        optativeExitName: item.curriculumContext?.optativeExitName ?? null,
         evaluationProfile: resolveEvaluationProfile(item.grade.academicLevel?.code),
         sectionId: item.sectionId,
         schoolYearId: item.schoolYearId,

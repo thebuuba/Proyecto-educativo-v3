@@ -13,6 +13,7 @@ import fhrThree from '../../../../../data/evaluation-instruments/fhr-grade-three
 import fhrFour from '../../../../../data/evaluation-instruments/fhr-grade-four-contracts.json'
 import fhrFive from '../../../../../data/evaluation-instruments/fhr-grade-five-contracts.json'
 import fhrSix from '../../../../../data/evaluation-instruments/fhr-grade-six-contracts.json'
+import optativeHlmFour from '../../../../../data/evaluation-instruments/optative-hlm-len-four-contracts.json'
 
 const mocks = vi.hoisted(() => ({
   $queryRaw: vi.fn(),
@@ -79,6 +80,24 @@ describe('API service security and version policy', () => {
     row.subject.code = code; row.subject.name = code === 'FRA' ? 'Francés' : code === 'ING' ? 'Inglés' : 'Lengua Española'
     return row
   }
+  for (const task of optativeHlmFour.cases) it(`interpreta y recomienda la optativa HLM de cuarto: ${task.id}`, async () => {
+    const row = secondary(optativeHlmFour.subjectCode)
+    row.grade.sequence = 4
+    row.grade.academicCycle.code = 'secundario_segundo_ciclo'
+    row.subject.name = optativeHlmFour.subjectName
+    mocks.sectionSubject.findFirst.mockResolvedValue({ ...row,
+      grade: { ...row.grade, defaultModality: { code: optativeHlmFour.modalityCode } },
+      curriculumContext: { optativeExitName: optativeHlmFour.optativeExitName },
+    })
+    const service = new EvaluationInstrumentsService()
+    const request = { sectionSubjectId: input.sectionSubjectId, activityTitle: 'Título antiguo sobre células', description: task.description }
+    const interpreted = await service.interpret(user, request)
+    const proposal = await service.recommend(user, { ...request, maxScore: 17.35, participationMode: 'INDIVIDUAL' })
+    expect(interpreted.suggestedActivityType).toBe(task.activityType)
+    expect(interpreted.suggestedActivityType).toBe(proposal.activityType)
+    expect(interpreted.suggestedInstrumentType).toBe(proposal.instrumentType)
+    expect(proposal.criteria.every(r => r.templateId.startsWith('opt-hlm-len-4-'))).toBe(true)
+  })
   for(const [grade,fixture]of [[1,fhrOne],[2,fhrTwo],[3,fhrThree],[4,fhrFour],[5,fhrFive],[6,fhrSix]] as const)for(const task of fixture.cases)it(`interpreta y recomienda FHR ${grade} con el mismo propósito: ${task.id}`,async()=>{
     const row=secondary('FHR');row.grade.sequence=grade;row.grade.academicCycle.code=grade<=3?'secundario_primer_ciclo':'secundario_segundo_ciclo';row.subject.name='Formación Integral Humana y Religiosa'
     mocks.sectionSubject.findFirst.mockResolvedValue(row)

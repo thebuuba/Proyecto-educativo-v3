@@ -57,10 +57,10 @@ export function languageFeatureCriterion(feature: LanguageFeature, scope: string
   return {templateId:`${scope}-feature-${feature.id}`,title:target.charAt(0).toUpperCase()+target.slice(1),observable:progressionLevels[0],weight:3,progressionLevels}
 }
 
-export function explicitWritingProcess(description: string, scope: string, genre: string): ContextualTopicCriterion[] {
+export function explicitWritingProcess(description: string, scope: string, genre: string, revisionRequested=false): ContextualTopicCriterion[] {
   const task = affirmativeLanguageTask(description)
   const rows: ContextualTopicCriterion[] = []
-  if (/\bborradores?\b|\brevis(?:ar|aran|en|ion)\b|\bcorreg\w*/.test(task)) rows.push({
+  if (revisionRequested || /\bborradores?\b|\brevis(?:ar|aran|en|ion)\b|\bcorreg\w*/.test(task)) rows.push({
     templateId:`${scope}-process-revision`,title:'Revisión del borrador',weight:2,
     observable:`Muestra cambios entre el borrador y la versión revisada de ${genre} que resuelven problemas de contenido, organización o escritura encontrados.`,
     progressionLevels:[

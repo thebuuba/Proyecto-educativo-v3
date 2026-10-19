@@ -1593,10 +1593,10 @@
         429,
         430
       ],
-      "status": "PENDING",
-      "provider": null,
-      "evidence": null,
-      "currentRunVerification": "NOT_RETESTED",
+      "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING",
+      "provider": "packages/shared/src/secondary-optative-language.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/optative-hlm-len-4-matriz.json",
+      "currentRunVerification": "AUTHENTICATED_13_SAMPLES_FOUR_FORMATS_20_AND_17_35_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
       "nonApplicable": [
         1,
         2,
@@ -2191,5 +2191,26 @@
       "reason": "Música, Artes Visuales, Artes Escénicas y Artes Aplicadas no equivalen a Educación Artística común."
     }
   ],
+  "reviewedOptativeScopeIds": [
+    "d619d96a-6e30-5201-8264-3bc09502e53e",
+    "a4ba08bf-efdf-5ede-9710-5d1d7ea0c559",
+    "6ebb8ac8-f9d0-5530-9c53-366f87055eee",
+    "b2d7a388-b852-52a5-adf5-d78642f21f96",
+    "95d4757b-5e0a-5821-af62-37d031ccf922",
+    "7e02a1ba-12f8-5862-81ff-0ad9bb34f8cc",
+    "e05229b2-4f79-5cf9-a57e-b0be79bb0cb7",
+    "b1f1b6c5-3136-5287-8d68-e6171cd86a5f",
+    "bd48332d-4af6-5d2d-a5cf-e3be5591436d",
+    "817c41b1-f690-5afe-bbf5-b438791bf45c",
+    "3cfc3564-ea06-53a7-9906-2e7287fdbb44",
+    "ec62cee2-b76d-5582-8cf1-7762b9e5b4fd",
+    "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+    "87268d19-5d32-5426-9396-21ae21fc5bbd",
+    "09e061a8-e3e7-55d8-a7ce-c24364f19401",
+    "5961a313-fc4c-5985-99bd-3e3bf539d5c1",
+    "f39c0cd4-85d9-5aeb-a1d2-74763bf455a9",
+    "1941d633-9878-579b-9cc3-ae913a00dfda"
+  ],
+  "optativeSourceReview": "docs/curriculum/cobertura-secundaria/optativas-fuentes-revisadas.json",
   "complementarySources": "docs/curriculum/cobertura-secundaria/fuentes-complementarias.json"
 }

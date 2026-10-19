@@ -1,0 +1,1460 @@
+{
+  "catalog": "evaluation-2026.124",
+  "method": "Lectura completa de61 textos únicos con cinco niveles,31 paquetes de formato/puntuación y72 correspondencias de consignas; reconstrucción exacta de288 instrumentos comprobada por read-optative-hlm-four.mjs. Relectura de variantes cambiadas después de las regresiones. Relectura final de las cuatro definiciones de poetry-figures-only: dos reconocimientos independientes sin explicar función; nuevos textos59/60 completos, máximos8.68/8.67 y31paquetes exactos. Total62textos únicos;284huellas anteriores permanecen idénticas.",
+  "reviewer": "Autor; revisión propia sin subagentes",
+  "findingsFixed": [
+    "Intención comunicativa omitida al escuchar con vocabulario",
+    "Niveles de creación que exigían explicación adicional",
+    "Gerundio dependiente convertido en análisis independiente",
+    "Rasgos de personajes exigidos al distinguir quién habla",
+    "Revisión limitada a ortografía ampliada a contenido y organización",
+    "Análisis añadido a recitación por la palabra intención",
+    "Escala narrativa convertida en frecuencia de conducta",
+    "Identificación de dos figuras exigía función y sugería rúbrica siempre; se separan evidencias y se sugiere cotejo, conservando formato manual."
+  ],
+  "minorDeferred": [
+    "Repetición de conectores y artículos en descripciones compuestas; no cambia evidencias ni alternativas."
+  ],
+  "items": [
+    {
+      "caseId": "brief:poesia-romantica",
+      "instrumentType": "rubrica",
+      "sha256": "5d80c96b97e6c7278f1ef820b1a95d1a02b32c12c6e5655696fb43f3252f8b82"
+    },
+    {
+      "caseId": "brief:poesia-romantica",
+      "instrumentType": "lista-cotejo",
+      "sha256": "be115e732089e0729260144ed1d277d31c1bf7f99027a0973736bc2e8e19c4eb"
+    },
+    {
+      "caseId": "brief:poesia-romantica",
+      "instrumentType": "escala",
+      "sha256": "1ca9753a96ec2a4829e651904637dba7630922852cb25849c301b1c67b4e49cf"
+    },
+    {
+      "caseId": "brief:poesia-romantica",
+      "instrumentType": "lista-ponderada",
+      "sha256": "19ffaea5cb86b262527cebcb05215324ed0dde66e2c99b366d596c99f0ff98a2"
+    },
+    {
+      "caseId": "brief:novela-viajes-aventuras",
+      "instrumentType": "rubrica",
+      "sha256": "92e076d61713178755bf9690ba74f5e281cc13741c15ad536d04f76d2430ecc4"
+    },
+    {
+      "caseId": "brief:novela-viajes-aventuras",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4171d0dfaa57c9b268e34628720886e1102559bc12be812f14eb3dd7cf9af80c"
+    },
+    {
+      "caseId": "brief:novela-viajes-aventuras",
+      "instrumentType": "escala",
+      "sha256": "6a72b752f6a4ad3775405e64fac38d9c285d47978f1d5b58612434c5fa4264e2"
+    },
+    {
+      "caseId": "brief:novela-viajes-aventuras",
+      "instrumentType": "lista-ponderada",
+      "sha256": "96ad4995df11b4825e2367db826231aacc6a8812164251849731a35ae201a959"
+    },
+    {
+      "caseId": "heroic-tone",
+      "instrumentType": "rubrica",
+      "sha256": "495a52ff8719b1cf3f8cd0b9348226e1643dbbf79e7cbcceb93fc8fe92f65c89"
+    },
+    {
+      "caseId": "heroic-tone",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ba63f9e7039d0fc380c39d9351dd0b77f7a74d082beec5d6c3e0ace3afd524fc"
+    },
+    {
+      "caseId": "heroic-tone",
+      "instrumentType": "escala",
+      "sha256": "0473c5e49ebb868454aff4ea39b9ccfd4d7e5fd6b7fb06443c774f8e5ac0d6a3"
+    },
+    {
+      "caseId": "heroic-tone",
+      "instrumentType": "lista-ponderada",
+      "sha256": "61fa9cf67b73d08be9c038a235b3d7b1a50bbdc3e803368c3bb60f5051c810af"
+    },
+    {
+      "caseId": "intimist-tone",
+      "instrumentType": "rubrica",
+      "sha256": "29f6ce22719cc97fb58037a7de6e1a9bb42202b41f2b88a5100c65b8cce82db1"
+    },
+    {
+      "caseId": "intimist-tone",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5e4c5ceee227ee39cbd516d21bd61d72f0012d248dbe8dcd364d7c8186d926d5"
+    },
+    {
+      "caseId": "intimist-tone",
+      "instrumentType": "escala",
+      "sha256": "d2f9d204e40a70478df24ee7825137a8e05962097000ba1ddd9f30f36fb5e9bf"
+    },
+    {
+      "caseId": "intimist-tone",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ebfc5687bc841f9b6bef753056d2a735f04b129b8ae882dcfec8435545fcfdb6"
+    },
+    {
+      "caseId": "poetry-adjectives",
+      "instrumentType": "rubrica",
+      "sha256": "e3b40662802248f4eb8a534d6157c662d96038572017627fb1d99ed34d38fd2c"
+    },
+    {
+      "caseId": "poetry-adjectives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b8909de6758af4b89bba0650f38891f3e6ad4a5f259bc7890a28158e42d5d32e"
+    },
+    {
+      "caseId": "poetry-adjectives",
+      "instrumentType": "escala",
+      "sha256": "a1b77e1558f0df118147a8806b3f395ffff977a1b96cfa4bb8eab19a350692d3"
+    },
+    {
+      "caseId": "poetry-adjectives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ae0f96156bd7caa1216a278c74d05937022fc34d58527a3d91d5176cd85a381c"
+    },
+    {
+      "caseId": "poetry-vocabulary",
+      "instrumentType": "rubrica",
+      "sha256": "c09cebd2ab837b14f2df082cd4d8f7c79f8f9c719e2ad5fdae3f3753e4304754"
+    },
+    {
+      "caseId": "poetry-vocabulary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "41acab9972f52804ed82eeb411735e760a78c125fe7bdd73c9204a5c34530092"
+    },
+    {
+      "caseId": "poetry-vocabulary",
+      "instrumentType": "escala",
+      "sha256": "becaa3a993bf18b3830b4bd67a08d921f239849222b7b50c4997317e76c4e6b8"
+    },
+    {
+      "caseId": "poetry-vocabulary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d0d70411b06056a25c84b0eadfb9bb5d0b8faa4e58b5c4787b5ba3a03389c2b3"
+    },
+    {
+      "caseId": "poetry-figures",
+      "instrumentType": "rubrica",
+      "sha256": "7e9c77073575bac32671d2d3e46180612dbfec85a8424df06e6adde9e1ca623f"
+    },
+    {
+      "caseId": "poetry-figures",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bf589d9d00a7e0e8c9212d2256f00d9a4ff0d6c86a5f021a43c2d5ba92de6ffe"
+    },
+    {
+      "caseId": "poetry-figures",
+      "instrumentType": "escala",
+      "sha256": "6d1bad06a127c160988d77f7d607815ff1fcf08f1a238d1fa1ce47daebea5edb"
+    },
+    {
+      "caseId": "poetry-figures",
+      "instrumentType": "lista-ponderada",
+      "sha256": "563c6d38a1ed5ef94f0f0d1c373604a95914f10eda7ea2361be5bf67b852656f"
+    },
+    {
+      "caseId": "poetry-exclamations",
+      "instrumentType": "rubrica",
+      "sha256": "d7bf46c0553469235dda9386e9dece7d2fd95d39d890561d8428459f5e8cf3af"
+    },
+    {
+      "caseId": "poetry-exclamations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6df475fb6886f6389e553daf162c2f85d004180a11486b12c50d2c369e20e6cf"
+    },
+    {
+      "caseId": "poetry-exclamations",
+      "instrumentType": "escala",
+      "sha256": "d8b834a8ec08a1e1a9e410c606f5533d66603c0955656d9dcc26543230b8b311"
+    },
+    {
+      "caseId": "poetry-exclamations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e9c3f3f1efe309dfb2887940813ebcd73c251ee1b5154378c204e8e4eebf5e71"
+    },
+    {
+      "caseId": "poetry-themes",
+      "instrumentType": "rubrica",
+      "sha256": "4791ae2128b76474a38c5cdcfad6ec4aacf7aaca2baaa05a06a579423220b71b"
+    },
+    {
+      "caseId": "poetry-themes",
+      "instrumentType": "lista-cotejo",
+      "sha256": "eb7622b73e716db0c1d13c37c6cf73caceac2a71ff2e3386f1bdc276c050ea93"
+    },
+    {
+      "caseId": "poetry-themes",
+      "instrumentType": "escala",
+      "sha256": "d09e8e0c9d9eed41bf1013ef0bcdb4acc17a5702e7b1e8ebdd18d6268765f670"
+    },
+    {
+      "caseId": "poetry-themes",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c6547e8d853522f24943dcbb9e50d2923f6e000587459971d262148dede205e7"
+    },
+    {
+      "caseId": "novel-structure",
+      "instrumentType": "rubrica",
+      "sha256": "6066710c70fc46fffa9e558a11742de510312c74d15a4170b44425fd39e00c14"
+    },
+    {
+      "caseId": "novel-structure",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d6b4c5ec19363943abded02d894056de26df118d2d87d584f540309643592a6a"
+    },
+    {
+      "caseId": "novel-structure",
+      "instrumentType": "escala",
+      "sha256": "4da862b6ccb7457b424590cb01e0ce6fdb498cf24733866832bcf3e58e8f02b4"
+    },
+    {
+      "caseId": "novel-structure",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3ea1aaa2b27bbeb3d18a30509f8c1f650f7095ed72e947be84bb05b6456fb908"
+    },
+    {
+      "caseId": "novel-protagonist",
+      "instrumentType": "rubrica",
+      "sha256": "7c620caa640cea51522606ab41b7c83f5e5cda0ccedce2d35f00d4fc15357722"
+    },
+    {
+      "caseId": "novel-protagonist",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7d2a1614db0090c1986ae6569dc8ba93fd4f838119e820ace1a3a86e25fc37f0"
+    },
+    {
+      "caseId": "novel-protagonist",
+      "instrumentType": "escala",
+      "sha256": "17c1e49ad681f98b3d2bac7d34eb3cb18f2e461e115518794840349ee48db526"
+    },
+    {
+      "caseId": "novel-protagonist",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7fd36de8f0c46f4955e5947aa2494d71fd937c51ab390229f3fb7580d9ae0fc4"
+    },
+    {
+      "caseId": "novel-adventures",
+      "instrumentType": "rubrica",
+      "sha256": "43efc1f31c79161176cf88428969d9b5c35509b906a4e1990c9333d025a75b2a"
+    },
+    {
+      "caseId": "novel-adventures",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d5453d1c98ced8a60a3a75c01739e00e1e54a049cb9e0eeea940a2cf58ff1f08"
+    },
+    {
+      "caseId": "novel-adventures",
+      "instrumentType": "escala",
+      "sha256": "8b00b76eab06fbf59391bb9aa229d025c6eaf6958f999fd8b1391ae1d4e40f09"
+    },
+    {
+      "caseId": "novel-adventures",
+      "instrumentType": "lista-ponderada",
+      "sha256": "133f1833c7ee16698fd16c581cd46966df67a8a1f49f144e22845d4d4c98f1dc"
+    },
+    {
+      "caseId": "novel-characters",
+      "instrumentType": "rubrica",
+      "sha256": "c6293d26c92bbd103d1f7b1b545132fe5e274989565e12cb7845fe85b6ceeb90"
+    },
+    {
+      "caseId": "novel-characters",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c080a1365141602b6c2f7d172ca83e9ebe9f8be48c5d7041dbfe936e364756fe"
+    },
+    {
+      "caseId": "novel-characters",
+      "instrumentType": "escala",
+      "sha256": "a257c0e6b727307184db7f8e167eb3c72c02eaff91d1cf7072cd08be998a36fa"
+    },
+    {
+      "caseId": "novel-characters",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c786f22e65686ee1c8b4130db8b8aa21a2f07915716f32471826ae7558021f50"
+    },
+    {
+      "caseId": "novel-adjectives",
+      "instrumentType": "rubrica",
+      "sha256": "4c79f7d4cfab3dd471286fc6020459a522a5d9de6cac4a9fb3c0bf43087542b0"
+    },
+    {
+      "caseId": "novel-adjectives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e913dfcd99970daf04c2eafc86a2a7bcfde6ead2e1397f12b45b869fde449072"
+    },
+    {
+      "caseId": "novel-adjectives",
+      "instrumentType": "escala",
+      "sha256": "4c38dd16ea7a5c8505c6133d92fa52246702dcfad0f55a934c24aecb42b21d37"
+    },
+    {
+      "caseId": "novel-adjectives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1e2efc522e688125e2d4ae2dd7bb5151149b7c772b41de21d6bcbc3ae6578aa6"
+    },
+    {
+      "caseId": "novel-actants",
+      "instrumentType": "rubrica",
+      "sha256": "92dac36a2f6770aa110843aa3e2de4073cc2805dba1fec8091a78b3186ef4656"
+    },
+    {
+      "caseId": "novel-actants",
+      "instrumentType": "lista-cotejo",
+      "sha256": "41196f5b7e8b3fd398e2f2fd3a5ec6cf699419a345e58605b6ae807aeaf68940"
+    },
+    {
+      "caseId": "novel-actants",
+      "instrumentType": "escala",
+      "sha256": "285dbac704cb33f9a86446416e735d994609297be6519bcf863eb88fa4d892d9"
+    },
+    {
+      "caseId": "novel-actants",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1460b9f1a08a633cb553c89c3d41b28e2d206ace548e436b98603114539e9cf5"
+    },
+    {
+      "caseId": "novel-narrator",
+      "instrumentType": "rubrica",
+      "sha256": "79029a623131eb6d0e21c5555fa8e4387105716b03e36595efe5453946bcb304"
+    },
+    {
+      "caseId": "novel-narrator",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e5b18b134accbce61dae4f147bf7bb3397256867cc4c5f987573d09a7904a993"
+    },
+    {
+      "caseId": "novel-narrator",
+      "instrumentType": "escala",
+      "sha256": "2d7fcff84cfd5ad41f2a7c7fae663a4070eff2e66a92574af2dcb6bcf934f5b0"
+    },
+    {
+      "caseId": "novel-narrator",
+      "instrumentType": "lista-ponderada",
+      "sha256": "07a106d0f3844320004fd4376ed1576c0930b8271c53e2a4670c3ee83933c938"
+    },
+    {
+      "caseId": "novel-themes",
+      "instrumentType": "rubrica",
+      "sha256": "b4e76bd931b07eaa0b2146f828edcbcdf521d7176d1337cbdf19f9a1ab9f1c09"
+    },
+    {
+      "caseId": "novel-themes",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ac5f9d4effe3fda252c33d631a5b3bfcd854d3609180b844f0c19b0797d5e2f3"
+    },
+    {
+      "caseId": "novel-themes",
+      "instrumentType": "escala",
+      "sha256": "06bb5b55b3e10573169e5a34683a1ffdc822d9715ba32516fa084cb2c51a81ee"
+    },
+    {
+      "caseId": "novel-themes",
+      "instrumentType": "lista-ponderada",
+      "sha256": "610de4eb6e121813686c0e9c19f84d49c6801cbb9b428be45add629783ef5267"
+    },
+    {
+      "caseId": "novel-sequences",
+      "instrumentType": "rubrica",
+      "sha256": "869c9e4f81f6d76981d35d726e6c7f844f7d25e30cd7e2a28bdd6e8c71f5118f"
+    },
+    {
+      "caseId": "novel-sequences",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e909aada16eb88fe5807a7ad17ebd3dbd660938e2f5eac005cb55e1c0bae94f9"
+    },
+    {
+      "caseId": "novel-sequences",
+      "instrumentType": "escala",
+      "sha256": "3b63a32b46178c08be8fa8c2b93a17ef10e7a420f0e31fd62c3eee06ecb236c1"
+    },
+    {
+      "caseId": "novel-sequences",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d410caf6072e6283c539b707b5cfd2a09bc0a8968e57e6d3ac4de16079ab81b8"
+    },
+    {
+      "caseId": "novel-setting",
+      "instrumentType": "rubrica",
+      "sha256": "06ff25552ca89eefe772e0f16793d99c53a198c139052c6713adfad4d4277919"
+    },
+    {
+      "caseId": "novel-setting",
+      "instrumentType": "lista-cotejo",
+      "sha256": "777ecd9605d48f280c1ed0876d1e902251997077f9228e7ee00ec668cd8e6a3c"
+    },
+    {
+      "caseId": "novel-setting",
+      "instrumentType": "escala",
+      "sha256": "e5a758840b28bdef59fcca87d1f20653c378e733038866c20b7b7759e8372bab"
+    },
+    {
+      "caseId": "novel-setting",
+      "instrumentType": "lista-ponderada",
+      "sha256": "412d04e456fa75dbb123de0c201b14b66f5139418b13bef6dbce782e73d2482c"
+    },
+    {
+      "caseId": "novel-plot",
+      "instrumentType": "rubrica",
+      "sha256": "eac021d64eb7aef860572ed0d2ec6999dbbe01fedc93084e609e21fe564dbdeb"
+    },
+    {
+      "caseId": "novel-plot",
+      "instrumentType": "lista-cotejo",
+      "sha256": "65fe7c1f203bd050bec97987a22761a3fa50a2cc8cc803ff283412559b6bcf61"
+    },
+    {
+      "caseId": "novel-plot",
+      "instrumentType": "escala",
+      "sha256": "612e13d76fc916368909201821e4ed089266d19fc43f11f1cac4ae6e9b31ac3a"
+    },
+    {
+      "caseId": "novel-plot",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f1640260c4f7047dbebe1f6f2ac56feb435ecd732b210b7dd23904cd1c7c5917"
+    },
+    {
+      "caseId": "novel-chronology",
+      "instrumentType": "rubrica",
+      "sha256": "44e9c9b08abc7e17aa0d2367363e286459772456c292cc4f8d65dd6a6718b35e"
+    },
+    {
+      "caseId": "novel-chronology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e46a29f6aea61c8f68fff6444ba9b41b767d261abe999907ec8c1d78bc5506f5"
+    },
+    {
+      "caseId": "novel-chronology",
+      "instrumentType": "escala",
+      "sha256": "36346ecdcab68e36c6c389aa2eb3b9ef411496f6c2cc64476622130e40e1539b"
+    },
+    {
+      "caseId": "novel-chronology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8e1245fd7b1cee9e85a30eb7ca147d15f8631a6a1a41ff8be84a25d6aa0c982c"
+    },
+    {
+      "caseId": "novel-connectors",
+      "instrumentType": "rubrica",
+      "sha256": "791112f6d247d4a00b496bc493653a1df9c1130f64e6039ac9959a446de83577"
+    },
+    {
+      "caseId": "novel-connectors",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9844dde358e0daa0260b380306741efa5c115b117c742305f2a957d7d4e87bb0"
+    },
+    {
+      "caseId": "novel-connectors",
+      "instrumentType": "escala",
+      "sha256": "73bccfb1e89dd817a59edbccd9992e56013635985f72462b09d04a3c2677f9ba"
+    },
+    {
+      "caseId": "novel-connectors",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2ad5e463627e5b55cdb0880c33569fd52ec79d55cb7c3e91daedbaaeda8a3a83"
+    },
+    {
+      "caseId": "poetry-listening",
+      "instrumentType": "rubrica",
+      "sha256": "ec67a559e992bde081db631451b99790c2df6b5e0925357b3b24f17214b9c8b2"
+    },
+    {
+      "caseId": "poetry-listening",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1c210b1639394a97d9b3cd9b4b1d10db542b42472d6fae94f3d28ecf4140b9ad"
+    },
+    {
+      "caseId": "poetry-listening",
+      "instrumentType": "escala",
+      "sha256": "73bb4e62b56d8f2dbdfe7d58ce87c576e7f49e48a9da522e58bcef7393b77506"
+    },
+    {
+      "caseId": "poetry-listening",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4da131d75d62196ddc83ac57e6390bb67b120d073e6cfd93c22472f4a099941b"
+    },
+    {
+      "caseId": "poetry-oral-paraphrase",
+      "instrumentType": "rubrica",
+      "sha256": "0d176a8a0a2adf0905d08954625d83695bb54820b09088b285b9b44d8726e736"
+    },
+    {
+      "caseId": "poetry-oral-paraphrase",
+      "instrumentType": "lista-cotejo",
+      "sha256": "21ddccce1930de79d377a6fcdb9d245ec0260de82b8f126a9ff3c135cb16cd3b"
+    },
+    {
+      "caseId": "poetry-oral-paraphrase",
+      "instrumentType": "escala",
+      "sha256": "1fe601e4b7db8375d4b2ba0f9e069a9c50b53dc78bca8f3c8f49b65c2ffee8ae"
+    },
+    {
+      "caseId": "poetry-oral-paraphrase",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f0db62906fc6f2765271adeb06b2b47ce3e483a16a972a7eda33d517e2c6219f"
+    },
+    {
+      "caseId": "poetry-recitation",
+      "instrumentType": "rubrica",
+      "sha256": "4b7dea4d5b41bb8c6915b85ca6350855aa24ed5a2bf7694c7522625053eef210"
+    },
+    {
+      "caseId": "poetry-recitation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3f23a35e8f3660e57e1bf6d542f1774c28753c9842d93b08e6fe75c4eec90499"
+    },
+    {
+      "caseId": "poetry-recitation",
+      "instrumentType": "escala",
+      "sha256": "53bfaa8ff344faf439388234ba6ba964f900f10f79221fb3c5ca3ec67be7d7b7"
+    },
+    {
+      "caseId": "poetry-recitation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2cc819855b7797a4cf3d16a5c6788a4b8ad6cd036fcb2754c4dd76e00e429395"
+    },
+    {
+      "caseId": "poetry-recitation-voice",
+      "instrumentType": "rubrica",
+      "sha256": "51d64d4ab20e74627c3fa32f68646a0f7bda0f4d41245a84f2e80996560faf11"
+    },
+    {
+      "caseId": "poetry-recitation-voice",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b7b3b4e1f02a231fc2a3b358a8b663fde4c63522aa54690dcb084eb22bcfddba"
+    },
+    {
+      "caseId": "poetry-recitation-voice",
+      "instrumentType": "escala",
+      "sha256": "f24146435ece3f313c94ab3420b11f56fb32fa573b28000c4f9effa1174040c9"
+    },
+    {
+      "caseId": "poetry-recitation-voice",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a47362adbcd348066072a4e4b3bd0acdafa1a182ffac395db7abd9bfa7327b9e"
+    },
+    {
+      "caseId": "poetry-reading-prediction",
+      "instrumentType": "rubrica",
+      "sha256": "7d7829e8f710f1c7f66302a02bd23047e30508387f539529cdcd4c0f2a6b392b"
+    },
+    {
+      "caseId": "poetry-reading-prediction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9bb3cd069872af28ad1d7e09f8ae89f0cf929ce0c07208dc9375aab1ec4d91e2"
+    },
+    {
+      "caseId": "poetry-reading-prediction",
+      "instrumentType": "escala",
+      "sha256": "ae1c8dba017a8be486a0590fa2e69087fd1aa12cbdf4ccfe26885d921bdf2cdf"
+    },
+    {
+      "caseId": "poetry-reading-prediction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5a4638dee2d507c0d8329fe7e666c47188735d5a66e6d69fb4bb2e50037f0b60"
+    },
+    {
+      "caseId": "poetry-style-inference",
+      "instrumentType": "rubrica",
+      "sha256": "2d421d40ae8c010e18993efe22799688a4cafcf20c7d09dd0bbbd19ae55d24fc"
+    },
+    {
+      "caseId": "poetry-style-inference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4230f700e490b5872bae964e8e3c31f5b3198a54fa57315226ef1efa62b962c4"
+    },
+    {
+      "caseId": "poetry-style-inference",
+      "instrumentType": "escala",
+      "sha256": "78c49a19dab49689622a9cd8da2c62ff3607245e1813577011c35175d199f28a"
+    },
+    {
+      "caseId": "poetry-style-inference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e2b413462dc9e5657666f0c86a0a25ced1d6d8df45e7cd165207a7e943ac4be0"
+    },
+    {
+      "caseId": "poetry-writing",
+      "instrumentType": "rubrica",
+      "sha256": "159894c583aba1dbd37ad46ecbbd2745ed5bed782c313261a0180c890d232f02"
+    },
+    {
+      "caseId": "poetry-writing",
+      "instrumentType": "lista-cotejo",
+      "sha256": "21a11acde51025948cf363e59de93f2518197e9911ed2ede3dd3a11a75b5771c"
+    },
+    {
+      "caseId": "poetry-writing",
+      "instrumentType": "escala",
+      "sha256": "804191719bbd90018e509e48b63f80dd3ec2c72fc88386f2351ddb4cd1e2f376"
+    },
+    {
+      "caseId": "poetry-writing",
+      "instrumentType": "lista-ponderada",
+      "sha256": "af1998fc8a7a932cb663d49d29973e931ba997024dd3741f84004b298a25ac8c"
+    },
+    {
+      "caseId": "poetry-draft-revision",
+      "instrumentType": "rubrica",
+      "sha256": "b7a8f11197a6cf9d8f7e72e7d440a43852777b9765fd67160e0d679b6408bd68"
+    },
+    {
+      "caseId": "poetry-draft-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ef5094742e74e2d19c55b06dd9184540dd0b70adb16d61774bcb2bf751415c05"
+    },
+    {
+      "caseId": "poetry-draft-revision",
+      "instrumentType": "escala",
+      "sha256": "65d3941f8fbd4db436fb22282fd68485d023cac9ae06cb786b8b0d02a982095a"
+    },
+    {
+      "caseId": "poetry-draft-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "28c5225a6f4b6ca37b2fabec2a7fee17547af8c42afd49f4af2ae2dc077ca973"
+    },
+    {
+      "caseId": "novel-listening",
+      "instrumentType": "rubrica",
+      "sha256": "67f58331c667a4b6c3dde6f15176653b3f3ee56fedd7346288baa7f91be81a0e"
+    },
+    {
+      "caseId": "novel-listening",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7c4b7da228158c5bb9c42aa3f0d04d5ffbc4b0dd3b69af8e3fd106258c471829"
+    },
+    {
+      "caseId": "novel-listening",
+      "instrumentType": "escala",
+      "sha256": "5db6febf2a71f12f9b8293fb7e590c9791558098f373e2a836ed700532c9e13b"
+    },
+    {
+      "caseId": "novel-listening",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5814aee8151897e142963df7eb8243f7abd53d96472e702aee0b1a67dd495932"
+    },
+    {
+      "caseId": "novel-listening-inference",
+      "instrumentType": "rubrica",
+      "sha256": "27fc36053941db28321a51708f11bc0ef3b6fed8856b6912f35e6ed5e2f5d911"
+    },
+    {
+      "caseId": "novel-listening-inference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2c088b87e728ee338ef3b203cbfdb8676c3b77060935f2c5e9530cc75ceb961d"
+    },
+    {
+      "caseId": "novel-listening-inference",
+      "instrumentType": "escala",
+      "sha256": "21d1b6b428ea0f34581a9fc618620bf18f547ee6cf7924754299c886eee3219f"
+    },
+    {
+      "caseId": "novel-listening-inference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7abb0949b6d1dfa41df1d4eaffd6bfd7a11a2186fd85f21e10341fb692b10850"
+    },
+    {
+      "caseId": "novel-oral-paraphrase",
+      "instrumentType": "rubrica",
+      "sha256": "5cd521aa22b5af4015cffbeba66e6bb9928fae8f9bc10010554543dfcc959266"
+    },
+    {
+      "caseId": "novel-oral-paraphrase",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2de22cd6c70f77ca533cb794c46f858a3949628ca4e610834cf7f074e4e5cb95"
+    },
+    {
+      "caseId": "novel-oral-paraphrase",
+      "instrumentType": "escala",
+      "sha256": "6000355fa5fffd4ab1f62cf82a6f39391e8622d1607ee135d7a83781a5e31366"
+    },
+    {
+      "caseId": "novel-oral-paraphrase",
+      "instrumentType": "lista-ponderada",
+      "sha256": "535c29b04d3e8fe5a96f215e5ebe3416f828fe5a48e4029d1dba35aac7555e21"
+    },
+    {
+      "caseId": "novel-oral-planning",
+      "instrumentType": "rubrica",
+      "sha256": "b4ea8a37e3c8dab8ac149fbd760088a3d7efc22bb18019eb40fc49947ed9f0c1"
+    },
+    {
+      "caseId": "novel-oral-planning",
+      "instrumentType": "lista-cotejo",
+      "sha256": "390eaa897c0481338021c7ab39a2878ddd07663c6f18e4472a77d9c4faa5d7c0"
+    },
+    {
+      "caseId": "novel-oral-planning",
+      "instrumentType": "escala",
+      "sha256": "4348456e743f6096820dfd94d4fb4ef0180a5a61eedbd439bd84df335ae9a636"
+    },
+    {
+      "caseId": "novel-oral-planning",
+      "instrumentType": "lista-ponderada",
+      "sha256": "87aca3620e7a680c46c42855dc31b291f7a6552c96c103c2d8dad4d583d49c36"
+    },
+    {
+      "caseId": "novel-oral-narration",
+      "instrumentType": "rubrica",
+      "sha256": "339767be98d5009b0381010e5c3065c22e147a62ea4c4eafbbec6c960a834991"
+    },
+    {
+      "caseId": "novel-oral-narration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "040c08998ee12451e0b422c784901a1e89abafdef4a238162dc5a1b490fdb52b"
+    },
+    {
+      "caseId": "novel-oral-narration",
+      "instrumentType": "escala",
+      "sha256": "778c78d810a6899f037ba37bdac6b15d0c326a489fdee3bd2429c04ebb2d968a"
+    },
+    {
+      "caseId": "novel-oral-narration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "295303d49ba2d072c4e1cbcdcaeffaf95dc8fc137d1a7486de7977b827003014"
+    },
+    {
+      "caseId": "novel-reading-prediction",
+      "instrumentType": "rubrica",
+      "sha256": "850b8389c188009cfe68a50264713bcec87180de57c907cfcfa7e9fe9e8a0a5d"
+    },
+    {
+      "caseId": "novel-reading-prediction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "14b49eb9dc5b1509f47560e10558842c2a6367488fb510d6ab330d7cff8e24d0"
+    },
+    {
+      "caseId": "novel-reading-prediction",
+      "instrumentType": "escala",
+      "sha256": "df04e24edad0f1518e2e04d2c86dc36d946a4bb4f336b54f49af3ca76c2f12c7"
+    },
+    {
+      "caseId": "novel-reading-prediction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2d552d166a3eef14592fe189140741d7e2e677960394faabcffe9922a053c33f"
+    },
+    {
+      "caseId": "novel-reading-inference",
+      "instrumentType": "rubrica",
+      "sha256": "48521f77ba50e449ae3488f2cad9ec482f741fb8597218a28b69f1b41dcaafc6"
+    },
+    {
+      "caseId": "novel-reading-inference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "46b860c08da3832f431b61d71c9583efd103e12b6a5a455043a7f092eafd1783"
+    },
+    {
+      "caseId": "novel-reading-inference",
+      "instrumentType": "escala",
+      "sha256": "ac8bbce23ab4c5543cedc947d46e9dc32023d3d39187ef8ff7edc5f3a798d516"
+    },
+    {
+      "caseId": "novel-reading-inference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "53c4021e05fcb00abff8402cad60220ae59c55d7d50e93d71b545133c675866e"
+    },
+    {
+      "caseId": "novel-reading-characters",
+      "instrumentType": "rubrica",
+      "sha256": "77eeef9404a84ca235f4b49227b2d828b64191f22b04d0d498d1a2f14f9ea4ae"
+    },
+    {
+      "caseId": "novel-reading-characters",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b46a64d2f310898728585a71e21a17aff836dcb58c34c45a5f7e78394f7510a1"
+    },
+    {
+      "caseId": "novel-reading-characters",
+      "instrumentType": "escala",
+      "sha256": "f172d45259c1f6e720fd899a1e6baf4a73479c5328711a9c49c59e9840cad8f0"
+    },
+    {
+      "caseId": "novel-reading-characters",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3d969da1faf9f51083b66ac3d64e54ae73d52d3806aabff9313254663c88ca25"
+    },
+    {
+      "caseId": "novel-reading-summary",
+      "instrumentType": "rubrica",
+      "sha256": "2e8409eb9c4167b71696802970c2a3b5ba9ccccc454ee45c31a399a8a3fed966"
+    },
+    {
+      "caseId": "novel-reading-summary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c75134377aae668037bd54cfc97b721ad371bcb9bac32715959e69ee6d466af3"
+    },
+    {
+      "caseId": "novel-reading-summary",
+      "instrumentType": "escala",
+      "sha256": "0dd8f06ddef88ce5a7c91556848c5c85019fdd4dbdfd3cfc4c8c6d6eb34cc296"
+    },
+    {
+      "caseId": "novel-reading-summary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7f2bc7d9a10a9837e2ad3f3653dca8844ea417cd03d2b9c3dc894fd633eb8aaa"
+    },
+    {
+      "caseId": "novel-writing-planning",
+      "instrumentType": "rubrica",
+      "sha256": "949a7986ecd2b52e628daad3767275b45604e4bf89a7067933aff807ed516a35"
+    },
+    {
+      "caseId": "novel-writing-planning",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a6e99ae25bc168da5347a28c8c29ad5102d8bde0ef71c26540d571c1fe2b06d1"
+    },
+    {
+      "caseId": "novel-writing-planning",
+      "instrumentType": "escala",
+      "sha256": "5cbfe1d3b50b348b6d1e2b54e371459e18b0aaed3321c56d3b2c036140c6c666"
+    },
+    {
+      "caseId": "novel-writing-planning",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6d354d31173c385e4ce029ee000e932e794d6623c28fe387f02e41e590e25464"
+    },
+    {
+      "caseId": "novel-writing-voices",
+      "instrumentType": "rubrica",
+      "sha256": "f549309c4fd6050b0c44270d3b298fbc177ccf33f4459b860faf7b71253b1d72"
+    },
+    {
+      "caseId": "novel-writing-voices",
+      "instrumentType": "lista-cotejo",
+      "sha256": "14f5f2f701f9940a237bd12a724d2fa6bf4380f9526c10c00810148fae0e25bd"
+    },
+    {
+      "caseId": "novel-writing-voices",
+      "instrumentType": "escala",
+      "sha256": "d1084f4cd1b44dfff246545fb790313dfe1e61c056f91b85b779125c32ccc82e"
+    },
+    {
+      "caseId": "novel-writing-voices",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5802b14eb4968b842ff48b76ba8b6181883a15967f85f81f274ab6221b8058e9"
+    },
+    {
+      "caseId": "novel-draft-revision",
+      "instrumentType": "rubrica",
+      "sha256": "c6958d58e54ce35fee7b0641a3354712dd51cdd42eccfa26e80a3d96c7619454"
+    },
+    {
+      "caseId": "novel-draft-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ebe0f9ef40c65868979e1f417c8fedb708700872083dd8c34eadb0d53e461c3d"
+    },
+    {
+      "caseId": "novel-draft-revision",
+      "instrumentType": "escala",
+      "sha256": "0c39f2e1c621277b40b250c47730142c7177a8e9b52f65139bf0d0b0bb3cba98"
+    },
+    {
+      "caseId": "novel-draft-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "14ff8eed6cedb7d2ade0b3b2e667e058b2c124400e0b91ae7e3e0c7e0864e0f2"
+    },
+    {
+      "caseId": "optional-ab0c58cb",
+      "instrumentType": "rubrica",
+      "sha256": "21774f269ad84c2c412ace9f81e017efd3fc5bd61e06f69e23d2fada7ab7b394"
+    },
+    {
+      "caseId": "optional-ab0c58cb",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f7e72f3f501be3fc1840ea54c576c453a7e1296c61f7ff470b2e22d48a9438f4"
+    },
+    {
+      "caseId": "optional-ab0c58cb",
+      "instrumentType": "escala",
+      "sha256": "3f7ffc78e69968984acc6707776ccd92e52cc4718d62703f6de902aa0bb39266"
+    },
+    {
+      "caseId": "optional-ab0c58cb",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d1ae5ffa361bd8d8532c77433a8808f18f0a14e18552d5c96fe7caa066fb30ae"
+    },
+    {
+      "caseId": "optional-8684fbf9",
+      "instrumentType": "rubrica",
+      "sha256": "1cae0fb82296546c041995acde0a4ce3201017f23459c8f0a5dff3dd89e98251"
+    },
+    {
+      "caseId": "optional-8684fbf9",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9e2e71ae140094e3743c95071bad53a05e59b2493be63e21ae6f5d50fa4a7f4b"
+    },
+    {
+      "caseId": "optional-8684fbf9",
+      "instrumentType": "escala",
+      "sha256": "1fc848ae6a1fffa597d84b61815f38eceb99f77510c5edc31e7b1ea1bc5ef8ff"
+    },
+    {
+      "caseId": "optional-8684fbf9",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7e3bc2892107f773da6723b0b159ded009f86d511b8dde7ca11471527c2e4c63"
+    },
+    {
+      "caseId": "optional-89f978d3",
+      "instrumentType": "rubrica",
+      "sha256": "b68ad54585a73ade1f0a27a07f5a85174dbc6ad270f54d5823b1cb9e18408b3b"
+    },
+    {
+      "caseId": "optional-89f978d3",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8cc96e6383e02726b53c661efd62465a89b3bf3effe7c4c90f485e938c3821e2"
+    },
+    {
+      "caseId": "optional-89f978d3",
+      "instrumentType": "escala",
+      "sha256": "d3249436d29a8d5c88321e21c7d203ee8ce497b63d69272bf9c8c2318387de2c"
+    },
+    {
+      "caseId": "optional-89f978d3",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d4baeb00300deb2342e77e9f3e5a6dd39fa260fc7ada9085f3440c85722ac1c8"
+    },
+    {
+      "caseId": "optional-45974ef4",
+      "instrumentType": "rubrica",
+      "sha256": "64044c0883f8393e5bc9c3ff3ac6be3057ddeed63dfa34f75013acc860e87a78"
+    },
+    {
+      "caseId": "optional-45974ef4",
+      "instrumentType": "lista-cotejo",
+      "sha256": "84192cbd09e709665e5846656d43b13f3e338683437dfb7a278c22700bc7cb22"
+    },
+    {
+      "caseId": "optional-45974ef4",
+      "instrumentType": "escala",
+      "sha256": "eb179368cccff0ac9490b94951b83ba5d4b1025609c02d9d6bc332c34d65803d"
+    },
+    {
+      "caseId": "optional-45974ef4",
+      "instrumentType": "lista-ponderada",
+      "sha256": "26d88c26fa43e3a021dd121df1b6a3395c5fde23877077e248c9d8978432f91d"
+    },
+    {
+      "caseId": "optional-c073af4b",
+      "instrumentType": "rubrica",
+      "sha256": "534aad0eb2b887347ab466f46130b0baa8b7496d5c2ea555031951df4d7a07ee"
+    },
+    {
+      "caseId": "optional-c073af4b",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7e5ca3c046b99e07c22d7a1da8fcab7e938411ee149850b245ddc2c1aab3eb34"
+    },
+    {
+      "caseId": "optional-c073af4b",
+      "instrumentType": "escala",
+      "sha256": "aba7ef17a682d1c52bdcfbe538283fe4444a8109b1515c441dcf3a0f00b52605"
+    },
+    {
+      "caseId": "optional-c073af4b",
+      "instrumentType": "lista-ponderada",
+      "sha256": "117928d94736a7354d4443dd0242b157fa352346e6bd43e09ed96d3bb543c689"
+    },
+    {
+      "caseId": "optional-790cb00a",
+      "instrumentType": "rubrica",
+      "sha256": "096e86128d62bdf9af9c081744b04db42129bb295bf22883c5165568953ef3d1"
+    },
+    {
+      "caseId": "optional-790cb00a",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3e0ce42008c5da620ebfeac7a4663473acbf115d66675a8097b3657d6840a8bc"
+    },
+    {
+      "caseId": "optional-790cb00a",
+      "instrumentType": "escala",
+      "sha256": "8960fe8b11c8b2b57cc22ca52b58e3260346f8c63b1f9ad529159da3551fa088"
+    },
+    {
+      "caseId": "optional-790cb00a",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ad38463bbabcb8850bd43bd8f4affd83fd190b102f348d042e5eb636412915f3"
+    },
+    {
+      "caseId": "optional-8068ab42",
+      "instrumentType": "rubrica",
+      "sha256": "111ba7df6c3d74bd89c6d6bea0adfb1ec7da6834a4629daa26f36f8ad15697aa"
+    },
+    {
+      "caseId": "optional-8068ab42",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a3b04b83d96a6100838bd0647fa90c56d089a81cb1942a0ff85a37a834c03c89"
+    },
+    {
+      "caseId": "optional-8068ab42",
+      "instrumentType": "escala",
+      "sha256": "5b8c5323a67f88253462782068a2532a182812e0f514a34b95357c6e96f6e3af"
+    },
+    {
+      "caseId": "optional-8068ab42",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5feb373443750e6ff61e46c7afb7a84eefdef034c06ba138eecb7bbd798e8c71"
+    },
+    {
+      "caseId": "optional-2d166775",
+      "instrumentType": "rubrica",
+      "sha256": "6ee6078bca71c59c54ea92f71f14f31ce4a296b344366d4272dd050294f84f41"
+    },
+    {
+      "caseId": "optional-2d166775",
+      "instrumentType": "lista-cotejo",
+      "sha256": "07264e0e767199e01b8142448725acb6c5c2b4f31d21a6af5f2f8da76d201b15"
+    },
+    {
+      "caseId": "optional-2d166775",
+      "instrumentType": "escala",
+      "sha256": "68560ea7745f6f3830896718046ca6c54d3237ca34dbc6efa98dae4a5d851a7d"
+    },
+    {
+      "caseId": "optional-2d166775",
+      "instrumentType": "lista-ponderada",
+      "sha256": "98ad832079e16a2ae671168718b0e898fa1f61663fba2a79219410c0f44a44c7"
+    },
+    {
+      "caseId": "optional-815c44d8",
+      "instrumentType": "rubrica",
+      "sha256": "fa82b0e10cd503451ae57f3572bed4538f762ca7f792cd276a9c8c6540b83327"
+    },
+    {
+      "caseId": "optional-815c44d8",
+      "instrumentType": "lista-cotejo",
+      "sha256": "26018261b69279e76586b62d51964e81a64c78ddfae04f0e7330059ac8595cfa"
+    },
+    {
+      "caseId": "optional-815c44d8",
+      "instrumentType": "escala",
+      "sha256": "ee988403297b7cda434a0559854282fac2d74f4190a462f280ea6566ad2591c2"
+    },
+    {
+      "caseId": "optional-815c44d8",
+      "instrumentType": "lista-ponderada",
+      "sha256": "994791624d209f2b2891ee939424e0a3ff820254ed2a4ad663d7ce58d3c30477"
+    },
+    {
+      "caseId": "optional-65388a52",
+      "instrumentType": "rubrica",
+      "sha256": "28a1ea818f316be45f6056f7e880361cd7a87721caa754dff190e183a90dd2ac"
+    },
+    {
+      "caseId": "optional-65388a52",
+      "instrumentType": "lista-cotejo",
+      "sha256": "415271322b3909dccfdab04621a8b15fc889fe43dd5babe500b92c965bedd793"
+    },
+    {
+      "caseId": "optional-65388a52",
+      "instrumentType": "escala",
+      "sha256": "e266e9598bd207363bb202205e625032bc6f04084dc023037bcb6a99bdd295ed"
+    },
+    {
+      "caseId": "optional-65388a52",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1943e2524c27c86371416bbcf6f40b202df0bacab19bf4615f5978a637f6c03a"
+    },
+    {
+      "caseId": "optional-781532e7",
+      "instrumentType": "rubrica",
+      "sha256": "c2769c56901bcb9016a60d4a3bf20ab60b4099e848581bbf50b4cf35f5fe3f91"
+    },
+    {
+      "caseId": "optional-781532e7",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3be980cdaf7eae19a65c165958b27ddd85484d7f34e7c73f3f64b12f9f015f5a"
+    },
+    {
+      "caseId": "optional-781532e7",
+      "instrumentType": "escala",
+      "sha256": "232f363f4e41b58d7ab4ae6913c6f3b14dcf77728d68c0b7ed3bbc35a79f4f78"
+    },
+    {
+      "caseId": "optional-781532e7",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d2e59d699bc162e54890592e340ca6489c763555f2a83a7ff82073858925797b"
+    },
+    {
+      "caseId": "optional-29d1fa7a",
+      "instrumentType": "rubrica",
+      "sha256": "6cf9b4429b0f8f5340c73cf13050f59ce8a7a966845dcd2508294d136b09d285"
+    },
+    {
+      "caseId": "optional-29d1fa7a",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7cb59d6b2f18406d47e98cb2a055ad827f4f9e23e2d7b79885010cb1ba4fa102"
+    },
+    {
+      "caseId": "optional-29d1fa7a",
+      "instrumentType": "escala",
+      "sha256": "459282a5fff6f0f031b94c793281e83a15cc6fd452a50b8cbac9a8d1fcf09b87"
+    },
+    {
+      "caseId": "optional-29d1fa7a",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9858df0b165c8595cdefb1f734c460e8eb48d2caaec86d0d4217e2b4230a1bf4"
+    },
+    {
+      "caseId": "optional-d6954d7c",
+      "instrumentType": "rubrica",
+      "sha256": "807cf29f6e9941ece37ce8165f31fb3bb0ebd41060c2e21cc6fa2515feb0647c"
+    },
+    {
+      "caseId": "optional-d6954d7c",
+      "instrumentType": "lista-cotejo",
+      "sha256": "235ce6827af0ae45a2f947c1265dcc93266f384277f06a62ef287e638f1fd7e0"
+    },
+    {
+      "caseId": "optional-d6954d7c",
+      "instrumentType": "escala",
+      "sha256": "54c0ec9a1368d05d8481a330325aa2b91dfd9761635bf52801590bd167693715"
+    },
+    {
+      "caseId": "optional-d6954d7c",
+      "instrumentType": "lista-ponderada",
+      "sha256": "652c62e3ad6c0e5284708180a02cbc0e56463807da6999a9e40aa6a4daf3e1c4"
+    },
+    {
+      "caseId": "optional-0cfc54a0",
+      "instrumentType": "rubrica",
+      "sha256": "d82b1bab98e5a6a7ae18b448988fd07aaf0711fcc3e194d21b0e54bdf4899c17"
+    },
+    {
+      "caseId": "optional-0cfc54a0",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9193fbc96ddd246184d9d90acc2df00755192d1afe8443a5ee02e7058cde7c0e"
+    },
+    {
+      "caseId": "optional-0cfc54a0",
+      "instrumentType": "escala",
+      "sha256": "25d07eb04a61f628953aae2abd50ddd7d4f6a8692a68d0ee7bd236bd28a7bdbd"
+    },
+    {
+      "caseId": "optional-0cfc54a0",
+      "instrumentType": "lista-ponderada",
+      "sha256": "156ec12fb228a0abc24178618e839024ddaa83cee16bd4aacfb17b4ffa11d548"
+    },
+    {
+      "caseId": "optional-22545167",
+      "instrumentType": "rubrica",
+      "sha256": "0ed518fe84bbf2aa3b51babca8dbfb3ef515580d440f087b033f1c5b94348236"
+    },
+    {
+      "caseId": "optional-22545167",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4155c30262e39928aca1751399a95a82b7b75ce6c40b68c7002902b6eb31274e"
+    },
+    {
+      "caseId": "optional-22545167",
+      "instrumentType": "escala",
+      "sha256": "49c7f2e66a9db5fd636131dc928e752471f46beb58c2be189b1bf9624dbc63b4"
+    },
+    {
+      "caseId": "optional-22545167",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eadc6717c82e84b775b1aa017440ef3be5bc509caca37cd56949a6a220f634c1"
+    },
+    {
+      "caseId": "poetry-brief",
+      "instrumentType": "rubrica",
+      "sha256": "5843425e5a5666ced5196b1d911f92452210409b81975e2477459d45d5ba2d3a"
+    },
+    {
+      "caseId": "poetry-brief",
+      "instrumentType": "lista-cotejo",
+      "sha256": "172fdd0ebf2fd0b1f2cbbee68ca05286397858e0226ffce322f39a4ef33f3f7a"
+    },
+    {
+      "caseId": "poetry-brief",
+      "instrumentType": "escala",
+      "sha256": "936ad76d08bdcd0ccee07fc0ae7f3c7abbbc6090384e4a86e65dc995e23c732d"
+    },
+    {
+      "caseId": "poetry-brief",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0e96b4cf5dc580136a1e6205cf5dd4612fa491836010e843647fccf868761c82"
+    },
+    {
+      "caseId": "novel-brief",
+      "instrumentType": "rubrica",
+      "sha256": "829802ede58c0c8904585b25ff7b5722859aeeff0696383fd5cfb7d331098203"
+    },
+    {
+      "caseId": "novel-brief",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4dbc2f2a6585ff57c1d81faba7b6138bbb2e9079fddd09c04fa24991996fdbab"
+    },
+    {
+      "caseId": "novel-brief",
+      "instrumentType": "escala",
+      "sha256": "b71d0bf2ab8ecf2290e0a2132cd504f4fa131861451c13960f3882db7a2b872f"
+    },
+    {
+      "caseId": "novel-brief",
+      "instrumentType": "lista-ponderada",
+      "sha256": "478584ab7fcfd838f3ed6a8b9f79b2630731f03356376dd1d1fa8ac0a61c61f8"
+    },
+    {
+      "caseId": "poetry-writing-result",
+      "instrumentType": "rubrica",
+      "sha256": "9f57e3980c51640b1a1419d0dee66c393eaeacbcdd02a750eecd7b5d7c2016ad"
+    },
+    {
+      "caseId": "poetry-writing-result",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c35373d1d9e0d38345f89d97acec1f5a87e0e7e837fc11b864793a95d525de8c"
+    },
+    {
+      "caseId": "poetry-writing-result",
+      "instrumentType": "escala",
+      "sha256": "b9a30fa9b107dcf3c98e3f58c19c25733aefd8730648e12ab5eaf8e71d8e7210"
+    },
+    {
+      "caseId": "poetry-writing-result",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9b75b8f8dd6ac61458789cbcc7c50249ecf03a90a72e1eabef69d99ca171ddc6"
+    },
+    {
+      "caseId": "novel-writing-result",
+      "instrumentType": "rubrica",
+      "sha256": "44a73904781f52361d516943db7d0d21565a8773a1cbb8f8a09223212f2aa278"
+    },
+    {
+      "caseId": "novel-writing-result",
+      "instrumentType": "lista-cotejo",
+      "sha256": "061f4fb8acb4917baee3f1c6ca5748afab944cca01241440cf24462f6ef721f3"
+    },
+    {
+      "caseId": "novel-writing-result",
+      "instrumentType": "escala",
+      "sha256": "72f07f20cd4eab4f56ae3d5552c6b389296af58033253cc529c88e7dd310a965"
+    },
+    {
+      "caseId": "novel-writing-result",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d5bc165e0c01aad380ded8425d2c20f03897c26ece2d076dc64a804de1654aa6"
+    },
+    {
+      "caseId": "novel-telling-cuenta",
+      "instrumentType": "rubrica",
+      "sha256": "ab67685cea4236e31df89aea0569ccffbb14b8707e212c6548db9372d8d02e6f"
+    },
+    {
+      "caseId": "novel-telling-cuenta",
+      "instrumentType": "lista-cotejo",
+      "sha256": "757fa35913af42d97dc5a2dcc373f81f5691ef1b8e14effb0b55f25b14d6bbb6"
+    },
+    {
+      "caseId": "novel-telling-cuenta",
+      "instrumentType": "escala",
+      "sha256": "8e766b795f51acd88e4ef28d5c82b7f5102a6c2f0433b526c2c26036f196f2e6"
+    },
+    {
+      "caseId": "novel-telling-cuenta",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b417f7ca9dbcf43224d2e4ce2bae7de6d72273564216d1defe860ffcb9d7a78b"
+    },
+    {
+      "caseId": "poetry-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "c35e17e6098da033c2e385532b158c3606fa5026a6e74de52c1ad68b2e3bd036"
+    },
+    {
+      "caseId": "poetry-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b460f3654dcc913d9619be9abfe66f84f84d657037a5b88abd22d26b35cd9ab8"
+    },
+    {
+      "caseId": "poetry-comparison",
+      "instrumentType": "escala",
+      "sha256": "810d6691575b31a3f1ef1100e2009dc809edaeefa89eeb9472a6e2cd23b9ce19"
+    },
+    {
+      "caseId": "poetry-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "92b838a2cb4b6df6daec12d42370a2a924aa26ab5774f12eba69d897a2883865"
+    },
+    {
+      "caseId": "novel-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "26744fe7f27a3a48987eb394141df28d4ed2269bcb822d7a94975add168047ea"
+    },
+    {
+      "caseId": "novel-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5b325349f3d4049c1cc0ff56e3b7a322df3a0eb79ca95b4ee46200f37e9074bc"
+    },
+    {
+      "caseId": "novel-comparison",
+      "instrumentType": "escala",
+      "sha256": "29b2e54322032c87ffc97770faa3696d8a97c41d394c47937a5c2f8959d6bb76"
+    },
+    {
+      "caseId": "novel-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3b7c40b19119b5374ee29ed338936727e41abb14764de8775c0ce0ed468fe106"
+    },
+    {
+      "caseId": "poetry-rhyme-alternative",
+      "instrumentType": "rubrica",
+      "sha256": "b728cfa460ce606c50e23e79bab04c3a70f9903f1f45ea428e06c60e89132996"
+    },
+    {
+      "caseId": "poetry-rhyme-alternative",
+      "instrumentType": "lista-cotejo",
+      "sha256": "909aca808c8568d74636b619fc1ec7378fae73e28f15abfebc0cc84092b131e8"
+    },
+    {
+      "caseId": "poetry-rhyme-alternative",
+      "instrumentType": "escala",
+      "sha256": "919f72c1765b9ed4fa0bf9aab75c58bb0f75ddfb9701471d05cba962bf1d4851"
+    },
+    {
+      "caseId": "poetry-rhyme-alternative",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4c247db43b77488b99930773cef71bcb5f479b0991c601ef2afbee00b73e32e4"
+    },
+    {
+      "caseId": "poetry-form-alternative",
+      "instrumentType": "rubrica",
+      "sha256": "fa8d3ec3a50b0d45967c3dd393620a08c7f60d35cc83f3e0445e4c9abf660960"
+    },
+    {
+      "caseId": "poetry-form-alternative",
+      "instrumentType": "lista-cotejo",
+      "sha256": "05283fc4ff204f7ca616b677eb22ea972b2ea077f57724db60314938441355de"
+    },
+    {
+      "caseId": "poetry-form-alternative",
+      "instrumentType": "escala",
+      "sha256": "f76b337ea3e099765a3f1d96b1f2dc25b932a5624cc2f85835dcd95574d5cc1a"
+    },
+    {
+      "caseId": "poetry-form-alternative",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6f2519facd7bcb154c078b04ff6c22ee148e9f53c9adb674aec3715436406496"
+    },
+    {
+      "caseId": "poetry-figures-only",
+      "instrumentType": "rubrica",
+      "sha256": "2c731ed7737930acbf21ff743f4d672778a3aa56c901010dd58d48346e1954d8"
+    },
+    {
+      "caseId": "poetry-figures-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "931640b8eef8db354a2a222d44fddefa98c541e6f15c425cc64425e502b67b71"
+    },
+    {
+      "caseId": "poetry-figures-only",
+      "instrumentType": "escala",
+      "sha256": "3ea80f476813ff76afd1c1a5b62c85e59f9dc4a0bcb1b0a14792c7a6e7f2802b"
+    },
+    {
+      "caseId": "poetry-figures-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bd94fb4c8d30ee20cce252e3338884e1c79532cc2db58d10ae748b949c0c3583"
+    },
+    {
+      "caseId": "poetry-negative-then-positive",
+      "instrumentType": "rubrica",
+      "sha256": "69fcbe13d51b189bf0d0f67717853f8094ff4019d1e69bd65268b9ff7b3fb93a"
+    },
+    {
+      "caseId": "poetry-negative-then-positive",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2fea8c666b2a42aba78289a954570f4b2e1df586635b4db8e713565db52f377c"
+    },
+    {
+      "caseId": "poetry-negative-then-positive",
+      "instrumentType": "escala",
+      "sha256": "4d596c5192008706b77bc666124b368e122a56e178d5a0b95b37b078969df5c3"
+    },
+    {
+      "caseId": "poetry-negative-then-positive",
+      "instrumentType": "lista-ponderada",
+      "sha256": "84b634dc288c4c95bbb514faeda5de73f26a1a46891d01130a70cbf8ca2792b8"
+    },
+    {
+      "caseId": "novel-narrator-only",
+      "instrumentType": "rubrica",
+      "sha256": "84e8992106eacbc3d68d789b89dffd749b6fc8f2711f1521da3cea37a22cea6d"
+    },
+    {
+      "caseId": "novel-narrator-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bf5566bd338c9d09675201c0fa70d66e683038a86431ff65ede4af150d23baec"
+    },
+    {
+      "caseId": "novel-narrator-only",
+      "instrumentType": "escala",
+      "sha256": "9b86354ccffce74c2f0c59a001464fb2771d14e7e65c17d35c112500efaa6135"
+    },
+    {
+      "caseId": "novel-narrator-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7f981ed74cf3cfa6ff2bb9ff3f8094484adab7568de5b977e39318abd1cb9d6f"
+    },
+    {
+      "caseId": "poetry-revision-no-publication",
+      "instrumentType": "rubrica",
+      "sha256": "b2c9c8b5d68d6e35bf31e8ca82c7ec9e3b2de040a79a6d834465578951709b2f"
+    },
+    {
+      "caseId": "poetry-revision-no-publication",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f9a122aae7f58b4d2ac9e7464a0039c2664b57f33321cea6cab5983fbc421e08"
+    },
+    {
+      "caseId": "poetry-revision-no-publication",
+      "instrumentType": "escala",
+      "sha256": "b88a9e3c92afc9611f0fa3a5378f736c9880ee094f8940a2fbedabcf0cff0dac"
+    },
+    {
+      "caseId": "poetry-revision-no-publication",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d49a6c616003cab6346fcb36e785a3c4449ca9d816d13199a65dd3ab975a1d8a"
+    },
+    {
+      "caseId": "poetry-group-natural",
+      "instrumentType": "rubrica",
+      "sha256": "4d077ea2c3f588e785fecfc52197a06096c9b9fa9a5de5172182fda79a6d6c66"
+    },
+    {
+      "caseId": "poetry-group-natural",
+      "instrumentType": "lista-cotejo",
+      "sha256": "de8f98db842b37e395e54ccb754b79d933f42526839dd46f0907deda9c3d2d24"
+    },
+    {
+      "caseId": "poetry-group-natural",
+      "instrumentType": "escala",
+      "sha256": "2457a2fa57f3d902cae2b63c020d80dc540e4287a1221837f093c1aa85ee568c"
+    },
+    {
+      "caseId": "poetry-group-natural",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ad4891a72ced37c53c6ab6d3a969caa71bbaff7025be7ef467703d19a42541f0"
+    },
+    {
+      "caseId": "novel-individual-natural",
+      "instrumentType": "rubrica",
+      "sha256": "6e1d196587667a94959629d3475da21c398b613cebe4ee8195a2e13fbb48cc8b"
+    },
+    {
+      "caseId": "novel-individual-natural",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a96d0a009c04b6c83cefe851b0eefe0421c516acc42575c7c6410d6df157aa5b"
+    },
+    {
+      "caseId": "novel-individual-natural",
+      "instrumentType": "escala",
+      "sha256": "f83d06027c5d66f8fd81d31f3dec6e894754c8aa6bd6f334e1dfaf555f6dab73"
+    },
+    {
+      "caseId": "novel-individual-natural",
+      "instrumentType": "lista-ponderada",
+      "sha256": "98c0d6df9f5d31a101b295ebb4254fc2e2138b7482d2e539beba16a0419ff5bc"
+    }
+  ]
+}
