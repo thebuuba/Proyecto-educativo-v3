@@ -2,7 +2,7 @@
 
 Fuente: MINERD 2023, SHA-256 80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58.
 
-Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los otros 17 scopes de la extracción son encabezados sin grado; no son asignaturas pendientes. La presencia común se cotejó en las tablas PDF48–49 y el límite de las modalidades en PDF55. Las tablas específicas de optativas siguen requiriendo cotejo nuevo antes de implementarlas.
+Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los otros 17 scopes de la extracción son encabezados sin grado; no son asignaturas pendientes. La presencia común se cotejó en las tablas PDF48–49 y el límite de las modalidades en PDF55. Las tablas de asignación optativa PDF427,461,490,498 se leyeron visualmente completas y confirman los 18 ámbitos de 4.º–6.º. Esto no acredita implementación ni lectura completa de sus mallas; los nombres iguales en salidas distintas mantienen ámbitos separados.
 
 | Asignatura | Grado | Carácter / salida | PDF | Estado |
 |---|---:|---|---|---|
@@ -59,7 +59,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Formación Integral Humana y Religiosa | 3 | Común | 401, 402, 403, 404 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Formación Integral Humana y Religiosa | 4 | Común | 413, 414, 415, 416 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Formación Integral Humana y Religiosa | 5 | Común | 417, 418, 419, 420 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
-| Formación Integral Humana y Religiosa | 6 | Común | 421, 422, 423, 424 | PENDING |
+| Formación Integral Humana y Religiosa | 6 | Común | 421, 422, 423, 424 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Apreciación y Producción Literarias | 4 | Humanidades y Lenguas Modernas | 427, 428, 429, 430, 431 | PENDING |
 | Apreciación y Producción Literarias | 5 | Humanidades y Lenguas Modernas | 432, 433, 434, 435, 436 | PENDING |
 | Análisis y Producción de Textos Periodísticos y Publicitarios | 6 | Humanidades y Lenguas Modernas | 437, 438, 439, 440, 441, 442, 443, 444 | PENDING |

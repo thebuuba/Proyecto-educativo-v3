@@ -12,6 +12,7 @@ import fhrTwo from '../../../../../data/evaluation-instruments/fhr-grade-two-con
 import fhrThree from '../../../../../data/evaluation-instruments/fhr-grade-three-contracts.json'
 import fhrFour from '../../../../../data/evaluation-instruments/fhr-grade-four-contracts.json'
 import fhrFive from '../../../../../data/evaluation-instruments/fhr-grade-five-contracts.json'
+import fhrSix from '../../../../../data/evaluation-instruments/fhr-grade-six-contracts.json'
 
 const mocks = vi.hoisted(() => ({
   $queryRaw: vi.fn(),
@@ -78,7 +79,7 @@ describe('API service security and version policy', () => {
     row.subject.code = code; row.subject.name = code === 'FRA' ? 'Francés' : code === 'ING' ? 'Inglés' : 'Lengua Española'
     return row
   }
-  for(const [grade,fixture]of [[1,fhrOne],[2,fhrTwo],[3,fhrThree],[4,fhrFour],[5,fhrFive]] as const)for(const task of fixture.cases)it(`interpreta y recomienda FHR ${grade} con el mismo propósito: ${task.id}`,async()=>{
+  for(const [grade,fixture]of [[1,fhrOne],[2,fhrTwo],[3,fhrThree],[4,fhrFour],[5,fhrFive],[6,fhrSix]] as const)for(const task of fixture.cases)it(`interpreta y recomienda FHR ${grade} con el mismo propósito: ${task.id}`,async()=>{
     const row=secondary('FHR');row.grade.sequence=grade;row.grade.academicCycle.code=grade<=3?'secundario_primer_ciclo':'secundario_segundo_ciclo';row.subject.name='Formación Integral Humana y Religiosa'
     mocks.sectionSubject.findFirst.mockResolvedValue(row)
     const service=new EvaluationInstrumentsService(),request={sectionSubjectId:input.sectionSubjectId,activityTitle:'Título antiguo sobre células',description:task.description}

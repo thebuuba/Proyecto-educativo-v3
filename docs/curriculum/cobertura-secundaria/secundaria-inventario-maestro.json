@@ -23,6 +23,12 @@
     49,
     55
   ],
+  "reviewedOptativeAssignmentPdfPages": [
+    427,
+    461,
+    490,
+    498
+  ],
   "scopes": [
     {
       "id": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
@@ -1557,10 +1563,10 @@
         422,
         423
       ],
-      "status": "PENDING",
-      "provider": null,
-      "evidence": null,
-      "currentRunVerification": "NOT_RETESTED",
+      "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING",
+      "provider": "packages/shared/src/secondary-fhr.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/fhr-6-matriz.json",
+      "currentRunVerification": "AUTHENTICATED_12_EXPLICIT_SAMPLES_FOUR_FORMATS_20_AND_17_35_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
       "nonApplicable": [],
       "notes": "El componente común no acredita módulos laborales de Técnico-Profesional ni menciones de Artes."
     },

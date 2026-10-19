@@ -7,14 +7,15 @@ import {fhrGradeTwoTopics} from './secondary-fhr-grade-2'
 import {fhrGradeThreeTopics} from './secondary-fhr-grade-3'
 import {fhrGradeFourTopics} from './secondary-fhr-grade-4'
 import {fhrGradeFiveTopics} from './secondary-fhr-grade-5'
+import {fhrGradeSixTopics} from './secondary-fhr-grade-6'
 
 type FhrPurpose='ANALYSIS'|'COMPARISON'|'RESEARCH'|'DEBATE'|'PRESENTATION'|'PRODUCTION'|'PLAN'|'PERFORMANCE'|'VERIFICATION'|'OBSERVATION'
 export type FhrTopic={id:string;grade:number;label:string;match:string;object:string;relation:string;sourceRecordIds:string[];pdfPages:number[];choices?:string[][];choiceDefault?:string;productChoices?:string[][];productChoiceDefault?:string;excludeWhen?:string;productType?:string;objects?:Partial<Record<FhrPurpose,string>>;planReferenceOnly?:boolean;conceptBrief?:boolean}
 type FhrAction={text:string;topics:FhrTopic[];purpose:FhrPurpose}
 export type CommonFhrTask={grade:number;text:string;actions:FhrAction[];activityType:string;technique:string}
-export const commonFhrModules=[{id:'formacion-humana-religiosa-comun-1',grade:1,topics:fhrGradeOneTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-2',grade:2,topics:fhrGradeTwoTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-3',grade:3,topics:fhrGradeThreeTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-4',grade:4,topics:fhrGradeFourTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-5',grade:5,topics:fhrGradeFiveTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'}]
+export const commonFhrModules=[{id:'formacion-humana-religiosa-comun-1',grade:1,topics:fhrGradeOneTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-2',grade:2,topics:fhrGradeTwoTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-3',grade:3,topics:fhrGradeThreeTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-4',grade:4,topics:fhrGradeFourTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-5',grade:5,topics:fhrGradeFiveTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-6',grade:6,topics:fhrGradeSixTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'}]
 const normalize=(value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
-const action='(?!(?:creacion|crecimiento|realizacion)\\b)(?:analiz|explic|describ|relat|narr|reflexion|identific|clasific|interpret|compar|contrast|investig|indag|recopil|debat|argument|justific|sustent|present|expon|socializ|elabor|cre|constru|redact|compon|disen|formul|organiz|prepar|planific|propon|represent|dramatiz|escenific|realiz|registr|verific|comprueb)[a-z]*'
+const action='(?!(?:creacion|crecimiento|realizacion)\\b)(?:analiz|explic|describ|relat|narr|reflexion|identific|clasific|interpret|compar|contrast|investig|indag|recopil|compil|debat|argument|justific|sustent|present|expon|socializ|elabor|cre|constru|redact|compon|disen|formul|organiz|prepar|planific|propon|represent|dramatiz|escenific|realiz|registr|verific|comprueb)[a-z]*'
 const affirmative=(value:string)=>normalize(withoutResources(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' '))).replace(/\b(?:no(?!\s+sentido\b)|sin(?!\s+(?:acceso|sentido)\b))\b[^.;\n]*/g,'').trim()
 const join=(parts:string[])=>parts.length<2?parts[0]:parts.slice(0,-1).join(', ')+' y '+parts.at(-1)
 function selectedTopics(text:string,available:FhrTopic[]){
@@ -26,11 +27,12 @@ function selectedTopics(text:string,available:FhrTopic[]){
  if(topics.some(t=>['environment-mural','environment-campaign','environment-news','environment-laws'].includes(t.id)))topics=topics.filter(t=>t.id!=='environment-care')
  return topics
 }
-function purposeFor(text:string):FhrPurpose{
+function purposeFor(text:string,topics:FhrTopic[]):FhrPurpose{
  const first=text.match(new RegExp(`\\b${action}\\b`))?.[0]??''
  if(/^registr/.test(first)&&/frecuencia|oportunidades/.test(text))return'OBSERVATION'
  if(/^verific|^comprueb/.test(first))return'VERIFICATION'
  if(/^compar|^contrast/.test(first))return'COMPARISON'
+ if(/^compil/.test(first))return topics.some(t=>t.productType==='PORTFOLIO')?'PRODUCTION':'RESEARCH'
  if(/^investig|^indag|^recopil/.test(first))return'RESEARCH'
  if(/^debat|^argument/.test(first)||/^(?:realiz|organiz|prepar)/.test(first)&&/panel|mesa redonda|conversatorio|debate/.test(text))return'DEBATE'
  if(/^present|^expon|^socializ/.test(first))return'PRESENTATION'
@@ -51,7 +53,7 @@ export function resolveCommonFhrTask(title:string,description:string,context?:In
   const topics=selectedTopics(clause,available),previous=actions.at(-1)
   if(!topics.length||previous&&topics.every(t=>previous.topics.some(p=>p.id===t.id))&&/^(?:justifica|sustenta|relaciona|explica)\b/.test(clause)){
    if(previous)previous.text+='. '+clause
-  }else actions.push({text:clause,topics,purpose:purposeFor(clause)})
+  }else actions.push({text:clause,topics,purpose:purposeFor(clause,topics)})
  }
  if(!actions.length)return null
  const first=actions[0],purpose=first.purpose,activityType=purpose==='PRODUCTION'?(first.topics[0].productType??types[purpose]):types[purpose]
@@ -74,10 +76,10 @@ function requestedEvidence(topic:FhrTopic,purpose:FhrPurpose,text:string):Contex
  const success:Record<FhrPurpose,string>={
   ANALYSIS:`${analysisVerb}${analysisVerb==='Reflexiona'?' sobre':''} ${object} sustentando sus relaciones mediante ${reference}.`,
   COMPARISON:`Compara ${object} sustentando semejanzas y diferencias mediante ${reference}.`,
-  RESEARCH:`${/^recopil/.test(first)?'Recopila':/^indag/.test(first)?'Indaga':'Investiga'} ${object} relacionando ${reference} con las fuentes proporcionadas.`,
+  RESEARCH:`${/^compil/.test(first)?'Compila':/^recopil/.test(first)?'Recopila':/^indag/.test(first)?'Indaga':'Investiga'} ${object} relacionando ${reference} con las fuentes proporcionadas.`,
   DEBATE:`${forum} sobre ${object} sustentando y contrastando argumentos mediante ${reference}.`,
   PRESENTATION:`Presenta ${object} relacionando ${reference} con las evidencias proporcionadas.`,
-  PRODUCTION:topic.id==='community-values'?`Construye ${/^(?:la|el|los|las) /.test(choice)?choice:'el '+choice} sobre ${object} relacionando ${reference} con sus evidencias.`:`Elabora ${object} relacionando ${reference} con las evidencias proporcionadas.`,
+  PRODUCTION:topic.id==='community-values'?`Construye ${/^(?:la|el|los|las) /.test(choice)?choice:'el '+choice} sobre ${object} relacionando ${reference} con sus evidencias.`:`${/^compil/.test(first)?'Compila':'Elabora'} ${object} relacionando ${reference} con las evidencias proporcionadas.`,
   // El catálogo anterior conserva su redacción; las nuevas referencias no añaden alternativas no pedidas.
   PLAN:topic.planReferenceOnly&&!/\balternativas?\b/.test(text)?`Planifica una propuesta sobre ${object} relacionando ${reference}, sin exigir ejecución.`:`Planifica una propuesta sobre ${object} relacionando ${reference} con las alternativas proporcionadas, sin exigir ejecución.`,
   PERFORMANCE:`${performanceVerb} ${object} haciendo reconocibles las acciones y decisiones según ${reference}.`,

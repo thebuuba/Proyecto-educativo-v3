@@ -1,0 +1,30 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.123",
+  "grade": 6,
+  "status": "BLOCKED_PERSONAL_SESSION_EXPIRED_LOGIN_REQUIRED",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "servedAsset": "/assets/index-BmKUP8iZ.js",
+  "servedAssetMatchesBuild": true,
+  "observed": [
+    "La recarga normal de login recibió el entry final de 123 y registerSW.js.",
+    "Continuar como Alexauris solicita contraseña. No se ingresaron credenciales."
+  ],
+  "notVerified": [
+    "Formulario vacío personal de 6.º/FHR",
+    "Estrategia automática y manual e instrumento completo en ese contexto personal",
+    "Guardado y reapertura personal de 6.º",
+    "Instrumento personal de 6.º idéntico tras cambiar únicamente estrategia"
+  ],
+  "existingDraftsAndStorageNotCleared": true,
+  "newEmailsOrPasswordChanges": false,
+  "manualSteps": [
+    "Iniciar sesión con una cuenta propia de Development en localhost:8787.",
+    "Abrir Cursos, 6.º de secundaria, Formación Integral Humana y Religiosa, Bloque 1 y crear actividad; comprobar estrategia visible y puntos inicialmente vacíos.",
+    "Introducir «Compila las ilustraciones proporcionadas sobre Jesús en la cultura según los referentes dados. No se piden recursos audiovisuales ni imágenes nuevas ni creencias privadas.»; comprobar portafolio y criterios completos sin medios añadidos.",
+    "Elegir manualmente rúbrica, asignar 17.35 puntos explícitos, editar un criterio, guardar y reabrir desde esa misma asignatura.",
+    "Cambiar exclusivamente estrategia, guardar y reabrir; comparar identificadores, criterios, niveles, pesos y puntos sin generar otro instrumento.",
+    "En una actividad nueva probar «Compila los datos sobre presencia de tecnología descritos en los registros del entorno proporcionados. No se pide recolectar datos nuevos ni acceder a cuentas privadas.»; comprobar investigación y datos, sin exigir portafolio de medios.",
+    "Comprobar los otros formatos y un reportaje presentado que pida solo composición, contexto y características: no debe añadir veracidad."
+  ]
+}

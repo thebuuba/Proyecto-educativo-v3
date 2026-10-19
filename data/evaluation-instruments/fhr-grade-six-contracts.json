@@ -1,0 +1,1564 @@
+{
+  "grade": 6,
+  "scopeId": "2ed4e58c-1691-5efa-9d04-46b3a95c2834",
+  "sourcePdfPages": [
+    421,
+    422,
+    423,
+    424
+  ],
+  "policy": "OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH",
+  "cases": [
+    {
+      "id": "gospel-report",
+      "topicIds": [
+        "gospel-report"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora un reportaje sobre composición, contexto histórico, características y afirmaciones de veracidad de los evangelios según las fuentes proporcionadas. No se evalúa fe ni se exige aceptar esas afirmaciones.",
+      "sourceRecordIds": [
+        "8f4fef5c"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "gospel-comparison",
+      "topicIds": [
+        "gospel-comparison"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora el cuadro comparativo de las características de los cuatro evangelios proporcionados. No se piden otras fuentes ni adhesión.",
+      "sourceRecordIds": [
+        "cb872fbc"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "gospel-emphasis-roundtable",
+      "topicIds": [
+        "gospel-emphasis-roundtable"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Realiza la mesa redonda sobre los énfasis que cada evangelista destaca de la vida de Jesús según los textos proporcionados. No se califica acuerdo religioso.",
+      "sourceRecordIds": [
+        "1f514664"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda) sobre"
+    },
+    {
+      "id": "new-testament-values",
+      "topicIds": [
+        "new-testament-values"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga los principios y valores para la convivencia del mensaje de Jesús en Hechos, Cartas y Apocalipsis del Nuevo Testamento proporcionados. No se pide practicarlos ni aceptar una doctrina.",
+      "sourceRecordIds": [
+        "f4326f5e"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "new-testament-map",
+      "topicIds": [
+        "new-testament-map"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora un mapa conceptual de los escritos del Nuevo Testamento proporcionados, relacionando fecha y lugar de composición, autores, intenciones y destinatarios. No se piden datos ni textos adicionales.",
+      "sourceRecordIds": [
+        "85f88ea4"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "christian-conversation-panel",
+      "topicIds": [
+        "christian-conversation-panel"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el panel de distintas iglesias cristianas sobre convivencia armónica y respetuosa según los testimonios proporcionados. No se pide contactar invitados ni realizarlo ni declarar creencias propias.",
+      "sourceRecordIds": [
+        "d2f102e3"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-media-compilation",
+      "topicIds": [
+        "jesus-media-compilation"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PORTFOLIO",
+      "description": "Compila las ilustraciones y recursos audiovisuales proporcionados sobre Jesús en la cultura y su incidencia documentada en la vida de personas. No se piden imágenes nuevas ni experiencias propias.",
+      "sourceRecordIds": [
+        "54fa19d2"
+      ],
+      "criterionCount": 1,
+      "required": "Compila.*ilustraciones.*audiovisuales",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "gospel-learning-celebration",
+      "topicIds": [
+        "gospel-learning-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los productos y aprendizajes dados sobre la actualidad del mensaje evangélico y Jesús. No se pide realizarla ni participar en ritos.",
+      "sourceRecordIds": [
+        "a4305742"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-decisions-texts",
+      "topicIds": [
+        "jesus-decisions-texts"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica las decisiones importantes de Jesús según Mateo4:1–10,Marcos3:13–19 yJuan13:12–17 proporcionados. No se pide adhesión religiosa.",
+      "sourceRecordIds": [
+        "c411dde8"
+      ],
+      "criterionCount": 1,
+      "required": "Identifica.*Mateo.*Marcos.*Juan",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-social-decisions-panel",
+      "topicIds": [
+        "jesus-social-decisions-panel"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Realiza el panel sobre las decisiones que se atribuyen a Jesús ante las situaciones sociales de los casos proporcionados, fundamentando con los textos dados. No se exige adoptar esa perspectiva.",
+      "sourceRecordIds": [
+        "10310edb"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda) sobre"
+    },
+    {
+      "id": "jesus-originality",
+      "topicIds": [
+        "jesus-originality"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Socializa la novedad y originalidad de la propuesta de Jesús según Lucas6:27–36 proporcionado. No se exige profesarla.",
+      "sourceRecordIds": [
+        "8d83a20b"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-culture-arguments",
+      "topicIds": [
+        "life-culture-arguments"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Argumenta sobre causas y consecuencias de las denominadas cultura de vida y cultura de muerte según los textos proporcionados. No se exige aceptar esas etiquetas ni juzgar a personas reales.",
+      "sourceRecordIds": [
+        "892bf135"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda) sobre"
+    },
+    {
+      "id": "life-institutions",
+      "topicIds": [
+        "life-institutions"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta las instituciones, leyes e iniciativas que promueven cultura de vida según los documentos proporcionados. No se pide asesoría jurídica vigente ni contactar instituciones.",
+      "sourceRecordIds": [
+        "5a90859d",
+        "3a668ce1"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-culture-celebration",
+      "topicIds": [
+        "life-culture-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los productos dados sobre cultura de vida y armonía interpersonal. No se pide realizarla ni demostrar disposición privada.",
+      "sourceRecordIds": [
+        "dff2b1d7"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "problem-solving-values",
+      "topicIds": [
+        "problem-solving-values"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Socializa los valores y actitudes para resolver problemas descritos en los casos educativos proporcionados. No se califica tu personalidad ni se piden actitudes privadas.",
+      "sourceRecordIds": [
+        "be8c60de"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "christian-problem-solving",
+      "topicIds": [
+        "christian-problem-solving"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica los valores y actitudes cristianos que favorecen resolver problemas escolares y familiares según los casos proporcionados. No se califica fe ni se piden datos familiares.",
+      "sourceRecordIds": [
+        "1c98f62d"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "biblical-conflict-growth",
+      "topicIds": [
+        "biblical-conflict-growth"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga en los textos bíblicos proporcionados los valores y actitudes que posibilitan resolver conflictos y el crecimiento personal y comunitario descrito. No se pide aceptación religiosa ni revelar conflictos propios.",
+      "sourceRecordIds": [
+        "e77af75c"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "community-solutions-resources",
+      "topicIds": [
+        "community-solutions-resources"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora los recursos escritos para promover la resolución de situaciones problemáticas y el crecimiento comunitario de los casos proporcionados. No se piden otros medios ni ejecutar acciones comunitarias.",
+      "sourceRecordIds": [
+        "209e09f7"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "politics-clientelism",
+      "topicIds": [
+        "politics-clientelism"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Debate las perspectivas sobre acción política y clientelismo dominicano y su impacto social según los documentos proporcionados. No se califica afiliación ni se exige aceptar una postura.",
+      "sourceRecordIds": [
+        "9331ebde"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda) sobre"
+    },
+    {
+      "id": "political-ethics-proclamation",
+      "topicIds": [
+        "political-ethics-proclamation"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora una proclama sobre los criterios éticos para la política dominicana según los referentes proporcionados. No se pide publicación real ni apoyo partidista.",
+      "sourceRecordIds": [
+        "4f44a828"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "biblical-phrases-scene-plan",
+      "topicIds": [
+        "biblical-phrases-scene-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Diseña un plan de representación de frases bíblicas que contribuyan a resolver problemas de los casos personales, familiares y comunitarios proporcionados. No se pide realizarla ni revelar intimidad.",
+      "sourceRecordIds": [
+        "fcb95ef1"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "christian-values-celebration",
+      "topicIds": [
+        "christian-values-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los aprendizajes dados sobre valores cristianos y convivencia armónica según los textos proporcionados. No se pide realizarla ni dar gracias ni profesar una fe.",
+      "sourceRecordIds": [
+        "a273dbeb"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "documented-skills",
+      "topicIds": [
+        "documented-skills"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Socializa las habilidades, cualidades, valores y actitudes descritas en los casos educativos proporcionados. No se califica tu capacidad ni se piden rasgos privados.",
+      "sourceRecordIds": [
+        "1fcd0d7a"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "profession-qualities",
+      "topicIds": [
+        "profession-qualities"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara cualidades, valores y actitudes en relación con profesiones y oficios descritos en los referentes educativos proporcionados. No se califica tu aptitud ni se jerarquiza dignidad profesional.",
+      "sourceRecordIds": [
+        "28688ec2"
+      ],
+      "criterionCount": 1,
+      "required": "Compara",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "documented-careers",
+      "topicIds": [
+        "documented-careers"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta las personas documentadas en los referentes que alcanzaron metas, profesiones y oficios, relacionando acciones y condiciones. No se pide contactar personas ni revelar empleo familiar.",
+      "sourceRecordIds": [
+        "9f0fb5a5"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "vocational-factors",
+      "topicIds": [
+        "vocational-factors"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los factores y criterios de elección vocacional según los referentes educativos proporcionados. No se pide declarar tu vocación ni medir tu capacidad.",
+      "sourceRecordIds": [
+        "bb9b9921"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "career-preferences-project",
+      "topicIds": [
+        "career-preferences-project"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PROJECT",
+      "description": "Elabora el proyecto sobre profesiones e inclinaciones descritas en los registros del caso educativo proporcionado. No se pide recolectar preferencias íntimas de compañeros ni declarar las tuyas.",
+      "sourceRecordIds": [
+        "052ca1e8"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "biblical-vocations",
+      "topicIds": [
+        "biblical-vocations"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga la vocación de Abraham, Moisés, los primeros discípulos y Pablo según los textos proporcionados. No se pide adhesión ni declarar vocación propia.",
+      "sourceRecordIds": [
+        "9c0e76ba"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "vocation-social-criteria",
+      "topicIds": [
+        "vocation-social-criteria"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica los criterios, valores y desafíos de elección vocacional y compromiso social descritos en los casos educativos proporcionados. No se califica compromiso interno ni se pide declarar una profesión.",
+      "sourceRecordIds": [
+        "a88047e5"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-project-values-table",
+      "topicIds": [
+        "life-project-values-table"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora una tabla de valores y actitudes que favorecen el proyecto de vida del caso proporcionado, justificando sus relaciones. No se califica moralidad ni se piden valores privados.",
+      "sourceRecordIds": [
+        "bae772c8"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-project-case",
+      "topicIds": [
+        "life-project-case"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PROJECT",
+      "description": "Construye el proyecto de vida para las actitudes, capacidades y preferencias descritas en el caso educativo proporcionado. No se califica tu capacidad ni se pide revelar planes íntimos.",
+      "sourceRecordIds": [
+        "248150e8"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "realization-values-scene",
+      "topicIds": [
+        "realization-values-scene"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Representa el caso proporcionado de acciones y valores que favorecen o desfavorecen realización personal, familiar, espiritual y comunitaria. No se califica tu realización ni se piden experiencias propias.",
+      "sourceRecordIds": [
+        "b8b9dc0b"
+      ],
+      "criterionCount": 1,
+      "required": "Representa|Dramatiza|Realiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-project-celebration",
+      "topicIds": [
+        "life-project-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los proyectos de vida proporcionados. No se pide realizarla ni revelar planes privados.",
+      "sourceRecordIds": [
+        "5922297a"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "technology-data",
+      "topicIds": [
+        "technology-data"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Compila los datos sobre presencia de tecnología descritos en los registros del entorno proporcionados. No se pide recolectar datos nuevos ni acceder a cuentas privadas.",
+      "sourceRecordIds": [
+        "1fb6b637"
+      ],
+      "criterionCount": 1,
+      "required": "Compila.*datos",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "science-benefits-verification",
+      "topicIds": [
+        "science-benefits-verification"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica los beneficios de ciencia y tecnología para el desarrollo humano indicados en el registro proporcionado, justificando cada marca con evidencias. No se pide experimentar ni aceptar afirmaciones sin sustento.",
+      "sourceRecordIds": [
+        "d8c5fcc8"
+      ],
+      "criterionCount": 1,
+      "required": "Verifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "digital-gap",
+      "topicIds": [
+        "digital-gap"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Debate las causas y consecuencias de brecha digital y acceso a tecnología según las fuentes proporcionadas. No se pide revelar recursos económicos ni tener dispositivos.",
+      "sourceRecordIds": [
+        "71e8b156"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda) sobre"
+    },
+    {
+      "id": "social-networks-panel",
+      "topicIds": [
+        "social-networks-panel"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el panel de riesgos, ventajas y desventajas de redes sociales en la vida de personas según las fuentes proporcionadas. No se pide realizarlo ni acceder a cuentas personales.",
+      "sourceRecordIds": [
+        "e92ebab5"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "science-ethics-principles",
+      "topicIds": [
+        "science-ethics-principles"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Formula principios éticos de uso de ciencia y tecnología según los referentes proporcionados. No se califica moralidad privada ni se pide aplicar cambios a cuentas reales.",
+      "sourceRecordIds": [
+        "2117b170"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "technology-campaign",
+      "topicIds": [
+        "technology-campaign"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora el prototipo de campaña escrita juvenil sobre oportunidades y riesgos tecnológicos a nivel familiar, social y laboral según las fuentes proporcionadas. No se pide publicarla ni crear cuentas ni usar otros medios.",
+      "sourceRecordIds": [
+        "d1d362ff"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "technology-ethics-celebration",
+      "topicIds": [
+        "technology-ethics-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la organización festiva para presentar los productos dados sobre criterios éticos de ciencia y tecnología. No se pide realizarla ni revelar vivencias o compromisos privados.",
+      "sourceRecordIds": [
+        "51db0265"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-life-nature-scene",
+      "topicIds": [
+        "jesus-life-nature-scene"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Dramatiza las escenas proporcionadas de los evangelios sobre Jesús defendiendo la vida de personas y naturaleza. No se califica fe ni se piden otras escenas.",
+      "sourceRecordIds": [
+        "850a9357"
+      ],
+      "criterionCount": 1,
+      "required": "Representa|Dramatiza|Realiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "local-social-ecological-problems",
+      "topicIds": [
+        "local-social-ecological-problems"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga las problemáticas sociales y ecológicas descritas en los referentes locales proporcionados. No se pide salir al terreno ni recolectar datos privados.",
+      "sourceRecordIds": [
+        "afc1abec"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "environmental-deterioration-arguments",
+      "topicIds": [
+        "environmental-deterioration-arguments"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Argumenta sobre causas y consecuencias del deterioro del medioambiente según las fuentes proporcionadas. No se piden acciones de campo ni adhesión a una postura.",
+      "sourceRecordIds": [
+        "88a300f9"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda) sobre"
+    },
+    {
+      "id": "sustainability-proposals",
+      "topicIds": [
+        "sustainability-proposals"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora alternativas de cuidado del medioambiente y desarrollo sostenible para el caso proporcionado. No se pide ejecutarlas ni demostrar disposición privada.",
+      "sourceRecordIds": [
+        "11972667"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "environmental-policy-celebration",
+      "topicIds": [
+        "environmental-policy-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar las políticas, proyectos y programas de protección ambiental y desarrollo sostenible de los referentes proporcionados. No se pide realizarla ni ejecutar programas.",
+      "sourceRecordIds": [
+        "40c17fdc"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-plans-presentation",
+      "topicIds": [
+        "life-plans-presentation"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Socializa los planes y proyectos de vida descritos en los casos educativos proporcionados. No se pide revelar tus planes íntimos ni calificar preferencias.",
+      "sourceRecordIds": [
+        "ade8bd3d"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "beatitudes-art",
+      "topicIds": [
+        "beatitudes-art"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Representa artísticamente las Bienaventuranzas según Mateo5:3–12 proporcionado. No se pide adhesión religiosa ni talento avanzado ni otros textos.",
+      "sourceRecordIds": [
+        "c6bb307f"
+      ],
+      "criterionCount": 1,
+      "required": "Representa|Dramatiza|Realiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "youth-problems-project",
+      "topicIds": [
+        "youth-problems-project"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PROJECT",
+      "description": "Elabora el proyecto de alternativas para el problema de desempleo juvenil descrito en el caso proporcionado. No se piden sexualidad, tecnología, música, moda, formación académica, religión ni otros problemas ni ejecutar el proyecto.",
+      "sourceRecordIds": [
+        "48bc1ad9"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-youth-values-panel",
+      "topicIds": [
+        "jesus-youth-values-panel"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el panel sobre cómo los jóvenes de los casos proporcionados incorporan valores del estilo de vida de Jesús según los textos dados. No se pide realizarlo ni evaluar adhesión propia.",
+      "sourceRecordIds": [
+        "25923dfd"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "youth-solidarity-report",
+      "topicIds": [
+        "youth-solidarity-report"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora un reportaje sobre iniciativas y proyectos juveniles documentados del país y Latinoamérica a favor de otras personas según las fuentes proporcionadas. No se pide entrevistar personas ni emprender un proyecto real.",
+      "sourceRecordIds": [
+        "f8b7a08e"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-projects-celebration",
+      "topicIds": [
+        "jesus-projects-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los productos dados sobre enseñanzas de Jesús y proyectos juveniles documentados. No se pide realizarla ni manifestar fe o compromisos privados.",
+      "sourceRecordIds": [
+        "2a3e21ef"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "gospel-report-presentation",
+      "topicIds": [
+        "gospel-report"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta el reportaje dado sobre composición, contexto y características de los evangelios según las fuentes proporcionadas. No se pide elaborar otro reportaje ni aceptar afirmaciones religiosas.",
+      "sourceRecordIds": [
+        "8f4fef5c"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta.*reportaje",
+      "forbidden": "Elabora|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "gospel-comparison-two-authors",
+      "topicIds": [
+        "gospel-comparison"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora el cuadro comparativo de características de los evangelios de Mateo y Marcos según los referentes proporcionados. No se piden Lucas ni Juan ni otros evangelios.",
+      "sourceRecordIds": [
+        "cb872fbc"
+      ],
+      "criterionCount": 1,
+      "required": "Elabora.*Mateo.*Marcos",
+      "forbidden": "Lucas|Juan|cuatro|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "gospel-comparison-author-alternative",
+      "topicIds": [
+        "gospel-comparison"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora el cuadro comparativo de características del evangelio de Mateo o de Marcos con el referente dado. No se piden los dos ni Lucas ni Juan.",
+      "sourceRecordIds": [
+        "cb872fbc"
+      ],
+      "criterionCount": 1,
+      "required": "opción elegida entre Mateo o Marcos",
+      "forbidden": "Lucas|Juan|cuatro|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "new-values-hechos-only",
+      "topicIds": [
+        "new-testament-values"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga los principios y valores para la convivencia del mensaje de Jesús en Hechos del Nuevo Testamento proporcionado. No se piden Cartas ni Apocalipsis ni adhesión.",
+      "sourceRecordIds": [
+        "f4326f5e"
+      ],
+      "criterionCount": 1,
+      "required": "Indaga.*Hechos",
+      "forbidden": "Cartas|Apocalipsis|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "new-map-date-only",
+      "topicIds": [
+        "new-testament-map"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora el mapa conceptual de los escritos del Nuevo Testamento dados, indicando únicamente su fecha de composición según los referentes proporcionados. No se piden lugar, autores, intenciones ni destinatarios.",
+      "sourceRecordIds": [
+        "85f88ea4"
+      ],
+      "criterionCount": 1,
+      "required": "Elabora.*fecha",
+      "forbidden": "lugar|autoría|intenciones|destinatarios|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "jesus-illustrations-only",
+      "topicIds": [
+        "jesus-media-compilation"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PORTFOLIO",
+      "description": "Compila las ilustraciones proporcionadas sobre Jesús en la cultura según los referentes dados. No se piden recursos audiovisuales ni imágenes nuevas ni creencias privadas.",
+      "sourceRecordIds": [
+        "54fa19d2"
+      ],
+      "criterionCount": 1,
+      "required": "Compila.*ilustraciones",
+      "forbidden": "audiovisuales|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "technology-data-presentation",
+      "topicIds": [
+        "technology-data"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta los datos sobre presencia de tecnología descritos en los registros proporcionados. No se pide compilar otros datos ni acceder a cuentas.",
+      "sourceRecordIds": [
+        "1fb6b637"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta.*datos",
+      "forbidden": "Compila|Investiga|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "jesus-decisions-juan-only",
+      "topicIds": [
+        "jesus-decisions-texts"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica las decisiones de Jesús según Juan13:12–17 proporcionado. No se piden Mateo ni Marcos ni otras fuentes.",
+      "sourceRecordIds": [
+        "c411dde8"
+      ],
+      "criterionCount": 1,
+      "required": "Identifica.*Juan",
+      "forbidden": "Mateo|Marcos|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "christian-panel-execution",
+      "topicIds": [
+        "christian-conversation-panel"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Realiza el panel de distintas iglesias cristianas sobre convivencia armónica y respetuosa según los testimonios proporcionados, contrastando sus argumentos. No se pide planificarlo ni contactar invitados.",
+      "sourceRecordIds": [
+        "d2f102e3"
+      ],
+      "criterionCount": 1,
+      "required": "Realiza el panel.*argumentos",
+      "forbidden": "Planifica|sobre el panel sobre|^Profesa|sobre (?:el panel|la mesa redonda) sobre",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "life-laws-only",
+      "topicIds": [
+        "life-institutions"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta las leyes que promueven cultura de vida según los documentos proporcionados. No se piden instituciones ni iniciativas ni comprobar vigencia.",
+      "sourceRecordIds": [
+        "5a90859d",
+        "3a668ce1"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta.*leyes",
+      "forbidden": "instituciones|iniciativas|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "political-proclamation-analysis",
+      "topicIds": [
+        "political-ethics-proclamation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la proclama dada de criterios éticos para política dominicana según los referentes proporcionados. No se pide elaborar otra ni apoyar partidos.",
+      "sourceRecordIds": [
+        "4f44a828"
+      ],
+      "criterionCount": 1,
+      "required": "Analiza.*proclama",
+      "forbidden": "Elabora|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "life-values-table-analysis",
+      "topicIds": [
+        "life-project-values-table"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la tabla dada de valores y actitudes vinculados al proyecto de vida del caso proporcionado. No se pide elaborar otra tabla ni revelar valores privados.",
+      "sourceRecordIds": [
+        "bae772c8"
+      ],
+      "criterionCount": 1,
+      "required": "Analiza.*tabla",
+      "forbidden": "Elabora|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "networks-advantages-only",
+      "topicIds": [
+        "social-networks-panel"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el panel de ventajas de redes sociales según los referentes proporcionados. No se piden riesgos ni desventajas ni realizarlo ni acceder a cuentas.",
+      "sourceRecordIds": [
+        "e92ebab5"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica.*ventajas",
+      "forbidden": "riesgos|desventajas|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "technology-campaign-work-only",
+      "topicIds": [
+        "technology-campaign"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora el prototipo de campaña escrita sobre oportunidades y riesgos de la tecnología en el ámbito laboral según los referentes proporcionados. No se pide el ámbito familiar ni social ni publicación real.",
+      "sourceRecordIds": [
+        "d1d362ff"
+      ],
+      "criterionCount": 1,
+      "required": "Elabora.*laboral",
+      "forbidden": "familiar|social|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "environmental-celebration-programs-only",
+      "topicIds": [
+        "environmental-policy-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los programas ambientales documentados según los referentes proporcionados. No se piden políticas ni proyectos ni realizarla.",
+      "sourceRecordIds": [
+        "40c17fdc"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica.*programas",
+      "forbidden": "políticas|proyectos|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "youth-project-sexuality-only",
+      "topicIds": [
+        "youth-problems-project"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PROJECT",
+      "description": "Elabora el proyecto de alternativas para el problema juvenil de sexualidad del caso educativo proporcionado. No se piden desempleo, tecnología, música, moda, formación académica ni religión ni experiencias privadas ni ejecución.",
+      "sourceRecordIds": [
+        "48bc1ad9"
+      ],
+      "criterionCount": 1,
+      "required": "Elabora.*sexualidad",
+      "forbidden": "desempleo|tecnológica|música|moda|académica|religiosa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "youth-project-analysis",
+      "topicIds": [
+        "youth-problems-project"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el proyecto de alternativas para el problema de desempleo juvenil del caso proporcionado. No se pide elaborar otro ni ejecutarlo.",
+      "sourceRecordIds": [
+        "48bc1ad9"
+      ],
+      "criterionCount": 1,
+      "required": "Analiza.*desempleo",
+      "forbidden": "Elabora|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "beatitudes-analysis",
+      "topicIds": [
+        "concept-0d98d64f"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las Bienaventuranzas según Mateo5:3–12 proporcionado. No se pide representarlas ni adhesión religiosa.",
+      "sourceRecordIds": [
+        "0d98d64f"
+      ],
+      "criterionCount": 1,
+      "required": "Analiza.*Bienaventuranzas",
+      "forbidden": "Representa|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "gospel-emphasis-plan",
+      "topicIds": [
+        "gospel-emphasis-roundtable"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la mesa redonda sobre los énfasis que cada evangelista destaca de la vida de Jesús según los textos proporcionados. No se pide realizarla ni profesar una fe.",
+      "sourceRecordIds": [
+        "1f514664"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica.*mesa redonda",
+      "forbidden": "Realiza|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "biblical-vocation-pablo-only",
+      "topicIds": [
+        "biblical-vocations"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga la vocación de Pablo según los textos proporcionados. No se piden Abraham, Moisés ni los primeros discípulos ni revelar vocación propia.",
+      "sourceRecordIds": [
+        "9c0e76ba"
+      ],
+      "criterionCount": 1,
+      "required": "Indaga.*Pablo",
+      "forbidden": "Abraham|Moisés|discípulos|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "life-project-case-plan",
+      "topicIds": [
+        "life-project-case"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el proyecto de vida para las actitudes, capacidades y preferencias del caso educativo proporcionado. No se pide construirlo ni revelar planes privados.",
+      "sourceRecordIds": [
+        "248150e8"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica.*proyecto de vida",
+      "forbidden": "Construye|Elabora|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-07c1030f",
+      "topicIds": [
+        "concept-07c1030f"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Los evangelios: Conformación y características.",
+      "sourceRecordIds": [
+        "07c1030f"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-b6c601bc",
+      "topicIds": [
+        "concept-b6c601bc"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Escritos del Nuevo Testamento.",
+      "sourceRecordIds": [
+        "b6c601bc"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-e62ea6c0",
+      "topicIds": [
+        "concept-e62ea6c0"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Mensajes de Jesús de Nazaret.",
+      "sourceRecordIds": [
+        "e62ea6c0"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-75321787",
+      "topicIds": [
+        "concept-75321787"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Jerarquía de los valores.",
+      "sourceRecordIds": [
+        "75321787"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-1f70e908",
+      "topicIds": [
+        "concept-1f70e908"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Ética y moral en la transformación de la realidad.",
+      "sourceRecordIds": [
+        "1f70e908"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-253f1db9",
+      "topicIds": [
+        "concept-253f1db9"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Cultura de la vida: retos y alternativas.",
+      "sourceRecordIds": [
+        "253f1db9"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-f459b00a",
+      "topicIds": [
+        "concept-f459b00a"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Jesús, fuente de fe y vida cristiana.",
+      "sourceRecordIds": [
+        "f459b00a"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-f3da6b2c",
+      "topicIds": [
+        "concept-f3da6b2c"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Resolución de problemas.",
+      "sourceRecordIds": [
+        "f3da6b2c"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-c3a91f0b",
+      "topicIds": [
+        "concept-c3a91f0b"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Valores y actitudes del cristianismo.",
+      "sourceRecordIds": [
+        "c3a91f0b"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-fa312225",
+      "topicIds": [
+        "concept-fa312225"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Ética y promoción de la persona.",
+      "sourceRecordIds": [
+        "fa312225"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-effd1705",
+      "topicIds": [
+        "concept-effd1705"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Política y bien común.",
+      "sourceRecordIds": [
+        "effd1705"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-f5768e4a",
+      "topicIds": [
+        "concept-f5768e4a"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Inclinaciones hacia el trabajo.",
+      "sourceRecordIds": [
+        "f5768e4a"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-18c73a80",
+      "topicIds": [
+        "concept-18c73a80"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica El trabajo como continuación de la creación de Dios.",
+      "sourceRecordIds": [
+        "18c73a80"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-c6471112",
+      "topicIds": [
+        "concept-c6471112"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Realización personal.",
+      "sourceRecordIds": [
+        "c6471112"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-f6a3b8ae",
+      "topicIds": [
+        "concept-f6a3b8ae"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Habilidades y actitudes vinculadas al mundo laboral.",
+      "sourceRecordIds": [
+        "f6a3b8ae"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-7120c606",
+      "topicIds": [
+        "concept-7120c606"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Proyecto de vida.",
+      "sourceRecordIds": [
+        "7120c606"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-c28278f5",
+      "topicIds": [
+        "concept-c28278f5"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Ciencia, tecnología y calidad de vida.",
+      "sourceRecordIds": [
+        "c28278f5"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-0f3a92b8",
+      "topicIds": [
+        "concept-0f3a92b8"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Ética, avances científicos y tecnológicos.",
+      "sourceRecordIds": [
+        "0f3a92b8"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-760a44e0",
+      "topicIds": [
+        "concept-760a44e0"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Ciencia, tecnología y relaciones interpersonales.",
+      "sourceRecordIds": [
+        "760a44e0"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-df47eaca",
+      "topicIds": [
+        "concept-df47eaca"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Redes sociales: ventajas y desventajas.",
+      "sourceRecordIds": [
+        "df47eaca"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-842e6365",
+      "topicIds": [
+        "concept-842e6365"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Iniciativas para la defensa de la casa común.",
+      "sourceRecordIds": [
+        "842e6365"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-bafa16be",
+      "topicIds": [
+        "concept-bafa16be"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Políticas ambientales.",
+      "sourceRecordIds": [
+        "bafa16be"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-fc83c758",
+      "topicIds": [
+        "concept-fc83c758"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Desarrollo sostenible.",
+      "sourceRecordIds": [
+        "fc83c758"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-e1f1e93a",
+      "topicIds": [
+        "concept-e1f1e93a"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Promoción y respeto a vida y al entorno natural.",
+      "sourceRecordIds": [
+        "e1f1e93a"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-67d47931",
+      "topicIds": [
+        "concept-67d47931"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Valores del estilo de vida de Jesús.",
+      "sourceRecordIds": [
+        "67d47931"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-ab2c0acc",
+      "topicIds": [
+        "concept-ab2c0acc"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Planes y proyectos de vida.",
+      "sourceRecordIds": [
+        "ab2c0acc"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-0d98d64f",
+      "topicIds": [
+        "concept-0d98d64f"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Las Bienaventuranzas.",
+      "sourceRecordIds": [
+        "0d98d64f"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-0d4526ff",
+      "topicIds": [
+        "concept-0d4526ff"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Compromiso y seguimiento de Jesucristo.",
+      "sourceRecordIds": [
+        "0d4526ff"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    }
+  ]
+}
